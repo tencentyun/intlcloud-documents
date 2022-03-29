@@ -1,3 +1,123 @@
+## January 2022
+
+<table>
+<tr>
+<th width="20%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+<tr>
+<td>Topic display fields are added</td>
+<td>You can set tags when creating a topic and view producer connections.</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
+</tr><tr>
+<td>You can create consumer groups and send messages directly in the console</td>
+<td>You can create consumer groups and send messages directly in the CKafka console, without the need to perform operations on the local client.</td>
+<td>2022-01-07</td>
+  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">Creating Consumer Group</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></li></td>
+</tr><tr>
+<td>Instance connection information can be displayed</td>
+<td>CKafka Pro Edition supports displaying the number of connections in the dashboard. This allows you to view the connections to each server more easily when the number of instance connections is about to be used up.</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/41378">Viewing Advanced Ops Features (Pro Edition)</a></td>
+</tr><tr>
+<td>Pro Edition supports automatic disk capacity expansion</td>
+<td>CKafka supports automatic adjustment of the disk utilization. After the disk utilization reaches the threshold, you can set the dynamic message retention policy to reduce the message retention time or set the automatic disk capacity expansion policy to adjust the disk space.</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40211">Automatic Disk Capacity Expansion</a></td>
+</tr><tr>
+<td>Public network bandwidth is optimized</td>
+<td>You can view the monitoring data of the public network bandwidth. In addition, a new monthly subscription billing mode is added for it, which can be purchased together with the instance on the purchase page. Existing instances continue to use the hourly bill-by-bandwidth billing mode and can be upgraded.</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/42386">Public Network Bandwidth Management</a></td>
+</tr>
+</table>
+
+## November 2021
+
+<table>
+<tr>
+<th width="20%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+<tr>
+<td>Transfer over SASL_SSL in the public network is supported</td>
+<td>CKafka Pro Edition supports the SASL_SSL access mode.</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32555">Adding Routing Policy</a></td>
+</tr>
+<tr>
+<td>Prometheus monitoring data can be output</td>
+<td>CKafka Pro Edition instances currently provide Prometheus to scrape the metric information of broker nodes, including basic monitoring metrics such as CPU, memory usage, and system load, as well as the metrics exposed by the broker's JMX.</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/43840">Connection to Prometheus</a></td>
+</tr>
+<tr>
+<td>Data sync is supported</td>
+<td>CKafka Pro Edition supports the data sync feature, which satisfies the needs for topic-level data sync and supports data transfer and automatic sync between any topics in different CKafka instances.</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32556">Data Sync</a></td>
+</tr><tr>
+<td>Quick diagnosis is supported</td>
+<td>CKafka Pro Edition offers the quick diagnosis feature, which can proactively troubleshoot cluster problems and risks, provide solutions based on Tencent Cloud experts' experience, and automatically generate reports from the health check results.</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/43841">Quick Diagnosis (Pro Edition)</a></td>
+</tr><tr>
+<td>You can view the topic rankings in terms of disk usage</td>
+<td>You can view the topic rankings in terms of disk usage in the CKafka console, which makes cost accounting easier.</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/41378">Viewing Advanced Ops Features (Pro Edition)</a></td>
+</tr><tr>
+<td>Topics support the advanced setting of retention.bytes</td>
+<td>You can set `retention.bytes` in the advanced topic settings for use together with `retention.ms`. </td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
+</tr><tr>
+<td>The cap of purchasable bandwidth is increased to 20,000 MB/s</td>
+<td>The cap of purchasable bandwidth is increased to 20,000 MB/s, which can meet the user needs for configuration upgrade during traffic peaks in sales campaigns.</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/11745">Billing Overview</a></td>
+</tr>
+</table>
+
+## October 2021
+
+<table>
+<tr>
+<th width="20%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+<tr>
+<td>The ACL policy is optimized</td>
+<td>You can preset ACL rules, which will be automatically applied when you create topics later.</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39084">Configuring ACL Policy</a></td>
+</tr>
+<tr>
+<td>The maximum number of consumer groups is increased, and alarm configuration is added</td>
+<td>The maximum number of consumer groups is increased from 50 to 200, and a metric for reaching the maximum number of consumer groups is added.</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39601">Use Limits</a></td>
+</tr>
+<tr>
+<td>A tool for smooth upgrade from Standard Edition to Pro Edition is provided</td>
+<td>Due to architecture optimizations, the advanced specification of Standard Edition was deactivated on September 9, 2021. You can smoothly upgrade Standard Edition instances purchased afterwards to Pro Edition in the console.</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40650">Upgrading Instance</a></td>
+</tr><tr>
+<td>You can view log details in the CKafka console</td>
+<td>You can view log details in the CKafka console, including consumer group broker logs and controller logs.</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/43842">Viewing Log</a></td>
+</tr>
+</table>
+
 ## September 2021
 
 <table><tr>
@@ -9,16 +129,13 @@
 <td>CKafka supports higher public network bandwidth</td>
 <td>CKafka provides 3 Mbps public network bandwidth for free by default. Pro Edition instances can upgrade public network bandwidth to 198 Mbps additionally.</td>
 <td>2021-09-09</td>
-<td>Public Network Bandwidth Management</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/42386">Public Network Bandwidth Management</a></td>
 </tr><tr>
 <td>Standard Edition instances with high specifications are no longer available</td>
-<td>CKafka Standard Edition instances with over 150 MB/s bandwidth (instance types: large and xlarge) are no longer available since September 9, 2021. Such types of instances purchased before that day can still be used, and their specifications can still be upgraded according to the previous specification system.</td>
+<td>Due to architecture optimization, CKafka Standard Edition instances with over 150 MB/s bandwidth (instance types: large and xlarge) are no longer available since September 9, 2021. Such types of instances purchased before that day can still be used, and their specifications can still be upgraded according to the previous specification system.</td>
 <td>2021-09-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">Billing Overview</a></td>
-</td>
 </tr></table>
-
-
 
 ## August 2021
 
@@ -42,21 +159,6 @@
 <td>You can batch add IPs or IP ranges (which are separated with semicolon) when configuring an ACL policy in the console to save operation costs.</td>
 <td>2021-08-20</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/39084">Configuring ACL Policy</a></td>
-</td>
-</tr></table>
-
-
-
-
-
-
-## August 2021
-
-<table><tr>
-<th width="20%">Update</th>
-<th width="45%">Description</th>
-<th width="15%">Release Date</th>
-<th width="20%">Documentation</th>
 </tr><tr>
 <td>The disk capacity limit of high-spec Pro Edition instances is adjusted</td>
 <td>For Pro Edition instances with 1600 MB/s or higher bandwidth, the disk capacity limit of them has increased to 200,000 GB.</td>
@@ -79,13 +181,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40964">Suggestions for CKafka Version Selection</a></td>
 </tr></table>
 
-
-
-
-
-
-
-## July 2021
+## June 2021
 
 <table><tr>
 <th width="20%">Update</th>
@@ -94,9 +190,9 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Pro Edition supports the advanced monitoring feature</td>
-<td>You can view the production and consumption traffic rankings of topics and the consumption speed rankings of consumer groups in the console, making it easier for OPS personnel to troubleshoot issues.</td>
+<td>You can view the production and consumption traffic rankings of topics and the consumption speed rankings of consumer groups in the console, making it easier for Ops personnel to troubleshoot issues.</td>
 <td>2021-07-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/41378">Viewing Advanced OPS Features (Pro Edition)</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/41378">Viewing Advanced Ops Features (Pro Edition)</a></td>
 </tr><tr>
 <td>Supports partition-level monitoring</td>
 <td>CKafka supports displaying the monitoring data (such as the number of produced and consumed messages and consumption speed) of a single partition of a topic.</td>
@@ -114,10 +210,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40964">Suggestions for CKafka Version Selection</a></td>
 </tr></table>
 
-
-
-
-
 ## May 2021
 
 <table><tr>
@@ -131,11 +223,6 @@
 <td>2021-05-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">Billing Overview</a></td>
 </tr></table>
-
-
-
-
-
 
 ## April 2021
 
@@ -156,7 +243,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40650">Upgrading Instance</a></td>
 </tr><tr>
 <td>Pro Edition supports advanced monitoring</td>
-<td>CKafka Pro Edition supports advanced monitoring. You can view metrics such as core services, production, consumption, and broker GC in the console, making it easier for OPS personnel to troubleshoot issues.</td>
+<td>CKafka Pro Edition supports advanced monitoring. You can view metrics such as core services, production, consumption, and broker GC in the console, making it easier for Ops personnel to troubleshoot issues.</td>
 <td>2021-04-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40038">Querying Advanced Monitoring (Pro Edition)</a></td>
 </tr><tr>
@@ -165,14 +252,6 @@
 <td>2021-04-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">Billing Overview</a></td>
 </tr></table>
-
-
-
-
-
-
-
-
 
 ## March 2021
 
@@ -183,7 +262,7 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Supports upgrade at specified time</td>
-<td>CKafka Supports upgrading instances at specified time to avoid affecting your business.</td>
+<td>CKafka supports upgrading instances at specified time to avoid affecting your business.</td>
 <td>2021-03-18</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40650">Upgrading Instance</a></td>
 </tr><tr>
@@ -197,11 +276,6 @@
 <td>2021-03-18</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40037">Deleting Consumer Group</a></td>
 </tr></table>
-
-
-
-
-
 
 ## February 2021
 
@@ -223,11 +297,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40650">Upgrading Instance</a></td>
 </tr></table>
 
-
-
-
-
-
 ## December 2020
 
 <table><tr>
@@ -236,18 +305,11 @@
 <th width="15%">Release Date</th>
 <th width="20%">Documentation</th>
 </tr><tr>
-<td>CKafka supports the SASL access mode for the route type “public domain name access”</td>
+<td>CKafka supports the SASL access mode for the route type "public domain name access"</td>
 <td>You can select public domain name SASL access as the access mode on the instance details page, but such access mode can be selected for only one route for an instance.</td>
 <td>2020-12-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/32555">Adding Routing Policy</a></td>
 </tr></table>
-
-
-
-
-
-
-
 
 ## October 2020
 
@@ -263,11 +325,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/39719">Querying Message</a></td>
 </tr></table>
 
-
-
-
-
-
 ## August 2020
 
 <table><tr>
@@ -281,12 +338,6 @@
 <td>2020-08-31</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">Product Specifications</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">Billing Overview</a></li></td>
 </tr></table>
-
-
-
-
-
-
 
 ## July 2020
 
@@ -302,12 +353,6 @@
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">Product Specifications</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">Billing Overview</a></li></td>
 </tr></table>
 
-
-
-
-
-
-
 ## March 2020
 
 <table><tr>
@@ -321,12 +366,6 @@
 <td>2020-03-24</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">Product Specifications</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">Billing Overview</a></li></td>
 </tr></table>
-
-
-
-
-
-
 
 ## January 2020
 
@@ -351,17 +390,11 @@
 <td>2020-01-13</td>
 <td>-</td>
 </tr><tr>
-<td>Ckafka APIs are upgraded to v3.0</td>
+<td>CKafka APIs are upgraded to v3.0</td>
 <td><li>The new API documentation is more standardized and comprehensive, and thus, more user-friendly.</li><li>The support for nearby access in all regions allows faster connection to Tencent Cloud services.</li></td>
 <td>2020-01-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/38270">API Documentation</a></td>
 </tr></table>
-
-
-
-
-
-
 
 ## December 2019
 
@@ -377,13 +410,6 @@
 <td>-</td>
 </tr></table>
 
-
-
-
-
-
-
-
 ## October 2019
 
 <table><tr>
@@ -393,21 +419,15 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>CKafka supports the data sync feature<br>(in beta test)</td>
-<td>CKafka provides efficient data transfer services based on open-source Kafka Connector.<br><li>You can transfer data between any topics of different CKafka instances in the same region in CKafka Console.</li><li>You can transfer data between any topics of different CKafka instances in the same region or different regions through CKafka APIs.</li></td>
+<td>CKafka provides efficient data transfer services based on open-source Kafka Connector.<br><li>You can transfer data between any topics of different CKafka instances in the same region in the CKafka console.</li><li>You can transfer data between any topics of different CKafka instances in the same region or different regions through CKafka APIs.</li></td>
 <td>2019-10-30</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/597/32556">Data Sync</a></li><li>Creating Data Sync Task</li></td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/597/32556">Data Sync</a></li></td>
 </tr><tr>
 <td>The monitoring and alarming feature is optimized</td>
 <td>This feature supports the monitoring of and the alarming for the number of instance connections and consumption speed.</td>
 <td>2019-10-30</td>
 <td>-</td>
 </tr></table>
-
-
-
-
-
-
 
 ## September 2019
 
@@ -423,13 +443,6 @@
 <td>-</td>
 </tr></table>
 
-
-
-
-
-
-
-
 ## August 2019
 
 <table><tr>
@@ -443,12 +456,6 @@
 <td>2019-08-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/31586">CKafka Data Reliability Description</a></td>
 </tr></table>
-
-
-
-
-
-
 
 ## July 2019
 
@@ -464,16 +471,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/31779">Service Level Agreement (New Version)</a></td>
 </tr><tr>
 <td>Topics can be automatically created</td>
-<td>If “auto-create topic” is enabled in the console, when you use or access the metadata of a topic that does not exist, the topic will be automatically created with the configured number of replicas and partitions.</td>
+<td>If "auto-create topic" is enabled in the console, when you use or access the metadata of a topic that does not exist, the topic will be automatically created with the configured number of replicas and partitions.</td>
 <td>2019-05-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Creating Topic</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">Creating Topic</a></td>
 </tr></table>
-
-
-
-
-
-
 
 ## April 2019
 
@@ -484,16 +485,10 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Supports default alarms</td>
-<td>When over 90% of the disk space is occupied, notifications will be sent to you through SMS, email, and Message Center by default, avoiding service unavailability caused by your forgetting to configure alarm policies.</td>
+<td>When over 90% of the disk space is occupied, notifications will be sent to you through SMS, email, and Message Center by default, avoiding service unavailability if alarm policies are not configured.</td>
 <td>2019-04-18</td>
 <td>-</td>
 </tr></table>
-
-
-
-
-
-
 
 ## March 2019
 
@@ -506,20 +501,13 @@
 <td>The message retention time is extended</td>
 <td>CKafka extends the max message retention time from one month to three months.</td>
 <td>2019-03-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/39718">Creating Instance</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">Creating Instance</a></td>
 </tr><tr>
 <td>Adds regions outside Chinese mainland</td>
 <td>CKafka adds two regions and one zone outside Chinese mainland: Toronto, Virginia, and Silicon Valley Zone 1.</td>
 <td>2020-03-02</td>
 <td>-</td>
 </tr></table>
-
-
-
-
-
-
-
 
 ## December 2018
 
@@ -535,12 +523,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
 </tr></table>
 
-
-
-
-
-
-
 ## October 2018
 
 <table><tr>
@@ -550,16 +532,10 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Supports cross-AZ disaster recovery clusters that feature high availability</td>
-<td>CKafka Supports cross-AZ disaster recovery clusters that feature high availability and stability.</td>
+<td>CKafka supports cross-AZ disaster recovery clusters that feature high availability and stability.</td>
 <td>2018-10-28</td>
 <td>-</td>
 </tr></table>
-
-
-
-
-
-
 
 ## August 2018
 

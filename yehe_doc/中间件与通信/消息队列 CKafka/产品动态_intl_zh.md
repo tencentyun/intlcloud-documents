@@ -1,3 +1,123 @@
+## 2022年01月
+
+<table>
+<tr>
+<th width="20%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+<tr>
+<td>Topic 展示字段增加</td>
+<td>新建 Topic 时支持设置标签，支持查看生产者端连接关系。</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic 管理</a></td>
+</tr><tr>
+<td>支持控制台直接创建 Consumer Group 和发送消息</td>
+<td>支持用户在 CKafka 控制台直接创建 Consumer Group 和发送消息，无需在本地客户端操作。</td>
+<td>2022-01-07</td>
+  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">创建 Consumer Group</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic 管理</a></li></td>
+</tr><tr>
+<td>支持展示实例连接信息</td>
+<td>CKafka 专业版 Dashboard 展示实例连接数信息，在实例连接数将满时，便于用户查看各个机器的连接数情况。</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/41378">查看高级运维特性（专业版）</a></td>
+</tr><tr>
+<td>专业版实例支持磁盘自动扩容</td>
+<td>消息队列 CKafka 支持磁盘水位自动调整功能，在磁盘水位到达阈值后，您可以选择设置动态消息保留策略来降低消息保留时间，或者设置磁盘自动扩容来调整磁盘空间。</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40211">磁盘自动扩容</a></td>
+</tr><tr>
+<td>公网带宽优化 </td>
+<td>公网带宽支持查看监控。另外新增包年包月购买模式，可以在购买页与实例一起新购。存量实例沿用按小时带宽的计费模式，可以升配。</td>
+<td>2022-01-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/42386">公网带宽管理</a></td>
+</tr>
+</table>
+
+## 2021年11月
+
+<table>
+<tr>
+<th width="20%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+<tr>
+<td>支持 SASL_SSL 公网传输</td>
+<td>CKafka 专业版实例支持 SASL_SSL 接入方式。</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32555">添加路由策略</a></td>
+</tr>
+<tr>
+<td>支持提供 Prometheus 监控对外输出</td>
+<td>CKafka 专业版实例目前提供 Prometheus 抓取监控数据的 broker 节点指标信息，包括有 CPU、内存使用情况、系统负载等基本监控度量指标，以及 broker JMX 暴露出的度量指标。</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/43840">接入外部监控 Prometheus</a></td>
+</tr>
+<tr>
+<td>支持数据同步功能</td>
+<td>CKafka 专业版支持数据同步功能，满足 Topic 级别同步数据，支持不同 CKafka 实例的任意 Topic 之间互相传递数据、自动同步。</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32556">数据同步</a></td>
+</tr><tr>
+<td>支持一键诊断能力</td>
+<td>CKafka 专业版支持一键诊断功能，该功能能够主动排查集群问题和隐患，并基于腾讯云专家经验沉淀给出问题解决方案，自动归纳健康检查结果生成报告。</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/43841">一键诊断（专业版）</a></td>
+</tr><tr>
+<td>查看 Topic 占用磁盘的统计排序 </td>
+<td>支持在 CKafka 控制台上查看 Topic 占用磁盘的统计排序，方便用户进行成本核算。</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/41378">查看高级运维特性（专业版）</a></td>
+</tr><tr>
+<td>Topic 高级设置支持retention.bytes</td>
+<td>支持在 Topic 的高级设置上设置 retention.bytes，与 retention.ms 配合使用。</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic 管理</a></td>
+</tr><tr>
+<td>可售卖上限提升至20000MB/s</td>
+<td>可售卖上限提升至20000MB/s，满足部分用户大促活动业务流量峰值期间的大量升配诉求。</td>
+<td>2021-11-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></td>
+</tr>
+</table>
+
+## 2021年10月
+
+<table>
+<tr>
+<th width="20%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+<tr>
+<td>ACL 策略优化</td>
+<td>支持预设 ACL 规则，后续创建 Topic 的时候自动应用这套规则。</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39084">配置 ACL 策略</a></td>
+</tr>
+<tr>
+<td>调整消费者组上限并增加告警配置</td>
+<td>消费组上限从50个调整为200个，同时增加消费组将达到上限的告警指标。</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/39601">使用限制</a></td>
+</tr>
+<tr>
+<td>提供标准版平滑升级到专业版的工具</td>
+<td>2021年09月09日起，由于架构优化，标准版下架高阶规格，9月9日之后新购买的标准版实例可以在控制台上平滑升级至专业版。</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40650">升配实例</a></td>
+</tr><tr>
+<td>支持 CKafka 控制台上查看日志详情</td>
+<td>支持 CKafka 控制台上查看日志详情，包含消费分组协调者日志和 controller 日志。</td>
+<td>2021-10-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/43842">查看日志</a></td>
+</tr>
+</table>
+
 ## 2021年09月
 
 <table><tr>
@@ -9,16 +129,13 @@
 <td>支持更高公网带宽</td>
 <td>CKafka 默认提供3Mbps 免费公网带宽，专业版实例可以额外升配公网带宽，最高可提升至198Mbps。</td>
 <td>2021-09-09</td>
-<td>公网带宽管理</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/42386">公网带宽管理</a></td>
 </tr><tr>
 <td>标准版下线高阶规格</td>
-<td>2021年09月09日起，CKafka 标准版将不再售卖150MB/s以上带宽规格的实例（容量型和高阶型）。在这之前购买的容量型和高阶型实例仍然可以继续使用，也可以在原来的规格体系里面继续升配。</td>
+<td>2021年09月09日起，由于架构优化，CKafka 标准版将不再售卖150MB/s以上带宽规格的实例（容量型和高阶型）。在这之前购买的容量型和高阶型实例仍然可以继续使用，也可以在原来的规格体系里面继续升配。</td>
 <td>2021-09-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></td>
-</td>
 </tr></table>
-
-
 
 ## 2021年08月
 
@@ -42,21 +159,6 @@
 <td>在控制台配置 ACL 策略时批量添加 IP 或网段，用“;”隔开，节省用户操作成本。</td>
 <td>2021-08-20</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/39084">配置 ACL 策略</a></td>
-</td>
-</tr></table>
-
-
-
-
-
-
-## 2021年08月
-
-<table><tr>
-<th width="20%">动态名称</th>
-<th width="45%">动态描述</th>
-<th width="15%">发布时间</th>
-<th width="20%">相关文档</th>
 </tr><tr>
 <td>专业版高规格磁盘上限调整</td>
 <td>专业版 ≥ 1600MB/s的规格的磁盘上限调整到200,000GB。</td>
@@ -79,13 +181,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40964">CKafka 版本选择建议</a></td>
 </tr></table>
 
-
-
-
-
-
-
-## 2021年07月
+## 2021年06月
 
 <table><tr>
 <th width="20%">动态名称</th>
@@ -114,10 +210,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40964">CKafka 版本选择建议</a></td>
 </tr></table>
 
-
-
-
-
 ## 2021年05月
 
 <table><tr>
@@ -131,11 +223,6 @@
 <td>2021-05-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></td>
 </tr></table>
-
-
-
-
-
 
 ## 2021年04月
 
@@ -166,14 +253,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></td>
 </tr></table>
 
-
-
-
-
-
-
-
-
 ## 2021年03月
 
 <table><tr>
@@ -198,11 +277,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40037">消费者组管理</a></td>
 </tr></table>
 
-
-
-
-
-
 ## 2021年02月
 
 
@@ -223,11 +297,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/40650">升配实例</a></td>
 </tr></table>
 
-
-
-
-
-
 ## 2020年12月
 
 <table><tr>
@@ -241,13 +310,6 @@
 <td>2020-12-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/32555">添加路由策略</a></td>
 </tr></table>
-
-
-
-
-
-
-
 
 ## 2020年10月
 
@@ -263,11 +325,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/39719">查询消息</a></td>
 </tr></table>
 
-
-
-
-
-
 ## 2020年08月
 
 <table><tr>
@@ -281,12 +338,6 @@
 <td>2020-08-31</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">产品规格</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></li></td>
 </tr></table>
-
-
-
-
-
-
 
 ## 2020年07月
 
@@ -302,12 +353,6 @@
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">产品规格</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></li></td>
 </tr></table>
 
-
-
-
-
-
-
 ## 2020年03月
 
 <table><tr>
@@ -321,12 +366,6 @@
 <td>2020-03-24</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">产品规格</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/11745">计费概述</a></li></td>
 </tr></table>
-
-
-
-
-
-
 
 ## 2020年01月
 
@@ -357,12 +396,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/38270">API 文档</a></td>
 </tr></table>
 
-
-
-
-
-
-
 ## 2019年12月
 
 <table><tr>
@@ -377,13 +410,6 @@
 <td>-</td>
 </tr></table>
 
-
-
-
-
-
-
-
 ## 2019年10月
 
 <table><tr>
@@ -395,19 +421,13 @@
 <td>新增数据同步功能<br>（灰度测试）</td>
 <td>基于开源 Kafka Connector 实现的高效数据传递服务：<br><li>通过 CKafka 控制台操作同地域的不同 CKafka 实例的任意 Topic 之间互相传递数据。</li><li>通过 CKafka 的云 API 接口操作同地域或者不同地域的不同 CKafka 实例的任意 Topic 之间的数据传递。</li></td>
 <td>2019-10-30</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/597/32556">数据同步</a></li><li>创建数据同步任务</li></td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/597/32556">数据同步</a></li></td>
 </tr><tr>
 <td>优化监控告警功能</td>
 <td>支持对实例连接数和消费速度的监控，同时具备该指标告警。</td>
 <td>2019-10-30</td>
 <td>-</td>
 </tr></table>
-
-
-
-
-
-
 
 ## 2019年09月
 
@@ -423,13 +443,6 @@
 <td>-</td>
 </tr></table>
 
-
-
-
-
-
-
-
 ## 2019年08月
 
 <table><tr>
@@ -443,12 +456,6 @@
 <td>2019-08-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/31586">CKafka 数据可靠性说明</a></td>
 </tr></table>
-
-
-
-
-
-
 
 ## 2019年07月
 
@@ -466,14 +473,8 @@
 <td>支持自动创建 Topic</td>
 <td>您在控制台开启自动创建 Topic 后，使用或获取不存在的主题元数据时，服务器将自动使用配置的副本数和分区数进行创建。</td>
 <td>2019-05-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">创建 Topic</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">创建 Topic</a></td>
 </tr></table>
-
-
-
-
-
-
 
 ## 2019年04月
 
@@ -489,12 +490,6 @@
 <td>-</td>
 </tr></table>
 
-
-
-
-
-
-
 ## 2019年03月
 
 <table><tr>
@@ -506,20 +501,13 @@
 <td>延长消息保留时间</td>
 <td>CKafka 消息保留时间最大限制从1个月延长至3个月。</td>
 <td>2019-03-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/39718">创建实例</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/40039">创建实例</a></td>
 </tr><tr>
 <td>新增国际地域</td>
 <td>CKafka 新增设2个国际地域和1个国际大区：多伦多、弗吉尼亚、硅谷一区。</td>
 <td>2020-03-02</td>
 <td>-</td>
 </tr></table>
-
-
-
-
-
-
-
 
 ## 2018年12月
 
@@ -535,12 +523,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic 高级配置参数说明</a></td>
 </tr></table>
 
-
-
-
-
-
-
 ## 2018年10月
 
 <table><tr>
@@ -554,12 +536,6 @@
 <td>2018-10-28</td>
 <td>-</td>
 </tr></table>
-
-
-
-
-
-
 
 ## 2018年08月
 

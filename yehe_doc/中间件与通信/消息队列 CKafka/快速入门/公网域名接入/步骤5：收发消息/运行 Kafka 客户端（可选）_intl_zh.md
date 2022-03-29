@@ -71,17 +71,17 @@ java -version
       bash kafka-console-consumer.sh --bootstrap-server XXXX:port --topic XXXX --consumer.config ../config/consumer.properties
       ```
       >?
-      >- broker-list：将 XXXX:port 替换成公网访问的域名与端口，在控制台实例详情页面的【接入方式】模块获取。
+      >- broker-list：将 XXXX:port 替换成公网访问的域名与端口，在控制台实例详情页面的**接入方式**模块获取。
       >  ![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
-      >- topic：将 XXXX替换成topic名称，在控制台【topic管理】页面获取。
+      >- topic：将 XXXX替换成topic名称，在控制台**topic管理**页面获取。
    2. 另外开一个终端窗口启动生产者。
       ``` bash
       bash kafka-console-producer.sh --broker-list XXXX:port --topic XXXX --producer.config ../config/producer.properties
       ```
       >?
-      >- broker-list：将 XXXX:port 替换成公网访问的域名与端口，在控制台实例详情页面的【接入方式】模块获取。
+      >- broker-list：将 XXXX:port 替换成公网访问的域名与端口，在控制台实例详情页面的**接入方式**模块获取。
       >  ![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
-      >- topic：将 XXXX替换成topic名称，在控制台【topic管理】页面获取。
+      >- topic：将 XXXX替换成topic名称，在控制台**topic管理**页面获取。
 
       输入消息内容之后按回车，即可看到消费端也几乎同时收到消息。
 
@@ -92,6 +92,6 @@ java -version
       ![](https://main.qcloudimg.com/raw/22860d730e70cfbe9eb5fcbca215d5a5.png)
 
 3. 在 CKafka 控制台消息查询页面，查询刚刚发送的消息内容。
-   ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
+     ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
     消息详情如下：
-   ![](https://main.qcloudimg.com/raw/06cdc6450beefae7f6cc6f3d704390a0.png)
+     ![](https://main.qcloudimg.com/raw/06cdc6450beefae7f6cc6f3d704390a0.png)
