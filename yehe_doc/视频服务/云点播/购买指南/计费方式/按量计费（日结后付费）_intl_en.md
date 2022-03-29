@@ -50,7 +50,7 @@ Billable items:
     <tr>         
         <td style="text-align:center">Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>         
         <td style="text-align:center">0.0001</td>  </tr>      
-
+ </table>
 
 ### Billing details
 
