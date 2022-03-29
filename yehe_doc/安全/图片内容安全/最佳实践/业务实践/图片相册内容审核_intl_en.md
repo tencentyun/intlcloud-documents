@@ -100,9 +100,9 @@ Parameter description:
 
 After completing the above steps, you can call the **image moderation** API to create an album moderation task as instructed below:
 
-- Make sure that the images meet the **file format requirements** of the API.
-- Enter the input parameters as instructed in the **API documentation**.
-- If the task is created successfully, the API will return the detailed recognition result, and you can refer to **Image Content Recognition Sample** for more information on sample response parameters. If task creation failed, the API will return an error code, and you can refer to **Business Error Codes** and **Common Error Codes** for troubleshooting.
+- Make sure that the images meet the [file format requirements](https://intl.cloud.tencent.com/document/product/1122/46084) of the API.
+- Enter the input parameters as instructed in the [API documentation](https://intl.cloud.tencent.com/document/product/1122/46084).
+- If the task is created successfully, the API will return the detailed recognition result, and you can refer to [Image Content Recognition Sample](https://intl.cloud.tencent.com/document/product/1122/46084) for more information on sample response parameters. If task creation failed, the API will return an error code, and you can refer to [Business Error Codes](https://intl.cloud.tencent.com/document/product/1122/46084) and [Common Error Codes](https://intl.cloud.tencent.com/document/product/1122/46081) for troubleshooting.
 
 >? When connecting to the service, you can use **API Explorer** for online debugging.
 
