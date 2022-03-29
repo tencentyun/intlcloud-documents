@@ -4,7 +4,7 @@
 - 安全加速
 
 支持灵活调整，可根据业务需求，在 **[DNS 服务](https://console.cloud.tencent.com/edgeone/dns?tab=records)** > **记录管理** 页面为同一个站点底下的不同主机记录（子域名）选择不同的代理模式。
-![](https://qcloudimg.tencent-cloud.cn/raw/8ae2febb9aeebccae26996ba571aff9a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ec574149cc9fd739eb4316f95a4cb988.png)
 
 >?目前边缘安全加速平台控制台仅对部分用户开放，如需访问控制台，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 开通权限。
 

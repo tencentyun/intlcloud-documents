@@ -13,4 +13,4 @@ EdgeOne uses a TXT record to verify your domain ownership. The steps are as foll
 2. Add a TXT record and the specified host record and record value as required.
 3. Wait for the system to automatically complete the verification. If the record does not take effect after a long time, you can click **Refresh** to trigger system verification.
 4. After the record takes effect, click **Complete Verification** to complete site verification.
-![](https://qcloudimg.tencent-cloud.cn/raw/13501666d4cc178c7552ca31ce090f7b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/baddd60443c2a303cddd3696beffc290.png)

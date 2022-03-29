@@ -10,9 +10,9 @@ You can purchase and connect to EdgeOne by site (i.e., second-level domain). The
 3. On the site addition page, enter a valid second-level domain and click **Next**.
 >?You cannot add a site repeatedly. If a site has been connected by another account, you need to reclaim it through [site verification](https://intl.cloud.tencent.com/document/product/1145/45969).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/9cd35232f89edc7be81a188e41432968.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3677f3738c1a65ea34fe413be154d01.png)
 4. On the DNS configuration page, the system will automatically scan and import the original DNS records of your site. You can also add, delete, and modify records and configure the [proxy mode](https://intl.cloud.tencent.com/document/product/1145/45968). Then, click **Next**.
-![](https://qcloudimg.tencent-cloud.cn/raw/be7ddf8d079f1952819079bb16d7d765.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/93f56859b479d239090ef7f0698057a9.png)
 6. Log in at the domain registrar of your site and modify the NS server records to the value specified in EdgeOne as instructed on the NS server modification page. For detailed directions, see [How to Modify NS](#NSXG).
 7. After modification, click **Complete** to redirect to the site overview page.
 >?The time when the NS records take effect is subject to your domain registrar. After they take effect, the system will inform you by email, SMS, and Message Center.
@@ -24,11 +24,11 @@ You can purchase and connect to EdgeOne by site (i.e., second-level domain). The
 3. On the site addition page, enter a valid second-level domain and click **Next**.
 >?You cannot add a site repeatedly. If a site has been connected by another account, you need to reclaim it through [site verification](https://intl.cloud.tencent.com/document/product/1145/45969).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/9cd35232f89edc7be81a188e41432968.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3677f3738c1a65ea34fe413be154d01.png)
 5. On the DNS configuration page, you can add, delete, and modify records and configure the [proxy mode](https://intl.cloud.tencent.com/document/product/1145/45968). Then, click **Use CNAME Connection**.
-![](https://qcloudimg.tencent-cloud.cn/raw/c0b310a56e2c7442ab259cc100c6129b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/93f56859b479d239090ef7f0698057a9.png)
 6. On the site verification page, add a TXT record at your DNS service provider to verify your ownership of the site and click **Complete Verification**.
-![](https://qcloudimg.tencent-cloud.cn/raw/b797c208677d51fc5e465d77f20d9225.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c6e5de739623bc1a8758318c9a29665d.png)
 
 
 ## How to Modify NS[](id:NSXG)

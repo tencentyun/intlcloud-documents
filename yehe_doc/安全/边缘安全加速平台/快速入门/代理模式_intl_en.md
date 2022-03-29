@@ -4,7 +4,7 @@ EdgeOne provides three service (proxy) modes for the integrated layer-7 edge ser
 - Security acceleration
 
 You can adjust the mode flexibly and select different proxy modes for different host records (subdomains) under the same site on the **[DNS Service](https://console.cloud.tencent.com/edgeone/dns?tab=records)** > **Record Management** page as needed.
-![](https://qcloudimg.tencent-cloud.cn/raw/8ae2febb9aeebccae26996ba571aff9a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ec574149cc9fd739eb4316f95a4cb988.png)
 
 >?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 

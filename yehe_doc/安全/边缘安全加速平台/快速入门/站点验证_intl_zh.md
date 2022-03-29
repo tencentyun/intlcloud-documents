@@ -13,4 +13,4 @@ EdgeOne 采用 TXT 验证方式来确定您的域名所有权，具体操作步�
 2. 添加新增一条 TXT 记录，按要求添加指定的主机记录和记录值。
 3. 耐心等待系统自动完成校验，如果添加完成长时间未生效，可手动刷新触发系统校验。
 4. 记录生效后，单击**完成验证**完成站点验证。
-![](https://qcloudimg.tencent-cloud.cn/raw/13501666d4cc178c7552ca31ce090f7b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/baddd60443c2a303cddd3696beffc290.png)
