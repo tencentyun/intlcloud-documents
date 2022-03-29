@@ -50,7 +50,7 @@
     <tr>        
         <td style="text-align:center">中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>        
         <td style="text-align:center">0.0001</td>    </tr>       
-
+ </table>
           
 
 
