@@ -10,7 +10,7 @@ The language describes the basic elements and usage of a bucket policy. For more
 
 The access policy language contains the following basic elements:
 
-- **principal**: describes the entity to be authorized by the policy. This includes users (root accounts, sub-accounts, anonymous users), and user groups. This element can only be used in bucket access policies, rather than user access policies.
+- **principal**: describes the entity to be authorized by the policy. This includes users (root accounts, sub-accounts, anonymous users) and user groups. This element can only be used in bucket access policies, rather than user access policies.
 - **statement**: describes the detailed information of one or more permissions. This element includes a permission or a permission set of multiple elements such as effect, action, resource, and condition. A policy has only one statement.
 - **effect**: describes the result of a statement. The result can be "allow" or an explicit "deny". This element is required.
 - **action**: describes the allowed or denied operation. An operation can be an API (described using the prefix "name") or a feature set (a set of specific APIs prefixed with "permid"). This element is required.
