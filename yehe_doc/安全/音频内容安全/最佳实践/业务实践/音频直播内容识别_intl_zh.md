@@ -129,15 +129,15 @@
 
 在完成以上步骤后，可以调用**创建音频识别任务（CreateAudioModerationTask）**接口创建音频流识别任务，具体方法如下：
 
-- 确保音频符合接口传入的 [文件格式要求](https://cloud.tencent.com/document/product/1219/53257#1.-.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)。
-- 参考任务创建接口的 [接口文档说明](https://cloud.tencent.com/document/product/1219/53257#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0)，填入相应的输入参数。
-- 若任务创建成功，可通过查询任务接口查询任务相关信息，请参考 [音频内容识别示例](https://cloud.tencent.com/document/product/1219/53257#.E7.A4.BA.E4.BE.8B1-.E5.88.9B.E5.BB.BA.E9.9F.B3.E9.A2.91.E5.AE.A1.E6.A0.B8.E4.BB.BB.E5.8A.A1) 进一步了解返回参数示例；若任务创建失败，接口会返回错误码，请参考 [业务错误码](https://cloud.tencent.com/document/product/1219/53257#6.-.E9.94.99.E8.AF.AF.E7.A0.81) 和 [公共错误码](https://cloud.tencent.com/document/product/1219/53266#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81) 进行问题排查。
+- 确保音频符合接口传入的 [文件格式要求](https://intl.cloud.tencent.com/document/product/1139/46101#1.-.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)。
+- 参考任务创建接口的 [接口文档说明](https://intl.cloud.tencent.com/document/product/1139/46101#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0)，填入相应的输入参数。
+- 若任务创建成功，可通过查询任务接口查询任务相关信息，请参考 [音频内容识别示例](https://intl.cloud.tencent.com/document/product/1139/46101#.E7.A4.BA.E4.BE.8B1-.E5.88.9B.E5.BB.BA.E9.9F.B3.E9.A2.91.E5.AE.A1.E6.A0.B8.E4.BB.BB.E5.8A.A1) 进一步了解返回参数示例；若任务创建失败，接口会返回错误码，请参考 [业务错误码](https://intl.cloud.tencent.com/document/product/1139/46101#6.-.E9.94.99.E8.AF.AF.E7.A0.81) 和 [公共错误码](https://intl.cloud.tencent.com/document/product/1139/46099#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81) 进行问题排查。
 
->? 在进行服务接入时，可以使用 [API Explorer](https://cloud.tencent.com/document/product/1278/46697) 工具进行在线调试。
+>? 在进行服务接入时，可以使用 API Explorer 工具进行在线调试。
 
 ## 步骤五：获取音频内容安全任务结果
 
 在创建音频识别任务之后，可以调用**查看任务详情（DescribeTaskDetail）**接口查询任务的详细信息，具体方法如下：
 
-- 参考查看任务详情的 [接口文档说明](https://cloud.tencent.com/document/product/1219/53256)，填入相应的输入参数；
-- 若接口调用成功，您会收到来自接口的响应输出，包含查询的任务的详细信息，可参考 [查看任务详情示例](https://cloud.tencent.com/document/product/1219/53256#4.-.E7.A4.BA.E4.BE.8B) 进一步了解返回参数示例。
+- 参考查看任务详情的 [接口文档说明](https://intl.cloud.tencent.com/document/product/1139/46100)，填入相应的输入参数；
+- 若接口调用成功，您会收到来自接口的响应输出，包含查询的任务的详细信息，可参考 [查看任务详情示例](https://intl.cloud.tencent.com/document/product/1139/46100#4.-.E7.A4.BA.E4.BE.8B) 进一步了解返回参数示例。

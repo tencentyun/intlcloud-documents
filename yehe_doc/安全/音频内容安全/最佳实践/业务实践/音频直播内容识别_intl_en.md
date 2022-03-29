@@ -129,15 +129,15 @@ You can configure a custom dictionary.
 
 After completing the above steps, you can call the **CreateAudioModerationTask** API to create an audio stream recognition task as instructed below:
 
-- Make sure that the audio meets the [file format requirements](https://cloud.tencent.com/document/product/1219/53257#1.-.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) of the API.
-- Enter the input parameters as instructed in the [API documentation](https://cloud.tencent.com/document/product/1219/53257#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0).
-- If the task is created successfully, you can use the task query API to query task details, and you can refer to the [example of creating audio moderation task](https://cloud.tencent.com/document/product/1219/53257#.E7.A4.BA.E4.BE.8B1-.E5.88.9B.E5.BB.BA.E9.9F.B3.E9.A2.91.E5.AE.A1.E6.A0.B8.E4.BB.BB.E5.8A.A1) for more information on sample response parameters. If task creation fails, the API will return an error code, and you can refer to [Business Error Codes](https://cloud.tencent.com/document/product/1219/53257#6.-.E9.94.99.E8.AF.AF.E7.A0.81) and [Common Error Codes](https://cloud.tencent.com/document/product/1219/53266#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81) for troubleshooting.
+- Make sure that the audio meets the [file format requirements](https://intl.cloud.tencent.com/document/product/1139/46101#1.-.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0) of the API.
+- Enter the input parameters as instructed in the [API documentation](https://intl.cloud.tencent.com/document/product/1139/46101#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0).
+- If the task is created successfully, you can use the task query API to query task details, and you can refer to the [example of creating audio moderation task](https://intl.cloud.tencent.com/document/product/1139/46101#.E7.A4.BA.E4.BE.8B1-.E5.88.9B.E5.BB.BA.E9.9F.B3.E9.A2.91.E5.AE.A1.E6.A0.B8.E4.BB.BB.E5.8A.A1) for more information on sample response parameters. If task creation fails, the API will return an error code, and you can refer to [Business Error Codes](https://intl.cloud.tencent.com/document/product/1139/46101#6.-.E9.94.99.E8.AF.AF.E7.A0.81) and [Common Error Codes](https://intl.cloud.tencent.com/document/product/1139/46099#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81) for troubleshooting.
 
->? When connecting to the service, you can use [API Explorer](https://cloud.tencent.com/document/product/1278/46697) for online debugging.
+>? When connecting to the service, you can use API Explorer for online debugging.
 
 ## Step 5. Get the AMS task result
 
 After creating the audio recognition task, you can call the **DescribeTaskDetail** API to query the details of the task as instructed below:
 
-- Enter the input parameters as instructed in the [API documentation](https://cloud.tencent.com/document/product/1219/53256).
-- If the API call is successful, you will receive the response output from the API, including the task details. You can refer to the [example of viewing task details](https://cloud.tencent.com/document/product/1219/53256#4.-.E7.A4.BA.E4.BE.8B) for more information on sample response parameters.
+- Enter the input parameters as instructed in the [API documentation](https://intl.cloud.tencent.com/document/product/1139/46100).
+- If the API call is successful, you will receive the response output from the API, including the task details. You can refer to the [example of viewing task details](https://intl.cloud.tencent.com/document/product/1139/46100#4.-.E7.A4.BA.E4.BE.8B) for more information on sample response parameters.
