@@ -2,12 +2,14 @@
 TencentDB data centers are hosted in multiple locations world-wide, covering South China, East China, North China, Southwest China, Hong Kong (China), Macao (China), Taiwan (China), Southeast Asia, South Asia, Northeast Asia, West US, East US, North America, Europe, and other regions. Tencent Cloud will gradually deploy nodes in more regions for a wider coverage. Currently, you can create TencentDB instances in the following regions.
 
 >?
->- Tencent Cloud resources in the same VPC within the same region under the same account can communicate with each other using [private IPs](https://intl.cloud.tencent.com/document/product/213/5225) over private network.
+>- Tencent Cloud resources in the same VPC within the same region under the same account can communicate with each other by using [private IPs](https://intl.cloud.tencent.com/document/product/213/5225) over private network.
 >- The networks of different regions are fully isolated from each other, and Tencent Cloud services in different regions cannot communicate over private network by default.
 >- When purchasing Tencent Cloud services, we recommend selecting the region closest to you to minimize access latency.
 
 
 ### China
+>?Resources available in different regions and AZs may be sold out and become unavailable, and previously sold-out resources may be replenished. The resource availability will be assessed and adjusted based on the actual business usage as displayed on the purchase page in the console.
+
 <table class="table-striped">
 <tbody>
 <tr><th>Region</th><th>Availability Zone</th></tr>
@@ -15,9 +17,9 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <td rowspan="6">South China (Guangzhou)<br>ap-guangzhou</td>
 <td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td></tr>	
 <tr>
-<td>Guangzhou Zone 2 (sold out)<br> ap-guangzhou-2</td></tr>
+<td>Guangzhou Zone 2<br> ap-guangzhou-2</td></tr>
 <tr>
-<td>Guangzhou Zone 3 (sold out)<br> ap-guangzhou-3</td></tr>
+<td>Guangzhou Zone 3<br> ap-guangzhou-3</td></tr>
 <tr>
 <td>Guangzhou Zone 4<br> ap-guangzhou-4</td></tr>
 <tr>
@@ -26,7 +28,7 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <td>Guangzhou Zone 7<br> ap-guangzhou-7</td></tr>
 <tr>
 <td >South China (Shenzhen)<br> ap-shenzhen</td>
-<td>Shenzhen Zone 1<br> ap-shenzhen-1</td></tr>
+<td>Shenzhen Zone 1<br> ap-shenzhen-1</td></tr>	
 <tr>
 <td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
 <td>Shanghai Zone 1 (sold out)<br>ap-shanghai-1</td></tr>
@@ -64,14 +66,14 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <td>Beijing Zone 7<br>ap-beijing-7</td></tr>  
 <tr>
 <td >North China (Tianjin)<br>ap-tianjin</td>
-<td>Tianjin Zone 1<br>ap-tianjian-1</td></tr>
+<td>Tianjin Zone 1<br>ap-tianjin-1</td></tr>
 <tr>
 <td rowspan="2">Southwest China (Chengdu)<br>ap-chengdu</td>
 <td>Chengdu Zone 1<br>ap-chengdu-1</td></tr>
 <tr>
 <td>Chengdu Zone 2<br>ap-chengdu-2</td></tr>    
 <tr>
-<td>Southwest China (Chongqing)<br>ap-chongqing</td>
+<td >Southwest China (Chongqing)<br>ap-chongqing</td>
 <td>Chongqing Zone 1<br>ap-chongqing-1</td></tr>
 <tr>
 <td rowspan="3">Hong Kong/Macao/Taiwan (Hong Kong, China)<br>ap-hongkong</td>
@@ -88,23 +90,25 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <tbody>
 <tr><th>Region</th><th>Availability Zone</th></tr>
 <tr>
-<td rowspan="3">Southeast Asia (Singapore)<br>ap-singapore</td>
+<td rowspan="4">Southeast Asia (Singapore)<br>ap-singapore</td>
 <td>Singapore Zone 1 (sold out) (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-1</td></tr>
 <tr>
-<td>Singapore Zone 2 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td></tr>
+<td>Singapore Zone 2 (sold out) (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td></tr>
 <tr>
-<td>Singapore Zone 3 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-3</td></tr>
+<td>Singapore Zone 3 (sold out) (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-3</td></tr>
+<tr>
+<td>Singapore Zone 4 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-4</td></tr>
 </tr>
 <tr>
 <td rowspan="2">Southeast Asia (Bangkok)<br>ap-bangkok</td>
-<td>Bangkok Zone 1 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-1</td></tr>
+<td >Bangkok Zone 1 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-1</td></tr>
 <tr>
-<td>Bangkok Zone 2 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-2</td></tr>
+<td >Bangkok Zone 2 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-2</td></tr>
 <tr>
 <td>South Asia (Mumbai)<br>ap-mumbai</td>
 <td>Mumbai Zone 1 (Mumbai nodes cover services in South Asia)<br>ap-mumbai-1</td></tr>	
 <tr>
-<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
+<td rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
 <td>Seoul Zone 1 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-1</td></tr>
 <tr>
 <td>Seoul Zone 2 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-2</td></tr>

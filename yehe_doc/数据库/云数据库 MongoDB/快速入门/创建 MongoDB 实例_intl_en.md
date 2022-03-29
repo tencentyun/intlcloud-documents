@@ -17,12 +17,12 @@ You have registered a Tencent Cloud account and completed identity verification.
 <tr><th>Configuration Item</th><th>Description</th></tr>
 <tr>
 <td>Billing Mode</td>
-<td><b>Pay-as-You-Go</b> is supported. For more information, see <a href="https://intl.cloud.tencent.com/document/product/240/3550">Billing Overview</a>.</td></tr>	
+<td><b>Pay-as-you-go</b> is supported. For more information, see <a href="https://intl.cloud.tencent.com/document/product/240/3550">Billing Overview</a>.</td></tr>	
 <tr>
 <td>Region</td>
-<td>Select a region where your instance resides. Please select a region closest to you to reduce access latency.<ul><li>Note that the region cannot be changed after the instance is successfully created.</li><li>We recommend that you select the same region as the CVM instance for private network communication.</li></ul></td></tr>
+<td>Select a region where your instance resides. We recommend you select a region closest to you to reduce access latency.<ul><li>Note that the region cannot be changed after the instance is successfully created.</li><li>We recommend that you select the same region as the CVM instance for private network communication.</li></ul></td></tr>
 <tr>
-<td>AZ</td>
+<td>Availability Zone</td>
 <td>Both single-AZ and multi-AZ deployment schemes are supported.<ul><li>Select an AZ in the region where the instance resides.</li><li>If you select <b>multi-AZ deployment</b>, select AZs for the <b>primary node</b>, <b>secondary node 1</b>, and <b>secondary node 2</b>. To ensure successful cross-AZ switch, <b>multi-AZ deployment</b> only supports deploying instance nodes to three AZs.</li></ul></td></tr>	
 <tr>
 <td>Configuration Type</td>
@@ -59,7 +59,7 @@ You have registered a Tencent Cloud account and completed identity verification.
 <td>Select the computing specification for your database instance. For available computing specifications, see <a href="https://intl.cloud.tencent.com/document/product/240/3550">Billing Overview</a>.</td></tr> 
 <tr>
 <td>Capacity</td>
-<td>Select storage capacity for your database instance based on the computing specification you selected. By default, the storage space for oplog is 10% of the total storage capacity you selected. You can adjust the oplog size in the console.</td></tr>
+<td>It is the disk capacity of each mongod node. After you select the mongod computing specification, the default disk capacity will be matched, and you can also select another capacity on the slider as needed. Here, the default oplog storage space is 10% of the selected storage capacity.</td></tr>
 <tr>
 <td>Network</td>
 <td>Both <b>VPC (recommended)</b> and <b>classic network</b> are supported. If you select the private network, only devices in the selected subnet can access the database instance. If you select the classic network, only devices in the selected classic network can access the database instance. If you need new networks, you can create <b>VPCs</b> or <b>subnets</b>.</td></tr>
@@ -76,7 +76,7 @@ You have registered a Tencent Cloud account and completed identity verification.
 <td>Instance Name</td>
 <td>You can select <b>Set After Creation</b> or <b>Set Now</b>. <br>The instance name can contain up to 60 letters, digits, or symbols (-_).</td></tr>  
 <tr>
-<td>Set Password</td>
+<td>Set a password</td>
 <td><b>Set Now</b> is selected by default.</td></tr>   
 <tr>
 <td>Username</td>
@@ -92,7 +92,7 @@ You have registered a Tencent Cloud account and completed identity verification.
 <td>Set security group rules to control the inbound/outbound traffic to/from your instance. You can either select a security group from the <b>Existing Security Groups</b> drop-down list or click <b>Custom Security Groups</b> to create one and set <b>inbound</b>/<b>outbound</b> rules. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/12452">Security Group</a>.</td></tr> 
 <tr>
 <td>Quantity</td>
-<td>You can purchase up to 30 instances in each region and up to 10 instances each time.</td></tr>
+<td>You can purchase up to 30 pay-as-you-go instances in each region and up to ten instances each time.</td></tr> 
 </tbody></table>
 
 3. Click **Billing Details** to view product pricing and confirm the total fees.
