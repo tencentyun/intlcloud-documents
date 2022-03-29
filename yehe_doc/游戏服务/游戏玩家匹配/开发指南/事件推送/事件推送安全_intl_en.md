@@ -1,4 +1,5 @@
 >!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31, , 2022.
+
 This document describes the security mechanism of GPM event notifications to help you identify reliable event messages and improve business security.
 
 ## Prerequisites

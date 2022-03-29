@@ -1,4 +1,5 @@
 >!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31, , 2022.
+
 #### How does a game client initiate a matchmaking request?
 Currently, a matchmaking request can be initiated only by calling the TencentCloud API. You need a server to process matchmaking requests from your players, and call TencentCloud GPM API to initiate matchmaking requests.
 
