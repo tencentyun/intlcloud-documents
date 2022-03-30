@@ -23,7 +23,7 @@ A public IP or EIP is only published in the region to which it belongs, and gene
 <tr>
 <td>Network price</td>
 <td>Higher unit price, bill by bandwidth</td>
-<td>Lower unit price, bill according to<a href="https://intl.cloud.tencent.com/document/product/213/39743">Public Network Fee</a>.
+<td>Lower unit price, bill according to <a href="https://intl.cloud.tencent.com/document/product/213/39743">Public Network Fee</a>.
 </tr>
 <tr>
 <td>Unbinding</td>
