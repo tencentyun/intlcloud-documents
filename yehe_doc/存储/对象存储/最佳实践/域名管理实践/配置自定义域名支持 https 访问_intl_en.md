@@ -50,7 +50,7 @@ server {
     }
 }
 ```
-`Server.crt;` and `server.key` are HTTPS certificates for your own (custom) domain. If no HTTPS certificate is available for your domain, you can apply for one at [Tencent Cloud SSL Certificate Service](https://intl.cloud.tencent.com/products/ss).
+`Server.crt;` and `server.key` are HTTPS certificates for your own (custom) domain. If no HTTPS certificate is available for your domain, you can apply for one at [Tencent Cloud SSL Certificate Service](https://intl.cloud.tencent.com/products/ssl).
 If no certificate is available, the following configuration information can be deleted, but an alarm will occur during access. Click Continue to access the bucket:
 ```shell
 ssl on;
