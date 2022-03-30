@@ -20,7 +20,7 @@
 ### 步骤1：创建新的应用
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 输入应用名称，例如 `TestTRTC`，单击【创建应用】。
-![](https://main.qcloudimg.com/raw/7178fb5203b8c1ad9eb4a3b7a3c008d7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 [](id:step2)
 ### 步骤2：下载 SDK 与源码
@@ -31,7 +31,7 @@
 4. 设置 `GenerateTestUserSig.cs` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/4dad4541a4a0d400441e9cd75c07ba1e.png"/>
+	
 
 [](id:step3)
 ### 步骤3：编译运行
@@ -68,7 +68,6 @@
 Demo 里面包含了已上线的大部分 API，可以测试和作为调用参考，API 文档参见 [SDK API（Unity）](https://intl.cloud.tencent.com/zh/document/product/647/40139)。
 >? UI 可能会有部分调整更新，请以最新版为准。
 
-![](https://main.qcloudimg.com/raw/2ce3ab51c6fdc843c1e8b086b55840c0.png)
 
 ## 目录结构
 ```
