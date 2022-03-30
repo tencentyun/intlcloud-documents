@@ -62,7 +62,7 @@ In **Test Management** > **Test Plan**, you can configure the iteration of the t
 ##  Project Release
 
 After the basic development task has been completed, you can use CODING's continuous integration/deployment services to quickly validate the code.
-<dx-alert infotype="explain" title="扩展阅读">
+<dx-alert infotype="explain" title="Extended reading">
 <ul style = "margin-bottom: 0px;">
 <li><a href = "https://help.coding.net/docs/ci/start.html">Continuous Integration - Getting Started</a></li>
 <li><a href = "https://help.coding.net/docs/cd/start.html">Continuous Deployment - Sample Project</a></li>

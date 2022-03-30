@@ -39,7 +39,7 @@ In **Plans**, set the time period using the filter in the upper-right corner to 
 
 In **Plans**, the Gantt chart on the right intuitively shows the completion status of all issues in the entire plan, so managers can assess and manage progress and coordinate lagging issues to ensure the plan stays on track.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a95b731e17136e72996935fe4788d49a.png)
-<dx-alert infotype="explain" title="颜色说明">
+<dx-alert infotype="explain" title="Color description">
 
 <ul style = "margin-bottom: 0px;">
 <li>Completed: green</li>

@@ -21,7 +21,7 @@ The iteration details on the left of **Overview and Statistics** show all inform
 
 The issue status trend chart in the upper-right corner of **Overview and Statistics** is a stacked area chart showing the change in issue status versus time, highlighting aggregate trends in issues for the development team. You can switch between issues in the dropdown menu. The different area colors indicate different issue statuses, helping teams manage issue progress and make the necessary adjustments to lagging issues.
 ![](https://qcloudimg.tencent-cloud.cn/raw/663f9be69363bb62d60d6a1f20d2eba1.png)
-<dx-alert infotype="explain" title="颜色说明">
+<dx-alert infotype="explain" title="Color description">
 
 <ul style = "margin-bottom: 0px;"><li>Green: Completed</li>
 <li>Orange: In progress</li>
