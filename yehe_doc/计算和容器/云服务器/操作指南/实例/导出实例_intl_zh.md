@@ -5,10 +5,19 @@
 ## 操作步骤
 
 1.  登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
-2. 选择地域。
-3. 单击实例列表右上方的 <img src="https://main.qcloudimg.com/raw/cea73c3a873320c8451955ce1073683d.png" style="margin:0;"></img> 。如下图所示：
-![](https://main.qcloudimg.com/raw/23966592d8f5340c1873d5f7a8fbfad8.png)
-4. 在弹出的“自定义导出字段”窗口中，勾选需要导出的字段，单击【确定】，即可导出。如下图所示：
-> 自定义导出字段最多勾选27个字段。
->
+2. 在实例管理页面上方，选择地域，根据实际使用的视图模式进行操作：
+<dx-tabs>
+::: 列表视图
+单击实例列表右上方的 <img src="https://main.qcloudimg.com/raw/cea73c3a873320c8451955ce1073683d.png" style="margin:0;"></img> 。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/e476c51784bfdbc0ba148817ab3830fd.png)
+
+:::
+::: 页签视图
+单击实例页面右上方的 <img src="https://main.qcloudimg.com/raw/cea73c3a873320c8451955ce1073683d.png" style="margin:0;"></img> 。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/31378b42b5cd56a5af458149c1ae34a6.png)
+
+:::
+</dx-tabs>
+4. 在弹出的“自定义导出字段”窗口中，勾选需要导出的字段，单击**确定**，即可导出。如下图所示：
 ![](https://main.qcloudimg.com/raw/3d851a6c5b744abd5ff107bfedf2a04d.png)
+
