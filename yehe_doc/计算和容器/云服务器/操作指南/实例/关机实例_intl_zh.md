@@ -7,21 +7,40 @@
 - 实例关机后，将无法提供服务。因此在关机之前，请确保云服务器已暂停业务请求。
 - 实例正常关闭，状态先变为关机中，关机完成后再变更为已关机。若关机时间过长可能出现问题，详情可参见  [关机相关](https://intl.cloud.tencent.com/document/product/213/2917)，避免强行关机。
 - 实例关机后，所有存储保持连接至实例状态，所有磁盘数据都被保留。内存中的数据将丢失。
-- 关机实例不改变实例的物理特性。实例公网 IP、内网 IP 保持不变； [弹性公网 IP](https://intl.cloud.tencent.com/document/product/213/5733) 维持绑定关系，但由于服务中断，访问这些 IP 时，会得到错误响应； [基础网络互通](https://intl.cloud.tencent.com/document/product/215/31807) 关系维持不变。
+- 关机实例不改变实例的物理特性。实例公网 IP、内网 IP 保持不变；[弹性公网 IP](https://intl.cloud.tencent.com/document/product/213/5733) 维持绑定关系，但由于服务中断，访问这些 IP 时，会得到错误响应； [基础网络互通](https://intl.cloud.tencent.com/document/product/215/31807) 关系维持不变。
 - 如果关机实例属于 [负载均衡实例的后端服务器集群](https://intl.cloud.tencent.com/document/product/214/32388) ，关机后无法继续提供服务。
 若配置了健康检查策略，则可自动屏蔽关机实例并不再向其转发请求。若没有配置健康检查策略，客户端可能会收到502错误返回。有关更多信息，请参阅 [健康检查](https://intl.cloud.tencent.com/document/product/214/38451)。
-- 如果关机实例处于 [弹性伸缩组](https://intl.cloud.tencent.com/document/product/377/3590) ，则 Auto Scaling 服务会将关机的实例标记为运行状况不佳，可能会将其移出弹性伸缩组并启动替换实例。有关更多信息，请参阅 [弹性伸缩](https://intl.cloud.tencent.com/document/product/377)。
+- 如果关机实例处于 [弹性伸缩组](https://intl.cloud.tencent.com/document/product/377/3590) ，则 Auto Scaling 服务会将关机的实例标记为运行状况不佳，可能会将其移出弹性伸缩组并启动替换实例。有关更多信息，请参阅 [弹性伸缩](https://intl.cloud.tencent.com/zh/document/product/377)。
 
 ## 操作步骤
-### 通过控制台关机实例
- 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
- 2. 根据实际需求，选择不同的操作方式。
-  - 关机单个实例：选择需要关机的实例，并在右侧操作栏中，单击【更多】>【实例状态】>【关机】。
-  - 关机多个实例：勾选所有需要关机的实例，在列表顶部，单击【关机】，即可批量关机实例。
-  不能关机的实例会显示原因。
+<dx-tabs>
+::: 通过控制台关机实例
 
-### 通过 API 关机实例
+#### 关机单个实例
+ 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
+ 2. 在实例的管理页面，根据实际使用的视图模式进行操作：
+  - **列表视图**：选择需要关机的实例，并在右侧操作栏中，选择**更多** > **实例状态** > **关机**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/e46cac67a3040e2a5ba851c24d386f0e.png)
+  - **页签视图**：在需关机的实例页面，选择右上角的**更多操作** > **实例状态** > **关机**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/e15c3a175ce068f4d3070b232026bc54.png)
+
+
+
+
+#### 关机多个实例
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
+2. 勾选所有需要关机的实例，在列表顶部，单击**关机**，即可批量关机实例。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/b467b958fcb01c5183fbcfe8bded913c.png)
+<dx-alert infotype="explain" title="">
+不能关机的实例会显示原因。
+</dx-alert>
+
+
+:::
+::: 通过\sAPI\s关机实例
 请参考 [StopInstances](https://intl.cloud.tencent.com/document/product/213/33235) 接口。
+:::
+</dx-tabs>
 
 ## 后续操作
 只有在实例关机状态时，您才能修改以下实例属性：

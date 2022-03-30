@@ -152,19 +152,20 @@ Determining whether the bucket exists:
 [//]: # (.cssg-snippet-head-bucket)
 ```js
 function doesBucketExist() {
-  cos.headBucket({
-    Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',     /* Bucket region. Required */
-  }, function(err, data) {
-      if (err) return console.log(err);
-      if (data.statusCode === 404) {
-          console.log('The bucket does not exist.');
-      } else {
-          // If `statusCode` is `403`, you do not have the permission to read the bucket.
-          console.log('The bucket exists.');
-      }
-  });
+    cos.headBucket({
+        Bucket: 'examplebucket-1250000000', /* Required */
+        Region: 'COS_REGION',     /* Bucket region. Required */
+    }, function(err, data) {
+        if (data) {
+            console.log('The bucket exists.');
+        } else if (err.code == 404) {
+            console.log('The bucket does not exist.');
+        } else if (err.code == 403) {
+            console.log ('no permission to read the bucket');
+        }
+    });
 }
+
 ```
 
 #### Parameter description

@@ -2,7 +2,7 @@ This document describes how to implement objective and key result (OKR) manageme
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING page.
+1. Log in to the CODING Console and click **Use Now** to go to CODING page.
 2. In the menu on the left of the homepage, click **Objectives** to go to the team objectives page.
 
 A typical quarterly OKR cycle is as follows:

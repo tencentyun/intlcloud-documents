@@ -5,7 +5,7 @@
 
 ## 初始化教学项目
 
-1. 进入 [CODING 页面](https://console.cloud.tencent.com/coding)，单击页面左边的<img src ="https://main.qcloudimg.com/raw/7531b01c25014beb2754277107fc4ab1.png" style ="margin:0">项目按钮，单击项目列表内右上角的创建项目按钮。
+1. 进入 CODING 页面，单击页面左边的<img src ="https://main.qcloudimg.com/raw/7531b01c25014beb2754277107fc4ab1.png" style ="margin:0">项目按钮，单击项目列表内右上角的创建项目按钮。
 2. 选择从教学项目开始。
 3. 单击经典项目管理教学项目。
 4. 填写项目名称与标识，完成创建。

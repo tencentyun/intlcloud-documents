@@ -1,3 +1,5 @@
+>!由于产品逻辑已无法满足游戏行业技术发展，游戏玩家匹配 GPM 将于2022年6月1日下线，请您在2022年5月31日前完成服务迁移。
+
 本文为您介绍游戏玩家匹配 GPM 不同类型的规则。
 
 ## 差值规则
@@ -63,7 +65,7 @@
 
 
 - #### 规则实现
-GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间差距的绝对值，不超过 maxDistance 且不小于 minDistance。
+  GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间差距的绝对值，不超过 maxDistance 且不小于 minDistance。
     - 当 measurements 中的表达式计算结果为一个数值时，用这个数值与 referenceValue 进行比较。
     - 当 measurements 中的表达式计算结果为一个数值列表时，用列表中的每一个元素与 referenceValue 进行比较。
 
@@ -137,7 +139,7 @@ GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间�
 </tbody></table>
 
 - #### 规则实现
-GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间相对大小，满足 operation 定义的表判断符。
+  GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间相对大小，满足 operation 定义的表判断符。
     - 当 measurements 中的表达式计算结果为一个数值时，用这个数值与 referenceValue 进行相对大小比较。
     - 当 measurements 中的表达式计算结果为一个数值列表时，用列表中的每一个元素与 referenceValue 进行相对大小比较。
     - 当 measurements 中的表达式计算结果为一个字符串时，判断这个字符串与 referenceValue 是否一致。

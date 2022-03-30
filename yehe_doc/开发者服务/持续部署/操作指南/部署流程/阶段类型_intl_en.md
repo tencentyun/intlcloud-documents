@@ -6,7 +6,7 @@ You must activate the CODING DevOps service for your Tencent Cloud account befor
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING.
+1. Log in to the CODING Console and click **Use Now** to go to CODING.
 2. On the Workspace homepage, click <img src ="https://main.qcloudimg.com/raw/12230547b45d5eae85ad1c4fa86fba68.png" style ="margin:0" data-nonescope="true"> on the left to go to the CODING-CD Console.
 
 ## General Types

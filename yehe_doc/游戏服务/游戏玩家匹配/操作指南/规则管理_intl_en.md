@@ -1,3 +1,5 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31 , 2022.
+
 This document describes how to manage rules through console.
 
 ## Prerequisites
@@ -35,7 +37,6 @@ On the **Rules** page, select a rule in the rule list and click **Delete** in th
 >!Once deleted, the rule cannot be restored. If you want to delete the rule that is being associated with a match, you can modify the matchmaking information first to disassociate the match from the rule.
 >
 ![](https://main.qcloudimg.com/raw/e88d043965ac7ec0d2a631da8925be53.jpg)
-
 
 
 

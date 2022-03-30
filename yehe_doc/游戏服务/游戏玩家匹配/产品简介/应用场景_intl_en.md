@@ -1,3 +1,5 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31 , 2022.
+
 GPM is suitable for a variety of use cases. Here we list some examples.
 
 ### Use Case 1: Player Matchmaking

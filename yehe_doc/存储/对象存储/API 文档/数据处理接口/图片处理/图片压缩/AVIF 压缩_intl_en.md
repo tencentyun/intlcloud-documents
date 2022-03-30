@@ -13,7 +13,6 @@ COS launched the AVIF compression feature based on [CI](https://intl.cloud.tence
 
 ## Prerequisites
 
-- Currently, AVIF compression is in beta testing and only supports buckets in the Beijing, Shanghai, or Guangzhou region. To use AVIF compression, please apply for its beta test.
 - To use AVIF compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, please see [Setting Image Advanced Compression](https://intl.cloud.tencent.com/document/product/436/40117).
 
 ## How to Use

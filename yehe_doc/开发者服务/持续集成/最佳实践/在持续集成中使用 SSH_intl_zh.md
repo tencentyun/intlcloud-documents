@@ -4,7 +4,7 @@
 设置 CODING 持续集成中构建环境前，您的腾讯云账号需要开通 CODING DevOps 服务。
 
 ## 进入项目
-1. 登录 [CODING 控制台](https://console.cloud.tencent.com/coding)，单击**团队域名**进入 CODING 使用页面。
+1. 登录 CODING 控制台，单击**团队域名**进入 CODING 使用页面。
 2. 单击页面右上角的 <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0">，进入项目列表页面，单击**项目图标**进入目标项目。
 3.  进入左侧菜单栏的**持续集成**功能。
 

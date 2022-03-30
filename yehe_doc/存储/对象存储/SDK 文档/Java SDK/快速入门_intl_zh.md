@@ -63,7 +63,7 @@ COS Java SDK 的包名为`com.qcloud.cos.*`，您可以通过 Eclipse 或者 Int
 
 若您使用永久密钥初始化 COSClient，可以先在访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取 APPId、SecretId、SecretKey，使用永久密钥适用于大部分的应用场景，参考示例如下：
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```java
 // 1 初始化用户身份信息（secretId, secretKey）。
 // SECRETID和SECRETKEY请登录访问管理控制台 https://console.cloud.tencent.com/cam/capi 进行查看和管理
@@ -83,7 +83,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 
 您也可以使用临时密钥初始化 COSClient，临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)，参考示例如下：
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```java
 // 1 传入获取到的临时密钥 (tmpSecretId, tmpSecretKey, sessionToken)
 String tmpSecretId = "SECRETID";
@@ -104,8 +104,8 @@ ClientConfig 类为配置信息类，主要的成员如下：
 |  成员名 | 设置方法            | 描述                                                         | 类型    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | region   | 构造函数或 set 方法 | 存储桶所在的地域，COS 地域的简称请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档 | Region  |
-| httpProtocol       | set 方法 |  请求所使用的协议，默认使用 HTTP 协议与 COS 交互| HttpProtocol  |
-| signExpired      | set 方法 | 请求签名的有效时间，单位：秒，默认为3600s   | int |
+| httpProtocol       | set 方法 |  请求所使用的协议，默认使用 HTTPS 协议与 COS 交互| HttpProtocol  |
+| signExpired      | set 方法 | 请求签名的有效时间，单位：秒，默认为3600s   | long |
 | connectionTimeout      | set 方法 | 连接 COS 服务的超时时间，单位：毫秒，默认为30000ms        | int |
 | socketTimeout      | set 方法 |  客户端读取数据的超时时间，单位：毫秒，默认为30000ms          | int |
 | httpProxyIp       | set 方法 | 代理服务器的 IP | String  |
@@ -116,7 +116,7 @@ ClientConfig 类为配置信息类，主要的成员如下：
 
 用户确定地域和存储桶名称后，参考如下示例创建存储桶：
 
-[//]: # ".cssg-snippet-put-bucket-and-grant-acl"
+[//]: # (.cssg-snippet-put-bucket-and-grant-acl)
 ```java
 String bucket = "examplebucket-1250000000"; //存储桶名称，格式：BucketName-APPID
 CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket);
@@ -135,7 +135,7 @@ try{
 
 查询用户的存储桶列表，参考示例如下：
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```java
 List<Bucket> buckets = cosClient.listBuckets();
 for (Bucket bucketElement : buckets) {
@@ -158,7 +158,7 @@ for (Bucket bucketElement : buckets) {
 
 上传不超过5GB的文件，参考示例如下：
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```java
 // 指定要上传的文件
 File localFile = new File(localFilePath);
@@ -174,7 +174,7 @@ PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
 
 查询存储桶中对象列表，参考示例如下：
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -223,7 +223,7 @@ do {
 上传对象后，您可以用同样的 key，调用 GetObject 接口将对象下载到本地，也可以生成预签名链接（下载请指定 method 为 GET，详情请参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31536)），分享到其他终端来进行下载。但如果您的文件设置了私有读权限，那么请注意预签名链接的有效期。
 将文件下载到本地指定路径，参考示例如下：
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -249,7 +249,7 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 
 删除 COS 上指定路径的对象，代码如下：
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -269,7 +269,7 @@ cosClient.deleteObject(bucketName, key);
 
 设置重试次数：
 
-[//]: # ".cssg-snippet-error-retry"
+[//]: # (.cssg-snippet-error-retry)
 ```java
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
@@ -279,7 +279,7 @@ clientConfig.setMaxErrorRetry = 4;
 
 设置重试策略：
 
-[//]: # ".cssg-snippet-retry-policy"
+[//]: # (.cssg-snippet-retry-policy)
 ```java
 // 自定义重试策略
 public class OnlyIOExceptionRetryPolicy extends RetryPolicy {

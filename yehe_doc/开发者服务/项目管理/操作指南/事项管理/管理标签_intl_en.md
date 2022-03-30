@@ -2,7 +2,7 @@ This document describes how to use Tag Management in CODING Project Collaboratio
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING page.
+1. Log in to the CODING Console and click **Use Now** to go to CODING page.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a project icon to open the project.
 3. Click **Project Collaboration** in the menu on the left.
 

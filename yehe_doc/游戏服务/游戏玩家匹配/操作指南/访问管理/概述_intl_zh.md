@@ -1,3 +1,5 @@
+>!由于产品逻辑已无法满足游戏行业技术发展，游戏玩家匹配 GPM 将于2022年6月1日下线，请您在2022年5月31日前完成服务迁移。
+
 访问管理（Cloud Access Management，CAM）是腾讯云提供的一套 Web 服务，它主要用于帮助客户安全管理腾讯云账户下的资源的访问权限。通过 CAM，您可以创建、管理和销毁用户（组），并通过身份管理和策略管理控制哪些人可以使用哪些腾讯云资源。
 
 当您使用 CAM 的时候，可以将策略与一个用户或一组用户关联起来，策略能够授权或者拒绝用户使用指定资源完成指定任务。有关 CAM 策略的更多相关基本信息，详情请参见 [策略语法](https://intl.cloud.tencent.com/document/product/598/10603)。有关 CAM 策略的更多相关使用信息，详情请参见 [策略说明](https://intl.cloud.tencent.com/document/product/598/10601)。
@@ -21,7 +23,6 @@ GPM 部分 API 操作不支持资源级权限，意味着对于该类 API 操作
 | 在策略中定义资源     | [GPM 的资源路径](https://intl.cloud.tencent.com/document/product/1072/39213) |
 | GPM 支持的资源级权限 | [可授权资源类型](https://intl.cloud.tencent.com/document/product/1072/39212) |
 | 控制台示例           | [访问控制示例](https://intl.cloud.tencent.com/document/product/1072/39211) |
-
 
 
 

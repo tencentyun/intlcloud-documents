@@ -1,3 +1,5 @@
+>!由于产品逻辑已无法满足游戏行业技术发展，游戏玩家匹配 GPM 将于2022年6月1日下线，请您在2022年5月31日前完成服务迁移。
+
 本文为您介绍 GPM 的事件消息推送的安全机制，帮助您识别可靠的事件消息，提高业务安全性。
 
 ## 前提条件
@@ -29,5 +31,4 @@ MatchToken 相当于为您的 MatchCode 设定一把钥匙，用于验证此 Mat
 为 MatchCode 设置 MatchToken 完成后，该 MatchCode 的每一条事件消息都将在推送体的 **MatchTokens** 字段里包含当前生效中的所有 MatchToken，即最新的 MatchToken 和所有未超过兼容时间的旧 MatchToken。
 
 ​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-
 

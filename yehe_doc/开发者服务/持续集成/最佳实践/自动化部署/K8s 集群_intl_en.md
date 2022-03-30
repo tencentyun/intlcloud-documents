@@ -4,7 +4,7 @@ This document describes how to use Continuous Integration to release a project t
 Before configuring the CODING Continuous Integration (CODING-CI) build environment, you must activate the CODING DevOps service for your Tencent Cloud account.
 
 ## Open Project
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click the **team domain name** to go to CODING.
+1. Log in to the CODING Console and click the **team domain name** to go to CODING.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a **project icon** to open the project.
 3. Select **Continuous Integration** from the menu on the left.
 

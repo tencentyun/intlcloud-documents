@@ -6,7 +6,7 @@ You must activate the CODING DevOps service for your Tencent Cloud account befor
 
 ## Open Admin Settings
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click the team domain name to go to CODING.
+1. Log in to the CODING Console and click the team domain name to go to CODING.
 2. Hover over your profile photo in the upper-right corner to open the Team Management page through the dropdown list. Then, click "Permission Configuration" to open the Admin page.
 
 ## Permission Control

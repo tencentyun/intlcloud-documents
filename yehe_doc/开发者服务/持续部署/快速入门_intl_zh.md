@@ -5,7 +5,7 @@
 
 
 ## 进入项目
-1. 登录 [CODING 控制台](https://console.cloud.tencent.com/coding)，单击**立即使用**进入 CODING 使用页面。
+1. 登录 CODING 控制台，单击**立即使用**进入 CODING 使用页面。
 2. 单击工作台首页左侧的 <img src ="https://main.qcloudimg.com/raw/12230547b45d5eae85ad1c4fa86fba68.png" width="15"style ="margin:0" data-nonescope="true">，进入持续部署控制台。
 
 ## 功能介绍[](id:intro)

@@ -1,32 +1,29 @@
 Terminated instances will be put into the recycle bin and can be restored.
 
 ## Background
-Tencent Cloud recycle bin is a cloud service repossession mechanism. When your account balance is sufficient, if you need to restore terminated instances, you can do so during the retention period.
+Tencent Cloud recycle bin offers a mechanism for repossessing cloud services. If your account balance is sufficient, you can restore terminated instances that are still in the recycle bin.
 
-## Version Description
+## Version Requirement
 Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support instance repossession.
 
 ## Notes
-The repossession of pay-as-you-go instances is as described below:
+For pay-as-you-go instances in the recycle bin:
 
-<dx-tabs>
-::: Pay-as-You-Go instances in the recycle bin
-
-- **Retention period:** if your account has no overdue payments, terminated instances will be retained in the recycle bin for 3 days.
-- **Expiration processing**: instances that are not renewed before the retention period ends will be released and cannot be restored.
+- **Retention period:** If your account has no overdue payments, terminated instances will be retained in the recycle bin for three days.
+- **Expiration processing**: Instances that are not renewed before the retention period ends will be released and cannot be restored.
 >! 
->- If your account has overdue payments, pay-as-you-go instances will not be put into the recycle bin.
->- You cannot restore pay-as-you-go instances in the recycle bin if your account has overdue payments. You need to top up your account first.
->- Pay-as-You-Go instances are retained in the recycle bin for a maximum of 3 days. Pay attention to the release time and top up your account in time to restore the instances.
+>- After the account balance becomes 0, instances will be automatically shut down and moved from the instance list to the recycle bin, and the billing will stop in 24 hours.
+>- You cannot restore pay-as-you-go instances from the recycle bin if your account has overdue payments. You need to top up your account first.
+>- Pay-as-you-go instances are retained in the recycle bin for a maximum of three days. You need to top up your account in time to restore the instances.
 :::
 </dx-tabs>
 
 ## Prerequisites
-- Your TencentDB for MongoDB instance has been terminated.
+- The TencentDB for MongoDB instance has been terminated.
 - Your Tencent Cloud account balance is sufficient.
 
 ## Directions
-Instances in the recycle bin can be **renewed**, **restored**, or **eliminated**.
+You can [**renew**](https://cloud.tencent.com/document/product/240/3552), **restore**, or **eliminate** instances in the recycle bin.
 
 ### Viewing instance in recycle bin
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb).
@@ -38,7 +35,7 @@ Instances in the recycle bin can be **renewed**, **restored**, or **eliminated**
 ### Restoring one instance
 1. In the instance list in the recycle bin, find the target instance and click **Restore** in the **Operation** column.
 2. In the **Restore Instance** window, confirm the instance information and click **OK**.
-The instance will return to the instance list in the replica set or sharded cluster from the recycle bin.
+The instances will return to the instance list in the replica set or sharded cluster from the recycle bin.
 
 ### Batch restoring instances
 1. In the instance list in the recycle bin, select the target instances.

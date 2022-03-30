@@ -5,6 +5,8 @@
 ### shell 方式
 MongoDB Shell 是 MongoDB 自带的一种交互式 JavaScript 命令行管理工具， 对很多常用的命令进行了封装，您可以在云服务器 CVM 上安装 MongoDB Shell 工具，然后使用 Shell 命令连接 MongoDB 实例，进而对数据库进行读写、更新或者查询等操作。
 
+>!使用 [云服务器 CVM](https://intl.cloud.tencent.com/document/product/213/10517) 连接自动分配给云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。云服务器和数据库须是同一账号，且同一个 VPC 内（保障同一个地域），或同在基础网络内。暂不支持外网访问方式。
+
 ### URI 方式
 URI 是统一资源标志符（Uniform Resource Identifier），是 Web 上每一种可用资源的唯一标识。MongoDB 官方推荐使用 URI 的方式连接 MongoDB，大部分的驱动程序也支持 URI 形式连接。
 
@@ -32,8 +34,6 @@ URI 各个组成部分含义解释如下表所示。更多内容，请参见 [Mo
 | authSource=admin | 身份认证所用库，云数据库 MongoDB 固定为 admin |是，更多信息，请参见 [认证数据库](#rzsjk)|
 | readPreference=secondaryPreferred | 可以设置优先读从库 |是，更多信息，请参见 [读操作的主从优先级](#dczdzcyxj)|
 
-## 注意事项
-使用 [云服务器 CVM](https://intl.cloud.tencent.com/document/product/213/10517) 连接自动分配给云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。云服务器和数据库须是同一账号，且同一个 VPC 内（保障同一个地域），或同在基础网络内。暂不支持外网访问方式。
 
 ## 通过 Shell 方式连接数据库
 介绍通过 mongo shell 方式连接数据库的操作方法。
@@ -41,6 +41,9 @@ URI 各个组成部分含义解释如下表所示。更多内容，请参见 [Mo
 ### 前提条件
 - [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 - 申请与云数据库 MongoDB 实例在同一地域同一个 VPC 内的 Linux [云服务器 CVM](https://intl.cloud.tencent.com/document/product/213/10517)。
+- 已 [创建云数据库 MongoDB 实例](https://intl.cloud.tencent.com/document/product/240/3551)，且状态为**运行中**。
+- 已在**数据库管理**页面的**账号管理**页签获取访问数据库实例用户名与密码信息。具体操作，请参见 [账号管理](https://intl.cloud.tencent.com/document/product/240/44183)。
+- 已在**实例列表**获取访问数据库实例的内网 IP 地址与端口。具体操作，请参见 [实例详情](https://intl.cloud.tencent.com/document/product/240/44179)。
 
 ### 操作步骤
 #### 步骤1：登录云服务器 CVM
@@ -71,7 +74,12 @@ cd mongodb-linux-x86_64-rhel70-XX.XX.XX
 ```
 ./bin/mongo -umongouser -plxh***** 172.xx.xx.xx:27017/admin 
 ```
-其中，-u 后面指示连接数据库的用户名，-p 后面指示用户名的密码， 172.xx.xx.xx 和 27017 分别指定 MongoDB 实例的 IP 和端口，请您根据实际配置信息替换。连接成功提示信息如下所示。
+其中，-u 后面指示连接数据库的用户名，-p 后面指示用户名的密码， 172.xx.xx.xx 和 27017 分别指定 MongoDB 实例的 IP 和端口，可在请您根据实际配置信息替换。如忘记用户名与密码，请参见 [账号管理](https://intl.cloud.tencent.com/document/product/240/44183) 查看修改账号密码信息。
+您可在**实例列表**获取访问数据库实例的内网 IP 地址与端口。
+![](https://qcloudimg.tencent-cloud.cn/raw/18549a1bb4836814da29c6db9c27ec06.png)
+如果为多个 IP 访问，可将多个 IP 分别配置，使用英文逗号分隔开即可，例如：`--host 172.XX.XX.XX:27017,172.XX.XX.XX:27017,172.30.XX.XX:27017`。
+连接成功提示信息如下所示。
+
 ```
 MongoDB shell version v4.2.16
 connecting to: mongodb://172.x.x.X:27017/admin?compressors=disabled&gssapiServiceName=mongodb
@@ -118,7 +126,7 @@ MongoDB 副本集实例（4.0版）连接方式与其他版本规格有所不同
 ```
 mongodb://mongouser:******@192.168.xx.xx:27017,192.168.x.xx:27017,192.168.x.xx:27017/admin?authSource=admin&replicaSet=cmgo-******
 ```
-![](https://qcloudimg.tencent-cloud.cn/raw/dede12bbaa607c608886ab323bd0b8b5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6cff251e0b903f02baf8dc7d7a9aa27d.png)
 3. 通过 URI 连接副本集实例，各语言连接方式，请参见 [连接示例](#ljsl)。
 
 ## 更多参考

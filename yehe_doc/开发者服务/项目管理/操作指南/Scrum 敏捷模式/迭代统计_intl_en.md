@@ -3,7 +3,7 @@ This document describes iteration statistics in Scrum agile management.
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING.
+1. Log in to the CODING Console and click **Use Now** to go to CODING.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a project icon to open the project.
 3. In the menu on the left, click **Project Collaboration**. 
 
@@ -21,7 +21,7 @@ The iteration details on the left of **Overview and Statistics** show all inform
 
 The issue status trend chart in the upper-right corner of **Overview and Statistics** is a stacked area chart showing the change in issue status versus time, highlighting aggregate trends in issues for the development team. You can switch between issues in the dropdown menu. The different area colors indicate different issue statuses, helping teams manage issue progress and make the necessary adjustments to lagging issues.
 ![](https://qcloudimg.tencent-cloud.cn/raw/663f9be69363bb62d60d6a1f20d2eba1.png)
-<dx-alert infotype="explain" title="颜色说明">
+<dx-alert infotype="explain" title="Color description">
 
 <ul style = "margin-bottom: 0px;"><li>Green: Completed</li>
 <li>Orange: In progress</li>

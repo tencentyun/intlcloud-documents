@@ -22,23 +22,20 @@
 ## 操作步骤
 ### 快速查看实例监控数据
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)。
-
 2. 在左侧导航栏 **MongoDB** 的下拉列表中，选择**副本集实例**或者**分片实例**。副本集实例与分片实例操作类似。
-
 3. 在右侧实例列表页面上方，选择地域。
-
 4. 在实例列表中，找到目标实例。
-
-5. 在目标实例的**监控/状态**列，单击<img src="https://qcloudimg.tencent-cloud.cn/raw/e7563e7cc13faab92822ca56af11cf19.png" style="zoom:50%;" />，在实例监控面板，可快速查看实例的监控数据。
-   
-   ![](https://qcloudimg.tencent-cloud.cn/raw/3160fb160516f421e06bb05ce82c6da6.png)
-   
+5. 在目标实例的**监控/状态**列，单击<img src="https://qcloudimg.tencent-cloud.cn/raw/e7563e7cc13faab92822ca56af11cf19.png" style="zoom:50%;" />，在实例监控面板，可快速查看实例的监控数据。![](https://qcloudimg.tencent-cloud.cn/raw/3160fb160516f421e06bb05ce82c6da6.png)
    - 选择**实时**、**近24小时**、**近7天**或者任意时间段，您可以查看对应时间段内的监控数据。
-- 在**请求**、**连接数**、**容量和QPS**或**时延**页签，您还可以结合监控指标的不同分类查看对应的监控数据。
+   - 在**请求**、**连接数**、**容量和QPS**或**时延**页签，您还可以结合监控指标的不同分类查看对应的监控数据。
    - 在**时间粒度**的下拉列表中，您可以设置监控数据的采集粒度，获取细粒度的监控数据。
    - 单击**多实例对比监控**，进入云监控 **Dashboard 列表**页面， [新建 Dashboard](https://intl.cloud.tencent.com/document/product/248/38468)，选择需监控的相关实例，并设置  [监控图表](https://intl.cloud.tencent.com/document/product/248/38477)，您就可以在同一图表中对比多个实例的监控数据。如下图所示。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/3f30313c3f6182cb4ec99592d98ec41b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dd81a40ff7cb5cecc63cad274cda4c78.png)
    - 单击**配置告警**，进入云监控的**新建告警策略**页面。设置**策略类型**为**云数据库 / MongoDB / 实例**，选择**告警对象**，并设置监控指标的**触发条件**，配置告警通知方式， 帮助您第一时间了解业务异常，并及时预防风险、避免故障发生。具体操作，请参见 [新建告警策略](https://intl.cloud.tencent.com/document/product/248/38916)。
+
+### 大屏展示监控数据
+在目标实例的**监控/状态**列，单击<img src="https://qcloudimg.tencent-cloud.cn/raw/9f09fd5be10ed038087abe183892a3ef.png" style="zoom:50%;" />，大屏展示监控数据。如下图所示。
+![](https://qcloudimg.tencent-cloud.cn/raw/3f30313c3f6182cb4ec99592d98ec41b.png)
 
 ### 查看监控详情
 1. 在 [实例列表](https://console.cloud.tencent.com/mongodb) 中，找到目标实例。
@@ -68,6 +65,6 @@
 在实例监控页面右侧上方，单击**设置告警**，进入云监控的 **新建告警策略** 页面。设置**策略类型**为**云数据库 / MongoDB / 实例**，选择**告警对象**，并设置监控指标的**触发条件**，配置告警通知方式， 帮助您第一时间了解指标发生的异常，及时预防风险、避免故障发生。具体操作，请参见 [新建告警策略](https://intl.cloud.tencent.com/document/product/248/38916)。
 
 **数据对比**
-在实例监控页面右侧上方，您可以单击**数据对比**，设置对比的开始时间，默认对比1分钟前后的指标变化趋势。如下图所示。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/acf38a2b41f51bfca33f401d39e796dc.png" style="zoom:80%;" />
+在实例监控页面右侧上方，您可以单击**数据对比**，设置对比监控数据的时间范围，默认获取一小时内的数据，以不同颜色对比显示昨天与今天监控指标在该时间区间的变化曲线。
+![](https://qcloudimg.tencent-cloud.cn/raw/acf38a2b41f51bfca33f401d39e796dc.png)
 

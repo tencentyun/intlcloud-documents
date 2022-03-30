@@ -1,3 +1,4 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31,  2022.
 
 Resource-level permissions refer to the ability to specify which resources users are allowed to perform operations on. GPM supports resource-level permissions, which means that for certain GPM operations, you can control when users are allowed to perform them, or which specific resources that users are allowed to use. The following will describe the types of resources for which GPM allows permissions.
 

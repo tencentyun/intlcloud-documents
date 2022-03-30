@@ -1,3 +1,5 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31 , 2022.
+
 This document describes GPM matching rules.
 
 ## Difference Rule
@@ -63,7 +65,7 @@ A difference rule is used to limit the difference between the measurements and t
 
 
 - #### Implementation
-GPM will search for suitable MatchTicket that allows the absolute value of difference between `measurements` and `referenceValue` to be no more than `maxDistance` and no less than `minDistance`.
+  GPM will search for suitable MatchTicket that allows the absolute value of difference between `measurements` and `referenceValue` to be no more than `maxDistance` and no less than `minDistance`.
     - If the `measurement` expression is parsed into a number, it will be compared with `referenceValue`.
     - If the `measurement` expression is parsed into a list of numbers, each of its elements will be compared with `referenceValue`.
 
@@ -137,7 +139,7 @@ A comparison rule is used to indicate the relationship between string or numeric
 </tbody></table>
 
 - #### Implementation
-GPM will search for suitable MatchTicket that allows the relationship between `measurements` and `referenceValue` to satisfy the comparison operator specified in `operation`.
+  GPM will search for suitable MatchTicket that allows the relationship between `measurements` and `referenceValue` to satisfy the comparison operator specified in `operation`.
     - If the `measurement` expression is parsed into a number, it will be compared with `referenceValue`.
     - If the `measurement` expression is parsed into a list of numbers, each of its elements will be compared with `referenceValue`.
     - If the `measurement` expression is parsed into a string, it will be judged according to whether it is the same as `referenceValue`.

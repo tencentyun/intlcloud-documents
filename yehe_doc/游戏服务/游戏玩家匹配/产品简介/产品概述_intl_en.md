@@ -1,3 +1,5 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31 , 2022.
+
 ## Overview
 
 Game Player Matchmaking (GPM) is a powerful and flexible game player matchmaking service that supports multiple algorithms. With GPM, developers can easily write a script to achieve matchmaking for a variety of games without needing to consider complex logic. GPM can also automatically deliver matchmaking results to your hosted game server to start battles. This product greatly simplifies game development while enhancing game interaction for your players.
@@ -21,5 +23,4 @@ GPM provides a comprehensive feature covering matchmaking metrics including the 
 
 #### Logging
 GPM records and reports matchmaking logs.
-
 

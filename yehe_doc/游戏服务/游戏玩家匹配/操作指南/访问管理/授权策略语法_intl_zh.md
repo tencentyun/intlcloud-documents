@@ -1,3 +1,5 @@
+>!由于产品逻辑已无法满足游戏行业技术发展，游戏玩家匹配 GPM 将于2022年6月1日下线，请您在2022年5月31日前完成服务迁移。
+
 <span id = "celueyufa"></span>
 
 ### 策略语法
@@ -96,5 +98,4 @@ qcs:project_id:service_type:region:account:resource
 - 其中，project 指代的是项目 ID。
 - 其中，region 指代的是地域。
 - 其中，account 指代的是账户 ID。
-
 

@@ -1,6 +1,6 @@
 ## 概述
 
-对象存储 COS 在数据写入数据中心内的磁盘之前，支持在对象级别上应用数据加密的保护策略，并在访问数据时自动解密。加密和解密这一操作过程都是在服务端完成，这种服务端加密功能可以有效保护静态数据。
+对象存储（Cloud Object Storage，COS）在数据写入数据中心内的磁盘之前，支持在对象级别上应用数据加密的保护策略，并在访问数据时自动解密。加密和解密这一操作过程都是在服务端完成，这种服务端加密功能可以有效保护静态数据。
 
 >!
 > - 访问加密对象与访问未加密的对象在体验上并无差别，但前提是用户已拥有对象的访问权限。
@@ -42,7 +42,7 @@ SSE-COS 加密即 COS 托管密钥的服务端加密。由腾讯云 COS 托管�
 
 SSE-KMS 加密即使用 KMS 托管密钥的服务端加密。KMS 是腾讯云推出的一款安全管理类服务，使用经过第三方认证的硬件安全模块 HSM（Hardware Security Module）来生成和保护密钥。它能够帮助用户轻松创建和管理密钥，满足用户多应用多业务的密钥管理需求以及满足监管和合规要求。
 
-首次使用 SSE-KMS 加密，需要 [开通 KMS 服务](https://buy.cloud.tencent.com/kms)，开通 KMS 服务后，系统会自动为您创建一个默认主密钥（CMK）。您也可以通过 [KMS 控制台](https://console.cloud.tencent.com/kms2) 自主创建密钥，定义密钥策略及使用方法，KMS 支持用户自主选择密钥材料来源为 **KMS** 或**外部**，更多信息请参见  [外部密钥导入](https://intl.cloud.tencent.com/document/product/1030/32795)。
+首次使用 SSE-KMS 加密，需要 [开通 KMS 服务](https://buy.cloud.tencent.com/kms)，开通 KMS 服务后，系统会自动为您创建一个默认主密钥（CMK）。您也可以通过 [KMS 控制台](https://console.cloud.tencent.com/kms2) 自主创建密钥，定义密钥策略及使用方法，KMS 支持用户自主选择密钥材料来源为 **KMS** 或**外部**，更多信息请参见 [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971) 和 [外部密钥导入](https://intl.cloud.tencent.com/document/product/1030/32795)。
 
 >!
 > - SSE-KMS 仅加密对象数据，不会加密任何对象元数据。
@@ -70,14 +70,15 @@ SSE-KMS 加密即使用 KMS 托管密钥的服务端加密。KMS 是腾讯云推
 #### 注意事项
 若您未使用过 **COS 控制台**进行 SSE-KMS 加密，而只使用 **API** 的方式进行 SSE-KMS 加密时，您需先创建 [CAM 角色](https://intl.cloud.tencent.com/document/product/598/19420)，具体创建步骤如下：
 1. 登录访问管理控制台，进入 [角色](https://console.cloud.tencent.com/cam/role) 列表页面。
-2. 单击【新建角色】，选择角色载体为【腾讯云产品服务】。
-3. 选择支持角色的服务为【对象存储】，然后单击【下一步】。
+2. 单击**新建角色**，选择角色载体为**腾讯云产品服务**。
+3. 选择支持角色的服务为**对象存储**，单击**下一步**。
 ![](https://main.qcloudimg.com/raw/0c45c4dff7d73614a3656bbccf4cc112.png)
-4. 配置角色策略，搜索并勾选【QcloudKMSCreaterFullAccess】，然后单击【下一步】。
+4. 配置角色策略，搜索并勾选**QcloudKMSCreaterFullAccess**，单击**下一步**。
 ![](https://main.qcloudimg.com/raw/b3d8ef7f3c534f33207c47b7fb7725fb.png)
 5. 输入指定角色名称：COS_QcsRole。
 ![](https://main.qcloudimg.com/raw/830a4d4f36a0307a0bee92b6fd6dd24a.png)
-6. 最后单击【完成】即可创建完毕。
+6. 单击**完成**即可创建完毕。
+
 
 ### SSE-C 加密
 

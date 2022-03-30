@@ -7,8 +7,9 @@ Daily automatic backup is supported for instances in the following steps:
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance management page.
 2. On the instance management page, select the **Backup and Restoration** tab and click **Auto-Backup Settings**.
 3. In the pop-up window, configure the backup start time and retention period and click **OK**.
->? All options are selected for **Backup Schedule** by default and cannot be modified.
->
+>? 
+>- All options are selected for **Backup Schedule** by default and cannot be modified.
+>- Backup the retention time of the default 7 days, if you need to modify please [submit ticket](https://console.cloud.tencent.com/workorder/category).  
 ![](https://main.qcloudimg.com/raw/02813e57aa17fab2c5db77a3922469b0.png)
 4. The backup will start in the specified time period. During a backup task, you can view its status in the Task Center. After it is completed, you can view the generated backup in **Backup and Restoration**.
 >? Backup start may be delayed if affected by relevant processes.

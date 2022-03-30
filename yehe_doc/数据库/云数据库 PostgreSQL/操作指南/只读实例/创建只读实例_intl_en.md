@@ -23,7 +23,7 @@ Read-only replicas adopt PostgreSQL streaming replication, which can sync the ch
 
 ## Notes
 - There is no need to maintain accounts or databases for read-only replicas, which are synchronized with those of the primary instance.
-- Data inconsistency between multiple read-only replicas may occur due to the delay in data sync between the read-only replicas and the primary instance. You can check the delay in the console.
+- Data inconsistency between multiple read-only replicas may occur due to the delay in data sync between the read-only replicas and the primary instance. You can check the delay and set the cloud monitoring alarm  in the console.
 - The specification of a read-only replica can be different from that of the primary instance, which makes it easier for you to upgrade the read-only replica according to the load. We recommend you keep the same specifications of read-only replicas in one RO group.
 
 ## Directions

@@ -7,9 +7,12 @@
  例如，Linux 重装为 Linux，Windows 重装为 Windows。 
  - **不同平台重装**：仅支持中国大陆地区（不含中国香港）。
  例如，Linux 重装为 Windows，Windows 重装为 Linux。
->? 
-> - 目前新增的所有云硬盘实例和本地盘实例均支持进行不同平台重装系统。部分存量的20GB本地盘实例暂时不支持控制台上进行跨平台重装，使用这些本地盘实例的用户，需要通过 [提交工单](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=7&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%20CVM) 进行申请。
-> - 竞价实例不支持重装系统。
+  <dx-alert infotype="explain" title="">
+- 目前新增的所有云硬盘实例和本地盘实例均支持进行不同平台重装系统。部分存量的20GB本地盘实例暂时不支持控制台上进行跨平台重装，使用这些本地盘实例的用户，需要通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进行申请。
+- 竞价实例不支持重装系统。
+</dx-alert>
+
+
 
 ## 注意事项
  - **重装准备：**系统盘中的内容会在重装后丢失，需在重装前完成系统盘中重要信息的备份。需要保留系统运行数据的情况下，建议您在重装系统前 [创建自定义镜像](/doc/product/213/4942)，并选择该镜像进行重装。
@@ -19,21 +22,28 @@
  - **计费相关：**调整系统盘大小时（仅支持云硬盘），将按云硬盘的收费标准进行收费。详细内容可以参考 [硬盘价格](/doc/product/213/%E7%A1%AC%E7%9B%98%E4%BB%B7%E6%A0%BC)。
  - **后续操作：**重装系统盘后，数据盘的数据会保留不受影响，但需要重新挂载才能使用。
 
+
 ## 操作步骤
 您可通过以下方式进行重装操作系统：
 <dx-tabs>
 ::: 使用控制台重装系统[](id:useConsole)
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
-2. 在需要重装系统的实例行中，单击【更多】>【重装系统】。如下图所示：
-![](https://main.qcloudimg.com/raw/cf9c32f589a0243d84d6db0b92ccad2e.png)
-3. 在弹出的“重装系统”窗口中，阅读“重装系统须知”后单击【下一步】。
-4. 选择使用当前实例使用镜像或其他镜像，设置实例的登录方式，单击【确定】。如下图所示：
->?其中，当镜像类型为【自定义镜像】或【共享镜像】时，登录方式才可选择【保留镜像设置】。
->
-![](https://main.qcloudimg.com/raw/868508ad1ab1e1e2a60ea98d5d936a92.png)
+2. 在实例的管理页面，根据实际使用的视图模式进行操作：
+  - **列表视图**：在需要重装系统的实例行中，选择**更多** > **重装系统**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/292e93008168285d01416391632ff43c.png)
+  - **页签视图**：在需要重装系统的实例页面中，选择右上角的**更多操作** > **重装系统**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/27a65b9ae3e68ab8a6a59e2186ce115d.png)
+3. 在弹出的“重装系统”窗口中，阅读“重装系统须知”后单击**下一步**。
+4. 选择使用当前实例使用镜像或其他镜像，设置实例的登录方式，单击**确定**。如下图所示：
+<dx-alert infotype="explain" title="">
+其中，当镜像类型为**自定义镜像**或**共享镜像**时，登录方式才可选择**保留镜像设置**。
+</dx-alert>
+<img src="https://main.qcloudimg.com/raw/868508ad1ab1e1e2a60ea98d5d936a92.png"/>
+
 :::
 ::: 使用\sAPI\s重装系统[](id:useAPI)
 请参考 [ResetInstance 接口](https://intl.cloud.tencent.com/document/product/213/33242)。
+
 :::
 </dx-tabs>
 

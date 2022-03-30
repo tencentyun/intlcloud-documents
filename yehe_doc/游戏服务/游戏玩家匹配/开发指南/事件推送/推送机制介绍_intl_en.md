@@ -1,3 +1,4 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31 , 2022.
 
 This document describes GPM event notifications to help you track the status of your matchmaking requests.
 
@@ -50,7 +51,6 @@ Depending on the event type, different messages will be pushed to the URL you co
  - For a match without requesting GSE resources, all MatchTickets of the **match** finish their GPM lifecycles.
  - For a match requesting GSE resources, the statuses of all MatchTickets of the **match** change to **PLACING**.
 - The **MatchmakingSucceeded** event will be triggered when a **match** requesting GSE resources is successfully placed to a GSE game server queue. In this cause, all MatchTickets of the **match** finish their GPM lifecycle.
-
 
 
 

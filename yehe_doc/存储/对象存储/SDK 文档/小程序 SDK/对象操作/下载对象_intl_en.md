@@ -65,7 +65,7 @@ cos.getObjectUrl({
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Sign: true
 }, function (err, data) {
-    if (!err) return console.log(err);
+    if (err) return console.log(err);
     wx.downloadFile({
         url: data.Url, // The “url” domain name needs to be added to the download allowlist
         success (res) {

@@ -5,7 +5,7 @@ TencentDB for Redis Memory Edition (cluster architecture) is a new edition of Re
 **Master/replica high-availability (HA) scenarios**
 The Memory Edition (cluster architecture) allows you to configure a replica set for a single node to achieve high master/replica availability. It boasts dual-server hot backup and automatic failover to ensure high reliability and availability of the Redis service.
  **Read/write separation scenarios**  
-When the number of replica nodes is greater than 1, automatic read/write separation can be enabled for the TencentDB for Redis instance to extend the read performance of a single node. Up to 5 replica sets can be supported and read access weights across the master node and replica nodes can be configured. 
+When the number of replica nodes is greater than or equal to 1, automatic read/write separation can be enabled for the TencentDB for Redis instance to extend the read performance of a single node. Up to 5 replica sets can be supported and read access weights across the master node and replica nodes can be configured. 
 **High-performance scenarios for multiple shards**
 The Memory Edition (cluster architecture) automatically enables auto-sharding and achieves horizontal scaling of system performance by assigning different keys to multiple nodes.
 

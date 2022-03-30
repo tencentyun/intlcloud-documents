@@ -2,7 +2,7 @@ This document describes the classic project management mode in CODING Project Co
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING page.
+1. Log in to the CODING Console and click **Use Now** to go to CODING page.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a project icon to open the corresponding project.
 3. In the menu on the left, click **Project Collaboration**.
 
@@ -77,7 +77,7 @@ In **Test Management** > **Test Plan**, you can configure the iteration of the t
 ### Project launch[](#launched)
 
 After the basic development task has been completed, you can use CODING's continuous integration/deployment services to quickly validate the code.
-<dx-alert infotype="explain" title="扩展阅读"><ul style = "margin-bottom: 0px;">
+<dx-alert infotype="explain" title="Extended reading"><ul style = "margin-bottom: 0px;">
 <li><a href = "https://help.coding.net/docs/ci/start.html">Continuous Integration - Getting Started</a></li>
 <li><a href = "https://help.coding.net/docs/cd/start.html">Continuous Deployment - Sample Project</a></li></ul>
 </dx-alert>

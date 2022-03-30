@@ -6,7 +6,7 @@
 
 ## 进入项目
 
-1. 登录 [CODING 控制台](https://console.cloud.tencent.com/coding)，单击团队域名进入 CODING 使用页面。
+1. 登录 CODING 控制台，单击团队域名进入 CODING 使用页面。
 2. 进入 CODING 工作台首页后，选择左侧**功能设置** > **持续部署**，进入云账号管理页面。
 
 ## 功能介绍

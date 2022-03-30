@@ -2,7 +2,7 @@
 
 ## 进入项目
 
-1. 登录 [CODING 控制台](https://console.cloud.tencent.com/coding)，单击**立即使用**进入 CODING 使用页面。
+1. 登录 CODING 控制台，单击**立即使用**进入 CODING 使用页面。
 2. 单击首页左侧菜单栏中的**目标**，进入团队目标功能页面。
 
 一个典型的季度 OKR 周期如下：

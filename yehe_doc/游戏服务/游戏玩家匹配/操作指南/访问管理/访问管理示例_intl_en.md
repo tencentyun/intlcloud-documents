@@ -1,3 +1,5 @@
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31,  2022.
+
 ## Overview
 
 You can grant a user the permission to view and use specific resources in the [Game Player Matchmaking (GPM) console](https://console.cloud.tencent.com/gpm) by using CAM policies. The examples below show how to do so.

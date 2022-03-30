@@ -5,7 +5,7 @@ You must activate the CODING DevOps service for your Tencent Cloud account befor
 
 ## Initialize the Demo Project
 
-1. Go to [CODING](https://console.cloud.tencent.com/coding) and click the Project button <img src ="https://main.qcloudimg.com/raw/7531b01c25014beb2754277107fc4ab1.png" style ="margin:0"> on the left, and then click the Create Project button in the upper-right corner of the project list.
+1. Go to CODING and click the Project button <img src ="https://main.qcloudimg.com/raw/7531b01c25014beb2754277107fc4ab1.png" style ="margin:0"> on the left, and then click the Create Project button in the upper-right corner of the project list.
 2. Select Create a Demo Project.
 3. Click Classic Project Management Demo Project.
 4. Enter a project name and identifier, and then create the project.
@@ -62,7 +62,7 @@ In **Test Management** > **Test Plan**, you can configure the iteration of the t
 ##  Project Release
 
 After the basic development task has been completed, you can use CODING's continuous integration/deployment services to quickly validate the code.
-<dx-alert infotype="explain" title="扩展阅读">
+<dx-alert infotype="explain" title="Extended reading">
 <ul style = "margin-bottom: 0px;">
 <li><a href = "https://help.coding.net/docs/ci/start.html">Continuous Integration - Getting Started</a></li>
 <li><a href = "https://help.coding.net/docs/cd/start.html">Continuous Deployment - Sample Project</a></li>

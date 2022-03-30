@@ -5,6 +5,8 @@ After a TencentDB for MongoDB instance is initialized, you can read, write, and 
 ### Through shell
 MongoDB shell is an interactive JavaScript command line tool that comes with MongoDB and encapsulates many common commands. After installing MongoDB shell on a CVM instance, you can run shell commands to connect to the MongoDB instance and query, write/read, or update database data.
 
+>!A [CVM](https://intl.cloud.tencent.com/document/product/213/10517) instance can be used to connect to the private network address that is automatically assigned to a TencentDB instance. This access method utilizes the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same VPC in the same region or reside in the classic network. Public network access is not supported for the time being.
+
 ### Through URI
 A Uniform Resource Identifier (URI) uniquely identifies a resource on the Web. MongoDB recommends using URIs to connect to MongoDB databases, which is supported by most drivers.
 
@@ -19,7 +21,7 @@ mongodb://username:password@IP:27017/somedb?authSource=admin
 mongodb://username:password@IP:27017/somedb?authSource=admin&readPreference=secondaryPreferred
 ```
 
-URI parameters are described as follows. For more information, see [MongoDB official documentation](https://docs.mongodb.com/manual/reference/connection-string/).
+URI parameters are described as follows. For more information, see [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/).
 
 | Parameter | Description | Required |
 |---------|---------|---------|
@@ -32,8 +34,6 @@ URI parameters are described as follows. For more information, see [MongoDB offi
 | authSource=admin | Database used for authentication, which is always `admin` for TencentDB for MongoDB | Yes. For more information, see [Authentication database](#rzsjk). |
 | readPreference=secondaryPreferred | Read a secondary node first | No. For more information, see [Read preference](#dczdzcyxj). |
 
-## Notes
-A [CVM](https://intl.cloud.tencent.com/document/product/213/10517) instance can be used to connect to the private network address that is automatically assigned to a TencentDB instance. This access method relies on the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same VPC in the same region or reside in the classic network. Public network access is not supported for the time being.
 
 ## Connecting to Databases Through Shell
 The following describes how to connect to databases through MongoDB shell.
@@ -41,6 +41,9 @@ The following describes how to connect to databases through MongoDB shell.
 ### Prerequisites
 - [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 - Create a Linux [CVM](https://intl.cloud.tencent.com/document/product/213/10517) instance in the same VPC and the same region as the TencentDB for MongoDB instance.
+- You have [created a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551), and it is in **Running** status.
+- You have obtained the username and password information for database instance access on the **Account Management** tab on the **Database Management** page. For detailed directions, see [Account Management](https://intl.cloud.tencent.com/document/product/240/44183).
+- You have obtained the private IP and port for database instance access in the **instance list**. For detailed directions, see [Viewing Instance Details](https://intl.cloud.tencent.com/document/product/240/44179).
 
 ### Directions
 #### Step 1. Log in to the CVM instance
@@ -56,7 +59,7 @@ The following describes how to connect to databases through MongoDB shell.
 ```
 wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-XX.XX.XX.tgz
 ```
->?Please select a MongoDB shell whose version matches both TencentDB for MongoDB and the CVM operating system. For more information, see the [download address](https://www.mongodb.com/try/download/community).
+>?Select a MongoDB shell whose version matches both TencentDB for MongoDB and the CVM operating system. For more information, see the [download address](https://www.mongodb.com/try/download/community).
 3. Run the `tar` command to decompress the downloaded installer of MongoDB shell, as shown below:
 ```
 tar zxvf mongodb-linux-x86_64-rhel70-XX.XX.XX.tgz
@@ -71,7 +74,12 @@ cd mongodb-linux-x86_64-rhel70-XX.XX.XX
 ```
 ./bin/mongo -umongouser -plxh***** 172.xx.xx.xx:27017/admin 
 ```
-Where, `-u` refers to the username used to connect to the database and `-p` the password. `172.xx.xx.xx` is the IP of the MongoDB instance and `27017` the port, both of which should be replaced by the actual configurations. If the connection is successful, the following message will be displayed:
+Here, `-u` is followed by the database connection username, `-p` is followed by the username password, and `172.xx.xx.xx` and `27017` specify the IP and port of the TencentDB for MongoDB instance respectively. Replace them with your actual configuration information. If you forgot the username and password, view and modify the account and password as instructed in [Account Management](https://intl.cloud.tencent.com/document/product/240/44183).
+You can get the private IP and port for database instance access in the **instance list**.
+![](https://qcloudimg.tencent-cloud.cn/raw/18549a1bb4836814da29c6db9c27ec06.png)
+If you need to access multiple IPs, you can separate them with commas, such as `--host 172.XX.XX.XX:27017,172.XX.XX.XX:27017,172.30.XX.XX:27017`.
+After a successful connection, the following information will be displayed:
+
 ```
 MongoDB shell version v4.2.16
 connecting to: mongodb://172.x.x.X:27017/admin?compressors=disabled&gssapiServiceName=mongodb
@@ -81,8 +89,8 @@ Welcome to the MongoDB shell.
 ```
 <dx-alert infotype="explain" title="">
 - For a replica set instance, you can connect to the address of the primary node, secondary node 1, or secondary node 2.
-     Primary node: if you connect to the primary node, you can write to or read from the database.
-     Secondary node: if you connect to a secondary node, you can only read from the database.
+     Primary node: If you connect to the primary node, you can write to or read from the database.
+     Secondary node: If you connect to a secondary node, you can only read from the database.
 - For a sharded cluster instance, you can connect to the address of any mongos node.
 </dx-alert>
 
@@ -94,7 +102,7 @@ The following describes how to use URIs to connect to TencentDB for MongoDB from
 - Prepare a running environment for the SDK client which supports various programing languages.
 
 ### [Connection sample](id:ljsl)
-To connect to TencentDB for MongoDB, the driver version 3.2 or above is required. Please use the latest version of the client driver to ensure the best compatibility with the shell kit, Java jar package, PHP expansion, Node.js module, etc. For more information, see [MongoDB Drivers](https://docs.mongodb.com/ecosystem/drivers/).
+To connect to TencentDB for MongoDB, the driver version 3.2 or above is required. Use the latest version of the client driver to ensure the best compatibility with the shell kit, Java jar package, PHP expansion, Node.js module, etc. For more information, see [MongoDB Drivers](https://docs.mongodb.com/ecosystem/drivers/).
 
 SDK connection samples in various programing languages supported by TencentDB for MongoDB are listed below. Based on those samples, you can configure URIs to connect to, write to, or read from the database.
 - [Shell Connection Sample](https://intl.cloud.tencent.com/document/product/240/3978).
@@ -118,7 +126,7 @@ The connection method for MongoDB replica set instances (v4.0) is different from
 ```
 mongodb://mongouser:******@192.168.xx.xx:27017,192.168.x.xx:27017,192.168.x.xx:27017/admin?authSource=admin&replicaSet=cmgo-******
 ```
-![](https://qcloudimg.tencent-cloud.cn/raw/dede12bbaa607c608886ab323bd0b8b5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6cff251e0b903f02baf8dc7d7a9aa27d.png)
 6. Use the URI to connect to the replica set instance. For more information, see [Connection sample](#ljsl).
 
 ## References

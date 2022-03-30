@@ -3,7 +3,7 @@ This document describes plans in classic project management.
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING page.
+1. Log in to the CODING Console and click **Use Now** to go to CODING page.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a project icon to open the corresponding project.
 3. In the menu on the left, click **Project Collaboration**.
 
@@ -39,7 +39,7 @@ In **Plans**, set the time period using the filter in the upper-right corner to 
 
 In **Plans**, the Gantt chart on the right intuitively shows the completion status of all issues in the entire plan, so managers can assess and manage progress and coordinate lagging issues to ensure the plan stays on track.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a95b731e17136e72996935fe4788d49a.png)
-<dx-alert infotype="explain" title="颜色说明">
+<dx-alert infotype="explain" title="Color description">
 
 <ul style = "margin-bottom: 0px;">
 <li>Completed: green</li>

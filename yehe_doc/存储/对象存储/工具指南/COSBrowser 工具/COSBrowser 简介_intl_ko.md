@@ -38,7 +38,7 @@ COSBrowser는 Tencent Cloud COS가 출시한 시각화 인터페이스 툴로 CO
    <tr>
       <td>iOS</td>
       <td>iOS 11 이상</td>
-      <td><a href="https://apps.apple.com/cn/app/id1469323992">iOS</a></td>
+      <td>iOS</a></td>
    </tr>
    <tr>
       <td>웹 페이지 버전</td>

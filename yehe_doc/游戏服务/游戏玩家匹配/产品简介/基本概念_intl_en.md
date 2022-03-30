@@ -1,4 +1,4 @@
-
+>!Since the product logic no longer meets the technical development of game industry, Game Player Matching GPM will be deprecated on June 1st, 2022. Please complete service migration before May 31 , 2022.
 
 ### Rule Name
 A rule name is defined by the developer to distinguish rules. One rule name can be used repeatedly.
@@ -33,5 +33,4 @@ The game server session data is predefined for a matchmaking request to create g
 
 ### Game Attribute
 Game attributes are predefined for a matchmaking request to create game server sessions.
-
 
