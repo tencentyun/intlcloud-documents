@@ -4,6 +4,7 @@
 
 <dx-alert infotype="explain" title="">
 由于镜像底层使用了云硬盘快照服务：
+ - 国内地域提供50GB的免费额度，详情请参见 [赠送额度](https://intl.cloud.tencent.com/document/product/362/32415)。
  - 在创建自定义镜像时会默认创建关联该镜像的快照，且保留自定义镜像会产生一定的快照费用，详情请参见 [快照计费概述](https://intl.cloud.tencent.com/document/product/362/32415)。
 </dx-alert>
 
