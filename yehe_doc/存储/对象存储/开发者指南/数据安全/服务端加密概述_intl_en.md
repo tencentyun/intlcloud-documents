@@ -1,6 +1,6 @@
 ## Overview
 
-COS encrypts your data at the object level before it is written to IDC disks and automatically decrypts the data when you access it. Encryption and decryption are completed on servers. Server-side encryption can effectively protect static data.
+Cloud Object Storage (COS) encrypts your data at the object level before it is written to IDC disks and automatically decrypts the data when you access it. Encryption and decryption are completed on servers. Server-side encryption can effectively protect static data.
 
 >!
 >- As long as you have access permission to objects, user experience is the same accessing encrypted and non-encrypted objects.
