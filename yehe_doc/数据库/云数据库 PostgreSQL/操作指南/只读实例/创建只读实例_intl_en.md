@@ -23,7 +23,7 @@ Read-only replicas adopt PostgreSQL streaming replication, which can sync the ch
 
 ## Notes
 - There is no need to maintain accounts or databases for read-only replicas, which are synchronized with those of the primary instance.
-- Data inconsistency between multiple read-only replicas may occur due to the delay in data sync between the read-only replicas and the primary instance. You can check the delay in the console.
+- Data inconsistency between multiple read-only replicas may occur due to the delay in data sync between the read-only replicas and the primary instance. You can check the delay and set the cloud monitoring alarm  in the console.
 - The specification of a read-only replica can be different from that of the primary instance, which makes it easier for you to upgrade the read-only replica according to the load. We recommend you keep the same specifications of read-only replicas in one RO group.
 
 ## Directions
@@ -35,5 +35,4 @@ Read-only replicas adopt PostgreSQL streaming replication, which can sync the ch
     - **Create RO Group**: if multiple read-only replicas are purchased at a time, all of them will be assigned to the newly created RO group. The RO group automatically allocates read weights to each read-only replica, and automatically distributes read requests among the read-only replicas based on their read weights. For more information, please see [Creating RO Groups](https://intl.cloud.tencent.com/document/product/409/39546).
     - **Existing RO Group**: specify an existing RO group. If multiple read-only replicas are purchased at a time, all of them will be assigned to the RO group.
  - **Remove Read-only Replicas Exceeding the Delay Threshold**: remove a read-only replica from the RO group if the data sync log size difference between the primary instance and the read-only replica is greater than the specified threshold (MB).
- - **AZ**: You can select all AZs in the same region as the primary instance. 
 4. After the purchase is completed, you will be redirected to the instance list. After the status of the read-only replica is displayed as **Running**, it can be used normally.
