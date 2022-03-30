@@ -6,11 +6,11 @@ CODING DevOps offers a free trial service, please contact our sales team if you 
 
 ## Paid Service
 
-CODING DevOps provides private deployment solutions, please contact this email address support@coding.net， and our sales staff will provide you with service as soon as possible.
+CODING DevOps provides private deployment solutions, please contact sales for more details.
 
 ## About Private Deployment
 
-Due to the high complexity of CODING DevOps products, the one-click installation function is not supported for the time being. After you complete the procurement of CODING products and sign the project contract, CODING will contact partners to provide you with private deployment services.
+Due to the high complexity of CODING DevOps, installation will require professional services support. Our team will help you engage our certified service providers after procurement.
 
 The standard version of the private deployment process is as follows:
 1. Requirements research: organize project requirements research, participate in implementation information collection, technical requirements communication, identify delivery content, confirm project implementation team, prepare relevant human resources and external support experts according to the work content and delivery plan of the project specification.
