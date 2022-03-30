@@ -22,7 +22,7 @@
 - 在**基本信息**区域，您可以查看实例的所属地域、所属网络等信息。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/5f8d39a58c4db0a2ba6ddc6879d6c9fa.png" style="zoom:67%;" />
 - 在**配置信息**区域，您可以查看实例的版本与存储引擎、节点规格、容量、计费模式、维护时间等信息。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/cdd603de45d6bbdfbd46ad960e8f7084.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1b1b29993630b90223029cdccd0129bd.png" style="zoom:67%;" />
 - 在**实例架构图**区域，您可以查看集群的系统架构图，掌握集群的主从关系。
 
 
