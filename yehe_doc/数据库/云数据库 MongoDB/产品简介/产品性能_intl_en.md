@@ -17,20 +17,24 @@ Latency: Minimum = 0.30 ms; maximum = 0.44 ms; average = 0.35 ms
 
 ### Relevant commands
 1. Prepare data (about 10 GB)
+
 ```
 nohup ./ycsb-0.15.0/bin/ycsb load mongodb -s -P workloads/workloada
 -p mongodb.url=mongodb://mongouser:password@10.xx.xx.30:27017,10.xx.xx.28:27017,10.xx.xx.5:27017/admin?w=0 -p table=test -threads 300 -p recordcount=10000000>loadlog.txt &
 ```
 
 2. Test with 50% read requests and 50% update requests
+
 ```
 nohup ./ycsb-0.15.0/bin/ycsb run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://mongouser: password @10.xx.xx.30:27017,10.xx.xx.28:27017,10.xx.xx.5:27017/admin?w=0 -p table=test -p recordcount=10000000 -p readproportion=0.5 -p updateproportion=0.5 -p insertproportion=0 -p operationcount=100000 -threads 100 >runlog.txt &
 ```
 
 3. Test with 95% read requests and 5% update requests
+
 ```
 nohup ./ycsb-0.15.0/bin/ycsb run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://mongouser: password @10.xx.xx.30:27017,10.xx.xx.28:27017,10.xx.xx.5:27017/admin?w=0 -p table=test -p recordcount=10000000 -p readproportion=0.95 -p updateproportion=0.05 -p insertproportion=0 -p operationcount=100000 -threads 100 >runlog.txt &
 ```
+
 >?
 >- You need to adjust `-p operationcount=100000` dynamically according to the specific execution time to ensure that the execution time is longer than 20 minutes; otherwise, the result data will not be representative.
 >- `w` in `?w=0` represents write concern.
