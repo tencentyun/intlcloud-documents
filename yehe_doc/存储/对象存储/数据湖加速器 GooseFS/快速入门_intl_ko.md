@@ -11,13 +11,13 @@ GooseFS 사용 전 아래 작업을 준비해야 합니다.
 
 ## GooseFS 다운로드 및 구성
 
-1. 공식 홈페이지 라이브러리에서 GooseFS 설치 패키지를 로컬에 다운로드 합니다. 다운로드 링크: [goosefs-1.1.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.1.0/release/goosefs-1.1.0-bin.tar.gz).
+1. 공식 홈페이지 라이브러리에서 GooseFS 설치 패키지를 로컬에 다운로드 합니다. 다운로드 링크: [goosefs-1.2.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz).
 2. 아래 명령어를 실행하여 설치 패키지의 압축을 해제합니다.
 ```shell
-tar -zxvf goosefs-1.1.0-bin.tar.gz
-cd goosefs-1.1.0
+tar -zxvf goosefs-1.2.0-bin.tar.gz
+cd goosefs-1.2.0
 ```
- 압축 해제 후 gooseFS의 홈 디렉터리인 goosefs-1.1.0이 생성됩니다. 아래 문장에서는 해당 디렉터리의 절대 경로를 `${GOOSEFS_HOME}`으로 대신합니다.
+ 압축 해제 후 gooseFS의 홈 디렉터리인 goosefs-1.2.0이 생성됩니다. 아래 문장에서는 해당 디렉터리의 절대 경로를 `${GOOSEFS_HOME}`으로 대신합니다.
 3. `${GOOSEFS_HOME}/conf`의 디렉터리에 `conf/goosefs-site.properties`의 구성 파일을 생성하여 내장된 설정 템플릿을 사용할 수 있습니다.
 ```shell
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
@@ -117,7 +117,7 @@ GooseFS가 COS(COSN）혹은 Tencent Cloud HDFS(CHDFS)를 GooseFS의 루트 경�
 
 >?
 >- COSN의 완전한 구성은 [Hadoop 툴](https://intl.cloud.tencent.com/document/product/436/6884)을 참고하십시오.
->- CHDFS의 완전한 구성은 CHDFS 마운트 를 참고하십시오.
+>- CHDFS의 완전한 구성은 [CHDFS 마운트](https://intl.cloud.tencent.com/document/product/1106/41965)를 참고하십시오.
 
 다음으로 Namespace 생성을 통해 COS 혹은 CHDFS를 마운트 하는 방법과 절차를 소개합니다.
 
@@ -140,10 +140,10 @@ goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.
 --attribute fs.ofs.user.appid=1250000000
 --attribute fs.ofs.tmp.cache.dir=/tmp/chdfs
 ```
-2. 생성 완료 후 `list` 명령어를 통해 클러스터에 생성된 모든 namespace를 나열할 수 있습니다.
+2. 생성 완료 후 `ls` 명령어를 통해 클러스터에 생성된 모든 namespace를 나열할 수 있습니다.
 
 ```shell
-$ goosefs ns list
+$ goosefs ns ls
 namespace	      mountPoint	       ufsPath                     	 creationTime                wPolicy      	rPolicy	     TTL	   ttlAction
 myNamespace    /myNamespace   cosn://bucketName-125xxxxxx/3TB  03-11-2021 11:43:06:239      CACHE_THROUGH   CACHE        -1      DELETE
 myNamespaceCHDFS /myNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB 03-11-2021 11:45:12:336 CACHE_THROUGH   CACHE  -1  DELETE
