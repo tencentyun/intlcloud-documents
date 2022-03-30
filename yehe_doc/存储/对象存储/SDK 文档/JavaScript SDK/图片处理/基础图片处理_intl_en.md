@@ -100,7 +100,7 @@ document.getElementById('submitBtn').onclick = function (e) {
     document.getElementById('msg').innerText = 'File to upload not selected';
     return;
   }
-  handleFileInUploading();
+  handleFileInUploading(file);
 };
 ```
 
