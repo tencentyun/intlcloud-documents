@@ -11,13 +11,13 @@ Before using GooseFS, you need to:
 
 ## Downloading and Configuring GooseFS
 
-1. Download the GooseFS installation package from the repository at [goosefs-1.1.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.1.0/release/goosefs-1.1.0-bin.tar.gz).
+1. Download the GooseFS installation package from the repository at [goosefs-1.2.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz).
 2. Run the following command to decompress the installation package:
 ```shell
-tar -zxvf goosefs-1.1.0-bin.tar.gz
-cd goosefs-1.1.0
+tar -zxvf goosefs-1.2.0-bin.tar.gz
+cd goosefs-1.2.0
 ```
- After the decompression, the home directory of GooseFS `goosefs-1.1.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
+ After the decompression, the home directory of GooseFS `goosefs-1.2.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
 3. Create the `conf/goosefs-site.properties` configuration file in `${GOOSEFS_HOME}/conf`. You can use a built-in configuration template.
 ```shell
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
@@ -117,7 +117,7 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 
 >?
 >- For the complete configuration of COSN, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
->- For the complete configuration of CHDFS, please see Mounting CHDFS Instance.
+>- For the complete configuration of CHDFS, please see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965).
 
 The following describes how to create a namespace to mount COS or CHDFS.
 
@@ -142,7 +142,7 @@ goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.
 ```
 2. After the namespaces are created, run the `list` command to list all namespaces created in the cluster:
 ```shell
-$ goosefs ns list
+$ goosefs ns ls
 namespace      mountPoint       ufsPath                      creationTime                wPolicy      rPolicy     TTL   ttlAction
 myNamespace    /myNamespace   cosn://bucketName-125xxxxxx/3TB  03-11-2021 11:43:06:239      CACHE_THROUGH   CACHE        -1      DELETE
 myNamespaceCHDFS /myNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB 03-11-2021 11:45:12:336 CACHE_THROUGH   CACHE  -1  DELETE
