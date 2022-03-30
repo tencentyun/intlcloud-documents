@@ -41,7 +41,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com)
 3. Set the `SDKAPPID` and `SECRETKEY` parameters:
 <ul><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
     <li>`SECRETKEY`: a placeholder by default. Set it to the actual key.</ul>
-    <img src="https://main.qcloudimg.com/raw/fba60aa9a44a94455fe31b809433cfa4.png"/>
+
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
 
