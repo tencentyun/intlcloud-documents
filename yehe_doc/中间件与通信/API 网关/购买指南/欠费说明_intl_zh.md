@@ -22,8 +22,8 @@ API 网关计费项和对应的计费（账单）周期如下：
 - 服务被暂停后180天内，您成功充值后，服务可自动开启，并继续使用；服务被暂停超过180天，API 网关将有权清理您的 API 配置信息，您的数据将会被销毁。
 
 >!
-- 请在收到欠费通知后，及时前往控制台 [充值中心](https://console.cloud.tencent.com/account/recharge) 进行充值，以免影响您的业务。
-- 如您对消费明细有疑问，可以在控制台 [资源账单](https://console.cloud.tencent.com/account/resources) 页面查阅和核对您的消费明细。
-- 如您对具体的扣费项有疑问，可以参见 [计费概述](https://intl.cloud.tencent.com/document/product/628/11771) 了解具体的计费项含义及计费规则。
-- 您还可以通过计费中心的余额告警功能，自行设定欠费预警。
+>- 请在收到欠费通知后，及时前往控制台 [充值中心](https://console.cloud.tencent.com/account/recharge) 进行充值，以免影响您的业务。
+>- 如您对消费明细有疑问，可以在控制台 [资源账单](https://console.cloud.tencent.com/account/resources) 页面查阅和核对您的消费明细。
+>- 如您对具体的扣费项有疑问，可以参见 [计费概述](https://intl.cloud.tencent.com/document/product/628/11771) 了解具体的计费项含义及计费规则。
+>- 您还可以通过计费中心的余额告警功能，自行设定欠费预警。
 
