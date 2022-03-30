@@ -1,5 +1,3 @@
-# Billing of TRTC Basic Services
-
 This document describes how [audio calls](https://intl.cloud.tencent.com/document/product/647/36064), [video calls](https://intl.cloud.tencent.com/document/product/647/36063), and [interactive live audio/video streaming](https://intl.cloud.tencent.com/document/product/647/36059) are billed on a monthly basis.
 
 You can use the [TRTC price calculator](https://intl.cloud.tencent.com/pricing/trtc/calculator) to estimate your cost.
