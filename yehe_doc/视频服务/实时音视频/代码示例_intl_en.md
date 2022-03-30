@@ -130,7 +130,7 @@
             <div class="card">
                 <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
                 <h3>Try Web APIs</h3>
-                <p>Easily and quickly try out the RTC features enabled by web APIs</p>
+                <p>Easily and quickly try out the RTC features enabled <br/>by web APIs</p>
             </div>
         </div>
     </a>
