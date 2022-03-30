@@ -11,13 +11,13 @@
 
 ## 下载并配置 GooseFS
 
-1. 从官方仓库下载 GooseFS 安装包到本地。官方仓库下载链接：[goosefs-1.1.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.1.0/release/goosefs-1.1.0-bin.tar.gz)。
+1. 从官方仓库下载 GooseFS 安装包到本地。官方仓库下载链接：[goosefs-1.2.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz)。
 2. 执行如下命令，对安装包进行解压。
 ```shell
-tar -zxvf goosefs-1.1.0-bin.tar.gz
-cd goosefs-1.1.0
+tar -zxvf goosefs-1.2.0-bin.tar.gz
+cd goosefs-1.2.0
 ```
- 解压后，得到 goosefs-1.1.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
+ 解压后，得到 goosefs-1.2.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
 3. 在 `${GOOSEFS_HOME}/conf` 的目录下，创建 `conf/goosefs-site.properties` 的配置文件，可以使用内置的配置模板：
 ```shell
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
@@ -117,7 +117,7 @@ $ ./bin/goosefs-start.sh local SudoMount
 
 >?
 >- COSN 的完整配置可参考：[Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884)。
->- CHDFS 的完整配置可参考：挂载 CHDFS。
+>- CHDFS 的完整配置可参考：[挂载 CHDFS](https://intl.cloud.tencent.com/document/product/1106/41965)。
 
 下面将介绍一下如何通过创建 Namespace 来挂载 COS 或 CHDFS 的方法和步骤。
 
@@ -142,10 +142,10 @@ goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.
 --attribute fs.ofs.tmp.cache.dir=/tmp/chdfs
 ```
 
-2. 创建成功后，可以通过 `list` 命令列出集群中创建的所有 namespace：
+2. 创建成功后，可以通过 `ls` 命令列出集群中创建的所有 namespace：
 
 ```shell
-$ goosefs ns list
+$ goosefs ns ls
 namespace	      mountPoint	       ufsPath                     	 creationTime                wPolicy      	rPolicy	     TTL	   ttlAction
 myNamespace    /myNamespace   cosn://bucketName-125xxxxxx/3TB  03-11-2021 11:43:06:239      CACHE_THROUGH   CACHE        -1      DELETE
 myNamespaceCHDFS /myNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB 03-11-2021 11:45:12:336 CACHE_THROUGH   CACHE  -1  DELETE
