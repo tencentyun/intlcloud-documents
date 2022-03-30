@@ -1,99 +1,245 @@
+
+
 ## Overview
 
-If you need to create a snapshot of the PVC data disk to backup data, or to restore the backup snapshot data to a new PVC, you can use the CBS-CS add-on. This document describes how to use the CBS-CSI add-on to implement data backup and restoration of PVC.
-
+You can mount a CFS Turbo storage for a TKE cluster by installing a `kubernetes-csi-tencentloud` add-on. This add-on is used to mount the Tencent Cloud CFS Turbo file system to a workload based on a private protocol. Currently, only static configuration is supported. For more information about CFS storage types, see [Storage Types and Performance](https://intl.cloud.tencent.com/document/product/582/33745).
 
 ## Prerequisites
 
-- You have created a [TKE cluster](https://intl.cloud.tencent.com/document/product/457/30637) or created a Kubernetes cluster in Tencent Cloud CVM. The cluster version is v1.18 or later.
-- You have installed [CBS-CSI add-on](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CBS.md).
-
+- You have created a TKE cluster or created a Kubernetes cluster on Tencent Cloud, and the cluster version is 1.14 or above.
+- kube-apiserver and kubelet have enabled the privilege level, i.e. `--allow-privileged = true`.
+- The add-on `feature gates` has been set to `CSINodeInfo = true, CSIDriverRegistry = true`.
 
 ## Directions
 
-### Restoring PVC
+### Creating a file system[](id:create-cfs)
 
-#### Creating a VolumeSnapshotClass
+Create a CFS Turbo file system. For details, see [Creating File Systems and Mount Targets](https://intl.cloud.tencent.com/document/product/582/9132).
 
-1. Use the following YAML to create a VolumeSnapshotClass object, as shown below:
+>! After the file system is created, you need to associate the cluster network (vpc-xx) with the [CCN instance](https://intl.cloud.tencent.com/document/product/1003/30064) of the file system. You can check it in the information about file system mount target.
+
+
+### Deploying a RBAC policy
+
+If you want to mount a CFS Turbo volume, you need to run the `kubectl apply -f  csi-node-rbac.yaml` command to deploy a RBAC policy in the cluster. The following csi-node-rbac.yaml code is for your reference:
+
 ```yaml
-apiVersion: snapshot.storage.k8s.io/v1beta1
-kind: VolumeSnapshotClass
+apiVersion: v1
+kind: ServiceAccount
 metadata:
-      name: cbs-snapclass
-driver: com.tencent.cloud.csi.cbs
-deletionPolicy: Delete
-```
-2. Run the following command to check whether the VolumeSnapshotClass has been created successfully, as shown below:
-```bash
-$ kubectl get volumesnapshotclass
-NAME            DRIVER                      DELETIONPOLICY   AGE
-cbs-snapclass   com.tencent.cloud.csi.cbs   Delete           17m
+  name: cfsturbo-csi-node-sa
+  namespace: kube-system
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cfsturbo-csi-node-role
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes", "endpoints", "configmaps"]
+    verbs: ["get", "list", "watch", "create", "delete", "update"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims", "nodes"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["secrets", "namespaces"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["nodes", "pods"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["volumeattachments", "volumeattachments"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
+    verbs: ["get", "list", "watch"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cfsturbo-csi-node-rolebinding
+subjects:
+  - kind: ServiceAccount
+    name: cfsturbo-csi-node-sa
+    namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: cfsturbo-csi-node-role
+  apiGroup: rbac.authorization.k8s.io
 ```
 
-#### Create a PVC snapshot object VolumeSnapshot
+### Deploying a Node Plugin
 
-1. [](id:volumesnapshot)This document takes `new-snapshot-demo` as the snapshot name to create a VolumeSnapshot. Use the following YAML to create a VolumeSnapshot object, as shown below:
+1. Run the `kubectl apply -f csidriver.yaml` command. The following csidriver.yaml code is for your reference:
 ```yaml
-apiVersion: snapshot.storage.k8s.io/v1beta1
-kind: VolumeSnapshot
+apiVersion: storage.k8s.io/v1beta1
+kind: CSIDriver
 metadata:
-      name: new-snapshot-demo
+  name: com.tencent.cloud.csi.cfsturbo
 spec:
-      volumeSnapshotClassName: cbs-snapclass # Use the VolumeSnapshotClass created in the above steps
-      source:
-        persistentVolumeClaimName: ssd-pvc # Replace it with the PVC name that needs to be backed up
-```
-2. Run the following command to check whether the Volumesnapshot and Volumesnapshotcontent objects have been created successfully. If `READYTOUSE` is true, the creation is successful, as shown below:
-```plaintext
-$ kubectl get volumesnapshot
-NAME                READYTOUSE   SOURCEPVC   SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS   SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-new-snapshot-demo   true         ssd-pvc                             20Gi          cbs-snapclass   snapcontent-170b2161-f158-4c9e-a090-a38fdfd84a3e   2m36s          2m50s
-$ kubectl get volumesnapshotcontent
-NAME                                               READYTOUSE   RESTORESIZE   DELETIONPOLICY   DRIVER                      VOLUMESNAPSHOTCLASS   VOLUMESNAPSHOT      AGE
-snapcontent-170b2161-f158-4c9e-a090-a38fdfd84a3e   true         21474836480   Delete           com.tencent.cloud.csi.cbs   cbs-snapclass         new-snapshot-demo   3m3s
-```
-3. Run the following command to obtain the snapshot ID of the Volumesnapshotcontent object. The field is `status.snapshotHandle` (here takes snap-rsk8v75j as an example). You can log in to the [TKE console](https://console.cloud.tencent) .com/tke2) and use the snapshot ID to check whether the snapshot exists, as shown below:
-```plaintext
-$ kubectl get volumesnapshotcontent -o yaml snapcontent-170b2161-f158-4c9e-a090-a38fdfd84a3e
-...
-status:
-  creationTime: 1607331318000000000
-  readyToUse: true
-  restoreSize: 21474836480
-  snapshotHandle: snap-rsk8v75j
+  attachRequired: false
+  podInfoOnMount: false
 ```
 
-### Restoring data from the snapshot to a new PVC
+2. Run the `kubectl apply -f csi-node.yaml` commad. The following csi-node.yaml code is for your reference:
+```yaml
+# This YAML file contains driver-registrar & csi driver nodeplugin API objects
+# that are necessary to run CSI nodeplugin for cfs
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: cfsturbo-csi-node
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: cfsturbo-csi-node
+  template:
+    metadata:
+      labels:
+        app: cfsturbo-csi-node
+    spec:
+      serviceAccount: cfsturbo-csi-node-sa
+      hostNetwork: true
+      containers:
+        - name: driver-registrar
+          image: ccr.ccs.tencentyun.com/k8scsi/csi-node-driver-registrar:v1.2.0
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "rm -rf /registration/com.tencent.cloud.csi.cfsturbo/registration/com.tencent.cloud.csi.cfsturbo-reg.sock"]
+          args:
+            - "--v=5"
+            - "--csi-address=/plugin/csi.sock"
+            - "--kubelet-registration-path=/var/lib/kubelet/plugins/com.tencent.cloud.csi.cfsturbo/csi.sock"
+          env:
+            - name: KUBE_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          volumeMounts:
+            - name: plugin-dir
+              mountPath: /plugin
+            - name: registration-dir
+              mountPath: /registration
+        - name: cfsturbo
+          securityContext:
+            privileged: true
+            capabilities:
+              add: ["SYS_ADMIN"]
+            allowPrivilegeEscalation: true
+          image: ccr.ccs.tencentyun.com/k8scsi/csi-tencentcloud-cfsturbo:v1.2.0
+          args :
+            - "--nodeID=$(NODE_ID)"
+            - "--endpoint=$(CSI_ENDPOINT)"
+          env:
+            - name: NODE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: CSI_ENDPOINT
+              value: unix://plugin/csi.sock
+          imagePullPolicy: "IfNotPresent"
+          volumeMounts:
+            - name: plugin-dir
+              mountPath: /plugin
+            - name: pods-mount-dir
+              mountPath: /var/lib/kubelet/pods
+              mountPropagation: "Bidirectional"
+      volumes:
+        - name: plugin-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins/com.tencent.cloud.csi.cfsturbo
+            type: DirectoryOrCreate
+        - name: pods-mount-dir
+          hostPath:
+            path: /var/lib/kubelet/pods
+            type: Directory
+        - name: registration-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins_registry
+            type: Directory
+```
 
-1. This document takes the VolumeSnapshot object `new-snapshot-demo` created in the above [step](#volumesnapshot) as an example. Use the following YAML to restore data from the snapshot to a new PVC, as shown below:
+
+### Using a CFS Turbo volume
+
+1. Create a CFS Turbo file system. For more information, see [Creating a File System](#create-cfs).
+2. Use the following template to create a PV of CFS Turbo type.
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-cfsturbo
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  csi:
+    driver: com.tencent.cloud.csi.cfsturbo
+	  # volumeHandle in PV must be unique, use pv name is better
+    volumeHandle: pv-cfsturbo
+    volumeAttributes: 
+      # cfs turbo server ip
+      host: 10.0.0.116
+      # cfs turbo fsid (not cfs id)
+      fsid: xxxxxxxx
+      proto: lustre
+  storageClassName: ""
+```
+Parameter description:  
+  - **metadata.name**: the name of the created PV.
+  - **spec.csi.volumeHandle**: it must be consistent with the PV name.  
+  - **spec.csi.volumeAttributes.host**: the IP address of the file system. You can check it in the information about file system mount target.  
+  - **spec.csi.volumeAttributes.fsid**: fsid of the file system (not the file system ID). You can check it in the information about the file system mount target. It is the string after "tcp0:/" and before "/cfs" in the mounting command, as shown in the following figure.
+  - **spec.csi.volumeAttributes.proto**: the default protocol for mounting the file system.
+![](https://qcloudimg.tencent-cloud.cn/raw/20c622e1174fe89340ed3c41c5f12dd9.png)
+>! You need to install a Client in the cluster node according to the version of operating system kernel before using `lustre` protocol to mount a CFS Turbo volume. For details, see [Using CFS Turbo on Linux Clients](https://intl.cloud.tencent.com/document/product/582/40298).
+
+
+3. Use the following template to create a PVC that binds a PV.
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-      name: restore-test
+  name: pvc-cfsturbo
 spec:
-      storageClassName: ssd-csi # Customize the storage class as needed
-      dataSource:
-        name: new-snapshot-demo # Use the VolumeSnapshot created in the above step
-        kind: VolumeSnapshot
-        apiGroup: snapshot.storage.k8s.io
-      accessModes:
-        - ReadWriteOnce # CBS is block storage, which only supports single machine read and write
-      resources:
-        requests:
-          storage: 50Gi # The recommended storage capacity is the same as the capacity of the restored PVC
+  storageClassName: ""
+  volumeName: pv-cfsturbo
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
 ```
-2. Run the following command. You can check that the PVC has been created and bound to the PV, and you can find the corresponding diskid (here takes disk-ju0hw7no as an example) in the PV, as shown below:
-``` bash
-$ kubectl get pvc restore-test
-NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-restore-test   Bound    pvc-940edf09-d622-4126-992b-0a209f048c7d   60Gi       RWO            ssd-topology   6m8s
-$ kubectl get pv pvc-940edf09-d622-4126-992b-0a209f048c7d -o yaml
-...
+Parameter description:  
+  - **metadata.name**: the name of the created PVC.
+  - **spec.volumeName**: this need to be consistent with the name of PV created in the previous step.
+
+
+4. Use the following template to create a Pod that mounts a PVC.
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx 
 spec:
-...
-    volumeHandle: disk-ju0hw7no
-...
+  containers:
+  - image: ccr.ccs.tencentyun.com/qcloud/nginx:1.9
+    imagePullPolicy: Always
+    name: nginx
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    volumeMounts:
+      - mountPath: /var/www
+        name: data
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: pvc-cfsturbo
 ```
-	>?If StorageClass uses topology awareness (schedule the Pod first and then create the PV), that is, to specify `volumeBindingMode: WaitForFirstConsumer`, you need to deploy the Pod (to mount the PVC) to trigger the creation of the PV (create a new CBS from the snapshot and bind it to the PV).
