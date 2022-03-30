@@ -72,14 +72,14 @@ SSE-KMS 암호화는 KMS가 키를 호스팅하여 관리하는 서버 암호화
 **COS 콘솔**이 아닌 **API** 방식으로만 SSE-KMS 암호화를 실행한 경우, [CAM 역할](https://intl.cloud.tencent.com/document/product/598/19420)을 우선 생성해야 합니다. 자세한 생성 순서는 다음과 같습니다.
 
 1. CAM 콘솔에 로그인한 뒤 [역할](https://console.cloud.tencent.com/cam/role) 리스트 페이지로 이동합니다.
-2. [역할 생성]을 클릭한 뒤 역할 엔터티를 [Tencent 클라우드 서비스]로 선택합니다.
-3. 역할이 필요한 서비스를 [COS]로 선택한 뒤 [다음 단계]를 클릭합니다.
+2. **역할 생성**을 클릭한 뒤 역할 엔터티를 **Tencent 클라우드 서비스**로 선택합니다.
+3. 역할이 필요한 서비스를 **COS**로 선택한 뒤 [다음 단계]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/0c45c4dff7d73614a3656bbccf4cc112.png)
 4. 역할 정책을 설정한 뒤 [QcloudKMSCreaterFullAccess]를 검색 및 선택하고 [다음 단계]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/b3d8ef7f3c534f33207c47b7fb7725fb.png)
 5. 추가할 역할의 명칭을 COS_QcsRole와 같이 입력합니다.
 ![](https://main.qcloudimg.com/raw/830a4d4f36a0307a0bee92b6fd6dd24a.png)
-6. 마지막으로 [완료]를 클릭하면 생성이 완료됩니다.
+6. 마지막으로 **완료**를 클릭하면 생성이 완료됩니다.
 
 ### SSE-C 암호화
 
