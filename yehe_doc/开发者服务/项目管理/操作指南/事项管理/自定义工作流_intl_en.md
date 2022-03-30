@@ -2,7 +2,7 @@ This document describes how to configure a custom workflow in CODING Project Col
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING page.
+1. Log in to the CODING Console and click **Use Now** to go to CODING page.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a project icon to open the project.
 3. Click **Project Collaboration** in the menu on the left.
 
@@ -102,7 +102,7 @@ If this rule is configured, the configured field values are automatically change
 **Example 1: You need to change the issue priority to **Low** when a transition changes to the **Completed** status.**
 
 Take the following steps: Click **Configure Rules** > **Change Field Values**. Then, select **Any Status** > **Completed** for the Current Transition field, and change the value of the **Priority** field to **Low**.**
-![](https://main.qcloudimg.com/raw/c58eec359ac1f923db16916a4ee3f616.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/44d651ec1738c26cd4b230823ba5bee4.png)
 
 **Example 2: You need to auto-update the progress to 100% when an issue transitions to the **Completed** status.**
 
