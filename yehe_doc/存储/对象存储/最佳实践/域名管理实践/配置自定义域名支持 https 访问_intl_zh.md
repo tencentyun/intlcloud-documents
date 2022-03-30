@@ -50,7 +50,7 @@ server {
     }
 }
 ```
-其中`server.crt;`、`server.key`是您的自有（自定义）域名的 HTTPS 证书。若您的域名还没有 HTTPS 证书 ，请前往 [腾讯云 SSL 证书](https://intl.cloud.tencent.com/products/ss) 页面进行申请。
+其中`server.crt;`、`server.key`是您的自有（自定义）域名的 HTTPS 证书。若您的域名还没有 HTTPS 证书 ，请前往 [腾讯云 SSL 证书](https://intl.cloud.tencent.com/products/ssl) 页面进行申请。
 若暂时没有证书，可以删除以下配置信息，但访问时会出现告警，单击继续即可访问：
 ```shell
 ssl on;
