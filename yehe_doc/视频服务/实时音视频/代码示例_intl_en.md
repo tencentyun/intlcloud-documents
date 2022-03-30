@@ -1,6 +1,6 @@
 <style>
     .card-container {
-        width: 450px;
+        width: 293px;
         display: block;
         float: left;
         padding-left: 15px;
