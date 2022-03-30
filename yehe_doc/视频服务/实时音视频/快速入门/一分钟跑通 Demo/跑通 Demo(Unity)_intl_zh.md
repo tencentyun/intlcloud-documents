@@ -8,18 +8,18 @@
 >?
 >
 >- 具体 API 功能参数说明，请参见 [Unity API 概览](https://intl.cloud.tencent.com/zh/document/product/647/40139)。
-- Unity 建议版本： 2020.2.1f1c1。
-- 目前支持 Android、iOS、Windows、Mac(Mac 还在内测中)平台。
-- 需要包含 `Android Build Support`、`iOS Build Support`、`Winodows Build Support` 和 `MacOs Build Support` 模块。
-- 其中 iOS 端开发还需要：
-  - Xcode 11.0及以上版本。
-  - 请确保您的项目已设置有效的开发者签名。
+>- Unity 建议版本： 2020.2.1f1c1。
+>- 目前支持 Android、iOS、Windows、Mac(Mac 还在内测中)平台。
+>- 需要包含 `Android Build Support`、`iOS Build Support`、`Winodows Build Support` 和 `MacOs Build Support` 模块。
+>- 其中 iOS 端开发还需要：
+   - Xcode 11.0及以上版本。
+   - 请确保您的项目已设置有效的开发者签名。
 
 ## 运行示例程序
 [](id:step1)
 ### 步骤1：创建新的应用
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
-2. 单击【立即开始】，输入应用名称，例如 `TestTRTC`，单击【创建应用】。
+2. 输入应用名称，例如 `TestTRTC`，单击【创建应用】。
 ![](https://main.qcloudimg.com/raw/7178fb5203b8c1ad9eb4a3b7a3c008d7.png)
 
 [](id:step2)
