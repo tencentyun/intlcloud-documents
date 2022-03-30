@@ -38,7 +38,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    <tr>
       <td>iOS</td>
       <td>iOS 11 or above</td>
-      <td><a href="https://apps.apple.com/cn/app/id1469323992">iOS</a></td>
+      <td>iOS</a></td>
    </tr>
    <tr>
       <td>Web Edition</td>
