@@ -63,7 +63,7 @@ Before making any request for COS services, you need to generate a COSClient cla
 
 If you use a permanent key to initialize a `COSClient`, you can get the `APPId`, `SecretId`, and `SecretKey` on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page of the CAM console. A permanent key is suitable for most application scenarios. Below is an example:
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```java
 // 1. Initialize the user credentials (secretId, secretKey).
 // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SecretId` and `SecretKey` of your project.
@@ -83,7 +83,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 
 You can also use a temporary key to initialize the COSClient. For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://cloud.tencent.com/document/product/436/14048). An example is shown below:
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```java
 // 1. Pass in the obtained temporary key (tmpSecretId, tmpSecretKey, sessionToken).
 String tmpSecretId = "SECRETID";
@@ -104,8 +104,8 @@ The ClientConfig class is a configuration class containing the following main me
 | Member Name | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | region | Constructor or set method | Bucket region. For the abbreviations for COS regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | Region |
-| httpProtocol | Set method | The protocol used by the request. By default, HTTP is used to interact with COS. | HttpProtocol |
-| signExpired | Set method | Validity period (in seconds) of the request signature. Default: 3600s | int |
+| httpProtocol | Set method | The protocol used by the request. By default, HTTPS is used to interact with COS. | HttpProtocol |
+| signExpired | Set method | Validity period (in seconds) of the request signature. Default: 3600s | long |
 | connectionTimeout | Set method | Timeout duration in milliseconds for connection with COS. Default value: 30000 ms | int |
 | socketTimeout | Set method | Timeout duration in milliseconds for the client to read data. Default value: 30000 ms | int |
 | httpProxyIp | Set method | Proxy server IP | String |
@@ -116,7 +116,7 @@ The ClientConfig class is a configuration class containing the following main me
 
 The following example creates a bucket for the selected region and bucket:
 
-[//]: # ".cssg-snippet-put-bucket-and-grant-acl"
+[//]: # (.cssg-snippet-put-bucket-and-grant-acl)
 ```java
 String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
 CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket);
@@ -135,7 +135,7 @@ try{
 
 The following example queries a bucket list:
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```java
 List<Bucket> buckets = cosClient.listBuckets();
 for (Bucket bucketElement : buckets) {
@@ -158,7 +158,7 @@ Upload a local file or input stream with a known length to COS. It is most suita
 
 The following example uploads a file up to 5 GB:
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```java
 // Specify the file to be uploaded.
 File localFile = new File(localFilePath);
@@ -174,7 +174,7 @@ PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
 
 The following example queries the list of objects in a bucket:
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```java
 // Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
@@ -223,7 +223,7 @@ do {
 Once an object is uploaded, you can download it by calling the GET Object API with the same key, or by generating a [pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31536) (Please specify GET as the download method) to share to another device for download. Note that the pre-signed URL may be valid only for a limited period if your file is set to private-read.
 The following example downloads a file to a specified local path:
 
-[//]: #	".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```java
 // Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
@@ -249,7 +249,7 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 
 You can delete an object in a specified path in COS with the following code:
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```java
 // Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
@@ -269,7 +269,7 @@ You can also configure a retry policy as needed by referring to the following co
 
 Setting the number of retries:
 
-[//]: # ".cssg-snippet-error-retry"
+[//]: # (.cssg-snippet-error-retry)
 ```java
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
@@ -279,7 +279,7 @@ clientConfig.setMaxErrorRetry = 4;
 
 Setting the retry policy:
 
-[//]: # ".cssg-snippet-retry-policy"
+[//]: # (.cssg-snippet-retry-policy)
 ```java
 // Customize a retry policy.
 public class OnlyIOExceptionRetryPolicy extends RetryPolicy {
