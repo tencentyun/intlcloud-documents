@@ -8,7 +8,7 @@ This document describes how to use the application-enabled authentication mode f
 2. Release the service where the API resides to an environment. See [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
 3. Create an application on the [Application](https://console.cloud.tencent.com/apigateway/app) page in the console.
 4. Select the created application in the application list, click **Bind API**, select the service and API, and click **Submit** to bind the application to the API.
-5. Generate signing information in JavaScript by referring to the [Sample Code](#sample code).
+5. Generate signing information in JavaScript by referring to the [Sample Code](#Sample-Code).
 
 ## Environmental Dependencies
 
