@@ -1,6 +1,6 @@
 A personal access token is similar to the special passwords for applications in certain systems. You can use the generated token to access specific APIs to create applications or scripts.
 ## Procedure
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click **Use Now** to go to CODING page.
+1. Log in to the CODING Console and click **Use Now** to go to CODING page.
 2. Hover over your profile photo in the upper-right corner and click **Personal Settings**.
 3. In the menu on the left, click **Access Token**.
 

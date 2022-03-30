@@ -4,7 +4,7 @@ This document describes how to lock files and folders in a code repository.
 
 ## Open Project
 
-1. Log in to the [CODING Console](https://console.cloud.tencent.com/coding) and click the team domain name to go to CODING.
+1. Log in to the CODING Console and click the team domain name to go to CODING.
 2. Click <img src ="https://main.qcloudimg.com/raw/d94a8e60dd3a41d0af07d72ae0e9d70e.png" style ="margin:0"> in the upper-right corner to open the project list page and click a project icon to open the corresponding project.
 
 CODING allows you to lock files or paths of the **Default Branch (usually the master branch)** in code repositories. Only the user who locked the file can modify (edit or delete) it. If a user locks a path, all files in the path will be locked and can only be modified by the user who locked it.

@@ -43,5 +43,5 @@ This may occur when you do not have permission for the target repository or bran
 ### Do sub-users have permission to access CODING DevOps?
 As long as the root account has access to CODING DevOps, its sub-users can directly access CODING DevOps. To see if sub-users have access, check that the roles and policies of the root account meet the following access requirements:
 The CODING_QCSRole role and QcloudAccessForCODINGRole policy are both present.
-- If the CODING_QCSRole role is missing, log in to the [CODING DevOps Console](https://console.cloud.tencent.com/coding) with the root account, click the Team Space link, and complete authorization as instructed.
+- If the CODING_QCSRole role is missing, log in to the CODING DevOps Console with the root account, click the Team Space link, and complete authorization as instructed.
 - If the root account is missing the QcloudAccessForCODINGRole policy, log in to the [Access Management Console](https://console.cloud.tencent.com/cam/overview) with the root account and go to **Roles** > **CODING_QCSRole** to add the QcloudAccessForCODINGRole policy.
