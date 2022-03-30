@@ -1,26 +1,25 @@
-## Overview
+## Scenario
 
 This document describes how to use the application-enabled authentication mode for the authentication management of your APIs in JavaScript.
 
-## Directions
+## Operation Directions
 
-1. Create an API in the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), and select “Application-Enabled” as the authentication type. For details, see [API Creation Overview](https://intl.cloud.tencent.com/document/product/628/11795).
-2. Publish the service to which the API belongs to the release environment. For details, see [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
-3. Create an application on the [Application](https://console.cloud.tencent.com/apigateway/app) page.
-4. Select the application you created in the application list and click **Bind API**. In the pop-up window, select a service and an API, and click **Submit**. Then you can bind the selected API to the application.
-5. Generate signing information in JavaScript by referring to the [Sample Code](#sample-code).
+1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), create an API and select the authentication type as **App authentication**. To learn more about the authentication types, please find the documentation for different types of backends in [Creating API - Overview](https://intl.cloud.tencent.com/document/product/628/11795).
+2. Release the service where the API resides to an environment. See [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
+3. Create an application on the [Application](https://console.cloud.tencent.com/apigateway/app) page in the console.
+4. Select the created application in the application list, click **Bind API**, select the service and API, and click **Submit** to bind the application to the API.
+5. Generate signing information in JavaScript by referring to the [Sample Code](#sample code).
 
 ## Environmental Dependencies
 
 API Gateway provides sample codes with the request body in JSON format and form-data format. Please select as needed.
 
-## Notes
+## Note
 
-- For information on application lifecycle management, API authorization, and how to bind an API to an application, please see [Application Management](https://intl.cloud.tencent.com/document/product/628/40306).
-- For information on signature generation, please see [Application-Enabled Authentication](https://intl.cloud.tencent.com/document/product/628/40304).
+- For more information on operations such as application lifecycle management, authorizing an app to access the API, and binding an app with an API, please see [Application Management](https://intl.cloud.tencent.com/document/product/628/40306).
+- For the application signature generation process, please see [Application Authentication](https://intl.cloud.tencent.com/document/product/628/40304).
 
-<span id="sample code"></span>
-## Sample Code
+## Sample Code[](id:Sample-Code)
 
 ### Sample codes with the request body in JSON format
 
@@ -29,7 +28,7 @@ API Gateway provides sample codes with the request body in JSON format and form-
 const https = require('https')
 const crypto = require('crypto')
 
-// Application ApiAppKey
+// Application's `ApiAppKey`
 const apiAppKey = 'APIDLIA6tMfqsinsadaaaaaaaapHLkQ1z0kO5n5P'
 // Application ApiAppSecret
 const apiAppSecret = 'Dc44ACV2Da3Gm9JVaaaaaaaaumYRI4CZfVG8Qiuv'
@@ -83,7 +82,7 @@ req.end()
 
 
 
-### Sample codes with the request body in form-data format
+### Sample code with the request body in form-data format
 
 <dx-codeblock>
 :::  JavaScript
@@ -91,7 +90,7 @@ const https = require('https')
 const crypto = require('crypto')
 const querystring = require('querystring')
 
-// Application ApiAppKey
+// Application's `ApiAppKey`
 const apiAppKey = 'APIDLIA6tMfqsinsadaaaaaaaapHLkQ1z0kO5n5P'
 // Application ApiAppSecret
 const apiAppSecret = 'Dc44ACV2Da3Gm9JVaaaaaaaaumYRI4CZfVG8Qiuv'

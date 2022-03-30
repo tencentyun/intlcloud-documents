@@ -2,26 +2,27 @@
 
 This document describes how to use the application-enabled authentication mode for the authentication management of your APIs in Python.
 
-## Directions
+## Operation Directions
 
-1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), create an API and select the authentication type as **App Authentication**. To learn more about the authentication types, please find the documentation for different types of backends in [Creating API - Overview](https://intl.cloud.tencent.com/document/product/628/11795).
-2. Publish the service where the API resides to an environment. See [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
+1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), create an API and select the authentication type as **App authentication**. To learn more about the authentication types, please find the documentation for different types of backends in [Creating API - Overview](https://intl.cloud.tencent.com/document/product/628/11795).
+2. Release the service where the API resides to an environment. See [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
 3. Create an application on the [Application](https://console.cloud.tencent.com/apigateway/app) page in the console.
 4. Select the created application in the application list, click **Bind API**, select the service and API, and click **Submit** to bind the application to the API.
-5. Generate signing information in Python by referring to the [Sample Code](#sample-code).
+5. Generate signing information in Python by referring to the [Sample Code](#sample code).
 
 ## Environmental Dependencies
 
-API Gateway provides sample codes for Python 2.7 and Python 3 and provides code samples for JSON request mode and form request mode. Please select an appropriate mode according to your business needs.
+API Gateway provides sample codes for Python 2.7 and Python 3 with the request body in JSON format and form-data format. Please select as needed.
 
-## Notes
+## Note
 
 - For more information on operations such as application lifecycle management, authorizing an app to access the API, and binding an app with an API, please see [Application Management](https://intl.cloud.tencent.com/document/product/628/40306).
 - For the application signature generation process, please see [Application Authentication](https://intl.cloud.tencent.com/document/product/628/40304).
 
 
-## Sample Code[](id:sample-code)
-### Sample code for Python 2.7 JSON request mode
+## Sample Code[](id:Sample-Code)
+
+### Sample code for Python 2.7 with the request body in JSON format
 <dx-codeblock>
 :::  python
 # -*- coding: utf-8 -*-
@@ -31,38 +32,55 @@ import hashlib
 import hmac
 import json
 import requests
+from urlparse import urlparse
 
+# Application's `ApiAppKey`
+ApiAppKey = 'Your ApiAppKey'
+# Application's `ApiAppSecret`
+ApiAppSecret = 'Your ApiAppSecret'
 
-Url = 'http://service-xxxxxxxx-1234567890.cq.apigw.tencentcs.com/app'
-Host = 'service-xxxxxxxx-1234567890.cq.apigw.tencentcs.com'
-#Application ApiAppKey
-ApiAppKey = 'APIDkva7jni5ihyaaaaaaaaavyz7scdnxdhhba9'
-#Application ApiAppSecret
-ApiAppSecret = '5rbMhtz2Q44ZxyaaaaaaaaaNBeWjnO9Qgwz537wv'
-
-
-# Obtain the signature string
-GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
-xDate = datetime.datetime.utcnow().strftime(GMT_FORMAT)
-HTTPMethod = "POST"
+# apigw access address
+Url = 'http://service-xxx-xxx.gz.apigw.tencentcs.com/'
+HTTPMethod = 'GET'  # method
 Accept = 'application/json'
 ContentType = 'application/json'
-body = {
-    "arg1": "a",
-    "arg2": "b"
-}
-body_json = json.dumps(body)
-ContentMD5 = base64.b64encode(hashlib.md5(body_json).hexdigest())
-signing_str = 'x-date: %s\n%s\n%s\n%s\n%s\n/app' % (
-    xDate, HTTPMethod, Accept, ContentType, ContentMD5)
 
+urlInfo = urlparse(Url)
+Host = urlInfo.hostname
+Path = urlInfo.path
 
-# Calculate the signature
+# Environment information is not included in the signature path
+if Path.startswith(('/release', '/test', '/prepub')) :
+    Path = '/' + Path[1:].split('/',1)[1]
+Path = Path if Path else '/'
+
+# Splice query parameters. The query parameters need to be sorted in lexicographical order.
+if urlInfo.query :
+    queryStr = urlInfo.query
+    splitStr = queryStr.split('&')
+    splitStr = sorted(splitStr)
+    sortStr = '&'.join(splitStr)
+    Path = Path + '?' + sortStr 
+
+ContentMD5 = ''
+GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
+xDate = datetime.datetime.utcnow().strftime(GMT_FORMAT)
+
+# Modify body content
+if HTTPMethod == 'POST' :
+    body = { "arg1": "a", "arg2": "b" }
+    body_json = json.dumps(body)
+    ContentMD5 = base64.b64encode(hashlib.md5(body_json).hexdigest())
+
+# Obtain the signature string
+signing_str = 'x-date: %s\n%s\n%s\n%s\n%s\n%s' % (
+    xDate, HTTPMethod, Accept, ContentType, ContentMD5, Path)
+
+# Compute the signature
 sign = hmac.new(ApiAppSecret, msg=signing_str, digestmod=hashlib.sha1).digest()
 sign = base64.b64encode(sign)
 auth = "hmac id=\"" + ApiAppKey + "\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\""
 sign = auth + sign + "\""
-
 
 # Send the request
 headers = {
@@ -72,15 +90,20 @@ headers = {
     'x-date': xDate,
     'Authorization': sign
 }
+if(HTTPMethod == 'GET'):
+    ret = requests.get(Url, headers=headers)
+if(HTTPMethod == 'POST'):
+    ret = requests.post(Url, headers=headers, data=body_json)
 
-ret = requests.post(Url, headers=headers, data=body_json)
+print(ret.headers)
 print(ret.text)
 :::
 </dx-codeblock>
 
 
 
-### Sample code for Python 2.7 form request mode
+
+### Sample code for Python 2.7 with the request body in form-data format
 <dx-codeblock>
 :::  python
 # -*- coding: utf-8 -*-
@@ -88,40 +111,57 @@ import base64
 import datetime
 import hashlib
 import hmac
+import json
 import requests
+import urllib
+from urlparse import urlparse
 
+# Application's `ApiAppKey`
+ApiAppKey = 'Your ApiAppKey'
+# Application's `ApiAppSecret`
+ApiAppSecret = 'Your ApiAppSecret'
 
-Url = 'http://service-xxxxxxxx-1234567890.hk.apigw.tencentcs.com/app'
-Host = 'service-xxxxxxxx-1234567890.hk.apigw.tencentcs.com'
-#Application ApiAppKey
-ApiAppKey = 'APID4I7Ic3DPy83aaaaaaaaan2fwtwe1ywl64fof'
-#Application ApiAppSecret
-ApiAppSecret = '42A6S7ZUpK2UL6Faaaaaaaa1rz2qe22RU6h4mT5'
-
-
-# Obtain the signature string
-GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
-xDate = datetime.datetime.utcnow().strftime(GMT_FORMAT)
-HTTPMethod = "POST"
+# apigw access address
+Url = 'http://service-xxx-xxx.gz.apigw.tencentcs.com/'
+HTTPMethod = 'POST'  # method
 Accept = 'application/json'
 ContentType = 'application/x-www-form-urlencoded'
+
+urlInfo = urlparse(Url)
+Host = urlInfo.hostname
+Path = urlInfo.path
+
+# Environment information is not included in the signature path
+if Path.startswith(('/release', '/test', '/prepub')) :
+    Path = '/' + Path[1:].split('/',1)[1]
+Path = Path if Path else '/'
+
 ContentMD5 = ''
-body = {
-    "arg1": "a",
-    "arg2": "b"
-}
-sorted_body = sorted(body)
-signing_str = 'x-date: %s\n%s\n%s\n%s\n%s\n/app?%s=%s&%s=%s' % (
-    xDate, HTTPMethod, Accept, ContentType, ContentMD5, sorted_body[0], body[sorted_body[0]], sorted_body[1],
-    body[sorted_body[1]])
+GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
+xDate = datetime.datetime.utcnow().strftime(GMT_FORMAT)
 
+# Modify body content
+body = { "arg1": "a", "arg2": "b" }
+argBody = urllib.urlencode(body)
 
-# Calculate the signature
+# When signing, the form parameters are spliced with the query parameters. The parameters need to be sorted in lexicographical order.
+if urlInfo.query :
+    argBody = argBody + '&' + urlInfo.query
+
+splitStr = argBody.split('&')
+argBody = sorted(splitStr)
+sortStr = '&'.join(argBody)
+Path = Path + '?' + sortStr
+
+# Obtain the signature string
+signing_str = 'x-date: %s\n%s\n%s\n%s\n%s\n%s' % (
+    xDate, HTTPMethod, Accept, ContentType, ContentMD5, Path)
+
+# Compute the signature
 sign = hmac.new(ApiAppSecret, msg=signing_str, digestmod=hashlib.sha1).digest()
 sign = base64.b64encode(sign)
 auth = "hmac id=\"" + ApiAppKey + "\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\""
 sign = auth + sign + "\""
-
 
 # Send the request
 headers = {
@@ -131,15 +171,19 @@ headers = {
     'x-date': xDate,
     'Authorization': sign
 }
+if(HTTPMethod == 'GET'):
+    ret = requests.get(Url, headers=headers)
+if(HTTPMethod == 'POST'):
+    ret = requests.post(Url, headers=headers, data=body)
 
-ret = requests.post(Url, headers=headers, data=body)
+print(ret.headers)
 print(ret.text)
 :::
 </dx-codeblock>
 
 
 
-### Sample code for Python 3 JSON request mode
+### Sample code for Python 3 with the request body in form-data format
 <dx-codeblock>
 :::  python
 # -*- coding: utf-8 -*-
@@ -149,34 +193,51 @@ import hashlib
 import hmac
 import json
 import requests
+from urllib.parse import urlparse
+from urllib.parse import urlencode
 
+# Application's `ApiAppKey`
+ApiAppKey = 'Your ApiAppKey'
+# Application's `ApiAppSecret`
+ApiAppSecret = 'Your ApiAppSecret'
 
-Url = 'http://service-xxxxxxxx-1234567890.cq.apigw.tencentcs.com/app'
-Host = 'service-xxxxxxxx-1234567890.cq.apigw.tencentcs.com'
-#Application ApiAppKey
-ApiAppKey = 'APIDkva7jni5ihyaaaaaaaaavyz7scdnxdhhba9'
-#Application ApiAppSecret
-ApiAppSecret = '5rbMhtz2Q44ZxyaaaaaaaaaNBeWjnO9Qgwz537wv'
+# apigw access address
+Url = 'http://service-xxx-xxx.gz.apigw.tencentcs.com/'
+HTTPMethod = 'POST'  # method
+Accept = 'application/json'
+ContentType = 'application/x-www-form-urlencoded'
 
+urlInfo = urlparse(Url)
+Host = urlInfo.hostname
+Path = urlInfo.path
 
-# Obtain the signature string
+# Environment information is not included in the signature path
+if Path.startswith(('/release', '/test', '/prepub')) :
+    Path = '/' + Path[1:].split('/',1)[1]
+Path = Path if Path else '/' 
+
+ContentMD5 = ''
 GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
 xDate = datetime.datetime.utcnow().strftime(GMT_FORMAT)
-HTTPMethod = "POST"
-Accept = 'application/json'
-ContentType = 'application/json'
-body = {
-    "arg1": "a",
-    "arg2": "b"
-}
-body_json = json.dumps(body)
-body_md5 = hashlib.md5(body_json.encode()).hexdigest()
-ContentMD5 = base64.b64encode(body_md5.encode()).decode()
-signing_str = 'x-date: %s\n%s\n%s\n%s\n%s\n/app' % (
-    xDate, HTTPMethod, Accept, ContentType, ContentMD5)
 
+# Modify body content
+body = { "arg1": "a", "arg2": "b" }
+argBody = urlencode(body)
 
-# Calculate the signature
+# When signing, the form parameters are spliced with the query parameters. The parameters need to be sorted in lexicographical order.
+if urlInfo.query :
+    argBody = argBody + '&' + urlInfo.query
+
+splitStr = argBody.split('&')
+argBody = sorted(splitStr)
+sortStr = '&'.join(argBody)
+Path = Path + '?' + sortStr
+
+# Obtain the signature string
+signing_str = 'x-date: %s\n%s\n%s\n%s\n%s\n%s' % (
+    xDate, HTTPMethod, Accept, ContentType, ContentMD5, Path)
+
+# Compute the signature
 sign = hmac.new(ApiAppSecret.encode(), msg=signing_str.encode(), digestmod=hashlib.sha1).digest()
 sign = base64.b64encode(sign).decode()
 auth = "hmac id=\"" + ApiAppKey + "\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\""
@@ -192,67 +253,15 @@ headers = {
     'Authorization': sign
 }
 
-ret = requests.post(Url, headers=headers, data=body_json)
+if HTTPMethod == 'GET' :
+    ret = requests.get(Url, headers=headers)
+if HTTPMethod == 'POST' :
+    ret = requests.post(Url, headers=headers, data=body)
+
+print(ret.headers)
 print(ret.text)
 :::
 </dx-codeblock>
 
 
-
-### Sample code for Python 3 form request mode
-<dx-codeblock>
-:::  python
-# -*- coding: utf-8 -*-
-import base64
-import datetime
-import hashlib
-import hmac
-import requests
-
-
-Url = 'http://service-xxxxxxxx-1234567890.hk.apigw.tencentcs.com/app'
-Host = 'service-xxxxxxxx-1234567890.hk.apigw.tencentcs.com'
-#Application ApiAppKey
-ApiAppKey = 'APID4I7Ic3DPy83aaaaaaaaan2fwtwe1ywl64fof'
-#Application ApiAppSecret
-ApiAppSecret = '42A6S7ZUpK2UL6Faaaaaaaa1rz2qe22RU6h4mT5'
-
-
-# Obtain the signature string
-GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
-xDate = datetime.datetime.utcnow().strftime(GMT_FORMAT)
-HTTPMethod = "POST"
-Accept = 'application/json'
-ContentType = 'application/x-www-form-urlencoded'
-ContentMD5 = ''
-body = {
-    "arg1": "a",
-    "arg2": "b"
-}
-sorted_body = sorted(body)
-signing_str = 'x-date: %s\n%s\n%s\n%s\n%s\n/app?%s=%s&%s=%s' % (
-    xDate, HTTPMethod, Accept, ContentType, ContentMD5, sorted_body[0], body[sorted_body[0]], sorted_body[1],
-    body[sorted_body[1]])
-
-
-# Calculate the signature
-sign = hmac.new(ApiAppSecret.encode(), msg=signing_str.encode(), digestmod=hashlib.sha1).digest()
-sign = base64.b64encode(sign).decode()
-auth = "hmac id=\"" + ApiAppKey + "\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\""
-sign = auth + sign + "\""
-
-
-# Send the request
-headers = {
-    'Host': Host,
-    'Accept': Accept,
-    'Content-Type': ContentType,
-    'x-date': xDate,
-    'Authorization': sign
-}
-
-ret = requests.post(Url, headers=headers, data=body)
-print(ret.text)
-:::
-</dx-codeblock>
 

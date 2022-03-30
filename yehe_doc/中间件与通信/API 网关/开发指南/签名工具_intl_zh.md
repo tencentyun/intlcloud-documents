@@ -9,21 +9,21 @@ API 网关签名工具是腾讯云 API 网关为用户提供的 Web 工具，可
 
 ### 步骤1：填写签名基本配置信息
 1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway)。
-2. 在左侧导航栏单击【工具】>【签名工具】，进入 API 网关签名工具页面。
-2. 在 “基本信息” 栏中，单击【获取】，自动填充签名有效时间。
-3. 输入签名水印值，可填写任意值。
+2. 在左侧导航栏单击**工具** > **签名工具**，进入 API 网关签名工具页面。
+3. 在 “基本信息” 栏中，单击**获取**，自动填充签名有效时间。
+4. 输入签名水印值，可填写任意值。
 ![](https://main.qcloudimg.com/raw/5e6e18dbb642e507b1f22251e7811300.png)
 
 ### 步骤2：输入 API 密钥
 在 “密钥” 栏中，输入您的 API 密钥信息：
-- 方式一：单击【选择】，选择您账户下已创建的密钥。
+- 方式一：单击**选择**，选择您账户下已创建的密钥。
 - 方式二：直接输入密钥。
 
 填写时，请确保该信息的准确性。填写错误将导致您的签名被视为无效签名。
 ![](https://main.qcloudimg.com/raw/30ab6f97d0ca79b1987d86125e72e8fc.png)
 
 ### 步骤3：生成签名
-单击【生成签名】，即可在右侧展示区中查看请求签名结果。主要参数介绍如下：
+单击**生成签名**，即可在右侧展示区中查看请求签名结果。主要参数介绍如下：
 - Source：签名水印值。
 - X-Date：格林威治时间（GMT）格式的 HTTP 请求构造时间，X-Date 里的时间和当前时间的差值不能超过15分钟。
 - Authorization：签名内容。
@@ -31,7 +31,7 @@ API 网关签名工具是腾讯云 API 网关为用户提供的 Web 工具，可
 ![](https://main.qcloudimg.com/raw/5c69a16414f6a4d04dd447f0f87fd7da.png)
 
 ### 步骤4：在 Postman 中发起调用
-打开 Postman，将 Source、X-Date、Authorization 三个参数填写在 Header 中，并填写 API 请求地址、API 请求参数等信息，单击【Send】，即可发起对密钥对认证 API 的调用。
+打开 Postman，将 Source、X-Date、Authorization 三个参数填写在 Header 中，并填写 API 请求地址、API 请求参数等信息，单击 **Send**，即可发起对密钥对认证 API 的调用。
 ![](https://main.qcloudimg.com/raw/9eab8698a99139b7f9fa6d11cf41e39c.png)
 
 ## 注意事项
