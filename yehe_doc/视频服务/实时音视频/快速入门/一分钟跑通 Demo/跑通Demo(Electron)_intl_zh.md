@@ -12,7 +12,7 @@
 1. 登录实时音视频控制台，选择**开发辅助**>**[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)**。
 2. 单击**新建应用**输入应用名称，例如 `TestTRTC`；若您已创建应用可单击**选择已有应用**。
 3. 根据实际业务需求添加或编辑标签，单击**创建**。
-![](https://main.qcloudimg.com/raw/8dc52b5fa66ec4a5a4317719f9d442b9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 >?
 >- 应用名称只能包含数字、中英文字符和下划线，长度不能超过15个字符。
