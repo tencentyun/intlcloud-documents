@@ -22,8 +22,8 @@ The billing items and corresponding billing cycles for API Gateway are as listed
 - Within 180 days after the service is suspended, if you pay the past due charges, the service will be automatically resumed; otherwise, API Gateway will have the right to clear your API configuration information and destroy your data.
 
 >!
-- If you receive a payment overdue notification, please go to the [Top-up Center](https://console.cloud.tencent.com/account/recharge) in the console and top up your account in time to prevent your business from being affected.
-- If you have any questions about bills, you can view and check your consumption details on the [Resource Bill](https://console.cloud.tencent.com/account/resources) page in the console.
-- See [Billable Overview](https://intl.cloud.tencent.com/document/product/628/11771) for the description of each billing item and the billing rules.
-- You can also configure alarms for overdue payment through the balance alarm feature in the Billing Center.
+>- If you receive a payment overdue notification, please go to the [Top-up Center](https://console.cloud.tencent.com/account/recharge) in the console and top up your account in time to prevent your business from being affected.
+>- If you have any questions about bills, you can view and check your consumption details on the [Resource Bill](https://console.cloud.tencent.com/account/resources) page in the console.
+>- See [Billable Overview](https://intl.cloud.tencent.com/document/product/628/11771) for the description of each billing item and the billing rules.
+>- You can also configure alarms for overdue payment through the balance alarm feature in the Billing Center.
 
