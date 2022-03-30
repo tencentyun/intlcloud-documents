@@ -22,7 +22,7 @@ Click the ID of the target instance to view its details.
 - In the **Basic Info** section, you can view the instance region and network.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/5f8d39a58c4db0a2ba6ddc6879d6c9fa.png" style="zoom:67%;" />
 - In the **Configuration** section, you can view the instance version, storage engine, node specification, capacity, billing mode, and maintenance time.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/cdd603de45d6bbdfbd46ad960e8f7084.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1b1b29993630b90223029cdccd0129bd.png" style="zoom:67%;" />
 - In the **Instance Architecture Diagram** section, you can view the system architecture diagram of the cluster to recognize the primary/secondary nodes in the cluster.
 
 ## More Operations
