@@ -11,7 +11,8 @@
 
 >?
 > 1. 如需使用非本集群所在 VPC 的 CLB，需先通过 [云联网](https://intl.cloud.tencent.com/document/product/1003/30062) 打通当前集群 VPC 和 CLB 所在的 VPC。
-> 2. 在确保 VPC 已经打通之后，请 [提交工单](https://console.intl.cloud.tencent.com/workorder/category)申请使用该功能。
+> 2. 在确保 VPC 已经打通之后，请 [提交工单](https://console.intl.cloud.tencent.com/workorder) 申请使用该功能。
+> 3. 以下 YAML 中，需要您输入地域 ID ，您可以通过 [地域和可用区](https://intl.cloud.tencent.com/document/product/457/36736) 查看地域 ID。
 
 
 
@@ -25,17 +26,17 @@ CLB Ingress 跨域绑定和指定可用区支持通过控制台和 YAML 两种�
 ::: 控制台方式
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
 2. 在“集群管理”页面，选择需修改 Ingress 的集群 ID。
-3. 在集群详情页，选择左侧**服务与路由**>**Ingress**。如下图所示：
+3. 在集群详情页，选择左侧**服务与路由** > **Ingress**。如下图所示：
    ![](https://main.qcloudimg.com/raw/c0929e44a1d2c8fcc099334eec600927.png)
 4. 单击**新建**，在“新建 Ingress”页面中配置相关可用区规则。配置规则说明如下：
    - **当前VPC**：使用本集群所在 VPC 内的 CLB，建议使用随机可用区，若指定可用区的资源售罄将无法创建相关实例。
    - **其它VPC**：仅支持通过 [云联网](https://console.cloud.tencent.com/vpc/ccn) 与当前集群的 VPC 打通的其他 VPC。建议使用随机可用区，若指定可用区的资源售罄将无法创建相关实例。
      ![](https://main.qcloudimg.com/raw/a306924018a1e3d45a17f423c1dd960b.png)
-:::
-::: YAML\s方式
-<dx-alert infotype="explain" title="">
+     :::
+     ::: YAML\s方式
+     <dx-alert infotype="explain" title="">
 1. 如需使用非本集群所在 VPC 的 CLB，需先通过 [云联网](https://intl.cloud.tencent.com/document/product/1003/30062) 打通当前集群 VPC 和 CLB 所在的 VPC。
-2. 在确保 VPC 已经打通之后，请 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请使用该功能。
+2. 在确保 VPC 已经打通之后，请 [提交工单](https://console.intl.cloud.tencent.com/workorder) 申请使用该功能。
 </dx-alert>
 #### 示例1
 如果仅需要指定本集群所在 VPC 的可用区，例如集群的 VPC 在广州地域，CLB Ingress 需要指定广州一区的 CLB，可以在 Ingress 的 YAML 中添加如下 annotation：
@@ -70,6 +71,6 @@ kubernetes.io/ingress.existLbId: "lb-342wppll"
 </dx-codeblock><dx-alert infotype="notice" title="">
 若您还需指定可用区，则需要再添加示例1中的 annotation。
 </dx-alert>
-完整 Ingress Annotation 说明请参见 [Ingress Annotation 说明](https://intl.cloud.tencent.com/document/product/457/40675)。
+完整 Ingress Annotation 说明请参见 [Ingress Annotation 说明](https://intl.cloud.tencent.com/zh/document/product/457/40675)。
 :::
 </dx-tabs>
