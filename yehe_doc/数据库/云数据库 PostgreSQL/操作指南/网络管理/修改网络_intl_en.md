@@ -23,7 +23,7 @@ Tencent Cloud supports **classic network** and **VPC**, which are capable of off
 >?
 >- You can configure one or two networks for each instance.
 >- If an instance has two networks, both are controlled by the security group associated with the instance.
->- You can only select a new VPC and subnet in the same region and AZ where the instance resides.
+>- You can only select a new VPC and subnet in the same region where the instance resides.
 >
 <img src="https://qcloudimg.tencent-cloud.cn/raw/a4cd02d67817ff8ddc99a62ea3c5f0cf.png"  style="zoom:80%;">
 4. After the instance status changes from **Changing network** to **Running**, you can query the changed instance network on the instance details page.
