@@ -1,5 +1,3 @@
-# 实时音视频计费
-
 本文介绍 TRTC 如何按月统计使用[语音通话](https://intl.cloud.tencent.com/document/product/647/36064)、[视频通话](https://intl.cloud.tencent.com/document/product/647/36063)、[音视频互动直播](https://intl.cloud.tencent.com/document/product/647/36059)的费用。
 
 如需预估业务费用，请使用[TRTC价格计算器](https://intl.cloud.tencent.com/pricing/trtc/calculator)。
