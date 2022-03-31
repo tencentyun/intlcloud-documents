@@ -104,7 +104,7 @@ dependencies:
 2. 'xmlns:tools="http://schemas.android.com/tools"'를 manifest에 추가합니다.
 3. `tools:replace="android:label"`을 application에 추가합니다.
 
->? 이 단계를 수행하지 않으면 [Android Manifest merge failed 컴파일 실패](https://intl.cloud.tencent.com/document/product/647/39242) 문제가 발생합니다.
+<dx-alert infotype="explain">이 단계를 수행하지 않으면 [Android Manifest merge failed 컴파일 실패](https://intl.cloud.tencent.com/document/product/647/39242) 문제가 발생합니다.</dx-alert>
 
 
 ![이미지](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
