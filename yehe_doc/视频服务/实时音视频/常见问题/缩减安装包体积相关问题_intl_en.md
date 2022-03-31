@@ -26,8 +26,9 @@ The file size increment varies by TRTC SDK version. For more information, please
  - If .so files in `armeabi-v7a` and `arm64-v8a` architectures are packaged (i.e., your application is offered on Google Play):
   ![](https://main.qcloudimg.com/raw/a6dcbef3c71fe9f2f7b5d52d6b0784ae.png)
 :::
-:::**Method 2. Only package JAR files (i.e., .so files will be downloaded after installation)**
->! If you want to offer your application on Google Play, please do not use this method, as it may cause a failure in offering the application.
+:::Method 2. Only package JAR files (i.e., .so files will be downloaded after installation)
+
+ >! If you want to offer your application on Google Play, please do not use this method, as it may cause a failure in offering the application.
  
  The size of .so files takes the greatest proportion of the total size of the SDK for Android. If you want to reduce your installation package to below 1 MB, you can use the method of downloading .so files after installation:
 [](id:step1)
