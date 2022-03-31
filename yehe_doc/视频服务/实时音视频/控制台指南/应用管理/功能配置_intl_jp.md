@@ -74,7 +74,7 @@ TRTCのクラウドレコーディングは、ルーム内の各ユーザーの�
 2. 【機能設定】>【クラウドレコーディング設定】で、【クラウドレコーディングの起動】の右側のボタンをクリックします。
 ![](https://main.qcloudimg.com/raw/72893310f197830b468292b9d0062458.png)
 3. オフにした後の影響にしっかりと目を通し、クラウドレコーディングの無効について確認してから、【クラウドレコーディングをオフにする】をクリックします。
-![](https://main.qcloudimg.com/raw/b1a41cf54dad0c5cd48f65d2a250e56d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 
 
