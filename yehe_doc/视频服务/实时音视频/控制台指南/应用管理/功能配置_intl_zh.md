@@ -74,7 +74,7 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 2. 在【功能配置】>【云端录制配置】中，单击【启用云端录制】右侧的按钮。
 ![](https://main.qcloudimg.com/raw/8b0e904542bc5cc0ceab46c64ce4a4d4.png)
 3. 仔细阅读关闭后的影响，若确认关闭云端录制，单击【关闭云端录制】即可。
-![](https://main.qcloudimg.com/raw/3202cb938030085babc0210283ce9221.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 
 
