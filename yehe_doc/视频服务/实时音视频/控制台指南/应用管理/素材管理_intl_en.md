@@ -29,6 +29,7 @@ If you want to set an image as the background displayed during on-cloud stream m
 <td>Adjust the Y-axis position of the image.</td>
 <td>Enter a number from 1 to 100. The preview changes accordingly as the value changes.</td>
 </tr></table>
+
 4. Click **Save**.
 
 [](id:preview)
