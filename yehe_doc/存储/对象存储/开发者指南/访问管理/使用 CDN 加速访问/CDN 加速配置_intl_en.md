@@ -160,7 +160,7 @@ After the custom domain name is added to the CDN, the system will automatically 
 ### Disable the feature
 On the **Custom CDN Acceleration Domain** page, click **Edit** to change **Status** from **online** to **offline**, click **Save**, and wait for about 5 minutes for the deployment to complete. After that, the status of the custom acceleration domain will be changed to **Deactivated** in the CDN console.
 
->!You can delete a custom domain name only after changing its status to **Offline**. To disable or delete a CDN domain name, go to the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://intl.cloud.tencent.com/document/product/228/5736).
+>!You can delete a custom domain name only after changing its status to **Offline**. To disable or delete a CDN domain name, go to the [CDN console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://intl.cloud.tencent.com/document/product/228/5736).
 
 
 
