@@ -12,7 +12,6 @@ In the replication operation, the metadata of the source object is inherited by 
 
 >?
 >- Copy and paste are not supported for objects in the ARCHIVE storage class.
->- Objects in MAZ buckets cannot be replicated to an OAZ bucket.
 >- A sub-account should be granted with `PutObject`, `GetObject`, and `GetObjectACL` permissions to replicate objects.
 
 ## Usage
