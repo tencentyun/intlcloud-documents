@@ -28,7 +28,7 @@ The file size increment varies by TRTC SDK version. For more information, please
 :::
 :::Method 2. Only package JAR files (i.e., .so files will be downloaded after installation)
 
- >! If you want to offer your application on Google Play, please do not use this method, as it may cause a failure in offering the application.
+<dx-alert infotype="notice">If you want to offer your application on Google Play, please do not use this method, as it may cause a failure in offering the application.</dx-alert>
  
  The size of .so files takes the greatest proportion of the total size of the SDK for Android. If you want to reduce your installation package to below 1 MB, you can use the method of downloading .so files after installation:
 [](id:step1)
