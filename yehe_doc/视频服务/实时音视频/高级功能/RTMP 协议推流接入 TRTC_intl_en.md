@@ -83,7 +83,7 @@ You can set video resolution and frame rate under the **Video** section of **Set
 
 ### Publishing[](id:step6)
 1. In the **Controls** panel at the bottom, click **Start Streaming**.
-![](https://qcloudimg.tencent-cloud.cn/raw/8709c618536109bfb02e860b47581e45.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/968dad5d34ba029726f3e07b0ef78720.png)
 2. If streaming is successful, the bottom bar will show streaming statistics, and the entry of a user will be recorded by the monitoring dashboard of the TRTC console.
 ![](https://qcloudimg.tencent-cloud.cn/raw/15c0d1b5df33c4a738050f1f532a990c.png)
 
