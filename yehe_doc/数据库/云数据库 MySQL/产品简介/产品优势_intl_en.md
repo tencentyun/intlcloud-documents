@@ -11,10 +11,10 @@ A maximum of 240,000 QPS and a maximum storage space of 6 TB are supported for a
 
 ## High Security
 - **Anti-DDoS protection**
-When you suffer a DDoS attack, this feature can help you resist various attack traffic, ensuring the normal operation of businesses.
+When your business suffers a DDoS attack, this feature can help you resist various attack traffic to ensure the normal operation.
 
 - **Protection against database attacks**
-Effectively defense against such database attacks as SQL injection and brute force attacks.
+Effectively defend against database attacks like SQL injection and brute force attacks.
 
 ## High Reliability
 Data is stored online in a source/replica architecture, ensuring high data security. Moreover, backup data can be stored for an extended time period, allowing for data recovery in case of a database disaster.
