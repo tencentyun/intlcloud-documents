@@ -35,7 +35,7 @@
 
 - 複数のCVMを購入してコンテナサービスクラスターを構成し、コンテナをCVM内で稼働させます。詳細については、[CVM製品ドキュメント](https://intl.cloud.tencent.com/document/product/213)をご参照ください。
 - クラスターをプライベートネットワークの下に構築し、クラスター内のCVMを異なるアベイラビリティーゾーンのサブネットに割り当てることができます。詳細については、[プライベートネットワーク製品ドキュメント](https://intl.cloud.tencent.com/document/product/215)をご参照ください。
-- CLBを使用すると、複数のCVMインスタンスにまたがるクライアントリクエストトラフィックを自動的に割り当て、CVM内のコンテナに転送できます。詳細については、[CLB製品ドキュメント](https://cloud.tencent.com/doc/product/214)をご参照ください。
+- CLBを使用すると、複数のCVMインスタンスにまたがるクライアントリクエストトラフィックを自動的に割り当て、CVM内のコンテナに転送できます。詳細については、[CLB製品ドキュメント](https://intl.cloud.tencent.com/zh/document/product/214)をご参照ください。
 - Cloud Monitorサービスを使用して、TKEクラスターとコンテナインスタンスの実行統計データを監視できます。詳細については、[Cloud Monitor製品ドキュメント](https://intl.cloud.tencent.com/document/product/248)をご参照ください。
 
 
