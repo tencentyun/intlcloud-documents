@@ -6,7 +6,7 @@ The billing mode of TDSQL-C for MySQL can be changed from pay-as-you-go to month
 >- The change from pay-as-you-go billing to monthly subscription billing is irreversible.
 
 ## Directions
-1. Log in to the [console](https://console.cloud.tencent.com/cynosdb), select the target instance in the instance list, and click **More** > **Pay-as-You-Go to Monthly Subscription** in the **Operation** column.
+1. Log in to the [console](https://console.cloud.tencent.com/cynosdb), select the target cluster in the cluster list, and click **More** > **Pay-as-You-Go to Monthly Subscription** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/c9586f2b8d0d0e190353951d60827def.png)
 2. In the pop-up window, select the renewal length, check the box to agree to the rules of the pay-as-you-go to monthly subscription billing mode change, and click **OK**.
 >?You can also select auto-renewal to automate your subsequent renewals.
