@@ -1,4 +1,4 @@
->?현재 페이지 인터페이스는 API의 이전 버전이며 향후 점검이 중단될 수 있습니다. TKE API 3.0 버전은 보다 표준화된 인터페이스 정의와 액세스 지연 시간을 현저히 감소시켰으며, [TKE API 3.0](https://cloud.tencent.com/document/api/457/31853) 사용을 권장합니다.
+>?현재 페이지 인터페이스는 API의 이전 버전이며 향후 점검이 중단될 수 있습니다. TKE API 3.0 버전은 보다 표준화된 인터페이스 정의와 액세스 지연 시간을 현저히 감소시켰으며, [TKE API 3.0](https://intl.cloud.tencent.com/zh/document/product/457/32029) 사용을 권장합니다.
 >
 
 ## API 설명
