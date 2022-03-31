@@ -47,7 +47,7 @@
 主要展示当前应用的实时音视频基础服务和增值服务状态情况，包括“正常”、“已停用”两种状态。
 - **正常：**
 状态为正常时，实时音视频基础服务和增值服务皆可正常使用。为了保证服务持续正常可用，请及时 [续购套餐包](https://buy.cloud.tencent.com/trtc) ，或 [开启后付费](https://intl.cloud.tencent.com/document/product/647/41979) 并保持 [腾讯云账户](https://console.cloud.tencent.com/expense) 余额充足。
-![](https://main.qcloudimg.com/raw/0e2b88e7a8fc1ac1186bcbcd703a9fe4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a8c76a18b99137e9b0df77a823438c73.png)
 - **已停用：**
 状态为已停用时，实时音视频基础服务和增值服务皆不可用，请检查是否存在下方描述情况：
 	1. 未开启后付费，免费试用套餐包用完或过期自动停服：您可以 [购买套餐包](https://buy.cloud.tencent.com/trtc) 重新激活服务或直接 [开启后付费](https://intl.cloud.tencent.com/document/product/647/41979)。
