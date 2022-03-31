@@ -104,7 +104,7 @@ dependencies:
 2. 将 `xmlns:tools="http://schemas.android.com/tools"` 加入到 manifest 中。
 3. 将 `tools:replace="android:label"` 加入到 application 中。
 
->? 若不执行此步，会出现 [Android Manifest merge failed 编译失败](https://intl.cloud.tencent.com/document/product/647/39242) 问题。
+<dx-alert infotype="explain">若不执行此步，会出现 [Android Manifest merge failed 编译失败](https://intl.cloud.tencent.com/document/product/647/39242) 问题。</dx-alert>
 
 
 ![图示](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
