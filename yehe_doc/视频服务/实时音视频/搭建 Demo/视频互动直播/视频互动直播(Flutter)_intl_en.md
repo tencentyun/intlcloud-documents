@@ -165,7 +165,7 @@ lib/TRTCLiveRoom/model/
 3. After setting beauty filters, call `createRoom` to create a live streaming room.
 4. Call `startPublish` to start streaming. To enable CDN live streaming, specify `useCDNFirst` and `CDNPlayDomain` in the `TRTCLiveRoomConfig` parameter, which is passed in during login, and specify `streamID` for playback when calling `startPublish`.
 
-![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/7f2adcf0893bcce3321454c8a67bbd55.png)
 
 [](id:model.step6)
 ### Step 6. Play back streams
