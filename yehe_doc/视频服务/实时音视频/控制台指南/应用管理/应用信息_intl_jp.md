@@ -47,7 +47,7 @@ Relayed live streaming。TRTCはクラウド上でバイパストランスコー
 主に、現在のアプリケーションのTRTC基本サービスと付加価値サービスのステータスを表示し、「正常」、「サービス停止」の2種類の状態があります。
 - **正常：**
 ステータスが正常の時、TRTC基本サービスと付加価値サービスはいずれも正常に使用できます。サービスが継続的に正常使用できるように、速やかに[パッケージを継続購入](https://buy.cloud.tencent.com/trtc) 、または[後払いの開始](https://intl.cloud.tencent.com/document/product/647/41979) を行い、[Tencent Cloudアカウント](https://console.cloud.tencent.com/expense) の残高を確保してください。
-![](https://main.qcloudimg.com/raw/0e2b88e7a8fc1ac1186bcbcd703a9fe4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a8c76a18b99137e9b0df77a823438c73.png)
 - **サービス停止：**
 ステータスがサービス停止の時、TRTC基本サービスと付加価値サービスはいずれも利用不可となります。以下に説明する状況が存在するかどうか確認してください。
 	1. 後払いを開始していない状態で、無料お試しパッケージを使い切った、または期限切れとなり、サービスが自動的に停止された場合：[パッケージを購入](https://buy.cloud.tencent.com/trtc)することによりサービスを再度アクティブ化するか、または直接 [後払いの開始](https://intl.cloud.tencent.com/document/product/647/41979)。を行うことができます。
