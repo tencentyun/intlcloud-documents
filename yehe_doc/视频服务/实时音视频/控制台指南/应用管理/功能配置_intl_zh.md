@@ -15,7 +15,7 @@
 ### 开启旁路推流功能
 1. 进入实时音视频控制台，选择【[应用管理](https://console.cloud.tencent.com/trtc/app)】。
 2. 选择需要修改功能配置的应用，单击目标应用所在行的【功能配置】。
- ![](https://main.qcloudimg.com/raw/e5b5b5494f2c75a7ea7a48caae32f256.png)
+ ![](https://main.qcloudimg.com/raw/f302931ec709c205bd6c4e2378cd14b3.png)
 3. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
 ![](https://main.qcloudimg.com/raw/19050dd982abfe75080843148f3abbc4.png)
 4. 在弹出的【开启旁路推流功能】弹框中，**仔细阅读风险说明**；若确认开通，单击【开启旁路推流功能】即可。
@@ -34,9 +34,9 @@
 ### 关闭旁路推流功能
 如果您需要关闭旁路推流功能，具体操作步骤如下：
 1. 单击【[应用管理](https://console.cloud.tencent.com/trtc/app)】，选择需要修改功能配置的应用，单击目标应用所在行的【功能配置】。
-3. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
-4. 在弹出的【关闭旁路推流功能】弹框中，**仔细阅读风险说明**；若确认关闭，单击【关闭旁路推流功能】即可。
+2. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+3. 在弹出的【关闭旁路推流功能】弹框中，**仔细阅读风险说明**；若确认关闭，单击【关闭旁路推流功能】即可。
 ![](https://main.qcloudimg.com/raw/1306f736ff0b5337f468325cabdfee54.png)
 
 
