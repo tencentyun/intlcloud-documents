@@ -35,7 +35,7 @@ Relayed Push### Relayed Push方式の選択
 Relayed Push機能を無効にしたい場合、具体的な操作手順は次のとおりです。
 1. 【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】をクリックして、機能設定を変更したいアプリケーションを選択し、対象のアプリケーションがある行の【機能設定】をクリックします。
 3. 【Relayed Push設定】で、【Relayed Pushを有効】の右側のボタンをクリックします。
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
 4. ポップアップした【Relayed Push機能をオフにする】のポップアップボックスで、**リスク説明にしっかりと目を通し**、無効化について確認してから、【Relayed Push機能をオフにする】をクリックします。
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
