@@ -73,7 +73,9 @@ You can download `TUIPusher` and `TUIPlayer` from the following links:
 #### Step 2. Get the key and activate TRTC
 1. On the [overview page](https://console.cloud.tencent.com/im), click the application created to go to the **Basic Configuration** page. In the **Basic Information** section, click **Display key**, and copy and save the key.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6f284cf687e9648d209567ed32983c84.png)
->! Please store the key information properly to prevent disclosure.
+	
+<dx-alert infotype="notice">Please store the key information properly to prevent disclosure.</dx-alert>
+	
 2. On the **Basic Configuration** page, activate TRTC.
 ![](https://qcloudimg.tencent-cloud.cn/raw/8a9d1ca2c395fc6ebd26298a0f5226c4.png)
 :::
@@ -145,7 +147,8 @@ See [Screen Sharing](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-b
 ### How do I implement the on-cloud recording feature on the web?
 1. For information about how to enable **on-cloud recording**, see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
 2. If you enable **specified user recording**, you can start recording on the web by specifying `userDefineRecordId` when calling the [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createClient) API.
-	
+
+
 ### How do I publish a stream to CDN on the web?
 See [Publishing to CDN](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html).
 
