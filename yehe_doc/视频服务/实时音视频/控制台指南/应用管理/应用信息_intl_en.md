@@ -47,7 +47,7 @@ In relayed live streaming, TRTC uses a relaying and transcoding cluster to conve
 This section shows the status of TRTC basic and value-added services, which may be **Normal** or **Disabled**.
 - **Normal:**
 If the status is normal, you have access to both the basic and value-added services. To avoid service suspension, please purchase [new packages](https://buy.cloud.tencent.com/trtc) in a timely manner or, if you have [enabled pay-as-you-go](https://intl.cloud.tencent.com/document/product/647/41979), make sure that your [account](https://console.cloud.tencent.com/expense) has sufficient balance.
-![](https://main.qcloudimg.com/raw/0e2b88e7a8fc1ac1186bcbcd703a9fe4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a8c76a18b99137e9b0df77a823438c73.png)
 - **Disabled:**
 If the status is disabled, you have access to neither the basic nor value-added services. This may involve one of three circumstances.
 	1. If you haven’t enabled pay-as-you-go, the services may have been suspended automatically for your account after your trial package is used up or expires. You can [purchase a package](https://buy.cloud.tencent.com/trtc) or [enable pay-as-you-go](https://intl.cloud.tencent.com/document/product/647/41979) to resume the services.
