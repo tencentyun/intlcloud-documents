@@ -138,6 +138,7 @@ The default configuration file of the AWS SDK is typically located under the use
 ```
 [default]  
 s3 =  
+	signature_version = s3
 addressing_style = virtual 
 ```
 - Configure the Tencent Cloud key in the certificate file (located in `~/.aws/credentials`):  
