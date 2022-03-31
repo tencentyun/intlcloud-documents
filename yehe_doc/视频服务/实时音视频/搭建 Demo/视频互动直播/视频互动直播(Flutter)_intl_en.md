@@ -104,7 +104,7 @@ Add request for mic permission in `Info.plist`:
 2. Add `xmlns:tools="http://schemas.android.com/tools"` to `manifest`.
 3. Add `tools:replace="android:label"` to `application`.
 
->? Without the above steps, the [Android Manifest merge failed](https://intl.cloud.tencent.com/document/product/647/39242) error will occur and the compilation will fail.
+<dx-alert infotype="explain">Without the above steps, the [Android Manifest merge failed](https://intl.cloud.tencent.com/document/product/647/39242) error will occur and the compilation will fail.</dx-alert>
 
 
 ![Illustration](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
