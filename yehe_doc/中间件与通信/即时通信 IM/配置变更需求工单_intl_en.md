@@ -1,7 +1,7 @@
 ## How to Submit an IM Configuration Change Ticket
 1. Go to the [page for submitting an IM ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1).
 2. Select **Group** under **Problem Types**.
-3. Enter the information required for the configuration change according to the relevant template under [Templates of IM Configuration Change Ticket](#.E5.8D.B3.E6.97.B6.E9.80.9A.E4.BF.A1-im-.E9.85.8D.E7. BD.AE.E5.8F.98.E6.9B.B4.E9.9C.80.E6.B1.82.E5.B7.A5.E5.8D.95.E6.A8.A1.E7.89.88), and fill in contact information such as mobile number.
+3. Enter the information required for the configuration change according to the relevant template under [Templates of IM Configuration Change Ticket](#.E5.8D.B3.E6.97.B6.E9.80.9A.E4.BF.A1-im-.E9.85.8D.E7.BD.AE.E5.8F.98.E6.9B.B4.E9.9C.80.E6.B1.82.E5.B7.A5.E5.8D.95.E6.A8.A1.E7.89.88) , and fill in contact information such as mobile number.
 4. Click **Submit Ticket**.
 >? After the ticket is submitted, we will process it within one business day.
 
