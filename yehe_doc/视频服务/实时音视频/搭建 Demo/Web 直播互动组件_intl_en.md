@@ -175,7 +175,7 @@ Publish streams to CDNs using the TRTC SDK for web and play the streams using We
 
 ### Domain requirements
 For security and privacy reasons, only HTTPS URLs can access all features of `TUIPusher` and `TUIPlayer`. Therefore, please use the HTTPS protocol for the web page of your application in production environments.
->! Note: You can use `http://localhost` for local development.
+>! You can use `http://localhost` for local development.
 
 The table below lists the supported URL domain names and protocols.
 
