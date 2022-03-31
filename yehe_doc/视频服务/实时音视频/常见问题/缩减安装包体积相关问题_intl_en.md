@@ -19,7 +19,7 @@ The file size increment varies by TRTC SDK version. For more information, please
 ### How do I reduce the size of an installation package for Android?
 <dx-tabs>
 ::: Method 1. Only package certain .so files
- If your application is used in Mainland China only, you can just package the .so files for the `armeabi-v7a` architecture to reduce the increment in the installation package size to below 5 MB. If you want to offer your application on Google Play, you can package the .so files for the `armeabi-v7a` and `arm64-v8a` architectures.
+ If your application is used in the Chinese mainland only, you can just package the .so files for the `armeabi-v7a` architecture to reduce the increment in the installation package size to below 5 MB. If you want to offer your application on Google Play, you can package the .so files for the `armeabi-v7a` and `arm64-v8a` architectures.
 **Directions:** add `abiFilters "armeabi-v7a"` to `build.gradle` of the current project to specify to package the .so files in a single architecture only or add `abiFilters "armeabi-v7a","arm64-v8a"` to specify to package .so files in two architectures.
  - If only .so files in `armeabi-v7a` architecture are packaged (i.e., your application is not offered on Google Play):
   ![](https://main.qcloudimg.com/raw/72065de8f9cd1c95b23fb797d383b527.png)
