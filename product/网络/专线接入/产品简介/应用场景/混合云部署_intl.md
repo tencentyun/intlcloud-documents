@@ -26,5 +26,5 @@ If Direct Connect is used to connect your IDC and the VPC IDC on Tencent Cloud, 
 4. Configure the Direct Connect NAT (Optional).
 5. Configure the routing table associated with the subnets requiring communication.
 6. You can set up slaves for a Direct Connect by creating multiple Connection or VPN connections.
-For more information, please see [Connection](https://intl.cloud.tencent.com/document/product/216/19244).
+For more information, please see [Getting Started](https://intl.cloud.tencent.com/document/product/216/7557).
 
