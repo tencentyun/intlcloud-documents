@@ -74,7 +74,7 @@ TRTC의 클라우드 녹화는 각 방마다 사용자별 멀티미디어 스트
 2. [기능 설정] > [클라우드 녹화 설정]에서 [클라우드 녹화 활성화] 오른쪽에 있는 버튼을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/72893310f197830b468292b9d0062458.png)
 3. 비활성화 진행 후의 영향에 대해 자세히 읽습니다. 클라우드 녹화 비활성화를 하려면 [클라우드 녹화 비활성화]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/b1a41cf54dad0c5cd48f65d2a250e56d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 
 
