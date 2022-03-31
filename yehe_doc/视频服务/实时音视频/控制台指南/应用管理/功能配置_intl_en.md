@@ -75,7 +75,7 @@ After you disable on-cloud recording, your active business will be unable to rec
 2. In **On-Cloud Recording Configuration**, click the button next to **Enable On-Cloud Recording**.
 ![](https://main.qcloudimg.com/raw/72893310f197830b468292b9d0062458.png)
 3. If you are sure about disabling the feature after reading the risks, click **Disable On-Cloud Recording**.
-![](https://main.qcloudimg.com/raw/b1a41cf54dad0c5cd48f65d2a250e56d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 
 
