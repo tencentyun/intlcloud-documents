@@ -55,9 +55,10 @@ You can download `TUIPusher` and `TUIPlayer` from the following links:
 ![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. Select the **Quick Start** tab to view the application’s secret key.
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
->?
->- Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.
->- After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).
+	
+<dx-alert infotype="explain">
+<li>Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.
+<li>After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).</li></dx-alert>
 
 :::
 ::: Method 2: via IM
