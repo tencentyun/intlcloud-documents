@@ -35,7 +35,7 @@ Relayed Push### Relayed Push方式の選択
 Relayed Push機能を無効にしたい場合、具体的な操作手順は次のとおりです。
 1. 【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】をクリックして、機能設定を変更したいアプリケーションを選択し、対象のアプリケーションがある行の【機能設定】をクリックします。
 3. 【Relayed Push設定】で、【Relayed Pushを有効】の右側のボタンをクリックします。
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
 4. ポップアップした【Relayed Push機能をオフにする】のポップアップボックスで、**リスク説明にしっかりと目を通し**、無効化について確認してから、【Relayed Push機能をオフにする】をクリックします。
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
@@ -97,7 +97,7 @@ TRTCのクラウドレコーディングは、ルーム内の各ユーザーの�
 ### 高度な権限制御を無効にする
 1. 【アプリケーション管理】をクリックして、高度な権限制御を無効にしたいアプリケーションを選択し、対象のアプリケーションがある行の【機能設定】をクリックします。
 2. 【機能設定】>【高度な権限制御】の中で、右側の【高度な権限制御のオフ】の右側ボタンをクリックします。
-![](https://main.qcloudimg.com/raw/b1a41cf54dad0c5cd48f65d2a250e56d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 ## 関連ドキュメント
 - 新しいアプリケーションを作成したい場合、具体的な操作方法については、[アプリケーションの作成](https://intl.cloud.tencent.com/document/product/647/39077)をご参照ください。

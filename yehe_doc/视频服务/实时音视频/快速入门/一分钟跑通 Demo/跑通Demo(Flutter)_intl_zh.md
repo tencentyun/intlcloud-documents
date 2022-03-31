@@ -25,7 +25,7 @@
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 单击【新建应用】输入应用名称，例如 `TestTRTC`；若您已创建应用可单击【选择已有应用】。
 3. 根据实际业务需求添加或编辑标签，单击【创建】。
-![](https://main.qcloudimg.com/raw/f04d288ed091c98a5e8056eb86fb49e8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 >?
 >- 应用名称只能包含数字、中英文字符和下划线，长度不能超过15个字符。
 >- 标签用于标识和组织您在腾讯云的各种资源。例如：企业可能有多个业务部门，每个部门有1个或多个 TRTC 应用，这时，企业可以通过给 TRTC 应用添加标签来标记部门信息。标签并非必选项，您可根据实际业务需求添加或编辑。
@@ -34,7 +34,7 @@
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 根据实际业务需求下载 SDK 及配套的 [Demo 源码](https://github.com/LiteAVSDK/TRTC_Flutter/tree/master/TRTC-Simple-Demo)。
 2. 下载完成后，单击【已下载，下一步】。
-![](https://main.qcloudimg.com/raw/a4f5a2ac1f49d67b4c6968d8b22cdeb0.png)
+![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 
 [](id:step3)
@@ -44,7 +44,7 @@
 3. 设置 `GenerateTestUserSig.dart` 文件中的相关参数：
 <ul><li/>SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
 	<li/>SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的密钥信息。</ul>
-	<img src="https://main.qcloudimg.com/raw/fba60aa9a44a94455fe31b809433cfa4.png"/>
+<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. 粘贴完成后，单击【已复制粘贴，下一步】即创建成功。
 5. 编译完成后，单击【回到控制台概览】即可。
 
@@ -91,7 +91,7 @@ TRTC 的日志默认压缩加密，后缀为 `.xlog`。地址如下：
 请打开 `/example/android/app/src/main/AndroidManifest.xml` 文件。
     1. 将 `xmlns:tools="http://schemas.android.com/tools"` 加入到 manifest 中。
     2. 将 `tools:replace="android:label"` 加入到 application 中。
-![图示](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
+![Illustration](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
 
 >? 更多常见问题，请参见 [Flutter 相关问题](https://intl.cloud.tencent.com/document/product/647/39242)。
 

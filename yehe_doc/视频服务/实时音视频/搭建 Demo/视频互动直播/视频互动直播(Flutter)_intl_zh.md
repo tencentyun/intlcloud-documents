@@ -104,7 +104,7 @@ dependencies:
 2. 将 `xmlns:tools="http://schemas.android.com/tools"` 加入到 manifest 中。
 3. 将 `tools:replace="android:label"` 加入到 application 中。
 
->? 若不执行此步，会出现 [Android Manifest merge failed 编译失败](https://intl.cloud.tencent.com/document/product/647/39242) 问题。
+<dx-alert infotype="explain">若不执行此步，会出现 [Android Manifest merge failed 编译失败](https://intl.cloud.tencent.com/document/product/647/39242) 问题。</dx-alert>
 
 
 ![图示](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
@@ -165,7 +165,7 @@ lib/TRTCLiveRoom/model/
 3. 主播调整美颜效果后，可以调用 `createRoom` 创建新的直播间。
 4. 主播调用 `startPublish` 开始推流。如需支持 CDN 观看，请在 login 时传入的 `TRTCLiveRoomConfig` 参数中指定 `useCDNFirst` 和 `CDNPlayDomain` 并在 `startPublish` 时指定直播拉流用的 streamID。
 
-![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/7f2adcf0893bcce3321454c8a67bbd55.png)
 
 [](id:model.step6)
 ### 步骤6：观众端观看

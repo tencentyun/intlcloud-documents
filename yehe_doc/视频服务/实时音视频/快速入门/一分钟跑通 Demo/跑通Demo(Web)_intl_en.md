@@ -38,7 +38,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Select **New** and enter an application name such as `TestTRTC`. If you have already created an application, select **Existing**.
 3. Add or edit tags according to your actual business needs and click **Create**.
-![](https://main.qcloudimg.com/raw/8dc52b5fa66ec4a5a4317719f9d442b9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 >?
 >- An application name can contain up to 15 characters. Only digits, letters, Chinese characters, and underscores are allowed.
 >- Tags are used to identify and organize your Tencent Cloud resources. For example, an enterprise may have multiple business units, each of which has one or more TRTC applications. In this case, the enterprise can tag TRTC applications to mark out the unit information. Tags are optional and can be added or edited according to your actual business needs.

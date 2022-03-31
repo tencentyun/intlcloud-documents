@@ -104,7 +104,7 @@ dependencies:
 2. `xmlns:tools="http://schemas.android.com/tools"` をmanifestの中に追加します。
 3. `tools:replace="android:label"をapplicationの中に追加します。
 
->? この手順を実行しないと、[Android Manifest merge failedコンパイルの失敗](https://intl.cloud.tencent.com/document/product/647/39242)という問題が発生します。
+<dx-alert infotype="explain">この手順を実行しないと、[Android Manifest merge failedコンパイルの失敗](https://intl.cloud.tencent.com/document/product/647/39242)という問題が発生します。</dx-alert>
 
 
 ![アイコン](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
@@ -165,7 +165,7 @@ lib/TRTCLiveRoom/model/
 3. 美顔効果の変更後、キャスターは `createRoom` を呼び出して新しいライブストリーミングルームを作成することができます。
 4. キャスターが`startPublish`を呼び出し、プッシュを開始します。CDN視聴のサポートが必要な場合は、login時に渡される`TRTCLiveRoomConfig`パラメータ内で`useCDNFirst`と`CDNPlayDomain`を指定し、`startPublish`時にライブストリーミング・プルストリーム用のstreamIDを指定してください。
 
-![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/7f2adcf0893bcce3321454c8a67bbd55.png)
 
 [](id:model.step6)
 ### 手順6：視聴者側での視聴

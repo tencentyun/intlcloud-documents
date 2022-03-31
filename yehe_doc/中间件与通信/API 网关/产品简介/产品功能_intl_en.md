@@ -1,14 +1,23 @@
-## Full-Lifecycle API Management
-* API Gateway provides management features throughout API lifecycle from creation, configuration, modification, testing, and launch to operation and deactivation.
-* It provides three environments, namely, testing, pre-release, and release, for easier API publishing and allows rollback of the specified environment to a specific version at any time.
+## API Full Lifecycle Management
 
-## API Traffic Control
-* API Gateway offers accurate traffic control to help you configure traffic for API services as needed.
-* It supports request filtering and control at the second level to avoid overload of backend business caused by traffic surges.
+- Provides complete service (API grouping) and API lifecycle management.
+- Version management is supported. A version is generated automatically after the API is released. You can switch to any earlier version quickly.
+- Provides API calling logs and monitoring graphs. Users can view the traffic changes clearly.
+
+## API Plugins
+
+- Hot update is supported. After a plugin is bound to an API, it can take effect immediately.
+- Tencent Cloud provides multiple plugin templates to implement the capabilities such as custom CORS, advanced traffic throttling, cache and parameters routing.
+- Custom plugins are supported. You can write SCF code to modify the data stream.
 
 ## API Security
-* API Gateway supports HTTPS for Tencent Cloud sub-domain names and external domain names to ensure secure API communications.
-* It supports secure and reliable user authentication based on `SecretId` and `SecretKey`.
 
-## API Monitoring
-* API Gateway can monitor API calls in real time and provide multidimensional traffic and error rate analysis to facilitate stable and secure API services.
+- Multiple authentication methods such as key pair and OAuth2.0 are supported.
+- Configuration of both IP blocklist and allowlist at the API level is supported.
+- API mapping and converting is supported, and the real backend is hidden.
+- Connection with Tencent Cloud security products such as WAF and BSP is supported.
+
+## Open APIs for Use by External Developers
+
+- Automatic documentation and SDK based on OpenAPI 3.0 Specification are supported.
+- APIs can be sold in Tencent Cloud market.

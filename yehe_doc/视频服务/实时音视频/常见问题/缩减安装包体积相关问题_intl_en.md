@@ -19,15 +19,16 @@ The file size increment varies by TRTC SDK version. For more information, please
 ### How do I reduce the size of an installation package for Android?
 <dx-tabs>
 ::: Method 1. Only package certain .so files
- If your application is used in Mainland China only, you can just package the .so files for the `armeabi-v7a` architecture to reduce the increment in the installation package size to below 5 MB. If you want to offer your application on Google Play, you can package the .so files for the `armeabi-v7a` and `arm64-v8a` architectures.
+ If your application is used in the Chinese mainland only, you can just package the .so files for the `armeabi-v7a` architecture to reduce the increment in the installation package size to below 5 MB. If you want to offer your application on Google Play, you can package the .so files for the `armeabi-v7a` and `arm64-v8a` architectures.
 **Directions:** add `abiFilters "armeabi-v7a"` to `build.gradle` of the current project to specify to package the .so files in a single architecture only or add `abiFilters "armeabi-v7a","arm64-v8a"` to specify to package .so files in two architectures.
  - If only .so files in `armeabi-v7a` architecture are packaged (i.e., your application is not offered on Google Play):
   ![](https://main.qcloudimg.com/raw/72065de8f9cd1c95b23fb797d383b527.png)
  - If .so files in `armeabi-v7a` and `arm64-v8a` architectures are packaged (i.e., your application is offered on Google Play):
   ![](https://main.qcloudimg.com/raw/a6dcbef3c71fe9f2f7b5d52d6b0784ae.png)
 :::
-:::**Method 2. Only package JAR files (i.e., .so files will be downloaded after installation)**
->! If you want to offer your application on Google Play, please do not use this method, as it may cause a failure in offering the application.
+:::Method 2. Only package JAR files (i.e., .so files will be downloaded after installation)
+
+<dx-alert infotype="notice">If you want to offer your application on Google Play, please do not use this method, as it may cause a failure in offering the application.</dx-alert>
  
  The size of .so files takes the greatest proportion of the total size of the SDK for Android. If you want to reduce your installation package to below 1 MB, you can use the method of downloading .so files after installation:
 [](id:step1)

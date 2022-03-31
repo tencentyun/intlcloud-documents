@@ -15,11 +15,11 @@
 ### 开启旁路推流功能
 1. 进入实时音视频控制台，选择【[应用管理](https://console.cloud.tencent.com/trtc/app)】。
 2. 选择需要修改功能配置的应用，单击目标应用所在行的【功能配置】。
- ![](https://main.qcloudimg.com/raw/e5b5b5494f2c75a7ea7a48caae32f256.png)
+ ![](https://main.qcloudimg.com/raw/f302931ec709c205bd6c4e2378cd14b3.png)
 3. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
 ![](https://main.qcloudimg.com/raw/19050dd982abfe75080843148f3abbc4.png)
 4. 在弹出的【开启旁路推流功能】弹框中，**仔细阅读风险说明**；若确认开通，单击【开启旁路推流功能】即可。
-![](https://main.qcloudimg.com/raw/0c81b0ef96e7e07f9fba0d7f8827c7f8.png)
+![](https://main.qcloudimg.com/raw/19050dd982abfe75080843148f3abbc4.png)
 
 [](id:select)
 ### 选择旁路推流方式
@@ -34,10 +34,10 @@
 ### 关闭旁路推流功能
 如果您需要关闭旁路推流功能，具体操作步骤如下：
 1. 单击【[应用管理](https://console.cloud.tencent.com/trtc/app)】，选择需要修改功能配置的应用，单击目标应用所在行的【功能配置】。
-3. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
-4. 在弹出的【关闭旁路推流功能】弹框中，**仔细阅读风险说明**；若确认关闭，单击【关闭旁路推流功能】即可。
-![](https://main.qcloudimg.com/raw/1306f736ff0b5337f468325cabdfee54.png)
+2. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+3. 在弹出的【关闭旁路推流功能】弹框中，**仔细阅读风险说明**；若确认关闭，单击【关闭旁路推流功能】即可。
+![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
 
 [](id:record)
@@ -62,7 +62,7 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 
 1. 单击【[应用管理](https://console.cloud.tencent.com/trtc/app)】，选择需要修改云端录制配置的应用，单击目标应用所在行的【功能配置】。
 3. 在【功能配置】>【云端录制配置】中，单击右侧的【编辑】进入云端录制配置修改页。
-![](https://main.qcloudimg.com/raw/92bf62b503c6bdbb6a71711ad50df0ee.png)
+![](https://main.qcloudimg.com/raw/1c46c6d6f7d87928536ab576975cdcd3.png)
 4. 根据实际情况修改 [配置信息](https://intl.cloud.tencent.com/document/product/647/35426#recordType)，单击【确定】即可保存修改。
 
 
@@ -72,16 +72,16 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 
 1. 单击【[应用管理](https://console.cloud.tencent.com/trtc/app)】，选择需要修改功能配置的应用，单击目标应用所在行的【功能配置】。
 2. 在【功能配置】>【云端录制配置】中，单击【启用云端录制】右侧的按钮。
-![](https://main.qcloudimg.com/raw/8b0e904542bc5cc0ceab46c64ce4a4d4.png)
+![](https://main.qcloudimg.com/raw/72893310f197830b468292b9d0062458.png)
 3. 仔细阅读关闭后的影响，若确认关闭云端录制，单击【关闭云端录制】即可。
-![](https://main.qcloudimg.com/raw/3202cb938030085babc0210283ce9221.png)
+![](https://main.qcloudimg.com/raw/b1a41cf54dad0c5cd48f65d2a250e56d.png)
 
 
 
 [](id:purview)
 ## 高级权限控制
 如果您希望给某些房间中加入进房限制或者上麦限制，也就是仅允许指定的用户去进房或者上麦，而您又担心在客户端判断权限很容易遭遇破解攻击，那么可以考虑 [开启高级权限控制](https://intl.cloud.tencent.com/document/product/647/35157)。
-![](https://main.qcloudimg.com/raw/8fd4b0d09aeea46a15714c59e5e0419e.png)
+![](https://main.qcloudimg.com/raw/78882ea4eac56c347c89a4e8113d706a.png)
 
 
 ### 注意事项
@@ -96,7 +96,7 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 ### 关闭高级权限控制
 1. 单击【应用管理】，选择需要关闭高级权限控制的应用，单击目标应用所在行的【功能配置】。
 2. 在【功能配置】>【高级权限控制】中，单击右侧的【关闭高级权限控制】右侧按钮。
-![](https://main.qcloudimg.com/raw/b7015cb446cd022d591fda7e22689e44.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 ## 相关文档
 - 若需创建新的应用，具体操作请参见 [创建应用](https://intl.cloud.tencent.com/document/product/647/39077)。

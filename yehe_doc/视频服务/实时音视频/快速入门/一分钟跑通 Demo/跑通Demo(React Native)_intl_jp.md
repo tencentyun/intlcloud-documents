@@ -21,7 +21,7 @@
 1. TRTCコンソールにログインし、**開発支援>[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)**を選択します。
 2．**アプリケーションの作成**をクリックし、`TestTRTC`などのアプリケーション名を入力します。すでにアプリケーションを作成している場合、**既存のアプリケーションを選択**をクリックします。
 3. 実際の業務ニーズに応じてタグを追加または編集し、**作成**をクリックします。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 >?
 >-アプリケーション名には、数字、中国語と英語の文字、アンダーラインのみを含めることができ、15文字以内とします。
@@ -41,7 +41,7 @@
 3. `SDKAPPID`と`SECRETKEY`パラメータを設定します。
 <ul><li/>SDKAPPID：デフォルトはPLACEHOLDER、実際のSDKAppIDを設定してください。
     <li/>SECRETKEY：デフォルトはPLACEHOLDER、実際のキー情報を設定してください。</ul>
-    <img src="https://main.qcloudimg.com/raw/fba60aa9a44a94455fe31b809433cfa4.png"/>
+
 4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
 5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
 

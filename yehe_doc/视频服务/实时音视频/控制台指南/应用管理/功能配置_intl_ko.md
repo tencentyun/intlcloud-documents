@@ -35,7 +35,7 @@
 릴레이 푸시 스트림 기능을 비활성화하고 싶은 경우, 다음과 같이 설정합니다.
 1. [[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)]를 클릭하여 기능 설정 수정이 필요한 애플리케이션을 선택한 후, 대상 애플리케이션 라인에서 [기능 설정]을 클릭합니다.
 3. [릴레이 푸시 스트림 설정]에서 [릴레이 푸시 스트림 활성화] 오른쪽에 있는 버튼을 클릭합니다.
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
 4. [릴레이 푸시 스트림 기능 비활성화] 팝업창에 보이는 **리스크 설명을 자세히 읽습니다.** 비활성화 하려면 [릴레이 푸시 스트림 기능 비활성화]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
@@ -96,7 +96,7 @@ TRTC의 클라우드 녹화는 각 방마다 사용자별 멀티미디어 스트
 ### 고급 권한 제어 기능 비활성화
 1. [애플리케이션 관리]를 클릭하여 고급 권한 제어 기능을 비활성화할 애플리케이션을 선택하고 타깃 애플리케이션 라인에서 [기능 설정]을 클릭합니다.
 2. [기능 설정] > [고급 권한 제어]에서 [고급 권한 제어 비활성화] 오른쪽에 있는 버튼을 클릭합니다.
-![](https://main.qcloudimg.com/raw/b1a41cf54dad0c5cd48f65d2a250e56d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 ## 관련 문서
 - 신규 애플리케이션 생성에 대한 자세한 방법은 [애플리케이션 생성](https://intl.cloud.tencent.com/document/product/647/39077)을 참고하십시오.

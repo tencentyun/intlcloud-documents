@@ -47,7 +47,7 @@
 현재 애플리케이션의 TRTC 기본 서비스 및 부가 가치 서비스 상태가 표시되며, '정상' '중지됨' 두 가지 상태로 표시됩니다.
 - **정상: **
 정상 상태인 경우 TRTC 기본 서비스 및 부가 가치 서비스를 정상적으로 사용할 수 있습니다. 계속해서 정상적인 서비스 이용이 가능하도록 [패키지 추가 구매](https://buy.cloud.tencent.com/trtc) 또는 [후불 결제 활성화](https://intl. cloud.tencent.com/document/product/647/41979) 및 [Tencent Cloud Account](https://console.cloud.tencent.com/expense)에서 충분한 잔액을 유지하십시오.
-![](https://main.qcloudimg.com/raw/0e2b88e7a8fc1ac1186bcbcd703a9fe4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a8c76a18b99137e9b0df77a823438c73.png)
 - **사용 중지됨: **
 사용 중지 상태인 경우 TRTC 기본 서비스 및 부가 가치 서비스를 정상적으로 사용할 수 없습니다. 다음과 같은 상황인지 확인하시기 바랍니다.
 	1. 후불 활성화 전 무료 패키지 사용 완료 또는 만료 후 자동 중단: [패키지 구매](https://buy.cloud.tencent.com/trtc) 후 다시 서비스를 시작하거나, 직접 [후불 결제 활성화](https://intl.cloud.tencent.com/document/product/647/41979)를 진행합니다.

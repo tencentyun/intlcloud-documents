@@ -22,43 +22,25 @@ For applications with high requirements of service continuity, data reliability,
 
 ## Directions
 ### Creating a disaster recovery instance
-#### Step 1. Create a disaster recovery instance
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the details page.
 2. Make sure that the GTID feature is enabled by viewing the basic information of the instance on the **Instance Details** page. Click **Add Disaster Recovery Instance** in the instance architecture diagram to enter the disaster recovery instance purchase page.
-![](https://main.qcloudimg.com/raw/d41ae3d97935763b180f2e8a26cb2364.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3535c0274c3dfa18134ccc735edd0f46.png)
 3. On the purchase page, set basic information of the disaster recovery instance such as **Billing Mode**, **Region**, and **Sync Policy**.
  - If the sync policy is **Sync Now**, data will be synced immediately when the disaster recovery instance is created.
- - If the sync policy is **Sync After Creation**, you need to configure a disaster recovery sync link after the instance is created successfully. For detailed directions, see [Create a sync link](#cjtblj) below.
->?
->- The time required to complete the creation depends on the amount of data, and no operations can be performed on the source instance in the console during the creation. It’s recommended to do so at an appropriate time.
->- Only the entire instance data can be synced. Please ensure that the disk space is sufficient.
->- You need to ensure that the source instance is in the running state and none of configuration adjustment tasks, restart tasks, and other modification tasks are executed. Otherwise, the sync task may fail.  
 4. After confirming that everything is correct, click **Buy Now** and wait for disaster recovery instance delivery.
 5. Return to the instance list. After the status of the instance changes to **Running**, it can be used normally.
-
-#### [Step 2. Create a sync link (optional)](id:cjtblj)
->?If the **Sync Policy** you select during instance purchase is **Sync After Creation**, you need to configure a disaster recovery sync link after the instance is created successfully. By doing so, you can implement remote disaster recovery.
-
-1. On the **Instance Details** page of the source instance, you can view the sync status of the disaster recovery instance. Click **Create Sync Task** to create a private network sync linkage with the source instance for the disaster recovery instance.
-![](https://main.qcloudimg.com/raw/f2f941ccf588d54cb2687cc0a9d0a961.png)
-2. Enter the task name, confirm the source and target database information, and click **Save and Next**.
-![](https://main.qcloudimg.com/raw/5a2b3ef40de69af903cc60396d8f1a84.png)
-3. Select the object to be synced. Sync of the entire instance or certain tables is supported. The sync type cannot be customized currently.
-![](https://main.qcloudimg.com/raw/ac3f2db7c68f708ac07bb597a420ae83.png)
-4. Click **Save and Check** to **check the task**. After the check succeeds, click **Start Task**. Then, you can view the task details on the **Disaster Recovery Sync** page in the TencentDB for MySQL console.
-![](https://main.qcloudimg.com/raw/4cc319646447bb20a5a76982a0783a49.png)
 
 ### Managing disaster recovery instances
 - **View a disaster recovery instance**
 A disaster recovery instance can be viewed from the region where it resides. You can use the instance list to filter out all instances in a specific region.
-![](https://main.qcloudimg.com/raw/1ade1aa59f7c5cd74b2cf30299d31cac.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/096486c7562d5385bfd50a187f85b307.png)
 - **View the relationship between the source instance and the disaster recovery instance**
 Click the icon on the right of a disaster recovery instance or source instance to view their relationship.
-![](https://main.qcloudimg.com/raw/4b98a6b2831c027af52a37050aa16f2d.png)
-![](https://main.qcloudimg.com/raw/f08c6d3dd53a40ea544bdadc9e111ee8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/89d342733d4c2264dd5dc00a1c7d4143.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b403e312c47c98d79f1015c6e821082d.png)
 - **View sync delay**
 View the sync delay between the source instance and the disaster recovery instance at the top of the **Instance Details** page of the disaster recovery instance.
-![](https://main.qcloudimg.com/raw/d06a9c821f5ebd04173ee6e453ef5ef2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/053c38735dd3dd5b7e46d5c82687dd09.png)
 - **Disaster recovery instance features**
 A disaster recovery instance has various features, such as instance details viewing, instance monitoring, backup management, and slow query logging.
 
@@ -68,5 +50,5 @@ You can promote a disaster recovery instance to source instance in the console a
 2. Click **Promote to Source Instance** in the top-right corner to promote the disaster recovery instance to source instance. After the promotion, the sync link with the source instance will be disconnected, so that the promoted instance can get data write capability and full MySQL functionality.
 >!Note: Sync cannot be reconnected once disconnected.
 > 
-![](https://main.qcloudimg.com/raw/c4e1517d56c630ff845c89060402e657.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5eb3f1f08b46d4c20ab3b4038309ab03.png)
 

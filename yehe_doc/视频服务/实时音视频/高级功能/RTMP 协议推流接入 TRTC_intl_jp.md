@@ -83,7 +83,7 @@ RTMPバックエンドはBフレームの伝送をサポートしていません
 
 ### プッシュをクリック[](id:step6)
 1. OBSの下部ツールバーの**コントロール**を確認し、**プッシュを開始**をクリックします。
-![](https://qcloudimg.tencent-cloud.cn/raw/8709c618536109bfb02e860b47581e45.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/968dad5d34ba029726f3e07b0ef78720.png)
 2. プッシュ成功後、正常であれば画面下部にプッシュステータスが表示されます。TRTCコンソールのダッシュボードにそのユーザーの入室記録が表示されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/15c0d1b5df33c4a738050f1f532a990c.png)
 

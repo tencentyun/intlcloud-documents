@@ -21,7 +21,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com)
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Select **New** and enter an application name such as `TestTRTC`. If you have already created an application, select **Existing**.
 3. Add or edit tags according to your actual business needs and click **Create**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 >?
 >- An application name can contain up to 15 characters. Only digits, letters, Chinese characters, and underscores are allowed.
@@ -41,7 +41,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com)
 3. Set the `SDKAPPID` and `SECRETKEY` parameters:
 <ul><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
     <li>`SECRETKEY`: a placeholder by default. Set it to the actual key.</ul>
-    <img src="https://main.qcloudimg.com/raw/fba60aa9a44a94455fe31b809433cfa4.png"/>
+
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
 

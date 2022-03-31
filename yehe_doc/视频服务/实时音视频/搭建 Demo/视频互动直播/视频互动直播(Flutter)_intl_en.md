@@ -104,7 +104,7 @@ Add request for mic permission in `Info.plist`:
 2. Add `xmlns:tools="http://schemas.android.com/tools"` to `manifest`.
 3. Add `tools:replace="android:label"` to `application`.
 
->? Without the above steps, the [Android Manifest merge failed](https://intl.cloud.tencent.com/document/product/647/39242) error will occur and the compilation will fail.
+<dx-alert infotype="explain">Without the above steps, the [Android Manifest merge failed](https://intl.cloud.tencent.com/document/product/647/39242) error will occur and the compilation will fail.</dx-alert>
 
 
 ![Illustration](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
@@ -165,7 +165,7 @@ lib/TRTCLiveRoom/model/
 3. After setting beauty filters, call `createRoom` to create a live streaming room.
 4. Call `startPublish` to start streaming. To enable CDN live streaming, specify `useCDNFirst` and `CDNPlayDomain` in the `TRTCLiveRoomConfig` parameter, which is passed in during login, and specify `streamID` for playback when calling `startPublish`.
 
-![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/7f2adcf0893bcce3321454c8a67bbd55.png)
 
 [](id:model.step6)
 ### Step 6. Play back streams

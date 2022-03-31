@@ -104,7 +104,7 @@ dependencies:
 2. 'xmlns:tools="http://schemas.android.com/tools"'를 manifest에 추가합니다.
 3. `tools:replace="android:label"`을 application에 추가합니다.
 
->? 이 단계를 수행하지 않으면 [Android Manifest merge failed 컴파일 실패](https://intl.cloud.tencent.com/document/product/647/39242) 문제가 발생합니다.
+<dx-alert infotype="explain">이 단계를 수행하지 않으면 [Android Manifest merge failed 컴파일 실패](https://intl.cloud.tencent.com/document/product/647/39242) 문제가 발생합니다.</dx-alert>
 
 
 ![이미지](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
@@ -165,7 +165,7 @@ lib/TRTCLiveRoom/model/
 3. 호스트는 뷰티 필터 효과 조정 후, `createRoom` 을 호출하여 새로운 라이브 룸을 생성할 수 있습니다.
 4. 호스트가 `startPublish` 를 호출해 푸시 스트리밍을 시작합니다. CDN 을 통한 시청을 지원하려면 login 시 전송되는 `TRTCLiveRoomConfig` 매개변수에서 `useCDNFirst` 와 `CDNPlayDomain` 을 지정하고 `startPublish` 에서 라이브 방송 풀 스트림용 streamID를 지정하십시오.
 
-![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/7f2adcf0893bcce3321454c8a67bbd55.png)
 
 [](id:model.step6)
 ### 6단계: 시청자 시청

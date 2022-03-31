@@ -36,7 +36,7 @@ After [enabling relayed push](#open_bypass), you can choose the relayed push mod
 To disable relayed push, follow these steps:
 1. Click **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and click **Function Configuration** for the application whose configuration you want to modify.
 2. In **Relayed Push Configuration**, click the button next to **Enable Relayed Push**.
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
 3. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to disable the feature, check the box and click **Disable Relayed Push**.
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
@@ -97,7 +97,7 @@ After you enable advanced permission control for an SDKAppID, all users using th
 ### Disabling advanced permission control
 1. Click **Application Management**, select the application for which you want to disable advanced permission control, and click **Function Configuration**.
 2. In **Function Configuration** > **Advanced Permission Control**, click the button next to **Enable**.
-![](https://main.qcloudimg.com/raw/b1a41cf54dad0c5cd48f65d2a250e56d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b05dfb7bb910e39cd77257cc838ad5e3.png)
 
 ## Documentation
 - To create an application, see [Creating Application](https://intl.cloud.tencent.com/document/product/647/39077).

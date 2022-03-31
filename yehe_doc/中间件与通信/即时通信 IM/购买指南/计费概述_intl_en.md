@@ -5,6 +5,9 @@ Instant Messaging (IM) is pay-as-you-go on a monthly billing cycle.
 
 ## Basic Services
 Three IM plans are available: Trial Edition, Pro Edition, and Flagship Edition. Applications will be assigned the free Trial Edition by default. You can select the plan that best suits your business needs. 
+
+>!The push to all users service is only to users of the Ultimate Edition (It becomes unavailable if you are downgraded to the Pro Edition). You can apply for this service by submitting a [configuration change ticket](https://intl.cloud.tencent.com/document/product/1047/44322). After the application is approved, the service will be turned on in 48 hours.
+
 The following table compares the features of different editions:
 
 | Feature | Trial Edition | Pro Edition | Flagship Edition |
@@ -20,7 +23,7 @@ The following table compares the features of different editions:
 | Free retention period of historical messages | 7 days | 7 days | 30 days |
 | Quota of free daily active users (DAU) | 100/month | 10,000/month | 10,000/month |
 | Free peak group count | 100,000/month | 100,000/month | 100,000/month |
-| Pushing to all users | Not supported | Not supported |Supported |
+| [Pushing to all users](https://intl.cloud.tencent.com/document/product/1047/37165) | Not supported | Not supported |Supported([Application](https://intl.cloud.tencent.com/document/product/1047/44322)) |
 | Concurrent logins on multiple devices on the same platform | Not supported | Not supported |Supported |
 | Local message search (Android, iOS) | Not supported | Not supported |Supported |
 

@@ -21,7 +21,7 @@
 1. 登录实时音视频控制台，选择 **开发辅助>[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)**。
 2. 单击 **新建应用** 输入应用名称，例如 `TestTRTC`；若您已创建应用可单击 **选择已有应用**。
 3. 根据实际业务需求添加或编辑标签，单击 **创建**。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 >?
 >- 应用名称只能包含数字、中英文字符和下划线，长度不能超过15个字符。
@@ -41,7 +41,7 @@
 3. 设置 `SDKAPPID`和`SECRETKEY` 参数：
 <ul><li/>SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
     <li/>SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的密钥信息。</ul>
-    <img src="https://main.qcloudimg.com/raw/fba60aa9a44a94455fe31b809433cfa4.png"/>
+
 4. 粘贴完成后，单击 **已复制粘贴，下一步** 即创建成功。
 5. 编译完成后，单击 **回到控制台概览** 即可。
 

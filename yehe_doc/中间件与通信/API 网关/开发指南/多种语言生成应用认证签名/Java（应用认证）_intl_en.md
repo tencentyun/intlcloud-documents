@@ -4,15 +4,15 @@ This document describes how to manage access to your APIs through application au
 
 ## Directions
 
-1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), create an API and select the authentication type as **App Authentication**. To learn more about the authentication types, please find the documentation for different types of backends in [Creating API - Overview](https://intl.cloud.tencent.com/document/product/628/11795).
-2. Publish the service where the API resides to an environment. See [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
+1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), create an API and select the authentication type as **App authentication**. To learn more about the authentication types, please find the documentation for different types of backends in [Creating API - Overview](https://intl.cloud.tencent.com/document/product/628/11795).
+2. Release the service where the API resides to an environment. See [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
 3. Create an application on the [Application](https://console.cloud.tencent.com/apigateway/app) page in the console.
 4. Select the created application in the application list, click **Bind API**, select the service and API, and click **Submit** to bind the application to the API.
 5. Generate signing information in Java by referring to the [Sample Code](#Sample-Code).
 
 ## Environmental Dependencies
 
-- API Gateway provides code samples for JSON request mode and form request mode. Please select an appropriate mode according to your business needs.
+- API Gateway provides sample codes with the request body in JSON format and form-data format. Please select as needed.
 - Application authentication in the Java demo needs to introduce the following external dependency:
 
 ```xml
@@ -35,7 +35,7 @@ This document describes how to manage access to your APIs through application au
 
 ## Sample Code[](id:Sample-Code)
 
-### Sample code for JSON request mode
+### Sample code with the request body in JSON format
 
 ```java
 import org.apache.commons.codec.digest.DigestUtils;
@@ -170,7 +170,7 @@ public class AppAuthJavaDemo {
 }
 ```
 
-### Sample code for form request mode
+### Sample code with the request body in form-data format
 
 ```java
 import org.apache.http.HttpEntity;

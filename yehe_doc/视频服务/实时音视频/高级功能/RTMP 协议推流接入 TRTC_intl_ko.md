@@ -83,7 +83,7 @@ RTMP 백엔드는 B-프레임 전송을 지원하지 않으며, 사용자는 다
 
 ### 푸시 스트림 클릭[](id:step6)
 1. OBS 하단 툴 바에서 **컨트롤러**를 조회하고 **푸시 스트림 시작**을 클릭합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/8709c618536109bfb02e860b47581e45.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/968dad5d34ba029726f3e07b0ef78720.png)
 2. 푸시 스트림 성공 후, 일반적으로 푸시 스트림 상태가 인터페이스 하단에 표시되고, 사용자의 방 입장 기록은 TRTC 콘솔 대시보드에 기록됩니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/15c0d1b5df33c4a738050f1f532a990c.png)
 

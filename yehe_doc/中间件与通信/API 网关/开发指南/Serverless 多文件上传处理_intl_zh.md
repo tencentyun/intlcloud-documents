@@ -8,21 +8,22 @@
 
 ### 步骤1：创建云函数
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/list-create?rid=1&ns=default&functionName=multipart-upload-example&createType=empty)。
-2. 在【函数服务】页面，单击【新建】，创建一个 `Node.js` 云函数。
+2. 在**函数服务**页面，单击**新建**，创建一个 `Node.js` 云函数。
 创建时，具体参数如下：
 ![](https://main.qcloudimg.com/raw/23dff108256c56b9735ba32294af9d48.png)
-3. 单击【完成】，完成云函数的创建。
+3. 单击**完成**，完成云函数的创建。
 
 ### 步骤2：编写代码并部署
 
 1. 云函数创建完成后，可以参考以下示例代码编写处理 multipart/form-data 的具体逻辑。
-```js
+<dx-codeblock>
+:::  js
 // handler.js
 "use strict";
 const stream = require("stream");
 const Busboy = require("busboy");
- 
- /** 处理用户上传 （POST） */
+
+/** 处理用户上传 （POST） */
 const handlePost = (event) => {
   return new Promise((resolve, reject) => {
     const busboy = new Busboy({ headers: event.headers });
@@ -52,8 +53,8 @@ const handlePost = (event) => {
         body: html,
       });
     });
-     
- /**
+
+    /**
      * busboy 需要 stream pipe 的方式来进行处理，
      * 我们将 body 解码为 buffer后，
      * 转换为 stream，最终 pipe 给 busbody
@@ -65,7 +66,7 @@ const handlePost = (event) => {
   });
 };
 
- /** 返回静态文件 */
+/** 返回静态文件 */
 const handleGet = (event) => {
   const html = `<html><head></head><body>
     <form method="POST" enctype="multipart/form-data">
@@ -84,7 +85,7 @@ const handleGet = (event) => {
   };
 };
 
- /** 云函数入口函数 */
+/** 云函数入口函数 */
 exports.main_handler = async (event, context) => {
   const method = event.httpMethod;
   /** 当请求为 POST 请求时，我们处理用户的 multipart/form-data，并生成展示上传结果的页面 */
@@ -96,15 +97,16 @@ exports.main_handler = async (event, context) => {
     return handleGet(event);
   }
 };
-```
+:::
+</dx-codeblock>
 
 
 2. 编写代码后，您也可以为云函数安装运行时需要的依赖。例如，利用 busboy 进行 multipart/form-data 数据的解码。
 >!依赖要安装在 src 文件夹下。
 
- ![](https://main.qcloudimg.com/raw/0f3bd0311f5261fa9fbcbde7144ac77d.png)
+ ![](https://main.qcloudimg.com/raw/e2d612eab6577b138ce237b18077cf07.png)
 
-3. 单击【部署】，完成云函数的部署。
+3. 单击**部署**，完成云函数的部署。
 
 ### 步骤3：绑定 API 网关触发器
 

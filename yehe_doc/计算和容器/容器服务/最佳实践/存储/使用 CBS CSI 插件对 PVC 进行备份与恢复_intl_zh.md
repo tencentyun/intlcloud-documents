@@ -1,99 +1,245 @@
+
+
 ## 操作场景
 
-如需为 PVC 数据盘创建快照来备份数据，或者将备份的快照数据恢复到新的 PVC 中，可以通过 CBS CSI 插件来实现，本文将介绍如何利用 CBS CSI 插件实现 PVC 的数据备份与恢复。
-
+为 TKE 集群挂载 CFS Turbo 类型存储，可以通过安装 `kubernetes-csi-tencentloud` 组件来实现。该组件基于私有协议将腾讯云 CFS Turbo 文件系统挂载到工作负载，目前仅支持静态配置。CFS 存储类型请参考 [文件存储类型及性能规格](https://intl.cloud.tencent.com/document/product/582/33745)。
 
 ## 前提条件
 
-- 已创建 [TKE 集群](https://intl.cloud.tencent.com/document/product/457/30637) 或已在腾讯云自建 Kubernetes 集群，集群版本 >= 1.18。
-- 已安装 [CBS CSI 插件](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CBS.md)。
-
+- 已创建 TKE 集群或已在腾讯云自建 Kubernetes 集群，集群版本 >=1.14。
+- kube-apiserver 和 kubelet 开启特权，即 `--allow-privileged = true`。
+- 设置组件 `feature gates` 为 `CSINodeInfo = true, CSIDriverRegistry = true`。
 
 ## 操作步骤
 
-### 备份 PVC
+### 创建文件系统 [](id:create-cfs)
 
-#### 创建 VolumeSnapshotClass
+创建 CFS Turbo 文件系统，具体操作请参见 [创建文件系统](https://intl.cloud.tencent.com/document/product/582/9132)。
 
-1. 使用以下 YAML，创建 VolumeSnapshotClass 对象。示例如下：
+>! 文件系统创建后，需将集群网络（vpc-xx）关联到文件系统的 [云联网](https://intl.cloud.tencent.com/document/product/1003/30064)（可在文件系统挂载点信息中查看）。
+
+
+### 部署 RBAC 策略
+
+如果您需要挂载 CFS Turbo 存储卷，需执行 `kubectl apply -f  csi-node-rbac.yaml` 命令在集群中先部署 RBAC 策略，csi-node-rbac.yaml 代码参考如下：
+
 ```yaml
-apiVersion: snapshot.storage.k8s.io/v1beta1
-kind: VolumeSnapshotClass
+apiVersion: v1
+kind: ServiceAccount
 metadata:
-      name: cbs-snapclass
-driver: com.tencent.cloud.csi.cbs
-deletionPolicy: Delete
-```
-2. 执行以下命令，检查 VolumeSnapshotClass 是否创建成功。示例如下：
-```bash
-$ kubectl get volumesnapshotclass
-NAME            DRIVER                      DELETIONPOLICY   AGE
-cbs-snapclass   com.tencent.cloud.csi.cbs   Delete           17m
+  name: cfsturbo-csi-node-sa
+  namespace: kube-system
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cfsturbo-csi-node-role
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes", "endpoints", "configmaps"]
+    verbs: ["get", "list", "watch", "create", "delete", "update"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims", "nodes"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["secrets", "namespaces"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["nodes", "pods"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["volumeattachments", "volumeattachments"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
+    verbs: ["get", "list", "watch"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cfsturbo-csi-node-rolebinding
+subjects:
+  - kind: ServiceAccount
+    name: cfsturbo-csi-node-sa
+    namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: cfsturbo-csi-node-role
+  apiGroup: rbac.authorization.k8s.io
 ```
 
-#### 创建 PVC 快照 VolumeSnapshot
+### 部署 Node Plugin
 
-1. [](id:volumesnapshot)本文以 `new-snapshot-demo` 快照名为例创建 VolumeSnapshot。使用以下 YAML，创建 VolumeSnapshot 对象。示例如下：
+1. 执行 `kubectl apply -f csidriver.yaml` 命令，csidriver.yaml 代码参考如下：
 ```yaml
-apiVersion: snapshot.storage.k8s.io/v1beta1
-kind: VolumeSnapshot
+apiVersion: storage.k8s.io/v1beta1
+kind: CSIDriver
 metadata:
-      name: new-snapshot-demo
+  name: com.tencent.cloud.csi.cfsturbo
 spec:
-      volumeSnapshotClassName: cbs-snapclass # 引用上述步骤创建的 VolumeSnapshotClass
-      source:
-        persistentVolumeClaimName: ssd-pvc # 替换成需要备份的 pvc 名称
-```
-2. 执行以下命令，查看 Volumesnapshot 和 Volumesnapshotcontent 对象是否创建成功，若 `READYTOUSE` 为 true，则创建成功。示例如下：
-```plaintext
-$ kubectl get volumesnapshot
-NAME                READYTOUSE   SOURCEPVC   SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS   SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-new-snapshot-demo   true         ssd-pvc                             20Gi          cbs-snapclass   snapcontent-170b2161-f158-4c9e-a090-a38fdfd84a3e   2m36s          2m50s
-$ kubectl get volumesnapshotcontent
-NAME                                               READYTOUSE   RESTORESIZE   DELETIONPOLICY   DRIVER                      VOLUMESNAPSHOTCLASS   VOLUMESNAPSHOT      AGE
-snapcontent-170b2161-f158-4c9e-a090-a38fdfd84a3e   true         21474836480   Delete           com.tencent.cloud.csi.cbs   cbs-snapclass         new-snapshot-demo   3m3s
-```
-3. 执行以下命令，可以获取 Volumesnapshotcontent 对象的快照 ID，字段是 `status.snapshotHandle`（如下为 snap-rsk8v75j），可以根据快照 ID 在 [容器服务控制台](https://console.cloud.tencent.com/tke2) 确认快照是否存在。示例如下：
-```plaintext
-$ kubectl get volumesnapshotcontent -o yaml snapcontent-170b2161-f158-4c9e-a090-a38fdfd84a3e
-...
-status:
-  creationTime: 1607331318000000000
-  readyToUse: true
-  restoreSize: 21474836480
-  snapshotHandle: snap-rsk8v75j
+  attachRequired: false
+  podInfoOnMount: false
 ```
 
-### 从快照恢复数据到新 PVC
+2.  执行 `kubectl apply -f csi-node.yaml` 命令，csi-node.yaml 代码参考如下：
+```yaml
+# This YAML file contains driver-registrar & csi driver nodeplugin API objects
+# that are necessary to run CSI nodeplugin for cfs
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: cfsturbo-csi-node
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: cfsturbo-csi-node
+  template:
+    metadata:
+      labels:
+        app: cfsturbo-csi-node
+    spec:
+      serviceAccount: cfsturbo-csi-node-sa
+      hostNetwork: true
+      containers:
+        - name: driver-registrar
+          image: ccr.ccs.tencentyun.com/k8scsi/csi-node-driver-registrar:v1.2.0
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "rm -rf /registration/com.tencent.cloud.csi.cfsturbo/registration/com.tencent.cloud.csi.cfsturbo-reg.sock"]
+          args:
+            - "--v=5"
+            - "--csi-address=/plugin/csi.sock"
+            - "--kubelet-registration-path=/var/lib/kubelet/plugins/com.tencent.cloud.csi.cfsturbo/csi.sock"
+          env:
+            - name: KUBE_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          volumeMounts:
+            - name: plugin-dir
+              mountPath: /plugin
+            - name: registration-dir
+              mountPath: /registration
+        - name: cfsturbo
+          securityContext:
+            privileged: true
+            capabilities:
+              add: ["SYS_ADMIN"]
+            allowPrivilegeEscalation: true
+          image: ccr.ccs.tencentyun.com/k8scsi/csi-tencentcloud-cfsturbo:v1.2.0
+          args :
+            - "--nodeID=$(NODE_ID)"
+            - "--endpoint=$(CSI_ENDPOINT)"
+          env:
+            - name: NODE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: CSI_ENDPOINT
+              value: unix://plugin/csi.sock
+          imagePullPolicy: "IfNotPresent"
+          volumeMounts:
+            - name: plugin-dir
+              mountPath: /plugin
+            - name: pods-mount-dir
+              mountPath: /var/lib/kubelet/pods
+              mountPropagation: "Bidirectional"
+      volumes:
+        - name: plugin-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins/com.tencent.cloud.csi.cfsturbo
+            type: DirectoryOrCreate
+        - name: pods-mount-dir
+          hostPath:
+            path: /var/lib/kubelet/pods
+            type: Directory
+        - name: registration-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins_registry
+            type: Directory
+```
 
-1. 本文以上述 [步骤](#volumesnapshot)  创建的 VolumeSnapshot 对象名称 `new-snapshot-demo` 为例，使用以下 YAML 从快照恢复数据到新的 PVC 中。示例如下：
+
+### 使用 CFS Turbo 存储卷
+
+1. 创建 CFS Turbo 文件系统，具体操作请参见 [创建文件系统](#create-cfs)。
+2. 使用以下模板创建 CFS Turbo 类型的 PV。
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-cfsturbo
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 10Gi
+  csi:
+    driver: com.tencent.cloud.csi.cfsturbo
+	  # volumeHandle in PV must be unique, use pv name is better
+    volumeHandle: pv-cfsturbo
+    volumeAttributes: 
+      # cfs turbo server ip
+      host: 10.0.0.116
+      # cfs turbo fsid (not cfs id)
+      fsid: xxxxxxxx
+      proto: lustre
+  storageClassName: ""
+```
+参数说明：  
+  - **metadata.name**: 创建 PV 名称。
+  - **spec.csi.volumeHandle**: 与 PV 名称保持一致。  
+  - **spec.csi.volumeAttributes.host**: 文件系统 ip 地址，可在文件系统挂载点信息中查看。  
+  - **spec.csi.volumeAttributes.fsid**: 文件系统 fsid（非文件系统 id），可在文件系统挂载点信息中查看（挂载命令中 "tcp0:/" 之后 "/cfs" 之前的那一段字符串，如下图）。
+  - **spec.csi.volumeAttributes.proto**：文件系统默认挂载协议。
+![](https://qcloudimg.tencent-cloud.cn/raw/20c622e1174fe89340ed3c41c5f12dd9.png)
+>! 使用 `lustre` 协议挂载 CFS Turbo 卷需预先在集群节点内根据操作系统内核版本安装对应客户端，详情请参考 [在 Linux 客户端上使用 CFS Turbo 文件系统](https://intl.cloud.tencent.com/document/product/582/40298)；
+
+
+3. 使用以下模板创建 PVC 绑定 PV。
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-      name: restore-test
+  name: pvc-cfsturbo
 spec:
-      storageClassName: ssd-csi # storage class 根据自身需求自定义
-      dataSource:
-        name: new-snapshot-demo # 引用上述步骤创建的 VolumeSnapshot
-        kind: VolumeSnapshot
-        apiGroup: snapshot.storage.k8s.io
-      accessModes:
-        - ReadWriteOnce # CBS 为块存储，只支持单机读写
-      resources:
-        requests:
-          storage: 50Gi # 建议大小与被恢复的 PVC 写成一致
+  storageClassName: ""
+  volumeName: pv-cfsturbo
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
 ```
-2. 执行以下命令，可以查看 PVC 已经创建并绑定 PV，从 PV 中也可以查看到对应的 diskid（如下为 disk-ju0hw7no）。示例如下：
-``` bash
-$ kubectl get pvc restore-test
-NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-restore-test   Bound    pvc-940edf09-d622-4126-992b-0a209f048c7d   60Gi       RWO            ssd-topology   6m8s
-$ kubectl get pv pvc-940edf09-d622-4126-992b-0a209f048c7d -o yaml
-...
+参数说明：  
+  - **metadata.name**: 创建 PVC 名称。
+  - **spec.volumeName**: 与上一步中创建 PV 名称保持一致。
+
+
+4. 使用以下模板创建 Pod 挂载 PVC。
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx 
 spec:
-...
-    volumeHandle: disk-ju0hw7no
-...
+  containers:
+  - image: ccr.ccs.tencentyun.com/qcloud/nginx:1.9
+    imagePullPolicy: Always
+    name: nginx
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    volumeMounts:
+      - mountPath: /var/www
+        name: data
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: pvc-cfsturbo
 ```
-	>?如果 StorageClass 使用了拓扑感知（先调度 Pod 再创建 PV），即指定 `volumeBindingMode: WaitForFirstConsumer`，则需要先部署 Pod（需挂载 PVC）才会触发创建 PV（从快照创建新的 CBS 并与 PV 绑定）。
