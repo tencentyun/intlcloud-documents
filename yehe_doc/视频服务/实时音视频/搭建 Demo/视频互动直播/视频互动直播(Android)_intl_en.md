@@ -233,9 +233,9 @@ src/main/java/com/tencent/liteav/liveroom/model
 </tr>
 <tr>
 <td>config</td>
-<td>Global configuration information. Please initialize it during login as it cannot be modified after login.<ul style="margin:0;">
-<li>`useCDNFirst`: specifies the way audience watch live streams. `true` means that audience watch live streams over CDNs, which is cost-efficient but has high latency. `false` means that audience watch live streams in the low latency mode, the cost of which is between that of CDN live streaming and co-anchoring, but the latency is within 1 second.</li>
-<li>`CDNPlayDomain`: specifies the domain name for CDN live streaming, which takes effect only if `useCDNFirst` is set to `true`. You can set it in CSS console > **<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>**.</li>
+<td>Global configuration information. Please initialize it during login as it cannot be modified after login.
+- `useCDNFirst`: specifies the way audience watch live streams. `true` means that audience watch live streams over CDNs, which is cost-efficient but has high latency. `false` means that audience watch live streams in the low latency mode, the cost of which is between that of CDN live streaming and co-anchoring, but the latency is within 1 second.
+- `CDNPlayDomain`: specifies the domain name for CDN live streaming, which takes effect only if `useCDNFirst` is set to `true`. You can set it in CSS console > **<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>**.
 </ul></td>
 </tr>
 <tr>
