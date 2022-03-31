@@ -36,7 +36,7 @@ After [enabling relayed push](#open_bypass), you can choose the relayed push mod
 To disable relayed push, follow these steps:
 1. Click **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and click **Function Configuration** for the application whose configuration you want to modify.
 2. In **Relayed Push Configuration**, click the button next to **Enable Relayed Push**.
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
 3. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to disable the feature, check the box and click **Disable Relayed Push**.
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
