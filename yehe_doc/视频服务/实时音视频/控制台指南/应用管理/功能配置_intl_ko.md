@@ -35,7 +35,7 @@
 릴레이 푸시 스트림 기능을 비활성화하고 싶은 경우, 다음과 같이 설정합니다.
 1. [[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)]를 클릭하여 기능 설정 수정이 필요한 애플리케이션을 선택한 후, 대상 애플리케이션 라인에서 [기능 설정]을 클릭합니다.
 3. [릴레이 푸시 스트림 설정]에서 [릴레이 푸시 스트림 활성화] 오른쪽에 있는 버튼을 클릭합니다.
-![](https://main.qcloudimg.com/raw/8abcab1e53ca628b274576c597e6fcb6.png)
+![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
 4. [릴레이 푸시 스트림 기능 비활성화] 팝업창에 보이는 **리스크 설명을 자세히 읽습니다.** 비활성화 하려면 [릴레이 푸시 스트림 기능 비활성화]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
