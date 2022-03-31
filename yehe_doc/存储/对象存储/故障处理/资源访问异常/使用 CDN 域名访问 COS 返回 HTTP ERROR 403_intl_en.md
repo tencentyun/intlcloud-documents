@@ -1,6 +1,6 @@
 ## Symptoms
 
-When I use a CDN domain to access COS, the error code “HTTP ERROR 403” is returned.
+When I use a CDN（Content Delivery Network) domain to access COS（Cloud Object Storage）, the error code “HTTP ERROR 403” is returned.
 
 
 ## Possible Causes
