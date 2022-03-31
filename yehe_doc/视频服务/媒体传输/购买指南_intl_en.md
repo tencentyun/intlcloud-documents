@@ -4,24 +4,24 @@ The StreamLink service is managed at the flow level in the StreamLink console, a
 
 | Billable Item | Description | Billing Mode |
 | -----------------| ---| --------- |
-| Dedicated link transfer |If you use a dedicated link for transfer, you will be charged based on the sum of the peak bandwidth used by each flow in a day. | Daily pay-as-you-go |
-| Device running |You are charged for using StreamLink to transfer data based on the number of flows and their running hours in a day. | Daily pay-as-you-go |
-| Relaying traffic |You are charged based on the amount of traffic relayed in a day. The pricing of relaying traffic varies with region and the highest bandwidth supported is 8 Mbps. | Daily pay-as-you-go |
+| Transfer |The transfer fee is charged based on the sum of the peak bandwidth used by each flow in a day. | Daily pay-as-you-go |
+| Device running |The device running fee is charged based on the number of inputs and outputs and their running hours in a day. | Daily pay-as-you-go |
+| Relaying traffic |If you relay video to third parties, you will be charged based on the amount of traffic relayed in a day. The pricing of relaying traffic varies with region and the highest bandwidth supported is 8 Mbps. | Daily pay-as-you-go |
 
-### Dedicated link transfer
+### Transfer
 
 #### Pricing
 
-StreamLink allows you to create a dedicated link for transfer in the console, for which you will be charged based on the peak bandwidth used in a day.
+You can create transfer links in the StreamLink console, which are charged based on the peak bandwidth used in a day.
 
 | Billable Item | Billing Method | Price |
 | -----------------| ---| --------- |
-| Bandwidth |Peak outbound bandwidth of a dedicated link | 7.6923 USD/Mbps/day |
+| Transfer|Peak outbound bandwidth in a day | 7.6923 USD/Mbps/day |
 
 #### Billing example
 
-Assume that you created flows A and B with StreamLink on January 1, 2022. The bandwidth usage of flow A and flow B peaked at 12:00 noon and 10:00 p.m. respectively, both reaching 10 Mbps. On January 2, 2022, you would be charged the following dedicated link transfer fee:
-7.6923 (USD/Mbps/day) × 20 (Mbps) = 153.846 USD
+Assume that you created flows A and B with StreamLink on January 1, 2022. The bandwidth usage of flow A and flow B peaked at 12:00 noon and 10:00 PM respectively, both reaching 10 Mbps. On January 2, 2022, you would be charged the following transfer fee:
+7.6923 (USD/Mbps/day) x 20 (Mbps) = 153.846 USD
 
 
 
@@ -33,18 +33,19 @@ The device running cost of StreamLink is as follows:
 
 | Billable Item     | Billing Method                               | Price             |
 | ---------- | -------------------------------------- | ---------------- |
-| Running cost | Sum of the running hours of each flow | 0.25 USD/flow/hour |
+| Device running | Sum of the running hours of each input/output| 0.25 USD/input or output/hour |
+
 
 >!
->- Each input or output is considered a flow. For example, if you have 1 input and 3 outputs, you will be charged the running cost of 4 flows.
+>- If a flow has 1 input and 3 outputs, the device running cost will quadruple.
 >- If your task contains a primary flow and a backup flow, you will be charged the running cost of 2 flows.
->- The running cost is calculated by the hour and charged on a daily basis, and durations are rounded to the next hour.
+>- The device running cost is calculated by the hour and charged on a daily basis, and durations are rounded to the next hour.
 
 #### Billing example
 
 Assume that you created 1 input and 2 outputs and used them for 6 hours on January 1, 2022. On January 2, 2022, you would be charged the following device running cost:
 
-3 (number of flows) × 6 (hours) × 0.25 (USD/hour) = 4.5 USD
+3 (number of inputs and outputs) x 6 (hours) x 0.25 (USD/hour) = 4.5 USD
 
 
 
