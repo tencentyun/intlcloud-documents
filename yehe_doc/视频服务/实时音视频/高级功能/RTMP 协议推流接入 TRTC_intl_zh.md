@@ -83,7 +83,7 @@ RTMP 后台不支持传输 B 帧，用户可以通过如下设置调整推流端
 
 ### 单击推流[](id:step6)
 1. 查看 OBS 底部工具栏的 **控件**，单击 **开始推流**。
-![](https://qcloudimg.tencent-cloud.cn/raw/8709c618536109bfb02e860b47581e45.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/968dad5d34ba029726f3e07b0ef78720.png)
 2. 推流成功后，正常情况在界面底部会展示推流状态，TRTC 控制台仪表盘上有该用户进房记录。
 ![](https://qcloudimg.tencent-cloud.cn/raw/15c0d1b5df33c4a738050f1f532a990c.png)
 
