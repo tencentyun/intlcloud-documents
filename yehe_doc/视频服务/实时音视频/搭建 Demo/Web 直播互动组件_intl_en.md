@@ -60,7 +60,7 @@ You can download `TUIPusher` and `TUIPlayer` from the following links:
 >- After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).
 
 :::
-::: Method 2: via IM\sIM
+::: Method 2: via IM
 
 #### Step 1. Create an IM application
 1. Log in to the [IM console](https://console.cloud.tencent.com/im), and click **Create Application**.
