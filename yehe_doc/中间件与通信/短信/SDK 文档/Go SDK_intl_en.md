@@ -60,7 +60,7 @@ func main() {
      * The example here uses the way to read from the environment variable, so you need to set these two values in the environment variable first.
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others;
      * otherwise, the key pair may be leaked, causing damage to your properties.
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+     * Query the SecretId、SecretKey: https://console.cloud.tencent.com/cam/capi*/
     credential := common.NewCredential(
         // os.Getenv("TENCENTCLOUD_SECRET_ID"),
         // os.Getenv("TENCENTCLOUD_SECRET_KEY"),
@@ -79,16 +79,15 @@ func main() {
      * If needed, check in the code to get the latest default value */
     // cpf.HttpProfile.ReqTimeout = 5
 
-    /* The SDK automatically specifies the domain name. Generally, you don't need to specify a domain name, but if you are accessing a service in a finance zone,
-     * you need to manually specify the domain name. For example, the SMS domain name of the Shanghai Finance Zone is `sms.ap-shanghai-fsi.tencentcloudapi.com` */
+    /* Specify access geographical domain name, the default regional access to the nearest domain name at sms.tencentcloudapi.com, and also support access to a designated area domain name, such as the guangzhou region of domain for `sms.ap-guangzhou.tencentcloudapi.com` */
     cpf.HttpProfile.Endpoint = "sms.tencentcloudapi.com"
 
     /* The SDK uses `TC3-HMAC-SHA256` to sign by default. Do not modify this field unless absolutely necessary */
     cpf.SignMethod = "HmacSHA1"
 
     /* Instantiate the client object of the requested product (with SMS as an example)
-     * The second parameter is the information on the region you select in Tencent Cloud International. If you select Singapore, you should enter the string `ap-singapore`. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
-    client, _ := sms.NewClient(credential, "ap-singapore", cpf)
+     * The second parameter is the information on the region you select in Tencent Cloud International. you can directly fill in the string ap-Guangzhou. Click https://intl.cloud.tencent.com/document/api/382/40466?lang=en#region-list to view the region list. */
+    client, _ := sms.NewClient(credential, "ap-guangzhou", cpf)
 
     /* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
      * You can directly check the SDK source code to determine which attributes of the API can be set
@@ -159,7 +158,7 @@ func main() {
      * The example here uses the way to read from the environment variable, so you need to set these two values in the environment variable first.
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others;
      * otherwise, the key pair may be leaked, causing damage to your properties.
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+     * Query the SecretId、SecretKey: https://console.cloud.tencent.com/cam/capi*/
     credential := common.NewCredential(
         // os.Getenv("TENCENTCLOUD_SECRET_ID"),
         // os.Getenv("TENCENTCLOUD_SECRET_KEY"),
@@ -246,7 +245,7 @@ func main() {
      * The example here uses the way to read from the environment variable, so you need to set these two values in the environment variable first.
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others;
      * otherwise, the key pair may be leaked, causing damage to your properties.
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+     * Query the SecretId、SecretKey: https://console.cloud.tencent.com/cam/capi*/
     credential := common.NewCredential(
         // os.Getenv("TENCENTCLOUD_SECRET_ID"),
         // os.Getenv("TENCENTCLOUD_SECRET_KEY"),
@@ -338,7 +337,7 @@ func main() {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+     * Query the SecretId、SecretKey: https://console.cloud.tencent.com/cam/capi
      */
     credential := common.NewCredential(
         // os.Getenv("TENCENTCLOUD_SECRET_ID"),
