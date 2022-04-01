@@ -362,7 +362,7 @@ List<String> atUserList = ['AT_ALL_TAG',"何大佬的userID"]; // 既 @全体又
 >- 定向群消息默认不计入群会话的未读计数。
 
 ## 设置离线推送
-当接收方的 App 被 kill 时，IM SDK 无法通过正常的网络连接收取新消息。如需实现在此场景下接收方仍能感知到新消息，需要使用各个手机厂商提供的离线推送服务，新用户推荐使用 TPNS 推送（详情请参见 [离线推送部分](https://cloud.tencent.com/document/product/269/68720)。)
+当接收方的 App 被 kill 时，IM SDK 无法通过正常的网络连接收取新消息。如需实现在此场景下接收方仍能感知到新消息，需要使用各个手机厂商提供的离线推送服务，新用户推荐使用 TPNS 推送（详情请参见 [离线推送部分](https://intl.cloud.tencent.com/document/product/1047/39156)。)
 
 ### 设置离线推送的标题和内容
 您可以在发送消息时，通过 [sendMessage](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html) 接口中的 **offlinePushInfo** 字段，设置离线推送的标题和内容。
