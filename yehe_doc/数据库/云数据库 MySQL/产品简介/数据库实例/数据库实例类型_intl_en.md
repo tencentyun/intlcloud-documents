@@ -22,5 +22,5 @@ There are three types of instances available in TencentDB for MySQL:
 
 ### Reference
 - For more information on the creation of and notes on the read-only instance, see [Creating Read-Only Instance](https://intl.cloud.tencent.com/document/product/236/7270).
-- For more information on how to create and configure RO groups for read-only instances, see [RO Group of Read-Only Instances](https://intl.cloud.tencent.com/document/product/236/11361).
+- For more information on how to create and configure RO groups for read-only instances, see [Managing the RO Group of Read-Only Instance](https://intl.cloud.tencent.com/document/product/236/11361).
 - For more information on the creation of and notes on the disaster recovery instance, see [Disaster Recovery Instance](https://intl.cloud.tencent.com/document/product/236/7272).
