@@ -2,7 +2,7 @@
 
  
 ### Application     Download
-1.   Go to https://voovmeeting.com/ and download your preferred version from the Download Center. 
+1.   Go to [https://voovmeeting.com/](https://voovmeeting.com/) and download your preferred version from the Download Center. 
 
 2.   Alternatively, you can scan the QR code and download the application from the App Store.
 
