@@ -1,14 +1,14 @@
 
-Resource-Level permission can be used to specify which resources a user can manipulate. TDSQL-C supports certain resource-level permissions. This means that for TDSQL-C operations that support resource-level permission, you can control the time when a user is allowed to perform operations or to use specified resources. The following table describes the types of resources that can be authorized in CAM.
+Resource-Level permission can be used to specify which resources a user can manipulate. TDSQL-C for MySQL supports certain resource-level permissions. This means that for TDSQL-C for MySQL operations that support resource-level permission, you can control the time when a user is allowed to perform operations or to use specified resources. The following table describes the types of resources that can be authorized in CAM.
 
 | Resource Type | Resource Description Method in Authorization Policy |
 | --------------------------------------------------- | ------------------------------------------------------------ |
-|  [TDSQL-C cluster APIs](#xiangguan) |`qcs::cynosdb:$region::instance/*`<br>`qcs::cynosdb:$region:$account:instanceId/$clusterId` |
+|  [TDSQL-C for MySQL cluster APIs](#xiangguan) |`qcs::cynosdb:$region::instance/*`<br>`qcs::cynosdb:$region:$account:instanceId/$clusterId` |
 
-The table below lists the TDSQL-C API operations which currently support resource-level permission control as well as the resources supported by each operation. When specifying a resource path, you can use the `*` wildcard in the path.
->?TDSQL-C API operations not listed here do not support resource-level permissions. You can still authorize a user to perform such an API operation, but you must specify `*` as the resource element of the policy statement.
+The table below lists the TDSQL-C for MySQL API operations which currently support resource-level permission control as well as the resources supported by each operation. When specifying a resource path, you can use the `*` wildcard in the path.
+>?TDSQL-C for MySQL API operations not listed here do not support resource-level permissions. You can still authorize a user to perform such an API operation, but you must specify `*` as the resource element of the policy statement.
 
-#### [TDSQL-C Cluster APIs](id:xiangguan)
+#### [TDSQL-C for MySQL Cluster APIs](id:xiangguan)
 
 | API Operation | Resource Path |
 | ------------------------------ | ------------------------------------------------------------ |
