@@ -1,5 +1,5 @@
-TDSQL-C Serverless Edition adopts the serverless architecture for cloud native database services. It is billed based on the actual computing and storage resource usage, so you only need for pay for what you use while enjoying the cloud native technologies of Tencent Cloud.
-
+TDSQL-C for MySQL Serverless Edition adopts the serverless architecture for cloud native database services. It is billed based on the actual computing and storage resource usage, so you only need for pay for what you use while enjoying the cloud native technologies of Tencent Cloud.
+>?Only TDSQL-C for MySQL supports Serverless mode.
 ## Service Features
 - Autopilot: the database can automatically start/stop according to the business load and scale in an imperceptible manner without causing disconnections.
 - Utility pricing: the database is billed based on the actual computing and storage usage which is calculated by second and settled by hour.
@@ -25,6 +25,7 @@ You can select the maximum and minimum CCUs your database requires on the [purch
 ![](https://main.qcloudimg.com/raw/713ab08ea390726aa4c1b30a3a20b658.png)
 - You can also manually pause specified databases in the console.
 ![](https://main.qcloudimg.com/raw/237185fbb0522d99ae062c2c376d2974.png)
+>?The auto-pause feature of the Serverless architecture is determined by whether there is a user connection. If a service scenario needs to use event_scheduler to trigger SQL periodically, do not enable auto-pause feature.
 
 ### Starting service
 You cannot use the features in the [console](https://console.cloud.tencent.com/cynosdb) for a paused serverless database. If needed, you can wait until the database is automatically started or manually start it the console.
