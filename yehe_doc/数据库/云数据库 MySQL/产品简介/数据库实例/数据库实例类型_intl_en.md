@@ -5,13 +5,13 @@ There are three types of instances available in TencentDB for MySQL:
 
 <table>
 <thead><tr>
-<th>Instance Type</th><th width="20%">Definition</th><th width="15%">Architecture</th><th>Visible in Instance List</th><th>Feature</th></tr></thead>
+<th>Instance Type</th><th width="20%">Definition</th><th width="15%">Architecture</th><th>Available in Instance List</th><th>Feature</th></tr></thead>
 <tbody><tr>
 <td>Source instance</td><td>An instance that can be read from and written to</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/236/38331" target="_blank">Single-Node</a> <li><a href="https://intl.cloud.tencent.com/document/product/236/38329" target="_blank">Two-Node</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39783" target="_blank">Three-Node</a></td>
 <td>Yes</td><td>A source instance can mount read-only instances and disaster recovery instances to achieve read/write separation and remote disaster recovery.</td></tr>
 <tr>
-<td>Read-Only instance</td><td>An instance that can only be read from</td>
+<td>Read-only instance</td><td>An instance that can only be read from</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38331" target="_blank">Single-Node</a></td><td>Yes</td>
 <td>A read-only instance cannot exist on its own. It must instead be associated with a source instance, with its data only being synced from the source instance. It must also reside in the same region as the source instance.</td></tr>
 <tr>
