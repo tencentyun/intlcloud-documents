@@ -66,7 +66,7 @@
 <td>北京七区<br>ap-beijing-7</td></tr>  
 <tr>
 <td >华北地区（天津）<br>ap-tianjin</td>
-<td>天津一区<br>ap-tianjian-1</td></tr>
+<td>天津一区<br>ap-tianjin-1</td></tr>
 <tr>
 <td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
 <td>成都一区<br>ap-chengdu-1</td></tr>
