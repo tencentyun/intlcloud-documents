@@ -1,6 +1,6 @@
 当一条消息从生产者发送到 TDMQ RocketMQ 版服务端，再由消费者进行消费，TDMQ RocketMQ 版会完整记录这条消息中间的流转过程，并以消息轨迹的形式呈现在控制台。
 消息轨迹记录了消息从生产端到 TDMQ RocketMQ 版服务端，最后到消费端的整个过程，包括各阶段的时间（精确到微秒）、执行结果、生产者 IP、消费者 IP 等。
-![](https://qcloudimg.tencent-cloud.cn/raw/a8835b388055fc402a545d445c21e4d7.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/a14a3f3df794422fc331be4ec54874c0.png)
 
 ## 操作场景
 
@@ -33,10 +33,8 @@
      - **按消息 ID 查询：**该方式属于精确查询、速度快、精确匹配。
      - **按消息 Key 查询：**该方式属于模糊查询，适用于您没有记录消息 ID 但是设置了消息 Key 的场景。
 3. 单击**查询**，下方列表会展示所有查询到的结果并分页展示。
-![](https://qcloudimg.tencent-cloud.cn/raw/e64e03f1f7aff564e6234e4100ed6660.png)
 4. 找到您希望查看内容或参数的消息，单击操作列的**查看详情**，即可查看消息的基本信息、内容（消息体）以及参数。
 5. 单击操作列的**查看消息轨迹**，或者在详情页单击 Tab 栏的**消息轨迹**，即可查看该消息的消息轨迹（详细说明请参见 [消息轨迹查询结果说明](#1)）。
-![](https://qcloudimg.tencent-cloud.cn/raw/26e01a17a960deb774f23a832d22003c.png)
 
 <span id="1"></span>
 
