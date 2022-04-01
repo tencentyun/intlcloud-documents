@@ -29,9 +29,9 @@ Setelah [memperluas disk cloud](https://intl.cloud.tencent.com/document/product/
 1.Klik kanan <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px">, dan pilih **Computer Management** (Manajemen Komputer).
 2.Di bilah sisi kiri jendela **Computer Management** (Manajemen Komputer), pilih **Storage** > **Disk Management** (Penyimpanan > Manajemen Disk).
 3.Klik kanan **Disk Management** (Manajemen Disk), dan pilih **Rescan Disks** (Pindai Ulang Disk).
-![](https://main.qcloudimg.com/raw/e86a6974b7a49108a4d12a300ffc4c87.png)
+
 4.Setelah pemindaian selesai, periksa apakah disk data memiliki ukuran setelah perluasan.(Dalam contoh ini, pemindaian menunjukkan bahwa disk cloud diperluas dari 10 GB menjadi 50 GB).
-![](https://main.qcloudimg.com/raw/9612c8f95826b401d3a7c111fe632b05.png)
+
 
 
 ### Memperluas sistem file dari partisi yang ada atau membuat partisi[](id:Extending)
@@ -39,13 +39,13 @@ Anda dapat memperluas sistem file dari partisi yang ada atau membuat partisi sep
 <dx-tabs>
 ::: Memperluas sistem file dari partisi yang ada
 1.Klik kanan di mana saja pada ruang kosong disk, dan pilih **Extend Volume** (Perluas Volume).
-![](https://main.qcloudimg.com/raw/6b19804749d997c9aa008dfa1d37b5cd.png)
+
 2.Ikuti **Extend Volume Wizard** (Wizard Perluas Volume) untuk memperluas volume.
 Kapasitas disk data baru akan ditambahkan ke volume asli.
 :::
 ::: Membuat partisi
 1.Klik kanan ruang disk yang tidak terisi, dan pilih **New Simple Volume** (Volume Sederhana Baru).
-![](https://main.qcloudimg.com/raw/bf0c7eb05e2658d5b426e85112bbaf0a.png)
+
 2.Ikuti **New Simple Volume Wizard** (Wizard Volume Sederhana Baru) untuk membuat volume sederhana dengan pengaturan default.
 Kapasitas disk data baru akan diformat menjadi partisi baru.
 :::
@@ -57,7 +57,7 @@ Kapasitas disk data baru akan diformat menjadi partisi baru.
 1.Klik kanan <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px">, dan pilih **Device Manager** (Pengelola Perangkat).
 2.Buka item **Storage Controller** (Pengontrol Penyimpanan) dan klik dua kali **Tencent VirtIO SCSI controller** (Pengontrol Tencent VirtIO SCSI).
 3.Pilih tab **Driver** untuk memeriksa versi saat ini.Versi 58005 digunakan, seperti yang ditunjukkan di bawah ini.
-![](https://main.qcloudimg.com/raw/d6df197dfc47a719edc42a9b7ed0d4f2.png)
+
 
 
 ## Referensi
