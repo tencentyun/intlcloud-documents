@@ -106,7 +106,7 @@ spring:
 </tr>
 <tr>
 <td align="left">access-key</td>
-<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt="img"></td>
+<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/14e42cb135540bf6f79a6b04e5e76bb9.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">namespace</td>
@@ -171,15 +171,15 @@ public interface CustomChannelBinder {
 ### 步骤5：发送消息
 
 1. 在要发送消息的类中，注入 `CustomChannelBinder`。
-	```java
-	@Autowired
-	private CustomChannelBinder channelBinder;
-	```
+```java
+@Autowired
+private CustomChannelBinder channelBinder;
+```
 2. 发送消息，调用对应的输出流channel进行消息发送。
-	```java
-	Message<String> message = MessageBuilder.withPayload("This is a new message.").build();
-	channelBinder.sendChannel().send(message);
-	```
+```java
+Message<String> message = MessageBuilder.withPayload("This is a new message.").build();
+channelBinder.sendChannel().send(message);
+```
 
 ### 步骤6：消费消息
  ```java
