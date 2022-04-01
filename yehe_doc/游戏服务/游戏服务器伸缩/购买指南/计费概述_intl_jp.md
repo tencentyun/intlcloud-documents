@@ -1,4 +1,4 @@
-Game Server Elastic-scaling（GSE）は2021年1月23日より課金が開始されました。質問がある場合は、チケットの提出、カスタマーサービスへのお問い合わせ、担当者への[お問い合わせ](https://intl.cloud.tencent.com/contact-sales)をご利用いただけます。
+Game Server Elastic-scaling（GSE）は2021年1月23日より課金が開始されました。サービスに関するご意見やご質問がある場合は、カスタマーサービスに[お問い合わせ](https://intl.cloud.tencent.com/document/product/1055/38541)ください。
 
 Game Server Elastic-scaling（GSE）の料金は、サーバー料金とネットワークトラフィック料金の2つが含まれます。サービスを有効にすると、デフォルトでは後払いモードを採用します。詳細な課金説明は次のとおりです。
 
