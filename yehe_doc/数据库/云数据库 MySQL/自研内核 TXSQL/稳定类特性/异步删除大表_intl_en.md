@@ -6,7 +6,9 @@ This feature is used to drop tables with large data files to avoid I/O fluctuati
 This feature does not require user operations and is automatically completed by the kernel. The principle is to create a hard link in another directory for the data file of the table when the table is dropped, so when `DROP TABLE` is executed, only the hard link to the file is deleted. After that, the backend thread will scan the files that need to be deleted in the hard-linked directory and automatically truncate the data file of the dropped table.
 
 ## Supported Versions
+Kernel version: MySQL 5.6 20190203 and later.
 Kernel version: MySQL 5.7 20190203 and later.
+Kernel version: MySQL 8.0 20200630 and later.
 
 ## Use Cases
 This feature is used to drop tables with large data files.
