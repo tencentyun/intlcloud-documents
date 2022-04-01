@@ -9,7 +9,7 @@ There are three types of instances available in TencentDB for MySQL:
 <tbody><tr>
 <td>Source instance</td><td>An instance that can be read from and written to</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/236/38331" target="_blank">Single-Node</a> <li><a href="https://intl.cloud.tencent.com/document/product/236/38329" target="_blank">Two-Node</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39783" target="_blank">Three-Node</a></td>
-<td>Yes</td><td>A source instance can mount read-only instances and disaster recovery instances to achieve read/write separation and remote disaster recovery</td></tr>
+<td>Yes</td><td>A source instance can mount read-only instances and disaster recovery instances to achieve read/write separation and remote disaster recovery.</td></tr>
 <tr>
 <td>Read-Only instance</td><td>An instance that can only be read from</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38331" target="_blank">Single-Node</a></td><td>Yes</td>
@@ -17,7 +17,7 @@ There are three types of instances available in TencentDB for MySQL:
 <tr>
 <td>Disaster recovery instance</td><td>An instance that supports disaster recovery across AZs and regions</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38329" target="_blank">Two-Node</a><td>Yes</td>
-<td>A disaster recovery instance is read-only when it syncs with a source instance. It can actively stop the sync and be promoted to a source instance for read/write access. The disaster recovery instance should reside in a different region than the source instance does</td></tr>
+<td>A disaster recovery instance is read-only when it syncs with a source instance. It can actively stop the sync and be promoted to a source instance for read/write access. The disaster recovery instance should reside in a different region than the source instance does.</td></tr>
 </tbody></table>
 
 ### Reference
