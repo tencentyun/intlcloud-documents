@@ -53,8 +53,8 @@ Introduce dependencies in a Java project and add the following dependencies to t
    | namespace  | Namespace name in the format of **cluster ID + \| + namespace**, which can be copied under the **Namespace** tab on the cluster details page in the console. |
    | groupName  | Producer group name, which can be copied under the `Group` tab on the cluster details page in the console.         |
    | nameserver | Cluster access address, which can be obtained in the console by clicking **Access Address** in the **Operation** column of the cluster list on the **Cluster** page. |
-   | secretKey  | Role name, which can be copied on the **[Role Management]](https://console.cloud.tencent.com/tdmq/role)** page. |
-   | accessKey  | Role token, which can be copied in the **Token** column on the**[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+   | secretKey  | Role name, which can be copied on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. |
+   | accessKey  | Role token, which can be copied in the **Token** column on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/dece05914450403febd5e7ee7547535b.png) |
 
 #### 2. Send messages
 
@@ -159,8 +159,8 @@ pushConsumer.setNamesrvAddr(nameserver);
 | namespace  | Namespace name in the format of **cluster ID + \| + namespace**, which can be copied under the **Namespace** tab on the cluster details page in the console. |
 | groupName  | Producer group name, which can be copied under the `Group` tab on the cluster details page in the console.         |
 | nameserver | Cluster access address, which can be obtained in the console by clicking **Access Address** in the **Operation** column of the cluster list on the **Cluster** page. |
-| secretKey  | Role name, which can be copied on the **[Role Management]](https://console.cloud.tencent.com/tdmq/role)** page. |
-| accessKey  | Role token, which can be copied in the **Token** column on the**[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| secretKey  | Role name, which can be copied on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. |
+| accessKey  | Role token, which can be copied in the **Token** column on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/b5ccd3b934f73a392a6b0855496cee10.png) |
 
 - For consumers using the pull mode:
 
@@ -181,8 +181,8 @@ pullConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
 | namespace  | Namespace name in the format of **cluster ID + \| + namespace**, which can be copied under the **Namespace** tab on the cluster details page in the console. |
 | groupName  | Producer group name, which can be copied under the `Group` tab on the cluster details page in the console.         |
 | nameserver | Cluster access address, which can be obtained in the console by clicking **Access Address** in the **Operation** column of the cluster list on the **Cluster** page. |
-| secretKey  | Role name, which can be copied on the **[Role Management]](https://console.cloud.tencent.com/tdmq/role)** page. |
-| accessKey  | Role token, which can be copied in the **Token** column on the**[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| secretKey  | Role name, which can be copied on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. |
+| accessKey  | Role token, which can be copied in the **Token** column on the **[Role Management](https://console.cloud.tencent.com/tdmq/role)** page. ![img](	https://qcloudimg.tencent-cloud.cn/raw/709c03c8959d357a49833f87ed457c77.png) |
 
 >?For more consumption mode information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
 
@@ -239,6 +239,6 @@ try {
 ### Step 4. View consumption details
 
 Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
-![img](https://main.qcloudimg.com/raw/7187da67219534d767206553e2a383ab.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/671cacbb946883f1777c0417e59fe424.png)
 
 >?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/)
