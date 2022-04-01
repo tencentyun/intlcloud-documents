@@ -68,12 +68,12 @@ producer.shutdown()
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Producer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Producer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>nameserver</td>
-        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/424026465647068a89a2e1d1a9a67c4a.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -83,15 +83,15 @@ producer.shutdown()
     <tr>
         <td>accessKey</td>
         <td>Role token, which can be copied in the <b>Token</b> column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/07ea422573eee1705f90227fe2f608b2.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>topicName</td>
-        <td>`topicName` is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
-				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the **Namespace** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%"></li><li>The topic name can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+        <td><code>topicName</code> is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
+				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>The topic name can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/9c90672b68c79e44f9b6e6e3d902338e.png" style="width: 100%">
 						</li>
 						</ul>
         </td>
@@ -155,12 +155,12 @@ consumer.shutdown()
     </tr>
     <tr>
         <td>groupName</td>
-        <td>The consumer group information refers to the full namespace name concatenated by the group name, such as <code>rocketmq-xxx|namespace_python%group11</code>. The namespace name and group name can be obtained respectively under the **Namespace** and **Group** tab on the cluster details page in the console.</td>
+        <td>The consumer group information refers to the full namespace name concatenated by the group name, such as <code>rocketmq-xxx|namespace_python%group11</code>. The namespace name and group name can be obtained respectively under the <b>Namespace</b> and <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>nameserver</td>
-        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the <b>Operation</b>column of the cluster list on the <b>Cluster</b> page.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -170,15 +170,15 @@ consumer.shutdown()
     <tr>
         <td>accessKey</td>
         <td>Role token, which can be copied in the <b>Token</b> column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ef9c950f6792fedd472c323ba9d6fb9e.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>topicName</td>
-        <td>`topicName` is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
-				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the **Namespace** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%"></li><li>The topic name can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+        <td><code>topicName</code> is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
+				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
+           <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>The topic name can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" style="width: 100%">
 						</li>
 						</ul>
         </td>
@@ -194,7 +194,7 @@ consumer.shutdown()
 ### Step 4. View consumption details
 
 Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
-![](https://qcloudimg.tencent-cloud.cn/raw/924898b7a5568be778449bf51034396d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a9516801b649c49bd3d65edc6bc7b5e9.png)
 
 >?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip) or [RocketMQ-Client-Python Sample](https://github.com/apache/rocketmq-client-python/tree/master/samples).
 
