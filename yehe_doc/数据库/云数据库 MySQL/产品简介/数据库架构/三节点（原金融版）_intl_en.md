@@ -8,7 +8,7 @@ They are widely used in a variety of industries, including gaming, the internet,
 
 ## Features
 - The three-node architecture supports such source/replica replication modes as async (default), strong sync, and semi-sync.
-- The three-node architecture supports a complete set of features including read-only instances, security groups, data migration, and multi-AZ deployment. For more information, see [Strengths](https://intl.cloud.tencent.com/document/product/236/5148).
+- The three-node architecture supports a complete set of features including read-only instances, disaster recovery instance, security groups, data migration, and multi-AZ deployment. For more information, see [Strengths](https://intl.cloud.tencent.com/document/product/236/5148).
 - The three-node architecture achieves a high availability of up to 99.99%. For more information, see [TencentDB Service Level Agreement (New Version)](https://intl.cloud.tencent.com/document/product/301/30977).
 - The three-node instance provides multiple replicas to guarantee data persistence. The source node data can be synced to the replica nodes; the source instance data can be synced to the read-only instances (if any). This architecture ensures data security and achieves a data persistence of up to 99.99999%.
 - The three-node architecture deploys data nodes on powerful hardware devices and uses local NVMe SSD disks as underlying storage with an IOPS of up to 240,000 (this value is the test result with MySQL's default page size of 16 KB and for your reference only. The actual value is subject to the specific configuration, page size, and business load).
