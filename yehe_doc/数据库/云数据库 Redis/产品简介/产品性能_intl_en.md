@@ -19,7 +19,7 @@
 <tr>
 <td>Max connections</td><td>10,000 by default and up to 40,000</td><td>10,000 by default and up to 40,000</td><td>10,000/shard by default and up to 40,000</td></tr>
 <tr>
-<td>Traffic limit</td><td>10 MB/s to 64 MB/s</td><td>10 MB/s to 64 MB/s</td><td>144 MB/s to 6 GB/s</td></tr>
+<td>Traffic limit</td><td>10 MB/s to 64 MB/s</td><td>528 MB/s to 608 MB/s</td><td>288 MB/s to 72 GB/s</td></tr>
 <tr>
 <td>Multi-Database</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
