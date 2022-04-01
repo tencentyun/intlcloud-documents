@@ -21,8 +21,8 @@
  - **资源 resource**：必填项，描述授权的具体数据。资源是用六段式描述，每款产品的资源定义详情会有所区别。
  - **生效条件 condition**：必填项，描述策略生效的约束条件。条件包括操作符、操作键和操作值组成。条件值可包括时间、IP 地址等信息，有些服务允许您在条件中指定其他值。
 
-## [TDSQL-C 的操作](id:caozuo)
-在 CAM 策略语句中，您可以从支持 CAM 的任何服务中指定任意的 API 操作。对于 TDSQL-C，请使用以 cynosdb: 为前缀的 API。例如 cynosdb:DescribeClusters 或 cynosdb:ResetAccountPassword。
+## [TDSQL-C MySQL 版的操作](id:caozuo)
+在 CAM 策略语句中，您可以从支持 CAM 的任何服务中指定任意的 API 操作。对于 TDSQL-C MySQL 版，请使用以 cynosdb: 为前缀的 API。例如 cynosdb:DescribeClusters 或 cynosdb:ResetAccountPassword。
 如果您要在单个语句中指定多个操作的时候，请使用逗号将它们隔开，如下所示：
 ```
 "action":["cynosdb:action1","cynosdb:action2"]
@@ -31,12 +31,12 @@
 ```
 "action":["cynosdb:Describe*"]
 ```
-如果您要指定 TDSQL-C 中所有操作，请使用 * 通配符，如下所示：
+如果您要指定 TDSQL-C MySQL 版中所有操作，请使用 * 通配符，如下所示：
 ```
 "action"：["cynosdb:*"]
 ```
 
-## [TDSQL-C 的资源路径](id:lujing)
+## [TDSQL-C MySQL 版的资源路径](id:lujing)
 每个 CAM 策略语句都有适用于自己的资源。
 资源路径的一般形式如下：
 ```
@@ -45,16 +45,16 @@ qcs:project_id:service_type:region:account:resource
 - **project_id**：描述项目信息，仅为了兼容 CAM 早期逻辑，无需填写。
 - **service_type**：产品简称，如 cynosdb。
 - **region**：地域信息，如 bj。
-- **account**：资源拥有者的主帐号信息，如 uin/12345678。
+- **account**：资源拥有者的主帐号信息，如 uin/123xxx8。
 - **resource**：各产品的具体资源详情，如 instance/clusterId 或者 instance/*。
 
 例如，您可以使用特定集群（cynosdbmysql-123abc）在语句中指定它，如下所示：
 ```
-"resource":[ "qcs::cynosdb:bj:uin/12345678:instance/cynosdbmysql-123abc"]
+"resource":[ "qcs::cynosdb:bj:uin/123xxx8:instance/cynosdbmysql-123abc"]
 ```
 您还可以使用 * 通配符指定属于特定账户的所有集群，如下所示：
 ```
-"resource":[ "qcs::cynosdb:bj:uin/12345678:instance/*"]
+"resource":[ "qcs::cynosdb:bj:uin/123xxx8:instance/*"]
 ```
 您要指定所有资源，或者如果特定 API 操作不支持资源级权限，请在 resource 元素中使用 * 通配符，如下所示：
 ```
@@ -65,7 +65,7 @@ qcs:project_id:service_type:region:account:resource
 "resource":["resource1","resource2"]
 ```
 
-下表描述了 TDSQL-C 能够使用的资源和对应的资源描述方法。其中，$为前缀的单词均为代称，region 指地域，account 指账户 ID。
+下表描述了 TDSQL-C MySQL 版能够使用的资源和对应的资源描述方法。其中，$为前缀的单词均为代称，region 指地域，account 指账户 ID。
 
 | 资源 | 授权策略中的资源描述方法                           |
 | -------- | -------------------------------------------------- |
