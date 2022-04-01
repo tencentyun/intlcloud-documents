@@ -13,7 +13,12 @@
 4. 在数据趋势区域，您可以查看所选时间段内 **DAU和新增**或**累计注册**的趋势图。 
 5. 在数据详情区域，您可以查看所选时间段内每一天的详细数据，包括 DAU、DAU-日环比、累计用户数、累计用户数-日环比、新注册用户数和新注册用户数-日环比。您也可以单击**导出CSV文件**导出数据表。
 
+![](https://qcloudimg.tencent-cloud.cn/raw/8955bab2cd460bda09e5e63b95c459a8.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/155b38a067353e875d5456d2827df548.png)
+
 ### 消息活跃
+
 1. 在**每日数据统计**页面，选择**消息活跃**页签。
 2. 在总览区域，您可以查看以下相关数据：
  - 昨日单聊消息量：昨日该 SDKAppID 下 C2C 聊天上行消息总条数。
@@ -21,7 +26,8 @@
 3. 选择7天、14天、30天或指定时间段。
 4. 在数据趋势区域，您可以查看所选时间段内**C2C**或**普通群**的消息量趋势图。
 5. 在数据详情区域，您可以查看所选时间段内每一天的详细数据，包括消息量 (条)、消息量-日环比、发消息用户数、发消息用户数-日环比、离线推送量和离线推送量-日环比。您也可以单击**导出CSV文件**导出数据表。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/ec4654a69a3a28d49e7bcec279c2b0cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/648156a183114f2bdcf8ca30909ad6ec.png)
 
 ### 群组规模
 1. 在**每日数据统计**页面，选择**群组规模**页签。
@@ -29,7 +35,8 @@
 3. 选择7天、14天、30天或指定时间段。
 4. 在数据趋势区域，选择数据项，您可以查看所选时间段内**新建**、**累计**或**活跃**的群组数趋势图。
 5. 在数据详情区域，您可以查看所选时间段内每一天的详细数据，包括新建群数、新建群数-日环比、有消息活跃的群数、有消息活跃的群数-日环比、峰值群组和峰值群组-日环比。您也可以单击**导出CSV文件**导出数据表。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/60e2a0f17181b9a16d883a9fb78da993.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/40071e2bac38b621658e459956d850dc.png)
 
 ## 实时监控
 >?实时监控功能全线公测中，我们还在不断迭代更新，可以通过[提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E5%8D%B3%E6%97%B6%E9%80%9A%E4%BF%A1%20IM&level3_id=237&radio_title=%E7%99%BB%E5%BD%95%E5%8F%8A%E5%A4%9A%E7%AB%AF%E5%9C%A8%E7%BA%BF%E9%97%AE%E9%A2%98&queue=3235&scene_code=27293&step=2) 给我们反馈建议和意见。
@@ -41,6 +48,8 @@
   >?目前仅支持展示4.8.10或以上的 iOS、Android、Windows 及 Mac 终端上报登录数据，建议您升级至 [最新版 SDK](https://intl.cloud.tencent.com/document/product/1047/33996)。
   >
 
+![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
+
  - 在消息情况监控区域，您可以查看各个端发送单聊/群聊消息的次数和成功率。
    >?目前仅支持展示4.8.10或以上的 iOS、Android、Windows 及 Mac 终端上报登录数据，建议您升级至 [最新版 SDK](https://intl.cloud.tencent.com/document/product/1047/33996)。Web/小程序端暂不支持按聊天类型统计消息量。
    >
@@ -50,4 +59,4 @@
 
  - 在离线推送情况监控区域，您可以查看离线推送次数和推送成功率。
 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/c57d688deafc6dd8049b05dd3480ee06.png)
