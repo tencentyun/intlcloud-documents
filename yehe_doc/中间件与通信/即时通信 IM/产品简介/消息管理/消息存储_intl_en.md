@@ -37,7 +37,7 @@ By default, the client will pull the recent contacts through the SDK upon login 
 
 Users do not need to store messages because the SDK stores the messages it receives by default. Users can call the API to obtain local messages (no networking required). Additionally, local messages can be obtained through the getMessage API. When gaps exist in local message history, roaming messages are used to fill in the gaps.
 By default, the SDK does not delete user messages, but you are provided with the option to delete local messages.
->!As local storage consumes disk space and affects CPU performance, you can disable local storage when it is not required. For example, in a live broadcasting scenario, message processing performance is emphasized, whereas historical messages are not a concern.
+
 
 
 
