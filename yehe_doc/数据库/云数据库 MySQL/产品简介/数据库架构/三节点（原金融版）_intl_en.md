@@ -1,10 +1,10 @@
 TencentDB for MySQL supports three types of architectures: single-node, two-node, and three-node. This document describes the three-node architecture.
 
-- Three-node instances adopt a one-source-two-replica architecture and support strong sync replication. They guarantee strong data consistency through real-time hot backup and provide finance-grade reliability and high availability.
+- Three-node instances are built on a one-source-two-replica architecture that supports strong sync replication. They deliver finance-grade reliability and high availability by ensuring strong data consistency with real-time hot backup.
 - Three-node instances support two resource isolation policies: general and dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
 
 ## Use Cases
-Three-node instances are ideal for industries such as gaming, internet, IoT, retail, e-commerce, logistics, insurance, and securities.
+They are widely used in a variety of industries, including gaming, the internet, IoT, retail, e-commerce, logistics, insurance, and securities.
 
 ## Features
 - The three-node architecture supports such source/replica replication modes as async (default), strong sync, and semi-sync.
@@ -16,6 +16,6 @@ Three-node instances are ideal for industries such as gaming, internet, IoT, ret
 
 
 ## Upgrading
-- The engine versions of TencentDB for MySQL can be upgraded. For more information, see [Upgrading Database Engines](https://intl.cloud.tencent.com/document/product/236/8126).
-- The kernel minor versions of TencentDB for MySQL can be upgraded automatically or manually. For more information, see [Upgrading Kernel Minor Versions](https://intl.cloud.tencent.com/document/product/236/36816).
+- The engine versions of TencentDB for MySQL can be upgraded. For more information, see [Upgrading Database Engine](https://intl.cloud.tencent.com/document/product/236/8126).
+- The kernel minor versions of TencentDB for MySQL can be upgraded automatically or manually. For more information, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
