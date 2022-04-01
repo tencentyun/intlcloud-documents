@@ -1,13 +1,13 @@
 
 
 ## Backup Mode
-TDSQL-C supports auto backup and manual backup.
+TDSQL-C for MySQL supports auto backup and manual backup.
 
 ## Backup Type
-Different from traditional databases, TDSQL-C adopts the Redirect-On-Write (ROW) technology, which takes a snapshot of the disks at the storage layer for backup. The snapshot can be taken within one second, and the entire process is imperceptible to the businesses at the computing layer.
+Different from traditional databases, TDSQL-C for MySQL adopts the Redirect-On-Write (ROW) technology, which takes a snapshot of the disks at the storage layer for backup. The snapshot can be taken within one second, and the entire process is imperceptible to the businesses at the computing layer.
 
 ## Auto Data Backup
-1. Log in to the [TDSQL-C console](https://console.cloud.tencent.com/cynosdb) and click a cluster name in the cluster list to enter the cluster management page.
+1. Log in to the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb) and click a cluster name in the cluster list to enter the cluster management page.
 2. On the cluster management page, select the **Backup Management** tab and click **Auto Backup Settings**.
 ![](https://main.qcloudimg.com/raw/409575a6cb8e798a0cff7df530a02893.png)
 3. In the pop-up window, select the backup time period and click **OK**.
@@ -29,7 +29,7 @@ Different from traditional databases, TDSQL-C adopts the Redirect-On-Write (ROW)
 >- Manual backup is supported only for full backup.
 >- Manual backups can be manually deleted from the backup list in the console. You can delete manual backups that are no longer in use to free up space. Manual backups can be retained permanently as long as they are not deleted.
 >
-1. Log in to the [TDSQL-C console](https://console.cloud.tencent.com/cynosdb) and click a cluster name in the cluster list to enter the cluster management page.
+1. Log in to the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb) and click a cluster name in the cluster list to enter the cluster management page.
 2. On the cluster management page, select the **Backup Management** tab and click **Manual Backups**.
 3. In the pop-up window, select the backup mode and objects and click **OK**.
 
