@@ -2,7 +2,7 @@ TencentDB for MySQL supports three types of architectures: single-node (formerly
 >?General single-node instances are formerly known as Single-node High IO Edition instances.
 
 ## Viewing Instance Architectures
-- For instances to be purchased, log in to the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb) and select the architecture in the **Architecture** section.
+- For instances to be purchased, enter the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb), and select the architecture in the **Architecture** section.
 - For purchased instances, log in to the [MySQL console](https://console.cloud.tencent.com/cdb), locate the desired instance in the instance list, and view its architecture in the **Configuration** column.
 
 ## Architecture Comparison
@@ -40,6 +40,6 @@ TencentDB for MySQL supports three types of architectures: single-node (formerly
 </tbody></table>
 
 ## Documentation
-- TencentDB for MySQL supports MySQL 8.0, 5.7, 5.6, and 5.5. For more information, please see [Database Versions](https://intl.cloud.tencent.com/document/product/236/31896).
-- TencentDB for MySQL supports the following instance types: source instances and read-only replicas. For more information, please see [Database Instance Types](https://intl.cloud.tencent.com/document/product/236/7268).
-- TencentDB for MySQL supports different features in different architectures. For more information, please see [List of Feature Differences](https://intl.cloud.tencent.com/document/product/236/36007).
+- TencentDB for MySQL supports MySQL 8.0, 5.7, 5.6, and 5.5. For more information, see [Database Versions](https://intl.cloud.tencent.com/document/product/236/31896).
+- TencentDB for MySQL supports the following instance types: source instances and read-only replicas. For more information, see [Database Instance Types](https://intl.cloud.tencent.com/document/product/236/7268).
+- TencentDB for MySQL supports different features in different architectures. For more information, see [List of Feature Differences](https://intl.cloud.tencent.com/document/product/236/36007).
