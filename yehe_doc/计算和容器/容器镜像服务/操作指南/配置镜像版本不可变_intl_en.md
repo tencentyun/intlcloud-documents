@@ -24,7 +24,7 @@ Tencent Container Registry (TCR) Enterprise Edition supports protection for the 
 <td>The current instance needs to enable the namespace for tag protection. Only a rule can be created in a single namespace.</td>
 </tr>
 <tr>
-<td rowspan="7">Immutability rule</td>
+<td rowspan="2">Immutability rule</td>
 <td ><b>latest</b>: in all repositories in the current namespace, all image tags are not allowed to be overwritten except the latest tag.</td>
 </tr>
 <tr>
