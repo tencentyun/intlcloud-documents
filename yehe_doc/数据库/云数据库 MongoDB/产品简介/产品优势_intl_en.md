@@ -4,7 +4,7 @@ TencentDB for MongoDB provides the capabilities of NoSQL databases as a service,
 
 #### High flexibility and ease of use
 - TencentDB for MongoDB is fully compatible with the open-source MongoDB protocol, so you can directly use MongoDB clients to communicate with TencentDB for MongoDB instances and migrate existing MongoDB applications to the cloud with no need to make any code modifications.
-- TencentDB for MongoDB supports multiple system architectures to meet the needs in different business scenarios, including single node, replica set, and sharded cluster. You can deploy the most appropriate architecture according to your actual use case and adjust the configuration specifications promptly to adapt to use case changes.
+- TencentDB for MongoDB supports multiple system architectures to meet the needs in different business scenarios, including replica set, and sharded cluster. You can deploy the most appropriate architecture according to your actual use case and adjust the configuration specifications promptly to adapt to use case changes.
 - You can directly purchase TencentDB for MongoDB cluster instances on the purchase page, select the desired system architecture, and access the instances through URI with no need to install them on your own.
 
 #### High availability
