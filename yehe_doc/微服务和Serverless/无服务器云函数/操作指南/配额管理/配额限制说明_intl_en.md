@@ -47,10 +47,6 @@ SCF has certain quota limits for each user account.
 <td>500 MB</td>
 </tr>
 <tr>
-<td>Maximum number of triggers per function</td>
-<td>10</td>
-</tr>
-<tr>
 <td>Maximum number of same-type triggers per function</td>
 <td>10</td>
 </tr>
