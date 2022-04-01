@@ -117,7 +117,7 @@ Rocks 基于LSM tree  (Long Structure Merge Tree) 结构组织数据， 针对�
 <td>不支持</td>
 </tr>
 <tr>       
-<td rowspan="9">实例操作</td>
+<td rowspan="11">实例操作</td>
 <td>实例列表</td>
 <td>支持</td>
 <td>支持</td>
@@ -180,6 +180,20 @@ Rocks 基于LSM tree  (Long Structure Merge Tree) 结构组织数据， 针对�
 <td>支持</td>
 <td>支持</td>
 </tr> 
+<tr>
+<td>只读实例</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr> 
+<tr>
+<td>容灾实例</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
 <tr>       
 <td rowspan="5">系统监控</td>
 <td>监控指标列表</td>
