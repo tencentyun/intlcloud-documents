@@ -4,7 +4,7 @@ TencentDB for MySQL supports three types of architectures: single-node, two-node
 - Two-node instances support two resource isolation policies: general and dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
 
 ## Use Cases
-Two-node instances are ideal for industries such as gaming, internet, IoT, retail, e-commerce, logistics, insurance, and securities.
+They are widely used in a variety of industries, including gaming, the internet, IoT, retail, e-commerce, logistics, insurance, and securities.
 
 ## Features
 - The two-node architecture offers two source/replica replication modes: async (default) and semi-sync. You can modify the replication mode or [upgrade to the three-node architecture](https://intl.cloud.tencent.com/document/product/236/35986) (with the one-source-two-replica strong sync mode) on the instance details page in the [console](https://console.cloud.tencent.com/cdb).
