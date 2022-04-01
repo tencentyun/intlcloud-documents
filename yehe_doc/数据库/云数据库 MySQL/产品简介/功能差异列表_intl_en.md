@@ -1,4 +1,4 @@
-This document describes and compares the features supported by different types of TencentDB for MySQL instances, providing a guide for you to learn more about the features of all architectures and purchase instances according to your needs.
+This document compares the features supported by different types of TencentDB for MySQL instances, allowing you to learn more about the capabilities of each type and purchase instances that best suit your needs.
 
 <table>
 <thead><tr><th align="left">Feature</th><th align="left">Two-Node Instance</th><th align="left">Three-Node Instance</th><th colspan=2 align="left" >Single-Node Instance</th>
