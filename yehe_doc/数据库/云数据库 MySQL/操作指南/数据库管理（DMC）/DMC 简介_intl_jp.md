@@ -1,7 +1,7 @@
 ## 概要
 DMC（Database Management Console）は、Tencent Cloudのデータベース管理ツールであり、データベーステーブルレベルの操作、リアルタイム監視、インスタンスセッション管理、SQLウィンドウ、データ管理を一体化したデータベース管理サービスを提供します。
 
-現在、TencentDB for MySQL 、TencentDB for MariaDB、TencentDB for Redis、TDSQL MySQL版をサポートしています。
+現在、TencentDB for MySQL 、TencentDB for MariaDB、TDSQL-C for MySQL、TencentDB for Redis、TDSQL MySQL版をサポートしています。
 
 ## 機能の説明
 - **データ管理**
