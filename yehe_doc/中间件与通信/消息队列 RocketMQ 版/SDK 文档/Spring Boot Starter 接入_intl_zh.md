@@ -69,7 +69,7 @@ rocketmq:
 | name-server   | 集群接入地址，在控制台**集群管理**页面的集群列表操作栏的**接入地址**处获取。 |
 | group         | 生产者 Group 的名称，在控制台 **Group** 页面复制。           |
 | secret-key    | 角色名称，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| access-key    | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| access-key    | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/51a6ed907fd036c74cbda4500af19380.png) |
 | namespace     | 命名空间的名称，在控制台**命名空间**页面复制。               |
 | topic         | Topic 的名称，在控制台 **topic** 页面复制。                  |
 | subExpression | 用来设置消息的 TAG。                                         |
@@ -78,27 +78,27 @@ rocketmq:
 
 1. 在需要发送消息的类中注入 **`RcoketMQTemplate`** 。
 
-   ```java
+```java
    @Value("${rocketmq.namespace}%${rocketmq.producer1.topic}")
    private String topic;  // topic名称 (需要使用topic全称，所以在这里对topic名称进行拼接，格式：namespace全称%topic名称)
    
    @Autowired
    private RocketMQTemplate rocketMQTemplate;
-   ```
+```
 
 2. 发送消息，消息体可以是自定义对象，也可以是 Message 对象（org.springframework.messaging包中）。
 
-   ```java
+```java
    SendResult sendResult = rocketMQTemplate.syncSend(destination, message)
-   ```
+```
 
-   ```java
+```java
    rocketMQTemplate.syncSend(destination, MessageBuilder.withPayload(message).build())
-   ```
+```
 
 3. 完整示例如下。
 
-   ```java
+```java
    /**
     * Description: 消息生产者
     */
@@ -110,8 +110,7 @@ rocketmq:
    
        @Autowired
        private RocketMQTemplate rocketMQTemplate;
-   
-   
+
        /**
         * 同步发送
         *
@@ -128,7 +127,7 @@ rocketmq:
            System.out.printf("syncSend1 to topic %s sendResult=%s %n", topic, sendResult);
        }
    }
-   ```
+```
 
 >?该示例为同步发送。异步发送，单向发送等请见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-springboot-demo.zip) 或 [RocketMQ Spring](https://github.com/apache/rocketmq-spring)。
 
@@ -158,5 +157,5 @@ public class MessageConsumer implements RocketMQListener<String> {
 ### 步骤5：查看消费详情
 
 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，在**集群管理** > **Group** 页面，可查看与 Group 连接的客户端列表，单击操作列的**查看详情**，可查看消费者详情。
-![img](https://main.qcloudimg.com/raw/7187da67219534d767206553e2a383ab.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/1357b9a2c411352cf22fb2a502e6d520.png)
 
