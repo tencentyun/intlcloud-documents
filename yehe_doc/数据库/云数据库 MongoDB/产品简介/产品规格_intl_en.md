@@ -39,7 +39,6 @@ mongos computing specifications include **2-core 4 GB**, **4-core 8 GB**, **8-co
 The default configServer specification is **1-core 2 GB** with **20 GB** storage and **three replicas**, which cannot be modified. 
 
 ### mongod specifications
-Nodes per Shard
 
 | CPU per Node | Memory per Shard (GB) | Disk Capacity per Shard (GB)         |
 | ------------- | ---------------- | ---------------------------- |
