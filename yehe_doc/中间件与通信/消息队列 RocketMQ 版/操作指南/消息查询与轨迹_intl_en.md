@@ -1,6 +1,6 @@
 TDMQ for RocketMQ records the complete flow of a message being sent from the producer to the TDMQ for RocketMQ server for consumption by the consumer, which is displayed as a message trace in the console.
 A message trace records the entire process of how a message flows, including the duration of each stage (accurate down to the microsecond), execution result, producer IP, and consumer IP.
-![](https://qcloudimg.tencent-cloud.cn/raw/a8835b388055fc402a545d445c21e4d7.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/a14a3f3df794422fc331be4ec54874c0.png)
 
 ## Overview
 
@@ -33,10 +33,8 @@ You have deployed the producer and consumer services as instructed in the [SDK d
      - **By message ID:** A fast exact query method.
      - **By message key:** A fuzzy query method that is used when you have only set the message key.
 3. Click **Query**, and the list below will display paginated results.
-![](https://qcloudimg.tencent-cloud.cn/raw/e64e03f1f7aff564e6234e4100ed6660.png)
 4. Click **View Details** in the **Operation** column of the target message to view its basic information, content (message body), and parameters.
 5. Click **View Message Trace** in the **Operation** column or select the **Message Trace** tab on the details page to view the trace of the message. For more information, see [Message trace query result description](#1).
-![](https://qcloudimg.tencent-cloud.cn/raw/26e01a17a960deb774f23a832d22003c.png)
 
 <span id="1"></span>
 
