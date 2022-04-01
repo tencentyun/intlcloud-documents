@@ -7,7 +7,7 @@ Database instance replication means to sync data by configuring one or more back
 
 
 ### Async Replication
-AAfter receiving a data update (including INSERT, UPDATE and DELETE operations) request from an application, the source performs the update operation. When the update is completed, the source immediately responds to the application and replicates the data to the replica.
+After receiving a data update (including INSERT, UPDATE and DELETE operations) request from an application, the source performs the update operation. When the update is completed, the source immediately responds to the application and replicates the data to the replica.
 
 During data update, the source does not need to wait for a response from the replica, so the database instance replicated asynchronously often has a higher performance, and replica unavailability will not affect the provision of services by the source. However, as the data is not synced to the replica in real time, if the source fails when a delay occurs on the replica, there is a slight chance of data inconsistency.
 
