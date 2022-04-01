@@ -3,12 +3,12 @@ TencentDB for MySQL supports three types of architectures: single-node (formerly
 
 ## Viewing Instance Architectures
 - For instances to be purchased, enter the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb), and select the architecture in the **Architecture** section.
-- For purchased instances, log in to the [MySQL console](https://console.cloud.tencent.com/cdb), locate the desired instance in the instance list, and view its architecture in the **Configuration** column.
+- For purchased instances, log in to the [MySQL console](https://console.cloud.tencent.com/cdb), find the target instance from the instance list, and view its architecture in the **Configuration** column.
 
 ## Architecture Comparison
 <table>
 <thead>
-<tr><th>Architecture</th><th >Two-node</th><th>Three-node</th><th colspan=2>Single-node</th>
+<tr><th>Architecture</th><th >Two-Node</th><th>Three-Node</th><th colspan=2>Single-Node</th>
 </thead>
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/39794">Resource isolation policy</a></td>
