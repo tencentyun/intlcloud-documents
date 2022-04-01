@@ -39,12 +39,12 @@ This document describes how to use open-source SDK to send and receive messages 
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Producer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Producer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>nameserver</td>
-				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/450608d93e6980799de91b27acbe98bc.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -54,13 +54,13 @@ This document describes how to use open-source SDK to send and receive messages 
     <tr>
         <td>accessKey</td>
         <td>Role token, which can be copied in the <b>Token</b> column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/f088dfa12f2e659aba5f07cdf8ac953c.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>namespace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%">
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/084551ffba9253f9d0280d872018289e.png" style="width: 100%">
         </td>
     </tr>
 </table>
@@ -92,8 +92,8 @@ This document describes how to use open-source SDK to send and receive messages 
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+        <td>Topic name, which can be copied under the <b>Topic</b>tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/307921e6fea2543af0fc5ebc02cb4d21.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -165,12 +165,12 @@ This document describes how to use open-source SDK to send and receive messages 
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Consumer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Consumer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>nameserver</td>
-        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the <b>Operation</b>column of the cluster list on the <b>Cluster</b> page.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/de47c97b9e1609ee6357e28bd7e1ad12.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -180,19 +180,19 @@ This document describes how to use open-source SDK to send and receive messages 
     <tr>
         <td>accessKey</td>
         <td>Role token, which can be copied in the <b>Token</b> column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/cce162feb5e5dd2e4b43b9194ec3f35d.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>namespace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%">
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/fc317c3c1dbe637456e45d1974e1c6e4.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+        <td>Topic name, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/1eb1505b6a40857b4b9145af8426bf48.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -211,7 +211,7 @@ This document describes how to use open-source SDK to send and receive messages 
 
 ### Step 4. View consumption details
 Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
-![](https://qcloudimg.tencent-cloud.cn/raw/924898b7a5568be778449bf51034396d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1c0aea477bbc02d536589904af6dae27.png)
 
 
 >?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-cpp-sdk-demo.zip) or [RocketMQ-Client-CPP Example](https://github.com/apache/rocketmq-client-cpp/tree/master/example).
