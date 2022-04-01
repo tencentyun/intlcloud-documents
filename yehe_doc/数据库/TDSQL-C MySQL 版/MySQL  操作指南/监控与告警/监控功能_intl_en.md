@@ -1,13 +1,13 @@
 
-To make it easier for you to view and stay up to date with how instances work, TDSQL-C provides a wide variety of performance monitoring metrics and convenient monitoring features (custom view, time comparison, merged monitoring metrics, etc). You can log in to the [TDSQL-C console](https://console.cloud.tencent.com/cynosdb), click a cluster ID in the cluster list to enter the instance list, click an instance ID, and select **Instance Monitoring** to view them.
+To make it easier for you to view and stay up to date with how instances work, TDSQL-C for MySQL provides a wide variety of performance monitoring metrics and convenient monitoring features (custom view, time comparison, merged monitoring metrics, etc). You can log in to the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb), click a cluster ID in the cluster list to enter the instance list, click an instance ID, and select **Instance Monitoring** to view them.
 
 >?If the number of tables in a single instance exceeds one million, database monitoring may be affected. Make sure that the number of tables in a single instance is below one million.
 
 ## Types of Instances for Monitoring
-TDSQL-C offers instance-level monitoring information, supports monitoring read-write and read-only instances, and provides each instance with a separate monitoring view for easy query.
+TDSQL-C for MySQL offers instance-level monitoring information, supports monitoring read-write and read-only instances, and provides each instance with a separate monitoring view for easy query.
 
 ## Monitoring Granularity
-TDSQL-C has adopted an adaptive policy for monitoring granularity, which means that you cannot select a monitoring granularity as desired for the time being. The adaptive policy is as follows:
+TDSQL-C for MySQL has adopted an adaptive policy for monitoring granularity, which means that you cannot select a monitoring granularity as desired for the time being. The adaptive policy is as follows:
 
 | Time Span | Monitoring Granularity | Adaptation Description | Retention Period |
 |:-------|:--------|:----|:-----|
@@ -16,10 +16,10 @@ TDSQL-C has adopted an adaptive policy for monitoring granularity, which means t
 | (2d, 10d] | 5 minutes | The time span is above 2 days but below 10 days, and the monitoring granularity is 5 minutes | 31 days |
 | (10d, 30d] | 1 hour | The time span is above 10 days but below 30 days, and the monitoring granularity is 1 hour | 62 days |
 
->?Currently, you can view the monitoring data of TDSQL-C in the last 30 days.
+>?Currently, you can view the monitoring data of TDSQL-C for MySQL in the last 30 days.
  
 ## Monitoring Metrics
-CM provides the following monitoring metrics for TDSQL-C instances in the instance dimension:
+CM provides the following monitoring metrics for TDSQL-C for MySQL instances in the instance dimension:
 >?For more information on how to use TencentDB monitoring metrics, see [TDSQL-C for MySQL Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/37383).
 
 | Metric Name                                                   | Unit                |
