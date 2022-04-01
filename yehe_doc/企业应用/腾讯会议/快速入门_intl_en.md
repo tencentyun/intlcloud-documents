@@ -2,7 +2,7 @@
 
  
 ### Application     Download
-1.   Go to <https://voovmeeting.com/> and download your preferred version from the Download Center. 
+1.   Go to https://voovmeeting.com/ and download your preferred version from the Download Center. 
 
 2.   Alternatively, you can scan the QR code and download the application from the App Store.
 
@@ -16,7 +16,7 @@
 
 ### Account Registration
 
-Follow the instructions below to sign up or log in.
+Follow the steps below to sign up or log in: 
 
 1.  Run the application. You can choose to sign up or log in via WeChat or your mobile phone number.
 
