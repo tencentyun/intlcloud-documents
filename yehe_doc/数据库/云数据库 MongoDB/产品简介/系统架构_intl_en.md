@@ -22,12 +22,3 @@ TencentDB for MongoDB's sharded cluster architecture implements the horizontal c
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/4bd4036e4ef5d9d4e9756cfa14f83250.png)
 
-## Single Node
-Single-Node TencentDB for MongoDB is a cost-effective database service, whose operating costs are only one-third as many as the cluster MongoDB while ensuring good performance. It is suitable for learning, testing, and the businesses where the requirement for availability is not high, such as internal systems, and mini programs or applications of individual developers.
->?
->- Currently, the single-node architecture only supports MongoDB v4.0.
->- Currently, the single-node architecture does not support backup or rollback. If you have a high requirement for data reliability, purchase other architectures.
->- Currently, the single-node architecture does not support slow log query or connection management.
->- In the single-node architecture, only the primary node is retained, so high-availability services cannot be provided, and the [SLA](https://intl.cloud.tencent.com/document/product/301/30977) cannot be guaranteed.
->- The single-node architecture supports only one type of specification (1 core, 2 GB memory, and 150 GB disk capacity), which cannot be changed.
->- Currently, the single-node TencentDB for MongoDB can be purchased in the following zones: Guangzhou Zone 3, Shanghai Zone 4, Beijing Zone 4, and Chengdu Zone 1.
