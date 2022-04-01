@@ -117,7 +117,7 @@ Rocks organizes data based on the log-structured merge-tree (LSM tree) structure
 <td>Not supported</td>
 </tr>
 <tr>       
-<td rowspan="9">Instance operation</td>
+<td rowspan="11">Instance operation</td>
 <td>Instance list</td>
 <td>Supported</td>
 <td>Supported</td>
@@ -180,6 +180,20 @@ Rocks organizes data based on the log-structured merge-tree (LSM tree) structure
 <td>Supported</td>
 <td>Supported</td>
 </tr> 
+<tr>
+<td>Read-Only Instance</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported</td>
+</tr> 
+<tr>
+<td>Recovery Instance</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported</td>
+</tr>
 <tr>       
 <td rowspan="5">System monitoring</td>
 <td>Monitoring metric list</td>
