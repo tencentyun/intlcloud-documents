@@ -9,7 +9,7 @@ Tencent Real-Time Communication (TRTC) leverages Tencent's many years of experie
 
 
 ## Product Architecture
-TRTC offers cross-platform solutions for audio/video calls and low-latency interactive live streaming. Through the SDKs TRTC provides for mini program, web, Android, iOS, Electron, Windows, macOS, and other platforms, you can quickly integrate TRTC services into your projects and connect to the TRTC backend. You can also use TRTC in combination with Tencent Cloud’s other products, such as Instant Messaging (IM), Cloud Streaming Services (CSS), and Video on Demand (VOD) to explore more use cases. See the figure below for how TRTC can be used together with other products.
+TRTC offers cross-platform solutions for audio/video calls and low-latency interactive live streaming. Through the SDKs TRTC provides for web, Android, iOS, Electron, Windows, macOS, and other platforms, you can quickly integrate TRTC services into your projects and connect to the TRTC backend. You can also use TRTC in combination with Tencent Cloud’s other products, such as Instant Messaging (IM), Cloud Streaming Services (CSS), and Video on Demand (VOD) to explore more use cases. See the figure below for how TRTC can be used together with other products.
 ![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
 
 ## Supported Platforms
@@ -52,14 +52,6 @@ TRTC *supports a wide range of platforms**. Below is a list of the supported pla
 <td>
   <li>Windows 7 or above; macOS X10.10 or above.</li>
   <li>Electron 4.0.0 or above (the latest Electron SDK is recommended).</li>
-</td>
-</tr><tr>
-<td>WeChat Mini Program</td>
-<td>
-  <li>Minimum version of the WeChat app on iOS: 7.0.9.</li>
-  <li>Minimum version of the WeChat app on Android: 7.0.8.</li>
-  <li>Minimum version of the WeChat Mini Program base library: 2.10.0.</li>
-  <li>As the WeChat Mini Program Developer Tool does not support native components (i.e., the &lt;live-pusher&gt; and &lt;live-player&gt; tags), you need to run the demo on a real device.</li>
 </td>
 </tr><tr>
 <td>Flutter</td>
