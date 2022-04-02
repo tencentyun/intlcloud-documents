@@ -63,9 +63,11 @@ The following table only describes the modified parameters when this API is call
 
      "NeedFriend":"Need_Friend_Type_Yes", 
      
-      "LastSequence":1, 
+      "GroupName": [
    
-     "GroupName":["group1"]
+     "group1"
+      
+     ]
 
 }
 
