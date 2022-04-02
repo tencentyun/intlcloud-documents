@@ -154,7 +154,7 @@ pTRTCCloud->enterRoom(params, trtc::TRTCAppSceneVideoCall);
 :::
 ::: Windows\s
 1. File > Package Project > Windows(64-bit) 
-
+ ![](https://qcloudimg.tencent-cloud.cn/raw/48b85bf5504698153e399be89096b006.png)
 :::
 ::: iOS\s
 1. iOS에서도 다음 권한이 필요합니다.
