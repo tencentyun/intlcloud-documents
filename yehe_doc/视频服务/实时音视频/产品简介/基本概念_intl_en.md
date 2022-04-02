@@ -11,7 +11,7 @@ Tencent Cloud uses `SDKAppID` (application ID) to uniquely identify TRTC applica
 
 UserID (user ID) uniquely identifies a user in a TRTC application.
 
-- `UserID` is a mapping of the user accounts of your project in Tencent Cloud. Normally, you can use a username as a `UserID`.
+- `UserID` is a mapping of the user accounts of your project in Tencent Cloud. Normally, you can use a username as `UserID`.
 - `UserID` should preferably be 32 bytes or shorter. It can contain digits, underscores, and letters (case sensitive).
 
 ### Room
@@ -35,7 +35,7 @@ A room is a space where users can receive each other’s audio and video data in
 
 ### UserSig
 
-`UserSig` (user signature) is a security signature designed by Tencent Cloud to authenticate user logins and verify that a user is real. It helps prevent attackers from accessing your Tencent Cloud account. For more information, please see [FAQs > UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+`UserSig` (user signature) is a security signature designed by Tencent Cloud to authenticate user logins and verify that a user is real. It helps prevent attackers from accessing your Tencent Cloud account. For more information, see [FAQs > UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 ### Push
 Push is the operation in which a user uploads local audio/video data to the TRTC server.
