@@ -37,8 +37,10 @@ You can use BFD and NQA to conduct the health check for a dedicated tunnel of Te
 <td><ul><li>BFD：3 - 8, default value-3. </li><li>NQA：3 - 8, default value-5.</li></ul></td>
 </tr>
 </table>
+
 >? 
-> - You shall apply different methods to conduct health checks for dedicated tunnels using different routing modes. Currently, for the health check of dedicated tunnels using BGP routing mode, only BFD is applicable. For the health check of dedicated tunnels using static routing mode, BFD and NQA are both applicable.
->- You can switch BFD and NQA to conduct the health check of a dedicated tunnel using static routing mode. The health check will be executed with the method after switching.
+>-  You shall apply different methods to conduct health checks for dedicated tunnels using different routing modes. Currently, for the health check of dedicated tunnels using BGP routing mode, only BFD is applicable. For the health check of dedicated tunnels using static routing mode, BFD and NQA are both applicable.
+>-  You can switch BFD and NQA to conduct the health check of a dedicated tunnel using static routing mode. The health check will be executed with the method after switching.
 >
+
 6. Click **Save**.
