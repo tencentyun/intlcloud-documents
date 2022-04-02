@@ -50,11 +50,11 @@ The following table only describes the modified parameters when this API is call
   "From_Account":"id"
 }
 
-
 ```
 
 
 - **Complete request**
+
 ```
 
 {
@@ -62,12 +62,12 @@ The following table only describes the modified parameters when this API is call
      "From_Account":"id", 
 
      "NeedFriend":"Need_Friend_Type_Yes", 
-
-
+     
+      "LastSequence":1, 
+   
      "GroupName":["group1"]
 
 }
-
 
 
 ```
