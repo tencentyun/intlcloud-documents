@@ -62,7 +62,7 @@ TRTC leverages the capabilities of [CSS](https://intl.cloud.tencent.com/document
 
 ### On-Cloud MixTranscoding
 
-In scenarios such as **CDN live watching** and **on-cloud recording**, you may need to mix multiple audio/video streams in a TRTC room into one stream. This can be achieved using TRTC’s stream mixing and transcoding MCU cluster. The MCU cluster can mix multiple audio/video streams as needed and distribute the mixed stream to live streaming CDNs and the on-cloud recording system. For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618).
+In scenarios such as **CDN live watching** and **on-cloud recording**, you may need to mix multiple audio/video streams in a TRTC room into one stream. This can be achieved using TRTC’s stream mixing and transcoding MCU cluster. The MCU cluster can mix multiple audio/video streams as needed and distribute the mixed stream to live streaming CDNs and the on-cloud recording system. For more information, see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618).
 
 
 ### Dumb terminal
