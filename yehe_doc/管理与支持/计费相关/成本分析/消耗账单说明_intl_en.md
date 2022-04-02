@@ -20,37 +20,36 @@ Cost is amortized based on the cost bill. Deductions are positive, and refunds n
 
 
 #### Pay-as-you-go
-- "Month" is the month when the consumption actually occurs, i.e., the month when the resource is actually used.
+- "Consumption month" is the month when the consumption actually occurs, i.e., the month when the resource is actually used.
 - The costs of pay-as-you-go resources are not amortized.
 
 
 #### One-time purchase
-- "Month" is the purchase month of the resource, and "start time" and "end time" are 00:00:00 and 23:59:59 on the day of purchase, respectively.
+- "Consumption month" is the purchase month of the resource, and "start time" and "end time" are 00:00:00 and 23:59:59 on the day of purchase, respectively.
 - The costs of one-time purchases (such as packages) are not amortized.
 
 #### Purchase of monthly subscription resource
-- The cost is amortized daily from the day of purchase until the day before the expiration of the resource. "Month" is the month in which the consumption occurs, and the "start time" and "end time" are 00:00:00 and 23:59:59 on the day of amortization, respectively.
+- The cost is amortized daily from the day of purchase until the day before the expiration of the resource. "Consumption month" is the month in which the consumption occurs, and the "start time" and "end time" are 00:00:00 and 23:59:59 on the day of amortization, respectively.
 - Based on the purchased period and cost, vouchers, complimentary cash, and cash are amortized separately and rounded to two decimal places. If daily cost is less than 0.01 USD per day after amortization, the cost will be amortized from the next day at 0.01 USD per day until it is fully amortized.
 
 
 #### Renewal of monthly subscription resource
-- The cost is amortized daily from the first day of the renewal period until the day before the expiration of the resource. "Month" is the month in which the consumption occurs, and the "start time" and "end time" are recorded as 00:00:00 and 23:59:59 on the day of amortization, respectively.
+- The cost is amortized daily from the first day of the renewal period until the day before the expiration of the resource. "Consumption month" is the month in which the consumption occurs, and the "start time" and "end time" are recorded as 00:00:00 and 23:59:59 on the day of amortization, respectively.
 - Based on the renewed period and cost, vouchers, complimentary cash, and cash are amortized separately and rounded to two decimal places. If the daily cost is less than 0.01 USD per day after amortization, the cost will be amortized from the next day at 0.01 USD per day until it is fully amortized.
 
 
 #### Upgrade of monthly subscription resource
-- The cost is amortized daily from the day of upgrade until the day before the expiration of the resource. "Month" is the month in which the upgrade occurs, and the "start time" and "end time" are recorded as 00:00:00 and 23:59:59 on the day of amortization, respectively.
+- The cost is amortized daily from the day of upgrade until the day before the expiration of the resource. "Consumption month" is the month in which the upgrade occurs, and the "start time" and "end time" are recorded as 00:00:00 and 23:59:59 on the day of amortization, respectively.
 - Based on the upgraded period and cost, vouchers, complimentary cash, and cash are amortized separately and rounded to two decimal places. If the daily cost is less than 0.01 USD per day after amortization, the cost will be amortized from the next day at 0.01 USD per day until it is fully amortized.
 
 
 #### Downgrade of monthly subscription resource
-- 降配折算时长：延长的时长不做分摊处理。
-- Refund for downgrade:
-  - Refund is amortized daily according to the refund amount and resource validity period until the day before the expiration of the resource. "Month" is the month in which the downgrade occurs, and the "start time" and "end time" are recorded as 00:00:00 and 23:59:59 on the day of amortization, respectively.
-  - Cost amortization before the downgrade remains unchanged. According to the order end time and cost, vouchers, complimentary cash, and cash are amortized separately and rounded to two decimal places. If the daily cost is less than 0.01 USD per day after amortization, the cost will be amortized from the next day at 0.01 USD per day until it is fully amortized.
+Refund for downgrade:
+ - Refund is amortized daily according to the refund amount and resource validity period until the day before the expiration of the resource. "Consumption month" is the month in which the downgrade occurs, and the "start time" and "end time" are recorded as 00:00:00 and 23:59:59 on the day of amortization, respectively.
+ - Cost amortization before the downgrade remains unchanged. According to the order end time and cost, vouchers, complimentary cash, and cash are amortized separately and rounded to two decimal places. If the daily cost is less than 0.01 USD per day after amortization, the cost will be amortized from the next day at 0.01 USD per day until it is fully amortized.
 
 #### Refund of monthly subscription resource
-Cost amortization before the refund remains unchanged. Compensatory amortization and termination are performed on the day of refund. The refund amount (a negative number) and the unamortized cost of the resource are both counted into the amortization of the day of refund. The latter is called compensatory amortization. **Compensatory amortization = Order cost - amortized cost; Termination cost = Refund amount; Actual monthly consumption = Normal amortization + Compensatory amortization + Termination cost**.
+Cost amortization before the refund remains unchanged. Post-refund amortization and termination are performed on the day of refund. The refund amount (a negative number) and the unamortized cost of the resource are both counted into the amortization of the day of refund. The latter is called post-refund amortization. **Post-refund amortization = Order cost - amortized cost; Termination cost = Refund amount; Actual monthly consumption = Normal amortization + Post-refund amortization + Termination cost**.
 
 
 ## Consumption Type
@@ -75,9 +74,9 @@ It refers to the cost of a pay-as-you-go resource in the month of use.
 Assume that: 1. You used a daily pay-as-you-go resource from August 21 to August 31, 2019, and the cost incurred was 50 USD, then the cost type was pay-as-you-go, and the pay-as-you-go cost for August was 50 USD.
 2. You used a monthly pay-as-you-go resource from July 1 to July 31, 2019, and the incurred cost was 80 USD, then the cost type was pay-as-you-go, and the pay-as-you-go cost for July was 80 USD.
 
-**Compensatory amortization**
+**Post-refund amortization**
 If you initiate a refund, but the resource cost has not been fully amortized, then the unamortized cost will be counted into the amortization of the day of refund. This is called supplementary amortization.
-Assume that you purchased a resource for 6 months at 181 USD on January 1, 2019 (the purchase duration was 181 days) and requested refund (-30 USD) on May 10, 2019. As the 181 USD was not fully amortized, the unamortized amount was counted into the day of refund (May 10). This amortized cost was compensatory amortization. Your compensatory amortization for May was 181 USD − Amortized cost (130 USD) = 51 USD, and the termination cost for May was -30 USD.
+Assume that you purchased a resource for 6 months at 181 USD on January 1, 2019 (the purchase duration was 181 days) and requested refund (-30 USD) on May 10, 2019. As the 181 USD was not fully amortized, the unamortized amount was counted into the day of refund (May 10). This amortized cost was post-refund amortization. Your post-refund amortization for May was 181 USD − Amortized cost (130 USD) = 51 USD, and the termination cost for May was -30 USD.
 
 **Termination cost**
 It is a negative value and refers to the amortized cost of a refunded resource in the month of refund.

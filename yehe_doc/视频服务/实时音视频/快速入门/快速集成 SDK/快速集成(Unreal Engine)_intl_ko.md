@@ -153,8 +153,8 @@ pTRTCCloud->enterRoom(params, trtc::TRTCAppSceneVideoCall);
 5. 현재 UE4 editor에서 실행 중인 경우 **UE4Editor.app** 파일을 찾아 상기 단계에 따라 권한을 추가해야 합니다.
 :::
 ::: Windows\s
-1. File->Package Project->Windows->Windows(64-bit)
-![](https://imgcache.qq.com/operation/dianshi/other/win.ba79ccce59ae58718e6c35c16cdef55531456a70.png)
+1. File > Package Project > Windows(64-bit) 
+ ![](https://qcloudimg.tencent-cloud.cn/raw/48b85bf5504698153e399be89096b006.png)
 :::
 ::: iOS\s
 1. iOS에서도 다음 권한이 필요합니다.

@@ -63,10 +63,27 @@ source ~/.bashrc
 
 ### 如何设定 COSFS 开机自动挂载？
 
+需要先安装 fuse 包：
+```shell
+#CentOS系统
+#sudo yum install -y fuse
+
+#Ubuntu系统
+#sudo apt-get install fuse
+```
+
 在 /etc/fstab 文件中添加如下的内容，其中，_netdev 选项使得网络准备好后再执行当前命令：
 
 ```shell
 cosfs#examplebucket-1250000000 /mnt/cosfs fuse _netdev,allow_other,url=http://cos.ap-guangzhou.myqcloud.com,dbglevel=info
+```
+
+### 如何设置挂载点下的文件以及目录的用户和用户组？
+
+有些场景（例如 nginx 服务器），需要设置挂载点下的文件和目录的用户和用户组，例如 www 用户（uid=1002，gid=1002），则添加如下挂载参数：
+
+```shell
+-ouid=1002 -ogid=1002
 ```
 
 ### 如何挂载多个存储桶？
@@ -250,7 +267,7 @@ COSFS 需要有根目录的 GetBucket 权限，因此您需要加上根目录的
 COS 存储桶的空间是无限大的，这里的 Available 为256T，仅作为展示 df 结果，实际上 COS 存储桶能存储的数据量远不止256T。
 
 ### 为什么执行 df 显示 COSFS 的 Used 为0？
-COSFS 不占用本地存储空间，为了兼容 df 等工具，COSFS 显示的 Size Used Available 都不是真实值。
+COSFS 不占用本地存储空间，为了兼容 df 等工具，COSFS 显示的 Size Used Avaliable 都不是真实值。
 
 ### 为什么执行 df -i 显示 Inode/IUsed/IFree 都为0？
 COSFS 不是基于硬盘的文件系统，所以不会有 inode。

@@ -8,6 +8,8 @@
 
 | 回调类型           | 回调命令字                                                   |
 | ------------------ | ------------------------------------------------------------ |
+| 添加好友之前回调   | [Sns.CallbackPrevFriendAdd](https://intl.cloud.tencent.com/document/product/1047/43468)        |
+| 添加好友回应之前回调   | [Sns.CallbackPrevFriendResponse](https://intl.cloud.tencent.com/document/product/1047/43467)  |
 | 添加好友之后回调   | [Sns.CallbackFriendAdd](https://intl.cloud.tencent.com/document/product/1047/34359)        |
 | 删除好友之后回调   | [Sns.CallbackFriendDelete](https://intl.cloud.tencent.com/document/product/1047/34360)  |
 | 添加黑名单之后回调 | [Sns.CallbackBlackListAdd](https://intl.cloud.tencent.com/document/product/1047/34361)  |
@@ -19,6 +21,8 @@
 | ------------------ | ------------------------------------------------------------ |
 | 发单聊消息之前回调 | [C2C.CallbackBeforeSendMsg](https://intl.cloud.tencent.com/document/product/1047/34364) |
 | 发单聊消息之后回调 | [C2C.CallbackAfterSendMsg](https://intl.cloud.tencent.com/document/product/1047/34365)  |
+| 单聊消息已读上报后回调 | [C2C.CallbackAfterMsgReport](https://intl.cloud.tencent.com/document/product/1047/43465)  |
+| 单聊消息撤回后回调 | [C2C.CallbackAfterMsgWithDraw](https://intl.cloud.tencent.com/document/product/1047/43466)  |
 
 ## 群组系统
 

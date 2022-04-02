@@ -6,7 +6,7 @@ Though the backend gRPC plugin, the API Gateway can obtain the `.proto` file (it
 
 ## Request Process
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4f5eec8d3445e456ce0b415e8742c0e7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd46af6b1986b5ce1b06be2dd904e494.png)
 
 ## Directions
 
@@ -25,17 +25,15 @@ Though the backend gRPC plugin, the API Gateway can obtain the `.proto` file (it
 <tr>
 <td>.proto description file</td>
 <td>Yes</td>
-<td>A `.proto` file that is used to convert the HTTP/HTTPS protocol to the gRPC/gRPCS protocol.</br>The code in the file follows the ProtoBuf syntax and supports both proto2 and proto3 versions.</td>
+<td>A <code>.proto</code> file that is used to convert the HTTP/HTTPS protocol to the gRPC/gRPCS protocol.</br>The code in the file follows the ProtoBuf syntax and supports both proto2 and proto3 versions.</td>
 </tr>
 </table>
 
-![](https://qcloudimg.tencent-cloud.cn/raw/15a80050f204abe7da29ce3824a65b38.png)
 
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API to which the plugin needs to be bound.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## Notes

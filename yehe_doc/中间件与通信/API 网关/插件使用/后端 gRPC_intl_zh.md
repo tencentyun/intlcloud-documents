@@ -6,7 +6,7 @@
 
 ## 请求流程
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4f5eec8d3445e456ce0b415e8742c0e7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd46af6b1986b5ce1b06be2dd904e494.png)
 
 ## 操作步骤
 
@@ -25,17 +25,15 @@
 <tr>
 <td>.proto 描述文件</td>
 <td>必填	</td>
-<td>用于把 HTTP/HTTPS 协议转换为 gRPC/gRPCS 协议的 `.proto` 文件</br>文件中代码遵循 ProtoBuf 语法，支持 proto2 和 proto3 两个版本</td>
+<td>用于把 HTTP/HTTPS 协议转换为 gRPC/gRPCS 协议的 <code>.proto</code> 文件</br>文件中代码遵循 ProtoBuf 语法，支持 proto2 和 proto3 两个版本</td>
 </tr>
 </table>
 
-![](https://qcloudimg.tencent-cloud.cn/raw/15a80050f204abe7da29ce3824a65b38.png)
 
 ### 步骤2：绑定 API 并生效
 
 1. 在列表中选中刚刚创建好的插件，单击操作列的**绑定 API**。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
 3. 单击**确定**，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## 注意事项

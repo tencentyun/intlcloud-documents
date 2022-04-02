@@ -9,7 +9,7 @@
 
 
 >? 
-> - 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/33431)。
+> - 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象图片处理费用。
 > - 一张图片上，最多添加10张不同的图片水印。
 > - 不支持添加动图作为水印。
 > 
@@ -125,7 +125,16 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/
 添加图片水印后效果如下：
 ![](https://main.qcloudimg.com/raw/6412c0d6eaaadc5c193515f40d736dad.jpeg)
 
-#### 案例二：添加图片水印并携带私有文件签名
+#### 案例二：添加图片水印并设置平铺、透明度
+
+```plaintext
+https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast/batch/1/degree/45/dissolve/40/
+```
+
+添加图片水印并设置旋转45度平铺、透明度为40%后，效果如下：
+![](https://qcloudimg.tencent-cloud.cn/raw/d7e49b9cf7ea1dcc0459b2a5e3b2af8d.jpg)
+
+#### 案例三：添加图片水印并携带私有文件签名
 
 处理方式同上，仅增加签名部分，并与图片处理参数以“&”连接，示例如下：
 

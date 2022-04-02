@@ -7,7 +7,7 @@
 - SDK 更新日志请参见：[ChangeLog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md)。
 - SDK 常见问题请参见：[iOS SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/38957)。
 
->? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
+>? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试)。
 >
 
 ## 准备工作
@@ -173,6 +173,7 @@ SDK 在发出请求时，需要获取临时密钥计算签名，因此需要您�
   
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
         initWithCredential:credential];
+    // 注意 这里不要对urlRequst 进行copy以及mutableCopy操作
     QCloudSignature *signature = [creator signatureForData:urlRequst];
     continueBlock(signature, nil);
 }
@@ -240,6 +241,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         credential.expirationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
 
         let creator = QCloudAuthentationV5Creator.init(credential: credential);
+        // 注意 这里不要对urlRequst 进行copy以及mutableCopy操作
         let signature = creator?.signature(forData: urlRequst);
         continueBlock(signature,nil);
         
@@ -343,6 +345,7 @@ SDK 提供了一个 `QCloudCredentailFenceQueue` 的脚手架，实现对临时�
         if (error) {
             continueBlock(nil, error);
         } else {
+            // 注意 这里不要对urlRequst 进行copy以及mutableCopy操作
             QCloudSignature* signature =  [creator signatureForData:urlRequst];
             continueBlock(signature, nil);
         }
@@ -428,6 +431,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
             if error != nil {
                 continueBlock(nil,error!);
             }else{
+                // 注意 这里不要对urlRequst 进行copy以及mutableCopy操作
                 let signature = creator?.signature(forData: urlRequst);
                 continueBlock(signature,nil);
             }
@@ -474,6 +478,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
     // 使用永久密钥计算签名
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
         initWithCredential:credential];
+    // 注意 这里不要对urlRequst 进行copy以及mutableCopy操作
     QCloudSignature* signature = [creator signatureForData:urlRequst];
     continueBlock(signature, nil);
 }
@@ -497,6 +502,7 @@ func signature(with fileds: QCloudSignatureFields!,
 
     // 使用永久密钥计算签名
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
+    // 注意 这里不要对urlRequst 进行copy以及mutableCopy操作
     let signature = auth?.signature(forData: urlRequst)
     continueBlock(signature,nil);
 }

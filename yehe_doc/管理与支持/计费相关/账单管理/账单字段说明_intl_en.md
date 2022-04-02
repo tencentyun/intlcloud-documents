@@ -32,20 +32,20 @@
 | Duration Unit                               | Unit of measurement for usage duration                                           |
 | Reserved Instance | ID of the RI matched, such as s2-RI-1234567890 |
 | Original Cost                               | Original cost of a resource, which is "List unit price × Usage × Usage duration"                     |
-| Deduction Duration By Reserved Instances    | Usage duration deducted by RI. The unit of measurement for deduction is the same as that for usage duration.   |
-| Original Cost (with Reserved Instances)     | Fee deduction by RI based on the component list price                       |
+| RI Deduction (Duration)    | Usage duration deducted by RI. The unit of measurement for deduction is the same as that for usage duration.   |
+| RI Deduction (Cost)    | Fee deduction by RI based on the component list price                       |
 | Savings Plan Deduction                      | Deduction by SP                                       |
 | Savings Plan Deduction Rate                 | Discount for a component based on the unused SP     |
-| Original Cost (with Savings Plans)         | Fee deduction by SP based on the component list price</br>Original Cost (with Savings Plans) = Fee deduction by SP/SP discount rate  |
-| Discount Rate | Discount rate. `1` indicates no discount, and `0` indicates 100% off. |
-| Blended Discount                            | Combination of the official discount, RI discount, and SP discount. If there are no RI and SP discounts, blended discount equals discount rate. </br>Blended Discount = Cost after discounts/Original cost |
+| Original Cost (with Savings Plans)         | Fee deduction by SP based on the component list price</br>Original Cost (with Savings Plans) = Fee deduction by SP/SP discount multiplier  |
+| Discount Multiplier | Discount multiplier. `1` indicates no discount, and `0` indicates 100% off. |
+| Blended Discount Multiplier                          | Combination of the official discount, RI discount, and SP discount. If there are no RI and SP discounts, blended discount multiplier equals discount multiplier. </br>Blended Discount Multiplier = Cost after discounts/Original cost |
 | Currency                                    | Currency used for the settlement of a component                                      |
-| Total Amount After Discount (Excluding Tax) | Total resource cost after discount (before tax), which is "Component original cost × Discount rate" or "Component unit price × Usage × Usage duration" |
+| Total Amount After Discount (Excluding Tax) | Total resource cost after discount (before tax), which is "Component original cost × Discount multiplier" or "Component unit price × Usage × Usage duration" |
 | Voucher Deduction | Amount deducted using vouchers from the total cost after discount (before tax) |
 | Amount Before Tax | Amount deducted using cash from the total cost after discount (before tax) |
 | Tax Rate                                    | Tax rate                                                         |
 | Tax Amount                                  | Tax                                                         |
-| Total Cost (Including Tax)                  | Total resource cost after discount (after tax), which is "Component original cost × Discount rate × (1 + Tax rate)" or "Component unit price × Usage × Usage duration × (1 + Tax rate)" |
+| Total Cost (Including Tax)                  | Total resource cost after discount (after tax), which is "Component original cost × Discount multiplier × (1 + Tax rate)" or "Component unit price × Usage × Usage duration × (1 + Tax rate)" |
 
 
 
