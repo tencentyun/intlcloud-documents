@@ -1,4 +1,4 @@
-本文介绍带 UI 的 Web 端直播互动组件 TUIPusher & TUIPlayer。TUIPusher & TUIPlayer 集成 [实时音视频 TRTC](https://cloud.tencent.com/product/trtc) 、 [即时通信 IM](https://cloud.tencent.com/product/im) 等基础 SDK，为企业直播、电商带货、行业培训、远程教学等多种直播场景提供快速上线 Web 端直播推拉流工具的解决方案。
+本文介绍带 UI 的 Web 端直播互动组件 TUIPusher & TUIPlayer。TUIPusher & TUIPlayer 集成 [实时音视频 TRTC](https://intl.cloud.tencent.com/product/trtc) 、 [即时通信 IM](https://intl.cloud.tencent.com/product/im) 等基础 SDK，为企业直播、电商带货、行业培训、远程教学等多种直播场景提供快速上线 Web 端直播推拉流工具的解决方案。
 
 TUIPusher & TUIPlayer 的优势：
 + 贴合直播场景需求，提供了含 UI 的直播场景通用解决方案，覆盖了直播场景常见功能（如设备选择、美颜、直播推流、观众拉流、聊天等），助力业务快速上线；
@@ -35,8 +35,7 @@ Web 端直播互动组件（TUIPusher & TUIPlayer）下载方式如下：
 - 支持在线聊天室，和主播及其他观众进行聊天互动
 - 支持超低延时直播（300ms 延时）, 快直播（1000ms 以内延时）以及标准直播（支持超高并发观看）三种拉流线路
 - 兼容桌面浏览器及移动端浏览器，支持移动端浏览器横屏观看
-> !
-> 部分浏览器不支持 WebRTC，只能使用标准直播线路观看，如需体验其他线路，请尝试更换浏览器。
+>! 部分浏览器不支持 WebRTC，只能使用标准直播线路观看，如需体验其他线路，请尝试更换浏览器。
 
 ## 接入方式
 ### 注意事项
@@ -49,7 +48,7 @@ Web 端直播互动组件（TUIPusher & TUIPlayer）下载方式如下：
 ::: 方式1：基于实时音视频
 [](id:step1)
 #### 步骤1：创建实时音视频 TRTC 应用
-1. [注册腾讯云账号](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 并开通 [实时音视频](https://console.cloud.tencent.com/trtc) 和 [即时通信](https://console.cloud.tencent.com/im) 服务。
+1. [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 并开通 [实时音视频](https://console.cloud.tencent.com/trtc) 和 [即时通信](https://console.cloud.tencent.com/im) 服务。
 2. 在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 单击 **应用管理 > 创建应用** 创建新应用。
 ![创建应用](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
@@ -58,9 +57,11 @@ Web 端直播互动组件（TUIPusher & TUIPlayer）下载方式如下：
 ![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. 在 **应用管理 > 快速上手** 中获取应用的 secretKey 信息。
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
->?
->- 首次创建实时音视频应用的腾讯云账号，可获赠一个10000分钟的音视频资源免费试用包。
->- 创建实时音视频应用之后会自动创建一个 SDKAppID 相同的即时通信 IM 应用，可在 [即时通信控制台](https://console.cloud.tencent.com/im) 配置该应用的套餐信息。
+
+<dx-alert infotype="explain">
+- 首次创建实时音视频应用的腾讯云账号，可获赠一个10000分钟的音视频资源免费试用包。
+- 创建实时音视频应用之后会自动创建一个 SDKAppID 相同的即时通信 IM 应用，可在 [即时通信控制台](https://console.cloud.tencent.com/im) 配置该应用的套餐信息。</dx-alert>
+
 :::
 ::: 方式2：基于即时通信\sIM
 #### 步骤1：创建即时通信 IM 应用
@@ -112,7 +113,7 @@ npm run serve
 [](id:step3)
 ### 步骤三：旁路直播
 
-TUIPusher & TUIPlayer 实现的快直播和标准直播依托于腾讯云 [云直播服务](https://cloud.tencent.com/document/product/267)，因此支持快直播和标准直播线路需要您开启旁路推流功能。
+TUIPusher & TUIPlayer 实现的快直播和标准直播依托于腾讯云 [云直播服务](https://intl.cloud.tencent.com/document/product/267)，因此支持快直播和标准直播线路需要您开启旁路推流功能。
 
 1. 在 [**实时音视频控制台**](https://console.cloud.tencent.com/trtc) 中为您正在使用的应用开启旁路推流配置，可按需开启指定流旁路或全局自动旁路。 
 ![](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
@@ -145,7 +146,7 @@ TUIPusher & TUIPlayer 实现的快直播和标准直播依托于腾讯云 [云�
 ### Web 端如何实现云端录制?
 1. 开启**云端录制**功能，具体操作请参见 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426)。
 2. 开启**云端录制**> **指定用户录制**之后，Web 端可通过在调用 [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient) 接口时传入 userDefineRecordId 参数开启录制。
-	 
+
 ### Web 端如何实现推流到 CDN ？
 Web 端推流到 CDN 请参见 [实现推流到 CDN](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)。
 

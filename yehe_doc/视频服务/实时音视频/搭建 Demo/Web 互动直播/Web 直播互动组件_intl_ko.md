@@ -1,4 +1,4 @@
-본문은 UI가 있는 Web 라이브 인터랙티브 컴포넌트인 TUIPusher & TUIPlayer를 소개합니다. TUIPusher & TUIPlayer는 [TRTC](https://cloud.tencent.com/product/trtc), [IM](https://cloud.tencent.com/product/im) 등 기본 SDK를 통합하여, 엔터프라이즈 라이브 방송, 라이브 커머스, 업무 교육 및 원격 교육 등 다양한 라이브  시나리오를 위한 Web 라이브 푸시/풀 스트림 툴을 빠르게 런칭하기 위한 솔루션을 제공합니다.
+본문은 UI가 있는 Web 라이브 인터랙티브 컴포넌트인 TUIPusher & TUIPlayer를 소개합니다. TUIPusher & TUIPlayer는 [TRTC](https://intl.cloud.tencent.com/product/trtc), [IM](https://intl.cloud.tencent.com/product/im) 등 기본 SDK를 통합하여, 엔터프라이즈 라이브 방송, 라이브 커머스, 업무 교육 및 원격 교육 등 다양한 라이브  시나리오를 위한 Web 라이브 푸시/풀 스트림 툴을 빠르게 런칭하기 위한 솔루션을 제공합니다.
 
 TUIPusher & TUIPlayer 의 장점:
 + 라이브 방송 시나리오의 요구 사항에 따라 라이브 방송 시나리오의 일반적인 기능(예: 장치 선택, 뷰티 필터, 라이브 방송 푸시 스트림, 시청자 풀 스트림, 채팅 등)을 포괄하는 UI가 있는 라이브 방송 시나리오에 대한 범용 솔루션을 제공하여 빠른 런칭을 지원합니다.
@@ -49,7 +49,7 @@ Web 라이브 방송 인터랙티브 컴포넌트(TUIPusher & TUIPlayer) 다운�
 ::: 방식1: TRTC 기반
 [](id:step1)
 #### 1단계: Tencent Real-Time Communication(TRTC) 애플리케이션 생성
-1. [Tencent Cloud 계정 생성](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 및 [TRTC](https://console.cloud.tencent.com/trtc), [IM](https://console.cloud.tencent.com/im) 서비스 활성화를 완료해야 합니다.
+1. [Tencent Cloud 계정 생성](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) 및 [TRTC](https://console.cloud.tencent.com/trtc), [IM](https://console.cloud.tencent.com/im) 서비스 활성화를 완료해야 합니다.
 2. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에서 **애플리케이션 관리 > 애플리케이션 생성**을 클릭하여 새로운 애플리케이션을 생성합니다.
 ![애플리케이션 생성](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
@@ -58,9 +58,10 @@ Web 라이브 방송 인터랙티브 컴포넌트(TUIPusher & TUIPlayer) 다운�
 ![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. **애플리케이션 관리 > 퀵 스타트**에서 애플리케이션의 secretKey 정보를 가져옵니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
->?
->- TRTC 애플리케이션을 처음 생성하는 Tencent Cloud 계정은 오디오/비디오 리소스 10,000분 무료 베타 패키지가 제공됩니다.
->- TRTC 애플리케이션 생성 후 동일한 SDKAppID를 가진 IM 애플리케이션이 자동으로 생성되며, 이 애플리케이션의 패키지 정보는 [IM 콘솔](https://console.cloud.tencent.com/im)에서 구성할 수 있습니다.
+
+<dx-alert infotype="explain">
+- TRTC 애플리케이션을 처음 생성하는 Tencent Cloud 계정은 오디오/비디오 리소스 10,000분 무료 베타 패키지가 제공됩니다.
+- TRTC 애플리케이션 생성 후 동일한 SDKAppID를 가진 IM 애플리케이션이 자동으로 생성되며, 이 애플리케이션의 패키지 정보는 [IM 콘솔](https://console.cloud.tencent.com/im)에서 구성할 수 있습니다.</dx-alert>
 :::
 ::: 방식2: \sIM 기반
 #### 1단계: IM 애플리케이션 생성
@@ -112,7 +113,7 @@ npm run serve
 [](id:step3)
 ### 3단계: 릴레이 라이브 방송
 
-TUIPusher & TUIPlayer로 구현된 LEB 및 LVB는 Tencent Cloud [CSS 서비스](https://cloud.tencent.com/document/product/267)에 의존하므로, LEB 및 LVB 회선을 지원하려면 릴레이 푸시 스트림 기능을 활성화해야 합니다.
+TUIPusher & TUIPlayer로 구현된 LEB 및 LVB는 Tencent Cloud [CSS 서비스](https://intl.cloud.tencent.com/document/product/267)에 의존하므로, LEB 및 LVB 회선을 지원하려면 릴레이 푸시 스트림 기능을 활성화해야 합니다.
 
 1. [**TRTC 콘솔**](https://console.cloud.tencent.com/trtc)에서 사용 중인 애플리케이션에 대한 릴레이 푸시 스트림 설정을 활성화하고 필요에 따라 특정 스트림 릴레이 또는 전역 자동 릴레이를 활성화할 수 있습니다. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
@@ -145,7 +146,7 @@ TUIPusher & TUIPlayer로 구현된 LEB 및 LVB는 Tencent Cloud [CSS 서비스](
 ### Web에서 클라우드 녹화를 구현하는 방법은 무엇입니까?
 1. **클라우드 녹화**기능 활성화의 구체적인 작업은 [클라우드 녹화 및 재생 구현](https://intl.cloud.tencent.com/document/product/647/35426)을 참고하십시오.
 2. **클라우드 녹화**> **특정 사용자 녹화** 활성화 후 Web에서 [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient) 인터페이스를 호출할 때 userDefineRecordId 매개변수를 전달하여 녹화를 활성화할 수 있습니다.
-	 
+
 ### Web에서 CDN으로 푸시하는 방법은 무엇입니까?
 Web에서 CDN으로 푸시 스트림하려면 [CDN으로 푸시 스트림하기](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)를 참고하십시오.
 

@@ -1,4 +1,4 @@
-This document introduces you to our web-based interactive live streaming solutions `TUIPusher` and `TUIPlayer` (UI included). You can integrate them into Tencent Cloud’s basic SDKs such as [TRTC](https://cloud.tencent.com/product/trtc) and [IM](https://cloud.tencent.com/product/im) to quickly equip your live streaming applications (corporate live streaming, live shopping, vocational training, remote teaching, etc.) with web-based publishing and playback capabilities.
+This document introduces you to our web-based interactive live streaming solutions `TUIPusher` and `TUIPlayer` (UI included). You can integrate them into Tencent Cloud’s basic SDKs such as [TRTC](https://intl.cloud.tencent.com/product/trtc) and [IM](https://intl.cloud.tencent.com/product/im) to quickly equip your live streaming applications (corporate live streaming, live shopping, vocational training, remote teaching, etc.) with web-based publishing and playback capabilities.
 
 Strengths:
 + A general-purpose live streaming solution with UI that includes common live streaming features such as device selection, beauty filters, publishing, playback, and live chat, helping you quickly bring your services to the market
@@ -49,7 +49,7 @@ You can download `TUIPusher` and `TUIPlayer` from the following links:
 ::: Method 1: via TRTC
 [](id:step1)
 #### Step 1. Create a TRTC application
-1. [Sign up for a Tencent Cloud account](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) and activate [TRTC](https://console.cloud.tencent.com/trtc) and [IM](https://console.cloud.tencent.com/im).
+1. [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) and activate [TRTC](https://console.cloud.tencent.com/trtc) and [IM](https://console.cloud.tencent.com/im).
 2. In the [TRTC console](https://console.cloud.tencent.com/trtc), click **Application Management > Create Application** to create an application.
 ![Create application](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
@@ -58,9 +58,10 @@ You can download `TUIPusher` and `TUIPlayer` from the following links:
 ![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. Select the **Quick Start** tab to view the application’s secret key.
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
->?
->- Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.
->- After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).
+
+<dx-alert infotype="explain">
+- Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.
+- After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).</dx-alert>
 :::
 ::: Method 2: via \sIM
 #### Step 1. Create an IM app
@@ -145,7 +146,7 @@ See [Screen Sharing](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-b
 ### How do I implement the on-cloud recording feature on the web?
 1. For information about how to enable **on-cloud recording**, see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
 2. If you enable **specified user recording**, you can start recording on the web by specifying `userDefineRecordId` when calling the [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient) API.
-	 
+
 ### How do I publish a stream to CDN on the web?
 See [Publishing to CDN](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html).
 

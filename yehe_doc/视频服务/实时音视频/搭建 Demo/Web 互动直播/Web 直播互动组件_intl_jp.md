@@ -1,4 +1,4 @@
-ここでは、UIを有するWeb端末ライブブロードキャストインタラクションコンポーネント、TUIPusher & TUIPlayerをご紹介します。TUIPusher & TUIPlayerは[TRTC](https://cloud.tencent.com/product/trtc)、[IM](https://cloud.tencent.com/product/im)などの基本SDKを統合し、企業によるライブブロードキャスト、eコマースマーケティング、業界研修、リモート教育などの様々なライブブロードキャストシーン向けに、すぐにリリースできるWeb端末ライブブロードキャストプッシュプルストリーミングツールによるソリューションをご提供します。
+ここでは、UIを有するWeb端末ライブブロードキャストインタラクションコンポーネント、TUIPusher & TUIPlayerをご紹介します。TUIPusher & TUIPlayerは[TRTC](https://intl.cloud.tencent.com/product/trtc)、[IM](https://intl.cloud.tencent.com/product/im)などの基本SDKを統合し、企業によるライブブロードキャスト、eコマースマーケティング、業界研修、リモート教育などの様々なライブブロードキャストシーン向けに、すぐにリリースできるWeb端末ライブブロードキャストプッシュプルストリーミングツールによるソリューションをご提供します。
 
 TUIPusher & TUIPlayerのメリット：
 + ライブブロードキャストシーンのニーズに合わせ、UI付きのライブブロードキャストシーン向け汎用ソリューションをご提供します。ライブブロードキャストシーンの一般的な機能（デバイス選択、美顔、CSSプッシュ、視聴者によるプル、チャットなど）をすべて網羅し、ビジネスの速やかなリリースを支援します。
@@ -49,7 +49,7 @@ Web端末ライブブロードキャストインタラクションコンポー�
 ::: 方法1：TRTCの場合
 [](id:step1)
 #### 手順1：TRTCアプリケーションの作成
-1. [Tencent Cloudアカウントの登録](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327)を行い、[Tencent Real-Time Communication（TRTC）](https://console.cloud.tencent.com/trtc)と[Instant Messaging](https://console.cloud.tencent.com/im)サービスをアクティブ化します。
+1. [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327)を行い、[Tencent Real-Time Communication（TRTC）](https://console.cloud.tencent.com/trtc)と[Instant Messaging](https://console.cloud.tencent.com/im)サービスをアクティブ化します。
 2. [TRTCコンソール](https://console.cloud.tencent.com/trtc) で、**アプリケーション管理>アプリケーションの作成** をクリックし、新たなアプリケーションを作成します。
 ![アプリケーションの作成](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
@@ -58,9 +58,10 @@ Web端末ライブブロードキャストインタラクションコンポー�
 ![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
 2. **アプリケーション管理>クイックマスター**でアプリケーションのsecretKey情報を取得します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
->?
->- TRTCアプリケーションを初めて作成するTencent Cloudアカウントは、10000分間のオーディオビデオリソース無料トライアルパッケージを受け取ることができます。
->- TRTCプリケーションを作成すると、同じSDKAppIDのIMアプリケーションが自動的に作成され、[IMコンソール](https://console.cloud.tencent.com/im)でこのアプリケーションのパッケージ情報を設定することができます。
+
+<dx-alert infotype="explain">
+- TRTCアプリケーションを初めて作成するTencent Cloudアカウントは、10000分間のオーディオビデオリソース無料トライアルパッケージを受け取ることができます。
+- TRTCプリケーションを作成すると、同じSDKAppIDのIMアプリケーションが自動的に作成され、[IMコンソール](https://console.cloud.tencent.com/im)でこのアプリケーションのパッケージ情報を設定することができます。</dx-alert>
 :::
 ::: 方法2：インスタントメッセージ\sIMの場合
 #### 手順1：IMアプリケーションの作成
@@ -112,7 +113,7 @@ npm run serve
 [](id:step3)
 ### ステップ3：Relayed live streaming
 
-TUIPusher&TUIPlayerによって実装されるライブイベントストリーミングと標準ライブブロードキャストはTencent Cloud[CSSサービス]（https://cloud.tencent.com/document/product/267）に依存しているため、ライブイベントストリーミングと標準ライブブロードキャスト回線をサポートするには、Relayed Push機能を有効にする必要があります。
+TUIPusher&TUIPlayerによって実装されるライブイベントストリーミングと標準ライブブロードキャストはTencent Cloud[CSSサービス]（https://intl.cloud.tencent.com/document/product/267）に依存しているため、ライブイベントストリーミングと標準ライブブロードキャスト回線をサポートするには、Relayed Push機能を有効にする必要があります。
 
 1. [**TRTCコンソール**](https://console.cloud.tencent.com/trtc) で現在使用中のアプリケーションのRelayed Push設定を有効にします。必要に応じてRelayed Push用指定ストリームまたはGlobal Auto-relayを起動することができます。 
 ![](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
@@ -145,7 +146,7 @@ TUIPusher & TUIPlayerを本番環境アプリケーションに使用する場�
 ### Web端末でのクラウドレコーディングの実現方法。
 1. **クラウドレコーディング**機能を有効にするための具体的な操作については、[クラウドレコーディングと再生の実現](https://intl.cloud.tencent.com/document/product/647/35426)をご参照ください 。
 2. **クラウドレコーディング**> **指定ユーザーレコーディング**を有効にすると、Web端末が[TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient)インターフェース呼び出し時にuserDefineRecordIdパラメータを渡すことによってレコーディングを開始できます。
-	 
+
 ### Web端末でのCDNへのプッシュの実現方法。
 Web端末でのCDNへのプッシュについては、[CDNへのプッシュの実現](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html) をご参照ください。
 
