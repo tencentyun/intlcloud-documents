@@ -16,7 +16,8 @@ This API allows the app administrator to pull the historical messages of a group
 | Private | Yes. Same as work groups (Work) in the new version. |
 | Public | Yes. |
 | ChatRoom | Yes. Same as meeting groups (Meeting) in the new version. |
-| AVChatRoom | Yes. |
+|AVChatRoom|No. |
+|Community|Yes. |
 
 Above are the IM built-in groups. For more information, please see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
