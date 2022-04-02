@@ -7,6 +7,46 @@
 > - 製品の安定性を高め、より良いオンラインサポートをご利用いただくため、速やかに最新バージョンに更新することをお勧めします。
 > - バージョンのアップグレードに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
+## Version 4.12.0 @2022.03.04
+
+**Note**
+このバージョンへのアップグレードの際は注意が必要です。[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
+
+**Feature**
+[client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType)は非同期に変更され、Promiseを返します。Promiseの状態によりビッグスモールストリームの切り替えに成功したかと判断します。
+
+**Improvement**
+海外サービスのスケジューリングの正確さを最適化します。
+
+**Bug Fixed**
+偶発的にuser_time_outを受信して強制オフラインになる問題を修正しました。
+
+## Version 4.11.13 @2022.02.17
+
+**Improvement**
+
+- npmパッケージのTypescript宣言ファイルを更新します。
+- [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play)パラメータ検証ロジックを最適化します。
+
+**Bug Fixed**
+
+- iOS 13の認証前に[LocalStream.initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#initialize)の失敗によって偶発的なエラーが発生する問題を修正しました。
+- [AUDIO_VOLUME](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.AUDIO_VOLUME)イベントの数値が偶発的に0である問題を修正しました。
+
+## Version 4.11.12 @2022.01.11
+
+**Improvement**
+
+- npmパッケージがTypescript宣言ファイルを提供します。
+- stream.close()インターフェースの実装ロジックを最適化します。
+- プッシュ端末の頻繁的なpublish/unpublishのシグナリングのやりとりロジックを最適化します。
+
+**Bug Fixed**
+
+- iOS 15.1でデスクトップ版ウェブページ通話をオンにするときに必ずページcrashが起きるという問題を修復しました。詳細については、[iOS Safari既知の問題case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
+- [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioProfile)のコードレートが192kbpsに設定される問題を修正しました。
+
+
 ## Version 4.11.11 @2021.12.17
 
 **Improvement**
@@ -25,13 +65,13 @@
 
 **Note**
 
-このバージョンへのアップグレードの際は注意が必要です。[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
+- このバージョンへのアップグレードの際には、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
 
 **Improvement**
 
 - SDKが自動再生に失敗した際に、自動再生失敗の問題を解決するためのインタラクティブポップアップの表示をサポートしました。詳細については、[制限された自動再生の処理に関するアドバイス](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3)をご参照ください。
 - 【iOS 15.1でプッシュにcrashが起きる問題】の回避ロジックを最適化しました。詳細については、[iOS Safari 既知の問題 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)をご参照ください。
-- 無音になることがある問題を回避するため、[TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)は、deviceIdが'default'および'communications'であるマイクを返さないようにしました。詳細については、[Chromeの既知の問題 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)をご参照ください。
+- 無音になることがある問題を回避するため、[TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)は、deviceIdが'communications'であるマイクを返さないようにしました。詳細については、[Chromeの既知の問題case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)をご参照ください。
 - switchDeviceポリシーを最適化しました。
 - webview環境におけるコーデックサポート検出の正確性を向上させました。
 - [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream)、[client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream)、[client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)および[client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode)インターフェースのパラメータ検証を改善しました。
@@ -157,7 +197,7 @@
 
 **Feature**
 
-- Stream接続ステータスの変更の監視をサポートする[StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED)イベントを追加しました。
+- Stream接続状態の変更の監視をサポートする[StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED)イベントを追加しました。
 - ダウンリンクRTT統計データを取得するため、[Client.getTransportStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getTransportStats)インターフェースをサポートしました。
 - セカンダリストリーム（画面共有）の統計データを取得するため、[Client.getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteVideoStats)インターフェースをサポートしました。
 
@@ -275,14 +315,14 @@ Websocketのデフォルトポートは443に変更されました。
 **Feature**
 
 - Cloud MixTranscodingをサポートします。
-- すべてのプラットフォームは文字列ルームナンバーをサポートします。[TRTC.createClientのuseStringRoomIdパラメータ](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient)をご参照ください。
+- 全プラットフォームは文字列ルームナンバーをサポートします。[TRTC.createClientのuseStringRoomIdパラメータ](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient)をご参照ください。
 - 自動閲覧の無効化をサポートしています。[TRTC.createClientのautoSubscribeパラメータ](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient)をご参照ください。
 
 **Improvement**
 
 - h264サポート検出ロジックを最適化しました。
 - デバイススイッチングロジックを最適化しました。
-- hasAudio/hasVideoインターフェースステータス判定ロジックを最適化しました。
+- hasAudio/hasVideoインターフェース状態判定ロジックを最適化しました。
 
 **Bug Fixed**
 
@@ -381,7 +421,7 @@ Websocketのデフォルトポートは443に変更されました。
 - switchRoleパラメータ検証ロジックを最適化しました。
 - アップストリームネットワーク品質の計算ロジックを最適化しました。
 - エラーメッセージを最適化しました。
-- 現在のプッシュストリーム収集デバイスの変更が検出されると、プッシュストリームのステータスが自動的にリカバリされます。
+- 現在のプッシュストリーム収集デバイスの変更が検出されると、プッシュストリームの状態が自動的にリカバリされます。
 
 **Bug Fixes**
 
@@ -439,7 +479,7 @@ Chrome >= 74の画面共有およびキャプチャシステム(Windows)また�
 
 **Bug Fixes**
 
-潜在的なRTCPeerConnectionのステータス変更異常を修正しました。
+潜在的なRTCPeerConnectionの状態変更異常を修正しました。
 
 ## Version 4.3.11 @ 2020.03.28
 
@@ -567,7 +607,7 @@ Client.off()インターフェースを追加して、クライアントイベ�
 
 **Improvement**
 
-- 通話ステータス統計を最適化しました。
+- 通話状態統計を最適化しました。
 - Client.publish()に権限チェックを追加しました。
 - Stream.play()/resume()自動再生エラープロンプトを追加しました。
 
@@ -594,7 +634,7 @@ LocalStream.switchDevice()は、カメラ切り替え時のブラックスクリ
 - 旧バージョンのChromeでのWebAudio Contextの数量制限の問題を修正しました。
 - replaceTrack()がローカルオーディオ・ビデオプレーヤーを再起動しない問題を修正しました。
 - LocalStream.setScreenProfile()のカスタムプロパティ設定が有効にならない問題を修正しました。
-- audio/video playerの再起動とステータスレポートの問題を修正しました。
+- audio/video playerの再起動と状態報告の問題を修正しました。
 
 ## Version 4.0.0 @ 2019.10.11
 

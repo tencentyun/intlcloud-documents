@@ -7,29 +7,26 @@
 App 설치 패키지를 다운로드 및 설치하여 실시간 인터랙션 수업의 기능 및 효과를 경험해 볼 수 있습니다. 기본적인 음성 및 영상 통화, 화면 공유, 화이트보드, 문자 채팅 등 기본 기능 뿐만 아니라, 전체 음소거, 손 들기, 발언 요청, 출석 체크 등의 고급 기능을 구현합니다.
 
 
+
 ## 실시간 인터랙션 수업 소스 코드 실행
 [](id:step1)
 ### 1단계: 애플리케이션 생성 및 SDKAppID와 키 획득
 이전에 Tencent Cloud TRTC 애플리케이션을 생성한 적이 있는 경우 이 단계를 건너뛰고 이전에 생성된 애플리케이션의 SDKAppID 및 키를 사용할 수 있습니다.
 
 1. TRTC 콘솔에 로그인하고 **개발 지원** > **[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)**을 선택한 후, **애플리케이션 생성** 탭에서 'TestTRTC'와 같은 애플리케이션 이름을 입력하고, **생성** 버튼을 클릭합니다.  
-![](https://qcloudimg.tencent-cloud.cn/raw/dfb1acca0137cd30d5168c3d9d72aa13.png)
+
 2. **소스 코드 다운로드** 탭을 건너뛰고 **다음 단계** 버튼을 클릭하여 **설정 수정** 탭으로 이동한 후 페이지에 표시되는 SDKAppID와 키를 기록합니다. 다음 단계에서 사용하게 됩니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/ca5da75be8285ead342e06971229680e.png)
+
 
 [](id:step2)
 ### 2단계: IM 설정
->? 실시간 인터랙션 수업은 기본 PaaS 서비스인 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078)과 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)을 동시에 사용하였으며, TRTC를 활성화하면 IM 서비스도 동시에 활성화됩니다. IM은 부가 서비스이며, 자세한 과금 규정은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+>? 실시간 인터랙션 수업은 기본 PaaS 서비스인 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078)과 [Instant Messaging](https://cloud.tencent.com/document/product/269)을 동시에 사용하였으며, TRTC를 활성화하면 IM 서비스도 동시에 활성화됩니다. IM은 부가 서비스이며, 자세한 과금 규정은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
 1. **관련 클라우드 서비스** 메뉴로 이동한 후, 아래 이미지의 **IM 애플리케이션**을 클릭하면 IM 애플리케이션 관리 페이지로 리디렉션됩니다.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/14e4c3b097ecadb046330975dbec6bd0.png)
 
-2. 아래 이미지와 같이 방금 생성한 애플리케이션을 찾아 클릭하여 애플리케이션 관리 페이지로 이동합니다.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/50aa612285befcfa14562923622cad6d.png)
+2. 방금 생성한 애플리케이션을 클릭하여 애플리케이션 관리 페이지로 이동합니다.
 
 3. 아래 이미지와 같이 **기능 설정** > **로그인 및 메시지** 메뉴를 열고 **로그인 설정** 섹션의 **편집** 링크를 클릭하여 **Web 동시 로그인 개수**를 2 이상으로 설정합니다(현재 이 애플리케이션은 최대 2개의 Web IM 인스턴스 동시 로그인이 필요합니다. 향후 추가 사용을 위해 더 높게 설정할 수 있습니다).
-
-   ![](https://qcloudimg.tencent-cloud.cn/raw/2385858860a8f12091eab619b313eaec.png)
 
 
 [](id:step3)
@@ -86,7 +83,7 @@ yarn start
 ```
 >!
 >- 처음으로 yarn 명령어를 실행하여 종속을 설치할 때 Window10, Window11에서 권한이 부족하다는 오류 메시지가 나오면 cmd에서 관리자 신분으로 한 번 실행해 보시기 바랍니다. 그 후 cmd 또는 Visual Studio Code, WebStorm 등과 같은 통합 개발 툴의 터미널에서 일반 사용자로 실행할 수 있습니다.
->- 종속성 설치 중 Electron 다운로드 속도 저하 또는 랙 발생 등의 문제가 발생하면 [문의하기](https://intl.cloud.tencent.com/contact-us)를 참고하여 해결할 수 있습니다.
+>- 종속성 설치 중 Electron 다운로드 속도 저하 또는 랙 발생 등의 문제가 발생하면 [문의하기](https://intl.cloud.tencent.com/contact-us)를 통해 해결할 수 있습니다.
 
 [](id:step7)
 ### 7단계: 설치 패키지 구축, 실행

@@ -7,29 +7,26 @@
 您可以下载、安装我们已经构建好的 App 安装包， 体验实时互动课堂的能力效果。不仅提供了基础的音视频通话、屏幕分享、白板、文字聊天等基础功能，还实现了全员禁麦、学生举手申请发言、老师邀请学生发言、点名、签到等高级功能。
 
 
+
 ## 跑通实时互动课堂源代码
 [](id:step1)
 ### 步骤1：创建应用并获取 SDKAppID 和密钥
 如果您之前已经创建过腾讯云实时音视频的应用，可以跳过该步骤，直接使用之前创建应用的 SDKAppID 和密钥。
 
 1. 登录实时音视频控制台，选择**开发辅助** > **[快速跑通 Demo](https://console.cloud.tencent.com/trtc/quickstart)**，在**创建应用**页签，输入您的应用名称，例如 `TestTRTC`，单击**创建**按钮。  
-![](https://qcloudimg.tencent-cloud.cn/raw/dfb1acca0137cd30d5168c3d9d72aa13.png)
+
 2. 跳过**下载源码**页签，直接单击**下一步**按钮，进入**修改配置**页签，记录下页面上显示的 SDKAppID 和密钥，后续步骤将会用到。
-![](https://qcloudimg.tencent-cloud.cn/raw/ca5da75be8285ead342e06971229680e.png)
+
 
 [](id:step2)
 ### 步骤2：配置即时通信 IM
->? 实时互动课堂同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信 IM 服务。 即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>? 实时互动课堂同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://cloud.tencent.com/document/product/269) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信 IM 服务。 即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 1. 进入**相关云服务**菜单，单击下图中**即时通信 IM 应用**跳转到 IM 应用管理页面。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/14e4c3b097ecadb046330975dbec6bd0.png)
 
-2. 找到刚创建的应用，单击进入该应用管理页面，如下图所示：
-    ![](https://qcloudimg.tencent-cloud.cn/raw/50aa612285befcfa14562923622cad6d.png)
+2. 找到刚创建的应用，单击进入该应用管理页面。
 
 3. 打开菜单**功能配置** > **登录与消息**，如下图所示，单击**登录设置**区域的**编辑**链接，将 **Web 端可同时在线个数**设置为大于等于 2 的值（目前本应用最多需要同时登录 2 个 Web IM 实例，可以设置更多一些，以备后续使用）。
-
-   ![](https://qcloudimg.tencent-cloud.cn/raw/2385858860a8f12091eab619b313eaec.png)
 
 
 [](id:step3)
@@ -86,7 +83,7 @@ yarn start
 ```
 >!
 >- 第一次执行 yarn 命令安装依赖时，Window10、Window11 下如果遇到权限不足的错误提示，请尝试以管理员身份，在 cmd 中执行一次。之后就可以以普通用户身份在 cmd 中或者集成开发工具自带终端中执行，例如：Visual Studio Code、WebStorm 等。
->- 安装依赖过程中，如遇到 Electron 下载慢甚至卡住不动等问题，您可以参考 [联系我们](https://intl.cloud.tencent.com/contact-us) 解决。
+>- 安装依赖过程中，如遇到 Electron 下载慢甚至卡住不动等问题，您可以 [联系我们](https://intl.cloud.tencent.com/contact-us) 解决。
 
 [](id:step7)
 ### 步骤7：构建安装包、运行

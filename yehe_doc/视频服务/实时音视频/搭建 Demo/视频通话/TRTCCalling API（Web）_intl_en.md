@@ -5,8 +5,22 @@ The [TRTCCalling](https://www.npmjs.com/package/trtc-calling-js) component is ba
 - TRTC SDK: The [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency audio/video call component.
 - IM SDK: The [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to send and process signaling messages.
 
+## Demo Download
+  You can download the source code of the web demo at [TUICalling](https://github.com/tencentyun/TUICalling).
+
 ## Environment Requirements
-Currently, the desktop version of Chrome offers better support for the features of the TRTC SDK for web; therefore, Chrome is recommended for the demo. for more information, see [Environment Requirements](https://intl.cloud.tencent.com/document/product/647/38927#.E7.8E.AF.E5.A2.83.E8.A6.81.E6.B1.82),
+We recommend you use Chrome for PC to run the demo as it offers better support for the features of the TRTC Web SDK. For more information on environment requirements, see [Environment Requirements](https://intl.cloud.tencent.com/document/product/647/38927#.E7.8E.AF.E5.A2.83.E8.A6.81.E6.B1.82).
+
+## URL Protocol Support
+| Scenario     | Protocol             | Receive (Playback) | Send (Publish) | Share Screen | Remarks |
+| ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
+| Production     | HTTPS        | Supported         | Supported         | Supported     | Recommended |
+| Production     | HTTP         | Supported         | Not supported       | Not supported   |   -   |
+| Local development | http://localhost | Supported         | Supported         | Supported     | Recommended |
+| Local development | http://127.0.0.1 | Supported         | Supported         | Supported     |   -   |
+| Local development | http://[local IP address]  | Supported         | Not supported       | Not supported   |   -   |
+| Local development | file:///         | Supported         | Supported         | Supported     |   -   |
+
 
 ## `TRTCCalling` APIs 
 
@@ -67,23 +81,23 @@ Then, obtain an instance of the `TRTCCalling` component using `new TRTCCalling()
   npm i tim-js-sdk --save
   npm i tsignaling --save
   npm i trtc-calling-js --save
-  // If it is a dependency downloaded through node, import it using `import`.
+  // If you download the dependency using Node.js, you can import it using an import command.
   import TRTCCalling from 'trtc-calling-js';
 
-  // If you use trtc-calling-js via script, you need to
-  // manually import trtc.js first in the specified order.
+  // If you use JavaScript, you need to manually import the following resources in the specified order.
+  // trtc.js
   <script src="./trtc.js"></script>
-  // First, manually import tim-js.js.
+  // tim-js.js
   <script src="./tim-js.js"></script>
-  // Then, manually import tsignaling.js.
+  // tsignaling.js
   <script src="./tsignaling.js"></script>
-  // At last, manually import trtc-calling-js.js.
+  // trtc-calling-js.js
   <script src="./trtc-calling-js.js"></script>
 
 let options = {
-  SDKAppID: 0, // Replace 0 with the `SDKAppID` of your IM application when connecting
+  SDKAppID: 0, // Replace `0` with the `SDKAppID` of your IM application when connecting
   // The `tim` parameter is added starting from v0.10.2
-  // The `tim` parameter is applicable to existing TIM instances in the business to ensure the uniqueness of TIM instances
+  // The parameter guarantees the uniqueness of an existing TIM instance.
   tim: tim
 };
 let trtcCalling = new TRTCCalling(options);
@@ -96,7 +110,7 @@ let trtcCalling = new TRTCCalling(options);
 [](id:on)
 #### on(eventName, callback, context)
 
-This API is used to subscribe to an event dispatched by the component. For details about the events, see the [event list](#event).
+This API is used to subscribe to an event dispatched by the component. For a list of the events, see [`TRTCCalling` Events](#event).
 
 <dx-codeblock>
 ::: javascript javascript
@@ -141,7 +155,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------- |
 | userID | String | ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (\_) |
-| userSig | String | Tencent Cloud's proprietary security signature. For how to calculate it, see [FAQs > UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
+| userSig | String | Tencent Cloud's proprietary security signature. For how to calculate and use it, see [FAQs > UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 
 [](id:logout)
 #### logout()
@@ -159,7 +173,7 @@ trtcCalling.logout()
 [](id:call)
 #### call({userID, type, offlinePushInfo})
 
-This API is used to make one-to-one calls. `type` indicates the type of a call. `1`: audio call; `2`: video call.
+This API is used to make a one-to-one call. `type` indicates the call type (`1`: audio call; `2`: video call).
 
 >?
 >- The `timeout` parameter is deleted from v1.0.0 and later versions.
@@ -185,8 +199,8 @@ The parameters are as detailed below:
 | --------------- | ------ | ---------------------------------------------------------- |
 | userID          | String | `userID` of the invitee                                            |
 | type            | Number | Call type. `1`: audio call; `2`: video call                                   |
-| timeout         | Number | Timeout period (s). `0` means the call never times out. **This parameter is available only in versions earlier than v1.0.0.**         |
-| offlinePushInfo | Object | Offline notifications (optional). **This parameter is available only in v1.0.0 and later versions.** |
+| timeout         | Number | Timeout period (s). `0` means the call never times out. **This parameter is valid only for versions earlier than v1.0.0.**         |
+| offlinePushInfo | Object | Offline notifications (optional). **This parameter is valid only for v1.0.0 and later versions.** |
 
 offlinePushInfo (in v1.0.0 and later versions)
 
@@ -195,7 +209,7 @@ offlinePushInfo (in v1.0.0 and later versions)
 | title                | String | Title of an offline notification (optional)                                   |
 | description          | String | Content of an offline notification (optional)                                    |
 | androidOPPOChannelID | String | Channel ID for an offline notification on OPPO 8.0 and above (optional) |
-| extension            | String | Passthrough content of an offline notification (optional). **It is only for TRTCCalling v1.0.2 or above and TSignaling v0.9.0 or above** |
+| extension            | String | Passthrough content of an offline notification (optional), **which is valid only for TRTCCalling v1.0.2 or above and TSignaling v0.9.0 or above** |
 
 [](id:groupCall)
 #### groupCall({userIDList, type, groupID, offlinePushInfo})
@@ -224,7 +238,7 @@ The parameters are as detailed below:
 | userIDList      | Array  | List of the user IDs of invitees                                                   |
 | type            | Number | Call type. `1`: audio call; `2`: video call                                   |
 | groupID         | String | IM group ID (optional)                                         |
-| offlinePushInfo | Object | Offline notifications (optional). **This parameter is available only in v1.0.0 and later versions.** |
+| offlinePushInfo | Object | Offline notifications (optional). **This parameter is valid only for v1.0.0 and later versions.** |
 
 offlinePushInfo (in v1.0.0 and later versions)
 
@@ -233,7 +247,7 @@ offlinePushInfo (in v1.0.0 and later versions)
 | title                | String | Title of an offline notification (optional)                                   |
 | description          | String | Content of an offline notification (optional)                                    |
 | androidOPPOChannelID | String | Channel ID for an offline notification on OPPO 8.0 and above (optional) |
-| extension            | String | Passthrough content of an offline notification (optional). **It is only for TRTCCalling v1.0.2 or above and TSignaling v0.9.0 or above** |
+| extension            | String | Passthrough content of an offline notification (optional), **which is valid only for TRTCCalling v1.0.2 or above and TSignaling v0.9.0 or above** |
 
 [](id:accept)
 #### accept()
@@ -261,9 +275,9 @@ The parameters are as detailed below:
 
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | ------ | ----------------------------------------------------- |
-| inviteID | String | Invitation ID, which identifies an invitation (listens on the `INVITED` event and calls back the `inviteID` data). **It is only for versions below 1.0.0** |
-| roomID   | Number | Call room ID (listens on the `INVITED` event and calls back the `inviteData.roomID` data). **It is only for versions below 1.0.0** |
-| callType | Number  | `1`: audio call; `2`: video call (listens on the `INVITED` event and calls back the `inviteData.callType` data). **It is only for versions below 1.0.0** |
+| inviteID | String | Invitation ID, which identifies an invitation and is returned by the `INVITED` callback. **This parameter is valid only for versions earlier than v1.0.0**. |
+| roomID   | Number | Call room ID, which is returned by the `INVITED` callback (in `inviteData`). **This parameter is valid only for versions earlier than v1.0.0**. |
+| callType | Number  | Call type, which is turned by the `INVITED` callback (in `inviteData`). `1`: audio call; `2`: video call. **This parameter is valid only for versions earlier than v1.0.0**. |
 
 
 [](id:reject)
@@ -290,9 +304,9 @@ The parameters are as detailed below:
 
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | ------- | ----------------------------------------------------- |
-| inviteID | String | Invitation ID, which identifies an invitation (listens on the `INVITED` event and calls back the `inviteID` data). **It is only for versions below 1.0.0** |
-| isBusy   | Boolean | Whether the line is busy. **This parameter is available only in versions earlier than v1.0.0.**             |
-| callType | Number  | `1`: audio call; `2`: video call (listens on the `INVITED` event and calls back the `inviteData.callType` data). **It is only for versions below 1.0.0** |
+| inviteID | String | Invitation ID, which identifies an invitation and is returned by the `INVITED` callback. **This parameter is valid only for versions earlier than v1.0.0**. |
+| isBusy   | Boolean | Whether the line is busy. **This parameter is valid only for versions earlier than v1.0.0.**             |
+| callType | Number  | Call type, which is turned by the `INVITED` callback (in `inviteData`). `1`: audio call; `2`: video call. **This parameter is valid only for versions earlier than v1.0.0**. |
 
 [](id:hangup)
 #### hangup()
@@ -345,7 +359,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | -------------- | ------ | ------------------------------------------------------------ |
 | userID | String | User ID |
-| videoViewDomID | String | The DOM node whose video tag is to be deleted. The playback will stop. **This parameter is available only in versions earlier than v1.0.0.** |
+| videoViewDomID | String | The DOM node whose video tag is to be deleted. The playback will stop. **This parameter is valid only for versions earlier than v1.0.0.** |
 
 [](id:startLocalView)
 #### startLocalView({userID, videoViewDomID})
@@ -385,7 +399,7 @@ The parameters are as detailed below:
 | Parameter    | Type   | Description                                                                                                                    |
 | -------------- | ------ | ------------------------------------------------------------ |
 | userID | String | User ID |
-| videoViewDomID | String | The DOM node whose video tag is to be deleted. The playback will stop. **This parameter is available only in versions earlier than v1.0.0.** |
+| videoViewDomID | String | The DOM node whose video tag is to be deleted. The playback will stop. **This parameter is valid only for versions earlier than v1.0.0.** |
 
 [](id:openCamera)
 #### openCamera()
@@ -448,7 +462,7 @@ This API is used to switch from video call to audio call.
 >?  
 >- This is a new API in v0.10.0 and later versions.
 >- It can be used only in one-to-one calls.
->- The error callback (code: 60001) indicates that the switching has failed.
+>- If you receive an error callback (code: 60001), the switching failed.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -462,7 +476,7 @@ This API is used to switch from audio call to video call.
 >?  
 >- This is a new API in v0.10.0 and later versions.
 >- It can be used only in one-to-one calls.
->- The error callback (code: 60002) indicates that the switching has failed.
+>- If you receive an error callback (code: 60002), the switching failed.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -532,7 +546,7 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject)
 :::
 </dx-codeblock>
 
-### Inviter events
+### Invitation events
 
 |                     Code                      |   Event Recipient   |           Description            |
 | :-------------------------------------------: | :------------: | :-----------------------: |
@@ -549,13 +563,13 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject)
 | [USER_VIDEO_AVAILABLE](#user_video_available) | Inviter and invitee | A remote user turned the camera on/off. |
 | [USER_AUDIO_AVAILABLE](#user_audio_available) | Inviter and invitee | A remote user turned the mic on/off. |
 
-### Common event callback APIs
+### Common event callbacks
 
 #### SDK_READY
 
 The SDK is ready.
 
->?This is a new callback in v1.0.0 and later versions.
+>?This is a new event callback in v1.0.0 and later versions.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -569,7 +583,7 @@ trtcCalling.on(TRTCCalling.EVENT.SDK_READY, onSDKReady);
 #### USER_ENTER
 
 A user entered the room.
-This callback is triggered when a user joins the call.
+This event callback is triggered when a user joins the call.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -589,7 +603,7 @@ The parameters are as detailed below:
 #### USER_LEAVE
 
 A user left the room.
-This callback is triggered when a user leaves the call.
+This event callback is triggered when a user leaves the call.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -610,7 +624,7 @@ The parameters are as detailed below:
 
 The invitee list for a group call was updated.
 
->?This is a new callback in v1.0.0 and later versions.
+>?This is a new event callback in v1.0.0 and later versions.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -624,7 +638,7 @@ trtcCalling.on(TRTCCalling.EVENT.GROUP_CALL_INVITEE_LIST_UPDATE, handleGroupInvi
 #### CALL_END
 
 The call ended.
-This callback is triggered when a call ends.
+This event callback is triggered when a call ends.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -638,7 +652,7 @@ trtcCalling.on(TRTCCalling.EVENT.CALL_END, handleCallingEnd);
 #### KICKED_OUT
 
 A user was kicked out due to repeated login.
-This callback is triggered if a user logs in with the same account twice.
+This event callback is triggered if a user logs in with the same account on another page.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -652,7 +666,7 @@ trtcCalling.on(TRTCCalling.EVENT.KICKED_OUT, handleKickedOut);
 #### USER_VIDEO_AVAILABLE
 
 A remote user turned the camera on/off.
-This callback is triggered when a remote user turns the camera on/off.
+This event callback is triggered when a remote user turns the camera on/off.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -673,7 +687,7 @@ The parameters are as detailed below:
 #### USER_AUDIO_AVAILABLE
 
 A remote user turned the mic on/off.
-This callback is triggered when a remote user turns the mic on/off.
+This event callback is triggered when a remote user turns the mic on/off.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -691,7 +705,7 @@ The parameters are as detailed below:
 | userID | String | User ID |
 | isAudioAvailable | Boolean | <li/>`true`: The remote user turned the mic on. <li/> `false`: The remote user turned the mic off. |
 
-### Inviter event callback APIs
+### Event callbacks received by inviter
 
 #### REJECT
 
@@ -729,7 +743,7 @@ trtcCalling.on(TRTCCalling.EVENT.NO_RESP, handleNoResponse);
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---------- | ------ | ------------ |
 | userID | String | User ID |
 | userIDList | Array  | List of timed out users |
@@ -754,7 +768,7 @@ The parameters are as detailed below:
 | ------ | ------ | ------- |
 | userID | String | User ID |
 
-### Invitee event callback APIs
+### Event callbacks received by invitee
 
 #### INVITED
 
@@ -812,7 +826,7 @@ trtcCalling.on(TRTCCalling.EVENT.CALLING_TIMEOUT, handleCallingTimeout);
 
 ## `TRTCCalling` Error Codes
 
-You can handle the errors thrown by the `TRTCCalling` component by listening for the “error” field in events. Below is an example.
+You can register the error callback, as shown below, to handle the errors thrown by the component.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -828,38 +842,38 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 
 | Code      | Type    | Description                        |
 | ----- | ------------ | -------------------------- |
-| 60001     | API call failure  | Failed to call `switchToAudioCall`. |
-| 60002     | API call failure  | Failed to call `switchToVideoCall`. |
+| 60001 | API call failure | Failed to call `switchToAudioCall`. ｜
+| 60002 | API call failure  | Failed to call `switchToVideoCall`. ｜
 | 60003 | Access failure | No available mic.       |
 | 60004 | Access failure | No available camera.       |
 | 60005 | Access failure | The user denied access.           |
-| 60006 | Environment check failed | The current environment doesn't support WebRTC (v1.0.4 or above)      |
+| 60006 | Failure to pass environment check | The current environment does not support WebRTC (v1.0.4 or above is required).      |
 
-## Upgrade Guide
+## Update Guide
 
-- **Upgrade TRTCCalling v1.0.2 or above**
-	- Note: you need to upgrade TSignaling to v0.9.0 or above
-	- Reason: [Changelog](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-3)
-- **Upgrade TRTCCalling version between 1.0.0 and 1.0.2**
-	- Note: you need to upgrade TSignaling to v0.8.0 or above
-	- Reason: [Changelog](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-5)
+- **Updating to TRTCCalling 1.0.2 or above**
+	- You need to update TSignaling to v0.9.0 or above.
+	- Reason: See [Changelog](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-3).
+- **Updating to TRTCCalling 1.0.0 or 1.0.1**
+	- You need to update TSignaling to v0.8.0 or above.
+	- Reason: See [Changelog](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-5).
 
 ## FAQs
 
 #### Why can’t I get through to a user? Why am I kicked offline?
 The `TRTCCalling` component does not support login of multiple instances or **offline signaling** for the time being. Please make sure that your current login is unique.
 > ?
-> - **Multiple instances**: a user ID logs in multiple times or on different devices, which disrupts signaling.
-> - **Offline signaling**: only online instances can receive a message. Messages sent to offline instances will not be sent again when the instances go online.
-For more FAQs, see [TRTCCalling for Web](https://intl.cloud.tencent.com/document/product/647/43096).
+> - **Multiple instances**: A user logs in with the same account multiple times or on different devices, which disrupts signaling.
+> - **Offline signaling**: Only online instances can receive messages. Messages sent to offline instances will not be sent again when the instances go online.
+For FAQs about TRTCCalling for web, see [TRTCCalling for Web](https://intl.cloud.tencent.com/document/product/647/43096).
 
-## Technical Consulting
-For more information, [contact us](https://intl.cloud.tencent.com/contact-us) or send an email to colleenyu@tencent.com.
+## Technical Support
+If you have other questions, you can [fill out a contact form](https://intl.cloud.tencent.com/contact-us) or email colleenyu@tencent.com.
 
 
-## References
-- [TRTCCalling for web demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
-- [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
-- [Source code of TRTCCalling for web demo](https://github.com/tencentyun/TUICalling)
-- [TRTCCalling for web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
-- [FAQs about TRTCCalling for web](https://intl.cloud.tencent.com/document/product/647/43096)
+## Learn More
+- [TRTCCalling web demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
+- [TRTCCalling for npm](https://www.npmjs.com/package/trtc-calling-js)
+- [Source code of TRTCCalling web demo](https://github.com/tencentyun/TUICalling)
+- [TRTCCalling web APIs](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
+- [FAQs](https://intl.cloud.tencent.com/document/product/647/43096)

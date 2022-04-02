@@ -7,6 +7,46 @@
 > - 제품의 안정성 및 온라인 지원을 위해 항상 최신 버전을 유지하시기 바랍니다.
 > - 버전 업데이트에 대한 주의 사항은 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
+## Version 4.12.0 @2022.03.04
+
+**Note**
+이 버전으로 업그레이드하기 위해 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+
+**Feature**
+[client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType)은 비동기식으로 변경되어 Promise를 반환하며, Promise 상태에 따라 크기 스트림이 성공적으로 전환되었는지 판단할 수 있습니다.
+
+**Improvement**
+해외 서비스 스케쥴링의 정확성을 최적화했습니다.
+
+**Bug Fixed**
+간헐적으로 user_time_out이 강제 오프라인되는 문제를 수정했습니다.
+
+## Version 4.11.13 @2022.02.17
+
+**Improvement**
+
+- npm 패키지 Typescript 선언 파일을 업데이트했습니다.
+- [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play) 매개변수 인증 로직을 최적화했습니다.
+
+**Bug Fixed**
+
+- 권한 부여 전 iOS 13에서 [LocalStream.initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#initialize) 실패 오류가 간헐적으로 보고되는 문제가 수정되었습니다.
+- [AUDIO_VOLUME](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.AUDIO_VOLUME) 이벤트가 간헐적으로 0 값을 취하던 문제가 수정되었습니다.
+
+## Version 4.11.12 @2022.01.11
+
+**Improvement**
+
+- npm 패키지는 Typescript 선언 파일을 제공합니다.
+- stream.close() 인터페이스의 구현 로직을 최적화했습니다.
+- 푸시 스트림 측에서 빈번한 publish/unpublish의 신호 인터랙티브 로직을 최적화했습니다.
+
+**Bug Fixed**
+
+- iOS 15.1에서 데스크톱 버전의 웹 페이지 통화 활성화 시 페이지가 crash되던 문제가 수정되었습니다. 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
+- [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioProfile) 비트 레이트가 192kbps로 설정되는 문제가 수정되었습니다.
+
+
 ## Version 4.11.11 @2021.12.17
 
 **Improvement**
@@ -25,13 +65,13 @@
 
 **Note**
 
-이 버전으로 업그레이드하기 위해 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+- 이 버전으로 업그레이드하려면 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
 **Improvement**
 
 - 자동 재생 실패 문제 해결을 위해, SDK 자동 재생 실패 시 인터랙티브 팝업 창 표시를 지원합니다. 자세한 내용은 [자동 재생 제한 처리 권장 사항](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3)을 참고하십시오.
 - [iOS 15.1 푸시 스트림 crash 문제] 회피 로직 최적화에 대한 자세한 내용은 [iOS Safari 기존 문제 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4) 을 참고하십시오.
-- 발생 가능한 소리 없음 문제를 방지하기 위해, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)는 더 이상 deviceId가 ‘default’ & ‘communications’인 마이크를 반환하지 않습니다. 자세한 내용은 [Chrome의 기존 문제 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)를 참고하십시오.
+- 발생 가능한 소리 없음 문제를 방지하기 위해, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones)는 더 이상 deviceId가 ‘communications’인 마이크를 반환하지 않습니다. 자세한 내용은 [Chrome의 기존 문제 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)를 참고하십시오.
 - switchDevice 정책을 최적화했습니다.
 - webview 환경에서 지원하는 코덱의 감지 정확도를 개선했습니다.
 - [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream), [client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream), [client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode) 및 [client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode) 인터페이스의 매개변수 검증을 개선했습니다.
@@ -55,7 +95,7 @@
 - 개발 모드 (LogLevel는 [Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.LogLevel)임)에서 중국어 오류 메시지 알림을 지원합니다.
 - 장비 수집 예외 발생 시 자동 수집 복구 성공률이 향상되었습니다.
 - 시스템 절전 모드 및 재부팅 후 통화 복구 로직을 최적화했습니다.
-- trtc.esm.js 및 trtc.umd.js를 추가해 다양한 시나리오의 요구를 충족시킵니다. [참고 가이드](https://www.npmjs.com/package/trtc-js-sdk).
+- trtc.esm.js 및 trtc.umd.js를 추가해 다양한 시나리오의 요구를 충족시킵니다. [참고 튜토리얼](https://www.npmjs.com/package/trtc-js-sdk).
 
 ## Version 4.11.6 @2021.09.10
 

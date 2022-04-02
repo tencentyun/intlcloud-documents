@@ -7,29 +7,26 @@
 You can install our demo app to experiment with our real-time interactive teaching solution. It offers not only basic capabilities such as audio/video call, screen sharing, whiteboard, and chat, but also advanced features such as mute all, raise hand to speak, invite users to speak, roll call, and sign-in.
 
 
+
 ## Using the Source Code for Real-Time Interactive Teaching
 [](id:step1)
 ### Step 1. Create an application and get the SDKAppID and key
 If you already have a TRTC application, you can skip this step and use your application’s SDKAppID and key.
 
 1. Log in to the TRTC console, click **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**, enter your application name, such as `TestTRTC`, and click **Create**.  
-![](https://qcloudimg.tencent-cloud.cn/raw/dfb1acca0137cd30d5168c3d9d72aa13.png)
+
 2. Click **Next**. In the **Modify Configuration** step, note the SDKAppID and key.
-![](https://qcloudimg.tencent-cloud.cn/raw/ca5da75be8285ead342e06971229680e.png)
+
 
 [](id:step2)
 ### Step 2. Configure the IM application
 >?The real-time interactive teaching solution is based on two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. For its billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 1. Click **Relevant Cloud Services** in the left sidebar and then click **IM Console > Application List**.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/14e4c3b097ecadb046330975dbec6bd0.png)
 
 2. Click the application you created.
-    ![](https://qcloudimg.tencent-cloud.cn/raw/50aa612285befcfa14562923622cad6d.png)
 
 3. Click **Feature Configuration** > **Login and Message**. Under **Login Settings**, click **Edit**, and set the **Max Login Instances per User per Platform** for web to 2 or larger (the demo app requires login to only 2 IM instances, but you can set this value higher in case you need more in the future).
-
-   ![](https://qcloudimg.tencent-cloud.cn/raw/2385858860a8f12091eab619b313eaec.png)
 
 
 [](id:step3)
@@ -73,7 +70,7 @@ cd trtc-education-electron
    - SECRETKEY: an empty string by default. Set it to the key obtained in [Step 1](#step1).
 
 >!
->- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
+>- In this document, the method to obtain UserSig is to configure a SECRETKEY in the client code. In this method, the SECRETKEY is vulnerable to decompilation and reverse engineering. Once your SECRETKEY is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**.
 >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
 [](id:step6)

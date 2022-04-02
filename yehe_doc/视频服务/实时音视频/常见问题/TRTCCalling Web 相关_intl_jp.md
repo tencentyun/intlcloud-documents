@@ -16,8 +16,8 @@ roomIDはstringが可能ですが、数字の文字列に限られます。
 
 [](id:e1)
 ### Web端末SDKはどのブラウザをサポートしていますか。
-TRTC Web SDKの、ブラウザに対する詳細なサポートの程度については、[TRTC Web SDKのブラウザサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)をご参照ください。
-上記に記載されていない環境については、現在のブラウザで[TRTC能力テスト](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開き、WebRTC機能を完全にサポートしているかテストすることができます。
+TRTC Web SDKがサポートするブラウザの詳細については、[TRTC Web SDKのブラウザサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)をご参照ください。
+上記に記載されていない環境については、現在のブラウザで[TRTC機能テスト](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開き、WebRTC機能を完全にサポートしているかテストすることができます。
 
 [](id:e2)
 ### 現在のネットワーク状況をリアルタイムに検出するにはどうすればよいですか。
@@ -36,21 +36,21 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 
 [](id:i1)
 ### callingのオンラインDemoで、NO_RESPに入れません。
-- **原因**：NO_RESPイベントのトリガー条件：1-招待者がタイムアウト、2-被招待者がオフライン。
-- **対処方法**：トリガー条件に基づいてイベントを処理してください。
+- **原因**：NO_RESPイベントのトリッガー：1-招待者がタイムアウト、2-被招待者がオフライン。
+- **対処方法**：トリッガーに基づいてイベントを処理してください。
 
 [](id:i2)
 ### callingをiPhone WeChatブラウザで開くと、相手の音声が聞こえません。
 - 原因：自動再生が制限されています。
-- 対処方法：callingがバージョン1.0.0の場合は、対処済みです。callingを1.0.0およびそれ以降のバージョンにアップデートすることをお勧めします。
+- 対処方法：callingがバージョン1.0.0の場合は、対処済みです。callingを1.0.0以降のバージョンにアップグレードすることをお勧めします。
 
 [](id:i3)
-### TRTCCalling handup() エラー：“uncaught (in promise) TypeError: cannot read property 'stop' of null”とは何でしょうか。
-- **原因**：ユーザーがイベントの監視中に何度もhandup()を呼び出したため、hangupが実行を完了しないうちにまたトリガーされたことによるものです。
-- **対処方法**：handup()の実行は1回だけでよいです。イベント監視後の操作はTRTCCalling内部ですでに処理されているため、hangup()メソッドを再度実行する必要はなく、業務に関連する操作を行うだけで済みます。
+### TRTCCalling handup()エラー「uncaught (in promise) TypeError: cannot read property 'stop' of null」とは何でしょうか。
+- **原因**：ユーザーがイベントの監視中に何度もhandup()を呼び出したため、hangupの実行が完了しないうちにまたトリガーされたことによるものです。
+- **対処方法**：handup()の実行は1回だけでよいです。イベント監視後の操作はTRTCCalling内部ですでに処理されているため、hangup()メソッドを再度実行する必要はなく、サービスに関連する操作を行うだけで済みます。
 
 [](id:i3)
-### Chromeブラウザの最新のバージョン90で、trtccalling.jsが「サポートしていません。TRTCClinet.のあなたのブラウザはこのアプリケーションとの互換性がありません」と表示されます。
+### Chromeブラウザの最新のバージョン90で、trtccalling.jsが「TRTCClinetをサポートしていません。あなたのブラウザはこのアプリケーションとの互換性がありません」と表示されます。
 - **原因**：IMのバージョンが古すぎ、検出のメカニズムがないためです。
 - **対処方法**：IMのバージョンアップをお勧めします。
 
@@ -68,7 +68,7 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 
 
 [](id:i6)
-### 「Uncaught ( in promise ) Error: createCustomMessageインターフェースはSDKのステータスがreadyになっていなければ呼び出せません」と通知されます。
+### 「Uncaught ( in promise ) Error: createCustomMessageインターフェースはSDKの状態がreadyになっていなければ呼び出せません」と通知されます。
 
 - **原因**：正しい手順で初期化が完了していません。
 - **対処方法**：TRTCCallingを1.0.0にバージョンアップし、SDK_READYイベントを監視してその後の操作を行います。
@@ -83,19 +83,19 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 ### 「Uncaught ( in promise ) Error: inviteID is invalid or invitation has been processed」と通知されます。
 - **詳細**：Web端末のtrtccallingがnative端末と相互接続し、webがnativeを呼び出した後、nativeが応答してもweb端末のカメラがオンにならず、ローカルプレビューでも画面が終了せず、nativeは通話画面のままです。返されるエラーメッセージは`Uncaught ( in promise ) Error: inviteID is invalid or invitation has been processed`です。
 - **原因**：ユーザーデバイスを取得する際、ユーザーがオーディオビデオデバイスに権限を承認していない場合、オーディオビデオ通話ルームには入室できますが、終了時にnativeは終了シグナルを受信できません。
-- **対処方法**：callingのバージョン1.0.0では、プレフィックスの取得を行って成功しなかった場合、ユーザーは通話に入ることができません。callingを1.0.0およびそれ以降のバージョンにアップデートすることをお勧めします。
+- **対処方法**：callingのバージョン1.0.0では、プレフィックスの取得を行って成功しなかった場合、ユーザーは通話に入ることができません。callingを1.0.0以降のバージョンにアップグレードすることをお勧めします。
 
 [](id:i9)
 ### 発呼者がコールに成功した後、着呼者はログを印刷しています（コールを受信したはず）が、handleNewInvitationReceivedのコールバックがありません。
 
 - **原因**：TRTCCalling <= 0.6.0およびTsignaling <= 0.3.0の場合はバージョンが古すぎます。
-- **対処方法**：TRTCCallingとTsignalingを最新バージョンにアップデートします。
+- **対処方法**：TRTCCallingとTsignalingを最新バージョンにアップグレードします。
 
 [](id:i10)
 ### TRTCCallingがCALL後に自主的にrejectした後、呼び出しができません。
 
-- **原因**：call後に自主的にrejectした後、callingステータスが再設定されていないためです。
-- **対処方法**：TRTCCallingのバージョンを>=1.0.3にアップデートします。
+- **原因**：call後に自主的にrejectした後、calling状態が再設定されていないためです。
+- **対処方法**：TRTCCallingのバージョンを>=1.0.3にアップグレードします。
 
 [](id:i11)
 ### Error: TRTCCalling.call - ユーザーデバイス権限の取得に失敗しました。
@@ -104,3 +104,9 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 - **対処方法**：
 	- [TRTCデバイス検査](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を使用してチェックを行います。
 	- **Chromeのウェブサイト設定**（chrome://settings/content）にアクセスし、TRTCCallingを使用しているウェブサイトがカメラ/マイクの権限をオンにしているかどうかを確認します。
+
+[](id:i12)
+### TRTCCalling webはオフラインメッセージの受信をサポートしていますか。
+
+- オフラインメッセージの受信はサポートされていません。
+- オフラインメッセージのプッシュはサポートされています。call / groupCallの[offlinePushInfo](https://intl.cloud.tencent.com/document/product/647/41653)でプッシュするメッセージを追加できます。

@@ -6,10 +6,10 @@ The [TRTCCalling](https://www.npmjs.com/package/trtc-calling-js) component is ba
 - IM SDK: The [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to send and process signaling messages.
 
 ## Demo Download
-  You can download the source code of the demo for your platform at [TUICalling](https://github.com/tencentyun/TUICalling).
+  You can download the source code of the web demo at [TUICalling](https://github.com/tencentyun/TUICalling).
 
 ## Environment Requirements
-We recommend you use Chrome for PC to run the demo as it offers better support for the features of the TRTC SDK for web. For more information on environment requirements, see [Environment Requirements](https://intl.cloud.tencent.com/document/product/647/38928#.E7.8E.AF.E5.A2.83.E8.A6.81.E6.B1.82).
+We recommend you use Chrome for PC to run the demo as it offers better support for the features of the TRTC Web SDK. For more information on environment requirements, see [Environment Requirements](https://intl.cloud.tencent.com/document/product/647/38928#.E7.8E.AF.E5.A2.83.E8.A6.81.E6.B1.82).
 
 ## URL Protocol Support
 | Scenario     | Protocol             | Receive (Playback) | Send (Publish) | Share Screen | Remarks |
@@ -25,9 +25,9 @@ We recommend you use Chrome for PC to run the demo as it offers better support f
 
 #### Event subscribing/unsubscribing APIs 
 
-This component bases its management on the dispatching of events. The application layer can perform different actions in response to dispatched events.
+This component bases its management on the dispatching of events. The application layer can change UI interactions according to dispatched events.
 
-| API      | Description                         |
+| API                                             | Description                                                         |
 | ------------ | ------------ |
 | [on(eventName, callback, context)](#on)   | Subscribes to an event.     |
 | [off(eventName, callback, context)](#off) | Unsubscribes from an event. |
@@ -98,7 +98,7 @@ Then, obtain an instance of the `TRTCCalling` component using `new TRTCCalling()
 
 let options = {
   SDKAppID: 0, // Replace `0` with the `SDKAppID` of your IM application when connecting
-  // The `tim` parameter was introduced in v0.10.2.
+  // The `tim` parameter is added starting from v0.10.2
   // The parameter guarantees the uniqueness of an existing TIM instance.
   tim: tim
 };
@@ -207,7 +207,7 @@ The parameters are as detailed below:
 
 offlinePushInfo (in v1.0.0 and later versions)
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter    | Type   | Description                     |
 | -------------------- | ------ | ------------------------- |
 | title                | String | Title of an offline notification (optional)                                   |
 | description          | String | Content of an offline notification (optional)                                    |
@@ -245,7 +245,7 @@ The parameters are as detailed below:
 
 offlinePushInfo (in v1.0.0 and later versions)
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter    | Type   | Description                     |
 | -------------------- | ------ | ------------------------- |
 | title                | String | Title of an offline notification (optional)                                   |
 | description          | String | Content of an offline notification (optional)                                    |
@@ -336,7 +336,7 @@ trtcCalling.startRemoteView({userID, videoViewDomID})
 
 The parameters are as detailed below:
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter       | Type   | Description                     |
 | -------------- | ------ | ---------------------------- |
 | userID | String | User ID |
 | videoViewDomID | String | The DOM node in which the user’s data is to be rendered. The data will be played via the video tag of the node. |
@@ -567,7 +567,7 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject)
 | [USER_VIDEO_AVAILABLE](#user_video_available) | Inviter and invitee | A remote user turned the camera on/off. |
 | [USER_AUDIO_AVAILABLE](#user_audio_available) | Inviter and invitee | A remote user turned the mic on/off. |
 
-### Common event callback
+### Common event callbacks
 
 
 #### SDK_READY
@@ -601,7 +601,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_ENTER, handleUserEnter);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------ | ------ | ------- |
 | userID | String | User ID |
 
@@ -621,7 +621,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_LEAVE, handleUserLeave);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------ | ------ | ------- |
 | userID | String | User ID |
 
@@ -728,7 +728,7 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------ | ------ | ------- |
 | userID | String | User ID |
 
@@ -769,7 +769,7 @@ trtcCalling.on(TRTCCalling.EVENT.LINE_BUSY, handleLineBusy);
 
 The parameters are as detailed below:
 
-| Parameter        | Type    | Description                                                                                                      |
+| Parameter | Type | Description |
 | ------ | ------ | ------- |
 | userID | String | User ID |
 
@@ -796,7 +796,7 @@ The parameters are as detailed below:
 | sponsor     | String  | Inviter                                                       |
 | userIDList  | Array   | Users invited to the same call                                             |
 | isFromGroup | Boolean | Whether it is an IM group invitation                                             |
-| inviteData  | Object  | {version, callType, roomID} |
+| inviteData  | Object  | For a new user invitation: {version, callType, roomID} |
 | inviteID | String | Invitation ID, which identifies an invitation |
 
 #### CALLING_CANCEL
@@ -876,9 +876,9 @@ For FAQs about TRTCCalling for web, see [TRTCCalling for Web](https://intl.cloud
 If you have other questions, you can [fill out a contact form](https://intl.cloud.tencent.com/contact-us) or email colleenyu@tencent.com.
 
 
-## Relevant Documents
-- [TRTCCalling for web demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
+## Learn More
+- [TRTCCalling web demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
 - [TRTCCalling for npm](https://www.npmjs.com/package/trtc-calling-js)
-- [Source code of TRTCCalling for web demo](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
-- [TRTCCalling for web APIs](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
+- [Source code of TRTCCalling web demo](https://github.com/tencentyun/TUICalling)
+- [TRTCCalling web APIs](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
 - [FAQs](https://intl.cloud.tencent.com/document/product/647/43096)

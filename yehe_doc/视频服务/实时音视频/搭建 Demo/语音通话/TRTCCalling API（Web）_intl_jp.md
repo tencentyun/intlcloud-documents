@@ -1,12 +1,12 @@
 ## TRTCCallingの概要
 
-[TRTCCalling](https://www.npmjs.com/package/trtc-calling-js)コンポーネントは、Tencent CloudのTencent Real-Time Communication（TRTC）とInstant Messaging（IM）サービスの組み合わせにより構成されており、1対1および複数人でのビデオ/音声通話をサポートしています。具体的な実装プロセスについては、[リアルタイム音声通話（Web）](https://intl.cloud.tencent.com/document/product/647/38928)をご参照ください。
+[TRTCCalling](https://www.npmjs.com/package/trtc-calling-js)コンポーネントは、Tencent CloudのTencent Real-Time Communication（TRTC）とInstant Messaging（IM）サービスの組み合わせにより構成されており、1v1および複数人でのビデオ/音声通話をサポートしています。具体的な実装プロセスについては、[リアルタイム音声通話（Web）](https://intl.cloud.tencent.com/document/product/647/38928)をご参照ください。
 
 - TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のオーディオビデオ通話コンポーネントとして使用します。
 - IM SDK： [IM SDK](https://intl.cloud.tencent.com/document/product/1047)をシグナリング情報の送信と処理に使用します。
 
 ## Demoのダウンロード
-  クリックして[TUICalling](https://github.com/tencentyun/TUICalling)に進み、実際の業務のニーズに応じてDemoソースコードをダウンロードします。
+  クリックして[TUICalling](https://github.com/tencentyun/TUICalling)に進み、実際のサービスのニーズに応じてDemoソースコードをダウンロードします。
 
 ## 環境要件
 最新バージョンのChromeブラウザをご使用ください。現在、デスクトップのChromeブラウザはTRTC Web SDKをサポートしており、関連機能は比較的整っていますので、Chromeブラウザを使用して体験することをお勧めします。具体的な内容については [環境要件](https://intl.cloud.tencent.com/document/product/647/38928#.E7.8E.AF.E5.A2.83.E8.A6.81.E6.B1.82)をご参照ください。
@@ -176,18 +176,18 @@ trtcCalling.logout()
 [](id:call)
 #### call({userID, type, offlinePushInfo})
 
-1対1通話招待、そのうちtypeは通話タイプ、1は音声通話、2はビデオ通話です。
+1v1通話招待、そのうちtypeは通話タイプ、1は音声通話、2はビデオ通話です。
 
 >?
->- v1.0.0およびそれ以降のバージョンで、timeoutパラメータを取り消しました
->- v1.0.0およびそれ以降のバージョンに、offlinePushInfoパラメータを新たに追加しました（**オフラインプッシュはAndroidまたはiOS端末にのみ適用されます。WebおよびWeChat Mini Programはサポートしていません**）。
+>- v1.0.0以降のバージョンで、timeoutパラメータを取り消しました
+>- v1.0.0以降のバージョンに、offlinePushInfoパラメータを新規追加しました（**オフラインプッシュはAndroidまたはiOS端末にのみ適用されます。WebおよびWeChat Mini Programはサポートしていません**）。
 
 <dx-codeblock>
 ::: javascript javascript
-// v1.0.0より前
+// v1.0.0以前
 trtcCalling.call({userID, type, timeout});
 
-// v1.0.0およびそれ以降のバージョン
+// v1.0.0以降のバージョン
 const offlinePushInfo = {
   title: '',
   description: '通話リクエストが1件あります',
@@ -203,9 +203,9 @@ trtcCalling.call({userID, type, offlinePushInfo})
 | userID          | String | 被招待者のuserID  |
 | type   | Number | 1：音声通話、2：ビデオ通話  |
 | timeout         | Number | 0はタイムアウトしていないことを意味し、単位はs（秒）。**v1.0.0より前のバージョンのみ**        |
-| offlinePushInfo | Object | メッセージのオフラインプッシュをカスタマイズします（オプション）。**v1.0.0およびそれ以降のバージョンのみ** |
+| offlinePushInfo | Object | メッセージのオフラインプッシュをカスタマイズします（オプション）。**v1.0.0以降のバージョンのみ** |
 
-offlinePushInfoパラメータ（v1.0.0およびそれ以降のバージョンのみ）
+offlinePushInfoパラメータ（v1.0.0以降のバージョンのみ）
 
 | パラメータ  | タイプ   | 意味    |
 | -------------------- | ------ | ------------------------- |
@@ -218,14 +218,14 @@ offlinePushInfoパラメータ（v1.0.0およびそれ以降のバージョン�
 #### groupCall({userIDList, type, groupID, offlinePushInfo})
 groupID パラメータは IM SDKにおけるグループ IDです。このパラメータを設定すると、通話リクエストメッセージがグループメッセージシステムを介してブロードキャストされます。このメッセージブロードキャスト方式は簡単で信頼性の高い方法です。設定しない場合は、`TRTCCalling` コンポーネントが単発メッセージで1人1人に通知を行います。
 
->?v1.0.0およびそれ以降のバージョンに、offlinePushInfoパラメータを新たに追加しました（**オフラインプッシュはAndroidまたはiOS端末にのみ適用されます。WebおよびWeChat Mini Programはサポートしていません**）。
+>?v1.0.0以降のバージョンに、offlinePushInfoパラメータを新規追加しました（**オフラインプッシュはAndroidまたはiOS端末にのみ適用されます。WebおよびWeChat Mini Programはサポートしていません**）。
 
 <dx-codeblock>
 ::: javascript javascript
 // v1.0.0より前
 trtcCalling.groupCall({userIDList, type, groupID});
 
-// v1.0.0およびそれ以降
+// v1.0.0以降
 const offlinePushInfo = {
   title: '',
   description: '通話リクエストが1件あります',
@@ -241,9 +241,9 @@ trtcCalling.groupCall({userIDList, type, groupID, offlinePushInfo})
 | userIDList      | Array  | 招待リスト |
 | type   | Number | 1：音声通話、2：ビデオ通話  |
 | groupID         | String | IMグループID（オプション）        |
-| offlinePushInfo | Object | メッセージのオフラインプッシュをカスタマイズします（オプション）。**v1.0.0およびそれ以降のバージョンのみ** |
+| offlinePushInfo | Object | メッセージのオフラインプッシュをカスタマイズします（オプション）。**v1.0.0以降のバージョンのみ** |
 
-offlinePushInfoパラメータ（v1.0.0およびそれ以降のバージョンのみ）
+offlinePushInfoパラメータ（v1.0.0以降のバージョンのみ）
 
 | パラメータ  | タイプ   | 意味    |
 | -------------------- | ------ | ------------------------- |
@@ -258,17 +258,17 @@ offlinePushInfoパラメータ（v1.0.0およびそれ以降のバージョン�
 
 >?
 >- 前回のinvitationの処理が未完了の場合、コンポーネントはデフォルトでビジー状態になり、その後のすべての招待はビジーを返します。
->- v1.0.0およびそれ以降のバージョンで、paramsパラメータを取り消しました。
+>- v1.0.0以降のバージョンで、paramsパラメータを取り消しました。
 
 <dx-codeblock>
 ::: javascript javascript
 import TRTCCalling from 'trtc-calling-js';
 trtcCalling.on(TRTCCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
   // ...
-  // v1.0.0より前
+  // v1.0.0以前
   const { roomID, callType } = inviteData;
   trtcCalling.accept({inviteID, roomID, callType})
-  // v1.0.0およびそれ以降
+  // v1.0.0以降
   trtcCalling.accept();
 })
 :::
@@ -278,7 +278,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
 
 | パラメータ     | タイプ   | 意味                                                  |
 | -------- | ------ | ----------------------------------------------------- |
-| inviteID | String | 招待ID。1回の招待を表示します（イベントINVITEDコールバックデータのinviteIDを監視）。**v1.0.0より前のバージョンのみ**    |
+| inviteID | String | 招待ID。1回の招待を標識します（イベントINVITEDコールバックデータのinviteIDを監視）。**v1.0.0より前のバージョンのみ**    |
 | roomID   | Number | 通話ルームナンバーID（イベントINVITEDコールバックデータのinviteData.roomIDを監視）。**v1.0.0より前のバージョンのみ**            |
 | callType | Number  | 1：音声通話、2：ビデオ通話（イベントINVITEDコールバックデータのinviteData.callTypeを監視）。**v1.0.0より前のバージョンのみ** |
 
@@ -286,7 +286,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
 #### reject()
 招待を受け取った後、このインターフェースを呼び出すと、現在の招待が拒否されます。
 
->?v1.0.0およびそれ以降のバージョンで、paramsパラメータを取り消しました。
+>?v1.0.0以降のバージョンで、paramsパラメータを取り消しました。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -296,7 +296,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
   // v1.0.0より前
   const { callType } = inviteData;
   trtcCalling.reject({inviteID, isBusy, callType})
-  // v1.0.0およびそれ以降
+  // v1.0.0以降
   trtcCalling.reject();
 })
 :::
@@ -306,14 +306,14 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
 
 | パラメータ     | タイプ    | 意味                                                  |
 | -------- | ------- | ----------------------------------------------------- |
-| inviteID | String  | 招待ID。1回の招待を表示します（イベントINVITEDコールバックデータのinviteIDを監視）。**v1.0.0より前のバージョンのみ**   |
+| inviteID | String  | 招待ID。1回の招待を識別します（イベントINVITEDコールバックデータのinviteIDを監視）。**v1.0.0より前のバージョンのみ**   |
 | isBusy   | Boolean | 回線ビジー状態の有無。**v1.0.0より前のバージョンのみ**    |
 | callType | Number  | 1：音声通話、2：ビデオ通話（イベントINVITEDコールバックデータのinviteData.callTypeを監視）。**v1.0.0より前のバージョンのみ** |
 
 [](id:hangup)
 #### hangup()
 1. 通話中にこの関数を呼び出せば、通話を終了することができます。
-2. ダイヤルしていない状態では、通話をキャンセルするために用いることができます。
+2. 応答がない状態では、通話をキャンセルするために用いることができます。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -339,19 +339,19 @@ trtcCalling.startRemoteView({userID, videoViewDomID})
 | パラメータ  | タイプ   | 意味       |
 | -------------- | ------ | ---------------------------- |
 | userID         | String | ユーザーID       |
-| videoViewDomID | String | konoユーザーデータは、このDOM IDノードにレンダリングされたvideoタグを介して再生されます |
+| videoViewDomID | String | このユーザーデータは、このDOM IDノードにレンダリングされたvideoタグを介して再生されます |
 
 [](id:stopRemoteView)
 #### stopRemoteView({userID})
 リモートユーザーのカメラデータによってレンダリングされたDOMノードを削除します。
 
->?v1.0.0およびそれ以降のバージョンで、videoViewDomIDパラメータを削除しました。
+>?v1.0.0以降のバージョンで、videoViewDomIDパラメータを削除しました。
 
 <dx-codeblock>
 ::: javascript javascript
-// v1.0.0より前
+// v1.0.0以前
 trtcCalling.stopRemoteView({userID, videoViewDomID});
-// v1.0.0およびそれ以降
+// v1.0.0以降
 trtcCalling.stopRemoteView({userID});
 
 :::
@@ -362,7 +362,7 @@ trtcCalling.stopRemoteView({userID});
 | パラメータ  | タイプ   | 意味          |
 | -------------- | ------ | ------------------------------- |
 | userID         | String | ユーザーID       |
-| videoViewDomID | String | 該当するDOM IDノードのvideoタグを削除し、ビデオ再生を停止します。**v1.0.0より前のバージョンのみ** |
+| videoViewDomID | String | このDOM IDノードのvideoタグを削除し、ビデオ再生を停止します。**v1.0.0より前のバージョンのみ** |
 
 [](id:startLocalView)
 #### startLocalView({userID, videoViewDomID})
@@ -386,13 +386,13 @@ trtcCalling.startLocalView({userID, videoViewDomID})
 
 ローカルユーザーのカメラデータによってレンダリングされたDOMノードを削除します。
 
->?v1.0.0およびそれ以降のバージョンで、videoViewDomIDパラメータを削除しました。
+>?v1.0.0以降のバージョンで、videoViewDomIDパラメータを削除しました。
 
 <dx-codeblock>
 ::: javascript javascript
-// v1.0.0より前
+// v1.0.0以前
 trtcCalling.stopLocalView({userID, videoViewDomID});
-// v1.0.0およびそれ以降
+// v1.0.0以降
 trtcCalling.stopLocalView({userID});
 :::
 </dx-codeblock>
@@ -402,7 +402,7 @@ trtcCalling.stopLocalView({userID});
 | パラメータ  | タイプ   | 意味          |
 | -------------- | ------ | ------------------------------- |
 | userID         | String | ユーザーID       |
-| videoViewDomID | String | 該当するDOM IDノードのvideoタグを削除し、ビデオ再生を停止します。**v1.0.0より前のバージョンのみ** |
+| videoViewDomID | String | このDOM IDノードのvideoタグを削除し、ビデオ再生を停止します。**v1.0.0より前のバージョンのみ** |
 
 [](id:openCamera)
 #### openCamera()
@@ -444,7 +444,7 @@ trtcCalling.setMicMute(true) // マイクオフ
 ####  setVideoQuality(profile) 
 ビデオの画質を設定します。
 >?  
->- v0.8.0およびそれ以降のバージョンは、このメソッドが新規追加されました。
+>- v0.8.0以降のバージョンは、このメソッドが新規追加されました。
 >- このメソッドは、call、groupCall、acceptの前に設定する必要があり、その後の設定は有効になりません。
 
 <dx-codeblock>
@@ -463,7 +463,7 @@ trtcCalling.setVideoQuality('720p') // ビデオの画質を720pに設定しま�
 ####  switchToAudioCall() 
 ビデオ通話を音声通話へ切り替えます。
 >?  
->- v0.10.0およびそれ以降のバージョンは、このメソッドが新規追加されました。
+>- v0.10.0以降のバージョンは、このメソッドが新規追加されました。
 >- 1v1通話中のみ使用をサポートします。
 >- ERRORイベントの監視に失敗しました。code：60001。
 
@@ -477,7 +477,7 @@ trtcCalling.switchToVideoCall() // ビデオ通話を音声通話へ切り替え
 ####  switchToVideoCall() 
 音声通話をビデオ通話へ切り替えます。
 >?  
->- v0.10.0およびそれ以降のバージョンは、このメソッドが新規追加されました。
+>- v0.10.0以降のバージョンは、このメソッドが新規追加されました。
 >- 1v1通話中のみ使用をサポートします。
 >- ERRORイベントの監視に失敗しました。code：60002。
 
@@ -492,7 +492,7 @@ trtcCalling.switchToVideoCall() // 音声通話をビデオ通話へ切り替え
 
 このインターフェースを呼び出すと、カメラデバイスリストを取得することができます。
 
->?v1.0.0およびそれ以降のバージョンに、このメソッドを新たに追加しました。
+>?v1.0.0以降のバージョンに、このメソッドが新規追加されました。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -505,7 +505,7 @@ trtcCalling.getCameras() // カメラリストの取得
 
 このインターフェースを呼び出すと、マイクデバイスリストを取得することができます。
 
->?v1.0.0およびそれ以降のバージョンに、このメソッドを新たに追加しました。
+>?v1.0.0以降のバージョンに、このメソッドが新規追加されました。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -518,7 +518,7 @@ trtcCalling.getMicrophones() // マイクリストの取得
 
 このインターフェースを呼び出すと、カメラまたはマイクのデバイスを切り替えることができます。
 
->?v1.0.0およびそれ以降のバージョンに、このメソッドを新たに追加しました。
+>?v1.0.0以降のバージョンに、このメソッドが新規追加されました。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -530,7 +530,7 @@ trtcCalling.switchDevice({deviceType: 'audio', deviceId: deviceId}) // デバイ
 
 | パラメータ       | タイプ   | 意味          |
 | ---------- | ------ | ------------------------------- |
-| deviceType | String | video: カメラ、 audio: マイク   |
+| deviceType | String | video: カメラ、audio: マイク   |
 | deviceId   | String | <li/>カメラデバイスIDはgetCameras()で取得します<li/>マイクデバイスIDはgetMicrophones()で取得します |
 
 
@@ -574,7 +574,7 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject)
 
 SDKがready状態に入るとこのコールバックを受信します
 
->?v1.0.0およびそれ以降のバージョンに、このイベントを新たに追加しました。
+>?v1.0.0以降のバージョンに、このイベントが新規追加されました。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -588,7 +588,7 @@ trtcCalling.on(TRTCCalling.EVENT.SDK_READY, onSDKReady);
 #### USER_ENTER
 
 ユーザーが入室しました。
-トリガー条件：ユーザーが通話に参加する。
+トリッガー：ユーザーが通話に参加する。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -608,7 +608,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_ENTER, handleUserEnter);
 #### USER_LEAVE
 
 ユーザーが退室しました。
-トリガー条件：ユーザーが通話を退出する。
+トリッガー：ユーザーが通話を退出する。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -629,7 +629,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_LEAVE, handleUserLeave);
 
 グループチャットで招待リストを更新するとこのコールバックを受信します
 
->?v1.0.0およびそれ以降のバージョンに、このイベントを新たに追加しました。
+>?v1.0.0以降のバージョンに、このイベントが新規追加されました。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -643,7 +643,7 @@ trtcCalling.on(TRTCCalling.EVENT.GROUP_CALL_INVITEE_LIST_UPDATE, handleGroupInvi
 #### CALL_END
 
 今回の通話は終了しました。
-トリガー条件：今回の通話を終了する。
+トリッガー：今回の通話を終了する。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -656,8 +656,8 @@ trtcCalling.on(TRTCCalling.EVENT.CALL_END, handleCallingEnd);
 
 #### KICKED_OUT
 
-ログインを繰り返したことにより、ルームから強制退室させられました。
-トリガー条件：他のページに重複ログインする。
+ログインを繰り返したことにより、強制退室されました。
+トリッガー：他のページに繰り返しログインする。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -671,7 +671,7 @@ trtcCalling.on(TRTCCalling.EVENT.KICKED_OUT, handleKickedOut);
 #### USER_VIDEO_AVAILABLE
 
 リモートユーザーがカメラをオン/オフにします。
-トリガー条件：リモートユーザーがカメラをオン/オフにする。
+トリッガー：リモートユーザーがカメラをオン/オフにする。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -692,7 +692,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_VIDEO_AVAILABLE, handleUserVideoChange);
 #### USER_AUDIO_AVAILABLE
 
 リモートユーザーがマイクをオン/オフにしました。
-トリガー条件：リモートユーザーがマイクをオン/オフする。
+トリッガー：リモートユーザーがマイクをオン/オフする。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -715,7 +715,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_AUDIO_AVAILABLE, handleUserAudioChange);
 #### REJECT
 
 ユーザーが通話を拒否しました。
-トリガー条件：被招待者が通話を拒否し、発信者がREJECTイベントコールバックを受け取る。
+トリッガー：被招待者が通話を拒否し、発信者がREJECTイベントコールバックを受け取る。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -735,7 +735,7 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject);
 #### NO_RESP
 
 招待されたユーザーは応答しませんでした。
-トリガー条件：call/groupCallにtimeoutを設定し、被招待者がtimeout内に出なかった場合、発信者がNO_RESPイベントコールバックを受け取る。
+トリッガー：call/groupCallにtimeoutを設定し、被招待者がtimeout内に応答しなかった場合、発信者がNO_RESPイベントコールバックを受け取る。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -756,7 +756,7 @@ trtcCalling.on(TRTCCalling.EVENT.NO_RESP, handleNoResponse);
 #### LINE_BUSY
 
 被招待側は通話中で、ビジー状態です。
-トリガー条件：被招待者が通話中である場合、発信者がLINE_BUSYイベントコールバックを受け取る。
+トリッガー：被招待者が通話中である場合、発信者がLINE_BUSYイベントコールバックを受け取る。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -776,7 +776,7 @@ trtcCalling.on(TRTCCalling.EVENT.LINE_BUSY, handleLineBusy);
 ### 被招待側イベントコールバック
 #### INVITED
 招待通知を受領しました。
-トリガー条件：招待通知があった場合、被招待者がINVITEDイベントコールバックを受け取る。
+トリッガー：招待通知があった場合、被招待者がINVITEDイベントコールバックを受け取る。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -796,12 +796,12 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, handleNewInvitationReceived);
 | sponsor     | String  | 招待者       |
 | userIDList  | Array   | 同時に招待された人   |
 | isFromGroup | Boolean | IMグループの招待の有無   |
-| inviteData  | Object  | 新しいユーザーへの招待： {version, callType, roomID} |
-| inviteID    | String  | 招待ID。1回の招待を表示       |
+| inviteData  | Object  | 新規ユーザーへの招待：{version, callType, roomID} |
+| inviteID    | String  | 招待ID。1回の招待を識別       |
 
 #### CALLING_CANCEL
 今回の通話はキャンセルされました。
-トリガー条件：発信者がコール中に通話をキャンセルし、被招待者がCALLING_CANCELイベントコールバックを受け取る。
+トリッガー：発信者がコール中に通話をキャンセルし、被招待者がCALLING_CANCELイベントコールバックを受け取る。
 
 <dx-codeblock>
 ::: javascript javascript
@@ -816,7 +816,7 @@ trtcCalling.on(TRTCCalling.EVENT.CALLING_CANCEL, handleCallingCancel);
 #### CALLING_TIMEOUT
 
 今回の通話はタイムアウトで、応答はありませんでした。
-トリガー条件：call/groupCallにtimeoutを設定し、被招待者がtimeout内に出なかった場合、被招待者がCALLING_TIMEOUTイベントコールバックを受け取る
+トリッガー：call/groupCallにtimeoutを設定し、被招待者がtimeout内に応答しなかった場合、被招待者がCALLING_TIMEOUTイベントコールバックを受け取る
 
 <dx-codeblock>
 ::: javascript javascript
@@ -858,18 +858,18 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 - **TRTCCallingバージョンを>= 1.0.2にアップグレードします **
 	- 注意：TSignalingバージョンを>= 0.9.0にアップグレードする必要があります
 	- 原因：[ログの更新](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-3)
-- **1.0.2にアップグレード >TRTCCallingバージョン >=1.0.0**
+- **1.0.2にアップグレード >TRTCCallingバージョン>=1.0.0**
 	- 注意：TSignalingバージョンを>= 0.8.0にアップグレードする必要があります
 	- 原因：[ログの更新](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-5)
 
 ## よくあるご質問
 
-#### 通話がつながらなかったり、強制オフラインになったりするのはなぜですか？
+#### 通話がつながらなかったり、強制オフラインになったりするのはなぜですか。
 コンポーネントは現在、マルチインスタンスのログインや**オフラインプッシュのシグナリング**機能をサポートしていません。現在のログインアカウントの一意性をご確認ください。
 > ?
 > - **マルチインスタンス**：1つのUserIDで繰り返しログインしたり、異なるターミナルからログインしたりすると、シグナリングの混乱が生じます。
 > - **オフラインプッシュ**：インスタンスはオンラインの場合にのみメッセージを受信できます。インスタンスがオフラインのときに受信したシグナリングは、オンラインになった後は再度プッシュされません。
-その他よくあるご質問については、 [TRTCCalling Webに関するご質問](https://intl.cloud.tencent.com/document/product/647/43096)をご参照ください。
+その他よくあるご質問については、[TRTCCalling Webに関するご質問](https://intl.cloud.tencent.com/document/product/647/43096)をご参照ください。
 
 ## 技術的なお問い合わせ
 

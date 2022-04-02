@@ -7,6 +7,46 @@ A version number is in the format of `major.minor.patch`, where:
 > - You are advised to update to the latest version in a timely manner for service stability and better online support.
 > - For notes on version updates, please see [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
 
+## Version 4.12.0 Released on March 4, 2022
+
+**Notes**
+See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
+
+**New features**
+Made [client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType) an async API, which returns a promise that indicates whether the switch is successful.
+
+**Improvements**
+Improved scheduling accuracy for services outside the Chinese mainland.
+
+**Bug fixing**
+Fixed the occasional issue where a user is removed from the room due to `user_time_out`.
+
+## Version 4.11.13 Released on February 17, 2022
+
+**Improvements**
+
+- Updated the TypeScript declaration file in the npm package.
+- Optimized the parameter authentication logic of [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play).
+
+**Bug fixing**
+
+- Fixed the occasional issue where, on iOS 13, before access is granted, an error occurs when [LocalStream.initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#initialize) is called.
+- Fixed the occasional issue where [AUDIO_VOLUME](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.AUDIO_VOLUME) returns 0.
+
+## Version 4.11.12 Released on January 11, 2022
+
+**Improvements**
+
+- Published a TypeScript declaration file to the npm package.
+- Optimized the implementation logic of `stream.close()`.
+- Optimized the signaling logic for when `publish`/`unpublish` is called frequently.
+
+**Bug fixing**
+
+- Fixed the issue where, on iOS 15.1, desktop webpages crash when streams are published. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4).
+- Fixed the issue where [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioProfile) sets the bitrate to 192 Kbps.
+
+
 ## Version 4.11.11 Released on December 17, 2021
 
 **Improvements**
@@ -25,13 +65,13 @@ A version number is in the format of `major.minor.patch`, where:
 
 **Notes**
 
-See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
+- See [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html).
 
 **Improvements**
 
 - Supported displaying a pop-up when autoplay fails. For details, see [Use the autoplay dialog provided by SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3).
 - Optimized the logic of circumventing the SDK crash issue when streams are published on iOS 15.1. For details, see [WebRTC Known Issues and Solutions > Safari for iOS > Case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4).
-- To avoid the potential no audio issue, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones) no longer returns mics whose `deviceId` is `default` or `communications`. For details, see [WebRTC Known Issues and Solutions > Chrome > Case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2).
+- To avoid the potential no audio issue, [TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones) no longer returns mics whose `deviceId` is `communications`. For details, see [WebRTC Known Issues and Solutions > Chrome > Case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2).
 - Optimized the `switchDevice` policy.
 - Improved the accuracy of the encoding/decoding support test in the context of WebView.
 - Improved parameter verification for [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream), [client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream), [client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode), and [client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode).

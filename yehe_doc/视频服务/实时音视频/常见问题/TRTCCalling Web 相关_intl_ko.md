@@ -103,4 +103,10 @@ TRTC Web SDK의 브라우저 지원에 대한 자세한 내용은 [TRTC Web SDK 
 - **원인**: TRTCCalling에 디바이스 권한 또는 액세스 권한이 없습니다.
 - **솔루션**:
 	- [TRTC 디바이스 점검](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)으로 확인하십시오.
-	- **Chrome 웹사이트 설정**(chrome://settings/content)에 액세스하여 TRTCCalling을 사용하는 웹 사이트에 카메라/마이크 권한이 활성화되어 있는지 확인합니다.
+	- **Chrome 웹사이트 설정**(chrome://settings/content)에 액세스하여 TRTCCalling을 사용하는 웹 사이트에 카메라/마이크 권한의 활성화 여부를 확인합니다.
+
+[](id:i12)
+### TRTCCalling web은 오프라인 메시지 수신을 지원합니까?
+
+- 오프라인 메시지 수신은 지원되지 않습니다.
+- 오프라인 메시지 푸시를 지원하며, call / groupCall에서 [offlinePushInfo](https://intl.cloud.tencent.com/document/product/647/41653)를 통해 푸시할 메시지를 추가할 수 있습니다.

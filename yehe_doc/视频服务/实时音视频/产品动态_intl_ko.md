@@ -1,3 +1,27 @@
+## 2022년 01월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
+</tr><tr>
+<td>Version 9.5 버전 배포</td>
+<td>전체 플랫폼: <ul style="margin:0">
+약한 네트워크 조건에서 통화 원활성이 최적화되었습니다.
+</ul>
+<br>Windows: <ul style="margin:0">
+카메라 호환성을 최적화하여 일부 장치의 캡처 프레임 레이트가 설정 값과 일치하지 않거나 활성화되지 않는 문제를 해결했습니다.
+</ul>
+<br>iOS: <ul style="margin:0">
+cocos2D와 같은 다른 렌더링 컴포넌트 공동 사용 시 호환성을 향상하고 충돌을 줄입니다.
+</ul>
+<br>Android: <ul style="margin:0">
+카메라를 껐다가 다시 켰을 때, 재생 종료 시 끄기 전 마지막 프레임이 먼저 표시된 후 정상적으로 표시되는 문제를 수정하였습니다.
+</ul>
+</td>
+<td>2022-01-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+</table>
+
+
 ## 2021년 12월
 <table>
 <tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
@@ -76,7 +100,7 @@
 	<li>약한 네트워크 환경에서의 오디오 및 비디오 경험이 최적화되었습니다.</li>
 </ul><br>Windows: <ul style="margin:0">
 	<li>ac3 형식 VOD 파일 재생에 대한 지원이 추가되었습니다.</li>
-	<li>카메라 정보의 지원되는 해상도 목록 가져오기가 지원됩니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450">ITXDeviceCollection.getDeviceProperties</a></li>
+	<li>카메라 정보의 지원되는 해상도 목록 가져오기가 지원됩니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450">ITXDeviceCollection.getDeviceProperties</a>를 참고하십시오.</li>
 	<li>Nvidia, Intel, AMD 하드웨어 디코딩을 지원합니다.</li>
 </ul><br>Mac: <ul style="margin:0">
 로컬 미디어 녹화에 대한 지원이 추가되었습니다.
@@ -97,12 +121,12 @@
 </tr><tr>
 <td>Version 9.0 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li>사용자 정의 오디오 트랙의 볼륨 설정을 지원합니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a></li>
-<li>상태 콜백으로 오디오와 비디오의 패킷 손실률을 구분할 수 있습니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics" >TRTCRemoteStatistics</a></li>
+<li>사용자 정의 오디오 트랙의 볼륨 설정을 지원합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#ae0031e4af8bb120ef6de164d99886418">setMixExternalAudioVolume</a>을 참고하십시오.</li>
+<li>상태 콜백으로 오디오와 비디오의 패킷 손실률을 구분할 수 있습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCStatistic__cplusplus.html#structliteav_1_1TRTCRemoteStatistics" >TRTCRemoteStatistics</a>를 참고하십시오.</li>
 <li>구독 프로세스를 최적화하여 수동 구독의 바로 재생 속도를 개선했습니다.</li>
 <li>특정 시나리오에서의 onExitRoom 콜백 중복 문제를 수정했습니다.</li>
 </ul><br>iOS:<ul style="margin:0">
-시스템 수집 볼륨 설정을 지원합니다. 자세한 내용은 다음을 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae">setSystemAudioLoopbackVolume</a>
+시스템 수집 볼륨 설정을 지원합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae">setSystemAudioLoopbackVolume</a>을 참고하십시오.
 </ul></td>
 <td>2021-08-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
@@ -142,7 +166,7 @@
 <td>전체 플랫폼: <ul style="margin:0">
 mixExternalAudioFrame의 사용 편의성이 최적화되어 더 이상 호출 타이밍을 완벽하게 제어할 필요가 없습니다.
 </ul><br>Android&Mac&iOS:<ul style="margin:0">
-주변 장치를 통한 오디오 재생을 지원합니다. 다음 API를 참고하십시오. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803" target="_blank">enableCustomAudioRendering</a>
+주변 장치를 통한 오디오 재생을 지원합니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803" target="_blank">enableCustomAudioRendering</a> API를 참고하십시오.
 </ul><br>Mac: <ul style="margin:0">
 화면 공유 마우스 커서 캡처 활성화 시 CPU 사용량을 줄였습니다.
 </ul><br>Windows: <ul style="margin:0">
@@ -178,7 +202,7 @@ mixExternalAudioFrame의 사용 편의성이 최적화되어 더 이상 호출 �
 </ul><br>iOS&Mac&Windows: <ul style="margin:0">
 오디오 처리 모듈 최적화로 SPEECH 모드와 DEFAULT 모드의 음성 품질이 향상되었습니다.
 </ul><br>iOS&Mac: <ul style="margin:0">
-높은 CPU 시나리오에서 사용자 정의 오디오 수집 맞춤성이 최적화되었습니다.
+높은 CPU 시나리오에서 사용자 정의 오디오 수집 적응성이 최적화되었습니다.
 </ul><br>iOS&Android: <ul style="margin:0">
 비디오 녹화 시 서브 채널을 통한 공유로 데스크톱 버전 정렬을 지원합니다.
 </ul><br>Windows: <ul style="margin:0">
@@ -199,8 +223,8 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 <td>Version 8.5 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
 <li>VOD 파일 재생 기능이 추가되었습니다. TXVODPlayer와 TRTCCloud를 바인딩하여 현재 재생 중인 VOD 콘텐츠를 TRTC 서브 채널 푸시 스트림을 통해 공유할 수 있습니다.</li>
-<li>서브 채널 사용자 정의 수집이 추가되었습니다. API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a>를 참고하십시오.</li>
-<li>사용자 정의 믹싱 기능이 추가되었습니다. 사용자의 오디오 트랙을 SDK의 오디오 처리 프로세스에 믹싱할 수 있으며, SDK가 먼저 두 오디오 트랙을 믹싱한 후 다시 배포합니다. 자세한 내용은 API <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a>을 참고하십시오.</li>
+<li>서브 채널 사용자 정의 수집이 추가되었습니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1d8de868187164e20d0e657e44da0bc6">sendCustomVideoData</a> API를 참고하십시오.</li>
+<li>사용자 정의 믹싱 기능이 추가되었습니다. 사용자의 오디오 트랙을 SDK의 오디오 처리 프로세스에 믹싱할 수 있으며, SDK가 먼저 두 오디오 트랙을 믹싱한 후 다시 배포합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3c99feacd22af10926d5a521ca598ecd">mixExternalAudioFrame</a> API를 참고하십시오.</li>
 <li>지정 퓨어 비디오 혼합 스트림을 지원하여 더 효율적으로 혼합 스트림을 제어합니다.</li>
 <li>상태 콜백에 end to end 딜레이가 추가되었습니다.</li>
 </ul>
@@ -209,7 +233,7 @@ Apple M1 아키텍처에 대한 네이티브 지원이 추가되었습니다.
 </ul>
 <br>Mac: <ul style="margin:0">
 <li>화면 공유 기능 최적화로 타깃 창 공유 시 동시에 다른 창을 지정해 함께 공유할 수 있습니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233">addIncludedShareWindow</a> API를 참고하십시오.</li>
-<li>startSystemAudioLoopback에서 듀얼 사운드 채널을 지원합니다.</li>
+<li>startSystemAudioLoopback 듀얼 사운드 채널을 지원합니다.</li>
 </ul>
 </td>
 <td>2021-03-24</td>
@@ -521,7 +545,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 <td>과금 변경</td>
 <td>클라우드 녹화에 <b>녹화 시간</b>에 따른 과금이 추가되었습니다.</td>
 <td>2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38385">클라우드 녹화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/45176">클라우드 녹화 과금 설명</a></td>
 </tr>
 </table>
 

@@ -1,3 +1,17 @@
+## Version 9.5 Released on January 11, 2022
+
+** Bug fixing:**
+- All platforms: Fixed the issue where, when users make API requests in a certain order to enable custom video rendering, a black screen is displayed.
+- Windows: Fixed the issue where only a portion of the specified part of the screen is captured during screen sharing.
+- iOS: Fixed the issue where, if a user calls [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac3a158f935a99abd4965d308c0f88977) before leaving a room and then enters a new room, publishing is still disabled.
+- iOS: Fixed failure to set a background image for stream mixing.
+
+**Improvement:**
+- All platforms: Improved the smoothness of calls under poor network conditions.
+- Windows: Fixed occasional failure to start cameras and the issue where some cameras fail to capture videos at the specified frame rate, improving browser compatibility.
+-iOS: Improved compatibility with rendering components such as Cocos2d.
+-Android: Fixed the issue where, after an anchor turns the camera off and on again, at the player end, before the anchor’s video is played as expected, the last frame before the camera is turned off is shown first.
+
 ## Version 9.4 Released on December 8, 2021
 
 **New features:**
@@ -93,7 +107,7 @@
 - iOS: fixed failure to publish streams if users enable the screen sharing substream first and then turn the camera on.
 - iOS: fixed blurriness of recorded local video.
 - iOS: fixed several stability issues.
-- Windows: fixed frame rate exception for the capturing of screen sharing images.
+- Windows: fixed the frame rate exception for the capturing of screen sharing images.
 - Windows: fixed the issue where, after the sharing source is changed during screen sharing, audience see a frame of the old source before the new source is played.
 
 ## Version 8.9 Released on July 15, 2021

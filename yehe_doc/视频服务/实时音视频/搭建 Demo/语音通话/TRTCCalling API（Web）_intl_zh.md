@@ -858,7 +858,7 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 - **升级 TRTCCalling 版本 >= 1.0.2**
 	- 注意：需升级 TSignaling 版本 >= 0.9.0
 	- 原因：[更新日志](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-3)
-- **升级 1.0.2 > TRTCCalling 版本 >=1.0.0**
+- **升级  1.0.2 > TRTCCalling 版本 >=1.0.0**
 	- 注意：需升级 TSignaling 版本 >= 0.8.0
 	- 原因：[更新日志](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/tutorial-CHANGELOG.html#h2-5)
 

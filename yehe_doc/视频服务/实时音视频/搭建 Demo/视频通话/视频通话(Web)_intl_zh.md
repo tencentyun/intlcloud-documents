@@ -43,20 +43,19 @@ TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白�
 [](id:step1)
 ### 步骤1：创建新的应用
 1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成实名认证。
-2. 登录实时音视频控制台，选择 **开发辅助>[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)**。
+2. 登录实时音视频控制台，选择 **开发辅助** > [**快速跑通Demo**](https://console.cloud.tencent.com/trtc/quickstart)。
 3. 输入应用名称，例如 TestTRTC ，单击 **创建**。
 
-
 [](id:step2)
-### 步骤2：下载 SDK 和 Demo 源码
-1. 根据实际业务需求下载 SDK 及配套的 Demo 源码。
+### 步骤2：下载 Demo
+1. 根据实际业务需求下载 Demo 源码或单击进入 [TUICalling](https://github.com/tencentyun/TUICalling)下载 Demo 源码。
 2. 下载完成后，单击 **已下载，下一步**。
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 [](id:step3)
 ### 步骤3：配置 Demo 工程文件
 1. 进入修改配置页，根据您下载的源码包，选择相应的开发环境。
-2. 找到并打开 `Web/js/debug/GenerateTestUserSig.js` 文件。
+2. 找到并打开 `Web/public/debug/GenerateTestUserSig.js` 文件。
 3. 设置 `GenerateTestUserSig.js` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
@@ -75,14 +74,14 @@ TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白�
 npm install
 npm run serve
 ```
-2. 启动 Chrome 浏览器中打开链接 `http://localhost:8080/` 。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png)
-3. 输入用户 userid，单击 **登录**，并选择 **视频通话**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png)
+2. 启动 Chrome 浏览器中打开链接 `http://localhost:8080/` ，如果一切正常，Demo 运行界面如图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png)
+3. 输入用户 userid，单击 **登录**，并选择 **视频通话**：
+![](https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png)
 4. 输入呼叫用户 userid，单击 **呼叫**：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png)
-5. 即可进行视频通话。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/17bb3c8f1f49a4c1f100536bee37caef.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png)
+5. 即可进行视频通话：
+![](https://qcloudimg.tencent-cloud.cn/raw/17bb3c8f1f49a4c1f100536bee37caef.png)
 
 
 ## 搭建自己的视频通话
@@ -134,7 +133,7 @@ const trtcCalling = new TRTCCalling(options);
 </dx-codeblock>
 
 ### 步骤3：完成登录
-调用 login 函数完成登录操作，参数中的 userID 为用户名，userSig 为用户签名，userSig 的计算方式请参见 [如何计算及使用UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+调用 login 函数完成登录操作，参数中的 userID 为用户名，userSig 为用户签名，userSig 的计算方式请参见 [如何计算及使用 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 ```javascript
 trtcCalling.login({
@@ -198,6 +197,6 @@ trtcCalling.hangup()
 ## 参考文档
 - [TRTCCalling web 官网体验](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
 - [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
-- [TRTCCalling web demo 源码](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling web demo 源码](https://github.com/tencentyun/TUICalling)
 - [TRTCCalling web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
 - [TRTCCalling web 相关问题](https://intl.cloud.tencent.com/document/product/647/43096)

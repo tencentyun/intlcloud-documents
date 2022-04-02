@@ -203,16 +203,16 @@ trtcCalling.call({userID, type, offlinePushInfo})
 | userID          | String | 초대된 사용자의 userID  |
 | type       | Number | 1: 음성 통화, 2: 영상 통화 |
 | timeout         | Number | 0: 타임 아웃 설정하지 않음(단위: s(초)). **v1.0.0 이전 버전만 해당**        |
-| offlinePushInfo | Object | 사용자 정의 오프라인 메시지 푸시(선택 사항). **v1.0.0 및 이후 버전만 해당** |
+| offlinePushInfo | Object | 사용자 정의 오프라인 메시지 푸시(선택사항). **v1.0.0 및 이후 버전만 해당** |
 
 offlinePushInfo 매개변수 (v1.0.0 및 이후 버전만 해당)
 
 | 매개변수  | 유형   | 의미    |
 | -------------------- | ------ | ------------------------- |
-| title                | String | 오프라인 푸시 제목(선택 사항)                                   |
-| description          | String | 오프라인 푸시 내용(선택 사항)     |
-| androidOPPOChannelID | String | OPPO 휴대폰 시스템 8.0 및 이후 버전 오프라인 푸시의 채널 ID 설정(선택 사항) |
-| extension            | String | 오프라인 푸시 패스스루 콘텐츠(선택 사항). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
+| title                | String | 오프라인 푸시 제목(선택사항)                                   |
+| description          | String | 오프라인 푸시 내용(선택사항)     |
+| androidOPPOChannelID | String | OPPO 휴대폰 시스템 8.0 및 이후 버전 오프라인 푸시의 채널 ID 설정(선택사항) |
+| extension            | String | 오프라인 푸시 패스스루 콘텐츠(선택사항). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
 
 [](id:groupCall)
 #### groupCall({userIDList, type, groupID, offlinePushInfo})
@@ -240,17 +240,17 @@ trtcCalling.groupCall({userIDList, type, groupID, offlinePushInfo})
 | --------------- | ------ | -------------------------- |
 | userIDList      | Array  | 초대 리스트 |
 | type       | Number | 1: 음성 통화, 2: 영상 통화 |
-| groupID    | String | IM 그룹 ID(선택 사항)       |
-| offlinePushInfo | Object | 사용자 정의 오프라인 메시지 푸시(선택 사항). **v1.0.0 및 이후 버전만 해당** |
+| groupID    | String | IM 그룹 ID(선택사항)       |
+| offlinePushInfo | Object | 사용자 정의 오프라인 메시지 푸시(선택사항). **v1.0.0 및 이후 버전만 해당** |
 
 offlinePushInfo 매개변수 (v1.0.0 및 이후 버전만 해당)
 
 | 매개변수  | 유형   | 의미    |
 | -------------------- | ------ | ------------------------- |
-| title                | String | 오프라인 푸시 제목(선택 사항)                                   |
-| description          | String | 오프라인 푸시 내용(선택 사항)     |
-| androidOPPOChannelID | String | OPPO 휴대폰 시스템 8.0 및 이후 버전 오프라인 푸시의 채널 ID 설정(선택 사항) |
-| extension            | String | 오프라인 푸시 패스스루 콘텐츠(선택 사항). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
+| title                | String | 오프라인 푸시 제목(선택사항)                                   |
+| description          | String | 오프라인 푸시 내용(선택사항)     |
+| androidOPPOChannelID | String | OPPO 휴대폰 시스템 8.0 및 이후 버전 오프라인 푸시의 채널 ID 설정(선택사항) |
+| extension            | String | 오프라인 푸시 패스스루 콘텐츠(선택사항). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
 
 [](id:accept)
 #### accept()
@@ -304,7 +304,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수     | 유형    | 의미                                             |
+| 매개변수     | 유형    | 의미                                                  |
 | -------- | ------- | ----------------------------------------------------- |
 | inviteID | String  |  초대 식별 ID(수신 이벤트 INVITED의 콜백 데이터 inviteID). **v1.0.0 이전 버전에만 해당**   |
 | isBusy   | Boolean | 통화 중 여부. **v1.0.0 이전 버전만 해당**             |
@@ -338,7 +338,7 @@ trtcCalling.startRemoteView({userID, videoViewDomID})
 
 | 매개변수  | 유형   | 의미       |
 | -------------- | ------ | ---------------------------- |
-| userID         | String | 사용자 ID       |
+| userID         | String | 사용자 ID    |
 | videoViewDomID | String | 사용자의 데이터가 렌더링될 DOM ID 노드. 데이터는 노드의 video 태그를 통해 재생됩니다. |
 
 [](id:stopRemoteView)
@@ -376,9 +376,9 @@ trtcCalling.startLocalView({userID, videoViewDomID})
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수  | 유형   | 의미         |
+| 매개변수  | 유형   | 의미          |
 | -------------- | ------ | ------------------------------ |
-| userID         | String | 사용자 ID       |
+| userID         | String | 사용자 ID      |
 | videoViewDomID | String | 로컬 사용자의 데이터가 렌더링될 DOM ID 노드. 데이터는 노드의 video 태그를 통해 재생됩니다.  |
 
 [](id:stopLocalView)
@@ -399,7 +399,7 @@ trtcCalling.stopLocalView({userID});
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수  | 유형   | 의미         |
+| 매개변수  | 유형   | 의미          |
 | -------------- | ------ | ------------------------------- |
 | userID         | String | 사용자 ID       |
 | videoViewDomID | String | video 태그를 삭제할 DOM ID 노드. 비디오 재생이 중지됩니다. **v1.0.0 이전 버전만 해당**  |
@@ -528,7 +528,7 @@ trtcCalling.switchDevice({deviceType: 'audio', deviceId: deviceId}) // 디바이
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수       | 유형   | 의미         |
+| 매개변수       | 유형   | 의미          |
 | ---------- | ------ | ------------------------------- |
 | deviceType | String | video: 카메라, audio: 마이크   |
 | deviceId   | String | <li/>카메라 디바이스 식별은 getCameras()를 통해 가져옵니다<li/>마이크 디바이스 식별은 getMicrophones()를 통해 가져옵니다. |
@@ -684,7 +684,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_VIDEO_AVAILABLE, handleUserVideoChange);
 
 매개변수 리스트는 다음과 같습니다.
 
-| 매개변수    | 유형    | 의미         |
+| 매개변수   | 유형    | 의미         |
 | ---------------- | ------- | ------------------------------ |
 | userID  | String | 사용자 ID      |
 | isVideoAvailable | Boolean | <li/>true: 원격 사용자가 카메라 켬<li/>false: 원격 사용자가 카메라 끔 |
@@ -797,7 +797,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, handleNewInvitationReceived);
 | userIDList  | Array   | 동시에 초대를 수신한 사용자   |
 | isFromGroup | Boolean | IM 그룹 초대 여부   |
 | inviteData  | Object  | 신규 사용자 초대: {version, callType, roomID} |
-| inviteID    | String | 초대 식별 ID       |
+| inviteID    | String | 초대 식별 ID.       |
 
 #### CALLING_CANCEL
 통화가 취소됨.
@@ -846,8 +846,8 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 
 | code  | 오류 유형     | 의미                       |
 | ----- | ------------ | -------------------------- |
-| 60001 | 메소드 호출 실패  | switchToAudioCall 호출 실패 |
-| 60002 | 메소드 호출 실패  | switchToVideoCall 호출 실패 |
+| 60001     | 메소드 호출 실패  | switchToAudioCall 호출 실패 |
+| 60002     | 메소드 호출 실패  | switchToVideoCall 호출 실패 |
 | 60003 | 권한 획득 실패 | 사용 가능한 마이크 디바이스 없음.      |
 | 60004 | 권한 획득 실패 | 사용 가능한 카메라 디바이스가 없음.        |
 | 60005 | 권한 획득 실패 | 사용자가 디바이스 사용을 금지했습니다.           |

@@ -1,15 +1,15 @@
-このドキュメントは2つの部分から成り、ブラウザで実行できる一連のビデオ通話ソリューションを実装する方法についてご紹介しています。
-- 第1部：サービスをアクティブ化する方法を紹介し、提供するDemoを行います。
-- 第2部：TRTCCallingコンポーネントを使用して、独自のビデオ通話機能をすばやく構築する方法についてご紹介します。
+このドキュメントは2つのパートから成り、ブラウザで実行できる一連のビデオ通話ソリューションを実装する方法について説明します。
+- パート1：サービスをアクティブ化する方法および提供するDemoのクイックスタートについて説明します。
+- パート2：TRTCCallingコンポーネントを使用して、独自のビデオ通話機能をすばやく構築する方法について説明します。
 
 ## 環境要件
 最新バージョンのChromeブラウザをご使用ください。現在、デスクトップのChromeブラウザはTRTC Web SDKをサポートしており、関連機能は比較的整っていますので、Chromeブラウザを使用して体験することをお勧めします。
 
-- TRTCCallingは以下のポートに依存してデータ送信を行っていますので、これらをファイアウォール・ホワイトリストに追加してください。設定が完了したら、[公式サイト Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
+- TRTCCallingは以下のポートに依存してデータ送信を行っていますので、これらをファイアウォール・ホワイトリストに追加してください。設定が完了したら、[公式サイトDemo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)にアクセスして体験していただけば、設定が有効かどうかをチェックすることができます。
   - TCPポート：8687
   - UDPポート：8000、8080、8800、843、443、16285
   - ドメイン名：qcloud.rtc.qq.com
-具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
+具体的には、[ファイアウォール制限の対処関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
 
 ## サポートプラットフォーム
 現在、このソリューションは、次のプラットフォームをサポートしています。
@@ -21,11 +21,11 @@
 |  Mac OS  |     デスクトップ版Firefoxブラウザ     |        56+         |
 |  Mac OS  |      デスクトップ版Edgeブラウザ      |        80+         |
 |  Windows  |     デスクトップ版Chromeブラウザ     |        56+         |
-| Windows  | デスクトップ版QQブラウザ（クイックコア） |       10.4+        |
+| Windows  | デスクトップ版QQブラウザ（超高速コア） |       10.4+        |
 |  Windows  |     デスクトップ版Firefoxブラウザ     |        56+         |
 |  Windows  |      デスクトップ版Edgeブラウザ      |        80+         |
 
->? 詳細な互換性の照会については、[ブラウザサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)をご参照ください。また、[TRTC検査ページ](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)でオンライン検査することも可能です。
+>? 互換性照会の詳細については、[ブラウザサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)をご参照ください。また、[TRTC検査ページ](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)でオンライン検査することも可能です。
 
 
 ## URLドメイン名プロトコルの制限
@@ -39,46 +39,49 @@
 | ローカル開発環境 | file:///         | サポートあり         | サポートあり         | サポートあり     |   -   |
 
 
-## テストDemo実行
+## Demoのクイックスタートテスト
 [](id:step1)
 ### 手順1：アプリケーションの新規作成
 1. [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を行い、実名認証を完了させます。
-2. TRTCコンソールにログインし、 **開発支援>[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)**を選択します。
+2. TRTCコンソールにログインし、**開発支援** > [**Demoクイックスタート**](https://console.cloud.tencent.com/trtc/quickstart)を選択します。
 3. アプリケーション名（例：TestTRTC）を入力し、**作成**をクリックします。
 
-
 [](id:step2)
-### ステップ2：SDKおよびDemoソースコードをダウンロード
-1. 実際のビジネスニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
-2. ダウンロード完了後、**ダウンロードしました。次のステップ**をクリックします。
+### 手順2：Demoのダウンロード
+1. 実際のサービスニーズに応じてDemoソースコードをダウンロードするか、または、クリックして[TUICalling](https://github.com/tencentyun/TUICalling)に進み、Demoソースコードをダウンロードします。
+2. ダウンロード完了後、**ダウンロード完了、次のステップへ**をクリックします。
 ![](https://main.qcloudimg.com/raw/9f4c878c0a150d496786574cae2e89f9.png)
 
 [](id:step3)
 ### ステップ3：Demo プログラムファイルの設定
 1. 設定変更画面に進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
-2. `Web/js/debug/GenerateTestUserSig.js`ファイルを見つけて開きます。
+2. `Web/public/debug/GenerateTestUserSig.js`ファイルを見つけて開きます。
 3. `GenerateTestUserSig.js` のファイルの関連するパラメータを設定します。
-  <ul><li>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。</li>
-  <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
+  <ul><li>SDKAPPID：デフォルトでは0です。実際のSDKAppIDに設定してください。</li>
+  <li>SECRETKEY：デフォルトでは空文字列です。実際のキー情報に設定してください。</li></ul> 
   <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
-4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
-5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
+4. 貼り付け完了後、**貼り付け完了、次のステップへ**をクリックすると、作成が完了します。
+5. コンパイル完了後、**コンソール概要に戻る**をクリックすると、終了します。
 
 >!
->- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
->- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[UserSigに関するご質問](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+>- ここで言及したUserSigの作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
+>- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。UserSigが必要なときは、Appからサービスサーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 [](id:step4)
-### 手順4：Demoの動作
+### 手順4：Demoの実行
 1. Demoディレクトリに次のコマンドを順番に入力します。
 ```javascript
 npm install
 npm run serve
 ```
-2. Chromeブラウザを起動し、リンク`http://localhost:8080/`を開きます 。
+2. Chromeブラウザを起動し、リンク`http://localhost:8080/`を開きます。すべてが正常であれば、Demo実行インターフェースは次の図のようになります。
+![](https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png)
 3. useridを入力し、**ログイン**をクリックして、**ビデオ通話**を選択します。
+![](https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png)
 4. 呼び出し先のuseridを入力し、**呼出**をクリックします。
+![](https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png)
 5. ビデオ通話を開始できます。
+![](https://qcloudimg.tencent-cloud.cn/raw/17bb3c8f1f49a4c1f100536bee37caef.png)
 
 
 ## 独自のビデオ通話の作成
@@ -90,7 +93,7 @@ npm run serve
 
 <dx-codeblock>
 ::: javascript javascript
-// npm方式でのインストール
+// npm方式によるインストール
   npm install trtc-js-sdk --save
 
   npm install tim-js-sdk --save
@@ -113,8 +116,8 @@ npm run serve
 :::
 </dx-codeblock>
 
-### 手順2：TRTCCallingオブジェクトの新規作成
-TRTCCallingオブジェクトを新規作成し、SDKAppIDパラメータをお客様のSDKAppIDに設定します。
+### 手順2：TRTCCallingオブジェクトの作成
+TRTCCallingオブジェクトを作成し、SDKAppIDパラメータをお客様のSDKAppIDに設定します。
 <dx-codeblock>
 ::: javascript javascript
 import TRTCCalling from 'trtc-calling-js';
@@ -130,7 +133,7 @@ const trtcCalling = new TRTCCalling(options);
 </dx-codeblock>
 
 ### 手順3：ログインの完了
-ログイン関数を呼び出してログイン操作を完了します。パラメータのuserIDはユーザー名、userSigはユーザー署名です。userSigの計算方法については、[userSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+login関数を呼び出してログイン操作を完了します。パラメータのuserIDはユーザー名、userSigはユーザー署名です。userSigの計算方法については、[userSigの計算使用方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 ```javascript
 trtcCalling.login({
@@ -173,18 +176,18 @@ trtcCalling.startLocalView({
   videoViewDomID //このユーザーデータはDOM IDノードにレンダリングされます
 })
 ```
-- **通話の終了**
+- **通話終了**
 ```javascript
 trtcCalling.hangup()
 ```
 ## よくあるご質問
 
-#### 通話がつながらなかったり、強制オフラインになったりするのはなぜですか？
+#### 通話がつながらなかったり、強制オフラインになったりするのはなぜですか。
 コンポーネントは現在、マルチインスタンスのログインや**オフラインプッシュのシグナリング**機能をサポートしていません。現在のログインアカウントの一意性をご確認ください。
 > ?
 > - **マルチインスタンス**：1つのUserIDで繰り返しログインしたり、異なるターミナルからログインしたりすると、シグナリングの混乱が生じます。
 > - **オフラインプッシュ**：インスタンスはオンラインの場合にのみメッセージを受信できます。インスタンスがオフラインのときに受信したシグナリングは、オンラインになった後は再度プッシュされません。
-その他よくあるご質問については、 [TRTCCalling Webに関するご質問](https://intl.cloud.tencent.com/document/product/647/43096)をご参照ください。
+その他よくあるご質問については、[TRTCCalling Webに関するご質問](https://intl.cloud.tencent.com/document/product/647/43096)をご参照ください。
 
 ## 技術的なお問い合わせ
 詳細については、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)にご連絡をいただくか、colleenyu@tencent.comにメールでご連絡ください。
@@ -194,6 +197,6 @@ trtcCalling.hangup()
 ## 参考ドキュメント
 - [TRTCCalling web公式サイトで体験](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html#/login)
 - [TRTCCalling npm](https://www.npmjs.com/package/trtc-calling-js)
-- [TRTCCalling web demoソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)
+- [TRTCCalling web demoソースコード](https://github.com/tencentyun/TUICalling)
 - [TRTCCalling web API](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/TRTCCalling.html)
 - [TRTCCalling webに関するご質問](https://intl.cloud.tencent.com/document/product/647/43096)

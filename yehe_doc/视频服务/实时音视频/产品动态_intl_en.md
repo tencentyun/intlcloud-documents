@@ -1,8 +1,32 @@
+## January 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+</tr><tr>
+<td>SDK 9.5 release</td>
+<td>All platforms:<ul style="margin:0">
+Improved the smoothness of calls under poor network conditions.
+</ul>
+<br>Windows:<ul style="margin:0">
+Fixed occasional failure to start cameras and the issue where some cameras fail to capture videos at the specified frame rate, improving browser compatibility.
+</ul>
+<br>iOS:<ul style="margin:0">
+Improved compatibility with rendering components such as Cocos2d.
+</ul>
+<br>Android: <ul style="margin:0">
+Fixed the issue where, after an anchor turns the camera off and on again, at the player end, before the anchor’s video is played as expected, the last frame before the camera is turned off is shown first.
+</ul>
+</td>
+<td>2022-01-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+</table>
+
+
 ## December 2021
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
 </tr><tr>
-<td>Released v9.4</td>
+<td>SDK 9.4 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Sped up room entry, reducing the fluctuation in room entry speed.</li>
 <li>Supported highlighting the speaking user, which is useful in large-scale audio co-anchoring scenarios. It enables users to focus on the audio of whoever is speaking when there are multiple speakers in the room. You can call the <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b" target="_blank">setRemoteAudioParallelParams</a> API to set this feature.</li>
@@ -36,7 +60,7 @@ This version complies with China’s privacy and security regulations and has be
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
 </tr><tr>
-<td>Released v9.3</td>
+<td>SDK 9.3 release</td>
 <td>All platforms:<ul style="margin:0">
 <li>Improved instant streaming performance under poor network conditions.</li>
 <li>Optimized the QoS control policy under poor network conditions, ensuring smoother communication.</li>
@@ -521,7 +545,7 @@ All platforms: <ul style="margin:0">
 <td>Change of billing standards</td>
 <td>Added the <b>bill-by-duration</b>mode for on-cloud recording.</td>
 <td>2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38385">Billing of on-cloud recording</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/45176">Billing of on-cloud recording</a></td>
 </tr>
 </table>
 

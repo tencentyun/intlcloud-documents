@@ -15,9 +15,9 @@ TRTCCalling is an RTC solution based on TRTC and TIM. It supports one-to-one and
 ## Environment
 
 [](id:e1)
-### What browsers does the TRTC SDK for web support?
+### What browsers does the TRTC Web SDK support?
 For details about browser support, please see [Browsers Supported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html).
-If your browser is not listed in the above document, you can open [the TRTC compatibility check page](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) with the browser to test whether it fully supports WebRTC.
+If your browser is not listed in the above document, you can open the [TRTC compatibility check](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) page with the browser to test whether it fully supports WebRTC.
 
 [](id:e2)
 ### How do I test my current network quality?
@@ -61,8 +61,8 @@ Please see [Network Quality Check Before Calls](https://web.sdk.qcloud.com/trtc/
 -**Solution**: Call device-related APIs (such as `startRemoteView` and `startLocalView`) asynchronously, or update TRTCCalling to v1.0.0.
 
 [](id:i5)
-### What should I do if the error “TSignaling._onMessageReceived unknown bussinessID=undefined” occurs in an application (`sdkAppid`) that imports TRTCCalling via script?
--**Details**: If the same application (`sdkAppid`) imports TRTCCalling both via script on two clients, the two clients can communicate with each other. However, if the application imports TRTCCalling via script on one client and npm on the other, or if the other client’s application imports the TRTC SDK for Android/iOS, the two clients cannot communicate with each other.
+### What should I do if the error “TSignaling._onMessageReceived unknown bussinessID=undefined” occurs in an application (`SDKAppID`) that imports TRTCCalling via script?
+-**Details**: If the same application (`SDKAppID`) imports TRTCCalling both via script on two clients, the two clients can communicate with each other. However, if the application imports TRTCCalling via script on one client and npm on the other, or if the other client’s application imports the TRTC SDK for Android/iOS, the two clients cannot communicate with each other.
 - **Cause**: `bussinessId=undefined` indicates that the TSignaling version is too old. The signaling feature in old TSignaling versions is flawed.
 -**Solution**: Update TSignaling and make sure that **the file name of TSignaling is `tsignaling-js` during import.**
 
@@ -103,4 +103,10 @@ Please see [Network Quality Check Before Calls](https://web.sdk.qcloud.com/trtc/
 -**Cause**: TRTCCalling has no access to the camera/mic or the camera/mic does not exist.
 - **Solution**:
 	- Run the [TRTC support level test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html).
-	- Check in [Chrome Settings](chrome://settings/content) whether your Chrome has granted the website using TRTCCalling access to the camera/mic.
+	- Check in [Chrome Settings](chrome://settings/content) whether your Chrome has allowed the website using TRTCCalling to access the camera/mic.
+
+[](id:i12)
+### Does TRTCCalling for web support receiving messages offline?
+
+- It does not support receiving messages offline.
+- However, it supports sending offline push notifications. You can set the message to send using [offlinePushInfo](https://intl.cloud.tencent.com/document/product/647/41653) in `call` or `groupCall`.

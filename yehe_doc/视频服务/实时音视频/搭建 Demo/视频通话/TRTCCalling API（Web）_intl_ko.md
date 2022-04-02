@@ -5,8 +5,22 @@
 - TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 저지연 멀티미디어 통화 컴포넌트로 사용합니다.
 - IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)를 사용하여 신호 메시지를 발송 및 처리합니다.
 
+## Demo 다운로드
+  [TUICalling](https://github.com/tencentyun/TUICalling)에서 실제 비즈니스 니즈에 따라 Demo 소스 코드를 다운로드합니다.
+
 ## 환경 요건
 최신 버전의 Chrome 브라우저를 사용하십시오. 현재 데스크톱 버전 Chrome 브라우저는 TRTC Web SDK를 지원하며 관련된 특성이 비교적 완벽하므로 Chrome 브라우저를 권장합니다. 자세한 내용은 [환경 요건](https://intl.cloud.tencent.com/document/product/647/38927#.E7.8E.AF.E5.A2.83.E8.A6.81.E6.B1.82)을 참고하십시오.
+
+## URL 도메인 프로토콜 제한
+| 응용 시나리오     | 프로토콜             | 수신(재생) | 발송(마이크 켜짐) | 화면 공유 | 비고 |
+| ------------ | :--------------- | :----------- | ------------ | -------- | ---- |
+| 프로덕션 환경     | HTTPS 프로토콜        | 지원         | 지원         | 지원     | 권장 |
+| 프로덕션 환경     | HTTP 프로토콜         | 지원         | 미지원       | 미지원   |  -    |
+| 로컬 개발 환경 | http://localhost | 지원         | 지원         | 지원     | 권장 |
+| 로컬 개발 환경 | http://127.0.0.1 | 지원         | 지원         | 지원     |  -    |
+| 로컬 개발 환경 | http://[로컬 IP]  | 지원         | 미지원       | 미지원   |   -   |
+| 로컬 개발 환경 | file:///         | 지원         | 지원         | 지원     |   -   |
+
 
 ## TRTCCalling API 
 
@@ -44,10 +58,10 @@
 | [stopRemoteView({userID})](#stopRemoteView)   | 원격 화면 렌더링 중지   |
 | [startLocalView({userID, videoViewDomID})](#startLocalView)   | 로컬 화면 렌더링 실행   |
 | [stopLocalView({userID})](#stopLocalView) | 로컬 화면 렌더링 중지       |
-| [openCamera()](#openCamera)                                                                 | 카메라 켜기         |
-| [closeCamera()](#closeCamera)                                                               | 카메라 끄기         |
+| [openCamera()](#openCamera)                 | 카메라 켜기            |
+| [closeCamera()](#closeCamera)              | 카메라 끄기         |
 | [setMicMute(isMute)](#setMicMute)    | 마이크 음소거/음소거 해제 |
-| [setVideoQuality(profile)](#setVideoQuality)|   비디오 품질 설정 |
+| [setVideoQuality(profile)](#setVideoQuality) | 비디오 품질 설정  |
 | [switchToAudioCall()](#switchToAudioCall) | 음성 통화로 전환   |
 | [switchToVideoCall()](#switchToVideoCall) | 영상 통화로 전환    |
 | [getCameras()](#getCameras)                 | 카메라 디바이스 리스트 획득   |
@@ -91,7 +105,7 @@ let trtcCalling = new TRTCCalling(options);
 
 
 
-### 이벤트 구독/구독 취소 API  
+### 이벤트 구독/구독 취소 API 
 
 [](id:on)
 #### on(eventName, callback, context)
@@ -141,7 +155,7 @@ trtcCalling.login({userID, userSig})
 | 매개변수    | 유형   | 의미                                                                                                                    |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------- |
 | userID  | String | 현재의 사용자 ID. 영어 알파벳(a-z, A-Z), 숫자(0-9), 하이픈(-), 언더바(\_)의 문자열로 구성합니다.                   |
-| userSig  | String         | Tencent Cloud가 설계한 일종의 보안 서명입니다. 획득 방식은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
+| userSig | String | Tencent Cloud가 설계한 일종의 보안 서명입니다. 획득 방식은 [UserSig 계산 및 사용 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오. |
 
 [](id:logout)
 #### logout()
@@ -154,7 +168,7 @@ trtcCalling.logout()
 :::
 </dx-codeblock>
 
-### 통화 작업 API 
+### 통화 작업 API
 
 [](id:call)
 #### call({userID, type, offlinePushInfo})
@@ -173,7 +187,7 @@ trtcCalling.call({userID, type, timeout});
 // v1.0.0 및 이후 버전
 const offlinePushInfo = {
   title: '',
-  description: '1개의 통화 요청이 있습니다'.
+  description: ‘1개의 통화 요청이 있습니다’.
 }
 trtcCalling.call({userID, type, offlinePushInfo})
 :::
@@ -183,9 +197,9 @@ trtcCalling.call({userID, type, offlinePushInfo})
 
 | 매개변수            | 유형   | 의미                                                       |
 | --------------- | ------ | ---------------------------------------------------------- |
-| userID          | String | 초대된 사용자의 userID          |
+| userID          | String | 초대된 사용자의 userID                                            |
 | type            | Number | 1: 음성 통화, 2: 영상 통화                                   |
-| timeout         | Number | 0: 타임 아웃 설정하지 않음(단위: s(초)).  **v1.0.0 이전 버전만 해당**        |
+| timeout         | Number | 0: 타임 아웃 설정하지 않음(단위: s(초)). **v1.0.0 이전 버전만 해당**        |
 | offlinePushInfo | Object | 사용자 정의 오프라인 메시지 푸시(선택사항). **v1.0.0 및 이후 버전만 해당** |
 
 offlinePushInfo 매개변수 (v1.0.0 및 이후 버전만 해당)
@@ -195,7 +209,7 @@ offlinePushInfo 매개변수 (v1.0.0 및 이후 버전만 해당)
 | title                | String | 오프라인 푸시 제목(선택사항)                                   |
 | description          | String | 오프라인 푸시 내용(선택사항)                                    |
 | androidOPPOChannelID | String | OPPO 휴대폰 시스템 8.0 및 이후 버전 오프라인 푸시의 채널 ID 설정(선택사항) |
-| extension            | String | 오프라인 푸시 패스스루 콘텐츠(옵션). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
+| extension            | String | 오프라인 푸시 패스스루 콘텐츠(선택사항). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
 
 [](id:groupCall)
 #### groupCall({userIDList, type, groupID, offlinePushInfo})
@@ -211,7 +225,7 @@ trtcCalling.groupCall({userIDList, type, groupID});
 // v1.0.0 및 이후 버전
 const offlinePushInfo = {
   title: '',
-  description: '1개의 통화 요청이 있습니다'.
+  description: ‘1개의 통화 요청이 있습니다’.
 }
 trtcCalling.groupCall({userIDList, type, groupID, offlinePushInfo})
 :::
@@ -233,7 +247,7 @@ offlinePushInfo 매개변수 (v1.0.0 및 이후 버전만 해당)
 | title                | String | 오프라인 푸시 제목(선택사항)                                   |
 | description          | String | 오프라인 푸시 내용(선택사항)                                    |
 | androidOPPOChannelID | String | OPPO 휴대폰 시스템 8.0 및 이후 버전 오프라인 푸시의 채널 ID 설정(선택사항) |
-| extension            | String | 오프라인 푸시 패스스루 콘텐츠(옵션). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
+| extension            | String | 오프라인 푸시 패스스루 콘텐츠(선택사항). **TRTCCalling 버전>=1.0.2, tsignaling 버전 >= 0.9.0만 해당** |
 
 [](id:accept)
 #### accept()
@@ -345,7 +359,7 @@ trtcCalling.stopRemoteView({userID});
 | 매개변수           | 유형   | 의미                                                        |
 | -------------- | ------ | ------------------------------------------------------------ |
 | userID         | String | 사용자 ID                                                     |
-| videoViewDomID | String | video 태그를 삭제할 DOM ID 노드. 비디오 재생이 중지됩니다. **v1.0.0 이전 버전만 해당** |
+| videoViewDomID | String | video 태그를 삭제할 DOM ID 노드. 비디오 재생이 중지됩니다. **v1.0.0 이전 버전만 해당**  |
 
 [](id:startLocalView)
 #### startLocalView({userID, videoViewDomID})
@@ -385,7 +399,7 @@ trtcCalling.stopLocalView({userID});
 | 매개변수           | 유형   | 의미                                                        |
 | -------------- | ------ | ------------------------------------------------------------ |
 | userID         | String | 사용자 ID                                                     |
-| videoViewDomID | String | video 태그를 삭제할 DOM ID 노드. 비디오 재생이 중지됩니다. **v1.0.0 이전 버전만 해당** |
+| videoViewDomID | String | video 태그를 삭제할 DOM ID 노드. 비디오 재생이 중지됩니다. **v1.0.0 이전 버전만 해당**  |
 
 [](id:openCamera)
 #### openCamera()
@@ -514,7 +528,7 @@ trtcCalling.switchDevice({deviceType: 'video', deviceId: deviceId}) // 디바이
 | 매개변수       | 유형   | 의미                                                         |
 | ---------- | ------ | ------------------------------------------------------------ |
 | deviceType | String | video: 카메라, audio: 마이크                                 |
-| deviceId   | String | <li/>카메라 디바이스 식별은 getCameras()를 통해 가져옵니다<li/>마이크 디바이스 식별은 getMicrophones()를 통해 가져옵니다 |
+| deviceId   | String | <li/>카메라 디바이스 식별은 getCameras()를 통해 가져옵니다<li/>마이크 디바이스 식별은 getMicrophones()를 통해 가져옵니다. |
 
 [](id:event)
 ## TRTCCalling 이벤트 리스트
@@ -584,7 +598,7 @@ trtcCalling.on(TRTCCalling.EVENT.USER_ENTER, handleUserEnter);
 
 | 매개변수   | 유형   | 의미    |
 | ------ | ------ | ------- |
-| userID     | String | 사용자 ID      |
+| userID         | String | 사용자 ID    |
 
 #### USER_LEAVE
 
@@ -604,11 +618,11 @@ trtcCalling.on(TRTCCalling.EVENT.USER_LEAVE, handleUserLeave);
 
 | 매개변수   | 유형   | 의미    |
 | ------ | ------ | ------- |
-| userID     | String | 사용자 ID      |
+| userID         | String | 사용자 ID    |
 
 #### GROUP_CALL_INVITEE_LIST_UPDATE
 
-그룹 채팅의 초대 리스트 업데이트 시, 이 콜백 수신을 수신합니다.
+그룹 채팅의 초대 리스트 업데이트 콜백 수신
 
 >?v1.0.0 및 이후의 버전은 이 이벤트가 추가됩니다.
 
@@ -711,7 +725,7 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject);
 
 | 매개변수   | 유형   | 의미    |
 | ------ | ------ | ------- |
-| userID     | String | 사용자 ID      |
+| userID         | String | 사용자 ID    |
 
 #### NO_RESP
 
@@ -752,7 +766,7 @@ trtcCalling.on(TRTCCalling.EVENT.LINE_BUSY, handleLineBusy);
 
 | 매개변수   | 유형   | 의미    |
 | ------ | ------ | ------- |
-| userID     | String | 사용자 ID      |
+| userID         | String | 사용자 ID    |
 
 ### 초대 수신자 이벤트 콜백
 
@@ -780,7 +794,7 @@ trtcCalling.on(TRTCCalling.EVENT.INVITED, handleNewInvitationReceived);
 | userIDList  | Array   | 동시에 초대를 수신한 사용자                                                                                         |
 | isFromGroup | Boolean | IM 그룹 초대 여부                                                                                         |
 | inviteData  | Object  | 신규 사용자 초대: {version, callType, roomID} |
-| inviteID    | String | 초대 식별 ID.                                                                                    |
+| inviteID    | String  | 초대 식별 ID.                                                                                    |
 
 #### CALLING_CANCEL
 
@@ -851,10 +865,10 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 > ?
 > - **다중 인스턴스**: 1개의 UserID로 중복 로그인하거나 여러 단말에서 로그인하는 경우 신호에 혼란이 발생합니다.
 > - **오프라인 푸시**: 온라인 인스턴스만 메시지를 수신할 수 있습니다. 오프라인 인스턴스로 전송된 메시지는 인스턴스의 온라인 상태 전환 후 다시 전송되지 않습니다.
-더 많은 FAQ는 [TRTCCalling Web FAQ](https://intl.cloud.tencent.com/document/product/647/43096)를 참고하십시오.
+더 많은 FAQ는 [TRTCCalling Web 관련 FAQ](https://intl.cloud.tencent.com/document/product/647/43096)를 참고하십시오.
 
 ## 기술 컨설팅
-자세한 내용은 [고객센터](https://intl.cloud.tencent.com/contact-us)를 참고하십시오. 또는 colleenyu@tencent.com 으로 이메일을 보내주십시오.
+자세한 내용은 [고객센터](https://intl.cloud.tencent.com/contact-us)로 문의하거나 colleenyu@tencent.com으로 이메일을 보내주십시오.
 
 
 ## 참고 문서
