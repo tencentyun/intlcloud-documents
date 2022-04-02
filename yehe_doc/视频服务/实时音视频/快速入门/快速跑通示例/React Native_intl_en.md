@@ -29,7 +29,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com)
 
 [](id:step2)
 ### Step 2. Download the SDK and demo source code
-1. Download the SDK and [demo source code](https://github.com/c1avie/TRTCReactNativeDemo) for your platform.
+1. Download the SDK and [demo source code](https://github.com/LiteAVSDK/TRTC_ReactNative) for your platform.
 2. Click **Next**.
 
 >! You cannot download the demo for React Native via the console at the moment. **Please download the source code via the above link**.
