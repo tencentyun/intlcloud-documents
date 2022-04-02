@@ -29,7 +29,7 @@
 
 [](id:step2)
 ### ステップ2：SDKおよびDemoソースコードをダウンロード
-1. 実際の業務のニーズに応じて、SDKと付属の[Demoソースコード](https://github.com/c1avie/TRTCReactNativeDemo)をダウンロードします。
+1. 実際の業務のニーズに応じて、SDKと付属の[Demoソースコード](https://github.com/LiteAVSDK/TRTC_ReactNative)をダウンロードします。
 2. ダウンロード完了後、**ダウンロードしました。次のステップ**をクリックします。
 
 >! 現在、コンソールからはReactNative Demoをダウンロードできません。**直接上記のリンクからDemoソースコードをダウンロードしてください**。
