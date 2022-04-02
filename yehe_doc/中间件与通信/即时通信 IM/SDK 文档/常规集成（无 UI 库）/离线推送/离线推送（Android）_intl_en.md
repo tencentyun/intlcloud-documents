@@ -216,7 +216,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
 
 [](id:huaweiStep1_1)
 
-1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app. Take note of the **`Package name`**, **`APP ID`**, and **`Client SECRET`**.
+1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app. Take note of the **`Package name`**, **`APP ID`**, **`Client ID`** and **`Client SECRET`**.
    [](id:huaweiStep1_2)
 2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#huaweiStep1_1) to configure the following parameters:
 
@@ -542,7 +542,7 @@ You need to select **Open webpage** when [adding a certificate](#vivoStep1_2) an
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />
             <data
-                android:host="com.tencent.qcloud"
+                android:host="com.tencent.qcloud.tim"
                 android:path="/detail"
                 android:scheme="pushscheme" />
         </intent-filter>
