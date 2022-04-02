@@ -154,7 +154,7 @@ pTRTCCloud->enterRoom(params, trtc::TRTCAppSceneVideoCall);
 :::
 ::: Windows\s端
 1. File->File > Package Project > Windows(64-bit) 
-
+ ![](https://qcloudimg.tencent-cloud.cn/raw/48b85bf5504698153e399be89096b006.png)
 :::
 ::: iOS\s端
 1. 在 iOS 上也需要以下权限：
