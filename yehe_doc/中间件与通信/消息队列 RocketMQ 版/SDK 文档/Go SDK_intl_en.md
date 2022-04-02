@@ -64,12 +64,12 @@ Run the following command in the client environment to RocketMQ client dependenc
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Producer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Producer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>serverAddress</td>
-				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/5ec413fb25af95bbd7ce9beb17cc62f6.png" style="width: 100%">
 						<b>Note: </b>Add <code>http://</code> or <code>https://</code> before the access address; otherwise, it cannot be resolved.
         </td>
     </tr>
@@ -80,13 +80,13 @@ Run the following command in the client environment to RocketMQ client dependenc
     <tr>
         <td>accessKey</td>
         <td>Role token, which can be copied in the <b>Token</b> column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+           <img src = "https://qcloudimg.tencent-cloud.cn/raw/679d9eb0c39df9722fc8e2e82f52cb46.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>nameSpace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%">
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/823fb2bd90d17ecb24960ffea027a910.png" style="width: 100%">
         </td>
     </tr>
 </table>
@@ -121,8 +121,8 @@ Run the following command in the client environment to RocketMQ client dependenc
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+        <td>Topic name, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/2b52e1983fb576cc10b074cd7f1a15a8.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -199,12 +199,12 @@ For more information on async sending and one-way sending, see [Demo](https://td
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Consumer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Consumer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>serverAddress</td>
-				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/baf2bd3e35110f2fae6b936eaa2f723b.png" style="width: 100%">
 						<b>Note: </b>Add <code>http://</code> or <code>https://</code> before the access address; otherwise, it cannot be resolved.
         </td>
     </tr>
@@ -215,13 +215,13 @@ For more information on async sending and one-way sending, see [Demo](https://td
     <tr>
         <td>accessKey</td>
         <td>Role token, which can be copied in the <b>Token</b> column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ba6af7b1188b3f5864e037e71743178a.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>nameSpace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%">
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/dd397f141e6388407e99018e7d4fc8a7.png" style="width: 100%">
         </td>
     </tr>
 </table>
@@ -270,8 +270,8 @@ For more information on async sending and one-way sending, see [Demo](https://td
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+        <td>Topic name, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b2b11c05edaa3ef5f8be278a1a49852.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -304,7 +304,7 @@ For more information on async sending and one-way sending, see [Demo](https://td
 
 ### Step 4. View consumption details
 Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
-![](https://qcloudimg.tencent-cloud.cn/raw/924898b7a5568be778449bf51034396d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c50484e8f9549063248a4887da9769de.png)
 
    
 

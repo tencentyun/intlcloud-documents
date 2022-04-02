@@ -2,7 +2,7 @@
 Each app can set a maximum of 10 custom user attributes. This API is used to set the name of each attribute. After you set them, attribute names can be used for push by user attribute and other purposes.
 
 ## API Call Description
-This feature **can only be applied for by Ultimate Edition users (but not by Pro Edition users). You can apply for this feature by submitting a ticket, and we will evaluate your needs for approval. If we determine that this feature suits your needs, we will approve your application so that you can use the feature**.
+The feature is available only to users with Flagship edition accounts. See [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322) to apply for this feature. The feature will be enabled **48 hours** after your application is approved.
 
 ### Sample request URL
 ```

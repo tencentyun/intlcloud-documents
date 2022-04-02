@@ -98,7 +98,7 @@ spring:
 </thead>
 <tbody><tr>
 <td align="left">name-server</td>
-<td align="left">Cluster access address, which can be obtained from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster Management</strong> page in the console.</td>
+<td align="left">Cluster access address, which can be obtained from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster Management</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">secret-key</td>
@@ -106,7 +106,7 @@ spring:
 </tr>
 <tr>
 <td align="left">access-key</td>
-<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt=""></td>
+<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/14e42cb135540bf6f79a6b04e5e76bb9.png" alt=""></td>
 </tr>
 <tr>
 <td align="left">namespace</td>

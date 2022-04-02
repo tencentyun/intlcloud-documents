@@ -215,7 +215,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
 
 [](id:huaweiStep1_1)
 
-1. 打开 [华为开发者联盟官网](https://developer.huawei.com/consumer/cn/) 进行注册并通过开发者认证。进入管理中心，选择**应用服务**>**开发服务**>**PUSH**，创建华为推送服务应用。记录**`包名`**、**`APP ID`**、**`Client SECRET`**信息。
+1. 打开 [华为开发者联盟官网](https://developer.huawei.com/consumer/cn/) 进行注册并通过开发者认证。进入管理中心，选择**应用服务**>**开发服务**>**PUSH**，创建华为推送服务应用。记录**`包名`**、**`APP ID`**、**`Client ID`**、**`Client SECRET`**信息。
    [](id:huaweiStep1_2)
 2. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面，单击**Android平台推送设置**区域的**添加证书**。根据 [步骤1](#huaweiStep1_1) 中获取的信息设置以下参数：
 
@@ -541,7 +541,7 @@ if (set != null) {
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />
             <data
-                android:host="com.tencent.qcloud"
+                android:host="com.tencent.qcloud.tim"
                 android:path="/detail"
                 android:scheme="pushscheme" />
         </intent-filter>

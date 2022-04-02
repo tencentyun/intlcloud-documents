@@ -54,7 +54,7 @@
    | groupName  | 生产者组名称，在控制台集群管理中`Group` 页签中复制。         |
    | nameserver | 集群接入地址，在控制台**集群管理**页面的集群列表操作栏的**接入地址**处获取。 |
    | secretKey  | 角色名称，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制。 |
-   | accessKey  | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+   | accessKey  | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/dece05914450403febd5e7ee7547535b.png) |
 
 #### 2. 发送消息
 
@@ -74,7 +74,7 @@ for (int i = 0; i < 10; i++) {
 
 | 参数       | 说明                                                      |
 | :--------- | :-------------------------------------------------------- |
-| topic_name | 在控制台集群管理中**`Topic`** 页签中复制具体 Topic 名称。 |
+| topic_name | 在控制台集群管理中 **`Topic`** 页签中复制具体 Topic 名称。 |
 | TAG        | 用来设置消息的TAG。                                       |
 
 - 异步发送
@@ -115,7 +115,7 @@ countDownLatch.await(5, TimeUnit.SECONDS);
 
 | 参数       | 说明                                                      |
 | :--------- | :-------------------------------------------------------- |
-| topic_name | 在控制台集群管理中**`Topic`** 页签中复制具体 Topic 名称。 |
+| topic_name | 在控制台集群管理中 **`Topic`** 页签中复制具体 Topic 名称。 |
 | TAG        | 用来设置消息的TAG。                                       |
 
 - 单向发送
@@ -131,7 +131,7 @@ for (int i = 0; i < 10; i++) {
 
 | 参数       | 说明                                                      |
 | :--------- | :-------------------------------------------------------- |
-| topic_name | 在控制台集群管理中**`Topic`** 页签中复制具体 Topic 名称。 |
+| topic_name | 在控制台集群管理中 **`Topic`** 页签中复制具体 Topic 名称。 |
 | TAG        | 用来设置消息的TAG。                                       |
 
 >?批量发送及其他情况可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/)。
@@ -160,7 +160,7 @@ pushConsumer.setNamesrvAddr(nameserver);
 | groupName  | 生产者组名称，在控制台集群管理中`Group` 页签中复制。         |
 | nameserver | 集群接入地址，在控制台**集群管理**页面的集群列表操作栏的**接入地址**处获取。 |
 | secretKey  | 角色名称，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| accessKey  | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| accessKey  | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/b5ccd3b934f73a392a6b0855496cee10.png) |
 
 - pull 消费者
 
@@ -182,7 +182,7 @@ pullConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
 | groupName  | 生产者组名称，在控制台集群管理中`Group` 页签中复制。         |
 | nameserver | 集群接入地址，在控制台**集群管理**页面的集群列表操作栏的**接入地址**处获取。 |
 | secretKey  | 角色名称，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| accessKey  | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| accessKey  | 角色密钥，在 **[角色管理](https://console.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/709c03c8959d357a49833f87ed457c77.png) |
 
 >?更多消费类型可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/) 。
 
@@ -207,7 +207,7 @@ pushConsumer.start();
 
 | 参数       | 说明                                                         |
 | :--------- | :----------------------------------------------------------- |
-| topic_name | 在控制台集群管理中**`Topic`** 页签中复制具体 Topic 名称。    |
+| topic_name | 在控制台集群管理中 **`Topic`** 页签中复制具体 Topic 名称。    |
 | "*"        | 订阅表达式如果为 null 或*表达式表示订阅全部，同时支持 "tag1 \|\| tag2 \|\| tag3" 标识订阅多个类型的 tag。 |
 
 - pull 订阅
@@ -231,7 +231,7 @@ try {
 
 | 参数       | 说明                                                         |
 | :--------- | :----------------------------------------------------------- |
-| topic_name | 在控制台集群管理中**`Topic`** 页签中复制具体 Topic 名称。    |
+| topic_name | 在控制台集群管理中 **`Topic`** 页签中复制具体 Topic 名称。    |
 | "*"        | 订阅表达式如果为 null 或*表达式表示订阅全部，同时支持 "tag1 \|\| tag2 \|\| tag3" 标识订阅多个类型的 tag。 |
 
 
@@ -239,6 +239,6 @@ try {
 ### 步骤4：查看消费详情
 
 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，在**集群管理** > **Group** 页面，可查看与 Group 连接的客户端列表，单击操作列的**查看详情**，可查看消费者详情。
-![img](https://main.qcloudimg.com/raw/7187da67219534d767206553e2a383ab.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/671cacbb946883f1777c0417e59fe424.png)
 
 >?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) 或 [RocketMQ 官方文档](https://rocketmq.apache.org/docs/simple-example/)。

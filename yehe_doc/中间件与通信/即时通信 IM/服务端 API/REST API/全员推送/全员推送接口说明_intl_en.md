@@ -3,7 +3,7 @@ The push to all users service is a group of RESTful APIs implemented based on th
 
 >!
 >- An account can receive messages pushed to all users only after it has been logged in to or manually imported.
->- This service **is available only to users of the Ultimate Edition (it becomes unavailable if you are downgraded to the Pro Edition). You can apply for this service by submitting a ticket. After your application is submitted, we will assess your need. Your application will be approved only if we think this service is appropriate for your situation.
+>- The feature of pushing to all users is available only to users with Flagship edition accounts. See [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322) to apply for this feature. The feature will be enabled **48 hours** after your application is approved.
 
 ## Basic Features
 

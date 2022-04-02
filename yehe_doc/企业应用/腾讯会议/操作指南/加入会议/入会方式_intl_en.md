@@ -2,8 +2,8 @@
 You can join a meeting on the mobile or PC client.
 
 ## Prerequisites
-- **Logged-in user:** Free or Enterprise edition user.
-- **Logged-in device:** Windows, macOS, iOS, or Android.
+- **Logged-in user:** Free or Enterprise Edition user
+- **Logged-in device:** Windows, macOS, iOS, or Android
 
 ## Notes
 - Up to 10 meetings can be displayed in the **Meeting ID** drop-down list in the **Join Meeting** window.
@@ -13,7 +13,7 @@ You can join a meeting on the mobile or PC client.
  - PC Audio: you can directly use the PC mic and speaker (headset) as the meeting audio connection method to join the meeting, which is suitable for small meetings and is not limited by scenarios.
  - If you don't select an audio connection method, you cannot speak or hear other attendees during the meeting.
 
-## How to Join a Meeting
+## Joining a Meeting
 ### On mobile client
 **Method 1: Join a meeting through meeting ID**
 1. Open the VooV Meeting app, tap **Join**, and enter the meeting ID and the corresponding password.
@@ -24,7 +24,7 @@ You can join a meeting on the mobile or PC client.
 2. After you tap the link to enter the meeting detail page, if the meeting is a scheduled meeting as configured by the meeting creator, you can tap **Add to My Meetings** at the bottom to add the meeting to your meeting list in case you forget the meeting ID in the future.
 
 **Method 3: Join a meeting on web pages in browser**
-1. Log in at https://voovmeeting.com/r and enter the meeting ID to join the meeting.
+1. Log in at [https://voovmeeting.com/r](https://voovmeeting.com/r) and enter the meeting ID to join the meeting.
 
 **Method 4: Join a meeting through one tap on your phone** 
 1. Tap the invitation message for joining the meeting by phone to join the meeting.

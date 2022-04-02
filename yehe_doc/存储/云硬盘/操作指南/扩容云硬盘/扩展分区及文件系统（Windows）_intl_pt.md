@@ -4,7 +4,7 @@ Depois de [expandir um disco em nuvem](https://intl.cloud.tencent.com/document/p
 - Se você expandir um disco em nuvem montado em um CVM em execução, será necessário **Rescan Disk (Examinar novamente o disco)** para reconhecer a capacidade do disco após a expansão.
 - Se você expandir um disco em nuvem que está desmontado ou montado em um CVM inativo, a capacidade do disco após a expansão será reconhecida automaticamente.
 
->
+>!
 >- Estender o sistema de arquivos pode afetar os dados existentes. É altamente recomendável que você [crie um snapshot](https://intl.cloud.tencent.com/document/product/362/5755) manualmente para fazer backup de seus dados antes da operação.
 >- Para estender o sistema de arquivos, é preciso [reiniciar a instância](https://intl.cloud.tencent.com/document/product/213/4928) ou examinar novamente o disco, o que levará à interrupção dos negócios por um determinado período. Recomendamos que você escolha um momento apropriado para essa operação.
 >- Depois de estender o sistema de arquivos, é altamente recomendável que você [examine novamente os discos](#Scanning) para reconhecer a capacidade. Se você **Refresh (Atualizar)** o sistema ou fizer outras operações, a capacidade expandida pode não ser reconhecida.
@@ -16,11 +16,11 @@ Depois de [expandir um disco em nuvem](https://intl.cloud.tencent.com/document/p
 - Você [expandiu a capacidade do disco em nuvem](https://intl.cloud.tencent.com/document/product/362/5747).
 - Você [montou o disco em nuvem](https://intl.cloud.tencent.com/document/product/362/32401) em um CVM do Windows e criou um sistema de arquivos.
 - Você [fez login](https://intl.cloud.tencent.com/document/product/213/5435) no CVM do Windows no qual deseja estender as partições e o sistema de arquivos.
->Este documento descreve como expandir um disco montado em um CVM no Windows Server 2012 R2. A expansão pode variar ligeiramente com os sistemas operacionais, portanto, esse documento é apenas para referência.
+>?Este documento descreve como expandir um disco montado em um CVM no Windows Server 2012 R2. A expansão pode variar ligeiramente com os sistemas operacionais, portanto, esse documento é apenas para referência.
 >
 
 ## Instruções
->
+>!
 >- Se você [expandir um disco em nuvem](https://intl.cloud.tencent.com/document/product/362/5747) que está montado em um CVM em execução, deve [examinar novamente o disco](#Scanning) para reconhecer a capacidade do disco em nuvem expandida antes de [estender os volumes](#Extending).
 >- Se você [expandir um disco em nuvem](https://intl.cloud.tencent.com/document/product/362/5747) que está desmontado ou montado em um CVM inativo, pode prosseguir diretamente para [estender o volume](#Extending).
 

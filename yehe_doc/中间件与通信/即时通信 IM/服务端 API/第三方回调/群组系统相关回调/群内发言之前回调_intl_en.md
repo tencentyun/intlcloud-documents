@@ -62,7 +62,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
                 "Text": "red packet"
             }
         }
-    ]
+    ],
+    "CloudCustomData": "your cloud custom data"
 }
 ```
 
@@ -78,6 +79,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Random | Integer | A 32-bit random number in the request |
 |OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.|
 | MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String |  Message customized data (saved in the cloud, it will be sent to the peer end, and data can still be pulled after the program is unloaded and reinstalled) |
 
 ### Sample response
 
@@ -140,7 +142,8 @@ In the following response sample, the group message sent by the user is modified
                 "Data": "LV1" // Data
             }
         }
-    ]
+    ],
+    "CloudCustomData": "your cloud custom data"
 }
 ```
 
@@ -152,6 +155,7 @@ In the following response sample, the group message sent by the user is modified
 | ErrorCode | Integer | Yes | Error code returned. `0`: allows group message sending; `1`: forbids group message sending; `2`: discards the message silently. If the business side wants to forbid a user to send group messages and send` ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of [10100, 10200]. |
 | ErrorInfo | String | Yes | Error information |
 | MsgBody | Array | No | Message body modified by the app backend. The IM backend sends the modified message to the group. For more information on the format, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String | No  |  Message customized data (saved in the cloud, it will be sent to the peer end, and data can still be pulled after the program is unloaded and reinstalled) |
 
 ## References
 

@@ -9,7 +9,7 @@ Tencent Real-Time Communication（TRTC）は、Tencentが長年にわたり蓄�
 
 
 ## 製品アーキテクチャ
-Tencent Real-Time Communication（TRTC）は、全プラットフォームでの相互通信による多人数のオーディオビデオ通話と低遅延でインタラクティブライブストリーミングのソリューションをメインに打ち出しています。ミニプログラム、Web、Android、iOS、Electron、Windows、macOSなどのプラットフォームのSDKを提供し、開発者がクイックインテグレーションを行い、Tencent Real-Time Communication（TRTC）クラウドサービスのバックエンドと連携できるようにしています。またTencent Cloudの様々な製品と連動させることで、TRTCとInstant Messaging（IM）、Cloud Streaming Services（CSS）、Video on Demand（VOD）などのクラウド製品の機能を同時に使用することができ、業務でのユースケースをより広げることが可能です。製品構成は下図のとおりです。
+Tencent Real-Time Communication（TRTC）は、全プラットフォームでの相互通信による多人数のオーディオビデオ通話と低遅延でインタラクティブライブストリーミングのソリューションをメインに打ち出しています。Web、Android、iOS、Electron、Windows、macOSなどのプラットフォームのSDKを提供し、開発者がクイックインテグレーションを行い、Tencent Real-Time Communication（TRTC）クラウドサービスのバックエンドと連携できるようにしています。またTencent Cloudの様々な製品と連動させることで、TRTCとInstant Messaging（IM）、Cloud Streaming Services（CSS）、Video on Demand（VOD）などのクラウド製品の機能を同時に使用することができ、業務でのユースケースをより広げることが可能です。製品構成は下図のとおりです。
 ![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
 
 ## サポートプラットフォーム
@@ -52,14 +52,6 @@ Tencent Real-Time Communicationは、**業界で真の全プラットフォー�
 <td>
   <li>Windows 7以上のバージョン、Mac OS 10.10以上のバージョンをサポートしています</li>
   <li>Electron 4.0.0以上のバージョンをサポートしていますが、最新版のElectron SDKの使用を推奨します</li>
-</td>
-</tr><tr>
-<td>WeChat Mini Program</td>
-<td>
-  <li>WeChat App iOS最低バージョン要件：7.0.9</li>
-  <li>WeChat App Android最低バージョン要件：7.0.8</li>
-  <li>ミニプログラムベースライブラリ最低バージョン要件：2.10.0</li>
-  <li>ミニプログラム開発者ツールはネーティブコンポーネント（&lt;live-pusher&gt;および&lt;live-player&gt;タグ）をサポートしていないため、実機で体験を実行する必要があります</li>
 </td>
 </tr><tr>
 <td>Flutter</td>

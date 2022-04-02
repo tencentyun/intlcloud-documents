@@ -11,18 +11,18 @@ You can avoid the problems above by allowing different users to manage different
 
 When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, please see [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603). For detailed directions, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 
-You can skip this section if you do not need to manage permissions to TDSQL-C resources for sub-accounts. This will not affect your understanding and use of the other sections of the document.
+You can skip this section if you do not need to manage permissions to TDSQL-C for MySQL resources for sub-accounts. This will not affect your understanding and use of the other sections of the document.
 
 ### Getting started
-A CAM policy must authorize or deny the use of one or more TDSQL-C operations. At the same time, it must specify the resources that can be used for the operations (which can be all resources or partial resources for certain operations). A policy can also include the conditions set for the manipulated resources.
+A CAM policy must authorize or deny the use of one or more TDSQL-C for MySQL operations. At the same time, it must specify the resources that can be used for the operations (which can be all resources or partial resources for certain operations). A policy can also include the conditions set for the manipulated resources.
 >?
->- We recommend you manage TDSQL-C resources and authorize TDSQL-C operations through CAM policies. Although the user experience does not change for existing users who are granted permissions by project, we do not recommend you continue to manage resources and authorize operations in a project-based manner.
->- Effectiveness conditions cannot be set for TDSQL-C for the time being.
+>- We recommend you manage TDSQL-C for MySQL resources and authorize TDSQL-C for MySQL operations through CAM policies. Although the user experience does not change for existing users who are granted permissions by project, we do not recommend you continue to manage resources and authorize operations in a project-based manner.
+>- Effectiveness conditions cannot be set for TDSQL-C for MySQL for the time being.
 
 | Relevant Information         | Link                                                         |
 | ---------------- | ------------------------ |
 | Basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/1098/40641#yufa) |
-| Operation definition in a policy | [TDSQL-C Operations](https://intl.cloud.tencent.com/document/product/1098/40641#caozuo) |
-| Resource definition in a policy | [TDSQL-C Resource Path](https://intl.cloud.tencent.com/document/product/1098/40641#lujing) |
-| Resource-Level permission | [Resource-Level Permissions Supported by TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/40642) |
+| Operation definition in a policy | [TDSQL-C for MySQL Operations](https://intl.cloud.tencent.com/document/product/1098/40641#caozuo) |
+| Resource definition in a policy | [TDSQL-C for MySQL Resource Path](https://intl.cloud.tencent.com/document/product/1098/40641#lujing) |
+| Resource-Level permission | [Resource-Level Permissions Supported by TDSQL-C for MySQL](https://intl.cloud.tencent.com/document/product/1098/40642) |
 

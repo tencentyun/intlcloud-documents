@@ -749,7 +749,7 @@ Example of `json_param`. For details on JSON keys, see [GroupGetOnlineMemberCoun
 
 ## TIMGroupSearchGroups
 
-This API is used to search for a group list.
+This API is used to search for a group list.(Support v5.4.666 and above , you need to purchase the Flagship Edition package.)
 
 **Prototype**
 
@@ -828,7 +828,7 @@ TIMGroupSearchGroups(json_array.toStyledString().c_str(), [](int32_t code, const
 
 ## TIMGroupSearchGroupMembers
 
-This API is used to search for the group member list.
+This API is used to search for the group member list.(Support v5.4.666 and above , you need to purchase the Flagship Edition package.)
 
 **Prototype**
 

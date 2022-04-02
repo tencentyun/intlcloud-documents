@@ -73,7 +73,7 @@ producer.shutdown()
     <tr>
         <td>nameserver</td>
         <td>集群接入地址，在<b>集群管理</b>页面操作列的<b>接入地址</b>获取。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/424026465647068a89a2e1d1a9a67c4a.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -83,15 +83,15 @@ producer.shutdown()
     <tr>
         <td>accessKey</td>
         <td>角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制<b>密钥</b>列复制。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/07ea422573eee1705f90227fe2f608b2.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>topicName</td>
         <td>topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。
 				<ul style = "margin-bottom: 0px;"><li>命名空间全称可在控制台集群管理 Topic 页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/9c90672b68c79e44f9b6e6e3d902338e.png" style="width: 100%">
 						</li>
 						</ul>
         </td>
@@ -160,7 +160,7 @@ consumer.shutdown()
     <tr>
         <td>nameserver</td>
         <td>集群接入地址，在<b>集群管理</b>页面操作列的<b>接入地址</b>获取。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -170,15 +170,15 @@ consumer.shutdown()
     <tr>
         <td>accessKey</td>
         <td>角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制<b>密钥</b>列复制。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ef9c950f6792fedd472c323ba9d6fb9e.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>topicName</td>
         <td>topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。
 				<ul style = "margin-bottom: 0px;"><li>命名空间全称可在控制台集群管理 Topic 页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" style="width: 100%">
 						</li>
 						</ul>
         </td>
@@ -194,7 +194,7 @@ consumer.shutdown()
 ### 步骤4：查看消费详情
 
 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，在**集群管理** > **Group** 页面，可查看与 Group 连接的客户端列表，单击操作列的**查看详情**，可查看消费者详情。
-![](https://qcloudimg.tencent-cloud.cn/raw/924898b7a5568be778449bf51034396d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a9516801b649c49bd3d65edc6bc7b5e9.png)
 
 >?上述是对消息的发布和订阅方式的简单介绍。更多操作可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip) 或 [RocketMQ-Client-Python 示例](https://github.com/apache/rocketmq-client-python/tree/master/samples) 。
 

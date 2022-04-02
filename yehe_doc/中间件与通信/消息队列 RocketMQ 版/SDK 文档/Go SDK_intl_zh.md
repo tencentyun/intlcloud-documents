@@ -69,7 +69,7 @@
     <tr>
         <td>serverAddress</td>
 				<td>集群接入地址，在控制台<b>集群管理</b>页面操作列的<b>接入地址</b>获取。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/5ec413fb25af95bbd7ce9beb17cc62f6.png" style="width: 100%">
 						<b>注意：</b>需要在接入地址前面加上 <code>http://</code> 或 <code>https://</code> 否则无法解析。
         </td>
     </tr>
@@ -80,13 +80,13 @@
     <tr>
         <td>accessKey</td>
         <td>角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制<b>密钥</b>列复制。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/679d9eb0c39df9722fc8e2e82f52cb46.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>nameSpace</td>
         <td>命名空间全称可在控制台集群管理 Topic 页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/823fb2bd90d17ecb24960ffea027a910.png" style="width: 100%">
         </td>
     </tr>
 </table>
@@ -122,7 +122,7 @@
     <tr>
         <td>topicName</td>
         <td>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/2b52e1983fb576cc10b074cd7f1a15a8.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -204,7 +204,7 @@
     <tr>
         <td>serverAddress</td>
 				<td>集群接入地址，在控制台<b>集群管理</b>页面操作列的<b>接入地址</b>获取。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/88046dcc0b052e11dc5c7c2ee8a901e4.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/baf2bd3e35110f2fae6b936eaa2f723b.png" style="width: 100%">
 						<b>注意：</b>需要在接入地址前面加上 <code>http://</code> 或 <code>https://</code> 否则无法解析。
         </td>
     </tr>
@@ -215,13 +215,13 @@
     <tr>
         <td>accessKey</td>
         <td>角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制<b>密钥</b>列复制。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/738800581043835d6123385964281f37.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ba6af7b1188b3f5864e037e71743178a.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>nameSpace</td>
         <td>命名空间全称可在控制台集群管理 Topic 页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c483d23c09d2f728aaa08b195d9ddd40.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/dd397f141e6388407e99018e7d4fc8a7.png" style="width: 100%">
         </td>
     </tr>
 </table>
@@ -271,7 +271,7 @@
     <tr>
         <td>topicName</td>
         <td>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b096254ae2fa8db0f45c1f864718915.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b2b11c05edaa3ef5f8be278a1a49852.png" style="width: 100%">
         </td>
     </tr>
     <tr>
@@ -304,7 +304,7 @@
 
 ### 步骤4：查看消费详情
 登录 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq)，在**集群管理** > **Group** 页面，可查看与 Group 连接的客户端列表，单击操作列的**查看详情**，可查看消费者详情。
-![](https://qcloudimg.tencent-cloud.cn/raw/924898b7a5568be778449bf51034396d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c50484e8f9549063248a4887da9769de.png)
 
    
 

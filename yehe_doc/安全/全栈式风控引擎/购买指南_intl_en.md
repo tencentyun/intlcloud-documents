@@ -12,11 +12,11 @@ RCE is pay-as-you-go and settled monthly with tiered pricing.
 
 | Tier (Calls) | USD/Call |
 | :------------- | :------ |
-| (0,1 million] | 0.0525 |
-| (1 million,2.5 million] | 0.0425 |
-| (2.5 million,5 million] | 0.025 |
-| (5 million,10 million] | 0.015 |
-| >10 million | 0.01 |
+| (0,1 million] | 0.021 |
+| (1 million,2.5 million] | 0.017 |
+| (2.5 million,5 million] | 0.01 |
+| (5 million,10 million] | 0.006 |
+| >10 million | 0.004 |
 
 ### Billing example
 

@@ -99,6 +99,7 @@ UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults     0   
 mount -a 
 ```
 If information similar to what is shown below is returned, the file has been written. The file system will automatically mount when the operating system is started. You can restart CVM to verify the result.
+
 ![](https://main.qcloudimg.com/raw/4289f335d3373074d7fc799863fba498.png)
 
 [](id:RepairConfiguration)

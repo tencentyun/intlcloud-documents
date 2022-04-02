@@ -16,7 +16,7 @@ App 管理员可以通过该接口拉取群组的历史消息。
 |Private|支持，同新版本中的Work(好友工作群)|
 |Public|支持|
 |ChatRoom|支持，同新版本中的Meeting(临时会议群)|
-|AVChatRoom|不支持|
+|AVChatRoom|支持|
 
 即时通信 IM 内置上述群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 

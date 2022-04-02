@@ -6,21 +6,21 @@ VooV Meeting provides excellent audio/video performance, rich meeting collaborat
 ## Quick Start
 You can refer to the following documents to learn more about VooV Meeting:
 - [Strengths](https://intl.cloud.tencent.com/document/product/1054/35551)
-- Release Notes
+- [Release Notes](https://intl.cloud.tencent.com/document/product/1054/43773)
 - [FAQs](https://intl.cloud.tencent.com/document/product/1054/35566)
 
 ## Signup and Login
-You can sign up for and log in to VooV Meeting on PC or mobile.
-- [Signup and Login on PC](https://intl.cloud.tencent.com/document/product/1054/35560)
-- [Signup and Login on Mobile](https://intl.cloud.tencent.com/document/product/1054/35557)
+You can sign up for and log in to VooV Meeting on PC or mobile client.
+- [Signup and Login on PC client](https://intl.cloud.tencent.com/document/product/1054/35560)
+- [Signup and Login on Mobile client](https://intl.cloud.tencent.com/document/product/1054/35557)
 
 
-## Creating Meeting
+## Creating a Meeting
 You can create a meeting in two ways: **Schedule a meeting** and **Start a meeting**, which differ as follows:
 
 | Type               | Description                                                  |
 | ------------------ | :----------------------------------------------------------- |
-| Schedule a Meeting | You need to enter the meeting information. The scheduled meeting will be retained for 30 days, during which you can join the meeting at any time. |
+| Schedule a meeting | You need to enter the meeting information. The scheduled meeting will be retained for 30 days, during which you can join the meeting at any time. |
 | Start a meeting    | You don't need to enter the meeting information. The meeting will be retained for only one hour, after which the system will end the meeting if there are no attendees in it. |
 
 When scheduling a meeting, you can choose to schedule a public, private, or recurring meeting. For their differences and creation methods, see below:
@@ -31,7 +31,7 @@ When scheduling a meeting, you can choose to schedule a public, private, or recu
 
 ## Joining a Meeting
 VooV Meeting provides multiple meeting join methods for you to quickly and accurately enter meetings.
-- How to Join a Meeting
+- Join a Meeting
 
 
 ## Relevant Information

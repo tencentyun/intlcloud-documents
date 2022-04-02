@@ -24,11 +24,11 @@ Tencent Container Registry (TCR) Enterprise Edition supports protection for the 
 <td>The current instance needs to enable the namespace for tag protection. Only a rule can be created in a single namespace.</td>
 </tr>
 <tr>
-<td rowspan="7">Immutability rule</td>
+<td rowspan="2">Immutability rule</td>
 <td ><b>latest</b>: in all repositories in the current namespace, all image tags are not allowed to be overwritten except the latest tag.</td>
 </tr>
 <tr>
-<td><b>Custom</b>: customize the configuration of the repository and image tag that need to be matched.<br><ul><li><b>Repository matching</b>: select filter type for the image repository, and enter the name of the repository which needs to be filtered according to <a href="https://intl.cloud.tencent.com/document/product/1051/35488">Regex Guide</a>.</li><li><b>Tag matching</b>: select filter type for the image tag, and enter the name of the tag which needs to be filtered according to <a href="https://intl.cloud.tencent.com/document/product/1051/35488">Regex Guide</a>.</li></ul></td>
+<td><b>Custom</b>: customize the configuration of the repository and image tag that need to be matched.<br><ul><li><b>Repository matching</b>: select filter type for the image repository, and enter the name of the repository which needs to be filtered.</li><li><b>Tag matching</b>: select filter type for the image tag, and enter the name of the tag which needs to be filtered.</li></ul></td>
 </tr>
 <tr>
 <td>Rule switch</td>

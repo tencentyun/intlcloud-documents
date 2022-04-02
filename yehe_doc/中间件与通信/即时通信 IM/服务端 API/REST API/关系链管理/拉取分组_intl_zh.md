@@ -36,7 +36,6 @@ https://xxxxxx/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&r
 ### 最高调用频率
 
 
-
 200次/秒。
 
 
@@ -45,28 +44,29 @@ https://xxxxxx/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&r
 
 - **基础形式**
 ```
-
 {
   "From_Account":"id"
 }
 
-
 ```
+
 
 
 - **完整形式**
-```
 
+```
 {
 
-     "From_Account":"id", 
+      "From_Account":"id", 
 
      "NeedFriend":"Need_Friend_Type_Yes", 
-
-     "GroupName":["group1"]
-
+     
+      "GroupName": [
+   
+     "group1"
+      
+     ]
 }
-
 
 
 ```

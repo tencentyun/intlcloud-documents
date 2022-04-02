@@ -1,9 +1,9 @@
 
-TDSQL-C (MySQL Edition) supports data migration through a command line tool.
+TDSQL-C for MySQL supports data migration through a command line tool.
 
 ## [Data Migration with Command Line Tool](id:AA)
 1. Generate the SQL file to be imported with the MySQL command line tool "mysqldump" in the following way:
->!The data files exported by using mysqldump must be compatible with the SQL specification of your purchased TDSQL-C (MySQL Edition) database. You can log in to the database and get the MySQL version information by running the `select version();` command. The name of the generated SQL file can contain letters, digits, and underscores but not "test".
+>!The data files exported by using mysqldump must be compatible with the SQL specification of your purchased TDSQL-C for MySQL database. You can log in to the database and get the MySQL version information by running the `select version();` command. The name of the generated SQL file can contain letters, digits, and underscores but not "test".
 > 
 ```
 shell > mysqldump [options] db_name [tbl_name ...] > bak_pathname
@@ -26,7 +26,7 @@ Here, `hostname` is the target server for data restoration, `port` is the port o
 ![](https://main.qcloudimg.com/raw/ac73c7b6cd2dd6682dffce3cb696a3dd.png)
 
 ### Migrating data on Linux CVM instance
-For more information on how to access a database on a CVM instance, please see [Accessing TDSQL-C Cluster](https://intl.cloud.tencent.com/document/product/1098/40627).
+For more information on how to access a database on a CVM instance, please see [Accessing TDSQL-C for MySQL Cluster](https://intl.cloud.tencent.com/document/product/1098/40627).
 
 1. Taking the `db_blog` database in TencentDB for example, log in to the CVM instance and generate the SQL file to be imported with the MySQL command line tool "mysqldump".
 ![](https://main.qcloudimg.com/raw/5812d047372da1800f02a72c20a6f7e7.png)

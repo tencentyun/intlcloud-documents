@@ -9,7 +9,7 @@ Tencent Real-Time Communication(TRTC)은 Tencent가 다년간 네트워크와 �
 
 
 ## 제품 아키텍처
-TRTC는 다양한 플랫폼을 대상으로 그룹 멀티미디어 통화 및 저지연의 ILVB를 지원하는 솔루션으로서 미니프로그램, Web, Android, iOS, Electron, Windows, macOS 등 플랫폼에 SDK를 제공합니다. 이로써 신속한 통합이 가능하며, TRTC의 클라우드 서비스 백그라운드와 연결할 수 있습니다. Tencent Cloud의 다양한 제품과 상호 연동이 가능해 TRTC를 IM, CSS, VOD 등 클라우드 서비스와 연계 사용함으로써 보다 다양한 작업이 가능합니다. 제품 구성은 아래 이미지와 같습니다.
+TRTC는 다양한 플랫폼을 대상으로 그룹 멀티미디어 통화 및 저지연의 ILVB를 지원하는 솔루션으로서 Web, Android, iOS, Electron, Windows, macOS 등 플랫폼에 SDK를 제공합니다. 이로써 신속한 통합이 가능하며, TRTC의 클라우드 서비스 백그라운드와 연결할 수 있습니다. Tencent Cloud의 다양한 제품과 상호 연동이 가능해 TRTC를 IM, CSS, VOD 등 클라우드 서비스와 연계 사용함으로써 보다 다양한 작업이 가능합니다. 제품 구성은 아래 이미지와 같습니다.
 ![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
 
 ## 플랫폼 지원
@@ -52,14 +52,6 @@ TRTC는 **업계 모든 플랫폼의 상호 연동을 구현하는 솔루션**�
 <td>
   <li>Windows 7 이상 버전, Mac OS 10.10 이상 버전 지원</li>
   <li>Electron 4.0.0 이상 버전 지원, 최신 버전의 Electron SDK 사용 권장</li>
-</td>
-</tr><tr>
-<td>WeChat 미니프로그램</td>
-<td>
-  <li>WeChat App iOS 최소 버전 요구 사항: 7.0.9</li>
-  <li>WeChat App Android 최소 버전 요구 사항: 7.0.8</li>
-  <li>미니프로그램 기본 라이브러리 최소 버전 요구 사항: 2.10.0</li>
-  <li>미니프로그램 개발자 툴은 네이티브 컴포넌트를 지원하지 않으므로(예: &lt;live-pusher&gt; 및 &lt;live-player&gt; 태그), 실제 시스템에서 경험해야 합니다.</li>
 </td>
 </tr><tr>
 <td>Flutter</td>

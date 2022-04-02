@@ -26,7 +26,7 @@ The initialization API `initSDK` contains three required parameters, including `
 [](id:SDKAppID)
 ### SDKAppID
 `SDKAppID` is a unique ID that the IM service uses to identify a customer account. We recommend that you apply for a new `SDKAppID` for every independent app to automatically isolate messages between `SDKAppIDs`.
-You can view all `SDKAppIDs` in the [IM console](https://console.cloud.tencent.com/im) or click **Add Application** to create an `SDKAppID`.
+You can view all `SDKAppIDs` in the [IM console](https://console.cloud.tencent.com/im) or click **Create an Application** to create an `SDKAppID`.
 ![](https://main.qcloudimg.com/raw/06d521fdb60cd86e40a82080ff90be3f.png)
 
 [](id:SDKAppID)

@@ -10,7 +10,7 @@ TDSQL-C MySQL版 支持为读写地址、只读地址配置不同安全组，互
 参考 [管理安全组](https://intl.cloud.tencent.com/document/product/1098/44594)，在安全组控制台中为实例创建安全组。
 
 ## 为读写地址/只读地址绑定安全组
-1. 登录 [TDSQL-C 控制台](https://console.cloud.tencent.com/cynosdb?dbType=POSTGRESQL)，在集群列表中，找到需要的集群，单击集群 ID，进入集群管理页面。
+1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb?dbType=POSTGRESQL)，在集群列表中，找到需要的集群，单击集群 ID，进入集群管理页面。
 2. 在集群管理页面，选择**安全组**页，选择需要配置安全组的地址，其中：
  - 集群连接内网地址：为数据库的读写访问地址。
  - 集群只读连接内网地址：为数据库的只读访问地址。
