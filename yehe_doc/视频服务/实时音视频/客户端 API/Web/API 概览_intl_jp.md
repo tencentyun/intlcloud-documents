@@ -265,7 +265,7 @@ TRTC Web SDKはWebRTCに基づき実現され、現在、デスクトップと�
 </table>
 
 >!
->- H.264の版権の制限により、Huawei Chrome 88より前のバージョンではH264コーデックを使用できません（プッシュできません）。HuaweiデバイスのChromeブラウザでTRTC Web SDKプッシュをご利用になりたい場合は、[TRTCコミュニケーショングループ](https://cloud.tencent.com/document/product/647/19906#trtc-.E4.BA.A4.E6.B5.81.E7.BE.A4)のグループ内テクニカルサポートに連絡し、VP8コーデックを有効にしてください。
+>-  H.264 の著作権上の制限により、Huawei Chrome 88 より前のバージョンは H264 エンコーディングを使用できません（つまり、ストリームをプッシュできません）。HuaweiデバイスのChromeブラウザで TRTC Web SDK を使用してストリームをプッシュするには、[チケットを提出](https://console.cloud.tencent.com/workorder/category )し、VP8コーデックの有効化を申請してください。
 >- Mac OSでのFirefoxの画面共有機能はあまり効果的ではなく、現時点では対処方法もありません。そのため、画面共有にはChromeまたはSafariの使用をお勧めします。[](id:attention3)
 >- Web端末でのプッシュ時にステレオコーデックのサポートをご希望の場合は、[TRTCコミュニケーショングループ](https://cloud.tencent.com/document/product/647/19906#trtc-.E4.BA.A4.E6.B5.81.E7.BE.A4)のグループ内テクニカルサポートに連絡し、WebRTCステレオコーデック機能を有効にしてください。
 >- 製品の安定性を高め、より良いオンラインサポートをご利用いただくために、TRTC Web SDKを速やかに最新バージョンに更新することをお勧めします。バージョンのアップグレードに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)をご参照ください。
