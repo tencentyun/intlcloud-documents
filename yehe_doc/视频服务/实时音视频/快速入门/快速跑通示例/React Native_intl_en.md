@@ -103,11 +103,11 @@ npx react-native run-android
 :::
 ::: iOS
 1. Run `pod install` in the iOS directory to install dependencies.
-2. Open the `.xcworkspace` file in the iOS directory to start the iOS project and create an empty Swift file under the iOS project directory.
-![](https://qcloudimg.tencent-cloud.cn/raw/1b243c324d9e1e93d113d2431922c4de.jpeg)
-3. In the window that pops up, click **Create Bridging Header**.
-![](https://qcloudimg.tencent-cloud.cn/raw/8329b913890721ceef19be314462905d.png)
-2. Open a new window and start debugging:
+2. Launch Metro and run `npx react-native start` under your React Native project directory.
+```
+npx react-native start
+```
+3. Open a new window in the demo directory and start development debugging (if an error is reported, please open Xcode compilation and debugging)
 ```
 npx react-native run-ios
 ```
