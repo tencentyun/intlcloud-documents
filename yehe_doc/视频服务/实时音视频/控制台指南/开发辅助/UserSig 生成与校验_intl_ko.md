@@ -22,10 +22,8 @@ TRTC 콘솔에서는 UserSig 서명 온라인 생성을 지원합니다. 그러�
 3. 사용자 이름(UserID)을 입력합니다.
 4. 인증할 서명(UserSig)을 복사해 [서명(UserSig)]에 붙여넣은 후, [Verify Now]를 클릭합니다.
 >? [Signature (UserSig) Generator] 모듈에서 UserSig를 생성한 경우 [Copy Signature(UserSig)]를 클릭하여 복사하는 것을 권장합니다.
->
+
 5. 인증 완료 후, 하단에서 인증 결과를 확인할 수 있습니다.
-	- 인증 성공 예시:
-	- 인증 실패 예시:
 
 
 ## 관련 문서
