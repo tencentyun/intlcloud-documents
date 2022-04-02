@@ -267,7 +267,7 @@ TRTC Web SDK는 WebRTC를 기반으로 구현되었으며 현재 데스크톱 �
 >!
 >- H.264 버전 권한 제한으로 인해, Huawei Chrome 88 이하 버전은 H264 코덱을 사용할 수 없습니다(즉, 스트림 푸시 불가). Huawei 기기의 Chrome 브라우저에서 TRTC Web SDK를 사용하여 스트림을 푸시하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 VP8 코덱 활성화를 신청하십시오.
 >- Mac OS에서 Firefox의 화면 공유 효과가 상대적으로 낮고 아직 해결책이 없는 상황이므로 Chrome 또는 Safari를 통한 화면 공유를 권장합니다.[](id:attention3)
->- 스트리밍할 때 Web에서 듀얼 사운드 인코딩을 지원하도록 하려면, [TRTC 그룹 채팅](https://cloud.tencent.com/document/product/647/19906#trtc-.E4.BA.A4.E6.B5.81.E7.BE.A4)의 기술 지원에 문의를 통해 WebRTC 듀얼 사운드 인코딩 능력을 활성화하십시오.
+>- 스트리밍할 때 Web에서 듀얼 사운드 인코딩을 지원하도록 하려면, [티켓 제출](https://console.cloud.tencent.com/workorder/category) 의 기술 지원에 문의를 통해 WebRTC 듀얼 사운드 인코딩 능력을 활성화하십시오.
 >- 더 나은 제품 안정성과 온라인 지원을 위해 TRTC Web SDK를 최신 버전으로 업데이트할 것을 권장합니다. 버전 업데이트에 대한 주의 사항은 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
 ## URL 도메인 프로토콜 제한
