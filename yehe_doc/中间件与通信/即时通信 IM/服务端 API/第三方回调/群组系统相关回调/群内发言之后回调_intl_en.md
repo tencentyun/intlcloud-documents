@@ -61,7 +61,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
                 "Text": "red packet"
             }
         }
-    ]
+    ],
+    "CloudCustomData": "your cloud custom data"
 }
 ```
 
@@ -79,6 +80,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | MsgTime | Integer | Message sending timestamp, corresponding to the backend server time |
 |OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.|
 | MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String |Message customized data (saved in the cloud, it will be sent to the peer end, and data can still be pulled after the program is unloaded and reinstalled). |
 
 ### Sample response
 
