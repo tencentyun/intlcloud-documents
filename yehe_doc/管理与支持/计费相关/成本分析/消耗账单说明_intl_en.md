@@ -49,7 +49,7 @@ Refund for downgrade:
  - Cost amortization before the downgrade remains unchanged. According to the order end time and cost, vouchers, complimentary cash, and cash are amortized separately and rounded to two decimal places. If the daily cost is less than 0.01 USD per day after amortization, the cost will be amortized from the next day at 0.01 USD per day until it is fully amortized.
 
 #### Refund of monthly subscription resource
-Cost amortization before the refund remains unchanged. Post-refund amortization and termination are performed on the day of refund. The refund amount (a negative number) and the unamortized cost of the resource are both counted into the amortization of the day of refund. The latter is called Post-refund amortization. **Post-refund amortization = Order cost - amortized cost; Termination cost = Refund amount; Actual monthly consumption = Normal amortization + Post-refund amortization + Termination cost**.
+Cost amortization before the refund remains unchanged. Post-refund amortization and termination are performed on the day of refund. The refund amount (a negative number) and the unamortized cost of the resource are both counted into the amortization of the day of refund. The latter is called post-refund amortization. **Post-refund amortization = Order cost - amortized cost; Termination cost = Refund amount; Actual monthly consumption = Normal amortization + Post-refund amortization + Termination cost**.
 
 
 ## Consumption Type
@@ -76,7 +76,7 @@ Assume that: 1. You used a daily pay-as-you-go resource from August 21 to August
 
 **Post-refund amortization**
 If you initiate a refund, but the resource cost has not been fully amortized, then the unamortized cost will be counted into the amortization of the day of refund. This is called supplementary amortization.
-Assume that you purchased a resource for 6 months at 181 USD on January 1, 2019 (the purchase duration was 181 days) and requested refund (-30 USD) on May 10, 2019. As the 181 USD was not fully amortized, the unamortized amount was counted into the day of refund (May 10). This amortized cost was Post-refund amortization. Your Post-refund amortization for May was 181 USD − Amortized cost (130 USD) = 51 USD, and the termination cost for May was -30 USD.
+Assume that you purchased a resource for 6 months at 181 USD on January 1, 2019 (the purchase duration was 181 days) and requested refund (-30 USD) on May 10, 2019. As the 181 USD was not fully amortized, the unamortized amount was counted into the day of refund (May 10). This amortized cost was post-refund amortization. Your post-refund amortization for May was 181 USD − Amortized cost (130 USD) = 51 USD, and the termination cost for May was -30 USD.
 
 **Termination cost**
 It is a negative value and refers to the amortized cost of a refunded resource in the month of refund.
