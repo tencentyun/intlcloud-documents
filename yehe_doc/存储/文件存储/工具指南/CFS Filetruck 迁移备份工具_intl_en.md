@@ -1,7 +1,8 @@
-The traditional `rsync` tool does not support specifying the start/end time for data migration/backup. As a result, the migration might be performed during business peak hours, consuming the computing, network, storage, and other resources. To solve this problem, CFS introduces the Filetruck tool for users to control the start/end time of data migration tasks.
+The traditional rsync tool does not support specifying the start/end time for data migration/backup. As a result, the migration might be performed during business peak hours, consuming the computing, network, storage, and other resources. To solve this problem, CFS introduces the Filetruck tool for users to control the start/end time of data migration tasks.
 
 - Filetruck introduces the following features:
   - Migrating data
+  - Incremental migration with automatic MD5 consistency check (you are advised to mount through sync to further ensure consistency)
   - Querying task execution status with a task ID
   - Listing all historical tasks
 - Filetruck supports the following source and destination directories:
@@ -12,7 +13,7 @@ The traditional `rsync` tool does not support specifying the start/end time for 
 	<td><ul  style="margin: 0;">
 	<li>CFS file system </li>
 	<li>Local file system (file system installed after the CBS instance is formatted) </li>
-	<li>COSFS local path</li>
+	<li>COSFS local path </li>
 	<li>All local paths attached to this host after the network is interconnected</li>
 	</ul>
 </td>
@@ -34,8 +35,8 @@ The following describes how to use Filetruck to migrate/back up data.
 
 Before you start, find the image of CFS Filetruck in the Tencent Cloud Market.
 
-1. Use CFS Filetruck to create a CVM (minimum configuration: 2-core CP, 4 GB, 1.5Gbps). After the host is created, the Filetruck and relevant environments are ready to go.
-2. Mount the source and destination directories of the data to migrate/back up to the host. For more information, please see [Using CFS File Systems on Linux Clients](https://intl.cloud.tencent.com/document/product/582/11523).
+1. Use CFS Filetruck to create a CVM (recommended minimum configuration: 2-core, 4 GB, 1.5 Gbps). After the CVM is created, the Filetruck and relevant environments are ready.
+2. Mount the source and destination directories of the data to migrate/back up to the CVM. For more information, please see [Using CFS File Systems on Linux Clients](https://intl.cloud.tencent.com/document/product/582/11523).
 3. Create a migration task and execute it.
 
 ## Directions
@@ -61,7 +62,7 @@ If the new task is started successfully, Filetruck will return the following mes
 TaskId=1
 ```
 
-If the configuration is incorrect, the new task might fail to be started. In this case, Filetruck will return the corresponding error message for you to modify the configuration file as follows:
+If the configuration is incorrect, the new task might fail to be started. In this case, Filetruck will return the corresponding error message for you to modify the configuration file:
 
 ```
 # filetruck_client -c newTask.ini
@@ -83,7 +84,7 @@ TargetDirPath=/path/to/targetDir
 StartDate=2020 Aug 02 11:22:33
 # Task end time, formatted as YYYY MMM DD hh:mm:ss (optional)
 EndDate=2020 Aug 02 12:22:33
-# Bandwidth limit (in KiB/s) in the range [0, 2147483647], where 0 indicates unlimited (optional)
+# Bandwidth limit (in KiB/s) in the range [0, 2147483647], where 0 indicates no limit (optional)
 BandwidthLimitInKbps=1024
 # Matching rule for files to migrate (optional)
 IncludeRule=*.jpg
@@ -94,7 +95,7 @@ ExcludeRule=*.png
 #### Parameter description
 
 - `SourceDirPath` and `TargetDirPath` are required and should be set to the absolute paths of the directories.
-- `StartDate`, `EndDate`, `BandwidthLimitInKbps`, `IncludeRule`, and `ExcludeRule` are optional and do not necessarily need to be specified in the configuration file.
+- `StartDate`, `EndDate`, `BandwidthLimitInKbps`, `IncludeRule`, and `ExcludeRule` are optional and do not need to be specified in the configuration file.
 - `StartDate` and `EndDate` must be in the `yyyy mmm dd HH:MM:SS` format. For example, to specify 20:20:08 on August 8, 2020, set the parameter to `2020 Aug 08 20:20:08` instead of `2020 Aug 8 20:20:8`.
 - Valid range for `BandwidthLimitInKbps` is [0, 2147483647], where `0` indicates unlimited bandwidth. Note: The Filetruck migration speed is determined by the CPU/memory/bandwidth configurations of the host it is installed on, the network condition of the source/destination paths, and the size of the file to migrate/back up. In most cases, if the host configuration and egress bandwidth are high, and the file size is large, the migration/backup speed will be faster. For example, if the host is configured with 8-core CPU, 16 GB memory, and 1.5 Gbps bandwidth, and the size of the local file to migrate to the CFS high-performance file system is 4 KB, the speed would be about 40 KB/s; if the file size is 1 TB, the speed would be about 140 MB/s.
 - The matching rules for `IncludeRule` and `ExcludeRule` are as follows:
@@ -134,13 +135,13 @@ TaskId  State           FileCount       SentBytes       Speed           Progress
 
 
 #### Parameter description
-- The 5 statues for the migration tasks are listed as follows:
+- A migration task can be in the following status:
   - `Waiting`: waiting
   - `Running`: running
   - `All Done`: all completed
   - `Partial Done`: completed partially (stopped due to timeout or user cancellation)
   - `Failed`: failed
-  - If the value of `FileCount`, `SentBytes`, `Speed`, or `Progress` is not calculated yet, `-` will be displayed.
+  If the value of `FileCount`, `SentBytes`, `Speed`, or `Progress` is not calculated yet, `-` will be displayed.
 - When the migration task is completed, the `inode` value of the file will be changed.
 - By default, hard links in the source directory will be migrated.
 
@@ -149,7 +150,7 @@ TaskId  State           FileCount       SentBytes       Speed           Progress
 
 #### Querying task execution status of a specific task
 
-You can run the `filetruck_client -t TASK_ID` with `TASK_ID` specified to query the detailed information of a task as follows:
+You can run the `filetruck_client -t TASK_ID` with `TASK_ID` specified to query the detailed information of a task:
 
 ```
 # filetruck_client -t 3
@@ -174,7 +175,7 @@ Error: Task with ID=999 is not founded.
 
 ### Canceling an ongoing task
 
-You can run the `filetruck_client -k TASK_ID` command with `TASK_ID` specified to cancel an ongoing task as follows:
+You can run the `filetruck_client -k TASK_ID` command with `TASK_ID` specified to cancel an ongoing task:
 
 ```
 # filetruck_client -k 10
@@ -194,7 +195,7 @@ You can run the `filetruck_client -h` command to obtain the help information of 
 ```
 CFS-Filetruck version: 0.1.3b
 Copyright (C) 2020 Tencent Inc. All rights reserved.
-Link: https://cloud.tencent.com/product/cfs
+Link: https://intl.cloud.tencent.com/products/cfs
  
 CFS-Filetruck makes file migration easier.
  
