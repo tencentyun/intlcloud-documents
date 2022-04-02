@@ -57,13 +57,15 @@ https://xxxxxx/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&r
 ```
 {
 
-     "From_Account":"id", 
+      "From_Account":"id", 
 
      "NeedFriend":"Need_Friend_Type_Yes", 
-
-      "LastSequence":1, 
-
-     "GroupName":["group1"]
+     
+      "GroupName": [
+   
+     "group1"
+      
+     ]
 }
 
 
