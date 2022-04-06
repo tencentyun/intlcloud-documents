@@ -48,8 +48,8 @@ options timeout:1 rotate
 1. Log in to the Windows CVM.
 2. On the operating system interface, open **Control Panel** > **Network and Sharing Center** > **Change adapter settings**.
 3. Right-click the **Ethernet** and select **Properties** to open the “Ethernet Properties” window.
-4. In the “Ethernet Properties” window, double-click **IP version 4 (TCP/IPv4)**, as shown below:
+4. In the “Ethernet Properties” window, double-click **Internet Protocol Version 4 (TCP/IPv4)**.
 ![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
-5. Select [Use the following DNS server address] and modify the DNS IP according to the corresponding region in the [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225) list.
+5. Select **Use the following DNS server addresses** and modify the DNS IP according to the corresponding region in the [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225) list.
 
 6. Click **OK**.
