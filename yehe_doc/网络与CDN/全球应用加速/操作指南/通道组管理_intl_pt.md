@@ -14,25 +14,24 @@ Para implantar aceleração em várias regiões com a mesma configuração de se
                    </div>
       <p>A rede BGP dedicada só é aceita em Hong Kong, na China. Se você precisar dela, envie um tíquete para entrar em contato conosco.</p>
                </blockquote>
-	- **Origin Region (Região de origem)**: a região onde está localizado o servidor de destino ou a mais próxima do servidor de destino.
+- **Origin Region (Região de origem)**: a região onde está localizado o servidor de destino ou a mais próxima do servidor de destino.
 	<blockquote class="d-mod-notice">
                    <div class="d-mod-title d-notice-title">
                        <i class="d-icon-notice"></i>Observação:
                    </div>
       <p>O servidor de origem em Taiwan, na China, não pode acessar a região de aceleração na China Continental, e vice-versa.</p>
                </blockquote>
-	- **Connection Specification (Especificação de conexão)**: permite a configuração do limite de largura de banda de uma conexão e da quantidade máxima de conexões simultâneas.
-	- **Bandwidth Cap (Limite da largura de banda)**: largura de banda máxima de uma conexão, que é de 10.000 Mbps (1.000 Mbps para algumas conexões).
-	- **Maximum Concurrent Connections (Quantidade máxima de conexões simultâneas)**: quantidade máxima de conexões simultâneas para uma conexão, que é 1 milhão (300.000 para algumas conexões).
-	
-   	<blockquote class="d-mod-notice">
-   	            <div class="d-mod-title d-notice-title">
-   	                <i class="d-icon-notice"></i>Observação:
-   	            </div>
+- **Connection Specification (Especificação de conexão)**: permite a configuração do limite de largura de banda de uma conexão e da quantidade máxima de conexões simultâneas.
+- **Bandwidth Cap (Limite da largura de banda)**: largura de banda máxima de uma conexão, que é de 10.000 Mbps (1.000 Mbps para algumas conexões).
+- **Maximum Concurrent Connections (Quantidade máxima de conexões simultâneas)**: quantidade máxima de conexões simultâneas para uma conexão, que é 1 milhão (300.000 para algumas conexões).	
+<blockquote class="d-mod-notice">
+                   <div class="d-mod-title d-notice-title">
+                       <i class="d-icon-notice"></i>Observação:
+                   </div>
       <p>Um grupo de conexões pode conter até 20 conexões.</p>
-	            </blockquote>
-	- **Tag**: permite a classificação de conexões. Esse é um item opcional.
-	- **Fees (Taxas)**: as taxas de conexão e de largura de banda são calculadas com base na largura de banda e nas conexões simultâneas que você especificar. A taxa de conexão é calculada diariamente até que a conexão seja excluída, já a largura de banda é cobrada pelo limite diário real de largura de banda de entrada e de saída.
+               </blockquote>
+- **Tag**: permite a classificação de conexões. Esse é um item opcional.
+- **Fees (Taxas)**: as taxas de conexão e de largura de banda são calculadas com base na largura de banda e nas conexões simultâneas que você especificar. A taxa de conexão é calculada diariamente até que a conexão seja excluída, já a largura de banda é cobrada pelo limite diário real de largura de banda de entrada e de saída.
 3. Clique em **OK**.
 4. Na página [Connection Group Management(Gerenciamento de grupos de conexões)](https://console.cloud.tencent.com/gaap/group), você pode exibir os detalhes do grupo de conexões, gerenciar as conexões no mesmo grupo de conexões e monitorar seus estados em tempo real.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b6828c4086edaa1b1cf84986c1379036.png)
