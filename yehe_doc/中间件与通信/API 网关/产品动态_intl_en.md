@@ -152,7 +152,7 @@
 <td>Made resource packs officially purchasable</td>
 <td>API Gateway resource packs are officially purchasable, which can be used to deduct the fees incurred by calls and outbound traffic and thus are more cost-effective.</td>
 <td>2021-04-08</td>
-<td><a href="https://buy.cloud.tencent.com/apigateway">Purchasing Resource Pack</a></td>
+<td>Purchasing Resource Pack</td>
 </tr></table>
 
 
