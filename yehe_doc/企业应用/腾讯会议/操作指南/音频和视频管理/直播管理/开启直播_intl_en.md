@@ -12,7 +12,7 @@ Live streaming can relay the shared screen or video image in your current meetin
 ### Before live streaming
 1. Only the host can control live streaming.
 2. You can start live streaming only after getting the video content (at least one user in the meeting turns on video or starts screen sharing).
-3. You need to get the live streaming permission for your YouTube account [here](https://www.youtube.com/features).
+3. You need to get the live streaming permission for your [YouTube account here](https://www.youtube.com/features).
 
 ### During live streaming
 1. After live streaming starts, the live stream replay feature cannot be configured.
