@@ -18,14 +18,14 @@ Faça login no Console do GAAP. Na página **Origin Server Management (Gerenciam
 1. Faça login no [Console do GAAP](https://console.cloud.tencent.com/gaap). Na página **Origin Server Management (Gerenciamento de servidores de origem)**, clique no ícone à direita do servidor de origem que está íntegro.
 >!Essa funcionalidade não fica disponível se o servidor de origem não estiver vinculado a um listener.
 >
-![](https://main.qcloudimg.com/raw/bf9e90955fe8511fa3be4d8ae4dfc4cd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5d987f08bf034cb6cd1de5d7aad891d5.jpg)
 2. Na janela pop-up no canto superior direito, você pode exibir o status de integridade do servidor de origem durante diferentes períodos e granularidades. `1` indica que o servidor de origem está normal e `0` significa que está anormal.
-<img src="https://main.qcloudimg.com/raw/0efb8e67c662f26c00a241edf8f03d44.png" width="70%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6317c3ccdb5cd1442a1cf4e0105c9896.jpg" width="70%">
 
  
 
 ## Edição de tag
 1. Faça login no [Console do GAAP](https://console.cloud.tencent.com/gaap). Na página **Origin Server Management (Gerenciamento de servidores de origem)**, clique em **Edit Tag (Editar tag)** à direita do servidor de origem.
- ![](https://main.qcloudimg.com/raw/cce3e88aee41d021d5d483fd87419a1f.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/9f10b4b55e4601c3ad6bf602bee99c83.jpg)
 2. Selecione tags para categorizar e gerenciar servidores de origem em várias dimensões. Clique em **OK**.
- ![](https://main.qcloudimg.com/raw/16d0bdf88b2c0ec31cd3df0671083b55.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/74527ba60e680b59f6cd0a7ccc23feac.jpg)

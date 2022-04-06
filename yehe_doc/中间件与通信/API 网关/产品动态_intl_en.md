@@ -148,11 +148,6 @@
 <td>Plugins are advanced feature configurations provided by API Gateway. You can create configuration items such as IP access control through plugins and then bind the plugins to APIs for them to take effect.</td>
 <td>2021-04-13</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/628/40214">Plugins</a></td>
-</tr><tr>
-<td>Made resource packs officially purchasable</td>
-<td>API Gateway resource packs are officially purchasable, which can be used to deduct the fees incurred by calls and outbound traffic and thus are more cost-effective.</td>
-<td>2021-04-08</td>
-<td><a href="https://buy.cloud.tencent.com/apigateway">Purchasing Resource Pack</a></td>
 </tr></table>
 
 

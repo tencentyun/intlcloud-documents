@@ -276,7 +276,7 @@ ha\<1/2/3>：高可用性プルのプレフィックスです。例えば、最�
    ![画面共有レイアウト1](https://qcloudimg.tencent-cloud.cn/raw/d64e7e705060d21ec24d7392f8d43728.png)
    ![画面共有レイアウト2](https://qcloudimg.tencent-cloud.cn/raw/695683aecb62c29976f16124d6e9b29b.png)
    ![画面共有レイアウト3](https://qcloudimg.tencent-cloud.cn/raw/8423e777eb1a5bfb80e384e7b97db49d.png)
-   ![画面共有レイアウト1](https://qcloudimg.tencent-cloud.cn/raw/4ba02685cd168279b0b2100ce63dc821.jpeg)
+   ![画面共有レイアウト1](https://qcloudimg.tencent-cloud.cn/raw/538faeb7d2f993427b7ab1db548cb633.png)
    ![画面共有レイアウト4](https://qcloudimg.tencent-cloud.cn/raw/f911eb5a849da0aa22ed9b69ebe2f63a.png)
 
 ##### カスタムレイアウト：

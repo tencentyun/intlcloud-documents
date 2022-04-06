@@ -1,6 +1,6 @@
 ## Download and Installation
 
-#### Related resources
+#### Relevant resources
 
 - Source code of COS XML JS SDK download: [XML JavaScript SDK](https://github.com/tencentyun/cos-js-sdk-v5).
 - Fast SDK download: [XML JavaScript SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-js-sdk-v5/latest/cos-js-sdk-v5.zip).
@@ -16,21 +16,24 @@
 #### Environment requirements
 
 1. The SDK for JavaScript requires the browser to support basic HTML5 features (IE 10 and higher) for AJAX file uploading and MD5 checksum calculation.
-2. Log in to the [COS console](https://console.cloud.tencent.com/cos5), [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
+2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get the SecretId and SecretKey of your project.
 4. Configure CORS rule. Put in `*` for `AllowHeader`. For `ExposeHeaders`, put in `ETag`, `Content-Length`, and the other header fields that JS needs to read as shown below. For more information, please see [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/13318).
 
 
-> ?For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+>? 
+> - For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+> - Use instructions for cross-device frameworks (such as uni-app): for mobile apps that cannot be packaged for normal use after being developed using the JavaScript SDK, such as Android and iOS apps, you need to use the corresponding Android SDK and iOS SDK.
+> 
 
-#### Installing SDKs
+#### Installing SDK
 
 You can install the SDK in the following ways:
 
 #### Importing via script
 >? Click [here](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/dist/cos-js-sdk-v5.min.js) to download the latest cos-js-sdk-v5.min.js.
 ```html
-<script src="https://unpkg.com/cos-js-sdk-v5/dist/cos-js-sdk-v5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cos-js-sdk-v5/dist/cos-js-sdk-v5.min.js"></script>
 ```
 
 When the script tag references the SDK, the SDK occupies the global variable name COS, and its constructor can create an SDK instance.
@@ -61,40 +64,56 @@ As placing a permanent key on the frontend may cause security risks, we recommen
 <input id="file-selector" type="file">
 <script src="dist/cos-js-sdk-v5.min.js"></script>
 <script>
-var Bucket = 'examplebucket-1250000000';
+
+// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+var Bucket = 'examplebucket-1250000000';  /* Bucket. Required */
+
+// The bucket region can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket/. 
+// The region details can be viewed at https://intl.cloud.tencent.com/document/product/436/6224.
 var Region = 'COS_REGION';      /* Bucket region. Required */
 
 // Initialize an instance.
 var cos = new COS({
+    // The `getAuthorization` parameter is required.
     getAuthorization: function (options, callback) {
         // Get a temporary key asynchronously.
-        $.get('http://example.com/server/sts.php', {
-            bucket: options.Bucket,
-            region: options.Region,
-        }, function (data) {
-            var credentials = data && data.credentials;
-            if (!data || !credentials) return console.error('credentials invalid');
+        // Server-side JS and PHP sample: https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
+        // For server-side examples for other programming languages, see the COS SDK for STS: https://github.com/tencentyun/qcloud-cos-sts-sdk
+        // For the STS documentation, visit https://intl.cloud.tencent.com/document/product/436/14048
+
+        var url = 'http://example.com/server/sts.php'; // Replace the URL with your own real server URL.
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function (e) {
+            try {
+                var data = JSON.parse(e.target.responseText);
+                var credentials = data.credentials;
+            } catch (e) {
+            }
+            if (!data || !credentials) {
+              return console.error('credentials invalid:\n' + JSON.stringify(data, null, 2))
+            };
             callback({
-                TmpSecretId: credentials.tmpSecretId,
-                TmpSecretKey: credentials.tmpSecretKey,
-                SecurityToken: credentials.sessionToken,
-                // We recommend using the time the server receives the credentials as the StartTime, so as to avoid signature error due to time deviations. 
-                StartTime: data.startTime, // Timestamp in seconds, such as 1580000000
-                ExpiredTime: data.expiredTime, // Timestamp in seconds, such as 1580000900
-            });
-        });
+              TmpSecretId: credentials.tmpSecretId,
+              TmpSecretKey: credentials.tmpSecretKey,
+              SecurityToken: credentials.sessionToken,
+              // We recommend using the time the server receives the credentials as the StartTime, so as to avoid signature error due to time deviations. 
+              StartTime: data.startTime, // Timestamp in seconds, such as 1580000000
+              ExpiredTime: data.expiredTime, // Timestamp in seconds, such as 1580000000
+          });
+        };
+        xhr.send();
     }
 });
 
 // The COS instance can then be used to call a COS request.
-// TODO
 
 </script>
 ```
 
-### Configuration items
+### Configuration Item
 
-#### Use case 
+#### Sample code
 
 Create a COS SDK instance in one of the following ways:
 
@@ -104,25 +123,35 @@ Create a COS SDK instance in one of the following ways:
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
-    // Required parameters
+    // The `getAuthorization` parameter is required.
     getAuthorization: function (options, callback) {
+        // Get a temporary key asynchronously.
         // Server-side JS and PHP sample: https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
-        // For examples of other server-side programming languages, see COS STS SDK: https://github.com/tencentyun/qcloud-cos-sts-sdk
+        // For server-side examples for other programming languages, see the COS SDK for STS: https://github.com/tencentyun/qcloud-cos-sts-sdk
         // For the STS documentation, visit https://intl.cloud.tencent.com/document/product/436/14048
-        $.get('http://example.com/server/sts.php', {
-            // The required parameters can be obtained from options.
-        }, function (data) {
-            var credentials = data && data.credentials;
-            if (!data || !credentials) return console.error('credentials invalid');
+
+        var url = 'http://example.com/server/sts.php'; // Replace the URL with your own real server URL.
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function (e) {
+            try {
+                var data = JSON.parse(e.target.responseText);
+                var credentials = data.credentials;
+            } catch (e) {
+            }
+            if (!data || !credentials) {
+              return console.error('credentials invalid:\n' + JSON.stringify(data, null, 2))
+            };
             callback({
-                TmpSecretId: credentials.tmpSecretId,
-                TmpSecretKey: credentials.tmpSecretKey,
-                SecurityToken: credentials.sessionToken,
-                // We recommend using the time the server receives the credentials as the StartTime, so as to avoid signature error due to time deviations. 
-                StartTime: data.startTime, // Timestamp in seconds, such as 1580000000
-                ExpiredTime: data.expiredTime, // Timestamp in seconds, such as 1580000900
-            });
-        });
+              TmpSecretId: credentials.tmpSecretId,
+              TmpSecretKey: credentials.tmpSecretKey,
+              SecurityToken: credentials.sessionToken,
+              // We recommend using the time the server receives the credentials as the StartTime, so as to avoid signature error due to time deviations. 
+              StartTime: data.startTime, // Timestamp in seconds, such as 1580000000
+              ExpiredTime: data.expiredTime, // Timestamp in seconds, such as 1580000000
+          });
+        };
+        xhr.send();
     }
 });
 ```
@@ -133,31 +162,34 @@ var cos = new COS({
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
-    // Required parameters
+    // The `getAuthorization` parameter is required.
     getAuthorization: function (options, callback) {
         // Server example: https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/scope.md
-        $.ajax({
-            method: 'POST',
-            url: ' http://example.com/server/sts-scope.php',
-            data: JSON.stringify(options.Scope),
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Content-Type', 'application/json');
-            },
-            dataType: 'json',
-            success: function (data) {
-                var credentials = data && data.credentials;
-                if (!data || !credentials) return console.error('credentials invalid');
-                callback({
-                    TmpSecretId: credentials.tmpSecretId,
-                    TmpSecretKey: credentials.tmpSecretKey,
-                    SecurityToken: credentials.sessionToken,
-                    // We recommend using the time the server receives the credentials as the StartTime, so as to avoid signature error due to time deviations. 
-                    StartTime: data.startTime, // Timestamp in seconds, such as 1580000000
-                    ExpiredTime: data.expiredTime, // Timestamp in seconds, such as 1580000900
-                    ScopeLimit: true, // Refined permission control needs to be set to true, limiting the key to be reused only for the same request
-                });
+        // Get a temporary key asynchronously.
+        var url = 'http://example.com/server/sts.php'; // Replace the URL with your own real server URL.
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function (e) {
+            try {
+                var data = JSON.parse(e.target.responseText);
+                var credentials = data.credentials;
+            } catch (e) {
             }
-        });
+            if (!data || !credentials) {
+                return console.error('credentials invalid:\n' + JSON.stringify(data, null, 2))
+            };
+            callback({
+                TmpSecretId: credentials.tmpSecretId,
+                TmpSecretKey: credentials.tmpSecretKey,
+                SecurityToken: credentials.sessionToken,
+                // We recommend using the time the server receives the credentials as the StartTime, so as to avoid signature error due to time deviations. 
+                StartTime: data.startTime, // Timestamp in seconds, such as 1580000000
+                ExpiredTime: data.expiredTime, // Timestamp in seconds, such as 1580000000
+                ScopeLimit: true, // Refined permission control needs to be set to true, limiting the key to be reused only for the same request
+            });
+        };
+        xhr.send(JSON.stringify(options.Scope));
     }
 });
 ```
@@ -166,26 +198,39 @@ var cos = new COS({
 
 [//]: # ".cssg-snippet-global-init-signature"
 ```js
+var COS = require('cos-js-sdk-v5');
 var cos = new COS({
-    // Required parameters
+    // The `getAuthorization` parameter is required.
     getAuthorization: function (options, callback) {
-        // The server obtains a signature. For more information, please see the COS SDK for the corresponding programming language: https://cloud.tencent.com/document/product/436/6474
-        // Note: there may be a security risk associated with this method. The backend needs to strictly control the permission through method and pathname, such as prohibiting put /
-        $.get('http://example.com/server/auth.php', {
-            method: options.Method,
-            pathname: '/' + options.Key,
-        }, function (data) {
+        // Obtain the signature asynchronously.
+
+        var url = 'http://example.com/server/sts.php'; // Replace the URL with your own real server URL.
+        var method = (options.Method || 'get').toLowerCase();
+        var query = options.Query || {};
+        var headers = options.Headers || {};
+        var pathname = options.Pathname || '/';
+        var xhr = new XMLHttpRequest();
+        var data = {
+            method: method,
+            pathname: pathname,
+            query: query,
+            headers: headers,
+        };
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('content-type', 'application/json');
+        xhr.onload = function (e) {
+            try {
+                var data = JSON.parse(e.target.responseText);
+            } catch (e) {
+            }
             if (!data || !data.authorization) return console.error('authorization invalid');
             callback({
                 Authorization: data.authorization,
                 // SecurityToken: data.sessionToken, // If a temporary key is used, sessionToken needs to be passed to SecurityToken.
             });
-        });
+        };
+        xhr.send(JSON.stringify(data));
     },
-    // Optional parameters
-    FileParallelLimit: 3,    // Controls the number of concurrent file uploads
-    ChunkParallelLimit: 3,   // Controls the number of concurrent part uploads for a single file
-    ProgressInterval: 1000,  // Controls the interval of upload `onProgress` callbacks
 });
 ```
 
@@ -193,7 +238,9 @@ var cos = new COS({
 
 [//]: # ".cssg-snippet-global-init"
 ```js
-// You can obtain/manage SECRETID and SECRETKEY at https://console.cloud.tencent.com/cam/capi
+var COS = require('cos-js-sdk-v5');
+
+// Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
 var cos = new COS({
     SecretId: 'SECRETID',
     SecretKey: 'SECRETKEY',
@@ -204,15 +251,15 @@ var cos = new COS({
 
 | Parameter | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
-| SecretId | User's `SecretId` | String | No |
+| SecretId | User SecretId | String | No |
 | SecretKey | User's `SecretKey`, which we recommend to be used only for frontend debugging and should not be disclosed | String | No |
 | FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: 3 | Number | No |
 | ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: 3 | Number | No |
 | ChunkRetryTimes | Number of retries upon multipart upload/copy failure. Default value: 3 (a request will be made 4 times in total, including the initial one) | Number | No|
 | ChunkSize | Part size in the multipart upload in bytes. Default value: 1048576 (1 MB) | Number | No |
 | SliceSize | When files are uploaded in batches using `uploadFiles`, if the file size is greater than the value of this parameter (measured in bytes), multipart upload is used; otherwise, simple upload is used. Default value: 1048576 (1 MB) | Number | No |
-| CopyChunkParallelLimit | Number of concurrent multipart copy uploads for the same multipart copy operation. Default value: 20 | Number | No |
-| CopyChunkSize | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: `10485760` (10 MB) | Number | No |
+| CopyChunkParallelLimit | Number of concurrent part uploads for the same multipart copy operation. Default value: 20 | Number | No |
+| CopyChunkSize | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: 10485760 (10 MB) | Number | No |
 | CopySliceSize | When a file is copied by using `sliceCopyFile`, if the file size is greater than the value of this parameter, multipart copy is used; otherwise, simple copy is used. Default value: 10485760 (10 MB) | Number | No |
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: 1000 | Number | No |
 | Protocol | The protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
@@ -221,7 +268,8 @@ var cos = new COS({
 | ForcePathStyle | Forces the use of a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: false | Boolean | No |
 | UploadCheckContentMd5 | Verifies Content-MD5 when uploading files, which is false by default. If it is enabled, the MD5 value of the uploading files will be calculated, which may be time-consuming for large files | Boolean | No |
 | getAuthorization | Callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter is required. <br>**Note: This callback method is passed in during instance initialization, and is only executed to obtain the signature when the instance calls APIs. ** | Function | No |
-| Timeout | Timeout period measured in milliseconds. Default value: 0, indicating no timeout period | Number | No |
+| Timeout | Timeout period in milliseconds. Default value: 0, indicating no timeout period. | Number | No |
+| UseAccelerate          | Whether to enable a global acceleration endpoint. Default value: `false`. If you set the value to `true`, you need to enable global acceleration for the bucket. For more information, see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406). | Boolean | No   |
 
 #### getAuthorization Callback function description (Format 1)
 
@@ -240,12 +288,12 @@ getAuthorization callback parameter descriptions:
 
 After the temporary key is obtained, the callback returns an object. The attributes of the returned object are as listed below:
 
-| Attribute | Description | Type  |Required |
+| Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
 | TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
 | SecurityToken | sessionToken of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | Yes |
-| StartTime | Key acquisition start time measured in seconds, i.e., the timestamp of the key acquisition time, such as 1580000000. This parameter is used as the signature start time. Passing in this parameter can avoid signature expiration issues due to time deviation on the frontend |  String |    No |
+| StartTime | The timestamp in seconds of when you obtained the key, such as `1580000000`. Passing in this parameter as the signature start time can avoid signature expiration issues due to time deviation on the frontend. | String | No   |
 | ExpiredTime | `expiredTime` of the obtained temporary key measured in seconds, i.e., the timeout timestamp, such as 1580000900 | String | Yes |
 
 #### getAuthorization Callback function description (Format 2)
@@ -258,7 +306,7 @@ getAuthorization function callback parameter descriptions:
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | -------- |
-| options | Required for getting the signature | Object |
+| options | Parameter object necessary for getting the signature | Object |
 | - Method | Method of the current request | String |
 | - Pathname | Request path used for signature calculation | String |
 | - Key | An object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). <br> **Note: This parameter is empty if the API that uses the instance is not an object-operation API.** | String |
@@ -268,9 +316,9 @@ getAuthorization function callback parameter descriptions:
 
 Once the getAuthorization callback function is finished, it returns one of the following:
 An Authorization string.
-Format 2: An object is called back with the following attributes:
+An object whose attributes are listed as follows:
 
-| Attribute | Description | Type  |Required |
+| Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization | Calculated signature string | String | Yes |
 | SecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | No |
@@ -283,18 +331,50 @@ There are three ways to get the authentication credentials for your instance by 
 2. During instantiation, pass in the getAuthorization callback. Every time a signature is required, it will be calculated and returned to the instance through this callback.
 3. During instantiation, pass in the getAuthorization callback. When the callback is called, a temporary key will be returned. After the key expires, the callback will be called again.
 
+### Tips
+
+In most cases, you only need to create a COS SDK instance, and use it directly where SDK methods need to be called.  
+
+```js
+var cos = new COS({
+  ....
+});
+
+/* Self-encapsulated upload method */
+function myUpload() {
+  // COS SDK instances do not need to be created in each method
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.putObject({
+    ....
+  });
+}
+
+/* Self-encapsulated deletion method */
+function myDelete() {
+  // COS SDK instances do not need to be created in each method
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.deleteObject({
+    ....
+  });
+}
+```
+
 Below are some examples of common APIs. For more detailed initialization methods, please see the [demo](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/demo/demo.js).
 
 ### Uploading an object
 
-This API is suitable for uploading small files. For large files, please use the multipart upload API. For more information, see [Actions on Objects](https://intl.cloud.tencent.com/document/product/436/31538).
+This API is suitable for uploading small files. For large files, please use the multipart upload API. For more information, see [Actions on Objects](https://intl.cloud.tencent.com/document/product/436/43552).
 
 [//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
     StorageClass: 'STANDARD',
     Body: fileObject, // Upload the file object.
     onProgress: function(progressData) {
@@ -305,12 +385,12 @@ cos.putObject({
 });
 ```
 
-### Querying an object list
+### Querying objects
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: #	".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Prefix: 'a/', /*Optional*/
 }, function(err, data) {
@@ -322,12 +402,12 @@ cos.getBucket({
 
 > !This API is used to read object content. If you need to launch a browser to download the file, you can get the URL through `cos.getObjectUrl` and then start the download in the browser. For more information, please see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31540).
 
-[//]: # ".cssg-snippet-get-object"
+[//]: #	".cssg-snippet-get-object"
 ```js
 cos.getObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: 'exampleobject',              /* Required */
+    Key: 'exampleobject', /* Required */
 }, function(err, data) {
     console.log(err || data.Body);
 });
@@ -335,10 +415,10 @@ cos.getObject({
 
 ### Deleting an object
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: #	".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'COS_REGION',     /* Bucket region. Required */
     Key: 'exampleobject'        /* Required */
 }, function(err, data) {

@@ -148,11 +148,6 @@
 <td>插件是 API 网关提供的高级功能配置，您可以通过插件创建 IP 访问控制等配置项，再将插件绑定到 API 上生效。</td>
 <td>2021-04-13</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/628/40214">插件</a></td>
-</tr><tr>
-<td>资源包正式对外开放售卖</td>
-<td>API 网关资源包正式对外开放售卖，资源包可抵扣调用次数、出流量产生的费用，价格更优惠。</td>
-<td>2021-04-08</td>
-<td><a href="https://buy.cloud.tencent.com/apigateway">购买资源包</a></td>
 </tr></table>
 
 
