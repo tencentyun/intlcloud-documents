@@ -5,17 +5,17 @@
 VooV Meeting supports "PC Audio" and "Call In" audio connection methods for your choice. Before or after joining a meeting, test your audio device promptly to ensure that the device can be used normally.
 
 ## Prerequisites
-- **Mic:** built-in mic of your device or an external USB, Bluetooth, or wired mic.
-- **Speaker:** built-in speaker of your device or an external USB, Bluetooth, or wired speaker.
-- **Logged-in user:** Free or Enterprise edition user.
+- **Mic:** built-in mic of your device or an external USB, Bluetooth, or wired mic
+- **Speaker:** built-in speaker of your device or an external USB, Bluetooth, or wired speaker
+- **Logged-in user:** Free or Enterprise Edition user
 - **Logged-in device:**
- - Windows 7 or later
- - macOS 10.11 or later
- - Android 4.4 or later
- - iOS 10 or later
+   - Windows 7 or later
+   - macOS 10.11 or later
+   - Android 4.4 or later
+   - iOS 10 or later
 
 ## Notes
-When you join a meeting on PC client, we recommend you test whether your audio devices can be used normally in advance as follows:
+When you join a meeting on PC client, we recommend you test whether your audio devices can be used normally in advance:
 
 ### Test before meeting
 - Click the profile photo to enter the personal profile page.
@@ -25,7 +25,7 @@ When you join a meeting on PC client, we recommend you test whether your audio d
 
 ### Test during meeting
 - Click **Settings** on the toolbar during the meeting.
-- Click **Audio** on the **Settings** page or click the arrow next to **Mute/Unmute** on the bottom bar and select **Audio Options** to enter the **Audio** page.
+- Click **Audio** on the **Settings** page or click the arrow next to **Mute/Unmute** on the toolbar and select **Audio Options** to enter the **Audio** page.
 - Select the devices to be used in the **Speaker** and **Mic** drop-down lists.
 - After selection, click **Test** to test the speaker and mic respectively.
 >!If you don't select an audio connection method, you cannot speak or hear other attendees during the meeting.
@@ -34,7 +34,7 @@ When you join a meeting on PC client, we recommend you test whether your audio d
 ### PC audio
 In "PC Audio" mode, you can directly use the PC mic and speaker (headset) as the meeting audio connection method to join the meeting, which is suitable for small meetings and is not limited by scenarios. If you want to hold a large meeting, we recommend you use "Call In" as the audio connection method, which has a better audio quality.
 - After entering a meeting, select **PC Audio** or **Call In** in the **Select a Method to Connect to Meeting Audio** pop-up window.
-- You can also click the arrow on the right of **Mute/Unmute** in the bottom bar of the meeting window and select **PC Audio**.
+- You can also click the arrow on the right of **Mute/Unmute** in the toolbar of the meeting window and select **PC Audio**.
 - You can also select **Use PC Audio by Default** on the **PC Audio** tab in the **Select a Method to Connect to Meeting Audio** pop-up window, so that you don't need to select the audio connection method again when joining a meeting next time, and PC audio will be used by default.
 
 ### Call in
