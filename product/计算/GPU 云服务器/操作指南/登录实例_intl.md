@@ -1,4 +1,4 @@
-After you purchase and start a GPU instance, you can connect to and log in to it. The login method varies, depending on your local operating system, GPU instance operating system and whether the instance can be accessed via the Internet.
+After you purchase and launch a GPU instance, you can connect to and log in to it. The login method varies depending on your local operating system, GPU instance operating system and whether the instance can be accessed via the Internet.
 
 ## Preconditions
 
@@ -7,10 +7,10 @@ After you purchase and start a GPU instance, you can connect to and log in to it
  
 ## Login Instruction
 
-If your GPU instance is based on Linux, see [Log in to Linux Instance
+For Linux-based GPU instances, see [Logging In to Linux Instances
 ](/document/product/213/5436)
 
-If your GPU instance is based on Windows, see [Log in to Windows Instance
+For Windows-based GPU instances, see [Logging In to Windows Instances
 ](/document/product/213/5435)
 
 
