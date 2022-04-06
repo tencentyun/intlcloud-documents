@@ -39,38 +39,35 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 <thead><tr><th>적용 플랫폼</th><th>파일 소스 코드</th><th>파일 상대 경로</th></tr></thead>
 <tbody><tr>
 <td>iOS</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h">Github</a></td>
-<td>iOS/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h">Github</a></td>
+<td>TRTC-API-Example-OC/Debug/GenerateTestUserSig.h</td>
 </tr><tr>
 <td>Mac</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h">Github</a></td>
-<td>Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Mac/tree/main/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h">Github</a></td>
+<td>OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
 </tr><tr>
 <td>Android</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
-<td>Android/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
+<td>TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
 </tr><tr>
 <td>Windows（C++）</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h">Github</a></td>
-<td>Windows/DuilibDemo/GenerateTestUserSig.h</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-C%2B%2B/TRTC-API-Example-Qt/src/Util/defs.h">Github</a></td>
+<td>TRTC-API-Example-C++/TRTC-API-Example-Qt/src/Util/defs.h</td>
 </tr><tr>
 <td>Windows（C#）</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs">Github</a></td>
-<td>Windows/CSharpDemo/GenerateTestUserSig.cs</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs">Github</a></td>
+<td>TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs</td>
 </tr><tr>
 <td>Web</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/Web/base-js/js/debug/GenerateTestUserSig.js">Github</a></td>
-<td>Web/base-js/js/debug/GenerateTestUserSig.js</td>
-</tr><tr>
-<td>WeChat 미니프로그램</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/WXMini/TRTCSimpleDemo/debug/GenerateTestUserSig.js">Github</a></td>
-<td>WXMini/TRTCSimpleDemo/debug/GenerateTestUserSig.js</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Web/blob/main/base-js/js/debug/GenerateTestUserSig.js">Github</a></td>
+<td>base-js/js/debug/GenerateTestUserSig.js</td>
 </tr><tr>
 <td>Flutter</td>
-<td><a href="https://github.com/c1avie/trtc_demo/blob/master/lib/debug/GenerateTestUserSig.dart">Github</a></td>
-<td>/lib/debug/GenerateTestUserSig.dart</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Flutter/blob/master/TRTC-API-Example/lib/Debug/GenerateTestUserSig.dart">Github</a></td>
+<td>TRTC-API-Example/lib/Debug/GenerateTestUserSig.dart</td>
 </tr>
 </tbody></table>
+
 TRTC SDK의 예시 코드에 `GenerateTestUserSig`라는 오픈 소스 모듈을 제공하였습니다. 이 중 SDKAPPID, EXPIRETIME 및 SECRETKEY 등 3가지 멤버 변수를 자체 설정으로 변경하면 `genTestUserSig()` 함수를 호출하여 계산된 UserSig를 획득해 SDK 관련 기능을 빠르게 실행할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 

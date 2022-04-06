@@ -39,38 +39,35 @@ For the convenience of the client, TRTC provides the source code file for calcul
 <thead><tr><th>Applicable Platform</th><th>File Source Code</th><th>Relative File Path</th></tr></thead>
 <tbody><tr>
 <td>iOS</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h">Github</a></td>
-<td>iOS/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h">Github</a></td>
+<td>TRTC-API-Example-OC/Debug/GenerateTestUserSig.h</td>
 </tr><tr>
 <td>macOS</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h">Github</a></td>
-<td>Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Mac/tree/main/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h">Github</a></td>
+<td>OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
 </tr><tr>
 <td>Android</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
-<td>Android/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
+<td>TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
 </tr><tr>
-<td>Windows (C++)</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h">Github</a></td>
-<td>Windows/DuilibDemo/GenerateTestUserSig.h</td>
+<td>Windows£¨C++£©</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-C%2B%2B/TRTC-API-Example-Qt/src/Util/defs.h">Github</a></td>
+<td>TRTC-API-Example-C++/TRTC-API-Example-Qt/src/Util/defs.h</td>
 </tr><tr>
-<td>Windows (C#)</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs">Github</a></td>
-<td>Windows/CSharpDemo/GenerateTestUserSig.cs</td>
+<td>Windows£¨C#£©</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs">Github</a></td>
+<td>TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs</td>
 </tr><tr>
 <td>Web</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/Web/base-js/js/debug/GenerateTestUserSig.js">Github</a></td>
-<td>Web/base-js/js/debug/GenerateTestUserSig.js</td>
-</tr><tr>
-<td>WeChat Mini Program</td>
-<td><a href="https://github.com/tencentyun/TRTCSDK/blob/master/WXMini/TRTCSimpleDemo/debug/GenerateTestUserSig.js">Github</a></td>
-<td>WXMini/TRTCSimpleDemo/debug/GenerateTestUserSig.js</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Web/blob/main/base-js/js/debug/GenerateTestUserSig.js">Github</a></td>
+<td>base-js/js/debug/GenerateTestUserSig.js</td>
 </tr><tr>
 <td>Flutter</td>
-<td><a href="https://github.com/c1avie/trtc_demo/blob/master/lib/debug/GenerateTestUserSig.dart">Github</a></td>
-<td>/lib/debug/GenerateTestUserSig.dart</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Flutter/blob/master/TRTC-API-Example/lib/Debug/GenerateTestUserSig.dart">Github</a></td>
+<td>TRTC-API-Example/lib/Debug/GenerateTestUserSig.dart</td>
 </tr>
 </tbody></table>
+
 We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sample code. Set the three member variables of `SDKAPPID`, `EXPIRETIME`, and `SECRETKEY`, and you will be able to call the `genTestUserSig()` function to obtain the `UserSig` and get started quickly with the SDK.
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 
