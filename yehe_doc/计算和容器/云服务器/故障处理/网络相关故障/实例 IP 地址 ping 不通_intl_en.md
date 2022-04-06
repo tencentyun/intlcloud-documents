@@ -41,7 +41,7 @@ A security group is a virtual firewall that controls the inbound and outbound tr
 ### Checking the operating system configuration
 
 Based on the operating system of the instance, select a method to check the configuration:
-- For Linux operating system, [check Linux kernel parameters and firewall configurations](# CheckLinux).
+- For Linux operating system, [check Linux kernel parameters and firewall configurations](#CheckLinux).
 -For Windows operating system, [check the Windows firewall configuration](#CheckLinux).
 
 <span id="CheckLinux"></span>
