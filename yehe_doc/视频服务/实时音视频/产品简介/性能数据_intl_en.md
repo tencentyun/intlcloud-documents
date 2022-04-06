@@ -58,7 +58,7 @@ The table below lists TRTC’s performance and mean opinion score (MOS) under di
 
 ### Test scheme
 
-- **Scenario**: one-to-one, one-to-two, one-to-three, one-to-four, one-to-eight
+- **Scenario**: one-to-one, one-to-two, one-to-four, one-to-eight
 - **Duration**: 30 min for each scenario
 - **Method**: a Linux robot is used to simulate streaming in one-to-many scenarios. Each device is tested independently.
 
