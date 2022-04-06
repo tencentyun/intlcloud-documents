@@ -36,7 +36,7 @@
 | RI Deduction (Cost)    | Fee deduction by RI based on the component list price                       |
 | Savings Plan Deduction                      | Deduction by SP                                       |
 | Savings Plan Deduction Rate                 | Discount for a component based on the unused SP     |
-| Original Cost (with Savings Plans)         | Fee deduction by SP based on the component list price</br>Original Cost (with Savings Plans) = Fee deduction by SP/SP discount multiplier  |
+| SP Deduction (Cost)        | Fee deduction by SP based on the component list price</br>SP Deduction (Cost) = Fee deduction by SP/SP discount multiplier  |
 | Discount Multiplier | Discount multiplier. `1` indicates no discount, and `0` indicates 100% off. |
 | Blended Discount Multiplier                          | Combination of the official discount, RI discount, and SP discount. If there are no RI and SP discounts, blended discount multiplier equals discount multiplier. </br>Blended Discount Multiplier = Cost after discounts/Original cost |
 | Currency                                    | Currency used for the settlement of a component                                      |
