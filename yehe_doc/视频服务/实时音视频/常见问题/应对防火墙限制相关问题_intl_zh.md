@@ -47,19 +47,3 @@ yun.tim.qq.com
 | 方案二 | 允许客户端通过内网代理服务器访问外网 | 允许 proxy server 访问外网        |
 
 
-
-
-### 微信小程序需要配置哪些域名为白名单？
-
-&lt;trtc-room&gt; 域名白名单：
-
-```
-https://official.opensso.tencent-cloud.com
-https://yun.tim.qq.com
-https://cloud.tencent.com
-https://webim.tim.qq.com
-https://query.tencent-cloud.com
-```
-
-
->!因为腾讯云服务端 IP 地址是动态更新的，并不是固定的一批 IP 地址，所以我们无法提供固定的一组 IP 列表给您。

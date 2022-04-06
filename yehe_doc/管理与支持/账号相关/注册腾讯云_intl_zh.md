@@ -8,7 +8,14 @@
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/228ee9e45e75d270a56efc48d290b443.png)
 
-3. 请正确输入您的卡号信息进行绑卡 。 ![](https://qcloudimg.tencent-cloud.cn/raw/0ee33d34a4fbb1f8c42e092b6f473e37.png)
+3. 请正确输入您的卡号信息进行绑卡 。 
 
-4. 注册成功，您可以开始[登陆控制台](https://intl.cloud.tencent.com/login)体验腾讯云的产品了。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/fd807364118f6e49d48541985ed7576e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0ee33d34a4fbb1f8c42e092b6f473e37.png)
+
+4. 绑卡成功，请点击【继续】完成注册。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/7f6d1ea96add8800c5c36b76565a852d.png)
+
+5. 注册成功，您可以开始[登陆控制台](https://intl.cloud.tencent.com/login)体验腾讯云的产品了。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/fd807364118f6e49d48541985ed7576e.png)

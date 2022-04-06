@@ -7,6 +7,6 @@ Norton Secured Seal, provided by the Secure Site SSL Certificates, is the most r
 - Norton Secured Seal shows up nearly one billion times per day in 170 countries and regions.
 - Expanding online business by gaining customer recognitions: according to an international online consumer study, 90% of respondents said they were likely to continue purchasing online if they saw Norton Secured Seal during the checkout process. In situations where there are other seals or no seal, the percentage is significantly lower.
 - Globally, Norton Secured Seal is displayed next to the trusted web links in search results on more than 40 million desktops with Norton Safe Web.
-- Secure Site's robust PKI infrastructure, including military-grade data centers and disaster recovery features, provides users with unparalleled data protection and availability.
+- Secure Site's robust PKI infrastructure, including financial-grade data centers and disaster recovery features, provides users with unparalleled data protection and availability.
 - This seal is visible proof of your commitment to enforcing PCI compliance when e-commerce sites must verify identity and encrypt transaction communications across its site to protect customer data.
 

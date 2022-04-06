@@ -6,7 +6,7 @@
 
 <span id="Que2"></span>
 ### 云直播播放域名有什么要求？	
-控制台进行域名提交管理前，需对域名进行备案，域名的位数限制为29位，暂不支持大写的域名，请输入不超过29位的小写域名地址，详情可查看[域名管理](https://intl.cloud.tencent.com/document/product/267/35970)。
+控制台进行域名提交管理前，需对域名进行备案，域名的位数限制为45位，暂不支持大写的域名，请输入不超过45位的小写域名地址，详情可查看[域名管理](https://intl.cloud.tencent.com/document/product/267/35970)。
 
 <span id="Que3"></span>
 

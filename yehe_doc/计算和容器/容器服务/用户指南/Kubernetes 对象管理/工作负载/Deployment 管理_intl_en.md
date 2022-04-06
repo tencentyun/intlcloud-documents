@@ -150,7 +150,7 @@ Run the following command to perform a rolling update on the specified resources
 ```
 kubectl rolling-update [NAME] -f FILE
 ```
-For more information, refer to [Rolling Update](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/).
+
 
 ### Using kubectl to rollback a Deployment
 

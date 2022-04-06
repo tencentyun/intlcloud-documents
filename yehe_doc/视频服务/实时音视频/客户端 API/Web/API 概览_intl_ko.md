@@ -415,7 +415,7 @@ LocalStream 로컬 오디오/비디오 스트림은, [createStream](https://web.
 
 ### RemoteStream
 
-[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-Event.html#.STREAM_ADDED)수신을 통해 얻은 원격 오디오/비디오 스트림은 [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html)의 하위 클래스입니다.
+[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED)수신을 통해 얻은 원격 오디오/비디오 스트림은 [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html)의 하위 클래스입니다.
 
 | API  | 설명              |
 |-----------------|-----------|

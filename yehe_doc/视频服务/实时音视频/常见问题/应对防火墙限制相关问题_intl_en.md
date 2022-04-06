@@ -5,7 +5,7 @@ Allowlist the following ports:
 |  TRTC SDK (Native) | Ports |
 |---------|---------|
 | TCP port | 443, 20166 |
-| UDP port | 8000¡¢8080¡¢8001¡¢8002¡¢8003¡¢8004¡¢8005¡¢8006¡¢8007¡¢8008¡¢8009¡¢16285¡¢9000 |
+| UDP port | 8000ã€8080ã€8001ã€8002ã€8003ã€8004ã€8005ã€8006ã€8007ã€8008ã€8009ã€16285ã€9000 |
 
 Allowlist the following domain names:
 
@@ -45,21 +45,3 @@ You can use the Nginx + Coturn solutions.
 | :----- | :----------------------------------- | :-------------------------------- |
 | Solution 1 | Allow clients to access specific proxy servers in the public network      | Allow clients to access proxy servers in the public network |
 | Solution 2 | Allow clients to access the public network via proxy servers in their private network | Allow proxy servers to access the public network        |
-
-
-
-
-### What domain names should I add to the allowlist of my firewall for WeChat Mini Program?
-
-Allowlist the following &lt;trtc-room&gt; domain names:
-
-```
-https://official.opensso.tencent-cloud.com
-https://yun.tim.qq.com
-https://cloud.tencent.com
-https://webim.tim.qq.com
-https://query.tencent-cloud.com
-```
-
-
->!Tencent Cloud updates its server IP addresses dynamically and therefore cannot offer you a list of fixed IP addresses.

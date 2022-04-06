@@ -151,7 +151,6 @@ Deploymentの他のパラメータを変更せず、ビジネスが更新され�
 ```
 kubectl rolling-update [NAME] -f FILE
 ```
-その他のローリング更新は、[ローリング更新手順](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/)をご参照ください。
 
 ### KubectlによるDeploymentのロールバック
 

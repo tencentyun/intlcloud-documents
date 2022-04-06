@@ -1,14 +1,40 @@
-This document describes how to upgrade instance deployment from single-AZ to multi-AZ in the [TencentDB for Redis console](https://intl.cloud.tencent.com/document/product/239/39812).
+## Overview
 
-## Step 1. Upgrade the Redis version to support multi-AZ deployment
-1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance management page.
-2. On the **Instance Details** page, click **Upgrade to Support Multi-AZ Deployment** next to **AZ**.
->?The upgrade will migrate only the metadata but not the business data. Usually, the upgrade can be completed in 3 minutes.
->
+A multi-AZ is created by combining multiple AZs in the same region. A multi-AZ deployed cluster has better disaster recovery capabilities than a single-AZ deployed cluster and can protect your database instances from IDC-level failure or AZ outages. An existing single-AZ deployed cluster can be automatically upgraded to a multi-AZ one through online data migration without business interruptions. 
+
+## Billing
+
+ The multi-AZ feature is currently available free of charge; that is, a single-AZ deployed cluster can be upgraded to a multi-AZ one for free.
+
+## Use Limits
+
+This feature is currently unavailable in Shenzhen Finance, Jakarta, and Mumbai regions and will be available in more regions and AZs in the future.
+
+## Notes
+
+- If [Reading Local Nodes Only](https://intl.cloud.tencent.com/document/product/239/41049) is not required, upgrading to multi-AZ deployment will involve metadata migration only without affecting the service, which generally take less than three minutes to complete.
+- If [Reading Local Nodes Only](https://intl.cloud.tencent.com/document/product/239/41049) is required, you will need to upgrade the proxy version and Redis kernel minor version, which will involve data migration and may take hours to complete. There will be one or several momentary disconnections within three minutes after the upgrade is completed, so make sure that your business has an automatic reconnection mechanism.
+
+## Prerequisites
+
+- The cluster region has at least two AZs.
+- The database is on v4.0 or later.
+- The instance is in **Running** status.
+
+## Directions
+
+1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis).
+2. Above the **instance list** on the right, select the region.
+3. In the instance list, find the target instance.
+4. Click the **instance ID** of the target instance in blue to enter the **Instance Details** page.
+5. In the **Basic Info** section on the **Instance Details** page, click **Upgrade to Support Multi-AZ Deployment** after **AZ**.
 ![](https://main.qcloudimg.com/raw/1fb0cc13e207c84446d64a3a725c5c1c.png)
+6. In the **Upgrade to Support Multi-AZ Deployment** window, learn more about the impact of upgrading to multi-AZ deployment, confirm whether to support [Reading Local Nodes Only](https://intl.cloud.tencent.com/document/product/239/41049), and click **OK**.
+7. The **Instance Status** in **Basic Info** becomes **Upgrading to support multi-AZ deployment**. Wait for the status to become **Running**.
 
-## Step 2. Add replicas to replica AZs
-1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), locate the desired instance in the instance list, and select **Configuration Modification** > **Add Replica** in the **Operation** column.
-2. In the pop-up window, specify replica AZs, and deploy the master node and replica nodes to different AZs.
+## Related APIs
 
-![](https://main.qcloudimg.com/raw/d568fb5da499a4825a1e8fb516ea48db.png)
+| API                                                 | Description |
+| :----------------------------------------------------------- | :--------------- |
+| [UpgradeVersionToMultiAvailabilityZones](https://intl.cloud.tencent.com/document/product/239/40162) | Upgrades instance to support multi-AZ deployment |
+

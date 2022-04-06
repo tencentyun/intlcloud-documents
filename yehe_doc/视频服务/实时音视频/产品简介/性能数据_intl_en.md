@@ -14,6 +14,7 @@ Video call, interactive live streaming, and audio call
 </tr><tr>
 <td>Frame rate</td><td>15</td>
 </tr></table>
+
 - **Interactive live streaming:**
 <table><tr><th>Parameter</th><th>Value</th></tr>
 <tr><td>Resolution</td><td>720 x 1280</td></tr>
@@ -58,7 +59,7 @@ The table below lists TRTC’s performance and mean opinion score (MOS) under di
 
 ### Test scheme
 
-- **Scenario**: one-to-one, one-to-two, one-to-three, one-to-four, one-to-eight
+- **Scenario**: one-to-one, one-to-two, one-to-four, one-to-eight
 - **Duration**: 30 min for each scenario
 - **Method**: a Linux robot is used to simulate streaming in one-to-many scenarios. Each device is tested independently.
 

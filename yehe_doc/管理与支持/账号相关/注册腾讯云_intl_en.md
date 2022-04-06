@@ -8,7 +8,14 @@
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/228ee9e45e75d270a56efc48d290b443.png)
 
-3. Bind your card. ![](https://qcloudimg.tencent-cloud.cn/raw/0ee33d34a4fbb1f8c42e092b6f473e37.png)
+3. Bind your card. 
 
-4. If the sign-up is successful, you can log in to the [console](https://intl.cloud.tencent.com/login) with the account and start exploring Tencent Cloud products.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/fd807364118f6e49d48541985ed7576e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0ee33d34a4fbb1f8c42e092b6f473e37.png)
+
+4.  Card bound successfully. Click **Continue** to complete the sign-up. 
+
+![](https://qcloudimg.tencent-cloud.cn/raw/7f6d1ea96add8800c5c36b76565a852d.png)
+
+5. If the sign-up is successful, you can log in to the [console](https://intl.cloud.tencent.com/login) with the account and start exploring Tencent Cloud products.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/fd807364118f6e49d48541985ed7576e.png)
