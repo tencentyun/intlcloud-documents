@@ -1,10 +1,10 @@
-## Overview
+## Feature Description
 
 This API is used to write an access control list (ACL) for a bucket. You can set the ACL information through the `x-cos-acl` and `x-cos-grant-*` request headers or the request body in XML format.
 >!
 >- You can set the ACL information either through request headers or through the request body.
 > - `PUT Bucket acl` is an overwriting operation. The new ACL will overwrite the old one.
->- You can only grant permissions to Tencent Cloud CAM root accounts or anonymous users. To grant permissions to sub-accounts or user groups, please use the [PUT Bucket policy](https://intl.cloud.tencent.com/document/product/436/8282) API. For more information about ACL, please see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
+>- With this API, you can grant permissions to Tencent Cloud CAM root accounts, anonymous users, and sub-users. To grant permissions to user groups, see [Associating/Unassociating Policy with/from User Group](https://intl.cloud.tencent.com/document/product/598/32666). For more information about ACL, see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
 > - To call this API, you need to have permission to write ACL to the bucket.
 >
 
@@ -12,13 +12,13 @@ This API is used to write an access control list (ACL) for a bucket. You can set
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketAcl&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can use it to query the request and response of each API call as well as generate sample code for calls.
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@ This API is used to write an access control list (ACL) for a bucket. You can set
 
 ## Request
 
-#### Sample requests
+#### Sample request
 
 **Sample 1**
 ```shell
@@ -52,8 +52,8 @@ Authorization: Auth String
 [Request Body]
 ```
 >? 
-> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information)
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request parameters
@@ -64,8 +64,8 @@ This API has no request parameter.
 
 In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Header | Description | Type | Required |
-|---|---|---|---|
+| Parameter | Description | Type | Required |
+---|---|---|---
 | x-cos-acl | Defines the ACL attribute of the bucket. For the enumerated values such as `private` (default) and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E9.A2.84.E8.AE.BE.E7.9A.84-acl). | Enum | No |
 | x-cos-grant-read | Grants a user permission to read the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-write | Grants a user permission to write to the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
@@ -102,39 +102,39 @@ The request body contains the **application/xml** data that includes information
 The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|---|---|---|---|--- |
+---|---|---|---|---
 | AccessControlPolicy | None | All request information about the `PUT Bucket acl` operation |Container| Yes |
 
 **Content of `AccessControlPolicy`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|---|---|---|---|--- |
+---|---|---|---|---
 | Owner | AccessControlPolicy | Information about the bucket owner |Container| Yes |
 | AccessControlList | AccessControlPolicy | Information about the grantee and permissions | Container | Yes |
 
 **Content of `Owner`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|---|---|---|---|--- |
+---|---|---|---|---
 | ID | AccessControlPolicy.Owner | Complete ID of the bucket owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]` <br> Example: `qcs::cam::uin/100000000001:uin/100000000001` | string | Yes |
 
 **Content of `AccessControlList`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|--|---|---|---|--- |
+---|---|---|---|---
 | Grant | AccessControlPolicy.AccessControlList | A single permission. Each `AccessControlList` supports up to 100 `Grant` nodes. | Container | Yes |
 
 **Content of `AccessControlList.Grant`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|---|---|---|---|--- |
+---|---|---|---|---
 | Grantee | AccessControlPolicy.AccessControlList.Grant | Grantee information. `xsi:type` can be set to `Group` or `CanonicalUser`. If it’s set to `Group`, the child node can only include `URI`. If it’s set to `CanonicalUser`, the child node can only include `ID`. | Container | Yes |
 | Permission | AccessControlPolicy.AccessControlList.Grant | Permission granted. For the enumerated values such as `WRITE` and `FULL_CONTROL`, please see <b>Actions on buckets</b> in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E6.93.8D.E4.BD.9C-permission) | Enum | Yes |
 
 **Content of `AccessControlList.Grant.Grantee`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-|---|---|---|---|--- |
+---|---|---|---|---
 | URI | AccessControlPolicy.AccessControlList.Grant.Grantee | Preset user group. For more information, please see <b>Preset user group</b> in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E8.BA.AB.E4.BB.BD-grantee).<br>Example: `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers` | string | Required if `xsi:type` of the `Grantee` is set to `Group` |
 | ID | AccessControlPolicy.AccessControlList.Grant.Grantee | Compete ID of the grantee in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`<br>Example: `qcs::cam::uin/100000000001:uin/100000000001` | string | Required if `xsi:type` of the grantee is set to `CanonicalUser` |
 
@@ -153,7 +153,7 @@ The response body of this API is empty.
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 
-## Samples
+## Examples
 
 #### Sample 1: configuring ACL through request headers
 

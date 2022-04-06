@@ -148,7 +148,7 @@ For the detailed procedure, see the following sample code:
 
 // Getting the signature: Here you can see how to get the temporary key and calculate the signature
 // You can also customize the signature calculation process
-- (void) signatureWithFields:(QCloudSignatureFields*)fileds
+- (void) signatureWithFields:(QCloudSignatureFields*)fields
                      request:(QCloudBizHTTPRequest*)request
                   urlRequest:(NSMutableURLRequest*)urlRequst
                    compelete:(QCloudHTTPAuthentationContinueBlock)continueBlock
@@ -158,10 +158,10 @@ For the detailed procedure, see the following sample code:
     QCloudCredential* credential = [QCloudCredential new];
 
     // Temporary key SecretId 
-    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretID = @"SECRETID";
     // Temporary key SecretKey
-    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
     // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
@@ -173,6 +173,7 @@ For the detailed procedure, see the following sample code:
   
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
         initWithCredential:credential];
+    // Note: Do not perform the copy or mutableCopy operation on `urlRequst`
     QCloudSignature *signature = [creator signatureForData:urlRequst];
     continueBlock(signature, nil);
 }
@@ -226,10 +227,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 
         let credential = QCloudCredential.init();
         // Temporary key SecretId 
-        // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+        // Replace secret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretID = "SECRETID";
         // Temporary key SecretKey
-        // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+        // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // Temporary key token
         // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
@@ -240,6 +241,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         credential.expirationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
 
         let creator = QCloudAuthentationV5Creator.init(credential: credential);
+        // Note: Do not perform the copy or mutableCopy operation on `urlRequst`
         let signature = creator?.signature(forData: urlRequst);
         continueBlock(signature,nil);
         
@@ -313,10 +315,10 @@ The following is the sample code:
 
     QCloudCredential* credential = [QCloudCredential new];
     // Temporary key SecretId 
-    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretID = @"SECRETID";
     // Temporary key SecretKey
-    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY";
     // Temporary key token
     // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
@@ -333,16 +335,17 @@ The following is the sample code:
 
 // Getting the signature: Here you can see how to get the temporary key and calculate the signature
 // You can also customize the signature calculation process
-- (void) signatureWithFields:(QCloudSignatureFields*)fileds
+- (void) signatureWithFields:(QCloudSignatureFields*)fields
                      request:(QCloudBizHTTPRequest*)request
                   urlRequest:(NSMutableURLRequest*)urlRequst
                    compelete:(QCloudHTTPAuthentationContinueBlock)continueBlock
 {
     [self.credentialFenceQueue performAction:^(QCloudAuthentationCreator *creator, 
         NSError *error) {
-        if (error) {
+        if (error){
             continueBlock(nil, error);
         } else {
+            // Note: Do not perform the copy or mutableCopy operation on `urlRequst`
             QCloudSignature* signature =  [creator signatureForData:urlRequst];
             continueBlock(signature, nil);
         }
@@ -401,10 +404,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 
         let credential = QCloudCredential.init();
         // Temporary key SecretId 
-        // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+        // Replace secret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretID = "SECRETID";
         // Temporary key SecretKey
-        // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+        // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
         credential.secretKey = "SECRETKEY";
         // Temporary key token
         // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
@@ -428,6 +431,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
             if error != nil {
                 continueBlock(nil,error!);
             }else{
+                // Note: Do not perform the copy or mutableCopy operation on `urlRequst`
                 let signature = creator?.signature(forData: urlRequst);
                 continueBlock(signature,nil);
             }
@@ -457,7 +461,7 @@ When using a permanent key, you can choose not to implement the `QCloudCredentai
 **Objective-C**
 
 ```objective-c
-- (void) signatureWithFields:(QCloudSignatureFields*)fileds
+- (void) signatureWithFields:(QCloudSignatureFields*)fields
                      request:(QCloudBizHTTPRequest*)request
                   urlRequest:(NSMutableURLRequest*)urlRequst
                    compelete:(QCloudHTTPAuthentationContinueBlock)continueBlock
@@ -466,14 +470,15 @@ When using a permanent key, you can choose not to implement the `QCloudCredentai
     QCloudCredential* credential = [QCloudCredential new];
     
     // secretID of the permanent key 
-    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretID = @"SECRETID";
     // SecretKey of the permanent key
-    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = @"SECRETKEY"; 
     // Use the permanent key to calculate the signature
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
         initWithCredential:credential];
+    // Note: Do not perform the copy or mutableCopy operation on `urlRequst`
     QCloudSignature* signature = [creator signatureForData:urlRequst];
     continueBlock(signature, nil);
 }
@@ -489,14 +494,15 @@ func signature(with fileds: QCloudSignatureFields!,
     let credential = QCloudCredential.init();
     
     // secretID of the permanent key 
-    // Replace sercret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_id with the actual SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretID = "SECRETID";
     // SecretKey of the permanent key
-    // Replace sercret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+    // Replace secret_key with the actual SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
     credential.secretKey = "SECRETKEY"; 
 
     // Use the permanent key to calculate the signature
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
+    // Note: Do not perform the copy or mutableCopy operation on `urlRequst`
     let signature = auth?.signature(forData: urlRequst)
     continueBlock(signature,nil);
 }
@@ -509,7 +515,7 @@ When the signature is generated on the backend, you can choose not to implement 
 **Objective-C**
 
 ```objective-c
-- (void) signatureWithFields:(QCloudSignatureFields*)fileds
+- (void) signatureWithFields:(QCloudSignatureFields*)fields
                      request:(QCloudBizHTTPRequest*)request
                   urlRequest:(NSMutableURLRequest*)urlRequst
                    compelete:(QCloudHTTPAuthentationContinueBlock)continueBlock
@@ -540,7 +546,7 @@ func signature(with fileds: QCloudSignatureFields!,
 
 ## Step 3. Access COS
 
-### Upload an object
+### Uploading an object
 
 The SDK allows you to upload local files and binary data in NSData format. The following uses local file upload as an example:
 
@@ -552,7 +558,7 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
 // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 put.bucket = @"examplebucket-1250000000";
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
 // Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body =  url;
@@ -584,7 +590,7 @@ put.body =  url;
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
 // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 put.bucket = "examplebucket-1250000000";
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = "exampleobject";
 // Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
@@ -621,7 +627,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
 >- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-### Download an object
+### Downloading an object
 
 **Objective-C**
 
@@ -630,7 +636,7 @@ QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest
     
 // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // Set the download URL. Once set, the file will be downloaded to the specified path

@@ -15,7 +15,7 @@
 #### Environmental dependencies
 
 1. This SDK is only applicable to WeChat Mini Programs.
-2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region information](https://intl.cloud.tencent.com/document/product/436/6224).
+2. Log in to the [COS console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region information](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
 >? 
@@ -172,7 +172,7 @@ var cos = new COS({
 >? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 >
 
-- Method 3 (not recommended): the frontend needs to get a signature through getAuthorization before each request, and the backend uses a permanent or temporary key to calculate the signature and returns it to the frontend. This method makes it difficult to control the permission to multipart uploads and thus is not recommended.
+- Method 3 (not recommended). The frontend needs to get a signature through `getAuthorization` before each request, and the backend uses a fixed or temporary key to calculate the signature and returns it to the frontend. This method makes it difficult to control permissions for multipart upload and thus is not recommended.
 
 ```js
 var cos = new COS({
@@ -196,7 +196,7 @@ var cos = new COS({
 });
 ```
 
-- Method 4 (not recommended): the frontend uses a permanent key to calculate the signature. This method can be used for frontend debugging. If you use this method, be sure to avoid key disclosure.
+- Method 4 (not recommended): The frontend uses a permanent key to calculate the signature. This method can be used for frontend debugging. If you use this method, be sure to avoid key disclosure.
 
 ```js
 // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
@@ -223,11 +223,12 @@ var cos = new COS({
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: 1000 | Number | No |
 | Protocol | Protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
 | ServiceDomain | The request domain name when `getService` is called, such as `service.cos.myqcloud.com` | String | No |
-| Domain | The custom request domain name used to call a bucket or object API. You can use a template such as `"{Bucket}.cos.{Region}.myqcloud.com" ` which will use the bucket and region information passed in the replacement parameters when an API is called. | String | No |
+| Domain | The custom request domain name used to call a bucket or object API. You can use a template, such as `"{Bucket}.cos.{Region}.myqcloud.com"` which will use the bucket and region passed in the replacement parameters when an API is called. | String | No |
 | UploadQueueSize | The maximum size of the upload queue. Excess tasks will be cleared if their status is not waiting, checking, or uploading. Default value: 10000 | Number | No |
 | ForcePathStyle | Forces the use of a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: false | Boolean | No |
 | UploadCheckContentMd5  | Forces the verification of Content-MD5 for file uploads, which calculates the MD5 checksum of the file request body and places it in the Content-MD5 field of the header. Default value: false | Boolean | No |
 | getAuthorization | Callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter is required. <br>**Note: This callback method is passed in during instance initialization, and is only executed to obtain the signature when the instance calls APIs. ** | Function | No |
+| UseAccelerate          | Whether to enable a global acceleration endpoint. Default value: `false`. If you set the value to `true`, you need to enable global acceleration for the bucket. For more information, see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406). | Boolean | No   |
 
 #### getAuthorization Callback function description (Format 1)
 
@@ -289,6 +290,38 @@ There are three ways to get the authentication credentials for your instance by 
 2. During instantiation, pass in the `getAuthorization` callback function, and each time a signature is required, it will be calculated and returned to the instance through this callback.
 3. During instantiation, pass in the `getSTS` callback, and each time a temporary key is required, it will be returned to the instance for signature calculation within the instance during each request.
 
+### Tips
+
+In most cases, you only need to create a COS SDK instance, and use it directly where SDK methods need to be called.  
+
+```js
+var cos = new COS({
+  ....
+});
+
+/* Self-encapsulated upload method */
+function myUpload() {
+  // COS SDK instances do not need to be created in each method
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.putObject({
+    ....
+  });
+}
+
+/* Self-encapsulated deletion method */
+function myDelete() {
+  // COS SDK instances do not need to be created in each method
+  // var cos = new COS({
+  //   ...
+  // });
+  cos.deleteObject({
+    ....
+  });
+}
+```
+
 Below are some examples of common APIs. For more detailed initialization methods, see the examples in the [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/).
 
 ### Creating a bucket
@@ -341,7 +374,7 @@ wx.chooseImage({
 });
 ```
 
-### Query objects
+### Querying objects
 
 ```js
 cos.getBucket({
@@ -353,7 +386,7 @@ cos.getBucket({
 });
 ```
 
-### Download an object
+### Downloading an object
 
 >! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, please see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31711).
 >
@@ -368,7 +401,7 @@ cos.getObject({
 });
 ```
 
-### Delete an object
+### Deleting an object
 
 ```js
 cos.deleteObject({

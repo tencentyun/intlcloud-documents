@@ -8,7 +8,7 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 ## Advanced APIs (Recommended)
 
-### Download an object
+### Downloading an object
 
 #### Description
 
@@ -24,17 +24,43 @@ func (s *ObjectService) Download(ctx context.Context, name string, filepath stri
 
 [//]: # (.cssg-snippet-download-file)
 ```go
-key := "exampleobject"
-file := "localfile"
+package main
 
-opt := &cos.MultiDownloadOptions{
-	ThreadPoolSize: 5,
-}
-_, err := c.Object.Download(
-	context.Background(), key, file, opt,
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
 )
-if err != nil {
-    panic(err)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+
+    key := "exampleobject"
+    file := "localfile"
+
+    opt := &cos.MultiDownloadOptions{
+        ThreadPoolSize: 5,
+    }
+    _, err := client.Object.Download(
+        context.Background(), key, file, opt,
+    )
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -55,7 +81,7 @@ type MultiDownloadOptions struct {
 | name | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | String | Yes |
 | filepath | Name of the local file | String | Yes |
 | opt            | Object download parameter             | Struct | No |
-| Opt | Request parameter. For more information, please see [ObjectGetOptions](#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1). | Struct | No |
+| Opt | Request parameter. For more information, please see [ObjectGetOptions](#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A12). | Struct | No |
 | PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. In the new version, the default size is 16 (MB). | int64 | No |
 | ThreadPoolSize | Size of the thread pool. Default value: `1` | Int | No |
 | CheckPoint     | Whether to enable checkpoint restart. Default value: `false`  | Bool   | No   |
@@ -70,7 +96,7 @@ type MultiDownloadOptions struct {
 
 ## Simple Operations
 
-### Download an object
+### Downloading an object
 
 #### Description
 
@@ -88,24 +114,51 @@ func (s *ObjectService) GetToFile(ctx context.Context, key, localfile string, op
 
 [//]: # (.cssg-snippet-get-object)
 ```go
-key := "exampleobject"
-opt := &cos.ObjectGetOptions{
-    ResponseContentType: "text/html",
-    Range:               "bytes=0-3",
-}
-// `opt` is optional. It can be set to `nil` unless otherwise specified.
-// 1. Obtain the object from the response body
-resp, err := client.Object.Get(context.Background(), key, opt)
-if err != nil {
-    panic(err)
-}
-ioutil.ReadAll(resp.Body)
-resp.Body.Close()
+package main
 
-// 2. Download the object to the local file system
-_, err = client.Object.GetToFile(context.Background(), key, "example.txt", nil)
-if err != nil {
-    panic(err)
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "io/ioutil"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+
+    key := "exampleobject"
+    opt := &cos.ObjectGetOptions{
+        ResponseContentType: "text/html",
+        Range:               "bytes=0-3", // Download the first 4 bytes of data
+    }
+    // `opt` is optional. It can be set to `nil` unless otherwise specified.
+    // 1. Obtain the object from the response body
+    resp, err := client.Object.Get(context.Background(), key, opt)
+    if err != nil {
+        panic(err)
+    }
+    ioutil.ReadAll(resp.Body)
+    resp.Body.Close()
+
+    // 2. Download the object to the local file system
+    _, err = client.Object.GetToFile(context.Background(), key, "example.txt", nil)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 #### Sample 2: batch downloading files (downloading a COS directory)
@@ -174,13 +227,13 @@ func main() {
             if _, err := os.Stat(path.Dir(localfile)); err != nil && os.IsNotExist(err) {
                 os.MkdirAll(path.Dir(localfile), os.ModePerm)
             }
-            // The directory does not need to be downloaded
+            // Keys (directories and files) ended with a slash (/) do not need to be downloaded
             if strings.HasSuffix(localfile, "/") {
                 continue
             }
             keysCh <- []string{key, localfile}
         }
-        marker = v.NextMarker
+        marker, _ = cos.DecodeURIComponent(v.NextMarker) // EncodingType: "url". Perform URL decoding on NextMarker first.
         isTruncated = v.IsTruncated
     }
     close(keysCh)
@@ -191,16 +244,42 @@ func main() {
 #### Sample 3: limiting single-URL speed
 ```go
 
-key := "exampleobject"
-opt := &cos.ObjectGetOptions{
-    // The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
-    XCosTrafficLimit: 819200,
-}
-// `opt` is optional. It can be set to `nil` unless otherwise specified.
-// 1. Obtain the object from the response body
-_, err := client.Object.GetToFile(context.Background(), key, "example.txt", opt)
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "context"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "net/http"
+    "net/url"
+    "os"
+)
+
+func main() {
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
+
+    key := "exampleobject"
+    opt := &cos.ObjectGetOptions{
+        // The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
+        XCosTrafficLimit: 819200,
+    }
+    // `opt` is optional. It can be set to `nil` unless otherwise specified.
+    // 1. Obtain the object from the response body
+    _, err := client.Object.GetToFile(context.Background(), key, "example.txt", opt)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -231,22 +310,45 @@ type ProgressListener interface {
 }
 ```
 ```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "github.com/tencentyun/cos-go-sdk-v5"
+    "io/ioutil"
+    "net/http"
+    "net/url"
+    "os"
+)
+
 type SelfListener struct {
 }
+
 // A custom progress callback, which requires the ProgressChangedCallback method to be implemented.
 func (l *SelfListener) ProgressChangedCallback(event *cos.ProgressEvent) {
     switch event.EventType {
     case cos.ProgressDataEvent:
         fmt.Printf("\r[ConsumedBytes/TotalBytes: %d/%d, %d%%]",
-                    event.ConsumedBytes, event.TotalBytes, event.ConsumedBytes*100/event.TotalBytes)
+            event.ConsumedBytes, event.TotalBytes, event.ConsumedBytes*100/event.TotalBytes)
     case cos.ProgressFailedEvent:
         fmt.Printf("\nTransfer Failed: %v", event.Err)
     }
 }
 func main() {
-    // Initialize
-    ... 
-
+    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
+    b := &cos.BaseURL{BucketURL: u}
+    client := cos.NewClient(b, &http.Client{
+        Transport: &cos.AuthorizationTransport{
+            // Get the key from environment variables
+            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETKEY` refers to the user's SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+            SecretKey: os.Getenv("SECRETKEY"),
+        },
+    })
     key := "exampleobject"
     opt := &cos.ObjectGetOptions{
         ResponseContentType: "text/html",
@@ -270,7 +372,6 @@ func main() {
         panic(err)
     }
 }
-
 ```
 
 #### Parameter description

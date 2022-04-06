@@ -13,7 +13,7 @@
 
 #### Environmental dependencies
 
-1. The SDK requires your runtime environment to include Node.js (v6 or later) and NPM.
+1. The SDK requires your runtime environment to include Node.js (v6 or later) and npm.
 2. Log in to the [COS console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
@@ -110,6 +110,7 @@ Below are some examples of common APIs. For more detailed initialization methods
 | StrictSsl              | Strict verification of the HTTPS certificate. Default value: `true` | Boolean | No   |
 | Proxy | Uses an HTTP proxy when making requests, such as: `http://127.0.0.1:8080` | String | No |
 | getAuthorization | Callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter is required | Function | No |
+| UseAccelerate          | Whether to enable a global acceleration endpoint. Default value: `false`. If you set the value to `true`, you need to enable global acceleration for the bucket. For more information, see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406). | Boolean | No   |
 
 
 #### getAuthorization Callback function description (Format 1)
