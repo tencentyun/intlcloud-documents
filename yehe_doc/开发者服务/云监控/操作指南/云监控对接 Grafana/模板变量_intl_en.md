@@ -1,7 +1,7 @@
 ## Overview
 [Templates and variables](https://grafana.com/docs/reference/templating/) are dashboard optimization features offered by Grafana to create highly reusable and interactive dashboards. They allow Grafana to get different metrics from data sources and provide a way to dynamically modify them without modifying dashboards. The Tencent Cloud Monitor App currently provides variables such as region, CVM instance, and TencentDB for MySQL instance.
 
->!All instance queries allow customizing drop-down list values by the `display` field, for example: `Namespace=QCE/REDIS&Action=DescribeInstances&Region=$region&display=${InstanceId}-${InstanceName}`. If `display` and `InstanceAlias` appear at the same time, the drop-down list will only show the values of `display`.
+>!All instance queries allow customizing drop-down list values by the `display` field, for example: `Namespace=QCE/CVM&Action=DescribeInstances&Region=$region&display=${InstanceId}-${InstanceName}`. If `display` and `InstanceAlias` appear at the same time, the drop-down list will only show the values of `display`.
 
 >!The `payload` parameter has been added since v2.1.0, which supports filtering instances in template variables; for example:
 `Namespace=QCE/CVM&Action=DescribeInstances&Region=ap-guangzhou&InstanceAlias=InstanceId&payload={"Filters":[{"Name":"zone","Values":["ap-guangzhou-1"]}]}` can filter instances in the `Guangzhou Zone 1` AZ. Note: the `payload` parameter is a strict JSON string.
