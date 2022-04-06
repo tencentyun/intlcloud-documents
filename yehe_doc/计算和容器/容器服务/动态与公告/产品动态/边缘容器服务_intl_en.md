@@ -1,3 +1,20 @@
+## February 2022
+<table >
+<tr>
+<th style="width:15%">Update</th>	
+<th style="width:50%">Description</th> 
+<th style="width:15%">Date</th>	
+<th style="width:15%">Related Documents</th> 
+</tr>
+<tr>
+  <td>Edge cluster supports edge node-ENI binding</td><td style="word-wrap:break-word;word-break:break-all;">Edge cluster supports binding ENI to Pods on CVM edge nodes to implement a high-availability network scheme.</td><td>2021-02-10</td><td>-</a></td>
+</tr>  
+<tr>
+  <td>Edge cluster supports remote login to edge nodes</td><td style="word-wrap:break-word;word-break:break-all;">Edge cluster supports remote login to edge nodes in both the public and private networks.</td><td>2021-02-10</td><td>-</a></td>
+</tr>
+</table>
+
+
 ## November 2021
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -50,7 +67,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Adds support for the OPS management of edge cluster</td><td>The OPS management of edge cluster is supported. Users can configure, overview, and search the log, audit, and event information.</td><td>2021-01-30</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/38428">Health Check</a></td>
+    <td>Adds support for the Ops management of edge cluster</td><td>The Ops management of edge cluster is supported. Users can configure, overview, and search the log, audit, and event information.</td><td>2021-01-30</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/38428">Health Check</a></td>
 </tr>
 <tr>
     <td>Adds support for using TCR image repository.</td><td>User can select TCR image repository when creating edge applications and workloads.</td><td>2021-01-19</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36838">Using a Container Image in a TCR Enterprise Instance to Create a Workload</a></td>

@@ -1,3 +1,20 @@
+## 2022年02月
+<table >
+<tr>
+<th style="width:15%">动态名称</th>	
+<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	
+<th style="width:15%">相关文档</th> 
+</tr>
+<tr>
+  <td>边缘集群支持边缘节点绑定 ENI</td><td style="word-wrap:break-word;word-break:break-all;">边缘集群支持在 CVM 边缘节点的 pod 中绑定 ENI 独立网卡，实现高可用网络方案</td><td>2021-02-10</td><td>-</a></td>
+</tr>  
+<tr>
+  <td>边缘集群支持边缘节点远程登录</td><td style="word-wrap:break-word;word-break:break-all;">边缘集群支持远程登录边缘节点，边缘节点可以是公有云上的节点或者本地的内网节点</td><td>2021-02-10</td><td>-</a></td>
+</tr>
+</table>
+
+
 ## 2021年11月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
