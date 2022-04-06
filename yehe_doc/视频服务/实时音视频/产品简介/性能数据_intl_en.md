@@ -14,6 +14,7 @@ Video call, interactive live streaming, and audio call
 </tr><tr>
 <td>Frame rate</td><td>15</td>
 </tr></table>
+
 - **Interactive live streaming:**
 <table><tr><th>Parameter</th><th>Value</th></tr>
 <tr><td>Resolution</td><td>720 x 1280</td></tr>
