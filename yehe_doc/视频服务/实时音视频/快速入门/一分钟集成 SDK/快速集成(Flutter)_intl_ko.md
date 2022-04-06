@@ -1,12 +1,14 @@
 본 문서에서는 Tencent Cloud TRTC SDK(Flutter)를 귀하의 프로젝트에 빠르게 통합할 수 있는 방법에 대해 소개합니다. 다음 절차에 따라 설정하면 SDK 통합 작업을 완료할 수 있습니다.
 
+>! 현재 Flutter SDK는 Android와 iOS만 지원합니다.
+
 ## 환경 요건
-- Flutter 2.0 이상 버전
+- Flutter 2.0 이상 버전.
 - Android 개발:
-  - Android Studio 3.5 이상 버전
-  - 앱에서 Android 4.1 이상 버전의 디바이스 요구됨
+  - Android Studio 3.5 이상 버전.
+  - Android 4.1 이상 버전의 디바이스.
 - iOS 개발:
-  - Xcode 11.0 이상 버전
+  - Xcode 11.0 이상 버전.
   - 귀하의 프로젝트에 유효한 개발자 서명이 설정되어 있는지 확인하십시오.
 
 ## SDK 통합
@@ -17,8 +19,9 @@ Flutter SDK를 [pub 라이브러리](https://pub.dev/packages/tencent_trtc_cloud
 dependencies:
   tencent_trtc_cloud: 최신 버전 넘버
 ```
-2. **카메라**와**마이크**의 권한을 활성화하면, 음성 통화 기능을 활성화할 수 있습니다.
-#### iOS
+2. **카메라**와 **마이크**의 권한을 활성화하면, 음성 통화 기능을 활성화할 수 있습니다.
+
+### iOS
 1. 'Info.plist'에 카메라와 마이크에 대한 권한을 추가해 신청해야 합니다.
 ```
 <key>NSCameraUsageDescription</key>
@@ -28,15 +31,14 @@ dependencies:
 ```
 2. 필드 'io.flutter.embedded_views_preview'를 추가하고 설정값을 YES로 합니다.
 
-#### Android
+### Android
 1. '/android/app/src/main/AndroidManifest.xml' 파일을 엽니다.
 2. 'xmlns:tools="http://schemas.android.com/tools"'를 manifest에 추가합니다.
-3. 'tools:replace="android:label"'을 application에 추가합니다.
+3. `tools:replace="android:label"`을 application에 추가합니다.
 >? 이 단계를 수행하지 않으면 [Android Manifest merge failed 컴파일 실패](https://intl.cloud.tencent.com/zh/document/product/647/39242#que6) 문제가 발생합니다.
 
 
 ![이미지](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
-
 
 
 

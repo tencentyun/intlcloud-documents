@@ -35,7 +35,7 @@ dependencies:
 1. 打开 `/android/app/src/main/AndroidManifest.xml` 文件。
 2. 将 `xmlns:tools="http://schemas.android.com/tools"` 加入到 manifest 中。
 3. 将 `tools:replace="android:label"` 加入到 application 中。
->? 若不执行此步，会出现 [Android Manifest merge failed 编译失败](https://intl.cloud.tencent.com/zh/document/product/647/39242#que6) 问题。
+>? 若不执行此步，会出现 [Android Manifest merge failed 编译失败](https://intl.cloud.tencent.com/document/product/647/39242#que6) 问题。
 
 
 ![图示](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
@@ -45,14 +45,14 @@ dependencies:
 
 
 ## 常见问题
-- [iOS 打包运行 Crash？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que3)
-- [iOS 无法显示视频（Android 正常）？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que4)
-- [更新 SDK 版本后，iOS CocoaPods 运行报错？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que5)
-- [Android Manifest merge failed 编译失败？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que6)
-- [因为没有签名，真机调试报错?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que7)
-- [对插件内的 swift 文件做了增删后，build 时查找不到对应文件？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que8)
-- [Run 报错“Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que9)
-- [Pod install 报错？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que10)
-- [Run 的时候 iOS 版本依赖报错？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que11)
+- [iOS 打包运行 Crash？](https://intl.cloud.tencent.com/document/product/647/39242#que3)
+- [iOS 无法显示视频（Android 正常）？](https://intl.cloud.tencent.com/document/product/647/39242#que4)
+- [更新 SDK 版本后，iOS CocoaPods 运行报错？](https://intl.cloud.tencent.com/document/product/647/39242#que5)
+- [Android Manifest merge failed 编译失败？](https://intl.cloud.tencent.com/document/product/647/39242#que6)
+- [因为没有签名，真机调试报错?](https://intl.cloud.tencent.com/document/product/647/39242#que7)
+- [对插件内的 swift 文件做了增删后，build 时查找不到对应文件？](https://intl.cloud.tencent.com/document/product/647/39242#que8)
+- [Run 报错“Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”？](https://intl.cloud.tencent.com/document/product/647/39242#que9)
+- [Pod install 报错？](https://intl.cloud.tencent.com/document/product/647/39242#que10)
+- [Run 的时候 iOS 版本依赖报错？](https://intl.cloud.tencent.com/document/product/647/39242#que11)
 
 
