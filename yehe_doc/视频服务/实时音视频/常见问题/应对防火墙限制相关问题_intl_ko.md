@@ -45,21 +45,3 @@ Nginx+coturn 프록시 솔루션을 사용할 수 있습니다.
 | :----- | :----------------------------------- | :-------------------------------- |
 | 솔루션 1 | 클라이언트가 특정 외부 네트워크 프록시 서버에 액세스하도록 허용   | 클라이언트가 외부 네트워크의 proxy server에 액세스하도록 허용 |
 | 솔루션 2 | 클라이언트가 내부 네트워크 프록시 서버를 통해 외부 네트워크에 액세스하도록 허용 | proxy server가 외부 네트워크에 액세스하도록 허용        |
-
-
-
-
-### WeChat 미니프로그램에서 어떤 도메인을 화이트리스트로 설정해야 합니까?
-
-&lt;trtc-room&gt; 도메인 화이트리스트:
-
-```
-https://official.opensso.tencent-cloud.com
-https://yun.tim.qq.com
-https://cloud.tencent.com
-https://webim.tim.qq.com
-https://query.tencent-cloud.com
-```
-
-
->!Tencent Cloud 서버 IP 주소는 동적 업데이트되며 고정 IP 주소가 아닙니다. 따라서 고정 IP 리스트는 제공되지 않습니다.
