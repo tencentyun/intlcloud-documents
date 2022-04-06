@@ -6,7 +6,7 @@
 
 <span id="Que2"></span>
 ### What are the requirements for a playback domain name in CSS?	
-The domain name can contain up to 29 characters and cannot contain uppercase letters. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
+The domain name can contain up to 45 characters and cannot contain uppercase letters. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 <span id="Que3"></span>
 ### Can I use the same domain name for playback and push? Can I use second-level domain names?
