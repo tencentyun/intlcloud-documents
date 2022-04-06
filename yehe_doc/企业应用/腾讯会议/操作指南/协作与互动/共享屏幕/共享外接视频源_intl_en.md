@@ -4,8 +4,8 @@
 VooV Meeting allows you to connect to an external video source device such as external PC camera, USB video capture card, and image scanner as the second camera and share it to other attendees.
 
 ## Prerequisites
-- Logged-in user: Free or Enterprise edition user
-- Device: Windows 7 or later or macOS 10.11 or later.
+- Logged-in user: Free or Enterprise Edition user
+- Device: Windows 7 or later or macOS 10.11 or later
 
 ## Notes
 We recommend you test the availability of the external video device in advance. For the specific test method, see the usage instructions provided by your device vendor. You can also check the compatibility between the device and VooV Meeting in the video test of VooV Meeting.
@@ -17,7 +17,7 @@ We recommend you test the availability of the external video device in advance. 
 4. After selection, check whether the video image is displayed normally.
 
 ### Test during meeting
-1. Click **Settings** > **Video** on the toolbar during the meeting to enter the **Video** page.
+1. Click **Settings** on the toolbar during the meeting and click **Video** to enter the **Video** page.
 2. Select the target device in the **Device** drop-down list.
 3. After selection, check whether the video image is displayed normally.
 
