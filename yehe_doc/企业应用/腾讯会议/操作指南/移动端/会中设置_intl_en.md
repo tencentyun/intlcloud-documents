@@ -38,7 +38,7 @@ Hosts can mute or unmute attendees during the meeting. We recommend muting all a
 ## Renaming Attendees
 **Role:** Organizer/Co-Host/Attendee
 ### Renaming Attendees
-We suggest changing your alias before joining the meeting. This will help people recognize each other and speed up orientation. This especially applies to large-scale conferences with attendees from multiple organizations. 
+We suggest changing your alias before joining the meeting. This will help attendees recognize each other. This especially applies to large-scale conferences with attendees from multiple organizations. 
 
 ![](https://main.qcloudimg.com/raw/726328800605c06a5bc83ac3ff237480.png)
 Both the host and co-host can rename attendees. 
