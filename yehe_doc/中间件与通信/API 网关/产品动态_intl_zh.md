@@ -152,7 +152,7 @@
 <td>资源包正式对外开放售卖</td>
 <td>API 网关资源包正式对外开放售卖，资源包可抵扣调用次数、出流量产生的费用，价格更优惠。</td>
 <td>2021-04-08</td>
-<td><a href="https://buy.cloud.tencent.com/apigateway">购买资源包</a></td>
+<td>购买资源包</td>
 </tr></table>
 
 
