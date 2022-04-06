@@ -1,7 +1,7 @@
 ## Overview
 If your device is connected to multiple monitors, you can enable the **multi-monitor mode** to display VooV Meeting on the extended monitors for a better meeting experience.
 ## Prerequisites
-- **Logged-in user:** Free or Enterprise edition user
+- **Logged-in user:** Free or Enterprise Edition user
 - **Logged-in device:** Windows
 - **Version:** v2.2.0 or later
 
@@ -9,14 +9,14 @@ If your device is connected to multiple monitors, you can enable the **multi-mon
 VooV Meeting can be displayed on an extended monitor if the following requirements are met:
 - Two or more monitors are set for the PC.
 - The extended monitors are selected in **Settings** > **System** > **Display** > **Multiple displays** on Windows.
-- On the VooV Meeting homepage, go to **Settings** > **General** and select **Multi-Monitor Mode**.
+- On the VooV Meeting homepage, go to **Settings** > **General** and enable **Multi-Monitor Mode**.
 - If extended monitors are disconnected, the multi-monitor mode will be automatically disabled.
 
 ## Extended Display Mode
-The secondary window does not have the toolbar and therefore has no meeting control features. It varies a lot in two screen sharing scenarios as detailed below:
+The secondary window does not have the toolbar and therefore has no meeting control features. It varies a lot in two screen sharing scenarios as detailed:
 - **If screen sharing is enabled:**
  - You can switch to speaker view/full screen in the secondary window, and speaker spotlight is supported.
- - If the secondary window is on the monitor of the screen to be shared, after desktop/window sharing starts, the secondary window will be moved to monitor 1. If monitor 1 is shared, the window will be moved to monitor 2 by default (this rule also applies if two or more monitors are connected).
+ - If the secondary window is on the monitor of the screen for sharing, after desktop/window sharing starts, the secondary window will be moved to monitor 1. If monitor 1 is shared, the window will be moved to monitor 2 by default (this rule also applies if two or more monitors are connected).
 	 - Suppose the secondary window is on monitor 1: if you select monitor 1 or a window on monitor 1 for sharing, the secondary window will be automatically moved to monitor 2. After sharing ends, the secondary window will be automatically restored to the original monitor no matter whether it is moved during sharing.
 	 - Suppose the secondary window is on monitor 1: if you select monitor 2 or a window on monitor 2 for sharing, the position of the secondary window will not change. After sharing ends, the secondary window will be automatically restored to the original monitor no matter whether it is moved during sharing.
 	 - Suppose over two monitors are connected and the secondary window is not on monitor 1: if you select the monitor where the secondary window is for sharing, the secondary window will be automatically moved to monitor 1 to adapt to the multi-monitor mode.
@@ -26,8 +26,8 @@ The secondary window does not have the toolbar and therefore has no meeting cont
     - If over two monitors are connected: if the whiteboard is on monitor 1, the secondary window will be moved to monitor 2, otherwise, the secondary window will be moved to monitor 1.
 - **If screen sharing is not enabled:**
  - Only you yourself are in the meeting: your video image/profile photo will be displayed in the secondary window.
- - The meeting has two people: your video image/profile photo will be displayed in the secondary window, and the video image/profile photo of the other people will be displayed in the main window (speaker spotlight does not take effect). If the other people enables screen sharing, the secondary window will enter the speaker mode by default, and the layout can be switched.
- - The meeting has over two people: the secondary window will display only the video image/profile photo of the single speaker. If the attendees enable screen sharing, the secondary window will enter the speaker mode by default, and the layout can be switched.
+ - The meeting has two people: your video image/profile photo will be displayed in the secondary window, and the video image/profile photo of the other people will be displayed in the main window (speaker spotlight does not take effect). If the other people starts screen sharing, the secondary window will enter the speaker mode by default, and the layout can be switched.
+ - The meeting has over two people: the secondary window will display only the video image/profile photo of the single speaker. If the attendees start screen sharing, the secondary window will enter the speaker mode by default, and the layout can be switched.
  - You cannot switch to speaker view/full screen in the secondary window.
  - If an attendee is watching the shared screen, the screen sharing content will be displayed in the secondary window by default. 
 
@@ -52,9 +52,9 @@ The secondary window does not have the toolbar and therefore has no meeting cont
 **In grid view**
 1. In grid view, click **...** in the top-right corner or right-click the image, and options **Lock video to screen 1** and **Lock video to screen 2** will be displayed.
 2. Click the target option to lock the video image on the corresponding screen.
-3. Right-Click the image in the grid view again or click **...** and select **Unlock video from screen N** to unlock.
+3. Right click the image in the grid view again or click **...** and select **Unlock video from screen N** to unlock.
 
 **In speaker view**
 1. In speaker view, click **...** in the top-right corner of a thumbnail or right-click the image, and options **Lock video to screen 1** and **Lock video to screen 2** will be displayed.
 2. Click the target option to lock the video image on the corresponding screen.
-3. Right-Click the image in the speaker view again or click **...** and select **Unlock video from screen N** to unlock.
+3. Right click the image in the speaker view again or click **...** and select **Unlock video from screen N** to unlock.
