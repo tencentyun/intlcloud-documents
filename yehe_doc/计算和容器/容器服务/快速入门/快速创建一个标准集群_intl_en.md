@@ -1,11 +1,11 @@
-This document describes how to quickly create a container cluster using TKE.
+This document describes how to quickly create a container cluster in TKE.
 
 
 ## Step 1. Sign up for a Tencent Cloud Account
 If you already have a Tencent Cloud account, ignore this step.
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/378/17985" target="_blank"  style="color: white; font-size:13px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/378/17985" target="_blank"  style="color: white; font-size:13px;">Signing Up</a></div>
 
-## Step 2: Topping Up Online
+## Step 2. Topping Up Online
 The TKE service itself is currently free of charge, but you will be charged for cloud resources you actually use. What is to be created in this document is a “managed cluster”, and you need to pay for the worker nodes in the cluster, persistent storage, and load balancers bound to your services. For information on related operations, see [Payment Methods](https://intl.cloud.tencent.com/document/product/555/7425).
 
 
@@ -13,11 +13,11 @@ The TKE service itself is currently free of charge, but you will be charged for 
 ## Step 3. Authorizing TKE
 Open the [Tencent Cloud console](https://console.cloud.tencent.com/), select **Tencent Cloud services** > **Tencent Kubernetes Engine** to enter the TKE console and authorize TKE according to the prompts. If you have already authorized TKE, skip this step.
 
-<div style="background-color:#00A4FF; width: 150px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/tke2/cluster?rid=1" target="_blank"  style="color: white; font-size:13px;">Click here to authorize TKE</a></div>
+<div style="background-color:#00A4FF; width: 150px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/tke2/cluster?rid=1" target="_blank"  style="color: white; font-size:13px;">Authorize</a></div>
 
 
 ## Step 4: Creating a Cluster
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/tke2/cluster/create?rid=1" target="_blank"  style="color: white; font-size:13px;">Click here to enter the creation page</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/tke2/cluster/create?rid=1" target="_blank"  style="color: white; font-size:13px;">Create a cluster</a></div>
 
 ### Cluster information
 On the **Cluster Information** page, enter the cluster name and select the region of the cluster, the cluster network, and container network. Keep other default options unchanged and click **Next**, as shown below:
