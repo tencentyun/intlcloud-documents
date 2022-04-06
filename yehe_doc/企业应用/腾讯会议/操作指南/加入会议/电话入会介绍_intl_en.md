@@ -3,8 +3,8 @@ VooV Meeting allows you to join a meeting on phone without installing the client
 
 
 ## Prerequisites
-- A functional landline or mobile phone is available.
-- **Logged-in user:** Free or Enterprise edition user.
+- A functional landline or mobile phone 
+- **Logged-in user:** Free or Enterprise Edition user
 
 ## Notes
 - In "Call In" mode, you can use a landline or mobile phone to dial the corresponding number instead of using the VooV Meeting client to join a meeting, which has a more stable call audio quality. However, in this connection method, your carrier will charge you for the local or international call according to applicable billing rules.
