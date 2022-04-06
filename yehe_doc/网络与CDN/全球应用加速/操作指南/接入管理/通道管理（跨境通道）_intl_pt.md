@@ -35,6 +35,6 @@
 
 ## Exibição de informações das conexões
 1. Faça login no [Console do Global Application Acceleration Platform](https://console.cloud.tencent.com/gaap), acesse a página **Access Management (Gerenciamento de acesso)** e clique em **ID/Connection Name (ID/Nome da conexão)** de uma conexão.
- ![](https://main.qcloudimg.com/raw/3021dcb23fd2482cd7d43146b51aa96c.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/dba1d1cb841d8575a1b653c9d47f640b.png)
 2. Na guia **Connection info (Informações da conexão)**, é possível exibir os detalhes da conexão. **Forwarding Server IP (IP do servidor de encaminhamento)** é o IP do nó de encaminhamento no final da conexão de aceleração, e esse nó de encaminhamento encaminha os dados da conexão de aceleração para o servidor de origem pela rede pública. Se você quiser que várias conexões usem o mesmo nome de domínio, clique em **Unified Domain Name (Nome de domínio unificado)** para acessar a [configuration (configuração)](https://console.cloud.tencent.com/gaap/domain).
 ![](https://main.qcloudimg.com/raw/0f3097be7c9bb138d4287683a97863d1.png) 
