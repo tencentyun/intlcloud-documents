@@ -10,13 +10,13 @@
 
 ## Configuração da região do acelerador
 1. Acesse a página **[Unified Domain Name (Nome de domínio unificado)](https://console.cloud.tencent.com/gaap/domain)** e clique no nome de domínio ou em **Set (Definir)** no nome de domínio.
-
+ ![](https://qcloudimg.tencent-cloud.cn/raw/2be645caa6cbc7d1c0f6016e7ac70fec.png)
 	- **Domain Name (Nome de domínio)**: o nome de domínio acessado pelo cliente.
 	- **Default Entry (Entrada padrão)**: o endereço de acesso para regiões não aceleradas, que normalmente é o endereço IP do servidor de origem.
 	- **Number of Connections (Quantidade de conexões)**: a quantidade de conexões sob o nome de domínio unificado.
 	- **Status**: o nome de domínio unificado pode trabalhar corretamente apenas com o status **Enabled (Ativado)**.
 2. Clique em **Add Setting Item (Adicionar item de configuração)**. Na janela pop-up, selecione a região e a conexão do acelerador mais próximas e clique em **OK**.
- ![](https://main.qcloudimg.com/raw/9ebb9dbdffbe57a7438b8ce169b9dd1e.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/1d5e8a5fb087abcd21c2ce17a94c12ef.png)
 
 ## Configuração da entrada padrão
 Depois que o serviço de acesso ao nome de domínio unificado globalmente for ativado, para evitar latência de rede desnecessária causada por desvios e taxas de tráfego adicionais, é necessário configurar o caminho de acesso para usuários dos seguintes tipos:
@@ -25,6 +25,6 @@ Depois que o serviço de acesso ao nome de domínio unificado globalmente for at
 
 Na página **Unified Domain Name (Nome de domínio unificado)**, clique no nome de domínio ou em **Definir** no nome de domínio. Na página exibida, clique no ícone de edição à direita de **Default Entry (Entrada padrão)** para configurar a entrada padrão.
 Após a configuração do endereço IP da entrada, os usuários das regiões abrangidas pela conexão de aceleração e de outras regiões podem acessar diretamente o seu servidor de origem usando esse endereço IP pela rede pública.
-![](https://main.qcloudimg.com/raw/9f2f9980950bdb8b0273c0015b5a777d.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/c549724b7ac191aa4b45ca7d97144ce0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3aa59862dd00d759ee4933d8cf7b2a34.png)
 
