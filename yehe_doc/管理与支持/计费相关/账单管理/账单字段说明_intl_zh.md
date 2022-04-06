@@ -32,13 +32,13 @@
 | Duration Unit                               | 资源使用的时长单位                                           |
 | Reserved Instance                           | 用量匹配到的RI ID，比如：s2-RI-1234567890                    |
 | Original Cost                               | 资源的原始总价，等于刊例价 * 用量 * 时长                     |
-| Deduction Duration By Reserved Instances    | 预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致   |
-| Original Cost (with Reserved Instances)     | 按组件原价的口径换算的预留实例抵扣金额                       |
+| RI Deduction (Duration)   | 预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致   |
+| RI Deduction (Cost)    | 按组件原价的口径换算的预留实例抵扣金额                       |
 | Savings Plan Deduction                      | 节省计划抵扣的SP包面值                                       |
 | Savings Plan Deduction Rate                 | 节省计划可用余额额度范围内，节省计划对于此组件打的折扣率     |
-| Original Cost (with Savings Plans）         | 按组件原价的口径换算的节省计划抵扣金额</br>公式=节省计划抵扣金额/节省计划抵扣率 |
-| Discount Rate                               | 资源享受的折扣优惠力度，1表示无折扣，0表示0折                |
-| Blended Discount                            | 综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率</br>公式=优惠后总价/组件原价 |
+| SP Deduction (Cost)        | 按组件原价的口径换算的节省计划抵扣金额</br>公式=节省计划抵扣金额/节省计划抵扣率 |
+| Discount Multiplier                              | 资源享受的折扣优惠力度，1表示无折扣，0表示0折                |
+| Blended Discount Multiplier                           | 综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率</br>公式=优惠后总价/组件原价 |
 | Currency                                    | 组件结算使用的货币种类                                       |
 | Total Amount After Discount (Excluding Tax) | 资源的折后不含税价总价，等于组件原价 * 折扣率，等于组件单价 * 用量 * 时长 |
 | Voucher Deduction                           | 优惠后总价（税前）中使用代金券抵扣的金额                     |
