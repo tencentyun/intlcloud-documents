@@ -1,6 +1,6 @@
 ## Inviting Attendees
 
-**Role:** Organizer / Co-Host / Attendee
+**Role:** Organizer/Co-Host/Attendee
 
  ![](https://main.qcloudimg.com/raw/d2a9ed4564cd61b476b7ecf868e7fab3.png)
 
@@ -10,16 +10,17 @@
 
 There are two ways to invite attendees before the meeting starts.
 
- - a.    Click the icon highlighted in the orange box on the top right-hand corner. Select the method you wish to use to invite attendees.
+ - a.    Tap the icon highlighted in the orange box on the top right-hand corner. Select the method you wish to use to invite attendees.
 
- - b.    Click the ellipsis icon to modify the meeting details. You can also invite attendees from this page. 
+ - b.    Tap the ellipsis icon to modify the meeting details. You can also invite attendees from this page. 
 
 
 2. During the Meeting
 
-An invitation will be generated once you complete the steps below as shown in the figure below. You can **copy the invitation** and send it to invite attendees.
+An invitation will be generated once you complete the steps below. You can **Copy Invitation** and send it to invite attendees.
 
- - a.    Click the ellipsis icon highlighted in the orange box at the bottom menu and select **Invite**.
+ - a.    Tap the ellipsis icon highlighted in the orange box at the bottom menu and select **Invite**.
+ 
  - b.    Invite attendees via email, WeChat, SMS or other tools.
 ![](https://main.qcloudimg.com/raw/e9cedc4ee5854a1970aced8cf7e0afa4.png)
 
