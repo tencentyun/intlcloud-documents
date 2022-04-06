@@ -18,11 +18,11 @@ Faça login no [Console do Cloud Monitor](https://console.cloud.tencent.com/moni
 ![](https://qcloudimg.tencent-cloud.cn/raw/121bf297151fd5d14463d2a9f39a5989.png)
 	2. Clique em **Create (Criar)**. Na janela pop-up, configure as seguintes condições de disparo:
 		- **Template Name (Nome do modelo)**: insira um nome para o modelo.
-		- **Remarks (Observações)**: insira observações para o modelo.
+		- **Remarks (Comentários)**: insira comentários sobre o modelo.
 		- **Policy Type (Tipo de política)**: selecione um serviço de monitoramento, como **GAAP** > **Channel (Canal)**.
 		- Use preset trigger conditions (Usar condições de disparo predefinidas): selecione esta opção para ativar as condições de disparo predefinidas para o produto monitorado correspondente.
 		- Trigger condition (Condição de disparo): inclui alarme indicador e alarme de evento. Você pode clicar em **Add (Adicionar)** para definir vários alarmes.
-	Se você escolher **Configure manually (Configurar manualmente)**, poderá adicionar várias condições de trigger de alarme, conforme necessário.
+	Se você escolher **Configure manually (Configurar manualmente)**, poderá adicionar várias condições de disparo de alarme, conforme necessário.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4ce5c2222f27a23a50e29b7d6e675a61.png)
 4. Na seção **Configure Alarm Notification (Configurar notificação de alarme)**, clique em **Create Template (Criar modelo)**, insira um nome para o modelo e selecione um objeto e canal destinatário.
 >!O objeto destinatário precisa ser vinculado a um canal. Caso contrário, você não receberá uma notificação de alarme.

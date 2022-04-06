@@ -1,26 +1,56 @@
-Você pode exibir as estatísticas de uma conexão em um projeto especificado e do listener correspondente por meio da visão geral das estatísticas e do monitoramento da conexão.
+Faça login no [console do GAAP](https://console.cloud.tencent.com/gaap) e selecione **Statistics (Estatísticas)** na barra lateral esquerda. A página **Statistics (Estatísticas)** exibe os dados nas quatro dimensões a seguir: conexão, grupo de conexões, listener e servidor de origem.
 
-## Visão geral das estatísticas
-### Seleção de uma conexão
-Faça login no [Console do Global Application Acceleration Platform](https://console.cloud.tencent.com/gaap). Clique em **Statistics (Estatísticas)** na barra lateral esquerda, selecione um projeto, grupo de conexão (que é "Single connection (Conexão única)" por padrão) e, depois, uma conexão para exibir suas estatísticas.
-![](https://main.qcloudimg.com/raw/ee8855b279a91831d35c09f12633b4c0.png)
-<span id ="Selecting a statistical period"></span>
+## Conexão
 
-### Seleção de um período estatístico
-Cinco períodos estatísticos comuns estão disponíveis: Hoje, Ontem, Últimos 7 dias, Últimos 15 dias e Últimos 30 dias. Você também pode escolher uma data de início e término específica, conforme mostrado abaixo:
-![](https://main.qcloudimg.com/raw/33c0e700386d4080509118db2cbc6b6a.png)
-<span id="Selecting a data type"></span>
-### Seleção de um tipo de dados
-Os tipos de dados de conexão disponibilizados são: largura de banda (de saída e de entrada), volume de pacote (de saída e de entrada), latência, taxa de perda de pacotes e conexões simultâneas.
-**Outbound bandwidth (Largura de banda de saída)** se refere à que vai do servidor de origem ao cliente. **Inbound bandwidth (Largura de banda de entrada)** se refere à que vai do cliente ao servidor de origem.
+Você pode exibir as estatísticas de conexão, conforme mostrado abaixo:
 
-## Monitoramento de conexão
-Faça login no [Console do Global Application Acceleration Platform](https://console.cloud.tencent.com/gaap), selecione **Statistics (Estatísticas)** na barra lateral esquerda, selecione **Listener** para **Dimension (Dimensão)** e, em seguida, selecione uma conexão de destino ou grupo de conexão. Por fim, selecione um listener para exibir suas estatísticas, conforme mostrado abaixo:
-![](https://main.qcloudimg.com/raw/eda0e6e3d403386a64fbefc0a0944060.png)
+- **Connection Type (Tipo de conexão)**: conexão única, por padrão. Você também pode selecionar um grupo de conexões que foi criado anteriormente.
+- **Connection (Conexão)**: selecione uma conexão do **Access Management (Gerenciamento de acesso)** ou do grupo de conexões.
+- **Data Type (Tipo de dados)**: selecione um ou todos os tipos de dados (largura de banda, tráfego, volume de pacotes, conexões simultâneas, HTTP QPS, HTTPS QPS, latência e taxa de perda de pacotes).
+- **Time Period (Período)**: selecione um período.
+- **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar a granularidade de 1 minuto, 31 dias para a granularidade de 5 minutos, 93 dias para a granularidade de 1 hora e 186 dias para a granularidade de 1 dia.
 
-### Seleção de um período estatístico
-Consulte a seção anterior [Seleção de um período estatístico](#Selecting a statistical period).
+![](https://main.qcloudimg.com/raw/ebcbf2519d0189f9437d5375aa50ece9.png)
 
-### Itens estatísticos disponibilizados
-Consulte a seção anterior [Seleção de um tipo de dados](#Selecting a data type).
+## Grupo de conexões
 
+Você pode exibir as estatísticas do grupo de conexões, conforme mostrado abaixo:
+
+- **Connection Group (Grupo de conexões)**: selecione um ou mais grupos de conexões.
+- **Data Type (Tipo de dados)**: selecione um ou todos os tipos de dados (largura de banda e tráfego).
+- **Time Period (Período)**: selecione um período.
+- **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar a granularidade de 1 minuto, 31 dias para a granularidade de 5 minutos, 93 dias para a granularidade de 1 hora e 186 dias para a granularidade de 1 dia.
+
+![](https://main.qcloudimg.com/raw/7517ea8a6d1bffccd5436b64882d7c8f.png)
+
+## Listener
+
+Você pode exibir as estatísticas de listener, conforme mostrado abaixo:
+
+- **Connection/Connection Group (Conexão/Grupo de conexões)**: selecione uma conexão ou grupo de conexões para o listener.
+- **Listener**: selecione um listener.
+- **Data Type (Tipo de dados)**: selecione um ou todos os tipos de dados (largura de banda, tráfego, volume de pacotes e conexões simultâneas).
+- **Time Period (Período)**: selecione um período.
+- **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar a granularidade de 1 minuto, 31 dias para a granularidade de 5 minutos, 93 dias para a granularidade de 1 hora e 186 dias para a granularidade de 1 dia.
+
+![](https://main.qcloudimg.com/raw/150adb14a909f5d954fb52b579d1cd72.png)
+
+## Servidor de origem
+
+Você pode exibir as estatísticas do status de integridade do servidor de origem, conforme mostrado abaixo:
+
+- **Connection/Connection Group (Conexão/Grupo de conexões)**: selecione uma conexão ou grupo de conexões para o servidor de origem.
+- **Listener**: selecione um listener para o servidor de origem.
+- **Origin (Origem)**: selecione um servidor de origem.
+- **Time Period (Período)**: selecione um período.
+- **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar uma granularidade de 1 minuto e 31 dias para uma granularidade de 5 minutos.
+
+![](https://main.qcloudimg.com/raw/cb936fbfbca6c9a7e370d0401f4b6c55.png)
+
+## Exportação de dados
+
+Acesse a página **Statistics (Estatísticas)** e clique no ícone de download para exportar os dados.
+![](https://main.qcloudimg.com/raw/fada34020a50842ff1c7625cdee437f7.png)
+
+## Configuração de política de alarme
+Acesse a página [Statistics (Estatísticas)](https://console.cloud.tencent.com/gaap/data) e clique em **Configure Alarm (Configurar alarme)** no canto superior direito para configurar uma política de alarme. Para mais detalhes, consulte [Monitoramento do acesso em nuvem](https://intl.cloud.tencent.com/document/product/608/17541).

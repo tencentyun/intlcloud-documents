@@ -1,80 +1,91 @@
-## Criação de listener HTTP/HTTPS
+## Adição de um listener HTTP/HTTPS
 
-1. Faça login no [Console do GAAP](https://console.cloud.tencent.com/gaap), acesse a página **Access Management (Gerenciamento de acesso)** e clique em **ID/Connection Name (ID/Nome da conexão)** da conexão especificada.
+1. Faça login no [Console do GAAP](https://console.cloud.tencent.com/gaap). Acesse a página **Access Management (Gerenciamento de acesso)** e clique em **ID/Connection Name (ID/Nome da conexão)** da conexão especificada.
 2. Na página exibida, selecione **HTTP/HTTPS Listener Management (Gerenciamento de listener HTTP/HTTPS)** > **Create (Criar)**. É possível selecionar o protocolo HTTP ou HTTPS. (Observação: atualmente, a configuração do listener HTTP/HTTPS não é aceita em conexões IPv6.)
 3. A configuração específica é mostrada abaixo:
-   1. Se HTTP for selecionado, apenas o número da porta será necessário e o listener encaminhará pacotes pelo protocolo HTTP, por padrão.
+   1. Se o **HTTP** for selecionado, apenas o número da porta será necessário e o listener encaminhará pacotes pelo protocolo HTTP, por padrão.
 ![](https://main.qcloudimg.com/raw/0096d45b44fbd916012317a49a97a884.png)
-   2. Se HTTPS for selecionado, os certificados e informações adicionais precisam ser configurados conforme mostrado abaixo:
+   2. Se o **HTTPS** for selecionado, os certificados e informações adicionais precisam ser configurados conforme mostrado abaixo:
 ![](https://main.qcloudimg.com/raw/941665ba354633d345929e3fbd02fa8c.png)
       - **Listeners communicate with the origin server using HTTP protocol (Os listeners se comunicam com o servidor de origem usando o protocolo HTTP)** significa que o protocolo HTTPS é usado entre o cliente e o VIP de conexão de aceleração, já o protocolo HTTP é usado entre o VIP e o servidor de origem, que requer uma porta HTTP para ser aberto no servidor de origem.
         **Listeners communicate with the origin server using HTTPS protocol (Os listeners se comunicam com o servidor de origem usando o protocolo HTTPS)** significa que o protocolo HTTPS é usado entre o cliente e o servidor de origem, que requer uma porta HTTPS para ser aberto no servidor de origem.
-      - SSL Parsing (Análise SSL): são aceitas a autenticação unilateral e bidirecional.
-      - Server/Client Certificate (Certificado do servidor/cliente): é necessário fazer o upload de um certificado ou atualizá-lo em **Certificate Management (Gerenciamento de certificados)** no console do GAAP e, em seguida, selecioná-lo ao criar/modificar um listener HTTPS. Para obter mais informações, consulte [Gerenciamento de certificados](https://intl.cloud.tencent.com/document/product/608/42343).
+      - **SSL Parsing (Análise SSL)**: são aceitas a autenticação unilateral e bidirecional.
+      - **Server/Client Certificate (Certificado do servidor/cliente)**: é necessário fazer o upload de um certificado ou atualizá-lo em **Certificate Management (Gerenciamento de certificados)** no console do GAAP e, em seguida, selecioná-lo ao criar/modificar um listener HTTPS. Para mais informações, consulte [Gerenciamento de certificados](https://intl.cloud.tencent.com/document/product/608/42343).
 
 ## Configuração de listener HTTP/HTTPS
 
 Abra a guia **HTTP/HTTPS Listener Management (Gerenciamento de listener HTTP/HTTPS)** e clique em **Set Rule (Definir regra)** na coluna **Operation (Operação)** para inserir o nome de domínio e a página de gerenciamento de URL.
 
-### Adição de nome de domínio
+### Criação de uma distribuição
 
-Para adicionar um nome de domínio para um listener HTTP, basta inseri-lo no formato especificado. Apenas a correspondência exata é aceita. Um nome de domínio pode conter de 3 a 80 caracteres dos seguintes tipos: `a–z`, `0–9`, `_` e `–`.
+1. Para adicionar um nome de domínio a um listener HTTP, insira um nome de domínio válido. Deve ter de 3 a 80 caracteres contendo [a-z], [0–9], [.-]. Apenas a correspondência exata é permitida.
  ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
-Para adicionar um nome de domínio para um listener HTTPS, basta inseri-lo e selecionar o certificado do servidor correspondente. O certificado selecionado durante a criação do listener é usado no console por padrão. Se você carregar um novo certificado, o nome de domínio será autenticado com ele.
- ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
+2. Para adicionar um nome de domínio a um listener HTTPS, insira um nome de domínio válido e selecione o certificado de servidor correspondente.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/27131602718160d5f4c096db488dccf6.png)
+	- **Domain (Domínio)**: 3 a 80 caracteres contendo [a-z], [0–9], [.-]. Apenas a correspondência exata é permitida.
+	- **Server Certificate (Certificado do servidor)**: por padrão, é o certificado usado para criar o listener. Se você carregar outro certificado, o nome de domínio será autenticado com o certificado carregado.
+	- **HTTP3 Transfer (Transferência HTTP3)**: permite que ele aceite o QUIC. Se o cliente não aceitar esse protocolo, o HTTP2.0 e versões anteriores serão usados para acesso.
 
 ### Adição de regra
 
-Após adicionar um nome de domínio, você pode clicar em **Add Rule (Adicionar regra)** para adicionar o URL correspondente e selecionar o tipo de servidor de origem. É possível adicionar até 20 regras de URL para um nome de domínio conforme mostrado abaixo:
+Após adicionar um nome de domínio, clique em **Add Rule (Adicionar regra)** para adicionar o URL correspondente e selecione o tipo de servidor de origem. Você pode incluir até 20 regras de URL para um nome de domínio, conforme mostrado abaixo:
 
 1. Configurações básicas:
    ![](https://main.qcloudimg.com/raw/fcf56bdf702b67b81990cc4dedd89f0d.png)
-   - URL: pode conter de 1 a 80 caracteres dos seguintes tipos: `a–z`, `A–Z`, `0–9`, `_`, `.`, `-` e `/`.
-   - Origin Server Type (Tipo de servidor de origem): pode ser um IP ou nome de domínio, mas apenas um tipo pode ser selecionado para um listener. 
+   - **URL**: contém de 1 a 80 caracteres dos seguintes tipos: [a-z], [0–9] e [_.-/].
+   - **Origin Server Type (Tipo de servidor de origem)**: aceita um IP ou um nome de domínio. Um listener aceita apenas um tipo. 
 2. Política de processamento do servidor de origem:
-   Defina a regra de encaminhamento do servidor de origem; ou seja, se um listener estiver vinculado a vários servidores de origem, será necessário selecionar uma política de programação para os servidores de origem.
+   Configure a política de processamento do servidor de origem, ou seja, se um listener estiver vinculado a vários servidores de origem, será necessário selecionar uma política de programação para os servidores de origem.
     ![](https://main.qcloudimg.com/raw/bb6f7d4cf05d2fb6e623c5ed28904dbc.png)
-   - RR: vários servidores de origem efetuam o pull de origem, de acordo com a política de RR.
-   - Weighted RR (RR ponderado): vários servidores de origem efetuam o pull de origem, de acordo com a relação de peso (esta configuração não é aceita se o tipo de servidor de origem for nome de domínio).
-   - Least Connections (Conexões mínimas): significa programar primeiro o servidor de origem com a menor quantidade de conexões.
+   - **RR**: vários servidores de origem efetuam o pull de origem, de acordo com a política de RR.
+   - **Weighted RR (RR ponderado)**: vários servidores de origem efetuam o pull de origem, de acordo com a relação de peso (esta configuração não é aceita se o tipo de servidor de origem for nome de domínio).
+   - **Least Connections (Conexões mínimas)**: programa o servidor de origem com a menor quantidade de conexões primeiro.
 3. Mecanismo de verificação de integridade do servidor de origem:
-   Você pode optar por ativar o mecanismo de verificação de integridade para o nome de domínio atual e definir um URL de verificação independente. Os métodos de solicitação HEAD e GET são aceitos. Os códigos de status de verificação incluem http_1xx, http_2xx, http_3xx, http_4xx e http_5xx, e você pode selecionar um ou mais deles. Quando um código de status especificado for detectado, o listener considerará que o servidor de origem de back-end está normal. Se nenhum código de status for detectado, o listener considerará que o servidor de origem de back-end está excepcional.
+   Você pode optar por ativar o mecanismo de verificação de integridade. Para o nome de domínio atual, você pode configurar um URL de verificação independente. Os métodos de solicitação HEAD e GET são permitidos. Os códigos de status de verificação incluem http_1xx, http_2xx, http_3xx, http_4xx e http_5xx, e é possível selecionar um ou vários códigos. Quando um código de status especificado é detectado, o listener considera que o servidor de origem do backend está normal. Se nenhum código de status for detectado, o listener considera que o servidor de origem do backend tem uma exceção.
 ![](https://main.qcloudimg.com/raw/20d08ec6efd43a94734b6a408afc2d10.png)
 
 ### Modificação de nome de domínio
 
-Após adicionar um nome de domínio, você pode clicar em **Modify Domain Name (Modificar nome de domínio)** para modificá-lo.
+Após adicionar um nome de domínio, clique em **Modify Domain Name (Modificar nome de domínio)** para modificá-lo.
  ![](https://main.qcloudimg.com/raw/c61efa495d61009bc93ebff1a8891de5.png)
 
 ### Exclusão de nome de domínio
 
-Após adicionar um nome de domínio, você pode clicar em **Delete (Excluir)** para exclui-lo. Se uma regra sob o nome de domínio tiver sido vinculada a um servidor de origem, será necessário selecionar **Force deletion of listeners bound with origin server (Forçar exclusão de listeners vinculados ao servidor de origem)**.
+Após adicionar um nome de domínio, clique em **Delete (Excluir)** para exclui-lo. Se uma regra sob o nome de domínio tiver sido vinculada a um servidor de origem, será necessário selecionar **Force deletion of listeners bound with origin server (Forçar exclusão de listeners vinculados ao servidor de origem)**.
  ![](https://main.qcloudimg.com/raw/3a7a088320acb13f1c822b1ec34c9ba1.png)
+
+### Configuração do HTTP3
+
+A configuração do HTTP3 controla se aceita o HTTP3 (QUIC). Atualmente, só é possível configurar o HTTP3 para listeners HTTPS.
+![](https://qcloudimg.tencent-cloud.cn/raw/77cd9b19beeed46f427983d71bc23f7e.png)
 
 ### Modificação de regra
 
-Siga as etapas detalhadas em "Adding rule (Adição de regra)" acima. A principal diferença é que o nome de domínio e o tipo de servidor de origem não podem ser modificados.
+Consulte a seção **Adição de regra** acima. A principal diferença é que o nome de domínio e o tipo de servidor de origem não podem ser modificados.
 
 ### Vinculação do servidor de origem
 
-Para obter mais informações, consulte "Vinculação do servidor de origem". É possível vincular portas diferentes a servidores de origem diferentes. Para obter mais informações sobre as funcionalidades **Cover Port (Porta de cobertura)** e **Complement Port (Porta de complemento)**, consulte "Vinculação de listener TCP/UDP ao servidor de origem".
+Para mais informações, consulte “Vinculação do servidor de origem”. É possível vincular portas diferentes a servidores de origem diferentes. Para mais informações sobre as funcionalidades **Cover Port (Porta de cobertura)** e **Complement Port (Porta de complemento)**, consulte “Vinculação de listener TCP/UDP ao servidor de origem”.
 
-> ! Uma regra pode ser vinculada a até 100 servidores de origem.
+> ! É possível vincular uma regra a até 100 servidores de origem.
 
 ### Exclusão de regra
 
-Após adicionar uma regra, você pode clicar em **Delete (Excluir)** para exclui-la. Se uma regra tiver sido vinculada um servidor de origem, primeiro será necessário selecionar **Force deletion of listeners bound with origin server (Forçar exclusão de listeners vinculados ao servidor de origem)**.
+Após adicionar uma regra, clique em **Delete (Excluir)** para exclui-la. Se uma regra tiver sido vinculada a um servidor de origem, primeiramente será necessário selecionar **Force deletion of listeners bound with origin server (Forçar exclusão de listeners vinculados ao servidor de origem)**.
  ![](https://main.qcloudimg.com/raw/2fd560217ca2f53847033d501eb90e1a.png)
+
+
 
 ### Configuração do cabeçalho da solicitação de pull de origem
 
-1. Após adicionar uma regra, você pode selecionar **More (Mais)** na coluna **Operation (Operação)** da regra e clicar em **Set Origin-Pull Request Header (Definir cabeçalho da solicitação de pull de origem)**.
+1. Após adicionar uma regra, selecione **More (Mais)** na coluna **Operation (Operação)** da regra e clique em **Set Origin-Pull Request Header (Definir cabeçalho da solicitação de pull de origem)**.
    ![](https://qcloudimg.tencent-cloud.cn/raw/9dc95f9ef0c564ec6435c4b7f0635cdd.png)
 2. Clique em **Add Parameter (Adicionar parâmetro)** para adicionar o parâmetro de nome e o valor do cabeçalho da solicitação. O valor da variável do cabeçalho que carrega o IP real do usuário é `$remote_addr` (por padrão, o cabeçalho `X-Forwarded-For` carrega o IP do cliente para o pull de origem). Atualmente, com exceção da variável `$remote_addr`, outras variáveis com `$` não são aceitas.
 
 > !
+>
 > 1. O valor `Key` do nome do cabeçalho HTTP pode conter de 1 a 100 dígitos (0 a 9), letras (a–z, A–Z) e símbolos especiais (-, _, : e espaço). O `Value` pode conter de 1 a 100 caracteres. Com exceção de `$remote_addr`, os outros itens de configuração não podem conter o caractere `$`.
-> 2. Até 10 cabeçalhos de solicitação HTTP de pull de origem podem ser configurados para cada regra.
+> 2. É possível configurar até 10 cabeçalhos de solicitação HTTP de pull de origem para cada regra.
 > 3. Os cabeçalhos padrões listados abaixo não podem ser definidos/adicionados/excluídos de maneira automática.
 
 <table>
@@ -121,7 +132,7 @@ Após adicionar uma regra, você pode clicar em **Delete (Excluir)** para exclui
         <td>keep-alive</td>
     </tr>
     <tr>
-        <td>accept</td>
+        <td>Accept</td>
         <td>accept-charset</td>
         <td>expect</td>
         <td>max-forwards</td>
@@ -260,7 +271,7 @@ Após adicionar uma regra, você pode clicar em **Delete (Excluir)** para exclui
     </tr>
 </table>
 
-## Exclusão do listener HTTP/HTTPS
+## Exclusão de listener HTTP/HTTPS
 
-Abra a guia **HTTP/HTTPS Listener Management (Gerenciamento de listener HTTP/HTTPS)** e clique em **Delete (Excluir)** na coluna **Operation (Operação)** do listener especificado a ser excluído. Se o listener estiver vinculado a um servidor de origem, primeiro será necessário marcar **Allow force deletion of listeners with bound origin servers (Permitir exclusão forçada de listeners com servidores de origem vinculados)**. Após a exclusão, o serviço de aceleração da porta do listener será interrompido.
+Abra a guia **HTTP/HTTPS Listener Management (Gerenciamento de listener HTTP/HTTPS)**, clique em **Delete (Excluir)** à direita do listener selecionado. Se o listener tiver sido vinculado ao servidor de origem, você precisará marcar primeiro **Allow force deletion of listeners bound with origin servers (Permitir exclusão forçada de listeners vinculados a servidores de origem)**. Depois que ele for excluído, a aceleração da porta do listener será interrompida.
  ![](https://main.qcloudimg.com/raw/5df2bff2fb4f07ce2631824792429147.png)

@@ -1,4 +1,4 @@
-Devido aos tamanhos territoriais diferentes de países ao redor do mundo e considerando a exibição de dados e a cobertura de nós de aceleração, fundimos países/regiões adjacentes em zonas geográficas maiores e dividimos aqueles com territórios mais amplos. Ao usar a funcionalidade "globally unified domain name (nome de domínio unificado globalmente)" e selecionar as regiões a serem abrangidas pelos nós de aceleração global, consulte o seguinte mapeamento entre países e regiões para configurar as zonas a serem abrangidas por esses nós.
+Devido aos tamanhos territoriais diferentes de países ao redor do mundo e considerando a exibição de dados e a cobertura de nós de aceleração, fundimos países/regiões adjacentes em zonas geográficas maiores e dividimos aqueles com territórios mais amplos. Ao usar a funcionalidade “globally unified domain name (nome de domínio unificado globalmente)” e selecionar as regiões a serem abrangidas pelos nós de aceleração global, consulte o seguinte mapeamento entre países e regiões para configurar as zonas a serem abrangidas por esses nós.
 
 
 <table>
@@ -31,7 +31,7 @@ Devido aos tamanhos territoriais diferentes de países ao redor do mundo e consi
       <td></td>
    </tr>
    <tr>
-      <td>Coreia do Nortel</td>
+      <td>Coreia do Norte</td>
       <td></td>
    </tr>
    <tr>
@@ -291,7 +291,7 @@ Devido aos tamanhos territoriais diferentes de países ao redor do mundo e consi
       <td></td>
    </tr>
    <tr>
-      <td>República Tcheca</td>
+      <td>Tchéquia</td>
       <td></td>
    </tr>
    <tr>
