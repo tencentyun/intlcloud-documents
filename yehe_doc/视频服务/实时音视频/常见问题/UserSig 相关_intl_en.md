@@ -33,6 +33,7 @@ If you want to quickly run the demo to try out TRTC SDK features, you can calcul
  ![](https://main.qcloudimg.com/raw/b8575d1c97952ad8b1b28df16d69a8cb.png)
 
 >? If you can get only the public and private key information when you try to view the secret key, see [Only public and private key can be obtained when I try to view the secret key. How do I get the secret key?](#getusersig).
+
 2. **Calculate `UserSig`:**
 For the convenience of the client, TRTC provides the source code file for calculating `UserSig` for various platforms, which you can directly download for calculation:
 <table>
@@ -50,11 +51,11 @@ For the convenience of the client, TRTC provides the source code file for calcul
 <td><a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
 <td>TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
 </tr><tr>
-<td>Windows£¨C++£©</td>
+<td>WindowsÂ£Â¨C++Â£Â©</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-C%2B%2B/TRTC-API-Example-Qt/src/Util/defs.h">Github</a></td>
 <td>TRTC-API-Example-C++/TRTC-API-Example-Qt/src/Util/defs.h</td>
 </tr><tr>
-<td>Windows£¨C#£©</td>
+<td>WindowsÂ£Â¨C#Â£Â©</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs">Github</a></td>
 <td>TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs</td>
 </tr><tr>
