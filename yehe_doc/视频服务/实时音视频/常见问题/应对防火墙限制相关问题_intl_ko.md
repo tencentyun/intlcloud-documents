@@ -5,7 +5,7 @@
 | TRTC SDK(Native) | 화이트리스트 항목 |
 |---------|---------|
 | TCP 포트 | 443, 20166 |
-| UDP 포트 | 8000, 8080, 16285, 9000 |
+| UDP 포트 | 8000、8080、8001、8002、8003、8004、8005、8006、8007、8008、8009、16285、9000 |
 
 도메인 화이트리스트:
 
@@ -17,6 +17,7 @@ yun.tim.qq.com
 dldir1.qq.com
 mlvbdc.live.qcloud.com
 query.tencent-cloud.com
+*.trtc.tencent-cloud.com        
 ```
 
 
@@ -32,6 +33,7 @@ query.tencent-cloud.com
 도메인 화이트리스트:
 
 ```
+*.rtc.qcloud.com
 *.rtc.qq.com
 yun.tim.qq.com
 ```

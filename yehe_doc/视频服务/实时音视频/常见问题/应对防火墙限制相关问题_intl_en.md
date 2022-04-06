@@ -5,7 +5,7 @@ Allowlist the following ports:
 |  TRTC SDK (Native) | Ports |
 |---------|---------|
 | TCP port | 443, 20166 |
-| UDP port | 8000, 8080, 16285, 9000 |
+| UDP port | 8000、8080、8001、8002、8003、8004、8005、8006、8007、8008、8009、16285、9000 |
 
 Allowlist the following domain names:
 
@@ -17,6 +17,7 @@ yun.tim.qq.com
 dldir1.qq.com
 mlvbdc.live.qcloud.com
 query.tencent-cloud.com
+*.trtc.tencent-cloud.com        
 ```
 
 
@@ -32,6 +33,7 @@ Allowlist the following ports:
 Allowlist the following domain names:
 
 ```
+*.rtc.qcloud.com
 *.rtc.qq.com
 yun.tim.qq.com
 ```
