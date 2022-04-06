@@ -10,7 +10,7 @@ Você pode exibir as estatísticas de conexão, conforme mostrado abaixo:
 - **Time Period (Período)**: selecione um período.
 - **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar a granularidade de 1 minuto, 31 dias para a granularidade de 5 minutos, 93 dias para a granularidade de 1 hora e 186 dias para a granularidade de 1 dia.
 
-![](https://main.qcloudimg.com/raw/ebcbf2519d0189f9437d5375aa50ece9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4d3f9eaea3e2ca9442ec8cfabf0ad73f.jpg)
 
 ## Grupo de conexões
 
@@ -21,7 +21,7 @@ Você pode exibir as estatísticas do grupo de conexões, conforme mostrado abai
 - **Time Period (Período)**: selecione um período.
 - **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar a granularidade de 1 minuto, 31 dias para a granularidade de 5 minutos, 93 dias para a granularidade de 1 hora e 186 dias para a granularidade de 1 dia.
 
-![](https://main.qcloudimg.com/raw/7517ea8a6d1bffccd5436b64882d7c8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fce7e20b2dcaa474095a117380f41e85.jpg)
 
 ## Listener
 
@@ -33,7 +33,7 @@ Você pode exibir as estatísticas de listener, conforme mostrado abaixo:
 - **Time Period (Período)**: selecione um período.
 - **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar a granularidade de 1 minuto, 31 dias para a granularidade de 5 minutos, 93 dias para a granularidade de 1 hora e 186 dias para a granularidade de 1 dia.
 
-![](https://main.qcloudimg.com/raw/150adb14a909f5d954fb52b579d1cd72.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b1975214d1f82e89dcded5c4280d0bb9.jpg)
 
 ## Servidor de origem
 
@@ -45,12 +45,12 @@ Você pode exibir as estatísticas do status de integridade do servidor de orige
 - **Time Period (Período)**: selecione um período.
 - **Time Granularity (Granularidade de tempo)**: selecione uma granularidade de tempo. O tempo máximo de consulta é de 15 dias se você selecionar uma granularidade de 1 minuto e 31 dias para uma granularidade de 5 minutos.
 
-![](https://main.qcloudimg.com/raw/cb936fbfbca6c9a7e370d0401f4b6c55.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/75ce6339c8d51048a066fd3df481a642.jpg)
 
 ## Exportação de dados
 
 Acesse a página **Statistics (Estatísticas)** e clique no ícone de download para exportar os dados.
-![](https://main.qcloudimg.com/raw/fada34020a50842ff1c7625cdee437f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7646c6fb333f613b5dc1059de73b9847.jpg)
 
 ## Configuração de política de alarme
 Acesse a página [Statistics (Estatísticas)](https://console.cloud.tencent.com/gaap/data) e clique em **Configure Alarm (Configurar alarme)** no canto superior direito para configurar uma política de alarme. Para mais detalhes, consulte [Monitoramento do acesso em nuvem](https://intl.cloud.tencent.com/document/product/608/17541).
