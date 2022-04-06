@@ -8,7 +8,7 @@
 
 1. Before the Meeting Starts
 
-There are two ways to invite attendees before the meeting starts.
+ There are two ways to invite attendees before the meeting starts.
 
  - a. Click the dropdown to the right of the meeting title and select **Copy Invitation**.
 
@@ -18,7 +18,7 @@ There are two ways to invite attendees before the meeting starts.
 
 2. During the Meeting
 
-Click **Invite** on the toolbar to get the invitation information. You can **copy the invitation** and send it to invite attendees.
+ Click **Invite** on the toolbar to get the invitation information. You can **copy the invitation** and send it to invite attendees.
 
 
  - a. Click **Invite** and **Copy All** or **Copy Meeting ID and Link**.
