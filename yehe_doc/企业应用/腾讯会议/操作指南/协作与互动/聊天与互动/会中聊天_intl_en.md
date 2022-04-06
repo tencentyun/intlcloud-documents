@@ -2,8 +2,8 @@
 VooV Meeting allows attendees to chat in a meeting for efficient communication.
 
 ## Prerequisites
-- **Logged-in user:** Free or Enterprise Edition user.
-- **Logged-in device:** Windows, macOS, iOS, or Android.
+- **Logged-in user:** Free or Enterprise Edition user
+- **Logged-in device:** Windows, macOS, iOS, or Android
 
 
 ## Basic Chat Features
