@@ -46,7 +46,7 @@ In a meeting, tap **Share Screen** on the toolbar and select **Share Whiteboard*
 
 ### macOS
 
-1. Select: select/click the added whiteboard content and adjust it
+1. Select: you can select/click the added whiteboard content and adjust it.
 
 > This feature lets you drag, zoom in/out, or switch content that is added with **Pen**, **Highlighter**, or **Graphic**. You can also drag, edit text, change the text color or font size.
 
