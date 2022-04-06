@@ -23,7 +23,7 @@ When sharing PowerPoint slides, many users often use the **Speaker View** mode t
 
 4. Switch to the "Presenter View" window to deliver the effect.
 
-### **macOS**
+### **macOS:**
 
 1. Open the PowerPoint file you are going to share and press Option + Return to enter the "Presenter View" mode.
 
