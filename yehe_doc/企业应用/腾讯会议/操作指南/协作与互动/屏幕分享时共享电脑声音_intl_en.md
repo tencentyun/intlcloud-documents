@@ -34,6 +34,6 @@ In addition to sharing your current screen, the screen sharing feature also supp
 
 **Windows/macOS**
 
-1. When selecting the content to be shared, select **Share PC audio at the same time** in the bottom-left corner of the window to share the audio from your PC with other attendees while sharing the screen;
+1. When selecting the content to be shared, select **Share PC audio at the same time** in the bottom-left corner of the window to share the audio from your PC with other attendees while sharing the screen.
 
-2. If you only want to share the audio from your PC, please select **Only PC audio** .
+2. If you only want to share the audio from your PC, please select **Only PC audio**.
