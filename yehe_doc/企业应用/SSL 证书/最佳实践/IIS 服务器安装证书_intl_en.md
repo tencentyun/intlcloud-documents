@@ -16,7 +16,7 @@ After decompression, you can get the certificate files of the relevant types, in
     - `cloud.tencent.com.pfx`: certificate file
     - `keystorePass.txt`: password file (If a private key password is set, there is no `keystorePass.txt`.)
   - CSR file content: `cloud.tencent.com.csr` file
-  >!The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is not relevant to installation.
+  >?The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is not relevant to installation.
 2. Open the IIS Manager, select the computer name, and double-click **Server Certificates** to open it, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/dc34b3e08aeb07949782ac874be1fa45.png)
 3. In the **Actions** column to the right of the **Server Certificates** window, click **Import**, as shown in the following figure.
