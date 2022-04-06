@@ -415,7 +415,7 @@ A local audio/video stream is created through [createStream](https://web.sdk.qcl
 
 ### RemoteStream
 
-A remote audio/video stream is obtained via the [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-Event.html#.STREAM_ADDED) callback. `RemoteStream` is a subclass of [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html).
+A remote audio/video stream is obtained via the [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED) callback. `RemoteStream` is a subclass of [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html).
 
 | API                          | Description           |
 |-----------------|-----------|
