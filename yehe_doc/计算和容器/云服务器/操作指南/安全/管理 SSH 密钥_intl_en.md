@@ -18,7 +18,7 @@ This document describes common operations related to using SSH key pair to log i
 
 
 <span id="bindingSSH"></span>
-### Binding a key to instance
+### Binding a key to an instance
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
  2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
  3. On the SSH key management page, select the target SSH key, and click **Bind an instance**.
@@ -26,7 +26,7 @@ This document describes common operations related to using SSH key pair to log i
  4. In the pop-up window, select the target region and instances, and click **Bind**.
 
 
-### Unbinding a key from instance
+### Unbinding a key from an instance
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
  2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
  3. On the SSH key management page, select the target SSH key, and click **Unbind an instance**.
@@ -57,7 +57,7 @@ This document describes common operations related to using SSH key pair to log i
 		![](https://main.qcloudimg.com/raw/bfcdfb401f8906834b02372d3e50dbe0.png)
 
 
-### Using an SSH key to log in to a Linux CVM
+### Logging in to a Linux CVM using an SSH key
 
 1. [Create an SSH key](#creatSSH).
 2. [Bind an SSH key to a CVM instance](#bindingSSH).
