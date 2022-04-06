@@ -1,14 +1,7 @@
 CSS 서비스 이용 시, 푸시 스트리밍 도메인과 재생 도메인을 포함하는 최소 **2개**의 도메인이 필요하며, 푸시 스트리밍과 재생은 동일한 도메인을 사용할 수 없습니다.
 
 ## 전제 조건
-1. [Tencent Cloud CSS 서비스](https://intl.cloud.tencent.com/product/css)가 활성화된 상태여야 합니다.
-2. 도메인이 준비되어 있어야 합니다(중국 대륙 리소스를 사용하는 경우, 도메인 ICP비안을 완료해야 합니다).
-   도메인 ICP비안을 완료하지 않은 경우 Tencent Cloud의 웹 사이트 ICP비안에서 완료할 수 있습니다.
->!
->- 중국 공업정보부 규정에 따라 도메인은 반드시 ICP비안을 진행해야 합니다. ICP비안은 영업일 기준 몇 일이 소요되므로 사전에 완료되어야 합니다. 자세한 내용은 [도메인 ICP비안 및 설정 FAQ](https://intl.cloud.tencent.com/document/product/267/32478)를 참고하십시오.
->- 도메인 ICP비안 완료일은 도메인 서비스 제공 업체가 정한 날짜를 기준으로 합니다. 공업정보부의 ICP비안 완료 통지를 받고 1시간 - 24시간 후 [공업정보부 ICP비안 조회 사이트](https://beian.miit.gov.cn/#/Integrated/index)에서 ICP비안 도메인이 조회되면 Tencent Cloud CSS에서 ICP비안을 받은 도메인을 추가할 수 있습니다.
->- 새로 ICP비안을 통과한 도메인은 Tencent Cloud CVM에 동기화되는 데 하루 정도의 시간이 소요되며, 도메인 추가 시 도메인 ICP비안 미완료가 표시될 수 있습니다.
-
+[Tencent Cloud CSS 서비스](https://intl.cloud.tencent.com/product/css)가 활성화된 상태여야 합니다.
 
 ## 작업 절차
 [](id:step1)
