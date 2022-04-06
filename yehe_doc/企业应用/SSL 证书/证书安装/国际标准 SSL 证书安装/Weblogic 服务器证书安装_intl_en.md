@@ -9,7 +9,7 @@ This document describes how to install an SSL certificate on a WebLogic server.
 
 
 ## Directions
->!The directories mentioned in the following steps are the directories of the test environment. Determine their specific paths based on your actual environment and needs.
+>?The directories mentioned in the following steps are the directories of the test environment. Determine their specific paths based on your actual environment and needs.
 >
 1. Download the certificate package for the domain name `cloud.tencent.com` from the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and decompress it to a local directory.
 After decompression, you can obtain the certificate files of the relevant types, including the `Tomcat` folder and the CSR file:
@@ -41,7 +41,7 @@ Set the parameters as follows:
 **Custom Identity Keystore Type**: enter `JKS`.
 **Custom Identity Keystore Passphrase**: enter your JKS password.
 **Confirm Custom Identity Keystore Passphrase**: re-enter your JKS password.
->!**Custom Identity Keystore Passphrase** and **Confirm Custom Identity Keystore Passphrase** are left empty by default and can be set to your JKS password. The settings of these 2 parameters do not affect the use of your certificate.
+>?**Custom Identity Keystore Passphrase** and **Confirm Custom Identity Keystore Passphrase** are left empty by default and can be set to your JKS password. The settings of these 2 parameters do not affect the use of your certificate.
 
 9. On the configuration management page for `AdminiServer`, click the **SSL** tab, set the parameters, and click **Save**.
 ![](https://main.qcloudimg.com/raw/8896cb2a6f2f4ce846439cd911688a06.png)
