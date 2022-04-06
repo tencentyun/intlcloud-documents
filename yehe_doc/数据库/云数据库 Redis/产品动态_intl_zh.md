@@ -4,20 +4,22 @@
 <tr>
 <td>全球复制</td>
 <td>全球复制支持添加实例、移除实例、切换实例角色、删除复制组功能。</td>
-<td><a href="https://cloud.tencent.com/document/product/239/67314" target="">全球复制概述</td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/45602" target="">全球复制概述</td></tr>
 <tr>
 <td>自定义备份保留时长</td>
 <td>支持通过白名单方式申请自定义备份文件的保留时长。</td>
-<td><a href="https://cloud.tencent.com/document/product/239/30901" target="">备份数据</td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/7071" target="">备份数据</td></tr>
 <tr>
 <td>模拟故障 API 接口</td>
 <td>同可用区实例支持调用 API 接口 KillMasterGroup 进行故障模拟测试。</td>
-<td><a href="https://cloud.tencent.com/document/product/239/58399" target="">模拟故障接口</td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41430" target="">模拟故障接口</td></tr>
 <tr>
 <td>主备切换 API 接口 </td>
 <td>同可用区实例支持调用 API 接口 ChangeReplicaToMaster 进行副本（组）提主，达到主备切换的目的。</td>
-<td><a href="https://cloud.tencent.com/document/product/239/56698" target="">副本组提主</td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41037" target="">副本组提主</td></tr>
 </table>
+
+
 
 ## 2021年12月
 <table>
