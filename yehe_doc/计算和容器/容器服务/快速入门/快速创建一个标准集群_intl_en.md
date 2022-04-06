@@ -45,7 +45,7 @@ On the **Select Model** page, confirm the billing mode, select an availability z
 On the **CVM Configuration** page, select the login method, keep other default settings unchanged, and click **Next**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/83501db19590eccb230c482ae37bd3a9.png)
 
-- **Login Method**: Options include **SSH Key Pair**, **Random Password** or **Custom Password**. **Random Password** is this document.
+- **Login Method**: Options include **SSH Key Pair**, **Random Password** or **Custom Password**. **Random Password** is used in this document.
 
 ### Component configurations
 On the **Component Configurations** page, you can choose the components you need, including storage, monitoring, image, etc. If you don’t need these components, click **Next** directly. Here we choose not to install components and keep other default settings unchanged.
