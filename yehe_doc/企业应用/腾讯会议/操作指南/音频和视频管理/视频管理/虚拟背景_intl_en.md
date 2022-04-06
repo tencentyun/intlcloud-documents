@@ -4,7 +4,7 @@
 Background is an application of the portrait segmentation technology. During a video meeting, VooV Meeting can automatically recognize the attendees and replace their backgrounds with the specified image or video. On one hand, the virtual background can protect the attendees' privacy; on the other hand, it can replace a real exhibition background to facilitate themed promotion of the meeting and reduce the meeting costs. To get a better virtual background experience, we recommend you use this feature in a simple scenario with even lighting. If you have a green screen, you can use the green screen feature to further improve the virtual background effect.
 
 ## Prerequisites
-- **Logged-in user:** Free or Enterprise edition user
+- **Logged-in user:** Free or Enterprise Edition user
 - **Logged-in device:** Windows, macOS, iOS, or Android
 - **Version:** v1.3.0 or later
 - **Hardware requirements:**
@@ -32,11 +32,11 @@ Background is an application of the portrait segmentation technology. During a v
 ## Notes
 **Requirements for customized image or video:**
 - Image: 
-- Format: .jpg, .bmp, .png
-- Resolution: 4096 × 4096
-- Size: within 20 MB
-- Aspect ratio: 0.01–100. We recommend you use 16:9
-- Quantity: 19 images for Android/iOS each and 49 images for macOS/Windows each. The quantity includes the numbers of blurred backgrounds, images in the system, and images uploaded by users.
+	- Format: .jpg, .bmp, .png
+	- Resolution: 4096 × 4096
+	- Size: within 20 MB
+	- Aspect ratio: 0.01–100. We recommend you use 16:9
+	- Quantity: 19 images for Android/iOS each and 49 images for macOS/Windows each. The quantity includes the numbers of blurred backgrounds, images in the 	system, and images uploaded by users.
 - Video:
 	- Format: .mov and .mp4
 	- Resolution: 1920 × 1080
