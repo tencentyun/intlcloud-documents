@@ -1,425 +1,391 @@
-TRTC는 Tencent Cloud의 LiteAV 시리즈 제품입니다. LiteAV 시스템의 SDK는 모두 동일한 기본 모듈을 사용하기 때문에 프로젝트에 두 개 이상의 LiteAV 시스템 SDK를 동시에 통합하면 부호 충돌 문제(symbol duplicate)가 발생할 수 있습니다. 이에 따라 Tencent Cloud는 서로 다른 제품 기능을 통합한 **라이트 버전(TRTC)**, **프로 버전(Professional)**, **엔터프라이즈 버전(Enterprise)**을 제공하고 있으며, 실제 비즈니스 필요에 따라 각 버전을 선택할 수 있습니다.
+<style>
+    .card-container {
+        width: 380px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        text-align: center;
+    }
+    
+    .markdown-text-box img {
+        box-shadow: none;
+    }
 
 
+    .titlename {
+                color:#191919;
+        position: relative;
+        top: -2px;
+                font-weight: bolder;
+                font-size: larger;
+    }
+        
+        @media (max-width: 768px){
+                .card-container,
+                .scene-card-container{
+                        width: 100%;
+                }
+                .scene-card > div{
+                        width: 100%!important;
+                        margin-left: 0!important;
+                }
+                img {
+        box-shadow: none;
+    }
+        }
+</style>
 
-<h2 id="TRTC">라이트 버전(TRTC)</h2>  
-라이트 버전은 TRTC와 라이브 방송 재생(TXLivePlayer) 기능만 제공하며, App 설치 패키지 용량 증분이 가장 적어 TRTC 관련 기능만 사용하는 사용자에게 적합합니다.
+## SDK 다운로드
+TRTC는 Tencent Cloud 고객에게 안정적이고 신뢰도 높은 저비용 멀티미디어 전송 능력을 제공하기 위해 Tencent Cloud가 제공하는 저지연, 고품질 멀티미디어 통신 서비스 세트입니다. 이 서비스는 전 세계의 멀티미디어 전송 네트워크와 터미널 SDK 세트로 구성되어 있으며 이 페이지에서 현재 주요 클라이언트 플랫폼과 인기 있는 프레임워크를 포괄하는 터미널 SDK를 다운로드할 수 있습니다.
 
-<table>
-   <tr>
-      <th width="0px" style="text-align:center">소속 플랫폼</td>
-      <th width="0px" style="text-align:center">ZIP 패키지</td>
-      <th width="0px"  style="text-align:center">Github</td>
-      <th width="0px" style="text-align:center">Gitee</td>
-      <th width="0px" style="text-align:center">Demo 실행 설명</td>
-      <th width="0px" style="text-align:center">SDK 통합 가이드</td>
-      <th width="0px" style="text-align:center">설치 패키지 증분</td>
-   </tr>
-   <tr>
-      <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_iOS_en_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">3M（arm64）</td>
-   </tr>
-     <tr>
-      <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Android_en_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center">jar：546K<br> so（armeabi）：4.5M<br> so（armv7）：4.5M<br>so（arm64）：5.3M</td>
-   </tr>
-     <tr>
-      <td style="text-align:center">Windows(C++)  </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Win_en_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-cpp', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
-      <td style="text-align:center">12.7M（C++ x86）<br>15.6M（C++ x64）</td>
-   </tr>
-     <tr>
-      <td style="text-align:center">Windows(C#) </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Win_en_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl_download_csharp', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
-      <td style="text-align:center">13.8M（C# x64）<br>13.3M（C# x86）</td>
-   </tr>
-     <tr>
-      <td style="text-align:center">Mac</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'zip'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Mac_en_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-mac', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35094">DOC</a></td>
-      <td style="text-align:center">2.05M（arm64）</td>
-   </tr>
-     <tr>
-      <td style="text-align:center">Web</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'zip'})" target="_blank" href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'github'})" target="_blank" href=" https://github.com/tencentyun/TRTCSDK/tree/master/Web">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-web', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-   </tr>
-   <tr>
-      <td style="text-align:center">Electron  </td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'zip'})" target="_blank" href="https://web.sdk.qcloud.com/trtc/electron/download/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'gitee'})" target="_blank" href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-electron', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-   </tr>
-<tr>
-      <td style="text-align:center">Flutter</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'zip'})" target="_blank" href="https://comm.qq.com/trtc/TRTC-Simple-Demo_en.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'github'})" target="_blank" href="https://github.com/LiteAVSDK/TRTC_Flutter">Github</a></td>
-      <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/39243">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-</tr>
-<tr>
-      <td style="text-align:center">React Native</td>
-      <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCReactNative">Github</a></td>
-      <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/43297">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/43298">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-</tr>
-<tr>
-      <td style="text-align:center">Unity</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-flutter', ext1: 'zip'})" target="_blank" href="https://comm.qq.com/sdk/trtc/unity/TRTCUnitySDK.unitypackage">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCUnitySDK/blob/main/README.en.md">Github</a></td>
-      <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/40779">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/40780">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-</tr>
-<tr>
-      <td style="text-align:center">Unreal Engine</td>
-      <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'github'})" target="_blank" href="https://github.com/tencentyun/TRTCUnrealEngine">Github</a></td>
-      <td style="text-align:center">N/A</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/44077">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-rn', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/44078">DOC</a></td>
-      <td style="text-align:center">N/A</td>
-</tr>
-</table>
+>? 현재 Github에 대한 네트워크 액세스 속도가 이상적이지 않은 경우 [여기를 클릭](https://gitee.com/cloudtencent/TRTCSDK)하여 Gitee의 이미지 레지스트리에 액세스할 수 있습니다.
 
->? 
->- SDK로 인한 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참고하십시오.
->- QR 코드를 스캔해서 공식 계정을 팔로우하고 SDK의 버전 업데이트 및 최신 기술 동향을 알아보십시오.
-> ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
+### Web SDK
 
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+  <div class="card-container">
+      <div class="card">
+        <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
+        <p class="titlename">안정 버전(TRTC)SDK</p>
+        <p style="color:#586376;">TRTC 기능을 포함하며, App을 설치하지 않고도 음성 및 영상 통화를 할 수 있으며 주요 데스크톱 및 모바일 브라우저와 호환됩니다.</p>
+        <a onclick="reportEvent({name: 'download-click-web', ext1: 'zip'})" target="_blank" href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">ZIP 다운로드</a>
+        <a style="margin-left: 10px;" onclick="reportEvent({name: 'download-click-web', ext1: 'github'})" target="_blank" href="https://github.com/LiteAVSDK/TRTC_Web">GitHub</a>
+        <a style="margin-left: 10px;" onclick="reportEvent({name: 'download-click-web', ext1: 'doc-sdk'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35096">통합 가이드</a>
+        <a style="margin-left: 10px;" onclick="reportEvent({name: 'download-click-web', ext1: 'doc-demo'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35607">Demo 실행</a>
+      </div>
+  </div>
+</div>
 
-<h2 id="Professional">프로 버전(Professional)</h2>
+### Android SDK
 
-프로 버전은 TRTC를 포함한 멀티미디어에 관한 핵심 기능이 집약되어 있으며, [Player+](https://intl.cloud.tencent.com/document/product/266/7836), [Mobile Live Video Broadcasting](https://intl.cloud.tencent.com/product/mlvb), [User Generated Short Video SDK](https://intl.cloud.tencent.com/product/ugsv) 등의 다양한 멀티미디어 관련 핵심 기능이 통합되어 있어, 하위 레이어 모듈을 효율적으로 재사용해 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작고, symbol duplicate 문제를 방지할 수 있습니다.
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+        <div class="card-container">
+            <div class="card">
+                           <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                                <p class="titlename">미리보기 버전(TRTC)SDK</p>
+                <p style="color:#586376;">새로운 아키텍처를 사용하여 기능이 안정적이고 용량은 더 작으며 성능이 더 좋습니다.</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_Android_preview.zip">ZIP 다운로드</a>
+                                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                            <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                                <p class="titlename">안정 버전(TRTC)SDK</p>
+                <p style="color:#586376;">TRTC와 라이브 방송 재생(TXLivePlayer)의 두 가지 기능이 포함되어 있으며, 용량이 작고 기능이 안정적입니다.</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Android_en_latest.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Android">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35093">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                                <p class="titlename">다기능 버전(Professional)SDK</p>
+                <p style="color:#586376;">TRTC, 라이브 방송, 쇼트 비디오, VOD 등 다양하고 강력한 기능이 포함되어 있습니다!</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/tencentyun/LiteAVProfessional_Android">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35093">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">Demo 실행</a>
+            </div>
+        </div>
+</div>
 
-<table>
-   <tr>
-      <th width="0px" style="text-align:center">소속 플랫폼</td>
-      <th width="0px" style="text-align:center">ZIP 패키지</td>
-      <th width="0px"  style="text-align:center">Github</td>
-      <th width="0px" style="text-align:center">64비트 지원</td>      
-      <th width="0px" style="text-align:center">Demo 실행 설명</td>
-      <th width="0px" style="text-align:center">SDK 통합 가이드</td>
-      <th width="0px" style="text-align:center">설치 패키지 증분</td>
-   </tr>
-   <tr>
-      <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip', ext2:'professional'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'github', ext2:'professional'})" target="_blank" href="https://github.com/tencentyun/LiteAVProfessional_iOS">Github</a></td>
-      <td style="text-align:center">지원</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">3.2M（arm64）</td>
-   </tr>
-   <tr>
-      <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip', ext2:'professional'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'github', ext2:'professional'})" target="_blank" href="https://github.com/tencentyun/LiteAVProfessional_Android">Github</a></td>
-      <td style="text-align:center">지원</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'professional'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center">jar：1M<br> so（armeabi）：5.7M<br> so（armv7）：5.7M<br>so（arm64）：6.8M</td>
-   </tr>
-</table>
+### iOS SDK
 
->? 
->- Windows와 Mac 버전의 SDK는 현재 단일 버전만 제공되며, 라이트 버전, 프로 버전 및 엔터프라이즈 버전의 구분이 없습니다.
->- LiteAV 시스템의 SDK는 모두 동일한 기본 모듈을 사용하기 때문에 프로젝트에 두 개 이상의 LiteAV 시스템 SDK를 동시에 통합하면 부호 충돌 문제(symbol duplicate)가 발생할 수 있습니다. 이는 프로 버전의 LiteAVSDK를 통합하여 해결할 수 있습니다.
->- SDK로 인한 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참고하십시오.
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+        <div class="card-container">
+            <div class="card">
+                                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                                <p class="titlename">미리보기 버전(TRTC)SDK</p>
+                <p style="color:#586376;">새로운 아키텍처를 사용하여 기능이 안정적이고 용량은 더 작으며 성능이 더 좋습니다.</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_iOS_preview.zip">ZIP 다운로드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35092">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35086">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                                <p class="titlename">안정 버전(TRTC)SDK</p>
+                <p style="color:#586376;">TRTC와 라이브 방송 재생(TXLivePlayer)의 두 가지 기능이 포함되어 있으며, 용량이 작고 기능이 안정적입니다.</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_iOS_en_latest.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_iOS">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35092">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35086">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                                <p class="titlename">다기능 버전(Professional)SDK</p>
+                 <p style="color:#586376;">TRTC, 라이브 방송, 쇼트 비디오, VOD 등 다양하고 강력한 기능이 포함되어 있습니다!</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/tencentyun/LiteAVProfessional_iOS">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35092">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35086">Demo 실행</a>
+            </div>
+        </div>
+</div>
 
+### Windows SDK
 
-<h2 id="Enterprise">엔터프라이즈 버전(Enterprise)</h2>
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
+                                <p class="titlename">미리보기 버전(TRTC)SDK</p>
+                <p style="color:#586376;">새로운 아키텍처를 사용하여 기능이 안정적이고 용량은 더 작으며 성능이 더 좋습니다.</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_Win_preview.zip">ZIP 다운로드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35085">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
+                                <p class="titlename">안정 버전(TRTC)SDK</p>
+                <p style="color:#586376;">TRTC, 라이브 방송 재생(TXLivePlayer) 및 VOD 재생(TXVodPlayer)의 세 가지 기능이 포함되어 있습니다.</p>
+                          <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Win_en_latest.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35085">Demo 실행</a>
+            </div>
+        </div>
+</div>
 
-프로 버전의 모든 기능 외에도 엔터프라이즈 버전에는 눈 확대, 얼굴 슬리밍, 뷰티 필터 및 애니메이션 스티커와 같은 AI 뷰티 필터 특수 효과 컴포넌트가 포함되어 있습니다. 과금에 관한 내용은 [문의하기](https://intl.cloud.tencent.com/contact-us)를 참고하십시오. 엔터프라이즈 버전 다운로드 후 뷰티 필터 SDK의 압축 해제 비밀번호와 인증 License가 있어야 실행되므로, [문의하기](https://intl.cloud.tencent.com/contact-us)를 통해 암호 해제 비밀번호와 인증 License를 획득하십시오.
+### Mac SDK
 
-<table>
-   <tr>
-      <th width="0px" style="text-align:center">소속 플랫폼</td>
-      <th width="0px" style="text-align:center">ZIP 패키지</td>
-      <th width="0px" style="text-align:center">64비트 지원</td>
-      <th width="0px" style="text-align:center">Demo 실행 설명</td>
-      <th width="0px" style="text-align:center">SDK 통합 가이드</td>
-      <th width="0px" style="text-align:center">설치 패키지 증분</td>
-   </tr>
-   <tr>
-      <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'zip', ext2:'enterprise'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center">지원</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-demo', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-ios', ext1: 'doc-sdk', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center"> 5.5M（arm64）</td>
-   </tr>
-   <tr>
-      <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'zip', ext2:'enterprise'})" target="_blank" href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center">지원</td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-demo', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
-      <td style="text-align:center"><a onclick="reportEvent({name: 'intl-download-click-android', ext1: 'doc-sdk', ext2:'enterprise'})" target="_blank" href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center"> jar：2.2M<br>so(armeabi)：9.3M</td>
-   </tr>
-</table>
-
->?
->- Windows와 Mac 버전의 SDK는 현재 AI 뷰티 필터 특수 효과 모듈을 지원하지 않으며, 라이트 버전, 프로 버전 및 엔터프라이즈 버전의 구분이 없습니다.
->- SDK가 가져오는 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참고하십시오.
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
+                                <p class="titlename">미리보기 버전(TRTC)SDK</p>
+                <p style="color:#586376;">새로운 아키텍처를 사용하여 기능이 안정적이고 용량은 더 작으며 성능이 더 좋습니다.</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_Mac_preview.zip">ZIP 다운로드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/36067">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/36067">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
+                                <p class="titlename">안정 버전(TRTC)SDK</p>
+                <p style="color:#586376;">TRTC, 라이브 방송 재생(TXLivePlayer) 및 VOD 재생(TXVodPlayer)의 세 가지 기능이 포함되어 있습니다.</p>
+                                <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Mac_en_latest.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Mac">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35094">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35086">Demo 실행</a>
+            </div>
+        </div>
+</div>
 
 
-## 각 버전 차이 대조표
+### 크로스 플랫폼 SDK
 
-![](https://main.qcloudimg.com/raw/d3c876e8d751709e1df52faf4c0bf012.jpg)
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://qcloudimg.tencent-cloud.cn/raw/d6fd52f011bdbb13302b2ae261e8a756.png" data-nonescope="true"/>
+                                <p class="titlename">Electron SDK</p>
+                <p style="color:#586376;">Electron 프레임워크 캡슐화를 기반으로 하며, Web 기술을 기반으로 Windows 및 Mac 플랫폼에서 애플리케이션을 빠르게 구축할 수 있습니다.</p>
+                                <a href="https://web.sdk.qcloud.com/trtc/electron/download/TXLiteAVSDK_TRTC_Electron_latest.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Electron">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35097">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35089">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                            <img src="https://qcloudimg.tencent-cloud.cn/raw/3b6929f89ce1113bc2005873f2338de9.png" data-nonescope="true"/>
+                                <p class="titlename">Flutter SDK</p>
+                <p style="color:#586376;">Flutter 프레임워크로 캡슐화된 TRTC SDK 기반 코드 세트로 다양한 플랫폼에서 실행할 수 있는 App을 빠르게 구축할 수 있습니다.</p>
+                                <a href="https://comm.qq.com/trtc/TRTC-Simple-Demo_en.zip">ZIP 다운로드</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Flutter">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35098">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/39243">Demo 실행</a>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                            <img src="https://qcloudimg.tencent-cloud.cn/raw/90f1ef49218b43d7042bb05b1c0a3959.png" data-nonescope="true">
+                                <p class="titlename">React Native SDK</p>
+                <p style="color:#586376;">React Native 프레임워크로 캡슐화된 TRTC SDK 기반 코드 세트로 모바일 App을 빠르게 구축할 수 있습니다.</p>
+                <a style="margin-left: 10px;" href="https://github.com/tencentyun/TRTCReactNative">GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/43298">통합 가이드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/43297">Demo 실행</a>
+            </div>
+        </div>
+</div>
 
+
+## 버전 비교
 <table>
   <tr>
     <th width="100px" style="text-align:center">기능 모듈</th>
-    <th width="100px" style="text-align:center">기능 항목</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">라이브 방송 기본 버전</a><br>LiteAV_Smart</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">UGSV 버전</a><br>LiteAV_UGC</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC 버전</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center">플레이어 버전<br>LiteAV_Player</th>
-    <th width="100px" style="text-align:center"><a href="#Professional">프로 버전</a><br>Professional</th>
-    <th width="100px" style="text-align:center"><a href="#Enterprise">엔터프라이즈 버전</a><br>Enterprise</th>
+    <th width="100px" style="text-align:center">기능 세부 사항</th>
+    <th width="100px" style="text-align:center">미리보기 버전</th>
+    <th width="100px" style="text-align:center">안정 버전</th>
+    <th width="100px" style="text-align:center">다기능 버전</th>
+  </tr>
+    <tr>
+    <td rowspan='2' style="text-align:center">영상 통화</td>
+    <td style="text-align:center">2인 통화</td>
+        <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
+    <td style="text-align:center">그룹 회의</td>
+        <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>
+  <tr>
+    <td rowspan='2' style="text-align:center">라이브 방송 마이크 연결</td>
+    <td style="text-align:center">방 내 마이크 연결</td>
+        <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">방 간 마이크 연결</td>
+        <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>
+  <tr>
+    <td rowspan='2'  style="text-align:center">기본 뷰티 필터</td>
+    <td style="text-align:center">피부 미백</td>
+    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">컬러 필터</td>
+    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>
+    <tr>
     <td rowspan='2' style="text-align:center">라이브 방송 푸시 스트림</td>
     <td style="text-align:center">카메라 푸시 스트림</td>
-    <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
     <td style="text-align:center">녹화 푸시 스트림</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td rowspan='3' style="text-align:center">라이브 방송 재생</td>
     <td style="text-align:center">RTMP 프로토콜</td>
-    <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">HTTP - FLV</td>
     <td style="text-align:center">&#10003;</td>
-     <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">HLS(m3u8)</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td rowspan='3' style="text-align:center">VOD 재생</td>
     <td style="text-align:center">MP4 포맷</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
     <td style="text-align:center">HLS(m3u8)</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
     <td style="text-align:center">DRM 암호화</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td rowspan='2' style="text-align:center">뷰티 필터</td>
-    <td style="text-align:center">기본 뷰티 필터</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">기본 필터</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-  </tr>
-  <tr>
-    <td rowspan='2' style="text-align:center">라이브 방송 마이크 연결</td>
-    <td style="text-align:center">마이크 연결 인터랙션</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">크로스 룸 PK</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-  </tr>
-  <tr>
-    <td rowspan='2' style="text-align:center">영상 통화</td>
-    <td style="text-align:center">2인 통화</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">화상 회의</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">&#10003;</td>
-  </tr>
-  <tr>
-    <td rowspan='4' style="text-align:center">UGSV</td>
+    <td rowspan='4' style="text-align:center">쇼트 비디오</td>
     <td style="text-align:center">녹화 및 촬영</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">편집 및 스티칭</td>
+    <td style="text-align:center">클리핑 및 스플라이싱</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">‘TikTok’ 특수 효과</td>
+    <td style="text-align:center">'TikTok' 특수 효과</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">비디오 업로드</td>
     <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
-  <tr>
-    <td rowspan='4' style="text-align:center">AI 뷰티 필터 특수 효과</td>
-    <td style="text-align:center">큰 눈과 갸름한 얼굴</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+   <tr>
+    <td rowspan='4' style="text-align:center">사이즈</td>
+    <td style="text-align:center">Android</td>
+    <td style="text-align:center">armv7: 3.97M<br>arm64: 4.33M</td>
+    <td style="text-align:center">armv7: 6.95M<br>arm64: 7.94M</td>
+    <td style="text-align:center">armv7: 9.15M<br>arm64: 10.4M</td>
   </tr>
-  <tr>
-    <td style="text-align:center">V라인과 오똑한 코</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+    <tr>
+    <td style="text-align:center">iOS</td>
+    <td style="text-align:center">arm64: 3.15M</td>
+    <td style="text-align:center">arm64: 3.23M</td>
+    <td style="text-align:center">N/A</td>
   </tr>
-  <tr>
-    <td style="text-align:center">애니메이션 스티커</td>
-   <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
+    <tr>
+    <td style="text-align:center">Windows</td>
+        <td style="text-align:center">Win32: 13.0M <br>Win64: 15.4M</td>
+    <td style="text-align:center">Win32: 21.3M <br>Win64: 26.9M</td>
+    <td style="text-align:center">N/A</td>
   </tr>
-  <tr>
-    <td style="text-align:center">그린 스크린 크로마 키</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
-    <td style="text-align:center">&#10003;</td>
-  </tr>
+    <tr>
+    <td style="text-align:center">Mac</td>
+        <td style="text-align:center"> x86_64：15.8M</td>
+    <td style="text-align:center">x86_64：18.1M</td>
+    <td style="text-align:center">N/A</td>
 </table>
+
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>
 let aegis;
