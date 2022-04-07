@@ -16,7 +16,7 @@ MySQL DBでデータを永遠にストレージすることができます。DB�
 
 ### WordPressサービス作成
 #### TencentDB作成
-1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、DBインスタンスリストの上で【新規作成】をクリックします。下図の通りです：
+1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、DBインスタンスリストの上で【 Create 】をクリックします。下図の通りです：
 ![](https://main.qcloudimg.com/raw/78b43441e5d296e83e2db9246aaddff7.png)
 2. 購入する構成を選択します。詳細は[MySQL](https://intl.cloud.tencent.com/document/product/236/5147)をご参照ください。
 >!TencentDBのある地域はクラスターと同じです。そうでなければこのDBに接続できません。
@@ -25,8 +25,8 @@ MySQL DBでデータを永遠にストレージすることができます。DB�
 4. DBについて初期化操作を行います。詳細は[MySQLの初期化](https://intl.cloud.tencent.com/document/product/236/3128)をご参照ください。
 
 #### TencentDBを使用するWordPressサービス作成
-1. Tencent Cloud　Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
-2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、【新規作成】をクリックします。下図の通りです：
+1. Tencent Cloud　Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで【[ Cluster](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
+2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、【Create】をクリックします。下図の通りです：
 ![](https://main.qcloudimg.com/raw/239bfe0c3488c19139c5359b27d24044.png)
 3. 「Workloadの新規作成」ページで次の情報によって、ロードの基本情報を設定します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/3ff74d307b48b793ac121345e7f19154.png)
@@ -62,15 +62,15 @@ WORDPRESS_DB_PASSWORD = 初期化の時、記入されたパスワード
   - **ポートマッピング**：TCPプロトコルを選択し、コンテナポートとサービスポートを80に設定します。
  >!サービスのあるクラスターのセキュリティグループはノードネットワークとコンテナネットワークをインターネットにオープンしてください。同時に、30000 - 32768ポートをインターネットにオープンする必要もありますが、そうでなければTencent Kubernetes Engineが使用できない問題が発生する場合があります。詳細は[Tencent Kubernetes Engineセキュリティグループ設定](https://intl.cloud.tencent.com/document/product/457/9084)をご参照ください。
 
-7. 【Workload作成】をクリックして、WordPressサービスの作成を完了します。
+7. 【 Create workload】をクリックして、WordPressサービスの作成を完了します。
 
 
 ### WordPressサービスにアクセス
 次の二つの方式でWordPressサービスにアクセスできます。
 
 #### Cloud Load Balancer IPでWordPressサービスにアクセス
-1. 左側ナビゲーションバーで【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】をクリックして、「クラスター管理」ページに入ります。
-2. WordPressサービスのあるクラスターIDをクリックして、【サービス】>【Service】を選択します。
+1. 左側ナビゲーションバーで【[ Clusters](https://console.cloud.tencent.com/tke2/cluster)】をクリックして、「クラスター管理」ページに入ります。
+2. WordPressサービスのあるクラスターIDをクリックして、【Service】>【Service】を選択します。
 3. サービス管理のページに入って、WordPressサービスのCloud Load Balancer　IPをコピーして、下図の通りです：
 ![](https://main.qcloudimg.com/raw/f5f9964eacb4752e528ce32d467662a8.png)
 4. ブラウザのアドレスバーにCloud Load Balancer　IPを入力し、**Enter**を押すと、サービスにアクセスできます。

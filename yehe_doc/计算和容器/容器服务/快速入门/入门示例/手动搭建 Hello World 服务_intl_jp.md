@@ -103,10 +103,10 @@ sudo docker push ccr.ccs.tencentyun.com/ネームスペース/helloworld:v1
 >- Tencent Cloudアカウント登録済みです。[登録ページ](https://intl.cloud.tencent.com/register)に移動し、関連情報を記入してTencent Cloudアカウントに登録してください。
 >- クラスターが作成されました。詳細は、[クラスター作成](https://intl.cloud.tencent.com/document/product/457/30637)をご参照ください。
 >
-1. Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
-2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、【新規作成】をクリックします。下図の通りです：
+1. Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで【[ Clusters ](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
+2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、【 Create】をクリックします。下図の通りです：
 ![](https://main.qcloudimg.com/raw/bacaf92e14b7c342db6b3179c2ae5e8f.png)
-3. 「Workloadの新規作成」ページで次の情報によって、ロードの基本情報を設定します。下図の通りです：
+3. 「Create Workload」ページで次の情報によって、ロードの基本情報を設定します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/e2d083fececab9d1f84dd82f3850537a.png)
  - **ロード名**：作成するロードの名前を入力し、本文はhelloworldを例として説明します。
  - **説明**：ロードについての情報を記入します。
@@ -117,7 +117,7 @@ sudo docker push ccr.ccs.tencentyun.com/ネームスペース/helloworld:v1
 4. 次の情報を参照して「インスタンスコンテナ」を設定します。下図の通りです：
 インスタンスコンテナの名前を入力し、本文はhelloworldを例として説明します。
 ![](https://main.qcloudimg.com/raw/27b651e922b4a3afb925326ed8393bd0.png)
-【イメージ選択】をクリックして、ポップアップボックスで【私のイメージ】を選択し、検索ボックス機能でhelloworldイメージを見つけて【確定】をクリックします。下図の通りです：
+【 Select an image】をクリックして、ポップアップボックスで【My Images 】を選択し、検索ボックス機能でhelloworldイメージを見つけて【Ok】をクリックします。下図の通りです：
 ![](https://main.qcloudimg.com/raw/86a18f657b75d338ab3c084710c3ba10.png)
 主なパラメータ情報は下記の通りです：
  - **イメージバージョン（Tag）**：デフォルト値v1を使用します。
@@ -137,14 +137,14 @@ sudo docker push ccr.ccs.tencentyun.com/ネームスペース/helloworld:v1
  - **Cloud Load Balancer**：必要に応じて選択します。
  - **ポートマッピング**：TCPプロトコルを選択し、コンテナポートとサービスポートを80に設定します。
  >!サービスのあるクラスターのセキュリティグループはノードネットワークとコンテナネットワークをインターネットにオープンする必要があります。同時に、30000 - 32768ポートをインターネットにオープンする必要もあるし、そうでなければTencent Kubernetes Engineが使用できない問題が発生するかもしれません。詳細は[Tencent Kubernetes Engineセキュリティグループ設定](https://intl.cloud.tencent.com/document/product/457/9084)をご参照ください。
-7. 【Workload作成】をクリックして、Hello Worldサービスの作成を完了します。
+7. 【Create Workload】をクリックして、Hello Worldサービスの作成を完了します。
 
 ### Hello Worldサービスにアクセス
 次の二つの方式でHello Worldサービスにアクセスできます。
 
 #### Cloud Load Balancer IPでHello Worldサービスにアクセス
-1. 左側ナビゲーションバーで【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】をクリックして、「クラスター管理」ページに入ります。
-2. Hello WorldサービスのあるクラスターIDをクリックして、【サービス】>【Service】を選択します。
+1. 左側ナビゲーションバーで【[ Clusters](https://console.cloud.tencent.com/tke2/cluster)】をクリックして、「クラスター管理」ページに入ります。
+2. Hello WorldサービスのあるクラスターIDをクリックして、【Servic】>【Service】を選択します。
 3. サービス管理のページでhelloworldサービスのCloud Load Balancer　IPをコピーして、次の通りです。
 ![](https://main.qcloudimg.com/raw/96fb6f94d4d365ce4007ff7961f5e438.png)
 

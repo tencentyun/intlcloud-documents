@@ -14,10 +14,10 @@ Webアプリケーションは以下の2部分から構成されます：
 
 ## 操作手順
 ### redis-masterサービスの作成
-1. TKEコンソールにログインし、左側のナビゲーションバーの【［クラスター］(https://console.cloud.tencent.com/tke2/cluster)】を選択します。
-2. アプリケーションを作成するクラスターIDをクリックし、ワークロードDeployment画面に入って、【新規作成】を選択します。下図の通りです：
+1. TKEコンソールにログインし、左側のナビゲーションバーの【［Cluster ](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
+2. アプリケーションを作成するクラスターIDをクリックし、ワークロードDeployment画面に入って、【 Create】を選択します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/378d95d782c5efbf9cd9061f4c708e22.png)
-3. [Workloadの新規作成］画面で、以下の案内に従って、ワークロードの基本情報を設定します。下図の通りです：
+3. [ Create Workload］画面で、以下の案内に従って、ワークロードの基本情報を設定します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/ea0ddc2df9e0b2bcc826b852cd2c1805.png)
  - **ワークロード名**：作成するワークロードの名前。本書では、redis-masterとします。
  - **詳細**：ワークロードの関連情報を記入します。
@@ -46,13 +46,13 @@ Webアプリケーションは以下の2部分から構成されます：
  - **サービスアクセス方式**：「クラスター内部のアクセス」を選択します。
  - **ロードバランサー**：必要に応じて選択してください。
  - **ポートマッピング**：TCPプロトコルを選択し、サービスポートとコンテナーポート両方に6379を設定します。ほかのサービスは、サービス名redis-masterまたはポート6379を介してmasterコンテナーにアクセスすることができます。
-8. 【Workloadの作成】をクリックし、redis-masterサービスの作成を完了します。
+8. 【 Create Workload】をクリックし、redis-masterサービスの作成を完了します。
 
 ### redis-slaveサービスの作成
-1. TKEコンソールにログインし、左側のナビゲーションバーの【［クラスター］(https://console.cloud.tencent.com/tke2/cluster)】を選択します。
-2. サービスを作成するクラスターIDをクリックし、ワークロードDeployment画面に入って、【新規作成】を選択します。下図の通りです：
+1. TKEコンソールにログインし、左側のナビゲーションバーの【［ Cluster ](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
+2. サービスを作成するクラスターIDをクリックし、ワークロードDeployment画面に入って、【Create】を選択します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/3b828dcdb219b9466af30c359c505898.png)
-3. [Workloadの新規作成］画面で、以下の案内に従って、ワークロードの基本情報を設定します。下図の通りです：
+3. [New Workload ］画面で、以下の案内に従って、ワークロードの基本情報を設定します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/5d01db06dc78bc2136ce1b185af64dce.png)
  - **ワークロード名**：作成するワークロードの名前。本書では、redis-slaveとします。
  - **詳細**：ワークロードの関連情報を記入します。
@@ -79,13 +79,13 @@ GET_HOSTS_FROM = dns
  - **サービスアクセス方式**：「クラスター内部のアクセス」を選択します。
  - **ロードバランサー**：必要に応じて選択してください。
  - **ポートマッピング**：TCPプロトコルを選択し、サービスポートとコンテナーポート両方に6379を設定します。ほかのサービスは、サービス名redis-masterまたはポート6379を介してmasterコンテナーにアクセスすることができます。
-7. 【Workloadの作成】をクリックし、redis-slaveサービスの作成を完了します。
+7. 【Create Workload】をクリックし、redis-slaveサービスの作成を完了します。
 
 ### frontendサービスの作成
-1. TKEコンソールにログインし、左側のナビゲーションバーの【［クラスター］(https://console.cloud.tencent.com/tke2/cluster)】を選択します。
-2. アプリケーションを作成するクラスターIDをクリックし、ワークロードDeployment画面に入って、【新規作成】を選択します。下図の通りです：
+1. TKEコンソールにログインし、左側のナビゲーションバーの【［Cluster](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
+2. アプリケーションを作成するクラスターIDをクリックし、ワークロードDeployment画面に入って、【Create】を選択します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/46a7ea3299c791e8a31e4122a0f06b97.png)
-3. [Workloadの新規作成］画面で、以下の案内に従って、ワークロードの基本情報を設定します。下図の通りです：
+3. [New Workloa］画面で、以下の案内に従って、ワークロードの基本情報を設定します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/3c4b6d6277fe6f650ea464d1060e1ee6.png)
  - **ワークロード名**：作成するワークロードの名前。本書では、frontendとします。
  - **詳細**：ワークロードの関連情報を記入します。
@@ -112,12 +112,12 @@ GET_HOSTS_FROM = dns
  - **サービスアクセス方式**：「パブリックネットワークからのアクセスを許可」を選択します。
  - **ロードバランサー**：必要に応じて選択してください。
  - **ポートマッピング**：TCPプロトコルを選択し、サービスポートとコンテナーポート両方に80を設定します。ユーザーはブラウザ経由でロードバランスIPにアクセスすることで、frontendコンテナにアクセスできます。
-8. 【Workloadの作成】をクリックし、frontendサービスの作成を完了します。
+8. 【 Create Workload】をクリックし、frontendサービスの作成を完了します。
 
 
 ### Webアプリケーションの確認
-1. 左側ナビゲーションバーで、【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】をクリックし、「クラスター管理」画面に入ります。
-2. 作成したサービスが所在するクラスターIDをクリックして、【サービス】>【Service】の順に選択します。下図の通りです：
+1. 左側ナビゲーションバーで、【[ Cluster](https://console.cloud.tencent.com/tke2/cluster)】をクリックし、「クラスター管理」画面に入ります。
+2. 作成したサービスが所在するクラスターIDをクリックして、【 Services】>【Service】の順に選択します。下図の通りです：
 3. サービス管理画面に入って、frontendサービスのロードバランスIPをコピーします。下図の通りです：
 ![](https://main.qcloudimg.com/raw/43d09b779fd2c0844b5c70d8ef373c53.png)
 >

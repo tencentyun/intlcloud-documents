@@ -14,10 +14,10 @@ WordPressは、PHP言語を使用して開発されたブログプラットフ�
 
 ## 操作手順
 ### WordPressサービス作成
-1. Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで**[クラスター](https://console.cloud.tencent.com/tke2/cluster)**を選択します。
-2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、**新規作成**をクリックします。下図の通りです：
+1. Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで**[ Cluster ](https://console.cloud.tencent.com/tke2/cluster)**を選択します。
+2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、** Create**をクリックします。下図の通りです：
 ![](https://main.qcloudimg.com/raw/1e32ac2e0e8d99315305f1b55034d691.png)
-3. 「Workloadの新規作成」ページで次の情報によって、ロードの基本情報を設定します。下図の通りです：
+3. 「Create Workload」ページで次の情報によって、ロードの基本情報を設定します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/a1c6b34a108a7a24d3f22e7048dec3ef.png)
  - **ロード名**：作成するロードの名前を入力し、本文はwordpressを例として説明します。
  - **説明**：ロードについての情報を記入します。
@@ -45,7 +45,7 @@ WordPressは、PHP言語を使用して開発されたブログプラットフ�
  - **Cloud Load Balancer**：実際の必要に応じて選択します。
  - **ポートマッピング**：TCPプロトコルを選択し、コンテナポートとサービスポートを80に設定します。
 >!サービスのあるクラスターのセキュリティグループはノードネットワークとコンテナネットワークをインターネットにオープンしてください。同時に、30000 - 32768ポートをインターネットにオープンする必要もありますが、そうでなければTencent Kubernetes Engineが使用できない問題が発生する場合があります。詳細は[Tencent Kubernetes Engineセキュリティグループ設定](https://intl.cloud.tencent.com/document/product/457/9084)をご参照ください。
-9. **Workload作成**をクリックし、wordpressサービスの作成を完了します。
+9. **Create Workload**をクリックし、wordpressサービスの作成を完了します。
 
 
 ###  WordPressサービスにアクセス
@@ -53,8 +53,8 @@ WordPressは、PHP言語を使用して開発されたブログプラットフ�
 次の二つの方式でWordPressサービスにアクセスできます。
 
 #### Cloud Load Balancer IPでWordPressサービスにアクセス
-1. 左側ナビゲーションバーで**[クラスター](https://console.cloud.tencent.com/tke2/cluster)**をクリックして、「クラスター管理」ページに入ります。
-2. WordPressサービスのあるクラスターIDをクリックして、**サービスとルート** > **Service**を選択します。
+1. 左側ナビゲーションバーで**[ Cluster](https://console.cloud.tencent.com/tke2/cluster)**をクリックして、「クラスター管理」ページに入ります。
+2. WordPressサービスのあるクラスターIDをクリックして、**Services and Routes** > **Service**を選択します。
 3. サービス管理のページに入って、WordPressサービスのCloud Load Balancer　IPをコピーして、次の通りです。
 ![](https://main.qcloudimg.com/raw/8a8ea1dc181ab31660313ed0883bc980.png)
 4. ブラウザのアドレスバーにCloud Load Balancer　IPを入力し、「**Enter**」を押すと、サービスにアクセスできます。

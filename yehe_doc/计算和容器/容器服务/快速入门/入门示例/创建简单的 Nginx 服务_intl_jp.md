@@ -8,10 +8,10 @@
 ## 操作手順
 
 ### Nginxサービス作成
-1. Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
-2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、【新規作成】をクリックします。下図の通りです：
+1. Tencent Kubernetes Engineコンソールにログインし、左側のナビゲーションバーで【[ Clusters ](https://console.cloud.tencent.com/tke2/cluster)】を選択します。
+2. 「クラスター管理」ページでサービスを作成する必要のあるクラスターIDを選択し、クラスターのロード「Deployment」ページに入って、【Create】をクリックします。下図の通りです：
 ![](https://main.qcloudimg.com/raw/036baf23123e7291d5fcfb82a2572e53.png)
-3. 「Workloadの新規作成」ページで次の情報によって、ロードの基本情報を設定します。下図の通りです：
+3. 「Create Workload」ページで次の情報によって、ロードの基本情報を設定します。下図の通りです：
 ![](https://main.qcloudimg.com/raw/a1391e5768e6fd5cfe0e6b3c65417a50.png)
   - **ロード名**：作成するロードの名前を入力し、本文はnginxを例として説明します。
   -  **説明**：ロードについての情報を記入します。
@@ -23,7 +23,7 @@
 ![](https://main.qcloudimg.com/raw/2ec2c7c803ee61a2d218f17df785636e.png)
 主なパラメータ情報は下記の通りです：
   - **名前**：インスタンスコンテナの名前を入力し、本文はtestを例として説明します。
-  - **イメージ**：【イメージ選択】をクリックし、ポップアップボックスで【Docker Hubイメージ】> **nginx**を選択して、【確定】をクリックします。
+  - **イメージ**：【 Select an image】をクリックし、ポップアップボックスで【DockerHub Image】> **nginx**を選択して、【OK】をクリックします。
   - **イメージバージョン（Tag）**：デフォルト値`latest`を使用します。
   - **イメージプルポリシー**：次の三つのポリシーを提供し、ニーズによって選択してください。本文は設定しなくてデフォルトポリシーを使用することを例として説明します。
     イメージプルポリシーを設定しなくて、イメージバージョンはnullや`latest`の時、Alwaysポリシーを使用し、そうでなければIfNotPresentポリシーを使用します。
@@ -41,7 +41,7 @@
  - **Cloud Load Balancer**：実際のニーズによって選択します。
  - **ポートマッピング**：TCPプロトコルを選択し、コンテナポートとサービスポートを80に設定します。
  >!サービスのあるクラスターのセキュリティグループはノードネットワークとコンテナネットワークをインターネットにオープンする必要があります。同時に、30000 - 32768ポートをインターネットにオープンする必要もあるし、そうでなければTencent Kubernetes Engineが使用できない問題が発生するかもしれません。詳細は[Tencent Kubernetes Engineセキュリティグループ設定](https://intl.cloud.tencent.com/document/product/457/9084)をご参照ください。
-7. 【Workload作成】をクリックして、Nginxサービスの作成を完了します。
+7. 【Create workload】をクリックして、Nginxサービスの作成を完了します。
 
 
 ### Nginxサービスにアクセス
@@ -50,8 +50,8 @@
 
 #### **Cloud Load Balancer IP**でNginxサービスにアクセス
 
-1. 左側ナビゲーションバーで【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】をクリックして、「クラスター管理」ページに入ります。
-2. NginxサービスのあるクラスターIDをクリックして、【サービス】>【Service】を選択します。
+1. 左側ナビゲーションバーで【[ Clusters ](https://console.cloud.tencent.com/tke2/cluster)】をクリックして、「クラスター管理」ページに入ります。
+2. NginxサービスのあるクラスターIDをクリックして、【Service】>【Service】を選択します。
 3. サービス管理のページでNginxサービスのCloud Load Balancer　IPをコピーして、次の通りです。
 ![](https://main.qcloudimg.com/raw/bab54241805b352ae007ece3d130bb4a.png)
 4. ブラウザのアドレスバーにCloud Load Balancer　IPを入力し、「**Enter**」を押すと、サービスにアクセスできます。
