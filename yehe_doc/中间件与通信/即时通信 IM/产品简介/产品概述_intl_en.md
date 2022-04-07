@@ -1,6 +1,6 @@
 ## Overview
 Tencent is the earliest and biggest instant messaging developer in China. QQ and WeChat, both developed by Tencent, have become indispensable apps for every Internet user. In conformity with the trend of industrial digital transformation, Tencent now shares its high-concurrency and highly reliable instant messaging capabilities as SDKs and RESTful APIs and launched the Tencent Cloud product Instant Massaging (IM). You can integrate the IM SDKs provided by Tencent Cloud into your apps in a simple way. By calling RESTful APIs on the server side, you can easily have the same powerful instant communication capabilities as those of WeChat and QQ. The following figure shows the interaction between the IM service and your apps.
-![](https://qcloudimg.tencent-cloud.cn/raw/31c81bf616b86c225f1c99fa532397de.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2e57bf9cbb3a1855efe7abdfd7d8beab.png)
 For developer requirements and scenarios in different phases, the Instant Messaging (IM) team provides a series of solutions, including the Android, iOS, Windows, and web SDK components, as well as capabilities for integrating [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34620) and [Third-Party Callback APIs](https://intl.cloud.tencent.com/document/product/1047/34354) on the server. With these components and capabilities, developers can construct reliable and stable IM products for free and global communication.
 
 ## Architecture
@@ -22,7 +22,7 @@ When terminals log in, the IM SDK connects to the nearest access nodes. IM acces
  - Africa: South Africa and Nigeria
 
 ### Data storage sites
-In addition to the data storage sites already provided inside the Chinese mainland, IM also provides data storage sites in Southeast Asia (Singapore), Northeast Asia (Seoul, South Korea) and Europe (Frankfurt, Germany) for Chinese enterprises going global. To deploy data storage sites outside the Chinese mainland, go to the [IM console](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fim%3Ffrom%3D15210).
+In addition to the data storage sites already provided inside the Chinese mainland, IM also provides data storage sites in South Asia (India), Southeast Asia (Singapore), Northeast Asia (Seoul, South Korea) and Europe (Frankfurt, Germany) for Chinese enterprises going global. To deploy data storage sites outside the Chinese mainland, go to the [IM console](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fim%3Ffrom%3D15210).
 ### One-to-one chat
 One-to-one chat supports various message types including text, emojis, locations, images, audio, short video, and custom message. It provides special features such as red packets, chatbots, read receipt, and message recall as well as services such as offline messages and roaming messages. For more information, see [One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/33523).
 
@@ -34,7 +34,7 @@ A group chat involves multiple participants. IM supports the following four grou
 - A **meeting group (Meeting)** allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
 - An **audio-video group (AVChatRoom)** allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios.
 - A **community group (Community)** allows users to join and exit freely and is ideal for ultra-large community group chat scenarios, such as knowledge sharing and game communication
->?The community group (Community) feature is supported only in SDK 5.8.1668 enhanced edition or higher. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/37275).
+>?The community group (Community) feature is supported only in Terminal SDK 5.8.1668 enhanced edition or higher and Web SDK enhanced edition or higher. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/37275).
 
 Groups are highly customizable, supporting custom group types, group fields, group member fields, group IDs, and event callbacks. You can fully customize your group based on the needs of your app. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 >!Although audio-video groups (AVChatRoom) support unlimited group members, if a spike in group members is expected within a short time (in scenarios such as large online events where the number of members in a single group reaches 50,000 or above), [contact us](https://intl.cloud.tencent.com/contact-us) or sales representatives in advance and report service resource usage by providing the SDKAppID and the scheduled event time.
