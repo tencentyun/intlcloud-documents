@@ -1,3 +1,43 @@
+## 2022年02月
+<table>
+<tr><th width=20%>ニュース名</th><th width=50%>ニュース概要</th><th width=10%>リリース時間</th><th width=20%>関連記事</th></tr>
+<tbody>
+<tr>
+<td>データベースプロキシが接続プールをサポート</td>
+<td>TencentDB for MySQLのデータベースプロキシが接続プール機能をサポートするようになりました。サポートするセッションレベル接続プールは、ショートコネクショントランザクションが新しい接続を頻繁に確立することによるデータベースインスタンスの高負荷を解決できます。</td>
+<td>2022-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/45622" target="_blank">接続プールの概要</a></td></tr>
+<tr>
+<tr>
+<td>データベースプロキシ機能の最適化と更新</td>
+<td>TencentDB for MySQLのデータベースプロキシは、機能の最適化と更新により、プロキシカーネルのサブバーション更新、ネットワーク切替、自動設定調整をサポートし、より優れた性能と利便性を提供します。</td>
+<td>2022-02</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/45627" target="_blank">プロキシカーネルのサブバーション更新</a><br
+><li><a href="https://intl.cloud.tencent.com/document/product/236/45628" target="_blank">データベースプロキシのネットワーク切替</a><br
+><li><a href="https://intl.cloud.tencent.com/document/product/236/45629" target="_blank">データベースプロキシの設定調整</a></td></tr>
+</tbody></table>
+
+## 2021年12月
+<table>
+<tr><th width=20%>更新</th><th width=50%>説明</th><th width=10%>発表時間</th><th width=20%>関連ドキュメント</th></tr>
+<tbody>
+<tr>
+<td>ROグループ遅延設定の最適化</td>
+<td>TencentDB for MySQL ROの遅延設定を、インスタンス設定からROグループ設定に変更して、ROグループに設定された遅延と排除ポリシーが相互排他を起こさないようにし、ROインスタンス遅延の管理を簡素化します。ROグループの統一IPアドレスでアクセスする場合に、遅延ROインスタンスがあることが原因で、アクセスデータが予想と異なることはありません。</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/41085" target="_blank">読み取り専用インスタンスの遅延レプリケーションの管理</a></td></tr>
+<tr>
+<td>アベイラビリティーゾーンの移行のサポート</td>
+<td>TencentDB for MySQLは、アベイラビリティーゾーンを移行する機能をリリースしました。この機能は、ビジネスへの近場からのアクセス、リソースの拡張を実現し、リージョンにおけるさまざまなアベイラビリティーゾーンでのリソースの最大限の活用を可能にします。</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/44337" target="_blank">アベイラビリティーゾーンの移行</a></td></tr>
+<tr>
+<td>パラメータテンプレートと新規購入インスタンスの最適化</td>
+<td>TencentDB for MySQLは、パラメータの関連機能と出荷フローの最適化を行います。今回の最適化には、パラメータテンプレートの作成、パラメータの比較、パラメータテンプレートの適用、パラメータの変更などの機能や変更可能なパラメータおよび新規購入インスタンスの最適化の更新が含まれます。</td>
+<td>2021-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/43459" target="_blank">パラメータテンプレートと新規購入インスタンスの最適化</a></td></tr>
+</tbody></table>
+
 
 ## 2021年07月
 <table>
