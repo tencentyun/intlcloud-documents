@@ -3,7 +3,6 @@
 
 ## 接口调用说明
 本功能仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见[配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322)指引，提交全员推送开通申请。申请通过后，该功能将在**48小时**后开启。
-
 ### 请求 URL 示例
 ```
 https://xxxxxx/v4/all_member_push/im_remove_tag?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
@@ -48,6 +47,7 @@ https://xxxxxx/v4/all_member_push/im_remove_tag?usersig=xxx&identifier=admin&sdk
 | 字段 | 类型| 属性 | 说明 |
 |---------|---------|---------|---------|
 | To_Account | String | 必填 |目标用户帐号 |
+| Tags | Object | 必填 |标签集合 |
 
 ### 应答包体示例
 
