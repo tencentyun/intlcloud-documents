@@ -22,8 +22,8 @@ The parameters are described as follows:
     - Expedited mode: This is the fastest mode. Archived files can be restored within 1-5 minutes. If you need to access your archival data urgently, you can use this mode to greatly reduce the restoration time. **Please note that expedited mode is not available for DEEP ARCHIVE**.
     - Standard mode: Files can be restored from ARCHIVE within 3-5 hours, and from DEEP ARCHIVE within 12 hours.
     - Batch mode: This is the lowest-cost mode. If your need for the archival data is not urgent, this mode can usually restore massive amounts of data from ARCHIVE within 5-12 hours, and from DEEP ARCHIVE within 48 hours, both with an ultra-low cost.
-      >? The QPS of data restoration requests is limited to 100.
-      >
+>? The QPS of data restoration requests is limited to 100.
+>
  - **Validity**: the number of days after which the copy would automatically expire and be deleted. The value range is 1 to 365 days. After the object is successfully restored, you can click **Restore** again to change the validity period of the copy in the pop-up window.
 7. Click **OK**. The object enters the restoration process.
 During this process, you can click **Details** to go to the object details page to check the restoration progress.
