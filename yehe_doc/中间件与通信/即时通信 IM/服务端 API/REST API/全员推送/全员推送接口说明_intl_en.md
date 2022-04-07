@@ -19,7 +19,7 @@ The group push service is provided based on the client IM SDK and IM backend, wh
 - You can set up to 10 push attributes for each user. Each attribute can be set separately without affecting the others.
 - The service pushes messages based on multiple attributes connected by AND or OR logic.
 - The service pushes messages based on multiple tags connected by AND or OR logic.
-- The service pushes messages only to online users and retains messages offline for up to 7 days.
+- The service pushes messages only to online users and retains messages offline for up to 7 days(withdrawal and roaming are not supported).
 - You can customize messages.
 - You can specify the sender account.
 
