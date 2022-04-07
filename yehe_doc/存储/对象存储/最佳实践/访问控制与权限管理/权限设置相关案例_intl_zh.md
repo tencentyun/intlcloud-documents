@@ -9,8 +9,8 @@
 >?
 >- 如需查询主账号下所创建的子账号，可登录访问管理控制台，在 [用户列表](https://console.cloud.tencent.com/cam) 中查看。
 >- 如需创建新的子账号，请参见 [新建子用户](https://intl.cloud.tencent.com/zh/document/product/598/13674) 文档。
-3. 打开【添加策略】对话框
-进入目标存储桶的【权限管理】，选择【Policy 权限设置】>【图形设置】，并单击打开【添加策略】对话框，随后请参见本文的授权案例进行配置。添加策略的详细操作指引，可参见 [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927) 文档。
+3. 打开**添加策略**对话框
+进入目标存储桶的**权限管理**，选择**Policy 权限设置 > 图形设置**，并单击打开**添加策略**对话框，随后请参见本文的授权案例进行配置。添加策略的详细操作指引，可参见 [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927) 文档。
 
 以下列举了几种不同的授权案例，您可按照实际情况进行配置。
 
@@ -28,7 +28,7 @@
 |资源路径|特定目录前缀，例如`folder/sub-folder/*`|
 |操作名称|所有操作|
 
-![](https://main.qcloudimg.com/raw/67810f914e1ffb839b9fb8fff0145332.png)
+
 
 
 
@@ -44,7 +44,7 @@
 |资源路径       |     特定目录前缀，例如`folder/sub-folder/*`   |
 |操作名称          |       读操作(含列出对象列表)|
 
-![](https://main.qcloudimg.com/raw/c491ec32e8f1dbce5686990ed9eb54df.png)
+
 
 #### 案例三：授予子账号拥有特定文件的读写权限
 配置信息如下：
@@ -58,7 +58,7 @@
 |资源路径|特定对象键，例如`folder/sub-folder/example.jpg`|
 |操作名称|所有操作|
 
-![](https://main.qcloudimg.com/raw/e546ac587f145e960ffdb172789c82e4.png)
+
 
 
 
@@ -77,7 +77,7 @@
 |资源路径|特定目录前缀，例如`folder/sub-folder/*`    |
 |操作名称|所有操作|
 
-![](https://main.qcloudimg.com/raw/72ee5b741d6d72ea5c23a38e208a3447.png)
+
 
 
 2. 随后添加**禁止**策略，配置信息如下：
@@ -91,7 +91,7 @@
 |资源路径|需要禁止被访问的对象键，例如`folder/sub-folder/privateobject`|
 |操作名称|所有操作|
 
-![](https://main.qcloudimg.com/raw/77128c55d1fa91df6edb0ce841750c5e/4-2.png)
+
 
 
 #### 案例五：授权子账号对指定前缀的文件的读写权限
@@ -106,7 +106,7 @@
 |资源路径|特定前缀，例如`folder/sub-folder/prefix`|
 |操作名称|所有操作|
 
-![](https://main.qcloudimg.com/raw/7d5d6f13d57f720a1b8e70fb666b52e1/5.png)
+
 
 
 <span id=cam>
