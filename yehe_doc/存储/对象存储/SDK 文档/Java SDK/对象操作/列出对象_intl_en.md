@@ -293,7 +293,7 @@ ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
 listObjectsRequest.setBucketName(bucketName);
 // `prefix` indicates to use `prefix` as the prefix of objected listed.
 // Here, enter the path of the listed directory relative to `bucket`.
-listObjectsRequest.setPrefix("/dir");
+listObjectsRequest.setPrefix("/dir/");
 // `delimiter` is the directory truncation symbol. For example, `/` indicates that an object name with `/` is considered a level-1 directory.
 listObjectsRequest.setDelimiter("/");
 // Set the maximum number of objects to be traversed, which can be up to 1,000 in one listobject operation
@@ -314,7 +314,7 @@ do {
     }
 
     // Save the subdirectories listed.
-    List<String> commonPrefixs = objectListing.getCommonPrefixes();
+    List<String> commonPrefixes = objectListing.getCommonPrefixes();
     for (String commonPrefix : commonPrefixes) {
         System.out.println(commonPrefix);
     }
