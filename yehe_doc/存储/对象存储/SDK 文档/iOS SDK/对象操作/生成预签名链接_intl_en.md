@@ -66,13 +66,13 @@ getPresign.bucket = "examplebucket-1250000000" ;
 getPresign.httpMethod = "PUT";
 
 // Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
-getPresignedURLRequest.signHost = YES;
+getPresign.signHost = YES;
 
 // HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
-getPresignedURLRequest.requestParameters = {"param1":"value1","param1":"value1"};
+getPresign.requestParameters = {"param1":"value1","param1":"value1"};
 
 // HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
-getPresignedURLRequest.requestHeaders = {"param1":"value1","param1":"value1"};
+getPresign.requestHeaders = {"param1":"value1","param1":"value1"};
 
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 getPresign.object = "exampleobject";
