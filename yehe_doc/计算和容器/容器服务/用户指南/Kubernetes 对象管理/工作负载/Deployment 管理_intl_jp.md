@@ -6,10 +6,10 @@ Deploymentは、Podのテンプレートを宣言し、Podの実行ポリシー�
 
 <span id="creatDeployment"></span>
 ### Deploymentの作成
-1. Tencent Kubernetes Engine（TKE）コンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. Tencent Kubernetes Engine（TKE）コンソールにログインして、左側ナビゲーションバーの【[Clusters ](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. Deploymentの作成を必要とするクラスターIDをクリックして、Deploymentが作成されるクラスター管理ページへ進みます。
 
-3. 【新規作成】をクリックして、「Workloadの新規作成」ページへ進みます。
+3. 【 Create 】をクリックして、「Create a workload」ページへ進みます。
 実際のニーズに応じて、Deploymentパラメータを設定します。キーパラメータの情報は以下の通りです：
  - **ワークロード名**：カスタマイズされた名称を入力します。
  - **ネームスペース**：実際のニーズに応じて選択します。
@@ -26,40 +26,40 @@ Deploymentは、Podのテンプレートを宣言し、Podの実行ポリシー�
     - **CPU/メモリ制限**：[Kubernetes リソース制限](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)に基づいて、CPUおよびメモリの制限範囲を設定することができ、サービスのロバストを向上させます。
     - **詳細設定**：「**作業ディレクトリ**」、「**実行コマンド**」、「**実行パラメータ**」、「**コンテナ健康診断**」および「**特権レベル**」などのパラメータを設定できます。
  - **インスタンスの数**：実際のニーズに応じて調整方法を選択し、インスタンスの数を設定します。
-4. 【Workloadの作成】をクリックして、作成が完了します。下図の通りです：
+4. 【 Create Workload 】をクリックして、作成が完了します。下図の通りです：
 実行数=目的数の場合、DeploymentでのすべてのPodが作成されたことを意味します。
 ![](https://main.qcloudimg.com/raw/c458fdbc8d9770d8704327a9dbd16f55.png)
 
 ### Deploymentの更新
 
 #### YAMLの更新
-1. TKEコンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. TKEコンソールにログインして、左側ナビゲーションバーの【[Clusters](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. Deploymentの更新を必要とするクラスターIDをクリックして、Deploymentが更新されるクラスター管理ページへ進みます。下図の通りです：
 ![](https://main.qcloudimg.com/raw/7e7acba7f2d84a9a0626458efb357ff0.png)
-3. YAMLの更新を必要とするDeployment行では、【その他】>【YAMLの編集】をクリックして、Deployment更新ページへ進みます。
-5. 「Deploymentの更新」ページでYAMLを編集し、【完了】をクリックしてYAMLが更新されます。下図の通りです：
+3. YAMLの更新を必要とするDeployment行では、【 More】>【Edit YAML】をクリックして、Deployment更新ページへ進みます。
+5. 「Update Deployment」ページでYAMLを編集し、【 Finish 】をクリックしてYAMLが更新されます。下図の通りです：
 ![YAMLの更新](https://main.qcloudimg.com/raw/93c576f09ad8817abb794385f68b38ad.png)
 
 #### Pod構成の更新
 
 1. クラスター管理ページでは、Pod構成の更新を必要とするDeploymentのクラスターIDをクリックして、Pod構成が更新されるDeploymentのクラスター管理ページへ進みます。
-2. Pod構成の更新を必要とするDeployment行では、【Pod構成の更新】をクリックします。
-3. 「Pod構成の更新」ページでは、実際のニーズに応じて更新方法を変更し、パラメータを設定します。
-4. 【完了】をクリックして、Pod構成が更新されます。
+2. Pod構成の更新を必要とするDeployment行では、【Updating Pod configurations】をクリックします。
+3. 「Updating Pod configurations」ページでは、実際のニーズに応じて更新方法を変更し、パラメータを設定します。
+4. 【Finish 】をクリックして、Pod構成が更新されます。
 
 ### Deploymentのロールバック
-1. TKEコンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. TKEコンソールにログインして、左側ナビゲーションバーの【[Clusters](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. Deploymentのロールバックを必要とするクラスターIDをクリックして、Deploymentがロールバックされるクラスター管理ページへ進みます。
 4. ロールバックを必要とするDeploymentの名称をクリックして、Deployment情報ページへ進みます。
-4. 【変更履歴】タブを選択して、ロールバックを必要とするバージョンでは、【ロールバック】をクリックします。
-6. ポップアップ表示された「ロールバックリソース」プロンプトでは、【OK】をクリックしてロールバックが完了します。
+4. 【 Modification History】タブを選択して、ロールバックを必要とするバージョンでは、【 Rollback 】をクリックします。
+6. ポップアップ表示された「Roll back a resource」プロンプトでは、【Submit 】をクリックしてロールバックが完了します。
 
 ### Pod数の調整
-1. TKEコンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. TKEコンソールにログインして、左側ナビゲーションバーの【[Clusters ](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. Pod数の調整を必要とするDeploymentのクラスターIDをクリックして、Pod数が調整されるDeploymentのクラスター管理ページへ進みます。
 
-3. Pod数の調整を必要とするDeployment行では、【Pod数の更新】をクリックして、Pod数の更新ページへ進みます。
-5. 実際のニーズに応じてPod数を調整し、【インスタンス数の更新】をクリックして調整が完了します。
+3. Pod数の調整を必要とするDeployment行では、【 Update Pod quantity 】をクリックして、Pod数の更新ページへ進みます。
+4. 実際のニーズに応じてPod数を調整し、【Update Pod quantity 】をクリックして調整が完了します。
 
 ## KubectlによるDeploymentのアクションガイド
 
@@ -151,6 +151,7 @@ Deploymentの他のパラメータを変更せず、ビジネスが更新され�
 ```
 kubectl rolling-update [NAME] -f FILE
 ```
+その他のローリング更新は、[ローリング更新手順](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/)をご参照ください。
 
 ### KubectlによるDeploymentのロールバック
 

@@ -8,11 +8,11 @@ Jobが実行された後、新しいPodの作成またはPodの削除は行い�
 ### Jobの作成
 
 1. [Tencent Kubernetes Engineコンソール](https://console.cloud.tencent.com/tke2)にログインします。
-2. 左側ナビゲーションバーでは、【クラスター】をクリックして、クラスター管理ページへ進みます。
+2. 左側ナビゲーションバーでは、【 Cluster】をクリックして、クラスター管理ページへ進みます。
 3. Jobの作成を必要とするクラスターIDをクリックして、Jobが作成されるクラスター管理ページへ進みます。
 4. 「Workload」 > 「Job」を選択して、Job情報ページへ進みます。以下の通りです。
 ![Job](https://main.qcloudimg.com/raw/b33fcb5fe7f6491ef71b53f21ed82051.png)
-5. 【新規作成】をクリックして、「Workloadの新規作成」ページへ進みます。下図の通りです：
+5. 【Create】をクリックして、「 Create Workload」ページへ進みます。下図の通りです：
 ![Create a workload](https://main.qcloudimg.com/raw/e3e76bf1eeae83380d0f4b3f4e940934.png)
 6. 実際のニーズに応じて、Jobパラメータを設定します。キーパラメータの情報は以下の通りです：
  - ワークロード名：カスタマイズします。
@@ -30,12 +30,12 @@ Jobが実行された後、新しいPodの作成またはPodの削除は行い�
     - イメージバージョン：実際のニーズに応じて入力します。
     - CPU/メモリ制限：[Kubernetes リソース制限](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)に基づいて、CPUおよびメモリの制限範囲を設定することができ、サービスのロバストを向上させます。
     - 詳細設定：「**作業ディレクトリ**」、「**実行コマンド**」、「**実行パラメータ**」、「**コンテナ健康診断**」、「**特権レベル**」などのパラメータを設定できます。
-7. 【Workloadの作成】をクリックして、作成が完了します。
+7. 【Create Workload】をクリックして、作成が完了します。
 
 ### Job状態の確認
 
 1. [Tencent Kubernetes Engineコンソール](https://console.cloud.tencent.com/tke2)にログインします。
-2. 左側ナビゲーションバーでは、【クラスター】をクリックして、クラスター管理ページへ進みます。
+2. 左側ナビゲーションバーでは、【Cluster】をクリックして、クラスター管理ページへ進みます。
 3. Job状態の確認を必要とするクラスターIDをクリックして、Job状態が確認されるクラスター管理ページへ進みます。
 4. 「Workload」 > 「Job」を選択して、Job情報ページへ進みます。下図の通りです：
 ![Job](https://main.qcloudimg.com/raw/522504f451b3234997b7c413724bdb04.png)

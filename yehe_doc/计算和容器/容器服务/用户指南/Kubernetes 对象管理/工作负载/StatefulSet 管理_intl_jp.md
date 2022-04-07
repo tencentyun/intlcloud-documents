@@ -8,11 +8,11 @@ StatefulSetは主に、状態ありのアプリケーションを管理するた
 
 ### StatefulSetの作成
 
-1. Tencent Kubernetes Engine（TKE）コンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. Tencent Kubernetes Engine（TKE）コンソールにログインして、左側ナビゲーションバーの【[ Clusters](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. StatefulSetの作成を必要とするクラスターIDをクリックして、StatefulSetが作成されるクラスター管理ページへ進みます。
 3. 【Workload】>【StatefulSet】を選択して、StatefulSet管理ページへ進みます。下図の通りです：
 ![](https://main.qcloudimg.com/raw/88ece12d8464711824eadfb35db0c050.png)
-4. 【新規作成】をクリックして、「Workloadの新規作成」ページへ進みます。
+4. 【Create 】をクリックして、「 Create Workload」ページへ進みます。
 実際のニーズに応じて、StatefulSetパラメータを設定します。キーパラメータの情報は以下の通りです：
  - **ワークロード名**：カスタマイズされた名称を入力します。
  - **ネームスペース**：実際のニーズに応じて選択します。
@@ -29,22 +29,22 @@ StatefulSetは主に、状態ありのアプリケーションを管理するた
     - **CPU/メモリ制限**：[Kubernetes リソース制限](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)に基づいて、CPUおよびメモリの制限範囲を設定することができ、サービスのロバストを向上させます。
     - **詳細設定**：「**作業ディレクトリ**」、「**実行コマンド**」、「**実行パラメータ**」、「**コンテナ健康診断**」および「**特権レベル**」などのパラメータを設定できます。
  - **インスタンスの数**：実際のニーズに応じて調整方法を選択し、インスタンスの数を設定します。
-5. 【Workloadの作成】をクリックして、作成が完了します。
+5. 【 Create a workload 】をクリックして、作成が完了します。
 
 ### StatefulSetの更新
 
 #### YAMLの更新
-1. TKEコンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. TKEコンソールにログインして、左側ナビゲーションバーの【[Clusters](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. YAMLの更新を必要とするクラスターIDをクリックして、YAMLが更新されるクラスター管理ページへ進みます。
 3. 【Workload】>【StatefulSet】を選択して、StatefulSet情報ページへ進みます。
-4. YAMLの更新を必要とするStatefulSet行から、【その他】>【YAMLの編集】を選択して、StatefulSet更新ページへ進みます。
-5. 「StatefulSetの更新」ページでYAMLを編集し、【完了】をクリックしてYAMLが更新されます。
+4. YAMLの更新を必要とするStatefulSet行から、【More】>【Edit YAML 】を選択して、StatefulSet更新ページへ進みます。
+5. 「Update StatefulSet」ページでYAMLを編集し、【 Finish】をクリックしてYAMLが更新されます。
 
 #### Pod構成の更新
 1. クラスター管理ページでは、Pod構成の更新を必要とするStatefulSetのクラスターIDをクリックして、Pod構成が更新されるStatefulSetのクラスター管理ページへ進みます。
-2. Pod構成の更新を必要とするStatefulSet行では、【Pod構成の更新】をクリックします。
-3. 「Pod構成の更新」ページでは、実際のニーズに応じて更新方法を変更し、パラメータを設定します。
-4. 【完了】をクリックして、Pod構成が更新されます。
+2. Pod構成の更新を必要とするStatefulSet行では、【Update Pod Configurations.】をクリックします。
+3. 「Update Pod Configurations.」ページでは、実際のニーズに応じて更新方法を変更し、パラメータを設定します。
+4. 【 Finish】をクリックして、Pod構成が更新されます。
 
 ## KubectlによるStatefulSetのアクションガイド
 

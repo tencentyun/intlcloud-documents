@@ -36,9 +36,9 @@ sh
 /data/scripts/health_check.sh 
 ```
 設定手順では、例として[Tencent Kubernetes Engineコンソール](https://console.cloud.tencent.com/tke2)を使用してDeploymentを作成します：
- 1. クラスター「Deployment」ページでは、**新規作成**をクリックします。
- 2. 「Workloadの新規作成」ページへ進み、「コンテナ内のインスタンス」モジュール下方の**詳細設定を表示する**を選択します。
-  3. 「コンテナの健康診断」では、例として**アクティブ診断**を選択し、次のパラメータを設定します。
+ 1. クラスター「Deployment」ページでは、** Create**をクリックします。
+ 2. 「Create Workload」ページへ進み、「Containers in a pod 」モジュール下方の**Advanced Settings**を選択します。
+  3. 「 Container Health Check」では、例として**Liveness Check**を選択し、次のパラメータを設定します。
    - **チェック方法**：「実行コマンドのチェック」を選択します。
    - **実行コマンド**：次のように入力します。
    ```

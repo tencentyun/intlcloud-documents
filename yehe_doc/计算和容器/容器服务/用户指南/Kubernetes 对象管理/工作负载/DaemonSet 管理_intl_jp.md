@@ -9,11 +9,11 @@ PodのnodeSelectorまたはaffinityパラメータが構成されている場合
 ## DaemonSetコンソールのアクションガイド
 
 ### DaemonSetの作成
-1. Tencent Kubernetes Engine（TKE）コンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. Tencent Kubernetes Engine（TKE）コンソールにログインして、左側ナビゲーションバーの【[Cluster](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. DaemonSetの作成を必要とするクラスターIDをクリックして、DaemonSetが作成されるクラスター管理ページへ進みます。
 3. 【Workload】>【DaemonSet】を選択して、DaemonSet情報ページへ進みます。以下の通りです：
 ![](https://main.qcloudimg.com/raw/ec694431e23d70a8f327fb7ef497480b.png)
-4. 【新規作成】をクリックして、「Workloadの新規作成」ページへ進みます。
+4. 【 Create 】をクリックして、「 Create Workload」ページへ進みます。
 実際のニーズに応じて、DaemonSetパラメータを設定します。キーパラメータの情報は以下の通りです。
  - **ワークロード名**：カスタマイズされた名称を入力します。
  - **ネームスペース**：実際のニーズに応じて選択します。
@@ -29,24 +29,24 @@ PodのnodeSelectorまたはaffinityパラメータが構成されている場合
        - **Never**：ローカルイメージのみを使用します。ローカルでこのイメージがない場合は、異常を報告します。
     - **CPU/メモリ制限**：[Kubernetes リソース制限](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)に基づいて、CPUおよびメモリの制限範囲を設定することができ、サービスのロバストを向上させます。
     - 詳細設定：「**作業ディレクトリ**」、「**実行コマンド**」、「**実行パラメータ**」、「**コンテナ健康診断**」、「**特権レベル**」などのパラメータを設定できます。
-5. 【Workloadの作成】をクリックして、作成が完了します。
+5. 【Create a workload】をクリックして、作成が完了します。
 
 ### DaemonSetの更新
 
 #### YAMLの更新
-1. TKEコンソールにログインして、左側ナビゲーションバーの【[クラスター](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
+1. TKEコンソールにログインして、左側ナビゲーションバーの【[Cluster](https://console.cloud.tencent.com/tke2/cluster)】を選択してください。
 2. YAMLの更新を必要とするクラスターIDをクリックして、YAMLが更新されるクラスター管理ページへ進みます。
 3. 【Workload】>【DaemonSet】を選択して、DaemonSet情報ページへ進みます。
-5. YAMLの更新を必要とするDaemonSet行から、【その他】>【YAMLの編集】を選択して、DaemonSet更新ページへ進みます。
-6. 「DaemonSetの更新」ページでYAMLを編集し、【完了】をクリックしてYAMLが更新されます。
+5. YAMLの更新を必要とするDaemonSet行から、【More 】>【Edit YAML】を選択して、DaemonSet更新ページへ進みます。
+6. 「Update a DaemonSet」ページでYAMLを編集し、【 Finish】をクリックしてYAMLが更新されます。
 
 #### Pod構成の更新
 > DaemonSetローリング更新機能は、Kubernetes 1.6以降のバージョンでのみサポートされます。
 >
 1. クラスター管理ページでは、Pod構成の更新を必要とするDaemonSetのクラスターIDをクリックして、Pod構成が更新されるDaemonSetのクラスター管理ページへ進みます。
-2. Pod構成の更新を必要とするDaemonSet行では、【Pod構成の更新】をクリックします。
-3. 「Pod構成の更新」ページでは、実際のニーズに応じて更新方法を変更し、パラメータを設定します。
-4. 【完了】をクリックして、Pod構成が更新されます。
+2. Pod構成の更新を必要とするDaemonSet行では、【 Update Pod Configurations】をクリックします。
+3. 「 Update Pod Configurations」ページでは、実際のニーズに応じて更新方法を変更し、パラメータを設定します。
+4. 【Finish 】をクリックして、Pod構成が更新されます。
 
 ## KubectlによるDaemonSetのアクションガイド
 
