@@ -29,18 +29,15 @@ There are two ways to join a meeting from browser:
 ## **During a Meeting**
 
 1. Toolbar: 
-
 - In the bottom of the page, you can mute or unmute, turn on or off video, add invitees, rename yourself and mute or unmute attendees in attendees list.
 - In the lower-right corner of the page:
   As a host or co-host, you can click **End Meeting** to leave or end meeting.
   As attendees, you can click **Leave Meeting** to leave meeting.
 
 2. Active Speaker 
-
 In the upper middle part of the page displays active speaker, and you can drag and drop the box to anywhere in the screen.
 
 3. Layout
-
 - When all attendees turn off video or do not share screen: 
   Thumbnails and name of all attendees are displayed.
 
