@@ -9,7 +9,7 @@ After migrating data from HDFS to COS by using the `hadoop distcp` command, you 
 
 > !
 > - If you are using a self-built Hadoop cluster, the Hadoop-cos dependency should be of the latest version (with GitHub release as 5.8.2 or above) to obtain the CRC64 checksum.
-> - If you are using Tencent Cloud EMR, only clusters created after May 8, 2020 contain the Hadoop-cos version above. To deal with earlier clusters, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+> - If you are using Tencent Cloud EMR, only clusters created after May 8, 2020 contain the Hadoop-cos version above. To deal with earlier clusters, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ## Directions
 
