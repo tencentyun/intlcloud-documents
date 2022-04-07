@@ -19,7 +19,7 @@
 ### 接受邀请
 被邀请者收到邀请通知 [onReceiveNewInvitation](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSignalingListener/V2TimSignalingListener/onReceiveNewInvitation.html) 后可以在超时前且邀请者取消前接受邀请 [accept](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_signaling_manager/V2TIMSignalingManager/accept.html)，邀请者会收到接受邀请通知 [onInviteeAccepted](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSignalingListener/V2TimSignalingListener/onInviteeAccepted.html)，所有被邀请者处理完后（包括接受、拒绝、超时）该邀请流程结束。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/90c2884f71a358d271c3543dc27a387f.png)
+![](https://main.qcloudimg.com/raw/764eae198d01855a4e87f6611b056b28.png)
 
 ### 拒绝邀请
 被邀请者收到邀请通知 [onReceiveNewInvitation](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSignalingListener/V2TimSignalingListener/onReceiveNewInvitation.html)后可以在超时前且邀请者取消前拒绝邀请 [reject](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_signaling_manager/V2TIMSignalingManager/reject.html)，邀请者会收到拒绝邀请通知 [onInviteeRejected](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_V2TimSignalingListener/V2TimSignalingListener/onInviteeRejected.html)，所有被邀请者处理完后（包括接受、拒绝、超时）该邀请流程结束。
