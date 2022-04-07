@@ -10,9 +10,8 @@ VOD provides an SDK for uploading videos on Android client. For more information
 1. Copy `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload` to your project directory, and modify the package name manually.
 2. Refer to `Demo/app/build.gradle` to add dependencies in your project:
     ```
-    implementation ('com.tencent.qcloud:cosxml:5.5.3') {
-        exclude group: 'com.tencent.qcloud', module: 'mtaUtils' // Disable MTA reporting}
-    }
+    implementation 'com.qcloud.cos:cos-android-nobeacon:5.8.3'
+    implementation 'com.qcloud.cos:quic:1.5.37'
     ```
 >?You can also refer to [Manual integration](https://intl.cloud.tencent.com/document/product/436/12159) and integrate corresponding dependent libraries.
 3. Network and storage access permissions are required for video uploading. You can add the following permission declarations in `AndroidManifest.xml`:
