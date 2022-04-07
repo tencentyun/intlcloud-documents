@@ -16,9 +16,9 @@ This document describes how to join a meeting from browser.
 
 
 
-# **Join a Meeting From Browser**
+# **Joining a Meeting From Browser**
 
-## **Join a Meeting**
+## **Joining a Meeting**
 
 There are two ways to join a meeting from browser:
 
@@ -75,7 +75,7 @@ In the upper middle part of the page displays active speaker, and you can drag a
 
 
 
-## **Leave a Meeting** or **End a Meeting**
+## **Leaving a Meeting** or **Ending a Meeting**
 
 ### **Role:** Host/Co-host
 
