@@ -1,6 +1,6 @@
 # **Overview**
 
-VooV meeting allows you to join a meeting from browser: 
+VooV meeting lets you to join a meeting from browser: 
 
 1. You can mute or unmute, turn on or off video, add invitees, view attendees, rename and leave meeting.
 2. As a host, you can manage audio and video permissions of attendees, set up or revoke co-host, remove attendees and end meeting.
@@ -16,17 +16,17 @@ This document describes how to join a meeting from browser.
 
 
 
-# **Join Meeting From Browser**
+# **Join a Meeting From Browser**
 
-## **Joining the Meeting**
+## **Join a Meeting**
 
 There are two ways to join a meeting from browser:
 
 1. Open the meeting link in browser and Click **Join From Browser** to join the meeting.
-2. Open the link “https://voovmeeting.com/user-center/join” in browser, enter meeting ID and click **Join Meeting**.
+2. Open the link [https://voovmeeting.com/user-center/join](https://voovmeeting.com/user-center/join) in browser, enter meeting ID and click **Join Meeting**.
 
 
-## **During the Meeting**
+## **During a Meeting**
 
 1. Toolbar: 
 
@@ -35,15 +35,14 @@ There are two ways to join a meeting from browser:
   As a host or co-host, you can click **End Meeting** to leave or end meeting.
   As attendees, you can click **Leave Meeting** to leave meeting.
 
-1. Active Speaker 
+2. Active Speaker 
 
 In the upper middle part of the page displays active speaker, and you can drag and drop the box to anywhere in the screen.
 
-1. Display
+3. Layout
 
 - When all attendees turn off video or do not share screen: 
-
-Thumbnails and name of all attendees are displayed.
+  Thumbnails and name of all attendees are displayed.
 
 - When some attendees turn on video or share screen:
   - The video is in the large display and a trip of thumbnails are displayed in the right side. Click other attendees’ video in the right side to switch the video display.
