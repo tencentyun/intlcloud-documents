@@ -1,5 +1,6 @@
 ## What is blocking?
 Once the attack traffic exceeds the blocking threshold of a target IP, Tencent Cloud will block the target IP from all public network accessing through ISP service to protect other Tencent Cloud users.
+>?
 >- The blocking threshold of a protected IP of an Anti-DDoS Pro instance is equal to the maximum protection capability in the current region.
 >- Integrating the local cleansing capability, the all-out protection aims to spare no effort to successfully defend against each DDoS attack.
 
