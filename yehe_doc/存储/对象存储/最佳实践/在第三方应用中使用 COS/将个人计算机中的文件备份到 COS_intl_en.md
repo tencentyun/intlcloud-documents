@@ -16,11 +16,11 @@ As Tencent Cloud’s business grows, it has already developed a suite of enterpr
 
 To get a commercial license of Arq® Backup, each user needs to pay $49.99. This software, which is used on a single computer, offers a 30-day free trial which you may want to try before purchase.
 
->Arq® Backup currently does not support the simplified Chinese language. You can download, purchase it and read its instructions from the [Official Website](https://www.arqbackup.com/).
+> ?Arq® Backup currently does not support the simplified Chinese language. You can download, purchase it and read its instructions from the [Official Website](https://www.arqbackup.com/).
 
 ## Preparing Tencent Cloud COS
 
->Please skip Steps 1-2 if you are using COS.
+> ?Please skip Steps 1-2 if you are using COS.
 
 1. [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985), and complete [Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629).
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and activate COS service as instructed.
@@ -28,14 +28,14 @@ To get a commercial license of Arq® Backup, each user needs to pay $49.99. This
 	- Name: bucket name, e.g. “backups”.
 	- Region: you can choose a region closest to your location. Currently, we offer price discounts for regions in southwest China, so you may alternatively choose “Chengdu” or “Chongqing” to enjoy this offer.
     ![](https://main.qcloudimg.com/raw/d9caa38d7216c4270ff2a0fc096405fa.png)
-    For the other fields, leave the default. Copy and save the **Request endpoint**, and click **OK**.
->Now, you have created a bucket. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
+  For the other fields, leave the default. Copy and save the **Request endpoint**, and click **OK**.
+> ?Now, you have created a bucket. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 4. Log in to the [API Key Management Console](https://console.cloud.tencent.com/cam/capi), and create and save your SecretId and SecretKey.
    ![](https://main.qcloudimg.com/raw/5a78bab4cb211503b5c3ff54e5551eb3.png)
 
 ## Installing and Configuring Arq® Backup
 
->Take Arq Backup Version 6.2.11 for Windows as an example.
+> ?Take Arq® Backup Version 6.2.11 for Windows as an example.
 
 1. Download it from [Arq® Backup Website](https://www.arqbackup.com/).
 2. Follow the wizard to install the software. Once completed, it will start automatically while prompting you to log in. Then, enter your email address and click **Start Trial**.
