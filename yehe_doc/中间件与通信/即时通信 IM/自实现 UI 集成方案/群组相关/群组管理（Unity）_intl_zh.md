@@ -108,10 +108,10 @@
 </table>
 
 >?
-- 新版 SDK 已全面升级群组类型。新群组类型有**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom）**五个群组类型。旧版群组类型（Public、Private、ChatRoom、AVChatRoom）中的 Private 类型对应新群组类型 Work（好友工作群），ChatRoom 类型对应新群组类型 Meeting（临时会议群）。
-- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 [套餐外超量费用](https://intl.cloud.tencent.com/document/product/1047/34350)。
-- 社群（Community）功能仅SDK5.8.1668增强版及以上版本支持，需购买旗舰版套餐包并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
-- 好友工作群（Work）、陌生人社交群（Public）默认不支持查看入群前消息记录。如需使用此功能，请参见 [配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322) 指引提交变更申请。
+>- 新版 SDK 已全面升级群组类型。新群组类型有**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom）**五个群组类型。旧版群组类型（Public、Private、ChatRoom、AVChatRoom）中的 Private 类型对应新群组类型 Work（好友工作群），ChatRoom 类型对应新群组类型 Meeting（临时会议群）。
+>- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 [套餐外超量费用](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>- 社群（Community）功能仅SDK5.8.1668增强版及以上版本支持，需购买旗舰版套餐包并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
+>- 好友工作群（Work）、陌生人社交群（Public）默认不支持查看入群前消息记录。如需使用此功能，请参见 [配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322) 指引提交变更申请。
 
 ## 创建群组
 
@@ -162,8 +162,8 @@ TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_pa
 调用 [GroupDelete](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupDelete_System_String_com_tencent_imsdk_unity_callback_ValueCallback_) 可以解散群组，全员会收到 [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) 回调。
 
 >!
-- 对于陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom），群主随时可以解散群。
-- 好友工作群（Work）的解散最为严格，即使群主也不能随意解散，只能由您的业务服务器调用 [解散群组 REST API](https://intl.cloud.tencent.com/document/product/1047/34896) 解散。
+>- 对于陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom），群主随时可以解散群。
+>- 好友工作群（Work）的解散最为严格，即使群主也不能随意解散，只能由您的业务服务器调用 [解散群组 REST API](https://intl.cloud.tencent.com/document/product/1047/34896) 解散。
 
 ## 获取即加入的群组
 
@@ -180,9 +180,9 @@ TencentIMSDK.GroupCreate(CreateGroupParam,(int code, string desc, string json_pa
 调用 [GroupModifyGroupInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_ValueCallback_) 可以修改群资料。群资料被修改后，全员会收到 [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) 回调。
 
 >?
-- 好友工作群（Work）所有群成员都可以修改群基础资料。
-- 陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）只有群主或管理员可以修改群基础资料。
-- 直播群（AVChatRoom）只有群主可以修改群基础资料。
+>- 好友工作群（Work）所有群成员都可以修改群基础资料。
+>- 陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）只有群主或管理员可以修改群基础资料。
+>- 直播群（AVChatRoom）只有群主可以修改群基础资料。
 
 ## 设置群消息的接收选项
 
