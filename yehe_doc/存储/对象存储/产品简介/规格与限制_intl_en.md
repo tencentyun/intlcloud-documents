@@ -47,7 +47,7 @@
     			<td>Limits</td>
     			<td><ul  style="margin: 0;"><li>Once a bucket is created, you cannot modify its name or region.</li>
 					<li>Names of buckets belonging to the same account must be unique and cannot be renamed.</li>
-					<li> Bucket names cannot start with a hyphen (-), and can contain only lowercase letters, digits, and hyphens. The length of a bucket name is limited by the number of characters in the <a href="https://buy.cloud.tencent.com/price/cos">region abbreviation</a> and `APPID`. A complete domain can contain up to 60 characters.</li></ul></td>
+					<li> Bucket names cannot start with a hyphen (-), and can contain only lowercase letters, digits, and hyphens. The length of a bucket name is limited by the number of characters in the <a href="https://intl.cloud.tencent.com/document/product/436/6224">region abbreviation</a> and `APPID`. A complete domain can contain up to 60 characters.</li></ul></td>
      </tr>
     	 <tr>
     			<td> Number of buckets</td>
