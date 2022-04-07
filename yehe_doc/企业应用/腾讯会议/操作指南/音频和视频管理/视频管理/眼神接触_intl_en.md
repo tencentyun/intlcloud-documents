@@ -2,10 +2,10 @@
 The gaze correction feature can correct the gaze, so that your gaze can remain focused in the video image even when you are not looking at the camera.
 
 ## Prerequisites
-- **Logged-in user:** Free or Enterprise edition user
+- **Logged-in user:** Free or Enterprise Edition user
 - **Logged-in device:** Windows or macOS
 - **Version:** v2.4.0 or later
-- **Hardware requirements:** currently, this feature is supported only on models with a CPU of Intel Core i5 4-core or later.
+- **Hardware requirements:** this feature is supported only on models with a CPU of Intel Core i5 4-core or higher
 
 ## Notes
 - Before using gaze correction, you can check whether your PC supports this feature in **Settings** > **Video**. If **Gaze Correction** is grayed out, it indicates that the feature is not supported.

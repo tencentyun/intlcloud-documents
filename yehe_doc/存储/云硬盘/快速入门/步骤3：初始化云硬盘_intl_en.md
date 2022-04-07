@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to initialize a cloud disk newly mounted to a CVM, create a file system, and write a file named `qcloud.txt`.
+This document describes how to initialize a cloud disk newly attached to a CVM, create a file system, and write a file named `qcloud.txt`.
 >?For more information on initializing cloud disks, see [Initialization Scenarios](https://intl.cloud.tencent.com/document/product/362/31596).
 >
 
@@ -11,7 +11,7 @@ To prevent data loss, please see [Usage FAQs](https://intl.cloud.tencent.com/doc
 
 ## Directions
 <dx-tabs>
-::: Formatting,\screating\sa\sfile\ssystem, and\swriting\sa\sfile\s(Windows)
+::: Windows CVMs
 This document uses a CVM with Windows Server 2012 R2 DataCenter 64-bit Chinese installed as an example. Note that the steps may vary according to the operating system version.
 
 1. Log in to the Windows CVM instance as the admin user. See [Logging in to Windows Instance Using RDP (Recommended)](https://intl.cloud.tencent.com/document/product/213/5435). 
@@ -34,7 +34,7 @@ When the disk status changes to **Not Initialized**, it has gone online.
  The disk status goes to **Formatting**. Wait for the completion of initialization. When the volume status becomes **Healthy**, the disk initialization is successful. You can then view the newly formatted data disk in the **PC** interface.
 11. Enter the newly formatted data disk, create a file named `qcloud.txt`, enter the content you need, and select **File** > **Save**.
 :::
-::: Formatting,\screating\sa\sfile\ssystem, and\swriting\sa\sfile\s(Linux)
+::: Linux CVMs
 
 - This document uses a CVM with CentOS 7.8 installed as an example. Note that the steps may vary according to the operating system version.
 - EXT4 file system is used in this example.

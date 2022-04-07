@@ -2,20 +2,20 @@
 Yes.
 
 ### Will creating a snapshot affect the disk performance?
-Creating a snapshot will occupy a small amount of the cloud disk I/O. We recommend creating snapshots during off-peak hours of your business.
+Creating a snapshot will occupy a small amount of the cloud disk I/O. We recommend creating snapshots when business is slow.
 
 ### How long does it take to create a snapshot?
 The time it takes to create a snapshot is influenced by factors such as the number of disk writes and the underlying read-write operations. Creating a snapshot will not affect your disk use.
 
-### Do I need to shut down the CVM to roll back to a snapshot?
-- For a cloud disk that has been attached to a CVM, you have to shut down the CVM to roll it back to a snapshot.
-- For a cloud disk that has not been attached to a CVM, you can directly roll it back to a snapshot.
+### Do I need to shut down the CVM to roll back snapshots?
+- For a cloud disk that has been mounted to a CVM, you have to shut down the CVM to roll back snapshots.
+- For a cloud disk that has not been mounted, you can directly roll back snapshots.
 
 ### How is the size of the first full snapshot of a cloud disk calculated?
 The first snapshot created on a cloud disk is a full snapshot that copies all the data of the cloud disk at a point in time. The snapshot size equals the used capacity of the cloud disk. For example, if the total capacity of a cloud disk is 200 GB and 122 GB have been used, the size of the first full snapshot is 122 GB.
 
 ### Can I download or export CVM instance snapshots to a local device?
-No.
+No. Snapshots cannot be downloaded or exported to local devices. You need to create a custom image from a snapshot and then export the image.
 
 ### Do automatic snapshots differ from or conflict with manual snapshots?
 No. You can use both of them at the same time. However, you cannot create manual snapshots while automatic snapshots are being created.
@@ -26,19 +26,19 @@ No. You can use both of them at the same time. However, you cannot create manual
 No. We recommend that you use data redundancy at the application layer or create deployment sets for clusters to improve the availability of applications.
 
 ### After I release the cloud disk, will local snapshots be deleted?
-No, the associated snapshots will not be deleted automatically. You can delete them via the console or an API. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
+No. You need to delete snapshots via the Console or APIs. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
 
-### Why does the used disk storage displayed in the file system differ from the snapshot size?
-A cloud disk snapshot is a block-level clone or backup. In general, the snapshot size will be larger than the data size displayed in the file system because:
+### Why does the used disk capacity displayed in the file system differ from the snapshot size?
+A cloud disk snapshot is a block-level clone or backup. In general, the snapshot capacity will be larger than the data capacity displayed in the file system because:
 - The underlying data block stores the metadata of the file system.
 - Some data are deleted. Deleting data modifies the written-in data block, which will be backed up to snapshots.
 
 ### How can I prevent snapshots from being deleted by Tencent Cloud?
-- Do not have overdue payments under your Tencent Cloud account. If your account has an overdue payment, snapshots will be isolated and retained for 30 days. If your account balance remains negative, all snapshots (except for image snapshots) will be deleted after this period.
-- You can set the retention period for scheduled snapshots to long-term retention to prevent them from being deleted. This way, only the snapshots created earliest will be deleted when the snapshot quota is reached. For detailed directions, see [Scheduled Snapshot](https://intl.cloud.tencent.com/document/product/362/35238) and [Use Limits](https://intl.cloud.tencent.com/document/product/362/32406).
+- Manual snapshots: Tencent Cloud will never delete them, regardless of whether their corresponding disk or instance has been released.
+- Scheduled snapshots: you can set the retention period of scheduled snapshots to long-term retention to prevent them from being deleted. This way, only the snapshot created earliest will be deleted when the snapshot quota is reached. For detailed directions, see [Scheduled Snapshot](https://intl.cloud.tencent.com/document/product/362/35238) and [Use Limits](https://intl.cloud.tencent.com/document/product/362/32406).
 
 ### How can I delete snapshots to reduce backup costs?
-- For cloud disk snapshots, you can delete them directly via the console or an API. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
+- For cloud disk snapshots, you can delete them directly via the Console or APIs. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
 - For snapshots associated with custom images, you must first delete the custom images and then [delete the snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
 
 ### Will automatic snapshots be deleted after the instance expires or the cloud disk is released?
@@ -50,7 +50,7 @@ No. Automatic snapshots will not be deleted after the instance expires or the cl
 - Snapshots from which an instance was created: you can delete the snapshots separately. After you delete a snapshot, you will not be able to operate a business that depends on the original snapshot data.
 
 ### Will the snapshot policy fail to be executed if I create a custom image or cloud disk based on the scheduled snapshot?
-No, it won’t.
+No.
 
 
 ### Can a cloud disk have multiple automatic snapshot policies?
@@ -63,12 +63,12 @@ You can create snapshots to back up data before you perform risky operations. Fo
 No. Snapshots can only be rolled back to the cloud disk in which they are created. You can use the snapshots of the previous data disk to create a cloud disk and mount the cloud disk to the new instance. For more information, see [Creating Cloud Disks Using Snapshots](https://intl.cloud.tencent.com/document/product/362/5757) and [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401).
 
 ### What are the differences between snapshots and images?
-If no data disk is attached to an instance and all data are written on the system disk, the data on the system disk cannot be protected by creating an image. Images cannot be scheduled for continuous backup. Once the system disk data are damaged, you can only recover the data to the state when the image was initially created. Therefore, images are not suitable for data protection. Specific differences are as follows:
+If no data disk is mounted to an instance and all data is written on the system disk, the data on the system disk cannot be protected by creating an image. Images cannot be scheduled for continuous backup. Once the system disk data is damaged, you can only recover the data to the state when the image was initially created. Therefore, images are not suitable for data protection. Specific differences are as follows:
 <table>
 		<tr>
 		<th width="10%">Name</th>
 		<td width="45%">Snapshots</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/213/4940">Image</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/213/4940">Images</a></td>
 		</tr>
 		<tr>
 		<th>Characteristics</th>
@@ -76,7 +76,7 @@ If no data disk is attached to an instance and all data are written on the syste
 	   	<td>CVM software configuration template, which contains information about the operating system and pre-installed programs</td>
 		</tr>
 		<tr>
-		<th>Application Scenarios</th>
+		<th>Use Cases</th>
 		<td>
 			<ul>
 				<li>Regularly back up important business data</li>

@@ -6,7 +6,7 @@ VooV Meeting offers a whiteboard feature which makes it easier for you to commun
 
 ## Prerequisites
 
-- A Free, Pro, or Enterprise Edition user
+- Free, Pro, or Enterprise Edition users
 
 - Windows, macOS, iOS, or Android
 

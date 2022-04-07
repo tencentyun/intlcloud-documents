@@ -1,4 +1,22 @@
-## 2021年7月
+## 2021年08月
+<table>
+<tr>
+<th width="25%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+<tr>
+<td>专线网关支持流量分析</td>
+<td>对经流专线网关的流量进行统计分析并进行 TOP 展示，如总流量、平均带宽、总包量、平均包转发量和流量占比等，协助您调整与规划业务。</td>
+<td>2021-08-31</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/216/45864">网关流量分析</a></td>
+</tr>
+</table>
+
+
+
+## 2021年07月
 <table>
 <tr>
 <th width="25%">动态名称</th>
@@ -15,7 +33,7 @@
 </table>
 
 
-## 2021年4月
+## 2021年04月
 <table>
 <tr>
 <th width="25%">动态名称</th>
@@ -33,7 +51,7 @@
 
 
 
-## 2021年2月
+## 2021年02月
 <table>
 <tr>
 <th width="25%">动态名称</th>
@@ -45,11 +63,11 @@
 <td>专用通道升级</td>
 <td>专用通道升级为1.0版本和2.0版本，版本信息随绑定的物理专线变化。<ul><li>对于通道1.0，新增调整通道带宽功能。</li><li>对于通道2.0，支持按需调整带宽、开启健康检查、使用探测工具等功能。</li></ul></td>
 <td>2021-02-01</td>
-<td><a href="https://cloud.tencent.com/document/product/216/19250">申请专用通道</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/216/19250">申请专用通道</td>
 </tr>
 </table>
 
-## 2021年1月
+## 2021年01月
 <table>
 <tr>
 <th width="25%">动态名称</th>
@@ -61,7 +79,7 @@
 <td>支持查看云联网专线网关路由表</td>
 <td>若您的专线网络架构中使用云联网专线网关，则可以在控制台查看专线网关 IDC 方向和云联网方向的路由表信息。</td>
 <td>2021-01-20</td>
-<td><a href="https://cloud.tencent.com/document/product/216/52093">查看专线网关路由表</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/216/39517">查看专线网关路由表</a></td>
 </tr>
 <tr>
 <td>专用通道、专线网关支持资源级授权</td>
@@ -122,7 +140,7 @@
 </table>
 
 
-## 2020年6月
+## 2020年06月
 <table>
 <tr>
 <th width="25%">动态名称</th>
@@ -138,7 +156,7 @@
 </tr>
 </table>
 
-## 2020年3月
+## 2020年03月
 <table>
 <tr>
 <th width="25%">动态名称</th>
@@ -154,7 +172,7 @@
 </tr>
 </table>
 
-## 2019年7月
+## 2019年07月
 <table>
 <tr>
 <th width="25%">动态名称</th>

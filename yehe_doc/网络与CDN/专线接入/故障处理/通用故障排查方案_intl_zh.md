@@ -6,7 +6,7 @@
 -[排查物理层链路故障](#1)
 -[排查数据链路层故障](#2)
 -[排查网络层/传输层故障](#3)
--[排查安全组故障](#4)
+-[排查安全故障](#4)
 -[排查路由故障](#5)
 </dx-steps>
 
@@ -37,6 +37,8 @@
 2. 确保专线两端配置的 IP 地址唯一，没有 IP 地址复用的情况。
 3. 若您的专线开启了 BFD 双向检测，请确保 IDC 设备上的安全策略已放行 BFD 报文。
 4. 若您的专线开启 NQA 检测，腾讯云标准支持的 NQA 探测类型是 ICMP-echo，请确保您的 IDC 设备上的安全策略已放行 ICMP 报文。
+>?NQA 检测当前仅在专用通道2.0中支持，如果您当前为专用通道1.0，同时需要使用 NQA 检测功能，那么请联系腾讯技术人员或 [联系我们](https://intl.cloud.tencent.com/contact-sales) 将专线切换为2.0。
+>
 5. 若需在专线两端建立 BGP 会话来实现腾讯云 VPC 路由和 IDC 路由传递：
 	- 请确保在 IDC 设备上正确配置 BGP ASN、BGP PEER IP。
 	- 请确保 BGP MD5 认证密钥两端保持完全一致。
@@ -61,23 +63,29 @@
 2. 若未正确配置 IDC 网段，请重新配置。具体操作请参见[ 申请专用通道](https://intl.cloud.tencent.com/document/product/216/19250)。
 :::
 ::: 2.检测是否正确配置路由表
-1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“基本信息”页签中单击私有网络 ID。
-2. 在私有网络“基本信息”页签中单击【路由表】。
-3. 在路由表“基本信息”页面查看路由表中是否正确配置目的端为 IDC 网段、下一跳为专线网关的路由策略，且状态为“启用”。
-4. 若未配置目的端为 IDC 网段、下一跳为专线网关的路由策略，请重新配置。具体操作请参见[ 配置路由表](https://intl.cloud.tencent.com/document/product/216/19259)。
-:::
-</dx-accordion>
+3. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“基本信息”页签中单击私有网络 ID。
+    ![]()
+4. 在私有网络“基本信息”页签中单击【路由表】。
+    ![]()
+5. 在路由表“基本信息”页面查看路由表中是否正确配置目的端为 IDC 网段、下一跳为专线网关的路由策略，且状态为“启用”。
+    ![]()
+6. 若未配置目的端为 IDC 网段、下一跳为专线网关的路由策略，请重新配置。具体操作请参见[ 配置路由表](https://intl.cloud.tencent.com/document/product/216/19259)。
+    :::
+    </dx-accordion>
 - BGP 专用通道
  请确保专线网关已成功通过 BGP 协议学习到 IDC 网段，并正确传递至腾讯云 VPC。若专线网关未通过 BGP 协议学习到 IDC 网段，或 IDC 网段未传递到腾讯云 VPC，VPC 访问 IDC 服务器时路由将不可达，导致业务访问不通。
-  <dx-accordion>
-  ::: 1.检查\sBGP\s路由配置是否正确
+<dx-accordion>
+::: 1.检查\sBGP\s路由配置是否正确
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“高级配置”页签中查看 BGP 配置是否正确。
 2. 若未正确配置，请重新配置。具体操作请参见[ 申请专用通道](https://intl.cloud.tencent.com/document/product/216/19250)。
 :::
 ::: 2.检测是否正确配置路由表
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“基本信息”页签中单击私有网络 ID。
+   ![]()
 2. 在私有网络“基本信息”页签中单击【路由表】。
+	 ![]()
 3. 在路由表“基本信息”页面查看路由表中是否正确配置目的端为 IDC 网段、下一跳为专线网关的路由策略，且状态为“启用”。
+	 ![]()
 4. 若未配置目的端为 IDC 网段、下一跳为专线网关的路由策略，请重新配置。具体操作请参见[ 配置路由表](https://intl.cloud.tencent.com/document/product/216/19259)。
 :::
 </dx-accordion>
@@ -93,6 +101,7 @@
 ::: 2.检测是否为专线网关添加\sIDC\s网段
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/vpc/dcgw?rid=8)，在专线网关列表中单击目标专线网关 ID。
 2. 在专线网关详情页面单击 【IDC 网段】页签，查看路由列表中是否正确配置 IDC 网段。
+	![]()
 3. 若未配置 IDC 网段，请重新配置。具体操作请参见[ 专线网关添加 IDC 网段](https://intl.cloud.tencent.com/document/product/216/39083)。
 :::
 </dx-accordion>
@@ -107,6 +116,7 @@
 ::: 2.检测是否为专线网关添加\sIDC\s网段
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/vpc/dcgw?rid=8)，在专线网关列表中单击目标专线网关 ID。网段
 2. 在专线网关详情页面单击 【IDC 网段】页签，查看路由列表中查看是否正确配置 IDC 网段。
+	![]()
 3. 若未配置 IDC 网段，请重新配置。具体操作请参见[ 专线网关添加 IDC 网段](https://intl.cloud.tencent.com/document/product/216/39083)。
 :::
 </dx-accordion>

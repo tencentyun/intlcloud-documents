@@ -1,9 +1,9 @@
 ## Feature Overview
-A meeting can be displayed in a floating window, making it easy for you to switch between tasks.
+VooV Meeting supports floating window, making it easy for you to switch between tasks.
 
 ## Prerequisites
-- **Logged-in user:** Free or Enterprise edition user.
-- **Logged-in device:** Windows, macOS, iOS, or Android.
+- **Logged-in user:** Free or Enterprise Edition user
+- **Logged-in device:** Windows, macOS, iOS, or Android
 - **Version:** v3.0.0 or later
 
 ## Enabling Floating Window

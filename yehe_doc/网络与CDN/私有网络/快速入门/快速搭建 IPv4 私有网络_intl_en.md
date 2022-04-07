@@ -7,7 +7,7 @@ This document guides through whole process of setting up an IPv4-based VPC.
 Make sure you’ve [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/register) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) if you need to purchase resources in the Chinese mainland.
 
 ## Directions
-### Step 1: create a VPC and subnet
+### Step 1. Create a VPC and subnet
 >? After creating a VPC and subnet, you cannot modify their CIDR blocks. Therefore, complete [network planning](https://intl.cloud.tencent.com/document/product/215/31795) in advance.
 >
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
@@ -26,7 +26,7 @@ Make sure you’ve [signed up for a Tencent Cloud account](https://intl.cloud.te
     - Availability Zone: select an availability zone in which the subnet resides. A VPC allows subnets in different availability zones, and these subnets can communicate with each other via a private network by default.
     - Advanced Options: you can optionally add tags to help you better manage resource permissions of sub-users and collaborators.
 
-### Step 2: purchase a CVM instance
+### Step 2. Purchase a CVM instance
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm) to create a CVM instance in the VPC created in the previous step.
 2. Click **Create** in the top-left corner of the list page to access the CVM purchase page.
 <img src="" width="80%">
@@ -38,7 +38,7 @@ Make sure you’ve [signed up for a Tencent Cloud account](https://intl.cloud.te
  - Security Group: select **Create security group** and configure it as instructed in [Configuring Security Groups](https://intl.cloud.tencent.com/document/product/213/15377).
 ![](https://qcloudimg.tencent-cloud.cn/raw/72584971b62015e38c9ad22da7ddd3d4.png)
 
-### Step 3: apply for an EIP and bind it to the CVM instance
+### Step 3. Apply for an EIP and bind it to the CVM instance
 Elastic IP (EIP) is a public IP address that can be applied for and purchased independently. You can bind it to a CVM instance to enable public network access.
 1. Log in to the [EIP console](https://console.cloud.tencent.com/cvm/eip).
 2. On the **EIP** page, select the region where the CVM is located. Click **Apply** in the top-left corner.
@@ -49,9 +49,9 @@ Elastic IP (EIP) is a public IP address that can be applied for and purchased in
 6. In the pop-up confirmation window, click **OK**.
 
 
-### Step 4: test public network connectivity
+### Step 4. Test public network connectivity
 Complete the following operations to test the public network connectivity of the CVM instance.
->?Before performing the test, make sure that the security group allows access to the corresponding IP address and port. For example, the ICMP protocol is opened, and the server can be pinged over the public network. For more information, see Viewing a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35514).
+>?Before performing the test, make sure that the security group allows access to the corresponding IP address and port. For example, the ICMP protocol is opened, and the server can be pinged over the public network. For more information, see [Viewing a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35514).
 >
 1. Log in to the CVM instance with an EIP bound. For detailed directions, see [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
 2. Run the `ping <public IP address>` command, such as `ping www.qq.com` to test public network connectivity.

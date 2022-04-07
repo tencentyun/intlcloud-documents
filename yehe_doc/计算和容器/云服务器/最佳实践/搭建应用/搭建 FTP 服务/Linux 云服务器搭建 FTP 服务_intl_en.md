@@ -8,12 +8,12 @@ The following software is used to build the FTP service.
 
 
 ## Directions
-### Step 1: log in to the CVM
+### Step 1. Log in to the CVM
 See [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
 - [Logging in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502).
 - [Logging into Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 
-### Step 2: install vsftpd
+### Step 2. Install vsftpd
 1. Run the following command to install vsftpd:
 ```
 yum install -y vsftpd
@@ -35,7 +35,7 @@ If the following appears, the FTP service has been successfully started.
 By default, vsftpd has enabled the anonymous access mode. This mode allows you to log in to the FTP server without entering a username or password, but you cannot modify or upload files.
 
 
-### Step 3: configure vsftpd<span id="user"></span>
+### Step 3. Configure vsftpd<span id="user"></span>
 1. Run the following command to create a Linux user (such as ftpuser) for the FTP service:
 ```
 useradd ftpuser
@@ -94,13 +94,13 @@ If you do not need to set exceptional users, skip this step and directly enter *
 systemctl restart vsftpd
 ```
 
-### Step 4: configure security groups
+### Step 4. Configure security groups
 After building the FTP service, configure **inbound rules** for the Linux CVM based on the actually used FTP mode. For more information, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).
 Most clients convert IP addresses in LANs. If you are using the FTP active mode, ensure that the client has obtained the real IP address. Otherwise, the client may fail to log in to the FTP server.
 - Active mode: open the port 21.
 - Passive mode: open the ports 21 and all ports ranging from `pasv_min_port` to `pasv_max_port` set in the [configuration file](#config), such as the ports 40000-45000 in this document.
 
-### Step 5: verify the FTP service
+### Step 5. Verify the FTP service
 You can use tools such as the FTP client software, browser, or file manager to verify the FTP server. This document uses the file manager of the client as an example.
 1. Open an Internet Explorer on the client, choose **Tools** > **Internet Options**, and click the **Advanced** tab to modify the configuration based on the selected FTP mode.
  - Active mode: deselect **Passive FTP**.

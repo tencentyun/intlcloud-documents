@@ -25,7 +25,6 @@ This document describes the approximate location of Tencent Cloud access points,
   <td >ap-shanghai-a-xtl</td>
   <td >Jiahui International Plaza, Xietu Road, Shanghai</td>
  </tr>
-
   <tr>
   <td >ap-shanghai-b-tz</td>
   <td >CDS Service Park, Tangzhen, Shanghai</td>
@@ -100,12 +99,10 @@ This document describes the approximate location of Tencent Cloud access points,
   <td >ap-beijing-a-kc</td>
   <td >No. 15, Nine Kechuang Street, Beijing Economic-Technological Development Area, Beijing</td>
  </tr>
-
  <tr>
   <td >ap-beijing-b-hx</td>
   <td >TravelSky High-tech Industrial Park, Shunyi District, Beijing</td>
  </tr>
-
  <tr>
   <td >ap-beijing-c-jxq</td>
   <td>Dexin Building, BEZIT Park, Chaoyang District, Beijing</td>
@@ -241,8 +238,10 @@ This document describes the approximate location of Tencent Cloud access points,
   <td >ap-mumbai-a-mahape</td>
  </tr>
  <tr>
-  <td>America</td>
-  <td>United States</td>
+  <td rowspan=2 >America</td>
+  <td rowspan=2 >United States</td>
   <td >ap-siliconvalley-a-sanjose</td>
+  <tr>
+  <td >ap-virginia-a-shburn</td>
  </tr>
 </table>

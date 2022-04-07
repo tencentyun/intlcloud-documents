@@ -2,10 +2,11 @@
 The limitations of changing public IP addresses of CVM instances are:
 - Each account can change public IP addresses in the same region a maximum of 3 times per day.
 - Each instance can only change its public IP once.
-- The old public IP will be released after it is replaced.
+- The old public IP will be released after the public IP is changed.
 
-### Are there any limits on creating a website on a CVM instance?
-You can host different websites on a CVM instance, but if you already have a domain name or want to access your website at a domain name, you should determine whether you need to perform operations such as website ICP filing application according to the CVM instance and domain name conditions.
+### How many websites can be hosted on a CVM instance?
+A CVM instance can host up to 5 websites, and each website can bind to multiple domain names.
+
 ### Can a CVM instance access the Amazon website?
 Yes, as long as your CVM instance can connect to the public network properly.
 
@@ -17,6 +18,4 @@ If you have reached the maximum number of pay-as-you-go instances that you can p
 
 ### How can I query the CVM resource quota?
 To query the use limits and quotas of CVM resources, see CVM instance use limits in [Use Limits Overview](https://intl.cloud.tencent.com/document/product/213/15379).
-
-
 
