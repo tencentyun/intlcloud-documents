@@ -5,11 +5,11 @@ To setup Ghost, you should be familiar with Linux and its common commands, such 
 
 ## Software
 This article uses the following software:
-- Linux operating system. This article uses Ubuntu 18.04.
-- Nginx 1.14.0 is used to provide web service.
-- MySQL 5.7.27 is used for database.
-- Node.js 10.17.0 is our runtime environment.
-- Ghost 3.0.2
+- Linux operating system. This article uses Ubuntu 20.04.
+- Nginx 1.18.0 is used to provide web service.
+- MySQL 8.0.25 is used for database.
+- Node.js 14.17.0 is our runtime environment.
+- Ghost 4.6.4
 
 
 ##  Prerequisites
@@ -89,7 +89,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_pas
 #### Install Node.js
 1. Run the following command to set a default Node.js version to be used.
 ```
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
 ```
 2. Run the following command to install Node.js.
 ```
