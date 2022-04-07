@@ -126,7 +126,7 @@ Noises that occur during a video conference are classified into the following sc
 
 Troubleshoot the problem as follows:
 
-**All or most attendees hear the noises：**
+**All or most attendees hear the noises:**
  The microphone of an attendee might pick up noise. Perform the following operations:
 
 1. If the host can see noise from an attendee in the noise prompt, the host can mute the attendee and remind the attendee to check the problem.
