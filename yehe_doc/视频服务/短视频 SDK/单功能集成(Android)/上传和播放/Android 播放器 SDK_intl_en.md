@@ -2,7 +2,7 @@ The Superplayer SDK for Android is an open-source Tencent Cloud player component
 
 ## SDK Download
 
-The VOD Superplayer SDK for Android can be downloaded [here](https://github.com/tencentyun/SuperPlayer_Android).
+The VOD Superplayer SDK for Android can be downloaded [here](https://github.com/LiteAVSDK/Player_Android).
 
 ## Target Audience
 
@@ -12,7 +12,7 @@ This document describes Tencent Cloud's proprietary capabilities. Please make su
 
 ### Integrating aar
 
-1. Download the SDK + Demo development kit for Android [here](https://github.com/tencentyun/SuperPlayer_Android).
+1. Download the SDK + Demo development kit for Android [here](https://github.com/LiteAVSDK/Player_Android).
 2. Import `SDK/LiteAVSDK_XXX.aar` and the `Demo/superplayerkit` module into the project.
 3. Add dependencies to `app/build.gralde`:
 ```java
