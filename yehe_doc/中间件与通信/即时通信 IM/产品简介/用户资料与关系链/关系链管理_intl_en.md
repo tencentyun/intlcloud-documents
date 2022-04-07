@@ -33,7 +33,7 @@ Currently, IM supports the following standard friend fields:
 | Tag_SNS_IM_Remark | String | Remark:<br />1. The length of a remark cannot exceed 96 bytes. |
 | Tag_SNS_IM_AddSource | String | Source from which a friend is added:<br />1. The source field contains a prefix and keyword.<br />2. The prefix of the source field is `AddSource_Type_`.<br />3. Keyword: must be a combination of letters with a length no more than 8 bytes. You are advised to use an English word or its abbreviation.<br />4. Example: if the source keyword is Android, the source field is `AddSource_Type_Android`.<br /> |
 | Tag_SNS_IM_AddWording | String | Request content:<br />1. The length of a request cannot exceed 256 bytes.<br /> |
-
+|Tag_SNS_IM_AddTime |Integer| Add friends timestamp.  |
 
 ### Custom friend fields
 
