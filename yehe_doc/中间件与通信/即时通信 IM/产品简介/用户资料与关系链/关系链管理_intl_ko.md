@@ -33,7 +33,7 @@ IM의 친구 리스트는 최대 3000명까지 추가할 수 있습니다.
 |Tag_SNS_IM_Remark|string|친구 설명: <br />1. 설명 길이: 최대 96 바이트.|
 |Tag_SNS_IM_AddSource|string|친구 출처 추가: <br />1. 친구 출처 추가 필드는 접두사와 키워드 두 부분을 포함. <br />2. 친구 출처 추가 필드의 접두사: AddSource_Type_. <br />3. 키워드: 최대 8 바이트의 영어 알파벳으로 구성하며, 영어 단어 또는 약자 사용 권장. <br />4. 예시: 친구 출처 추가 키워드가 Android일 경우, 친구 출처 필드는 AddSource_Type_Android가 됨. <br />|
 |Tag_SNS_IM_AddWording|string|친구 추가 메시지: <br />1. 친구 추가 메시지 길이: 최대 256 바이트.<br />|
-
+|Tag_SNS_IM_AddTime |Integer| 친구 타임 스탬프 추가 |
 
 ### 사용자 정의 친구 필드
 
