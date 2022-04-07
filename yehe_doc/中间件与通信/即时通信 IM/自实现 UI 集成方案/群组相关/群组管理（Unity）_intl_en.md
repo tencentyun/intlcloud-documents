@@ -108,10 +108,10 @@ The following table describes the features and limitations of each group type:
 </table>
 
 >?
-- Group types are upgraded in the new SDK version and they are **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, **community group (Community)**, and **audio-video group (AVChatRoom)**. Private group (Private) and chat room (ChatRoom) in earlier versions (which have Public, Private, ChatRoom, and AVChatRoom groups) correspond to work group (Work) and meeting group (Meeting) in the new version respectively.
-- In the Pro Edition or Flagship Edition SDKAppID, the maximum net increase in group count per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to pay for [usage not covered by the free quota](https://intl.cloud.tencent.com/document/product/1047/34350).
-- The community group (Community) feature is supported only in SDK 5.8.1668 enhanced edition or higher. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/44322).
-- Work groups (Work) and public groups (Public) do not allows group members to view messages sent before they join the group. To enable the feature, submit a change request by referring to [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322).
+>- Group types are upgraded in the new SDK version and they are **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, **community group (Community)**, and **audio-video group (AVChatRoom)**. Private group (Private) and chat room (ChatRoom) in earlier versions (which have Public, Private, ChatRoom, and AVChatRoom groups) correspond to work group (Work) and meeting group (Meeting) in the new version respectively.
+>- In the Pro Edition or Flagship Edition SDKAppID, the maximum net increase in group count per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to pay for [usage not covered by the free quota](https://intl.cloud.tencent.com/document/product/1047/34350).
+>- The community group (Community) feature is supported only in SDK 5.8.1668 enhanced edition or higher. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/44322).
+>- Work groups (Work) and public groups (Public) do not allows group members to view messages sent before they join the group. To enable the feature, submit a change request by referring to [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322).
 
 ## Creating a Group
 
@@ -162,8 +162,8 @@ Call [GroupQuit](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.ims
 Call [GroupDelete](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupDelete_System_String_com_tencent_imsdk_unity_callback_ValueCallback_) to delete a group. Then all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) callback.
 
 >!
-- For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner can delete the group at any time.
-- For a work group (Work), the group owner does not have the permission to delete the group. To delete the group, you must have your service server call the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/34896).
+>- For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner can delete the group at any time.
+>- For a work group (Work), the group owner does not have the permission to delete the group. To delete the group, you must have your service server call the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/34896).
 
 ## Getting the List of Joined Groups
 
@@ -180,9 +180,9 @@ Call [GroupGetGroupInfoList](https://comm.qq.com/im/sdk/unity_plus/_site/api/com
 Call [GroupModifyGroupInfo](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_GroupModifyGroupInfo_com_tencent_imsdk_unity_types_GroupModifyInfoParam_com_tencent_imsdk_unity_callback_ValueCallback_) to modify the group profile. When the modification is completed, all group members receive the [GroupTipsEventCallback](https://comm.qq.com/im/sdk/unity_plus/_site/api/com.tencent.imsdk.unity.callback.GroupTipsEventCallback.html) callback.
 
 >?
-- For work groups (Work), all group members can modify the basic group profile.
-- For public groups (Public), meeting groups (Meeting), and community groups (Community), only the group owner and admin can modify the group profile.
-- For audio-video groups (AVChatRoom), only the group owner can modify the group profile.
+>- For work groups (Work), all group members can modify the basic group profile.
+>- For public groups (Public), meeting groups (Meeting), and community groups (Community), only the group owner and admin can modify the group profile.
+>- For audio-video groups (AVChatRoom), only the group owner can modify the group profile.
 
 ## Setting the Group Message Receiving Option
 
