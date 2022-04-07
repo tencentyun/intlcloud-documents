@@ -9,8 +9,8 @@
 >?
 >- 루트 계정에서 생성한 서브 계정 조회가 필요한 경우 CAM 콘솔에 로그인한 후 [사용자 리스트](https://console.cloud.tencent.com/cam)에서 확인할 수 있습니다.
 >- 새로운 서브 계정 생성이 필요한 경우 [서브 계정 생성](https://intl.cloud.tencent.com/zh/document/product/598/13674) 문서를 참조하십시오.
-3. [정책 추가] 대화 상자 열기
-타깃 버킷의 [권한 관리]로 이동하여 [Policy 권한 설정]>[그래픽 설정]을 선택한 후, [정책 추가] 대화 상자를 클릭한 다음 본 문서의 권한 부여 사례를 참고하여 설정을 진행합니다. 정책 추가에 대한 자세한 작업 가이드는 [버킷 정책 추가](https://intl.cloud.tencent.com/document/product/436/30927) 문서를 참조하십시오.
+3. **정책 추가** 대화 상자 열기
+타깃 버킷의 [권한 관리]로 이동하여 **Policy 권한 설정 > 그래픽 설정**을 선택한 후, **정책 추가** 대화 상자를 클릭한 다음 본 문서의 권한 부여 사례를 참고하여 설정을 진행합니다. 정책 추가에 대한 자세한 작업 가이드는 [버킷 정책 추가](https://intl.cloud.tencent.com/document/product/436/30927) 문서를 참조하십시오.
 
 다음은 몇 가지 권한 부여 사례 예시로, 사용자의 실제 상황에 따라 참고하여 설정합니다.
 
@@ -28,7 +28,7 @@
 |리소스 경로|특정 디렉터리의 접두사(예: `folder/sub-folder/*`)|
 |작업 이름|모든 작업|
 
-![](https://main.qcloudimg.com/raw/67810f914e1ffb839b9fb8fff0145332.png)
+
 
 
 
@@ -44,7 +44,7 @@
 |리소스 경로       |     특정 디렉터리의 접두사(예: `folder/sub-folder/*`)   |
 |작업 이름          |       읽기 작업(객체 리스트 나열 포함)|
 
-![](https://main.qcloudimg.com/raw/c491ec32e8f1dbce5686990ed9eb54df.png)
+
 
 #### 사례3: 서브 계정에 특정 파일의 읽기 및 쓰기 권한 부여
 설정 정보는 다음과 같습니다.
@@ -58,7 +58,6 @@
 |리소스 경로|특정 객체 키(예: `folder/sub-folder/example.jpg`)|
 |작업 이름|모든 작업|
 
-![](https://main.qcloudimg.com/raw/e546ac587f145e960ffdb172789c82e4.png)
 
 
 
@@ -77,7 +76,7 @@
 |리소스 경로|특정 디렉터리의 접두사(예: `folder/sub-folder/*`)    |
 |작업 이름|모든 작업|
 
-![](https://main.qcloudimg.com/raw/72ee5b741d6d72ea5c23a38e208a3447.png)
+
 
 
 2. **금지** 정책을 추가합니다. 설정 정보는 다음과 같습니다.
@@ -91,7 +90,7 @@
 |리소스 경로|액세스를 금지할 객체 키(예: `folder/sub-folder/privateobject`)|
 |작업 이름|모든 작업|
 
-![](https://main.qcloudimg.com/raw/77128c55d1fa91df6edb0ce841750c5e/4-2.png)
+
 
 
 #### 사례5: 서브 계정에 지정 접두사 파일에 대한 읽기/쓰기 권한 부여
@@ -106,7 +105,7 @@
 |리소스 경로|특정 접두사(예: `folder/sub-folder/prefix`)|
 |작업 이름|모든 작업|
 
-![](https://main.qcloudimg.com/raw/7d5d6f13d57f720a1b8e70fb666b52e1/5.png)
+
 
 
 <span id=cam>
