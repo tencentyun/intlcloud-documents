@@ -75,7 +75,7 @@ In the upper middle part of the page displays active speaker, and you can drag a
 
 
 
-## **Leave Meeting** or **End Meeting**
+## **Leave a Meeting** or **End a Meeting**
 
 ### **Role:** Host/Co-host
 
