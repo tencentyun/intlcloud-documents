@@ -134,6 +134,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 
 ## Jurisdiction-specific Requirements
 
