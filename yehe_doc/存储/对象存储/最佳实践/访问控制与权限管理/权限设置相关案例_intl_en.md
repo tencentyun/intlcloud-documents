@@ -10,7 +10,7 @@ This document assumes that the root account that owns the target bucket has a UI
 >- To query sub-accounts created under the main account, log in to the CAM Console and view them under [User List](https://console.cloud.tencent.com/cam).
 >- To create a new sub-account, please refer to the [Create New Sub-User](https://intl.cloud.tencent.com/zh/document/product/598/13674) document.
 3. Open the **Add Policy** dialog box
-Click the destination bucket and then select **Permission Management** > **Permission Policy Settings** > **Visual editor** > **Add Policy**. Then, you can configure by referring to the cases in this document. For detailed directions, please see [Adding Bucket Policies](https://intl.cloud.tencent.com/document/product/436/30927).
+Click the destination bucket and then select **Permission Management** > **Permission Policy Settings > Visual editor** > **Add Policy**. Then, you can configure by referring to the cases in this document. For detailed directions, please see [Adding Bucket Policies](https://intl.cloud.tencent.com/document/product/436/30927).
 
 The following lists several authorization cases, which you can configure according to your actual needs.
 
@@ -28,7 +28,6 @@ The configuration is as follows:
 | Resource path | Specified directory prefix, such as `folder/sub-folder/*` |
 | Operation name | All operations |
 
-![](https://main.qcloudimg.com/raw/67810f914e1ffb839b9fb8fff0145332.png)
 
 
 
@@ -44,7 +43,7 @@ The configuration is as follows:
 | Resource path | Specified directory prefix, such as `folder/sub-folder/*` |
 | Operation name  | Read operations (including listing the object list) |
 
-![](https://main.qcloudimg.com/raw/c491ec32e8f1dbce5686990ed9eb54df.png)
+
 
 #### Case 3: Granting a sub-account read and write permission for specified files
 The configuration is as follows:
@@ -58,7 +57,7 @@ The configuration is as follows:
 | Resource path | Specified object key, such as `folder/sub-folder/example.jpg` |
 | Operation name | All operations |
 
-![](https://main.qcloudimg.com/raw/e546ac587f145e960ffdb172789c82e4.png)
+
 
 
 
@@ -77,7 +76,6 @@ For this case, we need to add two policies: an **Allow** policy and a **Deny** p
 | Resource path | Specified directory prefix, such as `folder/sub-folder/*` |
 | Operation name | All operations |
 
-![](https://main.qcloudimg.com/raw/72ee5b741d6d72ea5c23a38e208a3447.png)
 
 
 2. Then add the **Deny** policy. The configuration information is as follows:
@@ -91,7 +89,7 @@ For this case, we need to add two policies: an **Allow** policy and a **Deny** p
 | Resource path | Object keys to be denied, such as `folder/sub-folder/privateobject` |
 | Operation name | All operations |
 
-![](https://main.qcloudimg.com/raw/77128c55d1fa91df6edb0ce841750c5e/4-2.png)
+
 
 
 5. Granting a sub-account read and write permission for files with specified prefixes
@@ -106,7 +104,7 @@ The configuration is as follows:
 | Resource path | Specified prefix, such as `folder/sub-folder/prefix` |
 | Operation name | All operations |
 
-![](https://main.qcloudimg.com/raw/7d5d6f13d57f720a1b8e70fb666b52e1/5.png)
+
 
 
 <span id=cam>
