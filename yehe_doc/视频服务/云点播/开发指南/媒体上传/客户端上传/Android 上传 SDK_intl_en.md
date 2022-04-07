@@ -14,6 +14,7 @@ VOD provides an SDK for uploading videos on Android client. For more information
     implementation 'com.qcloud.cos:quic:1.5.37'
     ```
 >?You can also refer to [Manual integration](https://intl.cloud.tencent.com/document/product/436/12159) and integrate corresponding dependent libraries.
+
 3. Network and storage access permissions are required for video uploading. You can add the following permission declarations in `AndroidManifest.xml`:
 	```xml
 	<uses-permission android:name="android.permission.INTERNET"/>
@@ -214,7 +215,7 @@ Progress callback: `TXUGCPublishTypeDef.ITXVideoPublishListener.onPublishProgres
 
 Result callback: `TXUGCPublishTypeDef.ITXVideoPublishListener.onPublishComplete`
 
-| Variable Name   | Description | Type                                  ||
+| Variable Name   | Description | Type                                  |
 | ------ | ---- | ----------------------------------- |
 | result | Upload result. | TXUGCPublishTypeDef.TXPublishResult |
 
@@ -258,7 +259,7 @@ Upload image: `TXUGCPublish.publishMedia`
 Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 
 | Parameter | Description                                            Type    | Required |
-| ------------ | -------------------------------------------------- | ------- | ---- |
+| ------------ | -------------------------------------------------- | ------- | 
 | signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 | mediaPath    | Path to a local image file.                                   | String  | Yes   |
 | enableResume | Whether to enable checkpoint restart. It is enabled by default.                         | boolean | No   |
