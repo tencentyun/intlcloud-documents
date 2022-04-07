@@ -22,7 +22,7 @@ Yes. Log in to the [VOD console](https://console.cloud.tencent.com/vod/license/v
 
 [](id:que3)
 ### Can I change the Android package name or iOS bundle ID bound to an official license?
-In the current version, you **cannot** change the package name or bundle ID for an official license, but we may support this in future versions.
+No, you can’t. Before binding a package name or bundle ID, please check in the app store whether it is already used.
 
 [](id:que4)
 
