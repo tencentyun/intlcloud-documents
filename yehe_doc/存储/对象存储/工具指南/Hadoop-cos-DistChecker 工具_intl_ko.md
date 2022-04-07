@@ -9,7 +9,7 @@ Hadoop-cos-DistChecker는 마이그레이션 디렉터리의 완전성을 검증
 
 > !
 > - Hadoop 클러스터를 자체구축한 경우, Hadoop-cos 종속을 최신 버전(GitHub release 버전 5.8.2 이상)을 선택해야만 CRC64 검증 코드를 획득할 수 있습니다.
-> - Tencent Cloud EMR 패키지를 사용하는 경우, 2020년 5월 8일 이후에 생성한 클러스터만 해당 Hadoop-cos 버전에 포함됩니다. 해당 날짜 이전에 생성한 클러스터는 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 고객센터로 문의하시기 바랍니다.
+> - Tencent Cloud EMR 패키지를 사용하는 경우, 2020년 5월 8일 이후에 생성한 클러스터만 해당 Hadoop-cos 버전에 포함됩니다. 해당 날짜 이전에 생성한 클러스터는 [티켓 제출](https://intl.cloud.tencent.com/contact-sales)을 통해 고객센터로 문의하시기 바랍니다.
 
 ## 사용 설명
 
