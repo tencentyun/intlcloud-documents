@@ -2,7 +2,7 @@ This article aims to help users improve the security and reliability of their CV
 
 ## Security and Network
 
-- **Limited access**: restrict access by using a firewall ([Security Group](https://intl.cloud.tencent.com/document/product/213/12452) to only allow the trusted addresses to access instances. The security group should also have stringent rules such as limiting access to ports and by IP addresses.
+- **Limited access**: restrict access by using a firewall ([Security Group](https://intl.cloud.tencent.com/document/product/213/12452)) to only allow the trusted addresses to access instances. The security group should also have stringent rules such as limiting access to ports and by IP addresses.
 - **Security level**: different security group rules can be created for instance groups of different security levels to ensure that instances running important business cannot be easily accessed by external sources.
 - **Network logical isolation**: use [VPC](https://intl.cloud.tencent.com/document/product/213/5227) to divide resources into logical zones.
 - **Account permission management:** when it is necessary to allow multiple different accounts to access the same set of cloud resources, you can manage permissions to cloud resources using the [policy mechanism](https://intl.cloud.tencent.com/document/product/598/10601).
