@@ -20,7 +20,7 @@ VooV Meeting Outlook plugin lets you to schedule or start a meeting quickly in M
 ## Schedule a Meeting with Outlook plugin
 
 1. Go to Outlook calendar, and click **Schedule Meeting** in the toolbar.
-2. Wait for the VooV Meeting to be launched.
+2. Wait for the VooV Meeting to be launched
  - Log in to VooV Meeting before configuring meeting settings.
  - Configure meeting settings, such as meeting passwords, file uploading permission, waiting room permission, muting or unmuting attendees upon entry and meeting invitation email language. Click OK to submit the settings.
 3. Enter email addresses of attendees and edit start and end time of meeting. Click **Send** to finish schedule.
