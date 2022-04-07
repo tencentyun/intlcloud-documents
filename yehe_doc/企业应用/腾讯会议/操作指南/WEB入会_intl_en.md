@@ -1,6 +1,6 @@
 # **Overview**
 
-VooV meeting lets you to join a meeting from browser: 
+VooV meeting lets you join a meeting from browser: 
 
 1. You can mute or unmute, turn on or off video, add invitees, view attendees, rename and leave meeting.
 2. As a host, you can manage audio and video permissions of attendees, set up or revoke co-host, remove attendees and end meeting.
@@ -16,7 +16,7 @@ This document describes how to join a meeting from browser.
 
 
 
-# **Joining a Meeting From Browser**
+# **Joining a Meeting from Browser**
 
 ## **Joining a Meeting**
 
