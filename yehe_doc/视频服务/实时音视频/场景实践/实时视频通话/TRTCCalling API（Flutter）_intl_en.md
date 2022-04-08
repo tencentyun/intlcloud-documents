@@ -4,7 +4,7 @@
 - IM SDK: the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to send and process signaling messages.
 
 
-<h2 id="TRTCCalling">`TRTCCalling` API Overview</h2>
+<h2 id="TRTCCalling">TRTCCalling API Overview</h2>
 
 ### Basic SDK APIs
 
@@ -45,7 +45,7 @@
 | [setMicMute](#setmicmute)     | Mutes the local mic.                                   |
 | [setHandsFree](#sethandsfree) | Enables the hands-free mode.                                       |
 
-<h2 id="TRTCCallingDelegate">`TRTCCallingDelegate` API Overview</h2>
+<h2 id="TRTCCallingDelegate">TRTCCallingDelegate API Overview</h2>
 
 ### Common event callback APIs
 

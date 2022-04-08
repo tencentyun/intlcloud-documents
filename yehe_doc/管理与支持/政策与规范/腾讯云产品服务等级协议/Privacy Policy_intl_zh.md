@@ -570,14 +570,18 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 16.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44315)。
 17.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44831)。
 18.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45279)。
-19.[即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047/45407)。
+19.[即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/45407)。
 20.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45415)。
-21.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45472)。
+21.[T-Sec-数据安全中心](https://intl.cloud.tencent.com/document/product/1126/45412)。
 22.[腾讯云TI平台](https://intl.cloud.tencent.com/document/product/1141/45464)。
-23.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45590)。
-24.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45788)。
-25.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45791)。
-26.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45794)。
-27.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45797)。
-28.[制品库](https://intl.cloud.tencent.com/document/product/1136/45800)。
-29.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45803)。
+23.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45472)。
+24.[漏洞扫描服务](https://intl.cloud.tencent.com/document/product/1142/45476)。
+25.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45590)。
+26.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45788)。
+27.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45791)。
+28.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45794)。
+29.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45797)。
+30.[制品库](https://intl.cloud.tencent.com/document/product/1136/45800)。
+31.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45803)。
+32.[消息队列 TDMQ](https://intl.cloud.tencent.com/document/product/1110/45938)。
+33.[全栈式风控引擎](https://intl.cloud.tencent.com/document/product/1123/45972)。

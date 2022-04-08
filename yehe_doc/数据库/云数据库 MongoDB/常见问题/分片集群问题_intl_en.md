@@ -82,7 +82,7 @@ For example, in a feed information flow business, each feed information entry co
 As the `feed_info` table frequently queries data by `userId`, `userId` is used as the shardkey. However, the business also uses `feedId` frequently for query besides `userId`. As queries by `feedId` don't carry the shardkey, they will be broadcast to all shards, and the performance will be low if there are many shards.
 
 In this case, you can use the `FeedId_userId_relationship` secondary index table with `FeedId` being the shardkey. The mappings between this table and the `feed_info` table are as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/28848b99e73046e9f09bc89bb33d266d.png" style="zoom:80%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/01c246286a98d318709b0cdc6510e87c.png" style="zoom:80%;" />
 As shown above, if you use a `FeedId` to query the information of a specific feed, the corresponding `userId` of the `FeedId` will be found from the secondary index table, and the found `userId` and `FeedId` will be used together to get the required details. The entire query process involves two tables, and the query statements are as follows:
 ```
 1.	// The shardkey of the `FeedId_userId_relationship` table is `FeedId`, and hashed presharding is performed  

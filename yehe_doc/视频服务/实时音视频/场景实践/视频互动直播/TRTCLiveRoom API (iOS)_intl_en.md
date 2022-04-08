@@ -12,7 +12,7 @@
 
 
 
-<h2 id="TRTCLiveRoom">`TRTCLiveRoom` API Overview</h2>
+<h2 id="TRTCLiveRoom">TRTCLiveRoom API Overview</h2>
 
 ### Basic SDK APIs
 
@@ -97,7 +97,7 @@
 | --------------------------------------- | --------------------------- |
 | [showVideoDebugLog](#showvideodebuglog) | Specifies whether to display debugging information on the UI. |
 
-<h2 id="TRTCLiveRoomDelegate">`TRTCLiveRoomDelegate` API Overview</h2>
+<h2 id="TRTCLiveRoomDelegate">TRTCLiveRoomDelegate API Overview</h2>
 
 ### Common event callback APIs
 

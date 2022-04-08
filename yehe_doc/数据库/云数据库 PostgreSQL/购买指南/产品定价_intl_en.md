@@ -1,6 +1,6 @@
 ## Billing Mode
 
-TencentDB for PostgreSQL offers the following two billing modes:
+TencentDB for PostgreSQL offers the following billing mode:
 
 | Billing Mode | Payment Method                                                     | Use Case                                                     |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -24,8 +24,8 @@ The pay-as-you-go tiered pricing model is based on usage duration.
 ### Pay-as-you-go price
 #### Memory price
 
-|   Tier   | Guangzhou, Shanghai, Beijing<br>Nanjing, Tianjin, Shenzhen, Chengdu<br>(USD/GB/hr)  | Hong Kong (China)<br>(USD/GB/hr)  | Silicon Valley, Virginia, Frankfurt<br>(USD/GB/hr)  |  Moscow, Seoul, Bangkok<br>(USD/GB/hr) | Singapore (USD/GB/hr) |
-| ------ |--------------- | -------------- | -------------- |--------------- |--------------- |
+|   Tier   | Guangzhou, Shanghai, Beijing<br>Nanjing, Tianjin, Shenzhen, Chengdu<br>(USD/GB/hr)  | Hong Kong (China)<br>(USD/GB/hr)  | Silicon Valley, Virginia, Frankfurt<br>(USD/GB/hr)  |  Moscow, Seoul, Bangkok, Tokyo<br>(USD/GB/hr) | Singapore (USD/GB/hr) |
+| :------: |:---------------: | :--------------: | :--------------: |::---------------: |:---------------: |
 | Tier 1 |          0.052        |         0.069        |      0.055        | 0.056  | 0.07 |
 | Tier 2 |           0.039        |         0.052        |      0.041         | 0.042  | 0.053 |
 | Tier 3 |             0.026         |         0.034        |      0.028      | 0.028  | 0.035 |
@@ -39,7 +39,7 @@ The pay-as-you-go tiered pricing model is based on usage duration.
 | Guangzhou, Shanghai, Beijing, Nanjing, Tianjin, Shenzhen, Chengdu      |       0.0005        |
 |  Silicon Valley, Virginia                   |       0.00019   |
 |Frankfurt                   |0.00028|
-|  Moscow                                                |       0.00031  |
+|  Moscow, Tokyo                                                |       0.00031  |
 |  Bangkok                                                   |       0.00024 |
 |  Seoul, Singapore, Hong Kong (China)                                |       0.00024  |
 
