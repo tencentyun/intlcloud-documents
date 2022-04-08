@@ -29,7 +29,7 @@ You have [created a Tencent Cloud VPC](https://console.cloud.tencent.com/vpc/vpc
 2. Select **VPN Connection** > **VPN Gateway** on the left sidebar to access the **VPN Gateway** page.
 3. Click **+New**.
 4. Configure the following gateway parameters in the pop-up window.
-![](https://main.qcloudimg.com/raw/b714647fbf97514c6c303694d8e51d47.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/798e48c18594d9ca6c46c20e6dfe8e68.png)
   - **Gateway Name**: enter a VPN gateway name.
   - **Associated Network**: select **Virtual Private Network**.
   - **Bandwidth Cap**: choose the maximum bandwidth that meets the application requirements.
