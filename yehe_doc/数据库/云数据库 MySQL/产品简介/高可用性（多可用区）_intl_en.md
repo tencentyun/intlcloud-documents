@@ -1,4 +1,5 @@
 Multi-AZ deployment protects your database against database instance failures and AZ outages. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/236/8458).
+
 In TencentDB for MySQL, multiple AZs are combined into a single multi-AZ to ensure high availability and failover capability of database instances.
 
 >?
