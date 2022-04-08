@@ -1,5 +1,5 @@
-Multi-AZ deployment protects your database from being affected by database instance failures and AZ outages. For more information, please see [Regions and AZs](https://intl.cloud.tencent.com/document/product/236/8458).
-The multi-AZ deployment scheme of TencentDB for MySQL guarantees the high availability and failover capability of database instances by combining multiple AZs into a single "multi-AZ".
+Multi-AZ deployment protects your database against database instance failures and AZ outages. For more information, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/236/8458).
+In TencentDB for MySQL, multiple AZs are combined into a single multi-AZ to ensure high availability and failover capability of database instances.
 
 >?
 >- No matter whether the TencentDB for MySQL instances in a database cluster are running across multiple AZs or not, each instance has a replica for real-time hot backup to ensure high database availability.
@@ -19,5 +19,5 @@ The multi-AZ deployment scheme of TencentDB for MySQL is currently available in 
 
 ### Failover
 TencentDB for MySQL processes failover automatically, so database operations can be resumed as quickly as possible with no administrative intervention required. The source database instance will automatically switch to the replica in the replica AZ in the following conditions:
-- AZ outage.
--Source database instance failure.
+- AZ outage
+-Source database instance failure
