@@ -82,7 +82,7 @@ db.settings.update({"_id":"balancer"},{"$set":{"activeWindow":{"start":"02:00","
 由于该 feed_info 详情表会频繁按照 userId 进行查询，因此选择 userId 作为分片片键。但是业务除了根据 userId 查询外，也会根据 feedId 进行查询，并且 feedId 查询频率也很高，由于根据 feedId 查询不带片建，因此该类查询会广播到所有分片，在多分片场景性能会很差。
 
 这时候就可以引入 FeedId_userId_relationship 辅助表采用 FeedId 作为片键，该表和 Feed 详情表的隐射关系如下图所示。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/28848b99e73046e9f09bc89bb33d266d.png" style="zoom:80%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/01c246286a98d318709b0cdc6510e87c.png" style="zoom:80%;" />
 如上图，通过某个 FeedId 查询具体 Feed 信息，首先根据 FeedId 从辅助索引表中查找该 FeedId 对应的 userId，然后根据查询到的 userId+FeedId 的组合获取对应的详情信息。整个查询过程需要查两个表，查询语句如下：
 ```
 1.	//FeedId_userId_relationship 表分片片建为 FeedId，提前 hashed 预分片  
