@@ -570,7 +570,7 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
-19.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+19.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45407).
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 21.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
