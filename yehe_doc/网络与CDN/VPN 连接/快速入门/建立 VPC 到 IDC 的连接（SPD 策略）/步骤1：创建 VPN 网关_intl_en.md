@@ -11,5 +11,5 @@ This file introduces how to create a VPN gateway.
 >- Only new gateways but not existing gateways are supported on 200 MB, 500 MB and 1,000 MB bandwidths. 
 >- If the VPN gateway uses 200 MB, 500 MB, or 1,000 MB bandwidth, AES128+MD5 is recommended for VPN tunnel encryption.
 >
-![](https://main.qcloudimg.com/raw/990f568ffc28ef1374a578883fea96f5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/000302a4f734a94744f70bf552308ddc.png)
 >?The labels are alternatively configured, please retain the default settings.
