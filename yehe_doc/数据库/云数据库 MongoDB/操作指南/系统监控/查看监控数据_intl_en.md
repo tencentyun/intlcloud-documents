@@ -62,7 +62,7 @@ In the metric list on the right of the instance monitoring page, find the target
 - Batch exporting monitoring data: Click **Export Data** above the metric list, select the target metrics in the **Export Data** pop-up window, click **Export**, and then you can view and analyze the monitoring data with Excel locally.
 
 **Setting alarm**
-In the top-right corner of the instance monitoring page, click **Configure Alarms** to enter the **Create Alarm Policy** page in CM, set **Policy Type** to **TencentDB for MongoDB Instance**, select an **alarm recipient**, set the **trigger condition** of the monitoring metric, and configure the alarm notification method. In this way, you can stay on top of the metric exceptions and prevent risks and failures promptly. For detailed directions, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
+In the top-right corner of the instance monitoring page, click **Set Alarms** to enter the **Create Alarm Policy** page in CM, set **Policy Type** to **TencentDB for MongoDB Instance**, select an **Alarm Object**, set the **trigger condition** of the monitoring metric, and configure the alarm notification method. In this way, you can stay on top of the metric exceptions and prevent risks and failures promptly. For detailed directions, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
 **Comparing data**
 In the top-right corner of the instance monitoring page, you can click **Data Comparison** and set the time period. By default, the data within the past hour is obtained. The curves of the monitoring metric on today and yesterday within the specified time range are displayed in different colors.
