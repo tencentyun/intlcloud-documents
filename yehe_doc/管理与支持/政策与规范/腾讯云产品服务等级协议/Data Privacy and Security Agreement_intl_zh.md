@@ -121,17 +121,22 @@
 18.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44314)。
 19.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44830)。
 20.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45280)。
-21.[即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047/45408)。
+21.[即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/45408)。
 22.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416)。
-23.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
+23.[T-Sec-数据安全中心](https://intl.cloud.tencent.com/document/product/1126/45413)。
 24.[腾讯云 TI 平台](https://intl.cloud.tencent.com/document/product/1141/45465)。
-25.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45591)。
-26.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45789)。
-27.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45792)。
-28.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45795)。
-29.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45798)。
-30.[制品库](https://intl.cloud.tencent.com/document/product/1136/45801)。
-31.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45804)。
+25.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
+26.[漏洞扫描服务](https://intl.cloud.tencent.com/document/product/1142/45475)。
+27.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45591)。
+28.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45789)。
+29.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45792)。
+30.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45795)。
+31.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45798)。
+32.[制品库](https://intl.cloud.tencent.com/document/product/1136/45801)。
+33.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45804)。
+34.[消息队列 TDMQ](https://intl.cloud.tencent.com/document/product/1110/45939)。
+35.[全栈式风控引擎](https://intl.cloud.tencent.com/document/product/1123/45973)。
+
 ## 特定司法管辖区要求
 
 **欧洲**
