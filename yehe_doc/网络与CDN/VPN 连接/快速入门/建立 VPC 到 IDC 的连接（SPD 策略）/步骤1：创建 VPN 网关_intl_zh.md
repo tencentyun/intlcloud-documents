@@ -11,5 +11,5 @@
 >- 200MB、500MB和1000MB带宽仅支持新建网关，存量网关暂不支持。
 >- 如果 VPN 网关使用200MB、500MB和1000MB规格的带宽，VPN 通道加密协议建议使用 AES128+MD5。
 >
-![](https://main.qcloudimg.com/raw/990f568ffc28ef1374a578883fea96f5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/000302a4f734a94744f70bf552308ddc.png)
 >?标签为选配，请保持默认。
