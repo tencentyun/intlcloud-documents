@@ -247,7 +247,7 @@
 <td>外网 IP 是否被 DDOS 封堵</td>
 <td>外网 IP 是否被 DDOS 封堵</td>
 <td>异常</td>
-<td>该实例外网 IP 由于遭受 DDOS 攻击被封堵，请参考 <a href="https://cloud.tencent.com/document/product/1020/31635">解封防护 IP</a> 文档进行处理。</td>
+<td>该实例外网 IP 由于遭受 DDOS 攻击被封堵。</td>
 </tr>
 <tr>
 <td rowspan=2>外网带宽使用率</td>
