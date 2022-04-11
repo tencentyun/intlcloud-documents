@@ -13,7 +13,8 @@
 ```plaintext
 pod install
 ```
->APPID，secretID，secretKey 可前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取。
+>? APPID，secretID，secretKey 可前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取。
+>
 
 执行命令完成后，打开 QCloudCOSXMLDemo.xcworkspace 即可进入 Demo 体验。
 
@@ -21,30 +22,19 @@ pod install
 
 #### 查询存储桶列表
 
-启动示例 App 后，将展示当前用户已创建的存储桶，如下图所示。
-
-<img src="https://main.qcloudimg.com/raw/34d1adae3f48705ea119d4908931b6cf.png" style="zoom:65%;" />
+启动示例 App 后，将展示当前用户已创建的存储桶。
 
 #### 创建存储桶
 
-点击右上角【新建桶】，在配置页面输入桶名称并选择存储桶的所属 [地域](https://intl.cloud.tencent.com/document/product/436/6224)，如下图所示。
-
-<img src="https://main.qcloudimg.com/raw/a4ddea469d32f3d9c89e9ba9ac179d0d.png" style="zoom:65%;" />
+点击右上角**新建桶**，在配置页面输入桶名称并选择存储桶的所属 [地域](https://intl.cloud.tencent.com/document/product/436/6224)。
 
 #### 查询对象列表
 
-选择某个存储桶，进入存储桶详情，将看到该存储桶内所有文件以及文件夹，如下图所示。
-
-<img src="https://main.qcloudimg.com/raw/e239ae0f0646727e41e9468982a3ca85.png" style="zoom:65%;" />
+选择某个存储桶，进入存储桶详情，将看到该存储桶内所有文件以及文件夹。
 
 #### 上传文件
 
-在文件列表页面点击右上角的【上传】，然后选择照片进行上传，支持设置文件的访问权限和传输状态控制，如下图所示。
-
-<img src="https://main.qcloudimg.com/raw/f99da459878c3942e0acc99e5e0716a2.png" style="zoom:65%;" />
+在文件列表页面点击右上角的**上传**，然后选择照片进行上传，支持设置文件的访问权限和传输状态控制。
 
 #### 下载或删除文件
-选择并点击文件，然后点击文件的下载或删除按钮，对文件进行下载或删除操作，如下图所示。
-
-<img src="https://main.qcloudimg.com/raw/f0ed86fe15254e0f1fe09ca3bc6eab09.png"  style="zoom:65%;" />
-
+选择并点击文件，然后点击文件的下载或删除按钮，对文件进行下载或删除操作。
