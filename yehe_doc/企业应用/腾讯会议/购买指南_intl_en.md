@@ -1,1 +1,1 @@
-Starting from January 24, 2020, TVM is offering free online meeting services with a maximum of 300 participants until the end of the COVID-19 pandemic. We aim to help enterprises stay connected while working remotely.
+Starting from January 24, 2020, VooV Meeting is offering free online meeting services with a maximum of 300 attendees until the end of the COVID-19 pandemic. We aim to help enterprises stay connected while working remotely.
