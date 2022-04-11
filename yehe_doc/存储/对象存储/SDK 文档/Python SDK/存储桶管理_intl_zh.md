@@ -54,8 +54,27 @@ put_bucket_cors(Bucket, CORSConfiguration={}, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-bucket-cors)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_cors(
     Bucket='examplebucket-1250000000',
     CORSConfiguration={
@@ -82,7 +101,7 @@ response = client.put_bucket_cors(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String| 是|
 | CORSRule |设置对应的跨域规则，包括 ID，MaxAgeSeconds，AllowedOrigin，AllowedMethod，AllowedHeader，ExposeHeader|List| 是|
@@ -109,15 +128,34 @@ get_bucket_cors(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-cors)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_cors(
     Bucket='examplebucket-1250000000',
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 
@@ -149,13 +187,13 @@ response = client.get_bucket_cors(
 
 | 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
-| CORSRule  | 跨域规则，包括 ID，MaxAgeSeconds，AllowedOrigin，AllowedMethod，AllowedHeader，ExposeHeader |  List | 
-| ID  | 规则的 ID | String | 
+| CORSRule  | 跨域规则，包括 ID，MaxAgeSeconds，AllowedOrigin，AllowedMethod，AllowedHeader，ExposeHeader |  List |
+| ID  | 规则的 ID | String |
 | MaxAgeSeconds  |  OPTIONS 请求得到结果的有效期 | String |
-| AllowedOrigin  | 允许的访问来源，如 `"http://cloud.tencent.com"`，支持通配符 `*`  | Dict | 
+| AllowedOrigin  | 允许的访问来源，如 `"http://cloud.tencent.com"`，支持通配符 `*`  | Dict |
 | AllowedMethod  |  允许的方法，如 GET，PUT，HEAD，POST，DELETE | Dict |
-| AllowedHeader  |请求可以使用哪些自定义的 HTTP 请求头部，支持通配符 `*` |  Dict | 
-| ExposeHeader  | 浏览器可以接收到的来自服务器端的自定义头部信息 | Dict | 
+| AllowedHeader  |请求可以使用哪些自定义的 HTTP 请求头部，支持通配符 `*` |  Dict |
+| ExposeHeader  | 浏览器可以接收到的来自服务器端的自定义头部信息 | Dict |
 
 
 ### 删除跨域配置
@@ -171,8 +209,27 @@ delete_bucket_cors(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-bucket-cors)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_cors(
     Bucket='examplebucket-1250000000',
 )
@@ -181,7 +238,7 @@ response = client.delete_bucket_cors(
 
 | 参数名称   | 参数描述   |类型 | 必填 | 
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是 |
+|Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是
 
 #### 返回结果说明
 
@@ -202,29 +259,48 @@ put_bucket_lifecycle(Bucket, LifecycleConfiguration={}, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-bucket-lifecycle)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_lifecycle(
     Bucket='examplebucket-1250000000',
     LifecycleConfiguration={
         'Rule': [
             {
-                'ID': 'string',
-                'Filter': {
-                    'Prefix': '',
+                'ID': 'string', # 设置规则的 ID，例如Rule-1
+                'Filter': { 
+                    'Prefix': '', # 配置前缀为空，桶内所有对象都会执行此规则
                 },
-                'Status': 'Enabled',
+                'Status': 'Enabled', # Enabled表示启用规则
                 'Expiration': {
-                    'Days': 200
+                    'Days': 200 # 设置对象的当前版本200天后过期删除
                 },
                 'Transition': [
                     {
-                        'Days': 100,
-                        'StorageClass': 'Standard_IA'
+                        'Days': 100, # 设置对象的当前版本100天后沉降
+                        'StorageClass': 'Standard_IA' # 沉降为低频存储
                     },
                 ],
                 'AbortIncompleteMultipartUpload': {
-                    'DaysAfterInitiation': 7
+                    'DaysAfterInitiation': 7 # 设置7天后回收未合并的分块
                 }
             }
         ]   
@@ -240,39 +316,39 @@ response = client.put_bucket_lifecycle(
     LifecycleConfiguration={
         'Rule': [
             {
-                'ID': 'string',
+                'ID': 'string', # 设置规则的 ID，例如Rule-1
                 'Filter': {
-                    'Prefix': 'string',
-                    'Tag': [
+                    'Prefix': 'string', # 配置前缀非空，只有符合前缀的对象才会执行此规则
+                    'Tag': [ # 配置标签过滤规则，只有标签匹配的对象才会执行此规则，和前缀二选一
                         {
-                            'Key': 'string',
+                            'Key': 'string', 
                             'Value': 'string'
                         }
                     ]
                 },
-                'Status': 'Enabled'|'Disabled',
-                'Expiration': {
-                    'Days': 100,
-                    'Date': get_date(2018, 4, 20)
+                'Status': 'Enabled'|'Disabled', # Enabled表示启用规则，Disabled表示不启用，二选一
+                'Expiration': { 
+                    'Days': 100, # 设置对象的当前版本100天后过期删除
+                    'Date': get_date(2021, 4, 20) # 设置对象的当前版本在2021年4月20日之后过期删除，和Days二选一
                 },
                 'Transition': [
                     {
-                        'Days': 100,
-                        'Date': get_date(2018, 4, 20),
-                        'StorageClass': 'Standard_IA'|'Archive'
+                        'Days': 60, # 设置对象的当前版本60天后沉降
+                        'Date': get_date(2021, 4, 20), # 设置对象的当前版本在2021年4月20日之后沉降，和Days二选一
+                        'StorageClass': 'Archive' # 沉降为归档存储
                     },
                 ],
                 'NoncurrentVersionExpiration': {
-                    'NoncurrentDays': 100
+                    'NoncurrentDays': 100 # 设置对象的历史版本100天后过期删除
                 },
                 'NoncurrentVersionTransition': [
                     {
-                        'NoncurrentDays': 100,
-                        'StorageClass': 'Standard_IA'
+                        'NoncurrentDays': 60, # 设置对象的历史版本60天后沉降
+                        'StorageClass': 'Standard_IA' # 沉降为低频存储
                     },
                 ],
                 'AbortIncompleteMultipartUpload': {
-                    'DaysAfterInitiation': 100
+                    'DaysAfterInitiation': 100 # 设置100天后回收未合并的分块
                 }
             }
         ]   
@@ -281,18 +357,18 @@ response = client.put_bucket_lifecycle(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 | 
- |  Rule  |  设置对应的规则，包括 ID，Filter，Status，Expiration，Transition，NoncurrentVersionExpiration，NoncurrentVersionTransition，AbortIncompleteMultipartUpload | List |   是 |
- |  ID  |  设置规则的 ID | String |  否 |
- |  Filter  | 用于描述规则影响的 Object 集合，如需设置 Bucket 中的所有 objects，请设置 Prefix 为空''| Dict |  是 | 
- |  Status  | 设置 Rule 是否启用，可选值为 Enabled 或者 Disabled | Dict |  是 | 
- |  Expiration  |  设置 Object 过期规则，可以指定天数 Days 或者指定日期 Date，Date 的格式必须是 GMT ISO 8601，建议使用 get_date 方法来指定具体的日期| Dict |  否 |
- |  Transition  | 设置 Object 转换存储类型规则，可以指定天数 Days 或者指定日期 Date，Date 的格式必须是 GMT ISO 8601，建议使用 get_date 方法来指定具体的日期。StorageClass 可选 Standard_IA，Archive，可以同时设置多条此类规则| List |  否 | 
- |  NoncurrentVersionExpiration  | 设置非当前版本 Object 过期规则，可以指定天数 NoncurrentDays |  Dict |  否 |
- |  NoncurrentVersionTransition  | 设置非当前版本 Object 转换存储类型规则，可以指定天数 NoncurrentDays，StorageClass 可选 Standard_IA，可以同时设置多条此类规则| List |  否 | 
- |  AbortIncompleteMultipartUpload  |指明分块上传开始后多少天内必须完成上传 |  Dict |  否 | 
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
+|  Rule  |  设置对应的规则，包括 ID，Filter，Status，Expiration，Transition，NoncurrentVersionExpiration，NoncurrentVersionTransition，AbortIncompleteMultipartUpload | List |   是 |
+|  ID  |  设置规则的 ID | String |  否 |
+|  Filter  | 用于描述规则影响的 Object 集合，如需设置 Bucket 中的所有 objects，请设置 Prefix 为空''| Dict |  是 |
+|  Status  | 设置 Rule 是否启用，可选值为 Enabled 或者 Disabled | Dict |  是 |
+|  Expiration  |  设置 Object 过期规则，可以指定天数 Days 或者指定日期 Date，Date 的格式必须是 GMT ISO 8601，建议使用 get_date 方法来指定具体的日期| Dict |  否 |
+|  Transition  | 设置 Object 转换存储类型规则，可以指定天数 Days 或者指定日期 Date，Date 的格式必须是 GMT ISO 8601，建议使用 get_date 方法来指定具体的日期。StorageClass 可选 Standard_IA，Archive，Deep_Archive，可以同时设置多条此类规则| List |  否 |
+|  NoncurrentVersionExpiration  | 设置非当前版本 Object 过期规则，可以指定天数 NoncurrentDays |  Dict |  否 |
+|  NoncurrentVersionTransition  | 设置非当前版本 Object 转换存储类型规则，可以指定天数 NoncurrentDays，StorageClass 可选 Standard_IA，可以同时设置多条此类规则| List |  否 |
+|  AbortIncompleteMultipartUpload  |指明分块上传开始后多少天内必须完成上传 |  Dict |  否 |
 
 
 #### 返回结果说明
@@ -308,15 +384,34 @@ response = client.put_bucket_lifecycle(
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-lifecycle)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_lifecycle(
     Bucket='examplebucket-1250000000',
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String|是 |
 
@@ -367,15 +462,15 @@ Bucket 生命周期配置，类型为 dict。
 ```
 
 | 参数名称   | 参数描述   |类型 |
-| -------------- | -------------- |---------- | 
-|  Rule  |  对应的规则，包括 ID，Filter，Status，Expiration，Transition，NoncurrentVersionExpiration，NoncurrentVersionTransition，AbortIncompleteMultipartUpload | List | 
-|  ID  | 规则的 ID | String | 
+| -------------- | -------------- |---------- |
+|  Rule  |  对应的规则，包括 ID，Filter，Status，Expiration，Transition，NoncurrentVersionExpiration，NoncurrentVersionTransition，AbortIncompleteMultipartUpload | List |
+|  ID  | 规则的 ID | String |
 |  Filter  |  必用于描述规则影响的 Object 集合 | Dict |
 |  Status  |  Rule 是否启用，可选值为 Enabled 或者 Disabled | Dict |
-|  Expiration  |Object 过期规则，可以指定天数 Days 或者指定日期 Date |  Dict | 
-|  Transition  | Object 转换存储类型规则，可以指定天数 Days 或者指定日期 Date，StorageClass 可选 STANDARD_IA，Archive| List | 
+|  Expiration  |Object 过期规则，可以指定天数 Days 或者指定日期 Date |  Dict |
+|  Transition  | Object 转换存储类型规则，可以指定天数 Days 或者指定日期 Date，StorageClass 可选 STANDARD_IA，Archive| List |
 |  NoncurrentVersionExpiration  | 非当前版本 Object 过期规则，可以指定天数 NoncurrentDays |  Dict |
-|  NoncurrentVersionTransition  | 非当前版本 Object 转换存储类型规则，可以指定天数 NoncurrentDays，StorageClass 可选 STANDARD_IA| List | 
+|  NoncurrentVersionTransition  | 非当前版本 Object 转换存储类型规则，可以指定天数 NoncurrentDays，StorageClass 可选 STANDARD_IA| List |
 |  AbortIncompleteMultipartUpload  |  分块上传开始后多少天内必须完成上传 | Dict |
 
 
@@ -392,15 +487,34 @@ delete_bucket_lifecycle(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-bucket-lifecycle)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_lifecycle(
     Bucket='examplebucket-1250000000',
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String|是 |
 
@@ -424,8 +538,27 @@ put_bucket_versioning(Bucket, Status, **kwargs)
 #### 请求示例
 
 ##### 开启版本控制
-[//]: # (.cssg-snippet-put-bucket-versioning)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_versioning(
     Bucket='examplebucket-1250000000',
     Status='Enabled'
@@ -434,6 +567,26 @@ response = client.put_bucket_versioning(
 
 ##### 暂停版本控制
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_versioning(
     Bucket='examplebucket-1250000000',
     Status='Suspended'
@@ -442,9 +595,9 @@ response = client.put_bucket_versioning(
 
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 | 
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
 |  Status  | 设置存储桶版本控制的状态，可选值为 'Enabled'， 'Suspended' | String |   是 |
 
 
@@ -465,15 +618,34 @@ get_bucket_versioning(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-versioning)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_versioning(
     Bucket='examplebucket-1250000000',
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String|是 |
 
@@ -487,8 +659,8 @@ Bucket 版本控制配置，类型为 dict。
 ```
 
 | 参数名称   | 参数描述   |类型 |
-| -------------- | -------------- |---------- | 
-|  Status  |  存储桶版本控制的状态，可选值为 'Enabled'，Suspended' | String | 
+| -------------- | -------------- |---------- |
+|  Status  |  存储桶版本控制的状态，可选值为 'Enabled'，Suspended' | String |
 
 
 ## 跨地域复制
@@ -505,8 +677,27 @@ put_bucket_replication(Bucket, ReplicationConfiguration={}, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-bucket-replication)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_replication(
     Bucket='examplebucket-1250000000',
     ReplicationConfiguration={
@@ -556,15 +747,15 @@ response = client.put_bucket_replication(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 源存储桶名称，由 BucketName-APPID 构成 | String |   是 | 
+|  Bucket  | 源存储桶名称，由 BucketName-APPID 构成 | String |   是 |
 |  Role  |  发起者身份标示, 格式为 `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String |  否 |
 |  Rule  |  设置对应的规则，包括 ID，Status，Prefix，Destination | List |   是 |
 |  ID  |  设置规则的 ID | String |  否 |
 |  Status  | 设置 Rule 是否启用，可选值为 Enabled 或者 Disabled | String |  是 |
 |  Prefix  | 设置 Rule 的前缀匹配规则，为空时表示作用存储桶中的所有对象 | String |  是 |
-|  Destination  | 描述目的资源，包括 Bucket 和StorageClass| Dict |  是 | 
+|  Destination  | 描述目的资源，包括 Bucket 和StorageClass| Dict |  是 |
 |  Bucket  | 设置跨地域复制的目标存储桶，格式为 `qcs::cos:[region]::[BucketName-APPID]` | String |  是 |
 |  StorageClass  | 设置目的文件的存储类型，可选值为 'STANDARD'，'STANDARD_IA' | String |  否 |
 
@@ -585,17 +776,36 @@ get_bucket_replication(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-replication)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_replication(
     Bucket='examplebucket-1250000000'
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 | 
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
 
 #### 返回结果说明
 
@@ -627,15 +837,15 @@ Bucket 跨地域复制配置，类型为 dict。
 ```
 
 | 参数名称   | 参数描述   |类型 |
-| -------------- | -------------- |---------- | 
-|  Role  |  发起者身份标示, 格式为 `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String |  
-|  Rule  |  跨地域复制对应的规则，包括 ID，Status，Prefix，Destination | List |   
-|  ID  |  跨地域复制规则的 ID | String |  
-|  Status  | 跨地域复制 Rule 是否启用，可选值为 Enabled 或者 Disabled | String |  
-|  Prefix  | 跨地域复制 Rule 的前缀匹配规则，为空时表示作用存储桶中的所有对象 | String |  
-|  Destination  | 描述目的资源，包括 Bucket 和 StorageClass| Dict |  
-|  Bucket  | 跨地域复制的目标存储桶，格式为 `qcs::cos:[region]::[BucketName-APPID]` | String |  
-|  StorageClass  | 目的文件的存储类型，可选值为 'STANDARD'，'STANDARD_IA' | String |  
+| -------------- | -------------- |---------- |
+|  Role  |  发起者身份标示, 格式为 `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String |  否 |
+|  Rule  |  跨地域复制对应的规则，包括 ID，Status，Prefix，Destination | List |   是 |
+|  ID  |  跨地域复制规则的 ID | String |  否 |
+|  Status  | 跨地域复制 Rule 是否启用，可选值为 Enabled 或者 Disabled | String |  是 |
+|  Prefix  | 跨地域复制 Rule 的前缀匹配规则，为空时表示作用存储桶中的所有对象 | String |  是 |
+|  Destination  | 描述目的资源，包括 Bucket 和 StorageClass| Dict |  是 |
+|  Bucket  | 跨地域复制的目标存储桶，格式为 `qcs::cos:[region]::[BucketName-APPID]` | String |  是 |
+|  StorageClass  | 目的文件的存储类型，可选值为 'STANDARD'，'STANDARD_IA' | String |  否 |
 
 
 ### 删除跨地域复制
@@ -651,15 +861,34 @@ delete_bucket_replication(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-bucket-replication)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_replication(
     Bucket='examplebucket-1250000000',
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String|是 |
 
@@ -682,8 +911,27 @@ put_bucket_policy(Bucket, Policy, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-bucket-policy)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_policy(
     Bucket='examplebucket-1250000000',
     Policy={
@@ -714,7 +962,7 @@ response = client.put_bucket_policy(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String|是 |
 | Statement |描述一条或多条权限的详细信息|List|是 |
@@ -744,15 +992,34 @@ get_bucket_policy(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-policy)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_policy(
     Bucket='examplebucket-1250000000',
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String|是 |
 
@@ -786,7 +1053,8 @@ Bucket 权限策略规则，类型为 dict。
     "version": "2.0"
 }
 ```
-| 参数名称   | 参数描述   |类型 | 必填 | 
+
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Statement |描述一条或多条权限的详细信息|List|是 |
 | Principal |描述策略授权的实体，详情请参见 [访问策略语言概述](https://intl.cloud.tencent.com/document/product/436/18023)|Dict|是 |
@@ -810,15 +1078,34 @@ delete_bucket_policy(Bucket, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-policy)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_policy(
     Bucket='examplebucket-1250000000',
 )
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 必填 | 
+| 参数名称   | 参数描述   |类型 | 必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket |存储桶名称，由 BucketName-APPID 构成|String|是 |
 

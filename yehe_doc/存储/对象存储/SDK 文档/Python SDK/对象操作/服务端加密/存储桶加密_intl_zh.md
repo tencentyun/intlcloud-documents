@@ -1,25 +1,22 @@
-
-
 ## 简介
+本文档提供存储桶加密的 API 概览和 SDK 示例代码。
 
-本文档提供关于存储桶标签的 API 概览以及 SDK 示例代码。
+| API                                                          | 操作名         | 操作描述                       |
+| ------------------------------------------------------------ | -------------- | ------------------------------ |
+| [PUT Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33459) | 设置存储桶加密 | 设置指定存储桶下的默认加密配置 |
+| [GET Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33460) | 查询存储桶加密 | 查询指定存储桶下的默认加密配置 |
+| [DELETE Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33461) | 删除存储桶加密 | 删除指定存储桶下的默认加密配置 |
 
-| API                                                          | 操作名         | 操作描述                         |
-| ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | 设置存储桶标签 | 为已存在的存储桶设置标签         |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | 查询存储桶标签 | 查询指定存储桶下已有的存储桶标签 |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | 删除存储桶标签 | 删除指定的存储桶标签             |
-
-## 设置存储桶标签
+## 设置存储桶加密
 
 #### 功能说明
 
-PUT Bucket tagging 用于为已存在的存储桶设置标签。
+用于设置指定存储桶下的默认服务端加密配置。如需执行此接口，必须拥有 PutBucketEncryption 权限。默认情况下，Bucket 的持有者直接拥有权限使用该 API 接口，Bucket 持有者也可以将权限授予其他用户。
 
 #### 方法原型
 
 ```
-put_bucket_tagging(Bucket, Tagging={}, **kwargs)
+put_bucket_encryption(Bucket, ServerSideEncryptionConfiguration={}, **kwargs)
 ```
 
 #### 请求示例
@@ -45,46 +42,48 @@ scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默�
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
-response = client.put_bucket_tagging(
-    Bucket='examplebucket-1250000000',
-    Tagging={
-        'TagSet': {
-            'Tag': [
-                {
-                    'Key': 'string',
-                    'Value': 'string'
-                },
-            ]
-        }
-    }
-)
+config_dict = {
+    'Rule': [
+        {
+            'ApplySideEncryptionConfiguration': {
+                'SSEAlgorithm': 'AES256',
+            }
+        },
+    ]
+}
+client.put_bucket_encryption(Bucket='examplebucket-1250000000', ServerSideEncryptionConfiguration=config_dict)
 ```
 
 #### 参数说明
 
-| 参数名称 | 参数描述                                                     | 类型   | 是否必填 |
-| -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | 设置标签的存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String | 是       |
-| Tag      | 标签的集合                                                   | List   | 是       |
-| Key      | 标签的 Key，长度不超过128字节, 支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String | 是       |
-| Value    | 标签的 Value，长度不超过256字节, 支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String | 是       |
+| 参数名称   | 参数描述   |类型 | 是否必填 |
+| -------------- | -------------- |---------- | ----------- |
+|Bucket|存储桶名称，由 BucketName-APPID 构成|String|是|
+|ServerSideEncryptionConfiguration|服务端加密配置 |Dict| 是|
+
+ServerSideEncryptionConfiguration 说明：
+
+| 参数名         | 参数描述                                         | 类型    | 是否必填 |
+| -------------- | ----------------------------------------------- | ------ | ---- |
+|Rule|服务端加密规则列表，目前只支持一个规则|List|是 |
+|ApplySideEncryptionConfiguration|具体的服务加密配置描述|Dict|是 |
+|SSEAlgorithm| 服务端加密算法，目前桶加密只支持 SSE-COS 类型，使用 AES256 加密算法|String|是 |
 
 #### 返回结果说明
 
 该方法返回值为 None。
 
-## 查询存储桶标签
+## 查询存储桶加密
 
 #### 功能说明
 
-GET Bucket tagging 用于查询指定存储桶下已有的存储桶标签。
+用于查询指定存储桶下的默认服务端加密配置。如需执行此接口，必须拥有 GetBucketEncryption 权限。默认情况下，Bucket 的持有者直接拥有权限使用该 API 接口，Bucket 持有者也可以将权限授予其他用户。
 
 #### 方法原型
 
 ```
-get_bucket_tagging(Bucket, **kwargs)
+get_bucket_encryption(Bucket, **kwargs)
 ```
-
 #### 请求示例
 
 ```python
@@ -108,85 +107,72 @@ scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默�
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
-response = client.get_bucket_tagging(
-    Bucket='examplebucket-1250000000'
-)
-```
-
-#### 参数说明                        |
-
-| 参数名称 | 参数描述                                                     | 类型   | 是否必填 |
-| -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | 查询标签的存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String | 是       |
-
-#### 返回结果说明
-
-Bucket 标签管理列表，类型为 dict。
-
-```
-{
-    'TagSet': {
-        'Tag': [
-            {
-                'Key': 'string',
-                'Value': 'string'
-            },
-        ]
-    }
-}
-```
-
-| 参数名称 | 参数描述                                                     | 类型   |
-| -------- | ------------------------------------------------------------ | ------ |
-| Tag      | 标签的集合                                                   | List   |
-| Key      | 标签的 Key，长度不超过128字节, 支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String |
-| Value    | 标签的 Value，长度不超过256字节, 支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | String |
-
-## 删除存储桶标签
-
-#### 功能说明
-
-DELETE Bucket tagging 用于删除指定存储桶下已有的存储桶标签。
-
-#### 方法原型
-
-```
-delete_bucket_tagging(Bucket, **kwargs)
-```
-
-#### 请求示例
-
-```python
-# -*- coding=utf-8
-from qcloud_cos import CosConfig
-from qcloud_cos import CosS3Client
-import sys
-import logging
-
-# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
-logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-
-# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
-secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
-
-config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
-client = CosS3Client(config)
-
-response = client.delete_bucket_tagging(
-    Bucket='examplebucket-1250000000'
-)
+response = client.get_bucket_encryption(Bucket='examplebucket-1250000000')
+sse_algorithm = response['Rule'][0]['ApplyServerSideEncryptionByDefault']['SSEAlgorithm']
 ```
 
 #### 参数说明
 
-| 参数名称 | 参数描述                                                     | 类型   | 是否必填 |
-| -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | 被删除标签的存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String | 是       |
+| 参数名称   | 参数描述   |类型 | 是否必填 |
+| -------------- | -------------- |---------- | ----------- |
+|Bucket|存储桶名称，由 BucketName-APPID 构成|String|是|
+
+#### 返回结果说明
+
+| 参数名称   | 参数描述   |类型 | 是否必填 |
+| -------------- | -------------- |---------- | ----------- |
+|ServerSideEncryptionConfiguration|服务端加密配置 |Dict| 是|
+
+ServerSideEncryptionConfiguration 说明：
+
+| 参数名         | 参数描述                                         | 类型    | 是否必填 |
+| -------------- | ----------------------------------------------- | ------ | ---- |
+|Rule|服务端加密规则列表，目前只支持一个规则|List|是 |
+|ApplySideEncryptionConfiguration|具体的服务加密配置描述|Dict|是 |
+|SSEAlgorithm| 服务端加密算法，目前桶加密只支持 SSE-COS 类型，使用 AES256 加密算法|String|是 |
+
+## 删除存储桶加密
+
+#### 功能说明
+
+用于删除指定存储桶下的默认加密配置。如需执行此接口，必须拥有 DeleteBucketEncryption 权限。默认情况下，Bucket 的持有者直接拥有权限使用该 API 接口，Bucket 持有者也可以将权限授予其他用户。
+
+#### 方法原型
+
+```
+delete_bucket_encryption(Bucket, **kwargs)
+```
+#### 请求示例
+
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# 正常情况日志级别使用INFO，需要定位时可以修改为DEBUG，此时SDK会打印和服务端的通信信息
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. 设置用户属性, 包括 secret_id, secret_key, region等。Appid 已在CosConfig中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
+secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的region可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
+                           # COS支持的所有region列表参见https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
+response = client.delete_bucket_encryption(Bucket='examplebucket-1250000000')
+```
+
+#### 参数说明
+
+| 参数名称   | 参数描述   |类型 | 是否必填 |
+| -------------- | -------------- |---------- | ----------- |
+|Bucket|存储桶名称，由 BucketName-APPID 构成|String|是|
 
 #### 返回结果说明
 
