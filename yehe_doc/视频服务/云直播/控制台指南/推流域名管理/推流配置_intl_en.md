@@ -28,7 +28,7 @@ You have activated the CSS service and completed identity verification.
    2. Enter a custom `StreamName`, such as `liveteststream`.
    3. Click **Generate Push Address** to generate an RTMP push URL containing the `StreamName`.
 ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-3. If you haven’t enabled authentication for your push domain, you can find RTMP and UDP URLs in the **Push URL** section. Replace `StreamName` with your stream name and you can use the corresponding playback URLs to play the stream. 
+3. If you haven’t enabled authentication for your push domain, you can find RTMP and SRT URLs in the **Push URL** section. Replace `StreamName` with your stream name and you can use the corresponding playback URLs to play the stream. 
 ![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
 
 
