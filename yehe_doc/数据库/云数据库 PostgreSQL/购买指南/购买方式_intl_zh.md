@@ -1,6 +1,6 @@
 
 ## 前提条件
-已 [注册腾讯云账号](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)，并 [完成实名认证](https://console.cloud.tencent.com/developer)。
+已 [注册腾讯云账号](https://intl.cloud.tencent.com/register)，并 [完成实名认证](https://console.cloud.tencent.com/developer)。
 
 ## 控制台购买
 1. 登录 [PostgreSQL 购买页](https://buy.Intl.cloud.tencent.com/pgsql)，根据需求指定数据库实例信息，确认无误后，单击**立即购买**。
