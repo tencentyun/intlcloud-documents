@@ -124,8 +124,8 @@ try {
 
 | 参数名称 | 描述                                                         | 类型   |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket   | 设置标签的对象所在的存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| Key      | 设置标签的对象键，对象键（Key）是对象在存储桶中的唯一标识，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)  | String |
+| Bucket   | 查询标签的对象所在的存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| Key      | 查询标签的对象键，对象键（Key）是对象在存储桶中的唯一标识，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)  | String |
 
 
 
@@ -207,7 +207,7 @@ try {
 
 | 参数名称 | 描述                                                         | 类型   |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket   | 设置标签的对象所在的存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| Key      | 设置标签的对象键，对象键（Key）是对象在存储桶中的唯一标识，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)  | String |
+| Bucket   | 删除标签的对象所在的存储桶，格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| Key      | 删除标签的对象键，对象键（Key）是对象在存储桶中的唯一标识，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)  | String |
 
 
