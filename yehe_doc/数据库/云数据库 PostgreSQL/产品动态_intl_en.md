@@ -1,21 +1,22 @@
-## 2022年01月
+## January 2022
 <table>
-<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
 <tbody>
 <tr>
-<td>支持跨可用区容灾</td>
-<td>云数据库 PostgreSQL 支持实例跨可用区部署，可避免因为单可用区故障而导致的实例不可用。</td>
-<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/45944" target="_blank">变更可用区设置</a></td></tr>
-<td>支持克隆实例</td>
-<td>云数据库 PostgreSQL 支持通过克隆实例的功能来进行实例数据恢复。</td>
-<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/46147" target="_blank">克隆实例</a></td></tr>
-<td>支持跨可用区创建只读实例</td>
-<td>云数据库 PostgreSQL 支持购买跨可用区只读实例，供多可用区部署的应用提供就近访问服务。</td>
-<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/39545" target="_blank">创建只读实例</a></td></tr>
-<td>支持跨可用区绑定子网</td>
-<td>云数据库 PostgreSQL 支持绑定不同可用区的子网，并且支持就近的网络访问，子网访问链路将不再由可用区信息所限制。</td>
-<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/44360" target="_blank">修改网络</a></td></tr>
+<td>Supported cross-AZ disaster recovery</td>
+<td>TencentDB for PostgreSQL supports cross-AZ instance deployment. This can avoid instance unavailability due to failures of a single AZ.</td>
+<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/45944" target="_blank">Modifying AZs</a></td></tr>
+<td>Supported instance clone</td>
+<td>TencentDB for PostgreSQL supports instance data restoration through instance clone.</td>
+<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/46147" target="_blank">Cloning Instance</a></td></tr>
+<td>Supported the cross-AZ creation of read-only instances</td>
+<td>Read-only TencentDB for PostgreSQL instances can be purchased across AZs for applications deployed in multiple AZs to provide nearby access.</td>
+<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/39545" target="_blank">Overview</a></td></tr>
+<td>Supported cross-AZ subnet binding</td>
+<td>TencentDB for PostgreSQL supports binding subnets in different AZs to enable nearby access. Subnet access linkages will no longer be restricted by AZ.</td>
+<td>2022-01</td><td><a href="https://intl.cloud.tencent.com/document/product/409/44360" target="_blank">Modifying Network</a></td></tr>
 </tbody></table>
+
 
 
 ## December 2021
