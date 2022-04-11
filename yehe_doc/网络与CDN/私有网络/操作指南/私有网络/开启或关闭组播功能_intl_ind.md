@@ -1,11 +1,11 @@
 Dokumen ini menjelaskan cara mengaktifkan atau menonaktifkan multicast untuk VPC.
 
 ## Latar belakang
-Multicast dan broadcast adalah mode komunikasi satu-ke-semuanya, yang dapat membantu perusahaan mengurangi konsumsi bandwidth jaringan dan beban jaringan melalui transmisi data efisien point-to-multipoint.
-Jika unicast digunakan, server pengirim perlu mengirim secara terpisah ke N server untuk total N kali. Jika multicast digunakan, server mengirimkan data yang sama ke N server hanya sekali, yang mengurangi konsumsi sumber informasi server dan juga sumber informasi bandwidth jaringan backbone.
+Broadcast dan multicast adalah mode komunikasi satu-ke-semuanya, yang dapat menghemat bisnis di bandwidth jaringan dan mengurangi beban jaringan melalui transmisi data efisien point-to-multipoint.
+Dalam mode unicast, server yang memulai mengirimkan data ke N server secara terpisah. Jika multicast digunakan, server mengirimkan data yang sama ke N server hanya sekali, yang mengurangi konsumsi sumber informasi server serta sumber informasi bandwidth jaringan backbone.
 >?
->- Fitur broadcast dan multicast saat ini dalam fase beta. Untuk menjadi pengguna beta, harap kirimkan permohonan untuk broadcast atau multicast.
->- Saat ini, fitur broadcast dan multicast tersedia di Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, Chongqing, dan Hong Kong, Tiongkok.
+>- Fitur broadcast dan multicast saat ini dalam uji beta. Jika diperlukan, harap [kirim tiket](https://console.cloud.tencent.com/workorder/category).
+>- Saat ini wilayah yang mendukung multicast dan broadcast adalah: Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing, Hong Kong (Tiongkok), Singapura, Seoul, Tokyo,  Bangkok, Toronto, Silicon Valley, Virginia, Frankfurt, dan Moscow.
 >
 
 - Multicast: Tencent Cloud mendukung multicast pada dimensi VPC.
@@ -13,19 +13,21 @@ Jika unicast digunakan, server pengirim perlu mengirim secara terpisah ke N serv
 
 ## Ikhtisar
 Multicast dan broadcast sebagian besar digunakan dalam industri keuangan dan game:
-- Layanan broadcast atau data pasar industri keuangan. Misalnya, setelah mendapatkan harga saham dan data real-time lainnya, pialang dapat mem-broadcast data saham ke banyak klien secara real time, yang secara efektif mengurangi beban jaringan.
+- Layanan broadcast atau data pasar industri keuangan. Misalnya, setelah mendapatkan harga saham dan data real-time lainnya, broker dapat mem-broadcast data saham ke banyak klien secara real time, yang secara efektif mengurangi beban jaringan.
 - Untuk industri game, broadcast dan multicast terutama digunakan untuk menahan heartbeat di antara beberapa server.
 
 ## Petunjuk
 ### Mengaktifkan multicast
 1. Login ke [Konsol VPC](https://console.cloud.tencent.com/vpc).
-2. Di daftar VPC, temukan VPC yang diinginkan, dan aktifkan **Multicast**.
+2. Di daftar VPC, temukan VPC yang diinginkan, dan aktifkan **Multicast** (Multicast).
+![]()
 
 
 ### Menonaktifkan multicast
 1. Login ke [Konsol VPC](https://console.cloud.tencent.com/vpc).
-2. Di daftar VPC, temukan VPC yang diinginkan, dan nonaktifkan **Multicast**.
+2. Di daftar VPC, temukan VPC yang diinginkan, dan nonaktifkan **Multicast** (Multicast).
+![]()
 
-## Operasi yang Relevan
-Untuk petunjuk detail mengenai broadcast subnet, lihat [Mengaktifkan atau Menonaktifkan Broadcast](https://intl.cloud.tencent.com/document/product/215/31809).
+## Referensi
+Untuk petunjuk selengkapnya mengenai broadcast tingkat subnet, lihat [Mengaktifkan atau Menonaktifkan Broadcast](https://intl.cloud.tencent.com/document/product/215/31809).
 

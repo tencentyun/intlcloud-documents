@@ -1,4 +1,4 @@
-IP virtual ketersediaan tinggi (HAVIP) adalah alamat IP pribadi yang ditetapkan dari blok CIDR VPC. Alamat ini biasanya digunakan bersama perangkat lunak dengan ketersediaan tinggi, seperti Keepalived dan Windows Server Failover Cluster, untuk membangun kluster utama/sekunder ketersediaan tinggi.
+IP virtual ketersediaan tinggi (HAVIP) adalah alamat IP pribadi yang ditetapkan dari blok CIDR dari subnet VPC. Alamat ini biasanya digunakan bersama perangkat lunak dengan ketersediaan tinggi, seperti Keepalived dan Windows Server Failover Cluster, untuk membangun kluster utama/sekunder dengan ketersediaan tinggi.
 >?
 >- HAVIP saat ini dalam versi beta, dan peralihan antara server utama/sekunder mungkin memerlukan waktu 10 detik. Untuk mencobanya, harap ajukan permohonan untuk menjadi pengguna beta.
 >- Untuk menjamin ketersediaan tinggi CVM di kluster utama/sekunder, Anda sebaiknya menetapkan CVM ke host yang berbeda menggunakan [grup penempatan](https://intl.cloud.tencent.com/document/product/213/15486). Untuk informasi selengkapnya tentang grup penempatan, lihat [Grup Penempatan](https://intl.cloud.tencent.com/document/product/213/15486).
@@ -12,7 +12,7 @@ IP virtual ketersediaan tinggi (HAVIP) adalah alamat IP pribadi yang ditetapkan 
 ## Arsitektur dan Prinsip
 Biasanya, kluster utama/sekunder ketersediaan tinggi terdiri dari dua server: server utama aktif dan server sekunder siaga. Kedua server memiliki VIP (IP virtual) yang sama. VIP hanya dapat bekerja di satu server utama pada saat bersamaan. Ketika server utama gagal, server sekunder akan mengambil alih VIP untuk terus menyediakan layanan.
 + Dalam jaringan fisik tradisional, status utama/sekunder dapat dinegosiasikan dengan protokol VRRP Keepalived. Perangkat utama mengirimkan pesan ARP gratis secara berkala untuk membersihkan tabel MAC atau tabel ARP terminal dari pertukaran uplink, sehingga memicu migrasi VIP ke perangkat utama.
-+ Dalam VPC, kluster utama/sekunder ketersediaan tinggi juga dapat diimplementasikan dengan menerapkan Keepalived di CVM. Namun, instans CVM biasanya tidak dapat memperoleh IP pribadi melalui pengumuman ARP karena alasan keamanan seperti spoofing ARP. VIP harus HAVIP yang diterapkan dari Tencent Cloud yang berbasis subnet. Dengan demikian, HAVIP hanya dapat diikat ke server di subnet yang sama melalui pengumuman.
++ Dalam VPC, kluster utama/sekunder ketersediaan tinggi juga dapat diimplementasikan dengan men-deploy Keepalived di CVM. Namun, instans CVM biasanya tidak dapat memperoleh IP pribadi melalui pengumuman ARP karena alasan keamanan seperti spoofing ARP. VIP harus HAVIP yang diterapkan dari Tencent Cloud yang berbasis subnet. Dengan demikian, HAVIP hanya dapat diikat ke server di subnet yang sama melalui pengumuman.
 >?Keepalived adalah perangkat lunak ketersediaan tinggi berbasis VRRP. Untuk menggunakan Keepalived, pertama selesaikan konfigurasinya di file `Keepalived.conf`.
 
 Gambar berikut menunjukkan arsitektur HAVIP.

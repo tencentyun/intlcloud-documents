@@ -1,15 +1,15 @@
-Grup keamanan adalah firewall virtual yang menampilkan pemfilteran paket data stateful. Ini digunakan untuk mengonfigurasi kontrol akses jaringan CVM, Cloud Load Balancer, TencentDB, dan instans lainnya sambil mengontrol lalu lintas keluar dan masuknya. Ini adalah sarana penting untuk isolasi keamanan jaringan.
+Grup keamanan adalah firewall virtual yang menampilkan pemfilteran paket data stateful. Grup ini digunakan untuk mengonfigurasi kontrol akses jaringan CVM, Cloud Load Balancer, TencentDB, dan instans lainnya sambil mengontrol lalu lintas keluar dan masuknya. Ini adalah sarana penting untuk isolasi keamanan jaringan.
 
 Anda dapat mengonfigurasi aturan grup keamanan untuk mengizinkan atau menolak lalu lintas masuk dan keluar instans dalam grup keamanan.
 
 ## Fitur
 - Grup keamanan adalah grup logis. Anda dapat menambahkan CVM, ENI, TencentDB, dan instans lainnya di wilayah yang sama dengan persyaratan isolasi keamanan jaringan yang sama ke grup keamanan yang sama.
-- Secara default, instans dalam grup keamanan yang sama tidak saling berhubungan, kecuali Anda mengizinkannya dengan menetapkan aturan.
+- Secara default, instans dalam grup keamanan yang sama tidak saling berhubungan, kecuali jika Anda mengizinkannya dengan menetapkan aturan.
 - Grup keamanan bersifat stateful. Lalu lintas masuk yang Anda izinkan dapat secara otomatis menjadi keluar dan sebaliknya.
 - Anda dapat mengubah aturan grup keamanan kapan saja, dan aturan baru akan segera berlaku.
 
-## Batasan Penggunaan
-Untuk informasi selengkapnya tentang batasan dan kuota grup keamanan, lihat [Ikhtisar Batasan Penggunaan](https://intl.cloud.tencent.com/document/product/213/15379).
+## Batas Penggunaan
+Untuk informasi selengkapnya tentang batasan dan kuota grup keamanan, harap lihat [Ikhtisar Batasan Penggunaan](https://intl.cloud.tencent.com/document/product/213/15379).
 
 ## Aturan Grup Keamanan
 
@@ -35,11 +35,11 @@ Instans dapat diikat ke satu atau beberapa grup keamanan. Ketika terikat ke bebe
 Saat membuat grup keamanan, Anda dapat memilih salah satu dari dua templat grup keamanan yang disediakan oleh Tencent Cloud:
 
 - Templat yang membuka semua port: semua lalu lintas masuk dan keluar akan diizinkan untuk diteruskan.
-- Templat yang membuka port utama: port TCP 22 (untuk login SSH Linux), port 80 dan 443 (untuk layanan Web), port 3389 (untuk login jarak jauh Windows), protokol ICMP (untuk perintah Ping), dan jaringan pribadi (untuk rentang IP VPC) akan terbuka untuk internet.
+- Templat yang membuka port utama: port TCP 22 (untuk login SSH Linux), port 80 dan 443 (untuk Layanan web), port 3389 (untuk login jarak jauh Windows), protokol ICMP (untuk perintah Ping), dan jaringan pribadi akan terbuka untuk Internet.
 
 > ?
 > - Jika templat ini tidak dapat memenuhi kebutuhan aktual Anda, Anda dapat membuat grup keamanan kustom. Untuk informasi selengkapnya, lihat [Membuat Grup Keamanan](https://intl.cloud.tencent.com/document/product/215/35506) dan [Kasus Aplikasi Grup Keamanan](https://intl.cloud.tencent.com/document/product/215/35519).
-> - Jika Anda perlu melindungi lapisan aplikasi (HTTP/HTTPS), harap aktifkan [Tencent Cloud Web Application Firewall (WAF)](https://intl.cloud.tencent.com/product/waf) yang memberikan keamanan web pada lapisan aplikasi untuk melindungi dari kerentanan web, perayap berbahaya, dan serangan CC, melindungi situs web dan keamanan aplikasi web Anda.
+> - Jika Anda perlu melindungi lapisan aplikasi (HTTP/HTTPS), harap aktifkan [Tencent Cloud Web Application Firewall (WAF)](https://intl.cloud.tencent.com/product/waf) yang memberikan keamanan web pada lapisan aplikasi untuk melindungi dari kerentanan web, perayap berbahaya, dan serangan CC, sehingga melindungi situs web dan keamanan aplikasi web Anda.
 
 ## Cara Menggunakan Grup Keamanan
 Gambar berikut menunjukkan cara menggunakan grup keamanan:
@@ -47,16 +47,16 @@ Gambar berikut menunjukkan cara menggunakan grup keamanan:
 
 ## Praktik Terbaik Grup Keamanan
 
-### Membuat Grup Keamanan
-- Sebaiknya tentukan grup keamanan saat membeli CVM melalui API. Jika tidak, grup keamanan default akan digunakan dan tidak dapat dihapus.
+### Membuat grup keamanan
+- Sebaiknya tentukan grup keamanan saat Anda membeli CVM melalui API. Jika tidak, grup keamanan default akan digunakan dan tidak dapat dihapus.
 - Jika Anda perlu mengubah kebijakan perlindungan instans, sebaiknya ubah aturan yang ada daripada membuat grup keamanan baru.
 
-### Mengelola Peran
+### Mengelola aturan
 - Ekspor dan cadangkan aturan grup keamanan sebelum Anda mengubahnya, sehingga Anda dapat mengimpor dan memulihkannya jika terjadi kesalahan.
 - Untuk membuat beberapa aturan grup keamanan, harap gunakan [templat parameter](https://intl.cloud.tencent.com/document/product/215/31867).
 
 ### Mengaitkan grup keamanan
-- Anda dapat menambahkan instans dengan persyaratan perlindungan yang sama ke grup keamanan yang sama, sebagai ganti mengonfigurasi grup keamanan terpisah untuk setiap instans.
+- Anda dapat menambahkan instans dengan persyaratan perlindungan yang sama ke grup keamanan yang sama, bukan mengonfigurasi grup keamanan terpisah untuk setiap instans.
 - Sebaiknya jangan mengikat satu instans ke terlalu banyak grup keamanan, karena aturan dalam grup keamanan yang berbeda dapat bertentangan dan mengakibatkan pemutusan jaringan.
 
 

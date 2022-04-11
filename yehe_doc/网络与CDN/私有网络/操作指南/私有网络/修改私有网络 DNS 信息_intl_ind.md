@@ -10,9 +10,9 @@ Konfigurasi baru akan berlaku pada semua CVM di VPC.
 
 ## Petunjuk
 1. Login ke [Konsol VPC](https://console.cloud.tencent.com/vpc).
-2. Pilih wilayah VPC di bagian atas halaman **VPC**.
+2. Pilih wilayah VPC di bagian atas halaman **VPC** (VPC).
 3. Klik ID VPC untuk mengakses halaman **Basic Information** (Informasi Dasar).
-4. Klik ikon edit untuk mengubah DNS dan nama domain masing-masing.
+4. Klik ikon edit untuk memodifikasi DNS dan nama domain masing-masing.
    + DNS: Alamat server DNS
      >?
      >+ DNS default Tencent Cloud adalah “183.60.83.19” dan “183.60.82.98”. Jika DNS default tidak digunakan, layanan internal seperti aktivasi Windows, NTP, dan YUM tidak akan tersedia.
