@@ -97,7 +97,7 @@ TRTCCloud.exitRoom() 入室に失敗したときにこのタイプのエラー�
 |ERR_PUBLISH_CDN_STREAM_SERVER_FAILED|-3323|バイパス転送リターンパケットの異常|
 |ERR_CLOUD_MIX_TRANSCODING_SERVER_FAILED|-3324|クラウドミクスストリーミング・リターンパケットの異常|
 |ERR_ROOM_REQUEST_START_PUBLISHING_TIMEOUT|-3333|Tencent CloudへのライブCDNのプッシュ開始シグナリングのタイムアウト|
-|ERR_ROOM_REQUEST_START_PUBLISHING_ERROR|-3334||Tencent CloudへのライブCDNのプッシュ開始シグナリングの異常|
+|ERR_ROOM_REQUEST_START_PUBLISHING_ERROR|-3334 |Tencent CloudへのライブCDNのプッシュ開始シグナリングの異常|
 |ERR_ROOM_REQUEST_STOP_PUBLISHING_TIMEOUT|-3335|Tencent CloudへのライブCDNのプッシュ停止シグナリングのタイムアウト|
 |ERR_ROOM_REQUEST_STOP_PUBLISHING_ERROR|-3336|Tencent CloudへのライブCDNのプッシュ停止シグナリングの異常|
 
