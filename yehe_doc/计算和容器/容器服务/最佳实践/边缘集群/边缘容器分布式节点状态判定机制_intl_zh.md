@@ -66,10 +66,10 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2) ，选择左侧导航栏中的【边缘集群】。
 2. 选择需要编辑标签的节点所在的集群 ID，进入该集群管理页面。
 3. 选择【节点管理】>【节点】，进入节点列表页。如下图所示：
-   ![](https://main.qcloudimg.com/raw/712450952968557eefd23e4833deaa5f.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7eb0f380d0e949961c3d1801f7670e4b.png)
 4. 选择需要编辑标签的节点所在行右侧的【更多】>【编辑标签】。
 5. 在弹出的“编辑标签”窗口，按需新增 Label。如下图所示：
-   ![](https://main.qcloudimg.com/raw/3ae0a48eba8a180ccdea78727fe26917.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/866a3570131ce8d80aed1d522dd51d36.png)
 6. 单击【确定】即可。
 
 ### 开启多地域检查开关
@@ -79,4 +79,4 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【边缘集群】。
 2. 单击需要开启多地域检查功能的集群 ID，进入该集群管理页面。
 3. 选择【基本信息】，进入“基本信息”页面，打开【开启多地域检查】即可。
-   ![](https://main.qcloudimg.com/raw/84ee3dd3d061f34675e907dd51309189.png)
+  
