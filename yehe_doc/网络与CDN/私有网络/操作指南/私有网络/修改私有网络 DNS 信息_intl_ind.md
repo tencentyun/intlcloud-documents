@@ -16,6 +16,6 @@ Konfigurasi baru akan berlaku pada semua CVM di VPC.
    + DNS: Alamat server DNS
      >?
      >+ DNS default Tencent Cloud adalah “183.60.83.19” dan “183.60.82.98”. Jika DNS default tidak digunakan, layanan internal seperti aktivasi Windows, NTP, dan YUM tidak akan tersedia.
-     + DNS mendukung maksimal empat alamat IP. Pisahkan IP dengan koma. Perhatikan bahwa sistem operasi tertentu mungkin tidak dapat mendukung empat alamat DNS.
+     >+ DNS mendukung maksimal empat alamat IP. Pisahkan IP dengan koma. Perhatikan bahwa sistem operasi tertentu mungkin tidak dapat mendukung empat alamat DNS.
    + Nama Domain: Akhiran nama host CVM, seperti “example.com”. Anda dapat memasukkan hingga 60 karakter, atau tetap menggunakan konfigurasi default jika Anda tidak memiliki persyaratan khusus.
     ![](https://main.qcloudimg.com/raw/50129c5b14c7c6d5923263719eec5bd2.png)
