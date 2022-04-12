@@ -1,4 +1,4 @@
-## Scenario
+## Overview
 You can configure email sending in the SES console. This document describes how to send an email.
 
 ## Directions
