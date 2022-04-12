@@ -1,7 +1,363 @@
+## 2022年04月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 6.1.2166 增强版本发布</td>
+    <td><ul style="margin:0">
+	<li> 修复搜索本地消息 senderUserIDList 传入两个及以上时，搜索不到数据的问题</li>
+	<li> 修复 rest api 一次性撤回多条消息，Android sdk 只回调了一条的问题</li>
+	<li> Windows 修复一键清除未读偶现崩溃问题</li>
+	<li> 发布国际版体验 Demo</li>
+	<li> Demo 离线推送切回厂商通道</li>
+	<li> Demo 手机号码登录切换到 aPaas</li>
+	<li> 修复音视频通话多端同步的问题</li>
+    </ul></td>
+    <td> 2022-04-02 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+</table>
+
+## 2022年03月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr> 
+<tr>
+<td>Flutter SDK 3.9.1</td>
+<td><ul style="margin:0;">
+<li>升级底层库版本到6.1.2155
+</ul></td>
+<td>2022-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.9.0</td>
+<td><ul style="margin:0;">
+<li>修改 grouplistener
+</ul></td>
+<td>2022-03-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.9</td>
+<td><ul style="margin:0;">
+<li>监听注册问题修复
+</ul></td>
+<td>2022-03-18</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.4</td>
+<td><ul style="margin:0;">
+<li>更新 interface
+</ul></td>
+<td>2022-03-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 6.1.2155 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 支持群消息已读回执 （<a href="https://intl.cloud.tencent.com/document/product/1047/36360#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7">iOS 文档</a>、<a href="https://intl.cloud.tencent.com/document/product/1047/36359#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7">Android 文档</a>） </li>
+	<li> Android 离线推送支持设置声音提示</li>
+	<li> 移动端 SDK 提供设置网络代理的接口</li>
+	<li> C/C++ 平台补齐离线推送接口</li>
+	<li> 支持登录后自动同步群内信令消息</li>
+	<li> 修改收到好友自定义字段变更通知后，无法获取完整自定义字段的问题</li>
+	<li> 修改弱网下拉取会话列表偶现消息免打扰标志返回错误的问题</li>
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>
+    </ul></td>
+    <td> 2022-03-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.4</td>
+<td><ul style="margin:0;">
+<li>更新 interface
+</ul></td>
+<td>2022-03-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 2.17.0 版本发布（小程序和 Web 端）</td>
+    <td><ul style="margin:0">
+       <li>支持 <a href="https://intl.cloud.tencent.com/document/product/1047/33529">社群</a></li>
+<li>最近联系人 `Conversation.lastMessage` 支持群提示消息</li>
+<li>`Message.payload.memberList` 支持获取加入群或者退出群的群成员的昵称、头像等信息</li>
+<li>发送图片消息支持 webp 格式的图片</li><li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a></li>
+    </ul></td>
+    <td> 2022-03-02 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+</tr> 
+<tr>
+<td>Flutter SDK 3.8.3 </td>
+<td><ul style="margin:0;">
+<li>根据环境切换 token 编码
+</ul></td>
+<td>2022-03-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+</table>
+
+## 2022年02月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.2</td>
+<td><ul style="margin:0;">
+<li>更新群成员参数约束
+</ul></td>
+<td>2022-02-21</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.0</td>
+<td><ul style="margin:0;">
+<li>升级底层 interface 依赖
+</ul></td>
+<td>2022-02-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.8</td>
+<td><ul style="margin:0;">
+<li>修复强解包带来的异常
+</ul></td>
+<td>2022-02-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 2.16.3 版本发布（小程序和 Web 端）</td>
+    <td><ul style="margin:0">
+        <li> 修复 Windows 微信访问小程序和 uni-app 打包 Android app（部分设备）后遇到的无法登录的问题
+    </ul></td>
+    <td> 2022-02-11 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+</tr> 
+<tr>
+    <td> SDK 2.16.2 版本发布（小程序和 Web 端）</td>
+    <td><ul style="margin:0">
+        <li> 新增支持 uni-app 打包 native app 后发送文件消息</li>
+        <li> 支持印度国际站</li>
+				        <li>修复部分 emoji 表情渲染问题</li>
+    </ul></td>
+    <td> 2022-02-10 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.7</td>
+<td><ul style="margin:0;">
+<li>修复 Swift 代码 warning                        </li><li>重写 Swift 强解包代码                          </li><li>sendMessage 接口返回的 message 实例增加id字段  </li>
+</ul></td>
+<td>2022-02-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 6.0.1992 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 修复向已解散或不存在的群连续发送两次消息偶现 crash 问题</li>
+    </ul></td>
+    <td> 2022-02-09 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+</table>
+
+## 2022年01月
+<table>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
+</tr> 
+<tr>
+    <td> TUIKit 6.0.1992 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 新增皮肤设置能力</li>
+    	<li> 新增语言设置能力</li>
+	<li> 群资料卡新增群管理功能</li>
+	<li> 文件消息增加上传下载动画</li>
+        <li> 浏览历史消息时，增加“收到 X 条新消息”的小舌头跳转</li>
+	<li> 浏览历史消息时，增加“回到最新位置”的小舌头跳转</li>
+	<li> 增加一键跳转到群 @ 消息的小舌头跳转</li>
+	<li> 优化会话列表最后一条消息的展示样式</li>
+    <li> 文本消息增加选中状态</li>
+	<li> 优化 A2、D2 错误提示描述</li>
+	<li> iOS 15系统 UI 适配</li>
+    </ul></td>
+    <td> 2022-01-25 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.5</td>
+<td><ul style="margin:0;">
+<li>升级底层库到6.0.1975
+<li>离线推送配置支持 TPNS TOKEN
+</ul></td>
+<td>2022-01-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 6.0.1975 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 发布全平台 C++ 接口版 SDK</li>
+    	<li> 离线推送支持接入 TPNS 通道</li>
+	<li> 增加个人资料自定义字段的变更通知</li>
+	<li> 修复获取好友备注偶现为空的问题</li>
+        <li> 优化网络类型日志打印</li>
+	<li> iOS 版本消息对象补齐消息优先级 priority 字段</li>
+	<li> 修复 C 接口版本插入本地消息的回调没有返回完整消息对象的问题</li>
+	<li> 官方 TUIKit 开源 Demo 的离线推送切换到 TPNS 通道</li>
+    </ul></td>
+    <td> 2022-01-14 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+
+<tr>
+<td>SDK 2.16.1 版本发布（小程序和 Web 端） </td>
+<td><ul style="margin:0;">
+<li>新增支持支付宝小程序发送 .image 后缀的图片                                                                                </li>
+<li>新增删除会话 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversation">deleteConversation</a> 同时删除历史消息   </li>
+<li>修复下行文件消息 `fileName` 为空字符串导致的错误                                                                          </li>
+<li>修复群属性接口调用时序引起的问题                                                                                          </li>
+<li>修复uni-app 打包到百度小程序等平台，遇到的 `__wxConfig is not defined` 问题                                               </li>
+</ul></td>
+<td>2022-01-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+<tr>
+<td>Unity SDK 1.6.4 </td>
+<td><ul style="margin:0;">
+<li>SDK 支持 package manager 引入
+<li>增加 iOS 编译后依赖添加
+</ul></td>
+<td>2022-01-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.1</td>
+<td><ul style="margin:0;">
+<li>消息发送进度事件返回创建消息的 id
+<li>优化回调部分，提示业务方回调的错误在 SDK 中被 catch 需业务方修改
+</ul></td>
+<td>2022-01-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.0</td>
+<td><ul style="margin:0;">
+<li>优化 cloudCustomData 解包
+</ul></td>
+<td>2022-01-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+
+<tr>
+<td>Flutter SDK 3.6.9</td>
+<td><ul style="margin:0;">
+<li>回复消息参数优化
+</ul></td>
+<td>2022-01-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.8</td>
+<td><ul style="margin:0;">
+<li>回复消息接口优化
+</ul></td>
+<td>2022-01-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>SDK 2.16.0 版本发布（小程序和 Web 端） </td>
+<td><ul style="margin:0;">
+<li>新增 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType">setMessageRemindType</a>，支持设置 C2C 会话消息免打扰             </li>
+<li>新增 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setAllMessageRead">setAllMessageRead</a>，支持一键清空所有会话未读                      </li>
+<li>新增 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#sendMessage">sendMessage</a>，支持发送不计入会话未读和不更新会话 `lastMessage` 的消息   </li>
+<li>新增支持直播群新成员查看入群前历史消息（需开通旗舰版）                                                                                                 </li>
+<li>变更SDK 使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode">严格模式</a>                                      </li>
+<li>变更会话列表过滤掉与被删除的帐号的会话                                                                                                                 </li>
+<li>变更优化漫游消息的 `nick` 和 `avatar` 的更新时机                                                                                                       </li>
+<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a></li>
+</ul></td>
+<td>2022-01-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.7</td>
+<td><ul style="margin:0;">
+<li>iOS 编译环境从8.0升到9.0
+</ul></td>
+<td>2022-01-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+</table>
+
+
 ## 2021年12月
 <table>
-<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th>
+<tr><th width="20%">动态名称</th>  <th width="44%">动态描述</th><th width="15%">发布时间</th><th width="21%">相关文档</th>
 </tr> 
+<tr>
+    <td> SDK 5.9.1886 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 修复登录同步 C2C 未读消息后回调的未读消息不全的问题</li>
+    	<li> 修复拉取本地消息返回不全的问题</li>
+	<li> Linux 平台，解决 HTTPS 请求报错的问题</li>
+	<li> C 接口版本，解决查询不到好友自定义字段的问题</li>
+        <li> 优化网络层的错误码描述</li>
+	<li> TUIKit 图片视频消息展示支持左右滑动查看</li>
+	<li> TUIKit 撤回消息支持重新编辑</li>
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>
+    </ul></td>
+    <td> 2021-12-31 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.6</td>
+<td><ul style="margin:0;">
+<li>添加消息回复接口
+<li>修复 Web 端 release mode 下报错问题
+</ul></td>
+<td>2021-12-30</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Unity SDK 1.6.0</td>
+<td><li>切换底层跨平台 c 接口</li><li>支持平台：Windows、macOS、Android、iOS，且四端接口统一</li><li>注意1.6.0与以往版本不兼容</li></td>
+<td>2021-12-21</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
+</tr> 
+<tr>
+    <td> SDK 5.9.1872 增强版本发布</td>
+    <td><ul style="margin:0">
+        <li> 支持发送群内定向消息</li>
+    	<li> 支持 cos 下载鉴权</li>
+	<li> 长连接加密通道增加 AES 支持</li>
+	<li> 连网逻辑增加接入点防孤岛的支持</li>
+        <li> cos 文件上传下载并发数支持后台配置</li>
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新日志</a></li>
+    </ul></td>
+    <td> 2021-12-20 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.5</td>
+<td><ul style="margin:0;">
+<li>修复 java 语法错误
+</ul></td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.4</td>
+<td><ul style="margin:0;">
+<li>修复 Android 异步注册事件无返回 bug
+<li>修复移除基础监听事件报错
+<li>消息进度事件增加发送中的消息的 uuid
+</ul></td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+
 <tr>
     <td> SDK 5.8.1696 增强版本发布</td>
     <td><ul style="margin:0">
@@ -11,9 +367,49 @@
 	<li> iOS 修复资源文件偶现加载失败的问题</li>
     </ul></td>
     <td> 2021-12-10 </td>
-    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">终端 SDK 下载</a></td>
 </tr>
+<tr>
+<td>Flutter SDK 3.6.3</td>
+<td><ul style="margin:0;">
+<li>addFriend 接口优化: addType 由 int 变更为 FriendTypeEnum
+<li>acceptFriendApplication 接口优化: acceptType 由 int 变更为 FriendResponseTypeEnum
+<li>getHistoryMessageList 接口优化: type 由 int 变更为 HistoryMsgGetTypeEnum
+	<li> 更多更新内容请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/45915">更新日志</a></li>
+</ul></td>
+<td>2021-12-9</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.2</td>
+<td><ul style="margin:0;">
+<li>修复移除高级消息未传 uuid
+</ul></td>
+<td>2021-12-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.1</td>
+<td><ul style="margin:0;">
+<li>修复文件进度事件丢失
+</ul></td>
+<td>2021-12-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.0</td>
+<td><ul style="margin:0;">
+<li>各个模块支持 listener 多次注册，多次回调
+<li>新增 api markAllMessageAsRead 设置全部会话已读
+<li>新增组合消息解析
+<li>升级 native 版本至5.8.1668
+</ul></td>
+<td>2021-12-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">框架 SDK 下载</a></td>
+</tr>
+
 </table>
+
 
 ## 2021年11月
 
