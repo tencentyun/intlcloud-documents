@@ -9,30 +9,32 @@ Dokumen ini menjelaskan operasi yang terkait dengan kebijakan perutean.
 4. Pada jendela pop-up, <span id="routeParam" />konfigurasikan kebijakan perutean.
 >?Jika Anda telah men-deploy [layanan TKE](https://intl.cloud.tencent.com/document/product/457/6759) di VPC, tujuan yang Anda konfigurasikan dalam kebijakan perutean subnet VPC tidak boleh tumpang tindih dengan blok CIDR VPC atau rentang IP TKE. >Misalnya, jika blok CIDR VPC adalah `172.168.0.0/16` dan blok TKE CIDR adalah `192.168.0.0/16`, rentang IP tujuan tidak boleh berada dalam `172.168.0.0/16`, atau berisi `192.168 .0.0/16`.
 >
-><table><tbody>
-><tr><th>Item Konfigurasi</th><th>Deskripsi</th></tr>
-><tr><td>Tujuan</td><td>Menentukan rentang IP tujuan tempat Anda ingin meneruskan lalu lintas keluar subnet. Persyaratan untuk tujuan adalah sebagai berikut:
-><ul><li>Masukkan rentang IP. Jika Anda ingin memasukkan satu IP, atur mask ke `32` (misalnya, `172.16.1.1/32`).</li>
-><li>Tujuan tidak boleh berupa rentang IP VPC tempat tabel rute berada karena rute lokal telah mengizinkan interkoneksi jaringan pribadi di VPC ini.</li></ul>
->	</td></tr>
-><tr><td>Jenis hop selanjutnya</td><td>Menunjukkan jalan keluar dari paket data untuk VPC. Jenis yang didukung:
->  <ul>
->     <li> NAT Gateway: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke NAT Gateway.</li>
->     <li>Peering Connections: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke pasangan VPC untuk peering connection.</li>
->     <li>Direct Connect Gateway: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke direct connect gateway.</li>
->    <li>IP Virtual Ketersediaan Tinggi: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke HAVIP.</li>
->    <li>VPN Gateway: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke VPN gateway.</li>
->    <li>IP publik CVM: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke IP publik (termasuk EIP) untuk instans CVM di VPC.</li>
->    <li>CVM: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke instans CVM di VPC.</li>
->    </ul>
-> </td></tr>
-><tr><td>Hop selanjutnya</td><td>Menentukan instans hop selanjutnya yang menjadi tujuan pengalihan lalu lintas, seperti gateway atau IP CVM.</td></tr>
-><tr><td>Catatan</td><td>(Opsional) Anda dapat memasukkan deskripsi rute untuk pengelolaan sumber daya.</td></tr>
-><tr><td>Tambahkan jalur</td><td>Anda dapat mengklik <b>+Tambahkan jalur</b> untuk mengonfigurasi beberapa kebijakan perutean, atau mengklik ikon penghapusan di kolom <b>Operasi</b> untuk menghapus kebijakan perutean yang tidak perlu.</td></tr>
-></tbody> </table>
->
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/5d4e0dcde1c1a257298ea7fbdf15270a.png">
-5. Klik **Create** (Buat).
+
+<table><tbody>
+<tr><th>Item Konfigurasi</th><th>Deskripsi</th></tr>
+<tr><td>Tujuan</td><td>Menentukan rentang IP tujuan tempat Anda ingin meneruskan lalu lintas keluar subnet. Persyaratan untuk tujuan adalah sebagai berikut:
+<ul><li>Masukkan rentang IP. Jika Anda ingin memasukkan satu IP, atur mask ke `32` (misalnya, `172.16.1.1/32`).</li>
+<li>Tujuan tidak boleh berupa rentang IP VPC tempat tabel rute berada karena rute lokal telah mengizinkan interkoneksi jaringan pribadi di VPC ini.</li></ul>
+	</td></tr>
+<tr><td>Jenis hop selanjutnya</td><td>Menunjukkan jalan keluar dari paket data untuk VPC. Jenis yang didukung:
+ <ul>
+     <li> NAT Gateway: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke NAT Gateway.</li>
+    <li>Peering Connections: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke pasangan VPC untuk peering connection.</li>
+     <li>Direct Connect Gateway: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke direct connect gateway.</li>
+    <li>IP Virtual Ketersediaan Tinggi: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke HAVIP.</li>
+    <li>VPN Gateway: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke VPN gateway.</li>
+    <li>IP publik CVM: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke IP publik (termasuk EIP) untuk instans CVM di VPC.</li>
+    <li>CVM: lalu lintas yang diarahkan ke rentang IP tujuan diteruskan ke instans CVM di VPC.</li>
+    </ul>
+ </td></tr>
+<tr><td>Hop selanjutnya</td><td>Menentukan instans hop selanjutnya yang menjadi tujuan pengalihan lalu lintas, seperti gateway atau IP CVM.</td></tr>
+<tr><td>Catatan</td><td>(Opsional) Anda dapat memasukkan deskripsi rute untuk pengelolaan sumber daya.</td></tr>
+<tr><td>Tambahkan jalur</td><td>Anda dapat mengklik <b>+Tambahkan jalur</b> untuk mengonfigurasi beberapa kebijakan perutean, atau mengklik ikon penghapusan di kolom <b>Operasi</b> untuk menghapus kebijakan perutean yang tidak perlu.</td></tr>
+</tbody> </table>
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5d4e0dcde1c1a257298ea7fbdf15270a.png">
+
+5. Klik **Create(Buat)**.
 
 ## Mengedit Kebijakan Perutean
 1. Login ke [konsol VPC](https://console.cloud.tencent.com/vpc/route?rid=1), dan akses halaman **Route Table** (Tabel Rute).
