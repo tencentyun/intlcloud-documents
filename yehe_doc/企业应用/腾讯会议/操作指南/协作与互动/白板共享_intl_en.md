@@ -14,13 +14,13 @@ VooV Meeting offers a whiteboard feature which makes it easier for you to commun
 
 - System requirements
 
-### Windows/macOS:
+### Windows/macOS
 
 1. Windows 7 or later
 
 2. macOS 10.11 or later
 
-### Android/iOS:
+### Android/iOS
 
 1. Android 9.0 or later
 
@@ -34,11 +34,11 @@ VooV Meeting offers a whiteboard feature which makes it easier for you to commun
 
 ## Enable Whiteboard Sharing
 
-### Windows/macOS:
+### Windows/macOS
 
 In a meeting, click **Share Screen** on the toolbar, select **Whiteboard** as the content for sharing, and click **Share**.
 
-### Android/iOS:
+### Android/iOS
 
 In a meeting, tap **Share Screen** on the toolbar and select **Share Whiteboard**.
 
@@ -78,7 +78,7 @@ In a meeting, tap **Share Screen** on the toolbar and select **Share Whiteboard*
 
 12. Hide: you can collapse the toolbar.
 
-### Android/iOS:
+### Android/iOS
 
 1. Collapse: you can hide the whiteboard toolbar.
 
