@@ -1,0 +1,8 @@
+
+- Ketika alamat koneksi proksi digunakan untuk menerapkan pemisahan baca/tulis, konsistensi pembacaan non-transaksional tidak dijamin. Jika bisnis Anda memerlukan konsistensi baca, Anda dapat merangkumnya ke dalam transaksi atau menggunakan sintaks petunjuk.
+
+- Ketika alamat koneksi proksi digunakan, `show processlist` akan menggabungkan hasil dari semua node sebelum mengembalikannya.
+- Untuk pernyataan `PREPARE`, proksi database pertama-tama akan mengirim `PREPARE` ke semua node. Ketika permintaan `EXECUTE` berikutnya masuk, itu akan menentukan rute eksekusi sesuai dengan jenis pernyataan yang disiapkan. Misalnya, jika pernyataan tulis disiapkan, pernyataan tersebut akan dikirim ke database sumber selama eksekusi, dan jika pernyataan baca di luar transaksi disiapkan, pernyataan tersebut akan dikirim ke instans baca saja.
+- Setelah koneksi bisnis tiba di proksi database, proksi akan terhubung ke instans sumber dan semua instans baca saja yang dikonfigurasi. Proksi itu sendiri tidak memiliki batasan jumlah maksimum koneksi, yang terutama tunduk pada jumlah maksimum koneksi instans database backend (nilai terkecil dari parameter sumber dan instans baca saja ini akan memengaruhi performa bisnis).
+- Setelah proksi database diaktifkan, ketika instans baca saja ditambahkan atau dimulai ulang, hanya permintaan koneksi baru yang akan diarahkan ke sana. Anda dapat melihat metrik performa setiap node proksi melalui ikhtisar atau [pemantauan performa](https://intl.cloud.tencent.com/document/product/236/42055). Jika ditemukan adanya jumlah koneksi pada node tidak seimbang, Anda dapat mendistribusikan koneksi melalui penyeimbangan kembali.
+
