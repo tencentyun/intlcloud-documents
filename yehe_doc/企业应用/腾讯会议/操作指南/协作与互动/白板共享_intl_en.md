@@ -6,7 +6,7 @@ VooV Meeting offers a whiteboard feature which makes it easier for you to commun
 
 ## Prerequisites
 
-- Free, Pro, or Enterprise Edition users
+- Free or Enterprise Edition users
 
 - Windows, macOS, iOS, or Android
 
@@ -104,6 +104,6 @@ In a meeting, tap **Share Screen** on the toolbar and select **Share Whiteboard*
 
 10. Annotation Settings: you can set whether to **Allow other attendees to annotate** and **Show annotator name**.
 
->This feature is supported for Pro and Enterprise Edition users only.
+>This feature is supported for Enterprise Edition users only.
 
 11. Hide: this feature lets you hide the whiteboard and disable screen sharing.
