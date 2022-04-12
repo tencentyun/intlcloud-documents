@@ -1,4 +1,4 @@
-## Scenario
+## Overview
 You can configure statistics in the SES console. This document describes how to query statistical data.
 
 ## Directions

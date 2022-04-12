@@ -1,0 +1,1 @@
+TencentCloud Automation Tools (TAT) is free of charge. However, you need to pay for the usage of related CVM and Lighthouse instances. For more details, see [Lighthouse Billing Overview](https://intl.cloud.tencent.com/document/product/1103/41403) and [CVM Billing Overview](https://intl.cloud.tencent.com/document/product/213/2179).
