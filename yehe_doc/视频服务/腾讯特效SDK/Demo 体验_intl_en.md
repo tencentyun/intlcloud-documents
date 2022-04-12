@@ -24,7 +24,7 @@ You can use our demos to try out the features of Tencent Effect. We provide the 
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/demo.zip">ZIP package</a></td>
 <td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/c0a30f63204a3e9a878bd10b4b3b5c8d.png" width=120><br><a href="http://dldir1.qq.com/hudongzhibo/xmagic/xmagic-demo-2.4.1.119_signed.apk">Click to download</a></td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-04_android_2.4.1.119.zip">ZIP package</a></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1143/45384">Doc</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1143/45384">DOC</a></td></tr>
 <tr>
 <td>MLVB</td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/MLVB-API-Example.zip">ZIP package</a></td>
@@ -37,13 +37,13 @@ You can use our demos to try out the features of Tencent Effect. We provide the 
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/TRTC-API-Example.zip">ZIP package</a></td>
 <td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/b6d9e3b81e7e3c3b8acc99826d1125bd.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/TRTC-xmagic-demo-2.4.1.115.apk">Click to download</td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/TRTC-API-Example.zip">ZIP package</a></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1143/45390">Doc</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1143/45390">DOC</a></td></tr>
 <tr>
 <td>UGSV</td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/UGSV-API-Example.zip">ZIP package</a></td>
 <td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/c64c2577d956d81cc50acb4547f8848f.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/UGSV-xmagic-demo-2.4.1.115.apk">Click to download</td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/UGSV_Demo.zip">ZIP package</a></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1143/45394">Doc</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1143/45394">DOC</a></td></tr>
 </tbody></table>
 
 
