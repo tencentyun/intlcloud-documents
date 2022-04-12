@@ -17,5 +17,5 @@ Baik jaringan klasik maupun VPC adalah ruang jaringan di cloud.
 ## Referensi
 + Untuk informasi selengkapnya tentang rencana komunikasi antara VPC dan jaringan klasik, lihat [Berkomunikasi dengan Jaringan Klasik](https://intl.cloud.tencent.com/document/product/215/35505).
 + Untuk informasi selengkapnya tentang konfigurasi Classiclink, lihat [Classiclink](https://intl.cloud.tencent.com/document/product/215/31807).
->+ Anda dapat memigrasikan instans Anda dari jaringan klasik ke VPC untuk memfasilitasi penggunaan VPC Anda. Untuk petunjuk mendetail, lihat [Beralih dari Jaringan Klasik ke VPC](https://intl.cloud.tencent.com/document/product/215/41414).
++ Anda dapat memigrasikan instans Anda dari jaringan klasik ke VPC untuk memfasilitasi penggunaan VPC Anda. Untuk petunjuk mendetail, lihat [Beralih dari Jaringan Klasik ke VPC](https://intl.cloud.tencent.com/document/product/215/41414).
 
