@@ -1,4 +1,4 @@
-﻿## Eliminating ISP Local DNS Exceptions
+## Eliminating ISP Local DNS Exceptions
 HTTPDNS replaces the default DNS method of mobile and desktop applications with the HTTP protocol, avoiding network access exceptions caused by the ISP's local DNS service errors.
 It is mainly used in the development of the following types of mobile applications:
 - **News and game applications**
