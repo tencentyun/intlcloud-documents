@@ -1,4 +1,4 @@
-﻿## Full Access Policy in HTTPDNS
+## Full Access Policy in HTTPDNS
 - Grant a sub-user or collaborator full access (for creating, managing, etc.).
 - Policy name: QcloudHTTPDNSFullAccess
 ```

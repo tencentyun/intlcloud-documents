@@ -108,7 +108,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <tr>
 <td>SDK 다운로드</td>
 <td>iOS & Android</td>
-<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#base">Download</a></td>
+<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#base">다운로드</a></td>
 </tr>
 </tbody></table>
 
@@ -200,7 +200,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <tr>
 <td>SDK 다운로드</td>
 <td>iOS & Android</td>
-<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#pro">Download</a></td>
+<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#pro">다운로드</a></td>
 </tr>
 </tbody></table>
 

@@ -1,10 +1,10 @@
 ## Enabling SMTP Sending Feature
 ## Directions
 ### Step 1. Go to the sender address page
-Log in to the [SES console](https://console.cloud.tencent.com/ses) and click **Email Configuration** > **Sender Address** on the left sidebar to enter the sender address page.
+Log in to the [SES console](https://console.cloud.tencent.com/ses) and click **Configuration** > **Sender Address** on the left sidebar to enter the sender address page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/fa124df0a9c52d8712e203e25866a389.png)
 
-### Step 2. Configure the SMTP Password
+### Step 2. Configure the SMTP password
 1. In the sender address list, find the one for which you want to enable SMTP sending, and click **Set SMTP Password** in the **Operation** column.
 2. Enter the SMTP password in the pop-up window and click **OK**.
 

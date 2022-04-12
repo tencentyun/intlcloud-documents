@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to use the DES and AES encryption algorithms. They can be used to encrypt the request parameters and decrypt the response data so as to prevent requests in plaintext from being maliciously altered during transfer.
 
 >? If you make a query with an HTTPS request method, the transferred data will be protected through encryption because of the TLS channel, so you don't need to encrypt the data passed in.

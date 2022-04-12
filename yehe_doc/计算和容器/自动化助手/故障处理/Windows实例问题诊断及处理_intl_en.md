@@ -268,7 +268,7 @@ If you cannot log in to your CVM due to high memory usage, please refer to [Fail
    2. Enter `resmon` in the powershell window, and press **Enter** to open "Resource Monitor".
    3. In "Resource Monitor", verify whether the process with the highest memory usage is running normally. 
    	![](https://qcloudimg.tencent-cloud.cn/raw/c2071d79cb77a8065361e12259000efd.png)
-	    若排查出的业务：
+	    If the business is checked out：
 		 - If the identified process is necessary for your business, upgrade your instance configuration by referring to [Changing Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178).
 		 - If the process is not for your business, it is recommended to update system patches, install antivirus software, or perform virus scans as needed.
 
@@ -314,7 +314,7 @@ If you cannot log in to your CVM due to high memory usage, please refer to [Fail
    3. Enter `resmon` in the powershell window, and press **Enter** to open "Resource Monitor".
    3. In "Resource Monitor", select the **CPU** tab to verify whether the process with the highest CPU usage is running normally. 
 		![](https://qcloudimg.tencent-cloud.cn/raw/d4e3089819e7a47bfde96b8b862e688c.png)
-	    若排查出的业务：
+	    If the business is checked out：
 		 - If the identified process is necessary for your business, upgrade your instance configuration by referring to [Changing Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178).
 		 - If the process is not for your business, it is recommended to update system patches, install antivirus software, or perform virus scans as needed.
 

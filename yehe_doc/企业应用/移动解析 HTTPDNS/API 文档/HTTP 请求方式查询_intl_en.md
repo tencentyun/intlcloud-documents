@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 When making a query with an HTTP request method, you can call the `http://119.29.29.98/d? + {request parameters}` API to use HTTPDNS.
 
 >? 

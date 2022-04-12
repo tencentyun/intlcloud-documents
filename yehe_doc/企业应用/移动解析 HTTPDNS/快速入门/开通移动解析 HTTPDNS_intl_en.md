@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to activate HTTPDNS.
 
 ## Directions

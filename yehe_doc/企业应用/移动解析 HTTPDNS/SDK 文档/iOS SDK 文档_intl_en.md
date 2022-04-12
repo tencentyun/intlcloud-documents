@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 HTTPDNS helps avoid the failure to access the optimal access point caused by the traditional local DNS of ISPs. It works by replacing the traditional DNS protocol with the HTTP encryption protocol, and domains are not used throughout the process, which greatly reduces the possibility of being hijacked.
 
 ## Preparations

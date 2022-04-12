@@ -108,7 +108,7 @@ Aシリーズベーシックパッケージでは汎用型のスタイリング�
 <tr>
 <td>SDKダウンロード</td>
 <td>iOS & Android</td>
-<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#base">Download</a></td>
+<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#base">ダウンロード</a></td>
 
 </tr>
 </tbody></table>
@@ -201,7 +201,7 @@ Sシリーズハイグレードパッケージはハイグレードなスタイ�
 <tr>
 <td>SDKダウンロード</td>
 <td>iOS & Android</td>
-<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#pro">Download</a></td>
+<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#pro">ダウンロード</a></td>
 </tr>
 </tbody></table>
 

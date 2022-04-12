@@ -1,4 +1,4 @@
-﻿## Client Connection Process
+## Client Connection Process
 When connecting to HTTPDNS, you need to modify the DNS mechanism on the mobile client as instructed below:
 
 ![](https://main.qcloudimg.com/raw/14701588dd29f0af9e0a793753e99b32.jpg)

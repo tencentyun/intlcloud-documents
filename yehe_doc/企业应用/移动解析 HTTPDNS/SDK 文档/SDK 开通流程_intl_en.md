@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to submit an application for connection to the SDK in the console after you activate HTTPDNS.
 
 

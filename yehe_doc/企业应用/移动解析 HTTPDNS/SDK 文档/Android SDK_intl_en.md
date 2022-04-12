@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 As a general solution to DNS optimization in the mobile internet era, HTTPDNS mainly addresses the following problems:
 - Local DNS hijacking/failures
 - Inaccurate local DNS scheduling
@@ -7,7 +7,7 @@ The HTTPDNS SDK for Android mainly provides DNS and cache management capabilitie
 - When the SDK resolves a domain, it first uses HTTPDNS to get the DNS query result. In extreme cases, when HTTPDNS is unavailable, the result provided by the local DNS will be used.
 - The DNS query result returned by HTTPDNS will carry the TTL information, which the SDK will use to manage the cache storing the result provided by HTTPDNS.
 
-For more information on HTTPDNS, see [here](https://cloud.tencent.com/developer/article/1035562).
+For more information on HTTPDNS, see here.
 You can get the HTTPDNS SDK for Android by [clicking here](https://github.com/tencentyun/httpdns-android-sdk).
 
 ## Preparations

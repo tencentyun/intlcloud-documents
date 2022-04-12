@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to get the configuration information in the HTTPDNS console and what information items mean. You need to get such configuration information before you can connect to HTTPDNS.
 
 ## Prerequisites

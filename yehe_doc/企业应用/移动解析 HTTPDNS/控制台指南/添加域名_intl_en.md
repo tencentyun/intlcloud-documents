@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 This document describes how to add a domain to be resolved in HTTPDNS.
 
 ## Prerequisites

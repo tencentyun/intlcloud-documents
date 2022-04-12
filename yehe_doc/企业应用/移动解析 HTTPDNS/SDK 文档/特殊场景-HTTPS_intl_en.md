@@ -1,4 +1,4 @@
-﻿This document describes how to verify a certificate over HTTPS in HTTPDNS.
+This document describes how to verify a certificate over HTTPS in HTTPDNS.
 
 ### Sample Code for iOS
 
