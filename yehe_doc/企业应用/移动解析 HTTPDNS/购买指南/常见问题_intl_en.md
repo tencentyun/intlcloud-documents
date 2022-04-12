@@ -1,4 +1,4 @@
-﻿### What is HTTPDNS?
+### What is HTTPDNS?
 HTTPDNS sends DNS requests to the DNS server of Tencent Cloud over the HTTP protocol instead of the local DNS of the ISP over the DNS protocol. This helps avoid domain name hijacking and cross-network access problems caused by local DNS and eliminate DNS exceptions in mobile internet services.
 
 ### What is the purpose of HTTPDNS?
