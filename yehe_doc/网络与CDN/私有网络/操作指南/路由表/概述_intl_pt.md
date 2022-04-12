@@ -4,7 +4,7 @@ Uma tabela de rotas consiste em várias políticas de roteamento que controlam a
 Existem dois tipos de tabelas de rotas: padrão e personalizada. 
 - **Tabela de rotas padrão**: ao criar uma VPC, o sistema gera automaticamente uma tabela de rotas padrão, que será associada às sub-redes criadas posteriormente se nenhuma tabela de rotas personalizada for selecionada. Você não pode excluir a tabela de rotas padrão, mas pode adicionar, excluir e modificar as políticas de roteamento nela.
 - **Tabela de rotas personalizada**: você pode criar ou excluir uma tabela de rotas personalizada na VPC. Essa tabela de rotas personalizada pode ser associada a todas as sub-redes para aplicar a mesma política de roteamento.
-![](https://main.qcloudimg.com/raw/a86260ffb40bec52c9f64a307d956691.png)  
+![]()  
 >?Você pode associar uma tabela de rotas ao [criar uma sub-rede](https://intl.cloud.tencent.com/document/product/215/31806) ou [alterar a tabela de rotas](https://intl.cloud.tencent.com/document/product/215/40090) após a criação de uma sub-rede.
 >
 
