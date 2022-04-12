@@ -1,4 +1,4 @@
-﻿HTTPDNS is daily pay-as-you-go by the number of DNS queries. DNS queries performed from 00:00:00 to 23:59:59 on a day will be billed at 8:00:00 the next day.
+HTTPDNS is daily pay-as-you-go by the number of DNS queries. DNS queries performed from 00:00:00 to 23:59:59 on a day will be billed at 8:00:00 the next day.
 
 ## Free Tier
 Users with HTTPDNS activated and enabled are provided with a free tier every month (30 natural days). The free tier varies by user type:
