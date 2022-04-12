@@ -8,9 +8,10 @@ Run the following command to query how the shared memory in the sample is alloca
 show variables where variable_name in ('innodb_buffer_pool_size','innodb_log_buffer_size','innodb_additional_mem_pool_size','key_buffer_size','query_cache_size');
 ```
 
->innodb_additional_mem_pool_size is not supported in v5.7.
+>?innodb_additional_mem_pool_size is not supported in v5.7.
 
 The following parameters are the query results of how the shared memory is allocated in an instance with 1,000 MB memory (below is the configuration of the test instance):
+```
 	1.  +---------------------------------+-----------+
 	2.  | Variable_name                   | Value     |
 	3.  +---------------------------------+-----------+
@@ -21,7 +22,7 @@ The following parameters are the query results of how the shared memory is alloc
 	9.  | query_cache_size                | 0         |
 	10. +---------------------------------+-----------+
 	11. 5 rows in set (0.01 sec)
-
+```
 **Parameter description**:
 - **innodb_buffer_pool_size**
  It is the most important buffer area in InnoDB and also a major means to compensate physical data files through memory. For TencentDB for MySQL, it usually takes up 50-80% memory of an instance (1,000 MB*0.5=500 MB as shown in the above sample). This area mainly includes information such as data pages, index pages, undo pages, insert buffers, adaptive hash indexes, lock information, and data dictionaries. In SQL read/write operations, you should first manipulate buffer_pool rather than physical data files and then write back to data files through checkpoint or other mechanisms. This space can help improve database performance and accelerate SQL operations, but it may slow down failover.
@@ -45,7 +46,8 @@ show variables where variable_name in ('read_buffer_size','read_rnd_buffer_size'
 ```
 
 The query result is displayed as follows (below is the configuration of the test instance):
-		1.  +----------------------+-----------+
+```	
+	1.  +----------------------+-----------+
 		2.  | Variable_name        | Value     |
 		3. +----------------------+-----------+
 		4.  | binlog_cache_size    | 32768     |
@@ -56,7 +58,7 @@ The query result is displayed as follows (below is the configuration of the test
 		9.  | tmp_table_size       | 209715200 |
 		10.  +----------------------+-----------+
 		11.  6 rows in set (0.00 sec)
-
+```
 **Parameter description:**
 
 - **read_buffer_size**
