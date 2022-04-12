@@ -1,9 +1,7 @@
->?The monthly subscription mode is currently in beta test. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
->
+
+
 ## Billing Modes
-TencentDB for MongoDB supports monthly subscription and pay-as-you-go billing modes.
-#### Monthly subscription
-Monthly subscription is a prepaid billing mode. It is applicable to long-term businesses with stable peak traffic, and is cheaper than the pay-as-you-go mode. To purchase a monthly subscription MongoDB instance, you need to pay for one or multiple months or even years in advance as needed.
+TencentDB for MongoDB supports pay-as-you-go billing mode.
 #### Pay-as-you-go
 Pay-as-you-go is a postpaid billing mode. We recommend you choose the pay-as-you-go billing mode if your business may fluctuate greatly and unpredictably or your resource usage tends to be temporary or abrupt. When you purchase a TencentDB for MongoDB instance, the hardware fees of one hour will be frozen in your Tencent Cloud account and charged on the hour (Beijing time), with the billable usage duration accurate down to the second. In this mode, you only need to pay for the actual usage of TencentDB for MongoDB with no upfront payment required.
 The tiered pricing model is based on usage duration.
