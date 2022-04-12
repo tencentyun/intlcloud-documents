@@ -13,7 +13,7 @@ Amazon Simple Storage Service (S3) is one of the earliest cloud services provide
 
 (If you already have a Tencent Cloud account, you can ignore this step.)
 
-<div style="background-color:#00A4FF; width: 355px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 355px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/en/account/register" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
 
 #### Step 2. Verify your identity
 
