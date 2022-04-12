@@ -14,7 +14,7 @@ Kami membagikan informasi Anda dengan penyedia layanan pihak ketiga kami, perusa
 
 #### Di mana kami memproses informasi pribadi yang dikumpulkan?
 
-Server kami mungkin berlokasi di luar negara tempat Anda berada, misalnya di Daratan Cina. Lihat [Cara kami menyimpan dan membagikan Informasi Pribadi Anda](#3) di bawah untuk informasi selengkapnya.
+Server kami mungkin berlokasi di luar negara tempat Anda berada, misalnya di Tiongkok Daratan. Lihat [Cara kami menyimpan dan membagikan Informasi Pribadi Anda](#3) di bawah untuk informasi selengkapnya.
 
 #### Berapa lama kami menyimpan informasi pribadi yang dikumpulkan?
 
@@ -26,11 +26,11 @@ Anda mungkin memiliki hak khusus atas informasi Anda dan bagaimana kami dapat me
 
 #### Penyelesaian Sengketa
 
-Jika Anda memiliki masalah atau keluhan, silakan hubungi kami di cloudlegalnotices@tencent.com. Lihat [Kontak & Keluhan](#6) di bawah untuk informasi lebih lanjut.
+Jika Anda memiliki masalah atau keluhan, silakan hubungi kami di cloudlegalnotices@tencent.com. Lihat [Kontak & Keluhan](#6) di bawah untuk informasi selengkapnya.
 
-#### Bagaimana kami memberitahu Anda jika terdapat perubahan?
+#### Bagaimana kami memberi tahu Anda jika terdapat perubahan?
 
-Jika ada perubahan signifikan pada kebijakan privasi ini, kami akan memberikan pemberitahuan di situs web kami. Lihat di bawah ini di [Pembaruan & Perubahan](#7) untuk informasi lebih lanjut.
+Jika ada perubahan signifikan pada kebijakan privasi ini, kami akan memberikan pemberitahuan di situs web kami. Lihat di bawah ini di [Pembaruan & Perubahan](#7) untuk informasi selengkapnya.
 
 #### Informasi Kontak
 
@@ -40,9 +40,9 @@ Jika ada perubahan signifikan pada kebijakan privasi ini, kami akan memberikan p
 
 *Petugas Perlindungan Data*: Silakan kirim email ke cloudlegalnotices@tencent.com.
 
-**Tambahan Khusus Yurisdiksi**
+**Adendum Yurisdiksi**
 
-Ketentuan tambahan sehubungan dengan yurisdiksi tertentu termasuk dalam addenda untuk kebijakan privasi ini. Jika Anda biasanya tinggal di yurisdiksi yang terdaftar, maka persyaratan yang relevan untuk yurisdiksi itu berlaku untuk Anda. Jika terjadi konflik antara adendum dan kebijakan privasi ini, ketentuan adendum yang relevan akan berlaku sehubungan dengan wilayah yang relevan saja. Kecuali ditentukan lain dalam adendum yang relevan, ketentuan kebijakan privasi ini berlaku untuk wilayah tersebut di samping ketentuan khusus adendum tersebut dan tidak diubah kecuali sebagaimana dinyatakan secara khusus dalam adendum tersebut.
+Ketentuan tambahan sehubungan dengan yurisdiksi tertentu termasuk dalam adendum untuk kebijakan privasi ini. Jika Anda biasanya tinggal di yurisdiksi yang terdaftar, maka persyaratan yang relevan untuk yurisdiksi itu berlaku untuk Anda. Jika terjadi konflik antara adendum dan kebijakan privasi ini, ketentuan adendum yang relevan akan berlaku sehubungan dengan wilayah yang relevan saja. Kecuali ditentukan lain dalam adendum yang relevan, ketentuan kebijakan privasi ini berlaku untuk wilayah tersebut di samping ketentuan khusus adendum tersebut dan tidak diubah kecuali sebagaimana dinyatakan secara khusus dalam adendum tersebut.
 
 **Modul**
 
@@ -69,23 +69,23 @@ Pejabat perlindungan data kami dapat dihubungi di **cloudlegalnotices@tencent.co
 
 Kami akan mengumpulkan dan menggunakan informasi berikut tentang Anda:
 
--   **Informasi yang Anda berikan kepada kami.** Anda dapat memberi kami informasi tentang Anda dengan melakukan penyelidikan tentang Layanan kami, menggunakan Layanan kami atau dengan sesuai dengan kami melalui telepon, email atau sebaliknya. Ini termasuk informasi yang Anda berikan ketika Anda mendaftar untuk Layanan kami (atau untuk pelanggan bisnis, bertindak sebagai perwakilan bisnis perusahaan untuk mendaftar ke Layanan), seperti nama, nama pengguna, alamat email, ID foto, informasi kartu kredit, nomor telepon, dan informasi lain yang membantu kami mendaftarkan Anda untuk menggunakan Layanan kami.
+-   **Informasi yang Anda berikan kepada kami.** Anda dapat memberi kami informasi tentang Anda dengan melakukan penyelidikan tentang Layanan kami, menggunakan Layanan kami atau berhubungan dengan kami melalui telepon, email atau sebaliknya. Ini termasuk informasi yang Anda berikan ketika Anda mendaftar untuk Layanan kami (atau untuk pelanggan bisnis, bertindak sebagai perwakilan bisnis perusahaan untuk mendaftar ke Layanan), seperti nama, nama pengguna, alamat email, alamat, alamat IP, APPID, UIN, ID Perangkat, ID Tencent Cloud, ID foto, informasi kartu kredit, nomor telepon, dan informasi lain yang membantu kami mendaftarkan Anda untuk menggunakan Layanan kami.
 
 -   **Informasi yang kami kumpulkan tentang Anda saat menggunakan layanan kami.** Kami secara otomatis mengumpulkan informasi tertentu dari Anda ketika Anda menggunakan Layanan kami melalui portal web Tencent Cloud, termasuk Alamat IP, Agen Pengguna dan ID Perangkat, dan informasi mengenai penggunaan Anda atas Layanan kami seperti log kunjungan Anda, permintaan akses situs, unggahan, dan unduhan.
 
-- **Informasi yang kami peroleh dari pihak ketiga**. Tencent Cloud memungkinkan administrator akun pengguna untuk menentukan hak akses. Dengan demikian, administrator Layanan Anda (yang mungkin Anda) dapat menyertakan alamat email orang lain yang akan diberikan akses ke Layanan di bawah akun itu. Jika Anda adalah administrator akun, Anda mengakui dan berjanji kepada kami bahwa Anda memiliki persetujuan dari individu yang bersangkutan untuk memberikan alamat email mereka untuk tujuan ini.
+- **Informasi yang kami peroleh dari pihak ketiga.** Tencent Cloud memungkinkan administrator akun pengguna untuk menentukan hak akses. Dengan demikian, administrator Layanan Anda (bisa jadi Anda sendiri) dapat menyertakan alamat email orang lain yang akan diberikan akses ke Layanan di bawah akun itu. Jika Anda adalah administrator akun, Anda mengakui dan berjanji kepada kami bahwa Anda memiliki persetujuan dari individu yang bersangkutan untuk memberikan alamat email mereka untuk tujuan ini.
 
   Kami juga mengumpulkan dan menyimpan informasi Anda setiap kali Anda berinteraksi dengan Tencent, misalnya, ketika Anda berkomunikasi dengan kami melalui email, mengaktifkan Layanan baru, atau mengisi formulir di situs web kami. Kami juga menyimpan informasi tentang Layanan yang Anda beli, seperti kode aktivasi, tanggal pembelian, dan informasi yang berkaitan dengan masalah dukungan apa pun.
 
-#### Cookies
+#### Cookie
 
-Kami menggunakan cookies dan teknologi serupa lainnya (sebagai contoh web beacons, cookie Flas, dll.) (“**Cookies**”) untuk meningkatkan pengalaman Anda dalam menggunakan Layanan. Cookies adalah file kecil yang, ketika ditempatkan pada perangkat Anda, akan memungkinkan kami untuk memberikan fitur dan fungsi tertentu bagi Anda.
+Kami menggunakan cookie dan teknologi serupa lainnya (sebagai contoh web beacons, cookie Flas, dll.) (“**Cookie**”) untuk meningkatkan pengalaman Anda dalam menggunakan Layanan. Cookie adalah file kecil yang, ketika ditempatkan pada perangkat Anda, akan memungkinkan kami untuk memberikan fitur dan fungsi tertentu bagi Anda.
 
-Anda memiliki opsi untuk mengizinkan pemasangan Cookies tersebut atau menonaktifkannya setelah itu. Anda dapat menerima semua Cookie, atau menginstruksikan perangkat atau browser web untuk memberikan pemberitahuan pada waktu pemasangan Cookie, atau menolak untuk menerima semua Cookie dengan menyesuaikan fungsi browser web di komputer Anda. Namun, jika Anda menolak untuk menginstal Cookie, Tencent Cloud dapat mungkin tidak dapat menyediakan beberapa Layanannya yang tersedia untuk Anda.
+Anda memiliki opsi untuk mengizinkan pemasangan Cookie tersebut atau menonaktifkannya setelah itu. Anda dapat menerima semua Cookie, atau menginstruksikan perangkat atau browser web untuk memberikan pemberitahuan pada waktu pemasangan Cookie, atau menolak untuk menerima semua Cookie dengan menyesuaikan fungsi browser web di komputer Anda. Namun, jika Anda menolak untuk menginstal Cookie, Tencent Cloud dapat mungkin tidak dapat menyediakan beberapa Layanannya yang tersedia untuk Anda.
 
-Untuk informasi lebih lanjut tentang Cookie yang kami gunakan, silakan lihat [Kebijakan Cookie](https://intl.cloud.tencent.com/document/product/301/17346).
+Untuk informasi selengkapnya tentang Cookie yang kami gunakan, silakan lihat [Kebijakan Cookie](https://intl.cloud.tencent.com/document/product/301/17346).
 
-#### Anak-anak
+#### Anak-Anak
 
 Layanan kami tidak ditujukan untuk anak-anak. Anak-anak tidak boleh menggunakan Layanan untuk tujuan apa pun. Kami tidak akan secara sadar mengizinkan siapa pun yang berusia di bawah 14 tahun untuk mendaftar ke Layanan kami dan/atau memberikan informasi identifikasi pribadi apa pun. Jika Anda berusia di bawah 14 tahun, jangan mendaftar untuk menggunakan Layanan kami atau memberikan informasi apa pun tentang diri Anda melalui Layanan.
 
@@ -96,19 +96,20 @@ Kami akan menggunakan informasi dengan cara berikut dan sesuai dengan dasar huku
 
 | **Informasi Pribadi**                                     | **Tujuan Penggunaan**                                           | **Dasar Hukum untuk Pemrosesan (hanya berlaku untuk EEA dan Inggris)** |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Lokasi, Nama, Alamat Email, Alamat IP, Agen Pengguna (atau browser situs web), ID Perangkat dan ID Tencent Cloud, Alamat (termasuk kota dan kode pos), tanggal lahir, dan kata sandi (Wajib) | Kami menggunakan informasi ini  untuk:   <br/>· membuat akun Tencent Cloud Anda sesuai dengan permintaan Anda;   <br/> · izinkan reset kata sandi;   <br/> · menyediakan dukungan pengguna; dan  <br/> · menerapkan syarat, ketentuan, dan kebijakan kami. | Kami memproses  informasi ini karena kami perlu melaksanakan kontrak kami dengan Anda untuk  menyediakan Layanan. |
-| Nomor Ponsel, Alamat Email (Wajib)                   | Kami menggunakan informasi ini:    <br/>· untuk memverifikasi akun Tencent Cloud Anda;    <br/>· untuk perlindungan keamanan (jika Anda mengaktifkan verifikasi akun, ini akan  digunakan untuk mengirimi Anda peringatan SMS dan kode autentikasi dua faktor saat Anda  memodifikasi kata sandi akun, alamat email, dll.);    <br/>· untuk pemberitahuan produk;    <br/>· untuk konfirmasi pesanan; dan    <br/>· untuk informasi layanan (contoh informasi saldo akun, dan untuk  menghubungi Anda saat saldo akun Anda sedikit). | Merupakan  kepentingan sah kami untuk memverifikasi identitas Anda dan berkomunikasi dengan Anda tentang  Layanan. |
-| ID Foto (misalnya, SIM atau paspor) Nama dan Alamat (Wajib) | Jika Anda memilih untuk menggunakan  server yang berada di RRC (tidak termasuk Hong Kong (Tiongkok), Makau (Tiongkok), dan  Taiwan (Tiongkok)) untuk Layanan, kami menggunakan ID foto Anda (atau, di mana Anda seorang  pelanggan perusahaan, dokumentasi perusahaan) untuk memastikan akun Anda diverifikasi secara  sah sesuai dengan undang-undang lokal. | Ini sesuai  kepentingan sah kami untuk memproses data tersebut demi memastikan Anda dapat mengaktifasi layanan  untuk digunakan di yurisdiksi di mana ini merupakan persyaratan yang sah. |
+| Lokasi, Nama, Alamat Email, Alamat IP, Agen Pengguna (atau browser situs web), ID Perangkat, ID Tencent Cloud, Alamat (termasuk kota, provinsi, dan kode pos), APPID, UIN, Nama pengguna  (Wajib) | Kami menggunakan informasi ini  untuk:   <br/>· membuat akun Tencent Cloud Anda sesuai dengan permintaan Anda dan/atau memverifikasi bahwa Anda memiliki akun;   <br/> · mengizinkan reset kata sandi;   <br/> · menyediakan dukungan pengguna kepada Anda;  <br/> · mencatat transaksi atau memberikan konfirmasi pesanan; dan  <br/> · menerapkan syarat, ketentuan, dan kebijakan kami. | Kami memproses  informasi ini karena kami perlu melaksanakan kontrak kami dengan Anda untuk  menyediakan Layanan. |
+| Nomor Ponsel, Alamat Email, Alamat (Wajib)                   | Kami menggunakan informasi ini:    <br/>· untuk memverifikasi akun Tencent Cloud Anda;    <br/>· untuk perlindungan keamanan (jika Anda mengaktifkan verifikasi akun, ini akan  digunakan untuk mengirimi Anda peringatan SMS dan kode autentikasi dua faktor saat Anda  memodifikasi kata sandi akun, alamat email, dll.);    <br/>· untuk pemberitahuan produk;    <br/>· untuk konfirmasi pesanan; dan    <br/>· untuk informasi layanan (contoh informasi saldo akun, dan untuk  menghubungi Anda saat saldo akun Anda sedikit). | Merupakan  kepentingan sah kami untuk memverifikasi identitas Anda dan berkomunikasi dengan Anda tentang  Layanan. |
+| ID Foto (misalnya, SIM atau paspor) Nama dan Alamat (Wajib) | Jika Anda memilih untuk menggunakan  server yang berada di RRC (tidak termasuk Hong Kong (Tiongkok), Makau (Tiongkok), dan  Taiwan (Tiongkok)) untuk Layanan, kami menggunakan ID foto Anda (atau, di mana Anda seorang  pelanggan perusahaan, dokumentasi perusahaan) untuk memastikan akun Anda diverifikasi secara  sah sesuai dengan undang-undang lokal. | Ini sesuai  kepentingan sah kami untuk memproses data tersebut demi memastikan Anda dapat mengaktifkan layanan  untuk digunakan di yurisdiksi di mana ini merupakan persyaratan yang sah. |
 | Informasi kartu kredit (nomor kartu, nama, tanggal kedaluwarsa, kode keamanan) (Wajib) | Kami menggunakan informasi kartu kredit Anda untuk memproses pembayaran yang dilakukan oleh Anda untuk penggunaan Layanan. | Kami memproses  informasi ini karena kami perlu melaksanakan kontrak kami dengan Anda untuk  memfasilitasi pembayaran untuk Layanan. |
 | Catatan Transaksi (seperti tanggal dan waktu pembayaran untuk layanan) (Wajib) | Kami memberikan akses  Catatan Transaksi Anda untuk memungkinkan Anda melihat riwayat transaksi Anda. | Kami memproses  informasi ini karena kami perlu melaksanakan kontrak kami dengan Anda untuk  mengelola pembayaran sehubungan dengan Layanan. |
 | Data Log, Metadata, Alamat IP, Tiket Pengguna, Agen Pengguna, Tanggal dan Waktu Akses, setiap kunjungan URL dalam situs web Tencent Cloud baik langsung atau dirujuk dari situs web pihak ketiga (Opsional) | Kami menggunakan informasi ini  untuk peningkatan strategi dan Layanan dan untuk analitik. | Merupakan  kepentingan sah kami untuk meningkatkan strategi dan Layanan kami. |
 | Tiket Layanan Pelanggan/Konten Obrolan, Alamat IP, Id Tencent Cloud, rincian insiden dan langkah respons (Wajib) | Kami menggunakan informasi ini  untuk:   <br/>· menangani kekhawatiran dan keluhan Anda tentang Layanan; dan    <br/>· meningkatkan dan mengelola Layanan kami dan untuk operasi internal, termasuk tujuan  pemecahan masalah, analisis data, pengujian, penelitian, statistik dan survei  , dan untuk menjaga Layanan kami aman dan nyaman. | Ini berada dalam  kepentingan sah kami untuk meningkatkan Layanan kami dan memberikan dukungan sehubungan dengan  Layanan yang diberikan untuk Anda. |
 | Log dan Metadata dalam kaitannya dengan insiden (Opsional)        | Kami menggunakan informasi ini  untuk meningkatkan Layanan dan tanggapan kami. | Merupakan  kepentingan sah kami untuk meningkatkan Layanan dan tanggapan kami. |
-| Data Pertanyaan (data yang diberikan ketika Anda mengajukan pertanyaan melalui formulir kontak situs web kami atau sebagai bagian dari penyelidikan penjualan), termasuk: nama, email, nomor telepon, nama perusahaan, layanan bisnis, lokasi, dan rincian kueri Anda (Wajib) | Kami menggunakan informasi ini  sebagai tanggapan terhadap permintaan Anda.         | Merupakan kepentingan  sah kami untuk memproses informasi ini sebagaimana diperlukan untuk menanggapi ke permintaan  Anda. |
+| Data Pertanyaan (data yang diberikan ketika Anda mengajukan pertanyaan melalui formulir kontak situs web kami atau sebagai bagian dari penyelidikan penjualan), termasuk: nama, email, nomor telepon, UIN, prioritas kueri atau tiket, pengaturan pengingat, nama perusahaan, layanan bisnis, lokasi, dan rincian kueri Anda atau informasi tambahan apa pun yang Anda berikan (Wajib) | Kami menggunakan informasi ini  sebagai tanggapan terhadap permintaan Anda.         | Merupakan kepentingan  sah kami untuk memproses informasi ini sebagaimana diperlukan untuk menanggapi  permintaan Anda. |
 | Data pertanyaan dukungan teknis (data yang diberikan saat Anda mengajukan permintaan dukungan teknis), termasuk nama, email, nomor telepon, jenis pertanyaan, dan rincian kueri Anda (Wajib) | Kami menggunakan informasi ini sebagai tanggapan terhadap permintaan Anda. | Merupakan kepentingan sah kami untuk memproses informasi ini sebagaimana diperlukan untuk menanggapi ke permintaan Anda. |
-| Data Kontak Promosi: Nama, Email, Nomor Telepon, Nama Perusahaan, Layanan Bisnis, Lokasi, dan detail kueri Anda (Opsional) | Kami menggunakan informasi ini  untuk mempromosikan produk dan layanan kami kepada Anda. | Kami memproses informasi ini dengan persetujuan Anda. Anda dapat menarik persetujuan ini kapan saja. |
-| Data Pemasaran: Nama, Email Bisnis, Nomor Telepon, Nama Perusahaan, Negara/Wilayah, Gelar Jabatan dan Industri (Wajib) | Kami menggunakan informasi ini: <br/>· untuk memesan tempat di acara dan webinar online kami<br/>· untuk pemberitahuan produk; dan<br/>· untuk konfirmasi pesanan. | Kami memproses informasi ini dengan persetujuan Anda. Anda dapat menarik persetujuan ini kapan saja. |
+| Data Kontak Promosi: Nama, Email, Nomor Telepon, Nama Perusahaan, Layanan Bisnis, Lokasi, dan detail kueri Anda (Opsional) | Kami menggunakan informasi ini  untuk: <br/>·  mempromosikan produk dan layanan kami kepada Anda; dan untuk mengirimi Anda komunikasi pemasaran langsung melalui kami atau mitra pihak ketiga kami. | Kami memproses informasi ini dengan persetujuan Anda. Anda dapat menarik persetujuan ini kapan saja. |
+| Data Pemasaran: Nama, Email Bisnis, Nomor Telepon, Nama Perusahaan, Negara/Wilayah, dan Industri (Wajib) | Kami menggunakan informasi ini: <br/>· untuk memesan tempat di acara dan webinar online kami<br/>· untuk pemberitahuan produk; dan <br/>· untuk konfirmasi pesanan.| Kami memproses informasi ini dengan persetujuan Anda. Anda dapat menarik persetujuan ini kapan saja. |
 | Nama, Alamat Email, Kode Negara, Nomor Telepon, Nama Perusahaan, Layanan Bisnis, Pertanyaan (Wajib) | Kami menggunakan informasi ini: <br/>· untuk memproses aplikasi Anda untuk Program Dukungan Sumber Daya Cloud Covid-19<br/>· untuk menanggapi permintaan produk kami; <br/>· untuk pemberitahuan produk; dan <br/>· untuk konfirmasi pesanan.  | Kami memproses informasi ini sesuai dengan kontrak kami dengan Anda untuk memberikan dukungan. |
+| Nama, Alamat Email, Kode Negara, Nomor Telepon, dan Nama Perusahaan (Wajib)  |  Kami menggunakan informasi ini untuk berkomunikasi (baik melalui kami atau mitra pihak ketiga kami) dengan Anda, untuk memahami produk dan layanan yang mungkin menarik bagi Anda, dan untuk mengeksplorasi peluang bisnis potensial dengan Anda.  | Merupakan kepentingan sah kami untuk memproses data tersebut untuk menjaga hubungan dengan Anda dan untuk lebih memahami kebutuhan bisnis Anda.  |
 
 <span id="3"></span>
 ### Cara Kami Menyimpan dan Membagikan Informasi Pribadi Anda
@@ -121,7 +122,7 @@ Kami dapat membagikan informasi pribadi Anda dengan pihak ketiga yang dipilih di
 
 Sejauh data ditransfer di luar EEA atau Inggris untuk pemrosesan, (misalnya ke Tiongkok Daratan), kami mengandalkan model kontrak Komisi Eropa untuk transfer data pribadi ke negara ketiga tersebut (yaitu, klausul kontrak standar), sesuai dengan Keputusan 2001/497/EC (dalam hal transfer ke pengontrol) dan Keputusan 2004/915/EC (dalam hal transfer ke prosesor).
 
--   **Lembaga penegak hukum, otoritas publik, atau badan peradilan dan organisasi lainnya**. Kami mengungkapkan informasi jika kami secara hukum diharuskan untuk melakukannya, atau jika kami memiliki iktikad baik bahwa penggunaan tersebut cukup diperlukan untuk:
+-   **Lembaga penegak hukum, otoritas publik, atau badan peradilan dan organisasi lainnya.** Kami mengungkapkan informasi jika kami secara hukum diharuskan untuk melakukannya, atau jika kami memiliki iktikad baik bahwa penggunaan tersebut cukup diperlukan untuk:
 
     -   mematuhi kewajiban hukum, proses atau permintaan;
 
@@ -131,7 +132,7 @@ Sejauh data ditransfer di luar EEA atau Inggris untuk pemrosesan, (misalnya ke T
 
     -   melindungi hak, properti, atau keselamatan kami, pengguna kami, pihak ketiga atau publik sebagaimana diwajibkan atau diizinkan oleh hukum (termasuk bertukar informasi dengan perusahaan dan organisasi lain untuk tujuan perlindungan penipuan dan pengurangan risiko kredit); dan
 
--   **Pihak ketiga yang mengambil alih seluruh atau sebagian besar dari kami semua atau usaha kami.** Kami akan mengungkapkan informasi kepada pihak ketiga jika kami menjual atau membeli bisnis apa pun atau menjalani merger, dalam hal ini kami akan mengungkapkan data Anda kepada calon pembeli bisnis tersebut. Kami juga akan mengungkapkan informasi kepada pihak ketiga jika kami menjual, membeli, menggabungkan atau bermitra dengan perusahaan atau bisnis lain, atau menjual sebagian atau seluruh aset kami. Dalam transaksi tersebut, informasi pengguna mungkin termasuk di antara aset yang ditransfer.
+-   **Pihak ketiga yang mengambil alih seluruh atau sebagian data dari kami semua atau bisnis kami.** Kami akan mengungkapkan informasi kepada pihak ketiga jika kami menjual atau membeli bisnis apa pun atau menjalani merger, dalam hal ini kami akan mengungkapkan data Anda kepada calon pembeli bisnis tersebut. Kami juga akan mengungkapkan informasi kepada pihak ketiga jika kami menjual, membeli, menggabungkan atau bermitra dengan perusahaan atau bisnis lain, atau menjual sebagian atau seluruh aset kami. Dalam transaksi tersebut, informasi pengguna mungkin termasuk di antara aset yang ditransfer.
 
 #### Tautan dan Layanan Pihak Ketiga
 
@@ -142,24 +143,25 @@ Tencent dapat menyediakan tautan ke situs web pihak ketiga lainnya sebagai kenya
 Namun demikian, transmisi informasi melalui internet tidak sepenuhnya aman. Meskipun kami akan melakukan yang terbaik untuk melindungi informasi pribadi Anda, kami tidak dapat menjamin keamanan informasi yang dikirimkan ke situs kami.
 
 <span id="4"></span>
-### Penyimpanan Data
+### Retensi Data
 
 Kami akan menyimpan informasi pribadi Anda seperti yang dijelaskan di bawah ini (kecuali jika diperlukan untuk disimpan oleh hukum yang berlaku).
 
 | **Informasi**                                                | **Jangka Waktu Penyimpanan**                                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Lokasi, Alamat Email,  Kata Sandi, Alamat IP, Agen Pengguna (atau browser situs web), ID Perangkat, ID Tencent  Cloud, Kode Verifikasi, Nomor Ponsel, Nama, Alamat (termasuk kode kota dan  pos) | Data akun disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari  sejak tanggal akun dihapus. |
-| Informasi kartu kredit (nomor kartu, nama,  tanggal kedaluwarsa, kode keamanan) | Data akun disimpan selama akun ada.  Informasi dihapus dalam waktu tiga puluh (30) hari sejak tanggal akun  dihapus. |
+| Lokasi, Alamat Email,  Kata Sandi, Alamat IP, Agen Pengguna (atau browser situs web), ID Perangkat, ID Tencent Cloud, Kode Verifikasi, Nomor Ponsel, Nama, Alamat (termasuk kota, provinsi, dan kode pos), APPID, UIN | Data akun disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari  sejak tanggal akun dihapus. |
+| Informasi kartu kredit (nomor kartu, nama,  tanggal kedaluwarsa, kode keamanan) | Data akun disimpan selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari sejak tanggal akun  dihapus. |
 | Catatan Transaksi                                          | Data pembayaran disimpan  selama akun ada. Informasi dihapus dalam waktu sembilan puluh (90) hari  sejak tanggal akun dihapus. |
 | ID Foto (misalnya,  SIM atau paspor) Nama dan Alamat | Data akun disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari  sejak tanggal akun dihapus. |
-| Data Log, Metadata, Alamat  IP, Agen Pengguna, Tanggal dan Waktu Akses, setiap kunjungan URL dalam situs web  Tencent Cloud baik langsung atau dirujuk dari situs web pihak ketiga | Data ini disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari  sejak tanggal akun dihapus. |
+| Data Log, Metadata, Alamat  IP, Agen Pengguna, Tanggal dan Waktu Akses, setiap kunjungan URL dalam situs web  Tencent Cloud baik langsung atau dirujuk dari situs web pihak ketiga | Data ini disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari sejak  tanggal akun dihapus. |
 | Tiket Layanan Pelanggan  /Konten Obrolan, Alamat IP, Id Tencent Cloud, rincian insiden dan langkah  respons | Data ini disimpan  selama akun ada. Informasi dihapus dalam waktu dua puluh empat (24)  jam sejak tanggal akun dihapus. |
-| Log dan Metadata dalam  kaitannya dengan insiden                   | Data ini disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari  sejak tanggal akun dihapus. |
-| Data Pertanyaan (data  yang diberikan ketika Anda mengajukan pertanyaan melalui formulir kontak situs web kami atau sebagai bagian  dari penyelidikan penjualan, termasuk nama, email, nama perusahaan, layanan bisnis, nomor telepon, dan lokasi Anda) | Data penyelidikan diadakan sampai penyelidikan diselesaikan, dan kemudian dihapus dalam waktu seratus delapan puluh (180) hari setelah resolusi tersebut, kecuali jika Anda setuju untuk menyimpan data ini dan menerima lebih banyak informasi di masa depan. |
-| Data penyelidikan dukungan teknis | Data penyelidikan dukungan teknis diadakan sampai penyelidikan diselesaikan, dan kemudian dihapus dalam waktu seratus delapan puluh (180) hari setelah resolusi tersebut, kecuali jika Anda setuju untuk menyimpan data ini dan menerima lebih banyak informasi di masa depan. |
-| Data Kontak Promosi: Nama,  Email, dan Nomor Telepon                | Data tersebut disimpan sampai  Anda memberi tahu kami bahwa Anda tidak lagi ingin menerima informasi promosi. |
-| Data Pemasaran: Nama, Email Bisnis, Nomor Telepon, Nama Perusahaan, Negara, Gelar Jabatan dan Industri. | Data tersebut disimpan sampai Anda memberi tahu kami bahwa Anda tidak lagi ingin menerima informasi promosi. |
+| Log dan Metadata dalam  kaitannya dengan insiden                   | Data ini disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari sejak  tanggal akun dihapus. |
+| Data Pertanyaan (data yang  diberikan ketika Anda mengajukan pertanyaan melalui formulir kontak situs web kami atau sebagai bagian  dari penyelidikan penjualan), termasuk nama, email, nomor telepon, UIN, prioritas kueri atau tiket, pengaturan pengingat, nama perusahaan, layanan bisnis, lokasi, dan rincian kueri Anda atau informasi tambahan apa pun yang Anda berikan) | Data penyelidikan diadakan sampai penyelidikan diselesaikan, dan kemudian dihapus dalam waktu seratus delapan puluh (180) hari setelah resolusi tersebut, kecuali jika Anda setuju untuk menyimpan data ini dan menerima lebih banyak informasi di masa depan. |
+| Data pertanyaan dukungan teknis (data yang diberikan saat Anda mengajukan permintaan dukungan teknis), termasuk nama, email, nomor telepon, jenis pertanyaan, dan rincian kueri Anda | Data penyelidikan dukungan teknis diadakan sampai penyelidikan diselesaikan, dan kemudian dihapus dalam waktu seratus delapan puluh (180) hari setelah resolusi tersebut, kecuali jika Anda setuju untuk menyimpan data ini dan menerima lebih banyak informasi di masa depan. |
+| Data Kontak Promosi: Nama,  Email, Nomor Telepon, Nama Perusahaan, Layanan Bisnis, Lokasi, dan rincian kueri Anda             | Data tersebut disimpan sampai  Anda memberi tahu kami bahwa Anda tidak lagi ingin menerima informasi promosi. |
+| Data Pemasaran: Nama, Email Bisnis, Nomor Telepon, Nama Perusahaan, Negara/Wilayah, dan Industri | Data tersebut disimpan sampai Anda memberi tahu kami bahwa Anda tidak lagi ingin menerima informasi promosi. |
 | Nama, alamat email, kode negara, nomor telepon, nama perusahaan, layanan bisnis, penyelidikan. | Data ini disimpan selama Program Dukungan Sumber Daya Cloud COVID-19 beroperasi. Informasi dihapus dalam waktu sembilan puluh (90) hari sejak tanggal Program Dukungan Sumber Daya Cloud COVID-19 berakhir. |
+| Nama, Alamat Email, Kode Negara, Nomor Telepon, dan Nama Perusahaan |  Data ini disimpan selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari sejak tanggal akun dihapus. |  
 
 Informasi pribadi, yang telah memenuhi tujuan pengumpulan atau penggunaan, atau telah mencapai periode waktu di mana informasi pribadi harus dimiliki, akan dihancurkan dengan cara yang ireversibel. Informasi pribadi yang disimpan dalam file elektronik akan dihapus dengan aman dengan cara yang ireversibel dengan menggunakan metode teknis, dan informasi yang dicetak akan dihancurkan dengan merobek atau membakar informasi tersebut. Selain itu, kami akan menghapus informasi pribadi Anda dalam 10 hari (i) setelah permintaan penghapusan informasi pribadi Anda; (ii) setelah penghapusan akun anda; dan/atau (iii) jika ada informasi pribadi yang ditinggalkan bersama pendaftaran akun yang tidak lengkap.
 
@@ -186,7 +188,7 @@ Jika Anda ingin kami mentransfer informasi pribadi ke pihak ketiga, Anda dapat m
 
 #### Pembatasan Pemrosesan menjadi Penyimpanan Saja
 
-Anda memiliki hak untuk meminta kami menghentikan pemrosesan informasi pribadi Anda yang kami miliki selain untuk tujuan penyimpanan dalam keadaan tertentu. Namun, harap perhatikan, bahwa jika kami berhenti memproses informasi pribadi, kami dapat menggunakannya lagi jika ada alasan yang sah berdasarkan undang-undang perlindungan data bagi kami untuk melakukannya (misalnya untuk pembelaan klaim hukum atau untuk perlindungan orang lain).
+Anda memiliki hak untuk meminta kami menghentikan pemrosesan informasi pribadi Anda yang kami miliki selain untuk tujuan penyimpanan dalam keadaan tertentu. Namun, harap perhatikan bahwa jika kami berhenti memproses informasi pribadi, kami dapat menggunakannya lagi jika ada alasan yang sah berdasarkan undang-undang perlindungan data bagi kami untuk melakukannya (misalnya untuk pembelaan klaim hukum atau untuk perlindungan orang lain).
 
 #### Keberatan
 
@@ -208,7 +210,7 @@ Pertanyaan, komentar, dan permintaan mengenai kebijakan ini sangat disarankan da
 <span id="7"></span>
 ### Pembaruan & Perubahan
 
-Apabila kami membuat perubahan material pada kebijakan ini, kami akan memuat kebijakan yang telah diperbarui di sini dan membuat pemberitahuan di situs web. Harap kunjungi halaman ini apabila terdapat pembaharuan atau perubahan kebijakan ini.
+Apabila kami membuat perubahan material pada kebijakan ini, kami akan memuat kebijakan yang telah diperbarui di sini dan membuat pemberitahuan di situs web. Harap kunjungi halaman ini apabila terdapat pembaruan atau perubahan kebijakan ini.
 
 ## TAMBAHAN KHUSUS YURISDIKSI
 
@@ -227,29 +229,31 @@ a.  Kami mendelegasikan pemrosesan informasi pribadi Anda seperti yang dijelaska
 | Adyen Singapore Pte Ltd.                                     | Pemrosesan  pembayaran dan manajemen risiko |
 | Image  Frame Investment (HK) Limited                         | Pengiriman SMS                             |
 | Tencent Computing (Beijing) Co., Ltd.                        | Memberikan dukungan back-end              |
+| Reseller Pihak Ketiga                     | Manajemen hubungan klien dan komunikasi pemasaran              |
+
 
 ### Transfer Informasi Pribadi ke Luar Negeri
 
 **Kami mentransfer Informasi Pribadi ke pihak ketiga di luar negeri sebagai berikut:** 
 
 
-| **Penerima (Informasi Kontak   </br> Manajer Informasi)** | **Negara tempat Informasi Pribadi Anda Akan Ditransfer** | **Tanggal dan Metode Transfer**                        | **Jenis Informasi Pribadi Anda yang Akan Ditransfer**     | **Tujuan Penggunaan berdasarkan Penerima**      | **Periode Penggunaan  Retensi oleh Penerima**                  |
+| **Penerima (Informasi Kontak   </br> Manajer Informasi)** | **Negara tempat Informasi Pribadi Anda Akan Ditransfer** | **Tanggal dan Metode Transfer**                        | **Jenis Informasi Pribadi Anda yang Akan Ditransfer**     | **Tujuan Penggunaan oleh Penerima**      | **Periode Penggunaan  Retensi oleh Penerima**                  |
 | -- | ------- | -------| ----------------------- | -------------------------------------- | ------------------------------------------------------------ |
 | Adyen  Singapore Pte Ltd.</br>dpo@adyen.com             | Singapura                                                    | Transmisi  terenkripsi                                | Nomor  kartu kredit, nama, periode valid, CVV, alamat        | Pemroses  pembayaran dan manajemen risiko | 7  tahun                                                     |
-|Frensworkz Software Technology Co., Limited</br>support@frensworkz.com</div> |PRC |Transmisi online  |<li>Nama depan dan belakang</li> <li>Jabatan</li> <li>Peran</li> <li>Posisi</li> <li>Industri</li> <li>Pemberi Kerja</li> <li>Informasi Kontak (perusahaan, departemen, peran, email, telepon, nomor QQ, alamat surat fisik, situs web)</li> <li>Akun, nama akun, nama komentar akun</li> <li>Data ID</li> <li>Alamat penagihan, negara penagihan, jalan penagihan, kota penagihan, negara bagian/provinsi penagihan, zip/kode pos penagihan</li> |Layanan pelaksana agregat |Sampai penyelesaian layanan dukungan sistem oleh Frensworkz atau selama 20 bulan (mana yang lebih cepat)|
+|Frensworkz Software Technology Co., Limited</br>support@frensworkz.com</div> |RRT |Transmisi online  |<li>Nama depan dan belakang</li> <li>Jabatan</li> <li>Peran</li> <li>Posisi</li> <li>Industri</li> <li>Pemberi Kerja</li> <li> Informasi Kontak (perusahaan, departemen, peran, email, telepon, nomor QQ, alamat surat fisik, situs web)</li> <li>Akun, nama akun, nama komentar akun</li> <li>Data ID</li> <li>Alamat penagihan, negara penagihan, jalan penagihan, kota penagihan, negara bagian/provinsi penagihan, zip/kode pos penagihan</li> |Layanan pelaksana agregat |Sampai penyelesaian layanan dukungan sistem oleh Frensworkz atau selama 20 bulan (mana yang lebih cepat)|
 | Image  Frame Investment (HK) Limited </br>dataprotection@tencent.com                    | Hong  Kong                                                   | Transmisi  online                                   | Nomor  ponsel, konten SMS                                  | Pengiriman  SMS                           | Data akun disimpan selama akun ada. Pesan SMS  dihapus 13 bulan setelah pesan SMS telah dikirimkan. |
-|Salesforce.com Singapore Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |Amerika Serikat|Transmisi online |<li>Nama depan dan belakang</li> <li>Jabatan</li> <li>Peran</li> <li>Posisi</li> <li>Industri</li> <li>Pemberi Kerja</li>  </li>Informasi Kontak (perusahaan, departemen, peran, email, telepon, nomor QQ, alamat surat fisik, situs web)<li>Akun, nama akun, nama komentar akun</li><li>Data ID</li><li>Alamat penagihan, negara penagihan, jalan penagihan, kota penagihan, negara bagian/provinsi penagihan, zip/kode pos penagihan</li>|Manajemen hubungan klien |Silakan mengacu pada periode penyimpanan berdasarkan "[Penyimpanan Data](#4)", tunduk terhadap penghentian hubungan kontrak antara kita dan Salesforce, dalam hal tersebut data akan dihapus setelah 300 hari penghentian.|
-| Tencent  Computing (Beijing) Co., Ltd.</br>meeting_info@tencent.com                      | Republik  Rakyat Tiongkok                                  | Transmisi  online pada pembuatan dan pembayaran akun | **Wajib**:  Tanggal lahir, nama, nomor ponsel, alamat email, lokasi, alamat (termasuk  kota dan kode pos), informasi kartu kredit, jenis bisnis, kata sandi  </br>**Opsional:**    ID Foto (misalnya, SIM, paspor  atau surat izin usaha) nama dan alamat | Operasi  dan pemeliharaan sistem    | Data akun disimpan  selama akun ada. Informasi dihapus dalam waktu tiga puluh (30) hari  sejak tanggal akun dihapus. |
+|Salesforce.com Singapore Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |Amerika Serikat|Transmisi online | <li>Data Kontak Promosi</li> <li>Data Pemasaran</li> <li>Nama depan dan belakang</li> <li>Jabatan</li> <li>Peran</li> <li>Posisi</li> <li>Industri</li> <li>Pemberi Kerja</li> <li>Informasi Kontak (perusahaan, departemen, peran, email, telepon, nomor QQ, alamat surat fisik, situs web)</li> <li>Akun, nama akun, nama komentar akun</li> <li>Data ID</li> <li>Alamat penagihan, negara penagihan, jalan penagihan, kota penagihan, negara bagian/provinsi penagihan, zip/kode pos penagihan</li>|Manajemen hubungan klien dan komunikasi pemasaran|Silakan mengacu pada periode penyimpanan berdasarkan "[Penyimpanan Data](#4)", tunduk terhadap penghentian hubungan kontrak antara kita dan Salesforce, dalam hal tersebut data akan dihapus setelah 300 hari penghentian.|
+| Tencent  Computing (Beijing) Co., Ltd.</br>meeting_info@tencent.com                      | Republik  Rakyat Tiongkok                                  | Transmisi  online pada pembuatan dan pembayaran akun | **Wajib**:  Tanggal  lahir, nama, nomor ponsel, alamat email, lokasi, alamat (termasuk  kota dan kode pos), informasi kartu kredit, jenis bisnis, kata sandi  </br>**Opsional:**  Foto  ID (misalnya, SIM, paspor  atau izin usaha) nama dan alamat | Operasi  dan pemeliharaan sistem    | Data akun disimpan  selama akun ada. Informasi dihapus dalam waktu  tiga puluh (30) hari sejak tanggal akun dihapus. |
 
 ### Penghancuran Data
 
-Informasi pribadi, yang telah memenuhi tujuan pengumpulan atau penggunaan, dan telah mencapai periode waktu di mana informasi pribadi harus dimiliki, akan dihancurkan dengan cara yang ireversibel. Informasi pribadi yang disimpan dalam file elektronik akan dihapus dengan aman dengan cara yang ireversibel dengan menggunakan metode teknis, dan informasi yang dicetak akan dihancurkan dengan merobek atau membakar informasi tersebut.
+Informasi pribadi yang telah memenuhi tujuan pengumpulan atau penggunaan, dan telah mencapai periode waktu di mana informasi pribadi harus dimiliki, akan dihancurkan dengan cara yang ireversibel. Informasi pribadi yang disimpan dalam file elektronik akan dihapus dengan aman dengan cara yang ireversibel dengan menggunakan metode teknis, dan informasi yang dicetak akan dihancurkan dengan merobek atau membakar informasi tersebut.
 
 ### Hak Anda atas Subjek Data dan Metode untuk Menggunakan Hak Tersebut
 
-Anda dapat menggunakan hak yang terkait dengan perlindungan informasi pribadi dengan meminta akses ke informasi pribadi Anda atau koreksi, penghapusan atau penangguhan pemrosesan informasi pribadi Anda, dll. secara tertulis atau melalui email, faks, telepon, dll. sesuai dengan hukum yang berlaku seperti PIPA. Anda juga dapat menggunakan hak-hak ini melalui wali hukum Anda atau seseorang yang telah diberi wewenang oleh Anda untuk menggunakan hak-hak tersebut. Namun, dalam hal ini, Anda harus menyerahkan surat kuasa kepada kami sesuai dengan Peraturan Penegakan PIPA. Atas permintaan Anda, kami akan mengambil langkah-langkah yang diperlukan tanpa penundaan sesuai dengan hukum yang berlaku seperti PIPA. Anda juga dapat menarik persetujuan Anda atau menuntut penangguhan pemrosesan informasi pribadi kapan saja.
+Anda dapat menggunakan hak yang terkait dengan perlindungan informasi pribadi dengan meminta akses ke informasi pribadi Anda atau koreksi, penghapusan atau penangguhan pemrosesan informasi pribadi Anda, dll. secara tertulis atau melalui email, faks, telepon, dll. sesuai dengan hukum yang berlaku seperti PIPA. Anda juga dapat menggunakan hak-hak ini melalui wali hukum Anda atau seseorang yang telah diberi wewenang oleh Anda untuk menggunakan hak-hak tersebut. Namun, dalam hal ini, Anda harus menyerahkan surat kuasa kepada kami sesuai dengan Peraturan Penegakan PIPA. Atas permintaan Anda, kami akan mengambil langkah-langkah yang diperlukan tanpa penundaan sesuai dengan hukum yang berlaku seperti PIPA. Anda juga dapat menarik persetujuan Anda atau meminta penangguhan atas pemrosesan informasi pribadi kapan pun.
 
-### Nomor
+### Kontak
 
 Jika Anda memiliki pertanyaan atau komentar tentang Kebijakan Privasi, jika Anda perlu melaporkan masalah, atau jika Anda ingin kami memperbarui, mengubah, atau meminta penghapusan informasi yang kami miliki tentang Anda, silakan hubungi Kepala Petugas Privasi kami (atau departemen yang bertanggung jawab atas perlindungan data pribadi) di:
 
@@ -304,7 +308,7 @@ Ketentuan Adendum ini berlaku untuk penduduk California di bawah Undang-Undang P
 - Untuk tujuan keamanan dan verifikasi, termasuk untuk mencegah dan mendeteksi aktivitas penipuan; dan
 - Untuk mengatasi dan memulihkan kesalahan dan masalah (bug) teknis.
 
-Untuk mendapatkan informasi tambahan tentang jenis Informasi pribadi yang digunakan, lihat [grafik ini](#2) di dalam bagian utama Kebijakan Privasi.
+Untuk informasi tambahan tentang kegunaan masing-masing jenis informasi pribadi, lihat [grafik ini](#2) dalam bagian utama dari Kebijakan Privasi.
 
 Kami mengungkapkan informasi pribadi kepada jenis entitas berikut ini:
 
@@ -323,13 +327,13 @@ Kami mengungkapkan informasi pribadi kepada jenis entitas berikut ini:
     - kategori sumber tempat informasi pribadi dikumpulkan;
     - tujuan pengumpulan informasi pribadi tentang Anda;
     - kategori pihak ketiga kepada siapa kami mengungkapkan informasi pribadi tentang Anda dan kategori informasi pribadi yang diungkapkan (jika relevan) dan tujuan pengungkapan informasi pribadi tentang Anda; dan
-    - jenis informasi pribadi khusus yang kami kumpulkan tentang Anda;
+    - jenis informasi pribadi spesifik yang kami kumpulkan mengenai Anda;
 - Meminta agar kami menghapus informasi pribadi yang telah kami kumpulkan dari Anda, kecuali CCPA mengakui pengecualian; dan
 - Bebas dari diskriminasi yang melanggar hukum untuk menggunakan hak-hak Anda, termasuk memberikan tingkat atau kualitas layanan yang berbeda, atau menolak barang atau layanan kepada Anda saat Anda menggunakan hak-hak Anda berdasarkan CCPA.   
 
 Kami bertujuan untuk memenuhi semua permintaan terverifikasi dalam waktu 45 hari sesuai dengan ketentuan CCPA.  Apabila diperlukan, perpanjangan selama 45 hari tambahan akan disertai dengan penjelasan untuk penundaan tersebut.
 
-***Cara Melaksanakan Hak-Hak Anda***
+***Cara Menggunakan Hak-Hak Anda***
 
 Pertama, Anda dapat masuk ke akun Anda dan mengelola data Anda dari akun tersebut. Jika Anda merupakan penduduk California tempat CCPA diterapkan, Anda dapat menggunakan hak-hak Anda, jika ada, untuk data lainnya dengan menghubungi kami di cloudlegalnotices@tencent.com.
 
@@ -343,12 +347,12 @@ Ketika kami menggunakan informasi pribadi berdasarkan izin Anda, izin yang sudah
 
 *Persetujuan Orang Tua dan Wali*
 
-Jika Anda berusia di bawah 18 tahun, Anda dilarang menggunakan Layanan untuk tujuan apa pun tanpa terlebih dahulu mendapatkan persetujuan orang tua/wali atas Kebijakan Privasi ini (baik untuk mereka sendiri maupun atas nama Anda). Kami tidak akan dengan sengaja mengumpulkan informasi pribadi dari anak di bawah usia 18 tahun tanpa persetujuan. Silakan hubungi Petugas Perlindungan Data kami jika Anda yakin kami memiliki informasi pribadi dari anak di bawah usia 18 tahun tanpa persetujuan orang tua/wali, kami akan segera menyelidiki (dan menghapus) informasi pribadi tersebut.
+Jika Anda berusia di bawah 18 tahun, Anda dilarang menggunakan Layanan untuk tujuan apa pun tanpa terlebih dahulu mendapatkan persetujuan orang tua/wali atas Kebijakan Privasi ini (baik untuk mereka sendiri maupun atas nama Anda). Kami tidak akan dengan sengaja mengumpulkan informasi pribadi dari anak di bawah usia 18 tahun tanpa persetujuan. Hubungi Petugas Perlindungan Data kami jika Anda meyakini bahwa kami memiliki informasi pribadi dari anak di bawah usia 18 tahun tanpa persetujuan orang tua/wali – kami akan segera menyelidiki (dan menghapus) informasi pribadi tersebut.
 
 ### KANADA 
 
 Selain informasi yang diberikan di bagian Kebijakan Privasi ini, kami dapat menyimpan informasi pribadi Anda di dalam dan di luar Kanada, termasuk di Singapura dan Hong Kong.  
-Jika Anda: (i) memiliki pertanyaan atau komentar tentang Kebijakan Privasi, (ii) ingin memperoleh informasi tertulis tentang Kebijakan Privasi; (iii) jika Anda perlu melaporkan masalah, atau jika Anda ingin kami memperbarui, mengubah, atau meminta penghapusan informasi yang kami miliki tentang Anda, silakan hubungi Chief Privacy Officer kami (atau departemen yang bertanggung jawab atas perlindungan data pribadi) di cloudlegalnotices@tencent.com.
+Jika Anda: (i) memiliki pertanyaan atau komentar tentang Kebijakan Privasi, (ii) ingin memperoleh informasi tertulis tentang Kebijakan Privasi; (iii) jika Anda perlu melaporkan masalah, atau jika Anda ingin kami memperbarui, mengubah, atau meminta penghapusan informasi yang kami miliki tentang Anda, silakan hubungi Kepala Petugas Privasi kami (atau departemen yang bertanggung jawab atas perlindungan data pribadi) di cloudlegalnotices@tencent.com.
 
 ### MESIR
 Harap dicatat bahwa layanan ini hanya tersedia untuk pengguna di atas 18 tahun. Jika Anda berada di bawah usia ini, Anda hanya memenuhi syarat untuk menggunakan layanan ini jika Anda mendapatkan persetujuan orang tua atau wali. 
@@ -357,9 +361,9 @@ Apabila Anda tidak setuju terhadap pemrosesan informasi pribadi Anda sebagaimana
 
 Dengan melanjutkan proses pendaftaran, Anda menyatakan bahwa Anda telah membaca, memahami, dan menyetujui Kebijakan Privasi ini. Jika Anda tidak menyetujui Kebijakan Privasi ini, Anda tidak dapat menggunakan layanan. 
 
-Anda menyatakan izin Anda untuk pemrosesan, penyimpanan, dan transfer lintas batas negara dari data pribadi Anda. Transfer lintas batas dapat terjadi ke negara mana pun di mana kami memiliki database atau afiliasi, termasuk yang berada di luar Mesir (lihat Jenis Informasi Pribadi yang Kami Kumpulkan dan Proses untuk informasi lebih lanjut).
+Anda menyatakan izin Anda untuk pemrosesan, penyimpanan, dan transfer lintas batas negara dari data pribadi Anda. Transfer lintas batas dapat terjadi ke negara mana pun di mana kami memiliki database atau afiliasi, termasuk yang berada di luar Mesir (lihat Jenis Informasi Pribadi yang Kami Kumpulkan dan Proses untuk informasi selengkapnya).
 
-Jika Anda adalah pengguna baru, Anda diberi waktu tujuh hari untuk menginformasikan kami tentang keberatan apa pun terhadap Kebijakan Privasi ini. 
+Jika Anda adalah pengguna baru, Anda diberikan waktu tujuh hari untuk menginformasikan kami tentang keberatan apa pun terhadap Kebijakan Privasi ini. 
 
 Sebagai subjek data Mesir, Anda memiliki hak tertentu dalam Undang-Undang Perlindungan Data Pribadi Mesir.
 
@@ -369,7 +373,7 @@ Sebagai subjek data Mesir, Anda memiliki hak tertentu dalam Undang-Undang Perlin
 
 *Petunjuk untuk pemrosesan data pribadi Anda setelah kematian Anda.*
 
-Anda memiliki hak untuk memberi kami instruksi umum atau spesifik untuk penyimpanan, penghapusan, dan komunikasi data pribadi Anda setelah kematian Anda.
+Anda memiliki hak untuk memberi kami instruksi umum atau spesifik untuk penyimpanan, penghapusan, dan komunikasi atas data pribadi Anda setelah kematian Anda.
 
 Instruksi khusus tersebut hanya berlaku untuk kegiatan pemrosesan yang disebutkan di dalamnya dan pemrosesan instruksi ini tunduk pada persetujuan khusus Anda.
 
@@ -381,11 +385,11 @@ Jika Anda ingin membuat instruksi tersebut, silakan hubungi kami di **cloudlegal
 
 ### India
 
-*Informasi Pribadi yang Sifatnya Sensitif*
+*Informasi Pribadi Sensitif*
 
-Informasi Pribadi yang Sifatnya Sensitif berarti kata sandi, informasi keuangan (seperti akun bank atau kartu kredit atau kartu debit atau detail alat pembayaran lainnya), data biometrik, kesehatan fisik atau mental, kehidupan seks atau orientasi seksual, dan/atau catatan atau riwayat medis, dan informasi serupa, tetapi tidak mencakup informasi yang tersedia di domain publik, atau disediakan berdasarkan hukum India, termasuk Right to Information Act (Undang-undang Hak atas Informasi), 2005.
+Informasi Pribadi Bersifat Sensitif berupa kata sandi, informasi keuangan (seperti akun bank atau kartu kredit atau kartu debit atau detail alat pembayaran lainnya), data biometrik, kesehatan fisik atau mental, kehidupan seks atau orientasi seksual, dan/atau catatan atau riwayat medis, dan informasi serupa, tetapi tidak mencakup informasi yang tersedia di domain publik, atau disediakan berdasarkan hukum India, termasuk *Right to Information Act* (Undang-undang Hak atas Informasi), 2005.
 
-*Berbagi Informasi Pribadi Anda yang Sifatnya Sensitif*
+*Berbagi Informasi Pribadi Sensitif Anda*
 
 Apabila kami mengizinkan pihak ketiga untuk mengumpulkan dan menggunakan Informasi Pribadi Sensitif Anda, kami akan mengambil langkah-langkah yang wajar untuk memastikan bahwa pihak ketiga tidak mengungkapkan Informasi Pribadi Sensitif lebih lanjut.
 
@@ -410,7 +414,7 @@ Dengan klik "setuju", Anda menyetujui transfer informasi lintas perbatasan ke ne
 
 *Hak-Hak Anda*
 
-Anda dapat meminta kami memberi tahu Anda tentang tujuan penggunaan, pengungkapan, melakukan koreksi apa pun, penghentian penggunaan atau penyediaan, dan/atau penghapusan setiap dan semua informasi pribadi Anda yang kami simpan, sejauh yang diatur oleh the Act on the Protection of Personal Information (Undang-undang Perlindungan Informasi Pribadi) di Jepang. Jika Anda ingin membuat permintaan tersebut, silakan hubungi kami di **cloudlegalnotices@tencent.com**.
+Anda dapat meminta kami memberi tahu Anda tentang tujuan penggunaan, pengungkapan, melakukan koreksi apa pun, penghentian penggunaan atau penyediaan, dan/atau penghapusan setiap dan semua informasi pribadi Anda yang kami simpan, sejauh yang diatur oleh *Act on the Protection of Personal Information* (Undang-undang Perlindungan Informasi Pribadi) di Jepang. Jika Anda ingin membuat permintaan tersebut, silakan hubungi kami di **cloudlegalnotices@tencent.com**.
 
 ### MALAYSIA 
 
@@ -418,28 +422,28 @@ Jika Anda ingin menggunakan Layanan, Anda akan diminta untuk memberikan data pri
 
 *Bahasa Kebijakan Privasi ini*
 
-Dalam hal terdapat perbedaan atau ketidakkonsistenan antara versi bahasa Inggris dan Bahasa Melayu, versi bahasa Inggris yang akan berlaku.
+Dalam hal terdapat perbedaan atau ketidakkonsistenan antara versi bahasa Inggris dan Bahasa Melayu untuk Kebijakan Privasi ini, versi bahasa Inggris yang akan berlaku.
 
 *Persetujuan Orang Tua dan Wali*
 
 Apabila Anda berusia di bawah 18 tahun, mohon untuk tidak menggunakan Layanan. 
 
-Apabila Anda menyetujui Kebijakan Privasi ini untuk anak di bawah umur dapat mengakses dan menggunakan Layanan, Anda dengan ini menyetujui pemberian Informasi pribadi anak di bawah umur untuk diproses sesuai dengan Kebijakan Privasi ini dan Anda secara pribadi setuju dan sepakat untuk terikat pada ketentuan-ketentuan di dalam Kebijakan Privasi ini. Selanjutnya, Anda dengan ini menyetujui untuk bertanggung jawab atas tindakan anak di bawah umur tersebut, dan kepatuhan anak di bawah umur tersebut terhadap Kebijakan Privasi ini.
+Apabila Anda menyetujui Kebijakan Privasi ini untuk anak di bawah umur dapat mengakses dan menggunakan Layanan, Anda dengan ini menyetujui pemberian informasi pribadi anak di bawah umur untuk diproses sesuai dengan Kebijakan Privasi ini dan Anda secara pribadi setuju dan sepakat untuk terikat pada ketentuan-ketentuan di dalam Kebijakan Privasi ini. Selanjutnya, Anda dengan ini menyetujui untuk bertanggung jawab atas tindakan anak di bawah umur tersebut, dan kepatuhan anak di bawah umur tersebut terhadap Kebijakan Privasi ini.
 
 *Hak Subjek Data*
 
-*Hak akses*: Anda berhak untuk meminta akses ke dan mendapatkan salinan informasi pribadi Anda yang telah kami kumpulkan dan sedang diproses oleh atau atas nama kami. Kami berhak untuk mengenakan biaya untuk menyediakan akses informasi pribadi Anda dalam jumlah yang ditetapkan berdasarkan hukum. 
+*Hak akses*: Anda memiliki hak untuk meminta akses dan memperoleh salinan informasi pribadi Anda yang telah kami kumpulkan dan sedang diproses oleh atau atas nama kami. Kami berhak untuk mengenakan biaya untuk menyediakan akses informasi pribadi Anda dalam jumlah yang ditetapkan berdasarkan hukum. 
 
 Pada saat menangani permintaan akses data, kami diizinkan untuk meminta informasi tertentu untuk memverifikasi identitas pemohon untuk memastikan bahwa dia adalah orang yang secara hukum berhak membuat permintaan akses data tersebut.
 
-*Hak perbaikan*: Anda dapat meminta perbaikan informasi pribadi Anda. Pada saat menangani permintaan perbaikan data, kami diizinkan untuk meminta informasi tertentu untuk memverifikasi identitas pemohon untuk memastikan bahwa dia adalah orang yang secara hukum berhak membuat permintaan perbaikan data tersebut.
+*Hak perbaikan*: Anda dapat meminta perbaikan atas informasi pribadi Anda. Pada saat menangani permintaan perbaikan data, kami diizinkan untuk meminta informasi tertentu untuk memverifikasi identitas pemohon untuk memastikan bahwa dia adalah orang yang secara hukum berhak membuat permintaan perbaikan data tersebut.
 
-*Hak untuk membatasi pemrosesan informasi pribadi Anda*: Anda dapat meminta pembatasan pemrosesan informasi pribadi Anda melalui detail kontak yang disediakan di atas. Akan tetapi, hal ini dapat memengaruhi penyediaan Layanan kami kepada Anda. 
+*Hak untuk membatasi pemrosesan informasi pribadi Anda*: Anda dapat meminta untuk memberlakukan pembatasan atas pemrosesan informasi pribadi Anda dengan menggunakan detail kontak yang disediakan di atas. Akan tetapi, hal ini dapat memengaruhi penyediaan Layanan kami kepada Anda. 
 
-*Nomor*
+*Kontak*
 
-Untuk melindungi informasi pribadi Anda dan menangani keluhan yang berkaitan dengan informasi pribadi Anda, kami telah menunjuk departemen berikut ini yang bertanggung jawab untuk mengelola dan melindungi informasi pribadi Anda. 
- - Petugas perlindungan data kami bertanggung jawab atas manajemen dan keamanan Informasi pribadi Anda
+Untuk melindungi informasi pribadi Anda dan menangani keluhan yang berkaitan dengan informasi pribadi Anda, kami telah menunjuk departemen yang bertanggung jawab berikut ini untuk mengelola dan melindungi informasi pribadi Anda. 
+ - Pejabat perlindungan data kami bertanggung jawab atas manajemen dan keamanan Informasi pribadi Anda
     - Telepon: +603-22872388
     - Email: **cloudlegalnotices@tencent.com**.
 
@@ -481,7 +485,7 @@ Anda berhak atas hak-hak berikut, sejauh yang diberikan oleh hukum yang berlaku:
 
 Dengan menyetujui Kebijakan Privasi ini, Anda memberi persetujuan kepada kami untuk:
  - mengumpulkan dan memproses informasi pribadi Anda seperti yang dijelaskan di bagian “[Cara Kami Menggunakan Informasi Pribadi Anda](#2)”;
- - membagikan informasi pribadi Anda dengan pihak ketiga, perusahaan dalam grup perusahaan kami, dan pihak ketiga yang mengakuisisi secara substansial kami semua atau bisnis kami, sebagaimana dijelaskan dalam Kebijakan Privasi ini dan untuk tujuan yang dinyatakan di sini; dan
+ - berbagi informasi pribadi Anda dengan pihak ketiga, perusahaan dalam grup korporasi kami , dan pihak ketiga yang memperoleh semua atau sebagian data dari kami atau bisnis kami, sebagaimana dijelaskan dalam Kebijakan Privasi ini dan untuk tujuan yang dinyatakan di sini; dan
  - mentransfer atau menyimpan informasi pribadi Anda di tujuan di luar Filipina ketika pemrosesan harus terjadi di luar Filipina, seperti yang dijelaskan di bagian “[Cara Kami Menyimpan dan Membagikan Informasi Pribadi Anda](#3)”.
 
 ### ARAB SAUDI 
@@ -499,15 +503,15 @@ Harap dicatat bahwa kami mungkin menyimpan informasi pribadi jika ada dasar huku
 
 ### Thailand
 
-Anda menyatakan bahwa Anda telah membaca, memahami, dan menyetujui Kebijakan Privasi ini. Apabila Anda tidak menyetujui Kebijakan Privasi ini, Anda tidak diperbolehkan untuk menggunakan Layanan.
+Anda menyatakan bahwa Anda telah membaca, memahami, dan menyetujui Kebijakan Privasi ini. Apabila Anda tidak menyetujui Kebijakan Privasi ini, Anda dilarang untuk menggunakan Layanan.
 
-Anda dapat meminta kami untuk menghentikan, membatasi penggunaan atau penyediaan, dan/atau meminta portabilitas data untuk segala dan semua informasi pribadi yang kami simpan, sejauh yang diatur oleh Undang-undang tentang peraturan privasi data yang berlaku di Thailand, termasuk Personal Data Protection Act (Undang-undang Perlindungan Data Pribadi) Thailand. Jika Anda ingin membuat permintaan tersebut, silakan hubungi kami di **cloudlegalnotices@tencent.com**.
+Anda dapat meminta kami untuk menghentikan, membatasi penggunaan atau penyediaan, dan/atau meminta portabilitas data untuk segala dan semua informasi pribadi yang kami simpan, sejauh yang diatur oleh Undang-undang tentang peraturan privasi data yang berlaku di Thailand, termasuk *Personal Data Protection Act* (Undang-undang Perlindungan Data Pribadi) Thailand. Jika Anda ingin membuat permintaan tersebut, silakan hubungi kami di **cloudlegalnotices@tencent.com**.
 
 Kami akan memberikan Anda email pemberitahuan terhadap segala perubahan dalam Kebijakan Privasi ini, dan memberikan Anda kesempatan untuk menolak perubahan tersebut, yang jika tidak dilakukan berarti perubahan akan berlaku sebagaimana disebutkan dalam pemberitahuan.
 
 ### TURKI
 
-Perwakilan Pengontrol Data kami di Turki adalah Özdağıstanli Ekici Avukatlık Ortaklığı untuk keperluan kepatuhan terhadap Turkish Law on Personal Data Protection Law (Undang-undang Perlindungan Data Pribadi Turki) (“**DPL**”) dan peraturan tambahannya, serta dapat dihubungi di tencent@iptech-legal.com. Mohon masukan kata “Turki” di dalam judul email Anda.
+Perwakilan Pengontrol Data kami di Turki adalah Özdağıstanli Ekici Avukatlık Ortaklığı untuk keperluan kepatuhan terhadap *Turkish Law on Personal Data Protection Law* (Undang-undang Perlindungan Data Pribadi Turki) (“**DPL**”) dan peraturan tambahannya, serta dapat dihubungi di tencent@iptech-legal.com. Mohon masukan kata “Turki” di dalam judul email Anda.
 
 Layanan kami tidak ditujukan untuk anak-anak. Anak-anak tidak boleh menggunakan Layanan untuk tujuan apa pun. Kami tidak akan secara sadar mengizinkan siapa pun yang berusia di bawah 18 tahun untuk mendaftar ke Layanan kami dan/atau memberikan informasi identifikasi pribadi apa pun. Kami akan meminta persetujuan orang tua untuk anak-anak di bawah usia 18 tahun untuk setiap pemrosesan data pribadi mereka.
 
@@ -532,13 +536,13 @@ Hak-hak ini tidak mutlak.
 
 Layanan kami tidak ditujukan untuk anak-anak. Anak-anak tidak boleh menggunakan Layanan untuk tujuan apa pun. Kami tidak akan secara sadar mengizinkan siapa pun yang berusia di bawah 21 tahun untuk mendaftar ke Layanan kami dan/atau memberikan informasi identifikasi pribadi apa pun. Pengguna di bawah 21 tahun perlu mendapatkan perintah pengadilan yang relevan untuk menggunakan Layanan.
 
-Kami dapat secara suka rela melaporkan insiden terkait keamanan dunia maya apabila dianggap sebagai kejahatan berdasarkan undang-undang UAE (sebagai contoh berdasarkan UAE Cybercrime Law). Peristiwa tersebut dapat dilaporkan kepada otoritas terkait untuk tujuan penyelidikan. Perlu diperhatikan bahwa laporan sukarela insiden terkait keamanan dunia maya juga dapat disampaikan kepada UAE Computer Emergency Response Team (“CERT”). CERT adalah organisasi yang memiliki pengetahuan terkait keamanan yang memberikan proses untuk peristiwa logging dan memberikan nasihat terkait adanya ancaman keamanan dunia maya di UAE. 
+Kami dapat secara sukarela melaporkan insiden terkait keamanan dunia maya apabila hal tersebut dianggap sebagai kejahatan berdasarkan undang-undang UEA (sebagai contoh berdasarkan *UAE Cybercrime Law* ). Peristiwa tersebut dapat dilaporkan kepada otoritas terkait untuk tujuan penyelidikan. Perlu diperhatikan bahwa laporan sukarela insiden terkait keamanan dunia maya juga dapat disampaikan kepada *UAE Computer Emergency Response Team* (“CERT”). CERT merupakan organisasi yang memiliki pengetahuan terkait keamanan yang menyediakan proses untuk insiden logging dan memberikan saran terkait adanya ancaman keamanan dunia maya di UEA. 
 
 ### VIETNAM 
 
 Dengan menerima Kebijakan Privasi ini, Anda secara tegas menyetujui dan mengizinkan kami untuk mengumpulkan, menggunakan, menyimpan, dan memproses informasi pribadi Anda, termasuk, secara sah mengungkapkan dan mentransfernya ke pihak ketiga, sebagaimana dijelaskan di dalam Kebijakan Privasi ini.
 
-Kami menjunjung standar internasional dan praktik keamanan untuk perlindungan data. Jika informasi pribadi ditransfer di dalam atau di luar yurisdiksi tempat tinggal Anda, informasi tersebut akan tunduk pada praktik keamanan dan perlindungan data dengan tingkat yang sama atau lebih tinggi oleh entitas penerima sebagaimana yang kami patuhi.    
+Kami mematuhi standar internasional dan praktik keamanan untuk perlindungan data. Jika informasi pribadi ditransfer di dalam atau di luar yurisdiksi tempat tinggal Anda, informasi tersebut akan tunduk pada praktik keamanan dan perlindungan data dengan tingkat yang sama atau lebih tinggi oleh entitas penerima sebagaimana yang kami patuhi.    
 
 Apabila kami mengizinkan pihak ketiga untuk mengumpulkan dan menggunakan informasi pribadi Anda, kami akan mengambil langkah-langkah yang wajar untuk memastikan bahwa pihak ketiga tidak mengungkapkan informasi pribadi lebih lanjut. 
 
@@ -570,14 +574,18 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
-19.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+19.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45407).
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
-21.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
+21.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
-23.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590).
-24.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45788).
-25.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45791).
-26.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45794).
-27.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45797).
-28.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
-29.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
+23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
+24.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45476).
+25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590).
+26.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45788).
+27.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45791).
+28.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45794).
+29.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45797).
+30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
+31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
+32.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45938).
+33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).

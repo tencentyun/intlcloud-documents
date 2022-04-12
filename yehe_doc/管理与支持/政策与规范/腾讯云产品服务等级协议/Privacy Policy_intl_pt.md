@@ -69,9 +69,9 @@ Você pode entrar em contato com nosso encarregado de proteção de dados em **c
 
 Coletaremos e usaremos as seguintes informações sobre você:
 
--   **Informações que você nos fornece.** Você pode nos fornecer suas informações fazendo uma pergunta sobre nossos Serviços, usando nossos Serviços ou se correspondendo conosco por telefone, e-mail ou de outra forma. Isso abrange informações que você fornece quando se cadastra em nossos Serviços (ou como cliente comercial, atua como o representante comercial da empresa que se registrar em Serviços), tais como seu nome, nome de usuário, endereço de e-mail, identificação de foto, informações do cartão de crédito, número de telefone e outras informações que nos ajudam a registrá-lo para usar nossos Serviços.
+-   **Informações que você nos fornece.** Você pode nos fornecer suas informações fazendo uma pergunta sobre nossos Serviços, usando nossos Serviços ou entrando em contato conosco por telefone, e-mail ou de outra forma. Isso abrange informações que você fornece quando se cadastra em nossos Serviços (ou para cliente comercial, atua como o representante comercial da empresa que se registrar em Serviços), tais como seu nome, nome de usuário, endereço de e-mail, endereço IP, APPID, UIN, ID do dispositivo, ID da Tencent Cloud, identificação de foto, informações do cartão de crédito, número de telefone e outras informações que nos ajudam a registrá-lo para usar nossos Serviços.
 
--   **Informações que coletamos sobre você quando usa nossos Serviços.** Coletamos automaticamente determinadas informações suas quando você usa nossos Serviços por meio do portal Tencent Cloud da Web, incluindo endereço IP, agente do usuário e ID do dispositivo, além de informações referentes ao uso que você faz de nossos serviços, como nosso log de suas visitas, solicitações de acesso do site, uploads e downloads.
+-   **Informações que coletamos sobre você quando usa nossos Serviços.** Coletamos automaticamente determinadas informações suas quando você usa nossos Serviços por meio do portal Tencent Cloud da web, incluindo endereço IP, agente do usuário e ID do dispositivo, além de informações referentes ao uso que você faz de nossos serviços, como nosso log de suas visitas, solicitações de acesso do site, uploads e downloads.
 
 - **Informações que obtemos de terceiro**. A Tencent Cloud permite que os administradores da conta de usuário determinem os direitos de acesso. Ao fazer isso, o administrador de seus Serviços (que pode ser você) pode incluir os endereços de e-mail de outras pessoas que devem ter acesso aos Serviços segundo essa conta. Se você é o administrador da conta, reconhece e se compromete conosco que tem o consentimento da pessoa em questão para fornecer seu endereço de e-mail para este fim.
 
@@ -79,9 +79,9 @@ Coletaremos e usaremos as seguintes informações sobre você:
 
 #### Cookies
 
-Usamos cookies e outras tecnologias similares (por exemplo, Web beacons, Flash cookies etc.) ("**Cookies**") para melhorar sua experiência de uso dos Serviços. Cookies são pequenos arquivos que, quando armazenados em seu dispositivo, nos permitem fornecer determinados recursos e funcionalidades.
+Usamos cookies e outras tecnologias similares (por exemplo, web beacons, flash cookies etc.) ("**Cookies**") para melhorar sua experiência de uso dos Serviços. Cookies são pequenos arquivos que, quando armazenados em seu dispositivo, nos permitem fornecer determinados recursos e funcionalidades.
 
-Você tem a opção de permitir a instalação desses Cookies ou de desabilitá-los posteriormente. Você poderá aceitar todos os Cookies, ou instruir o navegador da Web a notificar quando ocorrer instalação de Cookies, ou poderá recusar-se a aceitar todos os Cookies fazendo o ajuste da função relacionada no navegador da Web em seu computador. No entanto, no caso de sua recusa em instalar cookies, a Tencent Cloud pode ser impedida de fornecer alguns de seus Serviços que estão disponíveis para você.
+Você tem a opção de permitir a instalação desses cookies ou de desabilitá-los posteriormente. Você poderá aceitar todos os cookies, ou instruir o navegador da web a notificar quando ocorrer instalação de cookies, ou poderá recusar-se a aceitar todos os cookies fazendo o ajuste da função relacionada no navegador da web em seu computador. No entanto, no caso de sua recusa em instalar cookies, a Tencent Cloud pode ser impedida de fornecer alguns de seus Serviços que estão disponíveis para você.
 
 Para obter mais informações sobre os cookies que usamos, consulte nossa [Política de Cookies](https://intl.cloud.tencent.com/document/product/301/17346).
 
@@ -90,25 +90,26 @@ Para obter mais informações sobre os cookies que usamos, consulte nossa [Polí
 Nossos serviços não se destinam a crianças. As crianças não devem usar o Serviço para nenhuma finalidade. Não permitiremos intencionalmente que qualquer pessoa menor de 14 anos se registre em nossos serviços e/ou forneça qualquer informação de identificação pessoal. Se você tiver menos de 14 anos, não se inscreva para uso de nossos Serviços nem forneça qualquer informação sobre você mesmo através do Serviço.
 
 <span id="2"></span>
-### Como utilizamos suas informações pessoais
+### Como usamos suas informações pessoais
 
 Usaremos as informações das seguintes formas e de acordo com as seguintes bases legais:
 
-| **Informações pessoais**                                     | **Finalidade do Uso**                                           | **Base legal para processamento (aplicável somente para AEE e Reino Unido)** |
+| **Informações Pessoais**                                     | **Finalidade do Uso**                                           | **Base legal para processamento (aplicável somente para AEE e Reino Unido)** |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Localização, nome, endereço de e-mail, endereço IP, agente do usuário (ou navegador do site), ID do dispositivo e ID da nuvem Tencent, endereço (incluindo cidade e código postal), data de nascimento e senha (obrigatório) | Nós usamos essas informações  para:   <br/>· criar sua conta Tencent Cloud de acordo com sua solicitação;   <br/> · permitir redefinições de senha;   <br/> · fornecer-lhe suporte de usuário; e  <br/> · fazer cumprir nossos termos, condições e políticas. | Processamos essas  informações conforme necessário para cumprirmos nosso contrato  fornecendo nossos Serviços a você. |
-| Número do dispositivo móvel, endereço de e-mail (obrigatório)                   | Utilizamos essas informações:    <br/>· para verificar sua conta na Tencent Cloud;    <br/>· para proteção de segurança (se você ativar verificação da conta, será  usada para lhe enviar alertas por SMS e códigos de autenticação em dois fatores sempre que você  modificar senhas da conta, endereços de e-mail etc.);    <br/>· para notificações de produtos;    <br/>· para confirmações de pedidos; e    <br/>· para informações de serviços (por exemplo, informações de saldo da conta e para nos  comunicarmos com você quando o saldo em sua conta estiver baixo). | É do nosso interesse  legítimo verificar sua identidade e nos comunicarmos com você sobre os  Serviços. |
+| Local, nome, endereço de e-mail, endereço IP, agente de usuário (ou navegador da web), ID do dispositivo e ID da Tencent Cloud, endereço (incluindo cidade e código postal), APPID, UNI e nome de usuário  (Obrigatório) | Nós usamos essas informações  para:   <br/>· criar sua conta Tencent Cloud de acordo com sua solicitação e/ou verificar se você tem uma conta;   <br/> · permitir redefinições de senha;   <br/> · fornecer suporte ao usuário;  <br/> · registrar transações ou fornecer confirmações de pedidos; e  <br/> · fazer cumprir nossos termos, condições e políticas. | Processamos essas  informações conforme necessário para cumprirmos nosso contrato com você de  fornecer nossos Serviços. |
+| Número do dispositivo móvel, endereço de e-mail, endereço (Obrigatório)                   | Utilizamos essas informações:    <br/>· para verificar sua conta na Tencent Cloud;    <br/>· para proteção de segurança (se você ativar verificação da conta, será  usada para lhe enviar alertas por SMS e códigos de autenticação em dois fatores sempre que você  modificar senhas da conta, endereços de e-mail etc.);    <br/>· para notificações de produtos;    <br/>· para confirmações de pedidos; e    <br/>· para informações de serviços (por exemplo, informações de saldo da conta e para nos  comunicarmos com você quando o saldo em sua conta estiver baixo). | É do nosso interesse  legítimo verificar sua identidade e nos comunicarmos com você sobre os  Serviços. |
 | Documento de identificação com foto (por exemplo, carteira de motorista ou passaporte) Nome e Endereço (Obrigatório) | Se você optar por usar  servidores localizados na RPC (exceto Hong Kong (China), Macau (China) e  Taiwan (China)) para os Serviços, usamos seu documento de identificação com foto (ou, caso você seja um  cliente corporativo, a documentação corporativa) para garantir que sua conta tenha  verificação legal de acordo com a legislação local. | É do nosso interesse  legítimo processar esses dados para garantir que você esteja apto a ativar o serviço  para uso nas jurisdições onde este é um requisito legal. |
 | Informações de cartão de crédito (número do cartão, nome, data de validade, código de segurança) (Obrigatório) | Usamos as informações do seu cartão de crédito para processar pagamentos feitos por você para uso dos Serviços. | Processamos essas  informações conforme necessário para que possamos executar nosso contrato com você e para  facilitar o pagamento pelos Serviços. |
 | Registros de transações (tais como data e horário do pagamento pelos serviços) (Obrigatório) | Fornecemos acesso aos  seus Registros de transações para que você possa acompanhar seu histórico de transações. | Processamos essas informações  como necessário para executarmos nosso contrato com você para  gerenciar pagamentos referentes aos Serviços. |
 | Dados de log, Metadata, endereço IP, Tíquetes de usuário, agente de usuário, data e hora de acesso, cada visita à URL dentro do site da Tencent Cloud, seja diretamente ou por indicação de sites de terceiros (Opcional) | Usamos essas informações  para estratégia e melhoria dos Serviços e para análises. | É do nosso legítimo  interesse melhorar nossa e estratégia e Serviços. |
 | Tíquete de Atendimento ao Cliente/Conteúdo de Bate-papo, Endereço IP, ID da Tencent Cloud, detalhes de incidentes e etapas de resposta (Obrigatório) | Nós usamos essas informações  para:   <br/>· tratar de suas preocupações e queixas sobre os Serviços; e    <br/>· melhorar e administrar nossos Serviços e para operações internas, incluindo  resolução de problemas, análises de dados, testes, pesquisa, estatísticas e finalidade de  pesquisas e para manter nossos Serviços seguros e protegidos. | É de nosso interesse  legítimo melhorar nossos Serviços e fornecer suporte relacionado aos  Serviços que lhe são fornecidos. |
 | Log e metadados em relação a incidentes (Opcional)        | Usamos essas informações  para melhorar nossos Serviços e respostas. | É de nosso interesse  legítimo melhorar nossos Serviços e respostas. |
-| Dados de consulta (dados fornecidos quando você envia uma consulta via formulário de contato do site ou como parte de uma consulta de vendas), incluindo: seu nome, e-mail, número de telefone, nome da empresa, serviço comercial, local e detalhes de sua consulta (Obrigatório) | Usamos essas informações  para responder à sua solicitação.         | É de nosso interesse  legítimo processar essas informações conforme necessário para responder à sua  solicitação. |
+| Dados de consulta (dados fornecidos quando você envia uma consulta via formulário de contato do site ou como parte de uma consulta de vendas), incluindo: seu nome, e-mail, número de telefone, UIN, prioridade da consulta ou ticket, configurações de lembrete, nome da empresa, serviço comercial, local e detalhes de sua consulta ou qualquer informação adicional fornecida por você (Obrigatório) | Usamos essas informações  para responder à sua solicitação.         | É de nosso interesse  legítimo processar essas informações conforme necessário para responder à sua  solicitação. |
 | Dados de consulta de suporte técnico (dados fornecidos quando você envia uma solicitação de suporte técnico), incluindo seu nome, e-mail, número de telefone, o tipo de sua pergunta e os detalhes de sua consulta (Obrigatório) | Usamos essas informações para responder à sua solicitação. | É de nosso interesse legítimo processar essas informações conforme necessário para responder à sua solicitação. |
-| Dados de contato promocionais: Nome, e-mail, número de telefone, nome da empresa, serviço comercial, localização e detalhes de sua consulta (Opcional) | Usamos essas informações  para promover nossos produtos e serviços a você. | Processamos essas informações com seu consentimento. Você pode retirar esse consentimento a qualquer momento. |
-| Dados de marketing: nome, e-mail comercial, número de telefone, nome da empresa, país/região, setor e cargo (Obrigatório) | Utilizamos essas informações: <br/>· para reservar uma vaga para você em nossos eventos on-line e webinars<br/>· para notificações de produtos; e<br/>· para confirmação de pedidos. | Processamos essas informações com seu consentimento. Você pode retirar esse consentimento a qualquer momento. |
-| Nome, endereço de e-mail, código do país, número de telefone, nome da empresa, serviço empresarial, consulta (Obrigatório) | Utilizamos essas informações: <br/>· para processar sua solicitação para o Programa de Suporte a Recursos em Nuvem da COVID-19;<br/>· para responder a solicitações de nossos produtos; <br/>· para notificações de produtos; e <br/>· para confirmação de pedidos.  | Processamos essas informações de acordo com o contrato que temos com você para fornecer o suporte. |
+| Dados de contato promocionais: nome, e-mail, número de telefone, nome da empresa, serviço comercial, localização e detalhes de sua consulta (Opcional) | Nós usamos essas informações  para: <br/>·  promover nossos produtos e serviços para você; e para enviar-lhe comunicações de marketing direto através de nós ou de nossos parceiros terceirizados. | Processamos essas informações com seu consentimento. Você pode retirar esse consentimento a qualquer momento. |
+| Dados de marketing: nome, e-mail comercial, número de telefone, nome da empresa, país/região e indústria (Obrigatório) | Utilizamos essas informações: <br/>· para reservar uma vaga para você em nossos eventos on-line e webinars<br/>· para notificações de produtos; e <br/>· para confirmação de pedidos.| Processamos essas informações com seu consentimento. Você pode retirar esse consentimento a qualquer momento. |
+| Nome, endereço de e-mail, código do país, número de telefone, nome da empresa, serviço empresarial, consulta (Obrigatório) | Utilizamos essas informações: <br/>· para processar sua solicitação para o Programa de Suporte a Recursos em Nuvem da Covid-19;<br/>· para responder a solicitações de nossos produtos; <br/>· para notificações de produtos; e <br/>· para confirmação de pedidos.  | Processamos essas informações de acordo com o contrato que temos com você para fornecer o suporte. |
+| Nome, endereço de e-mail, código do país, número de telefone e nome da empresa (Obrigatório)  |  Usamos essas informações para comunicar (seja através de nós ou de nossos parceiros de terceiros) com você, a fim de entender produtos e serviços que possam lhe interessar e explorar potenciais oportunidades de negócios com você.  | É do nosso interesse legítimo processar tais dados para manter um relacionamento com você e entender melhor as necessidades do seu negócio.  |
 
 <span id="3"></span>
 ### Como compartilhamos e armazenamos suas informações pessoais
@@ -131,7 +132,7 @@ Na medida em que os dados são transferidos para fora da AEE ou do Reino Unido p
 
     -   proteger os direitos, propriedades ou segurança que sejam nossos, de nossos usuários, de terceiros ou do público conforme exigido ou permitido por lei (incluindo a troca de informações com outras empresas e organizações com a finalidade de proteger contra fraude e reduzir o risco de crédito); e
 
--   **Um terceiro que adquire tudo, substancialmente todos nós ou nossos negócios.** Divulgaremos informações a terceiros caso vendamos ou compremos qualquer negócio ou submetamos a uma fusão, em cujo caso divulgaremos seus dados ao possível comprador desse negócio. Também divulgaremos informações a terceiros se vendermos, comprarmos, fundirmos ou associarmos outras empresas ou negócios, ou vendermos alguns ou todos os nossos ativos. Nessas transações, as informações do usuário poderão estar entre os ativos transferidos.
+-   **Um terceiro que adquire tudo, ou substancialmente todos nós ou nossos negócios.** Divulgaremos informações a terceiros caso vendamos ou compremos qualquer negócio ou submetamos a uma fusão, em cujo caso divulgaremos seus dados ao possível comprador desse negócio. Também divulgaremos informações a terceiros se vendermos, comprarmos, fundirmos ou associarmos outras empresas ou negócios, ou vendermos alguns ou todos os nossos ativos. Nessas transações, as informações do usuário poderão estar entre os ativos transferidos.
 
 #### Conexões e serviços de terceiros
 
@@ -139,7 +140,7 @@ A Tencent pode fornecer links para outros sites de terceiros como uma conveniên
 
 #### A segurança das suas informações pessoais
 
-Infelizmente, a transmissão de informações pela Internet não é totalmente segura. Embora façamos todo o possível para proteger suas informações pessoais, não podemos garantir a segurança das informações transmitidas ao nosso site.
+Infelizmente, a transmissão de informações pela internet não é totalmente segura. Embora façamos todo o possível para proteger suas informações pessoais, não podemos garantir a segurança das informações transmitidas ao nosso site.
 
 <span id="4"></span>
 ### Retenção de dados
@@ -148,18 +149,19 @@ Reteremos suas informações pessoais conforme descrito abaixo (exceto se de out
 
 | **Informações**                                                | **Período de retenção**                                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Local, endereço de e-mail,  senha, endereço IP, agente de usuário (ou navegador da Web), ID do dispositivo, ID da Tencent  Cloud, código de verificação, número do celular, nome, endereço (incluindo cidade e  código postal) | Os dados da conta são mantidos enquanto  uma conta existir. As informações são excluídas em trinta (30) dias  a partir da data em que a conta for excluída. |
-| Informações de cartão de crédito (número do cartão, nome, data de  validade, código de segurança) | Os dados da conta são mantidos enquanto uma conta existir.  As informações são excluídas em trinta (30) dias a partir da data em que a conta for  excluída. |
+| Local, endereço de e-mail,  senha, endereço IP, agente de usuário (ou navegador da web), ID do dispositivo, ID da Tencent Cloud, código de verificação, número do celular, nome, endereço (incluindo cidade e código postal), APPID, UIN | Os dados da conta são mantidos  enquanto uma conta existir. As informações são excluídas em trinta (30) dias  a partir da data em que a conta for excluída. |
+| Informações de cartão de crédito (número do cartão, nome, data de  validade, código de segurança) | Os dados da conta são mantidos enquanto uma conta existir. As informações são excluídas em trinta (30) dias a partir da data em que a conta for  excluída. |
 | Registros de transação                                          | A data de pagamento é mantida pelo  tempo em que a conta existir. As informações são apagadas em noventa (90) dias  a partir da data em que a conta é excluída. |
-| Documento de identificação com foto (por exemplo, carta de  motorista ou passaporte) nome e endereço | Os dados da conta são mantidos enquanto  uma conta existir. As informações são excluídas em trinta (30) dias  a partir da data em que a conta for excluída. |
-| Dados de Log, Metadados, endereço  IP, agente do usuário, data e hora de acesso, cada visita à URL dentro do site da  Tencent Cloud, seja diretamente ou por indicação de sites de terceiros | Esses dados são mantidos pelo tempo  em que uma conta existir. As informações são excluídas em trinta (30) dias a partir  da data em que a conta for excluída. |
+| Documento de identificação com foto (por exemplo, carteira de  motorista ou passaporte) nome e endereço | Os dados da conta são mantidos  enquanto uma conta existir. As informações são excluídas em trinta (30) dias  a partir da data em que a conta for excluída. |
+| Dados de Log, Metadados, endereço  IP, agente do usuário, data e hora de acesso, cada visita à URL dentro do site da  Tencent Cloud, seja diretamente ou por indicação de sites de terceiros | Esses dados são mantidos pelo tempo  em que uma conta existir. As informações são excluídas em trinta (30) dias a partir da  data em que a conta for excluída. |
 | Tíquete de serviço do cliente  / conteúdo do chat, endereço IP, ID da Tencent Cloud, detalhes de incidentes e etapas da  resposta | Esses dados são mantidos pelo tempo  em que uma conta existir. As informações são excluídas em vinte e quatro (24)  horas a partir da data em que a conta é excluída. |
-| Log e metadados em  relação a incidentes                   | Esses dados são mantidos pelo tempo  em que uma conta existir. As informações são excluídas em trinta (30) dias a partir  da data em que a conta for excluída. |
-| Dados de consulta (dados  fornecidos quando você envia uma consulta via nosso formulário de contato do site ou como parte  de uma consulta de vendas, incluindo seu nome, e-mail, nome da empresa, serviço empresarial, número de telefone e local) | Os dados de consulta são mantidos até que a consulta seja resolvida e depois são excluídos dentro de cento e oitenta (180) dias da tal resolução, exceto se você concordar em ter esses dados retidos e receber mais informações no futuro. |
-| Dados de consulta de suporte técnico | Os dados de consulta de suporte técnico são mantidos até que uma consulta seja resolvida e, em seguida, apagados dentro de 180 (cento e oitenta) dias da tal resolução, a menos que você concorde em ter esses dados retidos e receber mais informações no futuro. |
-| Dados de contato promocional: nome,  E-mail e número de telefone                | Esses dados são mantidos até que  você nos diga que não deseja mais receber as informações promocionais. |
-| Dados de Marketing: Nome, e-mail comercial, número de telefone, nome da empresa, país, setor e cargo. | Esses dados são mantidos até que você nos diga que não deseja mais receber as informações promocionais. |
-| Nome, Endereço de E-mail, Código de País, Número de Telefone, Nome da Empresa, Serviço comercial, consulta. | Esses dados são mantidos enquanto o Programa de Suporte a Recursos em Nuvem da COVID-19 funcionar. As informações são apagadas no prazo de 90 (noventa) dias a partir da data em que o Programa de Suporte a Recursos em Nuvem da COVID-19 termina. |
+| Log e metadados em  relação a incidentes                   | Esses dados são mantidos pelo tempo  em que uma conta existir. As informações são excluídas em trinta (30) dias a partir da  data em que a conta for excluída. |
+| Dados de consulta (dados  fornecidos quando você envia uma consulta via formulário de  contato do site ou como parte de uma consulta de vendas, incluindo: seu nome, e-mail, número de telefone, UIN, prioridade da consulta ou ticket, configurações de lembrete, nome da empresa, serviço comercial, local e detalhes de sua consulta ou qualquer informação adicional fornecida por você) | Os dados de consulta são mantidos até que a consulta seja resolvida e depois são excluídos dentro de cento e oitenta (180) dias da tal resolução, exceto se você concordar em ter esses dados retidos e receber mais informações no futuro. |
+| Dados de consulta de suporte técnico (dados fornecidos quando você envia uma solicitação de suporte técnico), incluindo seu nome, e-mail, número de telefone, o tipo de sua pergunta e os detalhes de sua consulta | Os dados de consulta de suporte técnico são mantidos até que uma consulta seja resolvida e, em seguida, apagados dentro de 180 (cento e oitenta) dias da tal resolução, a menos que você concorde em ter esses dados retidos e receber mais informações no futuro. |
+| Dados de contato promocionais: nome,  e-mail, número de telefone, nome da empresa, serviço comercial, localização e detalhes de sua consulta             | Esses dados são mantidos até que  você nos diga que não deseja mais receber as informações promocionais. |
+| Dados de marketing: nome, e-mail comercial, número de telefone, nome da empresa, país/região e indústria. | Esses dados são mantidos até que você nos diga que não deseja mais receber as informações promocionais. |
+| Nome, Endereço de E-mail, Código de País, Número de Telefone, Nome da Empresa, Serviço comercial, consulta. | Esses dados são mantidos enquanto o Programa de Suporte a Recursos em Nuvem da Covid-19 funcionar. As informações são apagadas no prazo de 90 (noventa) dias a partir da data em que o Programa de Suporte a Recursos em Nuvem da Covid-19 termina. |
+| Nome, endereço de e-mail, código do país, número de telefone e nome da empresa |  Esses dados são mantidos pelo tempo em que uma conta existir. As informações são excluídas em trinta (30) dias a partir da data em que a conta for excluída. |  
 
 As informações pessoais que cumpram o fim para o qual foram recolhidas ou utilizadas, ou que tenham atingido o período de posse das informações pessoais, serão destruídas de forma irreversível. As informações pessoais armazenadas em arquivos eletrônicos serão excluídas com segurança de maneira irreversível com o uso de métodos técnicos, e as informações impressas serão destruídas por fragmentação ou com incineração dessas informações. Além disso, excluiremos suas informações pessoais dentro de 10 dias (i) mediante sua solicitação para que suas informações pessoais sejam excluídas; (ii) após a sua exclusão de sua conta; e/ou (iii) se alguma informação pessoal for deixada para trás com registros de contas incompletos.
 
@@ -168,7 +170,7 @@ Caso o período de processamento e retenção tenha sido encerrado, mas as infor
 <span id="5"></span>
 ### Seus direitos
 
-**Esta seção ("Seus Direitos") se aplica aos usuários que estão localizados na Área Econômica Europeia.  As subseções intituladas "Acesso, correção e exclusão" também se aplicam a usuários localizados no Japão e Coreia e Região administrativa especial de Macau.**
+**Esta seção ("Seus Direitos") se aplica aos usuários que estão localizados na Área Econômica Europeia.  As subseções intituladas "Acesso, correção e exclusão" também se aplicam a usuários localizados no Japão e Coreia e Região administrativa especial de Macau**.
 
 Você tem determinados direitos em relação às informações pessoais que retemos sobre você. Alguns deles aplicam-se apenas em certas circunstâncias, conforme estabelecido em mais detalhes abaixo. Definimos também como exercer esses direitos. Observe que solicitaremos que você verifique sua identidade antes de responder a qualquer solicitação para exercer seus direitos. Devemos responder a uma solicitação sua para exercer esses direitos sem demora injustificada e dentro de um mês pelo menos (embora esse prazo possa ser estendido por outros dois meses em determinadas circunstâncias), exceto se de outra forma permitido pela legislação aplicável. Para exercer qualquer um dos seus direitos, preencha o formulário de solicitação [aqui](https://intl.cloud.tencent.com/services/dataSubject).
 
@@ -196,7 +198,7 @@ Você tem direito a contestar nosso processamento das suas informações pessoai
 
 Se você optou pelo recebimento de nosso marketing direto, poderemos enviar-lhe notícias e ofertas de tempos em tempos, por exemplo; para reservar um lugar em nossos webinars. Você pode optar por sair a qualquer momento entrando em contato conosco pelo: cloudlegalnotices@tencent.com.
 
-Poderemos, ocasionalmente, enviar-lhe anúncios relacionados a serviços quando considerarmos necessário fazê-lo (como quando suspendemos temporariamente a Tencent Cloud para manutenção ou comunicações relativas a administração, segurança ou privacidade). Você não poderá cancelar a opção de receber esses avisos relacionados a serviços, que não são de natureza promocional.
+Poderemos, ocasionalmente, enviar-lhe anúncios relacionados a serviços quando considerarmos necessário fazê-lo (como quando suspendemos temporariamente a Tencent Cloud para manutenção ou comunicações relativas à administração, segurança ou privacidade). Você não poderá cancelar a opção de receber esses avisos relacionados a serviços, que não são de natureza promocional.
 
 <span id="6"></span>
 ### Contato e reclamações
@@ -227,6 +229,8 @@ a.  Delegamos o processamento de suas informações pessoais conforme descrito a
 | Adyen Singapore Pte Ltd.                                     | Processamento de  pagamento e gerenciamento de risco |
 | Image  Frame Investment (HK) Limited                         | Envio de SMS                             |
 | Tencent Computing (Pequim) Co., Ltd.                        | Fornecimento de suporte back-end              |
+| Revendedores terceirizados                     | Gestão de relacionamento com clientes e comunicações de marketing              |
+
 
 ### Transferência de Informações Pessoais no Exterior
 
@@ -236,10 +240,10 @@ a.  Delegamos o processamento de suas informações pessoais conforme descrito a
 | **Destinatário (informações de contato de  </br> Gerente de informações)** | **País para o qual suas informações pessoais devem ser transferidas** | **Data e Método de Transferência**                        | **Tipos das suas informações pessoais a serem transferidas**     | **Finalidades de uso pelos destinatários**      | **Período de retenção  uso pelo destinatário**                  |
 | -- | ------- | -------| ----------------------- | -------------------------------------- | ------------------------------------------------------------ |
 | Adyen  Singapore Pte Ltd.</br>dpo@adyen.com             | Singapura                                                    | Transmissão  criptografada                                | Número do  cartão de crédito, nome, período de validade, CVV, endereço        | Processador  de pagamento e gerenciamento de risco | 7  anos                                                     |
-|Frensworkz Software Technology Co., Limited</br>support@frensworkz.com</div> |República Popular da China |Transmissão on-line  |<li>Nome e sobrenome</li> <li>Cargo</li> <li>Função</li> <li>Posição</li> <li>Setor</li> <li>Empregador</li> <li>Informações de contato (empresa, departamento, função, e-mail, telefone, número do QQ, endereço físico de correspondência, Web site)</li> <li>Conta, nome da conta, nome da nota da conta</li> <li>Dados de ID</li> <li>Endereço de faturamento, país de faturamento, rua do faturamento, cidade do faturamento, estado/província do faturamento, código postal do faturamento</li> |Serviços de implementação agregados |Até a conclusão dos serviços de suporte do sistema pela Frensworkz ou por 20 meses (o que ocorrer primeiro)|
+|Frensworkz Software Technology Co., Limited</br>support@frensworkz.com</div> |República Popular da China |Transmissão on-line  |<li>Nome e sobrenome</li> <li>Cargo</li> <li>Função</li> <li>Posição</li> <li>Setor</li> <li>Empregador</li> <li> Informações de contato (empresa, departamento, função, e-mail, telefone, número do QQ, endereço físico de correspondência, site)</li> <li>Conta, nome da conta, nome da nota da conta</li> <li>Dados de ID</li> <li>Endereço de faturamento, país de faturamento, rua de faturamento, cidade do faturamento, estado/província do faturamento, código postal do faturamento</li> |Serviços de implementação agregados |Até a conclusão dos serviços de suporte do sistema pela Frensworkz ou por 20 meses (o que ocorrer primeiro)|
 | Image  Frame Investment (HK) Limited </br>dataprotection@tencent.com                    | Hong  Kong                                                   | Transmissão  on-line                                   | Número do  celular, conteúdo de SMS                                  | Envio de  SMS                           | Os dados da conta são mantidos enquanto uma conta existir. As mensagens de SMS são excluídas  13 meses depois de terem sido enviadas. |
-|Salesforce.com Singapura Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |Estados Unidos|Transmissão on-line |<li>Nome e sobrenome</li> <li>Cargo</li> <li>Função</li> <li>Posição</li> <li>Setor</li> <li>Empregador</li>  </li>Informações de contato (empresa, departamento, função, e-mail, telefone, número do QQ, endereço físico de correspondência, Web site)<li>Conta, nome da conta, nome da nota da conta</li><li>Dados de ID</li><li>Endereço de faturamento, país de faturamento, rua do faturamento, cidade do faturamento, estado/província do faturamento, código postal do faturamento</li>|Gerenciamento de relacionamento com clientes |Consulte os períodos de retenção definidos em “[Retenção de dados](#4)”, sujeito a encerramento do relacionamento contratual entre nós e Salesforce, em cujo caso os dados serão excluídos dentro de 300 dias a partir do encerramento.|
-| Tencent  Computing (Pequim) Co., Ltd.</br>meeting_info@tencent.com                      | República  Popular da China                                  | Transmissão  online após criação da conta e pagamento | **Obrigatório**：  data  de nascimento, nome, número de telefone celular, endereço de e-mail, local, endereço (incluindo  cidade e código postal), informações de cartão de crédito, tipo de negócio, senha  </br>**Opcional:**  documento de identificação  com foto (por exemplo, carteira de motorista, passaporte  ou licença comercial) nome e endereço | Operação  e manutenção do sistema    | Os  dados da conta são mantidos enquanto uma conta existir. As informações são excluídas em  trinta (30) dias a partir da data em que a conta for excluída. |
+|Salesforce.com Singapura Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |Estados Unidos|Transmissão on-line | <li>Dados de contato promocionais</li> <li>Dados de marketing</li> <li>Nome e sobrenome</li> <li>Cargo</li> <li>Função</li> <li>Posição</li> <li>Setor</li> <li>Empregador</li> <li>Informações de contato (empresa, departamento, função, e-mail, telefone, número do QQ, endereço físico de correspondência, site)</li> <li>Conta, nome da conta, nome da nota da conta</li> <li>Dados de ID</li> <li>Endereço de faturamento, país de faturamento, rua de faturamento, cidade do faturamento, estado/província do faturamento, código postal do faturamento</li>|Gestão de relacionamento com clientes e suporte de marketing|Consulte os períodos de retenção definidos em “[Retenção de dados](#4)”, sujeito a encerramento do relacionamento contratual entre nós e Salesforce, em cujo caso os dados serão excluídos dentro de 300 dias a partir do encerramento.|
+| Tencent  Computing (Pequim) Co., Ltd.</br>meeting_info@tencent.com                      | República  Popular da China                                  | Transmissão  on-line após criação da conta e pagamento | **Obrigatório**：  data  de nascimento, nome, número do telefone celular, endereço de e-mail, local, endereço (incluindo  cidade e CEP), informações do cartão de crédito, tipo de negócio, senha  </br>**Opcional:**  fotografia  ID (por exemplo, carteira de motorista, passaporte  ou licença de negócios) nome e endereço | Operação  e manutenção do sistema    | Os  dados da conta são mantidos enquanto uma conta existir. As informações são excluídas em  trinta (30) dias a partir da data em que a conta for excluída. |
 
 ### Destruição de dados
 
@@ -281,7 +285,7 @@ Se você precisar denunciar ou consultar qualquer invasão de informações priv
 
  - Divisão de Investigações de Crimes Cibernéticos do Ministério Público Supremo (spo.go.kr/disque 1301)
 
- - Agência de Investigação Cibernética da Agência Nacional de Polícia Coreana (ecrm.cyber.go.kr/minwon/disque 182)
+ - Agência de Investigação Cibernética da Agência Nacional de Política Coreana (ecrm.cyber.go.kr/minwon/disque 182)
 
 ### Califórnia
 
@@ -299,12 +303,12 @@ Os termos deste Adendo aplicam-se aos residentes da Califórnia segundo a Lei de
 ***Coletamos informações pessoais para os seguintes fins e como descrito no Módulo aplicável:***
 
 - para operar e administrar os Serviços;
-- Comunicarmo-nos com consumidores;
-- Para melhorar nossos serviços;
-- Para fins de verificação e segurança, incluindo a prevenção e identificação de atividades fraudulentas; e
-- Abordar e corrigir problemas técnicos e bugs.
+- para nos comunicarmos com consumidores;
+- para melhorar nossos serviços;
+- para verificação e segurança, incluindo a prevenção e identificação de atividades fraudulentas; e
+- para abordar e corrigir problemas técnicos e bugs.
 
-Para informações adicionais sobre para que cada tipo de informação pessoal é usado, consulte [este gráfico](#2) na parte principal da Política de privacidade.
+Para informações adicionais sobre para que cada tipo de informação pessoal é usada, consulte [este gráfico](#2) na parte principal da Política de Privacidade.
 
 Divulgamos informações pessoais para os seguintes tipos de entidades:
 
@@ -316,7 +320,7 @@ Divulgamos informações pessoais para os seguintes tipos de entidades:
 ***Nos últimos 12 meses, não vendemos informações pessoais de residentes da Califórnia na acepção de “venda” da CCPA.***
 
 ***Direitos segundo a CCPA***
- Se você for residente na Califórnia e a CCPA não reconhecer uma isenção que se aplique a você e às suas informações pessoais, você terá o direito de:
+Se você for residente na Califórnia e a CCPA não reconhecer uma isenção que se aplique a você e às suas informações pessoais, você terá o direito de:
 
 - Solicitar a divulgação gratuita das seguintes informações, abrangendo os 12 meses anteriores à sua solicitação:
     - as categorias de informações pessoais suas que coletamos;
@@ -343,7 +347,7 @@ Sempre que usarmos suas informações pessoais com base em seu consentimento, vo
 
 *Consentimento dos pais ou responsáveis*
 
-Se você tem menos de 18 anos de idade, não deve usar o Serviço para nenhuma finalidade sem primeiro obter a concordância dos pais/responsáveis com esta Política de privacidade (deles e em seu nome). Não coletamos deliberadamente informações pessoais de nenhum menor com menos de 18 anos sem esse consentimento. Entre em contato com o Responsável pela proteção de dados se você acredita que temos alguma informação pessoal de algum menor com menos de 18 anos sem esse consentimento dos pais/responsáveis – investigaremos imediatamente (e removeremos) essas informações pessoais.
+Se você tem menos de 18 anos de idade, não deve usar o Serviço para nenhuma finalidade sem primeiro obter a concordância dos pais/responsáveis nessa Política de Privacidade (deles e em seu nome). Não coletamos deliberadamente informações pessoais de nenhum menor de 18 anos sem esse consentimento. Entre em contato com o agente de proteção de dados se você acredita que temos alguma informação pessoal de algum menor com menos de 18 anos sem esse consentimento dos pais/responsáveis – investigaremos imediatamente (e removeremos) essas informações pessoais.
 
 ### CANADÁ 
 
@@ -385,7 +389,7 @@ Quando quiser informar essas instruções, entre em contato conosco em **cloudle
 
 Suas Informações pessoais sigilosas são senhas, informações financeiras, como conta bancária ou cartão de crédito ou cartão de débito ou detalhes de outro instrumento de pagamento, dados biométricos, saúde física ou mental, vida sexual ou orientação sexual e/ou prontuários ou histórico médico e informações semelhantes, mas não abrange informações disponíveis no domínio público ou de acordo com as leis indianas, inclusive a Lei de direito à informação de 2005.
 
-*Compartilhamento de suas Informações Pessoais Confidenciais*
+*Compartilhamento de suas informações pessoais confidenciais*
 
 Quando permitirmos que terceiros coletem e usem suas informações pessoais confidenciais, tomaremos as medidas adequadas para garantir que esses terceiros não as divulguem.
 
@@ -439,9 +443,9 @@ Ao processarmos uma solicitação de acesso a dados, podemos solicitar determina
 *Contato*
 
 Para proteger suas informações pessoais e atender às reclamações a elas relacionadas, designamos o seguinte departamento como responsável por gerenciar e proteger suas informações pessoais. 
- - Nosso responsável pela proteção de dados faz a gestão e segurança das suas informações pessoais
+ - Nosso agente de proteção de dados faz a gestão e segurança das suas informações pessoais
     - Telefone: +603-22872388
-    - Email: **cloudlegalnotices@tencent.com**.
+    - E-mail: **cloudlegalnotices@tencent.com**.
 
 ### FILIPINAS
 
@@ -511,7 +515,7 @@ Nosso responsável pelo controle de dados na Turquia é Özdağıstanli Ekici Av
 
 Nossos serviços não se destinam a crianças. As crianças não devem usar o Serviço para nenhuma finalidade. Não permitiremos intencionalmente que qualquer pessoa menor de 18 anos se registre em nossos serviços e/ou que forneça qualquer informação de identificação pessoal. Pediremos o consentimento dos pais para crianças menores de 18 anos para qualquer processamento de seus dados pessoais.
 
-Com relação à seção "Como usamos suas informações pessoais", para efeitos da Turquia, a coluna "Base Legal para o Processamento" será considerada alterada de forma que os propósitos para o processamento de informações pessoais para a Turquia sejam os art. 5/2 c e art 5/2 f da Lei de Proteção de Dados Pessoais nº 6698.
+Com relação à seção "Como usamos suas informações pessoais", para efeitos da Turquia, a coluna "Base Legal para o Processamento" será considerada alterada de forma que os propósitos para o processamento de informações pessoais para a Turquia sejam os art. 5/2 c e art. 5/2 f da Lei de Proteção de Dados Pessoais nº 6698.
 
 Seus dados pessoais podem ser transferidos e armazenados em servidores localizados na Turquia ou no exterior com o seu consentimento.
 
@@ -532,7 +536,7 @@ Esses direitos não são absolutos.
 
 Nossos serviços não se destinam a crianças. As crianças não devem usar o Serviço para nenhuma finalidade. Não permitiremos intencionalmente que qualquer pessoa menor de 21 anos se registre em nossos serviços e/ou que forneça qualquer informação de identificação pessoal. Um usuário com menos de 21 anos precisará obter a ordem judicial pertinente para usar os Serviços.
 
-Poderemos denunciar voluntariamente qualquer incidente de segurança cibernética onde este constitua um crime nos termos da lei dos EAU (por exemplo, nos termos da lei de crimes cibernéticos dos EAU). O incidente poderá ser relatado para as autoridades pertinentes com a finalidade de investigação. Observe também que a comunicação voluntária de incidentes de segurança cibernética também pode ser feita à Equipe de respostas a emergências computacionais dos Emirados Árabes Unidos (“CERT”). A CERT é uma organização de conscientização sobre segurança que fornece um processo de registro de incidentes e orientações sobre ameaças de segurança cibernética conhecidas nos Emirados Árabes Unidos. 
+Poderemos denunciar voluntariamente qualquer incidente de segurança cibernética onde este constitua um crime nos termos da lei dos EAU (nos termos da lei de crimes cibernéticos dos EAU, por exemplo). O incidente poderá ser relatado para as autoridades pertinentes com a finalidade de investigação. Observe também que a comunicação voluntária de incidentes de segurança cibernética também pode ser feita à Equipe de respostas a emergências computacionais dos Emirados Árabes Unidos (“CERT”). A CERT é uma organização de conscientização sobre segurança que fornece um processo de registro de incidentes e orientações sobre ameaças de segurança cibernética conhecidas nos Emirados Árabes Unidos. 
 
 ### VIETNÃ 
 
@@ -570,14 +574,18 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
-19.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+19.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45407).
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
-21.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
+21.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
-23.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590).
-24.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45788).
-25.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45791).
-26.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45794).
-27.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45797).
-28.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
-29.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
+23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45472).
+24.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45476).
+25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45590).
+26.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45788).
+27.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45791).
+28.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45794).
+29.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45797).
+30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
+31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
+32.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45938).
+33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).
