@@ -49,17 +49,18 @@ Dengan arsitektur jaringan cloud hibrida, Anda membuat probe jaringan di subnet 
 <div class="d-mod-title d-explain-title">
 <i class="d-icon-explain"></i>Catatan:
 </div>
-<p>**Do Not Specify** (Jangan Tentukan) sekarang hanya tersedia untuk pengguna beta. Untuk mengaktifkannya, harap <a href="https://console.cloud.tencent.com/workorder/category">kirim tiket</a>.</p></li><li>Jika Anda menentukan hop selanjutnya, pilih jenis dan instans hop selanjutnya. Kemudian, sistem secara otomatis menambahkan rute 32-bit yang sesuai ke tabel rute terkait subnet. Saat ini, jenis hop selanjutnya yang didukung mencakup NAT Gateway, peering connection, VPN gateway, direct connect gateway, CVM, dan CCN.<p>
+<p><b>Do Not Specify</b> (Jangan Tentukan) sekarang hanya tersedia untuk pengguna beta. Untuk mengaktifkannya, harap <a href="https://console.cloud.tencent.com/workorder/category">kirim tiket</a>.</p></li><li>Jika Anda menentukan hop selanjutnya, pilih jenis dan instans hop selanjutnya. Kemudian, sistem secara otomatis menambahkan rute 32-bit yang sesuai ke tabel rute terkait subnet. Saat ini, jenis hop selanjutnya yang didukung mencakup NAT Gateway, peering connection, VPN gateway, direct connect gateway, CVM, dan CCN.<p>
 <dx-alert infotype="explain" title="">
 Jika Anda menentukan CCN sebagai hop selanjutnya dan IP tujuan probe menjadi milik dua VPC dalam CCN, rentang IP dengan mask terpanjang akan dicocokkan dan diterapkan.
 </dx-alert>
 </li></ul></td>
 </tr>
 </tbody></table>
+
 5. (Opsional) **Verify** (Verifikasi) **Probe Destination IP** (IP Tujuan Probe)
 >?Lewati langkah ini jika Anda tidak menentukan hop selanjutnya.
- - Jika koneksi berhasil, klik **OK** (Oke).
- - Jika koneksi gagal, periksa apakah rute subnet dikonfigurasi dengan benar, dan apakah perangkat yang diperiksa mengaktifkan ACL Jaringan, grup keamanan, atau firewall lain, yang dapat memblokir koneksi. Untuk informasi selengkapnya, lihat [Mengelola ACL Jaringan](https://intl.cloud.tencent.com/document/product/215/31852) dan [Memodifikasi Aturan Grup Keamanan](https://intl.cloud.tencent.com/document/product/215/35515).
+ >- Jika koneksi berhasil, klik **OK** (Oke).
+ >- Jika koneksi gagal, periksa apakah rute subnet dikonfigurasi dengan benar, dan apakah perangkat yang diperiksa mengaktifkan ACL Jaringan, grup keamanan, atau firewall lain, yang dapat memblokir koneksi. Untuk informasi selengkapnya, lihat [Mengelola ACL Jaringan](https://intl.cloud.tencent.com/document/product/215/31852) dan [Memodifikasi Aturan Grup Keamanan](https://intl.cloud.tencent.com/document/product/215/35515).
 
 ## Memeriksa Latensi dan Paket Hilang dari Probe Jaringan
 
