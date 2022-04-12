@@ -1,63 +1,43 @@
-Este documento descreve como migrar instâncias do CVM, do TencentDB for MySQL e do TencentDB for Redis da rede clássica para um VPC.
+Este documento descreve como migrar uma instância da rede clássica para a VPC e configurar a solução de acesso híbrido durante a migração.
 
-## Informações gerais
-- A rede clássica é um pool de recursos de rede pública para todos os usuários do Tencent Cloud. Os IPs privados de todos os CVMs são atribuídos pelo Tencent Cloud. Não é possível personalizar os intervalos de IP ou os endereços de IP.
-- Um VPC é um espaço de rede isolado logicamente no Tencent Cloud. Em um VPC, é possível personalizar os intervalos de IP, os endereços IP e as políticas de roteamento, tornando-o mais adequado para os casos de uso que exigem configurações personalizadas.
-
-Como os recursos da rede clássica se tornam cada vez mais escassos e não podem ser expandidos, a partir de 13 de junho de 2017, todas as novas contas do Tencent Cloud só podem criar instâncias (incluindo instâncias do CVM e do TencentDB) em um VPC em vez da rede clássica. Cada vez mais usuários estão migrando suas instâncias da rede clássica para o VPC.
-
-
-## Instruções
-Verifique as instruções abaixo de acordo com seu tipo de recurso.
-<table>
-<thead>
+## Migração de uma única instância
+Você pode migrar com facilidade uma instância da rede clássica para uma VPC. Consulte os detalhes abaixo.
+<table >
+<th>Tipo de instância</th>
+<th>Descrição</th>
 <tr>
-<th width="20%">Tipo de recurso</th>
-<th width="25%">Características</th>
-<th width="35%">Limitação</th>
-<th width="20%">Instruções</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CVM</td>
-<td>As instâncias migradas do CVM são as mesmas que estão sendo criadas no VPC.</td>
-<td><li>A migração da rede clássica para o VPC NÃO PODE ser revertida. Após a migração, a instância do CVM não poderá se comunicar com os serviços do Tencent Cloud na rede clássica</li>
-<li>A instância do CVM precisa ser reiniciada</li>
-<li>O IP privado muda do IP da rede clássica para IP do VPC</li></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/213/20278" target="_blank">Alteração para VPC</a></td>
+<td><a href=https://intl.cloud.tencent.com/document/product/213/20278>CVM</a></td>
+<td> <li>A instância será reiniciada.<li>O IP da rede clássica será convertido imediatamente em um IP da VPC.</td>
 </tr>
 <tr>
-<td>TencentDB for MySQL</td>
-<td><li>O acesso do VPC entra em vigor logo após a migração.</li><li>A rede clássica original permanece acessível por até 7 dias após a migração.</li><li>A conexão do banco de dados não é afetada durante a migração.</li></td>
-<td><li>A migração da rede clássica para o VPC NÃO PODE ser revertida. Após a migração, a instância do TencentDB for MySQL não poderá se comunicar com os serviços do Tencent Cloud na rede clássica</li>
-<li>O IP privado muda do IP da rede clássica para IP do VPC.</li></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">Alteração de rede</a></td>
+<td><a href=https://intl.cloud.tencent.com/document/product/236/31915>TencentDB for MySQL</a></td>
+<td rowspan=5>Tanto o IP da rede clássica quanto o IP da VPC ficam disponíveis por um período. O IP da rede clássica original permanece válido da seguinte forma: <ul><li>MySQL:  período padrão: 24 horas (1 dia); período máximo: 168 horas (7 dias)<li>MariaDB:  válido por 24 horas (1 dia)<li>TDSQL:  válido por 24 horas (1 dia)<li>Redis:  opções disponíveis: liberar agora, liberar após 1 dia, liberar após 2 dias, liberar após 3 dias e liberar após 7 dias<li>MongoDB:  o endereço IP original se tornará inválido imediatamente para a versão 4.0 ou posterior. As outras versões apresentam as opções: liberar agora, liberar após 1 dia, liberar após 2 dias, liberar após 3 dias e liberar após 7 dias</td>
 </tr>
 <tr>
-<td>TencentDB for Redis</td>
-<td><li>O acesso do VPC entra em vigor logo após a migração.</li><li>A rede clássica original permanece acessível por até 7 dias após a migração.</li><li>A conexão do banco de dados não é afetada durante a migração.</li></td>
-<td><li>A migração da rede clássica para o VPC NÃO PODE ser revertida. Após a migração, a instância do TencentDB for Redis não poderá se comunicar com os serviços do Tencent Cloud na rede clássica</li>
-<li>O IP privado muda do IP da rede clássica para IP do VPC.</li></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/31944?from=10680#.E6.9B.B4.E6.8D.A2-redis-.E7.BD.91.E7.BB.9C" target="_blank">Alteração da rede do Redis</a></td>
+<td><a href=https://intl.cloud.tencent.com/document/product/237/40160>TencentDB for MariaDB</a></td>
 </tr>
-</tbody></table>
+<tr>
+<td><a href=https://intl.cloud.tencent.com/document/product/1042/33340>TDSQL for MySQL</a></td>
+</tr>
+<td><a href=https://intl.cloud.tencent.com/document/product/239/31944>TencentDB for Redis</a></td>
+</tr>
+<td><a href=https://intl.cloud.tencent.com/document/product/240/40126>TencentDB for MongoDB</a></td>
+</tr>
+</table>
 
-## Exemplo de migração
->?Este exemplo é apenas para referência. Antes de sua migração real, avalie o impacto em seu negócio e desenvolva um plano de migração detalhado.
-### Descrição
-
-Suponha que um serviço da rede clássica use quatro serviços do Tencent Cloud, incluindo o CLB, o CVM, o TencentDB for MySQL e o TencentDB for Redis. A relação desses serviços é descrita abaixo: 
-- O CLB público está vinculado a dois CVMs como servidores de back-end.
-- O TencentDB for MySQL e o TencentDB for Redis atuam como bancos de dados para aplicativos implantados nos dois CVMs.
-![](https://main.qcloudimg.com/raw/bf54dd1832d0e16c756984e305772e06.png)
-
-## Instruções para a migração
-1. Migre as instâncias do TencentDB para um VPC. Após a migração, o acesso à rede clássica original permanece disponível por um determinado período, mantendo assim a conexão com o banco de dados e a disponibilidade do seu serviço. Durante esse período, você pode concluir a migração de outros serviços.
-![](https://main.qcloudimg.com/raw/427fe3f0445056c94332df90d4cd9bb3.png)
-2. Crie dois CVMs e implante os serviços conforme necessário no VPC para o qual os bancos de dados sejam migrados. Depois, teste se os CVMs conseguem acessar as instâncias do TencentDB.
-![](https://main.qcloudimg.com/raw/4425f9af34e3df70a84f1a80e8a7ba40.png)
-3. Crie um CLB público no VPC de bancos de dados e associe-o aos dois CVMs criados na etapa anterior. Execute uma verificação de integridade para evitar a interrupção do serviço devido a uma exceção.
-![](https://main.qcloudimg.com/raw/8dab2d96a40f1df4eefa9ad04117cb2b.png)
-4. Aguarde a conclusão da migração. Libere os recursos do CLB e do CVM da rede pública original na rede clássica.
-![](https://main.qcloudimg.com/raw/cb567a4a3f88c4bc4c8d787d60f512f3.png)
+>? Se você quiser manter os endereços IP do recurso inalterados após a alternância de rede, tente criar uma VPC que tenha IPs da rede clássica. Se isso for impossível, consulte a seguinte solução:
++ Crie um serviço Private DNS e resolva seu nome de domínio. Após migrar os recursos para uma VPC, use o [Private DNS](https://intl.cloud.tencent.com/document/product/1097/40551) da Tencent Cloud.
++ Use um IP público. 
+## Solução de acesso híbrido durante a migração
+O acesso híbrido significa que os serviços que estão sendo migrados podem acessar a rede clássica e uma VPC. A Tencent Cloud fornece a seguinte solução de acesso híbrido:
++ A acessibilidade do IP da rede clássica e do IP da VPC do serviço TencentDB garante o acesso híbrido no nível da instância do TencentDB.
+    ![]()
++ O acesso ao Cloud Object Storage (COS) por meio de nome de domínio fornece a capacidade de acesso híbrido.
++ Para implementar a interconexão durante a migração, use junto com:
+  + Classiclink:  permite que as CVMs baseadas na rede clássica se interconectem com os recursos da VPC, como as instâncias da CVM, do TencentDB e do CLB.
+  + Conexão de terminal:  permite que as instâncias em uma VPC se comuniquem com os recursos na rede clássica (exceto as CVMs).
+  ![]()
+   >? 
+   >+ Se você deseja estabelecer uma conexão de terminal, [envie um tíquete](https://console.cloud.tencent.com/workorder/category). Essa funcionalidade apenas possibilita o acesso a CVMs baseadas na rede clássica. Recomendamos migrar os seus recursos para uma VPC.
+   >+ Para saber mais sobre as soluções VPC e Classiclink, consulte [Comunicação com a rede clássica](https://intl.cloud.tencent.com/document/product/215/35505). Para mais informações sobre como configurar um Classiclink, consulte [Classiclink](https://intl.cloud.tencent.com/document/product/215/41418).
 
