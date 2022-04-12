@@ -49,17 +49,18 @@ Na arquitetura de rede de nuvem híbrida, você cria uma sonda de rede na sub-re
 <div class="d-mod-title d-explain-title">
 <i class="d-icon-explain"></i>Observação:
 </div>
-<p>Atualmente, a opção **Do Not Specify (Não especificar)** só está disponível para usuários beta. Para ativá-la, <a href="https://console.cloud.tencent.com/workorder/category">envie um tíquete</a>.</p></li><li>Se você especificar o próximo salto, selecione o tipo do próximo salto e as instâncias. Depois, o sistema adiciona automaticamente a rota de 32 bits correspondente à tabela de rotas associada à sub-rede. Atualmente, o tipo do próximo salto aceito inclui NAT Gateway, Peering Connections, gateway do VPN, gateway do Direct Connect, CVM e CCN.<p>
+<p>Atualmente, a opção <b>Do Not Specify (Não especificar)</b> só está disponível para usuários beta. Para ativá-la, <a href="https://console.cloud.tencent.com/workorder/category">envie um tíquete</a>.</p></li><li>Se você especificar o próximo salto, selecione o tipo do próximo salto e as instâncias. Depois, o sistema adiciona automaticamente a rota de 32 bits correspondente à tabela de rotas associada à sub-rede. Atualmente, o tipo do próximo salto aceito inclui NAT Gateway, Peering Connections, gateway do VPN, gateway do Direct Connect, CVM e CCN.<p>
 <dx-alert infotype="explain" title="">
 Se você especificar o CCN como o próximo salto e os IPs de destino da sonda pertencerem a dois VPCs no CCN, o intervalo de IP com a máscara mais longa será correspondido e entrará em vigor.
 </dx-alert>
 </li></ul></td>
 </tr>
 </tbody></table>
+
 5. (Opcional) **Verifique** o **IP de destino da sonda**.
 >?Ignore essa etapa se você não especificar o próximo salto.
- - Se a conexão obtiver êxito, clique em **OK**.
- - Se a conexão falhar, verifique se a rota da sub-rede está configurada corretamente e se o dispositivo de sonda habilita a ACL de rede, o grupo de segurança ou outros firewalls, que podem bloquear a conexão. Para mais informações, consulte [Gerenciamento de ACLs de rede](https://intl.cloud.tencent.com/document/product/215/31852) e [Modificação de uma regra de grupo de segurança](https://intl.cloud.tencent.com/document/product/215/35515).
+> - Se a conexão obtiver êxito, clique em **OK**.
+> - Se a conexão falhar, verifique se a rota da sub-rede está configurada corretamente e se o dispositivo de sonda habilita a ACL de rede, o grupo de segurança ou outros firewalls, que podem bloquear a conexão. Para mais informações, consulte [Gerenciamento de ACLs de rede](https://intl.cloud.tencent.com/document/product/215/31852) e [Modificação de uma regra de grupo de segurança](https://intl.cloud.tencent.com/document/product/215/35515).
 
 ## Verificação da latência e perda de pacotes de uma sonda de rede
 
