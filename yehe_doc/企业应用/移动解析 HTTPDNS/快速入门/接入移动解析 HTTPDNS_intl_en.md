@@ -1,4 +1,5 @@
-﻿>!If you don't use the SDK, you need to **retain the local DNS as a backup** during connection. For more information, see [Best Practices](/doc/product/379/Best-Practice).
+>!
+>If you don't use the SDK, you need to **retain the local DNS as a backup** during connection. For more information, see [Best Practices](/doc/product/379/Best-Practice).
 ## 1. Register an account
 First, you need to activate HTTPDNS in the [HTTPDNS console](https://console.cloud.tencent.com/httpdns) as instructed in [Activating HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461).
 
