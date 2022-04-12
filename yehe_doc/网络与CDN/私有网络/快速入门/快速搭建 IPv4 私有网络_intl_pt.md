@@ -14,7 +14,7 @@ Certifique-se de ter [criado uma conta da Tencent Cloud](https://intl.cloud.tenc
 2. Selecione a região da VPC na parte superior e clique em **+New (+Novo)**.
 3. Na janela pop-up **Create VPC (Criar VPC)**, configure as informações da VPC e da sub-rede conforme as instruções abaixo.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ba0387f51ed8112ab819d5cb9c5113b5.png)
- - **Informações da VPC*
+ - **Informações da VPC**
     - Name (Nome): o nome da VPC.
     - IPV4 CIDR Block (Bloco CIDR IPV4): você pode escolher qualquer um desses intervalos de IP **10.0**.0.0 - **10.255**.255.255, **172.16**.0.0 - **172.31**.255.255 e 
     **192.168**.0.0 - **192.168**.255.255 como o intervalo de IP da VPC. O intervalo da máscara deve ser de 16 a 28, como `10.0.0.0/16`.
