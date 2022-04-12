@@ -106,23 +106,9 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>&#10003;</td>
 </tr>
 <tr>
-<td rowspan=2>SDK 다운로드</td>
-<td>iOS</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a101_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a102_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a103_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a104_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a105_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a106_ios.zip">다운로드</a></td>
-</tr>
-<tr>
-<td>Android</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.107/xmagic_A1-01_android_2.4.0.107.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-02_android_2.4.0.108.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-03_android_2.4.0.108.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-04_android_2.4.0.108.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-05_android_2.4.0.108.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-06_android_2.4.0.108.zip">다운로드</a></td>
+<td>SDK 다운로드</td>
+<td>iOS & Android</td>
+<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#base">Download</a></td>
 </tr>
 </tbody></table>
 
@@ -212,19 +198,9 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>&#10003;</td>
 </tr>
 <tr>
-<td rowspan=2>SDK 다운로드</td>
-<td>iOS</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s101_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s102_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s103_ios.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s104_ios.zip">다운로드</a></td>
-</tr>
-<tr>
-<td>Android</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-01_android_2.4.0.108.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-02_android_2.4.0.108.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-03_android_2.4.0.108.zip">다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-04_android_2.4.0.108.zip">다운로드</a></td>
+<td>SDK 다운로드</td>
+<td>iOS & Android</td>
+<td colspan=6><a href="https://intl.cloud.tencent.com/document/product/1143/45377#pro">Download</a></td>
 </tr>
 </tbody></table>
 

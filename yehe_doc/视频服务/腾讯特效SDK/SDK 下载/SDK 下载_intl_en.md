@@ -18,8 +18,8 @@ Basic A series packages offer common shaping features to meet general requiremen
 </thead>
 <tbody><tr>
 <td >Basic A1 - 01</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a101_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.107/xmagic_A1-01_android_2.4.0.107.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_a101_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.120/xmagic_A1-01_android_2.4.1.120.zip">DOWNLOAD</a></td>
 <td rowspan=6>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
@@ -32,8 +32,8 @@ Basic A series packages offer common shaping features to meet general requiremen
 </tr>
 <tr>
 <td >Basic A1 - 02</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a102_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-02_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_a102_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_A1-02_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td rowspan=2>
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 10.6 MB</ul><br>
 <b>Android package size:</b><ul style="margin:0"><li/>22.6 MB<li/>armeabi-v7a: 18.3 MB<li/>assets: 10.6 MB<li/>aar: 700 KB
@@ -41,13 +41,13 @@ Basic A series packages offer common shaping features to meet general requiremen
 </tr>
 <tr>
 <td >Basic A1 - 03</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a103_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-03_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_a103_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_A1-03_android_2.4.1.119.zip">DOWNLOAD</a></td>
 </tr>
 <tr>
 <td >Basic A1 - 04</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a104_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-04_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_a104_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_A1-04_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 14.4 MB</ul><br>
 <b>Android package size:</b><ul style="margin:0"><li/>arm64-v8a: 22.6 MB<li/>armeabi-v7a: 18.3 MB<li/>assets: 14.4 MB<li/>aar: 700 KB
@@ -55,8 +55,8 @@ Basic A series packages offer common shaping features to meet general requiremen
 </tr>
 <tr>
 <td >Basic A1 - 05</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a105_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-05_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_a105_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_A1-05_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 17.9 MB</ul><br>
 <b>Android package size:</b><ul style="margin:0"><li/>arm64-v8a: 22.6 MB<li/>armeabi-v7a: 18.3 MB<li/>assets: 17.9 MB<li/>aar: 700 KB
@@ -64,8 +64,8 @@ Basic A series packages offer common shaping features to meet general requiremen
 </tr>
 <tr>
 <td >Basic A1 - 06</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_a106_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_A1-06_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_a106_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_A1-06_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 10.6 MB</ul><br>
 <b>Android package size:</b><ul style="margin:0"><li/>arm64-v8a: 22.6 MB<li/>armeabi-v7a: 18.3 MB<li/>assets: 10.6 MB<li/>aar: 700 KB
@@ -89,8 +89,8 @@ Advanced S series packages offer enhanced shaping features to meet high requirem
 </thead>
 <tbody><tr>
 <td >Advanced S1 - 01</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s101_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-01_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s101_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-01_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td rowspan=4>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
@@ -102,8 +102,8 @@ Advanced S series packages offer enhanced shaping features to meet high requirem
 </tr>
 <tr>
 <td >Advanced S1 - 02</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s102_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-02_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s102_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-02_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 21.6 MB</ul><br>
 <b>Android package size:</b><ul style="margin:0"><li/>arm64-v8a: 22.6 MB<li/>armeabi-v7a: 18.3 MB<li/>assets: 21.6 MB<li/>aar: 700 KB
@@ -111,8 +111,8 @@ Advanced S series packages offer enhanced shaping features to meet high requirem
 </tr>
 <tr>
 <td >Advanced S1 - 03</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s103_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-03_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s103_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-03_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td ></ul><br>
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 25 MB</ul><br>
 <b>Android package size:</b><ul style="margin:0"><li/>arm64-v8a: 22.6 MB<li/>armeabi-v7a: 18.3 MB<li/>assets: 25.0 MB<li/>aar: 700 KB
@@ -120,8 +120,8 @@ Advanced S series packages offer enhanced shaping features to meet high requirem
 </tr>
 <tr>
 <td >Advanced S1 - 04</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.7_ios.rc.9/xmagic_res_s104_ios.zip">Download</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-04_android_2.4.0.108.zip">Download</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s104_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-04_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS package size:</b><ul style="margin:0"><li/>arm64: 39.8 MB<li/>bundle: 28.8 MB</ul><br>
 <b>Android package size:</b><ul style="margin:0"><li/>arm64-v8a: 22.6 MB<li/>armeabi-v7a: 18.3 MB<li/>assets: 28.8 MB<li/>aar: 700 KB

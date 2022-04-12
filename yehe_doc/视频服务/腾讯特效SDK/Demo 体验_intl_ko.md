@@ -6,7 +6,7 @@
 ## Demo 체험
 Tencent Effect Demo 프로젝트 및 TE 통합 MLVB, UGSV, TRTC Demo 프로젝트를 포함한 기능적 경험을 위해 Demo를 직접 다운로드할 수 있으며 현재 프로젝트 요구 사항에 따라 대상 디버깅을 할 수 있습니다.
 
->! Tencent Effect iOS 플랫폼 ZIP 패키지에는 **SDK** 및 **Demo project**가 포함되어 있습니다. [iOS ZIP 패키지](https://intl.cloud.tencent.com/document/product/1143/45377)를 다운로드할 수 있습니다.
+>! Tencent Effect iOS 플랫폼 ZIP 패키지에는 **SDK** 및 **Demo project**가 포함되어 있습니다. [iOS ZIP 패키지](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.16/demo.zip)를 다운로드할 수 있습니다.
 
 <table>
 <thead>
@@ -21,28 +21,28 @@ Tencent Effect Demo 프로젝트 및 TE 통합 MLVB, UGSV, TRTC Demo 프로젝�
 <tbody>
 <tr>
 <td>Tencent Effect</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1143/45377">ZIP 패키지</a></td>
-<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/6dffbd7690106f2dd51f187055cdc4bd.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/xmagic-demo-2.4.0.108-signed.apk">클릭하여 다운로드</a></td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108/xmagic_S1-04_android_2.4.0.108.zip">ZIP 패키지</a></td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/demo.zip">ZIP 패키지</a></td>
+<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/c0a30f63204a3e9a878bd10b4b3b5c8d.png" width=120><br><a href="http://dldir1.qq.com/hudongzhibo/xmagic/xmagic-demo-2.4.1.119_signed.apk">클릭하여 다운로드</a></td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-04_android_2.4.1.119.zip">ZIP 패키지</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45384">DOC</a></td></tr>
 <tr>
 <td>MLVB</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.vcube/MLVB-API-Example.zip">ZIP 패키지</a></td>
-<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/879e6cf522845aaea880824c7c5ac354.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/MLVB-Xmagic-demo-2.4.0.108.apk">클릭하여 다운로드</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108.vcube/MLVB-xmagic-demo.zip">ZIP 패키지</a></td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/MLVB-API-Example.zip">ZIP 패키지</a></td>
+<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/51829162a1fc55f3bf69fc1c6c86b7bf.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/MLVB-xmagic-demo-2.4.1.115.apk">클릭하여 다운로드</td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/MLVB-API-Example.zip">ZIP 패키지</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45387">DOC</a></td>
 </tr>
 <tr>
 <td>TRTC</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.vcube/TRTC-API-Example.zip">ZIP 패키지</a></td>
-<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/2fd150becfa19b3333fe47c5c12eb253.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/TRTC-Xmagic-demo-2.4.0.108.apk">클릭하여 다운로드</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108.vcube/TRTC-xmagic-demo.zip">ZIP 패키지</a></td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/TRTC-API-Example.zip">ZIP 패키지</a></td>
+<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/b6d9e3b81e7e3c3b8acc99826d1125bd.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/TRTC-xmagic-demo-2.4.1.115.apk">클릭하여 다운로드</td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/TRTC-API-Example.zip">ZIP 패키지</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45390">DOC</a></td></tr>
 <tr>
 <td>UGSV</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.0.vcube/UGSV-API-Example.zip">ZIP 패키지</a></td>
-<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/c8f7958084e44d920c1542787dfb985f.png" width=120><br><a href=" https://dldir1.qq.com/hudongzhibo/xmagic/UGSV-Xmagic-demo-2.4.0.108.apk">클릭하여 다운로드</td>
-<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.0.108.vcube/UGSV-xmagic-demo.zip">ZIP 패키지</a></td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/UGSV-API-Example.zip">ZIP 패키지</a></td>
+<td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/c64c2577d956d81cc50acb4547f8848f.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/UGSV-xmagic-demo-2.4.1.115.apk">클릭하여 다운로드</td>
+<td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/UGSV_Demo.zip">ZIP 패키지</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45394">DOC</a></td></tr>
 </tbody></table>
 
