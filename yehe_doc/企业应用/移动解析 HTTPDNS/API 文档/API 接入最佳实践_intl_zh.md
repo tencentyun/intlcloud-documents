@@ -1,4 +1,4 @@
-﻿## 客户端接入流程
+## 客户端接入流程
 接入 HTTPDNS 过程中，需要改造移动客户端的域名解析机制，流程参考如下：
 
 ![HTTPDNS最佳实践](https://main.qcloudimg.com/raw/14701588dd29f0af9e0a793753e99b32.jpg)
