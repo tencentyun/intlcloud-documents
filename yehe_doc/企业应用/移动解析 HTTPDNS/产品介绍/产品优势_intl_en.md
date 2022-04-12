@@ -1,4 +1,4 @@
-﻿In terms of implementation, HTTPDNS simply replaces the DNS protocol with the HTTP protocol for resolving domains. However, this replacement brings enormous benefits:
+In terms of implementation, HTTPDNS simply replaces the DNS protocol with the HTTP protocol for resolving domains. However, this replacement brings enormous benefits:
 ## Elimination of DNS Query Exceptions
 A DNS request bypasses the local DNS of the ISP and is directly passed through the IP of the HTTPDNS server, thereby eliminating DNS exceptions.
 
