@@ -26,8 +26,10 @@ Anda dapat dengan mudah memigrasikan instans dari jaringan klasik ke VPC. Lihat 
 </table>
 
 >? Jika Anda ingin mempertahankan agar alamat IP sumber daya tidak berubah setelah beralih jaringan, coba buat VPC yang memiliki IP jaringan klasik. Jika upaya ini tidak memungkinkan, lihat solusi berikut:
-+ Buat layanan DNS pribadi dan selesaikan nama domainnya. Setelah memigrasikan sumber daya ke VPC, gunakan Tencent Cloud [DNS pribadi](https://intl.cloud.tencent.com/document/product/1097/40551).
-+ Gunakan IP publik. 
+>+ Buat layanan DNS pribadi dan selesaikan nama domainnya. Setelah memigrasikan sumber daya ke VPC, gunakan Tencent Cloud [DNS pribadi](https://intl.cloud.tencent.com/document/product/1097/40551).
+>+ Gunakan IP publik. 
+>
+
 ## Solusi Akses Hibrida Selama Migrasi
 Akses hibrida berarti layanan yang dimigrasikan dapat mengakses jaringan klasik dan VPC. Tencent Cloud memberikan solusi akses hibrida berikut:
 + Aksesibilitas IP jaringan klasik dan IP VPC dari layanan TencentDB memastikan akses hibrida di tingkat instans TencentDB.
