@@ -9,29 +9,30 @@ Este documento descreve as operações relacionadas com as políticas de roteame
 4. Na janela pop-up, <span id="routeParam" />configure a política de roteamento.
 >? Se você implantou um [serviço TKE](https://intl.cloud.tencent.com/document/product/457/6759) na VPC, o destino que você configura na política de roteamento da sub-rede da VPC não pode se sobrepor ao bloco CIDR da VPC ou ao intervalo de IP do TKE. Por exemplo, se o bloco CIDR da VPC for `172.168.0.0/16` e o bloco CIDR do TKE for `192.168.0.0/16`, o intervalo de IP de destino não pode estar dentro de `172.168.0.0/16` nem conter `192.168.0.0/16`.
 >
-><table><tbody>
-><tr><th>Item de configuração</th><th>Descrição</th></tr>
-><tr><td>Destination (Destino)</td><td>Especifica o intervalo de IP de destino para o qual você deseja encaminhar o tráfego de saída da sub-rede. Os requisitos para um destino são os seguintes:
-><ul><li>Insira um intervalo de IP. Se você quiser inserir um único IP, defina a máscara para `32` (por exemplo, `172.16.1.1/32`).</li>
-><li>O destino não pode ser um intervalo de IP da VPC onde reside a tabela de rotas, pois a rota local já permite interconexão de rede privada neste VPC.</li></ul>
->	</td></tr>
-><tr><td>Next hop type (Tipo do próximo salto)</td><td>Indica a saída de pacotes de dados para a VPC. Tipos aceitos:
->  <ul>
->     <li> NAT Gateway: o tráfego direcionado para um intervalo de IP de destino é encaminhado para um NAT Gateway.</li>
->     <li>Peering Connections: o tráfego direcionado para um intervalo de IP de destino é encaminhado para o par da VPC de um Peering Connection.</li>
->     <li>Direct Connect Gateway (Gateway do Direct Connect): o tráfego direcionado para um intervalo de IP de destino é encaminhado para um gateway do Direct Connect.</li>
->    <li>High Availability Virtual IP (IP virtual de alta disponibilidade): o tráfego direcionado para um intervalo de IP de destino é encaminhado para um HAVIP.</li>
->    <li>VPN Gateway (Gateway do VPN): o tráfego direcionado para um intervalo de IP de destino é encaminhado para um gateway do VPN.</li>
->    <li>Public IP of CVM (IP público da CVM): o tráfego direcionado para um intervalo de IP de destino é encaminhado para o IP público (incluindo EIPs) de uma instância da CVM na VPC.</li>
->    <li>CVM: o tráfego direcionado para um intervalo de IP de destino é encaminhado para uma instância da CVM na VPC.</li>
->    </ul>
-> </td></tr>
-><tr><td>Next hop (Próximo salto)</td><td>Especifica a instância do próximo salto para a qual o tráfego é redirecionado, como o gateway ou o IP da CVM.</td></tr>
-><tr><td>Notes (Observações)</td><td>(Opcional) Você pode inserir a descrição da rota para gerenciamento de recursos.</td></tr>
-><tr><td>Add a line (Adicionar uma linha)</td><td>Você pode clicar em <b>+Add a line (+Adicionar uma linha)</b> para configurar várias políticas de roteamento ou clicar no ícone de exclusão na coluna <b>Operation (Operação)</b> para excluir as políticas de roteamento desnecessárias.</td></tr>
-></tbody> </table>
->
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/5d4e0dcde1c1a257298ea7fbdf15270a.png">
+
+<table><tbody>
+<tr><th>Item de configuração</th><th>Descrição</th></tr>
+<tr><td>Destination (Destino)</td><td>Especifica o intervalo de IP de destino para o qual você deseja encaminhar o tráfego de saída da sub-rede. Os requisitos para um destino são os seguintes:
+<ul><li>Insira um intervalo de IP. Se você quiser inserir um único IP, defina a máscara para `32` (por exemplo, `172.16.1.1/32`).</li>
+<li>O destino não pode ser um intervalo de IP da VPC onde reside a tabela de rotas, pois a rota local já permite interconexão de rede privada neste VPC.</li></ul>
+	</td></tr>
+<tr><td>Next hop type (Tipo do próximo salto)</td><td>Indica a saída de pacotes de dados para a VPC. Tipos aceitos:
+  <ul>
+     <li> NAT Gateway: o tráfego direcionado para um intervalo de IP de destino é encaminhado para um NAT Gateway.</li>
+     <li>Peering Connections: o tráfego direcionado para um intervalo de IP de destino é encaminhado para o par da VPC de um Peering Connection.</li>
+     <li>Direct Connect Gateway (Gateway do Direct Connect): o tráfego direcionado para um intervalo de IP de destino é encaminhado para um gateway do Direct Connect.</li>
+    <li>High Availability Virtual IP (IP virtual de alta disponibilidade): o tráfego direcionado para um intervalo de IP de destino é encaminhado para um HAVIP.</li>
+    <li>VPN Gateway (Gateway do VPN): o tráfego direcionado para um intervalo de IP de destino é encaminhado para um gateway do VPN.</li>
+    <li>Public IP of CVM (IP público da CVM): o tráfego direcionado para um intervalo de IP de destino é encaminhado para o IP público (incluindo EIPs) de uma instância da CVM na VPC.</li>
+    <li>CVM: o tráfego direcionado para um intervalo de IP de destino é encaminhado para uma instância da CVM na VPC.</li>
+    </ul>
+ </td></tr>
+<tr><td>Next hop (Próximo salto)</td><td>Especifica a instância do próximo salto para a qual o tráfego é redirecionado, como o gateway ou o IP da CVM.</td></tr>
+<tr><td>Notes (Observações)</td><td>(Opcional) Você pode inserir a descrição da rota para gerenciamento de recursos.</td></tr>
+<tr><td>Add a line (Adicionar uma linha)</td><td>Você pode clicar em <b>+Add a line (+Adicionar uma linha)</b> para configurar várias políticas de roteamento ou clicar no ícone de exclusão na coluna <b>Operation (Operação)</b> para excluir as políticas de roteamento desnecessárias.</td></tr>
+</tbody> </table>
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/5d4e0dcde1c1a257298ea7fbdf15270a.png">
+
 5. Clique em **Create (Criar)**.
 
 ## Edição de uma política de roteamento
