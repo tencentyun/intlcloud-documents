@@ -57,7 +57,7 @@ For more information about CFS storage types, see [Storage Types and Performance
   </tr>
 	 <tr>
     <td>CCN</td>
-    <td>Required only for the Turbo series. Select an existing CCN or create a new one. For more information about CCN, please see <a href="https://cloud.tencent.com/product/ccn">here</a>. 
+    <td>Required only for the Turbo series. Select an existing CCN or create a new one. For more information about CCN, please see <a href="https://intl.cloud.tencent.com/products/ccn">here</a>. 
   </tr>
 	<tr>
     <td>IP Range</td>
