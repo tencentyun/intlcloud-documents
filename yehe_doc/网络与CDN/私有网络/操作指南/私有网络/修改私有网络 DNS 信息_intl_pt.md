@@ -16,6 +16,6 @@ As novas configurações entrarão em vigor em todos as CVMs na VPC.
    + DNS: endereços do servidor DNS
      >?
      >+ O DNS padrão da Tencent Cloud é “183.60.83.19” e “183.60.82.98”. Se o DNS padrão não for usado, os serviços internos como a ativação do Windows, o NTP e o YUM não estarão disponíveis.
-     + O DNS aceita no máximo quatro endereços IP. Separe os IPs com vírgulas. Observe que alguns sistemas operacionais podem não aceitar quatro endereços DNS.
+     >+ O DNS aceita no máximo quatro endereços IP. Separe os IPs com vírgulas. Observe que alguns sistemas operacionais podem não aceitar quatro endereços DNS.
    + Nome de domínio: sufixo do nome do host da CVM, como “exemplo.com”. Você pode inserir até 60 caracteres ou manter a configuração padrão se não tiver requisitos especiais.
     ![](https://main.qcloudimg.com/raw/50129c5b14c7c6d5923263719eec5bd2.png)
