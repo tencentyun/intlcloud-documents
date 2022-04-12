@@ -1,7 +1,363 @@
+## April 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td> SDK 6.1.2166 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+	<li> Fixed the issue where no data was returned when two or more userIDs were entered for `senderUserIDList` to search for local messages.</li>
+	<li> Fixed the issue where the SDK for Android called back only one message when a user recalled multiple messages with the RESTful API.</li>
+	<li> Fixed occasional crashes in quickly clearing unread messages for Windows.</li>
+	<li> Released the International Edition demo.</li>
+	<li> Switched the demo's offline push back to vendor channels.</li>
+	<li> Switched the demo's login with mobile number to the aPaaS service.</li>
+	<li> Fixed the failure of audio/video call sync across multiple clients.</li>
+    </ul></td>
+    <td> April 2, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+</table>
+
+## March 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+<td>Flutter SDK 3.9.1</td>
+<td><ul style="margin:0;">
+<li>Upgraded the underlying library to v6.1.2155.
+</ul></td>
+<td>March 24, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.9.0</td>
+<td><ul style="margin:0;">
+<li>Modified GroupListener.
+</ul></td>
+<td>March 22, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.9</td>
+<td><ul style="margin:0;">
+<li>Fixed the registration result listening issue.
+</ul></td>
+<td>March 18, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.4</td>
+<td><ul style="margin:0;">
+<li>Updated APIs.
+</ul></td>
+<td>March 14, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+    <td>SDK 6.1.2155 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Added support for read receipts for group messages (<a href="https://intl.cloud.tencent.com/document/product/1047/36360#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7">iOS documentation</a>, <a href="https://intl.cloud.tencent.com/document/product/1047/36359#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7">Android documentation</a>). </li>
+	<li> Added support for setting offline push alert sound for Android.</li>
+	<li> Added the API for setting network proxy for mobile SDKs.</li>
+	<li> Supplemented offline push APIs for the C/C++ platform.</li>
+	<li> Added support for automatically synchronizing signaling messages in a group after login.</li>
+	<li> Fixed the issue where a user cannot get complete custom fields after receiving a notification on custom field changes.</li>
+	<li> Fixed the notification muting status return error that occasionally occurred when the conversation list was pulled under a weak network.</li>
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log (Native)</a>.</li>
+    </ul></td>
+    <td> March 18, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.4</td>
+<td><ul style="margin:0;">
+<li>Updated APIs.
+</ul></td>
+<td>March 14, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+    <td> SDK 2.17.0 release (Mini Program and Web)</td>
+    <td><ul style="margin:0">
+       <li>Added support for <a href="https://intl.cloud.tencent.com/document/product/1047/33529">community groups</a>.</li>
+<li>Recent contacts' `Conversation.lastMessage` supports group notifications. </li>
+<li>`Message.payload.memberList` supports getting the nickname, profile photo, and other information of group members who joined or left a group.</li>
+<li>Images in WEBP format can be sent.</li><li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281">Update Logs (Web & Mini Programs).</a></li>
+    </ul></td>
+    <td>March 2, 2022 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+</tr> 
+<tr>
+<td>Flutter SDK 3.8.3 </td>
+<td><ul style="margin:0;">
+<li>Switched the token encoding format based on the environment.
+</ul></td>
+<td>March 1, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+</table>
+
+## February 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.2</td>
+<td><ul style="margin:0;">
+<li>Updated group member parameter constraints.
+</ul></td>
+<td>February 21, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.0</td>
+<td><ul style="margin:0;">
+<li>Upgraded the underlying API dependencies.
+</ul></td>
+<td>February 17, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.8</td>
+<td><ul style="margin:0;">
+<li>Fixed the exception caused by force unwrapping.
+</ul></td>
+<td>February 15, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+    <td>SDK 2.16.3 release (Mini Program and Web)</td>
+    <td><ul style="margin:0">
+        <li>Fixed login failures that occurred when Windows WeChat accessed mini programs and uni-app packaged Android apps (some devices).
+    </ul></td>
+    <td>February 11, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+</tr> 
+<tr>
+    <td>SDK 2.16.2 release (Mini Program and Web)</td>
+    <td><ul style="margin:0">
+        <li>Added support for sending file messages after uni-app packages native apps.</li>
+        <li>Added support for the international website in India.</li>
+				        <li>Fixed some emoji rendering issues.</li>
+    </ul></td>
+    <td>February 10, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.7</td>
+<td><ul style="margin:0;">
+<li>Fixed the Swift code warning.                        </li><li>Rewrote Swift's force unwrapping code.                          </li><li>Added the `id` field to the `message` instance returned by the `sendMessage` API.  </li>
+</ul></td>
+<td>February 10, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+    <td> SDK 6.0.1992 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Fixed occasional crashes when sending two consecutive messages to a deleted or nonexistent group.</li>
+    </ul></td>
+    <td> February 9, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+</table>
+
+## January 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td> TUIKit 6.0.1992 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Added the theme setting capability.</li>
+    	<li> Added the language setting capability.</li>
+	<li> Added the group profile card feature of group management.</li>
+	<li> Added the file message feature of animation upload/download.</li>
+        <li> Added the redirection entry "Received xx new messages" when browsing the message history.</li>
+	<li> Added the redirection entry "Back to the latest" when browsing the message history.</li>
+	<li> Added the entry for one-click redirection to group @ messages.</li>
+	<li> Optimized the display style of the last message in the conversation list.</li>
+    <li> Added the selected state for text messages.</li>
+	<li> Optimized the A2 and D2 error descriptions.</li>
+	<li> Added iOS 15 system UI adaptation.</li>
+    </ul></td>
+    <td>January 25, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.5</td>
+<td><ul style="margin:0;">
+<li>Upgraded the underlying library to v6.0.1975.
+<li>Supported the TPNS token for offline push configuration.
+</ul></td>
+<td>2022-01-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+    <td> SDK 6.0.1975 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Released SDK version for all-platform C++ APIs.</li>
+    	<li> Added the feature of integrating the TPNS channel for offline push.</li>
+	<li> Added change notification for custom fields of personal profile.</li>
+	<li> Fixed the issue where the returned content was occasionally empty when a user attempted to obtain friend remarks.</li>
+        <li> Optimized network type log printing.</li>
+	<li> Supplemented the message priority fields of the message object for iOS.</li>
+	<li> Fixed the issue where the message object returned for callback of inserting local messages was incomplete in the C interface version.</li>
+	<li> Switched the offline push for the open source demo of the official TUIKit to the TPNS channel.</li>
+    </ul></td>
+    <td>January 14, 2022</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+
+<tr>
+<td>SDK 2.16.1 release (Mini Program and Web)</td>
+<td><ul style="margin:0;">
+<li>Added support for Alipay Mini Program to send .image images.                                                                                </li>
+<li>Added the feature of deleting historical messages while deleting conversations (<a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversation">deleteConversation</a>).   </li>
+<li>Fixed the error caused by the downstream file message 'fileName' being an empty string.                                                                          </li>
+<li>Fixed the issue caused by the group attribute API call sequence.                                                                                          </li>
+<li>Fixed the `__wxConfig is not defined` issue occurred when uni-app packaged apps to Baidu Mini Program and other platforms.                                               </li>
+</ul></td>
+<td>January 14, 2022</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+<tr>
+<td>Unity SDK 1.6.4 </td>
+<td><ul style="margin:0;">
+<li>SDK supports package manager import.
+<li>Added the feature of adding dependencies after iOS compilation.
+</ul></td>
+<td>January 13, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.1</td>
+<td><ul style="margin:0;">
+<li>Added the feature of returning the message creation ID for a message sending progress event.
+<li>Optimized the callback by reminding the business side that the callback error is caught in SDK and needs to be modified.
+</ul></td>
+<td>January 12, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.0</td>
+<td><ul style="margin:0;">
+<li>Optimized the unpacking of cloudCustomData.
+</ul></td>
+<td>2022-01-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+
+<tr>
+<td>Flutter SDK 3.6.9</td>
+<td><ul style="margin:0;">
+<li>Optimized the message reply parameters.
+</ul></td>
+<td>2022-01-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.8</td>
+<td><ul style="margin:0;">
+<li>Optimized the message reply API.
+</ul></td>
+<td>2022-01-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>SDK 2.16.0 release (Mini Program and Web)</td>
+<td><ul style="margin:0;">
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType">setMessageRemindType</a> for setting the **Mute Notifications** mode for C2C conversations.             </li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setAllMessageRead">setAllMessageRead</a> for quickly marking unread messages of all conversations as read.                      </li>
+<li>Added <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#sendMessage">sendMessage</a> for excluding sent messages from the conversation's unread message count and not updating the conversation's `lastMessage`.   </li>
+<li>Added the feature that allows new members of an audio-video group to view historical messages before joining the group (the users must activate the Flagship Edition package to use the feature).                                                                                                 </li>
+<li>Update: SDK uses the <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a>.                                      </li>
+<li>Update: the conversations with deleted accounts are filtered out for the conversation list.                                                                                                                 </li>
+<li>Update: optimized the update timing of 'nick' and 'avatar' for roaming messages.                                                                                                       </li>
+<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34281">Update Log (Native)</a>.</li>
+</ul></td>
+<td>2022-01-05</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.7</td>
+<td><ul style="margin:0;">
+<li>Upgraded the compilation environment for iOS from 8.0 to 9.0.
+</ul></td>
+<td>2022-01-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+</table>
+
+
 ## December 2021
 <table>
-<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
 </tr> 
+<tr>
+    <td> SDK 5.9.1886 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Fixed the issue of incomplete unread messages in the callback after a user logged in and synchronized C2C unread messages.</li>
+    	<li> Fixed the issue of incomplete returned messages after a user pulled local messages.</li>
+	<li> Fixed HTTPS request errors on the Linux platform.</li>
+	<li> Fixed the issue where no result was returned for querying the custom fields of friends in the C API version.</li>
+        <li> Optimized the error code descriptions for the network layer.</li>
+	<li> TUIKit: image and video messages can be scrolled horizontally for viewing.</li>
+	<li> TUIKit: recalled messages can be edited again.</li>
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log (Native)</a>.</li>
+    </ul></td>
+    <td>December 31, 2021</td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.6</td>
+<td><ul style="margin:0;">
+<li>Added the message reply API.
+<li>Fixed the issue for web where the release mode triggered an error.
+</ul></td>
+<td>2021-12-30</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Unity SDK 1.6.0</td>
+<td><li>Switched the underlying cross-platform C API.</li><li>Supports the Windows, macOS, Android, and iOS platforms with unified APIs.</li><li>Note that v1.6.0 is incompatible with earlier versions.</li></td>
+<td>2021-12-21</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr> 
+<tr>
+    <td> SDK 5.9.1872 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+        <li> Added the feature of sending targeted group messages.</li>
+    	<li> Added authentication for COS file download.</li>
+	<li> Added AES support for the encrypted tunnels of persistent connections.</li>
+	<li> Added support for avoiding access point silos for the connection logic.</li>
+        <li> Added support for configuring the concurrent COS file uploads and downloads in the backend.</li>
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log (Native)</a>.</li>
+    </ul></td>
+    <td>December 20, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.5</td>
+<td><ul style="margin:0;">
+<li>Fixed Java syntax errors.
+</ul></td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.4</td>
+<td><ul style="margin:0;">
+<li>Fixed the issue where there was no return for Android async registration events.
+<li>Fixed the issue where an error was reported when basic listening events were removed.
+<li>Added the UUID of a message being sent in its progress event.
+</ul></td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+
 <tr>
     <td> SDK 5.8.1696 release (enhanced edition)</td>
     <td><ul style="margin:0">
@@ -11,9 +367,49 @@
 	<li> iOS: fixed the occasional failure to load resource files.</li>
     </ul></td>
     <td> December 10, 2021</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
 </tr>
+<tr>
+<td>Flutter SDK 3.6.3</td>
+<td><ul style="margin:0;">
+<li>Optimized the `addFriend` API: changed `addType` from int to FriendTypeEnum.
+<li>Optimized the `acceptFriendApplication` API: changed `acceptType` from int to FriendResponseTypeEnum.
+<li>Optimized the `getHistoryMessageList` API: changed `type` from int to HistoryMsgGetTypeEnum.
+	<li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/45915">Update Log (Native)</a>.</li>
+</ul></td>
+<td>December 9, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.2</td>
+<td><ul style="margin:0;">
+<li>Fixed the issue where no UUID was passed in for removing an advanced message.
+</ul></td>
+<td>2021-12-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.1</td>
+<td><ul style="margin:0;">
+<li>Fixed the issue where file progress events got lost.
+</ul></td>
+<td>2021-12-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.0</td>
+<td><ul style="margin:0;">
+<li>Added support for multiple listener registrations and callbacks in modules.
+<li>Added the `markAllMessageAsRead` API for marking all messages as read.
+<li>Added the feature of parsing combined messages.
+<li>Upgraded the Native SDK to v5.8.1668.
+</ul></td>
+<td>2021-12-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">Framework SDK download</a></td>
+</tr>
+
 </table>
+
 
 ## November 2021
 <table>
