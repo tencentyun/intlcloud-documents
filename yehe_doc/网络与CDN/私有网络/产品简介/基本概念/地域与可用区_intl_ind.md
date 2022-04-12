@@ -217,7 +217,7 @@ Meskipun Anda hanya memiliki satu VPC, kami tetap menyarankan agar Anda men-depl
 Tabel berikut menjelaskan sumber daya Tencent Cloud mana yang bersifat global, yang bersifat regional, dan yang khusus untuk zona ketersediaan.
 
 <table>
-	<tr><th width="14%">Sumber Daya</th><tr>Format ID Sumber Daya<br><Resource Abbreviation>-8-Digit String Angka dan Huruf</th><th>Jenis<th><br>Deskripsi</th></tr>
+	<tr><th width="14%">Sumber Daya</th><th>Format ID Sumber Daya<br><Resource Abbreviation>-8-Digit String Angka dan Huruf</th><th>Jenis</th><th>Deskripsi</th></tr>
 	<tbody>
 	<tr>
 	  <td>Akun Pengguna</td>
