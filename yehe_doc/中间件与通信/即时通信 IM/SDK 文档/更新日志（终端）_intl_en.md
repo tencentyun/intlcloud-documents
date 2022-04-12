@@ -1,4 +1,118 @@
-## 5.8.1696 @2021.12.10 - Enhanced Version
+## 6.1.2166 @2022.04.02 - Enhanced Edition
+
+### SDK
+
+- Fixed the issue where no data was returned when two or more userIDs were entered for `senderUserIDList` to search for local messages.
+- Fixed the issue where the SDK for Android called back only one message when a user recalled multiple messages with the RESTful API.
+- Fixed occasional crashes in quickly clearing unread messages for Windows.
+
+### TUIKit and demo
+
+- Released the International Edition demo.
+- Switched offline push back to vendor channels.
+- Switched the login with mobile number to the aPaaS service.
+- Fixed the failure of audio/video call sync across multiple clients.
+
+## 6.1.2155 @2022.03.18 - Enhanced Edition
+
+### SDK
+
+- Added support for read receipts for group messages ([iOS documentation](https://intl.cloud.tencent.com/document/product/1047/36360#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7), [Android documentation](https://intl.cloud.tencent.com/document/product/1047/36359#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7)).
+- Added support for setting the sound for Android offline push messages.
+- Added the API for setting network proxy for mobile SDKs.
+- Supplemented offline push APIs for the C/C++ platform.
+- Added support for automatically synchronizing signaling messages in a group after login.
+- Fixed the issue where a user cannot get complete custom fields after receiving a notification on custom field changes.
+- Fixed the notification muting status return error that occasionally occurred when the conversation list was pulled under a weak network.
+- Optimized the log printing logic.
+- Optimized error descriptions.
+
+### TUIKit
+- Upgraded the personal information protection law for TUIKit demo to meet compliance requirements.
+- Fixed the issue where a user cannot initiate an audio/video call by tapping the banner notification after receiving an offline push notification.
+- Fixed the issue where a user cannot initiate an audio/video call by directly opening the app after switching the app to background and receiving an offline push notification.
+
+## 6.0.1992 @2022.02.09 - Enhanced Edition
+### SDK
+
+- Fixed occasional crashes when sending two consecutive messages to a deleted or nonexistent group.
+
+### TUIKit
+
+- Added the theme setting capability.
+- Added the language setting capability.
+- Added the group profile feature of group management.
+- Added the file message feature of animation upload/download.
+- Added the redirection entry "Received XX new messages" when browsing historical messages.
+- Added the redirection entry "Back to the latest position" when browsing historical messages.
+- Added the entry for one-click redirection to group @ messages.
+- Optimized the display style of the last message in the conversation list.
+- Added the selected state for text messages.
+- Optimized the A2 and D2 error descriptions.
+- iOS 15 system UI adaptation.
+
+## 6.0.1975 @2022.01.14 - Enhanced Edition
+
+### SDK
+
+- Released SDK version for all-platform C++ APIs.
+- Added the feature of integrating the TPNS channel for offline push.
+- Added change notification for custom fields of personal profile.
+- Fixed the issue where the returned content was occasionally empty when a user attempts to obtain friend remarks. 
+- Optimized network type log printing. 
+- Supplemented the message priority fields of the message object for iOS.
+- Fixed the issue where the message object returned for callback of inserting local messages was incomplete in the C interface version. 
+- Switched the offline push for the open source demo of the official TUIKit to the TPNS channel.
+
+## 5.9.1886 @2021.12.31 - Enhanced Edition
+
+### SDK
+
+- Fixed the issue of incomplete unread messages in the callback after a user logged in and synchronized C2C unread messages.
+- Fixed the issue of incomplete returned messages after a user pulled local messages.
+- Fixed the issue where no friend information update callback was available on terminals with this account logged in after the friend remarks were modified.
+- Fixed HTTPS request errors on the Linux platform.
+- Fixed the issue where no result was returned for querying the custom fields of friends in the C interface version.
+- Optimized the error code description of the network layer.
+
+### TUIKit and demo
+- Added support for displaying and viewing image and video messages by sliding to left or right.
+- Added support for re-editing recalled messages.
+- Added the feature of click to call back for signaling messages of audio and video calls. 
+- Added the feature of displaying the sending status of the last message in the conversation list.
+- Added the "Confirm" pop-up window for deleting messages.
+- For the Android demo, fixed the issue where offline push was unavailable on Honor phones.
+- For Android, fixed the issue where the read status of messages in the current conversation was mistakenly updated after the messages of the conversation were forwarded to a third person and read.
+- For Android, fixed the crash that occurred when the number of audio and video call members exceeded 9.
+- Unified `minSdkVersion` of the Android TUI component to 16.
+- For iOS, improved the transmission speed of videos after recording.
+- For iOS, fixed the black frame of the video cover.
+
+
+## 5.9.1872 @2021.12.20 - Enhanced Edition
+
+### SDK
+
+- Added support for sending targeted group messages.
+- Added support for COS download authentication.
+- Added support for AES encryption channels of persistent connections.
+- Added support for access point anti-islanding for the connection logic.
+- Added support for backend configuration of COS file upload and download concurrence.
+- Added the option of giving priority to IPv6 in a dual-stack network.
+- Added the feature of displaying the 20 historical messages before a user joins an audio-video group (AVChatRoom). Users must activate the Flagship Edition package before they can use the feature.
+- Added support for backend configuration of the maximum number of roaming messages when a user gets historical group messages.
+- Optimized the description of some error codes.
+- Fixed the issue where the backend returned `Failed` for quickly clearing unread messages if there were deleted group conversations in the local storage.
+- Fixed the issue where when a user sent through RESTful API messages excluded from the unread count, the SDK occasionally failed to clear the unread count when issuing a read report.
+- Fixed the issue where when a user logged in again after quickly entering or leaving a group through RESTful API during offline, an error occurred occasionally when the user got the joined group list.
+- Fixed the issue where when a user sent messages excluded from unread count when the recipient is offline, the unread count was occasionally inaccurate after the recipient was online again.
+
+### TUIKit and demo
+
+- Added support for selecting a country/region on the login page.
+- Added the feature of clearing initialization operations performed before a user accepts the privacy agreement.
+
+## 5.8.1696 @2021.12.10 - Enhanced Edition
 
 ### SDK
 
@@ -10,21 +124,20 @@
 - Changed the default skin and optimized the UI logic.
 - iOS: fixed the occasional failure to load resource files.
 
-## 5.8.1672 @2021.11.30 - Enhanced Version
+## 5.8.1672 @2021.11.30 - Enhanced Edition
 
 ### SDK
 
 - Optimized the device information getting logic to meet compliance requirements.
 - Fixed the crashes in quickly clearing the unread message count under certain conditions.
 
-## 5.8.1668 @2021.11.19 - Enhanced Version
+## 5.8.1668 @2021.11.19 - Enhanced Edition
 
 ### SDK
 
 - Added the feature of quickly clearing the total unread message count of all conversations.
 - Added support for the community group (Community) feature. A community group supports up to 100,000 members. Users must activate the Flagship Edition package before they can use the feature.
-- Added the feature of displaying the 20 historical messages before a user joins an audio-video group (AVChatRoom). Users must activate the Flagship Edition package before they can use the feature.
-- Added the feature of automatically excluding conversions whose message receiving option is "Receive but not notify" or "Not receive" when getting the total unread message count of all conversations.
+- Added the feature of automatically excluding conversations whose message receiving option is "Receive but not notify" or "Not receive" when getting the total unread message count of all conversations.
 - Added support for Chinese SM algorithms for encrypted tunnels of persistent connections.
 - Fixed the issue where, when historical messages were pulled, the end tag was incorrectly determined occasionally.
 - Fixed the issue where, when the SDK was upgraded from the Basic Edition to Enhanced Edition in overriding mode, audio-video groups that users previously joined had unread message count.
@@ -43,13 +156,12 @@
 - Added support for the community group feature.
 
 
-
-## Latest Enhanced Version 5.7.1435 @2021.09.30
+## 5.7.1435 @2021.09.30 - Enhanced Edition
 
 ### SDK
 
 - Fixed the issue where local data was not updated in time after group profile custom fields were modified.
-- Fixed the issue of synchronizing a large number of conversations to be pinned on top.
+- Fixed the issue of synchronizing a large number of conversations to be pinned to the top.
 - Fixed the issue where Android device timeout signaling did not contain the custom data entered during invitation.
 - Fixed the issue where empty profiles overwrote local profiles due to network request failures during non-friend profile pulling.
 - Fixed the issue where historical group messages could be pulled after a user left the group and then joined the group again.
@@ -63,13 +175,13 @@
 - Added the listener addition and deletion APIs for SDKs, groups, relationships, and conversations.
 - iOS: fixed the issue where audio-video group (AVChatRoom) creation failed when the group joining mode was not set.
 
-## Latest Basic Version 5.1.66 @2021.09.22
+## 5.1.66 @2021.09.22 - Basic Edition
 
 ### Android
 
 - Removed the feature of getting Wi-Fi information.
 
-## 5.6.1202 @2021.09.10 - Enhanced Version
+## 5.6.1202 @2021.09.10 - Enhanced Edition
 
 ### SDK
 
@@ -84,13 +196,13 @@
 - Fixed the issue where, after group members are muted in an audio-video group, the muting period obtained through getting the group member profile is 0.
 
 
-## 5.6.1200 @2021.08.31 - Enhanced Version 
+## 5.6.1200 @2021.08.31 - Enhanced Edition 
 
 ### SDK
 
 #### Common changes
 
-- Improved the login speed.
+- Optimized the login speed.
 - Added support for the international websites of Singapore, South Korea, and Germany.
 - Added support for commercial HTTP DNS.
 - Optimized the group attribute logic to solve the concurrency problem when group attributes are modified on multiple devices at the same time.
@@ -111,7 +223,7 @@
 - Fixed the issue where group profile custom fields were not saved when group notifications are saved to the database.
 - iOS: removed the `Tag_Profile_Custom_` prefix when getting custom user fields and removed the `Tag_SNS_Custom_` prefix when getting custom friend fields.
 - Android: removed the carrier name and Wi-Fi information getting features and AndroidX dependency.
-- Android: fixed crashes caused by non-UTF-8 encoding.
+- Android: fixed crashes caused by non-UTF8 encoding.
 
 ### TUIKit and demo
 
@@ -121,7 +233,7 @@
 - iOS: fixed the issue where the displayed number of records was incorrect when a user clears the original keyword and enters a new one to search for messages.
 - iOS: fixed the issue where searched custom messages were not displayed on the chat screen.
 
-## 5.5.897 @2021.07.29 - Enhanced Version
+## 5.5.897 @2021.07.29 - Enhanced Edition
 
 ### SDK
 
@@ -131,13 +243,13 @@
 
 Removed the calling of `getSimOperatorName()` for getting the carrier name.
 
-## 5.1.65 @2021.07.29 - Basic Version
+## 5.1.65 @2021.07.29 - Basic Edition
 
 ### Android
 
 Removed the calling of `getSimOperatorName()` for getting the carrier name.
 
-## 5.5.892 @2021.07.14 - Enhanced Version
+## 5.5.892 @2021.07.14 - Enhanced Edition
 
 ### SDK
 
@@ -148,7 +260,7 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 - Added notifications for message modifications by a third-party callback.
 - Added the API for getting the maximum number of group members that can be added to a group.
 - Added the `orderKey` field for sorting conversation objects to facilitate sorting conversations without the last message at the app layer.
-- Optimized the audio-video group message receiving latency by making the backend complete account conversation in advance.
+- Optimized the audio-video group message receiving latency by making the backend complete account switching in advance.
 - Upgraded the network connection scheduling protocol to reduce the network connection time outside the Chinese mainland.
 - Optimized the conversation list pulling logic.
 - Optimized the group member pulling logic and enabled local cache.
@@ -158,7 +270,7 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 - Fixed the stability issue reported online.
 
 
-## 5.4.666 @2021.06.03 - Enhanced Version
+## 5.4.666 @2021.06.03 - Enhanced Edition
 
 ### SDK
 
@@ -189,7 +301,7 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 - Fixed the issue where group conversations in Mute Notifications mode were filtered out when getting the total message unread count.
 - Fixed the occasional crashes caused by iOS HTTP requests.
 
-## 5.1.62 @2021.05.20 - Basic Version
+## 5.1.62 @2021.05.20 - Basic Edition
 
 ### SDK
 
@@ -199,7 +311,7 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 
 ### SDK
 
-- Added support for pinning a conversion on top.
+- Added support for pinning a conversation to the top.
 - Added support for setting the Mute Notifications option for one-to-one messages.
 - Added support for sending messages that are excluded from the unread count.
 - Added support for getting local conversation and message data when there is no network connection or your login fails.
@@ -295,8 +407,8 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 
 ### TUIKit and demo
 - Fixed the issue of the Android TUIKit where a black screen was displayed when you tried to view the original images that were not downloaded.
-- Fixed the internationalization issue of the iOS version.
-- Fixed the issue of the iOS version where images were overwritten when multiple images were sent at a time.
+- Fixed the internationalization issue for iOS.
+- Fixed the issue for iOS where images were overwritten when multiple images were sent at a time.
 - Fixed the issue of the iOS 14 operating system where there was no response when you clicked the "add" or "delete" button on the group details page.
 - Fixed the issue of the iOS 14 operating system where the tab bar disappeared after you left a group conversation and went back to the message list.
 
@@ -311,7 +423,7 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 ### TUIKit and demo
 **iOS/Android**
 
-- Improved internationalization support by eliminating the issue where there were Chinese characters in the English version.
+- Improved internationalization support by eliminating the issue where there were Chinese characters in the English edition.
 
 
 ## 5.1.137 @2021.01.29 - Lite Edition
@@ -434,8 +546,8 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 - Fixed the issue where users occasionally received the callbacks of messages sent by themselves.
 - Fixed the issue where there was no callback when you tried to get the list of groups that you joined when you hadn’t joined any group.
 - Fixed the issue where there was no conversation update callback when setting group message receiving options.
-- Fixed the issue where occasionally there was no end callback for conversion synchronization.
-- Fixed occasional crashes during conversion synchronization.
+- Fixed the issue where occasionally there was no end callback for conversation synchronization.
+- Fixed occasional crashes during conversation synchronization.
 
 
 ## 5.1.123 @2020.12.31 - Lite Edition
@@ -619,8 +731,9 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 ### TUIKit and demo
 
 **iOS/Android**
-- Added [group livestreaming](https://intl.cloud.tencent.com/document/product/1047/37310) features, such as co-anchoring, gifts, beauty filter, and voice changing.
-- Added [live rooms](https://intl.cloud.tencent.com/document/product/1047/38519) that support co-anchoring, PK, likes, gifts, beauty filter, on-screen comments, following friends, and other features.
+
+- Added [group livestreaming](https://intl.cloud.tencent.com/document/product/1047/34547) features, such as co-anchoring, gifts, beauty filter, and voice changing.
+- Added [live rooms](https://intl.cloud.tencent.com/document/product/1047/34547) that support co-anchoring, PK, likes, gifts, beauty filter, on-screen comments, following friends, and other features.
 - Optimized the recognition of audio and video signaling.
 
 
@@ -759,7 +872,7 @@ Removed the calling of `getSimOperatorName()` for getting the carrier name.
 
 **Android**
 
-Changed the default log storage location to `/sdcard/Android/data/package name/files/log/tencent/imsdk` to be compatible with Android Q versions.
+Changed the default log storage location to `/sdcard/Android/data/package name/files/log/tencent/imsdk` to be compatible with Android Q.
 
 **Windows**
 
@@ -845,7 +958,7 @@ Fixed a data error.
 
 - Fixed slow message pulling in some scenarios.
 - Fixed the compatibility issue with sending 3.x version audio messages to later versions.
-- Fixed the issue where the identifiers of some conversions in the obtained conversion list were null.
+- Fixed the issue where the identifiers of some conversations in the obtained conversation list were null.
 - Fixed known crashes.
 - Fixed SOCKS5 proxy users' password verification issue.
 - Optimized the pending group processing logic.
@@ -884,7 +997,7 @@ Fixed a data error.
 **Android**
 
 - Fixed the issue where offline users are kicked off.
-- Fixed exceptional upload progress callback on devices running earlier Android versions.
+- Fixed upload progress callback exceptions on devices running earlier Android versions.
 - Fixed memory leak during login.
 - Added the `getSenderNickname` API for messages.
 
@@ -899,7 +1012,7 @@ Fixed a data error.
 **Android**
 
 - Profile photos displayed in conversation lists can be set with rounded corners.
-- Fixed the issue where account switching is exceptional when a conversation is pinned to the top.
+- Fixed the account switching exception when a conversation is pinned to the top.
 
 
 ## 4.6.1 @2019.11.13
@@ -1438,7 +1551,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 **Windows**
 
 - Added support for custom field data reporting.
-- Added messages that disappear after being viewed.
+- Added online messages.
 - Added use cases for recalling messages.
 - Fixed occasional failures in setting upload files.
 - Fixed the issue where deleted messages could be seen in the message list.
@@ -1687,7 +1800,7 @@ Fixed the issue where setting profiles to int failed.
 **iOS**
 - Fixed the issue where clients did not receive relevant instructions after a group was deleted in the backend.
 - Fixed the issue where calling `deleteConversationAndMessage()` failed.
-- Fixed the issue where no messages were received after network reconnection (On the conversion interface, messages can be proactively pulled after network reconnection.)
+- Fixed the issue where no messages were received after network reconnection (On the conversation interface, messages can be proactively pulled after network reconnection.)
 
 **Android**
 - Fixed incorrect group pending and processed requests returned.
@@ -1897,7 +2010,6 @@ Fixed the issue where some .so libraries were incompatible with devices running 
 
 **API changes:**
 - Changed how `TIMMessageOfflinePushSettings.AndroidSettings` and `TIMMessageOfflinePushSettings.IOSSettings` are constructed.
-For more information, see [Offline Push](https://intl.cloud.tencent.com/document/product/1047/34336)
 
 ## IM Android SDK 2.5.2 2017-3-1
 - Fixed the issue where the return of outgoing packets occasionally timed out (return code 6205).
@@ -2103,5 +2215,4 @@ For more information, see [Offline Push](https://intl.cloud.tencent.com/document
 - Added support for one-to-one chats and group chats (discussion groups).
 - Added support for text, emoji, image, audio, location, and custom messages.
 - APNs push notifications (token reporting, foreground and background switching event reporting)
-- Messages can be stored locally.
-
+- Added the feature of storing messages locally.
