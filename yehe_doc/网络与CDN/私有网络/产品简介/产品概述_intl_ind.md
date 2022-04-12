@@ -4,7 +4,7 @@ Dokumen ini memperkenalkan komponen inti, mode koneksi, dan keamanan VPC.
 ## Komponen Inti
 Instans VPC memiliki tiga komponen inti: Rentang IP VPC, subnet, dan tabel rute.
 ### Rentang IP VPC
-Saat membuat VPC, Anda perlu menentukan [blok CIDR (classless inter-domain routing)(http://intl.cloud.tencent.com/document/product/215/4925) sebagai grup alamat IP VPC.
+Saat membuat VPC, Anda perlu menentukan blok CIDR [classless inter-domain routing](http://intl.cloud.tencent.com/document/product/215/4925) sebagai grup alamat IP VPC.
 
 Tencent Cloud VPC mendukung blok CIDR di salah satu rentang IP pribadi berikut:
 - **10.0**.0.0 - **10.255**.255.255 (**the mask range must be 16 to 28** (rentang mask harus 16 hingga 28))
