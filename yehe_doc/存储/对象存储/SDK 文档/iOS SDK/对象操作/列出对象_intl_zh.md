@@ -20,11 +20,11 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 #### 示例代码一: 获取第一页数据
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 // 单次返回的最大条目数量，默认1000
@@ -50,11 +50,11 @@ request.prefix = @"dir1/";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
 
 // 单次返回的最大条目数量，默认1000
@@ -84,11 +84,11 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 #### 示例代码二：请求下一页数据
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket-next-page"
+[//]: # (.cssg-snippet-get-bucket-next-page)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 // prevPageResult 是上一页的返回结果
@@ -115,11 +115,11 @@ request.maxKeys = 100;
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket-next-page"
+[//]: # (.cssg-snippet-get-bucket-next-page)
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
 
 // 分页参数 默认以UTF-8二进制顺序列出条目，所有列出条目从marker开始
@@ -153,11 +153,11 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 #### 示例代码三：获取对象列表与子目录
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
 // 单次返回的最大条目数量，默认1000
@@ -192,11 +192,11 @@ request.marker = prevPageResult.nextMarker;
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
-// 存储桶名称，格式为 BucketName-APPID
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
 
 // 单次返回的最大条目数量，默认1000
@@ -241,7 +241,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 
 #### 示例代码：获取对象历史版本列表第一页数据
 
-[//]: # ".cssg-snippet-list-objects-versioning"
+[//]: # (.cssg-snippet-list-objects-versioning)
 ```objective-c
 QCloudListObjectVersionsRequest* listObjectVersionsRequest = [[QCloudListObjectVersionsRequest alloc] init];
 

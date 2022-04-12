@@ -10,7 +10,7 @@ Kubernetes 官方提供了 NodePort 类型的 Service，即给所有节点开通
 ## 实现方式分析
 
 ### 传统 NodePort 方式问题分析
-通常会使用 CLB 直接绑定 NodePort 此方式来创建云上 Ingress 或 LB 类型的 Service，但此传统 NodePort 实现方式会存在以下问题：
+通常会使用 CLB 直接绑定 NortPort 此方式来创建云上 Ingress 或 LB 类型的 Service，但此传统 NodePort 实现方式会存在以下问题：
 - 流量从 CLB 转发到 NodePort 后还需进行 SNAT 再转发到 Pod，造成额外的性能损耗。
 - 如果流量过于集中到某几个 NodePort 时（例如，使用 nodeSelector 部署网关到固定几台节点上），可能导致源端口耗尽或 conntrack 插入冲突。
 - NodePort 本身也充当负载均衡器，CLB 绑定过多节点 NodePort 时可能导致负载均衡状态过于分散，导致全局负载不均。
@@ -39,8 +39,8 @@ CLB 直接绑定 Pod 时检查 Pod 是否 Ready，需查看 Pod 是否 Running�
 <span id="ElasticNetworkCard"></span>
 ### 确认是否开启弹性网卡
 请对应您的实际情况，按照以下步骤进行操作：
-- 若您在创建集群时，“容器网络插件”选择为【VPC-CNI】，则创建的 Pod 已默认使用了弹性网卡，请跳过此步骤。
-- 若您在创建集群时，“容器网络插件”选择为【Global Router】后开启了 VPC-CNI 支持。则为两种模式混用，创建的 Pod 默认不适用弹性网卡，需使用 YAML 创建工作负载，为 Pod 指定 `tke.cloud.tencent.com/networks: tke-route-eni` 该 annotation 来声明使用弹性网卡，并为其中一个容器添加例如 `tke.cloud.tencent.com/eni-ip: "1"`  的 requests 与 limits。YAML 示例如下：
+- 若您在创建集群时，“容器网络插件”选择为**VPC-CNI**，则创建的 Pod 已默认使用了弹性网卡，请跳过此步骤。
+- 若您在创建集群时，“容器网络插件”选择为**Global Router**后开启了 VPC-CNI 支持。则为两种模式混用，创建的 Pod 默认不适用弹性网卡，需使用 YAML 创建工作负载，为 Pod 指定 `tke.cloud.tencent.com/networks: tke-route-eni` 该 annotation 来声明使用弹性网卡，并为其中一个容器添加例如 `tke.cloud.tencent.com/eni-ip: "1"`  的 requests 与 limits。YAML 示例如下：
 ``` yaml
    apiVersion: apps/v1
    kind: Deployment

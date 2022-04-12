@@ -590,6 +590,13 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
 32.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45938).
 33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).
+<<<<<<< HEAD
 
 ### 개정 기록
 [개인정보 처리방침](https://intl.cloud.tencent.com/document/product/301/43505)(버전1.0)
+=======
+34.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46315).
+
+### 수정 내역
+[개인 정보 보호 정책](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
+>>>>>>> 0aa8e18a01ce066e521c63e29b187ac04bc96506

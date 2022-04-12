@@ -29,7 +29,7 @@
 2. 在左侧目录中选择【VPN 连接】>【VPN 网关】，进入管理页。
 3. 在 VPN 网关管理页面，单击【+新建】。
 4. 在弹出的【新建 VPN 网关】对话框中，配置如下网关参数。
-![](https://main.qcloudimg.com/raw/b714647fbf97514c6c303694d8e51d47.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/798e48c18594d9ca6c46c20e6dfe8e68.png)
   - 网关名称：填写自定义网关名称。
   - 关联网络：选择创建好的 VPC 网络。
   - 带宽上限：依据实际需求选择带宽。

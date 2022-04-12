@@ -15,6 +15,8 @@ If your organization has restrictions placed on public network access, you need 
 tcloud.tim.qq.com
 gmeconf.qcloud.com
 yun.tim.qq.com
+gmeosconf.qcloud.com
+sg.global.gme.qcloud.com
 ```
 
 >!

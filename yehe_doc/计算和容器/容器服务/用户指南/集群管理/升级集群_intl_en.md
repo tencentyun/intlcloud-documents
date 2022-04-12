@@ -13,7 +13,7 @@ Tencent Cloud TKE allows you to upgrade the Kubernetes version. You can use this
 - **Incompatibility of CSI-CFS add-on**: as for the CSI add-ons: COS CSI and CFS CSI, the CSI add-on versions adapted to different Kubernetes versions have the following differences. Therefore, we recommend that you reinstall the CSI add-on in add-on management page when you upgrade the cluster to TKE 1.14 and later version. The rebuilding of the add-on does not affect COS and CFS storage already in use.
   - The version of the CSI add-on adapted for Kubernetes 1.10 and Kubernetes 1.12 is **0.3**.
   - The CSI add-on version for Kubernetes 1.14 and later is **1.0**.
-- **The failure of HPA**: before Kubernetes 1.18, the apiversion of the deployment object referenced in HPA may be `extensions/v1bata1`, but after Kubernetes 1.18, the apiversion of deployment is only apps/v1, which may cause the failure of HPA after the cluster is upgraded to Kubernetes 1.18.
+- **The failure of HPA**: before Kubernetes 1.18, the apiversion of the deployment object referenced in HPA may be `extensions/v1beta1`, but after Kubernetes 1.18, the apiversion of deployment is only apps/v1, which may cause the failure of HPA after the cluster is upgraded to Kubernetes 1.18.
   If you use the HPA feature, we recommend that you run the following command to switch the apiVersion in the HPA object to `apps/v1` before upgrading.
 ```
 kubectl patch hpa test -p '{"spec":{"scaleTargetRef":{"apiVersion":"apps/v1"}}}'

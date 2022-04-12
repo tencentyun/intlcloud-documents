@@ -6,7 +6,7 @@ In addition to sharing your current screen, the screen sharing feature also supp
 
 ## Prerequisites
 
-- Free, Pro, or Enterprise Edition user
+- Free or Enterprise Edition user
 
 - Windows/macOS
 

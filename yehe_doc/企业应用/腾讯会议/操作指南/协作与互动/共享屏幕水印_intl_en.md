@@ -5,7 +5,7 @@ To protect your shared content, VooV Meeting supports setting a watermark for yo
 
 ## Prerequisites
 
-- Free, Pro, or Enterprise Edition user
+- Free or Enterprise Edition user
 - Windows/macOS/iOS/Android
 - v2.3.0 or later
 - System requirements
@@ -28,7 +28,7 @@ To protect your shared content, VooV Meeting supports setting a watermark for yo
 
 1. Only the host/co-host can set watermarks.
 
-2. Free Edition users can set only a single watermark, while Pro or Enterprise Edition users can set a single watermark or multiple watermarks.
+2. Free Edition users can set only a single watermark, while Enterprise Edition users can set a single watermark or multiple watermarks.
 
 3. If multiple watermarks are set for a meeting, only attendees using v2.3 or later will see multiple watermarks, while users on lower versions will only see a single watermark.
 

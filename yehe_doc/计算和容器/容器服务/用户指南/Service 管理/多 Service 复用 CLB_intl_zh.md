@@ -20,6 +20,6 @@
 
 ## 操作步骤
 1. [](id:Step1)参考 [创建负载均衡实例](https://intl.cloud.tencent.com/document/product/214/6149)，创建集群所在 VPC 下的公网或内网类型的负载均衡。
-2. 参考 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662) 或 [创建 Service](https://intl.cloud.tencent.com/document/product/457/36833)，创建 Loadbalancer 类型的 Service，选择【使用已有】负载均衡，并选择 [步骤1](#Step1) 中创建的负载均衡实例。如下图所示：
+2. 参考 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662) 或 [创建 Service](https://intl.cloud.tencent.com/document/product/457/36833)，创建 Loadbalancer 类型的 Service，选择**使用已有**负载均衡，并选择 [步骤1](#Step1) 中创建的负载均衡实例。如下图所示：
 ![](https://main.qcloudimg.com/raw/6e98284605215d156a2c945d2a729652.png)
 3. 重复步骤2，即可完成通过多个 Service 复用相同负载均衡器 CLB。

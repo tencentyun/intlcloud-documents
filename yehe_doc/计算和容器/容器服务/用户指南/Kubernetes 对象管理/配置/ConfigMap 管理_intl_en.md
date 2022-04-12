@@ -8,10 +8,8 @@ ConfigMap allows you to decouple configuration artifacts from images to ensure t
 1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster where ConfigMap needs to be created to go to the cluster management page.
-4. Select **Configuration Management** > **ConfigMap** to go to the ConfigMap information page, as shown in the following figure:
-![ConfigMap](https://main.qcloudimg.com/raw/96edefc7b8ddc416b9148eb914855954.png)
-5. Click **Create** to go to the "Create a ConfigMap" page, as shown in the following figure:
-![Create ConfigMap](https://main.qcloudimg.com/raw/9e3a84ee38b4d3bff209d139ba47e1c7.png)
+4. Select **Configuration Management** > **ConfigMap** to go to the ConfigMap information page.
+5. Click **Create** to go to the "Create a ConfigMap" page.
 6. Set the ConfigMap parameters.
  - Name: name of the ConfigMap.
  - Namespace: select the namespace type and set the variable name and value.

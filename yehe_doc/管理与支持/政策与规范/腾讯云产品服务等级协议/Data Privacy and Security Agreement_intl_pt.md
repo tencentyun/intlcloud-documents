@@ -121,17 +121,22 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
 19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
 20.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
-21.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
+21.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45408).
 22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
-23.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
+23.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45413).
 24.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
-25.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591).
-26.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45789).
-27.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45792).
-28.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45795).
-29.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45798).
-30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
-31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
+25.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
+26.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45475).
+27.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591).
+28.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45789).
+29.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45792).
+30.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45795).
+31.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45798).
+32.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
+33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
+34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
+35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+
 ## Requisitos específicos da jurisdição
 
 **Europa**

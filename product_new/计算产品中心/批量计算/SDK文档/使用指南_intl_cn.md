@@ -1,6 +1,6 @@
 ## 开发准备
 
-- 选择不同语言的 SDK，[下载和安装](https://intl.cloud.tencent.com/document/sdk) 。
+- 选择不同语言的 SDK，下载和安装 。
 - 首次使用批量计算，参考 [开始前的准备](https://intl.cloud.tencent.com/document/product/599/10807)。
 - 了解更多接口参数，参考 [API 文档](https://intl.cloud.tencent.com/document/product/599/30458)。
 

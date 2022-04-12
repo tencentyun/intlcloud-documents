@@ -6,7 +6,7 @@ The VooV Meeting client lets multiple users annotate the shared content (includi
 
 ## Prerequisites
 
-- Pro or Enterprise Edition user
+- Enterprise Edition user
 
 - Windows/macOS/iOS/Android
 
@@ -28,7 +28,7 @@ The VooV Meeting client lets multiple users annotate the shared content (includi
 
 ## Notes
 
-1. Free Edition users cannot enable the annotation feature, but they can annotate the shared content in meetings started by Pro or Enterprise Edition users.
+1. Free Edition users cannot enable the annotation feature, but they can annotate the shared content in meetings started by Enterprise Edition users.
 
 2. Mobile client users can annotate the content shared by desktop client users, but not vice versa.
 

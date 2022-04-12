@@ -1,0 +1,2 @@
+
+[Pemeriksaan database](https://intl.cloud.tencent.com/document/product/1035/37178) digunakan untuk melakukan pemeriksaan kesehatan secara otomatis dan teratur pada semua instans. Anda juga dapat menyiapkan pemeriksaan kustom berdasarkan kebutuhan Anda sendiri untuk membantu memecahkan potensi masalah instans dan memberikan solusi. Laporan inspeksi database berisi bagian berikut: ikhtisar, informasi dasar, kesehatan, status instans, diagnosis pengecualian, analisis SQL lambat, akun berisiko tinggi, analisis tabel besar, dan kurva performa.

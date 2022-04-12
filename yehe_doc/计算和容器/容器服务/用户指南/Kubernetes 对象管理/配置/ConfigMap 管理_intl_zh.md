@@ -8,10 +8,8 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击【集群】，进入集群管理页面。
 3. 单击需要创建 ConfigMap 的集群 ID，进入待创建 ConfigMap 的集群管理页面。
-4. 选择 【配置管理】 > 【ConfigMap】，进入 ConfigMap 信息页面。如下图所示：
-![ConfigMap](https://main.qcloudimg.com/raw/96edefc7b8ddc416b9148eb914855954.png)
-5. 单击【新建】，进入 “新建ConfigMap” 页面。如下图所示：
-![新建ConfigMap](https://main.qcloudimg.com/raw/9e3a84ee38b4d3bff209d139ba47e1c7.png)
+4. 选择 【配置管理】 > 【ConfigMap】，进入 ConfigMap 信息页面。
+5. 单击【新建】，进入 “新建ConfigMap” 页面。
 6. 根据实际需求，设置 ConfigMap 参数。关键参数信息如下：
  - 名称：自定义。
  - 命名空间：根据实际需求进行选择命名空间类型，定义变量名和变量值。

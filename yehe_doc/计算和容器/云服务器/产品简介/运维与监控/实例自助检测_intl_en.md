@@ -247,7 +247,7 @@ To prevent the CPU utilization from becoming a business bottleneck, we recommend
 <td>EIP blockage by DDoS attacks</td>
 <td>EIP blockage by DDoS attacks</td>
 <td>Exception</td>
-<td>An instance EIP is blocked due to DDoS attacks. Troubleshoot as instructed in <a href="https://cloud.tencent.com/document/product/1020/31635">Unblocking Protected IP</a>.</td>
+<td>An instance EIP is blocked due to DDoS attacks.</td>
 </tr>
 <tr>
 <td rowspan=2>Public network bandwidth utilization</td>

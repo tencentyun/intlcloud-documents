@@ -8,15 +8,12 @@
 <span id="SmartFactory"></span>
 ### 智慧工厂
 
-以智慧工厂为例，边缘节点位于厂房仓库和车间，控制端 Master 节点在腾讯云的中心机房内。示意图如下：
-![img](https://main.qcloudimg.com/raw/ee1d15998778f214887ddc36ad605789.png)
+以智慧工厂为例，边缘节点位于厂房仓库和车间，控制端 Master 节点在腾讯云的中心机房内。
 
 - 仓库和车间内的边缘设备同云端集群之间的网络较复杂，因特网、5G、WIFI 等形态均有可能，网络质量差次不齐没有保障。
 - 相比于云端的网络环境，仓库和车间内的边缘设备之间是本地网络，网络质量优于同云端集群之间的连接，相对而言更加可靠。
 
 ### 音视频拉流场景
-音视频拉流场景如下图所示：
-![img](https://main.qcloudimg.com/raw/c2a78c02550fa12e5f139e5ba6202245.png)
 
 考虑到用户体验及公司成本，音视频拉流经常需要进行提高边缘缓存命中率减少回源、将用户请求的同一文件调度到同一个服务实例以及服务实例缓存文件。
 
@@ -69,10 +66,10 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2) ，选择左侧导航栏中的【边缘集群】。
 2. 选择需要编辑标签的节点所在的集群 ID，进入该集群管理页面。
 3. 选择【节点管理】>【节点】，进入节点列表页。如下图所示：
-   ![](https://main.qcloudimg.com/raw/712450952968557eefd23e4833deaa5f.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7eb0f380d0e949961c3d1801f7670e4b.png)
 4. 选择需要编辑标签的节点所在行右侧的【更多】>【编辑标签】。
 5. 在弹出的“编辑标签”窗口，按需新增 Label。如下图所示：
-   ![](https://main.qcloudimg.com/raw/3ae0a48eba8a180ccdea78727fe26917.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/866a3570131ce8d80aed1d522dd51d36.png)
 6. 单击【确定】即可。
 
 ### 开启多地域检查开关
@@ -82,4 +79,4 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【边缘集群】。
 2. 单击需要开启多地域检查功能的集群 ID，进入该集群管理页面。
 3. 选择【基本信息】，进入“基本信息”页面，打开【开启多地域检查】即可。
-   ![](https://main.qcloudimg.com/raw/84ee3dd3d061f34675e907dd51309189.png)
+  
