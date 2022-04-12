@@ -98,5 +98,5 @@ O tráfego de rede pública gerado por endereços IPv4 públicos será cobrado c
 
 ## Informações relevantes
 - Para mais informações sobre como criar rapidamente um Virtual Private Cloud (VPC) IPv4, consulte [Criação de um VPC IPv4](https://intl.cloud.tencent.com/document/product/215/31891).
-- Para mais informações sobre EIPs, consulte [IP elástico] (https://intl.cloud.tencent.com/document/product/215/34109).
+- Para mais informações sobre EIPs, consulte [IP elástico](https://intl.cloud.tencent.com/document/product/215/34109).
 
