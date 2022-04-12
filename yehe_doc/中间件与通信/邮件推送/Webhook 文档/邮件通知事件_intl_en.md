@@ -6,7 +6,7 @@ Tencent Cloud will notify the callback address of delivery success, delivery fai
   "email": "example@example.com",
   "bulkId": "qcloud-ses-4F001945B2D9BXXXXXX",
   "timestamp": 1587953211,
-  "reason": "reason why the email fails to be delivered",
+  "reason": "the reason when email failed to delivered",
   "bounceType": ""
 }
 ```
