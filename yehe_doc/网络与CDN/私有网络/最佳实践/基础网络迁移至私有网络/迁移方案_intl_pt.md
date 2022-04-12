@@ -26,8 +26,10 @@ Você pode migrar com facilidade uma instância da rede clássica para uma VPC. 
 </table>
 
 >? Se você quiser manter os endereços IP do recurso inalterados após a alternância de rede, tente criar uma VPC que tenha IPs da rede clássica. Se isso for impossível, consulte a seguinte solução:
-+ Crie um serviço Private DNS e resolva seu nome de domínio. Após migrar os recursos para uma VPC, use o [Private DNS](https://intl.cloud.tencent.com/document/product/1097/40551) da Tencent Cloud.
-+ Use um IP público. 
+>+ Crie um serviço Private DNS e resolva seu nome de domínio. Após migrar os recursos para uma VPC, use o [Private DNS](https://intl.cloud.tencent.com/document/product/1097/40551) da Tencent Cloud.
+>+ Use um IP público. 
+>
+
 ## Solução de acesso híbrido durante a migração
 O acesso híbrido significa que os serviços que estão sendo migrados podem acessar a rede clássica e uma VPC. A Tencent Cloud fornece a seguinte solução de acesso híbrido:
 + A acessibilidade do IP da rede clássica e do IP da VPC do serviço TencentDB garante o acesso híbrido no nível da instância do TencentDB.
