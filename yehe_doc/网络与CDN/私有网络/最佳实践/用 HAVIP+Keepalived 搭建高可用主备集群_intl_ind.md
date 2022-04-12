@@ -130,7 +130,7 @@ Dalam contoh ini, HAVIP-01 dan HAVIP-02 dikonfigurasi dengan bobot yang sama. Ke
 2. Tekan **Esc** dan masukkan **:wq** untuk menyimpan file dan keluar dari vi.
 3. Login ke CVM HAVIP-02 sekunder dan jalankan `vim /etc/keepalived/keepalived.conf` untuk mengubah konfigurasinya.
    ```plaintext
-   ! File Konfigurasi untuk keepaliveD
+   ! File Konfigurasi untuk keepalived
    global_defs {
       notification_email {
         acassen@firewall.loc
