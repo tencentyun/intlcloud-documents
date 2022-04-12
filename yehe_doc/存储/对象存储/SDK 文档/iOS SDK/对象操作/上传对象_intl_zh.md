@@ -1,6 +1,6 @@
 ## 简介
 
-本文档提供关于对象的上传、复制操作相关的 API 概览以及 SDK 示例代码。
+本文档提供关于上传对象的 API 概览以及 SDK 示例代码。
 
 
 **简单操作**
@@ -8,7 +8,7 @@
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个对象至存储桶     |
-                 |
+
 
 **分块操作**
 
@@ -681,92 +681,6 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 >- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
-### 复制对象
-
-高级接口封装了简单复制、分块复制接口的异步请求，并支持暂停、恢复以及取消复制请求。
-
-#### 示例代码
-**Objective-C**
-
-[//]: # (.cssg-snippet-transfer-copy-object)
-```objective-c
-QCloudCOSXMLCopyObjectRequest* request = [[QCloudCOSXMLCopyObjectRequest alloc] init];
-
-// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
-request.bucket = @"examplebucket-1250000000";
-
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
-request.object = @"exampleobject";
-
-// 文件来源存储桶，需要是公有读或者在当前账号有权限
-request.sourceBucket = @"sourcebucket-1250000000";
-
-// 源文件名称
-request.sourceObject = @"sourceObject";
-
-// 源文件的 APPID
-request.sourceAPPID = @"1250000000";
-
-// 来源的地域
-request.sourceRegion= @"COS_REGION";
-
-[request setFinishBlock:^(QCloudCopyObjectResult* result, NSError* error) {
-    // 可以从 outputObject 中获取 response 中 etag 或者自定义头部等信息
-}];
-
-// 注意如果是跨地域复制，这里使用的 transferManager 所在的 region 必须为目标桶所在的 region
-[[QCloudCOSTransferMangerService defaultCOSTransferManager] CopyObject:request];
-
-// 取消copy
-// 若需要取消copy 调用cancel方法
-[request cancel];
-```
-
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferCopyObject.m) 查看。
-
-**Swift**
-
-[//]: # (.cssg-snippet-transfer-copy-object)
-```swift
-let copyRequest =  QCloudCOSXMLCopyObjectRequest.init();
-
-// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
-copyRequest.bucket = "examplebucket-1250000000";
-
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
-copyRequest.object = "exampleobject";
-
-// 文件来源存储桶，需要是公有读或者在当前账号有权限
-// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
-copyRequest.sourceBucket = "sourcebucket-1250000000";
-
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
-copyRequest.sourceObject = "sourceObject";
-
-// 源文件的 APPID
-copyRequest.sourceAPPID = "1250000000";
-
-// 来源的地域
-copyRequest.sourceRegion = "COS_REGION";
-
-copyRequest.setFinish { (copyResult, error) in
-    if let copyResult = copyResult {
-        // 文件的 etag
-        let eTag = copyResult.eTag
-    } else {
-        print(error!);
-    }
-    
-}
-// 注意如果是跨地域复制，这里使用的 transferManager 所在的 region 必须为目标桶所在的 region
-QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyRequest);
-
-// 取消copy
-// 若需要取消copy 调用cancel方法
-copyRequest.cancel();
-```
-
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift) 查看。
 
 ## 简单操作
 
@@ -841,17 +755,17 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 
 这里说明下分块上传的流程。
 
-#### 分块上传与复制的流程
+#### 分块上传的流程
 
 1. 初始化分块上传（Initiate Multipart Upload），得到 UploadId
-2. 使用 UploadId 上传分块（Upload Part），或者复制分块（Upload Part Copy）
+2. 使用 UploadId 上传分块（Upload Part）
 3. 完成分块上传（Complete Multipart Upload）
 
-#### 分块继续上传与复制的流程
+#### 分块继续上传的流程
 
 1. 如果没有记录 UploadId，查询分块上传任务（List Multipart Uploads），得到对应文件的 UploadId
 2. 使用 UploadId 列出已上传的分块（List Parts）
-2. 使用 UploadId 上传剩余的分块（Upload Part），或者复制剩余的分块（Upload Part Copy）
+2. 使用 UploadId 上传剩余的分块（Upload Part）
 3. 完成分块上传（Complete Multipart Upload）
 
 #### 终止分块上传的流程
@@ -859,6 +773,58 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 1. 如果没有记录 UploadId，查询分块上传任务（List Multipart Uploads），得到对应文件的 UploadId
 2. 终止分块上传并删除已上传分块（Abort Multipart Upload）
 
+### 查询分块上传
+
+#### 功能说明
+
+查询指定存储桶中正在进行的分块上传（List Multipart Uploads）。
+
+#### 示例代码
+**Objective-C**
+
+[//]: # (.cssg-snippet-list-multi-upload)
+```objective-c
+QCloudListBucketMultipartUploadsRequest* uploads = [QCloudListBucketMultipartUploadsRequest new];
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
+uploads.bucket = @"examplebucket-1250000000";
+// 设置最大返回的 multipart 数量，合法取值从 1 到 1000
+uploads.maxUploads = 100;
+[uploads setFinishBlock:^(QCloudListMultipartUploadsResult* result,
+                          NSError *error) {
+    // 可以从 result 中返回分块信息
+    // 进行中的分块上传对象
+    NSArray<QCloudListMultipartUploadContent*> *uploads = result.uploads;
+}];
+[[QCloudCOSXMLService defaultCOSXML] ListBucketMultipartUploads:uploads];
+```
+
+
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
+
+**Swift**
+
+[//]: # (.cssg-snippet-list-multi-upload)
+```swift
+let listParts = QCloudListBucketMultipartUploadsRequest.init();
+
+// 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
+listParts.bucket = "examplebucket-1250000000";
+
+// 设置最大返回的 multipart 数量，合法取值从 1 到 1000
+listParts.maxUploads = 100;
+
+listParts.setFinish { (result, error) in
+    if let result = result {
+        // 未完成的所有分块上传任务
+        let uploads = result.uploads;
+    } else {
+        print(error!);
+    }
+}
+QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
+```
+
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
 
 ### 初始化分块上传
 

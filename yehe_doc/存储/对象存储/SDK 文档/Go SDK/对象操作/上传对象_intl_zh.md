@@ -37,7 +37,7 @@ func (s *ObjectService) Upload(ctx context.Context, key string, filepath string,
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```go
 package main
 
@@ -51,7 +51,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -65,10 +65,9 @@ func main() {
     })
 
     key := "exampleobject"
-    file := "test"
 
     _, _, err := client.Object.Upload(
-        context.Background(), key, file, nil,
+        context.Background(), key, "localfile", nil,
     )
     if err != nil {
         panic(err)
@@ -136,7 +135,7 @@ func (s *ObjectService) PutFromFile(ctx context.Context, name string, filePath s
 
 #### 请求示例1：上传对象
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```go
 package main
 
@@ -151,7 +150,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -213,7 +212,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -253,7 +252,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -306,7 +305,7 @@ func (l *SelfListener) ProgressChangedCallback(event *cos.ProgressEvent) {
 }
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -496,7 +495,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -554,7 +553,7 @@ func (s *BucketService) ListMultipartUploads(ctx context.Context, opt *ListMulti
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```go
 package main
 
@@ -568,7 +567,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -694,7 +693,7 @@ func (s *ObjectService) InitiateMultipartUpload(ctx context.Context, name string
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```go
 package main
 
@@ -709,7 +708,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -804,7 +803,7 @@ func (s *ObjectService) UploadPart(ctx context.Context, key, uploadID string, pa
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```go
 package main
 
@@ -820,7 +819,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -906,7 +905,7 @@ func (s *ObjectService) ListParts(ctx context.Context, name, uploadID string, op
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```go
 package main                                                                                                                                                                                   
 
@@ -921,7 +920,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -1035,7 +1034,7 @@ func (s *ObjectService) CompleteMultipartUpload(ctx context.Context, key, upload
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```go
 package main
 
@@ -1051,7 +1050,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
@@ -1149,7 +1148,7 @@ func (s *ObjectService) AbortMultipartUpload(ctx context.Context, key, uploadID 
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```go
 package main
 
@@ -1163,7 +1162,7 @@ import (
 
 func main() {
     // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
-    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://cloud.tencent.com/document/product/436/6224 。
+    // 替换为用户的 region，存储桶region可以在COS控制台“存储桶概览”查看 https://console.cloud.tencent.com/ ，关于地域的详情见 https://intl.cloud.tencent.com/document/product/436/6224 。
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{

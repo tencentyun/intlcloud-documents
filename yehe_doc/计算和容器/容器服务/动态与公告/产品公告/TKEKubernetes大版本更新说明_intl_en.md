@@ -163,7 +163,7 @@ Storage volume cloning allows users to specify another PVC as "DataSource" when 
 - Adds Topology Manager component to the kubelet to coordinate resource allocation decisions and optimize resource allocation.
 - Supports IPv4/IPv6 dual stacks, so that you can assign both IPv4 and IPv6 addresses to pods and services.
 - (Alpha feature) Adds the API server network proxy.
-- More [expansion options](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cloud-provider/20190422-cloud-controller-manager-migration.md) are provided for cloud controller manager migration.
+- More **expansion options** are provided for cloud controller manager migration.
 - Deprecates extensions/v1beta1, apps/v1beta1, and apps/v1beta2 APIs.
 
 #### Known issues

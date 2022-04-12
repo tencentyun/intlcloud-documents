@@ -1,4 +1,4 @@
-TencentOS Server(Tencent Linux, TS 또는 tlinux라고도 함)는 Tencent에서 클라우드 시나리오를 위해 연구 개발한 Linux 운영 체제입니다. 특수한 기능 및 최적화된 성능을 바탕으로 CVM 인스턴스의 응용 프로그램에 안전하고 신뢰할 수 있는 고성능 운영 환경을 제공합니다. TencentOS Server는 무료로 사용할 수 있으며, CentOS(또는 다른 릴리스 버전)에서 개발된 응용 프로그램을 TencentOS Server에서 직접 실행할 수 있을 뿐만 아니라, Tencent Cloud를 통해 지속적인 업데이트 점검 및 기술 지원을 받을 수 있습니다.
+TencentOS Server(Tencent Linux, TS 또는 tlinux)는 Tencent에서 클라우드 시나리오를 위해 연구 개발한 Linux 운영 체제입니다. 특수한 기능 및 최적화된 성능을 바탕으로 CVM 인스턴스의 응용 프로그램에 안전하고 신뢰할 수 있는 고성능 운영 환경을 제공합니다. TencentOS Server는 무료로 사용할 수 있으며, CentOS(또는 다른 릴리스 버전)에서 개발된 응용 프로그램을 TencentOS Server에서 직접 실행할 수 있을 뿐만 아니라, Tencent Cloud를 통해 지속적인 업데이트 점검 및 기술 지원을 받을 수 있습니다.
 
 ## 사용 설명
 
@@ -54,29 +54,6 @@ Usage:
 
 ### TencentOS Server 커널
 TencentOS-kernel 4.14, 5.4 두 버전을 제공합니다. 자세한 내용은 [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel)을 참고하십시오.
-
-## 배포 설명
-
-<table>
-  <tr>
-	<th>배포 시간</th>
-	<th style="width:30%">이미지 버전</th>
-	<th>버전 설명</th>
-	<th>배포 리전</th>
-  </tr>
-  <tr>
-	<td>2021년 07월 13일</td>
-	<td>TencentOS Server 3.1</td>
-	<td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&id=img-eb30mz89">img-eb30mz89</a><br>커널 버전5.4.119</td>
-	<td>모든 리전</td>
-  </tr>
-  <tr>
-	<td>2019년 09월 17일</td>
-	<td>TencentOS Server 2.4，기존 명칭 Tencent linux release 2.4 (Final)</td>
-	<td>이미지 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&id=img-hdt9xxkt">img-hdt9xxkt</a><br>커널 버전: 4.14.105</td>
-	<td>모든 리전</td>
-  </tr>
-</table>
 
 
 ## TencentOS Server 다운로드

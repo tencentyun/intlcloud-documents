@@ -1,5 +1,6 @@
 TencentDB data centers are hosted in multiple locations worldwide. These locations are known as regions. Each region contains multiple availability zones (AZs).
-Each region is an independent geographic area containing multiple isolated AZs. Separate AZs in the same region are connected via low-latency private networks. Tencent Cloud provides you with the ability to distribute Tencent Cloud resources across different locations. We recommend placing resources in different AZs to eliminate single points of failure which may lead to service unavailability.
+
+Each region is an independent geographic area with multiple isolated AZs. Separate AZs in the same region are connected via low-latency private networks. Tencent Cloud allows you to distribute Tencent Cloud resources across different locations. We recommend placing resources in different AZs to eliminate single points of failure which may lead to service unavailability.
 
 Region name and AZ name can most directly embody the coverage of a data center. The following naming convention is used for your convenience:
 - A region name is composed of **region + city**. The `region` indicates the geographic area that the data center covers, while the `city` represents the city in or near which the data center is located.
@@ -14,11 +15,12 @@ Private network communication:
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003) that is faster and steadier.
 - [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) feature, a CLB instance can be bound to CVM instances in another region.
 
-## Availability Zones
+## AZs
 An availability zone (AZ) is a physical IDC of Tencent Cloud with independent power supply and network in the same region. It can ensure business stability, as failures (except for major disasters or power failures) in one AZ are isolated without affecting other AZs in the same region. By starting an instance in an independent availability zone, users can protect their applications from being affected by a single point of failure.
+
 When launching an instance, you can select any AZ in the specified region. For high reliability, you can adopt a cross-AZ deployment solution to ensure that the service remains available when an instance in a single location fails. Examples of such solutions include [CLB](https://intl.cloud.tencent.com/document/product/214) and [EIP](https://intl.cloud.tencent.com/document/product/213/5733).
 
-## Region and AZ Details
+## List of Regions and AZs
 The supported regions and AZs are as follows:
 >?Currently, public network access is supported only in the following regions:
 >Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Seoul, Tokyo, Silicon Valley, and Frankfurt
@@ -150,4 +152,4 @@ The supported regions and AZs are as follows:
 </tbody></table>
 
 ## Selecting Regions and AZs
-When purchasing Tencent Cloud services, we recommend selecting the region closest to your end users to minimize access latency and improve download speed.
+When purchasing Tencent Cloud services, we recommend that you choose the region closest to your end users to reduce access latency and improve download speed.

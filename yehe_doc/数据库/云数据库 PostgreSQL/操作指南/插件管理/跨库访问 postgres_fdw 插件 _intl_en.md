@@ -7,7 +7,7 @@ Foreign data wrapper (FDW) is an extension provided by PostgreSQL for accessing 
 
 As FDW supports cross-instance access, for security reasons, TencentDB for PostgreSQL optimizes access control over the creation of foreign server objects and implements categorized management based on the environment of the target instance. Auxiliary parameters are added to the open-source edition to verify user identity and adjust network policies.
 
-## Auxiliary parameters of postgres_fdw    
+## Auxiliary Parameters of postgres_fdw    
  - host
    IP of the target instance. This parameter is required by `postgres_fdw`.
  - port
@@ -20,7 +20,7 @@ As FDW supports cross-instance access, for security reasons, TencentDB for Postg
 ![](https://qcloudimg.tencent-cloud.cn/raw/e1cfb70868e6ed4c31f9f633a8401148.png)
  - access_type
    Type of the target instance. This parameter is optional:
-   1: the target instance is a TencentDB instance, such as TencentDB for PostgreSQL. If no other types are explicitly specified, this will be the default type.
+   1: The target instance is a TencentDB instance, such as TencentDB for PostgreSQL. If no other types are explicitly specified, this will be the default type.
  - uin
    ID of the account to which the instance belongs, which is used for verifying user permissions and can be viewed in [Account Info](https://console.cloud.tencent.com/developer). This parameter is optional.
  - own_uin
@@ -60,13 +60,15 @@ INSERT 0 1
 ```
 
 ### Step 2. Create the postgres_fdw extension
+>?When you create the extension, if the system prompts that the extension does not exist or you don't have sufficient permissions, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>
 ```
-# Create
+#Create
 postgres=> \c testdb1
 You are now connected to database "testdb1" as user "user1".
 testdb1=> create extension postgres_fdw;
 CREATE EXTENSION
-# View
+#View
 testdb1=> \dx
                             List of installed extensions
       Name     | Version |   Schema   |                    Description
@@ -79,7 +81,7 @@ testdb1=> \dx
 ### Step 3. Create a server
 The target instance is a TencentDB instance.
 ```
-# Access the data of the target instance `testdb2` from the instance `testdb1`
+#Access the data of the target instance `testdb2` from the instance `testdb1`
 testdb1=>create server srv_test1 foreign data wrapper postgres_fdw options (host 'xxx.xxx.xxx.xxx',dbname 'testdb2', port '5432', instanceid 'postgres-xxxxx');
 CREATE SERVER
 ```

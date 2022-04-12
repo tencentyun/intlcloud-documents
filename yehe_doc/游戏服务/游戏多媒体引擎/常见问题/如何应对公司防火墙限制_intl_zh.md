@@ -15,6 +15,8 @@
 tcloud.tim.qq.com
 gmeconf.qcloud.com
 yun.tim.qq.com
+gmeosconf.qcloud.com
+sg.global.gme.qcloud.com
 ```
 
 >!

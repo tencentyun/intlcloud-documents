@@ -42,7 +42,7 @@ TRTCCloud.exitRoom() 入室に失敗したときにこのタイプのエラー�
 |ERR_CAMERA_SET_PARAM_FAIL|-1315|カメラパラメータ設定エラー（パラメータがサポートされていないか、その他）|
 |ERR_CAMERA_OCCUPY|-1316|カメラが使用中なので、他のカメラの起動を試みることができます|
 |ERR_MIC_START_FAIL|-1302|マイクの起動に失敗しました。例えば、WindowsまたはMacデバイスの場合、マイクのコンフィギュレーター（ドライバー）に異常があります。デバイスを無効にしてから再度有効にするか、マシンを再起動するか、またはコンフィギュレーターを更新してください|
-|ERR_MIC_NOT_AUTHORIZED|-1317マイクデバイスの権限が承認されていません。通常はモバイルデバイスに表示されます。ユーザーから権限承認を拒否されている可能性があります|
+|ERR_MIC_NOT_AUTHORIZED|-1317|マイクデバイスの権限が承認されていません。通常はモバイルデバイスに表示されます。ユーザーから権限承認を拒否されている可能性があります|
 |ERR_MIC_SET_PARAM_FAIL|-1318|マイクパラメータの設定に失敗しました|
 |ERR_MIC_OCCUPY|-1319|マイクが使用中です。例えば、モバイルデバイスが通話中の場合、マイクの起動は失敗します|
 |ERR_MIC_STOP_FAIL|-1320|マイクの停止に失敗しました|
@@ -97,7 +97,7 @@ TRTCCloud.exitRoom() 入室に失敗したときにこのタイプのエラー�
 |ERR_PUBLISH_CDN_STREAM_SERVER_FAILED|-3323|バイパス転送リターンパケットの異常|
 |ERR_CLOUD_MIX_TRANSCODING_SERVER_FAILED|-3324|クラウドミクスストリーミング・リターンパケットの異常|
 |ERR_ROOM_REQUEST_START_PUBLISHING_TIMEOUT|-3333|Tencent CloudへのライブCDNのプッシュ開始シグナリングのタイムアウト|
-|ERR_ROOM_REQUEST_START_PUBLISHING_ERROR|-3334||Tencent CloudへのライブCDNのプッシュ開始シグナリングの異常|
+|ERR_ROOM_REQUEST_START_PUBLISHING_ERROR|-3334 |Tencent CloudへのライブCDNのプッシュ開始シグナリングの異常|
 |ERR_ROOM_REQUEST_STOP_PUBLISHING_TIMEOUT|-3335|Tencent CloudへのライブCDNのプッシュ停止シグナリングのタイムアウト|
 |ERR_ROOM_REQUEST_STOP_PUBLISHING_ERROR|-3336|Tencent CloudへのライブCDNのプッシュ停止シグナリングの異常|
 

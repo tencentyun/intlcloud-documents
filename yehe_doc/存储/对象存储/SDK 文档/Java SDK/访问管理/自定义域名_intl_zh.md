@@ -24,8 +24,14 @@ public void setBucketDomainConfiguration(SetBucketDomainConfigurationRequest set
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-put-bucket-domain)
 ```java
+// 调用 COS 接口之前必须保证本进程存在一个 COSClient 实例，如果没有则创建
+// 详细代码参见对象操作 -> 上传对象 -> 简单操作 -> 创建 COSClient
+COSClient cosClient = createCOSClient();
+// 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
+
 BucketDomainConfiguration bucketDomainConfiguration = new BucketDomainConfiguration();
 DomainRule domainRule = new DomainRule();
 domainRule.setStatus(DomainRule.ENABLED);
@@ -33,8 +39,7 @@ domainRule.setType(DomainRule.REST);
 domainRule.setName("qq.com");
 domainRule.setForcedReplacement(DomainRule.CNAME);
 bucketDomainConfiguration.getDomainRules().add(domainRule);
-cosclient.setBucketDomainConfiguration(bucketName, bucketDomainConfiguration);
-BucketDomainConfiguration bucketDomainConfiguration1 = cosclient.getBucketDomainConfiguration(bucketName);
+cosClient.setBucketDomainConfiguration(bucketName, bucketDomainConfiguration);
 ```
 
 #### 参数说明
@@ -54,7 +59,7 @@ BucketDomainConfiguration 成员说明:
 
 | 参数名称    | 描述                   | 类型                         |
 | ----------- | ---------------------- | ---------------------------- |
-| domainRules | 存储桶的自定义域名配置 | List<DomainRule> domainRules |
+| domainRules | 存储桶的自定义域名配置 | List&lt;DomainRule> domainRules |
 
 DomainRule 成员说明：
 
@@ -68,7 +73,7 @@ DomainRule 成员说明：
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 返回错误码说明
 
@@ -94,10 +99,23 @@ throws CosClientException, CosServiceException;
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-get-bucket-domain)
 ```java
+// 调用 COS 接口之前必须保证本进程存在一个 COSClient 实例，如果没有则创建
+// 详细代码参见对象操作 -> 上传对象 -> 简单操作 -> 创建 COSClient
+COSClient cosClient = createCOSClient();
+// 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-BucketDomainConfiguration bucketDomainConfiguration1 = cosclient.getBucketDomainConfiguration(bucketName);
-String domainTxtVerification = bucketDomainConfiguration1.getDomainTxtVerification()
+
+BucketDomainConfiguration bucketDomainConfiguration = cosClient.getBucketDomainConfiguration(bucketName);
+String domainTxtVerification = bucketDomainConfiguration1.getDomainTxtVerification();
+System.out.println(domainTxtVerification);
+for (DomainRule rule : bucketDomainConfiguration.getDomainRules()) {
+    System.out.println(rule.getName());
+    System.out.println(rule.getStatus());
+    System.out.println(rule.getType());
+    System.out.println(rule.getClass());
+}
 ```
 
 #### 参数说明
@@ -109,7 +127,7 @@ String domainTxtVerification = bucketDomainConfiguration1.getDomainTxtVerificati
 #### 返回结果说明
 
 - 成功：返回 BucketDomainConfiguration，包含存储桶的自定义域名设置信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 返回参数说明
 

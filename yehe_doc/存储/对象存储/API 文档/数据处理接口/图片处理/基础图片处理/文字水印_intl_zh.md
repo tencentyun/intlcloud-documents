@@ -1,7 +1,7 @@
 ## 功能概述
 对象存储通过数据万象 **watermark** 接口提供实时文字水印处理功能。处理图片原图大小不超过32MB、宽高不超过30000像素且总像素不超过2.5亿像素，处理结果图宽高设置不超过9999像素；针对动图，原图宽 x 高 x 帧数不超过2.5亿像素。
 
->! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象图片处理费用。
+>! 图片处理功能为收费项，由数据万象收取，详细的计费说明请参见数据万象 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/45582)。
 >
 
 该功能支持以下的处理方式：
@@ -98,9 +98,9 @@ Pic-Operations:
 | download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
 | /text/       | 水印内容，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)                    |
 | /font/       | 水印字体，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值 tahoma.ttf 。水印字体列表参考 [支持字体列表](https://intl.cloud.tencent.com/document/product/1045/40681) |
-| /fontsize/   | 水印文字字体大小，单位为磅，缺省值13                       |
+| /fontsize/   | 水印文字字体大小，单位为磅，缺省值13。如需按照原图片的大小比例缩放文字水印，请将文字水印转换为 PNG 图片，并参考 [图片水印](https://intl.cloud.tencent.com/document/product/436/36373) 文档进行配置                     |
 | /fill/       | 字体颜色，缺省为灰色，需设置为十六进制 RGB 格式（例如 #FF0000），详情可参考 [RGB 编码表](https://www.rapidtables.com/web/color/RGB_Color.html)，需经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值为 #3D3D3D |
-| /dissolve/   | 文字透明度，取值1 - 100 ，默认90（90%不透明度）                |
+| /dissolve/   | 文字透明度，取值1 - 100，默认90（90%不透明度）                |
 | /gravity/    | 文字水印位置，九宫格位置（[参见九宫格方位图](#1)），默认值 SouthEast |
 | /dx/         | 水平（横轴）边距，单位为像素，缺省值为0                      |
 | /dy/         | 垂直（纵轴）边距，单位为像素，默认值为0                      |

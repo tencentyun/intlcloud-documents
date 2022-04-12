@@ -52,25 +52,25 @@ kubectl create secret generic cos-secret -n kube-system  --from-literal=SecretId
 
 <span id="pv"></span>
 #### 创建 PV
-1. 在目标集群详情页面，选择左侧菜单栏中的【存储】>【PersistentVolume】，进入 “PersistentVolume” 页面。
-2. 单击【新建】进入“新建PersistentVolume” 页面，参考以下信息创建 PV。如下图所示：
+1. 在目标集群详情页面，选择左侧菜单栏中的**存储**>**PersistentVolume**，进入 “PersistentVolume” 页面。
+2. 单击**新建**进入“新建PersistentVolume” 页面，参考以下信息创建 PV。如下图所示：
 ![](https://main.qcloudimg.com/raw/6eb6b29ed67592514fb732d310db3abe.png)
 主要参数信息如下：
- - **来源设置**：选择【静态创建】。
+ - **来源设置**：选择**静态创建**。
  - **Secret**：选择已在 [创建 Secret](#secret) 中创建的 Secret，本文以 coredump 为例（kube-system 命名空间下）。
  - **存储桶列表**：选中已创建的用于存储 coredump 文件的存储桶。
  - **存储桶子目录**：此处指定根目录，如果需要指定子目录，请提前在存储桶中创建。
-3. 单击【创建PersistentVolume】即可。
+3. 单击**创建PersistentVolume**即可。
 
 <span id="pvc"></span>
 #### 创建 PVC
-1. 在目标集群详情页，选择左侧菜单栏中的【存储】>【PersistentVolumeClaim】，进入 “PersistentVolumeClaim” 页面。
-2. 单击【新建】进入“新建PersistentVolumeClaim” 页面，参考以下信息创建 PVC。如下图所示：
+1. 在目标集群详情页，选择左侧菜单栏中的**存储**>**PersistentVolumeClaim**，进入 “PersistentVolumeClaim” 页面。
+2. 单击**新建**进入“新建PersistentVolumeClaim” 页面，参考以下信息创建 PVC。如下图所示：
 ![](https://main.qcloudimg.com/raw/6c08ae1d8604d9092624e969e0309695.png)
 主要参数信息如下：
  - **命名空间**：要与需要挂载存储 COS 的 PVC 的容器所在命名空间相同，如果有多个命名空间，可以创建多对 PV 与 PVC。
  - **PersistentVolume**：选择在 [创建 PV](#pv) 中已创建的 PV 的名称。
-3. 单击【创建PersistentVolumeClaim】即可。
+3. 单击**创建PersistentVolumeClaim**即可。
 
 
 ### 挂载 COS 存储
@@ -78,13 +78,13 @@ kubectl create secret generic cos-secret -n kube-system  --from-literal=SecretId
 #### 通过控制台创建 Pod 使用 PVC
 >? 本步骤以创建工作负载 Deployment 为例。
 
-1. 在目标集群详情页，选择左侧菜单栏中的【工作负载】>【Deployment】，进入 “Deployment” 页面。
-2. 单击【新建】进入“新建Workload” 页面，参考 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662) 进行创建，并设置数据卷挂载。如下图所示：
+1. 在目标集群详情页，选择左侧菜单栏中的**工作负载**>**Deployment**，进入 “Deployment” 页面。
+2. 单击**新建**进入“新建Workload” 页面，参考 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662) 进行创建，并设置数据卷挂载。如下图所示：
 ![](https://main.qcloudimg.com/raw/341a0d899fc27896fc2faf9ba35a5163.png)
 主要参数信息如下：
  - **数据卷**：添加在 [创建 PVC](#pvc) 中已创建的 PVC。
- - **挂载点**：单击【添加挂载点】，进行挂载点设置。选择为该步骤中所添加的数据卷 “core”。引用**数据卷**中声明的 PVC，挂载至目标路径，本文以 `/tmp/cores` 为例。
-3. 单击【创建Workload】即可。
+ - **挂载点**：单击**添加挂载点**，进行挂载点设置。选择为该步骤中所添加的数据卷 “core”。引用**数据卷**中声明的 PVC，挂载至目标路径，本文以 `/tmp/cores` 为例。
+3. 单击**创建Workload**即可。
 
 
 #### 通过 YAML 创建 Pod 使用 PVC

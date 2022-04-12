@@ -16,19 +16,19 @@
 
 <span id="CreateClusterOrCreateNode"></span>
 ### 创建集群或新增节点时，设置节点的启动脚本
-- [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 时，在 “云服务器配置” 页面，单击【高级设置】，填写自定义数据，启动脚本。如下图所示：
+- [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 时，在 “云服务器配置” 页面，单击**高级设置**，填写自定义数据，启动脚本。如下图所示：
 ![](https://main.qcloudimg.com/raw/fd22ee1caca15449ea74114d5462c6a4.png)
-- [新增节点](https://intl.cloud.tencent.com/document/product/457/30652) 时，在 “云服务器配置” 页面，单击【高级设置】，填写自定义数据，启动脚本。如下图所示：
+- [新增节点](https://intl.cloud.tencent.com/document/product/457/30652) 时，在 “云服务器配置” 页面，单击**高级设置**，填写自定义数据，启动脚本。如下图所示：
 ![](https://main.qcloudimg.com/raw/7b793fca3791823d14c45d17df6aa106.png)
 
 <span id="CreateCVM"></span>
 ### 添加已有节点时，设置节点的启动脚本
-[添加已有节点](https://intl.cloud.tencent.com/document/product/457/30652#addExistingNode) 时，在 “云服务器配置” 页面，单击【高级设置】，填写自定义数据，启动脚本。如下图所示：
+[添加已有节点](https://intl.cloud.tencent.com/document/product/457/30652#addExistingNode) 时，在 “云服务器配置” 页面，单击**高级设置**，填写自定义数据，启动脚本。如下图所示：
 ![](https://main.qcloudimg.com/raw/94f828deadbc7bfc4d9ed8357ddfc84d.png)
 
 <span id="CreateFlexGroup"></span>
 ### 创建伸缩组时，设置节点的启动脚本
-[创建伸缩组](https://intl.cloud.tencent.com/document/product/457/30638) 时，在 “启动配置” 页面，单击【高级设置】，填写自定义数据，启动脚本。如下图所示：
+[创建伸缩组](https://intl.cloud.tencent.com/document/product/457/30638) 时，在 “启动配置” 页面，单击**高级设置**，填写自定义数据，启动脚本。如下图所示：
 ![](https://main.qcloudimg.com/raw/13fb463e4ea280910701110ab20b09ab.png)
 
 

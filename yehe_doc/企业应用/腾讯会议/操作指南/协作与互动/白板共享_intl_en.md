@@ -6,7 +6,7 @@ VooV Meeting offers a whiteboard feature which makes it easier for you to commun
 
 ## Prerequisites
 
-- Free, Pro, or Enterprise Edition users
+- Free or Enterprise Edition users
 
 - Windows, macOS, iOS, or Android
 
@@ -14,13 +14,13 @@ VooV Meeting offers a whiteboard feature which makes it easier for you to commun
 
 - System requirements
 
-### Windows/macOS:
+### Windows/macOS
 
 1. Windows 7 or later
 
 2. macOS 10.11 or later
 
-### Android/iOS:
+### Android/iOS
 
 1. Android 9.0 or later
 
@@ -34,11 +34,11 @@ VooV Meeting offers a whiteboard feature which makes it easier for you to commun
 
 ## Enable Whiteboard Sharing
 
-### Windows/macOS:
+### Windows/macOS
 
 In a meeting, click **Share Screen** on the toolbar, select **Whiteboard** as the content for sharing, and click **Share**.
 
-### Android/iOS:
+### Android/iOS
 
 In a meeting, tap **Share Screen** on the toolbar and select **Share Whiteboard**.
 
@@ -78,7 +78,7 @@ In a meeting, tap **Share Screen** on the toolbar and select **Share Whiteboard*
 
 12. Hide: you can collapse the toolbar.
 
-### Android/iOS:
+### Android/iOS
 
 1. Collapse: you can hide the whiteboard toolbar.
 
@@ -104,6 +104,6 @@ In a meeting, tap **Share Screen** on the toolbar and select **Share Whiteboard*
 
 10. Annotation Settings: you can set whether to **Allow other attendees to annotate** and **Show annotator name**.
 
->This feature is supported for Pro and Enterprise Edition users only.
+>This feature is supported for Enterprise Edition users only.
 
 11. Hide: this feature lets you hide the whiteboard and disable screen sharing.

@@ -2,7 +2,7 @@
 VooV Meeting Outlook plugin lets you to schedule or start a meeting quickly in Microsoft Outlook.
 
 ## Prerequisites
-- Free, Pro, or Enterprise Edition user
+- Free or Enterprise Edition user
 - Windows
 - v2.10.0 or later
 

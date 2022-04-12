@@ -8,7 +8,7 @@
 3. Choose **Services and Routes** -> **Service** to go to the service management page, as shown below:
 ![](https://main.qcloudimg.com/raw/ad9db14ae516c9f1652a3ac5f6018120.png)
 4. Click **Create** to go to the "Create a Service" page.
-   Set the service parameters as needed. The key parameter information is as follows:
+    Set the service parameters as needed. The key parameter information is as follows:
    - **Service Name**: customize a service name.
    - **Namespace**: select a namespace based on your requirements.
    - **Access Settings (Service)**: configure account settings based on Overview and your requirements.

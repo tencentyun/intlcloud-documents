@@ -14,7 +14,7 @@
     <th style="text-align:center"><b>Android 版</b></th>
   </tr>
   <tr>
-    <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/eac6fe7646ebfc7aa5a0d2e461cd5c37.png" width="150" /></td>
+    <td style="text-align:center">IOS目前正在进行合规整改，暂时无法使用
     <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/cd69c6227c8ce974f484f52435b76674.png" width="150"  /></td>
   </tr>
 </table>

@@ -1,53 +1,59 @@
-## Cenários de operação
-Considerando as redes necessárias na implantação de um CVM com acesso à internet como exemplo, este documento explica cada etapa em detalhes, desde a criação de um VPC e uma sub-rede, até a aquisição de um CVM, a atribuição de um endereço IP público e, por último, o uso de um grupo de segurança para controlar o tráfego de entrada e saída do CVM.
-![](https://main.qcloudimg.com/raw/82eefc24e8eeded09773ef7a5b6ab077.png)
+Este tutorial descreve como criar rapidamente uma Virtual Private Cloud (VPC) com blocos CIDR IPv4.
+## Visão geral
+Este documento orienta todo o processo de configuração de uma VPC baseado em IPv4. 
+![](https://qcloudimg.tencent-cloud.cn/raw/926843feffd998e8dbf151b63178b366.png)
 
 ## Pré-requisitos
-1. Antes de usar os produtos do Tencent Cloud, é necessário [criar uma conta do Tencent Cloud](https://intl.cloud.tencent.com/register).
-2. Confirme a [região e zona de disponibilidade](https://intl.cloud.tencent.com/document/product/215/31786) em que o VPC deve ser implantado com base em seus requisitos de negócios.
-3. Compreenda as configurações básicas dos dois tipos de CVMs do Tencent Cloud: [Introdução aos CVMs do Linux](https://intl.cloud.tencent.com/document/product/213/2936) e [Introdução aos CVMs do Windows](https://intl.cloud.tencent.com/document/product/213/2764).
+Certifique-se de ter [criado uma conta da Tencent Cloud](https://intl.cloud.tencent.com/register) e concluído a [verificação de identidade](https://intl.cloud.tencent.com/document/product/378/3629), se precisar adquirir recursos na China Continental.
 
-## Etapas
-### Etapa 1: (Opcional) Crie um VPC e uma sub-rede.
-Você pode criar um VPC e uma sub-rede personalizados ou pode pular esta etapa, optando por fazer com que o sistema crie automaticamente um VPC e uma sub-rede padrão ao adquirir o CVM.
-Um VPC inclui pelo menos uma sub-rede. Quando um VPC for criado, o sistema criará uma sub-rede inicial e os recursos do serviço de nuvem só poderão ser adicionados à sub-rede.
-As funcionalidades do VPC padrão são iguais às do VPC personalizado que você cria.
+## Instruções
+### Etapa 1: criar uma VPC e uma sub-rede
+>? Após criar uma VPC e uma sub-rede, você não pode modificar os blocos CIDR. Portanto, conclua o [planejamento de rede](https://intl.cloud.tencent.com/document/product/215/31795) com antecedência.
+>
+1. Faça login no [Console da VPC](https://console.cloud.tencent.com/vpc).
+2. Selecione a região da VPC na parte superior e clique em **+New (+Novo)**.
+3. Na janela pop-up **Create VPC (Criar VPC)**, configure as informações da VPC e da sub-rede conforme as instruções abaixo.
+![](https://qcloudimg.tencent-cloud.cn/raw/ba0387f51ed8112ab819d5cb9c5113b5.png)
+ - **Informações da VPC*
+    - Name (Nome): o nome da VPC.
+    - IPV4 CIDR Block (Bloco CIDR IPV4): você pode escolher qualquer um desses intervalos de IP **10.0**.0.0 - **10.255**.255.255, **172.16**.0.0 - **172.31**.255.255 e 
+    **192.168**.0.0 - **192.168**.255.255 como o intervalo de IP da VPC. O intervalo da máscara deve ser de 16 a 28, como `10.0.0.0/16`.
+     - Advanced options (Opções avançadas): opcionalmente, é possível adicionar tags para ajudar você a melhorar o gerenciamento das permissões de recursos de subusuários e colaboradores.
+  - **Informações da sub-rede**
+    -  IPv4 CIDR Block (Bloco CIDR IPv4):
+		- Você pode escolher um intervalo de IP dentro ou igual ao intervalo de IP da VPC. Por exemplo, se o intervalo de IP da VPC for 10.0.0.0/16, você poderá escolher um intervalo de IP entre 10.0.0.0/16 e 10.0.255.255/28 como o intervalo de IP da sub-rede.
+		- Se a VPC em que as sub-redes estiverem localizadas precisar se comunicar com outras VPCs ou IDCs, certifique-se de que o intervalo de IP da sub-rede não se sobreponha ao intervalo de IP de par. Caso contrário, a interconexão por meio de uma rede privada pode falhar.
+    - Availability Zone (Zona de disponibilidade): selecione uma zona de disponibilidade na qual a sub-rede está localizada. Uma VPC permite sub-redes em zonas de disponibilidade diferentes, e, por padrão, essas sub-redes podem se comunicar umas com as outras por meio de uma rede privada.
+    - Advanced options (Opções avançadas): opcionalmente, é possível adicionar tags para ajudar você a melhorar o gerenciamento das permissões de recursos de subusuários e colaboradores.
 
-1. Faça login no [console do VPC](https://console.cloud.tencent.com/vpc).
-2. Depois de selecionar a região do VPC na barra superior, clique em **+New (+Novo)**.
-3. Insira as informações do VPC e da sub-rede inicial e clique em **OK**. Se você precisar de várias sub-redes, consulte [Criação de uma sub-rede](https://intl.cloud.tencent.com/document/product/215/31806#.E5.88.9B.E5.BB.BA.E5.AD.90.E7.BD.91).
+### Etapa 2: adquirir uma instância da CVM
+1. Faça login no [Console da CVM](https://console.cloud.tencent.com/cvm) para criar uma instância da CVM na VPC criado na etapa anterior.
+2. Clique em **Create (Criar)** no canto superior esquerdo da página da lista para acessar a página de aquisição da CVM.
+<img src="" width="80%">
+3. Na página de configuração personalizada, configure a instância da CVM e clique em **Buy Now (Comprar agora)**. As configurações de rede da CVM são as seguintes:
+ - Network (Rede): selecione a VPC e a sub-rede criados.
+![](https://qcloudimg.tencent-cloud.cn/raw/7ec59dbff60a37870ef4f9cdaf2aff70.png)
+ - Public network bandwidth (Largura de banda da rede pública): não marque <img src="https://main.qcloudimg.com/raw/50eef42428eb34dc35cf40995c9b7736.png" style="margin:-3px 0">.
+![](https://qcloudimg.tencent-cloud.cn/raw/f59fd4da95bd18e3f8585a1541d7547b.png)
+ - Security Group (Grupo de segurança): selecione **New security group (Novo grupo de segurança)** e configure-o conforme as instruções em [Configuração de grupos de segurança](https://intl.cloud.tencent.com/document/product/213/15377).
+![](https://qcloudimg.tencent-cloud.cn/raw/72584971b62015e38c9ad22da7ddd3d4.png)
 
->Os blocos CIDR (intervalos de IP) de instâncias e sub-redes do VPC não podem ser modificados depois de criados. Portanto, conclua o [planejamento da rede](https://intl.cloud.tencent.com/document/product/215/31795) com antecedência.
-
-### Etapa 2: adquira um CVM.
-1. Faça login no [console do CVM](https://console.cloud.tencent.com/cvm).
-2. Clique em **Create (Criar)** no canto superior esquerdo da página da lista para acessar a página de aquisição do CVM.
-3. Para obter informações sobre as configurações dos CVMs, consulte [Configuração personalizada do CVM no Linux](https://intl.cloud.tencent.com/document/product/213/10517) e [Configuração personalizada do CVM no Windows](https://intl.cloud.tencent.com/document/product/213/10516).
-4. Selecione um VPC e uma sub-rede. Existem dois métodos de seleção:
-- **Uso de VPC e sub-rede personalizados**
-Em **1. Select the region and model (1. Selecione a região e o modelo)** em **Custom Configuration (Configuração personalizada)**, você pode selecionar o VPC e a sub-rede criados na Etapa 1 na opção **Network (Rede)**, e o CVM será criado no VPC e na sub-rede personalizados.
-
-- **Uso de VPC e sub-rede padrão**
-Em **1. Select the region and model (1. Selecione a região e o modelo)** em **Custom Configuration (Configuração personalizada)**, você pode selecionar o VPC padrão (Default-VPC) e a sub-rede (Default-subnet) na opção ***Network (Rede)**, e o CVM será criado no VPC e sub-rede padrão.
+### Etapa 3: solicitar um EIP e vinculá-lo à instância da CVM
+Um IP elástico (EIP) é um endereço IP público que pode ser solicitado e adquirido de forma independente. Você pode vinculá-lo a uma instância da CVM para habilitar o acesso à rede pública.
+1. Faça login no [Console do EIP](https://console.cloud.tencent.com/cvm/eip).
+2. Na página **EIP**, selecione a região onde está localizado a CVM. Clique em **Apply (Solicitar)** no canto superior esquerdo.
+3. Na janela **Apply for EIP (Solicitar EIP)**, configure os parâmetros relevantes e clique em **OK**.
+4. Na página **EIP**, localize o EIP solicitado e clique em **More (Mais)** > **Bind (Vincular)**, na coluna **Operation (Operação)**.
+5. Na janela **Bind resources (Vincular recursos)**, selecione **CVM Instances (Instâncias da CVM)** como o tipo de recurso a ser vinculado, selecione a instância da CVM e clique em **OK**.
+![]()
+6. Na janela pop-up de confirmação, clique em **OK**.
 
 
->Recomendamos que você atribua um endereço IP público gratuito ao adquirir um CVM. Se nenhum endereço IP público tiver sido atribuído durante a aquisição, é possível vincular o CVM a um endereço IP público elástico no console do CVM.
+### Etapa 4: testar a conectividade da rede pública
+Conclua as operações a seguir para testar a conectividade da rede pública da instância da CVM.
+>?Antes de realizar o teste, certifique-se de que o grupo de segurança permite o acesso ao endereço IP e à porta correspondentes. Por exemplo, o protocolo ICMP está aberto e o servidor pode receber ping da rede pública. Para mais informações, consulte [Exibição de uma regra de grupos de segurança](https://intl.cloud.tencent.com/document/product/215/35514).
+>
+1. Faça login na instância da CVM com um EIP vinculado. Para obter instruções detalhadas, consulte [Login e acesso remoto](https://intl.cloud.tencent.com/document/product/213/17278).
+2. Execute o comando `ping <public IP address>`, como `ping www.qq.com` para testar a conectividade da rede pública.
+![](https://main.qcloudimg.com/raw/e19b0921e6d0471ca0e9b78923ccdd06.png)
 
-### Etapa 3: configure um grupo de segurança.
-Ao adquirir um CVM, é possível selecionar o grupo de segurança padrão (Default) do sistema. Esse grupo de segurança permite todo o tráfego por padrão. É possível definir regras de grupo de segurança com base em suas necessidades.
-1. Faça login no [console do CVM](https://console.cloud.tencent.com/cvm).
-2. Clique em **Security Group (Grupo de segurança)** na barra lateral esquerda para acessar a página de gerenciamento.
-3. Localize o grupo de segurança padrão na lista e clique em **Modify Rules (Modificar regras)**.
-4. Modifique as regras de entrada e saída do grupo de segurança nesta página.
-
-Para obter mais informações sobre como configurar regras de grupo de segurança, consulte [Criação de um grupo de segurança](https://intl.cloud.tencent.com/document/product/215/35506) e [Casos de uso de grupos de segurança](https://intl.cloud.tencent.com/document/product/215/35519).
-
-### Etapa 4: configure uma tabela de rotas.
-Quando terminar de configurar o CVM e o grupo de segurança, é necessário configurar a tabela de rotas associada à sub-rede.
-1. Faça login no [console do VPC](https://console.cloud.tencent.com/vpc).
-2. Clique em **Route Tables (Tabelas de rotas)** na barra lateral esquerda para acessar a página de gerenciamento.
-3. Localize a tabela de rotas padrão do VPC padrão na lista e clique em seu ID para acessar a página de detalhes.
-4. Clique em **+Add Routing Policy (+Adicionar política de roteamento)** em **Routing Policy (Política de roteamento)**.
-5. Insira o intervalo de endereços IP de destino para acessar a internet e selecione **CVM's Public IP (IP público do CVM)** para o tipo de próximo salto. Isso indica que quando os CVMs na sub-rede vinculada a essa tabela de rotas acessarem esse intervalo de endereços IP, eles sempre usarão o endereço IP público do CVM.
-
->Você pode adquirir um NAT Gateway para fornecer acesso à internet aos CVMs sem endereços IP públicos. Para obter mais informações, consulte [NAT Gateways](https://intl.cloud.tencent.com/document/product/1015).

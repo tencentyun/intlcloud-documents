@@ -11,6 +11,7 @@ show variables where variable_name in ('innodb_buffer_pool_size','innodb_log_buf
 >?5.7版本不支持 innodb_additional_mem_pool_size。
 
 以下参数是内存规格为1000MB实例的共享内存分配情况的查询结果（以下为测试实例配置）：
+```
 	1.  +---------------------------------+-----------+
 	2.  | Variable_name                   | Value     |
 	3.  +---------------------------------+-----------+
@@ -21,7 +22,7 @@ show variables where variable_name in ('innodb_buffer_pool_size','innodb_log_buf
 	9.  | query_cache_size                | 0         |
 	10. +---------------------------------+-----------+
 	11. 5 rows in set (0.01 sec)
-
+```
 **参数说明**：
 - **innodb_buffer_pool_size**
  该部分缓存是 Innodb 引擎最重要的缓存区域，是通过内存来弥补物理数据文件的重要手段，在云数据库 MySQL 上会采用实例规格配置的50% - 80%作为该部分大小（上图为1000MB * 0.5 = 500MB）。其中主要包含数据页、索引页、undo 页、insert buffer、自适应哈希索引、锁信息以及数据字典等信息。在进行 SQL 读和写的操作时，首先并不是对物理数据文件操作，而是先对 buffer_pool 进行操作，再通过 checkpoint 等机制写回数据文件。该空间的优点是可以提升数据库的性能、加快 SQL 运行速度，缺点是故障恢复速度较慢。
@@ -45,6 +46,7 @@ show variables where variable_name in ('read_buffer_size','read_rnd_buffer_size'
 ```
 
 查询结果如下（以下为测试实例配置）：
+```
 		1.  +----------------------+-----------+
 		2.  | Variable_name        | Value     |
 		3. +----------------------+-----------+
@@ -56,7 +58,7 @@ show variables where variable_name in ('read_buffer_size','read_rnd_buffer_size'
 		9.  | tmp_table_size       | 209715200 |
 		10.  +----------------------+-----------+
 		11.  6 rows in set (0.00 sec)
-
+```
 **参数说明：**
 
 - **read_buffer_size**

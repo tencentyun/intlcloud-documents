@@ -104,7 +104,7 @@ sudo docker push ccr.ccs.tencentyun.com/命名空间/helloworld:v1
 >- 已创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 >
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
-2. 在“集群管理”页面，选择需创建服务的集群 ID，进入集群的工作负载 “Deployment” 页面并单击【新建】。如下图所示：
+2. 在“集群管理”页面，选择需创建服务的集群 ID，进入集群的工作负载 “Deployment” 页面并单击**新建**。如下图所示：
 ![](https://main.qcloudimg.com/raw/bacaf92e14b7c342db6b3179c2ae5e8f.png)
 3. 在“新建Workload” 页面，根据以下信息，设置工作负载基本信息。如下图所示：
 ![](https://main.qcloudimg.com/raw/e2d083fececab9d1f84dd82f3850537a.png)
@@ -117,7 +117,7 @@ sudo docker push ccr.ccs.tencentyun.com/命名空间/helloworld:v1
 4. 参考以下信息设置“实例内容器”。如下图所示：
 输入实例内容器名称，本文以 helloworld 为例
 ![](https://main.qcloudimg.com/raw/27b651e922b4a3afb925326ed8393bd0.png)
-单击【选择镜像】，在弹出框中选择【我的镜像】，通过搜索框功能查找出 helloworld 镜像，并单击 【确定】。如下图所示：
+单击**选择镜像**，在弹出框中选择**我的镜像**，通过搜索框功能查找出 helloworld 镜像，并单击 **确定**。如下图所示：
 ![](https://main.qcloudimg.com/raw/86a18f657b75d338ab3c084710c3ba10.png)
 主要参数信息如下：
  - **镜像版本（Tag）**：使用默认值 v1。
@@ -137,14 +137,14 @@ sudo docker push ccr.ccs.tencentyun.com/命名空间/helloworld:v1
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择 TCP 协议，将容器端口和服务端口都设置为80 。
  >!服务所在集群的安全组需要放通节点网络及容器网络，同时需要放通30000 - 32768端口，否则可能会出现容器服务无法使用问题，详情请参见 [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
-7. 单击【创建Workload】，完成 Hello World 服务的创建。
+7. 单击**创建Workload**，完成 Hello World 服务的创建。
 
 ### 访问 Hello World 服务
 可通过以下两种方式访问 Hello World 服务。
 
 #### 通过负载均衡 IP 访问 Hello World 服务
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入 “集群管理” 页面。
-2. 单击 Hello World 服务所在的集群 ID，选择【服务】>【Service】。
+2. 单击 Hello World 服务所在的集群 ID，选择**服务**>**Service**。
 3. 在服务管理页面，复制 helloworld 服务的负载均衡 IP，如下图所示：
 ![](https://main.qcloudimg.com/raw/96fb6f94d4d365ce4007ff7961f5e438.png)
 
