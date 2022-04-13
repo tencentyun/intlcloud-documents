@@ -19,7 +19,8 @@ VooV Meeting allows you to join a meeting on phone without installing the client
 3. Enter the meeting ID and press **#** for confirmation.
 4. Enter the attendee ID and press **#** for confirmation. If you don't know the attendee ID, directly press **#** to join the meeting.
 5. If **You have joined the meeting, and x attendees are in the meeting currently** is prompted, you have joined the meeting successfully.
-- **Note:** if you already have a device in the meeting but want to use a landline or mobile phone as the audio source, you can configure as instructed in [Audio Selection and Testing](https://intl.cloud.tencent.com/document/product/1054/44929).
+
+>? if you already have a device in the meeting but want to use a landline or mobile phone as the audio source, you can configure as instructed in [Audio Selection and Testing](https://intl.cloud.tencent.com/document/product/1054/44929).
 
 ### On mobile phone
 You can join a meeting in either of the following ways based on your scenario:
@@ -29,9 +30,11 @@ Make sure that the received invitation message contains the one-tap meeting join
 1. Tap the number below **One tap mobile** in the invitation message to make a call.
 2. Enter the attendee ID and press **#** for confirmation as prompted. If you don't know the attendee ID, directly press **#** to join the meeting.
 3. If **You have joined the meeting, and x attendees are in the meeting currently** is prompted, you have joined the meeting successfully.
+
+
 #### Method 2: through dial-in number and meeting ID
 1. Dial by your location: you can find the applicable dial-in number at [VooV Meeting International Dial-in Numbers](https://voovmeeting.com/df/zh-CN/container.html?page=compliance%C2%AEion=df&lang=zh-CN&src=%2Fmobile%2Fdf%2Fzh-CN%2Fpstn.html).
 2. Enter the meeting ID and press **#** for confirmation.
 3. Enter the attendee ID and press **#** for confirmation. If you don't know the attendee ID, directly press **#** to join the meeting.
 4. If **You have joined the meeting, and x attendees are in the meeting currently** is prompted, you have joined the meeting successfully.
-- **Note:** if you already have a device in the meeting but want to use a landline or mobile phone as the audio source, you can configure as instructed in [Audio Selection and Testing](https://intl.cloud.tencent.com/document/product/1054/44929).
+>? if you already have a device in the meeting but want to use a landline or mobile phone as the audio source, you can configure as instructed in [Audio Selection and Testing](https://intl.cloud.tencent.com/document/product/1054/44929).
