@@ -11,7 +11,8 @@ CSS 서비스 이용 시, 푸시 스트리밍 도메인과 재생 도메인을 �
     1. **푸시 스트리밍 도메인**을 추가하려는 경우: 도메인을 입력하고 도메인 유형을 **Push Domain**으로 선택한 후 **Confirm**을 클릭합니다.
     2. **재생 도메인**을 추가할 경우: 도메인을 입력하고 도메인 유형을 **Playback Domain**으로 선택한 후 가속 리전을 선택합니다. 가속 리전은 기본적으로 **Chinese Mainland**으로 설정되어 있습니다. 마지막으로 **Confirm**을 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/a602d5953a0c0fcfd66ba8801c0266b3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/31990dfff7956a2b6405948c2931a992.png)
+
 >! 
 >- 도메인은 45바이트로 제한되며 현재 대문자 도메인은 지원하지 않습니다. **45바이트** 이하의 알파벳 소문자로 된 도메인 주소를 입력하십시오.
 >- 계정별로 도메인은 기본적으로 100개까지 관리할 수 있습니다. 비즈니스 사용량이 이를 초과하는 경우, [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 최대 도메인 수 확장을 신청할 수 있습니다. 
