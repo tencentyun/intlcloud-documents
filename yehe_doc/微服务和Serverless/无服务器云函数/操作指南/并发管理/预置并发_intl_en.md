@@ -2,10 +2,6 @@ Provisioned concurrency can start concurrent instances in advance according to t
 
 You can use this feature to set the quota of provisioned concurrent instances for a specified function version, so as to prepare computing resources in advance and reduce the duration for cold start and initialization of runtime environment and business code.
 
->?The provisioned concurrency feature will be officially launched on November 1, 2021, with the following adjustments and new capabilities:
->- Idle provisioned concurrency fees will be charged for the instances that have been configured and started but are not in use. If you don't need to use provisioned concurrency, please be sure to disable it so as to avoid unnecessary fees.
->- Scheduled provisioned concurrency scaling is provided to increase/decrease the provisioned concurrency automatically, which helps reduce the idle fees.
->- The concurrency calculator and capabilities to view the monitoring data of concurrent instances on each version are added, so you can further understand your business details and set the provisioned concurrency according to your business conditions.
 
 
 ## Overview
