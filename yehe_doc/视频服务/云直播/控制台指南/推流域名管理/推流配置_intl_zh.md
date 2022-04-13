@@ -16,7 +16,7 @@
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3.  进入推流鉴权配置页，单击![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png)按钮选择开启/关闭推流鉴权。
 4. 修改主 KEY 和备 KEY 信息，单击 **保存** 即可成功生效。
-![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/113acb94417b29466d347bddafa653d2.png)
 >? 主 KEY 为必填、备 KEY 为选填，主备 KEY 可实现当 KEY 泄露时平滑更换 KEY 不影响业务。
 
 ## 推流地址生成器
