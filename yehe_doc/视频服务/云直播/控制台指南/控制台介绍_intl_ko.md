@@ -30,9 +30,6 @@
 </tr><tr>
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/38380">이벤트 센터</a></td>
 <td><ul style= "margin: 0"><li>트리거된 각 사건 설정에 따라 관련 콜백 정보의 경로를 수신합니다.</li><li>라이브 방송 푸시 스트림 중단 기록과 중단 원인을 빠르게 조회할 수 있습니다.</li></ul></td>
-</tr><tr>
-<td>라이브 방송 SDK</td>
-<td><li>MLVB SDK를 사용하여 공식 License를 추가 및 관리할 수 있습니다.</li></td>
 </tr><tr>    
 
 
