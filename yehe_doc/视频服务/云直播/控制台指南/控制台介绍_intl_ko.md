@@ -65,10 +65,6 @@
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39467">자가 진단</a></td>
 <td>자주 발생하는 라이브 방송 푸시 스트림/재생 문제를 진단할 수 있습니다. 현재는 베타 테스트 단계이므로, 진단 결과는 참고용으로만 사용하시기 바랍니다.</td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/42524">릴레이</a></td>
-<td>콘텐츠 풀링 및 푸시 기능을 제공하며, 라이브 방송의 스트림을 푸시할 필요 없이 빠르게 기존의 비디오/라이브 방송을 풀링하여 타깃 주소로 푸시합니다.
-</td>    
 </tr></tr>
 </table>
 
