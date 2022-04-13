@@ -24,7 +24,7 @@ A spam folder is a comprehensive judgment policy of recipients. If your emails e
 [](id:que2) 
 ### What can I do to avoid emails going into spam folders?
 The best way to prevent emails from going into spam folders is to **avoid the [five cases](#case) mentioned above**.
-Whether an email goes to spam folders is connected to the email content, domain reputation, open rate, and user complaints. Different email service providers have different spam folder policies, over which we have no control. However, Tencent Cloud SES can guarantee the quality of sender IPs.
+Factors including the email content, domain reputation, open rate, and user complaints affect whether an email goes to spam folders. Different email service providers have different spam folder policies, over which we have no control. However, Tencent Cloud SES can guarantee the quality of sender IPs.
 A new domain does not have reputation with email service providers, so it is normal that emails sent from it go to spam folders. If there is no problem with your email content, the situation will improve as long as you do a warm-up for at least one month, pay attention to the open rate, and reduce the complaint rate.
 
 [](id:que3) 
@@ -34,5 +34,5 @@ You can use your email address to test, or log in to the console and check the e
 [](id:que4) 
 ### What should I do if my emails go to spam folders during the test phase?
 A spam folder is a comprehensive judgment policy of recipients. Please follow the instructions below:
-1. Make sure you haven’t use your domain to send spams before. If your domain reputation is low, your emails may automatically go to spam folders.
-2. The recipients may consider your emails as spam due to inappropriate email subject and content. You can [use the mail-tester tool](https://www.mail-tester.com/) to test the email content until you get a score higher than eight.
+1. Make sure you haven’t used your domain to send spams before. If your domain reputation is low, your emails may automatically go to spam folders.
+2. The recipients may consider your emails as spam due to inappropriate email subject and content. You can [use the mail-tester tool](https://www.mail-tester.com/) to test the email content until you get a score higher than 8.
