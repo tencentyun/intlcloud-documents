@@ -16,7 +16,7 @@ CSSを開始し、実名認証を完了しました。
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3. プッシュ認証設定ページに入り、![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png)ボタンをクリックしてプッシュ認証の有効/無効を選択します。
 4. マスターKEYおよびスレーブKEYの情報を修正して、**保存**をクリックすれば、設定が有効になります。
-![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/113acb94417b29466d347bddafa653d2.png)
 >? マスターKEYは入力必須、スレーブKEYはオプションです。マスター/スレーブKEYによって、KEYが漏洩した際もKEYをスムーズに交換でき、業務に影響が出ません。
 
 ## プッシュアドレスジェネレーター
