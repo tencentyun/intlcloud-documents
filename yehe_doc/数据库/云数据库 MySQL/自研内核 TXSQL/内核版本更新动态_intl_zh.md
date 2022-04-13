@@ -1,6 +1,41 @@
-本文为您介绍 MySQL 内核版本更新动态，如需升级，请参见 [升级内核小版本](https://intl.cloud.tencent.com/document/product/236/36816)。
+本文为您介绍 MySQL 内核版本更新动态，如需升级，请参见 [升级内核小版本](https://intl.cloud.tencent.com/document/product/236/45627)。
 
 ## MySQL 8.0
+### 20211202
+#### 新特性：
+- 支持快速修改列功能。
+- 支持直方图历史版本能力。
+- 支持 SQL2003 TABLESAMPLE （单表）采样控制语法，用于获取物理表的随机样本。
+- 新增非保留关键字:TABLESAMPLE BERNOULLI。
+- 新增 HISTOGRAM() 函数，对于给定输入字段构建直方图。
+- 支持 compressed 直方图。
+- 支持 SQL 限流功能（DBbrian 计划2022年4月支持）。
+- 支持 MySQL 集群角色设置功能，默认为角色为 CDB_ROLE_UNKNOWN。
+- show replicas 命令展示结果新增Role列，用于展示角色。
+- 支持 proxy。
+
+#### 性能优化：
+- 优化了由 insert on duplicate key update 引发热点的更新问题。
+- 通过聚合 event 多个相同的 binlog event 来提升 hash scan 的应用速度。
+- 在 plan cache 打开的情况下，线程池模式下，prepare 语句在点查的内存大量减小。
+
+#### Bug 修复：
+- 修复热点更新优化开启后性能不稳定的问题。
+- 修复 `select count(*)` 并行扫描在极端情况下会全表扫描的问题。
+- 修复多种情况下统计信息读零而导致的执行计划改变导致的性能问题。
+- 修复 query 长时间处于 query end 状态的 bug。
+- 修复长记录下，统计信息被严重低估的 bug。
+- 修复使用 Temptable 引擎时，选择列中的聚合函数超过255个时报错的 bug。
+- 修复 json_table 函数列名称大小写敏感的问题。
+- 修复窗口函数因为表达式在 return true 时提前返回导致正确性问题的 bug。
+- 修复 derived condition pushdown 在含有 user variables 的时候依然下压导致的正确性问题。
+- 修复 SQL filter 在 Rule 规则没加 namespace 下容易导致 crash 的问题。
+- 修复高并发高冲突情况下开启线程池的 QPS 抖动。
+- 修复主从 bp 同步在极端情况下（宿主机文件系统损坏的情况）泄漏文件句柄的问题。
+- 修复 index mapping 问题。
+- 修复统计信息缓存同步问题。
+- 修复移植执行 update 语句或存储过程未清理信息导致的 crash 问题。
+
 ### 20210830
 #### 新特性：
 - 支持预加载行数限制功能。
@@ -265,18 +300,18 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 - 修复 binlog 缓存文件空间不足时造成复制中断的问题。
 - 修复 fsync 返回 EIO，反复尝试陷入死循环的问题。
 - 修复 GTID 空洞造成复制中断且不能恢复的问题。
-   
+  
 ### 20180918
 #### 新特性：
 - 支持自动 kill 空闲事务，减少资源冲突，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
 - Memory 引擎自动转换为 InnoDB 引擎：如果全局变量 cdb_convert_memory_to_innodb 为 ON，则创建/修改表时会将表引擎从 Memory 转换为 InnoDB。
 - 支持隐藏索引功能。
 - 支持 Jemalloc 内存管理，替换 jlibc 内存管理模块，降低内存占用，提高内存分配效率。
-   
+  
 #### 性能优化：
 - binlog 切换优化，减少 rotate 持有锁时间，进而提升系统性能。
 - 提升 Crash Recovery 时的恢复速度。
-    
+  
 #### 官方 bug 修复：
 - 修复由于主备切换而引起 event 失效的问题。
 - 修复 REPLAY LOG RECORD 所引起的 Crash 问题。
@@ -286,16 +321,16 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 #### 新特性：
 - 支持 SQL 审计功能。
 - 支持表级别的并行复制，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
-   
+  
 #### 性能优化：
 - slave 实例的锁优化，提高 slave 实例同步性能。   
 - select ... limit 的下推优化。
-   
+  
 #### 官方 bug 修复：
 - 修复由于 relay_log_pos & master_log_pos 位点不一致导致切换失败的问题。
 - 修复 Crash on UPDATE ON DUPLICATE KEY 产生的 Crash 问题。
 - 修复由于 JSON 列导入时引起的 “Invalid escape character in string.” 错误。
-   
+  
 ### 20171130
 #### 新特性：
 - 支持 information_schema.metadata_locks 视图，查询当前实例中的 MDL 授予和等待状态。
@@ -374,16 +409,16 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 - 修复 RC 模式下读到脏数据的问题。
 - 修复删除临时表会导致备机回放失败的问题。
 - 修复高并发下死锁的问题。
-   
+  
 ### 20190203
 #### 新特性：
 - 异步删除大表：异步、缓慢地清理文件，进而避免因删除大表导致业务性能出现抖动情况，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
 - 支持非 super 权限用户 kill 其他用户会话的功能，通过 cdb_kill_user_extra 参数进行设置，默认值为 root@%。
 - GTID 开启时，支持事务中创建和删除临时表和 CTS 语法，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
-   
+  
 #### 性能优化：   
 - 分区表的复制回放优化，进而提升分区表的回放速度。
-   
+  
 #### 官方 bug 修复：
 - 修复临时空间不足所导致主备不一致的问题。
 - 修复热点记录更新挂起的问题。
@@ -393,7 +428,7 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 #### 新特性：
 - MEMORY  引擎自动转换为 InnoDB 引擎：如果全局变量 cdb_convert_memory_to_innodb 为 ON，则创建、修改表时会将表引擎从 MEMORY 转换为 InnoDB。
 - 自动 kill 空闲事务，减少资源冲突，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
-   
+  
 #### 官方 bug 修复：
 - 修复 REPLAY LOG RECORD 所导致 crash 的问题。
 - 修复 decimal 精度问题所导致主备时间数据不一致的问题。
@@ -405,10 +440,10 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 
 #### 性能优化：
 - drop table 带来的性能抖动。
-   
+  
 #### 官方 bug 修复：
 - 修复认证密码串导致数据库 crash 的问题。
-   
+  
 ### 20180122
 #### 新特性：
 - 支持 SQL 审计功能。
@@ -423,7 +458,7 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 - 修复异步模式下 binlog 限速失效的问题。
 - 修复 buffer_pool 状态异常的问题。
 - 修复 SEQUENCE 与隐含主键冲突的问题。
-   
+  
 ### 20170228
 #### 官方 bug 修复：
 - 修复 drop table 中的字符编码 bug。
