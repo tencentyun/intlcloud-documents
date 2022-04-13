@@ -25,5 +25,5 @@ If you have a self-built origin server and live streaming source, and want to st
 >- You can select only one forwarding protocol and multiple playback protocols.
 
 
-![](https://main.qcloudimg.com/raw/5e085f15c5cd0d09282774f40231301c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f8f1ac58d3943b94e6a2560f496a6d48.png)
 
