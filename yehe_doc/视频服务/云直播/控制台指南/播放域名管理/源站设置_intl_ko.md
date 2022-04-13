@@ -25,5 +25,5 @@
 >- Origin-pull 프로토콜은 중복 선택할 수 없으며, 재생 프로토콜은 중복 선택할 수 있습니다.
 
 
-![](https://main.qcloudimg.com/raw/5e085f15c5cd0d09282774f40231301c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f8f1ac58d3943b94e6a2560f496a6d48.png)
 
