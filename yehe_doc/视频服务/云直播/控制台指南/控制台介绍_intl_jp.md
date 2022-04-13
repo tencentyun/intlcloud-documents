@@ -30,9 +30,6 @@
 </tr><tr>
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/38380">イベントセンター</a></td>
 <td><ul style= "margin: 0"><li>各トリガーイベントのコールバック情報を受信するためのパスを設定します。</li><li>CSSのプッシュと中断の記録および中断の原因を迅速にクエリーできます。</li></ul></td>
-</tr><tr>
-<td>ライブストリーミングSDK</td>
-<td><li>モバイルライブストリーミングSDKに対応し、正式版Licenseを追加および管理することができます。</li></td>
 </tr><tr>    
 
 
