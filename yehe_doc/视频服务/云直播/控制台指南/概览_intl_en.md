@@ -31,7 +31,7 @@ This section displays the downstream peak bandwidth, downstream traffic usage, t
 </tr>
 <tr>
 <td>Concurrent Connections</td>
-<td><li/>If the playback protocol is RTMP or FLV, the value of **Concurrent Connections** is the number of online viewers. <li/>If the playback protocol is HLS, the value of **Concurrent Connections** does not reflect the number of online viewers.</td>
+<td><li/>If the playback protocol is RTMP or FLV, the value of Concurrent Connections is the number of online viewers. <li/>If the playback protocol is HLS, the value of Concurrent Connections does not reflect the number of online viewers.</td>
 </tr>
 </tbody></table>
 
