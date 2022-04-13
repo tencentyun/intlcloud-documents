@@ -6,7 +6,7 @@ For pods scheduled to the virtual nodes, there are two billing mode options, pay
 
 ## Kubernetes Version
 
-It only supports clusters of v1.16 and v1.18.
+It supports clusters of v1.16 and above.
 
 ## Default Quota
 
