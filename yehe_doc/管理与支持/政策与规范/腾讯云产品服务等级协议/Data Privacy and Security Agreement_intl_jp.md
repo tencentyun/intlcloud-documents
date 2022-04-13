@@ -132,6 +132,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 
 ## 法域特定の要件
 
