@@ -89,15 +89,14 @@
 <td>该实例的云硬盘已经过期，请前往 <a href="https://console.cloud.tencent.com/cvm/cbs">云硬盘控制台</a> 尽快续费。</td>
 </tr>
 <tr>
-<td>按量计费实例，是否因云硬盘过期而无法使用云硬盘</td>
+<td>按量计费实例的云硬盘，是否因云硬盘过期而无法使用云硬盘</td>
 <td>警告</td>
-<td rowspan=1>该实例的云硬盘未设置自动续费，可能出现云硬盘过期导致不可用，建议前往 <a href="https://console.cloud.tencent.com/cvm/cbs">云硬盘控制台</a> 设置云硬盘自动续费。</td>
+<td rowspan=2>该实例的云硬盘未设置自动续费，可能出现云硬盘过期导致不可用，建议前往 <a href="https://console.cloud.tencent.com/cvm/cbs">云硬盘控制台</a> 设置云硬盘自动续费。</td>
 </tr>
 </table>
 
 :::
 ::: 实例存储检测
-
 <table>
 <tr>
 <tr><th style="
@@ -176,7 +175,7 @@
 <td rowspan=3>该实例在最近12小时内出现 hungTask/panic/软死锁，请您关注实例运行状态。故障处理请参见 <a href="https://intl.cloud.tencent.com/document/product/213/41974">内核及 IO 相关问题</a>。</td>
 </tr>
 <tr>
-<td>实例是否在最近12小时出现过 hungTask</td>
+<td>实例是否在最近12小时出现过 panic</td>
 <td>异常</td>
 </tr>
 <tr>
@@ -305,6 +304,7 @@
 <td>警告</td>
 </tr>
 </table>
+
 :::
 </dx-accordion>
 
