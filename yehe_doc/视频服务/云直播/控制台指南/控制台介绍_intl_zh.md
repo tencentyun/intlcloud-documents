@@ -53,10 +53,10 @@
 <table>
 <tr><th width="17%">功能名称</th><th>功能描述</th>
 </tr><tr>
-<td ><a href = "https://cloud.tencent.com/document/product/267/35257">地址生成器</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31084">地址生成器</a></td>
 <td>支持通过填写地址拼接信息，辅助用户快速生成推流/播放地址。</td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/43392">Web 推流</a></td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Web 推流</a></td>
 <td>可实现快速生成推流地址，在线推流测试直播功能。</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39467">自助诊断</a></td>
