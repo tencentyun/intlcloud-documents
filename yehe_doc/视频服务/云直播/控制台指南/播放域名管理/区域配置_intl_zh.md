@@ -4,12 +4,13 @@
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
 - 已添加**播放域名**。
 >?在选择场景、新增域名、选择播放域名时，选择需要直播播放分发的加速区域，例如“中国大陆”，单击【确定】。
->![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
+![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
 
 ## 注意事项
 - **海外直播价格与国内直播价格不同，详细计费请参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。**
 - 在非加速区域使用该播放地址，该播放地址会无法正常使用。
 - 切换区域配置会导致带宽封顶配置失效，需要重新设置带宽封顶配置。
+
 ## 操作步骤
 1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的【管理】进入域名详情页。
 2. 在【高级配置】，查看【区域配置】标签。
