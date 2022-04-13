@@ -16,7 +16,7 @@ When created, each Pod is allocated less than 20 GiB of temporary image storage.
 >- It is recommended to mount important data and large files to Volume for persistent storage.
 
 ## Kubernetes Version
-Kubernetes v1.12 and earlier versions are not supported.
+Kubernetes v1.14 and earlier versions are not supported.
 
 ## Notes
 Elastic clusters do not have nodes. Therefore, some features, which depend on node components such as Kubelet and Kube-proxy, are not supported.
@@ -50,4 +50,4 @@ EKS supports the volume of the Hostpath type. For more information, see [Instruc
 EKS clusters may not necessarily meet your expectations because they don’t have nodes, although EKS is still compatible with Host-related parameters (such as `Hostpath`, `Hostnetwork: true`, and `DnsPolicy: ClusterFirstWithHostNet`, etc.) in the Pod. For example, you want to use Hostpath to share data, but the two Pods scheduled to the same virtual node may be the Hostpath of different hosts. Therefore, we recommend that the tasks you run on the EKS cluster do not strongly depend on Host-related parameters.
 
 ## Port Limits
-Port 9100 and ports above the port 62000 are not available.
+Port 9100  are not available.
