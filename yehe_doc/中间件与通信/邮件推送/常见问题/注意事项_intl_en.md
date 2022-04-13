@@ -33,7 +33,7 @@ No sender can guarantee that an email will not go to the recipient's spam folder
 10. Perform testing before sending emails formally. Before sending your emails to recipients formally, you can use your own account to test the delivery. In this way, you can also infer what kind of email is more likely to be recognized as spam and then optimize the content accordingly.
 
 [](id:multiple)
-### Batch sending notes
+### Batch sending
 1. The **Batch** feature in the console is suitable for batch sending of marketing or notification emails. To send trigger-based emails (such as authentication and transactional emails), you are advised to call the `SendEmail` API.
 2. Automatic warm-up is built in the batch sending feature to intelligently determine the reputation of the sender domain/IP and the maximum number of sent emails allowed per day. When this daily limit is reached, email sending will stop and extra emails will enter the cache queue and be sent 24 hours later. For the daily email limit for a domain/IP that has not been warmed up, see [Standard Warm-up Plan](https://intl.cloud.tencent.com/document/product/1084/43285#default).
 3. You can use a single domain for multiple sending tasks. When the total email volume exceeds the maximum number allowed per day, extra emails will enter the cache queue and be sent the next day.
