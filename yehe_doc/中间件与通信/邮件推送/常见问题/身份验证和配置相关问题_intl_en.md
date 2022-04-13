@@ -13,7 +13,7 @@ SES supports all industry-standard authentication mechanisms, including DomainKe
 3. [](id:step2)Return to the [Sender Domain](https://console.cloud.tencent.com/ses/domain) configuration page and click **Verify**.
 4. Click the sender domain address to enter the configuration details page, where you can see the domain value.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f5e04d51b3a6976eec099353f62cc07.png)
-5. Paste the sender domain address in [step 3.](#step3) to the [DNSPod](https://console.cloud.tencent.com/cns) page to add a record. Be sure to avoid spaces.
+5. Paste the sender domain address in [step 3](#step3) to the [DNSPod](https://console.cloud.tencent.com/cns) page to add a record. Be sure to avoid spaces.
  - DKIM authentication:
 ![](https://qcloudimg.tencent-cloud.cn/raw/db505d7e62fc62013e6d39d534dde126.png)
  - SPF authentication:
@@ -21,7 +21,7 @@ SES supports all industry-standard authentication mechanisms, including DomainKe
  - _dmarc record:
 Enter `v=DMARC1; p=none;rua=mailto:xxx@163.com;ruf=mailto:xxx@163.com;` as the record value.
 ![](https://qcloudimg.tencent-cloud.cn/raw/64dc22f5ec2da2840115bb869a1ba95e.png)
-6. Go back to the [Sender Domain ](https://console.cloud.tencent.com/ses/domain) configuration details page and click **Verify**.
+6. Go back to the [Sender Domain](https://console.cloud.tencent.com/ses/domain) configuration details page and click **Submit**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b65213aa84bd379a250084e72c8c3a34.png)
 :::
 ::: Step 2. Verify the result
