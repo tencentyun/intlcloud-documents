@@ -24,7 +24,7 @@
 
 您可以通过 [云监控控制台](https://console.cloud.tencent.com/monitor) 为对象存储创建告警策略。当监控指标达到设定值，将收到告警提醒，相关操作指引请参见 [设置监控告警](https://intl.cloud.tencent.com/document/product/436/39104)。
 
-您如需查看监控数据，可在【云产品监控】>[【对象存储】](https://console.cloud.tencent.com/monitor/product/COS) 页面，可查看所有存储桶的监控数据、健康状态和告警策略数。此外您也可以通过对象存储控制台查看，操作指引请参见 [查看数据概览](https://intl.cloud.tencent.com/document/product/436/36542) 和 [查询数据监控](https://intl.cloud.tencent.com/document/product/436/31634)。
+您如需查看监控数据，可在**云产品监控 > [对象存储](https://console.cloud.tencent.com/monitor/product/COS)** 页面，可查看所有存储桶的监控数据、健康状态和告警策略数。此外您也可以通过对象存储控制台查看，操作指引请参见 [查看数据概览](https://intl.cloud.tencent.com/document/product/436/36542) 和 [查询数据监控](https://intl.cloud.tencent.com/document/product/436/31634)。
 
 ## 通过接口调用
 
@@ -42,18 +42,12 @@
 | -------------------- | ------------------------ | ------------------------------------------------------------ | ---- | ------------- |
 | StdReadRequests      | 标准存储读请求           | 标准存储类型读取请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | StdWriteRequests     | 标准存储写请求           | 标准存储类型写入请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
-| MazStdReadRequests   | 多 AZ 标准存储读请求     | 多AZ标准存储类型读取请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
-| MazStdWriteRequests  | 多 AZ 标准存储写请求     | 多AZ标准存储类型写入请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | IaReadRequests       | 低频存储读请求           | 低频存储类型读取请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | IaWriteRequests      | 低频存储写请求           | 低频存储类型写入请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
-| MazIaReadRequests    | 多 AZ 低频存储读请求     | 多 AZ 低频存储类型读取请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
-| MazIaWriteRequests   | 多 AZ 低频存储写请求     | 多 AZ 低频存储类型写入请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | DeepArcReadRequests  | 深度归档存储读请求       | 深度归档存储类型读取请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | DeepArcWriteRequests | 深度归档存储写请求       | 深度归档存储类型写入请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | ItReadRequests       | 智能分层存储读请求       | 智能分层存储类型读取请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | ItWriteRequests      | 智能分层存储写请求       | 智能分层存储类型写入请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
-| MazItReadRequests    | 多 AZ 智能分层存储读请求 | 多 AZ 智能分层存储类型读取请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
-| MazItWriteRequests   | 多 AZ 智能分层存储写请求 | 多 AZ 智能分层存储类型写入请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | TotalRequests        | 总请求数                 | 所有存储类型的读写总请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | GetRequests          | GET 类总请求数           | 所有存储类型 GET 类总请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
 | PutRequests          | PUT 类总请求数           | 所有存储类型 PUT 类总请求次数，请求次数根据发送请求指令的次数来计算 | 次   | appid、bucket |
@@ -63,31 +57,20 @@
 | 指标英文名                   | 指标中文名                        | 单位 | 维度          |
 | ---------------------------- | --------------------------------- | ---- | ------------- |
 | StdStorage                   | 标准存储-存储空间                 | MB   | appid、bucket |
-| MazStdStorage                | 多 AZ 标准存储-存储空间           | MB   | appid、bucket |
 | SiaStorage                   | 低频存储-存储空间                 | MB   | appid、bucket |
-| MazIaStorage                 | 多 AZ 低频存储-存储空间           | MB   | appid、bucket |
 | ItFreqStorage                | 智能分层存储-高频层存储空间       | MB   | appid、bucket |
 | ItInfreqStorage              | 智能分层存储-低频层存储空间       | MB   | appid、bucket |
-| MazItFreqStorage             | 多 AZ 智能分层存储-高频层存储空间 | MB   | appid、bucket |
-| MazItInfreqStorage           | 多 AZ 智能分层存储-低频层存储空间 | MB   | appid、bucket |
 | ArcStorage                   | 归档存储-存储空间                 | MB   | appid、bucket |
 | DeepArcStorage               | 深度归档存储-存储空间             | MB   | appid、bucket |
 | StdObjectNumber              | 标准存储-对象数量                 | 个   | appid、bucket |
-| MazStdObjectNumber           | 多 AZ 标准存储-对象数量           | 个   | appid、bucket |
 | IaObjectNumber               | 低频存储-对象数量                 | 个   | appid、bucket |
-| MazIaObjectNumber            | 多 AZ 低频存储-对象数量           | 个   | appid、bucket |
 | ItFreqObjectNumber           | 智能分层存储_高频层对象数量       | 个   | appid、bucket |
 | ItInfreqObjectNumber         | 智能分层存储_低频层对象数量       | 个   | appid、bucket |
-| MazItFreqObjectNumber        | 多 AZ 智能分层存储_高频层对象数量 | 个   | appid、bucket |
-| MazItInfreqObjectNumber      | 多 AZ 智能分层存储_低频层对象数量 | 个   | appid、bucket |
 | ArcObjectNumber              | 归档存储对象数量                  | 个   | appid、bucket |
 | DeepArcObjectNumber          | 深度归档存储对象数量              | 个   | appid、bucket |
 | StdMultipartNumber           | 标准存储-文件碎片数               | 个   | appid、bucket |
-| MazStdMultipartNumber        | 多 AZ 标准存储-文件碎片数         | 个   | appid、bucket |
 | IaMultipartNumber            | 低频存储-文件碎片数               | 个   | appid、bucket |
-| MazIaMultipartNumber         | 多 AZ 低频存储-文件碎片数         | 个   | appid、bucket |
 | ItFrequentMultipartNumber    | 智能分层-高频文件碎片数           | 个   | appid、bucket |
-| MazItFrequentMultipartNumber | 多 AZ 智能分层-高频文件碎片数     | 个   | appid、bucket |
 | ArcMultipartNumber           | 归档存储-文件碎片数               | 个   | appid、bucket |
 | DeepArcMultipartNumber       | 深度归档存储-文件碎片数           | 个   | appid、bucket |
 
@@ -137,6 +120,13 @@
 | StdRetrieval | 标准数据读取量 | 读取标准数据产生的流量，是标准存储外网下行流量、内网下行流量、CDN 回源流量的总和 | B    | appid、bucket |
 | IaRetrieval  | 低频数据读取量 | 读取低频数据产生的流量，是低频存储外网下行流量、内网下行流量、CDN 回源流量的总和 | B    | appid、bucket |
 
+
+### 数据处理类
+
+您可以通过调用接口查看数据万象的监控数据，如需了解数据万象的监控接口详情，请参见数据万象监控指标文档。
+
+
+
 ## 各维度对应参数总览
 
 | 参数名称                        | 维度名称 | 维度解释                | 格式                                               |
@@ -145,6 +135,8 @@
 | &Instances.N.Dimensions.0.Value | appid    | 主账号的具体 APPID      | 输入主账号 APPID，例如：1250000000                 |
 | &Instances.N.Dimensions.1.Name  | bucket   | 存储桶维度名称          | 输入 String 类型维度名称：bucket                    |
 | &Instances.N.Dimensions.1.Value | bucket   | 存储桶具体名称          | 输入存储桶具体名称，例如：examplebucket-1250000000 |
+
+
 
 ## 入参说明
 

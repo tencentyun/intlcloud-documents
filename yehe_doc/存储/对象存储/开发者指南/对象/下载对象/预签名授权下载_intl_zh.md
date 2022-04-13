@@ -4,6 +4,13 @@
 
 预签名 URL 时，您可以在签名中设置将对象键包含在签名中，只允许下载指定的对象。您也可以在程序中指定预签名 URL 的有效时间，以保证超时后该 URL 不会被未授权方使用。
 
+>?
+> - 建议用户使用临时密钥生成预签名，通过临时授权的方式进一步提高预签名上传、下载等请求的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 如果您一定要使用永久密钥来生成预签名，建议永久密钥的权限范围仅限于上传或下载操作，以规避风险。
+> 
+
+
+
 ## 使用方法
 
 ### 使用 SDK
@@ -22,4 +29,3 @@
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471)
 - [小程序 SDK](https://intl.cloud.tencent.com/document/product/436/31711)
-
