@@ -11,8 +11,8 @@ SES supports all industry-standard authentication mechanisms, including DomainKe
 ![](https://qcloudimg.tencent-cloud.cn/raw/00947cc2ff7a7dc6855baee29d1a77ee.png)
 2. Configure the verification information in the [DNSPod console](https://console.cloud.tencent.com/cns).
 3. [](id:step2)Return to the [Sender Domain](https://console.cloud.tencent.com/ses/domain) configuration page and click **Verify**.
-4. Click the sender domain address to enter the configuration details page, where you can see the domain value.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f5e04d51b3a6976eec099353f62cc07.png)
+4. Click the sender domain address to enter the configuration details page, where you can see the domain value.
 5. Paste the sender domain address in [step 3](#step3) to the [DNSPod](https://console.cloud.tencent.com/cns) page to add a record. Be sure to avoid spaces.
  - DKIM authentication:
 ![](https://qcloudimg.tencent-cloud.cn/raw/db505d7e62fc62013e6d39d534dde126.png)
