@@ -65,10 +65,6 @@ CSSツールボックスは、CSSプロセスに関する保証サービスの�
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39467">セルフチェック</a></td>
 <td>よくあるライブストリーミングプッシュ/再生の問題を迅速に診断します。現在この機能はオープンベータ段階にあり、診断結果は参照のみ提供されます。</td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/42524">プルリツイート</a></td>
-<td>コンテンツをプルしてからプッシュする機能を提供します。CSSプッシュを行う必要なく、迅速に既存のビデオ/ライブストリーミングをプルし、ターゲットアドレスにプッシュすることが可能です。
-</td>    
 </tr></tr>
 </table>
 
