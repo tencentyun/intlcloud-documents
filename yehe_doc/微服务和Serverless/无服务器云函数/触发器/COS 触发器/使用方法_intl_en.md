@@ -13,4 +13,4 @@ After selecting **COS Trigger**, configure the bucket, triggering event type, an
 ![](https://main.qcloudimg.com/raw/4bfbf21b3f60141c7844d9eb0cce8b25.png)
 
 ### Step 3. Manage the trigger
-After successful creation, you can see the information of the created trigger on the **Trigger Management** page. You can also go to the COS console to perform other operations.
+After successful creation, you can see the information of the created trigger on the **Trigger Management** page. 
