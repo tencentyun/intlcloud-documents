@@ -68,7 +68,7 @@ Tencent CSS 서비스를 활성화하고 [푸시 도메인](https://intl.cloud.t
 2. 생성된 워터마크 템플릿을 선택하고 상단에 있는 ![img](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png) 삭제 버튼을 클릭합니다.
 3. 현재 워터마크 템플릿의 삭제 여부를 확인하고 [확인]을 클릭하면 삭제가 완료됩니다.
 
-![](https://main.qcloudimg.com/raw/155bafdc4af5f98e3bfdee525720e3f3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7a405987e7494de1f4551b3e90d00408.png)
 
 ## 관련 작업
 워터마크 템플릿에 대한 **도메인 차원의 바인딩** 및 **바인딩 해제**의 자세한 방법 및 관련 설명은 [워터마크 설정](https://intl.cloud.tencent.com/document/product/267/31064)을 참조하십시오.
