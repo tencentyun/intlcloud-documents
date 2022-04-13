@@ -44,17 +44,18 @@ You can create a screencapture and porn detection template in the following ways
 </tr><tr>
 <td>Screencapture Interval</td>
 <td>Auto screencapture interval during the push, in seconds. Value range: 2 (default)-300
+</tr><tr>    
 <td>Intelligent Porn Detection</td>
 <td>Whether to enable intelligent porn detection. If it is enabled, you need to configure a callback template before you can receive porn detection results.</td>
 </tr><tr>
 <td>Storage Account</td>
-<td>You can select **Current Account** or **Other Account**.</td>
+<td>You can select <b>Current Account</b> or <b>Other Account</b>.</td>
 </tr><tr>
 <td>CosAppId</td>
-<td>Required only when the storage account (the account where the COS service is under) is set to **Other Account**. You can get the value of the `AppId` in <a href="https://console.cloud.tencent.com/developer">**Account Information**</a> of the storage account.</td>
+<td>Required only when the storage account (the account where the COS service is under) is set to <b>Other Account</b>. You can get the value of the `AppId` in <a href="https://console.cloud.tencent.com/developer"><b>Account Information</b></a> of the storage account.</td>
 </tr><tr>
 <td>Bucket</td>
-<td>Select a **COS** bucket that you have created and authorized.</td>
+<td>Select a <b>COS</b> bucket that you have created and authorized.</td>
 </tr><tr>
 <td>Region</td>
 <td>The region where the bucket resides in. It cannot be modified.</td>
