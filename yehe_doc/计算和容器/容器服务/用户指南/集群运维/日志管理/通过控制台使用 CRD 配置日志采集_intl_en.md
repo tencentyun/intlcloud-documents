@@ -115,7 +115,7 @@ Select a logset and the corresponding log topic. You can create a log topic or s
 ![](https://main.qcloudimg.com/raw/3f51e21168a1cd506f6421c7dec06b52.png)
 >!
 >- CLS only supports log collection and reporting for intra-region container clusters.
->- If there are already 500 log topics in the log set, no more log topic can be created.
+>- If there are already 500 log topics in the log sets, no more log topic can be created.
 >
 :::
 ::: Configuring Kafka as the consumer
