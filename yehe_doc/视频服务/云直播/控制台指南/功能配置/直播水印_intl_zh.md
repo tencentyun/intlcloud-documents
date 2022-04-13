@@ -66,7 +66,7 @@
 2. 选择您已创建成功的水印模板，单击右上方的【删除】。
 3. 确认是否删除当前水印模板，单击【确定】即可成功删除。
 
-![](https://main.qcloudimg.com/raw/155bafdc4af5f98e3bfdee525720e3f3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7a405987e7494de1f4551b3e90d00408.png)
 
 ## 相关操作
 **域名维度绑定**和**解绑**水印模板的具体操作及相关说明，请参见 [水印配置](https://intl.cloud.tencent.com/document/product/267/31064)。
