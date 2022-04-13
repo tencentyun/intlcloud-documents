@@ -61,7 +61,7 @@ If a template has been bound to a domain name, you need to unbind the template b
 2. Find the target watermark template that you have created and click the deletion icon ![img](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png) at the top.
 3. In the pop-up dialog box, click **Confirm** to confirm the deletion.
 
-![](https://main.qcloudimg.com/raw/20b838fcbfbe5feffdd29f2d033d4f71.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7a405987e7494de1f4551b3e90d00408.png)
 
 ## Relevant Operations
 For more information on how to **bind/unbind** a **domain name** to/from a watermark template, please see [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31064).
