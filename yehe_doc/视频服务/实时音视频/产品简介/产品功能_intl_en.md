@@ -9,7 +9,7 @@
 <li>One-to-one or group video calls, which support 720p and 1080p definitions
 <li>Each room allows up to 300 concurrent users, and up to 50 of them can turn their cameras on at the same time.</li>
 </ul></td>
-<td>One-to-one video calls, video conferences with up to 300 attendees, online medical consultation, video chat, video customer service, video interviews, audiovisual recording, online insurance claim settlement, and video Werewolf</td>
+<td>One-to-one video calls, video conferences with up to 300 attendees, online medical consultation, video chat, video customer service, video interviews, audiovisual recording, online insurance claim settlement, and video-based party games</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/39788">Billing of Video Calls</a></td>
 </tr>
 <tr>
@@ -18,7 +18,7 @@
 <li>One-to-one or group audio calls, which support 48 kHz sampling and dual channels</li>
 <li>Each room allows up to 300 concurrent users, and up to 50 of them can keep their mics on at the same time.</li>
 </ul></td>
-<td>One-to-one or group audio calls, audio chat, audio conferencing, audio customer service, and audio Werewolf</td>
+<td>One-to-one or group audio calls, audio chat, audio conferencing, audio customer service, and audio-based party games</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/39787">Billing of Audio Calls</a></td>
 </tr><tr>
 <td>Interactive video streaming</td>
@@ -97,7 +97,7 @@
 <td>Free</td>
 </tr><tr>
 <td>AI-based noise suppression</td>
-<td>Removing inconstant noises that traditional noise suppression technologies cannot handle, such as cough, sneeze, and car horn</td>
+<td>Removing intermittent noises that traditional noise suppression technologies cannot handle, such as cough, sneeze, and car horn</td>
 <td>Audio call, video call, interactive live streaming, audio chat room, online class, etc.</td>
 <td><a href="https://intl.cloud.tencent.com/apply/p/9q0qt0bg5l4">Apply for beta testing</a></td>
 </tr><tr>

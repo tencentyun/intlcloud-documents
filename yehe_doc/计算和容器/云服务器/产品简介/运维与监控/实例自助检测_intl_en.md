@@ -1,16 +1,16 @@
 ## Overview
-Self-Service instance detection can check the status information of CVM instances such as performance, fees, network, and disk utilization and keep you up to date with the instance running status. You can use this feature to discover and solve instance problems promptly.
+Health check can check the status of performance, fees, network, and disk utilization of a CVM instance. With this feature, you can discover and solve instance problems promptly.
 
-## Overview
-We recommend you use self-service instance detection in the following two scenarios:
-- Troubleshooting: if any failure or problem occurs during instance operations, you can use self-service instance detection to locate and troubleshoot it and handle it according to the provided suggestions.
-- All-Around instance check: during daily Ops, self-service instance detection can help you keep up to date with the overall instance running status and discover and solve problems promptly, guaranteeing normal business operations.
+## Use Cases
+We recommend you use health check in the following two scenarios:
+- Troubleshooting: If any failure or problem occurs during instance operations, you can run a health check to locate and troubleshoot it.
+- All-around instance check: During daily Ops, health check can help you keep up to date with the overall instance running status.
 
 ## Check Item Description
-The check items of self-service instance detection are as detailed below:
+The health check items are as detailed below:
 
 <dx-accordion>
-::: Local network check
+::: Local network
 <table>
 <tr><th style="
     width: 18%;
@@ -25,13 +25,13 @@ The check items of self-service instance detection are as detailed below:
 <td>Network latency</td>
 <td>An HTTP request is sent to check whether the network latency of the instance is high based on the following criteria:
 <ul style="margin-bottom:0px">
-<li>If the latency is above 600 ms, the network quality will be considered poor.</li>
-<li>If no response is received within 5s, the request will be considered timed out.</li>
-<li>If all requests time out, the network will be considered disconnected.</li>
+<li>If the latency is above 600 ms, the network quality is considered poor.</li>
+<li>If no response is received within 5s, the request is considered timed out.</li>
+<li>If all requests time out, the network is considered disconnected.</li>
 </ul>
 </td>
 <td>Exception</td>
-<td rowspan=4>Troubleshoot and fix the local network problems.</td>
+<td rowspan=4>Check your local network and solve the problem.</td>
 </tr>
 <tr>
 <td>Network jitter</td>
@@ -51,7 +51,7 @@ The check items of self-service instance detection are as detailed below:
 </tr>
 </table>
 :::
-::: Check on security group rule
+::: Security group
 <table>
 <tr><th style="
     width: 18%;
@@ -63,14 +63,14 @@ The check items of self-service instance detection are as detailed below:
     width: 39%;
 ">Solution</th></tr>
 <tr>
-<td>Whether common ports are open to the internet in the security group rule</td>
-<td>The system checks whether requests to common ports such as ports 22 and 3389 used by the TCP protocol for the inbound traffic are blocked in the security group.</td>
+<td>Common ports</td>
+<td>Checks whether requests to common ports such as ports 22 and 3389 used by the TCP protocol for the inbound traffic are blocked in the security group.</td>
 <td>Warning</td>
-<td>If requests to port 22 used by the TCP protocol are blocked in an ingress rule in the security group, SSH login may be abnormal. You can open the required ports to the internet as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32369">Security Group Use Cases</a>.</td>
+<td>If requests to port 22 used by the TCP protocol are blocked in an ingress rule in the security group, SSH login may be abnormal. You can open the required ports as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32369">Security Group Use Cases</a>.</td>
 </tr>
 </table>
 :::
-::: Account fee check
+::: Billing
 <table>
 <tr><th style="
     width: 18%;
@@ -83,21 +83,20 @@ The check items of self-service instance detection are as detailed below:
 ">Solution</th></tr>
 <tr>
 <td rowspan=4>
-Cloud disk expiration and consistency between the expiration times of the instance and cloud disks
-<td>The system checks whether cloud disks associated with the instance have expired and whether they can be read/written.</td>
+Cloud disk status
+<td>Checks whether cloud disks associated with the instance have expired and whether they can be read/written.</td>
 <td>Exception</td>
 <td>A cloud disk associated with the instance has expired. Go to the <a href="https://console.cloud.tencent.com/cvm/cbs">CBS console</a> to renew it as soon as possible.</td>
 </tr>
 <tr>
-<td>The system checks whether cloud disks associated with the pay-as-you-go instance are unavailable due to expiration.</td>
+<td>Checks whether cloud disks associated with the pay-as-you-go instance are unavailable due to expiration.</td>
 <td>Warning</td>
-<td rowspan=1>Auto-Renewal of a cloud disk associated with the instance is not configured. Go to the <a href="https://console.cloud.tencent.com/cvm/cbs">CBS console</a> to configure auto-renewal for the cloud disk.</td>
+<td rowspan=2>Auto-Renewal is not enabled for the cloud disks attached to the instance. Go to the <a href="https://console.cloud.tencent.com/cvm/cbs">CBS console</a> to configure auto-renewal for the cloud disk.</td>
 </tr>
 </table>
 
 :::
-::: Instance storage check
-
+::: Instance storage
 <table>
 <tr>
 <tr><th style="
@@ -112,41 +111,41 @@ Cloud disk expiration and consistency between the expiration times of the instan
 </tr>
 <tr>
 <td>High cloud disk latency</td>
-<td>The system checks whether the I/O performance metric svctm is abnormal.</td>
+<td>Checks whether the I/O performance metric svctm is abnormal.</td>
 <td>Warning</td>
 <td>A cloud disk associated with the instance has a high latency. We recommend you pay attention to the cloud disk usage.</td>
 </tr>
 <tr>
-<td>Cloud disk I/O hang</td>
-<td>Cloud disk I/O hang</td>
+<td>Cloud disk I/O</td>
+<td>Checks for cloud disk I/O hang</td>
 <td>Warning</td>
 <td>A cloud disk associated with the instance has an I/O hang. We recommend you pay attention to the cloud disk usage.</td>
 </tr>
 <tr>
 <td>System disk inode utilization</td>
-<td>The system checks whether the inode utilization of the cloud disk has reached 100%.</td>
+<td>Checks whether the inode utilization of the cloud disk has reached 100%.</td>
 <td>Warning</td>
 <td rowspan=4>Pay attention to the cloud disk usage and troubleshoot as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/41974">Kernel and I/O Issues</a>.
 </td>
 </tr>
 <tr>
-<td>Whether the system disk is read-only</td>
-<td>The system checks whether the cloud disk is read-only currently.</td>
+<td>System disk read-only</td>
+<td>Checks whether the cloud disk is read-only.</td>
 <td>Exception</td>
 </tr>
 <tr>
 <td>System disk space utilization</td>
-<td>The system checks whether the utilization of the cloud disk has reached 100%.</td>
+<td>Checks whether the utilization of the cloud disk has reached 100%.</td>
 <td>Warning</td>
 </tr>
 <tr>
-<td>Ratio of I/O operation time in disk partitions to total time</td>
-<td>The system checks whether io_util of the cloud disk has reached 100%.</td>
+<td>Partition I/O utilization</td>
+<td>Checks whether the io_util of the cloud disk has reached 100%.</td>
 <td>Warning</td>
 </tr>
 </table>
 :::
-::: Instance status check
+::: Instance status
 <table>
 <tr><th style="
     width: 18%;
@@ -159,33 +158,33 @@ Cloud disk expiration and consistency between the expiration times of the instan
 ">Solution</th></tr>
 <tr>
 <td>Instance shutdown</td>
-<td>The system checks whether the instance is shut down currently.</td>
+<td>Checks whether the instance is shut down.</td>
 <td>Warning</td>
-<td>The instance is shut down. Go to the <a href="https://console.cloud.tencent.com/cvm/index">CVM console</a> to start it.</td>
+<td>The instance is shut down. Go to the <a href="https://console.cloud.tencent.com/cvm/index">CVM console</a> to start it up.</td>
 </tr>
 <tr>
-<td>Instance restart</td>
-<td>The system checks whether the instance has been restarted in the last 12 hours.</td>
+<td>Instance restart history</td>
+<td>Checks whether the instance has been restarted in the last 12 hours.</td>
 <td>Warning</td>
 <td>The instance has been restarted in the last 12 hours. Pay attention to the instance running status.</td>
 </tr>
 <tr>
 <td rowspan=3>Instance kernel crash</td>
-<td>The system checks whether a hung task has occurred in the instance in the last 12 hours.</td>
+<td>Checks whether a hung task has occurred in the instance in the last 12 hours.</td>
 <td>Exception</td>
 <td rowspan=3>A hung task, panic, or soft deadlock has occurred in the instance in the last 12 hours. Pay attention to the instance running status and troubleshoot as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/41974">Kernel and I/O Issues</a>.</td>
 </tr>
 <tr>
-<td>The system checks whether a hung task has occurred in the instance in the last 12 hours.</td>
+<td>Checks whether a panic has occurred in the instance in the last 12 hours.</td>
 <td>Exception</td>
 </tr>
 <tr>
-<td>The system checks whether a soft deadlock occurred in the instance in the last 12 hours.</td>
+<td>Checks whether a soft deadlock occurred in the instance in the last 12 hours.</td>
 <td>Exception</td>
 </tr>
 </table>
 :::
-::: Instance performance check
+::: Instance performance
 <table>
 <tr><th style="
     width: 18%;
@@ -198,29 +197,29 @@ Cloud disk expiration and consistency between the expiration times of the instan
 ">Solution</th></tr>
 <tr>
 <td>CPU utilization</td>
-<td>The system checks whether the instance has experienced a high CPU utilization in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a high CPU utilization in the last 12 hours.</td>
 <td>Warning</td>
 <td rowspan=3>
-To prevent the CPU utilization from becoming a business bottleneck, we recommend you check the CPU utilization and adjust the configuration promptly. Troubleshoot as instructed in the following documents based on the operating system of your instance:
+Check your CPU utilization and adjust the configuration according. Troubleshoot it as instructed below:
 <ul style="margin:0">
-<li>Windows instance: <a href="https://intl.cloud.tencent.com/document/product/213/32405">Failed to log in to a Windows CVM due to high CPU and memory usage</a></li>
-<li>Linux instance: <a href="https://intl.cloud.tencent.com/document/product/213/32387">Failing to log in to a Linux CVM due to high CPU and memory usage</a></li>
+<li>Windows instance: <a href="https://intl.cloud.tencent.com/document/product/213/32405">Login Failure Due To High CPU and Memory Usage (Windows) </a></li>
+<li>Linux instance: <a href="https://intl.cloud.tencent.com/document/product/213/32387">Login Failure Due To High CPU and Memory Usage (Linux)</a></li>
 </ul>
 </td>
 </tr>
 <tr>
 <td>Memory utilization</td>
-<td>The system checks whether the instance has experienced a high memory utilization in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a high memory utilization in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
 <td>Basic CPU utilization</td>
-<td>The system checks whether the instance has experienced a high CPU utilization in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a high CPU utilization in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 </table>
 :::
-::: Instance network check
+::: Instance network
 <table>
 <tr><th style="
     width: 18%;
@@ -232,79 +231,80 @@ To prevent the CPU utilization from becoming a business bottleneck, we recommend
     width: 39%;
 ">Solution</th></tr>
 <tr>
-<td>EIP disconnection due to overdue payment</td>
-<td>The system checks whether EIPs are isolated due to overdue payments.</td>
+<td>Public EIP connection</td>
+<td>Checks whether the EIP is isolated due to overdue payments.</td>
 <td>Exception</td>
-<td>An EIP may be disconnected from the public network due to overdue payments. We recommend you go to the <a href="https://console.cloud.tencent.com/expense/recharge">Billing Center</a> to top up your account and renew the EIP as soon as possible.</td>
+<td>An EIP may be disconnected from the public network due to overdue payments. You need to go to the <a href="https://console.cloud.tencent.com/expense/recharge">Billing Center</a> to make the overdue payment.</td>
 </tr>
 <tr>
 <td>Existence of EIP</td>
-<td>The system checks whether the instance has an EIP.</td>
+<td>Checks whether the instance has an EIP.</td>
 <td>Warning</td>
 <td>The instance has no EIPs. If you want to use an EIP to access the public network, go to the <a href="https://console.cloud.tencent.com/cvm/eip">EIP console</a> to bind one.</td>
 </tr>
 <tr>
-<td>EIP blockage by DDoS attacks</td>
-<td>EIP blockage by DDoS attacks</td>
+<td>EIP blocked</td>
+<td>Checks whether the EIP is blocked due to DDoS attacks</td>
 <td>Exception</td>
 <td>An instance EIP is blocked due to DDoS attacks.</td>
 </tr>
 <tr>
 <td rowspan=2>Public network bandwidth utilization</td>
-<td>The system checks whether the instance has experienced a high public network inbound bandwidth utilization in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a high public network inbound bandwidth utilization in the last 12 hours.</td>
 <td>Warning</td>
-<td rowspan=4>To prevent the bandwidth from becoming a business bottleneck, we recommend you check the network usage and troubleshoot as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32542">Login Failure Due to High Bandwidth Utilization</a>.</td>
+<td rowspan=4>Check the network usage and troubleshoot as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32542">Login Failure Due to High Bandwidth Utilization</a>.</td>
 </tr>
 <tr>
-<td>The system checks whether the instance has experienced a high public network outbound bandwidth utilization in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a high public network outbound bandwidth utilization in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
 <td rowspan=2>Private network bandwidth utilization</td>
-<td>The system checks whether the instance has experienced a high private network inbound bandwidth utilization in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a high private network inbound bandwidth utilization in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
-<td>The system checks whether the instance has experienced a high private network outbound bandwidth utilization in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a high private network outbound bandwidth utilization in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
 <td rowspan=3>Packet loss</td>
-<td>The system checks whether the instance has experienced TCP packet loss due to triggering of traffic throttling in the last 12 hours.</td>
+<td>Checks whether the instance has experienced TCP packet loss due to triggering of traffic throttling in the last 12 hours.</td>
 <td>Warning</td>
-<td rowspan=8>To prevent this problem from becoming a business bottleneck, we recommend you check the business health. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/41952">Network Packet Loss</a>.</td>
+<td rowspan=8>Check the traffic to your application. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/41952">Network Packet Loss</a>.</td>
 </tr>
 <tr>
-<td>The system checks whether the instance has experienced UDP packet loss due to triggering of traffic throttling in the last 12 hours.</td>
+<td>Checks whether the instance has experienced UDP packet loss due to triggering of traffic throttling in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
-<td>The system checks whether the instance has experienced packet loss due to a soft interrupt in the last 12 hours.</td>
+<td>Checks whether the instance has experienced packet loss due to a soft interrupt in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
 <td rowspan=4>Kernel network conditions</td>
-<td>The system checks whether the instance has experienced a full UDP send buffer in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a full UDP send buffer in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
-<td>The system checks whether the instance has experienced a full UDP receive buffer in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a full UDP receive buffer in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
-<td>The system checks whether the instance has experienced a full TCP complete connection queue in the last 12 hours.</td>
+<td>Checks whether the instance has experienced a full TCP complete connection queue in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
-<td>The system checks whether the instance has experienced TCP request overflow in the last 12 hours.</td>
+<td>Checks whether the instance has experienced TCP request overflow in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 <tr>
 <td>Connection utilization</td>
-<td>The system checks whether the number of connections of the instance has reached the upper limit in the last 12 hours.</td>
+<td>Checks whether the number of connections of the instance has reached the upper limit in the last 12 hours.</td>
 <td>Warning</td>
 </tr>
 </table>
+
 :::
 </dx-accordion>
 
@@ -312,5 +312,5 @@ To prevent the CPU utilization from becoming a business bottleneck, we recommend
 
 
 ## Related Operations
-You can generate an instance detection result report or view historical reports as instructed in [Using Self-Service Instance Detection](https://intl.cloud.tencent.com/document/product/213/45275).
+You can generate an instance detection result report or view historical reports as instructed in [Checking Instance Status](https://intl.cloud.tencent.com/document/product/213/45275).
 
