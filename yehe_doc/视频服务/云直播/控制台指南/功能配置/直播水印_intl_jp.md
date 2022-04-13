@@ -68,7 +68,7 @@ Tencent Cloud CSSサービスをアクティブ化し、[プッシュドメイ�
 2. 作成済みのウォーターマークテンプレートを選択し、上方の削除ボタン![img](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png)をクリックします。
 3. 現在のウォーターマークテンプレートを削除するか確認し、【OK】をクリックすれば削除が完了します。
 
-![](https://main.qcloudimg.com/raw/155bafdc4af5f98e3bfdee525720e3f3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7a405987e7494de1f4551b3e90d00408.png)
 
 ## 関連操作
 **ドメイン次元によるウォーターマークテンプレートのバインド**と**バインドの解除**についての具体的な操作および関連説明は、[ウォーターマーク設定](https://intl.cloud.tencent.com/document/product/267/31064)をご参照ください。
