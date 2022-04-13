@@ -9,7 +9,7 @@ Whether it is SES or any other email service, it cannot guarantee 100% successfu
 
 [](id:que3) 
 ### How long does it take for an email sent via SES to reach the recipient's inbox?
-Generally, an email will be delivered to the recipient's inbox within three seconds to five minutes, max 72 hours. A few emails may be delayed due to factors such as email content and the email service provider's policy. Therefore, it is normal to deliver an email in more than five minutes.
+Generally, an email will be delivered to the recipient's inbox within 3 seconds to 5 minutes, max 72 hours. A few emails may be delayed due to factors such as email content and the email service provider's policy. Therefore, it is normal to deliver an email in more than 5 minutes.
 
 [](id:que4) 
 ### Will email bounces or complaints caused by other SES users affect my email delivery rate?
@@ -25,7 +25,7 @@ You can troubleshoot as below:
 
 [](id:que6) 
 ### What should I do if my email sent via SES is blocked by the enterprise email service?
-Usually, enterprise email services block advertising emails, so do not contain advertising content in your email subject and content unless necessary.
+Usually, enterprise email services block advertising emails, so do not include advertising content in your email subject and content unless necessary.
 
 [](id:que7) 
 ### Why did my email fail to be sent?
@@ -36,7 +36,7 @@ Then troubleshoot in the following order:
 2. Whether the sender domain is verified. (Do not modify the configured DNS after it passes verification.)
 3. Whether the recipient email address is correct.
 4. Whether the template is approved and whether the format of `TemplateData` is correct.
-5. If the error indicating **no permission to send custom content** is returned, contact your sales rep to activate the permission for you.
+5. If the error indicating **no permission to send custom content** is returned, contact your sales rep to assign you the permission.
 
 If the issue persists, contact [Tencent Cloud technical team](https://console.cloud.tencent.com/workorder/category) for support.
 
