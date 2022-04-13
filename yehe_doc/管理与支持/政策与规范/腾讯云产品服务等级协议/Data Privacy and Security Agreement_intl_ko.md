@@ -145,6 +145,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 
 ## 관할권별 요구 사항
 
