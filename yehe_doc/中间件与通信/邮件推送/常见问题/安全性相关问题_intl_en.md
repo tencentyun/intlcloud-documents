@@ -21,5 +21,5 @@ SES adopts many spam and virus protection measures. Tencent Cloud specifically m
 ### What technologies can prevent SES users from sending spam? 
 
 SES uses internal content filtering technologies to detect spam. In addition, it also provides email quality scoring tools to help you check email content on your own. If it finds that an account is sending spam or malicious content, it will suspend the account's ability to send other emails.
->! Not being spam does not mean that the email will not go to the spambox. The email quality score is for reference only. Spambox policy is at the email service provider level. Whether or not an email will go to the spambox is subject to the email content, domain name credibility, open rate, user complaint, etc., and spam policy varies by email service provider, which are out of SES' control. SES can guarantee the quality of the sending IPs.
+>! Not being spam does not mean that the email will not go to spam folders. The email quality score is for reference only. Factors including the email content, domain reputation, open rate, and user complaints affect whether an email goes to spam folders. Different email service providers have different spam folder policies, over which we have no control. However, SES can guarantee the quality of sender IPs.
 
