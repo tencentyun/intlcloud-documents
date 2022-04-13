@@ -16,7 +16,7 @@ CSS 활성화 및 실명인증을 완료해야 합니다.
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3.  푸시 스트림 인증 설정 페이지로 이동한 후 ![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png) 버튼을 클릭해 푸시 스트림 인증 활성화/비활성화를 선택합니다.
 4. 메인 KEY와 서브 KEY 정보를 수정하고 **저장**을 클릭하면 적용됩니다.
-![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/113acb94417b29466d347bddafa653d2.png)
 >? 메인 KEY는 필수 입력 항목이며, 서브 KEY는 옵션 항목입니다. 메인/서브 KEY는 KEY가 유출될 경우 즉시 KEY를 변경하여 비즈니스에 영향을 미치지 않습니다.
 
 ## 푸시 스트림 주소 생성기
