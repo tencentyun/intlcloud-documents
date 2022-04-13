@@ -136,6 +136,7 @@
 33.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45804)。
 34.[消息队列 TDMQ](https://intl.cloud.tencent.com/document/product/1110/45939)。
 35.[全栈式风控引擎](https://intl.cloud.tencent.com/document/product/1123/45973)。
+36.[边缘安全加速平台](https://intl.cloud.tencent.com/document/product/1145/46316)。
 
 ## 特定司法管辖区要求
 
