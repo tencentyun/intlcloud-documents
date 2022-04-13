@@ -136,6 +136,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 
 ## Requisitos específicos da jurisdição
 
