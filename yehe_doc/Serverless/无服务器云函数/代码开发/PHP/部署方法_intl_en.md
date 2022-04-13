@@ -1,4 +1,4 @@
-## Overview
+## Deployment method
 
 Tencent Cloud SCF provides the following function deployment methods. For more information about how to create and update a function, see [Create and Update a Function](https://intl.cloud.tencent.com/document/product/583/19806).
 
