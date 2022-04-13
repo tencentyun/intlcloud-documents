@@ -1,67 +1,79 @@
-Após seu nome de domínio conectar ao CDN, você receberá um nome de domínio do CNAME com o sufixo `.cdn.dnsv1.com`, que pode ser visualizado na página [Gerenciamento de domínio](https://console.cloud.tencent.com/cdn/domains) no console do CDN. Para tornar o nome de domínio do CNAME acessível, primeiro é necessário concluir a configuração do CNAME em seu provedor de serviços de nomes de domínio. Quando a configuração entrar em vigor, você pode usar o serviço de aceleração do CDN.
-![img](https://main.qcloudimg.com/raw/073b948565743f7947aae8503eef995d.png)
+![](https://main.qcloudimg.com/raw/705a1315248316e32c25a8093fd9f799.png)
 
-## Instruções de configuração
+## Preparações
 
-Este documento fornece instruções de configuração do CNAME no Tencent Cloud e no Alibaba Cloud:
+### Adição de nome de domínio
+Antes de configurar um registro CNAME, você precisa [adicionar um nome de domínio](https://intl.cloud.tencent.com/document/product/228/5734) primeiro. Se você já adicionou um, prossiga.
 
-- [Configurações no Tencent Cloud](#m1)
-- [Configurações no Alibaba Cloud](#m2)
+
+## Instruções
+
+### Etapas de configuração
+
+Você precisa concluir a configuração no provedor de serviços de DNS do seu nome de domínio. Este documento descreve as etapas de configuração na Tencent Cloud e na Alibaba Cloud:
+
+- [Configurações na Tencent Cloud](#m1)
+- [Configurações na Alibaba Cloud](#m2)
 
 [](id:m1)
-### Configurações no Tencent Cloud
+### Tencent Cloud
 
-> !Registros de tipos diferentes possuem prioridades diferentes. Para o mesmo host, alguns tipos de registro não podem existir ao mesmo tempo. O tipo CNAME entra em conflito com todos os outros tipos de registro. É necessário excluir os registros de outros tipos para adicionar registros CNAME.
+## Configuração rápida
+
+Se o seu provedor de serviços de domínio for a Tencent Cloud, recomendamos que você use o recurso de configuração rápida de registro CNAME. Para obter mais informações, consulte [Configuração de CNAME via DNSPod](https://intl.cloud.tencent.com/document/product/228/42353).
 
 
-1. Faça login no [DNSpod](https://www.dnspod.com/Products/dns/list), clique no nome de domínio desejado na guia **My Domains (Meus domínios)**.
- 
-2. Clique em **Add Records (Adicionar registros)** e configure-o conforme as instruções abaixo:
-   ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
-	
-	- **Host**: insira o nome do subdomínio. Por exemplo, se você deseja adicionar a resolução para `www.dnspod.com`, selecione **www** como o registro do host. Se você deseja adicionar a resolução para `dnspod.com`, selecione **@**.
-	- **Type (Tipo)**: selecione **CNAME**.
-	- **Split Zone (Zona dividida)**: selecione **Default (Padrão)**. O DNSPod oferece várias opções de zonas divididas para você especificar registros para usuários específicos. Para obter mais informações, consulte [Descrição de zonas divididas](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/).
-	- **Value (Valor)**: insira o nome do domínio de destino (geralmente o CNAME, por exemplo, `xxx.xxx.com.cdn.dnsv1.com`). Depois que o registro for gerado, um `.` será adicionado automaticamente após o nome de domínio, o que é normal.
-	- **Weight (Peso)**: valores de registro diferentes na mesma zona dividida de um registro de host podem ser configurados com pesos diferentes, de forma que a resolução seja retornada de acordo com suas proporções de peso.
-		Insira um número inteiro entre 0 e 100.
-	- **MX**: prioridade do registro MX. Você pode deixar em branco.
-	- **TTL**: a vida útil (TTL, na sigla em inglês) determina por quanto tempo armazenar uma consulta ou conteúdo em cache. Quanto menor for o valor, menor será o custo de tempo para que as alterações de registro tenham efeito global. O valor padrão é 600 segundos.
-3. Clique em **Confirm (Confirmar)** para finalizar a configuração.
 
-   
+#### Configuração manual
 
-####  Configurações adicionais
-- Para habilitar o serviço de aceleração para todo o site, é possível definir a **Split Zone (Zona dividida)** de um registro de host como **Default (Padrão)**.
-Por exemplo, se você deseja direcionar todos os usuários para `1.com`, é possível configurar um registro CNAME com **Default (Padrão)** como a zona dividida e `1.com` como o valor.
-![img](https://main.qcloudimg.com/raw/0c146a23008acc3c0e4884aa1c4d3a3c.png)
+1. Faça login no [console do CDN](https://console.cloud.tencent.com/cdn) e copie o endereço CNAME.
+   Antes que seu nome de domínio seja resolvido com sucesso, um ícone de aviso é exibido ao lado do registro CNAME. Copie o valor do registro CNAME.
 
-- Também é possível ativar o serviço de aceleração para uma zona dividida especificada.
-Por exemplo, se você deseja direcionar os usuários do CMCC para `1.com` e os usuários do CUCC para `2.com`, é possível configurar dois registros CNAME: um com **CMCC** como a zona dividida e `1.com` como o valor, outro com **CUCC** como a zona dividida e `2.com` como o valor.
- ![](https://main.qcloudimg.com/raw/ecf4d1ad94eaf897473647459b923209.png)
+2. Faça login no [console do DNSPod](https://console.cloud.tencent.com/cns) e clique em **Record (Registrar)**.
 
->?Para obter mais informações sobre as configurações de zonas divididas, consulte [Descrição de zonas divididas](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/).
+3. Adicione um registro CNAME e clique em **OK**.
 
+4. Aguarde a configuração entrar em vigor.
+
+**Descrição da configuração:**
+
+| Configuração | Descrição                                                     |
+| :------- | :----------------------------------------------------------- |
+| Host | É o prefixo do nome de domínio. <br><br>**Exemplo:** para adicionar um registro para `dnspod.com`, selecione **@** para **Host**. Para adicionar um registro para `www.dnspod.com`, selecione **www** para **Host**. |
+Tipo de registro | Selecione **CNAME**.                                               |
+| Zona Dividida | Selecione **Padrão**. O DNSPod oferece várias opções de zonas divididas para você especificar registros para usuários específicos. Para obter mais informações, consulte [Descrição da zona dividida](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/). |
+| Valor | Digite o nome de domínio apontado pelo CNAME, por exemplo, `xxx.xxx.com.cdn.dnsv1.com`. Depois que o registro for gerado, um `.` será adicionado automaticamente após o nome de domínio. |
+| Peso     | Valores de registro diferentes na mesma zona dividida de um registro de host podem ser configurados com pesos diferentes, de forma que a resolução seja retornada de acordo com suas proporções de peso.| Faixa de valores: 1 a 100. |
+| MX       | Refere-se à prioridade. Quanto menor o valor, maior a prioridade. Recomendamos que você o deixe vazio.       |
+| TTL      | Refere-se à vida útil. Quanto menor for o valor, menor será o custo de tempo para que as alterações de registro tenham efeito global. O valor padrão é 600 segundos.  |
 
 [](id:m2)
-### Configurações no Alibaba Cloud
+### Alibaba Cloud
 
-Se o seu provedor de serviços de DNS for o Alibaba Cloud, é possível adicionar um registro CNAME da seguinte forma.
+Se o seu provedor de serviços de DNS for a Alibaba Cloud, é possível adicionar um registro CNAME da seguinte forma.
 
-1. Faça login no console do DNS do Alibaba Cloud.
-2. Clique no nome de domínio a ser resolvido para entrar na página de registro de resolução.
-3. Clique em **Add record (Adicionar registro)**.
-4. Para definir um registro de resolução CNAME, selecione **CNAME** como o tipo de registro. Insira o registro do host conforme necessário (por exemplo, `www`), que é o prefixo do nome de domínio. Insira o nome de domínio direcionado pelo nome de domínio atual como o valor de registro. Mantenha as configurações padrão para ISP Line (Linha de ISP) e TTL.
-![img](https://main.qcloudimg.com/raw/6b8bb9ce4f998b8d17ca27fd10512dc6.png)
-5. Por fim, clique em **Confirm (Confirmar)**.
+1. Faça login no [console do CDN](https://console.cloud.tencent.com/cdn) e copie o endereço CNAME.
+   Antes que seu nome de domínio seja resolvido com sucesso, um ícone de aviso é exibido ao lado do registro CNAME. Copie o valor do registro CNAME.
 
+2. Faça login no console do DNS da Alibaba Cloud.
+3. Clique no nome de domínio a ser resolvido para entrar na página de registro de resolução.
+4. Clique em **Add record (Adicionar registro)**.
+5. Selecione ***CNAME** como o tipo de registro. Insira o registro do host conforme necessário (como `www`), que é o prefixo do nome de domínio. Insira o registro CNAME copiado na etapa 1 como o valor do registro. Mantenha as configurações padrão da zona dividida e TTL.
+<img src="https://main.qcloudimg.com/raw/6b8bb9ce4f998b8d17ca27fd10512dc6.png" width="80%">
+6. Por fim, clique em **Confirm (Confirmar)**.
 
+## Operações subsequentes
 
-## Verificação de um registro CNAME
+### Verificação de CNAME
 
-O tempo que um registro CNAME leva para entrar em vigor varia de acordo com o provedor de serviços de DNS. Normalmente, leva 30 minutos. Também é possível verificar se o registro CNAME está em vigor executando `nslookup` ou `dig`. Se a resposta do registro CNAME for o CNAME configurado, isso indica que a configuração obteve êxito e a aceleração está habilitada.
+O tempo que um registro CNAME leva para entrar em vigor varia de acordo com o provedor de serviços de DNS. Geralmente é dentro de meia hora. Também é possível verificar se o registro CNAME está em vigor executando `nslookup` ou `dig`. Se a resposta do registro CNAME for o CNAME configurado, isso indica que a configuração obteve êxito e a aceleração está habilitada.
 
-- `nslookup -qt=cname <acceleration domain name>`
-  ![img](https://main.qcloudimg.com/raw/89faaf228a2b88e23b82d0a839367c76.png)
-- `dig <acceleration domain name>`
-  ![img](https://main.qcloudimg.com/raw/2ba5ec76f1671c3b8ee345cef896de10.png)
+- nslookup -qt=cname <acceleration domain name>
+<img src="https://main.qcloudimg.com/raw/1f94ea7e3ee46fc761e8e839ce68a86d.png" width="70%">
+- dig <acceleration domain name></br>
+<img src="https://main.qcloudimg.com/raw/fe9b8f9a1a26d3a7df5db614762caeaf.png" width="70%">
+
+### Instruções
+
+Você concluiu a configuração básica do serviço CDN. Para mais configurações de CDN, consulte o documento correspondente em [Guia de configuração](https://intl.cloud.tencent.com/document/product/228/15417).
+

@@ -1,38 +1,38 @@
+Anúncio:
+
+O CDN do Tencent Cloud lançará oficialmente o suporte ao QUIC em 5 de janeiro de 2022.
+O suporte ao QUIC é cobrado com base no número de solicitações QUIC. Para obter mais informações, consulte a [Visão geral do faturamento](https://intl.cloud.tencent.com/zh/document/product/228/2949).
+Iremos notificá-lo com antecedência sobre o faturamento da sua assinatura. Preste atenção em nossos anúncios no console e na documentação.
+
 ## Visão geral da funcionalidade
 
-O Quick UDP Internet Connections (QUIC) é um protocolo de rede comum, que garante a segurança da rede e reduz a latência na transferência e nas conexões, a fim de evitar o congestionamento da rede. É possível ativar o protocolo QUIC para os clientes acessarem os nós do CDN com segurança de transferência de dados aprimorada e eficiência de acesso.
+O Quick UDP Internet Connections (QUIC) é um protocolo de rede comum, que garante a segurança da rede e reduz a latência na transferência e nas conexões para evitar o congestionamento da rede. É possível ativar o protocolo QUIC para clientes acessarem os nós CDN com segurança aprimorada em transferência de dados e eficiência de acesso.
 
-Atualmente, essas versões do QUIC são compatíveis por padrão: draft h3-28, h3-Q050, h3-Q046, h3-Q043, Q046 e Q043.
+Atualmente, as versões QUIC suportadas incluem draft h3-28, h3-Q050, h3-Q046, h3-Q043, Q046 e Q043.
 
-O QUIC beta do CDN do Tencent Cloud foi lançado. Você pode [enviar uma solicitação](https://intl.cloud.tencent.com/apply/p/g0lwu71z0i7) e nós a analisaremos em 15 dias úteis.
+## Instruções
 
+1. Ativar o QUIC:
 
+Depois de adicionar um nome de domínio, clique em **Domain Management (Gerenciamento de domínio)** na barra lateral esquerda, na página de detalhes de nome de domínio e selecione a guia **HTTPS Configuration (Configuração do HTTPS)**  -> **QUIC configuration (Configuração do QUIC)**. O QUIC fica desativado por padrão e você pode ativá-lo manualmente.
+**Observação:** Um certificado HTTPS é necessário para habilitar o QUIC.
+![img](https://tva1.sinaimg.cn/large/008i3skNgy1gy2n1viwjjj30pf034t8t.jpg)
 
-## Guia beta
-
-Se a sua solicitação for aprovada, você pode acessar o console do CDN e ativar o QUIC para seus nomes de domínio novos para teste.
->!
->- Depois que a sua solicitação for aprovada, o QUIC só poderá ser ativado para nomes de domínio novos, mas não para os existentes.
->- Atualmente, o QUIC está em versão beta no console do CDN, portanto, recomendamos ativar o QUIC apenas para seus nomes de domínio de teste, em vez de nomes de domínio empresariais.
+> Observação:
+>
 >- A troca de tipos de serviço pode afetar o agendamento de recursos entre plataformas. Recomendamos não trocar os tipos de serviço para os nomes de domínio depois de ativar o QUIC.
->- Atualmente, o pull de origem do QUIC não é compatível.
+>- Solicitações QUIC não podem ser encaminhadas para a origem.
+> - O QUIC é apenas parcialmente suportado no momento.
 
+**Limites de uso:**
 
-Faça login no [console do CDN](https://console.cloud.tencent.com/cdn) e marque a caixa para ativar o QUIC ao conectar um nome de domínio novo:
-![](https://main.qcloudimg.com/raw/2098308cd8a8c1a0321c0164646b7700.png)
-**Limitações de configuração:**
-
-- Atualmente, o QUIC não pode ser ativado para nenhum nome de domínio do tipo de serviço de aceleração de streaming de VOD.
+- No momento, o QUIC não está disponível para aceleração de streaming de vídeo sob demanda.
 - O QUIC não pode ser ativado para nenhum nome de domínio com o IPv6 ativado.
 
+2. Desativar o QUIC:
 
-Depois de conectar o nome de domínio, clique em **Domain Management (Gerenciamento de domínio)** na barra lateral esquerda, acessar a página de detalhes do nome de domínio e abrir a guia **HTTPS Configuration (Configuração do HTTPS)** para localizar a seção de configuração do QUIC. Ele fica desativado por padrão e você pode ativá-lo diretamente.
-**Observação:** primeiro, configure um certificado HTTPS para ativá-lo.
-![](https://main.qcloudimg.com/raw/e697e32b39948d56610285c80043f1de.png)
-
-
+Você pode acessar ** Domain Management (Gerenciamento de domínio)** > ** HTTPS Configuration (Configuração HTTPS)** > **QUIC** e desativar o QUIC.
 
 ## Faturamento
 
-Atualmente, o QUIC está em versão beta no console do CDN. É um serviço de valor agregado e atualmente é gratuito.
-
+O suporte QUIC é um serviço de valor agregado, que é cobrado com base no número de solicitações QUIC e permite o pagamento conforme o uso. Para obter mais informações, consulte a [Visão geral do faturamento](https://intl.cloud.tencent.com/zh/document/product/228/2949).

@@ -8,9 +8,9 @@ Você pode personalizar a configuração da reescrita de URL de acesso para redi
 
 ### Visualização da configuração
 
-Faça login no [console do CDN](https://console.cloud.tencent.com/cdn), selecione **Domain Management (Gerenciamento de domínio)** na barra lateral esquerda, clique em **Manage (Gerenciar)** à direita de um nome de domínio para acessar sua página de configuração. Abra a guia ***Cache Configuration (Configuração de cache)** para localizar a seção **Access URL Rewrite Configuration (Configuração da reescrita de URL de origem)**.
+Faça login no [console do CDN](https://console.cloud.tencent.com/cdn), selecione **Domain Management (Gerenciamento de domínio)** na barra lateral esquerda, clique em **Manage (Gerenciar)** à direita de um nome de domínio para acessar sua página de configuração. Abra a guia ***Cache Configuration (Configuração de cache)** para localizar a seção **Access URL Rewrite Configuration (Configuração da reescrita de URL de acesso)**.
 
-A *Access URL Rewrite Configuration (Configuração da reescrita de URL de origem)** fica desabilitada por padrão.
+A **Access URL Rewrite Configuration (Configuração da reescrita de URL de acesso)** fica desabilitada por padrão.
 ![](https://main.qcloudimg.com/raw/01f93aaa70c523ae0bb1ab5debae8558.png)
 
 
@@ -33,7 +33,7 @@ Você pode clicar em **Add Rewrite Rule (Adicionar regra de reescrita)** para ad
 
 ## Exemplos de configuração
 
-Se a **Access URL Rewrite Configuration (Configuração da reescrita de URL de origem)** do nome de domínio de aceleração `www.test.com` for a seguinte:
+Se a **Access URL Rewrite Configuration (Configuração da reescrita de URL de acesso)** do nome de domínio de aceleração `www.test.com` for a seguinte:
 ![](https://main.qcloudimg.com/raw/214b034e578d5eaac0a63cacd49f1e2d.png)
 
 Então, o acesso real será:

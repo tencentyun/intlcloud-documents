@@ -1,41 +1,41 @@
 [](id:q1)
-### Como eu adiciono um nome de domínio?
-Você pode conectar um nome de domínio no console do CDN. Para obter mais informações, consulte a [Adição de nomes de domínio](https://intl.cloud.tencent.com/document/product/228/5734).
+### Como eu conecto um nome de domínio?
+Você pode conectar um nome de domínio no console CDN. Para obter mais informações, consulte [Adição de nomes de domínio](https://intl.cloud.tencent.com/document/product/228/5734).
 
 [](id:q2)
 ### Existem requisitos para conectar um nome de domínio ao CDN?
 Sim. Veja abaixo os requisitos para conectar um nome de domínio ao CDN:
-1. A extensão do nome de domínio não pode exceder 50 caracteres. Atualmente, nomes de domínio em chinês, mesmo depois de transcodificados, não são aceitos.
-2. Se o CDN da China Continental for usado, o nome de domínio deve ter uma declaração ICP emitida pelo MIIT e o conteúdo empresarial do servidor de origem deve ser legal.
+1. A extensão do nome de domínio deve ser de até 81 caracteres.
+2. O nome de domínio deve ter um registro de ICP emitido pelo MIIT.
 3. O nome de domínio é um nome de subdomínio no formato `a.test.com` ou `a.b.test.com` ou um nome de domínio curinga no formato `*.test.com` ou `*.a.test.com`.
 4. A verificação da propriedade do nome de domínio é requerida ao conectar um nome de domínio pela primeira vez, seja ele curinga ou conectado.
 
 [](id:q3)
 ### O CDN aceita a conexão de nomes de domínio curinga?
-Sim, o CDN aceita a conexão de nomes de domínio curinga, para os quais é necessária a verificação de propriedade do nome de domínio. Depois de verificados, os nomes de domínio podem ser conectados ou recuperados.
+Sim, o CDN aceita a conexão de nomes de domínio curinga, para os quais é necessária a verificação de propriedade do nome de domínio. Uma vez verificados, os nomes de domínio podem ser conectados ou recuperados.
 Além disso:
-1. Se um nome de domínio curinga, como `*.test.com` já estiver conectado ao Tencent Cloud, nenhum de seus nomes de subdomínio poderá ser conectado ao Tencent Cloud por outras contas.
-2. Se o nome de domínio curinga `*.test.com` já estiver conectado ao Tencent Cloud por sua conta, então nomes de domínio curinga em formatos como `*.path.test.com` não podem ser conectados ao Tencent Cloud por sua conta.
+1. Se um nome de domínio curinga, como `*.test.com` já estiver conectado à Tencent Cloud, nenhum de seus nomes de subdomínio poderá ser conectado a outra conta.
+2. Se o nome de domínio curinga `*.test.com` já estiver conectado à sua conta, então nomes de domínio curinga em formatos como `*.path.test.com` não podem ser conectados à sua conta.
 
 [](id:q4)
-### Quanto tempo demora para a configuração do CDN entrar em vigor?
-Geralmente, demora menos de 30 minutos para que a configuração do CDN entre em vigor. Se a configuração não entrar em vigor em 30 minutos, você pode [enviar um tíquete](https://console.cloud.tencent.com/workorder/category) para obter ajuda.
+### Quanto tempo leva para configurar o CDN?
+Em geral, leva menos de 30 minutos para que a configuração do CDN entre em vigor. Se a configuração não entrar em vigor em 30 minutos, você pode [enviar um tíquete](https://console.cloud.tencent.com/workorder/category) para obter ajuda.
 
 [](id:q5)
 ### Posso configurar vários IPs de servidor de origem?
-Sim. Depois de configurar vários IPs, o CDN acessará aleatoriamente um dos IPs ao encaminhar uma solicitação ao servidor de origem. Se a quantidade de falhas de pull de origem com este IP exceder o limite, o IP será isolado por 300 segundos por padrão, durante os quais nenhuma solicitação de pull de origem será encaminhada para o IP.
+Sim. Depois de configurar vários IPs, o CDN acessará aleatoriamente um dos IPs ao encaminhar uma solicitação ao servidor de origem. Se o número de falhas de pull de origem com o respectivo IP exceder o limite, ele será isolado por 300 segundos por padrão, período no qual nenhuma solicitação de pull de origem será encaminhada ao IP.
 
 [](id:q6)
 ### Como eu vinculo o CNAME a um nome de domínio depois que o nome de domínio for conectado ao CDN?
 Consulte [Configuração do CNAME](https://intl.cloud.tencent.com/document/product/228/3121) para saber como vincular o CNAME ao seu provedor de serviço de DNS.
 
 [](id:q7)
-### Só consigo desativar um nome de domínio, mas não consigo excluí-lo.
-Verifique se o usuário é um colaborador. O colaborador precisa obter a permissão relevante do criador para a operação. Se você tiver certeza de que o colaborador recebeu a permissão, mas ainda não consegue realizar a operação, [envie um tíquete](https://console.cloud.tencent.com/workorder/category) para obter ajuda.
+### Por que um nome de domínio pode ser desabilitado, mas não excluído?
+Verifique se o usuário é um colaborador. A permissão do colaborador é configurada pelo criador do serviço CDN. Se o criador não atribuir a permissão relevante ao colaborador, este não poderá realizar a operação. Se você tem certeza de que o colaborador recebeu a permissão e mesmo assim não consegue realizar a operação, [envie um tíquete](https://console.cloud.tencent.com/workorder/category) para obter ajuda.
 
 [](id:q8)
 ### A configuração do nome de domínio será mantida após o serviço de aceleração ser desabilitado?
-Sim. Depois que o serviço de aceleração for desabilitado, a configuração do nome de domínio será mantida, mas o serviço de aceleração não estará mais disponível. Um código de status 404 será retornado para solicitações do usuário.
+Sim. Depois que o serviço de aceleração for desabilitado, a configuração do nome de domínio será mantida, mas o serviço de aceleração não estará mais disponível. Nesse caso, um código de status 404 será retornado para solicitações do usuário.
 
 [](id:q9)
 ### A configuração do nome de domínio será mantida depois que um nome de domínio de aceleração for excluído?
@@ -43,11 +43,11 @@ Não. Depois que um nome de domínio for excluído, sua configuração não ser�
 
 [](id:q10)
 ### Como eu desativo o serviço de aceleração?
-Você pode desativar o serviço de aceleração no console do CDN. Para obter instruções detalhadas, consulte "Desativação do serviço de aceleração" em [Operações de nomes de domínio](https://intl.cloud.tencent.com/document/product/228/5736).
+Você pode desabilitar o serviço de aceleração no console CDN. Para obter instruções detalhadas, consulte "Desabilitar o serviço de aceleração" em [Operações de nomes de domínio](https://intl.cloud.tencent.com/document/product/228/5736).
 
 [](id:q11)
 ### Como eu excluo um nome de domínio de aceleração?
-Você pode excluir um nome de domínio de aceleração no console do CDN. Para obter instruções detalhadas, consulte "Exclusão de nomes de domínio de aceleração" em [Operações de nomes de domínio](https://intl.cloud.tencent.com/document/product/228/5736).
+Você pode excluir um nome de domínio de aceleração no console CDN. Para obter instruções detalhadas, consulte "Exclusão de nomes de domínio de aceleração" em [Operações de nomes de domínio](https://intl.cloud.tencent.com/document/product/228/5736).
 
 [](id:q12)
 ### Como eu desbloqueio um nome de domínio?
@@ -69,8 +69,8 @@ Faça login no [console do CDN](https://console.cloud.tencent.com/cdn), selecion
 
 
 [](id:m1)
-### Meu nome de domínio já obteve uma declaração ICP do MIIT. Por que o sistema avisa que não tem uma declaração ICP quando tento conectá-lo ao CDN?
-Depois de obter sua declaração ICP, leva algum tempo para sincronizar as informações do MIIT para o CDN do Tencent Cloud. Aguarde 24 horas e tente novamente.
+### Meu nome de domínio já obteve um registro de ICP do MIIT. Por que o sistema avisa que não há um registro de ICP quando tento conectá-lo ao CDN?
+Depois de obter seu registro de ICP, leva algum tempo para sincronizar as informações do MIIT para o CDN da Tencent Cloud. Aguarde 24 horas e tente novamente.
 
 [](id:q16)
 ### Posso configurar portas para nomes de domínio de aceleração ou servidores de origem?
@@ -84,7 +84,7 @@ Domínio de origem é o nome de domínio do site acessado no servidor de origem 
 [](id:q18)
 ### Como posso saber se o CDN entrou em vigor?
 
-Você pode executar o comando `nslookup` para consultar a resolução de DNS do seu nome de domínio de aceleração do CDN. Se o nome de domínio do resultado da resolução tiver o sufixo `dnsv1.com` (o registro CNAME) conforme mostrado na imagem, isso indica que o serviço de aceleração do CDN para seu nome de domínio entrou em vigor.
+Você pode executar o comando `nslookup` para consultar a resolução DNS do seu nome de domínio de aceleração do CDN. Se o nome de domínio do resultado da resolução tiver o sufixo `dnsv1.com` (o registro CNAME) conforme mostrado na imagem, isso indica que o serviço de aceleração do CDN para seu nome de domínio entrou em vigor.
 ![](https://main.qcloudimg.com/raw/4576b46fd8a04b726e6893a08f3fe61f.png)
 
 
@@ -93,11 +93,11 @@ Você pode executar o comando `nslookup` para consultar a resolução de DNS do 
 
 Se não for possível baixar os arquivos do CDN, recomendamos solucionar o problema pelos seguintes métodos:
 1. Verifique se é possível baixar normalmente os arquivos do servidor de origem.
-2. Verifique se o nome de domínio está configurado corretamente no console do CDN (consulte o domínio de origem na guia **Basic Configuration (Configuração básica)**). Certifique-se de que o domínio de origem configurado pode ser acessado corretamente. Caso contrário, o pull de origem pode falhar, o que afetará sua empresa.
-3. Verifique a política de segurança do servidor de origem. Verifique se a falha do pull de origem é causada pela política de segurança configurada no servidor de origem e, em caso afirmativo, [entre em contato conosco](https://intl.cloud.tencent.com/support) para obter o intervalo de IP intermediário e adicionar o servidor de origem à lista de permissões.
+2. Verifique se o nome de domínio está configurado corretamente no console do CDN (consulte o domínio de origem na guia **Basic Configuration (Configuração básica)**). Certifique-se de que o domínio de origem configurado pode ser acessado corretamente. Caso contrário, o pull de origem pode falhar, o que afetará seus negócios.
+Verifique se a falha do pull de origem é causada pela política de segurança configurada no servidor de origem e, em caso afirmativo, [entre em contato conosco](https://intl.cloud.tencent.com/support) para obter o intervalo de IP intermediário e adicionar o servidor de origem à lista de permissões.
 
 [](id:q20)
 ### O que eu devo fazer se não conseguir fazer login no back-end do WordPress depois que a aceleração do CDN for configurada?
-O WordPress envolve solicitações dinâmicas. Se a configuração do cache for inadequada, podem ocorrer exceções de login. Recomendamos definir a validade do cache do tipo de arquivo dinâmico correspondente como 0, para que os arquivos desse tipo não sejam armazenados em cache automaticamente. Os tipos de arquivos dinâmicos comuns incluem .asp, .jsp, .php, .perl e .cgi. Para obter instruções detalhadas, consulte [Configuração de validade do cache do nó (herdado)](https://intl.cloud.tencent.com/document/product/228/35317).
+O WordPress envolve solicitações dinâmicas. Se a configuração do cache for inadequada, podem ocorrer exceções de login. Recomendamos definir a validade do cache do tipo de arquivo dinâmico correspondente como 0. Assim, os arquivos desse tipo não serão armazenados em cache automaticamente. Os tipos de arquivos dinâmicos comuns incluem .asp, .jsp, .php, .perl e .cgi. Para obter instruções detalhadas, consulte [Configuração de validade de cache do nó (Herdada)](https://intl.cloud.tencent.com/document/product/228/35317).
 
 

@@ -6,7 +6,9 @@ Atualmente, os códigos de status aceitos são os seguintes:
 - 4XX: 400, 403, 404, 405, 414, 416 e 451
 - 5XX: 500, 501, 502, 503 e 504
 
->! Essa funcionalidade pode não estar disponível em algumas plataformas. Concluiremos a atualização do servidor o mais breve possível.
+>! 
+>- Essa funcionalidade pode não estar disponível em algumas plataformas. Concluiremos a atualização do servidor o mais breve possível.
+>- Essa funcionalidade é apenas para redirecionar os códigos de status de solicitações encontrados durante o pull de origem, mas não se aplica a solicitações com códigos de status retornados por quaisquer funcionalidades de controle de acesso, como a configuração de lista de bloqueio/lista de permissões do UA.
 
 ## Guia de configuração
 
@@ -21,8 +23,8 @@ A configuração da página de erro personalizada fica desativada por padrão.
 
 ### Adição de regras
 
-Você pode clicar em **Add Rule (Adicionar regra)** para adicionar regras de página de erro personalizada, conforme necessário.
-![](https://main.qcloudimg.com/raw/7af17d161ec2f4e499a5740383d4658e.jpg)
+Você pode clicar em **Add Rule (Adicionar regra)** para adicionar regras de páginas de erro personalizadas, conforme necessário.
+<img src="https://main.qcloudimg.com/raw/7af17d161ec2f4e499a5740383d4658e.jpg" style="height:220px"/>
 
 
 

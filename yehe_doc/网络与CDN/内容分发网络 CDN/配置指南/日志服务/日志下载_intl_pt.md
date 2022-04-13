@@ -1,27 +1,39 @@
-## Visão geral da funcionalidade
+<blockquote class="d-mod-alarm">
+              <div class="d-mod-title d-alarm-title">
+                <i class="d-icon-alarm"></i>Aviso:
+              </div>
+               <p>O valor do campo "HTTP/3" para o identificador de protocolo HTTP (o 14º campo no log offline) em logs gerais estará na versão beta a partir de 13 de setembro de 2021, o que não afetará o console e as APIs do CDN. Observe que obter dados de log de pacotes de log off-line pode exigir ajustes.</br></br>O acesso QUIC está na versão beta. Para obter mais informações, consulte <a href="https://cloud.tencent.com/document/product/228/51800">QUIC</a>.</p>
+            </blockquote>
+
+
+
+## Funcionalidades
+
 Depois que um nome de domínio for conectado ao CDN, todas as solicitações serão programadas para um nó do CDN. Se o recurso solicitado for armazenado em cache no nó, o recurso será retornado diretamente; caso contrário, a solicitação será repassada ao servidor de origem para efetuar o pull do recurso solicitado.
 
-Como os nós do CDN respondem à maioria das solicitações, para ajudar a analisar o acesso dos usuários, os pacotes do CDN acessam os logs de toda a rede em uma granularidade horária e, por padrão, os retêm por 30 dias. Esses logs também podem ser baixados.
+Os nós do CDN respondem à maioria das solicitações do usuário. Para facilitar a análise de acesso, os pacotes CDN acessam os logs de toda a rede em uma granularidade horária e, por padrão, os retêm por 30 dias. Esses logs também podem ser baixados.
 
->? Atualmente, os logs de pull de origem não são fornecidos, apenas os logs de acesso aos nós são fornecidos.
+>? 
+>- Atualmente, os logs de pull de origem não são fornecidos. Apenas os logs de acesso de nó são fornecidos.
+>- No momento, os logs offline de nome de domínio do ECDN não podem ser consultados por regiões. Para obter mais informações, consulte [Gerenciamento de log](https://intl.cloud.tencent.com/document/product/570/15258).
 
-## Visão geral
+## Casos de uso
 ### Análise de comportamento de acesso
 É possível baixar os logs de acesso e analisar os recursos populares e os usuários ativos.
 
 ### Monitoramento da qualidade do serviço
 Ao baixar os logs de acesso, é possível atualizar-se sobre o status do serviço de todos os nós do CDN e calcular o tempo médio de resposta, a velocidade média de download e outras métricas.
 
-## Guia de operação
+## Instruções
 ### Como usar
-Faça login no [console do CDN](https://console.cloud.tencent.com/cdn), clique em **Log Service (Serviço de log)** na barra lateral esquerda e selecione um nome de domínio e intervalo de tempo para consultar os logs de acesso. É possível selecionar vários pacotes de log e baixá-los em lotes:
-![](https://mc.qcloudimg.com/static/img/043e70b6829ce67d6af125b51736b249/1.png)
+Faça login no [Console do CDN](https://console.cloud.tencent.com/cdn), clique em **Log Service (Serviço de log)** na barra lateral esquerda e selecione um nome de domínio e intervalo de tempo para consultar os logs de acesso. Você pode selecionar vários pacotes de log e baixá-los em lotes:
+
 
 >!
-- Por padrão, os logs de acesso são empacotados a cada hora. Durante esse período, se não houver solicitação para o nome de domínio para a hora, nenhum pacote de log será gerado.
-- Os logs de acesso de um nome de domínio de regiões dentro e fora da China Continental são empacotados separadamente. Os pacotes de log são nomeados no formato de "hora-nome de domínio-região de aceleração".
-- Os logs de acesso são coletados de cada nó de cache do CDN, portanto, o atraso pode variar. Normalmente, os pacotes de log podem ser consultados e baixados após 30 minutos aproximadamente. Os pacotes de log serão adicionados continuamente e se estabilizarão após 2 a 3 horas.
-- Os pacotes de log de acesso de um nome de domínio são retidos por 30 dias. Você pode usar uma função SCF para transferir os pacotes de log para o COS, conforme as instruções em [Armazenamento regular de logs do CDN](https://intl.cloud.tencent.com/document/product/228/36014) para armazenamento permanente.
+>- Por padrão, os logs de acesso são empacotados a cada hora. Durante esse período, se não houver solicitação para o nome de domínio para a hora, nenhum pacote de log será gerado.
+>- Para o mesmo nome de domínio, os logs de acessos de dentro e de fora da China continental são empacotados separadamente. Os pacotes de log são nomeados no formato de "[hora]-[nome de domínio]-[região de aceleração]".
+>- Os logs de acesso são coletados de cada nó de cache do CDN, portanto, o atraso pode variar. Normalmente, os pacotes de log podem ser consultados e baixados após algo em torno de 30 minutos. Os pacotes de log serão adicionados de forma contínua e se estabilizarão após 24 horas, aproximadamente.
+>- Os pacotes de log de acesso de um nome de domínio são retidos por 30 dias. Você pode usar uma função SCF para transferir os pacotes de log para o COS, conforme as instruções em [Armazenamento regular de logs do CDN](https://intl.cloud.tencent.com/document/product/228/36014) para armazenamento permanente.
 
 ### Campos
 Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
@@ -59,12 +71,12 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 </tbody>
 <tbody><tr>
 <td>6</td>
-<td>Números de províncias para os logs da China Continental; números de regiões para os logs fora da China Continental (consulte a tabela de mapeamento abaixo).</td>
+<td>Números de províncias para logs da China continental; números de regiões para logs fora da China continental (consulte a tabela de mapeamento abaixo).</td>
 </tr>
 </tbody>
 <tbody><tr>
 <td>7</td>
-<td>Números de ISPs para os logs da China Continental; O `-1` será usado para os logs fora da China Continental (consulte a tabela de mapeamento abaixo).</td>
+<td>Números de ISPs para os logs da China continental; O `-1` será usado para os logs fora da China Continental (consulte a tabela de mapeamento abaixo).</td>
 </tr>
 </tbody>
 <tbody><tr>
@@ -74,7 +86,7 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 </tbody>
 <tbody><tr>
 <td>9</td>
-<td>Informação de referência</td>
+<td>Informação do referenciador</td>
 </tr>
 </tbody>
 <tbody><tr>
@@ -111,11 +123,15 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 <td>15</td>
 <td>Acertos/erros do cache. Um acerto em um servidor de borda ou nó pai do CDN será marcado como acerto.</td>
 </tr>
+<td>16</td>
+<td>Porta que conecta o cliente e os nós do CDN. Este campo será exibido como `-` se a porta não existir.</td>
+</tr>
 </tbody></table>
 
 ### Mapeamentos de regiões/ISPs
 
-#### Províncias da China Continental
+[](id:.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
+#### Províncias da China continental
 <table style="width:660px;">
 <thead>
 <tr>
@@ -217,7 +233,7 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 </tr>
 <tr>
 <td>-1</td>
-<td>Fora da China Continental</td>
+<td>Fora da China continental</td>
 <td></td>
 <td></td>
 <td></td>
@@ -226,7 +242,7 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 </tbody></table>
 
 
-#### ISPs da China Continental
+#### ISPs da China continental
 <table style="width:660px;">
 <thead>
 <tr>
@@ -258,7 +274,7 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 </tbody>
 <tbody><tr>
 <td>-1</td>
-<td>ISPs fora da China Continental</td>
+<td>ISPs fora da China continental</td>
 <td>0</td>
 <td>Outros ISPs</td>
 <td></td>
@@ -268,7 +284,7 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 </table>
 
 
-#### Regiões fora da China Continental
+#### Regiões fora da China continental
 <table style="width:710px">
 <thead>
 <tr>
@@ -638,7 +654,7 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 <td>1501</td>
 <td>Bahrein</td>
 <td>4460</td>
-<td>China Continental - Norte da China</td>
+<td>China continental</td>
 </tr>
 <tr>
 <td>726</td>
@@ -694,12 +710,12 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 <td>1611</td>
 <td>Madagascar</td>
 <td>-2</td>
-<td>Fora da China Continental – outra</td>
+<td>Fora da China continental – outra</td>
 </tr>
 </tbody></table>
 
 
-#### ISPs fora da China Continental
+#### ISPs fora da China continental
 <table style="width:220px;">
 <thead>
 <tr>
@@ -717,14 +733,15 @@ Os campos (da esquerda para a direita) nos logs são listados conforme abaixo:
 ### Observações
 Os dados de tráfego/largura de banda calculados com base na quantidade de bytes registrados no quinto campo de um log de acesso são diferentes daqueles faturáveis do CDN pelo seguinte motivo:
 - Apenas os dados da camada de aplicativos podem ser registrados nos logs de acesso. O tráfego gerado durante a transferência real de dados pela rede é cerca de 5 a 15% maior do que o tráfego da camada de aplicativos, incluindo as duas partes a seguir:
-	- Consumo por cabeçalhos TCP/IP: nas solicitações HTTP baseadas em TCP/IP, cada pacote tem um tamanho máximo de 1.500 bytes. Isso inclui cabeçalhos TCP e IP que representam 40 bytes e geram tráfego durante a transferência, mas não podem ser contabilizados pela camada de aplicativos. O custo dessa parte é de cerca de 3%.
-	- Retransmissão TCP: durante a transferência normal de dados pela rede, cerca de 3 a 10% dos pacotes são perdidos na internet e retransmitidos pelo servidor. Esse tipo de tráfego não pode ser contabilizado pela camada de aplicativos, que representa 3 a 7% do tráfego total.
-- Como um padrão do setor, o tráfego faturável é a soma do tráfego da camada de aplicativos e as sobrecargas descritas acima. O CDN do Tencent Cloud considera 10% como a proporção de sobrecargas, então, o tráfego monitorado é cerca de 110% do tráfego registrado em log.
+	- Consumo por cabeçalhos TCP/IP: em solicitações HTTP baseadas em TCP/IP, cada pacote tem um tamanho máximo de 1.500 bytes e inclui cabeçalhos TCP e IP de 40 bytes, o que gera tráfego durante a transferência, mas não pode ser contabilizado pela camada de aplicativo. A sobrecarga dessa parte é de cerca de 3%.
+	- Retransmissão TCP: durante a transferência normal de dados pela rede, cerca de 3% a 10% dos pacotes são perdidos na Internet e retransmitidos pelo servidor. Este tipo de tráfego, que representa de 3% a 7% do tráfego total, não pode ser contabilizado na camada de aplicativo.
+- Como um padrão do setor, o tráfego faturável é a soma do tráfego da camada de aplicativos e as sobrecargas descritas acima. O CDN da Tencent Cloud considera 10% como a proporção de sobrecargas, então, o tráfego monitorado é cerca de 110% do tráfego registrado em log.
 
-## Casos de uso
+## Exemplos
 
-### Exemplo de log de acesso da China Continental
+### Exemplo de log de acessos dentro da China continental
 ![](https://mc.qcloudimg.com/static/img/a3ef1ea051dc277872ec10a7135872df/logs.png)
 
-### Exemplo de log de acesso fora da China Continental
+### Exemplo de log de acessos fora da China continental
 ![](https://main.qcloudimg.com/raw/b0612a5204abdbdc6a4364ad02972900.png)
+
