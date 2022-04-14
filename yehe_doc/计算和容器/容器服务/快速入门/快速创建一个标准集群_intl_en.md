@@ -37,7 +37,7 @@ On the **Select Model** page, confirm the billing mode, select an availability z
 - **Master Node**: Choose **Managed**.
 - **Billing Mode**: It defaults to **Pay-as-You-Go**. 
 - **Worker Configurations**: Select an availability zone and the corresponding subnet and confirm the node model. Keep other default settings unchanged.
-  - **Availability Zone**: Select an AZ, such as “Guangzhou Zone 3”.
+  - **Availability Zone**: Select an AZ.
   - **Node Network**: Select the subnet of the current VPC.
   - **Model**: Select a model, such as “S1.SMALL1 (Standard S1, 1-core 1 GB)”.
 
