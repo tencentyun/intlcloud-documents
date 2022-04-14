@@ -41,7 +41,7 @@ After the free tier is used up, your plans will be used automatically. If no pla
 	- Email Prefix: for example, `test`.
 	- Sender Name: for example, `Lil C`.
 >!Your sender address should be a full email address suffixed with a **verified** sender domain.
->For example, <code>test@example.qcluodmail.com</code>.
+>For example, <code>test@example.qcloudmail.com</code>.
 
 4. Click **Submit** to complete the sender address configuration.
 
