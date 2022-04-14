@@ -43,11 +43,11 @@ Standard warm-up rules apply by default under batch sending mode. The backend wi
 	</tr>
 	<tr>
 		<td style="text-align:center">7</td>
-		<td style="text-align:center"sdval="10,000" >10000</td>
+		<td style="text-align:center"sdval="10,000" >10,000</td>
 	</tr>
 	<tr>
 		<td style="text-align:center">8</td>
-		<td style="text-align:center"sdval="20,000" >20000</td>
+		<td style="text-align:center"sdval="20,000" >20,000</td>
 	</tr>
 	<tr>
 		<td style="text-align:center">9</td>
