@@ -202,7 +202,7 @@ The image exported by using the `dd` command is in RAW format. We recommend that
 
 
 ### Converting the image format (optional) [](id:ImageFormatConversion)
-Refer to **Image Format Conversion** and use `qemu-img` to convert the original image into a supported format.
+Refer to **[Image Format Conversion](https://intl.cloud.tencent.com/zh/document/product/213/46192#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4)** and use `qemu-img` to convert the original image into a supported format.
 
 
 
