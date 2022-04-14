@@ -8,7 +8,7 @@
 
 <span id ="Step1"></span>
 ## Step 1. Log in to the console
-Log in to the [SES console](https://console.cloud.tencent.com/ses). If you do not have a Tencent Cloud account yet, please see [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) to create one.
+Log in to the [SES console](https://console.cloud.tencent.com/ses). If you do not have a Tencent Cloud account yet, please see [Signing Up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) to create one.
 
 <span id ="Step2"></span>
 ## Step 2. Perform organization verification
