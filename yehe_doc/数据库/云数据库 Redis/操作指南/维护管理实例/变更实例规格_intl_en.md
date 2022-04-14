@@ -12,7 +12,7 @@ This document describes how to elastically scale an instance in the TencentDB fo
 >- To avoid failure in capacity reduction, the capacity after reduction must be at least 1.3 times the amount of existing data. After the capacity reduction, you will receive an automatic refund.
 
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), locate the desired instance in the instance list, and select **Configure** > **Expand Node**, **Reduce Node**, **Add Replica**, or **Delete Replica** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/9b8e7bf10a2848977ee274a3425cfb14.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/55c978523bfe6d8763aa87259ab13fb8.png)
 2. In the pop-up dialog box, adjust the configuration and click **OK**.
 3. Return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
 
