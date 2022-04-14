@@ -1,3 +1,14 @@
+## Instant Messaging(IM) - 그룹
+
+Tencent Cloud IM 기술 교류 그룹 가입 혜택:
+
+- 신뢰할 수 있는 기술 지원
+- 자세한 제품 정보
+- 긴밀한 업계 교류
+
+Telegram 그룹: [가입하기](https://t.me/tencent_imsdk)
+
+Disacord 그룹: [가입하기](https://discord.gg/8EmN2ma25W)
 ## 핫라인 전화
 
 Tencent Cloud 사용 중 문제가 발생할 경우 고객서비스에 문의하시기 바랍니다.
