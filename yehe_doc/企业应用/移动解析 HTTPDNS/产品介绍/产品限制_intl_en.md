@@ -1,3 +1,4 @@
+
 ## HTTPDNS API Request Rate Limit
 For a single user of HTTPDNS, there is no limit on the API request rate by default (for Enterprise Edition only).
 - For Enterprise Edition users, there is no limit on the API request rate by default.
