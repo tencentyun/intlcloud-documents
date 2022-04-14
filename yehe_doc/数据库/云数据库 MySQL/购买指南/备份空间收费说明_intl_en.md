@@ -33,14 +33,14 @@ Usage of backup capacity that exceeds the free tier are calculated on an hourly 
 
 
 ## Backup Lifecycle
-### [Pay-as-You-Go instance](id:anliang_zhouqi)
+### [Pay-as-you-go instance](id:anliang_zhouqi)
 - Backups are subject to change over the instance lifecycle.
 - Backups can work normally within 24 hours after the instance payment becomes overdue.
 - After 24 hours since the instance payment has been overdue, the instance is isolated into the recycle bin. At this time, automatic backup stops, and rollback and manual backup are prohibited, but backups can still be downloaded (on the [Backup List](https://console.cloud.tencent.com/mysql/backup/list/data). Excessive backup capacity will still be billed until the instance is eliminated. You can renew the instance in the recycle bin in the console to recover it.
 - After three days since the instance has been isolated in the recycle bin, the instance is eliminated (i.e., deleted completely) along with all data backups. Please save the needed backups in a timely manner.
 
 ## Payment Overdue
-### Pay-as-You-Go instance
+### Pay-as-you-go instance
 After the account falls into arrears, the backup will change with the lifecycle of the instance. For more information, see backup lifecycle of pay-as-you-go instances as described above.
 
 ## Upgraded Services Available After Backup Billing Starts
@@ -64,6 +64,6 @@ After the account falls into arrears, the backup will change with the lifecycle 
 | -------------------- | ------------------------------------------------------------ |
 | Core businesses             | 7-1,830 days                                              |
 | Non-core and non-data businesses | 7 days                                                      |
-| Archive businesses             | 7 days. We recommend that you manually back up data based on your business needs and delete the backups promptly after use |
-| Testing businesses | 7 days. We recommend that you manually back up data based on your actual business needs and delete the backups promptly after use |
+| Archive businesses             | 7 days. We recommend that you manually back up data based on your business needs and delete the backups promptly after use. |
+| Testing businesses | 7 days. We recommend that you manually back up data based on your actual business needs and delete the backups promptly after use. |
 
