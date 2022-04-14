@@ -44,7 +44,7 @@ RunInstance インターフェースにおける [InstanceMarketOptionsRequest](
 
 ### シナリオ事例の説明
 顧客は広州三区における一つのインスタンスを保有しており、当該インスタンスの課金モードが時間ごとに課金する後払いのビッドモードとします。具体的なビッドモードのコンフィギュレーション情報は下記の通りです。
-- 最高ビッド：0.6元/時間
+- 最高ビッド：0.0923ドル/時間
 - ビッドリクエストモード：一回限りのリクエスト
 - イメージ ID：img-pmqg1cw7
 - 選択するモデル：2C4G二世代標準型（S2.MEDIUM4）
@@ -56,7 +56,7 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 &Placement.Zone=ap-guangzhou-3
 &InstanceChargeType=SPOTPAID
 &InstanceMarketOptions.MarketType=spot
-&InstanceMarketOptions.SpotOptions.MaxPrice=0.60
+&InstanceMarketOptions.SpotOptions.MaxPrice=0.0923
 &InstanceMarketOptions.SpotOptions.SpotInstanceType=one-time
 &ImageId=img-pmqg1cw7
 &InstanceType=S2.MEDIUM4
