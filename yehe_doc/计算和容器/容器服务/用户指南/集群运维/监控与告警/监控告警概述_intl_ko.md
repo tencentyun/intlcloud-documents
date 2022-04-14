@@ -8,7 +8,7 @@ TKE 모니터링에 대한 자세한 내용은 [모니터링 데이터 조회](h
 현재 지원되는 모니터링 지표에 대한 자세한 내용은 [모니터링 및 알람 지표 목록](https://intl.cloud.tencent.com/document/product/457/30691)을 참고하십시오.
 
 ## 알람
-TKE 예외를 신속하게 감지하고 비즈니스의 안정성과 신뢰성을 보장하기 위해 모든 프로덕션 클러스터에 필요한 알람을 설정하는 것이 좋습니다. 알람 설정 관련 자세한 내용은 [알람 설정](https://intl.cloud.tencent.com/document/product/457/30690)을 참고하십시오.
+TKE 예외를 신속하게 감지하고 비즈니스의 안정성과 신뢰성을 보장하기 위해 모든 프로덕션 클러스터에 필요한 알람을 설정하는 것이 좋습니다. 알람 설정 관련 자세한 내용은 [Setting Alarm](https://intl.cloud.tencent.com/document/product/457/30690)을 참고하십시오.
 현재 지원되는 알람 지표에 대한 자세한 내용은 [모니터링 및 알람 지표 목록](https://intl.cloud.tencent.com/document/product/457/30691)을 참고하십시오.
 
->TKE 모니터링 및 알람 기능은 주로 Kubernetes 객체의 핵심 지표 및 이벤트를 다룹니다. 보다 세분화된 측정 항목 범위를 보장하려면 [클라우드 모니터링](https://console.cloud.tencent.com/monitor/overview)에서 제공하는 기본 리소스 모니터링(예: CVM, Cloud Block Storage, CLB 등)과 함께 이러한 기능을 사용하십시오.
+>TKE 모니터링 및 알람 기능은 주로 Kubernetes 객체의 핵심 지표 및 이벤트를 다룹니다. 보다 세분화된 측정 항목 범위를 보장하려면 [Cloud Monitoring](https://console.cloud.tencent.com/monitor/overview)에서 제공하는 기본 리소스 모니터링(예: CVM, Cloud Block Storage, CLB 등)과 함께 이러한 기능을 사용하십시오.

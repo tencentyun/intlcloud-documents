@@ -1,23 +1,23 @@
 ## 소개
 
 Job은 1-N개 Pod를 생성하고 지정된 수의 Pod가 성공적으로 종료될 때까지 지정된 규칙에 따라 실행되도록 합니다. Job은 배치 컴퓨팅 및 데이터 분석과 같은 다양한 시나리오에서 사용할 수 있습니다. 반복 실행 횟수, 병렬 처리 수준 및 필요에 따라 다시 시작 정책을 지정할 수 있습니다.
-Job은 기존 Pod를 유지하고 완료된 후 새 Pod를 생성하지 않습니다. ‘로그’에서 완료된 Pod의 로그를 볼 수 있습니다. Job을 삭제하면 생성된 Pod와 해당 Pod의 로그가 정리됩니다.
+Job은 기존 Pod를 유지하고 완료된 후 새 Pod를 생성하지 않습니다. ‘Log’에서 완료된 Pod의 로그를 볼 수 있습니다. Job을 삭제하면 생성된 Pod와 해당 Pod의 로그가 정리됩니다.
 
 ## 콘솔에서 Job 관리
 
 ### Job 생성
 
-1. [TKE 콘솔](https://console.cloud.tencent.com/tke2)에 로그인합니다.
-2. 왼쪽 사이드바에서 [클러스터]를 클릭하여 클러스터 관리 페이지로 이동합니다.
+1. [TKE Console](https://console.cloud.tencent.com/tke2)에 로그인합니다.
+2. 왼쪽 사이드바에서 [Cluster]를 클릭하여 클러스터 관리 페이지로 이동합니다.
 3. Job을 생성할 클러스터의 ID를 클릭하여 클러스터 관리 페이지로 이동합니다.
-4. ‘워크로드’ > ‘Job’을 선택하여 아래와 같이 Job 정보 페이지로 이동합니다.
+4. ‘Workload’ > ‘Job’을 선택하여 아래와 같이 Job 정보 페이지로 이동합니다.
 ![Job](https://main.qcloudimg.com/raw/b33fcb5fe7f6491ef71b53f21ed82051.png)
-5. [생성]을 클릭하여 아래와 같이 ‘Workload 생성’ 페이지로 이동합니다.
+5. [Create]를 클릭하여 아래와 같이 ‘Create Workload’ 페이지로 이동합니다.
 ![Create a workload](https://main.qcloudimg.com/raw/e3e76bf1eeae83380d0f4b3f4e940934.png)
 6. 실제 필요에 따라 Job 매개변수를 설정합니다. 주요 매개변수는 다음과 같습니다.
  - 워크로드 이름: 워크로드 이름을 사용자 정의합니다.
  - 네임스페이스: 실제 필요에 따라 네임스페이스를 선택합니다.
- - 유형: ‘Job(일회성 작업)’을 선택합니다.
+ - 유형: ‘Job (One-time Task)’을 선택합니다.
  - Job 설정: 필요에 따라 Job의 Pod에 대해 하나 이상의 컨테이너를 설정합니다.
     - 반복 시간: 이 Job에서 Pod의 반복 실행 시간을 설정합니다.
     - 동시 포드: 이 Job의 병렬 Pod 수를 설정합니다.
@@ -28,22 +28,22 @@ Job은 기존 Pod를 유지하고 완료된 후 새 Pod를 생성하지 않습�
     - 이름: Pod에 있는 컨테이너의 이름을 사용자 정의합니다.
     - 이미지: 실제 필요에 따라 이미지를 선택합니다.
     - 이미지 태그: 실제 필요에 따라 태그를 입력합니다.
-    - CPU/메모리 제한: [Kubernetes의 리소스 제한](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)에 따라 CPU 및 메모리 제한을 설정하여 비즈니스의 견고성을 향상시킵니다.
-    - 고급 설정: ‘**작업 디렉터리**’, ‘**실행 명령**’, ‘**실행 매개 변수**’, ‘**컨테이너 상태 점검**’ 및 ‘**권한 있는 컨테이너**’와 같은 매개 변수를 설정할 수 있습니다.
-7. [Workload 생성]을 클릭하여 생성을 완료합니다.
+    - CPU/메모리 제한: [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)에 따라 CPU 및 메모리 제한을 설정하여 비즈니스의 견고성을 향상시킵니다.
+    - 고급 설정: ‘**Working Directory**’, ‘**Running Command**’, ‘**Running Parameter**’, ‘**Container Health Check**’ 및 ‘**Privileged Container**’와 같은 매개 변수를 설정할 수 있습니다.
+7. [Create Workload]를 클릭하여 생성을 완료합니다.
 
 ### Job 상태 보기
 
-1. [TKE 콘솔](https://console.cloud.tencent.com/tke2)에 로그인합니다.
-2. 왼쪽 사이드바에서 [클러스터]를 클릭하여 클러스터 관리 페이지로 이동합니다.
+1. [TKE Console](https://console.cloud.tencent.com/tke2)에 로그인합니다.
+2. 왼쪽 사이드바에서 [Cluster]를 클릭하여 클러스터 관리 페이지로 이동합니다.
 3. Job 상태를 확인할 클러스터의 ID를 클릭하여 클러스터 관리 페이지로 이동합니다.
-4. ‘워크로드’ > ‘Job’을 선택하여 아래와 같이 Job 정보 페이지로 이동합니다.
+4. ‘Workload’ > ‘Job’을 선택하여 아래와 같이 Job 정보 페이지로 이동합니다.
 ![Job](https://main.qcloudimg.com/raw/522504f451b3234997b7c413724bdb04.png)
 5. Job의 세부 정보를 보려면 해당 이름을 클릭합니다.
 
 ### Job 삭제
 
-Job은 기존 Pod를 유지하고 완료된 후 새 Pod를 생성하지 않습니다. ‘로그’에서 완료된 Pod의 로그를 볼 수 있습니다. Job을 삭제하면 생성된 Pod와 해당 Pod의 로그가 정리됩니다.
+Job은 기존 Pod를 유지하고 완료된 후 새 Pod를 생성하지 않습니다. ‘Log’에서 완료된 Pod의 로그를 볼 수 있습니다. Job을 삭제하면 생성된 Pod와 해당 Pod의 로그가 정리됩니다.
 
 ## Kubectl을 통한 Job 관리
 
@@ -76,8 +76,8 @@ spec:
 
 ### Job 생성
 
-1. [YAML 예시](#YAMLSample)를 참고하여 Job YAML 파일을 준비합니다.
-2. kubectl을 설치하고 클러스터에 연결합니다. 자세한 작업은 [클러스터에 연결](https://intl.cloud.tencent.com/document/product/457/30639)을 참고하십시오.
+1. [YAML sample](#YAMLSample)을 참고하여 Job YAML 파일을 준비합니다.
+2. kubectl을 설치하고 클러스터에 연결합니다. 자세한 작업은 [클러스터 연결](https://intl.cloud.tencent.com/document/product/457/30639)을 참고하십시오.
 3. Job YAML 파일을 생성합니다.
 ```
 kubectl create -f Job YAML 파일 이름

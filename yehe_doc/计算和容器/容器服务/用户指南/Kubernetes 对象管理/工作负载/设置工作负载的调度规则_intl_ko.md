@@ -11,16 +11,16 @@
 
 - 워크로드의 고급 설정에서 스케줄링 정책을 설정합니다. Kubernetes 1.7 이상 버전이어야 합니다.
 - Pod가 성공적으로 스케쥴링될 수 있도록 하려면 스케쥴링 정책이 설정된 후 노드에 컨테이너 스케쥴링에 사용할 수 있는 리소스가 있어야 합니다.
-- 사용자 정의 스케쥴링 기능을 사용하는 경우 노드 Label이 필요합니다. 자세한 내용은 [노드 Label 설정](https://intl.cloud.tencent.com/document/product/457/30657)을 참고하십시오.
+- 사용자 정의 스케쥴링 기능을 사용하는 경우 노드 Label이 필요합니다. 자세한 내용은 [Setting Node Label](https://intl.cloud.tencent.com/document/product/457/30657)을 참고하십시오.
 
 ### 스케쥴링 정책 설정
 
 Kubernetes 1.7 이상을 사용하여 클러스터를 생성한 경우 워크로드 생성 시 스케쥴링 정책을 설정할 수 있습니다.
 다음 스케쥴링 유형 중 하나를 선택합니다.
 
-- **특정 노드에 스케쥴링**: 일치하는 노드 레이블이 있는 특정 노드에 Pod를 스케쥴링합니다.
+- **Schedule to a specific node**: 일치하는 노드 레이블이 있는 특정 노드에 Pod를 스케쥴링합니다.
 ![](https://main.qcloudimg.com/raw/d999b561e17200605ed662f9fb427b33.png)
-- **사용자 정의 스케쥴링**: Pod 레이블을 일치시켜 Pod가 스케쥴링되는 방식을 사용자 정의합니다.
+- **Custom scheduling**: Pod 레이블을 매칭하여 Pod가 스케쥴링되는 방식을 사용자 정의합니다.
 ![](https://main.qcloudimg.com/raw/8dc1bb38e4b982de9124eb0f9188359d.png)
 
 사용자 정의 스케쥴링 정책에는 다음과 같은 모드가 있습니다.
@@ -37,6 +37,6 @@ Kubernetes 1.7 이상을 사용하여 클러스터를 생성한 경우 워크로
 
 ## 작동 원리
 
-Kubernetes는 Yaml 파일을 사용하여 스케쥴링 정책을 배포하고 Affinity and anti-affinity 메커니즘은 Pod가 규칙에 따라 스케쥴링되도록 합니다. 이 메커니즘에 대한 자세한 내용은 Kubernetes의 Affinity and anti-affinity [공식 문서](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)를 참고하십시오.
+Kubernetes는 Yaml 파일을 사용하여 스케쥴링 정책을 배포하고 Affinity and anti-affinity 메커니즘은 Pod가 규칙에 따라 스케쥴링되도록 합니다. 이 메커니즘에 대한 자세한 내용은 Kubernetes의 Affinity and anti-affinity [Kubernetes official documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity) 문서를 참고하십시오.
 
 

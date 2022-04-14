@@ -13,22 +13,22 @@ Cron 형식은 다음과 같습니다.
 # * * * * *
 ```
 
-## CronJob 콘솔 작업 가이드
+## CronJob Console 작업 가이드
 
 ### CronJob 생성
 
-1. [TKE 콘솔](https://console.cloud.tencent.com/tke2)에 로그인합니다.
-2. 왼쪽 사이드바에서 [클러스터]를 클릭하여 클러스터 관리 페이지로 이동합니다.
+1. [TKE Console](https://console.cloud.tencent.com/tke2)에 로그인합니다.
+2. 왼쪽 사이드바에서 [Clusters]를 클릭하여 클러스터 관리 페이지로 이동합니다.
 3. CronJob을 생성해야 하는 클러스터의 ID를 클릭하여 클러스터 관리 페이지로 들어갑니다.
-4. ‘워크로드’ > ‘CronJob’을 선택하여 CronJob 정보 페이지로 이동합니다. 아래 이미지를 참고하십시오.
+4. ‘Workload’ > ‘CronJob’을 선택하여 CronJob 정보 페이지로 이동합니다. 아래 이미지를 참고하십시오.
 ![CronJob](https://main.qcloudimg.com/raw/881d1fd3e52cfc6fa421f22820c09419.png)
-5. [생성]을 클릭하여 ‘Workload 생성’ 페이지로 이동합니다. 아래 이미지를 참고하십시오.
-![Workload 생성](https://main.qcloudimg.com/raw/cc40dbd25618e72c92e47b0397443e7d.png)
+5. [Create]을 클릭하여 ‘Create a workload’ 페이지로 이동합니다. 아래 이미지를 참고하십시오.
+![Create a workload](https://main.qcloudimg.com/raw/cc40dbd25618e72c92e47b0397443e7d.png)
 6. 실제 필요에 따라 CronJob 매개변수를 설정합니다. 주요 매개변수는 다음과 같습니다.
  - 워크로드 이름: 사용자 정의.
  - 네임스페이스: 실제 필요에 따라 선택합니다.
- - 유형: ‘CronJob(cron 일정에 따라 실행)’을 선택합니다.
- - 실행 정책: cron 형식을 기반으로 작업의 주기적 실행 정책을 설정합니다.
+ - 유형: ‘CronJob(Cron 일정에 따라 실행)’을 선택합니다.
+ - 실행 정책: Cron 형식을 기반으로 작업의 주기적 실행 정책을 설정합니다.
  - Job 설정
     - 반복 횟수: Job 관리형 Pod를 반복해야 하는 횟수입니다.
     - 병렬 처리: Job이 병렬로 실행되는 Pod의 수입니다.
@@ -39,16 +39,16 @@ Cron 형식은 다음과 같습니다.
     - 이름: 사용자 정의.
     - 이미지: 실제 필요에 따라 선택하십시오.
     - 이미지 버전: 실제 필요에 따라 입력합니다.
-    - CPU/메모리 제한: [Kubernetes의 리소스 제한](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)에 따라 CPU 및 메모리 제한을 설정하여 비즈니스의 견고성을 향상시킵니다.
-    - 고급 설정: **작업 디렉터리**, **명령 실행**, **매개변수 실행**, **컨테이너 상태 확인** 및 **권한 수준**과 같은 매개변수를 설정할 수 있습니다.
-7. [Workload 생성]을 클릭하면 생성이 완료됩니다.
+    - CPU/메모리 제한: [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)에 따라 CPU 및 메모리 제한을 설정하여 비즈니스의 견고성을 향상시킵니다.
+    - 고급 설정: ‘**working directory**’, ‘**run commands**’, ‘**run parameters**’, ‘**container health check**’ 및 ‘**privilege level**’과 같은 매개변수를 설정할 수 있습니다.
+7. [Create a workload]을 클릭하면 생성이 완료됩니다.
 
 ### CronJob 상태 보기
 
-1. [TKE 콘솔](https://console.cloud.tencent.com/tke2)에 로그인합니다.
-2. 왼쪽 사이드바에서 [클러스터]를 클릭하여 클러스터 관리 페이지로 이동합니다.
+1. [TKE console](https://console.cloud.tencent.com/tke2)에 로그인합니다.
+2. 왼쪽 사이드바에서 [Clusters]를 클릭하여 클러스터 관리 페이지로 이동합니다.
 3. CronJob 상태를 확인할 클러스터의 ID를 클릭하여 클러스터 관리 페이지로 이동합니다.
-4. ‘워크로드’ > ‘CronJob’을 선택하여 CronJob 정보 페이지로 이동합니다. 아래 이미지를 참고하십시오.
+4. ‘Workload’ > ‘CronJob’을 선택하여 CronJob 정보 페이지로 이동합니다. 아래 이미지를 참고하십시오.
 ![CronJob](https://main.qcloudimg.com/raw/adee4e9199660c39f61fc091273d3999.png)
 5. 세부 정보를 보려면 상태를 볼 CronJob의 이름을 클릭합니다.
 
@@ -87,8 +87,8 @@ spec:
 
 #### 방법1
 
-1. CronJob YAML 파일을 준비하려면 [YAML 예시](#YAMLSample)를 참고하십시오.
-2. kubectl을 설치하고 클러스터에 연결합니다. 자세한 내용은 [Kubectl을 통한 클러스터 연결](https://cloud.tencent.com/document/product/457/8438)을 참고하십시오.
+1. CronJob YAML 파일을 준비하려면 [YAML sample](#YAMLSample)를 참고하십시오.
+2. kubectl을 설치하고 클러스터에 연결합니다. 자세한 내용은 [Install kubectl and connect to a cluster](https://cloud.tencent.com/document/product/457/8438)를 참고하십시오.
 3. 다음 명령어를 실행하여 CronJob YAML 파일을 생성합니다.
 ```shell
 kubectl create -f CronJob YAML 파일 이름

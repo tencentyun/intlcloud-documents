@@ -10,13 +10,13 @@
 
 ### 애플리케이션 생성
 
-1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[애플리케이션](https://console.cloud.tencent.com/tke2/helm)]을 클릭합니다.
-2. ‘애플리케이션’ 페이지 상단에서 애플리케이션을 생성할 클러스터 및 리전을 선택하고 [생성]을 클릭합니다.
-3. ‘애플리케이션 생성’ 페이지에서 다음 그림과 같이 다음 매개변수에 따라 애플리케이션에 대한 기본 정보를 설정합니다.
+1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[Application](https://console.cloud.tencent.com/tke2/helm)]을 클릭합니다.
+2. ‘Application’ 페이지 상단에서 애플리케이션을 생성할 클러스터 및 리전을 선택하고 [Create]를 클릭합니다.
+3. ‘Create Application’ 페이지에서 다음 그림과 같이 다음 매개변수에 따라 애플리케이션에 대한 기본 정보를 설정합니다.
 ![](https://main.qcloudimg.com/raw/f636846a914a1ec71c4f6c1870cfa831.png)
 주요 매개변수 정보는 다음과 같습니다.
- - **애플리케이션 이름**: 사용자 정의 애플리케이션 이름을 입력합니다.
- - **소스**: [마켓플레이스], [TCR 개인 저장소] 또는 [3rd party 소스]를 선택합니다. 자세한 내용은 다음 표를 참고하십시오.
+ - **Application Name**: 사용자 정의 애플리케이션 이름을 입력합니다.
+ - **Source**: [Marketplace], [TCR Private Repository] 또는 [Third-party Source]를 선택합니다. 자세한 내용은 다음 표를 참고하십시오.
  <table>
  <tr>
 	 <th width="17%">소스</th>
@@ -40,30 +40,30 @@
 	 <td>3rd party 소스</td>
 	 <td><ul class="params">
 	 <li>Chart 주소: 공식 및 자체 구축 Helm Repo 저장소가 지원됩니다. 반드시 <code>http</code>로 시작하고 <code>.tgz</code>로 이 매개변수의 값은 끝나야 합니다. 이 예시에서 값은 <code>http://139.199.162.50/test/nginx-0.1.0.tgz</code>입니다.</li>
-	 <li>유형: [공개] 및 [비공개]를 사용할 수 있습니다. 필요에 따라 그 중 하나를 선택하십시오.</li>
+	 <li>유형: [Public] 및 [Private]를 사용할 수 있습니다. 필요에 따라 그 중 하나를 선택하십시오.</li>
 	 <li>매개변수: 필요에 따라 매개변수를 편집합니다.</li>
 	 </ul></td>
  </tr>
  </table>
-4. [완료]를 클릭합니다.
+4. [Done]을 클릭합니다.
 
 ### 애플리케이션 업데이트
 
-1. [TKE 콘솔](https://console.cloud.tencent.com/tke2/helm)로 이동하고 왼쪽 사이드바에서 [애플리케이션]을 클릭하여 ‘애플리케이션’ 페이지로 이동합니다.
-2. ‘애플리케이션’ 목록에서 업데이트할 애플리케이션을 찾아 오른쪽에 있는 [애플리케이션 업데이트]를 클릭합니다.
-3. 표시된 ‘업데이트 응용 프로그램’ 창에서 필요에 따라 주요 정보를 설정하고 [완료]를 클릭합니다.
+1. [TKE Console](https://console.cloud.tencent.com/tke2/helm)로 이동하고 왼쪽 사이드바에서 [Application]을 클릭하여 ‘Application’ 페이지로 이동합니다.
+2. ‘Application’ 목록에서 업데이트할 애플리케이션을 찾아 오른쪽에 있는 [Update Application]을 클릭합니다.
+3. 표시된 ‘Update Application’ 창에서 필요에 따라 주요 정보를 설정하고 [Done]을 클릭합니다.
 
 ### 애플리케이션 롤백
 
-1. [TKE 콘솔](https://console.cloud.tencent.com/tke2/helm)로 이동하고 왼쪽 사이드바에서 [애플리케이션]을 클릭하여 애플리케이션 페이지로 이동합니다.
-2. ‘애플리케이션’ 목록에서 업데이트할 애플리케이션을 클릭하면 애플리케이션 세부 정보 페이지로 이동합니다.
-3. 다음 그림과 같이 애플리케이션 세부 정보 페이지에서 [버전 기록] 탭을 클릭하고 필요한 버전을 찾은 후 오른쪽에 있는 [롤백]을 클릭합니다.
+1. [TKE Console](https://console.cloud.tencent.com/tke2/helm)로 이동하고 왼쪽 사이드바에서 [Application]을 클릭하여 애플리케이션 페이지로 이동합니다.
+2. ‘Application’ 목록에서 업데이트할 애플리케이션을 클릭하면 애플리케이션 세부 정보 페이지로 이동합니다.
+3. 다음 그림과 같이 애플리케이션 세부 정보 페이지에서 [Version History] 탭을 클릭하고 필요한 버전을 찾은 후 오른쪽에 있는 [Roll Back]을 클릭합니다.
    ![](https://main.qcloudimg.com/raw/47fc42e6601945f665fa270c31c8b085.png)
-4. 표시된 ‘롤백 애플리케이션’ 창에서 다음 그림과 같이 [확인]을 클릭합니다.
+4. 표시된 ‘Rollback Application’ 창에서 다음 그림과 같이 [OK]를 클릭합니다.
    ![](https://main.qcloudimg.com/raw/c0b642ce3f89898c1c59c85911c484d6.png)
 
 ### 애플리케이션 삭제
 
-1. [TKE 콘솔](https://console.cloud.tencent.com/tke2/helm)로 이동하고 왼쪽 사이드바에서 [애플리케이션]을 클릭하여 애플리케이션 페이지로 이동합니다.
-2. ‘애플리케이션’ 목록에서 삭제할 애플리케이션을 찾아 오른쪽에서 [삭제]를 선택합니다.
-3. 표시된 ‘애플리케이션 삭제’ 창에서 [확인]을 클릭합니다.
+1. [TKE Console](https://console.cloud.tencent.com/tke2/helm)로 이동하고 왼쪽 사이드바에서 [Application]을 클릭하여 애플리케이션 페이지로 이동합니다.
+2. ‘Application’ 목록에서 삭제할 애플리케이션을 찾아 오른쪽에서 [Delete]를 선택합니다.
+3. 표시된 ‘Delete Application’ 창에서 [OK]를 클릭합니다.

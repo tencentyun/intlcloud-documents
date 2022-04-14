@@ -49,13 +49,13 @@ Client Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommi
 
 ###  Kubeconfig 설정
 
-1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[클러스터](https://console.cloud.tencent.com/tke2/cluster?rid=4)]를 클릭하여 클러스터 관리 페이지로 이동합니다.
+1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[Cluster](https://console.cloud.tencent.com/tke2/cluster?rid=4)]를 클릭하여 클러스터 관리 페이지로 이동합니다.
 2. 대상 **클러스터의 ID 또는 이름**을 클릭하여 클러스터의 세부 정보 페이지로 이동합니다.
-3. 왼쪽 사이드바에서 [기본 정보]를 클릭합니다. 다음 그림과 같이 ‘기본 정보’ 페이지의 ‘클러스터 APIServer 정보’ 섹션에서 클러스터의 접속 주소, 공용 네트워크/사설 네트워크 접속 상태, kubeconfig 접속 자격 증명 등의 정보를 볼 수 있다.
- - **액세스 URL**: 클러스터의 APIServer 주소를 나타냅니다. 이 주소는 액세스를 위해 브라우저에 복사하여 붙여넣을 수 없습니다.
- - **액세스 항목**: 필요에 따라 주소 항목을 설정합니다.
-	- **공용 네트워크 액세스**: 이 옵션은 기본적으로 비활성화되어 있습니다. 공용 네트워크 액세스를 활성화하면 **클러스터의 apiserver가 공용 네트워크에 노출됩니다**. 또한 소스 권한을 설정해야 합니다. 기본적으로 모든 소스의 액세스 시도는 거부됩니다. 단일 IP 주소 또는 CIDR 블록에서 액세스를 허용할 수 있습니다. `0.0.0.0/0`을 설정하여 모든 소스에 대해 클러스터를 열지 않는 것이 좋습니다.
-	- **사설 네트워크 액세스**: 이 옵션은 기본적으로 비활성화되어 있습니다. 활성화하려면 서브넷을 설정해야 합니다. 사설 네트워크 액세스가 성공적으로 활성화되면 설정된 서브넷에서 IP 주소가 할당됩니다.
+3. 왼쪽 사이드바에서 [Basic Information]를 클릭합니다. 다음 그림과 같이 ‘Basic Information’ 페이지의 ‘Cluster APIServer Information’ 섹션에서 클러스터의 접속 주소, 공용 네트워크/사설 네트워크 접속 상태, kubeconfig 접속 자격 증명 등의 정보를 볼 수 있다.
+ - **Accessed URL**: 클러스터의 APIServer 주소를 나타냅니다. 이 주소는 액세스를 위해 브라우저에 복사하여 붙여넣을 수 없습니다.
+ - **Access entry**: 필요에 따라 주소 항목을 설정합니다.
+	- **Public Network Access**: 이 옵션은 기본적으로 비활성화되어 있습니다. 공용 네트워크 액세스를 활성화하면 **클러스터의 apiserver가 공용 네트워크에 노출됩니다**. 또한 소스 권한을 설정해야 합니다. 기본적으로 모든 소스의 액세스 시도는 거부됩니다. 단일 IP 주소 또는 CIDR 블록에서 액세스를 허용할 수 있습니다. `0.0.0.0/0`을 설정하여 모든 소스에 대해 클러스터를 열지 않는 것이 좋습니다.
+	- **Private Network Access**: 이 옵션은 기본적으로 비활성화되어 있습니다. 활성화하려면 서브넷을 설정해야 합니다. 사설 네트워크 액세스가 성공적으로 활성화되면 설정된 서브넷에서 IP 주소가 할당됩니다.
  - **Kubeconfig**: 복사 및 다운로드할 수 있는 클러스터의 액세스 자격 증명을 나타냅니다.
 4. 필요에 따라 클러스터 자격 증명을 설정합니다.
    설정하기 전에 클러스터에 대한 액세스 자격 증명이 현재 클라이언트에 설정되었는지 확인합니다.
@@ -88,4 +88,4 @@ kubectl get node
 
 ### kubectl 명령 라인 소개
 
-Kubectl은 Kubernetes 클러스터에서 작업을 수행하기 위한 명령 라인 도구입니다. 이 문서에서는 kubectl 구문, 일반적인 명령 작업 및 몇 가지 예를 다룹니다. 각 명령(모든 기본 명령 및 하위 명령 포함)에 대한 자세한 내용은 [kubectl 참고 문서](https://kubernetes.io/docs/reference/generated/kubectl/kubectl/)를 참고하거나 `kubectl help` 명령을 실행하여 도움말 정보를 확인하십시오. kubectl 설치에 대한 자세한 내용은 [kubectl 설치](#installKubectl)를 참고하십시오.
+Kubectl은 Kubernetes 클러스터에서 작업을 수행하기 위한 명령 라인 도구입니다. 이 문서에서는 kubectl 구문, 일반적인 명령 작업 및 몇 가지 예를 다룹니다. 각 명령(모든 기본 명령 및 하위 명령 포함)에 대한 자세한 내용은 [kubectl reference document](https://kubernetes.io/docs/reference/generated/kubectl/kubectl/)를 참고하거나 `kubectl help` 명령을 실행하여 도움말 정보를 확인하십시오. kubectl 설치에 대한 자세한 내용은 [Kubectl 설치](#installKubectl)를 참고하십시오.

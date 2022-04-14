@@ -8,43 +8,43 @@ StatefulSet는 상태 저장 애플리케이션을 관리하는 데 사용됩니
 
 ### StatefulSet 생성
 
-1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[클러스터](https://console.cloud.tencent.com/tke2/cluster)]를 선택합니다.
+1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[Clusters](https://console.cloud.tencent.com/tke2/cluster)]를 선택합니다.
 2. StatefulSet을 생성할 클러스터의 ID를 클릭하여 클러스터 관리 페이지로 이동합니다.
-3. [워크로드]>[StatefulSet]을 선택하여 아래와 같이 StatefulSet의 관리 페이지로 이동합니다.
+3. [Workload]>[StatefulSet]을 선택하여 아래와 같이 StatefulSet의 관리 페이지로 이동합니다.
 ![](https://main.qcloudimg.com/raw/88ece12d8464711824eadfb35db0c050.png)
-4. [생성]을 클릭하여 ‘Workload 생성’ 페이지로 이동합니다.
+4. [Create]를 클릭하여 ‘Create Workload’ 페이지로 이동합니다.
 필요에 따라 StatefulSet 매개변수를 설정합니다. 주요 매개변수는 다음과 같습니다.
- - **워크로드**: 워크로드의 이름입니다.
- - **네임스페이스**: 네임스페이스를 선택합니다.
- - **유형**: [StatefulSet(스테이트풀 방식으로 Pod 실행)]을 선택합니다.
- - **In-Pod 컨테이너**: 필요에 따라 StatefulSet의 Pod에 대해 하나 이상의 컨테이너를 설정합니다.
-    - **이름**: 이름을 입력합니다.
-    - **이미지**: 이미지를 선택합니다.
-    - **이미지 태그(Tag)**: 이미지 태그를 입력합니다.
-    - **이미지 가져오기 정책**: 다음 중 하나를 선택합니다.
+ - **Workload**: 워크로드의 이름입니다.
+ - **Namespace**: 네임스페이스를 선택합니다.
+ - **Type**: [StatefulSet(run the Pod in a stateful manner)]을 선택합니다.
+ - **In-Pod containers**: 필요에 따라 StatefulSet의 Pod에 대해 하나 이상의 컨테이너를 설정합니다.
+    - **Name**: 이름을 입력합니다.
+    - **Image**: 이미지를 선택합니다.
+    - **Image Tag**: 이미지 태그를 입력합니다.
+    - **Image pull policy**: 다음 중 하나를 선택합니다.
        이미지 가져오기 정책을 설정하지 않고 이미지 태그가 `latest`이거나 비어 있으면 Always가 사용됩니다. 그렇지 않으면 IfNotPresent가 사용됩니다.
         - **Always**: 이미지를 항상 원격 위치에서 가져오기합니다.
         - **IfNotPresent**: 기본적으로 로컬 이미지를 사용합니다. 이미지를 사용할 수 없는 경우 원격 위치에서 이미지를 가져옵니다.
         - **Never**: 로컬 이미지만 사용합니다. 이미지를 사용할 수 없으면 예외가 발생합니다.
-    - **CPU/메모리 제한**: [Kubernetes 리소스 제한](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)에 따라 CPU 및 메모리 제한을 설정하여 서비스 견고성을 향상시킵니다.
-    - **고급 설정**: ‘**작업 디렉터리**’, ‘**명령 실행**’, ‘**매개변수 실행**’, ‘**컨테이너 상태 확인**’ 및 ‘**권한 수준**’과 같은 매개변수를 설정합니다.
- - **포드 수량**: 조정 방법을 선택하고 포드 수량을 설정합니다.
-5. [Workload 생성]을 클릭하여 생성을 완료합니다.
+    - **CPU/memory limits**: [Kubernetes resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/)에 따라 CPU 및 메모리 제한을 설정하여 서비스 견고성을 향상시킵니다.
+    - **Advanced settings**: ‘**working directory**’, ‘**run commands**’, ‘**run parameters**’, ‘**container health check**’ 및 ‘**privilege level**’과 같은 매개변수를 설정합니다.
+ - **Pod quantity**: 조정 방법을 선택하고 포드 수량을 설정합니다.
+5. [Create a workload]을 클릭하여 생성을 완료합니다.
 
 ### StatefulSet 업데이트
 
 #### YAML 업데이트
-1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[클러스터](https://console.cloud.tencent.com/tke2/cluster)]를 선택합니다.
+1. TKE 콘솔에 로그인하고 왼쪽 사이드바에서 [[Clusters](https://console.cloud.tencent.com/tke2/cluster)]를 선택합니다.
 2. YAML을 업데이트할 클러스터 ID를 클릭하여 클러스터 관리 페이지로 이동합니다.
-3. [워크로드]>[StatefulSet]을 선택하여 StatefulSet의 관리 페이지로 이동합니다.
-4. YAML을 업데이트할 StatefulSet의 행에서 [더 보기]>[YAML 편집]을 클릭하여 StatefulSet 업데이트 페이지로 이동합니다.
-5. ‘StatefulSet 업데이트’ 페이지에서 YAML을 편집하고 [완료]를 클릭하여 YAML을 업데이트합니다.
+3. [Workload]>[StatefulSet]을 선택하여 StatefulSet의 관리 페이지로 이동합니다.
+4. YAML을 업데이트할 StatefulSet의 행에서 [More]>[Edit YAML]을 클릭하여 StatefulSet 업데이트 페이지로 이동합니다.
+5. ‘Update StatefulSet’ 페이지에서 YAML을 편집하고 [Finish]를 클릭하여 YAML을 업데이트합니다.
 
 #### Pod 설정 업데이트
 1. 클러스터 관리 페이지에서 Pod 설정을 업데이트할 StatefulSet 클러스터의 ID를 클릭하여 StatefulSet 클러스터 관리 페이지로 이동합니다.
-2. Pod 설정을 업데이트할 StatefulSet 행에서 [Pod 설정 업데이트]를 클릭합니다.
-3. ‘Pod 설정 업데이트’ 페이지에서 업데이트 방법을 수정하고 필요에 따라 매개변수를 설정합니다.
-4. [완료]를 클릭하여 Pod 설정을 업데이트합니다.
+2. Pod 설정을 업데이트할 StatefulSet 행에서 [Update Pod Configurations]를 클릭합니다.
+3. ‘Update Pod Configurations’ 페이지에서 업데이트 방법을 수정하고 필요에 따라 매개변수를 설정합니다.
+4. [Finish]를 클릭하여 Pod 설정을 업데이트합니다.
 
 ## kubectl을 통한 StatefulSet 사용
 
@@ -110,12 +110,12 @@ spec:
 - **spec.template**: StatefulSet에서 관리하는 Pod의 세부 템플릿 구성입니다.
 - **spec.volumeClaimTemplates**: PVC&PV 생성을 위한 템플릿입니다.
 
-자세한 내용은 [Kubernetes StatefulSet 공식 문서](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)를 참고하십시오.
+자세한 내용은 [Kubernetes official documentation](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)을 참고하십시오.
 
 ### StatefulSet 생성
 
-1. [예시 YAML 파일](#YAMLSample)을 사용하여 StatefulSet YAML 파일을 준비합니다.
-2. kubectl을 설치하고 클러스터에 연결합니다. 자세한 작업은 [클러스터에 연결](https://intl.cloud.tencent.com/document/product/457/30639)을 참고하십시오.
+1. [sample YAML file](#YAMLSample)을 사용하여 StatefulSet YAML 파일을 준비합니다.
+2. kubectl을 설치하고 클러스터에 연결합니다. 자세한 작업은 [클러스터 연결](https://intl.cloud.tencent.com/document/product/457/30639)을 참고하십시오.
 3. 다음 명령을 실행하여 StatefulSet YAML 파일을 생성합니다.
 ```shell
 kubectl create -f StatefulSet YAML 파일 이름
@@ -175,5 +175,5 @@ kubectl delete  StatefulSet [NAME] --cascade=false
 ```
 kubectl delete  StatefulSet [NAME]
 ```
-StatefulSet에 대한 자세한 내용은 [Kubernetes 공식 문서](https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/#scaling-a-statefulset)를 참고하십시오.
+StatefulSet에 대한 자세한 내용은 [Kubernetes official documentation](https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/#scaling-a-statefulset)을 참고하십시오.
 
