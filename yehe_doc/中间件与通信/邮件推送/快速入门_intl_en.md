@@ -1,7 +1,7 @@
 ## Notes
 - You must have the admin permissions on the sender domain.
 - If your domain is hosted on Tencent Cloud, please log in to the [DNSPod console](https://console.cloud.tencent.com/cns) to configure the domain. If your domain is hosted on another domain service provider, please configure it according to the checklist.
-- After the domain is configured, synchronization may take five minutes to two hours. Please wait patiently for the verification to finish.
+- After the domain is configured, synchronization may take 5 minutes to 2 hours. Please wait patiently for the verification to finish.
 - After the domain verification is completed, do not delete or modify the configured SPF and MX records, otherwise errors may occur when sending emails.
 - Do not use a corporate email domain so as to avoid conflicts between SPF and MX records. You can create and use a second-level domain under your existing corporate email domain instead.
 - Each Tencent Cloud account can be configured with up to 10 domains.
