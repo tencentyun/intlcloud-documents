@@ -2,13 +2,16 @@
 This document describes how to cancel custom image sharing. You can cancel your image sharing status with other users at any time. This does not affect instances created by other users using this shared image, but they can no longer see the image nor create new instances using this image.
 
 ## Directions
-### Cancel image sharing through the console
- 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
- 2. On the left sidebar, click **Images**.
- 3. Select **Custom Image** tab to enter the custom image management page.
- 4. In the custom image list, select the custom images you want to cancel sharing and click **More** > **Cancel Sharing**.
- 5. On the new page, select the unique ID of the account from which you want to cancel the image sharing and click **Cancel Sharing**.
- 6. In the pop-up window, click **OK** to cancel image sharing.
-
-### Cancel image sharing through API
+<dx-tabs>
+::: Cancel image sharing through the console
+ 1. Log in to the CVM Console.On the left sidebar, click [Images](https://console.cloud.tencent.com/cvm/image/index?rid=1).
+ 2. Select **Custom Image** tab to enter the custom image management page.
+ 3. In the custom image list, select the custom images you want to cancel sharing and click **More** > **Cancel Sharing**.
+ 4. On the new page, select the unique ID of the account from which you want to cancel the image sharing and click **Cancel Sharing**.
+ ![](https://main.qcloudimg.com/raw/16cc1b1efeb757f85f6e73632bae4ff1.png)
+ 5. In the pop-up window, click **OK** to cancel image sharing.
+:::
+:::  Cancel image sharing through API
 You can use the ModifyImageSharePermission API to cancel image sharing. For more information, see [ModifyImageSharePermission](https://intl.cloud.tencent.com/document/product/213/33268).
+:::
+</dx-tabs>
