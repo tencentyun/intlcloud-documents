@@ -1,4 +1,4 @@
-## Notes:
+## Notes
 - You must have the admin permissions on the sender domain.
 - If your domain is hosted on Tencent Cloud, please log in to the [DNSPod console](https://console.cloud.tencent.com/cns) to configure the domain. If your domain is hosted on another domain service provider, please configure it according to the checklist.
 - After the domain is configured, synchronization may take five minutes to two hours. Please wait patiently for the verification to finish.
@@ -7,32 +7,32 @@
 - Each Tencent Cloud account can be configured with up to 10 domains.
 
 <span id ="Step1"></span>
-## Step 1. Log in to the Console
+## Step 1. Log in to the console
 Log in to the [SES console](https://console.cloud.tencent.com/ses). If you do not have a Tencent Cloud account yet, please see [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) to create one.
 
 <span id ="Step2"></span>
-## Step 2. Perform Organization Verification
+## Step 2. Perform organization verification
 If you haven't completed identity verification for your account, please go to [Account Center](https://console.cloud.tencent.com/developer) for identity verification. For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 <span id ="Step3"></span>
-## Step 3: Activate SES
+## Step 3. Activate SES
 If you have already completed identity verification for your account, click **Activate** to active SES. After successful activation, you will get a free tier of 1,000 emails.
 After the free tier is used up, your plans will be used automatically. If no plans are available, you will be charged on a pay-as-you-go basis.
 
 <span id ="Step4"></span>
-## Step 4. Configure a Sender Domain
+## Step 4. Configure a sender domain
 >!If a domain has been registered for Tencent Exmail, it cannot be used as the sender domain.
 1. Log in to the [SES console](https://console.cloud.tencent.com/ses) and click **Sender Domain**.
 2. On the **Sender Domain** page, click **Create**.
 3. Enter a sender domain in the **Domain** field, for example, `mail.qcloud.com`, and click **Submit**.
     
->!A sender domain is the basis of an email address and represents the identity of the sender's corporate. To verify a sender domain, you need to configure the DNS information for it. Therefore, you must have the admin permissions on the domain.
+>!A sender domain is the basis of an email address and represents the sender's corporate identity. To verify a sender domain, you need to configure the DNS information for it. Therefore, you must have the admin permissions on the domain.
    
 4. After finishing DNS configuration, click **Verify**.
 5. In the **Sender Domain Configuration** dialog box, click **Submit** to verify the sender domain.
 
 <span id ="Step5"></span>
-## Step 5. Configure a Sender Address
+## Step 5. Configure a sender address
 
 1. Return to the **Overview** page and click **Sender Address**.
 2. On the **Sender Address** page, click **Create**.
@@ -46,7 +46,7 @@ After the free tier is used up, your plans will be used automatically. If no pla
 4. Click **Submit** to complete the sender address configuration.
 
 <span id ="Step6"></span>
-## Step 6. Configure a Template
+## Step 6. Configure a template
 1. Return to the **Overview** page and click **Email Template**.
 2. On the **Email Template** page, click **Create**.
 3. Set the following parameters:
@@ -61,7 +61,7 @@ After the free tier is used up, your plans will be used automatically. If no pla
 5. Click **Submit** to complete the template configuration.
 
 <span id ="Step7"></span>
-## Step 7. Send Emails
+## Step 7. Send emails
 After the domain registration is completed and the template is approved, you can send emails via the SES console or API calls.
 1. Click **Email Sending** to go to the email sending page.
 >?This page is only for testing email sending. Up to 20 recipient addresses are allowed for a single test. You can send emails to more recipients at a time via API calls. For more information, please see [here](https://intl.cloud.tencent.com/document/product/1084/39408).
