@@ -8,7 +8,7 @@ This document describes how to cancel custom image sharing. You can cancel your 
  2. Select **Custom Image** tab to enter the custom image management page.
  3. In the custom image list, select the custom images you want to cancel sharing and click **More** > **Cancel Sharing**.
  4. On the new page, select the unique ID of the account from which you want to cancel the image sharing and click **Cancel Sharing**.
- ![](https://main.qcloudimg.com/raw/16cc1b1efeb757f85f6e73632bae4ff1.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/2babd57218139864c0cff8b65db5bd3c.png)
  5. In the pop-up window, click **OK** to cancel image sharing.
 :::
 :::  Cancel image sharing through API
