@@ -44,7 +44,7 @@ RunInstance 인터페이스 내 [InstanceMarketOptionsRequest](https://intl.clou
 
 ### 예시 시나리오 설명
 광저우3존의 인스턴스가 있으면 해당 인스턴스의 결제 모드는 시간 당 후불 입찰 모드입니다. 구체적인 입찰 모드의 구성 정보는 다음과 같습니다.
-- 최고 입찰 가격: 0.6원/시간
+- 최고 입찰 가격: 0.0923달러/시간
 - 입찰 요청 모드: 일회성 요청
 - 이미지 ID：img-pmqg1cw7
 - 모델 선택: 2C4G 2세대 표준형(S2.MEDIUM4)
@@ -56,7 +56,7 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 &Placement.Zone=ap-guangzhou-3
 &InstanceChargeType=SPOTPAID
 &InstanceMarketOptions.MarketType=spot
-&InstanceMarketOptions.SpotOptions.MaxPrice=0.60
+&InstanceMarketOptions.SpotOptions.MaxPrice=0.0923
 &InstanceMarketOptions.SpotOptions.SpotInstanceType=one-time
 &ImageId=img-pmqg1cw7
 &InstanceType=S2.MEDIUM4
