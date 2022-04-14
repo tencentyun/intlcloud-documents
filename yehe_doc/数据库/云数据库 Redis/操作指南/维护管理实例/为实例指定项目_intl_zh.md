@@ -6,5 +6,5 @@
 
 ## 操作步骤
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，选中需分配的实例，在上方选择**更多操作**>**分配至项目**。
-![](https://main.qcloudimg.com/raw/6e3e4070849f5f45e75e2c1ec7568c56.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fab6d798925f147f040549704bbe3161.png)
 2. 在弹出的对话框，选择对应项目，单击**确定**。
