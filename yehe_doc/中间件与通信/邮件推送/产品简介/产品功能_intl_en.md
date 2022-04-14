@@ -81,7 +81,7 @@ Standard warm-up rules apply by default under batch sending mode. The backend wi
 	</tr>
 	<tr>
 		<td style="text-align:center">13</td>
-		<td style="text-align:center"sdval="100000" >300000</td>
+		<td style="text-align:center"sdval="100000" >300,000</td>
 	</tr>
 	<tr>
 		<td style="text-align:center">14</td>
@@ -89,7 +89,7 @@ Standard warm-up rules apply by default under batch sending mode. The backend wi
 	</tr>
 	<tr>
 		<td style="text-align:center">15</td>
-		<td style="text-align:center"sdval="150000" >500000</td>
+		<td style="text-align:center"sdval="150000" >500,000</td>
 	</tr>
 	<tr>
 		<td style="text-align:center">16</td>
@@ -97,7 +97,7 @@ Standard warm-up rules apply by default under batch sending mode. The backend wi
 	</tr>
 	<tr>
 		<td style="text-align:center">17</td>
-		<td style="text-align:center"sdval="400000" >700000</td>
+		<td style="text-align:center"sdval="400000" >700,000</td>
 	</tr>
 	<tr>
 		<td style="text-align:center">18</td>
@@ -105,7 +105,7 @@ Standard warm-up rules apply by default under batch sending mode. The backend wi
 	</tr>
 	<tr>
 		<td style="text-align:center">19</td>
-		<td style="text-align:center"sdval="800000" >900000</td>
+		<td style="text-align:center"sdval="800000" >900,000</td>
 	</tr>
 		<tr>
 		<td style="text-align:center">20</td>
