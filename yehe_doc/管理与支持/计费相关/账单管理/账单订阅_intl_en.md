@@ -1,4 +1,4 @@
-﻿﻿## Overview 
+## Overview 
 This document introduces you to the bill subscription feature and shows you how to subscribe to bills.
 
 ## About Bill Subscription
