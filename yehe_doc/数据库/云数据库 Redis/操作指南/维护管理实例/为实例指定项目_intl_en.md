@@ -6,6 +6,6 @@ TencentDB for Redis supports assigning instances to different projects for easie
 
 ## Directions
 1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis). Select the target instance in the instance list and click **More** > **Assign to Project** at the top.
-![](https://main.qcloudimg.com/raw/6e3e4070849f5f45e75e2c1ec7568c56.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fab6d798925f147f040549704bbe3161.png)
 2. In the pop-up dialog box, select the desired project and click **OK**.
 
