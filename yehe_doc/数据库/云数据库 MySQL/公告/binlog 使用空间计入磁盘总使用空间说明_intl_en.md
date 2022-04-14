@@ -23,7 +23,7 @@ After the upgrade starts, the space taken up by binlog files will be counted int
 - Two-node and three-node TencentDB for MySQL in newly supported regions: 00:00:00, April 22, 2021 (UTC+8).
 
 ## Suggestions on Reducing Local Binlog Space
-You can shorten the local binlog retention period in the console. For more information, please see [Configuring Local Binlog Retention Policy](https://intl.cloud.tencent.com/document/product/236/40186).
+You can shorten the local binlog retention period in the console. For more information, see [Configuring Local Binlog Retention Policy](https://intl.cloud.tencent.com/document/product/236/40186).
 
 ## FAQs
 #### Will the instance expansion and reduction be affected during the upgrade?
