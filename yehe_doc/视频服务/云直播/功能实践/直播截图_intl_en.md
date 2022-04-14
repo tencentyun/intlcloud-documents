@@ -4,7 +4,7 @@
 The live screencapture feature takes screenshots of a real-time live stream at regular intervals and generates images. You can get the screenshot information through the callback notification. These screenshots have various uses, such as porn detection and thumbnails.
 
 ## Live Screencapture Process
-![](https://main.qcloudimg.com/raw/3ff391e3f3505a257e9abb96fc882b21.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c0412cf3d639a0f9804a7fc08373a9de.png)
 
 Overall process:
 1. Configure the live screencapture feature in the console or through TencentCloud API.
@@ -15,7 +15,7 @@ Overall process:
 ## Live Screencapture Configuration
 
 ### Screencapture configuration method
-- [CSS API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
+- [CSS API](https://intl.cloud.tencent.com/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
 - **CSS console** > **Feature Configuration** > **[Live Screencapture and Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**
 
 ### Screencapturing interval configuration
