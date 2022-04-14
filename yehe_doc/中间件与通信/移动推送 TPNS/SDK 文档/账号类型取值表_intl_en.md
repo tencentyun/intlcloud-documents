@@ -4,8 +4,6 @@
 | ----------- | ---------- | ------------------------------------------------------------ | ------------------------------------ |
 | 0           | Default | It will be categorized as this type when `accountType` is not passed in. | - |
 | 1-16        | Custom | The business side binds a custom account with a token, such as uin.  | - |
-| 989         | TAID       | Unique device fingerprint ID created by Tencent | -                                    |
-| 990         | QIMEI      | The token provided by Tencent QIMEI SDK                                    | -                                    |
 | 991         | QQ account number       | Five to 12 digits | 12345                                |
 | 992         | QQ account number - MD5 | Encrypted QQ account number. Before encryption, a QQ account number is a 5- to 12-character numeric string; after encryption, it becomes a 32-character case-insensitive alphanumeric string. | -                                    |
 | 997 | OAID | Anonymous device identifier set by the Mobile Security Alliance (MSA). Keep the original value without changing the case, and do not encode it with MD5. It is composed of numbers, letters, and hyphens. The format and length vary depending on the collection vendor and system version. For ID details, please see the MSA website. | - |
