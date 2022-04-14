@@ -21,11 +21,11 @@ This document describes how to store screenshots or porn detection data in a COS
 
 1. Grant write permission for storing screenshots to the root account (ID: `3508645126`).
    1. Select an authorized bucket in the **[Bucket List](https://console.cloud.tencent.com/cos5/bucket)**, and click **Configure** to go to the bucket configuration page. Click **Permission Management** > **[Bucket ACL (Access Control List)](https://console.cloud.tencent.com/cos5/bucket/setting?type=aclconfig&anchorType=accessPermission&bucketName=text-1258968577&projectId=&path=%252F&region=ap-guangzhou)**. Click **Add User**, select **Root account** as the user type, **enter the root account ID `3508645126`**, and then click **Save**.
+![](https://qcloudimg.tencent-cloud.cn/raw/f31e4a9251f1c959954b958b284bfb44.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/8c8b4331c37cfb3f07169eb8726017df.png)
-
 Alternatively, click **Authorization Management** to enter the authorization management page, select the bucket to be authorized, enable **Public Permission** and **User ACL**, and add users. Select the root account as the user type, **enter the root account ID `3508645126`**, and click **Save** and **OK**.
+![](https://qcloudimg.tencent-cloud.cn/raw/3af1130fae59890e7658d4681aadf844.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/0025f6d26a3cf83f7e213c32e7f7eddf.png)
-
 >! **Enter the root account ID `3508645126` to authorize. This ID is also the `APPID` of CSS.**
 
    2. For more information on the API to set the bucket access permission, please see [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737).
