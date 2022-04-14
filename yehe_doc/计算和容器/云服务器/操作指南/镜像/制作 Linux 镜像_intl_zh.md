@@ -202,7 +202,7 @@ Disk identifier: 0x0008f290
 
 
 ### 转换镜像格式（可选）[](id:ImageFormatConversion)
-参考[转换镜像格式](https://intl.cloud.tencent.com/zh/document/product/213/46192#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4)，使用 `qemu-img` 将镜像文件转换为支持的格式。
+参考[转换镜像格式](https://intl.cloud.tencent.com/document/product/213/46192#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4)，使用 `qemu-img` 将镜像文件转换为支持的格式。
 
 
 
