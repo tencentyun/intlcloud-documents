@@ -4,7 +4,7 @@
 直播截图是指以固定的时间间隔截取实时直播流的图像，并生成图片。您可以通过回调通知获取截图信息，截图数据可应用于直播鉴黄、直播房间封面等多种场景。
 
 ## 直播截图整体流程
-![](https://main.qcloudimg.com/raw/3ff391e3f3505a257e9abb96fc882b21.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c0412cf3d639a0f9804a7fc08373a9de.png)
 
 整体流程：
 1. 在控制台或者直接调用云 API 配置直播截图功能。
@@ -15,7 +15,7 @@
 ## 直播截图配置
 
 ### 截图配置方式
-- [云直播 API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
+- [云直播 API](https://intl.cloud.tencent.com/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
 - 【云直播控制台】>【功能模板】>【[截图鉴黄配置](https://console.cloud.tencent.com/live/config/jtjh)】，详情请参见 [直播截图鉴黄](https://cloud.tencent.com/document/product/267/20386)。
 
 ### 截图间隔配置
