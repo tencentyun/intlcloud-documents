@@ -39,7 +39,7 @@ Na API RunInstances, você pode especificar o parâmetro [InstanceMarketOptionsR
 
 ## Exemplo
 Você tem uma instância na Zona 3 de Guangzhou e o modo de faturamento da instância é com pagamento conforme o uso por hora e no modo spot. As configurações específicas do modo de faturamento são as seguintes:
-- MaxPrice: 0,6 USD/hora
+- MaxPrice: 0,0923 USD/hora
 - SpotInstanceType: única
 - ImageId: img-pmqg1cw7
 - InstanceType: S2.MEDIUM4 (Padrão 2, 2 núcleos, 4 GB)
@@ -51,7 +51,7 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 &Placement.Zone=ap-guangzhou-3
 &InstanceChargeType=SPOTPAID
 &InstanceMarketOptions.MarketType=spot
-&InstanceMarketOptions.SpotOptions.MaxPrice=0.60
+&InstanceMarketOptions.SpotOptions.MaxPrice=0.0923
 &InstanceMarketOptions.SpotOptions.SpotInstanceType=one-time
 &ImageId=img-pmqg1cw7
 &InstanceType=S2.MEDIUM4
