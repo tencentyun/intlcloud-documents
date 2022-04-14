@@ -8,7 +8,7 @@ Yes. Tencent Cloud SES is available in over 200 countries/regions, helping you d
 **Yes.** `Region` only indicates the location of the server and does not affect the regions where emails are sent to.
 
 [](id:que3) 
-### Does SES support sending emails to multiple recipients at a time without them seeing each other.
+### Does SES support sending emails to multiple recipients at a time without them seeing each other?
 No.
 
 [](id:que4) 
