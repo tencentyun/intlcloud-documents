@@ -1,7 +1,7 @@
 [](id:que1) 
 
 ### Does SES provide SMTP endpoints?
-Yes. For more information, see the [SMTP documentation](https://intl.cloud.tencent.com/document/product/1084/44458)
+Yes. For more information, see the [SMTP documentation](https://intl.cloud.tencent.com/document/product/1084/44458).
 
 [](id:que2) 
 ### Can I use SES to send emails from my existing application?
