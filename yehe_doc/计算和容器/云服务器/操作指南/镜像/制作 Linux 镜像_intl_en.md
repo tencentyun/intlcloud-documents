@@ -138,7 +138,7 @@ Tencent Cloud Service Migration supports images in qcow2, vhd, raw, and vmdk for
 
 
 :::
-::: [Using commands to export an image](id:ExportImageForUsingCommand)
+::: Using commands to export an image[](id:ExportImageForUsingCommand)
 
 <dx-alert infotype="notice" title="">
 This method poses higher risks. For example, the file system's metadata may be corrupted when I/O is busy. We recommended that you [check the image](#CheckMirror) to make sure that the image is intact and correct after it is exported.
