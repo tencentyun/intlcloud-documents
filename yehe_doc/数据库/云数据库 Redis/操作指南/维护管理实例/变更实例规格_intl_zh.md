@@ -12,7 +12,7 @@
 >- 为避免缩容失败，缩容后的实例容量要求大于或等于现有数据量的1.3倍，缩容后系统会自动进行退费。
 
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，选中要扩缩容的实例，在“操作”列选择【配置变更】>【扩容节点】、【缩容节点】、【增加副本】或【删除副本】。
-![](https://main.qcloudimg.com/raw/129b79387c1a469e9b7f9cfcb4e1b1b7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/55c978523bfe6d8763aa87259ab13fb8.png)
 2. 在弹出的配置变更对话框，选择需更改的配置，单击【确定】。
 3. 返回实例列表，待实例状态变更为“运行中”，即可正常使用。
 
