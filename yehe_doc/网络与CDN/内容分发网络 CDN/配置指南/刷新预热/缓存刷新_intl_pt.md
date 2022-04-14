@@ -7,7 +7,7 @@ Além disso, o CDN pode limpar o cache de URLs ou diretórios especificados em l
 - Limpeza de URL: exclui o cache dos recursos correspondentes em todos os nós do CDN.
 - Limpeza de diretório: se você selecionar **Purge updated resources (Limpar os recursos atualizados)**, quando um usuário final acessar um recurso no diretório correspondente, será efetuado o pull das informações de `Last-Modify` do recurso do servidor de origem. Se for as mesmas do recurso em cache, o recurso em cache será retornado diretamente; caso contrário, será efetuado pull do recurso atualizado do servidor de origem e armazenado em cache novamente. Se você selecionar **Purge all resources (Limpar todos os recursos)**, quando o usuário acessar um recurso no diretório correspondente, será efetuado pull da versão mais recente do recurso diretamente do servidor de origem e armazenado em cache novamente.
 
-> ?Depois que uma limpeza for executada com êxito, o recurso correspondente no nó não terá um cache válido. Quando o usuário iniciar uma solicitação de acesso novamente, o nó efetua o pull do recurso necessário do servidor de origem e o armazena em cache no próprio nó. Se você enviar uma grande quantidade de tarefas de limpeza, muitos caches serão limpos, resultando em um aumento nas solicitações de pull de origem e alta pressão no servidor de origem.
+>? Depois que uma limpeza for executada com êxito, o recurso correspondente no nó não terá um cache válido. Quando o usuário iniciar uma solicitação de acesso novamente, o nó efetua o pull do recurso necessário do servidor de origem e o armazena em cache no próprio nó. Se você enviar uma grande quantidade de tarefas de limpeza, muitos caches serão limpos, resultando em um aumento nas solicitações de pull de origem e alta pressão no servidor de origem.
 
 ## Casos de uso
 
@@ -19,37 +19,41 @@ Quando um recurso é sobrescrito por um novo recurso com o mesmo nome no servido
 
 Quando recursos ilegais (como recursos relacionados a pornografia, drogas ou jogos de azar) forem encontrados em seu servidor de origem, eles ainda podem estar acessíveis mesmo depois de excluí-los no servidor de origem por causa do cache de nó. Para proteger a segurança do seu ambiente de rede, é possível excluir os recursos armazenados em cache por meio da limpeza de URL.
 
-## Guia de operações
+## Instruções
 
 ### Como usar
 
-Faça login no [console do CDN](https://console.cloud.tencent.com/cdn), clique em **Purge and Prefetch (Limpeza e pré-busca)** na barra lateral esquerda e envie uma tarefa **Purge URL (Limpeza de URL)** ou **Purge Directory (Limpeza de diretório)**:
+Faça login no [Console do CDN](https://console.cloud.tencent.com/cdn), clique em **Purge and Prefetch (Limpeza e pré-busca)** na barra lateral esquerda e envie uma tarefa **Purge URL (Limpeza de URL)** ou **Purge Directory (Limpeza de diretório)**. Você pode limpar URLs/diretórios do CDN e do ECDN juntos.
 ![](https://main.qcloudimg.com/raw/a3442259ffa50bccb60dabf002ea6dfb.png)
 ![](https://main.qcloudimg.com/raw/d4b01354bab726ea890e8167ccdbaffe.png)
-
 >? Se a funcionalidade de codificação de URL estiver habilitada, os caracteres chineses serão convertidos para o formato codificado de URL durante a limpeza do URL e do diretório.
 
 <span ID = "notes"></span>
-Na guia **History (Histórico)**, é possível consultar tarefas por um período de tempo, período de termo e tipo de tarefa especificados. As consultas de períodos de termo aceitam apenas consultas com um nome de domínio ou um URL/diretório limpo por completo:
+Na guia **History (Histórico)**, é possível consultar tarefas por período, palavra-chave e tipo de tarefa especificados. As consultas de palavras-chave aceitam apenas consultas com um nome de domínio ou um URL/diretório limpo por completo:
 ![](https://main.qcloudimg.com/raw/86e00c9652a635cf0a0007172119be92.png)
 
-> ? O console pode retornar até 10.000 registros de operação por vez, que podem ser exportados para o Excel. Se você tiver uma grande quantidade de tarefas de limpeza, consulte e exporte-as em lotes.
+>? O console pode retornar até 10.000 logs por vez, que podem ser exportados para um arquivo do Excel. Se você tiver mais de 10.000 tarefas de limpeza, consulte e exporte-as em lotes.
 
 ### Precauções
 
 **Limpeza de URL:**
 
 - Até 10.000 URLs podem ser limpos por dia para cada conta com o serviço de aceleração dentro ou fora da China Continental, e até 1.000 URLs podem ser limpos por vez. Para cada conta que usa o serviço do CDN global, a cota diária de limpeza de URL para o serviço de aceleração dentro e fora da China Continental é de 10.000 cada.
-- É necessário adicionar o identificador de protocolo `http://` ou `https://` ao enviar uma tarefa de limpeza.
-- URLs no formato `http://*.test.com/` não podem ser limpos. Mesmo se você conectar um nome de domínio curinga ao CDN, será necessário enviar os nomes de subdomínio correspondentes para limpeza.
+>?	
+>- Quando sua cota de limpeza diária estiver acabando, é possível aumentá-la por conta própria no console do CDN do Tencent Cloud.
+>- A nova cota entrará em vigor imediatamente. A página será atualizada automaticamente. Não é necessário clicar no botão Atualizar com frequência.
+>- A cota só pode ser aumentada uma vez por dia. 
+>- O aumento da cota em regiões diferentes é independente um do outro.
+- É necessário adicionar o identificador de protocolo "http://" ou "https://" ao enviar uma tarefa de limpeza.
+- URLs no formato "http://*.test.com/" não são aceitos. Mesmo se você conectar um nome de domínio curinga ao CDN, será necessário enviar os nomes de subdomínio correspondentes para limpeza.
 - Ao enviar URLs para limpeza, os nomes de domínio já devem ter sido conectados ao CDN; caso contrário, o envio falhará.
 - Por padrão, os URLs serão limpos por regiões de aceleração de nomes de domínio nos URLs.
 
 **Limpeza de diretório:**
 
-- Até 100 diretórios podem ser limpos por dia para cada conta com o serviço de aceleração dentro ou fora da China Continental, e até 20 diretórios podem ser limpos por vez. Para cada conta que usa o serviço do CDN global, a cota diária de limpeza de diretório para o serviço de aceleração dentro e fora da China Continental é de 100 cada.
-- É necessário adicionar o identificador de protocolo `http://` ou `https://` ao enviar uma tarefa de limpeza.
-- Diretórios no formato `http://*.test.com/` não podem ser limpos. Mesmo se você conectar um nome de domínio curinga ao CDN, será necessário enviar os nomes de subdomínio correspondentes para limpeza.
+- O limite superior para diretórios limpos é 100 por conta, por dia. O limite é definido para o serviço de aceleração dentro e fora da China Continental separadamente. Até 20 diretórios podem ser limpos por vez. 
+- É necessário adicionar o identificador de protocolo "http://" ou "https://" ao enviar uma tarefa de limpeza.
+- Diretórios no formato "http://*.test.com/" não podem ser limpos. Mesmo se você conectar um nome de domínio curinga ao CDN, será necessário enviar os nomes de subdomínio correspondentes para limpeza.
 - Ao enviar URLs para limpeza, os nomes de domínio já devem ter sido conectados ao CDN; caso contrário, o envio falhará.
 
 **Configuração de permissões de subusuários:**

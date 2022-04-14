@@ -1,11 +1,15 @@
-## Descrições das métricas
+
+
+>!  Atualmente, a consulta de dados de pull de origem não está disponível para nomes de domínio do ECDN.
+
+## Descrição das métricas
 ### Métricas na página de visão geral
 Faça login no [console do CDN](https://console.cloud.tencent.com/cdn) e selecione **Statistics (Estatísticas)** > **Realtime Monitoring (Monitoramento em tempo real)** na barra lateral esquerda para acessar a página de gerenciamento. A guia **Access Monitoring (Monitoramento de acesso)** é exibida por padrão. Você pode clicar em **Origin-Pull Monitoring (Monitoramento de pull de origem)** à direita para acessar a página de métricas de monitoramento de pull de origem. As curvas de monitoramento de todos os nomes de domínio com granularidade de 1 minuto nas últimas 6 horas serão retornadas, incluindo as seguintes métricas:
 + Largura de banda de pull de origem: calculada dividindo o tráfego total de pull de origem em um minuto por 60 segundos.
 + Tráfego de pull de origem: o tráfego total de pull de origem no nó de cache na última camada.
 + Solicitações de pull de origem: a quantidade total de solicitações de pull de origem no nó de cache na última camada.
 + Taxa de falha de pull de origem: a porcentagem de solicitações de pull de origem com falha de todas as solicitações de pull de origem.
-+ Porcentagem do código de status de pull de origem: gráfico de porcentagem dos códigos de status (2XX/3XX/4XX/5XX) retornados para solicitações de pull de origem no período selecionado.
++ Porcentagem do código de status de pull de origem: Gráficos de porcentagem dos códigos de status (2XX/3XX/4XX/5XX) retornados para solicitações de pull de origem no período selecionado.
 + Códigos de status 2XX de pull de origem: os códigos de status gerados pelo monitoramento de código de status 2XX de pull de origem serão contabilizados.
 + Códigos de status 3XX de pull de origem: os códigos de status gerados pelo monitoramento de código de status 3XX de pull de origem serão contabilizados.
 + Códigos de status 4XX de pull de origem: os códigos de status gerados pelo monitoramento de código de status 4XX de pull de origem serão contabilizados.
@@ -39,7 +43,7 @@ As opções de granularidade de tempo na página de detalhes de métricas são a
 + 24 horas < período ≤ 31 dias: A granularidade de tempo mínima pode ser 5 minutos, 1 hora ou 1 dia.
 + Período > 31 dias: a granularidade de tempo mínima é de 1 dia.
 
->
+>!
 >- Os dados coletados em uma granularidade de 1 minuto podem ser consultados apenas na nova versão do console. Para dados históricos, a granularidade mínima para consulta é 5 minutos.
 >- O período máximo de consulta é de 90 dias.
 

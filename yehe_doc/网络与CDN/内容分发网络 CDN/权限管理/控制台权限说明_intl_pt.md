@@ -1,6 +1,9 @@
+
 Depois de especificar `Action` e `Resource` para criar uma política personalizada, é possível chamar APIs para realizar operações para os recursos desejados. Este documento descreve os mapeamentos entre as funcionalidades do console e `Action`.
 
->O CDN do Tencent Cloud pode autorizar recursos por nome de domínio. A autorização não distingue entre regiões de serviço na China Continental e fora da China Continental com o mesmo nome de domínio.
+>!
+> - O CDN do Tencent Cloud pode autorizar recursos por nome de domínio. A autorização não distingue entre regiões de serviço dentro e fora da China Continental com o mesmo nome de domínio.
+> - Quando você migra os serviços do ECDN para o console do CDN, as políticas de permissão de API do ECDN serão mapeadas automaticamente para as políticas de permissão de API do CDN correspondentes. No entanto, para políticas de permissão em nível de recursos, você precisa defini-las novamente no CDN após a migração.
 
 ## Visão geral do serviço
 
@@ -35,7 +38,7 @@ A visão geral do serviço pode ser categorizada da seguinte forma com base no c
 
 ## Análise estatística
 
-| Funcionalidade         | Ação autorizada                                  | Observações                                                     |
+| Funcionalidade                                                     | Ação autorizada        | Observações                         |
 | ------------------------------------------------------------ | ------------------ | -------------------------------- |
 | Consulta de dados de acesso detalhados                                              | DescribeCdnData    | Todas as métricas de dados de acesso em um nome de domínio podem ser consultadas depois da autorização |
 | Consulta de dados detalhados de pull de origem                                              | DescribeOriginData | Todas as métricas de dados de pull de origem em um nome de domínio podem ser consultadas depois da autorização |
@@ -64,7 +67,7 @@ A página de monitoramento de status de toda a rede no console pode ser visualiz
 
 ## Relatório operacional
 
-| Funcionalidade         | Ação autorizada                                  | Observações                                                     |
+| Funcionalidades                                                     | Ação autorizada        | Observações                         |
 | ------------------------------------------------------------ | ------------------ | -------------------------------- |
 | Consulta de dados de acesso detalhados                                              | DescribeCdnData    | Todas as métricas de dados de acesso em um nome de domínio podem ser consultadas depois da autorização |
 | Consulta de dados detalhados de pull de origem                                              | DescribeOriginData | Todas as métricas de dados de pull de origem em um nome de domínio podem ser consultadas depois da autorização |
@@ -73,15 +76,15 @@ A página de monitoramento de status de toda a rede no console pode ser visualiz
 
 ## Gerenciamento de pacotes de tráfego
 
-| Funcionalidade         | Ação autorizada                                  | Observações                                                     |
+| Funcionalidade       | Ação autorizada             | Observações                                           |
 | -------------- | ----------------------- | -------------------------------------------------- |
 | Consulta da lista de pacotes de tráfego | DescribeTrafficPackages | O conteúdo retornado pela API é irrelevante para o `Resource`. A lista pode ser consultada com qualquer recurso autorizado |
 
->Atualmente, a renovação do pacote de tráfego e as lógicas de cancelamento de renovação não podem ser autorizadas.
+> !Atualmente, a renovação do pacote de tráfego e as lógicas de cancelamento de renovação não podem ser autorizadas.
 
 ## Consulta de propriedade de IP
 
-| Funcionalidade         | Ação autorizada                                  | Observações                                                     |
+| Funcionalidade                     | Ação autorizada   | Observações                                           |
 | ---------------------------- | ------------- | -------------------------------------------------- |
 | Consulta se o IP pertence ao CDN do Tencent Cloud | DescribeCdnIp | O conteúdo retornado pela API é irrelevante para o `Resource`. A lista pode ser consultada com qualquer recurso autorizado |
 
