@@ -39,7 +39,7 @@ Di RunInstances API, Anda dapat menentukan parameter [InstanceMarketOptionsReque
 
 #### Contoh
 Anda memiliki instans di Zona 3 Guangzhou, dan mode penagihan instans adalah bayar sesuai pemakaian per jam dan dalam mode spot. Konfigurasi spesifik dari mode penagihan adalah sebagai berikut:
-- MaxPrice: 0,6 USD/jam
+- MaxPrice: 0,0923 USD/jam
 - SpotInstanceType: one-time
 - ImageId: img-pmqg1cw7
 - InstanceType: S2.MEDIUM4 (Standard 2, 2-core, 4GB)
@@ -51,7 +51,7 @@ https://cvm.tencentcloudapi.com/?Action=RunInstances
 &Placement.Zone=ap-guangzhou-3
 &InstanceChargeType=SPOTPAID
 &InstanceMarketOptions.MarketType=spot
-&InstanceMarketOptions.SpotOptions.MaxPrice=0.60
+&InstanceMarketOptions.SpotOptions.MaxPrice=0.0923
 &InstanceMarketOptions.SpotOptions.SpotInstanceType=one-time
 &ImageId=img-pmqg1cw7
 &InstanceType=S2.MEDIUM4
