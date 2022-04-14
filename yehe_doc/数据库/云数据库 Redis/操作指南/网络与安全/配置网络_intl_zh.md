@@ -6,7 +6,7 @@
 ## 配置 Redis 网络
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击**新建实例**。
 2. 在购买页的“网络类型”中，可选择基础网络和私有网络，推荐您选择**私有网络**。
-![](https://main.qcloudimg.com/raw/8be0e67db61e588d2b8ec4bc43ef2c1f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16c1c1624751e27059c640ab395c0813.png)
 
 ## 更换 Redis 网络
 >!为保证服务可用性和业务不中断，请根据业务需要及时更新 IP 地址，谨慎释放旧 IP 地址。
