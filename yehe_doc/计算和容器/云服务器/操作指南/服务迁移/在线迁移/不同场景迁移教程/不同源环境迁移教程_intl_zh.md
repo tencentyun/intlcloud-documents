@@ -1,12 +1,9 @@
 ## 操作场景
 本文档介绍使用在线迁移控制台将源服务器上的系统、应用程序等从自建机房（IDC）或云平台等源环境迁移至腾讯云的操作步骤。可方便实现企业上云、跨云平台迁移、跨账号/区域迁移或部署混合云等业务需求。
 
-
 <dx-alert infotype="explain" title="">
-- 源服务器形式可以是物理服务器、虚拟机或其他云平台云服务器。其他云平台包括但不限于 AWS、Google Cloud Platform、VMware、阿里云和华为云等虚拟机平台。
-- 如需使用工具进行迁移，请参见 [使用工具迁移操作指引](https://intl.cloud.tencent.com/document/product/213/35640)。
+源服务器形式可以是物理服务器、虚拟机或其他云平台云服务器。其他云平台包括但不限于 AWS、Google Cloud Platform、VMware、阿里云和华为云等虚拟机平台。
 </dx-alert>
-
 
 ## 准备事项[](id:prerequisites)
 
@@ -64,7 +61,6 @@
 </table>
 
 
-
 <dx-alert infotype="explain" title="">
  - 源端主机检查可以使用工具命令自动检查，如 `sudo ./go2tencentcloud_x64 --check`。
  - go2tencentcloud 迁移工具在开始运行时，默认自动检查。如果需要略过检查并强制迁移，请将 client.json 文件中的 `Client.Extra.IgnoreCheck` 字段配置为 `true`。
@@ -77,28 +73,31 @@
 
 ## 开始迁移
 1. 将迁移工具 go2tencentcloud.zip 下载或上传至源端主机，并执行以下命令进入对应目录。
-    1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
-```sh
+  1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
+```shellsession
 unzip go2tencentcloud.zip
 ```
-```sh
+```shellsession
 cd go2tencentcloud
 ```
-    2. 依次执行以下命令，解压 go2tencentcloud_console.zip 并进入目录。
-```sh
-unzip go2tencentcloud_console.zip
+ 2. 依次执行以下命令，解压 go2tencentcloud-linux.zip 并进入目录。
+```shellsession
+unzip go2tencentcloud-linux.zip
 ```
-```sh
-cd go2tencentcloud_console
+```shellsession
+cd go2tencentcloud-linux
 ```
+<dx-alert infotype="explain" title="">
+`go2tencentcloud` 目录下的文件将不会被迁移，请勿将需迁移的文件放置在该目录下。
+</dx-alert>
 2. （可选）排除源端主机上不需迁移的文件和目录。 
-若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 [rsync_excludes_linux.txt 文件](https://intl.cloud.tencent.com/document/product/213/44340) 中。
+若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 [rsync_excludes_linux.txt 文件](https://intl.cloud.tencent.com/zh/document/product/213/44340#rsync_excludes_linux.txt-.E6.96.87.E4.BB.B6.E8.AF.B4.E6.98.8E.3Ca-id.3D.22_linuxtxtstate.22.3E.3C.2Fa.3E) 中。
 3. 导入迁移源。
-  1. 以64位 Linux 源端主机为例，进入 go2tencentcloud 文件目录，并以 root 权限依次执行以下命令运行工具。
-```shell
+ 1. 以64位 Linux 源端主机为例，以 root 权限依次执行以下命令运行工具。
+```shellsession
 chmod +x go2tencentcloud_x64
 ```
-```shell
+```shellsession
 sudo ./go2tencentcloud_x64
 ```
    2. 根据提示输入已在 [准备事项](#prerequisites) 中获取的账户 API 访问密钥的 `SecretId` 和 `SecretKey`，并按 **Enter**。如下图所示：
@@ -116,7 +115,7 @@ sudo ./go2tencentcloud_x64
 </dx-alert>
 4. 前往在线迁移控制台创建迁移任务。
   1. 登录 [在线迁移控制台](https://console.cloud.tencent.com/cvm/csm/online?rid=1)，单击目标迁移源所在行右侧的**创建迁移任务**。
-  2. 在弹出的“创建迁移任务”窗口中，参考 [迁移任务配置说明](https://intl.cloud.tencent.com/document/product/213/44338) 信息进行配置。
+  2. 在弹出的“创建迁移任务”窗口中，参考 [迁移任务配置说明](https://intl.cloud.tencent.com/zh/document/product/213/44338#.E5.88.9B.E5.BB.BA.E5.B9.B6.E5.90.AF.E5.8A.A8.E8.BF.81.E7.A7.BB.E4.BB.BB.E5.8A.A1) 信息进行配置。
 例如，将一台 Linux 源端主机迁移到腾讯云上海地区，并生成目标云服务器镜像。迁移任务配置如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
 5. 启动迁移任务。
@@ -125,7 +124,7 @@ sudo ./go2tencentcloud_x64
 </dx-alert>
 创建迁移任务后，可单击<b>迁移任务</b>页签，查看迁移任务。如下图所示：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
-单击任务所在行右侧的<b>开始/重试</b>，即可开始迁移任务。此时任务状态变更为“迁移中” 。如下图所示：
+单击任务所在行右侧的<b>开始/重试</b>，并在弹出确认窗口中单击**确定**，即可开始迁移任务。此时任务状态变更为“迁移中” 。如下图所示：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 6. 等待迁移任务结束。
 当迁移任务状态为“成功”时，表示成功完成迁移。如下图所示：

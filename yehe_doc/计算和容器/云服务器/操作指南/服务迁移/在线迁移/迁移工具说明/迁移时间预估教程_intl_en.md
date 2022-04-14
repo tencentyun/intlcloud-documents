@@ -1,5 +1,5 @@
 
-This document describes how to estimate the time for online migrating the system and applications from a source server in a self-built IDC or cloud platform to CVM.
+This document describes how to estimate the time for online migrating the system and applications from a source server in your IDC or cloud platform to Tencent Cloud CVM.
 
 The migration time is subject to the data transfer speed during migration. You can estimate it by testing the transfer speed between the source server and destination CVM.
 
@@ -31,7 +31,7 @@ For example, if the size of the data on all disks to be migrated on the source s
 2. Estimate the actual data migration time
 51200 / 12.5 = 4096 seconds = 1.14 hours
 3. Calculate the image creation time at a speed of about 160 MB/s
-51200 / 150 = 320 seconds = 0.089 hour
+51200 / 160 = 320 seconds = 0.089 hour
 4. Calculate the total migration time
 1.14 + 0.089 = 1.23 hours
 
