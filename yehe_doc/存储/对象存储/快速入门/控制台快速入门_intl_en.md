@@ -21,7 +21,7 @@ You must register a Tencent Cloud account before using the COS service. To do so
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">Account Sign Up</a></div>
 
 ## Step 2. Verify Your Identity
-Once registered, use your registered account to log in to the [Tencent Cloud console](https://console.cloud.tencent.com/) and verify your identity. For detailed instructions, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629). If you are already done so, please skip this step. If you haven’t performed identity verification, you cannot purchase any COS instance in the Chinese mainland.
+Once registered, use your registered account to log in to the [Tencent Cloud console](https://console.cloud.tencent.com/) and verify your identity. For detailed instructions, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629). If you have already done so, please skip this step. If you haven’t performed identity verification, you cannot purchase any COS instance in the Chinese mainland.
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:13px;"  hotrep="document.guide.3128.btn2">Identity Verification</a></div>
 
