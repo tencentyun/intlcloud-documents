@@ -1,12 +1,12 @@
 ## Network Overview
 Tencent Cloud offers [VPC](https://intl.cloud.tencent.com/document/product/215) (recommended) and classic network environments. A VPC is a logically isolated network space that can be customized in Tencent Cloud. Similar to the traditional network run in an IDC, a VPC is where your Tencent Cloud service resources are managed, such as [Cloud Virtual Machine](https://intl.cloud.tencent.com/document/product/213/495), [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214/524), and [TencentDB](https://intl.cloud.tencent.com/document/product/236/5147).
-For the differences between VPC and classic network, see [VPC and Classic Network](https://intl.cloud.tencent.com/document/product/215/35505).
-For common operations on VPCs and subnets, see [Managing VPC and Subnet](https://intl.cloud.tencent.com/document/product/215/31805).
+For the differences between VPC and classic network, please see [VPC and Classic Network](https://intl.cloud.tencent.com/document/product/215/35505).
+For common operations on VPCs and subnets, please see [Managing VPC and Subnet](https://intl.cloud.tencent.com/document/product/215/31805).
 
 ## Redis Network Configuration
 1. Log in to the [TencentDB for Redis Console](https://console.cloud.tencent.com/redis) and click **Create Instance** in the instance list.
 2. In "Network Type" on the purchase page, you can choose the classic network or a **VPC** (recommended).
-![](https://main.qcloudimg.com/raw/8be0e67db61e588d2b8ec4bc43ef2c1f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16c1c1624751e27059c640ab395c0813.png)
 
 ## Redis Network Change
 >!To ensure service availability and keep your businesses uninterrupted during network change, update the IP address as needed promptly and be cautious in releasing the old IP address.
