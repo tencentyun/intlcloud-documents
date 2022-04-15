@@ -13,6 +13,8 @@ A CMK can be created in the KMS console or by calling the CreateKey API. After c
  - Tag: This is optional. [Tag](https://intl.cloud.tencent.com/document/product/651/13334) is a Tencent Cloud resource management tool that allows you to categorize, search and aggregate keys.
  - Key Usage: This is required and supports symmetric encryption and decryption, asymmetric encryption and decryption, or asymmetric signature verification.
   - Key Material Source: This is required. You can choose to generate the key in KMS or import your own key.
+>? External key material is supported only for symmetric encryption and decryption.
+
 ![](https://main.qcloudimg.com/raw/2e2ef4eff0aa8fd823b9f3c86da26779.png)
 4. Click **OK** to go back to the key list, and then you can see the new key at the top of the list.
 

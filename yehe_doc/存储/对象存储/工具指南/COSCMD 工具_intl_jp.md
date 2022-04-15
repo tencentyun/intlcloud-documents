@@ -451,7 +451,7 @@ coscmd info <cospath>
 coscmd info doc/picture.jpg
 ```
 
-> - 「<>」のパラメータを、表示する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
+>?  - 「<>」のパラメータを、表示する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
 >
 
 
@@ -550,7 +550,7 @@ coscmd signurl doc/picture.jpg -t 100
 ```plaintext
 coscmd delete <cospath>
 ```
-> - 「<>」のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
+>? - 「<>」のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
 >
 - 操作事例 - doc/exampleobject.txtを削除します
 ```plaintext

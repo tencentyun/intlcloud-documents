@@ -10,7 +10,7 @@ Daily automatic backup is supported for instances in the following steps:
 >? 
 >- All options are selected for **Backup Schedule** by default and cannot be modified.
 >- Backup the retention time of the default 7 days, if you need to modify please [submit ticket](https://console.cloud.tencent.com/workorder/category).  
-![](https://main.qcloudimg.com/raw/02813e57aa17fab2c5db77a3922469b0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ad9eac661c90d0132c92c5af08af16f4.png)
 4. The backup will start in the specified time period. During a backup task, you can view its status in the Task Center. After it is completed, you can view the generated backup in **Backup and Restoration**.
 >? Backup start may be delayed if affected by relevant processes.
 

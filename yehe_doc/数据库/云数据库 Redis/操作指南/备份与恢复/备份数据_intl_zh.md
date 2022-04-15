@@ -11,7 +11,7 @@
 >- 备份周期默认全选，不能进行修改。
 >- 备份保留时长默认7天，如需修改请  [提交工单](https://console.cloud.tencent.com/workorder/category)。
 
-![](https://main.qcloudimg.com/raw/02813e57aa17fab2c5db77a3922469b0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ad9eac661c90d0132c92c5af08af16f4.png)
 4. 备份将在指定时间段内开始执行，备份进行时可在任务中心查看任务状态，备份完成后，可在**备份与恢复**中查看已生成的备份。
 >?如果受相关进程影响，备份也可能会延迟开始。
 

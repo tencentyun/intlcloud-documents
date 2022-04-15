@@ -1,4 +1,4 @@
-如果您在腾讯云中使用到了轻量应用服务器 Lighthouse、私有网络、数据库等服务，这些服务由不同的人管理，但都共享您的云账号密钥，将存在以下问题：
+如果您在腾讯云中使用到了轻量应用服务器 TencentCloud Lighthouse、私有网络、数据库等服务，这些服务由不同的人管理，但都共享您的云账号密钥，将存在以下问题：
 - 您的密钥由多人共享，泄密风险高。
 - 您无法限制其他人的访问权限，易产生误操作造成安全风险。
 
@@ -14,7 +14,7 @@
 ## 相关概念
 #### CAM 用户
 
-[CAM 用户](https://intl.cloud.tencent.com/document/product/598/32633) 是您在腾讯云中创建的一个实体，每一个 CAM 用户仅同一个腾讯云账户关联。您注册的腾讯云账号身份为**主账号**，您可以通过 [用户管理](https://console.cloud.tencent.com/cam) 来创建拥有不同权限的**子账号**进行协作。子账号的类型分为 [子用户](https://intl.cloud.tencent.com/document/product/598/13674)、[协作者](https://intl.cloud.tencent.com/document/product/598/32639) 以及 [消息接收人](https://intl.cloud.tencent.com/document/product/598/13667)。
+CAM 用户是您在腾讯云中创建的一个实体，每一个 CAM 用户仅同一个腾讯云账户关联。您注册的腾讯云账号身份为**主账号**，您可以通过 [用户管理](https://console.cloud.tencent.com/cam) 来创建拥有不同权限的**子账号**进行协作。子账号的类型分为 [子用户](https://intl.cloud.tencent.com/document/product/598/13674)、[协作者](https://intl.cloud.tencent.com/document/product/598/32639) 以及 [消息接收人](https://intl.cloud.tencent.com/document/product/598/13667)。
 
 #### 策略
 

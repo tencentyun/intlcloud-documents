@@ -13,7 +13,7 @@ The instance data has been backed up. For backup directions, see [Backing up Dat
 
 ## Directions
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance management page.
-2. On the **Backup and Restore** tab, locate the desired backup in the backup list, and click **Restore Instance** in the **Operation** column.
+2. On the **Backup and Restoration** tab, locate the desired backup in the backup list, and click **Restore Instance** in the **Operation** column.
 3. In the pop-up dialog box, confirm that everything is correct and click **OK**.
 >!If the instance is password-protected, you need to enter the instance password on this page, which is the password you set on the instance purchase page rather than the connection password in the format of "instance ID:instance password" used for instance access.
 >
