@@ -38,9 +38,8 @@ Use Unity to create a project, and record the project directory.
 ```json
 {
 	"dependencies":{
-    "com.tencent.imsdk.unity":"1.6.4" // Set to the latest version. To get all versions, visit https://www.npmjs.com/package/com.tencent.imsdk.unity.
-  },
-  "registry": "https://registry.npmjs.org"
+  "com.tencent.imsdk.unity":"https://github.com/TencentCloud/TIMSDK.git#unity" 
+  }
 }
 ```
 
@@ -51,7 +50,7 @@ Open the project in the Unity Editor, wait until dependencies are loaded, and co
 
 [](id:step5)
 ### Step 5. Test script
-1. [Download the test script](https://imgcache.qq.com/operation/dianshi/other/Demo.1fdc6bd474aa3d12f0f3061155d4a5accdf30c7b.zip), decompress the file, import the decompressed file to the project, and bind TestApi.cs to any scenario.
+1. [Download the test script](https://github.com/TencentCloud/TIMSDK/blob/master/Unity/im_unity_sdk_plus/Assets/Demo/TestApi.cs), decompress the file, import the decompressed file to the project, and bind TestApi.cs to any scenario.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b4d770775523fdd76b75f1d80f07c925.jpg)
 2. Select and run the scenario, and enter the `SDKAppID`, `UserID`, and `UserSig` obtained in [Step 1](#step1) to start the test.
 ![](https://qcloudimg.tencent-cloud.cn/raw/940da8044cd80db27d08a7b0dff45b94.png)
