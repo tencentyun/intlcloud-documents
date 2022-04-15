@@ -15,7 +15,7 @@ This feature is used to drop tables with large data files.
 
 ## Directions
 You can set the `innodb_async_truncate_work_enabled` parameter to `ON` to enable the async mode of `DROP TABLE`. The default value is `OFF`.
-The temp file is stored in the directory specified by the `innodb_async_drop_tmp_dirr` parameter. The size of the file to be truncated each time is controlled by the `innodb_async_truncate_size` parameter.
+The size of the file to be truncated each time is controlled by the `innodb_async_truncate_size` parameter.
 
 | Parameter                                  | Effective Immediately | Type    | Default Value | Valid Values/Value Range      | Description                                                         |
 | ---------------------------------- | ---- | ------ | ---- | ------------------------- | ------------------------------ |
