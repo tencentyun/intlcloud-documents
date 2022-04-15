@@ -8,7 +8,7 @@
 [](id:pay)
 ## Billing Plans
 
-TRTC offers two types of services: **basic services** and *value-added services*. 
+TRTC offers two types of services: **basic services** and **value-added services**. 
 
 <table>
 <tr><th>Service Type</th><th>Use Case</th><th>Billing Details</th></tr >
@@ -79,7 +79,7 @@ The TRTC console offers demo source code for different platforms. See the docume
 | Windows    | [Demo Quick Start (Windows)](https://intl.cloud.tencent.com/document/product/647/35085) |
 |Web | [Demo Quick Start (Web)](https://intl.cloud.tencent.com/document/product/647/35607) |
 | Electron   | [Demo Quick Start (Electron)](https://intl.cloud.tencent.com/document/product/647/35089) |
-- [Demo Quick Start (Flutter)](https://intl.cloud.tencent.com/document/product/647/39243)
+|Flutter    | [Demo Quick Start (Flutter)](https://intl.cloud.tencent.com/document/product/647/39243) |
 
 [](id:sdk_guide)
 ### SDK quick integration
@@ -102,7 +102,7 @@ After downloading the TRTC SDK, you can integrate it into your project. For deta
 TRTC offers an all-inclusive free demo for the TWebLive component. See [WebRTC-based Streaming](https://intl.cloud.tencent.com/document/product/647/38172) for how to integrate the component.
 
 [](id:sence)
-##Scenario-specific Practice
+## Scenario-specific Practice
 
 TRTC, along with other Tencent Cloud products, offers free demos for a wide range of live streaming scenarios.
 
@@ -111,11 +111,11 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 </tr><tr>
 <td>Group video call</td>
 <td>Co-anchoring, offline call answering, etc. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36065" target="_blank">Real-Time Video Call</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/36065" target="_blank">Video Call</a></td>
 </tr><tr>
 <td>Group audio call</td>
 <td>Co-anchoring, offline call answering, etc. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36067" target="_blank">Real-Time Audio Call</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/36067" target="_blank">Audio Call</a></td>
 </tr><tr>
 <td>Interactive live streaming</td>
 <td>Co-anchoring, anchor competition, low-latency watch, on-screen comments, etc.</td>
@@ -136,7 +136,7 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 
 [](id:console)
 ## Console Guide
-| If you want to                                         | Please Read                                                   |
+| Topic                                         | Document                                                  |
 | :--------------------------------------------------------- | :----------------------------------------------------------- |
 | View your usage of TRTC’s **audio/video interaction** and **on-cloud recording** services | Usage Statistics |
 | View call quality statistics of a TRTC room via the dashboard               | Dashboard |
@@ -165,7 +165,7 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 
 ## Feedback and Suggestion
 
-If you have any questions about TRTC, contact us via the following channels.
+If you have any questions or feedback about TRTC, feel free to contact us in the following ways:
 
-- If your question is about documents, for example, the content or a link in the documents, click **Help** at the bottom right and then click **Send Feedback** to provide your feedback.
-- If you have questions about the product, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1).
+- If you notice any issues with TRTC documentation (for example, incorrect content or links), click **Send Feedback** at the bottom right of the page to tell us about the issue.
+- If you have any issues while using the product, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1).
