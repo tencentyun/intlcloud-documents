@@ -24,7 +24,7 @@ This document describes how to elastically scale an instance in the TencentDB fo
 >- When shards are added or deleted, the system will automatically balance the slot configuration and migrate data, which may fail in rare cases. It is recommended to perform such operations during off-peak period so as to avoid the impact of migration on business access.
 
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), locate the desired instance in the instance list, and select **Configure** > **Add Shard**, **Delete Shard**, **Expand Node**, **Reduce Node**, **Add Replica**, or **Delete Replica** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/129b79387c1a469e9b7f9cfcb4e1b1b7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/81ffa8bb2eec3eb98d8eb590537a12b1.png)
 2. In the pop-up dialog box, adjust the configuration and click **OK**.
 3. Return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
 
