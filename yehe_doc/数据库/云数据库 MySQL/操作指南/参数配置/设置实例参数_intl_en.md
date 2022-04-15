@@ -74,7 +74,7 @@ For more information, see [Managing Parameter Template > Applying Parameter Temp
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the [instance maintenance time](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 
-## Parameter Formula
+## Parameter Formula[](id:CSGSMYSQL)
 You can use a formula to set the instance parameters. To do so, set the parameters related to the instance specification as a formula, and when the instance specification is changed, the parameter values in the formula will be dynamically changed accordingly and still take effect after the specification change. In this way, the instance is always in the optimal state for running business smoothly.
 
 Taking the `{DBinitMemory\*786432}` value of the parameter `innodb_buffer_pool_size` as an example, when the `DBinitMemory` in the instance specification is changed, the parameter configuration here doesn't need to be modified, and the value of `innodb_buffer_pool_size` will be changed automatically.
