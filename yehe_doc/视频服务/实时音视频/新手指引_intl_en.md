@@ -163,9 +163,9 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 > ? For more Q&As, please see [FAQs](https://intl.cloud.tencent.com/document/product/647/36058).
 
 
-## Feedback and Suggestion
+## Feedback and Suggestions
 
 If you have any questions or feedback about TRTC, feel free to contact us in the following ways:
 
-- If you notice any issues with TRTC documentation (for example, incorrect content or links), click **Send Feedback** at the bottom right of the page to tell us about the issue.
+- If you notice any issues with TRTC documentation (for example, incorrect content or incorrect links), click **Send Feedback** at the bottom right of the page to tell us about the issue.
 - If you have any issues while using the product, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1).
