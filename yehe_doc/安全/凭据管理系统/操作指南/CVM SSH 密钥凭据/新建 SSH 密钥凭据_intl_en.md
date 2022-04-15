@@ -15,7 +15,7 @@ This document describes how to create an SSH key pair and encrypt the SSH privat
 
 **Field description**
 - **Secret Name**: must be unique in the same region. It supports up to 128 bytes of letters, digits, hyphens and underscores and must begin with a letter or digit.
-- **Description**: description, such as what it is used for. It contains up to 2,048 bytes.
+- **Description**: description, such as what it is used for. It contains up to 1,024 bytes.
 - **Project ID**: ID of the project to which the created key pair belongs.
 - **Tag**: optional item.
 - **Encryption Key**:
