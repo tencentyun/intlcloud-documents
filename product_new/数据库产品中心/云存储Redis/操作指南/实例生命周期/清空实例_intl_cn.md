@@ -8,7 +8,7 @@
 ## 操作步骤
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例详情页。
 2. 在实例详情页，单击右上角的**清空实例**。
-![](https://main.qcloudimg.com/raw/9b5c4b5f4a344e1d62dbc2498f5aa53b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6dfeaa5d77d85336ecabc5bb40446944.png)
 3. 在弹出的对话框，输入实例密码，单击**确定**。
  >?此处需输入的密码为用户设置的实例密码，并非访问实例时所用的“实例ID:实例密码”连接密码。
 4. 返回实例列表，实例状态显示为**清空中**，清空任务完成后，待实例状态显示为**运行中**，即可正常使用。
