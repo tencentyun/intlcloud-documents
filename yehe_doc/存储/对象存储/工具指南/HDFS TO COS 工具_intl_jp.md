@@ -34,16 +34,19 @@ JDK 1.7または1.8。
 ### ファイルのコピー
 
 - HDFSからCOSにコピーします。COSにすでに同名のファイルが存在する場合、元のファイルは上書きされます。
+
 ```
 ./hdfs_to_cos_cmd --hdfs_path=/tmp/hive --cos_path=/hdfs/20170224/
 ```
 -  HDFSからCOSにコピーします。COSにすでに同名で同じ長さのファイルが存在する場合、アップロードは無視されます（1回目のコピー後、再度コピーする場合に適用されます）。
+
 ```
 ./hdfs_to_cos_cmd --hdfs_path=/tmp/hive --cos_path=/hdfs/20170224/ -skip_if_len_match
 ```
 Hadoop上でファイルサマリーを計算するとオーバーヘッドが大きくなるため、ここでは長さのみを判断しています。
 
 - HDFSからCOSにコピーします。HDFSにHarディレクトリ（Hadoop Archiveアーカイブファイル）が存在する場合、--decompress_harパラメータを指定することでharファイルを自動的に解凍できます。
+
 ```
 ./hdfs_to_cos_cmd --decompress_har --hdfs_path=/tmp/hive --cos_path=/hdfs/20170224/
 ```
