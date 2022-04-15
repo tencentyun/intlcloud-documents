@@ -21,7 +21,7 @@ We recommend you deploy one master node and one replica node in the master avail
 ### Viewing multi-AZ deployment details
 - Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis). In the **Availability Zone** column in the instance list, the **M** tag indicates that nodes of this instance are deployed in multiple availability zones. Mouse over the tag to view details.
 ![](https://main.qcloudimg.com/raw/5c553bf4c0817c0dbddb662405078fe7.png)
-- In the [instance list](https://console.cloud.tencent.com/redis), click an instance ID/name and enter the instance management page. In the **Basic Info** section on the **Instance Details** tab, the **M** tag next to **Availability Zone** indicates that nodes of this instance are deployed in multiple availability zones. Mouse over the tag to view details.
+- In the [instance list](https://console.cloud.tencent.com/redis), click an instance ID and enter the instance management page. In the **Basic Info** section on the **Instance Details** tab, the **M** tag next to **Availability Zone** indicates that nodes of this instance are deployed in multiple availability zones. Mouse over the tag to view details.
 ![](https://main.qcloudimg.com/raw/d579e1ab309c754ef0ea56904ad5f194.png)
-- In the [instance list](https://console.cloud.tencent.com/redis), click an instance ID/name and enter the instance management page. On the **Manage Node** tab, you can view node details and adjust node configurations.
-![](https://main.qcloudimg.com/raw/aa0adb39b9bfb543051ca6bdfda78664.png)
+- In the [instance list](https://console.cloud.tencent.com/redis), click an instance ID and enter the instance management page. On the **Node Management** tab, you can view node details and adjust node configurations.
+![](https://qcloudimg.tencent-cloud.cn/raw/66bf7f92367dddea1740efa5871e6da0.png)
