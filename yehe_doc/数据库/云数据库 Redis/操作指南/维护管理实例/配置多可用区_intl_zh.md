@@ -12,16 +12,16 @@
 
 ## 操作步骤
 ### 选择多可用区
-1. 登录 [Redis 购买页](https://buy.cloud.tencent.com/redis)，选择地域、可用区、副本等相关配置，单击【立即购买】。
+1. 登录 [Redis 购买页](https://buy.cloud.tencent.com/redis)，选择地域、可用区、副本等相关配置，单击**立即购买**。
  - 副本数量：副本数决定最大可用区数量，最大可用区数量 = 副本数 + 1。
  - 可用区：同地域下 Redis 节点部署的不同可用区，最大支持部署到6个可用区。
 ![](https://main.qcloudimg.com/raw/d76a6c8cc996b58c8f5df1a17102111c.png)
-2. 支付完成后，返回实例列表，待实例状态变为“运行中”，即可进行后续操作。
+2. 支付完成后，返回实例列表，待实例状态变为**运行中**，即可进行后续操作。
 
 ### 查看多可用区
-- 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表的“可用区”列，带有“M”标志的实例即为多可用区实例，且可查看多可用区信息。
+- 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表的**可用区**列，带有**M**标志的实例即为多可用区实例，且可查看多可用区信息。
 ![](https://main.qcloudimg.com/raw/5c553bf4c0817c0dbddb662405078fe7.png)
-- 在 [实例列表](https://console.cloud.tencent.com/redis)，单击实例 ID 进入管理页面，在详情页的“可用区”处带有“M”标志的实例即为多可用区实例，且可查看多可用区信息。
+- 在 [实例列表](https://console.cloud.tencent.com/redis)，单击实例 ID 进入管理页面，在详情页的**可用区**处带有**M**标志的实例即为多可用区实例，且可查看多可用区信息。
 ![](https://main.qcloudimg.com/raw/d579e1ab309c754ef0ea56904ad5f194.png)
 - 在 [实例列表](https://console.cloud.tencent.com/redis)，单击实例 ID 进入管理页面，在节点管理页，可查看各节点的详细信息，及调整节点配置。
-![](https://main.qcloudimg.com/raw/aa0adb39b9bfb543051ca6bdfda78664.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/66bf7f92367dddea1740efa5871e6da0.png)
