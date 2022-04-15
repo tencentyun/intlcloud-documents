@@ -75,26 +75,28 @@ TRTC Web SDK 依赖以下端口及域名进行数据传输，请将其加入防�
   - SECRETKEY：默认为空字符串，请设置为实际的`密钥`信息。 
 3. 运行 Demo：
 使用 Chrome 浏览器打开 Demo 根目录下的 `index.html` 文件即可运行 Demo。
->!
-> - 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口` 访问。
-> - 目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
+<dx-alert infotype="notice">
+<li> 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口` 访问。</li>
+<li>目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。</li></dx-alert>
 
 
-	- 单击 **加入房间** 加入音视频通话房间并且发布本地音视频流。
-	 您可以打开多个页面，每个页面都单击  **加入房间**，正常情况下可以看到多个画面并模拟实时音视频通话。
-	- 单击摄像头图标可以选择摄像头设备。
-	- 单击麦克风图标可以选择麦克风设备。
+- 单击 **加入房间** 加入音视频通话房间并且发布本地音视频流。
+ 您可以打开多个页面，每个页面都单击  **加入房间**，正常情况下可以看到多个画面并模拟实时音视频通话。
+- 单击摄像头图标可以选择摄像头设备。
+- 单击麦克风图标可以选择麦克风设备。
 
->?WebRTC 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击 **允许**。
+>? WebRTC 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击 **允许**。
 
  
 
 :::
 ::: Demo 2：quick-demo-js    
 1. 在下载的源码中找到并使用浏览器打开 `TRTC_Web/quick-demo-js/index.html` 文件。
->?
->- TRTC Web SDK 支持的浏览器请参见 [TRTC Web SDK 支持的平台](https://intl.cloud.tencent.com/document/product/647/41664)。
->- TRTC Web SDK 域名及端口白名单配置请参见 [TRTC Web SDK 域名及端口白名单配置](https://intl.cloud.tencent.com/document/product/647/35164#webrtc-.E9.9C.80.E8.A6.81.E9.85.8D.E7.BD.AE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.E6.88.96.E5.9F.9F.E5.90.8D.E4.B8.BA.E7.99.BD.E5.90.8D.E5.8D.95.EF.BC.9F)。
+
+<dx-alert infotype="explain">
+<li>TRTC Web SDK 支持的浏览器请参见 [TRTC Web SDK 支持的平台](https://intl.cloud.tencent.com/document/product/647/41664)。</li>
+<li>TRTC Web SDK 域名及端口白名单配置请参见 [TRTC Web SDK 域名及端口白名单配置](https://intl.cloud.tencent.com/document/product/647/35164#webrtc-.E9.9C.80.E8.A6.81.E9.85.8D.E7.BD.AE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.E6.88.96.E5.9F.9F.E5.90.8D.E4.B8.BA.E7.99.BD.E5.90.8D.E5.8D.95.EF.BC.9F)。</li></dx-alert>
+
 2. 在浏览器打开的页面中填写 <a href="#step3">步骤三</a> 获取的 SDKAppId 和 SecretKey。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f22cfb136e41ebb28100ea5fc1d6fa6f.png" width="800px">
 3. 功能体验：
@@ -113,11 +115,13 @@ TRTC Web SDK 依赖以下端口及域名进行数据传输，请将其加入防�
 npm start
 ```
 默认浏览器会自动打开` [http://localhost:8080/](http://localhost:8080/)` 地址。
->!
-> - 端口号以本地运行 Demo 之后的实际端口号为准，默认为 8080。
-> - TRTC Web SDK 支持的浏览器请参考：[TRTC Web SDK 支持的平台](https://intl.cloud.tencent.com/document/product/647/41664)。
-> - TRTC Web SDK 域名协议限制请参考：[TRTC Web SDK 域名协议限制](https://intl.cloud.tencent.com/document/product/647/41664)。
-> - TRTC Web SDK 域名及端口白名单配置请参考：[TRTC Web SDK 域名及端口白名单配置](https://intl.cloud.tencent.com/document/product/647/35164#webrtc-.E9.9C.80.E8.A6.81.E9.85.8D.E7.BD.AE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.E6.88.96.E5.9F.9F.E5.90.8D.E4.B8.BA.E7.99.BD.E5.90.8D.E5.8D.95.EF.BC.9F)。
+
+<dx-alert infotype="notice">
+<li>端口号以本地运行 Demo 之后的实际端口号为准，默认为 8080。</li>
+<li>TRTC Web SDK 支持的浏览器请参考：[TRTC Web SDK 支持的平台](https://intl.cloud.tencent.com/document/product/647/41664)。</li>
+<li>TRTC Web SDK 域名协议限制请参考：[TRTC Web SDK 域名协议限制](https://intl.cloud.tencent.com/document/product/647/41664)。</li>
+<li>TRTC Web SDK 域名及端口白名单配置请参考：[TRTC Web SDK 域名及端口白名单配置](https://intl.cloud.tencent.com/document/product/647/35164#webrtc-.E9.9C.80.E8.A6.81.E9.85.8D.E7.BD.AE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.E6.88.96.E5.9F.9F.E5.90.8D.E4.B8.BA.E7.99.BD.E5.90.8D.E5.8D.95.EF.BC.9F)。</li></dx-alert>
+
 3. 在浏览器打开的页面中填写 <a href="#step3">步骤三</a> 获取的 SDKAppId 和 SecretKey。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/621de0ce3313a39bca88905185d40658.png" width="800px">
 4. 功能体验：
