@@ -21,6 +21,7 @@ After confirming that the modification is correct, click **Save and Deliver** to
 
 4. The cluster will enter the **Changing** status, and the prompt "Configuration has changed. Please restart" will be displayed. Determine whether a restart is needed according to the specific modification, and if so, click **Restart** in the top-right corner.
  ![](https://qcloudimg.tencent-cloud.cn/raw/b726149b6ae0d94fd0b16ae1107421e2.png)
+
 5. 	After the modification is committed, you can view the modification history of the configuration file and the comparison details of each modification in **Modification History**.
 
 ## Notes
