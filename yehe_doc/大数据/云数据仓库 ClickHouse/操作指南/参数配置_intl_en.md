@@ -2,7 +2,7 @@
 This document describes how to manage clusters in the console. You can adopt either the key-value or XML mode in the ClickHouse cluster configuration management feature based on your usage habits to modify key parameters and push the modified configuration file content to the nodes in the cluster.
 
 ## Feature Description
--By default, the key-value mode applies to parameter configuration for legacy clusters created before August 2021, while the XML mode applies to those created afterward. If you need to manage a legacy cluster in XML mode, [contact us](https://intl.cloud.tencent.com/contact-us) for assistance.
+- By default, the key-value mode applies to parameter configuration for legacy clusters created before August 2021, while the XML mode applies to those created afterward. If you need to manage a legacy cluster in XML mode, [contact us](https://intl.cloud.tencent.com/contact-us) for assistance.
 >!Currently, cluster parameter configuration is available in either key-value or XML mode. New clusters support the key-value mode by default, but you can also switch to the XML mode irreversibly.
 >
 -	Before using the following features, we recommend you contact technical support to confirm your current configuration file content if you have submitted a ticket to have your cluster configuration maintained or modified by technical support.
