@@ -75,7 +75,7 @@ Tencent CloudのBasic Cloud Monitorは、インスタンスの面からTencentDB
 | メモリ使用率               | memory use rate     | %   | アイドルタイムの超過を許可。メモリ使用率が100%より大きいことがある  |
 | メモリ使用量                  | memory_use       | MB | アイドルタイムの超過を許可。実際のメモリ使用量が購入仕様より大きいことがある |
 | 一時ファイル数            | created_tmp_tables   | 回/秒 | 1秒あたりに一時ファイルを作成する回数 |
-| 開いているテーブル数         | opened_tables     | 個      | インスタンスのディメンション|開いているテーブル数 |
+| 開いているテーブル数         | opened_tables     | 個      |開いているテーブル数 |
 | 提出数                     | com_commit            | 回/秒 | 1秒あたりの提出回数 |
 | ロールバック数                     | com_rollback           | 回/秒 | 1秒あたりのロールバック回数 |
 | 作成済みのスレッド数         | threads_created      | 個 | 接続処理用に作成したスレッド数 |
@@ -101,7 +101,7 @@ Tencent CloudのBasic Cloud Monitorは、インスタンスの面からTencentDB
 | InnoDB行ロック待機回数       | innodb_row_lock_waits        | 回/秒 | Innodbエンジンの1秒あたりの行ロック待機回数  |
 | キーキャッシュ内で未使用のブロック数   | key_blocks_unused              | 個     | myisamエンジンが未使用のキーキャッシュブロック数  |
 | キーキャッシュ内で使用したブロック数      | key_blocks_used                  | 個     | myisamエンジンが使用済みのキーキャッシュブロック数  |
-| キーキャッシュ読み取りデータブロック数      |key_read_requests   | key_read_requests   | 回/秒 | myisamエンジンの1秒あたりのキーキャッシュブロック読み取り回数  |
+| キーキャッシュ読み取りデータブロック数      |key_read_requests     | 回/秒 | myisamエンジンの1秒あたりのキーキャッシュブロック読み取り回数  |
 | ハードディスク読み取りデータブロック数         | key_reads                | 回/秒 | myisamエンジンの1秒あたりのハードディスク読み取りデータブロック回数|
 | データブロックキーバッファ書き込み数      | key_write_requests   | 回/秒 | myisamエンジンの1秒あたりのキーキャッシュブロック書き込み回数|
 | データブロックディスク書き込み数         | key_writes                | 回/秒 | myisamエンジンの1秒あたりのハードディスクデータブロック書き込み回数|
