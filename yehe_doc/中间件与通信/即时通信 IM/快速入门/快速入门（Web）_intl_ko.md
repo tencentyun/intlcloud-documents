@@ -1,0 +1,69 @@
+본문은 Tencent Cloud IM Demo(Web)를 빠르게 실행하는 방법을 소개합니다.
+                    
+
+## 효과
+![](https://qcloudimg.tencent-cloud.cn/raw/fe5b7406d6b6061918c393019aee2980.png)
+
+
+## 작업 단계
+[](id:step1)
+### 1단계: 애플리케이션 생성
+1. [IM 콘솔](https://console.cloud.tencent.com/im)에 로그인합니다.
+>?이미 애플리케이션이 있는 경우 SDKAppID를 기록하고 [키 정보 가져오기](#step2)를 합니다.
+>동일한 Tencent Cloud 계정으로 최대 300개의 IM 애플리케이션을 만들 수 있습니다. 이미 300개의 애플리케이션이 있는 경우 신규 애플리케이션 생성 전에 사용하지 않는 애플리케이션을 [비활성화 및 삭제](https://intl.cloud.tencent.com/document/product/1047/34540)합니다. **애플리케이션 삭제 후에는 SDKAppID에 해당하는 모든 데이터 및 서비스를 복구할 수 없으므로 주의하시기 바랍니다.**
+2. **애플리케이션 생성**을 클릭하고 **애플리케이션 생성** 대화 상자에 애플리케이션 이름을 입력하고 **확인**을 클릭합니다.
+![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
+3. 생성 완료 후 [콘솔 전체보기 페이지](https://console.cloud.tencent.com/im)에서 새로 생성된 애플리케이션의 상태, 서비스 버전, SDKAppID, 생성 시간, 태그 및 만료 시간을 확인할 수 있습니다. SDKAppID 정보를 기록해 두십시오.
+![](https://main.qcloudimg.com/raw/7954cc2882d050f68cd5d1df2ee776a6.png)
+
+
+[](id:step2)
+### 2단계: 키 정보 가져오기
+1. 대상 애플리케이션 카드를 클릭하여 애플리케이션의 기본 구성 페이지로 이동합니다.
+![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
+2. **기본 정보** 섹션에서 **키 표시**를 클릭하고 키 정보를 복사 및 저장합니다.
+>!키 정보가 유출되지 않도록 잘 보관하십시오.
+
+[](id:step3)
+### 3단계: Demo 소스 다운로드 및 설정
+
+1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 [Demo 소스 코드](https://intl.cloud.tencent.com/document/product/1047/33996)를 다운로드합니다.
+<dx-codeblock>
+:::  js
+
+# 명령 라인 실행
+git clone https://github.com/tencentyun/TIMSDK.git
+
+# Web 프로젝트로 이동
+
+cd TIMSDK/Web/Demo
+
+# 종속 설치
+npm install
+:::
+</dx-codeblock>
+2. 터미널 디렉터리에서 프로젝트를 열고 해당 'GenerateTestUserSig' 파일을 찾습니다. 경로는 다음과 같습니다. /public/debug/GenerateTestUserSig.js
+3. `GenerateTestUserSig` 파일에서 관련 매개변수를 설정합니다.
+ - SDKAPPID: [1단계](#step1)에서 획득한 실제 애플리케이션 SDKAppID로 설정합니다.
+ - SECRETKEY: [2단계](#step2)에서 획득한 실제 키 정보로 설정합니다.
+ ![](https://main.qcloudimg.com/raw/e7f6270bcbc68c51595371bd48c40af7.png)
+
+
+>!본문의 UserSig 획득 방법은 클라이언트 코드에서 SECRETKEY를 설정하는 것입니다. 해당 방법 중 SECRETKEY는 디컴파일로 크래킹되기 쉬우므로, 키가 유출되면 해커가 사용자의 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **해당 방법은 로컬 Demo 실행 및 기능 디버깅에만 적합합니다**.
+>올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, App은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)을 참고하십시오.
+
+[](id:step4)
+### 4단계: 컴파일 실행
+프로젝트 터미널에서 다음 명령 라인을 실행하고 브라우저에서 실행하면 됩니다.
+<dx-codeblock>
+:::  js
+# 명령 라인 실행
+npm run start
+:::
+</dx-codeblock>
+
+## 참고 문서
+
+- [SDK API 매뉴얼](https://web.sdk.qcloud.com/im/doc/en/SDK.html)
+- [SDK 업데이트 로그](https://intl.cloud.tencent.com/document/product/1047/34281)
+- [Demo 소스 코드](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
