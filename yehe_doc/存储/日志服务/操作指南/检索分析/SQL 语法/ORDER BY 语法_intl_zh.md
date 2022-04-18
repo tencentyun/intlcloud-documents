@@ -46,4 +46,4 @@ order by
 LIMIT 
   10
 ```
-![image-20210719000006781](https://main.qcloudimg.com/raw/c1a051779bc0cd4ce801dc8e9f4edeb5.png)
+
