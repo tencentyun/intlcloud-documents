@@ -14,12 +14,12 @@ This document describes how to check if you have the permissions to ship logs to
 ### Checking whether you have the permissions to ship logs to COS/CKafka
 1. Log in to the CAM console, and select **[Roles](https://console.cloud.tencent.com/cam/role)** on the left sidebar.
 2. On the **Role** page, check whether you have the `CLS_QcsRole` role. You can use the search box in the top-right corner of the role list to search for the role.
-![](https://qcloudimg.tencent-cloud.cn/raw/2e8a355e5901c8ece21e0f25c75af35e.png)
+
 3. Click the role name to go to the role details page.
  - Select the **Permission** tab to see if the role has the `QcloudCOSAccessForCLSRole` and `QcloudCKAFKAAccessForCLSRole` permissions.
-![](https://qcloudimg.tencent-cloud.cn/raw/26706b34a27f744f88afbd3e6ef93e99.png)
+
  - Select the **Role Entity** tab to see if the role entity is `cls.cloud.tencent.com`.
-![](https://qcloudimg.tencent-cloud.cn/raw/cd1a2aebfd78372764fbb70b52b830f0.png)
+
 After confirming that you have the required role and permissions, you can create a task to ship logs to COS/CKafka. If you do not have the required role or permissions, create them as follows.
 
 
@@ -31,9 +31,9 @@ You can use either of the following methods to create the permissions to ship lo
 ::: Automatic Creation via CLS Console
 If this is the first time you create a task to ship logs to COS/CKafka in the CLS console, follow the instructions in the console to create the required role and policies:
 1. In the pop-up window that reads **This feature requires creating a service role**, click **Go to Cloud Access Management**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ed26853843fdc9cabc27bfe9bd5dbb98.png" width="70%"/>
+
 2. On the **Role Management** page, click **Grant**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/aade131a6c18c7e93f0f712d6129ceae.png" width="70%"/>
+
 :::
 ::: Manual Creation via CAM Console
 1. Log in to the CAM console, and select **[Roles](https://console.cloud.tencent.com/cam/role)** on the left sidebar.
@@ -42,9 +42,9 @@ If this is the first time you create a task to ship logs to COS/CKafka in the CL
 4. On the **Create Custom Role** page, perform the following operations:
  1. In the **Enter role entity info** step, select **Cloud Log Service (cls)** and click **Next**.
  2. In the **Configure role policy** step, use `clsrole` to search for data, select the `QcloudCKAFKAAccessForCLSRole` and `QcloudCOSAccessForCLSRole` policies in the search result, and click **Next**.
-  ![](https://qcloudimg.tencent-cloud.cn/raw/7b1ea04b0607e62ffc6ed7e21295d279.png)
+
  3. In the **Review** step, enter the role name `CLS_QcsRole` and click **Complete**.
-![](https://qcloudimg.tencent-cloud.cn/raw/cf1f22f7c3e30b485681da40a82cabe4.png)
+
 
 :::
 </dx-tabs>
