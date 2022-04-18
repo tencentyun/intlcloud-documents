@@ -2,7 +2,7 @@
 ## Paket Penagihan
 
 Tencent Cloud menawarkan dua cara untuk membeli instans CVM: bayar sesuai pemakaian dan instans spot. Untuk informasi selengkapnya, lihat [Mode Penagihan Instans](https://intl.cloud.tencent.com/document/product/213/2180).
-CVM mendukung penagihan instans cadangan (RI). Untuk informasi selengkapnya tentang harga, lihat [Mode Penagihan Instans Cadangan](https://intl.cloud.tencent.com/document/product/213/37070).
+CVM mendukung penagihan instans cadangan (RI). 
 
 ## Instans
 
