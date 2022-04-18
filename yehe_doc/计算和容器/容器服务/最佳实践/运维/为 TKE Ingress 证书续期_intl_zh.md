@@ -24,7 +24,7 @@ api-prod    gateway      1a******-****-****-a329-eec697a28b35
 
 ### 更新 Ingress
 
-1. 在 [容器服务控制台](https://console.cloud.tencent.com/tke2) 找到 [引用旧证书的 Ingress](#ingress) 中对应的 Ingress 资源，单击【更新转发配置】。
+1. 在 [容器服务控制台](https://console.cloud.tencent.com/tke2) 找到 [引用旧证书的 Ingress](#ingress) 中对应的 Ingress 资源，单击**更新转发配置**。
 2. 在“更新转发配置”页面，为新证书**新建密钥**。
  在“新建密钥”页面，选择新添加的证书，然后单击**创建Secret**。
 返回至“更新转发配置”页面，修改 Ingress 的 TLS 配置，添加新创建的证书 Secret。
