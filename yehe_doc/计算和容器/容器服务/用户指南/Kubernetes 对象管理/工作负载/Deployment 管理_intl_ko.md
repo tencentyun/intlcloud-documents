@@ -151,7 +151,7 @@ kubectl set image deployment/[name] [containerName]=[image:tag]
 ```
 kubectl rolling-update [NAME] -f FILE
 ```
-자세한 내용은 [Rolling Update](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/)를 참고하십시오.
+
 
 ### kubectl 사용하여 Deployment 롤백
 
