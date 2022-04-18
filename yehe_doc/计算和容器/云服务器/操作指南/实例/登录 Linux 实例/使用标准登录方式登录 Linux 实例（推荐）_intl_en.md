@@ -37,7 +37,7 @@ Select the tab of the Linux CVM instance you want to log in to and click **Log I
 :::
 </dx-tabs>
 
-3. In the **Standard Login | Linux Instance** pop-up window, select **Login with Password** or **Login with Key** as needed as shown below:
+3. In the **Standard Login | Linux Instance** pop-up window, select **Password Login** or **Key Login** as needed:
 ![](https://main.qcloudimg.com/raw/9c321ad519c8f993c1f768e56fca0ab1.png)
 Refer to the following instructions to enter the required information for login:
  - **Port**: the default port is 22. Enter a value as needed.
@@ -50,11 +50,11 @@ If the login is successful, the following prompt will appear on the WebShell pag
 
 ## Subsequent Operations
 
-After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, please see:
+After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, see:
 - [Manually Building a WordPress Website](https://intl.cloud.tencent.com/document/product/213/8044)
 - [Manually Building Discuz! Forum](https://intl.cloud.tencent.com/document/product/213/8043)
 
 
-## Relevant Documentation
+## See Also
 - [Resetting Instance Password](https://intl.cloud.tencent.com/document/product/213/16566)
 - [Managing SSH Keys](https://intl.cloud.tencent.com/document/product/213/16691)
