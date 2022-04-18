@@ -5,7 +5,7 @@ The cluster scale-in feature allows you to remove task nodes in the console when
 You are not recommended to terminate the core node after the scale-out, as it stores your data and you may lose your data if it is terminated. After a node is terminated, the data stored in it will be deleted. By terminating a node, you confirm that the data in it can be deleted.
 - On-demand cluster: once terminated, the cluster will not be retained in the recycle bin but will be completely terminated and cannot be recovered. Please do so with caution.
 
->Before terminating a cluster, please make sure that your data has been backed up as it cannot be recovered after termination.
+>! Before terminating a cluster, please make sure that your data has been backed up as it cannot be recovered after termination.
 
 ## Directions
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page.
