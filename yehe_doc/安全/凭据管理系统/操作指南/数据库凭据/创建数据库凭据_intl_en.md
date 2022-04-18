@@ -22,7 +22,7 @@ Before using database credentials, please note the following prerequisites:
 
 #### Database account settings
 - **Bound Instance**: a MySQL instance or TDSQL instance of your choice.
-- **Account Prefix**: contains 12 characters of lower-case letters and digits. **It must start with a letter**.
+- **Account Prefix**: It contains 1-8 characters, including letters, digits and underscores (_). It must start with an upper- or lower-case letter.
 >? Two account names will be generated in the format of [prefix]_SSM_[three random digits]. These two account names will be shifted for rotation.
 - **Server**:
  - Must be in IP format. % is supported.
@@ -42,5 +42,5 @@ Before using database credentials, please note the following prerequisites:
  - Use a custom encryption key. 
 
 > ! If you are using SSM, you have activated [KMS](https://intl.cloud.tencent.com/product/kms). You can create an encryption key in either of the following ways:
-- Use the default Tencent Cloud managed CMK created in the [KMS console](https://intl.cloud.tencent.com/product/kms) as encryption key, and use the envelope encryption method for encrypted storage.
-- Use a custom key created in the [KMS console](https://intl.cloud.tencent.com/product/kms) as encryption key for encrypted storage.
+>- Use the default Tencent Cloud managed CMK created in the [KMS console](https://intl.cloud.tencent.com/product/kms) as encryption key, and use the envelope encryption method for encrypted storage.
+>- Use a custom key created in the [KMS console](https://intl.cloud.tencent.com/product/kms) as encryption key for encrypted storage.
