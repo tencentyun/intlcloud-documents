@@ -8,9 +8,9 @@
 3. 单击需要配置实时消费的日志主题 ID/名称，进入日志主题管理页面。
 4. 单击**实时消费**页签，进入实时消费配置页面。
 5. 单击右侧的**编辑**，将**当前状态**的开关按钮设置为打开状态，单击**确定**。
-![](https://qcloudimg.tencent-cloud.cn/raw/4cecea88d64c4e490bc6393ec72e0709.jpg)
+
 6. 根据 CLS 给出消费的 Topic 信息，构造消费者即可。详情请参考 [Ckafka SDK](https://intl.cloud.tencent.com/document/product/597/43839)。
-![](https://qcloudimg.tencent-cloud.cn/raw/6c1fa1c2440bab342b0cc7b9bc3b1c00.png)
+
 
 
 ## 操作示例
