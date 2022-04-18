@@ -4,10 +4,10 @@
 ## 전제 조건
 Tencent Cloud에 회원가입 및 실명 인증을 완료해야 합니다.
 - Tencent Cloud 계정 생성 방법:
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Tencent Cloud 계정 생성하기</a></div>
+<div style="background-color:#00A4FF; width: 300px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Tencent Cloud 계정 생성하기</a></div>
 
 - 실명 인증 방법:
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">실명 인증하기</a></div>
+<div style="background-color:#00A4FF; width: 300px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">실명 인증하기</a></div>
 
 ## 작업 단계
 1. [MySQL 구매 페이지](https://buy.intl.cloud.tencent.com/cdb)에 로그인하여 각 항목의 구성 정보를 필요에 따라 선택하고 오류가 없는지 확인한 뒤, **즉시 구매**를 클릭합니다.
@@ -22,7 +22,7 @@ Tencent Cloud에 회원가입 및 실명 인증을 완료해야 합니다.
 >- 원본/복제본이 서로 다른 가용존에 있으면, 네트워크 동기화가 2 - 3ms 가량 딜레이 될 수 있습니다. 
 >- 클라우드 서비스 구매 시 액세스 지연시간 단축 및 다운로드 속도 향상을 위해, 가장 가까운 리전 선택을 권장합니다.
 >
- - **인스턴스 유형**: 범용형 및 전용형 두 종류의 인스턴스 유형을 제공합니다. 자세한 내용은 [인스턴스 유형](https://intl.cloud.tencent.com/document/product/236/39794)을 참고하십시오.
+ - **인스턴스 유형**: 범용형 및 전용형 두 종류의 인스턴스 유형을 제공합니다. 자세한 내용은 [격리 정책](https://intl.cloud.tencent.com/document/product/236/39794)을 참고하십시오.
  - **인스턴스 사양**: 필요에 따라 사양을 선택합니다.
  - **디스크**: 디스크 공간은 MySQL 실행 시 필요한 파일을 저장합니다. 
  - **네트워크**: TencentDB for MySQL 소속 네트워크는 CVM과 동일 리전에 있는 동일 VPC를 선택할 것을 권장합니다. 그러지 않으면, 내부 네트워크를 통해 CVM과 데이터베이스를 연결할 수 없으며, 기본 설정은 Default-VPC(기본)이 됩니다.
