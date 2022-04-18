@@ -29,4 +29,4 @@ Error syncing pod, skipping failed to "StartContainer" for with CrashLoopBackOff
 Description: The container process crashed or exited.
 Solution: Check whether there is a foreground process that is persistently running. If so, check whether it is exceptional. For more information, see [Building a Docker Image Guide](https://intl.cloud.tencent.com/document/product/457/9115).
 
-[submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) if the solutions offered above failed to resolve your issues.
+[Submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) if the solutions offered above failed to resolve your issues.
