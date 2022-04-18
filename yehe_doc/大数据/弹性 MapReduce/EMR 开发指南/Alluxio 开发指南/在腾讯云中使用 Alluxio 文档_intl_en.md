@@ -11,7 +11,7 @@ For specific Alluxio versions supported in EMR, see [Component Version](https://
 This section describes how to create a ready-to-use Alluxio-based EMR cluster. You can create an EMR cluster via the purchase page or API.
 
 ### Creating a cluster via the purchase page
-Go to the EMR [purchase page](https://buy.cloud.tencent.com/emapreduce/), choose an Alluxio-supported version, and select the Alluxio component in **Optional Components**.
+Go to the EMR [purchase page](https://buy.cloud.tencent.com/emr), choose an Alluxio-supported version, and select the Alluxio component in **Optional Components**.
 ![](https://main.qcloudimg.com/raw/c8c6a4ac0fdf5b4d4b952800284d6324.png)
 Select other options as needed to meet your business needs. For reference, see [Creating EMR Cluster](https://intl.cloud.tencent.com/document/product/1026/31099).
 
