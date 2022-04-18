@@ -6,7 +6,7 @@ TensorFlowOnSpark supports direct tensor communication among TensorFlow processe
 
  
 ## Installing TensorFlowOnSpark
-1. Enter the EMR [purchase page](https://buy.cloud.tencent.com/emapreduce#/) and select EMR v2.3.0 or above.	
+1. Enter the EMR [purchase page](https://buy.cloud.tencent.com/emr) and select EMR v2.3.0 or above.	
 2. Select the `tensorflowonspark 1.4.4` component in the **Optional Component** list.	
 3. TensorFlowOnSpark will be installed in the `/usr/local/service/tensorflowonspark` directory by default.	
 >!The components depended on by TensorFlowOnSpark include Hive, Spark, etc., which will be installed together with TensorFlowOnSpark.
