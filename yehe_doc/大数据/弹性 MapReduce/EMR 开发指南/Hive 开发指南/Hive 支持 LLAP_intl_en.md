@@ -14,7 +14,7 @@ The daemon off-loads I/O and transformation from compressed format to separate t
 The daemon caches metadata for input files, as well as the data. The metadata and index information can be cached even for data that is not currently cached.
 
 ## Installing Hive LLAP
-1. Enter the EMR [purchase page](https://buy.cloud.tencent.com/emapreduce#/).
+1. Enter the EMR [purchase page](https://buy.cloud.tencent.com/emr).
 2. Select `EMR-V2.3.0` as the product version.
 3. Select **TEZ 0.9.2** in the **Optional Component** list, and Hive LLAP will be automatically installed in the `/usr/local/service/slider` directory.
  
