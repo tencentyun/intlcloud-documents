@@ -153,7 +153,7 @@ If you need to configure other alarm channels, such as DingTalk, Zoom, you can d
 ![](https://main.qcloudimg.com/raw/28d3fbf11e528853927629b0370d9774.png)
 :::
 </dx-tabs>
-The WeChat push effect is shown as follows:
+
 
 
 
