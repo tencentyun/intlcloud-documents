@@ -24,7 +24,7 @@ GROUP BY 语法支持按照列名、别名或序号进行分组，详细说明�
 ```
 * | SELECT status, count(*) AS pv GROUP BY status
 ```
-![image-20210718231331787](https://main.qcloudimg.com/raw/d0b7922c03cf0937b4d611deccdf0ce9.png)
+
 - 按照每分钟的时间粒度，计算 PV：
 ```
 * | 
@@ -42,7 +42,7 @@ limit
   10
 ```
 \_\_TIMESTAMP\_\_ 字段为日志服务中的保留字段，表示时间列。**dt** 为 date_trunc('minute', cast(\_\_TIMESTAMP\_\_ as timestamp)) 的别名。date_trunc() 函数的更多信息，请参见 [时间截断函数](https://intl.cloud.tencent.com/document/product/614/41989)。
-![image-20210718230110351](https://main.qcloudimg.com/raw/b4e1afcc9b64191e76600d190fd61922.png)
+
 >?
 >- limit 10表示最多获取10行结果。如果不使用 LIMIT 语法，则默认获取100行结果。
 >- 在索引配置中，当您开启任意字段的统计功能后，日志服务会自动开启 \_\_TIMESTAMP\_\_ 字段的统计功能。
@@ -65,5 +65,5 @@ group by
 order by 
   dt
 ```
-![image-20210719173252866](https://main.qcloudimg.com/raw/b1bf9e31f1aa826e83af2e94083ef202.png)
+
 
