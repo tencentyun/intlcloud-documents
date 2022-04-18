@@ -21,7 +21,7 @@ To enable collaborators or sub-accounts to configure a shipping task in the CLS 
 2. On the **User List** page, click the target username to go to the user details page.
 3. On the user details page, select **Associate Policy**.
 4. In the **User Permissions** step on the **Add Policy** page, click **Select policies from the policy list**.
-![](https://qcloudimg.tencent-cloud.cn/raw/3434ebc9faabe6b1de93d6f940b9928d.png)
+
 5. Select the preset policies, including `QcloudCLSFullAccess`, `QcloudCamSubaccountsAuthorizeRoleFullAccess`, `QcloudCOSReadOnlyAccess`, or `QcloudCkafkaReadOnlyAccess`, for the collaborator or sub-account.
 <dx-alert infotype="notice" title="">
 The root account must complete the authorization process. Otherwise, the collaborator or sub-account cannot configure shipping tasks properly.
