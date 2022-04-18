@@ -43,7 +43,7 @@ boolean 类型。
 * | SELECT json_array_contains('[1, 2, 3]', 2)
 ```
 - 查询和分析结果
-![image-20211101044415215](https://qcloudimg.tencent-cloud.cn/raw/68fccebb9442f7490fc29a8d51bb06f7.png)
+
 
 
 <span id="json_array_get"></span>
@@ -77,7 +77,6 @@ varchar类型。
 * | SELECT json_array_get('["a", [3, 9], "c"]', 1)
 ```
 - 查询和分析结果
-![image-20211101044710815](https://qcloudimg.tencent-cloud.cn/raw/34bbe06684107b4d1d104c2ec79f0e9d.png)
 
 
 <span id="json_array_length"></span>
@@ -113,7 +112,7 @@ apple.message:[{"traceName":"StoreMonitor"},{"topicName":"persistent://apache/pu
 * | SELECT json_array_length(apple.message)
 ```
 - 查询和分析结果
-![image-20211109165434472](https://qcloudimg.tencent-cloud.cn/raw/4d7f66012d706a4e63b2d044c81a3e16.png)
+
 
 
 <span id="json_extract"></span>
@@ -151,7 +150,7 @@ apple.instant:{"epochSecond":1635905306,"nanoOfSecond":63001000}
 * | SELECT json_extract(apple.instant, '$.epochSecond')
 ```
 - 查询和分析结果
-![wecom-temp-abb4b074a852beef94c8d8c1fb50bd9b](https://qcloudimg.tencent-cloud.cn/raw/9bf6df57ba35af0a68b8dde6b7376a93.png)
+
 
 
 <span id="json_extract_scalar"></span>
@@ -189,7 +188,7 @@ apple.instant:{"epochSecond":1635905306,"nanoOfSecond":63001000}
 * | SELECT sum(cast(json_extract_scalar(apple.instant,'$.epochSecond') AS bigint) )
 ```
 - 查询和分析结果
-![image-20211109164327451](https://qcloudimg.tencent-cloud.cn/raw/60ed17150b15f96f4c301deda4ef74cf.png)
+
 
 
 <span id="json_format"></span>
@@ -222,7 +221,7 @@ varchar 类型。
 * | SELECT json_format(json_parse('[1, 2, 3]'))
 ```
 - 查询和分析结果
-![image-20211101050932641](https://qcloudimg.tencent-cloud.cn/raw/3a5681b58d100b8527a32ebac9810866.png)
+
 
 
 <span id="json_parse"></span>
@@ -255,7 +254,6 @@ JSON类型。
 * | SELECT json_parse('[1, 2, 3]')
 ```
 - 查询和分析结果
-![image-20211101051112998](https://qcloudimg.tencent-cloud.cn/raw/f5aa38571f569ad6147c54cf4ec36d17.png)
 
 
 <span id="json_size"></span>
@@ -289,7 +287,7 @@ bigint 类型。
 * | SELECT json_size(json_parse('[1, 2, 3]'))
 ```
 - 查询和分析结果
-![image-20211101050932641](https://qcloudimg.tencent-cloud.cn/raw/3a5681b58d100b8527a32ebac9810866.png)
+
 
 
 
