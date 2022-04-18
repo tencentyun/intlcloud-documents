@@ -209,7 +209,7 @@ Even if you have just one VPC, we still recommend that you deploy your businesse
 The following table describes which Tencent Cloud resources are global, which are regional, and which are specific to availability zones.
 
 <table>
-	<tr><th>Resource</th><th>Resource ID Format<br><Resource Abbreviation>-8-Digit String of Numbers and Letters</th><th>Type</th><th>Description</th></tr>
+	<tr><th>Resource</th><th>ID Format</th><th>Resource Level</th><th>Description</th></tr>
 	<tbody>
 	<tr>
 	  <td>User Account</td>
