@@ -23,10 +23,6 @@
 	<td>Use the storage of the existing PersistentVolumeClaim to declare the storage for workloads, and automatically assign or create a PersistentVolume and mount it to the corresponding pod. This is suitable for stateful applications created by StatefulSet. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/30679">PV and PVC Management</a>.</td>
 	</tr>
 	<tr>
-	<td>Use Tencent Cloud CBS</td>
-	<td>Use the Kubernetes block storage plug-in extended by Tencent Cloud based on CBS. You can mount a Tencent Cloud CBS disk to a specified path of the container. When the container is migrated, the cloud disk will also be migrated.<b>CBS volumes are suitable for the persistent storage of data and can be used for stateful services such as MySQL. Services that are configured with CBS volumes can have a maximum of 1 pod.</b></td>
-	</tr>
-	<tr>
 	<td>Use ConfigMap</td>
 	<td>A ConfigMap is mounted to a pod as a file system. You can mount the custom ConfigMap entries to a specific path. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/30675">ConfigMap Management</a>.</td>
 	</tr>
