@@ -4,10 +4,10 @@
 ##  前提条件
 Tencent Cloudアカウントを登録し、実名認証を完了する必要があります。
 - Tencent Cloudアカウントを登録するには：
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">ここをクリックしてください</a></div>
+<div style="background-color:#00A4FF; width: 300px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">ここをクリックしてください</a></div>
 
 - 実名認証を行うには：
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">ここをクリックしてください</a></div>
+<div style="background-color:#00A4FF; width: 300px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">ここをクリックしてください</a></div>
 
 ## 操作手順
 1. [MySQL購入ページ](https://buy.intl.cloud.tencent.com/cdb)にログインし、実際のニーズに応じて各設定情報を選択し、誤りがないことを確認した後、**今すぐ購入**をクリックします。
@@ -22,7 +22,7 @@ Tencent Cloudアカウントを登録し、実名認証を完了する必要が�
 >- ホストと待機マシンが異なるアベイラビリティーゾーンにある場合、ネットワークの同期遅延が2ms～3ms増加する可能性があります。
 >- クラウドサービスを購入する際には、お客様に最も近いリージョンを選択することをお勧めします。アクセスの遅延を減らし、ダウンロードスピードを向上させることができます。
 >
- - **インスタンスタイプ**：汎用型と専用型という2つのインスタンスタイプが提供されています。詳細については、[インスタンスタイプ](https://intl.cloud.tencent.com/document/product/236/39794)をご参照ください。
+ - **インスタンスタイプ**：汎用型と専用型という2つのインスタンスタイプが提供されています。詳細については、[タグ編集](https://intl.cloud.tencent.com/document/product/236/39794)をご参照ください。
  - **インスタンス仕様**：ビジネスニーズに応じて対応する仕様を選択してください。
  - **ハードディスク**：ハードディスク容量はMySQL実行時の必須ファイルを保存するのに使用されます。
  - **ネットワーク**：TencentDB for MySQLがあるネットワークです。CVMと同じリージョンにある同じVirtual Private Cloudを選択することをお勧めします。そうしない場合、プライベートネットワークを介してCVMとデータベースを接続し、デフォルト設定をDefault-VPC（デフォルト）にすることができません。
