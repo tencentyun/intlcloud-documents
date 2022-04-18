@@ -18,9 +18,11 @@ You can edit a configuration file and click **Save Configuration**.
 You can view the modification through **Details**.
  ![](https://qcloudimg.tencent-cloud.cn/raw/0b937abff09be753c1e0b8e9b9636ecb.png)
 After confirming that the modification is correct, click **Save and Deliver** to commit it to the nodes in the cluster.
+
 4. The cluster will enter the **Changing** status, and the prompt "Configuration has changed. Please restart" will be displayed. Determine whether a restart is needed according to the specific modification, and if so, click **Restart** in the top-right corner.
  ![](https://qcloudimg.tencent-cloud.cn/raw/b726149b6ae0d94fd0b16ae1107421e2.png)
-5. 	After the modification is committed, you can view the modification history of the configuration file and the comparison details of each modification in **Modification History**.
+
+5. After the modification is committed, you can view the modification history of the configuration file and the comparison details of each modification in **Modification History**.
 
 ## Notes
 - Configuration items should not be added to the configuration file if they are not supported by the ClickHouse kernel, so as to avoid startup failures or other issues. For more information on supported configurations, see [Server Settings](https://clickhouse.tech/docs/en/operations/server-configuration-parameters/settings/).
