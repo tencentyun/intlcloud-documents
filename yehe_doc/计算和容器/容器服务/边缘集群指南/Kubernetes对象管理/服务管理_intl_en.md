@@ -16,4 +16,4 @@ Services support the following types:
 
 ## Directions
 For Service-related operations, see [Service Management](https://intl.cloud.tencent.com/document/product/457/30672).
->Intra-cluster access of edge clusters only supports Kubernetes native access methods. To use VPC instances on the computing resource side, you need to integrate the VPC solutions of your cloud providers.
+>!Intra-cluster access of edge clusters only supports Kubernetes native access methods. To use VPC instances on the computing resource side, you need to integrate the VPC solutions of your cloud providers.

@@ -16,4 +16,4 @@ Service 支持以下类型：
 
 ## 操作步骤
 Service 相关操作请参考 [Service 管理](https://intl.cloud.tencent.com/document/product/457/30672)。
->边缘集群集群内访问仅支持 Kubernetes 原生访问方式，如需使用计算资源侧私有网络，则需要自行集成云厂商私有网络方案。
+>!边缘集群集群内访问仅支持 Kubernetes 原生访问方式，如需使用计算资源侧私有网络，则需要自行集成云厂商私有网络方案。
