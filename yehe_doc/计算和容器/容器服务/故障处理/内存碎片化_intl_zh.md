@@ -9,7 +9,7 @@ mysqld: page allocation failure. order:4, mode:0x10c0d0
 * `mysqld`：为被分配内存的程序。
 * `order`：表示需要分配连续页的数量（2^order），本例中4则表示 2^4 = 16 个连续的页。
 * `mode`：内存分配模式的标识，在内核源码文件 `include/linux/gfp.h` 中定义，通常是多个标识项与运算的结果。不同版本内核有一定区别。例如。在新版内核中 `GFP_KERNEL` 是 `__GFP_RECLAIM | __GFP_IO | __GFP_FS` 的运算结果，而 `__GFP_RECLAIM` 是 `___GFP_DIRECT_RECLAIM|___GFP_KSWAPD_RECLAIM` 的运算结果。
-> 
+> !
 > - 当 order 值为0时，说明系统已经完全没有可用内存。
 > - 当 order 值较大时，说明内存已碎片化，无法分配连续的大页内存。
 
@@ -54,7 +54,7 @@ Node 0, zone   Normal   1163   1101    932    222      0      0      0      0   
 echo 3 > /proc/sys/vm/drop_caches
 ```
 2. 必要时执行以下操作进行内存整理。
->请谨慎执行此步骤，该操作开销较大，会造成业务卡顿。
+>!请谨慎执行此步骤，该操作开销较大，会造成业务卡顿。
 >
 ```bash
 echo 1 > /proc/sys/vm/compact_memory
