@@ -145,14 +145,17 @@ Prometheus 的聚合配置，无论是原始 [Recording rules](https://prometheu
 	- **收敛时间**：等同于 AlertManager 的 [repeat_interval](https://prometheus.io/docs/alerting/latest/configuration/#route) 配置，表示某个告警推送之后多久之后还未恢复就再次推送，即相同告警的推送间隔时长。本文示例配置为1小时。
 >?上述告警配置示例表示节点状态变为 NotReady 之后，5分钟内未恢复即推送告警，如果长时间未恢复，则间隔1小时再次推送告警。
 5. 配置告警渠道，目前支持腾讯云与 WebHook 两类：
-#### 腾讯云告警渠道
+<dx-tabs>
+::: 腾讯云告警渠道
 腾讯云告警渠道集成短信、邮件、微信、电话告警方式，可根据自身需求勾选：
 ![](https://main.qcloudimg.com/raw/b2e482036fa9d494286790efad921ddb.png)
-
-#### WebHook\s告警渠道
+:::
+::: WebHook\s告警渠道
 如要配置其他告警渠道，例如钉钉、Zoom 等，可自行部署相关的 WebHook 后端，并在云原生监控指定 WebHook 的 URL：
 ![](https://main.qcloudimg.com/raw/28d3fbf11e528853927629b0370d9774.png)
- 告警配置完成后，微信推送效果如下图所示：
+:::
+</dx-tabs>
+告警配置完成后，微信推送效果如下图所示：
 
 
 
@@ -241,8 +244,8 @@ grafana-backup restore _OUTPUT_/202012151049.tar.gz
 
 
 云原生监控支持接入自建 Grafana 和 AlertManager 系统：
-
-#### 接入自建\sGrafana
+<dx-tabs>
+::: 接入自建\sGrafana
 云原生监控提供 Prometheus 的 API，如需使用自建的 Grafana 来展示监控，可以将云原生监控的数据作为一个 Prometheus 数据源添加到自建 Grafana，Prometheus API 的地址可在 TKE 控制台云原生监控基本信息中查到。
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧菜单栏中单击 **云原生监控**进入云原生监控页面。
@@ -251,8 +254,10 @@ grafana-backup restore _OUTPUT_/202012151049.tar.gz
  >?确保自建的 Grafana 与云原生监控在同一私有网络 VPC 下或两者网络已打通。
 4. 在 Grafana 中添加 Prometheus API 地址作为 Prometheus 数据源。如下图所示：
 ![](https://main.qcloudimg.com/raw/b6a14e36f3325034e2b84c63f605eaec.png)
-#### 接入自建\sAlertManager
+:::
+::: 接入自建\sAlertManager
 如需实现更复杂的告警需求，或期望使用自建的 AlertManager 来进行统一告警，可以选择让云原生监控的告警接入自建 AlertManager，您只需在 创建监控实例 时，在高级设置中填入自建 AlertManager 的地址，如下图所示：
 ![](https://main.qcloudimg.com/raw/8b5673273cc197e8f9cf141c243b9ea8.png)
-
+:::
+</dx-tabs>
 
