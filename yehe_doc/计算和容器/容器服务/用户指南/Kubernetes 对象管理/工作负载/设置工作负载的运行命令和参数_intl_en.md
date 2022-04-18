@@ -23,6 +23,6 @@ If you enter the run commands and parameters for the container when creating a s
 | [ls] | [/home]| Not set |[/data] |[ls / data] |
 | [ls] | [/home]| [cd] |[/data] |[cd / data] |
 
-> 
+> !
 >- Docker entrypoint corresponds to the run command on the TKE console, and the parameter CMD of Docker run corresponds to the run parameter on the TKE console. If multiple parameters exist, enter them in the parameter field of TKE with each parameter on its own row.
 >- For examples on how to use the [TKE console](https://console.cloud.tencent.com/tke2) to set the running command and parameter for a container, see [Commands and Args](https://intl.cloud.tencent.com/document/product/457/9883#command-.E5.92.8C-args). 
