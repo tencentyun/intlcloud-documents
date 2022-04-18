@@ -10,7 +10,7 @@
 	<tr><td>游戏服务器伸缩下线</td>
 	<td>由于产品逻辑已无法满足游戏行业技术发展，游戏服务器伸缩 GSE 将于2022年6月1日下线，请您在2022年5月31日前完成服务迁移。</td>
 	<td nowrap="nowrap">2021-04-06</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/1055/37774">关于游戏服务器伸缩下线公告<br></a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/1055/46433">关于游戏服务器伸缩下线公告<br></a></td>
 	</tr>
 	</tr>
 </table>
