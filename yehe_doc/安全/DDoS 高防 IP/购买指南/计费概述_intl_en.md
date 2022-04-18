@@ -60,9 +60,7 @@ The basic protection service is billed based on your monthly plan. See the follo
 | 100 Gbps       | 300,000 QPS  | 198,000 USD/year |
 
 >?
->- 调整后 BGP 和三网高防 IP 刊例价一致，其中三网高防 IP 保底防护最高300Gbps。
 >- "Non-BGP" refers to China Mobile/China Union/China Telecom network services. A non-BGP plan includes three Anti-DDoS Advanced instances, one for each of the network services.
->- 对于300Gbps 的保底防护，防护能力为多运营商总防护能力，当来源于单一运营商的攻击流量超过该运营商的防护能力时，可能会出现攻击流量未达到总防护能力就被封堵的情况。
 >- "Outside the Chinese mainland" refers to Tencent Cloud regions outside the Chinese mainland, namely, Hong Kong (China), Taiwan (China), Singapore, Seoul, Tokyo, Virginia, Silicon Valley and Frankfurt.
 
 
