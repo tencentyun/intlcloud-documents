@@ -430,6 +430,7 @@ Replace the IP with the original domain before verifying a certificate.
 #### Demo
 
  - **Take the `NSURLConnection` API as an example:**
+
 ```
 #pragma mark - NSURLConnectionDelegate
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
@@ -486,6 +487,7 @@ Replace the IP with the original domain before verifying a certificate.
 ```
  - **Take the `NSURLSession` API as an example:**
 ```
+
  #pragma mark - NSURLSessionDelegate
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
 
@@ -544,7 +546,9 @@ After importing the Unity project as an Xcode project, open the `Classes/Unity/*
 //const char* WWWDelegateClassName = "UnityWWWConnectionSelfSignedCertDelegate";
 const char* WWWDelegateClassName = "UnityWWWConnectionDelegate";
  ```
+ 
 To:
+
 ```
 const char* WWWDelegateClassName = "UnityWWWConnectionSelfSignedCertDelegate";
 //const char* WWWDelegateClassName = "UnityWWWConnectionDelegate";
@@ -566,6 +570,7 @@ Note that when you use `NSURLProtocol` to intercept a POST request made by `NSUR
 
 For specific examples, see the demo. Below is the sample code:
 Register the `NSURLProtocol` subclass in `SNIViewController.m` of the demo before sending network requests.
+
 ```
 // Register `NSURLProtocol` to intercept requests
 [NSURLProtocol registerClass:[MSDKDnsHttpMessageTools class]];
@@ -620,8 +625,10 @@ self.task = [session dataTaskWithRequest:request];
 // NSURLSessionTask *task = [session dataTaskWithRequest:_request];
 // [task resume];
 ```
+
 #### Notes
 You need to call the following API to set the domains to be or not to be intercepted:
+
 ```
 #pragma mark - In SNI scenarios, call it only once
 /**
@@ -639,6 +646,7 @@ You need to call the following API to set the domains to be or not to be interce
  */
  - (void) WGSetNoHijackDomainArray:(NSArray *)noHijackDomainArray;
 ```
+
 - If you set the list of domains to be intercepted, only HTTPS requests in the list will be intercepted and processed, while other domains will not.
 - If you set the list of domains not to be intercepted, HTTPS requests in the list will not be intercepted and processed.
 

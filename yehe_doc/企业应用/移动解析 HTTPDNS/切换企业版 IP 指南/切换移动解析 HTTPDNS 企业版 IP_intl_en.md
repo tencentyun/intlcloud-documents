@@ -2,8 +2,8 @@
 ## Background
 HTTPDNS is a DNS service provided for mobile applications, mini programs, and PC clients. It sends DNS requests to the DNS server of Tencent Cloud over the HTTP protocol instead of the local DNS of the ISP over the DNS protocol. This helps avoid domain name hijacking and cross-network access problems in different network environments caused by local DNS and eliminate DNS exceptions in mobile internet services.
 >?
-- Because of the upgrade of the technical architecture and the support for new features, the HTTPDNS team has launched HTTPDNS Enterprise Edition `119.29.29.98/99`, and HTTPDNS Free Edition will be gradually disused and eventually stopped **at 00:00 on January 1, 2022**.
-- HTTPDNS **Enterprise Edition with the original IP `119.29.29.29`** will also be gradually scaled in as the server resources expire and will be eventually deactivated. We recommend you [switch to 119.29.29.98/99](https://intl.cloud.tencent.com/document/product/1130/44463) to eliminate any unexpected risks.
+>- Because of the upgrade of the technical architecture and the support for new features, the HTTPDNS team has launched HTTPDNS Enterprise Edition `119.29.29.98/99`, and HTTPDNS Free Edition will be gradually disused and eventually stopped **at 00:00 on January 1, 2022**.
+>- HTTPDNS **Enterprise Edition with the original IP `119.29.29.29`** will also be gradually scaled in as the server resources expire and will be eventually deactivated. We recommend you [switch to 119.29.29.98/99](https://intl.cloud.tencent.com/document/product/1130/44463) to eliminate any unexpected risks.
 
 The HTTPDNS team will provide [service support](https://intl.cloud.tencent.com/support) to assist you in switching to HTTPDNS Enterprise Edition `119.29.29.98/99`. Therefore, to avoid affecting your business, switch the IP as soon as possible.
 
@@ -71,8 +71,8 @@ HTTPDNS `119.29.29.29` provides only the basic DNS service, and the following fe
 >?
 >
 >- Users who migrate to HTTPDNS Enterprise Edition **by 23:59:59 on September 30, 2021** and **by 23:59:59 on October 31, 2021** will be offered subsidies respectively.
-- If you are using HTTPDNS Enterprise Edition but have currently connected to `119.29.29.29`, you only need to switch the access IP to `119.29.29.99` (for HTTPS encryption) or `119.29.29.98` (for AES/DES encryption) with no need to perform any operations in the console. For directions on connection, see [Connecting to HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44462).
-- If you are using the HTTPDNS Enterprise Edition SDK, update it to the latest version and replace the access IP with `119.29.29.99/98`.
+>- If you are using HTTPDNS Enterprise Edition but have currently connected to `119.29.29.29`, you only need to switch the access IP to `119.29.29.99` (for HTTPS encryption) or `119.29.29.98` (for AES/DES encryption) with no need to perform any operations in the console. For directions on connection, see [Connecting to HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44462).
+>- If you are using the HTTPDNS Enterprise Edition SDK, update it to the latest version and replace the access IP with `119.29.29.99/98`.
 
 ### Step 1. Activate HTTPDNS
 For detailed directions, see [Activating HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461).

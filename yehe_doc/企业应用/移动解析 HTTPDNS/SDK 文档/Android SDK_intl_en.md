@@ -96,10 +96,10 @@ MSDKDnsResolver.getInstance().WGSetDnsOpenId("10000");
 ### SDK initialization
 
 >?
-- The service addresses for the HTTP and HTTPS protocols are `119.29.29.98` and `119.29.29.99` respectively (use the `99` IP only when you select an encryption method on your own and the `channel` is `Https`).
-- The new version of the APIs now can be accessed at `119.29.29.99/98`, and the original HTTPDNS service address `119.29.29.29` is for development and debugging purposes only without an SLA guarantee, so it is not recommended for business purposes. Migrate your business to `119.29.29.99/98` as soon as possible.
-- The IP is as provided in [API Description](https://intl.cloud.tencent.com/document/product/1130/44468).
-- When you connect to HTTPDNS through the SDK, if HTTPDNS does not find a DNS query result, the domain will be resolved by the local DNS, and the result provided by the local DNS will be returned.
+>- The service addresses for the HTTP and HTTPS protocols are `119.29.29.98` and `119.29.29.99` respectively (use the `99` IP only when you select an encryption method on your own and the `channel` is `Https`).
+>- The new version of the APIs now can be accessed at `119.29.29.99/98`, and the original HTTPDNS service address `119.29.29.29` is for development and debugging purposes only without an SLA guarantee, so it is not recommended for business purposes. Migrate your business to `119.29.29.99/98` as soon as possible.
+>- The IP is as provided in [API Description](https://intl.cloud.tencent.com/document/product/1130/44468).
+>- When you connect to HTTPDNS through the SDK, if HTTPDNS does not find a DNS query result, the domain will be resolved by the local DNS, and the result provided by the local DNS will be returned.
 
 #### Encryption with DES by default
 ##### Not reporting abnormal DNS queries by default

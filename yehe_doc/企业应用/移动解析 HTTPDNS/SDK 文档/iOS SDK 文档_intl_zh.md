@@ -430,10 +430,10 @@ if (sArray != null && sArray.Length > 1) {
 #### Demo 示例
 
  - **以 NSURLConnection 接口为例：**
+ 
 ```
 #pragma mark - NSURLConnectionDelegate
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
-
 	//创建证书校验策略
 	NSMutableArray *policies = [NSMutableArray array];
 	if (domain) {
@@ -484,7 +484,9 @@ if (sArray != null && sArray.Length > 1) {
 	}
 }
 ```
+
  - **以 NSURLSession 接口为例：**
+
 ```
  #pragma mark - NSURLSessionDelegate
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
@@ -538,13 +540,16 @@ if (sArray != null && sArray.Length > 1) {
 	completionHandler(disposition,credential);
 }
 ```
+
  - **以 Unity 的 WWW 接口为例：**
 将 Unity 工程导为 Xcode 工程后，打开 Classes/Unity/**WWWConnection.mm** 文件，修改下述代码：
+
  ```
 //const char* WWWDelegateClassName = "UnityWWWConnectionSelfSignedCertDelegate";
 const char* WWWDelegateClassName = "UnityWWWConnectionDelegate";
  ```
 调整为：
+
 ```
 const char* WWWDelegateClassName = "UnityWWWConnectionSelfSignedCertDelegate";
 //const char* WWWDelegateClassName = "UnityWWWConnectionDelegate";
@@ -566,6 +571,7 @@ SNI（Server Name Indication）是为了解决一个服务器使用多个域名�
 
 具体示例参见 Demo，部分代码如下：
 在网络请求前注册 NSURLProtocol 子类，在示例的 SNIViewController.m 中。
+
 ```
 // 注册拦截请求的 NSURLProtocol
 [NSURLProtocol registerClass:[MSDKDnsHttpMessageTools class]];
@@ -620,8 +626,10 @@ self.task = [session dataTaskWithRequest:request];
 // NSURLSessionTask *task = [session dataTaskWithRequest:_request];
 // [task resume];
 ```
+
 #### 使用说明
 需调用以下接口设置需要拦截域名或无需拦截的域名：
+
 ```
 #pragma mark - SNI 场景，仅调用一次即可，请勿多次调用
 /**
@@ -639,6 +647,7 @@ self.task = [session dataTaskWithRequest:request];
  */
  - (void) WGSetNoHijackDomainArray:(NSArray *)noHijackDomainArray;
 ```
+
 - 如设置了需要拦截的域名列表，则仅会拦截处理该域名列表中的 HTTPS 请求，其它域名不做处理。
 - 如设置了不需要拦截的域名列表，则不会拦截处理该域名列表中的 HTTPS 请求。
 
