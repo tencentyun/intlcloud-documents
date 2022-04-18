@@ -107,6 +107,7 @@ The use of a one-time reservation is shown below:
 </table>
 
 The use of a repeated reservation is shown below:
+  
 ![](https://qcloudimg.tencent-cloud.cn/raw/2647d27ef32cc19b7bb5737c7d58781b.png)
 
 
