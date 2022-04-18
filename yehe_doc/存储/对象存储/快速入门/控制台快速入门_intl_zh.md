@@ -9,7 +9,7 @@
 
 初次使用对象存储 COS，建议您先了解以下基本概念：
 
-- [存储桶（bucket）](https://intl.cloud.tencent.com/document/product/436/13312)：是对象的载体，可理解为存放对象的“容器”。一个存储桶可容纳无数个对象。
+- [存储桶（Bucket）](https://intl.cloud.tencent.com/document/product/436/13312)：是对象的载体，可理解为存放对象的“容器”。一个存储桶可容纳无数个对象。
 - [对象（Object）](https://intl.cloud.tencent.com/document/product/436/13324)：是对象存储的基本单元，可理解为任何格式类型的数据，例如图片、文档和音视频文件等。
 - [地域（Region）](https://intl.cloud.tencent.com/document/product/436/6224)：是腾讯云托管机房的分布地区，对象存储 COS 的数据存放在这些地域的存储桶中。
 
@@ -18,17 +18,17 @@
 ## 步骤1：注册腾讯云账号
 在使用腾讯云 COS 服务前，您需要先注册一个腾讯云账号。请单击下方按钮开始注册。（如果您已注册，请跳过该步骤。）
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
+<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/en/account/register" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
 
 ## 步骤2：完成实名认证
-账号注册完成后，使用该账号登录 [腾讯云控制台](https://console.cloud.tencent.com/)，开始实名认证。详细操作指引请参见 [实名认证介绍](https://intl.cloud.tencent.com/document/product/378/3629)。（如果您已完成，请跳过该步骤，未进行实名认证的用户无法购买中国境内的对象存储实例。）
+账号注册完成后，使用该账号登录 [腾讯云控制台](https://console.cloud.tencent.com/)，开始实名认证。详细操作指引请参见 [实名认证介绍](https://intl.cloud.tencent.com/document/product/378/3629)。（如果您已完成，请跳过该步骤。）
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:13px;"  hotrep="document.guide.3128.btn2">开始实名认证</a></div>
 
 
 
 ## 步骤3：开通 COS 服务
-在 [腾讯云控制台](https://console.cloud.tencent.com/) 中，选择【云产品】>【对象存储】，进入 COS 控制台，按照界面提示开通 COS 服务。（如果您已开通，请跳过该步骤。）
+在 [腾讯云控制台](https://console.cloud.tencent.com/) 中，选择**云产品 > 对象存储**，进入 COS 控制台，按照界面提示开通 COS 服务。（如果您已开通，请跳过该步骤。）
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:13px;">开通 COS 服务</a></div>
 
@@ -36,26 +36,26 @@
 ## 步骤4：创建存储桶
 我们需要创建一个用于存放对象的存储桶：
 
-1. 在 [对象存储控制台](https://console.cloud.tencent.com/cos5) 左侧导航栏中单击【存储桶列表】，进入存储桶管理页。
-2. 单击【创建存储桶】，输入以下配置信息，其他配置保持默认即可。
+1. 在 [对象存储控制台](https://console.cloud.tencent.com/cos5) 左侧导航栏中单击**存储桶列表**，进入存储桶管理页。
+2. 单击**创建存储桶**，输入以下配置信息，其他配置保持默认即可。
  - 名称：输入存储桶名称。名称设置后不可修改。此处举例输入 examplebucket。
  - 所属地域：存储桶所属地域，选择与您业务最近的一个地区，例如广州地域。
  - 访问权限：存储桶访问权限，此处我们保持默认为“私有读写”。
-3. 单击【确定】，即可创建完成。
+3. 单击**确定**，即可创建完成。
 
 
 ## 步骤5：上传对象
 从本地选择文件上传到存储桶：
 
 1. 单击存储桶名称，进入存储桶列表页。
-2. 选择【上传文件】>【选择文件】，选择需要上传至存储桶的文件，例如文件名为 exampleobjext.txt 的文件。
-3. 单击【上传】，即可将文件 exampleobjext.txt 上传至存储桶。
+2. 选择**上传文件 > 选择文件**，选择需要上传至存储桶的文件，例如文件名为 exampleobjext.txt 的文件。
+3. 单击**上传**，即可将文件 exampleobjext.txt 上传至存储桶。
 
 
 ## 步骤6：下载对象
 将云上数据下载到本地：
-1. 单击文件 exampleobjext.txt 右侧的【详情】，进入对象属性页。
-2. 在【基本信息】配置项中，单击【下载对象】即可下载，或单击【复制临时链接】，将链接粘贴至浏览器地址栏并回车，即可下载该对象。
+1. 单击文件 exampleobjext.txt 右侧的**详情**，进入对象属性页。
+2. 在基本信息配置项中，单击**下载对象**即可下载，或单击**复制临时链接**，将链接粘贴至浏览器地址栏并回车，即可下载该对象。
 
 ## 更多功能
 如需了解控制台的更多功能，例如设置对象访问权限、设置防盗链、设置静态网站等，请参见 [控制台概述](https://intl.cloud.tencent.com/document/product/436/11365)。
@@ -76,7 +76,7 @@
 <td align="left" width="70%">本工具支持用户通过可视化界面，方便地进行数据的上传、下载、生成访问链接等操作。</td>
 </tr>
 <tr>
-<td align="left" width="30%"><a href="https://cloud.tencent.com/doc/product/436/10976">COSCMD 工具</a></td>
+<td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/10976">COSCMD 工具</a></td>
 <td align="left" width="70%">本工具支持用户使用简单的命令行指令实现对对象的批量上传、下载、删除等操作。</td>
 </tr>
 <tr>
@@ -93,4 +93,4 @@
 
 ## 遇到问题？
 
-非常抱歉您在使用时遇到问题，您可以通过  [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
+非常抱歉您在使用时遇到问题，您可以 [联系我们](https://intl.cloud.tencent.com/contact-sales)。

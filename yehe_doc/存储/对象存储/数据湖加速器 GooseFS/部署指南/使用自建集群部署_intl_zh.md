@@ -8,15 +8,15 @@
 
 #### Master 节点
 
-- **CPU**：工作主频至少 1GHz 以上，考虑到 Master 需要处理大量，建议生产环境使用多核架构处理器。
-- **物理内存**：至少 1 GB 以上，生产环境建议至少使用 8GB 以上的物理内存配置。
-- **磁盘**：至少 20 GB 以上，建议生产环境配备高性能的 NVME SSD 盘作为元数据缓存盘（RocksDB 模式）。
+- **CPU**：工作主频1GHz以上，考虑到 Master 需要处理大量，建议生产环境使用多核架构处理器。
+- **物理内存**：1GB以上，生产环境建议使用8GB以上的物理内存配置。
+- **磁盘**：20GB以上，建议生产环境配备高性能的 NVME SSD 盘作为元数据缓存盘（RocksDB 模式）。
 
 #### Worker 节点
 
-- **CPU**：工作主频至少 1GHz 以上，考虑到 Worker 节点也需要处理大量的并发请求，同样建议生产环境使用多核架构处理器；
-- **物理内存**：至少 2GB 以上，生产环境建议根据性能需求选用合适的物理内存配置。例如，生产环境中需要将大量的数据块缓存到 Worker 节点的内存中或是采用 MEM + SSD/HDD 的混合存储时，需要根据实际可能会缓存到内存中的数据量来配备物理内存。无论使用何种缓存模式，生产环境都建议 Worker 节点至少配备 16GB 及以上的物理内存；
-- **磁盘**：至少 20GB 以上 SSD/HDD 盘，建议根据实际生产环境中所需要预热缓存的数据量大小来估计每个 Worker 节点所需配置的磁盘空间。另外，为了更好的性能体验，建议配备采用 NVME 接口的 SSD 盘作为 Worker 节点的数据盘。
+- **CPU**：工作主频1GHz以上，考虑到 Worker 节点也需要处理大量的并发请求，同样建议生产环境使用多核架构处理器。
+- **物理内存**：2GB以上，生产环境建议根据性能需求选用合适的物理内存配置。例如，生产环境中需要将大量的数据块缓存到 Worker 节点的内存中或是采用 MEM + SSD/HDD 的混合存储时，需要根据实际可能会缓存到内存中的数据量来配备物理内存。无论使用何种缓存模式，生产环境都建议 Worker 节点配备16GB及以上的物理内存。
+- **磁盘**：20GB以上 SSD/HDD 盘，建议根据实际生产环境中所需要预热缓存的数据量大小来估计每个 Worker 节点所需配置的磁盘空间。另外，为了更好的性能体验，建议配备采用 NVME 接口的 SSD 盘作为 Worker 节点的数据盘。
 
 ### 软件环境
 
@@ -44,14 +44,14 @@
 
 ### 部署
 
-1. 首先下载 GooseFS 的二进制分发包。
+1. 首先 [下载 GooseFS 的二进制分发包](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz)。
 2. 分发包下载后解压，进入到 GooseFS 的目录中，执行如下操作：
- - 通过拷贝 conf/goosefs-site.properties.template 创建 conf/goosefs-site.properties 配置文件：
+   - 通过拷贝 conf/goosefs-site.properties.template 创建 /etc/goosefs/conf/goosefs-site.properties 配置文件：
 ```bash
- $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+ $ cp conf/goosefs-site.properties.template /etc/goosefs/conf/goosefs-site.properties
 ```
- - 在 conf/goosefs-site.properties 配置文件中设置 `goosefs.master.hostname` 为 `localhost`。
- - 在 conf/goosefs-site.properties 配置文件中设置 `goosefs.master.mount.table.root.ufs` 为本地文件系统中的目录，例如：/tmp 或是 /data/goosefs 等。
+   - 在 /etc/goosefs/conf/goosefs-site.properties 配置文件中设置 `goosefs.master.hostname` 为 `localhost`。
+   - 在 /etc/goosefs/conf/goosefs-site.properties 配置文件中设置 `goosefs.master.mount.table.root.ufs` 为本地文件系统中的目录，例如：/tmp 或是 /data/goosefs 等。
 
 建议配置 localhost 的 SSH 免密登录，否则格式化和启动等操作，需要输入 localhost 的登录密码。
 
@@ -116,12 +116,12 @@ GooseFS 在 `scripts` 目录下提供了批量配置 SSH 免密登录以及批�
 
 Standalone 架构采用的是单 Master 节点，多 Worker 节点的集群部署架构。具体可参考如下步骤部署运行：
 
-1. 下载 GooseFS 的二进制分发包。
+1. [下载 GooseFS 的二进制分发包](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz)。
 2. 使用 `tar zxvf goosefs-x.x.x-bin.tar.gz` 命令解压到安装路径后。可参见批量部署工具的介绍配置和执行集群的批量部署，也可以继续参考下文详细地手动部署流程。
 
 （1）从 `conf` 目录下拷贝 `template` 文件创建配置文件：
 ```bash
-$ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+$ cp conf/goosefs-site.properties.template /etc/goosefs/conf/goosefs-site.properties
 ```
 （2）在 `goosefs-site.properties` 配置文件中指定如下配置：
 ```properties
@@ -150,7 +150,7 @@ cvm2.compute-2.myqcloud.com
 cvm3.compute-3.myqcloud.com
 ```
 
-待所有配置都设置完毕后，执行 `./bin/goosefs copyDir conf/` 就可以将配置同步到所有节点。
+待所有配置都设置完毕后，执行 `./bin/goosefs copyDir /etc/goosefs/conf/` 就可以将配置同步到所有节点。
 
 最后执行 `./bin/goosefs-start.sh all` 就可以启动 GooseFS 集群。
 
@@ -166,7 +166,7 @@ cvm3.compute-3.myqcloud.com
 首先依据配置模版创建配置文件：
 
 ```bash
-$ ./bin/goosefs cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+$ cp conf/goosefs-site.properties.template /etc/goosefs/conf/goosefs-site.properties
 ```
 
 ```properties
@@ -185,7 +185,7 @@ goosefs.master.embedded.journal.address=<EMBBEDDED_JOURNAL_ADDRESS>
 在完成所有配置以后，同样使用如下命令同步所有配置：
 
 ```bash
-$ ./bin/goosefs copyDir conf/
+$ ./bin/goosefs copyDir /etc/goosefs/conf/
 ```
 
 最后，完成格式化以后，即可启动 GooseFS 集群：
@@ -225,7 +225,7 @@ goosefs.master.journal.type=UFS
 goosefs.master.journal.folder=<JOURNAL_URI>
 ```
 
-然后使用 `./bin/goosefs copyDir conf/` 将配置同步分发到集群中的所有节点。最后启动集群 `./bin/goosefs-start.sh all` 即可。
+然后使用 `./bin/goosefs copyDir /etc/goosefs/conf/` 将配置同步分发到集群中的所有节点。最后启动集群 `./bin/goosefs-start.sh all` 即可。
 
 
 ## GooseFS 的进程列表

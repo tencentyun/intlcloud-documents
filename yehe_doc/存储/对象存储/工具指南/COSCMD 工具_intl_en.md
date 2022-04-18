@@ -1,7 +1,5 @@
 
-
-
-## Feature Description
+## Overview
 
 COSCMD enables you to use simple command lines to batch-operate objects, such as upload, download, and delete.
 
@@ -172,8 +170,8 @@ anonymous = False
 
 >?
 >- `schema` can be set to `http` or `https` (default).
->- `anonymous` can be set to `True` or `False`. If set to `True`, the anonymous mode is used (the signature is empty).
->- For more information about the parameter description, please run the `coscmd config -h` command.
+>- `anonymous` can be set to `True` or `False`. If it is set to `True`, the anonymous mode is used (the signature is empty).
+>- For more information about the parameter description, run the `coscmd config -h` command.
 >
 
 ### Generating a configuration file via the `config` command
@@ -236,7 +234,7 @@ coscmd -b <BucketName-APPID> -r <region> <action> ...
 ```plaintext
 coscmd -b examplebucket-1250000000 -r ap-beijing createbucket
 ```
-- Sample: uploading "picture.jpg" from D drive to the `examplebucket` bucket
+- Sample: uploading “picture.jpg” from D drive to the `examplebucket` bucket
 ```plaintext
 coscmd -b examplebucket-1250000000 -r ap-beijing upload D:/picture.jpg /
 ```
@@ -284,7 +282,7 @@ You can prefix `-s` or `--silence` in each command so that no message will be ou
 ```plaintext
 coscmd -s upload <localpath> <cospath>
 ```
-- Sample
+- Sample:
 ```plaintext
 coscmd -s upload D:/picture.jpg /
 ```
@@ -293,7 +291,7 @@ coscmd -s upload D:/picture.jpg /
 
 ### Creating a bucket
 
->?Please specify `-b <BucketName-APPID>` and `-r <Region>` when you run the `coscmd createbucket` command; otherwise, an error may be reported. This is because if the bucket and region are not specified, this command takes effect for the bucket that is used to configure COSCMD.
+>?Specify `-b <BucketName-APPID>` and `-r <Region>` when you run the `coscmd createbucket` command; otherwise, an error may be reported. This is because if the bucket and region are not specified, this command takes effect for the bucket that is used to configure COSCMD.
 >
 
 - Command syntax
@@ -336,11 +334,11 @@ coscmd upload <localpath> <cospath>
 ```
 >! Replace "localpath" and "cospath" enclosed in "<>" with the path of the local file to upload and the COS storage path, respectively.
 >
-- Sample: uploading "picture.jpg" in D drive to the "doc" folder of COS
+- Sample: uploading “picture.jpg” in D drive to the "doc" folder of COS
 ```plaintext
 coscmd upload D:/picture.jpg doc/
 ```
-- Sample: uploading "picture.jpg" in the "doc" folder in D drive to the "doc" folder of COS
+- Sample: uploading “picture.jpg” in the "doc" folder in D drive to the "doc" folder of COS
 ```plaintext
 coscmd upload D:/doc/picture.jpg doc/
 ```
@@ -350,7 +348,7 @@ coscmd upload D:/picture.jpg doc/ -H "{'x-cos-storage-class':'Archive'}"
 ```
 >! When you set the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
 >
-- Sample: setting meta attributes and uploading a file to the "doc" folder of COS
+- Sample: setting meta attributes and uploading a file to the “doc” folder of COS
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-meta-example':'example'}"
 ```
@@ -469,11 +467,11 @@ coscmd download <cospath> <localpath>
 ```plaintext
 coscmd download doc/picture.jpg D:/picture.jpg
 ```
-- Sample: downloading the "doc/picture.jpg" file in COS to "D:/picture.jpg"
+- Sample: downloading the "doc/picture.jpg" file in COS to drive D
 ```plaintext
 coscmd download doc/picture.jpg D:/
 ```
-- Sample: downloading a specified version of "picture.jpg" to D drive
+- Sample: downloading a specified version of "picture.jpg" to drive D
 ```plaintext
 coscmd download picture.jpg --versionId MTg0NDUxMzc2OTM4NTExNTg7Tjg D:/
 ```
@@ -514,7 +512,7 @@ coscmd download -rs --delete / D:/examplefolder
 ```plaintext
 coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```
->! When downloading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
+>!When downloading folders, you can ignore certain types of files by using the `--ignore` parameter, or filter certain types of files by using `--include`. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
 >
 - Sample: filtering .txt and .doc files
 ```plaintext
@@ -645,7 +643,8 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 > 
 
 ### Moving a file or folder
-
+>! In a `move` command, `<sourcepath>` and `<cospath>` cannot be the same. Otherwise, files will be deleted. The reason is that the `move` command copies files first and then deletes them, and the files in the `<sourcepath>` path are eventually deleted.
+>
 #### Command syntax for moving a file
 ```plaintext
 coscmd move <sourcepath> <cospath> 
@@ -744,7 +743,7 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 
 >?
 > - Replace "cospath" enclosed in "<>" with the COS path of the file list to query.
-> - Use `-d <day>` to set the effective period of the temporary copy. Default value: `7`.
+> - Use `-d <day>` to set the validity period of the temporary copy. Default value: `7`.
 > - Use `-t <tier>` to specify the restoration mode. Enumerated values: `Expedited`, `Standard` (default), and `Bulk`.
 >
 
