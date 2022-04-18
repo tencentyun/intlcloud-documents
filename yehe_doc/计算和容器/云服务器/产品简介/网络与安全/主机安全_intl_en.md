@@ -11,14 +11,14 @@ For more information on the features of CWP Basic and Pro editions and their dif
 
 
 ## Billing Mode
-CWP Basic does not charge service fees.
+CWP Basic is free of charge. 
 
 
 ## Installing CWP Basic
 You can install CWP Basic in one of the following methods based on the actual conditions:
 <dx-tabs>
 ::: Automatic installation during CVM instance creation
-When creating a CVM instance, you can choose to activate CWP Basic by default. On the CVM instance purchase page, select **Enable for Free** for **Security Service** to automatically install CWP as shown below:
+When creating a CVM instance, you can choose to activate CWP Basic by default. On the CVM instance purchase page, select **Enable for Free** for **Security Reinforcement** to automatically install CWP as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0fdf0fddce3b59f80bdd337c1cf74e86.png)
 :::
 ::: Manual installation for existing CVM instance
@@ -31,6 +31,6 @@ You can use one of the following methods to install CWP for an existing instance
 After successful installation, you can view the security status of the CVM instance on the [overview page in the CVM console](https://console.cloud.tencent.com/cvm/overview) or in the [CWP console](https://console.cloud.tencent.com/cwp).
 
 
-## References
+## See Also
 - [Features in Different Editions](https://intl.cloud.tencent.com/document/product/296/2222)
 - [Security Overview](https://intl.cloud.tencent.com/document/product/296/35234)
