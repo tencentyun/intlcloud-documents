@@ -95,9 +95,6 @@ This table shows the details of the use of different volumes. **When you are cre
         <td>Existing PVC</td><td>Choose a PVC as needed.</td>
     </tr>
     <tr>
-        <td>Tencent Cloud CBS</td><td>Select a cloud disk as needed.</td>
-    </tr>
-    <tr>
         <td>ConfigMap</td><td rowspan="2"><li>Select a ConfigMap: select a ConfigMap as needed.</li> <li>Options: **All** and **Specific keys**.</li><li>Items: if you select **Specific keys**, you can mount it to a specific path by adding items. For example, if the mount point is <code>/data/config</code> and the sub-path is <code>dev</code>, the data will be stored under <code>/data/config/dev</code>.</li></td>
     </tr>
     <tr>
