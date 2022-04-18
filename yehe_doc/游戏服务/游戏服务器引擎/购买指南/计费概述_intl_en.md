@@ -1,6 +1,9 @@
+>!Due to the service upgrade, Tencent Cloud plans to discontinue the service of Game Server Elastic-scaling (GSE) by Jun 1st, 2022 (UTC+8). Please migrate all your resources before May 31, 2022 (UTC+8).
+
 GSE has become a paid service starting from January 23, 2021. If you have any questions, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 GSE fees consist of the server fees and network traffic fees. Billing is pay-as-you-go by default upon service activation. Details are as follows.
+
 ## Server Fees
 
 GSE server fees are billed per second on an hourly billing cycle at prices determined by model, region, CPU, and memory.
@@ -622,5 +625,6 @@ GSE network fees are billed by traffic on an hourly billing cycle.
       <td>0.081</td>
    </tr>
 </table>
+
 ### Service suspension/release policy
 Your GSE service will be suspended 24 hours after your account falls into arrears. Your GSE resources will be terminated and repossessed 168 hours (7 days) after the service is suspended. To avoid service interruptions, please make sure that your Tencent Cloud account balance is always sufficient.
