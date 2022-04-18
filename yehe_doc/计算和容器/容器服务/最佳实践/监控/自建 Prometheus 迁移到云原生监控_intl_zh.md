@@ -1,6 +1,6 @@
 ## 操作场景
 
-腾讯云容器服务 云原生监控 兼容 Prometheus 与 Grafana 的 API，同时也兼容主流 prometheus-operator 的 CRD 用法，为云原生监控提供了极大的灵活性与扩展性，结合 Prometheus 开源生态工具可以解锁更多高级用法。
+腾讯云容器服务 [云原生监控](https://intl.cloud.tencent.com/document/product/457/38824) 兼容 Prometheus 与 Grafana 的 API，同时也兼容主流 prometheus-operator 的 CRD 用法，为云原生监控提供了极大的灵活性与扩展性，结合 Prometheus 开源生态工具可以解锁更多高级用法。
 本文将介绍如何通过辅助脚本和迁移工具，快速将自建 Prometheus 迁移到云原生监控。
 
 
@@ -71,13 +71,13 @@ monitoring_servicemonitors.monitoring.coreos.com_node-exporter.yaml
 若自建 Prometheus 系统直接使用 Prometheus 原生配置文件，只需在 TKE 控制台进行简单的几步操作，即可将其转换为云原生监控的 RawJob，使其兼容 Prometheus 原生配置文件的 `scrape_configs` 配置项。
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
-2. 在左侧菜单栏中单击 【云原生监控】进入云原生监控页面。
+2. 在左侧菜单栏中单击 **云原生监控**进入云原生监控页面。
 3. 单击需要配置的云原生监控 ID/名称，进入基本信息页面。
-4. 选择【关联集群】页签，在对应的集群右侧【操作】列项下单击【数据采集配置】。
+4. 选择**关联集群**页签，在对应的集群右侧**操作**列项下单击**数据采集配置**。
 ![](https://main.qcloudimg.com/raw/9ae5c13778513f783654c3c74b0b8119.png)
-5. 选择【RawJob】>【新增】，打开添加 RawJobs 窗口。将原生 Prometheus 配置文件中的 Job 配置复制粘贴到此配置窗口中。
+5. 选择**RawJob**>**新增**，打开添加 RawJobs 窗口。将原生 Prometheus 配置文件中的 Job 配置复制粘贴到此配置窗口中。
 ![](https://main.qcloudimg.com/raw/05761646fb8a39d7f751bcd435e9c20a.png)
-6. 可以将所有需要导入的 Job 数组都粘贴到云原生监控，单击【确定】后会自动拆分成多个 RawJob，名称为每个 Job 的 `job_name` 字段。
+6. 可以将所有需要导入的 Job 数组都粘贴到云原生监控，单击**确定**后会自动拆分成多个 RawJob，名称为每个 Job 的 `job_name` 字段。
 
 
 
@@ -110,9 +110,9 @@ $ kubectl -n prom-fnc7bvu9 edit prometheus tke-cls-hha93bp9
 Prometheus 的聚合配置，无论是原始 [Recording rules](https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/) 静态配置或是 [PrometheusRule](https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/api.md#prometheusrule) 动态配置，每条规则的格式都相同。
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
-2. 在左侧菜单栏中单击 【云原生监控】进入云原生监控页面。
+2. 在左侧菜单栏中单击 **云原生监控**进入云原生监控页面。
 3. 单击需要配置的云原生监控 ID/名称，进入基本信息页面。
-4. 选择【聚合规则】>【新建聚合规则】，打开新建聚合规则窗口。使用 PrometheusRule 格式将每条规则粘贴到 groups 数组中。如下图所示：
+4. 选择**聚合规则**>**新建聚合规则**，打开新建聚合规则窗口。使用 PrometheusRule 格式将每条规则粘贴到 groups 数组中。如下图所示：
 ![](https://main.qcloudimg.com/raw/2b02b2d98eced78e856d320cf5e30a60.png)
 >?若自建 Prometheus 本身使用 PrometheusRule 定义的聚合规则，仍建议将其按照上述步骤进行迁移。若直接使用 YAML 方式在集群中创建 PrometheusRule 资源，云原生监控暂时无法将其显示到控制台。
 
@@ -133,9 +133,9 @@ Prometheus 的聚合配置，无论是原始 [Recording rules](https://prometheu
 ```
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
-2. 在左侧菜单栏中单击 【云原生监控】进入云原生监控页面。
+2. 在左侧菜单栏中单击 **云原生监控**进入云原生监控页面。
 3. 单击需要配置的云原生监控 ID/名称，进入基本信息页面。
-4. 选择 【告警配置】>【新建告警策略】，配置告警策略：
+4. 选择 **告警配置**>**新建告警策略**，配置告警策略：
 ![](https://main.qcloudimg.com/raw/2fd94870ef802b5a36f3eb46e81b383b.png)
 主要参数信息如下：
 	-  **PromQL**：等同于 [原始配置](#prometheus-native) 的 expr 字段，为告警的核心配置，用于指示告警触发条件的 PromQL 表达式。
@@ -166,7 +166,7 @@ pip3 install grafana-backup
 ```
  >?推荐使用 Python3，使用 Python2 可能存在兼容性问题。
 2. 创建 API Keys。
-	1. 分别打开自建 Grafana 与云原生监控 Grafana 的配置面板，选择【API Keys】>【New API Key】，如下图所示：
+	1. 分别打开自建 Grafana 与云原生监控 Grafana 的配置面板，选择**API Keys**>**New API Key**，如下图所示：
 	![](https://main.qcloudimg.com/raw/b4800bdefcb3b644cbe327247c28eff9.png)
 	2. 在 Add API Key 窗口中，创建一个 Role 为 Admin 的 APIKey，如下图所示：
 	![](https://main.qcloudimg.com/raw/3f9c4e6f40374c47cf9ae0c7b982c1fa.png)
@@ -228,7 +228,7 @@ EOF
 ``` bash
 grafana-backup restore _OUTPUT_/202012151049.tar.gz
 ```
-7. 在 Grafana 配置面板选择 【Dashboard settings】>【Variables】>【New】， 新建 cluster 字段。建议为所有面板都加上 cluster 的过滤字段，云原生监控支持多集群，将会给每个集群的数据打上 cluster 标签，用集群 ID 来区分不同集群。如下图所示：
+7. 在 Grafana 配置面板选择 **Dashboard settings**>**Variables**>**New**， 新建 cluster 字段。建议为所有面板都加上 cluster 的过滤字段，云原生监控支持多集群，将会给每个集群的数据打上 cluster 标签，用集群 ID 来区分不同集群。如下图所示：
 ![](https://main.qcloudimg.com/raw/4fc513c387eac66d7e9dbb6d0ee9ad1f.png)
 >?label_values 中填入当前面板任意涉及到的一个指标名（示例中为 node_uname_info）。
 8. 修改所有面板中的 PromQL 查询语句，加入 `cluster=~"$cluster"` 过滤条件。如下图所示：
@@ -245,7 +245,7 @@ grafana-backup restore _OUTPUT_/202012151049.tar.gz
 #### 接入自建\sGrafana
 云原生监控提供 Prometheus 的 API，如需使用自建的 Grafana 来展示监控，可以将云原生监控的数据作为一个 Prometheus 数据源添加到自建 Grafana，Prometheus API 的地址可在 TKE 控制台云原生监控基本信息中查到。
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
-2. 在左侧菜单栏中单击 【云原生监控】进入云原生监控页面。
+2. 在左侧菜单栏中单击 **云原生监控**进入云原生监控页面。
 3. 单击需要配置的云原生监控 ID/名称，进入基本信息页面，获取 Prometheus API 地址。
 ![](https://main.qcloudimg.com/raw/c8e1d55ca0bc4af0fcf5354196a03330.png)
  >?确保自建的 Grafana 与云原生监控在同一私有网络 VPC 下或两者网络已打通。
