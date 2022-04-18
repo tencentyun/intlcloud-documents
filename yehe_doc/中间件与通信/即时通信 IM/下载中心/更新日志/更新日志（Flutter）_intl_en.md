@@ -1,3 +1,33 @@
+## IM Flutter SDK 3.9.1 @2022.3.24
+- Upgraded the underlying library to v6.1.2155.
+
+## IM Flutter SDK 3.9.0 @2022.3.22
+- Modified GroupListener.
+
+## IM Flutter SDK 3.8.9 @2022.3.18
+- Fixed the registration result listening issue.
+
+## IM Flutter SDK 3.8.4 @2022.3.14
+- Updated APIs.
+
+## IM Flutter SDK 3.8.3 @2022.3.1
+- Switched the token encoding format based on the environment.
+
+## IM Flutter SDK 3.8.2 @2022.2.21
+- Updated group member parameter constraints.
+
+## IM Flutter SDK 3.8.0 @2022.2.17
+- Upgraded the underlying API dependencies.
+
+## IM Flutter SDK 3.7.8 @2022.2.15
+- Fixed the exception caused by force unwrapping.
+
+## IM Flutter SDK 3.7.7 @2022.2.10
+- Fixed the Swift code warning.
+- Rewrote Swift's force unwrapping code.
+- Added the `id` field to the `message` instance returned by the `sendMessage` API.
+
+
 ## IM Flutter SDK 3.7.5 @2022.01.23
 - Upgraded the underlying library to v6.0.1975.
 - Supported the TPNS token for offline push configuration.
@@ -34,7 +64,7 @@
 ## IM Flutter SDK 3.6.4  @2021.12.17
 - Fixed the bug for Android where no message was returned for an async registration event.
 - Fixed the issue where removing a general listening event triggered an error.
-- Added the uuid of a message being sent in its progress event.
+- Added the UUID of a message being sent in its progress event.
 
 ## IM Flutter SDK 3.6.3 @2021.12.9
 - Optimized the `addFriend` API: Changed `addType` from int to FriendTypeEnum.
@@ -140,14 +170,14 @@ Added support for web.
 - Added the feature of parsing a custom field into `string` before returning it.
 - Optimized the settings of custom fields of the profile.
 - Updated the `getHistoryMessageList` API for Android.
- - Fixed the issue for Android where passing in parameters for the `checkFriend` API triggered an error.
+- Fixed the issue for Android where passing in parameters for the `checkFriend` API triggered an error.
 
 ## IM Flutter SDK 1.0.5-1.0.14 @2021.02.26
 - Fixed the issue where passing in parameters for the `deleteFriendApplication` API triggered an error.
 - Updated the Native SDK to v5.1.132.
 - Updated the Native SDK to v5.1.137.
 - Fixed the bug that occurred when passing in parameters for the signaling invitation API.
- - Fixed the issue where the signaling API did not return an ID.
+- Fixed the issue where the signaling API did not return an ID.
 - Modified the SDK compression configuration.
 - Fixed signaling callback bugs.
 - Modified the return data of custom messages.
