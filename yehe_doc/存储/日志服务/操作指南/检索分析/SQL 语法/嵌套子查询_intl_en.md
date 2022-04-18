@@ -27,7 +27,7 @@ Set the time range for search and analysis to 1 hour and execute the following s
 - `SELECT compare(PV, 86400) FROM` is level-2 statistical analysis: perform secondary statistical analysis based on the PV result of the level-1 statistical analysis. Use the [compare](https://intl.cloud.tencent.com/document/product/614/43575) function to obtain the website PV of the day before.
 
 **Search and analysis result**
-![image-20211108045216150](https://qcloudimg.tencent-cloud.cn/raw/70a9de0c7c2c4c0a345a935b55c1873b.png)
+
 
 - 1860: indicates the PVs of the current 1 hour.
 - 1656: indicates the PVs of the same time period the day before.
@@ -52,4 +52,3 @@ FROM (
 `SELECT compare[1] AS today, compare[2] AS yesterday, compare[3] AS ratio FROM` is to get the value of a specified position in the result of the `compare` function based on the array subscript.
 
 **Search and analysis result**
-![image-20211108045502511](https://qcloudimg.tencent-cloud.cn/raw/e8dd894470cb045dc5cc5e6a86f3abd3.png)
