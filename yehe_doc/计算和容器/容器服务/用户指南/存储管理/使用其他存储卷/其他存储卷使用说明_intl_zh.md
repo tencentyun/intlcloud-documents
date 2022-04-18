@@ -20,7 +20,7 @@
 	</tr>
 	<tr>
 	<td>使用已有 PersistentVolumeClaim</td>
-	<td>使用已有 PersistentVolumeClaim 声明工作负载的存储，自动分配或新建 PersistentVolume 挂载到对应的 Pod 下。主要适用于 StatefulSet 创建的有状态应用。更多详情请参见 <a href="https://intl.cloud.tencent.com/document/product/457/30679">PV 和 PVC 管理</a>。</td>
+	<td>使用已有 PersistentVolumeClaim 声明工作负载的存储，自动分配或新建 PersistentVolume 挂载到对应的 Pod 下。主要适用于 StatefulSet 创建的有状态应用。</td>
 	</tr>
 	<tr>
 	<td>使用 ConfigMap</td>
