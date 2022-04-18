@@ -7,7 +7,7 @@ Dedicated Reservation is in the beta test phase now. To try it out, please conta
 - The idle resources in the reservation will incur an idle fee charged at [the price of pay-as-you-go instances](https://intl.cloud.tencent.com/document/product/213/2180). 
 
 ## Billing Description
-Resource idle fee = [Price of pay-as-you-go instance](see documentation https://intl.cloud.tencent.com/document/product/213/2176) × 0.3
+Resource idle fee = [Price of pay-as-you-go instance](https://intl.cloud.tencent.com/document/product/213/2176) × 0.3
 <dx-alert infotype="explain" title="">
 For the specific price, the "Idle Fee" on the page of creating a reservation shall prevail.
 </dx-alert>
