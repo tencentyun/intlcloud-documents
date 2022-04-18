@@ -15,7 +15,7 @@
 
 
 ### 配置好日志规则后，日志在哪查看？
-1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou)，选择左侧【检索分析】。
+1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou)，选择左侧**检索分析**。
 2. 进入“检索分析”页面，选择地域、需要查看日志的日志集和日志主题，开启全文索引，即可检索分析日志。如下图所示：
 ![](https://main.qcloudimg.com/raw/9f55654545252904f81d5e6c2060f045.png)
 
