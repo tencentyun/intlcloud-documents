@@ -1,3 +1,4 @@
+
 ## 概述
 移动解析 HTTPDNS 的 HTTP 请求方式查询可以通过 `http://119.29.29.98/d? + {请求参数}` 接口使用移动解析 HTTPDNS 服务。
 
@@ -8,7 +9,7 @@
 
 ## 前期准备
 使用请求接口 `http://119.29.29.98/d? + {请求参数}` 时，需使用以下配置信息。请前往移动解析 HTTPDNS 管理控制台 [开发配置页](https://console.cloud.tencent.com/httpdns/configure) 获取相关配置信息：
-![](https://main.qcloudimg.com/raw/ee9bab9e81c1afc51028f467cfc843a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af3d4d22f0e6224ff80beb1f0920cf43.png)
 - **授权 ID**：使⽤移动解析 HTTPDNS 服务中，开发配置的唯⼀标识。调⽤移动解析 HTTPDNS 的 HTTP 解析接口 `http://119.29.29.28` 时中传⼊的授权 ID 参数。
 - **DES 加密密钥**：调⽤移动解析 HTTPDNS 的 HTTP 解析接口 `http://119.29.29.98` 并使用 DES 加密方式时，对 DNS 请求数据进⾏加密时的加密密钥。
 - **AES 加密密钥**：调⽤移动解析 HTTPDNS 的 HTTP 解析接口 `http://119.29.29.98` 并使用 AES 加密方式时，对 DNS 请求数据进⾏加密时的加密密钥。

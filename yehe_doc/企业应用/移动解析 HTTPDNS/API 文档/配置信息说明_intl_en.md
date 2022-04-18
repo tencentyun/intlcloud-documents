@@ -1,3 +1,4 @@
+
 ## Overview
 This document describes how to get the configuration information in the HTTPDNS console and what information items mean. You need to get such configuration information before you can connect to HTTPDNS.
 
@@ -7,7 +8,8 @@ You have activated HTTPDNS as instructed in [Activating HTTPDNS](https://intl.cl
 
 ## Directions
 Log in to the [**Development Configuration** page](https://console.cloud.tencent.com/httpdns/configure) in the HTTPDNS console to query your configuration information.
-![](https://main.qcloudimg.com/raw/2e94098c055893505a4ff4e04c0a790f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/79eee38b6975ee2a6c23bd86a558488e.png)
+
 - **Authorization ID**: It is the unique ID of a development configuration used in HTTPDNS, i.e., the authorization ID parameter passed in when you call the HTTP query API `http://119.29.29.28` of HTTPDNS.
 - **DES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://119.29.29.98` of HTTPDNS with DES encryption used.
 - **AES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://119.29.29.98` of HTTPDNS with AES encryption used.

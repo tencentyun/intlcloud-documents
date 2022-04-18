@@ -1,3 +1,4 @@
+
 ## 概述
 在接入移动解析 HTTPDNS 过程中，您需在移动解析 HTTPDNS 控制台获取对应配置信息后才可正常接入，本文将对如何获取配置信息以及配置信息含义进行说明。
 
@@ -7,7 +8,7 @@
 
 ## 操作指南
 登录移动解析 HTTPDNS 控制台 [开发配置页](https://console.cloud.tencent.com/httpdns/configure)，即可查询到您的配置信息。如下图所示：
-![](https://main.qcloudimg.com/raw/2e94098c055893505a4ff4e04c0a790f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/79eee38b6975ee2a6c23bd86a558488e.png)
 - **授权 ID**：使⽤移动解析 HTTPDNS 服务中，开发配置的唯⼀标识。调⽤移动解析 HTTPDNS 的 HTTP 解析接口 `http://119.29.29.28` 时中传⼊的授权 ID 参数。
 - **DES 加密密钥**：调⽤移动解析 HTTPDNS 的 HTTP 解析接口 `http://119.29.29.98` 并使用 DES 加密方式时，对 DNS 请求数据进⾏加密时的加密密钥。
 - **AES 加密密钥**：调⽤移动解析 HTTPDNS 的 HTTP 解析接口 `http://119.29.29.98` 并使用 AES 加密方式时，对 DNS 请求数据进⾏加密时的加密密钥。

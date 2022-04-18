@@ -107,7 +107,7 @@ The total pay-as-you-go fees would be 0.04 CNY/10,000 queries \* (1 million + 1.
 
 ## Deduction Order
 ### Usage deduction order
-![](https://main.qcloudimg.com/raw/3d966a5efa6c2e374d0fb4e9c23d1cc6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e40def7c45fdd68c5475a9a9d5d98753.png)
 
 ### Deduction order example
 If you host your domain in DNSPod and purchase an HTTPDNS traffic package of 10 million DNS queries, you will have a free tier of 6 million queries/month and 10 million queries in the traffic package. When you use HTTPDNS, the free tier will be deducted first; after the free tier is used up, the traffic package will be deducted; after the traffic package is used up, HTTPDNS will automatically switch to the pay-as-you-go billing mode.

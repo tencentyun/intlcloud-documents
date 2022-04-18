@@ -1,3 +1,4 @@
+
 ## Overview
 When making a query with an HTTP request method, you can call the `http://119.29.29.98/d? + {request parameters}` API to use HTTPDNS.
 
@@ -8,7 +9,7 @@ When making a query with an HTTP request method, you can call the `http://119.29
 
 ## Preparations
 When using the request API `http://119.29.29.98/d? + {request parameters}`, you need to use the following configuration information, which can be obtained on the [**Development Configuration** page](https://console.cloud.tencent.com/httpdns/configure) in the HTTPDNS console:
-![](https://main.qcloudimg.com/raw/ee9bab9e81c1afc51028f467cfc843a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/27f9685efa32ca311247323fe5593cfb.png)
 - **Authorization ID**: It is the unique ID of a development configuration used in HTTPDNS, i.e., the authorization ID parameter passed in when you call the HTTP query API `http://119.29.29.28` of HTTPDNS.
 - **DES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://119.29.29.98` of HTTPDNS with DES encryption used.
 - **AES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://119.29.29.98` of HTTPDNS with AES encryption used.

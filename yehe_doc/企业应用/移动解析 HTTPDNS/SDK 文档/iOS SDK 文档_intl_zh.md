@@ -1,3 +1,4 @@
+
 ## 概述
 移动解析 HTTPDNS 的主要功能是为了有效避免由于运营商传统 LocalDNS 解析导致的无法访问最佳接入点的方案。原理为使用 HTTP 加密协议替代传统的 DNS 协议，整个过程不使用域名，极大减少劫持的可能性。
 
@@ -6,7 +7,7 @@
 2. 开通移动解析 HTTPDNS 服务后，您需在移动解析 HTTPDNS 控制台添加解析域名后才可正常使用。具体操作请参见 [添加域名](https://intl.cloud.tencent.com/document/product/1130/44465)。
 4. 已在移动解析 HTTPDNS 控制台 [开通 SDK](https://intl.cloud.tencent.com/document/product/1130/44474)。
 5. 开通服务后，移动解析 HTTPDNS 将为您分配授权 ID、AES 和 DES 加密密钥及 HTTPS Token 等配置信息。使用 iOS SDK 需求获取的配置如下：
-![](https://main.qcloudimg.com/raw/0a4481963d31b07e20a3136021fb4743.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5ee8acd231036cf1b74d8fc818fae974.png)
  - **授权 ID**：使⽤移动解析 HTTPDNS 服务中，开发配置的唯⼀标识。SDK中 `dnsId` 参数，用于域名解析鉴权。
  - **DES 加密密钥**：SDK 中 `dnsKey` 参数，加密方式为 DES 时传入此项。
  - **AES 加密密钥**：SDK 中 `dnsKey` 参数，加密方式为 AES 时传入此项。
@@ -417,8 +418,8 @@ if (sArray != null && sArray.Length > 1) {
 ```
 3. 将 unity 工程打包为 xcode 工程后，引入所需依赖库。
 4. 将 HTTPDNSUnityDemo 下的 MSDKDnsUnityManager.h 及 MSDKDnsUnityManager.mm 文件导入到工程中，注意以下地方需要与 Unity 中对应的 GameObject 名称及回调函数名称一致。如下图所示：
-![](https://main.qcloudimg.com/raw/f9a10fb9306f73cfd99c6dde705fc956.jpg)
-![](https://main.qcloudimg.com/raw/5e34886a01bb50d17df72be53db03984.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/55f062b4b8cd5094545381c74a9cff96.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b1ee348ff9780bbe90fdb80d65d614d.png)
 
 ### HTTPS 场景下（非 SNI）使用 HTTPDNS 解析结果
 

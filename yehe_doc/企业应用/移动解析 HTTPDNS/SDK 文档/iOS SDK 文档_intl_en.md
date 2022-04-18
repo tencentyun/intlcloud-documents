@@ -1,3 +1,4 @@
+
 ## Overview
 HTTPDNS helps avoid the failure to access the optimal access point caused by the traditional local DNS of ISPs. It works by replacing the traditional DNS protocol with the HTTP encryption protocol, and domains are not used throughout the process, which greatly reduces the possibility of being hijacked.
 
@@ -6,7 +7,7 @@ HTTPDNS helps avoid the failure to access the optimal access point caused by the
 2. After activating HTTPDNS, you need to add a domain to be resolved in the HTTPDNS console as instructed in [Adding a Domain](https://intl.cloud.tencent.com/document/product/1130/44465) before you can use it.
 4. You need to [activate the SDK](https://intl.cloud.tencent.com/document/product/1130/44474) in the HTTPDNS console.
 5. After activating the service, you will be assigned the configuration information such as authorization ID, AES and DES encryption keys, and HTTPS token. To use the SDK for iOS, you need to get the following configuration:
-![](https://main.qcloudimg.com/raw/0a4481963d31b07e20a3136021fb4743.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5ee8acd231036cf1b74d8fc818fae974.png)
  - **Authorization ID**: It is the unique ID of a development configuration used in HTTPDNS, i.e., the `dnsId` parameter in the SDK used for DNS authentication.
  - **DES encryption key**: The `dnsKey` parameter in the SDK, which you need to pass in when using the DES encryption method.
  - **AES encryption key**: The `dnsKey` parameter in the SDK, which you need to pass in when using the AES encryption method.
@@ -417,8 +418,8 @@ if (sArray != null && sArray.Length > 1) {
 ```
 3. After packaging the Unity project into an Xcode project, import the required dependent libraries.
 4. Import the `MSDKDnsUnityManager.h` and `MSDKDnsUnityManager.mm` files in `HTTPDNSUnityDemo` into the project. Note that the following parts need to be the same as the corresponding `GameObject` name and callback function name in Unity as shown below:
-![](https://main.qcloudimg.com/raw/f9a10fb9306f73cfd99c6dde705fc956.jpg)
-![](https://main.qcloudimg.com/raw/5e34886a01bb50d17df72be53db03984.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/55f062b4b8cd5094545381c74a9cff96.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b1ee348ff9780bbe90fdb80d65d614d.png)
 
 ### Using HTTPDNS query result in HTTPS scenario (non-SNI)
 

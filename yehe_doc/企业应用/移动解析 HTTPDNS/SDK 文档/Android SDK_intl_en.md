@@ -1,3 +1,4 @@
+
 ## Overview
 As a general solution to DNS optimization in the mobile internet era, HTTPDNS mainly addresses the following problems:
 - Local DNS hijacking/failures
@@ -15,7 +16,7 @@ You can get the HTTPDNS SDK for Android by [clicking here](https://github.com/te
 2. After activating HTTPDNS, you need to add a domain to be resolved in the HTTPDNS console as instructed in [Adding a Domain](https://intl.cloud.tencent.com/document/product/1130/44465) before you can use it.
 3. You need to [activate the SDK](https://intl.cloud.tencent.com/document/product/1130/44474) in the HTTPDNS console.
 4. After activating the service, you will be assigned the configuration information such as authorization ID, AES and DES encryption keys, and HTTPS token. To use the SDK for Android, you need to get the following configuration:
-![](https://main.qcloudimg.com/raw/9de378622bacb7ce9f67bcf77e4a602f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/655e1305f69f3687b49a327e388de4b3.png)
  - **Authorization ID**: It is the unique ID of a development configuration used in HTTPDNS, i.e., the `dnsId` parameter in the SDK used for DNS authentication.
  - **DES encryption key**: The `dnsKey` parameter in the SDK, which you need to pass in when using the DES encryption method.
  - **AES encryption key**: The `dnsKey` parameter in the SDK, which you need to pass in when using the AES encryption method.

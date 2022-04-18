@@ -1,7 +1,8 @@
+
 ## Client Connection Process
 When connecting to HTTPDNS, you need to modify the DNS mechanism on the mobile client as instructed below:
 
-![](https://main.qcloudimg.com/raw/14701588dd29f0af9e0a793753e99b32.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/84d4c7c94bc8b8d5b613643875344b33.png)
 
 
 

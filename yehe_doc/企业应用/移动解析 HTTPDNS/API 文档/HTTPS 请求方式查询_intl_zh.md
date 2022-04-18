@@ -8,7 +8,7 @@
 
 ## 前期准备
 使用请求接口 `https://119.29.29.99/d? + {请求参数}` 时，需使用以下配置信息。请先前往移动解析 HTTPDNS 管理控制台 [开发配置页](https://console.cloud.tencent.com/httpdns/configure) 获取相关配置信息：
-![](https://main.qcloudimg.com/raw/588d4d57fd15c3e801bc0ca036862f2f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/27f9685efa32ca311247323fe5593cfb.png)
 **HTTPS 加密 Token**：调⽤移动解析 HTTPDNS 的 HTTPS 解析接口 `https://119.29.29.99` ，对 DNS 请求数据进⾏鉴权的 Token 信息。
 
 ## 接口描述

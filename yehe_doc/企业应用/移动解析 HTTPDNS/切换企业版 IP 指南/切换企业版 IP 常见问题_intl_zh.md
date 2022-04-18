@@ -9,7 +9,7 @@
 2. 利用控制台提供的 DES/AES 密钥对域名和 IP 参数进行加密处理，例如： 
 ```
  http://119.29.29.98/d?dn=cloud.tencent.com&id=xxx&ip=1.2.3.4 
-```                
+```
 其中的 `cloud.tencent.com` 和 `1.2.3.4` 为域名和 IP，DES 加密后的信息，授权 ID xxx 不需要进行加密。 
 3. 利用控制台提供的 DES/AES 密钥对解析结果进行解密处理。
 

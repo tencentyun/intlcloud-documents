@@ -1,3 +1,4 @@
+
 ## Overview
 This document describes how to activate HTTPDNS.
 
@@ -5,9 +6,9 @@ This document describes how to activate HTTPDNS.
 ### Activating HTTPDNS
 1. Log in to the [HTTPDNS console](https://console.cloud.tencent.com/httpdns).
 2. On the **Overview** page, click **Activate**.
-![](https://main.qcloudimg.com/raw/c533bcb55d13c452e4dd3bcf82cc0255.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/808b250b9e86751ad274419d98bc1401.png)
 3. In the **Activate** pop-up window, indicate your agreement to HTTPDNS Terms of Service and click **Confirm**.
-![](https://main.qcloudimg.com/raw/8e142d1898c77958f007dff3502e472b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/365f59bcdcd7bbd1d1d7ac3dc7e71a4e.png)
 
 >? After activating the service, you will be assigned the authorization ID and key information, which can be viewed in the [HTTPDNS console](https://console.cloud.tencent.com/httpdns).
 
@@ -16,9 +17,9 @@ This document describes how to activate HTTPDNS.
 >
 1. Log in to the [HTTPDNS console](https://console.cloud.tencent.com/httpdns).
 2. On the **Overview** page, click **Activate**.
-![](https://main.qcloudimg.com/raw/c533bcb55d13c452e4dd3bcf82cc0255.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0559dd69ad23dd1f600e306d10513ad3.png)
 3. In the **Activate** pop-up window, click **bind it**.
-![](https://main.qcloudimg.com/raw/91b09a7c60a5ae94a75474b5fb5e20ec.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/61dffef1f1e208cd37cbfa792eb5ee25.png)
 3. In the **Bind ID to activate** pop-up window, enter your authorization ID and key information.
-![](https://main.qcloudimg.com/raw/ec62743ee4e6d5c5a7a6e7106d04fd2a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1fb1eb094a8d53220e42ec3bea3ae732.png)
 4. Click **Verify**.

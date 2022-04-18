@@ -8,7 +8,7 @@
 
 ## Preparations
 When using the request API `https://119.29.29.99/d? + {request parameters}`, you need to use the following configuration information, which can be obtained on the [**Development Configuration** page](https://console.cloud.tencent.com/httpdns/configure) in the HTTPDNS console:
-![](https://main.qcloudimg.com/raw/588d4d57fd15c3e801bc0ca036862f2f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/af3d4d22f0e6224ff80beb1f0920cf43.png)
 **HTTPS encryption token**: The token used to authenticate the DNS request data when you call the HTTPS DNS API `https://119.29.29.99` of HTTPDNS.
 
 ## API Description

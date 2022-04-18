@@ -1,3 +1,4 @@
+
 ## 概述
 总的来说，移动解析 HTTPDNS 作为移动互联网时代 DNS 优化的一个通用解决方案，主要解决了以下几类问题：
 - LocalDNS 劫持/故障
@@ -15,7 +16,7 @@
 2. 开通移动解析 HTTPDNS 服务后，您需在移动解析 HTTPDNS 控制台添加解析域名后才可正常使用。具体操作请参见 [添加域名](https://intl.cloud.tencent.com/document/product/1130/44465)。
 3. 已在移动解析 HTTPDNS 控制台 [开通 SDK](https://intl.cloud.tencent.com/document/product/1130/44474)。
 4. 开通服务后，移动解析 HTTPDNS 将为您分配授权 ID、AES 和 DES 加密密钥及 HTTPS Token 等配置信息。使用 Android SDK 需求获取的配置如下：
-![](https://main.qcloudimg.com/raw/9de378622bacb7ce9f67bcf77e4a602f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/655e1305f69f3687b49a327e388de4b3.png)
  - **授权 ID**：使⽤移动解析 HTTPDNS 服务中，开发配置的唯⼀标识。SDK中 `dnsId` 参数，用于域名解析鉴权。
  - **DES 加密密钥**：SDK中 `dnsKey` 参数，加密方式为 DES 时传入此项。
  - **AES 加密密钥**：SDK中 `dnsKey` 参数，加密方式为 AES 时传入此项。

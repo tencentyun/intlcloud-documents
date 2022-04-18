@@ -9,7 +9,7 @@
 2. Encrypt the domain and IP parameters with the DES/AES key provided in the console, such as: 
 ```
  http://119.29.29.98/d?dn=cloud.tencent.com&id=xxx&ip=1.2.3.4 
-```                
+```
 `cloud.tencent.com` and `1.2.3.4` are the domain and IP and need to be encrypted, while the authorization ID `xxx` doesn't. 
 3. Decrypt the DNS query result with the DES/AES key provided in the console.
 
