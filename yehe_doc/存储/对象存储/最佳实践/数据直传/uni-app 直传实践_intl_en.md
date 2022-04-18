@@ -163,7 +163,7 @@ The created app is a Vue project.
 The execution result is as shown below:
 
  - Direct upload effect:
-![uni-app direct upload effect](https://qcloudimg.tencent-cloud.cn/raw/01fd87f664cff606f9dfbad7783a06f8.jpg)
+![uni-app direct upload effect](https://qcloudimg.tencent-cloud.cn/raw/ef40cb5ea3ce5a0586dd1a70d6b2d4ad.jpg)
 
 ## Demo Code Address
 
