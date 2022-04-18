@@ -17,9 +17,9 @@ All interactive computations, explanatory text writing, mathematical formulas, i
 5. It allows you to use LaTex to write code comments containing mathematical notations.
 
 ## Installing Jupyter
-Enter the EMR [purchase page](https://intl.cloud.tencent.com/product/emr).
+Enter the EMR [purchase page](https://buy.cloud.tencent.com/emr).
 - Select `EMR-V2.3.0` as the product version.
-- Select **tensorflowonspark 1.4.4** in the **Optional Component** list, and `Jupyter` will be automatically installed in the `/usr/local/server/jupyter` directory. Jupyter will not start any service. If you have not installed TensorFlowOnSpark, the default installation path will be `/usr/local/server/apps/jupyter`.
+- Select **tensorflowonspark 1.4.4** in the **Optional Component** list, and `Jupyter` will be automatically installed in the `/usr/local/service/jupyter` directory. Jupyter will not start any service. If you have not installed TensorFlowOnSpark, the default installation path will be `/usr/local/service/apps/jupyter`.
 
 ## Using Jupyter
 ### Initializing Jupyter configuration
