@@ -24,7 +24,7 @@ The `GROUP BY` syntax supports grouping by column name, alias, or serial number,
 ```
 * | SELECT status, count(*) AS pv GROUP BY status
 ```
-![image-20210718231331787](https://main.qcloudimg.com/raw/d0b7922c03cf0937b4d611deccdf0ce9.png)
+
 - Calculate PV by the time granularity of 1 minute:
 ```
 * | 
@@ -42,7 +42,7 @@ limit
   10
 ```
 The `\_\_TIMESTAMP\_\_` field is the reserved field in CLS and indicates the time column. **dt** is the alias of `date_trunc('minute', cast(\_\_TIMESTAMP\_\_ as timestamp))`. For more information on the date_trunc() function, see [Time Truncation Function](https://intl.cloud.tencent.com/document/product/614/41989).
-![image-20210718230110351](https://main.qcloudimg.com/raw/b4e1afcc9b64191e76600d190fd61922.png)
+
 >?
 > - `limit 10` indicates up to 10 rows of results are obtained. If the `LIMIT` syntax is not used, CLS obtains 100 rows of results by default.
 > - If you enable the statistics feature for any field during index configuration, CLS will automatically enable the statistics feature for the `\_\_TIMESTAMP\_\_` field.
@@ -65,5 +65,5 @@ group by
 order by 
   dt
 ```
-![image-20210719173252866](https://main.qcloudimg.com/raw/b1bf9e31f1aa826e83af2e94083ef202.png)
+
 
