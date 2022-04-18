@@ -1,4 +1,4 @@
-New billing rules for Tencent Cloud Anti-DDoS Pro are officially applied on **March 24, 2022**.
+Tencent Cloud Anti-DDoS Pro has adopted new billing rules from **March 24, 2022**.
 ## Billing Mode
 
 The new Anti-DDoS Pro service guarantees an all-out protection capability. Integrating the local cleansing capability, the all-out protection aims to spare no effort to successfully defend against each DDoS attack. In addition, the all-out protection will be enhanced along with the advance of Tencent Cloud network capabilities, and for which no extra upgrade costs are required.
