@@ -143,15 +143,17 @@ Main parameters are described as follows:
 	- **Convergence Time**: indicates an alarm will be pushed again when the alarm is not restored after the alarm condition is met for how long, that is, the push interval between the same alarms. It is equivalent to the [repeat_interval](https://prometheus.io/docs/alerting/latest/configuration/#route) configuration of AlertManager. The configuration in the following sample is 1 hour.
 >?The above alarm configuration example shows that after the node status changes to NotReady, the alarm will be pushed if it is not restored within 5 minutes. If it has not restored for a long time, the alarm will be pushed again at an interval of 1 hour.
 5. Configure the alarm channel. Currently, only Tencent Cloud and WebHook are available.
-
-#### Tencent Cloud alarm channel
+<dx-tabs>
+::: Tencent Cloud alarm channel
 The alarm channels of Tencent Cloud support SMS, Email, WeChat and Mobile. You can select as needed.
 ![](https://main.qcloudimg.com/raw/b2e482036fa9d494286790efad921ddb.png)
-
-#### WebHook alarm channel
+:::
+::: WebHook alarm channel
 If you need to configure other alarm channels, such as DingTalk, Zoom, you can deploy the relevant WebHook backend by yourself, and specify the URL of the WebHook in the cloud native monitoring.
 ![](https://main.qcloudimg.com/raw/28d3fbf11e528853927629b0370d9774.png)
- The WeChat push effect is shown as follows:
+:::
+</dx-tabs>
+The WeChat push effect is shown as follows:
 
 
 
@@ -242,8 +244,8 @@ grafana-backup restore _OUTPUT_/202012151049.tar.gz
 
 
 Cloud native monitoring supports accessing self-built Grafana and AlertManager systems.
-
-#### Accessing self-built Grafana
+<dx-tabs>
+::: Accessing self-built Grafana
 Cloud native monitoring provides Prometheus API. If you need to use self-built Grafana to display monitoring, you can add cloud native monitoring data as a Prometheus data source to self-built Grafana. You can find the Prometheus API address in the basic information of cloud native monitoring instance on TKE console.
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
@@ -253,8 +255,10 @@ Cloud native monitoring provides Prometheus API. If you need to use self-built G
  >?Ensure that the self-built Grafana and cloud native monitoring are in the same VPC or their networks have connected.
 4. Add the Prometheus API address in Grafana as the Prometheus data source, as shown below:
 ![](https://main.qcloudimg.com/raw/b6a14e36f3325034e2b84c63f605eaec.png)
-#### Accessing self-built AlertManager
+:::
+::: Accessing self-built AlertManager
 If you have more complex alarm requirements or want to use the self-built AlertManager for unified alarms, you can access the cloud-native monitoring alarms to the self-built AlertManager. You only need to enter the address of the self-built AlertManager in the advanced settings when [creating a monitoring instance](https://intl .cloud.tencent.com/document/product/457/38824), as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/8b5673273cc197e8f9cf141c243b9ea8.png)
-
+:::
+</dx-tabs>
 
