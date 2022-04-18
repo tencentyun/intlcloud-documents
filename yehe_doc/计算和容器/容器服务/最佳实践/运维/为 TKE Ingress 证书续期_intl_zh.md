@@ -13,7 +13,7 @@
 
 ### 查看引用旧证书的 Ingress 
 1. 登录 [SSL 证书控制台](https://console.cloud.tencent.com/ssl)，选择旧证书右侧的**关联资源**即可查看引用此证书的负载均衡器。
-2. 点击负载均衡器的 ID 跳转到【负载均衡】详情页面。如果是 TKE Ingress 的负载均衡器，在标签栏会出现 `tke-clusterId` 和 `tke-lb-ingress-uuid` 的标签，分别表示集群 ID 和 Ingress 资源的 UID。
+2. 点击负载均衡器的 ID 跳转到**负载均衡**详情页面。如果是 TKE Ingress 的负载均衡器，在标签栏会出现 `tke-clusterId` 和 `tke-lb-ingress-uuid` 的标签，分别表示集群 ID 和 Ingress 资源的 UID。
 3. 在负载均衡器的“基本信息”页面，点击标签行右侧的编辑按钮，即可进入“编辑标签”页面。
 4. 使用 Kubectl 可以查询集群 ID 对应集群的 Ingress，过滤 uid 为 `tke-lb-ingress.uuid` 对应值的 Ingress 资源。参考代码示例如下：
 ```
