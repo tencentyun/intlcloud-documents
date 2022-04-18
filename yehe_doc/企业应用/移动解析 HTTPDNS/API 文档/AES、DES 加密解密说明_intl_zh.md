@@ -1,4 +1,4 @@
-## 操作场景
+﻿## 操作场景
 使用 DES、AES 加密算法可以对请求参数进行加密，并对其响应数据解密，防止明文请求在传输过程中被恶意篡改。本文将指导您如何使用 DES、AES 加密算法。
 
 >? 使用 HTTPS 请求方式查询，传输的数据会因为 TLS 通道而被加密保护，因此不需要主动对传入的数据额外加密。
@@ -25,10 +25,10 @@
 >? 使用 DES 进行加密与解密，密码长度为8字节，分组加密模式为 `ECB`，Padding 算法是 `PKCS5Padding` 。
 >
 加密后数据使用 `Hex（Base16）` 编码，将二进制数据转换为可见十六进制字符标识，`Hex` 编码后的数据长度将会加倍。具体流程如下图所示：
-![](https://main.qcloudimg.com/raw/325fd677d99012440bdd12cb1dbed180.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e6a82a00c98cc6ac15862bfca214ad32.png)
 
 解密响应数据，先使用 `Hex` 解码为二进制数据，再使用 DES 算法解密为明文数据。具体流程如下图所示：
-![](https://main.qcloudimg.com/raw/6eff04fd43aba6643408cb1f89ebbcce.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5210e5a220e55e0ecc9d54817c78f746.png)
 
 例如：您的域名为 `www.dnspod.cn`、加密密钥为：`dnspodpass`。流程如下：
 1. 在 [HTTPDNS 控制台](https://console.cloud.tencent.com/httpdns/domain) 添加域名。
@@ -44,9 +44,9 @@
 >?使用 AES 进行加密与解密，密钥长度为 16 个字符，分组加密模式为 `CBC`，Padding 算法是 `PKCS7`。
 >
 CBC 模式要求使用随机化 `IV` 作为初始加密与解密输入，因此该 `IV` 也会被带入到请求和响应中。加密后的数据，连同 `IV` 一起使用 `Hex` 编码，转换为可见十六进制标识。具体流程如下图所示：
-![](https://main.qcloudimg.com/raw/15f106152b9294a6115900d7c95db63e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/40c662defb24b83cb2f0565cb9e8e37c.png)
 解密时，使用 `Hex` 解码为二进制数据，前16字节为 `IV` 值，`IV` 后面为待使用 AES 算法解密的数据。使用 AES 算法解密后即为明文数据。具体流程如下图所示：
-![](https://main.qcloudimg.com/raw/af3b12e5945a0336ca85ca02d3005a5a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/da8d8f54eec6140d2262e7e37cad62e8.png)
 
 
 
