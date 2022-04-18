@@ -11,18 +11,18 @@ In the past, big data access based on COS is mainly implemented based on the Had
 ## Preparations
 
 1. Create a COS bucket and enable metadata acceleration for it.
-![Enabling metadata acceleration](https://qcloudimg.tencent-cloud.cn/raw/148ce1336e35c53d3f7ef4cd95e2a35c.png)
+
 2. After the bucket is created, go to the **File List** page of the bucket. You can upload or download files in the console.
-![](https://qcloudimg.tencent-cloud.cn/raw/bc79bd567aa0c59aa1c2ad9090470247.png)
+
 3. Choose **Performance Configuration** > **Metadata Acceleration** in the left sidebar, and you can see that metadata acceleration is enabled. If this is the first time you create a bucket that **requires metadata acceleration**, perform the corresponding authorization operations as instructed. After you click **Authorize**, HDFS access is enabled by default, and you can view the information of the default bucket mount point.
-![](https://qcloudimg.tencent-cloud.cn/raw/8911a046375d13102a5d7faf8084f931.png)
+
 >?If the system indicates that the corresponding HDFS file system is not found, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
 4. After HDFS access is enabled, you need to configure VPC access permission. On the HDFS permission configuration tab page, click the button for adding permission configuration. In the VPC name column, select the address of the VPC where the computing cluster resides. In the node IP column, enter the IP or IP range to be opened in the VPC IP range. Set the access type to read/write or read-only. Then click **Save**.
-![](https://qcloudimg.tencent-cloud.cn/raw/b1708a946fae9c4722e1c809770ee26b.png)
+
 >? The HDFS permission configuration is different from the native COS permission system. If you use HDFS to access a COS bucket, you are advised to configure HDFS permission to authorize machines in a specified VPC to access the COS bucket to achieve the same permission experience as that of the native HDFS.
 5. By default, the HDFS protocol uses the native POSIX ACL mode for authentication. If you want to use Ranger authentication, you can select the Ranger authentication mode under HDFS authentication mode and configure Ranger addresses.
-![](https://qcloudimg.tencent-cloud.cn/raw/c73328e1b15dba214d75a07fe3cdbc36.png)
+
 >?For how to configure the Ranger service and use the Ranger service to access COS via HDFS, see [here](https://intl.cloud.tencent.com/document/product/1106/41973).
 >
 6. After creating the environment, you need to configure `core-site.xml` for the computing cluster. For more information, see [here](https://intl.cloud.tencent.com/document/product/1106/41965). If you are using Tencent Cloud EMR, you can use the default EMR configuration directly without extra configuration.
@@ -32,7 +32,6 @@ In the past, big data access based on COS is mainly implemented based on the Had
 8. After environment configuration is completed, you can check whether the HDFS file system is mounted successfully in the Hadoop command-line interface (CLI).
 ![](https://qcloudimg.tencent-cloud.cn/raw/90264cdfe35753b95d48db5ab6675629.png)
 9. You can log in to the [COS console](https://console.cloud.tencent.com/cos) to check whether the files are directories on the bucket file list are consistent.
-![Checking the file list](https://qcloudimg.tencent-cloud.cn/raw/120bcf98091204f99e7aa868beadb217.png)
 
 ## Accessing COS via HDFS
 
