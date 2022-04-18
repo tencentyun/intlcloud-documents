@@ -1,3 +1,33 @@
+## March 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
+<tr>
+<td>Released TDSQL-C for MySQL performance test reports</td>
+<td>TDSQL-C for MySQL performance test reports are released. The tests compare TDSQL-C for MySQL and TencentDB for MySQL in write, read, and read-write scenarios. Test results show that TDSQL-C for MySQL performs better.</td>
+<td>2022-03-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/46223" target="_blank">Performance Overview</a></td></tr>
+</table>
+
+## February 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
+<tr>
+<td>Updated the kernel minor version of TDSQL-C for MySQL 5.7</td>
+<td><li>2.0.15: Supported extended table space, and added new JSON functions: JSON_MERGE_PRESERVE, JSON_MERGE_PATCH, JSON_PRETTY, JSON_STORAGE_SIZE, JSON_ARRAYAGG, and JSON_OBJECTAGG. <br><li>2.0.16: Optimized `undo space truncate`, improved the speed of `undo truncate` on high-spec instances, and optimized the performance of large-scale queries on read-only instances.</td>
+<td>2022-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44587" target="_blank">Kernel Version Release Notes</a></td></tr>
+</table>
+
+## January 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
+<td>Supported read-only instance expansion in TDSQL-C for MySQL 8.0</td>
+<td>After the kernel version of TDSQL-C for MySQL 8.0 is upgraded to 3.1.2, it supports read-only instance expansion, which significantly improves the read performance scalability of database clusters.</td>
+<td>2022-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44587" target="_blank">Kernel Version Release Notes</a></td></tr>
+</table>
+
+
 ## November 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
