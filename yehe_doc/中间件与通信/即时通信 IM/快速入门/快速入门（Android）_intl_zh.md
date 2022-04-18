@@ -5,6 +5,7 @@
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
 >?如果您已有应用，请记录其 SDKAppID 并 [获取密钥信息](#step2)。
 >同一个腾讯云帐号，最多可创建300个即时通信 IM 应用。若已有300个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
+>
 2. 单击**创建新应用**，在**创建应用**对话框中输入您的应用名称，单击**确定**。
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
 3. 创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间、标签以及到期时间。请记录 SDKAppID 信息。
@@ -36,13 +37,13 @@
 >正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 [](id:step4)
-
 ### 步骤4：编译运行
 用 Android Studio 导入工程直接编译运行即可。
 更多详情可参见 [步骤3](#step3) 克隆的 Demo 工程中对应目录下的`README.md`文件。
+>!Demo 默认集成了音视频通话功能，由于该功能依赖的音视频 SDK 暂不支持模拟器，请使用真机调试或者运行 Demo。
 ## 进阶功能
 - [UI 界面库](https://intl.cloud.tencent.com/document/product/1047/34547)
-- [开启视频通话](https://intl.cloud.tencent.com/document/product/1047/34286)
+- [开启视频通话](https://intl.cloud.tencent.com/document/product/1047/34287)
 
 ## 相关文档
 - [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)

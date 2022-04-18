@@ -1,5 +1,5 @@
 ## 1. IM SDK Error Codes
->?For web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
+>?For web SDK error codes, see [here](https://web.sdk.qcloud.com/im/doc/en/module-ERROR_CODE.html). 
 
 ### Common error codes
 
@@ -117,19 +117,20 @@
 
 ## 2. Server Error Codes
 
-### Access layer error codes during SSO
+### Access layer error codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| -302 | The number of SSO connections exceeds the limit allowed. The server refused to provide services. |
-| -10001 | D2 expired. D2 is an internal credential generated based on the UserSig. The validity period of D2 is less than or equal to that of the UserSig.<br>Call the TIMManager.getInstance().login API again to generate a new D2. |
-| -10003 | A2 expired. A2 is an internal credential generated based on the UserSig. The validity period of A2 is less than or equal to that of the UserSig.<br>Call the `TIMManager.getInstance().login` API again to generate a new A2. |
-| -10004 | A2 failed to pass authentication or was filtered by a security policy when handling downstream packets.<br>Call the `TIMManager.getInstance().login` API again to generate a new A2. |
-| -10005 | The D2Key used for encryption cannot be empty. |
-| -10006 | The uin in D2 does not match the uin in the SSO packet header. |
+| -302 | The number of server connections exceeds the limit. The server refused to provide services. |
+| -10001 | Key expired. A key is an internal credential generated based on the UserSig. The validity period of a key is less than or equal to that of the UserSig. Call the `TIMManager.getInstance().login` API again to generate a new key. |
+| -10003 | Ticket expired. A ticket is an internal credential generated based on the UserSig. The validity period of a ticket is less than or equal to that of the UserSig. Call the `TIMManager.getInstance().login` API again to generate a new ticket. |
+| -10004 | Credential failed to pass authentication or was filtered by a security policy when handling downstream packets. Call the `TIMManager.getInstance().login` API again to generate a new credential. |
+| -10005 | The key cannot be empty.                                       |
+| -10006 | The account in `Key` does not match the account in the request packet header.                     |
 | -10007 | Verification code delivery timed out. |
-| -10008 | IMEI and A2 must be contained. |
-| -10106 | SSO decryption with D2key failed too many times. Instruct the device to reset and refresh D2. |
+| -10008 | The key and ticket are required.                                    |
+|-10009 | Cookie mismatch. |
+| -10106 | Decryption with the key failed too many times. Instruct the device to call the `TIMManager.getInstance().login` API to generate a new key. |
 | -10108 | Overdue prepayment. |
 | -10109 | The format of the request packet is incorrect. |
 | -10110 | The SDKAppID is blocklisted. |
@@ -175,8 +176,10 @@
 | 60017 | The request is disabled. |
 | 60018 | Too many requests. Try again later. |
 | 60019 | Too many requests. Try again later. |
-| 80001 | The text is filtered out due to security policies. Check whether the text contains sensitive words. |
+| 60020 | Your Pro Edition standard billing plan has expired and been disabled. To repurchase the standard billing plan, log in to [Instant Messaging Purchase Page](https://buy.cloud.tencent.com/avc). The new standard billing plan will take effect 5 minutes later. |
+| 60021  | The source IP of the RESTful API call is invalid. |
 | 80002 | The outgoing message packet exceeds the length limit of 8 KB. Reduce the packet size and try again. |
+| 80003  | The message was not sent because the callback failed or timed out before the one-to-one or group message was sent. Configure the [policy for handling callback timeouts before event occurrence](https://intl.cloud.tencent.com/document/product/1047/34354) in the console. |
 
 ### Account error codes
 
@@ -199,10 +202,11 @@
 | 70202  | Server timeout. Try again later. |
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether the required fields are all set and whether the parameter settings meet the protocol requirements. |
-| 70403 | Request failed. You need the app admin permission to perform this action. |
-| 70398 | The number of accounts exceeds the limit allowed. To create more than 100 accounts, upgrade your app to the Pro Edition. For specific steps, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/36021). |
+| 70403 | Request failed. App admin permissions are required to perform this operation. |
+| 70398 | The number of accounts exceeds the limit. To create more than 100 accounts, upgrade your app to the Pro Edition. For specific steps, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/36021). |
 | 70500 | Internal server error. Try again later. |
 | 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is of the Pro Edition and therefore cannot be deleted. |
+| 72000  | Your app is now using the Trial Edition, and the free daily active users (DAU) quota was exceeded. To lift the restriction, upgrade your app to the Pro Edition or Flagship Edition. For detailed directions, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/36021).      |
 
 ### Profile error codes
 
@@ -238,7 +242,7 @@
 | 30011 | The maximum number of friend lists has been reached. |
 | 30012 | The maximum number of pending friend requests has been reached. |
 | 30013 | The maximum number of blocklisted users has been reached. |
-| 30014 | The other party has reached the maximum number friends. |
+| 30014 | The other party has reached the maximum number of friends. |
 | 30515 | This user cannot be added as a friend because this user is in your blocklist. |
 | 30516 | The other party has set the friend verification mode to reject all new friend requests. |
 | 30525 | This user cannot be added as a friend because you are in this user's blocklist. |
@@ -336,9 +340,9 @@
 | 10010 | The group does not exist or has been deleted. |
 | 10011 | Failed to parse the JSON packet. Check whether the packet complies with JSON specifications. |
 | 10012 | Invalid UserID. Check whether the UserID that initiated the operation is entered correctly. |
-| 10013 | The invited user is already a member of the group. |
+| 10013  | The user is already a member of the group.                               |
 | 10014 | The user in the request cannot be added to the group, because the number of group members has reached the upper limit. If you are adding group members in batches, try reducing the number of users being added. |
-| 10015 | Invalid group ID. Check whether the group ID is entered correctly. |
+| 10015  | Invalid group ID, indicating that the group does not exist or has been deleted.                 |
 | 10016 | The App backend rejected this operation through a third-party callback. |
 | 10017 | The message cannot be sent due to muting. Check whether the sender is muted. |
 | 10018 | The response packet exceeds the length limit of 1 MB due to excessive request content. Try to reduce the amount of data in individual single requests. |
@@ -353,11 +357,12 @@
 | 10032 | The message to be recalled cannot be recalled. |
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be deleted. |
-| 10035 | Audio-video chat rooms and broadcast chat rooms do not support message recalls. |
+| 10035 | Audio-video chat rooms and broadcasting chat rooms do not support message deletion. |
 | 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a prepaid package of “IM audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of “Expanding the number of groups that can be created and joined by a single user”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a prepaid package of “Increasing the limit of group members”, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).(After upgrade, you need to call the [v4/group_open_http_svc/modify_group_base_info](https://intl.cloud.tencent.com/document/product/1047/34962) API to modify the maximum number of members allowed per group. |
+| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of "Expanding the number of groups that can be created and joined by a single user", see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10038  | Exceeded the limit on the number of group members. To purchase or upgrade the prepaid plan to increase the maximum number of members in a single group, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). (After upgrade, you need to call the [group profile modification API](https://intl.cloud.tencent.com/document/product/1047/34962) to modify the maximum number of members allowed per group.) |
 | 10041 | The app (SDKAppID) is configured not to support group message recalls. |
+|10044| This type of group (such as AVChatRoom group) does not support getting roaming messages. |
 | 10045 | The size of the custom attribute key exceeds the limit of 32 bytes. |
 | 10046 | The size of a single value of the custom attribute exceeds the limit of 4,000 bytes. |
 | 10047 | The number of keys in the custom attribute exceeds the limit of 16. |
@@ -369,6 +374,9 @@
 | 10053 | The number of group @ objects exceeds the upper limit of 30. |
 | 10054 | There are too many members in the group. Please pull by page. |
 | 10056 | Competition conflict for custom attribute write operation. Please get the latest custom attribute before writing. |
+|10058| You are now using the Trial Edition, and the free quota of 100 groups is exceeded. To create more groups, you need to purchase a package. |
+|10059| To use this feature, you need to purchase the Flagship Edition. |
+|11000| The community group feature is not enabled. |
 
 
 

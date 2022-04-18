@@ -30,7 +30,7 @@ This document describes how to quickly run the IM demo for iOS.
 >? To respect the copyright of emoji design, the downloaded demo project does not contain sliced images of major emoji elements. You can use your local emoji packs to configure code. Unauthorized use of the emoji pack in the IM demo may infringe on the design copyright.
 2. Open the project in the terminal directory and find the `GenerateTestUserSig` file in the following paths:
  iOS: iOS/Demo/TUIKitDemo/Private/GenerateTestUserSig.h
- Mac: Mac/Demo/TUIKitDemo/Debug/GenerateTestUserSig.h
+ macOS: Mac/Demo/TUIKitDemo/Debug/GenerateTestUserSig.h
 3. Set relevant parameters in the `GenerateTestUserSig` file:
  - SDKAPPID: set it to the SDKAppID obtained in [Step 1](#step1).
  - SECRETKEY: enter the key obtained in [Step 2](#step2).
@@ -65,7 +65,7 @@ pod setup
 // iOS
 cd iOS/TUIKitDemo
 pod install
-// Mac
+// macOS
 cd Mac/TUIKitDemo
 pod install
 ```
@@ -75,8 +75,9 @@ pod install
  ```
 3. Compile and run the demo:
  - iOS: go to the iOS/TUIKitDemo folder, and open `TUIKitDemo.xcworkspace` to compile and run the demo.
- - Mac: go to the Mac/TUIKitDemo folder, and open `TUIKitDemo.xcworkspace` to compile and run the demo.
+ - macOS: go to the Mac/TUIKitDemo folder, and open `TUIKitDemo.xcworkspace` to compile and run the demo.
 
+>!The demo is integrated with the audio/video call feature by default. However, the TRTC SDK on which the audio/video call feature relies currently does not support simulators. Please use real devices for demo running or debugging.
 
 ## Advanced Features
 - [UIKit](https://intl.cloud.tencent.com/document/product/1047/34547)

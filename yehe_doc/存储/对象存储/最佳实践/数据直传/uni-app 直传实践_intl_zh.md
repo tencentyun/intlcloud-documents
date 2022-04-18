@@ -163,7 +163,7 @@
 执行效果如下图所示：
 
  - 直传效果：
-![uni-app 直传效果](https://qcloudimg.tencent-cloud.cn/raw/01fd87f664cff606f9dfbad7783a06f8.jpg)
+![uni-app 直传效果](https://qcloudimg.tencent-cloud.cn/raw/ef40cb5ea3ce5a0586dd1a70d6b2d4ad.jpg)
 
 ##  Demo 代码地址
 

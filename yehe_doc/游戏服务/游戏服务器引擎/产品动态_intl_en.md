@@ -1,3 +1,20 @@
+
+## March 2021
+
+<table>
+	<tr><th style="width: 25%;">Update</th>
+	<th style="width: 50%;">Description</th>
+	<th width="15%">Release Date</th>
+	<th style="width: 25%;">Document</th>
+	</tr>
+	<tr><td>Service Discontinuation of Game Server Elastic-scaling (GSE)</td>
+	<td>Due to the service upgrade, Tencent Cloud plans to discontinue the service of Game Server Elastic-scaling (GSE) by Jun 1st, 2022 (UTC+8). Please migrate all your resources before May 31, 2022 (UTC+8).</td>
+	<td nowrap="nowrap">2021-04-06</td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/1055/46433">Service Discontinuation of Game Server Elastic-scaling (GSE)<br></a></td>
+	</tr>
+	</tr>
+</table>
+
 ## March 2021
 
 <table>

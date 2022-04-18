@@ -5,6 +5,7 @@ This document describes how to quickly run the IM demo for Android.
 1. Log in to the [IM console](https://console.cloud.tencent.com/im).
 >? If you already have an app, record its SDKAppID and [obtain key information](#step2).
 >A Tencent Cloud account can create a maximum of 300 IM apps. If you want to create a new app, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost. Proceed with caution**.
+>
 2. Click **Create Application**, enter your app name, and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
 3. After creation, you can see the status, service version, SDKAppID, creation time, tag, and expiry time of the new app on the overview page of the console. Record the SDKAppID.
@@ -36,13 +37,13 @@ This document describes how to quickly run the IM demo for Android.
 > The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain a dynamic `UserSig`. For more information, see [How to Generate UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 [](id:step4)
-
 ### Step 4. Compile and run the demo
 Import the demo project with Android Studio, and then compile and run it.
 For more information, see the file `README.md` in the corresponding directory of the demo project cloned in [Step 3](#step3).
+>!The demo is integrated with the audio/video call feature by default. However, the TRTC SDK on which the audio/video call feature relies currently does not support simulators. Please use real devices for demo running or debugging.
 ## Advanced Features
 - [UIKit](https://intl.cloud.tencent.com/document/product/1047/34547)
-- [Enabling Video Calls](https://intl.cloud.tencent.com/document/product/1047/34286)
+- [Enabling Video Calls](https://intl.cloud.tencent.com/document/product/1047/34287)
 
 ## References
 - [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)

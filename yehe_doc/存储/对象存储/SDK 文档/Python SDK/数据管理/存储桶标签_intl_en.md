@@ -4,17 +4,17 @@
 
 This document provides an overview of APIs and SDK code samples related to bucket tagging.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting a bucket tag | Sets a tag for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting a bucket tag | Deletes a specified bucket tag |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes the tags of a bucket |
 
-## Setting Bucket Tag
+## Setting Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket tagging) is used to set a tag for an existing bucket.
+This API is used to set tags for an existing bucket.
 
 #### Method prototype
 
@@ -24,8 +24,27 @@ put_bucket_tagging(Bucket, Tagging={}, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-put-bucket-tagging)
-```py
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_tagging(
     Bucket='examplebucket-1250000000',
     Tagging={
@@ -43,22 +62,22 @@ response = client.put_bucket_tagging(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for which to set a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
-| Tag      | Tag set                                                   | List   | Yes       |
-| Key | Tag key, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | String | Yes |
-| Value | Tag value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 256 bytes | String | Yes |
+| Bucket | Bucket for tag setting, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
+| Tag      | A collection of tags                                                   | List   | Yes       |
+| Key | Tag key. A tag key must not exceed 128 characters and can contain letters, numbers, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes. | String | Yes |
+| Value | Tag value. A tag value must not exceed 256 characters and can contain letters, numbers, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes. | String | Yes |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.
 
-## Querying Bucket Tag
+## Querying Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
+This API is used to query the existing tags of a specified bucket.
 
 #### Method prototype
 
@@ -68,22 +87,41 @@ get_bucket_tagging(Bucket, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-get-bucket-tagging)
-```py
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_tagging(
     Bucket='examplebucket-1250000000'
 )
 ```
 
-#### Parameter description
+#### Parameter description                        |
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for which to query a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for tag query, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 
-#### Returned result description
+#### Response description
 
-Tag management list of bucket in dict type.
+Bucket tag management list in dict format.
 
 ```
 {
@@ -98,17 +136,17 @@ Tag management list of bucket in dict type.
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Tag      | Tag set                                                   | List   |
-| Key | Tag key, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | String |
-| Value | Tag value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 256 bytes | String |
+| Tag      | A collection of tags                                                   | List   |
+| Key | Tag key. A tag key must not exceed 128 characters and can contain letters, numbers, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes. | String |
+| Value | Tag value. A tag value must not exceed 256 characters and can contain letters, numbers, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes. | String |
 
-## Deleting Bucket Tag
+## Deleting Bucket Tags
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket tagging) is used to delete an existing tag of a specified bucket.
+This API is used to delete the existing tags from a bucket.
 
 #### Method prototype
 
@@ -118,8 +156,27 @@ delete_bucket_tagging(Bucket, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-delete-bucket-tagging)
-```py
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_tagging(
     Bucket='examplebucket-1250000000'
 )
@@ -127,10 +184,10 @@ response = client.delete_bucket_tagging(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for which to delete a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for tag deletion, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.
