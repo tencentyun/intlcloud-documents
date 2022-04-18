@@ -2,7 +2,8 @@
 ## 課金モード
 
 Tencent Cloudが提供するCVM購入方法：従量課金およびスポットインスタンスです。詳細は[インスタンス課金モード](https://intl.cloud.tencent.com/document/product/213/2180)をご参照ください。
-CVMはリザーブドインスタンス課金をサポートします。詳細情報については、[リザーブドインスタンス課金モード](https://intl.cloud.tencent.com/document/product/213/37070)をご参照ください。
+CVMはリザーブドインスタンス課金をサポートします。
+
 
 ## インスタンス
 
