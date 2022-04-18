@@ -2,7 +2,7 @@
 ## Planos de faturamento
 
 O Tencent Cloud oferece duas maneiras de adquirir uma instância do CVM: pagamento conforme o uso e instância spot. Para obter mais informações, consulte os [Modos de faturamento da instância](https://intl.cloud.tencent.com/document/product/213/2180).
-O CVM aceita o faturamento de instância reservada (RI). Para obter mais informações sobre o preço, consulte o [Modo de faturamento de instância reservada](https://intl.cloud.tencent.com/document/product/213/37070).
+O CVM aceita o faturamento de instância reservada (RI). 
 
 ## Instâncias
 
