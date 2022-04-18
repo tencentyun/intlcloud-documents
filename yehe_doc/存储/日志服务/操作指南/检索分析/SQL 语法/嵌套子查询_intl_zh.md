@@ -27,7 +27,6 @@
 - `SELECT compare(PV, 86400) FROM`为第二层统计分析，针对第一层统计分析的结果，对 PV 进行二次统计，使用 [同环比函数compare](https://intl.cloud.tencent.com/document/product/614/43575) 获得1天前的网站访问量 PV。
 
 **查询和分析结果**
-![image-20211108045216150](https://qcloudimg.tencent-cloud.cn/raw/70a9de0c7c2c4c0a345a935b55c1873b.png)
 
 - 1860表示当前1小时的网站访问量。
 - 1656表示昨天同时段的网站访问量。
@@ -52,4 +51,4 @@ FROM (
 `SELECT compare[1] AS today, compare[2] AS yesterday, compare[3] AS ratio FROM` 针对 compare 函数的结果，通过数组下标获取其中特定位置的数值。
 
 **查询和分析结果**
-![image-20211108045502511](https://qcloudimg.tencent-cloud.cn/raw/e8dd894470cb045dc5cc5e6a86f3abd3.png)
+
