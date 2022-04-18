@@ -53,14 +53,14 @@ service grafana-server restart
 2. On the left sidebar, select the **Settings** icon to go to the **Plugins** page. Select **Tencent Cloud Monitor** and click **Enable** on the **Config** page to enable the plugin.
 3. On the **Data Sources** page, click **Add data source**.
 4. Select **Tencent Cloud Monitor**, enter the data source name and Tencent Cloud [access key](https://console.cloud.tencent.com/cam/capi) as instructed, select **Cloud Log Service (cls)**, and click **Save**.
-![](https://qcloudimg.tencent-cloud.cn/raw/cc9c03e32dc963fbc42f7999f7098e62.png)
+
 
 ### Trying out the CLB-DEMO preset dashboard
 
 To quickly try out Tencent Cloud Monitor Grafana App, you are advised to use the [demo log](https://intl.cloud.tencent.com/document/product/614/43572) feature.
 
 After creating a log topic, you can go to the preset `CLB Demo Access Log` dashboard to view preset content.
-![](https://qcloudimg.tencent-cloud.cn/raw/c07d45ab8d24ea76616fdfadb4ac1717.png)
+
 
 
 ### Manually configuring dashboard
@@ -94,10 +94,10 @@ The content returned for the SQL statement contains two fields: `status` of the 
 ### Viewing raw logs
 
 For search scenarios, you are advised to use the Logs plugin to display data.
-![](https://qcloudimg.tencent-cloud.cn/raw/3831320ff8b9ba90a8c1a2340569b5f9.png)
+
 
 If you are using Grafana v8.3 or later, you can also use the **Extract fields** feature on the **Transform** tab page of Grafana to extract fields from the content returned for the search and view data in **Table**.
-![](https://qcloudimg.tencent-cloud.cn/raw/1032b82797a2045fb8b17af2c32a6d6e.png)
+
 
 
 ## Other Usage Guidelines for the Plugin
