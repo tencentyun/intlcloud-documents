@@ -60,10 +60,7 @@ For more information, see [TencentOS Kernel's GitHub repository](https://github.
 ### Use in the cloud
 When you create an instance or reinstall the operating system of an existing instance, you can select a public image and choose to use the corresponding version of OpenCloudOS. For detailed directions, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855) and [Reinstalling System](https://intl.cloud.tencent.com/document/product/213/4933).
 
-### Local experience
-You can try out TencentOS Server locally in the following ways:
-- TencentOS Server 2.4: [iso](http://mirrors.tencent.com/tlinux/2.4/iso/) and [qcow](http://mirrors.tencent.com/tlinux/2.4/images/).
-- TencentOS Server 3.1: [iso](http://mirrors.tencent.com/tlinux/3.1/iso/) and [qcow](http://mirrors.tencent.com/tlinux/3.1/images/).
+
 
 
 
