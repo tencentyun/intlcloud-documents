@@ -6,6 +6,9 @@
 4. On the "Node List" page, select the node to which the target container belongs, and click to go to the details page for pod management. Browse the instance list, select the target container, and log in to the remote terminal, as shown in the following figure.
 
 >? For FAQs on the remote terminal, see [here](https://cloud.tencent.com/document/product/457/8638?).
+
+> ![Alt text](https://main.qcloudimg.com/raw/075fe82f92f02418b467e48e47f6ed84.png)
+
 >! Containers meeting any of the following conditions do not support remote login:
 > - The namespace is kube-system.
 > - No bash is available in the container image.
