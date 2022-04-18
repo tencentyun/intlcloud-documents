@@ -2,7 +2,7 @@
 ## Billing Plans
 
 Tencent Cloud offers two ways to purchase a CVM instance: pay as you go and spot instance. For more information, see [Instance Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
-CVM supports the reserved instance (RI) billing. For more information about the price, see [Reserved Instance Billing Mode](https://intl.cloud.tencent.com/document/product/213/37070).
+CVM supports the reserved instance (RI) billing. 
 
 ## Instances
 
