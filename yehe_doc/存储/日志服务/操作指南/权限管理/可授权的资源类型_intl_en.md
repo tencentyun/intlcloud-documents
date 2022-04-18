@@ -18,7 +18,7 @@ The following table lists the types of resources that can be authorized in Cloud
 
 You need to change the variable parameters such as `$region` and `$account` to your actual parameter information.
 
-For all the APIs supported by CLS and their resource description methods, see [here](https://cloud.tencent.com/document/product/598/69898). APIs adopting the authorization granularity of resource support user permission configuration by using the methods of the corresponding resource types described above. For APIs adopting the authorization granularity of API, the corresponding resource range in a CAM permission policy must be `*`.
+For all the APIs supported by CLS and their resource description methods, see here. APIs adopting the authorization granularity of resource support user permission configuration by using the methods of the corresponding resource types described above. For APIs adopting the authorization granularity of API, the corresponding resource range in a CAM permission policy must be `*`.
 
 
 ## Practice
