@@ -3,7 +3,7 @@ Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, 
 ## Notes
 - Currently, Enhanced SSD and Tremendous SSD are only available in certain availability zones. They will be supported in more availability zones.
 - The performance of Enhanced SSD is only guaranteed when it’s attached to S5, M5, and SA2 models created after August 1, 2020, and all later generation models.
-- **Tremendous SSD** can only be purchased and used with the Standard Storage Optimized S5se CVM instance.**
+- **Tremendous SSD** can only be purchased and used with the Standard Storage Optimized S5se CVM instance.
 - Enhanced SSD and Tremendous SSD cannot be used as the system disk.
 - Enhanced SSD and Tremendous SSD cannot be encrypted.
 - Enhanced SSD and Tremendous SSD cannot be upgraded from other disk types.
