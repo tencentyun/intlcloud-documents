@@ -159,7 +159,7 @@
 	<td>删除宿主机 <code>/tmp/ccs-log-collector/buffer</code> 目录</td>
 	<td>日志丢失</td>
 	<td>无</td>
-	<td> Buffer 里面是代消费的日志缓存文件</td>	
+	<td> Buffer 里面是待消费的日志缓存文件</td>	
 	</tr>
 </table>
 
