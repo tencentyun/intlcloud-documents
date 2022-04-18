@@ -197,10 +197,10 @@ Sample search: if you enter `__TAG__.region:"ap-beijing"`, the sample log can be
 2. On the left sidebar, click **Log Topic** to go to the log topic list page.
 3. Click the desired log topic ID/name to go to the log topic management page.
 4. Click the **Index Configuration** tab and click **Edit** to go to the index configuration page. 
-![](https://qcloudimg.tencent-cloud.cn/raw/64b23d441c8fb39f9127a1abadbd8632.png)
+
 5. Modify the index configuration as needed and click **OK**.
 When modifying index configuration, you can also click **Auto Configure** to enable the system to automatically get the latest log collected as a sample and parse the fields in it into key-value indexes. You can perform fine tuning on the basis of automatic configuration to quickly obtain the final index configuration information.
-![](https://qcloudimg.tencent-cloud.cn/raw/28067fad28d0cc4f7f5d5fe9ee7cede6.png)
+
 
 ### Importing the index configuration
 
@@ -208,9 +208,9 @@ When modifying index configuration, you can also click **Auto Configure** to ena
 2. On the left sidebar, click **Log Topic** to go to the log topic list page.
 3. Click the desired log topic ID/name to go to the log topic management page.
 4. Click the **Index Configuration** tab and click **Import Configuration Rule**.
-![](https://qcloudimg.tencent-cloud.cn/raw/50939b3d966a718e35f0062f2281110d.png)
+
 5. In the dialog box, select the log topic whose index configuration is to be imported and click **OK**. The index configuration of the selected the log topic is automatically filled into the index configuration of the current log topic. After confirming that the configuration is correct, click **OK**.
-![](https://qcloudimg.tencent-cloud.cn/raw/ac1203c18ebd63a90236b65bd71f8df6.png)
+
 
 ## Appendix
 
@@ -267,7 +267,7 @@ The log contains three fields, where `kye1` is a common field, and `kye2` and `k
 
 The following figure shows the key-value index configuration. Key-value index is configured for the `kye1` and `kye2.address` fields but not the `kye3` field.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/fe89301d39616006fcb1ebaedb7f26fa.png)
+
 
 **Search and analysis effect on the console**
 
@@ -282,7 +282,6 @@ Table format:
 
 The console provides the JSON formatting feature to display string-type JSON fields in a hierarchical manner, but this feature is only a display effect on the console, and the actual fields are still strings, as shown in the **API-based log search and analysis effect** section below.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6d810627af2dc7d8355c07839b51e618.png)
 
 
 **API-based log search and analysis effect**
