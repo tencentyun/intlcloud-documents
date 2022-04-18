@@ -20,7 +20,7 @@
 	</tr>
 	<tr>
 	<td>Use existing PersistentVolumeClaim</td>
-	<td>Use the storage of the existing PersistentVolumeClaim to declare the storage for workloads, and automatically assign or create a PersistentVolume and mount it to the corresponding pod. This is suitable for stateful applications created by StatefulSet. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/30679">PV and PVC Management</a>.</td>
+	<td>Use the storage of the existing PersistentVolumeClaim to declare the storage for workloads, and automatically assign or create a PersistentVolume and mount it to the corresponding pod. This is suitable for stateful applications created by StatefulSet. </td>
 	</tr>
 	<tr>
 	<td>Use ConfigMap</td>
