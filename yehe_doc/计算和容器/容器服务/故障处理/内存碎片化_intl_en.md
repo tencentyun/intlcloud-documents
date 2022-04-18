@@ -9,7 +9,7 @@ mysqld: page allocation failure. order:4, mode:0x10c0d0
 * `mysqld`: application requesting memory.
 * `order`: number of requested sequential memory pages (2^order). This example has an order of 4, which means 2^4 = 16 sequential pages.
 * `mode`: memory allocation mode marker. This is defined in the kernel source code file `include/linux/gfp.h` and usually the result of the AND operation on multiple markers. Different kernels have different mode markers. For example, `GFP_KERNEL` in the new kernel is the result of `__GFP_RECLAIM | __GFP_IO | __GFP_FS`, and `__GFP_RECLAIM` is the result of `___GFP_DIRECT_RECLAIM | ___GFP_KSWAPD_RECLAIM`.
-> 
+> !
 > - When the value of order is 0, the system has no available memory.
 > - When the value of order is large, the memory is fragmented, and no sequential large memory page can be allocated.
 
@@ -54,7 +54,7 @@ Memory fragmentation leads to a lack of large memory pages. This causes applicat
 echo 3 > /proc/sys/vm/drop_caches
 ```
 2. Run the following command to compact the memory:
-> This operation is resource intensive and may cause business interruptions.
+>! This operation is resource intensive and may cause business interruptions.
 >
 ```bash
 echo 1 > /proc/sys/vm/compact_memory
