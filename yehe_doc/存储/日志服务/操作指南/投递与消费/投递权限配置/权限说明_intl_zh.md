@@ -20,8 +20,8 @@
 1. 使用主账号登录访问管理控制台，选择左侧导航栏中的**用户** > **[用户列表](https://console.cloud.tencent.com/cam)**。
 2. 在“用户列表”页面中，单击需操作的用户名称，进入用户详情页。
 3. 在用户详情页面中，选择**关联策略**。
-4. 在“添加策略”页面的“设置用户权限”中，选择**从策略列表中选取策略关联**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/3434ebc9faabe6b1de93d6f940b9928d.png)
+4. 在“添加策略”页面的“设置用户权限”中，选择**从策略列表中选取策略关联**。
+
 5. 为协作者或子账号关联预设策略：`QcloudCLSFullAccess`、`QcloudCamSubaccountsAuthorizeRoleFullAccess`、`QcloudCOSReadOnlyAccess`、`QcloudCkafkaReadOnlyAccess`。
 <dx-alert infotype="notice" title="">
 主账号必须完成授权操作，否则协作者或子账号无法正常进行投递配置。
