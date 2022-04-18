@@ -40,7 +40,7 @@ You can shut down the instance via the console or APIs.
  - Shutdown is required for some configuration operations such as adjusting hardware configurations and resetting passwords.
  - The shutdown operation does not change the CVM's public IP, private IP, or any data on its disks.
  
-For more information about shutting down an instance, see [Shuting Down Instances](https://intl.cloud.tencent.com/document/product/213/4929).
+For more information about shutting down an instance, see [Shutting Down Instances](https://intl.cloud.tencent.com/document/product/213/4929).
 
 ## Terminating and releasing an instance
 If you no longer need an instance, you can terminate and release it via Tencent Cloud Console or APIs.
