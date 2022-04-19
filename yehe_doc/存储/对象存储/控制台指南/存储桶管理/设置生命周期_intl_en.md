@@ -11,7 +11,7 @@ You can use the lifecycle management feature when you need to change the storage
 2. Click **Bucket List** on the left sidebar.
 3. Locate the bucket for which you want to enable the lifecycle feature. Click the bucket name to enter its details page.
 4. Click **Basic Configurations** > **Lifecycle** and click **Add a Rule**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/1ee8f090db36aea8ecdf08bac943c19c.png)
+
 5. Add lifecycle rules as needed. The configuration items are described as follows:
  - **Rule name**: Name of the lifecycle rule
  - **Apply to**: Range of the lifecycle rule. The rule can apply to the whole bucket or a specified range. The range is described as follows:
@@ -25,8 +25,8 @@ You can use the lifecycle management feature when you need to change the storage
  - **Managing historical versions**: You can transition or delete previous versions of an object using this option. If it is not enabled, only the latest version of an object is processed by default.
  - **Remove Delete Markers from objects with no noncurrent versions**: If the latest version of an object is a delete marker and all of its noncurrent versions have been deleted, the delete marker will also be deleted if you enable this option. Note that you cannot enable this option if you have selected the delete upon expiration option under **Managing the current version**.
  - **Deleting incomplete multipart uploads**: Allows you to delete expired incomplete multipart uploads that have failed due to any reason.
-![](https://qcloudimg.tencent-cloud.cn/raw/df041503ac15d2e1795261cd1594448f.png)
+
 6. Click **OK**.
-![](https://qcloudimg.tencent-cloud.cn/raw/3962497c652d15413b1fa32b9251ed32.png)
+
 7. To disable a lifecycle rule, click **Edit** and change the rule status to **Off**, or simply delete the rule.
-![](https://qcloudimg.tencent-cloud.cn/raw/e8eddd7a564ef044da8d371375f4aebf.png)
+
