@@ -27,7 +27,7 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 - Currently, you cannot add a blind watermark to animated images such as GIF.
 - Both the width and height of the image watermark must not be greater than 1/8 of the input image.
 - You need to choose a white watermark with a black background for the effect of blind watermarking.
-- Each account is entitled to a free tier of 3,000 blind watermarks, and any excessive usage will be billed. The unused part of the free tier will not roll over to the next month. For more information, see [Free Tier].
+- Each account is entitled to a free tier of 3,000 blind watermarks, and any excessive usage will be billed. The unused part of the free tier will not roll over to the next month. For more information, see Free Tier.
 - Text watermarks can contain digits and letters.
 - Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is related to the original image size and the attack intensity. For more information, [contact us](https://intl.cloud.tencent.com/contact-sales).
 
