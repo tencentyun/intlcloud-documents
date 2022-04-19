@@ -14,7 +14,7 @@ You might need to clone a security group if you:
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. In the left sidebar, select **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)**. The Security Group page then appears.
 3. Select desired region. A list of security groups under the region then appears.
-4. Locate the desired security group and click **More**. Then click *Clone**. The **Clone security group** page then appears.
+4. Locate the desired security group and click **More**. Then click **Clone**. The **Clone security group** page then appears.
 5. Select a **Target region** and **Target project** and input a **New name** for the new security group. Click **OK**.
 
 
