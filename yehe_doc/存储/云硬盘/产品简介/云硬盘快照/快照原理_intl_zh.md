@@ -28,4 +28,4 @@
 
 基于前面的例子，如果您删除快照1，系统会将快照1和快照2进行合并，使用快照2中的数据覆盖快照1相同位置的数据，合并后的快照2成为新的全量快照。
 增量快照删除合并流程如下图：
-![](https://main.qcloudimg.com/raw/7e6bc502dd34fb9880d20a2025ab4897.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f2bb2449450a52df265537da14768b5.png)
