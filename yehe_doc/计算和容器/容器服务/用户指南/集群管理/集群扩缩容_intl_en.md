@@ -6,7 +6,7 @@ This document describes how to manually or automatically scale a cluster to meet
 
 ## Prerequisites
 
-1. You have logged into the [TKE console](https://console.cloud.tencent.com/tke2).
+1. You have logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. You have [created a cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 
 ## Directions
