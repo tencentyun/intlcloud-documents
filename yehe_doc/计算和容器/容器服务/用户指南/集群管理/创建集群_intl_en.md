@@ -112,7 +112,7 @@ Create a cluster using the existing nodes (that is, by using the existing CVMs).
 
 :::
 </dx-tabs>
-2. Click **Next** to start [configuring a CVM](#ConfigureCVM).
+2. Click <b>Next</b> to start configuring a CVM.
 
 [](id:ConfigureCVM)
 #### CVM configuration
