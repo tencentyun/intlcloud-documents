@@ -48,7 +48,7 @@ Comparison between GPU Cloud Computing and Self-built GPU Computing:
 
 <ul class="text-list">
 	<li>It supports GPU pass-through to make the most advantage of GPU.</li>
-	<li>Peak computing capacity for single machine: 125.6T Flops for single-precision floating point computing and 62.4T Flops for double-precision floating point computing.</li>
+	<li>Peak computing capacity for a single machine: 125.6T Flops for single-precision floating point computing and 62.4T Flops for double-precision floating point computing.</li>
 <ul>
 			</div>
 			</td>
@@ -56,7 +56,7 @@ Comparison between GPU Cloud Computing and Self-built GPU Computing:
 			<div>
 			<ul class="text-list">
 	<li>Users have to perform disaster recovery manually, depending on the robustness of hardware.</li>
-	<li>Single point of failure may occur on physical server. Data security is uncontrollable.</li>
+	<li>A single point of failure may occur on physical servers. Data security is uncontrollable.</li>
 <ul>
 			</div>
 			</td>
@@ -68,7 +68,7 @@ Comparison between GPU Cloud Computing and Self-built GPU Computing:
 			<th class="stress-item">
 			<div>
 			<ul class="text-list">
-	<li>It can be seamlessly connected to CVM, CLB and many other cloud products. Private network traffic is free of charge. </li>
+	<li>It can be seamlessly connected to CVM, CLB and many other Tencent Cloud products. Private network traffic is free of charge. </li>
 	<li>Designed for ease of use, it is managed in the same way as CVMs, without the need to use jump server for login.
 	<li>It provides clear guides on installation and deployment of GPU driver to make it easier for users to get started with it.</li>
 <ul>
@@ -92,7 +92,7 @@ Comparison between GPU Cloud Computing and Self-built GPU Computing:
 						<ul class="text-list">
 	<li>Resources are completely isolated among different users to ensure the data security.</li>
 	<li>Complete security groups and network ACL settings allow you to control and securely filter the inbound and outbound network traffic to or from instances and subnets.</li>
-	<li>It can be seamlessly connected to Cloud Security, and has the basic protection and high defense services of Cloud Security equivalent to that of CVM.</li>
+	<li>It can be seamlessly connected to Tencent Cloud security serices, just the same as CVM.</li>
 <ul>
 			</div>
 			</td>
