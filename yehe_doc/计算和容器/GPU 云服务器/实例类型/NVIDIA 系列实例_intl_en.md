@@ -55,7 +55,7 @@ NVIDIA GPU instances are categorized into rendering and computing types:
                 <td>GN7vw</td> 
                 <td>Tesla T4</td>
                 <td><ul class="params"><li>8.1 TFLOPS of single-precision floating point performance</li><li>130 TOPS for INT8</li><li>260 TOPS for INT4</li></ul></td>
-                <td>-</td>
+               
             </tr>
         </tbody>
 </table>
