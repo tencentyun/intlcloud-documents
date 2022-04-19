@@ -10,7 +10,7 @@ NVIDIA GPU instances are categorized into rendering and computing types:
 - Rendering: suitable for 3D rendering, video encoding and decoding, computer-aided design (CAD), etc.
 - Computing: suitable for deep learning, scientific computing, computer-aided engineering (CAE), etc.
 
-**GCC provides the following types of NVIDIA GPU instances:**
+**The following types of NVIDIA GPU instances are available:**
 
 <table>
         <thead>
