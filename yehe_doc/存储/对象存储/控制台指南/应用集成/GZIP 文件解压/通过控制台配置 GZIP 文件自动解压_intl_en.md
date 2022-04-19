@@ -28,7 +28,7 @@ This document describes how to decompress GZIP files in the console. For using A
 >! If you haven’t activated the SCF service, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
 > 
 5. Click **Add Function** and configure the following parameters: 
-![img](https://qcloudimg.tencent-cloud.cn/raw/485556e44f458a70961e466cfc95c2dc.png)
+
  - **Function Name**: Uniquely identifies a function and cannot be modified after it is created. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Event Type**: An event is an operation that triggers SCF. Take upload as an example. You can initiate an upload by calling the `PUT Object` or `POST Object` API. If you choose **Create using Put method** as the event type, decompression will be triggered only by a package uploaded via the `PUT Object` API.
 >! If you intend to upload files to the bucket using multiple ways, such as simple upload, multipart upload, and cross-bucket replication, you are advised to choose **File upload** as the event type.
@@ -38,7 +38,7 @@ This document describes how to decompress GZIP files in the console. For using A
 > 
  - **SCF Authorization**: Required. To decompress a compressed file, SCF should be authorized to read the package from your bucket and upload the decompressed files to the specified location.
 6. Click **Next** and configure the following in the pop-up window: 
-![img](https://qcloudimg.tencent-cloud.cn/raw/5c6f344d3615098d8e59cff6a726daac.png)
+
  - **Decompression Format**: The decompression formats you are allowed to use. Currently, .gz and .tgz files are supported.
  - **Destination Bucket**: A bucket to store the compressed files
  - **Destination Path**: A path to store the compressed files of the matched packages after decompression. To prevent unnecessary fees from triggering the loop, it is recommended that you set a destination path different from the prefix.
@@ -55,7 +55,7 @@ This document describes how to decompress GZIP files in the console. For using A
 > - Empty: bucket2-1250000000
 > 
 7. Click **Confirm**.
-![img](https://qcloudimg.tencent-cloud.cn/raw/8675beaebc9b141e3b26e56e33b6f1ee.png)
+
    You can perform the following operations on the created function:
  - Click **Log** to view the historical running status of the GZIP decompression. If an error is reported, you can click **Log** to quickly redirect to the SCF console to view the error log details.
  - Click **Details** to view the GZIP decompression configuration rule.
