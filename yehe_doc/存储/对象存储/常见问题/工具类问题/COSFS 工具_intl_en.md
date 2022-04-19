@@ -63,10 +63,27 @@ source ~/.bashrc
 
 ### How do I set auto-mounting at startup for COSFS?
 
+You need to install the FUSE package first:
+```shell
+#CentOS
+#sudo yum install -y fuse
+
+#Ubuntu
+#sudo apt-get install fuse
+```
+
 Add the following to the `/etc/fstab` file. The `_netdev` option specifies that the command can be executed only after the network is ready:
 
 ```shell
 cosfs#examplebucket-1250000000 /mnt/cosfs fuse _netdev,allow_other,url=http://cos.ap-guangzhou.myqcloud.com,dbglevel=info
+```
+
+### How do I set the user and user group of files or directories under a mount point?
+
+In certain scenarios (such as NGINX server), you need to set the user and user group of files or directories under a mount point, such as user `www` (uid = 1002, gid =1002). In this case, you need to add the following mount parameters:
+
+```shell
+-ouid=1002 -ogid=1002
 ```
 
 ### How do I mount multiple buckets?
@@ -208,7 +225,7 @@ Yes. After you unmount the mount point, the time of the mounted directory will r
 You can mount a non-empty directory using the `-ononempty` parameter, but you are not recommended to do so because a problem may occur when the mount point and the original directory have files with the same path.
 
 ### Why does it take the `ls` command so long to return when I run it in a COSFS directory?
-If there are a lot of files in a mounted directory, executing the `Is` command requires a HEAD operation on each file in the directory, so it takes a lot of time to read the directory system before the command returns. 
+If there are a lot of files in a mounted directory, executing the `Is` command requires a HEAD operation on each file in the directory, so it takes a lot of time to read the directory system before the command returns.
 >! You are recommended not to enable IO hung which may result in unnecessary restarts.
 >
 
@@ -247,12 +264,13 @@ COSFS requires the GetBucket permission on the root directory. Therefore, you ne
 
 
 ### Why are the values of `Size` and `Available` are 256 TB after I run `df`?
-In fact, COS buckets offer unlimited storage capacity. The 256 TB displayed is only used as the output of `df`.
+COS buckets offer unlimited storage capacity. The 256 TB displayed is only used as the output of `df`.
 
 ### Why is the value of `Used` is 0 after I run `df`?
 COSFS does not occupy local storage. In order to be compatible with tools such as `df`, the values of `Size`, `Used`, and `Available` displayed in COSFS are not the actual values.
 
 ### Why are the values of `Inode`, `IUsed, ` and `IFree` are 0 after I run `df -i`?
 COSFS is not a disk-based file system and thus does not have `inode`.
+
 
 

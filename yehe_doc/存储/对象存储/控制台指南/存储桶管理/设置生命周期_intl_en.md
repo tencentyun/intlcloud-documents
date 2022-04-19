@@ -11,20 +11,22 @@ You can use the lifecycle management feature when you need to change the storage
 2. Click **Bucket List** on the left sidebar.
 3. Locate the bucket for which you want to enable the lifecycle feature. Click the bucket name to enter its details page.
 4. Click **Basic Configurations** > **Lifecycle** and click **Add a Rule**.
-   ![](https://main.qcloudimg.com/raw/3610ab8aaa27d8541d46cca70546388d.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/1ee8f090db36aea8ecdf08bac943c19c.png)
 5. Add lifecycle rules as needed. The configuration items are described as follows:
- - **Rule name**: name of the lifecycle rule
- - **Apply to**: range of the lifecycle rule. The rule can apply to the whole bucket or a specified range. The range is described as follows:
+ - **Rule name**: Name of the lifecycle rule
+ - **Apply to**: Range of the lifecycle rule. The rule can apply to the whole bucket or a specified range. The range is described as follows:
     - Prefix: The lifecycle rule applies to objects with a specified prefix (e.g., prefix/).
     - Object Tag: The lifecycle rule applies to objects with a specified tag. You can set multiple tags (case-sensitive).
->!You can specify both **Prefix** and **Object Tag**.
- - **Managing the current version**: transitions or deletes the current object version. Objects in your bucket can be transitioned from STANDARD to STANDARD_IA, ARCHIVE, or DEEP ARCHIVE, or deleted upon expiration.
+>!The object prefix and object tag can be specified at the same time. The relationships between object prefix and object tag and between object tags are "AND".
+>
+ - **Managing the current version**: Transitions or deletes the current object version. Objects in your bucket can be transitioned from STANDARD to STANDARD_IA, ARCHIVE, or DEEP ARCHIVE, or deleted upon expiration.
    COS storage classes include **STANDARD**, **STANDARD_IA**, **INTELLIGENT TIERING**, **ARCHIVE**, and **DEEP ARCHIVE** (from hot storage to cold storage). You can transition objects only from a hot storage class to a colder one, not vice versa. The number of days is measured according to the time an object is modified, that is, if you modify an object, the days will be remeasured as if you uploaded the object again.
- - **Managing historical versions**: you can transition or delete previous versions of an object using this option. If it is not enabled, only the latest version of an object is processed by default.
+
+ - **Managing historical versions**: You can transition or delete previous versions of an object using this option. If it is not enabled, only the latest version of an object is processed by default.
  - **Remove Delete Markers from objects with no noncurrent versions**: If the latest version of an object is a delete marker and all of its noncurrent versions have been deleted, the delete marker will also be deleted if you enable this option. Note that you cannot enable this option if you have selected the delete upon expiration option under **Managing the current version**.
- - **Deleting incomplete multipart uploads**: allows you to delete expired incomplete multipart uploads that have failed due to any reason.
-![](https://main.qcloudimg.com/raw/a636db96e7283da43244efd302c30fd6.png)
+ - **Deleting incomplete multipart uploads**: Allows you to delete expired incomplete multipart uploads that have failed due to any reason.
+![](https://qcloudimg.tencent-cloud.cn/raw/df041503ac15d2e1795261cd1594448f.png)
 6. Click **OK**.
-![](https://main.qcloudimg.com/raw/58a99ab79fc078e8e1e2b74b7d5c249c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3962497c652d15413b1fa32b9251ed32.png)
 7. To disable a lifecycle rule, click **Edit** and change the rule status to **Off**, or simply delete the rule.
-![](https://main.qcloudimg.com/raw/c45c3fc56a6d358b4f8d7f4228521e9b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e8eddd7a564ef044da8d371375f4aebf.png)
