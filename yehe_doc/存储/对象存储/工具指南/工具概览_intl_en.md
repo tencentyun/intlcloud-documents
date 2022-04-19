@@ -15,7 +15,7 @@ width: 200px;
 | [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) | Migrates data from multiple data sources (such as an on-premises server, and other cloud storage services) to COS. |
 | [FTP Server](/doc/product/436/7214) | Enables users to upload/download files to/from COS by using an FTP client. |
 | [COSFS](/doc/product/436/6883) | In Linux, this tool is used to mount buckets to a local file system and to perform operations on objects in COS via the local file system. |
-|[Hadoop](/doc/product/436/6884) | Helps integrate COS with big data computing frameworks such as Hadoop, Spark, and Tez, so that they can read and write COS data. |
+|[Hadoop Tool](/doc/product/436/6884) | Helps integrate COS with big data computing frameworks such as Hadoop, Spark, and Tez, so that they can read and write COS data. |
 | [COSDistCp](https://intl.cloud.tencent.com/document/product/436/38863) | Implements data copy between HDFS and COS. It is a distributed copy tool based on the MapReduce framework. |
 | [Hadoop-cos-DistChecker](https://intl.cloud.tencent.com/document/product/436/34687) | Verifies the directory integrity after you use the `hadoop distcp` command to migrate data from HDFS to COS. |
 | [HDFS TO COS](/doc/product/436/7212) | Copies data from HDFS to COS. |
