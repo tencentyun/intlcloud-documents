@@ -13,12 +13,12 @@
 3. 找到对象所在的存储桶，单击其存储桶名称，进入存储桶管理页面。
 4. 在左侧导航栏中，选择【文件列表】，进入文件列表页面。
 5. 找到需要自定义头部的单个对象，在其右侧操作栏中，单击【更多操作】>【自定义头部】。
-![](https://main.qcloudimg.com/raw/b424c94ad7dddd58dd6489cbb7cc43ee.png)
+
 若您需要对多个对象自定义头部，可勾选多个对象，并单击上方的【更多操作】>【自定义头部】即可。
 ![](https://main.qcloudimg.com/raw/88779600818f3670df2f7df62fd1b3a0.png)
 6. 在弹出的窗口中，选择需要设置的元数据头部参数类型，输入对应的元数据值，单击【确定】即可。
 COS 提供了以下6种对象 HTTP 头部标识供配置。头部配置说明如下：
-![](https://main.qcloudimg.com/raw/cc85c6702c81f1af770dc04a23ae4bb7.png)
+
 <table>
    <tr>
       <th>HTTP 头部</th>
@@ -81,7 +81,7 @@ Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
 ```
 
 添加如下配置：
-![](https://main.qcloudimg.com/raw/3df9e3628c6d8b429842807771ff547e.jpg)
+
 再次发起请求，浏览器或客户端得到的对象头部范例如下：
 
 #### 请求
