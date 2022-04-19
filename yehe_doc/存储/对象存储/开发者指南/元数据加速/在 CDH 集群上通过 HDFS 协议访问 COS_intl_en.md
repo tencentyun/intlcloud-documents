@@ -36,7 +36,7 @@ This example uses software versions as follows:
 
 1. Log in to Cloudera Manager (CDH management page).
 2. On the homepage, select **Configuration** > **Service-Wide** > **Advanced** as shown below:
-![](https://main.qcloudimg.com/raw/95a05ec2090a84861c99222c9d26d4df.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f0913ec665e54a6619a3acc052e8f0c3.png)
 3. Specify your COS settings in the configuration snippet `Cluster-wide Advanced Configuration Snippet(Safety Valve) for core-site.xml`.
 ```
 <property>
