@@ -5,7 +5,7 @@
 | 支持平台   | 系统要求        | 下载地址                                                     |
 | :--------- | :-------------- | :----------------------------------------------------------- |
 | Android    | Android 4.4以上 | [Android](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.apk) |
-| iOS 移动端 | iOS 11以上      | [iOS](https://apps.apple.com/cn/app/id1469323992)            |
+| iOS 移动端 | iOS 11以上      | iOS          |
 
 #### 软件安装
 
@@ -35,7 +35,7 @@ COSBrowser 移动端支持以下三种登录方式：
 #### 1. 数据概览
 
 数据概览页展示了您在使用 COS 近30天的数据使用情况，包含了总流量、总读写请求、存储量趋势、流量（外网下行流量、内网流量、CDN 回源流量）趋势、请求数趋势、有效请求比例趋势、低频存储数据取回量、归档存储数据取回量。
-![](https://main.qcloudimg.com/raw/a0543cb1da5a3bb57216b27b315cefb8.png)
+![](https://main.qcloudimg.com/raw/43b03ec33e6a52184e9913f7db3f8d3a.png)
 
 <span id="filebatch"></span>
 
