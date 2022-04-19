@@ -28,4 +28,4 @@ Incremental snapshot rollback process is as shown in the following figure:
 
 Based on the previous example, if you delete Snapshot 1, the system will merge Snapshot 1 and Snapshot 2, and will use Snapshot 2’s data to overwrite Snapshot 1’s data in the same location. After merging, Snapshot 2 is the new full snapshot.
 Incremental snapshot deletion process is as shown in the following figure:
-![](https://main.qcloudimg.com/raw/7e6bc502dd34fb9880d20a2025ab4897.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f2bb2449450a52df265537da14768b5.png)
