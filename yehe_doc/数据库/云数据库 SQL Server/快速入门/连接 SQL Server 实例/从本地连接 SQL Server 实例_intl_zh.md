@@ -4,7 +4,7 @@
 
 ## 操作步骤
 考虑到数据的安全，云数据库 SQL Server 尚未开放实例外网 IP，如有需求可以利用 SSH2 的端口映射在外网连接实例，并对其进行配置和管理。
-1. 登录 [云数据库 SQL Server](https://console.cloud.tencent.com/sqlserver) 实例详情页，查看实例内网 IP 及端口号。该内网 IP 及端口号会在配置端口映射时使用。
+1. 登录 [SQL Server 控制台(https://console.cloud.tencent.com/sqlserver) 实例详情页，查看实例内网 IP 及端口号。该内网 IP 及端口号会在配置端口映射时使用。
 ![](https://main.qcloudimg.com/raw/343f649c398b60f859c4aa5b47d7d47f.png)
 2. 准备一台具有外网 IP的 Linux 云服务器，请参见 [快速入门 Linux 云服务器](/doc/product/213/2936)。
 3. 在本地使用 SSH 工具（如 SecureCRT 或 PuTTY 等，本文以 SecureCRT 为例）登录 Linux 云服务器，请参见 [登录 Linux 实例](/doc/product/213/5436)。
