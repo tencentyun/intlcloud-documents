@@ -3,8 +3,8 @@
 #### Relevant resources
 
 - Source code of COS XML JS SDK download: [XML JavaScript SDK](https://github.com/tencentyun/cos-js-sdk-v5).
-- Fast SDK download: [XML JavaScript SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-js-sdk-v5/latest/cos-js-sdk-v5.zip).
-- Download the demo: [JS Sample](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo).
+- SDK download: [XML JavaScript SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-js-sdk-v5/latest/cos-js-sdk-v5.zip).
+- Demo download: [JS Sample](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md).
 - For SDK FAQs, please see [JavaScript SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40775).
@@ -16,7 +16,7 @@
 #### Environment requirements
 
 1. The SDK for JavaScript requires the browser to support basic HTML5 features (IE 10 and higher) for AJAX file uploading and MD5 checksum calculation.
-2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
+2. Log in to the [COS console](https://console.cloud.tencent.com/cos5), [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get the SecretId and SecretKey of your project.
 4. Configure CORS rule. Put in `*` for `AllowHeader`. For `ExposeHeaders`, put in `ETag`, `Content-Length`, and the other header fields that JS needs to read as shown below. For more information, please see [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/13318).
 
@@ -267,7 +267,7 @@ var cos = new COS({
 | UploadQueueSize | The maximum size of the upload queue. Excess tasks will be cleared if their status is not waiting, checking, or uploading. Default value: 10000 | Number | No |
 | ForcePathStyle | Forces the use of a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: false | Boolean | No |
 | UploadCheckContentMd5 | Verifies Content-MD5 when uploading files, which is false by default. If it is enabled, the MD5 value of the uploading files will be calculated, which may be time-consuming for large files | Boolean | No |
-| getAuthorization | Callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter is required. <br>**Note: This callback method is passed in during instance initialization, and is only executed to obtain the signature when the instance calls APIs. ** | Function | No |
+| getAuthorization | Callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter is required. <br> **Note: This callback method is passed in during instance initialization, and is only executed to obtain the signature when the instance calls APIs. **  | Function | No |
 | Timeout | Timeout period in milliseconds. Default value: 0, indicating no timeout period. | Number | No |
 | UseAccelerate          | Whether to enable a global acceleration endpoint. Default value: `false`. If you set the value to `true`, you need to enable global acceleration for the bucket. For more information, see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406). | Boolean | No   |
 
@@ -291,7 +291,7 @@ After the temporary key is obtained, the callback returns an object. The attribu
 | Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
-| TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
+| TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | Yes |
 | SecurityToken | sessionToken of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | Yes |
 | StartTime | The timestamp in seconds of when you obtained the key, such as `1580000000`. Passing in this parameter as the signature start time can avoid signature expiration issues due to time deviation on the frontend. | String | No   |
 | ExpiredTime | `expiredTime` of the obtained temporary key measured in seconds, i.e., the timeout timestamp, such as 1580000900 | String | Yes |
