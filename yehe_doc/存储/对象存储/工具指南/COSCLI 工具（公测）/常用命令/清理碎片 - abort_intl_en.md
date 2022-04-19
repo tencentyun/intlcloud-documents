@@ -1,24 +1,24 @@
 The `abort` command is used to clear the generated incomplete multipart uploads.
 
-## Command Format
+## Command Syntax
 
 ```plaintext
 ./coscli abort cos://<bucketAlias>[/prefix/] [flag]
 ```
 
->? For more information on `bucketAlias`, please see [Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>? 
+>- For more information on `bucketAlias`, see [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>- For more general options for this command (such as switching buckets or user accounts), see [General Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
 The `abort` command contains the following optional flags:
 
 | Flag Abbreviation | Flag Name     | Purpose                         |
 | --------- | ------------- | ------------------------ |
-| -h        | --help        | Outputs help information                      |
-| -c        | --config-path | Specifies the path of the configuration file to be used          |
 |     None      | --include     | Includes files with a specific pattern                |
 |     None      | --exclude     | Excludes files with a specific pattern                |
 
-## Example
+## Examples
 
 ### Clearing all incomplete multipart uploads in `bucket1` bucket
 

@@ -1,21 +1,21 @@
 The `restore` command is used to retrieve archived files.
 
-## Command Format
+## Command Syntax
 
 
 ```plaintext
 ./coscli restore cos://<bucketAlias>[/prefix/] [flag]
 ```
 
->? For more information on `bucketAlias`, please see [Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>? 
+>- For more information on `bucketAlias`, see [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>- For more general options for this command (such as switching buckets or user accounts), see [General Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
 The `restore` command contains the following optional flags:
 
 | Flag Abbreviation | Flag Name     | Purpose                         |
 | --------- | ------------- | --------------------------------- |
-| -h        | --help        | Outputs help information                      |
-| -c        | --config-path | Specifies the path of the configuration file to be used          |
 |     None      | --include     | Includes files with a specific pattern                |
 |     None      | --exclude     | Excludes files with a specific pattern                |
 | -d        | --days        | Specifies the expiration time of temporary files, which is 3 days by default |
@@ -29,7 +29,7 @@ The `restore` command contains the following optional flags:
 ./coscli restore cos://bucket1/example/ -r --include ".*.mp4"
 ```
 
-## Example
+## Examples
 
 ### Retrieving archived files in `bucket1` bucket in Standard mode
 

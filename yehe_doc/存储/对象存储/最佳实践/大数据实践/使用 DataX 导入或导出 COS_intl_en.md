@@ -1,13 +1,13 @@
 ## Environmental Dependencies
 
-- [HADOOP-COS](https://github.com/tencentyun/hadoop-cos) and Hadoop-COS-Java-SDK (included in the `dep` directory of HADOOP-COS)
-- DataX Version: DataX-3.0.
+- [HADOOP-COS](https://github.com/tencentyun/hadoop-cos/releases) and the corresponding [cos_api-bundle](https://github.com/tencentyun/hadoop-cos/releases).
+- DataX version: DataX 3.0
 
 ## Download and Installation
 
-#### Downloading HADOOP-COS 
+#### Downloading HADOOP-COS
 
-Download [HADOOP-COS](https://github.com/tencentyun/hadoop-cos) on Github.
+Download [HADOOP-COS](https://github.com/tencentyun/hadoop-cos/releases) and the corresponding [cos_api-bundle](https://github.com/tencentyun/hadoop-cos/releases) on Github.
 
 #### Downloading DataX package
 
@@ -15,9 +15,9 @@ Download [DataX](http://datax-opensource.oss-cn-hangzhou.aliyuncs.com/datax.tar.
 
 #### Installing HADOOP-COS
 
-After HADOOP-COS is downloaded, copy `hadoop-cos-2.x.x-shaded.jar` under the `dep` directory to the Datax decompression paths `plugin/reader/hdfsreader/libs/` and `plugin/writer/hdfswriter/libs/`.
+After HADOOP-COS is downloaded, copy `hadoop-cos-2.x.x-${version}.jar` and `cos_api-bundle-${version}.jar` to the Datax decompression paths `plugin/reader/hdfsreader/libs/` and `plugin/writer/hdfswriter/libs/`.
 
-## Directions
+## How to Use
 
 ### DataX configuration
 
@@ -103,7 +103,7 @@ A sample JSON file is as shown below:
 Notes:
 - Configure `hadoopConfig` as required for cosn.
 - Use `defaultFS` to specify the cosn path, e.g. `cosn://examplebucket-1250000000/`.
-- In `fs.cosn.userinfo.region`, enter the region where your bucket resides, such as `ap-beijing`. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
+- In `fs.cosn.userinfo.region`, enter the region where your bucket resides, such as `ap-beijing`. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 - For `COS_SECRETID` and `COS_SECRETKEY`, use your own COS key information.
 
 The other fields can be the same as those for hdfs.
@@ -141,4 +141,3 @@ Recorded write speed                    :              0rec/s
 Recorded read count                    :                   2
 Read/Write failure count                    :                   0
 ```
-
