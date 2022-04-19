@@ -5,7 +5,7 @@ You might need to clone a security group if you:
 
 
 
-## Notes
+## Considerations
 - By default, when you clone a security group, only the rules are cloned, not the association with instances.
 - You can clone a security group across projects and regions.
 
