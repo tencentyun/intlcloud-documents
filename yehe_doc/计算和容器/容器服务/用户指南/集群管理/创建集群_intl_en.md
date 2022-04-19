@@ -8,7 +8,7 @@ Before creating a cluster, you need to complete the following preparations:
 - When you log in to the [TKE console](https://console.cloud.tencent.com/tke2) for the first time, you need to grant the current account TKE permissions for operating on CVMs, CLBs, CBS, and other cloud resources. For more information, see [Description of Role Permissions Related to Service Authorization](https://intl.cloud.tencent.com/document/product/457/37808).
 - To create a container cluster whose network type is virtual private cloud (VPC), you need to [create a VPC](https://intl.cloud.tencent.com/document/product/215/31805) in the target region and [create a subnet](https://intl.cloud.tencent.com/document/product/215/31806) in the target availability zone under the VPC.
 - If you do not use the default security group, you need to [create a security group](https://intl.cloud.tencent.com/document/product/213/34271) in the target region and add a security group rule that meets your business requirements.
-- To bind a SSH key pair when creating a Linux instance, you need to [create a SSH key](https://intl.cloud.tencent.com/document/product/213/16691) for the target project.
+- To bind an SSH key pair when creating a Linux instance, you need to [create an SSH key](https://intl.cloud.tencent.com/document/product/213/16691) for the target project.
 - When you create a cluster, you will use the resources such as VPCs, subnets, and security groups. Each region has a resource quota. For more information on resource quotas, refer to [Quota Limits for Cluster Purchase](https://intl.cloud.tencent.com/document/product/457/9087).
 
 
@@ -39,7 +39,7 @@ Before creating a cluster, you need to complete the following preparations:
 
 1. [](id:step1)Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Clusters** in the left sidebar.
 2. On the "Cluster Management" page, click **Create** above the cluster list.
-3. On **Create Cluster** page, configure the basic information of the cluster as shown in the figure below:
+3. On **Create Cluster** page, configure the basic information of the cluster.
 ![](https://main.qcloudimg.com/raw/31e3fa0551850812cacef99fd6d75cf9.png)
  - **Cluster Name**: the name of the cluster to be created, with a length up to 60 characters.
  - **Project of New-added Resource**: select a project as needed. The newly added resources will be automatically assigned to this project.
@@ -52,7 +52,7 @@ Before creating a cluster, you need to complete the following preparations:
  - **Operating System**: select an operating system based on your actual requirements.
  - **Cluster Description**: enter information about the cluster, which will be displayed on the **Cluster information** page.
  - **Advanced Settings** (optional):
-    - **Tencent Cloud Tags**: after binding tags to the cluster, you can categorize the resources. For more information, see [Querying Resources by Tag](https://intl.cloud.tencent.com/document/product/651/32582).   
+    - **Tencent Cloud Tags**: Add tags to the cluster for resource categorizing. For more information, see [Querying Resources by Tag](https://intl.cloud.tencent.com/document/product/651/32582).   
     - **Deletion Protection**: when it's enabled, the cluster will not be deleted by mis-operation on console or by API.
     - **Kube-proxy Proxy Mode**: select iptables or ipvs. IPVS mode is applicable to large-scale services. You cannot disable it once it is enabled. For details, refer to [Enabling IPVS for a Cluster](https://intl.cloud.tencent.com/document/product/457/30641).
     - **Custom Parameters**: specify the custom parameters to configure the cluster.
@@ -60,15 +60,15 @@ Before creating a cluster, you need to complete the following preparations:
 4. Click **Next**.
 
 #### Selecting a Model
-1. In **Select Model** page, confirm the billing mode, select an availability zone and the corresponding subnet, and confirm the node model, as shown below:
+1. On the **Select Model** page, confirm the billing mode, select an availability zone and the corresponding subnet, and confirm the node model.
 ![](https://main.qcloudimg.com/raw/3e005a89586fd9113755aa82975bf55f.png)
-  - **Node Source**: there are two options: **Add node** and **Existing nodes**.
+  - **Node Source**: choose **Add node** or **Existing nodes**.
 
 <dx-tabs>
-::: Addin\sa\snode
+::: Add\sa\snode
 Create a cluster by adding nodes (that is, by adding CVMs). The details are as follows:
 
-In the **Select Model** step, select a deployment mode and model based on the following information, as shown below:
+In the **Select Model** step, select a deployment mode and model based on the following information.
 ![](https://main.qcloudimg.com/raw/027ff16d127413aea2b32dde9ba28e7b.png)
  The main parameters are described as follows:
 
@@ -83,7 +83,7 @@ In the **Select Model** step, select a deployment mode and model based on the fo
       - **Public network bandwidth**: select **Assign free public IP** and the system will assign a public IP address for free. Two billing methods are available. For details, see [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578).
       - **Node Name**: the name of the computer in the OS (the node name displayed by running the `kubectl get nodes` command`). It is a cluster attribute. The node name can be named in the following two modes:
         - **Auto-generated**: the node name defaults to the private IP of the node.
-        - **Custom Name**: you can use sequential numbering or custom format string. It can contains 2-60 characters, including lower-case letters, numbers, hyphens ("-") and periods ("."). Symbols cannot be placed at the beginning nor end, and cannot be used consecutively. For more naming rules, see [Batch Sequential Naming or Pattern String-Based Naming](https://intl.cloud.tencent.com/document/product/213/32020).
+        - **Custom Name**: you can use sequential numbering or custom format string. It can contain 2-60 characters, including lower-case letters, numbers, hyphens ("-") and dots ("."). Symbols cannot be placed at the beginning nor end, and cannot be used consecutively. For more naming rules, see [Batch Sequential Naming or Pattern String-Based Naming](https://intl.cloud.tencent.com/document/product/213/32020).
 <dx-alert infotype="notice">Due to the naming restriction of kubernetes node, you can only use the lower-case letters when customizing the node name, for example, 'cvm {R:13}-big{R:2}-test'.
 </dx-alert>
         - **Instance Name**: the CVM instance name displayed in the console, which is determined by the naming mode of host name.
@@ -100,10 +100,10 @@ Create a cluster using the existing nodes (that is, by using the existing CVMs).
 <dx-alert infotype="notice">
 <li>The selected CVMs will be reinstalled and all data in the system disk will be cleared.</li>
 <li>The selected CVMs will be migrated to the project of the cluster. All related security groups will be unbound. You need to bind them manually again.</li>
-<li>If you set the data disk mounting parameters when configuring the CVM, this parameter will be applied to **all Master and Worker nodes**. For more information, see the **Data Disk Settings** in [Adding an existing node](https://intl.cloud.tencent.com/document/product/457/30652).</li>
+<li>If you set the data disk mounting parameters when configuring the CVM, this parameter will be applied to **all Master and Worker nodes**. For more information, see the **Data Disk Settings** in [Adding a Node](https://intl.cloud.tencent.com/document/product/457/30652).</li>
 </dx-alert>
 
- In the **Select Model** step, select a deployment mode and model based on the following information, as shown below:
+ In the **Select Model** step, select a deployment mode and model based on the following information.
 ![](https://main.qcloudimg.com/raw/883f0d559eba35b034c36423ec45f2f9.png)
  The main parameters are described as follows:
 
@@ -116,12 +116,12 @@ Create a cluster using the existing nodes (that is, by using the existing CVMs).
 
 [](id:ConfigureCVM)
 #### CVM configuration
-1. In the “CVM Configuration” step, configure a CVM based on the following information, as shown below:
+1. In the **CVM Configuration** step, configure a CVM based on the following information.
 ![](https://main.qcloudimg.com/raw/24a166447e301672141a4f2257d7a206.png)
  - **Container Directory**: check this option to set up the container and image storage directory. We recommend that you store to the data disk, such as `/var/lib/docker`.
  - **Security Group**: the security group works as a firewall to control network access of the CVM. The following settings are supported:
     - Create and bind the default security group. You can preview the default security group rules.
-    - Add security group to configure custom security group rules according to your actual needs.
+    - Add a security group to configure custom security group rules according to your actual needs.
     For details, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
  - **Login Method**: three login methods are available.
     - **SSH Key Pair**: a key pair is a pair of parameters generated by an algorithm. Compared to regular passwords, it is a more secure way to log in to a CVM. For details, see [SSH Key](https://intl.cloud.tencent.com/document/product/213/6092).
@@ -129,7 +129,7 @@ Create a cluster using the existing nodes (that is, by using the existing CVMs).
     - **Custom Password**: set a password as prompted.
   - **Security Services**: free DDoS Protection, Web Application Firewall (WAF), and Cloud Workload Protection are activated by default. For more information, see [Cloud Workload Protection](https://intl.cloud.tencent.com/product/cwp).
   - **Cloud Monitor**: free monitoring, analysis, and alarms are activated by default, and components are installed to obtain CVM monitoring metrics. For more information, see [Cloud Monitor](https://intl.cloud.tencent.com/product/cm).
-2. (Optional) Click **Advanced Settings** to view or configure more information, as shown in the following figure.
+2. (Optional) Click **Advanced Settings** to view or configure more information.
 ![](https://main.qcloudimg.com/raw/f6bd03236aac6a6c56557dced60fda02.png)
  - **CAM Role**: you can bind all the nodes created this time to the same CAM role, and grant the authorization policy bound to the role to the nodes. For more information, see [Managing Roles](https://intl.cloud.tencent.com/document/product/213/38290).
  - **Node Launch Configuration**: specify custom data to configure node, that is, to run the configured script when the node is started up. You need to ensure the reentrant and retry logic of the script. The script and its log files can be viewed at the node path: `/usr/local/qcloud/tke/userscript`.
@@ -141,7 +141,7 @@ Create a cluster using the existing nodes (that is, by using the existing CVMs).
 
 
 #### Component configurations
-1. In the **Component Configurations** step, configure a component based on the following information, as shown below:
+1. In the **Component Configurations** step, configure a component based on the following information.
 ![](https://main.qcloudimg.com/raw/5d7dc6f9da2bcc56961eda8d3cfc4a68.png)
  - **Addon**: you can select the add-ons such as storage, monitor, and image as needed. For more information, see [Add-on Overview](https://intl.cloud.tencent.com/document/product/457/33988).
  - **Log Service**: the cluster auditing is enabled by default. For more information, see [Cluster Audit](https://intl.cloud.tencent.com/document/product/457/38338).
@@ -149,11 +149,11 @@ Create a cluster using the existing nodes (that is, by using the existing CVMs).
 
 
 #### Information confirmation
-In the “Confirm Info” page, confirm the selected configuration information and billing mode for the cluster and click **Done**.
+On the **Confirm Info** page, confirm the selected configuration information and billing mode for the cluster and click **Done**.
 
 
 ### Viewing the cluster
-You can view clusters that have been created in the [cluster list](https://console.cloud.tencent.com/tke2/cluster?rid=1). You can click the cluster ID to enter the details page, and then view the cluster, node, and network information on the “Basic Information” page, as shown below:
+You can view clusters that have been created in the [cluster list](https://console.cloud.tencent.com/tke2/cluster?rid=1). You can click the cluster ID to enter the details page, and then view the cluster, node, and network information on the **Basic Information** page.
 ![](https://main.qcloudimg.com/raw/1e2b43c46dcb77dacbe7fa9cd158dedf.png)
 
 
