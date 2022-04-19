@@ -7,7 +7,7 @@ TencentDB for SQL Server supports migrating data from a CVM-based self-created S
 
 ## Directions
 ### Step 1. Create a migration task
-1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) and select **Data Transfer** on the left sidebar.
+1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) and select **Data Migration (Legacy)** on the left sidebar.
 2. Click **Create Task**, enter the task name, source database information, and target database information, and select **CVM-based self-created SQL Server database** as the source instance type.
 ![](https://main.qcloudimg.com/raw/7897cdebc4f35752e5029ea472fda64d.png)
 3. After clicking **Next**, you need to [configure the source SQL Server instance](#step2) first and then [configure the migration task](#step3).
