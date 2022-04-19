@@ -11,7 +11,7 @@ You cannot mount external hardware devices (such as hardware dongle, USB flash d
 #### 4. Configuration Adjustment
 GPU instances cannot be upgraded or downgraded.
 #### 5. Prohibition
-  - Do not use GPU instances for **traffic traversal**. , which may cause a penalty of up to service suspension, deactivation, or even repossession.
+  - Do not use GPU instances for **traffic traversal**. Tencent Cloud may suspend your service and repossess the resources if related behaviors are detected.
   - Do not use GPU instances to engage in **fraudulent online transactions** such as click farming (order, sales volume or advertisement) on e-commerce websites.
 
 
