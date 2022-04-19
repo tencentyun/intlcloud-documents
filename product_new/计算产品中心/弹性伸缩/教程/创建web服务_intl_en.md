@@ -27,7 +27,7 @@ You can also configure scheduled scaling policy for expected business peaks (suc
 
 
 
-## Applicable Industries
+## Applicable Scenarios
 
 This solution is applicable to all websites, especially to those with large load fluctuations:
 
@@ -45,6 +45,6 @@ This solution is applicable to all websites, especially to those with large load
 
 Yes. Common websites will also encounter unexpected situations, such as CC attacks, or piled access due to unexpected incidents.
 
-This solution does no incur any additional cost. You only need to enable **Scale-in Protection** for the necessary servers, and don’t need to change the structure and operation of websites. 
+This solution does not incur any additional cost. You only need to enable **Scale-in Protection** for the necessary servers, and don’t need to change the structure and operation of websites. 
 
 It’s recommended to take this solution as the best practice for your websites.
