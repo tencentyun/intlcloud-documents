@@ -23,7 +23,7 @@ For details, see [Adding a Node](https://intl.cloud.tencent.com/document/product
 #### Adding an existing node
 >!
 >- Currently, you can only add CVMs in the same VPC.
->- If you choose to add an existing node to the cluster, the operating system of the CVM will be reinstalled according to you settings.
+>- If you choose to add an existing node to the cluster, the operating system of the CVM will be reinstalled according to your settings.
 >- If you choose to add an existing node to the cluster, the project of the CVM will be migrated to the project set for the cluster.
 >- When adding a node with only one data disk to the cluster, you can choose to set the related parameters of data disk mounting.
 
