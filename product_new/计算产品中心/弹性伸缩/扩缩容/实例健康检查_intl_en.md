@@ -8,7 +8,7 @@ To ensure the normal operations of the instances in the scaling group, AS period
 
 - **Instance health check**
 
-The scaling group periodically checks the running status of instances to confirm whether each instance is robust (whether it responses to the ping command within 1 minute). If the pinged instance is unreachable for more than one minute, AS marks this instance as unhealthy.
+The scaling group periodically checks the running status of instances to confirm whether they are healthy (whether it responds to the ping command within 1 minute). If the pinged instance is unreachable for more than one minute, AS marks this instance as unhealthy.
 
 - **Replacing unhealthy instances**
 
