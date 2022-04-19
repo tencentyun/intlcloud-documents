@@ -28,4 +28,4 @@ Proses pengembalian snapshot tambahan adalah seperti yang ditunjukkan pada gamba
 
 Berdasarkan contoh sebelumnya, jika Anda menghapus Snapshot 1, sistem akan menggabungkan Snapshot 1 dan Snapshot 2, dan akan menggunakan data Snapshot 2 untuk menimpa data Snapshot 1 di lokasi yang sama.Setelah digabungkan, Snapshot 2 adalah snapshot penuh yang baru.
 Proses penghapusan snapshot tambahan adalah seperti yang ditunjukkan pada gambar berikut:
-![](https://main.qcloudimg.com/raw/7e6bc502dd34fb9880d20a2025ab4897.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f2bb2449450a52df265537da14768b5.png)
