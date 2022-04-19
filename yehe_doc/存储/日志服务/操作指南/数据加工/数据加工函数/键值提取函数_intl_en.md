@@ -2,10 +2,10 @@
 
 The figure below shows the common use cases of key-value extraction functions. After key-value extraction, logs are processed into structured data, which can be used for SQL analysis.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/efa81252dd815164adaa30459538309e.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/ce83aec745be178f3918db34608eb109.png)
 
 ## Function ext_sep()   
- 
+
 #### Function definition
 
 This function is used to extract field value content based on a separator (single character).   
@@ -68,7 +68,7 @@ Raw log:
 Processing rule:  
 ```
 ext_sep("content", "f1, f2", restrict=True)
-```   
+```
 Processing result:  
 ```
 {"content":"1,2,3"}  
@@ -118,7 +118,7 @@ Processing result:
 #### Function definition
 
 This function is used to extract field values from JSON data.  
-  
+
 #### Syntax description
 
 ```sql
@@ -265,7 +265,7 @@ ext_regex("Source field name", regex="Regular expression", output="Target field 
 #### Parameter description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
-| ----------------- | ------------------------------- | ------------ | ----------------- | ---------- | -------------- | 
+| ----------------- | ------------------------------- | ------------ | ----------------- | ---------- | -------------- |
 | field        | Field to extract                                               | string | Yes   | -       | -      |
 | regex  | Regular expression. If the expression contains a special character, escaping is required. Otherwise, syntax error is reported. | string | Yes   | -          | -     |
 | output  | A single field name or multiple new field names concatenated with commas       | string     | No        | -      | -   |
@@ -294,7 +294,7 @@ Raw log:
 Processing rule:  
 ```
 ext_regex("content", regex="(?<target1>\d+)(.*)", output="target2")
-```  
+```
 Processing result:  
 ```
 {"target2":"abcd","content":"1234abcd","target1":"1234"}  
@@ -305,7 +305,7 @@ Processing result:
 #### Function definition
 
 This function is used to extract key-value pairs by using two levels of separators.  
-  
+
 #### Syntax description
 
 ```sql
@@ -315,7 +315,7 @@ ext_kv("Source field name", pair_sep=r"\s", kv_sep="=", prefix="", suffix="", mo
 #### Parameter description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
-| ----------------- | -------------------- | ----------------- | --------------------- | ---------- | ------------------- | 
+| ----------------- | -------------------- | ----------------- | --------------------- | ---------- | ------------------- |
 | field        | Field to extract                                               | string | Yes   | -       | -      |
 | pair_sep | Level-1 separator, separating multiple key-value pairs     | string | Yes   | -          | -     |
 | kv_sep   | Level-2 separator, separating keys and values         | string | Yes   | -          | -     |

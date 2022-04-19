@@ -2,7 +2,7 @@
 
 Logs contain a large volume of text. When processing text, you can use regular expression functions to flexibly extract keywords, mask fields, or determine whether the text contains specified characters. See the figure below.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f8459440f35f7f3c0e26e18bf1a98607.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/c8816ff54a4c6551b57ce6da20ed07a3.png)
 
 For examples of regular expressions commonly used in log scenarios, visit [Online Test of Regular Expressions](https://c.runoob.com/front-end/854/).
 
@@ -31,8 +31,8 @@ regex_match(Field value, regex="", full=True)
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Field value |string| Yes | -  | -  | 
-|regex| Regular expression |string| Yes | -  | -  | 
+|data| Field value |string| Yes | -  | -  |
+|regex| Regular expression |string| Yes | -  | -  |
 |full| Whether to enable full match. For full match, the entire value must fully match the regular expression. For partial match, only part of the value needs to match the regular expression. |bool| No |True| -  |
 
 
@@ -83,8 +83,8 @@ regex_select(Field value, regex="", index=1, group=1)
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Field value |string| Yes | -  | -  | 
-|regex| Regular expression |string| Yes | -  | -  | 
+|data| Field value |string| Yes | -  | -  |
+|regex| Regular expression |string| Yes | -  | -  |
 |index| Sequence number of the matched expression in the match result |number| No | First | -  |
 |group| Sequence number of the matched group in the match result |number| No | First | -  |
 
@@ -125,8 +125,8 @@ regex_split(Field value, regex=\"\", limit=100)
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Field value |string| Yes | -  | -  | 
-|regex| Regular expression |string| Yes | -  | -  | 
+|data| Field value |string| Yes | -  | -  |
+|regex| Regular expression |string| Yes | -  | -  |
 |limit| Maximum array length for splitting. When this length is exceeded, the excessive part will be split, constructed as an element, and added to the array. |number | No | 100 | -  |
 
 
@@ -157,14 +157,14 @@ This function is used to match data based on a regular expression and replace th
 ```sql
 regex_replace(Field value, regex="", replace="", count=0)
 ```
-    
+
 #### Parameter description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Field value |string| Yes | -  | -  | 
-|regex| Regular expression |string| Yes | -  | -  | 
-|replace| Target string, which is used to replace the matched result |string| Yes | -  | -  | 
+|data| Field value |string| Yes | -  | -  |
+|regex| Regular expression |string| Yes | -  | -  |
+|replace| Target string, which is used to replace the matched result |string| Yes | -  | -  |
 |count| Replacement count. The default value is `0`, indicating complete replacement. |number| No | 0 | -  |
 
 
@@ -220,8 +220,8 @@ regex_findall(Field value, regex="")
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Field value |string|Yes| -  | -  | 
-|regex| Regular expression |string| Yes | -  | -  | 
+|data| Field value |string|Yes| -  | -  |
+|regex| Regular expression |string| Yes | -  | -  |
 
 #### Sample
 

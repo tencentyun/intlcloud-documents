@@ -1,7 +1,7 @@
 ## Overview
 
 Field processing functions are used to process fields in logs. See the figure below.
-![](https://qcloudimg.tencent-cloud.cn/raw/6484b907077331261f4213a5a15c17c7.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/0bdc568ee0be67a3f1ddc438e96028ce.png)
 
 ## Function v
 

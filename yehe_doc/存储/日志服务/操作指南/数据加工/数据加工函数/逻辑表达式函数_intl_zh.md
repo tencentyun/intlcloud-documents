@@ -1,7 +1,7 @@
 ## 简介
 
 逻辑与数学函数，包含了与或非、大于小于等于、加减乘除取模的运算。写起来和我们在程序语言中稍有区别，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/293f6c206aeef96d8b8c4dcabd37d3da.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/8aa59806fd4e15846418bb119f4ebf23.png)
 
 ## op_if 函数
 

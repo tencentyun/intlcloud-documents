@@ -1,7 +1,7 @@
 CLS's data processing functions can be flexibly combined and used to cleanse, structure, filter, distribute, mask log data and more.
 The figure below shows how a log containing JSON data is processed: the log data is processed and transformed into structured data, and then a field in the log is masked before the processed log is distributed.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6b71baf5c3730840b47ba481d58ea8ae.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/d4bd1388c816337acb35721847298263.png)
 
 The following is an overview of data processing functions.
 
@@ -137,7 +137,7 @@ The following is an overview of data processing functions.
 <tr><td>ct_str</td><td>Converts a value to a string.</td><td>ct_str(Value)</td><td>Calculation result</td></tr>
 <tr><td>ct_bool</td><td>Converts a value to a Boolean value.</td><td>ct_bool(Value)</td><td>Calculation result</td></tr>
 </table>
-			
-			
-			
-			
+
+​			
+​			
+​			

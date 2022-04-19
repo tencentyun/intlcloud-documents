@@ -1,7 +1,7 @@
 日志服务（Cloud Log Service，CLS）数据加工函数可以自由组合，来完成日志的清洗、结构化、过滤、分发、脱敏等场景。
 如下图是一条含有 JSON 的日志，经过数据加工处理之后，变成结构化数据、然后对某个字段值进行脱敏、最后分发的流程。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6b71baf5c3730840b47ba481d58ea8ae.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/d4bd1388c816337acb35721847298263.png)
 
 如下是数据加工函数的总览。
 
@@ -137,7 +137,7 @@
 <tr><td>ct_str</td><td>将值转换为字符串</td><td>ct_str(值)</td><td>返回求值结果</td></tr>
 <tr><td>ct_bool</td><td>将值转换为布尔值</td><td>ct_bool(值)</td><td>返回求值结果</td></tr>
 </table>
-			
-			
-			
-			
+
+​			
+​			
+​			

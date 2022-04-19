@@ -1,7 +1,7 @@
 ## 简介
 
 对一行日志进行处理，包括过滤、分发、分裂等函数。
-![](https://qcloudimg.tencent-cloud.cn/raw/f34421c534c3aa04aa79240584846983.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/1a08aacfadb7e606c4cc9864b0de84e9.png)
 
 ## log_output 函数
 
@@ -118,7 +118,7 @@ log_split("field", jmes="a.b.c.d",  output="new_field")
 
 
 ## log_drop 函数
- 
+
 #### 函数定义
 
 丢弃符合条件的日志。

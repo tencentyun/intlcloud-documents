@@ -1,7 +1,7 @@
 ## 简介
 
 字段处理函数，顾名思义，就是对日志中的字段进行处理，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/6484b907077331261f4213a5a15c17c7.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/0bdc568ee0be67a3f1ddc438e96028ce.png)
 
 ## v 函数
 

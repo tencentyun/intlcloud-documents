@@ -1,7 +1,7 @@
 ## Overview
 
 Row processing functions process log rows, such as filtering, distributing, and splitting log rows.
-![](https://qcloudimg.tencent-cloud.cn/raw/f34421c534c3aa04aa79240584846983.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/1a08aacfadb7e606c4cc9864b0de84e9.png)
 
 ## Function log_output
 
@@ -118,7 +118,7 @@ Processing result:
 
 
 ## Function log_drop
- 
+
 #### Function definition
 
 This function is used to delete logs that meet a specified condition.

@@ -2,7 +2,7 @@
 
 The writing method of the flow control logic in commonly used programming languages is different from that in DSL functions. See the figure below.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/2664c4da2aa2a5814f2152f967dc4372.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/fee40ea149eb79f5fbe396e2291e3b0a.png)
 
 ## Function compose
 
