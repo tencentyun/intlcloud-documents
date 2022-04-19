@@ -28,4 +28,4 @@ O processo de reversão de snapshot incremental é mostrado na figura a seguir:
 
 Com base no exemplo anterior, se você excluir o Snapshot 1, o sistema mesclará o Snapshot 1 e o Snapshot 2 e usará os dados do Snapshot 2 para substituir os dados do Snapshot 1 no mesmo local. Após a mesclagem, o Snapshot 2 é o novo snapshot completo.
 O processo de exclusão de snapshot incremental é mostrado na figura a seguir:
-![](https://main.qcloudimg.com/raw/7e6bc502dd34fb9880d20a2025ab4897.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f2bb2449450a52df265537da14768b5.png)
