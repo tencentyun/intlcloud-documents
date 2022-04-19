@@ -20,7 +20,7 @@ Linux, Mac OS or Windows (including Windows 10 and Windows Server 2019)
 
 ## Directions
 
-### Using the password
+### Password login
 
 1. Execute the following command to connect to the Linux CVM.
 >? If your local computer uses Mac OS, you need to open the terminal that comes with the system before executing the following command.
@@ -35,7 +35,7 @@ ssh <username>@<hostname or IP address>
 2. Enter the password you have obtained, and click **Enter** to log in.
 
 <span id="LoginWithKey"></span>
-### Using a key
+### Key login
 
 1. Execute the following command to set the private key file readable only to you.
  - If your local computer uses Mac OS, you need to open the terminal that comes with the system before executing the following command.
@@ -61,7 +61,7 @@ ssh -i <The absolute path of the private key downloaded to be associated with th
 
 ## Subsequent Operations
 
-After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, please see:
+After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, see:
 - [Manually Building WordPress Website](https://intl.cloud.tencent.com/document/product/213/8044)
 - [Manually Building Discuz! Forum](https://intl.cloud.tencent.com/document/product/213/8043)
 
