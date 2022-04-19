@@ -434,7 +434,6 @@ Replace the IP with the original domain before verifying a certificate.
 ```
 #pragma mark - NSURLConnectionDelegate
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
-
 	// Create a certificate verification policy
 	NSMutableArray *policies = [NSMutableArray array];
 	if (domain) {
@@ -442,7 +441,6 @@ Replace the IP with the original domain before verifying a certificate.
 	} else {
 		[policies addObject:(__bridge_transfer id)SecPolicyCreateBasicX509()];
 	}
-
 	// Bind the verification policy to the certificate on the server
 	SecTrustSetPolicies(serverTrust, (__bridge CFArrayRef)policies);
 
@@ -453,24 +451,20 @@ Replace the IP with the original domain before verifying a certificate.
 	SecTrustResultType result;
 	SecTrustEvaluate(serverTrust, &result);
 	return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
-}
-
+	}
 - (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 	if (!challenge) {
 		return;
 	}
-
 	// When HTTPDNS is used, the host in the URL is set to the IP, and you can get the actual domain from the HTTP header
 	NSString *host = [[self.request allHTTPHeaderFields] objectForKey:@"host"];
 	if (!host) {
 		host = self.request.URL.host;
 	}
-
 	// Determine whether the challenge authentication method is `NSURLAuthenticationMethodServerTrust` (this authentication process will be performed for HTTPS mode)
 	// The default network request process will be performed if no authentication method is configured.
 	if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
 		if ([self evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:host]) {        
-
 			// After authentication, you need to construct a `NSURLCredential` and send it to the initiator    
 			NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
 			[[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
@@ -479,15 +473,15 @@ Replace the IP with the original domain before verifying a certificate.
 			[[challenge sender] cancelAuthenticationChallenge:challenge];
 		}
 	} else {
-
 		// For other authentication methods, directly proceed with the process
 		[[challenge sender] continueWithoutCredentialForAuthenticationChallenge:challenge];
 	}
 }
 ```
- - **Take the `NSURLSession` API as an example:**
-```
 
+ - **Take the `NSURLSession` API as an example:**
+
+```
  #pragma mark - NSURLSessionDelegate
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
 
@@ -498,7 +492,6 @@ Replace the IP with the original domain before verifying a certificate.
 	} else {
 		[policies addObject:(__bridge_transfer id)SecPolicyCreateBasicX509()];
 	}
-
 	// Bind the verification policy to the certificate on the server
 	SecTrustSetPolicies(serverTrust, (__bridge CFArrayRef)policies);
 
@@ -508,18 +501,14 @@ Replace the IP with the original domain before verifying a certificate.
 	// For more information on `SecTrustResultType`, see `SecTrust.h`    
 	SecTrustResultType result;
 	SecTrustEvaluate(serverTrust, &result);
-
 	return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
-}
-
+	}
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * __nullable credential))completionHandler {
 	if (!challenge) {
 		return;
 	}
-
 	NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
 	NSURLCredential *credential = nil;
-
 	// Get the original domain information
 	NSString *host = [[self.request allHTTPHeaderFields] objectForKey:@"host"];
 	if (!host) {
@@ -535,17 +524,17 @@ Replace the IP with the original domain before verifying a certificate.
 	} else {
 		disposition = NSURLSessionAuthChallengePerformDefaultHandling;
 	}
-
 	// For other challenges, directly use the default authentication scheme
 	completionHandler(disposition,credential);
 }
 ```
+
  - **Take the `WWW` API of Unity as an example:**
 After importing the Unity project as an Xcode project, open the `Classes/Unity/**WWWConnection.mm**` file and modify the following code:
- ```
+```
 //const char* WWWDelegateClassName = "UnityWWWConnectionSelfSignedCertDelegate";
 const char* WWWDelegateClassName = "UnityWWWConnectionDelegate";
- ```
+```
  
 To:
 
