@@ -23,7 +23,7 @@
 
 >? 
 > - For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
-> - Use instructions for cross-device frameworks (such as uni-app): for mobile apps that cannot be packaged for normal use after being developed using the JavaScript SDK, such as Android and iOS apps, you need to use the corresponding Android SDK and iOS SDK.
+> - If you are using cross platform framework such as uni-app, and encounter problems when packaging the app (such as iOS or Android app), use the iOS SDK or Android SDK.
 > 
 
 #### Installing SDK
@@ -267,7 +267,7 @@ var cos = new COS({
 | UploadQueueSize | The maximum size of the upload queue. Excess tasks will be cleared if their status is not waiting, checking, or uploading. Default value: 10000 | Number | No |
 | ForcePathStyle | Forces the use of a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: false | Boolean | No |
 | UploadCheckContentMd5 | Verifies Content-MD5 when uploading files, which is false by default. If it is enabled, the MD5 value of the uploading files will be calculated, which may be time-consuming for large files | Boolean | No |
-| getAuthorization | Callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter is required. <br> **Note: This callback method is passed in during instance initialization, and is only executed to obtain the signature when the instance calls APIs. **  | Function | No |
+| getAuthorization | Callback method for getting the signature. If there is no `SecretId` or `SecretKey`, this parameter is required. <br> **Note: This callback method is passed in during instance initialization, and is only executed to obtain the signature when the instance calls APIs.**  | Function | No |
 | Timeout | Timeout period in milliseconds. Default value: 0, indicating no timeout period. | Number | No |
 | UseAccelerate          | Whether to enable a global acceleration endpoint. Default value: `false`. If you set the value to `true`, you need to enable global acceleration for the bucket. For more information, see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406). | Boolean | No   |
 
