@@ -10,6 +10,6 @@ When you log in to a GPU instance via VNC, the VGA device emulated by QEMU is ac
 ## Solution
 1. If the GPU instance is installed with a graphics driver, install a VNC server on the instance so that you can log in to the GPU instance via a local VNC client.
 You need to obtain the VNC server and the client installation packages by yourself.
-2. Check the installed third-party software and analyze why the software leads to login failure.
+2. Check the installed third-party software and analyze why the software leads to login failures.
 We recommend that you uninstall the conflicting third-party software or reinstall the operating system.
 
