@@ -25,10 +25,10 @@ Currently, HTTP requests to HTTPDNS can be encrypted with DES or AES.
 >? For encryption and decryption with DES, the key is 8 characters in length, the block cipher mode is `ECB`, and the padding algorithm is `PKCS5Padding`.
 >
 The encrypted data is encoded by using `Hex(Base16)` to convert the binary data into a visible hexadecimal ID, and the length of the encoded data will double. The detailed process is as shown below:
-![](https://main.qcloudimg.com/raw/325fd677d99012440bdd12cb1dbed180.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e6a82a00c98cc6ac15862bfca214ad32.png)
 
 Decryption of the response data involves decoding the data to binary data with `Hex` first and then decrypting the binary data with the DES algorithm into plaintext data. The detailed process is as shown below:
-![](https://main.qcloudimg.com/raw/6eff04fd43aba6643408cb1f89ebbcce.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5210e5a220e55e0ecc9d54817c78f746.png)
 
 For example, if your domain is `www.dnspod.cn` and the encryption key is `dnspodpass`, the process will be as follows:
 1. Add the domain in the [HTTPDNS console](https://console.cloud.tencent.com/httpdns/domain).
@@ -44,9 +44,9 @@ You will get an encrypted string with a doubled length, such as `55915a682ea2084
 >?For encryption and decryption with AES, the key is 16 characters in length, the block cipher mode is `CBC`, and the padding algorithm is `PKCS7`.
 >
 The CBC mode requires a random `IV` as the initial input for encryption and decryption, so the `IV` will also be carried in the request and response. The encrypted data along with the `IV` is encoded by using `Hex` and converted into a visible hexadecimal ID. The detailed process is as shown below:
-![](https://main.qcloudimg.com/raw/15f106152b9294a6115900d7c95db63e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/40c662defb24b83cb2f0565cb9e8e37c.png)
 During decryption, the data is decoded to binary data by using `Hex`, where the first 16 bytes is the `IV` value, and the bytes after `IV` is the data to be decrypted with the AES algorithm. The plaintext data will be obtained after decryption. The detailed process is as shown below:
-![](https://main.qcloudimg.com/raw/af3b12e5945a0336ca85ca02d3005a5a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/da8d8f54eec6140d2262e7e37cad62e8.png)
 
 
 
