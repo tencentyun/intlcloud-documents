@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 COSDistCp is a MapReduce-based distributed file copy tool mainly used for data copy between HDFS and COS. It introduces the following features:
 - Performs incremental file migration and data verification based on length and CRC checksum.
@@ -24,8 +24,8 @@ Hadoop 2.6.0 or above; Hadoop-COS 5.9.3 or above
 
 #### Obtaining the COSDistCp JAR package
 
-- If your Hadoop version is 2.x, you can download [cos-distcp-1.10-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5-md5.txt) of the package.
-- If your Hadoop version is 3.x, you can download [cos-distcp-1.10-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0-md5.txt) of the package.
+- If your Hadoop version is 2.x, you can download [cos-distcp-1.9-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5-md5.txt) of the package.
+- If your Hadoop version is 3.x, you can download [cos-distcp-1.9-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0-md5.txt) of the package.
 
 #### Installation notes
 
@@ -63,9 +63,9 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 |        --copyFromManifest        | Copies files specified in `--previousManifest` to the destination file system. This is used together with `previousManifest=LOCATION`. <br>Example: --copyFromManifest |  false  |  No |
 | --storageClass=VALUE | The storage class to use. Valid values are `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`, and `INTELLIGENT_TIERING`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).  | None   |   No   |
 |        --srcPrefixesFile=LOCATION        | A local file that contains a list of source directories, one directory per line. </br>Example: --srcPrefixesFile=file:///data/migrate-folders.txt |  None    |   No  |
-| --skipMode=MODE  | Verifies whether the source and destination files are the same before the copy. If they are the same, the file will be skipped. Valid values are `none` (no verification), `length`, `checksum`, `length-mtime`, and `length-checksum`. </br>Example: --skipMode=length | length-checksum | No |
-| --checkMode=MODE | Verifies whether the source and destination files are the same when the copy is completed. Valid values are `none` (no verification), `length`, `checksum`, `length-mtime`, and `length-checksum`.<br/>Example: --checkMode=length-checksum | length-checksum | No |
-|   --diffMode=MODE    | Specifies the rule for obtaining the list of different files in the source and destination directories. Valid values are `length`, `checksum`, `length-mtime`, and `length-checksum`. </br>Example: --diffMode=length-checksum | None   | No  |
+| --skipMode=MODE  | Verifies whether the source and destination files are the same before the copy. If they are the same, the file will be skipped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum). </br>Example: --skipMode=length | length-checksum | No |
+| --checkMode=MODE | Verifies whether the source and destination files are the same when the copy is completed. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum).<br/>Example: --checkMode=length-checksum | length-checksum | No |
+|   --diffMode=MODE    | Specifies the rule for obtaining the list of different files in the source and destination directories. Valid values are `length`, `checksum`, and `length-checksum` (length + CRC checksum). </br>Example: --diffMode=length-checksum | None   | No  |
 |  --diffOutput=LOCATION  | Specifies the HDFS output directory in diffMode. This directory must be empty.<br/>Example: --diffOutput=/diff-output  |  None |  No  |
 | --cosChecksumType=TYPE     | Specifies the CRC algorithm used by the Hadoop-COS plugin. Valid values are `CRC32C` and `CRC64`. <br/>Example: --cosChecksumType=CRC32C | CRC32C | No |
 | --preserveStatus=VALUE | Specifies whether to copy the `user`, `group`, `permission`, `xattr`, and `timestamps` metadata of the source file to the destination file. Valid values are any combinations of letters u, g, p, x, and t (initials of `user`, `group`, `permission`, `xattr`, and `timestamps`, respectively). <br/>Example: --preserveStatus=ugpt | None | No |
@@ -204,13 +204,13 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 
 After the above command is executed successfully, the counter information based on the file list of the source file system will be output (ensure that your task submitting machine is configured with INFO log output for MapReduce jobs on the submission end). You can analyze whether the source and destination files are the same based on the counter information as detailed below:
 
-1. SUCCESS: The source and destination files are the same.
+1. SUCCESS: the source and destination files are the same.
 2. DEST_MISS: The destination file does not exist.
 3. SRC_MISS: The source file contained in the source file manifest is not found during the verification.
 4. LENGTH_DIFF: Sizes of the source and destination files are different.
 5. CHECKSUM_DIFF: CRC checksums of the source and destination files are different.
 6. DIFF_FAILED: The `diff` operation fails due to insufficient permissions or other reasons.
-7. TYPE_DIFF: The source is a directory but the destination is a file.
+7. TYPE_DIFF: the source is a directory but the destination is a file.
 
 In addition, COSDistCp will generate a list of different files in the `/tmp/diff-output/failed` directory in HDFS (or `/tmp/diff-output` for v1.0.5 or earlier versions). You can run the following command to obtain the list of different files except for those recorded as SRC_MISS:
 
@@ -475,7 +475,7 @@ If the network is abnormal, the source file is missing, or the permissions are i
 - If the destination location is not COS, COSDistCp will attempt to delete the destination files.
 
 ### There are some invisible incomplete multipart uploads in COS buckets, which occupy storage space. How do I deal with them?
-COS buckets may have some incomplete multipart uploads occupying storage space due to events such as server exception and process kill. You can configure an incomplete multipart upload deletion rule as instructed in [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605) to clear them.
+COS buckets may have some incomplete multipart uploads occupying storage space due to incidents such as server exception and process kill. You can configure an incomplete multipart upload deletion rule as instructed in [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605) to clear them.
 
 ### A memory overflow and task timeout occurred during migration. How do I adjust parameters?
 During migration, both COSDistCp and the tools used to access COS and CHDFS, based on their own logic, occupy some memory. To avoid memory overflow and task timeout, you can adjust parameters of some MapReduce jobs, for example:
