@@ -1,6 +1,6 @@
 ## Overview
 
-Cloud Object Storage (COS) encrypts your data at the object level before it is written to IDC disks and automatically decrypts the data when you access it. Encryption and decryption are completed on servers. Server-side encryption can effectively protect static data.
+Cloud Object Storage (COS) encrypts your data at the object level before it is written to disks and automatically decrypts the data when you access it. Encryption and decryption are completed on servers. Server-side encryption can effectively protect static data.
 
 >!
 >- As long as you have access permission to objects, user experience is the same accessing encrypted and non-encrypted objects.
@@ -42,7 +42,7 @@ When you request the following APIs, you can apply server-side encryption by pro
 
 SSE-KMS encryption is server-side encryption using a key managed by KMS. KMS is a security management service launched by Tencent Cloud, using a third-party-certified hardware security module (HSM) to generate and protect keys. KMS allows users to easily create and manage keys, meeting their key management needs for multiple applications and services, while satisfying regulatory and compliance requirements.
 
-When using SSE-KMS encryption for the first time, you need to [enable KMS service](https://buy.cloud.tencent.com/kms). After KMS service is enabled, the system will automatically create a default customer master key (CMK) for you. You can also create your own keys through [KMS console](https://console.cloud.tencent.com/kms2), and define key policies and use methods. KMS allows users to choose their own key material from **KMS** or **external** sources. For more information, see [Create Key](https://intl.cloud.tencent.com/document/product/1030/31971) and [Import External Key](https://intl.cloud.tencent.com/document/product/1030/32795).
+When using SSE-KMS encryption for the first time, you need to [enable KMS service](https://buy.cloud.tencent.com/kms). After the KMS service is enabled, the system will automatically create a default customer master key (CMK) for you. You can also create your own keys through [KMS console](https://console.cloud.tencent.com/kms2), and define key policies and use methods. KMS allows users to choose their own key material from **KMS** or **external** sources. For more information, see [Create Key](https://intl.cloud.tencent.com/document/product/1030/31971) and [Import External Key](https://intl.cloud.tencent.com/document/product/1030/32795).
 
 >!
 >- SSE-KMS only encrypts the object data, not its metadata.
@@ -68,7 +68,7 @@ When you request the following APIs, you can apply server-side encryption by pro
 - [POST Object](https://intl.cloud.tencent.com/document/product/436/14690)
 
 #### Notes
-If you have never used **COS console** for SSE-KMS encryption, and only used **API** for SSE-KMS encryption, you need to create a [CAM role](https://intl.cloud.tencent.com/document/product/598/19420) first:
+If you have never used the **COS console** for SSE-KMS encryption, and only used **API** for SSE-KMS encryption, you need to create a [CAM role](https://intl.cloud.tencent.com/document/product/598/19420) first:
 1. Log in to the CAM console and go to the [Roles](https://console.cloud.tencent.com/cam/role) page.
 2. Click **Create Role** and select the role entity as **Tencent Cloud Product Service**.
 3. Select services supporting roles as **Cloud Object Storage**, and then click **Next**.
