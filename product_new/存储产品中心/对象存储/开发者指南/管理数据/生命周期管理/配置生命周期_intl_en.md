@@ -2,7 +2,7 @@
 
 With lifecycle configuration, certain predefined actions can be automatically performed when a rule is applied to objects. For example:
 
-- Transition: transitions objects to the STANDARD_IA, INTELLIGENT_TIERING, ARCHIVE or DEEP_ARCHIVE storage class after a specified time of period.
+- Transition: transitions objects to the STANDARD_IA, INTELLIGENT_TIERING, ARCHIVE or DEEP_ARCHIVE storage class after a specified period.
 - Expiration: automatically delete objects after their specified expiration time.
 
 For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/document/product/436/17028) and [Elements of Lifecycle Configuration](https://intl.cloud.tencent.com/document/product/436/17029).
@@ -15,10 +15,10 @@ You can configure the lifecycle in the COS console. For more information, see [L
 
 ### Via REST API
 
-You can configure and manage the lifecycle of objects in a bucket through the REST API as described in the following API documentations:
+You can configure and manage the lifecycle of objects in a bucket through the REST API as described in the following API documentation:
 
 - [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280)
-- [GET Buket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278)
+- [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278)
 - [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284)
 
 ### Via the SDK
