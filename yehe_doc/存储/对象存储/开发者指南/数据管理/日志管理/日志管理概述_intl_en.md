@@ -1,5 +1,5 @@
 ## Overview
-The logging feature allows you to record detailed access information of a specified source bucket and save the information to a specified bucket as logs to facilitate bucket management.
+The logging feature allows you to record the access information of a source bucket and save it to a destination bucket as logs.
 
 In the destination bucket, the log path is:
 
@@ -7,7 +7,7 @@ In the destination bucket, the log path is:
 destination bucket/path prefix{YYYY}/{MM}/{DD}/{time}_{random}_{index}
 ```
 
-Logs are generated every 5 minutes (one record per line). Each record contains multiple fields, and fields are separated by a space. A single log file can be up to 256 MB. If the size of a log generated in 5 minutes is larger than 256 MB, this log will be segmented into multiple log files. The logging fields supported are as follows:
+Logs are generated every 5 minutes (one record per line). Each record contains multiple fields, and fields are separated by a space. The file size for a log file is up to 256 MB. If the log file reaches the file size limit in 5 minutes, a new log file will be created. The logging fields supported are as follows:
 
 | No. | Field | Description | Example |
 | :--------: | :---------------: | :-----------------------: | ----------------------------------------------------------------------------- |
