@@ -12,8 +12,8 @@ Private IPs are addresses that cannot be accessed through the Internet. Each ins
 ### Application Scenarios
 Private IP can be used for the communication between CLBs and CVM instances, and between CVM instances and other Tencent Cloud services (such as TencentDB).
 
-### Address Assignment
-Each CVM instance will be assigned a default private IP address when started. The private IP varies by the [network environment](https://intl.cloud.tencent.com/document/product/213/5227):
+### IP Allocation
+Each CVM instance is assigned a default private IP address upon the launch. The private IP varies by the [network environment](https://intl.cloud.tencent.com/document/product/213/5227):
  - Classic network: private IP address is automatically assigned by Tencent Cloud and cannot be changed.
  - VPC: Tencent Cloud VPC CIDR currently allows you to use one of the following IP ranges, and the maximum and minimum masks are /16 and /28:
   - **10.0**.0.0 - **10.255**.255.255
