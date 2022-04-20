@@ -111,7 +111,7 @@ whiteList = [
 ### 魅族通道抵达回执配置
 
 魅族通道抵达回执需要开发者自行配置，您可参照 [魅族厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246) 进行配置，完成后，可在推送记录中查看魅族推送通道的抵达数据。
-![](https://main.qcloudimg.com/raw/2f978f623566b9f6b664dea3dca30923.png)
+![]()
 
 ## 常见问题排查
 
