@@ -81,7 +81,7 @@ Please follow the steps below:
 3. Add a trigger
    After you finish the testing, you can bind the SCF function with a bucket by creating a COS trigger in the console or using the command line. For more information, see [Creating a Trigger](https://intl.cloud.tencent.com/document/product/583/31441).
 4. Check if the function works
-   After completing the steps above, you can make changes to the bucket in COS to see if everything works. For example, you can upload or delete files in the console or using the COS Browser and then go to **[SCF Console](https://console.cloud.tencent.com/scf?rid=1)** > **Function Details** > **Execution Logs** to check if everything works properly.
+After completing the steps above, you can make changes to the bucket in COS to see if everything works. For example, you can upload or delete files via the console or COSBrowser. Then, go to the [SCF console](https://console.cloud.tencent.com/scf?rid=1), choose **Function Service**, click the name of the target function, and click **Log Query** to check if everything works properly.
 
 For more information on SCF COS triggers, see [COS Trigger](https://intl.cloud.tencent.com/document/product/583/9707).
 
