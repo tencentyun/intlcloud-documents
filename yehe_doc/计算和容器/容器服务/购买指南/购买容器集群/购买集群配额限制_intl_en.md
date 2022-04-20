@@ -1,12 +1,11 @@
 
-Each user is assigned a fixed quota for TKE clusters in each region.
+The quota limits include TKE quota limits, CVM quota limits and managed cluster resource quota limits. The details are as follows:
 
 ### TKE quota limits
 
-The following describes the number of container clusters each user can purchase. If you need more clusters, [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=350&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1CCS).
->!Since October 21, 2019, the maximum number of nodes supported in a cluster has been increased to 5,000.
+The default TKE quota for each user is as follows. If you want to increase the quota, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
+>!From October 21, 2019, the maximum node quota for user clusters has been adjusted to 5000 if the quota was less than 5000.
 >
-
 
 <table>
 	<tr>
@@ -23,7 +22,7 @@ The following describes the number of container clusters each user can purchase.
 	</tr>
 	<tr>
 	<td>Nodes in a single cluster</td>
-	<td>5,000</td>
+	<td>5000</td>
 	</tr>
 	<tr>
 	<td>Image namespaces in a single region</td>
@@ -39,11 +38,9 @@ The following describes the number of container clusters each user can purchase.
 	</tr>
 </table>
 
-
-
 ### CVM quota limits
 
-For CVM instances that you purchase for Tencent Cloud TKE, CVM purchase limits apply. For more information, see [CVM Instance Purchase Limits](https://intl.cloud.tencent.com/document/product/213/2664). See the following table for the maximum number of CVMs that a user can purchase by default. If you need a higher quota for any item, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%20CVM&level3_id=156&radio_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B4%AD%E4%B9%B0%E9%85%8D%E9%A2%9D%E6%8F%90%E5%8D%87%E7%94%B3%E8%AF%B7&queue=1&scene_code=12701&step=2).
+You should abide by the purchase limits when you purchase CVMs. For details, please see [Purchase Limits on CVMs](https://intl.cloud.tencent.com/document/product/213/2664). The default quota of CVMs for each user is as follows. If you want to increase the quota, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
 
 <table>
 	<tr>
@@ -51,74 +48,66 @@ For CVM instances that you purchase for Tencent Cloud TKE, CVM purchase limits a
 	<th>Default Value</th>
 	<th>Where to Check</th>
 	<th>Support Quota Increase</th>
-    </tr>
-	<td>Pay-as-you-go CVMs in a single availability zone</td>
-	<td>30 - 60</td>
+	</tr>
+	<tr>
+    <td>Pay-as-you-go CVMs in a single availability zone</td>
+	<td>30 or 60 CVMs</td>
 	<td><a href="https://console.cloud.tencent.com/cvm/overview">CVM Instances page - Resources in each region</a></td>
 	<td>Yes</td>
+	</tr>
 </table>
 
 
-
-
 ### Cluster configuration limits
->?Cluster configuration limits the size of clusters and cannot be modified currently.
+>?Cluster configuration limits the cluster size and cannot be modified currently.
 >
 
 | Configuration Item | IP Address Range | Affected Item | Where to Check | Support Modification |
 | ----- | ----- | ---- | --------- | ---------- |
-| VPC network - Subnet | Custom | Number of nodes that can be added |[VPC subnet list page for the cluster - Available IP addresses](https://console.cloud.tencent.com/vpc/subnet) | <ul class="params"><li>No</li><li>Yes, and you can create new subnets</li></ul> |
-| CIDR block of the container IP range | Custom | <ul class="params"><li>Maximum nodes per cluster</li><li>Maximum services per cluster</li><li>Maximum pods per node</li></ul> | Basic information page for the cluster - Container IP address range | No |
+| VPC network - Subnet | Custom | Number of nodes that can be added |[VPC subnet list page for the cluster - Available IP addresses](https://console.cloud.tencent.com/vpc/subnet) | <ul class="params"><li>No</li><li>You can create new subnets</li></ul> |
+| CIDR block of the container IP range | Custom | <ul class="params"><li>Maximum nodes per cluster</li><li>Maximum services per cluster</li><li>Maximum Pods per node</li></ul> | Basic information page for the cluster - Container IP range | No |
 
 <style>
 	.params{margin-bottom:0px !important;}
 </style>
 
-
-### Resource quota limits
-
-
-
-
-From January 13, 2021, TKE will automatically apply a set of resource quotas to the namespace on the cluster with less than 5 nodes (0 < nodeNum ≤ 5), or with more than 5 and less than 20 nodes (5 < nodeNum < 20). You cannot remove these quotas, which are used to protect the cluster control plane from being unstable due to potential bugs in the applications deployed to the cluster.
-
+### Instructions on K8s resource quota
+>? The following quota takes effect from April 30, 2022 (UTC +8) and cannot be removed. **You can increase the resource quota by upgrading the cluster specification**.
+> You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to apply to increase the quota.
+>
 You can run the following command to check the quota:
 ```
 kubectl get resourcequota tke-default-quota -o yaml
 ```
+If you need to view the `tke-default-quota` object of a specified namespace, please add the `--namespace` option to specify the namespace.
 
-If you need to view the `tke-default-quota` object of a specified namespace, you can add the `--namespace` option to specify the namespace.
+>? 
+> - “Other K8s resources limits” refers to that the number of the K8s resources in the cluster excluding the Pods, nodes and ConfigMap **cannot** exceed the limit. For example, if the cluster specification is L100, the number of the K8s resources such as ClusterRole, Service and Endpoint **cannot** exceed 10000.
+- “CRD limits” refers to **the sum of all CRDs** in the cluster cannot exceed the limit. If the number of some CRDs increases, the number of other CRDs will decrease.
 
-The specific quota limits are as follows:
-                                  
+| Cluster Specification | Pod Limits | ConfigMap Limits | CRD/Other K8s Resources Limits | 
+| ---------------- | ------------------- | ------------------------- | ------------------- |
+| L5             | 600                 | 256                       | 1250                 |
+| L20             | 1500                | 512                     | 2500               |
+|  L50            | 3000                | 1024                    | 5000              |
+|  L100           | 6000                | 2048                    |10000                |
+|  L200              | 15000               | 4096                   | 20000               |
+|  L500        | 30000               | 6144                     | 50000               |
+|  L1000            | 90000               | 8192                  | 100000            |
+|  L3000             | 150000              | 10240                     | 150000              |
+|  L5000             | 200000              | 20480                    | 200000              |
 
-<table>
-<thead>
-<tr>
-<th align="left">Cluster Scale</th>
-<th align="left">Quota Limits</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">0 &lt; nodeNum &le; 5</td>
-<td align="left">Total Pods: 4000, configMap: 3000, CustomResourceDefinition(CRD): 4000 </td>
-</tr>
-<tr>
-<td>5 &lt; nodeNum &lt; 20</td>
-<td>Total Pods: 8000, configMap: 6000, CustomResourceDefinition(CRD): 8000</td>
-</tr>
-<tr>
-<td> 20 &le; nodeNum </td>
-<td>No limit</td>
-</tr>
-</tbody></table>
+#### Allocating quota among namespaces
+The **balance** (**Balance = Quota - Used part**) is evenly allocated among all namespaces by default. If you want to customize the allocation, you can create a configmap `tke-quota-config` under `kube-system` to specify the percentage of **balance** allocated among all namespaces.
 
-
-
-
-
-
-You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to increase the quota.
-
-
+In the sample below, 50% of the **balance** is allocated to the `default` namespace, 40% of the **balance** is allocated to the `kube-system`namespace, and 10% of the **balance** is allocated among other namespaces. **If the sum of all percentages exceeds 100%, the allocation is invalid and all the quota will be allocated evenly among all namespaces**.
+```
+apiVersion: v1
+data:
+  default: "50"
+  kube-system: "40"
+kind: ConfigMap
+metadata:
+  name: tke-quota-config
+  namespace: kube-system
+```
