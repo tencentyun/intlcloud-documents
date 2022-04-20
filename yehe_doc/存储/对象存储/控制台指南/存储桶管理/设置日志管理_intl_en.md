@@ -1,6 +1,6 @@
 ## Overview
 
-COS introduces the Logging feature to record request logs related to **bucket operations**, facilitating bucket usage and management. You can enable it in the COS console. For more information, please see [Log Management Overview](https://intl.cloud.tencent.com/document/product/436/16920).
+COS introduces the Logging feature to record **bucket operation** requests, facilitating bucket usage and management. You can enable it in the COS console. For more information, see [Log Management Overview](https://intl.cloud.tencent.com/document/product/436/16920).
 
 >!
 >- Currently, Logging is only available for the Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Chengdu, Hong Kong (China), Singapore, Toronto, Silicon Valley, and Mumbai regions.
@@ -29,4 +29,4 @@ COS introduces the Logging feature to record request logs related to **bucket op
 ## Notes
 
 1. To enable Logging, you need to create a log role in the CAM console and grant the role permissions to read/write logs of the source bucket.
-2. If Logging is disabled but the role is not deleted, its read/write permissions to the source bucket’s logs will be retained.
+2. If Logging is disabled yet the role is not deleted, the role's read/write permissions on the source bucket’s logs still exist.
