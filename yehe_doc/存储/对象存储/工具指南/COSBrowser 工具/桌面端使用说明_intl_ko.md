@@ -37,7 +37,7 @@ Tencent Cloud API 키(즉 SecretID, SecretKey)를 통해서 로그인할 수 있
 
 ### Tencent Cloud 계정 로그인
 
-[Tencent Cloud 계정 로그인]을 클릭하고 팝업 창에서 Tencent Cloud 계정으로 COSBrowser 데스크톱에 로그인합니다. Tencent Cloud 계정에서 지원하는 로그인 방법에는 WeChat, 이메일, QQ, WeChat 공식 계정, WeCom 및 서브 계정 로그인이 있습니다.
+[Tencent Cloud 계정 로그인]을 클릭하고 팝업 창에서 Tencent Cloud 계정으로 COSBrowser 데스크톱에 로그인합니다. Tencent Cloud 계정에서 지원하는 로그인 방법에는 이메일,  및 서브 계정 로그인이 있습니다.
 
 
 
