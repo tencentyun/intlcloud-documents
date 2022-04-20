@@ -1,8 +1,8 @@
 Private network services are LAN services, where cloud services can access each other through internal linkages. Tencent Cloud services can access each other through [internet access](https://intl.cloud.tencent.com/document/product/213/5224) or the private network of Tencent Cloud. Tencent Cloud data centers are interconnected with underlying networks of megabytes/gigabytes. They enable communications via private networks with large bandwidth and low latency, which are free of charge if in the same region to help you build a network architecture flexibly.
 ## Private IP Address
 ### Overview
-Private IPs are addresses that cannot be accessed through the Internet, based on which Tencent Cloud private networks are created. Each instance has a default network interface (i.e., eth0) for assigning private IPs. Private IPs can be automatically assigned by Tencent Cloud, or you can custom them (only under [VPC](https://intl.cloud.tencent.com/document/product/215/535)).
-> If you change the private IP within the operating system, private network may be interrupted.
+Private IPs are addresses that cannot be accessed through the Internet. Each instance has a default network interface (i.e., eth0) for assigning private IPs. Private IPs can be automatically assigned by Tencent Cloud, or you can specify on your own (only for [VPC](https://intl.cloud.tencent.com/document/product/215/535) environment).
+> If you change the private IP within the operating system, the private network may be interrupted.
 >
 
 ### Attributes
@@ -14,7 +14,7 @@ Private IP can be used for the communication between CLBs and CVM instances, and
 
 ### Address Assignment
 Each CVM instance will be assigned a default private IP address when started. The private IP varies by the [network environment](https://intl.cloud.tencent.com/document/product/213/5227):
- - Basic network: private IP address is automatically assigned by Tencent Cloud and cannot be changed.
+ - Classic network: private IP address is automatically assigned by Tencent Cloud and cannot be changed.
  - VPC: Tencent Cloud VPC CIDR currently allows you to use one of the following IP ranges, and the maximum and minimum masks are /16 and /28:
   - **10.0**.0.0 - **10.255**.255.255
   - **172.16**.0.0 - **172.31**.255.255
@@ -26,7 +26,7 @@ Private network DNS service is used for domain name resolution. If DNS is config
 Tencent Cloud provides reliable private network DNS servers in different regions. Specific configurations are shown below:
 <table><tbody>
 <tr><th>Network Environment</th><th>Region</th><th>Private Network DNS Server</th></tr>
-<tr><td rowspan="14">Basic Network</td><td rowspan="4">Guangzhou</td><td>Guangzhou Zone 1: <br>10.112.65.31<br>10.112.65.32</td></tr>
+<tr><td rowspan="14">Classic Network</td><td rowspan="4">Guangzhou</td><td>Guangzhou Zone 1: <br>10.112.65.31<br>10.112.65.32</td></tr>
 <tr><td>Guangzhou Zone 2: <br>10.112.65.31<br>10.112.65.32</td></tr>
 <tr><td>Guangzhou Zone 3: <br>10.59.218.193<br>10.59.218.194</td></tr>
 <tr><td>Guangzhou Zone 4: <br>100.121.190.140<br>100.121.190.141</td></tr>
@@ -46,5 +46,5 @@ Tencent Cloud provides reliable private network DNS servers in different regions
 
 ## Operation Guide
 You can view or modify the private IP address of the instance. For detailed instructions, see:
-- [Obtaining the Private IP Address of an Instance and Private Network DNS Settings](https://intl.cloud.tencent.com/document/product/213/17941)
+- [Getting Private IP Addresses and Setting DNS](https://intl.cloud.tencent.com/document/product/213/17941)
 - [Modifying Private IP Addresses](https://intl.cloud.tencent.com/document/product/213/16561)
