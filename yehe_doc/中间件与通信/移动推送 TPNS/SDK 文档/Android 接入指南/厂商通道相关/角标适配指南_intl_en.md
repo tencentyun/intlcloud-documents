@@ -22,7 +22,7 @@ You can configure the server delivery badge in the TPNS console or through the p
 2. Locate the target Android product and click **Push Management** in the **Operation** column of the product to go to the **Push Management** page.
 3. Click the push to configure to go to the push configuration page.
 4. In the **Advanced Configuration** area, enable badge number.
-![](https://main.qcloudimg.com/raw/880ff2c7aacb4525033580b88c53320f.jpg)
+![]()
 :::
 ::: Method 2: Configure through the push API
   In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
@@ -154,7 +154,7 @@ To implement the correct badge modification effect, please first add the Huawei 
 #### Setting the notification delivery badge
 
 Be sure to enable the Huawei channel in the console and enter the `Activity` class, such as `com.test.badge.MainActivity`, of the application entry corresponding to the desktop icon in the parameter configuration area. Otherwise, the badge settings will not take effect. 
-![](https://main.qcloudimg.com/raw/815a22b60155a70557bdd0d0bc4c63a5.png)
+![]()
 
 #### Getting startup class name:
 In the `AndroidManifest.xml` file under the app module directory, search the keyword `android.intent.action.MAIN`, where the `activity` node is the startup class required, and enter the full class name (with the complete package name).
