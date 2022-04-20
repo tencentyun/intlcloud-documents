@@ -6,7 +6,7 @@ Tencent Cloud Block Storage (CBS) provides a persistent block storage service fo
 
 
 ## Typical Use Cases
-- When your CVM is running out of disk space, you can purchase one or more cloud disks and attach the to the CVM.
+- When your CVM is running out of disk space, you can purchase one or more cloud disks and attach them to the CVM.
 - You don’t need to purchase extra storage capacity while purchasing a CVM. You can purchase cloud disks later when it’s necessary.
 - When you need to transfer data from one CVM to another, just detach the cloud data disk from the source CVM and attach it to the target CVM.
 - Use multiple cloud disks to form a Logical Volume Manager (LVM) to go beyond the physical limit of a single cloud disk.
