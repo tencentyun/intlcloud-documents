@@ -59,8 +59,8 @@ COS_Migrate_tool
 ```
 
 >?
- - db 目录主要记录工具迁移成功的文件标识，每次迁移任务会优先对比 db 中的记录，若当前文件标识已被记录，则会跳过当前文件，否则进行文件迁移。
- - log 目录记录着工具迁移时的所有日志，若在迁移过程中出现错误，请先查看该目录下的 error.log。
+> - db 目录主要记录工具迁移成功的文件标识，每次迁移任务会优先对比 db 中的记录，若当前文件标识已被记录，则会跳过当前文件，否则进行文件迁移。
+> - log 目录记录着工具迁移时的所有日志，若在迁移过程中出现错误，请先查看该目录下的 error.log。
 
 ### 3. 修改 config.ini 配置文件
 在执行迁移启动脚本之前，需先进行 config.ini 配置文件修改（路径：`./conf/config.ini`），config.ini 内容可以分为以下几部分：
@@ -83,9 +83,6 @@ type=migrateLocal
 | migrateUrl| 下载 URL 迁移到 COS |
 | migrateBucketCopy| 从源 Bucket 复制到目标 Bucket|
 |migrateUpyun  | 从又拍云迁移到 COS |
-
->? 如果想从上述未提及的源站进行迁移，若源站兼容 AWS S3 的API，即可使用 AWS 的配置进行迁移。
->
 
 #### 3.2 配置迁移任务
 用户根据实际的迁移需求进行相关配置，主要包括迁移至目标 COS 信息配置及迁移任务相关配置。
@@ -118,7 +115,7 @@ skipSamePath=false
 | secretKey| 用户密钥 SecretKey，请将`COS_SECRETKEY`替换为您的真实密钥信息。可前往 [访问管理控制台](https://console.cloud.tencent.com/cam/capi) 中的云 API 密钥页面查看获取|-|
 | bucketName| 目的 Bucket 的名称, 命名格式为 `<BucketName-APPID>`，即 Bucket 名必须包含 APPID，例如 examplebucket-1250000000 |  -  |
 | region| 目的 Bucket 的 Region 信息。COS 的地域简称请参照 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) |-|
-| storageClass|   数据迁移后的存储类型，可选值为 Standard（标准存储）、Standard_IA（低频存储）、Archive（归档存储），相关介绍请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)    |Standard|
+| storageClass|   数据迁移后的存储类型，可选值为 Standard（标准存储）、Standard_IA（低频存储）、Archive（归档存储）、Maz_Standard（标准存储多 AZ）、Maz_Standard_IA（低频存储多 AZ），相关介绍请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925)    |Standard|
 | cosPath|要迁移到的 COS 路径。`/`表示迁移到 Bucket 的根路径下，`/folder/doc/` 表示要迁移到 Bucket的`/folder/doc/` 下，若 `/folder/doc/` 不存在，则会自动创建路径|/|
 | https| 是否使用 HTTPS 传输：on 表示开启，off 表示关闭。开启传输速度较慢，适用于对传输安全要求高的场景|off|
 | tmpFolder|从其他云存储迁移至 COS 的过程中，用于存储临时文件的目录，迁移完成后会删除。要求格式为绝对路径：<br>Linux 下分隔符为单斜杠，例如`/a/b/c` <br>Windows 下分隔符为两个反斜杠，例如`E:\\a\\b\\c`<br>默认为工具所在路径下的 tmp 目录|./tmp|
@@ -203,7 +200,7 @@ proxyPort=
 |proxyHost|如果要使用代理进行访问，则填写代理 IP 地址|
 |proxyPort|代理的端口|
 
-
+ 
 **3.3.4 配置七牛数据源 migrateQiniu**
 
 若从七牛迁移至 COS，则进行该部分配置，具体配置项及说明如下：
@@ -229,7 +226,7 @@ proxyPort=
 |proxyHost|如果要使用代理进行访问，则填写代理 IP 地址|
 |proxyPort|代理的端口|
 
-
+ 
 **3.3.5 配置 URL 列表数据源 migrateUrl**
 
 若从指定 URL 列表迁移至 COS，则进行该部分配置，具体配置项及说明如下：
@@ -238,12 +235,12 @@ proxyPort=
 [migrateUrl]
 urllistPath=D:\\folder\\urllist.txt
 ```
-
+     
 | 配置项 | 描述 |
 | ------| ------ |
-|urllistPath|URL 列表文件的地址。</br>注意：该配置内容不是直接填写 URL，而是填写文本文件的**本地地址**。该文本文件内容是具体的 URL，一行一条 URL 原始地址（例如`http://aaa.bbb.com/yyy/zzz.dat`，无需添加任何双引号或其他符号）。</br>URL 列表的地址要求为绝对路径：<ul  style="margin: 0;"><li>Linux 下分隔符为单斜杠，例如`/a/b/c.txt` </li><li>Windows  下分隔符为两个反斜杠，例如`E:\\a\\b\\c.txt`</li><li>如果填写的是目录，则会将该目录下的所有文件视为 urllist 文件去扫描迁移</li></ul>|
+|urllistPath|URL 列表的地址，内容为 URL 文本，一行一条 URL 原始地址（例如`http://aaa.bbb.com/yyy/zzz.txt`，无需添加任何双引号或其他符号）。URL 列表的地址要求为绝对路径：<ul  style="margin: 0;"><li>Linux 下分隔符为单斜杠，例如`/a/b/c.txt` </li><li>Windows  下分隔符为两个反斜杠，例如`E:\\a\\b\\c.txt`<br>如果填写的是目录，则会将该目录下的所有文件视为 urllist 文件去扫描迁移</li></ul>|
 
-
+ 
 **3.3.6 配置 Bucket 相互复制 migrateBucketCopy**
 
 若从 COS 的一个指定 Bucket 迁移至另一个 Bucket，则进行该部分配置，具体配置项及说明如下：
