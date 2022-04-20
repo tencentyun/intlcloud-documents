@@ -22,7 +22,7 @@ Android 阵营各厂商机型角标开放能力不同，移动推送 TPNS 对推
 2. 找到您需要配置的 Android 产品，在其右侧【操作】项下单击【推送管理】，进入推送管理页面。
 3. 单击您需要配置的推送，进入推送配置页面。
 4. 在【高级设置】配置项中，开启角标数字：
-![](https://main.qcloudimg.com/raw/880ff2c7aacb4525033580b88c53320f.jpg)
+![]()
 :::
 ::: 方式2：通过\sPush\sAPI\s设置
   在推送消息体 `body.message.android` 下添加字段 "badge_type" ，属性如下：
@@ -154,7 +154,7 @@ XGPushConfig.setBadgeNum(Context context, int setNum);
 #### 通知下发角标设置
 
 请一定先在管理台华为通道开启及参数配置处填写桌面图标对应的应用入口 Activity 类，如“com.test.badge.MainActivity”，否则华为通道下发通知的角标设置将不生效，如图所示：
-![](https://main.qcloudimg.com/raw/815a22b60155a70557bdd0d0bc4c63a5.png)
+![]()
 
 #### 启动类名称获取指引：
 请在应用 App 模块目录 AndroidManifest.xml 文件内搜索关键字 “android.intent.action.MAIN”，其所属 activity 节点即是所需要的启动类，并填写此类的完整类名（携带完整包名）。
