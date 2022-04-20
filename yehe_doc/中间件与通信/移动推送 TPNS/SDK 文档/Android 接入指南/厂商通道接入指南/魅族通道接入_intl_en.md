@@ -111,7 +111,7 @@ whiteList = [
 ### Configuring Arrival Receipt for Meizu channel
 
 The arrival receipt for the Meizu channel should be configured by yourself. After configuring this feature as instructed in [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246), you can view the arrival data for the Meizu push channel in the push records.
-![](https://main.qcloudimg.com/raw/2f978f623566b9f6b664dea3dca30923.png)
+![]()
 
 ## Troubleshooting
 
