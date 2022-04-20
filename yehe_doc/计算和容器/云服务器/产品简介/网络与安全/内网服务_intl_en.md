@@ -6,8 +6,8 @@ Private IPs are addresses that cannot be accessed through the Internet. Each ins
 >
 
 ### Attributes
- - Private network is user-sensitive, and different users are isolated from each other. By default, cloud services of another user cannot be accessed via the private network.
- - Private network is region-sensitive, and different regions are isolated from each other. By default, cloud services under the same account in a different region cannot be accessed via the private network.
+ - User-level isolation: The private networks of different users are isolated from each other. By default, cloud services of different accounts can not communicate over the private network.
+ - Regional isolation: The private networks in different regions are isolated from each other. By default, cloud services under the same account in different regions can not communicate over the private network.
 
 ### Application Scenarios
 Private IP can be used for the communication between CLBs and CVM instances, and between CVM instances and other Tencent Cloud services (such as TencentDB).
