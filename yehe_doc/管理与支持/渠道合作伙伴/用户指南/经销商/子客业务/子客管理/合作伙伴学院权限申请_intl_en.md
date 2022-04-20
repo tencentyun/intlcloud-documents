@@ -1,19 +1,22 @@
 ### Application for Partner Academy Access
+>? Tencent Cloud partners can directly log in to the Partner Academy and apply for access for their employees. The procedure is as follows.
+
 Step 1. Use your partner account to log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners/clients).
 
 Step 2. Click **Application for Partner Academy Access**
 ![](https://qcloudimg.tencent-cloud.cn/raw/3080fde7aa74238d92c41cc58386a84d.png)
 
 Step 3. Enter the application information as prompted and upload the certificates.
-![](https://qcloudimg.tencent-cloud.cn/raw/af9613b41be2f12bbee711f06972e41b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/88a0e3cbd1d250de53b5083fd9776f9a.png)
 
 >? 
-- You must use a Tencent Cloud International account to apply for Partner Academy access.
-- If you have already applied for or obtained Partner Academy access, do not apply again.
-- Do not apply for Partner Academy access with the account of another partner or partner's customer.
-- Fill out the certificates to be uploaded according to the downloaded template.
-- An uploaded image cannot exceed 1 MB in size.
-- The review takes about 1–2 days, and the result will be emailed to you and your customer.
+>- You must use a Tencent Cloud International account to apply for Partner Academy access.
+>- If you have already applied for or obtained Partner Academy access, do not apply again.
+>- Do not apply for Partner Academy access with the account of another partner or partner's customer.
+>- Fill out the certificates to be uploaded according to the downloaded template.
+>- An uploaded image cannot exceed 1 MB in size.
+>- The review takes about 1–2 days, and the result will be emailed to you and your customer.
+>
 
 Step 4. Click **Submit**. After the access application is successfully submitted, wait for the approval.
 
