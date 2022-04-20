@@ -1,6 +1,6 @@
 ## Overview
 
-If any change is made to COS resources (such as new files uploaded or files deleted), you will receive prompt notification. Event notification can be used together with [Serverless Cloud Function](https://intl.cloud.tencent.com/product/scf) to meet the needs of more application scenarios:
+If any change is made to Cloud Object Storage (COS) resources (such as new files uploaded or files deleted), you will receive prompt notification. Event notification can be used together with [Serverless Cloud Function（SCF）](https://intl.cloud.tencent.com/product/scf) to meet the needs of more application scenarios:
 
 - **Interaction with other Tencent Cloud services**: For example, purge CDN cache or update the database when a new file is uploaded to COS.
 - **System integration**: Your own service APIs can be called when files in COS are created, deleted, or overwritten. In user-generated content (UGC) scenarios, with the event notification feature, the client side will be able to interact with the server side.
