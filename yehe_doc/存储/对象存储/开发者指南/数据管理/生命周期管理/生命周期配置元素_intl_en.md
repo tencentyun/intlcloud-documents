@@ -30,7 +30,7 @@ Each rule contains the following:
 - Status: Indicates whether the rule is enabled or disabled.
 - Filter: Identifies objects to which the rule applies.
 - Action: Actions that need to be performed on objects that match the above description.
-- Time: `Days` (calculated from the date when an object is last modified) or `Date` based on which actions are performed on objects.
+- Time: `Days` (calculated based on the object's last modified date) or `Date` based on which actions are performed on objects.
 
 ## Rule Description
 
@@ -112,7 +112,7 @@ You can specify one or more predefined actions in a lifecycle rule so that these
 
 #### Transition action
 
-Specify the Transition action to transition objects from one storage class to another. For a versioning-enabled bucket, the Transition action applies to the current object version. You can set the transition date to as short as 0 day. For example, transition objects to ARCHIVE storage after 30 days:
+Specify the Transition action to transition objects from one storage class to another. For a versioning-enabled bucket, the Transition action applies to the current object version. You can set the transition date to as short as 0 days. For example, transition objects to ARCHIVE storage after 30 days:
 
 ```xml
 <Transition>
