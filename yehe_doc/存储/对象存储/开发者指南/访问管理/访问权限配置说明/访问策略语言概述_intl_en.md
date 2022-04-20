@@ -2,7 +2,7 @@
 
 ## Overview
 
-An access policy which employs the JSON-based access policy language is used to grant access to COS resources. You can authorize a specified principal to perform actions on a specified COS resource through the access policy language.
+An access policy that employs the JSON-based access policy language is used to grant access to COS resources. You can authorize a specified principal to perform actions on a specified COS resource through the access policy language.
 
 The language describes the basic elements and usage of a bucket policy. For more information, see [CAM Policy Management](https://intl.cloud.tencent.com/document/product/598/10600).
 
