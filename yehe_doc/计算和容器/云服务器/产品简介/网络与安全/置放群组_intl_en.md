@@ -11,11 +11,11 @@ A spread placement group is region specific and can be deployed across multiple 
 
 Before using a spread placement group, note the following rules:
 1. Placement groups cannot be merged.
-2. An instance cannot be placed across multiple placement groups.
+2. An instance can only be added to one placement group.
 3. Spread placement group can be placed on physical machines, switches, or racks.
-4. The maximum number of instances supported by spread placement group on physical machine, switch, or rack is different. For more information, please see the official website.
+4. The maximum number of instances supported by a spread placement group on a physical machine, switch, or rack is different. For more information, see the official website.
 5. If you specify and use the disaster recovery group policy, it will be strictly followed. Please note that if there is not enough hardware to distribute instances, the creation of some instances will fail.
-6. Instances on CDH do not support spread placement groups.
+6. Dedicated CVM instances cannot be added to a spread placement group.
 
 ## Operation Guide
-For more information on operations, please see [Spread Placement Group](https://intl.cloud.tencent.com/document/product/213/17020).
+For more information on operations, see [Spread Placement Group](https://intl.cloud.tencent.com/document/product/213/17020).
