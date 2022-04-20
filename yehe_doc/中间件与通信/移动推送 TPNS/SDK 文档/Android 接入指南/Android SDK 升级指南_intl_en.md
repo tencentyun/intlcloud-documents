@@ -1,3 +1,11 @@
+## TPNS Android SDK v1.3.2.0
+### Upgrading OPPO PUSH SDK
+When upgrading the TPNS SDK for OPPO PUSH to v1.3.2.0, please add the following dependency statements. Otherwise, the registration of OPPO PUSH will fail.
+```
+implementation 'com.google.code.gson:gson:2.6.2'
+implementation 'commons-codec:commons-codec:1.15'
+```
+
 ## TPNS Android SDK v1.2.7.0
 
 ### Adding support for supplementary push via in-app messages
@@ -5,9 +13,9 @@ The API for setting whether to allow in-app message display is added. Please pay
 
 ## TPNS Android SDK v1.2.5.0
 
-### 1. Configure the dependent environment for your project (optional)
+### 1. Configuring the dependent environment for your project (optional)
 
-If you cannot pull the dependencies when using SDK dependencies, you can consider adding the Google-recommended image source `MavenCentral` and Tencent Cloud image source in the `allprojects.repositories` file of your project’s root directory `build.gradle`. Below is a code sample:
+If you cannot pull the dependencies when using SDK dependencies, you can add the Google-recommended image source `MavenCentral` and Tencent Cloud image source in the `allprojects.repositories` file of your project's root directory `build.gradle`. Below is a code sample:
 ```
 allprojects {
     repositories {
@@ -21,7 +29,7 @@ allprojects {
 }
 ```
 
-### 2. Add configuration (required)
+### 2. Adding configuration (required)
 When using the newly added tag query API, you need to add the implementation method `onQueryTagsResult` in the implementation class that inherits `XGPushBaseReceiver`. Below is a code sample:
 ``` 
 public class MessageReceiver extends XGPushBaseReceiver {
@@ -34,4 +42,3 @@ public class MessageReceiver extends XGPushBaseReceiver {
     }
 }
 ```
-
