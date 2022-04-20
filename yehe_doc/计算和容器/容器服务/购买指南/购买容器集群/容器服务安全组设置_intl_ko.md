@@ -14,12 +14,12 @@
  - 노드에서 포트 30000 - 32768을 인터넷에 개방합니다.
  액세스 경로에서 CLB를 사용하여 데이터 패킷을 컨테이너 클러스터의 NodeIP:NodePort로 포워딩해야 합니다. NodeIP는 클러스터에 있는 모든 노드의 CVM 인스턴스 IP입니다. NodePort는 서비스가 생성될 때 기본적으로 컨테이너 클러스터에 의해 할당됩니다. NodePort의 범위는 30000 - 32768입니다.
  다음 그림은 공용 네트워크에서 서비스 액세스를 예시로 사용합니다.
-![공용 네트워크 CLB 액세스](https://main.qcloudimg.com/raw/0a237626a95174fd851052f49a0ff5b3.png)
+![Public Network CLB Access](https://main.qcloudimg.com/raw/0a237626a95174fd851052f49a0ff5b3.png)
 
 ## TKE에 대한 기본 보안 그룹 규칙
 ### 노드에 대한 기본 보안 그룹 규칙
 클러스터 노드 간의 정상적인 통신을 위해 일부 포트는 인터넷에 개방되어 있어야 합니다. 잘못된 보안 그룹에 대한 바인딩으로 인한 클러스터 생성 실패를 방지하기 위해 TKE는 다음 표에 설명된 대로 기본 보안 그룹 규칙을 제공합니다.
-> ! 현재 기본 보안 그룹이 서비스 요구 사항을 충족할 수 없고 이 보안 그룹에 바인딩된 클러스터를 생성한 경우 클러스터에 대한 보안 그룹 규칙을 보고 수정할 수 있습니다. 자세한 내용은 [ 보안 그룹 규칙 관리 ](https://intl.cloud.tencent.com/document/product/213/34275)를 참고하십시오.
+> ! 현재 기본 보안 그룹이 서비스 요구 사항을 충족할 수 없고 이 보안 그룹에 바인딩된 클러스터를 생성한 경우 클러스터에 대한 보안 그룹 규칙을 보고 수정할 수 있습니다. 자세한 내용은 [Managing Security Group Rule](https://intl.cloud.tencent.com/document/product/213/34275)을 참고하십시오.
 
 #### 인바운드 규칙
 | 프로토콜 | 포트 번호 | 소스 IP 주소 | 정책 | 설명 |
@@ -40,11 +40,11 @@
 >?
 > - 아웃바운드 규칙을 사용자 정의하려면 노드 IP 범위와 컨테이너 IP 범위를 개방해야 합니다.
 > - 컨테이너 노드에 대해 이 규칙을 설정하면 다른 액세스 방법을 사용하여 클러스터의 서비스에 액세스할 수 있습니다.
-> - 클러스터의 서비스에 액세스하는 방법에 대한 자세한 내용은 [개요](https://intl.cloud.tencent.com/document/product/457/36832)의 Service 액세스를 참고하십시오.
+> - 클러스터의 서비스에 액세스하는 방법에 대한 자세한 내용은 [Overview](https://intl.cloud.tencent.com/document/product/457/36832)의 Service Access를 참고하십시오.
 
 ### 자체 배포된 클러스터 Master에 대한 기본 보안 그룹 규칙
 자체 배포된 클러스터가 생성되면 TKE 기본 보안 그룹은 기본적으로 Master 모델에 바인딩되어 Master와 Node가 정상적으로 통신할 수 없고 클러스터가 생성된 후 Service에 정상적으로 액세스할 수 없는 위험을 줄입니다. 기본 보안 그룹 설정 규칙은 다음과 같습니다.
->?보안 그룹 생성 권한은 TKE 서비스 승인에서 설정한 권한과 동일합니다. 자세한 내용은 [서비스 승인과 관련된 역할 권한 설명](https://intl.cloud.tencent.com/document/product/457/37808)을 참고하십시오.
+>?보안 그룹 생성 권한은 TKE 서비스 승인에서 설정한 권한과 동일합니다. 자세한 내용은 [Description of Role Permissions Related to Service Authorization](https://intl.cloud.tencent.com/document/product/457/37808)을 참고하십시오.
 
 #### 인바운드 규칙
 <table>

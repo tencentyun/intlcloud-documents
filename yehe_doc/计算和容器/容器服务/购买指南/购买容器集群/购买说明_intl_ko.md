@@ -3,7 +3,7 @@
 
 
 
->? 귀하가 다음 제안 사항을 준수하지 않아 서비스를 이용할 수 없는 경우 해당 서비스 중단 시간은 서비스 이용 불가 기간에 포함되지 않습니다. 자세한 내용은 [<TKE 서비스 수준 계약>](https://intl.cloud.tencent.com/zh/document/product/457/12356?lang=zh&pg=#4.-release-of-liabilities)을 참고하십시오.
+>? 귀하가 다음 제안 사항을 준수하지 않아 서비스를 이용할 수 없는 경우 해당 서비스 중단 시간은 서비스 이용 불가 기간에 포함되지 않습니다. 자세한 내용은 [<TKE Service Level Agreement>](https://intl.cloud.tencent.com/zh/document/product/457/12356?lang=zh&pg=#4.-release-of-liabilities)를 참고하십시오.
 
 아래의 권장 구성을 참고하고 요구 사항에 가장 적합한 모델을 선택하여 컨트롤 플레인의 과부하로 인한 클러스터 사용 불가를 방지하십시오.
 클러스터에 50개의 노드를 배포하고 2000개의 Pod가 필요하다고 가정할 때, 최대 노드 수가 50이 아닌 100인 모델을 선택해야 합니다.

@@ -4,13 +4,13 @@
 
 리전(Region)은 물리적 데이터센터의 지리적 구역입니다. Tencent Cloud는 리전별로 철저히 격리되어, 리전별 안정성과 내고장성을 최대한 확보합니다. 액세스 지연 시간 축소 및 액세스 속도 향상을 위해 클라이언트와 가장 가까운 리전을 선택하시기 바랍니다.
 
-다음 리스트 혹은 API 인터페이스 [리전 리스트 조회](http://intl.cloud.tencent.com/document/product/213/9456)를 통해 전체 리전 리스트를 조회할 수 있습니다.
+다음 리스트 혹은 API 인터페이스 [DescribeRegion](http://intl.cloud.tencent.com/document/product/213/9456)을 통해 전체 리전 리스트를 조회할 수 있습니다.
 
 ### 관련 특징
 
 - 리전별로 네트워크는 완전히 격리됩니다. 리전 간 클라우드 서비스는 **기본적으로 개인 네트워크를 통해 접속이 불가능합니다**.
-- 리전 간 클라우드 서비스는 [공용 네트워크 IP](https://intl.cloud.tencent.com/document/product/213/5224)를 통해 Internet에 액세스하는 방식으로 통신합니다. 각 VPC의 클라우드 서비스는 비교적 빠르고 안정적인 [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003)를 통해 통신합니다.
-- [Cloud Load Balancer](https://intl.cloud.tencent.com/zh/document/product/214 )는 현재 기본적으로 리전 내 트래픽 전달과 로컬 리전 CVM과의 바인딩을 지원합니다. [리전 간 바인딩](https://intl.cloud.tencent.com/document/product/214/38441) 기능을 활성화하면 CLB로 CVM의 여러 리전을 바인딩할 수 있습니다.
+- 리전 간 클라우드 서비스는 [공용망 서비스](https://intl.cloud.tencent.com/document/product/213/5224)를 통해 Internet에 액세스하는 방식으로 통신합니다. 각 VPC의 클라우드 서비스는 비교적 빠르고 안정적인 [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003)를 통해 통신합니다.
+- [Cloud Load Balancer](https://intl.cloud.tencent.com/zh/document/product/214 )는 현재 기본적으로 리전 내 트래픽 전달과 로컬 리전 CVM과의 바인딩을 지원합니다. [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) 기능을 활성화하면 CLB로 CVM의 여러 리전을 바인딩할 수 있습니다.
 
 >
 
@@ -19,11 +19,11 @@
 ### 개요
 
 가용존(Zone)은 동일 리전 내에서 전력과 네트워크가 별개로 적용되는 Tencent Cloud의 물리적 데이터센터입니다. 가용존의 장애를 서로 격리하여(대규모 재해 혹은 대규모 전력 장애 제외) 장애가 확산되지 않게 함으로써, 사용자가 온라인 서비스를 유지하도록 지원합니다. 사용자는 독립된 가용존의 인스턴스를 실행하여 응용 프로그램이 단일 위치에서 발생한 장애의 영향을 받지 않게 보호할 수 있습니다.
-API 인터페이스 [가용존 리스트 조회](http://intl.cloud.tencent.com/document/product/213/9456)를 통해 전체 가용존 리스트를 조회할 수 있습니다.
+API 인터페이스 [DescribeZone](https://intl.cloud.tencent.com/document/product/213/35071)을 통해 전체 가용존 리스트를 조회할 수 있습니다.
 
 ### 관련 특징
 
-동일 리전의 다른 가용존에 위치합니다. 동일 VPC의 클라우드 서비스는 개인 네트워크를 통해 연동됩니다. [개인 IP](http://intl.cloud.tencent.com/document/product/213/5225)를 사용하여 직접 액세스합니다.
+동일 리전의 다른 가용존에 위치합니다. 동일 VPC의 클라우드 서비스는 개인 네트워크를 통해 연동됩니다. [인트라넷 서비스](http://intl.cloud.tencent.com/document/product/213/5225)를 사용하여 직접 액세스합니다.
 >? 내부 네트워크 통신은 같은 계정 내 리소스가 연동됨을 의미하며, 다른 계정의 리소스는 내부 네트워크에서 철저히 격리됩니다.
 >
 
@@ -171,7 +171,7 @@ CVM 구매 시, 액세스 지연시간 축소 및 액세스 속도 향상을 위
 - 서비스 고가용성과 장애 복구 고려
 VPC가 1개뿐인 시나리오 역시 가용존 장애 격리 및 가용존 간 재해 복구 보장을 위해 각기 다른 가용존에 서비스를 배포하시기를 권장합니다.
 - 가용존별로 네트워크 연결이 지연될 수 있습니다. 서비스의 실제 요구사항에 따라 검토해야 하며, 고가용성과 저지연성의 최적화 밸런스 포인트를 찾아야 합니다.
-- 다른 국가와 리전의 호스트에 액세스하려면, 해당 국가와 지역의 CVM을 통해 액세스하시길 권장합니다. [중국](#MainlandChina)에 CVM을 생성하여 [다른 국가와 지역의 호스트](#InternationalArea)에 액세스할 경우, 액세스 딜레이가 길어 추천하지 않습니다.
+- 다른 국가와 리전의 호스트에 액세스하려면, 해당 국가와 지역의 CVM을 통해 액세스하시길 권장합니다. [중국](#MainlandChina)에 CVM을 생성하여 [다른 국가 및 지역의 서버](#InternationalArea)에 액세스할 경우, 액세스 딜레이가 길어 추천하지 않습니다.
 
 ## 리소스 위치 설명
 다음은 Tencent Cloud의 글로벌 리소스, 리전 구분/ 가용존 미구분 리소스, 가용존 기반 리소스를 소개합니다.
@@ -260,9 +260,9 @@ VPC가 1개뿐인 시나리오 역시 가용존 장애 격리 및 가용존 간 
 ###인스턴스를 기타 가용존에 마이그레이션합니다.
 
 이미 실행된 인스턴스는 가용존 변경이 불가능하지만 사용자는 다른 방법으로 인스턴스를 기타 가용존에 마이그레이션 할 수 있습니다. 마이그레이션 프로세스는 원본 인스턴스로 사용자 정의 이미지 생성, 사용자 정의 이미지로 신규 가용존에서 인스턴스 실행, 신규 인스턴스 설정 업데이트 작업을 포함합니다.
-1. 기존 인스턴스의 사용자 정의 이미지를 생성합니다. 자세한 내용은 [사용자 정의 이미지 생성](http://intl.cloud.tencent.com/document/product/213/4942)을 참고하시기 바랍니다.
+1. 기존 인스턴스의 사용자 정의 이미지를 생성합니다. 자세한 내용은 [커스텀 미러 구축](http://intl.cloud.tencent.com/document/product/213/4942)을 참고하시기 바랍니다.
 2. 기존 인스턴스의 [네트워크 환경](https://intl.cloud.tencent.com/document/product/213/5227)이 VPC이며, 마이그레이션 후 기존의 개인 IP 주소를 유지해야 할 경우, 사용자는 기존 가용존의 서브넷을 삭제하고, 신규 가용존에서 원본 서브넷과 같은 IP 주소 범위에 서브넷을 생성할 수 있습니다. 주의 사항은, 가용 인스턴스를 포함하지 않는 서브넷만 삭제할 수 있습니다. 그러므로, 기존 서브넷의 전체 인스턴스를 신규 서브넷에 마이그레이션해야 합니다.
-3. 신규 생성한 사용자 정의 이미지를 이용하여 신규 가용존에 신규 인스턴스를 생성합니다. 사용자는 원본 인스턴스와 같은 유형 및 사양을 선택하거나, 새로운 유형 및 사양을 선택할 수 있습니다. 자세한 내용은 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855)을 참고하시기 바랍니다.
+3. 신규 생성한 사용자 정의 이미지를 이용하여 신규 가용존에 신규 인스턴스를 생성합니다. 사용자는 원본 인스턴스와 같은 유형 및 사양을 선택하거나, 새로운 유형 및 사양을 선택할 수 있습니다. 자세한 내용은 [구매 페이지를 통한 인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855)을 참고하시기 바랍니다.
 4. 원본 인스턴스에 EIP 주소를 연결하였을 경우, 기존 인스턴스와의 연결을 해제하고 신규 인스턴스와 연결합니다. 자세한 내용은 [EIP](https://intl.cloud.tencent.com/document/product/213/5733)를 참고하시기 바랍니다.
 5. (옵션)기존 인스턴스가 [종량제](https://intl.cloud.tencent.com/document/product/213/2180)인 경우, 기존 인스턴스를 삭제할 수 있습니다. 자세한 내용은 [인스턴스 폐기](https://intl.cloud.tencent.com/document/product/213/4930)를 참고하시기 바랍니다.
 
