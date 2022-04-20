@@ -1,7 +1,7 @@
 ## Supported Regions
 Lighthouse is currently available in the following regions. We recommend you select the region closest to your target users to reduce the network access latency.
 - **Hong Kong/Macao/Taiwan (China Region)**: Hong Kong (China).
-- **Other countries and regions**: Singapore, Silicon Valley, Tokyo, and Moscow.
+- **Other countries and regions**: Singapore, Silicon Valley, Tokyo,Mumbai, and Frankfurt.
 
 ## Connectivity Description
 Both private and public IPs are assigned to Lighthouse instances to provide private and public network connectivity.
