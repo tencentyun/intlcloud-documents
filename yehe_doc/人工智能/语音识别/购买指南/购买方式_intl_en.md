@@ -1,0 +1,2 @@
+## Pay-As-You-Go Billing
+Pay-As-You-Go services don't need to be purchased in advance. Specifically, the usage of the real-time speech recognition, async audio stream recognition, ultrafast recording file recognition, and one-sentence recognition services on a day are billed and settled on the next day. The usage of the recording file recognition service in a month is billed and charged on the 1st to 3rd day of the next month. You can activate the ASR service in the [ASR console](https://console.cloud.tencent.com/asr).
