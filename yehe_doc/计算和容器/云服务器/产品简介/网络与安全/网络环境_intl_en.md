@@ -26,7 +26,7 @@ Classic network is the public network resource pool for all Tencent Cloud users.
 | Interconnection rules | Interconnection is allowed for the same tenant in the same region | Cross-region and cross-account interconnection are supported |
 | Security control　| [Security groups](https://intl.cloud.tencent.com/document/product/213/12452)| [Security groups](https://intl.cloud.tencent.com/document/product/213/12452) and [Network ACL](https://intl.cloud.tencent.com/document/product/215/5132) |
 
-## Sharing and accessing resources between the classic network and VPC
+## Communicating Between Classic Network and VPC
 
 Some Tencent Cloud resources and features support both the classic network and VPC, and can be shared or accessed via the two different networks.
 
@@ -40,6 +40,6 @@ Some Tencent Cloud resources and features support both the classic network and V
 
 > [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) cannot be shared between the classic network and the VPC. Even when the VPC and the classic network are interconnected, Cloud Load Balancer does not support binding instances in VPCs and classic network at the same time.
 
-## Migrating instances in classic network to VPC
+## Migrating from Classic Network to VPC
 
 Please see [Switch to VPC](https://intl.cloud.tencent.com/document/product/213/20278) to migrate instances in the classic network to VPC.
