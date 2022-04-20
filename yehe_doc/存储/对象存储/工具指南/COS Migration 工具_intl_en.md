@@ -45,7 +45,7 @@ The structure of the properly decompressed COS Migration tool is as follows:
 ```plaintext
 COS_Migrate_tool
 |——conf  #Directory of the configuration file
-|   |——config.ini  #Migrate the configuration file
+|   |——config.ini  #Migration configuration file
 |——db    #Store the record of successful migrations
 |——dep   #JAR package complied by the main logic of the program
 |——log   #Log generated during tool execution
