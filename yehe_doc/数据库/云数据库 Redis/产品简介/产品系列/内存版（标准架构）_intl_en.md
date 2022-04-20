@@ -5,7 +5,7 @@ Memory Edition (Standard Architecture) - one replica:
 ![](https://main.qcloudimg.com/raw/0bb5f79eea8c50f2817050211a0ed77f.jpg)
 
 ## Replica Description
-Memory Edition (Standard Architecture) supports 0–5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of Memory Edition (Standard Architecture) play a role in supporting system's high availability, so the more replicas, the higher the availability. If the number of replicas is greater than 1, read/write separation can be enabled to extend the read performance through replica nodes.
+Memory Edition (Standard Architecture) supports 0–5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of Memory Edition (Standard Architecture) play a role in supporting system's high availability, so the more replicas, the higher the availability. If the number of replicas is greater than or equal to 1, read/write separation can be enabled to extend the read performance through replica nodes.
 >? TencentDB for Redis 4.0 Memory Edition (Standard Architecture) supports 0–9 replicas in Beijing and Guangzhou regions or 0–5 replicas in other regions. Other versions support only 0–5 replicas.
 >
 
@@ -29,7 +29,7 @@ Memory Edition (Standard Architecture) supports 0–5 replicas to meet the diffe
 - A zero-replica instance is only suitable for pure cache scenarios. The application system can continue to run even in case of Redis failure, but as a zero-replica instance has only one database node, when the node fails, the system will start a new Redis process (which has no data), and after node failover is completed, the application needs to warm up the data again to avoid access pressure on the backend database.
 
 **Read-Only replica (read/write separation)**:
-- Supported editions: TencentDB for Redis 4.0 Memory Edition (Standard Architecture) and above instance. When the number of replicas is greater than 1, automatic read/write separation can be enabled to extend the read performance vertically. Up to 5 replica nodes can be supported.
+- Supported editions: TencentDB for Redis 4.0 Memory Edition (Standard Architecture) and above instance. When the number of replicas is greater than or equal to 1, automatic read/write separation can be enabled to extend the read performance vertically. Up to 5 replica nodes can be supported.
 - How it works: after read-only replica is enabled, write requests will be routed to the master node, while read requests will be routed to all replica nodes through the load balancing algorithm and no longer be processed by the master node. This read/write separation feature is provided by the Proxy component built in TencentDB for Redis.
 - Enabling/Disabling: you can enable or disable read-only replica on the instance creation page in the TencentDB for Redis console or through TencentCloud API.
 
