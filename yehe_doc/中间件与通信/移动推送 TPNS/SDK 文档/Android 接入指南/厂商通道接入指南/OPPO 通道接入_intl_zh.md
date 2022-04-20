@@ -10,7 +10,7 @@ OPPO 通道是由 OPPO 官方提供的系统级推送通道。在 OPPO 手机上
 ## 操作步骤
 ### 开通权限
 使用 OPPO 企业开发者帐号，登录 [OPPO 开发平台](https://open.oppomobile.com/)，在**管理中心** > **应用服务平台** > **移动应用列表** > **选择应用** > **开发服务** > **推送服务** 中完成 OPPO PUSH 权限申请。
-![](https://main.qcloudimg.com/raw/11f429ba46161b1cea16c233cebc5627.png)
+![]()
 >? 通知栏推送权限申请需要应用在 OPPO 软件商店上架才可通过，且主营业务不为借贷类的应用。
 >
 
@@ -20,7 +20,7 @@ OPPO 通道是由 OPPO 官方提供的系统级推送通道。在 OPPO 手机上
 >
 
 1. Opush 申请开通成功后，您可在 [**OPPO 推送平台**](https://push.oppo.com/) > **配置管理** > **应用配置页面**，查看 AppKey、AppSecret 和 MasterSecret。
-![](https://main.qcloudimg.com/raw/7753e738a004854d63cf4c8e4c07d51c.png)
+![]()
 2. 复制应用的 AppKey、AppSecret 和 MasterSecret 参数填入 [**移动推送 TPNS 控制台**](https://console.cloud.tencent.com/tpns) > **配置管理** > **基础配置** >  **OPPO 官方推送通道** 栏目中。
 
 ### 配置推送通道
