@@ -10,7 +10,7 @@ The OPPO channel is a system-level push channel officially provided by OPPO. The
 ## Directions
 ### Applying for permission
 Use an OPPO enterprise developer account to log in to the [OPPO Developer Platform](https://open.oppomobile.com/), and select **Management Center** > **App Service Platform** > **Mobile App List** > **Select App** > **Development Service** > **Push Service** to apply for the OPPO PUSH permission.
-![](https://main.qcloudimg.com/raw/11f429ba46161b1cea16c233cebc5627.png)
+![]()
 >? The notification bar push permissions can be granted only if the application is published on OPPO AppStore and its main business is not lending.
 >
 
@@ -20,7 +20,7 @@ Use an OPPO enterprise developer account to log in to the [OPPO Developer Platfo
 >
 
 1. After OPPO PUSH is activated, you can select [**OPPO PUSH Platform**](https://push.oppo.com/) > **Configuration Management** > **Application Configuration** to view the `AppKey`, `AppSecret`, and `MasterSecret`.
-![](https://main.qcloudimg.com/raw/7753e738a004854d63cf4c8e4c07d51c.png)
+![]()
 2. Copy and paste the `AppKey`, `AppSecret`, and `MasterSecret` parameters of the application into [**TPNS console**](https://console.cloud.tencent.com/tpns) > **Configuration Management** > **Basic Configuration** > **OPPO Official Push Channel**.
 
 ### Configuring the push channel
