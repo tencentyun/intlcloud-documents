@@ -37,7 +37,7 @@ You can log in using your Tencent Cloud API key (`SecretID` and `SecretKey`), wh
 
 ### Login with a Tencent Cloud account
 
-Click **Tencent Cloud Account Login** and log in to the COSBrowser desktop version in the pop-up window. This login method supports WeChat, email, QQ, WeChat Official Account, WeCom, and sub-account logins.
+Click **Tencent Cloud Account Login** and log in to the COSBrowser desktop version in the pop-up window. This login method supports email, sub-account logins.
 
 
 
