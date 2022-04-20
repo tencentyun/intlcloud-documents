@@ -13,31 +13,6 @@ TencentDB for Redis allows you to create a replication group in the console and 
 - Global replication supports only 4.0 Standard Architecture, 4.0 Cluster Architecture, 5.0 Standard Architecture, and 5.0 Cluster Architecture instances.
 - The current version of the global replication feature supports only instances deployed in the same AZ. Multi-AZ instances will be supported in the future.
 
-## Notes
-### Specification limits
-- An instance running on cluster architecture can have up to 64 shards in a global replication group.
-- When creating a replication group, you must specify the master instance in the group.
-- Currently, you can add up to four instances in a global replication group in the following deployment schemes: one master and three read-only instances, four master instances, or two master and two read-only instances.
-
-### Region limits
-The global replication feature can replicate data in the same AZ or across AZs between any Tencent Cloud regions no matter where instances in the replication group are deployed.
-Currently, only the following regions and AZs support global replication:
-
-| Region | AZ |
-|---------|---------|
-| Virginia | Virginia Zone 2 |
-| Beijing | Beijing Zone 5 |
-| Shanghai | Shanghai Zone 5 |
-| Hong Kong (China) | Hong Kong Zone 3 |
-| Guangzhou | Guangzhou Zone 6 |
-| Singapore | Singapore Zone 2 |
-| Nanjing | Nanjing Zone 3 |
-
-### Command description
-- The **FLUSHDB** or **FLUSHALL** command will be synced to all instances in the replication group. Therefore, run them with caution.
-- The **Pub** and **Sub** command group will not be synced. We recommend you use the `Stream` data structure to replicate notification messages across regions.
-- When the **RESTORE** command is synced, if the target subinstance has the same key, it will not be executed.
-
 ## Billing Description
 - If instances in a replication group are in the same region, no additional fees will be incurred.
 - For cross-region data replication within a replication group, bandwidth fees will be incurred. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/553/35174).
@@ -76,6 +51,7 @@ Currently, only the following regions and AZs support global replication:
 <td>Yes</td>
 <td>test-XXX</td></tr>
 </tbody></table>
+
 > !The Redis kernel of the master instance specified during replication group creation must be upgraded to the Global Replication Edition. After the upgrade is completed, one or multiple momentary disconnections lasting 5 seconds will occur.
 > 
 5. Return to the **Redis - Global Replication** page, and you can see the newly created replication group in the replication group list.
