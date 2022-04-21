@@ -4,7 +4,7 @@ Cross-bucket replication enables the automatic, asynchronous replication of **in
 
 ## Prerequisites
 
-To enable cross-bucket replication, make sure that both the source and destination buckets have [versioning](https://intl.cloud.tencent.com/document/product/436/19881) enabled.
+[Versioning](https://intl.cloud.tencent.com/document/product/436/19881) is enabled for both the source and destination buckets.
 
 ## Enabling Cross-Bucket Replication
 
@@ -13,7 +13,7 @@ To enable cross-bucket replication, make sure that both the source and destinati
 3. Click the name of the source bucket that you want to set cross-bucket replication for.
 4. Go to **Fault Tolerance and Disaster Recovery** > **Cross-Bucket Replication**, and click **Add Rule**.
 ![](https://main.qcloudimg.com/raw/910b0ddbe6f3bb0093544b5c21a07ca0.png)
-5. To create a cross-bucket replication rule, make sure that versioning is enabled for both the source and destination buckets. After the configuration is complete, click **OK**.
+5. Configure the rule and click **OK**.
 ![](https://main.qcloudimg.com/raw/2a167db6422d4de507d3851d9965ab37.png)
 The fields to configure are outlined below:
 - **Source Region**: the region where your source bucket resides.
@@ -33,8 +33,8 @@ The fields to configure are outlined below:
 
 You can disable a cross-bucket replication rule using either of the following two options:
 
-- **Status**: switch this button off, and cross-bucket replication will be disabled temporarily. Copied data will be retained in the destination bucket but no more incremental data will be copied from the source bucket while replication is suspended. To re-enable cross-bucket replication, simply switch this button back on.
-- **Delete**: deletes an existing rule by clicking **Delete** under **Operation**. Copied data will be retained in the destination bucket but no more incremental data will be copied from the source bucket. To re-enable cross-bucket replication, you need to add a new rule.
+- **Status**: Switch this button off, and cross-bucket replication will be disabled temporarily. Copied data will be retained in the destination bucket but no more incremental data will be copied from the source bucket as long as replication is suspended. To re-enable cross-bucket replication, switch this button back on.
+- **Delete**: Delete an existing rule by clicking **Delete** under **Operation**. Copied data will be retained in the destination bucket but no more incremental data will be copied from the source bucket. To re-enable cross-bucket replication, add a new rule.
 ![](https://main.qcloudimg.com/raw/f26250880b0f298531e66a49ccea8dc5.png)
 
 >!
