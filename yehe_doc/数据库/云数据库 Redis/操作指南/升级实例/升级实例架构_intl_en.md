@@ -6,7 +6,6 @@ TencentDB for Redis supports standard architecture and cluster architecture. To 
 - Cross-version architecture upgrade is not supported; for example, you cannot upgrade from Redis 4.0 Standard Architecture to Redis 5.0 Cluster Architecture.
 - The architecture of Redis 2.8 cannot be upgraded.
 - Cluster architecture cannot be downgraded to standard architecture.
-- Architecture upgrade is not supported for pay-as-you-go instances.
 - After standard architecture is upgraded to cluster architecture, fees will be charged based on cluster architecture and thus get increased. For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/239/9894).
 
 ## How Upgrade Works
