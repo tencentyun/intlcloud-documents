@@ -132,7 +132,7 @@ TKE 支持 Tencent Linux、Ubuntu 和 CentOS 三类发行版操作系统，其�
 <span id="nodepool)"></span>
 
 ## 使用节点池
-节点池目前为内测发布功能，使用需通过申请。主要用于批量管理节点：
+节点池主要用于批量管理节点：
 - 节点 Label 与 Taint。
 - 节点组件启动参数。
 - 节点自定义启动脚本。
