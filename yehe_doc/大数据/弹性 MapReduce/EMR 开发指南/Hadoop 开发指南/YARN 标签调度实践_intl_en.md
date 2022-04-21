@@ -147,7 +147,7 @@ On the "Component Management" page, select the YARN component to enter its compo
         <value>100</value>
 </property>
 <property>
-        <name>yarn.scheduler.capacity.root.dev.accessible-node-labels.cpu.capacity</name>
+        <name>yarn.scheduler.capacity.root.product.accessible-node-labels.cpu.capacity</name>
         <value>100</value>
 </property>
 <property>
