@@ -11,6 +11,7 @@ This document introduces how to use the atop monitoring tool with an example of 
 2. Run the following command to install atop.
 ```
 yum install atop -y
+
 ```  The prompt message `Complete!` indicates that atop has been successfully installed.
 
 ### Configuring and launching atop
