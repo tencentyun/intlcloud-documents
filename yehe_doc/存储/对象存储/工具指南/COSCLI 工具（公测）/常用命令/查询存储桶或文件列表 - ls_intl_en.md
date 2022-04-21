@@ -6,7 +6,9 @@ The `ls` command is used to query the list of buckets, objects in a bucket, and 
 ./coscli ls [cos://bucketAlias[/prefix/]] [flag]
 ```
 
->? For more information about `bucketAlias`, please see [Configuration Parameters](https://intl.cloud.tencent.com/document/product/436/43265).
+>? 
+>- For more information on `bucketAlias`, see [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>- For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
 `ls` includes the following optional parameters:
@@ -20,14 +22,13 @@ The `ls` command is used to query the list of buckets, objects in a bucket, and 
 
 | Flag Abbreviation | Flag Full Name   | Description                     |
 | --------- | ----------- | ------------------------------------ |
-| -h        | --help      | Outputs help information.       |
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
 | -r        | --recursive | Whether to traverse directories recursively and list all objects. |
 
 >? 
 > - `--include` and `--exclude` support standard regular expressions. You can use regular expressions to filter objects that meet your requirements.
-> - When using `zsh`, you may need to enclose the pattern string with double quotation marks.
+> - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.
 ```plaintext
 ./coscli ls cos://bucket1 -r --include ".*.mp4"
 ```

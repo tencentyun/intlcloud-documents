@@ -1,7 +1,7 @@
 ## Overview
 
 Logic and arithmetic functions include AND, OR, greater than, less than, equal to, addition, subtraction, multiplication, division, and modulus operation functions. Their writing method is slightly different from that of commonly used programming languages, as shown in the figure below.
-![](https://qcloudimg.tencent-cloud.cn/raw/8aa59806fd4e15846418bb119f4ebf23.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/293f6c206aeef96d8b8c4dcabd37d3da.jpg)
 
 ## Function op_if
 
@@ -17,13 +17,13 @@ op_if(Condition 1, Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|condition| Condition expression |bool| Yes |-|-|
+|condition|Condition expression|bool|Yes|-|-|
 |data1| If the condition is `True`, the value of this parameter is returned. |string| Yes |-|-|
 |data2| If the condition is `False`, the value of this parameter is returned. |string| Yes |-|-|
 
-#### Example
+#### Examples
 - Example 1
 Raw log:
 ```
@@ -66,11 +66,11 @@ op_ifnull(Value 1, Value 2, ...)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | Variable parameter list | Parameters or expressions that participate in the calculation |string| Yes |-|-|
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"data1": null, "data2": "", "data3": "first not null"}
@@ -99,12 +99,12 @@ op_and(Value 1, Value 2, ...)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | Variable parameter list | Parameters or expressions that participate in the calculation |string| Yes |-|-|
 
 
-#### Example
+#### Examples
 - Example 1
 Raw log:
 ```
@@ -159,11 +159,11 @@ op_or(Value 1, Value 2, ...)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | Variable parameter list | Parameters or expressions that participate in the calculation |string| Yes |-|-|
 
-#### Example
+#### Examples
 Raw log:
 ```
 {}
@@ -192,12 +192,12 @@ op_not(Value)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 |data| Value of any type |any| Yes |-|-|
 
 
-#### Example
+#### Examples
 - Example 1
 Raw log:
 ```
@@ -239,12 +239,12 @@ op_eq(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
-#### Example
+#### Examples
 - Example 1. Determine whether the values of the `Post` and `Get` fields are equal
 Raw log:
 ```
@@ -287,13 +287,13 @@ op_ge(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
 
-#### Example
+#### Examples
 - Example 1
 Raw log:
 ```
@@ -335,12 +335,12 @@ op_gt(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "20", "field2": "9"}
@@ -369,13 +369,13 @@ op_le(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "2", "field2": "2"}
@@ -403,13 +403,13 @@ op_lt(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "2", "field2": "3"}
@@ -437,12 +437,12 @@ op_add(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "1", "field2": "2"}
@@ -469,12 +469,12 @@ op_sub(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "1", "field2": "2"}
@@ -503,12 +503,12 @@ op_mul(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "1", "field2": "2"}
@@ -537,13 +537,13 @@ op_div(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 | data2 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
 
-#### Example
+#### Examples
 - Example 1
 Raw log:
 ```
@@ -585,11 +585,11 @@ op_sum(Value 1, Value 2, ...)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | Variable parameter list | Numeric value or string that can be converted to a numeric value |string| Yes |-|-|
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "1.0", "field2": "10"}
@@ -618,11 +618,11 @@ op_mod(Value 1, Value 2)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | data1 | Numeric value or string that can be converted to a numeric value |number| Yes | - | - |
 
-#### Example
+#### Examples
 - Example 1
 Raw log:
 ```

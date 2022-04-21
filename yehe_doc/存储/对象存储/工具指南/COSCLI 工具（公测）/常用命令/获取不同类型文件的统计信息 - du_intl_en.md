@@ -7,7 +7,9 @@ The `du` command is used to obtain statistics on each storage class for a bucket
 ./coscli du cos://<bucketAlias>[/prefix/] [flag]
 ```
 
->? For more information about `bucketAlias`, please see [Configuration Parameters](https://intl.cloud.tencent.com/document/product/436/43265).
+>? 
+>- For more information on `bucketAlias`, see [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>- For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
 `ls` includes the following optional parameters:
@@ -18,10 +20,8 @@ The `du` command is used to obtain statistics on each storage class for a bucket
 
 `du` includes the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name     | Purpose                         |
 | --------- | ------------- | ------------------------ |
-| -h        | --help      | Outputs help information.       |
-| -c        | --config-path | Path of the configuration file to use |
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
 
