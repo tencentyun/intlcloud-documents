@@ -508,7 +508,7 @@ public void onRecvC2CReadReceipt(List<V2TIMMessageReceipt> receiptList) {
 
 正常情况下，无论是发送 C2C 单聊消息还是发送 Group 群消息，都会计入未读消息数（通过会话对象 [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) 的 [getUnreadCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e) 接口，可以拿到一个会话的未读消息数）。当您希望发送一些不计入未读计数的消息时，比如提示类或者控制类的消息，可以按照下面的方式来发送：
 
-> 仅增强版 5.3.425 及以上版本支持。
+>? 仅增强版 5.3.425 及以上版本支持。
 
 ```
 // 创建消息对象
@@ -536,7 +536,7 @@ public void onProgress(int progress) {
 
 某些场景下，不希望一些提示类型的消息显示为会话的最新消息，可以按照下面的方式来发送：
 
-> 仅增强版 5.4.666 及以上版本支持。
+>? 仅增强版 5.4.666 及以上版本支持。
 
 ```
 // 创建消息对象
@@ -707,7 +707,7 @@ SDK 支持三种类型的消息接收选项：
 
 您可以调用 [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a6524143895cdee25fabd9aeeae73a3c5) 接口设置单聊消息免打扰，调用 [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a2735427ac22485626aea278a9d465b3e) 接口设置群聊消息免打扰。
 
-> 仅增强版 5.3.425及以上版本支持。
+>? 仅增强版 5.3.425及以上版本支持。
 
 ## 撤回消息
 
@@ -752,7 +752,7 @@ public void onRecvMessageRevoked(String msgID) {
 ### 一键清空所有会话的未读数
 接收方调用 [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2配置】>【登录与消_1_1V2TIMMessageManager.html#ad097a0da2ea0002f2b0f2d1d11f3a4ab) 可以实现一键清空所有会话的未读数，并会回调 [onConversationChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) 方法通知界面更新。
 
-> 仅增强版 5.8.1668 及以上版本支持。
+>? 仅增强版 5.8.1668 及以上版本支持。
 
 ## 查看历史消息
 您可以调用 [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#afedccbe0e5229ae15e0e07b722ea39df) 获取单聊历史消息，调用 [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597) 获取群聊历史消息。如果当前设备网络连接正常，SDK 会默认从服务器拉取历史消息；如果没有网络连接，SDK 会直接从本地数据库中读取历史消息。
@@ -813,7 +813,7 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 **设置某人消息免打扰：**
 调用 [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a6524143895cdee25fabd9aeeae73a3c5) 接口，设置消息接收选项为 `V2TIM_NOT_RECEIVE_MESSAGE` 状态。
 
-> 仅增强版 5.3.425 及以上版本支持。
+>? 仅增强版 5.3.425 及以上版本支持。
 
 ### 不接收某个群组的消息
 
