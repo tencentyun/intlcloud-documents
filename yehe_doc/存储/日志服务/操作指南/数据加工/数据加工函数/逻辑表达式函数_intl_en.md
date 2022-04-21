@@ -1,7 +1,7 @@
 ## Overview
 
 Logic and arithmetic functions include AND, OR, greater than, less than, equal to, addition, subtraction, multiplication, division, and modulus operation functions. Their writing method is slightly different from that of commonly used programming languages, as shown in the figure below.
-![](https://qcloudimg.tencent-cloud.cn/raw/293f6c206aeef96d8b8c4dcabd37d3da.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/8aa59806fd4e15846418bb119f4ebf23.png)
 
 ## Function op_if
 
