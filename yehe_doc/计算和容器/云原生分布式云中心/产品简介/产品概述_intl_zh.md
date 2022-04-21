@@ -70,7 +70,7 @@ Clusternet 支持 Pull 模式和 Push 模式管理集群。即使集群运行在
 提供了多种类型的配置策略，用户可灵活的搭配这些配置来实现复杂的业务场景，例如多集群灰度发布。
 
 **Addon 能力，架构简单**
-采用了 Aggregated ApiServer 的方式，且不依赖额外的存储，架构简单，便于部署，大大降低了运维复杂度。
+采用了 Aggregated ApiServer 的方式，且不依赖额外的存储，架构简单，便于部署，极大降低了运维复杂度。
 
 **便捷接入**
 Clusternet 提供了完善的对接能力，支持 kubectl plugin 以及 client-go，方便业务一键接入，具备管理多集群的能力。
