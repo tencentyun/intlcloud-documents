@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
  This API is used by the app admin to obtain group member profiles based on the group ID.
 
 
@@ -7,40 +7,38 @@
 
 | Group Type ID | RESTful API Support |
 |-----------|------------|
-| Private | Yes. Same as work group (Work) in the new version. |
+| Private | Yes. Same as the work group (Work) in the new version. |
 | Public | Yes |
-| ChatRoom | Yes. Same as meeting group (Meeting) in the new version. |
-| AVChatRoom | Yes, but only the profiles of the first 300 members. |
+| ChatRoom | Yes. Same as the meeting group (Meeting) in the new version. |
+| AVChatRoom | No |
+|Community | Yes. Getting group member profiles by using the `Next` field. |
 
-Above are the IM built-in groups. For more information, see [Group system](https://intl.cloud.tencent.com/document/product/1047/33529).
+These are the preset group types in IM. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
+>? Due to the large number of members in a community group, the pagination getting method is changed to the batch getting method based on the `Next` field.
 
->?Due to differences in scenario implementation, for an audio-video group (AVChatRoom), you can only obtain the group member profiles of the first 300 members. The profiles of members who join the group after the threshold (300) is reached cannot be obtained.
 
 ### Sample request URL
 ```
 https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
-
 ### Request parameters
 
 The following table only describes the modified parameters when this API is called. For more information on other parameters, please see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| https       | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
+| https | The request protocol is HTTPS, and the request method is POST. |
+| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>China: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
 | v4/group_open_http_svc/get_group_member_info | Request API |
 | sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
-| contenttype | Request format. The value is always `json`. |
+| contenttype   |Request format, which should always be `json`.|
 
-### Maximum calling frequency
+### Maximum call frequency
 200 calls per second
-### Sample requests
+### Sample request
 
 - **Basic format**
 A basic request is used to obtain detailed group member information, including group member profiles and custom group member fields. The request requires only the group ID.
@@ -63,6 +61,36 @@ You can use the `Limit` and `Offset` fields to control the pagination mode:
     "Offset": 0 // Sequence number of the member from whom to start pulling information
 }
 ```
+
+- **Batch**
+You can use the `Limit` and `Next` fields to control the batch mode:
+ - `Limit`: specifies the maximum number of members in the `MemberList` array in the response. Maximum value: 100
+ - `Next`: specifies a member position from which subsequent information is to be pulled. For the first request, the client request parameter `Next` must pass in "". For the last request, the server returns "" for the `Next` parameter, indicating that the information pulling ends.
+ For intermediate requests, the client request parameter `Next` uses the last value of `Next` returned by the server. This is similar to Redis scan cursor queries.
+
+ For example, if you are to perform batch pulling, the parameters in the first request should be `{"Limit" : 20, "Next" : ""}`, and the server returns the following: 
+ ```
+{
+    "ActionStatus": "OK",
+    "ErrorInfo": "",
+    "ErrorCode": 0,
+    "Next": "144115265295492787",
+    "MemberList": [
+            ....
+ ```
+ The parameters in the second request should be `{"Limit" : 20, "Next" : "144115265295492787"}`.
+ And so on, until the server replies with `Next` as "", indicating that there is no subsequent member information, and the client should end the query.
+
+
+```
+{
+    "GroupId":"@TGS#_@TGS#cAVQXXXXXX", // Group ID (required)
+    "Limit": 100, // Maximum number of members to pull information
+    "Next": "" // Start pulling from the position where the last pulling ends
+}
+```
+
+
 - **Specifying information to pull**
 You can use the `MemberInfoFilter` filter field to specify fields to pull. Fields that are not specified in it will not be pulled.
 ```
@@ -100,7 +128,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
     ]
 }
 ```
-- **ALL IN ONE**
+- **Response to an ALL IN ONE request**
 ```
 {
     "GroupId":"@TGS#1NVTZEAE4", // Group ID (required)
@@ -131,19 +159,21 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
 | GroupId | String | Yes | ID of the group to pull member information |
-| MemberInfoFilter | Array | No | Information to pull. If this field is not specified, all group member information will be pulled. For details on group member information fields, see the **Group member profile** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99). |
+| MemberInfoFilter | Array | No | Information to pull. If this field is not specified, all group member information will be pulled. For details on group member information fields, see [Group member profile](https://intl.cloud.tencent.com/document/product/1047/33529#SelfInfoFilter). |
 | MemberRoleFilter | Array | No | Role of group members to pull information. If this field is not specified, the information of members in all roles will be pulled. The member role can be `Owner`, `Admin`, or `Member`.  |
 | AppDefinedDataFilter_GroupMember | Array | No | This field is omitted by default. It specifies the custom group member fields to pull. For more information, see the **Custom Fields** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
 | Limit | Integer | No | Maximum number of members to pull information at a time. The value cannot exceed 6000. If this field is not specified, the information of all members in the group will be obtained. |
 | Offset | Integer | No | Sequence number of the member from whom to start pulling information. If this field is set to `0`, the information is pulled starting from the first member. |
+|Next   |String   | No | Position of the last member pulled. This field is required for a community group. A community group does not support the `Offset` field. It uses the `Next` field instead. For the first call, "" must be passed in for `Next`. For subsequent calls, the last value of `Next` must be passed in. |
 
-### Sample responses
+### Sample response
 - **Response to a basic or pagination request**
 ```
 {
     "ActionStatus": "OK",
     "ErrorInfo": "",
     "ErrorCode": 0,
+    "Next": "144115265295492787", // This field is returned only for a community group
     "MemberNum": 2, // Total number of members in the group
     "MemberList": [ // Group member list
         {
@@ -216,7 +246,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
     ]
 }
 ```
-- **Response to request pulling the information of members in the specified role**
+- **Pulling the information of members in the specified role**
 ```
 {
     "ActionStatus": "OK", // The request succeeded.
@@ -246,7 +276,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
     "MemberNum": 8 // Total number of members in the group
 }
 ```
-- **Response to a request pulling custom group member fields**
+- **Pulling custom group member fields**
 ```
 {
     "ActionStatus": "OK",
@@ -293,6 +323,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
     "ActionStatus": "OK",
     "ErrorInfo": "",
     "ErrorCode": 0,
+    "Next": "144115265295492787", // This field is returned only for a community group
     "MemberNum": 2, // Total number of members in the group
     "MemberList": [ // Group member list
         {
@@ -345,8 +376,9 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
 | ErrorCode | Integer | Error code. `0`: successful; other values: failed |
 | ErrorInfo | String | Error information |
 | MemberNum | Integer | Total number of members in the group |
-| MemberList | Array | Returned group member list, which contains information of all or specified group members. For details on group member information fields, see the **Group member profile** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99). |
+| MemberList | Array | Returned group member list, which contains information of all or specified group members. For details on group member information fields, see [Group member profile](https://intl.cloud.tencent.com/document/product/1047/33529#SelfInfoFilter). |
 | AppMemberDefinedData | Array | Returned custom group member fields |
+| Next | String | Value of `Next` to be passed in in the next request. This field is returned only for a community group. |
 
 ## Error Codes
 
@@ -368,5 +400,5 @@ The following table describes the error codes specific to this API:
 ## API Debugging Tool
 Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_member_info) to debug this API.
 
-## Reference
+## References
 Modifying the Profile of a Group Member ([v4/group_open_http_svc/modify_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34900))

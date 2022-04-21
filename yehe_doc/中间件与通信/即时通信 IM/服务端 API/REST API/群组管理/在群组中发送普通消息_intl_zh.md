@@ -10,7 +10,8 @@
 |Public|支持|
 |ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
 |AVChatRoom|支持|
-|Community|支持|
+|Community（社群）|支持|
+
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
@@ -106,6 +107,25 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 }
 ```
 
+- **指定消息接收者**
+如果消息体中增加了 To_Account，里面指定消息接收者的信息，那么消息只会发送给消息接收者，且该消息不计未读。（支持群类型 Private、Public、ChatRoom）。
+>?仅旗舰版支持此功能。
+>
+```
+{
+    "GroupId":"@TGS#12DEVUDHQ",
+    "Random":2784275388,
+    "MsgBody":[
+        {
+            "MsgType":"TIMCustomElem",
+            "MsgContent":{
+                "Data":"1cddddddddq1"
+            }
+        }
+    ],
+    "To_Account":["brennanli2", "brennanli3"] //指定消息接收者(接收者成员上限50个)，如果此字段被使用，消息则不计未读
+}
+```
 - **指定消息不更新最近联系人会话**
 如果消息中指定 SendMsgControl，设置 NoLastMsg 的情况下，表示不更新最近联系人会话；NoUnread 不计未读，只对单条消息有效。(AVChatRoom 不允许使用)。
 ```
@@ -184,6 +204,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 ```
 - **发送群@消息**
   GroupAtInfo字段里面设置@的用户，跟消息体里面@的用户按顺序逐一对应。
+>!社群（Community）、直播群（AVChatroom）不支持@all。
 
   ```
       {
@@ -253,7 +274,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 | OfflinePushInfo | Object | 选填| 离线推送信息配置，详细可参阅 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 | ForbidCallbackControl|Array|选填|消息回调禁止开关，只对单条消息有效，ForbidBeforeSendMsgCallback 表示禁止发消息前回调，ForbidAfterSendMsgCallback 表示禁止发消息后回调|
 |OnlineOnlyFlag|Integer|选填|1表示消息仅发送在线成员，默认0表示发送所有成员，AVChatRoom(直播群)不支持该参数|
-|SendMsgControl |Array |选填|消息发送权限，NoLastMsg 只对单条消息有效，表示不更新最近联系人会话；NoUnread 不计未读，只对单条消息有效。|
+|SendMsgControl |Array |选填|消息发送权限，NoLastMsg 只对单条消息有效，表示不更新最近联系人会话；NoUnread 不计未读，只对单条消息有效。（如果该消息 OnlineOnlyFlag 设置为1，则不允许使用该字段。）|
 |CloudCustomData|String|选填|消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
 
 ### 应答包体示例
@@ -292,7 +313,6 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 | 10016 | App 后台通过第三方回调拒绝本次操作 |
 | 10017 | 因被禁言而不能发送消息，请检查发送者是否被设置禁言 |
 | 10023| 发消息的频率超限，请延长两次发消息时间的间隔 |
-| 80001 | 文本安全打击；请检查消息文本中是否有敏感词汇 |
 | 80002 | 消息内容过长，目前最大支持8000字节的消息，请调整消息长度 |
 
 ## 接口调试工具
