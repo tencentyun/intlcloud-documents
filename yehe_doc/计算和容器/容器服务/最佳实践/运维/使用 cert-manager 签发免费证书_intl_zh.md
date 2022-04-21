@@ -16,17 +16,18 @@ cert-manager 部署到 Kubernetes 集群后会查阅其所支持的自定义资�
 ### 免费证书签发原理
 
 Let’s Encrypt 利用 ACME 协议校验域名的归属，校验成功后可以自动颁发免费证书。免费证书有效期只有90天，需在到期前再校验一次实现续期。使用 cert-manager 可以自动续期，即实现永久使用免费证书。校验域名归属的两种方式分别是 **HTTP-01** 和 **DNS-01**，校验原理详情可参见 [Let's Encrypt 的运作方式](https://letsencrypt.org/zh-cn/how-it-works/)。
-
-#### HTTP-01 校验原理
+<dx-tabs>
+::: HTTP-01 校验原理
 
 HTTP-01 的校验原理是给域名指向的 HTTP 服务增加一个临时 location。此方法仅适用于给使用 Ingress 暴露流量的服务颁发证书，并且不支持泛域名证书。
 例如，Let’s Encrypt 会发送 HTTP 请求到 `http://<YOUR_DOMAIN>/.well-known/acme-challenge/<TOKEN>`。`YOUR_DOMAIN` 是被校验的域名。`TOKEN` 是 ACME 协议客户端负责放置的文件，在此处 ACME 客户端即 cert-manager，通过修改或创建 Ingress 规则来增加临时校验路径并指向提供 `TOKEN` 的服务。Let’s Encrypt 会对比 `TOKEN` 是否符合预期，校验成功后就会颁发证书。
-
-#### DNS-01 校验原理
+:::
+::: DNS-01 校验原理
 
 DNS-01 的校验原理是利用 DNS 提供商的 API Key 拿到用户 DNS 控制权限。此方法不需要使用 Ingress，并且支持泛域名证书。
 在 Let’s Encrypt 为 ACME 客户端提供令牌后，ACME 客户端 `\(cert-manager\)` 将创建从该令牌和帐户密钥派生的 TXT 记录，并将该记录放在 `_acme-challenge.<YOUR_DOMAIN>`。Let’s Encrypt 将向 DNS 系统查询该记录，找到匹配项即可颁发证书。
-
+:::
+</dx-tabs>
 ### 校验方式对比
 
 HTTP-01 校验方式的优点是配置简单通用，不同 DNS 提供商均可使用相同的配置方法。缺点是需要依赖 Ingress，若仅适用于服务支持 Ingress 暴露流量，不支持泛域名证书。
@@ -115,14 +116,15 @@ spec:
 ### DNS-01 校验方式签发证书
 
 若使用 DNS-01 的校验方式，则需要选择 DNS 提供商。cert-manager 内置 DNS 提供商的支持，详细列表和用法请参见 [Supported DNS01 providers](https://cert-manager.io/docs/configuration/acme/dns01/#supported-dns01-providers)。若需要使用列表外的 DNS 提供商，可参考以下两种方案：
-#### 方案1：设置 Custom Nameserver
+<dx-tabs>
+::: 方案1：设置 Custom Nameserver
 在 DNS 提供商后台设置 custom nameserver，指向例如 cloudflare 此类可管理其它 DNS 提供商域名的 nameserver 地址，具体地址可登录 cloudflare 后台查看。如下图所示：
 <img style="width:80%" src="https://main.qcloudimg.com/raw/9e07f843cae3ff5123442e7dc5b024d0.png" data-nonescope="true">
 namecheap 可以设置 custom nameserver，如下图所示：
 <img style="width:80%" src="https://main.qcloudimg.com/raw/1ad9889154d2b4125cef8a41de26d413.png" data-nonescope="true">
 最后配置 Issuer 指定 DNS-01 验证时，添加 cloudflare 的信息即可。
-
-#### 方案2：使用 Webhook
+:::
+::: 方案2：使用 Webhook
 使用 cert-manager 的 Webhook 来扩展 cert-manager 的 DNS-01 验证所支持的 DNS 提供商，已经有许多第三方实现，包括国内常用的 DNSPod 与阿里 DNS，详细列表和用法请参见 [Webhook](https://cert-manager.io/docs/configuration/acme/dns01/#webhook)。
 
 #### 示例
@@ -134,7 +136,8 @@ namecheap 可以设置 custom nameserver，如下图所示：
 >- 如需创建 ClusterIssuer，Secret 需要创建在 cert-manager 所在命名空间中。
 >- 如需创建 Issuer，Secret 需要创建在 Issuer 所在命名空间中。
 >
-``` yaml
+<dx-codeblock>
+::: yaml
    apiVersion: v1
    kind: Secret
    metadata:
@@ -143,9 +146,11 @@ namecheap 可以设置 custom nameserver，如下图所示：
    type: Opaque
    stringData:
      api-token: <API Token> # 将 Token 粘贴到此处，不需要 base64 加密。
-```
+:::
+</dx-codeblock>
 3. 创建 ClusterIssuer。yaml 示例如下：
-``` yaml
+<dx-codeblock>
+::: yaml
    apiVersion: cert-manager.io/v1
    kind: ClusterIssuer
    metadata:
@@ -162,9 +167,11 @@ namecheap 可以设置 custom nameserver，如下图所示：
              apiTokenSecretRef:
                key: api-token
                name: cloudflare-api-token-secret # 引用保存 cloudflare 认证信息的 Secret
-```
+:::
+</dx-codeblock>  
 4. <span id="Certificate"></span>创建 Certificate。yaml 示例如下：
-``` yaml
+<dx-codeblock>
+::: yaml
    apiVersion: cert-manager.io/v1
    kind: Certificate
    metadata:
@@ -177,7 +184,10 @@ namecheap 可以设置 custom nameserver，如下图所示：
        kind: ClusterIssuer
        name: letsencrypt-dns01 # 引用 ClusterIssuer，指示采用 dns01 方式进行校验
      secretName: test-mydomain-com-tls # 最终签发出来的证书会保存在这个 Secret 里面
-```
+:::
+</dx-codeblock>
+:::
+</dx-tabs>
 
 ### 获取和使用证书
 
