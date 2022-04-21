@@ -32,10 +32,10 @@ EKS 日志采集功能开启后，日志采集 Agent 根据您配置的采集路
 ### 通过控制台配置日志采集
 
 EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您指定的消费端，并会附加相关的 Kubernetes metadata，包括容器所属 pod 的 label 和 annotation 等信息。具体操作步骤如下：
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**弹性集群**。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【弹性集群】。
 2. 进入“弹性集群”页面，选择需要日志采集的集群 ID，进入集群管理页面。
-3. 在左侧“工作负载”中选择需要的工作负载类型，进入对应页面后选择**新建**。
-4. 在“实例内容器”中选择**显示高级设置**，并勾选“开启”日志采集。如下图所示：
+3. 在左侧“工作负载”中选择需要的工作负载类型，进入对应页面后选择【新建】。
+4. 在“实例内容器”中选择【显示高级设置】，并勾选“开启”日志采集。如下图所示：
 ![](https://main.qcloudimg.com/raw/2359897f61c9c663d31db1cdca03f3c4.png)
 5. 参考以下信息进行日志消费端配置，您可选择 CLS 或 Kafka 作为日志消费端。
 <dx-tabs>
@@ -74,16 +74,29 @@ Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compa
  - 选择具有访问日志服务 CLS 权限的角色名称，如下图所示：
 ![](https://main.qcloudimg.com/raw/890940885a3fd7502cf28aa62f970e2c.png)
  - 若无合适的角色，创建过程参考以下步骤：
-  1. 登录访问管理控制台，在左侧导航栏选择**[角色](https://console.cloud.tencent.com/cam/role)**。
-  2. 在“角色”页面，单击**新建角色**。
-  3. 在“选择角色载体” 弹窗中，选择**腾讯云产品服务**，进入**新建自定义角色**页面。
-  4. 在“输入角色载体信息”步骤中，选择**绑定**云服务器（cvm）**载体**，单击**下一步**。
+    **新建策略**[](id:policy)
+   在新建角色之前，您需要创建一个策略，该策略决定了您的角色具备的权限。
+  1. 登录访问管理控制台，在左侧导航栏选择【[策略](https://console.cloud.tencent.com/cam/policy)】。
+  2. 在“策略”页面，单击【新建自定义策略】。
+  3. 在“选择创建策略方式” 弹窗中，选择**【按策略生成器创建】**。
+  4. 在“可视化策略生成器”中，“服务”选择 “日志服务(cls)”，“操作”选择“写操作:pushLog”，如下图所示：
+    ![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
+  5. 单击【下一步】，进入“关联用户/用户组”页面。
+  6. 确认策略名称，单击【完成】即可创建策略。
+
+  **新建角色**
+	创建策略完成后，需要将该策略绑定至一个角色，使得该角色具备策略相应的权限。
+
+  1. 登录访问管理控制台，在左侧导航栏选择【[角色](https://console.cloud.tencent.com/cam/role)】。
+  2. 在“角色”页面，单击【新建角色】。
+  3. 在“选择角色载体” 弹窗中，选择【腾讯云产品服务】，进入【新建自定义角色】页面。
+  4. 在“输入角色载体信息”步骤中，选择**绑定【云服务器（cvm）】载体**，单击【下一步】。
 
     <dx-alert infotype="notice" title="">
 必须选择【云服务器（cvm）】作为角色载体，选择容器服务则无法完成授权。
     </dx-alert>
 
-  5. 在“配置角色策略”步骤中，选择【QcloudCLSAccessForApiGateWayRole】策略，单击【下一步】。
+  5. 在“配置角色策略”步骤中，选择[已创建的策略](#policy)，单击【下一步】。
   6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击【完成】后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
 :::
 ::: 密钥授权
@@ -330,15 +343,36 @@ spec:
 
 ::: 通过role采集日志到CLS
 #### 创建角色  
-在 [访问管理控制台](https://console.cloud.tencent.com/cam/role) 新建角色，选择【腾讯云产品服务】，绑定【云服务器 CVM】载体，选择【QcloudCLSAccessForApiGateWayRole】策略。详情请参考 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
-在 pod template 中新增 annotation，指定 role 的名称，获取该 role 包含的权限策略。
+#### 步骤1：创建角色  
+**新建策略**[](id:policy)
+在新建角色之前，您需要创建一个策略，该策略决定了您的角色具备的权限。
+1. 登录访问管理控制台，在左侧导航栏选择【[策略](https://console.cloud.tencent.com/cam/policy)】。
+2. 在“策略”页面，单击【新建自定义策略】。
+3. 在“选择创建策略方式” 弹窗中，选择**【按策略生成器创建】**。
+4. 在“可视化策略生成器”中，“服务”选择 “日志服务(cls)“，”操作“选择”写操作:pushLog“，如下图所示：
+![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
+5. 单击【下一步】，进入”关联用户/用户组“页面。
+6. 确认策略名称，单击【完成】即可创建策略。
+
+**新建角色**
+创建策略完成后，需要将该策略绑定至一个角色，使得该角色具备策略相应的权限。
+1. 登录访问管理控制台，在左侧导航栏选择【[角色](https://console.cloud.tencent.com/cam/role)】。
+2. 在“角色”页面，单击【新建角色】。
+3. 在“选择角色载体” 弹窗中，选择【腾讯云产品服务】，进入【新建自定义角色】页面。
+4. 在“输入角色载体信息”步骤中，选择**绑定【云服务器（cvm）】载体**，单击【下一步】。
+    <dx-alert infotype="notice" title="">
+必须选择【云服务器（cvm）】作为角色载体，选择容器服务则无法完成授权。
+    </dx-alert>
+5. 在“配置角色策略”步骤中，选择 [已创建的策略](#policy)，单击【下一步】。
+6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击【完成】后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
+完成创建角色步骤后，需要在 pod template 中新增 annotation，指定 role 的名称，获取该 role 包含的权限策略。
 ```shell
 template:
    metadata:
      annotations:
        eks.tke.cloud.tencent.com/role-name: "eks-pushlog"
 ```
-#### 创建deployment
+#### 步骤2：创建 deployment
 ```shell
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -434,11 +468,11 @@ spec:
 
 <dx-tabs>
 ::: 通过控制台更新日志采集
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**弹性集群**。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【弹性集群】。
 2. 选择需要配置日志采集的集群 ID，进入集群管理页面。
-3. 选择左侧**工作负载**，单击需要更新日志采集的工作负载所在行右侧的**更新Pod配置**>**显示高级设置**，修改对应的配置。如下图所示：
+3. 选择左侧【工作负载】，单击需要更新日志采集的工作负载所在行右侧的【更新Pod配置】>【显示高级设置】，修改对应的配置。如下图所示：
 ![](https://main.qcloudimg.com/raw/6e82866759f9704fd49d7695f57dfa47.png)
-4. 单击**完成**即可更新。
+4. 单击【完成】即可更新。
 
 :::
 
@@ -448,3 +482,5 @@ spec:
 :::
 </dx-tabs>
 
+## 常见问题
+如遇问题，您可先查询 [弹性集群日志采集相关问题](https://intl.cloud.tencent.com/document/product/457/40582)。如果您的问题仍未解决，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) 联系我们。
