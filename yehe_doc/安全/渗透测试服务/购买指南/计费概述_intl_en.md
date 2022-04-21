@@ -71,7 +71,7 @@ PTS is billed by the number of applications or modules to be tested. Currently, 
 <th>Service Level</th>
 <th>Limits</th>
 <th>Billing Unit</th>
-<th>Price (USD/Test)</th>
+<th>Tax-exclusive Price (USD/Test)</th>
 </tr>
 </thead>
 <tbody><tr>
