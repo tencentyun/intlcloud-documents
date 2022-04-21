@@ -221,7 +221,7 @@ if (atMe && atAll) {
 - **接收合并转发消息：**
 当我们收到一条合并消息 [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html)，可以先通过合并消息元素 [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html) 获取 [title](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) 和  [abstractList](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1)  UI 展示，当用户点击合并消息的时候再调用 [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad77abfe27eabf237aee7c951100e6755) 接口下载合并消息列表 UI 展示。
 
-> 仅增强版 5.2.210 及以上版本支持。
+>? 仅增强版 5.2.210 及以上版本支持。
 
 ### 经典示例：收发合并转发消息
 - **发送合并转发消息：**
@@ -414,7 +414,7 @@ if (!msg.isSelf && msg.needReadReceipt) {
 ## 发送不计入未读数的消息
 正常情况下，无论是发送 C2C 单聊消息还是发送 Group 群消息，都会计入未读消息数（通过会话对象 [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html) 的 [unreadCount](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6) 接口，可以拿到一个会话的未读消息数）。当您希望发送一些不计入未读计数的消息时，比如提示类或者控制类的消息，可以按照下面的方式来发送：
 
->! 仅增强版 5.3.425 及以上版本支持。
+>? 仅增强版 5.3.425 及以上版本支持。
 
 ```objective-c
 // 创建消息对象
@@ -437,7 +437,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 
 某些场景下，不希望一些提示类型的消息显示为会话的最新消息，可以按照下面的方式来发送：
 
-> 仅增强版 5.4.666 及以上版本支持。
+>? 仅增强版 5.4.666 及以上版本支持。
 
 ```objective-c
 // 创建消息对象
@@ -570,7 +570,7 @@ SDK 支持三种类型的消息接收选项：
 
 您可以调用 [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ace29641a1c691bc44705b9bc8b08be37) 接口设置单聊消息免打扰，调用 [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) 接口设置群聊消息免打扰。
 
->! 仅增强版 5.3.425 及以上版本支持。
+>? 仅增强版 5.3.425 及以上版本支持。
 
 ## 撤回消息
 发送方通过 [revokeMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a972ac3fb7744458eb0d6abd96ce35126) 接口可以撤回一条已经发送成功的消息。默认情况下，发送者只能撤回2分钟以内的消息，您可以按需更改消息撤回时间限制，具体操作请参见 [消息撤回设置](https://intl.cloud.tencent.com/document/product/1047/34419)。
@@ -607,7 +607,7 @@ SDK 支持三种类型的消息接收选项：
 ### 一键清空所有会话的未读数
 接收方调用 [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ab9e190495505a6fe226c9c4ed10e4eeb) 可以实现一键清空所有会话的未读数，并会回调 [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) 方法通知界面更新。
 
-> 仅增强版 5.8.1668 及以上版本支持。
+>? 仅增强版 5.8.1668 及以上版本支持。
 
 ## 查看历史消息
 您可以调用 [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a63d51af9d34e0cd8011da374b7e7a786) 获取单聊历史消息，调用 [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) 获取群聊历史消息。如果当前设备网络连接正常，SDK 会默认从服务器拉取历史消息；如果没有网络连接，SDK 会直接从本地数据库中读取历史消息。
@@ -659,7 +659,7 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 **设置某人消息免打扰:**
 调用 [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) 接口，设置消息接收选项为 `V2TIM_NOT_RECEIVE_MESSAGE` 状态。
 
->! 仅增强版 5.3.425 及以上版本支持。
+>? 仅增强版 5.3.425 及以上版本支持。
 
 ### 不接收某个群组的消息
 增强版 5.3.425 以上版本，请调用 [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) 接口，设置消息接收选项为 `V2TIM_NOT_RECEIVE_MESSAGE` 状态。
