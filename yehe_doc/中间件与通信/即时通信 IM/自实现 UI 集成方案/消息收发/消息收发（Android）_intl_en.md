@@ -213,7 +213,7 @@ switch (atInfoType){
 ## Sending and Receiving Combined Messages
 To implement the Combine and Forward feature, it is necessary to create a combined message according to the original message list, and then send the combined message to the peer end. After the peer end receives the combined message, it will parse out the original message list. A title and abstracts are required to display the combined message. 
 
->! Only available in Enhanced Edition v5.2.210 or later.
+>? Only available in Enhanced Edition v5.2.210 or later.
 
 - **Sending a combined message**
 Usually, when we receive a combined message, the chat UI will look like this:
@@ -308,9 +308,9 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 When sending a group message, you can set whether a message requires a read receipt. If yes, the receiver can send a read receipt only after the message is read.
 
 >?
-- Only available in Enhanced Edition v6.1.2155 or later.
-- This feature requires the Flagship Edition package.
-- You need to set the group types that support message receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
+>- Only available in Enhanced Edition v6.1.2155 or later.
+>- This feature requires the Flagship Edition package.
+>- You need to set the group types that support message receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
 
 ### The sender specifies that group messages require read receipts
 
@@ -507,7 +507,7 @@ public void onRecvC2CReadReceipt(List<V2TIMMessageReceipt> receiptList) {
 
 Normally, both one-to-one chat messages and group messages are included in the unread count (you can get the unread count of a conversation via the API [getUnreadCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e) of the conversation object [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html)). If you need to send messages that are excluded from the unread count, such as tips and control messages, send them as follows:
 
-> Only available in Enhanced Edition v5.3.425 or later.
+>? Only available in Enhanced Edition v5.3.425 or later.
 
 ```
 // Create the message object
@@ -535,7 +535,7 @@ public void onProgress(int progress) {
 
 In certain scenarios, if you need to send messages that are excluded from `lastMsg` of a conversation, send them as follows:
 
-> Only available in Enhanced Edition v5.4.666 or later.
+>? Only available in Enhanced Edition v5.4.666 or later.
 
 ```
 // Create the message object
@@ -706,7 +706,7 @@ The SDK supports the following types of message receiving options:
 
 You can call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a6524143895cdee25fabd9aeeae73a3c5) API to set the Mute Notifications option for one-to-one messages and call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a2735427ac22485626aea278a9d465b3e) API to set the Mute Notifications option for group messages.
 
-> Only available in Enhanced Edition v5.3.425 or later.
+>? Only available in Enhanced Edition v5.3.425 or later.
 
 ## Recalling Messages
 
@@ -751,7 +751,7 @@ The recipient can call [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/c
 ### Quickly marking unread messages of all conversations as read
 The recipient can call [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2配置】>【登录与消_1_1V2TIMMessageManager.html#ad097a0da2ea0002f2b0f2d1d11f3a4ab) to quickly mark unread messages of all conversations as read, and perform callback of [onConversationChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) to notify the UI to update.
 
-> Only available in Enhanced Edition v5.8.1668 or later.
+>? Only available in Enhanced Edition v5.8.1668 or later.
 
 ## Viewing Historical Messages
 You can call [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#afedccbe0e5229ae15e0e07b722ea39df) to obtain historical messages of one-to-one chats, or call [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597) to obtain historical messages of group chats. If the network connection of the current device is normal, the IM SDK pulls historical messages from the server by default. If the network connection is unavailable, the IM SDK directly reads historical messages from the local database.
@@ -812,7 +812,7 @@ By default, the user will not be aware of this blocking operation, and the messa
 **Setting "Mute Notifications" for messages from a specified user: **
 Call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a6524143895cdee25fabd9aeeae73a3c5) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
 
-> Only available in Enhanced Edition v5.3.425 or later.
+>? Only available in Enhanced Edition v5.3.425 or later.
 
 ### Rejecting messages from a specified group
 
