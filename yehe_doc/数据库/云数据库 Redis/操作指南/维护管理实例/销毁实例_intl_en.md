@@ -1,6 +1,6 @@
 ## Overview
 Based on your business needs, you can manually terminate pay-as-you-go instances.
-- After a pay-as-you-go instance is terminated, it will be moved to the TencentDB recycle bin and retained there for 24 hours. During the retention period, the instance cannot be accessed but can be restored.
+- After a pay-as-you-go instance is terminated, it will be moved to the TencentDB recycle bin and retained there for 3 days. During the retention period, the instance cannot be accessed but can be restored.
 
 After an instance is terminated, once its status has changed to **Isolated** or **To be deleted**, it will no longer incur fees.
 >!
