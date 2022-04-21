@@ -14,7 +14,7 @@ The `mb` command is used to create a bucket.
 | -c        | --config-path | Path of the configuration file to use |
 | -r        | --region      | Region of the bucket   |
 
->! To use the `md` command to create a bucket in COSCLI, you need to run the `config add` command to update the bucket configuration in the configuration file after running the `md` command successfully.
+>! To use the `mb` command to create a bucket in COSCLI, you need to run the `config add` command to update the bucket configuration in the configuration file after running the `mb` command successfully.
 >
 
 ## Examples
