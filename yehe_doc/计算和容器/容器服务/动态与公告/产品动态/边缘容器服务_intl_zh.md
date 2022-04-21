@@ -20,7 +20,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-  <td>边缘集群增强功能开发</td><td>边缘集群支持边缘节点绑定 ENI、支持边缘节点 Pod 直通能力、支持 kubernetes 1.20 版本产品能力、StatefulSetGrid/Headless service。</td><td>2021-11-06</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/35385">边缘集群指南 </a></td>
+  <td>边缘集群增强功能开发</td><td>支持边缘节点 Pod 直通能力、支持 kubernetes 1.20 版本产品能力、StatefulSetGrid/Headless service。</td><td>2021-11-06</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/35385">边缘集群指南 </a></td>
 </tr>  
 </table>
 
