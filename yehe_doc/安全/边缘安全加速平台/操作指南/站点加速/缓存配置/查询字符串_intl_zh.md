@@ -22,7 +22,7 @@
 >?什么情况下会被识别为不同查询字符串？
 >- 任一参数内容不同，例如： ?sign=x;time=y 和 ?sign=z;time=y。
 >- 参数内容均相同，但相对顺序不同，例如：?sign=x;time=y 和 ?time=y;sign=x。
->- 参数内容均相同，但大小写不同，例如：?sign=A 和 ?sign=a。若希望此场景下被视为是同样的查询字符串，请启用 [忽略大小写](https://intl.cloud.tencent.com/document/product/1145/46156) 配置功能。
+>- 参数内容均相同，但大小写不同，例如：?sign=A 和 ?sign=a。若希望此场景下被视为是同样的查询字符串，请启用 [忽略大小写](https://intl.cloud.tencent.com/document/product/1145/46181) 配置功能。
  - 全部忽略：忽略整个查询字符串。
  - 保留指定参数：仅保留查询字符串中指定的参数。
     - 仅可指定参数名，不同参数名之间用“;”隔开，例如：param1;param2。
