@@ -37,7 +37,7 @@ func (s *ObjectService) Upload(ctx context.Context, key string, filepath string,
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```go
 package main
 
@@ -135,7 +135,7 @@ func (s *ObjectService) PutFromFile(ctx context.Context, name string, filePath s
 
 #### 请求示例1：上传对象
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```go
 package main
 
@@ -553,7 +553,7 @@ func (s *BucketService) ListMultipartUploads(ctx context.Context, opt *ListMulti
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-list-multi-upload"
+[//]: # (.cssg-snippet-list-multi-upload)
 ```go
 package main
 
@@ -693,7 +693,7 @@ func (s *ObjectService) InitiateMultipartUpload(ctx context.Context, name string
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-init-multi-upload"
+[//]: # (.cssg-snippet-init-multi-upload)
 ```go
 package main
 
@@ -803,7 +803,7 @@ func (s *ObjectService) UploadPart(ctx context.Context, key, uploadID string, pa
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-upload-part"
+[//]: # (.cssg-snippet-upload-part)
 ```go
 package main
 
@@ -905,7 +905,7 @@ func (s *ObjectService) ListParts(ctx context.Context, name, uploadID string, op
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-list-parts"
+[//]: # (.cssg-snippet-list-parts)
 ```go
 package main                                                                                                                                                                                   
 
@@ -1034,7 +1034,7 @@ func (s *ObjectService) CompleteMultipartUpload(ctx context.Context, key, upload
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-complete-multi-upload"
+[//]: # (.cssg-snippet-complete-multi-upload)
 ```go
 package main
 
@@ -1148,7 +1148,7 @@ func (s *ObjectService) AbortMultipartUpload(ctx context.Context, key, uploadID 
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-abort-multi-upload"
+[//]: # (.cssg-snippet-abort-multi-upload)
 ```go
 package main
 
