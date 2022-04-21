@@ -19,7 +19,7 @@ func (s *BucketService) Put(ctx context.Context, opt *BucketPutOptions) (*Respon
 
 #### 请求示例
 
-[//]: # ".cssg-snippet-put-bucket"
+[//]: # (.cssg-snippet-put-bucket)
 ```go
 package main
 
