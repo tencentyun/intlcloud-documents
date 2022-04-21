@@ -1,70 +1,23 @@
+This document describes how to use CRD to configure the log collection feature of EKS cluster via the console.
 
 
-## Overview
-In EKS, you can [use environment variables to configure log collection](https://intl.cloud.tencent.com/document/product/457/37907), and collect logs by line without parsing, or use custom resource definitions (CRD) to configure log collection.
-
-CRD is non-intrusive to Pod and supports single-line, multi-line, separator, full regex, JSON and other log parsing methods. It sends standard output and file logs in the container to [Tencent Cloud CLS](https://intl.cloud.tencent.com/product/cls), which provides various services such as search and analysis, visualization applications, log download and consumption. It is recommended to use CRD to configure log collection.
-
-To use CRD to configure log collection, you need to manually enable the log collection feature and set the collection rules for each cluster. The collector will collect logs from the collection source based on the collection source, CLS log topic, and log parsing method configured in the log collection rules, and send the log content to the CLS for storage. You can refer to the following directions to use CRD to configure the log collection of the EKS cluster:
-<dx-steps>
--[Authorization on first use](#role)
--[Enabling log collection](#open)
--[Configuring the log rules](#rules)
--[Configuring the log consumer end](#cls)
--[Configuring the log extraction mode](#index)
-</dx-steps>
-
-#### Notes
-- Using CRD to configure log collection is currently only valid for Pods created after May 25, 2021. If you need to use CRD to configure log collection for the Pods created before, please terminate the Pod and recreate one.
-- If the Pods are configured with environment variables and CRD to collect logs at the same time, it will cause repeated collection and repeated billing. Therefore, when using CRD to configure log collection, please delete the relevant environment variables.
 
 
-## Concepts
+## Prerequisites
 
-- **Log rule**: users can use log rules to specify the log collection source, log consumer end, and log parsing method, configure filters, and upload the log that failed to parse etc. The log collector will monitor the changes of the log collection rules, and the changed rules will take effect within 10 seconds.
-- **Log source**: includes the standard output of the specified container and the files in the container.
-  - When collecting container standard output logs, users can select TKE logs in all containers or specified workloads and specified Pod labels as the log collection source.
-  - When collecting container file path logs, users can specify container file path logs in workloads or Pod labels as the collection source.
-- **Consumer**: users can select the logsets and log topics of the CLS as the consumer end.
-- **Extraction mode**: the log collection agent supports the delivery of collected logs to the user-specified log topic in the format of single-line text, JSON, separator-based text, multi-line text, or full regex.
-- **Filter**: after filter is enabled, logs will be collected according to the specified rules. "key" supports full matching and the rule supports regex matching. For example, you can set to collect logs containing "ErrorCode = 404".
-- **Upload the log that failed to parse**: after this feature is enabled, all logs that failed to parse (as the “Key”), and the original log content (as the “Value”) are uploaded. When this feature is disabled, the logs that failed to parse will be discarded.
+Log in to the [TKE console](https://console.cloud.tencent.com/tke2/ops/list?rid=8), and enable the log collection feature for the EKS cluster. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/zh/document/product/457/40950).
+
+
 
 ## Directions
-
-
-
-### Authorization on first use[](id:role)
-When using the log collection feature of the EKS cluster for the first time, you need to authorize the CLS and other related permissions to ensure that the logs are normally uploaded to the CLS.
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Cluster OPS** > **[Feature Management](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
-2. At the top of the **Feature Management** page, select the region and **Elastic Cluster**. On the right side of the cluster for which you want to enable log collection, click **Set**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/3cfd54126fa59a0fb1e6346e97e93c63.png)
-3. On the **Configure Features** page, click **CAM** to complete authorization.
-After authorization is completed, the role TKE_QCSLinkedRoleInEKSLog will be bound to your account by default, and the default policy configured for this role is QcloudAccessForTKELinkedRoleInEKSLog.
-
->?You only need to authorize when you use the log collection feature for the first time. If you delete the above roles, you need to authorize again.
-
-
-
-### Enabling log collection[](id:open)
-
-After completing the authorization, you can enable the log collection.
-
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Cluster OPS** > **[Feature Management](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
-2. At the top of the **Feature Management** page, select the region and **Elastic Cluster**. On the right side of the cluster for which you want to enable log collection, click **Set**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/3cfd54126fa59a0fb1e6346e97e93c63.png)
-3. On the "Configure Features" page, click **Edit** for log collection, enable log collection, and confirm this operation, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/9b4a3bbf281cbde5515c34484f55ff40.png)
-
-
-
+You can take the following actions to configure after enabling the log collection feature for the cluster:
 
 ### Configuring the log rule[](id:rules)
 
 After enabling the log collection, you need to configure the log rules including the log source, consumer end, log parsing method, and so on.
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Cluster OPS** > **[Log Collection Rules](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
-2. At the top of the “Log Rules” page, select the region and the EKS cluster where you want to configure the log collection rules and click **Create**, as shown in the figure below:
+2. At the top of the **Log Rules** page, select the region and the EKS cluster where you want to configure the log collection rules and click **Create**, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/38f9678feea9197bd6127a732919f4e4.png)
 3. On the "Create Log Collecting Policy" page, select the collection type and configure the log source, consumer end, log parsing method. Currently, the following collection types are supported: [container standard output](#stout) and [container file path](#insideDocker).
 <dx-tabs>
@@ -86,6 +39,11 @@ This type of log source supports:
 - **Specify Pod Labels**: specify multiple Pod Labels under a namespace, and collect the specified file path of all containers that match the Labels.
 
 You can specify a file path or use wildcards for the collection path. For example, when the container file path is `/opt/logs/*.log`, you can specify the collection path as `/opt/logs` and the file name as `*.log`.
+
+<dx-alert infotype="notice" title="">
+If the collection type is selected as "Container File Path", the corresponding path cannot be a soft link. Otherwise, the actual path of the soft link will not exist in the collector's container, resulting in log collection failure.
+</dx-alert>
+
 
 :::
 </dx-tabs>
@@ -132,9 +90,8 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 </dx-alert>
 5. [](id:index)Click **Next** and choose a log extraction mode, as shown below:
 ![](https://main.qcloudimg.com/raw/da5dbe45f89a3acac6aca2f575b2074a.png)
-
-<b>Extraction modes</b>
-
+<dx-accordion>
+::: <b>Extraction modes</b>
 <table>
 <thead>
 <tr>
@@ -144,14 +101,24 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 </tr>
 </thead>
 <tbody><tr>
-<td>Single-line text</td>
+<td>Full text in a single line</td>
 <td>A log contains only one line of content, and the line break `\n` to mark the end of a log. Each log will be parsed into a complete string with <strong>CONTENT</strong> as the key value. When log Index is enabled, you can search for log content via full-text search. The time attribute of a log is determined by the collection time.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/32287">Full Text in a Single Line</a></td>
 </tr>
 <tr>
-<td>Multi-line texts</td>
+<td>Full text in multi lines</td>
 <td>A log with full text in multi lines spans multiple lines and a first-line regular expression is used for match. When a log in a line matches the preset regular expression, it is considered as the beginning of a log, and the next matching line will be the end mark of the log. A default key value, <strong>CONTENT</strong>, will be set as well. The time attribute of a log is determined by the collection time. The <a href="#auto">regular expression</a> can be generated automatically.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/32284">Full Text in Multi Lines</a></td>
+</tr>
+<tr>
+<td>Single line - full regex</td>
+<td>The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete log. When configuring the single-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The <a href="#auto">regular expression</a> can be generated automatically.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/39589">Full Regular Format (Single-Line)</a></td>
+</tr>
+<tr>
+<td>Multiple lines - full regex</td>
+<td>The multi-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete piece of log data that spans multiple lines in a log text file (such as Java program logs) based on a regular expression. When configuring the multi-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression. The <a href="#auto">regular expression</a> can be generated automatically.</td>
+<td><a href="https://cloud.tencent.com/document/product/614/52366">Full Regular Format (Multi-Line)</a></td>
 </tr>
 <tr>
 <td>JSON</td>
@@ -164,7 +131,16 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 <td><a href="https://intl.cloud.tencent.com/document/product/614/32285">Separator Format</a></td>
 </tr>
 </tbody></table>
-
+:::
+::: <b>Instructions for automatic regular expression generation</b>
+[](id:auto)When you select **Multiple lines - full regex**, **Single line - full regex**, or **Multi-line texts**, the **regular expression can automatically generated based on the log sample**.
+Here takes the **Single line - full regex** as an example:
+1. Click **Auto-Generate Regular Expression**, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/b549e7d28e4ea11b25a57bab12308883.png)
+2. In the pop-up window, select the field to be extracted in the log sample, and fill in the key.
+3. Click **Confirm** to generate the corresponding regular expression of the field, and automatically fill in the extraction result. Repeat this operation until the log is completely extracted.
+:::
+</dx-accordion>
 <dx-alert infotype="notice" title=""> 
 Currently, one log topic supports only one collection configuration. Ensure that all container logs that adopt the log topic can accept the log parsing method that you choose. If you create different collection configurations under the same log topic, the earlier collection configurations will be overwritten.
 </dx-alert>
@@ -173,17 +149,13 @@ Currently, one log topic supports only one collection configuration. Ensure that
 	After the filter is enabled, only the logs that meet the filter rules will be collected. Key supports full matching and the rule supports regex matching. For example, you can set to collect logs containing "ErrorCode = 404".
 	- Enable the upload of the log that failed to parse
 	After this feature is enabled, all logs that failed to parse (as the “Key”), and the original log content (as the “Value”) are uploaded. When this feature is disabled, the logs that failed to parse will be discarded.
-7. Click **Done** to complete the creation.
+7. Click **Done* to complete the process.
 
 
 ### Updating the log rules
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/cluster?rid=4), and select **Cluster OPS** > **[Log Collection Rules](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** in the left sidebar.
 2. In the **Log Collection Rules** page, select the log rule to update, and click **Edit Collecting Rule** on the right side of the rule, as shown below:
-   ![](https://main.qcloudimg.com/raw/1734b1c00233c6cd9c2fd8309933c233.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/2465a04d72d0cf7bc485755bd11b342f.png)
 3. Update the configuration as needed and click **Done**.
 
-
-
-## FAQ
-If you have problems, you can refer to [EKS Log Collection FAQs](https://intl.cloud.tencent.com/document/product/457/40582). If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) to contact us.
