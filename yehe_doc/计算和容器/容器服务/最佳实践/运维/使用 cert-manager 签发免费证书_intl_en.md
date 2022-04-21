@@ -16,17 +16,18 @@ After being deployed to a Kubernetes cluster, cert-manager queries custom CRD re
 ### Issuing a free certificate
 
 Let’s Encrypt uses the ACME protocol to verify the ownership of a domain name. After successful verification, a free certificate is automatically issued. The free certificate is valid for only 90 days, so verification needs to be performed again to renew the certificate before the certificate expires. cert-manager supports automatic renewal of certificates, which allows you to use certificates permanently for free. You can verify the ownership of a certificate by using two methods: **HTTP-01** and **DNS-01**. For more information on the verification process, see [How It Works](https://letsencrypt.org/how-it-works/).
-
-#### HTTP-01 verification
+<dx-tabs>
+::: HTTP-01 verification
 
 HTTP-01 verification adds a temporary location for the HTTP service to which a domain name is directed. This method is only applicable to issuing a certificate for services that use open ingress traffic and does not support wildcard certificates.
 For example, Let’s Encrypt sends an HTTP request to `http://<YOUR_DOMAIN>/.well-known/acme-challenge/<TOKEN>`. `YOUR_DOMAIN` indicates the domain name to be verified, and `TOKEN` indicates a file placed by the ACME client. In this case, the ACME client is cert-manager. You can modify or create ingress rules to add temporary verification paths and direct them to the service that provides `TOKEN`. Let’s Encrypt will then verify whether `TOKEN` meets the expectation. If the verification succeeds, a certificate is issued.
-
-#### DNS-01 verification
+:::
+::: DNS-01 verification
 
 DNS-01 verification uses the API Key provided by DNS providers to obtain users’ DNS control permissions. This method does not require the use of an ingress and supports wildcard certificates.
 After Let’s Encrypt provides a token to the ACME client, the ACME client `\(cert-manager\)` will create a TXT record derived from the token and the account key, and then place the record in `_acme-challenge.<YOUR_DOMAIN>`. Let’s Encrypt will then query the record in the DNS system. Once a matching item is found, a certificate is issued.
-
+:::
+</dx-tabs>
 ### Verification method comparison
 
 The HTTP-01 methods features simple configuration and extensive applicability. Different DNS providers can use the same configuration method. The disadvantages of this method are that it relies on ingress resources, is applicable only to services that support open ingress traffic, and does not support wildcard certificates.
@@ -116,14 +117,15 @@ spec:
 ### Issuing a certificate by using the DNS-01 verification method
 
 If you choose to use the DNS-01 verification method, you must select a DNS provider. cert-manager provides built-in support for DNS providers. For the detailed list and usage, see [Supported DNS01 providers](https://cert-manager.io/docs/configuration/acme/dns01/#supported-dns01-providers). If you need to use a DNS provider other than those on the list, refer to the following two schemes:
-#### Scheme 1: Configuring a custom nameserver
+<dx-tabs>
+::: Scheme 1: Configuring a custom nameserver
 On the backend system of the DNS provider, configure a custom nameserver and direct it to the address of a nameserver that can manage other DNS providers’ domain names, such as Cloudflare. You can log in to the backend of Cloudflare to view the specific address, as shown in the figure below:
 <img style="width:80%" src="https://main.qcloudimg.com/raw/9e07f843cae3ff5123442e7dc5b024d0.png" data-nonescope="true">
 You can configure a custom nameserver for namecheap, as shown in the figure below:
 <img style="width:80%" src="https://main.qcloudimg.com/raw/1ad9889154d2b4125cef8a41de26d413.png" data-nonescope="true">
 Finally, when configuring the Issuer and specifying the DNS-01 verification method, add the Cloudflare information.
-
-#### Scheme 2: Using webhooks
+:::
+::: Scheme 2: Using webhooks
 You can use the cert-manager webhook to extend the list of DNS providers supported in cert-manager DNS-01 verification. This scheme has been implemented for many third parties, such as DNSPod and Alibaba DNS, that are widely used in mainland China. For more information on the webhook list and its usage, see [Webhook](https://cert-manager.io/docs/configuration/acme/dns01/#webhook).
 
 #### Example
@@ -135,7 +137,8 @@ Complete the following steps to issue a certificate for Cloudflare:
 >- If you need to create a ClusterIssuer, create the Secret in the namespace to which cert-manager belongs.
 >- If you need to create an Issuer, create the Secret in the namespace to which the Issuer belongs.
 >
-``` yaml
+<dx-codeblock>
+::: yaml
    apiVersion: v1
    kind: Secret
    metadata:
@@ -144,9 +147,11 @@ Complete the following steps to issue a certificate for Cloudflare:
    type: Opaque
    stringData:
      api-token: <API Token> # Paste the token here without Base64 encryption.
-```
-3. Create a ClusterIssuer. The following shows a sample YAML file:
-``` yaml
+:::
+</dx-codeblock>
+3.Create a ClusterIssuer. The following shows a sample YAML file:
+<dx-codeblock>
+::: yaml
    apiVersion: cert-manager.io/v1
    kind: ClusterIssuer
    metadata:
@@ -163,9 +168,11 @@ Complete the following steps to issue a certificate for Cloudflare:
              apiTokenSecretRef:
                key: api-token
                name: cloudflare-api-token-secret # References the Secret that stores the Cloudflare authentication information.
-```
+:::
+</dx-codeblock>
 4. <span id="Certificate"></span>Create a Certificate. The following shows a sample YAML file:
-``` yaml
+<dx-codeblock>
+::: yaml
    apiVersion: cert-manager.io/v1
    kind: Certificate
    metadata:
@@ -178,7 +185,10 @@ Complete the following steps to issue a certificate for Cloudflare:
        kind: ClusterIssuer
        name: letsencrypt-dns01 # References ClusterIssuer and indicates that the DNS-01 method is used for verification.
      secretName: test-mydomain-com-tls # The issued certificate will be stored in this Secret.
-```
+:::
+</dx-codeblock>
+:::
+</dx-tabs>
 
 ### Obtaining and using certificates
 
