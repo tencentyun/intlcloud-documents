@@ -7,15 +7,15 @@ The `cp` command is used to upload, download, or copy objects.
 ./coscli cp <source_path> <destination_path> [flags]
 ```
 
->? For more information on `bucketAlias`, please see [Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>? 
+>- For more information on `bucketAlias`, see [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
+>- For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
 `cp` includes the following optional flags:
 
 | Flag Abbreviation | Flag Full Name   | Description                     |
 | --------- | --------------- | ------------------------------------ |
-| -h        | --help      | Outputs help information.       |
-| -c        | --config-path | Path of the configuration file to use |
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
 | -r        | --recursive | Whether to traverse all objects in the directory recursively  |
@@ -28,7 +28,7 @@ The `cp` command is used to upload, download, or copy objects.
 >?
 > - `cp` automatically uses concurrent upload/download for large objects.
 > - If an object is larger than `--part-size`, COSCLI will split the object into multiple parts according to `--part-size` and use `--thread-num` threads to concurrently upload/download the object.
-> - Each thread maintains a URL. For each URL, you can use the `--rate-limiting` parameter to limit its speed. When concurrent upload/download is enabled, the total rate is `--thread-num * --rate-limiting`.
+> - Each thread maintains a URL. For each URL, you can use the `--rate-limiting` parameter to limit the speed of a single URL. When concurrent upload/download is enabled, the total rate is `--thread-num * --rate-limiting`.
 > - If an object is uploaded/downloaded in parts, checkpoint restart will be enabled by default.
 > - `--include` and `--exclude` support standard regular expression syntax, so you can use them to filter files that meet specific criteria.
 > - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.

@@ -1,68 +1,80 @@
-## Introduction
+## Overview
 
-A Deployment declares the Pod template and the policies for running the Pod. It is used to deploy stateless applications. You can specify the number of replicas, scheduling policy, and update policy for the Pod running in the Deployment as needed.
+A Deployment declares the pod template and pod running policies. It is used to deploy stateless applications. You can specify the number of replicas, scheduling policy, and update policy for pods running in the Deployment as needed.
 
-## Using Deployments via the Console
+## Operation Guide for Deployments in the Console
 
-<span id="creatDeployment"></span>
+[](id:creatDeployment)
 ### Creating a Deployment
-1. Log in to the TKE console and select **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-2. Click the ID of the cluster where Deployment needs to be created to enter the cluster management page.
-3. Click **Create** to go to the "Create a workload" page.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+2. Click the ID of the cluster where Deployment needs to be created to enter the cluster management page. See the figure below:
+![](https://qcloudimg.tencent-cloud.cn/raw/5b7eef76397c9cf22aa4c317404d2903.png)
+3. Click **Create** to open the **Create Workload** page.
 Set Deployment parameters as needed. Key parameters are as follows:
- - **Workload name**: name of the workload.
- - **Namespace**: select a namespace.
+ - **Workload**: enter the customized name.
+ - **Label**: a key-value pair, which is used for classified management of resources.
+ - **Namespace**: select a namespace based on your requirements.
  - **Type**: select **Deployment (deploy Pods in an extensible manner)**.
- - **In-Pod containers**: set one or more containers for a Pod of the Deployment.
-    - **Name**: enter a name.
-    - **Image**: select an image.
-    - **Image tag**: tag of the image.
-    - **Image pull policy**: select one of the following.
-       If you do not set a image pull policy and **Image tag** is `latest` or left empty, `Always` is used. Otherwise, `IfNotPresent` is used.
-         - **Always**: the image is always pulled from a remote location.
-         - **IfNotPresent**: use local image by default. If the image is unavailable locally, pull it from a remote location.
-         - **Never**: use local image only. If the image is unavailable locally, throw an exception.
-    - **CPU/memory limits**: set the CPU and memory limit according to [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) to improve the robustness of the business.
-    - **Advanced settings**: parameters such as **working directory**, **run commands**, **run parameters**, **container health check**, and **privilege level** are found here.
- - **Pod quantity**: select the adjustment method and set the Pod quantity.
-4. Click **Create Workload** to complete the creation, as shown in the following figure.
-When the running quantity is equal to the expected quantity, all Pods under the Deployment are created.
+ - **Volume (optional)**: provides storage for the container. It can be a temp path, CVM path, CBS volume, file storage NFS, configuration file and PVC, and it must be mounted to the specified path of the container.
+ - **Containers in the Pod**: set one or more different containers for a Pod of the Deployment based on actual needs.
+    - **Name**: custom.
+    - **Image**: select as needed.
+    - **Image Tag**: fill as needed.
+    - **Image Pull Policy**: the following three policies are available. Select as needed.
+       If you do not set any image pull policy and **Image Tag** is left empty or `latest`, the `Always` policy is used. Otherwise, the `IfNotPresent` policy is used.
+         - **Always**: always pull the image from the remote end.
+         - **IfNotPresent**: a local image is used by default. If no local image is available, the image is pulled remotely.
+         - **Never**: only use a local image. If no local image is available, an exception occurs.
+    - **CPU/Memory Limit**: set the CPU and memory limit according to [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) to improve the robustness of the business.
+    - **GPU Resource**: you can configure the least GPU resource used by the workload.
+    - **Advanced Settings**: parameters such as "**working directory**", "**run commands**", "**run parameters**", "**container health check**", and "**privilege level**" can be set.
+ - **Image Access Credential**: a container image is private by default. You need to select the image access credential for the TCR instance when creating a workload.
+ - **Number of Pods**: select the adjustment method and set the number of Pods based on actual needs.
+     - **Manual Adjustment**: set the number of Pods. You can adjust it by clicking **+** or **-**.
+     - **Auto Adjustment**: automatically adjust the number of Pods if any of the set conditions are met. For details, see [Automatic Scaling Basic Operations](https://intl.cloud.tencent.com/document/product/457/32424).  
+4. Click **Create Workload** to complete the creation. See the figure below:
+When the running quantity is equal to the expected quantity, all Pods under the Deployment have been created.
 ![](https://main.qcloudimg.com/raw/c458fdbc8d9770d8704327a9dbd16f55.png)
 
 ### Updating a Deployment
 
-#### Updating the YAML file
-1. Log in to the TKE console and select **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+#### Updating YAML
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 3. Click the ID of the cluster for which the Deployment should be updated to go to the management page of the cluster, as shown below:
 ![](https://main.qcloudimg.com/raw/7e7acba7f2d84a9a0626458efb357ff0.png)
 3. In the row of the Deployment for which YAML should be updated, click **More** > **Edit YAML** to go to the Deployment updating page.
-5. On the "Update Deployment" page, edit the YAML and click **Finish** to update the YAML, as shown below:
+5. On the **Update a Deployment** page, edit the YAML and click **Done** to update the YAML, as shown below:
 ![Update YAML](https://main.qcloudimg.com/raw/93c576f09ad8817abb794385f68b38ad.png)
 
-#### Updating Pod configurations
+#### Updating Pod configuration
 
-1. On the cluster management page, click the ID of the cluster for which Pod configurations should be updated to go to the management page of the cluster.
-2. In the DaemonSet row for which Pod configurations need to be updated, click **Update Pod Configurations**.
-3. On the **Update Pod Configurations** page, modify the update method and set parameters as needed.
-4. Click **Finish** to update the configurations.
+1. On the cluster management page, click the ID of the cluster for which Pod configuration should be updated to go to the management page of the cluster.
+2. In the Deployment row for which Pod configuration needs to be updated, click **Update Pod Configuration**, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/3877a5185fbcdd0819513f1240384246.png)
+3. On the **Update Pod Configuration** page, modify the updating method and set parameters as needed, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/2175747ac93376a4a832f33427b6f789.png)
+4. Click **Done** to update the Pod configuration.
 
 ### Rolling back a Deployment
-1. Log in to the TKE console and select **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-2. Click the ID of the cluster for which Deployment rollback is needed to go to the management page of the cluster.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+3. Click the ID of the cluster for which Deployment rollback is needed to go to the management page of the cluster, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/74f714bf8b0303606969dea7ff3e7c7b.png)
 4. Click the name of the Deployment to be rolled back to go to the Deployment information page.
-5. Select the **Modification History** tab, and click **Rollback** in the row of the version for which rollback is needed.
-
-6. In the "Roll back a resource" page, click **Submit** to complete the rollback.
+5. Select the **Modification History** tab, and click **Rollback** in the row of the version for which rollback is needed, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/938edee9f304dce3faf51ed0ec09eb46.png)
+6. Click **OK** in the **Rollback Resources** prompt box to complete the process.
 
 ### Adjusting Pod quantity
-1. Log in to the TKE console and select **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-2. Click the ID of the cluster for which Pod quantity should be adjusted to go to the management page of the cluster.
-3. In the row of the Deployment for which the Pod quantity should be adjusted, click **Update Pod quantity** to go to the Pod quantity updating page.
-5. Adjust the Pod quantity based on actual needs and click **Update Pod quantity** to complete the adjustment.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+2. Click the ID of the cluster for which Pod quantity should be adjusted to go to the management page of the cluster, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/74f714bf8b0303606969dea7ff3e7c7b.png)
+4. In the row of the Deployment for which the Pod quantity should be adjusted, click **Update Pod Quantity** to go to the Pod quantity updating page, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/11a020fc84d6f07346f7e81c43ef9a9f.png)
+5. Adjust the Pod quantity based on actual needs and click **Update Number of Instance** to complete the adjustment.
 
-## Using Deployments via kubectl
+## Using kubectl to Manipulate Deployments
 
-### Sample YAML file <span id="YAMLSample"></span>
+### YAML sample[](id:YAMLSample)
 ```Yaml
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -71,12 +83,12 @@ metadata:
   namespace: default
   labels:
     app: nginx-deployment
-"spec":
+spec:
   replicas: 3
   selector:
     matchLabels:
       app: nginx-deployment
-  Template:
+  template:
     metadata:
       labels:
         app: nginx-deployment
@@ -87,32 +99,32 @@ metadata:
         ports:
         - containerPort: 80
 ```
-- **kind**: Deployment resource type.
-- **metadata**: information such as Deployment name, Namespace, and Label.
+- **kind**: this identifies the Deployment resource type.
+- **metadata**: basic information such as Deployment name, Namespace, and Label.
 - **metadata.annotations**: an additional description of the Deployment. You can set additional enhancements to TKE through this parameter.
 - **spec.replicas**: the number of Pods managed by the Deployment.
 - **spec.selector**: the label of the Pod selected by the selector managed by the Deployment.
 - **spec.template**: detailed template configuration of the Pod managed by the Deployment.
 
-For more details about the parameters, refer to [Kubernetes official documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+For more details about the parameters, see [Kubernetes' official document about Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
 
 ### Using kubectl to create a Deployment
 
-1. See the [sample YAML file](#YAMLSample) to prepare the Deployment YAML file.
-2. Install kubectl and connect to a cluster. For details, refer to [Connecting to Clusters](https://intl.cloud.tencent.com/document/product/457/30639).
+1. See the [YAML sample](#YAMLSample) to prepare the Deployment YAML file.
+2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting to a Cluster](https://intl.cloud.tencent.com/document/product/457/30639).
 3. Run the following command to create the Deployment YAML file.
 ```shell
-kubectl create -f Deployment YAML filename
+kubectl create -f <Deployment YAML filename>
 ```
 For example, to create a Deployment YAML file named nginx.yaml, run the following command:
 ```shell
 kubectl create -f nginx.yaml
 ```
-4. Run the following command to check whether the Service YAML file has successfully been created:
+4. Run the following command to check whether the Job is successfully created.
 ```shell
 kubectl get deployments
 ```
-A message similar to the one below indicates that the file has been created successfully.
+If a message similar to the following is returned, the creation is successful.
 ```
 NAME             DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 first-workload   1         1         1            0           6h
@@ -121,35 +133,34 @@ ng               1         1         1            1           42m
 
 ### Using kubectl to update a Deployment
 
-You can use kubectl to update a Deployment in the following ways. The [first](#Method1) and [second](#Method2) method support both **Recreate** and **RollingUpdate** update policies.
-- Recreate: all Pods are terminated and recreated using the Deployment.
-- RollingUpdate: each Pod is updated one by one. RollingUpdate also supports pausing and update intervals.
+You can update the Deployment through Kubectl in three ways. The [method 1](#Method1) and [method 2](#Method2) support both **Recreate** and **RollingUpdate** update policies.
+- The Recreate update policy is to first terminate all Pods and then recreate the Deployment.
+- The RollingUpdate is the rolling update policy, which is used to update the Pods of the Deployment one by one on a rolling basis.
 
-<span id="Method1"></span>
-#### Method 1
-
+<dx-tabs>
+::: Method 1[](id:Method1)
 Run the following command to update a Deployment.
 ```
 kubectl edit deployment/[name]
 ```
-Use this for debugging and verification. We do not recommended using it in production environments. You can update any Deployment parameters this way.
+This method applies to simple debugg verification. It is not recommended to use it in production environments. You can update any Deployment parameters in this way.
 
-<span id="Method2"></span>
-#### Method 2
-
-Run the following command to update the image of a specific container.
+:::
+::: Method 2[](id:Method2)
+Run the following command to update the image of the specified container.
 ```
 kubectl set image deployment/[name] [containerName]=[image:tag]
 ```
-We recommend that you keep parameters unchanged and update the container image only when updating your service.
-
-<span id="Method3"></span>
-#### Method 3
-
-Run the following command to perform a rolling update on the specified resources.
+For updates, we recommend that you change none of the Deployment parameters but the one for container's image.
+:::
+::: Method 3[](id:Method3)
+Run the following command to roll update the specified resource.
 ```
 kubectl rolling-update [NAME] -f FILE
 ```
+:::
+</dx-tabs>
+
 
 
 ### Using kubectl to rollback a Deployment
@@ -158,33 +169,31 @@ kubectl rolling-update [NAME] -f FILE
 ```
 kubectl rollout history deployment/[name]
 ```
-2. Run the following command to view the details of a specific version.
+2. Run the following command to view the details of the specified version.
 ```
 kubectl rollout history deployment/[name] --revision=[REVISION]
 ```
-3. Run the following command to rollback to the last version.
+3. Run the following command to roll back to the earlier version.
 ```
 kubectl rollout undo deployment/[name]
 ```
-To specify the version to rollback to, run the following command.
+To specify the rollback version, run the following command.
 ```
 kubectl rollout undo deployment/[name] --to-revision=[REVISION]
 ```
 
-### Using kubectl to update Pod quantity
-
-#### Manually updating the Pod quantity
-
+### Using kubectl to adjust Pod quantity
+<dx-tabs>
+::: Manually updating the Pod quantity
 Run the following command to manually update the Pod quantity.
 ```
 kubectl scale deployment [NAME] --replicas=[NUMBER]
 ```
-
-#### Automatically updating Pod quantity
-
+:::
+::: Automatically updating the Pod quantity
 **Prerequisites**
 
-HPA is enabled. TKE created clusters have HPA enabled by default.
+The HPA features of the cluster is enabled. By default, these features have been enabled for clusters created by TKE.
 
 **Directions**
 
@@ -192,6 +201,10 @@ Run the following command to set automatic scaling for the Deployment.
 ```
 kubectl autoscale deployment [NAME] --min=10 --max=15 --cpu-percent=80
 ```
+:::
+</dx-tabs>
+
+
 
 ### Using kubectl to delete a Deployment
 
@@ -199,3 +212,6 @@ Run the following command to delete a Deployment.
 ```
 kubectl delete deployment [NAME]
 ```
+
+
+

@@ -1,6 +1,6 @@
 ## Overview
 
-Cross-bucket replication enables you to replicate objects from a source bucket to a destination bucket. This feature is well suited for use cases such as remote disaster recovery, meeting industry-specific compliance requirements, data migration and backup, reducing access latency, and easy data access from clusters in different regions.
+Cross-bucket replication enables you to replicate objects from a source bucket to a destination bucket. This feature is well suited for use cases such as remote disaster recovery, industry compliance, data migration and backup, access latency reduction, and data access from clusters in different regions.
 
 >!Once versioning is enabled, you can create multiple versions for any new object uploaded. Each of these versions occupies your storage capacity and is billed for storage equally.
 

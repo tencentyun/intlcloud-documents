@@ -16,12 +16,12 @@ ct_int(Value 1, base=10)
 
 
 #### Parameter description
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Numeric value or string that can be converted to a numeric value |number| Yes | - | -  |
+|data| Numeric value or string that can be converted to a numeric value |number| Yes | -  | -  |
 |base| Base |number| No | 10 |[2-36]|
 
-#### Example
+#### Examples
 
 - Example 1
 Raw log:
@@ -64,12 +64,12 @@ ct_float(Value)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Numeric value or string that can be converted to a numeric value |number| Yes | - | -  |
+|data| Numeric value or string that can be converted to a numeric value |number| Yes | -  | -  |
 
 
-#### Example
+#### Examples
 Raw log:
 ```
 {"field1": "123"}
@@ -96,11 +96,11 @@ ct_str(Value)
 ```
 
 #### Parameter description
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Numeric value or string that can be converted to a numeric value |number| Yes | - | -  |
+|data| Numeric value or string that can be converted to a numeric value |number| Yes | -  | -  |
 
-#### Example
+#### Examples
 
 Raw log:
 ```
@@ -129,11 +129,11 @@ ct_bool(Value)
 
 #### Parameter description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
-|data| Numeric value or string that can be converted to a numeric value |number| Yes | - | -  |
+|data| Numeric value or string that can be converted to a numeric value |number| Yes | -  | -  |
 
-#### Example
+#### Examples
 - Example 1
 Raw log:
 ```

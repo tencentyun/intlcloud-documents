@@ -23,6 +23,4 @@ On the **Create a cluster node**, **Add existing nodes**, **Create a node pool**
 ### Configuring custom Kubernetes component parameters when upgrading a cluster
 1. Log in to the TKE console and click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. On the **Cluster Management** page, select the ID of the desired cluster, and enter the cluster details page.
-3. On the cluster details page, click **Basic Information** on the left.
-4. In the cluster information module on the cluster’s **Basic Information** page, click **Upgrade** to the right of the Master version. At the same time, set the Kubernetes component launch parameters, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/e9980629dbf1b3bd5c1e43d8690b07b5.png)
+3. On the cluster’s **Basic Information** page, click **Upgrade** to the right of the Kubernetes version. At the same time, set the Kubernetes component launch parameters.

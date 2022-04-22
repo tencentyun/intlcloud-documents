@@ -9,6 +9,7 @@ COSCLI is written in Go and adopts the Cobra framework. It supports multi-bucket
 - [Generating and Modifying Configuration Files -  config](https://intl.cloud.tencent.com/document/product/436/43251)
 - [Creating Buckets - mb](https://intl.cloud.tencent.com/document/product/436/43252)
 - [Deleting Buckets - rb](https://intl.cloud.tencent.com/document/product/436/43253)
+- [Tagging Bucket - bucket-tagging](https://intl.cloud.tencent.com/document/product/436/46272)
 - [Querying Bucket/Object List - ls](https://intl.cloud.tencent.com/document/product/436/43254)
 - [Obtaining Statistics on Different Types of Objects   - du](https://intl.cloud.tencent.com/document/product/436/43255)
 - [Uploading/Downloading/Copying Objects - cp](https://intl.cloud.tencent.com/document/product/436/43256)

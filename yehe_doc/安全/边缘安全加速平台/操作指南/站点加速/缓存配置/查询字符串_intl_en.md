@@ -22,7 +22,7 @@ Parameter description:
 >?In which cases are query strings considered different?
 >- They have a different parameter value, such as `?sign=x;time=y` and `?sign=z;time=y`.
 >- They have the same parameter values but their parameters are in different orders, such as `?sign=x;time=y` and `?time=y;sign=x`.
->- They have the same parameter values in different letter cases, such as `?sign=A` and `?sign=a`. If you want to identify them as the same query string, you can enable the [case ignoring](https://intl.cloud.tencent.com/document/product/1145/46156) feature.
+>- They have the same parameter values in different letter cases, such as `?sign=A` and `?sign=a`. If you want to identify them as the same query string, you can enable the [case ignoring](https://intl.cloud.tencent.com/document/product/1145/46181) feature.
  - Ignore all: The entire query string will be ignored.
  - Retain specified parameters: Only specified parameters in the query string will be retained.
     - You can specify only parameter names and separate them with semicolons, such as `param1;param2`.

@@ -132,7 +132,7 @@ We recommend that you use the Tencent Linux operating system. It is a public ima
 <span id="nodepool)"></span>
 
 ## Node Pool
-The node pool is currently under beta testing. If you want to use the node pool feature, you can apply for it. The node pool is mainly used to batch manage nodes with the following items:
+The node pool is mainly used to batch manage nodes with the following items:
 - Label and Taint properties of nodes
 - Startup parameters of node components
 - Custom launch script for nodes

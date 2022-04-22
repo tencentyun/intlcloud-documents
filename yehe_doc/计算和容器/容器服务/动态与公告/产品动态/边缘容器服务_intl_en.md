@@ -20,7 +20,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-  <td>Enhances the feature development in edge cluster</td><td>Edge cluster supports edge node-ENI binding, edge node-Pod connection, Kubernetes 1.20 features, and StatefulSetGrid/Headless service.</td><td>2021-11-06</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/35385">Creating a Cluster</a></td>
+  <td>Enhances the feature development in edge cluster</td><td>edge node-Pod connection, Kubernetes 1.20 features, and StatefulSetGrid/Headless service.</td><td>2021-11-06</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/457/35385">Creating a Cluster</a></td>
 </tr>  
 </table>
 

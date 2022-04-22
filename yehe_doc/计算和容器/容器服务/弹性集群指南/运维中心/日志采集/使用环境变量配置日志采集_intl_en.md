@@ -39,7 +39,7 @@ The EKS log collection feature collects the log information and outputs it to th
 ![](https://main.qcloudimg.com/raw/2359897f61c9c663d31db1cdca03f3c4.png)
 5. Refer to the following information to configure the log consumer end. You can choose CLS or Kafka as the log consume end.
 <dx-tabs>
-::: Configuring\sCLS\sas\sthe\slog\sconsumer\send
+::: Configuring CLS as the log consumer end
 1. Select **CLS** as the **Consumer End**, and select the **Log set** and **Log topic**, as shown below:
 ![](https://main.qcloudimg.com/raw/37623ea379501b3b431fac609b9681c0.png)
 If there is no suitable log set, you can [create a logset and a log topic](https://intl.cloud.tencent.com/document/product/614/31592).
@@ -51,7 +51,7 @@ You can go to the **[CLS console](https://console.cloud.tencent.com/cls/topic?re
 ![](https://main.qcloudimg.com/raw/a6f481ce07cafd4ecb8d13ac05950b99.png)
 
 :::
-::: Configuring\sKafka\sas\sthe\slog\sconsumer\send
+::: Configuring Kafka as the log consumer end
 If you select Kafka as the consumer end, it is recommended you to use CKafka. The experience of its consumption and production modes are the same as the native version, and it supports alarm configurations.
 Specify the Broker address and Topic of Kafka in the container configuration, and ensure that all resources in the cluster can access the user-specified Kafka Topic, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/27e5173a642dfd0e2c84c93c0b319bcc.png)
@@ -63,15 +63,30 @@ You need to select “delete” for `cleanup.policy` in Kafka Topic configuratio
 </dx-tabs>
 
 6. Select **Role** or **Key** to authorize.
->! 
-> - You can only select the same authorization method for the containers in the same Pod. The last modification shall prevail. For example, if you select key authorization for the first container and role authorization for the second container, finally both containers will adopt role authorization.
-> - You can only select the same role to authorize for the containers in the same Pod.
+
+<dx-alert infotype="notice"> 
+<li>You can only select the same authorization method for the containers in the same Pod. The last modification shall prevail. For example, if you select key authorization for the first container and role authorization for the second container, finally both containers will adopt role authorization.</li>
+<li>You can only select the same role to authorize for the containers in the same Pod.</li>
+</dx-alert>
 
 <dx-tabs>
-::: Role\sauthorization
+::: Role authorization
  - Select a role that can access CLS, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/890940885a3fd7502cf28aa62f970e2c.png)
  - If there is no suitable role, you can create one as follows:
+    **Creating a policy**[](id:policy)
+   You need to create a policy before creating a role. This policy determines the permissions your role can have.
+  1. Log in to the CAM console and select **[Policies](https://console.cloud.tencent.com/cam/policy)** in the left sidebar.
+  2. On the **Polices** page, click **Create Custom Policy**.
+  3. Select **Create by Policy Generator** in **Select Policy Creation Method** pop-up.
+  4. In the **Visual Policy Generator**, select **Cloud Log Service (cls)** for **Service**, and select **Write: pushLog** for **Action**. See the figure below:
+    ![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
+  5. Click **Next** to go to the **Associate Users/User Groups** page.
+  6. Confirm the policy name and click **Done**.
+
+  **Creating a role**
+	After creating a policy, you need to bind this policy to a role, so that the role has permissions corresponding to the policy.
+
   1. Log in to the CAM console, and select **[Roles]**(https://console.cloud.tencent.com/cam/role) in the left sidebar.
   2. On the **Roles** page, click **Create Role**.
   3. In the “Select role entity” window that appears, select **Tencent Cloud Product Service** to go to the **Create Custom Role** page.
@@ -80,10 +95,11 @@ You need to select “delete” for `cleanup.policy` in Kafka Topic configuratio
     <dx-alert infotype="notice" title="">
 You must select **Cloud Virtual Machine (cvm)** rather than TKE as the role entity, otherwise, you cannot complete the authorization process.
     </dx-alert>
-  5. On the **Configure role policy** tab, select **QcloudCLSAccessForApiGateWayRole** policy and click **Next**.
+
+  5. In the **Configure role policy** step, select **Created Policy**(#policy), and click **Next**.
   6. On the **Review** tab, enter the role name to review the role information, and then click **Done**. For more information, see [Creating a Role](https://intl.cloud.tencent.com/document/product/598/19381).
 :::
-::: Key\sauthorization
+::: Key authorization
 - Select the “SecretId” and “SecretKey” of your account API key as the variable values to create the cluster Secret.
 ![](https://main.qcloudimg.com/raw/c03d348d34fc5c5d2666b1e883138bab.png)
 - If there is no suitable Secret, you need to create one. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676). You can view the SecretId and SecretKey in [API Keys](https://console.cloud.tencent.com/cam/capi).
@@ -104,7 +120,7 @@ This document provides three collection methods for your choice: collecting logs
 >! If both key and role authorization are configured in yaml, Pod actually uses role authorization.
 
 <dx-tabs>
-::: Collecting\slogs\sto\sKafka
+::: Collecting logs to Kafka
 Enable log collection by adding environment variables.
 ```shell
 apiVersion: apps/v1beta2
@@ -188,9 +204,9 @@ labels:
 :::
 
 
-::: Collecting\slogs\sto\sCLS\svia\sa\ssecret
+::: Collecting logs to CLS via a secret
 #### Creating a secret[](id:z)
-<dx-alert infotype="notice">The following sample is to manually create a secret through yaml. If you create a secret through the console, you do not need to perform 64 encoding. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
+<dx-alert infotype="notice"> The following sample is to manually create a secret through YAML. If you create a secret through the console, you do not need to perform 64 encoding. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
 </dx-alert>
 Run the following command via kubectl to obtain the secretid and secretkey for base64 encoding. Replace secretid and secretkey with the actual secretid and secretkey that you use. For more information, see [API Keys](https://console.cloud.tencent.com/cam/capi).
 ```shell
@@ -325,17 +341,38 @@ spec:
 
 
 
-::: Collecting\slogs\sto\sCLS\svia\sa\srole
+::: Collecting logs to CLS via a role
 #### Creating a role  
-Create a role on the [CAM console](https://console.cloud.tencent.com/cam/role). While creating a role, you need to select **Tencent Cloud Product Service**, bind the role with a **CVM**, and select **QcloudCLSAccessForApiGateWayRole** policy. For more information, see [Creating Roles](https://intl.cloud.tencent.com/document/product/598/19381).
-In the Pod template, add annotation, specify the role name, and obtain the permission policy contained in the role.
+#### Step 1: Creating a role  
+**Creating a policy**[](id:policy)
+You need to create a policy before creating a role. This policy determines the permissions your role can have.
+1. Log in to the CAM console and select **[Policies](https://console.cloud.tencent.com/cam/policy)** in the left sidebar.
+2. On the **Polices** page, click **Create Custom Policy**.
+3. Select **Create by Policy Generator** in **Select Policy Creation Method** pop-up.
+4. In the **Visual Policy Generator**, select **Cloud Log Service (cls)** for **Service**, and select **Write: pushLog** for **Action**. See the figure below:
+![](https://main.qcloudimg.com/raw/8ef0012a6e7f6f9d1c0152159fa1bc79.png)
+5. Click **Next** to go to the **Associate Users/User Groups** page.
+6. Confirm the policy name and click **Done**.
+
+**Creating a role**
+After creating a policy, you need to bind this policy to a role, so that the role has permissions corresponding to the policy.
+1. Log in to the CAM console, and select **[Roles]**(https://console.cloud.tencent.com/cam/role) in the left sidebar.
+2. On the **Roles** page, click **Create Role**.
+3. In the “Select role entity” window that appears, select **Tencent Cloud Product Service** to go to the **Create Custom Role** page.
+4. On the **Enter role entity info** tab, select **Cloud Virtual Machine (cvm)** and click **Next**.
+    <dx-alert infotype="notice" title="">
+You must select **Cloud Virtual Machine (cvm)** rather than TKE as the role entity, otherwise, you cannot complete the authorization process.
+    </dx-alert>
+5. In the **Configure role policy** step, select **Created Policy**(#policy), and click **Next**.
+6. On the **Review** tab, enter the role name to review the role information, and then click **Done**. For more information, see [Creating a Role](https://intl.cloud.tencent.com/document/product/598/19381).
+After creating a role, you need to add annotation, specify the role name, and obtain the permission policy contained in the role in the Pod template.
 ```shell
 template:
    metadata:
      annotations:
        eks.tke.cloud.tencent.com/role-name: "eks-pushlog"
 ```
-#### Creating a deployment
+#### Step 2: Creating a Deployment
 ```shell
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -430,7 +467,7 @@ You can update log collection via the console and yaml. Please refer to the foll
 
 
 <dx-tabs>
-::: Updating\slog\scollection\svia\sthe\sconsole
+::: Updating log collection via the console
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Elastic Cluster** in the left sidebar.
 2. Select the ID of the desired cluster for log collection configuration to enter the cluster management page.
 3. Choose **Workload** on the left, find the row of the desired workload for which you want to update log collection, and click **Update Pod Configuration** > **Advanced Settings** on the right to modify configurations, as shown in the figure below:
@@ -439,7 +476,8 @@ You can update log collection via the console and yaml. Please refer to the foll
 
 :::
 
-::: Updating\slog\scollection\svia\syaml
+
+::: Updating log collection via yaml
 Find the yaml corresponding to the workload for which you want to update log collection. Then modify the corresponding variable values based on the relevant variable name changes of the configuration. You can view the meanings of variable names in [Configuring log collection](#yaml).
 :::
 </dx-tabs>

@@ -1,22 +1,36 @@
+
+## February 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported architecture upgrade for multi-AZ deployed instances</td>
+<td>Multi-AZ deployed instances can be upgraded from the standard architecture to cluster architecture.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/37860" target="">Upgrading Instance Architecture</td></tr>
+<tr>
+<td>Supported instance clone for multi-AZ deployed instances</td>
+<td>Multi-AZ deployed instances allow you to clone a complete instance from a backup file.</td>
+<td><a href="https://cloud.tencent.com/document/product/239/32545" target="">Cloning Data</td></tr>
+</table>
+
 ## January 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
 <tr>
 <td>Supported global replication</td>
 <td>The global replication feature allows you to add and remove instances, switch instance roles, and delete replication groups.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/45602" target="">Overview</td></tr>
+<td><a href="https://cloud.tencent.com/document/product/239/67314" target="">Overview</td></tr>
 <tr>
 <td>Supported custom backup retention period</td>
 <td>You can apply for customizing the retention period of backup files through an allowlist.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/7071" target="">Backing up Data</td></tr>
+<td><a href="https://cloud.tencent.com/document/product/239/30901" target="">Backing up Data</td></tr>
 <tr>
 <td>Added the API for failure simulation</td>
 <td>Instances in the same AZ support calling the `KillMasterGroup` API for failure simulation testing.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/41430" target="">KillMasterGroup</td></tr>
+<td><a href="https://cloud.tencent.com/document/product/239/58399" target="">KillMasterGroup</td></tr>
 <tr>
-<td>Added the API for master/replica switch</td>
-<td>Instances in the same AZ support calling the `ChangeReplicaToMaster` API to promote a replica node (group) to a master node for master/replica switch.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/41037" target="">ChangeReplicaToMaster</td></tr>
+<td>Added the API for master-replica switch</td>
+<td>Instances in the same AZ support calling the `ChangeReplicaToMaster` API to promote a replica node (group) to a master node for master-replica switch.</td>
+<td><a href="https://cloud.tencent.com/document/product/239/56698" target="">ChangeReplicaToMaster</td></tr>
 </table>
 
 

@@ -12,7 +12,7 @@
 >! 分发到多个目标日志主题，需要在新建数据加工任务时，定义好日志主题的目标名称。该名称将用在 **log_output("目标名称")** 函数中。
 >
 
-![](https://qcloudimg.tencent-cloud.cn/raw/61bd11b23c04cff091d326cd6ad3d5ec.png)
+
 
 ## 原始日志
 

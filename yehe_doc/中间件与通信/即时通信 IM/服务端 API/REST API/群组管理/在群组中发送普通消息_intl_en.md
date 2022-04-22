@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
  This API is used by the app admin to send ordinary messages in a group.
 
 ## API Calling Description
@@ -6,11 +6,12 @@
 
 | Group Type ID | RESTful API Support |
 |-----------|------------|
-| Private | Yes. Same as Work (work group) in the new version. |
+| Private | Yes. Same as the work group (Work) in the new version. |
 | Public | Yes |
-| ChatRoom | Yes. Same as Meeting (temporary meeting group) in the new version. |
+| ChatRoom | Yes. Same as the meeting group (Meeting) in the new version. |
 | AVChatRoom | Yes |
-|Community| Yes |
+| Community | Yes |
+
 
 These are the preset group types in IM. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
@@ -26,20 +27,20 @@ The following table only describes the modified parameters when this API is call
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| https       | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
+| https | The request protocol is HTTPS, and the request method is POST. |
+| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>China: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
 | v4/group_open_http_svc/send_group_msg | Request API |
 | sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
-| contenttype | Request format. The value is always `json`. |
+| contenttype | Request format, which should always be `json`.|
 
 ### Maximum call frequency
 
 200 calls per second
 
-### Sample requests
+### Sample request
 
 - **Basic format**
 The app admin sends ordinary group messages, and the sender is the app admin.
@@ -106,6 +107,25 @@ After receiving the message, other members will see that the message is sent fro
 }
 ```
 
+- **Specifying the message recipient**
+If `To_Account` is added to the message body, and a message recipient is specified in it, the message will be sent only to the specified recipient, and the message is excluded from the unread count. (Supported group types: Private, Public, ChatRoom)
+>?This feature is supported only in the Flagship Edition.
+>
+```
+{
+    "GroupId":"@TGS#12DEVUDHQ",
+    "Random":2784275388,
+    "MsgBody":[
+        {
+            "MsgType":"TIMCustomElem",
+            "MsgContent":{
+                "Data":"1cddddddddq1"
+            }
+        }
+    ],
+    "To_Account":["brennanli2", "brennanli3"] // Specify the message recipient (up to 50 recipients can be specified). If this field is used, the message is excluded from the unread count.
+}
+```
 - **Specifying that messages do not trigger conversation update**
 If the value of `SendMsgControl` includes `NoLastMsg`, the message does not trigger conversation update; if it includes `NoUnread`, the message is not included in the unread count. The setting takes effect only for the current message. The parameter is not available for AVChatRoom.
 ```
@@ -164,7 +184,7 @@ When the callback switch is turned on, users can specify `ForbidCallbackControl`
     "Random": 8912345, // A random number. If the random numbers of two messages are the same within five minutes, they are considered to be the same message.
     "ForbidCallbackControl":[
 		    "ForbidBeforeSendMsgCallback",
-		    "ForbidAfterSendMsgCallback"], // Callback forbidding control options
+		    "ForbidAfterSendMsgCallback"], // Callback forbidding control option
     "MsgBody": [ // Message body, which consists of an element array. For details, see the field description.
         {
             "MsgType": "TIMTextElem", // Text
@@ -184,6 +204,7 @@ When the callback switch is turned on, users can specify `ForbidCallbackControl`
 ```
 - **Sending group @ messages**
   The target @ users set in the `GroupAtInfo` field have a one-to-one and sequential correspondence to the target @ users in the message body.
+>- Community and AVChatRoom groups do not support the @all feature.
 
   ```
       {
@@ -253,7 +274,7 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
 | OfflinePushInfo | Object | No | Information of offline push. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | ForbidCallbackControl | Array | No | Message callback forbidding option, valid only for a single message. `ForbidBeforeSendMsgCallback`: callback before sending the message is forbidden; `ForbidAfterSendMsgCallback`: callback after sending the message is forbidden. |
 | OnlineOnlyFlag | Integer | No | `1`: send to online members only; `0` (default value): send to all members. This field is not valid for audio-video groups (AVChatRoom). |
-| SendMsgControl | Array | No | Message sending permission, only valid for the current message. `NoLastMsg`: do not trigger conversation update; `NoUnread`: do not include the message in the unread count. |
+| SendMsgControl | Array | No | Message sending permission, only valid for the current message. `NoLastMsg`: do not trigger conversation update; `NoUnread`: do not include the message in the unread count. (If `OnlineOnlyFlag` is set to `1` for the message, this field cannot be used.) |
 | CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
 
 ### Sample responses
@@ -271,8 +292,8 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
 
 | Field | Type | Description |
 |---------|---------|---------|
-| ActionStatus | String | Request result. `OK`: successful. `FAIL`: failed. |
-| ErrorCode | Integer | Error code. `0`: successful. Other values: failed. |
+| ActionStatus | String | Request result. `OK`: successful; `FAIL`: failed |
+| ErrorCode | Integer | Error code. `0`: successful; other values: failed |
 | ErrorInfo | String | Error information |
 | MsgTime | Integer | Message sending timestamp, corresponding to the backend server time |
 | MsgSeq | Integer | Message sequence number, the unique identifier of a message |
@@ -280,11 +301,11 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
 ## Error Codes
 The returned HTTP status code for this API is always 200 unless a network error (such as error 502) occurs. The specific error code and details can be found in the response fields `ErrorCode` and `ErrorInfo` respectively.
 For public error codes (60000 to 79999), please see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
-The following table describes the error codes specific to this API.
+The following table describes the error codes specific to this API:
 
 | Error Code | Description |
 |---------|---------|
-| 10002 | Internal error of the server. Please retry. |
+| 10002 | Internal server error. Try again. |
 | 10004 | Invalid parameter. Check the error description and troubleshoot the issue. |
 | 10007 | No operation permissions. This error occurs when, for example, a member in a public group tries to remove other users from the group (only the app admin can perform this operation). |
 | 10010 | The group does not exist or has been deleted. |
@@ -292,13 +313,12 @@ The following table describes the error codes specific to this API.
 | 10016 | The app backend rejected this operation through a third-party callback. |
 | 10017 | The message cannot be sent due to muting. Check whether the sender is muted. |
 | 10023 | The frequency limit for message sending is reached. Try again later. |
-| 80001 | Text security filtering. Check whether the message text contains restricted words. |
 | 80002 | The message content is too long. Currently, the maximum message length supported is 8,000 bytes. Please adjust the message length. |
 
-## Debugging Tool
+## API Debugging Tool
 Use the [RESTful API online debugging tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/send_group_msg) to debug this API.
 
-References
+## References
 
 - Sending System Messages in a Group ([v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958))
 - Sending One-to-One Messages to One User ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))

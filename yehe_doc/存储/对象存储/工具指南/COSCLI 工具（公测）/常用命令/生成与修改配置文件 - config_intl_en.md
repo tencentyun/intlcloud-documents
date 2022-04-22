@@ -7,7 +7,9 @@ The `config` command is used to generate and modify the configuration file.
 ./coscli config [command] [flag]
 ```
 
->? If you have set the configuration items correctly, you can run `./coscli config show` to view the configurations.
+>? 
+>- After setting the configuration items correctly, you can run `./coscli config show` to view the configuration.
+>- For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
 <span id="config"></span>
@@ -24,9 +26,8 @@ The `config` command is used to generate and modify the configuration file.
 
 `config` and its sub-commands include the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name     | Purpose                         |
 | --------- | ------------- | -------------------------- |
-| -h        | --help      | Outputs help information.       |
 | -c        | --config-path | Path of the configuration file to use |
 
 The `config add` sub-command includes the following optional flags:
