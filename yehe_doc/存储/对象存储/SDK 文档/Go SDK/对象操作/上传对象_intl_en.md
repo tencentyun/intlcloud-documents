@@ -15,7 +15,7 @@ This document provides an overview of APIs and SDK code samples related to objec
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation. |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads a file in parts. |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
@@ -65,10 +65,9 @@ func main() {
     })
 
     key := "exampleobject"
-    file := "test"
 
     _, _, err := client.Object.Upload(
-        context.Background(), key, file, nil,
+        context.Background(), key, "localfile", nil,
     )
     if err != nil {
         panic(err)
@@ -112,7 +111,7 @@ type CompleteMultipartUploadResult struct {
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Location | URL address | String |
+| Location | URL | String |
 | Bucket               | Bucket name in the format: `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
 | key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 | ETag | Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | String |
@@ -124,7 +123,7 @@ type CompleteMultipartUploadResult struct {
 
 #### Description
 
-This API (PUT Object) is used to upload an object (file) of up to 5 GB to a bucket. For objects larger than 5 GB, please use [multipart upload](#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89). Simple uploads, creating folders, and batch uploads are supported.
+This API (PUT Object) is used to upload an object (file) of up to 5 GB to a bucket. For objects larger than 5 GB, use [multipart upload](#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89). Simple uploads, creating folders, and batch uploads are supported.
 
 
 #### Method prototype
@@ -134,7 +133,7 @@ func (s *ObjectService) Put(ctx context.Context, key string, r io.Reader, opt *O
 func (s *ObjectService) PutFromFile(ctx context.Context, name string, filePath string, opt *ObjectPutOptions) (*Response, error)
 ```
 
-#### Sample 1: uploading an object
+#### Sample 1: Uploading an object
 
 [//]: # (.cssg-snippet-put-object)
 ```go
@@ -172,7 +171,7 @@ func main() {
             ContentType: "text/html",
         },
         ACLHeaderOptions: &cos.ACLHeaderOptions{
-            // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
+            // Considering the ACL limit, we recommend you not set an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
             XCosACL: "private",
         },
     }
@@ -196,7 +195,7 @@ func main() {
 }
 ```
 
-#### Sample 2: creating a folder
+#### Sample 2: Creating a folder
 
 COS uses slashes (/) to separate object paths to simulate the effect of directories. Therefore, you can upload an empty stream and append a slash to its name to create an empty directory in COS.
 ```go
@@ -236,7 +235,7 @@ func main() {
 }
 ```
 
-#### Sample 3: uploading an object to a COS directory
+#### Sample 3: Uploading an object to a COS directory
 
 You can upload an object whose name is separated by slashes. In this way, the directory that contains this object will be created automatically. If you need to upload new objects to this COS directory, you can pass the value of this directory to `dir`.
 ```go
@@ -277,7 +276,7 @@ func main() {
 }
 ```
 
-#### Sample 4: viewing the upload progress
+#### Sample 4: Viewing the upload progress
 
 ```go
 package main
@@ -346,7 +345,7 @@ func main() {
 }
 ```
 
-#### Sample 5: uploading objects with multiple threads
+#### Sample 5: Uploading objects with multiple threads
 
 ```go
 package main
@@ -436,7 +435,7 @@ type ObjectPutHeaderOptions struct {
 | XCosACL | Sets the file ACL, such as private, public-read, and public-read-write | String | No |
 | XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | String | No |
 | XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | String | No |
-| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE | String | No |
+| XCosStorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string | No |
 | Expires | Sets `Content-Expires` | String | No |
 | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
 | ContentType | Content Type. Sets `Content-Type` | String | No |
@@ -626,18 +625,18 @@ type ListMultipartUploadsResult struct {
     Uploads            []struct {
         Key          string
         UploadID     string
-        StorageClass   string
+        StorageClass string
         Initiator    *Initiator
         Owner        *Owner
         Initiated    string
     }
     Prefix         string
     Delimiter      string
-    CommonPrefixes      []string 
+    CommonPrefixes []string 
 }
 // Use the same type as the owner
 type Initiator Owner
-// “Owner” defines the bucket/object's owner
+// "Owner" defines the bucket/object's owner
 type Owner struct {
     ID          string
     DisplayName string
@@ -658,7 +657,7 @@ type Owner struct {
 | Key | Object name | String |
 | UploadID | ID that identifies the current multipart upload | String |
 | Key | Indicates whether the returned list is truncated | Bool |
-| StorageClass | Specifies the storage class for parts. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String |
+| StorageClass | Storage class of the part, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string |
 | Initiator | Indicates information about the initiator of this upload | Container |
 | Owner | Indicates information about the owner of these parts | Container |
 | Initiated | Start time of the multipart upload | String |
@@ -673,14 +672,14 @@ type Owner struct {
 
 Multipart operations include:
 
-- Multipart upload: initializing a multipart upload operation, uploading parts, and completing a multipart upload operation
+- Multipart upload: Initializing a multipart upload operation, uploading parts, and completing a multipart upload operation.
 - Deleting uploaded parts
 
 >? Uploading the object via multipart upload, you can also use [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload (recommended).
 >
 
 <span id="INIT_MULIT_UPLOAD"></span>
-###  Initializing a multipart upload 
+### Initializing a multipart upload 
 
 #### Description
 
@@ -765,13 +764,13 @@ type ObjectPutHeaderOptions struct {
 | XCosACL | Sets the file ACL, such as `private` or `public-read` | String | No |
 | XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | String | No |
 | XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | String | No |
-| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE | String | No |
+| XCosStorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string | No |
 | Expires | Sets `Content-Expires` | String | No |
 | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
 | ContentType | Content Type. Sets `Content-Type` | String | No |
 | ContentDisposition | Filename. Sets `Content-Disposition` | String | No |
 | ContentEncoding | Encoding format. Sets `Content-Encoding` | String | No |
-| ContentLength | Sets the length of the request content | int64 | No |
+| ContentLength | Sets the length of the request content | Int64 | No |
 | XCosMetaXXX | User-defined file metadata. It must start with x-cos-meta. Otherwise, it will be ignored | http.Header | No |
 
 #### Response description
@@ -792,7 +791,7 @@ type InitiateMultipartUploadResult struct {
 
 
 <span id="MULIT_UPLOAD_PART"></span>
-###  Uploading parts 
+### Uploading parts 
 
 This API (`Upload Part`) is used to upload an object in parts.
 
@@ -891,7 +890,7 @@ etag := resp.Header.Get("ETag")
 
 
 <span id = "LIST_MULIT_UPLOAD"></span>
-###  Querying uploaded parts 
+### Querying uploaded parts 
 
 #### Description
 
@@ -998,7 +997,7 @@ type Object struct {
     Size         int
     PartNumber   int
     LastModified string
-    StorageClass   string 
+    StorageClass string 
     Owner        *Owner
 }
 ```
@@ -1011,7 +1010,7 @@ type Object struct {
 | UploadId | ID that identifies the multipart upload; generated by `InitiateMultipartUpload` | String |
 | Initiator | Initiator of the multipart upload, including `DisplayName`, `UIN` and `ID` | Struct |
 | Owner | Information on the file owner, including `DisplayName`, `UIN` and `ID` | Struct |
-| StorageClass | Object storage class. Valid values: `STANDARD` (default), `STANDARD_IA`, `ARCHIVE` | String |
+| StorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string |
 | PartNumberMarker | Specifies the part number after which the listing should begin. It defaults to 0, which means the listing begins with the first part | String |
 | NextPartNumberMarker | Specifies the part number after which the next listing should begin | Int |
 | MaxParts | Maximum number of parts to return at a time. Default value: `1000` | Int |
@@ -1020,7 +1019,7 @@ type Object struct {
 
 
 <span id = "COMPLETE_MULIT_UPLOAD"></span>
-###  Completing a multipart upload 
+### Completing a multipart upload 
 
 #### Description
 
@@ -1135,7 +1134,7 @@ type CompleteMultipartUploadResult struct {
 | ETag | Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | String |
 
 
-###  Aborting a multipart upload 
+### Aborting a multipart upload 
 
 #### Description
 
@@ -1193,7 +1192,7 @@ func main() {
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | String | Yes |
+| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
 
 
