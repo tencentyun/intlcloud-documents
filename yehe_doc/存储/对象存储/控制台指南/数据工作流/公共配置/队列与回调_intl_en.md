@@ -34,7 +34,7 @@ COS supports user-defined callback URLs. After an event is completed, the system
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, click **Queues and Callbacks** to enter the queue configuration page.
 5. Click **Configure Callback Rule** in the **Operation** column of the target queue.
 6. In the pop-up window, set the status to enable or disable callback.
-![](https://qcloudimg.tencent-cloud.cn/raw/4478c6fae9fdebdc1b7d22737e3c14c1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/10e883741266deb93d366ec8fdcc8635.png)
 When enabling callback, you need to specify a URL for the system to send HTTP requests. For more information on callback, see [Callback content](#1).
 
 

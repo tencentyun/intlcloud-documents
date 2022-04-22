@@ -17,7 +17,7 @@ On the job page, you can view all jobs in different types for the **specified ti
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Click **View** on the right of a job to view its information.
-![](https://main.qcloudimg.com/raw/2c9f7cee21c0d5cebd1c75903f471aee.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fc8f5e295f32884bf25fe54ec69e85c0.png)
  - Job information: Job ID, job status, queue ID, template ID, job creation time, and job end time.
  - Input information: Source file bucket, region, and storage path.
  - Output information: Output file address, bucket, region, and storage path.

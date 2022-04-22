@@ -12,7 +12,7 @@ The system combines common parameters in advance into system templates, so that 
 2. Select **Bucket List** on the left sidebar.
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to view templates of different processing types.
-![](https://qcloudimg.tencent-cloud.cn/raw/be779fe02687118951c896008de7649f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/31cd460b2a865fb92c2f26c3d179fd02.png)
 Click **View** in the **Operation** column to view template details.
 >?
 > - Currently, the system provides 15 **audio/video transcoding**, 3 **video frame capturing**, and 18 **video to animated image conversion** templates.
@@ -87,7 +87,7 @@ The audio/video transcoding feature converts an audio/video file bitstream. It c
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Audio/Video Transcoding** and click **Create Transcoding Template**.
-![](https://main.qcloudimg.com/raw/44fd00fb33e98e396482b564a7bbf91f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/92e19a474034280ecb0036a2ae17a100.png)
 6. In the **Create Transcoding Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Transcoding Type: You can select video or audio transcoding.
@@ -111,7 +111,7 @@ The top speed codec transcoding feature improves the subjective image quality of
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Top Speed Codec Transcoding** and click **Create Top Speed Codec Transcoding Template**.
-<img src="https://main.qcloudimg.com/raw/2c30fe3def5a1d823308fd8197053cbc.png" style="zoom:67%;" />
+
 6. In the **Create Top Speed Codec Transcoding Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Transcoding Type: It is video transcoding by default.
@@ -135,7 +135,7 @@ This feature processes special formats such as XAVC and ProRes.
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Broadcast Media Format Transcoding** and click **Create Broadcast Media Format Transcoding Template**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5704ca5edb3bd3c2e8d8adb199870a46.png" style="zoom:67%;" />
+
 6. In the **Create Broadcast Media Format Transcoding Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Preset Encoder Configuration: Select the default values of encoder parameters such as sample rate.
@@ -158,7 +158,7 @@ The highlights generation feature automatically extracts highlights from a video
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Highlights Generation** and click **Create Highlights Generation Template**.
-<img src="https://main.qcloudimg.com/raw/55654c6c7d2975647c5e64c483d42596.png" style="zoom:80%;" />
+
 6. In the **Create Highlights Generation Template** window, configure the following items:
 >? Currently, highlights generation can be used only for landscape, food, street, and vlog scenarios and will support more scenarios in the future. If you want to customize this feature, [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
 >
@@ -184,7 +184,7 @@ The video frame capturing feature captures the frames of a video at specified ti
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Video Frame Capturing** and click **Create Video Frame Capturing Template**.
-![](https://main.qcloudimg.com/raw/158fccdefdbdb21850eb751e9e27c9a5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ef68628bf5ad449bfc87bd15e9434f70.png)
 6. In the **Create Video Frame Capturing Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Frame Capturing Start Time: You can select any time point within the full video length.
@@ -213,7 +213,7 @@ The video to animated image conversion feature converts a video to animated imag
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Video to Animated Image Conversion** and click **Create Video to Animated Image Conversion Template**.
-![](https://main.qcloudimg.com/raw/1c17fcb61438b2f33f95b4bc922318fb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3768b371824c8a48a0a7efb096c29b56.png)
 6. In the **Create Video to Animated Image Conversion Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Transcoding Start Time: You can select any time point within the full video length.
@@ -245,7 +245,7 @@ The video watermark feature adds a text or image watermark to a video during tra
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Video Watermark** and click **Create Video Watermark Template**.
-![](https://main.qcloudimg.com/raw/f94daf7e8ad67c4616f6cf3ba17b8bb1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/972bd876e210a6ae96728c9075b4a605.png)
 6. In the **Create Video Watermark Template** window, configure the following items:
  - **Common parameters**
     - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (\*).
@@ -258,9 +258,9 @@ The video watermark feature adds a text or image watermark to a video during tra
     - Select Image: If you select image watermark, you need to select its source. Currently, only a watermark image in the same bucket can be selected. If the bucket doesn't have desired images, you need to upload a new one.
     - Image Layer: Select whether to place the image on top of or underneath the video.
       - If the image is placed on top of the video, the effect is as shown below:
-     ![img](https://main.qcloudimg.com/raw/b3d8ba30e161104704076329338fe364.png)
+     ![img](https://qcloudimg.tencent-cloud.cn/raw/73b44ed792c118f58605209fbccd0fa5.png)
        - If the image is placed underneath the video (as the background), the effect is as shown below:
-     ![img](https://main.qcloudimg.com/raw/5e6a97ccd0f178f52ea52e93e4ad9f4c.png)
+     ![img](https://qcloudimg.tencent-cloud.cn/raw/0da61e3ac31297550a7a05544af7f6f2.png)
     - Watermark Dimensions:
       - Input image size: The original watermark image size will be retained without any processing. Note that if the watermark image is larger than the video image, the watermark cannot be completely displayed.
       - By ratio: You can set the percentage (1–100) of only the width or height or both of them. If the width or height is not set, it will be scaled proportionally. Suppose the width ratio is `a` and height ratio is `b`, then the watermark width will be `w = W * a`, and the watermark height will be `h = H * b` (here, `W` and `H` are the video width and height respectively).
@@ -298,7 +298,7 @@ The video/audio splicing feature adds the specified video/audio segment at the b
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Audio/Video Splicing** and click **Create Audio/Video Splicing Template**.
-![](https://main.qcloudimg.com/raw/b865a18aec0626bc08c309bfc9487df1.png)
+
 6. In the **Create Audio/Video Splicing Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (\*).
  - Container Format: Supported formats include AAC, MP3, MP4, FLV, HLS, and TS.
@@ -321,7 +321,7 @@ You can separate the same audio file into a voice file and a background sound fi
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Voice Separation** and click **Create Voice Separation Template**.
-<img src="https://main.qcloudimg.com/raw/03d049a8fe3ef91821501e82be1a6190.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e3a8297817e96904cd35db90628b284f.png" style="zoom:67%;" />
 6. In the **Create Voice Separation Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Output Audio Format: Supported formats include MP3, AAC, AMR, and FLAC.
@@ -346,7 +346,7 @@ The video enhancement feature uses AI to improve the video quality and enhance t
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Video Enhancement** and click **Create Video Enhancement Template**.
-![](https://main.qcloudimg.com/raw/11a7381c7a634048f0b317940806bb53.png)
+
 6. In the **Create Video Enhancement Template** window, configure the following items:
 > ? 
 > - Currently, video enhancement supports color and detail enhancement. Other features will be provided in the future.
@@ -371,7 +371,7 @@ The super-resolution feature reconstructs the details and local features of an i
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Super-Resolution** and click **Create Super-Resolution Template**.
-![](https://qcloudimg.tencent-cloud.cn/raw/6f0634a392449df73a2d937515242bfb.png)
+
 6. In the **Create Super-Resolution Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Version: Select Basic or Enhanced. The latter delivers greater image reconstruction and restoration effects.
@@ -394,7 +394,7 @@ Image processing is a rich-featured, cost-effective, and high-reliability image 
 3. Click the name of the bucket for video storage.
 4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Video Processing** and click **Create Video Processing Template**.
-![](https://qcloudimg.tencent-cloud.cn/raw/36a2f7f47b7e8dac12e5f128e7ea7c81.png)
+
 6. In the **Create Video Processing Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Editing Mode: Select Basic or Enhanced. The latter delivers greater image reconstruction and restoration effects.
