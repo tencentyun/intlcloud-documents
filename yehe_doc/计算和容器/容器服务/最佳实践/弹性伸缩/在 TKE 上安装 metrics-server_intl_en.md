@@ -1,70 +1,62 @@
-## Operation Scenarios
+## Overview
 
-The metrics-server can realize the Resource Metrics API (metrics.k8s.io) of Kubernetes. Through this API, you can query some monitoring metrics of Pods and Nodes. The monitoring metrics of Pods are used in [HPA](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/), [VPA](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler), and `kubectl top pods` commands, whereas the Node metrics are currently used only in `kubectl top nodes` commands. TKE itself realizes the Resource Metrics API, pointed towards the hpa-metrics-server, and currently TKE also provides monitoring metrics for Pods.
+metrics-server 可实现 Kubernetes 的 Resource Metrics API（metrics.k8s.io），通过此 API 可以查询 Pod 与 Node 的部分监控指标，Pod 的监控指标用于 [HPA](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)、[VPA](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler) 与 `kubectl top pods` 命令，而 Node 指标目前只用于 `kubectl top nodes` 命令。容器服务 TKE 自带 Resource Metrics API 的实现，指向 hpa-metrics-server，且目前提供 Pod 的监控指标。
 
-After installing the metrics-server to the cluster, you can run `kubectl top nodes` to obtain the monitoring overview of nodes to replace the realization of the Resource Metrics API. HPA created on the TKE console does not use Resource Metrics and only uses Custom Metrics. Therefore, installing the metrics-server does not affect HPA created on the TKE console. This document describes how to install the metrics-server on TKE.
+将 metrics-server 安装到集群后，可以通过 `kubectl top nodes` 获取节点的监控概览，以替换 Resource Metrics API 的实现。容器服务控制台创建的 HPA 不会用到 Resource Metrics，仅使用 Custom Metrics，因此安装 metrics-server 不会影响在 TKE 控制台创建的 HPA。本文将介绍如何在 TKE 上安装 metrics-server。
 
 
 
-## Directions
+## 操作步骤
 
-### Downloading the YAML deployment file
+### 下载 yaml 部署文件
 
-Run the following commands to download the latest deployment file components.yaml of the metrics-server.
+执行以下命令，下载 metrics-server 官方的部署 yaml:
 
 ```bash
-wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+wget https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.5.0/components.yaml
 ```
 
-### Modifying the metrics-server launch parameter
+### 修改 metrics-server 启动参数
 
-The metrics-server requests the kubelet API of each node to obtain monitoring data. The API is exposed via HTTPS, but as TKE node kubelet uses a self-signed certificate, if the metrics-server directly requests the kubelet API, an error of certification verification failure will occur. Therefore, you need to add the `--kubelet-insecure-tls` launch parameter in the components.yaml file.
-Moreover, as the official image repository of the metrics-server is stored in `k8s.gcr.io`, users in China may not be able to directly pull images from the repository. You need to manually synchronize images to CCR or use the synchronized image `ccr.ccs.tencentyun.com/mirrors/metrics-server:v0.4.0`.
+metrics-server 会请求每台节点的 kubelet 接口来获取监控数据，接口通过 HTTPS 暴露，但 TKE 节点的 kubelet 使用的是自签证书，若 metrics-server 直接请求 kubelet 接口，将产生证书校验失败的错误，因此需要在 components.yaml 文件中加上 `--kubelet-insecure-tls` 启动参数。
+且由于 metrics-server 官方镜像仓库存储在 `k8s.gcr.io` ，国内可能无法直接拉取，您可以自行同步到 CCR 或使用已同步的镜像 `ccr.ccs.tencentyun.com/mirrors/metrics-server:v0.5.0`。
 
-Below is a sample of modification of the components.yaml file:
+components.yaml 文件修改示例如下：
 
 ```yaml
-containers:
-- args:
-  - --cert-dir=/tmp
-  - --secure-port=4443 # Please replace with 4443
-  - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-  - --kubelet-use-node-status-port
-  - --kubelet-insecure-tls # Add this launch parameter
-  image: ccr.ccs.tencentyun.com/mirrors/metrics-server:v0.4.0 # For cluster in the Chinese mainland, please replace with this image address
-  ports:
-  - containerPort: 4443  # Please replace with 4443
-    name: https
-    protocol: TCP
+      containers:
+      - args:
+        - --cert-dir=/tmp
+        - --secure-port=443
+        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+        - --kubelet-use-node-status-port
+        - --metric-resolution=15s
+        - --kubelet-insecure-tls # 加上该启动参数
+        image: ccr.ccs.tencentyun.com/mirrors/metrics-server:v0.5.0 # 国内集群，请替换成这个镜像
 ```
 
-### Deploying the metrics-server
+- hpa-metrics-server
 
-After modifying components.yaml, run the following commands to implement one-click deployment to the cluster via kubectl:
+修改 components.yaml 之后，执行以下命令，通过 kubectl 一键部署到集群：
 
 ```bash
 kubectl apply -f components.yaml
 ```
 
->? Through the above step, you can install and deploy the metrics-server. Alternatively, you can run the following commands for one-click installation of the metrics-server, but this method cannot ensure synchronization with the latest version.
-```bash
-kubectl apply -f https://raw.githubusercontent.com/TencentCloudContainerTeam/manifest/master/metrics-server/components.yaml
-```
+### 检查运行状态
 
-### Checking the running status
-
-1. Run the following commands to check whether the metrics-server starts normally. Below is a sample:
+1. 执行以下命令，检查 metrics-server 是否正常启动。示例如下：
 ```bash
 $ kubectl get pod -n kube-system | grep metrics-server
 metrics-server-f976cb7d-8hssz         1/1     Running   0          1m
 ```
-2. Run the following commands to check the configuration file. Below is a sample:
+2. 执行以下命令，检查配置文件。示例如下：
 ```bash
-$ kubectl get --raw /apis/metrics.k8s.io/v1beta1  | jq
+$ kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1
 {
   "kind": "APIResourceList",
   "apiVersion": "v1",
-  "groupVersion": "metrics.k8s.io/v1beta1",
+  "groupVersion": "custom.metrics.k8s.io/v1beta1",
   "resources": [
     {
       "name": "nodes",
@@ -73,7 +65,7 @@ $ kubectl get --raw /apis/metrics.k8s.io/v1beta1  | jq
       "kind": "NodeMetrics",
       "verbs": [
         "get",
-        "list"
+        Contents
       ]
     },
     {
@@ -83,15 +75,15 @@ $ kubectl get --raw /apis/metrics.k8s.io/v1beta1  | jq
       "kind": "PodMetrics",
       "verbs": [
         "get",
-        "list"
+        Contents
       ]
     }
   ]
 }
 ```
-3. Run the following commands to check the node usage performance. Below is a sample:
+3. 执行以下命令，检查节点占用性能情况。示例如下：
 ```bash
-$ kubectl top nodes
+kubectl get nodes
 NAME    CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
 test1   1382m        35%    2943Mi          44%
 test2   397m         10%    3316Mi          49%
