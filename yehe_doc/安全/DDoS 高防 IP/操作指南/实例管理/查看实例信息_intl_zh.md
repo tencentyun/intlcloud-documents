@@ -5,7 +5,7 @@
 
 示例：查看高防 IP 实例“bgpip-000002jf”的实例信息。
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/package)，在左侧导航栏中，单击【实例列表 】，找到实例 ID 为“bgpip-000002jf”的高防 IP ，单击 ID“bgpip-000002jf”查看实例详细信息。如果实例数量较多可以使用右上角的搜索框过滤。
-![](https://main.qcloudimg.com/raw/b7ce03c14d6b77474142573faecbf37c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c174ccf351d369aaa1e0470c97278bfa.png)
 3. 在弹出的页面中查看如下信息：
 ![](https://main.qcloudimg.com/raw/77f50dfce86cccc4dc24dd4d3b5cd331.png)
 **参数说明：**
