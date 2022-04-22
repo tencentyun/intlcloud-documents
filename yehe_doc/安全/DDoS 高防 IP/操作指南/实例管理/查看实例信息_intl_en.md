@@ -20,8 +20,6 @@ This is the actual IP of the business protected by the Anti-DDoS Advanced instan
 This is the base protection bandwidth of the Anti-DDoS Advanced instance, i.e., the **base protection bandwidth** selected when the instance is [purchased](https://intl.cloud.tencent.com/document/product/297/15483). If elastic protection is not enabled, this will be the maximum protection bandwidth of the instance.
 - **Current status**
 This is the current status of the Anti-DDoS Advanced instance, such as **Running**, **Cleansing**, and **Blocked**.
-- **Expiration time**
-This is calculated based on the **purchase duration** selected when the instance is [purchased](https://intl.cloud.tencent.com/document/product/297/15483) and the time when the order is paid, which is accurate to second. Tencent Cloud will send expiration and renewal reminders to the account creator and all collaborators through Message Center, SMS, and email within 7 days before the instance expires.
 - **Tag**
 This is the tag name of the Anti-DDoS Advanced instance, which can be edited and deleted.
 
