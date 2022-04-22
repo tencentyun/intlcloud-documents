@@ -11,26 +11,30 @@ A Job will keep existing Pods and not create new Pods after it is complete. You 
 2. In the left sidebar, click **Cluster** to go to the cluster management page.
 3. Click the ID of the cluster where Job needs to be created to enter the cluster management page.
 4. Select **Workload** > **Job** to go to the Job information page, as shown below:
-![Job](https://main.qcloudimg.com/raw/b33fcb5fe7f6491ef71b53f21ed82051.png)
-5. Click **Create** to go to the **Create Workload** page, as shown below:
-![Create a workload](https://main.qcloudimg.com/raw/e3e76bf1eeae83380d0f4b3f4e940934.png)
-5. Set the Job parameters based on your actual needs. The key parameters are as follows:
- - Workload Name: customize the workload name.
- - Namespace: select the namespace based on your actual needs.
- - Type: select **Job (One-time Task)**.
- Job Settings: set one or more containers for a Pod of the Job as needed.
-    - Repeat Times: set the times of repeated executions of Pods under this Job.
-    - Concurrent Pods: set the number of parallel Pods in this Job.
-    - Restart Policy: set the restart policy applied when containers under the Pod abnormally exit.
-       - Never: do not restart the container until all the containers under the Pod exit.
-       - OnFailure: the Pod continues to run while the container will be restarted.
- - Containers in the Pod: set one or more containers for a Pod of the Job as needs.
-    - Name: customize the name of the container in the Pod.
-    - Image: select the image based on your actual needs.
-    - Image Tag: enter the tag based on your actual needs.
-    - CPU/Memory Limits: set the CPU and memory limit according to [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) to improve the robustness of the business.
-    - Advanced Settings: you can set the parameters such as **Working Directory**, **Running Command**, **Running Parameter**, **Container Health Check**, and **Privileged Container**.
-7. Click **Create Workload** to complete the creation.
+![](https://main.qcloudimg.com/raw/b33fcb5fe7f6491ef71b53f21ed82051.png)
+5. Click **Create** to go to **Create Workload** page, as shown below: ![](https://main.qcloudimg.com/raw/e3e76bf1eeae83380d0f4b3f4e940934.png).
+6. Set the Job parameters based on your actual needs. The key parameters are as follows:
+ - **Workload Name**: custom.
+ - **Label**: a key-value pair, which is used for classified management of resources.
+ - **Namespace**: select a namespace based on your requirements.
+ - **Type**: select **Job (One-time Task)**.
+ - **Job Settings**: set one or more containers for a Pod of the Job as needed.
+    - **Repeat Times**: set the times of repeated executions of Pods under this Job.
+    - **Concurrent Pods**: set the number of parallel Pods in this Job.
+    - **Restart Policy**: set the restart policy applied when containers under the Pod abnormally exit.
+       - **Never**: do not restart the container until all the containers under the Pod exit.
+       - **OnFailure**: the Pod continues to run while the container will be restarted.
+ - **Volume (optional)**: provides storage for the container. It can be a temp path, CVM path, CBS volume, file storage NFS, configuration file and PVC, and it must be mounted to the specified path of the container.      
+ - **Containers in the Pod**: set one or more containers for a Pod of the Job as needs.
+    - **Name**: custom.
+    - **Image**: select as needed.
+    - **Image Tag**: enter the tag based on your actual needs.
+    - **CPU/memory limits**: set the CPU and memory limit according to [Kubernetes' resource limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/) to improve the robustness of the business.
+    - **GPU Resource**: you can configure the least GPU resource used by the workload.
+    - **Advanced Settings**: you can set the parameters such as **Working Directory**, **Running Command**, **Running Parameter**, **Container Health Check**, and **Privileged Container**.
+ - **Image Access Credential**: a container image is private by default. You need to select the image access credential for the TCR instance when creating a workload.
+ - **Node Scheduling Policy**: the Pod can be scheduled to the node of the Label that meets the expectation according to the scheduling rules.
+7. Click **Create Workload** to complete the process.
 
 ### Viewing Job Status
 
