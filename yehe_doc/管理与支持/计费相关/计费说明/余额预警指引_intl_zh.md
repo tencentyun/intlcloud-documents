@@ -16,7 +16,7 @@
 1. 选择**账户预警通知**，设置接收方式，单击**添加接收人**或**修改消息接收人**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/06fac3201bed4baca6d98e5606d0e477.png)
 2. 在弹出的窗口中，根据实际需求，更改消息接收人和接收方式，单击**确定**。
-![](https://qcloudimg.tencent-cloud.cn/raw/1ebe47e330668c6c711ae84f514939ab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ba5d1a5f96eaa7da03b027321448ffd6.png)
 
 ### 关闭通知
 如您不希望收到该预警通知，取消勾选“订阅余额预警消息”即可。
