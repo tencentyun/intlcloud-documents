@@ -2,9 +2,9 @@
 
 ### 设置余额预警
 1. 登录腾讯云官网 <b>费用中心 > 资金管理 > [付款](https://console.intl.cloud.tencent.com/expense/recharge)</b>，单击**余额预警通知标签**。
-![](https://qcloudimg.tencent-cloud.cn/raw/2f1100ffa6ce03ac4d60d6b56b263a99.png)
-2. 勾选**订阅余额预警消息**，并在预警阈值中输入数字，不可输入负数，支持小数点前9位和小数点后2位，确认后单击**确定**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/42c9213af7d6960b6c542011fecd15bc.png)
+2. 勾选**订阅余额预警消息**，并在预警阈值中输入数字，不可输入负数，支持小数点前9位和小数点后2位，确认后单击**确定**。
+![](https://qcloudimg.tencent-cloud.cn/raw/2f1100ffa6ce03ac4d60d6b56b263a99.png)
 
 
 ### 设置消息接收人和接收方式
