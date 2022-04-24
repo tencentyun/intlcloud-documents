@@ -1,4 +1,4 @@
-## Single-Link Speed Limit
+## Single-Connection Bandwidth Limit
 
 COS supports traffic control for file uploads and downloads to guarantee normal network bandwidth for your other applications. You can add the `x-cos-traffic-limit` parameter in a request for [PutObject](https://intl.cloud.tencent.com/document/product/436/7749), [PostObject](https://intl.cloud.tencent.com/document/product/436/14690), [GetObject](https://intl.cloud.tencent.com/document/product/436/7753), or [UploadPart](https://intl.cloud.tencent.com/document/product/436/7750) and set a speed limit value. Then, COS will control the network bandwidth for the request accordingly.
 
