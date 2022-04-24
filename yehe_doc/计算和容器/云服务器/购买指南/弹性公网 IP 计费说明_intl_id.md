@@ -1,4 +1,4 @@
-Biaya EIP dibebankan menurut dua jenis akun, tagihan per IP dan tagihan per CVM. Dokumen ini mengenalkan pembayaran biaya EIP untuk dua jenis akun. 
+Biaya EIP dibebankan menurut dua jenis akun, tagihan per IP dan tagihan per CVM. Dokumen ini mengenalkan bagaimanan biaya EIP ditagih untuk dua jenis akun. 
 
 ## Latar belakang
 
@@ -10,7 +10,7 @@ Saat ini, ada dua jenis akun Tencent Cloud: tagihan per IP dan tagihan per CVM. 
 
 ## Item yang Dapat Ditagih
 
-Biaya EIP terdiri dari **IP resource fees** (biaya sumber daya IP) dan **public network fees** (biaya jaringan publik). Berikut adalah pembayaran akun tagihan per CVM dan tagihan per IP:
+Biaya EIP terdiri dari **biaya sumber daya IP** dan **biaya jaringan publik**. Berikut adalah pembayaran akun tagihan per CVM dan tagihan per IP:
 
 ### Akun tagihan per CVM
 
@@ -44,7 +44,7 @@ Ada tiga paket penagihan untuk akun tagihan per IP:
 ### Periode penagihan
 
 Biaya sumber daya IP berjenis bayar sesuai pemakaian pada siklus penagihan per jam.
-Biaya sumber daya IP dibebankan mulai dari saat Anda mengajukan EIP. Penagihan ditangguhkan saat sumber daya cloud tersambung, dilanjutkan saat sumber daya cloud tidak tersambung, dan berhenti saat EIP dilepaskan. Penagihan akurat hingga detik, dan biaya yang dihasilkan untuk jam tersebut telah diputuskan dan dipotong pada jam berikutnya. Jika sumber daya cloud tidak tersambung dan tersambung beberapa kali dalam siklus penagihan yang sama, periode penagihan adalah waktu kumulatif yang dihabiskan sumber daya cloud saat tidak tersambung.
+Biaya sumber daya IP ditagih mulai dari saat Anda mengajukan EIP. Penagihan ditangguhkan saat sumber daya cloud tersambung, dilanjutkan saat sumber daya cloud tidak tersambung, dan berhenti saat EIP dilepaskan. Penagihan akurat hingga detik, dan biaya yang dihasilkan untuk jam tersebut telah diputuskan dan dipotong pada jam berikutnya. Jika sumber daya cloud tidak tersambung dan tersambung beberapa kali dalam siklus penagihan yang sama, periode penagihan adalah waktu kumulatif yang dihabiskan sumber daya cloud saat tidak tersambung.
 
 
 ### Rumus penagihan
