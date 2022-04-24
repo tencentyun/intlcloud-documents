@@ -14,9 +14,9 @@ Overview:
 | ------------------ | ------ | ------------ |
 | Trial     | 28 days   | 0            |
 | Lite     | 1 year    | 269          |
-| Basic     | 1 year    | 1499         |
-| Enterprise     | 1 year    | 25999        |
-| Enterprise Pro | 1 year    | 71999        |
+| Basic     | 1 year    | 1,499         |
+| Enterprise     | 1 year    | 25,999        |
+| Enterprise Pro | 1 year    | 71,999        |
 
 To learn about the features of different editions, see [SDK Download](https://intl.cloud.tencent.com/document/product/1069/37914).
 
