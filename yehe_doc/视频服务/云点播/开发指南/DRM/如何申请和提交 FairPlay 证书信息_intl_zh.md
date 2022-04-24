@@ -62,7 +62,7 @@ openssl genrsa -aes256 -out privatekey.pem 1024
 
    ![image-20220419114506263](https://qcloudimg.tencent-cloud.cn/raw/52c2834bf36f4074e7f9f731aefc8948.png)
 
-5. 将页面中的 `Application Secret Key (ASK)`  拷贝并备，接着将`ASK`在下方输入栏中重新输入，并点击` Continue `按钮。
+5. 将页面中的 `Application Secret Key (ASK)`  拷贝并备份，接着将`ASK`在下方输入栏中重新输入，并点击` Continue `按钮。
 
    ![image-20220419114920781](https://qcloudimg.tencent-cloud.cn/raw/8e55fb6e817a2279f6b2cea3418506f7.png)
 
