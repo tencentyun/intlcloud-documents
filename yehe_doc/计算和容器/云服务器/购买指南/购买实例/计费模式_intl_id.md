@@ -23,6 +23,6 @@ Anda dapat mengaktifkan Tanpa Biaya Saat Pematian untuk instans bayar sesuai pem
 
 ## Instans Spot
 
-Instans spot adalah cara baru untuk menggunakan dan membayar instans CVM. Mirip dengan bayar sesuai pemakaian, instans ini memungkinkan biaya per detik dan pembebanan per jam. Harga instans spot fluktuatif sesuai permintaan pasar yang memberikan diskon besar (diskon sekitar 80-90% dari harga instans bayar sesuai pemakaian dengan spesifikasi yang sama). Namun, instans spot dapat diambil alih secara otomatis oleh sistem karena kekurangan inventaris atau tawaran yang lebih tinggi dari pengguna lain.
+Instans spot adalah cara baru untuk menggunakan dan membayar instans CVM. Mirip dengan bayar sesuai pemakaian, instans ini memungkinkan biaya per detik dan penagihan per jam. Harga instans spot fluktuatif sesuai permintaan pasar yang memberikan diskon besar (diskon sekitar 80-90% dari harga instans bayar sesuai pemakaian dengan spesifikasi yang sama). Namun, instans spot dapat diambil alih secara otomatis oleh sistem karena kekurangan inventaris atau tawaran yang lebih tinggi dari pengguna lain.
 - Untuk informasi selengkapnya tentang kebijakan instans spot, kasus penggunaan, dan batasan, rujuk kepada [Instans Spot](https://intl.cloud.tencent.com/document/product/213/17816).
 
