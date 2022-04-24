@@ -210,7 +210,7 @@ function myDelete() {
 
 ### 创建存储桶
 
-[//]: # ".cssg-snippet-put-bucket"
+[//]: # (.cssg-snippet-put-bucket)
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -222,7 +222,7 @@ cos.putBucket({
 
 ### 查询存储桶列表
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
@@ -233,7 +233,7 @@ cos.getService(function (err, data) {
 
 该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/43551) 文档。
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -251,7 +251,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -264,7 +264,7 @@ cos.getBucket({
 
 ### 下载对象
 
-[//]: # ".cssg-snippet-get-object-stream"
+[//]: # (.cssg-snippet-get-object-stream)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -278,7 +278,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
