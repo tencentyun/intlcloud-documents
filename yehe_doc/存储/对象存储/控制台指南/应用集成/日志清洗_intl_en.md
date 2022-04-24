@@ -21,7 +21,7 @@ COS introduces the [SCF](https://intl.cloud.tencent.com/document/product/583)-ba
 	- **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
 	- **Associated Bucket**: a COS bucket that stores the log files.
 	- **Event Type**: an operation that triggers SCF. Take upload as an example. You can initiate an upload by calling the `PUT Object` or `POST Object` API. If you choose **Create using PUT method** as the event type, log cleansing will only be triggered by a log file uploaded via the `PUT Object` API.
->! If you intend to upload files to the bucket using multiple ways, such as simple upload, multipart upload, and cross-bucket replication, you are advised to choose **File upload** as the event type.
+>! If you Editing intlcloud-documents/日志清洗_intl_en.md at master · tencentyun/intlcloud-documentsintend to upload files to the bucket using multiple ways, such as simple upload, multipart upload, and cross-bucket replication, you are advised to choose **File upload** as the event type.
 	- **Trigger Condition**: the upload path that will trigger SCF. If you select **Specified Range**, SCF will be triggered only when a log file is uploaded to a path in the specified range. If you choose **The whole bucket**, SCF will be triggered as long as a log file is uploaded to any location of the bucket.
 	- **SCF Authorization**: Required. To cleanse a log file, SCF should be authorized to read the log file from your bucket and upload the cleansed log file to the specified location.
 
@@ -34,8 +34,9 @@ COS introduces the [SCF](https://intl.cloud.tencent.com/document/product/583)-ba
 7. Click **Next** to configure delivery. The configuration items are described as follows:
 
 
-	- **Destination Bucket**: a bucket that stores the generated file after the log cleansing is completed.
-	- **Destination Path**: a path to deliver the log cleansing result. To avoid triggering a loop, you are advised to set it to a path whose prefix is different from that (if any) set in Trigger Condition.
+	- **Destination Bucket**: A bucket that stores the generated file after the log cleansing is completed.
+	- **Destination Path**: A path to deliver the log cleansing result. To avoid triggering a loop, you are advised to set it to a path whose prefix is different from that (if any) set in Trigger Condition.
+
 > !If the configured Delivery Prefix overlaps with that set in Trigger Condition, a loop may be triggered. Assume that Delivery Prefix is set to `prefix/target/` and the prefix set in Trigger Condition is `prefix/`. Then, an uploaded log file named `prefix/test.csv` will be cleansed and the result will be delivered to `prefix/target/test.cos_select_result.csv`, triggering a cleansing loop.
 
 8. Click **Confirm**.
