@@ -27,7 +27,7 @@ Harga satuan bandwidth tercantum di [Penagihan Jaringan Publik](https://intl.clo
 
 ### Menyesuaikan bandwidth
 
-#### Mengupgrade bandwidth untuk **Monthly bandwidth subscription** (Langganan bandwidth bulanan)
+#### Mengupgrade bandwidth untuk **Langganan bandwidth bulanan**
 
 Misal Anda membeli bandwidth langganan bulanan sebesar 2 Mbps untuk satu instans CVM di wilayah Beijing pada 1 November 2018. Anda mengupgrade bandwidth dari 2 Mbps menjadi 5 Mbps antara 20 dan 29 November 2018 dengan total 10 hari.![](https://main.qcloudimg.com/raw/a8ea05b86a9c2e5bda630928585acbe5.png)
 Biaya bandwidth yang harus dibayar untuk langganan bandwidth bulanan awal di bulan November adalah: bandwidth \* harga satuan = 2Mbps \* 2,86 USD/Mbps = 5,72 USD
@@ -39,6 +39,6 @@ Anda dapat menyesuaikan batas bandwidth untuk instans CVM tagihan per lalu linta
 
 ### Mengubah penagihan jaringan publik
 
-#### Mengubah dari **bill-by-traffic** (tagihan per lalu lintas) menjadi **monthly bandwidth subscription** (langganan bandwidth bulanan)
+#### Mengubah dari **tagihan per lalu lintas menjadi langganan bandwidth bulanan** 
 
 Biaya lalu lintas akan ditentukan setiap jam pada saat perubahan. Untuk mengubah opsi penagihan, Anda hanya perlu membayar biaya langganan bandwidth bulanan.
