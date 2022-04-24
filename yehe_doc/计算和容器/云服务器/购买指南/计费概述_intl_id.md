@@ -19,7 +19,7 @@ Tencent Cloud menyediakan berbagai perangkat penyimpanan data yang fleksibel, he
 - Arsitektur: disk cloud, disk lokal, dan Cloud Object Storage
 
 Tencent Cloud kini menyediakan dua jenis disk cloud, termasuk Premium Cloud Storage dan SSD. Ada dua opsi penagihan: langganan bulanan dan bayar sesuai pemakaian.
-Untuk informasi selengkpanya tentang harga disk, lihat [Daftar Harga](https://intl.cloud.tencent.com/document/product/213/2255).
+Untuk informasi selengkapnya tentang harga disk, lihat [Daftar Harga](https://intl.cloud.tencent.com/document/product/213/2255).
 
 ## Bandwidth Jaringan
 

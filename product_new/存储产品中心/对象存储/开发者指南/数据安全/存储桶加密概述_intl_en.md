@@ -34,7 +34,7 @@ For buckets requiring encryption, note the following:
 - After encryption is configured for a bucket, for inventory reports delivered to the bucket:
   - If encryption is not configured for the inventory, the delivered reports will be encrypted with the encryption configuration of the bucket.
   - If encryption is configured for the inventory, the delivered reports will be encrypted with the encryption configuration of the inventory.
-- After encryption is configured for the bucket, the data pulled back to the bucket will be encrypted with the encryption configuration of the bucket by default.
+- After encryption is configured for a bucket, the data retrieved from the origin to the bucket will be encrypted with the encryption configuration of the bucket by default.
 
 #### Encrypting buckets that have cross-region replication rules configured
 

@@ -24,7 +24,7 @@ Buckets and objects are basic resources of the COS service. Folders are a specia
 
 Buckets and objects have subresources associated with them.
 
-Subresources of buckets include:
+The subresources associated with a bucket include:
 
 - acl and policy: access control list of a bucket
 - website: static website hosting configuration of a bucket
@@ -32,7 +32,7 @@ Subresources of buckets include:
 - cors: cross-origin resource sharing (CORS) configuration of a bucket
 - lifecycle: lifecycle configuration of a bucket
 
-Subresources of objects include:
+The subresources associated with an object include:
 
 - acl: access control information of an object
 - restore: restoration configuration of an archive object

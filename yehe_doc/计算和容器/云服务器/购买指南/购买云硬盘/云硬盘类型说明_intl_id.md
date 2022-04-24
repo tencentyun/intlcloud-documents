@@ -29,7 +29,7 @@ Tabel di bawah ini membandingkan performa keempat layanan CBS.
 | IOPS Maksimum | 1.100.000 | 100.000 | 26.000 | 6.000 |
 | Performa IOPS acak | Performa dasar: IOPS acak = min{4000+100 × kapasitas (GiB), 50000}<br>Performa ekstra: IOPS maksimum = min{128 × performa ekstra, 1050000} <br> | Performa dasar: IOPS acak = min{1800 + 50 × kapasitas (GiB), 50000}<br>Performa ekstra: IOPS maksimum = min{128 × performa ekstra, 50000} <br>Untuk informasi selengkapnya, lihat [Performa SSD yang Ditingkatkan] (https://intl.cloud.tencent.com/document/product/362/39611) | IOPS acak = min{1800 + 30 × kapasitas (GiB), 26000} | IOPS acak = min{1800 + 8 × kapasitas (GiB), 6000} |
 | Throughput maksimum (MB/dtk) | 4.000 MB/dtk | 1.000 MB/dtk | 260 MB/dtk | 150 MB/dtk |
-| Performa throughput (MB/dtk) | Performa dasar: throughput = min{120 + 0,5 × kapasitas (GiB), 350}<br>Performa ekstra: throughput = min{1 × performa ekstra, 3650} <br> | Performa dasar: throughput = min{120 + 0,5 × kapasitas (GiB), 350}<br>Performa ekstra: throughput = min{1 × performa ekstra, 650} <br>Untuk informasi selengkapnya, lihat [Performa SSD yang Ditingkatkan](https://intl.cloud.tencent.com/document/product/362/39611) | Throughput = min{120 + 0,2 × kapasitas (GiB), 260} | Throughput = min{100 + 0,15 × kapasitas (GiB), 150} |
+| Performa throughput (MB/detik) | Performa dasar: throughput = min{120 + 0,5 × kapasitas (GiB), 350}<br>Performa ekstra: throughput = min{1 × performa ekstra, 3650} <br> | Performa dasar: throughput = min{120 + 0,5 × kapasitas (GiB), 350}<br>Performa ekstra: throughput = min{1 × performa ekstra, 650} <br>Untuk informasi selengkapnya, lihat [Performa SSD yang Ditingkatkan](https://intl.cloud.tencent.com/document/product/362/39611) | Throughput = min{120 + 0,2 × kapasitas (GiB), 260} | Throughput = min{100 + 0,15 × kapasitas (GiB), 150} |
 | Latensi baca/tulis acak utas tunggal | 0,1-0,5 md | 0,3-1 md| 0,5-3 md | 0,8-5 md|
 |Catatan| SSD Tremendous hanya dapat dibeli dengan instans [Standard Storage Optimized S5se](https://intl.cloud.tencent.com/document/product/213/11518), yang tidak dapat dibeli secara independen, atau digunakan pada jenis instans CVM lainnya. | Performa SSD yang Ditingkatkan hanya dijamin saat dipasang ke S5, M5, dan SA2 dan model generasi yang lebih baru. | Tidak ada | Tidak ada |
 
@@ -37,7 +37,7 @@ Tabel di bawah ini membandingkan performa keempat layanan CBS.
 >?Perbedaan utama antar disk cloud adalah performa I/O.
 
 ## Kasus Penggunaan
-**Enhanced SSD is more suitable for latency-sensitive or I/O-intensive scenarios** (SSD yang Ditingkatkan lebih cocok untuk skenario yang sensitif terhadap latensi atau intensif I/O), termasuk:
+**SSD yang Ditingkatkan lebih cocok untuk skenario yang sensitif terhadap latensi atau intensif I/O**, termasuk:
 - Performa tinggi dan keandalan data tinggi: cocok untuk sistem bisnis misi-kritis dengan beban tinggi. SSD menyediakan redundansi data tiga salinan dan dilengkapi dengan kemampuan komprehensif untuk pencadangan data, snapshot, dan pemulihan data dalam hitungan detik.
 - Database menengah dan besar: mendukung aplikasi database relasional menengah dan besar yang berisi tabel dengan jutaan baris, seperti MySQL, Oracle, SQL Server, dan MongoDB.
 - NoSQL Besar: mendukung bisnis NoSQL seperti HBase dan Cassandra.
@@ -45,7 +45,7 @@ Tabel di bawah ini membandingkan performa keempat layanan CBS.
 - Layanan video: cocok untuk aplikasi dengan kebutuhan bandwidth penyimpanan yang tinggi, seperti encoding dan decoding audio/video, streaming langsung, dan pemutaran rekaman.
 - Analisis data besar: cocok untuk analisis data, penambangan data, inteligensi bisnis, dan bidang lainnya. Menyediakan kemampuan pemrosesan terdistribusi untuk data di tingkat TB dan PB.
 
-**Tremendous SSD is more suitable for latency-sensitive scenarios that require ultra low latency** (SSD Tremendous lebih cocok untuk skenario sensitif latensi yang membutuhkan latensi sangat rendah), termasuk:
+**SSD Tremendous lebih cocok untuk skenario sensitif latensi yang membutuhkan latensi sangat rendah**, termasuk:
 - Penyimpanan nilai utama (KV): mendukung rocksdb, etcd, dll. Layanan penyimpanan KV umumnya menulis data ke disk dalam mode I/O serial yang memerlukan latensi sangat rendah. Dengan demikian, latensi 1 putaran menentukan performa sistem secara keseluruhan. SSD Tremendous menjamin latensi serendah puluhan mikrodetik, membuatnya cocok untuk sistem bisnis inti dengan persyaratan keandalan dan ketersediaan data tinggi.
 - Database besar: mendukung aplikasi database relasional menengah dan besar yang berisi tabel dengan jutaan baris, seperti MySQL, Oracle, SQL Server, dan MongoDB.
 - NoSQL Besar: mendukung bisnis NoSQL seperti HBase dan Cassandra.
@@ -55,11 +55,11 @@ Tabel di bawah ini membandingkan performa keempat layanan CBS.
 - Analisis data besar: cocok untuk analisis data, penambangan data, inteligensi bisnis, dan bidang lainnya. Menyediakan kemampuan pemrosesan terdistribusi untuk data di tingkat TB dan PB.
 - Performa tinggi dan keandalan data tinggi: cocok untuk sistem bisnis misi-kritis dengan beban tinggi. SSD menyediakan redundansi data tiga salinan dan dilengkapi dengan kemampuan komprehensif untuk pencadangan data, snapshot, dan pemulihan data dalam hitungan detik.
 
-**SSD is applicable for applications with high and medium loads** (SSD berlaku untuk aplikasi dengan beban tinggi dan sedang), termasuk:
+**SSD berlaku untuk aplikasi dengan beban tinggi dan sedang**, termasuk:
 - Database sedang: aplikasi database relasional menengah dan besar, seperti MySQL.
-- Pemrosesan citra: mendukung analisis data dan bisnis penyimpanan, seperti pemrosesan citra.
+- Pemrosesan gambar: mendukung analisis data dan bisnis penyimpanan, seperti pemrosesan gambar.
 
-**Premium Cloud Storage is mainly suitable for the following data scenarios** (Premium Cloud Storage utamanya cocok untuk skenario data berikut):
+**Premium Cloud Storage cocok terutama untuk skenario data berikut**:
 - Database kecil dan menengah dan server Web/Aplikasi. Memberikan performa I/O jangka panjang dan stabil.
 - Skenario yang membutuhkan kapasitas dan performa penyimpanan yang seimbang, seperti layanan kantor perusahaan.
 - Pengujian bisnis inti dan debugging front and back end.

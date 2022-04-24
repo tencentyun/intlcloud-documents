@@ -1,10 +1,10 @@
 When your account balance is below the alert threshold, Tencent Cloud can send you alerts to remind you to top up or back up your data.
 
 ### Setting balance alerts
-1. Log in to the console, go to **Billing Center > Payment Management > [Payment](https://console.intl.cloud.tencent.com/expense/recharge)**, and click **Balance alerts**.
-![](https://main.qcloudimg.com/raw/04bfa682701ef9ca3b6cbcbc35b5ec2b.png)
+1. Log in to the console, go to **Billing Center > Payment Management > [Payment](https://console.intl.cloud.tencent.com/expense/recharge)**, and click **Balance alert**.
+![](https://qcloudimg.tencent-cloud.cn/raw/42c9213af7d6960b6c542011fecd15bc.png)
 2. Select **Receive balance alerts**, enter an alert threshold (up to nine integral digits and two fractional digits; cannot be a negative number), and click **Confirm**.
-![](https://main.qcloudimg.com/raw/9bffbbfd346e757f4b1064349d69a209.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f1100ffa6ce03ac4d60d6b56b263a99.png)
 
 
 ### Specifying who and how to receive alerts
@@ -14,9 +14,9 @@ When your account balance is below the alert threshold, Tencent Cloud can send y
 
 
 1. Select **Balance Warning Notice** and click **Add recipient** or **Modify Message Recipient**.
-![](https://main.qcloudimg.com/raw/26283ac84f261eed09d841d4758d9c8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/06fac3201bed4baca6d98e5606d0e477.png)
 2. In the pop-up window, modify the recipients and alert receiving methods, and click **OK**.
-![](https://main.qcloudimg.com/raw/d8392d2cbbb595c26fe6775d56be0e58.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ba5d1a5f96eaa7da03b027321448ffd6.png)
 
 ### Disabling balance alerts
 If you do not want to receive balance alerts anymore, unselect **Receive balance alerts**.

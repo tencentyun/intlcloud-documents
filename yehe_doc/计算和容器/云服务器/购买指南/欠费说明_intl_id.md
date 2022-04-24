@@ -3,7 +3,7 @@
 ![](https://main.qcloudimg.com/raw/463d6b815dcf2677ebe28f9683d14430.jpg)
 
 ### Catatan
-- Setelah Anda berhenti menggunakan sumber daya bayar sesuai pemakaian, **terminate them as soon as possible** (hentikan sumber daya tersebut sesegera mungkin) untuk menghindari pengurangan biaya.
+- Setelah Anda berhenti menggunakan sumber daya bayar sesuai pemakaian, **hentikan sumber daya tersebut sesegera mungkin** untuk menghindari pengurangan biaya.
 - Setelah instans CVM dihentikan atau diambil alih, datanya akan dihapus dan tidak dapat dipulihkan.
 - Karena konsumsi sumber daya aktual terus berubah, mungkin ada beberapa perbedaan kecil untuk saldo yang tercantum di peringatan saldo hampir habis.
 
@@ -11,7 +11,7 @@
 
 <table>
 	<tr><th>Jenis Peringatan</th><th>Deskripsi</th></tr>
-	<tr><td><b>Pengingat pembayaran melewati jatuh tempo</b></td><td>Sumber daya bayar sesuai pemakaian dibebankan pada jam tersebut. Saat saldo akun Anda minus, pembuat akun Tencent Cloud, kolaborator sumber daya global, dan kolaborator keuangan Anda akan menerima pemberitahuan melalui email dan SMS.</td></tr>
+	<tr><td><b>Pengingat pembayaran melewati jatuh tempo</b></td><td>Sumber daya bayar sesuai pemakaian ditagih pada jam tersebut. Saat saldo akun Anda minus, pembuat akun Tencent Cloud, kolaborator sumber daya global, dan kolaborator keuangan Anda akan menerima pemberitahuan melalui email dan SMS.</td></tr>
 	<tr><td><b>Peringatan pembayaran melewati jatuh tempo</b></td><td>Fitur ini dinonaktifkan secara default.</td></tr>
 </table>
 

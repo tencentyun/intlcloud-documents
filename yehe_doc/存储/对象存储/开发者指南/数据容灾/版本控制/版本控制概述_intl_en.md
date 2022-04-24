@@ -24,7 +24,7 @@ You can upload, query, and delete objects in a bucket no matter what the version
 - If versioning is enabled or suspended, you can specify version IDs while uploading, querying or deleting objects. **Delete markers** will be added to deleted objects.
 
 
-### Managing Objects in a Versioning-enabled Bucket
+### Managing objects in a versioning-enabled bucket
 For objects in the bucket before versioning is enabled, their version ID will be “null”. Enabling versioning will change the way COS handles the objects, such as how COS makes requests, but not the objects themselves. Objects with the same name uploaded thereafter will be stored in the same bucket with different version IDs. You can manage objects in a bucket with versioning enabled as described below:
 
 >An object is uploaded to both buckets with versioning enabled and not enabled in the same way, but with different version IDs. If versioning is enabled, COS will assign a unique version ID to any object uploaded to the bucket; if versioning is not enabled, the version ID will remain null.
@@ -55,19 +55,19 @@ A GET request with no version ID specified returns the current version of an obj
 
 ![](https://main.qcloudimg.com/raw/8c4bb589985ea664a8266278877898e8.jpg)
 
-A GET request with a version ID specified returns the specified version of an object. The following figure shows how a GET versionId request returns the specified version of the object. The request can also return the current version.
+A GET request with a version ID specified returns the specified version of an object. The following figure shows how such a request returns the specified version of the object. The request can also return the current version.
 
 ![](https://main.qcloudimg.com/raw/f6c9cedf716a9d2b069ea8b103a79260.png)
 
 
 #### Querying the metadata of an object version
-If you only want to query the metadata of an object instead of its content, you can use the HEAD operation. By default, you get the metadata of the latest version. To query the metadata of a specific object version, you need to specify its version ID when submitting the request.
+If you only want to query the metadata of an object instead of its content, use the HEAD operation. By default, you get the metadata of the latest version. To query the metadata of a specific object version, specify its version ID when submitting the request.
 To query the metadata of an object version:
 - Set versionId to the ID of the version of the object whose metadata you want to query.
 - Send a HEAD operation request with the versionId specified.
 
 #### Deleting objects
-You can delete unnecessary object versions whenever you want. When you make a DELETE request in a versioning-enabled bucket, there will be two scenarios:
+You can delete unnecessary object versions. When you make a DELETE request in a versioning-enabled bucket, there will be two scenarios:
 1. Perform a simple DELETE operation with no version ID specified.
 This is similar to putting the deleted objects to the "recycle bin". The objects are not permanently deleted and can be restored if needed.
 As you can see below, if you do not specify a version ID, the DELETE operation will not delete the 123.txt object; instead, it will insert a delete marker and add a new version ID.

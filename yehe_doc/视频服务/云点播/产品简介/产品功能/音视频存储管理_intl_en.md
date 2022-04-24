@@ -22,7 +22,6 @@ You can manage media files through the VOD console or APIs by performing operati
 - Media file search with multiple filters
 - Media file processing, transcoding, watermarking, thumbnail setting, and screencapture
 - Exporting media file information in CSV or JSON format
-- Sharing media files via WeChat QR code
 - Setting multiple levels of categories and labels for videos
 - Managing media files by table, online preview, and download
 - Supporting multiple storage classes

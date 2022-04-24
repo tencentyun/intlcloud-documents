@@ -1,8 +1,8 @@
 ### Aturan Pencocokan
 
-Instans cadangan (RI) yang dibeli secara otomatis sesuai dengan instans prabayar selama jangka waktu RI. Untuk saat ini, hanya instans Linux yang didukung. Jika tidak memiliki instans yang sesuai dengan spesifikasi RI, RI akan tidak aktif tetapi tetap dikenakan biaya. Saat membeli instans dengan spesifikasi yang sesuai, RI akan langsung mencocokkannya dan manfaat berlaku.  
+Instans cadangan (RI) yang dibeli secara otomatis dicocokan dengan instans prabayar selama jangka waktu RI. Untuk saat ini, hanya instans Linux yang didukung. Jika tidak memiliki instans yang sesuai dengan spesifikasi RI, RI akan tidak aktif tetapi tetap dikenakan biaya. Saat membeli instans dengan spesifikasi yang sesuai, RI akan langsung mencocokkannya dan manfaat berlaku.  
 
-- RI secara otomatis disesuaikan dengan instans bayar sesuai pemakaian tanpa intervensi manual.
+- RI secara otomatis dicocokan dengan instans bayar sesuai pemakaian tanpa intervensi manual.
 - Manfaat penagihan RI dapat berlaku hingga maksimum 3.600 detik (satu jam) penggunaan instans per jam. Anda dapat menjalankan beberapa instans secara bersamaan, tetapi hanya dapat menerima manfaat diskon RI untuk total 3.600 detik per jam; penggunaan instans yang melebihi 3.600 detik dalam satu jam dibebankan dengan tarif bayar sesuai pemakaian. 
 
 Misalnya, jika Anda membeli satu S3.16xlarge256 RI di Silicon Valley Zona 1, dan menjalankan tiga instans S3.16xlarge256 bayar sesuai pemakaian dari atribut yang sama secara bersamaan di zona ketersediaan yang sama selama satu jam, satu instans dikenakan biaya satu jam penggunaan RI dan dua instans lainnya dikenakan biaya dua jam penggunaan bayar sesuai pemakaian. 
@@ -17,7 +17,7 @@ Jika tiga instans yang memenuhi syarat berjalan secara bersamaan, manfaat penagi
 
 #### Waktu efektif
 
-RI dibebankan setiap jam. RI ini berlaku pada jam sebelumnya dari waktu pembuatan dan kedaluwarsa pada jam berikutnya dari waktu kedaluwarsa. 
+RI ditagih setiap jam. RI ini berlaku pada jam sebelumnya dari waktu pembuatan dan kedaluwarsa pada jam berikutnya dari waktu kedaluwarsa. 
 
 Contoh 1: misal Anda membeli CVM R1 berjangka 1 tahun pada 25 Mei 2019 11:15:24, RI akan berlaku sejak 25 Mei 2019 11:00:00 hingga 25 Mei 2020 11:59:59.
 

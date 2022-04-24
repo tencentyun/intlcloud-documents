@@ -4,8 +4,8 @@
 Tencent Cloud menyediakan jaringan BGP multi-jalur berkualitas tinggi untuk memastikan pengalaman jaringan yang optimal.
 Tencent Cloud saat ini menyediakan dua paket penagihan: tagihan per lalu lintas dan tagihan per bandwidth.
 >! 
-> - Biaya jaringan publik dibebankan berdasarkan bandwidth/lalu lintas keluar. Bandwidth keluar mengacu pada bandwidth dari CVM ke jaringan publik. Misalnya, pengguna menggunakan klien untuk mengunduh sumber daya instans CVM.
-> - Untuk menghindari biaya tak terduga akibat lonjakan lalu lintas, Anda dapat menetapkan batas bandwidth. Setiap lalu lintas di atas batas tidak akan disertakan dan tidak akan dikenakan biaya apa pun.
+> - Biaya jaringan publik ditagih berdasarkan bandwidth/lalu lintas keluar. Bandwidth keluar mengacu pada bandwidth dari CVM ke jaringan publik. Misalnya, pengguna menggunakan klien untuk mengunduh sumber daya instans CVM.
+> - Untuk menghindari biaya tak terduga akibat lonjakan lalu lintas, Anda dapat menetapkan batas bandwidth. Setiap lalu lintas di atas batas akan dibatalkan dan tidak akan dikenakan biaya apa pun.
 > 
 
 

@@ -1,10 +1,10 @@
 当您账户可用余额小于预警阈值时，腾讯云将向您发送提醒消息，提醒您及时充值或备份数据，以保证您云资源的正常使用。
 
 ### 设置余额预警
-1. 登录腾讯云官网**费用中心> 资金管理  > [付款](https://console.intl.cloud.tencent.com/expense/recharge)**，单击**余额预警通知标签**。
-![](https://main.qcloudimg.com/raw/04bfa682701ef9ca3b6cbcbc35b5ec2b.png)
+1. 登录腾讯云官网 <b>费用中心 > 资金管理 > [付款](https://console.intl.cloud.tencent.com/expense/recharge)</b>，单击**余额预警通知标签**。
+![](https://qcloudimg.tencent-cloud.cn/raw/42c9213af7d6960b6c542011fecd15bc.png)
 2. 勾选**订阅余额预警消息**，并在预警阈值中输入数字，不可输入负数，支持小数点前9位和小数点后2位，确认后单击**确定**。
-![](https://main.qcloudimg.com/raw/9bffbbfd346e757f4b1064349d69a209.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2f1100ffa6ce03ac4d60d6b56b263a99.png)
 
 
 ### 设置消息接收人和接收方式
@@ -14,9 +14,9 @@
 
 
 1. 选择**账户预警通知**，设置接收方式，单击**添加接收人**或**修改消息接收人**。
-![](https://main.qcloudimg.com/raw/26283ac84f261eed09d841d4758d9c8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/06fac3201bed4baca6d98e5606d0e477.png)
 2. 在弹出的窗口中，根据实际需求，更改消息接收人和接收方式，单击**确定**。
-![](https://main.qcloudimg.com/raw/d8392d2cbbb595c26fe6775d56be0e58.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ba5d1a5f96eaa7da03b027321448ffd6.png)
 
 ### 关闭通知
 如您不希望收到该预警通知，取消勾选“订阅余额预警消息”即可。

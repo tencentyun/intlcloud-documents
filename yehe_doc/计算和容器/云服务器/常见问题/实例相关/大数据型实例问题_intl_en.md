@@ -1,80 +1,56 @@
 
-### What is Big Data D1 instance?
+### What is a big data instance?
+Big data instances are designed specifically for scenarios like Hadoop distributed computing, massive log processing, distributed file system, large data warehouse, and more. This CVM instance type is mainly used to solve the cloud computing and storage problems of massive business data.
 
-Big Data D1 instance is designed specifically for Hadoop distributed computing, massive log processing, distributed file system, large data warehouse, and other business scenarios. This CVM instance type is mainly used to solve the cloud computing and storage problems of massive business data.
+### Which industry customers and business scenarios are big data instances applicable to?
+Big data instances are applicable to customers in the Internet, game, finance and other industries that require big data computing and storage analysis, as well as business scenarios that require massive data storage and offline computing. They can meet the storage, capacity and private network bandwidth requirements of distributed computing businesses represented by Hadoop.
+In addition, with the highly available architectural framework of distributed computing services such as Hadoop, big data instances use local storage, making the total cost close to that of a self-built Hadoop cluster in IDC, while ensuring massive storage capacity and high performance.
 
-### Which industry customers and business scenarios are Big Data D1 instances applicable to?
+### Features
+* A single instance has a throughput capacity up to 2.8 GB/s. HDD local disk is ideal for throughput-intensive storage. With stable and high-performing sequential read/write throughput, big data instances are designed specifically for Hadoop distributed computing, massive log processing, large data warehouse and other business scenarios.
+* Local storage has a unit price as low as 1/10 of S2 instances, making its total cost close to that of a self-built Hadoop clusters in IDC while ensuring massive storage capacity and high performance. Big data instances deliver the optimal cost-efficiency for big data scenarios.
+* Read/write latency is as lows as 2-5ms. Big data instances are high-performing models suitable for enterprise developers.
+* It supports the pay-as-you-go billing method.
 
-Big Data D1 instance is applicable to customers in the Internet, game, finance and other industries that require big data computing and storage analysis, as well as business scenarios that require massive data storage and offline computing. It can meet the storage, capacity and private network bandwidth requirements of distributed computing businesses represented by Hadoop.
-In addition, with the highly available architectural framework of distributed computing businesses represented by Hadoop, Big Data D1 instance features local storage design to achieve a total cost close to that of the self-built Hadoop cluster on an offline IDC, while ensuring massive storage capacity and high performance.
+### Specifications
+>?For more information on instance specifications, see the “Big Data Family” section in [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518#D).
 
-### Big Data D1 instance features
+### Notes on local data storage
 
-* A single instance has throughput capacity up to 2.3 GB/sec. HDD local disk is the best choice for throughput-intensive storage. With stable and high-performing sequential read/write throughput, Big Data D1 instance is designed specifically for Hadoop distributed computing, massive log processing, large data warehouse and other business scenarios.
-* Local storage has a unit price as low as 1/10. Big Data D1 instance features massive storage capacity and high performance, while ensuring optimal cost-efficiency for big data scenarios. It has a total cost close to that of the self-built Hadoop cluster on an offline IDC.
-* Read/write latency is minimized to 2 ms-5 ms. Big Data D1 instance, with its high-performing and enterprise-level model, is suitable for enterprise developers.
-*The billing method of pay-as-you-go is supported.
+Big data instances use local disk as the data disk, which **may lose data** (e.g., when the host crashes). If your application cannot guarantee data reliability, we recommend you choose an instance that can use cloud disks as the data disk.
 
-### Big Data D1 instance specifications
-
-| Model | vCPU (core) | Memory (GB) | Local Data Disk | Private Network Bandwidth | Note |
-|-------|----|------|------|------|------|
-| D1.2XLARGE32 | 8 | 32 | 2 × 3720 GB | 1.5 Gbps | - |
-| D1.4XLARGE64 | 16 | 64 | 4 × 3720 GB | 3 Gbps | - |
-| D1.6XLARGE96 | 24 | 96 | 6 × 3720 GB | 4.5 Gbps | - |
-| D1.8XLARGE128 | 32 | 128 | 8 × 3720 GB | 6 Gbps | - |
-| D1.14XLARGE224 | 56 | 224 | 12× 3720 GB | 10 Gbps | Exclusive for host |
-
-### Notes on local data storage for Big Data D1 instance
-
-Big Data D1 instance uses local disk as the data disk, which may lead to **data loss** (e.g., when the host crashes). If your application cannot guarantee data reliability, we recommend you choose an instance that can use cloud disk as the data disk.
-
-Relationship between operating on an instance with local disk and data retention is as follows:
+The table below shows you the local disk data status after you perform different operations on an instance with the local disk.
 
 | Operation | Local Disk Data Status | Description |
 |------|-----|-----|
-| Operating system restart/Console restart/Forced restart | Retained | Local disk storage is retained. Data is retained. |
-| Operating system shutdown/Console shutdown/Forced shutdown | Retained | Local disk storage is retained. Data is retained. |
+| Log in to an instance to restart it, restart an instance on the console, or forcibly restart an instance | Retained | Local disk storage as well as the data is retained. |
+| Log in to an instance to shut it down, shut down an instance on the console, or forcibly shut down an instance | Retained | Local disk storage as well as the data is retained. |
 | Terminate (instance) on the console | Erased | Local disk storage is erased. No data is retained. |
 
-> Do not store business data that needs to be retained for a long time on the local disk. Back up data in advance and use a highly available architecture. For long-term retention, we recommend you store the data on CBS disk.
+>! Do not store business data that needs to be retained for a long time on a local disk. Back up data in advance and use a highly available architecture. We recommend you store the data on a CBS disk for long-term retention.
 
-### How can I purchase Big Data D1 local disk?
+### How can I purchase a local disk for big data instances?
+Local disk can only be purchased when a big data instance is created. The instance specifications determine the number and capacity of local disks you can purchase.
 
-Local disk cannot be purchased separately. You can only purchase local disk when creating the D1 instance. The number and capacity of local disks depend on instance specifications.
-
-### Does the local storage of Big Data D1 instance support snapshot?
+### Does the local storage of big data instances support snapshot?
 No.
 
-### Does Big Data D1 instance support configuration adjustment and failover?
+### Does a big data instance support configuration adjustment and failover?
 
-Configuration adjustment is not supported.
-Big Data D1 instance features massive data storage and uses local HDD as data disk. This instance type does not support data disk failover (e.g., when the host crashes or local disk is damaged). To prevent data loss, we recommend you use a redundancy policy, for example, a file system that supports redundancy and fault tolerance (such as HDFS and Mapr-FS). In addition, we recommend you regularly back up data to a persistent storage system, such as Tencent COS. For more information, please see [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436).
-After a local disk is damaged, you need to shut down the CVM instance so we can change the local disk. If the CVM instance has crashed, we will notify you and fix it.
+No.
+Big data instances feature massive data storage and use local HDD as data disk. To prevent data loss (when the host crashes or local disk is damaged), we recommend you use a redundancy policy, for example, a file system that supports redundancy and fault tolerance (such as HDFS and Mapr-FS). We also recommend you regularly back up data to a persistent storage system, such as Tencent COS. For more information, please see [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436).
+If the local disk is damaged, you will need to shut down the CVM instance for us to replace the local disk. We will notify you and perform fixes if the CVM instance crashes.
 
-### In which regions can I purchase Big Data D1 instance?
+### What is the difference between the Big Data family and High IO I2 instances?
 
-The following availability zones are supported:
-* Shanghai Zone 2
-* Beijing Zone 2
-* Guangzhou Zone 3
+High IO I2 instances featuring ultra-high IOPS are designed specifically for business scenarios with low latency and high random IO. They are suitable for high-performance database (relational database, NoSQL, etc.). Big data instances are designed specifically for business scenarios that require high sequential read/write and low-cost massive data storage. This type features high storage cost-efficiency and private network bandwidth.
 
+### How is the disk throughput of big data instances?
 
-### Why cannot I find the data disk after purchasing a Big Data D1 instance?
+Big data D2 instances boast local disks with the sequential read/write throughput as follows.
+* For a single disk, the sequential read throughput is 220+ MB/s and sequential write throughput is 220+ MB/s (block size of 128 KB and queue depth of 32).
+* For the CVM, the throughput can reach up to 2.8 GB/s (block size of 128 KB and queue depth of 32).
 
-The local disk of a Big Data D1 instance is not mounted automatically. You can mount them as needed.
+### What is the difference between the local disk of big data instances and CBS?
 
-### What is the difference between Big Data D1 instance and High IO I2 instance?
-
-High IO I2 instance is a CVM instance designed specifically for business scenarios with low latency and high random IO. It has ultra-high IOPS performance, and is used mainly for high-performing database (relational database, NoSQL, etc.). Big Data D1 instance is a CVM instance designed specifically for business scenarios that require high sequential read/write and low-cost massive data storage. It features high-performing storage with cost efficiency and properly configured private network bandwidth.
-
-### How is the disk throughput of Big Data D1 instance?
-
-Take D1.14XLARGE224 as an example, sequential read/write throughput of the local disk of Big Data D1 instances is as below:
-* For a single disk, the sequential read/write speed is 190+ MB/sec (128 KB of block size and depth of 32).
-* For 12 disks, the concurrent sequential read/write speed is 2.3+ GB/sec (128 KB of block size and depth of 32).
-
-### What is the difference between the local disk of Big Data D1 instance and CBS?
-
-[Cloud Block Storage](https://intl.cloud.tencent.com/document/product/362) provides a highly efficient and reliable storage device for CVM instance. It is a customizable block storage device with high availability, high reliability and low cost, and can be used as an independent scalable disk for CVM. It provides data storage at the data block level and employs a 3-copy distributed mechanism to ensure data reliability for CVM instance, meeting the requirements of different application scenarios. The local disk of Big Data D1 instance is designed specifically for business scenarios that require high sequential read/write for massive local data sets, such as Hadoop distributed computing, large-scale parallel computing, and data warehouse.
-
+[Cloud Block Storage](https://intl.cloud.tencent.com/document/product/362) is a highly available, highly reliable, low-cost, and customizable block storage device. It can be used as an independent and scalable disk for CVM, providing efficient and reliable storage devices. It provides data storage at the data block level and employs a three-copy distributed mechanism to ensure data reliability for CVM instance, meeting the requirements of different use cases. The local disk of big data instances is designed specifically for business scenarios that require high sequential read/write for massive local data sets, such as Hadoop distributed computing, large-scale parallel computing, and data warehouse.

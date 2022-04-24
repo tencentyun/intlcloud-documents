@@ -1,71 +1,83 @@
->?
->- Anycast Internet Acceleration (AIA) is currently in beta. To try it out, please [apply to be a beta user](https://intl.cloud.tencent.com/apply/p/86ulv50u1e8).
->- AIA is now available in the following regions: the Chinese mainland, Hong Kong (China), Japan, South Korea, Thailand, Singapore, India, United States, Russia, and Frankfurt.
-## Billing
-AIA fees consist of two parts: public network fee and IP resource occupation fee.
->?In this document, the Asia Pacific region covers Hong Kong (China), Japan, South Korea, Thailand, Singapore, and India. The North America region covers the United States. The Europe region covers Russia and Frankfurt.
+This document describes the billing details of AIA.
+>?Anycast Internet Acceleration (AIA) is currently in beta.To try it out,please [submit an application](https://console.cloud.tencent.com/workorder/category).
+>
 
-### Public network fee
-The public network fee of AIA is billed by bandwidth at a unit price higher than that of the public network. Specifically, you will be charged by monthly 95th percentile of either the outbound or inbound bandwidth (whichever is higher) in USD/Mbps/month as shown below:
-<table style="width:525px;">
-<thead>
-<tr>
-<th style="width:207px !important;padding:7px;height:45px;position:relative;font-weight:700;" valign="top">
-<div style="position:absolute;width:1px;height:213px;top:0;left:0;background-color: #d9d9d9;transform:rotate(-72deg);transform-origin:top;"></div><span style="width:98px -moz-available;display:block;padding-left:80px;">Server Region</span><span style="width:98px -moz-available;display:block;padding-right:80px;padding-top:10px">Public Ingress/Egress Region</span></th>
 
-<th style="font-weight:700;width:80px;text-align:center;">Chinese mainland</th>
-<th style="font-weight:700;width:80px;text-align:center;">Asia Pacific</th>
-<th style="font-weight:700;width:80px;text-align:center;">North America</th>
-<th style="font-weight:700;width:80px;text-align:center;">Europe</th>
-</tr>
-</thead>
-<tbody>
+## Billable Items
+AIA fees consist of the **IP resource fee** and **public network fee**.
+<table>
 <tr>
-<th style="font-weight:700;">Chinese mainland</th>
-<td style="text-align:center;">18.86</td>
-<td style="text-align:center;">-</td>
-<td style="text-align:center;">-</td>
-<td style="text-align:center;">-</td>
+<th width="18%">Billable Item</th>
+<th width="18%">Billing Mode</th>
+<th>Description</th>
 </tr>
 <tr>
-<th style="font-weight:700;">Asia Pacific</th>
-<td style="text-align:center;">-</td>
-<td style="text-align:center;">18.86</td>
-<td style="text-align:center;">18.86</td>
-<td style="text-align:center;">18.86</td>
+<td><a href="#ipcost">IP resource fee</a></td>
+<td>Hourly pay-as-you-go</td>
+<td>An idle Anycast EIP that is not bound to any cloud resources will only incur the IP resource fee.</td>
 </tr>
-<tr>
-<th style="font-weight:700;">North America</th>
-<td style="text-align:center;">-</td>
-<td style="text-align:center;">18.86</td>
-<td style="text-align:center;">18.86</td>
-<td style="text-align:center;">18.86</td>
-</tr>
-<tr>
-<th style="font-weight:700;">Europe
-</th>
-<td style="text-align:center;">-</td>
-<td style="text-align:center;">18.86</td>
-<td style="text-align:center;">18.86</td>
-<td style="text-align:center;">18.86</td>
-</tr>
-</tbody>
+<tr><td><a href="#widthcost">Public network fee</a></td><td>Pay-as-you-go</td><td>Using an Anycast EIP that is bound to a cloud resource to access the public network will only incur the public network fee. Anycast EIP is billed on the <a href="https://intl.cloud.tencent.com/document/product/684/15255">monthly 95th percentile</a> basis.</td></tr>
 </table>
 
->?95th percentile: fees are billed by calendar month. In a calendar month, all the valid 5-minute bandwidth values are sorted in descending order, and the top 5% are removed. The highest value of the remaining values is used as the 95th percentile of the monthly peak bandwidth.
->Assume that all the bandwidth value points in a month of 30 days are valid. Because one value point is generated every 5 minutes, 12 value points are generated every hour, and 8,640 (12 x 24 x 30 = 8,640) value points are generated every month. All the value points are sorted in descending order, the top 5% (8,640 × 5% = 432) are removed, and the bandwidth value of the 433rd point will be billed.
+>? For bill-by-IP accounts, both fees are charged on the EIP. For bill-by-CVM accounts, the IP resource fee is charged on the EIP, while the public network fee is charged on the bound cloud resource instance such as CVM instance. To check your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
 
-### Anycast EIP resource occupation fees
-An Anycast EIP that is not bound to instances will incur a resource occupation fee. For more information, please see the “IP Resource Fee” section in [Elastic IP Billing](https://intl.cloud.tencent.com/document/product/213/17156).
+### [IP resource fee](id:ipcost)
+An Anycast EIP that is not bound to cloud resources incurs IP resource fees. For more information, see the “IP Resource Fee” section in [Elastic IP Billing](https://intl.cloud.tencent.com/document/product/213/17156).
+
+### [Public network fee](id:widthcost)
+When an Anycast EIP is created, AIA BGP bandwidth package is automatically created as well. Billing details are as follows:
+<table>
+<thead>
+<tr>
+<th align="left" width="50%">Anycast EIP Region</th>
+<th align="left">Acceleration Region</th>
+<th align="left" width="25%">Unit Price (USD/Mbps/month)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Asia (Hong Kong (China), Singapore, Bangkok, Mumbai, Seoul, and Tokyo)<br/>
+North America (Silicon Valley)<br/>
+Europe (Frankfurt and Moscow)
+</td>
+<td align="left">Regions outside the Chinese mainland
+</td>
+<td align="left">18.86</td>
+</tr>
+</tbody></table>
+
+>?
+>- AIA only provides acceleration services for regions outside the Chinese mainland. It does not accelerate the transmission between the Chinese mainland and other regions.
+>- AIA adopts the aggregated billing, which generates bills in the Guangzhou region.
+>- After creating an Anycast EIP in the console, the automatically generated AIA BGP bandwidth package only records the bandwidth usage details in the region, which is not used for billing.
+>- All Anycast EIPs in a single region are aggregated into the bandwidth package of the region, which is subdivided into bandwidth packages corresponding to the acceleration region. Assume you create an Anycast EIP in the Asia Pacific region (Hong Kong, China), the bill lists three bandwidth packages: Asia to Asia, Asia to North America, and Asia to Europe.
+
 
 ## Billing Examples
-Suppose you purchased multiple Anycast EIPs under an account. The public network traffic generated by these Anycast EIPs in a month will be aggregated, and billed by 95th percentile of the monthly bandwidth at a price as shown below:
+Suppose you purchased an Anycast EIP in Hong Kong, China, with the public network traffic going to Tokyo, Frankfurt and Silicon Valley, respectively. The public network traffic generated by the Anycast EIP in a month will be aggregated by 95th percentile of the monthly bandwidth. The used bandwidths are as follows:
 
-| **Server Region** | **Public Ingress/Egress Region** | **Bandwidth Usage (Mbps)** | **Price (USD/Mbps/Month)** |
-| -------------- | ------------------ | --------------------- | ---------------------------- |
-| Asia Pacific           | North America               | 10                    | 18.86                          |
-| Asia Pacific | Chinese mainland | 100 | 29.33 |
-| Europe          | North America               | 200                   | 18.86                          |
-| Asia Pacific           | Asia Pacific               | 300                   | 18.86                          |
+<table>
+<thead>
+<tr>
+<th>Anycast EIP Region</th><th>Acceleration Region</th><th>Bandwidth Usage (Mbps)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td rowspan="3">Hong Kong (China)
+</td>
+<td>Tokyo
+</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Frankfurt
+</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Silicon Valley
+</td>
+<td>300</td>
+</tr>
+</tbody></table>
 
-Final fees = 10 * 18.86 + 100 * 29.33 + 200 * 18.86 + 300 * 18.86 = 12,551.60 USD
+Total fees = (10 + 200 + 300) * 18.86 = 9618.6(USD)

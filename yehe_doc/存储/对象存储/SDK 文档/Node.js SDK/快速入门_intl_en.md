@@ -37,7 +37,7 @@ npm i cos-nodejs-sdk-v5 --save
 First, log in to the CAM console, and get your `SecretId` and `SecretKey` from the [Access Key](https://console.cloud.tencent.com/cam/capi) page.
 Replace `SecretId`, `SecretKey`, `bucket`, and `region` with the actual values in your development environment. To test file upload, please see the following sample code.
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```js
 // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
 var COS = require('cos-nodejs-sdk-v5');
@@ -51,7 +51,7 @@ var cos = new COS({
 
 For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). The SDK for Node.js supports initialization by passing in a temporary key as shown in the sample code below:
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```js
 var request = require('request');
 var COS = require('cos-nodejs-sdk-v5');
@@ -210,7 +210,7 @@ Below are some common APIs. For more detailed initialization methods, please see
 
 ### Creating a bucket
 
-[//]: # ".cssg-snippet-put-bucket"
+[//]: # (.cssg-snippet-put-bucket)
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -222,7 +222,7 @@ cos.putBucket({
 
 ### Querying the bucket list
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
@@ -233,7 +233,7 @@ cos.getService(function (err, data) {
 
 This API is used to upload small files. For large files, please use the multipart upload API. For more information, see [Actions on Objects](https://intl.cloud.tencent.com/document/product/436/43551).
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -251,7 +251,7 @@ cos.putObject({
 
 ### Querying objects
 
-[//]: #	".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -264,7 +264,7 @@ cos.getBucket({
 
 ### Downloading an object
 
-[//]: # ".cssg-snippet-get-object-stream"
+[//]: # (.cssg-snippet-get-object-stream)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -278,7 +278,7 @@ cos.getObject({
 
 ### Deleting an object
 
-[//]: #	".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* Required */

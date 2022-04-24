@@ -17,7 +17,7 @@ You can use the batch operation feature in the COS Console.For more information,
 
 To perform a batch operation, you need to create a batch operation job first, which contains all the information needed to perform the specified operation on the object list. You can use an inventory as an object list.
 
-After you provide an object file and start the created batch operation job, the batch operation feature will execute the specified operation on the objects in the inventory sequentially. During job execution, you can monitor the execution status in the COS Console or choose to output a job report after the job is completed. The job report details the status of every operation in the job.
+After you provide an inventory file and start the created batch operation job, the batch operation feature will execute the specified operation on the objects in the inventory sequentially. During job execution, you can monitor the execution status in the COS console or choose to output a job report after the job is completed. The job report provides details about each operation in the job.
 
 > The batch operation feature is only applicable to objects in the current bucket. If you want to batch operate on the objects in another bucket, please enable the batch operation feature for that bucket.
 

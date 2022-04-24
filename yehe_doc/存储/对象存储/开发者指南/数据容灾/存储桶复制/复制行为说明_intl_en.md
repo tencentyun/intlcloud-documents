@@ -1,6 +1,6 @@
 This document describes what COS will and will not replicate after you enable cross-bucket replication for a bucket.
 
-## What COS Will Replicate
+## What is replicated
 
 In a source bucket with cross-bucket replication enabled, COS will replicate the following:
 
@@ -20,15 +20,15 @@ If an object is deleted from a source bucket with cross-bucket replication enabl
 - If you try to delete an object from the source bucket without specifying a version ID, COS will add a delete marker to the object. Then, if you select the option **Sync Delete Marker**, cross-bucket replication will replicate this delete marker to the destination bucket. Regardless of whether the delete marker is replicated, the object will not be deleted from the destination bucket. You can always access a noncurrent version of the object by specifying its version ID. For more information, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
 - If you specify a version ID to delete an object, COS will delete the specified object version from the source bucket, but will not replicate the delete operation to the destination bucket. That is, COS will not delete this object version from the destination bucket. This prevents malicious data deletion.
 
-## What COS Will Not Replicate
+## What isn't replicated
 
 In a source bucket with cross-bucket replication enabled, COS will not replicate the following:
 
 - Objects that existed before cross-bucket replication is enabled.
 - An object’s encryption information, which will be lost once the encrypted object is replicated.
-- New object data added to the source bucket that is copied from another bucket.
+- Object data in the source bucket that has been copied from another bucket.
 - Updates to bucket-level configuration.
-- Results from performing the lifecycle configuration.
+- Actions performed by lifecycle configuration.
 
 >?
 >
