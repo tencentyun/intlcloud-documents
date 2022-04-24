@@ -4,8 +4,8 @@ Tabel berikut membandingkan dua paket penagihan:
 | Paket penagihan instans | Bayar sesuai pemakaian | Instans spot |
 |---------|:---------:|:---------:|
 | Metode pembayaran | [Deposit](https://intl.cloud.tencent.com/document/product/555/12039) setelah pembelian, dibebankan per jam | [Deposit](https://intl.cloud.tencent.com/document/product/555/12039) setelah pembelian, dibebankan per jam |
-| Unit pembayaran | USD/dtk | USD/dtk |
-| Harga satuan | Mahal | Harga fluktuatif. Dalam kebanyakan kasus, harganya sekitar 10-20% dari harga instans bayar sesuai pemakaian dengan spesifikasi yang sama. |
+| Unit pembayaran | USD/detik | USD/detik |
+| Harga satuan | Relatif lebih tinggi | Harga fluktuatif. Dalam kebanyakan kasus, harganya sekitar 10-20% dari harga instans bayar sesuai pemakaian dengan spesifikasi yang sama. |
 | Waktu penggunaan minimal | Dikenakan biaya per detik dan dibebankan per jam. Beli dan rilis kapan saja. | Dikenakan biaya per detik dan dibebankan per jam. Beli dan rilis kapan saja. Dapat diambil alih oleh sistem. |
 | Mengubah konfigurasi instans | Tidak terbatas. Ubah kapan saja. | Tidak didukung. |
 | Kasus penggunaan | Terbaik untuk kasus penggunaan di mana permintaan bisnis sangat fluktuatif, seperti penjualan kilat ecommerce. | Terbaik untuk kasus penggunaan seperti layanan online dan situs web yang menggunakan komputasi data besar dan load balancing. |
