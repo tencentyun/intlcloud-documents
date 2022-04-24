@@ -50,7 +50,7 @@ npm install cos-wx-sdk-v5
 
 ### 小程序域名白名单配置
 
-小程序里请求 COS 需要登录到 [微信公众平台](https://mp.weixin.qq.com)，选择【开发】>【开发设置】>【服务器域名】，配置域名白名单。SDK 使用到了两个接口：
+小程序里请求 COS 需要登录到 [微信公众平台](https://mp.weixin.qq.com)，选择**开发 > 开发设置 > 服务器域名**，配置域名白名单。SDK 使用到了两个接口：
 
 1. cos.postObject 使用 wx.uploadFile 方法。
 2. 其他方法使用 wx.request 方法。
