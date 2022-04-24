@@ -20,7 +20,7 @@ Dokumen ini menjelaskan harga jaringan publik dalam berbagai mode penagihan dan 
 <td>0,081</td>
 </tr>
 <tr>
-<td>Toronto, Lembah Silikon, Frankfurt</td>
+<td>Toronto, Silicon Valley, Frankfurt</td>
 <td>0,077</td>
 </tr>
 <tr>
@@ -38,7 +38,7 @@ Dokumen ini menjelaskan harga jaringan publik dalam berbagai mode penagihan dan 
 </tbody></table>
 
 
-**Billing example** (Contoh Penagihan)
+**Contoh Penagihan**
 Misal, Anda membeli EIP di wilayah Seoul dengan mode penagihan tagihan per lalu lintas dan menggunakan lalu lintas total 10 GB antara pukul 07:00:00-07:59:59, pada pukul 08:00:00, biaya yang harus dibayar: 0,12 USD/GB × 10 GB = 1,2 USD.
 
 > ?
