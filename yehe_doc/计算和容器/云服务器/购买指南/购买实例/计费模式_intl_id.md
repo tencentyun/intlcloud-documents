@@ -13,7 +13,7 @@ Tabel berikut membandingkan dua paket penagihan:
 
 ## Bayar Sesuai Pemakaian
 
-Bayar sesuai pemakaian adalah paket penagihan fleksibel untuk instans CVM. Anda dapat mengaktifkan dan menghentikan instans CVM kapan saja. Anda hanya perlu membayar yang anda gunakan sampai hitungan waktu per detik dan tidak perlu pembayaran di muka. Sumber daya bayar sesuai pemakaian akan dibebankan pada jam tersebut. Paket penagihan ini cocok untuk kasus penggunaan di mana permintaan bisnis sangat fluktuatif, seperti ecommerce.
+Bayar sesuai pemakaian adalah paket penagihan fleksibel untuk instans CVM. Anda dapat mengaktifkan dan menghentikan instans CVM kapan saja. Anda hanya perlu membayar yang anda gunakan sampai hitungan waktu per detik dan tidak perlu pembayaran di muka. Sumber daya bayar sesuai pemakaian akan dibebankan pada jam tersebut. Paket penagihan ini cocok untuk kasus penggunaan di mana permintaan bisnis sangat fluktuatif, seperti flash sale ecommerce.
 
 Saat mengaktifkan instans CVM bayar sesuai pemakaian, biaya satu jam (termasuk biaya untuk CPU, memori, dan disk data) akan dibekukan di saldo akun sebagai deposit. Biaya kemudian akan dibebankan per jam (waktu Beijing) untuk penggunaan selama satu jam terakhir. Saat membeli instans CVM, harga akan dicantumkan sebagai biaya per jam. Namun, Anda sebenarnya akan **billed by the second** (dibebankan per detik) dan biaya akan dibulatkan ke dua desimal terdekat. Penagihan dimulai dari saat instans dibuat dan berhenti saat instans dihentikan.
 
