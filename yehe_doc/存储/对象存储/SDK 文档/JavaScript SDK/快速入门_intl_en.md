@@ -119,7 +119,7 @@ Create a COS SDK instance in one of the following ways:
 
 - Method 1 (recommended): The backend gets a temporary key and sends it to the frontend for signature calculation.
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -158,7 +158,7 @@ var cos = new COS({
 
 - Method 2 (recommended). Permissions are controlled in a more refined manner. The backend gets a temporary key and sends it to the frontend. The frontend reuses the key only for the same request, and the backend can granularly manage permissions through Scope.
 
-[//]: # ".cssg-snippet-global-init-sts-scope"
+[//]: # (.cssg-snippet-global-init-sts-scope)
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -196,7 +196,7 @@ var cos = new COS({
 
 - Method 3 (not recommended): The frontend needs to get a signature through `getAuthorization` before each request, and the backend uses a permanent or temporary key to calculate the signature and returns it to the frontend. This method makes it difficult to control permissions for multipart upload and thus is not recommended.
 
-[//]: # ".cssg-snippet-global-init-signature"
+[//]: # (.cssg-snippet-global-init-signature)
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -236,7 +236,7 @@ var cos = new COS({
 
 - Method 4 (not recommended): The frontend uses a permanent key to calculate the signature. This method can be used for frontend debugging. If you use this method, be sure to avoid key disclosure.
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```js
 var COS = require('cos-js-sdk-v5');
 
@@ -369,7 +369,7 @@ Below are some examples of common APIs. For more detailed initialization methods
 
 This API is suitable for uploading small files. For large files, please use the multipart upload API. For more information, see [Actions on Objects](https://intl.cloud.tencent.com/document/product/436/43552).
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -387,7 +387,7 @@ cos.putObject({
 
 ### Querying objects
 
-[//]: #	".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -402,7 +402,7 @@ cos.getBucket({
 
 > !This API is used to read object content. If you need to launch a browser to download the file, you can get the URL through `cos.getObjectUrl` and then start the download in the browser. For more information, please see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31540).
 
-[//]: #	".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -415,7 +415,7 @@ cos.getObject({
 
 ### Deleting an object
 
-[//]: #	".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* Required */
