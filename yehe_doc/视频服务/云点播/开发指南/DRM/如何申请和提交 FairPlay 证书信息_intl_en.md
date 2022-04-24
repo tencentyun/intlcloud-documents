@@ -13,7 +13,7 @@ This document shows you how to apply for a FairPlay certificate from Apple and s
 
 1. Go to the [Apple FairPlay page](https://developer.apple.com/streaming/fps/), scroll to the bottom, and click **Request FPS Deployment Package**. A form will pop up.
 
-> Note: You need to log in with an Apple developer account.
+>! You need to log in with an Apple developer account.
 
 2. Fill out the form and submit it.
 
@@ -68,7 +68,7 @@ Get the FPS certificate and ASK from the [Apple developer page](https://develope
 
 6. A window will pop up to confirm that you have saved the ASK. Click **Generate**.
 
-   > Note: Make sure you save a copy of the ASK. You will be unable to view it afterwards.
+>! Make sure you save a copy of the ASK. You will be unable to view it afterwards.
 
    ![image-20220419115103618](https://qcloudimg.tencent-cloud.cn/raw/808347b36d824de46b6cbb84654d20c8.png)
 
