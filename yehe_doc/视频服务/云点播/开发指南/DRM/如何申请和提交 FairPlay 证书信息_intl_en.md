@@ -62,7 +62,7 @@ Get the FPS certificate and ASK from the [Apple developer page](https://develope
 
    ![image-20220419114506263](https://qcloudimg.tencent-cloud.cn/raw/52c2834bf36f4074e7f9f731aefc8948.png)
 
-5. Copy and note the ASK, enter it into the input field below, and click **Continue**.
+5. Copy and save the ASK, enter it into the input field below, and click **Continue**.
 
    ![image-20220419114920781](https://qcloudimg.tencent-cloud.cn/raw/8e55fb6e817a2279f6b2cea3418506f7.png)
 
