@@ -27,7 +27,7 @@ If a backup rule has been configured for a bucket, messages generated in a CKafk
  - **SCF Authorization**: (required) SCF needs to be authorized to read messages of CKafka instances and dump the messages to the specified bucket.
 6. Click **Next** to configure CKafka. The configuration items are as follows:
 
- - **Instance**: a CKafka instance as the message source. Only instances in the same region are supported.
+ - **Instance**: a CKafka instance that is used as the message source. Only instances in the same region are supported.
  - **Topic**: a topic used as the message source
  - **Start Point**: the topic offset for dumping the backup messages
  - **Address**: a VPC address is required. CKafka instances that use a classic network require a routing policy. For more information, please see [Adding Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555).
