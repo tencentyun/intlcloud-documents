@@ -15,9 +15,9 @@
 	<tr><td><b>Peringatan pembayaran melewati jatuh tempo</b></td><td>Fitur ini dinonaktifkan secara default.</td></tr>
 </table>
 
-### Kebijakan pembayaran melewati jatuh tempo
-Saat saldo akun di bawah nol, Anda dapat terus menggunakan instans CVM selama 2 jam ke depan. Kami juga akan terus mengirimkan tagihan untuk penggunaan ini. Setelah 2 jam, jika saldo akun tetap minus, instans CVM akan menjalankan pematian secara otomatis dan penagihan akan dihentikan.
-Setelah pematian otomatis, instans CVM Anda melalui tahapan berikut:
+### Kebijakan pembayaran lewat waktu
+Saat saldo akun Anda di bawah nol, Anda dapat terus menggunakan instans CVM selama 2 jam ke depan. Kami juga akan terus menagih Anda untuk penggunaan ini. Setelah 2 jam, jika saldo akun Anda tetap negatif, instans CVM Anda akan dimatikan otomatis dan penagihan akan berhenti.
+Setelah penonaktifan otomatis, instance CVM Anda melewati tahapan berikut:
 <table>
 	<tr><th>Waktu Sejak Pematian</th><th>Deskripsi</th></tr>
 	<tr><td rowspan=2><b>≤ 15 hari</b></td><td>Jika akun diisi ulang hingga saldo plus, penagihan dilanjutkan dan Anda dapat terus menggunakan instans CVM.</td></tr>
