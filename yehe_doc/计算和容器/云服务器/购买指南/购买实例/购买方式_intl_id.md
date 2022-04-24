@@ -13,7 +13,7 @@ Di bawah ini menjelaskan cara membeli kedua jenis CVM ini dari konsol.
  
 1. Login ke [halaman pembelian CVM](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm).
 2. Di bagian **Custom Configuration** (Konfigurasi Kustom), pilih **Pay as you go** (Bayar sesuai pemakaian) sebagai **Billing Mode** (Mode Penagihan) saat memilih model.
-3. Pilih wilayah, zona ketersediaan, jenis jaringan, instans dan informasi konfigurasi lainnya sesuai kebutuhan dan sebagaimana diminta halaman.
+3. Pilih wilayah, zona ketersediaan, jenis jaringan, instans dan informasi konfigurasi lainnya sesuai kebutuhan dan sebagaimana diminta oleh halaman.
 4. Setelah mengonfirmasi pesanan, Anda dapat membayar dengan kartu kredit dan metode lainnya.
 5. CVM segera diaktifkan setelah pembayaran selesai. Alamat IP akan ditampilkan dalam 10 menit, dan Anda dapat login ke CVM untuk mengelolanya.
 
