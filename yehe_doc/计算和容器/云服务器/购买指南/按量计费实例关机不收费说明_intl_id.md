@@ -1,4 +1,4 @@
-Tidak Ada Biaya Saat Pematian berarti Anda tidak akan dikenakan biaya untuk instans (CPU, memori) setelah Anda **select the No Charges When Shut Down option** (memilih opsi Tidak Ada Biaya Saat Pematian) untuk menerapkan **shut down** (matikan) pada instans bayar sesuai pemakaian. Komponen seperti [disk cloud](https://intl.cloud.tencent.com/document/product/213/2255) (disk sistem dan disk data), bandwidth jaringan publik (tagihan per bandwidth) dan citra akan tetap dibebankan.
+Tidak Ada Biaya Saat Pematian berarti Anda tidak akan dikenakan biaya untuk instans (CPU, memori) setelah Anda **memilih opsi Tidak Ada Biaya Saat Pematian** untuk menerapkan **shut down** (matikan) pada instans bayar sesuai pemakaian. Komponen seperti [disk cloud](https://intl.cloud.tencent.com/document/product/213/2255) (disk sistem dan disk data), bandwidth jaringan publik (tagihan per bandwidth) dan citra akan tetap dibebankan.
 
 ## Batasan Penggunaan
 
