@@ -19,7 +19,7 @@ You can use a data processing workflow to implement the following features: **au
 4. On the left sidebar, select **Data Processing Workflow** > **Workflow** to go to the workflow management page.
 5. Click **Create Workflow**.
 6. On the **Create Workflow** page, configure the following items:
-![](https://qcloudimg.tencent-cloud.cn/raw/d9dab85ebe9c2d6a93fd7069705680de.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c2bec7689878536a9ddfc52c63fe5991.png)
   - **Workflow Name**: It is required and can contain up to 128 letters, digits, underscores (\_), and hyphens (-).
   - **Input Bucket Name**: It is the current bucket by default.
   - **Input Path**: It is optional and must start and end with `/`. If it is not specified, the workflow will be triggered for all paths in the input bucket. After the media workflow is enabled, when a video file is uploaded to this path, the workflow will be automatically triggered.
@@ -29,35 +29,35 @@ You can use a data processing workflow to implement the following features: **au
   - **Configure Workflow**: Click **+** on the right to add any of the following nodes: **audio/video transcoding (including top speed codec transcoding and broadcast media format transcoding)**, **video frame capturing**, **video to animated image conversion**, **intelligent thumbnail**, **audio/video splicing**, **voice separation**, **highlights generation**, **HLS adaptive multi-bitrate**, **SDR to HDR**, **video enhancement**, **super-resolution**, **audio/video segmentation**, **custom function**, and **image processing**. You need to configure at least one job node in a workflow and set the destination bucket, filename (see [Workflow Variable Description](#1)), path, and job template for each job node. For more information on templates and how to set them, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
 <dx-tabs>
 ::: Audio/Video transcoding
-![](https://qcloudimg.tencent-cloud.cn/raw/9c1ffe4db2bdcb2fb646c4b16902dea2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6a07affd8bcc7a14fd23123a4daf1216.png)
 :::
 ::: Video frame capturing
-![](https://qcloudimg.tencent-cloud.cn/raw/b9845a77ef297cf0d1e4db1b2b82ec99.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d449a140aa6aa30409cbd0d4ba517ac3.png)
 :::
 ::: Video to animated image conversion
-![](https://qcloudimg.tencent-cloud.cn/raw/6d6b8c9ef319f7cf4040f1379861b8c7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b936967d85e4abd21d2003a552b8ce21.png)
 :::
 ::: Intelligent thumbnail
-![](https://qcloudimg.tencent-cloud.cn/raw/bd8637a44913e67deade1fc5aa9a6b0b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/00fcf5b908905eadb0e4e0920fd69358.png)
 Description: The intelligent thumbnail feature understands the video content with the aid of Tencent Cloud's advanced AI technologies to intelligently extract three optimal keyframes.
 :::
 ::: Audio/Video splicing
-![](https://qcloudimg.tencent-cloud.cn/raw/448ae50e96836187010eb7591971f9dd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0ff1ed35b1f65f404b84435faa2ccf0f.png)
 :::
 </dx-tabs>
 <dx-tabs>
 ::: Voice separation
-![](https://qcloudimg.tencent-cloud.cn/raw/212f329b9675aeff7e42c09c38d06085.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/01ae516306970ab7e0878699843483ad.png)
 :::
 ::: Highlights generation
-![](https://qcloudimg.tencent-cloud.cn/raw/f4fc4cdbd12418b9ea869ddb5bdd8013.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d320ea46e01a3969811deecf3ee245ff.png)
 :::
 ::: HLS adaptive multi-bitrate
-![](https://qcloudimg.tencent-cloud.cn/raw/3157803ae06a4f5270b257169e2f4d7b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b6f7821676471e7f505dd4f4e0c09574.png)
 Description: The HLS adaptive multi-bitrate feature encapsulates multiple files with multiple bitrates and audio tracks into one multi-bitrate adaptive video file.
 :::
 ::: SDR to HDR
-![](https://qcloudimg.tencent-cloud.cn/raw/de20698b2fcbd264a866802a9cb235db.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/51ba2ccf5a680c5217a08cfdbaccc146.png)
 :::
 ::: Video enhancement
 ![](https://qcloudimg.tencent-cloud.cn/raw/ab8e4f29c3843b83510321a57177fbc7.png)
@@ -68,7 +68,7 @@ Description: The HLS adaptive multi-bitrate feature encapsulates multiple files 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d8baeec986771fd7b80266af801f97a5.png)
 :::
 ::: Audio/Video segmentation
-![](https://qcloudimg.tencent-cloud.cn/raw/39ad428b6792bf612293f1a764276724.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2fd5506dabedfbc051a13bb019ca601f.png)
 :::
 ::: Custom function
 ![](https://main.qcloudimg.com/raw/d2720047917038d5c9682e5d6c4bf51e.png)
@@ -117,7 +117,7 @@ After a workflow is created, it can be automatically triggered for files uploade
 1. On the workflow management page, click **More** > **Create Execution Instance** of the target workflow.
 2. On the **Create Execution Instance** page, select the file for which to trigger the workflow and click **Save** to immediately trigger and execute the workflow.
    You can view the workflow execution status on the execution instance page.
-   ![](https://main.qcloudimg.com/raw/d5a70bbb33c4b75f64320a4660ce245e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8e5bdd5477861a20499f91eb85d49fb7.png)
 
 
 <span id="1"></span>

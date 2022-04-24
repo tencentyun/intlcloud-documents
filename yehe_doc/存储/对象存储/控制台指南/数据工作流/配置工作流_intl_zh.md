@@ -19,7 +19,7 @@
 4. 在左侧导航栏中，选择**数据工作流**，单击**工作流**，进入工作流管理页面。
 5. 单击**创建工作流**，进入创建工作流页面。
 6. 在创建工作流页面，配置如下信息：
-![](https://qcloudimg.tencent-cloud.cn/raw/d9dab85ebe9c2d6a93fd7069705680de.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c2bec7689878536a9ddfc52c63fe5991.png)
   - **工作流名称**：必填项，仅支持中文、英文大小写[A-Z,a-z]、数字[0-9]、下划线(\_)和短横线(-)，长度不能超过128个字符。
   - **输入存储桶**：默认项，即为当前存储桶。
   - **输入路径**：选填项，以`/`开头，以`/`结尾，如果不填写，则对输入存储桶所有路径生效。工作流启用后，当视频文件上传至该路径时，媒体工作流将被自动触发。
@@ -29,35 +29,35 @@
   - **配置工作流**：单击输入右侧的“+”添加**音视频转码（包括极速高清转码、广电专业格式转码）**、**视频截帧**、 **视频转动图**、**智能封面**、**音视频拼接**、**人声分离**、**精彩集锦**、**hls自适应多码率**、**SDRtoHDR** 、**视频增强**、**超分辨率**、**音视频分段**、**自定义函数**、**图片处理**节点，每个工作流至少配置一个任务节点。任务节点配置需设置目标存储桶、目标文件名（详情请参见 [工作流变量说明](#1)）、目标路径、选择任务模板。模板的介绍和设置详情请参见 [模板](https://intl.cloud.tencent.com/document/product/436/46411) 文档。
 <dx-tabs>
 ::: 音视频转码
-![](https://qcloudimg.tencent-cloud.cn/raw/9c1ffe4db2bdcb2fb646c4b16902dea2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6a07affd8bcc7a14fd23123a4daf1216.png)
 :::
 ::: 视频截帧
-![](https://qcloudimg.tencent-cloud.cn/raw/b9845a77ef297cf0d1e4db1b2b82ec99.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d449a140aa6aa30409cbd0d4ba517ac3.png)
 :::
 ::: 视频转动图
-![](https://qcloudimg.tencent-cloud.cn/raw/6d6b8c9ef319f7cf4040f1379861b8c7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b936967d85e4abd21d2003a552b8ce21.png)
 :::
 ::: 智能封面
-![](https://qcloudimg.tencent-cloud.cn/raw/bd8637a44913e67deade1fc5aa9a6b0b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/00fcf5b908905eadb0e4e0920fd69358.png)
 说明：智能封面结合腾讯云先进的 AI 技术，通过对视频内容的理解，智能计算输出3张最优的关键帧。
 :::
 ::: 音视频拼接
-![](https://qcloudimg.tencent-cloud.cn/raw/448ae50e96836187010eb7591971f9dd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0ff1ed35b1f65f404b84435faa2ccf0f.png)
 :::
 </dx-tabs>
 <dx-tabs>
 ::: 人声分离
-![](https://qcloudimg.tencent-cloud.cn/raw/212f329b9675aeff7e42c09c38d06085.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/01ae516306970ab7e0878699843483ad.png)
 :::
 ::: 精彩集锦
-![](https://qcloudimg.tencent-cloud.cn/raw/f4fc4cdbd12418b9ea869ddb5bdd8013.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d320ea46e01a3969811deecf3ee245ff.png)
 :::
 ::: hls自适应多码率
-![](https://qcloudimg.tencent-cloud.cn/raw/3157803ae06a4f5270b257169e2f4d7b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b6f7821676471e7f505dd4f4e0c09574.png)
 说明：将多码率、多音轨的多个文件打包生成一个文件，一步生成多码率自适应的视频文件。
 :::
 ::: SDRtoHDR
-![](https://qcloudimg.tencent-cloud.cn/raw/de20698b2fcbd264a866802a9cb235db.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/51ba2ccf5a680c5217a08cfdbaccc146.png)
 :::
 ::: 视频增强
 ![](https://qcloudimg.tencent-cloud.cn/raw/ab8e4f29c3843b83510321a57177fbc7.png)
@@ -68,7 +68,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/d8baeec986771fd7b80266af801f97a5.png)
 :::
 ::: 音视频分段
-![](https://qcloudimg.tencent-cloud.cn/raw/39ad428b6792bf612293f1a764276724.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2fd5506dabedfbc051a13bb019ca601f.png)
 :::
 ::: 自定义函数
 ![](https://main.qcloudimg.com/raw/d2720047917038d5c9682e5d6c4bf51e.png)
@@ -117,7 +117,7 @@
 1. 进入工作流管理页面，找到目标工作流，单击**更多 > 触发工作流**，进入触发工作流页面。
 2. 在触发工作流页面中，选择需要触发工作流的文件，单击**保存**，即可立即触发工作流并执行。
    后续您可在执行实例页面查看工作流执行状态。
-   ![](https://main.qcloudimg.com/raw/d5a70bbb33c4b75f64320a4660ce245e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/8e5bdd5477861a20499f91eb85d49fb7.png)
 
 
 <span id="1"></span>

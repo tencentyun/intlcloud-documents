@@ -17,7 +17,7 @@ On the job page, you can view all jobs in different types for the **specified ti
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Click **View** on the right of a job to view its information.
-![](https://qcloudimg.tencent-cloud.cn/raw/fc8f5e295f32884bf25fe54ec69e85c0.png)
+
  - Job information: Job ID, job status, queue ID, template ID, job creation time, and job end time.
  - Input information: Source file bucket, region, and storage path.
  - Output information: Output file address, bucket, region, and storage path.
@@ -37,7 +37,7 @@ Audio/Video transcoding converts an audio/video file bitstream. It changes param
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Transcoding** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/c3b01bd47391b579bce2685918d701a0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9b039ab7eb963c16e50d988e82203f48.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Transcoding Type**: Select **Standard**.
  - **Template Type**: Select system or custom template.
@@ -62,7 +62,7 @@ The top speed codec technology improves the subjective image quality of a video 
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Transcoding** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/5428aff02419a253d383c7ad067f4301.png)
+
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Transcoding Type**: Select **Top Speed Codec**.
  - **Template**: Select the specified template.
@@ -85,7 +85,7 @@ This feature produces videos in broadcast media formats such as Apple ProRes and
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Transcoding** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/c3b01bd47391b579bce2685918d701a0.png)
+
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Transcoding Type**: Select **Broadcast Media Format**.
  - **Template**: Select the specified template.
@@ -108,7 +108,7 @@ The highlights generation feature accurately extracts highlight segments from a 
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Intelligent Editing > Highlights Generation** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/168b9fc01b22805bcc3940f3fdb94c3f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0414c8e582f5e5b4b9193109e773bb35.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template**: Select the specified template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
@@ -128,7 +128,7 @@ The voice separation feature separates the voice from the background sound in a 
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Intelligent Editing > Voice Separation** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/cb63f411d6f4ccaab31ea146b4fed80b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f67c60a206d904c69f9dcb6ad04d9b0e.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template**: Select the specified template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
@@ -149,7 +149,7 @@ The video/audio splicing feature adds the specified video/audio segment at the b
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Splicing** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/85bf1b5c7f38a3257e453b35898fc992.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/53b1bdc8310e59e01e3bc2cdeb10acd4.png)
  - **Splicing File Path**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template**: Select a created audio/video splicing template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
@@ -169,7 +169,7 @@ The audio/video segmentation feature splits the specified audio/video file into 
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Segmentation** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/80f70eaa4895796d9ca1d4a794e68e1b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b6ff7f0119085bed052b705306da4333.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Container Format**: Select the container format for the output segment.
  - **Segment Duration**: Specify the duration of the output segment.
@@ -193,7 +193,7 @@ Video frame capturing is a screencapturing feature provided by CI to capture the
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Video Frame Capturing** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/a968c0c4c72c327ff1420d47b6b60693.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9b7322d5facc1b48cef33f9a1a77c729.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template Type**: Select system or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
  - **Template**: Select the specified template.
@@ -219,7 +219,7 @@ Video enhancement is a video image quality improvement feature provided by CI. Y
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Image Quality Optimization > Video Enhancement** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/185f6e753e1540bee768745bedb1741b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bcec587a60db669cc592a98aa6e2e6a3.png)
 >? The input video must be shorter than 30 minutes.
 >
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
@@ -246,7 +246,7 @@ The super-resolution feature reconstructs the details and local features of a vi
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Image Quality Optimization > Super-Resolution** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/524877199ff49040a89d80eac5fd4512.png)
+
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Super-Resolution Template**: Select the destination resolution template as needed.
  - **Transcoding Template Type**: You can select system or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
@@ -271,7 +271,7 @@ SDR to HDR is a video dynamic range conversion feature provided by CI. You can u
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Image Quality Optimization > SDR to HDR** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/39266177b2338dd1b4c10c896896ddf0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/40013de387fbc506b95d4e851825d819.png)
 >? The input video must be shorter than 30 minutes.
 >
 - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
@@ -299,7 +299,7 @@ You can use the video to animated image conversion feature to convert a video to
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Video to Animated Image Conversion** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/ac1b934b91b75a40d9ca79751ac5a2fe.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/12f93dfb3a9a6da63dbbf25ef88fba53.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template Type**: Select system or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
  - **Template**: Select the specified template.
@@ -326,7 +326,7 @@ The intelligent thumbnail feature intelligently analyzes the quality, brilliance
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Intelligent Editing > Intelligent Thumbnail** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/beba413de6a402074b9040746a5d539c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1c326c11491e108f62f111a72f98951b.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the smart thumbnails.
@@ -347,7 +347,7 @@ You can use the media processing service to extract the digital watermark from a
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Copyright Protection > Digital Watermark Extraction** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/ac7491b9fa854c03dd0a27f9eb0d58f3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d06366d7bea0a7b3d612af4f1bd65090.png)
  - **Source File**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated with `/`.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see Queues and Callbacks.
    
@@ -362,7 +362,7 @@ The speech recognition feature recognizes a recording file and asynchronously re
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Speech Recognition** tab, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/beba413de6a402074b9040746a5d539c.png)
+
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Recognition Engine**: Select a speech recognition engine. Different engines are as described below:
     - 8k_zh: Applies to telephone recording, 8 kHz audio sample rate, Mandarin.
@@ -395,7 +395,7 @@ The file preview feature allows you to preview files of nearly 30 types through 
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **File Preview** tab, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/c1f65545aeb0b34295aafea16e74f7d2.png)
+
  - **Source File URL**: It cannot begin or end with `/`; for example, `doc/example.doc`.
  - **Preview Setting**: Select to preview whole document or specified page. A job supports up to 5,000 pages. If more pages are input, only the first 5,000 pages can be converted.
  - **Output Format**: Currently, JPG and PNG formats are supported for output images. The PDF format is supported only for whole document preview.
@@ -417,7 +417,7 @@ The image processing feature supports flexible image editing, such as rotation, 
 3. Click the name of the bucket that you want to operate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Image Processing** tab, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/719afbc353cfff84a9c609b1c1f6eac4.png)
+
  - **Input Bucket Name**: It is the current bucket by default.
  - **File Path**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated with `/`.
  - **Template**: Select the specified template.
