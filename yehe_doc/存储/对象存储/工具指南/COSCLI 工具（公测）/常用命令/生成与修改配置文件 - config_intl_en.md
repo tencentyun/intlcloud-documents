@@ -26,7 +26,7 @@ The `config` command is used to generate and modify the configuration file.
 
 `config` and its sub-commands include the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name   | Description                     |
 | --------- | ------------- | -------------------------- |
 | -c        | --config-path | Path of the configuration file to use |
 
