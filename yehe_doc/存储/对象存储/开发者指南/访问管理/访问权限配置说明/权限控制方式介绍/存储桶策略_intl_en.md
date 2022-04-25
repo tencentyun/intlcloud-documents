@@ -55,8 +55,8 @@ COS provides you with different templates depending on the combination of author
 <dx-accordion>
 ::: Grantee
 
- - **All users (allow anonymous access)**: if you want to grant operation permissions to anonymous users, select this option. If you select this option, all users (`*`) will be automatically selected for you during policy configuration in step 2.
- - **Specified user**: you can select designated users when you want to grant operation permissions to designated sub-accounts, root accounts, or cloud services. During policy configuration in step 2, you need to further specify the account UINs.
+ - **All users (allow anonymous access)**: Select this option if you want to grant operation permissions to anonymous users. If you select this option, all users (`*`) will be automatically selected for you during policy configuration in step 2.
+ - **Specified user**: Select this option if you want to grant operation permissions to specified sub-accounts, root accounts, or cloud services. During policy configuration in step 2, you need to further specify the account UINs.
 :::
 ::: Resource Scope
 
