@@ -156,9 +156,9 @@
 - multipart 类型，是 MIME 邮件的精髓。邮件体被分为多个段，每个段又包含段头和段体两部分，这两部分之间也以空行分隔。
 
 - 常见的 multipart 类型有三种：
- - multipart/mixed
- - multipart/related
- - multipart/alternative
+  - multipart/mixed
+  - multipart/related
+  - multipart/alternative
 可从上述名称，得知这些类型各自的含义和用处。它们之间的层次关系可归纳为下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/c8fc71fa5b2e90fd96e5ad2755effd2b.png)
 如果在邮件中要添加附件，必须定义 multipart/mixed 段；如果存在内嵌资源，至少要定义 multipart/related 段；如果纯文本与超文本共存，至少要定义 multipart/alternative 段。

@@ -19,7 +19,7 @@ SQL Server data backup is a [SCF](https://intl.cloud.tencent.com/document/produc
 5. In the pop-up window, configure the following information:
 
  - **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
- - **Associated Bucket**: bucket where SQL Server backup files are stored.
+ - **Associated Bucket**: a bucket to store SQL Server backup files.
  - **Trigger Period**: triggers the backup operation for the SQL Server backup function. Every day, every week, and custom periods are supported.
  - **Cron Expression**: If you use a custom period, you can use Cron to specify the trigger period rule. Cron follows China Standard Time (UTC+8:00). For detailed configuration policies, please see [Cron Documentation](https://intl.cloud.tencent.com/document/product/583/9708).
  - **Database Instance**: SQL Server instance list of the region where the current bucket resides

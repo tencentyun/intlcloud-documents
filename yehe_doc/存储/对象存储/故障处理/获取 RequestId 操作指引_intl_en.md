@@ -1,6 +1,6 @@
 ## Overview
 
-Every time a request is sent to COS, the COS server will generate an ID for the request (i.e., `RequestId`). This document describes how to obtain `RequestId` in different scenarios.
+The COS server will generate an ID (`RequestId`) for every request sent to COS. This document describes how to obtain `RequestId` in different scenarios.
 
 ## Through the Console
 

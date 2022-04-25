@@ -17,6 +17,14 @@
 - 弹性云硬盘只支持挂载在同一可用区内的云服务器上使用。
 - 单台云服务器最多支持挂载 20 块弹性云硬盘作数据盘用，可在购买云服务器时直接为其添加，也可在云服务器创建完成后 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 。
 - 在 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs)  一次性最多购买 50 块弹性云硬盘。
+- 若包年包月的弹性云硬盘到期后 7 天内未续费，系统会解除该云硬盘与云服务器的挂载关系，并将其回收至回收站。具体的回收机制请参考 [欠费说明](https://intl.cloud.tencent.com/document/product/362/31625)。
+<dx-alert infotype="explain" title="">
+目前，包年包月弹性云硬盘 [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 包年包月云服务器时，您可根据实际需求选择以下续费方式：
+ - 对齐该云服务器到期时间。
+ - 云硬盘到期后按月自动续费。
+ - 直接挂载，不做续费处理。
+</dx-alert>
+
 
 
 ### 云硬盘有什么优势？
