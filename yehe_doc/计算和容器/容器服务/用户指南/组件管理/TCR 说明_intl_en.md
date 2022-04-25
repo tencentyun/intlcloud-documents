@@ -51,7 +51,7 @@ The add-on automatically creates a DaemonSet workload, host-updater, which is us
 
 ## Directions
 1. Select an associated instance: select an existing TCR Enterprise Edition instance under the current logged-in account and confirm that the current logged-in user has the permission to create a long-term access credential for the instance. If you need to create a new Enterprise Edition instance, create it in the region where the current cluster is located.
-2. Configure secret-free pulling (enabled by default): you can choose to issue the access credential automatically for the current user, or specify the username and password,. You can also configure the namespace and ServiceAccount for which you want to enable Secret-free pulling. For the detailed configuration, see [Parameter description](#ParameterDescription). We recommend that you keep the default configuration to make sure this feature works on the new namespace.
+2. Configure secret-free pulling (enabled by default): you can choose to issue the access credential automatically for the current user, or specify the username and password,. You can also configure the namespace and ServiceAccount for which you want to enable Secret-free pulling.  We recommend that you keep the default configuration to make sure this feature works on the new namespace.
 3. Configure private network resolving (advanced feature): make sure that there is already a private network linkage between the cluster and the associated TCR instance, and **Private Network Resolving** is enabled. Note that this configuration is only recommended for test scenarios. For resolving, you can use the private network linkage provided by TCR, PrivateDNS, or your own DNS service.
 4. After the TCR add-on is created, if you need to modify its configuration, delete the add-on and reconfigure and reinstall it.
 >! When the TCR add-on is deleted, the created dedicated access credential is not automatically deleted. You can go to the TCR console to manually disable or delete the credential.
@@ -177,7 +177,8 @@ Events:               <none>
 
 ```
 
-**Note**: to update the `Secret` resource deployed by TCR Assistant, you don’t need to delete and rebuild `ImagePullSecret`. All you need to do is to edit the `docker.username` and `docker.password` fields using the command below: 
+>!to update the `Secret` resource deployed by TCR Assistant, you don’t need to delete and rebuild `ImagePullSecret`. All you need to do is to edit the `docker.username` and `docker.password` fields using the command below: 
+>
 ```bash
 $ kubectl edit ipss imagepullsecret-sample
 ```
