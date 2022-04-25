@@ -20,26 +20,26 @@ TPNS always keeps up with the update progress of each vendor channel's push serv
 >?
 >  
 > If you cannot find `SecretKey` in **App information** > **My apps**, go to **Project settings** > **General information** to view `Client secret`.
-> ![]()
+> ![](https://qcloudimg.tencent-cloud.cn/raw/84a66ae0ce0cf7bd3a27f977ba3d5a44.png)
 
 ### Configuring the SHA-256 certificate fingerprint
 
 Get the SHA-256 certificate fingerprint as instructed in [Generating a Signing Certificate Fingerprint](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger). Then configure the fingerprint on the Huawei Push platform, and **remember to click <img src="https://main.qcloudimg.com/raw/f74e3aa948316533ce91f9add4a81a29.png"></img> to save the configuration**.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/257830f2994218a873b7b386cdc6ba27.png)
 
 
 ### Getting the Huawei Push configuration file
 
 Log in to the Huawei Developer platform, go to **My Projects** > select a project > **Project Settings**, and download the latest configuration file `agconnect-services.json` of your Huawei application.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/544f925c82f1bad4c6fd556e51c3c125.png)
 
 
 ### Enabling the push service
 
 1. On the Huawei Push platform, choose **All services** > **Push Kit** to go to the **Push Kit** page.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/8612c022f109c5a2265d52a9ae77b771.png)
 2. On the **Push Kit** page, click **Enable now**. For more information, see [Enabling Services](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/60175bb9013e08039ea852cb108927f1.png)
 
 ## SDK Integration (Two Methods)
 
@@ -164,7 +164,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 ## Code Obfuscation
 
 1. Add the following obfuscation rules in the `proguard-rules.pro` file at the application project level.
-```plaintext
+```
 -ignorewarnings
 -keepattributes *Annotation* 
 -keepattributes Exceptions 
