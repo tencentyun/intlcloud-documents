@@ -20,26 +20,26 @@
 >?
 >  
 >  若在应用信息>我的应用中无法找到 SecretKey，可前往项目设置>常规中查看 Client Secret。
-> ![]()
+> ![](https://qcloudimg.tencent-cloud.cn/raw/84a66ae0ce0cf7bd3a27f977ba3d5a44.png)
 
 ### 配置 SHA256 证书指纹
 
 获取 SHA256 证书指纹，并在华为推送平台中配置证书指纹，**单击 <img src="https://main.qcloudimg.com/raw/f74e3aa948316533ce91f9add4a81a29.png"></img> 保存**。证书指纹获取可参见 [生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger)。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/257830f2994218a873b7b386cdc6ba27.png)
 
 
 ### 获取华为推送配置文件
 
 登录华为开放平台，进入**我的项目**> 选择项目 > **项目设置**，下载华为应用最新配置文件 agconnect-services.json。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/8612c022f109c5a2265d52a9ae77b771.png)
 
 
 ### 打开推送服务开关
 
 1. 在华为推送平台，单击**全部服务**>**推送服务**，进入推送服务页面。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/544f925c82f1bad4c6fd556e51c3c125.png)
 2. 在“推送服务”页面，单击**立即开通**，详情请参见 [打开推送服务开关](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service)。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/60175bb9013e08039ea852cb108927f1.png)
 
 ## SDK 集成（二选一）
 
@@ -164,7 +164,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 ## 代码混淆
 
 1. 将以下混淆规则添加在 App 项目级别的 proguard-rules.pro 文件中。
-```plaintext
+```
 -ignorewarnings
 -keepattributes *Annotation* 
 -keepattributes Exceptions 
