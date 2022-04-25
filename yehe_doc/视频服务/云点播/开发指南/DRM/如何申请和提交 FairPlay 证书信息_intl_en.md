@@ -19,6 +19,7 @@ This document shows you how to apply for a FairPlay certificate from Apple and s
 
 3. After your request is approved, you will be issued an `FPS_Deployment_Package.zip` package.
 
+<span id="step2)"></span>
 ## Step 2. Create a Private Key and a Certificate Signing Request (CSR)
 
 Unzip `FPS_Deployment_Package.zip` and create a password-protected private key file and a CSR file as instructed in the guide document (PDF) in the package.
@@ -58,7 +59,7 @@ Get the FPS certificate and ASK from the [Apple developer page](https://develope
 
    ![image-20220419114215512](https://qcloudimg.tencent-cloud.cn/raw/00fa1494b1256c9b4e1d769356450721.png)
 
-4. Click **Choose File**, select the `certreq` file created in Step 2, and click **Continue**.
+4. Click **Choose File**, select the `certreq` file created in [Step 2](#step2), and click **Continue**.
 
    ![image-20220419114506263](https://qcloudimg.tencent-cloud.cn/raw/52c2834bf36f4074e7f9f731aefc8948.png)
 
