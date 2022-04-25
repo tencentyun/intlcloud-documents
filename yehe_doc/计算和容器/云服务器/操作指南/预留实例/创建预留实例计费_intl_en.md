@@ -17,7 +17,7 @@ Currently, RIs are only offered to beta users. To use it, go to the RI beta appl
 | Parameter        | Required/Optional | Description                               |
 | ------------------ | --------- | ------------------------------------------------------------ |
 | Region/Availability Zone  | Required      | The region and availability zone where the matched pay-as-you-go instances reside.           |
-| Operating System    | Required      | Linux OS.                                    |
+| Operating System    | Required      | Linux OS,Windows.                                    |
 | Validity         | Required      | RI term: 1 year.                    |
 | Instance         | Required     | The type of pay-as-you-go instances that you want to match the RI.</br>These pay-as-you-go instances must exactly match RI attributes to benefit from the billing discount during the RI term.  |
 | RI Name | Optional      | User-defined. <li> The RI name defaults to “unnamed” if this parameter is left empty.</li>  <li> You can enter any name within 60 characters.</li> |
