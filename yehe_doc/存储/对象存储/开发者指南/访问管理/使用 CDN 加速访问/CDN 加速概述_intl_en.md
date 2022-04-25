@@ -1,4 +1,4 @@
-Content Delivery Network (CDN) can be used to accelerate mass download/deliver content stored in a COS bucket, which is ideal when the same content needs to be downloaded repeatedly. The origin-pull authentication feature makes it possible for CDN to accelerate content stored in a private-read bucket, allowing only the authorized users to download the content to avoid data security risks and unnecessary traffic costs.
+Content Delivery Network (CDN) can be used to accelerate mass download/deliver content stored in a COS bucket, which is ideal when the same content needs to be downloaded repeatedly. The origin-pull authentication feature allows CDN to accelerate content stored in a private-read bucket. The CDN authentication feature allows only the authorized users to download content to avoid data security risks and unnecessary traffic costs.
 
 ## CDN
 
@@ -16,15 +16,15 @@ CDN involves caching and origin-pull. When a user accesses a URL, if the request
 
 #### Security options
 
-- Origin-pull authentication: If the requested content is not cached on the edge server, the content will be pulled from the origin server. If COS is used as the origin server and origin-pull authentication is enabled, the CDN edge server accesses COS as a special service identity to obtain and cache the content stored in a private bucket.
- - CDN service authorization: You can authorize the CDN service so that CDN edge servers can access the COS origin server and pull content from it as a special service identity.
+- Origin-pull authentication: If the requested content is not cached on the edge node, the content will be pulled from the origin. If COS is used as the origin and origin-pull authentication is enabled, the CDN edge node will use a special service identity to access the COS origin to obtain and cache the data in the private bucket.
+ - CDN service authorization: You can authorize the CDN service so that CDN edge nodes can use a special service identity to access the COS origin and pull content from it.
 - CDN authentication: When a user tries to obtain content cached on an edge server, the edge server will verify the user via the authentication field in the URL according to the authentication rules to prevent unauthorized access and hotlinking, thus improving the security and reliability of the cache.
 
 ## Access Nodes of COS
 
 #### Definition of access node
 
-An access node is a domain name that is assigned to the bucket when it is created according to the bucket’s region and name. You can access data stored in the bucket using this domain name.
+An access node is a domain name assigned to a bucket according to the bucket’s region and name. You can access data stored in the bucket using this domain name.
 
 If the static website feature is enabled, you will be provided a static website access node, which can be configured responses that are different from that of the default access node.
 
