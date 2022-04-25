@@ -38,4 +38,4 @@ Suppose a subscription instance generates X GB data in one month and pulls Y GB 
 Currently, data storage and public network traffic are free of charge.
 
 ## DTS-DBbridge
-DTS-DBbridge can be purchased offline. Please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for a trial license for testing. If you need to purchase an official license, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and we will get back to you.
+DTS-DBbridge can be purchased offline. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for a trial license for testing. If you need to purchase an official license, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) and we will get back to you.
