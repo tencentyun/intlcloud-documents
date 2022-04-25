@@ -8,21 +8,21 @@
 ## Possible Causes
 
 - Symptom 1
- 1. The speed slow due to your ISP and networking condition.
+ 1. The speed is slow due to your ISP and network condition.
  2. CORS is used and thus the speed is slow.
 - Symptom 2: CNAME maps the custom endpoint to other products (e.g., Content Delivery Network (CDN), Cloud Virtual Machine (CVM), or Anti-DDoS) before mapping to COS.
 
 ## Solutions
 
-- [Symptom 1](#FaultPhenomenon1): Check the network condition of your client. For detailed directions, please see [Troubleshooting Client-Side Network](#SearchTheClientNetwork).
-- [Symptom 2](#FaultPhenomenon2): Reduce the intermediate links by modifying the DNS record for your custom endpoint to improve the transfer efficiency. For detailed directions, please see [Modifying custom endpoint’s DNS record](#ModifyCustomDomainNameResolution).
+- [Symptom 1](#FaultPhenomenon1): Check the network condition of your client. For detailed directions, see [Troubleshooting Client Network](#SearchTheClientNetwork).
+- [Symptom 2](#FaultPhenomenon2): Reduce the intermediate links by modifying the DNS record for your custom endpoint to improve the transfer efficiency. For detailed directions, see [Modifying custom endpoint’s DNS record](#ModifyCustomDomainNameResolution).
 
 ## Troubleshooting Procedure
 
 <span id="SearchTheClientNetwork"></span>
 ### Checking the client-side network
 
-1. Run the following command to check whether the IPS of the IP address is the same as that of the client:
+1. Run the following command to check whether the ISP of the IP address is the same as that of the client network:
 ```
 ping COS endpoint
 ```
