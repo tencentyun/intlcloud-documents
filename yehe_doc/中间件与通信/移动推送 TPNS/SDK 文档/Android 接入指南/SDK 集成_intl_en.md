@@ -49,30 +49,31 @@ dependencies {
 ```
 
 >!
->- If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+> - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
 > - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
->Add the following metadata in the `application` tag in the `AndroidManifest` file:
->```
-><application>
->// Other Android components
-><meta-data
->android:name="XG_SERVER_SUFFIX"
->android:value="Domain names of other service access points" />
-></application>
->```
-```
+> Add the following metadata in the `application` tag in the `AndroidManifest` file:
+>  ```
+ <application>
+             // Other Android components
+             <meta-data
+                                      android:name="XG_SERVER_SUFFIX"
+                                      android:value="Domain names of other service access points" />
+ </application>
+ ```
 >The domain names of other service access points are as follows:
->   - Shanghai: `tpns.sh.tencent.com`
->   - Singapore: `tpns.sgp.tencent.com`
->   - Hong Kong (China): `tpns.hk.tencent.com`
->  
+>- Shanghai: `tpns.sh.tencent.com`
+>- Singapore: `tpns.sgp.tencent.com`
+>- Hong Kong (China): `tpns.hk.tencent.com`
+> 
+
 
 #### Notes
 
  - If the following notification appears in Android Studio after you add the above-mentioned `abiFilter` configuration:
    "NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin", you need to add `android.useDeprecatedNdk=true` in the `gradle.properties` file under the project root directory.
  - If you need to listen for messages, see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo (in the SDK compression package, which can be obtained from [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)). You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file (do not process time-consuming operations in the receiver):
-​```xml
+
+​```
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
         <!-- Receive in-app messages -->
@@ -299,14 +300,14 @@ You need to configure the permissions required for proper operation of the TPNS 
 > - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
 > Add the following metadata in the `application` tag in the `AndroidManifest` file:
 >```
-><application>
->// Other Android components
-><meta-data
->android:name="XG_SERVER_SUFFIX"
->android:value="Domain names of other service access points" />
-></application>
->```
+<application>
+// Other Android components
+<meta-data
+android:name="XG_SERVER_SUFFIX"
+android:value="Domain names of other service access points" />
+</application>
 ```
+
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
 >   - Singapore: `tpns.sgp.tencent.com`
