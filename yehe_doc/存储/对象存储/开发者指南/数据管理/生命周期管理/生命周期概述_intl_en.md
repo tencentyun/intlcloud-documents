@@ -75,7 +75,7 @@ If multiple conflicting rules are configured for the same set of objects, the ru
 
 #### Execution instructions
 
-Once triggered, actions configured at any time will always be executed at 00:00 the next day Beijing time (GMT+8) on Tencent Cloud COS. As objects need to be added to an asynchronous queue before execution, for those who match the rules after the configuration time, actions are performed before 24:00 the next day.
+Once triggered, actions configured at any time will always be executed at 00:00 the next day Beijing time (GMT+8) on Tencent Cloud COS. Objects are added to an asynchronous queue before execution. For objects that match the rules after the configuration time, actions are performed before 24:00 the next day.
 
 For example, you configured a lifecycle rule at 15:00 on the 1st day of the month to delete files one day or longer after they are modified. Then, at 00:00 on the 2nd day, the lifecycle task scans for files that were modified over one day ago and deletes them. Files uploaded on the 1st day will not be deleted at 00:00 on the 2nd day, as the time elapsed since their modification is less than one day. Instead, these files will be deleted at 00:00 on the 3rd day.
 
