@@ -4,7 +4,7 @@ Cloud Log Service (CLS) log backup is a feature that COS provides based on [Serv
 
 After you configure a log backup rule for a bucket, SCF will dump the CLS logs to the bucket according to the time granularity configured.
 
-CLS log backup can open up the ecological downstream linkage of the product and ship log data to COS to further meet the needs of log backup scenarios and mine the value of log data. Log backup is an asynchronous process. When log data is generated, SCF automatically backs up the log data to COS for storage via trigger.
+CLS log backup can ship log data to COS to further meet the needs of log backup scenarios and harness the value of log data. Log backup is an asynchronous process. When log data is generated, SCF automatically backs up the log data to COS for storage via trigger.
 
 
 
