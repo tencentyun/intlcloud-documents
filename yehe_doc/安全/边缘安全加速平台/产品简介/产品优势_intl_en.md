@@ -1,7 +1,7 @@
 ## Integrated Platform
 EdgeOne is an integrated edge security and acceleration platform offering 3D protection from layers 3 to 7.
-- Anti-DDoS: It detects and cleanses DDoS attack traffic and guarantees the business availability based on diverse measures, for example, IP blocklist/allowlist and port blocking policies.
-- Rate limit: It uses mechanisms such as HTTP field match and access frequency monitoring to effectively cleanse CC attack traffic.
+- Anti-DDoS: It detects and cleanses DDoS attack traffic and guarantees the business availability based on diverse measures, for example, IP blocklist/allowlist and port blocking policies. Up to 2 Tbps protection bandwidth is provided.
+- Rate limit: It uses mechanisms such as HTTP field match and access frequency monitoring to effectively cleanse CC attack traffic. Up to 70K QPS is provided.
 - Web security protection: It effectively prevents top 10 OWASP web ricks like SQL injection and cross-site scripting (XSS) and quickly identifies and blocks bot behaviors.
 - API security protection: It guarantees API access security based on a secure and reliable access authentication mechanism.
 
