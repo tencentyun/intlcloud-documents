@@ -17,7 +17,7 @@ Atualmente, as RIs são oferecidas apenas para usuários da versão beta. Para u
 | Parâmetro        | Obrigatório/Opcional | Descrição                               |
 | ------------------ | --------- | ------------------------------------------------------------ |
 | Região/Zona de disponibilidade  | Obrigatório      | A região e a zona de disponibilidade em que as instâncias com pagamento conforme o uso correspondentes estão localizadas.           |
-| Sistema operacional    | Obrigatório      | Linux OS.                                    |
+| Sistema operacional    | Obrigatório      | Windows、Linux OS.                                    |
 | Validade         | Obrigatório      | Período de vigência da RI: 1 ano.                    |
 | Instância         | Obrigatório     | O tipo de instância com pagamento conforme o uso que você deseja que corresponda à RI.</br>Essas instâncias com pagamento conforme o uso devem corresponder exatamente aos atributos da RI para se beneficiar do desconto no faturamento durante o período de vigência da RI.  |
 | Nome da RI | Opcional      | É definido pelo usuário. <li> O padrão do nome da RI é “unnamed (sem nome)” se este parâmetro for deixado em branco.</li>  <li> Você pode inserir qualquer nome dentro de 60 caracteres.</li> |
