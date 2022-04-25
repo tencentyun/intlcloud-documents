@@ -1,9 +1,9 @@
 ## Overview
 
-Currently, to avoid end users from being frequently disturbed, vendors are gradually starting to limit the number and frequency of notification messages pushed by application developers by type. The message type is mainly identified by the channel ID (`ChannelID`). TPNS divides messages into two types based on the types provided by major vendors:
+Currently, to avoid end users from being frequently disturbed, vendors are gradually restricting the number and frequency of notification messages pushed by application developers by type. The message type is mainly identified by the channel ID (`ChannelID`). TPNS classifies messages into two types based on the types provided by major vendors:
 
-- General message (default): this type is suitable for messages about group announcements, operational events, trending news, etc., which is mainly user-oriented universal content.
-- Notification message/private message: this type is suitable for personal notification-related messages such as chat messages, order status changes, and transaction reminders. The number of notification messages is unlimited.
+- General message (default): This type is suitable for messages about group announcements, operational events, trending news, etc., which mainly contains user-oriented universal content.
+- Notification message/private message: This type is suitable for personal notification-related messages such as chat messages, order status changes, and transaction reminders. The number of notification messages is unlimited.
 
 The message type can be specified when you call the push API.
 
@@ -16,8 +16,8 @@ The message type can be specified when you call the push API.
 	- [Huawei](#huaweizhinan)
 	
 
- After you get the channel ID, specify it when calling the push API. Meizu and Huawei channels do not support notification messages currently, and they don't limit the number of messages.
-2. If you do not need to use vendor notification/private messages and only need a custom channel ID to group messages based on your application's business message types, you can configure the channel ID based on the corresponding vendor's configuration description:
+ After you get the channel ID, specify it when calling the push API. Meizu and Huawei channels do not support notification messages currently. The number of notification messages is unlimited.
+2. If you do not need to use vendor notification/private messages and only need a custom channel ID to classify messages based on your application's business message types, you can make configurations as below:
 <table>
 <thead>
 <tr>
@@ -50,7 +50,7 @@ The message type can be specified when you call the push API.
 <td><ul><li>Call the server API to create the channel ID.</li><li>Specify the corresponding channel ID when calling the TPNS <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
 </tr>
 </tbody></table>
-3. If you do not need vendor notification messages nor a custom channel ID, you do not need to perform relevant operations, and TPNS will specify a default channel ID for all messages of your application and group them into the default type.
+3. If you need neither vendor notification messages nor a custom channel ID, TPNS will specify a default channel ID for all messages of your application and group them into the default type.
 
 ## OPPO Notification Channel Application Guide[](id:oppozhinan)
 
@@ -65,7 +65,7 @@ The default channel on the OPPO PUSH platform is the public message channel. Now
 | Maximum number of pushes | All public message channels share a total number of pushes; if the daily limit is reached, they will stop pushing messages on the day. The current maximum number of daily pushes is twice the total number of all registered users | Unlimited |
 | Configuration method | Default | You need to register the channel with the OPPO PUSH platform and set the corresponding channel attribute to **Private Message** |
 
->! Official reminder from OPPO: you must not use the private message channel to push universal messages (such as trending news and new product promotions). The backend will monitor the push content, and if you violate the operational rules, Opush has the right to disable your private channel access, and all consequences arising therefrom, such as exceptional API calls and delivery failures of messages sent through the private message channel, shall be borne by you.
+>! Official reminder from OPPO: You must not use the private message channel to push universal messages (such as trending news and new product promotions). The backend will monitor the push content. If you violate the operational rules, Opush has the right to disable your private channel access, and you shall bear all consequences arising therefrom, such as exceptional API calls and failure to deliver messages sent through the private message channel.
 >
 
 ### Applying for the OPPO private message channel
@@ -109,15 +109,15 @@ Below is a sample push:
 
 Mi push notification channels are classified into two types:
 
-- General message channel (default): suitable for pushing universal content for users, for example, trending news, new product promotions, platform announcements, community topics, and lucky draws.
-- Notification message channel: suitable for personal notification-related content such as chat messages, order status changes, package delivery notifications, transaction reminders, and IoT system notifications. The number of pushes for notification messages is unlimited.
+- General message channel (default): Suitable for pushing universal content for users, for example, trending news, new product promotions, platform announcements, community topics, and lucky draws.
+- Notification message channel: Suitable for personal notification-related content such as chat messages, order status changes, package delivery notifications, transaction reminders, and IoT system notifications. The number of pushes for notification messages is unlimited.
 
 The table below compares the general message channel and notification message channel.
 
 | Type         | General Message Channel (Default)                                             | Notification Message Channel                                                     |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Push content     | Universal content for multiple users, for example, trending news, new product promotions, platform announcements, community topics, and lucky draws | Personal notification-related content such as chat messages, order status changes, package delivery notifications, transaction reminders, and IoT system notifications |
-| Limit on the number of pushes | <li>If the number of daily connected MIUI devices is less than 10,000, the number of allowed pushes on the day will be 50,000. <li>If the number of daily connected MIUI devices is greater than or equal to 10,000, the number of allowed pushes on the day will be 5 times the number of daily connected MIUI devices. <li>Note: the number of messages arrived at devices is counted as the number of pushes.</li> | Unlimited |
+| Push content     | Universal content for multiple users, such as trending news, new product promotions, platform announcements, community topics, and lucky draws | Personal notification-related content, such as chat messages, order status changes, package delivery notifications, transaction reminders, and IoT system notifications |
+| Limit on the number of pushes | <li>If the number of daily connected MIUI devices is less than 10,000, the number of allowed pushes on the day will be 50,000. <li>If the number of daily connected MIUI devices is greater than or equal to 10,000, the number of allowed pushes on the day will be 5 times the number of daily connected MIUI devices. <li>Note: The number of messages arrived at devices is counted as the number of pushes.</li> | Unlimited |
 | Configuration method     | Default                                                       | You need to apply to the Mi push team for a channel of the desired message type, which will be enabled after your application is approved (for more information on the application method, see the section below). |
 
 ### Applying for the Mi notification message channel
@@ -177,7 +177,7 @@ Application name: …
 Package name: …
 Application overview: …
 IM/System message quota required (unit: 10,000): ...
-Description of the specific push scenario: for example, personal user chat and merchant chat
+Specific push scenarios, such as personal user chat and merchant chat
 ```
 
 ### Using vivo system messages
@@ -228,7 +228,7 @@ Intelligent classification algorithms will automatically categorize your message
 Starting from July 1, 2021, the Huawei Push service will begin to receive developers' applications for self-help message classification. After their applications are approved, developers can classify messages by themselves according to Huawei Push's classification specifications.
 
 ### Applying for self-help message classification permission
-Currently, the self-help classification permission for Huawei notification messages can take effect only after you apply for it through email. For more information, please see [Message Classification Management Solution](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-management-solution-0000001149358835).
+The self-help classification permission for Huawei notification messages can take effect only after you apply for it. For more information, see [Message Classification Methods](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#section1653845862216).
 
 >!
 > - If the application does not provide the self-help message classification feature, its push messages will be automatically classified by intelligent classification.
@@ -263,7 +263,7 @@ Below is a sample push:
 Huawei Push supports customizing notification channels for applications. To create a notification channel on the client, use either of the following methods:
 
 1. Use the Android API to create a notification channel. For more information, see [Create and Manage Notification Channels](https://developer.android.google.cn/training/notify-user/channels).
-2. Use the TPNS SDK (version 1.1.5.4 or later). For more information, see [Creating notification channel](https://intl.cloud.tencent.com/document/product/1024/30715) in the API documentation.
+2. Use the TPNS SDK (version 1.1.5.4 or later). For more information, see [Creating a notification channel](https://intl.cloud.tencent.com/document/product/1024/30715) in the API Documentation.
 
 ### Using a Huawei notification channel
 
@@ -271,7 +271,9 @@ Currently, notifications pushed through Huawe's custom channel can be delivered 
 
 Configure the `hw_ch_id` field in the Android request structure of the RESTful API to push messages through the Huawei notification channel. For more information, see the parameter description in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 
->! A custom notification channel is applicable only for service and communication messages. Information and marketing messages are still displayed through the Huawei marketing notification channel.
+>! 
+> - If you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the custom channel feature is no longer applicable to your application. Your push messages will be classified as service and communication messages or information and marketing messages based on the message levels determined by the smart classification system or the self-help message classification permission. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
+> - The custom channel feature requires the self-help message classification permission for your application. Please apply for it as instructed above.
 >
 
 Below is a sample push:
