@@ -1,4 +1,4 @@
-본 문서는 TRTC가 월간 통계에 따라 [실시간 음성 통화](https://intl.cloud.tencent.com/document/product/647/36064), [실시간 영상 통화](https://intl.cloud.tencent.com/document/product/647/36063) 및 [인터랙티브 라이브 비디오 스트리밍](https://intl.cloud.tencent.com/document/product/647/36059)의 사용 요금을 계산하는 방법을 소개합니다.
+본 문서는 TRTC가 월간 통계에 따라 [실시간 음성 통화](https://intl.cloud.tencent.com/document/product/647/36068), [실시간 영상 통화](https://intl.cloud.tencent.com/document/product/647/36066) 및 [인터랙티브 라이브 비디오 스트리밍](https://intl.cloud.tencent.com/document/product/647/36061)의 사용 요금을 계산하는 방법을 소개합니다.
 
 예상 요금은 [TRTC 가격 계산기](https://intl.cloud.tencent.com/pricing/trtc/calculator)로 확인할 수 있습니다.
 
