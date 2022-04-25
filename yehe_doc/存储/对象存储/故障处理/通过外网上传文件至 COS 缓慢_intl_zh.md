@@ -1,8 +1,8 @@
 ## 现象描述
 
 - **现象1**：<span id="FaultPhenomenon1"></span>
- - 使用公司网络进行上传时，传输正常；使用家庭网络进行上传时，传输缓慢（低于8Mbps）。
- - 使用手机4G网络进行上传时，传输正常；使用公司网络进行上传时，传输缓慢（低于8Mbps）。
+     - 使用公司网络进行上传时，传输正常；使用家庭网络进行上传时，传输缓慢（低于8Mbps）。
+     - 使用手机4G网络进行上传时，传输正常；使用公司网络进行上传时，传输缓慢（低于8Mbps）。
 - **现象2**：<span id="FaultPhenomenon2"></span>使用自定义域名进行上传时，传输缓慢。
 
 ## 可能原因
@@ -39,20 +39,25 @@ ping examplebucket-1250000000.cos.ap-beijing.mqcloud.com
     检查是否设置了代理。
      - 是，关闭代理。
      - 否，请执行 [步骤3](#step03)。
+
 3. <span id="step03"></span>检查所用的 Wi-Fi 路由器是否存在限速。
  - 是，请根据实际需求，酌情放行。
  - 否，请执行 [步骤4](#step04)。
+
 4. <span id="step04"></span>检查当前网络上传 COS 的传输性能。
 以 COS 的 COSCMD 工具为例，测试一个20MB对象的上传和下载性能。
+
 ```
 coscmd probe -n 1 -s 20
 ```
 返回类似如下结果，分别得出平均速率（Average），最低速率（Min），最高速率（Max）。
 ![](https://main.qcloudimg.com/raw/2fcecb96df04acc6b0c32c120ccb3c39.png)
+
 5. 通过浏览器访问 [测速网](https://www.speedtest.cn/)，并结合 [步骤4](#step04) 检查客户端的网络带宽占用率是否达到上限。
  - 如果步骤4的速率低于客户端带宽速率，请 [联系我们](https://intl.cloud.tencent.com/support)。
  - 如果步骤4的速率等于客户端带宽速率，且未达到运营商承诺的带宽，请联系运营商客服。
  - 如果步骤4的速率等于客户端带宽速率，且达到了运营商承诺的带宽，请执行 [步骤6](#step06)。
+
 6. <span id="step06"></span>检查是否存在国内客户端访问海外节点 bucket，或者存在海外客户端访问国内节点 bucket。
  - 是，建议使用 COS 的全球加速功能。
  - 否，请 [联系我们](https://intl.cloud.tencent.com/support)。
@@ -77,6 +82,7 @@ XXX.w.kunlungr.com（aliyunCDN 默认域名）
 ```
 2. <span id="2_step02"></span>将自定义域名的 CNAME 解析到所需的 COS 域名中，并进行数据上传。
 例如 `upload.mydomain.com  cname XXX.cos.ap-beijing.myqcloud.com`，具体操作请参见 [开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)。
+
 3. 修改客户端的默认 COS 域名。
 以 C# 代码为例：
 ```
