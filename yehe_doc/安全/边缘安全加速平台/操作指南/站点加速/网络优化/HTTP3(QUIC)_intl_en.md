@@ -1,5 +1,5 @@
 ## Overview
-HTTP/3 (QUIC) requests are supported. QUIC is used to accelerate site requests and improve the data transfer efficiency and security.
+HTTP/3 (QUIC) requests are supported. HTTP/3 (QUIC) is used to accelerate site requests and improve the data transfer efficiency and security.
 
 #### What is QUIC?
 Quick UDP Internet Connections (QUIC) is a general-purpose network protocol. It not only provides a reliability comparable to that of TCP connections, but also greatly reduces the latency in transfer and connections to prevent network congestion while guaranteeing the network security.
