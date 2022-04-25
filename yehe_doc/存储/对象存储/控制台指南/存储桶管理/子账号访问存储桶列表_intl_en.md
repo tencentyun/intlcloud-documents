@@ -6,7 +6,7 @@
 - **Adding an access path**: this method applies to scenarios where a sub-account has permissions to operate on objects but no permissions to access a bucket list. The access path can be a **Bucket** or a **Path under the bucket**. Please make sure the added path is authorized.
 - **Adding a preset policy**: you can add a preset policy QcloudCOSGetServiceAccess with your root account for a sub-account to access a bucket list. This method also allows you to check the statistics overview in the console.
 
->This feature is applicable to scenarios where a sub-account accesses a bucket list using the console.
+>This feature applies to scenarios where a sub-account accesses a bucket list using the console.
 
 
 
