@@ -156,9 +156,9 @@ Some fields have parameters in addition to values. Value and parameter as well a
 - The multipart type is the essence of MIME emails. The email body is divided into multiple parts, each of which consists of part header and part body separated by a blank line.
 
 - There are three common multipart types:
- - multipart/mixed
- - multipart/related
- - multipart/alternative
+  - multipart/mixed
+  - multipart/related
+  - multipart/alternative
 The meaning and use of each of these types can be seen from their names. The hierarchical relationship between them can be summarized as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/c8fc71fa5b2e90fd96e5ad2755effd2b.png)
 If you want to add attachments to an email, you must define the `multipart/mixed` part. If there are embedded resources, you must define at least the `multipart/related` part; if plain text and hypertext coexist, you must define at least the `multipart/alternative` part.
