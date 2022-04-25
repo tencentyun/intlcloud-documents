@@ -5,7 +5,7 @@
 You can run a TRTC demo and integrate basic TRTC features into your project with a few lines of simple code. In as little as 1 minute, you can build a real-time audio/video communication product from scratch featuring low latency, low stutter rate, and high-quality. For detailed directions, see [Quick Demo Start](https://intl.cloud.tencent.com/document/product/647/35086) and [SDK Quick Integration](https://intl.cloud.tencent.com/document/product/647/35092).
 
 ### Scenario-specific components
-TRTC provides a rich set of components to help you quickly implement features such as audio chat, conferencing, interactive live streaming, and interactive teaching. For detailed directions, see [Building a Demo](https://intl.cloud.tencent.com/document/product/647/36062).
+TRTC provides a rich set of components to help you quickly implement features such as audio chat, conferencing, interactive live streaming, and interactive teaching. For detailed directions, see [Building a Demo](https://intl.cloud.tencent.com/document/product/647/46332).
 
 ### Low latency
 TRTC offers reliable and secure network connection across the globe. It uses Tencent Cloud’s self-developed multi-level addressing algorithm and can connect to nodes across the entire network. Abundant high-bandwidth resources and globally-distributed edge servers allow it to maintain an **average global end-to-end latency below 300 ms**.
