@@ -1,6 +1,6 @@
 ### Regras de correspondência
 
-A instância reservada (Reserved Instance, RI) adquirida corresponde automaticamente às instâncias com pagamento conforme o uso durante o período de vigência da RI. Por enquanto, apenas instâncias do Linux são compatíveis. Se você não tiver nenhuma instância que corresponda às especificações da RI, a RI ficará inativa, mas ainda assim incorrerá em taxas. Quando você adquire uma instância com as especificações correspondentes, a RI faz a correspondência imediatamente e o benefício se aplica.  
+A instância reservada (Reserved Instance, RI) adquirida corresponde automaticamente às instâncias com pagamento conforme o uso durante o período de vigência da RI. Por enquanto, apenas instâncias do Windowa、Linux são compatíveis. Se você não tiver nenhuma instância que corresponda às especificações da RI, a RI ficará inativa, mas ainda assim incorrerá em taxas. Quando você adquire uma instância com as especificações correspondentes, a RI faz a correspondência imediatamente e o benefício se aplica.  
 
 - As RIs são correspondidas automaticamente às instâncias com pagamento conforme o uso, sem intervenção manual.
 - O benefício de faturamento da RI pode se aplicar a um máximo de 3.600 segundos (uma hora) de uso da instância por hora cheia. Você pode executar várias instâncias ao mesmo tempo, mas só pode receber o benefício do desconto da RI para um total de 3.600 segundos por hora cheia; o uso de instância que excede 3.600 segundos em uma hora cheia é faturado de acordo com a taxa de pagamento conforme o uso. 

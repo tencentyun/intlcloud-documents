@@ -1,8 +1,8 @@
 Management feature fees are calculated based on the use of COS management features such as inventory and COS Select.
 
 >?
->- For the unit prices of the management feature, please see [COS Product Pricing](https://buy.cloud.tencent.com/price/cos).
->- For more information about storage classes, please see [Storage Class Overview](https://cloud.tencent.com/document/product/436/33417).
+>- For the unit prices of the management feature, see [COS Product Pricing](https://buy.cloud.tencent.com/price/cos).
+>- For more information about storage classes, see [Storage Class Overview](https://cloud.tencent.com/document/product/436/33417).
 >
 
 
@@ -18,7 +18,7 @@ Management feature fees are calculated based on the use of COS management featur
 </thead>
 <tbody><tr>
 <td>Inventory feature</td>
-<td nowrap="nowrap">N/A</td>
+<td nowrap="nowrap">All</td>
 <td>Fees incurred from listing bucket objects after the inventory feature is enabled</td>
 <td>Pay-as-you-go</li></td>
 </tr>
@@ -30,13 +30,13 @@ Management feature fees are calculated based on the use of COS management featur
 </tr>
 <tr>
 <td>Batch operation</td>
-<td nowrap="nowrap">N/A</td>
+<td nowrap="nowrap">All</td>
 <td>Once you enable the batch operation feature, COS will bill you based on the number of jobs created and objects processed</td>
 <td>Pay-as-you-go</td>
 </tr>
 <tr>
 <td>Object tagging</td>
-<td nowrap="nowrap">N/A</td>
+<td nowrap="nowrap">All</td>
 <td>Once you enable the object tagging feature, COS will bill you based on the number of object tags set</td>
 <td>Pay-as-you-go</td>
 </tr>

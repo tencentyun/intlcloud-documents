@@ -39,7 +39,7 @@ You can:
 8. Verify whether the account has the granted permission.
  - If yes, proceed with the next step.
  - If not, click **Edit** to configure again.
-9. Check whether the value of `q-ak` (case-sensitive) is the `secretID` and `secretKey` of the root account.
+9. Check whether the value of `q-ak` (case-sensitive) is the `secretID` and `secretKey` of the root account of the bucket.
  - If yes, proceed with the next step.
  - If not, change the value of `q-ak` to the `secretID` and `secretKey` of the root account.
 10. Check whether the resource is accessed by a cross-account.
@@ -60,7 +60,7 @@ You can:
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** in the left sidebar.
 3. Click the name of the desired bucket to go to the configuration page.
-4. Click **Security Management** > **CORS (Cross-Origin Resource Sharing**.
+4. Click **Security Management** > **CORS (Cross-Origin Resource Sharing)**.
 5. In the **CORS (Cross-Origin Resource Sharing)** area, check whether it is a CORS request.
 
  - If yes, proceed with the next step.

@@ -1,6 +1,6 @@
 ### Matching Rules
 
-The purchased reserved instance (RI) automatically matches to pay-as-you-go instances during the RI term. For now, only Linux instances are supported. If you have no instances that match the RI specifications, the RI will become idle but still incur fees. When you purchase an instance with matched specifications, the RI will immediately matches to it and the benefit applies.  
+The purchased reserved instance (RI) automatically matches to pay-as-you-go instances during the RI term. For now, Windows znd Linux instances are supported. If you have no instances that match the RI specifications, the RI will become idle but still incur fees. When you purchase an instance with matched specifications, the RI will immediately matches to it and the benefit applies.  
 
 - RIs are automatically matched with pay-as-you-go instances without manual intervention.
 - The RI billing benefit can apply to a maximum of 3,600 seconds (one hour) of instance usage per clock-hour. You can run multiple instances concurrently, but can only receive the benefit of the RI discount for a total of 3,600 seconds per clock-hour; instance usage that exceeds 3,600 seconds in a clock-hour is billed at the pay-as-you-go rate. 

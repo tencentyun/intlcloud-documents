@@ -1,6 +1,6 @@
 ### Aturan Pencocokan
 
-Instans cadangan (RI) yang dibeli secara otomatis dicocokan dengan instans prabayar selama jangka waktu RI. Untuk saat ini, hanya instans Linux yang didukung. Jika tidak memiliki instans yang sesuai dengan spesifikasi RI, RI akan tidak aktif tetapi tetap dikenakan biaya. Saat membeli instans dengan spesifikasi yang sesuai, RI akan langsung mencocokkannya dan manfaat berlaku.  
+Instans cadangan (RI) yang dibeli secara otomatis dicocokan dengan instans prabayar selama jangka waktu RI. Untuk saat ini, hanya instans Windows、Linux yang didukung. Jika tidak memiliki instans yang sesuai dengan spesifikasi RI, RI akan tidak aktif tetapi tetap dikenakan biaya. Saat membeli instans dengan spesifikasi yang sesuai, RI akan langsung mencocokkannya dan manfaat berlaku.  
 
 - RI secara otomatis dicocokan dengan instans bayar sesuai pemakaian tanpa intervensi manual.
 - Manfaat penagihan RI dapat berlaku hingga maksimum 3.600 detik (satu jam) penggunaan instans per jam. Anda dapat menjalankan beberapa instans secara bersamaan, tetapi hanya dapat menerima manfaat diskon RI untuk total 3.600 detik per jam; penggunaan instans yang melebihi 3.600 detik dalam satu jam dibebankan dengan tarif bayar sesuai pemakaian. 
