@@ -15,7 +15,7 @@ For CPU resources, you can set the amount of resources for CPU Request and CPU L
 For memory resources, you can only limit the maximum amount of memory available to a container. It is in MiB and can be decimals.
 >!
 > - Memory Request is used as the basis for scheduling. When a container is created, memory resources are allocated to it on the node, which is called the "allocated memory" resources.
-> - Memory resources are non-scalable. There will be a risk of OOM if the memory resources used by all containers on the node exceed the limit. Therefore, if Limit is not set, the Limit will be equal to the Request by default to ensure normal operations of the container.
+> - Memory resources are non-scalable. There will be a risk of OOM if the memory resources used by all containers on the node exceed the limit. Therefore, if Limit is not set, containers can use all resources available on the node, which causes resources of other containers to be occupied and the Pod on which this type of containers located is easy to be drained. It is recommended to set Limit = Request.
 
 ## CPU Usage and CPU Utilization
 - The CPU usage is an absolute value indicating the number of physical CPU cores actually used. Both the CPU resource Request and CPU resource Limit are judged based on the CPU usage.
@@ -34,7 +34,7 @@ In terms of resource limitations, the upper limit of the resources used by Pod1 
 
 ## Recommended Service Resource Limitations
 
-TKE will recommend the Request and Limit values based on the historical load of your current container image. Using the recommended values will ensure that your container runs more smoothly and greatly reduce the probability of exceptions.
+TKE will recommend the Request and Limit values based on the historical load of your current container image. Using the recommended values will ensure that your container runs more smoothly and reduce the probability of exceptions.
 
 **Recommendation algorithm**:
 The algorithm first takes the values of load per minute in the current container image in the past seven days, and then uses the 95th percentile value to determine the recommended Request, which is half of the Limit.
@@ -50,7 +50,9 @@ During normal use, you may find that there are no recommendations for some value
 2. The recommended value is less than the Request or Limit that has already been configured for your current container.
 
 >!
->1. As the recommended values are calculated based on the historical load, in principle, the longer the container image runs real businesses, the more accurate the recommended values.
->2. When you create a service using the recommended values, container scheduling may fail due to insufficient cluster resources. When saving the service, you should carefully check the remaining resources in the current cluster.
->3. The recommended values are only for reference. You can make adjustments based on the actual business needs.
+1. As the recommended values are calculated based on the historical load, in principle, the longer the container image runs real businesses, the more accurate the recommended values.
+2. When you create a service using the recommended values, container scheduling may fail due to insufficient cluster resources. When saving the service, you should carefully check the remaining resources in the current cluster.
+3. The recommended values are only for reference. You can make adjustments based on the actual business needs.
 
+## References
+The Request and Limit values of containers need to be set based on service types, demands and scenarios. For more information, see [Setting Request and Limit](https://intl.cloud.tencent.com/document/product/457/37009).
