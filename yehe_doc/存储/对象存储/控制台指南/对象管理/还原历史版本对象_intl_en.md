@@ -35,6 +35,6 @@ Before you restore an object, ensure that you have enabled versioning for the bu
 ![](https://qcloudimg.tencent-cloud.cn/raw/01cf0bbcee0fd999f6ef482516e3625a.png)
 6. In the pop-up window, check the version information of the object to restore, and click **OK**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9a2bdf5f5c15f0b6e1edb15dbd427c5b.png)
-7. After these, you can view the restored version of the object in the file list.
+7. View the restored version of the object in the file list.
 ![](https://qcloudimg.tencent-cloud.cn/raw/11393ba7760f0ad8deffbc61acf7cd36.png)
 
