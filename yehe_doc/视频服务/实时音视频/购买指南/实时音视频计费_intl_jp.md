@@ -1,4 +1,4 @@
-ここでは、TRTCが[音声通話](https://intl.cloud.tencent.com/document/product/647/36064)、[ビデオ通話](https://intl.cloud.tencent.com/document/product/647/36063)、[オーディオビデオインタラクティブストリーミング](https://intl.cloud.tencent.com/document/product/647/36059)の使用料金を月次集計する方法についてご紹介します。
+ここでは、TRTCが[音声通話](https://intl.cloud.tencent.com/document/product/647/36068)、[ビデオ通話](https://intl.cloud.tencent.com/document/product/647/36066)、[オーディオビデオインタラクティブストリーミング](https://intl.cloud.tencent.com/document/product/647/36061)の使用料金を月次集計する方法についてご紹介します。
 
 ビジネス費用の見積もりが必要な場合、[TRTC価格計算ツール](https://intl.cloud.tencent.com/pricing/trtc/calculator)を使用してください。
 
