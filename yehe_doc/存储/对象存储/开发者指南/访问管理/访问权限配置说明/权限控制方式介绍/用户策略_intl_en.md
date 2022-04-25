@@ -74,7 +74,7 @@ CAM provides [preset policies and custom policies](https://intl.cloud.tencent.co
 4. Select **Blank Template** and enter your policy syntax.
 
 The policy syntax must contain the following elements:
- - **resource: resource to authorize**
+ - **resource: resource to authorize access to**
      - All resources (`"*"`)
      - Specified bucket (`"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"`)
      - Specified directory or object in a bucket (`"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/test/*"`)
