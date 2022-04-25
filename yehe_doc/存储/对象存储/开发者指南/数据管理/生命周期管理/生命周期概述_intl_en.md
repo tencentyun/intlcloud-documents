@@ -1,6 +1,6 @@
 ## Overview
 
-COS supports object-based lifecycle configuration. If you set rules for a bucket, COS can automatically perform predefined operations on objects to which the rule is applied.
+COS supports object-based lifecycle configuration. You can use lifecycle rules to define operations to perform on applicable objects.
 
 >?
 >- A lifecycle can be set to as long as 3,650 days.
@@ -36,8 +36,8 @@ When you use COS for file archive management, you need to save all historical ve
 
 ### Time
 
-- Based on the number of days: You can specify in how many days after an object is last modified to perform the corresponding operation.
-- Based on a specific date: You can specify a date to perform the corresponding operation.
+- Based on the number of days: You can specify when to perform the defined operation on an object based on the last-modified date of the object.
+- Based on a specific date: You can specify a date to perform the defined operation.
 
 ## Limits
 
@@ -51,7 +51,7 @@ Data transition is supported in public cloud regions. Finance Cloud regions supp
 
 #### One-way transition
 
-Data transition is one-way (STANDARD > STANDARD_IA > ARCHIVE, or STANDARD > ARCHIVE) and cannot be in the reversed way. You can only call [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for non-ARCHIVED/DEEP ARCHIVE only) or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (for ARCHIVE and DEEP ARCHIVE only) to restore data from a colder storage class to a hotter one.
+Data transition is one-way (STANDARD > STANDARD_IA > ARCHIVE, or STANDARD > ARCHIVE) and cannot be done reversely. You can only call [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for non-ARCHIVED/DEEP ARCHIVE only) or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (for ARCHIVE and DEEP ARCHIVE only) to restore data from a colder storage class to a hotter one.
 
 #### Eventual consistency
 
