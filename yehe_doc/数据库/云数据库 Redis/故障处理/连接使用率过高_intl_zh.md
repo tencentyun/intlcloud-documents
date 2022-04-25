@@ -17,8 +17,8 @@
 
 ### [修改连接配置](id:xgljpz)
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例详情页面。
-2. 在实例详情页面的“网络信息”>“最大连接数”栏，单击【调整】调整最大连接数。
+2. 在实例详情页面的**网络信息>最大连接数**栏，单击**调整**调整最大连接数。
 ![](https://qcloudimg.tencent-cloud.cn/raw/ed736808880fdd4f3ad4f86b69e0a617.png)
-3. 在弹出的对话框，调整最大连接数，单击【确定】。
+3. 在弹出的对话框，调整最大连接数，单击**确定**。
 
 >?如果以上方法仍未解决问题，您还可以通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 联系售后。
