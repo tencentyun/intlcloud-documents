@@ -20,7 +20,7 @@ You can quickly download and deliver objects in a bucket by managing the followi
 With CDN acceleration enabled for the default or custom CDN acceleration domain name, if the origin server is a public-read bucket, the objects in the origin server can be accessed via the default or custom CDN acceleration domain name. If the origin server is a private-read bucket, it is recommended to enable the CDN origin-pull authentication and CDN authentication configuration options.
 
 - Origin-pull authentication (CDN service authorization must be added before it can be enabled): If the data requested by a user is not cached in the edge node, CDN fetches the data from the origin server. If COS is used as the origin server and origin-pull authentication is enabled, the CDN edge server accesses the COS origin server using a special service identity (which must be authorized by CDN service) to acquire and cache the data in the private bucket.
-- CDN authentication: when a user attempts to acquire cached data by accessing an edge server, the edge server verifies the authentication field in the accessed URL based on the authentication configuration rules to prevent unauthorized access and realize hotlink protection, thus improving the security and reliability of the data cached in the edge server.
+- CDN authentication: When a user accesses an edge node to acquire cached data, the edge node verifies the authentication field in the access URL based on the authentication configuration rules. This prevents unauthorized access and hotlinking, thereby improving the security and reliability of the data cached in the edge node.
 
 CDN authentication configuration and CDN origin-pull authentication do not conflict with each other, but whether to enable them can affect the level of data protection, as shown below:
 
@@ -37,7 +37,7 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 | Private read | Disabled | Enabled or disabled | No | COS authentication is required | CDN is unavailable |
 
 > !
-> - Take the first row in the above list as an example. If the origin bucket is public read, and neither CDN origin-pull authentication nor CDN authentication configuration is enabled, then you can directly access CDN edge servers and the origin bucket using the CDN domain name, and directly access the origin bucket using the COS domain name.
+> - Take the first row in the above list as an example. If the origin bucket is public read, and neither CDN origin-pull authentication nor CDN authentication configuration is enabled, you can access CDN edge nodes and the origin bucket using the CDN domain name, and access the origin bucket using the COS domain name.
 > - The **Origin site protection** above is useful in cases where your data cached on CDN edge nodes may be maliciously pulled due to a lack of CDN authentication. Therefore, it is strongly recommended to enable CDN authentication as well for data security concerns.
 > - After CDN acceleration is enabled for a domain name, anyone can directly access the origin server via the domain name. Therefore, if you need to keep your data private, be sure to protect your data in the origin server through **Authentication Configuration**.
 
