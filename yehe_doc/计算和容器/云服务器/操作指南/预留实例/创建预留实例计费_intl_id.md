@@ -17,7 +17,7 @@ Saat ini, RI hanya ditawarkan kepada pengguna beta. Untuk menggunakannya, buka h
 | Parameter | Wajib/Opsional | Deskripsi |
 | ------------------ | --------- | ------------------------------------------------------------ |
 | Wilayah/Zona Ketersediaan | Wajib | Wilayah dan zona ketersediaan tempat instans bayar sesuai pemakaian yang cocok berada.           |
-| Sistem Operasi | Wajib | OS Linux.                                    |
+| Sistem Operasi | Wajib | Windows、OS Linux.                                    |
 | Masa Berlaku | Wajib | Jangka Waktu RI: 1 tahun.                    |
 | Instans | Wajib | Jenis instans bayar sesuai pemakaian yang ingin Anda cocokkan dengan RI.</br>Instans bayar sesuai pemakaian ini harus sama persis dengan atribut RI untuk mendapatkan keuntungan dari diskon penagihan selama jangka waktu RI.  |
 | Nama RI | Opsional | Ditetapkan pengguna. <li> Nama RI diatur secara default ke “unnamed” (belum diberi nama) jika parameter ini dibiarkan kosong.</li>  <li> Anda dapat memasukkan nama apa pun dalam 60 karakter.</li> |
