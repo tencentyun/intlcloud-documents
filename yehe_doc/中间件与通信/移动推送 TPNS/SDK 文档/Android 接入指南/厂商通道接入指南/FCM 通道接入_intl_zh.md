@@ -14,7 +14,7 @@ FCM 推送支持两种密钥配置，以下方式二选一，推荐使用“服�
 1. 配置 google-services.json 文件。如图所示：
 ![](https://main.qcloudimg.com/raw/568561b72a775058bf06750bfab38ed0.png)
 2. 配置 gradle，集成谷歌 service。
-  1. 在项目级的 build.gradle 文件中的 dependencies 节点中添加下面代码：
+   1. 在项目级的 build.gradle 文件中的 dependencies 节点中添加下面代码：
 ```xml
 classpath 'com.google.gms:google-services:4.2.0'
 ```
@@ -24,8 +24,6 @@ classpath 'com.google.gms:google-services:4.2.0'
 	```xml
 	  implementation 'com.tencent.tpns:fcm:[VERSION]-release' // FCM 推送 [VERSION] 为当前 SDK 版本号，版本号可在 Android SDK 发布动态查看
       implementation  'com.google.firebase:firebase-messaging:17.6.0'
-  ```
-
 	 //在应用级的 gradle 文件的最后一行代码中新增并将 google-services.json 放进您应用 model 的根路径下
 	apply plugin: 'com.google.gms.google-services'
 	```
