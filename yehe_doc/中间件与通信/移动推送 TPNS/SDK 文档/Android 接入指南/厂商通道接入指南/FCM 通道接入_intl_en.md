@@ -8,27 +8,29 @@ FCM PUSH supports the following two methods of key configuration. You just need 
 Register the application at the [FireBase official website](https://firebase.google.com/?hl=zh-cn). Select **Firebase Projects** > **Select a Project App** > **Settings** > **Service Account** > **Firebase Admin SDK**, and click **Generate a new private key** to get the json file containing the Firebase server private key. Then, go to the [**TPNS console**](https://console.cloud.tencent.com/tpns) > **Configuration Management** > **Basic Configuration** > **FCM Push Channel**, select Server Private Key (Recommended), and click **Click to Upload** to upload the above-mentioned json file.
 ![]()
 2. Legacy server key
-Register the application at the [FireBase official website](https://firebase.google.com/?hl=zh-cn). Select **Firebase Projects** > ** Select a Project App** > **Settings** > **Cloud Messaging** to get the **Server Key** of the FCM app push, and enter the key in the [**TPNS console**](https://console.cloud.tencent.com/tpns) > **Configuration Management** > **Basic Configuration** > **FCM Push Channel**.
+Register the application at the [FireBase official website](https://firebase.google.com/?hl=zh-cn). Select **Firebase Projects** > **Select a Project App** > **Settings** > **Cloud Messaging** to get the **Server Key** of the FCM app push, and enter the key in the [**TPNS console**](https://console.cloud.tencent.com/tpns) > **Configuration Management** > **Basic Configuration** > **FCM Push Channel**.
 ![]()
 ### Configuration
 1. Configure the `google-services.json` file.
 ![](https://main.qcloudimg.com/raw/568561b72a775058bf06750bfab38ed0.png)
 2. Configure gradle to integrate the Google service.
-  1. Add the following code to the dependencies node in the project-level `build.gradle` file:
+
+   1. Add the following code to the dependencies node in the project-level `build.gradle` file:
 ```xml
 classpath 'com.google.gms:google-services:4.2.0'
 ```
+
 >! If `FCM Register error! java.lang.IllegalStateException: Default FirebaseApp is not initialized in this process com.qq.xg4all. Make sure to call FirebaseApp.initializeApp(Context) first.` appears for a version below 4.2.0, add `YOUR_GOOGLE_APP_ID` in the `string.xml` file in the `res/values` folder.
 >
-  2. Add dependencies in the app-level `build.gradle` file:
-	```xml
+
+  2.Add dependencies in the app-level `build.gradle` file:
+
+```xml
 	  implementation 'com.tencent.tpns:fcm:[VERSION]-release' // For FCM PUSH, [VERSION] is the version number of the current SDK and can be obtained from "SDK for Android".
       implementation  'com.google.firebase:firebase-messaging:17.6.0'
-  ```
-
-	 // In the app-level gradle file, add the following to the last line of the code and put google-services.json under the root directory of your app model
+     // In the app-level gradle file, add the following to the last line of the code and put google-services.json under the root directory of your app model
 	apply plugin: 'com.google.gms.google-services'
-	```
+```
 >!
 >- For FCM PUSH, [VERSION] is the version number of the current SDK and can be obtained from the [SDK for Android](https://intl.cloud.tencent.com/document/product/1024/36191).
 >- Configure `google-play-services` for Google (v17.0.0+ or later recommended; an earlier version may cause FCM registration failure).
