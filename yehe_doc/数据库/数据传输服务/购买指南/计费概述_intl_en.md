@@ -25,7 +25,7 @@ Your subscription service will be isolated after expiration, which will affect y
 ### Pricing Details
 One data subscription instance corresponds to one TencentDB for MySQL instance, and up to 20 channels can be enabled for one instance. The monthly fee of a data subscription instance is as follows:
 
-| Region | Linkage Configuration Fee | Data Storage Fee | Public Network Traffic Fee |
+| Region | Link Configuration Fee | Data Storage Fee | Public Network Traffic Fee |
 | ------------------------ | ------------------------------------------- | ---------- | ---------- |
 | The mainland of China | <li>Monthly subscription: 105 USD/month<li>Pay-as-you-go: 0.36 USD/hour | Free of charge for now | Free of charge for now |
 | Regions outside the mainland of China and finance AZs | <li>Monthly subscription: 126 USD/month<li>Pay-as-you-go: 0.44 USD/hour | Free of charge for now | Free of charge for now |
@@ -33,7 +33,7 @@ One data subscription instance corresponds to one TencentDB for MySQL instance, 
 ### Billing Formula
 Suppose a subscription instance generates X GB data in one month and pulls Y GB data over the public network:
 
-**Total fees = Linkage configuration fee + Data storage fee * X + Public network traffic fee * Y**
+**Total fees = Link configuration fee + Data storage fee * X + Public network traffic fee * Y**
 
 Currently, data storage and public network traffic are free of charge.
 
