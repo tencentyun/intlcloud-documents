@@ -1,6 +1,11 @@
-1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc).
-2. Choose **IP and ENI** -> **ENI** in the left sidebar to go to the ENI list page.
-3. Select a region and VPC, and then click **+ New**.
-4. In the **Create ENI** pop-up window, enter a name for the ENI, select **Network** and **Subnet**, and configure **Assign IP** (select either **Automatic Assignment** or **Enter Manually**). If you want to add a tag, click **Advanced Options**.
-![](https://main.qcloudimg.com/raw/61075d922b42405ee1893b3fe41bc5f5.png)
+1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
+2. Choose **IP and ENI** > **ENI** in the left sidebar to go to the ENI list page.
+3. Select a region and a VPC, and click **+ New**.
+4. In the pop-up window, enter an ENI name, select the VPC and subnet to which the ENI belongs, and assign a private IP to the ENI. To add a tag, click **Advanced options**.
+>? "Automatic" and "Manual" are supported for IP assignment:
+>+ Automatic: The system will automatically assign a private IP available in the subnet CIDR block to the ENI.
+>+ Manual: You need to enter a private IP available in the subnet CIDR block.
+>+ An ENI is configured with a primary IP by default. If you need multiple IPs, click **Add a secondary IP** to configure them.
+>
+  ![](https://main.qcloudimg.com/raw/61075d922b42405ee1893b3fe41bc5f5.png)
 5. Click **OK**.
