@@ -14,12 +14,12 @@ EdgeOne 当前支持的 QUIC 版本有：h3-29、h3-Q050、h3-Q046、h3-Q043、Q
 ![](https://qcloudimg.tencent-cloud.cn/raw/9c8d306e5291439d6587f6a3cc677817.png)
 
 **参数说明：**
- - 关闭状态（默认）：不支持 QUIC 请求。
- - 开启状态：支持 HTTP/3 (QUIC)  请求，使用 QUIC 加速站点请求。
+ - 关闭状态（默认）：不支持 HTTP/3 (QUIC) 请求。
+ - 开启状态：支持 HTTP/3 (QUIC)  请求，使用 HTTP/3 (QUIC) 加速站点请求。
 >!
 >- 仅配置 HTTPS 证书后才生效，请先配置 HTTPS 证书。
->- 超出套餐内额度的 QUIC 请求数将单独按量后付费。
+>- 超出套餐内额度的 HTTP/3 (QUIC) 请求数将单独按量后付费。
 
 ## 注意事项
-1. 若同时开启 HTTP/2 和 HTTP/3 (QUIC) ，则根据实际客户端请求使用 HTTP/2 或 QUIC。
+1. 若同时开启 HTTP/2 和 HTTP/3 (QUIC) ，则根据实际客户端请求使用 HTTP/2 或 HTTP/3 (QUIC)。
 2. 此处仅支持请求访问，不支持 HTTP/3 (QUIC) 回源。
