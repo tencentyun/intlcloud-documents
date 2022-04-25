@@ -1,4 +1,4 @@
-1. Download and compile the [Tez v0.10.0 source code package](https://downloads.apache.org/tez/0.10.0/). 
+1. Download and compile the [Tez v0.10.0 source code package](https://dlcdn.apache.org/tez/0.10.1/). 
 ```
 tar -zxvf  apache-tez-0.10.0-src.tar.gz
 chmod -R 777 apache-tez-0.10.0-src
