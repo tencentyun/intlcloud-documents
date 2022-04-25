@@ -27,7 +27,8 @@ For more information, please see [HTTPS Configuration Guide](https://intl.cloud.
 4. Click **Domains and Transfer** > **Custom Endpoint**.
 
 5. Select the desired domain and click **Bind Certificate** to configure the certificate.
->! Currently, certificate binding supports only the Beijing, Shanghai, Chengdu, and Hong Kong (China) regions. Binding wildcard certificates is not supported.
+
+>!Currently, certificate binding supports only the Beijing, Shanghai, Chengdu, and Hong Kong (China) regions. Binding wildcard certificates is not supported.
 >
 6. Click **Confirm**.
 
