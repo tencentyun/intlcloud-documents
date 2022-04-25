@@ -1,6 +1,6 @@
 # Overview
 
-COS’s CI-based Image Advanced Compression allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.
+Image Advanced Compression is a CI-based COS feature. It allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.
 
 | Feature | Description |
 | :-------- | :----------------------------------------------------------- |
