@@ -59,7 +59,7 @@ Get the FPS certificate and ASK from the [Apple developer page](https://develope
 
    ![image-20220419114215512](https://qcloudimg.tencent-cloud.cn/raw/00fa1494b1256c9b4e1d769356450721.png)
 
-4. Click **Choose File**, select the `certreq` file created in [Step 2](##step-2.-create-a-private-key-and-a-certificate-signing-request-(csr)), and click **Continue**.
+4. Click **Choose File**, select the `certreq` file created in [Step 2](#step-2.-create-a-private-key-and-a-certificate-signing-request-(csr)), and click **Continue**.
 
    ![image-20220419114506263](https://qcloudimg.tencent-cloud.cn/raw/52c2834bf36f4074e7f9f731aefc8948.png)
 
