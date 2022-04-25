@@ -35,15 +35,15 @@ If the static website feature is enabled, you will be provided a static website 
 
 #### Access permissions
 
-- Public-read: If a bucket is set to public-read, everyone can access the bucket using its domain name. If you use a public-read bucket as the origin server, you can enable CDN acceleration directly without enabling CDN authentication and origin-pull authentication.
-- Private-read: If a bucket is set to private-read, you can create access policies to manage who can access the bucket and manage CDN authorization. If you use a private-read bucket as the origin server and enable origin-pull authentication but not CDN authentication, unauthorized users can access the bucket via CDN. Therefore, **you are advised to enable both origin-pull authentication and CDN authentication for private-read buckets to ensure the data security**.
+- Public-read: If a bucket is set to public-read, everyone can access the bucket using its domain name. If you use a public-read bucket as the origin, you can enable CDN acceleration directly without enabling CDN authentication and origin-pull authentication.
+- Private-read: If a bucket is set to private-read, you can create access policies to manage who can access the bucket and manage CDN authorization. If you use a private-read bucket as the origin and enable origin-pull authentication but not CDN authentication, unauthorized users can access the bucket via CDN. Therefore, **you are advised to enable both origin-pull authentication and CDN authentication for private-read buckets to ensure the data security**.
 
 ## Accelerating Access to COS Using CDN
 
 You can accelerate access to COS by managing the following two domain names:
 
 - Default CDN acceleration domain name: a default CDN acceleration domain name (e.g., `&lt;BucketName-APPID>.file.mycloud.com`) provided by COS, which can be enabled or disabled as needed
-- Custom CDN acceleration domain name: You can use a custom domain name that has obtained an ICP filing and use a COS bucket as the origin server. This allows you to accelerate access to objects in the bucket using a custom domain name.
+- Custom CDN acceleration domain name: You can use a custom domain name that has obtained an ICP filing number and use a COS bucket as the origin. This allows you to accelerate access to objects in the bucket using a custom domain name.
 
 >? The default CDN acceleration domain name and custom CDN acceleration domain name are collectively called CDN acceleration domains.
 
@@ -55,8 +55,8 @@ You can still protect your objects in the bucket **to some extent** by enabling 
 
 | CDN Authentication | Access with CDN Acceleration Domain Name | Access with COS Domain Name | Use Case |
 | ------------ | ---------------- | ------------ | ----------------------------------------------- |
-| Disabled (default) | Yes | Yes | Allowing all public access to the entire website via the CDN or origin server |
-| Enabled | URL authentication is required | Yes | Enabling hotlink protection for access via the CDN but not the origin server (not recommended) |
+| Disabled (default) | Yes | Yes | Allowing all public access to the entire website via the CDN or origin  |
+| Enabled | URL authentication is required | Yes | Enabling hotlink protection for access via the CDN but not the origin (not recommended) |
 
 #### Private-read buckets
 
@@ -76,5 +76,5 @@ After you added the CDN service authorization and enabled origin-pull authentica
 
 | CDN Authentication | Access with CDN Acceleration Domain Name | Access with COS Domain Name | Use Case |
 | ------------ | ---------------- | --------------- | ----------------------------------- |
-| Disabled (default) | Yes | COS authentication is required | Allowing direct access to CDN domain names to protect the content on the origin server |
+| Disabled (default) | Yes | COS authentication is required | Allowing direct access to CDN domain names to protect the content on the origin |
 | Enabled | URL authentication is required | COS authentication is required | Securing access comprehensively (hotlink protection for CDN authentication is supported) |
