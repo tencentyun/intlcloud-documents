@@ -30,11 +30,11 @@ dependencies {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?現在 TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
+>?現在 TRTC SDKは、armeabi-v7a、arm64-v8aをサポートしています。
 3．【Sync Now】をクリックし、自動でSDKをダウンロードし、プロジェクトに統合します。
 
 
@@ -51,11 +51,11 @@ defaultConfig {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?現在 TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
+>?現在 TRTC SDKは、armeabi-v7a、arm64-v8aをサポートしています。
 6. 【Sync Now】をクリックして、TRTC SDK統合のタスクは完了です。
 
 
@@ -64,7 +64,7 @@ aarライブラリを統合したくない場合は、jarおよび soライブ�
 
 1. 最新バージョンのjar 圧縮パッケージを[ダウンロード](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip) します。ファイルパスは`SDK/LiteAVSDK_TRTC_xxx.zip` （このうち xxx は TRTC SDKのバージョンナンバー）です。
 2. 解凍するとlibsディレクトリが取得できます。中には主にjar ファイルと so ファイルフォルダが含まれています。
-3. 解凍したjar ファイルおよび armeabi、 armeabi-v7a、 arm64-v8a ファイルフォルダを app/libs ディレクトリの下にコピーします。
+3. 解凍したjar ファイルおよび armeabi-v7a、 arm64-v8a ファイルフォルダを app/libs ディレクトリの下にコピーします。
 ![](https://main.qcloudimg.com/raw/c7b498b40bff8c248cd72fcd01f07933.png)
 4. app/build.gradleの中に、jar ライブラリのコードを追加して引用します。
 ![](https://main.qcloudimg.com/raw/5369b8c9bbb855622b22c7843a591e2e.png)	
@@ -81,11 +81,11 @@ sourceSets {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?現在 TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
+>?現在 TRTC SDKは、armeabi-v7a、arm64-v8aをサポートしています。
 >
 7. 【Sync Now】をクリックして、TRTC SDK統合のタスクは完了です。
 
@@ -120,8 +120,6 @@ app/build.gradleの下に、次の情報を追加します。
 
 ```
 packagingOptions {
-	pickFirst '**/libc++_shared.so'
-	doNotStrip "*/armeabi/libYTCommon.so"
 	doNotStrip "*/armeabi-v7a/libYTCommon.so"
 	doNotStrip "*/x86/libYTCommon.so"
 	doNotStrip "*/arm64-v8a/libYTCommon.so"
