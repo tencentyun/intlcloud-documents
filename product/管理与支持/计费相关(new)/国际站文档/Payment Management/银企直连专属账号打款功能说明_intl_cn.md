@@ -11,7 +11,7 @@ Step2. 使用专属账号进行线下对公打款
 银行转账时间通常需要3-5个工作日，具体到账时间依赖于银行系统.
 
 Step3. 打款信息和进度查询
-查询打款信息和进度，请前往**腾讯云官网费用中心** > **资金管理** > <b>[银企直连查询](https://console.cloud.tencent.com/expense/payment/transfer)</b>。
+查询打款信息和进度，请前往腾讯云官网**费用中心** > **资金管理** > <b>[银企直连查询](https://console.cloud.tencent.com/expense/payment/transfer)</b>。
 ![](https://main.qcloudimg.com/raw/ac511d34324359d3ef2914d6477fbdb4.png)
 
 
