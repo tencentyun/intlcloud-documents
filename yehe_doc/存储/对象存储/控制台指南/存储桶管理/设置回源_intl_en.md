@@ -48,9 +48,9 @@ You can configure a specific origin-pull address using the following fields:
 > - If you select `Fixed file`, the other fields cannot be used.
 > - `Specified prefix` and `Specified suffix` can be used at the same time.
 
- - **Standby Forwarding Address**: When this feature is enabled, you can add a backup origin server. When the primary origin server returns an error code such as 5xx, COS will access the backup origin server.
- - **Sync Origin-Pull**: When this feature is enabled, COS will not return 3xx status code when pulling data from an origin server. This option is currently available only for buckets in Beijing, Shanghai, Singapore, and Mumbai regions.
- - **3xx Following Policy**: If this policy is enabled, when your origin server returns a 3xx redirect, COS will follow it to pull data from another origin server.
+ - **Standby Forwarding Address**: When this option is enabled, you can add a backup origin. When the primary origin returns an error code such as 5xx, COS will access the backup origin.
+ - **Sync Origin-Pull**: When this option is enabled, COS will not return 3xx status code when pulling data from an origin. This option is currently available only for buckets in Beijing, Shanghai, Singapore, and Mumbai regions.
+ - **3xx Following Policy**: If this policy is enabled, when your origin returns a 3xx redirect, COS will follow it to pull data from another origin.
 
 7. Confirm that the configured origin-pull rule is correct and click **OK**.
 By default, COS always gives the highest priority to the most recent rule, by which it performs origin-pull. To change the priority manually, you can click the “Edit” icon under the “Priority” column in the rule list.
