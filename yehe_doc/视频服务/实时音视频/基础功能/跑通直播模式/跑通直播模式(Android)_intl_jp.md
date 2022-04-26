@@ -39,7 +39,7 @@ dependencies {
 ```
  defaultConfig {
       ndk {
-          abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+          abiFilters "armeabi-v7a", "arm64-v8a"
       }
   }
 ```
