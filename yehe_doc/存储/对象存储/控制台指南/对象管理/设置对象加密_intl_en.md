@@ -4,7 +4,7 @@ You can encrypt the objects stored in buckets on COS console to prevent data lea
 
 >!
 >- This operation does not support configuring encryption for objects of archive type. If encryption is needed, [restoring archived objects](https://intl.cloud.tencent.com/document/product/436/30961) first. After the restoration is complete, modify the storage type to standard or low frequency before configuring the encryption.
->- As long as you have access permission for an object, whether the object has been encrypted has no effect on your accessing said object.
+>- As long as you have access permission on an object, your object accessing experience is the same regardless of whether the object is encrypted.
 > - Server-side encryption encrypts only the object data but not its metadata. Server-side encrypted objects can only be accessed with a valid signature and cannot be accessed by anonymous users.
 > - When you list the objects in a bucket, all objects will be listed, regardless of whether they are encrypted.
 > 
