@@ -3,14 +3,6 @@
 
 You can use [DNS Checker](https://www.whatsmydns.net/) to verify whether your DNS configuration is valid.
 
-[](id:test)
-### Email sending test
-
-You can use [mail-tester](https://www.mail-tester.com/) to evaluate your email before sending it. This tool can check DNS/IP configuration integrity and IP validity, as well as the quality of email content. In case of complete DNS configuration, the score mainly depends on the email content. Generally speaking, the score needs to be optimized to at least 8 points.
-
->? If you perform tests on your own, try not to send too many emails to one single email address on the same day (no more than 24 emails per day). In the production environment, try not to send more than 10 emails to the same user per day.
-
-
 [](id:add)
 ### Email address validity
 The email bounce rate is a rigid metric for email scoring by ISPs. The most possible reason for email bounce is invalid email address; that is, the email is sent to an incorrect address. If the bounce rate stays high, the ISP will determine the sender as malicious and then put emails in the spam folder or block sender IPs. A good bounce rate should not exceed 5%. If the addresses of your recipients are of poor quality, you need to process and filter them in advance.
