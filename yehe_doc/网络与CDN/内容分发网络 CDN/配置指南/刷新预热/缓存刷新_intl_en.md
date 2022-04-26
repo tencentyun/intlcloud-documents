@@ -44,7 +44,7 @@ Check whether the submitted content meets the following specifications:
 Up to 10,000 URLs can be purged per day for each account. For users who use CDN service outside the Chinese mainland, up to 10,000 global URLs can be purged per day, which is independent of the URL purge quota for the Chinese mainland.
 	- Up to 1,000 URLs can be submitted at a time by direct input.
 	- There is no limit on the number of URLs that are submitted by file upload, but the submissions will be deducted from your daily quota.
->- ? When you are running out of daily purge quota, you can increase it on your own in the Tencent Cloud CDN console.
+>? When you are running out of daily purge quota, you can increase it on your own in the Tencent Cloud CDN console.
 >- The new quota will take effect immediately. The page will be refreshed automatically. You don’t need to click the refresh button frequently.
 >- Each quota can only be increased once a day.
 >- Each quota is increased independently for each region.
@@ -54,14 +54,14 @@ Up to 10,000 URLs can be purged per day for each account. For users who use CDN 
 	- There is no limit on the number of URLs that are submitted by file upload, but the submissions will be deducted from your daily quota.
 	
 
-- By default, URLs will be purged by acceleration regions of domain names in the URLs. If the domain names are accelerated globally, quotas for regions both in and outside the Chinese mainland will be consumed.
+By default, URLs will be purged by acceleration regions of domain names in the URLs. If the domain names are accelerated globally, quotas for regions both in and outside the Chinese mainland will be consumed.
 <span ID = "notes"></span>
 To query your operation records, please see [History](https://intl.cloud.tencent.com/document/product/228/42176).
 
 
 ### Sub-user permissions configuration
 
-- URL purge, directory purge, and purge history query have been integrated within the permission system which supports permission configuration at the resource (domain name) level. For more information, see [Console Permissions](https://intl.cloud.tencent.com/document/product/228/35229).
+ URL purge, directory purge, and purge history query have been integrated within the permission system which supports permission configuration at the resource (domain name) level. For more information, see [Console Permissions](https://intl.cloud.tencent.com/document/product/228/35229).
 
 
 ## Examples
