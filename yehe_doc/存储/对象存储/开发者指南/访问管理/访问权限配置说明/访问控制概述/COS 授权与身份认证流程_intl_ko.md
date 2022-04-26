@@ -5,7 +5,7 @@
 
 Tencent Cloud 계정 생성을 시작으로 COS의 권한 및 실명 인증 프로세스는 이 5단계를 거쳐야 합니다. Tencent Cloud 계정 생성, COS 서비스 활성화, 인증 ID 생성, ID에 대한 권한 설정 그리고 액세스 및 실명 인증을 시작합니다. 
 
-![](https://qcloudimg.tencent-cloud.cn/raw/257077f136d7c50be671964140e7996d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3a138071100124990572dd986c3c4350.png)
 
 #### 1단계: Tencent Cloud 계정 생성
 
