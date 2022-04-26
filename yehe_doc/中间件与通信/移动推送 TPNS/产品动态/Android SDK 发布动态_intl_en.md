@@ -1,4 +1,55 @@
 
+## February 2022
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.2.0 release</td>
+	<td>
+		<li>Upgraded the encapsulated SDK versions for Mi, Meizu, OPPO, and vivo push.</li>
+		<li>Added an API to allow users to get the custom parameters `customContent` delivered with pushed messages on the push target page.</li>
+		<li>Fixed other known issues.</li>
+		</td>
+        <td>February 23, 2022</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+		<li>For how to get `custom_content` delivered with pushed messages, see <a href="https://intl.cloud.tencent.com/document/product/1024/38354">Notification Tap-to-Redirect > Getting parameters on the client</a>.</li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
+## January 2022
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.1.1 release</td>
+	<td>
+		<li>Added a new method for adapting to Honor device badges.</li>
+		<li>Added the feature to regularly update notification status.</li>
+		<li>Updated vendor channel policies.</li>
+		<li>Optimized the registration and account binding processes.</li>
+		<li>Removed some broadcast events that may cause applications to automatically start.</li>
+		<li>Fixed the issue where the Android Service component automatically starts.</li>
+		</td>
+        <td>January 18, 2022</td><td>
+<a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a>
+</td>
+    </tr>
+<tr>
+</table>
+
 ## September 2021
 
 <table>
@@ -11,7 +62,7 @@
 	<tr>
         <td>SDK v1.2.7.1 release</td>
 	<td>Fixed the occasional issue of cross-process storage inconsistency.</td>
-        <td>September 01, 2021</td><td><li>When using the newly added in-app messaging capability, please pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
+        <td>September 1, 2021</td><td><li>When using the newly added in-app messaging capability, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
 <li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
@@ -32,7 +83,7 @@
 		<li> Added support for in-app message display.
 		<li> Optimized the TPNS registration process
 		<li> Fixed the issue when a user can obtain the device model before agreeing to the Privacy Agreement.</td>
-        <td>August 27, 2021</td><td><li>When using the newly added in-app messaging capability, please pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
+        <td>August 27, 2021</td><td><li>When using the newly added in-app messaging capability, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
 <tr>
@@ -95,7 +146,7 @@
 	</tr>
 	<tr>
         <td>SDK v1.2.3.1 release</td><td>Fixed a logic error of the Huawei disable component.</td>
-        <td>February 04, 2021</td><td>-</td>
+        <td>February 4, 2021</td><td>-</td>
     </tr>
 <tr>
 </table>
@@ -162,7 +213,7 @@
 </tr>
         <tr>
         <td>SDK v1.2.1.1 release</td>
-				<td><li><b>Added user attribute</b> APIs for personalized push.</li> <li>Added the <b>in-app message</b> feature and several in-app message templates.</li><li>Optimized and updated the SO files.</li><li>Optimized the SDK internally.</li></td>
+				<td><li>Added <b>user attribute</b> APIs for personalized push.</li> <li>Added the <b>in-app message</b> feature and several in-app message templates.</li><li>Optimized and updated the SO files.</li><li>Optimized the SDK internally.</li></td>
         <td>October 12, 2020</td>
         <td>-</td>
     </tr>
@@ -183,13 +234,13 @@
         <tr>
         <td>SDK v1.2.0.3 release</td>
        <td>Fixed known issues. </td>
-        <td>July 30 2020</td>
+        <td>July 30, 2020</td>
         <td>-</a></td>
     </tr>
 <tr>
         <td>SDK v1.2.0.2 release</td>
        <td>Optimized the internal logic. </td>
-        <td>July 01, 2020</td>
+        <td>2020-07-01</td>
         <td>-</td>
     </tr>
 </table>
@@ -243,7 +294,7 @@
     <tr>
         <td>SDK v1.1.5.5 release</td>
         <td>Fixed the issue where DCL violation occurred when an application was released in Google Play.</li></td>
-        <td>April 04, 2020</td>
+        <td>April 2, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -259,7 +310,7 @@
     <tr>
         <td>SDK v1.1.5.4 release</td>
         <td><li> Optimized network connection.</li> <li>Added account types. </li> <li> Fixed issues with security alarming. </li> <li> Added the compatibility with XG Platform version upgrade. </li><li> Added the feature of getting QIMEI information.</li><li>Added the feature of disabling session keep-alive.</li></td>
-        <td>March 06, 2020</td>
+        <td>March 6, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -305,7 +356,7 @@
     <tr>
         <td>SDK v1.1.5.0 release</td>
         <td><li> Optimized the TPNS SDK support for Huawei push.</li> <li> Upgraded the OPPO PUSH SDK to v2.0.2.</li></td>
-        <td>December 04, 2019</td>
+        <td>December 4, 2019</td>
         <td>-</td>
     </tr>
 </table>
@@ -368,7 +419,7 @@
     <tr>
         <td>SDK v1.1.2.1 release</td>
         <td><li> Optimized the notification bar display.</li> <li> Optimized some APIs.</li> <li> Added the support for audio rich media.</li> <li> Optimized the SDK internally.</li></td>
-        <td>September 09, 2019</td>
+        <td>September 27, 2019</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/30713#.E9.9B.86.E6.88.90.E6.96.B9.E6.B3.95">Usage of audiovisual rich media</a></td>
     </tr>
 </table>

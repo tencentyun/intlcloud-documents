@@ -1,37 +1,41 @@
 
-This document describes how to create and authorize sub-users. If you have never used Tencent Cloud Access Management (CAM), please read this document for more information on the configuration.
+This document describes how to create and authorize sub-users. If you have never used Tencent Cloud Access Management (CAM), read this document for more information on the configuration.
 
-TPNS uses CAM for permission management. You need to authorize applications, create sub-users, and grant application permissions to the sub-users. For detailed directions, please see the following sections.
+TPNS uses CAM for permission management. You need to authorize applications, create sub-users, and grant application permissions to the sub-users. For detailed directions, see the following sections.
 
 ## Creating a Sub-User
-1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) and click **Create User**.
-![](https://main.qcloudimg.com/raw/5748b2815c001fda0e9c53b4150cabe0.png)
-2. The following describes the custom creation method. Click **Custom Create** to enter the **Create Sub-user** page.
-![](https://main.qcloudimg.com/raw/2eaf4e9b04c38cd73fdc542040ff40d4.png)
-3. Configure the login information of the sub-user as instructed and grant the sub-user application permissions on the **Setting User Permission** page.
+1. Go to the [CAM console](https://console.cloud.tencent.com/cam) and click **Create User**.
+![](https://qcloudimg.tencent-cloud.cn/raw/f66c0500cc623b161f611bba8b1a0c4c.png)
+2. Click **Custom Creation** to enter the **Create Sub-user** page (this example is based on the custom creation method).
+![](https://qcloudimg.tencent-cloud.cn/raw/08e0b1bc2080def5772794dd97202a36.png)
+3. Configure the login information of the sub-user as instructed and grant the sub-user application permissions in the **User Permissions** step.
 
 
 ## Granting Application Permissions
 #### Granting permissions of all applications in a centralized manner
-1. Continue from the last step in the previous section as shown below:
-![](https://main.qcloudimg.com/raw/99b2092998ca4fe0388f8f675991fcb0.png)
-2. Enter "TPNS" in the search box. In the search results, there are two default preset permissions as listed below:
+1. Continue with the **User Permissions** page mentioned in the previous step.
+![](https://qcloudimg.tencent-cloud.cn/raw/01df52c8be53b93b22675e284849650d.png)
+2. Enter **TPNS** in the search box. In the search results, there are two default preset permissions as listed below:
 
 | Policy Name | Permission Scope |
 | --- | --- |
-| QcloudTPNSFullAccess | Grants all permissions of all applications under the root account |
-| QcloudTPNSReadOnlyAccess | Grants read and push permissions of all applications under the root account |
+| QcloudTPNSFullAccess | All permissions on all the applications under the root account |
+| QcloudTPNSReadOnlyAccess | Data read and push permissions on all applications under the root account |
 
 #### Granting permissions of selected applications
 
 1. Click **Create Custom Policy**.
-![](https://main.qcloudimg.com/raw/d1cd0a4933398923aa109dfc34e67128.png)
-2. On the displayed page, select **Create by Policy Syntax** as shown below.
-![](https://main.qcloudimg.com/raw/0bf98c5b3c21003369dbd7a745bc885e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6741b778bc804388134b3d97d68fe433.png)
+2. On the displayed page, select **Create by Policy Syntax**.
+![](https://qcloudimg.tencent-cloud.cn/raw/9f875d430a89c2270aa0cdbf63a3d020.png)
 3. Select **Blank Template**.
-![](https://main.qcloudimg.com/raw/a39dd84e81eb01cfb17f2b47152b0461.png)
-4. Click **Next** to enter the syntax creation page as shown below.
-![](https://main.qcloudimg.com/raw/07d666185cd1d54b27f1e6a6aaf40142.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3b7d9e84a1a3db6b24506f659b8a77bc.png)
+4. Click **Next** to enter the syntax creation page.
+![](https://qcloudimg.tencent-cloud.cn/raw/de89a170da2bb02f20f7e2be15ae5a4a.png)
+>?
+>- Enter an easy-to-remember policy name.
+>- Copy the code provided in this document and replace the account ID and Access_ID in it with your own account ID and Access_ID, which can be found on the account information page under the current root account and the TPNS product management page in the console respectively.
+
 Copy the following syntax code:
 ```
 {
@@ -65,17 +69,17 @@ Copy the following syntax code:
 ```
 
 Replace parameters in the syntax code as follows:
-- Replace the ID of the root account: enter the [Account Info](https://console.cloud.tencent.com/developer) page under the current root account, copy the account ID, and replace `1000000000` in the syntax above with it.
+- Replace the ID of the root account: enter the [Account Information](https://console.cloud.tencent.com/developer) page under the current root account, copy the account ID, and replace `1000000000` in the syntax above with it.
 >?If your current login account is a collaborator or sub-account, you need to get the account ID from the owner of the root account that grants you permissions.
 
-![](https://main.qcloudimg.com/raw/dabad6214ed659ea1a218b5e87ce4108.png)
-- Replace the application `Access_ID`: log in to the [TPNS console](https://console.cloud.tencent.com/tpns), copy the `Access_ID` of the application whose permissions you want to grant, and replace `1500000000` in the syntax above with it. If you want to grant permissions of multiple applications, you can change `resource` to:
-`"qcs::tpns::uin/1000000000:app/{application Access_ID1}"`,`"qcs::tpns::uin/1000000000:app/{application Access_ID2}"`
+![](https://qcloudimg.tencent-cloud.cn/raw/82f946f2d0dc124a634d6398531d3f89.png)
+- Replace the application `Access_ID`: go to the [Product Management page](https://console.cloud.tencent.com/tpns) in the TPNS console, copy the `Access_ID` of the application whose permissions you want to grant, and replace `1500000000` in the syntax above with it. If you want to grant permissions of multiple applications, you can change `resource` to:
+`"qcs::tpns::uin/1000000000:app/{Application Access_ID 1}"`,`"qcs::tpns::uin/1000000000:app/{Application Access_ID 2}"`
 
->?Please delete "{" and "}" in actual use. For detailed directions, please see [Advanced Custom Configuration](https://intl.cloud.tencent.com/document/product/1024/35288).
+>?Please delete "{" and "}" in actual use. For detailed directions, see [Advanced Custom Configuration](https://intl.cloud.tencent.com/document/product/1024/35288).
 
-5. Return to the user creation page.
-![](https://main.qcloudimg.com/raw/b85068f6796a0c762ec2fa22411fd24b.png)
+5. Go back to the user creation page.
+![](https://qcloudimg.tencent-cloud.cn/raw/b8806c04fccc0c79d3021c45133f22a7.png)
 Search for the created policy by name, select it, click **Next**, and click **Complete**.
 6. After the permission configuration, you can select **Sub-User Login** on the login page to verify the account permissions.
-![](https://main.qcloudimg.com/raw/eeb29bbdfdcb602e9a2ddab2b848f68b.png)
+![]()
