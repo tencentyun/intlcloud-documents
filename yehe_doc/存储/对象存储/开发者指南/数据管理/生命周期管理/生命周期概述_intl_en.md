@@ -1,6 +1,6 @@
 ## Overview
 
-COS supports object-based lifecycle configuration. If you set rules for a bucket, COS can automatically perform predefined operations on objects to which the rule is applied.
+COS supports object-based lifecycle configuration. You can use lifecycle rules to define operations to perform on applicable objects.
 
 >?
 >- A lifecycle can be set to as long as 3,650 days.
@@ -36,8 +36,8 @@ When you use COS for file archive management, you need to save all historical ve
 
 ### Time
 
-- Based on the number of days: You can specify in how many days after an object is last modified to perform the corresponding operation.
-- Based on a specific date: You can specify a date to perform the corresponding operation.
+- Based on the number of days: You can specify when to perform the defined operation on an object based on the last-modified date of the object.
+- Based on a specific date: You can specify a date to perform the defined operation.
 
 ## Limits
 
@@ -51,7 +51,7 @@ Data transition is supported in public cloud regions. Finance Cloud regions supp
 
 #### One-way transition
 
-Data transition is one-way (STANDARD > STANDARD_IA > ARCHIVE, or STANDARD > ARCHIVE) and cannot be in the reversed way. You can only call [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for non-ARCHIVED/DEEP ARCHIVE only) or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (for ARCHIVE and DEEP ARCHIVE only) to restore data from a colder storage class to a hotter one.
+Data transition is one-way (STANDARD > STANDARD_IA > ARCHIVE, or STANDARD > ARCHIVE) and cannot be done reversely. You can only call [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for non-ARCHIVED/DEEP ARCHIVE only) or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (for ARCHIVE and DEEP ARCHIVE only) to restore data from a colder storage class to a hotter one.
 
 #### Eventual consistency
 
@@ -75,7 +75,7 @@ If multiple conflicting rules are configured for the same set of objects, the ru
 
 #### Execution instructions
 
-Once triggered, actions configured at any time will always be executed at 00:00 the next day Beijing time (GMT+8) on Tencent Cloud COS. As objects need to be added to an asynchronous queue before execution, for those who match the rules after the configuration time, actions are performed before 24:00 the next day.
+Once triggered, actions configured at any time will always be executed at 00:00 the next day Beijing time (GMT+8) on Tencent Cloud COS. Objects are added to an asynchronous queue before execution. For objects that match the rules after the configuration time, actions are performed before 24:00 the next day.
 
 For example, you configured a lifecycle rule at 15:00 on the 1st day of the month to delete files one day or longer after they are modified. Then, at 00:00 on the 2nd day, the lifecycle task scans for files that were modified over one day ago and deletes them. Files uploaded on the 1st day will not be deleted at 00:00 on the 2nd day, as the time elapsed since their modification is less than one day. Instead, these files will be deleted at 00:00 on the 3rd day.
 

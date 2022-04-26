@@ -78,13 +78,13 @@ Service fee = 30 x 0.016 = 0.48 USD.
 
 ## DRM
 
-VOD uses commercial DRM solutions to encrypt videos during transcoding. If you enable DRM, the corresponding cost will be included in your transcoding fee. We also bill you by the number of requests to play encrypted videos.
+VOD uses commercial DRM solutions to encrypt videos during transcoding. If you enable DRM, the corresponding cost will be included in your transcoding fee. We also bill you based on the number of DRM license requests.
 
 #### Pricing
 
 | Billed By                        | Billing Mode     | Unit Price          |
 | :---------------------------- | :----------- | :------------ |
-| Number of requests to play encrypted videos | Postpaid | 0.0012 USD/request |
+| Number of DRM license requests | Postpaid | 0.0012 USD/request |
 
 
 

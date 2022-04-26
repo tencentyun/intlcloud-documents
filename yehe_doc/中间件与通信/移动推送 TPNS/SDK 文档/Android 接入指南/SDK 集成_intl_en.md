@@ -1,39 +1,39 @@
 ## Overview
 
-This document describes how to integrate the online channel push capabilities of the TPNS SDK using two methods: Android Studio Gradle automatic integration and Android Studio manual integration. If you want your push to be received even when the application process is killed, complete the integration operations provided in this document and integrate with vendor channels by referring to [Vendor Channel Integration Guide](https://intl.cloud.tencent.com/document/product/1024/37176).
+This document describes how to integrate the online channel push capabilities of the TPNS SDK using two methods: automatic integration with Android Studio Gradle and manual integration with Android Studio. If you want your push to be received even when the application process is killed, complete the integration operations provided in this document and integrate with vendor channels as instructed in the [Vendor Channel Integration Guide](https://intl.cloud.tencent.com/document/product/1024/37176).
 
 ## SDK Integration (Two Methods)
 
-### Using Android Studio Gradle for automatic integration
+### Automatic integration with Android Studio Gradle
 
 #### Directions
 
->! Before configuring the SDK, make sure you have configured the Android platform application.
+>! Before configuring the SDK, make sure you have created an application for the Android platform.
 >
 
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and get the application's `AccessID` and `AccessKey` in **Product Management** > **Configuration Management**.
-2. Get the latest SDK version number on the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
+2. Get the version number of the latest SDK on the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
 ![]()
-3. In the `build.gradle` file of the application, configure the following content:
+3. Configure the following in the `build.gradle` file of the application:
 ```
 android {
     ......
     defaultConfig {
 
-        // The package name registered in the console. Note that the application ID, the current application package name and the application package name registered in the console must be the same.
+        // The package name registered in the console. Note that the application ID, the current application package name, and the application package name registered in the console must be the same.
         applicationId "your package name"
         ......
 
         ndk {
-            // Choose to add .so files corresponding to the CPU type as needed.
+            // Add .so libraries corresponding to the CPU type as needed.
             abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
-            // You can also add 'x86', 'x86_64', 'mips', and 'mips64'.
+            // You can also add 'x86', 'x86_64', 'mips', and 'mips64'
         }
 
         manifestPlaceholders = [
 
-            XG_ACCESS_ID : "accessid of the registered application",
-            XG_ACCESS_KEY : "accesskey of the registered application",
+            XG_ACCESS_ID : "accessid of the registered app",
+            XG_ACCESS_KEY : "accesskey of the registered app",
         ]
         ......
     }
@@ -44,35 +44,36 @@ dependencies {
     ......
     // Add the following dependencies:             
     implementation 'com.tencent.tpns:tpns:[VERSION]-release' 
-		  // TPNS push [VERSION] is the latest SDK version number, i.e., the version number obtained in step 2 above
+		  // For TPNS push, [VERSION] is the latest SDK version number obtained in step 2 above
 }
 ```
 
 >!
->- If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
->- If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
->Add the following metadata in the `application` tag in the `AndroidManifest` file:
->```
-><application>
->// Other Android components
-><meta-data
->android:name="XG_SERVER_SUFFIX"
->android:value="Domain names of other service access points" />
-></application>
->```
-```
+> - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+> - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
+> Add the following metadata in the `application` tag in the `AndroidManifest` file:
+>  ```
+ <application>
+             // Other Android components
+             <meta-data
+                                      android:name="XG_SERVER_SUFFIX"
+                                      android:value="Domain names of other service access points" />
+ </application>
+ ```
 >The domain names of other service access points are as follows:
->   - Shanghai: `tpns.sh.tencent.com`
->   - Singapore: `tpns.sgp.tencent.com`
->   - Hong Kong (China): `tpns.hk.tencent.com`
->  
+>- Shanghai: `tpns.sh.tencent.com`
+>- Singapore: `tpns.sgp.tencent.com`
+>- Hong Kong (China): `tpns.hk.tencent.com`
+> 
+
 
 #### Notes
 
- - If the following notification pops up in Android Studio after you add the above-mentioned `abiFilter` configuration:
-   "NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin", then you need to add `android.useDeprecatedNdk=true` to the `gradle.properties` file in the project root directory.
- - If you need to listen on messages, please see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo (in the SDK compression package, which can be obtained from the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page). You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file (do not process time-consuming operations in the receiver):
-​```xml
+ - If the following notification appears in Android Studio after you add the above-mentioned `abiFilter` configuration:
+   "NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin", you need to add `android.useDeprecatedNdk=true` in the `gradle.properties` file under the project root directory.
+ - If you need to listen for messages, see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo (in the SDK compression package, which can be obtained from [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)). You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file (do not process time-consuming operations in the receiver):
+
+​```
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
         <!-- Receive in-app messages -->
@@ -89,24 +90,24 @@ dependencies {
 ```
 
 
-### Using Android Studio for manual integration
+### Manual integration with Android Studio
 
-Go to the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page to get the latest SDK version and import it into your Android project by following the steps below.
+Go to [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) to get the latest SDK version and import it into your Android project as instructed.
 
 
-#### Project configuration
+#### Configuring the project
 
 Import the SDK into the project as follows:
 
 1. Create or open an Android project.
 2. Copy all the .jar files in the `libs` directory under the TPNS SDK directory to the project's `libs` (or `lib`) directory.
-3. .so files are necessary components of TPNS and support armeabi, armeabi-v7a, arm64-v8a, mips, mips64, x86, and x86_64 platforms. Add the appropriate platform currently supported by your .so files.
-4. Open `Androidmanifest.xml` and add the permission, component, and application configurations provided in the following sections to it. (We recommend you modify the configurations according to **Merged Manifest** in the demo in the download package). Make sure the configurations are completed as required. Otherwise, the service may not work properly.
+3. .so files are necessary components of TPNS, and support armeabi, armeabi-v7a, arm64-v8a, mips, mips64, x86, and x86_64 platforms. Add the appropriate platform currently supported by your .so files.
+4. Open `Androidmanifest.xml` and add the following configurations (we recommend you modify these configurations according to the Merged Manifest file in the demo provided in the download package). Make sure the configurations are completed as required. Otherwise, the service may not work properly.
 
 
-#### Permission configuration
+#### Configuring permissions
 
-You need to configure the permissions required by the TPNS SDK to operate properly. The following is the sample code for permission configuration:
+You need to configure the permissions required for proper operation of the TPNS SDK. The sample code is as follows:
 
 ```xml
 <!-- **Required** Permissions required by TPNS SDK VIP version -->
@@ -147,40 +148,68 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 
 ```xml
 <application>
-    <!-- Other application configurations -->
-    <uses-library android:name="org.apache.http.legacy" android:required="false"/> 
-    <!-- **Required** TPNS default notification -->
     <activity android:name="com.tencent.android.tpush.TpnsActivity"
-               android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:launchMode="singleInstance"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.OPEN_TPNS_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <intent-filter>
                 <data
                     android:scheme="tpns"
-                    android:host="application package name"/>
+                    android:host="${applicationId}"/>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action" />
+            </intent-filter>
         </activity>
-		
-    <!-- **Required** TPNS Receiver broadcast reception -->
-    <receiver
-        android:name="com.tencent.android.tpush.XGPushReceiver"
-        android:process=":xg_vip_service">
-        <intent-filter android:priority="0x7fffffff">
-            <!-- **Required** TPNS SDK internal broadcast -->
-            <action android:name="com.tencent.android.xg.vip.action.SDK" />
-            <action android:name="com.tencent.android.xg.vip.action.INTERNAL_PUSH_MESSAGE" />
-            <action android:name="com.tencent.android.xg.vip.action.ACTION_SDK_KEEPALIVE" />
-            <!-- **Optional** System broadcast: network switching -->
-            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            <!-- **Optional** System broadcast: splash screen -->
-            <action android:name="android.intent.action.USER_PRESENT" />
-            <!-- **Optional** Some common system broadcasts for increasing the possibility of TPNS service reactivation. You can also add broadcast customized by the application to launch the service -->
-            <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
-            <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-            <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-        </intent-filter>
-    </receiver>
+
+        <activity
+            android:name="com.tencent.android.tpush.InnerTpnsActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="${applicationId}.OPEN_TPNS_ACTIVITY_V2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <data
+                    android:host="${applicationId}"
+                    android:scheme="stpns" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action" />
+            </intent-filter>
+        </activity>
+
+        <!-- TPNS broadcast receiver, which is **required** -->
+        <receiver
+            android:name="com.tencent.android.tpush.XGPushReceiver"
+            android:exported="false"
+            android:process=":xg_vip_service">
+
+            <intent-filter android:priority="0x7fffffff">
+
+
+                <!-- **(Required)** The internal broadcast of the TPNS SDK -->
+                <action android:name="com.tencent.android.xg.vip.action.SDK" />
+                <action android:name="com.tencent.android.xg.vip.action.INTERNAL_PUSH_MESSAGE" />
+                <action android:name="com.tencent.android.xg.vip.action.ACTION_SDK_KEEPALIVE" />
+            </intent-filter>
+
+        </receiver>
 
     <!-- **Required** TPNS service -->
     <service
@@ -188,21 +217,21 @@ You need to configure the permissions required by the TPNS SDK to operate proper
         android:persistent="true"
         android:process=":xg_vip_service"></service>
 
-    <!-- **Required** Notification service. android:name should be changed to the package name.XGVIP_PUSH_ACTION -->
+    <!-- **Required** Notification service. Change the android:name to the package name.XGVIP_PUSH_ACTION -->
         <service android:name="com.tencent.android.tpush.rpc.XGRemoteService"
             android:exported="false">
             <intent-filter>
-                <!-- **Required** Modify to the current application package name.XGVIP_PUSH_ACTION -->
+                <!-- **Required** Changed to the current application package name.XGVIP_PUSH_ACTION -->
                 <action android:name="application package name.XGVIP_PUSH_ACTION" />
             </intent-filter>
         </service>
 
-    <!-- **Required** **Note:** modify authorities to package name.XGVIP_PUSH_AUTH -->
+    <!-- **Required** **Note:** Change authorities to package name.XGVIP_PUSH_AUTH -->
     <provider
         android:name="com.tencent.android.tpush.XGPushProvider"
         android:authorities="application package name.XGVIP_PUSH_AUTH" />
 
-    <!-- **Required** **Note:** modify authorities to package name.TPUSH_PROVIDER -->
+    <!-- **Required** **Note:** Change authorities to package name.TPUSH_PROVIDER -->
     <provider
         android:name="com.tencent.android.tpush.SettingsContentProvider"
         android:authorities="application package name.TPUSH_PROVIDER" />
@@ -213,8 +242,8 @@ You need to configure the permissions required by the TPNS SDK to operate proper
         android:authorities="application package name.AUTH_XGPUSH_KEEPALIVE"
         android:exported="true" />
 
-    <!-- **(Optional)** Receiver implemented by the application, which is used to receive in-app messages and call back operation results. Add as needed -->
-    <!-- YOUR_PACKAGE_PATH.CustomPushReceiver should be changed to your own receiver： -->
+    <!-- **(Optional)** Receiver implemented by the application, which is used to receive in-app messages and call back operation results. Add it as needed -->
+    <!-- Change YOUR_PACKAGE_PATH.CustomPushReceiver to your own receiver： -->
     <receiver android:name="application package name.MessageReceiver">
         <intent-filter>
             <!-- Receive in-app messages -->
@@ -236,18 +265,18 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 
     <!-- MQTT END-->
 		
-    <!-- **Required** Change to the `AccessId` of your application, which is a 10-digit number beginning with "15" and cannot contain spaces -->
+    <!-- **Required** Change it to the `AccessId` of your application, which is a 10-digit number beginning with "15" and cannot contain spaces -->
     <meta-data
         android:name="XG_V2_ACCESS_ID"
         android:value="Application AccessId" />
-    <!-- **Required** Change to the `AccessKey` of your application, which is a 12-character string beginning with "A" and cannot contain spaces -->
+    <!-- **Required** Change it to the `AccessKey` of your application, which is a 12-character string beginning with "A" and cannot contain spaces -->
     <meta-data
         android:name="XG_V2_ACCESS_KEY"
         android:value="Application AccessKey" />
 
 </application>
 
-<!-- **Required** Permissions required by TPNS SDK version 5.0 -->
+<!-- **Required** Permissions required by TPNS SDK v5.0 -->
 <permission
     android:name="application package name.permission.XGPUSH_RECEIVE"
     android:protectionLevel="signature" />
@@ -268,24 +297,24 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 
 >!
 > - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
-> - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
+> - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
 > Add the following metadata in the `application` tag in the `AndroidManifest` file:
 >```
-><application>
->// Other Android components
-><meta-data
->android:name="XG_SERVER_SUFFIX"
->android:value="Domain names of other service access points" />
-></application>
->```
+<application>
+// Other Android components
+<meta-data
+android:name="XG_SERVER_SUFFIX"
+android:value="Domain names of other service access points" />
+</application>
 ```
+
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
 >   - Singapore: `tpns.sgp.tencent.com`
 >   - Hong Kong (China): `tpns.hk.tencent.com`
 
 
-## Debugging and Device Registration
+## Debugging and Registering Devices
 
 ### Enabling debug log data
 
@@ -297,28 +326,28 @@ XGPushConfig.enableDebug(this,true);
 ```
 
 
-### Registering token
-Call the push service registration API where you need to start the push service:
+### Registering with token
+Call the push registration API where you need to start the push service:
 
->! You can advised to call the registration API only in the main process of your app.
+>! You are advised to call the registration API only in the main process of your app.
 >
 
 ```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
     @Override
     public void onSuccess(Object data, int flag) {
-        // The token may change when the device is uninstalled and then reinstalled
+        // The token may change after you uninstall and then reinstall the SDK in a device.
         Log.d("TPush", "Registration succeeded. Device token: " + data);
     }
 
     @Override
     public void onFail(Object data, int errCode, String msg) {
-        Log.d("TPush", "Registration failed. Error code: " + errCode + ", error message: " + msg);
+        Log.d("TPush", "Registration failed. Error code: " + errCode + "; error message: " + msg);
     }
 });
 ```
 
-The log of a successful registration filtered by "TPush" is as follows:
+The log of successful registration filtered by "TPush" is as follows:
 
 ```xml
 TPNS register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
@@ -333,7 +362,7 @@ new XGPushConfig.Build(context).setLogLevel(Log.ERROR);
 
 ## Code Obfuscation
 
-If you perform code obfuscation by using tools such as ProGuard in your project, keep the following options; otherwise, the TPNS service will be made unavailable:
+If you perform code obfuscation by using tools such as ProGuard in your project, keep the following options; otherwise, the TPNS service will become unavailable:
 
 ```xml
 -keep public class * extends android.app.Service
@@ -343,15 +372,15 @@ If you perform code obfuscation by using tools such as ProGuard in your project,
 -keep class com.tencent.tpns.mqttchannel.** {*;}
 -keep class com.tencent.tpns.dataacquisition.** {*;}
 
--keep class com.tencent.bigdata.baseapi.** {*;}   // This configuration item is not required on v1.2.0.1 and above
--keep class com.tencent.bigdata.mqttchannel.** {*;}  // This configuration item is not required on v1.2.0.1 and above
+-keep class com.tencent.bigdata.baseapi.** {*;}   // This configuration item is not required on v1.2.0.1 or later
+-keep class com.tencent.bigdata.mqttchannel.** {*;}  // This configuration item is not required on v1.2.0.1 or later
 ```
 
->!If the TPNS SDK is included in the application's public SDK, then even if the public SDK has an obfuscation rule configured, you still need to configure an obfuscation rule for the main project application.
+>! If the TPNS SDK is included in the application's common SDK, you still need to configure obfuscation rules for the main project application even though the common SDK includes obfuscation rules.
 
 ## Advanced Configuration (Optional)
 
-### Usage of audiovisual rich media
+### Using audiovisual rich media
 
 1. In the `layout` directory of the application, create an .xml file named `xg_notification`.
 2. Copy the following code into the file:
@@ -378,7 +407,7 @@ If you perform code obfuscation by using tools such as ProGuard in your project,
 ### Disabling session keep-alive
 
 To disable the feature, call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in `false`:
->! The session keep-alive feature can be disabled only in SDK v1.1.6.0 and later versions. In SDK versions earlier than v1.1.6.0, the feature is enabled by default and cannot be disabled.
+>! The session keep-alive feature can be disabled only in SDK v1.1.6.0 or later. In SDKs earlier than v1.1.6.0, the feature is enabled by default and cannot be disabled.
 >
 
 ```java
@@ -427,4 +456,5 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     }
 });
 ```
+
 

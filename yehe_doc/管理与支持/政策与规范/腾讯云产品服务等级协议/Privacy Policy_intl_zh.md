@@ -590,3 +590,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 32.[消息队列 TDMQ](https://intl.cloud.tencent.com/document/product/1110/45938)。
 33.[全栈式风控引擎](https://intl.cloud.tencent.com/document/product/1123/45972)。
 34.[边缘安全加速平台](https://intl.cloud.tencent.com/document/product/1145/46315)。
+35.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46725).

@@ -245,7 +245,7 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 >?
 > - 自 SDK 版本 v1.2.0.1 起，支持各厂商通道、TPNS 通道下发的通知点击事件的监听。
-> - 如需下发并获取推送自定义参数，推荐使用 Intent 方式，请参考文档 [通知点击跳转](https://intl.cloud.tencent.com/document/product/1024/38354)。
+> - 请不要此回调接口内另外做页面跳转动作，SDK 会自动按照推送任务配置的跳转动作进行通知点击跳转。如需下发并获取推送自定义参数，推荐使用 Intent 方式，请参考文档 [通知点击跳转](https://intl.cloud.tencent.com/document/product/1024/38354)。
 > 
 
 #### 接口说明
@@ -344,9 +344,11 @@ public static void createNotificationChannel(Context context, String channelId, 
 
 #### 示例代码
 
-```java
-XGPushManager.createNotificationChannel(this.getApplicationContext(),"default_message", "默认通知",true, true, true, null);
-
+```
+// 请将铃声文件放置在 Android 工程资源目录 raw 下，此处以文件 ring.mp3  为例
+String uri = "android.resource://" + context.getPackageName() + "/" + R.raw.ring;
+Uri soundUri = Uri.parse(uri);
+XGPushManager.createNotificationChannel(context,"default_message", "默认通知", true, true, true, soundUri);
 ```
 
 ## 推送消息（消息不展示到通知栏）
@@ -406,16 +408,15 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 SDK 1.2.7.0 新增，设置是否允许应用内消息窗口的展示，例如在允许展示应用内消息窗口的 Activity 页面设置开启，在不允许展示的 Activity 页面设置关闭。
 
 >! 应用内消息基于 Android WebView 框架进行展示，默认情况下，TPNS SDK 提供的应用内消息展示 WebView 运行在 App 主进程中。**自 Android 9 起，应用无法再让多个进程共享一个 WebView 数据目录，如果您的 App 必须在多个进程中使用 WebView 实例，则您必须先使用 `WebView.setDataDirectorySuffix()` 方法为每个进程指定唯一的数据目录后缀，否则可能引起程序崩溃**。配置示例代码如下：
->```java
->if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
->// 自 Android 9 起，未非 app 主进程的 WebView 实例设置不同的 WebView 数据目录
->String processName = getProcessName()
->if (processName != null 
->      && !processName.equals(context.getPackageName())) {
->  WebView.setDataDirectorySuffix(processName)
->}
->}
 >```
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
+// 自 Android 9 起，未非 app 主进程的 WebView 实例设置不同的 WebView 数据目录
+String processName = getProcessName()
+if (processName != null 
+      && !processName.equals(context.getPackageName())) {
+  WebView.setDataDirectorySuffix(processName)
+}
+}
 ```
 > 参考文档：谷歌开发者 [按进程分设基于网络的数据目录](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs)。
 
@@ -701,7 +702,7 @@ XGPushManager.clearAccounts(getApplicationContext());
 #### 接口说明
 
 一次设置多个标签，会覆盖这个设备之前设置的标签。
-开发者可以针对不同的用户设置标签，然后根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 。每个自定义 tag 可绑定的设备 Token 数量无限制，tag  中不准包含空格。
+开发者可以针对不同的用户设置标签，然后根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category)。每个自定义 tag 可绑定的设备 Token 数量无限制，tag  中不准包含空格。
 
 ```java
 public static void clearAndAppendTags(Context context, String operateName, Set<String> tags) 
@@ -1207,7 +1208,31 @@ XGPushConfig.getOtherPushToken(context);
 
 成功时返回正常的 Token；失败时返回 null 或0。  
 
+### 在通知点击目标页面内获取随通知下发的自定义参数（custom_content）内容
 
+SDK 1.3.2.0 新增，当通知被点击打开时，可以在通知设置的目标页面内，通过此接口直接获取创建推送任务时配置的自定义参数（custom_content）内容；
+
+详细使用方式参见 [通知点击跳转](#examplecode)。
+
+``` 
+public static String getCustomContentFromIntent(Context context, Intent intent)
+```
+
+#### 返回值
+
+随推送下发的自定义参数（custom_content）字符串 
+
+#### 参数说明
+
+- context：Context 对象， 不能为 null。
+- intent：activity intent；在 onCreate 内请直接传入 this.getIntent()；在 onNewIntent 内请直接传入回调的 intent。
+
+[](id:examplecode)
+#### 示例代码
+
+```
+String customContent = XGPushManager.getCustomContentFromIntent(this, intent);
+```
 
 ### 设置 AccessID
 
@@ -1278,7 +1303,7 @@ XGPushConfig.setAccessKey(context, accessKey);
 
 #### 接口说明
 
-开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
+开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时，请联系 [提交工单](https://console.cloud.tencent.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
 
 ```
 public static void uploadLogFile(Context context, HttpRequestCallback httpRequestCallback)

@@ -172,11 +172,11 @@ In the event that the processing and retention period have terminated, but perso
 
 **This section ("Your Rights") applies to users who are located in the European Economic Area.  The sub-section entitled "Access, Correction & Deletion" also applies to users who are located in Japan and Korea and Macau Special Administrative Region.**.
 
-You have certain rights in relation to the personal information we hold about you. Some of these only apply in certain circumstances as set out in more detail below. We also set out how to exercise those rights. Please note that we will require you to verify your identity before responding to any requests to exercise your rights. We must respond to a request by you to exercise those rights without undue delay and at least within one month (although this may be extended by a further two months in certain circumstances) unless otherwise permitted by the applicable legislation. To exercise any of your rights, please complete the request form [here](https://intl.cloud.tencent.com/services/dataSubject).
+You have certain rights in relation to the personal information we hold about you. Some of these only apply in certain circumstances as set out in more detail below. We also set out how to exercise those rights. Please note that we will require you to verify your identity before responding to any requests to exercise your rights. We must respond to a request by you to exercise those rights without undue delay and at least within one month (although this may be extended by a further two months in certain circumstances) unless otherwise permitted by the applicable legislation. To exercise any of your rights, please complete the request form here.
 
 #### Access, Correction & Deletion
 
-You can access, correct and delete some of your data in the account portal at any time [here](https://intl.cloud.tencent.com/services/dataSubject). If you believe there is any other personal information we process about you, or you are unable to correct or delete inaccurate information, you can make a request [here](https://console.cloud.tencent.com/). You may also have the right to receive a copy of certain personal information (see *Portability* below).
+You can access, correct and delete some of your data in the account portal at any time here. If you believe there is any other personal information we process about you, or you are unable to correct or delete inaccurate information, you can make a request [here](https://console.cloud.tencent.com/). You may also have the right to receive a copy of certain personal information (see *Portability* below).
 
 Please note, however, that we may retain personal information if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or freedom of expression) but we will let you know if that is the case.
 
@@ -184,7 +184,7 @@ Please note, however, that we may retain personal information if there are valid
 
 You have the right to receive a copy of certain personal information we collect from you in a structured, commonly used and machine-readable format and a right to request that we transfer such personal information to another party. The relevant personal information is information you provided for the purposes of performing our contract with you (for example, your mobile number, email address, or transaction data). You can export your Content at any time.
 
-If you wish for us to transfer the personal information to a third party you can contact us using the form available [here](https://intl.cloud.tencent.com/services/dataSubject). Note that we can only do so where it is technically feasible.
+If you wish for us to transfer the personal information to a third party you can contact us using the form available here. Note that we can only do so where it is technically feasible.
 
 #### Restriction of Processing to Storage Only
 
@@ -192,7 +192,7 @@ You have a right to require us to stop processing your personal information that
 
 #### Objection
 
-You have the right to object to our processing of your personal information under certain circumstances (such as where that information is used with your consent, for example for marketing or profiling) by completing the [form here](https://intl.cloud.tencent.com/services/dataSubject).
+You have the right to object to our processing of your personal information under certain circumstances (such as where that information is used with your consent, for example for marketing or profiling) by completing the form here.
 
 ### Communications from Us
 
@@ -574,7 +574,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 16.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44315).
 17.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44831).
 18.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45279).
-19.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45407).
+19.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45407).
 20.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45415).
 21.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45412).
 22.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45464).
@@ -590,6 +590,6 @@ The following Modules shall apply and form part of this privacy policy if you us
 32.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45938).
 33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).
 34.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46315).
-
+35.[FaceID](https://intl.cloud.tencent.com/document/product/1061/46725).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)

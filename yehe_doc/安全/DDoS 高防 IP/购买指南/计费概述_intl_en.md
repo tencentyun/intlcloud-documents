@@ -44,9 +44,9 @@ The basic protection service is billed based on your monthly plan. See the follo
 | Base Protection Capacity | Non-BGP        | BGP                      |
 | ------------- | ----------- | ------------------------ |
 | 30 Gbps        | -           | 3,300 USD/month              |
-| 60 Gbps        | 7,200 USD/month | 7,200 USD/month or 49,670 USD/year |
-| 100 Gbps       | 7,800 USD/month | 7,800 USD/month or 52,000 USD/year  |
-| 300 Gbps       | 8,470 USD/month | 8,470 USD/month or 85,000 USD/year  |
+| 60 Gbps        | 7,200 USD/month | 7,200 USD/month          |
+| 100 Gbps       | 7,800 USD/month | 7,800 USD/month          |
+| 300 Gbps       | 8,470 USD/month | 8,470 USD/month          |
 | 500 Gbps       | -           | 614,000 USD/year            |
 | 800 Gbps       | -           | 831,000 USD/year            |
 | 1,000 Gbps      | -           | 997,000 USD/year            |

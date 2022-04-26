@@ -119,7 +119,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
 19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
 20.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
-21.[Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047/45408).
+21.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45408).
 22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
 23.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45413).
 24.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
@@ -135,6 +135,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
+37.[Face Recognition](https://intl.cloud.tencent.com/document/product/1061/46726).
 
 ## Jurisdiction-specific Requirements
 

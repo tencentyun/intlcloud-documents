@@ -1,22 +1,22 @@
 [](id:q1)
 ### Does Tencent Cloud CDN support global acceleration?
-Yes. Tencent has built nodes for over a decade. Tencent Cloud CDN offers over 8,00 overseas nodes in more than 70 countries and regions to help your business go global seamlessly.
+Yes. Tencent Cloud CDN offers over 800 nodes in more than 70 countries and regions.
 
 [](id:q2)
-### After connecting to CDN, do changes need to be made on the origin server for the acceleration service to take effect?
+### After connecting to CDN, do I need to change my origin for the acceleration service to take effect?
 No. To achieve a better acceleration result, however, you are recommended to assign static and dynamic files to different domain names and only accelerate static resources.
 
 [](id:q3)
 ### Does Tencent Cloud CDN support cross-region access?
-Yes. If cross-region access is needed for your website, simply configure the `Access-Control-Allow-Origin` field on your website or configure cross-region headers for your domain name in the CDN Console. For more information, please see [HTTP Response Header](https://intl.cloud.tencent.com/document/product/228/35320).
+Yes. You can configure the `Access-Control-Allow-Origin` field on your website or configure cross-region headers for your domain name in the CDN Console. For more information, see [HTTP Response Header](https://intl.cloud.tencent.com/document/product/228/35320).
 
 [](id:q4)
 ### Where can I download CDN access logs?
-You can download CDN access logs in the CDN Console. For detailed directions, please see [Log Download](https://intl.cloud.tencent.com/document/product/228/6316).
+You can download CDN access logs in the CDN Console. For detailed directions, see [Log Download](https://intl.cloud.tencent.com/document/product/228/6316).
 
 [](id:q5)
 ### How do I use the CDN self-diagnosis tool?
-The self-diagnosis tool provides a range of diagnostic features such as testing for DNS resolution, linkage quality, site availability, and data access consistency for the accessed domain name. For more information, please see [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and cannot fully represent the entire network testing results.
+The self-diagnosis tool provides a range of diagnostic features such as testing for DNS resolution, linkage quality, site availability, and data access consistency for the accessed domain name. For more information, see [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and cannot fully represent the entire network testing results.
 
 [](id:q6)
 ### What is the difference between the local access diagnosis and the user access diagnosis?

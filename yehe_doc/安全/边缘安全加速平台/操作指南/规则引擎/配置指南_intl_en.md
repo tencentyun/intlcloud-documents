@@ -39,7 +39,7 @@ Finer granularities are supported, so you can use conditional statements to flex
 | ---------------- | ------------------------------------------------------------ |
 | All (any request) | All requests under the current site.<br>Note: We recommend you use this match condition to create a global rule as the baseline rule. |
 | Host             | Subdomain under the current site, such as `www.example.com`, `foo.example.com`, and `foo.bar.example.com`. |
-| URL path         | Request URL path under the current site, such as `/example/foo.jpg` and `/example/foo/bar`. |
+| URL Path         | Request URL path under the current site, such as `/example/foo.jpg` and `/example/foo/bar`. |
 
 ### Supported operations
 **Supported operations are subject to the match condition.** For example, if the match condition is URL path, some operations are unavailable (as they don't support the URL granularity).

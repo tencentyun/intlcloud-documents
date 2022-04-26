@@ -1,4 +1,4 @@
-## Description
+## Notes
 The account feature and tag deletion feature in this document are available for SDK v1.2.3.0 and later. For versions earlier than v1.2.3.0, see [Accounts and Tags](https://intl.cloud.tencent.com/document/product/1024/40596).
 
 The package name path prefix of all APIs is `com.tencent.android.tpush`. The following table lists important classes that provide APIs for external use.
@@ -13,7 +13,7 @@ The package name path prefix of all APIs is `com.tencent.android.tpush`. The fol
 
 - The application can only use the SDK push service after successfully registering for and launching the TPNS. Please ensure that `AccessId` and `AccessKey` have already been configured.
 - The new version of SDK has integrated TPNS launch and application registration into the registration API, which means you can simply call the registration API to complete the launch and registration by default.
-- After a successful registration, the device token will be returned. The token uniquely identifies the device and is also the unique ID for TPNS to stay connected with the backend. For more information on how to get tokens, please see [Getting a device token](#.E8.8E.B7.E5.8F.96.E8.AE.BE.E5.A4.87-token).
+- After a successful registration, the device token will be returned. The token uniquely identifies the device and is also the unique ID for TPNS to stay connected with the backend. For more information on how to get tokens, see [Getting a device token](#.E8.8E.B7.E5.8F.96.E8.AE.BE.E5.A4.87-token).
 
 The registration API usually provides a compact version and a version with callback. Please choose an appropriate version according to your business needs.
 
@@ -49,8 +49,8 @@ public static void registerPush(Context context,final XGIOperateCallback callbac
 
 #### Parameter description
 
-- `context`: context object of the current application, which cannot be `null`
-- `callback`: callback functions, including success and failure callbacks and cannot be `null`
+- `context`: Context object of the current application, which cannot be `null`
+- `callback`: Callback functions, including success and failure callbacks and cannot be `null`
 
 #### Sample code
 
@@ -100,7 +100,7 @@ public interface XGIOperateCallback {
 **Reloading XGPushBaseReceiver**
 The registration result can be obtained by reloading the `onRegisterResult` method of `XGPushBaseReceiver`.
 
->? The reloaded `XGPushBaseReceiver` needs to be configured in `AndroidManifest.xml`. For more information, please see [Message configuration](#.E6.B6.88.E6.81.AF.E9.85.8D.E7.BD.AE) below.
+>? The reloaded `XGPushBaseReceiver` needs to be configured in `AndroidManifest.xml`. For more information, see [Message configuration](#.E6.B6.88.E6.81.AF.E9.85.8D.E7.BD.AE) below.
 >
 
 #### Sample code
@@ -141,7 +141,7 @@ public void onRegisterResult(Context context, int errorCode, XGPushRegisterResul
 
 ### Unregistration
 
-The following are unregistration API methods. For more information on the timing and principle of calls, please see [Device unregistration flow](https://intl.cloud.tencent.com/document/product/1024/32609#device-unregistration-flow).
+The following are unregistration API methods. For more information on the timing and principle of calls, see device unregistration flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
 
 >! After calling the unregistration API, you need to call the registration API again before you can receive pushed messages.
 >
@@ -156,7 +156,7 @@ public static void unregisterPush(Context context)
 
 #### Parameter description
 
-`context`: context object of the application
+`context`: Context object of the application
 
 
 #### Sample code
@@ -244,8 +244,8 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 The TPNS SDK collects statistics on notification/message arrivals and notification clicks and clearances by default. The SDK provides a callback API for developers to listen for notification click events. Notification click events can be obtained by reloading the `onNotificationClickedResult(Context, XGPushClickedResult)` method of XGPushBaseReceiver.
 
 >?
-> - Starting from v1.2.0.1, the TPNS SDK supports listening for the click events of notifications delivered through the TPNS channel and various vendor channels.
-> - If you want to deliver and get custom push parameters, the Intent mode is recommended. For more information, see [Notification-Click Redirection](https://intl.cloud.tencent.com/document/product/1024/38354).
+> - The TPNS SDK v1.2.0.1 or later version supports listening for the click events of notifications delivered through the TPNS channel and various vendor channels.
+> - Please do not include a redirection action in this callback API. The SDK will automatically perform notification tap-to-redirect based on the redirection action set in the push task. If you want to deliver and get custom push parameters, the Intent mode is recommended. For more information, see [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354).
 > 
 
 #### API description
@@ -284,8 +284,8 @@ public void onNotificationClickedResult(Context context, XGPushClickedResult mes
 
 #### Parameter description
 
-- `context`: context of current application
-- `XGPushClickedResult`: opened object of the notification
+- `context`: Context of current application
+- `XGPushClickedResult`: Opened object of the notification
 
 Methods of `XGPushClickedResult` class are as follows:
 
@@ -294,7 +294,7 @@ Methods of `XGPushClickedResult` class are as follows:
 | getMsgId()         | long   | 0      | Message ID                                                      |
 | getTitle()         | String | None     | Notification title                                                    |
 | getContent()       | String | None     | Notification body content                                                 |
-| getActionType()  | String | None     | 0: the notification is clicked; 2: the notification is cleared                       |
+| getActionType()  | String | None     | 0: The notification is clicked; 2: The notification is cleared                       |
 | getPushChannel() | String | 100    | ID of the channel through which the clicked notification is delivered <li>100: TPNS channel </li><li>101: FCM channel </li><li>102: Huawei channel </li><li>103: Mi channel </li><li>104: vivo channel </li><li>105: OPPO channel </li><li>106: Meizu channel </li> |
 
 
@@ -329,24 +329,26 @@ public static void createNotificationChannel(Context context, String channelId, 
 
 ```
 
->? This API is applicable to v1.1.5.4 and above.
+>? This API is applicable to v1.1.5.4 or later.
 >
 
 #### Parameter description
 
-- `context`: context of current application
-- `channelId`: notification channel ID
-- `channelName`: notification channel name
-- `enableVibration`: whether to enable vibration
-- `enableLights`: whether to enable LED indicator
-- `enableSound`: whether to enable sound
-- `soundUri`: ringtone resource URI, which is valid if `enableSound` is `true`. To use the system-default ringtone, set this parameter to `null`.
+- `context`: Context of current application
+- `channelId`: Notification channel ID
+- `channelName`: Notification channel name
+- `enableVibration`: Whether to enable vibration
+- `enableLights`: Whether to enable LED indicator
+- `enableSound`: Whether to enable sound
+- `soundUri`: Ringtone resource URI, which is valid if `enableSound` is `true`. To use the system-default ringtone, set this parameter to `null`.
 
 #### Sample code
 
-```java
-XGPushManager.createNotificationChannel(this.getApplicationContext(),"default_message", "Default notification",true, true, true, null);
-
+```
+// Place the sound file under the Android project resource directory `raw`. Take the file `ring.mp3` as an example.
+String uri = "android.resource://" + context.getPackageName() + "/" + R.raw.ring;
+Uri soundUri = Uri.parse(uri);
+XGPushManager.createNotificationChannel(context, "default_message", "Default notification", true, true, true, soundUri);
 ```
 
 ## Push Message (Not Displayed on the Notification Bar)
@@ -390,8 +392,8 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 
 #### Parameter description
 
-- `context`: current context of the application
-- `message`: received message structure
+- `context`: Current context of the application
+- `message`: Received message structure
 
 #### Class method list
 
@@ -406,16 +408,15 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 Starting with SDK v1.2.7.0, you can set whether to allow the display of in-app message windows. For example, you can enable the display of in-app message windows in one Activity page, while disable it in another Activity page.
 
 >! In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the TPNS SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
->```java
->if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
->// Starting with Android 9, you need to set different WebView data directories for the WebView instances of apps’ non-main processes.
->String processName = getProcessName()
->if (processName != null 
->      && !processName.equals(context.getPackageName())) {
->  WebView.setDataDirectorySuffix(processName)
->}
->}
 >```
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
+// Starting with Android 9, you need to set different WebView data directories for the WebView instances of apps’ non-main processes.
+String processName = getProcessName()
+if (processName != null 
+      && !processName.equals(context.getPackageName())) {
+  WebView.setDataDirectorySuffix(processName)
+}
+}
 ```
 > Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
 
@@ -427,7 +428,7 @@ XGPushConfig.enableShowInMsg(Context context, boolean flag);
 #### Parameter description
 
 - `context`: `Context` object
-`flag`: whether to allow in-app message display. `true`: allow; `false`: not allow; default: `false`.
+`flag`: Whether to allow in-app message display. `true`: Allow; `false`: Not allow; default: `false`.
 
 #### Sample code
 ```java
@@ -446,7 +447,7 @@ Local notifications are customized by users and saved locally. When an applicati
 ```java	
 // Create a local notification
 XGLocalMessage local_msg = new XGLocalMessage();
-// Set the local message type; 1: notification, 2: message
+// Set the local message type; 1: Notification, 2: Message
 local_msg.setType(1);
 // Set the message title
 local_msg.setTitle("qq");
@@ -506,7 +507,7 @@ XGPushManager.clearLocalNotifications(context);
 
 ## Account Management
 
-The following are account management API methods. For more information on the timing and principle of calls, please see [Account flow](https://intl.cloud.tencent.com/document/product/1024/32609#account-flow).
+The following are account management API methods. For more information on the timing and principle of calls, see account flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
 
 
 ### Adding an account
@@ -522,8 +523,8 @@ public static void upsertAccounts(Context context, List<AccountInfo> accountInfo
 #### Parameter description
 
 - `context`: `Context` object
-- `accountInfoList`: account list, containing account types and account names
-- `callback`: callback of account binding operation
+- `accountInfoList`: Account list, containing account types and account names
+- `callback`: Callback of account binding operation
 
 #### Sample code
 
@@ -548,7 +549,7 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 
 >?
 > - Each account can be bound to up to 100 tokens.
-> - The account can be email, QQ account number, mobile number, username, etc. For valid values, please see [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598).
+> - The account can be email, QQ account number, mobile number, username, etc. For valid values, see [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598).
 > - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 > 
 
@@ -568,8 +569,8 @@ public static void upsertPhoneNumber(Context context, String phoneNumber, XGIOpe
 #### Parameter description
 
 - `context`: `Context` object
-- `phoneNumber`: an E.164 mobile number in the format of `[+][country code or area code][mobile number]`, for example, +8613711112222
-- `callback`: callback of mobile number binding operation
+- `phoneNumber`: An E.164 mobile number in the format of `[+][country code or area code][mobile number]`, for example, +8613711112222
+- `callback`: Callback of mobile number binding operation
 
 #### Sample code
 
@@ -608,8 +609,8 @@ void delAccount(Context context, final String account )
 
 #### Parameter description
 
-- `context`: context object of the current application, which cannot be `null`
-- `account`: account
+- `context`: Context object of the current application, which cannot be `null`
+- `account`: Account
 
 #### Sample code
 
@@ -632,8 +633,8 @@ public static void delAccounts(Context context, final Set<Integer> accountTypeSe
 #### Parameter description
 
 - `context`: `Context` object
-- `accountTypeSet`: type of the account to be unbound
-- `callback`: callback of account unbinding operation
+- `accountTypeSet`: Type of the account to be unbound
+- `callback`: Callback of account unbinding operation
 
 #### Sample code
 
@@ -679,7 +680,7 @@ void clearAccounts(Context context)
 
 #### Parameter description
 
-`context`: context object of the current application, which cannot be `null`
+`context`: Context object of the current application, which cannot be `null`
 
 #### Sample code
 
@@ -690,7 +691,7 @@ XGPushManager.clearAccounts(getApplicationContext());
 
 ## Bucket Tag
 
-The following are tag management API methods. For more information on the timing and principle of calls, please see [Tag flow](https://intl.cloud.tencent.com/document/product/1024/32609#tag-flow).
+The following are tag management API methods. For more information on the timing and principle of calls, see tag flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
 
 ### Preset tags
 
@@ -711,8 +712,8 @@ public static void clearAndAppendTags(Context context, String operateName, Set<S
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
-- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
+- `operateName`: User-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- tags: A collection of tag names, and each tag is a string. Restrictions: Each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 
 
 
@@ -749,8 +750,8 @@ public static void appendTags(Context context, String operateName, Set<String> t
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
-- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
+- `operateName`: User-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- tags: A collection of tag names, and each tag is a string. Restrictions: Each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 
 #### Processing result
 
@@ -783,9 +784,9 @@ public static void delTags(Context context, String operateName, Set<String> tags
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
-- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
-- `callback`: callback of tag deletion operation
+- `operateName`: User-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- tags: A collection of tag names, and each tag is a string. Restrictions: Each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
+- `callback`: Callback of tag deletion operation
 
 #### Processing result
 
@@ -830,8 +831,8 @@ public static void clearTags(Context context, String operateName, XGIOperateCall
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
-- `callback`: callback of tag clearing operation
+- `operateName`: User-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
+- `callback`: Callback of tag clearing operation
 
 #### Processing result
 
@@ -872,10 +873,10 @@ This API is used to get the tags bound to the device.
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
-- `offset`: the starting point
-- `limit`: number of tags to get;  maximum value: `100`
-- `callback`: callback of tag getting operation
+- `operateName`: Operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `offset`: The starting point
+- `limit`: Number of tags to get;  maximum value: `100`
+- `callback`: Callback of tag getting operation
 
 #### Processing result
 
@@ -901,7 +902,7 @@ XGPushManager.queryTags(context, 0, 100, xgiOperateCallback);
 
 ## User Attribute Management
 
-You can set attributes for different users and then perform personalized push in TPNS. The following are user attribute API methods. For more information on the timing and principle of calls, please see [User attribute flow](https://intl.cloud.tencent.com/document/product/1024/32609#user-attribute-flow).
+You can set attributes for different users and then perform personalized push in TPNS. The following are user attribute API methods. For more information on the timing and principle of calls, see user attribute flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
 
 ### Adding user attributes
 
@@ -917,9 +918,9 @@ public static void upsertAttributes(Context context, String operateName, Map<Str
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
-- `attributes`: attribute set, where each attribute is identified by `key-value`
-- `callback`: callback of attribute adding operation
+- `operateName`: Operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `attributes`: Attribute set, where each attribute is identified by `key-value`
+- `callback`: Callback of attribute adding operation
 
 > !	
 >
@@ -966,9 +967,9 @@ public static void delAttributes(Context context, String operateName, Set<String
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
-- `attributes`: attribute set, where each attribute is identified by `key-value`
-- `callback`: callback of attribute deleting operation
+- `operateName`: Operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `attributes`: Attribute set, where each attribute is identified by `key-value`
+- `callback`: Callback of attribute deleting operation
 
 > !	
 >
@@ -1013,8 +1014,8 @@ public static void clearAttributes(Context context, String operateName, XGIOpera
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
-- `callback`: callback of attribute clearing operation
+- `operateName`: Operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `callback`: Callback of attribute clearing operation
 
 #### Sample code
 
@@ -1055,9 +1056,9 @@ public static void clearAndAppendAttributes(Context context, String operateName,
 #### Parameter description
 
 - `context`: `Context` object
-- `operateName`: operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
-- `attributes`: attribute set, where each attribute is identified by `key-value`
-- `callback`: callback of attribute setting operation
+- `operateName`: Operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
+- `attributes`: Attribute set, where each attribute is identified by `key-value`
+- `callback`: Callback of attribute setting operation
 
 #### Sample code
 
@@ -1098,7 +1099,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 #### Parameter description
 
-- `context`: application context
+- `context`: Application context
 - `pullUp`: `true` (enable session keep-alive); `false` (disable session keep-alive)
 
 >? If the following log is printed, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
@@ -1124,8 +1125,8 @@ public static void enableDebug(Context context, boolean debugMode)
 
 #### Parameter description
 
-- `context`: context object of the application
-- `debugMode`: the default value is `false`. To enable debug logging, set it to `true`.
+- `context`: Context object of the application
+- `debugMode`: The default value is `false`. To enable debug logging, set it to `true`.
 
 #### Sample code
 
@@ -1144,11 +1145,11 @@ A token is the unique ID for TPNS to stay connected with the backend and the uni
 
 **Through the registration API with callback**
 
-In the `onSuccess(Object data, int flag)` method of the registration API with `XGIOperateCallback`, the `data` parameter is the token. For more information, please see the relevant sample of the registration API.
+In the `onSuccess(Object data, int flag)` method of the registration API with `XGIOperateCallback`, the `data` parameter is the token. For more information, see the relevant sample of the registration API.
 
 **By reloading XGPushBaseReceiver**
 
-Reload the `onRegisterResult (Context context, int errorCode,XGPushRegisterResult registerMessage)` method of `XGPushBaseReceiver` and get the token through the `getToken` API provided by the `registerMessage` parameter. For more information, please see [Getting registration results](#.E8.8E.B7.E5.8F.96.E6.B3.A8.E5.86.8C.E7.BB.93.E6.9E.9C).
+Reload the `onRegisterResult (Context context, int errorCode,XGPushRegisterResult registerMessage)` method of `XGPushBaseReceiver` and get the token through the `getToken` API provided by the `registerMessage` parameter. For more information, see [Getting registration results](#.E8.8E.B7.E5.8F.96.E6.B3.A8.E5.86.8C.E7.BB.93.E6.9E.9C).
 
 **Through the XGPushConfig.getToken(context) API**
 
@@ -1166,7 +1167,7 @@ public static String getToken(Context context)
 
 #### Parameter description
 
-`context`: context object of the application
+`context`: Context object of the application
 
 #### Sample code
 
@@ -1194,7 +1195,7 @@ public static String getOtherPushToken(Context context)
 
 #### Parameter description
 
-`context`: context object of the application
+`context`: Context object of the application
 
 #### Sample code
 
@@ -1207,9 +1208,33 @@ XGPushConfig.getOtherPushToken(context);
 
 A standard token will be returned upon success, and `null` or `0` upon failure.  
 
+### Getting custom parameters (custom_content) delivered with the notification on the notification click target page
 
+This is a new API in the SDK v1.3.2.0. When a notification is clicked and opened, you can use this API to directly get the custom parameters (custom_content) configured when creating the push task on the target notification setting page. 
 
-### Setting the `accessId`
+For usage details, see [Notification Tap-to-Redirect](#examplecode).
+
+``` 
+public static String getCustomContentFromIntent(Context context, Intent intent)
+```
+
+#### Returned values
+
+Strings of the custom parameters (custom_content) delivered with the push 
+
+#### Parameter description
+
+- `context`: `Context` object, which cannot be `null`
+- intent: Activity intent. Directly pass in `this.getIntent()` in onCreate, and pass in the `intent` called back in onNewIntent.
+
+[](id:examplecode)
+#### Sample code
+
+```
+String customContent = XGPushManager.getCustomContentFromIntent(this, intent);
+```
+
+### Setting the `AccessID`
 
 #### API description
 
@@ -1222,7 +1247,7 @@ public static boolean setAccessId(Context context, long accessId)
 
 #### Parameter description
 
-- `Context`: object
+- `Context`: Object
 - `accessId`: `accessId` obtained through registration in the console
 
 #### Sample code
@@ -1235,8 +1260,8 @@ XGPushConfig.setAccessId(context, accessId);
 
 #### Returned values
 
-- true: success.
-- false: failure.
+- true: Success.
+- false: Failure.
 
 >? The `accessId` set through this API will also be stored in the `AndroidManifest.xml` file.
 >
@@ -1254,7 +1279,7 @@ public static boolean setAccessKey(Context context, String accessKey)
 
 #### Parameter description
 
-- `Context`: object
+- `Context`: Object
 - `accessKey`: `accessKey` obtained through registration in the console
 
 #### Sample code
@@ -1267,8 +1292,8 @@ XGPushConfig.setAccessKey(context, accessKey);
 
 #### Returned values
 
-- true: success.
-- false: failure.
+- true: Success.
+- false: Ffailure.
 
 >? The access key set through this API will also be stored in the `AndroidManifest.xml` file.
 >
@@ -1287,7 +1312,7 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
 #### Parameter description
 
 - `context`: `Context` object, which cannot be `null`
-- `httpRequestCallback`: log reporting result callback, which include callbacks for success and failure and cannot be `null`
+- `httpRequestCallback`: Log reporting result callback, which include callbacks for success and failure and cannot be `null`
 
 #### Sample code
 

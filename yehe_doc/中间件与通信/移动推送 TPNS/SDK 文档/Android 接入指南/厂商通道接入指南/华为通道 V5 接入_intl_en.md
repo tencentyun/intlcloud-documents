@@ -1,4 +1,4 @@
-## Scenario
+## Overview 
 
 TPNS always keeps up with the update progress of each vendor channel's push service. It provides plugin dependency packages integrated with the HMS Core Push SDK of Huawei Push for your choice.
 
@@ -12,34 +12,34 @@ TPNS always keeps up with the update progress of each vendor channel's push serv
 ### Obtaining a key
 
 1. Go to the [Huawei Developer Platform](http://developer.huawei.com).
-2. Register a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, identity verification is required.)
-3. Create an application on the Huawei Push platform. For more information, please see [Creating an app](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app). (The application package name must be the same as that entered in the TPNS console.)
+2. Register a developer account and log in to the platform. For more information, see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). If you are registering a new account, identity verification is required.
+3. Create an application on the Huawei Push platform. For more information, see [Creating an App](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app). The application package name must be the same as that entered in the TPNS console.
 4. Get and copy the application's `AppID` and `AppSecret` and paste them into [TPNS console](https://console.cloud.tencent.com/tpns) > **Configuration Management** > **Basic Configuration** > **Huawei Official Push Channel**.
 ![]()
 
 >?
 >  
 > If you cannot find `SecretKey` in **App information** > **My apps**, go to **Project settings** > **General information** to view `Client secret`.
-> ![]()
+> ![](https://qcloudimg.tencent-cloud.cn/raw/84a66ae0ce0cf7bd3a27f977ba3d5a44.png)
 
 ### Configuring the SHA-256 certificate fingerprint
 
 Get the SHA-256 certificate fingerprint as instructed in [Generating a Signing Certificate Fingerprint](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger). Then configure the fingerprint on the Huawei Push platform, and **remember to click <img src="https://main.qcloudimg.com/raw/f74e3aa948316533ce91f9add4a81a29.png"></img> to save the configuration**.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/257830f2994218a873b7b386cdc6ba27.png)
 
 
 ### Getting the Huawei Push configuration file
 
 Log in to the Huawei Developer platform, go to **My Projects** > select a project > **Project Settings**, and download the latest configuration file `agconnect-services.json` of your Huawei application.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/544f925c82f1bad4c6fd556e51c3c125.png)
 
 
 ### Enabling the push service
 
 1. On the Huawei Push platform, choose **All services** > **Push Kit** to go to the **Push Kit** page.
-![]()
-2. On the **Push Kit** page, click **Enable now**. For more information, please see [Enabling Services](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/8612c022f109c5a2265d52a9ae77b771.png)
+2. On the **Push Kit** page, click **Enable now**. For more information, see [Enabling Services](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
+![](https://qcloudimg.tencent-cloud.cn/raw/60175bb9013e08039ea852cb108927f1.png)
 
 ## SDK Integration (Two Methods)
 
@@ -163,7 +163,8 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 
 ## Code Obfuscation
 
-```plaintext
+1. Add the following obfuscation rules in the `proguard-rules.pro` file at the application project level.
+```
 -ignorewarnings
 -keepattributes *Annotation* 
 -keepattributes Exceptions 
@@ -176,19 +177,37 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 -keep class com.huawei.agconnect.**{*;}
 ```
 
->? Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
->
+2. If the application uses the plug-in AndResGuard, add the following in the configuration allowlist of AndResGuard. Omit this step if AndResGuard is not used.
+```
+whiteList = [
+"R.string.hms*",
+"R.string.connect_server_fail_prompt_toast",
+"R.string.getting_message_fail_prompt_toast",
+"R.string.no_available_network_prompt_toast",
+"R.string.third_app_*",
+"R.string.upsdk_*",
+"R.layout.hms*",
+"R.layout.upsdk_*",
+"R.drawable.upsdk*",
+"R.color.upsdk*",
+"R.dimen.upsdk*",
+"R.style.upsdk*",
+"R.string.agc*"
+]
+```
+
+>? For more obfuscation rules, see [Configuring Obfuscation Scripts](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-config-obfuscation-scripts-0000001050176973)
 
 ## Advanced Configuration (Optional)
 
-### Arrival receipt configuration for Huawei channel
+### Configuring arrival receipt for Huawei channel
 
 The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246), you can view the arrival data for the Huawei push channel in the push records.
 ![]()
 
 ### Badge adaptation for Huawei devices
 
-You can set the application badge on Huawei devices after applying for the application badge setting permission and setting the application start class. For more information, please see [Badge Adaption Guide](https://intl.cloud.tencent.com/document/product/1024/35828).
+You can set the application badge on Huawei devices after applying for the application badge setting permission and setting the application start class. For more information, see [Badge Adaption Guide](https://intl.cloud.tencent.com/document/product/1024/35828).
 
 ## Troubleshooting
 
@@ -204,7 +223,7 @@ In debugging mode of the push service, filter logs by the keyword `OtherPush` or
 
 #### Why are there no alerts for notifications delivered through the Huawei channel?
 
-Starting from EMUI 10.0, Huawei Push intelligently categorizes notification messages into two levels: general and important. Versions below EMUI 10.0 don't categorize notifications but have only one level, so all notifications are displayed through the "default notification" channel, which is equivalent to the important level on EMUI 10.0. If a notification is categorized as "general", there will be no vibration, sound, or status bar icon alerts for it. Currently, the notification level can be set to "important" through the custom notification channel; however, according to the applicable Huawei Push rules, the final display effect will still be determined jointly by the set level and the level calculated by Huawei Push's intelligent categorization, and the lower level will prevail; for example, if the two levels are "important" and "general", "general" will prevail. For more information, please see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+Starting from EMUI 10.0, Huawei Push intelligently categorizes notification messages into two levels: general and important. Versions below EMUI 10.0 don't categorize notifications but have only one level, so all notifications are displayed through the "default notification" channel, which is equivalent to the important level on EMUI 10.0. If a notification is categorized as "general", there will be no vibration, ringtone, or status bar icon alerts for it. Currently, the notification level can be set to "important" through the custom notification channel; however, according to the applicable Huawei Push rules, the final display effect will still be determined jointly by the set level and the level calculated by Huawei Push's intelligent categorization, and the lower level will prevail; for example, if the two levels are "important" and "general", "general" will prevail. For more information, see Huawei Message Classification User Guide [here](https://intl.cloud.tencent.com/document/product/1024/36250).
 
 ​	
 

@@ -37,9 +37,9 @@ In CDN, an access log refers to the detailed log of user access requests to your
 
 In CDN, an origin-pull means that when a user sends a request from a browser, the server that responds to the request is the server of the source website rather than a cache server on a CDN node. Generally, if the content is not cached on the cache server or is modified on the origin server, it will be pulled from the origin server.
 
-### Host Header
+### Origin Domain
 
-In CDN, a host header refers to a domain name of a website accessed on an origin server by a CDN node during origin-pull. For more information, please see [Host Header Configuration](https://intl.cloud.tencent.com/document/product/228/6293).
+In CDN, an origin domain refers to a domain name of a website accessed on an origin server by a CDN node during origin-pull. For more information, please see [Origin Domain Configuration](https://intl.cloud.tencent.com/document/product/228/6293).
 
 ## J
 
