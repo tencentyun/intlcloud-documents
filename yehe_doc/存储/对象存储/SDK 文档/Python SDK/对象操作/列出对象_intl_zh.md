@@ -225,7 +225,7 @@ response = client.list_objects(
 | NextMarker|  当 IsTruncated 为 true 时，标记下一次返回对象的 list 的起点位置  | String  |
 | Name   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 
 |Contents |包含所有对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'Owner'，'LastModified'，'Size' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
 
@@ -356,7 +356,7 @@ response = client.list_objects_versions(
 | NextVersionIdMarker | 当 IsTruncated 为 true 时，标记下一次返回对象的 list 的 VersionId 的起点位置  | String  |
 | Name   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 
 |Version |包含所有多个版本对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified'，'Size' 等信息|List|
 |DeleteMarker|包含所有delete marker 对象元数据的 list，包括 'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
