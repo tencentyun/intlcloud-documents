@@ -39,7 +39,7 @@ dependencies {
 ```
  defaultConfig {
       ndk {
-          abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+          abiFilters "armeabi-v7a", "arm64-v8a"
       }
   }
 ```
@@ -108,7 +108,7 @@ When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group
 | roomId | Number | Numeric room ID. For string-type room ID, use `strRoomId` in `TRTCParams`. | 29834 |
 
 >!
->-In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
+>- In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
 [](id:step5)
