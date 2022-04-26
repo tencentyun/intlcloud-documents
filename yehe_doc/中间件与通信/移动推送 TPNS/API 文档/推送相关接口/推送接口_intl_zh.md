@@ -261,7 +261,7 @@ Android 平台具体字段如下表：
 								"pf": 0  // PendingIntent的Flag属性
 						},
 						"browser": {
-								"url": "https://cloud.tencent.com ", // 仅支持http、https
+								"url": "https://intl.cloud.tencent.com ", // 仅支持http、https
 								"confirm": 1 // 是否需要用户确认
 						},
 						"intent": "xgscheme://com.tpns.push/notify_detail" //SDK版本需要大于等于1.0.9，然后在客户端的intent配置data标签，并设置scheme属性

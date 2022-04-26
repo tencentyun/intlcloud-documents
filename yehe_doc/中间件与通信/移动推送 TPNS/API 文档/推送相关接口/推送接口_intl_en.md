@@ -261,7 +261,7 @@ Below is a sample of a complete message:
 								"pf": 0  // PendingIntent's Flag attribute
 						},
 						"browser": {
-								"url": "https://cloud.tencent.com ", // Only HTTP and HTTPS URLs are supported
+								"url": "https://intl.cloud.tencent.com ", // Only HTTP and HTTPS URLs are supported
 								"confirm": 1 // Whether user's confirmation is required
 						},
 						"intent": "xgscheme://com.tpns.push/notify_detail" //The SDK must be version 1.0.9 or later. Configure the data tag in the client's Intent and set the scheme attribute
