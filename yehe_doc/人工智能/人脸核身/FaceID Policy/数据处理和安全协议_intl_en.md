@@ -6,13 +6,30 @@ This Module applies if you use the eKYC Solution Feature (“**Feature**”). Th
 ## 2.PROCESSING
 
 We will process the following data in connection with the Feature:
+<table>
+<tr>
+	<td><b>Personal Information</b> </td>
+	<td><b>Use</b></td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><b>Reflective Liveness Compare (RLC) feature</b>  </td>
+</tr>
+<tr>
+	<td><b>Face images and videos of your end users, and returned results (such as results of liveness compare, optimal screenshot of end users, original video, algorithm packet with preliminary processing results)</b></td>
+	<td>We only process this data for the purposes of providing the Feature to you. 
+	   Please note that this data is integrated with the Cloud Object Storage feature for this purpose.  
+	   The Feature will not further process the face images and videos once the liveness detection and identity verification is complete.</td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><b>ID OCR feature</b> </td>
+</tr>
+<tr>
+	<td><b>Images and videos of your end users’ official identity (ID) documents, and returned results</b> <b>(such as original photo or video of ID, face image of ID, information extracted from the ID requested by you (including the end user’s ID number, name, gender, valid duration)</b> </td>
+	<td>We only process this data for the purposes of providing the Feature to you.                      Please note that this data is integrated with the Cloud Object Storage feature for this purpose.    
+	The Feature will not further process the images and videos of the official identity documents once the identity verification is complete.</td>
+</tr>
+</table>
 
-| **Personal Information**                                     | **Use**                                                      |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| *Reflective Liveness Compare (RLC) feature*                  |                                                              |
-| **Face images and videos of your end users, and returned results (such as results of liveness compare, optimal screenshot of end users, original video, algorithm packet with preliminary processing results)** | We only process this data for the purposes of providing the Feature to you.                      Please note that this data is integrated with the Cloud Object Storage feature for this purpose.                     The Feature will not further process the face images and videos once the liveness detection and identity verification is complete. |
-| *ID OCR feature*                                             |                                                              |
-| **Images and videos of your end users’ official identity (ID) documents, and returned results** **(such as original photo or video of ID, face image of ID, information extracted from the ID requested by you (including the end user’s ID number, name, gender, valid duration)** | We only process this data for the purposes of providing the Feature to you.                      Please note that this data is integrated with the Cloud Object Storage feature for this purpose.                  The Feature will not further process the images and videos of the official identity documents once the identity verification is complete. |
 
 ##  
 
