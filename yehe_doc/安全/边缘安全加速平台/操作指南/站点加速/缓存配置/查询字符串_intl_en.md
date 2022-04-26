@@ -25,10 +25,10 @@ Parameter description:
 >- They have the same parameter values in different letter cases, such as `?sign=A` and `?sign=a`. If you want to identify them as the same query string, you can enable the [case ignoring](https://intl.cloud.tencent.com/document/product/1145/46181) feature.
  - Ignore all: The entire query string will be ignored.
  - Retain specified parameters: Only specified parameters in the query string will be retained.
-    - You can specify only parameter names and separate them with semicolons, such as `param1;param2`.
+    - You can specify only parameter names and separate them with semicolons, such as `sign;time`.
     - You can enter up to ten parameters. 
  - Ignore specified parameters: Only specified parameters in the query string will be ignored.
-    - You can specify only parameter names and separate them with semicolons, such as `param1;param2`.
+    - You can specify only parameter names and separate them with semicolons, such as `sign;time`.
     - You can enter up to ten parameters.
 
 ## Notes
