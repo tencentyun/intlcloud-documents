@@ -1,6 +1,6 @@
 ## Overview
 
-You can modify the storage class of your object uploaded to COS through the console at any time to meet your business needs in different scenarios. The storage classes COS provides include INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARCHIVE. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). The following section will guide you through how to modify the storage class of an object.
+You can modify the storage class of your object uploaded to COS through the console at any time to meet your business needs in different scenarios. COS offers a range of storage classes, including INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARCHIVE. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). The following section will guide you through how to modify the storage class of an object.
 
 > ?
 > - To modify the storage class of an object stored in **ARCHIVE** or **DEEP ARCHIVE**, you need to restore it first into STANDARD. For more information, see [Restoring an Archived Object](https://intl.cloud.tencent.com/document/product/436/30961).
