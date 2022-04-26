@@ -1,3 +1,4 @@
+
 ## Overview
 
 This document shows you how to encrypt videos using DRM solutions and use your own player or a third-party player to play the encrypted videos.
@@ -22,11 +23,10 @@ For detailed directions, see [Applying for FairPlay Certificate and Submitting C
 ## Step 1. Enable hotlink protection
 
 The example below shows how to enable key hotlink protection for the default distribution domain under your account:
->We do not recommend enabling hotlink protection for a domain name already in use, because it may result in playback failure.
+>? We do not recommend enabling hotlink protection for a domain name already in use, because it may result in playback failure.
 
 1. Log in to the VOD console, select **Distribution and Playback** > **[Domain Name](https://console.cloud.tencent.com/vod/distribute-play/domain)**, find the default distribution domain, and click **Set** on the right.
 2. Click **Access Control** and toggle **Key Hotlink Protection** on. In the pop-up window, click **Generate** to generate a random key (2WExxx48eW). Copy the key, which is needed to generate superplayer signature, and click **Confirm** to save the configuration.
-   
 
 ## Step 2. Encrypt a video
 
@@ -35,11 +35,9 @@ The example below shows how to enable key hotlink protection for the default dis
  - Select **Task Flow** as the **Processing Type**.
  - Select **WidevineFairPlayPreset** as the **Task Flow Template**.
  
-
 >?
 >- `WidevineFairPlayPreset` is a preset task flow. It uses the adaptive bitrate streaming template 11 or 13, the time point screenshot template 10 (for thumbnail generation), and the image sprite template 10.
->- The adaptive bitrate streaming template 11 generates videos of multiple bitrates for FairPlay encryption, and the adaptive bitrate streaming template 13 generates videos of multiple bitrates for Widevine encryption.
-
+>- The adaptive bitrate streaming template 11 generates multi-bitrate streams encrypted by FairPlay, and the adaptive bitrate streaming template 13 generates multi-bitrate streams encrypted by Widevine.
 3. Click **Confirm** and wait until the **Video Status** changes from "Processing" to "Normal", which indicates that video processing is completed.
 4. Click **Manage** in the **Operation** column of the video to enter the management page:
  - Click the **Basic Info** tab to view the generated thumbnail and outputs of adaptive bitrate streaming (template ID: 11/13).
@@ -54,8 +52,8 @@ The superplayer SDK does not yet support the playback of DRM-encrypted videos. T
 The HTTP GET request method is used, and the URL is `https://{domain}/{interface}/{version}/{appId}/{fileId}?psign={psign}`.
 
 #### Domain names
-* Primary domain name: `playvideo.qcloud.com`
-* Secondary domain name: `bkplayvideo.qcloud.com`
+- Primary domain name: `playvideo.qcloud.com`
+- Secondary domain name: `bkplayvideo.qcloud.com`
 
 #### Request fields
 ##### Path fields
@@ -74,7 +72,7 @@ The HTTP GET request method is used, and the URL is `https://{domain}/{interface
 | psign    | No       | The superplayer signature. For how to generate it, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099). In `PayLoad` of the signature, set `pcfg` to `advanceDrmPreset`. We also offer a quick [superplayer signature generation tool](https://vods.cloud.tencent.com/signature/super-player-sign.html). |
 | context  | No       | The pass-through field, which is returned as it is in the response.                                   |
 
-##### Response fields
+#### Response fields
 
 | Field | Type | Description |
 | -- | -- | -- |
@@ -82,20 +80,20 @@ The HTTP GET request method is used, and the URL is `https://{domain}/{interface
 | message | String | The error message, which is not empty if `code` is not 0. |
 | version | Integer | The version type of the returned result, which is 4. |
 | warning | String | The warning message. If the `psign` parameter is carried but hotlink protection is not enabled, a warning will be returned. |
-| media | Object | The media information, whose type is `Media`. |
+| media | Object | The media information (type: `Media`). |
 
 ##### Media
 
-| Field  | Type | Description |
+| Field | Type | Description |
 | -- | -- | -- |
 | basicInfo | Object | The basic video information (type: `BasicInfo`). |
 | streamingInfo | Object | The multi-bitrate encoding information (type: `StreamingInfo`). |
 | imageSpriteInfo | Object | The image sprite information (type: `ImageSpriteInfo`), which is used for preview. |
-| keyFrameDescInfo | Object | The timestamp information (type: `KeyFrameDescInfo`), which is to timestamp the video. |
+| keyFrameDescInfo | Object | The timestamp information (type: `KeyFrameDescInfo`), which is used to add timestamps to the video. |
 
 ##### BasicInfo
 
-| Field| Type | Description |
+| Field | Type | Description |
 | -- | -- | -- |
 | name | String | The video name. |
 | size | Integer | The video size in bytes. |
@@ -136,7 +134,7 @@ The HTTP GET request method is used, and the URL is `https://{domain}/{interface
 | imageUrls | Array | An array of the image sprite download URLs (type: `String`). |
 | webVttUrl | String | The download URL of the image sprite VTT file. |
 
-#### Sample
+##### Sample
 
 ##### Sample request
 
@@ -282,7 +280,104 @@ FairPlay encryption:
 
 ## Step 4. Play the DRM-encrypted video
 
-(To be added)
+### Solution 1: Playing in the VOD superplayer
+The VOD superplayer can play DRM-encrypted videos. See below for detailed directions:
+
+
+#### Step 1. Import files
+Import the player style file and script file into the page.
+
+```
+ <link href="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
+ <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.12.4.js"></script>
+ <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/dash.all.min.2.9.3.js"></script>
+ <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.min.js"></script>
+```
+
+#### Step 2. Add a player container
+Add a player container where you want to play videos. For example, you can add the following code to `index.html` (the container ID, width, and height are customizable).
+
+```
+<video id="player-container-id" width="414" height="270" preload="auto" playsinline webkit-playsinline>
+</video>
+```
+
+#### Step 3. Add initialization code
+Add the following script to your page initialization code and pass in the required initialization parameters.
+
+```
+var player = TCPlayer('player-container-id', {
+  appID:  '', // The application ID of your VOD account, required.
+  fileID: '', // The file ID of the video to play, required.
+  psign: '', // Player signature.
+  plugins: {
+    DRM: {
+      certificateUri: '', // FairPlay certificate URL, which is required if FairPlay-encrypted videos are played.
+    }
+  }``
+});
+```
+
+
+>?
+>- You need to pass in the FairPlay certificate as well to play FairPlay-encrypted videos.
+>- `certificateUri` is the URL of the certificate required to play FairPlay-encrypted videos. You can get the URL of a certificate after it is generated and deployed to your server.
+>- Content encrypted using established DRM solutions can only be played on HTTPS pages.
+
+
+### Solution 2: Playing in a third-party player (Shaka Player)  
+
+To play DRM-encrypted videos in a third-party player, you need to send a request to the VOD backend for the encryption information and then pass in the information when the player is initialized. For details, see [Shaka Player](https://github.com/shaka-project/shaka-player).
+
+
+#### Step 1. Import files
+Import the player script file into the page via [npm](https://www.npmjs.com/package/shaka-player) or CDN.
+
+```
+// CDN: 
+<script src="path/to/shaka-player.compiled.js" ></script>
+```
+
+#### Step 2. Add a player container
+Add a player container where you want to play videos. For example, you can add the following code to `index.html` (the container ID, width, and height are customizable).
+
+```
+  <video id="video" width="640" controls autoplay></video>
+```
+
+#### Step 3. Add initialization code
+Add the following script to your page initialization code and pass in the required initialization parameters.
+
+```
+var manifestUri = 'https://1500003943.vod2.myqcloud.com/43832a63vodtranscq1500003943/06981c16387702298107746523/adp.1368258.m3u8';
+
+function initPlayer() {
+	// Create a player instance.
+	var video = document.getElementById('video');
+	var player = new shaka.Player(video);
+
+	player.configure({
+	    drm: {
+	      servers: {
+	        'com.widevine.alpha': 'https://drm.vod2.myqcloud.com/getlicense/v1?drmType=Widevine&token=bJ%2FE5%2Bmc5atzwHKci%2Fh2IPDoON9TZWNyZXRJZD1BS0lETmNmcnZwVURrQTNxVzVoNVJ0SWV2RlVoRXdjQ21FaDUmQ3VycmVudFRpbWVTdGFtcD0xNjQ4MTk2NzU5JkV4cGlyZVRpbWVTdGFtcD0yNjQ4MTk2NzU5JlJhbmRvbT0yMDIzOTEyOTMxJkZpbGVJZD0zODc3MDIyOTgxMDc3NDY1MjMmVm9kU3ViQXBwSWQ9MTUwMDAwMzk0Mw%3D%3D',
+	      }
+	    }
+	});
+	 	
+	try {
+		player.load(manifestUri);
+		// This runs if the asynchronous load is successful.
+		console.log('The video has now been loaded!');
+	} catch (e) {
+		// onError is executed if the asynchronous load fails.
+	}	
+
+}
+        
+initPlayer();
+
+
+```
 
 ## Summary
 
