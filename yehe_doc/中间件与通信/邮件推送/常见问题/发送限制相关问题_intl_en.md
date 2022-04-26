@@ -30,4 +30,4 @@ No. However, the recipient email addresses must be valid (not obtained by crawli
 
 [](id:que6) 
 ### What should I do to be able to send custom content?
-Customers who have enabled the feature to send custom content will need to undertake the risk that their accounts are placed under review due to sending illegal or harmful information. It will hurt your sender reputation if your email address is out of control or used to send spams. In serious cases, the ISP will block your sender domain. To enable this feature, you need to contact your sales rep to do it for you.
+You can only send emails using a template.
