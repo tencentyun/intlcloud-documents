@@ -1,29 +1,50 @@
+
+
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom domain name.
+This document provides an overview of APIs and SDK code samples related to custom domains.
 
 | API | Operation Name | Operation Description |
 | -------------------- | -------------- | -------------------------- |
-| PUT Bucket domain | Setting custom domain name | Sets custom domain name information for a bucket |
-| GET Bucket domain    | Querying custom domain name | Queries the custom domain name information of a bucket |
-| DELETE Bucket domain | Deleting custom domain name | Deletes the custom domain name for a bucket     |
+| PUT Bucket domain    | Setting a custom domain | Sets a custom domain for a bucket |
+| GET Bucket domain    | Querying a custom domain | Queries the custom domain of a bucket |
+| DELETE Bucket domain | Deleting a custom domain | Deletes the custom domain of a bucket |
 
-## Setting Custom Domain Name
+## Setting Custom Domains
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket domain) is used to configure a custom domain name for a bucket.
+This API is used to set a custom domain for a bucket.
 
 #### Method prototype
 
-[//]: # (.cssg-snippet-put-bucket-domain)
-```py
+```
 put_bucket_domain(Bucket, DomainConfiguration={}, **kwargs)
 ```
 
 #### Sample request
 
-```
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_domain(
     Bucket='bucket',
     DomainConfiguration={
@@ -41,33 +62,33 @@ response = client.put_bucket_domain(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket            | Bucket for which to set a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
-| DomainRule        | Custom domain name set                                             | List   | Yes       |
+| Bucket | Bucket for custom domain configuration, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
+| DomainRule        | Custom domain set                                             | List   | Yes       |
 | Name              | Custom domain name                                               | String | Yes       |
-| Type              | Type of bound origin server. Valid values: REST, WEBSITE                       | String | Yes |
-| Status            | Domain name status. Valid values: ENABLED, DISABLED                     | String | Yes |
-| ForcedReplacement | Forcibly overwrites existing configuration. Valid values: CNAME, TXT                    | String | No |
+| Type    | Type of the origin server to bind. Valid values: `REST`, `WEBSITE`                                                             | String      | Yes |
+| Status | Status of the domain. Valid values: `ENABLED`, `DISABLED` | String | Yes |
+| ForcedReplacement | Replaces existing configurations. Valid values: `CNAME`, `TXT`                    | String | No |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.
 
-#### Returned error code description
+#### Error codes
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some common errors that may occur when you call this API:
 
 | Status Code | Description |
 | -------------------------------------- | ------------------------------------------------------------ |
-| HTTP 409 Conflict                      | The domain name record already exists, and no forced overwriting is set in the request. Or, the domain name record does not exist, but forced overwriting is set in the request. |
-| HTTP 451 Unavailable For Legal Reasons | The domain name is served in Mainland China but has no ICP filing.                          |
+| HTTP 409 Conflict | The domain record already exists, and forced overwrite is not specified in the request; OR the domain record does not exist, and forced overwrite is specified in the request |
+| HTTP 451 Unavailable For Legal Reasons | The domain does not have an ICP filing in the Chinese mainland                          |
 
-## Querying Custom Domain Name
+## Querying a Custom Domain
 
-#### Feature description
+#### Description
 
-This API (GET Bucket domain) is used to query the custom domain name information of a bucket.
+This API is used to query the custom domain set for a bucket.
 
 #### Method prototype
 
@@ -77,8 +98,27 @@ get_bucket_domain(Bucket, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-get-bucket-domain)
-```
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_domain(
     Bucket='examplebucket-1250000000'
 )
@@ -86,13 +126,13 @@ response = client.get_bucket_domain(
 
 #### Parameter description 
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | Bucket for which to query a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for custom domain query, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 
-#### Returned result description
+#### Response description
 
-Custom domain name configuration of bucket in dict type.
+Custom domain configuration of the bucket in `dict` type.
 
 ```
 {
@@ -108,20 +148,20 @@ Custom domain name configuration of bucket in dict type.
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------------------------- | ------------------------------------------------------------ | ------ |
-| x-cos-domain-txt-verification | Domain name verification information. This field is an MD5 check value, whose original string is in the following format: `cos[Region][BucketName-APPID][BucketCreateTime]`, where `Region` is the bucket region and `BucketCreateTime` is the bucket creation time in GMT | String |
-| DomainRule        | Custom domain name set                                             | List   |
+| x-cos-domain-txt-verification | Endpoint verification information. This field is an MD5 checksum of a character string in the format of `cos[Region][BucketName-APPID][BucketCreateTime]`, where `Region` is the bucket region and `BucketCreateTime` is the time the bucket was created in GMT format | String |
+| DomainRule        | Custom domain set                                             | List   |
 | Name              | Custom domain name                                               | String |
-| Type              | Type of bound origin server. Valid values: REST, WEBSITE                       | String |
-| Status            | Domain name status. Valid values: ENABLED, DISABLED                     | String |
-| ForcedReplacement | Forcibly overwrites existing configuration. Valid values: CNAME, TXT                    | String |
+| Type    | Type of the origin server to bind. Valid values: `REST`, `WEBSITE`                                                             | String      |
+| Status | Status of the domain. Valid values: `ENABLED`, `DISABLED` | String |
+| ForcedReplacement | Replaces existing configurations. Valid values: `CNAME`, `TXT`                    | String |
 
-## Deleting Custom Domain Name
+## Deleting Custom Domains
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket domain) is used to delete the existing custom domain name configuration of a specified bucket.
+This API is used to delete the existing custom domain configuration of the specified bucket.
 
 #### Method prototype
 
@@ -131,8 +171,27 @@ delete_bucket_domain(Bucket, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-delete-bucket-domain)
-```
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_domain(
     Bucket='examplebucket-1250000000'
 )
@@ -140,10 +199,10 @@ response = client.delete_bucket_domain(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | Bucket for which to delete a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for custom domain deletion, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.

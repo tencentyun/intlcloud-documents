@@ -15,7 +15,7 @@ This document provides an overview of APIs and SDK code samples related to objec
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation. |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads a file in parts. |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
@@ -37,7 +37,7 @@ func (s *ObjectService) Upload(ctx context.Context, key string, filepath string,
 
 #### Sample request
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```go
 package main
 
@@ -50,7 +50,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -88,7 +88,7 @@ type MultiUploadOptions struct {
 
 | Parameter | Description | Type | Required |
 | -------------- | ------------------------------------------------------------ | ------ | -------- |
-| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
+| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
 | filepath | Name of the local file | String | Yes |
 | opt | Object attributes | Struct | No |
 | OptIni | Sets object attributes and ACL. For details, see [InitiateMultipartUploadOptions](#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0) | Struct | No |
@@ -111,8 +111,8 @@ type CompleteMultipartUploadResult struct {
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Location | URL | String |
-| Bucket               | Bucket name in the format: `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
+| Location | URL address | String |
+| Bucket               | Bucket name in the format of `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
 | key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 | ETag | Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | String |
 
@@ -123,7 +123,7 @@ type CompleteMultipartUploadResult struct {
 
 #### Description
 
-This API (PUT Object) is used to upload an object (file) of up to 5 GB to a bucket. For objects larger than 5 GB, use [multipart upload](#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89). Simple uploads, creating folders, and batch uploads are supported.
+This API (PUT Object) is used to upload an object (file) of up to 5 GB to a bucket. For objects larger than 5 GB, please use [multipart upload](#.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89). Simple uploads, creating folders, and batch uploads are supported.
 
 
 #### Method prototype
@@ -135,7 +135,7 @@ func (s *ObjectService) PutFromFile(ctx context.Context, name string, filePath s
 
 #### Sample 1: Uploading an object
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```go
 package main
 
@@ -149,7 +149,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -171,7 +171,7 @@ func main() {
             ContentType: "text/html",
         },
         ACLHeaderOptions: &cos.ACLHeaderOptions{
-            // Considering the ACL limit, we recommend you not set an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
+            // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
             XCosACL: "private",
         },
     }
@@ -211,7 +211,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -251,7 +251,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -304,7 +304,7 @@ func (l *SelfListener) ProgressChangedCallback(event *cos.ProgressEvent) {
     }
 }
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -433,9 +433,9 @@ type ObjectPutHeaderOptions struct {
 | r | Content of the uploaded file, which can be a file stream or a byte stream. When `r` is not `bytes.Buffer/bytes.Reader/strings.Reader`, `opt.ObjectPutHeaderOptions.ContentLength` must be specified | io.Reader | Yes |
 | key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | XCosACL | Sets the file ACL, such as private, public-read, and public-read-write | String | No |
-| XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | String | No |
-| XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | String | No |
-| XCosStorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string | No |
+| XCosGrantFullControl | Grants full permission in the format of `id="[OwnerUin]"` | String | No |
+| XCosGrantRead | Grants read permission in the format of id="[OwnerUin]" | String | No |
+| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE | String | No |
 | Expires | Sets `Content-Expires` | String | No |
 | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
 | ContentType | Content Type. Sets `Content-Type` | String | No |
@@ -494,7 +494,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -553,7 +553,7 @@ func (s *BucketService) ListMultipartUploads(ctx context.Context, opt *ListMulti
 
 #### Sample request
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```go
 package main
 
@@ -566,7 +566,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -657,7 +657,7 @@ type Owner struct {
 | Key | Object name | String |
 | UploadID | ID that identifies the current multipart upload | String |
 | Key | Indicates whether the returned list is truncated | Bool |
-| StorageClass | Storage class of the part, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string |
+| StorageClass | Specifies the storage class for parts. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String |
 | Initiator | Indicates information about the initiator of this upload | Container |
 | Owner | Indicates information about the owner of these parts | Container |
 | Initiated | Start time of the multipart upload | String |
@@ -672,7 +672,7 @@ type Owner struct {
 
 Multipart operations include:
 
-- Multipart upload: Initializing a multipart upload operation, uploading parts, and completing a multipart upload operation.
+- Multipart upload: Initializing a multipart upload operation, uploading parts, and completing a multipart upload operation
 - Deleting uploaded parts
 
 >? Uploading the object via multipart upload, you can also use [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload (recommended).
@@ -693,7 +693,7 @@ func (s *ObjectService) InitiateMultipartUpload(ctx context.Context, name string
 
 #### Sample request
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```go
 package main
 
@@ -707,7 +707,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -762,9 +762,9 @@ type ObjectPutHeaderOptions struct {
 | -------------------- | ------------------------------------------------------------ | ----------- | -------- |
 | key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | XCosACL | Sets the file ACL, such as `private` or `public-read` | String | No |
-| XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | String | No |
-| XCosGrantRead | Grants read permission in the format: id="[OwnerUin]" | String | No |
-| XCosStorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string | No |
+| XCosGrantFullControl | Grants full permission in the format of `id="[OwnerUin]"` | String | No |
+| XCosGrantRead | Grants read permission in the format of id="[OwnerUin]" | String | No |
+| XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE | String | No |
 | Expires | Sets `Content-Expires` | String | No |
 | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
 | ContentType | Content Type. Sets `Content-Type` | String | No |
@@ -786,7 +786,7 @@ type InitiateMultipartUploadResult struct {
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
 | UploadId | ID that identifies the multipart upload | string |
-| Bucket | Bucket name in the format: `BucketName-APPID` | string |
+| Bucket | Bucket name in the format of `BucketName-APPID` | string |
 | key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 
 
@@ -803,7 +803,7 @@ func (s *ObjectService) UploadPart(ctx context.Context, key, uploadID string, pa
 
 #### Sample request
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```go
 package main
 
@@ -818,7 +818,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -905,7 +905,7 @@ func (s *ObjectService) ListParts(ctx context.Context, name, uploadID string, op
 
 #### Sample request
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```go
 package main                                                                                                                                                                                   
 
@@ -919,7 +919,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -939,7 +939,7 @@ func main() {
     }
     UploadID := v.UploadID
     fmt.Println(UploadID)
-    _, _, err := client.Object.ListParts(context.Background(), key, UploadID, nil)
+    _, _, err = client.Object.ListParts(context.Background(), key, UploadID, nil)
     if err != nil {
         panic(err)
     }
@@ -1004,13 +1004,13 @@ type Object struct {
 
 | Parameter | Description | Type |
 | -------------------- | ------------------------------------------------------------ | ------ |
-| Bucket               | Bucket name in the format: `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
+| Bucket               | Bucket name in the format of `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
 | key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 | UploadId | ID that identifies the multipart upload; generated by `InitiateMultipartUpload` | String |
 | Initiator | Initiator of the multipart upload, including `DisplayName`, `UIN` and `ID` | Struct |
 | Owner | Information on the file owner, including `DisplayName`, `UIN` and `ID` | Struct |
-| StorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | string |
+| StorageClass | Object storage class. Valid values: `STANDARD` (default), `STANDARD_IA`, `ARCHIVE` | String |
 | PartNumberMarker | Specifies the part number after which the listing should begin. It defaults to 0, which means the listing begins with the first part | String |
 | NextPartNumberMarker | Specifies the part number after which the next listing should begin | Int |
 | MaxParts | Maximum number of parts to return at a time. Default value: `1000` | Int |
@@ -1034,7 +1034,7 @@ func (s *ObjectService) CompleteMultipartUpload(ctx context.Context, key, upload
 
 #### Sample request
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```go
 package main
 
@@ -1049,7 +1049,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
@@ -1129,7 +1129,7 @@ type CompleteMultipartUploadResult struct {
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
 | Location | URL address | String |
-| Bucket               | Bucket name in the format: `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
+| Bucket               | Bucket name in the format of `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
 | key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 | ETag | Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | String |
 
@@ -1148,7 +1148,7 @@ func (s *ObjectService) AbortMultipartUpload(ctx context.Context, key, uploadID 
 
 #### Sample request
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```go
 package main
 
@@ -1161,7 +1161,7 @@ import (
 )
 
 func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+    // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}

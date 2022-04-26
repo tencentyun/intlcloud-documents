@@ -4,17 +4,17 @@
 
 This document provides an overview of APIs and SDK code samples related to static website.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Sets static website configuration for a bucket |
-| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying static website configuration | Queries the static website configuration information of a bucket |
-| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting static website configuration | Deletes the static website configuration of a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website configuration | Configures a static website for a bucket |
+| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying a static website configuration | Queries the static website configuration of a bucket |
+| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting a static website configuration | Deletes the static website configuration of a bucket |
 
-## Setting Static Website
+## Setting Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket website) is used to configure a static website for a bucket.
+This API is used to configure a static website for a bucket.
 
 #### Method prototype
 
@@ -24,8 +24,27 @@ put_bucket_website(Bucket, WebsiteConfiguration={}, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-put-bucket-website)
-```py
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_website(
     Bucket='bucket',
     WebsiteConfiguration={
@@ -58,9 +77,9 @@ response = client.put_bucket_website(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | --------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for which to set a static website in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for which a static website is configured, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 | IndexDocument               | Sets the homepage of static website                                       | Dict   | Yes       |
 | Suffix                      | Suffix configuration for the homepage address of static website                                   | String | Yes       |
 | ErrorDocument               | Sets the error page configuration of static website                                     | Dict   | No       |
@@ -77,15 +96,15 @@ response = client.put_bucket_website(
 | ReplaceKeyPrefixWith        | Replaces the prefix with a specified `Key` during redirect                                  | String | No       |
 | ReplaceKeyWith              | Replaces the entire path with a specified `Key` during redirect                              | String | No       |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.
 
 ## Querying Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (GET Bucket website) is used to query the configuration information of a static website associated with a bucket.
+This API is used to query the static website configuration associated with a bucket.
 
 #### Method prototype
 
@@ -95,20 +114,39 @@ get_bucket_website(Bucket, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-get-bucket-website)
-```
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_website(
     Bucket='examplebucket-1250000000'
 )
 ```
 
-#### Parameter description
+#### Parameter description                        |
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for which to query static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for static website configuration query, in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
 
-#### Returned result description
+#### Response description
 
 Static website configuration of the bucket in dict type.
 
@@ -140,7 +178,7 @@ Static website configuration of the bucket in dict type.
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | --------------------------- | ---------------------------------------- | ------ |
 | IndexDocument               | Sets the homepage of static website                                       | Dict   |
 | Suffix                      | Suffix configuration for the homepage address of static website                                   | String |
@@ -160,9 +198,9 @@ Static website configuration of the bucket in dict type.
 
 ## Deleting Static Website Configuration
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket website) is used to delete the static website configuration of a bucket.
+This API is used to delete the static website configuration of a bucket.
 
 #### Method prototype
 
@@ -172,8 +210,27 @@ delete_bucket_website(Bucket, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-delete-bucket-website)
-```
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_website(
     Bucket='examplebucket-1250000000'
 )
@@ -181,10 +238,10 @@ response = client.delete_bucket_website(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for which to delete static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for static website configuration deletion, in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.
