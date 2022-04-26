@@ -7,8 +7,9 @@ TRTRTCCloudでは、以下の方式で画質を調整できます。
 
 ここでは、主に上述のパラメータを設定し、TRTC SDKの画質効果を項目のニーズに適合させる方法を紹介します。
 以下のDemoを参照することもできます。
-- [iOS：LivePushViewController.swift]
-- [Android：LivePushActivity.java](https://github.com/tencentyun/TRTCSDK/blob/0123787812e04d3acb44eed06ec9803df363c580/Android/TRTCSimpleDemo/live/src/main/java/com/tencent/live/LivePushActivity.java)
+- [iOS：SetVideoQualityViewController.m](
+https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/SetVideoQuality/SetVideoQualityViewController.m)
+- [Android：SetVideoQualityActivity.java](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/SetVideoQuality/src/main/java/com/tencent/trtc/videoquality/SetVideoQualityActivity.java)
 - [Windows：TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp)
 ## サポートするプラットフォーム
 
