@@ -1,7 +1,7 @@
 ## Use Cases
-- Requiring low delay and fast downloads
-- Transferring GB- to TB-scale data across regions, countries, or continents
-- Downloading the same content frequently and repeatedly
+- Low latency and fast downloads are required.
+- GB- to TB-scale data needs to be transferred across regions, countries, or continents.
+- The same content needs to be downloaded frequently.
 
 >!If the download request is from Tencent Cloud VPC (for example, using Tencent Cloud CVM to access a bucket), you are advised to use a standard COS domain directly. If you use a CDN acceleration domain, you will need to access the CDN node over a public network, which incurs additional fees such as CDN origin-pull traffic fees and traffic fees.
 >
