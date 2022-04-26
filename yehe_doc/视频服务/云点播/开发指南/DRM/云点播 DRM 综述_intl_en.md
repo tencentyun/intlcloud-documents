@@ -13,7 +13,7 @@ The strengths of established DRM solutions are as follows:
 
 Widevine and FairPlay are two mainstream DRM solutions.
 
-| DRM Solution | Adaptive Bitrate Streaming Protocol | Player and Browse                                             |
+| DRM Solution | Adaptive Bitrate Streaming Protocol | Player and Browser                                            |
 | ------------------- | -------------------- | ---------------------------------------------------------- |
 | Widevine            | HLS, DASH            | Android player, Chrome, Firefox, Edge, Opera |
 | FairPlay            | HLS                  | iOS player, Safari                           |
