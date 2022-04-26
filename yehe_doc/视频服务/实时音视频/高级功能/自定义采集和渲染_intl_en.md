@@ -38,7 +38,7 @@ On iOS, the TRTC SDK supports data in two YUV formats: NV12 and I420. Image tran
 |  rotation   |  TRTCVideoRotation   |                       Leave it empty                        | <ul style="margin:0"><li/>It is left empty by default. <li/>If you want to rotate the video, set it to `TRTCVideoRotation_0`, `TRTCVideoRotation_90`, `TRTCVideoRotation_180`, or `TRTCVideoRotation_270`. The SDK will rotate the video clockwise by the number of degrees set. For example, if `TRTCVideoRotation_90` is passed in, an image in portrait mode will switch to landscape mode after rotation.</ul> |
 
 #### Sample code
-The `LocalVideoShareViewController.m` file in the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC/Advanced/LocalVideoShare) folder demonstrates how to extract NV12-formatted pixel buffers from a local file and process the data using the SDK.
+The `LocalVideoShareViewController.m` file in the [demo](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/LocalVideoShare) folder demonstrates how to extract NV12-formatted pixel buffers from a local file and process the data using the SDK.
 
 ```objectiveC
 // Assemble a `TRTCVideoFrame` and send it to a `trtcCloud` object.
@@ -106,7 +106,7 @@ The buffer scheme involves feeding `byte[]` arrays to the TRTC SDK. Two YUV form
 </tr></tbody></table>
 
 - **Texture scheme**: this scheme requires knowledge of OpenGL. It delivers superior performance, especially when video resolution is high.
-The texture scheme involves sending OpenGL textures to the TRTC SDK. You need to set up an OpenGL environment for the scheme to work, which makes this scheme challenging to implement. If you have no knowledge of OpenGL, we recommend that you use the sample code we provide, which is in the `customCapture` folder of the [demo](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare). The folder contains the following items:
+The texture scheme involves sending OpenGL textures to the TRTC SDK. You need to set up an OpenGL environment for the scheme to work, which makes this scheme challenging to implement. If you have no knowledge of OpenGL, we recommend that you use the sample code we provide, which is in the `customCapture` folder of the [demo](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare). The folder contains the following items:
 <table><thead><tr><th>File Name</th><th>Source Code Logic</th></tr></thead>
 <tbody>
 
@@ -132,8 +132,8 @@ The code in `LocalVideoShareActivity.java` is more complicated.
 1. At first, the code initializes `mVideoFrameReadListener`, and waits for the callback of video data.
 2. The code then uses the `MediaFileSyncReader` module and calls `start` to extract video frames from a local video file.
 3. The video data is returned via the `onFrameAvailable` callback, and the code calls the `sendCustomVideoData` API to send the textures obtained from the callback to the SDK.
-
-```java
+<dx-codeblock>
+::: java java
 public void onFrameAvailable(EGLContext eglContext, int textureId, int width, int height, long timestamp) {
           TRTCCloudDef.TRTCVideoFrame videoFrame = new TRTCCloudDef.TRTCVideoFrame();
           videoFrame.texture = new TRTCCloudDef.TRTCTexture();
@@ -147,7 +147,8 @@ public void onFrameAvailable(EGLContext eglContext, int textureId, int width, in
 
           mTRTCCloud.sendCustomVideoData(videoFrame);
       }
-```
+:::
+</dx-codeblock>
 :::
 ::: Windows\s
 Windows supports `TRTCVideoPixelFormat_I420` only. We recommend the following settings.
