@@ -38,7 +38,7 @@ TRTC SDK 支持 NV12 和 i420 两种 iOS 版本的 YUV 数据格式。在 iOS �
 |  rotation   |  TRTCVideoRotation   |                       不填写                        | <ul style="margin:0"><li/>默认不填写。 <li/>如果需要对画面进行旋转，可以填写`TRTCVideoRotation_0`、`TRTCVideoRotation_90`、`TRTCVideoRotation_180`、`TRTCVideoRotation_270`。SDK  会根据这个值将视频顺时针旋转对应角度。例如一个竖屏画面，传入`TRTCVideoRotation_90`后，SDK 会旋转成横屏显示。</ul> |
 
 #### 示例代码
-在 [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC/Advanced/LocalVideoShare) 文件夹中有一个叫做 `LocalVideoShareViewController.m` 的文件，它展示了如何从一个本地视频文件中读取出 NV12 格式的 PixelBuffer，并通过 SDK 进行后续处理。
+在 [Demo](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/LocalVideoShare) 文件夹中有一个叫做 `LocalVideoShareViewController.m` 的文件，它展示了如何从一个本地视频文件中读取出 NV12 格式的 PixelBuffer，并通过 SDK 进行后续处理。
 
 ```objectiveC
 //组装一个 TRTCVideoFrame 并将其送给 trtcCloud 对象
@@ -106,7 +106,7 @@ buffer 方案要求直接向 TRTC SDK 塞入 byte[] 格式的数组，支持 i42
 </tr></tbody></table>
 
 - **texture 方案**：对接需要一定的 OpenGL 基础，但是性能较好，尤其是画面分辨率较高的时候。
-texture 需要向 TRTC SDK 中传递 OpenGL 纹理，为了保证该方案能够正常运作，需要您提前设置好 OpenGL 环境，因此该方案的对接难度非常高。如果您没有学习过 OpenGL，建议直接使用我们提供的示例代码，它在 [Demo](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare) 中的 `mediashare` 文件夹下，包含以下文件：
+texture 需要向 TRTC SDK 中传递 OpenGL 纹理，为了保证该方案能够正常运作，需要您提前设置好 OpenGL 环境，因此该方案的对接难度非常高。如果您没有学习过 OpenGL，建议直接使用我们提供的示例代码，它在 [Demo](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare) 中的 `mediashare` 文件夹下，包含以下文件：
 <table><thead><tr><th>文件名</th><th>源码逻辑</th></tr></thead>
 <tbody>
 
@@ -132,8 +132,8 @@ texture 需要向 TRTC SDK 中传递 OpenGL 纹理，为了保证该方案能够
 1. 代码首先初始化了 `mVideoFrameReadListener` 的成员变量，等待视频数据回调。
 2. 代码接下来使用了一个叫 MediaFileSyncReader 的模块，调用 `start` 方法从一个本地视频文件中读取出一帧帧的视频画面。
 3. 然后将视频数据通过 `onFrameAvailable` 回调，在这个回调函数里，我们将获得的 texture 通过 sendCustomVideoData 函数传递给 SDK：
-
-```java
+<dx-codeblock>
+::: java java
 public void onFrameAvailable(EGLContext eglContext, int textureId, int width, int height, long timestamp) {
           TRTCCloudDef.TRTCVideoFrame videoFrame = new TRTCCloudDef.TRTCVideoFrame();
           videoFrame.texture = new TRTCCloudDef.TRTCTexture();
@@ -147,7 +147,8 @@ public void onFrameAvailable(EGLContext eglContext, int textureId, int width, in
 
           mTRTCCloud.sendCustomVideoData(videoFrame);
       }
-```
+:::
+</dx-codeblock>
 :::
 ::: Windows\s平台
 在 Windows 平台上，仅支持 TRTCVideoPixelFormat_I420，我们建议参数格式如下：
