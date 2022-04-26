@@ -8,7 +8,7 @@ Service URL/v3/push/app
 
 API service URLs correspond to service access points one to one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-**Feature**: Push API is the general term for all push APIs. Push API supports different push targets, as described below.
+**Feature**: Push API is the general term for all push APIs. Push API supports different push targets.
 All request parameters are JSON encapsulated and uploaded to the backend, which differentiates push targets based on the request parameters. If an error code is returned, see [Server-Side Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).
 
 ## Required Parameters
@@ -18,7 +18,7 @@ The required push parameters refer to the parameters that must be carried in a p
 | Parameter | Type | Required | Description |
 | ------------- | ------- | ---------------------------------------- | ------------------------------------------------------------ |
 | audience_type | String  | Yes                                       | Push target. Valid values:<li>`all`: push to all devices</li><li>`tag`: push to devices with specified tags</li><li>`token`: push to a single device</li><li>`token_list`: push to a list of devices</li><li>`account`: push to a single account</li><li>`account_list`: push to a list of accounts</li><li>`package_account_push`: push by account package<li>`package_token_push`: push by token package |
-| message       | Object  | Yes                     | Message body. For more information, please see [message body type](#message body type).                     |
+| message       | Object  | Yes                     | Message body. For more information, see [message body type](#message body type).                     |
 | message_type  | String  | Yes                                       | Message type. Valid values:<li>`notify`: notification</li><li>`message`: in-app message/silent message</li> |
 | environment   | String  | Yes (only for iOS)                    | Push environment (only available for pushes on iOS). Valid values:<li>`product`: production environment</li><li>`dev`: development environment</li> |
 | upload_id   | Integer  | Yes (only available for push by account/token package)        | Account/Token package upload ID  |
@@ -36,7 +36,7 @@ Push API supports a variety of push targets. For example, you can push to all de
 | token | Push to a single device | `token_list`<li>If the parameter contains multiple tokens, messages are pushed only to the first token.</li><li>Format example: ["token1"]</li><li>A token string cannot exceed 36 characters.</li> |
 | token_list           | Push to a list of devices     | `token_list`<li>Up to 1,000 tokens</li><li>Format example: ["token1","token2"]</li><li>A token string cannot exceed 36 characters.</li>**Note:** if the token list contains more than 1,000 tokens, the push will fail. To push messages to more than 1,000 tokens, you are recommended to use the [Token Package Upload API](https://intl.cloud.tencent.com/document/product/1024/38862). |
 | account | Push to a single account | `account_list`<li>If the parameter contains multiple accounts, messages are pushed only to the first account.</li><li>Format example: ["account1"] </li> |
-| account_list         | Push to a list of accounts     | `account_list`<li>Up to 1,000 accounts<li>Format example: ["account1","account2"]</li>**Note:** if the account list contains more than 1,000 accounts, the push will fail. To push messages to more than 1,000 accounts, you are recommended to use the [Account Package Upload API](https://intl.cloud.tencent.com/document/product/1024/33765). |
+| account_list         | Push to a list of accounts     | `account_list`<li>Up to 1,000 accounts<li>Format example: ["account1","account2"]</li>**Note:** if the account list contains more than 1,000 accounts, the push will fail. To push messages to more than 1,000 accounts, you are recommended to use the [Account Package Upload API](https://intl.cloud.tencent.com/document/product/1024/38830). |
 | package_account_push | Push by account package | Required for uploading the account package to push                                           |
 | package_token_push | Push by token package   | Required for uploading the token package to push |
 
@@ -133,7 +133,7 @@ Push API supports a variety of push targets. For example, you can push to all de
 
 ### message_type: message type
 
-The message types may vary slightly depending on the platform. For more information, see the table below:
+The message types may vary slightly depending on the platform. For more information, see the table:
 
 | Message Type | Description              | Supported Platform                              | Feature Description                                                    |
 | -------- | ----------------- | -------------------------------------- | ------------------------------------------------------------ |
@@ -147,18 +147,18 @@ Push API handles messages on iOS and Android differently, so you need to impleme
 
 ### General message on Android
 
-The table below specifies parameters for the Android platform:
+The table specifies parameters for the Android platform:
 
 | Parameter | Type | Parent Project | Default Value | Required | Description |
 | ------------------------ | ------ | ------- | ------ | ---- | ------------------------------------------------------------ |
 | title                    | String | message | Empty     | Yes   | Message title                                                     |
 | content                  | String | message | Empty     | Yes   | Message content                                                     |
-| accept_time    | Array  | message |  Empty    | No    | The time period that allows pushes.<li>A single element is formed by a "start" time and an "end" time.</li><li>"start" and "end" are indicated by hour and minute. For more information, please see the samples.</br>**Note:** this is valid only for the TPNS channel due to vendor restrictions.</li> |
+| accept_time    | Array  | message |  Empty    | No    | The time period that allows pushes.<li>A single element is formed by a "start" time and an "end" time.</li><li>"start" and "end" are indicated by hour and minute. For more information, see the samples.</br>**Note:** this is valid only for the TPNS channel due to vendor restrictions.</li> |
 | thread_id                | String | message | Empty     | No   |Thread ID for collapsed notification in threaded display. </br>**Note:** this is valid only for the TPNS channel due to vendor restrictions. |
 | thread_sumtext           | String | message | Empty     | No   | Summary displayed after the notification is collapsed in a thread, which is valid if `thread_id` is not empty. </br>**Note:** this is valid only for the TPNS channel due to vendor restrictions. |
 | xg_media_resources       | String | message | Empty     | No   | URL of big image in the notification bar, which takes effect only for the TPNS and Mi channels.</br>**Note:** to use the big image notification feature of the Mi channel, you need to call the Mi image uploading API to upload an image file, get the `pic_url` image address specified by Mi, and enter it in the `xg_media_resources` parameter of TPNS. For more information, see the image uploading API section in [Rich Text Message in Mi Push](https://dev.mi.com/console/doc/detail?pId=1163#_10_0). |
 | xg_media_audio_resources | String | message | Empty     | No   | URL of audio rich media elements.</br>It supports audio in MP3 format and the suggested size is within 5 MB.</br>**Note:** this parameter is valid only for the TPNS channel and is unsupported by other channels. |
-| android                  | Object | message | Empty     | No   | Structure of advanced settings for Android notification. For more information, please see [Android structure description](#intent1). |
+| android                  | Object | message | Empty     | No   | Structure of advanced settings for Android notification. For more information, see [Android structure description](#intent1). |
 
 
 
@@ -175,22 +175,22 @@ The table below specifies parameters for the Android platform:
 | hw_importance       | Integer  | android | 0     | No   | Notification message type defined by Huawei, which determines the notification behavior of the user’s device. Valid values:<li>`1`: information and marketing messages</li><li>`2`: service and communication messages</li> |
 | oppo_ch_id     | String  | android | Empty     | No   | OPPO channel ID (valid only for the OPPO channel)                          |
 | vivo_ch_id     | String  | android | 0      | No   | vivo channel ID (valid only for the vivo channel). Valid values: `0`: operation message; `1`: system message |
-| n_id           | Integer | android | 0      | No   | **(This parameter has been disused and will be unavailable in the future. If you need the override feature, please use the overriding parameter `collapse_id`.)**<br>Unique ID of the notification message object (valid only for the TPNS channel)<br>(1) Greater than 0: overrides the previous message with the same ID<br>(2) Equal to 0: displays this message without affecting other messages<br>(3) Equal to -1: clears all previous messages and displays this message only. |
+| n_id           | Integer | android | 0      | No   | **(This parameter has been disused and will be unavailable in the future. If you need the override feature, please use the overriding parameter `collapse_id`.)**<br>A unique ID of the notification message object (valid only for the TPNS channel)<br>(1) Greater than 0: Overrides the previous message with the same ID<br>(2) Equal to 0: Displays this message without affecting other messages<br>(3) Equal to -1: Clears all previous messages and displays this message only. |
 | builder_id     | Integer | android | 0      | No   | Local notification style identifier                                             |
 | badge_type     | Integer | android | -1     | No   | Notification badge: <li>-2: automatically increased by 1, valid only for Huawei devices</li><li>-1: unchanged, valid only for Huawei and vivo devices</li><li>[0, 100): direct configuration, valid only for Huawei and vivo devices</li>**Note**: the badge adaptation capabilities vary depending on the vendor device. For details about the implementation effect of each parameter value, see <a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide<a>. |
 | ring           | Integer | android | 1      | No   | Whether there is a ringtone. Valid values:<li>`0`: no</li><li>`1`: yes</li>           |
 | ring_raw       | String  | android | Empty     | No   | Name of the ringtone file in the `raw` directory of the Android project; no extension is needed. <br>**Note**: custom ringtones are supported only for the Huawei, Mi, FCM, and TPNS channels and must be used with the field `n_ch_id`. For the configuration process, see [How do I set a custom ringtone?](https://intl.cloud.tencent.com/document/product/1024/32624).    |
 | vibrate        | Integer | android | 1      | No   | Whether to enable vibration. Valid values:<li>`0`: no</li><li>`1`: yes</li>           |
 | lights         | Integer | android | 1      | No    | Whether to use the breathing light. Valid values:<li>`0`: no</li><li>`1`: yes</li> |
-| clearable      | Integer | android | 1      | No   | Whether messages can be cleared from the notification bar. Valid values:<li>`0`: no</li><li>`1`: yes</li> |
+| clearable      | Integer | android | 1      | No   | Whether messages can be cleared from the notification bar. |
 | icon_type      | Integer | android | 0      | No   | Whether the notification bar thumbnail is an in-app icon or an uploaded icon. Valid values:<li>`0`: in-app icon</li><li>`1`: uploaded icon</li>This parameter is supported only for the TPNS, FCM, and Huawei channels. |
 | icon_res       | String  | android | Empty     | No   | URL of the uploaded notification thumbnail. This parameter is supported only for the TPNS, FCM, and Huawei channels. For more information about the thumbnail formats, see [Rich Media Notification](https://intl.cloud.tencent.com/document/product/1024/37858). |
 | style_id       | Integer | android | 1      | No   | Whether the notification style with the specified number will be overwritten |
 | small_icon     | String  | android | Empty | No | The icon that the message displays in the status bar. If this parameter is not set, the application icon will be displayed. |
 | icon_color      | Integer | android | 0      | No | Color of the icon in the notification bar <li>This parameter takes effect only for the TPNS channel.</li> <li>To use an RGB color such as #01e240, enter `123456`. </li> |
 | action         | Object  | android | Yes | No | The action after the notification bar is clicked; the default action is to open the app. For more information, see [action parameter description](#action). |
-| custom_content | String  | android | Empty     | No   | User-defined parameter (which should be serialized into a JSON string)<br><b> Note:</b>Huawei officially announced that "the v2 protocol will be disused starting September 30, 2021". TPNS has upgraded the Huawei push protocol to v5, which does not support carrying custom parameters through the **extra parameter(s)** field. If you have integrated the Huawei vendor channel, we recommend you use <a href="https://intl.cloud.tencent.com/document/product/1024/38354">Intent</a> to carry custom parameters; otherwise, custom parameters cannot be delivered through the Huawei channel. |
-| show_type      | Integer | android | 2      | No  | Whether to display the notification when the application is running in the foreground, which is displayed by default. This parameter takes effect only for the TPNS and FCM channels. Valid values:<li>`1`: no</li><li>`2`: yes</br>Note: if the value is `1` and the application is running in the foreground, this push is imperceptible to end users, but arrival data will be reported.</li> |
+| custom_content | String  | android | Empty     | No   | A custom parameter (which should be serialized into a JSON string）<br>See [Notification Tap-to-Redirect-Getting parameters on the client](https://intl.cloud.tencent.com/document/product/1024/38354) |
+| show_type      | Integer | android | 2      | No  | Whether to display the notification when the application is running in the foreground, which is displayed by default. This parameter takes effect only for the TPNS and FCM channels. Valid values:<li>`1`: no</li><li>`2`: yes</br>Note: If the value is `1` and the application is running in the foreground, this push is imperceptible to end users, but arrival data will be reported.</li> |
 
 
 
@@ -303,6 +303,7 @@ The table below specifies parameters for the iOS platform.
 | category        | String  | aps    | Empty     | No   | Action identifier displayed when the message is pulled down.                                     |
 | mutable-content | Integer | aps    | 1     | No   | This is an additional notification parameter that carries "mutable-content" during push.<li>1 means that the Service Extension supports iOS 10.</li><li>Once enabled, the push details will include the arrival data report. Before using this feature, see [Notification Service Extension](https://intl.cloud.tencent.com/document/product/1024/30730) to implement the Service Extension API. If `mutable-content` is not carried, arrival data will not be reported.</li> |
 | sound           | String  | aps    |  Empty    | No    | Use instructions:<li>To play the system default ringtone, use "sound":"default"</li><li>To play local custom ringtone, use "sound":"chime.aiff"</li><li>To mute, use "sound":"" or remove the `sound` parameter. Note: if you want to use a custom ringtone, the ringtone must be in Linear PCM, MA4 (IMA/ADPCM), alaw, or μLaw format, saved in the `bundle` directory of the project, and last for 30 seconds at most; otherwise, the system default ringtone will be used.</li> |
+| interruption-level         | String  | aps    | active    | No   | Valid only for devices with iOS 15 or later. It needs to [enable `Time Sensitive Notifications` in `Capabilities`](https://intl.cloud.tencent.com/document/product/1024/33764). There are four interruption levels: <li>passive: indicates notifications not requiring immediate attention. </li><li>active: indicates default notifications. </li><li>time-sensitive: indicates notifications requiring immediate attention. </li><li>critical: indicates highly important notifications requiring immediate attention.|
 
 Below is a sample of a complete message:
 
@@ -321,6 +322,7 @@ Below is a sample of a complete message:
             "badge_type": 5,
             "category": "INVITE_CATEGORY",
             "sound":"default",
+            "interruption-level":"time-sensitive",
             "mutable-content":1
         },
        "custom_content":"{\"key\":\"value\"}"
@@ -435,7 +437,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
 
 >? The `collapse_id` parameter is subject to the following restrictions:
 > - This parameter currently cannot be customized. Only `collapse_id` values generated by TPNS can be used.
-> - This parameter is supported only for the TPNS channel, APNs channel, Mi channel, Meizu channel, and Huawei devices on EMUI 10 and above.
+> - This parameter is supported only for the TPNS channel, APNs channel, Mi channel, Meizu channel, and Huawei devices on EMUI 10 or later.
 > - For the Huawei channel, you must use [intent](#intent1) to carry custom parameters to implement message overriding. If you use `custom_content`, the API layer will block custom parameters.
 > - Currently, the OPPO and vivo channels do not support message overriding. When an overriding message is created, delivery to the OPPO and vivo channels can be disabled by setting the `force_collapse` parameter to `false`.
 > 
@@ -499,7 +501,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
 | startDate     | String  | loop_param | Yes       | Loop interval start date in YYYY-MM-DD format, such as 2019-07-01. You can choose a date in the next 90 days. |
 | endDate       | String  | loop_param | Yes       | Loop interval end date in YYYY-MM-DD format, such as 2019-07-07. You can choose a date in the next 90 days. |
 | loopType      | Integer | loop_param | Yes       | Loop type. Valid values:<li>`1`: daily</li><li>`2`: weekly</li><li>`3`: monthly</li>                  |
-| loopDayIndexs | Array   | loop_param | Yes       | For weekly loop, enter days [0-6] in a week. If the value is [0, 1, 2], it indicates that the push will be done on Monday, Tuesday, and Wednesday every week. |
+| loopDayIndexs | Array   | loop_param | Yes       | Daily loop value: [0], indicating the push will be done every day. Weekly loop value: [0-6]; for example, [0, 1, 2] indicates the push will be done on every Sunday, Monday, and Tuesday. Monthly loop value: dates; for example, [1, 10, 20] indicates the push will be done on the 1st, 10th, and 20th days of each month.|
 | dayTimes      | Array   | loop_param | Yes       | Specific push time in HH:MM:SS format. If the value is ["19:00:00", "20:00:00"], it indicates that the push will be done at 19:00 and 20:00 every day. |
 
 

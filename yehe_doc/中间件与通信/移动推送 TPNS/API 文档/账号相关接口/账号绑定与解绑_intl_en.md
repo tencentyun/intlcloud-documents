@@ -1,5 +1,5 @@
-## API Description
-**Request method**: POST
+## API Calling Description
+**Request method**: POST.
 
 ```plaintext
 Service URL/v3/device/account/batchoperate
@@ -9,13 +9,13 @@ API service URLs correspond to service access points one to one. Please select t
 **Feature**: this is an async API that is only responsible for task issuance, with real-time operation currently unsupported.
 
 
-## Fields
-#### Request fields
+## Parameters
+#### Request parameters
 
-| Field | Type | Required | Description |
+| Parameter | Type | Required | Description |
 | -------------- | ------- | ---- | ---------------------------------------- |
 | operator_type | Integer | Yes | Operation type. Value range: [1,5] as detailed below: <li>1: bind a token to one more account. </li><li>2: bind a token to another account in an overriding manner. </li><li>3: unbind a token from multiple accounts. </li><li>4: unbind a token from all accounts. </li><li>5: unbind an account from all tokens.</li> |
-| account_list | Array | No | List of account IDs. This field is valid and required when `operator_type` is `5`. Each element contains the `account` and `account_type` fields.<br> Example:<br>`[{"account":"926@126.com"},{"account":"1527000000"}]`|
+| account_list | Array | No | List of account IDs. This field is valid and required when `operator_type` is `5`. Each element contains the `account` and `account_type` (for type setting) fields.<br> Example:<br>`[{"account":"926@126.com"},{"account":"1527000000"}，{"account":"2849249569","account_type":9}]`|
 | token_list | Array | No | List of device IDs. This field is valid and required when `operator_type` is `4`.|
 | token_accounts | Array | No | This field is valid and required when `operator_type` is `1`, `2`, or `3`. Up to 20 tokens can be set in each call. Each `token_account` consists of 1 token and 1 `account_list`. Example:<br>`[{"token":"token1","account_list":[{"account":"926@126.com"},{"account":"1527000000"}],`<br>`{"token":"token2","account_list":[{"account":"926@163.com",{"account":"1527000001"}]}]` |
 
@@ -23,17 +23,17 @@ API service URLs correspond to service access points one to one. Please select t
 >
 
 
-#### Response fields
+#### Response parameters
 
-| Field | Type | Description |
+| Parameter | Type | Description |
 | -------------- | ------- | ---------------------------------------- |
-| ret_code | Integer | Error code. For more information, please see [Server-Side Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).|
+| ret_code | Integer | Error code. For more information, see [Server-Side Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).|
 | err_msg | String | Error message. |
 | result | Array | Operation status code corresponding to each token or account ["0","1008006"]. |
 
 
-## Samples
-#### Sample request
+## Examples
+#### Request example
 
 - Bind a token to one more account
 ```json
@@ -153,7 +153,7 @@ API service URLs correspond to service access points one to one. Please select t
 
 
 
-#### Sample response
+#### Response example
 
 Bind a token to one more account
 ``` json
