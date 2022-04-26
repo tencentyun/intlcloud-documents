@@ -5,7 +5,7 @@
 
 从注册腾讯云账号开始，COS 的授权与身份认证流程需要经过这五步：注册腾讯云账号、开通 COS 服务、创建授权身份、为身份设置权限、开始访问与身份认证。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/257077f136d7c50be671964140e7996d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3a138071100124990572dd986c3c4350.png)
 
 #### 第一步：注册腾讯云账号
 
