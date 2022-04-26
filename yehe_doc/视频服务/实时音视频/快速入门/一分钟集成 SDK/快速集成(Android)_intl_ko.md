@@ -30,11 +30,11 @@ dependencies {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?현재 TRTC SDK는 armeabi, armeabi-v7a, arm64-v8a를 지원합니다.
+>?현재 TRTC SDK는 armeabi-v7a, arm64-v8a를 지원합니다.
 3. [Sync Now]를 클릭하면 SDK가 자동으로 다운로드되고 프로그램에 통합됩니다.
 
 
@@ -51,11 +51,11 @@ defaultConfig {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?현재 TRTC SDK는 armeabi, armeabi-v7a, arm64-v8a를 지원합니다.
+>?현재 TRTC SDK는 armeabi-v7a, arm64-v8a를 지원합니다.
 6. [Sync Now]를 클릭하여 TRTC SDK 통합 작업을 완료합니다.
 
 
@@ -64,7 +64,7 @@ aar 라이브러리 통합을 원하지 않는다면 jar 및 so 라이브러리 
 
 1. 최신 버전 jar 압축 패킷을 [다운로드](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)합니다. 파일 경로는 `SDK/LiteAVSDK_TRTC_xxx.zip`(xxx는 TRTC SDK 버전 번호)입니다.
 2. 압축 해제하면 libs 디렉터리에 jar 파일과 so 파일이 포함되어 있습니다.
-3. 해당 jar 파일과 armeabi, armeabi-v7a, arm64-v8a 폴더를 app/libs 디렉터리에 복사합니다.
+3. 해당 jar 파일과 armeabi-v7a, arm64-v8a 폴더를 app/libs 디렉터리에 복사합니다.
 ![](https://main.qcloudimg.com/raw/c7b498b40bff8c248cd72fcd01f07933.png)
 4. app/build.gradle에 jar 라이브러리 레퍼런스 코드를 추가합니다.
 ![](https://main.qcloudimg.com/raw/5369b8c9bbb855622b22c7843a591e2e.png)	
@@ -81,11 +81,11 @@ sourceSets {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?현재 TRTC SDK는 armeabi, armeabi-v7a, arm64-v8a를 지원합니다.
+>?현재 TRTC SDK는 armeabi-v7a, arm64-v8a를 지원합니다.
 
 7. [Sync Now]를 클릭하여 TRTC SDK 통합 작업을 완료합니다.
 
@@ -120,8 +120,6 @@ app/build.gradle에서 다음 정보를 추가합니다.
 
 ```
 packagingOptions {
-	pickFirst ’**/libc++_shared.so’
-	doNotStrip "*/armeabi/libYTCommon.so"
 	doNotStrip "*/armeabi-v7a/libYTCommon.so"
 	doNotStrip "*/x86/libYTCommon.so"
 	doNotStrip "*/arm64-v8a/libYTCommon.so"
