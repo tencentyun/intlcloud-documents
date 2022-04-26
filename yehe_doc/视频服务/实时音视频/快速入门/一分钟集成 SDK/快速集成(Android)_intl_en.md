@@ -30,11 +30,11 @@ dependencies {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi-v7a, and arm64-v8a.
 3. Click **Sync Now** to automatically download the SDKs and integrate them into your project.
 
 
@@ -51,11 +51,11 @@ If you have difficulty accessing mavenCentral, you can manually download the SDK
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi-v7a, and arm64-v8a.
 6. Click **Sync Now** to complete the integration of TRTC SDK.
 
 
@@ -64,7 +64,7 @@ If you do not want to import the AAR library, you can also integrate TRTC SDK by
 
 1. [Download the JAR library](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip). The file path is `SDK/LiteAVSDK_TRTC_xxx.zip` (xxx indicates the version number of TRTC SDK).
 2. Decompress the file, and you will find a `libs` directory that contains a JAR file and several SO folders.
-3. Copy the JAR file and `armeabi`, `armeabi-v7a`, and `arm64-v8a` folders to the `app/libs` directory.
+3. Copy the JAR file and `armeabi-v7a`, and `arm64-v8a` folders to the `app/libs` directory.
 ![](https://main.qcloudimg.com/raw/c7b498b40bff8c248cd72fcd01f07933.png)
 4. Add the code that imports the JAR library to `app/build.gradle`.
 ![](https://main.qcloudimg.com/raw/5369b8c9bbb855622b22c7843a591e2e.png)	
@@ -81,11 +81,11 @@ sourceSets {
 ```
 defaultConfig {
        ndk {
-           abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+           abiFilters "armeabi-v7a", "arm64-v8a"
        }
 }
 ```
->?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi-v7a, and arm64-v8a.
 >
 7. Click **Sync Now** to complete the integration of TRTC SDK.
 
@@ -120,8 +120,6 @@ Add the following code to `app/build.gradle`:
 
 ```
 packagingOptions {
-	pickFirst '**/libc++_shared.so'
-	doNotStrip "*/armeabi/libYTCommon.so"
 	doNotStrip "*/armeabi-v7a/libYTCommon.so"
 	doNotStrip "*/x86/libYTCommon.so"
 	doNotStrip "*/arm64-v8a/libYTCommon.so"
