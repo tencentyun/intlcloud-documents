@@ -3,7 +3,7 @@
 Cloud Object Storage (COS) encrypts your data at the object level before it is written to disks and automatically decrypts the data when you access it. Encryption and decryption are completed on servers. Server-side encryption can effectively protect static data.
 
 >!
->- As long as you have access permission to objects, user experience is the same accessing encrypted and non-encrypted objects.
+>- As long as you have access permission on an object, your object accessing experience is the same regardless of whether the object is encrypted.
 >- Server-side encryption only encrypts object data but not its metadata. Server-side encrypted objects can only be accessed with a valid signature, not by anonymous users.
 
 ## Use Cases
@@ -47,7 +47,7 @@ When using SSE-KMS encryption for the first time, you need to [enable KMS servic
 >!
 >- SSE-KMS only encrypts the object data, not its metadata.
 >- Currently, SSE-KMS only supports Beijing, Shanghai, and Guangzhou regions.
->- Using SSE-KMS encryption will incur additional cost, which will be charged by KMS. Please see [KMS Billing Overview](https://intl.cloud.tencent.com/document/product/1030/31966) for details.
+>- Using SSE-KMS encryption will incur an additional cost, which will be charged by KMS. For more information, see [KMS Billing Overview](https://intl.cloud.tencent.com/document/product/1030/31966).
 >- Objects encrypted with SSE-KMS must be accessed by requesters with a valid signature rather than anonymous users.
 
 #### Using the COS Console
