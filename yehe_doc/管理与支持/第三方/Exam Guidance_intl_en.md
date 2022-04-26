@@ -18,7 +18,11 @@ Tencent Cloud delivers all of its certification exams online through Kryterion�
 
    ![](https://main.qcloudimg.com/raw/196f766274d4d9cdc1cda9e4e12d99f8.png)
 
-4) Select your preferred testing date and time and complete your payment.
+4) Select your preferred testing date and time, enter your voucher code if you have one, and complete your payment.
+   
+   ![](https://user-images.githubusercontent.com/66454027/165360065-9f031096-8185-4390-a71a-2656894293a4.png)
+   ![](https://user-images.githubusercontent.com/66454027/165360176-9accb297-6770-4244-81f2-fc52a7c73c28.png)
+   ![](https://user-images.githubusercontent.com/66454027/165360192-b47f2615-b986-4388-befd-63168c4ba2ee.png)
 
 5) Once registration is complete, Kryterion will send you a confirmation email containing your unique Test Taker Authorization Code, which will be required to launch your online proctored exam.
 
@@ -46,39 +50,39 @@ Please carefully review and satisfy the following testing requirements, as any i
 
 Testing space requirements:
 
-●   Take the exam in a quiet, well lit room 
+- Take the exam in a quiet, well lit room 
 
-●   Prepare a reflective surface (e.g. phone or mirror) to perform a room scan
+- Prepare a reflective surface (e.g. phone or mirror) to perform a room scan
 
-●   Make sure that no other persons are present in the testing space
+- Make sure that no other persons are present in the testing space
 
-●   Make sure that no items (e.g. papers, writing instruments, smart electronic devices) other than your computer are present in the testing space
+- Make sure that no items (e.g. papers, writing instruments, smart electronic devices) other than your computer are present in the testing space
 
-●   If you are taking the exam with your laptop, disconnect external computer monitors from your laptop and close all applications on your laptop
+- If you are taking the exam with your laptop, disconnect external computer monitors from your laptop and close all applications on your laptop
 
-●   Make sure that there are no foods/drinks (including water) and headphones/earbuds in the testing space. You cannot eat or drink or wear headphones/earbuds during the exam
+- Make sure that there are no foods/drinks (including water) and headphones/earbuds in the testing space. You cannot eat or drink or wear headphones/earbuds during the exam
 
-●   Be prepared to take the exam in one sitting. You cannot take a break or step away from the camera's view
+- Be prepared to take the exam in one sitting. You cannot take a break or step away from the camera's view
 
  
 
 Prohibited testing behavior:
 
-●   Reading the exam content out loud
+- Reading the exam content out loud
 
-●   Talking out loud or speaking to another person in the room
+- Talking out loud or speaking to another person in the room
 
-●   Leaving the view of the camera, loss of video, or poor video resolution that interferes with proctoring
+- Leaving the view of the camera, loss of video, or poor video resolution that interferes with proctoring
 
-●   Using any test aid (e.g., books, papers, writing instruments, smart electronic devices)
+- Using any test aid (e.g., books, papers, writing instruments, smart electronic devices)
 
-●   Invalid keystrokes (e.g., pressing the “Print screen” key)
+- Invalid keystrokes (e.g., pressing the “Print screen” key)
 
-●   Excessive background noise or other audio issues that interfere with proctoring 
+- Excessive background noise or other audio issues that interfere with proctoring 
 
-●   Other persons entering or being present in the testing space
+- Other persons entering or being present in the testing space
 
-●   Taking a picture of the provisional exam result while the webcam is on before exiting out of Sentinel. Your provisional exam result will be displayed in your Tencent Cloud Webassessor account after the exam is completed
+- Taking a picture of the provisional exam result while the webcam is on before exiting out of Sentinel. Your provisional exam result will be displayed in your Tencent Cloud Webassessor account after the exam is completed
 
  
 
@@ -94,33 +98,33 @@ On the day of your online proctored exam, please be prepared to show both a gove
 
 A government-issued primary identification **must include your name, photograph, and signature**. Examples include:
 
-●   Government-issued driver's license
+- Government-issued driver's license
 
-●   U.S. Department of State driver's license
+- U.S. Department of State driver's license
 
-●   National/state/country identification card
+- National/state/country identification card
 
-●   Passport
+- Passport
 
-●   Passport card
+- Passport card
 
-●   Military ID
+- Military ID
 
-●   Alien registration card (green card, permanent resident visa)
+- Alien registration card (green card, permanent resident visa)
 
  
 
 A secondary identification **must include your name and signature**. Examples include:
 
-●   U.S. Social Security card
+- U.S. Social Security card
 
-●   Debit/(ATM) card
+- Debit/(ATM) card
 
-●   Credit card
+- Credit card
 
-●   School ID
+- School ID
 
-●   Forms of primary identification
+- Forms of primary identification
 
  
 
@@ -128,13 +132,9 @@ A secondary identification **must include your name and signature**. Examples in
 
 # Preparing for an Exam
 
- 
+Tencent Cloud currently offers the Practitioner, Solutions Architect Associate, SysOps Associate, and Solutions Architect Professional certification exams. To prepare for the Practitioner exam, you can take the [Tencent Cloud Practitioner course on Coursera](https://www.coursera.org/learn/tencent-cloud-practitioner) for free. To prepare for the Solutions Architect Associate exam, you can take the [Tencent Cloud Solutions Architect Associate course on Coursera](https://www.coursera.org/learn/tencent-cloud-solutions-architect-associate) for free. To prepare for the SysOps Associate exam, you can take the [Tencent Cloud SysOps Associate course on Coursera](https://coursera.org/learn/tencent-cloud-sysops-associate) for free. To prepare for the Solutions Architect Professional exam, you can take the [Tencent Cloud Solutions Architect Professional course](https://coursera.org/learn/tencent-cloud-solutions-architect-professional) on Coursera for free.  
 
-Tencent Cloud currently offers the Practitioner and Solutions Architect Associate certification exams. To prepare for the Practitioner exam, you can take the [Tencent Cloud Practitioner course on Coursera](https://www.coursera.org/learn/tencent-cloud-practitioner) for free. To prepare for the Solutions Architect Associate exam, you can take the [Tencent Cloud Solutions Architect Associate course on Coursera](https://www.coursera.org/learn/tencent-cloud-solutions-architect-associate) for free. 
-
-# Vouchers
-
- 
+# Vouchers 
 
 Tencent Cloud offers certification exam vouchers for its signed partners and customers. Vouchers are single-use, individually-coded, and date-sensitive discounts defined as a percentage of the certification exam price. If you are not a signed partner or customer and would like to purchase vouchers, please reach out to your Tencent Cloud account manager.
 
@@ -142,11 +142,11 @@ Tencent Cloud offers certification exam vouchers for its signed partners and cus
 
 ## How much do certification exams cost?
 
-The cost of each certification exam depends on its level of difficulty. The Practitioner exam is priced at $100 USD and the Associate-level exams are priced at $150 USD.
+The cost of each certification exam depends on its level of difficulty. The Practitioner exam is priced at $100 USD, the Associate-level exams are priced at $150 USD, the Professional-level exams are priced at $200 USD.
 
 ## How long do I have to complete a certification exam?
 
-The length of each Tencent Cloud certification exam depends on its level of difficulty. The Practitioner exam and the Associate-level exams are allotted 90 minutes, while the Pro-level exams are allotted 120 minutes.
+The length of each Tencent Cloud certification exam depends on its level of difficulty. The Practitioner exam and the Associate-level exams are allotted 90 minutes, while the Professional-level exams are allotted 120 minutes.
 
 ## Are online proctored certification exams open-book?
 
