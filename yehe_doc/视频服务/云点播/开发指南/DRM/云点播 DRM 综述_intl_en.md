@@ -1,5 +1,3 @@
-# VOD DRM
-
 Copyright infringement has grown alongside the rapid development of the online video industry, making copyright protection a major concern of content owners.
 
 ## Established DRM Solutions
@@ -15,19 +13,19 @@ The strengths of established DRM solutions are as follows:
 
 Widevine and FairPlay are two mainstream DRM solutions.
 
-| DRM Solution | Adaptive Bitrate Streaming Protocol | Player                                               |
+| DRM Solution | Adaptive Bitrate Streaming Protocol | Player and Browse                                             |
 | ------------------- | -------------------- | ---------------------------------------------------------- |
 | Widevine            | HLS, DASH            | Android player, Chrome, Firefox, Edge, Opera |
 | FairPlay            | HLS                  | iOS player, Safari                           |
 
-## VOD DRM Scheme
+## VOD DRM Overview
 
 Established DRM solutions provide high-level protection for your video content, but may be difficult to use from scratch. VOD offers an easy-to-use DRM scheme that is built on established DRM solutions and integrates a full range of features including DRM encryption, license management, license distribution, decryption, and playback.
 
 Below is the workflow of the VOD DRM scheme:
 
 1. <b>Upload</b>: Videos are uploaded to VOD via the console or using server-side APIs.
-2. <b>Start video processing</b>: After upload, video encryption starts (videos are encrypted according to the adaptive bitrate streaming parameters specified).
+2. <b>Start video processing</b>: when the video is uploaded, adaptive bitrate streaming with encryption is specified. After the video is uploaded, the encryption process begins.
 3. <b>Get the key</b>: VOD gets the encryption key from the KMS module.
 4. <b>Encrypt and save the videos</b>: VOD encodes and encrypts the videos and saves the outputs.
 5. <b>Update the information</b>: The information of the encrypted videos is updated to the media asset management module.
@@ -37,7 +35,7 @@ Below is the workflow of the VOD DRM scheme:
 9. <b>Get playback licenses</b>: The superplayer uses the signatures to request playback licenses.
 10. <b>Decrypt and play the videos</b>: The superplayer uses the key to decrypt the content and plays the content.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/11b9b05a72381aff03e0d04f04eb61d6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cac2fc608c14a604fd8145a8565a159a.png)
 
 ## Integration Guide
 
