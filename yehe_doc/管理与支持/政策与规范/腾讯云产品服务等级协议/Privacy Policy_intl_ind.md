@@ -590,3 +590,4 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 32.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45938).
 33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).
 34.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46315).
+35.[Face Recognition](https://intl.cloud.tencent.com/document/product/1061/46725).
