@@ -1,10 +1,10 @@
 ## Overview
-You can purchase and connect to EdgeOne by site (i.e., second-level domain). The following two [connection methods](https://intl.cloud.tencent.com/document/product/1145/45967) are supported:
-- NS connection (recommended): You can transfer DNS records to EdgeOne and quickly enable the security protection and acceleration services.
-- CNAME connection: You can continue using your current DNS service provider and add the specified CNAME record at it to enable the EdgeOne security protection and acceleration services.
+You can connect your site (i.e., second-level domain) to Edgeone in the following two [connection methods](https://intl.cloud.tencent.com/document/product/1145/45967).
+- Connect via NS (recommended): You can transfer DNS records to EdgeOne and quickly enable the security protection and acceleration services.
+- Connect via CNAME: You can continue using your current DNS service provider and add the specified CNAME record at it to enable the EdgeOne security protection and acceleration services.
 
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-## NS Connection (Recommended)
+>?Currently, the EdgeOne console is available for beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
+## Connecting via NS (Recommended)
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Service Overview** on the left sidebar.
 2. On the service overview page, click **Add Site** in the top-right corner.
 3. On the site addition page, enter a valid second-level domain and click **Next**.
@@ -18,7 +18,7 @@ You can purchase and connect to EdgeOne by site (i.e., second-level domain). The
 >?The time when the NS records take effect is subject to your domain registrar. After they take effect, the system will inform you by email, SMS, and Message Center.
 
 
-## CNAME Connection
+## Connecting via CNAME
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Service Overview** on the left sidebar.
 2. On the service overview page, click **Add Site** in the top-right corner.
 3. On the site addition page, enter a valid second-level domain and click **Next**.
@@ -31,7 +31,7 @@ You can purchase and connect to EdgeOne by site (i.e., second-level domain). The
 ![](https://qcloudimg.tencent-cloud.cn/raw/c6e5de739623bc1a8758318c9a29665d.png)
 
 
-## How to Modify NS[](id:NSXG)
+## Modifying NS[](id:NSXG)
 1. Log in at the domain registrar of your site. If you cannot confirm the registrar, query it at [ICANN WHOIS](https://lookup.icann.org/).
 2. After login, disable the Domain Name System Security Extensions (DNSSEC) configuration.
 3. Delete the original NS configuration and modify it to the value specified in EdgeOne.
