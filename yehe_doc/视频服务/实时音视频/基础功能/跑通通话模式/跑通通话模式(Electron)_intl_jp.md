@@ -18,7 +18,7 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 
 ## サンプルコード
 
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)にログインして、このドキュメントに関連したサンプルコードを取得することができます。
+[Github](https://github.com/LiteAVSDK/TRTC_Electron)にログインして、このドキュメントに関連したサンプルコードを取得することができます。
 
 ## 操作手順
 
@@ -106,7 +106,6 @@ param.userSig = 'eJyrVareCeYrSy1SslI...';
 ::: javascript javascript
 import TRTCCloud from 'trtc-electron-sdk';
 import { TRTCParams, TRTCAppScene } from "trtc-electron-sdk/liteav/trtc_define";
-import TRTCCloud from 'trtc-electron-sdk';
 let trtcCloud = new TRTCCloud();
 
 let onEnterRoom = function (result) {
