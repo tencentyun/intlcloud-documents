@@ -1,4 +1,5 @@
-##故障について
+
+## 故障について
 
 CDN（Content Delivery Network）ドメイン名を使用してCOS（Cloud Object Storage）にアクセスすると、エラーコードHTTP ERROR 403が返されます。
 
