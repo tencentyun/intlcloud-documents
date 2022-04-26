@@ -34,8 +34,8 @@ dependencies {
 }
 ```
 2. defaultConfigでAppが使用するCPUアーキテクチャを指定します。
->?現在 TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
->
+>?現在 TRTC SDKは、armeabi-v7a、arm64-v8aをサポートしています。
+
 ```
  defaultConfig {
       ndk {
@@ -141,7 +141,7 @@ mTRTCCloud.startLocalAudio();
 2. キャスター側は、[setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cngroup__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10)を呼び出すと、美顔スタイルを設定できます。
  - Smooth：スムース。明らかな効果が感じられます。インフルエンサーのスタイルに近づけます。
  - Nature：ナチュラル。美肌補正のアルゴリズムは顔の詳細な質感を維持し、より自然な感じになります。
- - Pitu ：[エンタープライズ版](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) のみサポートしています。
+ - Pitu ：[フル機能版](https://intl.cloud.tencent.com/document/product/647/34615) のみサポートしています。
 3. キャスター側は、[setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#a3931ccd8fa54bb846783ab4d6ca2874b)を呼び出すと、美肌補正レベルを設定できます。通常、5の設定でOKです。
 4. キャスター側は、[setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#ab08c07ce725dbb8769b61fe0c76b0e95)を呼び出すと、美白レベルを設定できます。通常、5の設定でOKです。
 
