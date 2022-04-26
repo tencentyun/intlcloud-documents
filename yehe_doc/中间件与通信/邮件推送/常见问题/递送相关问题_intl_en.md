@@ -36,7 +36,7 @@ Then troubleshoot in the following order:
 2. Whether the sender domain is verified. (Do not modify the configured DNS after it passes verification.)
 3. Whether the recipient email address is correct.
 4. Whether the template is approved and whether the format of `TemplateData` is correct.
-5. If the error indicating **no permission to send custom content** is returned, contact your sales rep to assign you the permission.
+5. "You can only send emails using a template" indicates that you cannot directly send an email. Please send your email using a template.
 
 If the issue persists, contact [Tencent Cloud technical team](https://console.cloud.tencent.com/workorder/category) for support.
 
