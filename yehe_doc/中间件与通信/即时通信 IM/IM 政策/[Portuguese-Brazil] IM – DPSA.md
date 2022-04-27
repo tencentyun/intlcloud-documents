@@ -1,7 +1,7 @@
 
 ## 1\.  CONSIDERAÇÕES
 
-Este Módulo se aplica se você usar o Instant Messaging (“**Recurso**”). Este Módulo está incorporado ao Contrato de Privacidade e Segurança de Dados localizado em https://intl.cloud.tencent.com/document/product/301/17347 (“**DPSA**”). Os termos utilizados, mas não definidos neste Módulo, devem ter o significado dado a eles no DPSA. No caso de qualquer conflito entre o DPSA e este Módulo, este Módulo deve ser aplicado conforme a inconsistência.
+Este Módulo se aplica se você usar o Instant Messaging (“**Recurso**”). Este Módulo está incorporado ao Contrato de Privacidade e Segurança de Dados localizado em  ([“**DPSA**”](https://intl.cloud.tencent.com/document/product/301/17347)). Os termos utilizados, mas não definidos neste Módulo, devem ter o significado dado a eles no DPSA. No caso de qualquer conflito entre o DPSA e este Módulo, este Módulo deve ser aplicado conforme a inconsistência.
 
 ## 2\.  PROCESSAMENTO
 
