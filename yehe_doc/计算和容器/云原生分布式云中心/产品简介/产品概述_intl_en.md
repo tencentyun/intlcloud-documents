@@ -1,10 +1,10 @@
 ## Overview
 
-Tencent Kubernetes Engine Distributed Cloud Center (TDCC) is an application management platform for multi-cloud and multi-cluster scenarios. Users can expand the cloud-native applications to distributed cloud, and manage and operate the distributed cloud resources in a unified way from a global respective.
+Tencent Kubernetes Engine Distributed Cloud Center is an application management platform for multi-cloud and multi-cluster scenarios. Users can expand the cloud-native applications to distributed cloud, and manage and operate the distributed cloud resources in a unified way from a global respective.
 
-TDCC interconnects public cloud, private cloud and edge cloud, delivers public cloud products and services including mature clusters, networks, storage, microservices and operations to locations that are closer to users. It ensures unified control plane under different cloud infrastructures, and provides reliability and conformance guarantees to meet the requirements of enterprises for multi-cloud management, application governance and high-availability disaster recovery.
+Tencent Kubernetes Engine Distributed Cloud Center interconnects public cloud, private cloud and edge cloud, delivers public cloud products and services including mature clusters, networks, storage, microservices and operations to locations that are closer to users. It ensures unified control plane under different cloud infrastructures, and provides reliability and conformance guarantees to meet the requirements of enterprises for multi-cloud management, application governance and high-availability disaster recovery.
 
-Source code of core features in TDCC have been provided for public use. Vendors and customers can use the source code to build their own container application platforms.
+Source code of core features in Tencent Kubernetes Engine Distributed Cloud Center have been provided for public use. Vendors and customers can use the source code to build their own container application platforms.
 
 - [Clusternet](https://github.com/clusternet/clusternet) multi-cluster application governance project
 - [TKEStack](https://github.com/tkestack/tke) open-source TKE platform
@@ -18,15 +18,15 @@ You can easily manage massive Kubernetes clusters. No matter they are running on
 
 **Distributed application management**
 
-TDCC uses a distributed application management model based on cloud-native design. It expands native K8s resources to multiple cloud and multiple clusters, supports distributing various resources to different clusters, including Kubernetes native Deployment/StatefulSet/ConfigMap/Secret, custom CRDs and third-party CRD resources.
+Tencent Kubernetes Engine Distributed Cloud Center uses a distributed application management model based on cloud-native design. It expands native K8s resources to multiple cloud and multiple clusters, supports distributing various resources to different clusters, including Kubernetes native Deployment/StatefulSet/ConfigMap/Secret, custom CRDs and third-party CRD resources.
 
 **Global application scheduling and orchestration**
 
-TDCC provides multidimensional scheduling and orchestration capabilities to improve application services scheduling from single-cluster scheduling to multi-cluster scheduling and from node scheduling to cluster scheduling based on Tencent Cloud’s mature and reliable application scheduling and orchestration capabilities. It helps users to rationally plan resources from a global perspective, realize multi-cluster level awareness, proportional distribution, auto scaling, load balancing and other features, and complete tedious operations automatically.
+Tencent Kubernetes Engine Distributed Cloud Center provides multidimensional scheduling and orchestration capabilities to improve application services scheduling from single-cluster scheduling to multi-cluster scheduling and from node scheduling to cluster scheduling based on Tencent Cloud’s mature and reliable application scheduling and orchestration capabilities. It helps users to rationally plan resources from a global perspective, realize multi-cluster level awareness, proportional distribution, auto scaling, load balancing and other features, and complete tedious operations automatically.
 
 **Traffic governance**
 
-TDCC works in conjunction with Services, Ingress controllers, and Service meshes of multiple clusters, providing features such as multi-cluster Service discovery, multi-cluster Ingress/Gateway, and multi-cluster NetworkPolicy to achieve traffic load balancing and service routing across multiple clusters. More over, through multi-cluster Mesh Istio, Pod-to-Pod connections across cluster boundaries are realized, and communication between services running on different clusters can be managed through Mesh.
+Tencent Kubernetes Engine Distributed Cloud Center works in conjunction with Services, Ingress controllers, and Service meshes of multiple clusters, providing features such as multi-cluster Service discovery, multi-cluster Ingress/Gateway, and multi-cluster NetworkPolicy to achieve traffic load balancing and service routing across multiple clusters. More over, through multi-cluster Mesh Istio, Pod-to-Pod connections across cluster boundaries are realized, and communication between services running on different clusters can be managed through Mesh.
 
 **Application marketplace**
 
@@ -34,20 +34,20 @@ Users can manage multiple cloud-native products and services (Helm Chart) throug
 
 **Ops center**
 
-TDCC provides complete log management, audit management, event management, health check, monitoring and alarming features based on public cloud service.
+Tencent Kubernetes Engine Distributed Cloud Center provides complete log management, audit management, event management, health check, monitoring and alarming features based on public cloud service.
 
 ** Security and compliance**
 
-TDCC provides multiple security policies and tools, and enables users to manage security policies for multi-cloud and multi-cluster scenarios and applications in one place to meet the requirements of rules and regulations in different regions and countries.
+Tencent Kubernetes Engine Distributed Cloud Center provides multiple security policies and tools, and enables users to manage security policies for multi-cloud and multi-cluster scenarios and applications in one place to meet the requirements of rules and regulations in different regions and countries.
 
 **Automation tools**
 
-TDCC provides a variety of multi-cloud automation tools to deal with the scenarios such as multi-cloud migration of applications, cluster backup recovery, multi-site active-active disaster recovery, and multi-cloud image transfer.
+Tencent Kubernetes Engine Distributed Cloud Center provides a variety of multi-cloud automation tools to deal with the scenarios such as multi-cloud migration of applications, cluster backup recovery, multi-site active-active disaster recovery, and multi-cloud image transfer.
 
 
 ## Clusternet
 
-Tencent Cloud has provided the core features of TDCC to the open-source multi-cluster application governance project [Clusternet](https://github.com/clusternet/clusternet). Any vendor and customer who is willing to build a container application platform can quickly realize multi-cluster management and application governance capabilities by integrating Clusternet.
+Tencent Cloud has provided the core features of Tencent Kubernetes Engine Distributed Cloud Center to the open-source multi-cluster application governance project [Clusternet](https://github.com/clusternet/clusternet). Any vendor and customer who is willing to build a container application platform can quickly realize multi-cluster management and application governance capabilities by integrating Clusternet.
 
 Clusternet is designed for hybrid cloud, distributed cloud and edge computing scenarios, supports integration and management of massive clusters. Its flexible cluster registration capabilities can adapt to cluster management requirements under various complex network conditions. It is compatible with cloud-native Kubernetes APIs to reduce users’ management and Ops costs, and to accelerate the transformation of cloud-native applications.
 
@@ -91,5 +91,5 @@ Kubernetes is an open-source Container Orchestration Engine (COE) inspired by a 
 
 
 ## Additional Services
-TDCC can provide solutions in combination with other Tencent Cloud products.
+Tencent Kubernetes Engine Distributed Cloud Center can provide solutions in combination with other Tencent Cloud products.
 If you want to use Kubernetes container management service, it is recommended to choose [TKE](https://intl.cloud.tencent.com/zh/products/tke).
