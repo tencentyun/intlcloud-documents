@@ -40,3 +40,4 @@ Below is the workflow of the VOD DRM scheme:
 ## Integration Guide
 
 For directions on how to quickly integrate the VOD DRM scheme, see [Playing DRM-Encrypted Videos](https://intl.cloud.tencent.com/document/product/266/46642).
+

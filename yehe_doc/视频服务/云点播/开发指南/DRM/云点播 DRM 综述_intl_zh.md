@@ -40,3 +40,4 @@
 ## 接入参考
 
 为了帮助您快速接入点播的 DRM 加密能力，我们为您提供了 DRM 加密指引： [播放 DRM 加密视频](https://intl.cloud.tencent.com/document/product/266/46642)，以示例的方式为您讲解接入步骤。
+

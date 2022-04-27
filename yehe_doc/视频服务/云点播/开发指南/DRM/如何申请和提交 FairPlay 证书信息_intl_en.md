@@ -15,7 +15,11 @@ This document shows you how to apply for a FairPlay certificate from Apple and s
 
 >! You need to log in with an Apple developer account.
 
+![image-20220426181021189](https://qcloudimg.tencent-cloud.cn/raw/c8533ed9e4cf2b7961058eb9e5cd502a.png)
+
 2. Fill out the form and submit it.
+
+![image-20220426181021190](https://qcloudimg.tencent-cloud.cn/raw/5f905c0a865990ba4f1705fabdcdd652.png)
 
 3. After your request is approved, you will be issued an `FPS_Deployment_Package.zip` package.
 
@@ -85,6 +89,19 @@ Get the FPS certificate and ASK from the [Apple developer page](https://develope
 ## Step 4. Submit the Certificate Information in the Tencent Cloud VOD Console
 
 1. Log in to the VOD console.
-2. Click **Video Processing** in the left sidebar and then click **DRM Configuration**.
-3. Submit the certificate information, including the certificate file (`fairplay.cer`), private key file (`privatekey.pem`), private key password, and ASK.
 
+2. Click **Video Processing** in the left sidebar and then click **DRM Configuration**, and click **Edit**.
+
+   ![image-20220425210931543](https://qcloudimg.tencent-cloud.cn/raw/041b560536deebd1bd5bc986d95ed289.png)
+
+3. Submit the certificate information, including the certificate file (`fairplay.cer`), private key file (`privatekey.pem`), private key password, and ASK, and click **Save**.
+
+   ![image-20220425211140740](https://qcloudimg.tencent-cloud.cn/raw/effefe51d8ca82e46d292112eab9a3b4.png)
+
+4. At this point, you can see the `FairPlay` certificate information. The `Certificate URL` can be used to play the DRM-encrypted videos.
+
+   ![image-20220426191830269](https://qcloudimg.tencent-cloud.cn/raw/8d64c3dbb65ac6f54a81f08314ca1473.png)
+
+## Summary
+
+Now, you have learned how to apply for a `FairPlay` certificate and submit the information to VOD.

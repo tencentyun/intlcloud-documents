@@ -1,9 +1,6 @@
-
 ## Overview
 
-This document shows you how to encrypt videos using DRM solutions and use your own player or a third-party player to play the encrypted videos.
-
->? We expect to add support for DRM in our superplayer SDK (Android, iOS, and web) in mid-May.
+This document shows you how to encrypt videos using DRM solutions and use player to play the encrypted videos.
 
 ## Prerequisites
 Before you start, do the following:
@@ -26,358 +23,176 @@ The example below shows how to enable key hotlink protection for the default dis
 >? We do not recommend enabling hotlink protection for a domain name already in use, because it may result in playback failure.
 
 1. Log in to the VOD console, select **Distribution and Playback** > **[Domain Name](https://console.cloud.tencent.com/vod/distribute-play/domain)**, find the default distribution domain, and click **Set** on the right.
-2. Click **Access Control** and toggle **Key Hotlink Protection** on. In the pop-up window, click **Generate** to generate a random key (2WExxx48eW). Copy the key, which is needed to generate superplayer signature, and click **Confirm** to save the configuration.
+    <img src="https://main.qcloudimg.com/raw/06259e41a62ea14ce8eb19ef6480182c.png" width="800" />
+
+2. Click **Access Control** and toggle **Key Hotlink Protection** on. In the pop-up window, click **Generate** to generate a random key (testtest). Copy the key, which is needed to generate superplayer signature, and click **Confirm** to save the configuration.
+
+   ![image-KEY](https://qcloudimg.tencent-cloud.cn/raw/1b4f1f0d9e3d36c153b1e91f64160f00.png)
 
 ## Step 2. Encrypt a video
 
-1. In the VOD console, select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, select the target video (file ID: 528xxx3757278095), and click **Process Video**.
+1. In the VOD console, select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, select the target video (file ID: 387702299667618135), and click **Process Video**.
+
+   ![image-20220426211316803](https://qcloudimg.tencent-cloud.cn/raw/4eab2858c67f4efbf1383a3b03810428.png)
+
 2. On the video processing page:
  - Select **Task Flow** as the **Processing Type**.
+
  - Select **WidevineFairPlayPreset** as the **Task Flow Template**.
- 
+
+    ![image-20220425192205432](https://qcloudimg.tencent-cloud.cn/raw/cef2c1e79343ea9688654791b6fb6762.png)
+
 >?
 >- `WidevineFairPlayPreset` is a preset task flow. It uses the adaptive bitrate streaming template 11 or 13, the time point screenshot template 10 (for thumbnail generation), and the image sprite template 10.
 >- The adaptive bitrate streaming template 11 generates multi-bitrate streams encrypted by FairPlay, and the adaptive bitrate streaming template 13 generates multi-bitrate streams encrypted by Widevine.
 3. Click **Confirm** and wait until the **Video Status** changes from "Processing" to "Normal", which indicates that video processing is completed.
+
+   <img src="https://main.qcloudimg.com/raw/885b68427d36faefe8f2bb5b489e1e19.png" width="" />
+
 4. Click **Manage** in the **Operation** column of the video to enter the management page:
  - Click the **Basic Info** tab to view the generated thumbnail and outputs of adaptive bitrate streaming (template ID: 11/13).
+
+   ![image-20220426201159056](https://qcloudimg.tencent-cloud.cn/raw/696e894ed0c3665990c12cc57ebf23bf.png)
+
  - Click the **Screenshot Info** tab to view the generated image sprite (template ID: 10).
 
+   ![image-20220426201309975](https://qcloudimg.tencent-cloud.cn/raw/1a5878fd0286c46ef487bdf81ad8503a.png)
 
-## Step 3. Get the playback information
 
-The superplayer SDK does not yet support the playback of DRM-encrypted videos. To get the playback information, you can refer to the communication protocol between the superplayer SDK and the VOD backend. Once you have the information, you can use your own player or a third-party player to play the encrypted video.
+## Step 3. Gernaerate the superplayer signature
 
-### Communication protocol
-The HTTP GET request method is used, and the URL is `https://{domain}/{interface}/{version}/{appId}/{fileId}?psign={psign}`.
-
-#### Domain names
-- Primary domain name: `playvideo.qcloud.com`
-- Secondary domain name: `bkplayvideo.qcloud.com`
-
-#### Request fields
-##### Path fields
-
-| Field  | Required | Value                                                     |
-| --------- | -------- | ------------------------------------------------------------ |
-| appId     | Yes       | The application ID (If you use a subapplication, pass in the [subapplication ID](https://intl.cloud.tencent.com/document/product/266/33987)). |
-| fileId    | Yes       | The ID of the video file to play.                                        |
-| version   | Yes       | Pass in `v4`.                                                |
-| interface | Yes       | Pass in `getplayinfo`.                                       |
-
-##### Query string fields
-
-| Field  | Required | Value                                                     |
-| -------- | -------- | ------------------------------------------------------------ |
-| psign    | No       | The superplayer signature. For how to generate it, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099). In `PayLoad` of the signature, set `pcfg` to `advanceDrmPreset`. We also offer a quick [superplayer signature generation tool](https://vods.cloud.tencent.com/signature/super-player-sign.html). |
-| context  | No       | The pass-through field, which is returned as it is in the response.                                   |
-
-#### Response fields
-
-| Field | Type | Description |
-| -- | -- | -- |
-| code | Integer | The error code. A value other than 0 indicates an error. |
-| message | String | The error message, which is not empty if `code` is not 0. |
-| version | Integer | The version type of the returned result, which is 4. |
-| warning | String | The warning message. If the `psign` parameter is carried but hotlink protection is not enabled, a warning will be returned. |
-| media | Object | The media information (type: `Media`). |
-
-##### Media
-
-| Field | Type | Description |
-| -- | -- | -- |
-| basicInfo | Object | The basic video information (type: `BasicInfo`). |
-| streamingInfo | Object | The multi-bitrate encoding information (type: `StreamingInfo`). |
-| imageSpriteInfo | Object | The image sprite information (type: `ImageSpriteInfo`), which is used for preview. |
-| keyFrameDescInfo | Object | The timestamp information (type: `KeyFrameDescInfo`), which is used to add timestamps to the video. |
-
-##### BasicInfo
-
-| Field | Type | Description |
-| -- | -- | -- |
-| name | String | The video name. |
-| size | Integer | The video size in bytes. |
-| duration | Float | The video duration in seconds. |
-| description | String | The video description. |
-| coverUrl | String | The thumbnail URL. |
-
-##### StreamingInfo
-
-| Field | Type | Description |
-| -- | -- | -- |
-|drmOutput|Array| DRM-encrypted outputs (type: `StreamingOutput`). |
-|drmToken|String|The DRM token used for encryption. |
-|widevineLicenseUrl|String|The license URL for Widevine encryption. |
-|fairplayLicenseUrl|String|The license URL for FairPlay encryption. |
-
-##### StreamingOutput
-
-| Field | Type | Description |
-| -- | -- | -- |
-| type | String | The encryption type for adaptive bitrate streaming. Valid values: `plain` (no encryption), `SimpleAES` (HLS encryption), `FairPlay` (DRM encryption), `Widevine` (DRM encryption). |
-| url | String | The playback URL. |
-| subStreams | Array | The information of output streams (type: `SubStreamInfo`). |
-
-##### SubStreamInfo
-
-| Field | Type | Description |
-| -- | -- | -- |
-| type | String | The stream type. Valid value: `video`. |
-| width | Integer | The video width in pixels. |
-| height | Integer | The video height in pixels. |
-| resolutionName | String | The name of the stream shown in the player. |
-
-##### ImageSpriteInfo
-
-| Field | Type | Description |
-| -- | -- | -- |
-| imageUrls | Array | An array of the image sprite download URLs (type: `String`). |
-| webVttUrl | String | The download URL of the image sprite VTT file. |
-
-##### Sample
-
-##### Sample request
-
-The payload of the superplayer signature is as follows:
+The superplayer signature is used to get playback information.For how to generate it, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099). The payload of the superplayer signature is as follows:
 
 ```json
 {
-  "appId": 1255566655,
-  "fileId": "4564972818519602447",
-  "currentTimeStamp": 1546340400,
-  "expireTimeStamp": 1546344000,
+  "appId": 1500012416,
+  "fileId": "387702299667618135",
+  "currentTimeStamp": 1650886156,
+  "expireTimeStamp": 1966435200,
   "urlAccessInfo": {
-    "t": "5c2b5640",
-    "rlimit": 3,
+    "t": "75356B80",
     "us": "72d4cd1101"
-  }
+  },
+  "pcfg":"advanceDrmPreset"
 }
 ```
 
-Suppose the key is `test`. The superplayer signature generated is as follows:
+ the key is `testtest`. The superplayer signature(`psign`) generated is as follows:
 
-```json
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.aqH576UXfeUe90LlH6w1tt-N1UYrEoOtAYb1ljUT51M
-```
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDg4NjE1NiwiZXhwaXJlVGltZVN0YW1wIjoxOTY2NDM1MjAwLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI3NTM1NkI4MCIsInVzIjoiNzJkNGNkMTEwMSJ9LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.kkyOyscuV3WIlFV0IFPsPPWomZEcuNGclaBzpEO8DEg`
+
+## Step 4. Get the playback information
+
+The following example shows how to get the playback information from the URL.
+
+The HTTP GET request method is used, and the URL is `https://playvideo.qcloud.com/getplayinfo/v4/{appId}/{fileId}?psign={psign}`.
+
+Here, the `{appId}` attribute is the application ID (if you use a subapplication, pass in the [subapplication ID](https://intl.cloud.tencent.com/document/product/266/33987)). The `{fileId}` attribute is the ID of the media file, and the `{psign}` attribute is created in Step 3. 
 
 The request URL is as follows:
 
-```
-https://playvideo.qcloud.com/getplayinfo/v4/1255566655/4564972818519602447?psign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.s01u7fpYu0VkLBHG5e84JCgfnFGxRvrNHWQRCHWHhc0
-```
+`https://playvideo.qcloud.com/getplayinfo/v4/1500012416/387702299667618135?psign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDg4NjE1NiwiZXhwaXJlVGltZVN0YW1wIjoxOTY2NDM1MjAwLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI3NTM1NkI4MCIsInVzIjoiNzJkNGNkMTEwMSJ9LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.kkyOyscuV3WIlFV0IFPsPPWomZEcuNGclaBzpEO8DEg`
 
-##### Sample response
+The response will be:
 
 ```json
 {
   "code": 0,
   "message": "",
-  "requestId": "87cc5b712d7c402c8bb255b3777f8bf5",
-  "version": 4,
-  "context": "",
-  "warning": "",
-  "media":{
-    "basicInfo":{
-      "name": "drm demo",
-      "size": 428106411,
-      "duration": 90,
-      "coverUrl": "https://xxx.vod2.myqcloud.com/xxx/xxx/coverBySnapshot/coverBySnapshot_10_0.jpg?t=7fffffff&sign=ea3197f995dae16457397d9a3c0ebc1c",
-      "description": ""
-    },
-    "streamingInfo":{
-      "drmOutput":[
-        {
-          "type": "Widevine",
-          "url": "https://1500012293.vod2.myqcloud.com/xxx/xxx/adp.13.m3u8?t=7fffffff&sign=75152a4b4d10f32f4315783edf9944ed",
-          "subStreams":[
-            {
-              "type": "video",
-              "width": 426,
-              "height": 240,
-              "resolutionName": "FLU"
-            },
-            {
-              "type": "video",
-              "width": 852,
-              "height": 480,
-              "resolutionName": "SD"
-            },
-            {
-              "type": "video",
-              "width": 1280,
-              "height": 720,
-              "resolutionName": "HD"
-            },
-            {
-              "type": "video",
-              "width": 1920,
-              "height": 1080,
-              "resolutionName": "FHD"
-            }
-          ]
-        },
+  "requestId": "9c7fab8704994c6b96375393e6544b5c",
+  ...
+  "media": {
+	...
+    "streamingInfo": {
+      "drmOutput": [
         {
           "type": "FairPlay",
-          "url": "https://1500012293.vod2.myqcloud.com/xxx/xxx/adp.11.m3u8?t=7fffffff&sign=75152a4b4d10f32f4315783edf9944ed",
-          "subStreams":[
-            {
-              "type": "video",
-              "width": 426,
-              "height": 240,
-              "resolutionName": "FLU"
-            },
-            {
-              "type": "video",
-              "width": 852,
-              "height": 480,
-              "resolutionName": "SD"
-            },
-            {
-              "type": "video",
-              "width": 1280,
-              "height": 720,
-              "resolutionName": "HD"
-            },
-            {
-              "type": "video",
-              "width": 1920,
-              "height": 1080,
-              "resolutionName": "FHD"
-            }
-          ]
+          "url": "http://1500012416.vod2.myqcloud.com/4394a0devodtranscq1500012416/d811753f387702299667618135/adp.11.m3u8?t=75356B80&us=72d4cd1101&sign=73558bdac4a3ea43913806201ba0315b",
+          ...
+        },
+        {
+          "type": "Widevine",
+          "url": "http://1500012416.vod2.myqcloud.com/4394a0devodtranscq1500012416/d811753f387702299667618135/adp.13.m3u8?t=75356B80&us=72d4cd1101&sign=73558bdac4a3ea43913806201ba0315b",
+          ...
         }
       ],
-      "drmToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9~eyJ0eXBlIjoiRHJtVG9rZW4iLCJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE2NTA1NDM3ODUsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywicmFuZG9tIjo0NzUyNDQzMTUsIm92ZXJsYXlLZXkiOiIiLCJvdmVybGF5SXYiOiIiLCJjaXBoZXJlZE92ZXJsYXlLZXkiOiIiLCJjaXBoZXJlZE92ZXJsYXlJdiI6IiIsImtleUlkIjowLCJzdHJpY3RNb2RlIjowfQ~ebaFyERTuT8QMMN5iQ-lnVLs60LCUt1J_RmADdRiE_8",
+      "drmToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9~eyJ0eXBlIjoiRHJtVG9rZW4iLCJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDk2NDM3NCwiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3LCJyYW5kb20iOjQyMjAwMDM2NTUsIm92ZXJsYXlLZXkiOiIiLCJvdmVybGF5SXYiOiIiLCJjaXBoZXJlZE92ZXJsYXlLZXkiOiIiLCJjaXBoZXJlZE92ZXJsYXlJdiI6IiIsImtleUlkIjowLCJzdHJpY3RNb2RlIjowfQ~VfpyAFQL59xD-TJkr8kSAiXTZpd-dQdvmPkzw1PVIa8",
       "widevineLicenseUrl": "https://widevine.drm.vod-qcloud.com/widevine/getlicense/v2",
       "fairplayLicenseUrl": "https://fairplay.drm.vod-qcloud.com/fairplay/getlicense/v2"
     },
-    "audioVideoType": "AdaptiveDynamicStream",
-    "originalInfo": null,
-    "transcodeInfo": null
+    ...
   }
 }
 ```
-#### Playback information
 
 From the above response, you can get the following playback information:
 
 1. The URL of the DRM-encrypted video.
 
-2. The license server URL for FairPlay/Widevine encryption, which is spliced using `drmToken` and `widevineLicenseUrl`/`fairplayLicenseUrl`.
+2. The license server URL :
+
+   - The license server URL for `Widevine` encryption is spliced using drmToken and `widevineLicenseUrl`.
+
+   - The license server URL for `FairPlay` encryption is spliced using drmToken and `fairplayLicenseUrl`.
 
 Below is the playback information obtained from the above sample:
 
 Widevine encryption:
 
-- URL of the encrypted video: `https://1500012293.vod2.myqcloud.com/xxx/xxx/adp.13.m3u8?t=7fffffff&sign=75152a4b4d10f32f4315783edf9944ed`
-- License server URL: `https://widevine.drm.vod-qcloud.com/widevine/getlicense/v2?drmToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9~eyJ0eXBlIjoiRHJtVG9rZW4iLCJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE2NTA1NDM3ODUsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywicmFuZG9tIjo0NzUyNDQzMTUsIm92ZXJsYXlLZXkiOiIiLCJvdmVybGF5SXYiOiIiLCJjaXBoZXJlZE92ZXJsYXlLZXkiOiIiLCJjaXBoZXJlZE92ZXJsYXlJdiI6IiIsImtleUlkIjowLCJzdHJpY3RNb2RlIjowfQ~ebaFyERTuT8QMMN5iQ-lnVLs60LCUt1J_RmADdRiE_8`
+- URL of the encrypted video: `https://1500012416.vod2.myqcloud.com/4394a0devodtranscq1500012416/d811753f387702299667618135/adp.13.m3u8?t=75356B80&us=72d4cd1101&sign=73558bdac4a3ea43913806201ba0315b`
+- License server URL: `https://widevine.drm.vod-qcloud.com/widevine/getlicense/v2?drmToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9~eyJ0eXBlIjoiRHJtVG9rZW4iLCJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDk2NDM3NCwiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3LCJyYW5kb20iOjQyMjAwMDM2NTUsIm92ZXJsYXlLZXkiOiIiLCJvdmVybGF5SXYiOiIiLCJjaXBoZXJlZE92ZXJsYXlLZXkiOiIiLCJjaXBoZXJlZE92ZXJsYXlJdiI6IiIsImtleUlkIjowLCJzdHJpY3RNb2RlIjowfQ~VfpyAFQL59xD-TJkr8kSAiXTZpd-dQdvmPkzw1PVIa8`
 
 FairPlay encryption:
 
-- URL of the encrypted video: `https://1500012293.vod2.myqcloud.com/xxx/xxx/adp.11.m3u8?t=7fffffff&sign=75152a4b4d10f32f4315783edf9944ed`
-- License server URL: `https://fairplay.drm.vod-qcloud.com/fairplay/getlicense/v2?drmToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9~eyJ0eXBlIjoiRHJtVG9rZW4iLCJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE2NTA1NDM3ODUsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywicmFuZG9tIjo0NzUyNDQzMTUsIm92ZXJsYXlLZXkiOiIiLCJvdmVybGF5SXYiOiIiLCJjaXBoZXJlZE92ZXJsYXlLZXkiOiIiLCJjaXBoZXJlZE92ZXJsYXlJdiI6IiIsImtleUlkIjowLCJzdHJpY3RNb2RlIjowfQ~ebaFyERTuT8QMMN5iQ-lnVLs60LCUt1J_RmADdRiE_8`
+- URL of the encrypted video: `https://1500012416.vod2.myqcloud.com/4394a0devodtranscq1500012416/d811753f387702299667618135/adp.11.m3u8?t=75356B80&us=72d4cd1101&sign=73558bdac4a3ea43913806201ba0315b`
+- License server URL: `https://fairplay.drm.vod-qcloud.com/fairplay/getlicense/v2?drmToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9~eyJ0eXBlIjoiRHJtVG9rZW4iLCJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDk2NDM3NCwiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3LCJyYW5kb20iOjQyMjAwMDM2NTUsIm92ZXJsYXlLZXkiOiIiLCJvdmVybGF5SXYiOiIiLCJjaXBoZXJlZE92ZXJsYXlLZXkiOiIiLCJjaXBoZXJlZE92ZXJsYXlJdiI6IiIsImtleUlkIjowLCJzdHJpY3RNb2RlIjowfQ~VfpyAFQL59xD-TJkr8kSAiXTZpd-dQdvmPkzw1PVIa8`
 
+## Step 5. Play the DRM-encrypted video in a player
 
-## Step 4. Play the DRM-encrypted video
+The examples below show you how to play videos encrypted using `Widevine` and `FairPlay` respectively.
 
-### Solution 1: Playing in the VOD superplayer
-The VOD superplayer can play DRM-encrypted videos. See below for detailed directions:
+#### Play videos encrypted using `Widevine`
 
+Go to the [Shaka Player Demo page](https://shaka-player-demo.appspot.com/demo/#audiolang=zh-CN;textlang=zh-CN;uilang=zh-CN;panel=CUSTOM%20CONTENT;build=uncompiled) via `Chrome`.
 
-#### Step 1. Import files
-Import the player style file and script file into the page.
+![image-20220426163418989](https://qcloudimg.tencent-cloud.cn/raw/0b9b5ae58e65c6b3c0789b8d98af57a1.png)
 
-```
- <link href="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
- <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.12.4.js"></script>
- <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/dash.all.min.2.9.3.js"></script>
- <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.min.js"></script>
-```
+Click the **+** icon, and enter the URL of the encrypted video obtained in Step 4 for `Manifest URL`. Pass in `Widevine` for `Name`.
 
-#### Step 2. Add a player container
-Add a player container where you want to play videos. For example, you can add the following code to `index.html` (the container ID, width, and height are customizable).
+![image-20220426163853470](https://qcloudimg.tencent-cloud.cn/raw/0846706a160112ccea2712cd9c6b4d4c.png)
 
-```
-<video id="player-container-id" width="414" height="270" preload="auto" playsinline webkit-playsinline>
-</video>
-```
+Enter the license server URL for `Widevine` obtained in Step 4 and click **Save**.
 
-#### Step 3. Add initialization code
-Add the following script to your page initialization code and pass in the required initialization parameters.
+![image-20220426164907499](https://qcloudimg.tencent-cloud.cn/raw/70f01463b0afdf231dd014ea4782728f.png)
 
-```
-var player = TCPlayer('player-container-id', {
-  appID:  '', // The application ID of your VOD account, required.
-  fileID: '', // The file ID of the video to play, required.
-  psign: '', // Player signature.
-  plugins: {
-    DRM: {
-      certificateUri: '', // FairPlay certificate URL, which is required if FairPlay-encrypted videos are played.
-    }
-  }``
-});
-```
+The `Widevine` playback options will appear in the page.
 
+![image-20220426163939777](https://qcloudimg.tencent-cloud.cn/raw/702199c544c829db6f5d4815dcd4ff48.png)
 
->?
->- You need to pass in the FairPlay certificate as well to play FairPlay-encrypted videos.
->- `certificateUri` is the URL of the certificate required to play FairPlay-encrypted videos. You can get the URL of a certificate after it is generated and deployed to your server.
->- Content encrypted using established DRM solutions can only be played on HTTPS pages.
+Click **Play** to play the encrypted video.
 
+![image-20220426164129657](https://qcloudimg.tencent-cloud.cn/raw/7d70df750e283d8a5a0d42596e08c14b.png)
 
-### Solution 2: Playing in a third-party player (Shaka Player)  
+#### Play videos encrypted using `FairPlay`
 
-To play DRM-encrypted videos in a third-party player, you need to send a request to the VOD backend for the encryption information and then pass in the information when the player is initialized. For details, see [Shaka Player](https://github.com/shaka-project/shaka-player).
+Go to the [Shaka Player Demo page](https://shaka-player-demo.appspot.com/demo/#audiolang=zh-CN;textlang=zh-CN;uilang=zh-CN;panel=CUSTOM%20CONTENT;build=uncompiled) via `Safari`.
 
+![image-20220426163418989](https://qcloudimg.tencent-cloud.cn/raw/0b9b5ae58e65c6b3c0789b8d98af57a1.png)
 
-#### Step 1. Import files
-Import the player script file into the page via [npm](https://www.npmjs.com/package/shaka-player) or CDN.
+Click the **+** icon, and enter the URL of the encrypted video obtained in Step 4 for `Manifest URL`. Pass in `FairPlay` for `Name`.
 
-```
-// CDN: 
-<script src="path/to/shaka-player.compiled.js" ></script>
-```
+![image-20220426164907499](https://qcloudimg.tencent-cloud.cn/raw/70f01463b0afdf231dd014ea4782728f.png)
 
-#### Step 2. Add a player container
-Add a player container where you want to play videos. For example, you can add the following code to `index.html` (the container ID, width, and height are customizable).
+Enter the license server URL for `FairPlay` obtained in Step 4 for `Custom License Server URL`. Enter the `FairPlay` certificate (you can get the certificate in the VOD console) for `Custom License Certificate URL` and click **Save**.
 
-```
-  <video id="video" width="640" controls autoplay></video>
-```
+![image-20220426164950762](https://qcloudimg.tencent-cloud.cn/raw/bdd9c3ecd2882537df76d657768855e9.png)
 
-#### Step 3. Add initialization code
-Add the following script to your page initialization code and pass in the required initialization parameters.
+The `FairPlay` playback options will appear in the page.
 
-```
-var manifestUri = 'https://1500003943.vod2.myqcloud.com/43832a63vodtranscq1500003943/06981c16387702298107746523/adp.1368258.m3u8';
+![image-20220426165137520](https://qcloudimg.tencent-cloud.cn/raw/9da228ea1db9ab54a1631f605e24d806.png)
 
-function initPlayer() {
-	// Create a player instance.
-	var video = document.getElementById('video');
-	var player = new shaka.Player(video);
+Click **Play** to play the encrypted video.
 
-	player.configure({
-	    drm: {
-	      servers: {
-	        'com.widevine.alpha': 'https://drm.vod2.myqcloud.com/getlicense/v1?drmType=Widevine&token=bJ%2FE5%2Bmc5atzwHKci%2Fh2IPDoON9TZWNyZXRJZD1BS0lETmNmcnZwVURrQTNxVzVoNVJ0SWV2RlVoRXdjQ21FaDUmQ3VycmVudFRpbWVTdGFtcD0xNjQ4MTk2NzU5JkV4cGlyZVRpbWVTdGFtcD0yNjQ4MTk2NzU5JlJhbmRvbT0yMDIzOTEyOTMxJkZpbGVJZD0zODc3MDIyOTgxMDc3NDY1MjMmVm9kU3ViQXBwSWQ9MTUwMDAwMzk0Mw%3D%3D',
-	      }
-	    }
-	});
-	 	
-	try {
-		player.load(manifestUri);
-		// This runs if the asynchronous load is successful.
-		console.log('The video has now been loaded!');
-	} catch (e) {
-		// onError is executed if the asynchronous load fails.
-	}	
-
-}
-        
-initPlayer();
-
-
-```
 
 ## Summary
 
