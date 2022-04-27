@@ -9,7 +9,7 @@ Log in to the [VOD console](https://console.cloud.tencent.com/vod/video-process/
 - Operation: tasks added in task flow.
 
 ## Preset Task Flow
-VOD provides 2 preset task flows which include adaptive bitrate streaming, screencapturing (image sprite generating), and cover image generating tasks. The detailed parameters are as follows:
+VOD provides 3 preset task flows which include adaptive bitrate streaming, screencapturing (image sprite generating), and cover image generating tasks. The detailed parameters are as follows:
 
 <table>
    <tr>

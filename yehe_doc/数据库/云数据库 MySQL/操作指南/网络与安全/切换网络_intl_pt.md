@@ -21,7 +21,7 @@ O tempo padrão de tomada de posse para o IP original é de 24 horas e o tempo d
 >?
 >- Se não houver um endereço IP especificado, este será atribuído automaticamente pelo sistema.
 >- Você só pode selecionar uma VPC na região da instância.
-Recomendamos que a VPC onde reside a instância da CVM seja selecionada; caso contrário, a instância da CVM não poderá acessar o TencentDB for MySQL pela rede privada, a menos que uma instância de [conexão pareada] (https://intl.cloud.tencent.com/document/product/553/18827) ou de [CCN](https://intl.cloud.tencent.com/document/product/1003/30049) seja criada entre ambas as VPCs.
+Recomendamos que a VPC onde reside a instância da CVM seja selecionada; caso contrário, a instância da CVM não poderá acessar o TencentDB for MySQL pela rede privada, a menos que uma instância de[conexão pareada](https://intl.cloud.tencent.com/document/product/553/18827) ou de [CCN](https://intl.cloud.tencent.com/document/product/1003/30049) seja criada entre ambas as VPCs.
 >
    - **Alternar da rede clássica para VPC**
 ![](https://main.qcloudimg.com/raw/ba78ed608b83c2f553cb72350b726491.png)

@@ -4,7 +4,7 @@ Superplayer is the player feature provided by VOD, which allows you to specify t
 
 
 ## Preset Configuration
-VOD provides the following two preset configurations for your convenience:
+VOD provides the following three preset configurations for your convenience:
 
 <table class="table auto-table"><tbody><tr><th rowspan="2">Configuration Name</td><th colspan="3">Configuration Item</td></tr>
 <tr><th>Adaptive bitstream to be played back (template ID)</td><th>Image sprite to be used (template ID)</td><th>Substream naming rule (based on length of substream short side)</td></tr>

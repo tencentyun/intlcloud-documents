@@ -17,7 +17,7 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 本文将 QCBM 扩展至多集群上统一管理，在整体架构上主要划分为接入层，应用层和数据层，配合相应管控和监控组件，实现多集群管理和多活容灾能力。
 整体架构图如下：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/2444624a1a282ae3f7518b9a7146389b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/88f9e155e4686d30c78e3ffced1f0702.png)
 
 **接入层**使用腾讯云 CLB 或其他云厂商 LB 产品结合 K8s ingress 和 service 实现流量接入和转发，也支持配置 nginx 实现。本文以 [腾讯云负载均衡 CLB](https://intl.cloud.tencent.com/zh/products/clb) 为例。
 
@@ -45,10 +45,10 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 ### 在分布式云中心注册集群
 
 参考 [创建注册集群](https://intl.cloud.tencent.com/document/product/1144/45543)，将集群注册至分布式云中心。
-例如，注册 "guangzhou-01" 和 "guangzhou-02" 集群，完成后查看集群状态正常。
-![](https://qcloudimg.tencent-cloud.cn/raw/296db7b617e54bab67104d8070407db4.png)
+例如，注册 "SPG-01" 和 "SPG-02" 集群，完成后查看集群状态正常。
+![](https://qcloudimg.tencent-cloud.cn/raw/c3594ee42f039857246ebd78bcd12a99.png)
 
->! 第一次进入分布式云中心控制台，需要开通**云原生分布式云中心 TDCC** 服务，详情见 [云原生分布式云中心快速入门](https://intl.cloud.tencent.com/document/product/1144/45540)。
+>! 第一次进入分布式云中心控制台，需要开通**云原生分布式云中心** 服务，详情见 [云原生分布式云中心快速入门](https://intl.cloud.tencent.com/document/product/1144/45540)。
 
 
 ### 部署多集群应用
@@ -58,8 +58,8 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 #### 创建分发策略
 
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **分发策略**页面。  
-2. 单击**新建**按钮创建分发策略 "qcbm-subscription"，在弹出的页面选择想要发布的目标集群，此处选择 "guangzhou-01" 集群。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/a8cc7991c858b929310ba5a35db6b983.png)
+2. 单击**新建**按钮创建分发策略 "qcbm-subscription"，在弹出的页面选择想要发布的目标集群，此处选择 "SPG-01" 集群。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/a77ac7567ebfdb863854abe5cee7af0c.png)
 3. 单击**创建**完成创建，查看 qcbm-subscription 分发策略创建成功。
 
 
@@ -72,7 +72,7 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 ::: 方式 1：使用控制台
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **应用管理**页面。
 2. 单击**命名空间** > **新建**，创建名称为 qcbm 的命名空间 Namespace，分发策略选择 qcbm-subscription。
-![](https://qcloudimg.tencent-cloud.cn/raw/5ee8ca99f2b74a35c91333846a1b3c11.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd9fdfb548fcbf586327fb293cff6e70.png)
 3. 单击**创建**完成创建，命名空间 qcbm 成功创建并分发至指定集群上。
 :::
 ::: 方式 2：使用 YAML 部署
@@ -102,7 +102,7 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 ::: 方式 1：使用控制台
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **应用管理**页面。
 2. 单击**配置管理** > **ConfigMap** > **新建**，创建名称为 qcbm-env 的 ConfigMap，分发策略选择 qcbm-subscription。
-![](https://qcloudimg.tencent-cloud.cn/raw/cd46521249c0ad2c6ce22f4d5653bfdb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd3d52935f9b2ff10aa5dc8f3beca399.png)
 3. 单击**创建**完成创建，查看配置成功的创建并分发至指定集群上。
 :::
 ::: 方式 2：使用 YAML 部署
@@ -173,7 +173,7 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 ::: 方式 1：使用控制台
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **应用管理**页面。
 2. 单击**工作负载** > **Deployment** > **新建**，创建名称为 user-service、store-service、qcbm-gateway、qcbm-front、order-service、favorites-service deployment 工作负载，分发策略选择 qcbm-subscription。
-![](https://qcloudimg.tencent-cloud.cn/raw/b5ed230757c92c88d56266edfbed7aff.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/78b4c98e8e4c97d6ed0f685612c63bc7.png)
 3. 单击**创建**完成创建，查看配置成功的创建并分发至指定集群上。
 :::
 ::: 方式 2：使用 YAML 部署
@@ -390,12 +390,11 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 
 ### 查看部署结果
 
-至此，您已完成 QCBM 在 "guangzhou-01" 集群上的部署，可通过以下步骤查看部署结果：
+至此，您已完成 QCBM 在 "SPG-01" 集群上的部署，可通过以下步骤查看部署结果：
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **应用管理**页面。
 2. 单击**服务与路由** > **Ingress** 进入 Ingress 页面，可查看到创建的 qcbm-ingress。单击进入**详情** > **实例管理**确定实例并跳转
-![](https://qcloudimg.tencent-cloud.cn/raw/8e572beb7fbb3eb4cc100750afa1b040.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/69c5a09b67b1129f1f285b2590642257.png)
 3. 通过 Ingress 的 VIP 即可访问 Q 云书城页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/9f0bb4b7c641fab27cb1788cbd7bcec0.png)
 
 ### 多集群调度管理
 
@@ -404,17 +403,17 @@ QCBM 是采用微服务架构，并使用 dubbo 框架开发的一个网上书�
 根据业务发展和容灾保障的需求，需要将 QCBM 应用部署至另外一个集群，可以通过编辑分发策略快速地实现。
 
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **分发策略**页面。  
-2. 选择分发策略 qcbm-subscription，单击**关联集群**，添加 "guangzhou-02" 集群。
+2. 选择分发策略 qcbm-subscription，单击**关联集群**，添加 "SPG-02" 集群。
 3. 单击**确定**，分布式云中心将自动将所有 QCBM 应用分发至两个集群上。单击名称进入详情页面可查看详情信息和拓扑图。
-![](https://qcloudimg.tencent-cloud.cn/raw/6c54bfdff67ac421f345236e16312070.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/85ce7c051928447ff6f7555bc0a0e728.png)
 
 #### 差异化配置集群下实例
 
 QCBM 应用已部署在两个集群上，由于不同集群间环境的差异，QCBM 应用需要在不同集群上有差异化的配置，可以通过差异化策略实现。
-例如 **api-gateway** Service 需要为 "guangzhou-02" 集群指定 subnet-id，可通过以下步骤实现：
+例如 **api-gateway** Service 需要为 "SPG-02" 集群指定 subnet-id，可通过以下步骤实现：
 
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **应用管理**页面。  
-2. 进入**服务与路由** > **Service**，单击 api-gateway 名称进入**详情** > **实例管理**页面，选择 "guangzhou-02" 集群下的实例，新建差异化策略。
+2. 进入**服务与路由** > **Service**，单击 api-gateway 名称进入**详情** > **实例管理**页面，选择 "SPG-02" 集群下的实例，新建差异化策略。
 ```yaml
   apiVersion: apps.clusternet.io/v1alpha1
   kind: Localization
@@ -441,23 +440,22 @@ QCBM 应用已部署在两个集群上，由于不同集群间环境的差异，
           ]
 ```
 3. 单击**确定**保存，分布式云中心将根据该差异化策略自动调整对应集群下的配置。
-4. 进入 "guangzhou-02" 集群的 Ingress 页面，找到 qcbm-ingress 地址，通过该地址即可访问 "guangzhou-02" 集群下的 Q 云书城页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/9f0bb4b7c641fab27cb1788cbd7bcec0.png)
+4. 进入 "SPG-02" 集群的 Ingress 页面，找到 qcbm-ingress 地址，通过该地址即可访问 "SPG-02" 集群下的 Q 云书城页面。
 
 
 ### 多活容灾能力验证
 
-按照以上云原生分布式云中心 TDCC 多集群应用管理的操作，QCBM 业务应用分别部署在 "guangzhou-01" 和 "guangzhou-02" 集群上，对外暴露 ingress 地址提供 Q 云书城的服务。
+按照以上云原生分布式云中心 TDCC 多集群应用管理的操作，QCBM 业务应用分别部署在 "SPG-01" 和 "SPG-02" 集群上，对外暴露 ingress 地址提供 Q 云书城的服务。
 
 此时可以使用已有或 [新申请域名](https://console.cloud.tencent.com/domain)，添加 ingress 地址解析，实现基本的多活容灾能力。例如参考以下步骤验证多集群高可用：
 
-1. 配置本地 hosts 域名 "tke-demo.cn"，默认访问 "guangzhou-01" 集群的 ingress 地址，页面能够正常访问，工作正常。
+1. 配置本地 hosts 域名 "tke-demo.cn"，默认访问 "SPG-01" 集群的 ingress 地址，页面能够正常访问，工作正常。
 2. 手动驱逐该集群的节点或停止应用，模拟环境故障，此时访问 "tke-demo.cn" 返回错误。
 3. 通过修改 hosts 配置来模拟 DNS 切换。
 ```shell 
 # /etc/hosts
-#1.14.x.x   tke-demo.cn     # guangzhou-01 ingress address
-129.226.x.x   tke-demo.cn   # guangzhou-02 ingress address
+#1.14.x.x   tke-demo.cn     # SPG-01 ingress address
+129.226.x.x   tke-demo.cn   # SPG-02 ingress address
 ```
 4. 重新打开浏览器访问 "tke-demo.cn"，页面能够正常访问，工作正常。
 

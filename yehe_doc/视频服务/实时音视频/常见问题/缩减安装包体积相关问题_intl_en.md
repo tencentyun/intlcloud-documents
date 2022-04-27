@@ -32,7 +32,7 @@ The file size increment varies by TRTC SDK version. For more information, please
  
  The size of .so files takes the greatest proportion of the total size of the SDK for Android. If you want to reduce your installation package to below 1 MB, you can use the method of downloading .so files after installation:
 [](id:step1)
- 1. In the folder on [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android), find and download the package named in the format of `LiteAVSDK_TRTC_x.x.xxx.zip`, decompress it, and find the .so files for the specified architecture.
+ 1. In the folder on [GitHub](https://github.com/LiteAVSDK/TRTC_Android/tree/main/SDK), click and download the package named in the format of `LiteAVSDK_TRTC_x.x.xxx.zip`, decompress it, and find the .so files for the specified architecture.
  2. Upload the .so files downloaded in [step 1](#step1) to your server (or Tencent Cloud [COS](https://intl.cloud.tencent.com/product/cos)) and record the download address such as `http://xxx.com/so_files.zip`.
  3. Before an SDK feature such as video playback is started by the user, use a loading animation to prompt the user that the relevant feature module is being loaded.
   When the user is waiting, the application can download the .so files from `http://xxx.com/so_files.zip` and store the files in the application directory (such as the `files` folder in the application's root directory). To ensure that this process is not affected by ISP DNS hijacking, please verify the integrity of the .so files after download to check whether the zip package has been tampered with the ISP.

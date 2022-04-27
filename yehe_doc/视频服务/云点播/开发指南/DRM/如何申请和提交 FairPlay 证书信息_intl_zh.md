@@ -13,7 +13,7 @@
 
 1. 访问 [苹果 FairPlay 页面](https://developer.apple.com/streaming/fps/)，点击页面底部链接`Request FPS Deployment Package`后，你将看到一个表单页面。
 
-> 注意：你需要拥有一个苹果开发者账号，成功登陆后才能看到表单。
+>! 你需要拥有一个苹果开发者账号，成功登陆后才能看到表单。
 
 ![image-20220426181021189](https://qcloudimg.tencent-cloud.cn/raw/c8533ed9e4cf2b7961058eb9e5cd502a.png)
 
@@ -72,7 +72,7 @@ openssl genrsa -aes256 -out privatekey.pem 1024
 
 6. 上一步结束后，会出现一个弹框，让你再次确认是否已将`ASK`备份，确认已备份后，点击` Generate `按钮。
 
-   > 请注意：务必确认已将 ASK 备份，此步骤完成后将无法再次查询 ASK。
+   >! 请务必确认已将 ASK 备份，此步骤完成后将无法再次查询 ASK。
 
    ![image-20220419115103618](https://qcloudimg.tencent-cloud.cn/raw/808347b36d824de46b6cbb84654d20c8.png)
 
