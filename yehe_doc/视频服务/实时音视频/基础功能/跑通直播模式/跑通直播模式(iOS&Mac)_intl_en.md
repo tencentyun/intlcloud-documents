@@ -127,7 +127,7 @@ encParams.videoFps = 15;
 2. Call [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a8f2378a87c2e79fa3b978078e534ef4a) to set the beauty filter style.
  - `Smooth`: smooth. This style features more obvious skin smoothing effect and is typically used by influencers.
  - `Nature`: natural. This style retains more facial details and is more natural.
- - `Pitu`: this style is supported only in the [Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise).
+ - `Pitu`: this style is supported only in the [Professional Edition](https://intl.cloud.tencent.com/document/product/647/34615).
 3. Call [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) to set the skin smoothing strength (`5` is recommended).
 4. Call [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) to set the skin brightening strength (`5` is recommended).
 5. Given the yellow tint of the iPhone camera, we recommended that you call [setFilter()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) to apply the skin brightening filter to your video. You can download the file for the filter [here](https://liteav.sdk.qcloud.com/doc/res/trtc/filter/filterPNG.zip).
