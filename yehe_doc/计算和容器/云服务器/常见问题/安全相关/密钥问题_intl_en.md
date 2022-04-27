@@ -4,7 +4,7 @@ Currently, Linux instance supports both password and SSH key login, while Window
 - [Logging into Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
 - [Logging into Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
 
-### Why cannot I use the password to log in to a Linux instance that is associated with an SSH key?
+### I cannot use the password to log in to a Linux instance that is associated with an SSH key.
 After the CVM is associated with an SSH key, password login is **disabled by default**. See [Logging into Linux Instance (SSH Key)](https://intl.cloud.tencent.com/document/product/213/32501). 
 
 ### Can I use SSH key together with the password login?
@@ -39,7 +39,7 @@ For more information, see the **Use Limits** section in [SSH Keys](https://intl.
 
 For more information, see [Unable to Log in to a Linux Instance via SSH](https://intl.cloud.tencent.com/document/product/213/32486).
 
-### Why cannot I download my key?
+### I can not download my key.
 The key can only be downloaded once. If you lost the key, we recommend that you create a new key, download and save it.
 
 ### How can I query which key is used by the CVM instance?
