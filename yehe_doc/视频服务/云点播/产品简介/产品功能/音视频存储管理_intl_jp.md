@@ -1,5 +1,5 @@
 ## システムアーキテクチャ
-<img src="https://main.qcloudimg.com/raw/146d801f4900734b8faa0435b34ea6cc.png" width="650">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/fab36bc70e18363d8b6a611a765ef61d.png" width="650">
 
 ## 製品の機能
 ### オーディオ/ビデオのアップロード
