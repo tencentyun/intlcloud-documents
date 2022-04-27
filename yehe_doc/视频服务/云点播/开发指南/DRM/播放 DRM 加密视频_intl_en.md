@@ -1,3 +1,4 @@
+
 ## Overview
 
 This document shows you how to encrypt videos using DRM solutions and use player to play the encrypted videos.
@@ -91,7 +92,9 @@ Here, the `{appId}` attribute is the application ID (if you use a subapplication
 
 The request URL is as follows:
 
-`https://playvideo.qcloud.com/getplayinfo/v4/1500012416/387702299667618135?psign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDg4NjE1NiwiZXhwaXJlVGltZVN0YW1wIjoxOTY2NDM1MjAwLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI3NTM1NkI4MCIsInVzIjoiNzJkNGNkMTEwMSJ9LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.kkyOyscuV3WIlFV0IFPsPPWomZEcuNGclaBzpEO8DEg`
+```url
+https://playvideo.qcloud.com/getplayinfo/v4/1500012416/387702299667618135?psign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTUwMDAxMjQxNiwiZmlsZUlkIjoiMzg3NzAyMjk5NjY3NjE4MTM1IiwiY3VycmVudFRpbWVTdGFtcCI6MTY1MDg4NjE1NiwiZXhwaXJlVGltZVN0YW1wIjoxOTY2NDM1MjAwLCJ1cmxBY2Nlc3NJbmZvIjp7InQiOiI3NTM1NkI4MCIsInVzIjoiNzJkNGNkMTEwMSJ9LCJwY2ZnIjoiYWR2YW5jZURybVByZXNldCJ9.kkyOyscuV3WIlFV0IFPsPPWomZEcuNGclaBzpEO8DEg
+```
 
 The response will be:
 
@@ -163,15 +166,13 @@ Click the **+** icon, and enter the URL of the encrypted video obtained in Step 
 
 Enter the license server URL for `Widevine` obtained in Step 4 and click **Save**.
 
-![image-20220426164907499](https://qcloudimg.tencent-cloud.cn/raw/70f01463b0afdf231dd014ea4782728f.png)
+![image-20220426163939777](https://qcloudimg.tencent-cloud.cn/raw/702199c544c829db6f5d4815dcd4ff48.png)
 
 The `Widevine` playback options will appear in the page.
 
-![image-20220426163939777](https://qcloudimg.tencent-cloud.cn/raw/702199c544c829db6f5d4815dcd4ff48.png)
+![image-20220426164129657](https://qcloudimg.tencent-cloud.cn/raw/7d70df750e283d8a5a0d42596e08c14b.png)
 
 Click **Play** to play the encrypted video.
-
-![image-20220426164129657](https://qcloudimg.tencent-cloud.cn/raw/7d70df750e283d8a5a0d42596e08c14b.png)
 
 #### Play videos encrypted using `FairPlay`
 
