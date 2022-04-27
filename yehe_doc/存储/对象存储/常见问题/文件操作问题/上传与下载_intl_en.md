@@ -1,30 +1,16 @@
 ### Does COS limit the upload and download bandwidth?
 
-Yes. The default bandwidth threshold for a single bucket residing in a public region in the Chinese mainland is 15 Gbps, and 10 Gbps for those in other regions. If this threshold is exceeded, bandwidth throttling will be triggered for requests. To raise the threshold, please [contact us](https://intl.cloud.tencent.com/contact-sales).
+Yes. The default bandwidth threshold for a single bucket residing in a public region in the Chinese mainland is 15 Gbps, and 10 Gbps for those in other regions. If this threshold is exceeded, bandwidth throttling will be triggered for requests. To raise the threshold, [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### How can I directly preview a file in my browser without downloading it?
 
-Bucket endpoints in the format of `<BucketName-APPID>.cos.<Region>.myqcloud.com` are in XML format. You can directly preview file types supported by your browser by accessing the object URL using this endpoint format.
-
-Bucket endpoints in the format of `<BucketName-APPID>.<region>.myqcloud.com` are in JSON format. If you access an object URL using this endpoint format, a download window will pop up, and there are two ways that you can preview the file in your browser:
-
-1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object URL in XML format for access (strongly recommended).
-2. Bind a custom endpoint, enable a static website, and access the file using the custom endpoint. For more information, see [Endpoint Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
-
-#### Sample:
-
-Take the picture.jpg file in the root directory of the bucket examplebucket-1250000000 in Beijing for example:
-
-- If the object endpoint is in the format of `https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`, you can directly access it to preview the picture.jpg file in your browser.
-- If the object endpoint is in the format of `https://examplebucket-1250000000.cosbj.myqcloud.com/picture.jpg`, there are two ways to directly preview the object in your browser:
-  1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object link in XML format for access (strongly recommended).
-  2. Bind a custom endpoint, enable a static website, and access the file using the custom endpoint. For more information, see [Endpoint Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
+You need to specify a correct `Content-Type` header for this file. In addition, the `Content-Disposition` parameter cannot be `attachment`. If the browser supports the current file format, it will directly open the file instead of downloading it.
 
 ### How do I directly download a file in my browser without previewing it?
 
-You can go to the [COS console](https://console.cloud.tencent.com/cos5) and set the value of the `Content-Disposition` in the custom object headers to `attachment`. For detailed directions, please see [Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361).
+You can go to the [COS console](https://console.cloud.tencent.com/cos5) and set the value of the `Content-Disposition` in the custom object headers to `attachment`. For detailed directions, see [Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361).
 
-You can also set the value of the request parameter `response-content-disposition` in the GET Object API to `attachment` so that your browser can pop up a window for the file to be downloaded. For more information, please see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
+You can also set the value of the request parameter `response-content-disposition` in the GET Object API to `attachment` so that your browser can pop up a window for the file to be downloaded. For more information, see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
 
 >! To use the `response-*` parameter in a request, the request must be signed.
 
@@ -32,7 +18,7 @@ You can also set the value of the request parameter `response-content-dispositio
 
 The access endpoints of COS use intelligent DNS resolution. For COS access via the Internet (including different ISPs), we will detect and select the optimal linkage for you to access COS. If you have deployed a service in Tencent Cloud to access COS, access within the same region will be automatically directed to a private network address. Cross-region access is not supported in a private network and the COS endpoint is resolved to a public network address by default.
 
->! The private networks of Public Cloud regions do not interconnect with those of Finance Cloud regions.
+
 
 #### How to determine access over a private network
 
@@ -40,7 +26,7 @@ Tencent Cloud products within the same region access each other over a private n
 
 The following shows how to determine access over a private network:
 
-For example, when a CVM accesses COS, to determine whether a private network is used for access, use the `nslookup` command on the CVM to resolve the COS endpoint. If a private network IP is returned, access between the CVM and COS is over a private network; otherwise, it is over a public network.
+For example, when a CVM accesses COS, to determine whether a private network is used for access, use the `nslookup` command on the CVM to resolve the COS endpoint. If a private IP is returned, access between the CVM and COS is over a private network; otherwise, it is over a public network.
 
 >?Generally, a private IP address takes the form of `10.*.*.*` or `100.*.*.*`, and a VPC IP address takes the form of `169.254.*.*`.
 
@@ -58,15 +44,15 @@ Name:   examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
 Address: 10.148.214.14
 ```
 
-For more information about private and public network access and connectivity testing, please see [COS Access via Private Network and Public Network](https://intl.cloud.tencent.com/document/product/436/30613).
+For more information about private and public network access and connectivity testing, see [COS Access via Private Network and Public Network](https://intl.cloud.tencent.com/document/product/436/30613).
 
-For the private DNS server addresses of CVM, please see [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225).
+For the private DNS server addresses of CVM, see [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225).
 
->!The private IPs of Tencent Cloud BM instances may be different from those of CVM instances, and their formats are usually `9.*.*.*` or `10.*.*.*`. If you have any queries, please [contact us](https://intl.cloud.tencent.com/contact-sales).
+>!The private IPs of Tencent Cloud BM instances may be different from those of CVM instances, and their formats are usually `9.*.*.*` or `10.*.*.*`. If you have any queries, [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### How do I download a folder?
 
-You can log in to [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366), select the folder to be downloaded, and click **Download** to download the folder or files in batches. You can also download a folder using the COSCMD tool. For more information, please see [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
+You can log in to [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366), select the folder to be downloaded, and click **Download** to download the folder or files in batches. You can also download a folder using the COSCMD tool. For more information, see [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
 
 ### What should I do if the error "403 Forbidden" occurs or access permission is rejected when I perform upload/download and other operations?
 
@@ -77,8 +63,8 @@ You can troubleshoot by referring to [A 403 Status Code is Returned When You Acc
 
 COS allows you to upload or download multiple files through various methods such as the console, APIs/SDKs, and tools.
 
-- Console: For detailed directions, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
-- APIs/SDKs: COS allows you to operate on multiple files by repeatedly calling an API or SDK. For more information, please see [APIs for object uploads](https://intl.cloud.tencent.com/document/product/436/10111) and [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
+- Console: For detailed directions, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
+- APIs/SDKs: COS allows you to operate on multiple files by repeatedly calling an API or SDK. For more information, see [APIs for object uploads](https://intl.cloud.tencent.com/document/product/436/10111) and [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
 - Tools: Use [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976) and [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366) for batch operations.
 
 
@@ -88,7 +74,7 @@ The versioning feature is now available in COS. If versioning is not enabled for
 
 ### What is the minimum part size of a multipart upload in COS?
 
-1 MB. For more information, please see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
+1 MB. For more information, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
 ### When uploading large files using multipart upload, can I replace an invalid signature to continue the multipart upload?
 
@@ -104,13 +90,13 @@ For more information, see [Download via Pre-Signed URL](https://intl.cloud.tence
 By default, the browser will cache objects that have been loaded successfully. Therefore, if you access the same URL, the cached object will be returned without requesting the server again. Therefore, you are advised to use the `Cache-Control: no-cache` header during object upload to prevent browser caching (see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) or [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) for details). Alternatively, you can specify the `response-cache-control=no-cache` request header during object download to prevent browser caching (see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) for details).
 
 
-### What should I do if I upload a file on the console and "Failed to upload. System error." is displayed?
+### What should I do if I upload a file in the console and "Upload failed due to network issues" is displayed?
 This error may occur due to an unstable local network environment. You can try the upload again in a different network environment.
 
 
 ### How do I prevent others from downloading my COS files?
 
-You can set your bucket permission to private read/write. For more information, please see [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315). You can also configure a hotlink protection allowlist on your bucket to block any access from endpoints that are not in the list. For more information, please see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319).
+You can set your bucket permission to private read/write. For more information, see [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315). You can also configure a hotlink protection allowlist on your bucket to block any access from endpoints that are not in the list. For more information, see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319).
 
 ### Can I use case-insensitive download URLs?
 

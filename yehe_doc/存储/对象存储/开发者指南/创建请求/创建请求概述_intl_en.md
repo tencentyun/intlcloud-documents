@@ -7,18 +7,18 @@ Your COS access request must first pass the COS verification and authentication 
 - Anonymous request: If the request does not include `Authorization` or related parameters, or the user identity cannot be identified based on the related characters, the request will be treated as an anonymous request for authentication.
 - Request with signature: A request with a signature must contain the `Authorization` field in the HTTP header or the request package. The content of the field is generated based on Tencent Cloud security credentials (SecretID and SecretKey) and some eigenvalues of the request via an encryption algorithm.
 
-To access COS using COS SDKs, you only need to configure your security credentials before initiating the request. To access COS using RESTful APIs, calculate the request signature according to [Request Signature](https://intl.cloud.tencent.com/document/api/436/7778) or generate one using the COS signature tool.
+To access COS using the COS SDK, you only need to configure your security credentials to initiate a request. To access COS using RESTful API, you need to calculate the request signature as instructed in [Request Signature] or directly generate one with the COS signature tool.
 
 ## Obtaining Security Credentials
 
-Cloud Access Management (CAM) provides features and services related to accounts and credentials for COS, to help customers manage the permissions to access resources under their Tencent Cloud accounts in a secure way. You can use CAM to create, manage, and terminate users (or user groups), and manage other users' permissions to use Tencent Cloud resources through identity management and policy management.
+Cloud Access Management (CAM) provides features and services related to accounts and credentials for COS, to help customers manage the permissions to access resources under their Tencent Cloud accounts in a secure way. You can use CAM to create, manage and terminate users (or user groups), and manage other users' permissions to use Tencent Cloud resources through identity management and policy management.
 
 ### Security credentials of the root account
 
 After logging in to the root account, you can manage and obtain the security credentials (SecretID and SecretKey) of your root account on the [Cloud API Key](https://console.cloud.tencent.com/cam/capi) page of CAM. The following is a key pair example:
 
 - 36-character access key ID (SecretID): AKIDHZRLB9Ibhdp7Y7gyQq6BOk1997xxxxxx
-- 32-character access key (SecretKey): LYaWIuQmCSZ5ZMniUM6hiaLxHnxxxxxx
+- 32-character access Key (SecretKey): LYaWIuQmCSZ5ZMniUM6hiaLxHnxxxxxx
 
 The access key can be used to identify the uniqueness of an account. After the signature is generated using the key and the request is sent, Tencent Cloud will identify the identity of the request initiator, and then perform verification and authentication for the identity, resources, operations, and conditions to determine whether to allow the operation.
 
@@ -37,7 +37,7 @@ Before using a sub-account to initiate an API request, you need to create a secu
 In addition to using security credentials of the root account or sub-accounts to access resources, you can create roles and use the temporary security credentials of the roles to manage your Tencent Cloud resources. For more information on the role concept and how to use roles, see [Role Overview](https://intl.cloud.tencent.com/document/product/598/19420).
 
 As a virtual identity, a role does not have a permanent key. Tencent Cloud CAM provides a set of STS APIs used to generate temporary security credentials.
-For more information on how to use the APIs and relevant examples, see [Using Roles](https://intl.cloud.tencent.com/document/product/598/19419). You can also see STS API documentation to learn about how to generate temporary security credentials. Temporary security credentials contain only **limited policies** (operations, resources, and conditions), and are valid for a **limited period** (start and end time), so the generated temporary security credentials can be distributed or used directly.
+For more information on how to use the APIs and relevant examples, see [Using Role](https://intl.cloud.tencent.com/document/product/598/19419). You can also see [CreateRole](https://intl.cloud.tencent.com/document/product/598/33561) to learn about how to generate temporary security credentials. Temporary security credentials contain only **limited policies** (operations, resources, and conditions), and are valid for a **limited period** (start and end time), so the generated temporary security credentials can be distributed or used directly.
 
 You can call the API for generating temporary security credentials and get a temporary key pair (tmpSecretId/tmpSecretKey) and a security token (sessionToken), which form the security credential that can be used to access COS. The following is an example of a temporary security credential:
 
@@ -49,7 +49,7 @@ This API also returns the validity period of the temporary security credential v
 
 Tencent Cloud COS provides a simple server SDK that can be used to generate temporary keys. You can visit [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) to obtain the SDK. To initiate the request using the REST API after getting the temporary security credential, you need to specify the value for the `x-cos-security-token` field in the HTTP header or the form-data of the POST request package to identify the security token used by the request, and then use the temporary access key pair to generate the request signature. For more information on how to initiate requests using the COS SDK, see the relevant sections in each SDK documentation.
 
-## Access Domain Name
+## Access Endpoint Domain Names
 
 ### RESTful APIs
 
@@ -63,9 +63,11 @@ You can also use a path request to access a bucket, for example, `cos.<region>.m
 
 If you enable the static website feature for a bucket, a virtual hosting domain name will be assigned for you to use relevant features. Unlike RESTful APIs, the domain name of a static website supports only a few operations, such as GET/HEAD/OPTIONS Object, in addition to specific index pages, error pages and redirection configurations. Uploading or configuring resources is not supported.
 
-The format of a domain name of a static website is `<BucketName-APPID>.cos-website.<Region>.myqcloud.com`. You can also log in to the console and go to the bucket's **Basic Configuration** > **Static Website Configuration** to get the domain name.
+The format of a domain name of a static website is `<BucketName-APPID>.cos-website.<Region>.myqcloud.com`. You can also log in to the console and go to the bucket's **Basic Configuration** -> **Static Website Configuration** to get the domain name.
 
-## COS Access via Private Network and Public Network
+<span id="network"></span>
+
+## Private Network Access
 
 The access endpoints of COS use intelligent DNS resolution. For COS access via the Internet (including different ISPs), we will detect and select the optimal linkage for you to access COS. If you have deployed a service in Tencent Cloud to access COS, access within the same region will be automatically directed to a private network address. Cross-region access is not supported in a private network and the COS endpoint is resolved to a public network address by default.
 
@@ -73,13 +75,11 @@ The access endpoints of COS use intelligent DNS resolution. For COS access via t
 
 Tencent Cloud products within the same region access each other over a private network by default, incurring no traffic fees. Therefore, we recommend choosing the same region when you purchase different Tencent Cloud products to save on costs.
 
->! The private networks of Public Cloud regions are not interconnected with those of Finance Cloud regions.
-
 The following shows how to determine access over a private network:
 
 For example, when a CVM accesses COS, to determine whether a private network is used for access, use the `nslookup` command on the CVM to resolve the COS endpoint. If a private IP is returned, access between the CVM and COS is over a private network; otherwise, it is over a public network.
 
->?Generally, a private IP takes the form of `10.*.*.*` or `100.*.*.*`, and a VPC IP takes the form of `169.254.*.*`. These two types of IPs belong to private networks.
+>?Generally, a private IP takes the form of `10.*.*.*` or `100.*.*.*`, and a VPC IP takes the form of `169.254.*.*`. These two types of IPs indicate a private network access.
 
 Assume that `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com` is the address of the destination bucket. After running the `nslookup` command, you can view the information as shown in the figure below.
 
@@ -128,7 +128,7 @@ Regardless of the access environment, if the command returns the `Escape charact
 Since the access to COS over the internet involves the ISP network, which may prohibit you from testing connectivity using tools such as `ping` or `traceroute` of the ICMP protocol, it is recommended to use the tools of the TCP protocol to test connectivity.
 >!The access via the Internet may involve multiple network environments. If the access is not smooth, check your local network linkage, or contact the local ISP.
 
-If your ISP allows you to use the ICMP protocol, you can use the `ping`, `traceroute` or `mtr` tools to check your link. Otherwise, you can use the `psping` (Windows environment; download at the Microsoft official website) or such tools as `tcping` (cross-platform software) to test the latency.
+If your ISP allows you to use the ICMP protocol, you can use the `ping`, `traceroute` or `mtr` tools to check your linkage. Otherwise, you can use the `psping` (Windows environment; download at the Microsoft official website) or such tools as `tcping` (cross-platform software) to test the latency.
 
 #### Test via a private network
 

@@ -5,14 +5,14 @@ The process of using Tencent Cloud products generates a massive number of logs, 
 COS log storage offers the following benefits:
 
 - **Persistent storage**: COS provides stable, persistent storage that allows you to store logs in COS at a very low cost. You can access your logs anytime, anywhere for business analysis or decision-making.
-- **COS Select**: this feature allows for the simple extraction of logs stored on COS. You can combine log fields to make it easier to extract the information you need and reduce data download traffic.
-
+- **COS Select**: This feature allows for the simple extraction of logs stored on COS. You can combine log fields to make it easier to extract the information you need and reduce data download traffic.
+- **Data analysis**: You can analyze one or more COS logs using Sparkling, which then can be used to facilitate and provide a basis for important business decisions.
 
 ## Shipping Logs
 
-You can ship your Tencent Cloud product logs to COS in one of the following 2 ways:
+You can ship your Tencent Cloud product logs to COS in one of the following two ways:
 
-- Directly use the Tencent Cloud log shipping feature in which logs are directly shipped to COS. Products such as COS, CLB, and CA support directly shipping logs to COS.
+- Use the Tencent Cloud log shipping feature in which logs are directly shipped to COS. Products such as COS and CA support directly shipping logs to COS.
 - Use the CLS log shipping feature in which logs are first shipped to CLS and then transferred to COS for persistent storage.
 
 The table below shows the particular log shipping method or methods currently supported by various Tencent Cloud products:
@@ -25,7 +25,7 @@ The table below shows the particular log shipping method or methods currently su
 | APIGateway | No                     | Yes                     |
 | SCF      | No                     | Yes                     |
 | TKE        | No                     | Yes                     |
-| LVB          | No                     | Yes                     |
+| CSS          | No                     | Yes                     |
 | TCB          | No                     | Yes (however, TCB does not support shipping logs to COS through CLS) |
 | COS        | Yes                     |  Yes for accounts on the allowlist. You can [contact us](https://intl.cloud.tencent.com/contact-sales) to add your account to the allowlist.        |
 
@@ -33,7 +33,7 @@ The table below shows the particular log shipping method or methods currently su
 
 The Tencent Cloud products outlined below allow you to ship logs directly to COS by setting log shipping rules as instructed in the product-specific documentation.
 
-| Product      | Documentation                                                 | Shipping Interval      | Shipping Path                                                |
+| Tencent Cloud Product Name     | Log Shipping Document                                                 | Log Shipping Interval        | Log Shipping Path                                                 |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 | CA | [Click here to view](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15 min |  cloudaudit/customprefix/timestamp|
 | CKafka | [Click here to view](https://intl.cloud.tencent.com/document/product/597) | 5-60 min<br>You can specify the interval | instance id/topic id/timestamp                           |
@@ -51,11 +51,11 @@ The Tencent Cloud products outlined below allow you to ship logs directly to CLS
 | TKE         | [Click here to view](https://intl.cloud.tencent.com/document/product/457/32419) |
 | CSS           | Click here to view|
 
-CLS can ship the following 3 types of logs to COS:
+CLS can ship the following three types of logs to COS:
 
-- CSV-formatted logs: logs formatted with comma-separated values. For more information, see [Shipping CSV-Formatted Logs](https://intl.cloud.tencent.com/document/product/614/31582).
-- JSON-formatted logs: logs in JSON format. For more information, see [Shipping JSON-Formatted Logs](https://intl.cloud.tencent.com/document/product/614/31583).
-- Original logs: logs in their original format, including those with full text in a single line, full text in multi-lines, and comma-separated values (for certain products). For more information, see [Shipping Original Logs](https://intl.cloud.tencent.com/document/product/614/31584).
+- CSV-formatted logs: Logs formatted with comma-separated values. For more information, see [Shipping CSV-Formatted Logs](https://intl.cloud.tencent.com/document/product/614/31582).
+- JSON-formatted logs: Logs in JSON format. For more information, see [Shipping JSON-Formatted Logs](https://intl.cloud.tencent.com/document/product/614/31583).
+- Original logs: Logs in their original format, including those with full text in a single line, full text in multi-lines, and comma-separated values (for certain products). For more information, see [Shipping Original Logs](https://intl.cloud.tencent.com/document/product/614/31584).
 
 To ship logs from CLS to COS, you need to do the following:
 
