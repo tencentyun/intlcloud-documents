@@ -19,15 +19,10 @@ To protect the security of your videos and prevent them from hotlinking and unau
 		<td>Medium</td>
 	</tr>
 	<tr>
-	  <td rowspan="2">Video encryption</td>
+	  <td rowspan="1">Video encryption</td>
 	  <td>HLS common encryption</td>
 		<td>It is an HLS-based <a href=https://tools.ietf.org/html/draft-pantos-http-live-streaming-23?spm=a2c4g.11186623.2.31.409c6a6aYf9Rn8>AES encryption</a> scheme and uses keys to encrypt video data</td>
 		<td>High</td>
-	</tr>
-	<tr>
-	  <td>Commercial DRM (not available yet)</td>
-		<td>It offers video encryption and decryption services based on commercial DRM solutions such as Widevine, FairPlay, and PlayReady</td>
-		<td>Higher</td>
 	</tr>
 </table>
 
@@ -63,4 +58,3 @@ To help you quickly integrate the encryption capabilities of VOD, we provide a v
 VOD's [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) feature can transcode videos into multiple resolutions and encrypt them.For specific steps, please see the [operation guide](https://intl.cloud.tencent.com/document/product/266/38294).
 2. How do I play back encrypted videos on terminal devices?
 To play back videos encrypted in VOD, you need to integrate the superplayer SDK on the terminal devices and build a signature distribution service.For specific steps, please see the [operation guide](https://intl.cloud.tencent.com/document/product/266/38294).
-

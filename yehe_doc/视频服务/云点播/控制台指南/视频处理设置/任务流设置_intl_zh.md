@@ -43,6 +43,19 @@
         <td>截取封面</td>
         <td>TimepointScreenshot(10)</td>
     </tr>
+    <tr>
+        <td rowspan=3>WidevineFairPlayPreset</td>
+        <td>转自适应码流</td>
+				<td><li>Adpative-HLS-FairPlay(11)</li><li>Adpative-HLS-Widevine(13)</li></td>
+    </tr>
+    <tr>
+        <td>截图</td>
+        <td>SpriteScreenshot(10)</td>
+    </tr>
+    <tr>
+        <td>截取封面</td>
+        <td>TimepointScreenshot(10)</td>
+    </tr>
 </table>
 
 

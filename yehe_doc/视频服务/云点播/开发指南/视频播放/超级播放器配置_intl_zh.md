@@ -17,16 +17,18 @@
 | 用于播放器展的子流清晰度名 | 对子流短边长度命名 | 控制清晰度切换时各个清晰度名 |
 
 ## 预置配置
-为方便您的使用，云点播提供了以下两个预置配置。
+为方便您的使用，云点播提供了以下三个预置配置。
 
 <table class="table auto-table"><tbody><tr ><th rowspan="2">配置名</td><th colspan="3">配置项</td></th>
 <tr><th>播放哪一个自适应码流（模板 ID）</td><th>使用哪一个雪碧图（模板 ID）</td><th>清晰度命名规则（根据子流短边长度命名）</td></tr>
-<tr><td>default</td><td>10</td><td>10</td><td rowspan="2"><ul style="margin:0;"><li >240px：流畅</li><li>480px：标清</li><li>720px：高清</li><li>1080px：全高清</li><li>1440px：2K</li><li>2160px：4K</li><li>其他：<code>xx</code>p（<code>xx</code>代表短边长度）</li></td></tr>
+<tr><td>default</td><td>10</td><td>10</td><td rowspan="3"><ul style="margin:0;"><li >240px：流畅</li><li>480px：标清</li><li>720px：高清</li><li>1080px：全高清</li><li>1440px：2K</li><li>2160px：4K</li><li>其他：<code>xx</code>p（<code>xx</code>代表短边长度）</li></td></tr>
 <tr><td>basicDrmPreset</td><td>12</td><td>10</td>
+<tr><td>advanceDrmPreset</td><td><li>终端支持 FairPlay 时，播放 11</li><li>终端支持 Widevine 时：播放13</li></td><td>10</td>
 </tbody></table>
 
 * 如果视频内容无需加密，可以使用预置任务流 LongVideoPreset 转自适应码流输出，然后使用预置超级播放器配置 default 播放，具体示例请参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38098)。
-* 如需播放加密后内容，可以使用预置任务流 SimpleAesEncryptPreset 转自适应码流输出，然后使用预置超级播放器配置 basicDrmPreset 播放，具体示例请参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38294)。
+* 如需播放私有加密后内容，可以使用预置任务流 SimpleAesEncryptPreset 转自适应码流输出，然后使用预置超级播放器配置 basicDrmPreset 播放，具体示例请参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38294)。
+* 如需播放商业级 DRM 加密后内容，可以使用预置任务流 WidevineFairPlayPreset 转自适应码流输出，然后使用预置超级播放器配置 advanceDrmPreset 播放。
 
 ## 自定义配置
 除了预置超级播放器配置之外，您也可以通过 [控制台](https://intl.cloud.tencent.com/document/product/266/38261) 或 [API](https://intl.cloud.tencent.com/document/product/266/37567) 自定义配置。

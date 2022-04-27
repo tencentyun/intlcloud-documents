@@ -196,9 +196,23 @@ Preset parameter templates for video conversion:
   <td>Yes</td>
  </tr>
  <tr>
+  <td>11</td>
+  <td>HLS</td>
+  <td>FairPlay</td>
+  <td >Contains substreams of 6 specifications from "Smooth" to "4K"</td>
+  <td>Yes</td>
+ </tr>
+ <tr>
   <td>12</td>
   <td>HLS</td>
   <td>SimpleAES</td>
+  <td >Contains substreams of 6 specifications from "Smooth" to "4K"</td>
+  <td>Yes</td>
+ </tr>
+ <tr>
+  <td>13</td>
+  <td>HLS</td>
+  <td>Widevine</td>
   <td >Contains substreams of 6 specifications from "Smooth" to "4K"</td>
   <td>Yes</td>
  </tr>
@@ -207,7 +221,7 @@ Preset parameter templates for video conversion:
   <td>MPEG-DASH</td>
   <td>Not encrypted</td>
   <td >Contains substreams of 6 specifications from "Smooth" to "4K"</td>
-  <td>No</td>
+  <td>Yes</td>
  </tr>
 </table>
 

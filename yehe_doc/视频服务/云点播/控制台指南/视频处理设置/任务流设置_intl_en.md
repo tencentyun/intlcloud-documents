@@ -43,6 +43,19 @@ VOD provides 2 preset task flows which include adaptive bitrate streaming, scree
         <td>Cover image generating</td>
         <td>TimepointScreenshot(10)</td>
     </tr>
+    <tr>
+        <td rowspan=3>WidevineFairPlayPreset</td>
+        <td>Adaptive bitrate streaming</td>
+        <td><li>Adpative-HLS-FairPlay(11)</li><li>Adpative-HLS-Widevine(13)</li></td>
+    </tr>
+    <tr>
+        <td>Screencapture</td>
+        <td>SpriteScreenshot(10)</td>
+    </tr>
+    <tr>
+        <td>Cover image generating</td>
+        <td>TimepointScreenshot(10)</td>
+    </tr>
 </table>
 
 

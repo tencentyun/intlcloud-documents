@@ -19,15 +19,10 @@
 		<td>中</td>
 	</tr>
 	<tr>
-	  <td rowspan="2">视频加密</td>
+	  <td rowspan="1">视频加密</td>
 	  <td>HLS 普通加密</td>
 		<td>基于 HLS 提供的 <a href=https://tools.ietf.org/html/draft-pantos-http-live-streaming-23?spm=a2c4g.11186623.2.31.409c6a6aYf9Rn8>AES encryption </a>方案，使用密钥对视频数据加密</td>
 		<td>较高</td>
-	</tr>
-	<tr>
-	  <td>商业级 DRM（暂未上线）</td>
-		<td>基于 Widevine、FairPlay、PlayReady 等商业级 DRM 方案的视频加解密</td>
-		<td>高</td>
 	</tr>
 </table>
 
@@ -63,4 +58,3 @@
 云点播的 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 功能，可以将视频转成多种分辨率并加密。具体实践方式，请您参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38294)。
 2. 终端如何播放加密后的视频？
 播放点播加密的视频，您需要在终端集成超级播放器 SDK。同时，您还需要搭建一个签名派发服务。具体实践方式，请您参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38294)。
-

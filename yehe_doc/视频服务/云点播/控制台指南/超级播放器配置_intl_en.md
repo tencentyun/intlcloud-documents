@@ -8,8 +8,9 @@ VOD provides the following two preset configurations for your convenience:
 
 <table class="table auto-table"><tbody><tr><th rowspan="2">Configuration Name</td><th colspan="3">Configuration Item</td></tr>
 <tr><th>Adaptive bitstream to be played back (template ID)</td><th>Image sprite to be used (template ID)</td><th>Substream naming rule (based on length of substream short side)</td></tr>
-<tr><td>default</td><td>10</td><td>10</td><td rowspan="2"><ul style="margin:0;"><li >240p: LD</li><li>480p: SD</li><li>720p: HD</li><li>1080p: FHD</li><li>1440p: 2K</li><li>2160p: 4K</li><li>Other: <code>xx</code>p (<code>xx</code> indicates the length of the video short side)</li></td></tr>
+<tr><td>default</td><td>10</td><td>10</td><td rowspan="3"><ul style="margin:0;"><li >240p: LD</li><li>480p: SD</li><li>720p: HD</li><li>1080p: FHD</li><li>1440p: 2K</li><li>2160p: 4K</li><li>Other: <code>xx</code>p (<code>xx</code> indicates the length of the video short side)</li></td></tr>
 <tr><td>basicDrmPreset</td><td>12</td><td>10</td>
+<tr><td>advanceDrmPreset</td><td><li>when client supports FairPlay, play 11</li><li>when client supports Widevine, play 13</li></td><td>10</td>
 </tbody></table>
 
 
@@ -26,5 +27,4 @@ Log in to the console, select **System Settings** > **[Superplayer Configuration
 6. Click **Confirm** to complete the creation.
 
 After the configuration is successfully created, it will be displayed in the superplayer configuration list. You can also preview the corresponding configuration as instructed in [Superplayer Preview](https://intl.cloud.tencent.com/document/product/266/33896).
-
 
