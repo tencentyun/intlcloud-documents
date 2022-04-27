@@ -12,7 +12,7 @@ The `du` command is used to list the statistics (total number and size) of files
 >- For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
-`ls` includes the following optional parameters:
+`du` includes the following optional parameters:
 
 | Parameter Format | Description | Example |
 | -------- | -------------- | -------------------- |
