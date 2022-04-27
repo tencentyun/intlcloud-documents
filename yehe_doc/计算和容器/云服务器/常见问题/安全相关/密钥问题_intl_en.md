@@ -1,11 +1,11 @@
 ### What is the difference between SSH key login and password login?
 An SSH key allows you to log in to a Linux server remotely. It uses the key generator to create a key pair (public and private). The public key is added to the server, and the client can use the private key to complete the authentication and login. Compared to password login, SSH key login is more secure and efficient.
 Currently, Linux instance supports both password and SSH key login, while Windows instance only supports password login. For related documentation, see:
-- [Logging into Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
-- [Logging into Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
+- [Logging in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
+- [Logging in to Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
 
 ### I cannot use the password to log in to a Linux instance that is associated with an SSH key.
-After the CVM is associated with an SSH key, password login is **disabled by default**. See [Logging into Linux Instance (SSH Key)](https://intl.cloud.tencent.com/document/product/213/32501). 
+After the CVM is associated with an SSH key, password login is **disabled by default**. See [Logging in to Linux Instance (SSH Key)](https://intl.cloud.tencent.com/document/product/213/32501). 
 
 ### Can I use SSH key together with the password login?
 When you [log in to Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501), password login is disabled by default to improve security.
