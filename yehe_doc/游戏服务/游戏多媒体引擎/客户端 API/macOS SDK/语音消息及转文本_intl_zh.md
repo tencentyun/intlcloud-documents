@@ -1,4 +1,4 @@
-为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 iOS 开发的接入技术文档。
+为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，本文为您介绍适用于 macOS 开发的接入流程。
 
 
 
@@ -259,48 +259,12 @@ _appId = _appIdText.text;
 
 ```
 
-### iOS 设备音频设置
-
-此接口用于设置后台播放声音，以及 GME 音频不受物理静音按键、锁屏的影响。例如拉起通知中心或者控制中心时候依然可以接收播放 GME 音频。此接口需要在进房前调用。
-同时，应用侧有如下两点需要注意：
-- 退后台时没有暂停音频引擎的采集和播放（即 PauseAudio）。
-- App 的 Info.plist 中，需要至少增加 key:Required background modes，string:App plays audio or streams audio/video using AirPlay。
-
-
-
-<dx-alert infotype="notice" title="">
- 建议开发者调用此接口设置音频。
-</dx-alert>
-
-
-#### 函数原型
-
-```
--(QAVResult)SetDefaultAudienceAudioCategory:(ITMG_AUDIO_CATEGORY)audioCategory;
-
-```
-
-| 类型                   | 参数代表 | 含义                   |
-| ---------------------- | :------: | ---------------------- |
-| ITMG_CATEGORY_AMBIENT  |    0     | 退后台没有声音（默认） |
-| ITMG_CATEGORY_PLAYBACK |    1     | 退后台有声音           |
-
-具体实现为修改 kAudioSessionProperty_AudioCategory，相关资料请参见 [Apple 官方文档](https://developer.apple.com/documentation/audiotoolbox/1618427-audio_session_categories?language=objc)。
-
-
-#### 示例代码  
-
-```
-[[ITMGContext GetInstance]SetDefaultAudienceAudioCategory:ITMG_CATEGORY_AMBIENT];
-
-```
-
 
 ## 语音消息及转文字
 
 语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。下图演示的是语音消息及转文本服务：
 
-
+<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
 
 
 
@@ -313,7 +277,7 @@ _appId = _appIdText.text;
 
 #### 语音消息及语音转文字流程图
 
-<img src="https://main.qcloudimg.com/raw/13ee122408ae95995bfce4fc0edb370f.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
 
 
 
@@ -376,10 +340,10 @@ _appId = _appIdText.text;
 
 | 参数   |   类型   | 含义                                                         |
 | ------ | :------: | ------------------------------------------------------------ |
-| appId  |   int    | 来自腾讯云控制台的 AppId 号码。                              |
+| appId  |   int    | 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 AppId 号码。                              |
 | roomId | NSString | 填 null                                                       |
 | openID | NSString | 用户标识。与 Init 时候的 openID 相同。                        |
-| key    | NSString | 来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。 |
+| key    | NSString | 来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。 |
 
 
 
@@ -638,7 +602,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 #### 示例代码  
 
 ```
-[[[ITMGContext GetInstance]GetPTT]PauseRecording];
+[[[ITMGContext GetInstance]GetPTT]PauseRecording;
 
 ```
 
@@ -656,7 +620,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 #### 示例代码  
 
 ```
-[[[ITMGContext GetInstance]GetPTT]ResumeRecording];
+[[[ITMGContext GetInstance]GetPTT]ResumeRecording;
 
 ```
 
@@ -1274,7 +1238,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 
 ### 设置打印日志路径
 
-用于设置打印日志路径。默认路径为： `Application/********-****-****-************/Documents`。需要在 Init 之前调用。
+。用于设置打印日志路径。默认路径为： /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents。。需要在 Init 之前调用。
 
 #### 函数原型
 
@@ -1316,5 +1280,4 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 | ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE                 |        result; file_path        | {"file_path":"","result":0}                       |
 | ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE          |      result; text;file_id       | {"file_id":"","text":"","result":0}               |
 | ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE | result; file_path; text;file_id | {"file_id":"","file_path":","text":"","result":0} |
-
 

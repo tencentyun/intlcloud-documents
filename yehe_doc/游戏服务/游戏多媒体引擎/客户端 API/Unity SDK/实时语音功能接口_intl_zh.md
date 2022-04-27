@@ -13,7 +13,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 Init 之后不会开始计费，调用 <dx-tag-link link="#EnterRoom" tag="接口：EnterRoom">进入实时语音房间</dx-tag-link> 接口成功进入实时语音房间后才会开始计费。
 </dx-alert>
 
-![](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
 
 ### 重要步骤
 
@@ -35,7 +35,7 @@ Init 之后不会开始计费，调用 <dx-tag-link link="#EnterRoom" tag="接�
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/zh/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
+- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
 
 ### C# 类
 
@@ -53,7 +53,7 @@ Init 之后不会开始计费，调用 <dx-tag-link link="#EnterRoom" tag="接�
 
 **在使用 GME 的任何接口之前，都需要先调用 Init 接口。**
 
-使用问题可参考 [一般性问题](https://intl.cloud.tencent.com/zh/document/product/607/30254)。
+使用问题可参考 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
 
 | 接口   |   接口含义   |
 | ------ | :----------: |
@@ -80,7 +80,7 @@ using TencentMobileGaming;
 ### [初始化 SDK](id:Init)
 
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
-- **参数 sdkAppID 获取。
+- **参数 sdkAppID 获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**。
 - **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
 
 <dx-alert infotype="notice" title="">
@@ -131,7 +131,7 @@ if (ret != QAVError.OK)
 ### [触发事件回调](id:Poll)
 
 通过在 update 里面周期的调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。
-详情请参见 [Demo](https://intl.cloud.tencent.com/zh/document/product/607/18521)  中的 EnginePollHelper 文件。
+详情请参见 [Demo](https://intl.cloud.tencent.com/document/product/607/18521)  中的 EnginePollHelper 文件。
 
 <dx-alert infotype="alarm" title="务必周期性调用 Poll 接口">
 务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
@@ -193,7 +193,7 @@ ITMGContext public abstract int Uninit()
 ## 实时语音房间相关接口
 
 初始化之后，SDK 调用进房后进去了房间，才可以进行实时语音通话。
-使用问题可参考 [实时语音相关问题](https://intl.cloud.tencent.com/zh/document/product/607/39524)。
+使用问题可参考 [实时语音相关问题](https://intl.cloud.tencent.com/document/product/607/39524)。
 
 | 接口           |       接口含义       |
 | -------------- | :------------------: |
@@ -214,7 +214,7 @@ ITMGContext public abstract int Uninit()
 
 ### 鉴权信息
 
-生成 AuthBuffer，用于相关功能的加密和鉴权，如正式发布请使用后台部署密钥，后台部署请参考 [鉴权密钥](https://intl.cloud.tencent.com/zh/document/product/607/12218)。    
+生成 AuthBuffer，用于相关功能的加密和鉴权，如正式发布请使用后台部署密钥，后台部署请参考 [鉴权密钥](https://intl.cloud.tencent.com/document/product/607/12218)。    
 
 #### 函数原型
 
@@ -271,10 +271,11 @@ ITMGContext.GetInstance().EnterRoom(strRoomId, ITMGRoomType.ITMG_ROOM_TYPE_FLUEN
 加入房间完成后会通过回调返回进房结果，监听进房结果事件后进行处理。如果回调为成功，即此时进房成功，开始进行**计费**。
 
 <dx-fold-block title="计费问题参考">
-[购买指南。](https://intl.cloud.tencent.com/zh/document/product/607/36276)
-[计费相关问题。](https://intl.cloud.tencent.com/zh/document/product/607/30255)
-[使用实时语音后，如果客户端掉线了，是否还会继续计费？](https://intl.cloud.tencent.com/zh/document/product/607/30255)
+[购买指南。](https://intl.cloud.tencent.com/document/product/607/36276)
+[计费相关问题。](https://intl.cloud.tencent.com/document/product/607/30255)
+[使用实时语音后，如果客户端掉线了，是否还会继续计费？](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
+
 
 #### 函数原型
 
@@ -528,7 +529,7 @@ ITMGContext.GetInstance().GetAudioCtrl ().RemoveAudioBlackList (openId);
 
 ## 实时语音音频接口
 
-![](https://main.qcloudimg.com/raw/c85fe68b4b26555adf8ad01c82711f5b.png)
+![Image](https://main.qcloudimg.com/raw/c85fe68b4b26555adf8ad01c82711f5b.png)
 
 ### 实时语音音频接入须知
 
@@ -571,7 +572,7 @@ ITMGContext.GetInstance().GetAudioCtrl ().RemoveAudioBlackList (openId);
 ### [开启或关闭麦克风](id:EnableMic)
 
 此接口用来开启关闭麦克风。加入房间默认不打开麦克风及扬声器。
-**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/zh/document/product/607/31504) 进行调用。**
+**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
 
 **EnableMic = EnableAudioCaptureDevice + EnableAudioSend**
 
@@ -623,7 +624,7 @@ micToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetMicState();
 #### 函数原型  
 
 ```
-ITMGAudioCtrl int EnableAudioPlayDevice(bool isEnabled)
+ITMGAudioCtrl int EnableAudioCaptureDevice(bool isEnabled)
 
 ```
 
@@ -787,7 +788,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 ### [开启或关闭扬声器](id:EnableSpeaker)
 
 此接口用于开启关闭扬声器。
-**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/zh/document/product/607/31504) 进行调用。**
+**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
 
 **EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv**
 

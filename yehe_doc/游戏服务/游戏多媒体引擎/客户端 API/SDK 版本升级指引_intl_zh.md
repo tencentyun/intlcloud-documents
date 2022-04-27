@@ -1,6 +1,31 @@
 
-本文主要介绍适用于开发的接口升级技术文档。方便您调试和接入腾讯云游戏多媒体引擎 API。
 
+本文主要介绍适用于开发的接口升级技术文档。方便您调试和接入腾讯云游戏多媒体引擎 API。
+## GME 2.x 升级 GME 2.9
+
+### SDK 更新动态
+- 动态库拆分。
+- 修改 Android 包名。
+
+GME SDK 更新后，除了 libgmesdk 外，新增以下库文件。
+
+### 库文件对应功能
+
+新版本的GME拆解了动态库，尽可能降低包体大小。可以根据自己的需求只引入相应的库文件。例如只需要变声功能，则只需引入 libgmesoundtouch。
+
+|库文件|对应功能|
+|----|-----|
+|libgmefdkaac|1. 用于进入标准、高清音质房间 2. 用于播放 acc 格式伴奏文件|
+|libgmefaad2|用于播放 mp4 格式伴奏文件|
+|libgmeogg|用于播放 ogg 格式伴奏文件|
+|libgmelamemp3|用于播放 mp3 格式伴奏文件|
+|libgmesoundtouch|用于变声、变调功能|
+
+### 升级须知
+
+iOS 端升级，需要参考 [iOS 工程升级指引](https://intl.cloud.tencent.com/document/product/607/46015) 进行相关配置。
+Android 端升级，需要修改包名，将 Tencent 改为 GME，混淆配置也需要修改，参考 [Android工程导出文档](https://intl.cloud.tencent.com/document/product/607/40862)。
+Unity 端升级，如果使用了标准音质或者高清音质，或者使用了伴奏，需要参考 [Unity使用高清音质文档](https://intl.cloud.tencent.com/document/product/607/46016) 进行解决。
 
 
 ## GME 2.2 升级 GME 2.3.5 
@@ -28,7 +53,7 @@ public abstract int EnterRoom();
 #### ExitRoom 
 退房操作由同步改为异步调用，参照 RoomExitComplete 回调函数处理，返回值为 AV_OK 时，表示异步投递成功。
 
->如果应用中有退房后立即进房的场景，在接口调用流程上，开发者无需要等待 ExitRoom 的回调 RoomExitComplete 通知，只需直接调用接口。
+>!如果应用中有退房后立即进房的场景，在接口调用流程上，开发者无需要等待 ExitRoom 的回调 RoomExitComplete 通知，只需直接调用接口。
 
 ```
 public abstract int ExitRoom();
@@ -38,7 +63,7 @@ public abstract int ExitRoom();
 - 如需对所有错误码统一处理，请使用 !AV_OK。 
 - 如需单独处理每一类错误，请关注接口返回的错误类型。
 
->错误码“1”没有明确含义，且2.3.5以后版本不再返回，故删除。
+>?错误码“1”没有明确含义，且2.3.5以后版本不再返回，故删除。
 
 
 ### 其他接口变更
@@ -123,3 +148,4 @@ SpeechToText
 
 #### SetAccompanyKey(int nKey)
 此接口用于设置实时语音伴奏升降调。
+

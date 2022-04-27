@@ -1,4 +1,5 @@
-为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 iOS 开发的接入技术文档。
+
+为方便 macOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 macOS 开发的接入技术文档。
 
 
 
@@ -31,9 +32,7 @@ Init 之后不会开始计费，调用 <dx-tag-link link="#EnterRoom" tag="接�
 -<dx-tag-link link="#UnInit" tag="接口：UnInit">反初始化 GME</dx-tag-link>
 </dx-steps>
 
-
 ### 重点提示
-
 - GME 使用前请对工程进行配置，否则 SDK 不生效。
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
@@ -57,59 +56,34 @@ Init 之后不会开始计费，调用 <dx-tag-link link="#EnterRoom" tag="接�
 
 使用问题请参见 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
 
-| 接口                            |       接口含义       |
-| ------------------------------- | :------------------: |
-| InitEngine                      |      初始化 GME      |
-| Poll                            |     触发事件回调     |
-| Pause                           |       系统暂停       |
-| Resume                          |       系统恢复       |
-| Uninit                          |     反初始化 GME     |
-| SetDefaultAudienceAudioCategory | 设置设备后台播放声音 |
 
 
-
-### 引用头文件
-
-
-```
-#import "GMESDK/TMGEngine.h"
-#import "GMESDK/QAVAuthBuffer.h"
-```
+|接口     | 接口含义   |
+| ------------- |:-------------:|
+|InitEngine    				       	|初始化 GME 	|
+|Poll    	|触发事件回调	|
+|Pause   	|系统暂停	|
+|Resume 	|系统恢复	|
+|Uninit    	|反初始化 GME 	|
 
 ### 获取单例
-
 在使用语音功能时，需要首先获取 ITMGContext 对象。
+####  函数原型 
 
 ```
-+ (ITMGContext*) GetInstance;
+ITMGContext ITMGDelegate <NSObject>
 ```
 
-#### 示例代码  
+
+
+####  示例代码  
 
 ```
-//TMGSampleViewController.m
 ITMGContext* _context = [ITMGContext GetInstance];
+_context.TMGDelegate =self;
 ```
 
-
-### 设置回调
-
-接口类采用 Delegate 方法用于向应用程序发送回调通知。将回调函数注册给 SDK，用于接收回调的信息。
-
-
-#### 示例代码  
-
-声明采用 ITMGDelegate。
-
-```
-@interface TMGDemoViewController ()<ITMGDelegate>{}
-ITMGDelegate < NSObject >
-
-//TMGSampleViewController.m
-ITMGContext* _context = [ITMGContext GetInstance];
-_context.TMGDelegate = [DispatchCenter getInstance];
-```
-
+### 消息传递
 
 在 OnEvent 中处理接口的回调信息，消息类型参考 ITMG_MAIN_EVENT_TYPE，消息内容为一个字典，解析出接口回调的内容。
 
@@ -120,35 +94,14 @@ _context.TMGDelegate = [DispatchCenter getInstance];
 ```
 
 
-
 ####  示例代码  
-
 ```
-//TMGRealTimeViewController.m
-TMGRealTimeViewController ()< ITMGDelegate >
-
-
-- (void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data {
-    NSString *log = [NSString stringWithFormat:@"OnEvent:%d,data:%@", (int)eventType, data];
-    [self showLog:log];
-    NSLog(@"====%@====", log);
-    switch (eventType) {
-        // Step 6/11 : Perform the enter room event
-        case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM: {
-            int result = ((NSNumber *)[data objectForKey:@"result"]).intValue;
-            NSString *error_info = [data objectForKey:@"error_info"];
-
-            [self showLog:[NSString stringWithFormat:@"OnEnterRoomComplete:%d msg:(%@)", result, error_info]];
-
-            if (result == 0) {
-                [self updateStatusEnterRoom:YES];
-            }
-        }
-        break;
+-(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data{
+    	NSLog(@"OnEvent:%lu,data:%@",(unsigned long)eventType,data);
+		switch (eventType) {
+			//对 eventType 进行判断
+			}
 	}
-}
-
-//需要参考 DispatchCenter.h、DispatchCenter.m
 ```
 
 
@@ -165,7 +118,6 @@ TMGRealTimeViewController ()< ITMGDelegate >
 - 初始化 SDK 后才可以进入实时语音房间。
 - 调用 Init 接口的线程必须于其他接口在同一线程。建议都在主线程调用接口。
 </dx-alert>
-
 
 
 
@@ -216,14 +168,12 @@ _appId = _appIdText.text;
 
 ```
 -(void)Poll;
-
 ```
 
 #### 示例代码
 
 ```
 [[ITMGContext GetInstance] Poll];
-
 ```
 
 ### 系统暂停
@@ -235,7 +185,6 @@ _appId = _appIdText.text;
 
 ```
 -(QAVResult)Pause;
-
 ```
 
 ### 系统恢复
@@ -259,59 +208,12 @@ _appId = _appIdText.text;
 
 ```
 -(int)Uninit;
-
 ```
-
 ####  示例代码
-
 ```
 [[ITMGContext GetInstance] Uninit];
-
 ```
 
-
-
-### iOS 设备音频设置
-
-此接口用于设置后台播放声音，以及 GME 音频不受物理静音按键、锁屏的影响。例如拉起通知中心或者控制中心时候依然可以接收播放 GME 音频。此接口需要在进房前调用。
-同时，应用侧有如下两点需要注意：
-- 退后台时没有暂停音频引擎的采集和播放（即 PauseAudio）。
-- App 的 Info.plist 中，需要至少增加 key:Required background modes，string:App plays audio or streams audio/video using AirPlay。
-
-![](https://qcloudimg.tencent-cloud.cn/raw/6d22d6345c15fae25591ecd273872c9d.png)
-
-<dx-alert infotype="notice" title="">
-建议开发者调用此接口设置音频。
-</dx-alert>
-
-
-
-#### 函数原型
-
-```
--(QAVResult)SetDefaultAudienceAudioCategory:(ITMG_AUDIO_CATEGORY)audioCategory;
-
-```
-
-| 类型                   | 参数代表 | 含义                   |
-| ---------------------- | :------: | ---------------------- |
-| ITMG_CATEGORY_AMBIENT  |    0     | 退后台没有声音（默认） |
-| ITMG_CATEGORY_PLAYBACK |    1     | 退后台有声音           |
-
-具体实现为修改 kAudioSessionProperty_AudioCategory，相关资料请参见 Apple 官方文档。
-
-
-#### 示例代码  
-
-```
-[[ITMGContext GetInstance]SetDefaultAudienceAudioCategory:ITMG_CATEGORY_AMBIENT];
-
-```
-
-
-## 实时语音
-
-实时语音，即一对一或一对多的实时语音通话功能。
 
 ### 实时语音流程图
 
@@ -610,12 +512,14 @@ a 用户在 A 房间中，b 用户在 B 房间中，a 用户可以通过跨房�
 
 ```
 - (IBAction)shareRoom:(id)sender {
-	if(_shareRoomSwitch.isOn){
-		[[[ITMGContext GetInstance]GetRoom]StartRoomSharing:_shareRoomID.text targetOpenID:_shareOpenID.text authBuffer:NULL];
-	}else{
-		[[[ITMGContext GetInstance]GetRoom]StopRoomSharing];
-	}
+    if(_shareRoomSwitch.isOn){
+        [[[ITMGContext GetInstance]GetRoom]StartRoomSharing:_shareRoomID.text targetOpenID:_shareOpenID.text authBuffer:NULL];
+    }else{
+        [[[ITMGContext GetInstance]GetRoom]StopRoomSharing];
+    }
 }
+}
+
 ```
 
 ### 成员进房、说话状态通知
@@ -1143,6 +1047,7 @@ BOOL IsAudioRecv = [[[ITMGContext GetInstance] GetAudioCtrl] IsAudioRecvEnabled]
 
 ```
 -(int)GetRecvStreamLevel:(NSString*) openID;
+
 ```
 
 | 参数   |   类型   | 含义                  |
@@ -1152,7 +1057,7 @@ BOOL IsAudioRecv = [[[ITMGContext GetInstance] GetAudioCtrl] IsAudioRecvEnabled]
 #### 示例代码  
 
 ```
-[[[ITMGContext GetInstance] GetAudioCtrl] GetRecvStreamLevel:(NSString*) openId];
+[[[ITMGContext GetInstance] GetAudioCtrl] GetRecvStreamLevel:(NSString*) openId
 ```
 
 ### 动态设置房间内某成员音量
@@ -1427,15 +1332,12 @@ Level 是实时音量，Volume 是扬声器的音量，最终声音音量 =  Lev
 
 ```
 [[ITMGContext GetInstance] SetLogLevel:TMG_LOG_LEVEL_INFO TMG_LOG_LEVEL_INFO];
-
 ```
 
 
 
 ### 设置打印日志路径
-
-用于设置打印日志路径。默认路径为： `Application/********-****-****-****-************/Documents`。需要在 Init 之前调用。
-
+用于设置打印日志路径。默认路径为： /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents。
 #### 函数原型
 
 ```
@@ -1483,7 +1385,7 @@ Level 是实时音量，Volume 是扬声器的音量，最终声音音量 =  Lev
 |ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT		|房间因为网络等原因断开消息	|
 |ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE		|房间类型变化事件		|
 |ITMG_MAIN_EVNET_TYPE_USER_UPDATE		|房间成员更新消息		|
-|ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY		|房间质量信息		|
+|ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY	|房间质量信息		|
 
 
 ### Data 列表
