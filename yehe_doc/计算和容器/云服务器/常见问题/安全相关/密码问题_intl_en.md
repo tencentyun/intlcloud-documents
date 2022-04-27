@@ -4,7 +4,7 @@
 <table>
 	<tr><th>Login Method</th><th>Description</th></tr>
 	<tr><td>Random Password</td><td>The initial password will be sent to you via email and <a href="https://console.cloud.tencent.com/message">Message Center</a> on the console.</td></tr>
-	<tr><td>SSH Key Pair</td><td><b>Disabled by default</b>You can log in to the CVM using your username and password, but the initial password will still be sent to you via email and <a href="https://console.cloud.tencent.com/message">Message Center</a>on the console.</td></tr>
+	<tr><td>SSH Key Pair</td><td><b>Disabled by default</b>You can log in to the CVM using your username and password, but the initial password will still be sent to you via email and <a href="https://console.cloud.tencent.com/message">Message Center</a> on the console.</td></tr>
 	<tr><td>Custom Password</td><td>The password you set is the initial password.</td></tr>
 </table>
 
