@@ -1,6 +1,6 @@
 ### How can I obtain the initial CVM password?
 
-- If you purchase the CVM through **Custom Configuration**(https://buy.cloud.tencent.com/cvm?tab=custom), you can obtain the initial password based on different login methods as follows:
+- If you purchase the CVM through [Custom Configuration](https://buy.cloud.tencent.com/cvm?tab=custom), you can obtain the initial password based on different login methods as follows:
 <table>
 	<tr><th>Login Method</th><th>Description</th></tr>
 	<tr><td>Random Password</td><td>The initial password will be sent to you via email and <a href="https://console.cloud.tencent.com/message">Message Center</a> on the console.</td></tr>
@@ -21,7 +21,7 @@ You can reset the password. For more information, see [Resetting Instance Passwo
 To reset the password of your CVM, see [Resetting Instance Password](https://intl.cloud.tencent.com/document/product/213/16566).
 
 ### What should I do if I fail to reset the password?
-For Windows CVM, see [Failed to Reset the CVM Password or the CVM Password Is Invalid] (https://intl.cloud.tencent.com/document/product/213/35720) to troubleshoot the issue.
+For Windows CVM, see [Failed to Reset the CVM Password or the CVM Password Is Invalid](https://intl.cloud.tencent.com/document/product/213/35720) to troubleshoot the issue.
 For Linux CVM, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### How do I reset CVM passwords in batches?
