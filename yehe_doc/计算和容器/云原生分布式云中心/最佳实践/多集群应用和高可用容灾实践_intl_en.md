@@ -17,7 +17,7 @@ QCBM is an online book mall Demo project developed by using microservice archite
 We deploy QCBM in multiple clusters to manage it in a unified way. The overall architecture is divided into three layers, including access layer, application layer and data layer. With the corresponding control and monitoring add-ons, we can manage QCBM in multiple clusters and implement multi-site active-active disaster recovery.
 The figure of overall architecture is as follows:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/2444624a1a282ae3f7518b9a7146389b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/88f9e155e4686d30c78e3ffced1f0702.png)
 
 **Access layer** implements traffic access and forwarding by using Tencent Cloud CLBs or LBs provided by other cloud vendors in conjunction with K8s ingress and service. Also, a nginx can be configured for traffic access and forwarding. In this sample, we use [Tencent Cloud CLBs](https://intl.cloud.tencent.com/zh/products/clb).
 
@@ -42,13 +42,13 @@ The figure of overall architecture is as follows:
 >! In actual production environment, clusters may be located in different regions, availability zones and even be operated by different cloud vendors. Therefor, users need to ensure that the infrastructures affected by failures are controllable.
 >
 
-### Registering the clusters in TDCC
+### Registering the clusters in Tencent Kubernetes Engine Distributed Cloud Center
 
-Register the clusters in TDCC. For more information, see [Registering a Cluster](https://intl.cloud.tencent.com/document/product/1144/45543).
-In this document, we register clusters named “guangzhou-01” and “guangzhou-02”. After the registration, we check and find that they are in normal status.
-![](https://qcloudimg.tencent-cloud.cn/raw/296db7b617e54bab67104d8070407db4.png)
+Register the clusters in Tencent Kubernetes Engine Distributed Cloud Center. For more information, see [Registering a Cluster](https://intl.cloud.tencent.com/document/product/1144/45543).
+In this document, we register clusters named “SPG-01” and “SPG-02”. After the registration, we check and find that they are in normal status.
+![](https://qcloudimg.tencent-cloud.cn/raw/c3594ee42f039857246ebd78bcd12a99.png)
 
->! You need to activate **Tencent Kubernetes Engine Distributed Cloud Center** service when you access the TDCC console for the first time. For more information, see [Getting Started on TDCC](https://intl.cloud.tencent.com/document/product/1144/45540).
+>! You need to activate **Tencent Kubernetes Engine Distributed Cloud Center** service when you access the Tencent Kubernetes Engine Distributed Cloud Center console for the first time. For more information, see [Getting Started on Tencent Kubernetes Engine Distributed Cloud Center](https://intl.cloud.tencent.com/document/product/1144/45540).
 
 
 ### Deploying multi-cluster applications
@@ -57,9 +57,9 @@ Create and manage multi-cluster applications. Deploy the QCBM application in mul
 
 #### Creating a distribution policy
 
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Distribution Policy** in the left sidebar.  
-2. Click **Create** to create a distribution policy "qcbm-subscription". Select the target cluster on the page that appears. Here, we select the cluster "guangzhou-01", as shown in the figure below.
-![](https://qcloudimg.tencent-cloud.cn/raw/a8cc7991c858b929310ba5a35db6b983.png)
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Distribution Policy** in the left sidebar.  
+2. Click **Create** to create a distribution policy "qcbm-subscription". Select the target cluster on the page that appears. Here, we select the cluster "SPG-01", as shown in the figure below.
+![](https://qcloudimg.tencent-cloud.cn/raw/a77ac7567ebfdb863854abe5cee7af0c.png)
 3. Click **Create** to complete the creation. You can see that the distribution policy “qcbm-subscription” is created successfully.
 
 
@@ -70,13 +70,13 @@ We create a namespace named “qcbm” with reference to [QCBM Project](https://
 
 <dx-tabs>
 ::: Method 1: Via the console
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Namespace** > **Create**. Create a namespace named “qcbm”, and select qcbm-subscription as the distribution policy.
-![](https://qcloudimg.tencent-cloud.cn/raw/5ee8ca99f2b74a35c91333846a1b3c11.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd9fdfb548fcbf586327fb293cff6e70.png)
 3. Click **Create namespace**. The namespace qcbm is created and distributed to the specified cluster.
 :::
 ::: Method 2: Using YAML
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Create via YAML**, and enter the following YAML configuration.
 3. Click **Complete** to complete the creation. Select the distribution policy “qcbm-subscription”.
 ```yaml
@@ -100,13 +100,13 @@ You can create a ConfigMap named “qcbm-env” with reference to [QCBM Project]
 
 <dx-tabs>
 ::: Method 1: Via the console
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Configuration management** > **ConfigMap** > **Create**, create a ConfigMap named “qcbm-env” and select qcbm-subscription as the distribution policy.
-![](https://qcloudimg.tencent-cloud.cn/raw/cd46521249c0ad2c6ce22f4d5653bfdb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd3d52935f9b2ff10aa5dc8f3beca399.png)
 3. Click **Create ConfigMap**. You can see that the ConfigMap is configured and distributed to the specified cluster.
 :::
 ::: Method 2: Using YAML
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Create via YAML**, and enter the following YAML configuration.
 3. Click **Complete** to complete the creation. Select the distribution policy “qcbm-subscription”.
 ```yaml
@@ -135,12 +135,12 @@ You can create a Secret named “qcbm-keys” with reference to [QCBM Project](h
 
 <dx-tabs>
 ::: Method 1: Via the console
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Configuration management** > **Secret** > **Create**, create a Secret named “qcbm-keys” and select qcbm-subscription as the distribution policy.
 3. Click **Create Secret**. You can see that the Secret is configured and distributed to the specified cluster.
 :::
 ::: Method 2: Using YAML
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Create via YAML**, and enter the following YAML configuration.
 3. Click **Complete** to complete the creation. Select the distribution policy “qcbm-subscription”.
 ```yaml
@@ -171,13 +171,13 @@ You can create workloads including user-service, store-service, qcbm-gateway, qc
 
 <dx-tabs>
 ::: Method 1: Via the console
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Workload** > **Deployment** > **Create** to create workloads named “user-service”, ”store-service”, “qcbm-gateway”, “qcbm-front”, “order-service” and “favorites-service”. Select qcbm-subscription as the distribution policy.
-![](https://qcloudimg.tencent-cloud.cn/raw/b5ed230757c92c88d56266edfbed7aff.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/78b4c98e8e4c97d6ed0f685612c63bc7.png)
 3. Click **Create workload**. You can see that the workload is configured and distributed to the specified cluster.
 :::
 ::: Method 2: Using YAML
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Create via YAML**, and enter the following YAML configuration.
 3. Click **Complete** to complete the creation. Select the distribution policy “qcbm-subscription”.
 ```yaml
@@ -296,12 +296,12 @@ You can create services named “qcbm-front” and “api-gateway” with refere
 
 <dx-tabs>
 ::: Method 1: Via the console
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Service and route** > **Service** > **Create** to create services named “qcbm-front” and “api-gateway”. Select qcbm-subscription as the distribution policy.
 3. Click **Create service**. You can see that the services are configured and distributed to the specified cluster.
 :::
 ::: Method 2: Using YAML
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Create via YAML**, and enter the following YAML configuration.
 3. Click **Complete** to complete the creation. Select the distribution policy “qcbm-subscription”.
 ```yaml
@@ -356,12 +356,12 @@ You can create an Ingress named “qcbm-ingress” with reference to [QCBM Proje
 
 <dx-tabs>
 ::: Method 1: Via the console
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Service and route** > **Ingress** > **Create** to create an Ingress named “qcbm-ingress”. Select qcbm-subscription as the distribution policy.
 3. Click **Create Ingress**. You can see that the Ingress is configured and distributed to the specified cluster.
 :::
 ::: Method 2: Using YAML
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Create via YAML**, and enter the following YAML configuration.
 3. Click **Complete** to complete the creation. Select the distribution policy “qcbm-subscription”.
 ```yaml
@@ -390,12 +390,12 @@ You can create an Ingress named “qcbm-ingress” with reference to [QCBM Proje
 
 ### Viewing deployment results
 
-At this time, you have completed the deployment of QCBM in the cluster “guangzhou-01”. You can view the deployment results by following the steps below:
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
+At this time, you have completed the deployment of QCBM in the cluster “SPG-01”. You can view the deployment results by following the steps below:
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.
 2. Click **Service and route** > **Ingress** to enter the Ingress page, where you can see the created qcbm-ingress. Click **Instance management** to view the instance information.
-![](https://qcloudimg.tencent-cloud.cn/raw/8e572beb7fbb3eb4cc100750afa1b040.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/69c5a09b67b1129f1f285b2590642257.png)
 3. You can access the the Q Cloud Book Mall with your VIP account via Ingress.
-![](https://qcloudimg.tencent-cloud.cn/raw/9f0bb4b7c641fab27cb1788cbd7bcec0.png)
+
 
 ### Multi-cluster scheduling management
 
@@ -403,18 +403,18 @@ At this time, you have completed the deployment of QCBM in the cluster “guangz
 
 The QCBM application needs to be deployed in another cluster according to business development and disaster recovery requirements. You can do this by editing the distribution policy.
 
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Distribution Policy** in the left sidebar.  
-2. Select the distribution policy “qcbm-subscription”. Click **Associate with cluster** and add the cluster "guangzhou-02".
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Distribution Policy** in the left sidebar.  
+2. Select the distribution policy “qcbm-subscription”. Click **Associate with cluster** and add the cluster "SPG-02".
 3. Click **OK**. The QCBM application will be distributed in the two clusters automatically. Click the policy name to enter the details page, where you can view the details and topology map.
-![](https://qcloudimg.tencent-cloud.cn/raw/6c54bfdff67ac421f345236e16312070.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/85ce7c051928447ff6f7555bc0a0e728.png)
 
 #### Localization configuration of instances in clusters
 
 The QCBM application has been deployed in two clusters. You can configure a localization policy to apply localization configuration to it in different clusters.
-For example, the **api-gateway** Service need to specify subnet-id for cluster "guangzhou-02". You can take the following steps to do this.
+For example, the **api-gateway** Service need to specify subnet-id for cluster "SPG-02". You can take the following steps to do this.
 
-1. Log in to the [TDCC console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.  
-2. Click **Service and route** > **Service**. Click the name “api-gateway”. On the page that appears, click **Instance management**. Select the instances in cluster "guangzhou-02". Create a localization policy.
+1. Log in to the [Tencent Kubernetes Engine Distributed Cloud Center console](https://console.cloud.tencent.com/tdcc). Click **Distributed Application Management** > **Application Management** in the left sidebar.  
+2. Click **Service and route** > **Service**. Click the name “api-gateway”. On the page that appears, click **Instance management**. Select the instances in cluster "SPG-02". Create a localization policy.
 ```yaml
   apiVersion: apps.clusternet.io/v1alpha1
   kind: Localization
@@ -440,28 +440,28 @@ For example, the **api-gateway** Service need to specify subnet-id for cluster "
               }
           ]
 ```
-3. Click **OK**. The configuration of the cluster "guangzhou-02" will be adjusted automatically according to the localization policy.
-4. Go to the Ingress page of cluster "guangzhou-02" and locate the qcbm-ingress address, through which you can access the page of Q Cloud Book Mall under the cluster "guangzhou-02".
-![](https://qcloudimg.tencent-cloud.cn/raw/9f0bb4b7c641fab27cb1788cbd7bcec0.png)
+3. Click **OK**. The configuration of the cluster "SPG-02" will be adjusted automatically according to the localization policy.
+4. Go to the Ingress page of cluster "SPG-02" and locate the qcbm-ingress address, through which you can access the page of Q Cloud Book Mall under the cluster "SPG-02".
+
 
 
 ### Verifying the multi-site active-active disaster recovery capability
 
-The QCBM application has been deployed in cluster "guangzhou-01" and cluster "guangzhou-02" based on the above steps. The Ingress address is provided to users to access Q Cloud Book Mall.
+The QCBM application has been deployed in cluster "SPG-01" and cluster "SPG-02" based on the above steps. The Ingress address is provided to users to access Q Cloud Book Mall.
 
 You can use an existing domain name or [apply for a new domain name](https://console.cloud.tencent.com/domain), and add Ingress address resolution to implement basic multi-site active-active disaster recovery capability. You can follow the steps below to verify the high availability of multiple clusters.
 
-1. Configure the local hosts domain name "tke-demo.cn". The Ingress address of cluster "guangzhou-01" is accessed by default. The page can be accessed normally.
+1. Configure the local hosts domain name "tke-demo.cn". The Ingress address of cluster "SPG-01" is accessed by default. The page can be accessed normally.
 2. Manually drain the nodes in this cluster or stop the application to simulate environment failure. An error occurs if you access "tke-demo.cn" at this time.
 3. Simulate DNS switch by modifying the hosts configurations.
 ```shell 
 # /etc/hosts
-#1.14.x.x   tke-demo.cn     # guangzhou-01 ingress address
-129.226.x.x   tke-demo.cn   # guangzhou-02 ingress address
+#1.14.x.x   tke-demo.cn     # SPG-01 ingress address
+129.226.x.x   tke-demo.cn   # SPG-02 ingress address
 ```
 4. Access "tke-demo.cn" in the browser. The page can be accessed normally.
 
-As a result, the QCBM application with multi-site active-active disaster recovery capability deployed through TDCC achieves multi-cluster high-availability disaster recovery and provides protection for disaster-level events. You can deploy the QCBM application to local clusters, clusters of third-party cloud vendors and edge clusters as per the same processes to implement cross-cloud service and disaster recovery.
+As a result, the QCBM application with multi-site active-active disaster recovery capability deployed through Tencent Kubernetes Engine Distributed Cloud Center achieves multi-cluster high-availability disaster recovery and provides protection for disaster-level events. You can deploy the QCBM application to local clusters, clusters of third-party cloud vendors and edge clusters as per the same processes to implement cross-cloud service and disaster recovery.
 
 
 
