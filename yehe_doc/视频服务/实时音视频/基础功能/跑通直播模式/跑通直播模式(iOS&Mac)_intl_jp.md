@@ -125,7 +125,7 @@ encParams.videoFps = 15;
 2. キャスター側は、[setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a8f2378a87c2e79fa3b978078e534ef4a)を呼び出すと、美顔スタイルを設定できます。
  - Smooth：スムース。明らかな効果が感じられます。インフルエンサーのスタイルに近づけます。
  - Nature：ナチュラル。美肌補正のアルゴリズムは顔の詳細な質感を維持し、より自然な感じになります。
- - Pitu ：[エンタープライズ版](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) のみサポートしています。
+ - Pitu ：[フル機能版](https://intl.cloud.tencent.com/document/product/647/34615) のみサポートしています。
 3. キャスター側は、[setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027)を呼び出すと、美肌補正レベルを設定できます。通常、5の設定でOKです。
 4. キャスター側は、[setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4)を呼び出すと、美白レベルを設定できます。通常、5の設定でOKです。
 5.iPhoneのカメラの色調はデフォルトだと黄色味がかっているため、[setFilter()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0)を呼び出して、キャスターに美白特殊効果を追加することをお勧めします。美白特殊効果に対応するフィルターのファイルのダウンロードアドレスは、次となります。[フィルターファイル](https://liteav.sdk.qcloud.com/doc/res/trtc/filter/filterPNG.zip)。
