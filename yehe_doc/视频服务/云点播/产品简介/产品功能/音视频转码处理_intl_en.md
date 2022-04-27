@@ -34,10 +34,10 @@ Supported transcoding formats:
    <tr>
       <td rowspan='5' style="text-align:center">Output format</td>
       <td rowspan='3' style="text-align:center">Container format</td>
-      <td>Video: FLV, MP4, HLS (M3U8 + TS), MXF</td>@
+      <td>Video: FLV, MP4, HLS (M3U8 + TS), MXF</td>
    </tr>
 	    <tr>
-      <td>Audio: MP3, MP4, Ogg, FLAC, M4A</td>.
+      <td>Audio: MP3, MP4, Ogg, FLAC, M4A</td>
    </tr>
 	 	    <tr>
       <td>Image: GIF, WebP</td>
