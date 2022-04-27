@@ -29,7 +29,7 @@ TRTCの各バージョンのSDKで容量の増加は異なります。詳しく�
 Android 版 SDKの容量は主にsoファイルから来るものです。インストールパッケージの容量増加を1M以内に圧縮したいのであれば、インストールしてからsoファイルをダウンロードする方式を検討することができます。
 [](id:step1)
  
- 1.  [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android) フォルダ下で、`LiteAVSDK_TRTC_x.x.xxx.zip` に似た名前がついた圧縮パッケージを見つけることができます。それを解凍して指定アーキテクチャのsoファイルを見つけます。
+ 1.  [Github](https://github.com/LiteAVSDK/TRTC_Android/tree/main/SDK) フォルダ下で、`LiteAVSDK_TRTC_x.x.xxx.zip` に似た名前がついた圧縮パッケージを見つけることができます。それを解凍して指定アーキテクチャのsoファイルを見つけます。
  2. [手順1](#step1)でダウンロードしたsoファイルをアップロードします。お客様のサーバー（またはTencent Cloudの [COS](https://intl.cloud.tencent.com/product/cos) Cloud Object Storageのサーバー）にアップロードし、ダウンロードURLを記録します(例：`http://xxx.com/so_files.zip`）。
  3. ユーザーがSDKの関連機能を立ち上げる前（例：ビデオ再生の開始前）に、先に loadingの動画を使って、「関連機能モジュールのローディング中」であることをユーザーに喚起します。
     ユーザーが待っている間に、Appは  `http://xxx.com/so_files.zip`に移動してsoファイルをダウンロードし、かつアプリケーションディレクトリの下に保存します（例：アプリケーションのルートディレクトリの下のfiles フォルダ）。このプロセスがキャリアの DNSハイジャックの影響を受けないように、ファイルダウンロード完了後に、soファイルの完全性を検証し、キャリアによるzip压缩パックの改ざんを防止してください。
