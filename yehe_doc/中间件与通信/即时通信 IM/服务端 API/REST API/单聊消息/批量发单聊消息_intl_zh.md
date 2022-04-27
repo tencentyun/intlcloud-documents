@@ -15,8 +15,6 @@
 ```
 https://xxxxxx/v4/openim/batchsendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
@@ -24,13 +22,13 @@ https://xxxxxx/v4/openim/batchsendmsg?sdkappid=88888888&identifier=admin&usersig
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` </li>|
 | v4/openim/batchsendmsg  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -114,14 +112,14 @@ From_Accout 为管理员指定的发送方，接收方看到发送者不是管�
 | SyncOtherMachine | Integer | 选填 | 1：把消息同步到 From_Account 在线终端和漫游上<br/>2：消息不同步至 From_Account；若不填写默认情况下会将消息存 From_Account 漫游 |
 | From_Account | String |选填 |管理员指定消息发送方帐号（若需设置 From_Account 信息，则该参数取值不能为空）  |
 | To_Account | Array |必填| 消息接收方用户 UserID  |
-| MsgSeq | Integer |选填| 消息序列号，后台会根据该字段去重及进行同秒内消息的排序，详细规则请看本接口的功能说明。若不填该字段，则由后台填入随机数。  |
-| MsgRandom | Integer |必填| 消息随机数，后台用于同一秒内的消息去重。请确保该字段填的是随机数  |
+| MsgSeq | Integer |选填|消息序列号（32位无符号整数），后台会根据该字段去重及进行同秒内消息的排序，详细规则请看本接口的功能说明。若不填该字段，则由后台填入随机数  |
+| MsgRandom | Integer |必填| 消息随机数（32位无符号整数），后台用于同一秒内的消息去重。请确保该字段填的是随机  |
 | MsgBody | Array |必填|  TIM 消息，请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)  |
 | MsgLifeTime | Integer |选填| 消息离线保存时长（单位：秒），最长为7天（604800秒）。若设置该字段为0，则消息只发在线用户，不保存离线及漫游  |
 | MsgType | String |必填| TIM 消息对象类型，目前支持的消息对象包括：<ul style="margin:0;"><li >TIMTextElem（文本消息）<li >TIMLocationElem（位置消息）<li >TIMFaceElem（表情消息）<li >TIMCustomElem（自定义消息）<li >TIMSoundElem（语音消息）<li >TIMImageElem（图像消息）<li >TIMFileElem（文件消息）<li >TIMVideoFileElem（视频消息）|
 | MsgContent | Object |必填| MsgContent 为 TIM 消息对象，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 | CloudCustomData | String |选填| 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
-| SendMsgControl | Array |选填| 消息发送控制选项，是一个 String 数组，只对本次请求有效。"NoUnread"表示该条消息不计入未读数。"NoLastMsg"表示该条消息不更新会话列表。示例："SendMsgControl": ["NoUnread","NoLastMsg"]  |
+| SendMsgControl | Array |选填| 消息发送控制选项，是一个 String 数组，只对本次请求有效。"NoUnread"表示该条消息不计入未读数。"NoLastMsg"表示该条消息不更新会话列表。"WithMuteNotifications"表示该条消息的接收方对发送方设置的免打扰选项生效（默认不生效）。示例："SendMsgControl": ["NoUnread","NoLastMsg","WithMuteNotifications"]  |
 | OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
 

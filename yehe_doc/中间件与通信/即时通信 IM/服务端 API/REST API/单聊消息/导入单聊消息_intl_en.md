@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 - This API imports one-to-one chat history to IM.
 - It imports your messages from other instant messaging platforms to Tencent Cloud IM.
 - It updates a conversation.
@@ -10,23 +10,20 @@
 ## API Calling Description
 ### Sample request URL
 ```
-https://xxxxxx/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://console.tim.qq.com/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
 
 ### Request parameters
 The following table only describes the modified parameters when this API is called. For more information on other parameters, please see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>China: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
 | v4/openim/importmsg | Request API |
 | sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
-| contenttype | Request format. The value is always `json`. |
+| contenttype   |Request format, which should always be `json`.|
 
 ### Maximum call frequency
 
@@ -83,8 +80,8 @@ The following table only describes the modified parameters when this API is call
 | SyncFromOldSystem | Integer | Yes | Valid values: `1`, `2`<br/>`1`: imports real-time messages and marks them as unread.<br/>`2`: imports historical messages and marks them as read. |
 | From_Account | String | Yes | `UserID` of the sender, which is used to specify the message sender |
 | To_Account | String | Yes | `UserID` of the recipient |
-| MsgSeq | Integer | No | Sequence number of the message. The backend will use this field to deduplicate messages and sort messages in the same second. For details, see **Feature Description**. If this field is left empty, the backend will enter a random number. |
-| MsgRandom | Integer | Yes | A number randomly generated and assigned to the message. The backend will use this field to deduplicate messages. For details, see **Feature Description**. |
+| MsgSeq | Integer | No | Sequence number (32-bit unsigned integer) of the message. The backend will use this field to deduplicate messages and sort messages in the same second. For details, see **Feature Description**. If this field is left empty, the backend will enter a random number. |
+| MsgRandom | Integer | Yes | Random number (32-bit unsigned integer) of the message. It is used by the backend for message deduplication within a second. Make sure a random number is entered. |
 | MsgTimeStamp | Integer | Yes | UNIX timestamp in seconds. It marks the time when the message was sent and is used to deduplicate messages. For details, see **Feature Description**. |
 | MsgBody | Array | Yes | Message body. For details on formats, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). (Note: a message can contain multiple message elements, in which case `MsgBody` is an array.) |
 | MsgType | String | Yes | TIM message object type. Valid values: <ul style="margin:0;"><li >`TIMTextElem` (text message) <li >`TIMLocationElem` (location message) <li >`TIMFaceElem` (emoji message) <li >`TIMCustomElem` (custom message) <li >`TIMSoundElem` (voice message) <li >`TIMImageElem` (image message) <li >`TIMFileElem` (file message) <li >`TIMVideoFileElem` (video message) |
@@ -93,7 +90,7 @@ The following table only describes the modified parameters when this API is call
 
 
 
-### Sample responses
+### Sample response
 
 ```
 {
@@ -109,7 +106,7 @@ The following table only describes the modified parameters when this API is call
 |---------|---------|---------|
 | ActionStatus | String | Request result. `OK`: successful; `FAIL`: failed |
 | ErrorCode | Integer | Error code. `0`: successful; other values: failed |
-| ErrorInfo | String | Error information |
+| ErrorInfo| String | Error information |
 
 ## Error Codes
 
@@ -143,4 +140,3 @@ Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-
 
 ## References
 Importing Group Messages ([v4/group_open_http_svc/import_group_msg](https://intl.cloud.tencent.com/document/product/1047/34968))
-
