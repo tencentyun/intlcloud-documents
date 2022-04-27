@@ -4,7 +4,7 @@
 
 
 ## 预置配置
-为方便您的使用，云点播提供了以下两个预置配置。
+为方便您的使用，云点播提供了以下3个预置配置。
 
 <table class="table auto-table"><tbody><tr><th rowspan="2">配置名</td><th colspan="3">配置项</td></tr>
 <tr><th>播放哪一个自适应码流（模板 ID）</td><th>使用哪一个雪碧图（模板 ID）</td><th>子流命名规则（根据子流短边长度命名）</td></tr>
