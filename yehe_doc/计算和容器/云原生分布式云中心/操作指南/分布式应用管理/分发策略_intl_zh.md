@@ -7,7 +7,7 @@
 ### 创建分发策略
  1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理**>**分发策略** 页面。
  2. 单击**新建**，弹出新建分发策略页面：
- ![](https://main.qcloudimg.com/raw/550acf308c12bc18f65889a465d255b3.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/3d9fc88c75ef7b32f84b366b64dfdfa4.png)
  - **分发集群**： 添加该策略想要分发的目标集群，或配置LabelSelector标签选择器选择合适的集群。（两种方式二选一）
  - **关联资源**：添加该策略所关联的K8s应用资源，关联的K8s资源将通过分发策略发布至指定的集群上。 如何创建 K8s应用资源，请参见 [应用管理](https://intl.cloud.tencent.com/document/product/1144/45546)。
  3. 单击**创建分发策略**按钮完成创建，进入列表页面可以查看分发策略已创建成功。
@@ -23,11 +23,11 @@
 	 - **创建时间**：该分发策略的创建时间。
 	 - **操作**：该分发策略支持的操作，包括关联集群、关联资源、删除等。
 3. 单击分发策略名称，进入该策略的**详情**页面：
- ![](https://qcloudimg.tencent-cloud.cn/raw/532d637979215fc15c9ee0b70fec40ca.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/1e205348e5e206e4a4139cf9b90a2f85.png)
  - **拓扑图**： 图形化展示该策略所关联的应用资源、目标集群、差异化策略及其他相关的状态信息
  - **基本信息**：展示分发策略的详细信息
 4. 单击**实例列表**标签页，查看该策略在目标集群上运行的实例：
- ![](https://qcloudimg.tencent-cloud.cn/raw/4fa34712173e524023dfc177ed17e7cb.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/2b86d638249c6809adaa22b3ea2dbc59.png)
 	 - **实例名称**：该K8s资源分发到目标集群上的名称，点击该名称跳转至该应用的详情页面。
 	 - **集群**：实例所在目标集群的名称，点击集群名称将跳转至该集群管理页面。
 	 - **命名空间**：该实例所在命名空间。
@@ -38,14 +38,14 @@
 
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **分发策略** 页面。
 2. 单击 **关联集群** ，在弹出的对话框中配置策略所关联的目标集群，单击**确认**保存，支持多选和空选。
-![](https://qcloudimg.tencent-cloud.cn/raw/afb53ebc0967270b4097481db4fb3e94.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/91c6c69d66a3967c6e1391a1f279de9b.png)
 3. 单击 **关联资源** ，在弹出的对话框中配置策略所关联的 K8s 资源，单击**确认**保存，支持多选和空选。
-![](https://qcloudimg.tencent-cloud.cn/raw/584c3526761e90f2a22b13d6885936b2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a5c5aa0332eaaec2230953ed3a30e6cb.png)
 
 ### 配置差异化策略
 
 1. 如需单独为某个集群下的 K8s 对象进行配置，单击进入**详情** > **实例列表**标签页，找到想要修改的 K8s 对象实例，单击**新建差异化策略**配置策略，更多差异化策略信息参见 [差异化策略](https://intl.cloud.tencent.com/document/product/1144/45548)。
- ![](https://qcloudimg.tencent-cloud.cn/raw/4fa34712173e524023dfc177ed17e7cb.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/fd9c19c18e565e1a31142e2fa0156cf0.png)
 2. 如需修改或取消差异化配置，单击进入**详情** > **实例列表**标签页，在指定分发实例上单击**更新差异化策略**或**删除差异化策略**，执行指定的动作。
 
 ### 删除分发策略
