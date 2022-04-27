@@ -1,5 +1,5 @@
 ## 시스템 아키텍처
-<img src="https://main.qcloudimg.com/raw/146d801f4900734b8faa0435b34ea6cc.png" width="650">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/be78076deba4b5996bc6d2f63a892749.png" width="650">
 
 ## 제품 기능
 ### 사용자 정의 도메인 이름
