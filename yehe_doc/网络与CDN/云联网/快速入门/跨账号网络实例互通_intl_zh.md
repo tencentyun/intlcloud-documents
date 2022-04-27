@@ -28,14 +28,14 @@
 
 ## 步骤四：检查路由表
 若所关联的网络实例网段有冲突，则会产生失效路由，查看操作如下：
-1. 在云联网列表中，单击要查看路由的云联网 ID，进入详情页。
+1. 登录[ 云联网控制台](https://console.cloud.tencent.com/vpc/ccn)，单击要查看路由的云联网 ID，进入详情页。
 2. 单击**路由表**，查看该云联网路由表。
 3. 检查是否存在状态为失效的路由策略。
 ![](https://main.qcloudimg.com/raw/6e8f71bbd8addfa7df60ed6061df9b38.png)
 4. 路由冲突原则，请参见 [路由限制](https://intl.cloud.tencent.com/document/product/1003/30052)，如需启用冲突路由，请参见 [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)。
 
 ## 步骤五：设置跨地域带宽限制（可选）
-1. 在云联网列表中，单击需要设置带宽的云联网 ID，进入详情页。
+1. 登录[ 云联网控制台](https://console.cloud.tencent.com/vpc/ccn)，单击需要设置带宽的云联网 ID，进入详情页。
 2. 在云联网实例详情页，单击**带宽管理**标签页。
 3. （可选）单击**变更**，在“变更限速方式”页签，按需选择配置跨地域带宽上限的方式。
 ![](https://main.qcloudimg.com/raw/bc93b28f5c0fb5fee6ce51e1b73dab1c.png)
