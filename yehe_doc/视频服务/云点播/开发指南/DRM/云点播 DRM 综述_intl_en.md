@@ -1,6 +1,6 @@
 Copyright infringement has grown alongside the rapid development of the online video industry, making copyright protection a major concern of content owners.
 
-# Commercial DRM Solutions
+## Commercial DRM Solutions
 
 Commercial DRM solutions use playback licenses to offer high-level content protection. Before a device can play a DRM-encrypted video, it must obtain a license (which includes information such as the decryption key, validity period of the key, and device information) to decrypt the video.
 
