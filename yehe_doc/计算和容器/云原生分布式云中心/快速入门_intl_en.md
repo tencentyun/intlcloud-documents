@@ -97,4 +97,4 @@ spec:
 4. Click **Complete** at the bottom of the page. On the instance list page, you can see that the localization policy is created.
 ![](https://qcloudimg.tencent-cloud.cn/raw/86835dd456c1bcf2876007a1f3e27b1a.png)
 5. Click the cluster name to enter the cluster management page. You can see that the image tag of my-nginx has been upgraded to nginx:1.14.2. This means the localization configuration of the cluster has taken effect, and the canary upgrade of my-nginx has been implemented in this cluster.
-![](https://qcloudimg.tencent-cloud.cn/raw/a1312be97501302949e7ea0fd7fc722d.png)
+
