@@ -6,16 +6,16 @@ This document guides you through how to create a Tencent Cloud Virtual Machine (
 
 Before creating a CVM instance, you need to complete the following steps:
 - [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
-- To create a CVM instance whose network type is virtual private cloud (VPC), you need to [create a VPC](https://intl.cloud.tencent.com/document/product/215/31805) in the target region and [create a subnet](https://intl.cloud.tencent.com/document/product/215/31806) in the target availability zone under the VPC.
-- If you do not use the default project, you need to [create a project](https://intl.cloud.tencent.com/zh/document/product/378/34726).
-- If you do not use the default security group, you need to [create a security group](https://intl.cloud.tencent.com/document/product/213/34271) in the target region and add a security group rule that meets your business requirements.
-- To bind a SSH key pair when creating a Linux instance, you need to [create a SSH key](https://intl.cloud.tencent.com/document/product/213/16691) for the target project.
-- To create a CVM instance with a custom image, you need to [create a custom image](https://intl.cloud.tencent.com/document/product/213/4942) or [import an image](https://intl.cloud.tencent.com/document/product/213/4945).
+- [Create a VPC](https://intl.cloud.tencent.com/document/product/215/31805) in the target region and [create a subnet](https://intl.cloud.tencent.com/document/product/215/31806) in the target availability zone under the VPC.
+- (Optional) [Create a custom project](https://intl.cloud.tencent.com/zh/document/product/378/34726).
+- (Optional) [Create a security group](https://intl.cloud.tencent.com/document/product/213/34271) that meets your business requirements.
+- (Optional) [Create an SSH key](https://intl.cloud.tencent.com/document/product/213/16691) for Linux instance.
+- (Optional) [Create a custom image](https://intl.cloud.tencent.com/document/product/213/4942) or [import an image](https://intl.cloud.tencent.com/document/product/213/4945).
 
 ## Directions
 
 1. Log in to [Tencent Cloud](https://intl.cloud.tencent.com/zh/). Choose **Products** -> **Compute** -> **[Cloud Virtual Machine](https://intl.cloud.tencent.com/zh/products/cvm)**. Click **Get Started** to access the CVM purchase page.
- - **[Custom Configuration](https://buy.intl.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=4&zoneId=200004&instanceType=SA2.MEDIUM4&vpcId=vpc-mzg9lleo&subnetId=subnet-nr4uyak7&platform=TencentOS&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=5&ltCreateMode=createVersion)**: it is suitable for use in specific scenarios and makes it easier for you to purchase CVM instances for your specific needs.
+ - **[Custom Configuration](https://buy.intl.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=4&zoneId=200004&instanceType=SA2.MEDIUM4&vpcId=vpc-mzg9lleo&subnetId=subnet-nr4uyak7&platform=TencentOS&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=5&ltCreateMode=createVersion)**: It is suitable for use in specific scenarios and makes it easier for you to purchase CVM instances for your specific needs.
 2. Configure the following information as prompted by the page:
 <table>
 <tr><th style="width: 20%">Category</th><th style="width: 12%">Required/Optional</th><th>Configuration Description</th></tr>
