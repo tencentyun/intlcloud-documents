@@ -41,7 +41,7 @@ sudo apt-get install python
 ```
 
 ### CentOS
-Use the built-in Yellowdog Update, Modified (YUM) to install Python:
+Use the built-in Yellowdog Updater, Modified (YUM) to install Python:
 ```shell
 sudo yum install -y python
 ```
