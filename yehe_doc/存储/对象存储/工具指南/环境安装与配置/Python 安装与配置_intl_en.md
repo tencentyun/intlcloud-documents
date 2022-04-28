@@ -3,7 +3,7 @@ This document describes how to install Python for different operating systems.
 ## Using an Installation Package
 
 ### 1. Download a package
-Go to [Python](https://www.python.org/downloads/) to download an installation package according to your OS.
+Go to the [Python website](https://www.python.org/downloads/) to download an installation package according to your OS.
 
 >! Python has dropped support for Python 2 since January 1, 2020. Therefore, you are advised to install Python 3.
 
@@ -23,13 +23,13 @@ If the Python version is displayed, Python has been installed successfully.
 >? If you use Windows, you may need to restart your computer after the installation.
 
 ### 4. Configure environment variables
-In Windows, if “not recognized as an internal or external command” is reported in Terminal after the command above is run, right-click the **Computer** icon, click **Properties** > **Advanced system settings** > **Environment Variables**, and in the **System variables** area, click **New** to add the Python installation path, as shown in the following figure:
+In Windows, if “not recognized as an internal or external command” is reported in Terminal after the command above is run, right-click the **Computer** icon, click **Properties** > **Advanced system settings** > **Environment Variables**, and in the **System variables** area, click **New** to add the Python installation path:
 
 
 ## Using a Package Manager
 
 ### macOS
-Install [HomeBrew](https://brew.sh/index_zh-cn) first and use it to install Python:
+Install [HomeBrew](https://brew.sh/index_zh-cn) and use it to install Python:
 ```shell
 brew install python
 ```
