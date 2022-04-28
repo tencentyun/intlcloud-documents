@@ -5,7 +5,7 @@ DDoS 高防 IP （境外企业版）支持对于业务 IP，基于 IP+端口的�
 您需要成功 [购买 DDoS 高防 IP （境外企业版）](https://intl.cloud.tencent.com/document/product/297/41154) ，并设置防护对象。
 
 ## 操作步骤
-1.  登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台 ，在左侧导航中，单击 **DDOS 高防 IP**>**防护配置** > **DDoS 防护**。
+1.  登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) 控制台 ，在左侧导航中，单击 **DDOS 高防 IP**>**防护配置** > **DDoS 防护**。
 2.  在左边的列表选中高防 IP 的 ID，如“xxx.xx.xx.xx bgpip-000003n2”。
 ![](https://main.qcloudimg.com/raw/9c8bb19be4726a46a2261b35e048c8cb.png)
 3. 在 IP 端口限速卡片中，单击**设置**。
