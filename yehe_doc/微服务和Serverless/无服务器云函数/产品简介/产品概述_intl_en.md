@@ -26,26 +26,31 @@ You can customize the timing of running a function, such as when a file is uploa
 
 ## SCF Features
 
-Serverless helps you get rid of the tedious development and configuration work, so that you can only care about the writing of business code logic, without any infrastructure construction, management, and OPS overheads. This service model lowers the threshold of R&D and improves the efficiency of business construction; therefore, it has gained the recognition of high numbers of enterprises and developers.
+  Serverless helps you get rid of the tedious development and configuration work, so that you can only care about the writing of business code logic, without any infrastructure construction, management, and OPS overheads. This service model lowers the threshold of R&D and improves the efficiency of business construction; therefore, it has gained the recognition of high numbers of enterprises and developers.
+
+#### Various development tools and languages supported for smooth development
+
+  The Tencent Cloud Serverless team works in many ways to provide convenient tools or capabilities that can meet the needs in a wide variety of development scenarios; for example:
 
 
+  - You can use [Serverless Framework](https://intl.cloud.tencent.com/product/sac) to create, debug, and package projects in your local development environment and then quickly deploy them online.
+  - With the aid of visual operations based on the VS Code plugin and IDE, online/offline management of functions and code writing and debugging can be performed at one single place. The VS Code IDE and plugin also enables local management, development, and debugging as well as online release of functions.
+  - [Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) is supported; therefore, you can develop and debug projects in real time in the console, which delivers the same experience as local development and debugging and makes it easier for you to view and adjust code.
+  - SCF supports Python, Node.js, Go, PHP, Java, and [Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129), so you can select a custom runtime environment as needed.
+
+#### Multiple deployment methods for various environments
 
 
-### Pay-as-You-Go billing accurate to the millisecond level
-SCF supports billing actually used resources at a time granularity of 1 ms, which can significantly reduce your costs compared to the time granularity of 100 ms.
+  SCF supports deployment through the console, command line, SDK/API, web IDE, and image.
 
+#### Diversified triggers to support more business scenarios
 
-### Multiple programming languages and custom runtime supported
-SCF supports Python, Node.js, Go, PHP, Java, and [Custom Runtime](https://intl.cloud.tencent.com/document/product/583/38129), so you can select a custom runtime as needed.
+  Triggering methods of SCF include API, SDK, and events in other Tencent Cloud services such as COS and API Gateway, which enrich the use cases.
 
+#### Automated and flexible execution for better invocations
 
+  SCF can automatically scale according to the call volume, which is imperceptible to users, perfectly fits the invocation curve, and saves resources and costs to the greatest extent.
 
+#### **Pay-as-You-Go billing accurate to the millisecond level**
 
-### Various development tools supported for smooth development
-
-The Tencent Cloud Serverless team works in many ways to provide convenient tools or capabilities that can meet the needs in a wide variety of development scenarios; for example:
-
-- You can use [Serverless Framework](https://intl.cloud.tencent.com/product/sls) to create, debug, and package projects in your local development environment and then quickly deploy them online.
-- With the aid of visual operations based on the VS Code plugin and IDE, online/offline management of functions and code writing and debugging can be performed at one single place. The VS Code IDE and plugin also enables local management, development, and debugging as well as online release of functions.
-- Web IDE is supported; therefore, you can develop and debug projects in real time in the console, which delivers the same experience as local development and debugging and makes it easier for you to view and adjust code.
-- For code that has already been hosted in git, you can connect your team to the git. Through the interconnection with your git and the feature of online installation of dependent packages, a simpler code submission and deployment method is realized, and the operation process is simplified.
+  SCF supports billing actually used resources at a time granularity of 1 ms, which can significantly reduce your costs compared to the time granularity of 100 ms.
