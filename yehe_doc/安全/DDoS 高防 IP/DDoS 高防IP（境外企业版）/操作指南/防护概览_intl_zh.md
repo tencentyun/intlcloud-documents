@@ -1,8 +1,9 @@
 ## 防护概览（总览）
-全部业务安全状态展示 ，您可以在 DDoS 防护控制台的防护概览页查看全量实时、业务指标和 DDoS 攻击事件的防护情况，包括基础防护业务、DDoS 高防包防护业务、DDoS 高防 IP 防护业务，便于您分析与溯源。
+用户将业务接入 DDoS 高防 IP（境外企业版） 服务，且将业务流量切换至 DDoS 高防 IP（境外企业版） 后，可在控制台查看业务流量情况和 DDoS 攻击防护情况。支持抓包下载攻击数据，便于用户分析与溯源。
+
 
 ### 查看攻击态势
-1.	登录 [DDoS 防护（新版）控制台](https://console.cloud.tencent.com/ddos/dashboard/overview)，在左侧导航栏中，单击**防护概览** > **防护总览**，进入防护总览页面。
+1.	登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台，在左侧导航栏中，单击 **DDoS 高防 IP** > **防护概览**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d43fa663afebd05e6807dde663b90258.png)
 2.	在攻击态势模块中，可查看当前业务是否存在风险，和最近一次攻击的时间的攻击类型。当有攻击存在时，单击**升级防护**可进入购买页。
 
@@ -18,7 +19,7 @@
 
 
 ### 查看防御态势
-1.	登录 [DDoS 防护（新版）控制台](https://console.cloud.tencent.com/ddos/dashboard/overview)，在左侧导航栏中，单击**防护概览** > **防护总览**，进入防护总览页面。
+1.	登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台，在左侧导航栏中，单击 **DDoS 高防 IP** > **防护概览**。
 2. 在防御态势模块的统计图中，展示业务 IP 状态数据，可以快速了解业务 IP 健康状态。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7a88a800c181831dc4580e3dc923102f.png)
    **字段说明：**
@@ -31,12 +32,12 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/7cce1b85e81dab27cae83e03cfabeb13.png)
 
 ### 查看高防 IP 实例统计
-1.	登录 [DDoS 防护（新版）控制台](https://console.cloud.tencent.com/ddos/dashboard/overview)，在左侧导航栏中，单击**防护概览** > **防护总览**，进入防护总览页面。
+1.	登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台，在左侧导航栏中，单击 **DDoS 高防 IP** > **防护概览**。
 2. 在高防实例统计模块中，展示高防 IP 资源的安全状态，可以快速全面了解风险业务分部。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5a08a7115062914ecccf1674762a541a.png)
 
 ### 查看近期安全事件
-1.	登录 [DDoS 防护（新版）控制台](https://console.cloud.tencent.com/ddos/dashboard/overview)，在左侧导航栏中，单击**防护概览** > **防护总览**，进入防护总览页面。
+1.	登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台，在左侧导航栏中，单击 **DDoS 高防 IP** > **防护概览**。
 2. 在近期安全事件模块中，展示最近全量的攻击事件。单击**查看详情**，进入事件详情页面，供用户进行 DDoS 攻击分析及溯源支撑。
 ![](https://qcloudimg.tencent-cloud.cn/raw/61528176e7f8297f3532901bca36c761.png)
 3. 在事件详情页面的攻击信息模块，查看该时间范围内的 IP 遭受的攻击情况，包括被攻击 IP、状态、攻击类型（采样数据）、攻击带宽峰值和攻击包速率峰值、开始时间结束时间基础信息。
@@ -58,7 +59,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/5e70e40264c9511b6357bce58ee1cc14.png)
 7. 在事件详情页面的攻击源信息模块，可查看该攻击时间段内攻击详情的随机采样数据，尽可能详细的展示出此次攻击的细节，主要包括攻击源 IP、地域、累计攻击流量、累计攻击包量。
 >?此处数据为该攻击时间段内攻击采样数据，非全量数据。
-
+>
 ![](https://qcloudimg.tencent-cloud.cn/raw/146b6107c5ceac3a3d1afccd66798c01.png)
 
 
@@ -68,9 +69,9 @@
 
 
 ### 查看 DDoS 攻击防护情况
-1. 登录[ DDoS 防护（新版）控制台](https://console.cloud.tencent.com/ddos/dashboard/native)，在左侧导航栏中，单击**防护概览** > **DDoS 高防 IP**。
+1.	登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台。在左侧导航栏中，单击 **DDoS 高防 IP** > **防护概览**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/be67d057c2ece542e53b3730a5cf9945.png)
-1. 在 DDoS 攻击页签，设置查询时间范围，选择目的地域、线路和高防 IP 实例，查看是否存在攻击。默认展示全量资产的DDoS攻击数据。
+1. 在 DDoS 攻击页签，设置查询时间范围，单击选择**全部线路** > **Anycast**，查看是否存在攻击。默认展示全量资产的DDoS攻击数据。
 >?支持查询最多180天以内的攻击流量信息及 DDoS 攻击事件。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/f35b004d7113c0874a569d0dcc7cdbdd.png)
@@ -94,7 +95,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/ade8f4dcbcdd71e35af7116b2a7b8941.png)
 
 ### 查看 CC 攻击防护情况
-1. 单击 **CC 攻击**防护页签，设置查询时间范围，选择目的地域和高防包实例，查看是否存在 CC 攻击。
+1. 单击 **CC 攻击**防护页签，设置查询时间范围，单击选择**全部线路** > **Anycast**，查看是否存在 CC 攻击。
 ![](https://qcloudimg.tencent-cloud.cn/raw/0a53677659c3787cdc8664799aab047a.png)
 2. 用户可以选择**今天**，查看所选择的高防包的请求数趋势和请求速率的相关数据。通过观察总请求速率、攻击请求速率、总请求数量、攻击请求次数相关数据判定业务受影响程度。
 ![](https://qcloudimg.tencent-cloud.cn/raw/1a4919ceb93c145acc3a4a80ff4c5dda.png)
@@ -105,3 +106,4 @@
     - 攻击请求次数：统计当前，高防 IP 接收到的攻击请求的次数。
 3. 在近期安全事件模块中，如果存在 CC 攻击，系统会记录下攻击的开始时间、结束时间、被攻击域名、被攻击 URI	、总请求峰值、攻击请求峰值和攻击源等信息。单击**查看详情**，展示该事件的具体详情。支持查看攻击信息、攻击趋势、CC 详细记录。
 ![](https://qcloudimg.tencent-cloud.cn/raw/68b909b0b2d13eff52d6f1f1c7733bdc.png)
+
