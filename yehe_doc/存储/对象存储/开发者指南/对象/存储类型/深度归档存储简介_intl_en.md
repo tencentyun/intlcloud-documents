@@ -34,7 +34,7 @@ DEEP ARCHIVE is subject to the following limits. When using it, you need to pay 
 >
 
 - **Restoration QPS limit**: 100 requests/sec.
-- **Available regions**: DEEP ARCHIVE is currently supported only in the Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, and Tokyo regions and will be available in more regions.
+- **Available regions**: DEEP ARCHIVE is currently supported only in the Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo,and Singapore regions and will be available in more regions.
 - **Use limit**: Currently, DEEP ARCHIVE is not supported for multi-AZ buckets.
 - **Operation limit**: Objects cannot be appended to other objects in the DEEP ARCHIVE storage class.
 - **Restoration request limit**: Only one restoration request can be executed at a time for an object, and multiple repeated requests will be merged and processed according to the fastest restoration mode. If the restoration mode of the (N+1)th request is faster than that of the Nth request, the (N+1)th request will be executed as a new request; otherwise, it will fail.
