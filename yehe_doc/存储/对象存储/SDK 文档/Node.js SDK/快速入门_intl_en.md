@@ -5,8 +5,8 @@
 - Download the COS XML SDK resources for Node.js [here](https://github.com/tencentyun/cos-nodejs-sdk-v5).
 - Fast SDK download: [XML Node.js SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-nodejs-sdk-v5/latest/cos-nodejs-sdk-v5.zip).
 - Download the demo [here](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo).
-- For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/NodeJS).
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/CHANGELOG.md).
+- For the complete sample code, see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/NodeJS).
+- For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/CHANGELOG.md).
 
 >? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
 >
@@ -39,7 +39,7 @@ Replace `SecretId`, `SecretKey`, `bucket`, and `region` with the actual values i
 
 [//]: # (.cssg-snippet-global-init)
 ```js
-// Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to check and manage the `SecretId` and `SecretKey` of your project.
+// Log in to https://console.cloud.tencent.com/cam/capi to check and manage the SecretId and SecretKey of your project.
 var COS = require('cos-nodejs-sdk-v5');
 var cos = new COS({
     SecretId: 'SECRETID',
@@ -82,7 +82,7 @@ var cos = new COS({
 
 Below are some examples of common APIs. For more detailed initialization methods, please see the [Demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/demo/demo.js).
 
-### Configuration Item
+### Configuration items
 
 #### Constructor parameters
 
@@ -170,9 +170,9 @@ An object whose attributes are listed as follows:
 
 There are three ways to get the authentication credentials for your instance by passing in different parameters during instantiation:
 
-1. During instantiation, pass in your `SecretId` and `SecretKey`, and each time a signature is required, it will be internally calculated by the instance.
-2. During instantiation, pass in the `getAuthorization` callback function, and each time a signature is required, it will be calculated and returned to the instance through this callback.
-3. During instantiation, pass in the `getSTS` callback, and each time a temporary key is required, it will be returned to the instance for signature calculation within the instance during each request.
+1. During instantiation, pass in your `SecretId` and `SecretKey`. Each time a signature is required, it will be internally calculated by the instance.
+2. During instantiation, pass in the `getAuthorization` callback function. Each time a signature is required, it will be calculated and returned to the instance through this callback.
+3. During instantiation, pass in the `getSTS` callback. Each time a temporary key is required, it will be returned to the instance for signature calculation within the instance during each request.
 
 ### Tips
 
@@ -206,7 +206,7 @@ function myDelete() {
 }
 ```
 
-Below are some common APIs. For more detailed initialization methods, please see the [Demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo/demo.js).
+Below are some common APIs. For more detailed initialization methods, see the [demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo/demo.js).
 
 ### Creating a bucket
 
