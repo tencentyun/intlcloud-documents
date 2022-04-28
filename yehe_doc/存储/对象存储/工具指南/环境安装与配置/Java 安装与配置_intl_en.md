@@ -4,7 +4,7 @@ Java Development Kit (JDK) is the SDK for Java. This document takes JDK 1.7 and 
 
 #### 1. Downloading a JDK
 
-Go to Oracle to download the desired JDK version.
+Go to the Oracle website to download the desired JDK version.
 
 #### 2. Installation
 
@@ -28,7 +28,7 @@ Test whether the configuration is successful: click **Start** (or shortcut: Win+
 If openjdk is installed by using yum or apt-get command, the class library may be incomplete, thus leading to errors when you run relevant tools after the installation. Therefore, we recommend that you manually decompress and install JDK. Specific steps are as follows:
 
 #### 1. Download a JDK
-Go to Oracle to download the desired JDK version to install.
+Go to the Oracle website to download the desired JDK version to install.
 >!The following uses `jdk-8u151-linux-x64.tar.gz` as an example. If you are using other versions, ensure that the extension is `.tar.gz`.
 
 #### 2. Create a directory 
