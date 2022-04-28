@@ -41,7 +41,7 @@ After the user's Free Tier expires, the monthly fee is as follows:
 
 #### Background 
 
-Company B (new user) manages a hospital that needs to back up and store a large amount of medical records and imaging materials. They store the files in the **ARCHIVE** storage class in the **Chongqing region** with the CDN acceleration service disabled.
+Company B (new user) manages a hospital that needs to back up and store a large volume of medical records and imaging materials. They store the files in the **ARCHIVE** storage class in the **Chongqing region** with the CDN acceleration service disabled.
 
 #### Demand
 
