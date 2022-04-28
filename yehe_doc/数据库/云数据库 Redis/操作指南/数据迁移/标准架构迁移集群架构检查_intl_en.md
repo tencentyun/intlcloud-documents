@@ -7,7 +7,7 @@ TencentDB for Redis Memory Edition (Cluster Architecture) adopts the cluster arc
 The most challenging problem in migrating data from Standard Edition to Memory Edition (Cluster Architecture) is the command compatibility with usage specifications of Memory Edition (Cluster Architecture). You need to pay attention to the following usage specification issues:
 
 ### Multikey operation
-TencentDB for Redis Memory Edition (Cluster Architecture) uses the hash algorithm to distribute keys to 16,000 slots. For more information on the principle, please see [Redis Cluster Specification](https://redis.io/topics/cluster-spec).
+TencentDB for Redis Memory Edition (Cluster Architecture) uses the hash algorithm to distribute keys to 16,384 slots. For more information on the principle, please see [Redis Cluster Specification](https://redis.io/topics/cluster-spec).
 - Redis Community Cluster Edition: it does not support any cross-slot multikey access commands.
 - TencentDB for Redis Memory Edition (Cluster Architecture): it supports cross-slot multikey access of the `MGET`, `MSET`, and `DEL` commands. This mainly works by using Tencent Cloud's proprietary proxy to implement aggregated command computing among multiple nodes.
 - Hash tag: in your business, keys that need to engage in multikey computing can be aggregated into the same slot through a hash tag. For more information on how to use hash tags, please see [Redis Cluster Specification](https://redis.io/topics/cluster-spec).
