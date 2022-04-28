@@ -4,13 +4,13 @@ The COS server will generate an ID (`RequestId`) for every request sent to COS. 
 
 ## Through the Console
 
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
-2. Click the name of the desired bucket.
-3. Press F12 on the keyboard to open the developer tool of your browser.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
+2. Click the name of the target bucket.
+3. Press F12 on the keyboard to open the developer tools of your browser.
 4. Select the **Network** tab.
 ![](https://main.qcloudimg.com/raw/0a201a890f54bfabc4267e9c86c89338.png)
-5. Click the **Download** button on the right of the desired object. Then, in the developer tools, enter the filename in the **Filter** text box, select the file, and click **Headers**. You can then find `RequestId` from **Response Headers**.
-![](https://main.qcloudimg.com/raw/9da8afe99d7e6c7c5f0b77f3c1c48861.png)
+5. Click **Download** on the right of the target object. Then, in the developer tools, enter the filename in the **Filter** text box, select the file, and click **Headers**. You can then find `RequestId` from **Response Headers**.
+![](https://main.qcloudimg.com/raw/f5e5453f257fbd86a38d2c8508c968bd.png)
 
 ## From an Unsuccessful Access
 
@@ -18,8 +18,8 @@ When you fail to access an object, you can obtain the **RequestId** from the XML
 ![](https://main.qcloudimg.com/raw/e0d4149121fb0022640465ff690810e1.png)
 
 You can also obtain it as follows:
-1. Press F12 on the keyboard to open the developer tool of your browser.
-2. Select the **Network** tab and choose **All**. You can then find `RequestId` from **Response Headers**.
+1. Press F12 on the keyboard to open the developer tools of your browser.
+2. Select the **Network** tab and select **All**. You can then find `RequestId` from **Response Headers**.
 ![](https://main.qcloudimg.com/raw/ac6902c6ac615a9ec2978a5999a49073.png)
 
 ## Using SDKs
@@ -75,7 +75,7 @@ func main() {
    c := cos.NewClient(b, &http.Client{
        Transport: &cos.AuthorizationTransport{
            SecretID:  "SECRETID",
-           SecretKey:    "SECRETKEY",
+           SecretKey: "SECRETKEY",
        },
    })
    // An object key is the unique identifier of an object in a bucket
@@ -101,8 +101,8 @@ func main() {
 String secretId = "SECRETID";
 String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
-// 2. Set the bucket region. For abbreviations of COS regions, please visit https://cloud.tencent.com/document/product/436/6224.
-// `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, please see the source code or the FAQs about the SDK for Java.
+// 2. Set the bucket region. For abbreviations of COS regions, visit https://cloud.tencent.com/document/product/436/6224.
+// `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, see the source code or the FAQs about the SDK for Java.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // The HTTPS protocol is recommended.
@@ -119,7 +119,45 @@ String requestId = putObjectResult.getRequestId();
 System.out.println(requestId);
 ```
 
- 
+
+### Using the Python SDK
+
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
+try:
+    response = client.put_object(
+        Bucket='examplebucket-1250000000',
+        Key='exampleobject',
+        Body=b'abcdefg'
+    )
+
+    # The request is successful. You can view `request-id` in the response
+    if 'x-cos-request-id' in response:  
+        print(response['x-cos-request-id'])
+
+# The request failed. You can view `request-id` in the exception information
+except CosServiceError as e:
+    print(e.get_request_id())
+```
 
 ### Using the JavaScript SDK
 
@@ -200,13 +238,13 @@ $region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
    array(
        'region' => $region,
-       'schema' => 'https', // Protocol header, which is http by default
+       'schema' => 'https', // Protocol, which is http by default
        'credentials'=> array(
-           'secretId'  => $secretId,
+           'secretId'  => $secretId ,
            'secretKey' => $secretKey)));
 # Upload a file
 ## putObject (an API that can upload files of up to 5 GB)
-### Upload strings in memory
+### Uploading strings in memory
 try {
    $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
    $key = "test.php"; // Object key, which is the unique identifier of an object in a bucket
@@ -233,7 +271,7 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
 // Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 put.bucket = @"examplebucket-1250000000";
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
 // Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type
 put.body =  url;
@@ -253,9 +291,53 @@ put.body =  url;
 [put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult *
                                         multipleUploadInitResult,
                                         QCloudCOSXMLUploadObjectResumeData resumeData) {
-    // This block will be called back after the Initiate Multipart Upload operation is complete so you can get resumeData and the uploadId.
+    // This block will be called back after the Initiate Multipart Upload operation is complete. You can get resumeData and the uploadId here.
     NSString* uploadId = multipleUploadInitResult.uploadId;
 }];
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
+
+
+### Using SDK for Android
+
+```
+// 1. Initialize TransferService. You should use the same TransferService for the same configuration
+TransferConfig transferConfig = new TransferConfig.Builder()
+        .build();
+CosXmlServiceConfig cosXmlServiceConfig = new CosXmlServiceConfig.Builder()
+        .setRegion(COS_REGION)
+        .builder();
+CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);
+TransferService transferService = new TransferService(cosXmlService, transferConfig);
+
+// 2. Initialize PutObjectRequest
+String bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
+String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
+String srcPath = "examplefilepath"; // Absolute path to the local file
+PutObjectRequest putObjectRequest = new PutObjectRequest(bucket,
+        cosPath, srcPath);
+
+// 3. Call the upload method to upload the file
+final COSUploadTask uploadTask = transferService.upload(putObjectRequest);
+uploadTask.setCosXmlResultListener(new CosXmlResultListener() {
+    @Override
+    public void onSuccess(CosXmlRequest request, CosXmlResult result) {
+        // Upload succeeded. You can get `requestId` here.
+        String requestId = result.getHeader("x-cos-request-id");
+    }
+
+    @Override
+    public void onFail(CosXmlRequest request,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        // `requestId` exists only for `CosXmlServiceException`
+        if (serviceException != null) {
+            String requestId = serviceException.getRequestId();
+        }
+    }
+});
+```
+
+
+
 
