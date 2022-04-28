@@ -6,7 +6,7 @@ One Anti-DDoS Advanced instance supports 60 forwarding rules by default and can 
 
 ## Limit on Blocklist/Allowlist
 - For DDoS protection, up to 100 IP addresses can be added to the IP blocklist and allowlist in total.
-- HTTP/HTTPS IP blocklist/allowlist and URL allowlist currently cannot be configured for CC protection.
+- URLs are not supported.
 
 ## Limit on Available Regions
 Currently, Anti-DDoS Advanced is available both in and outside Mainland China. Specifically, it is supported in the following regions outside Mainland China: Hong Kong (China), Taiwan (China), Singapore, Seoul, Tokyo, Virginia, Silicon Valley, and Frankfurt.
