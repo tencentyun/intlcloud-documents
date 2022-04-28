@@ -4,7 +4,7 @@ A **region** is an area where a Tencent Cloud managed data center is deployed. C
 
 For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate the object upload and download speeds.
 
-**Default endpoint** refers to the COS bucket’s default domain, which is automatically generated when the bucket is generated. Buckets residing in different regions have different default domains. To view the default domain, you can go to the [COS console](https://console.cloud.tencent.com/cos5), click the name of the desired bucket, click **Overview**, and find the **Domain Information** area.
+**Default endpoint** refers to the COS bucket’s default domain, which is automatically generated when the bucket is created. Buckets residing in different regions have different default domains. To view the default domain, you can go to the [COS console](https://console.cloud.tencent.com/cos5), click the name of the desired bucket, click **Overview**, and find the **Domain Information** area.
 
 
 >?
