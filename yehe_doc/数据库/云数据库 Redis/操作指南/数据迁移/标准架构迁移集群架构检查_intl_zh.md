@@ -6,8 +6,8 @@
 
 标准版迁移至内存版（集群架构）面临的最大问题为命令是否兼容内存版（集群架构）的使用规范，内存版（集群架构）使用规范主要注意事项如下：
 
-### 多 KEY 操作
-Redis 内存版（集群架构）通过 HASH 算法将 Key 分布至16000个 SLOT，原理可参考 [Redis Cluster 文档](https://redis.io/topics/cluster-spec)。
+### 多 Key 操作
+Redis 内存版（集群架构）通过 HASH 算法将 Key 分布至16384个 SLOT，原理可参考 [Redis Cluster 文档](https://redis.io/topics/cluster-spec)。
 - 社区 Redis Cluster：不支持任何跨 SLOT 的多 Key 访问命令。
 - 腾讯云数据库 Redis 内存版（集群架构）：支持 MGET、MSET、DEL 命令的跨 SLOT 多 Key 访问，主要原理是通过腾讯云自研 Proxy 实现多个节点的命令聚合运算。
 - Hash Tag：业务可以通过 Hash Tag 的方式，将需要进行多 Key 运算的 Key 聚合至相同 SLOT，Hash Tag 的使用方式请参考 [Redis Cluster 文档](https://redis.io/topics/cluster-spec)。
