@@ -329,4 +329,4 @@ Bytes Written=40
 ```
 
 ## FAQ
-If you have any questions about Hadoop-COS, please see [Hadoop Tool](https://intl.cloud.tencent.com/document/product/436/35706).
+If you have any questions about Hadoop-COS, see [Hadoop Tool](https://intl.cloud.tencent.com/document/product/436/35706).
