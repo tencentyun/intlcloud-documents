@@ -9,6 +9,7 @@ Relevant documentation and SDK source code can be obtained as follows:
 |JavaScript  | [SDK for Node.js documentation](https://intl.cloud.tencent.com/document/product/382/40607)   | [SDK for Node.js](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)|
 |C# | [SDK for C# documentation](https://intl.cloud.tencent.com/document/product/382/40608)    | [SDK for C#](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)|
 |Go | [SDK for Go documentation](https://intl.cloud.tencent.com/document/product/382/40609)  | [SDK for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)|
+|C++ | [SDK for C++ documentation](https://intl.cloud.tencent.com/document/product/382/46269)  | [C++ SDK](https://github.com/TencentCloud/tencentcloud-sdk-cpp)|
 
 >!
 >- All the SMS SDKs in this document are on the latest 3.0 version, and new SMS features will be updated here. You are strongly recommended to use SDK 3.0 and the supportive API 3.0.
