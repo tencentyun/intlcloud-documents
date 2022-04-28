@@ -3,7 +3,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
 - [User Guide for Desktop Version](https://intl.cloud.tencent.com/document/product/436/32565)
 - [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566)
 
-## Download URL
+## Download Address
 
 <table>
    <tr>
