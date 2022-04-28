@@ -5,9 +5,9 @@
 - Source code of COS XML JS SDK download: [XML JavaScript SDK](https://github.com/tencentyun/cos-js-sdk-v5).
 - SDK download: [XML JavaScript SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-js-sdk-v5/latest/cos-js-sdk-v5.zip).
 - Demo download: [JS Sample](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo).
-- For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript).
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [JavaScript SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40775).
+- For the complete sample code, see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript).
+- For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md).
+- For SDK FAQs, see [JavaScript SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40775).
 
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
@@ -18,11 +18,11 @@
 1. The SDK for JavaScript requires the browser to support basic HTML5 features (IE 10 and higher) for AJAX file uploading and MD5 checksum calculation.
 2. Log in to the [COS console](https://console.cloud.tencent.com/cos5), [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get the SecretId and SecretKey of your project.
-4. Configure CORS rule. Put in `*` for `AllowHeader`. For `ExposeHeaders`, put in `ETag`, `Content-Length`, and the other header fields that JS needs to read as shown below. For more information, please see [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/13318).
+4. Configure CORS rule. Put in `*` for `AllowHeader`. For `ExposeHeaders`, put in `ETag`, `Content-Length`, and the other header fields that JS needs to read as shown below. For more information, see [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/13318).
 
 
 >? 
-> - For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+> - For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 > - If you are using cross platform framework such as uni-app, and encounter problems when packaging the app (such as iOS or Android app), use the iOS SDK or Android SDK.
 > 
 
@@ -50,7 +50,7 @@ var COS = require('cos-js-sdk-v5');
 
 ### Getting a temporary key
 
-As placing a permanent key on the frontend may cause security risks, we recommend you use temporary keys during formal deployment. The implementation process is as follows: the frontend first requests the server, and then the server uses the permanent key to call the STS service to apply for a temporary key (for more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048)) and returns it to the frontend.
+As placing a permanent key on the frontend may cause security risks, we recommend you use temporary keys during formal deployment. The implementation process is as follows: the frontend first requests the server, and then the server uses the permanent key to call the STS service to apply for a temporary key (for more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048)) and returns it to the frontend.
 
 >!If the site has a login state, login state verification should be added to the temporary key getting API.
 
@@ -111,7 +111,7 @@ var cos = new COS({
 </script>
 ```
 
-### Configuration Item
+### Configuration items
 
 #### Sample code
 
