@@ -15,7 +15,7 @@ The table below shows COS [billable items](https://intl.cloud.tencent.com/docume
 
 > !
 >
->- The free tier is not applicable to any STANDARD_IA or ARCHIVE billable items including storage usage, requests, and traffic, and any other STANDARD billable items than **STANDARD storage usage**.
+>- The Free Tier is not applicable to any STANDARD_IA or ARCHIVE billable items including storage usage, requests, and traffic, and any other STANDARD billable items than **STANDARD storage usage**.
 >- If your service is suspended due to violations or overdue payment, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is resumed.
 
 <table>
@@ -89,7 +89,7 @@ John Smith, a new user, activated the COS service on March 10, 2019. He uploaded
 
 - He was granted free STANDARD storage usage of 50 GB per month for 6 months.
 - On March 21, 2019, the public network downstream traffic was billed for 10 GB of data.
-- On April 1, 2019, the STANDARD storage usage was billed, and 10 GB of storage usage in excess of the free tier was used every day from March 16 to March 31 (160 GB in total for 16 days). This value was divided by 31, and the result of 5.16 GB was billed as the STANDARD storage usage.
+- On April 1, 2019, the STANDARD storage usage was billed, and 10 GB of storage usage in excess of the Free Tier was used every day from March 16 to March 31 (160 GB in total for 16 days). This value was divided by 31, and the result of 5.16 GB was billed as the STANDARD storage usage.
 - At the beginning of April 2019, the data uploading and downloading requests in March were billed.
 
 In April 2019, John didn't perform any other operations, and the 60 GB of data was retained in COS, so:
