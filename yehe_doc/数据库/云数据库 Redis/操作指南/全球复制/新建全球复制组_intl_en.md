@@ -11,7 +11,7 @@ TencentDB for Redis allows you to create a replication group in the console and 
 
 ## Version Description
 - Global replication supports only 4.0 Standard Architecture, 4.0 Cluster Architecture, 5.0 Standard Architecture, and 5.0 Cluster Architecture instances.
-- The current version of the global replication feature supports only instances deployed in the same AZ. Multi-AZ instances will be supported in the future.
+- The current version of the global replication feature supports  instances deployed in the same AZ and multi-AZ.
 
 ## Billing Description
 - If instances in a replication group are in the same region, no additional fees will be incurred.
@@ -19,8 +19,8 @@ TencentDB for Redis allows you to create a replication group in the console and 
 
 ## Creating Global Replication Group
 ### Prerequisites
-- You have [created a TencentDB for Redis instance](https://intl.cloud.tencent.com/document/product/239/37712), and the instance is in **Running** status.
-- The data in the master TencentDB for Redis instance in the replication group has been cleared. 
+- You have [created a TencentDB for Redis instance](https://intl.cloud.tencent.com/document/product/239/37712).
+-  The instance is in **Running** status. 
 
 ### Directions
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis).
@@ -47,7 +47,7 @@ TencentDB for Redis allows you to create a replication group in the console and 
 <td>Guangzhou</td></tr>
 <tr>
 <td>Select Master Instance</td> 
-<td>Select the master instance in the replication group, which must have no data. The version, architecture, and memory capacity of the selected instance will be displayed, and you need to confirm whether the specification meets your requirements.</td>
+<td>Select the master instance in the replication group. The version, architecture, and memory capacity of the selected instance will be displayed, and you need to confirm whether the specification meets your requirements.</td>
 <td>Yes</td>
 <td>test-XXX</td></tr>
 </tbody></table>
@@ -62,8 +62,6 @@ Click <img src="https://qcloudimg.tencent-cloud.cn/raw/3a815073e7ccf4206decf7b52
 After creating a replication group, you can add instances in the same or different regions and assign master and read-only instance roles to the added instances as needed to implement data sync.
 
 ### Notes
-- Currently, you cannot add multi-AZ instances to a replication group. This will be supported in the future, so stay tuned.
-- You can add up to **four** instances to a replication group. Such instances must have no data; otherwise, they cannot be added. Adding instances with existing data will be supported in the future.
 - An instance newly added to a replication group will sync data from the master instance node, and it cannot be manipulated or accessed before the full data is synced.
 - Once an instance is added to a replication group, its kernel edition will be upgraded, and one or multiple momentary disconnections will occur after the upgrade.
 
