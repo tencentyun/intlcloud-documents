@@ -10,7 +10,7 @@ The COS server will generate an ID (`RequestId`) for every request sent to COS. 
 4. Select the **Network** tab.
 ![](https://main.qcloudimg.com/raw/0a201a890f54bfabc4267e9c86c89338.png)
 5. Click **Download** on the right of the target object. Then, in the developer tools, enter the filename in the **Filter** text box, select the file, and click **Headers**. You can then find `RequestId` from **Response Headers**.
-![](https://main.qcloudimg.com/raw/f5e5453f257fbd86a38d2c8508c968bd.png)
+
 
 ## From an Unsuccessful Access
 
