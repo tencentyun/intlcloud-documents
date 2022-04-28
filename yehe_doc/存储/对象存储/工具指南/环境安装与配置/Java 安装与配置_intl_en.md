@@ -8,7 +8,7 @@ Go to Oracle to download the desired JDK version.
 
 #### 2. Installation
 
-Install the JDK as instructed. During the installation, the installation paths can be specified (defaults to C drive). For instance, you can specify the installation paths to `D:\Program Files\Java\jdk1.8.0_31` and `D:\Program Files\Java\jre1.8.0_31`.
+Install the JDK as instructed. You can specify the installation paths (C drive by default), for example, as `D:\Program Files\Java\jdk1.8.0_31` and `D:\Program Files\Java\jre1.8.0_31`.
 
 #### 3. Configuration
 
@@ -17,7 +17,7 @@ Variable name (N): **JAVA_HOME**
 Variable value (V): `D:\Program Files\Java\jdk1.8.0_31` (Configure according to your actual installation path).
 
 Variable name (N): **CLASSPATH**   
-Variable value (V): `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;` (Note that the variable value begins with `.`.).
+Variable value (V): `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;` (Note that the variable value begins with `.`).
 Variable name (N): **Path**
 Variable value (V): `%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;`
 #### 4. Testing
@@ -71,7 +71,7 @@ Run the following command to test the JDK installation:
 java -version
 ```
 
-If information about the java version is displayed, the JDK is installed successfully.
+If information about the Java version is displayed, the JDK is installed successfully.
 ```shell
 java version "1.8.0_151"
 Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
