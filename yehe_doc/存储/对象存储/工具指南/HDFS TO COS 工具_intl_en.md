@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 The HDFS TO COS tool is used to copy data from HDFS to Tencent Cloud COS.
 
 ## Operating Environments
@@ -9,15 +9,15 @@ Linux or Windows
 JDK v1.7 or v1.8 
 
 #### Installation and configuration
-For more information on environment installation and configuration, please see [Java Installation and Configuration](https://intl.cloud.tencent.com/document/product/436/10865).
+For more information on environment installation and configuration, see [Java](https://intl.cloud.tencent.com/document/product/436/10865).
 
 ## Configuration Method
-1. Install Hadoop v2.7.2 or higher. For detailed directions, please see [Hadoop Installation and Test](https://intl.cloud.tencent.com/document/product/436/10867).
+1. Install Hadoop v2.7.2 or higher. For detailed directions, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/10867).
 2. Download the HDFS TO COS tool from [GitHub](https://github.com/tencentyun/hdfs_to_cos_tools) and decompress it.
 3. Copy the `core-site.xml` file of the HDFS cluster to be synced to the `conf` folder. The `core-site.xml` file contains the configuration information of NameNode.
 4. In the `cos_info.conf` configuration file, configure the bucket, region, and API key information. The bucket name is formed by connecting a user-defined string and the system-generated `APPID` with a hyphen, for example, `examplebucket-1250000000`.
 5. Specify the configuration file location in the command line parameter. The default location is `conf/cos_info.conf`.
->!If the command line parameter conflicts with the configuration file, the command line parameter prevails.
+>!If the command line parameter conflicts with the configuration file, the command line parameter shall apply.
 
 ## Usage
 
@@ -76,4 +76,4 @@ Files that already exist in COS will be overwritten by default in case of repeat
 
 
 #### Copying data from Tencent Cloud EMR HDFS
-To copy data from Tencent Cloud EMR HDFS to COS, you are advised to use the high-performance DistCp tool. For more information, please see [Migrating Data Between HDFS and COS](https://intl.cloud.tencent.com/document/product/436/34076).
+To copy data from Tencent Cloud EMR HDFS to COS, you are advised to use the high-performance DistCp tool. For more information, see [Migrating Data Between HDFS and COS](https://intl.cloud.tencent.com/document/product/436/34076).
