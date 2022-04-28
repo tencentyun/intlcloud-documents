@@ -3,7 +3,7 @@ DDoS 高防支持对业务端发出的报文增加水印防护，在您配置的
 
 ## 前提条件
 您需要已成功 [购买 DDoS 高防 IP](https://intl.cloud.tencent.com/document/product/297/37241) ，并设置防护对象。
->?此功能为额外付费功能，请 [联系我们](https://cloud.tencent.com/online-service?from=sales&source=PRESALE) 进行开通。
+>?此功能为额外付费功能，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 进行开通。
 
 ## 操作步骤
 1. 登录 [DDoS 高防 IP 控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) ，在左侧导航中，单击**防护配置** > **DDoS 防护**。
