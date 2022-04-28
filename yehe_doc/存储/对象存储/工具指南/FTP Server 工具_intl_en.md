@@ -2,7 +2,7 @@
 
 COS FTP Server allows you to directly operate on COS objects and directories over FTP protocol, including uploading/downloading/deleting files and creating folders. This tool is developed with Python, which makes the installation easier.
 
-## Feature Overview
+## Features
 
 **Upload mechanism**: streaming without saving uploaded files locally. It works as long as the working directory is configured using the standard FTP protocol, and no actual disk storage capacity is occupied.
 **Download mechanism**: the downloaded file is directly streamed and returned to the client.
@@ -20,9 +20,9 @@ COS FTP Server allows you to directly operate on COS objects and directories ove
 
 #### Operating system
 
-- OS: Linux. It is recommended to use the [CVM](https://intl.cloud.tencent.com/document/product/213) of Tencent CentOS series. Windows systems are not supported for now.
+- OS: Linux. The [CVM](https://intl.cloud.tencent.com/document/product/213) of Tencent CentOS series is recommended. Windows systems are not supported for now.
 - psutil-dependent Linux package: python-devel or python-dev, depending on the names of different Linux distributions. It is added using Linux package manager, such as `yum install python-devel` or `aptitude install python-dev`.
-- Python interpreter version: Python 2.7. For more information on the installation and configuration, see [Installing and Configuring Python](https://intl.cloud.tencent.com/document/product/436/10866).
+- Python interpreter version: Python 2.7. For more information on the installation and configuration, see [Python](https://intl.cloud.tencent.com/document/product/436/10866).
 >? FTP Server does not support Python 3.
 >
 - Dependent packages:
