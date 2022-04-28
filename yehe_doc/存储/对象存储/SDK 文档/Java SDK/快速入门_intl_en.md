@@ -66,7 +66,7 @@ If you use a permanent key to initialize a `COSClient`, you can get the `APPId`,
 [//]: # (.cssg-snippet-global-init)
 ```java
 // 1. Initialize the user credentials (secretId, secretKey).
-// Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SecretId` and `SecretKey` of your project.
+// Log in to https://console.cloud.tencent.com/cam/capi to view and manage the SecretId and SecretKey of your project.
 String secretId = "SECRETID";
 String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
