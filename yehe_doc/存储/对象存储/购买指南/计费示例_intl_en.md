@@ -1,14 +1,14 @@
 >!
-> - The following samples take regions in China as examples.
->- The prices in the samples are for reference only. For the actual prices, please see [COS Pricing](https://intl.cloud.tencent.com/pricing/cos).
-> - New users are eligible for 50 GB STANDARD storage capacity per month for 6 months. For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
+> - Regions in China are used as examples.
+>- The prices in the examples are for reference only. For the actual prices, see [COS Pricing](https://intl.cloud.tencent.com/pricing/cos).
+> - New users are eligible for 50 GB STANDARD storage capacity per month for 6 months. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
 > - The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
 
-## Sample 1
+## Example 1
 
 #### Background
 
-New user A runs a website that contains images, background music, videos, and a software download section. He/She stores the contents of the website in the **STANDARD** storage class in the **Guangzhou region** with the CDN acceleration service enabled.
+New user A runs a website that contains images, background music, videos, and a software download section. The user stores the contents of the website in the **STANDARD** storage class in the **Guangzhou region** with the CDN acceleration service enabled.
 
 #### Demand
 
@@ -16,7 +16,7 @@ The images are expected to occupy 100 GB storage capacity of the STANDARD storag
 
 #### Monthly fee calculation
 
-The following table describes the monthly fees during the free tier period (that is, the first 6 months since the user activated the COS service):
+The following table describes the monthly fees during the Free Tier period (that is, the first 6 months since the user activated the COS service):
 
 | Item | Free Tier | Unit Price | Billable Usage | Fees (Unit Price x Billable Usage) |
 | ---------------- | -------- | ------------- | ----------- | ------------------------ |
@@ -37,7 +37,7 @@ After the user's Free Tier expires, the monthly fee is as follows:
 
 
 
-## Sample 2
+## Example 2
 
 #### Background 
 
