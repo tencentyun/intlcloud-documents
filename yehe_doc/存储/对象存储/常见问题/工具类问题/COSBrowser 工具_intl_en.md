@@ -30,8 +30,8 @@ COSBrowser Mobile Version supports the following three login methods:
 - **Login with permanent key**: You can log in using your TencentCloud API key (SecretId and SecretKey; project key is not supported), which can be obtained on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM console. After successful login, the account will be kept logged in permanently.
 
 >?
-- If your Tencent Cloud account was created with a QQ account, you can also use the login with WeChat method to log in just by selecting login with QQ on the redirected WeChat Mini Program screen.
-- If you use a sub-account, you can log in with key or WeChat. For login with WeChat, just select the sub-account on the redirected WeChat Mini Program screen.
+>- If your Tencent Cloud account was created with a QQ account, you can also use the login with WeChat method to log in just by selecting login with QQ on the redirected WeChat Mini Program screen.
+>- If you use a sub-account, you can log in with key or WeChat. For login with WeChat, just select the sub-account on the redirected WeChat Mini Program screen.
 
 For more information, see [COSBrowser Overview](https://intl.cloud.tencent.com/document/product/436/11366).
 
@@ -98,8 +98,8 @@ You can copy a file link as follows:
 
 
 >?
-- If public read is enabled for the file, you can use an unsigned link, i.e., object address (valid permanently) to access it.
-- If private read is enabled for the file, you must use a signed link to access it. You can customize the link validity period in the **Copy Link** window, which is 2 hours by default.
+>- If public read is enabled for the file, you can use an unsigned link, i.e., object address (valid permanently) to access it.
+>- If private read is enabled for the file, you must use a signed link to access it. You can customize the link validity period in the **Copy Link** window, which is 2 hours by default.
 
 
 ### What should I do if the message "Update failed due to permission denied" is prompted when I use a COSBrowser client that runs macOS?

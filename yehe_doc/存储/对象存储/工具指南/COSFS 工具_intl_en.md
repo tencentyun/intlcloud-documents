@@ -1,10 +1,10 @@
-## Feature Description 
+## Overview 
 
 COSFS allows you to mount COS buckets to local and work with the COS objects as you do with a local file system. COSFS supports the following features:
 - Most features of the POSIX file system, such as reading/writing files, operations on directories/links, permission management, and uid/gid management.
 - Multipart upload of large files.
 - Data verification with MD5.
-- Upload data to COS using [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) or [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
+- Data upload to COS using [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) or [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
 
 ## Limitations
 **COSFS is built on S3FS. As the disk is required for COSFS′s read and write operations, COSFS is only suitable for simple management of the mounted files and does not support all features of a local file system. Besides, it cannot outperform Cloud Block Storage (CBS) or Cloud File Storage (CFS).** To use COSFS, note that:
@@ -119,7 +119,7 @@ Messages displayed during the `configure` operation vary depending on the OS. If
 checking for common_lib_checking... configure: error: Package requirements (fuse >= 2.8.4 libcurl >= 7.0 libxml-2.0 >= 2.6) were not met:
   Requested 'fuse >= 2.8.4' but version of fuse is 2.8.3 
 ```
-In this case, you need to manually install fuse 2.8.4 or above as shown below:
+In this case, you need to manually install fuse 2.8.4 or later as shown below:
 ```shell
 yum -y remove fuse-devel
 wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
@@ -134,7 +134,7 @@ echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig   # Update the dynamic-link library.
 pkg-config --modversion fuse  #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
 ```
-- Install FUSE 2.8.4 or later on the SUSE system manually, as shown below:
+- Install fuse 2.8.4 or later on the SUSE system manually, as shown below:
 >! During installation, you need to comment out the content of line 222 in `example/fusexmp.c` by using `/*content*/`. Otherwise, an error will be reported when you use Make.
 >
 ```shell
@@ -166,7 +166,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #You may need to mod
 ## Directions
 
 ### 1. Configure the key file
-Write the bucket information in the `/etc/passwd-cosfs` file, including the bucket name (in `BucketName-APPID` format) &lt;SecretId&gt;, as well as &lt;SecretKey&gt;, and use colons (:) to separate them. To avoid compromising your key, you need to set permissions for the key file to 640. You can run the following command to configure the `/etc/passwd-cosfs` key file:
+Write the bucket information in the `/etc/passwd-cosfs` file, including the bucket name (in `BucketName-APPID` format) &lt;SecretId&gt;, as well as &lt;SecretKey&gt;, and use colons (:) to separate them. To avoid compromising your key, set permissions for the key file to 640. Run the following command to configure the `/etc/passwd-cosfs` key file:
 ```shell
 sudo su  # Switch to the root account to modify the /etc/passwd-cosfs file. Skip this step if you have already logged in with the root account
 echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
@@ -174,7 +174,7 @@ chmod 640 /etc/passwd-cosfs
 ```
 
 >?You need to replace the content enclosed in &lt;&gt; with the actual information.
->- &lt;BucketName-APPID&gt; indicates the name of the bucket. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).
+>- &lt;BucketName-APPID&gt; indicates the name of the bucket. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).
 >- &lt;SecretId&gt; and &lt;SecretKey&gt; are information about the key, which can be obtained and created at [Manage API Key](https://console.cloud.tencent.com/cam/capi) in the CAM console.
 >- You can configure the key in `$HOME/.passwd-cosfs`. Alternatively, you can run `-opasswd_file=[path]` to specify the directory of the key file and then set permissions of the key file to 600.
 > 
@@ -191,14 +191,14 @@ chmod 640 /etc/passwd-cosfs
 
 
 ### 2. Run the tool
-You can run the following command to mount the bucket configured in the key file to a specified directory:
+Run the following command to mount the bucket configured in the key file to a specified directory:
 
 ```shell
 cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
 Where:
 - &lt;MountPoint&gt; is the mount point, for example, `/mnt`.
-- &lt;Region&gt; is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about region abbreviations, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+- &lt;Region&gt; is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about region abbreviations, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 - `-odbglevel` specifies the log level. The default value is `crit`. Available options are `crit`, `error`, `warn`, `info`, and `debug`.
 - `-oallow_other` allows other users to access the mount point.
 
@@ -260,4 +260,4 @@ To improve performance, COSFS uses the system disk by default for the temporary 
 
 
 ## FAQs
-If you have any questions about COSFS, please see [COSFS FAQs](https://intl.cloud.tencent.com/document/product/436/30587).
+If you have any questions about COSFS, see [COSFS FAQs](https://intl.cloud.tencent.com/document/product/436/30587).
