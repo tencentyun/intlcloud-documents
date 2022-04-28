@@ -1,7 +1,7 @@
 
 ## Use Case
 
-Tom has collected a log to CLS. The log does not use a fixed separator and is in single-line text format. Now Tom wants to structure the log and **extract the log time, log level, operation, and URL information** from the text for subsequent search and analysis.   
+Tom has collected a log to CLS. The log does not use a fixed separator and is in single-line text format. Now Tom wants to structuralize the log and **extract the log time, log level, operation, and URL information** from the text for subsequent search and analysis.   
 
 ## Scenario Analysis
 

@@ -12,7 +12,7 @@ According to Tom's requirements, the processing ideas are as follows:
 >! To distribute logs to multiple target log topics, you need to define the target names of the log topics when creating the data processing task. The target names will be used in the **log_output("Target name")** functions.
 >
 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/61bd11b23c04cff091d326cd6ad3d5ec.png)
 
 ## Raw Log
 

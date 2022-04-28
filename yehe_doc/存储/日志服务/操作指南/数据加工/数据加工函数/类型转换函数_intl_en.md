@@ -1,6 +1,6 @@
 ## Overview
 
-Type conversion functions provide commonly type conversion features. They can be used to convert field values to the int, float, bool, and Str types.
+The functions below can be used to convert common field values to the int, float, bool, and str types.
 
 ## Function ct_int
 
