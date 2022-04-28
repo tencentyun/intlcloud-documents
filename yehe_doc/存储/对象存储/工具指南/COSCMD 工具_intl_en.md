@@ -22,8 +22,8 @@ Windows, Linux, and macOS
 
 #### Installation and configuration
 
-- For more information about the installation and configuration of the environment, please see [Python](https://intl.cloud.tencent.com/document/product/436/10866).
-- For more information about the installation and configuration of pip, please see [Installation](https://pip.pypa.io/en/stable/installing/).
+- For more information about the installation and configuration of the environment, see [Python](https://intl.cloud.tencent.com/document/product/436/10866).
+- For more information about the installation and configuration of pip, see [Installation](https://pip.pypa.io/en/stable/installing/).
 
 
 ## Download and Installation
@@ -81,7 +81,7 @@ pip install coscmd --no-index -f coscmd-packages
 
 ### Viewing the help option
 
-You can run the `-h` or `--help` command to view the information and usage of COSCMD.
+Run the `-h` or `--help` command to view the information and usage of COSCMD.
 ```plaintext
 coscmd -h  
 ```
@@ -201,8 +201,8 @@ The parameters are described as follows:
 | -a | Key ID, which can be obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) | String | Yes |
 | -s | Key, which can be obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) | String | Yes |
 | -t | Temporary key token, which needs to be specified in the `x-cos-security-token` header when a temporary key is used. | String | No |
-| -b | Name of the specified bucket, formatted as `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). If this is your first time using COSCMD, you need to create a bucket in the COS console to configure COSCMD. | String | Yes |
-| -r | Region of the bucket. For more information, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
+| -b | Name of the specified bucket, formatted as `BucketName-APPID`. For more information, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). If this is your first time using COSCMD, you need to create a bucket in the COS console to configure COSCMD. | String | Yes |
+| -r | Region of the bucket. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | -e   | Endpoint of the request. Once you configure this parameter, the region parameter will be invalidated. If you use the default endpoint, this parameter is formatted as `cos.<region>.myqcloud.com`; if you use a global acceleration endpoint, the format is `cos.accelerate.myqcloud.com`. | String | No  |
 | -m | Maximum number of threads in a multi-thread operation (default: 5; value range: 1-30) | Number | No |
 | -p | Size of the multipart upload part, in MB (default: 1; value range: 1-1000) | Number | No |
@@ -346,7 +346,7 @@ coscmd upload D:/doc/picture.jpg doc/
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-storage-class':'Archive'}"
 ```
->! When you set the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
+>! When you set the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
 >
 - Sample: setting meta attributes and uploading a file to the “doc” folder of COS
 ```plaintext
@@ -639,7 +639,7 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 > - Replace "sourcepath" and "cospath" enclosed in "<>" with the path of the COS file to copy and the COS destination path, respectively.
 > - The source path is formatted as `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
 > - Use the `-d` parameter to set the `x-cos-metadata-directive` header. Valid values are `Copy` (default) and `Replaced`.
-> - When setting the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
+> - When setting the HTTP header with the `-H` parameter, use the JSON format, for example, `coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
 > 
 
 ### Moving a file or folder
@@ -680,7 +680,7 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou move -r examplebucket2-12500
 > - Replace "sourcepath" and "cospath" enclosed in "<>" with the path of the COS file to move and the COS destination path, respectively.
 > - The source path is formatted as `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
 > - Use the `-d` parameter to set the `x-cos-metadata-directive` header. Valid values are `Copy` (default) and `Replaced`.
-> - When setting the HTTP header with the `-H` parameter, please use the JSON format, for example, `coscmd move -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
+> - When setting the HTTP header with the `-H` parameter, use the JSON format, for example, `coscmd move -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
 > 
 
 ### Setting object access permission
@@ -749,4 +749,4 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 
 ## FAQs
 
-If you have any questions about COSCMD, please see [COSCMD Tool](https://intl.cloud.tencent.com/document/product/436/30586).
+If you have any questions about COSCMD, see [COSCMD](https://intl.cloud.tencent.com/document/product/436/30586).
