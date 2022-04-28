@@ -16,10 +16,10 @@
 
 ## 操作步骤
 ### 修改网络配置
-1. 登录云函数控制台，单击左侧导航栏中的【[函数服务](https://console.cloud.tencent.com/scf/list)】。
+1. 登录云函数控制台，单击左侧导航栏中的**[函数服务](https://console.cloud.tencent.com/scf/list)**。
 2. 在页面上方选择地域，单击需要配置的函数名。
-3. 在“函数配置”页面中，单击右上角的【编辑】。
-4. 开启【私有网络】功能，选择需要接入的 VPC 网络和所需要的使用的子网。
+3. 在“函数配置”页面中，单击右上角的**编辑**。
+4. 开启**私有网络**功能，选择需要接入的 VPC 网络和所需要的使用的子网。
 
 
 ### 使用 VPC 网络
@@ -39,7 +39,10 @@ def main_handler(event,context):
 
 #### VPC 网络中访问自定义域名
 <dx-tabs>
-设置云函数环境中的\sName\sServer
+::: 使用私有域解析访问\sVPC\s网络中的自定义域名（推荐）
+在使用 VPC 网络的过程中，若需要通过使用域名来访问内网自建服务，可以通过使用腾讯云提供的 [私有域解析 Private DNS](https://intl.cloud.tencent.com/document/product/1097/40551) 来实现内网自定义域名配置及访问解析。
+:::
+::: 设置云函数环境中的\sName\sServer
 如果需要对接自定义域名解析服务器，需要在云函数环境内自定义 `name server` 配置，当前可通过配置 `OS_NAMESERVER` 环境变量来实现。实际配置如下表：
 
 <table>
@@ -66,10 +69,10 @@ with open("/etc/resolv.conf") as f:
     print(f.readlines())
 ```
 
-
+:::
 </dx-tabs>
 
 ## 相关操作
 ### 查看网络配置
-1. 登录云函数控制台，单击左侧导航栏中的【[函数服务](https://console.cloud.tencent.com/scf/list)】。
+1. 登录云函数控制台，单击左侧导航栏中的**[函数服务](https://console.cloud.tencent.com/scf/list)**。
 2. 在页面上方选择地域，并单击已配置内网访问的函数名，即可通过**所属网络**和**所属子网**了解到具体配置。

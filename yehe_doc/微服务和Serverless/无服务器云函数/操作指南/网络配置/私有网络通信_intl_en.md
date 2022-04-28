@@ -39,7 +39,10 @@ def main_handler(event,context):
 
 #### Accessing custom domain name in VPC
 <dx-tabs>
-Setting\sName\sServer\sin\sSCF\senvironment
+::: Using Private DNS to access custom domain name in \sVPC\s (recommended)
+In VPC, if you need to access a self-built service on the private network at a domain name, you can use the [Private DNS](https://intl.cloud.tencent.com/document/product/1097/40551) provided by Tencent Cloud to configure and resolve the custom domain name on the private network.
+:::
+::: Setting \sName\sServer in SCF environment
 If you want to connect to a custom DNS server, you need to customize the `name server` configuration in the SCF environment. Currently, you can implement this by configuring the `OS_NAMESERVER` environment variable as shown below:
 
 <table>
@@ -66,7 +69,7 @@ with open("/etc/resolv.conf") as f:
     print(f.readlines())
 ```
 
-
+:::
 </dx-tabs>
 
 ## Relevant Operations
