@@ -14,7 +14,7 @@ Time-shift playback in live streaming is based on live recording, live streaming
 - The time shifting feature is being beta tested and is not charged currently. However, the feature relies on live recording, so you will be charged a [live recording fee](https://intl.cloud.tencent.com/document/product/267/39605) and [storage and playback fees](https://intl.cloud.tencent.com/document/product/266/2838) for using the feature.
 
 ## Directions
-### Step 1. Activate TRTC[](id:step1)
+### Step 1. Activate VOD[](id:step1)
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview) and click **Activate Now**.
 2. Check the checkbox to agree to the service agreement, and click **OK** to activate VOD service. Log in to the VOD console.
 
