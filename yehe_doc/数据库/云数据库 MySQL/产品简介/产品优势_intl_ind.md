@@ -27,7 +27,7 @@ Fitur audit data tingkat keuangan membantu mencegah pencurian data inti, melacak
 
 ## Ketersediaan Tinggi
 - **Real-time hot backup** (Pencadangan terbaru secara real-time)
-Mekanisme pencadangan terkini server ganda mendukung pemulihan data tanpa kehilangan dari 7-732 hari terakhir berdasarkan pencadangan data dan pencadangan log (binlog). Pencadangan tersebut dapat disimpan selama 7-732 hari.
+Mekanisme pencadangan terkini server ganda mendukung pemulihan data tanpa kehilangan dari 7-1830 hari terakhir berdasarkan pencadangan data dan pencadangan log (binlog). Pencadangan tersebut dapat disimpan selama 7-1830 hari.
 
 - **Automatic disaster recovery** (Pemulihan bencana otomatis)
 Deteksi kegagalan otomatis dan failover otomatis didukung. Prosedur peralihan sumber/replika dan failover tidak terlihat oleh pengguna.

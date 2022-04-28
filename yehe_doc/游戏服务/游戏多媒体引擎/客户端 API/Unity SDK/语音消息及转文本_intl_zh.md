@@ -16,7 +16,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 Init 之后不会开始计费，语音消息及转文本服务**收发语音消息**才算作语音消息 DAU。
 </dx-alert>
 
-![](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
 
 ### 重要步骤
 
@@ -36,7 +36,7 @@ Init 之后不会开始计费，语音消息及转文本服务**收发语音消�
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/zh/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
+- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
 
 ### C# 类
 
@@ -52,7 +52,7 @@ Init 之后不会开始计费，语音消息及转文本服务**收发语音消�
 **在使用 GME 的任何接口之前，都需要先调用 Init 接口。**
 
 
-使用问题可参考 [一般性问题](https://intl.cloud.tencent.com/zh/document/product/607/30254)。
+使用问题可参考 [一般性问题](https://intl.cloud.tencent.com/document/product/607/30254)。
 
 | 接口   |   接口含义   |
 | ------ | :----------: |
@@ -83,7 +83,7 @@ using TencentMobileGaming;
 ### [初始化 SDK](id:Init)
 
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
-- **参数 sdkAppID 获取。
+- **参数 sdkAppID 获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**。
 - **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
 
 
@@ -142,7 +142,7 @@ if (ret != QAVError.OK)
 ### [触发事件回调](id:Poll)
 
 通过在 update 里面周期的调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。
-详情请参见 [Demo](https://intl.cloud.tencent.com/zh/document/product/607/18521)  中的 EnginePollHelper 文件。
+详情请参见 [Demo](https://intl.cloud.tencent.com/document/product/607/18521)  中的 EnginePollHelper 文件。
 
 
 <dx-alert infotype="alarm" title="务必周期性调用 Poll 接口">
@@ -204,7 +204,7 @@ ITMGContext public abstract int Uninit()
 
 语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。下图演示的是语音消息及转文本服务：
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/IMB_DsvaLv.gif" width="50%">
+
 
 
 
@@ -262,11 +262,11 @@ ITMGContext public abstract int Uninit()
 
 未初始化前，SDK 处于未初始化阶段，需要通过接口 Init 初始化 SDK，才可以使用实时语音及语音消息服务。
 
-使用问题请参见 [语音消息及转文本相关问题](https://intl.cloud.tencent.com/zh/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F)。
+使用问题请参见 [语音消息及转文本相关问题](https://intl.cloud.tencent.com/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F)。
 
 ### 生成鉴权信息
 
-生成 AuthBuffer，用于相关功能的加密和鉴权，如正式发布请使用后台部署密钥，后台部署请参见 [鉴权密钥](https://intl.cloud.tencent.com/zh/document/product/607/12218)。    
+生成 AuthBuffer，用于相关功能的加密和鉴权，如正式发布请使用后台部署密钥，后台部署请参见 [鉴权密钥](https://intl.cloud.tencent.com/document/product/607/12218)。    
 
 
 #### 函数原型
@@ -331,8 +331,8 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speec
 | 参数              |  类型  | 含义                                                         |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath          | String | 存放的语音路径                                               |
-| speechLanguage    | String | 识别成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260) |
-| translateLanguage | String | 翻译成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260)（此参数暂不可用，请填写与 speechLanguage 相同的参数） |
+| speechLanguage    | String | 识别成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260) |
+| translateLanguage | String | 翻译成指定文字的语言参数，参数请参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂不可用，请填写与 speechLanguage 相同的参数） |
 
 #### 示例代码  
 
@@ -374,7 +374,7 @@ int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingReco
 |32777	|流式语音转文本失败，但是录音成功，上传成功	|返回的信息中有上传成功的后台 url 地址，调用 SpeechToText 接口进行语音转文字操作
 |32786  |流式语音转文本失败|在流式录制状态当中，请等待流式录制接口执行结果返回|
 
-如果出现 4098 错误码，请参考 [常见问题文档](https://intl.cloud.tencent.com/zh/document/product/607/39716#.E5.BC.80.E5.A7.8B.E5.BD.95.E9.9F.B3.E4.B9.8B.E5.90.8E.EF.BC.8C.E6.98.BE.E7.A4.BA-4098-.E7.9A.84.E9.94.99.E8.AF.AF.E7.A0.81.EF.BC.8C.E5.BA.94.E8.AF.A5.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.EF.BC.9F)进行解决。
+如果出现 4098 错误码，请参考 [常见问题文档](https://intl.cloud.tencent.com/document/product/607/33223#.E5.BC.80.E5.A7.8B.E5.BD.95.E9.9F.B3.E4.B9.8B.E5.90.8E.EF.BC.8C.E6.98.BE.E7.A4.BA-4098-.E7.9A.84.E9.94.99.E8.AF.AF.E7.A0.81.EF.BC.8C.E5.BA.94.E8.AF.A5.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.EF.BC.9F)进行解决。
 
 #### 示例代码  
 
@@ -647,7 +647,7 @@ ITMGPTT PlayRecordedFile(string filePath,int voiceType);
 | 参数      |  类型  | 含义                                                         |
 | --------- | :----: | ------------------------------------------------------------ |
 | filePath  | string | 本地语音文件的路径                                           |
-| voicetype |  int   | 变声类型，请参考 [变声接入文档](https://intl.cloud.tencent.com/document/product/607/44995) |
+| voicetype |  int   | 变声类型，请参考 [变声接入文档](https://intl.cloud.tencent.com/document/product/607/44995#.E8.AF.AD.E9.9F.B3.E6.B6.88.E6.81.AF.E5.8F.98.E5.A3.B0) |
 
 #### 错误码
 
@@ -982,8 +982,8 @@ ITMGPTT int SpeechToText(String fileID,String speechLanguage)
 | 参数              |  类型  | 含义                                                         |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | fileID            | String | 语音文件 url，录音在服务器存放90天                           |
-| speechLanguage    | String | 识别出指定文字的语言参数，参数参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260) |
-| translatelanguage | String | 翻译成指定文字的语言参数，参数参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/zh/document/product/607/30260)（此参数暂时无效，填入参数应与 speechLanguage 一致） |
+| speechLanguage    | String | 识别出指定文字的语言参数，参数参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260) |
+| translatelanguage | String | 翻译成指定文字的语言参数，参数参考 [语音转文字的语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)（此参数暂时无效，填入参数应与 speechLanguage 一致） |
 
 #### 示例代码  
 

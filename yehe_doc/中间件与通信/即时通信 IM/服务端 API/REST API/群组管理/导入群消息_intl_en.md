@@ -1,4 +1,4 @@
-## Feature Description 
+## Overview
 - This API is used to import group messages without triggering callbacks or sending notifications.
 - When you are migrating your app from another instant messaging system to Tencent Cloud IM, you can use this API to import group message data.
 
@@ -7,10 +7,11 @@
 
 | Group Type ID | Support for This RESTful API |
 |-----------|------------|
-| Private | Yes. Same as work group (Work) in the new version. |
+| Private | Yes. Same as the work group (Work) in the new version. |
 | Public | Yes |
 | ChatRoom | Yes. Same as meeting groups (Meeting) in the new version. |
 | AVChatRoom | No |
+| Community | Yes |
 
 Above are the IM built-in groups. For more information, please see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
@@ -28,20 +29,20 @@ The following table only describes the modified parameters when this API is call
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| https       | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
+| https | The request protocol is HTTPS, and the request method is POST. |
+| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>China: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com`</li> |
 | v4/group_open_http_svc/import_group_msg | Request API |
 | sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
-| contenttype | Request format. The value is always `json`. |
+| contenttype | Request format, which should always be `json`.|
 
-### Maximum calling frequency
+### Maximum call frequency
 
 200 calls per second
 
-### Sample request packet
+### Sample request
 
 A single request can import up to seven group messages.
 After messages are imported through this API, the unread message count for all members will become `0`. To retain the unread message count, you need to import group members or set the unread message count for members after importing all messages.
@@ -50,6 +51,7 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",
+    "RecentContactFlag":1,// Means to trigger conversation update (This field is not supported by AVChatRoom groups.)
     "MsgList": [
         {
             "From_Account": "leckie", // Specified message sender
@@ -88,20 +90,21 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 }
 ```
 
-### Request packet fields
+### Request fields
 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
 | GroupId | String | Yes | ID of the group for which to import messages |
+|RecentContactFlag|Integer| No | Whether to trigger conversation update. The value `1` means to trigger conversation update. Conversation update is not triggered by default. (This field is not supported by AVChatRoom groups.) |
 | MsgList | String | Yes | List of the messages to import  |
 | From_Account | String | Yes | Message sender |
 | SendTime | Integer | Yes | Message sending time |
-| Random | Integer | No | A 32-bit random number. If the random numbers of two messages within five minutes are the same, the later message will be discarded as a repeated message. |
-| MsgBody | Object | Yes | TIM message. For more information, see the definition of `TIMMsgElement` in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| Random | Integer | No | A 32-bit unsigned integer. If the random numbers of two messages within 5 minutes are the same, the later message will be discarded as a repeated message. |
+| MsgBody | Array | Yes | TIM message. For more information, see the definition of `TIMMsgElement` in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | MsgType | String | Yes | TIM message object type. Valid values: `TIMTextElem` (text message), `TIMFaceElem` (emoji message), `TIMLocationElem` (location message), `TIMCustomElem` (custom message) |
 | MsgContent | Object | Yes | TIM message object. For more information, see the definition of `TIMMsgElement` in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
-### Sample response packet
+### Sample response
 
 ```
 {
@@ -123,7 +126,7 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 }
 ```
 
-### Response packet fields
+### Response fields
 
 | Field | Type | Description |
 |---------|---------|---------|
@@ -144,7 +147,7 @@ The following table describes the error codes specific to this API:
 | Error Code | Description |
 |---------|---------|
 | 10004 | Invalid parameter. Check the error description and troubleshoot the issue. |
-| 10007 | No operation permissions. For example, a common member in a public group tries to remove other users from the group, but only the app admin can do so. |
+| 10007 | No operation permissions. This error occurs when, for example, a member in a public group tries to remove other users from the group (only the app admin can perform this operation). |
 | 10010 | The group does not exist or has been deleted. |
 | 10015 | The group ID is invalid. Use the correct group ID. |
 | 10020 | The message is too large. Currently, the maximum message size supported is 8,000 bytes. Adjust the message size. |
@@ -152,7 +155,7 @@ The following table describes the error codes specific to this API:
 
 ## API Debugging Tool
 
-Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/import_group_msg) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/import_group_msg) to debug this API.
 
-## Reference
+## References
 Setting the Unread Message Count of a Member ([v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909))

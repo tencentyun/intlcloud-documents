@@ -15,21 +15,21 @@ SES can be prepaid or postpaid.
 </tr>
 <tr>
 <td>600,000 emails</td>
-<td>320 USD</td>
+<td>264 USD</td>
 <td>6 months</td>
-<td>0.00053 USD/email</td>
+<td>0.00044 USD/email</td>
 </tr>
 <tr>
 <td>1 million emails</td>
-<td>520 USD</td>
+<td>430 USD</td>
 <td>6 months</td>
-<td>0.00052 USD/email</td>
+<td>0.00043 USD/email</td>
 </tr>
 <tr>
 <td>5 million emails</td>
-<td>2,520 USD</td>
+<td>2,125 USD</td>
 <td>6 months</td>
-<td>0.0005 USD/email</td>
+<td>0.00042 USD/email</td>
 </tr>
 </table>
 

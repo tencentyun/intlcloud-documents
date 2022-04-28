@@ -27,7 +27,7 @@ A funcionalidade de auditoria de dados de nível financeiro ajuda a evitar o rou
 
 ## Alta disponibilidade
 - **Backup dinâmico em tempo real**
-O mecanismo de backup dinâmico de servidor duplo permite a restauração sem perdas de dados dos últimos 7 a 732 dias com base no backup de dados e no backup de logs (binlog). Esses backups podem ser retidos por 7 a 732 dias.
+O mecanismo de backup dinâmico de servidor duplo permite a restauração sem perdas de dados dos últimos 7 a 1830 dias com base no backup de dados e no backup de logs (binlog). Esses backups podem ser retidos por 7 a 1830 dias.
 
 - **Recuperação automática de desastres**
 São fornecidos a detecção automática de falhas e o failover automático. Os procedimentos de alternância de source/réplica e failover são imperceptíveis para os usuários.

@@ -1,4 +1,4 @@
-## Features
+## Overview
 - This API is used to send one-to-one messages to multiple users (up to 500) at a time.
 - Compared with the API for sending one-to-one messages to one user, this API is more suitable for time-sensitive messages, such as marketing messages and system notifications.
 - If you don’t want to count messages as unread or store them, you can set `MsgLifeTime` to `0`. This will make message delivery faster.
@@ -15,8 +15,6 @@
 ```
 https://xxxxxx/v4/openim/batchsendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### Request parameters
 
 The following table only describes the modified parameters when this API is called. For more information on other parameters, please see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
@@ -24,13 +22,13 @@ The following table only describes the modified parameters when this API is call
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | https | The request protocol is HTTPS, and the request method is POST. |
-| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>China: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
+| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<li>China: `console.tim.qq.com`<li>Singapore: `adminapisgp.im.qcloud.com`<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com`</li> |
 | v4/openim/batchsendmsg | Request API |
 | sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
-| contenttype | Request format. The value is always `json`. |
+| contenttype   |Request format, which should always be `json`.|
 
 ### Maximum call frequency
 
@@ -114,14 +112,14 @@ Here, we use sending a text message as an example. To send messages of other typ
 | SyncOtherMachine | Integer | No | `1`: synchronize the message to the online terminal and roaming server of `From_Account`. <br/>`2`: do not synchronize the message to `From_Account`. If this field is not specified, the message is synchronized to the roaming server of `From_Account`. |
 | From_Account | String | No | Sender account specified by the admin. To set the information of `From_Account`, the value of this field cannot be left empty. |
 | To_Account | Array | Yes | `UserID` of the message recipient |
-| MsgSeq | Integer | No | Sequence number of the message. The backend will use this field to deduplicate messages and sort messages in the same second. For details, see **Feature Description**. If this field is left empty, the backend will enter a random number. |
-| MsgRandom | Integer | Yes | Random number of the message. It is used by the backend for message deduplication within a second. Make sure the random number is entered. |
-| MsgBody |Array | Yes | TIM message. For more information, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| MsgSeq | Integer | No | Sequence number (32-bit unsigned integer) of the message. The backend will use this field to deduplicate messages and sort messages in the same second. For details, see **Feature Description**. If this field is left empty, the backend will enter a random number. |
+| MsgRandom | Integer | Yes | Random number (32-bit unsigned integer) of the message. It is used by the backend for message deduplication within a second. Make sure a random number is entered. |
+| MsgBody | Array | Yes | TIM message. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | MsgLifeTime | Integer | No | The offline retention period of the message (unit: second); max period: 7 days (604800 seconds). If you set this field to `0`, the message will only be sent to the recipient online and not retained offline.  |
 | MsgType | String | Yes | TIM message object type. Valid values: <ul style="margin:0;"><li >`TIMTextElem` (text message) <li >`TIMLocationElem` (location message) <li >`TIMFaceElem` (emoji message) <li >`TIMCustomElem` (custom message) <li >`TIMSoundElem` (voice message) <li >`TIMImageElem` (image message) <li >`TIMFileElem` (file message) <li >`TIMVideoFileElem` (video message) |
 | MsgContent | Object | Yes | TIM message object. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
-| SendMsgControl | Array | No | Message sending control option. It is a string array and is valid only for this request. `NoUnread` means not to include this message in the unread count, and "NoLastMsg" means not to refresh the conversation list. Example: "SendMsgControl": ["NoUnread","NoLastMsg"]  |
+| SendMsgControl | Array | No | Message sending control option. It is a string array and is valid only for the current request. `NoUnread` means not to include this message in the unread count, and `NoLastMsg` means not to refresh the conversation list. `WithMuteNotifications` means to enable the Mute Notifications option for the message recipient (the option is disabled by default). Example: "SendMsgControl": ["NoUnread","NoLastMsg","WithMuteNotifications"] |
 | OfflinePushInfo | Object | No | The information to be pushed offline. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 
@@ -203,7 +201,7 @@ The following table describes the error codes specific to this API:
 ## API Debugging Tool
 Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/batchsendmsg) to debug this API.
 
-## Reference
+## References
 - Sending One-to-One Messages to One User ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))
 - Sending Ordinary Messages in a Group ([v4/group_open_http_svc/send_group_msg](https://intl.cloud.tencent.com/document/product/1047/34959))
 - Sending System Messages in a Group ([v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958))

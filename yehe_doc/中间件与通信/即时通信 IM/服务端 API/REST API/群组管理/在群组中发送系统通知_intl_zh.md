@@ -10,10 +10,13 @@
 |Public|支持|
 |ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
 |AVChatRoom|支持，仅支持面向全员|
+|Community（社群）|支持|
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->?非直播群支持向群组中的一部分指定成员发送系统通知，而 AVChatRoom（直播群）只支持向群组中所有成员发送系统通知。
+>?
+>- 非直播群支持向群组中的一部分指定成员发送系统通知，而 AVChatRoom（直播群）只支持向群组中所有成员发送系统通知。
+>- 客户端接收系统通知接口（V2TIMGroupListener.onReceiveRESTCustomData）请参见 [Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a0775a137d293473aaed4cf9fc4c18795)、[iOS](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a34108da2661d1b5ff68d1458ac4dd163) 。
 
 ### 请求 URL 示例
 ```
@@ -28,13 +31,15 @@ https://xxxxxx/v4/group_open_http_svc/send_group_system_notification?sdkappid=88
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`</li> |
 | v4/group_open_http_svc/send_group_system_notification | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 | contenttype | 请求格式固定值为`json` |
+
+
 
 ### 最高调用频率
 
@@ -69,7 +74,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_system_notification?sdkappid=88
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |向哪个群组发送系统通知 |
-| ToMembers_Account | Array | 选填 |接收者群成员列表，请填写接收者 UserID，不填或为空表示全员下发  |
+| ToMembers_Account | Array | 选填 |接收者群成员列表，请填写接收者 UserID，最多填写500个，不填或为空表示全员下发  |
 | Content | String | 必填 |系统通知的内容  |
 
 ### 应答包体示例
