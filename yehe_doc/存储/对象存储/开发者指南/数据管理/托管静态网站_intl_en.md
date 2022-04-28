@@ -48,7 +48,7 @@ https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com
 An index file, the homepage of the static website, is a page returned when the root directory or any subdirectory of a website is requested, and is usually named `index.html`.
 When you access a static website via a bucket access domain name, such as `https://examplebucketbucket-1250000000.cos-website.ap-guangzhou.myqcloud.com`, and no specific page is requested, the Web server will return the homepage.
 
-When your user accesses any directory (including the root directory) in a bucket using a URL ended with `/`, the index document in that directory is matched automatically. `/` is not mandatory in the root URL, so the index document is returned in response to either of the following URLs.
+When your user accesses any directory (including the root directory) in a bucket using a URL ending with `/`, the index document in that directory will be matched preferentially. `/` is not mandatory in the root URL, so the index document is returned in response to either of the following URLs.
 
 ```shell
 http://www.examplebucket.com/
