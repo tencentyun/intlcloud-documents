@@ -22,7 +22,7 @@ You can learn about why overdue payment happens by browsing FAQs as below:
 3. After 120 days on end with overdue payment, you will be deemed to have waived the COS service. With no promise to further retain your data, it will be destroyed and cannot be recovered.
 
 
-## How to Avoid or Process Overdue Payment?
+## How to Avoid or Process Overdue Payment
 
 
 1. You can choose to delete COS data which you find useless to avoid any further charges.
