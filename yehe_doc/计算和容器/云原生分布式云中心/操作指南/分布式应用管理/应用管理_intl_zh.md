@@ -11,9 +11,9 @@
  3. 配置的新建资源的参数，资源创建页面的底端，需要为该资源配置分发策略，可以选择**新建分发策略**，**已有分发策略**，**不关联分发策略**：
 	 - **不关联分发策略**：不对该资源进行分发，可在后期为其指定分发策略。
 	 - **新建分发策略**：根据提示添加该资源想要分发的集群，或配置 LabelSelector 标签选择器。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/44bb6c7fb20202044328c3aaaae10d0b.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/a385f8bee0561a1b3bc8930ccf5199b0.png)
 	 - **已有分发策略**：选择已创建好的分发策略。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/9e9dcc4261c9167dbbac52132fd3cefc.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/8224523c5d0c24148e8ba5dfd8900e2d.png)
  4. 单击**创建**，完成资源创建。
 
 
@@ -26,12 +26,12 @@
  - **分发策略**：该资源所关联的分发策略，支持编辑关联的分发策略。
  - **操作**：支持对该资源进行的操作，包括查编辑 YAML，删除等。
 3. 单击名称链接，进入该对象的详情页面：
- ![](https://qcloudimg.tencent-cloud.cn/raw/7891bfa58ff81865c8c491fbfde125c6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/d4f333225806b7e189214365f27825d8.png)
  - **分发策略**：该资源所关联的分发策略
  - **拓扑图**： 图形化展示该对象所关联的分发策略，目标集群，差异化配置及其他相关的状态信息
  - **基本信息**：展示该 K8s 应用对象的详细信息
 4. 单击**实例列表**标签页，查看该对象在目标集群上运行的实例：
- ![](https://qcloudimg.tencent-cloud.cn/raw/3e2a960ae147efb764f97b4beb01511f.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/59047057fd265652146b318bcbdd7ec9.png)
  - **实例名称**：该K8s资源分发到目标集群上的名称，点击该名称跳转至该应用的详情页面。。
  - **集群**：实例所在目标集群的名称，点击集群名称将跳转至该集群管理页面。
  - **分发策略**：实例由该分发策略分发管理。
@@ -44,7 +44,7 @@
 ### 修改关联分发策略
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **应用管理**页面。
 2. 单击**分发策略**列的修改图标，在弹出的对话框中为该对象指定其他**分发策略**。
- ![](https://qcloudimg.tencent-cloud.cn/raw/e16eec36ad17250d975927eaf5f903ba.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/dbc1eaca7fc3d384a412180d9313697e.png)
 >!当**取消**某个分发策略并保存后，该分发策略分发的该应用的实例将会被同步删除。
 
 
@@ -58,7 +58,7 @@
 ### 配置差异化策略
 
 1. 如需单独为某个集群下的 K8s 对象进行配置，单击进入**详情** > **实例列表**标签页，找到想要修改的 K8s 对象实例，单击**新建差异化策略**配置策略，差异化策略介绍请见 [差异化策略](https://intl.cloud.tencent.com/document/product/1144/45548)。
- ![](https://qcloudimg.tencent-cloud.cn/raw/f85ed958aefdbebe6809ffec56e72bfb.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/890e44c8ca23769dcd91f10f37faa27e.png)
 2. 如需修改或取消差异化配置，单击进入**详情** > **实例列表**标签页，在指定分发实例上单击**更新差异化策略**或**删除差异化策略**，执行指定的动作。
 
 ### 删除 K8s应用资源

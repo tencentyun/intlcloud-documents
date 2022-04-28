@@ -7,9 +7,9 @@ In TRTCCloud, you can adjust the video quality in the following ways:
 
 This document describes how to configure these parameters to make the video quality of the TRTC SDK meet your project-specific needs.
 You can also see the following demos:
-- [iOS: SetVideoQualityViewController.m](
-https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/Advanced/SetVideoQuality/SetVideoQualityViewController.m)
-- [Android: LivePushActivity.java](https://github.com/tencentyun/TRTCSDK/blob/0123787812e04d3acb44eed06ec9803df363c580/Android/TRTCSimpleDemo/live/src/main/java/com/tencent/live/LivePushActivity.java)
+- [iOS：SetVideoQualityViewController.m](
+https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/SetVideoQuality/SetVideoQualityViewController.m)
+- [Android：SetVideoQualityActivity.java](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/SetVideoQuality/src/main/java/com/tencent/trtc/videoquality/SetVideoQualityActivity.java)
 - [Windows: TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp)
 
 ## Supported Platforms

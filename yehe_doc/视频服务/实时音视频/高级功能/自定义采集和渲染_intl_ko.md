@@ -38,7 +38,7 @@ TRTC SDK는 NV12와 i420의 두 가지 iOS 버전의 YUV 데이터 포맷을 지
 |  rotation   |  TRTCVideoRotation   |                       입력하지 않음                        | <ul style="margin:0"><li/>기본적으로 입력하지 않습니다. <li/>화면을 회전할 경우 `TRTCVideoRotation_0`, `TRTCVideoRotation_90`, `TRTCVideoRotation_180`, `TRTCVideoRotation_270`을 입력하면 SDK에서 해당 값에 따라 비디오를 시계 방향의 해당 각도로 회전합니다. 예를 들어, 세로 화면에 `TRTCVideoRotation_90`을 입력하면 SDK에서 화면을 회전하여 가로로 표시됩니다.</ul> |
 
 #### 예시 코드
-[Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC/Advanced/LocalVideoShare) 폴더의 `LocalVideoShareViewController.m` 파일은 로컬 비디오 파일에서 NV12 포맷의 PixelBuffer를 읽는 방법을 정의하고 있으며 SDK를 통해 후속 처리합니다.
+[Demo](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/LocalVideoShare) 폴더의 `LocalVideoShareViewController.m` 파일은 로컬 비디오 파일에서 NV12 포맷의 PixelBuffer를 읽는 방법을 정의하고 있으며 SDK를 통해 후속 처리합니다.
 
 ```objectiveC
 //TRTCVideoFrame을 어셈블리하고, 이를 trtcCloud 객체로 전달
@@ -106,7 +106,7 @@ buffer 방식은 직접 TRTC SDK에 byte[] 형식의 배열을 넣어야 하며,
 </tr></tbody></table>
 
 - **texture 방식**: 연결 시 일정한 OpenGL 기초가 필요하지만 성능이 좋으며, 특히 화면 해상도가 높은 경우 성능이 뛰어납니다.
-texture는 TRTC SDK에 OpenGL 텍스쳐를 전달해야 하며, 해당 방식이 정상적으로 작동될 수 있도록 사전에 OpenGL 환경을 설정해야 합니다. 이에 따라 해당 방식의 연결은 난이도가 높습니다. OpenGL을 학습한 경험이 없는 경우, Tencent Cloud에서 제공하는 예시 코드 사용을 권장하며, 이는 [Demo](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare)의 `mediashare` 폴더에 있고 다음과 같은 파일이 포함되어 있습니다.
+texture는 TRTC SDK에 OpenGL 텍스쳐를 전달해야 하며, 해당 방식이 정상적으로 작동될 수 있도록 사전에 OpenGL 환경을 설정해야 합니다. 이에 따라 해당 방식의 연결은 난이도가 높습니다. OpenGL을 학습한 경험이 없는 경우, Tencent Cloud에서 제공하는 예시 코드 사용을 권장하며, 이는 [Demo](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare)의 `mediashare` 폴더에 있고 다음과 같은 파일이 포함되어 있습니다.
 <table><thead><tr><th>파일 이름</th><th>소스 코드 로직</th></tr></thead>
 <tbody>
 
@@ -132,8 +132,8 @@ texture는 TRTC SDK에 OpenGL 텍스쳐를 전달해야 하며, 해당 방식이
 1. 코드에서 `mVideoFrameReadListener`의 멤버 변수를 초기화하고 비디오 데이터의 콜백을 기다립니다.
 2. MediaFileSyncReader라는 모듈을 사용하여 `start` 방법을 호출해 로컬 비디오 파일에서 각 프레임별 비디오 화면을 읽어옵니다.
 3. 비디오 데이터를 `onFrameAvailable`을 통해 콜백합니다. 이 함수에서 획득한 texture를 sendCustomVideoData 함수를 통해 SDK에 전달합니다.
-
-```java
+<dx-codeblock>
+::: java java
 public void onFrameAvailable(EGLContext eglContext, int textureId, int width, int height, long timestamp) {
           TRTCCloudDef.TRTCVideoFrame videoFrame = new TRTCCloudDef.TRTCVideoFrame();
           videoFrame.texture = new TRTCCloudDef.TRTCTexture();
@@ -147,7 +147,8 @@ public void onFrameAvailable(EGLContext eglContext, int textureId, int width, in
 
           mTRTCCloud.sendCustomVideoData(videoFrame);
       }
-```
+:::
+</dx-codeblock>
 :::
 ::: Windows\s 플랫폼
 Windows 플랫폼은 TRTCVideoPixelFormat_I420만 지원합니다. 권장 매개변수 포맷은 다음과 같습니다.

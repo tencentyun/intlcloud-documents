@@ -1,5 +1,5 @@
 
-The `du` command is used to obtain statistics on each storage class for a bucket or a directory, including the size and number of objects in each storage class.
+The `du` command is used to list the statistics (total number and size) of files of each storage class in a bucket or a directory.
 
 ## Command Syntax
 
@@ -12,7 +12,7 @@ The `du` command is used to obtain statistics on each storage class for a bucket
 >- For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 >
 
-`ls` includes the following optional parameters:
+`du` includes the following optional parameters:
 
 | Parameter Format | Description | Example |
 | -------- | -------------- | -------------------- |

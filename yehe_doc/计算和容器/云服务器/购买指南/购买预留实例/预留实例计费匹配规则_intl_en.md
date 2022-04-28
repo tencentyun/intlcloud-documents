@@ -5,7 +5,7 @@ The purchased reserved instance (RI) automatically matches to pay-as-you-go inst
 - RIs are automatically matched with pay-as-you-go instances without manual intervention.
 - The RI billing benefit can apply to a maximum of 3,600 seconds (one hour) of instance usage per clock-hour. You can run multiple instances concurrently, but can only receive the benefit of the RI discount for a total of 3,600 seconds per clock-hour; instance usage that exceeds 3,600 seconds in a clock-hour is billed at the pay-as-you-go rate. 
 
-For example, if you purchase one S3.16xlarge256 RI in Silicon Valley Zone 1, and run three pay-as-you-go S3.16xlarge256 instances of the same attributes concurrently in the same availability zone for one hour, one instance is charged at one hour of RI usage and the other two instances are charged at two hours of pay-as-you-go usage. 
+For example, if you purchase one S3.16xlarge256 RI in Silicon Valley Zone 1, and run three pay-as-you-go S3.16xlarge256 instances of the same attributes concurrently in the same availability zone for one hour, one instance is charged at one hour of RI usage and the other two instances are charged at one hour of pay-as-you-go usage each. 
 
 However, if you purchase one S3.16xlarge256 RI in Silicon Valley Zone 1 and run three pay-as-you-go instances (A, B, and C) of the same attributes in the same availability zone for 20 minutes each within the same hour, the total running time for the instances is one hour, which results in one hour of RI usage and 0 hours of pay-as-you-go usage, as shown below.
 

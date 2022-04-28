@@ -18,7 +18,7 @@ In the call modes, all users in a TRTC room are assigned to access servers and a
 
 ## Sample Code
 
-You can obtain the sample code used in this document at [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron).
+You can obtain the sample code used in this document at [GitHub](https://github.com/LiteAVSDK/TRTC_Electron).
 
 ## Directions
 

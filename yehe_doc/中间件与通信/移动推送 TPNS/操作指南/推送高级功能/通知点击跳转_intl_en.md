@@ -202,7 +202,7 @@ Below is a sample of a complete message:
 ```
 
 <span id="zhongduan"></span>
-
+[](id:zhongduan)
 
 ### Getting parameters on the client
 1. In the `onCreate` method of the page you specify for redirect, add the following intent URI code:
@@ -214,14 +214,22 @@ protected void onCreate(Bundle savedInstanceState) {
 
     // ...
 
-    // Obtain the intent URI code in `onCreate`
+    // Getting parameters via `onCreate`
+
+    // If the `intent uri` (client customization) mode is used for push, and parameters are added to the end of `intent`, you can use this code snippet to get the parameter values.
+    // For example, if the value of the pushed `intent` is `xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb`,
+    // you can use this code snippet to get the values of `param1` and `param2`, which are `aa` and `bb` respectively.
     Uri uri = getIntent().getData();
     Log.i(TAG, "onCreate get data uri: " + uri);
-    if (uri != null) {                
+    if (uri != null) {
         String url = uri.toString();
-        String p1= uri.getQueryParameter("param1");
-        String p2= uri.getQueryParameter("param2");
+        String p1 = uri.getQueryParameter("param1");
+        String p2 = uri.getQueryParameter("param2");
     }
+
+    // This is new from SDK 1.3.2.0.
+    // If `custom_content` is set when the push task is created, you can use this API to get the content of the `custom_content` string.
+    String customContent = XGPushManager.getCustomContentFromIntent(this, this.getIntent());
 
     // ...
 }
@@ -234,14 +242,22 @@ protected void onNewIntent(Intent intent) {
 
     // ...
 
-    // Get the intent URI code in `onNewIntent`
+    // Getting parameters via `onNewIntent`
+
+    // If the `intent uri` (client customization) mode is used for push, and parameters are added to the end of `intent`, you can use this code snippet to get the parameter values.
+    // For example, if the value of the pushed `intent` is `xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb`,
+    // you can use this code snippet to get the values of `param1` and `param2`, which are `aa` and `bb` respectively.
     Uri uri = intent.getData();
     Log.i(TAG, "onNewIntent get data uri: " + uri);
     if (uri != null) {
         String url = uri.toString();
-        String p1= uri.getQueryParameter("param1");
-        String p2= uri.getQueryParameter("param2");
+        String p1 = uri.getQueryParameter("param1");
+        String p2 = uri.getQueryParameter("param2");
     }
+
+    // This is new from SDK 1.3.2.0.
+    // If `custom_content` is set when the push task is created, you can use this API to get the content of the `custom_content` string.
+    String customContent = XGPushManager.getCustomContentFromIntent(this, intent);
 
     // ...
 }

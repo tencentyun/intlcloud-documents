@@ -18,7 +18,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 ## 示例代码
 
-您可以登录 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Electron) 获取本文档相关的示例代码。
+您可以登录 [Github](https://github.com/LiteAVSDK/TRTC_Electron) 获取本文档相关的示例代码。
 
 ## 操作步骤
 
@@ -106,7 +106,6 @@ param.userSig = 'eJyrVareCeYrSy1SslI...';
 ::: javascript javascript
 import TRTCCloud from 'trtc-electron-sdk';
 import { TRTCParams, TRTCAppScene } from "trtc-electron-sdk/liteav/trtc_define";
-import TRTCCloud from 'trtc-electron-sdk';
 let trtcCloud = new TRTCCloud();
 
 let onEnterRoom = function (result) {

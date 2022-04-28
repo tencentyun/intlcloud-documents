@@ -11,6 +11,7 @@
 |Public|支持|
 |ChatRoom|支持，同新版本中的 Meeting（会议群）|
 |AVChatRoom|不支持|
+|Community（社群）|支持|
 
 即时通信 IM 内置以上四种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
@@ -29,7 +30,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group_msg?sdkappid=88888888&identif
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`</li> |
 | v4/group_open_http_svc/import_group_msg | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -50,6 +51,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group_msg?sdkappid=88888888&identif
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",
+    "RecentContactFlag":1,// 表示会触发会话更新（avchatroom 群不支持）
     "MsgList": [
         {
             "From_Account": "leckie", // 指定消息发送者
@@ -93,11 +95,12 @@ https://xxxxxx/v4/group_open_http_svc/import_group_msg?sdkappid=88888888&identif
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |要导入消息的群 ID   |
+|RecentContactFlag|Integer|选填|会话更新识别，为1的时候标识触发会话更新，默认不触发（avchatroom 群不支持）。|
 | MsgList | String | 必填 |导入的消息列表  |
 | From_Account | String | 必填 |指定消息发送者  |
 | SendTime | Integer | 必填 |消息发送时间  |
-| Random | Integer | 选填 |32位随机数；如果5分钟内两条消息的随机值相同，后一条消息将被当做重复消息而丢弃  |
-| MsgBody | Object | 必填 |TIM 消息，详情请参阅 [TIMMsgElement对象的定义](https://intl.cloud.tencent.com/document/product/1047/33527)   |
+| Random | Integer | 选填 |32位无符号整数；如果5分钟内两条消息的随机值相同，后一条消息将被当做重复消息而丢弃  |
+| MsgBody | Array | 必填 |TIM 消息，详情请参阅 [TIMMsgElement对象的定义](https://intl.cloud.tencent.com/document/product/1047/33527)   |
 | MsgType | String | 必填 |TIM 消息对象类型，目前支持的消息对象包括： TIMTextElem(文本消息)，TIMFaceElem(表情消息)，TIMLocationElem(位置消息)，TIMCustomElem(自定义消息)|
 | MsgContent | Object | 必填 |MsgContent 为 TIM 消息对象， 详情可参阅 [TIMMsgElement对象的定义](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
@@ -146,7 +149,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group_msg?sdkappid=88888888&identif
 | 10004 | 参数非法，请根据错误描述检查请求是否正确 |
 | 10007 | 操作权限不足，例如 Public 群组中普通成员尝试执行踢人操作，但只有 App 管理员才有权限 |
 | 10010 | 群组不存在，或者曾经存在过，但是目前已经被解散 |
-| 10015 | 群组 ID 非法，请检查群组 ID 是否填写正确 |
+| 10015 | 操群组 ID 非法，请检查群组 ID 是否填写正确 |
 | 10020 | 消息内容过长，目前最大支持8000字节的消息，请调整消息长度 |
 
 

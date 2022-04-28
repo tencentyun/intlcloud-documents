@@ -4,7 +4,7 @@ A **region** is an area where a Tencent Cloud managed data center is deployed. C
 
 For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate the object upload and download speeds.
 
-**Default endpoint** refers to the COS bucket’s default domain, which is automatically generated when the bucket is generated. Buckets residing in different regions have different default domains. To view the default domain, you can go to the [COS console](https://console.cloud.tencent.com/cos5), click the name of the desired bucket, click **Overview**, and find the **Domain Information** area.
+**Default endpoint** refers to the COS bucket’s default domain, which is automatically generated when the bucket is created. Buckets residing in different regions have different default domains. To view the default domain, you can go to the [COS console](https://console.cloud.tencent.com/cos5), click the name of the desired bucket, click **Overview**, and find the **Domain Information** area.
 
 
 >?
@@ -146,7 +146,7 @@ For example, if your business is distributed in South China, creating buckets in
 
 ### Global acceleration endpoint
 
-A global acceleration endpoint is formatted as &lt;BucketName-APPID&gt;.`cos.accelerate.myqcloud.com`. For more information about global acceleration endpoints and the use cases, please see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
+A global acceleration endpoint is formatted as &lt;BucketName-APPID&gt;.`cos.accelerate.myqcloud.com`. For more information about global acceleration endpoints and the use cases, see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
 
 
 ### Example
@@ -177,11 +177,11 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/picture.jpg
 
 ## Private Network and Public Network Access
 
-If an intra-region Cloud Virtual Machine (CVM) instance accesses COS using the default domain, data will be transferred over a private network by default. In this case, data uploads and downloads will generate private network traffic, but this traffic will not be billed. However, please note that you will still be charged for the number of requests.
+If an intra-region Cloud Virtual Machine (CVM) instance accesses COS using the default domain, data will be transferred over a private network by default. In this case, data uploads and downloads will generate private network traffic, but this traffic will not be billed. However, note that you will still be charged for the number of requests.
 
 Tencent Cloud COS adopts intelligent resolution for COS endpoints. In this way, the optimal linkage can be provided for you to access COS with different ISPs.
 
-If you deploy a service in Tencent Cloud to access COS, intra-region access requests will be automatically directed to a private network address. Currently, cross-region requests do not support private network access and will be resolved to a public network address by default. If you have requests for cross-region private network access, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you deploy a service in Tencent Cloud to access COS, intra-region access requests will be automatically directed to a private network address. Currently, cross-region requests do not support private network access and will be resolved to a public network address by default. If you have requests for cross-region private network access, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-For more information about private network and public network access, please see [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/30613).
+For more information about private network and public network access, see [Request Creation Overview](https://intl.cloud.tencent.com/document/product/436/30613).
 

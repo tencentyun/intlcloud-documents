@@ -9,7 +9,7 @@
 - 操作：包含任务流内所添加的任务。
 
 ## 预置任务流
-云点播服务为用户提供2条预置的任务流，该任务流包含了自适应码流任务、截图任务（雪碧图任务）、截取封面图任务，其中详细参数如下：
+云点播服务为用户提供3条预置的任务流，该任务流包含了自适应码流任务、截图任务（雪碧图任务）、截取封面图任务，其中详细参数如下：
 
 <table>
    <tr>
@@ -34,6 +34,19 @@
         <td rowspan=3>SimpleAesEncryptPreset</td>
         <td>转自适应码流</td>
         <td>Adpative-HLS-Encrypt(12)</td>
+    </tr>
+    <tr>
+        <td>截图</td>
+        <td>SpriteScreenshot(10)</td>
+    </tr>
+    <tr>
+        <td>截取封面</td>
+        <td>TimepointScreenshot(10)</td>
+    </tr>
+    <tr>
+        <td rowspan=3>WidevineFairPlayPreset</td>
+        <td>转自适应码流</td>
+				<td><li>Adpative-HLS-FairPlay(11)</li><li>Adpative-HLS-Widevine(13)</li></td>
     </tr>
     <tr>
         <td>截图</td>

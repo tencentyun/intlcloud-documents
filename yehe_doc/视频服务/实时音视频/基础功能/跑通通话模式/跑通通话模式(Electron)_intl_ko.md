@@ -18,7 +18,7 @@ TRTC 클라우드 서비스는 '인터페이스 노드'와 '프록시 노드'라
 
 ## 예시 코드
 
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)에 로그인하여 본 문서와 관련된 예시 코드를 확인할 수 있습니다.
+[Github](https://github.com/LiteAVSDK/TRTC_Electron)에 로그인하여 본 문서와 관련된 예시 코드를 확인할 수 있습니다.
 
 ## 작업 단계
 
@@ -106,7 +106,6 @@ param.userSig = 'eJyrVareCeYrSy1SslI...';
 ::: javascript javascript
 import TRTCCloud from 'trtc-electron-sdk';
 import { TRTCParams, TRTCAppScene } from "trtc-electron-sdk/liteav/trtc_define";
-import TRTCCloud from 'trtc-electron-sdk';
 let trtcCloud = new TRTCCloud();
 
 let onEnterRoom = function (result) {

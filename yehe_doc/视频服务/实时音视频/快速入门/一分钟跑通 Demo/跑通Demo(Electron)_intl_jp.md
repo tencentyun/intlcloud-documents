@@ -164,8 +164,8 @@ SDKがUDPプロトコルを使用してオーディオ・ビデオ伝送を行�
 
 - [SDK APIマニュアル](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/index.html)
 - [SDK更新ログ](https://intl.cloud.tencent.com/document/product/647/38702)
-- [Simple Demoソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCSimpleDemo)
-- [API Exampleソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTC-API-Example)
+- [Simple Demoソースコード](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTCSimpleDemo)
+- [API Exampleソースコード](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example)
 - [Electronについてのよくあるご質問](https://intl.cloud.tencent.com/document/product/647/43093)
 
 ```

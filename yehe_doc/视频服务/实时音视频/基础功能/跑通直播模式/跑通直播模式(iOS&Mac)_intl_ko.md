@@ -125,7 +125,7 @@ encParams.videoFps = 15;
 2. 호스트는 [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a8f2378a87c2e79fa3b978078e534ef4a)을 호출하여 뷰티 필터 스타일을 설정할 수 있습니다.
  - Smooth: 매끈하게. SNS 인플루언서 느낌의 뚜렷한 효과를 줍니다.
  - Nature: 내추럴. 피부 보정 알고리즘은 얼굴의 디테일을 더 많이 유지하여 자연스러운 느낌을 줍니다.
- - Pitu: [엔터프라이즈 버전](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise)에서만 지원합니다.
+ - Pitu: [다기능 버전](https://intl.cloud.tencent.com/document/product/647/34615)에서만 지원합니다.
 3. 호스트는 [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027)을 호출하여 피부 보정 레벨을 설정할 수 있습니다. 일반적으로 5로 설정합니다.
 4. 호스트는 [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4)을 호출하여 미백 레벨을 설정할 수 있습니다. 일반적으로 5로 설정합니다.
 5. iPhone 카메라의 색상 기본값은 노란 편이므로 [setFilter()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0)를 호출하여 호스트의 미백 특수 효과를 올리길 권장합니다. 미백 특수 효과가 매치되는 필터 파일의 다운로드 주소는 [필터 파일](https://liteav.sdk.qcloud.com/doc/res/trtc/filter/filterPNG.zip)입니다.

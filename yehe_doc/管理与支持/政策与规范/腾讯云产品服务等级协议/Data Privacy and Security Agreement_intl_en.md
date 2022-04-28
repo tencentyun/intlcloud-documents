@@ -88,7 +88,7 @@ Tencent and Organisation acknowledge that Organisation is the Controller and Ten
 <li>that Tencent approves the draft Notification Statement; and </li></ul></li>
 <li>following Tencent’s approval of a draft Notification Statement, Organisation must provide a copy of the approved Notification Statement to the applicable data protection regulators, Data Subjects and any other person as required under the Data Protection Laws; and</li>
 <li>not, and must ensure that its Affiliates and their respective personnel do not, make any public statement or disclosure relating to any suspected or actual Data Breach without the prior written consent of Tencent.</li></ol></ol>
-	
+​	
 
 ## Appointment of Sub-Processors
 
@@ -135,7 +135,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
-37.[Face Recognition](https://intl.cloud.tencent.com/document/product/1061/46726).
+37.[FaceID](https://intl.cloud.tencent.com/document/product/1061/46726).
 
 ## Jurisdiction-specific Requirements
 

@@ -1,3 +1,4 @@
+
 ### 如何下载 GME Demo 及 SDK？
 
 下载 GME 相关的 Demo 及 SDK，详情请参见 [下载指引](https://intl.cloud.tencent.com/document/product/607/18521) 。目前官网有 Unity 引擎 Demo、Cocos2D 引擎 Demo、Android 及 iOS 原生开发 Demo。
@@ -24,7 +25,7 @@
 
 ### 如何使用已下载的 Demo？
 
-- 您可以请参见 [Demo 使用文档](https://intl.cloud.tencent.com/document/product/607/36419)。
+- 您可以请参见 [Demo 使用文档](https://intl.cloud.tencent.com/document/product/607/39154)。
 - 如果是 Unity Demo，请参见 [Unity Demo 使用](https://intl.cloud.tencent.com/document/product/607/38535)。
 
 ### Unity 导出的 Demo 为何使用时候经常无声？
@@ -37,10 +38,10 @@ Unity 的 Demo 中设置了  OnApplicationFocus，当程序失去焦点时，会
 
 | 平台    | 路径                                                         |
 | ------- | ------------------------------------------------------------ |
-| Windows | %appdata%\Tencent\GME\ProcessName                            |
-| iOS     | Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents   |
-| Android | /sdcard/Android/data/xxx.xxx.xxx/files                       |
-| Mac     | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
+| Windows | `%appdata%\Tencent\GMEGLOBAL\ProcessName`                            |
+| iOS     | `Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents`   |
+| Android | `/sdcard/Android/data/xxx.xxx.xxx/files`                       |
+| Mac     | `/Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents` |
 
 如果是使用 Unity 引擎，并且在 PC 端开发，可以尝试在 `%appdata%\Tencent\GME\Unity.exe` 路径下找到日志。
 
@@ -49,6 +50,8 @@ Unity 的 Demo 中设置了  OnApplicationFocus，当程序失去焦点时，会
 2. 将您希望共享的文件放在应用程序的 Documents 目录下。
 3. 一旦设备插入到用户计算机，iTunes 就会在选中设备的 Apps 标签中显示一个 File Sharing 区域。
 4. 此后，用户就可以向该目录添加文件或者将文件移动到桌面计算机中。
+
+>?使用 GME2.8.4以下版本，Windows 平台日志位置为：`%appdata%\Tencent\GME\ProcessName`。
 
 **日志等级**
 

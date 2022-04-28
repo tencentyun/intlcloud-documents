@@ -2,19 +2,19 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to inventory.
+This document provides an overview of APIs and SDK code samples related to COS inventory.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
-| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job in a bucket |
-| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries inventory jobs for a bucket |
-| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job of a bucket |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Creating an inventory job | Creates an inventory job for a bucket |
+| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of a bucket |
+| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
 
-## Setting Inventory Job
+## Creating an Inventory Job
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket inventory) is used to create an inventory job in a bucket.
+This API (PUT Bucket inventory) is used to create an inventory job for a bucket.
 
 #### Method prototype
 
@@ -24,10 +24,29 @@ put_bucket_inventory(Bucket, Id, InventoryConfiguration={}, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-put-bucket-inventory)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_inventory(
-    Bucket='examplebucket-1250000000'',
+    Bucket='examplebucket-1250000000',
     Id='string',
     InventoryConfiguration={
         'Destination': {
@@ -65,9 +84,9 @@ response = client.put_bucket_inventory(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket for which to set an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket  | Bucket for inventory job setting, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
 | Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes |
 | Destination            | Inventory job delivery destination information                                      | Dict   | Yes       |
 | COSBucketDestination   | Destination bucket information for inventory job result delivery                             | Dict   | Yes       |
@@ -85,25 +104,25 @@ response = client.put_bucket_inventory(
 | Schedule               | Inventory job execution schedule                                           | Dict   | Yes       |
 | Frequency              | Inventory job execution frequency. Valid values: Daily, Weekly                     | String | Yes       |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.
 
-#### Error code description
+#### Error codes
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some common errors that may occur when you call this API:
 
-| Error code | Description | Status code |
+| Error Code | Description | Status Code |
 | --------------------- | -------------------------------------------- | -------------------- |
 | InvalidArgument | Invalid parameter value | HTTP 400 Bad Request |
 | TooManyConfigurations | The number of inventories has reached the upper limit of 1,000 | HTTP 400 Bad Request |
-| AccessDenied          | Unauthorized access. You probably do not have access to the bucket. | HTTP 403 Forbidden |
+| AccessDenied          | Unauthorized access. You most likely do not have access permission for the bucket | HTTP 403 Forbidden   |
 
-## Querying Inventory Job
+## Querying Inventory Jobs
 
-#### Feature description
+#### Description
 
-This API (GET Bucket inventory) is used to query the inventory job information in a bucket.
+This API is used to query the inventory jobs of a bucket.
 
 #### Method prototype
 
@@ -113,8 +132,27 @@ get_bucket_inventory(Bucket, Id, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-get-bucket-inventory)
-```
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_inventory(
     Bucket='examplebucket-1250000000',
     Id='string'
@@ -123,14 +161,14 @@ response = client.get_bucket_inventory(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket for which to query an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for inventory job query, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 | Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes |
 
-#### Returned result description
+#### Response description
 
-Inventory job configuration of the bucket in dict type.
+Inventory job configuration of the bucket in `dict` type.
 
 ```
 {
@@ -167,7 +205,7 @@ Inventory job configuration of the bucket in dict type.
 }
 ```
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ---------------------- | ------------------------------------------------------------ | ------ |
 | Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String |
 | Destination            | Inventory job delivery destination information                                      | Dict   |
@@ -186,11 +224,11 @@ Inventory job configuration of the bucket in dict type.
 | Schedule               | Inventory job execution schedule                                           | Dict   |
 | Frequency              | Inventory job execution frequency. Valid values: Daily, Weekly                     | String |
 
-## Deleting Inventory Job
+## Deleting an Inventory Job
 
-#### Feature description
+#### Description
 
-This API (DELETE Bucket inventory) is used to delete a specified inventory job of a bucket.
+This API is used to delete a specified inventory job from a bucket.
 
 #### Method prototype
 
@@ -200,8 +238,27 @@ delete_bucket_inventory(Bucket, Id, **kwargs)
 
 #### Sample request
 
-[//]: # (.cssg-snippet-delete-bucket-inventory)
-```
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.delete_bucket_inventory(
     Bucket='examplebucket-1250000000',
     Id='string'
@@ -210,11 +267,11 @@ response = client.delete_bucket_inventory(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | Bucket for which to delete an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket   | Bucket for inventory job deletion, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).  | String | Yes |
 | Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes |
 
-#### Returned result description
+#### Response description
 
-The returned value of this method is None.
+This API returns `None`.

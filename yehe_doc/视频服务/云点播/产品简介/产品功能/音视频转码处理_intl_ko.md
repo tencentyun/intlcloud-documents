@@ -1,5 +1,5 @@
 ## 시스템 아키텍처
-<img src="https://main.qcloudimg.com/raw/146d801f4900734b8faa0435b34ea6cc.png" width="650">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/781b266b5da2c5b870ba51bce5f1b5b0.png" width="650">
 
 ## 제품 기능
 ### 오디오/비디오 트랜스코딩

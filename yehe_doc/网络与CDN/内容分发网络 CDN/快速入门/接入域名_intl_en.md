@@ -19,7 +19,7 @@ Before configuring CDN, you need to [activate it](https://intl.cloud.tencent.com
 - **Acceleration domain name:** if end users access your business through `cdntest.com`, then `cdntest.com` is the acceleration domain name.
 - **CNAME domain name:** after an acceleration domain name is connected, the system will automatically assign a CNAME domain name suffixed with `.cdn.dnsv1.com` or `.dsa.dnsv1.com`, such as `cdntest.com.cdn.dnsv1.com` and `cdntest.com.dsa.dnsv1.com`.
 - **Origin address:** if the CDN node does not cache the content requested by the user, the node will request such content at `1.1.1.1`, which is the origin address.
-- **Origin domain:** when the CDN node is requesting `1.1.1.1`, if you expect that the actually requested address is `originhost.com`, which is different from `cdntest.com` in the end user's request, then set the origin domain to `originhost.com`, and the end user will access the content at `originhost.com` after origin-pull through `cdntest.com`. Generally, the acceleration domain name and the origin domain domain name should be the same, which can be adjusted based on your business needs.
+- **Origin domain:** when the CDN node is requesting `1.1.1.1`, if you expect that the actually requested address is `originhost.com`, which is different from `cdntest.com` in the end user's request, then set the origin domain to `originhost.com`, and the end user will access the content at `originhost.com` after origin-pull through `cdntest.com`. Generally, the acceleration domain name and the origin domain  should be the same, which can be adjusted based on your business needs.
 
 
 ## Directions

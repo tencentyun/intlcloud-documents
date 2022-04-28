@@ -38,7 +38,7 @@ TRTC SDKはNV12とi420という2種類のiOSバージョンのYUVデータ形式
 |  rotation   |  TRTCVideoRotation   |                       未入力                        | <ul style="margin:0"><li/>デフォルトは未入力。 <li/>画面を回転させたい場合は、`TRTCVideoRotation_0`、`TRTCVideoRotation_90`、`TRTCVideoRotation_180`、`TRTCVideoRotation_270`と入力します。SDKがその値に応じて対応する角度にビデオを時計回りに回転させます。例えば、縦画面の場合、`TRTCVideoRotation_90`と入力すると、SDKが画面を回転させて横表示にします。</ul> |
 
 #### サンプルコード
-[Demo]フォルダの中に`TestSendCustomVideoData.m`という名のファイルがあり、これにはローカルビデオファイルの中からNV12形式のPixelBufferを読み取り、SDKを介して後続の処理を行う方法が示されています。
+[Demo](https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/LocalVideoShare)フォルダの中に`LocalVideoShareViewController.m`という名のファイルがあり、これにはローカルビデオファイルの中からNV12形式のPixelBufferを読み取り、SDKを介して後続の処理を行う方法が示されています。
 
 ```objectiveC
 //TRTCVideoFrameをアセンブルし、trtcCloudオブジェクトに送信します
@@ -104,7 +104,7 @@ bufferでは、byte[]型の配列をTRTCSDKに直接挿入することが要求�
 </tr></tbody></table>
 
 - **textureスキーム**：ドッキングにはある程度のOpenGLの基礎が必要です。ただし性能は良く、とりわけ画面解像度が高いときに良好です。
-textureはTRTC SDKにOpenGLテクスチャを渡す必要があります。この方法の正常な動作を保証するには、事前にOpenGL環境を設定しておく必要があるため、この方法のドッキング難度は極めて高いものとなっています。OpenGLを学んだことがない場合は、当社が提供するサンプルコードを直接使用することを推奨します。サンプルコードは[Demo]の `customCapture` フォルダにあり、次のファイルが含まれています。
+textureはTRTC SDKにOpenGLテクスチャを渡す必要があります。この方法の正常な動作を保証するには、事前にOpenGL環境を設定しておく必要があるため、この方法のドッキング難度は極めて高いものとなっています。OpenGLを学んだことがない場合は、当社が提供するサンプルコードを直接使用することを推奨します。サンプルコードは[Demo](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare)の `mediashare` フォルダにあり、次のファイルが含まれています。
 <table><thead><tr><th>ファイル名</th><th>ソースコードロジック</th></tr></thead>
 <tbody>
 <tr><td>TestSendCustomData.java</td>
@@ -134,8 +134,8 @@ textureはTRTC SDKにOpenGLテクスチャを渡す必要があります。こ�
 1. コードはまずGLThreadスレッドを開始します。このスレッドは、関連する「サーフェース（SurfaceTexture）」にコンテンツが描画されるまで、ほとんどの場合、待機状態にあります。
 2. コードは次にローカルビデオファイルからフレームごとにビデオ画面を読み取り、前述の手順で作成した「サーフェース」上にフレームごとに画面を描画するためのMovieVideoFrameReaderと呼ばれるモジュールを使用します。
 3. フレームが描画されるたびに、手順1で作成したGLThreadスレッドがウェイクアップされ、次の`onTextureProcess`コールバックがあり、このコールバック関数で取得したtextureがsendCustomVideoData関数を介してSDKに渡されます。
-
-```java
+<dx-codeblock>
+::: java java
 public int onTextureProcess(int textureId, EGLContext eglContext) {
         if (!mIsSending) return textureId;
 
@@ -151,7 +151,8 @@ public int onTextureProcess(int textureId, EGLContext eglContext) {
         mTRTCCloud.sendCustomVideoData(videoFrame);
         return textureId;
     }
-```
+:::
+</dx-codeblock>
 :::
 ::: Windows\sプラットフォーム
 Windowsプラットフォームでは、TRTCVideoPixelFormat_I420のみをサポートしています。次のパラメータ形式を推奨します。

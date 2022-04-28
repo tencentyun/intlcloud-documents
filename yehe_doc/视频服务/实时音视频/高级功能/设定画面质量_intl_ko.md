@@ -7,8 +7,9 @@ TRTCCloud에서 다음 방식을 통해 화질을 조정할 수 있습니다.
 
 본 문서에서는 위의 매개변수를 설정하여 귀하의 프로젝트 수요에 맞게 TRTC SDK의 화질 효과를 조정하는 방법을 소개합니다.
 다음 Demo를 참고할 수 있습니다.
-- [iOS: LivePushViewController.swift]
-- [Android: LivePushActivity.java](https://github.com/tencentyun/TRTCSDK/blob/0123787812e04d3acb44eed06ec9803df363c580/Android/TRTCSimpleDemo/live/src/main/java/com/tencent/live/LivePushActivity.java)
+- [iOS：SetVideoQualityViewController.m](
+https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/SetVideoQuality/SetVideoQualityViewController.m)
+- [Android：SetVideoQualityActivity.java](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/SetVideoQuality/src/main/java/com/tencent/trtc/videoquality/SetVideoQualityActivity.java)
 - [Windows: TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp)
 
 ## 지원 플랫폼

@@ -27,7 +27,7 @@ Financial-grade data audit feature helps prevent core data theft, trace non-comp
 
 ## High Availability
 - **Real-time hot backup**
-The dual-server hot backup mechanism supports lossless restoration of data from the last 7–732 days based on data backup and log backup (binlog). Such backups can be retained for 7–732 days.
+The dual-server hot backup mechanism supports lossless restoration of data from the last 7–1830 days based on data backup and log backup (binlog). Such backups can be retained for 7–1830 days.
 
 - **Automatic disaster recovery**
 Automatic failure detection and failover are supported. Users are not aware of source-replica switchover or failover.

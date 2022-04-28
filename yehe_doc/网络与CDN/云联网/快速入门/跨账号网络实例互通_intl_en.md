@@ -28,14 +28,14 @@ This document describes how to associate VPCs under another account with your CC
 
 ## Step 4. Check the Route Table
 IP range conflicts produce invalid routes. To check if such conflicts exist, perform the following steps:
-1. In the CCN list, click the **ID/Name** of the desired CCN instance.
+1.Log in to the [CCN console](https://console.cloud.tencent.com/vpc/ccn), click the **ID/Name** of the desired CCN instance.
 2. Click the **Route Table** tab to view the route table of this CCN instance.
 3. Check if there is any invalid routing policy.
 ![](https://main.qcloudimg.com/raw/6e8f71bbd8addfa7df60ed6061df9b38.png)
 4. See [Route Limits](https://intl.cloud.tencent.com/document/product/1003/30052) to learn more about route conflicts. If you want to enable a route, please see [Enabling a Route](https://intl.cloud.tencent.com/document/product/1003/30069).
 
 ## Step 5. Set Cross-region Bandwidth Cap (Optional)
-1. In the CCN list, click the **ID/Name** of the CCN instance for which to set the bandwidth.
+1. Log in to the [CCN console](https://console.cloud.tencent.com/vpc/ccn), click the **ID/Name** of the CCN instance for which to set the bandwidth.
 2. Select the **Bandwidth Management** tab on the details page of the CCN instance.
 3. (Optional) Click **Change** to select the bandwidth limit mode as needed.
 ![](https://main.qcloudimg.com/raw/bc93b28f5c0fb5fee6ce51e1b73dab1c.png)

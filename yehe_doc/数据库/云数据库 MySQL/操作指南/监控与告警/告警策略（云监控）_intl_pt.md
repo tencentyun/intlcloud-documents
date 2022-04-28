@@ -10,7 +10,7 @@ Se quiser enviar uma mensagem de alarme para um status específico de um produto
 
 ## Instruções
 ### Criação de uma política de alarme
-Faça login no console do [Cloud Monitor] (https://console.cloud.tencent.com/monitor/overview) e selecione **Alarm Configuration (Configuração de alarme)** > [**Alarm Policy (Política de alarme)** na barra lateral esquerda.
+Faça login no console do [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) e selecione **Alarm Configuration (Configuração de alarme)** > [**Alarm Policy (Política de alarme)** na barra lateral esquerda.
 2. Na lista de políticas de alarme, clique em **Create (Criar)**.
 3. Na página **Create Alarm Policy (Criar política de alarme)**, defina o nome da política, o tipo de política, o objeto de alarme e a condição de disparo.
  - **Policy Type (Tipo de política)**: divide-se em monitoramento de origem e monitoramento de réplica, aplicáveis ​​a diferentes tipos de instâncias.

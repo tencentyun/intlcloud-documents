@@ -33,12 +33,12 @@ dependencies {
 }
 ```
 2. In `defaultConfig`, specify the CPU architecture to be used by your application.
->?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi-v7a, and arm64-v8a.
 >
 ```
  defaultConfig {
       ndk {
-          abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+          abiFilters "armeabi-v7a", "arm64-v8a"
       }
   }
 ```

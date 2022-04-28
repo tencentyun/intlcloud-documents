@@ -1,10 +1,23 @@
+### Google Play 应用商店上架时提示“您的应用包含一个隐式 PendingIntent 漏洞”？
+1. TPNS SDK 在代码位置 TPushAlarmManager.set 处使用了一个隐式 PendingIntent，用于触发 SDK 内部心跳。
+您可以参见 Google [隐式 PendingIntent 处理帮助文档](https://support.google.com/faqs/answer/10437428) 提出的针对建议，TPNS SDK 已进行如下自查：
+a. 使用的 setAction 为 SDK 自声明的静态广播 action，无对外暴露风险；
+b. 涉及 PendingIntent 的打开目标为 SDK 内部静态广播，且已添加 SDK 内部自声明的广播权限，属于可信任组件。
+
+2. Google 文档提及 “Fixing this issue is recommended but not mandatory. The publication status of your app will be unaffected by the presence of this issue.”。
+
+综合考虑，TPNS 此处当前使用的 PendingIntent 为可信任安全 PendingIntent，且 Google 提示的此项内容不会影响您的应用上架。当前您可以忽视此项提示，继续上架您的应用。
+
 ### 如何设置自定义铃声？
 
 使用自定义铃声可以通过创建通知渠道实现：
 1. 创建通知渠道，通过 TPNS 封装 API 或安卓原生 API 创建指定自定义铃声文件的通知渠道，可参考 [创建通知渠道](https://intl.cloud.tencent.com/document/product/1024/30715)。
 2. 在 TPNS 推送 REST API 指定相同的通知渠道`n_ch_id `进行推送,厂商通道需指定厂商渠道 ID，如华为通道需指定`hw_ch_id`,小米通道需指定`xm_ch_id`。
 
->? 目前仅华为、小米、FCM 和 TPNS 通道支持自定义铃声，厂商通道渠道 ID 申请步骤可参考 [厂商通道消息分类功能使用说明](https://intl.cloud.tencent.com/document/product/1024/36250)。
+>?
+>- 目前仅华为、小米、FCM 和 TPNS 通道支持自定义铃声。
+>- 部分厂商推送通道使用通道渠道需要先进行通知分类权限申请，相关说明和申请步骤可参见 [厂商通道消息分类功能使用说明](https://intl.cloud.tencent.com/document/product/1024/36250)。
+>- 针对华为推送通道，如果您的应用在华为推送控制台申请开通华为推送服务时，选择的数据处理位置为中国区，自定义渠道功能将不再适用于您的应用，即不支持利用通知渠道能力进行通知铃声自定义，详见 [自定义通知渠道](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122)。
 >
 
 ### 如何关闭 TPNS 的保活功能？
@@ -29,8 +42,15 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 若控制台有以下日志打印，则表明联合保活功能已经关闭：`I/TPush: [ServiceUtil] disable pull up other app`。
 
+### 首次安装启动时如何配置不自动启动推送服务？
 
+针对“用户同意隐私服务协议” 场景，开发者可以在 AndroidManifest.xml 文件添加以下节点，应用首次安装启动时即不会自启推送服务，直到调用了推送服务注册接口`XGPushManager.registerPush()` 才会开启：
 
+```
+<meta-data
+android:name="XG_SERVICE_PULL_UP_OFF"
+android:value="true" />
+```
 ### TPNS SDK 支持鸿蒙系统的推送吗？
 
 鸿蒙系统完全兼容 Android SDK，推送功能可正常使用。
@@ -48,6 +68,16 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 | vivo | 是 ，且需要企业开发者账号可 [开通 vivo 平台推送服务](https://dev.vivo.com.cn/documentCenter/doc/2)|
 
 
+### 集成 vivo 厂商通道后 “APP 包含未使用的权限字符串”，如何处理？
+
+开发者在集成 vivo 厂商通道推送服务后，部分安全检测工具可能会提示 “APP 包含未使用的权限字符串”，详情如下： 
+问题来源：vivo 厂商通道推送 SDK 版本名 2.3.4。
+涉及类文件：com.vivo.push.util.z 涉及敏感权限字符串：android.permission.GET_ACCOUNTS。
+>! 经检查发现最新的 vivo 厂商通道推送 SDK 版本名 3.0.0.3 中同样包含此问题。
+
+问题代码来源为 vivo 厂商通道推送 SDK，TPNS 项目组无法变更其内容；此问题已向 vivo 推送服务相关人员反馈，表示相关静态字段为 SDK 遗留代码，并无实际使用，会尽快排期修复。 当前可参考的快速解决办法如下：
+- 方式一（推荐）： 在《APP隐私声明》里增加 [移动推送 TPNS 的隐私说明](https://intl.cloud.tencent.com/document/product/1024/30713)。 
+- 方式二（不推荐）： 剔除掉 vivo 相关 jar 包，但是也会丧失掉 vivo 厂商通道的能力。
 
 ### 什么是 TPNS 通道？
 
@@ -165,7 +195,9 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 }
 ```
 
-适配后的具体效果如下，建议参考 Demo logo 图标进行作图。
+适配后的具体效果如下，[建议参考 Demo logo 图标进行作图](https://git.code.tencent.com/tpns/TPNS-Demo-Android/blob/master/app/src/main/res/drawable/notification_icon.png)。
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f3df2a69acc72d182fd74a6799734dd9.jpg" width="60%"></img>
 
 
 >?
@@ -173,7 +205,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 >- 背景必须是透明。
 >- 周围不宜留过多 padding。
 >- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
->
+
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
 

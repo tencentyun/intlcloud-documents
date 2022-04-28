@@ -8,7 +8,7 @@
 ### 查看注册集群
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式基础设施**>**集群**页面。
 2. 列表页面展示已注册的集群，单击集群名称，将自动跳转至容器服务集群管理页面进行管理。
-![](https://qcloudimg.tencent-cloud.cn/raw/7dad502d5dfff03279788299e1e68b43.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c9b84d044c149c3b5bfa50557dcd16d0.png)
  - **ID/名称**：显示该注册集群的 ID 和名称，点击名称可调转至集群管理页面查看该集群的详细信息。
  - **Kubernetes版本**：注册集群的 Kubernetes 版本。
  - **类型/状态**：展示集群的类型和状态信息。

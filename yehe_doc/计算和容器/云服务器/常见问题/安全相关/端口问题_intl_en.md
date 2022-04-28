@@ -10,7 +10,7 @@ For more information, see [Server Common Port](https://intl.cloud.tencent.com/do
 You can use the service only after you open the port to the Internet in the security group. For example:
 If you want to access web pages using port 8080, the port must be enabled and opened to the Internet in the security group.
 To open a port to the Internet, follow the steps below:
-1. Go to the [security group] page (https://console.cloud.tencent.com/vpc/securitygroup), and click the ID/name of the security group bound with this instance to go to its details page.
+1. Go to the [security group page](https://console.cloud.tencent.com/vpc/securitygroup), and click the ID/name of the security group bound with this instance to go to its details page.
 2. Select **Inbound/Outbound rule** and click **Add a Rule**.
 3. Enter your IP address (range) and port to be opened, and then select **Allow** to open the port.
 For more information, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).

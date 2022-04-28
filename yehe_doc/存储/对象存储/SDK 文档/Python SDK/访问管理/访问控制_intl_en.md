@@ -1,5 +1,5 @@
 ## Overview
-This document provides an overview of APIs and SDK code samples related to bucket and object access control lists (ACL).
+This document provides an overview of APIs and SDK code samples related to the access control lists (ACLs) for buckets and objects.
 
 
 **Bucket ACL**
@@ -7,20 +7,20 @@ This document provides an overview of APIs and SDK code samples related to bucke
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | --------------------------------------- |
 | [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting bucket ACL | Sets the ACL for the specified bucket |
-| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying bucket ACL | Queries the ACL of a bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying bucket ACL | Queries the ACL of a specified bucket |
 
 **Object ACL**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for a specified object in a bucket |
-| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for an object in a bucket |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying an object ACL | Queries the ACL of an object |
 
 ## Bucket ACL
 
-### Setting bucket ACL
+### Setting a bucket ACL
 
-#### Feature
+#### Description
 
 The API (PUT Bucket acl) is used to set the ACL for a specified bucket. The `AccessControlPolicy` parameter and other permission parameters are mutually exclusive and cannot be specified at the same time.
 
@@ -29,41 +29,60 @@ The API (PUT Bucket acl) is used to set the ACL for a specified bucket. The `Acc
 ```
 put_bucket_acl(Bucket, AccessControlPolicy={}, **kwargs)
 ```
-#### Request samples
+#### Sample request
 
-[//]: # (.cssg-snippet-put-bucket-acl)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_bucket_acl(
     Bucket='examplebucket-1250000000',
     ACL='public-read'
 )
 ```
-#### Sample request for all parameters
+#### Sample request with all parameters
 
 ```python
 response = client.put_bucket_acl(
     Bucket='examplebucket-1250000000',
     ACL='private'|'public-read'|'public-read-write',
-    GrantFullControl='string',
-    GrantRead='string',
-    GrantWrite='string',
+    GrantFullControl='id="100000000002"',
+    GrantRead='id="100000000003",id="100000000004"',
+    GrantWrite='id="100000000005"',
     AccessControlPolicy={
         'AccessControlList': {
             'Grant': [
                 {
                     'Grantee': {
-                        'DisplayName': 'string',
+                        'DisplayName': 'qcs::cam::uin/100000000002:uin/100000000002',
                         'Type': 'CanonicalUser'|'Group',
-                        'ID': 'string',
-                        'URI': 'string'
+                        'ID': 'qcs::cam::uin/100000000002:uin/100000000002', # The ID is required when `Type` is `CanonicalUser`
+                        'URI': 'http://cam.qcloud.com/groups/global/AllUsers' # The URI is required when `Type` is `Group`
                     },
                     'Permission': 'FULL_CONTROL'|'WRITE'|'READ'
                 },
             ]
         },
         'Owner': {
-            'DisplayName': 'string',
-            'ID': 'string'
+            'DisplayName': 'qcs::cam::uin/100000000001:uin/100000000001', 
+            'ID': 'qcs::cam::uin/100000000001:uin/100000000001' # It must be the ID of the bucket owner
         }
     }
 )
@@ -71,42 +90,86 @@ response = client.put_bucket_acl(
 
 #### Parameter description
 
-| Parameter Name | Description | Type | Required | 
+| Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
-| ACL | Sets the bucket ACL, such as 'private', 'public-read', 'public-read-write' | String | No |
-| GrantFullControl | Grants a specified account full Read/Write permission for a bucket in the format of `id="OwnerUin"`| String | No |
-|GrantRead | Grants a specified account Read permission for a bucket in the format of `id="OwnerUin"`| String | No |
-| GrantWrite| Grants a specified account Write permission for a bucket in the format of `id="OwnerUin"`| String | No |
-| AccessControlPolicy | Grants a specified account permission to access a bucket. For the specific format, see the response for `GET Bucket acl` | Dict | No |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| ACL  | ACL of the bucket, such as `private`, `public-read`, and `public-read-write`. For more information, see [ACL](https://intl.cloud.tencent.com/document/product/436/30583).                  | String | No |
+| GrantFullControl | Grants a specified account read/write permission for a bucket in the format of `id="OwnerUin"`. You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+|GrantRead | Grants a specified account read permission for a bucket in the format of `id="OwnerUin"`. You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| GrantWrite | Grants a specified account write permission for a bucket in the format of `id="OwnerUin"`. You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| AccessControlPolicy| Grants a specified account access permission for a bucket. This parameter and other permission parameters are mutually exclusive and cannot be specified at the same time. |Dict| No |
+
+`AccessControlPolicy` parameter description:
+
+| Parameter | Description | Type | Required |
+| -------------- | -------------- |---------- | ----------- |
+| Owner | Information on the bucket owner, including `DisplayName` and `ID` | Dict | Yes |
+| AccessControlList  | Information on the user to whom a bucket permission is granted, including `Grant` list | Dict | Yes |
+
+`Owner` parameter description:
+
+| Parameter | Description | Type | Required |
+| -------------- | -------------- |---------- | ----------- |
+| ID | ID of the grantee when `Type` is `CanonicalUser`, in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, for example, `qcs::cam::uin/100000000001:uin/100000000001`. | string | Yes |
+| DisplayName       | Name of the grantee. This parameter can be left empty or be consistent with the value of `ID`       | String | No |
+
+`AccessControlList` parameter description:
+
+| Parameter | Description | Type | Required |
+| -------------- | -------------- |---------- | ----------- |
+| Grant | Information on the user to whom a bucket permission is granted, including `Grantee` and `Permission` | List | Yes |
+| Grantee | Information on the grantee, including `DisplayName`, `Type`, `ID`, and `URI` | Dict | Yes |
+| Type | Type of the grantee: `CanonicalUser` or `Group` | String | Yes |
+| ID | ID of the grantee when `Type` is `CanonicalUser`, in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, for example, `qcs::cam::uin/100000000001:uin/100000000001`. |String| Yes when `Type` is `CanonicalUser` |
+| URI | URI of the preset user group when `Type` is `Group`, for example, `http://cam.qcloud.com/groups/global/AllUsers`. For more information, see [ACL](https://intl.cloud.tencent.com/document/product/436/30583). |String| Yes when `Type` is `Group` |
+| Permission | Bucket permissions granted to the grantee. Valid values: `FULL_CONTROL` (read/write permission), `WRITE` (write permission), and `READ` (read permission) | String | Yes |
 
 #### Response description
-This method returns None.
+This API returns `None`.
 
-### Querying bucket ACL
+### Querying a bucket ACL
 
-#### Feature
+#### Description
 
-This API (GET Bucket acl) is used to get the ACL of a specified bucket.
+This API is used to query the ACL of a specified bucket.
 
 #### Method prototype
 
 ```
 get_bucket_acl(Bucket, **kwargs)
 ```
-#### Request samples
+#### Sample request
 
-[//]: # (.cssg-snippet-get-bucket-acl)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_bucket_acl(
     Bucket='examplebucket-1250000000'
 )
 ```
 #### Parameter description
 
-| Parameter Name | Description | Type | Required | 
+| Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 
 
 #### Response description
@@ -115,121 +178,179 @@ This response returns bucket ACL information in Dict format.
 ```python
 {
     'Owner': {
-        'DisplayName': 'string',
-        'ID': 'string'
+        'DisplayName': 'qcs::cam::uin/100000000001:uin/100000000001',
+        'ID': 'qcs::cam::uin/100000000001:uin/100000000001'
     },
-    'Grant': [
-        {
-            'Grantee': {
-                'DisplayName': 'string',
-                'Type': 'CanonicalUser'|'Group',
-                'ID': 'string',
-                'URI': 'string'
+    'AccessControlList': {
+        'Grant': [
+            {
+                'Grantee': {
+                    'DisplayName': 'qcs::cam::uin/100000000002:uin/100000000002',
+                    'Type': 'CanonicalUser'|'Group',
+                    'ID': 'qcs::cam::uin/100000000002:uin/100000000002',
+                    'URI': 'http://cam.qcloud.com/groups/global/AllUsers'
+                },
+                'Permission': 'FULL_CONTROL'|'WRITE'|'READ'
             },
-            'Permission': 'FULL_CONTROL'|'WRITE'|'READ'
-        },
-    ]
+        ]
+    }
 }
 ```
 
-| Parameter Name | Description | Type | 
-| -------------- | -------------- |---------- | 
-| Owner | Information on the bucket owner, including `DisplayName` and `ID` | Dict |
-| Grant | Information on the user to which a bucket permission is granted, including `Grantee` and `Permission` | List |
-| Grantee | Information on the grantee, including `DisplayName`, `Type`, `ID` and `URI` | Dict |
-| DisplayName | Name of the grantee | String |
-| Type | Type of the grantee: `CanonicalUser` or `Group` | String |
-| ID | ID of the grantee when `Type` is `CanonicalUser` | String |
-| URI | URI of the grantee when `Type` is `Group` | String |
-| Permission | Bucket permissions granted to the grantee. Valid values: `FULL_CONTROL` (Read/Write permission), `WRITE` (Write permission), and `READ` (Read permission) | String |
-
+| Parameter | Description | Type |
+| -------------- | -------------- |---------- |
+| Owner | Information on the bucket owner, including `DisplayName` and `ID`. For more information, see `PUT Bucket acl`. | Dict |
+|  AccessControlList  | Information on the user to whom a bucket permission is granted, including `Grant` list. For more information, see `PUT Bucket acl`. | Dict |
 
 
 
 ## Object ACL
 
-### Setting object ACL
+### Setting an object ACL
 
-#### Feature
+#### Description
 
-The API (PUT Object acl) is used to set the ACL for an object in a bucket. The `AccessControlPolicy` parameter and other permission parameters cannot be specified at the same time.
+The API is used to set the ACL for an object in a bucket. The `AccessControlPolicy` parameter and other permission parameters cannot be specified at the same time.
 
 #### Method prototype
 
 ```
 put_object_acl(Bucket, Key, AccessControlPolicy={}, **kwargs)
 ```
-#### Request samples
+#### Sample request
 
-[//]: # (.cssg-snippet-put-object-acl)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.put_object_acl(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     ACL='public-read'
 )
 ```
-#### Sample request for all parameters
+#### Sample request with all parameters
 
 ```python
 response = client.put_object_acl(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
-    ACL='private'|'public-read',
-    GrantFullControl='string',
-    GrantRead='string',
+    ACL='default'|'private'|'public-read',
+    GrantFullControl='id="100000000003"',
+    GrantRead='id="100000000003",id="100000000004"',
     AccessControlPolicy={
         'AccessControlList': {
             'Grant': [
                 {
                     'Grantee': {
-                        'DisplayName': 'string',
+                        'DisplayName': 'qcs::cam::uin/100000000002:uin/100000000002',
                         'Type': 'CanonicalUser'|'Group',
-                        'ID': 'string',
-                        'URI': 'string'
+                        'ID': 'qcs::cam::uin/100000000002:uin/100000000002', # The ID is required when `Type` is `CanonicalUser`
+                        'URI': 'http://cam.qcloud.com/groups/global/AllUsers' # The URI is required when `Type` is `Group`
                     },
-                    'Permission': 'FULL_CONTROL'|'WRITE'|'READ'
+                    'Permission': 'FULL_CONTROL'|'READ'
                 },
             ]
         },
         'Owner': {
-            'DisplayName': 'string',
-            'ID': 'string'
+            'DisplayName': 'qcs::cam::uin/100000000001:uin/100000000001',
+            'ID': 'qcs::cam::uin/100000000001:uin/100000000001'
         }
     }
 )
 ```
+
 #### Parameter description
 
-| Parameter Name | Description | Type | Required | 
+| Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
-| key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes | 
-| ACL | Sets the object ACL, e.g. 'private'，'public-read'|String| No | 
-| GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"`| String | No |
-|GrantRead |Grants the grantee Read access in the format of `id="OwnerUin"` | String | No |
-| AccessControlPolicy   | Grants the grantee access to the object. For the format, see the response description of `GET Object acl` | Dict  | No  | 
+| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| ACL  | ACL of the object, such as `default`, `private`, and `public-read`. For more information, see [ACL](https://intl.cloud.tencent.com/document/product/436/30583).                  | String | No |
+| GrantFullControl | Grants a specified account full permission for an object in the format of `id="OwnerUin"`. You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| GrantRead | Grants a specified account read permission for an object in the format of `id="OwnerUin"`. You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| AccessControlPolicy | Grants a specified account access permission for an object. This parameter and other permission parameters are mutually exclusive and cannot be specified at the same time. |Dict| No |
 
+`AccessControlPolicy` parameter description:
+
+| Parameter | Description | Type | Required |
+| -------------- | -------------- |---------- | ----------- |
+| Owner | Information on the bucket owner, including `DisplayName` and `ID` | Dict | Yes |
+| AccessControlList  | Information on the user to whom a bucket permission is granted, including `Grant` list | Dict | Yes |
+
+`Owner` parameter description:
+
+| Parameter | Description | Type | Required |
+| -------------- | -------------- |---------- | ----------- |
+| ID | ID of the grantee when `Type` is `CanonicalUser`, in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, for example, `qcs::cam::uin/100000000001:uin/100000000001`. | string | Yes |
+| DisplayName       | Name of the grantee. This parameter can be left empty or be consistent with the value of `ID`       | String | No |
+
+`AccessControlList` parameter description:
+
+| Parameter | Description | Type | Required |
+| -------------- | -------------- |---------- | ----------- |
+| Grant | Information on the user to whom a bucket permission is granted, including `Grantee` and `Permission` | List | Yes |
+| Grantee | Information on the grantee, including `DisplayName`, `Type`, `ID`, and `URI` | Dict | Yes |
+| Type | Type of the grantee: `CanonicalUser` or `Group` | String | Yes |
+| ID | ID of the grantee when `Type` is `CanonicalUser`, in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, for example, `qcs::cam::uin/100000000001:uin/100000000001`. |String| Yes when `Type` is `CanonicalUser` |
+| URI | URI of the preset user group when `Type` is `Group`, for example, `http://cam.qcloud.com/groups/global/AllUsers`. For more information, see [ACL](https://intl.cloud.tencent.com/document/product/436/30583). |String| Yes when `Type` is `Group` |
+| Permission | Permissions granted to the grantee. Valid values: `FULL_CONTROL` (full access) and `READ` (read permission) | String | Yes |
 
 #### Response description
 
-This method returns None.
+This API returns `None`.
 
-### Querying object ACL
+### Querying an object ACL
 
-#### Feature
+#### Description
 
-The API (GET Object acl) is used to query the ACL of an object.
+The API is used to query the ACL of an object.
 
 #### Method prototype
 
 ```
 get_object_acl(Bucket, Key, **kwargs)
 ```
-#### Request samples
+#### Sample request
 
-[//]: # (.cssg-snippet-get-object-acl)
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+import sys
+import logging
+
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
 response = client.get_object_acl(
     Bucket='examplebucket-1250000000',
     Key='exampleobject'
@@ -237,42 +358,38 @@ response = client.get_object_acl(
 ```
 #### Parameter description
 
-| Parameter Name | Description | Type | Required | 
+| Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
-| key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
 
 
 #### Response description
 
-This response returns bucket ACL information in Dict format:
+Object ACL information in `dict` type:
 ```python
 {
     'Owner': {
-        'DisplayName': 'string',
-        'ID': 'string'
+        'DisplayName': 'qcs::cam::uin/100000000001:uin/100000000001',
+        'ID': 'qcs::cam::uin/100000000001:uin/100000000001'
     },
-    'Grant': [
-        {
-            'Grantee': {
-                'DisplayName': 'string',
-                'Type': 'CanonicalUser'|'Group',
-                'ID': 'string',
-                'URI': 'string'
+    'AccessControlList': {
+        'Grant': [
+            {
+                'Grantee': {
+                    'DisplayName': 'qcs::cam::uin/100000000002:uin/100000000002',
+                    'Type': 'CanonicalUser'|'Group',
+                    'ID': 'qcs::cam::uin/100000000002:uin/100000000002',
+                    'URI': 'http://cam.qcloud.com/groups/global/AllUsers'
+                },
+                'Permission': 'FULL_CONTROL'|'READ'
             },
-            'Permission': 'FULL_CONTROL'|'WRITE'|'READ'
-        },
-    ]
+        ]
+    }
 }
 ```
 
-| Parameter Name | Description | Type |
-| -------------- | -------------- |---------- | 
- | Owner | Information on the object owner, including `DisplayName` and `ID` | Dict | 
- | Grant | Information on the user to which object permission is granted, including `Grantee` and `Permission` | List | 
- | Grantee | Information on the grantee, including `DisplayName`, `Type`, `ID` and `URI` | Dict | 
- | DisplayName | Name of the grantee | String |
- | Type | Type of the grantee: `CanonicalUser` or `Group` | String |
- | ID | ID of the grantee when `Type` is `CanonicalUser` | String | 
- | URI | URI of the grantee when `Type` is `Group` | String | 
- | Permission | Permissions granted to the grantee. Valid values: `FULL_CONTROL` (full access), `WRITE` (Write access), and `READ` (Read access) | String |
+| Parameter | Description | Type |
+| -------------- | -------------- |---------- |
+| Owner   | Information on the object owner, including `DisplayName` and `ID`. For more information, see `PUT Object acl`. | Dict |
+|  AccessControlList  | Information on the user to whom an object permission is granted, including `Grant` list. For more information, see `PUT Object acl`. | Dict |

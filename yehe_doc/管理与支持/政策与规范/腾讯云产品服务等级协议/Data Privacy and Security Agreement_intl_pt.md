@@ -137,7 +137,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
-37.[Face Recognition](https://intl.cloud.tencent.com/document/product/1061/46726).
+37.[FaceID](https://intl.cloud.tencent.com/document/product/1061/46726).
 
 ## Requisitos específicos da jurisdição
 

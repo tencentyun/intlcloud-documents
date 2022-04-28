@@ -1,14 +1,14 @@
 ### What is the difference between SSH key login and password login?
 An SSH key allows you to log in to a Linux server remotely. It uses the key generator to create a key pair (public and private). The public key is added to the server, and the client can use the private key to complete the authentication and login. Compared to password login, SSH key login is more secure and efficient.
 Currently, Linux instance supports both password and SSH key login, while Windows instance only supports password login. For related documentation, see:
-- [Logging into Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
-- [Logging into Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
+- [Logging in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436)
+- [Logging in to Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435)
 
-### Why cannot I use the password to log in to a Linux instance that is associated with an SSH key?
-After the CVM is associated with an SSH key, password login is **disabled by default**. Please [logging into Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501). 
+### I cannot use the password to log in to a Linux instance that is associated with an SSH key.
+After the CVM is associated with an SSH key, password login is **disabled by default**. See [Logging in to Linux Instance (SSH Key)](https://intl.cloud.tencent.com/document/product/213/32501). 
 
 ### Can I use SSH key together with the password login?
-When you [log into Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501), password login is disabled by default to improve security.
+When you [log in to Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501), password login is disabled by default to improve security.
 
 ### How do I create an SSH key and what if I lose it?
 For more information on key creation, see [Managing SSH keys](https://intl.cloud.tencent.com/document/product/213/16691).
@@ -37,9 +37,9 @@ For more information, see the **Use Limits** section in [SSH Keys](https://intl.
 
 ### How to troubleshoot if I fail to log in to a Linux instance using an SSH key?
 
-For more information, see [Unable to Log into a Linux Instance via SSH](https://intl.cloud.tencent.com/document/product/213/32486).
+For more information, see [Unable to Log in to a Linux Instance via SSH](https://intl.cloud.tencent.com/document/product/213/32486).
 
-### Why cannot I download my key?
+### I can not download my key.
 The key can only be downloaded once. If you lost the key, we recommend that you create a new key, download and save it.
 
 ### How can I query which key is used by the CVM instance?

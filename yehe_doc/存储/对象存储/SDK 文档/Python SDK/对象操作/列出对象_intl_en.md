@@ -225,7 +225,7 @@ The response contains object metadata in dict format:
 | NextMarker | The object after which the next returned list begins if `IsTruncated` is `true` | String |
 | Name | Bucket name in the format of `BucketName-APPID` | String |
 | IsTruncated   |  Whether the returned object list is truncated. | String |
-| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | 
 | Contents | List of all object metadata, including `ETag`, `StorageClass`, `Key`, `Owner`, `LastModified`, `Size` | List |
 | CommonPrefixes | All objects starting with the specified prefix and ending with the specified delimiter | List |
 
@@ -356,7 +356,7 @@ The response contains object metadata in dict format:
 | NextVersionIdMarker | The version ID of the object after which the next returned list begins if `IsTruncated` is `true` | String |
 | Name | Bucket name in the format of `BucketName-APPID` | String |
 | IsTruncated   |  Whether the returned object list is truncated. | String |
-| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | 
 | Version | List of the metadata of all objects with multiple versions, including `ETag`, `StorageClass`, `Key`, `VersionId`, `IsLatest`, `Owner`, `LastModified`, and `Size`  | List |
 | DeleteMarker | List of the metadata of all delete markers, including `Key`, `VersionId`, `IsLatest`, `Owner`, and `LastModified` | List |
 | CommonPrefixes | All objects starting with the specified prefix and ending with the specified delimiter | List |

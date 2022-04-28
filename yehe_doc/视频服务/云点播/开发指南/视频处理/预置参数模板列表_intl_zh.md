@@ -196,9 +196,23 @@
   <td>是</td>
  </tr>
  <tr>
+  <td>11</td>
+  <td>HLS</td>
+  <td>FairPlay</td>
+  <td >包含从“流畅”到“4K”共6个规格的子流</td>
+  <td>是</td>
+ </tr>
+ <tr>
   <td>12</td>
   <td>HLS</td>
   <td>SimpleAES</td>
+  <td >包含从“流畅”到“4K”共6个规格的子流</td>
+  <td>是</td>
+ </tr>
+ <tr>
+  <td>13</td>
+  <td>HLS</td>
+  <td>Widevine</td>
   <td >包含从“流畅”到“4K”共6个规格的子流</td>
   <td>是</td>
  </tr>
@@ -207,7 +221,7 @@
   <td>MPEG-DASH</td>
   <td>	不加密</td>
   <td >包含从”流畅”到“4K“共6个规格的子流</td>
-  <td>否</td>
+  <td>是</td>
  </tr>
 </table>
 

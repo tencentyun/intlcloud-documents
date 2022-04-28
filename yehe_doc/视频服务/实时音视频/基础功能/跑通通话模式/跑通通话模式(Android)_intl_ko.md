@@ -33,12 +33,12 @@ dependencies {
 }
 ```
 2. defaultConfig에서 App이 사용하는 CPU 구성을 지정합니다.
->?현재 TRTC SDK는 armeabi , armeabi-v7a, arm64-v8a를 지원합니다.
+>?현재 TRTC SDK는 armeabi-v7a, arm64-v8a를 지원합니다.
 >
 ```
  defaultConfig {
       ndk {
-          abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+          abiFilters "armeabi-v7a", "arm64-v8a"
       }
   }
 ```

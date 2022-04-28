@@ -1,6 +1,6 @@
 ## Overview
 
-You can restore an object from the ARCHIVE or DEEP ARCHIVE storage class through the COS console. The restoration operation will create a copy of the object in the STANDARD storage class. You can read, download, or perform other operations on the copy within a specified time period, after which the copy will expire automatically. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+You can restore an object from the ARCHIVE or DEEP ARCHIVE storage class through the COS console. The restoration operation will create a copy of the object in the STANDARD storage class. You can read, download, or perform other operations on the copy within its validity period. The copy will be deleted automatically after expiration. For more information about storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
 >! If you restore objects from ARCHIVE, the object copy will be billed at STANDARD rates. If you restore objects from DEEP ARCHIVE, the object copy will be charged request fees at the marked unit price, and traffic fees at STANDARD rates. For more information, please see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
 >

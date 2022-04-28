@@ -21,12 +21,12 @@ You can configure origin-pull rules for buckets in the COS console. If the objec
  - **Origin-Pull Condition**: specify all conditions that must be met at the same time for triggering origin-pull.
     - **HTTP Status Code 404**: the only HTTP status code that triggers origin-pull currently. This option must be selected and cannot be cleared.
     - **File name prefix**: triggers the origin-pull rule when the requested file name matches this prefix. For example, if this field is set to `prefix`, origin-pull is triggered when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` and an HTTP status code 404 is returned.
- - **Origin-Pull Protocol**: the protocol used by COS to access the specified origin server. The options include `Force HTTPS`, `Force HTTP`, and `Follow request protocol`.
-    - If you select `Force HTTPS` or `Force HTTP`, COS will access the origin server using HTTPS or HTTP respectively.
-    - If you select `Follow request protocol`, COS will access the origin server with the protocol used in the request.
- - **Request Parameter**: specify whether to pass through the queryString request parameters carried when accessing COS to the origin server.
- - **Request Header to Pass Through**: specify the request headers you want to pass through to the origin server.
- - **New Request Header**: add the additional request headers to carry when COS accesses the origin server.
+ - **Origin-Pull Protocol**: the protocol used by COS to access the specified origin. The options include `Force HTTPS`, `Force HTTP`, and `Follow request protocol`.
+    - If you select `Force HTTPS` or `Force HTTP`, COS will access the origin using HTTPS or HTTP respectively.
+    - If you select `Follow request protocol`, COS will access the origin with the protocol used in the request.
+ - **Request Parameter**: specify whether to pass through the queryString request parameters carried when accessing COS to the origin.
+ - **Request Header to Pass Through**: specify the request headers you want to pass through to the origin.
+ - **New Request Header**: add the additional request headers to carry when COS accesses the origin.
 6. Configure the following information and click **Next**:
 
  - **Origin-Pull Address**: Enter the domain name or IP address without the `http://` or `https` prefix. You can also add the port number after the domain name or IP address.
@@ -48,9 +48,9 @@ You can configure a specific origin-pull address using the following fields:
 > - If you select `Fixed file`, the other fields cannot be used.
 > - `Specified prefix` and `Specified suffix` can be used at the same time.
 
- - **Standby Forwarding Address**: When this feature is enabled, you can add a backup origin server. When the primary origin server returns an error code such as 5xx, COS will access the backup origin server.
- - **Sync Origin-Pull**: When this feature is enabled, COS will not return 3xx status code when pulling data from an origin server. This option is currently available only for buckets in Beijing, Shanghai, Singapore, and Mumbai regions.
- - **3xx Following Policy**: If this policy is enabled, when your origin server returns a 3xx redirect, COS will follow it to pull data from another origin server.
+ - **Standby Forwarding Address**: When this option is enabled, you can add a backup origin. When the primary origin returns an error code such as 5xx, COS will access the backup origin.
+ - **Sync Origin-Pull**: When this option is enabled, COS will not return 3xx status code when pulling data from an origin. This option is currently available only for buckets in Beijing, Shanghai, Singapore, and Mumbai regions.
+ - **3xx Following Policy**: If this policy is enabled, when your origin returns a 3xx redirect, COS will follow it to pull data from another origin.
 
 7. Confirm that the configured origin-pull rule is correct and click **OK**.
 By default, COS always gives the highest priority to the most recent rule, by which it performs origin-pull. To change the priority manually, you can click the “Edit” icon under the “Priority” column in the rule list.
@@ -72,7 +72,7 @@ Configure the origin-pull address of the bucket to be:
 abc.example.com
 ```
 
-Store the image picture.jpg at the origin server `http://abc.example.com`.
+Store the image picture.jpg at the origin `http://abc.example.com`.
 
 **First access by client (without sync origin-pull enabled)**:
 
@@ -98,7 +98,7 @@ When COS finds that the object cannot be hit, it returns the HTTP status code 20
 http://abc.example.com/picture.jpg
 ```
 
-The origin server then provides the object to the client to ensure access, and COS copies picture.jpg from the origin server and saves it to the root directory of the bucket "example".
+The origin then provides the object to the client to ensure access, and COS copies picture.jpg from the origin and saves it to the root directory of the bucket "example".
 
 **Second-time access**:
 

@@ -1,6 +1,11 @@
 为方便 Android 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Android 开发的语音消息及转文本接入技术文档。
 
-> ?此文档对应 GME sdk version：v2.8。
+
+
+<dx-alert infotype="explain" title="">
+此文档对应 GME sdk version：2.9。
+</dx-alert>
+
 
 ## 使用 GME 重要事项
 
@@ -8,6 +13,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 
 <dx-alert infotype="notice" title="关于 Init 接口">
 例如使用了实时语音服务，同时也需要使用语音消息服务，**只需要调用一次 Init 初始化接口**。
+Init 之后不会开始计费，语音消息及转文本服务**收发语音消息**才算作语音消息 DAU。
 </dx-alert>
 
 ![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
@@ -30,7 +36,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参考 <dx-tag-link link="https://cloud.tencent.com/document/product/607/15173" tag="ErrorCode">错误码</dx-tag-link>。
+- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
 
 ### 语音消息 Android 类
 
@@ -56,8 +62,14 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 | Resume |   系统恢复   |
 | Uninit | 反初始化 GME |
 
->!如果切换账号，请调用 UnInit 反初始化 SDK
->
+
+
+<dx-alert infotype="notice" title="">
+如果切换账号，请调用 UnInit 反初始化 SDK。Init 接口调用不会产生计费。
+</dx-alert>
+
+
+
 
 
 ### 获取单例
@@ -100,7 +112,7 @@ itmgDelegate = new ITMGContext.ITMGDelegate() {
     public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
         if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ENTER_ROOM == type)
         {
-            //对事件返回的Data进行解析
+            //对事件返回的 Data 进行解析
             int nErrCode = data.getIntExtra("result" , -1);
             String strErrMsg = data.getStringExtra("error_info");
 				}
@@ -129,9 +141,17 @@ ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 
 ### [初始化 SDK](id:Init)
 
-- 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用。
-- **参数 sdkAppId 获取请参考 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)**。
-- **OpenId 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
+- 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
+- **参数 sdkAppID 获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**。
+- **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
+
+
+
+<dx-alert infotype="notice" title="">
+调用 Init 接口的线程必须于其他接口在同一线程。建议都在主线程调用接口。
+</dx-alert>
+
+
 
 #### 函数原型
 
@@ -161,7 +181,7 @@ String sdkAppID = "14000*****";
 String openID = "100";
 int ret = ITMGContext.GetInstance(this).Init(sdkAppId, openId);
 if(ret != 0){
-				Log.e(TAG,"初始化SDK失败");
+				Log.e(TAG,"初始化 SDK 失败");
 }
 ```
 
@@ -170,6 +190,14 @@ if(ret != 0){
 
 通过在 update 里面周期的调用 Poll 可以触发事件回调。GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll 的话，会导致整个 SDK 服务运行异常。
 可参考 Demo 中的 EnginePollHelper.java 文件。
+
+
+<dx-alert infotype="alarm" title="务必周期性调用 Poll 接口">
+务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
+</dx-alert>
+
+
+
 
 #### 函数原型
 
@@ -196,6 +224,7 @@ private Runnable mRunnable = new Runnable() {
 ### 系统暂停
 
 当系统发生 Pause 事件时，需要同时通知引擎进行 Pause。
+如果需要在退后台的时候暂停语音，可以在退后台的监听代码中调用 Pause 接口，恢复前台的监听事件中调用 Resume 接口。
 
 #### 函数原型
 
@@ -228,9 +257,19 @@ public abstract int Uninit();
 
 ## 语音消息及转文字
 
-语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。
+语音消息，录制并发送一段语音消息，同时可以将语音消息转成文字，也可以同时将文字进行翻译。下图演示的是语音消息及转文本服务：
 
->?建议使用流式语音转文字服务
+
+
+
+
+<dx-alert infotype="explain" title="">
+
+- 建议使用流式语音转文字服务。
+- 使用语音消息服务不需要进入实时语音房间。
+</dx-alert>
+
+
 
 #### 语音消息及语音转文字流程图
 
@@ -267,11 +306,18 @@ public abstract int Uninit();
 | SpeechToText                           |    语音识别成文字    |
 
 
+
+<dx-alert infotype="alarm" title="最大录制时长">
+语音消息最大录制时长默认为58秒，最短不能小于1秒。如果需要再加以限制，例如限制为最大录制时长为10秒，请在初始化之后调用 SetMaxMessageLength 接口进行设置。
+</dx-alert>
+
+
+
 ### 初始化 SDK
 
 未初始化前，SDK 处于未初始化阶段，需要通过接口 Init 初始化 SDK，才可以使用实时语音及语音消息服务。
 
-使用问题可参考 [离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/39716)。
+使用问题可参考 [离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/39716#.E7.A6.BB.E7.BA.BF.E8.AF.AD.E9.9F.B3.E7.9A.84.E6.96.87.E4.BB.B6.E8.83.BD.E5.90.A6.E8.87.AA.E8.A1.8C.E4.B8.8B.E8.BD.BD.EF.BC.9F)。
 
 ### 鉴权信息
 
@@ -328,7 +374,7 @@ ITMGContext.GetInstance(this).GetPTT().ApplyPTTAuthbuffer(authBuffer);
 
 ### [启动流式语音识别](id:StartRWSR)
 
-此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用StopRecording**，停止之后才有回调。
+此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用 StopRecording**，停止之后才有回调。
 
 #### 函数原型  
 
@@ -365,16 +411,20 @@ ITMGContext.GetInstance(getActivity()).GetPTT().StartRecordingWithStreamingRecog
 | result    |    用于判断流式语音识别是否成功的返回码     |
 | text      |            语音转文字识别的文本             |
 | file_path |             录音存放的本地地址              |
-| file_id   | 录音在后台的 url 地址，录音在服务器存放90天 |
+| file_id   | 录音在后台的 url 地址，录音在服务器存放 90 天。fileid 固定字段为 http://gme-v2- |
 
->!监听 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` 消息时，file_id 为空。
->
+
+
+<dx-alert infotype="notice" title="">
+监听 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` 消息时，file_id 为空。
+</dx-alert>
+
 
 #### 错误码
 
 | 错误码 | 含义 | 处理方式 |
 | ------ | :--: | :------: |
-|32775	|流式语音转文本失败，但是录音成功	|调用 UploadRecordedFile 接口上传录音，再调用 SpeechToText 接口进行语音转文字操作|
+|32775	|流式语音转文本失败，但是录音成功	|调用 UploadRecordedFile 接口上传录音，再调用 SpeechToText 接口进行语音转文字操作
 |32777	|流式语音转文本失败，但是录音成功，上传成功	|返回的信息中有上传成功的后台 url 地址，调用 SpeechToText 接口进行语音转文字操作
 |32786  |流式语音转文本失败|在流式录制状态当中，请等待流式录制接口执行结果返回|
 
@@ -418,7 +468,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 
 ## 语音消息录制
-
+**录制的流程为：录音->停止录音->录音回调返回->启动下一次录音。**
 ### 限制最大语音信息时长
 
 限制最大语音消息的长度，最大支持58秒。
@@ -441,7 +491,7 @@ ITMGContext.GetInstance(this).GetPTT().SetMaxMessageLength(msTime);
 
 ### 启动录音
 
-此接口用于启动录音。需要将录音文件上传后才可以进行语音转文字等操作。**停止录音调用StopRecording**。
+此接口用于启动录音。需要将录音文件上传后才可以进行语音转文字等操作。**停止录音调用 StopRecording**。
 
 #### 函数原型  
 
@@ -477,6 +527,9 @@ ITMGContext.GetInstance(this).GetPTT().StopRecording();
 
 
 ### 启动录音的回调
+
+录音完成的回调，通过委托传递消息。
+
 
 **停止录音调用StopRecording**。停止录音后才有启动录音的回调。
 
@@ -685,7 +738,7 @@ public abstract int PlayRecordedFile(String filePath);public abstract int PlayRe
 | 参数             |  类型  | 含义                                                         |
 | ---------------- | :----: | ------------------------------------------------------------ |
 | downloadFilePath | String | 本地语音文件的路径                                           |
-| voicetype        |  int   | 变声类型，请参考 [变声特效](https://intl.cloud.tencent.com/document/product/607/31503) |
+| voicetype |  int   | 变声类型，请参考 [变声接入文档](https://intl.cloud.tencent.com/document/product/607/44995#.E8.AF.AD.E9.9F.B3.E6.B6.88.E6.81.AF.E5.8F.98.E5.A3.B0) |
 
 #### 错误码
 
@@ -1011,7 +1064,7 @@ ITMGContext.GetInstance(this).CheckMicPermission();
 
 ### 设置打印日志等级
 
-用于设置打印日志等级。建议保持默认等级。
+用于设置打印日志等级。建议保持默认等级。需要在 Init 之前调用。
 
 #### 函数原型
 
@@ -1026,7 +1079,7 @@ public abstract int SetLogLevel(int levelWrite, int levelPrint);
 | levelWrite | ITMG_LOG_LEVEL | 设置写入日志的等级，TMG_LOG_LEVEL_NONE 表示不写入，默认为 TMG_LOG_LEVEL_INFO |
 | levelPrint | ITMG_LOG_LEVEL | 设置打印日志的等级，TMG_LOG_LEVEL_NONE 表示不打印，默认为 TMG_LOG_LEVEL_ERROR |
 
-
+#### ITMG_LOG_LEVEL 说明
 
 | ITMG_LOG_LEVEL        | 含义                 |
 | --------------------- | -------------------- |
@@ -1068,7 +1121,7 @@ ITMGContext.GetInstance(this).SetLogPath(path);
 
 ### 消息列表
 
-|消息     | 消息代表的含义   |
+|消息     | 消息代表的含义   
 | ------------- |:-------------:|
 |ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE	|PTT 录音完成			|
 |ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE	|上传 PTT 完成			|

@@ -1,7 +1,7 @@
 
 ## 1\.  LATAR BELAKANG
 
-Modul ini berlaku jika Anda menggunakan Pesan Instan (“**Fitur**”). Modul ini tergabung dalam Perjanjian Privasi dan Keamanan Data yang berada di https://intl.cloud.tencent.com/document/product/301/17347 (“**DPSA**”). Istilah-istilah yang digunakan, tetapi tidak didefinisikan dalam Modul ini memiliki arti yang sama dengan yang ditentukan dalam DPSA. Jika terdapat perbedaan antara DPSA dan Modul ini, Modul inilah yang akan berlaku meskipun terjadi inkonsistensi.
+Modul ini berlaku jika Anda menggunakan Pesan Instan (“**Fitur**”). Modul ini tergabung dalam Perjanjian Privasi dan Keamanan Data yang berada di  ([“**DPSA**”](https://intl.cloud.tencent.com/document/product/301/17347)). Istilah-istilah yang digunakan, tetapi tidak didefinisikan dalam Modul ini memiliki arti yang sama dengan yang ditentukan dalam DPSA. Jika terdapat perbedaan antara DPSA dan Modul ini, Modul inilah yang akan berlaku meskipun terjadi inkonsistensi.
 
 ## 2\.  PEMROSESAN
 

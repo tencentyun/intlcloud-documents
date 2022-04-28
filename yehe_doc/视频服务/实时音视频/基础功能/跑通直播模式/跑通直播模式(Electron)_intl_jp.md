@@ -18,7 +18,7 @@ TRTCクラウドサービスは、「インターフェースモジュール」�
 
 ## サンプルコード
 
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)にログインして、このドキュメントに関連したサンプルコードを取得することができます。
+[Github](https://github.com/LiteAVSDK/TRTC_Electron)にログインして、このドキュメントに関連したサンプルコードを取得することができます。
 
 ## 操作手順
 

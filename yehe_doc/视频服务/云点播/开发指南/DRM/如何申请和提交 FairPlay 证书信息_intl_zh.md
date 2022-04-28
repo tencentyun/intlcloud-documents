@@ -11,11 +11,15 @@
 
 ## 第一步：获取 FairPlay Streaming Deployment Package
 
-1. 访问[苹果 FairPlay 页面](https://developer.apple.com/streaming/fps/)，点击页面底部链接`Request FPS Deployment Package`后，你将看到一个表单页面。
+1. 访问 [苹果 FairPlay 页面](https://developer.apple.com/streaming/fps/)，点击页面底部链接`Request FPS Deployment Package`后，你将看到一个表单页面。
 
-> 注意：你需要拥有一个苹果开发者账号，成功登陆后才能看到表单。
+>! 你需要拥有一个苹果开发者账号，成功登陆后才能看到表单。
+
+![image-20220426181021189](https://qcloudimg.tencent-cloud.cn/raw/c8533ed9e4cf2b7961058eb9e5cd502a.png)
 
 2. 填写页面申请表单，提交后等待苹果公司审批。
+
+![image-20220426181021190](https://qcloudimg.tencent-cloud.cn/raw/5f905c0a865990ba4f1705fabdcdd652.png)
 
 3. 当苹果公司通过申请后，你将得到一个`FPS_Deployment_Package.zip` 压缩包 。
 
@@ -68,7 +72,7 @@ openssl genrsa -aes256 -out privatekey.pem 1024
 
 6. 上一步结束后，会出现一个弹框，让你再次确认是否已将`ASK`备份，确认已备份后，点击` Generate `按钮。
 
-   > 请注意：务必确认已将 ASK 备份，此步骤完成后将无法再次查询 ASK。
+   >! 请务必确认已将 ASK 备份，此步骤完成后将无法再次查询 ASK。
 
    ![image-20220419115103618](https://qcloudimg.tencent-cloud.cn/raw/808347b36d824de46b6cbb84654d20c8.png)
 
@@ -84,6 +88,16 @@ openssl genrsa -aes256 -out privatekey.pem 1024
 ## 第四步：控制台提交 FPS 证书信息
 
 1. 登录腾讯云点播控制台。
-2. 点击展开左侧导航栏`视频处理设置`，点击` DRM 加密配置 `。
-3. 设置 FPS 证书信息，包括证书文件（`fairplay.cer`）、私钥文件（`privatekey.pem`）、私钥密码、ASK。
+2. 点击展开左侧导航栏`视频处理设置`，点击` DRM 加密配置 `，点击右侧`编辑`。
+   ![image-20220425210931543](https://qcloudimg.tencent-cloud.cn/raw/041b560536deebd1bd5bc986d95ed289.png)
+3. 设置 FPS 证书信息，包括证书文件（`fairplay.cer`）、私钥文件（`privatekey.pem`）、私钥密码、ASK，并点击`保存`。
 
+   ![image-20220425211140740](https://qcloudimg.tencent-cloud.cn/raw/effefe51d8ca82e46d292112eab9a3b4.png)
+
+4. 保存之后，可以看到`FairPlay`的证书信息。其中，`Certificate URL`可用于播放 DRM 加密视频。
+
+   ![image-20220426191830269](https://qcloudimg.tencent-cloud.cn/raw/8d64c3dbb65ac6f54a81f08314ca1473.png)
+
+## 总结
+
+至此，您已经完成了`FairPlay`证书信息的配置。

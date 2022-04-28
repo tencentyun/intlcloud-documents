@@ -164,8 +164,8 @@ The SDK uses the UDP protocol for audio/video transmission and therefore cannot 
 
 - [SDK API Guide](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/index.html)
 - [SDK Update Log](https://intl.cloud.tencent.com/document/product/647/38702)
-- [Simple Demo Source Code](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCSimpleDemo)
-- [API Example Source Code](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTC-API-Example)
+- [Simple Demo Source Code](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTCSimpleDemo)
+- [API Example Source Code](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example)
 - [FAQs](https://intl.cloud.tencent.com/document/product/647/43093)
 
 ```

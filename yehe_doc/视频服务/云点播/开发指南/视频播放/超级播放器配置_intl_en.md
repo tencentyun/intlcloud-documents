@@ -17,16 +17,20 @@ VOD supports **superplayer configuration**, where you can specify the **adaptive
 | Substream resolution name displayed by player | Naming of the length of substream short side | It controls the names of resolutions for resolution switch |
 
 ## Preset Configuration
-VOD provides the following two preset configurations for your convenience:
+VOD provides the following three preset configurations for your convenience:
 
 <table class="table auto-table"><tbody><tr ><th rowspan="2">Configuration Name</td><th colspan="3">Configuration Item</td></th>
 <tr><th>Adaptive bitstream to be played back (template ID)</td><th>Image sprite to be used (template ID)</td><th>Resolution naming rule (based on length of substream short side)</td></tr>
-<tr><td>default</td><td>10</td><td>10</td><td rowspan="2"><ul style="margin:0;"><li >240p: LD</li><li>480p: SD</li><li>720p: HD</li><li>1080p: FHD</li><li>1440p: 2K</li><li>2160p: 4K</li><li>Others: <code>xx</code>p (<code>xx</code> indicates the length of the video short side)</li></td></tr>
+<tr><td>default</td><td>10</td><td>10</td><td rowspan="3"><ul style="margin:0;"><li >240p: LD</li><li>480p: SD</li><li>720p: HD</li><li>1080p: FHD</li><li>1440p: 2K</li><li>2160p: 4K</li><li>Others: <code>xx</code>p (<code>xx</code> indicates the length of the video short side)</li></td></tr>
 <tr><td>basicDrmPreset</td><td>12</td><td>10</td>
+<tr><td>advanceDrmPreset</td><td><li>when client supports FairPlay, play 11</li><li>when client supports Widevine, play 13</li></td><td>10</td>
 </tbody></table>
 
 * If the video content does not require encryption, you can use the `LongVideoPreset` preset task flow for adaptive bitrate streaming and the `default` preset superplayer configuration for playback. For specific samples, please see [Integration Guide](https://intl.cloud.tencent.com/document/product/266/38098).
-* If you need to play back encrypted content, you can use the `SimpleAesEncryptPreset` preset task flow for adaptive bitrate streaming and the `basicDrmPreset` preset superplayer configuration for playback. For specific samples, please see [Integration Guide](https://intl.cloud.tencent.com/document/product/266/38294).
+* If you need to play back VOD priavte protocal encrypted content, you can use the `SimpleAesEncryptPreset` preset task flow for adaptive bitrate streaming and the `basicDrmPreset` preset superplayer configuration for playback. For specific samples, please see [Integration Guide](https://intl.cloud.tencent.com/document/product/266/38294).
+* If you need to play back DRM protected content, you can use the `WidevineFairPlayPreset` preset task flow for adaptive bitrate streaming and the `advanceDrmPreset` preset superplayer configuration for playback.
+
+
 
 ## Custom Configuration
 In addition to using preset superplayer configurations, you can also customize the configuration in the [console](https://intl.cloud.tencent.com/document/product/266/38261) or through [API](https://intl.cloud.tencent.com/document/product/266/37567).

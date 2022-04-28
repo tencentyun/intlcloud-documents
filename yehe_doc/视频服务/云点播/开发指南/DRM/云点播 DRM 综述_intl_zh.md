@@ -35,8 +35,9 @@
 9. <b>获取播放许可证</b>：超级播放器携带播放器签名请求播放许可证。
 10. <b>解密播放</b>：超级播放器使用解密密钥，解密播放。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/11b9b05a72381aff03e0d04f04eb61d6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cac2fc608c14a604fd8145a8565a159a.png)
 
 ## 接入参考
 
 为了帮助您快速接入点播的 DRM 加密能力，我们为您提供了 DRM 加密指引： [播放 DRM 加密视频](https://intl.cloud.tencent.com/document/product/266/46642)，以示例的方式为您讲解接入步骤。
+

@@ -1,11 +1,23 @@
+### Why was the Implicit PendingIntent Vulnerability error reported when I published my application on Google Play?
+1. TPNS SDK uses an implicit PendingIntent in `TPushAlarmManager.set` in the code to trigger SDK internal heartbeats.
+You can address the issue by referring to Google's [Remediation for Implicit PendingIntent Vulnerability](https://support.google.com/faqs/answer/10437428). TPNS SDK has performed the following self-check:
+a. The `setAction` used is a static broadcast action declared by the SDK and has no exposure risk.
+b. The target of the PendingIntent is SDK's internal static broadcast action, and the broadcast permission declared by SDK has been added.
+
+2. Google's documentation mentions the following: "Fixing this issue is recommended but not mandatory. The publication status of your app will be unaffected by the presence of this issue."
+
+TPNS's current PendingIntent is a trusted and secure PendingIntent, and Google claimed that the issue will not affect the publishing of your application. You can ignore this message and continue to publish your application.
+
 ### How do I set a custom ringtone?
 
 You can set a custom ringtone by creating a notification channel.
 1. Create a notification channel with a specified custom ringtone file by calling the TPNS encapsulation API or Android native API. For more information, see the **Creating a notification channel** section in [API Documentation](https://intl.cloud.tencent.com/document/product/1024/30715).
 2. Call the TPNS push API and specify the same notification channel `n_ch_id` for push. For a vendor channel, you must specify the vendor channel ID. That is, for Huawei channel, specify `hw_ch_id`; for Mi channel, specify `xm_ch_id`.
 
->? Currently, only Huawei, Mi, FCM, and TPNS channels support custom ringtones. To apply for a vendor channel ID, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
->
+>?
+>- Currently, only Huawei, Mi, FCM, and TPNS channels support custom ringtones.
+>- Before using the push channels of some vendors, you need to apply for notification classification permissions. For related descriptions and application steps, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+>- For Huawei push channel, if you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the channel customization feature is no longer applicable to your application. That is, you cannot use the notification channel capability to customize notification ringtones. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
 
 ### How do I disable the session keep-alive feature of TPNS?
 
@@ -29,8 +41,15 @@ If you use Gradle automatic integration, configure the following node under the 
 
 If the following log is printed in the console, the session keep-alive feature has been disabled: `I/TPush: [ServiceUtil] disable pull up other app`
 
+### How do I configure not to automatically enable the push service when an application is started for the first time after installation?
 
+For the scenario where the user agrees to the Terms of Service and Privacy Policy, you can add the following node to the `AndroidManifest.xml` file so that the push service is not automatically enabled when the application is started for the first time after installation until the push service registration API `XGPushManager.registerPush()` is called:
 
+```
+<meta-data
+android:name="XG_SERVICE_PULL_UP_OFF"
+android:value="true" />
+```
 ### Does TPNS SDK support push via HarmonyOS?
 
 HarmonyOS is fully compatible with the Android SDK, so HarmonyOS users can use the push feature normally.
@@ -48,11 +67,21 @@ HarmonyOS is fully compatible with the Android SDK, so HarmonyOS users can use t
 | vivo | Yes. You need an enterprise developer account to enable vivo Push. For details, see [here](https://dev.vivo.com.cn/documentCenter/doc/2). |
 
 
+### What should I do if "the application contains unused permission strings" is reported after the vivo channel is integrated?
+
+After you integrate the push services of the vivo channel, certain security detection tools may prompt that "the application contains unused permission strings". Details are as follows: 
+Problem source: vivo channel push SDK v2.3.4
+Class file involved: `com.vivo.push.util.z`; sensitive permission string involved: `android.permission.GET_ACCOUNTS`
+>! Inspection found that the problem also exists in the vivo channel push SDK v3.0.0.3.
+
+The problem code is from the vivo channel push SDK. The TPNS team is unable to change the code and has been reported the problem to vivo. vivo replied that the relevant static fields are the legacy code of the SDK and are not actually used, and they will schedule to fix the problem as soon as possible. The following is a quick solution for your reference:
+- Method 1 (recommended): Add the [TPNS privacy policy description](https://intl.cloud.tencent.com/document/product/1024/30713) to the App Privacy Statement. 
+- Method 2 (not recommended): Remove vivo-related JAR packages, which will make the vivo channel unavailable.
 
 ### What is the TPNS channel?
 
 - The TPNS channel is a channel built by TPNS. It can deliver messages only when the TPNS service is online (maintaining a persistent connection with the TPNS backend server). Therefore, the actual delivery value of the TPNS channel is generally lower than that of other vendor channels.
-- If you need to implement offline push, we recommend you integrate a vendor channel. For more information, see [here](https://intl.cloud.tencent.com/document/product/1024/30711).
+- If you need to implement offline push, we recommend you integrate a vendor channel. For more information, see [here](https://intl.cloud.tencent.com/document/product/1024/37176).
 
 
 
@@ -165,7 +194,9 @@ Below is an example of push API fields, where `icon_color: 123456` indicates the
 }
 ```
 
-The display effect after adaption is as shown below. We recommend you draw an icon based on the demo logo.
+The display effect after adaption is as shown below. [We recommend you draw an icon based on the demo logo](https://git.code.tencent.com/tpns/TPNS-Demo-Android/blob/master/app/src/main/res/drawable/notification_icon.png).
+
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f3df2a69acc72d182fd74a6799734dd9.jpg" width="60%"></img>
 
 
 >?
@@ -211,8 +242,8 @@ android.useAndroidX=trueandroid.enableJetifier=true
 ### What should I do if "the application transferred information over HTTP in plaintext" is reported for vendor channel push SDKs?
 
 After you integrate the push services of various vendor channels, certain security detection tools may prompt that "the application transferred information over HTTP in plaintext". HTTP addresses involved are as follows:
-1. Mi Push SDK: `http://new.api.ad.xiaomi.com/logNotificationAdActions，http://resolver.msg.xiaomi.net/psc/?t=a`
-2. Meizu Push SDK: `http://norma-external-collect.meizu.com/android/exchange/getpublickey.do，http://norma-external-collect.meizu.com/push/android/external/add.do`
+1. Mi Push SDK: `http://new.api.ad.xiaomi.com/logNotificationAdActions,http://resolver.msg.xiaomi.net/psc/?t=a`
+2. Meizu Push SDK: `http://norma-external-collect.meizu.com/android/exchange/getpublickey.do,http://norma-external-collect.meizu.com/push/android/external/add.do`
 
 All the above HTTP URLs are from the push SDKs of relevant vendors. The TPNS team is unable to clarify their purposes or control their behaviors but is actively contacting them and promoting the adoption of transfer over HTTPS. Currently, you should evaluate and choose whether to continue to use the above vendors' push services.
 

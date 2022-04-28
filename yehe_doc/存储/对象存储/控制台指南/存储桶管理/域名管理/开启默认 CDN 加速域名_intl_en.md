@@ -8,7 +8,7 @@ This document describes how to enable a default CDN acceleration domain name fol
 
 3. Select **Domain and Transmission Management** > **Default CDN Acceleration Domain** on the left sidebar, click **Edit**, and toggle **Status** on to configure the following information:
  - **Acceleration Region**: you can choose **Mainland China**, **Outside China mainland**, or **Global**, where the last means allowing global bucket acceleration across all regions.
- - **Origin Server Type**: the origin server type usually defaults to **Default Origin Server**, but if you have enabled static website for the origin server bucket and want to accelerate content delivery for the static website, select **Static Website Origin Server**.
+ - **Origin Type**: **Default Endpoint** is selected by default. If you have enabled static website for the origin bucket and want to accelerate content delivery for the static website, select **Static Website Endpoint**.
 		![](https://main.qcloudimg.com/raw/f6b32eea091da0d4d9c72e670c7135e8.png)
  - **Origin-pull Authentication**: for public-read buckets, you don't need to enable **Origin-pull Authentication**. For private-read buckets, enable [Origin-pull Authentication](#step1) after adding CDN service authorization.
 >**Domain Management** is inaccessible if you have never used the CDN service. To activate it, go to the [CDN Console](https://console.cloud.tencent.com/cdn).

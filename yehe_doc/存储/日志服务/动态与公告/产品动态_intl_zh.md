@@ -27,7 +27,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>日志主题支持永久保存</td><td>日志主题保存时间可在1 - 3600天内自定义，并支持开启永久保存。</td><td>2022-01-25</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37887">规格说明</a></td></tr>
+		<tr><td>日志主题支持永久保存</td><td>日志主题保存时间可在1 - 3600天内自定义，并支持开启永久保存。</td><td>2022-01-25</td><td>规格说明</td></tr>
 		<tr><td>索引配置导入功能上线</td><td>可一键导入已有日志主题中的索引配置规则，提升操作效率。</td><td>2022-01-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">导入索引配置</a></td></tr>
 	</tbody>
 </table>

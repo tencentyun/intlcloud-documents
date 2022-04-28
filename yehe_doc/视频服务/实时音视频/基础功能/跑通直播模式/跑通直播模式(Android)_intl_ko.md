@@ -34,12 +34,12 @@ dependencies {
 }
 ```
 2. defaultConfig에서 App이 사용하는 CPU 구성을 지정합니다.
->?현재 TRTC SDK는 armeabi, armeabi-v7a, arm64-v8a를 지원합니다.
->
+>?현재 TRTC SDK는 armeabi-v7a, arm64-v8a를 지원합니다.
+
 ```
  defaultConfig {
       ndk {
-          abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+          abiFilters "armeabi-v7a", "arm64-v8a"
       }
   }
 ```
@@ -141,7 +141,7 @@ mTRTCCloud.startLocalAudio();
 2. 호스트는 [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10)을 호출하여 뷰티 필터 스타일을 설정할 수 있습니다.
  - Smooth: 매끈하게. SNS 인플루언서 느낌의 뚜렷한 효과를 줍니다.
  - Nature: 내추럴. 피부 보정 알고리즘은 얼굴의 디테일을 더 많이 유지하여 자연스러운 느낌을 줍니다.
- - Pitu: [엔터프라이즈 버전](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise)에서만 지원합니다.
+ - Pitu: [다기능 버전](https://intl.cloud.tencent.com/document/product/647/34615)에서만 지원합니다.
 3. 호스트 측에서 [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#a3931ccd8fa54bb846783ab4d6ca2874b)을 호출하여 피부 보정 레벨을 설정합니다. 일반적으로 5로 설정합니다.
 4. 호스트는 [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#ab08c07ce725dbb8769b61fe0c76b0e95)을 호출하여 미백 레벨을 설정할 수 있습니다. 일반적으로 5로 설정합니다.
 

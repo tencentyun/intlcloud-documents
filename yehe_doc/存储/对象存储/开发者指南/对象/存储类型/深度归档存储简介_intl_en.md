@@ -1,37 +1,41 @@
 ## Overview
 
-DEEP ARCHIVE is a COS storage class that provides long-term storage for large amounts of archival data at tape-archival-level prices. It enables you to manage your data easily with extremely low costs through the diverse set of COS APIs, SDKs, tools and console. Therefore, you do not need to consider complex on-premises tape library configuration, nor how the underlying storage media evolve.
+DEEP ARCHIVE is a storage class provided by COS that enables long-term archiving of massive amounts of data. Its unit storage price is comparable to that of tape storage, making it an ideal low-cost solution for long-term data storage. You can manage data easily at low costs through various interaction means provided by COS, such as API, SDK, tools, and console. This eliminates your needs to maintain complex tape library configuration locally and care about the evolution of underlying storage media.
 
-DEEP ARCHIVE is well suited for use cases which involve extremely low access frequency, and long-term data retention. In some cases, businesses may need cold backups of daily logs in compliance with local laws and regulations, and for traceability and analysis purposes. In other cases, businesses may need long-term archival of massive media files such as images and videos that have been used in security monitoring, auto-driving, and other services. DEEP ARCHIVE allows such businesses to reduce their storage costs and operation management difficulties by restoring in-cloud data for use only when needed.
+DEEP ARCHIVE is suitable for data that is accessed infrequently but needs to be retained for a long time. In log cold backup scenarios, enterprises need to back up and store the log data generated every day for tracking and analysis according to applicable laws and regulations. In view data and autonomous driving businesses, enterprises accumulate a high number of media files such as images and videos, which need to be archived and stored persistently after use. DEEP ARCHIVE allows enterprises to store such data in the cloud and restore it only when needed, which reduces the storage costs and simplifies Ops management.
 
-DEEP ARCHIVE is designed for 99.999999999% (11 9s) durability and 99.95% availability. You can also use versioning, cross-region replication and other COS features to further enhance your data security.
+DEEP ARCHIVE is designed for 99.999999999% durability and 99.95% availability. You can also use the versioning and cross-region replication features provided by COS to further guarantee the data security.
 
-## Directions
+## How to Use
 
-1. Uploading through the console
-   Log in to [COS console](https://console.cloud.tencent.com/cos5), click **Bucket List**, and create a bucket in one of the supported regions, for example, Beijing. Once created, click on the bucket name, select **File List** , and click **Upload Files**. Then, select a local file to upload, and set **Storage Class** to DEEP ARCHIVE in Step 2 **Set Properties**. For more information, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
-   ![](https://main.qcloudimg.com/raw/fd3d5c061007c71dfd382b75a9982fee.png)
-2. Uploading through APIs
-   In the API [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749), [POST Object](https://intl.cloud.tencent.com/document/product/436 /14690) or [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746), set the `x-cos-storage-class` to `DEEP_ARCHIVE` to upload objects directly to DEEP ARCHIVE.
+1. Upload using the console.
+ 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+ 2. Click **Bucket List** and create a bucket in a supported region (such as Beijing).
+ 3. After creating the bucket, click **Upload File** in **File List**.
+ 4. Select a local file for upload and select **DEEP ARCHIVE** for **Storage Class** in **Set Properties**. For more information, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
+![](https://main.qcloudimg.com/raw/fd3d5c061007c71dfd382b75a9982fee.png)
+2. Upload using APIs.
+Set `x-cos-storage-class` to `DEEP_ARCHIVE` in the [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749), [POST Object](https://intl.cloud.tencent.com/document/product/436/14690), or [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API for direct upload to the DEEP ARCHIVE storage class.
+>! `Append Object` does not support direct upload to DEEP ARCHIVE.
+>
+3. Upload using SDKs.
+Currently, all the SDKs released by COS support direct upload to DEEP ARCHIVE. You need to set the `StorageClass` parameter to `DEEP_ARCHIVE` when uploading a file.
+4. Upload using a tool.
+COSBrowser and COSCMD support direct upload to DEEP ARCHIVE. You need to add the header field `x-cos-storage-class` and set it to `DEEP_ARCHIVE` when uploading a file.
 
->!The APPEND Object API does not support direct upload to DEEP ARCHIVE.
+## Usage Limits
 
-3. Uploading through SDKs
-   Currently, all COS SDKs support direct upload to DEEP ARCHIVE by configuring `StorageClass` to `DEEP_ARCHIVE`.
-4. Uploading through tools
-   The COS tools, COSBrowser and COSCMD, support direct upload to DEEP ARCHIVE by adding the header `x-cos-storage-class` and setting it to `DEEP_ARCHIVE`.
+DEEP ARCHIVE is subject to the following limits. When using it, you need to pay attention to their impact on the storage costs and performance:
 
-## Use Limits
+- **Minimum storage unit**: The minimum storage unit is 64 KB, and objects smaller than 64 KB will be counted as 64 KB during the calculation of the storage capacity.
+- **Minimum storage period**: The minimum storage period is 180 days, and a shorter period will be counted as 180 days for billing.
 
-Please note that DEEP ARCHIVE has the following limits that may affect your storage cost and performance:
+>? The storage period means logical days (a day is 24 hours) and starts from the time when a file is modified.
+>
 
-- **Minimum storage size**: 64 KB. If an object is smaller than 64 KB, you are billed for 64 KB.
-- **Minimum storage duration**: 180 days. If an object is stored fewer than 180 days, you are billed for 180 days.
-
->?The storage days are counted with 24 hours as 1 day, starting from the time the object was modified.
-
-- **QPS for restoration requests**: 100 requests/sec.
-- **Region**: currently, DEEP ARCHIVE is only available in Beijing, Shanghai, Guangzhou, Chengdu,and Tokyo regions. Many more regions will open up in the future.
-- **Use**: currently, DEEP ARCHIVE cannot be used for MAZ-enabled buckets.
-- **Operation**: objects cannot be uploaded to DEEP ARCHIVE using the APPEND Object API.
-- **Restore requests**: each restore request can use only one of the three restoration mode. If there are multiple restore requests sent for the same object for which a restore request is already being executed, COS will automatically choose the request with the fastest mode to execute among all of them.
+- **Restoration QPS limit**: 100 requests/sec.
+- **Available regions**: DEEP ARCHIVE is currently supported only in the Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, and Tokyo regions and will be available in more regions.
+- **Use limit**: Currently, DEEP ARCHIVE is not supported for multi-AZ buckets.
+- **Operation limit**: Objects cannot be appended to other objects in the DEEP ARCHIVE storage class.
+- **Restoration request limit**: Only one restoration request can be executed at a time for an object, and multiple repeated requests will be merged and processed according to the fastest restoration mode. If the restoration mode of the (N+1)th request is faster than that of the Nth request, the (N+1)th request will be executed as a new request; otherwise, it will fail.
+- **Data retrieval**: Standard retrieval (12–24 hours) and bulk retrieval (24–48 hours) are supported for files in the DEEP ARCHIVE storage class.

@@ -1,12 +1,38 @@
-## Adding a Rule
+## Accessing a Rule
 1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4), select **Anti-DDoS Advanced (New)** > **Application Accessing** on the left sidebar, and then open the **Access via ports** tab.
+2. Click **Start Access**.
 ![](https://main.qcloudimg.com/raw/fd5e5fff3727183e497db5a0d643a8ce.png)
-2. On the **Access via ports** tab, click **Add Rule** to create a layer-4 forwarding rule. Configure the fields required in the pop-up dialog.
-![](https://main.qcloudimg.com/raw/a9c6523f3c0acd3ae2aa43900ef678da.png)
-3. Click **OK**.
->?IPv6 Anti-DDoS Advanced instances can forward both IPv4 and IPv6 requests. Note that you can only access such instances via ports (only IPv4 real servers allowed).
+3. On the **Access via Port** page, select an associated instance ID and click **Next: Set Port Parameter**.
+4. Select a forwarding protocol, specify a forwarding port and real server port, and then click **Next: Set Forwarding Method**.
+4. Select a forwarding method, specify a "real server IP+weight" or a real sever domain name, and then click **Next: Modify DNS Resolution**.
+
+>? Note that if the forwarding port you specify in the second step "Set Port Parameter" is occupied, you cannot proceed to the next step.
+
+6. Click **Complete**.
+
 
 ## Querying a Rule
-1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4), select **Anti-DDoS Advanced (New)** > **Application Accessing** on the left sidebar, and then open the **Access via ports** tab.
-2. On the **Access via ports** tab, click the search icon to select filters including "Origin IP/Domain Name", "Real Server Port", "Associated Protecting IP", "Forwarding Protocol", and "Forwarding Port".
+On the [Access via ports](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) page, enter a real server IP/domain name, real server port, forwarding protocol/port or an associated instance ID in the search box.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a26bee93c987a36989e19f842c850601.png)
+
+
+## Editing a Rule
+1. On the [Access via ports](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) page, select a rule you want to edit and click **Configuration**.
+2. On the **Configure Layer-4 Forwarding Rule** page, modify parameters and click **OK** to save changes.
+
+
+## Deleting a Rule
+1. On the [Access via ports](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) page, you can delete one or more rules.
+   - To delete a rule, select a rule you want to delete. Click **Delete**.
+   - To delete multiple rules, select more than one rules you want to delete. Click **Batch Delete**.
+2. In the pop-up window, click **Delete**.
+
+## Importing a Rule
+1. To import multiple rules, you can click **Batch Import** on the [Access via ports](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) page.
+2. In the **Configure Layer-4 Forwarding Rule** window, enter the rules, and click **OK**.
+
+
+
+## Exporting a Rule
+1. To import multiple rules, you can click **Batch Export** on the [Access via ports](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) page.
+2. In the **Batch Export Layer-4 Forwarding Rules** window, select the rules you want to export, and click **Copy**.

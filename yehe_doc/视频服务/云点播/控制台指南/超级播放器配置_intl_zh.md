@@ -4,12 +4,13 @@
 
 
 ## 预置配置
-为方便您的使用，云点播提供了以下两个预置配置。
+为方便您的使用，云点播提供了以下3个预置配置。
 
 <table class="table auto-table"><tbody><tr><th rowspan="2">配置名</td><th colspan="3">配置项</td></tr>
 <tr><th>播放哪一个自适应码流（模板 ID）</td><th>使用哪一个雪碧图（模板 ID）</td><th>子流命名规则（根据子流短边长度命名）</td></tr>
-<tr><td>default</td><td>10</td><td>10</td><td rowspan="2"><ul style="margin:0;"><li >240px：流畅</li><li>480px：标清</li><li>720px：高清</li><li>1080px：全高清</li><li>1440px：2K</li><li>2160px：4K</li><li>其他：<code>xx</code>p（<code>xx</code>代表短边长度）</li></td></tr>
+<tr><td>default</td><td>10</td><td>10</td><td rowspan="3"><ul style="margin:0;"><li >240px：流畅</li><li>480px：标清</li><li>720px：高清</li><li>1080px：全高清</li><li>1440px：2K</li><li>2160px：4K</li><li>其他：<code>xx</code>p（<code>xx</code>代表短边长度）</li></td></tr>
 <tr><td>basicDrmPreset</td><td>12</td><td>10</td>
+<tr><td>advanceDrmPreset</td><td><li>终端支持 FairPlay 时，播放 11</li><li>终端支持 Widevine 时：播放13</li></td><td>10</td>
 </tbody></table>
 
 
@@ -26,5 +27,4 @@
 6. 单击【确定】完成创建。
 
 创建成功后，在超级播放器配置列表中，您将看到新创建的超级播放器配置，同时您可以参考 [超级播放器预览文档](https://intl.cloud.tencent.com/document/product/266/33896#.E8.B6.85.E7.BA.A7.E6.92.AD.E6.94.BE.E5.99.A8.E9.A2.84.E8.A7.88 ) 进行对应配置的预览。
-
 

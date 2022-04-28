@@ -1,4 +1,4 @@
-腾讯云国际站银企直连专属账号打款功能已经上线，部分客户可以申请一个与自己账号唯一匹配的腾讯云线下汇款专属账号，系统会根据将您的汇款记录，自动上报至财经系统，实现快速自动充值入账。如需开通银企直连功能请前往：Billing Center>Payment Management>Payment>[Bank Transfer](https://console.cloud.tencent.com/expense/recharge).
+腾讯云国际站银企直连专属账号打款功能已经上线，部分客户可以申请一个与自己账号唯一匹配的腾讯云线下汇款专属账号，系统会根据将您的汇款记录，自动上报至财经系统，实现快速自动充值入账。如需开通银企直连功能请前往：腾讯云官网**费用中心** > **资金管理** > **付款**，单击 <b>[银企直连](https://console.intl.cloud.tencent.com/expense/recharge)</b>。
 
 ### 汇款流程
 Step1. 查询和开通专属银行账号
@@ -11,7 +11,7 @@ Step2. 使用专属账号进行线下对公打款
 银行转账时间通常需要3-5个工作日，具体到账时间依赖于银行系统.
 
 Step3. 打款信息和进度查询
-查询打款信息和进度，请前往Billing Center>Payment Management>[Bank Transfer Query](https://console.cloud.tencent.com/expense/payment/transfer).
+查询打款信息和进度，请前往腾讯云官网**费用中心** > **资金管理** > <b>[银企直连查询](https://console.cloud.tencent.com/expense/payment/transfer)</b>。
 ![](https://main.qcloudimg.com/raw/ac511d34324359d3ef2914d6477fbdb4.png)
 
 

@@ -34,12 +34,12 @@ dependencies {
 }
 ```
 2. In `defaultConfig`, specify the CPU architecture to be used by your application.
->?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
->
+>?Currently, the TRTC SDK supports armeabi-v7a, and arm64-v8a.
+
 ```
  defaultConfig {
       ndk {
-          abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+          abiFilters "armeabi-v7a", "arm64-v8a"
       }
   }
 ```
@@ -108,7 +108,7 @@ When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group
 | roomId | Number | Numeric room ID. For string-type room ID, use `strRoomId` in `TRTCParams`. | 29834 |
 
 >!
->-In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
+>- In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
 >- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
 [](id:step5)
@@ -141,7 +141,7 @@ mTRTCCloud.startLocalAudio();
 2. Call [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) to set the beauty filter style.
  - `Smooth`: smooth. This style features more obvious skin smoothing effect and is typically used by influencers.
  - `Nature`: natural. This style retains more facial details and is more natural.
- - `Pitu`: this style is supported only in the [Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise).
+ - `Pitu`: this style is supported only in the [Professional Edition](https://intl.cloud.tencent.com/document/product/647/34615).
 3. Call [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#a3931ccd8fa54bb846783ab4d6ca2874b) to set the skin smoothing strength (`5` is recommended).
 4. Call [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#ab08c07ce725dbb8769b61fe0c76b0e95) to set the skin brightening strength (`5` is recommended).
 

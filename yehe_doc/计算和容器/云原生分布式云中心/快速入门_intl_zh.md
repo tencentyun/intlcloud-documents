@@ -30,9 +30,9 @@
 ## 步骤3：注册集群
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式基础设施** > **集群**页面。
 2. 单击**注册集群**，添加集群一个外部集群，命名为 "cluster1"，支持添加**TKE集群**或**非TKE集群**。详细步骤请参见 [创建注册集群](https://intl.cloud.tencent.com/document/product/1144/45543)。
-![](https://qcloudimg.tencent-cloud.cn/raw/adfbc815cbaaf4bdc52311ef214206e7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d187faff5e3352ae63296355bcde48e0.png)
 3. 单击**完成**按钮完成注册集群的创建。为体验多集群的应用管理，本文将会再注册一个外部集群 "cluster2"。
-![](https://qcloudimg.tencent-cloud.cn/raw/1b4278ee231f2910efd3fb6780f1ef32.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b91dc3b0244dac683f17afd389f83cc4.png)
 
 
 ## 步骤4：创建命名空间
@@ -41,9 +41,9 @@
 2. 单击左侧**命名空间**标签页，单击**新建**创建一个命名空间，例如 "nginx-test"。
 3. 在新建 Namespace 页面的底端，需要为该资源配置分发策略，支持选择 **新建分发策略**，**已有分发策略**，**不指定分发策略**，此处选择**新建分发策略**。
 4. 在**新建分发策略**下，单击**选择已有集群**，选择您的应用想要分发部署的集群，后台将自动为其创建分发策略。
-![](https://qcloudimg.tencent-cloud.cn/raw/8fc50845a38454974391f9fc35d0a071.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/142396d1c2858a430511560fa59c03f3.png)
 5. 单击**创建Namespace**，完成资源创建，进入命名空间列表页面，可以看到Namespace命名空间已创建成功。
-![](https://qcloudimg.tencent-cloud.cn/raw/82becc070caf97144262c47faf88dc31.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2a29fcebb2300f66f29311b82958158a.png)
 6. 单击创建出的 Namespace 名称进入详情页面，查看该 Namespace 的基本信息，关联的分发策略和拓扑图，单击**实例管理**标签页可以看到该 Namespace 已成功部署到多个集群上。
 
  
@@ -54,11 +54,11 @@
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **应用管理**页面。
 2. 单击左侧**工作负载** > **Deployment** 标签页，单击**新建**创建一个Deployment工作负载，本文将创建一个 my-nginx 工作负载。
 3. 在新建 Workload 页面的底端，需要为该资源配置分发策略，此处选择**已有分发策略**，单击下拉菜单，选择上一步创建出的分发策略。
- ![](https://qcloudimg.tencent-cloud.cn/raw/9e9dcc4261c9167dbbac52132fd3cefc.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/289d5ed6f91e05a66778842720581f41.png)
 4. 单击**创建Workload**，完成资源创建，进入工作负载列表页面，可以看到该工作负载已创建成功。
- ![](https://qcloudimg.tencent-cloud.cn/raw/b4cc6dc47d03cac2bdbc421e2fbc3681.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/a18e6ab04d669b66bed26fa154b56e26.png)
 5. 单击创建出的 Deployment 名称进入详情页面，查看该 Deployment 的基本信息，关联的分发策略和拓扑图，单击**实例管理**标签页可以看到该 Deployment 已成功部署到多个集群上。
- ![](https://qcloudimg.tencent-cloud.cn/raw/7891bfa58ff81865c8c491fbfde125c6.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/a7b80c5f1583daac71b85d62061eb5d1.png)
 
 
 ## 步骤6：模拟灰度发布
@@ -67,7 +67,7 @@
 
 1. 登录 [云原生分布式云中心控制台](https://console.cloud.tencent.com/tdcc)，进入**分布式应用管理** > **K8s资源**页面。
 2. 单击 my-nginx 工作负载进入详情页面，单击进入**实例管理**标签页，查看 my-nginx 工作负载已成功部署到多个集群。
- ![](https://qcloudimg.tencent-cloud.cn/raw/4fa34712173e524023dfc177ed17e7cb.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/6b3f35914dacf843fb4de6f9c8dd6108.png)
 3. 选择其中一个集群上实例，单击**新建差异化策略**，在弹出的对话框中配置差异化策略，以本文为例升级该实例的镜像版本为 nginx:1.14.2 。更多差异化策略信息参见 [差异化策略](https://intl.cloud.tencent.com/document/product/1144/45548)。
 ```yaml
 apiVersion: apps.clusternet.io/v1alpha1
@@ -95,6 +95,6 @@ spec:
 
 ```
 4. 单击**完成**完成差异化策略配置，查看实例列表页面，查看该差异化策略已创建成功。
-![](https://qcloudimg.tencent-cloud.cn/raw/a66bf2cfd8c57464693cfdf4257f2393.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/86835dd456c1bcf2876007a1f3e27b1a.png)
 5. 单击集群名称进入集群管理页面，查看 my-nginx 工作负载信息，镜像版本已升级至 nginx:1.14.2，表明该针对该集群的差异化配置已生效，my-nginx 应用在该集群上实现了灰度升级。
-![](https://qcloudimg.tencent-cloud.cn/raw/a1312be97501302949e7ea0fd7fc722d.png)
+

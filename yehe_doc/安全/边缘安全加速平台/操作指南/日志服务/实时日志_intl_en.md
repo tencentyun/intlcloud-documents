@@ -21,7 +21,8 @@ Currently, real-time logs can be pushed to CLS only. To use CLS in EdgeOne, you 
  - Data: Currently, only site acceleration data can be pushed.
  - Subdomain: Subdomain under the current site to which logs need to be pushed.
 
->? All subdomains can be added in only one subdomain field.
+>? All subdomains can be added in only one push task.
+
 4. Select the required parameters and click **Push**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4d42f3254c7ca7e6c6bdbf44042851a0.png)
 
