@@ -10,7 +10,7 @@ Anti-DDoS Advanced (Global Enterprise Edition) can automatically trigger blockin
 You have purchased an [Anti-DDoS Advanced (Global Enterprise Edition)](https://intl.cloud.tencent.com/document/product/297/41154) instance and set the object to protect.
 
 ## Directions
-1. Log in to the [Anti-DDoS Advanced (Global Enterprise Edition) console](https://console.cloud.tencent.com/ddos/ddos-basic) and select **Anti-DDoS Advanced** > **Configurations** > **DDoS Protection**.
+1. Log in to the [Anti-DDoS Advanced (Global Enterprise Edition) console](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) and select **Anti-DDoS Advanced** > **Configurations** > **DDoS Protection**.
 2. Select an Anti-DDoS Advanced instance ID in the list on the left, such as "xxx.xx.xx.xx bgpip-000003n2".
 ![](https://main.qcloudimg.com/raw/9c8bb19be4726a46a2261b35e048c8cb.png)
 3. Click **Set** in the **Connection Attack Protection** section.
