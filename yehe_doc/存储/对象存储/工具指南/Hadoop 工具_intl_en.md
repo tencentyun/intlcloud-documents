@@ -1,6 +1,6 @@
 ## Overview
 
-Hadoop-COS implements a standard Hadoop file systems on the Tencent Cloud COS platform. It helps integrate COS with big data computing frameworks such as Hadoop, Spark, and Tez, so that they can read and write COS data as they do with HDFS file systems.
+Hadoop-COS implements a standard Hadoop file system on the Tencent Cloud COS platform. It helps integrate COS with big data computing frameworks such as Hadoop, Spark, and Tez, so that they can read and write COS data as they do with HDFS file systems.
 
 Since Hadoop-COS uses COSN (a Tencent Cloud big data tool) as its URI scheme, it can also be referred to as a COSN-based file system.
 
@@ -329,4 +329,4 @@ Bytes Written=40
 ```
 
 ## FAQ
-If you have any questions about Hadoop-COS, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/35706).
+If you have any questions about Hadoop-COS, please see [Hadoop Tool](https://intl.cloud.tencent.com/document/product/436/35706).
