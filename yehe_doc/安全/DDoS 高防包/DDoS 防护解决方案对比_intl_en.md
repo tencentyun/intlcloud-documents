@@ -1,10 +1,7 @@
 Based on Tencent's many years of practical experience in security and attack protection in various fields such as social networking, gaming, news, and finance, Anti-DDoS provides a rich set of comprehensive security solutions, satisfying your needs in security protection against different DDoS attacks in different business scenarios.
 
 This document describes the basic information and use cases of different Anti-DDoS solutions.
->?
->- To customize a dedicated security solution, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
->- Anti-DDoS services, including Anti-DDoS Basic, Anti-DDoS Pro, and Anti-DDoS Advanced, do not provide protection for the traffic of requests below 50 QPS.
-
+>? To customize a dedicated security solution, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 | Product Name | Applicable User | Protected Object |Connection Method | Billing Mode | Protection Capability |Configuration Description |
 |---------|---------|---------|---------|---------|---------|---------|
