@@ -48,11 +48,7 @@ COS Migration은 3rd party 원본 주소 데이터를 COS에 빠르게 마이그
 | migrateType       | 설명                          |
 | :---------------- | :---------------------------- |
 | migrateLocal      | 로컬에서 COS로 마이그레이션              |
-| migrateAws        | AWS S3에서 COS로 마이그레이션          |
-| migrateAli        | Alibaba OSS에서 COS로 마이그레이션         |
-| migrateQiniu      | QINIU에서 COS로 마이그레이션              |
 | migrateUrl        | 다운로드 URL을 COS로 마이그레이션           |
 | migrateBucketCopy | 원본 Bucket에서 타깃 Bucket으로 복사|
-| migrateUpyun      | Upyun에서 COS로 마이그레이션            |
 
 
