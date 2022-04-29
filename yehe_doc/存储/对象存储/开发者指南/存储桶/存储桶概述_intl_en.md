@@ -50,7 +50,7 @@ Public permissions include "Private Read/Write", "Public Read/Private Write", an
 
 ### User permissions
 
-A root account has all the permissions (full access) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and permissions, and even full access to buckets.
+A root account has all the permissions (full access) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and permissions, and even full access.
 
 
 ## Bucket Operations
