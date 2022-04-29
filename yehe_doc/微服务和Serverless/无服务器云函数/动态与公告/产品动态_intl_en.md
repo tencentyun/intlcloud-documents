@@ -1,3 +1,22 @@
+## February 2022
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="40%">Description</th>
+<th width="20%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added the dynamic provisioned concurrency metric feature</td>
+<td>SCF provides the dynamic provisioned concurrency metric feature, so that the function provisioned concurrency can be closer to the actual resource usage, thereby reducing the idle provisioned concurrency fees.</td><td>2022-02-14</td><td>
+<a href="https://intl.cloud.tencent.com/document/product/583/45785">Dynamic Provisioned Concurrency Metric</a>
+</td>
+</tr>
+</tbody></table>
+
 ## November 2021
 
 <table>
@@ -41,7 +60,7 @@
 </tbody></table>
 
 
-## July 2021
+## June 2021
 
 <table>
 <thead>

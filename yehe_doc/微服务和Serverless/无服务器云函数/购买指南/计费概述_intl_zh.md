@@ -12,7 +12,7 @@
   <tr>
     <td rowspan="3">前三个月（包含开通当月）每月</td>
     <td>调用次数</td>
-    <td>200万次（事件函数和 Web 函数各100万次）</td>
+    <td>100万次（事件函数和 Web 函数各100万次）</td>
   </tr>
   <tr>
     <td>资源使用量</td>
@@ -25,7 +25,7 @@
   <tr>
     <td rowspan="3">开通三个月后每月</td>
     <td>调用次数</td>
-    <td>10万次（事件函数和 Web 函数各5万次）</td>
+    <td>5万次（事件函数和 Web 函数各5万次）</td>
   </tr>
   <tr>
     <td>资源使用量</td>
@@ -40,6 +40,7 @@
 
 详情请参阅 [免费额度说明](https://intl.cloud.tencent.com/document/product/583/12282)。
 
+
 ## 计费项与计费方式
 ### 计费项
 云函数的费用由四部分组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**美元**为单位，并保留小数点后两位：
@@ -47,12 +48,12 @@
 - **资源使用费用**：由函数配置内存，乘以函数运行时长得出资源使用量，单位为 GBs。
 - **调用次数费用**：函数的每次触发执行均记为一次调用，单位为次。
 - **外网出流量费用**：在函数代码中访问外网时产生的出流量记录为外网出流量，单位为 GB。
-- **预置并发闲置费用**：由已启动的预置实例数，减去实际运行的并发数得到闲置实例数，闲置实例数乘以配置内存，再乘以闲置时长得出闲置资源量，单位为 GBs。
+- **预置并发闲置费用**：由已启动的预置实例数，减去实际运行的并发数得到闲置实例数，闲置实例数乘以配置内存，再乘以闲置时长得出闲置资源量，单位为 GBs。定价详情见 [预置并发功能定价](https://intl.cloud.tencent.com/zh/document/product/583/44256)。
 
->? Web 函数与事件型函数计费方式相同。
-
+>? 对于使用默认触发器的 Web 函数，会额外新增 Web 函数响应流量，免费额度不包含 Web 函数响应流量。
+>
 ### 计费方式
-云函数计费方式详情请参见 [计费方式说明](https://intl.cloud.tencent.com/zh/document/product/583/12284)。
+云函数计费方式主要为 [**按量计费（后付费）**](https://intl.cloud.tencent.com/zh/document/product/583/42969) 的方式。
 
 ## 产品定价
 
@@ -61,9 +62,9 @@
 - 资源使用费用：0.0000167美元/GBs（0.167美元/万GBs）
 - 调用次数费用：0.002美元/万次
 - 外网出流量费用：各地域均有不同定价，中国大陆为0.12美元/GB
-- 预置并发闲置费用：0.00000847美元/GBs（0.0847美元/万GBs）。请参阅 [计费示例](https://intl.cloud.tencent.com/document/product/583/12285)。
+- 预置并发闲置费用：0.00000847美元/GBs（0.0847美元/万GBs）。请参阅 [计费详情](https://intl.cloud.tencent.com/zh/document/product/583/42969) 和 [计费示例](https://intl.cloud.tencent.com/document/product/583/12285)。
 
-Web 函数与事件型函数计费价格相同，详情请参阅 [产品定价说明](https://intl.cloud.tencent.com/document/product/583/12281)。
+Web 函数与事件型函数计费价格相同，对于使用默认触发器的 Web 函数，会额外新增 Web 函数响应流量。
 
 ## 支持地域
 下表为云函数目前所支持的地域信息：
@@ -124,14 +125,6 @@ Web 函数与事件型函数计费价格相同，详情请参阅 [产品定价�
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12282" target="_blank">查看文档</a></td>
 </tr>
 <tr>
-<td>计费方式</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/583/12284" target="_blank">查看文档</a></td>
-</tr>
-<tr>
-<td>产品定价</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/583/12281" target="_blank">查看文档</a></td>
-</tr>
-<tr>
 <td>欠费说明</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12283" target="_blank">查看文档</a></td>
 </tr>
@@ -140,3 +133,8 @@ Web 函数与事件型函数计费价格相同，详情请参阅 [产品定价�
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12285" target="_blank">查看文档</a></td>
 </tr>
 </tbody></table>
+
+## 通过 SCF 使用其他产品计费说明
+通过 SCF 使用其他产品，如 [文件系统 CFS](https://intl.cloud.tencent.com/document/product/582/9553)、[对象存储 COS](https://intl.cloud.tencent.com/document/product/436/16871)，[日志服务 CLS](https://intl.cloud.tencent.com/document/product/614/11254) 等，将按照对应产品的计费规则进行计费。
+
+SCF 运行日志由日志服务 CLS 提供支持，运行日志将默认投递到 CLS，日志投递详情请查看 [日志投递配置](https://intl.cloud.tencent.com/document/product/583/39778)。CLS 提供一定 [免费额度](https://intl.cloud.tencent.com/document/product/614/37889)，超出免费额度将会按照产品定价进行计费。

@@ -1,6 +1,6 @@
 Currently, an HTTP-triggered function allows you to connect the client to the server where it runs over the native WebSocket protocol.
 
-## How It Works
+## How it Works
 
 ### Starting service
 You can use a bootstrap file to start the WebSocket server in the runtime environment of the HTTP-triggered function configured with support for the WebSocket protocol and listen on the **specified port (9000)** to wait for client connections.
@@ -38,17 +38,19 @@ A WebSocket connection will be closed in the following cases, and the current re
 - For more information on WebSocket status codes for connection end, see [WebSocket Status Codes](https://datatracker.ietf.org/doc/html/rfc6455#section-7.4).
 - For more information on function status codes, see [Function Status Code](https://intl.cloud.tencent.com/document/product/583/35311).
 
-## Use Limits
+## Usage Limits
 
 Use of WebSocket has the following limits:
 
-- Idle timeout period: 1–600s
-- Maximum data packet size: 1 MB
+- Idle timeout period: 10–7200 seconds. The execution timeout period of a function must be greater than or equal to the idle timeout period.
+- Maximum request or response packet size: 256 KB. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to increase the quota limit.
+- Maximum request size per connection: 128 KB/s. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to increase the quota limit.
+- Maximum request QPS per connection: 10. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to increase the quota limit.
 
 
 ## Directions
 
-### Creating function
+### Creating a function
 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
 2. Click **Create** to create a function. You can select **Custom** > **HTTP-Triggered Function** > **Advanced Configuration** to view the supported protocols as shown below:
@@ -64,5 +66,5 @@ Use of WebSocket has the following limits:
 
 You can use the following demos to create a function and try out WebSocket:
 
-- [Demo for Python](https://github.com/awesome-scf/scf-python-code-snippet/tree/main/ws_python): use the [`websockets` library](https://github.com/aaugustin/websockets) to implement the WebSocket server.
-- [Demo for Node.js](https://github.com/awesome-scf/scf-nodejs-code-snippet/tree/main/ws_node): use the [`ws` library](https://github.com/websockets/ws) to implement the WebSocket server.
+- [Demo for Python](https://github.com/awesome-scf/scf-python-code-snippet/tree/main/ws_python): Use the [`websockets` library](https://github.com/aaugustin/websockets) to implement the WebSocket server.
+- [Demo for Node.js](https://github.com/awesome-scf/scf-nodejs-code-snippet/tree/main/ws_node): Use the [`ws` library](https://github.com/websockets/ws) to implement the WebSocket server.

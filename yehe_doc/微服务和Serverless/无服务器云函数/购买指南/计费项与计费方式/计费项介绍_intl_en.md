@@ -1,27 +1,28 @@
-## Billable Item Description
+## Billable Items
 SCF is billed by the following four parts. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in USD:
 
-- **Resource usage fees**: resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
-- **Invocation fees**: each function triggering and execution is calculated as an invocation. HTTP-triggered functions are billed by the **number of invocations** in the same way.
-- **Public network outbound fees**: the outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
-- **Idle provisioned concurrency fees**: the number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size.
+- **Resource usage fees**: Resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
+- **Invocation fees**: Each function triggering and execution is calculated as an invocation. HTTP-triggered functions are billed by the **number of invocations** in the same way.
+- **Public network outbound fees**: The outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
+- **Idle provisioned concurrency fees**: The number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size.
+- **HTTP-triggered function response traffic fees**: Counted only for HTTP-triggered functions configured with default triggers.
 
-For the unit prices of resource usage, invocation volume, public network outbound traffic, and idle provisioned concurrency, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is in GB.
+For the unit prices of resource usage, invocation volume, public network outbound traffic, and idle provisioned concurrency, see [Pricing](https://intl.cloud.tencent.com/zh/document/product/583/12281). Here, the public network outbound traffic and response traffic are in GB.
 
 
-## Resource Usage Fees
+## Resource Usage Fee
 
 **Resource usage fees = (resource usage - free tier) * resource usage unit price**
 
 ### Resource usage in GBs
 
-**Resource usage = configured function memory size * execution duration**
+**Resource usage = memory configured for function * execution duration**
 
-Resource usage is calculated by multiplying the configured function memory size by the billable function execution duration. Here, the configured memory size is in GB, and the billable duration is converted from milliseconds to seconds. Therefore, the resource usage is in **GBs** (GB-second).
+Memory configured for the function is calculated in GB, and charged duration is calculated in seconds (converted from milliseconds). So resource usage is calculated in **GBs** (GB-second).
 
-For example, if a function with 256 MB memory configured is executed for 1,760 ms, then the billable duration is 1,760 ms, and the resource usage of this function execution will be (256 / 1024) * (1760 / 1000) = 0.44 GBs.
+For example, if a function with 256 MB memory configured is executed for 1760 ms, then the billable duration is 1760 ms, and the resource usage of this function execution will be (256/1024) * (1760/1000) = 0.44 GBs.
 
-Resource usage will be calculated for each function execution and aggregated in each hour as the hourly resource usage.
+Resources used in each run are calculated on an hourly basis.
 
 >!
 >- Currently, SCF resource usage is calculated by multiplying the configured function memory size by the actually triggered execution duration of the function. Compared with the billing method of 100-ms upward aggregation, this billing method calculates lower overall resource usage and incurs fewer fees. For more information, see [Billing Example](https://intl.cloud.tencent.com/document/product/583/12285).
@@ -29,7 +30,7 @@ Resource usage will be calculated for each function execution and aggregated in 
 
 ## Invocation Fees
 
-**Invocation fees = (number of function invocations - free tier) * invocation unit price**
+**Invocation volume fees = (number of function invocations - free tier) * invocation unit price**
 
 Each function triggering and execution will be calculated as an invocation and aggregated in each hour as the hourly invocation volume. Fees will be charged **per 10,000 invocations**.
 
@@ -51,18 +52,18 @@ Outbound traffic will be generated when resources are accessed over the public n
 **Idle provisioned concurrency fees = number of idle instances * configured memory size * idle duration * idle provisioned concurrency unit price**
 
 - **Number of idle instances**: SCF counts the maximum concurrency of a version at a 10-second granularity. The number of idle instances is calculated by subtracting the maximum concurrency from the number of currently started provisioned instances. The calculation formula is as follows: number of idle instances = max(number of started provisioned instances - number of concurrent instances, 0).
-- **Configured memory size**: the memory size configured for the provisioned concurrency of the function.
-- **Idle duration**: the idle duration of the provisioned concurrency.
-- **Idle provisioned concurrency price**: see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
+- **Configured memory size**: The memory size configured for the provisioned concurrency of the function.
+- **Idle duration**: The idle duration of the provisioned concurrency.
+- **Idle provisioned concurrency price**: See [Pricing](https://intl.cloud.tencent.com/zh/document/product/583/12281).
 
 >? Idle provisioned concurrency is calculated in GBs (GB-second).
 
-The provisioned concurrency feature only charges small idle fees for the instances that have been configured and started but are not in use, **while no additional fees are charged for the instances that have been configured and are in use**. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred.
+The provisioned concurrency feature only charges small idle fees for the instances that have been configured and started but are not in use, **while no additional fees are charged for the instances that have been configured and are in use**. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred. For examples, see [Billing Example](https://intl.cloud.tencent.com/zh/document/product/583/44256?has_map=1#.E8.AE.A1.E8.B4.B9.E7.A4.BA.E4.BE.8B).
 
 
 
 
-## Fees of Other Services
+## Fees for Other Products
 
-If you use other services such as CMQ, CKafka, API Gateway, and COS when using SCF, fees will be calculated according to the billing rules of the actually used services.
+If you use other products such as CMQ, CKafka, API Gateway, and COS when using SCF, fees will be calculated according to the billing rules of the actually used products.
 
