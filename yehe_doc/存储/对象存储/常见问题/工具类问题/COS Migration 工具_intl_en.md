@@ -48,11 +48,8 @@ Currently, the following migration types are supported:
 | Migration Type       | Description                          |
 | :---------------- | :---------------------------- |
 | migrateLocal      | From local system to COS              |
-| migrateAws        | From AWS S3 to COS          |
-| migrateAli        | From Alibaba Cloud OSS to COS         |
-| migrateQiniu      | From Qiniu to COS              |
 | migrateUrl        | From download URL to COS           |
 | migrateBucketCopy | From source bucket to destination bucket |
-| migrateUpyun      | From UpYun to COS            |
+
 
 
