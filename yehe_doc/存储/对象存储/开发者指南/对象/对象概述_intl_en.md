@@ -19,7 +19,7 @@ For example, in an object's access address `examplebucket-1250000000.cos.ap-guan
 
 - You can use any UTF-8 characters in an object key name. However, for the maximum compatibility with other applications, we recommend you use letters (a-z, A-Z), digits (0-9), and special characters (`-`, `!`, `_`, `.`, and `*`).
 - The encoding length can be up to 850 bytes.
-- It cannot start with a forward slash (/) or a backslash (\).
+- It cannot start with a forward slash (`/`) or a backslash (`\`).
 - An object key cannot contain certain ASCII control characters, including upward arrow (↑), downward arrow (↓), rightward arrow (→), and leftward arrow (←), corresponding to CAN (24), EM (25), SUB (26), and ESC (27) respectively.
 
 
