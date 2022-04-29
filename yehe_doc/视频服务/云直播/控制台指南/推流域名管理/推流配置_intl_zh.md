@@ -3,7 +3,6 @@
 ## 注意事项
 
 - 云直播默认提供测试域名 `xxxx.tlivepush.com`，您可通过该域名进行推流测试，但不建议您在正式业务中使用这个域名作为推流域名。 
-- 仅支持生成 RTMP 格式的推流地址。
 - 生成的推流地址在设定的过期时间内均可使用，过期后需要重新生成新的推流地址。
 
 ## 前提条件
@@ -16,7 +15,7 @@
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3.  进入推流鉴权配置页，单击![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png)按钮选择开启/关闭推流鉴权。
 4. 修改主 KEY 和备 KEY 信息，单击 **保存** 即可成功生效。
-![](https://qcloudimg.tencent-cloud.cn/raw/113acb94417b29466d347bddafa653d2.png)
+![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
 >? 主 KEY 为必填、备 KEY 为选填，主备 KEY 可实现当 KEY 泄露时平滑更换 KEY 不影响业务。
 
 ## 推流地址生成器
@@ -28,7 +27,7 @@
    2. 填写自定义的流名称 StreamName，例如：`liveteststream`。
    3. 单击 **生成推流地址** 即可生成带着 StreamName 的 RTMP 推流地址。
 ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-3. 若您的推流域名未开启推流鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该播放域名下 RTMP、SRT 这两种推流地址。替换推流地址中的 StreamName（流名称）关联播放地址，关联后即可通过播放地址查看直播画面。 
+3. 若您的推流域名未开启推流鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该推流域名下 RTMP、UDP 这两种推流地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。 
 ![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
 
 
@@ -74,16 +73,16 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
     * @return String url
 */
 function getPushUrl($domain, $streamName, $key = null, $time = null){
-	if($key && $time){
-		$txTime = strtoupper(base_convert(strtotime($time),10,16));
-		//txSecret = MD5( KEY + streamName + txTime )
-		$txSecret = md5($key.$streamName.$txTime);
-		$ext_str = "?".http_build_query(array(
-			       "txSecret"=> $txSecret,
-			       "txTime"=> $txTime
-		));
+   if($key && $time){
+      $txTime = strtoupper(base_convert(strtotime($time),10,16));
+      //txSecret = MD5( KEY + streamName + txTime )
+      $txSecret = md5($key.$streamName.$txTime);
+      $ext_str = "?".http_build_query(array(
+                "txSecret"=> $txSecret,
+                "txTime"=> $txTime
+      ));
     }
-	return "rtmp://".$domain."/live/".$streamName . (isset($ext_str) ? $ext_str : "");
+   return "rtmp://".$domain."/live/".$streamName . (isset($ext_str) ? $ext_str : "");
 }
 echo getPushUrl("123.test.com","123456","69e0daf7234b01f257a7adb9f807ae9f","2016-09-11 20:08:07");
 ```

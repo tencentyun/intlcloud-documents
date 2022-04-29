@@ -1,10 +1,9 @@
-To protect the information security of live streaming, push authentication is enabled for CSS push domain names by default. You can use the push address generator on the push address details page to generate a push URL. Then, you can use the URL to push the stream (upload the live streaming video) to the CSS platform.
+To protect your live streaming content, push authentication is enabled for push domains by default. You can use the address generator on the details page of a push domain to generate a push URL, which you can use to push streams (upload live videos) to the CSS platform.
 
 ## Notes
 
 - CSS provides a test domain name `xxxx.tlivepush.com`. You can use it to test live push, but you’re not advised to use it as the push domain name for business purposes. 
-- CSS can only generate push URLs in RTMP format.
-- The generated push URL is valid before the set expiration time. You can generate a new URL after the old one expires.
+- A push URL is valid before the expiration time you specify. After it expires, you need to generate a new URL.
 
 ## Prerequisites
 
@@ -12,12 +11,12 @@ You have activated the CSS service and completed identity verification.
 
 ## Authentication Configuration
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **push domain name** or click **Manage** to enter the domain details page. 
-2. Click **Push Configuration**, view the **Authentication Configuration** section, and click **Edit** on the right.
+2. Click **Push Configuration** and, in the **Authentication Configuration** area, click **Edit**.
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
-3. In the **Authentication Configuration** pop-up window, toggle ![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png) to enable or disable push configuration.
+3. In the pop-up window, toggle on **Push Authentication**.
 4. Enter the primary key and backup key, and click **Save**.
-![](https://qcloudimg.tencent-cloud.cn/raw/113acb94417b29466d347bddafa653d2.png)
->? Primary key is required and backup key is optional. Entering both allows you to switch keys when one key is disclosed.
+![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
+>? The primary key is required and the backup key is optional. Entering both allows you to switch to the other key when one key is disclosed.
 
 ## Push Address Generator
 
@@ -28,62 +27,62 @@ You have activated the CSS service and completed identity verification.
    2. Enter a custom `StreamName`, such as `liveteststream`.
    3. Click **Generate Push Address** to generate an RTMP push URL containing the `StreamName`.
 ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-3. If you haven’t enabled authentication for your push domain, you can find RTMP and SRT URLs in the **Push URL** section. Replace `StreamName` with your stream name and you can use the corresponding playback URLs to play the stream. 
+3. If you haven’t enabled authentication for your push domain, you can find RTMP and UDP URLs in the **Push URL** section. Replace `StreamName` with your stream name and you can use the corresponding playback URLs to play the stream. 
 ![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
 
 
 
-### Notes
+### Push URL format
 
-RTMP push URL format:
+An RTMP push URL looks like this:
 ```
 rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
-Where:
-- `domain`: push domain name
-- `AppName`: live streaming application name, which is `live` by default and customizable
-- `StreamName`: custom stream name used to identify a live stream
-- `txSecret`: authentication string generated after push authentication is enabled
-- `txTime`: expiration timestamp set for a push URL in the console
+It includes the following fields:
+- `domain`: Push domain name
+- `AppName`: Live streaming application name, which is `live` by default and is customizable
+- `StreamName`: Custom stream name used to identify a live stream
+- `txSecret`: Authentication string generated after push authentication is enabled
+- `txTime`: Expiration timestamp set for the push URL in the console
 
 >!
 >- If you have enabled authentication, the actual expiration time of a URL will be `txTime` plus the validity period of the key.
->- For the sake of convenience, the time you set in the console is the actual expiration time. **If you have enabled authentication, the system will calculate the `txTime` when generating push URLs.**
+>- For the sake of convenience, the time you set in the console is the actual expiration time. **If you enable authentication, the system will calculate the `txTime` when generating push URLs.**
 >- As long as you start push or playback before the expiration time and the stream is not interrupted, the push or playback can continue even after the URL expires.
 
 
 
 ## Sample Code of Push URL
 
-Sample code for generating a push URL in PHP and Java is provided for your reference, which can be viewed by performing the following steps:
+We offer sample code in PHP and Java for generating push URLs. To view the code, follow the steps below:
 
 1. Log in to the CSS console and click **[Domain Management](https://console.cloud.tencent.com/live/domainmanage).**
 2. Click a push domain name or click **Manage** on the right to enter its details page.
 3. Select **Push Configuration** and scroll down to find **Push Address Sample Code**.
-4. Click the tab to view the sample code for PHP or Java, as shown below:
+4. Click the tab to view the sample code for PHP or Java.
 <dx-codeblock>
 ::: PHP php
 ```
 /**
     * Get the push URL
     * If you do not pass in the authentication key and URL expiration time, a URL without hotlink protection will be returned.
-    * @param domain   Your push domain name
-    *        streamName   Unique stream name to identify its push URLs
-    *        key   Authentication key
-    *        time   Expiration time (accurate to the second). Example: 2016-11-12 12:00:00
+    * @param domain: Your push domain name
+    *        streamName: A unique stream name to identify the push URL
+    *        key: Authentication key
+    *        time: Expiration time (accurate to the second). Example: 2016-11-12 12:00:00
     * @return String url
 */
 function getPushUrl($domain, $streamName, $key = null, $time = null){
-	if($key && $time){
-		$txTime = strtoupper(base_convert(strtotime($time),10,16));
-		//txSecret = MD5( KEY + streamName + txTime )
-		$txSecret = md5($key.$streamName.$txTime);
-		$ext_str = "?".http_build_query(array(
-			       "txSecret"=> $txSecret,
-			       "txTime"=> $txTime
-		));
+   if($key && $time){
+      $txTime = strtoupper(base_convert(strtotime($time),10,16));
+      //txSecret = MD5( KEY + streamName + txTime )
+      $txSecret = md5($key.$streamName.$txTime);
+      $ext_str = "?".http_build_query(array(
+                "txSecret"=> $txSecret,
+                "txTime"=> $txTime
+      ));
     }
-	return "rtmp://".$domain."/live/".$streamName . (isset($ext_str) ? $ext_str : "");
+   return "rtmp://".$domain."/live/".$streamName . (isset($ext_str) ? $ext_str : "");
 }
 echo getPushUrl("123.test.com","123456","69e0daf7234b01f257a7adb9f807ae9f","2016-09-11 20:08:07");
 ```
@@ -143,5 +142,5 @@ public class Test {
 
 
 ## Subsequent Operations
-After the push URL is generated, you can use it based on business scenarios. For specific operations, please see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
+You can start pushing streams after the push URL is generated. For details, see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
 
