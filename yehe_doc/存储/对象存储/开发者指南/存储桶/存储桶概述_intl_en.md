@@ -27,7 +27,7 @@ The following are examples of valid bucket names:
 ## Bucket Region
 Region is where the COS IDC is located. COS allows users to create buckets in different regions. You can select the region closest to the location where you deploy your business for the buckets so as to reduce latency and cost, and meet the compliance requirements.
 
-For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate object uploads and downloads. For more information on regions, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
+For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate object uploads and downloads. For more information on regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 
 >!A region must be specified when a bucket is created, and cannot be modified once specified. All objects in the bucket are stored in the IDC in the region. You cannot set regions for objects.
 
