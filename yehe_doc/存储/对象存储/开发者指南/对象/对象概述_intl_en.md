@@ -1,12 +1,12 @@
 ## Overview
 
-Object is the basic unit of storage in COS, which can be understood as data in any format, such as images, documents, and audio/video files. Bucket is the carrier of objects. One bucket can contain any number of objects. Different storage classes can be specified for objects in COS. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+Object is the basic unit of storage in COS, which can be understood as data in any format, such as images, documents, and audio/video files. Bucket is the carrier of objects. One bucket can contain any number of objects. Different storage classes can be specified for objects in COS. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
 Each object consists of an object key (ObjectKey), an object value (Value), and object metadata (Metadata).
 
-- ObjectKey: the unique identifier of the object in the bucket, which can be regarded as the file URL. In the API and SDK samples, objects are named in the format of `<ObjectKey>`.
-- Value: the uploaded object, which can be regarded as the object content.
-- Metadata: a set of key-value pairs, which can be regarded as object attributes, such as modification time and storage class. You can query if after uploading an object.
+- ObjectKey: The unique identifier of the object in the bucket, which can be regarded as the file path. In the API and SDK samples, objects are named in the format of `<ObjectKey>`.
+- Value: The uploaded object, which can be regarded as the object content.
+- Metadata: A set of key-value pairs, which can be regarded as object attributes, such as modification time and storage class. You can query it after uploading an object.
 
 
 
@@ -19,7 +19,7 @@ For example, in an object's access address `examplebucket-1250000000.cos.ap-guan
 
 - You can use any UTF-8 characters in an object key name. However, for the maximum compatibility with other applications, we recommend you use letters (a-z, A-Z), digits (0-9), and special characters (`-`, `!`, `_`, `.`, and `*`).
 - The encoding length can be up to 850 bytes.
-- It cannot start with a forward slash (/) or a backslash (\).
+- An object key name cannot start with a forward slash (`/`) or a backslash (`\`).
 - An object key cannot contain certain ASCII control characters, including upward arrow (↑), downward arrow (↓), rightward arrow (→), and leftward arrow (←), corresponding to CAN (24), EM (25), SUB (26), and ESC (27) respectively.
 
 
@@ -107,7 +107,7 @@ Deleting folders and directories is relatively complicated, as shown below:
 
 ## Object Metadata
 
-Metadata (aka HTTP header) is a set of key-value pairs in an object. It is the string sent by the server before the server sends HTML data over HTTP protocol to the browser. Modifying the HTTP header when uploading an object can alter page response forms or communicate configuration information, such as modifying caching time. 
+Metadata (or HTTP header) is a set of key-value pairs in an object. It is the string sent by the server before the server sends HTML data over HTTP protocol to the browser. Modifying the HTTP header when uploading an object can alter page response forms or communicate configuration information, such as modifying caching time. 
 
 There are two types of metadata: system metadata and user-defined metadata.
 
@@ -146,7 +146,7 @@ This refers to the attribute information of the object, such as object modificat
 
 ### User-defined metadata
 
-This refers to the object's custom parameters, such as Content-Type, Cache-Control, Expires, and x-cos-meta-\*. For more information, please see [Custom Object Headers](https://intl.cloud.tencent.com/document/product/436/13361).
+This refers to the object's custom parameters, such as Content-Type, Cache-Control, Expires, and x-cos-meta-\*. For more information, see [Custom Object Headers](https://intl.cloud.tencent.com/document/product/436/13361).
 
 <table>
 <thead>
@@ -196,18 +196,18 @@ You can manage objects through the Tencent Cloud console, tools, APIs, and SDKs.
 
 >!According to the maximum file size supported for upload, there are two upload methods: [simple upload](https://intl.cloud.tencent.com/document/product/436/14113) and [multipart upload](https://intl.cloud.tencent.com/document/product/436/14112).
 >- Use simple upload for objects less than 5 GB.
->- Multipart upload is limited to no more than 10,000 parts (each in 5 GB) and a maximum object size of around 48.82 TB. For more information on the use limits, please see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
+>- Multipart upload is limited to no more than 10,000 parts (each in 5 GB) and a maximum object size of around 48.82 TB. For more information on the use limits, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
-After an object is uploaded, you can configure it in the console. For more information, please see:
+After an object is uploaded, you can configure it in the console. For more information, see:
 
 - [Searching for Objects](https://intl.cloud.tencent.com/document/product/436/13325)
 - [Viewing Object Information](https://intl.cloud.tencent.com/document/product/436/13326)
 - [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327)
 - [Setting Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361)
 
-## Object Sub-resources
+## Object Subresources
 
-COS has sub-resources that are associated with buckets and objects. Sub-resources belong to objects, so they do not exist independently; instead, they are always associated with other entities such as objects or buckets. An access control list (ACL) is the access control information list for a specific object, which is a sub-resource of a COS object.
+COS has subresources that are associated with buckets and objects. Subresources are subordinates to objects, so they do not exist on their own. They are always associated with other entities such as objects or buckets. An access control list (ACL) is the access control information list for a specific object, which is a subresource of a COS object.
 
 An ACL contains an authorization list that identifies authorized users and the granted permissions to implement access control on the object. When you create an object, ACL identifies the object owner who can fully control the object. You can retrieve the object ACL or replace it with a new authorization list.
 
@@ -216,12 +216,12 @@ An ACL contains an authorization list that identifies authorized users and the g
 ## Access Permission Types
 
 COS supports setting two types of permissions to objects: **public permissions** and **user permissions**.
-**Public Permissions**: includes Inherit Permission, Private Read/Write, and Public Read/Private Write.
-- Inherited permission: the object permissions inherited from the bucket is the same as the access permissions of the bucket itself. When you access an object with the "inherited bucket permission", COS will match the bucket permission to respond to the access. A new object inherits the permission from its bucket by default.
-- Private Read/Write: when you access an object with the Private Read/Write permission, the object can only be accessed with a [request signature](https://intl.cloud.tencent.com/document/product/436/7778), regardless of the bucket permission.
-- Public Read/Private Write: when an object with an access permission of "Public Read" is accessed, the object can be directly downloaded, regardless of the bucket access permission.
+**Public permissions**: Includes Inherit Permission, Private Read/Write, and Public Read/Private Write.
+- Inherit Permission: The object permissions inherited from the bucket is the same as the access permissions of the bucket itself. When you access an object with the "inherited bucket permission", COS will match the bucket permission to respond to the access. A new object inherits the permission from its bucket by default.
+- Private Read/Write: When you access an object with the Private Read/Write permission, the object can only be accessed with a [request signature](https://intl.cloud.tencent.com/document/product/436/7778), regardless of the bucket permission.
+- Public Read/Private Write: When an object with an access permission of "Public Read" is accessed, the object can be directly downloaded, regardless of the bucket access permission.
 
-**User Permissions**: the root account has all the permissions of the object by default (i.e. full control). In COS, sub-accounts can be added to read/write data, read/write permissions, and have the full control permission.
+**User permissions**: A root account has all the permissions (full access) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and permissions, and even full access.
 
 #### Use cases
-Allow public access to a specified object in a Private Read/Write bucket or set a required authentication for a specific object in a Public Read/Write bucket.
+Allow public access to a specified object in a Private Read/Write bucket or require authentication for a specific object in a Public Read/Write bucket.

@@ -1,7 +1,7 @@
 ### Berapa batasan rentang IP VPC dan subnet?
 Blok CIDR Tencent Cloud VPC mendukung penggunaan salah satu dari rentang IP pribadi berikut:
-- `10.0.0.0` - `10.255.255.255` (rentang mask antara 16 hingga 28)
-- `172.16.0.0` - `172.31.255.255` (rentang mask antara 16 hingga 28)
+- `10.0.0.0` - `10.255.255.255` (rentang mask antara 12 hingga 28)
+- `172.16.0.0` - `172.31.255.255` (rentang mask antara 12 hingga 28)
 - `192.168.0.0` - `192.168.255.255` (rentang mask antara 16 hingga 28)
 
 - Blok CIDR subnet harus berada di dalam atau sama dengan blok CIDR VPC.

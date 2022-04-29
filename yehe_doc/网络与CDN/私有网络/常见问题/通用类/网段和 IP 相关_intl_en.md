@@ -1,7 +1,7 @@
 ### What are the limits on the IP ranges of VPCs and subnets?
 Tencent Cloud VPC CIDR block supports the use of any one of the following private IP ranges:
-- `10.0.0.0` - `10.255.255.255` (mask range between 16 and 28)
-- `172.16.0.0` - `172.31.255.255` (mask range between 16 and 28)
+- `10.0.0.0` - `10.255.255.255` (mask range between 12 and 28)
+- `172.16.0.0` - `172.31.255.255` (mask range between 12 and 28)
 - `192.168.0.0` - `192.168.255.255` (mask range between 16 and 28)
 
 The subnet CIDR block must be within or the same as the VPC CIDR block.
