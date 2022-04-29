@@ -39,24 +39,24 @@ For example, if your business is distributed in South China, creating buckets in
 A bucket provides two types of permissions by default: public and user.
 
 ### Public permissions
-Public permissions include "Private Read/Write", "Public Read/Private Write", and "Public Read/Write". You can modify bucket access permissions in **Permission Management** of the bucket in the COS console. For more information, please see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581).
+Public permissions include "Private Read/Write", "Public Read/Private Write", and "Public Read/Write". You can modify bucket access permissions in **Permission Management** of the bucket in the COS console. For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581).
 
 - Private Read/Write
-  Only the creator of the bucket and authorized accounts have Read/Write permission to the objects in the bucket. The default access permission of a bucket is Private Read/Write, which is recommended.
+  Only the creator of the bucket and authorized accounts have Read/Write permission on the objects in the bucket. The default access permission of a bucket is Private Read/Write, which is recommended.
 - Public Read/Private Write
-  Anyone (including anonymous visitors) has Read permission to the objects in the bucket, but only the bucket creator and authorized accounts have Write permission to them.
+  Anyone (including anonymous visitors) has Read permission on the objects in the bucket, but only the bucket creator and authorized accounts have Write permission on them.
 - Public Read/Write
-  Anyone (including anonymous visitors) has Read/Write permission to the objects in the bucket, which is not recommended.
+  Anyone (including anonymous visitors) has Read/Write permission on the objects in the bucket, which is not recommended.
 
 ### User permissions
 
-A root account has all the permissions (full control) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and Read/Write permissions, and even **full access** to buckets.
+A root account has all the permissions (full access) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and permissions, and even full access to buckets.
 
 
 ## Bucket Operations
 
 
-You can manage buckets and configure attributes of buckets in various methods such as the Tencent Cloud console, tools, APIs, and SDKs. For example, you can set a bucket for hosting a static website or set access permission to a bucket. The following documents describe how to configure some features. For more information on bucket configuration, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). 
+You can manage buckets and configure attributes of buckets in various methods such as the Tencent Cloud console, tools, APIs, and SDKs. For example, you can set a bucket for hosting a static website or set access permission on a bucket. The following documents describe how to configure some features. For more information on bucket configuration, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). 
 - [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309)
 - [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)
 - [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315)
