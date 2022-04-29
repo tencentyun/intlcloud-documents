@@ -1,9 +1,9 @@
-﻿CCN connects a VPC with another or with IDCs. This document describes how to create a CCN instance.
+﻿CCN connects a VPC with another or with IDCs. This document describes how to create a CCN.
 
 ## Directions
-1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Cloud Connect Network** on the left sidebar.
-2. Click **+New** at the top of the **CCN** page. 
-3. Complete the following configurations in the **Create CCN instance** pop-up window.
+1. Log in to the [CCN Console](https://console.cloud.tencent.com/vpc/ccn).
+2. Click **+Create** at the top of the **CCN** page. 
+3. Complete the following configurations in the **Create a CCN instance** pop-up window.
 ![](https://main.qcloudimg.com/raw/b72cc7c286f94d8b958def554dfc0150.png)
 <table>
 <thead>
@@ -18,7 +18,7 @@
 	<td align="center">-</td>
  <td >Name of the CCN instance</td>
 </tr>
-<tr >
+<tr>
  <td align="center" >Billing Mode</td>
  <td align="center" style='white-space:nowrap'>Pay-as-you-go by monthly 95 percentile</td>
  <td>Bill the actual bandwidth usage of the current month on 95th percentile basis. It's applicable to business with fluctuating bandwidth demands.</td>
@@ -32,16 +32,12 @@
  <td align="center" white-space="nowrap">Gold</td>
  <td >It’s suitable for businesses that require high communication quality, such as game acceleration.</td>
 </tr>
-<tr >
+<tr>
  <td align="center">Silver</td>
- <td >It’s suitable for cost-sensitive and jitter-insensitive businesses, such as data backup.</td>
+ <td >It’s suitable for cost-sensitive jitter-insensitive businesses, such as data backup.</td>
 </tr>
 <tr>
- <td rowspan=2>Bandwidth Limit Mode</td>
- <td align="center" style='white-space:nowrap'>Regional Outbound Bandwidth Cap</td>
- <td>The total outbound bandwidth cap from a single region to other regions</td>
-</tr>
-<tr>
+ <td>Bandwidth Limit Mode</td>
 	<td align="center" style='white-space:nowrap'>Inter-region Bandwidth Cap</td>
  <td>The inbound and outbound bandwidth cap between two regions</td>
 </tr>
@@ -59,4 +55,3 @@ After creating a CCN instance, you need to associate network instances with it, 
 - For more information on how to associate network instances, see [Associating Network Instances](https://intl.cloud.tencent.com/document/product/1003/30064).
 - For more information on how to check whether the routing policies of each subnet in the VPC associated with the CCN take effect, see [Viewing Routing Information](https://intl.cloud.tencent.com/document/product/1003/30066).
 - For pay-as-you-go CCN instances billed by monthly 95th percentile, you can configure a cross-region bandwidth cap as needed to control the bandwidth cost. For detailed directions, see [Configuring Bandwidth](https://intl.cloud.tencent.com/document/product/1003/38894).
-

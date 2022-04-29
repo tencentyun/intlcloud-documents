@@ -1,8 +1,8 @@
 云联网可以实现 VPC 间、VPC 与本地数据中心（IDC）间的网络互通。本文将介绍如何创建云联网。
 
 ## 操作步骤
-1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，在左侧导航栏单击 【云联网】。
-2. 在“云联网”页面上方单击【+新建】。 
+1. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn)。
+2. 在“云联网”页面上方单击**+新建**。 
 3. 在“新建云联网实例”页面编辑以下信息。
 ![](https://main.qcloudimg.com/raw/b72cc7c286f94d8b958def554dfc0150.png)
 <table>
@@ -37,12 +37,8 @@
  <td >成本敏感，通信质量不敏感，如数据备份。</td>
 </tr>
 <tr>
- <td rowspan=2>限速方式</td>
- <td align="center" style='white-space:nowrap'>地域出口限速</td>
- <td >某地域去往其它地域的总体出带宽限速。</td>
-</tr>
-<tr>
-	<td align="center" style='white-space:nowrap'>地域间限速</td>
+ <td>限速方式</td>
+<td align="center" style='white-space:nowrap'>地域间限速</td>
  <td >两地域之间的出入带宽限速。</td>
 </tr>
 <tr>
@@ -52,11 +48,10 @@
  网关等实例，并自定义备注信息。若当前没有可用实例，您可以先创建云联网，再关联网络实例。</td>
 </tr>
 </table>
-4. 单击【确定】。
+4. 单击**确定**。
 
 ## 后续操作
 创建云联网实例后，还需将需要通行的网络实例与云联网关联，并检查路由表，然后配置带宽，才可以实现网络互通。
 - 若需关联网络实例，具体操作请参见[ 关联网络实例](https://intl.cloud.tencent.com/document/product/1003/30064)。
 - 需查看云联网关联的 VPC 下各子网的路由策略是否生效，具体操作请参见[ 查看路由信息](https://intl.cloud.tencent.com/document/product/1003/30066)。
 - 若您创建的月95后付费云联网实例，可以按需配置跨地域带宽上限，控制带宽费用。具体操作请参见[ 配置带宽](https://intl.cloud.tencent.com/document/product/1003/38894)。
-
