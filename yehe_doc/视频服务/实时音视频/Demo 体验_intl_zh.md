@@ -141,15 +141,6 @@
             <div class="demo-logo-wrapper">
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/f86154130067ff386c90306fd71dfdce.svg" alt="">
             </div>
-            <div class="demo-item-platform">微信小程序</div>
-        </div>
-        <div class="demo-item-desc">
-            语音聊天室、音视频通话、<br>多人会议
-        </div>
-        <div class="demo-item-download">
-            <img src="https://main.qcloudimg.com/raw/4cfc59a1b60c02fc975c8b3e23169fc7.png" data-nonescope="true">
-        </div>
-    </div>
     <div class="preview-demo-item style-web">
         <div class="demo-item-header">
             <div class="demo-logo-wrapper">
