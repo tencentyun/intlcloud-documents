@@ -83,7 +83,7 @@ Web 端支持发起混流，具体请参见 [如何调用混流转码接口](htt
 若您使用了浏览器原生 [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) API 进行自定义采集，则需要手动设置 3A 参数：
 - echoCancellation：回声消除开关
 - noiseSuppression：噪声抑制开关
-- autoGainControl：自动增益开关。
+- autoGainControl：自动增益开关，详细设置请参见 [媒体追踪约束](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints)。
 
 若您使用 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) 接口进行采集，则无需手动设置 3A 参数，SDK 默认开启 3A。
 
@@ -149,3 +149,12 @@ Web 端4.3.8以上版本已支持自定义流 ID，可以更新 SDK 版本。小
 [](id:012)
 ### Web 端如何切换摄像头和麦克风？
 您可以先获取到系统的摄像头和麦克风设备后，调用 [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice) 来进行切换，具体操作请参见 [切换摄像头和麦克风](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)。
+
+[](id:013)
+### 在 iframe 使用 TRTC Web SDK 报错 Permission denied？
+
+在 iframe 中使用 WebRTC 需要给 iframe 标签增加属性来开启相关权限，具体参考如下。
+麦克风、摄像头、屏幕分享权限：
+```javascript
+<iframe allow="microphone; camera; display-capture;">
+```

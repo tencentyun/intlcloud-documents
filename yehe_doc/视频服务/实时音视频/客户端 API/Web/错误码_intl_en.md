@@ -1,5 +1,5 @@
 
->!This document applies to 4.x.x versions of the TRTC Web SKD.
+>!This document applies to 4.x.x versions of the TRTC web SKD.
 
 ## Error Code Definitions
 
@@ -53,7 +53,7 @@
 | 70014  | Account system | `SDKAppID` in `userSig` is different from that in the request. Check whether the `SDKAppID` entered during login is the same as that in `userSig`. |
 | 70015  | Account system | No verification method was found for this `SDKAppID` and account type. Check whether account integration has been performed. |
 | 70016  | Account system | The length of the public key pulled is 0. Check whether a public key has been uploaded. If it was just uploaded, try again in 10 minutes.  |
-| 70017  | Account system | Internal verification of third-party ticket timed out. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
+| 70017  | Account system | Internal verification of third-party ticket timed out. Try again.                      |
 | 70018  | Account system | Internal verification of third-party ticket failed.                                       |
 | 70019  | Account system | The ticket field for HTTPS-based verification is empty. Enter the correct `userSig`.        |
 | 70020  | Account system | The application (`SDKAppID`) was not found. Make sure you have created it in Tencent Cloud. |
@@ -70,10 +70,10 @@
 | 70115  | Account system | The UIN does not match that of the application developer.                           |
 | 70140  | Account system | `SDKAppID` and `acctype` do not match.                                   |
 | 70145  | Account system | Incorrect account type.                                                 |
-| 70169  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
-| 70201  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
-| 70202  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
-| 70203  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
+| 70169  | Account system | Internal error. Try again.                      |
+| 70201  | Account system | Internal error. Try again.                      |
+| 70202  | Account system | Internal error. Try again.                      |
+| 70203  | Account system | Internal error. Try again.                       |
 | 70204  | Account system | The `SDKAppID` has no matching `acctype`.                                 |
 | 70205  | Account system | Failed to find `acctype`. Try again.                                    |
 | 70206  | Account system | Invalid quantity for batch operation in the request.                                        |
@@ -82,24 +82,24 @@
 | 70209  | Account system | Failed to get the developer's UIN.                                      |
 | 70210  | Account system | The UIN in the request is not the developer’s.                                    |
 | 70211  | Account system | Invalid UIN in the request.                                              |
-| 70212  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
-| 70213  | Account system | Failed to access internal data. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
+| 70212  | Account system | Internal error. Try again.                       |
+| 70213  | Account system | Failed to access internal data. Try again.                      |
 | 70214  | Account system | Internal ticket verification failed.                                             |
 | 70221  | Account system | Invalid login status. Verify login with `UserSig` again.                        |
 | 70222  | Account system | Internal error. Try again.                                           |
-| 70225  | Account system | Internal error. Try again. If the problem persists after multiple retries, please contact TLS account support over QQ at 3268519604                      |
-| 70231  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
+| 70225  | Account system | Internal error. Try again.                       |
+| 70231  | Account system | Internal error. Try again.                       |
 | 70236  | Account system | Failed to verify the user signature.                                     |
-| 70308  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
+| 70308  | Account system | Internal error. Try again.                      |
 | 70346  | Account system | Ticket verification failed.                                               |
 | 70347  | Account system | Failed to verify the ticket because it has expired. |
-| 70348  | Account system | Internal error. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
-| 70362  | Account system | Internal timeout. Try again. If the problem persists after multiple retries, contact TLS account support over QQ at 3268519604.                      |
+| 70348  | Account system | Internal error. Try again.                      |
+| 70362  | Account system | Internal timeout. Try again.                       |
 | 70401  | Account system | Internal error. Try again                                           |
 | 70402  | Account system | Invalid parameter. Check whether all required fields are filled in and the values entered meet the requirements. |
 | 70403  | Account system | The initiator is not the application admin and is not authorized to perform the operation.                      |
 | 70050  | Account system | The account is temporarily locked due to multiple failed login retries. Please check whether the ticket is correct and try again in a minute. |
-| 70051  | Account system | Blocked account. Please contact TLS account support over QQ at 3268519604.                                                        |
+| 70051  | Account system | Blocked account.                                                         |
 
 ## Room Entry Errors
 | Error Code | Description              |

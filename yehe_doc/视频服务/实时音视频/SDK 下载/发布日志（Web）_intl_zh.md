@@ -5,33 +5,68 @@
 
 >!
 > - 建议您及时更新至最新版本，以便获得更好的产品稳定性及在线支持。
-> - 版本升级注意事项请参见：[升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)。
+> - 版本升级注意事项请参见：[升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)。
+
+## Version 4.12.2 @2022.04.02
+
+**Improvement**
+
+优化音量计算逻辑，降低内存占用及性能开销。
+
+**Bug Fixed**
+
+- 修复偶现页面长时间切后台被踢问题（收到 client-banned 事件）。
+- 规避 iOS 15.2 -15.4 切换摄像头后，出现回音的问题。详情参考：[iOS Safari 已知问题 case 11](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4)。
+
+## Version 4.12.1 @2022.03.18
+
+**Note**
+
+ 升级至该版本需注意：[升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)。
+
+**Improvement**
+
+- [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#play) 支持重复调用、设置镜像播放、动态修改播放参数。
+- 完善自动恢复采集逻辑，规避偶现推流掉水印的问题。
+
+**Bug Fixed**
+
+- 修复 muteVideo/unmuteVideo 后，远端拉小流黑屏的问题。
+- 修复切小流后，抛出 stream-subscribed 事件的问题。
+
+**Breaking Change**
+
+- 废弃 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createStream) 接口的 mirror 属性，请使用 [stream.play(elementId, { mirror: true })](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#play)。
 
 ## Version 4.12.0 @2022.03.04
 
 **Note**
-升级至该版本需注意：[升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)。
+
+ 升级至该版本需注意：[升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)。
 
 **Feature**
-[client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType) 改为异步，返回 Promise，可根据 Promise 状态判断切换大小流是否成功。
+
+- [client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setRemoteVideoStreamType) 改为异步，返回 Promise，可根据 Promise 状态判断切换大小流是否成功。
 
 **Improvement**
-优化海外服务调度准确性。
+
+ 优化海外服务调度准确性。
 
 **Bug Fixed**
-修复偶现收到 user_time_out 被踢的问题。
+
+ 修复偶现收到 user_time_out 被踢的问题。
 
 ## Version 4.11.13 @2022.02.17
 
 **Improvement**
 
 - 更新 npm 包 Typescript 声明文件。
-- 优化 [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play) 参数校验逻辑。
+- 优化 [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#play) 参数校验逻辑。
 
 **Bug Fixed**
 
-- 修复 iOS 13 在未授权前偶现 [LocalStream.initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#initialize) 失败报错的问题。
-- 修复 [AUDIO_VOLUME](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.AUDIO_VOLUME) 事件偶现取值为0的问题。
+- 修复 iOS 13 在未授权前偶现 [LocalStream.initialize](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize) 失败报错的问题。
+- 修复 [AUDIO_VOLUME](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.AUDIO_VOLUME) 事件偶现取值为0的问题。
 
 ## Version 4.11.12 @2022.01.11
 
@@ -43,8 +78,8 @@
 
 **Bug Fixed**
 
-- 修复 iOS 15.1 开启桌面版网页通话时，出现页面 crash 的问题。详情参考：[iOS Safari 已知问题 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)。
-- 修复 [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setAudioProfile) 码率设置成 192kbps 的问题。
+- 修复 iOS 15.1 开启桌面版网页通话时，出现页面 crash 的问题。详情参考：[iOS Safari 已知问题 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4)。
+- 修复 [LocalStream.setAudioProfile('high')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioProfile) 码率设置成 192kbps 的问题。
 
 
 ## Version 4.11.11 @2021.12.17
@@ -65,34 +100,34 @@
 
 **Note**
 
-- 升级至该版本需注意：[升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)。
+- 升级至该版本需注意：[升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)。
 
 **Improvement**
 
-- 支持 SDK 在自动播放失败时，展示交互弹窗，以解决自动播放失败问题。详情参考：[自动播放受限处理建议](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html#h2-3)。
-- 优化【iOS 15.1 推流 crash 问题】的规避逻辑，详情参考：[iOS Safari 已知问题 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)。
-- 为规避可能出现的无声问题，[TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#getMicrophones) 不再返回 deviceId 为 'communications' 的麦克风。详情参考：[Chrome 已知问题 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-2)。
+- 支持 SDK 在自动播放失败时，展示交互弹窗，以解决自动播放失败问题。详情参考：[自动播放受限处理建议](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-21-advanced-auto-play-policy.html#h2-3)。
+- 优化【iOS 15.1 推流 crash 问题】的规避逻辑，详情参考：[iOS Safari 已知问题 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4)。
+- 为规避可能出现的无声问题，[TRTC.getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#getMicrophones) 不再返回 deviceId 为 'communications' 的麦克风。详情参考：[Chrome 已知问题 case 8 & 9](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-2)。
 - 优化 switchDevice 策略。
 - 提升 webview 环境中的编解码支持度检测准确性。
-- 完善 [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream)、[client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream)、[client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode) 及 [client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopMixTranscode) 接口的参数校验。
+- 完善 [client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startPublishCDNStream)、[client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#stopPublishCDNStream)、[client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode) 及 [client.stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#stopMixTranscode) 接口的参数校验。
 
 **Bug Fixed**
 
-- 修复偶现 client.publish 报错不支持 TRTC 的问题。
+ 修复偶现 client.publish 报错不支持 TRTC 的问题。
 
 ## Version 4.11.8 @2021.11.05
 
 **Improvement**
 
-- 规避 iOS 15.0 偶现视频播放黑屏的问题，详情参考：[iOS Safari 已知问题 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)。
-- 规避 iOS 15.1 推流必现 crash 的问题，详情参考：[iOS Safari 已知问题 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)。
+- 规避 iOS 15.0 偶现视频播放黑屏的问题，详情参考：[iOS Safari 已知问题 case 6](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4)。
+- 规避 iOS 15.1 推流必现 crash 的问题，详情参考：[iOS Safari 已知问题 case 7](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-02-info-webrtc-issues.html#h2-4)。
 
 ## Version 4.11.7 @2021.09.30
 
 **Improvement**
 
 - 关键接口增加参数类型强校验。
-- 支持开发模式（LogLevel 为 [Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.Logger.html#.LogLevel)）下，中文错误信息提示。
+- 支持开发模式（LogLevel 为 [Debug](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.LogLevel)）下，中文错误信息提示。
 - 提升设备采集异常时，自动恢复采集的成功率。
 - 优化系统休眠，再启动后的通话恢复逻辑。
 - 新增 trtc.esm.js 及 trtc.umd.js，满足不同场景需求，[参考指引](https://www.npmjs.com/package/trtc-js-sdk) 。
@@ -101,14 +136,14 @@
 
 **Improvement**
 
-- 优化信令调度逻辑，提升弱网下的进房成功率，建议 v4.11.5 升级至该版本。
+ 优化信令调度逻辑，提升弱网下的进房成功率，建议 v4.11.5 升级至该版本。
 
 ## Version 4.11.5 @2021.09.04
 
 **Improvement**
 
 - 支持信令通道动态调度，提升弱网环境下连接成功率。
-- 支持跨房间混流，请参见：[Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)。
+- 支持跨房间混流，请参见：[Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode)。
 
 **Bug Fixed**
 
@@ -122,7 +157,7 @@
 
 - 提升在 oppo & vivo 内置浏览器中，H.264 支持度检测的准确性。
 - 新增自动恢复采集逻辑（当设备采集异常时触发）。
-- 新增 subscribe 接口的超时逻辑，参考错误码：[API_CALL_TIMEOUT](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.API_CALL_TIMEOUT)。
+- 新增 subscribe 接口的超时逻辑，参考错误码：[API_CALL_TIMEOUT](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ErrorCode.html#.API_CALL_TIMEOUT)。
 
 **Bug Fixed**
 
@@ -140,14 +175,14 @@
 
 **Bug Fixed**
 
-- 修复偶现 peer-leave 通知不准的问题。
+ 修复偶现 peer-leave 通知不准的问题。
 
 ## Version 4.11.2 @2021.07.23
 
 **Improvement**
 
 - 支持 turn server 调度，提升连接成功率。
-- [Client.getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteMutedState) 新增属性 hasSmall，标识远端是否有推小流。
+- [Client.getRemoteMutedState](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteMutedState) 新增属性 hasSmall，标识远端是否有推小流。
 
 **Bug Fixed**
 
@@ -159,14 +194,14 @@
 
 **Improvement**
 
-- 支持美颜插件，参考：[开启美颜](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)。
+- 支持美颜插件，参考：[开启美颜](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html)。
 - 优化数据统计准确性。
 
 ## Version 4.11.0 @2021.06.18
 
 **Feature**
 
-支持大小流，参考教程：[开启大小流传输](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)。
+支持大小流，参考教程：[开启大小流传输](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-27-advanced-small-stream.html)。
 
 **Improvement**
 
@@ -177,7 +212,7 @@
 **Improvement**
 
 - 优化质量数据统计逻辑，支持服务端 API 获取通话质量数据。
-- [ClientEvent.NETWORK_QUALITY](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ClientEvent.html#.NETWORK_QUALITY) 事件返回 rtt 和 loss 数据。
+- [ClientEvent.NETWORK_QUALITY](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.NETWORK_QUALITY) 事件返回 rtt 和 loss 数据。
 - 优化接口校验逻辑，防止重复调用出现异常。
 - 优化播放逻辑，降低音频播放耗时。
 
@@ -186,7 +221,7 @@
 **Improvement**
 
 - 优化 switchDevice 接口实现逻辑，规避华为浏览器偶现无法切换前置摄像头的问题。
-- 提升 [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) 事件通知准确性。
+- 提升 [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) 事件通知准确性。
 
 **Bug Fixed**
 
@@ -197,13 +232,13 @@
 
 **Feature**
 
-- 新增 [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) 事件，支持监听 Stream 的连接状态变更。
-- 支持 [Client.getTransportStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getTransportStats) 接口获取下行 RTT 统计数据。
-- 支持 [Client.getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteVideoStats) 接口获取辅流（屏幕分享）统计数据。
+- 新增 [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-StreamEvent.html#.CONNECTION_STATE_CHANGED) 事件，支持监听 Stream 的连接状态变更。
+- 支持 [Client.getTransportStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getTransportStats) 接口获取下行 RTT 统计数据。
+- 支持 [Client.getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteVideoStats) 接口获取辅流（屏幕分享）统计数据。
 
 **Improvement**
 
-优化 [Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#switchRole) 接口的实现逻辑。
+优化 [Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#switchRole) 接口的实现逻辑。
 
 **Bug Fixed**
 
@@ -214,19 +249,19 @@
 
 **Feature**
 
-- 新增接口 [Client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startPublishCDNStream)，将流推送到腾讯云 CDN 及第三方 CDN。
-- 新增接口 [Client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#stopPublishCDNStream)，停止推流到腾讯云 CDN 及第三方 CDN。
+- 新增接口 [Client.startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startPublishCDNStream)，将流推送到腾讯云 CDN 及第三方 CDN。
+- 新增接口 [Client.stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#stopPublishCDNStream)，停止推流到腾讯云 CDN 及第三方 CDN。
 
 **Improvement**
 
-优化 [LocalStream.switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#switchDevice)、[LocalStream.addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#addTrack)、[LocalStream.removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#removeTrack) 接口的参数校验逻辑。
+优化 [LocalStream.switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice)、[LocalStream.addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#addTrack)、[LocalStream.removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#removeTrack) 接口的参数校验逻辑。
 
 ## Version 4.9.0 @ 2021.03.19
 
 **Feature**
 
-- 云端混流支持预排版模式，请参见 [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode) 接口。
-- 支持音量回调，请参见 [Client.enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#enableAudioVolumeEvaluation) 接口。
+- 云端混流支持预排版模式，请参见 [Client.startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode) 接口。
+- 支持音量回调，请参见 [Client.enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#enableAudioVolumeEvaluation) 接口。
 
 **Improvement**
 
@@ -239,7 +274,7 @@ Websocket 的默认端口改为 443。
 
 **Breaking Change**
 
-[TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.checkSystemRequirements) 返回详细检测结果，具体请参见 [接口文档](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.checkSystemRequirements) 及 [升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html) 。
+[TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) 返回详细检测结果，具体请参见 [接口文档](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) 及 [升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html) 。
 
 ## Version 4.8.6 @ 2021.03.01
 
@@ -256,7 +291,7 @@ Websocket 的默认端口改为 443。
 
 **Improvement**
 
-- [Client.setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setTurnServer) 支持设置多个 turn server。
+- [Client.setTurnServer](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#setTurnServer) 支持设置多个 turn server。
 - 优化 userId 校验逻辑。
 
 **Bug Fixed**
@@ -267,10 +302,10 @@ Websocket 的默认端口改为 443。
 
 **Improvement**
 
-- [LocalStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setVideoProfile) 接口支持动态调用。
+- [LocalStream.setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoProfile) 接口支持动态调用。
 - 优化仪表盘数据上报逻辑。
-- 优化自动播放受限时的处理逻辑，请参见 [自动播放受限处理建议](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html)。
-- 优化设备插拔自动恢复失败时的处理逻辑，请参见 [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED)。
+- 优化自动播放受限时的处理逻辑，请参见 [自动播放受限处理建议](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-21-advanced-auto-play-policy.html)。
+- 优化设备插拔自动恢复失败时的处理逻辑，请参见 [DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED)。
 
 **Bug Fixed**
 
@@ -292,7 +327,7 @@ Websocket 的默认端口改为 443。
 
 **Improvement**
 
-- 优化进房接口 roomId 参数校验逻辑，详情请参见 [接口文档](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join) 及 [升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)。
+- 优化进房接口 roomId 参数校验逻辑，详情请参见 [接口文档](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#join) 及 [升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)。
 - 优化 peer-join 及 peer-leave 事件通知时机。
 
 **Bug Fixed**
@@ -301,7 +336,7 @@ Websocket 的默认端口改为 443。
 
 **Breaking Change**
 
-删除已废弃接口：setDefaultMuteRemoteStreams，请使用 [TRTC.createClient 的 autoSubscribe 参数](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient) 替代。
+删除已废弃接口：setDefaultMuteRemoteStreams，请使用 [TRTC.createClient 的 autoSubscribe 参数](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) 替代。
 
 ## Version 4.8.1 @ 2020.12.25
 
@@ -315,8 +350,8 @@ Websocket 的默认端口改为 443。
 **Feature**
 
 - 支持云端混流转码。
-- 全平台支持字符串房间号，参考：[TRTC.createClient 的 useStringRoomId 参数](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient)。
-- 支持关闭自动订阅，参考：[TRTC.createClient 的 autoSubscribe 参数](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createClient)。
+- 全平台支持字符串房间号，参考：[TRTC.createClient 的 useStringRoomId 参数](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)。
+- 支持关闭自动订阅，参考：[TRTC.createClient 的 autoSubscribe 参数](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)。
 
 **Improvement**
 
@@ -334,7 +369,7 @@ Websocket 的默认端口改为 443。
 **Improvement**
 
 - 优化媒体设备变更时（例如：接口松动、设备插拔等）的自动恢复采集逻辑。
-- 新增错误码：[DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED)，可用于设备恢复失败时进行提示。
+- 新增错误码：[DEVICE_AUTO_RECOVER_FAILED](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ErrorCode.html#.DEVICE_AUTO_RECOVER_FAILED)，可用于设备恢复失败时进行提示。
 
 **Bug Fixed**
 
@@ -356,7 +391,7 @@ Websocket 的默认端口改为 443。
 
 **Breaking Change**
 
-[TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.checkSystemRequirements) 返回详细检测结果，具体请参见 [接口文档](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.checkSystemRequirements) 及 [升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)。
+[TRTC.checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) 返回详细检测结果，具体请参见 [接口文档](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) 及 [升级指引](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html)。
 
 ## Version 4.6.7 @ 2020.11.05
 
@@ -372,7 +407,7 @@ Websocket 的默认端口改为 443。
 - 优化上行 peerConnection 重连逻辑。
 - 优化下行 peerConnection 重连逻辑。
 - 优化 TRTC.checkSystemRequirements 检测逻辑。
-- 支持 Safari 屏幕分享，具体请参见 [屏幕分享使用教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-16-basic-screencast.html)。
+- 支持 Safari 屏幕分享，具体请参见 [屏幕分享使用教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)。
 
 **Bug Fixed**
 
@@ -431,7 +466,7 @@ Websocket 的默认端口改为 443。
 
 **Improvement**
 
-- [TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.isScreenShareSupported) Safari 不支持屏幕分享。
+- [TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported) Safari 不支持屏幕分享。
 - 完善 subscribe & unsubscribe 接口的参数校验逻辑。
 - 增加网络质量日志。
 

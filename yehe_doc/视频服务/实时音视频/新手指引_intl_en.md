@@ -1,171 +1,382 @@
-## Quick Introduction to TRTC
+<style>
 
-- [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/35078)
-- [Features](https://intl.cloud.tencent.com/document/product/647/35428)
-- [Use Cases](https://intl.cloud.tencent.com/document/product/647/37713)
-- [Basic Concepts](https://intl.cloud.tencent.com/document/product/647/37714)
+.tp-grid__row.tp-grid--gutter-5n {
+    margin-right: -10px;
+    margin-bottom: -20px;
+    margin-left: -10px;
+}
 
-[](id:pay)
-## Billing Plans
+.tp-grid__row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
 
-TRTC offers two types of services: **basic services** and **value-added services**. 
+.tp-grid__row.tp-grid--gutter-5n .tp-grid__col {
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.tp-grid__col--6 {
+    display: block;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 25%;
+    -webkit-box-flex: 0;
+}
 
-<table>
-<tr><th>Service Type</th><th>Use Case</th><th>Billing Details</th></tr >
-<tr>
-<td rowspan="4">Basic services</td>
-<td>Interactive live audio streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/">Billing of interactive live audio streaming</a></td>
-</tr><tr>
-<td>Interactive live video streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/">Billing of interactive live video streaming</a></td>
-</tr><tr>
-<td>Audio call</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/">Billing of audio calls</a></td>
-</tr><tr>
-<td>Video call</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647">Billing of video calls</a></td>
-</tr><tr>
-<td rowspan="2">Value-added services</td>
-<td>On-cloud recording</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38385">Billing of on-cloud recording</a></td>
-</tr><tr>
-<td>On-Cloud MixTranscoding</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38929">Billing of On-Cloud MixTranscoding</a></td>
-</tr>
-</table>
+.tp-grid__col {
+    display: block;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 14px;
+    -webkit-box-flex: 1;
+}
 
+	.tpm-experience__item {
+	display: flex;
+	height: 100%;
+	background-image: linear-gradient(0deg,#fff,#f3f5f8);
+	border: 2px solid #fff;
+	box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%), -8px -8px 20px 0 #fff;
+	border-radius: 4px;
+	padding: 20px 28px;
+	justify-content: space-between;
+		}
+		
+	.tpm-experience__item-cnt {
+	flex: 1;
+	max-width: 192px;
+   }
 
-
-
-## Development Support
-[](id:demo)
-### Free Demos
-
-TRTC offers free demos for **iOS**, **Android**, **macOS**, **Windows**, **Web**, **Electron**, and **Flutter**. For details, see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
-
-[](id:sdk)
-### SDK download
-
-TRTC is one of Tencent Cloud’s LiteAV products. Because all LiteAV products use the same underlying modules, integrating more than one LiteAV SDK into the same project will result in a “duplicate symbol” error. For this, we provide different editions of the SDK, including **Lite (TRTC)**, **Professional**, and **Enterprise**, which come with different capabilities. You can choose the one that fits your needs.
-
-| Edition                                                     | Description                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Lite (TRTC)](https://intl.cloud.tencent.com/document/product/647/34615) | The Lite Edition integrates the TRTC and live playback (TXLivePlayer) features only. It adds the least to the size of the app installation package and is suitable for clients who need TRTC features only. |
-| [Professional](https://intl.cloud.tencent.com/document/product/647/34615) | The Professional Edition integrates multiple key video/audio features of Tencent Cloud, including TRTC, [MLVB](https://intl.cloud.tencent.com/product/mlvb), [UGSV](https://intl.cloud.tencent.com/product/ugsv), etc. This integrated edition adds less to the size of the app installation package than two independent SDKs do because many underlying modules are shared among the SDKs. It is also free of the duplicate symbol issue. |
-| [Enterprise](https://intl.cloud.tencent.com/document/product/647/34615) | On top of all the features included in the Professional Edition, the Enterprise Edition integrates the AI beauty filter component (value-added service) and supports the use of the eye enlarging and face slimming filters, animated stickers, widgets, etc. |
-
-> ? See [SDK Download](https://intl.cloud.tencent.com/document/product/647/34615) for a comparison of the three editions.
-
-
-[](id:api)
-### API integration
-
-- **Client APIs:** you can implement different features by calling SDK-side APIs on platforms including [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [macOS](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Unity](https://intl.cloud.tencent.com/document/product/647/40139), [Web](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), and [Flutter](https://intl.cloud.tencent.com/document/product/647/39169).
-- **Server APIs:** you can call API 3.0 to implement features including [call quality monitoring](https://intl.cloud.tencent.com/document/product/647/36754), [stream mixing and transcoding](https://intl.cloud.tencent.com/document/product/647/37760), and [room management](https://intl.cloud.tencent.com/document/product/647/34268).
-
-
-
-## Getting Started
-[](id:demo_guide)
-### Demo quick start
-
-The TRTC console offers demo source code for different platforms. See the documents below for how to run the demos.
-
-| Platform       | Document                                                     |
-| ---------- | ------------------------------------------------------------ |
-| iOS and macOS    | [Demo Quick Start (iOS & macOS)](https://intl.cloud.tencent.com/document/product/647/35086) |
-| Android    | [Demo Quick Start (Android)](https://intl.cloud.tencent.com/document/product/647/35084) |
-| Windows    | [Demo Quick Start (Windows)](https://intl.cloud.tencent.com/document/product/647/35085) |
-|Web | [Demo Quick Start (Web)](https://intl.cloud.tencent.com/document/product/647/35607) |
-| Electron   | [Demo Quick Start (Electron)](https://intl.cloud.tencent.com/document/product/647/35089) |
-|Flutter    | [Demo Quick Start (Flutter)](https://intl.cloud.tencent.com/document/product/647/39243) |
-
-[](id:sdk_guide)
-### SDK quick integration
-
-After downloading the TRTC SDK, you can integrate it into your project. For detailed instructions, see the documents below.
-
-| Platform       | Document                                                     |
-| ---------- | ------------------------------------------------------------ |
-| iOS        | [SDK Quick Integration (iOS)](https://intl.cloud.tencent.com/document/product/647/35092) |
-| macOS        | [SDK Quick Integration (macOS)](https://intl.cloud.tencent.com/document/product/647/35094) |
-| Android    | [SDK Quick Integration (Android)](https://intl.cloud.tencent.com/document/product/647/35093) |
-| Windows    | [SDK Quick Integration (Windows)](https://intl.cloud.tencent.com/document/product/647/35095) |
-| Web | [SDK Quick Integration (Web)](https://intl.cloud.tencent.com/document/product/647/35096) |
-| Electron   | [SDK Quick Integration (Electron)](https://intl.cloud.tencent.com/document/product/647/35097) |
-| Flutter | [SDK Quick Integration (Flutter)](https://intl.cloud.tencent.com/document/product/647/35098) |
-
-[](id:web_guide)
-### Quick TWebLive run
-
-TRTC offers an all-inclusive free demo for the TWebLive component. See [WebRTC-based Streaming](https://intl.cloud.tencent.com/document/product/647/38172) for how to integrate the component.
-
-[](id:sence)
-## Scenario-specific Practice
-
-TRTC, along with other Tencent Cloud products, offers free demos for a wide range of live streaming scenarios.
-
-<table>
-<tr><th width="17%">Scenario</th><th>Supported Features</th><th width="20%">Document</th>
-</tr><tr>
-<td>Group video call</td>
-<td>Co-anchoring, offline call answering, etc. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36065" target="_blank">Video Call</a></td>
-</tr><tr>
-<td>Group audio call</td>
-<td>Co-anchoring, offline call answering, etc. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36067" target="_blank">Audio Call</a></td>
-</tr><tr>
-<td>Interactive live streaming</td>
-<td>Co-anchoring, anchor competition, low-latency watch, on-screen comments, etc.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36060" target="_blank">Interactive Live Video Streaming</a></td>
-</tr><tr>
-<td>Real-time interactive teaching</td>
-<td>Teaching modes: video, audio, screen sharing, etc.; interactions: asking questions, hand raising, inviting to speak, ending Q&A, etc. </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37278" target="_blank">Real-Time Interactive Teaching</a></td>
-</tr><tr>
-<td>Video conferencing</td>
-<td>Screen sharing, beauty filters, low-latency conferencing, etc.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37284" target="_blank">Video Conferencing</a></td>
-</tr><tr>
-<td>Audio chat room</td>
-<td>Mic management, low-latency audio interaction, text chat, etc.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37287" target="_blank">Audio Chat Room</a></td>
-</tr></table>
-
-[](id:console)
-## Console Guide
-| Topic                                         | Document                                                  |
-| :--------------------------------------------------------- | :----------------------------------------------------------- |
-| View your usage of TRTC’s **audio/video interaction** and **on-cloud recording** services | Usage Statistics |
-| View call quality statistics of a TRTC room via the dashboard               | Dashboard |
-| Download the demo source code and have a quick run of the demo                       | [Demo Quick Run](https://intl.cloud.tencent.com/document/product/647/39073) |
-| Generate a UserSig online or verify an existing UserSig         | [UserSig Generation and Verification](https://intl.cloud.tencent.com/document/product/647/39074)                |
-| Create an application |  
-| Enable relayed push, on-cloud recording or advanced permission control for an application        | [Function Configuration](https://intl.cloud.tencent.com/document/product/647/39080) |
-| Add a custom image to be set as the background displayed during on-cloud stream mixing            | [Material Management](https://intl.cloud.tencent.com/document/product/647/39081) |
-| Configure a callback key and address based on your actual needs | [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559) |
+ .tpm-experience__item-hd {
+    padding-top: 8px; 
+  }
+	
+	.tpm-experience__item-title {
+	font-size: 18px;
+	color: #000;
+	line-height: 26px;
+	font-weight: 500;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}
+	
+	.tpm-experience__item-qr {
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	border-radius: 4px;
+	padding: 4px;
+	margin-left: 12px;
+	}
 
 
+element.style {
+}
+.tpm-experience__item-btns {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-[](id:faq)
-## FAQs
+ .tpm-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 104px;
+    height: 36px;
+    padding: 0 24px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 34px;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #0052d9;
+    border: 1px solid transparent;
+    outline: 0 none;
+    cursor: pointer;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+}
 
--  [What ports or domain names do I need to add to the allowlist of a native SDK?](https://intl.cloud.tencent.com/document/product/647/35164)
--  [How do I reduce the size of an installation package for iOS/Android?](https://intl.cloud.tencent.com/document/product/647/35165)
-- [**How do I get a key?**](https://intl.cloud.tencent.com/document/product/647/35166)
--  [What are the differences among TRTC Lite, Professional, and Enterprise?](https://intl.cloud.tencent.com/document/product/647/36057) 
--  [What is a `RoomID` in TRTC? What is its value range?](https://intl.cloud.tencent.com/document/product/647/36057) 
--  [Can Android and web users call each other?](https://intl.cloud.tencent.com/document/product/647/37341) 
--  [Which browsers support the SDK for desktop browsers?](https://intl.cloud.tencent.com/document/product/647/37340) 
+.tpm-experience__item .tpm-btn {
+    min-width: 120px;
+    margin-bottom: 12px;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+    -webkit-font-smoothing: auto;
+}
 
-> ? For more Q&As, please see [FAQs](https://intl.cloud.tencent.com/document/product/647/36058).
+.tpm-btn.size-s {
+    min-width: 104px;
+    height: 32px;
+    padding: 0 24px;
+    line-height: 30px;
+}
+
+    .card-container {
+        width: 293px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        text-align: center;
+    }
+    
+    .scene-card-container {
+        width: 450px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .scene-card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    }
+    
+    .image_card {
+        margin-top: 10px;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 1px 0 rgb(0 0 0 / 10%);
+    }
+    .markdown-text-box img {
+        box-shadow: none;
+    }
 
 
-## Feedback and Suggestions
+    h3 {
+        position: relative;
+        top: -2px;
+    }
+    	
+    	@media (max-width: 768px){
+    			.card-container,
+    			.scene-card-container{
+    					width: 100%;
+    			}
+    			.scene-card > div{
+    					width: 100%!important;
+    					margin-left: 0!important;
+    			}
+    			img {
+        box-shadow: none;
+    }
+    	}
+</style>
 
-If you have any questions or feedback about TRTC, feel free to contact us in the following ways:
 
-- To report a problem with the product documentation, such as incorrect content or broken links, click **Send Feedback** at the bottom of the page.
-- If you encounter any problems while using the product, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1).
+## Getting to Know TRTC 
+TRTC is a set of low-latency and high-quality audio/video communication services provided by Tencent Cloud. It offers stable and reliable audio/video transmission capabilities at a low cost. You can use it to quickly build video call, online education, interactive live streaming, online conferencing, and other audio/video communication applications that require low latency.
+<div class="doc-video-mod"><iframe src="https://cloudcache.intl.tencent-cloud.com/cms/backend-cms/Qv57087_%E3%80%8A%E5%AE%9E%E6%97%B6%E9%9F%B3%E8%A7%86%E9%A2%91%20TRTC%E3%80%8B%E8%8B%B1-%E8%85%BE%E8%AE%AF%E4%BA%91_0117.mp4"></iframe></div>
+
+## Try it out
+We offer a demo app for you to try out TRTC services. It integrates the following features:
+<div style="position: relative; box-sizing: border-box;  overflow:hidden">
+    <a href="https://intl.cloud.tencent.com/document/product/647/35076" target="view_window">
+            <div class="image_card">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/bb2facb7474a5c065b14d2996ead8d48.png"/>
+            </div>
+    </a>
+</div>
+
+- **Video call**: Call features similar to those in WeChat; supports view switch, beauty filters, and network connection monitoring.
+- **Group conference**: Supports communication among multiple people in the same room, ideal for online conferencing and education applications.
+- **Showroom streaming**: Supports beauty filters, song accompaniments, likes, on-screen commenting, and co-anchoring.
+- **Duet**: Allows two anchors to sing a song together with low latency.
+- **Online karaoke**: Allows over 10,000 audience members; supports audio interaction, song accompaniments, and lyric syncing.
+
+
+## Integration
+We offer two solutions for you to quickly integrate TRTC features into your application.
+
+### Solution 1 (UI included)
+We offer source code for a set of standard UI components. You can integrate the components you need into your project and load them when necessary. Normally, you can complete the integration in about an hour using this solution.
+
+<div style="position: relative; box-sizing: border-box; padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/4f6e018388bce36b0f5b7807ed76c82a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">Audio/Video Call</h3>
+                <p style="color:#586376" ;>Component-based UI design to help you quickly implement WeChat-like video call applications</p>
+                <a href="https://github.com/tencentyun/TUICalling">GitHub source code</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">Integration guide</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/129edf43d9adf4df6f022dec79ba6db0.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">Video Conferencing</h3>
+                <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly implement video conferencing, online dating, and remote interviewing applications</p>
+                <a href="https://github.com/tencentyun/TUIMeeting">GitHub source code</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">Integration guide</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/ab32f135f2847eaf22733e9a9ad1636a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">Interactive Audio Streaming</h3>
+                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly implement audio chat room applications</p>
+                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub source code</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">Integration guide</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/ab32f135f2847eaf22733e9a9ad1636a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">Interactive Video Streaming</h3>
+                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly implement live streaming and same/cross-room communication.</p>
+                <a href="https://github.com/tencentyun/TUILiveRoom">GitHub source code</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">Integration guide</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/7a7b51c1536587f0fea130d375661552.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">Online Karaoke</h3>
+                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly implement online karaoke applications</p>
+                <a href="https://github.com/tencentyun/TUIKaraoke">GitHub source code</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/41940">Integration guide</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/7a7b51c1536587f0fea130d375661552.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">Duet</h3>
+                <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly enable real-time duet applications</p>
+                <a href="https://github.com/tencentyun/TUIChorus">GitHub source code</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/42689">Integration guide</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+### Solution 2 (No UI)
+You can also integrate the TRTC SDK directly into your project and use the SDK APIs to implement the features you need. This solution offers greater flexibility. However, because you have to design the UI and interactions by yourself, the integration may take a longer time.
+
+We offer API examples for different platforms to help you quickly learn how to use the APIs of the SDK. You can find the API examples for basic TRTC features in the `Basic` folder of the SDK source code package and advanced features (such as resolution setting, background music, and network speed testing) in the `Advanced` folder.
+
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+    <a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                <h3>iOS API Examples</h3>
+                <p>Demonstrates how to use RTC iOS APIs<br>Build an RTC application from scratch</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                <h3>Android API Examples</h3>
+                <p>Demonstrates how to use RTC Android APIs<br>Build an RTC application from scratch</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Windows/QTDemo" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
+                <h3>Windows API Examples</h3>
+                <p>Demonstrates how to use RTC Windows APIs<br>Build an RTC application from scratch</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/Live_Mac/tree/main/QTDemo" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
+                <h3>macOS API Examples</h3>
+                <p>Demonstrates how to use RTC macOS APIs<br>Build an RTC application from scratch</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
+                <h3>Web API Examples</h3>
+                <p>Demonstrates how to use RTC web APIs<br>Build an RTC application from scratch</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
+                <h3>Electron API Examples</h3>
+                <p>Demonstrates how to use RTC Electron APIs<br>Build an RTC application from scratch</p>
+            </div>
+        </div>
+    </a>
+</div>
+

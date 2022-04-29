@@ -54,6 +54,7 @@
 TRTC is a set of low-latency and high-quality audio/video communication services provided by Tencent Cloud. It offers stable and reliable audio/video transmission capabilities at a low cost. TRTC services are implemented via a global transmission network and an SDK. You can find below different editions of the TRTC SDK, which cover mainstream platforms and software frameworks.
 
 
+
 ### Web
 
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
@@ -75,18 +76,8 @@ TRTC is a set of low-latency and high-quality audio/video communication services
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
         <div class="card-container">
             <div class="card">
-                           <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Preview</p>
-                <p style="color:#586376;">Based on a new architecture; integrates the same features as TRTC Stable but is lighter with improved performance.</p>
-                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_Android_preview.zip">ZIP file</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35093">Integration guide</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">Demo guide</a>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
                             <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Stable</p>
+                                <p class="titlename">TRTC Lite</p>
                 <p style="color:#586376;">Integrates TRTC features and TXLivePlayer; compact and stable.</p>
                                 <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Android_en_latest.zip">ZIP file</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Android">GitHub</a>
@@ -98,7 +89,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
                                 <p class="titlename">TRTC Professional</p>
-                <p style="color:#586376;">A full range of features including TRTC, live streaming, short video making, and video on demand</p>
+                <p style="color:#586376;">Integrates a full range of features including TRTC, live streaming, short video making, and video on demand, with slightly bigger storage footprint than TRTC Lite.</p>
                                 <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">ZIP file</a>
                 <a style="margin-left: 10px;" href="https://github.com/tencentyun/LiteAVProfessional_Android">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35093">Integration guide</a>
@@ -113,17 +104,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
         <div class="card-container">
             <div class="card">
                                 <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Preview</p>
-                <p style="color:#586376;">Based on a new architecture; integrates the same features as TRTC Stable but is lighter with improved performance.</p>
-                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_iOS_preview.zip">ZIP file</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35092">Integration guide</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35086">Demo guide</a>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Stable</p>
+                                <p class="titlename">TRTC Lite</p>
                 <p style="color:#586376;">Integrates TRTC features and TXLivePlayer; compact and stable.</p>
                                 <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_iOS_en_latest.zip">ZIP file</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_iOS">GitHub</a>
@@ -135,7 +116,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
             <div class="card">
                                 <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
                                 <p class="titlename">TRTC Professional</p>
-                 <p style="color:#586376;">A full range of features including TRTC, live streaming, short video making, and video on demand</p>
+                 <p style="color:#586376;">Integrates a full range of features including TRTC, live streaming, short video making, and video on demand, with a slightly bigger storage footprint than TRTC Lite.</p>
                                 <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">ZIP file</a>
                 <a style="margin-left: 10px;" href="https://github.com/tencentyun/LiteAVProfessional_iOS">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35092">Integration guide</a>
@@ -150,19 +131,20 @@ TRTC is a set of low-latency and high-quality audio/video communication services
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Preview</p>
-                <p style="color:#586376;">Based on a new architecture; integrates the same features as TRTC Stable but is lighter with improved performance.</p>
-                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_Win_preview.zip">ZIP file</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">Integration guide</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35085">Demo guide</a>
+                                <p class="titlename">Windows SDK (C++)</p>
+                <p style="color:#586376;">Integrates TRTC, TXLivePusher, TXLivePlayer, and TXVodPlayer.</p>
+                          <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Win_en_latest.zip">ZIP file</a>
+                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
+                                <a style="margin-left: 10px;" Integration guide</a>
+                                <a style="margin-left: 10px;" Demo guide</a>
             </div>
         </div>
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Stable</p>
-                <p style="color:#586376;">Integrates TRTC features, TXLivePlayer, and TXVodPlayer.</p>
-                          <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Win_en_latest.zip">ZIP file</a>
+                                <p class="titlename">Windows SDK (C#)</p>
+                <p style="color:#586376;">Integrates TRTC, TXLivePusher, TXLivePlayer, and TXVodPlayer.</p>
+                          <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_CSharp_latest.zip">ZIP file</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">Integration guide</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35085">Demo guide</a>
@@ -175,19 +157,9 @@ TRTC is a set of low-latency and high-quality audio/video communication services
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
         <div class="card-container">
             <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Preview</p>
-                <p style="color:#586376;">Based on a new architecture; integrates the same features as TRTC Stable but is lighter with improved performance.</p>
-                                <a href="https://liteav.sdk.qcloud.com/download/preview/TXLiteAVSDK_TRTC_Mac_preview.zip">ZIP file</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/36067">Integration guide</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/36067">Demo guide</a>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Stable</p>
-                <p style="color:#586376;">Integrates TRTC features, TXLivePlayer, and TXVodPlayer.</p>
+                                <img src="https://qcloudimg.tencent-cloud.cn/raw/4f5b5b301babc3ddf4d2867b37c30ffc.png" data-nonescope="true">
+                                <p class="titlename">macOS SDK</p>
+                <p style="color:#586376;">Integrates TRTC, TXLivePusher, TXLivePlayer, and TXVodPlayer.</p>
                                 <a href="https://liteav.sdk.qcloud.com/download/latest/en/TXLiteAVSDK_TRTC_Mac_en_latest.zip">ZIP file</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Mac">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35094">Integration guide</a>
@@ -240,33 +212,28 @@ TRTC is a set of low-latency and high-quality audio/video communication services
   <tr>
     <th width="100px" style="text-align:center">Module</th>
     <th width="100px" style="text-align:center">Feature</th>
-    <th width="100px" style="text-align:center">Preview</th>
-    <th width="100px" style="text-align:center">Stable</th>
-    <th width="100px" style="text-align:center">Professional</th>
+    <th width="100px" style="text-align:center">TRTC Lite</th>
+    <th width="100px" style="text-align:center">TRTC Professional</th>
   </tr>
     <tr>
     <td rowspan='2' style="text-align:center">Video call</td>
     <td style="text-align:center">One-to-one call</td>
-        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">Group conference</td>
-        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td rowspan='2' style="text-align:center">Co-anchoring</td>
     <td style="text-align:center">Same-room communication</td>
-        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">Cross-room communication</td>
-        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
@@ -274,116 +241,90 @@ TRTC is a set of low-latency and high-quality audio/video communication services
     <td rowspan='2' style="text-align:center">Basic beauty filters</td>
     <td style="text-align:center">Skin brightening/smoothing</td>
     <td style="text-align:center">&#10003;</td>
-        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">Color filters</td>
     <td style="text-align:center">&#10003;</td>
-        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
     <tr>
     <td rowspan='2' style="text-align:center">Stream publishing</td>
     <td style="text-align:center">Camera</td>
-    <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
+    <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
     <td style="text-align:center">Screen</td>
-        <td style="text-align:center">-</td>
-    <td style="text-align:center">-</td>
+    <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td rowspan='3' style="text-align:center">Stream playing</td>
     <td style="text-align:center">RTMP</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">HTTP-FLV</td>
     <td style="text-align:center">&#10003;</td>
-        <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">HLS (M3U8)</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td rowspan='3' style="text-align:center">Video on demand</td>
     <td style="text-align:center">MP4</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
     <td style="text-align:center">HLS (M3U8)</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
     <td style="text-align:center">DRM</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td rowspan='4' style="text-align:center">Short video making</td>
     <td style="text-align:center">Recording/Shooting</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">Clipping/Splicing</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">TikTok-like special effects</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
     <td style="text-align:center">Video upload</td>
     <td style="text-align:center">-</td>
-        <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
     <td rowspan='4' style="text-align:center">Size</td>
     <td style="text-align:center">Android</td>
     <td style="text-align:center">ARMv7: 3.97 MB<br>ARM64: 4.33 MB</td>
-    <td style="text-align:center">ARMv7: 6.95 MB<br>ARM64: 7.94 MB</td>
     <td style="text-align:center">ARMv7: 9.15 MB<br>ARM64: 10.4 MB</td>
   </tr>
     <tr>
     <td style="text-align:center">iOS</td>
     <td style="text-align:center">ARM64: 3.15 MB</td>
-    <td style="text-align:center">ARM64: 3.23 MB</td>
     <td style="text-align:center">N/A</td>
   </tr>
-    <tr>
-    <td style="text-align:center">Windows</td>
-        <td style="text-align:center">Win32: 13.0 MB <br>Win64: 15.4 MB</td>
-    <td style="text-align:center">Win32: 21.3 MB <br>Win64: 26.9 MB</td>
-    <td style="text-align:center">N/A</td>
-  </tr>
-    <tr>
-    <td style="text-align:center">macOS</td>
-        <td style="text-align:center"> x86_64: 15.8 MB</td>
-    <td style="text-align:center">x86_64: 18.1 MB</td>
-    <td style="text-align:center">N/A</td>
 </table>
+
 
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>

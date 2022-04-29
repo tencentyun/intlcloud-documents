@@ -1,171 +1,382 @@
-## 快速了解实时音视频
+<style>
 
-- [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)
-- [功能支持](https://intl.cloud.tencent.com/document/product/647/35428)
-- [适用场景](https://intl.cloud.tencent.com/document/product/647/37713)
-- [基本概念](https://intl.cloud.tencent.com/document/product/647/37714)
+.tp-grid__row.tp-grid--gutter-5n {
+    margin-right: -10px;
+    margin-bottom: -20px;
+    margin-left: -10px;
+}
 
-[](id:pay)
-## 计费模式
+.tp-grid__row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
 
-实时音视频服务项根据服务类型划分为**基础服务**和**增值服务**两大类。 
+.tp-grid__row.tp-grid--gutter-5n .tp-grid__col {
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.tp-grid__col--6 {
+    display: block;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 25%;
+    -webkit-box-flex: 0;
+}
 
-<table>
-<tr><th>服务类型</th><th>适用场景</th><th>计费说明</th></tr>
-<tr>
-<td rowspan="4">基础服务</td>
-<td>语音互动直播</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647">语音互动直播计费说明</a></td>
-</tr><tr>
-<td>视频互动直播</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647">视频互动直播计费说明</a></td>
-</tr><tr>
-<td>语音通话</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647">语音通话计费说明</a></td>
-</tr><tr>
-<td>视频通话</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647">视频通话计费说明</a></td>
-</tr><tr>
-<td rowspan="2">增值服务</td>
-<td>云端录制</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38385">云端录制计费说明</a></td>
-</tr><tr>
-<td>云端混流转码</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38929">云端混流转码计费说明</a></td>
-</tr>
-</table>
+.tp-grid__col {
+    display: block;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 14px;
+    -webkit-box-flex: 1;
+}
 
+	.tpm-experience__item {
+	display: flex;
+	height: 100%;
+	background-image: linear-gradient(0deg,#fff,#f3f5f8);
+	border: 2px solid #fff;
+	box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%), -8px -8px 20px 0 #fff;
+	border-radius: 4px;
+	padding: 20px 28px;
+	justify-content: space-between;
+		}
+		
+	.tpm-experience__item-cnt {
+	flex: 1;
+	max-width: 192px;
+   }
 
-
-
-## 开发支持
-[](id:demo)
-### Demo 体验
-
-实时音视频提供了 **iOS**、**Android**、**Mac OS**、**Windows**、**桌面浏览器**、**Electron**、**Flutter** 端的体验 Demo，具体详情请参见  [Demo 体验](https://intl.cloud.tencent.com/document/product/647/35076)。
-
-[](id:sdk)
-### SDK 下载
-
-TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使用了相同的基础模块，如果您的项目中同时集成了两款以上的 LiteAV 体系的 SDK，就会出现符号冲突（symbol duplicate）的问题。因此我们为您提供集成了不同产品能力的**精简版（TRTC）**、**专业版（Professional）**和**企业版（Enterprise）**，您可以根据实际业务需要选择不同的版本。
-
-| 版本类型                                                     | 说明                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [精简版（TRTC）](https://intl.cloud.tencent.com/document/product/647/34615) | 仅包含 TRTC 和直播播放（TXLivePlayer）两项功能，对 App 的安装包体积增量最小，适合仅使用 TRTC 相关功能的客户 |
-| [专业版（Professional）](https://intl.cloud.tencent.com/document/product/647/34615) | 包含 TRTC 在内的多个音视频相关的核心功能，包括 [移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 和 [短视频（UGSV）](https://intl.cloud.tencent.com/product/ugsv) 等，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困恼 |
-| [企业版（Enterprise）](https://intl.cloud.tencent.com/document/product/647/34615) | 除包含专业版的所有功能以外，还集成了 AI 美颜特效组件（增值服务），支持大眼、瘦脸、美容和动效贴纸、挂件等 AI 美颜特效能力 |
-
-> ? 各版本的差异对照，请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/647/34615)。
-
-
-[](id:api)
-### API 集成
-
-- **客户端 API：**支持通过调用 SDK 接口实现功能集成，可支持平台包括 [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Unity](https://intl.cloud.tencent.com/document/product/647/40139)、[Web](https://intl.cloud.tencent.com/document/product/647/35143)、 [Electron](https://intl.cloud.tencent.com/document/product/647/35141)和 [Flutter](https://intl.cloud.tencent.com/document/product/647/39169)。
-- **服务端 API：**支持通过调用 API 3.0 接口实现  [通话质量监控](https://intl.cloud.tencent.com/document/product/647/36754)、[混流转码](https://intl.cloud.tencent.com/document/product/647/37760)、[房间管理](https://intl.cloud.tencent.com/document/product/647/34268) 功能集成。
-
-
-
-## 新手入门
-[](id:demo_guide)
-### 一分钟跑通 Demo
-
-实时音视频控制台提供了不同平台的 Demo 源码，具体跑通方法请参见：
-
-| 平台       | 相关文档                                                     |
-| ---------- | ------------------------------------------------------------ |
-| iOS 和 Mac    | [跑通 Demo（iOS&Mac）](https://intl.cloud.tencent.com/document/product/647/35086) |
-| Android    | [跑通 Demo（Android）](https://intl.cloud.tencent.com/document/product/647/35084) |
-| Windows    | [跑通 Demo（Windows）](https://intl.cloud.tencent.com/document/product/647/35085) |
-|Web | [跑通 Demo（Web）](https://intl.cloud.tencent.com/document/product/647/35607) |
-| Electron   | [跑通 Demo（Electron）](https://intl.cloud.tencent.com/document/product/647/35089) |
-| Flutter | [跑通 Demo（Flutter）](https://intl.cloud.tencent.com/document/product/647/39243) |
-
-[](id:sdk_guide)
-### 一分钟集成 SDK
-
-SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的项目中：
-
-| 平台       | 相关文档                                                     |
-| ---------- | ------------------------------------------------------------ |
-| iOS        | [快速集成（iOS）](https://intl.cloud.tencent.com/document/product/647/35092) |
-| Mac        | [快速集成（Mac）](https://intl.cloud.tencent.com/document/product/647/35094) |
-| Android    | [快速集成（Android）](https://intl.cloud.tencent.com/document/product/647/35093) |
-| Windows    | [快速集成（Windows）](https://intl.cloud.tencent.com/document/product/647/35095) |
-| Web | [快速集成（Web）](https://intl.cloud.tencent.com/document/product/647/35096) |
-| Electron   | [快速集成（Electron）](https://intl.cloud.tencent.com/document/product/647/35097) |
-| Flutter | [快速集成（Flutter）](https://intl.cloud.tencent.com/document/product/647/35098) |
-
-[](id:web_guide)
-### 一分钟跑通 Web 直播互动组件
-
-实时音视频提供了完整的 Web 直播互动组件体验 Demo，具体集成方法请参见 [一分钟跑通 Web 直播互动组件](https://intl.cloud.tencent.com/document/product/647/38172)。
-
-[](id:sence)
-## 场景实践
-
-实时音视频搭配其他腾讯云产品，提供多种直播场景类型的体验 Demo。
-
-<table>
-<tr><th width="17%">场景类型</th><th>功能支持</th><th width="20%">请您阅读</th>
-</tr><tr>
-<td>多人视频通话</td>
-<td>包括互动连麦、离线接听等相关能力</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36065" target="_blank">实时视频通话</a></td>
-</tr><tr>
-<td>多人语音通话</td>
-<td>包括互动连麦、离线接听等相关能力</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36067" target="_blank">实时语音通话</a></td>
-</tr><tr>
-<td>互动直播</td>
-<td>包括互动连麦、主播 PK、低延时观看、弹幕聊天等相关能力</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36060" target="_blank">视频互动直播</a></td>
-</tr><tr>
-<td>实时互动课堂</td>
-<td>包括语音、视频、屏幕分享等上课方式，还封装了老师开始问答、学生举手、老师邀请学生上台回答、结束回答等相关能力</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37278" target="_blank">实时互动课堂</a></td>
-</tr><tr>
-<td>多人视频会议</td>
-<td>包括屏幕分享、美颜、低延时会议等相关能力</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37284" target="_blank">多人视频会议</a></td>
-</tr><tr>
-<td>语音聊天室</td>
-<td>包括麦位管理、低延时语音互动、文字聊天等相关能力</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37287" target="_blank">语音聊天室</a></td>
-</tr></table>
-
-[](id:console)
-## 控制台实践
-| 如果您想通过控制台                                         | 您可以阅读                                                   |
-| :--------------------------------------------------------- | :----------------------------------------------------------- |
-| 查看使用 TRTC 时产生的**音视频互动**和**云端录制**用量数据 | [用量统计](https://intl.cloud.tencent.com/document/product/647/39066) |
-| 使用监控仪表盘功能了解应用房间的通话质量详情               | [监控仪表盘](https://intl.cloud.tencent.com/document/product/647/39069) |
-| 创建下载 Demo 应用，并能快速跑通试用                       | [快速跑通 Demo](https://intl.cloud.tencent.com/document/product/647/39073) |
-| 在线生成签名 UserSig，或检验已有 UserSig 是否有效         | [UserSig 生成与校验](https://intl.cloud.tencent.com/document/product/647/39074)                |
-| 创建新的应用 | [创建应用](https://intl.cloud.tencent.com/document/product/647/39077) |
-| 为某个应用开启旁路推流、云端录制或高级权限控制功能         | [功能配置](https://intl.cloud.tencent.com/document/product/647/39080) |
-| 为云端混流转码时所需的自定义背景图片添加图片素材           | [素材管理](https://intl.cloud.tencent.com/document/product/647/39081) |
-| 结合实际业务需求，配置回调密钥和回调地址 | [回调配置](https://intl.cloud.tencent.com/document/product/647/39559) |
+ .tpm-experience__item-hd {
+    padding-top: 8px; 
+  }
+	
+	.tpm-experience__item-title {
+	font-size: 18px;
+	color: #000;
+	line-height: 26px;
+	font-weight: 500;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}
+	
+	.tpm-experience__item-qr {
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	border-radius: 4px;
+	padding: 4px;
+	margin-left: 12px;
+	}
 
 
+element.style {
+}
+.tpm-experience__item-btns {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-[](id:faq)
-## 新手常见问题
+ .tpm-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 104px;
+    height: 36px;
+    padding: 0 24px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 34px;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #0052d9;
+    border: 1px solid transparent;
+    outline: 0 none;
+    cursor: pointer;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+}
 
--  [客户端 Native SDK 需要配置哪些端口或域名为白名单？](https://intl.cloud.tencent.com/document/product/647/35164)
--  [如何缩减 iOS/Android 安装包体积？](https://intl.cloud.tencent.com/document/product/647/35165)
--  [如何获取 UserSig 密钥？](https://intl.cloud.tencent.com/document/product/647/35166)
--  [TRTC 精简版、专业版、企业版各个版本区别？](https://intl.cloud.tencent.com/document/product/647/36057) 
--  [实时音视频 RoomID 是什么？取值区间值是多少？](https://intl.cloud.tencent.com/document/product/647/36057) 
--  [是否支持 Android 和 Web 端互通？](https://intl.cloud.tencent.com/document/product/647/37341) 
--  [桌面浏览器端 SDK 的支持哪些浏览器？](https://intl.cloud.tencent.com/document/product/647/37340) 
+.tpm-experience__item .tpm-btn {
+    min-width: 120px;
+    margin-bottom: 12px;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+    -webkit-font-smoothing: auto;
+}
 
-> ? 更多问题，建议您前往 [常见问题](https://intl.cloud.tencent.com/document/product/647/36058) 文档查看。
+.tpm-btn.size-s {
+    min-width: 104px;
+    height: 32px;
+    padding: 0 24px;
+    line-height: 30px;
+}
+
+    .card-container {
+        width: 293px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        text-align: center;
+    }
+    
+    .scene-card-container {
+        width: 450px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .scene-card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    }
+    
+    .image_card {
+        margin-top: 10px;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 1px 0 rgb(0 0 0 / 10%);
+    }
+    .markdown-text-box img {
+        box-shadow: none;
+    }
 
 
-## 反馈与建议
+    h3 {
+        position: relative;
+        top: -2px;
+    }
+    	
+    	@media (max-width: 768px){
+    			.card-container,
+    			.scene-card-container{
+    					width: 100%;
+    			}
+    			.scene-card > div{
+    					width: 100%!important;
+    					margin-left: 0!important;
+    			}
+    			img {
+        box-shadow: none;
+    }
+    	}
+</style>
 
-使用腾讯实时音视频产品和服务中有任何问题或建议，您可以通过以下渠道反馈：
 
-- 如果发现产品文档的问题，如链接、内容等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1) 寻求帮助。
+## 步骤一：了解产品 
+实时音视频（TRTC） 是腾讯云提供的一套低延时、高质量的音视频通讯服务，致力于为腾讯云客户提供稳定、可靠和低成本的音视频传输能力。您可以使用该服务快速构建“视频通话”、“在线教育”、“直播连麦”、“在线会议”等对通信延时要求比较苛刻的音视频应用。
+<div class="doc-video-mod"><iframe src="https://cloudcache.intl.tencent-cloud.com/cms/backend-cms/Qv57087_%E3%80%8A%E5%AE%9E%E6%97%B6%E9%9F%B3%E8%A7%86%E9%A2%91%20TRTC%E3%80%8B%E8%8B%B1-%E8%85%BE%E8%AE%AF%E4%BA%91_0117.mp4"></iframe></div>
+
+## 步骤二：体验产品
+为了让您能够快速了解我们的产品，我们为您提供了一款已经集成了 TRTC 服务的功能演示 Demo，安装后即可体验 TRTC 的各种功能，这包括：
+<div style="position: relative; box-sizing: border-box;  overflow:hidden">
+    <a href="https://intl.cloud.tencent.com/document/product/647/35076" target="view_window">
+            <div class="image_card">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/bb2facb7474a5c065b14d2996ead8d48.png"/>
+            </div>
+    </a>
+</div>
+
+- **视频通话**：类似微信上的通话功能，支持窗口切换，美颜以及网络信号提示等功能。
+- **多人会议**：支持多个用户在同一个房间中交流互动，可用于在线会议和在线教育等场景。
+- **秀场直播**：主播在线秀才艺，支持美颜、伴奏、点赞、弹幕互动和在线连麦。
+- **在线合唱**：两位主播在线同唱一首歌，感受 TRTC 所提供的低延时通信能力。
+- **在线 K 歌**：支持上万人同时收听，并支持语音互动、音乐伴奏和歌词同步等功能的在线音乐直播方案。
+
+
+## 步骤三：功能集成
+为了能让您快速地将 TRTC 功能集成到您的应用中，我们提供了两种不同的集成方案，您可以根据需要选择其中一种方案进行集成：
+
+### 方案一：含 UI 组件集成方案
+我们开发了一组标准化的 UI 组件，并提供了源代码，您可以直接将适合的 UI 组件导入到您的项目中，并在需要的时候加载他们。该集成方案的速度非常快，通常一个小时就能完成集成。
+
+<div style="position: relative; box-sizing: border-box; padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/4f6e018388bce36b0f5b7807ed76c82a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">音视频通话</h3>
+                <p style="color:#586376" ;>组件化 UI 助您快速实现一个“类微信”等视频通话场景</p>
+                <a href="https://github.com/tencentyun/TUICalling">GitHub 源码</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">接入文档</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/129edf43d9adf4df6f022dec79ba6db0.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">多人视频会议</h3>
+                <p style="color:#586376" ;>组件化 UI 助您低代码快速实现会议、相亲、面试场景</p>
+                <a href="https://github.com/tencentyun/TUIMeeting">GitHub 源码</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">接入文档</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/ab32f135f2847eaf22733e9a9ad1636a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">语音互动直播</h3>
+                <p style="color:#586376;" ;>组件化 UI 助您低代码快速实现语音聊天室场景</p>
+                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub 源码</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">接入文档</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/ab32f135f2847eaf22733e9a9ad1636a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">视频互动直播</h3>
+                <p style="color:#586376;" ;>组件化 UI 助您低代码快速实现直播、连麦、PK场景</p>
+                <a href="https://github.com/tencentyun/TUILiveRoom">GitHub 源码</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">接入文档</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/7a7b51c1536587f0fea130d375661552.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">在线 K 歌</h3>
+                <p style="color:#586376;" ;>组件化 UI 助您低代码快速实现在线 KTV 场景</p>
+                <a href="https://github.com/tencentyun/TUIKaraoke">GitHub 源码</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/41940">接入文档</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/7a7b51c1536587f0fea130d375661552.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">实时合唱</h3>
+                <p style="color:#586376;" ;>组件化 UI 助您低代码快速实现双人实时合唱场景</p>
+                <a href="https://github.com/tencentyun/TUIChorus">GitHub 源码</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/42689">接入文档</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+### 方案二：无 UI 组件集成方案
+您可以在项目中直接导入 TRTC SDK，并通过 SDK API 以构建自己期望的业务形态。该集成方案的自由度很高，不过需要您自行构建 UI 界面和交互逻辑，所以集成速度较方案一略慢。
+
+为了让您快速了解 SDK API 的使用方案，我们为您提供了各个平台 SDK 的 API 示例源码，源码文件夹中的 Basic 目录包含了基础功能的示例代码，Advanced 目录则包含了高级功能（比如设置分辨率、背景音效、网络测速等）的示例代码。
+
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+    <a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                <h3>iOS API 示例</h3>
+                <p>演示如何使用 RTC iOS API <br>从零开始搭建音视频应用</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                <h3>Android API 示例</h3>
+                <p>演示如何使用 RTC Android API <br>从零开始搭建音视频应用</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Windows/QTDemo" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
+                <h3>Windows API 示例</h3>
+                <p>演示如何使用 RTC Windows API <br>从零开始搭建音视频应用</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/Live_Mac/tree/main/QTDemo" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
+                <h3>Mac OS API 示例</h3>
+                <p>演示如何使用 RTC Mac OS API <br>从零开始搭建音视频应用</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
+                <h3>Web API 示例</h3>
+                <p>演示如何使用 RTC Web API <br>从零开始搭建音视频应用</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
+                <h3>Electron API 示例</h3>
+                <p>演示如何使用 RTC Electron API <br>从零开始搭建音视频应用</p>
+            </div>
+        </div>
+    </a>
+</div>
+
