@@ -90,12 +90,6 @@ A custom domain name that you bind to your bucket and use to access objects in i
 STANDARD_IA and ARCHIVE are two COS storage classes that store cold data. To read or download infrequently-accessed data, COS needs to retrieve it first. Archived data cannot be read or downloaded until you unfreeze (retrieve) it, that is, restore it to STANDARD storage class first.
 
 
-### MAZ
-
-MAZ is a storage architecture based on multiple availability zones (AZ) in Tencent Cloud COS. Your data is scattered among multiple IDCs in a region. When an IDC fails due to extreme situations such as natural disasters or power failures, the MAZ storage architecture can still provide stable and reliable storage services.
-
-For more information, see [MAZ Features Overview](https://intl.cloud.tencent.com/document/product/436/35208).
-
 
 ### Region
 
