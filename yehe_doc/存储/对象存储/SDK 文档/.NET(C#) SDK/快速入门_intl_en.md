@@ -85,7 +85,7 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 
 ### 2. Provide access credentials
 
-The SDK supports three types of access credentials: permanent keys, updated temporary keys, and unchanging temporary keys.
+The SDK supports three types of access credentials: permanent keys, rotating temporary keys, and unchanging temporary keys.
 
 **Type 1: permanent key**
 
@@ -97,7 +97,7 @@ QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProv
   secretId, secretKey, durationSecond);
 ```
 
-**Type 2: updated temporary key**
+**Type 2: rotating temporary key**
 
 Since temporary keys are short term, you can obtain new ones using the following method:
 
