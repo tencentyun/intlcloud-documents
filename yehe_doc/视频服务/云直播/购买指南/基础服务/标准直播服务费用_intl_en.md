@@ -1,7 +1,7 @@
-## Notes
+## Overview
 
-- Billing mode: daily pay-as-you-go
-- Billing cycle: daily billing cycle. Traffic fees generated in one day will be deducted the next day. See your billing statement for the actual bill generation time and amount.
+- Billing mode: Daily pay-as-you-go
+- Billing cycle: Daily billing cycle. Traffic fees generated in a day are deducted the next day. For the actual fee deduction and bill generation time, see your billing statement.
 - **The default mode for new users of LVB is bill-by-traffic.**
 - Billing regions outside the Chinese mainland:
   - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia
@@ -15,19 +15,19 @@
 - The conversion factor for units of traffic/bandwidth is 1,000. For example, 1 TB = 1,000 GB.
 
 - A CSS service day is 00:00-23:59 (UTC+08:00).
-- **Starting from 00:00 (UTC+08:00), January 4, 2022**, CSS will adjust the daily billing prices and pricing tiers of LVB’s basic services and bill usage outside the Chinese mainland by region instead of at a unified price. For details, see [Notice: CSS to Adjust Prices of Basic Services](https://intl.cloud.tencent.com/document/product/267/43055).
+- **Starting from 00:00 (UTC+08:00), January 4, 2022**, CSS has adjusted the daily billing prices and pricing tiers of LVB’s basic services and billed usage outside the Chinese mainland by region instead of at a unified price. For details, see [Notice: CSS to Adjust Prices of Basic Services](https://intl.cloud.tencent.com/document/product/267/43055).
 
 >!
-> - By default, fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage to downstream usage is larger than 1:10, and the daily upstream peak bandwidth exceeds 100 Mbps.
-> - **The same billing method, tiered pricing rules, and billing regions (in/outside the Chinese mainland)** are used for live push and LVB playback. **Live push has been billed since 00:00 (UTC+08:00), July 1, 2021.**
+> - By default, fees are billed by downstream usage. However, upstream usage will also be billed if the ratio of upstream usage to downstream usage is larger than 1:10 and the highest upstream bandwidth used in a day exceeds 100 Mbps.
+> - **The same billing method, tiered pricing rules, and billing regions (inside/outside the Chinese mainland)** are used for live push and LVB playback. **Live push has been billed since 00:00 (UTC+08:00), July 1, 2021.**
 > - Billing example:
->  **Use daily bill-by-traffic as an example.** Assume that the total upstream and downstream traffic used in a day are 10 GB and 90 GB respectively, and the highest upstream bandwidth used is 101 Mbps. As the ratio of upstream usage to downstream usage is 10:90, which is larger than 1:10, and the peak upstream bandwidth usage is higher than 100 Mbps, the traffic fee would be:
->  Upstream traffic fees + Downstream traffic fees = 0.0417 (USD/GB/Day) × (10 (GB) + 90 (GB)) = 4.17 USD.
+>  **Take daily bill-by-traffic for example.** Assume that the total upstream and downstream traffic used in a day are 10 GB and 90 GB respectively, and the highest upstream bandwidth used is 101 Mbps. As the ratio of upstream usage to downstream usage is 10:90, which is larger than 1:10, and the peak upstream bandwidth usage is higher than 100 Mbps, the traffic fee would be:
+>  Upstream traffic fees + Downstream traffic fees = 0.0417 (USD/GB/Day) x (10 (GB) + 90 (GB)) = 4.17 USD.
 
 
 [](id:overseas_speed)
 
-## Acceleration Outside Chinese Mainland
+## Acceleration Outside the Chinese Mainland
 
 Traffic/Bandwidth usage outside the Chinese mainland is the downstream traffic/bandwidth used when users connect to Tencent Cloud’s acceleration origin servers outside the Chinese mainland. You can choose to be billed [by traffic](#overseas_flow) or [by bandwidth](#overseas_bandwidth). The former is used for new users by default.
 [](id:overseas_flow)
@@ -115,14 +115,14 @@ We bill traffic outside the Chinese mainland by region on a daily basis and adop
 
 
 #### Details
-- Billable item: downstream traffic generated during LVB playback outside the Chinese mainland
-- Billing rules: Fees are calculated by multiplying the total traffic generated in a day in a billing region by the unit price of the corresponding tier.
+- Billable item: Downstream traffic generated during LVB playback outside the Chinese mainland
+- Billing rules: Fees are calculated by multiplying the total traffic consumed in a day in a billing region by the unit price of the corresponding tier.
 
 #### Billing example
-- Assume that you use the LVB service on January 4, 2022 and generate 1 TB of downstream traffic in Hong Kong (China) and 6 TB of downstream traffic in Russia. On January 5, 2022, you will be charged:
-0.0748 (USD/GB) × 1000 (GB) + 0.0634 (USD/GB) × 6000 (GB) = 445.2 USD.
+- Assume that you used the LVB service on January 4, 2022 and consumed 1 TB of downstream traffic in Hong Kong (China) and 6 TB of downstream traffic in Russia. On January 5, 2022, you would be charged:
+0.0748 (USD/GB) x 1000 (GB) + 0.0634 (USD/GB) x 6000 (GB) = 445.2 USD.
 
-- By default, fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage to downstream usage is larger than 1:10 and the daily upstream peak bandwidth exceeds 100 Mbps. Upstream usage is billed according to the same billing modes and tiered pricing rules as downstream usage.
+- By default, fees are billed by downstream usage. However, upstream usage will also be billed if the ratio of upstream usage to downstream usage is larger than 1:10 and the peak upstream bandwidth used in a day exceeds 100 Mbps. The same billing mode, list prices, and tiered pricing rules apply to downstream and upstream usage.
 
 [](id:overseas_bandwidth)
 ### Bill-by-bandwidth
@@ -195,18 +195,18 @@ We bill bandwidth usage outside the Chinese mainland by region on a daily basis 
 
 
 #### Details
-- Billable item: downstream bandwidth used during LVB playback outside the Chinese mainland
+- Billable item: Downstream bandwidth used during LVB playback outside the Chinese mainland
 - Billing rules: Fees are calculated by multiplying the highest bandwidth used in a day in a billing region by the unit price of the corresponding tier.
 
 #### Billing example
 
-- Assume that you use the LVB service on January 4, 2022 for playback in Macao (China) and your bandwidth usage reaches 600 Mbps at the highest. On January 5, 2022, you will be charged:
-0.1854 (USD/Mbps) × 600 (Mbps) = 111.24 USD.
-- By default, fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage to downstream usage is larger than 1:10 and the daily upstream peak bandwidth exceeds 100 Mbps. Upstream usage is billed according to the same billing modes and tiered pricing rules as downstream usage.
+- Assume that you used the LVB service on January 4, 2022 for playback in Macao (China) and your bandwidth usage reached 600 Mbps at the highest. On January 5, 2022, you would be charged:
+0.1854 (USD/Mbps) x 600 (Mbps) = 111.24 USD.
+- By default, fees are billed by downstream usage. However, upstream usage will also be billed if the ratio of upstream usage to downstream usage is larger than 1:10 and the peak upstream bandwidth used in a day exceeds 100 Mbps. The same billing mode, list prices, and tiered pricing rules apply to downstream and upstream usage.
 
 [](id:domestic)
 
-## Traffic/Bandwidth Usage in Chinese Mainland
+## Traffic/Bandwidth Usage in the Chinese Mainland
 
 The LVB service is billed by the downstream traffic/bandwidth used during live streaming. LVB provides two daily pay-as-you-go billing modes: [bill-by-traffic](#flow) and [bill-by-bandwidth](#bandwidth). You can choose whichever suits your needs.
 
@@ -229,22 +229,22 @@ We bill LVB traffic on a daily basis and adopt a tiered pricing approach. See be
 
 #### Details
 
-- Billable item: downstream traffic generated during LVB playback in the Chinese mainland
+- Billable item: Downstream traffic consumed during LVB playback in the Chinese mainland
 - Billing rules: Fees are calculated by multiplying the total traffic generated in a day by the unit price of the corresponding tier.
 - Calculation formula:
-  - Consumed traffic = Bitrate/8 × Total watch duration. 
+  - Consumed traffic = Bitrate/8 x Total playback duration. 
 
->?Total watch duration = Daily average number of online viewers × Average watch duration per viewer. That is to say, the total watch duration is the same if 1 viewer watches for 60 minutes and 60 viewers watch for 1 minute each.
+>?Total playback duration = Daily number of online viewers x Average playback duration per viewer. That is to say, the total playback duration is the same if 1 viewer watches for 60 minutes and 60 viewers watch for 1 minute each.
 
-  - Traffic fees = Consumed traffic × Unit price of the corresponding tier
+  - Traffic fees = Consumed traffic x Unit price of the corresponding tier
 
 #### Billing example
 
-- Assume that an LVB session lasts for 2 hours at a bitrate of 1 Mbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If 100 viewers watch for 1 hour each and 50 viewers watch for 2 hours each, the consumed traffic will be:
-  1 (Mbps)/8 × 7,200 (s) × 50 (Viewers) + 1 (Mbps)/8 × 3,600 (s) × 100 (Viewers) = 90,000 (MB) = 90 GB.
-- Assume that you use the LVB service on January 4, 2022 and generate 90 GB of downstream traffic. On January 5, 2022, you will be charged:
-  0.0423 (USD/GB) × 90 (GB) = 3.807 USD.
-- By default, fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage to downstream usage is larger than 1:10 and the daily upstream peak bandwidth exceeds 100 Mbps. Upstream usage is billed according to the same billing modes and tiered pricing rules as downstream usage.
+- Assume that an LVB session lasted for 2 hours at a bitrate of 1 Mbps (This is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing). If 100 viewers watched the live stream for 1 hour each and 50 viewers watched it for 2 hours each, the consumed traffic would be:
+  1 (Mbps)/8 x 7,200 (s) x 50 (Viewers) + 1 (Mbps)/8 x 3,600 (s) x 100 (Viewers) = 90,000 (MB) = 90 GB.
+- Assume that you used the LVB service on January 4, 2022 and consumed 90 GB of downstream traffic. On January 5, 2022, you would be charged:
+  0.0423 (USD/GB) x 90 (GB) = 3.807 USD.
+- By default, fees are billed by downstream usage. However, upstream usage will also be billed if the ratio of upstream usage to downstream usage is larger than 1:10 and the peak upstream bandwidth used in a day exceeds 100 Mbps. The same billing mode, list prices, and tiered pricing rules apply to downstream and upstream usage.
   <span id="bandwidth"></span>
 
 ### Bill-by-bandwidth
@@ -262,16 +262,16 @@ We bill LVB bandwidth usage on a daily basis and adopt a tiered pricing approach
 
 #### Details
 
-- Billable item: downstream bandwidth used during LVB playback in the Chinese mainland
+- Billable item: Downstream bandwidth used during LVB playback in the Chinese mainland
 - Billing rules: Fees are calculated by multiplying the highest bandwidth used in a day by the unit price of the corresponding tier.
 
 #### Billing example
 
-- Assume that an LVB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If the session is watched by 100 viewers, the consumed bandwidth will be:
+- Assume that an LEB session had a bitrate of 500 Kbps (This is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing), and there were 100 concurrent viewers at most, the highest bandwidth used would be:
   500 (Kbps) × 100 = 50,000 (Kbps) = 50 Mbps.
-- Assume that you use the LVB service on January 4, 2022 and your bandwidth usage reaches 50 Mbps at the highest. On January 5, 2022, you will be charged:
-  0.1057 (USD/Mbps/Day) × 50 (Mbps) = 5.285 USD.
-- By default, fees are billed by downstream usage. However, upstream usage will also be billed when the ratio of upstream usage to downstream usage is larger than 1:10 and the daily upstream peak bandwidth exceeds 100 Mbps. Upstream usage is billed according to the same billing modes and tiered pricing rules as downstream usage.
+- Assume that you used the LVB service on January 4, 2022 and your bandwidth usage reached 50 Mbps at the highest. On January 5, 2022, you would be charged:
+  0.1057 (USD/Mbps/Day) x 50 (Mbps) = 5.285 USD.
+- By default, fees are billed by downstream usage. However, upstream usage will also be billed if the ratio of upstream usage to downstream usage is larger than 1:10 and the peak upstream bandwidth used in a day exceeds 100 Mbps. The same billing mode, list prices, and tiered pricing rules apply to downstream and upstream usage.
 
->? If you have a large-scale live streaming business and its consumption of Tencent Cloud resources has exceeded or is expected to exceed 10,000 USD, then a daily billing mode may not meet your needs. Please [contact](https://intl.cloud.tencent.com/contact-us) the Tencent Cloud sales team or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to determine the best billing option for you.
+>? If you have a large-scale live streaming business and your spending on Tencent Cloud resources has exceeded or is expected to exceed 10,000 USD, then a daily billing mode may not meet your needs. Please [contact](https://intl.cloud.tencent.com/contact-us) the Tencent Cloud sales team or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for other billing options.
 
