@@ -216,7 +216,7 @@ An ACL contains an authorization list that identifies authorized users and the g
 ## Access Permission Types
 
 COS supports setting two types of permissions to objects: **public permissions** and **user permissions**.
-**Public Permissions**: Includes Inherit Permission, Private Read/Write, and Public Read/Private Write.
+**Public permissions**: Includes Inherit Permission, Private Read/Write, and Public Read/Private Write.
 - Inherited permission: The object permissions inherited from the bucket is the same as the access permissions of the bucket itself. When you access an object with the "inherited bucket permission", COS will match the bucket permission to respond to the access. A new object inherits the permission from its bucket by default.
 - Private Read/Write: When you access an object with the Private Read/Write permission, the object can only be accessed with a [request signature](https://intl.cloud.tencent.com/document/product/436/7778), regardless of the bucket permission.
 - Public Read/Private Write: When an object with an access permission of "Public Read" is accessed, the object can be directly downloaded, regardless of the bucket access permission.
