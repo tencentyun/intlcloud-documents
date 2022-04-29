@@ -86,7 +86,7 @@ client = CosS3Client(config)
 
 #### Initializing with the COS default domain and proxy
 
-You can configure it when you need to access COS with a proxy. Otherwise, skip this part.
+Configure this part when you need to access COS with a proxy. Otherwise, skip this part.
 
 ```python
 # -*- coding=utf-8
