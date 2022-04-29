@@ -48,11 +48,7 @@ COS Migrationはサードパーティのソースアドレスデータを直接C
 | migrateType       | 説明                          |
 | :---------------- | :---------------------------- |
 | migrateLocal      | ローカルからCOSに移行              |
-| migrateAws        | AWS S3からCOSに移行          |
-| migrateAli        | Alibaba OSSからCOSに移行         |
-| migrateQiniu      | QiniuからCOSに移行              |
 | migrateUrl        | ダウンロードURLからCOSに移行            |
 | migrateBucketCopy | ソースBucketからターゲットBucketにコピー |
-| migrateUpyun      | UPYUNからCOSに移行            |
 
 
