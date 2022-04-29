@@ -136,6 +136,11 @@
             <div class="demo-item-download-btn" onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2');reportEvent({name: 'demo-click-native', ext1: 'windows'});">Download/div>
         </div>
     </div>
+    <div class="preview-demo-item style-qrcode">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/f86154130067ff386c90306fd71dfdce.svg" alt="">
+            </div>
     <div class="preview-demo-item style-web">
         <div class="demo-item-header">
             <div class="demo-logo-wrapper">
