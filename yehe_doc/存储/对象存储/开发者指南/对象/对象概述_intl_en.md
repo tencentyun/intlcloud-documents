@@ -196,9 +196,9 @@ You can manage objects through the Tencent Cloud console, tools, APIs, and SDKs.
 
 >!According to the maximum file size supported for upload, there are two upload methods: [simple upload](https://intl.cloud.tencent.com/document/product/436/14113) and [multipart upload](https://intl.cloud.tencent.com/document/product/436/14112).
 >- Use simple upload for objects less than 5 GB.
->- Multipart upload is limited to no more than 10,000 parts (each in 5 GB) and a maximum object size of around 48.82 TB. For more information on the use limits, please see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
+>- Multipart upload is limited to no more than 10,000 parts (each in 5 GB) and a maximum object size of around 48.82 TB. For more information on the use limits, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
-After an object is uploaded, you can configure it in the console. For more information, please see:
+After an object is uploaded, you can configure it in the console. For more information, see:
 
 - [Searching for Objects](https://intl.cloud.tencent.com/document/product/436/13325)
 - [Viewing Object Information](https://intl.cloud.tencent.com/document/product/436/13326)
