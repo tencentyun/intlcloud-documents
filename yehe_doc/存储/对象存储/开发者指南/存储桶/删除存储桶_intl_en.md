@@ -2,7 +2,7 @@ You can delete a bucket using the console, APIs, tools, or SDKs.
 
 >!A bucket cannot be recovered once deleted.
 
-## Use Limits
+## Restrictions
 
 - Only empty buckets can be deleted. If there are still objects or incomplete multipart uploads in a bucket, its deletion will fail. Make sure that there are no objects in the bucket before deleting it. For more information, see [Emptying a Bucket](https://intl.cloud.tencent.com/document/product/436/30926).
 - Before deleting a bucket, make sure that the current identity has been granted the permission to delete it and that the correct `Bucket` and `Region` parameters are passed in.
