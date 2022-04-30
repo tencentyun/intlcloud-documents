@@ -59,7 +59,7 @@ CLS can ship the following three types of logs to COS:
 
 To ship logs from CLS to COS, you need to do the following:
 
-1. Choose a Tencent Cloud that meets your particular business needs and configure a logset and log topic as instructed in the log shipping documentation provided above to connect your business data to CLS.
+1. Choose a Tencent Cloud product that meets your business needs and configure a logset and log topic as instructed in the log shipping documentation provided above to connect your business data to CLS.
 2. With your particular business needs in mind, select the most suitable log type to ship to COS. We recommend that you use the product name as the path prefix to differentiate product logs, for example, you could use the following name for TKE logs: `TKE_tkeid_log/timestamp`.
 3. Once the shipping rule is configured, you can configure COS event notifications for file uploads through SCF. You can perform further operations on logs shipped to COS based on these event notifications. For more information, see [Event Notifications](https://intl.cloud.tencent.com/document/product/436/31648).
 
