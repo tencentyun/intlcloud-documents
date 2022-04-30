@@ -2,7 +2,7 @@ COS offers the INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARC
 
 > !
 >
-> - If you did not specify the storage class for an object upon upload, it will be uploaded to **STANDARD** by default.
+> - If you did not specify the storage class when uploading an object, it will be uploaded to **STANDARD** by default.
 
 
 ## ARCHIVE
