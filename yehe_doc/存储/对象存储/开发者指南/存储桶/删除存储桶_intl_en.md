@@ -1,10 +1,10 @@
-Buckets can be deleted through the console, APIs, tools, or SDKs.
+You can delete a bucket using the console, APIs, tools, or SDKs.
 
->!Please note that a bucket cannot be recovered once deleted.
+>!A bucket cannot be recovered once deleted.
 
 ## Use Limits
 
-- Only empty buckets can be deleted. If there are still objects or incomplete multipart uploads in a bucket, its deletion will fail. Make sure that there are no objects in the bucket before deleting it. For more information, please see [Emptying Buckets](https://intl.cloud.tencent.com/document/product/436/30926).
+- Only empty buckets can be deleted. If there are still objects or incomplete multipart uploads in a bucket, its deletion will fail. Make sure that there are no objects in the bucket before deleting it. For more information, see [Emptying a Bucket](https://intl.cloud.tencent.com/document/product/436/30926).
 - Before deleting a bucket, make sure that the current identity has been granted the permission to delete it and that the correct `Bucket` and `Region` parameters are passed in.
 
 
@@ -12,19 +12,19 @@ Buckets can be deleted through the console, APIs, tools, or SDKs.
 
 ### Using COS console
 
-You can delete a bucket in the COS console. For more information, please see [Deleting Buckets](https://intl.cloud.tencent.com/document/product/436/30361) in Console Guide.
+You can delete a bucket in the COS console. For more information, see [Deleting a Bucket](https://intl.cloud.tencent.com/document/product/436/30361) in Console Guide.
 
 ### Using tools
 
-You can use tools such as COSBrowser and COSCMD to delete buckets. For more information, please see [Tool Overview](https://intl.cloud.tencent.com/document/product/436/6242).
+You can use tools such as COSBrowser and COSCMD to delete a bucket. For more information, see [Tool Overview](https://intl.cloud.tencent.com/document/product/436/6242).
 
 ### Using REST APIs
 
-You can use the REST API directly to initiate a bucket deleting request. For more information, please see [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) in API documentation.
+You can use the RESTful API to initiate a bucket deleting request. For more information, see [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) in API documentation.
 
 ### Using SDKs
 
-You can directly call the bucket deleting method in the SDK. For more information, please see the SDK documentation for the corresponding programming language below:
+You can directly call the bucket deleting method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/31464)
