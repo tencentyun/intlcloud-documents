@@ -1,9 +1,9 @@
 ## Overview
 An HTTP header (metadata header) of an object is a string sent by the server over HTTP before it sends HTML data to the browser. By modifying HTTP headers (metadata headers), you can modify how the webpage responds as well as certain configurations, such as caching time. Modifying an object's HTTP headers does not modify the object itself.
 
-For example, if the `Content-Encoding` header is modified to `gzip`, but the file itself was not compressed using gzip, a decoding error will occur.
+For example, if the `Content-Encoding` header is changed to `gzip`, but the file itself was not compressed using gzip, a decoding error will occur.
 
->?Note that custom headers are not supported for archived objects.
+>?Custom headers are not supported for archived objects.
 >
 
 ## Directions
