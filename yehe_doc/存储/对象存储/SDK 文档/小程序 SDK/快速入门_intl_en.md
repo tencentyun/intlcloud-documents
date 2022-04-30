@@ -265,7 +265,7 @@ getAuthorization function callback parameter descriptions:
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | -------- |
-| options | Parameter object necessary for getting the signature | Object |
+| options | Parameter object for getting the signature | Object |
 | - Method | Method of the current request | Object | 
 | - Pathname | Request path used for signature calculation | String |
 | - Key | An object key (object name), the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). <br> **Note: This parameter is empty if the API that uses the instance is not an object-operation API.** | String |
