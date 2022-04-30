@@ -1,13 +1,13 @@
 ## Overview
 
-You can add a policy for a bucket via the COS console to allow/forbid an account, IP, or IP range to access the COS resources. For more information about bucket policy and examples, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031). The following describes how to add a bucket policy.
+You can add a policy for a bucket via the COS console to allow/deny access to specified COS resources from an account, IP, or IP range. For more information about bucket policy and examples, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031). The following describes how to add a bucket policy.
 
 >! Each root account can create up to 1,000 bucket ACL rules.
 >
 
 ## Prerequisites
 
-You have created a bucket. For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+You have created a bucket. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 ## Directions
 
