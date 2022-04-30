@@ -12,19 +12,19 @@ You can delete a bucket using the console, APIs, tools, or SDKs.
 
 ### Using COS console
 
-You can delete a bucket in the COS console. For more information, see [Deleting a Bucket](https://intl.cloud.tencent.com/document/product/436/30361) in Console Guide.
+Delete a bucket in the COS console. For more information, see [Deleting a Bucket](https://intl.cloud.tencent.com/document/product/436/30361) in Console Guide.
 
 ### Using tools
 
-You can use tools such as COSBrowser and COSCMD to delete a bucket. For more information, see [Tool Overview](https://intl.cloud.tencent.com/document/product/436/6242).
+Use tools such as COSBrowser and COSCMD to delete a bucket. For more information, see [Tool Overview](https://intl.cloud.tencent.com/document/product/436/6242).
 
 ### Using REST APIs
 
-You can use the RESTful API to initiate a bucket deleting request. For more information, see [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) in API documentation.
+Use the RESTful API to initiate a bucket deleting request. For more information, see [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) in API documentation.
 
 ### Using SDKs
 
-You can directly call the bucket deleting method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
+Directly call the bucket deleting method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/31464)
