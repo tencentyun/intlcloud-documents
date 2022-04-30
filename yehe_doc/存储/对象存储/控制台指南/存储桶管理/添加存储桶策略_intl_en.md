@@ -12,8 +12,8 @@ You have created a bucket. For more information, please see [Creating Buckets](h
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. On the left sidebar, click **Bucket List**. Then, click the bucket for which you want to add a bucket.
-3. Click **Permission Management** > **Permission Policy Settings**. Then, you can add a bucket policy using **[Visual Editor](#1)** or **[JSON](#2)** as detailed below. For more information about the configuration items, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
+2. On the left sidebar, click **Bucket List**. Then, click the bucket for which you want to add a policy.
+3. Click **Permission Management** > **Permission Policy Settings**. Then, you can add a bucket policy using **[Visual Editor](#1)** or **[JSON](#2)** as detailed below. For more information about the configuration items, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 
 4. After confirming that the configuration information is correct, click **OK** or **Save**. In this way, if a sub-account logs in to the COS console, it can only access resources allowed by the policy.
 
