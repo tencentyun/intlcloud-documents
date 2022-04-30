@@ -47,7 +47,7 @@ You have created a bucket. For more information, see [Creating a Bucket](https:/
 	- **Generate Lifecycle**: specifies whether to export the inventory **Everyday** (default) or **Everyweek**. For example, an inventory added at 15:00 today will be generated and delivered to the destination bucket before 6:00 tomorrow in most cases.
 	- **Inventory Encryption**: whether to encrypt the inventory on the server. Options include:
 		 - None: The inventory is not encrypted (default).
-		 - SSE-COS: Encrypt the inventory report using server-side encryption with COS-managed key. For more information, please see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
+		 - SSE-COS: Encrypt the inventory report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
 	- **Access authorization**: This field needs to be enabled to proceed with the next step. By default, this field is disabled.
  4. Information confirmation
 ![](https://qcloudimg.tencent-cloud.cn/raw/f6fe780a4524fe149c258f2c6f17adaf.png)
