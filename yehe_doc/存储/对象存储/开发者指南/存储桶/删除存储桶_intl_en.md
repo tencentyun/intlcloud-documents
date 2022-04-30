@@ -20,7 +20,7 @@ Use tools such as COSBrowser and COSCMD to delete a bucket. For more information
 
 ### Using REST APIs
 
-Use the RESTful API to initiate a bucket deleting request. For more information, see [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) in API documentation.
+Use the REST API to initiate a bucket deleting request. For more information, see [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) in API documentation.
 
 ### Using SDKs
 
