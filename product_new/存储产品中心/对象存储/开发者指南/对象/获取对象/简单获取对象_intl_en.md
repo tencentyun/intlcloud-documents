@@ -16,7 +16,7 @@ For example, the response value of Content-Dispositon can be overwritten. Respon
 
 ## Directions
 
-### Using COS Console
+### Using COS console
 
 Download an object in the COS console. For more information, see [Downloading Objects](https://intl.cloud.tencent.com/document/product/436/13322) in Console Guide.
 
