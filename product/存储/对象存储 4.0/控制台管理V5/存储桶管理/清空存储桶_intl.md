@@ -12,4 +12,4 @@ You can empty a specified bucket in the COS console. For more information about 
 ![](https://main.qcloudimg.com/raw/1baeba77031a31a1a242c237da68e376.png)
 4. In the pop-up window, enter the name of the bucket you want to empty, and click **Yes**. 
 ![](https://main.qcloudimg.com/raw/8751c66b4890b17b08299f76d553c65c.png)
-5.When you are asked to confirm again, click **OK**.
+5. When you are asked to confirm again, click **OK**.
