@@ -126,6 +126,6 @@ If the recommended templates provided by COS do not meet your requirements, you 
 <span id=2></span>
 
 ## Policy Syntax
-Click **Edit** to enter the user-defined policy syntax. COS provides policy syntax for various scenarios. For more information, please see [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
+Click **Edit** to enter the user-defined policy syntax. COS provides policy syntax for various scenarios. For more information, see [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
 ![](https://main.qcloudimg.com/raw/b4e280ccbd67b081dcb59c4039f4d3b0.png)
 
