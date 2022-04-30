@@ -4,27 +4,27 @@ You can use the object key to search for a specific object. You can also use a p
 
 ## Overview
 
-Tencent Cloud COS supports listing keys by a prefix. You can use the delimiter (`/`) in a key to implement a hierarchical structure similar to the traditional file system. In COS, you can use a delimiter to select and browse keys hierarchically.
+Tencent Cloud COS supports listing keys by a prefix. You can use `/` in a key to implement a hierarchical structure similar to the traditional file system. In COS, you can use a delimiter to select and browse keys hierarchically.
 
-You can list all keys in a single bucket in UTF-8 binary order of prefixes or filter the key list by specifying the prefix. For example, adding the parameter `t`, would list the `tencent` object, while skipping objects prefixed with `a` or other characters.
+You can list all keys in a single bucket in UTF-8 binary order of prefixes or filter the key list by specifying the prefix. For example, adding the parameter `t` will list the `tencent` object, but skip objects prefixed with `a` or other characters.
 
-A slash (/) can be used as a delimiter in object keys. In this way, both the prefix and delimiter can be used to facilitate the search.
+`/` can be used as a delimiter in object keys. In this way, both the prefix and delimiter can be used to facilitate the search.
 
 COS allows you to store an unlimited number of objects in a single bucket. As a result, the key list may be very large. For the convenience of management, a maximum of 1,000 key values can be returned in each `List Objects` request, and a marker will be returned to indicate whether the list is truncated. If so, not all objects are listed in this request. In this case, you can initiate the `List Objects` request multiple times based on markers and delimiter to list all/some object keys as needed.
 
-## How to Use
+## Directions
 
 ### Using COS console
 
-You can search for objects in the COS console. For more information, please see [Searching for Objects](https://intl.cloud.tencent.com/document/product/436/13325) in Console Guide.
+Search for objects in the COS console. For more information, see [Searching for Objects](https://intl.cloud.tencent.com/document/product/436/13325) in Console Guide.
 
-### Using RESTful APIs
+### Using REST APIs
 
-You can directly use RESTful APIs to initiate a request to list object keys. For more information, please see [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614).
+Use REST APIs to initiate a request to list object keys. For more information, see [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614).
 
 ### Using SDKs
 
-You can directly call the object list querying method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
+Directly call the object list querying method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/37676)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
