@@ -2,10 +2,10 @@
 
 Tencent Cloud COS is a web-based storage service accessed using the HTTP/HTTPS protocol. You can use [RESTful APIs](https://intl.cloud.tencent.com/document/product/436/7751) or [COS SDKs](https://intl.cloud.tencent.com/document/product/436/6474) to access COS.
 
-Your COS access request must first pass the COS verification and authentication before COS starts to operate the resources. Therefore, depending on whether the identity is identifiable, COS access requests are divided into two types: anonymous requests and requests with signatures.
+Your COS access request must first pass the COS identification and authentication before COS starts to operate the resources. Therefore, depending on whether the identity is identifiable, COS access requests are divided into two types: anonymous requests and signed requests.
 
-- Anonymous request: If the request does not include `Authorization` or related parameters, or the user identity cannot be identified based on the related characters, the request will be treated as an anonymous request for authentication.
-- Request with signature: A request with a signature must contain the `Authorization` field in the HTTP header or the request package. The content of the field is generated based on Tencent Cloud security credentials (SecretID and SecretKey) and some eigenvalues of the request via an encryption algorithm.
+- Anonymous request: If a request does not include `Authorization` or related parameters, or the user identity cannot be identified based on the related characters, the request will be treated as an anonymous request for authentication.
+- Signed request: A signed request must contain the `Authorization` field in the HTTP header or the request packet. The content of the field is generated based on Tencent Cloud security credentials (SecretID and SecretKey) and some characteristic values of the request via an encryption algorithm.
 
 To access COS using the COS SDK, you only need to configure your security credentials to initiate a request. To access COS using RESTful API, you need to calculate the request signature as instructed in [Request Signature] or directly generate one with the COS signature tool.
 
@@ -47,7 +47,7 @@ You can call the API for generating temporary security credentials and get a tem
 
 This API also returns the validity period of the temporary security credential via the `expiration` field, which means that this set of security credentials can only be used to initiate requests during this period.
 
-Tencent Cloud COS provides a simple server SDK that can be used to generate temporary keys. You can visit [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) to obtain the SDK. To initiate the request using the REST API after getting the temporary security credential, you need to specify the value for the `x-cos-security-token` field in the HTTP header or the form-data of the POST request package to identify the security token used by the request, and then use the temporary access key pair to generate the request signature. For more information on how to initiate requests using the COS SDK, see the relevant sections in each SDK documentation.
+Tencent Cloud COS provides a simple server-side SDK that can be used to generate temporary keys. You can visit [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) to obtain the SDK. To initiate the request using the REST API after getting the temporary security credential, you need to specify the value for the `x-cos-security-token` field in the HTTP header or the form-data of the POST request packet to identify the security token used by the request, and then use the temporary access key pair to generate the request signature. For more information on how to initiate requests using the COS SDK, see the relevant sections in each SDK documentation.
 
 ## Access Endpoint Domain Names
 
@@ -125,13 +125,13 @@ Regardless of the access environment, if the command returns the `Escape charact
 
 #### Test via the internet
 
-Since the access to COS over the internet involves the ISP network, which may prohibit you from testing connectivity using tools such as `ping` or `traceroute` of the ICMP protocol, it is recommended to use the tools of the TCP protocol to test connectivity.
+The access to COS over the internet involves the ISP network, which may prohibit you from testing connectivity using tools such as ICMP `ping` or `traceroute`. Therefore, we recommend you use TCP tools to test connectivity.
 >!The access via the Internet may involve multiple network environments. If the access is not smooth, check your local network linkage, or contact the local ISP.
 
 If your ISP allows you to use the ICMP protocol, you can use the `ping`, `traceroute` or `mtr` tools to check your linkage. Otherwise, you can use the `psping` (Windows environment; download at the Microsoft official website) or such tools as `tcping` (cross-platform software) to test the latency.
 
 #### Test via a private network
 
-If you access the COS over the Tencent Cloud VPC in the same region, you may be unable to test connectivity using such tools as `ping` or `traceroute` of the ICMP protocol. It is recommended that you use the `telnet` command in the basic connectivity test to perform the testing.
+If you access the COS over the Tencent Cloud VPC in the same region, you may be unable to test connectivity using tools such as ICMP `ping` or `traceroute`. We recommend that you use the `telnet` command in the basic connectivity test to perform the testing.
 
 You can also use tools such as `psping` or `tcping` to test the latency to port 80 of the access domain. Before the test, make sure that the access domain name has been correctly resolved to the private network address using the `nslookup` command.
