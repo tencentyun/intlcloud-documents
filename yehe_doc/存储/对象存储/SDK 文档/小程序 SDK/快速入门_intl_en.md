@@ -48,18 +48,18 @@ The WeChat Mini Program code is referenced with `var COS = require('cos-wx-sdk-v
 
 ## Getting Started
 
-### Configuring domain name whitelist for WeChat Mini Programs
+### Configuring domain name allowlist for WeChat Mini Programs
 
-To request COS in your WeChat Mini Program, you need to log in to the [WeChat Official Accounts Platform](https://mp.weixin.qq.com) and configure the domain allowlist by navigating to **Development** > **Development Settings** > **Server Domain Name**. The SDK uses the following two APIs:
+To request COS in your WeChat Mini Program, you need to log in to the [WeChat Official Accounts Platform](https://mp.weixin.qq.com) and configure the domain name allowlist by navigating to **Development** > **Development Settings** > **Server Domain Name**. The SDK uses the following two APIs:
 
 1. For cos.postObject, use the wx.uploadFile API.
 2. For other methods, use the wx.request API.
 
-For both methods, you need to configure the COS domain name. There are two forms of domain name whitelists.
+For both methods, you need to configure the COS domain name. There are two forms of domain name allowlists.
 
-1. For standard requests, you can configure the bucket domain name as the whitelist domain name, for example:
+1. For standard requests, you can configure the bucket domain name as the allowed domain name, for example:
    `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`
-2. If multiple buckets are used in your WeChat Mini Program, you can choose to use suffixed COS requests by passing in `ForcePathStyle: true` when instantiating the SDK. In this case, you need to configure the region domain name as the whitelist, such as `cos.ap-guangzhou.myqcloud.com`.
+2. If multiple buckets are used in your WeChat Mini Program, you can choose to use suffixed COS requests by passing in `ForcePathStyle: true` when instantiating the SDK. In this case, you need to configure the region domain name as the allowed domain name, such as `cos.ap-guangzhou.myqcloud.com`.
 
 ### Initialization
 
@@ -69,7 +69,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 
 ```js
 var cos = new COS({
-    // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of whitelisted domain names to be configured; the region domain name will be used for requests.
+    // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of allowed domain names to be configured; the region domain name will be used for requests.
     getAuthorization: function (options, callback) {
         // Get a temporary key asynchronously.
         wx.request({
@@ -100,7 +100,7 @@ var cos = new COS({
 // TODO
 ```
 
-### Configuration Item
+### Configuration items
 
 #### Sample code
 
@@ -137,7 +137,7 @@ var cos = new COS({
     }
 });
 ```
->? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? For more information about how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 >
 
 - Method 2 (recommended): Permissions are controlled in a more refined manner. The backend gets a temporary key and sends it to the frontend. The frontend reuses the key only for the same request, and the backend can granularly manage permissions through Scope.
@@ -169,7 +169,7 @@ var cos = new COS({
 });
 ```
 
->? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? For more information about how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 >
 
 - Method 3 (not recommended). The frontend needs to get a signature through `getAuthorization` before each request, and the backend uses a fixed or temporary key to calculate the signature and returns it to the frontend. This method makes it difficult to control permissions for multipart upload and thus is not recommended.
@@ -178,7 +178,7 @@ var cos = new COS({
 var cos = new COS({
     // Required parameter
     getAuthorization: function (options, callback) {
-        // The server obtains a signature. For more information, please see the COS SDK for the corresponding programming language: https://cloud.tencent.com/document/product/436/6474
+        // The server obtains a signature. For more information, see the COS SDK for the corresponding programming language: https://cloud.tencent.com/document/product/436/6474
         // Note: there may be a security risk associated with this method. The backend needs to strictly control permissions through method and pathname, such as prohibiting put /
         wx.request({
             url: 'https://example.com/server/auth.php',
@@ -242,7 +242,7 @@ getAuthorization callback parameter descriptions:
 | -------- | ------------------------------------------------------------ | -------- |
 | options | Required for getting the signature | Object |
 | - Bucket  | Bucket name in the format of `BucketName-APPID`. The bucket name entered here must be in this format | String |
-| - Region | Bucket region. For the enumerated values, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String |
+| - Region | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String |
 | callback | Callback method after the temporary key is obtained | Function |
 
 After the temporary key is obtained, the callback returns an object. The attributes of the returned object are as listed below:
@@ -268,7 +268,7 @@ getAuthorization function callback parameter descriptions:
 | options | Parameter object necessary for getting the signature | Object |
 | - Method | Method of the current request | Object | 
 | - Pathname | Request path used for signature calculation | String |
-| - Key | An object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). <br> **Note: This parameter is empty if the API that uses the instance is not an object-operation API.** | String |
+| - Key | An object key (object name), the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). <br> **Note: This parameter is empty if the API that uses the instance is not an object-operation API.** | String |
 | - Query | Query parameter in the current request. Format: {key: 'val'} | Object |
 | - Headers | Headers in the current request. Format: {key: 'val'} | Object |
 | callback | Callback after the temporary key is obtained | Function | 
@@ -335,7 +335,7 @@ cos.putBucket({
 });
 ```
 
->! If you need to create a bucket via the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a allowlisted domain name. Instead, you can use suffixed calls. For more information, please see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
+>! If you need to create a bucket via the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as an allowed domain name. Instead, you can use suffixed calls. For more information, see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
 >
 
 ### Querying the bucket list
@@ -348,7 +348,7 @@ cos.getService(function (err, data) {
 
 ### Uploading an object
 
-The WeChat Mini Program upload API "wx.uploadFile" only supports POST requests. To upload files with the SDK, you need to use the postObject API. If only the file uploading API is needed in your WeChat Mini Program, we do not recommend referencing the SDK. For more information, please see the [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js).
+The WeChat Mini Program upload API "wx.uploadFile" only supports POST requests. To upload files with the SDK, you need to use the postObject API. If only the file uploading API is needed in your WeChat Mini Program, we do not recommend referencing the SDK. For more information, see the [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js).
 
 ```js
 // First, select the file to get the temporary path
@@ -388,7 +388,7 @@ cos.getBucket({
 
 ### Downloading an object
 
->! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, please see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31711).
+>! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31711).
 >
 
 ```js
