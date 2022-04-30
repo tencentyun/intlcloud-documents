@@ -22,7 +22,7 @@ You have created a bucket. For more information, see [Creating a Bucket](https:/
 ## Visual Editor
 On the **Visual Editor** tab page, click **Add Policy**. In the pop-up window, configure the policy in two steps: **select a template** and **configure the policy**.
 
-### Step 1: select a template
+### Step 1: Select a template
 
 COS provides you with different templates depending on the combination of authorized users (grantees) and resource scope you choose to help you quickly configure bucket policies.
 
@@ -111,7 +111,7 @@ Templates are described in the following table.
    </tr>
 </table>
 
-### Step 2: configure the policy
+### Step 2: Configure the policy
 Based on the combination of authorized users, specified directories, and templates you select in step 1, COS automatically adds operations, authorized users, and resources to the configuration policy for you. If you specify a user and a directory, you need to specify the user UIN and directory during policy configuration.
 
 If the recommended templates provided by COS do not meet your requirements, you can add or delete authorized users, resources, and operations in this step. The configuration items are described as follows:
