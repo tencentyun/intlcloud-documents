@@ -22,7 +22,7 @@ Download an object in the COS console. For more information, see [Downloading Ob
 
 ### Using REST API
 
-Use the REST API directly to initiate an object obtaining request. For more information, see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
+Use the REST API to initiate an object download request. For more information, see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
 
 ### Using SDKs
 
