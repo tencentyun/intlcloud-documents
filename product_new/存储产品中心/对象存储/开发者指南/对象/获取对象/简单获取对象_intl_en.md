@@ -6,7 +6,7 @@ You can initiate a request to download objects in COS. You have the following op
 - Download a part of an object: Use the Range request header in a GET request to retrieve a specific range of bytes of an object. Retrieving multiple ranges is not supported.
 
 The object's metadata will be returned along with the object's content as an HTTP response header. The GET request supports overwriting certain metadata values in the response using URL parameters.
-For example, the response value of Content-Dispositon can be overwritten. Response headers that support modification include:
+For example, the response value of Content-Disposition can be overwritten. Response headers that support modification include:
 - Content-Type
 - Content-Language
 - Expires
