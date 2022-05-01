@@ -11,11 +11,11 @@ When creating a pre-signed URL, you can include object keys in your signature to
 
 
 
-## How to Use
+## Directions
 
 ### Using SDKs
 
-You can call the pre-signed URL method in the SDK directly. For more information, see the SDK documentations for the corresponding programming language below:
+Call the pre-signed URL method in the SDK directly. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/37680)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31520)
