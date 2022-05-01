@@ -5,25 +5,25 @@ With lifecycle configuration, certain predefined actions can be automatically pe
 - Transition: Transitions objects to the STANDARD_IA, INTELLIGENT_TIERING, ARCHIVE, or DEEP_ARCHIVE storage class after a specified period.
 - Expiration: Deletes objects after their specified expiration time.
 
-For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/document/product/436/17028) and [Elements of Lifecycle Configuration](https://intl.cloud.tencent.com/document/product/436/17029).
+For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/document/product/436/17028) and [Lifecycle Configuration Elements](https://intl.cloud.tencent.com/document/product/436/17029).
 
 ## Directions
 
-### Via the COS Console
+### Using COS Console
 
-You can configure the lifecycle in the COS console. For more information, see [Lifecycle Management](https://intl.cloud.tencent.com/document/product/436/14605) in Console Guide.
+Configure the lifecycle in the COS console. For more information, see [Lifecycle Management](https://intl.cloud.tencent.com/document/product/436/14605) in Console Guide.
 
-### Via REST API
+### Using REST API
 
-You can configure and manage the lifecycle of objects in a bucket through the REST API as described in the following API documentation:
+Configure and manage the lifecycle of objects in a bucket through the REST API as described in the following API documentation:
 
 - [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280)
 - [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278)
 - [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284)
 
-### Via the SDK
+### Using SDKs
 
-You can directly call the lifecycle method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
+Directly call the lifecycle method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/36197)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/31519#.E7.94.9F.E5.91.BD.E5.91.A8.E6.9C.9F)
