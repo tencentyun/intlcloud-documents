@@ -64,7 +64,7 @@
     		<tr>
     			<td rowspan="5">Object</td>
     			<td>Limits</td>
-					<td >An object key can be 1 to 850 bytes. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/13324">Object Overview</a>.</td>
+					<td >An object key can be 1 to 850 bytes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13324">Object Overview</a>.</td>
     		</tr>
     			<tr>
     			<td>Upload</td>
