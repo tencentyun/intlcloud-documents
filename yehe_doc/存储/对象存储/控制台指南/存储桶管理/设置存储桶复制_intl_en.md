@@ -1,6 +1,6 @@
 ## Overview
 
-Cross-bucket replication enables the automatic, asynchronous replication of **incremental objects** from a source bucket to a destination bucket. During replication, COS may also automatically replicate the object operations in the source bucket, such as PUT Object or DELETE Object. You can choose to enable or disable this feature as needed. For more information, see [Cross-Bucket Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237).
+Cross-bucket replication enables the automatic, asynchronous replication of **incremental objects** from a source bucket to a destination bucket. During replication, COS may also automatically replicate the object operations in the source bucket, such as PUT Object or DELETE Object. For more information, see [Cross-Bucket Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237).
 
 ## Prerequisites
 
