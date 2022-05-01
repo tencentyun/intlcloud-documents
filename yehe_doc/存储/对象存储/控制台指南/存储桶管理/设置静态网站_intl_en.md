@@ -9,7 +9,7 @@ You can configure a bucket to host a static website in the COS console and acces
 
 ## Prerequisites
 
-You have created a bucket. For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+You have created a bucket. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 ## Directions
 
