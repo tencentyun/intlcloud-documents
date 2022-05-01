@@ -9,7 +9,7 @@ For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/do
 
 ## Directions
 
-### Using COS Console
+### Using COS console
 
 Configure the lifecycle in the COS console. For more information, see [Lifecycle Management](https://intl.cloud.tencent.com/document/product/436/14605) in Console Guide.
 
