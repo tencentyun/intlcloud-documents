@@ -8,7 +8,7 @@ The copy operation creates a copy of a COS object of up to 5 GB in a single requ
 - Copy objects across different COS regions.
 - Modify object metadata. You can select the same object key as both the source and target and modify object metadata.
 
-In the copy operation, the metadata of the source object is inherited by default, while the creation date is subject to the replica’s creation date.
+In the copy operation, the metadata of the source object is inherited by default, while the creation date is subject to the creation date of the target object.
 
 >?
 >- Copy and paste are not supported for objects in the ARCHIVE storage class.
