@@ -5,9 +5,9 @@ By enabling versioning, you can store multiple versions of an object in the same
 - COS will insert new version IDs for new objects you upload to replace existing ones, which you can restore by version ID.
 
 ## Versioning States
-There are three versioning states for a bucket: not enabled, enabled, or suspended.
-- **Versioning not enabled:** bucket versioning is not enabled by default.
-- **Versioning enabled:** when bucket versioning is enabled, it will be applied to **all the objects** in the bucket. After versioning is enabled for the first time, objects uploaded to the bucket thereafter will be assigned a unique version ID.
+There are three versioning states for a bucket:
+- **Versioning not enabled:** Bucket versioning is not enabled by default.
+- **Versioning enabled:** When bucket versioning is enabled, it will be applied to **all the objects** in the bucket. After versioning is enabled for the first time, objects uploaded to the bucket thereafter will be assigned a unique version ID.
 - **Versioning suspended:** Once the versioning state is changed from enabled to suspended (versioning cannot be disabled once enabled), objects uploaded to the bucket thereafter will no longer be subject to versioning.
 
 >
@@ -63,8 +63,8 @@ A GET request with a version ID specified returns the specified version of an ob
 #### Querying the metadata of an object version
 If you only want to query the metadata of an object instead of its content, use the HEAD operation. By default, you get the metadata of the latest version. To query the metadata of a specific object version, specify its version ID when submitting the request.
 To query the metadata of an object version:
-- Set versionId to the ID of the version of the object whose metadata you want to query.
-- Send a HEAD operation request with the versionId specified.
+- Set the version ID to the ID of the version of the object whose metadata you want to query.
+- Send a HEAD operation request with the version ID specified.
 
 #### Deleting objects
 You can delete unnecessary object versions. When you make a DELETE request in a versioning-enabled bucket, there will be two scenarios:
