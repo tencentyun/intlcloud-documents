@@ -30,7 +30,7 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 | 17       | resErrorMsg     | Error message       | The specified key does not exist.                                      |
 | 18 | resBytesSent | Bytes returned | 197 |
 | 19 | resTotalTime | Total time used by the request (in milliseconds, i.e., the time between the last byte of the response and the first byte of the request) | 4295 |
-| 20       | logSourceType   | Source type of the log    | `USER` (user access requests), `CDN` (CDN origin pull requests)  |
+| 20       | logSourceType   | Source type of the log    | `USER` (user access requests), `CDN` (CDN origin-pull requests)  |
 | 21 | storageClass | Storage class | STANDARD, STANDARD_IA, ARCHIVE |
 | 22       | accountId          | Bucket owner ID                                               | 100000000001                                                 |
 | 23 | resTurnAroundTime | Time used by the request server (in milliseconds, i.e., the time between the first byte of the response and the last byte of the request) | 4295 |
@@ -48,12 +48,12 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 > - The destination bucket and source bucket must reside in the same region.
 > - The destination bucket that stores logs can be the source bucket itself (not recommended).
 > - Currently, logs will be generated only when the bucket is accessed through XML APIs and XML API-based SDKs or tools, not via JSON APIs or JSON API-based SDKs or tools.
-> - Depending on customer needs and business development, COS may add new fields to the access logs. Please be sure to prepare for this when parsing the logs.
+> - Depending on customer needs and business development, COS may add new fields to the access logs. Be sure to prepare for this when parsing the logs.
 > 
 
-## Enabling Log Management
-### Using the Console
-You can quickly enable logging in the console. For detailed directions, please see [Setting Logging](https://intl.cloud.tencent.com/document/product/436/17040).
+## Enabling Logging
+### Using the console
+You can quickly enable logging in the console. For detailed directions, see [Setting Logging](https://intl.cloud.tencent.com/document/product/436/17040).
 
 ### Using APIs 
 To enable logging for a bucket using APIs, follow the steps below:
@@ -78,8 +78,8 @@ Here, `roleName` must be `CLS_QcsRole`.
 }
 ```
 #### 2. Grant the log role permissions
-Grant the log role permissions. For more information about the API, please see [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562).
+Grant the log role permissions. For more information about the API, see [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562).
 Here, `policyName` is set to `QcloudCOSAccessForCLSRole`, `roleName` is the `CLS_QcsRole` in step 1, or the `roleID` returned when `roleName` was created.
 
 #### 3. Enable logging
-Call the API to enable logging. For more information about the API, please see [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054). Note that the destination bucket to store the logs should be in the same region as the source bucket.
+Call the API to enable logging. For more information about the API, see [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054). Note that the destination bucket to store the logs should be in the same region as the source bucket.
