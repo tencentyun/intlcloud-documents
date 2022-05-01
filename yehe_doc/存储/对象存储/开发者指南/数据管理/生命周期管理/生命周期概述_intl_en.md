@@ -51,7 +51,7 @@ Data transition is supported in public cloud regions. Finance Cloud regions supp
 
 #### One-way transition
 
-Data transition is one-way (STANDARD > STANDARD_IA > ARCHIVE, or STANDARD > ARCHIVE) and cannot be done reversely. You can only call [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for non-ARCHIVED/DEEP ARCHIVE only) or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (for ARCHIVE and DEEP ARCHIVE only) to restore data from a colder storage class to a hotter one.
+Data transition is one-way (STANDARD > STANDARD_IA > ARCHIVE, or STANDARD > ARCHIVE) and cannot be done reversely. You can only call [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for non-ARCHIVE/DEEP ARCHIVE only) or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (for ARCHIVE and DEEP ARCHIVE only) to restore data from a colder storage class to a hotter one.
 
 #### Eventual consistency
 
