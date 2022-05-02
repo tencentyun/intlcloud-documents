@@ -1,6 +1,6 @@
 ## Concepts
 
-An ACL is described in the XML language. It is a list of specified grantees and permissions granted, which is associated with resources. Each bucket and object has an associated ACL to grant basic read and write permissions to anonymous users or other Tencent Clouds root accounts.
+An ACL is described in the XML language. It is a list of specified grantees and permissions granted, which is associated with resources. Each bucket and object has an associated ACL to grant basic read and write permissions to anonymous users or other Tencent Cloud root accounts.
 
 >!Here are some limits on the use of ACLs associated with resources:
 >- The resource owner always has the FULL_CONTROL permission on the resource, which cannot be revoked or modified.
@@ -11,7 +11,7 @@ An ACL is described in the XML language. It is a list of specified grantees and 
 >- A resource can have up to 100 ACL policies.
 >
 
-## Application Scenarios
+## Use Cases
 
 >! Enabling anonymous access (Public Read) is highly risky due to hotlinking risks. In cases where Public Read is required, you can [set hotlink protection](https://intl.cloud.tencent.com/document/product/436/13319) to improve security.
 >
@@ -40,7 +40,7 @@ Grantees supported in bucket or object ACLs include:
 - Cross-account: use the root account ID to get the account ID, e.g., `100000000001`, in [Account Info](https://console.cloud.tencent.com/developer).
 - Preset user group: tag a preset user group using a URI tag. The following user groups are supported:
   - Anonymous user group - `http://cam.qcloud.com/groups/global/AllUsers`, which indicates that anyone can access resources without authorization, regardless of whether the request is signed or unsigned.
-  - Certified user group - `http://cam.qcloud.com/groups/global/AuthenticatedUsers`, which indicates that users who have registered a Tencent Cloud CAM account can access resources.
+  - Authenticated user group - `http://cam.qcloud.com/groups/global/AuthenticatedUsers`, which indicates that users who have registered a Tencent Cloud CAM account can access resources.
 
 
 ### Action permissions
@@ -49,7 +49,7 @@ Tencent Cloud COS supports a range of action sets on resource ACLs, which includ
 
 **Actions on buckets**
 
-Here is a list of actions supported in the bucket ACLs:
+Here is a list of actions supported in bucket ACLs:
 
 | Action Set | Description | Allowed Actions |
 | ------------ | -------------------- | ------------------------------------------------------------ |
@@ -64,7 +64,7 @@ Here is a list of actions supported in the bucket ACLs:
 
 **Actions on objects**
 
-Here is a list of actions supported in the object ACLs:
+Here is a list of actions supported in object ACLs:
 
 | Action Set | Description | Allowed Actions |
 | ------------ | ------------------ | --------------------------------------- |
@@ -86,7 +86,7 @@ Tencent Cloud COS supports a group of preset ACLs for authorization, making it m
 | private | The creator (root account) has the FULL_CONTROL permission, while others have no permissions. (Default) |
 | public-read | The creator has the FULL_CONTROL permission, and the anonymous user group has the READ permission. |
 | public-read-write | Both the creator and the anonymous user group have the FULL_CONTROL permission, which is generally not recommended. |
-| authenticated-read | The creator has the FULL_CONTROL permission, and the certified user group has the READ permission. |
+| authenticated-read | The creator has the FULL_CONTROL permission, and the authenticated user group has the READ permission. |
 
 **Preset ACLs for objects**
 
@@ -95,7 +95,7 @@ Tencent Cloud COS supports a group of preset ACLs for authorization, making it m
 | default                   | An empty description. The explicit settings of each level of directory and the settings of the bucket are used to determine whether a request is allowed. (Default) |
 | private | The creator (root account) has the FULL_CONTROL permission, while others have no permissions. |
 | public-read | The creator has the FULL_CONTROL permission, and the anonymous user group has the READ permission. |
-| authenticated-read | The creator has the FULL_CONTROL permission, and the certified user group has the READ permission. |
+| authenticated-read | The creator has the FULL_CONTROL permission, and the authenticated user group has the READ permission. |
 | bucket-owner-read | The creator has the FULL_CONTROL permission, and the bucket owner has the READ permission. |
 | bucket-owner-full-control | Both the creator and the bucket owner have the FULL_CONTROL permission. |
 
