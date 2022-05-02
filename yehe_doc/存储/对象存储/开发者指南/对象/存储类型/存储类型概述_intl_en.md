@@ -63,7 +63,7 @@ COS offers various storage classes to indicate how active objects are in COS. Yo
 
 >?
 >- When transitioning objects, ensure that the target storage class is supported for the region where your object resides.
->- To modify the storage class of an object stored in **ARCHIVE** or **DEEP ARCHIVE**, you need to restore it first into STANDARD. For more information, see [Restoring an Archived Object](https://intl.cloud.tencent.com/document/product/436/30961).
+>- To modify the storage class of an object stored in **ARCHIVE** or **DEEP ARCHIVE**, you need to restore it first into STANDARD. For more information, see [Restoring Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961).
 
 How each storage class can be transitioned is described as follows:
 
@@ -79,6 +79,6 @@ How each storage class can be transitioned is described as follows:
 For detailed directions, see the following documents:
 
 - [Modifying Storage Classes](https://intl.cloud.tencent.com/document/product/436/30930) 
-- [Setting Lifecycles](https://intl.cloud.tencent.com/document/product/436/14605) 
+- [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605) 
 
   
