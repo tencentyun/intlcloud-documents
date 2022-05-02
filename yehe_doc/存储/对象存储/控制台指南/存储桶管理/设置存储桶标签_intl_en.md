@@ -5,11 +5,11 @@ A bucket tag is a key-value pair (key = value), where the tag key and tag value 
 
 >!
 >- Each bucket can have up to 50 different bucket tags.
->- `qcs:` and `project` are reserved fields. Therefore, do not use them in tag keys or tag values. For more limits, please see [Bucket Tag Overview](https://intl.cloud.tencent.com/document/product/436/31509).
+>- `qcs:` and `project` are reserved fields. Therefore, do not use them in tag keys or tag values. For more limits, see [Bucket Tag Overview](https://intl.cloud.tencent.com/document/product/436/31509).
 
 ## Adding a Tag When Creating a Bucket
 
-You can add a bucket tag when [creating buckets](https://intl.cloud.tencent.com/document/product/436/13309), as shown in the following figure:
+You can add a bucket tag when [creating a bucket](https://intl.cloud.tencent.com/document/product/436/13309), as shown in the following figure:
 ![](https://qcloudimg.tencent-cloud.cn/raw/02d9832d2244e4010d67dc49dee490bf.png)
 
 ## Adding a Tag to an Existing Bucket
