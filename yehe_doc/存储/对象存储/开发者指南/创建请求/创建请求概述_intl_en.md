@@ -53,9 +53,9 @@ Tencent Cloud COS provides a simple server-side SDK that can be used to generate
 
 ### RESTful APIs
 
-The [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224) document provides a list of domain names that can be used to initiate access requests via the REST API.
+The [Region and Access Domain Name](https://intl.cloud.tencent.com/document/product/436/6224) document provides a list of domain names that can be used to initiate access requests via RESTful APIs.
 
-It is recommended to use virtual hosting domain names to access COS buckets. When you initiate an HTTP request, the bucket to be accessed will be specified through the `Host` header, for example, `<BucketName-APPID>.cos.<Region>.myqcloud.com. Using virtual hosting domain names implements the same feature as the root directory of a virtual server. Virtual hosting domain names can be used to host files such as `favicon.ico`, `robots.txt`, and `crossdomain.xml`, which are the content that many applications will retrieve from the root directory of the virtual server by default when identifying a hosted website.
+It is recommended to use virtual hosting domain names to access COS buckets. When you initiate an HTTP request, the bucket to be accessed will be specified through the `Host` header, for example, `<BucketName-APPID>.cos.<Region>.myqcloud.com`. Using virtual hosting domain names implements the same feature as the root directory of a virtual server. Virtual hosting domain names can be used to host files such as `favicon.ico`, `robots.txt`, and `crossdomain.xml`, which are the content that many applications will retrieve from the root directory of the virtual server by default when identifying a hosted website.
 
 You can also use a path request to access a bucket, for example, `cos.<region>.myqcloud.com/<BucketName-APPID>/`. The request `Host` and the signature must use `cos.<region>.myqcloud.com`. COS SDKs do not support this access method by default.
 
@@ -63,7 +63,7 @@ You can also use a path request to access a bucket, for example, `cos.<region>.m
 
 If you enable the static website feature for a bucket, a virtual hosting domain name will be assigned for you to use relevant features. Unlike RESTful APIs, the domain name of a static website supports only a few operations, such as GET/HEAD/OPTIONS Object, in addition to specific index pages, error pages and redirection configurations. Uploading or configuring resources is not supported.
 
-The format of a domain name of a static website is `<BucketName-APPID>.cos-website.<Region>.myqcloud.com`. You can also log in to the console and go to the bucket's **Basic Configuration** -> **Static Website Configuration** to get the domain name.
+The format of a domain name of a static website is `<BucketName-APPID>.cos-website.<Region>.myqcloud.com`. You can also log in to the console and go to the bucket's **Basic Configuration** > **Static Website Configuration** to get the domain name.
 
 <span id="network"></span>
 
