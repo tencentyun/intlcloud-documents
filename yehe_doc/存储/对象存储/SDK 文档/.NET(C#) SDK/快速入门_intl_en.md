@@ -227,7 +227,7 @@ try{
 }
 ```
 
-### Query objects
+### Querying objects
 
 ```cs
 try
@@ -255,7 +255,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-### Download an object
+### Downloading an object
 
 ```cs
 // Initialize TransferConfig.
@@ -288,7 +288,7 @@ try{
 }
 ```
 
-### Delete an object
+### Deleting an object
 
 ```cs
 try
