@@ -1,10 +1,10 @@
 ## Concepts
 
-A static website is a website that contains static content (such as HTML) or client scripts. Users can configure static websites for buckets with a custom domain name through the console. A dynamic website contains server scripts such as PHP, JSP, or ASP.NET, and needs to be processed on a server. You can host static websites on Tencent Cloud COS, but cannot write server scripts. When deploying a dynamic website, you are recommended to use a CVM for server code deployment.
+A static website is a website that contains static content (such as HTML) or client scripts. You can configure static websites for buckets with a custom domain name through the console. A dynamic website contains server scripts such as PHP, JSP, or ASP.NET, and needs to be processed on a server. You can host static websites on Tencent Cloud COS, but cannot write server scripts. For deployment of a dynamic website, we recommend you use a CVM for server code deployment.
 
 #### Samples
 
-A user created a bucket named examplebucket-1250000000 and uploaded the following file: 
+A user created a bucket named examplebucket-1250000000 and uploaded the following files: 
 
 ```shell
 index.html
@@ -46,7 +46,7 @@ https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com
 ### Index document
 
 An index file, the homepage of the static website, is a page returned when the root directory or any subdirectory of a website is requested, and is usually named `index.html`.
-When you access a static website via a bucket access domain name, such as `https://examplebucketbucket-1250000000.cos-website.ap-guangzhou.myqcloud.com`, and no specific page is requested, the Web server will return the homepage.
+When you access a static website via a bucket access domain name, such as `https://examplebucketbucket-1250000000.cos-website.ap-guangzhou.myqcloud.com`, and no specific page is requested, the web server will return the homepage.
 
 When your user accesses any directory (including the root directory) in a bucket using a URL ending with `/`, the index document in that directory will be matched preferentially. `/` is not mandatory in the root URL, so the index document is returned in response to either of the following URLs.
 
@@ -59,13 +59,13 @@ http://www.examplebucket.com
 
 ### Error document
 
-Suppose that when you visit the following page before configuring the error document, a 404 status code is returned, and the default error information displays in the page.
+Assume that when you visit the following page before configuring the error document, a 404 status code is returned, and the default error information is displayed on the page.
 
 ```shell
 https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com/webpage.html
 ```
 
-When you visit the following page after configuring the error document, a 404 status code is also returned, but the specific error information displays in the page.
+When you visit the following page after configuring the error document, a 404 status code is also returned, but the specific error information is displayed on the page.
 
 ```shell
 https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com/webpage.html
@@ -78,7 +78,7 @@ https://examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com/webpage.h
 #### Configure error code redirection
 
 If the webpage.html document is set to **Private Read/Write**, when a user tries to access it, a 403 error is returned.
-After the 403 error code is redirected to 403.htm, the browser will return the content of 403.html.
+After the 403 error code is redirected to 403.html, the browser will return the content of 403.html.
 If you do not configure a 403.html document, the browser will return an error document or default error message.
 ![](https://main.qcloudimg.com/raw/f728aec922e088f45889349f31bcdc08.png)
 
