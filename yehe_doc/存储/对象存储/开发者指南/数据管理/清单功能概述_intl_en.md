@@ -14,7 +14,7 @@ You can use the inventory feature for various purposes, including but not limite
 
 ## Inventory Parameters
 
-After you configure an inventory task for a bucket, COS regularly scans specified objects in the bucket based on your configuration, and exports an inventory report in .csv format. Currently, the inventory report can record the following information:
+After you configure an inventory job for a bucket, COS regularly scans specified objects in the bucket based on your configuration, and exports an inventory report in .csv format. Currently, the inventory report can record the following information:
 
 | Inventory Information | Description |
 | ------------------- | ------------------------------------------------------------ |
