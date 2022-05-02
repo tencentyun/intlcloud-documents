@@ -4,13 +4,13 @@ After creating a Tencent Cloud sub-account, you can configure an access policy t
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d22047a7656e9524482def3ce67b61ed.png)
 
-## Elements for Access Permissions
+## Access Policy Elements
 
-You can grant access permissions by specifying a person to perform a specified action on specified resources under a specified condition. Generally, the following four elements are used to describe an access permission action: **identity, resource, action, and condition (optional)**.
+You can grant access permissions by specifying a person to perform a specified action on specified resources under a specified condition. Generally, the following four elements are used to describe an access policy: **principal, resource, action, and condition (optional)**.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/164bdaaee60662fb9848d305f355cd49.png)
 
-## Access Permission Elements
+## Description of Elements
 
 #### Tencent Cloud identity (principal)
 
