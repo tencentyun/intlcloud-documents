@@ -19,8 +19,8 @@
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
 >? 
-> - For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
-> - Use instructions for cross-device frameworks (such as uni-app): for mobile apps that cannot be packaged for normal use after being developed using the Mini Program SDK, such as Android and iOS apps, you need to use the corresponding Android SDK and iOS SDK.
+> - For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+> - If you are using cross platform framework such as uni-app, and encounter problems when packaging the app (such as iOS or Android app), use the iOS SDK or Android SDK.
 > 
 
 
