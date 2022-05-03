@@ -41,10 +41,10 @@ Functions currently supported by COS Select include:
 
 COS Select currently supports the following operators:
 
-- Logical operators: `AND, NOT, OR`
+- Logical operators: AND, NOT, OR
 - Comparison operators: <, >, <=, >=, =, <>, !=, BETWEEN, IN
 - Pattern matching operators: `LIKE`
-- Mathematical operators: `+, -, *, %`
+- Mathematical operators: +, -, *, %
 
 >? For more information on operators, see [Operators](https://intl.cloud.tencent.com/document/product/436/32477).
 >
