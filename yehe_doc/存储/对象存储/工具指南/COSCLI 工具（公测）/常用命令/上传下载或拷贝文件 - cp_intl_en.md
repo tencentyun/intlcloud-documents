@@ -122,7 +122,7 @@ The `cp` command is used to upload, download, or copy objects.
 ./coscli cp cos://bucket1/example1/ cos://bucket2/example2/ -r
 ```
 
-#### Uploading all MP4 objects in the `example1` directory in `bucket1` to the `example2` directory in `bucket2`
+#### Copying all MP4 objects in the `example1` directory in `bucket1` to the `example2` directory in `bucket2`
 
 ```plaintext
 ./coscli cp cos://bucket1/example1/ cos://bucket2/example2/ -r --include .*.mp4
