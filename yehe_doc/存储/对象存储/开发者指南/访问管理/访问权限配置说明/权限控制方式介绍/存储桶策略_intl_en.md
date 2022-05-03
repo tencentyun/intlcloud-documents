@@ -44,7 +44,6 @@ For example, if you want to grant a sub-account all permissions of a specified d
 In the COS console, you can add and manage bucket policies in two modes: [Visual Editor](#Visual Editor) and [JSON](#JSON).
 
 <span id="Visual Editor"></span>
-
 ### Visual Editor
 Click the target bucket and choose **Permission Management** > **Permission Policy Settings** > **Visual Editor**. On the **Visual Editor** tab page, click **Add Policy**. In the pop-up window, configure the policy in two steps:
 
