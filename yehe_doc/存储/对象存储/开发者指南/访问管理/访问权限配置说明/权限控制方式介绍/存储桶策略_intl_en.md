@@ -104,7 +104,7 @@ Templates are described in the following table.
       <td rowspan=11>Specified user</td>
       <td rowspan=7>The whole bucket</td>
       <td>Read-Only objects (listing objects is not included)</td>
-      <td rowspan=7>COS provides the most recommended templates for the combination of **Specified user** and **The whole bucket**. In addition to reading, writing, and listing files, COS provides the following sensitive permission templates for trusted users:<li>Read/Write buckets and object ACLs: get and modify buckets and object ACLs. Options include **GetObjectACL**, **PutObjectACL**, **GetBucketACL**, and **PutBucketACL**. <li>General bucket configuration items: non-sensitive permissions such as bucket tagging, CORS, and origin-pull. <li>Bucket sensitive configuration item: sensitive permissions such as bucket policies, bucket ACLs, and bucket deletion. Sensitive permissions should be used with caution.</td>
+      <td rowspan=7>COS provides the most recommended templates for the combination of <b>Specified user</b> and **The whole bucket**. In addition to reading, writing, and listing files, COS provides the following sensitive permission templates for trusted users:<li>Read/Write buckets and object ACLs: get and modify buckets and object ACLs. Options include **GetObjectACL**, **PutObjectACL**, **GetBucketACL**, and **PutBucketACL**. <li>General bucket configuration items: non-sensitive permissions such as bucket tagging, CORS, and origin-pull. <li>Bucket sensitive configuration item: sensitive permissions such as bucket policies, bucket ACLs, and bucket deletion. Sensitive permissions should be used with caution.</td>
    </tr>
    <tr>
       <td>Read-Only objects (listing objects is included)</td>
