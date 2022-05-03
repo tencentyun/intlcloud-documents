@@ -25,7 +25,7 @@ Currently, an SCF function can be triggered by the following COS events:
    </tr>
    <tr>
       <td>cos: ObjectCreated:Put</td>
-      <td>n object is created using the Put Object API</td>
+      <td>An object is created using the Put Object API</td>
    </tr>
    <tr>
       <td>cos: ObjectCreated:Post</td>
