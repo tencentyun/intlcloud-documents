@@ -2,7 +2,7 @@ COS supports object upload and download using pre-signed URLs, which are signed 
 
 You can use pre-signed URLs to download objects, obtain temporary URLs for sharing files and folders temporarily, or set a long signature validity period to obtain long-term URLs for sharing files for a long time. For more information, see Sharing Files.
 
-You can also use pre-signed URLs to upload objects. For more information, see Uploading Files
+You can also use pre-signed URLs to upload objects. For more information, see Uploading Files.
 
 <span id="Sharing Files"></span>
 ## Sharing Files (Downloading Files)
@@ -85,7 +85,7 @@ A permanent key does not expire. The validity period of a pre-signed URL depends
 
 **Using a temporary key to generate a pre-signed URL (valid for less than 36 hours)**
 
-In frontend direct transmission scenarios, temporary keys are often required. For more information about temporary keys, see:
+In frontend direct upload scenarios, temporary keys are often required. For more information about temporary keys, see:
 - [Accessing COS Using a Temporary Key](https://intl.cloud.tencent.com/document/product/436/45242)
 - [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048)
 - [Temporary Key Security Guide for Frontend Direct Upload to COS](https://intl.cloud.tencent.com/document/product/436/35265)
@@ -129,4 +129,4 @@ If you want any third party to be able to upload an object to your bucket, but y
 - Method 1. Generating a pre-signed URL via SDK
 SDKs in various programming languages provide pre-signed URL generation methods. For more information about the methods, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114). Select a method according to the programming language that you are familiar with.
 - Method 2. Manually constructing a pre-signed URL
-A pre-signed URL is in fact an object URL concatenated with a signature. Therefore, you can use a SDK or signature generation tool to generate a signature and concatenate the object URL and the signature to form a pre-signed URL for object upload. However, this method is generally not recommended because of the complexity of the signature generation algorithm.
+A pre-signed URL is in fact an object URL concatenated with a signature. Therefore, you can use an SDK or signature generation tool to generate a signature and concatenate the object URL and the signature to form a pre-signed URL for object upload. However, this method is generally not recommended because of the complexity of the signature generation algorithm.
