@@ -18,4 +18,4 @@ If the permission of a folder is set to Public Read/Private Write, all files in 
 
 For the COS permission evaluation mechanism, see [Access Policy Evaluation Process](https://intl.cloud.tencent.com/document/product/436/35240). If the Public Read permission settings for buckets, folders, and objects conflict, the priorities are as follows:
 
-The ACL of an object has the highest priority. If the ACL of an object is inherited, the ACL of the corresponding folder prevails. If the ACL of a folder is inherited, the ACL of the corresponding bucket prevails.
+The ACL of an object has the highest priority. If the ACL of an object is inherited, the ACL of the corresponding folder applies. If the ACL of a folder is inherited, the ACL of the corresponding bucket applies.
