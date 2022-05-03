@@ -35,7 +35,7 @@ COSBrowser Mobile Version supports the following three login methods:
 
 #### 1. Data overview
 
-The data overview page displays your COS data usage in the past 30 days, including total traffic, total read and write requests, storage trend, traffic trends (for public network downstream traffic, private network traffic, and CDN origin-pull traffic), trend in the number of requests, trend in the ratio of effective requests, amount of standard_IA data retrieved, and amount of archive data retrieved.
+The data overview page displays your COS data usage in the past 30 days, including total traffic, total read and write requests, storage trend, traffic trends (for public network downstream traffic, private network traffic, and CDN origin-pull traffic), trend in the number of requests, trend in the ratio of effective requests, amount of STANDARD_IA data retrieved, and amount of ARCHIVE data retrieved.
 
 <img src="https://main.qcloudimg.com/raw/43b03ec33e6a52184e9913f7db3f8d3a.png" style="zoom:100%;" />
 
