@@ -149,7 +149,7 @@ Based on the combination of authorized users, specified directories, and templat
 
 >? To authorize the permissions of a directory, you need to add `/*` to the resource path entered. For example, to authorize the `test` directory, you need to enter `test/*`.
 
-If the recommended templates provided by COS do not meet your requirements, you can add or delete authorized users, resources, and operations in this step. See the figure below.
+If the recommended templates provided by COS do not meet your requirements, you can add or delete authorized users, resources, and operations in this step.
 
 The configuration items are described as follows:
 - **Effect**: select **Allow** or **Deny**, corresponding to `allow` or `deny` in the policy syntax.
@@ -159,12 +159,12 @@ The configuration items are described as follows:
 - **Condition**: you can specify conditions for permission authorization. For example, you can specify a user access IP.
 
 
-<span id="Policy Configuration"></span>
-### Policy syntax
+<span id="JSON"></span>
+### JSON
 
 If you are familiar with bucket policies, you can click the target bucket, choose **Permission Management** > **Permission Policy Settings** > **JSON**, and write the bucket policy in JSON language.
 
-After writing the bucket policy, you can add it via [API](https://intl.cloud.tencent.com/document/product/436/8282) or [SDK](https://intl.cloud.tencent.com/document/product/436/6474). See the figure below.
+After writing the bucket policy, you can add it via [API](https://intl.cloud.tencent.com/document/product/436/8282) or [SDK](https://intl.cloud.tencent.com/document/product/436/6474).
 
 
 #### JSON policy example 
