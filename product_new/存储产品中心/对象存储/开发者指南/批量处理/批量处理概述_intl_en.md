@@ -11,7 +11,7 @@ At present, the batch operation feature only supports the following operations:
 
 You can use the batch operation feature in the COS console. For more information, see [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956).
 
-> Batch operation is currently available only in public cloud regions in the Chinese mainland China.
+> Batch operation is currently available only in public cloud regions in the Chinese mainland.
 
 ## How It Works
 
