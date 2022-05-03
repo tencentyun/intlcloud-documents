@@ -13,11 +13,11 @@ The `rm` command is used to delete an object.
 
 `rm` includes the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description                         |
 | --------- | ------------- | ------------------------------------ |
-|     None      | --include     | Includes files with a specific pattern                |
-|     None      | --exclude     | Excludes files with a specific pattern                |
-| -r        | --recursive | Specifies whether to traverse all objects in the directory recursively  |
+|     None      | --include     | Includes specific objects.                  |
+|     None      | --exclude     | Excludes specific objects.                |
+| -r        | --recursive | Specifies whether to traverse all objects in the directory recursively.  |
 | -f        | --force       | Forces deletion (no prompt before the deletion). |
 
 >?
