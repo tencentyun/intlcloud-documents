@@ -37,4 +37,4 @@ The following table compares the product feature support between enabling and no
 
 ## Billing Description
 
-Currently, metadata acceleration is still in beta testing and is not billed. If billing is required in the future, we will notify you via [Message Center](https://console.cloud.tencent.com/message), emails, or SMS. You can check your message center or see [Billing Overview](https://cloud.tencent.com/document/product/436/16871) to keep up with the latest billing plans.
+Currently, metadata acceleration is still in beta testing and is not billed. If billing is required in the future, we will notify you via [Message Center](https://console.cloud.tencent.com/message), email, or SMS. You can check your message center or see [Billing Overview](https://cloud.tencent.com/document/product/436/16871) to keep up with the latest billing plans.
