@@ -93,7 +93,7 @@ Use ACLs if you only need to set some simple access permissions for buckets and 
 - Set simple access permissions.
 - Set access permissions quickly in the console.
 - Make an object, directory, or bucket accessible to all anonymous internet users.
-- Each account supports only 1,000 ACLs. If this upper limit is exceeded, select bucket policies or user policies instead.
+Each account supports only 1,000 ACLs. If this upper limit is exceeded, select bucket policies or user policies instead.
 
 ### When do I use a user policy?
 
