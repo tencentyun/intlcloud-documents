@@ -72,7 +72,7 @@ You can use an SDK to obtain pre-signed URLs with custom validity periods in bat
 - Generating a pre-signed URL via signature generation tool
 If you are not familiar with programming, you can use a signature generation tool to obtain pre-signed URLs with custom validity periods. For more information, see the signature generation tool documentation.
 - Manually constructing a pre-signed URL
-A pre-signed URL is in fact an object URL concatenated with a signature. Therefore, you can use a SDK or signature generation tool to generate a signature and concatenate the object URL and the signature to form a pre-signed URL. However, this method is generally not recommended because of the complexity of the signature generation algorithm.
+A pre-signed URL is in fact an object URL concatenated with a signature. Therefore, you can use an SDK or signature generation tool to generate a signature and concatenate the object URL and the signature to form a pre-signed URL. However, this method is generally not recommended because of the complexity of the signature generation algorithm.
 
 #### Uploading an object
 
@@ -81,7 +81,7 @@ If you want any third party to be able to upload an object to your bucket, but y
 - Method 1. Generating a pre-signed URL via SDK
 SDKs in various programming languages provide pre-signed URL generation methods. For more information about the methods, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114). Select a method according to the programming language that you are familiar with.
 - Method 2. Manually constructing a pre-signed URL
-A pre-signed URL is in fact an object URL concatenated with a signature. Therefore, you can use a SDK or signature generation tool to generate a signature and concatenate the object URL and the signature to form a pre-signed URL for object upload. However, this method is generally not recommended because of the complexity of the signature generation algorithm.
+A pre-signed URL is in fact an object URL concatenated with a signature. Therefore, you can use an SDK or signature generation tool to generate a signature and concatenate the object URL and the signature to form a pre-signed URL for object upload. However, this method is generally not recommended because of the complexity of the signature generation algorithm.
 
 ### 4. Anonymous access
 
