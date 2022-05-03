@@ -23,7 +23,7 @@ The `restore` command contains the following optional flags:
 | -r        | --recursive   | Traverses the folder recursively                  |
 
 >?
-> - `--include` and `--exclude` support standard regular expression syntax, so you can use them to filter files that meet specific criteria.
+> - `--include` and `--exclude` support standard regular expression syntax, so you can use them to filter out objects that meet specific criteria.
 > - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.
 ```
 ./coscli restore cos://bucket1/example/ -r --include ".*.mp4"
