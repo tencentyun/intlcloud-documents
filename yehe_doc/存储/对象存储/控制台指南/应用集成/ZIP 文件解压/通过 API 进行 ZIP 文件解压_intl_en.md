@@ -2,7 +2,7 @@
 
 1. The ZIP decompression feature is implemented via the Serverless Cloud Function (SCF) service. Before use, you need to go to [ZIP Decompression](https://console.cloud.tencent.com/cos5/application/cosGunzipApi) in the COS console to create a **ZIP Decompression** function. For more function creation instructions, see [ZIP Decompression](https://intl.cloud.tencent.com/document/product/436/45163).
 2. After creating the function, click **Instructions** on the right of the function to configure it. The configurations are a **JSON string**, which will be described in detail in this document.
- - If you select SCF authentication for the function, you need to call the [Invoke](https://intl.cloud.tencent.com/document/product/583/17243) API provided by SCF to run the ZIP decompression function, where the `ClientContext` parameter is passed in JSON format. For more information, please see [Function Parameter Configuration Sample](#1).
+ - If you select SCF authentication for the function, you need to call the [Invoke](https://intl.cloud.tencent.com/document/product/583/17243) API provided by SCF to run the ZIP decompression function, where the `ClientContext` parameter is passed in JSON format. For more information, see [Function Parameter Configuration Sample](#1).
  - If you configure the function to be authentication free, you can directly send HTTP requests to the corresponding API to call the function.
 
 
