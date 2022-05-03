@@ -13,7 +13,7 @@ The `sync` command is used to sync object upload, download, and copy. The differ
 
 `sync` includes the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description                         |
 | --------- | ------------- | ------------------------------ |
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
