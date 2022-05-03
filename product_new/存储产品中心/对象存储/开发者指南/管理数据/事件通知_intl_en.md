@@ -53,7 +53,7 @@ Currently, an SCF function can be triggered by the following COS events:
    </tr>
    <tr>
       <td>cos: ObjectRemove:Delete</td>
-      <td>An object is deleted from an unversioned bucket using the Delete Object API, or an object with a specified version is deleted by specifying `versionid`</td>
+      <td>An object is deleted from an unversioned bucket using the Delete Object API, or an object with a specified version is deleted by specifying versionid</td>
    </tr>
    <tr>
       <td nowrap="nowrap">cos: ObjectRemove:DeleteMarkerCreated</td>
