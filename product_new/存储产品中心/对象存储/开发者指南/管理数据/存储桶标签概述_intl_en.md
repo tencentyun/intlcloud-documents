@@ -25,7 +25,6 @@ A bucket tag is a key-value pair (key = value), which is comprised of a tag key 
  - A key has at most 1,000 values.
  - Multiple same keys are not allowed in the same bucket.
 
-
 ## Usage
 
 You can set bucket tags using the console or APIs.
