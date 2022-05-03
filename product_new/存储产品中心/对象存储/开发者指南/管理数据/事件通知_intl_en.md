@@ -45,7 +45,7 @@ Currently, an SCF function can be triggered by the following COS events:
    </tr>
     <tr>
       <td nowrap="nowrap">cos:ObjectCreated:Replication</td>
-      <td>An object is created through cross-region replication</td>
+      <td>An object is created using cross-region replication</td>
    </tr>
    <tr>
       <td>cos: ObjectRemove:*</td>
@@ -57,7 +57,7 @@ Currently, an SCF function can be triggered by the following COS events:
    </tr>
    <tr>
       <td nowrap="nowrap">cos: ObjectRemove:DeleteMarkerCreated</td>
-      <td>An object is deleted from a versioning-enabled or versioning suspended bucket using the Delete Object API</td>
+      <td>An object is deleted from a versioning-enabled or versioning-suspended bucket using the Delete Object API</td>
    </tr>
   <tr>
       <td nowrap="nowrap">cos:ObjectRestore:Post</td>
