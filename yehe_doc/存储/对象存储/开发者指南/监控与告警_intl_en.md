@@ -1,6 +1,6 @@
 ## Overview
 
-COS data (such as traffic and the number of read/write requests) is collected and displayed according to [Basic Cloud Monitor](https://intl.cloud.tencent.com/document/product/248). Therefore, you can go to the COS or [Cloud Monitor](https://console.cloud.tencent.com/monitor) console to view COS monitoring data in detail.
+COS data (such as traffic and the number of read/write requests) is collected and displayed according to [Basic Cloud Monitor](https://intl.cloud.tencent.com/document/product/248). Therefore, you can go to the COS or [Cloud Monitor console](https://console.cloud.tencent.com/monitor) to view COS monitoring data in detail.
 
 >?This document describes how to obtain statistics in the COS console. You can call Cloud Monitor APIs to obtain more detailed data. For more information, see [Documentation of Cloud Monitor](https://intl.cloud.tencent.com/document/product/248).
 
