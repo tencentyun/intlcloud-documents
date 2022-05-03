@@ -3,9 +3,9 @@ COS is billed at pay-as-you-go rates by default for [all regions](https://intl.c
 
 ## Pricing
 
-COS is billed on demand. For detailed pricing, please see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
+COS is billed on demand. For detailed pricing, see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
 
-## Billing Items
+## Billable Items
 
 The billable items of COS and their calculation formulas are as follows:
 <table>
@@ -51,7 +51,7 @@ The billable items of COS and their calculation formulas are as follows:
 </table>
 
 
-> ?For more information about billable items and the billing restrictions, please see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
+> ?For more information about billable items and the billing restrictions, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
 
 
 ## Billing Cycle
