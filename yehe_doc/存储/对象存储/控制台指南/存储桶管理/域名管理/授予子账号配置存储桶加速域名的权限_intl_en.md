@@ -18,9 +18,9 @@ If the sub-account needs to configure such domain names, you need to authorize i
 4. After selecting the corresponding features, click **Next** to associate objects.
 5. Associate the features with objects. Select **Associate an Object** > **All objects (including new resource objects purchased in the future)**, which has to be selected to make the policy configuration fully effective.
 6. Confirm that the permissions are correctly configured and click **Finish** to create the custom policy.
-7. After the custom policy is created, switch to the [User List](https://console.cloud.tencent.com/cam) page, and associate the sub-account with the policy by clicking **Grant Permission** on the right.
+7. After the custom policy is created, switch to the [User List](https://console.cloud.tencent.com/cam) page, and associate the sub-account with the policy by clicking **Authorize** on the right.
 ![](https://main.qcloudimg.com/raw/f394425f8997d39d339e6327a2c94fd5.png)
-8. In the **Associate a Policy** pop-up window, search for and select the custom policy you just created and click **OK**.
+8. In the **Associate Policies** pop-up window, search for and select the custom policy you just created and click **OK**.
    ![](https://main.qcloudimg.com/raw/c5dc62d62250a19ceac131b637ef513f.png)
 9. After the policy is associated, the sub-account is authorized and can log in to the [COS Console](https://console.cloud.tencent.com/cos5) to access and configure the default acceleration domain name and CDN acceleration domain name for a COS bucket as shown below:
 ![](https://main.qcloudimg.com/raw/5ff57238dbe3685b020c746bf10573ba.png)
