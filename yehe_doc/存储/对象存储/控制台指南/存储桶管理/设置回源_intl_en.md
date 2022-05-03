@@ -80,7 +80,7 @@ Store the image picture.jpg at the origin `http://abc.example.com`.
 http://examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```
 
-When COS finds that the object cannot be hit, it returns HTTP status code `302` to the client and is redirected to the following address:
+When COS finds that the object cannot be hit, it returns HTTP status code `302` to the client and redirects to the following address:
 
 ```shell
 http://abc.example.com/picture.jpg
@@ -92,7 +92,7 @@ http://abc.example.com/picture.jpg
 http://examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```
 
-When COS finds that the object cannot be hit, it returns the HTTP status code 200 to the client and is redirected to the following address:
+When COS finds that the object cannot be hit, it returns the HTTP status code 200 to the client and redirects to the following address:
 
 ```shell
 http://abc.example.com/picture.jpg
