@@ -1,10 +1,10 @@
 ## Overview
 
-If you try to delete the specified bucket but the system prompts that "**Deletion failed. Please delete the valid data in the bucket first**", you can enter **Incomplete Multipart Uploads** to view the files that have not been completely uploaded and delete them. The bucket can be deleted only after you confirm that all completely and partially uploaded files have been deleted from the bucket.
+If you try to delete the specified bucket but the system prompts that "**Deletion failed. Please delete the valid data in the bucket first**", you can enter **Incomplete Multipart Upload** to view the files that have not been completely uploaded and delete them. The bucket can be deleted only after you confirm that all completely and partially uploaded files have been deleted from the bucket.
 
 >!
->- During the object upload progress, the files that are paused or canceled will be displayed in **Incomplete Multipart Uploads**. Files can be viewed in **File List** only after they are completely uploaded.
-> - Like objects, incomplete multipart uploads consume your storage capacity and incur storage capacity costs.
+>- During the object upload progress, the files that are paused or canceled will be displayed in **Incomplete Multipart Upload**. Files can be viewed in **File List** only after they are completely uploaded.
+> - Like objects, incomplete multipart uploads consume your storage space and incur storage usage costs.
 > 
 
 ## Directions
