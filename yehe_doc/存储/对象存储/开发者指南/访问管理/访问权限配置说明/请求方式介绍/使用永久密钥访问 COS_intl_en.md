@@ -1,6 +1,6 @@
 ## Background
 
-With RESTful APIs, you can initiate anonymous HTTP requests or signed HTTP requests to COS. Anonymous requests are typically used for scenarios that require public access, such as hosting static websites and signed requests are required in most other scenarios.
+With RESTful APIs, you can initiate anonymous HTTP requests or signed HTTP requests to COS. Anonymous requests are typically used for scenarios that require public access, such as hosting static websites; and signed requests are required in most other scenarios.
 
 Compared with an anonymous request, a signed request carries an additional signature value. The signature is an encrypted string generated based on the key (SecretId/SecretKey) and request information. The SDK automatically calculates the signature. You only need to set the key when initializing user information and do not need to worry about signature calculation. For requests initiated through RESTful APIs, COS needs to calculate signatures based on the signature algorithm and add them to the requests.
 
@@ -15,7 +15,7 @@ You can log in to the CAM console and go to the [Manage API Key](https://console
 
 ### Accessing COS using an API request
 
-When using a API request, you must use a signed request for a private bucket. A signature is generated based on a permanent key and put into the `Authorization` header to form a signed request. When the request is sent to COS, COS verifies whether the signature matches the request.
+When using an API request, you must use a signed request for a private bucket. A signature is generated based on a permanent key and put into the `Authorization` header to form a signed request. When the request is sent to COS, COS verifies whether the signature matches the request.
 
 >? Because the signature generation algorithm is complex, you are advised to use an SDK to initiate a request and skip this step.
 >
