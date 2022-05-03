@@ -16,7 +16,7 @@ COS can monitor your stored data. The COS data monitoring window displays data r
  >?
  >
  >- To query the number of objects in a folder, please see [Viewing Folder Details](https://intl.cloud.tencent.com/document/product/436/31633).
- >- If versioning is enabled, object versions with the same name are counted as a single object in the bucket.
+ >- If versioning is enabled, multiple versions of an object are counted as separate objects.
  - Request Count: number of all requests (including all GET requests and PUT requests), as well as the read/write requests of STANDARD and STANDARD_IA
  - Traffic: public/private network traffic, CDN origin-pull/cross-region replication traffic, and total upload traffic of public and private network
  - Return Code: number of 2xx, 3xx, 4xx, and 5xx status code as well as their proportion
@@ -41,7 +41,7 @@ You can grant such permission by using a **Policy Template** or **Custom Access 
 ### Using a policy template
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) using the root account, and select **Users** > **User List** to enter the user list page.
-2. Locate the sub-account, and click **Grant Permission** under the Operation column on the right.
+2. Locate the sub-account, and click **Authorize** in the **Operation** column on the right.
    ![](https://main.qcloudimg.com/raw/03804c04df5e91fc0472e8d0297f694d.png)
 3. Search and select the `QcloudMonitorFullAccess` policy in the policy list and click **OK** to attach it to the sub-account. Then the sub-account should be able to access monitoring reports.
    ![](https://main.qcloudimg.com/raw/c2e07335d2e68e2f077138ff9d73837f.png)
