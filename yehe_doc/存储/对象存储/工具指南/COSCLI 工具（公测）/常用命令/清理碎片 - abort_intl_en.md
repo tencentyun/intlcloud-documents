@@ -13,10 +13,10 @@ The `abort` command is used to clear the generated incomplete multipart uploads.
 
 The `abort` command contains the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description                         |
 | --------- | ------------- | ------------------------ |
-|     None      | --include     | Includes files with a specific pattern                |
-|     None      | --exclude     | Excludes files with a specific pattern                |
+|     None      | --include     | Includes specific objects.                |
+|     None      | --exclude     | Excludes specific objects.                |
 
 ## Examples
 
