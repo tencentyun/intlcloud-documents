@@ -223,7 +223,7 @@ COS allows you to add bucket policies by using the COS console, APIs, or SDKs. T
 </table>
 
 
-## More Examples of Bucket Policies
+## More Bucket Policy Examples
 
 - [Granting authorization through bucket policies](https://intl.cloud.tencent.com/document/product/436/12514#granting-authorization-through-bucket-policies)
 - [Granting Sub-Account Under One Root Account Permission to Manipulate Buckets Under Another Root Account](https://intl.cloud.tencent.com/document/product/436/32971)
