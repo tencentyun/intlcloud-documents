@@ -17,11 +17,11 @@ After you configure a log backup rule for a bucket, SCF will dump the CDN logs t
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. In the left sidebar, click **Application Integration**. Then, find **CDN Log Backup**.
-3. Click **Configure Backup Rules** to go to the configuration page.
+3. Click **Configure Backup Rule** to go to the configuration page.
 4. Click **Add Function**.
 >! If you haven’t activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
 >
-5. On the page that is displayed, configure the following items:
+5. In the pop-up window, configure the following items:
 ![](https://main.qcloudimg.com/raw/381a243bc2333c2a4dbd56f436826a33.png)
  - **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Associated Bucket**: a COS bucket that stores the CDN logs
