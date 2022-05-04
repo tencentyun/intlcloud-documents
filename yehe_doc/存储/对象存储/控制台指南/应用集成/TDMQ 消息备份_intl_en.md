@@ -4,18 +4,18 @@ COS introduces the [SCF](https://intl.cloud.tencent.com/document/product/583)-ba
 
 TDMQ, based on the open-source Apache [Pulsar](https://pulsar.apache.org/) project, is a Tencent Cloud−developed distributed messaging middleware at the financial level, featuring cross-region strong consistency, and high reliability and concurrence.
 
-If a backup rule has been configured for a bucket, SCF will dump messages generated in TDMQ to the COS bucket according to the specified time granularity.
+If a backup rule has been configured for a bucket, SCF will dump messages generated in TDMQ to a COS bucket according to the specified time granularity.
 
 ## Notes
 
-- If you have added a TDMQ message backcup rule to your bucket via the COS console, the function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete the function. Otherwise, your rule may not take effect.
+- If you have added a TDMQ message backup rule to your bucket via the COS console, the function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete the function. Otherwise, your rule may not take effect.
 - Currently, regions that support backing up TDMQ messages to COS include Guangzhou, Shanghai, Hong Kong (China), Beijing, Chengdu, Singapore, and Silicon Valley.
 
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. In the left sidebar, click **Application Integration**. Then, find **TDMQ Message Backup**.
-3. Click **Configure Backup Rules** to go to the configuration page.
+3. Click **Configure Backup Rule** to go to the configuration page.
 4. Click **Add Function**.
 >! If you haven’t activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
 >
