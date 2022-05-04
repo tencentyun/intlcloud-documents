@@ -2,11 +2,11 @@
    <tr>
       <th>Category</td>
       <th>Feature</td>
-      <th>Rule and Restriction</td>
+      <th>Specifications/Limit</td>
    </tr>
    <tr>
       <td rowspan="5">Basic image processing</td>
-      <td>Common restriction</td>
+      <td>Common limits</td>
       <td><li>Supported format: JPG, BMP, GIF, PNG, WebP, as well as HEIF decoding and processing <li>Supported size: The input image cannot exceed 20 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of an output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million. <li>Maximum number of frames (for GIF): 300</td>
    </tr>
    <tr>
