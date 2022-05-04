@@ -9,6 +9,6 @@ The batch copy feature is used to copy objects in the inventory, i.e., allowing 
 - You need to have permission to read objects from the source bucket and write objects into the destination bucket.
 - The total size of the objects cannot exceed 5 GB.
 - Verification through ETags and server-side encryption using custom keys are not supported.
-- If the destination bucket does not have versioning enabled and contains an object file with the same name as a file to be replicated, COS will overwrite the object file.
+- If the destination bucket does not have versioning enabled and contains an object with the same name as an object to be copied, COS will overwrite the object.
 - If an object in the inventory has multiple versions, only one version can be copied. If the version ID is not specified, the latest version will be copied.
 
