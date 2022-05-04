@@ -156,7 +156,7 @@ NamespaceStatus{name=myNamespace, path=/myNamespace, ttlTime=-1, ttlAction=DELET
 
 Information recorded in the metadata is as follows:
 
-| NO. | Parameter | Description |
+| No. | Parameter | Description |
 | ---- | ---------------------- | ----- |
 | 1    | name  | Name of the namespace |
 | 2    | path | Path of the namespace in GooseFS |
@@ -175,7 +175,6 @@ Information recorded in the metadata is as follows:
 | 15   | mode | POSIX permission of the namespace |
 | 16   | writePolicy | Write policy for the namespace |
 | 17   | readPolicy | Read policy for the namespace |
-
 
 ## Loading Table Data to GooseFS
 
