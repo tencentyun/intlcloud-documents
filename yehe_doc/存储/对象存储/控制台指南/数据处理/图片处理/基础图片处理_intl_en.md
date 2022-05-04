@@ -7,7 +7,7 @@ This document describes how to use COS Image Processing in the console, with the
 
 > !
 > - Image Processing is available only in public cloud regions.
-> - Image Processing is charged by CI. For detailed pricing, please see **Basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
+> - Image Processing is charged by CI. For detailed pricing, see **Basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 
 ## Adding URL parameters
