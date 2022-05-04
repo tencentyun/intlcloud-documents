@@ -18,16 +18,16 @@ Check whether the CDN cache has expired by referring to [How do I tell whether u
  - If not, purge CDN URLs or directories by referring to [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299).
 
 <span id="DisableCaching"></span>
-### Check whether your browser has disable cache
+### Check whether your browser has disabled cache
 
 >? The following uses Chrome as an example.
 >
 1. Open Chrome.
 2. Press F12 to open the Developer Tools.
-3. Select the **Network** tab to see whether **Disable cache** is checked.
+3. Select the **Network** tab and check whether **Disable cache** is selected.
 ![](https://main.qcloudimg.com/raw/453ea5fdaa0d69be6f13fd809a815d22.png)
  - If yes, [check whether the file is hijacked](#UseHTTPS).
- - If not, check **Disable cache** and restart your browser.
+ - If not, select **Disable cache** and restart your browser.
 
 <span id="UseHTTPS"></span>
 ### Check whether the file is hijacked
