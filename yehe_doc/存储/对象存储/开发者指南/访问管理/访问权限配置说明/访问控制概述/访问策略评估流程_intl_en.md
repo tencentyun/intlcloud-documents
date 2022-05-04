@@ -50,10 +50,10 @@ Policy context provides permission details recorded in your policies. Under the 
 - statement: enter the corresponding parameters.
 - effect: you must explicitly state whether the policy is to "allow" or "deny".
 -  action: you must specify the action to allow or deny. It can be one API operation or a set of API operations.
-- resource: you must specify the resource for which permission is granted. A resource is described in a six-segment format. You can set the resource as a specific file, e.g., `exampleobject.jpg` or a directory, e.g., `examplePrefix/\*. Unless needed, please do not grant any user the access to all of your resources using the `\*` wildcard.
+- resource: you must specify the resource for which permission is granted. A resource is described in a six-segment format. You can set the resource as a specific file, e.g., `exampleobject.jpg` or a directory, e.g., `examplePrefix/*`. Unless needed, please do not grant any user the access to all of your resources using the `*` wildcard.
 - condition: it describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address.
 
-You should write your policies following a certain policy syntax (See [Access Policy Language Overview]) (https://intl.cloud.tencent.com/document/product/436/18023) according to your business needs. For examples of writing user and bucket policies, see [Syntax Structure](https://intl.cloud.tencent.com/document/product/598/10604) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
+You should write your policies following a certain policy syntax (See [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023)) according to your business needs. For examples of writing user and bucket policies, see [Syntax Structure](https://intl.cloud.tencent.com/document/product/598/10604) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
 
 ## Example Access Policy Evaluation
 
@@ -103,5 +103,5 @@ Also, the root account adds the following bucket policy to a private read/write 
 
 This bucket policy denies any users the ability to download objects (`GetObject`). Therefore, during the access policy evaluation:
 
-1. If the sub-account requests to `GetObject` with a signature, a user policy will be matched based on the requester identity indicated by the request, which will then be granted upon successful access policy evaluation and verification;
+1. If the sub-account requests to `GetObject` with a signature, a user policy will be matched based on the requester identity indicated by the request, which will then be granted upon successful access policy evaluation and verification.
 2. If the sub-account requests to `GetObject` without a signature, it will be determined automatically as an anonymous requester, and **denied** access by the bucket policy.
