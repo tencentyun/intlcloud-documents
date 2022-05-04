@@ -10,6 +10,6 @@ When I access a file, "404 NoSuchKey" is returned, indicating the file cannot be
 
 ## Troubleshooting Procedure
 
-Check whether the URL and the case of the accessed file is correct.
+Check whether the URL and the case of the accessed file are correct.
  - If yes, [contact us](https://intl.cloud.tencent.com/support).
  - If not, modify the file URL. For the naming conventions of objects, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
