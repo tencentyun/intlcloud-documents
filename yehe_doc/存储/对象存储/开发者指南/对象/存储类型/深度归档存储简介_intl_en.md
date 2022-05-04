@@ -6,7 +6,7 @@ DEEP ARCHIVE is suitable for data that is accessed infrequently but needs to be 
 
 DEEP ARCHIVE is designed for 99.999999999% durability and 99.95% availability. You can also use the versioning and cross-region replication features provided by COS to further guarantee the data security.
 
-## How to Use
+## Directions
 
 1. Upload using the console.
  1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
