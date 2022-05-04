@@ -1,6 +1,6 @@
 Billable requests include **backend requests** generated due to a feature configured and **user requests**. The request fees are billed according to the number of requests sent to COS.
 
-- User requests: include requests to sent COS to upload, download, query, delete, and perform other operations via APIs, SDKs, or the console.
+- User requests: include requests sent to COS to upload, download, query, delete, and perform other operations via APIs, SDKs, or the console.
 - Backend requests: include requests to delete STANDARD copies (when the restored archived objects expired or after a lifecycle transition), read/write data for cross-bucket replication, and deliver inventory reports.
 
 Requests that incur fees include read/write requests, INTELLIGENT TIERING object monitoring, and requests that are sent to retrieve DEEP ARCHIVE data. The following fees will be incurred if you use the relevant services:
