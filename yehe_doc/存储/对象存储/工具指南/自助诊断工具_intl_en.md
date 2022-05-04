@@ -15,7 +15,7 @@ COS’s web-based diagnostic tool allows you to troubleshoot error requests. You
 
 The result includes the suggestions and the request information.
  - The suggestions help you quickly locate the COS API errors.
- - Request information includes information about the `RequestId` request.
+ - The request information is the information about the request corresponding to `RequestId`.
 
 4. Send your feedback on the suggestions.
 Click **Helpful** or **Not Helpful** below the suggestions so that we can further improve the tool.
