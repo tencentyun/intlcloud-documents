@@ -2,20 +2,18 @@
 
 Once a bucket is configured for encryption, all objects uploaded to the bucket thereafter will be encrypted by default with the specified encryption method.
 
-Currently supported encryption methods include:
+Currently, only SSE-COS encryption, that is, server-side encryption using COS-managed encryption keys, is supported.
 
-- SSE-COS encryption: server-side encryption using COS-managed encryption keys
-
-For more information on server-side encryption, please see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
+For more information on server-side encryption, see [Server-Side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
 
 ## Directions
 
-#### Via the COS Console
+#### Using the COS console
 
-You can set bucket encryption in the COS Console. For more information, please see [Setting Bucket Encryption](https://intl.cloud.tencent.com/document/product/436/33455) in Console Guide.
+Set bucket encryption in the COS console. For more information, see [Setting Bucket Encryption](https://intl.cloud.tencent.com/document/product/436/33455) in Console Guide.
 
-#### Via REST API
-You can configure bucket encryption using the following APIs:
+#### Using REST APIs
+Configure bucket encryption using the following APIs:
 
 - [PUT Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33459) 
 - [GET Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33460) 
@@ -41,5 +39,5 @@ For buckets requiring encryption, note the following:
 For the destination bucket that has a cross-region replication rule configured, if you configure encryption for it, note the following:
 
 - If the objects in the source bucket are not encrypted, the object copies in the destination bucket will be encrypted by default.
-- If the objects in the source bucket are encrypted, the object copies in the destination bucket will inherit the encryption from the source bucket, and the bucket encryption settings will not be honored.
+- If the objects in the source bucket are encrypted, the object copies in the destination bucket will inherit the encryption from the source bucket, and the bucket encryption settings will not be applied.
 
