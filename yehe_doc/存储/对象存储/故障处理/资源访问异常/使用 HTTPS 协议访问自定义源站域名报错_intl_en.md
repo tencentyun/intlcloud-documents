@@ -1,9 +1,9 @@
-## Issue Description
+## Symptom
 
 When I access a custom origin domain over HTTPS, an error is reported.
 
 
-## Common Causes
+## Possible Causes
 
 The certificate configuration is incorrect or the custom origin domain is not configured.
 
