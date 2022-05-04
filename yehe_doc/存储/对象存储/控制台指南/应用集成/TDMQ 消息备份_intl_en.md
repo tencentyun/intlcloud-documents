@@ -19,7 +19,7 @@ If a backup rule has been configured for a bucket, SCF will dump messages genera
 4. Click **Add Function**.
 >! If you haven’t activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
 >
-5. On the page that is displayed, configure the following items:
+5. In the pop-up window, configure the following items:
  - **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Associated Bucket**: a COS bucket that stores TDMQ messages
  - **Time Granularity**: an interval (5−15 minutes) to aggregate messages according to the message volume. Each message file can be up to 500 MB and contain up to 5,000 pieces of messages.
