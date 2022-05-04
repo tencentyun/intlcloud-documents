@@ -1,12 +1,12 @@
 ## Overview
 
-Redis Backup is a [SCF（Serverless Cloud Function）](https://intl.cloud.tencent.com/document/product/583)-based database backup feature provided by COS（Cloud Object Storage）. It allows you to save TencentDB for Redis data to COS so that data can be stored persistently and stay safe from data loss or corruption. After you set a backup function rule for a bucket, SCF will scan your Redis backups periodically and store them in the bucket.
+Redis Backup is a [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583)-based database backup feature provided by COS. It allows you to save TencentDB for Redis data to COS so that data can be stored persistently and stay safe from data loss or corruption. After you set a backup function rule for a bucket, SCF will scan your Redis backups periodically and store them in the bucket.
 
 ## Notes
 
-- Redis Backup functions back up only the backups of TencentDB for Redis. Therefore, if Redis Backup has not been enabled, the functions cannot be executed. For more information about TencentDB for Redis backup, please see [Backing Up TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/7071).
+- Redis Backup functions back up only the backups of TencentDB for Redis. Therefore, if Redis Backup has not been enabled, the functions cannot be executed. For more information about TencentDB for Redis backup, see [Backing Up TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/7071).
 - If you have added a Redis Backup function rule to your bucket via the COS console, the function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete the function. Otherwise, your rule may not take effect.
-- Regions where SCF is available support Redis Backup, including Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Toronto, and Silicon Valley, and more. For more supported regions, please see [SCF Documentation](https://intl.cloud.tencent.com/document/product/583).
+- Regions where SCF is available support Redis Backup, including Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Toronto, and Silicon Valley, and more. For more supported regions, see [SCF Documentation](https://intl.cloud.tencent.com/document/product/583).
 
 ## Directions
 
@@ -14,7 +14,7 @@ Redis Backup is a [SCF（Serverless Cloud Function）](https://intl.cloud.tencen
 2. In the left sidebar, click **Application Integration** to go to the application integration management page.
 3. In the **Redis Backup** area, click **Configure Backup Rule** to go to the rule configuration page.
 4. Click **Add Function**.
->! If you haven't activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
+>! If you haven't activated SCF, go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
 >
 5. In the pop-up window, configure the following information:
 
@@ -28,6 +28,6 @@ Redis Backup is a [SCF（Serverless Cloud Function）](https://intl.cloud.tencen
 6. Click **Confirm**.
 
 You can perform the following operations on the created function:
- - Click **View Log** to view the historical running status of Redis Backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
- - Click **Edit** to edit a Redis Backup rule.
- - Click **Delete** to delete an unwanted Redis Backup rule.
+ - Click **View Log** to view the historical running status of Redis backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
+ - Click **Edit** to edit a Redis backup rule.
+ - Click **Delete** to delete an unwanted Redis backup rule.
