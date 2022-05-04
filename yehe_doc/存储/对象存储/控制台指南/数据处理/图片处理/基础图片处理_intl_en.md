@@ -44,7 +44,7 @@ Image Style can help you present different processing parameters in the format o
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5/bucket).
 2. Locate the bucket that stores the image, and click the bucket name to enter the bucket management page.
 3. In the left menu bar, click **Image Processing** to enter the **Style Management** section.
-   **Separator**: Style separators are symbols that separate file names and processing styles, including `-, `_`, `/`, and `!`. Select `!` here and save.
+   **Separator**: Style separators are symbols that separate filenames and processing styles, including `-`, `_`, `/`, and `!`. Select `!` here and save.
 4. Click **Add Styles** and set fields as follows:
 	- **Style Name**: Enter your custom style name, such as “yunstyle”.
 > ! 
