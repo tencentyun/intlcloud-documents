@@ -50,6 +50,6 @@ COS sets a task failure threshold for each batch operation job to avoid frequent
 
 ## Job Report
 
-You can configure whether to output a job report when creating a job. If yes, COS will output a job report when the job succeeds, failure, or is canceled. You can view the information on all successful or failed tasks in the job report.
+You can configure whether to output a job report when creating a job. If yes, COS will output a job report when the job succeeds, fails, or is canceled. You can view the information on all successful or failed tasks in the job report.
 
 A job report contains information such as the configuration parameters and execution status of the specified task as well as name and version ID of the objects operated on, task status codes, and error description.
