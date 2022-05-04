@@ -8,8 +8,8 @@ For more information about INTELLIGENT TIERING and the supported regions, see [O
 
 >!
 >- Storage usage fees of INTELLIGENT TIERING are described as follows:
-  >- Storage fees for data in the frequent access tier are consistent with the list price of STANDARD.
-  >- Storage fees for data in the infrequent access tier are consistent with the list price of STANDARD_IA.
+>- Storage fees for data in the frequent access tier are consistent with the list price of STANDARD.
+>- Storage fees for data in the infrequent access tier are consistent with the list price of STANDARD_IA.
 >- The request fees of INTELLIGENT TIERING are consistent with that of STANDARD. The traffic fees, management feature fees, and supported regions are the same as those of other storage classes. INTELLIGENT TIERING does not involve data retrieval fees but involves object monitoring fees. For more information, see [Product Pricing](https://buy.cloud.tencent.com/price/cos).
 
 
