@@ -131,7 +131,7 @@ The pay-as-you-go prices of management features are as detailed below:
 
 Assume that on November 1, 2020, user A uploaded 10 GB of data to a bucket residing in the Guangzhou region in the STANDARD storage class and added tags for 100,000 objects on the same day, generating 100,000 requests. Apart from these operations, user A did not perform any other operations in November. As storage usage fees and request fees are calculated monthly, they will be billed on December 1, 2020. Tagging fees are calculated daily and will thus be billed on November 2, 2020. Therefore, the fees will be calculated as follows:
 
-- Pay-as-you-go:
+Pay-as-you-go:
  - STANDARD storage usage fees = 0.024 USD/GB/month x 10 GB = 0.24 USD
  - Object tagging fees = 0.01 USD/10,000 tags x 100,000 tags = 0.1 USD
  - STANDARD request fees = 0.002 USD/10,000 requests x 100,000 requests = 0.02 USD
