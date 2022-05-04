@@ -23,7 +23,7 @@ For more restrictions, see [Object Tagging Overview](https://intl.cloud.tencent.
 
 ## Adding Tags to an Uploaded Object
 
-If you did not add tags when uploading a new object, you can follow the steps below to add them subsequently.
+If you did not add tags when uploading a new object, follow the steps below to add them subsequently.
 
 1. Go to the **Details** page of the desired object by referring to [Viewing Object Information](https://intl.cloud.tencent.com/document/product/436/13326).
 2. On the **Details** page of the object, find **Object Tag** and click **Add Tags**.
