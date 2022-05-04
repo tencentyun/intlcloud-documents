@@ -45,7 +45,7 @@ hadoop distcp hdfs://host:port/source_dir cosn://examplebucket-appid/dest_dir
 
 ### Command line syntax
 
-Hadoop-cos-DistChecker is a MapReduce task-based program, and can be submitted just like a MapReduce task:
+Hadoop-cos-DistChecker is a MapReduce job-based program, and can be submitted just like a MapReduce job:
 
 ```plaintext
 hadoop jar hadoop-cos-distchecker-2.8.5-1.0-SNAPSHOT.jar com.qcloud.cos.hadoop.distchecker.App <Absolute path of the source file list> <Absolute path representation of the source directory> <Absolute path representation of the destination directory> [optional parameters]
@@ -114,9 +114,9 @@ Source file path in `check_list.txt`, absolute path of the source file, absolute
 
 There are 7 check results:
 
-- SUCCESS: the source and destination files exist and are the same.
-- MISMATCH: the source and destination files exist but are different.
-- UNCONFIRM: the system cannot determine whether the source and destination files are the same. This may be because the destination file already existed in COS before the CRC64 feature was launched, and thus its CRC64 checksum cannot be obtained.
+- SUCCESS: The source and destination files exist and are the same.
+- MISMATCH: The source and destination files exist but are different.
+- UNCONFIRM: The system cannot determine whether the source and destination files are the same. This may be because the destination file already existed in COS before the CRC64 feature was launched, and thus its CRC64 checksum cannot be obtained.
 - UNCHECKED: The check is not performed. This is mainly because the source file cannot be read, or its checksum cannot be obtained.
 - SOURCE_FILE_MISSING: The source file does not exist.
 - TARGET_FILE_MISSING: The destination file does not exist.
