@@ -5,8 +5,8 @@ INTELLIGENT TIERING is a COS storage class designed to reduce storage costs by a
 INTELLIGENT TIERING is ideal for data with unknown or changing access patterns. It offers the same low latency and high throughput as STANDARD while featuring lower costs. Users can change the storage class of objects with uncertain access patterns from STANDARD to INTELLIGENT TIERING as needed to reduce in-cloud storage costs.
 
 >!
-> - Currently, INTELLIGENT TIERING is only available for the Beijing, Shanghai, Guangzhou, and Chongqing, and Tokyo regions.
-> - INTELLIGENT TIERING is a standalone storage class that will incur storage usage fees. For detailed pricing, please see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
+> - Currently, INTELLIGENT TIERING is only available for the Beijing, Shanghai, Guangzhou, Chongqing, Tokyo, and Singapore regions.
+> - INTELLIGENT TIERING is a standalone storage class that will incur storage usage fees. For detailed pricing, see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
 > 
 
 ## Advantages
@@ -27,8 +27,8 @@ To store your object in the COS INTELLIGENT TIERING storage class, enable INTELL
 
 You can perform the following steps to store your object in the INTELLIGENT TIERING storage class:
 
-1. On the bucket configuration page, enable INTELLIGENT TIERING. For more information on the process of enabling INTELLIGENT TIERING, please see [Setting INTELLIGENT TIERING](https://intl.cloud.tencent.com/document/product/436/38306).
-2. Upload a file and specify the storage class during the upload. For more information about how to upload a file, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
+1. On the bucket configuration page, enable INTELLIGENT TIERING. For more information on the process of enabling INTELLIGENT TIERING, see [Setting INTELLIGENT TIERING](https://intl.cloud.tencent.com/document/product/436/38306).
+2. Upload a file and specify the storage class during the upload. For more information about how to upload a file, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 
 > !Once INTELLIGENT TIERING is enabled for a bucket, it cannot be disabled.
 
@@ -36,7 +36,7 @@ You can perform the following steps to store your object in the INTELLIGENT TIER
 
 You can perform the following steps to move in-cloud objects to the INTELLIGENT TIERING storage class:
 
-1. On the bucket configuration page, create a lifecycle rule. For detailed directions, please see [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605).
+1. On the bucket configuration page, create a lifecycle rule. For detailed directions, see [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605).
 2. Specify the application range and transition objects to INTELLIGENT TIERING.
 
 
@@ -45,7 +45,7 @@ You can perform the following steps to move in-cloud objects to the INTELLIGENT 
 
 You can use the following APIs to configure INTELLIGENT TIERING:
 
-1. Use RESTful APIs to enable INTELLIGENT TIERING for your bucket. For more information, please see the following API documents:
+1. Use RESTful APIs to enable INTELLIGENT TIERING for your bucket. For more information, see the following API documentation:
 	- [PUT Bucket IntelligentTiering](https://intl.cloud.tencent.com/document/product/436/38314)
 	- [GET Bucket IntelligentTiering](https://intl.cloud.tencent.com/document/product/436/38315)
 2. After enabling INTELLIGENT TIERING for the bucket, use the following APIs to store the object in the INTELLIGENT TIERING storage class:
@@ -62,7 +62,7 @@ You can use the following APIs to configure INTELLIGENT TIERING:
 
 ### Using SDKs
 
-Currently, all SDKs that COS releases support INTELLIGENT TIERING. To support INTELLIGENT TIERING, you can set `StorageClass` to `INTELLIGENT_TIERING` when uploading a file. For more information, please see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
+Currently, all SDKs that COS releases support INTELLIGENT TIERING. To support INTELLIGENT TIERING, you can set `StorageClass` to `INTELLIGENT_TIERING` when uploading a file. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
 
 
 
@@ -86,8 +86,8 @@ INTELLIGENT TIERING fees include **INTELLIGENT TIERING storage usage fees** and 
  - When objects are stored in the frequent access tier, STANDARD storage usage fees are charged.
  - When objects are stored in the infrequent access tier, STANDARD_IA storage usage fees are charged.
 >?
->- STANDARD and STANDARD_IA storage usage fees vary by region. For details about their pricing, please see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
->- Request fees and traffic fees are also incurred during object upload and download. For the billing examples, please see [Traffic Fee Billing Example](https://intl.cloud.tencent.com/document/product/436/33776) and [Request Fee Billing Example](https://intl.cloud.tencent.com/document/product/436/40100).
+>- STANDARD and STANDARD_IA storage usage fees vary by region. For details about their pricing, see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
+>- Request fees and traffic fees are also incurred during object upload and download. For the billing examples, see [Traffic Fee Billing Example](https://intl.cloud.tencent.com/document/product/436/33776) and [Request Fee Billing Example](https://intl.cloud.tencent.com/document/product/436/40100).
 >
 2. INTELLIGENT TIERING object monitoring fees are charged based on the number of objects stored. 0.025 USD is charged per 10,000 monitored objects per month.
 
@@ -115,9 +115,9 @@ You can store objects in INTELLIGENT TIERING as follows:
 - Incremental objects: You just need to specify the storage class as INTELLIGENT TIERING when uploading the objects.
 - Existing objects: You can modify the storage class to INTELLIGENT TIERING using the `COPY` API. You can also use the lifecycle feature to transition STANDARD or STANDARD_IA objects to INTELLIGENT TIERING.
 
->! INTELLIGENT TIERING has a minimum storage object size of 64 KB. Therefore, objects smaller than 64 KB will always be stored in STANDARD. For objects smaller than 64 KB, we recommend you upload them to the STANDARD, STANDARD_IA, ARCHIVE, or DEEP_ARCHIVE storage class as needed to reduce costs.
+>! INTELLIGENT TIERING has a minimum storage object size of 64 KB. Therefore, objects smaller than 64 KB will always be stored in STANDARD. For objects smaller than 64 KB, we recommend you upload them to the STANDARD, STANDARD_IA, ARCHIVE, or DEEP ARCHIVE storage class as needed to reduce costs.
 >
 
 ### How do I disable INTELLIGENT TIERING configuration?
 
-INTELLIGENT TIERING configuration **can't be disabled** once enabled. If you don't need to store your objects in INTELLIGENT TIERING, you just need to specify the storage class as a non-INTELLIGENT TIERING class such as STANDARD, STANDARD_IA, ARCHIVE, or DEEP_ARCHIVE when uploading the objects.
+INTELLIGENT TIERING configuration **can't be disabled** once enabled. If you don't need to store your objects in INTELLIGENT TIERING, you just need to specify the storage class as a non-INTELLIGENT TIERING class such as STANDARD, STANDARD_IA, ARCHIVE, or DEEP ARCHIVE when uploading the objects.
