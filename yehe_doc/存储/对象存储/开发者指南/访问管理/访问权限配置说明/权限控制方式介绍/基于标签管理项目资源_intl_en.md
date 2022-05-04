@@ -9,7 +9,7 @@ The legacy COS console enables permission management operations based on project
 COS uses the tag service to be compatible with the legacy project feature. In the tag service system, a project is a special tag with the tag key being `project`. You can still create a project and then create a bucket under it in the project console. COS will automatically double-write the project affiliation of a bucket during bucket creation to the tag service, so that the affiliation can be displayed in the console.
 
 >
-> -If you need to manage buckets in a categorized manner, we recommend you directly use tags instead of projects to implement tasks such as permission control and cost allocation. For more information on how to add tags in the console, see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928).
+> - If you need to manage buckets in a categorized manner, we recommend you directly use tags instead of projects to implement tasks such as permission control and cost allocation. For more information on how to add tags in the console, see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928).
 > - For more information on the tag service, see [Tag](https://intl.cloud.tencent.com/document/product/651).
 
 ## Granting a Sub-Account Access to a Project
