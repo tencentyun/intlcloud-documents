@@ -12,7 +12,7 @@ Keep the following restrictions in mind when you use object tagging:
 
 For more restrictions, see [Object Tagging Overview](https://intl.cloud.tencent.com/document/product/436/35665).
 
-## Adding Tags when Uploading an Object
+## Adding Tags When Uploading an Object
 
 1. Add tags when [uploading an object](https://intl.cloud.tencent.com/document/product/436/13321) as shown below:
    ![](https://main.qcloudimg.com/raw/f9ed9a4b46cf8299c9f5cc2e14415765.png)
