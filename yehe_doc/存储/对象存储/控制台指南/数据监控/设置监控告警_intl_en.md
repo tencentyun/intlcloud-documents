@@ -46,7 +46,7 @@ You can leverage the alarm policy feature of Cloud Monitor to set threshold-reac
     <td>
       <ul>
 			         <li>If you choose <b>Instance ID</b> in the drop-down list, select the bucket you want to add an alarm to. </li>
-               <li>If you choose <b>Instance Group</b> in the drop-down list, the alarm policy is bound to the selected instance group. If there is no instance group, you can click <b>Create Instance Group<b/> on the right to create a group for the bucket first. </li>
+               <li>If you choose <b>Instance Group</b> in the drop-down list, the alarm policy is bound to the selected instance group. If there is no instance group, you can click <b>Create Instance Group</b> on the right to create a group for the bucket first. </li>
 		            <li>If you choose <b>All Objects</b> in the drop-down list, the alarm policy is bound to all buckets the current account has permission on. </li>
            </ul>
         </td>
