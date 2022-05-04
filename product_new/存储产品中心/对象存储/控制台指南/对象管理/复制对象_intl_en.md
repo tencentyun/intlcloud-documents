@@ -2,8 +2,8 @@
 
 You can use the COS console to copy a single object or multiple objects in a bucket from the source path to the destination path.
 
->- Copy and paste is not supported for objects in the archive storage class.
->- For a sub-account to replicate an object, it should have permission for the PutObject, GetObject and GetObjectACL operations.
+>- Copy and paste is not supported for objects in the ARCHIVE storage class.
+>- A sub-account should be granted the `PutObject`, `GetObject`, and `GetObjectACL` permissions to copy objects.
 
 ## Directions
 
