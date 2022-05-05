@@ -7,15 +7,15 @@ hash 명령어는 로컬 파일의 해시 값을 계산하거나 COS(Cloud Objec
 ./coscli hash <object-name> [flag]
 ```
 
->? bucketAlias 관련 설명은 [설정](https://intl.cloud.tencent.com/document/product/436/43265)을 참고하십시오.
+>? 
+>- bucketAlias 관련 설명은 [다운로드 및 설치 설정](https://intl.cloud.tencent.com/document/product/436/43265)을 참고하십시오.
+>- 이 명령의 다른 범용 옵션(예시: 버킷 전환, 사용자 계정 전환 등)은 [범용 옵션](https://intl.cloud.tencent.com/document/product/436/46273) 문서를 참고하십시오.
 >
 
 hash 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 
 | flag 약칭 | flag 전체 명칭     | flag 용도                      |
 | --------- | ------------- | -------------------------------------- |
-| -h        | --help        | 도움말 정보 출력                         |
-| -c        | --config-path | 사용할 프로파일 경로 지정       |
 |     없음      | --type        | 해시 유형(md5 또는 crc64, 기본값: crc64) |
 
 ## 작업 예시

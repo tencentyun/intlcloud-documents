@@ -24,8 +24,8 @@ Hadoop-2.6.0 버전 이상, Hadoop-COS 플러그 인 5.9.3 버전 이상.
 
 #### COSDistCp jar 패키지 획득
 
-- Hadoop 2.x 사용자는 [cos-distcp-1.9-2.8.5.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5.jar)를 다운로드하여 jar 패키지의 [MD5 검사 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
-- Hadoop 3.x 사용자는 [cos-distcp-1.9-3.1.0.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0.jar)를 다운로드하여 jar 패키지의 [MD5 검사 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
+- Hadoop 2.x 사용자는 [cos-distcp-1.10-2.8.5.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5.jar)를 다운로드하여 jar 패키지의 [MD5 검증 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5-md5.tx)t에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
+- Hadoop 3.x 사용자는 [cos-distcp-1.10-3.1.0.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0.jar)를 다운로드하여 jar 패키지의 [MD5 검증 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
 
 #### 설치 설명
 
@@ -63,9 +63,9 @@ COSDistCp는 MapReduce 프레임워크를 기반으로 구현되며, 멀티 프�
 |        --copyFromManifest        | --previousManifest=LOCATION과 함께 사용 시, --previousManifest의 파일을 대상 파일 시스템으로 복사 가능<br>예: --copyFromManifest | false  |    No    |
 |       --storageClass=VALUE       | 객체 스토리지 유형 지정. STANDARD, STANDARD_IA, ARCHIVE, DEEP_ARCHIVE, INTELLIGENT_TIERING 중 선택할 수 있으며, 지원되는 스토리지 유형 및 소개에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오. |   없음   |    No    |
 |    --srcPrefixesFile=LOCATION    | 각 행마다 복사할 원본 디렉터리가 포함된 로컬 파일 지정</br>예: --srcPrefixesFile=file:///data/migrate-folders.txt |   없음   |    No    |
-|         --skipMode=MODE          | 파일 복사 전 원본 파일과 대상 파일의 일치 여부 검사, 일치할 경우 건너뜀. none(검사 안 함), length (길이), checksum(CRC 값), length-checksum(길이 + CRC 값)을 선택할 수 있습니다.</br>예: --skipMode=length |  length-checksum  |    No    |
-|         --checkMode=MODE         | 파일 복사 완료 시 원본 파일과 대상 파일의 일치 여부를 검사합니다. none(검사 안 함), length (길이), checksum(CRC 값), length-checksum(길이 + CRC 값)을 선택할 수 있습니다.<br/>예: --checkMode=length-checksum |  length-checksum  |    No    |
-|         --diffMode=MODE          | 원본과 대상의 변경 파일 리스트 가져오기 지정. length(길이), checksum(CRC 값), length-checksum(길이 + CRC 값)을 선택할 수 있습니다.</br>예: --diffMode=length-checksum |   없음   |    No    |
+|         --skipMode=MODE          | 파일 복사 전 원본 파일과 대상 파일의 일치 여부 검사, 일치할 경우 건너뜀. none(검사 안 함), length (길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)을 선택할 수 있습니다.</br>예: --skipMode=length |  length-checksum  |    No    |
+|         --checkMode=MODE         | 파일 복사 완료 시 원본 파일과 대상 파일의 일치 여부를 검사합니다. none(검사 안 함), length (길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)을 선택할 수 있습니다.<br/>예: --checkMode=length-checksum |  length-checksum  |    No    |
+|         --diffMode=MODE          | 원본과 대상의 변경 파일 리스트 가져오기 지정. length(길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)을 선택할 수 있습니다.</br>예: --diffMode=length-checksum |   없음   |    No    |
 |      --diffOutput=LOCATION       | diffMode의 HDFS 출력 디렉터리 지정. 해당 출력 디렉터리는 반드시 비어 있어야 합니다.<br/>예: --diffOutput=/diff-output |   없음   |    No    |
 |      --cosChecksumType=TYPE      | Hadoop-COS 플러그 인이 사용하는 CRC 알고리즘 지정. CRC32C와 CRC64 중 선택할 수 있습니다.<br/>예: --cosChecksumType=CRC32C | CRC32C |    No    |
 |      --preserveStatus=VALUE      | 원본 파일의 user, group, permission, xattr, timestamps 메타 정보를 대상 파일에 복사 여부 설정. ugpxt(user, group, permission, xattr, timestamps의 영어 이니셜)로 설정할 수 있습니다.<br/>예: --preserveStatus=ugpt |   없음   |    No    |
@@ -369,7 +369,7 @@ hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://exampl
 ```
 
 [Grafana Dashboard](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/COSDistcp-Grafana-Dashboard.json) 예시를 다운로드하여 가져옵니다. Grafana는 다음과 같이 표시됩니다.
-![COSDistcp-Grafana](https://main.qcloudimg.com/raw/a5eb4c66c52b3fb09cafc5d4196e9d22.png)
+![COSDistcp-Grafana](https://qcloudimg.tencent-cloud.cn/raw/004d8f1a4fc79011c26f6667f085a3b7.png)
 
 
 ### 파일 복사 실패 시 알람

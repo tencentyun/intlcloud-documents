@@ -6,13 +6,13 @@ COS 스토리지 클라우드 서비스 로그를 사용하면 다음 문제를 
 
 - **영구 스토리지**: COS는 안정된 영구 스토리지 서비스를 제공하므로 낮은 비용으로 로그를 COS로 저장해 영속화 저장이 가능합니다. 업무 필요에 의해 로그를 기반으로 분석 또는 의사 결정 시, COS를 통해 언제 어디서나 임의 시간대의 로그를 얻을 수 있습니다.
 - **데이터 인덱스**: COS는 Select 기능을 제공하므로 해당 기능으로 COS에 저장된 로그에 대한 간단한 인덱스 및 추출이 가능합니다. 로그의 필드를 결합하면 필요한 정보를 인덱스하고 데이터 다운로드 트래픽을 줄일 수 있습니다.
-
+- **데이터 분석**: Sparkling 제품을 사용하여 COS에 저장된 로그를 분석할 수 있으며, 하나 이상의 로그 파일을 선택하고 Sparkling을 사용하여 로그를 분석하고 분석 결과를 기반으로 의사 결정을 내릴 수 있습니다.
 
 ## 로그 전송 방식
 
 두 가지 방식으로 Tencent Cloud 서비스의 로그를 COS에 저장할 수 있습니다.
 
-- 클라우드 서비스 자체 로그 전송 기능 사용: 예를 들어, 객체 스토리지 COS, Cloud Load Balancer CLB, CA 등 제품은 로그를 COS로 직접 전송할 수 있습니다.
+- 클라우드 서비스 자체 로그 전송 기능 사용: 예를 들어 COS, CA 등 제품은 로그를 COS로 직접 전송할 수 있습니다.
 - 로그 서비스 CLS의 전송 기능 사용: CLS로 전송된 클라우드 서비스 로그는 CLS를 통해 COS로 전송돼 영구 저장됩니다.
 
 현재 Tencent Cloud 서비스의 이 두 가지 방식에 대한 지원 상황은 다음과 같습니다.
@@ -25,15 +25,15 @@ COS 스토리지 클라우드 서비스 로그를 사용하면 다음 문제를 
 | API Gateway | 미지원                    | 지원                     |
 | SCF      | 미지원                     | 지원                     |
 | TKE        | 미지원                     | 지원                     |
-| LVB          | 미지원                     | 지원                     |
+| CSS          | 미지원                     | 지원                     |
 | TCB          | 미지원                     | 지원(단, CLS를 통한 COS로의 전송은 지원하지 않음)|
-| COS        | 지원                     |  화이트리스트 활성화 신청을 지원합니다. [기술 지원 WeChat Group](https://intl.cloud.tencent.com/contact-sales)에 가입한 후 문의하기를 통해 화이트리스트를 활성화하십시오.       |
+| COS        | 지원                     |  얼로우리스트 활성화 신청을 지원합니다. [고객센터](https://intl.cloud.tencent.com/contact-sales)를 통해 얼로우리스트 활성화       |
 
 ### COS로 직접 로그 전송하기
 
 다음 Tencent Cloud 서비스는 COS로 직접 로그를 전송하는 기능을 갖고 있습니다. 해당 제품 문서 가이드에 따라 로그 전송 규칙을 설정하여 로그를 COS로 전송할 수 있습니다.
 
-| 클라우드 서비스 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | 로그 전송 문서                                                | 로그 전송 간격&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | 로그 전송 경로                            |
+| 클라우드 서비스 이름     | 로그 전달 문서                                                 | 로그 전달 간격        | 로그 전달 경로                                                 |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 |CA |[알아보기](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15분 |  cloudaudit/customprefix/timestamp|
 | CKafka | [알아보기](https://intl.cloud.tencent.com/document/product/597) | 5분-60분<br>전송 간격 지정 가능 | instance id/topic id/timestamp                           |
@@ -53,9 +53,9 @@ COS 스토리지 클라우드 서비스 로그를 사용하면 다음 문제를 
 
 CLS에서 COS로의 전송은 다음 세 가지 방식으로 지원됩니다.
 
-- 세퍼레이터 포맷 전송: 데이터를 세퍼레이터 포맷에 따라 COS로 전송합니다. 자세한 내용은 [세퍼레이터 포맷 전송](https://intl.cloud.tencent.com/document/product/614/31582)을 참고하십시오.
-- JSON 포맷 전송: 데이터를 JSON 포맷에 따라 COS로 전송합니다. 자세한 내용은 [JSON 포맷 전송](https://intl.cloud.tencent.com/document/product/614/31583)을 참고하십시오.
-- 원문 포맷 전송: 데이터를 원문 포맷에 따라 전송합니다. 단일 행 텍스트, 다중 행 텍스트 전송을 지원하며, 부분적으로 CSV 포맷 전송을 지원합니다. 자세한 내용은 [원문 포맷 전송](https://intl.cloud.tencent.com/document/product/614/31584)을 참고하십시오.
+- 세퍼레이터 포맷 전송: 데이터를 세퍼레이터 포맷에 따라 COS로 전송합니다. 자세한 내용은 [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582)을 참고하십시오.
+- JSON 포맷 전송: 데이터를 JSON 포맷에 따라 COS로 전송합니다. 자세한 내용은 [JSON Shipping](https://intl.cloud.tencent.com/document/product/614/31583)을 참고하십시오.
+- 원문 포맷 전송: 데이터를 원문 포맷에 따라 전송합니다. 단일 행 텍스트, 다중 행 텍스트 전송을 지원하며, 부분적으로 CSV 포맷 전송을 지원합니다. 자세한 내용은 [Source Format Shipping](https://intl.cloud.tencent.com/document/product/614/31584)을 참고하십시오.
 
 CLS를 통해 COS로 로그를 전송하려면 다음 작업을 수행해야 합니다.
 

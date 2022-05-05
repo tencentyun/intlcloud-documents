@@ -10,11 +10,12 @@ mb 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 
 | flag 약칭 | flag 전체 명칭     | flag 용도                |
 | --------- | ------------- | ------------------------ |
-| -h        | --help        | 도움말 정보 출력             |
-| -c        | --config-path | 사용할 프로파일 경로 지정 |
+| 없음 |  BucketName-APPID |   examplebucket-1250000000과 같은 버킷 이름 사용자 지정  |
 | -r        | --region      | 버킷 리전               |
 
->! mb 명령어로 생성한 버킷을 COSCLI에서 작업하려면 mb 명령어 성공 후 프로파일에서 config add 명령어를 사용하여 버킷 설정을 업데이트 해야합니다.
+>! 
+>- COSCLI에서 mb 명령을 사용하여 버킷을 생성하려면 mb 명령을 성공적으로 실행한 후 config add 명령을 실행하여 구성 파일의 버킷 구성을 업데이트해야 합니다.
+>- 이 명령의 다른 일반 옵션(예시: 버킷 및 사용자 계정 전환)은 [Common Options](https://intl.cloud.tencent.com/document/product/436/46273)를 참고하십시오.
 >
 
 ## 작업 예시
