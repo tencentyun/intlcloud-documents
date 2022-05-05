@@ -2,7 +2,7 @@
 
 The process of using GooseFSRuntime is simple. It takes only about 10 minutes to deploy the required GooseFSRuntime environment after you prepare the basic Kubernetes and Cloud Object Storage (COS) environment. The following describes the process.
 
-## Prerequisite
+## Prerequisites
 
 - You have installed Git.
 - You have installed the Kubernetes cluster (version 1.14 or later) and it supports the Container Storage Interface (CSI). To get the best practice, you can deploy it by referring to [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457/30635).
@@ -214,7 +214,7 @@ user    0m0.001s
 sys      0m0.046s
 ```
 
-### 7. Cleaning up the environment
+### 7. Clean up the environment
 
 - Delete the application and the application container.
 - Delete GooseFSRuntime.
