@@ -30,8 +30,8 @@ If the static website feature is enabled, you will be provided a static website 
 
 #### Access nodes
 
-- Access node: When a bucket is created, COS will assign an XML access node to the bucket in the format of `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com`, which can be accessed using RESTful APIs. You can access the node and refer to the [API Documentation](https://intl.cloud.tencent.com/document/product/436/7751) to configure the bucket, or upload/download objects.
-- Static website node: You can enable the static website feature on the **Basic Configurations** page of the bucket in the console. After this, you will be provided an access node formatted as `&lt;BucketName-APPID>.cos-website.&lt;Region>.myqcloud.com`. You can configure special index pages (IndexPage), error pages (ErrorPage), and redirects for your static website, which allows only object downloads. Users can obtain the content using the static website domain name.
+- Access node: When a bucket is created, COS will assign an XML access node to the bucket in the format of `<BucketName-APPID>.cos.<Region>.myqcloud.com`, which can be accessed using RESTful APIs. You can access the node and refer to the [API Documentation](https://intl.cloud.tencent.com/document/product/436/7751) to configure the bucket, or upload/download objects.
+- Static website node: You can enable the static website feature on the **Basic Configurations** page of the bucket in the console. After this, you will be provided an access node formatted as `<BucketName-APPID>.cos-website.<Region>.myqcloud.com`. You can configure special index pages (IndexPage), error pages (ErrorPage), and redirects for your static website, which allows only object downloads. Users can obtain the content using the static website domain name.
 
 #### Access permissions
 
@@ -42,7 +42,7 @@ If the static website feature is enabled, you will be provided a static website 
 
 You can accelerate access to COS by managing the following two domain names:
 
-- Default CDN acceleration domain name: a default CDN acceleration domain name (e.g., `&lt;BucketName-APPID>.file.mycloud.com`) provided by COS, which can be enabled or disabled as needed
+- Default CDN acceleration domain name: a default CDN acceleration domain name (e.g., `<BucketName-APPID>.file.mycloud.com`) provided by COS, which can be enabled or disabled as needed
 - Custom CDN acceleration domain name: You can use a custom domain name that has obtained an ICP filing number and use a COS bucket as the origin. This allows you to accelerate access to objects in the bucket using a custom domain name.
 
 >? The default CDN acceleration domain name and custom CDN acceleration domain name are collectively called CDN acceleration domains.
