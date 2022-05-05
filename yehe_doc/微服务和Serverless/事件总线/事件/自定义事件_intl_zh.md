@@ -1,0 +1,10 @@
+
+##  自定义事件简介
+由您自己的应用程序产生的事件为自定义事件。对于自定义事件，您有两种途径进行投递：
+- **使用事件连接器**：连接器用于从消息队列、网关等事件源中主动拉取事件，并将事件以**标准化的格式**投递到自定义事件集中。通过在事件集中绑定一个或多个连接器，即可以实现自动拉取消息队列、网关的事件内容，并推送至指定的自定义事件集。具体请参见 [连接器概述](https://intl.cloud.tencent.com/document/product/1108/42277)。
+
+### 操作步骤
+创建自定义事件投递链路的步骤如下：
+1. [创建自定义事件集](https://intl.cloud.tencent.com/document/product/1108/42285)
+2. [创建事件连接器](https://intl.cloud.tencent.com/document/product/1108/42277)
+3. [创建事件规则](https://intl.cloud.tencent.com/document/product/1108/42289)
