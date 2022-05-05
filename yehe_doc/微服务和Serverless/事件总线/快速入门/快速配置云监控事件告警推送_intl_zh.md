@@ -8,15 +8,16 @@
 ## 告警配置步骤
 ### 1. 查看事件列表
 
-1. 登录 [事件总线控制台](https://console.cloud.tencent.com/eb)，进入**云服务默认事件集**，查看目前已经接入的所有云服务事件。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/e7e0b0318ff797fc341564324619beb7.png)
+1. 登录 [事件总线控制台](https://console.cloud.tencent.com/eb)，进入**云服务事件集default**，查看目前已经接入云服务事件集的云服务事件。
+![](https://qcloudimg.tencent-cloud.cn/raw/f3390702fc368a8c2af977508cb3e369.png)
+2. 在**事件连接器**中可以查看目前所有支持告警事件推送的云服务：
+![](https://qcloudimg.tencent-cloud.cn/raw/0a30362ed9089fd82a08b760fc3cf2c4.png)
+单击详情后可以看到目前支持的所有告警事件类型：
+![](https://qcloudimg.tencent-cloud.cn/raw/21ecfd42593c59c07548b20ce96eba86.png)
 
-2. 详情如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/598e6f2078aca989531ceeaa6f71debf.png)
 
-
-
-投递标准事件格式如下：
+#### 示例
+以云服务器产生的 ping 不可达事件为例，投递到云服务事件集的标准事件格式如下：
 ```json
 {
     "specversion":"1.0",
@@ -53,11 +54,11 @@
 
 | 字段            | 描述                                                         | 字符串类型 |
 | --------------- | ------------------------------------------------------------ | ---------- |
-| specversion     | 事件结构体版本（cloudevents 遵循版本，目前为1.0.2）。 | String     |
+| specversion     | 事件结构体版本（cloudevents 遵循版本，目前仅支持1.0）。        | String     |
 | id              | PUT Event 返回的 ID 信息。                                   | String     |
 | type            | PUT Event 输入的事件类型。云服务告警事件标准格式为 `${ProductName}:ErrorEvent:${EventType}`，用 “:” 分割类型字段。 | String     |
 | source          | 事件来源（云服务事件必传此参数，为 subjuect 的缩写 ）。云服务默认为 `xxx.cloud.tencent`。 | String     |
-| subject        | 事件来源详情可自定义，云服务默认使用 QCS 描述，例如 `qcs::dts:ap-guangzhou:appid/uin:xxx。`。 | String     |
+| subject        | 事件来源详情可自定义，云服务默认使用 QCS 描述，例如 `qcs::dts:ap-guangzhou:appid/uin:xxx`。 | String     |
 | timer           | 发生事件的时间，0时区毫秒时间戳，例如1615430559146。         | Timestamp  |
 | datacontenttype | 数据类型申明。                                               | String     |
 | region          | 地域信息。                                                   | String     |
@@ -69,29 +70,29 @@
 ### 2. 配置告警事件规则
 
 1. 进入**事件规则**页面，选择对应的事件集后，在事件集下创建事件规则，完成需要配置告警推送的事件筛选。
-![](https://qcloudimg.tencent-cloud.cn/raw/58a467fe00eee70c0712b07087ea9f93.png)
-2. 以 CVM 告警配置为例，您可以选择指定的事件告警类型，也可以选择全部告警事件，详细事件匹配规则请参见 [管理事件规则](https://intl.cloud.tencent.com/document/product/1108/42288)。
-![](https://qcloudimg.tencent-cloud.cn/raw/709f9b8771ac45a71a82a0b5301f7750.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bcfda9e8a96d2df23d710f9a074e3dbc.png)
+2. 以 CVM 告警配置为例，您可以选择指定的事件告警类型，也可以选择全部告警事件，详细事件匹配规则请参见 [事件模式](https://intl.cloud.tencent.com/document/product/1108/42288)。
+![](https://qcloudimg.tencent-cloud.cn/raw/ada0f0a3bbc847d780cf70581e7f6da9.png)
 
 
 
 ### 3. 配置推送目标
 
-事件告警场景下，建议同时配置 **CLS 日志**投递与**消息推送**两个投递目标。
-- **CLS 日志投递**：将您的告警事件投递至默认的事件总线日志集，日志自动为您保留30天，方便您对已投递的告警事件随时进行追溯。
-![](https://qcloudimg.tencent-cloud.cn/raw/2c81b965a28d8e14ce725e7f3f510bdf.png)
+事件告警场景下，您可以通过配置**消息推送**投递目标完成告警接收。
+
 - **消息推送**：通过配置消息推送，将您的告警事件推送至指定的消息接收渠道，完成用户及时触达。
-![](https://qcloudimg.tencent-cloud.cn/raw/fd02099eca15edf5accfcc06796a8c33.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5d6e8323c1022cbcc64efc50fe095553.png)
 
 配置完成后，即可在腾讯云事件总线控制台，完成告警事件的查看与推送配置。
 
 <span id="1"></span>
-## 存量用户一键迁移
-对于事件中心的存量用户，事件总线提供了**一键迁移**的能力，选择一键迁移后，后台服务将自动为您进行以下操作：
+## 云监控事件中心存量用户一键迁移
 
-1. 为默认云服务事件集创建 CLS 日志集 Target，完成事件投递。
-2. 事件中心存量告警策略自动转化为云服务事件集的事件规则（一条策略对应一个规则）。
-3. 为事件中心每个存量通知模板创建对应消息推送 Target，绑定在默认云服务事件集上，完成告警推送。
+对于事件中心的存量用户，事件总线提供了**一键迁移**的能力，具体请参见 [一键迁移指引](https://intl.cloud.tencent.com/document/product/1108/45205) 。选择一键迁移后，后台服务将自动为您进行以下操作：
+
+1. 事件中心存量告警策略自动转化为云服务事件集的事件规则（一条策略对应一个规则）。
+2. 为事件中心每个存量通知模板创建对应消息推送 Target，绑定在默认云服务事件集上，完成告警推送。
+
 >?
->- 事件总线为您创建的默认日志集将享有每月1GB的日志存储免费额度。
+>- 事件总线为您创建的默认日志集将享有每月1GB的日志存储免费额度，您可以同时配置 CLS Target 来事件告警事件的记录；
 >- 一键迁移可以重复操作，每次将以事件中心存量配置为基准，**全覆盖**更新您在事件总线产品页面的事件规则与投递目标。

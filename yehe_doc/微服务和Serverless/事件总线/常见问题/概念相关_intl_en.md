@@ -17,5 +17,5 @@ Tencent Cloud EventBridge is a secure, stable, and standardized serverless event
 
 ### How EventBridge is billed?
 
-EventBridge is currently in beta test, during which you can use it free of charge.
-
+1. EventBridge is currently in beta test, during which you can use it free of charge.
+2. The free beta test of Tencent Cloud EventBridge will end on May 9, 2022 00:00 (UTC+8), and billing will officially start then. For billing details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1108/43288).

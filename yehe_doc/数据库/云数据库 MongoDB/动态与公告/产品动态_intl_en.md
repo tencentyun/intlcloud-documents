@@ -1,3 +1,25 @@
+## March 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Added the API for creating pay-as-you-go instances</td>
+<td>Pay-as-you-go instances can be purchased, modified, and renewed through APIs.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/34704" target="">CreateDBInstanceHour</td></tr>
+</table>
+
+## February 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Optimized interactions in the console</td>
+<td>Interactions for instance details and slow log query in the console are optimized.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/44179" target="">Viewing Instance Details</td></tr>
+<tr>
+<td>Optimized the database audit performance</td>
+<td>Tens of thousands of audit logs can be generated per second.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/44551" target="">Database Audit</td></tr>
+</table>
+
 ## January 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
@@ -45,7 +67,7 @@
 <td>Supported database audit</td>
 <td>You can activate the database audit service in the console to use complete data security diagnosis and management features.</td>
 <td>2021-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/240/44551" target="_blank">Database Audit</a></td></tr>
+<td>-</td></tr>
 </tbody></table>
 
 ## May 2021

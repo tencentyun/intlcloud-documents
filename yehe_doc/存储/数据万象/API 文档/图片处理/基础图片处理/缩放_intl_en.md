@@ -71,7 +71,7 @@ Operation name: thumbnail
 | /thumbnail/&lt;Width>x&lt;Height>! | The output width and height with the aspect ratio of the input image ignored. Note that the output image may be distorted. |
 | /thumbnail/&lt;Area>@ | The maximum number of pixels of the output image |
 | /pad/ | Whether to pad the blank area with the color specified by `color` after the input image is scaled as large as possible in a rectangle with the specified width and height, with the image centered. Valid values: `0` (not to pad), `1` (to pad) |
-| /color/ | Padding color. The value must be in hexadecimal format, for example, `#FF0000`. For format conversion, please see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default value: `#3D3D3D` (gray)|
+| /color/ | Padding color. The value must be in hexadecimal format, for example, `#FF0000`. For format conversion, please see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default value: `#3D3D3D` (white)|
 | /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
 
 ## Examples

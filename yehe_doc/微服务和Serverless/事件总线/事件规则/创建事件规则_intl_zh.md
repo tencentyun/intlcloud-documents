@@ -1,13 +1,23 @@
 事件规则负责事件总线的最基础资源单位，可以通过配置事件集来完成对事件源的接收。本文为您介绍如何在事件总线控制台创建事件规则。
 
+## 前提条件
+
+已 [创建事件集](https://intl.cloud.tencent.com/document/product/1108/42285)。
 
 
 ## 操作步骤
 
-1. 登录事件总线控制台，选择左侧导航栏中的 **[事件规则](https://console.cloud.tencent.com/eb/rule)**。
+1. 登录事件总线控制台，选择左侧导航栏中的 [事件规则](https://console.cloud.tencent.com/eb/rule)。
 2. 在“事件规则”列表页面上方，选择期望创建事件规则的事件集归属及所在的地域。
-3. 单击**新建事件规则**，根据页面提示填写相关信息
-	 - **事件匹配**：何种事件可以被匹配触发，可以配置自定义事件匹配模式，或者选择已有的模版规则。
-    了解更多事件模式请参见 [事件模式](https://intl.cloud.tencent.com/document/product/1108/42288) 文档。
-    - **事件目标**：事件最终接收触发的目标。
-4. 单击**确定**即可创建事件规则。
+![](https://qcloudimg.tencent-cloud.cn/raw/dc0efaaf6d72296cdc7a436284a12cd7.png)
+3. 单击**新建事件规则**，根据页面提示填写相关信息，如下图所示：
+   ![](https://qcloudimg.tencent-cloud.cn/raw/3147bcc1bd82bb297df398c47cb26919.png)
+    - **事件匹配**：用于事件的过滤筛选。在此处定义何种事件可以被匹配触发，可以配置自定义事件匹配模式，或者选择已有的模板规则。如上图中，所有来自 TDMQ 消息队列的事件都可以通过匹配。更多事件模式编写规则，请参见 [事件模式](https://intl.cloud.tencent.com/document/product/1108/42288) 文档。
+    - **事件目标**：事件最终触发的目标。
+4. 单击展开**测试事件匹配**后，可以对已定义的事件模式进行测试。**发送模板**中预置了当前支持的所有官方云服务事件模板与连接器生成的事件模板。
+![](https://qcloudimg.tencent-cloud.cn/raw/38a8e377eb6a9c1bcfb81294766549dd.png)
+5. 单击**下一步**后选择该条规则绑定的事件目标，一条规则可以有多个事件目标。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/0c5cadf332064f4b21802891093637a0.png)
+    事件总线当前支持以下事件目标，具体配置方法请参见：
+   - [SCF 云函数](https://intl.cloud.tencent.com/document/product/1108/46254)
+   - [Ckafka](https://intl.cloud.tencent.com/document/product/1108/46249)

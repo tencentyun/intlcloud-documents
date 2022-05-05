@@ -8,7 +8,7 @@ APIGW 连接器实现方式为 **Push 模型**，APIGW 会监控请求并生成�
 
 ## 前提条件
 
-已 [创建事件集](https://intl.cloud.tencent.com/document/product/1108/42285)。
+已 [创建事件集](https://intl.cloud.tencent.com/document/product/1108/42281)。
 
 
 
@@ -16,24 +16,39 @@ APIGW 连接器实现方式为 **Push 模型**，APIGW 会监控请求并生成�
 
 
 1. 登录 [事件总线控制台](https://console.cloud.tencent.com/eb/)，选择左侧导航栏中的**事件集**。
-2. 在“事件集”列表，选择期望配置 TDMQ 连接器的事件集。
-3. 在“事件集详情”页事件连接器配置项中单击**添加**
-4. 根据页面提示填写相关信息
-	 其中**连接器类型**选择**API网关（APIGW）**连接器类型。
+
+2. 在“事件集”列表，选择期望配置 APIGW 连接器的事件集。
+
+3. 在“事件集详情”页事件连接器配置项中单击**添加**，如下图所示：
+  ![](https://qcloudimg.tencent-cloud.cn/raw/dbf128f933587c1f4fde88b107108f7b.png)
+
+4. 根据页面提示填写相关信息，如下图所示：
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/50e52f1bb53d0997d4d4dec08c2df216.png)
+   其中**连接器类型**选择**API网关（APIGW)**连接器类型。
+   
 5. 单击**确定**完成创建。
+
 6. 选择左侧导航栏中的**事件规则**。
-7. 在“事件规则”顶部选框，选择与之前创建一致的事件集信息，并单击**新建事件规则**
-8. 根据页面提示填写相关信息
-	 其中**云服务类型**选择**API网关（APIGW）**，并配置触发目标端。
+
+7. 在“事件规则”顶部选框，选择与之前创建一致的事件集信息，并单击**新建事件规则**，如下图所示：
+   ![](https://qcloudimg.tencent-cloud.cn/raw/582e6601e33ad24a1cbb453c4e40818f.png)
+   
+8. 根据页面提示填写相关信息，如下图所示
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/98764ff7d741dbddb08811b14eec0db5.png)
+   
+   <img src="https://qcloudimg.tencent-cloud.cn/raw/2383efd4c9448547e5a81db91311a1b7.png" style="zoom:150%;" />
+   
+9. 其中**云服务类型**选择**API网关（APIGW)**，并配置触发目标端。
+
 9. 单击**确定**即可创建 APIGW 连接器。
 
 
 
 #### APIGW 连接器数据结构说明
 
-```plaintext
+```json
 {
-    "specversion": "1.0.2",
+    "specversion": "1.0",
     "id": "13a3f42d-7258-4ada-da6d-023a333b4662",
     "type": "connector:apigw",
     "source": "apigw.cloud.tencent",
