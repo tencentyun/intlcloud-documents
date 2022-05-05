@@ -36,7 +36,7 @@ CDH(Cloudera's Distribution, including Apache Hadoop)는 업계에서 각광받�
 
 1. CDH 관리 페이지에 로그인합니다.
 2. 시스템 메인 페이지에서 **설정**>**서비스 범위**>**고급**을 선택하여 코드 스니펫 고급 설정 페이지로 이동하면 다음 그림과 같이 표시됩니다.
-![](https://main.qcloudimg.com/raw/95a05ec2090a84861c99222c9d26d4df.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f0913ec665e54a6619a3acc052e8f0c3.png)
 3. `Cluster-wide Advanced Configuration Snippet(Safety Valve) for core-site.xml` 코드 창에 COS 빅 데이터 서비스 설정을 입력합니다.
 ```
 <property>
