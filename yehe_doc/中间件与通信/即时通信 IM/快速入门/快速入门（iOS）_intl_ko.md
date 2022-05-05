@@ -19,7 +19,7 @@
 [](id:step2)
 ### 2단계: 키 정보 가져오기
 1. 대상 애플리케이션 카드를 클릭하여 애플리케이션의 기본 구성 페이지로 이동합니다.
-![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
 2. **기본 정보** 섹션에서 **키 표시**를 클릭하고 키 정보를 복사 및 저장합니다.
 >!키 정보가 유출되지 않도록 잘 보관하십시오.
 
@@ -34,7 +34,7 @@
 3. `GenerateTestUserSig` 파일에서 관련 매개변수를 설정합니다.
  - SDKAPPID: [1단계](#step1)에서 획득한 실제 애플리케이션 SDKAppID로 설정합니다.
  - SECRETKEY: [2단계](#step2)에서 획득한 실제 키 정보로 설정합니다.
- ![](https://qcloudimg.tencent-cloud.cn/raw/addadc8b9b34c83794ad59034e3a7c23.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/57ba967d9f8222bf89b748f32994ce9c.png)
 
 
 >!본문의 UserSig 획득 방법은 클라이언트 코드에서 SECRETKEY를 설정하는 것입니다. 해당 방법 중 SECRETKEY는 디컴파일로 크래킹되기 쉬우므로, 키가 유출되면 해커가 사용자의 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **해당 방법은 로컬 Demo 실행 및 기능 디버깅에만 적합합니다**.
@@ -77,6 +77,7 @@ pod install
  - iOS: iOS/TUIKitDemo 폴더로 이동하여 `TUIKitDemo.xcworkspace`를 열어 컴파일 및 실행합니다.
  - Mac: Mac/TUIKitDemo 폴더로 이동하여 `TUIKitDemo.xcworkspace`를 열어 컴파일 및 실행합니다.
 
+>!Demo는 기본적으로 음성/영상 통화 기능과 통합되어 있습니다. 그러나 음성/영상 통화 기능이 의존하는 TRTC SDK는 현재 시뮬레이터를 지원하지 않습니다. Demo 실행 또는 디버깅을 위해 실제 장치를 사용하십시오.
 
 ## 고급 기능
 - [UI 인터페이스 라이브러리](https://intl.cloud.tencent.com/document/product/1047/34547)

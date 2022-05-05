@@ -1,3 +1,33 @@
+## IM Flutter SDK 3.9.1 @2022.3.24
+- 기본 라이브러리를 v6.1.2155로 업그레이드
+
+## IM Flutter SDK 3.9.0 @2022.3.22
+- 수정된 grouplistener
+
+## IM Flutter SDK 3.8.9 @2022.3.18
+- 등록 결과 듣기 문제 수정
+
+## IM Flutter SDK 3.8.4 @2022.3.14
+- 업데이트된 interface
+
+## IM Flutter SDK 3.8.3 @2022.3.1
+- 환경에 따라 token 인코딩 형식 전환
+
+## IM Flutter SDK 3.8.2 @2022.2.21
+- 업데이트된 그룹 구성원 매개변수 제약 조건
+
+## IM Flutter SDK 3.8.0 @2022.2.17
+- 기본 interface 종속성 업그레이드
+
+## IM Flutter SDK 3.7.8 @2022.2.15
+- 강제 언래핑으로 인한 예외 수정
+
+## IM Flutter SDK 3.7.7 @2022.2.10
+- Swift 코드 warning 수정
+- Swift의 강제 해제 코드 재작성
+- sendMessage API가 반환한 message 인스턴스에 id 필드 추가
+
+
 ## IM Flutter SDK 3.7.5 @2022.01.23
 - 기본 라이브러리를 6.0.1975로 업그레이드
 - 오프라인 푸시 설정 TPNS TOKEN 지원
@@ -161,7 +191,7 @@ add web support
 
 ## IM Flutter SDK 1.0.3 @2021.01.13
 - Android/iOS에 대한 크로스 플랫폼 지원
-- 단일 채팅 및 그룹 채팅(토론 그룹, 라이브 그룹) 세션 유형 지원
+- 1:1 채팅 및 그룹 채팅(토론 그룹, 라이브 그룹) 세션 유형 지원
 - 텍스트, 이모티콘, 이미지, 음성 및 사용자 정의 메시지 지원 추가
 - APNs 오프라인 푸시 지원(token 리포트, 포그라운드/백그라운드 전환 이벤트 리포트)
 - 메시지 로컬 저장 가능
