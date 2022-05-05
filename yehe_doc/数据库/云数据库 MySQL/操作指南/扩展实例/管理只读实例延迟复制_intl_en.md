@@ -113,6 +113,6 @@ You can view the delay between a read-only instance and its source instance on t
 ![](https://main.qcloudimg.com/raw/0b975dfca0c575735b94445f11e30d67.png)
 
 #### How do I view the task information of replay by flashbacked position?
-You can view the task progress and details on the task list page in the [console](https://console.cloud.tencent.com/cdb).
-![](https://main.qcloudimg.com/raw/f3c0cb3ed4d9488c66fc02cbd96b770d.png)
+You can view the task progress and details on the task list page in the [console](https://console.cloud.tencent.com/mysql/task).
+
 
