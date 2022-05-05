@@ -78,12 +78,10 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 This command will download the demo source code from GitHub and automatically run the installation script. The installation process will take several minutes (subject to the CVM network conditions), during which the remote device will print the following information:
 
 ```
-[2020-06-05 17:16:08] Start installing pip3.
-[2020-06-05 17:16:12] pip3 is successfully installed.
-[2020-06-05 17:16:12] Start installing Tencent Cloud SCF.
-[2020-06-05 17:16:13] SCF is successfully installed.
-[2020-06-05 17:16:13] Start configuring SCF.
-[2020-06-05 17:16:14] SCF configuration is completed.
+[2020-06-05 17:16:08] Start checking npm.
+[2020-06-05 17:16:12] npm is successfully installed.
+[2020-06-05 17:16:12] Start installing ServerLess.
+[2020-06-05 17:16:13] ServerLess is successfully installed.
 [2020-06-05 17:16:14] Start deploying the event notification receipt service of VOD.
 [2020-06-05 17:16:24] The event notification receipt service of VOD is deployed.
 [2020-06-05 17:16:26] Service address: https://service-xxxxxxxx-125xxxxxxx.gz.apigw.tencentcs.com/release/callback
