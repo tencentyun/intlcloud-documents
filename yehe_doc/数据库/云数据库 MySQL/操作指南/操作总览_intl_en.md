@@ -11,7 +11,7 @@ You can log in to the [TencentDB for MySQL console](https://console.cloud.tencen
 | Restart | In the instance list, select an instance and click **Restart** at the top to restart it. You can also select multiple instances for batch restart. <li>The instance will be inaccessible during the restart, and existing connections to it will be closed. <li>If the number of business writes and the number of dirty pages is high during the restart, the restart will fail. In this case, the instance will go back to the state before the restart and become accessible. <li>Please restart instances during off-peak hours to ensure the restart success rate and reduce the impact on your business.</li> |
 
 ## Instance Management Page
-Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). After an instance is initialized, click its ID in the instance list or click **Manage** in the **Operation** column to enter the instance management page, where you can view its details, monitor it, and manage databases.
+Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). Click its ID in the instance list or click **Manage** in the **Operation** column to enter the instance management page, where you can view its details, monitor it, and manage databases.
 ![](https://main.qcloudimg.com/raw/167ee41bc241ef2e5a68c5fc160112d4.png)
 
 | Feature | Description |
