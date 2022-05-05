@@ -42,7 +42,7 @@ TencentDB for MySQL은 리전에 따라 일정 한도의 백업 용량을 무료
 <span id = "bfwt3"></span>
 ### 자동 백업은 어떻게 설정하나요?
 [MySQL 콘솔](https://console.cloud.tencent.com/cdb) 인스턴스의 백업 복구 페이지에서 설정할 수 있습니다.
-![](https://main.qcloudimg.com/raw/4df9e17b3d0d23d3e74f284e1e5efacd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/053719ca0c4898c87bad068cbf70651c.png)
 
 <span id = "bfwt4"></span>
 ### 개발자는 어떻게 데이터를 백업하나요?
@@ -68,7 +68,7 @@ TencentDB for MySQL 인스턴스는 기본적으로 매일 전체 백업을 진�
 - 자동 백업은 수동으로 삭제할 수 없으며, 백업 보관 기간을 설정할 수 있습니다. 기간 만료 후에는 자동으로 삭제됩니다.
 - 수동 백업은 백업 리스트에서 수동으로 삭제할 수 있으며, 수동으로 삭제하지 않는 한 영구적으로 보관합니다.
  1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후 인스턴스 이름을 클릭하여 관리 페이지로 이동한 다음 [백업 복구] 페이지를 선택합니다.
- 2. 백업 리스트의 '작업' 열에서 [삭제]를 클릭해 삭제합니다.
+ 2. 백업 리스트의 **작업** 열에서 [삭제]를 클릭해 삭제합니다.
 
 <span id = "bfwt9"></span>
 ### 백업 작업은 어떻게 취소하나요?
