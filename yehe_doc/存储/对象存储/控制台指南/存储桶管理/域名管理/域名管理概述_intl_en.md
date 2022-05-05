@@ -19,7 +19,7 @@ You can quickly download and deliver objects in a bucket by managing the followi
 
 With CDN acceleration enabled for the default or custom CDN acceleration domain name, if the origin is a public-read bucket, the objects in the origin can be accessed via the default or custom CDN acceleration domain name. If the origin is a private-read bucket, it is recommended to enable the CDN origin-pull authentication and CDN authentication configuration options.
 
-- Origin-pull authentication (CDN service authorization must be added before it can be enabled): If the data requested by a user is not cached in the edge node, CDN fetches the data from the origin server. If COS is used as the origin and origin-pull authentication is enabled, the CDN edge node accesses the COS origin using a special service identity (which must be authorized by CDN service) to acquire and cache the data in the private bucket.
+- Origin-pull authentication (CDN service authorization must be added before it can be enabled): If the data requested by a user is not cached in the edge node, CDN fetches the data from the origin. If COS is used as the origin and origin-pull authentication is enabled, the CDN edge node accesses the COS origin using a special service identity (which must be authorized by CDN service) to acquire and cache the data in the private bucket.
 - CDN authentication: When a user accesses an edge node to acquire cached data, the edge node verifies the authentication field in the access URL based on the authentication configuration rules. This prevents unauthorized access and hotlinking, thereby improving the security and reliability of the data cached in the edge node.
 
 CDN authentication configuration and CDN origin-pull authentication do not conflict with each other, but whether to enable them can affect the level of data protection, as shown below:
@@ -44,6 +44,6 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 ## References
 - [Enabling Default Acceleration Domain Names](https://intl.cloud.tencent.com/document/product/436/31505)
 - [Enabling Custom Acceleration Domain Names](https://intl.cloud.tencent.com/document/product/436/31506)
-- [Enabling Custom Origin Server Domain Names](https://intl.cloud.tencent.com/document/product/436/31507)
+- [Enabling Custom Origin Domain Names](https://intl.cloud.tencent.com/document/product/436/31507)
 - [Granting a Sub-Account Permission to Configure Bucket Acceleration Domain Names](https://intl.cloud.tencent.com/document/product/436/31712)
 - [Supporting HTTPS for Custom Endpoints](https://intl.cloud.tencent.com/document/product/436/11142)
