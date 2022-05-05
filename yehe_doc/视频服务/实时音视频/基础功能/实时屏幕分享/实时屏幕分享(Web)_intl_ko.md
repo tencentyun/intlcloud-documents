@@ -1,14 +1,67 @@
-TRTC Web SDK 화면 공유 지원은 [브라우저 지원 상황](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-05-info-browser.html)을 확인하십시오. SDK는 [TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported) 인터페이스를 제공하여 현재 브라우저의 화면 공유 지원 여부를 판단합니다.
+TRTC Web SDK 화면 공유 지원은 [브라우저 지원 상황](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)을 확인하십시오. SDK는 [TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.isScreenShareSupported) 인터페이스를 제공하여 현재 브라우저의 화면 공유 지원 여부를 판단합니다.
 본 문에서는 다음과 같은 다양한 시나리오를 통해 구현 프로세스를 소개합니다.
 
 > !
-> - Web은 현재 서브스트림 배포를 지원하지 않습니다. 화면 공유 배포는 메인 스트림을 통해 구현됩니다. 원격 화면 공유 스트림 출처가 Web 사용자인 경우 [RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/RemoteStream.html#getType)의 반환 값은 'main'이며 일반적으로 userId는 Web에서 화면 공유 스트림을 식별하는 데 사용됩니다.
-> - Native(iOS, Android, Mac, Windows 등)는 서브스트림 배포를 지원하며 화면 공유 배포는 서브스트림 배포를 통해 구현됩니다. 원격 화면 공유 스트림 출처가 Native 사용자인 경우 [RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/RemoteStream.html#getType)의 반환 값은 'auxiliary'입니다.
+> - Web은 현재 서브스트림 배포를 지원하지 않습니다. 화면 공유 배포는 메인 스트림을 통해 구현됩니다. 원격 화면 공유 스트림 출처가 Web 사용자인 경우 [RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getType)의 반환 값은 'main'이며 일반적으로 userId는 Web에서 화면 공유 스트림을 식별하는 데 사용됩니다.
+> - Native(iOS, Android, Mac, Windows 등)는 서브스트림 배포를 지원하며 화면 공유 배포는 서브스트림 배포를 통해 구현됩니다. 원격 화면 공유 스트림 출처가 Native 사용자인 경우 [RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getType)의 반환 값은 'auxiliary'입니다.
 
 ## 화면 공유 스트림 생성과 배포
 >!아래의 순서를 정확히 따라 화면 공유 스트림 코드를 생성 및 배포하십시오.
 
-### 1단계: 화면 공유를 담당하는 클라이언트 객체 생성
+### 1단계: 화면 공유 스트림 생성
+화면 공유 스트림에는 비디오 스트림과 오디오 스트림이 포함됩니다. 오디오 스트림은 마이크 오디오 또는 시스템 오디오로 분류됩니다.
+<dx-codeblock>
+:::javascript
+// good 정확한 사용법
+// 화면 비디오 스트림만 캡처
+const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
+// or 마이크 오디오 및 화면 비디오 스트림 캡처
+const shareStream = TRTC.createStream({ audio: true, screen: true, userId });
+// or 시스템 오디오 및 화면 비디오 스트림 캡처
+const shareStream = TRTC.createStream({ screenAudio: true, screen: true, userId });
+
+// bad 오류 사용법
+const shareStream = TRTC.createStream({ camera: true, screen: true });
+// or
+const shareStream = TRTC.createStream({ camera: true, screenAudio: true });
+
+:::
+</dx-codeblock>
+
+>! 
+>- audio와 screenAudio 속성은 동시에 true로 설정할 수 없으며, camera와 screenAudio 속성도 동시에 true로 설정할 수 없습니다. screenAudio에 대한 자세한 정보는 본 문의 Part 5에서 소개됩니다.
+>- camera와 screen 속성은 동시에 true로 설정할 수 없습니다.
+
+### 2단계: 화면 공유 스트림 초기화
+초기화 시 브라우저는 사용자에게 화면 공유 콘텐츠 및 권한을 요청합니다. 사용자가 권한 부여를 거부하거나 시스템이 브라우저 화면 공유 권한을 부여하지 않으면 코드는 'NotReadableError' 또는 'NotAllowedError' 오류를 캐치합니다. 이 때 사용자는 화면 공유 권한을 활성화하기 위해 브라우저 설정 또는 시스템 설정을 수행하고 화면 공유 스트림을 다시 초기화하도록 안내해야 합니다.
+>! Safari의 제한으로 인해 화면 공유 스트림의 초기화 작업은 클릭 이벤트 콜백에서 완료되어야 합니다. 이 문제에 대한 자세한 내용은 본 문서 [FAQ](#que)를 참고하십시오.
+
+<dx-codeblock>
+:::javascript
+try {
+  await shareStream.initialize();
+} catch (error) {
+  // 화면 공유 스트림 초기화 실패 시 사용자에게 알리고 후속 방 입장 배포 프로세스 중지
+  switch (error.name) {
+    case 'NotReadableError':
+      // 시스템에서 현재 브라우저가 화면 내용을 가져올 수 있도록 사용자에게 알림
+      return;
+    case 'NotAllowedError':
+      if (error.message.includes('Permission denied by system')) {
+        // 시스템에서 현재 브라우저가 화면 내용을 가져올 수 있도록 사용자에게 알림
+      } else {
+        // 사용자가 화면 공유를 거부/취소
+      }
+      return;
+    default:
+      // 화면 공유 스트림을 초기화할 때 알 수 없는 오류가 발생했으며 사용자에게 다시 시도하라는 메시지 표시됨
+      return;
+  }
+}
+:::
+</dx-codeblock>
+
+### 3단계: 화면 공유를 담당하는 클라이언트 객체 생성
 일반적으로 userId에 'share_'를 접두사로 붙여 이를 화면 공유 클라이언트 객체로 식별하는 것이 좋습니다.
 
 <dx-codeblock>
@@ -29,58 +82,6 @@ try {
 
 :::
 </dx-codeblock>
-
-### 2단계: 화면 공유 스트림 생성
-화면 공유 스트림에는 비디오 스트림과 오디오 스트림이 포함됩니다. 오디오 스트림은 마이크 오디오 또는 시스템 오디오로 분류됩니다.
-<dx-codeblock>
-:::javascript
-// Good 정확한 사용법
-// 화면 비디오 스트림만 캡처
-const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
-// or 마이크 오디오 및 화면 비디오 스트림 캡처
-const shareStream = TRTC.createStream({ audio: true, screen: true, userId });
-// or 시스템 오디오 및 화면 비디오 스트림 캡처
-const shareStream = TRTC.createStream({ screenAudio: true, screen: true, userId });
-
-// Bad 오류 사용법
-const shareStream = TRTC.createStream({ camera: true, screen: true });
-// or
-const shareStream = TRTC.createStream({ camera: true, screenAudio: true });
-
-:::
-</dx-codeblock>
-
->! 
->- audio와 screenAudio 속성은 동시에 true로 설정할 수 없으며, camera와 screenAudio 속성도 동시에 true로 설정할 수 없습니다. screenAudio에 대한 자세한 정보는 본 문의 Part 5에서 소개됩니다.
->- camera와 screen 속성은 동시에 true로 설정할 수 없습니다.
-
-### 3단계: 화면 공유 스트림 초기화
-초기화 시 브라우저는 사용자에게 화면 공유 콘텐츠 및 권한을 요청합니다. 사용자가 권한 부여를 거부하거나 시스템이 브라우저 화면 공유 권한을 부여하지 않으면 코드는 'NotReadableError' 또는 'NotAllowedError' 오류를 캐치합니다. 이 때 사용자가 브라우저 설정 또는 시스템 설정을 수행하여 화면 공유 권한을 활성화하도록 안내해야 합니다.
-<dx-codeblock>
-:::javascript
-try {
-  await shareStream.initialize();
-} catch (error) {
-  // 화면 공유 스트림 초기화 실패 시 사용자에게 알리고 후속 방 입장 배포 프로세스 중지
-  switch (error.name) {
-    case 'NotReadableError':
-      // 시스템에서 현재 브라우저가 화면 내용을 가져올 수 있도록 사용자에게 알림
-      return;
-    case 'NotAllowedError':
-      if (error.message.includes('Permission denied by system')) {
-        // 시스템에서 현재 브라우저가 화면 내용을 가져올 수 있도록 사용자에게 알림
-      } else {
-        // 사용자가 화면 공유를 거부/취소
-      }
-      return;
-    default:
-      // 화면 공유 스트림을 초기화할 때 알 수 없는 오류가 발생했으며 사용자에게 다시 시도하라는 메시지가 표시됨
-      return;
-  }
-}
-:::
-</dx-codeblock>
-
 ### 4단계: 화면 공유 스트림 배포
 첫 번째 단계에서 생성한 클라이언트 객체를 통해 배포합니다. 배포가 성공한 후 원격 화면 공유 스트림을 수신할 수 있습니다.
 <dx-codeblock>
@@ -96,19 +97,9 @@ try {
 ### 완전한 코드
 <dx-codeblock>
 :::javascript
-const shareClient = TRTC.createClient({
-  mode: 'rtc',
-  sdkAppId,
-  userId, // 예시: ‘share_teacher’
-  userSig
-});
-// 클라이언트 객체 방 입장
-try {
-  await shareClient.join({ roomId });
-  // ShareClient join room success
-} catch (error) {
-  // ShareClient join room failed
-}
+// 일반적으로 userId에 'share_'를 접두사로 붙여 화면 공유 클라이언트 객체로 식별하는 것이 좋습니다.
+const userId = 'share_userId';
+const roomId = 'roomId';
 // 화면 비디오 스트림만 캡처
 const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
 // or 마이크 오디오 및 화면 비디오 스트림 캡처
@@ -135,16 +126,28 @@ try {
       return;
   }
 }
+const shareClient = TRTC.createClient({
+  mode: 'rtc',
+  sdkAppId,
+  userId, // 예시: ‘share_teacher’
+  userSig
+});
+// 클라이언트 객체 방 입장
+try {
+  await shareClient.join({ roomId });
+  // ShareClient join room success
+} catch (error) {
+  // ShareClient join room failed
+}
 try {
   await shareClient.publish(shareStream);
 } catch (error) {
   // ShareClient failed to publish local stream
-}
-:::
+}:::
 </dx-codeblock>
 
 ## 화면 공유 매개변수 설정
-설정할 수 있는 매개변수는 해상도, 프레임 레이트 및 비트 레이트를 포함하며, 필요에 따라 [setScreenProfile()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setScreenProfile) 인터페이스를 통해 profile을 지정할 수 있으며, 각 profile은 해상도, 프레임 레이트 및 비트 레이트에 해당합니다. SDK는 기본적으로 '1080p' 설정을 사용합니다.
+설정할 수 있는 매개변수는 해상도, 프레임 레이트 및 비트 레이트를 포함하며, 필요에 따라 [setScreenProfile()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setScreenProfile) 인터페이스를 통해 profile을 지정할 수 있으며, 각 profile은 해상도, 프레임 레이트 및 비트 레이트에 해당합니다. SDK는 기본적으로 '1080p' 설정을 사용합니다.
 
 <dx-codeblock>
 :::javascript
@@ -194,7 +197,7 @@ await shareClient.leave();
 </dx-codeblock>
 
 또한 사용자는 브라우저와 함께 제공되는 버튼을 통해 화면 공유를 중지할 수도 있으므로 화면 공유 스트림은 화면 공유 중지 이벤트를 수신하고 이에 따라 처리해야 합니다.
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/bb9d93106c1d22f819e905ea3196d866.png" width="600px">
 
 <dx-codeblock>
 :::javascript
@@ -217,7 +220,7 @@ shareStream.on('screen-sharing-stopped', event => {
 - **shareClient**: 화면 공유 스트림 게시를 담당하고 원격 스트림을 구독하지 않습니다.
 
 >! 
->- 화면 공유를 담당하는 shareClient는 자동 구독을 비활성화해야 합니다. 그렇지 않으면 원격 스트림에 대한 반복 구독이 발생합니다. [API 설명](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createClient)을 참고하십시오.
+>- 화면 공유를 담당하는 shareClient는 자동 구독을 비활성화해야 합니다. 그렇지 않으면 원격 스트림에 대한 반복 구독이 발생합니다. [API 설명](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient)을 참고하십시오.
 >- 로컬 멀티미디어 스트림 배포를 담당하는 client는 shareClient에서 배포한 스트림의 구독을 취소해야 합니다. 그렇지 않으면 스스로 구독하는 상황이 발생합니다.
 
 예시 코드:
@@ -265,3 +268,28 @@ await shareStream.initialize();
 </dx-codeblock>
 
 팝업 창에서 '오디오 공유'를 선택하면 배포된 stream에 시스템 사운드가 전달됩니다.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/4f0a42d5a21f309d4c6b7491ccca2a83.png)
+
+## FAQ[](id:que)
+
+1. **Safari 화면 공유 오류 `getDisplayMedia must be called from a user gesture handler`** 발생
+Safari는 화면 수집을 위한 `getDisplayMedia` 인터페이스를 제한하기 때문에 사용자 클릭 이벤트의 콜백 함수가 실행되고 있는 시점부터 1초 이내에 호출되어야 합니다.  [webkit issue](https://bugs.webkit.org/show_bug.cgi?id=198040)를 참고하십시오.
+```javascript
+// good
+async function onClick() {
+  // onClick 실행 시 수집 로직을 먼저 실행할 것을 권장합니다.
+  const screenStream = TRTC.createStream({ screen: true });
+  await screenStream.initialize();
+  await client.join({ roomId: 123123 });
+}
+
+// bad
+async function onClick() {
+  await client.join({ roomId: 123123 });
+  // 방에 들어가는 데 1s 이상 걸릴 수 있으며 수집 실패가 발생할 수 있습니다.
+  const screenStream = TRTC.createStream({ screen: true });
+  await screenStream.initialize();
+}
+```
+2. [WebRTC 화면 공유 기존 문제 및 솔루션](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-9)

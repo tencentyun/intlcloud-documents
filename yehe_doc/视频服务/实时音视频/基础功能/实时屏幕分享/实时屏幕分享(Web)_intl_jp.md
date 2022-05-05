@@ -1,14 +1,67 @@
-TRTC Web SDK画面共有のサポートレベルについて、[ブラウザのサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-05-info-browser.html)をご参照ください。また、SDKは[TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported)インターフェースを提供し、現在のブラウザが画面共有をサポートしているかどうかを判断します。
+TRTC Web SDK画面共有のサポートレベルについて、[ブラウザのサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)をご参照ください。また、SDKは現在のブラウザが画面共有をサポートしているかどうかを判断するための[TRTC.isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.isScreenShareSupported)インターフェースを提供します。
 このドキュメントでは、以下のような異なるシーンで実装プロセスを説明します。
 
 > !
-> - Web端末ではセカンダリストリームの公開が現時点でサポートされていません。画面共有の公開はプライマリストリームの公開によって実現されます。リモート画面共有ストリームがWebユーザーからのものである場合は、[RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/RemoteStream.html#getType)は'main'を返し、通常、Web端末からの画面共有ストリームであることはuserIdによって識別されます。
-> - Native（iOS、Android、Mac、Windowsなど）端末ではセカンダリストリームの公開をサポートし、画面共有の公開はセカンダリストリームの公開によって実現されます。リモート画面共有ストリームがNativeユーザーからのものである場合は、[RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/RemoteStream.html#getType)は'auxiliary'を返します。
+> - Web端末ではセカンダリストリームの公開が現時点でサポートされていません。画面共有の公開はプライマリストリームの公開によって実現されます。リモート画面共有ストリームがWebユーザーからのものである場合は、[RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getType)は'main'を返し、通常、Web端末からの画面共有ストリームであることはuserIdによって識別されます。
+> - Native（iOS、Android、Mac、Windowsなど）端末ではセカンダリストリームの公開をサポートし、画面共有の公開はセカンダリストリームの公開によって実現されます。リモート画面共有ストリームがNativeユーザーからのものである場合は、[RemoteStream.getType()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/RemoteStream.html#getType)は'auxiliary'を返します。
 
-## 画面共有ストリームの作成と公開
+## 画面共有ストリームの作成とリリース
 >!画面共有ストリームを作成および公開するコードは、以下の順序で厳密に実行してください。
 
-### ステップ1：画面共有を行うクライアントオブジェクトの作成
+### ステップ1：画面共有ストリームの作成
+画面共有ストリームには、ビデオストリームとオーディオストリームが含まれます。このうち、オーディオストリームは、マイクオーディオまたはシステムオーディオに分けられます。
+<dx-codeblock>
+:::  javascript
+// good 正しい使い方
+// 画面ビデオストリームのみの収集
+const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
+// or マイクオーディオおよび画面ビデオストリームの収集
+const shareStream = TRTC.createStream({ audio: true, screen: true, userId });
+// or システムオーディオおよび画面ビデオストリームの収集
+const shareStream = TRTC.createStream({ screenAudio: true, screen: true, userId });
+
+// bad 間違った使い方
+const shareStream = TRTC.createStream({ camera: true, screen: true });
+// or
+const shareStream = TRTC.createStream({ camera: true, screenAudio: true });
+
+:::
+</dx-codeblock>
+
+>! 
+>- audio属性とscreenAudio属性を同時にtrueに設定することはできません。camera属性とscreenAudio属性を同時にtrueに設定することはできません。screenAudioの詳細については、本ドキュメントのパート5で説明します。
+>- camera属性とscreen属性を同時にtrueに設定することはできません。
+
+### ステップ2：画面共有ストリームの初期化
+初期化時にブラウザはユーザーに画面共有の内容と権限を要求します。ユーザーが許可を拒否した場合、またはシステムがブラウザに画面共有の権限を付与しなかった場合は、コードは`NotReadableError`または`NotAllowedError`のエラーをキャッチします。この場合、ユーザーがブラウザ設定またはシステム設定で画面共有の権限をオンにするように指示してください。
+>! Safariの制限により、画面共有ストリームの初期化操作は、クリックイベントのコールバックで行わなければなりません。この問題の詳細については、このドキュメント[よくあるご質問](#que)をご参照ください。
+
+<dx-codeblock>
+:::  javascript
+try {
+  await shareStream.initialize();
+} catch (error) {
+  // 画面共有ストリームの初期化に失敗した場合、ユーザーに警告し、その後の入室公開プロセスを停止します
+  switch (error.name) {
+    case 'NotReadableError':
+      // 現在のブラウザで画面の内容を取得できるようなシステムの確保をユーザーに通知します
+      return;
+    case 'NotAllowedError':
+      if (error.message.includes('Permission denied by system')) {
+        // 現在のブラウザで画面の内容を取得できるようなシステムの確保をユーザーに通知します
+      }else{
+        // ユーザーが画面共有を拒否/キャンセルします
+      }
+      return;
+    default:
+      // 画面共有ストリームの初期化中に不明なエラーが発生し、ユーザーにリトライを通知します
+      return;
+  }
+}
+:::
+</dx-codeblock>
+
+### ステップ3：画面共有を行うクライアントオブジェクトの作成
 通常、画面共有のクライアントオブジェクトであることを示すために、userIdには`share_`というプレフィックスを付けることをお勧めします。
 
 <dx-codeblock>
@@ -29,58 +82,6 @@ try {
 
 :::
 </dx-codeblock>
-
-### ステップ2：画面共有ストリームの作成
-画面共有ストリームには、ビデオストリームとオーディオストリームが含まれます。このうち、オーディオストリームは、マイクオーディオまたはシステムオーディオに分けられます。
-<dx-codeblock>
-:::  javascript
-// Goodの正しい使い方
-// 画面ビデオストリームのみの収集
-const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
-// or マイクオーディオおよび画面ビデオストリームの収集
-const shareStream = TRTC.createStream({ audio: true, screen: true, userId });
-// or システムオーディオおよび画面ビデオストリームの収集
-const shareStream = TRTC.createStream({ screenAudio: true, screen: true, userId });
-
-// Badの間違った使い方
-const shareStream = TRTC.createStream({ camera: true, screen: true });
-// or
-const shareStream = TRTC.createStream({ camera: true, screenAudio: true });
-
-:::
-</dx-codeblock>
-
->! 
->- audio属性とscreenAudio属性を同時にtrueに設定することはできません。camera属性とscreenAudio属性を同時にtrueに設定することはできません。screenAudioの詳細については、このドキュメントのパート5で説明します。
->- camera属性とscreen属性を同時にtrueに設定することはできません。
-
-### ステップ3：画面共有ストリームの初期化
-初期化時にブラウザはユーザーに画面共有の内容と権限を要求します。ユーザーが許可を拒否した場合、またはシステムがブラウザに画面共有の権限を付与しなかった場合は、コードは`NotReadableError`または`NotAllowedError`のエラーをキャッチします。この場合、ユーザーがブラウザ設定またはシステム設定で画面共有の権限をオンにするように指示する必要があります。
-<dx-codeblock>
-:::  javascript
-try {
-  await shareStream.initialize();
-} catch (error) {
-  // 画面共有ストリームの初期化に失敗した場合、ユーザーに警告し、その後の入室公開プロセスを停止します
-  switch (error.name) {
-    case 'NotReadableError':
-      // 現在のブラウザで画面の内容を取得できるようなシステムの確保にユーザーに通知します
-      return;
-    case 'NotAllowedError':
-      if (error.message.includes('Permission denied by system')) {
-        // 現在のブラウザで画面の内容を取得できるようなシステムの確保にユーザーに通知します
-      }else{
-        // ユーザーが画面共有を拒否/キャンセルします
-      }
-      return;
-    default:
-      // 画面共有ストリームの初期化中に不明なエラーが発生し、ユーザーにリトライを通知します
-      return;
-  }
-}
-:::
-</dx-codeblock>
-
 ### ステップ4：画面共有ストリームの公開
 ステップ1で作成されたクライアントオブジェクトにより公開されます。公開が成功すると、リモート端末で画面共有ストリームを受信できます。
 <dx-codeblock>
@@ -96,6 +97,35 @@ try {
 ### 完全コード
 <dx-codeblock>
 :::  javascript
+// 通常、画面共有のクライアントオブジェクトであることを示すために、userIdには`share_`というプレフィックスを付けることをお勧めします。
+const userId = 'share_userId';
+const roomId = 'roomId';
+// 画面ビデオストリームのみの収集
+const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
+// or マイクオーディオおよび画面ビデオストリームの収集
+// const shareStream = TRTC.createStream({ audio: true, screen: true, userId });
+// or システムオーディオおよび画面ビデオストリームの収集
+// const shareStream = TRTC.createStream({ screenAudio: true, screen: true, userId });
+try {
+  await shareStream.initialize();
+} catch (error) {
+  // 画面共有ストリームの初期化に失敗した場合、ユーザーに警告し、その後の入室公開プロセスを停止します
+  switch (error.name) {
+    case 'NotReadableError':
+      // 現在のブラウザで画面の内容を取得できるようなシステムの確保をユーザーに通知します
+      return;
+    case 'NotAllowedError':
+      if (error.message.includes('Permission denied by system')) {
+        // 現在のブラウザで画面の内容を取得できるようなシステムの確保をユーザーに通知します
+      }else{
+        // ユーザーが画面共有を拒否/キャンセルします
+      }
+      return;
+    default:
+      // 画面共有ストリームの初期化中に不明なエラーが発生し、ユーザーにリトライを通知します
+      return;
+  }
+}
 const shareClient = TRTC.createClient({
   mode: 'rtc',
   sdkAppId,
@@ -109,47 +139,20 @@ try {
 } catch (error) {
   // ShareClient join room failed
 }
-// 画面ビデオストリームのみの収集
-const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
-// or マイクオーディオおよび画面ビデオストリームの収集
-// const shareStream = TRTC.createStream({ audio: true, screen: true, userId });
-// or システムオーディオおよび画面ビデオストリームの収集
-// const shareStream = TRTC.createStream({ screenAudio: true, screen: true, userId });
-try {
-  await shareStream.initialize();
-} catch (error) {
-  // 画面共有ストリームの初期化に失敗した場合、ユーザーに警告し、その後の入室公開プロセスを停止します
-  switch (error.name) {
-    case 'NotReadableError':
-      // 現在のブラウザで画面の内容を取得できるようなシステムの確保にユーザーに通知します
-      return;
-    case 'NotAllowedError':
-      if (error.message.includes('Permission denied by system')) {
-        // 現在のブラウザで画面の内容を取得できるようなシステムの確保にユーザーに通知します
-      }else{
-        // ユーザーが画面共有を拒否/キャンセルします
-      }
-      return;
-    default:
-      // 画面共有ストリームの初期化中に不明なエラーが発生し、ユーザーにリトライを通知します
-      return;
-  }
-}
 try {
   await shareClient.publish(shareStream);
 } catch (error) {
   // ShareClient failed to publish local stream
-}
-:::
+}:::
 </dx-codeblock>
 
 ## 画面共有パラメータの設定
-設定可能なパラメータには、解像度、フレームレートおよびコードレートがあります。必要に応じて[setScreenProfile()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setScreenProfile)インターフェースを使用してprofileを指定できます。各profileは解像度、フレームレートおよびコードレートのセットに対応しています。SDKはデフォルトで'1080p'の構成を使用します。
+設定可能なパラメータには、解像度、フレームレートおよびコードレートがあります。必要に応じて[setScreenProfile()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#setScreenProfile)インターフェースを使用してprofileを指定できます。各profileは解像度、フレームレートおよびコードレートのセットに対応しています。SDKはデフォルトで'1080p'の構成を使用します。
 
 <dx-codeblock>
 :::  javascript
 const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
-// setScreenProfile()はinitialize()の前に呼び出す必要があります。
+// setScreenProfile()はinitialize()の前に呼び出してください。
 shareStream.setScreenProfile('1080p');
 await shareStream.initialize();
 :::
@@ -160,7 +163,7 @@ await shareStream.initialize();
 <dx-codeblock>
 :::  javascript
 const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
-// setScreenProfile()はinitialize()の前に呼び出す必要があります。
+// setScreenProfile()はinitialize()の前に呼び出してください。
 shareStream.setScreenProfile({ width: 1920, height: 1080, frameRate: 5, bitrate: 1600 /* kbps */});
 await shareStream.initialize();
 :::
@@ -189,12 +192,12 @@ shareStream.close();
 // 画面共有クライアントの退室
 await shareClient.leave();
 
-// 上記の3つのステップは必須ではなく、シーンのニーズに応じて必要なコードを実行すればよい。通常は、入室したかどうか、ストリームを開示したかどうかの判断を追加する必要があります。より詳細なコード例については、[demoソースコード](https://github.com/LiteAVSDK/TRTC_Web/blob/main/base-js/js/share-client.js)をご参照ください。
+// 上記の3つのステップは必須ではなく、シーンのニーズに応じて必要なコードを実行してください。通常は、入室したかどうか、ストリームを開示したかどうかの判断を追加してください。より詳細なコード例については、[demoソースコード](https://github.com/LiteAVSDK/TRTC_Web/blob/main/base-js/js/share-client.js)をご参照ください。
 :::
 </dx-codeblock>
 
-またユーザーはブラウザに付属のボタンで画面共有を停止することもあるため、画面共有ストリームは画面共有停止イベントを傍受し、それに応じた処理を行う必要があります。
-
+またユーザーはブラウザに付属のボタンで画面共有を停止することもあるため、画面共有ストリームは画面共有停止イベントを傍受し、それに応じた処理を行ってください。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/bb9d93106c1d22f819e905ea3196d866.png" width="600px">
 
 <dx-codeblock>
 :::  javascript
@@ -202,7 +205,7 @@ await shareClient.leave();
 shareStream.on('screen-sharing-stopped', event => {
   // 画面共有クライアントがプッシュを停止します
   await shareClient.unpublish(shareStream);
-  // 画面共有ストリームをオフにする
+  // 画面共有ストリームをオフにします
   shareStream.close();
   // 画面共有クライアントの退室
   await shareClient.leave();
@@ -211,23 +214,23 @@ shareStream.on('screen-sharing-stopped', event => {
 </dx-codeblock>
 
 ## カメラ動画と画面共有の同時公開
-1つのClientでは、最大1チャネルのオーディオと1チャネルのビデオを同時に公開することができます。カメラビデオと画面共有を同時に公開するには、2つのClientを作成して、それらを「それぞれの役割」に任せる必要があります。
+1つのClientでは、最大1チャネルのオーディオと1チャネルのビデオを同時に公開することができます。カメラビデオと画面共有を同時に公開するには、2つのClientを作成して、それらを「それぞれの役割」に任せてください。
 例えば、次のように2つのClientを作成します。
 - **client**：ローカルのオーディオビデオストリームを公開し、shareClientを除くすべてのリモートストリームをサブスクライブします。
 - **shareClient**：画面共有ストリームを公開し、リモートストリームをサブスクライブしません。
 
 >! 
->- 画面共有を行うshareClientは、自動サブスクリプションをオフにする必要があります。そうしないと、リモートストリームの重複サブスクリプションが発生します。[APIの説明](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createClient)をご参照ください。
->- ローカルのオーディオビデオストリームを公開するclientは、shareClientが公開するストリームのサブスクリプションを取り消す必要があります。そうしないと自分で自分をサブスクリプションするケースが発生する可能性があります。
+>- 画面共有を行うshareClientは、自動サブスクリプションをオフにする必要があります。そうしないと、リモートストリームの重複サブスクリプションが発生します。[APIの説明](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient)をご参照ください。
+>- ローカルのオーディオビデオストリームを公開するclientは、shareClientが公開するストリームのサブスクリプションを取り消してください。そうでないばあい、自分で自分をサブスクリプションするケースが発生する可能性があります。
 
 サンプルコード：
 <dx-codeblock>
 :::  javascript
 const client = TRTC.createClient({ mode: 'rtc', sdkAppId, userId, userSig });
-// shareClientのリモートストリーム自動サブスクリプションをオフにすると設定する必要があります。すなわちautoSubscribe：false
+// shareClientのリモートストリーム自動サブスクリプションをオフにすると設定してください。すなわちautoSubscribe：false
 const shareClient = TRTC.createClient({ mode: 'rtc', sdkAppId, `share_${userId}`, userSig, autoSubscribe: false,});
 
-// ローカルのオーディオビデオストリームの公開を行うclientは、shareClientが公開するストリームのサブスクリプションを取り消す必要があります。
+// ローカルのオーディオビデオストリームの公開を行うclientは、shareClientが公開するストリームのサブスクリプションを取り消してください。
 client.on('stream-added', event => {
   const remoteStream = event.stream;
   const remoteUserId = remoteStream.getUserId();
@@ -246,7 +249,7 @@ await shareClient.join({ roomId });
 const localStream = TRTC.createStream({ audio: true, video: true, userId }); 
 const shareStream = TRTC.createStream({ audio: false, screen: true, userId });
 
-// ... 関連コードの初期化や公開を省略し、必要に応じてストリームを公開すればよい。
+// ... 関連コードの初期化や公開を省略し、必要に応じてストリームを公開できます。
 
 :::
 </dx-codeblock>
@@ -265,3 +268,28 @@ await shareStream.initialize();
 </dx-codeblock>
 
 表示されるダイアログで「オーディオ共有」にチェックを入れると、公開されたストリームにシステムサウンドが付きます。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/4f0a42d5a21f309d4c6b7491ccca2a83.png)
+
+## よくあるご質問(id:que)
+
+1. **Safari画面共有で`getDisplayMedia must be called from a user gesture handler`というエラーが報告されました**
+Safariでは`getDisplayMedia`画面収集用インターフェースが制限されているため、ユーザークリックイベントのコールバック関数が実行される1秒以内に呼び出してください。[webkit issue](https://bugs.webkit.org/show_bug.cgi?id=198040)をご参照ください。
+```javascript
+// good
+async function onClick() {
+  // onClickの実行時に、最初に収集ロジックを実行することをお勧めします。
+  const screenStream = TRTC.createStream({ screen: true });
+  await screenStream.initialize();
+  await client.join({ roomId: 123123 });
+}
+
+// bad
+async function onClick() {
+  await client.join({ roomId: 123123 });
+  /// ルームに入るのに1s以上かかることがあり、収集に失敗する可能性があります。
+  const screenStream = TRTC.createStream({ screen: true });
+  await screenStream.initialize();
+}
+```
+2. [WebRTC画面共有の既知の問題と回避方法](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-9)をご参照ください。
