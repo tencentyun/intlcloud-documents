@@ -163,7 +163,7 @@
 실행 결과는 다음 이미지와 같습니다.
 
  - 직접 업로드 효과:
-![uni-app 직접 업로드 효과](https://qcloudimg.tencent-cloud.cn/raw/01fd87f664cff606f9dfbad7783a06f8.jpg)
+![uni-app 직접 업로드 효과](https://qcloudimg.tencent-cloud.cn/raw/ef40cb5ea3ce5a0586dd1a70d6b2d4ad.jpg)
 
 ##  Demo 코드 주소
 
