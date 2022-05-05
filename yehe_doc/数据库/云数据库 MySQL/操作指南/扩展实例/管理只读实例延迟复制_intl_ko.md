@@ -109,6 +109,6 @@ flush log 명령어를 통해 binlog 파일을 획득하여 실수했을 때의 
 ![](https://main.qcloudimg.com/raw/0b975dfca0c575735b94445f11e30d67.png)
 
 ####지정 위치로 복사하는 작업의 정보를 어디서 확인할 수 있나요?
-[콘솔](https://console.cloud.tencent.com/cdb)의 작업 리스트 페이지에서 작업의 진도와 세부 사항을 확인할 수 있습니다. 
-![](https://main.qcloudimg.com/raw/f3c0cb3ed4d9488c66fc02cbd96b770d.png)
+[콘솔](https://console.cloud.tencent.com/mysql/task)의 작업 리스트 페이지에서 작업의 진도와 세부 사항을 확인할 수 있습니다. 
+
 
