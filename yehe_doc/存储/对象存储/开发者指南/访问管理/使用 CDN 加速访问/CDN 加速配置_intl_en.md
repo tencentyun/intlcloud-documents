@@ -53,7 +53,7 @@ After the authorization is added, the CDN edge node can perform `Get Object`, `H
 
 ![](https://main.qcloudimg.com/raw/ca62b2f78b7587245efbe0b03f84adee.png)
 
-After the authorization is granted, it will be automatically written into the bucket access policy (see below for an example). Then the CDN edge node does not need to do anything else while forwarding traffic to the origin.
+After the authorization is granted, it will be automatically written into the bucket access policy (see below for an example).
 
 ```xml
   {
