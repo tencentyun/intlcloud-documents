@@ -11,7 +11,7 @@ TencentDB for MySQL은 [로직 백업](https://intl.cloud.tencent.com/document/p
 ### 1단계: 백업 파일 다운로드
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후, 인스턴스 리스트에서 인스턴스 이름 또는 '작업' 열의 [관리]를 클릭하여 인스턴스 관리 페이지로 이동합니다.
 2. 인스턴스 관리 페이지에서 [백업 복구]>[데이터 백업 리스트]로 이동한 후, 다운로드하려는 백업을 선택하고 '작업' 열의 [다운로드]를 클릭합니다.
-3. 팝업된 대화 상자에서 권장한 다운로드 주소를 복사하고 [CDB가 속한 VPC의 CVM(Linux 시스템)](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)에 로그인한 후, wget 명령어로 내부 네트워크 고속 다운로드를 사용하면 보다 효율적입니다.
+3. 팝업된 대화 상자에서 권장한 다운로드 주소를 복사하고 [CDB가 속한 VPC의 CVM(Linux 시스템)](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)에 로그인한 후, wget 명령어로 내부 네트워크 고속 다운로드를 사용하면 보다 효율적입니다.
 >?
 >- [로컬 다운로드]를 선택하여 직접 다운로드할 수도 있으나 다소 긴 시간이 소요될 수 있습니다.
 >- wget 명령어 포맷: wget -c '백업 파일 다운로드 주소' -O 사용자 정의 파일명.xb
@@ -35,9 +35,10 @@ xbstream -x < test0.xb
 ### 3단계: 백업 파일 압축 해제
 1. 다음 명령어를 사용해 qpress 툴을 다운로드합니다.
 ```
-wget http://www.quicklz.com/qpress-11-linux-x64.tar
+wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" 
+http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?wget 다운로드 시 오류 알림이 뜬다면 [quicklz](http://www.quicklz.com/)에서 qpress 툴을 로컬에 다운로드한 후 다시 Linux CVM에 업로드하시기 바랍니다. 자세한 내용은 [SCP로 Linux CVM에 파일 업로드하기](https://intl.cloud.tencent.com/zh/document/product/213/2133)를 참조하십시오.
+>?wget 다운로드 시 오류 알림이 뜬다면 [quicklz](http://www.quicklz.com/)에서 qpress 툴을 로컬에 다운로드한 후 다시 Linux CVM에 업로드하시기 바랍니다. 자세한 내용은 [SCP로 Linux CVM에 파일 업로드하기](https://intl.cloud.tencent.com/document/product/213/2133)를 참조하십시오.
 2. 다음 명령어를 사용해 qpress 바이너리 파일을 압축 해제합니다.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin

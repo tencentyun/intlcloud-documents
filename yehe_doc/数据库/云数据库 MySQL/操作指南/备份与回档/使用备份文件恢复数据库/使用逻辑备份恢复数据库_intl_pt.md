@@ -11,7 +11,7 @@ O TencentDB for MySQL é compatível com [backup lógico](https://intl.cloud.ten
 ### Etapa 1. Baixe o arquivo de backup
 1. Faça login no [console do TencentDB for MySQL](https://console.cloud.tencent.com/cdb). Na lista de instâncias, clique no ID da instância ou em **Manage (Gerenciar)** na coluna **Operation (Operação)** para acessar a página de gerenciamento de instâncias.
 2. Na guia **Backup and Restore (Fazer backup e restaurar)** > **Data Backup List (Lista de backup de dados)**, localize o arquivo de backup a ser baixado e clique em **Download (Fazer download)** na coluna **Operation (Operação)**.
-3.  Recomendamos que você copie o link de download na caixa de diálogo pop-up, faça login em uma instância [(Linux) da CVM na mesma VPC que a instância do TencentDB](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), e execute o comando `wget` para download pela rede privada em uma velocidade maior.
+3.  Recomendamos que você copie o link de download na caixa de diálogo pop-up, faça login em uma instância [(Linux) da CVM na mesma VPC que a instância do TencentDB](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), e execute o comando `wget` para download pela rede privada em uma velocidade maior.
 >?
 >- Você também pode clicar em **Download (Fazer download)** para baixá-lo diretamente, o que pode levar mais tempo.
 >- Formato de comando`wget`: wget -c 'backup file download address' -O custom filename.xb
@@ -35,9 +35,10 @@ O resultado da descompactação é mostrado abaixo:
 ### Etapa 3. Descompacte o arquivo de backup
 1. Baixe o qpress executando o seguinte comando:
 ```
-wget http://www.quicklz.com/qpress-11-linux-x64.tar
+wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0"
+http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?Se um erro for exibido durante o download do `wget`, você pode ir ao [site oficial do QuickLZ](http://www.quicklz.com/) para baixar o qpress localmente e enviá-lo para a instância da CVM do Linux. Para obter mais informações, consulte [Upload de arquivos via SCP para uma CVM do Linux](https://intl.cloud.tencent.com/zh/document/product/213/2133).
+>?Se um erro for exibido durante o download do `wget`, você pode ir ao [site oficial do QuickLZ](http://www.quicklz.com/) para baixar o qpress localmente e enviá-lo para a instância da CVM do Linux. Para obter mais informações, consulte [Upload de arquivos via SCP para uma CVM do Linux](https://intl.cloud.tencent.com/document/product/213/2133).
 2. Extraia os arquivos binários qpress executando o seguinte comando:
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin

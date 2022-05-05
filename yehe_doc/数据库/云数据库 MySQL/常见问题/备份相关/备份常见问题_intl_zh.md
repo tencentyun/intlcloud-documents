@@ -42,7 +42,7 @@
 <span id = "bfwt3"></span>
 ### 如何设置自动备份?
 您可在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 实例的备份恢复页进行设置。
-![](https://main.qcloudimg.com/raw/4df9e17b3d0d23d3e74f284e1e5efacd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/053719ca0c4898c87bad068cbf70651c.png)
 
 <span id = "bfwt4"></span>
 ### 开发者自己如何备份数据？
@@ -57,7 +57,7 @@
 
 <span id = "bfwt6"></span>
 ### 为什么下载数据备份文件会报错？
-使用`wget -c '备份文件下载地址' -O 自定义文件名.xb`命令下载备份时，需注意用2个英文单引号`'`将下载地址包起来，便于程序识别地址，防止出错。
+使用 `wget -c '备份文件下载地址' -O 自定义文件名.xb` 命令下载备份时，需注意用2个英文单引号`'`将下载地址包起来，便于程序识别地址，防止出错。
 
 <span id = "bfwt7"></span>
 ### 下载的备份能恢复到另一个云数据库 MySQL 实例上吗？
@@ -68,7 +68,7 @@
 - 自动备份无法手动删除，可设置备份保留时间，到期后会自动删除。
 - 手动备份可在备份列表手动删除，没有手动删除的前提下会一直保留。
  1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，单击实例 ID 进入管理页面，选择**备份恢复**页。
- 2. 在备份列表，单击“操作”列的**删除**进行删除。
+ 2. 在备份列表，单击**操作**列的**删除**进行删除。
 
 <span id = "bfwt9"></span>
 ### 如何取消备份任务？
