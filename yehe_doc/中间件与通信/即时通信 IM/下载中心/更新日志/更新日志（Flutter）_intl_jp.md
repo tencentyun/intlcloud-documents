@@ -1,3 +1,33 @@
+## IM Flutter SDK 3.9.1 @2022.3.24
+- 下層データベースのバージョンを6.1.2155にアップグレードします
+
+## IM Flutter SDK 3.9.0 @2022.3.22
+- grouplistenerを修正します
+
+## IM Flutter SDK 3.8.9 @2022.3.18
+- リッスンと登録の問題を修正します
+
+## IM Flutter SDK 3.8.4 @2022.3.14
+- interfaceを更新します
+
+## IM Flutter SDK 3.8.3 @2022.3.1
+- 環境に応じてtokenエンコーディングを切り替えます
+
+## IM Flutter SDK 3.8.2 @2022.2.21
+- グループメンバーパラメータの制約を更新します
+
+## IM Flutter SDK 3.8.0 @2022.2.17
+- 下層interfaceの依存関係をアップグレードします
+
+## IM Flutter SDK 3.7.8 @2022.2.15
+- 強制解凍により引き起こされる異常を修正します
+
+## IM Flutter SDK 3.7.7 @2022.2.10
+- Swiftコードwarningを修正します
+- Swiftの強制解凍コードを書き直します
+- sendMessageインターフェースにより返されるmessageインスタンスにidフィールドを追加します
+
+
 ## IM Flutter SDK 3.7.5 @2022.01.23
 - 下層データベースを6.0.1975にアップグレードしました
 - オフラインプッシュの設定でTPNS TOKENをサポートしました
@@ -103,7 +133,7 @@ add web support
 
 ## IM Flutter SDK 3.5.0 @2021.10.1
 - いくつかの既知の問題を修正しました
-- 次のインターフェースを追加しました
+- 次のインターフェースを追加しました：
  - callExperimentalAPI
  - clearC2CHistoryMessage
  - clearGroupHistoryMessage
