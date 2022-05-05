@@ -14,7 +14,7 @@ The COS console is an easy-to-use tool. It allows you to directly create buckets
 | Static Website     | [Setting Up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)  |
 | Inventory         | [Setting Inventory](https://intl.cloud.tencent.com/document/product/436/30624)  |
 | Bucket Tagging   | [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928)   |
-| Data Monitoring | <li>[Dashboard](https://intl.cloud.tencent.com/document/product/436/36542) <br><li>[Querying Monitoring Data](https://intl.cloud.tencent.com/document/product/436/31634)<br><li>[Setting Alarm Policies](https://intl.cloud.tencent.com/document/product/436/39104) |
+| Data Monitoring | <li>[Dashboard](https://intl.cloud.tencent.com/document/product/436/36542) <br><li>[Querying Monitoring Data](https://intl.cloud.tencent.com/document/product/436/31634)<br><li>[Setting an Alarm Policy](https://intl.cloud.tencent.com/document/product/436/39104) |
 | Logging |[Setting Logging](https://intl.cloud.tencent.com/document/product/436/17040)   |
 | Data Origin-pull     | [Setting Origin-Pull](https://intl.cloud.tencent.com/document/product/436/31508) |
 | Batch Jobs | [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956)  |
