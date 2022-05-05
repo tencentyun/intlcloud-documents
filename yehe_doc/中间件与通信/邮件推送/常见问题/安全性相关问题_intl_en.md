@@ -11,7 +11,7 @@ During email transfer, SES will encrypt the content of your emails.
 ### Does SES use Transport Layer Security (TLS) to send emails over an encrypted connection?
 SES supports TLS 1.2, TLS 1.1, and TLS 1.0 for TLS connection.
 
-By default, SES uses opportunistic TLS. This means that SES will always try to establish a secure connection with the recipient's email server. If it cannot establish a secure connection, it will send the email in an unencrypted manner. You can change this option so that SES will only send emails when a secure connection can be established.
+By default, SES uses TLS. This means that SES will always try to establish a secure connection with the recipient's email server. If it cannot establish a secure connection, it will send the email in an unencrypted manner. You can change this option so that SES will only send emails when a secure connection can be established.
 
 [](id:que4) 
 ### How does SES ensure that incoming emails are not spam and are virus-free?
