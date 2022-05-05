@@ -11,7 +11,7 @@ TencentDB for MySQLは、[論理バックアップ](https://intl.cloud.tencent.c
 ### 手順1：バックアップファイルのダウンロード
 1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンスリストのインスタンス名または「操作」の列の【管理】をクリックし、インスタンス管理画面に入ります。
 2. インスタンス管理画面で、【バックアップの復旧】>【データバックアップリスト】のページを選択し、ダウンロードしたいバックアップを選択して、「操作」列の【ダウンロード】をクリックします。
-3. ポップアップダイアログボックスで、ダウンロードアドレスをコピーして、[クラウドデータベースが存在するVPC下のCVM（Linuxシステム）にログイン](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)し、wgetコマンドを実行して、より効率的なイントラネットの高速ダウンロードを行うことをお勧めします。
+3. ポップアップダイアログボックスで、ダウンロードアドレスをコピーして、[クラウドデータベースが存在するVPC下のCVM（Linuxシステム）にログイン](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)し、wgetコマンドを実行して、より効率的なイントラネットの高速ダウンロードを行うことをお勧めします。
 >?
 >- 【ローカルダウンロード】を選択して直接ダウンロードすることもできますが、時間がかかります。
 >- wgetコマンド形式：wget -c 'バックアップファイルのダウンロードアドレス' -O カスタムファイル名.xb
@@ -35,9 +35,10 @@ xbstream -x < test0.xb
 ### 手順3：バックアップファイルの解凍
 1. 次のコマンドを使用して、qpressツールをダウンロードします。
 ```
-wget http://www.quicklz.com/qpress-11-linux-x64.tar
+wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" 
+http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?wgetのダウンロードでエラーが表示された場合は、[quicklz](http://www.quicklz.com/) に進んでqpressツールをローカルにダウンロードした後、qpressツールをLinux CVMにアップロードできます。詳細については、[SCPによるLinux CVMへのファイルのアップロード](https://intl.cloud.tencent.com/zh/document/product/213/2133)をご参照ください。
+>?wgetのダウンロードでエラーが表示された場合は、[quicklz](http://www.quicklz.com/) に進んでqpressツールをローカルにダウンロードした後、qpressツールをLinux CVMにアップロードできます。詳細については、[SCPによるLinux CVMへのファイルのアップロード](https://intl.cloud.tencent.com/document/product/213/2133)をご参照ください。
 2. 次のコマンドを使用して、qpressバイナリーファイルを解凍します。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
