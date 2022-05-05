@@ -11,7 +11,7 @@ TencentDB for MySQL mendukung [pencadangan logis](https://intl.cloud.tencent.com
 ### Langkah 1. Mengunduh file cadangan
 1. Login ke [konsol TencentDB for MySQL](https://console.cloud.tencent.com/cdb). Dalam daftar instans, klik ID instans atau **Manage** (Kelola) di kolom **Operation** (Operasi) untuk mengakses halaman manajemen instans.
 2. Pada tab **Backup and Restore** (Cadangkan dan Pulihkan) > **Data Backup List** (Daftar Cadangan Data), cari file cadangan yang akan diunduh dan klik **Download** (Unduh) di kolom **Operation** (Operasi).
-3. Sebaiknya salin tautan unduhan di kotak dialog pop-up, login ke instans [(Linux) CVM di VPC yang sama dengan instans TencentDB](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), dan jalankan perintah `wget` untuk mengunduh melalui jaringan pribadi dengan kecepatan yang lebih tinggi.
+3. Sebaiknya salin tautan unduhan di kotak dialog pop-up, login ke instans [(Linux) CVM di VPC yang sama dengan instans TencentDB](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), dan jalankan perintah `wget` untuk mengunduh melalui jaringan pribadi dengan kecepatan yang lebih tinggi.
 >?
 >- Anda juga dapat mengeklik **Download** (Unduh) untuk mengunduhnya secara langsung, yang mungkin membutuhkan waktu lebih lama.
 >- Format perintah `wget`: wget -c 'alamat unduhan file cadangan' -O nama file kustom.xb
@@ -35,9 +35,10 @@ Hasil file yang dibuka ditampilkan dalam gambar di bawah ini:
 ### Langkah 3. Dekompresi file cadangan
 1. Unduh qpress dengan menjalankan perintah berikut:
 ```
-wget http://www.quicklz.com/qpress-11-linux-x64.tar
+wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0"
+http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?Jika kesalahan ditampilkan selama pengunduhan `wget`, Anda dapat mengunjungi [situs web resmi QuickLZ](http://www.quicklz.com/) untuk mengunduh qpress secara lokal dan mengunggahnya ke instans CVM Linux. Untuk informasi selengkapnya, harap lihat [Mengunggah File melalui SCP ke CVM Linux dari Linux](https://intl.cloud.tencent.com/zh/document/product/213/2133).
+>?Jika kesalahan ditampilkan selama pengunduhan `wget`, Anda dapat mengunjungi [situs web resmi QuickLZ](http://www.quicklz.com/) untuk mengunduh qpress secara lokal dan mengunggahnya ke instans CVM Linux. Untuk informasi selengkapnya, harap lihat [Mengunggah File melalui SCP ke CVM Linux dari Linux](https://intl.cloud.tencent.com/document/product/213/2133).
 2. Ekstrak file biner qpress dengan menjalankan perintah berikut:
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
