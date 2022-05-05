@@ -19,5 +19,5 @@ You have [created an event bus](https://intl.cloud.tencent.com/document/product/
 5. Click **Next** and select the event targets to bind to the current event rule. An event rule can be bound to multiple event targets.
    ![](https://qcloudimg.tencent-cloud.cn/raw/0c5cadf332064f4b21802891093637a0.png)
     EventBridge supports the following event targets, and you can click the links to view their configuration methods:
-   - [Serverless Cloud Function (SCF)](https://cloud.tencent.com/document/product/1359/58791)
-   - [CKafka](https://cloud.tencent.com/document/product/1359/71424)
+   - [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/1108/46254)
+   - [CKafka](https://intl.cloud.tencent.com/document/product/1108/46249)
