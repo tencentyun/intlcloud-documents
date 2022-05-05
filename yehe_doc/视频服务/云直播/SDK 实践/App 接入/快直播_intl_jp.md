@@ -1,17 +1,18 @@
-[ライブイベントストリーミングSDK](https://intl.cloud.tencent.com/document/product/1071/41875)は、スマホでのライブストリーミングの超低遅延再生に向けたCloud Streaming Services(CSS)の拡張版です。モバイル端末でミリ秒レベルの低遅延ライブストリーミングプル用の**クイックインテグレーションソリューション**をユーザーに提供します。eラーニング、スポーツの試合のライブストリーミング、オンライン質疑応答、ライブストリーミングオークションなど、より高いレイテンシーパフォーマンスを必要とする特定のシナリオのニーズを満たすことができます。
+[ライブイベントブロードキャストSDK](https://intl.cloud.tencent.com/document/product/1071/41875)は、スマホでのライブブロードキャストの超低遅延再生に向けたCloud Streaming Services（CSS）の拡張版です。モバイル端末でミリ秒レベルの低遅延ライブブロードキャストプル用の**クイックインテグレーションソリューション**をユーザーに提供します。eラーニング、スポーツイベントのライブブロードキャスト、オンライン質疑応答、ライブブロードキャストオークションなど、より高いディレーパフォーマンスを必要とする特定のシナリオのニーズを満たすことができます。
 
 ## SDKとソースコードのダウンロード
 
-ライブイベントストリーミングSDKは、モバイルライブストリーミングSDKに統合されています。 [インタラクティブライブストリーミング版（Live）](https://intl.cloud.tencent.com/document/product/1071/38150)、[全機能版（ALL）](https://intl.cloud.tencent.com/document/product/1071/38150) 、 [エンタープライズ版（Enterprise）](https://intl.cloud.tencent.com/document/product/1071/38150)を使用すると、 ミリ秒レベルの超低遅延プル機能が実装され、 スマホの超低遅延ライブストリーミング機能をすばやく起動させるのに役立ちます。詳細については、 [SDKダウンロード](https://intl.cloud.tencent.com/document/product/1071/38150)をご参照ください。
+ライブイベントブロードキャストSDKは、Mobile Live Video Broadcasting SDKに統合されています。[インターナショナルバージョン(International)](https://intl.cloud.tencent.com/document/product/1071/38150)を通じてミリ秒レベルの超低遅延プル機能を実現し、携帯電話の超低遅延ライブブロードキャスト機能をすばやく起動できるようにします。詳細については、[SDKダウンロード](https://intl.cloud.tencent.com/document/product/1071/38150)をご参照ください。
 
 
 ## Demo体験
-ビデオクラウドツールキットとは、Tencent Cloudがオープンソース化したオーディオビデオサービスのソリューションのセットです。ビデオクラウドツールキットを使用すれば、ライブイベントストリーミングのミリ秒レベルの低遅延プル機能を体験できます。
+ビデオクラウドツールキットは、Tencent Cloudがオープンソース化したオーディオとビデオサービスの完全なソリューションです。ビデオクラウドツールキットを使用すれば、ライブイベントブロードキャストのミリ秒レベルの低遅延プル機能を体験できます。
+
 
 <table>
   <tr>
-    <th align="center">開発端末</th>
-    <th align="center">体験版インストール</th>
+    <th><div align="center">開発端末</div></th>
+    <th><div align="center">体験版インストール</div></th>
     <th><div align="center">プッシュデモ（Android）</div></th>
     <th><div align="center">再生デモ（Android）</div></th>
   </tr>
@@ -36,9 +37,8 @@
 </table>
 
 
-
 ## さらに詳しく
 
-- ライブイベントストリーミングSDK機能について、さらにお知りになりたい場合は、 [ライブイベントストリーミングプルドキュメント](https://intl.cloud.tencent.com/document/product/1071/41875)をご参照ください。
-- ライブイベントストリーミングの料金に関する説明をお知りになりたい場合は、[ライブイベントストリーミングのサービス料金](https://intl.cloud.tencent.com/document/product/267/39969)をご参照ください。
+- ライブイベントブロードキャストSDK機能をさらに知りたい場合は、[ライブイベントブロードキャストプルドキュメント](https://intl.cloud.tencent.com/document/product/1071/41875)をご参照ください。
+- ライブイベントブロードキャストの料金に関する説明を知りたい場合は、[ライブイベントブロードキャストのサービス料金](https://intl.cloud.tencent.com/document/product/267/39969)をご参照ください。
 

@@ -1,9 +1,9 @@
-Live Event Broadcasting(LEB)(초저지연 라이브 방송)은 CSS의 초저지연 재생 시나리오가 확장된 개념으로 LVB 프로토콜보다 딜레이가 낮아 밀리초 레벨의 라이브 방송 시청 경험을 선사합니다. 온라인 교육, 스포츠 경기 라이브 방송, 온라인 Q&A 같은 저지연 성능에 대한 요구도가 높은 특정 시나리오에 적합합니다.
+LEB(Live Event Broadcasting)(초저지연 라이브 방송)은 CSS의 초저지연 재생 시나리오가 확장된 개념으로 LVB 프로토콜보다 딜레이가 낮아 밀리초 레벨의 라이브 방송 시청 경험을 선사합니다. 온라인 교육, 스포츠 경기 라이브 방송, 온라인 Q&A 같은 저지연 성능에 대한 요구도가 높은 특정 시나리오에 적합합니다.
 
  
 ## 제품 아키텍처
 
-![](https://qcloudimg.tencent-cloud.cn/raw/89955303a40baec947ea981238baef9e.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/33003e986f9f27a19dbeaad7108d63d0.png" width="750px">
 
 
 ## 제품 특징

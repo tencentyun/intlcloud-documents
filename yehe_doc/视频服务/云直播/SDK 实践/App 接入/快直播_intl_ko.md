@@ -2,18 +2,19 @@
 
 ## SDK 및 소스 코드 다운로드
 
-LEB SDK가 MLVB SDK에 통합되었습니다. [라이브 버전(Live)](https://intl.cloud.tencent.com/document/product/1071/38150), [다기능 버전(ALL)](https://intl.cloud.tencent.com/document/product/1071/38150), [엔터프라이즈 버전(Enterprise)](https://intl.cloud.tencent.com/document/product/1071/38150)을 통해 밀리 초 단위의 저지연 모바일 재생 기능을 빠르게 구현할 수 있습니다. 자세한 내용은 [SDK 다운로드](https://intl.cloud.tencent.com/document/product/1071/38150)를 참고하십시오.
+LEB SDK가 MLVB SDK에 통합되었습니다. [MLVB International](https://intl.cloud.tencent.com/document/product/1071/38150)을 통해 밀리초 수준의 초저지연 모바일 재생 기능을 빠르게 구현할 수 있습니다. [SDK 다운로드](https://intl.cloud.tencent.com/document/product/1071/38150)를 참고하십시오.
 
 
 ## Demo 체험
-비디오 클라우드 툴킷은 Tencent Cloud에서 개발한 종합 오픈 소스 오디오/비디오 솔루션입니다. 이를 통해 밀리 초 수준의 저지연 LEB 스트림 재생 기능을 체험해 볼 수 있습니다.
+TCToolkit은 Tencent Cloud에서 개발한 오픈 소스 종합 오디오/비디오 솔루션입니다. 이를 사용하여 LEB의 밀리초 수준의 저지연 라이브 스트림 재생 기능을 체험해 볼 수 있습니다.
+
 
 <table>
   <tr>
     <th><div align="center">개발측</div></th>
-    <th><div align="center">설치 체험</div></th>
-    <th><div align="center">푸시 스트림 데모(Android)</div></th>
-    <th><div align="center">재생 데모(Android)</div></th>
+    <th><div align="center">데모</div></th>
+    <th><div align="center">푸시 스트림 예시(Android)</div></th>
+    <th><div align="center">재생 예시(Android)</div></th>
   </tr>
   <tr>
     <td >Android</td>
@@ -34,7 +35,6 @@ LEB SDK가 MLVB SDK에 통합되었습니다. [라이브 버전(Live)](https://i
     <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png" width="150"></td>
   </tr>
 </table>
-
 
 
 ## 더 알아보기
