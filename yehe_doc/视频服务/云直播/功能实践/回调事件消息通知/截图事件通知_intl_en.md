@@ -1,75 +1,88 @@
-The live screencapture feature is used to take screenshots of a real-time live stream at regular intervals and generate images. You can get the information of screenshots from callback notifications. Such screenshot data can be used for porn detection, live room cover generation, and other scenarios.
+Live screencapture takes real-time screenshots from a live stream at the specified interval and stores them in COS. A screencapture callback returns information about stored screenshots, including the screenshot generation time, image size, file path, and download link. To receive screencapture callbacks, you need to configure your server address in a callback template and bind the template with your push domain. When a live screencapture event occurs, the CSS backend will send the screenshot information to the server configured.
+
+This document describes the fields in a live screencapture callback message.
 
 ## Notes
 
-- You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud CSS before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/zh/document/product/267/38080).
-- The screenshot information obtained after a screencapturing callback event is triggered can be used for porn detection, live room cover generation, and other scenarios.
+- This document assumes you already know how to configure and [receive](https://intl.cloud.tencent.com/document/product/267/38080) callbacks.
+- The information returned by a screencapture callback can be used for porn detection, live video thumbnail generation, and other scenarios.
 
-## Screencapturing Event Parameter Description
+## Screencapture Event Parameters
+### Event type
 
-### Event type parameters
-
-| Event Type | Field Value Description           |
+| Event Type | Value           |
 | :------- | :------------- |
 | Live screencapture | event_type = 200 |
 
 ### Common callback parameters
 <table>
-<tr><th>Field Name</th><th>Type</th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
 <tr>
 <td>t</td>
 <td>int64</td>
-<td>Expiration time, which is the Unix timestamp when the event notification signature expires. <ul style="margin:0"><li>The default expiration time of a message notification from Tencent Cloud is 10 minutes. If the time specified by the `t` value in a message notification has elapsed, it can be determined that this notification is invalid, thereby preventing network replay attacks. <li>The format of `t` is a decimal Unix timestamp, i.e., the number of seconds that has elapsed since January 01, 1970 00:00 (UTC/GMT time).</ul></td>
+<td>Expiration time, which is the Unix timestamp when the event notification signature expires. <ul style="margin:0"><li>The default validity period of a message notification from Tencent Cloud is 10 minutes. If the time specified by the `t` value in a message notification has elapsed, then this notification is considered invalid, thereby preventing network replay attacks. <li>The value of `t` is a decimal Unix timestamp, that is, the number of seconds that have elapsed since 00:00:00 (UTC/GMT time), January 1, 1970.</ul></td>
 </tr><tr>
 <td>sign</td>
 <td>string</td>
-<td>Security signature of event notification (sign = MD5(key + t)). <br>Note: Tencent Cloud splices the encryption `<a href="#key">key</a>` and `t`, calculates the `sign` value through MD5, and places it in the notification message. After your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.</td>
+<td>Security signature. sign = MD5(key + t). <br>Tencent Cloud splices the encryption <a href="#key">key</a> and `t`, generates the MD5 hash of the spliced string, and embeds it in callback messages. Your backend server can perform the same calculation when it receives a callback message. If the signature matches, it indicates the message is from Tencent Cloud.</td>
 </tr></table>
 
->? `key` is the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
->![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
+>? A key is used for authentication. You can set it in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**. We recommend you set it to ensure data security.
+
+![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 ### Callback message parameters
 
-
-| Field Name | Type   | Description                                                         |
+| Parameter | Type   | Description           |
 | :----------- | :----- | :-------------------------- |
+| app           | string | Push domain name         |
+| appname       | string | Push path           |
+| stream_param  | string | Push URL parameters                                        |
 | stream_id    | string | Live stream name                  |
-| channel_id   | string | The value is the same as live stream name                |
+| channel_id   | string | Same as the stream name                |
 | create_time | int64 | Unix timestamp when a screenshot is generated |
 | file_size    | int    | Screenshot file size in bytes    |
 | width        | int    | Screenshot width in pixels           |
-| height       | int    | Screenshot height in pixels          |
-| pic_url      | string | Screenshot file path, such as `/path/name.jpg` |
+| height       | int    | Screenshot height in pixels        |
+| pic_url      | string | Screenshot file path (`/path/name.jpg`) |
 | pic_full_url | string | Screenshot download URL                 |
 
 ### Sample callback message
-
-```
+<dx-codeblock>
+::: json json
 {
-"event_type":200,
-
-"stream_id":"stream_name",
-
-"channel_id":"stream_name",
-
-"create_time":1545030273,
-
-"file_size":7520,
-
-"width":640,
-
-"height":352,
-
-"pic_url":"/2018-12-17/stream_name-screenshot-19-06-59-640x352.jpg",
-
-"pic_full_url":"http://testbucket-1234567890.cos.region.myqcloud.com/2018-12-17/stream_name-screenshot-19-06-59-640x352.jpg",
-
-"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
-
-"t":1545030873
+    "app":"test.app",
+		
+    "appname":"live",
+    	
+    "channel_id":"your_channelid",
+    	
+    "create_time":1622599925,
+    	
+    "event_type":200,
+    	
+    "file_size":30670,
+    	
+    "height":720,
+    
+    "pic_full_url":"http://your.cos.region.myqcloud.com/channelid/channelid-screenshot-10-12-05-1280x720.jpg",
+    	
+    "pic_url":"/channelid/channelid-screenshot-10-12-05-1280x720.jpg",
+    	
+    "sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
+    	
+    "stream_id":"your_streamid",
+    	
+    "stream_param":"txSecret=ca3e25e5dc17a6f9909a9ae7281e300d&txTime=60B83800",
+    	
+    "t":1622600525,
+    	
+    "width":1280
 }
-```
+:::
+</dx-codeblock>
+
+
 
 
 

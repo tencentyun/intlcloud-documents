@@ -1,140 +1,139 @@
-## Solution Background
-Open Broadcaster Software (OBS) is an easy-to-use third-party open-source software program for producing live streaming content free of charge. It can run on OS X, Windows, and Linux to meet the needs of various live broadcasting scenarios. You can go to the [OBS official website](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8) to download the latest version.
-Preparations
+## Overview
+Open Broadcaster Software (OBS) is a third-party open-source tool for live streaming. It’s easy to use and free of charge, and it supports OS X, Windows, and Linux. OBS can be used in a wide range of scenarios to meet most live streaming needs without requiring additional plugins. You can download its latest version at the [OBS website](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8).
 
-- Install [OBS Studio](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8).
+## Prerequisites
+- You have installed [OBS Studio](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8).
+- You have activated [CSS](https://console.cloud.tencent.com/live) and [added a playback domain](https://intl.cloud.tencent.com/document/product/267/35970) with an ICP filing number in the console (for push, you can use the default domain we provide or add your own).
 
-
-
-
-1. Log in to the CSS console, and the click **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)**.
-   1. Select the type, such as **push domain** or **playback domain**.
-   2. Select a domain name you have already added on the domain management page.
-   3. `AppName` is the address path used to differentiate multiple applications under the same domain name, which is `live` by default.
-   4. Enter a custom `StreamName`, such as `liveteststream`.
-   5. Select the expiration time of the address, such as `2019-11-30 23:59:59`.
-
-
-![](https://main.qcloudimg.com/raw/64c3815306c68daebb5fc7d53bb43164.png)
+[](id:step0)
+## Getting a Push URL
+1. Log in to the CSS console, click **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** in the left sidebar, and follow the steps below:
+   1. Select *Push Domain** for **Domain Type**.
+   2. Select the domain name you have added in **Domain Management**.
+   3. Enter an application name (`AppName`), which is used to distinguish applications under the same domain. The default value is `live`.
+   4. Enter a custom stream name (`StreamName`), such as `live`.
+   5. Select the expiration time of the address, such as `2020-06-09 23:59:59`.
+2. Click **Generate Address** to get an OBS push URL.
 
 
+[](id:normal)
+## Configuring OBS for Push
+### Step 1. Configure the push URL[](id:step1)
+1. Open OBS and click **Controls** > **Settings** at the bottom to enter the settings page.
+![](https://main.qcloudimg.com/raw/493a19e0f2bbea80983c341dd742a044.png)
+2. Click **Stream** and select **Custom** for **Service**.
+3. Fill in the **Server** and **Stream Key** fields with the information obtained in [Getting a Push URL](#step0).
+    - Server: Enter the OBS push address (`rtmp://domain/AppName/`).
+    - Stream key: Enter the OBS push name (`StreamName?txSecret=xxxxx&txTime=5C1E5F7F`).
+![](https://main.qcloudimg.com/raw/55512ddf58bf32014424fa33b6f3d31f.png)
+4. Click **OK** to save the information.
 
-Open OBS Studio and click **Controls** > **Settings** at the bottom to enter the Settings page.
-![](https://main.qcloudimg.com/raw/56e4c19f24d08df7b8f8815f1ffb6857.png)
+### Step 2. Configure the source[](id:step2)
+>? For bitrate, recording, and other settings, click **Tools > Auto-Configuration Wizard** in the top menu bar, and follow the instructions provided by OBS to complete the settings.
 
-
-    
-    Stream name: StreamName?txSecret=xxxxx&txTime=5C1E5F7F
-![](https://main.qcloudimg.com/raw/c6cd899e29c9256102444bf20d1889d3.png)
-4. Click **OK** to save the configuration.
-
-
-
-
-
-![](https://main.qcloudimg.com/raw/d370f4fbf0f9a57116eee0543ea6a59e.png)
-
- ![](https://main.qcloudimg.com/raw/c59eff44ffd2ac4c785fe4e4e3bd79b8.png)
-1. **Common input sources**
+1. Find **Sources** in the menu bar at the bottom.
+![](https://main.qcloudimg.com/raw/f8136fdb794595c8c491c995a74cdfcc.png)
+2. Click **+** and select a source that fits your needs, for example, **Display Capture**.
+ ![](https://main.qcloudimg.com/raw/f8136fdb794595c8c491c995a74cdfcc.png)
+**Common live streaming sources**
 <table>
-<thead><tr><th width="15%">Configuration Item</th><th>Description</th></tr></thead>
+<thead><tr><th width="20%">Source</th><th>Description</th></tr></thead>
 <tbody><tr>
-
-
-
-
-
-- **Scene**: Achieves various fascinating effects for live broadcasting. In this case, another scene, in part or in its entirety, can be embedded into the current scene as a source.
-
-
-
-
-
-- **Display Capture**: Dynamically captures operations on the desktop in real time. All operations are displayed during live broadcasting.
-
-
-
-- **Window Capture**: Captures the selected window in real time. Only the current window is displayed during live broadcasting, while other windows will not be captured.
-
-- **Color Source**: Adds a solid color to the scene as background color. Transparency of the color can be adjusted to even make the screen transparent.
-
-
-
-
-
-
+<td>Image</td>
+<td>Publishing a single image</td>
+</tr><tr><td>Image Slide Show</td>
+<td>Publishing multiple images (you can determine the order of playback and whether to loop the playback)</td>
+</tr><tr><td>Scene</td>
+<td>Insertion of an entire scene as the source to enable various streaming effects</td>
+</tr><tr><td>Media Source</td>
+<td>Publishing a local file</td>
+</tr><tr><td>Text</td>
+<td>Adding real-time text to your stream</td>
+</tr><tr><td>Display Capture</td>
+<td>Capturing and publishing your monitor in real time</td>
+</tr><tr><td>Game Capture</td>
+<td>Streaming a game from a specified source in real time</td>
+</tr><tr><td>Window Capture</td>
+<td>Capturing and publishing the window you select in real time</td>
+</tr><tr><td>Color Source</td>
+<td>Adding a solid color to your scene. You can use this source for background colors or a global color tint by using the alpha channel.</td>
+</tr><tr><td>Video Capture Device</td>
+<td>Capturing and publishing the images captured by a camera in real time</td>
+</tr><tr><td>Audio Input Capture</td>
+<td>Audio live streaming (audio input device)</td>
+</tr><tr><td>Audio Output Capture</td>
+<td>Audio live streaming (audio output device)</td>
 </tr>
 </tbody></table>
 
+### Step 3. Use the studio mode[](id:step3)
+In studio mode, you can edit your current live stream in real time and configure transitions for scene swapping, minimizing the impact on user experience.
+1. Click **Controls > Studio Mode** in the menu bar at the bottom.
+2. After editing, click **Transition** to swap the edit and live views.
+![](https://main.qcloudimg.com/raw/80e9e902e0e02902d78779ca5505b2f8.png)
 
-In Studio Mode, you can edit the content of the current live broadcast in real time and perform scene transitions during editing, minimizing the impact on user experience.
-
-
-![](https://main.qcloudimg.com/raw/1fe0d66ff608a438fc8e2e49436a5ff9.png)
-
-
-
-
-![](https://main.qcloudimg.com/raw/ce27c9985d6531c07b2b166ad54ea3b9.png)
+### Step 4. Start streaming[](id:step4)
+1. Find **Controls** in the menu bar at the bottom.
+2. Click **Start Streaming** to push your video to the configured push URL.
+![](https://main.qcloudimg.com/raw/80e9e902e0e02902d78779ca5505b2f8.png)
 
 >? 
+>- If you see ![](https://main.qcloudimg.com/raw/a10bafc9eb0895dc4c6b542b61217253.png) at the bottom, the push is successful.
+>- To stop streaming, click **Stop Streaming**.
+
+## Other Push Settings
+### Streaming latency
+1. Go to **Controls > Settings > Output**.
+2. Select **Advanced** for **Output Mode** to set parameters including **Keyframe Interval**.
+![](https://main.qcloudimg.com/raw/5f48205da162f1230723729c36369f65.png)
+3. Click **Advanced** in the left sidebar to set **Stream Delay**:
+![](https://main.qcloudimg.com/raw/c3ec9a71a014548eb680009d9798b1ac.png)
+
+### Local live recording
+To record live streams to your local storage, follow the steps below:
+1. Go to **Controls > Settings > Output**.
+2. Complete the settings under **Recording** and click **OK**.
+![](https://main.qcloudimg.com/raw/008e1ab02e2d08ee42f3a64e2e09d473.png)
+3. Click **Video** in the left sidebar to set the resolution and frame rate.
+>? Resolution determines the clarity of video shown to viewers. The higher the resolution, the clearer the video. Frame rate (frames per second) determines playback smoothness. Typical frame rate falls in the range of 24 fps to 30 fps. Playback may stutter if frame rate is lower than 16 fps. Video games require higher frame rate and tend to stutter at a frame rate lower than 30 fps.
+
+![](https://main.qcloudimg.com/raw/f736ef195b26a81f46d1e26d7935a763.png)
+
+### Transcoding
+To change the video bitrate during streaming, follow the steps below:
+1. Click **Controls > Settings** in the menu bar at the bottom.
+2. Click **Output** in the left sidebar and select **Simple** for **Output Mode**.
+3. Enter the bitrate you want to use and click **OK**.
+![](https://main.qcloudimg.com/raw/008e1ab02e2d08ee42f3a64e2e09d473.png)
 
 
 
 
-- Video broadcasting delay
+## More
+### Audio-only push
+According to OBS Forums, OBS Studio 23.2.1 and earlier versions do not support audio-only streaming.
+You can follow the steps below to implement a similar feature. The method uses a static canvas (blank screen or image) for video content. This means there will still be video data in the live stream. To reduce bandwidth usage, you can set the video frame rate and bitrate to the minimum values.
+1. As instructed in [Configure the source](#step2), select **Audio Input Capture** as the source. Do not use a video or image source.
+
+2. Go to **Controls > Settings > Video**.
+3. Set **Base (Canvas) Resolution** and **Common FPS Values** to the minimum values and click **OK**.
+    ![](https://main.qcloudimg.com/raw/cb77c3deb8d3e9831aaa1421b5b13412.png)
+4. Click **Output** in the left sidebar, configure the output as shown below (set **Bitrate** to the minimum value), and click **OK**.
+    ![](https://main.qcloudimg.com/raw/008e1ab02e2d08ee42f3a64e2e09d473.png)
+5. Start streaming as instructed in [Configuring OBS for Push](#normal). The audience will hear audio, while the video will be a blank screen or an image. Because the video bitrate is set to the minimum value, the bandwidth usage is significantly lower than that of video push.
+
+### Video looping
+- **Loop a single file**
+    1. Click **+** in **Sources** and select **Media Source**. In the pop-up window, choose a local file to stream, select **Loop**, and click **OK**.
+    ![](https://main.qcloudimg.com/raw/b41371c6674d4d8a2cd84fe37e3fbab4.png)
+    2. Set the **Server** and **Stream Key** as instructed in [Configure the push URL](#step1).
 
 
-![](https://main.qcloudimg.com/raw/216b6ec15a5ef1abe8a64d6000d669d7.png)
-Select **Advanced** on the left sidebar to configure **Stream Delay**:
-![](https://main.qcloudimg.com/raw/e1cd9e4c9e813a5706e1ef23f332c7d1.png)
-
-- Local LVB recording
-If you need local LVB recording, you can record live streams for local backup. The configuration is as shown below:
-
-
-![](https://main.qcloudimg.com/raw/d269d04ed1f74f5478d9efe6550229bd.png)
-
-Resolution determines the clarity of video shown to viewers. The higher the resolution, the clearer the video. FPS (frames per second) determines how smooth a video look. The FPS value for ordinary videos ranges from 24 to 30, and lags would appear if it is lower than 16. Video games have a higher requirement for frame rate and would often smear if the value is below 30. The resolution and frame rate settings are as shown below:
->
-![](https://main.qcloudimg.com/raw/4a3ce8f1a47572dd214f104ef3086398.png)
-
-
-
-
-
-
-![](https://main.qcloudimg.com/raw/3cbeecf4eb6517563f5a6ee5ff879498.png)
-
-
-
-
-
-### Pure Audio Push
-According to the discussions in the OBS forum, OBS Studio 23.2.1 and earlier versions do not support pure audio push.
-To implement a similar feature, you can follow the steps below. This method works by replacing a video with a static canvas (blank screen or image). If you need to reduce bandwidth usage, you can lower video frame rate and bitrate to get closer to pure audio push, but there will still be video data in the live stream.
-1. As instructed in [OBS push configuration](#step2), select **Audio Input Capture** as input source. Do not select a video or image as video source.
-![](https://main.qcloudimg.com/raw/93048a70d6fd953c3c7d390580dd159d.png)
-
-2. Go to **Controls** > **Settings** > **Video**, set **Output (Scaled) Resolution** and **Common FPS Values** to the minimum value, and click **OK** to save the configuration.
-![](https://main.qcloudimg.com/raw/0e564c4d21b30a088cc81d138c72238f.png)
-3. Click **Output**, configure streaming as shown below, and set **Bitrate** to the minimum value. Click **OK** or **Apply** to save the configuration.
-![](https://main.qcloudimg.com/raw/f873ce1ee65d909d80ebe325171d28db.png)
-4. As instructed in **Push** in [OBS push configuration](#step1), start the push, which will amount to pure audio push as the video content is shown as a blank screen or image. With video bitrate set to minimum, bandwidth usage is reduced significantly.
-
-### Video Looping
-**To loop a single video**
-    1. Click the **+** icon under the **Sources** box, select **Media Source** and in the pop-up window, select the video file to be looped in **Local File**, select **Loop**, and then click **OK**.
-    ![](https://main.qcloudimg.com/raw/08f3d93083fe55c31e510d6069cf33d7.png)
-    2. As instructed in [OBS push settings](#step1), click **Stream** on the left sidebar, and enter **Server** and **Stream Key** to start streaming, so the single video will be looped.
-
-- 
-
-
-3. For more information, see [VLC Player](https://cloud.tencent.com/document/product/267/32727).
-2. Download the [MLVB SDK](https://cloud.tencent.com/document/product/454/7873).
-
-
+You can use the following methods to check whether the push is successful:
+- PC: Use [VLC](https://intl.cloud.tencent.com/document/product/267/32483) to play the stream.
+- Mobile: Use the [MLVB](https://intl.cloud.tencent.com/zh/document/product/1071) SDK to play the stream.
+>? Mobile Live Video Broadcasting (MLVB) extends the services of CSS to mobile devices. It offers not only an RTMP SDK that allows quick integration, but also a one-stop, multi-cloud solution that integrates Tencent Cloud services including LVB, LEB, VOD, IM, and COS.
+[Live Event Broadcasting (LEB)](https://intl.cloud.tencent.com/document/product/1071/41875) is the ultra-low-latency version of LVB. It delivers superior playback experience with millisecond latency and is suitable for scenarios with high requirements on latency, such as online education, sports streaming, and online quizzes.
 
 
 
