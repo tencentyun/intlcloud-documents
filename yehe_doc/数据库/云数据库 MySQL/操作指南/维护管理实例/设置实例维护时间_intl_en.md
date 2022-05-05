@@ -14,7 +14,7 @@ Taking the database instance specification upgrade as an example, as this operat
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Maintenance Info** section, click **Modify**.
 ![](https://main.qcloudimg.com/raw/388e3aa6ca18c6cb947eb4d053ad1eb5.png)
-3. In the pop-up dialog box, select **Maintenance Window** and **Maintenance Time**, and click **OK**.
+3. In the pop-up dialog box, select Maintenance Window and Maintenance Time, and click **OK**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/91738d5593aad8f573fde932420ae9fe.png)
 
 <span id="lijiqiehuan"></span>
@@ -24,4 +24,4 @@ If a task is configured to be switched during the maintenance window, but you ne
 
 >?
 >- Immediate switch is applicable to operations involving data migration such as instance specification adjustment, instance version upgrade, and instance kernel upgrade.
->- For version upgrade, if it is associated with multiple instances, the switch will be performed in the order from read-only replica to source instance.
+>- For version upgrade, if it is associated with multiple instances, the switch will be performed in the order from disaster recovery instance, read-only instance and primary instance.
