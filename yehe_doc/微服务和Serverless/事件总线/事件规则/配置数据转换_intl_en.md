@@ -20,17 +20,12 @@ In addition to basic event filtering, EventBridge provides simple data processin
 >?Currently, the output format is JSON.
 >
  - Filter: Only data that meets the configured filter rule is output. The filter supports the following matching modes: **Prefix match**, **Suffix match**, **Inclusion match (contains)**, **Exclusion match (except)**, **Data matching**, and **IP matching**.
-   - Data processing: Valid values of `TYPE` are **Default**, **Preset**, **Mapping**, **Custom**, and **JSONPATH**.
+   - Data processing: Valid values of `TYPE` are **Default**, **Preset**, **Mapping**, **Custom**.
      - TYPE = Default: `VALUE` is mapped based on the parsing result and cannot be modified.
      - TYPE = Preset: You can select a system preset value for `VALUE`. Currently, `DATE` (timestamp) is supported.
      - TYPE = Mapping: You can select an existing key. The final output value of `VALUE` is mapped by the specified key.
      - TYPE = Custom: You can enter a custom value for `VALUE`.
-     - TYPE = JSONPATH: Parse nested JSON data. Use `$` as the first character and `.` as the last character to locate a specific field in nested JSON data.
-7. Click **Test** to check the test result.
-8. Set the failure processing rule.
-   - Retry interval: Specifies the interval for retrying a failure. The retry interval can range from 60 seconds to 1 hour.
-   - Retry attempts: Specifies the maximum number of retries upon a failure. After this limit is exceeded, the message will be considered a failed message. The result of `Retry attempts` multiplied by `Retry interval` should be equal to or less than 6 hours.
-   - Failed message processing: Specifies the method of processing failed messages. You can choose to **discard** or **retain** failed messages, or deliver failed messages to the **dead letter queue** (in this case, you need to specify the dead letter topic).
+8. Click **Test** to check the test result.
 9. Click **Next** to complete data target binding.
 
 ### Editing a rule

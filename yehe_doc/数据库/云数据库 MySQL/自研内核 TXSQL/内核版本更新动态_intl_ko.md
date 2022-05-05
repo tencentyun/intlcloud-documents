@@ -1,8 +1,43 @@
 본 문서에서는 MySQL 커널 버전 업데이트 동향에 대해 소개합니다. 업그레이드 하려면 [커널 마이너 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/36816)를 참고하십시오.
 
 ## MySQL 8.0
+### 20211202
+#### 새로운 기능:
+- 빠른 열 수정 기능을 지원합니다.
+- 히스토그램 이전 버전 기능을 지원합니다.
+- 물리적 테이블의 무작위 샘플을 얻기 위한 SQL2003 TABLESAMPLE(단일 테이블) 샘플링 제어 구문을 지원합니다.
+- 보관되지 않은 키워드 추가: TABLESAMPLE BERNOULLI.
+- 주어진 입력 필드에 대한 히스토그램을 작성하기 위해 HISTOGRAM() 함수를 추가했습니다.
+- compressed 히스토그램 지원합니다.
+- SQL throttling 기능 지원(DBbrian은 2022년 04월 지원 예정).
+- MySQL 클러스터 역할 설정 기능을 지원하며 기본 역할은 CDB_ROLE_UNKNOWN입니다.
+- 역할을 표시하기 위해 show replicas 명령의 표시 결과에 새로운 Role 열이 추가되었습니다.
+- proxy를 지원합니다.
+
+#### 성능 최적화:
+- insert on duplicate key update로 인한 핫스팟 업데이트 문제를 최적화했습니다.
+- event 같은 여러 개의 동일한 binlog event를 집계하여 hash scan의 애플리케이션 속도를 향상시켰습니다.
+- plan cache가 열린 상태에서 스레드 풀(Thread Pool) 모드에서 prepare 명령의 메모리를 대폭 줄였습니다.
+
+#### Bug 수정:
+- 핫스팟 업데이트 최적화를 켠 후 성능이 불안정한 문제 수정.
+- 'select count(*)' 병렬 스캔이 극단적인 경우 전체 테이블을 스캔하는 문제 수정.
+- 다양한 경우에 통계 정보 0 읽기로 인한 실행 계획 변경으로 발생하는 성능 문제 수정.
+- query가 오랫동안 query end 상태인 bug 수정.
+- 긴 기록에서 통계 정보가 심각하게 과소평가되는 bug 수정.
+- Temptable 엔진 사용 시 선택한 열의 집계 함수가 255를 초과하여 오류가 보고되는 bug 수정.
+- json_table 함수에서 열 이름의 대소문자 구분 문제 수정.
+- return true 시 표현식이 일찍 반환되어 윈도우 함수에서 정확성 문제를 일으키는 bug 수정.
+- derived condition pushdown이 user variables를 포함할 때 발생하는 정확성 문제 수정.
+- Rule 규칙이 namespace를 추가하지 않을 때 SQL filter가 crash하기 쉬운 문제 수정.
+- 높은 동시성과 높은 충돌의 경우 스레드 풀(Thread Pool)을 여는 QPS 지터 수정.
+- 프라이머리/세컨더리 bp 동기화가 극단적인 상황에서(호스트 파일 시스템 손상) 파일 핸들을 유출하는 문제 수정
+- index mapping 문제 수정.
+- 통계 정보 캐시 동기화 문제 수정.
+- 정보를 지우지 않고 update 명령 또는 스토리지 프로시저의 이식 실행으로 인해 발생하는 crash 문제 수정.
+
 ### 20210830
-#### 새로운 특성:
+#### 새로운 기능:
 - 사전 로딩 라인 제한 기능을 지원합니다.
 - 플랜 캐시 체크 최적화 기능을 지원합니다.
 - 확장된 ANALYZE 구문(UPDATE HISTOGRAM c USING DATA 'json')을 지원하고 히스토그램을 직접 작성하는 기능을 지원합니다.
@@ -26,11 +61,11 @@
 - 전체 텍스트 인덱스 쿼리에서 메모리 증가로 인해 발생하는 OOM 문제 수정.
 - show processlist에 의해 반환된 결과 집합의 TIME 필드 -1 문제 수정.
 - 히스토그램 호환성으로 인해 테이블이 열리지 않는 문제 수정.
-- Singleton 히스토그램 생성 시 부동소수점 누적 오류 수정.
+- Singleton 히스토그램 생성 시 부동 소수점 누적 오류 수정.
 - row 형식 로그의 테이블 이름에 긴 중국어 문자로 인해 복제가 중단되는 문제 수정.
 
 ### 20210330
-#### 새로운 특성:
+#### 새로운 기능:
 - 프라이머리/세컨더리 bp 동기화 기능 지원: HA가 발생하고 프라이머리/세컨더리 전환이 수행될 때 대기 데이터베이스는 일반적으로 buffer pool에 핫스팟 데이터를 warmup하고 로드하는 데 비교적 오랜 시간이 걸립니다. 대기 머신의 워밍업 속도를 높이기 위해 TXSQL은 프라이머리/세컨더리 bp 동기화 기능을 지원합니다.
 - Sort Merge Join 기능을 지원합니다.
 - FAST DDL 기능을 지원합니다.
@@ -39,14 +74,14 @@
 #### 성능 최적화:
 - 스캐닝 flush list 플러싱 최적화: 플러시 메커니즘을 최적화하여 인덱스 생성 프로세스의 성능 지터 문제를 해결하고 시스템 안정성을 개선하였습니다.
 
-#### Bug 수정:
+#### bug 수정:
 - offline_mode 및 cdb_working_mode의 매개변수 수정 시 교착 상태 문제 수정.
 - trx_sys의 max_trx_id의 동시성 문제 수정.
 
 ### 20201230
-#### 새로운 특성:
+#### 새로운 기능:
 - 공식 [8.0.19](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html), [8.0.20](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html), [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html), [8.0.22](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-22.html) 변경을 병합하였습니다.
-- thread_handling 스레드 모드 또는 연결 풀 모드 동적 설정 지원.
+- thread_handling 스레드 모드 또는 연결 풀 모드 동적 설정을 지원합니다.
 
 #### 성능 최적화:
 - BINLOG LOCK_done 락 충돌 최적화로 쓰기 성능을 향상시켰습니다.
@@ -63,8 +98,8 @@
 - 핫스팟 업데이트 기능의 동시 접속 보안 문제 수정.
 
 ### 20200630
-#### 새로운 특성:
-- 비동기화 시 대용량 테이블 삭제 지원: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 방지할 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category) 통해 신청해야 합니다.
+#### 새로운 기능:
+- 비동기화 시 대용량 테이블 삭제 지원: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 방지할 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - 유휴 작업을 자동으로 kill하도록 지원하여 리소스 충돌을 감소시킵니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - 투명한 데이터 암호화 기능을 지원합니다.
 
@@ -76,7 +111,7 @@
 
 ## MySQL 5.7
 ### 20211031
-#### 새로운 특성:
+#### 새로운 기능:
 - writeset 복사 기능을 지원합니다.
 
 #### 성능 최적화:
@@ -85,7 +120,7 @@
 - 핫스팟 업데이트 성능 최적화로 insert on duplicate key update를 지원합니다.
 
 #### Bug 수정:
-- 핫스팟 업데이트를 켠 후 성능이 불안정한 문제 수.
+- 핫스팟 업데이트를 켠 후 성능이 불안정한 문제 수정.
 - instant ddl 이후 update 작업 롤백 시 발생하는 crash 문제 수정.
 - 컬럼 압축 활성화 후 create table select 명령이 압축 속성을 상속하지 않는 문제 수정.
 - skip-grant-table 옵션 활성화 후 show variables like 'tencent_root%’ 명령으로 인해 인스턴스 crash가 발생하는 문제 수정.
@@ -105,7 +140,7 @@
 - 연결 해제 시 임시 테이블을 닫으면 binlog rotate를 트리거하여 crash가 발생하는 문제 수정.
 
 ### 20210630
-#### 새로운 특성:
+#### 새로운 기능:
 - slave가 재생한 binlog 타임스탬프를 표시하는 데 사용되는 새로운 명령 SHOW SLAVE DETAIL [FOR CHANNEL channel]을 추가했습니다.
 - transaction_read_only/transaction_isolation 매개변수를 지원합니다.
 
@@ -127,7 +162,7 @@
 - 파티션 테이블 equal range 쿼리 시 잘못된 잠금 문제 수정.
 
 ### 20210331
-#### 새로운 특성:
+#### 새로운 기능:
 - delete/insert/replace의 returning 명령이 지원되며, 해당 statment에서 작동하는 데이터 행을 반환할 수 있습니다. 이 중 delete 명령은 사전 미러링 이미지 데이터를 반환하고, insert/replace는 사후 미러링 이미지 데이터를 반환합니다.
 - 컬럼 압축 기능 지원: 현재 행 형식에 대한 압축과 데이터 페이지에 대한 압축이 있지만 이 두 가지 압축 방법은 테이블의 일부 큰 필드와 기타 여러 작은 필드를 처리합니다. 동시에 작은 필드는 매우 자주 읽고 쓰는데, 큰 필드에 드물게 액세스하는 경우, 읽기 및 쓰기 액세스로 인해 컴퓨팅 리소스가 불필요하게 많이 낭비됩니다. 열 압축은 자주 액세스하지 않는 큰 필드를 압축하는 동시에 전체 필드 행의 저장 공간을 줄이고 읽기 및 쓰기 액세스의 효율성을 향상시킬 수 있습니다.
 - 사용자측 character_set_client_handshake 매개변수 쿼리를 통한 현재 값 표시 기능을 지원합니다.
@@ -150,7 +185,7 @@
 - groupby json 필드의 temporay table update 시간이 오래 걸리는 문제 수정.
 
 ### 20201231
-#### 새로운 특성:
+#### 새로운 기능:
 - SELECT FOR UPDATE/SHARE에서 NOWAIT 및 SKIP LOCKED 옵션 사용을 지원합니다.
 - thread_handling 스레드 모드 또는 연결 풀 모드 동적 설정을 지원합니다.
 - 프라이머리/세컨더리 buffer pool 동기화 기능을 지원합니다.
@@ -200,7 +235,7 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - INNOBASE_SHARE index mapping 오류 문제 수정.
 
 ### 20200630
-#### 새로운 특성:
+#### 새로운 기능:
 - SELECT FOR UPDATE/SHARE 명령어의 NOWAIT 및 SKIP LOCKED 옵션 사용을 지원합니다.
 - 대용량 트랜잭션 최적화 기능 지원을 통해 대용량 트랜잭션으로 인한 프라이머리/세컨더리 딜레이, 백업 실패 등 문제를 개선하였습니다.
 - 감사 성능 최적화: 비동기 감사 기능을 지원합니다.
@@ -212,10 +247,10 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - performance_schema 쿼리 시 hang되는 문제 수정.
 
 ### 20200331
-#### 새로운 특성:
+#### 새로운 기능:
 - 공식 MySQL 5.7.22 버전의 JSON 시리즈 함수를 신규 추가하였습니다.
-- 전자상거래의 타임세일 시나리오를 기반으로 한 [핫 스팟 업데이트](https://intl.cloud.tencent.com/document/product/1035/36037) 기능을 지원합니다.
-- [SQL 제한](https://intl.cloud.tencent.com/document/product/1035/36037)을 지원합니다.
+- 이커머스 타임 세일 시나리오에 대한 [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037#.E7.83.AD.E7.82.B9.E6.9B.B4.E6.96.B0.E4.BF.9D.E6.8A.A4) 기능을 지원합니다.
+- [SQL Throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81)을 지원합니다.
 - 데이터 암호화 기능으로 KMS 사용자 지정 키 암호화를 지원합니다.
 
 #### bug 수정:
@@ -223,7 +258,7 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 동시 실행이 많을 때 CATS(Contention-Aware Transaction Scheduling) 락(Lock) 스케쥴링 모듈에 있었던 crash 문제 수정.
 
 ### 20190830
-#### 새로운 특성:
+#### 새로운 기능:
 - binlog 파일이 손상됐을 때 건너뛰고 이어서 리졸브하는 기능 지원. 프라이머리 인스턴스와 binlog가 모두 손상된 경우 백업 데이터베이스의 데이터를 최대한 복구하여 사용할 수 있도록 합니다.
 - GTID 모드부터 GTID 외 모드까지의 데이터 동기화를 지원합니다.
 - 사용자가 show full processlist를 통해 '사용자의 스레드 메모리 사용 정보'를 조회하도록 지원합니다.
@@ -241,7 +276,7 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 집계 질의 결과 오류 문제 수정.
 
 ### 20190615
-#### 새로운 특성:
+#### 새로운 기능:
 - 투명한 데이터 암호화 기능을 지원합니다.
 
 ### 20190430
@@ -253,8 +288,8 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 문자 세트로 인한 illegal mix of collation 문제 수정.
 
 ### 20190203
-#### 새로운 특성:
-- 비동기화 시 대용량 테이블 삭제 지원: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 방지할 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category) 통해 신청해야 합니다.
+#### 새로운 기능:
+- 비동기화 시 대용량 테이블 삭제 지원: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 방지할 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - CATS 락(Lock) 스케쥴링 모드를 지원합니다.
 - GTID를 실행할 때 트랜잭션에서 임시 테이블과 CTS 구문을 생성, 삭제할 수 있도록 지원합니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - 내장 기본 키를 지원합니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
@@ -265,39 +300,39 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - binlog 캐시 파일 용량 부족에 따른 복제 중단 문제 수정.
 - fsync에서 EIO 리턴 시 반복적으로 무한 루프에 빠지려 하는 문제 수정.
 - GTID 홀(Hole)로 인한 복제 중단 및 복구 불가 문제 수정.
-   
+  
 ### 20180918
-#### 새로운 특성:
+#### 새로운 기능:
 - 유휴 트랜잭션을 자동으로 kill하도록 지원하여 리소스 충돌을 감소시킵니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - Memory 엔진을 InnoDB 엔진으로 자동 교체: 전역 변수cdb_convert_memory_to_innodb가 ON이라면, 테이블 생성/수정 시 테이블 엔진을 Memory에서 InnoDB로 교체합니다.
 - 색인 숨기기 기능을 지원합니다.
 - Jemalloc 메모리 관리를 지원합니다. jlibc 메모리 관리 모듈을 교체하여 메모리 사용량이 감소하고, 메모리 할당 효율은 증가합니다.
-   
+  
 #### 성능 최적화:
 - binlog 교체 최적화로, rotate HOLDLOCK 시간을 줄이고 시스템 성능을 향상시켰습니다.
 - Crash Recovery 속도를 향상시켰습니다.
-    
+  
 #### bug 수정:
 - 프라이머리/세컨더리 스위치로 인한 event 무효화 문제 수정.
 - REPLAY LOG RECORD로 인한 Crash 문제 수정.
 - Loose index scans로 인한 쿼리 결과 오류 문제 수정.
 
 ### 20180530
-#### 새로운 특성:
+#### 새로운 기능:
 - SQL 감사 기능을 지원합니다.
 - 테이블 레벨별 동시 복제 지원. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
-   
+  
 #### 성능 최적화:
 - slave 인스턴스의 락을 최적화하여, 해당 slave 인스턴스의 동기화 성능을 향상시켰습니다.   
 - select ... limit의 푸시다운을 최적화하였습니다.
-   
+  
 #### bug 수정:
 - relay_log_pos & master_log_pos 위치 불일치로 인한 교체 실패 문제 수정.
 - Crash on UPDATE ON DUPLICATE KEY로 인한 Crash 문제 수정.
 - JSON 칼럼 가져오기에 따른 'Invalid escape character in string.' 오류 수정.
-   
+  
 ### 20171130
-#### 새로운 특성:
+#### 새로운 기능:
 - information_schema.metadata_locks 뷰를 지원합니다. 현재 인스턴스의 MDL 권한 및 대기 상태를 조회할 수 있습니다.
 - ALTER TABLE NO_WAIT | TIMEOUT 구문을 지원하며 DDL 작업에 대기 타임아웃을 제공합니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - 스레드 풀을 지원합니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
@@ -307,8 +342,21 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 비동기화 모드에서 속도 제한 플러그 인을 사용할 수 없는 문제 수정.
 
 ## MySQL 5.6
+### 20220301
+#### 새로운 기능:
+- 스핀 주기의 동적 구성을 지원합니다. 스핀 주기(0~100)는 동적 매개변수 innodb_spin_wait_pause_multiplier를 통해 동적으로 조정할 수 있습니다.
+이 매개변수는 임시 조정에 사용되며, 콘솔을 통한 고정된 수정은 지원하지 않습니다.
+- 교착 상태 루프 정보 출력 기능을 지원합니다.
+innodb_print_dead_lock_loop_info 매개변수를 통해 활성화하고 활성화 후 교착 상태가 발생하면 show engine innodb status를 사용하여 교착 상태 루프 정보를 확인합니다.
+
+#### Bug 수정:
+- slave 재시작 후 memory 테이블의 익명 GTID 트랜잭션 문제 수정.
+- root@localhost 권한이 누락되어 업그레이드가 실패하는 문제 수정.
+- innodb_row_lock_current_waits 등의 모니터링 변수 값이 비정상인 문제 수정.
+- 감사 플러그 인의 sql type 매핑이 잘못된 문제 수정.
+
 ### 20211030
-#### 새로운 특성:
+#### 새로운 기능:
 - 대규모 트랜잭션 복제 최적화를 지원합니다.
 
 #### 성능 최적화:
@@ -322,7 +370,7 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - LOCK_binlog_end_pos hang 문제 수정.
 
 ### 20210630
-#### 새로운 특성:
+#### 새로운 기능:
 - 대규모 트랜잭션 복제 최적화를 지원합니다.
 
 #### Bug 수정:
@@ -340,8 +388,8 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 매개변수를 바인딩하여 update 명령어를 실행할 때 sql mode 검사를 건너뛰는 문제 수정.
 
 ### 20200915
-#### 새로운 특성:
-- [SQL 스로틀링](https://intl.cloud.tencent.com/document/product/1035/36037) 기능을 지원합니다.
+#### 새로운 기능:
+- [SQL 제한](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81) 기능 지원.
 
 #### 성능 최적화:   
 - buffer pool 초기화 가속을 최적화하였습니다.
@@ -357,7 +405,7 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - event에서 동일한 행을 업데이트하는 동안 hash scan이 기록을 찾지 못한 경우 프라이머리/세컨더리가 중단되는 문제 수정. 
 
 ### 20190930
-#### 새로운 특성:
+#### 새로운 기능:
 - 사용자의 show full processlist를 통한 '사용자 스레드 메모리 사용 정보' 조회를 지원합니다.  
 
 #### bug 수정:
@@ -370,62 +418,62 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - innodb_log_checusum으로 인해 백업이 호환되지 않는 문제 수정.
 
 ### 20190530
-#### Bug 수정:
+#### bug 수정:
 - RC 모드에서 오손 데이터를 읽는 문제 수정.
 - 임시 테이블 삭제로 인한 세컨더리에서 다시보기 실패 문제 수정.
 - 동시 실행이 많을 때의 데드 락 문제 수정.
-   
+  
 ### 20190203
-#### 새로운 특성:
-- 비동기화 시 대용량 테이블 삭제: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 막을 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category) 통해 신청해야 합니다.
+#### 새로운 기능:
+- 비동기화 시 대용량 테이블 삭제: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 막을 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - super 권한이 없는 사용자가 다른 사용자의 세션을 kill 할 수 있는 기능을 지원합니다. cdb_kill_user_extra 매개변수를 통해 설정하며, 기본값은 root@%입니다.
 - GTID를 실행할 때 트랜잭션에서 임시 테이블과 CTS 구문을 생성, 삭제할 수 있도록 지원합니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
-   
+  
 #### 성능 최적화:   
 - 파티션 테이블의 복제 다시보기를 최적화하여 다시보기 속도를 향상시켰습니다.
-   
-#### Bug 수정:
+  
+#### bug 수정:
 - 임시 용량 부족으로 인한 프라이머리/세컨더리 불일치 문제 수정.
 - 핫스팟 기록 업데이트 오류 문제 수정.
 - 병행 복제 시 Seconds_Behind_Master 값 오류 문제 수정.
 
 ### 20180915
-#### 새로운 특성:
+#### 새로운 기능:
 - MEMORY 엔진을 InnoDB 엔진으로 자동 교체: 전역 변수cdb_convert_memory_to_innodb가 ON이라면, 테이블 생성/수정 시 테이블 엔진을 MEMORY에서 InnoDB로 전환합니다.
 - 유휴 트랜잭션을 자동으로 kill하도록 지원하여 리소스 충돌을 감소시킵니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
-   
-#### Bug 수정:
+  
+#### bug 수정:
 - REPLAY LOG RECORD로 인한 crash 문제 수정.
 - decimal 정확성 문제로 인한 프라이머리/세컨더리 시간 데이터 불일치 문제 수정.
 
 ### 20180130
-#### 새로운 특성:
+#### 새로운 기능:
 - 스레드 풀을 지원합니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
 - slave 노드에서 복제한 필터링 조건을 동적으로 수정할 수 있도록 지원합니다.
 
 #### 성능 최적화:
 - drop table로 인한 성능 지터.
-   
-#### Bug 수정:
+  
+#### bug 수정:
 - 비밀번호 문자열 인증으로 인한 데이터베이스 crash 문제 수정.
-   
+  
 ### 20180122
-#### 새로운 특성:
+#### 새로운 기능:
 - SQL 감사 기능을 지원합니다.
 
-#### Bug 수정:
+#### bug 수정:
 - 정수 오버플로우 문제 수정.
 - 전체 텍스트 인덱스 쿼리 오류 문제 수정.
 - 복제 시 세컨더리 기기의 crash 문제 수정.
 	
 ### 20170830
-#### Bug 수정:
+#### bug 수정:
 - 비동기화 모드에서 binlog 속도 제한 무효화 문제 수정.
 - buffer_pool 상태 오류 문제 수정.
 - SEQUENCE와 내장 기본 키가 충돌하는 문제 수정.
-   
+  
 ### 20170228
-#### Bug 수정:
+#### bug 수정:
 - drop table 중의 문자 인코딩 bug 수정.
 - replicate-wild-do-table에서 db 혹은 table에 포함된 소수점 등의 특수문자를 정확히 필터링할 수 없는 문제 수정.
 - 백업 데이터베이스에 rotate 이벤트가 발생한 이후 SQL 스레드가 미리 종료되는 문제 수정.

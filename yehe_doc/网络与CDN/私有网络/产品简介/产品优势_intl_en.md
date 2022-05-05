@@ -13,7 +13,7 @@ VPC provides different access modes to meet the needs for cloud communications:
 - Access classic networks: you can access businesses deployed in a classic network through Classiclink.
 
 ### Security and Reliability
-VPC uses the tunneling technology to build virtual networks on physical networks, and the Overlay technology to achieve private network isolation between VPC instances. It provides you with independent, isolated, and secure cloud networks.
+VPC uses the tunneling technology to build virtual networks on physical networks, and the virtualization technology to achieve private network isolation between VPC instances. It provides you with independent, isolated, and secure cloud networks.
 For CVMs within a VPC, we also provide you with access controls at different levels, such as security groups and network ACLs.
 
 ### Ease of Use

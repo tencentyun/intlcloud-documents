@@ -1,4 +1,4 @@
-本文为您介绍 MySQL 内核版本更新动态，如需升级，请参见 [升级内核小版本](https://intl.cloud.tencent.com/document/product/236/45627)。
+本文为您介绍 MySQL 内核版本更新动态，如需升级，请参见 [升级内核小版本](https://intl.cloud.tencent.com/document/product/236/36816)。
 
 ## MySQL 8.0
 ### 20211202
@@ -249,8 +249,8 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 ### 20200331
 #### 新特性：
 - 新增官方 MySQL 5.7.22 版本的 JSON 系列函数。
-- 支持基于电商秒杀场景的 [热点更新](https://intl.cloud.tencent.com/document/product/1035/36037) 功能。
-- 支持 [SQL 限流](https://intl.cloud.tencent.com/document/product/1035/36037)。
+- 支持基于电商秒杀场景的 [热点更新](https://intl.cloud.tencent.com/document/product/1035/36037#.E7.83.AD.E7.82.B9.E6.9B.B4.E6.96.B0.E4.BF.9D.E6.8A.A4) 功能。
+- 支持 [SQL 限流](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81)。
 - 数据加密功能支持 KMS 自定义密钥加密。
 
 #### 官方 bug 修复：
@@ -342,6 +342,19 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 - 修复在异步模式下速度限制插件不可用的问题。
 
 ## MySQL 5.6
+### 20220301
+#### 新特性：
+- 支持动态配置自旋周期，通过动态参数 innodb_spin_wait_pause_multiplier 可以动态调整自旋周期(0~100)。
+该参数用于临时调整，不支持通过控制台进行固化修改。
+- 支持打印死锁环路信息的功能。
+通过参数 innodb_print_dead_lock_loop_info 开启，开启后发生死锁时，使用 show engine innodb status 可以查看死锁环路信息。
+
+#### Bug 修复：
+- 修复 slave 重启后 memory 表产生匿名 GTID 事务的问题。
+- 修复 root@localhost 权限缺失，导致升级失败的问题。
+- 修复 innodb_row_lock_current_waits 等监控变量值存在异常情况的问题。
+- 修复审计插件 sql type 映射错误的问题。
+
 ### 20211030
 #### 新特性：
 - 支持大事务复制优化。
@@ -376,7 +389,7 @@ FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提�
 
 ### 20200915
 #### 新特性：
-- 支持 [SQL 限流](https://intl.cloud.tencent.com/document/product/1035/36037) 功能。
+- 支持 [SQL 限流](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81) 功能。
 
 #### 性能优化：   
 - buffer pool 初始化加速优化 。

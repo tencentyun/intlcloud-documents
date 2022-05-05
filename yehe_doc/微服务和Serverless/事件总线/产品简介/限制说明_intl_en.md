@@ -14,19 +14,23 @@ The quota limits for each user account are as follows:
 </thead>
 <tbody><tr>
 <td>`Put Event` API call limit per region</td>
-<td>1,000 QPS</td>
+<td>5000 TPS</td>
 </tr>
 <tr>
-<td rowspan="2">Maximum number of custom event buses per region</td>
+<td>Maximum number of custom event buses per region</td>
 <td>10<br></td>
 </tr>
 <tr>
 </tr>
 <tr>
-<td>Maximum number of rules that can be bound to one event bus</td>
+<td>Maximum number of rules that can be bound to one custom event bus</td>
 <td>10</td>
 </tr>
 <tr>
+<td>Maximum number of rules that can be bound to one tencent cloud service event bus</td>
+<td>200</td>
+</tr>
+<tr>  
 <td>Maximum number of targets that can be configured in one event rule</td>
 <td>10</td>
 </tr>
