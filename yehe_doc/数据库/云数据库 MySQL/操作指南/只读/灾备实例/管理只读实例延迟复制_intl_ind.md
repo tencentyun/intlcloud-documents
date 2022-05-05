@@ -113,6 +113,6 @@ Anda dapat melihat penundaan antara instans baca saja dan instans sumbernya pada
 ![](https://main.qcloudimg.com/raw/0b975dfca0c575735b94445f11e30d67.png)
 
 #### Bagaimana cara melihat informasi tugas pemutaran ulang menurut posisi flashback?
-Anda dapat melihat kemajuan dan detail tugas pada halaman daftar tugas di [konsol](https://console.cloud.tencent.com/cdb).
-![](https://main.qcloudimg.com/raw/f3c0cb3ed4d9488c66fc02cbd96b770d.png)
+Anda dapat melihat kemajuan dan detail tugas pada halaman daftar tugas di [konsol](https://console.cloud.tencent.com/mysql/task).
+
 

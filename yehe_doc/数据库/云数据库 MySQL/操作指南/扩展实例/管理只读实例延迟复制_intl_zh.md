@@ -32,7 +32,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/280f08c04f692445f51b1ab4aa556f58.png)
 3. 在弹出的对话框，设置延迟时间后，单击**确定**。
 >?延迟时间范围值为：1秒 - 259200秒。
->修改RO实例延迟时间会同步修改所属RO组中其他RO实例。
+>修改 RO 实例延迟时间会同步修改所属 RO 组中其他 RO 实例。
 >
 <img src="https://qcloudimg.tencent-cloud.cn/raw/32877ca9c8ab4bb3030bbb508c899374.png"  style="zoom:80%;">
 
@@ -109,6 +109,6 @@
 ![](https://main.qcloudimg.com/raw/0b975dfca0c575735b94445f11e30d67.png)
 
 #### 如何查看启动复制到指定位置的任务信息？
-您可通过 [控制台](https://console.cloud.tencent.com/cdb) 的任务列表页，查看任务的进度和详情等。
-![](https://main.qcloudimg.com/raw/f3c0cb3ed4d9488c66fc02cbd96b770d.png)
+您可通过 [控制台](https://console.cloud.tencent.com/mysql/task) 的任务列表页，查看任务的进度和详情等。
+
 
