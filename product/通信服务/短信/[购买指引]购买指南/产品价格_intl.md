@@ -3,7 +3,7 @@
 ## Pricing for Global SMS
 Global SMS is daily [pay-as-you-go](https://intl.cloud.tencent.com/document/product/382/18052). The prices in the table are in US dollars.
 
-> !Due to the rates adjustment by carriers in Israel, Argentina, Belarus, Sri Lanka, Canada, Pakistan, Indonesia, and India, the prices of Tencent Cloud Global SMS in the above countries will be adjusted from 00:00 on September 15, 2021. For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
+> !Due to the rates adjustment by carriers in 129 countries/regions including Israel, Argentina, Belarus, Sri Lanka, Canada, Pakistan, Indonesia, and India, the prices of Tencent Cloud Global SMS in the above countries/regions will be adjusted from **00:00 on May 01, 2022**.For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
 
 Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw/6d9038bc9f2b53601adfa33d5b5275f2.pdf).
 
