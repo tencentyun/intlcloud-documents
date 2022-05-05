@@ -19,5 +19,5 @@
 5. 单击**下一步**后选择该条规则绑定的事件目标，一条规则可以有多个事件目标。
    ![](https://qcloudimg.tencent-cloud.cn/raw/0c5cadf332064f4b21802891093637a0.png)
     事件总线当前支持以下事件目标，具体配置方法请参见：
-   - [SCF 云函数](https://cloud.tencent.com/document/product/1359/58791)
-   - [Ckafka](https://cloud.tencent.com/document/product/1359/71424)
+   - [SCF 云函数](https://intl.cloud.tencent.com/document/product/1108/46254)
+   - [Ckafka](https://intl.cloud.tencent.com/document/product/1108/46249)
