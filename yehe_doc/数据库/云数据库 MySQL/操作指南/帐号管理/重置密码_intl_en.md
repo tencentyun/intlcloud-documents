@@ -10,9 +10,9 @@ If you forgot your database account password or need to change it while using Te
 2. Select **Database Management** > **Account Management**, find the account for which to reset the password, and select **More** > **Reset Password**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/cbb345bf5ecd9dfa0e4b117c698db6d8.png)
 3. In the pop-up dialog box, enter and confirm the new password and then click **OK**.
->?The database password should contain 8–64 characters in at least two of the following character types: letters, digits, and special symbols (_+-&=!@#$%^*()).
+>?The database password should contain 8–64 characters in at least two of the following character types: letters, digits, and special symbols (\_+-&=!@#$%^\*()).
 > 
-![](https://main.qcloudimg.com/raw/8a2a4d08a1d14cfbcbb683f804bfeb78.png)
+
 
 ## Related APIs
 
