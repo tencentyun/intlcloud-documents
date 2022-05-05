@@ -26,10 +26,10 @@ CDN authentication configuration and CDN origin-pull authentication do not confl
 
 | Bucket access permission | CDN origin-pull authentication | CDN authentication | Origin can be accessed via CDN acceleration domain name | Origin can be accessed via<br>COS endpoint | Scenarios |
 | ------------------- | ------------ | ------------ | --------------- | --------------- | ------------ |
-| Public read | Disabled | Disabled | Accessible | Accessible | Site-wide public access |
+| Public read | Disabled | Disabled | Yes | Yes | Site-wide public access |
 | Public read | Enabled | Disabled | Yes | Yes | Not recommended |
 | Public read | Disabled | Enabled | URL authentication is required | Yes | Not recommended |
-| Public read | Enabled | Enabled | URL authentication is required | Accessible | Not recommended |
+| Public read | Enabled | Enabled | URL authentication is required | Yes | Not recommended |
 | Private read + CDN service authorization | Enabled | Enabled | URL authentication is required | COS authentication is required | Protection throughout link |
 | Private read + CDN service authorization | Disabled | Enabled | URL authentication is required | COS authentication is required | Not recommended |
 | Private read + CDN service authorization | Enabled | Disabled | Yes | COS authentication is required | Origin protection |
