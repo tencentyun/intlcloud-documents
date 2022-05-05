@@ -1,3 +1,26 @@
+
+## 2022年03月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>新增创建按量计费实例 API</td>
+<td>按量计费实例支持通过 API 接口新购、变配、续费。</td>
+<td><a href="hhttps://intl.cloud.tencent.com/zh/document/product/240/34704" target="">创建云数据库实例（按量计费）</td></tr>
+</table>
+
+## 2022年02月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>控制台交互优化</td>
+<td> 实例详情与慢日志查询控制台交互调整优化。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/44179" target="">查看实例详情</td></tr>
+<tr>
+<td>数据库审计性能优化</td>
+<td>支持 万条/秒 级审计日志生成 。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/240/44551" target="">数据库审计</td></tr>
+</table>
+
 ## 2022年01月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
