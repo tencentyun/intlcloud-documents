@@ -7,7 +7,7 @@ This document describes how to use COS Image Processing in the console, with the
 
 > !
 > - Image Processing is available only in public cloud regions.
-> - Image Processing is charged by CI. For detailed pricing, please see **Basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
+> - Image Processing is charged by CI. For detailed pricing, see **Basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 
 ## Adding URL parameters
@@ -43,8 +43,8 @@ Image Style can help you present different processing parameters in the format o
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5/bucket).
 2. Locate the bucket that stores the image, and click the bucket name to enter the bucket management page.
-3. In the left menu bar, click **Image Processing** to enter the **Style Management** section.
-   **Separator**: Style separators are symbols that separate file names and processing styles, including `-, `_`, `/`, and `!`. Select `!` here and save.
+3. In the left menu bar, click **Data Processing** > **Image Processing** to enter the **Style Management** section.
+   **Separator**: Style separators are symbols that separate filenames and processing styles, including `-`, `_`, `/`, and `!`. Select `!` here and save.
 4. Click **Add Styles** and set fields as follows:
 	- **Style Name**: Enter your custom style name, such as “yunstyle”.
 > ! 
@@ -61,7 +61,7 @@ Image Style can help you present different processing parameters in the format o
 > ?
 > - Up to 100 styles can be set for a single bucket.
 > - The settings take effect in 30 minutes on average.
-> - Changing a separator requires clearing your cache, with the change taking effect for both public and private networks in at least 24 hours.
+> - Changing a separator requires clearing the cache. It takes at least 24 hours for separator changes to take effect globally.
 > - Canceling a separator used may cause product feature malfunctions.
 > - For more information on image styles, see [Setting Styles](https://intl.cloud.tencent.com/document/product/1045/33443).
 7. Go to the object details page, copy the object URL, and enter your separator and style name after the URL in the following format:

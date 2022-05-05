@@ -85,7 +85,7 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 |      --jobName      | Migration task name.</br>Example: --jobName=cosdistcp-to-warehouse            |   None   |    No    |
 |      --compareWithCompatibleSuffix  | Whether to change the source file extension gzip to gz and lzop to lzo when using the `--skipMode` and `--diffMode` parameters.</br>Example: --compareWithCompatibleSuffix |   None   |    No    |
 
-## Example
+## Examples
 
 ### Viewing the help option
 
@@ -397,7 +397,7 @@ void init() throws Exception;
 }
 ```
 
-COSDistCp has integrated the alarms of Cloud Monitor. When the task runs abnormally or some files fail to be copied, the alarm will be performed.
+COSDistCp has integrated the alarms of Cloud Monitor. When the task runs abnormally or some files fail to be copied, alarming will be performed.
 
 ```plaintext
 export alarmSecretId=SECRET-ID

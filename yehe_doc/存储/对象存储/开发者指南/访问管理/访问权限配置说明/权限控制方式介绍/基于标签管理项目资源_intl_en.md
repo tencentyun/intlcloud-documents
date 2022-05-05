@@ -2,17 +2,17 @@
 
 > This document describes how to use tags and tag authentication to manage project resources in the tag system. It is applicable to the scenario where a user used projects in the legacy console and granted sub-accounts access through project authentication.
 
-Project management is centralized management of resources in the project dimension. You can add Tencent Cloud product resources that support project management to a project. Then, select **Policy** > **Create Custom Policy** > **Create by Product Feature or Project Permission** in the [CAM Console](https://console.cloud.tencent.com/cam) to generate a project policy. You can associate the project policy with project-related users or user groups, so that they can get the permission to manipulate project resources.
+Project management is centralized management of resources in the project dimension. You can add Tencent Cloud product resources that support project management to a project. Then, select **Policies** > **Create Custom Policy** > **Create by Product Feature or Project Permission** in the [CAM console](https://console.cloud.tencent.com/cam) to generate a project policy. You can associate the project policy with project-related users or user groups, so that they can get the permission to manipulate project resources.
 
-The legacy COS Console enables permission management operations based on projects. However, a project policy grants the full access to all resources under all products included in the project. It **cannot meet the needs for multi-dimensional tagging and categorization**, **nor can it manage permissions in a refined manner**. In the new COS Console, COS only supports tag-based permission management for project resources.
+The legacy COS console enables permission management operations based on projects. However, a project policy grants the full access to all resources under all products included in the project. It **cannot meet the needs for multi-dimensional tagging and categorization**, **nor can it manage permissions in a refined manner**. In the new COS console, COS only supports tag-based permission management for project resources.
 
 COS uses the tag service to be compatible with the legacy project feature. In the tag service system, a project is a special tag with the tag key being `project`. You can still create a project and then create a bucket under it in the project console. COS will automatically double-write the project affiliation of a bucket during bucket creation to the tag service, so that the affiliation can be displayed in the console.
 
 >
-> - If you need to manage buckets in a categorized manner, you are recommended to directly use tags instead of projects to implement tasks such as permission control and bill splitting. For more information on how to add tags in the console, please see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928).
-> - For more information on the tag service, please see [Tag](https://intl.cloud.tencent.com/document/product/651).
+> - If you need to manage buckets in a categorized manner, we recommend you directly use tags instead of projects to implement tasks such as permission control and cost allocation. For more information on how to add tags in the console, see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928).
+> - For more information on the tag service, see [Tag](https://intl.cloud.tencent.com/document/product/651).
 
-## Granting a Sub-account Access to a Project
+## Granting a Sub-Account Access to a Project
 
 You can grant a sub-account access to a project by following the steps below:
 

@@ -1,104 +1,174 @@
-To the extent that there is any conflict between this Data Privacy and Security Addendum (“**DPSA**”) and the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248) (and any documents or policies incorporated by reference therein, save for the DPSA) (“**Agreement**”), this DPSA will prevail.
+To the extent that there is any conflict between this Data Processing and Security Addendum(“**DPSA**”) and the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248) (and any documents or policies incorporated by reference therein, save for this DPSA), this DPSA will prevail.
 
-## Definitions
+## 1. Definitions
 
-Unless stated otherwise the following terms will have the meanings ascribed to them below. Capitalized terms used in this DPSA but not defined below will have the meaning ascribed to them in the Agreement.
-“**Administrative Information**” refers to personal information that Organisation provides to Tencent Cloud to set up and manage Organisation’s account and the services provided by Tencent Cloud, and any personal information generated in connection with Organisation’s use of the services provided by Tencent Cloud;
-“**Content**” refers to any data, including personal information, that Organisation submits, uploads, transmits or displays using the services provided by Tencent Cloud;
-“**Controller**” refers to a person who either alone or jointly in common with one or more other persons controls the collection, holding, processing or use of Personal Data;
-“**Controller-Processor Transfer Clauses**” refers to the Standard Contractual Clauses (Controller to Processor) as set out in the Commission Decision of 5 February 2010 (C(2010) 593), as set out at below at **(2) Controller-Processor Transfer Clauses**;
-“**Data Breach**” refers to any misuse, interference with, loss of, unauthorized access to, modification or disclosure of Personal Data that is Processed by Tencent in connection with Agreement;
-“**Data Protection Laws**” refers to the data protection law(s) applicable in respect of the collection, storage, processing, transfer, disclosure, and use of any Personal Data which apply from time to time to the person or activity in the circumstances in question, including the California Civil Code sections 1798.100 – 1798.199 (2020), the California Consumer Privacy Act (“the CCPA”), the Directive, the e-Privacy Directive and the GDPR;
-“**Data Subject**” shall mean (1) “Data Subject” as the term is defined in the GDPR; (2) “Consumer” as the term is defined in the CCPA; or (3) any other individual who is the subject of Personal Data;
-“**Directive**” refers to Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the Processing of Personal Data and on the free movement of such data; 
-**e-Privacy Directive**” refers to Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the Processing of Personal Data and the protection of privacy in the electronic communications sector;  
-“**EEA**” refers to the European Economic Area;
-“**EU Personal Data**” refers to Personal Data of a Data Subject that is located in the EEA;
-“**GDPR**” refers to Regulation 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the Processing of Personal Data and on the free movement of such data; 
-“**Jurisdiction-Specific Requirements**” refers to the specific requirements for Processing Personal Data that apply in certain jurisdictions, as set out below at **(1) Jurisdiction Specific Requirements**;
-“**Organisation**” refers to the entity that has agreed to the Terms of Service. For the purposes of this DPSA (including its attachments), a reference to “Organisation” shall, in the case of an agreement with an individual that is not acting on behalf of an Organisation, be deemed to be a reference to that individual;
-“**Personal Data**” refers to any information relating to an identified or identifiable natural person, including ‘personal data’ and ‘personal information’ as those terms are defined in the Data Protection Laws;
-“**Processing**” refers to performing any operation or set of operations on Personal Data, including any collection, use, storage or disclosure, or as otherwise defined in the relevant Data Protection Laws;
-“**Processor**” refers to a person who Processes Personal Data on behalf of one or more Controller(s); 
-“**Sub-Processor**” refers to any Tencent Affiliate or third party appointed from time to time by Tencent to Process Personal Data on its behalf in accordance with clause 7.4;
-“**Supervisory Authority**” refers to a regulatory authority having competent jurisdiction in respect of a Data Protection Law;
-“**Tencent Cloud**” refers to the entity that supplies the services to the Organisation, as specified in the Terms of Service;
-“**Tencent Cloud Portal**” refers to the customer portal to which Organisation has access upon completion of the sign-up process for Tencent Cloud;
-“**Tencent Cloud Privacy Policy**” refers to the policy located [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345), as updated by Tencent and notified to Organisation from time to time;
-“**Tencent Security Policy**” refers to such reasonable and appropriate technical and organisational measures determined by Tencent from time to time, to protect Personal Data against unauthorized or accidental access, Processing, erasure, loss or use.  Such measures will include the measures set out in the Controller-Processor Transfer Clauses (if applicable);
-“**Terms of Service**” refers to the terms located at [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248); and
-“**Third Countries**” refers to all countries outside of the scope of the data protection laws of the European Economic Area (the “**EEA**”), excluding countries approved as providing adequate protection for Personal Data by the European Commission from time to time, which at the date of this Agreement include Andorra, Argentina, Canada, Faroe Islands, Guernsey, Isle of Man, Israel, Jersey, New Zealand, Switzerland and Uruguay.
+Except to the extent defined below, capitalized terms shall have the meaning given to them in the Terms of Service. 
 
-## Scope of the Agreement
+“**Administrative Information**” refers to personal information that Organisation provides to Tencent Cloud to set up and manage Organisation’s account and the  Services, and any personal information generated in connection with Organisation’s use of the Services;
 
-This Addendum applies if you have entered into the Terms of Service for the supply of services by Tencent Cloud. The Addendum applies to the Processing of Personal Data that is Content. Personal Data that is Administrative Information is Processed in accordance with the Tencent Cloud Privacy Policy and this Addendum shall not apply to the Processing of Administrative Information.
-## Authorisation to Process Personal Data
-1. The parties acknowledge that in the performance of its obligations under the Agreement, Tencent may Process Personal Data in connection with Organisation's storage of, access to and Processing of Content as part of providing Tencent Cloud. The purpose of this DPSA is to set out the respective obligations of the parties in relation to such Processing.
-2. Each party warrants to the other that it will comply with all Data Protection Laws applicable to it in relation to the Personal Data.
-
-## Controller and Processor
-
-Tencent and Organisation acknowledge that Organisation is the Controller and Tencent is the Processor in respect of the Personal Data. 
-
-## Service Regions
-
-1. Subject to clause 5.2, where Organisation has selected a Service Region pursuant to the Agreement, Tencent will only Process the Personal Data in that Service Region.
-2. Organisation acknowledges and agrees that Tencent may, for operational, regulatory or other reasons, need to change its Processing locations from time to time, provided that any Processing of Personal Data in a place other than the Organization's preferred Service Region will be considered a “material change” addressed in accordance with the Agreement.
-3. Organisation acknowledges and agrees that the Tencent Contracting Entity listed in the Terms of Service might not be the entity in custody or control of Customer Data, including Personal Data, so that such data may be stored and processed in the chosen Service Region. If Organisation provides information that does not require the selection of a Service Region, such as account-related information, Tencent may process and store such information in any location. 
-
-## Tencent's Obligations
-
-1. To the extent that it Processes Personal Data on behalf of Organisation, Tencent will:
+“**Applicable Law**” means any of the following, in any jurisdiction, to the extent that it applies to a party:
 <ol style = 'list-style-type :lower-latin'>
-<li>Process the Personal Data only for the purpose of the Agreement, in accordance with the Organisation’s written instructions (which shall include the terms of this DPSA any instructions provided via the Organisation’s administrative console), and the Tencent Security Policy, and notify Organisation promptly if it is unable to comply with this DPSA or any of its terms;</li>
+<li> any statute, directive, order, enactment, regulation, bylaw, ordinance or subordinate legislation in force from time to time;</li>
+<li> the common law and the law of equity;</li>
+<li> any binding court order, judgment or decree; </li>
+<li> any applicable industry code, policy or standard enforceable by law; and </li>
+<li> any applicable direction, statement of practice, policy, rule or order that is set out by a competent regulatory authority that is binding on the parties;</li></ol>
+
+“**Content**” refers to any data, including Personal Data, that Organisation submits, uploads, transmits or displays while using the Services;
+
+“**Controller**” refers to a person who either alone or jointly in common with one or more other persons controls the collection, holding, processing or use of Personal Data;
+
+“**Controller-Processor Transfer Clauses**” means:
+<ol style = 'list-style-type :lower-latin'>
+<li>in the case of transfers of Personal Data subject to the UK GDPR, the International Data Transfer Addendum to the EU Commission Standard Contractual Clauses (version B.1.0) issued by the UK Information Commissioner, as amended, updated or replaced from time to time; and</li>
+<li>in the case of transfers of Personal Data subject to the GDPR, the standard contractual clauses for the transfer of Personal Data to data processors established in third countries set out in the Commission Decision the Commission Decision 2021/914 of 4 June 2021, specifically including Module 2 (Controller to Processor), as amended, updated or replaced from time to time; </li>
+which are both hereby incorporated and form part of this DPSA, and: 
+  <ol style = 'list-style-type:lower-roman'>
+        <li> if applicable, for the purposes of Annex I.A. of the Controller-Processor Transfer Clauses, the Organisation is the Controller and Tencent is the Processor and the name, address, contact person’s details and relevant activities for each of them is set out in Appendix 1 (Processing Details);</li>
+        <li> for the purposes of Annex I of the Controller-Processor Transfer Clauses, the parties and processing details set out in Appendix 1 (Processing Details) shall apply; </li>
+        <li>for the purposes of Annex II of the Controller-Processor Transfer Clauses, the technical and organisational security measures set out in Appendix 2 (Technical and Organisational Security Measures) shall apply; and</li>
+        <li> for the purposes of the Controller-Processor Transfer Clauses: (i) for Clause 9, Option 2 (General Written Authorization) is deemed to be selected and the notice period specified in clause 8.2 of this DPSA shall apply; (ii) for Clause 11(a), the optional wording in relation to independent dispute resolution is deemed to be omitted; (iii) for Clause 13 and Annex I.C, the competent Supervisory Authority shall be the supervisory authority of the EU member state where: (a) the Organisation is established in the EEA, or if not applicable; (b) where the Organisation’s representative is established in the EEA, or if not applicable; (c) where the Data Subjects whose Personal Data is transferred under this DPSA are located in the EEA; (iv) for Clause 17, Option 2 is deemed to be selected and to the extent required the governing law shall be as separately agreed between the parties; and (v) for the purposes of Clause 18, the competent courts shall be the competent courts of the EU member state where (a) the Organisation is established in the EEA, or if not applicable; (b) the Organisation’s representative is established in the EEA, or if not applicable; (iii)  the Data Subjects whose Personal Data is transferred under this DPSA are located in the EEA. </li></ol></li></ol>
+
+“**Data Breach**” refers to any misuse, interference with, loss of, improper, unauthorized, unlawful access to, use of, modification or disclosure of Content that is Processed by Tencent in connection with the Terms of Service;
+
+“**Data Protection Laws**” refers to the data protection law(s) applicable in respect of the collection, storage, processing, transfer, disclosure, and use of any Content in connection with the Services, including (without limitation) the California Civil Code sections 1798.100 – 1798.199 (2020), the California Consumer Privacy Act (the “CCPA”), the e-Privacy Directive, the e-Privacy Regulation (once it takes effect), the GDPR and the UK GDPR, in addition to any law which implements the e-Privacy Directive, the e-Privacy Regulation (once it takes effect), the GDPR and the UK GDPR (which for the avoidance of doubt is the UK Data Protection Act 2018), in each case as amended, consolidated, re-enacted or replaced from time to time;
+
+“**Data Subject**” has the meaning given to that term or other analogous term (such as ‘consumer’ in the case of the CCPA) in Data Protection Laws;
+
+**e-Privacy Directive**” refers to Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the Processing of Personal Data and the protection of privacy in the electronic communications sector;
+
+**e-Privacy Regulation**”  refers to Regulation of the European Parliament and of the Council concerning the respect for private life and the protection of personal data in electronic communications and repealing Directive 2002/58/EC (Regulation on Privacy and Electronic Communications)
+
+“**EEA**” refers to the European Economic Area;
+
+“**EEA/UK Personal Data**” refers to Content which is Personal Data of a Data Subject that is located in the EEA or the UK;
+
+“**GDPR**” refers to Regulation 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the Processing of Personal Data and on the free movement of such data;
+
+“**Jurisdiction-Specific Requirements**” refers to the specific requirements for Processing Personal Data that apply in certain jurisdictions, as set out  under clause 10 (Jurisdiction-Specific Requirements);
+
+“**Organisation**”refers to the entity or legal person that has entered into the Terms of Service;
+
+“**Lawful Export Measure**”means a method allowing for the lawful transfer of Personal Data from a data exporter to a data importer, as may be stipulated by Data Protection Laws or a Supervisory Authority from time to time, and which may include (depending upon the Applicable Laws) model transfer terms prescribed by Data Protection Laws; or prior registration, licensing or permission from a Supervisory Authority;
+
+“**Personal Data**” has the meaning given to such term or other analogous term in Data Protection Laws;
+
+“**Privacy Policy**” refers to the policy located at [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345), as updated and notified to Organisation from time to time;
+
+“**Processing**” has the meaning given to such term or other analogous term in Data Protection Laws, and “Process” and “Processed” shall be construed accordingly;
+
+“**Processor**” refers to a person who Processes Personal Data on behalf of one or more Controller(s);
+
+“**Processor-Processor Transfer Clauses**” means, as relevant, (i) in respect of transfers of Personal Data subject to the GDPR the standard contractual clauses for the transfer of Personal Data to third countries set out in Commission Decision 2021/914 of 4 June 2021, specifically including Module 3 (Processor to Processor); or (ii) in respect of transfers of Personal Data subject to the UK GDPR, the International Data Transfer Addendum to the EU Commission Standard Contractual Clauses (version B.1.0) issued by the UK Information Commissioner, in each case as in force and as amended, updated or replaced from time-to-time;
+
+“**Services**” shall have the same meaning ascribed to it as in the Terms of Service;
+
+“**Sub-Processor**”  refers to any Tencent Affiliate or third party appointed from time to time by Tencent to Process Content on its behalf in accordance with clause 7.4;
+
+“**Supervisory Authority**” refers to a regulatory authority having competent jurisdiction in respect of a Data Protection Law;
+
+“**Tencent**”refers to the contracting entity performing or procuring the Services, as specified in the Terms of Service;
+
+“**Tencent Cloud Portal**” refers to the dashboard made available to Organisation to facilitate management of the Services;
+
+“**Tencent Security Policy**” refers to such reasonable and appropriate technical and organisational measures determined by Tencent from time to time, to protect Personal Data against unauthorized or accidental access, Processing, erasure, loss or use. Such measures will include the measures set out in the Controller-Processor Transfer Clauses (if applicable);
+
+“**Terms of Service**” refers to the terms located at [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248); 
+
+“**Third Country**”  refers to (i) in relation to Personal Data transfers subject to the GDPR, any country outside of the scope of the data protection laws of the EEA, excluding countries approved as providing adequate protection for Personal Data by the European Commission from time to time; (ii) in relation to Personal Data transfers subject to the UK GDPR, any country outside the scope of the data protection laws of the UK, excluding countries approved as providing adequate protection for Personal Data by the relevant competent authority of the UK from time-to-time; and (iii) in relation to Personal Data transfers that are not subject to either the GDPR or UK GDPR, any country or territory other than those approved as providing adequate protection for Personal Data by the relevant competent authority of such jurisdiction from time to time; 
+
+“**UK**” refers to the United Kingdom of Great Britain and Northern Ireland; and
+
+“**UK GDPR**” means the UK General Data Protection Regulation as defined by the UK Data Protection Act 2018, as amended by the Data Protection, Privacy and Electronic Communications (Amendments etc.) (EU Exit) Regulations 2019. 
+
+## 2. Scope of this DPSA
+
+This DPSA applies if you have entered into the Terms of Service for the supply of Services by Tencent. This DPSA applies to the Processing of Content. Personal Data that is Administrative Information is Processed in accordance with the Privacy Policy and this DPSA shall not apply to the Processing of Administrative Information.
+
+## 3. Authorisation to Process Personal Data
+
+**3.1**The parties acknowledge that in the performance of its obligations under the Terms of Service, Tencent may Process Personal Data in connection with Organisation’s storage of, access to and Processing of Content as part of providing the Services. The purpose of this DPSA is to set out the respective obligations of the parties in relation to such Processing.
+
+**3.2**	Each party warrants to the other that it will comply with all Data Protection Laws applicable to it in relation to the Personal Data Processed in connection with the Services.
+
+## 4. Controller and Processor
+
+Tencent and Organisation agree that Organisation is the Controller and Tencent is the Processor in respect of Personal Data Processed under this DPSA.
+
+## 5. Service Regions
+
+**5.1**	Subject to clause 5.2, where Organisation has selected a Service Region for the Services, Tencent will Process Personal Data in that Service Region.
+
+**5.2**	Organisation acknowledges and agrees that Tencent may, for operational, regulatory or other reasons, need to change its Processing locations from time to time, provided that any Processing of Personal Data in a place other than the Organisation’s preferred Service Region will be considered a “material change” addressed in accordance with the Terms of Service.
+
+**5.3**	Organisation acknowledges and agrees that Tencent has appointed and may appoint one or more of its Affiliates or Sub-processors to Process Personal Data in a particular Service Region. 
+
+## 6. Tencent's Obligations
+
+**6.1**	To the extent that it Processes Personal Data on behalf of Organisation, Tencent will:
+<ol style = 'list-style-type :lower-latin'>
+<li>Process the Personal Data only for the purpose of the Terms of Service, in accordance with the Organisation’s written instructions (which shall include the terms of this DPSA and any instructions provided via the Organisation’s administrative console), and the Tencent Security Policy, and notify Organisation promptly if it is unable to comply with this DPSA or any of its terms; </li>
 <li>return or (at the written request of Organisation) securely destroy all Personal Data in its possession (including all back-up copies), unless it is prohibited from doing so by Applicable Laws;</li>
-<li>promptly notify the Organisation, upon becoming aware, of:</li>
+<li>promptly notify the Organisation, upon becoming aware,  of:</li>
 <ol style = 'list-style-type:lower-roman'>
 <li>any court order or other legal process or any request or demand by any Supervisory Authority, regulator, official or other government ministry, authority or agent to obtain or access any Personal Data, unless such notification is prohibited by Applicable Law;</li>
 <li>any unauthorized disclosure of, or access to, the Personal Data or any loss, damage or destruction of the Personal Data; and</li>
-<li>any material complaint, communication or request relating to Tencent's obligations under the Data Protection Laws;</li>
+<li>any material complaint, communication or request relating to Tencent’s obligations under the Data Protection Laws;</li>
 <li>any instruction received from the Organisation in relation to the Personal Data, which in the discretion of Tencent may breach any Applicable Law, including any Data Protection Law, of the appropriate jurisdiction;</li></ol></li>
-<li>ensure that the Personal Data is accessible only to the duly authorized persons engaged by Tencent and, subject to clause 8, accessible only to its Sub-Processors and the personnel of such Sub-Processors who are duly authorized and who need to have access to the Personal Data in order to perform Tencent's obligations under the Agreement;</li>
-<li>ensure that the personnel engaged and duly authorized by it to Process the Personal Data have committed themselves to confidentiality or are under an appropriate statutory obligation of confidentiality, and ensure that the same obligations for data protection under this DPSA and the Organisation's instructions are complied with by such persons, taking into account the nature of the Processing;</li>
+<li>ensure that the Personal Data is accessible only to the duly authorized persons engaged by Tencent and, subject to clause 8, accessible only to its Sub-Processors and the personnel of such Sub-Processors who are duly authorized and who need to have access to the Personal Data in order to perform Tencent’s obligations under the Terms of Service;</li>
+<li>ensure that the personnel engaged and duly authorized by it to Process the Personal Data have committed themselves to confidentiality or are under an appropriate statutory obligation of confidentiality, and ensure that the same obligations for data protection under this DPSA and the Organisation’s instructions are complied with by such persons, taking into account the nature of the Processing;</li>
 <li>comply with any applicable Jurisdiction-Specific Requirements; and</li>
 <li>where the laws of the relevant jurisdiction require it:</li>
 <ol style = 'list-style-type:lower-roman'>
 <li>implement appropriate technical and organisational security measures insofar as is practicable, for the purpose of providing reasonable assistance to the Organisation for the latter to comply with its obligations, including, as appropriate and applicable in the relevant jurisdiction: (i) the pseudonymisation of Personal Data; (ii) ensuring the ongoing confidentiality, integrity, availability and resilience of Processing systems and services; (iii) restoring the availability and access to Personal Data in a timely manner in the event of a physical or technical incident; and (iv) regularly testing, assessing, and evaluating the effectiveness of technical and organisational measures for ensuring the security of the Processing;</li>
 <li>taking into account the nature of the Processing, assist Organisation by appropriate technical and organisational measures, insofar as this is practicable, for the fulfilment of Organisation’s obligation to respond to requests for exercising the Data Subject’s rights laid down in the Data Protection Laws;</li>
-<li>assist Organisation in ensuring compliance with the obligations to: (i) implement appropriate technical and organisational security measures; (ii)  notify (if required) Data Breaches to Supervisory Authorities, the relevant Data Subjects, and other persons required under such Data Protection Laws, in cases where such notification and reporting is required under the relevant Data Protection Laws; and (iii) conduct data protection impact assessments and, if required, prior consultation with Supervisory Authorities; and</li>
+<li>assist Organisation in ensuring compliance with the obligations to: (i) implement appropriate technical and organisational security measures; (ii) notify (if required) Data Breaches to Supervisory Authorities, the relevant Data Subjects, and other persons required under such Data Protection Laws, in cases where such notification and reporting is required under the relevant Data Protection Laws; and (iii) conduct data protection impact assessments and, if required, prior consultation with Supervisory Authorities; and</li>
 <li>promptly notify Organisation in writing upon becoming aware of any improper, unauthorized, or unlawful access to, use of, or disclosure of, Personal Data which is Processed by Tencent under or in connection with this DPSA. Tencent shall be obliged to provide Organisation with all information reasonably necessary for the compliance with Organisation’s obligations pursuant to Data Protection Laws.</li></ol></li></ol>
-2. Tencent shall notify Organisation if, in its opinion, an instruction of Organisation infringes the Data Protection Laws.
 
-## Organisation’s Obligations
+**6.2**	Tencent shall notify Organisation if, in its opinion, an instruction of Organisation infringes the Data Protection Laws.
 
-1. Organisation represents, warrants and undertakes to Tencent that throughout the Term that: 
-<ol style = 'list-style-type :lower-latin'>	
-<li>the Personal Data has been and will be collected in accordance with the Data Protection Laws;</li><li>all instructions from Organisation to Tencent will comply with the Data Protection Laws; and</li>
-<li>the transfer of the Personal Data to Tencent, and (to the extent that Tencent acts as a data processor in respect of such Personal Data) the Processing of the Personal Data by Tencent as instructed by Organisation or (to the extent that Tencent acts as a data controller in respect of such Personal Data) the receipt and use of Personal Data by Tencent, and Processing and use of Personal Data as set out in this DPSA, is consented to by the relevant Data Subjects (where required by law) and otherwise permitted by and in accordance with the Data Protection Laws.</li></ol>
-2. Organisation agrees that it will indemnify and hold harmless Tencent on demand from and against all claims, liabilities, costs, expenses, loss or damage (including consequential losses, loss of profit and loss of reputation and all interest, penalties and legal and other professional costs and expenses) incurred by Tencent arising directly or indirectly from a breach of this clause 
-3. Where Tencent faces an actual or potential claim arising out of or related to any breach of Data Protection Laws relating to Personal Data processed pursuant to this DPSA, Organisation will promptly provide all materials and information reasonably requested by Tencent that is relevant to the defense of such claim.
-4. If Organisation becomes aware of any actual or suspected Data Breach relating to the Agreement, Organisation shall:
+**6.3**	To the extent Tencent Processes Personal Data in a Third Country that is not subject to the GDPR or UK GDPR (in which case clauses ‎10.1 to ‎10.6 shall apply) and is acting as a data importer, Tencent shall, to the extent required by Data Protection Laws, ensure that the transfer of Personal Data is carried out using a Lawful Export Measure. To the extent such Lawful Export Measure requires:
+<ol style = 'list-style-type :lower-latin'>
+<li>a contract imposing appropriate safeguards on the transfer and processing of such Personal Data (which is not otherwise satisfied by this DPSA);</li>
+<li>a description of the Processing of Personal Data contemplated under this DPSA; and</li>
+<li>a description of technical and organisational measures to be implemented by the data importer,</li></ol></li>
+the parties agree that the Controller-Processer Transfer Clauses, the description of Processing activities set out in Appendix 1 (Processing Details), and the description of technical and organisational measures set out in Appendix 2 (Technical and Organisational Security Measures), shall apply mutatis mutandis for the benefit of such transfer, and in relation to any onward transfer of the Personal Data by that data importer to another person, the other person shall comply with the same importer obligations.
+
+## 7. Organisation’s Obligations
+
+**7.1**	Organisation represents, warrants and undertakes to Tencent that throughout the Term that:
+<ol style = 'list-style-type :lower-latin'>
+<li>the Personal Data under this DPSA has been and will be collected in accordance with the Data Protection Laws, in particular that it has obtained any necessary consents or given any necessary notices, and otherwise has a legitimate ground to disclose the Personal Data to Tencent;</li>
+<li>all instructions from Organisation to Tencent will comply with the Data Protection Laws; and</li>
+<li>the Personal Data has been and will be Processed in accordance with the Data Protection Laws, including with respect to the transfer of the Personal Data to Tencent.</li></ol></li>
+
+**7.2**	Organisation agrees that it will indemnify and hold harmless Tencent on demand from and against all claims, liabilities, costs, expenses, loss or damage (including consequential losses, loss of profit and loss of reputation and all interest, penalties and legal and other professional costs and expenses) incurred by Tencent arising directly or indirectly from a breach of this clause 7.
+
+**7.3**	Where Tencent faces an actual or potential claim arising out of or related to any breach of Data Protection Laws relating to Personal Data processed pursuant to this DPSA, Organisation will promptly provide all materials and information reasonably requested by Tencent that is relevant to the defense of such claim.
+
+**7.4**	If Organisation becomes aware of any actual or suspected Data Breach relating to the Terms of Service or this DPSA, Organisation shall:
 <ol style = 'list-style-type :lower-latin'>
 <li>take reasonable steps to carry out, within 30 days, an assessment to determine whether the Data Breach is notifiable under the Data Protection Laws and promptly notify Tencent in writing of the results of the assessment;</li>
-<li> if Organisation notifies Tencent that it considers the Data Breach to be notifiable under the Data Protection Laws: 
+<li>if Organisation notifies Tencent that it considers the Data Breach to be notifiable under the Data Protection Laws:</li>
 <ol style = 'list-style-type:lower-roman'>
-<li>Organisation shall prepare a draft of any notification statements in respect of the Data Breach required under the Data Protection Laws (“Notification Statements”) and provide the draft Notification Statements to Tencent for approval prior to disclosure to the applicable data protection regulators, Data Subjects or any other person; </li>
-<li>Tencent shall provide Organisation with notice in writing: </li>
-<ul ><li>of any changes that Tencent reasonably requires to the draft Notification Statement and Organisation shall incorporate all such changes into the draft Notification Statement; or </li>
-<li>that Tencent approves the draft Notification Statement; and </li></ul></li>
-<li>following Tencent’s approval of a draft Notification Statement, Organisation must provide a copy of the approved Notification Statement to the applicable data protection regulators, Data Subjects and any other person as required under the Data Protection Laws; and</li>
-<li>not, and must ensure that its Affiliates and their respective personnel do not, make any public statement or disclosure relating to any suspected or actual Data Breach without the prior written consent of Tencent.</li></ol></ol>
-​	
+<li>Organisation shall prepare a draft of any notification statements in respect of the Data Breach required under the Data Protection Laws (“Notification Statements”) and provide the draft Notification Statements to Tencent for approval prior to disclosure to the applicable data protection regulators, Data Subjects or any other person;</li>
+<li>Tencent shall provide Organisation with notice in writing:</li>
+<ul ><li>of any changes that Tencent reasonably requires to the draft Notification Statement and Organisation shall incorporate all such changes into the draft Notification Statement; or</li>
+<li>that Tencent approves the draft Notification Statement; and</li></ul></li>
+<li>following Tencent’s approval of a draft Notification Statement, Organisation must provide a copy of the approved Notification Statement to the relevant Supervisory Authority, Data Subjects and any other person as required under the Data Protection Laws; and</li>
+<li> not, and must ensure that its Affiliates and their respective personnel do not, make any public statement or disclosure relating to any suspected or actual Data Breach without the prior written consent of Tencent.</li></ol></li></ol>
 
-## Appointment of Sub-Processors
+## 8. Appointment of Sub-Processors
 
-1. Tencent may authorize any Sub-Processor to Process the Personal Data on its behalf provided that, where (and to the extent) required by Data Protection Laws, Tencent enters into a written agreement with the Sub-Processor containing terms which are substantially the same as those contained in this DPSA. Organisation hereby grants Tencent general written authorisation to engage such Sub-Processors listed at the Tencent Cloud [Third Parties](https://intl.cloud.tencent.com/services/thirdParties), subject to the requirements of this clause 8.
-2. Tencent shall, to the extent the Personal Data Processed is EU Personal Data or where the laws of any other jurisdiction require such notification, inform Organisation by email (and via the Tencent Cloud Portal) of any intended changes concerning the addition or replacement of the Sub-Processors. In such a case, Organisation will have fourteen (14) days from the date of receipt of the notice to approve or reject the change. In the event of no response from Organisation, the Sub-Processor will be deemed accepted. If Organisation rejects the replacement sub-processor, Tencent may terminate the Agreement with immediate effect on written notice to Organisation.
-3. In the event that Tencent engages a Sub-Processor for carrying out specific Processing activities on behalf of Organisation, where that Sub-Processor fails to fulfill its data protection obligations, Tencent will remain fully liable under the Data Protection Laws to Organisation for the performance of that Sub-Processor's obligations.
+**8.1**	 Tencent may authorize any Sub-Processor to Process the Personal Data on its behalf provided that, where (and to the extent)  required by Data Protection Laws, Tencent enters into a written agreement with the Sub-Processor containing terms which are substantially the same as those contained in this DPSA. Organisation hereby grants Tencent general written authorisation to engage such Sub-Processors listed at [Third Party Information](https://intl.cloud.tencent.com/document/product/1033/32281)  to Process Personal Data on its behalf, subject to the requirements of this clause 8.
 
-## MODULES
+**8.2**	 Tencent shall, to the extent the Personal Data Processed is EEA/UK Personal Data or where the laws of any other jurisdiction require such notification, inform Organisation by email (and via the Tencent Cloud Portal) of any intended changes concerning the addition or replacement of the Sub-Processors. In such a case, Organisation will have fourteen (14) days from the date of receipt of the notice to approve or reject the change. In the event of no response from Organisation, the Sub-Processor will be deemed accepted. If Organisation rejects the replacement sub-processor, Tencent may terminate the Terms of Service with immediate effect on written notice to Organisation.
 
-The following Modules shall apply and be incorporated by reference into this DPSA if you use the specific Feature (as defined in each relevant Module).  
+**8.3**	 In the event that Tencent engages a Sub-Processor for carrying out specific Processing activities on behalf of Organisation, where that Sub-Processor fails to fulfill its data protection obligations, Tencent will remain fully liable under the Data Protection Laws to Organisation for the performance of that Sub-Processor’s obligations.
+
+## 9.MODULES
+
+The following Modules shall apply and be incorporated by reference into this DPSA if you use the specific Feature (as defined in each relevant Module). 
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36174).
 2.[Anti-Cheat Expert](https://intl.cloud.tencent.com/document/product/1018/36785).
 3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37004).
@@ -137,216 +207,222 @@ The following Modules shall apply and be incorporated by reference into this DPS
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 37.[FaceID](https://intl.cloud.tencent.com/document/product/1061/46726).
 
-## Jurisdiction-specific Requirements
+## 10.Jurisdiction-specific Requirements
 
-**Europe**
+### EEA and UK
 
-1. Tencent agrees that it will not Process EU Personal Data in a Third Country except where Tencent complies with the data importer’s obligations set out in the Controller-Processor Transfer Clauses.
-2. To the extent of any conflict between the Controller-Processor Transfer Clauses and the rest of this DPSA, the Controller-Processor Transfer Clauses will prevail in relation to any EU Personal Data.
-3. For the purposes of the Controller-Processor Transfer Clauses, the following additional provisions will apply:
+**10.1** Organisation acknowledges and agrees that Tencent may, or may appoint an Affiliate or third party Sub-Processor (in accordance with clause 8) to Process the Organisation’s EEA/UK Personal Data in a Third Country, provided that it ensures that such Processing takes place in accordance with the requirements of applicable Data Protection Laws. 
+
+**10.2** To the extent that Tencent Processes EEA/UK Personal Data in a Third Country and is acting as a data importer, Tencent shall comply with the data importer’s obligations and Organisation shall comply with the data exporter’s obligations as set out in the Controller-Processor Transfer Clauses, which are hereby incorporated into and form part of this DPSA as set out in Appendix 1 (Processing Details) (and Appendix 3 where UK GDPR applies), with the Processing details that comprise Annex 1 to the Controller-Processor Transfer Clauses being those set out in Appendix 1 (Processing Details), and the technical and organisational measures that comprise Annex 2 to the Controller-Processer Transfer Clauses set out in Appendix 2 (Technical and Organisational Security Measures).
+
+**10.3** To the extent of any conflict between the Controller-Processor Transfer Clauses and any other term of this DPSA, the Controller-Processor Transfer Clauses will prevail in relation to any EEA/UK Personal Data.
+
+**10.4** For the purposes of the Controller-Processor Transfer Clauses, the following additional provisions will apply: 
 <ol style = 'list-style-type :lower-latin'>
 <li>the parties agree to observe the Controller-Processor Transfer Clauses without modification;</li>
 <li>the names and addresses of Organisation and Tencent will be considered to be incorporated into the Controller-Processor Transfer Clauses and for the purposes of the Controller-Processor Transfer Clauses;</li>
 <li>Organisation is the data exporter and Tencent, or Tencent’s applicable Affiliate, is the data importer as defined in the Controller-Processor Transfer Clauses; and</li>
 <li>each party’s signature to this DPSA will be considered a signature to the terms contained in the Controller-Processor Transfer Clauses.</li></ol>
-4. If so required by the laws or regulatory procedures of any jurisdiction, the parties will execute or re-execute the clauses contained in the Controller-Processor Transfer Clauses as a separate document setting out the proposed transfers of Personal Data in such manner as may be required.
 
-**South Korea**
+**10.5** If so required by the laws or regulatory procedures of any jurisdiction, the parties will execute or re-execute the clauses contained in the Controller-Processor Transfer Clauses as a separate document setting out the proposed transfers of Personal Data in such manner as may be required.
 
-1. If and to the extent that the Tencent Security Policy is insufficient to meet the applicable requirements under Korean privacy laws and regulations, Tencent will take additional measures from time to time to comply with such requirements (as applicable to an overseas transferee of Personal Data), including:  
+**10.6** Organisation acknowledges and agrees that Tencent may appoint an Affiliate or third-party Sub-Processor (in accordance with clause 8) to Process the Organisation’s EEA/UK Personal Data in a Third Country, in which case: (i) Tencent shall execute Processor-Processor Transfer Clauses, if applicable and available with any relevant Sub-Processor it appoints on behalf of the Organisation; or (ii) if Processor-Processor Transfer Clauses are not applicable and available, the Organisation grants Tencent a mandate to execute the relevant Controller-Processor Transfer Clauses with the Processing details set out in Appendix 1 (Processing Details) (and Appendix 3 where UK GDPR applies) and the technical and organisational measures set out in Appendix 2 (Technical and Organisational Security Measures) applying for the purposes of Appendix 1 and Appendix 2 of the Processor-Processor Transfer Clauses respectively with any relevant Sub-Processor it appoints on behalf of the Organisation. 
+
+### South Korea
+
+**10.7** If and to the extent that the Tencent Security Policy is insufficient to meet the applicable requirements under Korean privacy laws and regulations, Tencent will take additional measures from time to time to comply with such requirements (as applicable to an overseas transferee of Personal Data), including:
 <ol style = 'list-style-type :lower-latin'>
-<li>Articles 28 and 63 of the Act on the Promotion of Utilisation of Information and Communications Networks and the Protection of Information (the “<b>ICT Networks Act</b>”);</li>
+<li>Articles 28 and 63 of the Act on the Promotion of Utilisation of Information and Communications Networks and the Protection of Information (the “ICT Networks Act”);</li>
 <li>Articles 15 and 67 of the Enforcement Decree promulgated under the ICT Networks Act;</li>
 <li>the Guidelines for Technical and Administrative Measures for the Protection of Personal Information (issued by the Korea Communications Commission);</li>
-<li>Article 29 of the Personal Information Protection Act (the “<b>PIPA</b>”);</li>
+<li>Article 29 of the Personal Information Protection Act (the “PIPA”);</li>
 <li>Article 30 of the Enforcement Decree promulgated under the PIPA; and</li>
 <li>the Guidelines for Security Measures for the Safety of Personal Information (issued by the Ministry of Interior and Safety), as the foregoing may be amended and/or supplemented from time to time.</li></ol>
-2. Tencent will:
+
+**10.8** Tencent will:
 <ol style = 'list-style-type :lower-latin'>
-<li>use the Personal Data only for the purpose of and within the scope of entrusted work; </li>
-<li>agree to be subject to the training and supervision by Organisation of Tencent's handling of the Personal Data; and </li>
+<li>use the Personal Data only for the purpose of and within the scope of entrusted work;</li>
+<li>agree to be subject to the training and supervision by Organisation of Tencent’s handling of the Personal Data; and</li>
 <li>agree to be subject to the supervision and audit by relevant regulatory authorities.</li></ol>
-3. Tencent will compensate Organisation and any relevant data subjects for any and all damages, liabilities, costs and expenses arising out of any breach of Tencent's obligations under this DPSA or under Applicable Law.
 
+**10.9** Tencent will compensate Organisation and any relevant Data Subjects for any and all damages, liabilities, costs and expenses arising out of any breach of Tencent’s obligations under this DPSA or under Korean data protection laws.
 
-**California**
+### California
 
-1. In addition to Tencent’s other obligations as set out elsewhere in this Agreement, where applicable for the purposes of the CCPA, Tencent shall act as a “service provider” for Organisation, pursuant to which the parties agree that all such Personal Information is disclosed to Tencent for one or more business purpose(s) and its use or sharing by Organisation with Tencent is necessary to perform such business purpose(s).
-2. Tencent agrees that it: (a) is prohibited from retaining, using, or disclosing Personal Information for any purpose other than for the specific purpose of performing the services specified in the Terms of Service for Organisation, including, without limitation, from retaining, using, or disclosing such Personal Information for a commercial purpose other than providing the services specified in the Terms of Service.
-3. Tencent will not further collect, sell, or use Personal Information except as necessary to perform the business purpose(s).
+**10.10** In addition to Tencent’s other obligations as set out elsewhere in this DPSA, where applicable for the purposes of the CCPA, Tencent shall act as a “service provider” for Organisation, pursuant to which the parties agree that all such Personal Information is disclosed to Tencent for one or more business purpose(s) and its use or sharing by Organisation with Tencent is necessary to perform such business purpose(s).
 
-For the purposes of this Section [ ], “personal information,” “service provider,” “business purpose,” “commercial purpose,” “collects,” and “sell” shall have the meanings given to them in the CCPA.
+**10.11** Tencent agrees that it: (a) is prohibited from retaining, using, or disclosing Personal Information for any purpose other than for the specific purpose of performing the services specified in the Terms of Service for Organisation, including, without limitation, from retaining, using, or disclosing such Personal Information for a commercial purpose other than providing the services specified in the Terms of Service.
 
-**Macau**
+**10.12** Tencent will not further collect, sell, or use Personal Information except as necessary to perform the business purpose(s).
+For the purposes of Sections 10.10 – 10.12, “personal information,” “service provider,” “business purpose,” “commercial purpose,” “collects,” and “sell” shall have the meanings given to them in the CCPA.
 
-1. The appointment of Tencent as Processor, as well as the appointment of sub-processors where (and to the extent) permitted in this Agreement, shall be notified by the Organisation to the local data protection office (GPDP - Gabinete para a Protecção de Dados Pessoais). 
-2. Tencent shall have the right to reasonably request the Organisation provide evidence of compliance with an instruction under the relevant the Macau data protection laws, including such notification under section 1 above.
-3. Organisation shall expressly inform Tencent, in writing, in case of processing of sensitive data, as defined in article 7 of the Macau Data Protection  Law (Law n. 8/2005), and shall ensure compliance with the particular requirements provided for under Macau data protection law for the processing of such data.  
+### Macau
 
+**10.13** The appointment of Tencent as Processor, as well as the appointment of sub-processors where (and to the extent) permitted in this DPSA, shall be notified by the Organisation to the local data protection office (GPDP - Gabinete para a Protecção de Dados Pessoais). 
 
-## Controller-Processor Transfer Clauses
+**10.14** Tencent shall have the right to reasonably request the Organisation provide evidence of compliance with an instruction under the relevant the Macau data protection laws, including such notification under section 10.1 above.
 
-For the purposes of Article 26(2) of Directive 95/46/EC for the transfer of personal data to processors established in third countries which do not ensure an adequate level of data protection:
-
-Name of the data exporting organisation: This is the Organisation that has entered into the Agreement, or if the Agreement is entered into with an individual that is not acting on behalf of an Organisation, that individual.
-
-(the “**data exporter**”)
-
-And
-
-Name of the data importing organisation: The contracting entity specified in section 1.2 of the Terms of Service.
-
-(the “**data importer**”)
-
-each a “**party**”; together “**the parties**”,
-
-HAVE AGREED on the following Contractual Clauses (the “**Clauses**”) in order to adduce adequate safeguards with respect to the protection of privacy and fundamental rights and freedoms of individuals for the transfer by the data exporter to the data importer of the personal data specified in Appendix 1.
-
-### Definitions
-
-For the purposes of the Clauses:
-<ol style = 'list-style-type :lower-latin'>
-<li> 'personal data', 'special categories of data', 'process/processing', 'controller', 'processor', 'data subject' and 'supervisory authority' will have the same meaning as in Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data;</li>
-<li>'the data exporter' refers to the controller who transfers the personal data;</li>
-<li>'the data importer' refers to the processor who agrees to receive from the data exporter personal data intended for processing on his behalf after the transfer in accordance with his instructions and the terms of the Clauses and who is not subject to a third country's system ensuring adequate protection within the meaning of Article 25(1) of Directive 95/46/EC;</li>
-<li>'the sub-processor' refers to any processor engaged by the data importer or by any other sub-processor of the data importer who agrees to receive from the data importer or from any other sub-processor of the data importer personal data exclusively intended for processing activities to be carried out on behalf of the data exporter after the transfer in accordance with his instructions, the terms of the Clauses and the terms of the written subcontract;</li>
-<li>'the applicable data protection law' refers to the legislation protecting the fundamental rights and freedoms of individuals and, in particular, their right to privacy with respect to the processing of personal data applicable to a data controller in the Member State in which the data exporter is established;</li>
-<li>'technical and organisational security measures' refers to those measures aimed at protecting personal data against accidental or unlawful destruction or accidental loss, alteration, unauthorized disclosure or access, in particular where the processing involves the transmission of data over a network, and against all other unlawful forms of processing.</li></ol>
-
-### Details of the transfer
-
-The details of the transfer and in particular the special categories of personal data where applicable are specified in Appendix 1 which forms an integral part of the Clauses.
-
-### Third-party beneficiary clause
-
-1. The data subject can enforce against the data exporter this Clause, Clauses  4(b) to 4(i), Clauses 5(a) to 5(e) and 5(g) to 5(j), Clauses 6.1 and 6.2, Clause 7, Clause 8.2 and Clauses 9 to 12 as third-party beneficiary. 
-2. The data subject can enforce against the data importer this Clause, Clauses 5(a) to 5(e) and 5(g), Clause 6, Clause 7, Clause 8.2 and Clauses 9 to 12, in cases where the data exporter has factually disappeared or has ceased to exist in law unless any successor entity has assumed the entire legal obligations of the data exporter by contract or by operation of law, as a result of which it takes on the rights and obligations of the data exporter, in which case the data subject can enforce them against such entity. 
-3. The data subject can enforce against the sub-processor this Clause, Clauses 5(a) to 5(e) and 5(g), Clause 6, Clause 7, Clause 8.2 and Clauses 9 to 12, in cases where both the data exporter and the data importer have factually disappeared or ceased to exist in law or have become insolvent, unless any successor entity has assumed the entire legal obligations of the data exporter by contract or by operation of law as a result of which it takes on the rights and obligations of the data exporter, in which case the data subject can enforce them against such entity. Such third-party liability of the sub-processor will be limited to its own processing operations under the Clauses. 
-4. The parties do not object to a data subject being represented by an association or other body if the data subject so expressly wishes and if permitted by national law. 
-
-### Obligations of the data exporter 
-
-The data exporter agrees and warrants:
-<ol style = 'list-style-type :lower-latin'>
-<li>that the processing, including the transfer itself, of the personal data has been and will continue to be carried out in accordance with the relevant provisions of the applicable data protection law (and, where applicable, has been notified to the relevant authorities of the Member State where the data exporter is established) and does not violate the relevant provisions of that State;</li>
-<li>that it has instructed and throughout the duration of the personal data processing services will instruct the data importer to process the personal data transferred only on the data exporter's behalf and in accordance with the applicable data protection law and the Clauses;</li>
-<li>that the data importer will provide sufficient guarantees in respect of the technical and organisational security measures specified in Appendix 2 to this contract;</li>
-<li>that after assessment of the requirements of the applicable data protection law, the security measures are appropriate to protect personal data against accidental or unlawful destruction or accidental loss, alteration, unauthorized disclosure or access, in particular where the processing involves the transmission of data over a network, and against all other unlawful forms of processing, and that these measures ensure a level of security appropriate to the risks presented by the processing and the nature of the data to be protected having regard to the state of the art and the cost of their implementation;</li>
-<li>that it will ensure compliance with the security measures;</li>
-<li>that, if the transfer involves special categories of data, the data subject has been informed or will be informed before, or as soon as possible after, the transfer that its data could be transmitted to a third country not providing adequate protection within the meaning of Directive 95/46/EC;</li>
-<li> to forward any notification received from the data importer or any sub-processor pursuant to Clause 5(b) and Clause 8.3 to the data protection supervisory authority if the data exporter decides to continue the transfer or to lift the suspension;</li>
-<li> to make available to the data subjects upon request a copy of the Clauses, with the exception of Appendix 2, and a summary description of the security measures, as well as a copy of any contract for sub-processing services which has to be made in accordance with the Clauses, unless the Clauses or the contract contain commercial information, in which case it may remove such commercial information;</li>
-<li> that, in the event of sub-processing, the processing activity is carried out in accordance with Clause 11 by a sub-processor providing at least the same level of protection for the personal data and the rights of data subject as the data importer under the Clauses; and</li>
-<li> that it will ensure compliance with Clauses 4(a) to 4(i).</li></ol>
-
-### Obligations of the data importer
-
-The data importer agrees and warrants:
-<ol style = 'list-style-type :lower-latin'>
-<li> to process the personal data only on behalf of the data exporter and in compliance with its instructions and the Clauses; if it cannot provide such compliance for whatever reasons, it agrees to inform promptly the data exporter of its inability to comply, in which case the data exporter is entitled to suspend the transfer of data and/or terminate the contract;</li>
-<li> that it has no reason to believe that the legislation applicable to it prevents it from fulfilling the instructions received from the data exporter and its obligations under the contract and that in the event of a change in this legislation which is likely to have a substantial adverse effect on the warranties and obligations provided by the Clauses, it will promptly notify the change to the data exporter as soon as it is aware, in which case the data exporter is entitled to suspend the transfer of data and/or terminate the contract;</li>
-<li> that it has implemented the technical and organisational security measures specified in Appendix 2 before processing the personal data transferred;</li>
-<li> that it will promptly notify the data exporter about:</li>
-<ol style = 'list-style-type :lower-latin'>
-<li>any legally binding request for disclosure of the personal data by a law enforcement authority unless otherwise prohibited, such as a prohibition under criminal law to preserve the confidentiality of a law enforcement investigation,</li>
-<li>any accidental or unauthorized access, and</li>
-<li>any request received directly from the data subjects without responding to that request, unless it has been otherwise authorized to do so;</li></ol></li>
-<li> to deal promptly and properly with all inquiries from the data exporter relating to its processing of the personal data subject to the transfer and to abide by the advice of the supervisory authority with regard to the processing of the data transferred;</li>
-<li> at the request of the data exporter to submit its data processing facilities for audit of the processing activities covered by the Clauses which will be carried out by the data exporter or an inspection body composed of independent members and in possession of the required professional qualifications bound by a duty of confidentiality, selected by the data exporter, where applicable, in agreement with the supervisory authority;</li>
-<li> to make available to the data subject upon request a copy of the Clauses, or any existing contract for sub-processing, unless the Clauses or contract contain commercial information, in which case it may remove such commercial information, with the exception of Appendix 2 which will be replaced by a summary description of the security measures in those cases where the data subject is unable to obtain a copy from the data exporter;</li>
-<li> that, in the event of sub-processing, it has previously informed the data exporter and obtained its prior written consent;</li>
-<li> that the processing services by the sub-processor will be carried out in accordance with Clause 11;</li>
-<li> to send promptly a copy of any sub-processor agreement it concludes under the Clauses to the data exporter.</li></ol>
-
-### Liability
-
-1. The parties agree that any data subject, who has suffered damage as a result of any breach of the obligations referred to in Clause 3 or in Clause 11 by any party or sub-processor is entitled to receive compensation from the data exporter for the damage suffered.
-2. If a data subject is not able to bring a claim for compensation in accordance with Clause 6.1 against the data exporter, arising out of a breach by the data importer or his sub-processor of any of their obligations referred to in Clause 3 or in Clause 11, because the data exporter has factually disappeared or ceased to exist in law or has become insolvent, the data importer agrees that the data subject may issue a claim against the data importer as if it were the data exporter, unless any successor entity has assumed the entire legal obligations of the data exporter by contract of by operation of law, in which case the data subject can enforce its rights against such entity.  The data importer may not rely on a breach by a sub-processor of its obligations in order to avoid its own liabilities.
-3. If a data subject is not able to bring a claim against the data exporter or the data importer referred to in Clauses 6.1 and 6.2, arising out of a breach by the sub-processor of any of their obligations referred to in Clause 3 or in Clause 11 because both the data exporter and the data importer have factually disappeared or ceased to exist in law or have become insolvent, the sub-processor agrees that the data subject may issue a claim against the data sub-processor with regard to its own processing operations under the Clauses as if it were the data exporter or the data importer, unless any successor entity has assumed the entire legal obligations of the data exporter or data importer by contract or by operation of law, in which case the data subject can enforce its rights against such entity. The liability of the sub-processor will be limited to its own processing operations under the Clauses.
-
-### Mediation and jurisdiction
-
-1. The data importer agrees that if the data subject invokes against it third-party beneficiary rights and/or claims compensation for damages under the Clauses, the data importer will accept the decision of the data subject: 
-<ol style = 'list-style-type :lower-latin'>
-<li>to refer the dispute to mediation, by an independent person or, where applicable, by the supervisory authority;</li>
-<li>to refer the dispute to the courts in the Member State in which the data exporter is established.</li></ol>
-2. The parties agree that the choice made by the data subject will not prejudice its substantive or procedural rights to seek remedies in accordance with other provisions of national or international law.
-
-### Cooperation with supervisory authorities
-
-1. The data exporter agrees to deposit a copy of this contract with the supervisory authority if it so requests or if such deposit is required under the applicable data protection law.
-2. The parties agree that the supervisory authority has the right to conduct an audit of the data importer, and of any sub-processor, which has the same scope and is subject to the same conditions as would apply to an audit of the data exporter under the applicable data protection law.
-3. The data importer will promptly inform the data exporter about the existence of legislation applicable to it or any sub-processor preventing the conduct of an audit of the data importer, or any sub-processor, pursuant to Clause 8.2. In such a case the data exporter will be entitled to take the measures foreseen in Clause 5(b).
-
-### Governing Law
-
-The Clauses will be governed by the law of the Member State in which the data exporter is established.
-
-### Variation of the contract
-
-The parties undertake not to vary or modify the Clauses. This does not preclude the parties from adding clauses on business related issues where required as long as they do not contradict the Clauses.
-
-### Sub-processing
-
-1. The data importer will not subcontract any of its processing operations performed on behalf of the data exporter under the Clauses without the prior written consent of the data exporter. Where the data importer subcontracts its obligations under the Clauses, with the consent of the data exporter, it will do so only by way of a written agreement with the sub-processor which imposes the same obligations on the sub-processor as are imposed on the data importer under the Clauses. Where the sub-processor fails to fulfil its data protection obligations under such written agreement the data importer will remain fully liable to the data exporter for the performance of the sub-processor's obligations under such agreement.
-2. The prior written contract between the data importer and the sub-processor will also provide for a third-party beneficiary clause as laid down in Clause 3 for cases where the data subject is not able to bring the claim for compensation referred to in Clause 6.1 against the data exporter or the data importer because they have factually disappeared or have ceased to exist in law or have become insolvent and no successor entity has assumed the entire legal obligations of the data exporter or data importer by contract or by operation of law. Such third-party liability of the sub-processor will be limited to its own processing operations under the Clauses.
-3. The provisions relating to data protection aspects for sub-processing of the contract referred to in Clause 11.1 will be governed by the law of the Member State in which the data exporter is established.
-4. The data exporter will keep a list of sub-processing agreements concluded under the Clauses and notified by the data importer pursuant to Clause 5(j), which will be updated at least once a year. The list will be available to the data exporter's data protection supervisory authority.
-
-### Obligation after the termination of personal data processing services
-
-1. The parties agree that on the termination of the provision of data processing services, the data importer and the sub-processor will, at the choice of the data exporter, return all the personal data transferred and the copies thereof to the data exporter or will destroy all the personal data and certify to the data exporter that it has done so, unless legislation imposed upon the data importer prevents it from returning or destroying all or part of the personal data transferred. In that case, the data importer warrants that it will guarantee the confidentiality of the personal data transferred and will not actively process the personal data transferred anymore.
-2. The data importer and the sub-processor warrant that upon request of the data exporter and/or of the supervisory authority, it will submit its data processing facilities for an audit of the measures referred to in Clause 12.1.
+**10.15** Organisation shall expressly inform Tencent, in writing, in case of processing of sensitive data, as defined in article 7 of the Macau Data Protection Law (Law n. 8/2005), and shall ensure compliance with the particular requirements provided for under Macau data protection law for the processing of such data. 
 
 
 ## Appendix 1
 
-#### Description of the Transfers (Controller-Processor)
+### Processing details
 
-This Appendix forms part of the Clauses and must be completed and signed by the parties.
-
-The Member States may complete or specify, according to their national procedures, any additional necessary information to be contained in this Appendix.
+#### A.List of parties
 
 **Data exporter**
 
-The data exporter is the Organisation as defined in the Agreement, or if the Agreement is entered into by an individual that is not acting on behalf of an Organisation, that individual.
+The data exporter is the Organisation as defined in the Terms of Service. The address of the data exporter is as defined in the Terms of Service. 
 
-The data exporter has engaged the data importer to provide online services as described in the Agreement. 
+The contact person’s name, position and contact details of the data exporter is as defined in the Terms of Service.
+
+The data exporter has engaged the data importer to provide online services as described in the Terms of Service.
+
+The data exporter is the controller.
 
 **Data importer**
 
-The data importer is Tencent, as defined in the Agreement, a leading provider of Internet value added services. The data importer has been engaged by the data exporter to provide certain online services as described in the Agreement. 
+The data importer is Tencent, as defined in the  Terms of Service. The address of the data importer is as defined in the Terms of Service.
 
-**Categories of data**
+The contact person’s name, position and contact details of the data importer is as defined in the Terms of Service.
 
-The personal data transferred concern the following categories of data (please specify):
+The data importer has been engaged by the data exporter to provide certain online services as described in the Terms of Service.
 
-The Content uploaded by the Data Exporter, or as notified by Data Exporter to Data Importer from time to time.
+The data importer is the processor.
 
-**Special categories of data**
+#### B. Description of transfer
 
-The personal data transferred concern the following special categories of data (please specify):
+**Categories of data subjects whose personal data is transferred**
 
-The Content uploaded by the Data Exporter, or as notified by Data Exporter to Data Importer from time to time.
+Data Subjects whose Personal Data is controlled or made available by Organisation as Content.
 
-**Processing operations**
+**Categories of personal data transferred**
+The Content uploaded by Organisation, or as notified by Organisation to Tencent from time to time.
 
-The personal data transferred will be subject to the following basic processing activities (please specify):
+**Sensitive data transferred (if applicable) and applied restrictions or safeguards that fully take into consideration the nature of the data and the risks involved, such as for instance strict purpose limitation, access restrictions (including access only for staff having followed specialised training), keeping a record of access to the data, restrictions for onward transfers or additional security measures.**
+The Content uploaded by the Organisation, or as notified by Organisation to Tencent from time to time. 
 
-The Data Importer will process the personal data in support of the activities carried out by the Data Exporter.  In particular, the Data Importer's processing activities carried out under the instructions and on behalf of the Data Exporter include: data hosting, data back-up, communications, data analytics, statistics, analysis, IT system administration, order fulfilment, support services, employee management services, processing order payments, delivery of marketing communications, promotions and surveys, operations, software maintenance and hosting, information technology services including desktop and network management, system monitoring, application and program development, archiving, disaster management and data restoring.
+**The frequency of the transfer (e.g. whether the data is transferred on a one-off or continuous basis).**
+Continuous.
+
+**Nature of the processing.**
+Tencent will process the personal data in support of the Services performed for Organisation.
+
+**Purpose(s) of the data transfer and further processing**
+Transfer and processing necessary to allow Tencent to perform the Services and its obligations under the Terms of Service.
+
+**The period for which the personal data will be retained, or, if that is not possible, the criteria used to determine that period**
+For the duration of the Terms of Service.
+
+**For transfers to (sub-) processors, also specify subject matter, nature and duration of the processing**
+As above.
+
+#### C. COMPETENT SUPERVISORY AUTHORITY
+
+Autoriteit Persoonsgegevens (the Netherlands).
 
 ## Appendix 2
 
-#### Technical and Organisational Security Measures
+### TECHNICAL AND ORGANISATIONAL SECURITY MEASURES
 
-We have implemented a comprehensive privacy and security programme for the purpose of protecting your content. This program includes the following:
-1. **Data security.** We have designed and implemented the following measures to protect customer's data against unauthorized access:  
-<ol style = 'list-style-type :lower-latin'>
-<li>standards for data categorisation and classification; </li>
-<li>a set of authentication and access control capabilities at the physical, network, system and application levels; and </li>
-<li>a mechanism for detecting big data-based abnormal behaviour.</li></ol>
-2. **Network security.** We implement stringent rules on internal network isolation to achieve access control and border protection for internal networks (including office networks, development networks, testing networks and production networks) by way of physical and logical isolation.
-3.  **Physical and environmental security.** Stringent infrastructure and environment access controls have been implemented for Tencent Cloud's data centers based on relevant regional security requirements.  An access control matrix is established, based on the types of data center personnel and their respective access privileges, to ensure effective management and control of access and operations by data center personnel.
-4. **Incident management.** We operate active and real-time service monitoring, combined with a rapid response and handling mechanism, that enables prompt detection and handling of security incidents.
-5. **Compliance with standards.** We comply with the standards listed in our Compliance Center page, and as updated from time to time.
+We have implemented a comprehensive privacy and security programme for the purpose of protecting your content. **This program includes the following**:
+
+**Data security.** We have designed and implemented the following measures to protect customer’s data against unauthorized access:
+
+standards for data categorisation and classification;
+
+a set of authentication and access control capabilities at the physical, network, system and application levels; and
+
+a mechanism for detecting big data-based abnormal behaviour.
+
+**Network security.** We implement stringent rules on internal network isolation to achieve access control and border protection for internal networks (including office networks, development networks, testing networks and production networks) by way of physical and logical isolation.
+
+**Physical and environmental security.** Stringent infrastructure and environment access controls have been implemented for Tencent Cloud’s data centers based on relevant regional security requirements. An access control matrix is established, based on the types of data center personnel and their respective access privileges, to ensure effective management and control of access and operations by data center personnel.
+
+**Incident management.**  We operate active and real-time service monitoring, combined with a rapid response and handling mechanism, that enables prompt detection and handling of security incidents.
+
+**Compliance with standards.** We comply with the standards  listed in our Compliance Center page, and as updated from time to time.
+
+## Appendix 3
+
+### INTERNATIONAL DATA TRANSFER ADDENDUM TO THE EU COMMISSION STANDARD CONTRACTUAL CLAUSES
+
+This Addendum has been issued by the Information Commissioner for Parties making Restricted Transfers. The Information Commissioner considers that it provides Appropriate Safeguards for Restricted Transfers when it is entered into as a legally binding contract.
+
+#### PART 1: TABLES
+
+**TABLE 1: PARTIES**
+
+<table>
+<tbody>
+<tr>
+<td><b>Start date</b></td>
+<td colspan="2"><b>See effective date of the DPSA</b></td>
+</tr>
+<tr>
+<td><b>The Parties</b></td>
+<td><b>Exporter (who sends the Restricted Transfer)</b></td>
+<td><b>Importer (who receives the Restricted Transfer)</b></td>
+</tr>
+<tr>
+<td><b>Parties’ details</b></td>
+<td colspan="2"><b>See Appendix 1 to the DPSA</b></td>
+</tr>
+<tr>
+<td><b>Key Contact</b></td>
+<td colspan="2"><b>See Appendix 1 to the DPSA</b></td>
+</tr>
+</tbody></table>
+
+**TABLE 2: SELECTED SCCS, MODULES AND SELECTED CLAUSES**
+
+<table>
+<tbody>
+<tr>
+<td><b>Addendum EU SCCs</b></td>
+<td ><b>The Standard Contractual Clauses set out in the Annex of Commission Implementing Decision (EU) 2021/914 of 4 June 2021 (Module 2)</b></td>
+</tr>
+</tbody></table>
+
+**TABLE 3: APPENDIX INFORMATION**
+“**Appendix Information**” means the information which must be provided for the selected modules as set out in the Appendix of the Approved EU SCCs (other than the Parties), and which for this Addendum is set out in:
+
+<table>
+<tbody>
+<tr>
+<td>Annex 1A: List of Parties: <b>See Appendix 1 of  the DPSA</b></td>
+</tr>
+<tr>
+<td>Annex 1B: Description of Transfer: <b>See Appendix 1 of  the DPSA</b></td>
+</tr>
+<tr>
+<td>Annex II: Technical and organisational measures including technical and organisational measures to ensure the security of the data: <b>See Appendix 2 of  the DPSA</b></td>
+</tr>
+<tr>
+<td>Annex III: List of Sub processors (Modules 2 and 3 only): <b>See Section 8 of the DPSA</b></td>
+</tr>
+</tbody></table>
+
+**TABLE 4: ENDING THIS ADDENDUM WHEN THE APPROVED ADDENDUM CHANGES**
+
+<table>
+<tbody>
+<tr>
+<td><b>Ending this Addendum <br>when the Approved Addendum changes</b></td>
+<td>Which Parties may end this Addendum as set out in Section 19:
+<br>Importer
+</td>
+</tr>
+</tbody></table>
+
+#### PART 2: MANDATORY CLAUSES
+
+<table>
+<tbody>
+<tr>
+<td><b>Mandatory Clauses</b></td>
+<td>Part 2: Mandatory Clauses of the Approved Addendum, being the template Addendum B.1.0 issued by the ICO and laid before Parliament in accordance with s119A of the Data Protection Act 2018 on 2 February 2022, as it is revised under Section 18 of those Mandatory Clauses.</td>
+</tr>
+</tbody></table>
 

@@ -1,21 +1,21 @@
 ## 환경 종속
 
-- [HADOOP-COS](https://github.com/tencentyun/hadoop-cos)와 Hadoop-COS-Java-SDK(HADOOP-COS의 dep 디렉터리 안에 포함)
+- [HADOOP-COS](https://github.com/tencentyun/hadoop-cos/releases) 및 해당 버전의 [cos_api-bundle](https://github.com/tencentyun/hadoop-cos/releases).
 - DataX 버전: DataX-3.0.
 
 ## 다운로드 및 설치
 
-#### HADOOP-COS 다운로드 
+#### HADOOP-COS 다운로드
 
-운영사 Github에서 [HADOOP-COS](https://github.com/tencentyun/hadoop-cos)를 다운로드하십시오.
+공식 Github에서 [HADOOP-COS](https://github.com/tencentyun/hadoop-cos/releases) 및 해당 버전의 [cos_api-bundle](https://github.com/tencentyun/hadoop-cos/releases)을 다운로드하십시오.
 
 #### DataX 소프트웨어 패키지 다운로드
 
-운영사 Github에서 [DataX](http://datax-opensource.oss-cn-hangzhou.aliyuncs.com/datax.tar.gz)를 다운로드하십시오.
+운영사 Github에서 [DataX](http://datax-opensource.oss-cn-hangzhou.aliyuncs.com/datax.tar.gz)를 다운로드하십시오. 
 
 #### HADOOP-COS 설치
 
-HADOOP-COS를 다운로드한 후 dep 디렉터리에 속한 `hadoop-cos-2.x.x-shaded.jar`을 Datax 압축 해제 경로인 `plugin/reader/hdfsreader/libs/` 및`plugin/writer/hdfswriter/libs/`에 복사하십시오.
+HADOOP-COS 다운로드 후 `hadoop-cos-2.x.x-${version}.jar` 및 `cos_api-bundle-${version}.jar`를 Datax 압축 해제 경로 `plugin/reader/hdfsreader/libs/` 및`plugin/writer/hdfswriter/libs/`에 복사하십시오.
 
 ## 사용 방법
 
@@ -141,4 +141,3 @@ bin/datax.py job/hdfs_job.json
 읽은 기록 총 횟수                    :                   2
 읽기/쓰기 실패 총 횟수                     :                   0
 ```
-

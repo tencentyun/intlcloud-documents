@@ -8,7 +8,7 @@ The `mb` command is used to create a bucket.
 
 `mb` includes the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description                         |
 | --------- | ------------- | ------------------------ |
 | None | BucketName-APPID | Customizes the bucket name, such as `examplebucket-1250000000` |
 | -r        | --region      | Region of the bucket   |

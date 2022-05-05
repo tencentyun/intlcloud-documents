@@ -51,7 +51,7 @@ Retrieving data stored in STANDARD_IA, ARCHIVE, or DEEP ARCHIVE incurs data retr
 
 Assume that on November 1, 2020, user B uploaded 5 GB of data to a bucket residing in the Guangzhou region in the STANDARD_IA storage class. On November 2, user B read the data over a public network with CDN disabled. A total of 100 requests were generated. Apart from these operations, user B did not perform any other operations in November. As storage usage fees, request fees, and data retrieval fees are calculated monthly, they will be billed on December 1, 2020. Traffic fees are calculated daily and will thus be billed on November 3, 2020. Therefore, the fees are calculated as follows:
 
-- Pay-as-you-go:
+Pay-as-you-go:
  - STANDARD_IA storage usage fees = 0.018 USD/GB/month x 5 GB = 0.09 USD
  - STANDARD_IA data retrieval fees = 0.002 USD/GB x 5 GB = 0.01 USD
  - STANDARD_IA request fees = 0.01 USD/10,000 requests x 10,000 requests = 0.01 USD

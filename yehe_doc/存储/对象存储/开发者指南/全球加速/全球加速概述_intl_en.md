@@ -11,9 +11,9 @@ The global acceleration feature provided by Tencent Cloud Object Storage (COS) u
 You can enable global acceleration on the COS Console or through APIs.
 
 #### Using the COS console
-You can enable global acceleration for your buckets on the COS Console. For more information, please see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406) in the console documentation.
+You can enable global acceleration for your buckets in the COS console. For more information, see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406) in the console documentation.
 
-### Using RESTful APIs
+#### Using RESTful APIs
 You can directly use the following APIs to enable global acceleration:
 
 - [PUT Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33411)
@@ -23,7 +23,7 @@ You can directly use the following APIs to enable global acceleration:
 
 After enabling global acceleration, you can access your COS files through two types of endpoint domain names:
 
-- **Default bucket endpoint domain name:** Format: `<BucketName-APPID>.cos.<Region>.myqcloud.com`. For more information, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
+- **Default bucket endpoint domain name:** Format: `<BucketName-APPID>.cos.<Region>.myqcloud.com`. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 - **Global acceleration endpoint domain name:** Format: `<BucketName-APPID>.cos.accelerate.myqcloud.com`.
 
 Take the bucket `examplebucket-1250000000` in Guangzhou as an example. If you have enabled global acceleration for it, when you need to upload the file `exampleObject.txt` from Beijing to it, you can do so in the following two ways:
@@ -48,9 +48,9 @@ We have outlined below some important factors to note when using a global accele
 - When using a global acceleration domain name, fees will be incurred only for requests for which linkage is accelerated. For example, if you use a global acceleration domain name to upload data from Beijing to a bucket in Beijing, the request will not incur acceleration fees as the linkage was not accelerated.
 - When using a global acceleration domain name, you can specify the HTTP or HTTPS transfer protocol. However, if the request is transmitted via a private network Direct Connect line, COS will choose to use the HTTPS protocol to guarantee data transfer security.
 
-## Billing Sample
+## Billing Example
 
-Uploading data or accessing a bucket by using a global acceleration endpoint domain name will incur fees calculated by the **day**. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871) and [Product Pricing](https://intl.cloud.tencent.com/pricing/cos). The following example compares billing between a global acceleration endpoint domain name and a default endpoint domain name:
+Uploading data or accessing a bucket by using a global acceleration endpoint domain name will incur fees calculated by the **day**. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871) and [Product Pricing](https://intl.cloud.tencent.com/pricing/cos). The following example compares billing between a global acceleration endpoint domain name and a default endpoint domain name:
 
 **Business scenario 1**
 

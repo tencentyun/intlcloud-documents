@@ -49,7 +49,7 @@ Permission settings are described as follows:
       <td>`Root account` indicates the root account of other users. `Sub-account` indicates the sub-account under the current root account.<br>To grant the access permission to a sub-account of another root account, you need to grant the access permission to that root account first and then grant the access permission to the sub-account from that root account.</td>
    </tr>
    <tr>
-      <td>Reads</td>
+      <td>Read</td>
       <td>Permission to read data</td>
    </tr>
    <tr>
@@ -70,7 +70,7 @@ Permission settings are described as follows:
    </tr>
 </table>
 5. Click **Save** in the **Operation** column.
-6. Click **Disable**.
+6. Click **Close**.
 
 
 

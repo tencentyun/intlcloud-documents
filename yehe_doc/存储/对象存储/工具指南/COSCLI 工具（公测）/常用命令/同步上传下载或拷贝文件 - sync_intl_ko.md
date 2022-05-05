@@ -6,21 +6,22 @@ sync 명령어는 파일을 동기화 업로드, 다운로드 또는 복사에 �
 ./coscli sync <source_path> <destination_path> [flag]
 ```
 
->? bucketAlias 관련 설명은 [설정](https://intl.cloud.tencent.com/document/product/436/43265)을 참고하십시오.
+>? 
+>- bucketAlias 관련 설명은 [다운로드 및 설치 설정](https://intl.cloud.tencent.com/document/product/436/43265)을 참고하십시오.
+>- 이 명령의 다른 범용 옵션(예시: 버킷 전환, 사용자 계정 전환 등)은 [범용 옵션](https://intl.cloud.tencent.com/document/product/436/46273) 문서를 참고하십시오.
+>
 
 sync 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 
 | flag 약칭 | flag 전체 명칭     | flag 용도                      |
 | --------- | ------------- | ------------------------------ |
-| -h        | --help        | 도움말 정보 출력                   |
-| -c        | --config-path | 사용할 프로파일 경로 지정       |
 |    없음       | --include     | 특정 패턴이 포함된 파일             |
 |   없음         | --exclude     | 특정 패턴이 제외된 파일             |
 | -r        | --recursive   | 폴더의 모든 파일 재귀적 순회 여부 |
 |   없음       | --storage-class | 파일 유형 지정(기본값: STANDARD) |
-|   없음       | --part-size     | 파일 파트 크기(기본값: 32MB)     |
+|   없음       | --part-size     | 파일 파트 크기(기본값: 32MB, 최대 5GB 지원)     |
 |   없음       | --thread-num    | 동시 스레드 수(기본값: 5)      |
-|   없음       | --rate-limiting | 단일 링크 속도 제한(0.1~100MB/s)       |
+|   없음       | --rate-limiting | 단일 링크 속도 제한(0.1 - 100MB/s)       |
 
 
 >?

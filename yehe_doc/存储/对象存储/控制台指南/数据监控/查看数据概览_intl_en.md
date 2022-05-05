@@ -17,11 +17,11 @@ You can go to the **Statistic** page in the COS console to view the number of bu
    - **Number of Buckets**: number of buckets that have been created                                     
     - **Total Objects**: number of objects that have been created in all buckets. You can view the number of objects by storage class.                      
     - **Average Daily Usage for This Month**: the calculation formula is as follows: Current storage usage/Number of days in the month. You can view the average daily usage for this month by storage class (e.g., STANDARD, STANDARD_IA, and ARCHIVE).
-   - **Storage Usage**: storage usage for STANDARD, STANDARD_IA, and ARCHIVE. You can view the data in the year.
-   - **Traffic**: public/private downstream traffic and CDN origin-pull traffic for STANDARD and STANDARD_IA. You can view the data in the year.
-   - **Request Count**: number of read/write requests for STANDARD and STANDARD_IA. You can view the data in the year. 
-   - **Request Success Rate**: request success rate for STANDARD. You can view the data in the year. 
-   - **Data Retrieval**: the amount of data retrieved for STANDARD_IA and ARCHIVE. For ARCHIVE, the amount is classified into expedited retrievals, standard retrievals, and bulk retrievals. You can view the data in the year.
+   - **Storage Usage**: storage usage for STANDARD, STANDARD_IA, and ARCHIVE. You can view the data for the past year.
+   - **Traffic**: public/private downstream traffic and CDN origin-pull traffic for STANDARD and STANDARD_IA. You can view the data for the past year.
+   - **Request Count**: number of read/write requests for STANDARD and STANDARD_IA. You can view the data for the past year. 
+   - **Request Success Rate**: request success rate for STANDARD. You can view the data for the past year. 
+   - **Data Retrieval**: the amount of data retrieved for STANDARD_IA and ARCHIVE. For ARCHIVE, the amount is classified into expedited retrievals, standard retrievals, and bulk retrievals. You can view the data for the past year.
    - **Bucket Overview**: displays metrics of yesterday or this month for each bucket. The metrics displayed vary depending on the storage class selected, and include STANDARD/STANDARD_IA/ARCHIVE storage usage, STANDARD_IA/ARCHIVE data retrievals, STANDARD/STANDARD_IA read/write requests, public/private downstream traffic, and CDN origin-pull traffic.
 3. You can click the download button in the upper-right corner of each chart to download the data. 
 

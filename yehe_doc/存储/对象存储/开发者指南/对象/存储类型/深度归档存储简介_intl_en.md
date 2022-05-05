@@ -6,7 +6,7 @@ DEEP ARCHIVE is suitable for data that is accessed infrequently but needs to be 
 
 DEEP ARCHIVE is designed for 99.999999999% durability and 99.95% availability. You can also use the versioning and cross-region replication features provided by COS to further guarantee the data security.
 
-## How to Use
+## Directions
 
 1. Upload using the console.
  1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
@@ -34,7 +34,7 @@ DEEP ARCHIVE is subject to the following limits. When using it, you need to pay 
 >
 
 - **Restoration QPS limit**: 100 requests/sec.
-- **Available regions**: DEEP ARCHIVE is currently supported only in the Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo,and Singapore regions and will be available in more regions.
+- **Available regions**: DEEP ARCHIVE is currently supported only in the Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo, and Singapore regions and will be available in more regions.
 - **Use limit**: Currently, DEEP ARCHIVE is not supported for multi-AZ buckets.
 - **Operation limit**: Objects cannot be appended to other objects in the DEEP ARCHIVE storage class.
 - **Restoration request limit**: Only one restoration request can be executed at a time for an object, and multiple repeated requests will be merged and processed according to the fastest restoration mode. If the restoration mode of the (N+1)th request is faster than that of the Nth request, the (N+1)th request will be executed as a new request; otherwise, it will fail.

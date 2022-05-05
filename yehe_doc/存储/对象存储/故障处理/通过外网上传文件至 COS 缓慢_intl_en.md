@@ -3,29 +3,29 @@
 - **Symptom 1**: <span id="FaultPhenomenon1"></span>
      - The upload speed is slow (below 8 Mbps) over a home network, while it is normal over a corporate network.
      - The upload speed is slow (below 8 Mbps) over a corporate network, while it is normal using a 4G network.
-- **Symptom 2**: <span id="FaultPhenomenon2"></span>The upload is slow using a custom endpoint.
+- **Symptom 2**: <span id="FaultPhenomenon2"></span>The upload is slow using a custom domain name.
 
 ## Possible Causes
 
 - Symptom 1
- 1. The speed slow due to your ISP and networking condition.
+ 1. The speed is slow due to your ISP and network condition.
  2. CORS is used and thus the speed is slow.
 
-- Symptom 2: CNAME maps the custom endpoint to other products (e.g., Content Delivery Network (CDN), Cloud Virtual Machine (CVM), or Anti-DDoS) before mapping to COS.
+- Symptom 2: CNAME maps the custom domain name to other products (e.g., Content Delivery Network (CDN), Cloud Virtual Machine (CVM), or Anti-DDoS) before mapping to COS.
 
 ## Solutions
 
-- [Symptom 1](#FaultPhenomenon1): Check the network condition of your client. For detailed directions, please see [Troubleshooting Client-Side Network](#SearchTheClientNetwork).
-- [Symptom 2](#FaultPhenomenon2): Reduce the intermediate links by modifying the DNS record for your custom endpoint to improve the transfer efficiency. For detailed directions, please see [Modifying custom endpoint’s DNS record](#ModifyCustomDomainNameResolution).
+- [Symptom 1](#FaultPhenomenon1): Check the network condition of your client. For detailed directions, see [Troubleshooting Client Network](#SearchTheClientNetwork).
+- [Symptom 2](#FaultPhenomenon2): Reduce the intermediate links by modifying the DNS record for your custom domain to improve the transfer efficiency. For detailed directions, see [Modifying custom domain’s DNS record](#ModifyCustomDomainNameResolution).
 
 ## Troubleshooting Procedure
 
 <span id="SearchTheClientNetwork"></span>
-### Checking the client-side network
+### Checking the client network
 
-1. Run the following command to check whether the IPS of the IP address is the same as that of the client:
+1. Run the following command to check whether the ISP of the IP address is the same as that of the client network:
 ```
-ping COS endpoint
+ping COS domain
 ```
 
 Example:
@@ -66,30 +66,30 @@ A message similar to the following will be displayed, from which you can get the
  - If not, please [contact us](https://intl.cloud.tencent.com/support).
 
 <span id="ModifyCustomDomainNameResolution"></span>
-### Modifying DNS record for your custom endpoint
+### Modifying DNS record for your custom domain
 
-1. Check whether the custom endpoint is mapped to a COS endpoint.
+1. Check whether the custom domain is mapped to a COS domain.
  - If yes, please [contact us](https://intl.cloud.tencent.com/support).
- Common COS endpoints are as follows:
+ Common COS domains are as follows:
 
 ```
-XXX.cos.ap-beijing.myqcloud.com  (default COS endpoint)
-XXX.cos.accelerate.myqcloud.com (COS global acceleration endpoint)
-XXX.cos-website.ap-beijing.myqcloud.com (COS static website endpoint)
-XXX.picbj.myqcloud.com (COS’s default CI endpoint)
+XXX.cos.ap-beijing.myqcloud.com  (default COS domain)
+XXX.cos.accelerate.myqcloud.com (COS global acceleration domain)
+XXX.cos-website.ap-beijing.myqcloud.com (COS static website domain)
+XXX.picbj.myqcloud.com (COS’s default CI domain)
 ```
 
  - If not, perform [Step 2](#2_step02).
-Common non-COS endpoints are as follows: 
+Common non-COS domains are as follows: 
 ```
-XXX.file.myqcloud.com or XXX.cdn.dnsv1.com (Tencent Cloud’s CDN default endpoint)
-XXX.w.kunlungr.com (aliyunCDN default endpoint)
+XXX.file.myqcloud.com or XXX.cdn.dnsv1.com (Tencent Cloud’s CDN default domain)
+XXX.w.kunlungr.com (aliyunCDN default domain)
 ```
 
-2. <span id="2_step02"></span>Map the custom endpoint to the desired COS endpoint in the CNAME and upload data.
-Example: `upload.mydomain.com  cname XXX.cos.ap-beijing.myqcloud.com`. For detailed directions, please see [Enabling Custom Accelerated Domain Name](https://intl.cloud.tencent.com/document/product/436/31507).
+2. <span id="2_step02"></span>Map the custom domain to the desired COS domain in the CNAME and upload data.
+Example: `upload.mydomain.com  cname XXX.cos.ap-beijing.myqcloud.com`. For detailed directions, see [Enabling Custom Origin Domains](https://intl.cloud.tencent.com/document/product/436/31507).
 
-3. Modify the default COS endpoint of the client.
+3. Modify the default COS domain of the client.
 The following uses C# as an example:
 ```
 CosXmlConfig config = new CosXmlConfig.Builder()
@@ -98,7 +98,7 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 .IsHttps(true)  // Set HTTPS as default request method 
 .SetAppid(appid)  // Sets the APPID of your Tencent Cloud account
 .SetRegion(region)  // Sets the default bucket region
-.SetHost("XXXXXX.com") // Enter the custom endpoint.
+.SetHost("XXXXXX.com") // Enter the custom domain.
 .SetDebugLog(true) .Build(); // Create the CosXmlConfig object.
 ```
-For more information about how to call other SDKs, please see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
+For more information about how to call other SDKs, see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).

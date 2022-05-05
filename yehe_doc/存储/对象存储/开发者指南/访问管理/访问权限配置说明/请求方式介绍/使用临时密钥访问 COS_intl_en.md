@@ -1,10 +1,10 @@
 ## Temporary Key Overview
 
 Temporary keys are temporary access credentials provided by Security Token Service (STS). A temporary key consists of three parts: TmpSecretId, TmpSecretKey, and token. Compared with a permanent key, a temporary key has the following characteristics:
-- A temporary key has a short effective time (30 minutes to 36 hours), and it eliminates the need to expose a permanent key, reducing the risk of account leakage.
+- A temporary key has a short validity period (30 minutes to 36 hours), and will not expose a permanent key, reducing the risk of account disclosure.
 - When getting a temporary key, you can set temporary permissions by passing in the `policy` parameter to further constrain the user's permission scope.
 
-Therefore, temporary keys are suitable for temporary authorization scenarios such as frontend direct transmission. Compared with permanent keys, temporary keys are more secure to be distributed to untrusted users.
+Therefore, temporary keys are suitable for temporary authorization scenarios such as frontend direct upload. Compared with permanent keys, temporary keys are more secure to be distributed to untrusted users.
 
 ## Getting a Temporary Key
 
@@ -28,7 +28,7 @@ As shown in the figure below, the temporary permissions specified by `policy` ar
 ## Accessing COS Using a Temporary Key
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/e3e735b970a04e2afe3efa74cfb30fcb.png)
-A temporary key consists of a SecretId, a SecretKey, and a token. Multiple temporary keys can be generated for each root account or sub-account. Compared with permanent keys, temporary keys have shorter validity periods (30 minutes to 36 hours). Therefore, temporary keys are suitable for temporary authorization scenarios such as frontend direct transmission. Compared with permanent keys, temporary keys are more secure to be distributed to untrusted users. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) and [Temporary Key Security Guide for Frontend Direct Upload to COS](https://intl.cloud.tencent.com/document/product/436/35265).
+A temporary key consists of a SecretId, a SecretKey, and a token. Multiple temporary keys can be generated for each root account or sub-account. Compared with permanent keys, temporary keys have shorter validity periods (30 minutes to 36 hours). Therefore, temporary keys are suitable for temporary authorization scenarios such as frontend direct upload. Compared with permanent keys, temporary keys are more secure to be distributed to untrusted users. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) and [Temporary Key Security Guide for Frontend Direct Upload to COS](https://intl.cloud.tencent.com/document/product/436/35265).
 
 - Initiating API requests
 Similar to a permanent key, you can use a temporary key to generate a signature and enter it in the request header `Authorization` to form a signed request. Upon receiving the request, COS verifies whether the signature is valid and whether the temporary key has expired.
@@ -57,15 +57,15 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 Temporary keys are used to authorize third parties to temporarily access COS. For example, when a user develops a client app and stores data in a COS bucket, it is unsafe to store the permanent key directly on the app client, but the client needs to be granted the upload and download permissions. For this scenario, you can use a temporary key.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0b37dd8a160a065efe68c0fbeea09c3b.png)
 
-As shown in the figure above, the user has developed the app client, and the permanent key is stored in the user server. The following steps are required to use a temporary key for frontend direct transmission:
+As shown in the figure above, the user has developed the app client, and the permanent key is stored in the user server. The following steps are required to use a temporary key for frontend direct upload:
 1. The app client requests a temporary key from the user server for data upload and download.
 2. Using a permanent key, the user server requests a temporary key from the STS server.
 3. The STS server returns the temporary key to the user server.
 4. The user server delivers the temporary key to the app client.
 5. The app client uses the temporary key to generate a signed request to request the COS for data upload and download.
 
-Temporary keys are applicable to frontend data direct transmission scenarios. You can use temporary keys by referring to the following best practices:
-- [Practice of Direct Transfer for Web End](https://intl.cloud.tencent.com/document/product/436/9067)
-- [Uploading Directly Through a WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/30934)
-- [Practice of Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618)
+Temporary keys are applicable to frontend direct data upload scenarios. You can use temporary keys by referring to the following best practices:
+- [Direct Upload for Web](https://intl.cloud.tencent.com/document/product/436/9067)
+- [Direct Upload for WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/30934)
+- [Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618)
 

@@ -30,15 +30,10 @@ COSBrowser는 Tencent Cloud COS가 출시한 시각화 인터페이스 툴로 CO
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
-      <td rowspan=2>모바일 버전</td>
+      <td>모바일</td>
       <td>Android</td>
       <td>Android 4.4 이상</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.apk">Android</a></td>
-   </tr>
-   <tr>
-      <td>iOS</td>
-      <td>iOS 11 이상</td>
-      <td>iOS</a></td>
    </tr>
    <tr>
       <td>웹 페이지 버전</td>

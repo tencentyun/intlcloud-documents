@@ -13,7 +13,7 @@ The `signurl` command is used to get the pre-signed URL of an object, through wh
 
 The `signurl` command contains the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description                         |
 | --------- | ------------- | ---------------------------- |
 | -t        | --time        | Sets the URL expiration time, which is 1000s by default |
 

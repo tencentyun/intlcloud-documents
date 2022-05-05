@@ -9,6 +9,7 @@ COSCLI는 Go를 사용하여 작성되었으며, Cobra 프레임워크를 기반
 - [프로파일 생성 및 수정 -  config](https://intl.cloud.tencent.com/document/product/436/43251)
 - [버킷 생성 - mb](https://intl.cloud.tencent.com/document/product/436/43252)
 - [버킷 삭제 - rb](https://intl.cloud.tencent.com/document/product/436/43253)
+- [Tagging Bucket - bucket-tagging](https://intl.cloud.tencent.com/document/product/436/46272)
 - [버킷 또는 파일 리스트 쿼리 - ls](https://intl.cloud.tencent.com/document/product/436/43254)
 - [다양한 유형의 파일에 대한 통계 정보 가져오기   - du](https://intl.cloud.tencent.com/document/product/436/43255)
 - [파일 업/다운로드 또는 복사 - cp](https://intl.cloud.tencent.com/document/product/436/43256)

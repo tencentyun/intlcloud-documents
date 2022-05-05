@@ -7,15 +7,15 @@ restore 명령어는 아카이브 파일을 검색하는 데 사용됩니다.
 ./coscli restore cos://<bucketAlias>[/prefix/] [flag]
 ```
 
->? bucketAlias 관련 내용은 [설정](https://intl.cloud.tencent.com/document/product/436/43265)을 참고하십시오.
+>? 
+>- bucketAlias 관련 설명은 [다운로드 및 설치 설정](https://intl.cloud.tencent.com/document/product/436/43265)을 참고하십시오.
+>- 이 명령의 다른 범용 옵션(예시: 버킷 전환, 사용자 계정 전환 등)은 [범용 옵션](https://intl.cloud.tencent.com/document/product/436/46273) 문서를 참고하십시오.
 >
 
 restore 명령어에는 다음과 같은 flag 옵션이 포함됩니다.
 
 | flag 약칭 | flag 전체 명칭     | flag 용도                      |
 | --------- | ------------- | --------------------------------- |
-| -h        | --help        | 도움말 정보 출력                   |
-| -c        | --config-path | 사용할 프로파일 경로 지정       |
 |     없음      | --include     | 특정 패턴이 포함된 파일                |
 |     없음      | --exclude     | 특정 패턴이 제외된 파일                |
 | -d        | --days        | 임시 파일의 만료 시간 지정(기본 값: 3일) |

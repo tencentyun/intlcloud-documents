@@ -46,8 +46,8 @@ You can leverage the alarm policy feature of Cloud Monitor to set threshold-reac
     <td>
       <ul>
 			         <li>If you choose <b>Instance ID</b> in the drop-down list, select the bucket you want to add an alarm to. </li>
-               <li>If you choose <b>Instance Group</b> in the drop-down list, the alarm policy is bound to the selected instance group. If there is no instance group, you can click <b>Create Instance Group<b/> on the right to create a group for the bucket first.</li>
-		            <li>If you choose <b>All Objects</b> in the drop-down list, the alarm policy is bound to all buckets the current account has permission on.</li>
+               <li>If you choose <b>Instance Group</b> in the drop-down list, the alarm policy is bound to the selected instance group. If there is no instance group, you can click <b>Create Instance Group</b> on the right to create a group for the bucket first. </li>
+		            <li>If you choose <b>All Objects</b> in the drop-down list, the alarm policy is bound to all buckets the current account has permission on. </li>
            </ul>
         </td>
   </tr>
@@ -56,7 +56,7 @@ You can leverage the alarm policy feature of Cloud Monitor to set threshold-reac
     <td>Select a configured template in the drop-down list. For more information about the configurations, please see <a href="https://intl.cloud.tencent.com/document/product/248/38911">Configuring trigger condition templates</a>. If the newly created template is not displayed, click the Refresh icon on the right.</td>
   </tr>
 	<tr>
-    <td>Trigger condition<br>(choosing <b>Manual Configuration</b>)</td>
+    <td>Manual configuration<br>(Metric alarm)</td>
     <td>
       <ul>
         <li><b>Trigger condition</b>: consists of metric, comparison, threshold, statistical period, and the number of consecutive periods.<br>For example, if the metric is set to `STANDARD storage read requests`, comparison to `>`, threshold to `80` times, statistical period to `5` minutes, and the number of consecutive periods to `Last 2 periods`, <br>STANDARD storage read requests are collected every 5 minutes, and if the number of STANDARD storage read requests in a bucket is greater than 80 in 2 consecutive periods, the alarm will be triggered.

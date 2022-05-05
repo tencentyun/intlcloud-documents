@@ -74,12 +74,10 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 This command will download the demo source code from GitHub and automatically run the installation script. The installation process will take several minutes (subject to the CVM network conditions), during which the remote terminal will print the following information:
 
 ```
-[2020-06-04 15:57:10] Start installing pip3.
-[2020-06-04 15:57:18] pip3 is successfully installed.
-[2020-06-04 15:57:18] Start installing Tencent Cloud SCF.
-[2020-06-04 15:57:19] SCF is successfully installed.
-[2020-06-04 15:57:19] Start configuring SCF.
-[2020-06-04 15:57:20] SCF configuration is completed.
+[2020-06-04 15:57:10] Start checking npm.
+[2020-06-04 15:57:18] npm is successfully installed.
+[2020-06-04 15:57:18] Start installing ServerLess.
+[2020-06-04 15:57:19] ServerLess is successfully installed.
 [2020-06-04 15:57:20] Start deploying the VOD key hotlink protection signature distribution service.
 [2020-06-04 15:57:30] The deployment of the VOD key hotlink protection signature distribution service is completed.
 [2020-06-04 15:57:32] Service address: https://service-xxxxxxxx-125xxxxxxx.gz.apigw.tencentcs.com/release/anti_leech_sign

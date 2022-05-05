@@ -2,12 +2,12 @@
 
 1. The ZIP decompression feature is implemented via the Serverless Cloud Function (SCF) service. Before use, you need to go to [ZIP Decompression](https://console.cloud.tencent.com/cos5/application/cosGunzipApi) in the COS console to create a **ZIP Decompression** function. For more function creation instructions, see [ZIP Decompression](https://intl.cloud.tencent.com/document/product/436/45163).
 2. After creating the function, click **Instructions** on the right of the function to configure it. The configurations are a **JSON string**, which will be described in detail in this document.
- - If you select SCF authentication for the function, you need to call the [Invoke](https://intl.cloud.tencent.com/document/product/583/17243) API provided by SCF to run the ZIP decompression function, where the `ClientContext` parameter is passed in JSON format. For more information, please see [Function Parameter Configuration Sample](#1).
+ - If you select SCF authentication for the function, you need to call the [Invoke](https://intl.cloud.tencent.com/document/product/583/17243) API provided by SCF to run the ZIP decompression function, where the `ClientContext` parameter is passed in JSON format. For more information, see [Function Parameter Configuration Sample](#1).
  - If you configure the function to be authentication free, you can directly send HTTP requests to the corresponding API to call the function.
 
 
 <span id=1></span>
-## Function Parameter Configuration Sample
+## Function Parameter Configuration Example
 
 >? In actual practice, delete the comments in the code.
 >
@@ -28,13 +28,13 @@ The parameters are described as follows:
 | Parameter | Description | Type | Required |
 | ------------ | ------------------------------------------------------------ | ------ | -------- |
 | bucket  | Source bucket storing the ZIP package, formatted as `BucketName-APPID` (e.g., `examplebucket-1250000000`) | String  | Yes |
-| region | Source bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| key                     | Name (object name) of the ZIP package. It is the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String  | Yes       |
+| region | Source bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
+| key                     | Name (object name) of the ZIP package. It is the unique ID of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String  | Yes       |
 | targetBucket                  | Target bucket to store the decompressed objects, formatted as `BucketName-APPID` (e.g., `examplebucket-1250000000`). | String  | Yes       |
-| targetRegion                  | Target bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String  | Yes       |
+| targetRegion                  | Target bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String  | Yes       |
 | targetPrefix | Prefix of the directory to store the decompressed objects. End a specified directory with `/` for saving to this directory, or keep it empty for saving to the root directory | String | No       |
 
-## Function Response Sample
+## Sample Response
 ```plaintext
 {
     "code": 0,
@@ -59,7 +59,7 @@ Response parameters are described as follows:
 
 ### Example 1. Decompress a file `*.zip`
 
-### Parameter configuration
+#### Parameter configuration
 
 ```plaintext
 {

@@ -28,7 +28,7 @@ MongoDB Backup is a [SCF](https://intl.cloud.tencent.com/document/product/583)-b
 6. Click **Confirm**.
 ![](https://main.qcloudimg.com/raw/74eab5ca9a722e20fac6e1ca040ed8d3.png)
 You can perform the following operations on the created function:
- - Click **View Log** to view the historical running status of MongoDB Backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
- - Click **Edit** to modify a MongoDB Backup rule.
- - Click **Delete** to delete an unwanted MongoDB Backup rule.
+ - Click **View Log** to view the historical running status of MongoDB backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
+ - Click **Edit** to modify a MongoDB backup rule.
+ - Click **Delete** to delete an unwanted MongoDB backup rule.
 

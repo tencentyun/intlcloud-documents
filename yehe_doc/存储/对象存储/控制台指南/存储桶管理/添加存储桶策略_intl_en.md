@@ -1,19 +1,19 @@
 ## Overview
 
-You can add a policy for a bucket via the COS console to allow/forbid an account, IP, or IP range to access the COS resources. For more information about bucket policy and examples, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031). The following describes how to add a bucket policy.
+You can add a policy for a bucket via the COS console to allow/deny access to specified COS resources from an account, IP, or IP range. For more information about bucket policy and examples, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031). The following describes how to add a bucket policy.
 
 >! Each root account can create up to 1,000 bucket ACL rules.
 >
 
 ## Prerequisites
 
-You have created a bucket. For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+You have created a bucket. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. On the left sidebar, click **Bucket List**. Then, click the bucket for which you want to add a bucket.
-3. Click **Permission Management** > **Permission Policy Settings**. Then, you can add a bucket policy using **[Visual Editor](#1)** or **[JSON](#2)** as detailed below. For more information about the configuration items, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
+2. On the left sidebar, click **Bucket List**. Then, click the bucket for which you want to add a policy.
+3. Click **Permission Management** > **Permission Policy Settings**. Then, you can add a bucket policy using **[Visual Editor](#1)** or **[JSON](#2)** as detailed below. For more information about the configuration items, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 
 4. After confirming that the configuration information is correct, click **OK** or **Save**. In this way, if a sub-account logs in to the COS console, it can only access resources allowed by the policy.
 
@@ -22,7 +22,7 @@ You have created a bucket. For more information, please see [Creating Buckets](h
 ## Visual Editor
 On the **Visual Editor** tab page, click **Add Policy**. In the pop-up window, configure the policy in two steps: **select a template** and **configure the policy**.
 
-### Step 1: select a template
+### Step 1: Select a template
 
 COS provides you with different templates depending on the combination of authorized users (grantees) and resource scope you choose to help you quickly configure bucket policies.
 
@@ -111,7 +111,7 @@ Templates are described in the following table.
    </tr>
 </table>
 
-### Step 2: configure the policy
+### Step 2: Configure the policy
 Based on the combination of authorized users, specified directories, and templates you select in step 1, COS automatically adds operations, authorized users, and resources to the configuration policy for you. If you specify a user and a directory, you need to specify the user UIN and directory during policy configuration.
 
 If the recommended templates provided by COS do not meet your requirements, you can add or delete authorized users, resources, and operations in this step. The configuration items are described as follows:
@@ -126,6 +126,6 @@ If the recommended templates provided by COS do not meet your requirements, you 
 <span id=2></span>
 
 ## Policy Syntax
-Click **Edit** to enter the user-defined policy syntax. COS provides policy syntax for various scenarios. For more information, please see [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
+Click **Edit** to enter the user-defined policy syntax. COS provides policy syntax for various scenarios. For more information, see [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
 ![](https://main.qcloudimg.com/raw/b4e280ccbd67b081dcb59c4039f4d3b0.png)
 

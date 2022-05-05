@@ -1,6 +1,6 @@
-To store objects in COS, you first need to create a bucket through the console, tools, APIs, or SDKs.
+To store objects in COS, you first need to create a bucket using the console, tools, APIs, or SDKs.
 
-After creating a bucket, you can upload objects to it and configure other features for it, such as [setting up a static website](https://intl.cloud.tencent.com/document/product/436/14984), [setting bucket tags](https://intl.cloud.tencent.com/document/product/436/30928), and [setting bucket encryption](https://intl.cloud.tencent.com/document/product/436/33455). For more configuration guidelines, please see [Console Overview](https://intl.cloud.tencent.com/document/product/436/11365).
+After creating a bucket, you can upload objects to it and configure other features for it, such as [setting up a static website](https://intl.cloud.tencent.com/document/product/436/14984), [setting bucket tags](https://intl.cloud.tencent.com/document/product/436/30928), and [setting bucket encryption](https://intl.cloud.tencent.com/document/product/436/33455). For more configuration instructions, see [Console Overview](https://intl.cloud.tencent.com/document/product/436/11365).
 
 
 ## Restrictions
@@ -16,19 +16,19 @@ After creating a bucket, you can upload objects to it and configure other featur
 
 ### Using COS console
 
-You can create a bucket in the COS console. For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+Create a bucket in the COS console. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 ### Using tools
 
-You can use tools such as COSBrowser and COSCMD to create buckets. For more information, please see [Tool Overview](https://intl.cloud.tencent.com/document/product/436/6242).
+Use tools such as COSBrowser and COSCMD to create a bucket. For more information, see [Tool Overview](https://intl.cloud.tencent.com/document/product/436/6242).
 
 ### Using REST APIs
 
-You can use the REST API directly to initiate a bucket creating request. For more information, see [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738).
+Use the REST API to initiate a bucket creating request. For more information, see [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738).
 
 ### Using SDKs
 
-You can directly call the bucket creating method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
+Directly call the bucket creating method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/31463)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31464)

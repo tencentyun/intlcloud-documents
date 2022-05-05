@@ -5,7 +5,7 @@ SQL Server data backup is a [SCF](https://intl.cloud.tencent.com/document/produc
 ## Precautions
 
 - SQL Server data backup functions back up only the backup files of SQL Server. If SQL Server backup is not enabled, the backup functions cannot be executed. For more information about SQL Server backup, please see [here](https://intl.cloud.tencent.com/document/product/238/35790).
-- If you have added an SQL Server data backup rule to your bucket via the COS console, you can view it in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete the function. Otherwise, your rule may not take effect.
+- If you have added a SQL Server data backup rule to your bucket via the COS console, you can view it in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete the function. Otherwise, your rule may not take effect.
 - Regions where SCF is available support SQL Server data backup, including Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Toronto, and Silicon Valley, and more. For more supported regions, please see [SCF Documentation](https://intl.cloud.tencent.com/document/product/583).
 
 ## Directions

@@ -12,7 +12,7 @@ COS log storage offers the following benefits:
 
 You can ship your Tencent Cloud product logs to COS in one of the following two ways:
 
-- Use the Tencent Cloud log shipping feature in which logs are directly shipped to COS. Products such as COS and CA support directly shipping logs to COS.
+- Use the Tencent Cloud log shipping feature in which logs are directly shipped to COS. Products such as COS and CloudAudit (CA) support directly shipping logs to COS.
 - Use the CLS log shipping feature in which logs are first shipped to CLS and then transferred to COS for persistent storage.
 
 The table below shows the particular log shipping method or methods currently supported by various Tencent Cloud products:
@@ -22,7 +22,7 @@ The table below shows the particular log shipping method or methods currently su
 | CA           | Yes                     | No                     |
 | CLB        | No                     | Yes                     |
 | CKafka     | Yes                     | No                     |
-| APIGateway | No                     | Yes                     |
+| API Gateway | No                     | Yes                     |
 | SCF      | No                     | Yes                     |
 | TKE        | No                     | Yes                     |
 | CSS          | No                     | Yes                     |
@@ -33,13 +33,13 @@ The table below shows the particular log shipping method or methods currently su
 
 The Tencent Cloud products outlined below allow you to ship logs directly to COS by setting log shipping rules as instructed in the product-specific documentation.
 
-| Tencent Cloud Product Name     | Log Shipping Document                                                 | Log Shipping Interval        | Log Shipping Path                                                 |
+| Product      | Log Shipping Document                                                 | Log Shipping Interval        | Log Shipping Path                                                 |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 | CA | [Click here to view](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15 min |  cloudaudit/customprefix/timestamp|
 | CKafka | [Click here to view](https://intl.cloud.tencent.com/document/product/597) | 5-60 min<br>You can specify the interval | instance id/topic id/timestamp                           |
 | COS    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/17040) | 5 min                | You can specify the path prefix. We recommend specifying an identifiable path, e.g. `cos_bucketname_access_log/timestamp`. |
 
->?CKafka supports shipping the message data that it generates. However, to get logs on certain actions such as the creation of CKafka instances, you need to ship the CloudAudit logs.
+>?CKafka supports shipping the message data that it generates. However, to get logs on certain actions such as the creation of CKafka instances, you need to ship the CA logs.
 
 ### Using CLS to ship logs to COS
 
@@ -59,7 +59,7 @@ CLS can ship the following three types of logs to COS:
 
 To ship logs from CLS to COS, you need to do the following:
 
-1. Choose a Tencent Cloud that meets your particular business needs and configure a logset and log topic as instructed in the log shipping documentation provided above to connect your business data to CLS.
+1. Choose a Tencent Cloud product that meets your business needs and configure a logset and log topic as instructed in the log shipping documentation provided above to connect your business data to CLS.
 2. With your particular business needs in mind, select the most suitable log type to ship to COS. We recommend that you use the product name as the path prefix to differentiate product logs, for example, you could use the following name for TKE logs: `TKE_tkeid_log/timestamp`.
 3. Once the shipping rule is configured, you can configure COS event notifications for file uploads through SCF. You can perform further operations on logs shipped to COS based on these event notifications. For more information, see [Event Notifications](https://intl.cloud.tencent.com/document/product/436/31648).
 
@@ -72,8 +72,8 @@ You can download logs to the local file system through the Tencent Cloud console
 | Download Method       | Document                                                     |
 | -------------- | ------------------------------------------------------------ |
 | Console         | [Click here to view](https://intl.cloud.tencent.com/document/product/436/13322) |
-| cosbrowser     | [Click here to view](https://intl.cloud.tencent.com/document/product/436/32565) |
-| coscmd         | [Click here to view](https://intl.cloud.tencent.com/document/product/436/10976) |
+| COSBrowser     | [Click here to view](https://intl.cloud.tencent.com/document/product/436/32565) |
+| COSCMD         | [Click here to view](https://intl.cloud.tencent.com/document/product/436/10976) |
 | Android SDK    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/37675) |
 | C SDK          | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31518) |
 | C++ SDK        | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31522) |
@@ -85,14 +85,14 @@ You can download logs to the local file system through the Tencent Cloud console
 | Node.js SDK    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31710) |
 | PHP SDK        | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31542) |
 | Python SDK     | [Click here to view](https://intl.cloud.tencent.com/document/product/436/31546) |
-| Wechat Mini Program SDK     | [Click here to view](https://intl.cloud.tencent.com/document/product/436/32457) |
+| WeChat Mini Program SDK     | [Click here to view](https://intl.cloud.tencent.com/document/product/436/32457) |
 | API            | [Click here to view](https://intl.cloud.tencent.com/document/product/436/7753) |
 
 ### Analyzing logs using COS Select
 
 You have the option to extract and analyze COS logs stored in CSV or JSON format directly by using the COS Select feature. It enables you to query desired log fields, which largely reduces the number of logs transferred by COS, thus lowering usage costs and improving data access speed. For more information on COS Select, see [Select Overview](https://intl.cloud.tencent.com/document/product/436/32472).
 
-Currently, you can access COS Select through the console or by using APIs.
+Currently, you can access COS Select using the console or APIs.
 
 | Method | Instructions                                                     |
 | -------- | ------------------------------------------------------------ |

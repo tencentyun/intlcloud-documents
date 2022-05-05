@@ -2,14 +2,14 @@
 
 You can empty a specified bucket in the COS console. For more information about buckets, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
->! Emptying a bucket will delete all files and file fragments in it permanently. Please do so with caution.
+>! Emptying a bucket will delete all files and incomplete multipart uploads in it permanently. Please do so with caution.
 
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) .
-2.Click **Bucket List** in the left sidebar to enter the bucket list page.
-3. Locate the bucket to clear, and click **More** > **Clear** under **Operation**.
+2. Click **Bucket List** in the left sidebar to enter the bucket list page.
+3. Locate the bucket to empty, and click **More** > **Clear** under **Operation**.
 ![](https://main.qcloudimg.com/raw/1baeba77031a31a1a242c237da68e376.png)
-4. In the pop-up window, enter the name of the bucket you want to clear, and click **Yes**. 
+4. In the pop-up window, enter the name of the bucket you want to empty, and click **Yes**. 
 ![](https://main.qcloudimg.com/raw/8751c66b4890b17b08299f76d553c65c.png)
-5.When you are asked to confirm again, click **OK**.
+5. When you are asked to confirm again, click **OK**.

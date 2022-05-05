@@ -16,14 +16,14 @@ COS introduces the Logging feature to record **bucket operation** requests, faci
 5. Configure the configuration items of Logging as follows:
 ![](https://main.qcloudimg.com/raw/d5fa347da09d92b5f757e32c910739e3.png)
  - **Destination Bucket**: The **destination bucket** that stores the source bucket’s logs must reside in the same region as the source bucket. You are not advised to set the source bucket itself as the destination bucket.
- - **Path Prefix**: a custom path prefix for the logs. If this field is left empty, logs will be delivered to the root directory of the destination bucket.
+ - **Path Prefix**: A custom path prefix for the logs. If this field is left empty, logs will be delivered to the root directory of the destination bucket.
  - **Service Authorization**: CLS needs to be authorized to deliver logs to your bucket.
 6. Click **Save**.
 >? It takes several minutes or longer for the logs to be generated and delivered to the destination bucket.
 >
 7. Go to the destination bucket configured to view the generated logs.
 ![](https://main.qcloudimg.com/raw/ef5f9cd836f3f50ee3e21fa58fc69baf.png)
-8. After downloading the logs, you can view them in detail. For more information, please see [Log Management Overview](https://intl.cloud.tencent.com/document/product/436/16920).
+8. After downloading the logs, you can view them in detail. For more information, see [Log Management Overview](https://intl.cloud.tencent.com/document/product/436/16920).
 
 
 ## Notes

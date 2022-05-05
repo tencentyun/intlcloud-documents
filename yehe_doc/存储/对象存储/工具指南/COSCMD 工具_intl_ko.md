@@ -65,14 +65,14 @@ python setup.py install
 >! 두 기기의 Python 버전은 동일해야 하며, 동일하지 않을 경우 설치에 실패합니다.
 >
 ```sh
-# 공인 네트워크가 연결된 기기에서 다음 명령어를 실행합니다.
+# 공인 네트워크가 연결된 기기에서 다음 명령어 실행
 mkdir coscmd-packages
 pip download coscmd -d coscmd-packages
 tar -czvf coscmd-packages.tar.gz coscmd-packages
 
 
 
-# 설치 패키지를 공인 네트워크가 연결되지 않은 기기에 복사한 후 다음 명령어를 실행합니다.
+# 설치 패키지를 공인 네트워크가 연결되지 않은 기기에 복사한 후 다음 명령어 실행
 tar -xzvf coscmd-packages.tar.gz
 pip install coscmd --no-index -f coscmd-packages
 ```
@@ -147,7 +147,7 @@ coscmd upload -h  //upload 명령어 사용 방법 조회
 
 ### 설정 파일 생성
 
-COSCMD 툴은 실행 전에 먼저 설정 파일에서 실행 시 필요한 필수 정보를 읽어옵니다. COSCMD는 `~/.cos.conf`으로부터 설정 항목을 읽어오도록 기본 설정되어 있습니다.
+COSCMD 툴은 실행 전에 먼저 구성 파일에서 실행 시 필요한 필수 정보를 읽어옵니다. COSCMD는 `~/.cos.conf`으로부터 설정 항목을 읽어오도록 기본 설정되어 있습니다.
 
 >? 설정 전, 먼저 COS 콘솔에서 매개변수 설정용 버킷(예: configure-bucket-1250000000)을 생성하여 키 정보를 생성해야 합니다.
 >
@@ -169,8 +169,8 @@ anonymous = False
 ```
 
 >?
->- 설정 파일 중 `schema` 항목에서 http, https를 선택할 수 있으며, 기본값은 https입니다.
->- 설정 파일 중 `anonymous` 항목에서 True, False를 선택할 수 있으며, 이는 익명 모드의 사용 여부를 나타냅니다. 즉, 서명이 비어 있습니다.
+>- 구성 파일 중 `schema` 항목에서 http, https를 선택할 수 있으며, 기본값은 https입니다.
+>- 구성 파일 중 `anonymous` 항목에서 True, False를 선택할 수 있으며, 이는 익명 모드의 사용 여부를 나타냅니다. 즉, 서명이 비어 있습니다.
 >- 매개변수 설정에 대한 자세한 설명은 명령어 `coscmd config -h`를 사용해 확인할 수 있습니다.
 >
 
@@ -332,7 +332,7 @@ coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```plaintext
 coscmd upload <localpath> <cospath>
 ```
->! '<>'의 매개변수를 업로드할 로컬 파일 경로(localpath) 및 COS 저장 경로(cospath)로 대체하십시오.
+>! "<>"의 매개변수를 업로드할 로컬 파일 경로(localpath) 및 COS 저장 경로(cospath)로 대체하십시오.
 >
 - 작업 예시 - D 드라이브의 picture.jpg 파일을 COS의 doc 디렉터리로 업로드
 ```plaintext
@@ -430,7 +430,7 @@ coscmd list -v
 ```
 
 >?
-> - '<>' 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체하십시오. `<cospath>`를 입력하지 않을 경우 현재 버킷의 루트 디렉터리를 쿼리합니다.
+> - "<>" 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체하십시오. `<cospath>`를 입력하지 않을 경우 현재 버킷의 루트 디렉터리를 쿼리합니다.
 > - `-a`를 사용하여 모든 파일을 쿼리합니다.
 > - `-r`을 사용하여 재귀 쿼리를 실행하고 마지막에 파일의 수량 및 크기의 합을 반환합니다.
 > - `-n num`을 사용하여 쿼리 수의 최대값을 설정합니다.
@@ -450,7 +450,7 @@ coscmd info <cospath>
 coscmd info doc/picture.jpg
 ```
 
->? '<>'의 매개변수를 표시할 COS 파일 경로(cospath)로 대체하십시오.
+>? "<>"의 매개변수를 표시할 COS 파일 경로(cospath)로 대체하십시오.
 >
 
 
@@ -461,13 +461,13 @@ coscmd info doc/picture.jpg
 ```plaintext
 coscmd download <cospath> <localpath>
 ```
->! '<>'의 매개변수를 다운로드할 COS 파일 경로(cospath)와 로컬 저장 경로(localpath)로 대체하십시오.
+>! "<>"의 매개변수를 다운로드할 COS 파일 경로(cospath)와 로컬 저장 경로(localpath)로 대체하십시오.
 >
 - 작업 예시 - COS의 doc/picture.jpg를 D:/picture.jpg로 다운로드
 ```plaintext
 coscmd download doc/picture.jpg D:/picture.jpg
 ```
-- 작업 예시 - COS의 doc/picture.jpg를 D:/picture.jpg로 다운로드
+- 작업 예시 - COS의 doc/picture.jpg를 D 드라이브로 다운로드
 ```plaintext
 coscmd download doc/picture.jpg D:/
 ```
@@ -512,7 +512,7 @@ coscmd download -rs --delete / D:/examplefolder
 ```plaintext
 coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```
->! 폴더 다운로드 시 `--ignore` 매개변수를 사용하면 특정 유형의 파일을 생략할 수 있으며 `--invlude` 매개변수를 사용하면 특정 유형의 파일을 필터링할 수 있고, shell 와일드카드 규칙을 지원합니다. 여러 개의 규칙을 지원하며, 쉼표 `,`로 구분합니다. 특정 확장명을 생략하는 경우 마지막에 `,`를 입력하거나 큰따옴표 `""`를 추가해야 합니다.
+>! 폴더 다운로드 시 `--ignore` 매개변수를 사용하면 특정 파일을 생략할 수 있으며 `--include` 매개변수를 사용하면 특정 파일을 필터링할 수 있고, shell 와일드카드 규칙을 지원합니다. 여러 개의 규칙을 지원하며, 쉼표 `,`로 구분합니다. 특정 확장명을 생략하는 경우 마지막에 `,`를 입력하거나 큰따옴표 `""`를 추가해야 합니다.
 >
 - 작업 예시 - .txt 및 .doc 확장명 파일 필터링
 ```plaintext
@@ -539,7 +539,7 @@ coscmd signurl doc/picture.jpg -t 100
 
 >?
 > - '<>'의 매개변수를 다운로드 URL을 획득해야 할 COS 파일 경로(cospath)로 대체하십시오.
-> - `-t time`을 사용하여 해당 URL 서명의 유효 시간(단위: 초)을 설정합니다. 기본값: 10000s
+> - `-t time`을 사용하여 해당 URL 서명의 유효 시간(단위: 초)을 설정하며 기본값은 10000s입니다.
 >
 
 
@@ -549,7 +549,7 @@ coscmd signurl doc/picture.jpg -t 100
 ```plaintext
 coscmd delete <cospath>
 ```
->! '<>'의 매개변수를 삭제할 COS 파일 경로(cospath)로 대체하십시오. 툴에서 사용자에게 삭제 진행 여부를 안내해 작업을 수행합니다.
+>! "<>"의 매개변수를 삭제할 COS 파일 경로(cospath)로 대체하십시오. 툴에서 사용자에게 삭제 진행 여부를 안내해 작업을 수행합니다.
 >
 - 작업 예시 - doc/exampleobject.txt 삭제
 ```plaintext
@@ -643,7 +643,8 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 > 
 
 ### 파일 또는 폴더 이동
-
+>! 이동 명령의 `<sourcepath>`와 `<cospath>`는 같을 수 없습니다. 그렇지 않으면 파일이 삭제됩니다. 그 이유는 move 명령이 먼저 복사되고 나중에 삭제되기 때문입니다. `<sourcepath>` 경로에 있는 파일은 결국 삭제됩니다.
+>
 #### 파일 이동 명령어 형식
 ```plaintext
 coscmd move <sourcepath> <cospath> 
@@ -743,7 +744,7 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 >?
 > - '<>'의 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체하십시오.
 > - `-d <day>`를 사용하여 임시 사본의 만료 시간을 설정하며, 기본값은 7입니다.
-> - `-t <tier>`를 사용하여 복구 모드를 지정합니다. 열거 값: Expedited(고속 모드), Standard(표준 모드), Bulk(일괄 모드), 기본값: Standard.
+> - `-t <tier>`를 사용하여 복구 모드를 지정합니다. 열거 값: Expedited (고속 모드), Standard (표준 모드), Bulk (일괄 모드), 기본값: Standard.
 >
 
 ## FAQ

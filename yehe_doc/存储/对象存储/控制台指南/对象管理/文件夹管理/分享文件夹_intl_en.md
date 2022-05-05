@@ -14,7 +14,7 @@ You can share a created folder using the COS console.
 
 7. You can now view the generated share link in the pop-up window. Click **Copy Link and Password** and share it with others.
 
-8. The receiver can enter the password and view the shared folder as well as the files in it.
+8. The recipient can enter the password and view the shared folder as well as the files in it.
 
-9. On the share file page, the receiver can download the file, or view information such as the object storage class, size, and modification time.
+9. On the share file page, the recipient can download the file, or view information such as the object storage class, size, and modification time.
 

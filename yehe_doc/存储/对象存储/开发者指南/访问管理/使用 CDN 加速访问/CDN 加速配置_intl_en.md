@@ -1,9 +1,9 @@
 ## Use Cases
-- Requiring low delay and fast downloads
-- Transferring GB- to TB-scale data across regions, countries, or continents
-- Downloading the same content frequently and repeatedly
+- Low latency and fast downloads are required.
+- GB- to TB-scale data needs to be transferred across regions, countries, or continents.
+- The same content needs to be downloaded frequently.
 
->!If the download request is from Tencent Cloud VPC (for example, using Tencent Cloud CVM to access a bucket), you are advised to use a standard COS domain directly. If you use a CDN acceleration domain, you will need to access the CDN node over a public network, which incurs additional fees such as CDN origin-pull traffic fees and traffic fees.
+>!If the download request is from a Tencent Cloud VPC (for example, using a CVM to access a COS bucket), we recommend you use the COS domain directly. If you use a CDN acceleration domain, you will need to access the CDN node over a public network, which incurs additional fees such as CDN origin-pull fees and CDN traffic fees.
 >
 
 
@@ -53,7 +53,7 @@ After the authorization is added, the CDN edge node can perform `Get Object`, `H
 
 ![](https://main.qcloudimg.com/raw/ca62b2f78b7587245efbe0b03f84adee.png)
 
-After the authorization is granted, it will be automatically written into the bucket access policy (see below for an example). Then the CDN edge node does not need to do anything else while forwarding traffic to the origin.
+After the authorization is granted, it will be automatically written into the bucket access policy (see below for an example).
 
 ```xml
   {
@@ -116,8 +116,8 @@ You can disable the default CDN acceleration domain in either of the following w
 ## Configuring CDN Acceleration for a Custom Domain
 You can bind a custom domain name with a bucket in the COS Console. After that, you can enable CDN acceleration to speed up access to the bucket through the custom domain name. When binding a custom domain name with a bucket, you need to add a CNAME record to it at your domain name service provider.
 >! Currently, you need to enable CDN service to use a custom domain name in COS.
-1. For domain names connected to a CDN node in the Chinese mainland, you need to complete ICP filing. You are not required to do so through Tencent Cloud though.
-2. For domain names connected to a CDN node outside the Chinese mainland, ICP filing is not required, but note that your data and operations in Tencent Cloud still need to comply with local laws and regulations as well as [General Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12905).
+1. For content delivery in the Chinese mainland, ICP filing is required. You are not required to do so through Tencent Cloud though.
+2. For content delivery outside the Chinese mainland, ICP filing is not required, but note that your data and operations in Tencent Cloud still need to comply with local laws and regulations as well as [General Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12905).
 
 ### Custom domain name acquisition and ICP filing
 

@@ -27,7 +27,7 @@ A bucket is created. For operation details, see [Creating a Bucket](https://intl
 >
 Folder naming rules are as follows:
  - The folder name can contain digits, letters, and visible characters.
- - A subdirectory can be created quickly by separating the path by a slash (/).
+ - A subdirectory can be created quickly by separating the path by a slash (`/`).
  - Do not start with`/` or use two or more `/` consecutively.
  - Do not leave the folder name empty. 
  - Do not use `..` as the folder name.

@@ -8,7 +8,7 @@ The `rb` command is used to delete a bucket.
 
 `rb` includes the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description           |
 | --------- | ------------- | ------------------------ |
 | None | BucketName-APPID | Specifies the name of the bucket to be deleted, such as `examplebucket-1250000000` |
 | -r        | --region      | Region of the bucket   |

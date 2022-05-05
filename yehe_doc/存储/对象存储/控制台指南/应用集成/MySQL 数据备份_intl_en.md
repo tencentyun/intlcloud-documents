@@ -31,9 +31,9 @@ MySQL Backup is a [SCF](https://intl.cloud.tencent.com/document/product/583)-bas
 6. Click **Confirm** to add the function.
 ![img](https://main.qcloudimg.com/raw/1c7c9e1aaf5f99751ac0505e465815f3.png)
 You can perform the following operations on the created function:
- - Click **View Log** to view the historical running status of MySQL Backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
- - Click **Edit** to modify a MySQL Backup rule.
- - Click **Delete** to delete an unwanted MySQL Backup rule.
+ - Click **View Log** to view the historical running status of MySQL backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
+ - Click **Edit** to modify a MySQL backup rule.
+ - Click **Delete** to delete an unwanted MySQL backup rule.
 
 
 ### Setting backup via bucket configuration
@@ -55,6 +55,6 @@ You can perform the following operations on the created function:
 6. Click **Confirm** to add the function.
 ![img](https://main.qcloudimg.com/raw/1c7c9e1aaf5f99751ac0505e465815f3.png)
 You can perform the following operations on the created function:
- - Click **View Log** to view the historical running status of MySQL Backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
- - Click **Edit** to modify a MySQL Backup rule.
- - Click **Delete** to delete an unwanted MySQL Backup rule.
+ - Click **View Log** to view the historical running status of MySQL backup. If an error is reported, you can click **View Log** to quickly redirect to the SCF console for viewing the error log details.
+ - Click **Edit** to modify a MySQL backup rule.
+ - Click **Delete** to delete an unwanted MySQL backup rule.

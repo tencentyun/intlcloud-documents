@@ -11,12 +11,12 @@ You can use the COS console, API, SDK, or COSCMD to perform SQL queries. Note th
 >-Currently, the extraction function only supports public cloud regions in the Chinese mainland.
 >
 
-## Usage Limits
+## Restrictions
 
 The following restrictions apply to COS Select:
 
 - You must have the `cos:GetObject` permission to the queried object. A root account has this permission by default.
-- Only objects in standard storage class can be extracted.
+- Only objects in the STANDARD storage class can be extracted.
 - The maximum length of a SQL expression is 256 KB.
 - The maximum length of a single record in the extraction result is 1 MB.
 
@@ -41,10 +41,10 @@ Functions currently supported by COS Select include:
 
 COS Select currently supports the following operators:
 
-- Logical operators: `AND, NOT, OR`
-- Comparison operators: `<, >, <=, >=, =, <>, !=, BETWEEN, IN`
-- Pattern matching operators: `LIKE`
-- Mathematical operators: `+, -, *, %`
+- Logical operators: AND, NOT, OR
+- Comparison operators: <, >, <=, >=, =, <>, !=, BETWEEN, IN
+- Pattern matching operators: LIKE
+- Mathematical operators: +, -, *, %
 
 >? For more information on operators, see [Operators](https://intl.cloud.tencent.com/document/product/436/32477).
 >

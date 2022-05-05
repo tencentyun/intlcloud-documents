@@ -60,7 +60,7 @@ Tencent Cloud COS has integrated the professional All-in-One media solutions of 
       <td>Performs quick format conversion, scaling, and cropping to generate thumbnails</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/457/30690">Setting Alarms</a></td>
+      <td>Setting styles</td>
       <td>Sets image styles to easily manage images for different purposes</td>
    </tr>
 </table>
@@ -69,11 +69,11 @@ Tencent Cloud COS has integrated the professional All-in-One media solutions of 
 
 ## Directions
 
-#### Using the COS Console
+#### Using the COS console
 
-You can set image processing in the COS Console. For more information, please see [Enabling Image Processing](https://intl.cloud.tencent.com/document/product/436/35278).
+Set image processing in the COS console. For more information, see [Enabling Image Processing](https://intl.cloud.tencent.com/document/product/436/35278).
 
 #### Using REST API
 
-You can configure image processing through the API provided in COS.
+Set image processing using the API provided in COS.
 

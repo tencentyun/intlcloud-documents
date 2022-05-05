@@ -20,9 +20,9 @@ SSE-COS: Server-side encryption with a key managed by COS. In this mode, COS wil
 
 >!
 >- When uploading an object using the `POST` operation, you need to provide the same information in the form field, instead of providing the `x-cos-server-side-encryption-*` header. For more information, see [POST Object](https://intl.cloud.tencent.com/document/product/436/14690).
->- SSE-COS encryption is not available for objects uploaded with a pre-signed URL. Instead, you need to use COS console or HTTP request header to specify server–side encryption.
+>- SSE-COS encryption is not available for objects uploaded with a pre-signed URL. Instead, you need to use the COS console or HTTP request header to specify server–side encryption.
 
-#### Using the COS Console
+#### Using COS console
 You can refer to [Setting Object Encryption](https://intl.cloud.tencent.com/document/product/436/30929) to learn how to encrypt objects in the console.
 
 #### Using REST API

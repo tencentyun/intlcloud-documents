@@ -13,11 +13,11 @@ The `lsparts` command is used to list the generated incomplete multipart uploads
 
 The `lsparts` command contains the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description                         |
 | --------- | ------------- | ---------------------------- |
-|     None      | --include     | Includes files with a specific pattern                |
-|     None      | --exclude     | Excludes files with a specific pattern                |
-|     None      | --limit       | Specifies the maximum quantity (0–1000) to be listed  |
+|     None      | --include     | Includes specific objects.                |
+|     None      | --exclude     | Excludes specific objects.                |
+|     None      | --limit       | Specifies the maximum quantity (0–1000) to be listed.  |
 
 ## Examples
 

@@ -2,7 +2,7 @@
 
 The COS server will generate an ID (`RequestId`) for every request sent to COS. This document describes how to obtain `RequestId` in different scenarios.
 
-## Through the Console
+## Using the Console
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
 2. Click the name of the target bucket.
@@ -260,7 +260,7 @@ try {
 ```
 
 
-### Using iOS SDK
+### Using the iOS SDK
 
 ```
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
@@ -298,7 +298,7 @@ put.body =  url;
 ```
 
 
-### Using SDK for Android
+### Using the Android SDK
 
 ```
 // 1. Initialize TransferService. You should use the same TransferService for the same configuration

@@ -44,7 +44,6 @@ For example, if you want to grant a sub-account all permissions of a specified d
 In the COS console, you can add and manage bucket policies in two modes: [Visual Editor](#Visual Editor) and [JSON](#JSON).
 
 <span id="Visual Editor"></span>
-
 ### Visual Editor
 Click the target bucket and choose **Permission Management** > **Permission Policy Settings** > **Visual Editor**. On the **Visual Editor** tab page, click **Add Policy**. In the pop-up window, configure the policy in two steps:
 
@@ -104,7 +103,7 @@ Templates are described in the following table.
       <td rowspan=11>Specified user</td>
       <td rowspan=7>The whole bucket</td>
       <td>Read-Only objects (listing objects is not included)</td>
-      <td rowspan=7>COS provides the most recommended templates for the combination of **Specified user** and **The whole bucket**. In addition to reading, writing, and listing files, COS provides the following sensitive permission templates for trusted users:<li>Read/Write buckets and object ACLs: get and modify buckets and object ACLs. Options include **GetObjectACL**, **PutObjectACL**, **GetBucketACL**, and **PutBucketACL**. <li>General bucket configuration items: non-sensitive permissions such as bucket tagging, CORS, and origin-pull. <li>Bucket sensitive configuration item: sensitive permissions such as bucket policies, bucket ACLs, and bucket deletion. Sensitive permissions should be used with caution.</td>
+      <td rowspan=7>COS provides the most recommended templates for the combination of <b>Specified user</b> and <b>The whole bucket</b>. In addition to reading, writing, and listing files, COS provides the following sensitive permission templates for trusted users:<li>Read/Write buckets and object ACLs: get and modify buckets and object ACLs. Options include GetObjectACL, PutObjectACL, GetBucketACL, and PutBucketACL. <li>General bucket configuration items: non-sensitive permissions such as bucket tagging, CORS, and origin-pull. <li>Bucket sensitive configuration item: sensitive permissions such as bucket policies, bucket ACLs, and bucket deletion. Sensitive permissions should be used with caution.</td>
    </tr>
    <tr>
       <td>Read-Only objects (listing objects is included)</td>
@@ -127,7 +126,7 @@ Templates are described in the following table.
    <tr>
       <td rowspan=4>Specified directory</td>
       <td>Read-Only objects (listing objects is not included)</td>
-      <td rowspan=4>For the combination of **Specified user** and **Specified directory**, COS provides you with recommended templates for reading files (such as downloading files) and writing files (such as uploading and modifying files), as well as recommended templates for listing objects.<br><br>If you need to grant read, write, and list permissions to a specified folder to a specified user, this combination is recommended.<br><br>You can add or delete operation permissions during policy configuration in step 2 as needed.</td>
+      <td rowspan=4>For the combination of <b>Specified user</b> and <b>Specified directory</b>, COS provides you with recommended templates for reading files (such as downloading files) and writing files (such as uploading and modifying files), as well as recommended templates for listing objects.<br><br>If you need to grant read, write, and list permissions to a specified folder to a specified user, this combination is recommended.<br><br>You can add or delete operation permissions during policy configuration in step 2 as needed.</td>
    </tr>
    <tr>
       <td>Read-Only objects (listing objects is included)</td>
@@ -149,7 +148,7 @@ Based on the combination of authorized users, specified directories, and templat
 
 >? To authorize the permissions of a directory, you need to add `/*` to the resource path entered. For example, to authorize the `test` directory, you need to enter `test/*`.
 
-If the recommended templates provided by COS do not meet your requirements, you can add or delete authorized users, resources, and operations in this step. See the figure below.
+If the recommended templates provided by COS do not meet your requirements, you can add or delete authorized users, resources, and operations in this step.
 
 The configuration items are described as follows:
 - **Effect**: select **Allow** or **Deny**, corresponding to `allow` or `deny` in the policy syntax.
@@ -159,12 +158,12 @@ The configuration items are described as follows:
 - **Condition**: you can specify conditions for permission authorization. For example, you can specify a user access IP.
 
 
-<span id="Policy Configuration"></span>
-### Policy syntax
+<span id="JSON"></span>
+### JSON
 
 If you are familiar with bucket policies, you can click the target bucket, choose **Permission Management** > **Permission Policy Settings** > **JSON**, and write the bucket policy in JSON language.
 
-After writing the bucket policy, you can add it via [API](https://intl.cloud.tencent.com/document/product/436/8282) or [SDK](https://intl.cloud.tencent.com/document/product/436/6474). See the figure below.
+After writing the bucket policy, you can add it via [API](https://intl.cloud.tencent.com/document/product/436/8282) or [SDK](https://intl.cloud.tencent.com/document/product/436/6474).
 
 
 #### JSON policy example 
@@ -224,7 +223,7 @@ COS allows you to add bucket policies by using the COS console, APIs, or SDKs. T
 </table>
 
 
-## More Examples of Bucket Policies
+## More Bucket Policy Examples
 
 - [Granting authorization through bucket policies](https://intl.cloud.tencent.com/document/product/436/12514#granting-authorization-through-bucket-policies)
 - [Granting Sub-Account Under One Root Account Permission to Manipulate Buckets Under Another Root Account](https://intl.cloud.tencent.com/document/product/436/32971)

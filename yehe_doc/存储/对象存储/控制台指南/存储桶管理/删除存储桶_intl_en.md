@@ -3,7 +3,7 @@
 You can delete buckets on the **Bucket List** page in the COS console. For more information on buckets, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
 ## Prerequisites
-When deleting a bucket, make sure that all objects and incomplete multipart uploads in the bucket have been cleared. For more information, see [Emptying Buckets](https://intl.cloud.tencent.com/document/product/436/30926).
+When deleting a bucket, make sure that all objects and incomplete multipart uploads in the bucket have been cleared. For more information, see [Emptying a Bucket](https://intl.cloud.tencent.com/document/product/436/30926).
 
 
 ## Directions

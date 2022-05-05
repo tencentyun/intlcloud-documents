@@ -1,12 +1,12 @@
 ## Use Cases
 
-You can initiate a request to obtain objects directly in COS. You have the following options when obtaining an object:
+You can initiate a request to download objects in COS. You have the following options when downloading an object:
 
-- Obtain a complete object: Obtain the complete object data directly by initiating a GET request.
-- Obtain a part of an object: Use the Range request header in a GET request to retrieve a specific range of bytes of an object. Retrieving multiple ranges is not supported.
+- Download a complete object: Download the complete object data by initiating a GET request.
+- Download a part of an object: Use the Range request header in a GET request to retrieve a specific range of bytes of an object. Retrieving multiple ranges is not supported.
 
 The object's metadata will be returned along with the object's content as an HTTP response header. The GET request supports overwriting certain metadata values in the response using URL parameters.
-For example, the response value of Content-Dispositon can be overwritten. Response headers that support modification include:
+For example, the response value of Content-Disposition can be overwritten. Response headers that support modification include:
 - Content-Type
 - Content-Language
 - Expires
@@ -16,17 +16,17 @@ For example, the response value of Content-Dispositon can be overwritten. Respon
 
 ## Directions
 
-### Via the COS Console
+### Using COS console
 
-You can obtain an object in the COS Console. For more information, see [Downloading Objects](https://intl.cloud.tencent.com/document/product/436/13322) in Console Guide.
+Download an object in the COS console. For more information, see [Downloading Objects](https://intl.cloud.tencent.com/document/product/436/13322) in Console Guide.
 
-### Via REST API
+### Using REST API
 
-You can use the REST API directly to initiate an object obtaining request. For more information, see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
+Use the REST API to initiate an object download request. For more information, see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
 
-### Via the SDK
+### Using SDKs
 
-You can directly call the object download method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
+Directly call the object download method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/37675#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)

@@ -14,7 +14,7 @@ The `hash` command is used to calculate the hash value of a local file or get th
 
 The `hash` command contains the following optional flags:
 
-| Flag Abbreviation | Flag Name     | Purpose                         |
+| Flag Abbreviation | Flag Full Name     | Description                         |
 | --------- | ------------- | -------------------------------------- |
 |     None      | --type        | Hash type, which can be MD5 or CRC64 (default) |
 
