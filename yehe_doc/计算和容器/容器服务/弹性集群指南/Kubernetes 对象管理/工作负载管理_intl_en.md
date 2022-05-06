@@ -1,7 +1,7 @@
 ## Overview
 This document describes how to select different types of workloads to run your services in an elastic cluster.
 >! 
-> - Elastic clusters do not have nodes. Workloads allocate resources for each pod based on parameter settings when they are created. For more information, please see [Specifying Resource Specifications](https://intl.cloud.tencent.com/document/product/457/36161).
+> - Elastic clusters do not have nodes. Workloads allocate resources for each pod based on parameter settings when they are created. For more information, see [Specifying Resource Specifications](https://intl.cloud.tencent.com/document/product/457/36161).
 > - To create and manage Kubernetes objects using a YAML file, specify annotations. For more information, please see [Annotation Description](https://intl.cloud.tencent.com/document/product/457/36162).
 
 
@@ -18,10 +18,10 @@ A StatefulSet is used to manage stateful applications. A Pod created by a Statef
 
 ### Job
 A Job creates one or more pods and ensures that these pods run according to specified rules until they are terminated. Jobs can be used in many scenarios, such as batch computing and data analysis. You can specify the number of repeated runs, concurrency, and restart policy as required.
-A Job will keep existing pods and will not create new pods after it is complete. You can view the logs of completed pods in "Logs". Deleting a Job will clean up the pods it created as well as the logs of those pods.
+After the Job stops running, it will not create new pods and only the running records of original pods exist. However, the real underlying resources have been released. Therefore, you cannot query the logs of the corresponding pods in "Logs" section of the console.
 
 ### CronJob
-A CronJob object is similar to a line in a crontab (cron table) file. It periodically runs a Job according to the specified schedule. For more information about the format, please see the Cron documentation.
+A CronJob object is similar to a line in a crontab (cron table) file. It periodically runs a Job according to the specified schedule. For more information about the format, see the Cron documentation.
 The format of a Cron is as follows:
 ```
 # File format description
@@ -35,17 +35,17 @@ The format of a Cron is as follows:
 ```
 
 ## Directions
-1. Log in to the TKE console and click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** on the left sidebar.
+1. Log in to the TKE console and select **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar.
 2. On the "Elastic Cluster" page, click the ID of the cluster where the workload that you want to create is located. The **Deployment** page for the cluster appears, as shown in the following figure.
 ![](https://qcloudimg.tencent-cloud.cn/raw/dd712bafab8210a8904b4f57c1302d2a.png)
-3. Click **Create** to enter the **Create Workload** page.
+3. Click **Create** to open the **Create Workload** page.
 4. Specify the workload name and select a workload type.
-  - For more information about parameter settings for each workload type, please see the following:
+  - For more information about parameter settings for each workload type, see the following:
      - [Deployment Management](https://intl.cloud.tencent.com/document/product/457/30662)
      - [StatefulSet Management](https://intl.cloud.tencent.com/document/product/457/30663)
      - [CronJob Management](https://intl.cloud.tencent.com/document/product/457/30666)
      - [Job Management](https://intl.cloud.tencent.com/document/product/457/30665)
-   - For the instructions on other operations, please see the following documents:
+   - For the instructions on other operations, see the following documents:
      - [Setting the Resource Limit of Workload](https://intl.cloud.tencent.com/document/product/457/30667)
      - [Setting the Scheduling Rule for a Workload](https://intl.cloud.tencent.com/document/product/457/30668)
      - [Setting the Health Check for a Workload](https://intl.cloud.tencent.com/document/product/457/30669)

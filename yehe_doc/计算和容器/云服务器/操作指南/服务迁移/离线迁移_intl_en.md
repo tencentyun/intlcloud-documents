@@ -3,11 +3,11 @@
 
 ## Overview
 
-Service Migration is a platform developed by Tencent Cloud to help enterprises migrate operating systems, applications, and application data from a source server to a Cloud Virtual Machine (CVM) or Cloud Block Storage (CBS). It helps meet enterprise needs for cloudification, cross-cloud migration, cross-account or cross-region migration, and hybrid cloud deployment.
+Service Migration is a platform developed by Tencent Cloud to help enterprises migrate operating systems, applications, and application data from a source server to a Cloud Virtual Machine (CVM) instance or Cloud Block Storage (CBS) instance. It helps meet enterprise needs for cloudification, cross-cloud migration, cross-account or cross-region migration, and hybrid cloud deployment.
 
 Service migration includes offline migration and online migration. Offline migration includes:
 - [Offline instance migration](#csmStep) allows you to migrate system disk images (or system disk images and data disk images) to a specific CVM.
-- [Offline data migration](#csmStep) allows you to migrate data disk images to a specific CBS.
+- [Offline data migration](#csmStep) allows you to migrate data disk images to a specific cloud disk.
 
 ## Prerequisite
 
@@ -42,30 +42,30 @@ In the [COS console](https://console.cloud.tencent.com/cos5/bucket), locate the 
 
 ## Directions
 <dx-tabs>
-::: Offline instance migration [] (id:cvmStep)
+::: Offline instance migration [](id:cvmStep)
 1. Log in to the CVM console and click **[Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4)** on the left sidebar.
 2. Click **Create**, and select **Instance migration**.
 3. Complete and confirm the preparation steps, and click **Next**.
-4. Select the region, enter configuration information such as the task name, COS link, and CVM instance to be migrated to. Then, click **Complete** to create a migration task.
-During migration, you can exit or close the [Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4) page. You can also return to this page anytime to check the task progress. 
+4. Select the region, fill in the information such as the task name, COS link, and the target CVM. Click **Complete** to create a migration task.
+During the migration, you can quit or close the [Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4) page. You can also return to this page anytime to check the task progress. 
 <dx-alert infotype="notice" title="">
-- COS file must be configured with public read/private write permissions. For more information, see [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327).
-- The system disk capacity of the instance you want to migrate to cannot be less than the size of the uploaded image file. Otherwise, the task will fail.
--If the system disk images and data disk images need to be imported simultaneously, the imported instances must be mounted with a corresponding amount of data disks.
--The capacity of the destination disk should be greater than (as recommended) or equal to that of the source disk.
+- COS files must be configured with public read/private write permissions. For more information, see [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327).
+- The system disk capacity of the target instance cannot be less than the size of the uploaded image file. Otherwise, the task will fail.
+- If you need to import both the system disk images and data disk images, the target instances must be mounted with a corresponding amount of data disks.
+-The capacity of the target disk should be greater than (as recommended) or equal to that of the source disk.
 </dx-alert>
 
 
 :::
-::: Offline data migration [] (id:csmStep)
+::: Offline data migration [](id:csmStep)
 1. Log in to the CVM console and click **[Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4)** on the left sidebar.
 2. Click **Create**, and select **Data migration**.
-4. Complete and confirm the preparation steps, and click **Next**.
-4. Select the region, enter configuration information such as the task name, COS link, and cloud disk to be migrated to. Then, click **Complete** to create a migration task.
-During migration, you can exit or close the [Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4) page. You can also return to this page anytime to check the task progress. 
+3. Complete and confirm the preparation steps, and click **Next**.
+4. Select the region, fill in the information such as the task name, COS link, and target cloud disk. Click **Complete** to create a migration task.
+During the migration, you can quit or close the [Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4) page. You can also return to this page anytime to check the task progress. 
 <dx-alert infotype="notice" title="">
-- The capacity of the CBS disk you want to migrate to cannot be less than the size of the uploaded image file. Otherwise, the task will fail.
--The capacity of the destination disk should be greater than (as recommended) or equal to that of the source disk.
+- The capacity of the target cloud disk cannot be less than the size of the uploaded image file. Otherwise, the task will fail.
+-The capacity of the target disk should be greater than (as recommended) or equal to that of the source disk.
 </dx-alert>
 
 
