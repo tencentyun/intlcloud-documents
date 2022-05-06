@@ -46,11 +46,11 @@ Image Style can help you present different processing parameters in the format o
 3. In the left menu bar, click **Data Processing** > **Image Processing** to enter the **Style Management** section.
    **Separator**: Style separators are symbols that separate filenames and processing styles, including `-`, `_`, `/`, and `!`. Select `!` here and save.
 4. Click **Add Styles** and set fields as follows:
-	- **Style Name**: Enter your custom style name, such as “yunstyle”.
+  - **Style Name**: Enter your custom style name, such as “yunstyle”.
 > ! 
 > - Note that style names are case-sensitive and cannot be modified once saved.
 > - For the purpose of clarity, the separator you have enabled cannot appear in the style name.
-	- **Editing Mode**: Select **Basic**.
+  - **Editing Mode**: Select **Basic**.
   - **Resize Mode**: Select **Scale-only**.
   - **Scaling**: Select **Fixed height and width**.
   - **Size**: width: 480px, height: 270px.
@@ -68,8 +68,8 @@ Image Style can help you present different processing parameters in the format o
 ```
 Object URL + Separator + Processing style name
 ```
-Now, you can obtain a final object URL `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle`. Paste it to your address bar, press Enter, and you will see a scaled image shown as below:
-![](https://main.qcloudimg.com/raw/f48dba67ddfac797136a552dc6a14816.jpg)
-If you need to set a signature for the styled image, change the URL to `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle?q-sign-algorithm=<signature>`, and use `/sample.jpg!yunstyle` as the resource to calculate the signature `<signature>`.
+&nbsp;&nbsp;&nbsp;&nbsp;Now, you can obtain a final object URL `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle`. Paste it to your address bar, press Enter, and you will see a scaled image shown as below:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://main.qcloudimg.com/raw/f48dba67ddfac797136a552dc6a14816.jpg)
+&nbsp;&nbsp;&nbsp;&nbsp;If you need to set a signature for the styled image, change the URL to `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle?q-sign-algorithm=<signature>`, and use `/sample.jpg!yunstyle` as the resource to calculate the signature `<signature>`.
 
 
