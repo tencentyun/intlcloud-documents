@@ -22,7 +22,7 @@ CSS 활성화.
 ## 푸시 스트림 주소 생성기
 
 ### 작업 단계
-1. [**도메인 관리**](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할 푸시 스트림 도메인 또는 **관리**를 클릭해 도메인 상세 페이지로 이동합니다.
+1. [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할 푸시 스트림 도메인 또는 **관리**를 클릭해 도메인 상세 페이지로 이동합니다.
 2. **푸시 스트림 설정** > **푸시 스트림 주소 생성기**를 선택하여 다음과 같이 설정합니다
    1. 만료 시간을 선택합니다. (예시: `2021-06-30 19:26:02`)
    2. 사용자 정의 스트림 이름 StreamName을 작성합니다. (예시: `liveteststream`)
@@ -72,7 +72,7 @@ Tencent Cloud가 제공하는 PHP 및 Java 언어 푸시 스트림 주소 예시
     *        key 보안 키
     *        time 만료 시간 sample 2016-11-12 12:00:00. 만료 타임스탬프. 단위: s
     * @return String url
-*/
+	
 function getPushUrl($domain, $streamName, $key = null, $time = null){
 	if($key && $time){
 		$txTime = strtoupper(base_convert(strtotime($time),10,16));
