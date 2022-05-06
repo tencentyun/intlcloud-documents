@@ -49,7 +49,7 @@
 <div class="d-mod-title d-explain-title">
 <i class="d-icon-explain"></i>注意：
 </div>
-<p>不指定源端下一跳路由为白名单功能，如需使用请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 进行申请。</p></li><li>若选择“指定”，则需选择下一跳类型和具体实例，配置下一跳对象后，系统将自动在子网所关联的路由表中添加对应的32位路由。目前支持的源端下一跳网关类型有：NAT 网关、对等连接、VPN 网关、专线网关、云服务器、云联网。<p>
+<p>不指定源端下一跳路由为白名单功能，如需使用请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 进行申请。</p></li><li>若选择“指定”，则需选择下一跳类型和具体实例，配置下一跳对象后，系统将自动在子网所关联的路由表中添加对应的32位路由。目前支持的源端下一跳网关类型有：NAT 网关、对等连接、VPN 网关、专线网关、云服务器（公网网关）、云服务器、云联网。<p>
 <dx-alert infotype="explain" title="">
 如果下一跳指定为【云联网】，当探测目的 IP 同时存在于云联网中两个 VPC 时，按照最长掩码匹配，即网段掩码大的路由生效。
 </dx-alert>
@@ -57,9 +57,10 @@
 </tr>
 </tbody></table>
 5. （可选）字段填写完成后，在“探测目的 IP”后，单击【验证】。
+
 >?本步骤仅适用于【指定】源端下一跳路由，【不指定】请跳过。
- - 若连接成功，单击【确定】即可。
- - 若连接失败，请检查子网路由是否配置正确或目的探测对象是否放通了网络 ACL、安全组等防火墙，详情请参见 [管理网络 ACL](https://intl.cloud.tencent.com/document/product/215/31852) 及 [修改安全组规则](https://intl.cloud.tencent.com/document/product/215/35515)。
+ >- 若连接成功，单击【确定】即可。
+ >- 若连接失败，请检查子网路由是否配置正确或目的探测对象是否放通了网络 ACL、安全组等防火墙，详情请参见 [管理网络 ACL](https://intl.cloud.tencent.com/document/product/215/31852) 及 [修改安全组规则](https://intl.cloud.tencent.com/document/product/215/35515)。
 
 ## 查看网络探测时延和丢包率
 
