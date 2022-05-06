@@ -11,7 +11,7 @@
 
 ### 전제 조건
 
--  [Tencent Cloud 계정에 가입](https://intl.cloud.tencent.com/document/product/378/17985)하고 실명 인증이 완료된 상태여야 합니다. 실명 인증을 하지 않은 사용자는 중국 내 CSS 인스턴스를 구매할 수 없습니다.
+- [Tencent Cloud 계정에 가입](https://intl.cloud.tencent.com/document/product/378/17985)이 완료된 상태여야 합니다. 
 - Tencent CSS 서비스를 활성화하고 [푸시 스트림 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가된 상태여야 합니다. 
 
 <span id="step1"></span>
