@@ -19,12 +19,12 @@
 3. 【Relayed Push設定】で、【Relayed Pushを有効】の右側のボタンをクリックします。
 ![](https://main.qcloudimg.com/raw/8891f4bac2ce1c16cc28a210e97e5071.png)
 4. ポップアップした【Relayed Push機能をオンにする】のポップアップボックスで、**リスク説明にしっかりと目を通し**、アクティブ化について確認してから、【Relayed Push機能をオンにする】をクリックします。
-![](https://main.qcloudimg.com/raw/0c81b0ef96e7e07f9fba0d7f8827c7f8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3968e2410d8f351dfe82a581cde7314.png)
 
 [](id:select)
 Relayed Push### Relayed Push方式の選択
 [Relayed Push機能をオン](#open_bypass)にした後、実際の業務の状況に応じてRelayed Pushの方式を選択することができます。
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
 - **Relayed Push用指定ストリーム**：「Relayed Push用指定ストリーム」の選択後、ミクスストリーミングトランスコードが不要な場合は、クライアントSDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265)のインターフェースを呼び出して、直接Relayed Pushを起動させてください。ミクスストリーミングトランスコードが必要な場合は、[Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618)のドキュメントのガイド操作に従ってください。MixTranscoding後にAuto-Relayed Pushが実行されます。
 - **Global Auto-relay**：「Global Auto-relay」を選択すると、すべてのTRTCのアップストリームのオーディオビデオストリーミングはCSSシステムにAuto-Relayed Pushされます。
@@ -34,9 +34,9 @@ Relayed Push### Relayed Push方式の選択
 ### Relayed Push機能をオフにする
 Relayed Push機能を無効にしたい場合、具体的な操作手順は次のとおりです。
 1. 【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】をクリックして、機能設定を変更したいアプリケーションを選択し、対象のアプリケーションがある行の【機能設定】をクリックします。
-3. 【Relayed Push設定】で、【Relayed Pushを有効】の右側のボタンをクリックします。
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
-4. ポップアップした【Relayed Push機能をオフにする】のポップアップボックスで、**リスク説明にしっかりと目を通し**、無効化について確認してから、【Relayed Push機能をオフにする】をクリックします。
+2. 【Relayed Push設定】で、【Relayed Pushを有効】の右側のボタンをクリックします。
+![](https://qcloudimg.tencent-cloud.cn/raw/4f9e38098c65b9332d7b939cf1335fa9.png)
+3. ポップアップした【Relayed Push機能をオフにする】のポップアップボックスで、**リスク説明にしっかりと目を通し**、無効化について確認してから、【Relayed Push機能をオフにする】をクリックします。
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
 
