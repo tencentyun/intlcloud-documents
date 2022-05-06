@@ -32,6 +32,7 @@
 3. `GenerateTestUserSig.h` のファイルの関連するパラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0、実際のSDKAppIDを設定してください。</li>
   <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 
 4. 貼り付け完了後、【貼り付けました。次へ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソールの概要ページに戻る】をクリックすればOKです。
