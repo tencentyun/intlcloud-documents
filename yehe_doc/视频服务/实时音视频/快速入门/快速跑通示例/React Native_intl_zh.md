@@ -70,7 +70,8 @@
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->! 请勿设置 `android:hardwareAccelerated="false"`，关闭硬件加速之后，会导致对方的视频流无法渲染。
+  
+<dx-alert infotype="notice">请勿设置 `android:hardwareAccelerated="false"`，关闭硬件加速之后，会导致对方的视频流无法渲染。</dx-alert>
 2. Android 端音视频权限需要手动申请。
 ```java
 if (Platform.OS === 'android') {
