@@ -48,6 +48,7 @@
 >?
 > - A disabled custom route cannot be published to CCN.
 > - A custom route should be withdrawn first before it can be disabled if it has been published to a CCN.
+> - The HAVIP unbound to a CVM cannot be published to the CCN. Please retry after binding it to a CVM.
 
 ### Quota Limits
 <table>
