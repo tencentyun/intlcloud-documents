@@ -1,74 +1,73 @@
-TencentOS Server（別名Tencent Linux、略称はTSまたはtlinux）はTencentがクラウドシーンのために開発したLinux OSであり、特定の機能を提供するとともにパフォーマンスを最適化し、CVMインスタンスにおけるアプリケーションプログラムのために高性能かつより安全で信頼性の高い運用環境をご提供します。TencentOS Serverは無料で利用でき、CentOS（およびその他のディストリビューション）上で開発されたアプリケーションプログラムをTencentOS Server上で直接運用することができます。ユーザーはTencent Cloudチームによる更新とメンテナンスおよびテクニカルサポートを引き続き受けることが可能です。
+TencentOS Server（Tlinux、TSと略記）は、クラウドシナリオのためにTencent Cloudによって開発されたLinux OSです。特定の機能とパフォーマンスの最適化を提供し、CVMインスタンスのアプリケーションにより高いパフォーマンスとより安全で信頼性の高い動作環境を提供します。TSは、Linuxカーネルに基づいて独自に開発および設計されており、OS分野でTencentの技術的蓄積を10年以上蓄積しており、Tencentの内部の大規模サービスによって長年にわたって検証および洗練されています。Tencentの内部OSの99％以上を占めています。Tencentのすべてのサービスをカバーしています。同時に、Tencentは、ソーシャルネットワーキング、ゲーム、金融支払い、AI、セキュリティなど、中国で最も多様なサービスエコシステムを備えており、安定性、セキュリティ、互換性、パフォーマンスなどのコア機能が完全に検証されています。コミュニティOSバージョンと比較して、TSは、安定性、パフォーマンス、コンテナのインフラストラクチャなどのコア機能の点で全面的に強化および最適化されており、企業に安定的かつ可用性の高いサービスを提供しています。このシステムは、サービスの厳しい負荷要件を満たし、最高のクラウドOSの作成に取り組み、CentOSよりも優れたエンタープライズクラスOSのソリューションでもあります。
+
+TSは現在使用可能であり、ユーザーモード環境はCentOSと互換性があります。CentOSで開発されたアプリケーションはTSで直接実行できます。
+
 
 ## ユースケース
+TSは、標準型、コンピューティング型、メモリ型、ハイIO型など、ほとんどの標準型に適しています。また、Cloud Physical Machine (CPM) 2.0および高性能コンピューティングクラスターもサポートしています。
 
-TencentOS Serverは次のようなシーンに適しています。
-
-- BM 2.0サーバーを含み、ほとんどのCVMの各仕様のインスタンス。
-- インスタンスを起動する時、Tlinuxを使用して、関連する操作をユーザーデータ（すなわち userdata の方式）経由でcloud-initに転送し、インスタンスを起動する時に動的構成の目的を達成できます。
-
-## TencentOS Server環境説明
-
-### ユーザーモード環境
-- TencentOS Server 2ユーザーステータスのソフトウェアパッケージは最新版のCentOS 7との間で互換性を有しています。CentOS 7バージョンのソフトウェアパッケージはTencentOS Server 2.4で直接使用することができます。
-- TencentOS Server 3ユーザーステータスのソフトウェアパッケージは最新版のRHEL 8との間で互換性を有しています。そのため、RHEL 8バージョンのソフトウェアパッケージは、TencentOS Server 3.1でそのまま使用することができます。
-
-### システムサービスおよび最適化設定
-
-#### システムサービス
-
-- `tlinux-irqaffinity`：TencentOS Serverが自動的に割り当てサービスを中断します。
-- `tlinux-bootlocal`：TencentOS Server bootlocalサービスであり、起動時に自動的に `/etc/rc.d/boot.local`を実行します。
-
-#### システムツール
-
-`tencent-tools`：tos（略称t）コマンドであり、システム管理に使用します。サポートするパラメータは次のとおりです。
-
-```bash
-tos version 2.2
-Usage:
-	tos TencentOS Server System Management Toolset
-	tos -u|-U| update [rpm_name]	Update the system 
-	tos -i|-I| install rpm_name	install rpms
-	tos -s|-S| show			Show the system version
-	tos -c|-C| check [rpm_name]	Check the modified rpms
-	tos -f yum | fix yum		Fix yum problems
-	tos -f dns | fix dns		Fix DNS problems
-	tos -a|-A | analyze		Analyze the system performance 
-	tos set dns			Set DNS
-	tos set irq			Set irqaffinity, restart irqaffinity service
-	tos -cu| check-update		Check available package updates
-	tos -b|-B| backup [ reboot ]	Backup the system online, or reboot to backup 
-	tos -r|-R| recover|reinstall	Recover or Reinstall the system
-	tos -h|-H| help			Show this usage
-	tos -v|-V| version		Show the script version
-```
-
-#### システム設定
-
-- **pam**：パスワードの複雑度を高めます。
-- **`/etc/bashrc` 修正**：bash表示を最適化します。
-- **`/etc/hosts`**：TENCENT64およびTENCENT64.siteを追加します。
-- **`/root/.bashrc`**：設定を最適化します。
+<dx-alert infotype="notice" title="">
+TSを使用してGPUインスタンスを実行する必要がある場合、対応するGPUドライバーをインストールしてください。
+</dx-alert>
 
 
-### TencentOS Serverカーネル
-TencentOS-kernelは、4.14と5.4という2つのバージョンを提供しています。詳細については、[TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel)をご参照ください。
+## TSの優位性
+- **非常に安定し、数千万のノードによって検証されている**
+TSは、大規模なサービスによって長期間にわたって実地テストを受けており、合計で数千万のデプロイがあり、全体の可用性は99.999%に達しています。
+- **完全に最適化された、パフォーマンスがより高い**
+深く最適化された高性能OSは、システム内のさまざまなソフトウェアを最適化しており、通常のサービスパフォーマンスは50%以上向上しています。Tencent Cloudを介してTSを使用すると、より高いパフォーマンスを得ることができます。
+- **オープンソースと互換性があり、クラウド上のより優れたOS**
+100%オープンソースのLinuxリリースバージョンです。ユーザーモードは、CentOSとの互換性を維持し、安定性とパフォーマンスの面でより多くの利点があります。クラウド上のCentOSのより優れた代替手段です。
+- **クラウド向けに生じて、特別にカスタマイズされる**
+オープンスタンダードベースに基づいた最新の仮想化およびクラウドネイティブツールを含み、さまざまなワークロードに適したクラウド向けに開発されています。
+- **安全でコンプライアンス、ダウンタイムゼロのリカバー**
+セキュリティラボは、システムセキュリティを保護します。システムレベルのセキュリティを強化し、さまざまな脆弱性をタイムリーに修正し、ホットパッチ修復をサポートして不要なダウンタイムを回避できます。
 
 
-## TencentOS Serverの取得
 
-次の方法によってTencentOS Serverを取得および使用できます。
+### TSのイメージバージョン
+現在、TencentCloudには、ユーザーが選択できる3つのTSイメージがあります：
 
-- CVMインスタンスの作成時はパブリックイメージを選択し、TencentOS Serverの該当のバージョンを選択します。
-  操作の詳細については[インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855)をご参照ください。
-- CVMインスタンスが作成済みの場合は、システムの再インストールによって既存のOSをTencentOS Serverに変更することができます。
-  操作の詳細については [システムの再インストール](https://intl.cloud.tencent.com/document/product/213/4933)をご参照ください。
+<table>
+<tr>
+<th width="35%">イメージバージョン</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>TencentOS Server 3.1</td>
+<td>CentOS 8ユーザーモードと完全に互換性があり、コミュニティ5.4 LTSカーネルに基づいて深く最適化されたtkernel4バージョンをサポートします。</td>
+</tr>
+<tr>
+<td>TencentOS Server 2.4</td>
+<td>CentOS 7ユーザーモードと完全に互換性があり、コミュニティ4.14 LTSカーネルに基づいて深く最適化されたtkernel3バージョンをサポートします。</td>
+</tr>
+<tr>
+<td>TencentOS Server 2.4（TK4）</td>
+<td>CentOS 7ユーザーモードと完全に互換性があり、コミュニティ5.4 LTSカーネルに基づいて深く最適化されたtkernel3バージョンをサポートします。</td>
+</tr>
+</table>
 
 
-## テクニカルサポート
 
-Tencent Cloudがご提供するTencentOS Serverのテクニカルサポートは次のとおりです。
+## TSカーネル
+TencentOS Server kernel（tkernelと略記）は、リリースバージョンからデカップリングされ、現在のメインカーネルは2つのバージョンに分けられます。
+- コミュニティ5.4 LTSに基づいて深く最適化されたtkernel4（tk4と略記）。
+- コミュニティ4.14 LTSに基づいて深く最適化されたtkernel3（tk3と略記）。
+詳細については、[TencentOS kernel githubウェアハウス](https://github.com/Tencent/TencentOS-kernel)をご参照ください。
 
-- YUMリポジトリでセキュリティアップデート（Security Updates）を提供し、`yum update`コマンドの実行によってバージョンの更新を行うことができます。
-- TencentOS Serverはカーネルコミュニティが長期的にサポートするバージョンをベースにしており、クラウド環境に合わせてカスタマイズされたOSイメージです。Tencent CloudはTencentOS Serverご使用の過程で発生する問題に対しテクニカルサポートを提供します。
+## TencentOS Serverの使用 
+
+### クラウド上の使用
+インスタンスの作成または既存インスタンスOSのリインストールのときに、パブリックイメージを選択し、対応するバージョンのOpenCloudOSを使用することを選択できます。操作の詳細については、[インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855)および[システムのリインストール](https://intl.cloud.tencent.com/document/product/213/4933)をご参照ください。
+
+### ローカルエクスペリエンス
+次の方法によってTSをローカルでエクスペリエンスできます：
+- TencentOS Server 2.4 ：[iso](http://mirrors.tencent.com/tlinux/2.4/iso/)および[qcow](http://mirrors.tencent.com/tlinux/2.4/images/)。
+- TencentOS Server 3.1  ：[iso](http://mirrors.tencent.com/tlinux/3.1/iso/)および[qcow](http://mirrors.tencent.com/tlinux/3.1/images/)。
+
+
+
+## サービスと更新
+Tencent Cloudは、TSメジャーバージョンごとに5年以上、定期的なイメージの更新、新機能と最適化の導入、タイムリーなセキュリティの脆弱性の修正、バグの修正などを含むメンテナンスと更新を提供します。ストックサーバーは、yumを介してアップグレードし、脆弱性の修正をタイムリーに完了できます。
+TSの詳細を理解する必要がある場合、アプレットからTencent Cloud　Assistantに相談してください。
+

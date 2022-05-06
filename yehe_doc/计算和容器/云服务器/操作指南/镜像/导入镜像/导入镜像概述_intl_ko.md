@@ -26,8 +26,8 @@
 <tr><td>운영 체제</td><td><ul><li>Windows Server 2008 관련 버전, Windows Server 2012 관련 버전, Windows Server 2016 관련 버전</li><li>32비트와 64비트를 지원합니다.</li></ul></td></tr>
 <tr><td>미러 이미지 형식</td><td><ul><li>RAW, VHD, QCOW2, VMDK 미러 이미지 형식을 지원합니다.</li><li><code>qemu-img info imageName | grep 'file format'</code>을 사용하여 미러 이미지 형식을 조회합니다.</li></ul></td></tr>
 <tr><td>파일 시스템 유형</td><td><ul><li>MBR 파티션을 사용한 NTFS 파일 시스템만 지원합니다.</li><li>GPT 파티션은 지원되지 않습니다.</li><li>논리 볼륨 관리(LVM)는 지원되지 않습니다.</li></ul></td></tr>
-<tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G 이하인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>를 사용해 실제 크기를 조회합니다.</li><li>미러 이미지 vsize가 500G 이하인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code>를 사용해 미러 이미지 vsize를 조회합니다.</li></ul><b>주의 사항:</b>미러 이미지 가져오기 시 qcow2 형식 전환 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
-<tr><td>네트워크</td><td><ul><li>Tencent Cloud는 기본적으로 인스턴스에 <code>로컬 연결</code>네트워크 인터페이스를 제공합니다.</li><li>사용자는 인스턴스 내 metadata 서비스를 통해 인스턴스의 네트워크 구성을 쿼리할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/4934">인스턴스 메타데이터</a>를 참고하십시오.</li></ul></td></tr>
+<tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G 이하인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>를 사용해 실제 크기를 조회합니다.</li><li>미러 이미지 vsize가 500G 이하인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code>를 사용해 미러 이미지 vsize를 조회합니다.</li></ul><b>주의 사항:</b> 미러 이미지 가져오기 시 qcow2 형식 전환 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
+<tr><td>네트워크</td><td><ul><li>Tencent Cloud는 기본적으로 인스턴스에 <code>로컬 연결</code> 네트워크 인터페이스를 제공합니다.</li><li>사용자는 인스턴스 내 metadata 서비스를 통해 인스턴스의 네트워크 구성을 쿼리할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/4934">인스턴스 메타데이터</a>를 참고하십시오.</li></ul></td></tr>
 <tr><td>드라이버</td><td>이미지는 버츄얼 플랫폼 KVM의 Virtio 드라이버가 설치되어야 합니다. Windows 시스템은 기본적으로 Virtio 드라이버를 설치하지 않으며 사용자는 Windows Virtio 드라이버를 설치하고 로컬 이미지를 내보낼 수 있습니다. Windows Virtio 드라이버 다운로드 주소는 다음과 같으며 실제 네트워크 환경에 따라 다운로드하십시오. <ul><li>공용 네트워크 다운로드 주소: <code>http://mirrors.tencent.com/install/windows/virtio_64_1.0.9.exe</code></li><li>내부 네트워크 다운로드 주소: <code>http://mirrors.tencentyun.com/install/windows/virtio_64_1.0.9.exe</code></li></ul></td></tr>
 <tr><td>리전 제한</td><td>현재 상하이 금융 구역 및 선전 금융 구역은 다른 리전의 COS 서비스로부터 이미지 가져오기를 지원하지 않습니다.</td></tr>
 <tr><td>기타</td><td>가져오기한 Windows 시스템 미러 이미지는 <a href="https://intl.cloud.tencent.com/document/product/213/2757">Windows 활성화</a> 서비스가 <b>제공되지 않습니다.</b></td></tr>
@@ -39,7 +39,7 @@
 
 ## 가져오기 단계
 
- 1. CVM 콘솔에 로그인한 뒤, 왼쪽 메뉴의 **[이미지](https://console.cloud.tencent.com/cvm/image)**를 클릭합니다.
+ 1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바의 **[이미지](https://console.cloud.tencent.com/cvm/image)**를 클릭합니다.
  3. **사용자 정의 이미지**를 선택하고,**이미지 가져오기**를 클릭합니다.
  4. 작업 인터페이스 요구에 따라 먼저 [COS 활성화](https://console.cloud.tencent.com/cos4/index) 후, [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)합니다. 이미지 파일을 bucket에 업로드하고 [이미지 파일 URL 가져오기](https://intl.cloud.tencent.com/document/product/436/13322)합니다.
  5. **다음**을 클릭합니다.
@@ -53,7 +53,7 @@
 
 콘솔에서 미러 이미지 가져오기 작업 진행 후, 여러 이유로 작업이 실패할 수 있습니다. 작업 실패 상태에서는 아래의 내용에 따라 조사하십시오.
 
-### 주의사항
+### 주의 사항
 
 실패 원인에 대한 파일 조사 전 [내부 메시지 관리 페이지](https://console.cloud.tencent.com/messageCenter/messageConfig) 소식 구독란의 구독 제품 서비스와 관련된 알림을 확인하십시오. 실패 원인이 포함된 내부 메시지, SMS와 메일 수신을 제공합니다.
 
@@ -78,9 +78,9 @@
 <dx-alert infotype="notice" title="">
 서명이 포함된 COS 파일 링크는 1회만 액세스 가능합니다.
 </dx-alert>
-* 다른 리전의 COS 링크를 입력했습니다.
+* 중국 외 리전에서 이미지 가져오기 시 외부 리전의 COS 링크를 사용하였습니다.
 <dx-alert infotype="notice" title="">
-미러 이미지 가져오기는 내부 네트워크를 통해 로컬 리전의 COS 서버를 액세스합니다.
+현재 중국 외 리전에서 이미지 가져오기 서비스는 동일 리전 COS 서버만 지원하므로 리전 내 COS 링크를 통해 가져와야 합니다.
 </dx-alert>
 * 사용자의 미러 이미지 파일이 삭제되었습니다.
 COS 무효 링크에 대한 오류 보고를 받은 후, 서술된 원인에 따라 문제를 조사할 수 있습니다.

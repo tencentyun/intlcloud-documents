@@ -89,15 +89,14 @@ CBS 만료 여부, 인스턴스와 CBS의 만료 시간 동일 여부
 <td>이 인스턴스의 CBS가 만료되었습니다. <a href="https://console.cloud.tencent.com/cvm/cbs">CBS 콘솔</a>로 이동하여 최대한 빨리 연장하십시오.</td>
 </tr>
 <tr>
-<td>종량제 과금 인스턴스, CBS 만료로 인해 CBS 사용 불가 여부</td>
+<td>종량제 과금 인스턴스의 CBS, CBS 만료로 인한 CBS 사용 불가 여부</td>
 <td>경고</td>
-<td rowspan=1>이 인스턴스의 CBS는 자동 연장으로 설정되어 있지 않으며 CBS가 만료되어 사용할 수 없게 될 수 있습니다. <a href="https://console.cloud.tencent.com/cvm/cbs">CBS 콘솔</a>로 이동하여 CBS 자동 연장을 설정하십시오.</td>
+<td rowspan=2>이 인스턴스의 CBS는 자동 연장으로 설정되어 있지 않으며 CBS가 만료되어 사용할 수 없게 될 수 있습니다. <a href="https://console.cloud.tencent.com/cvm/cbs">CBS 콘솔</a>로 이동하여 CBS 자동 연장을 설정하십시오.</td>
 </tr>
 </table>
 
 :::
 ::: 인스턴스 스토리지 점검
-
 <table>
 <tr>
 <tr><th style="
@@ -176,7 +175,7 @@ CBS 만료 여부, 인스턴스와 CBS의 만료 시간 동일 여부
 <td rowspan=3>지난 12시간 동안 인스턴스에 hangTask/panic/soft lockup이 있었습니다. 인스턴스의 실행 상태에 주의하십시오. 장애 처리는 <a href="https://intl.cloud.tencent.com/document/product/213/41974">커널 및 IO 관련 문제</a>를 참고하십시오.</td>
 </tr>
 <tr>
-<td>지난 12시간 동안 인스턴스에 hangTask 존재 여부</td>
+<td>최근 12시간 동안 인스턴스가 panic 상태가 되었는지 여부</td>
 <td>이상</td>
 </tr>
 <tr>
@@ -247,7 +246,7 @@ CBS 만료 여부, 인스턴스와 CBS의 만료 시간 동일 여부
 <td>외부 네트워크 IP가 DDOS에 의해 차단되는지 여부</td>
 <td>외부 네트워크 IP가 DDOS에 의해 차단되는지 여부</td>
 <td>이상</td>
-<td>DDOS 공격으로 인스턴스의 외부 네트워크 IP가 차단됨, 처리 방법은 <a href="https://cloud.tencent.com/document/product/1020/31635">차단 해제 보호 IP</a> 문서를 참고하십시오.</td>
+<td>인스턴스의 외부 네트워크 IP가 DDOS 공격에 의해 차단되었습니다.</td>
 </tr>
 <tr>
 <td rowspan=2>외부 네트워크 대역폭 사용률</td>
@@ -305,6 +304,7 @@ CBS 만료 여부, 인스턴스와 CBS의 만료 시간 동일 여부
 <td>경고</td>
 </tr>
 </table>
+
 :::
 </dx-accordion>
 
