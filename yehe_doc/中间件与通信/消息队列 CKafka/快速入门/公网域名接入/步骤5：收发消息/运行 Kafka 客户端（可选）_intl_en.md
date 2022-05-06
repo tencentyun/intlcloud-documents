@@ -91,7 +91,7 @@ Currently, CKafka is fully compatible with Kafka 0.9, 0.10, 1.1, and 2.4. We rec
       **Consuming a message:**
       ![](https://main.qcloudimg.com/raw/22860d730e70cfbe9eb5fcbca215d5a5.png)
 
-3. In the message querying page of the CKafka console, query the message sent.
+3. On the message query page of the CKafka console, query the message sent.
      ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
     The details of the message are as follows:
      ![](https://main.qcloudimg.com/raw/06cdc6450beefae7f6cc6f3d704390a0.png)
