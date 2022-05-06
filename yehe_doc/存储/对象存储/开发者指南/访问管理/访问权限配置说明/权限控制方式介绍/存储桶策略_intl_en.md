@@ -41,7 +41,7 @@ For example, if you want to grant a sub-account all permissions of a specified d
 | Action | All operations |
 | Condition | None |
 
-In the COS console, you can add and manage bucket policies in two modes: [Visual Editor](#Visual Editor) and [JSON](#JSON).
+In the COS console, you can add and manage bucket policies in two modes: [Visual Editor](https://intl.cloud.tencent.com/document/product/436/45235?lang=en&pg=#visual-editor) and [JSON](https://intl.cloud.tencent.com/document/product/436/45235?lang=en&pg=#json).
 
 <span id="Visual Editor"></span>
 ### Visual Editor
