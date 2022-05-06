@@ -40,7 +40,7 @@ The billable items are as follows:
 | Mode | Pro Edition | Standard Edition | Description |
 | :------- | :----- | :----- | :----------------------------------------------------------- |
 | Monthly subscription | ✔ | - | The total fees of a purchased Pro Edition instance are (basic package price + partition package price * number of additional partitions / 100 + disk capacity price * disk capacity / 100) * number of months. For detailed prices, please see [Pro Edition pricing](). |
-| Pay-as-You-Go | ✔ | ✔ | <li>The total fees of a purchased Pro Edition instance are (basic package price + partition package price * number of additional partitions / 100 + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Pro Edition pricing](). </li><li>The total fees of a purchased Standard Edition instance are (basic package price + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Standard Edition pricing]().</li> |
+| Pay-as-you-go | ✔ | ✔ | <li>The total fees of a purchased Pro Edition instance are (basic package price + partition package price * number of additional partitions / 100 + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Pro Edition pricing](). </li><li>The total fees of a purchased Standard Edition instance are (basic package price + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Standard Edition pricing]().</li> |
 
 > ?
 >
