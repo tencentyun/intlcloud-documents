@@ -57,7 +57,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 1. In the **Modify Configuration** step, note the `SDKAppID` and secret key.
 2. Paste the `SDKAppID` and secret key and click **Next**.
 
-![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png)
 
 [](id:step4)
 ### Step 4. Run the demo 
@@ -85,7 +85,7 @@ Open `index.html` in the root directory of the demo with Chrome to run the demo.
 - Click **Camera Select** to select a camera.
 - Click **Microphone Select** to select a mic.
 
->?WebRTC uses the camera and mic of your device to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.
+<dx-alert infotype="explain">WebRTC uses the camera and mic of your device to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.</dx-alert>
 
  
 
@@ -98,12 +98,12 @@ Open `index.html` in the root directory of the demo with Chrome to run the demo.
 2. Enter the `SDKAppID` and secret key obtained in <a href="#step3">Step 3</a>.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f22cfb136e41ebb28100ea5fc1d6fa6f.png" width="800px">
 3. You can try the following:
-	- Click **Join** to join a room.
-	- Click **Publish** to publish the local stream.
-	- Click **Unpublish** to stop publishing the local stream.
-	- Click **Leave** to leave the room.
-	- Click **Share Screen** to publish the screen sharing stream.
-	- Click **Stop Share Screen** to stop publishing the screen sharing stream.
+ - Click **Join** to join a room.
+ - Click **Publish** to publish the local stream.
+ - Click **Unpublish** to stop publishing the local stream.
+ - Click **Leave** to leave the room.
+ - Click **Share Screen** to publish the screen sharing stream.
+ - Click **Stop Share Screen** to stop publishing the screen sharing stream.
 4. After joining a room, you can use a share link to invite others to try the audio/video call feature with you.
 :::
 ::: Demo 3: quick-demo-vue2-js      
@@ -121,12 +121,12 @@ The `[http://localhost:8080/](http://localhost:8080/)` address will be opened in
 3. Enter the `SDKAppID` and secret key obtained in <a href="#step3">Step 3</a>.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/621de0ce3313a39bca88905185d40658.png" width="800px">
 4. You can try the following:
-	- Click **Join** to join a room.
-	- Click **Publish** to publish the local stream.
-	- Click **Unpublish** to stop publishing the local stream.
-	- Click **Leave** to leave the room.
-	- Click **Share Screen** to publish the screen sharing stream.
-	- Click **Stop Share Screen** to stop publishing the screen sharing stream.
+ - Click **Join** to join a room.
+ - Click **Publish** to publish the local stream.
+ - Click **Unpublish** to stop publishing the local stream.
+ - Click **Leave** to leave the room.
+ - Click **Share Screen** to publish the screen sharing stream.
+ - Click **Stop Share Screen** to stop publishing the screen sharing stream.
 5. After joining a room, you can use a share link to invite others to try the audio/video call feature with you.
 :::
 </dx-tabs>
