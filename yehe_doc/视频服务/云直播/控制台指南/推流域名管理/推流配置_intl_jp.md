@@ -22,7 +22,7 @@ CSSを開始し。
 ## プッシュアドレスジェネレーター
 
 ### 操作手順
-1. [**ドメイン名管理**](https://console.cloud.tencent.com/live/domainmanage)に進み、設定したいプッシュドメイン名を選択するか、**管理**をクリックし、ドメイン名詳細ページに進みます。
+1. [ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)に進み、設定したいプッシュドメイン名を選択するか、**管理**をクリックし、ドメイン名詳細ページに進みます。
 2. **プッシュ設定**>**プッシュアドレスジェネレーター**を選択し、次のとおり設定を行います。
    1. 期限切れ時間を選択します（例：`2021-06-30 19:26:02）。
    2. カスタマイズされたStreamNameを入力します（例：liveteststream）。
@@ -72,7 +72,7 @@ Tencent CloudはPHPおよびJavaのプッシュアドレスのサンプルコー
     *        key セキュリティキー
     *        time有効期限sample 2016-11-12 12:00:00。有効期限のタイムスタンプ、単位はsです
     * @return String url
-*/
+
 function getPushUrl($domain, $streamName, $key = null, $time = null){
 	if($key && $time){
 		$txTime = strtoupper(base_convert(strtotime($time),10,16));
