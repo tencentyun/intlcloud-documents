@@ -69,7 +69,8 @@
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->!  `android:hardwareAccelerated="false"`は設定しないでください。ハードウェアアクセラレーションを無効にすると、相手側のビデオストリームがレンダリングできなくなります。
+  
+<dx-alert infotype="notice">`android:hardwareAccelerated="false"`は設定しないでください。ハードウェアアクセラレーションを無効にすると、相手側のビデオストリームがレンダリングできなくなります。</dx-alert>
 2. Android端末のオーディオ/ビデオの権限は手動でリクエストする必要があります。
 ```java
 if (Platform.OS === 'android') {
