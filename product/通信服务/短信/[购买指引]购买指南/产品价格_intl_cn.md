@@ -6,7 +6,7 @@
 
 >!因以色列、阿根廷、白俄罗斯、斯里兰卡、加拿大、巴基斯坦、印度尼西亚、印度等129个国家/地区的运营商调整资费，腾讯云国际/港澳台短信服务将从**2022年05月01日零时起**调整上述国家的短信价格，更多详情请参见 [关于国际/港澳台短信部分国家（或地区）价格调整的公告](https://intl.cloud.tencent.com/document/product/382/35602)。
 
-单击下载 [国际短信价格表](https://qcloudimg.tencent-cloud.cn/raw/e10bd3b74617e6651e7a6e3ab7bfe2e0.pdf)。
+单击下载 [国际短信价格表](https://qcloudimg.tencent-cloud.cn/raw/c34fb8488034fbe3dd25a07f680f68c9.pdf)。
 
 | 国家（或地区） | 中文名	| 代号	| 国家（或地区）码 |	单价（美元） |
 |--------------------|----------|-------|---------|---------------|
@@ -168,7 +168,7 @@
 | Peru                              | 秘鲁                 | PE   | 51     | 0.0749 |
 | French Polynesia                  | 法属波利尼西亚       | PF   | 689    | 0.1246 |
 | Papua New Guinea                  | 巴布亚新几内亚       | PG   | 675    | 0.0692 |
-| Philippines                       | 菲律宾               | PH   | 63     | 0.2761 |
+| Philippines                       | 菲律宾               | PH   | 63     | 0.0403 |
 | Pakistan                          | 巴基斯坦             | PK   | 92     | 0.1093 |
 | Poland                            | 波兰                 | PL   | 48     | 0.0411 |
 | Saint Pierreand Miquelon          | 圣彼埃尔和密克隆岛   | PM   | 508    | 0.1136 |
