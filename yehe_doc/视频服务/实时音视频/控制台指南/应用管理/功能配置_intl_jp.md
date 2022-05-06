@@ -5,9 +5,9 @@
 
 ### 注意事項
 
-- UDPトランスポートプロトコルに基づくTRTCサービスは、プロトコル変換を介してオーディオストリームとビデオストリームを [CSS]https://intl.cloud.tencent.com/document/product/267システムに接続します。このプロセスは「Relayed Push」と呼ばれます。
+- UDPトランスポートプロトコルに基づくTRTCサービスは、プロトコル変換を介してオーディオストリームとビデオストリームを [CSS](https://intl.cloud.tencent.com/document/product/267)システムに接続します。このプロセスは「Relayed Push」と呼ばれます。
 - デフォルトではRelayed Push機能はオフになっています。Relayed Push機能を有効にするには、先にCSSサービスをオンにする必要があります。
-- Relayed Pushを[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)に使用する場合、CSSではRelayed live Streamingによる下りトラフィック/帯域幅に基づき、関連費用が課金されます。詳細は、［CSS>トラフィック帯域幅課金］(https://intl.cloud.tencent.com/document/product/267/2818)の説明をご参照ください。
+- Relayed Pushを[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)に使用する場合、CSSではRelayed live Streamingによる下りトラフィック/帯域幅に基づき、関連費用が課金されます。詳細は、[CSS>トラフィック帯域幅課金](https://intl.cloud.tencent.com/document/product/267/2818)の説明をご参照ください。
 - Relayed Pushを[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426) に使用する時は、レコーディング、レコーディングファイル保存などの費用が発生します。詳細は、[クラウドレコーディングと再生>関連費用](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8)の説明をご参照ください。
 - [CSSコンソール](https://console.cloud.tencent.com/live/domainmanage)でRelayed Pushに使用されるプッシュドメイン名（`xxxx.livepush.myqcloud.com`）にレコーディング、トランスコーディング、スクリーンキャプチャ・ポルノ検出、ウォーターマークなどの課金機能のテンプレートをバインドする場合は、Relayed Push時に、テンプレートに対応する[付加価値サービス費用](https://intl.cloud.tencent.com/document/product/267/2819)が発生します。
 
@@ -44,8 +44,8 @@ Relayed Push機能を無効にしたい場合、具体的な操作手順は次�
 ## クラウドレコーディングの設定
 
 ### 注意事項
-- Relayed Pushを介して[CSS]https://intl.cloud.tencent.com/document/product/267を使用するTRTCサービスの機能は、完全なクラウドレコーディング機能を提供し、レコーディングされたファイルを[VOD]https://intl.cloud.tencent.com/document/product/266プラットフォームに保存します。
-- レコーディング機能は、CSSサービスの機能を使用しており、当月のライブレコーディングの同時ピークチャネル数に基づいて、CSSのライブレコーディング料金が発生します。請求ルールの詳細については、[CSS > CSSレコーディングの料金の説明]https://intl.cloud.tencent.com/document/product/267/39605 をご参照ください。
+- Relayed Pushを介して[CSS](https://intl.cloud.tencent.com/document/product/267)を使用するTRTCサービスの機能は、完全なクラウドレコーディング機能を提供し、レコーディングされたファイルを[VOD](https://intl.cloud.tencent.com/document/product/266)プラットフォームに保存します。
+- レコーディング機能は、CSSサービスの機能を使用しており、当月のライブレコーディングの同時ピークチャネル数に基づいて、CSSのライブレコーディング料金が発生します。請求ルールの詳細については、[CSS > CSSレコーディングの料金の説明](https://intl.cloud.tencent.com/document/product/267/39605) をご参照ください。
 - レコーディングされたファイルはVODプラットフォームに保存されるため、VODの保管料金が発生します。VODプラットフォームに保存されているレコーディングファイルのストレージ容量に基づいて課金されます。課金ルールの詳細は [VOD > ビデオストレージ（日次決済）価格説明](https://intl.cloud.tencent.com/document/product/266/14666)をご参照ください 。
 - レコーディングされたビデオファイルを再生またはダウンロードする必要がある場合は、VODサービスのトラフィック（ビデオアクセラレーション）料金が発生し、ダウンストリームによってトラフィック課金がアクセラレーションされます。課金ルールの詳細は、[VOD> ビデオアクセラレーション（日次決済）料金説明](https://intl.cloud.tencent.com/document/product/266/14666) をご参照ください。
 - クラウドレコーディング機能はデフォルトでオフになっています。クラウドレコーディング機能を有効にするには、CSSとVideo on Demandサービスをアクティブにする必要があります
