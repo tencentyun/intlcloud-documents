@@ -69,7 +69,8 @@
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->! `android:hardwareAccelerated="false"`를 설정하지 마십시오. 하드웨어 가속을 비활성화하면 상대방의 비디오 스트리밍을 렌더링할 수 없습니다.
+  
+<dx-alert infotype="notice">`android:hardwareAccelerated="false"`를 설정하지 마십시오. 하드웨어 가속을 비활성화하면 상대방의 비디오 스트리밍을 렌더링할 수 없습니다.</dx-alert>
 2. Android 오디오 및 비디오 권한은 수동으로 적용해야 합니다.
 ```java
 if (Platform.OS === 'android') {
