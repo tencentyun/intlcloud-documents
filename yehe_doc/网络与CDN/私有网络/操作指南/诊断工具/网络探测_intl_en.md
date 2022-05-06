@@ -49,7 +49,7 @@ Under the hybrid cloud network architecture, you create a network probe in the s
 <div class="d-mod-title d-explain-title">
 <i class="d-icon-explain"></i>Note:
 </div>
-<p><b>Do Not Specify</b> is now only available to beta users. To enable it, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</p></li><li>If you specify the next hop, select the next hop type and instances. And then, the system automatically adds the corresponding 32-bit route to the subnet-associated route table. Currently, the supported next hop type includes NAT Gateway, peering connections, VPN gateway, direct connect gateway, CVM, and CCN.<p>
+<p><b>Do Not Specify</b> is now only available to beta users. To enable it, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</p></li><li>If you specify the next hop, select the next hop type and instances. And then, the system automatically adds the corresponding 32-bit route to the subnet-associated route table. Currently, the supported next hop type includes NAT Gateway, peering connections, VPN gateway, direct connect gateway,CVM(Public Gateway) , CVM, and CCN.<p>
 <dx-alert infotype="explain" title="">
 If you specify the CCN as the next hop and the probe destination IPs belong to two VPCs in the CCN, the IP range with the longest mask will be matched and take effect.
 </dx-alert>
