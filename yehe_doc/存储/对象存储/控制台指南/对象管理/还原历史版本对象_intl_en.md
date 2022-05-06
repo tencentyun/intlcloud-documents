@@ -11,10 +11,12 @@ This document describes how to restore a historical version as the latest versio
 ## Instructions
 
 The following describes the scenarios and rules for object restoration.
+
 - Scenarios:
- - Versioning-enabled buckets support object restoration.
- - If versioning is enabled and then disabled for a bucket, object restoration is not supported.
- - Buckets that have never had versioning enabled do not support object restoration.
+	 - Versioning-enabled buckets support object restoration.。
+	 - If versioning is enabled and then disabled for a bucket, object restoration is not supported.
+	 - Buckets that have never had versioning enabled do not support object restoration.
+
 - Restoration rules:
 	- Historical versions: can be restored
 	- Latest versions: cannot be restored
