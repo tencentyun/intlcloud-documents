@@ -9,7 +9,7 @@ The console supports query by offset and time, which are used in different scena
 
 >! 
 >- The console does not list all the messages after the specified time or offset. You can query at most 20 messages at a time.
->- Refrain from frequently querying as message querying also consumes bandwidth.
+>- Refrain from frequently querying as message query also consumes bandwidth.
 
 ## Directions
 
