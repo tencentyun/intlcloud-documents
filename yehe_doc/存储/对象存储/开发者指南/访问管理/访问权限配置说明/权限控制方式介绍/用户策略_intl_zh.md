@@ -65,7 +65,7 @@
 <span id="自定义策略"></span>
 ### 配置步骤
 
-CAM 提供了 [预设策略和自定义策略](https://intl.cloud.tencent.com/document/product/598/10601)。预设策略为 CAM 提供的系统预设策略，COS 相关策略见 [预设策略](#预设策略)；自定义策略支持用户自定义资源、操作等元素，更加灵活。下面说明如何新建一个自定义策略，为子账户授权：
+CAM 提供了 [预设策略和自定义策略](https://intl.cloud.tencent.com/document/product/598/10601)。预设策略为 CAM 提供的系统预设策略，COS 相关策略见 [预设策略](https://intl.cloud.tencent.com/document/product/436/45236?lang=en&pg=#preset-policy)；自定义策略支持用户自定义资源、操作等元素，更加灵活。下面说明如何新建一个自定义策略，为子账户授权：
 
 1. 登录 [CAM 控制台](https://console.cloud.tencent.com/cam)。
 2. 选择**策略 > 新建自定义策略 > 按策略语法创建**，进入策略创建页面。
@@ -95,7 +95,7 @@ CAM 提供了 [预设策略和自定义策略](https://intl.cloud.tencent.com/do
 CAM 提供了一些预设策略，您可以在 [CAM 控制台](https://console.cloud.tencent.com/cam) 的**策略 > 预设策略**中查看，搜索“COS”筛选。
 
 
-单击策略名，进入**策略语法 > JSON** 查看具体的策略内容。预设策略的资源（`resource`）被设置为 COS 所有资源(`"*"`)，且不支持修改。若您需要对部分 COS 存储桶、对象授权，可以复制 JSON 的预设策略，创建 [自定义策略](#自定义策略)。
+单击策略名，进入**策略语法 > JSON** 查看具体的策略内容。预设策略的资源（`resource`）被设置为 COS 所有资源(`"*"`)，且不支持修改。若您需要对部分 COS 存储桶、对象授权，可以复制 JSON 的预设策略，创建 [自定义策略](https://intl.cloud.tencent.com/document/product/436/45236?lang=en&pg=#directions)。
 
 
 
