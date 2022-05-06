@@ -90,7 +90,7 @@ The **adjusted prices** are listed in the table below.
 | Nepal                             | NP            | 977                                     | 0.1050                         |
 | Oman                              | OM            | 968                                     | 0.0712                         |
 | Peru                              | PE            | 51                                      | 0.0749                         |
-| Philippines                       | PH            | 63                                      | 0.2761                         |
+| Philippines                       | PH            | 63                                      | 0.0403                        |
 | Pakistan                          | PK            | 92                                      | 0.1093                         |
 | Saint Pierre and Miquelon         | PM            | 508                                     | 0.1136                         |
 | Romania                           | RO            | 40                                      | 0.0776                         |
