@@ -24,7 +24,7 @@ MySQL Backup is a [SCF](https://intl.cloud.tencent.com/document/product/583)-bas
  - **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Associated Bucket**: a bucket to store the MySQL backup files
  - **Trigger Period**: triggers the backup operation for the MySQL Backup function. Every day, every week, and custom periods are supported.
- - **Cron Expression**: If you use a custom period, you can use Cron to specify the trigger period rule. Cron follows China Standard Time (UTC+8:00). For detailed configuration policies, please see [Cron Documentation](https://intl.cloud.tencent.com/document/product/583/9708).
+ - **Cron Expression**: If you use a custom period, you can use Cron to specify the trigger period rule. Cron follows Local Standard Time. For detailed configuration policies, please see [Cron Documentation](https://intl.cloud.tencent.com/document/product/583/9708).
  - **Database Instance**: MySQL instance in the region where the current bucket resides
  - **Delivery Path**: delivery path prefix of the backup files. If not specified, backup files will be stored in the root directory of the bucket.
  - **SCF Authorization**: SCF needs to be authorized so that it can read the MySQL instances as well as their backup files, and store the backup files to the specified bucket.
@@ -48,7 +48,7 @@ You can perform the following operations on the created function:
 ![](https://main.qcloudimg.com/raw/231eae263d09ea962c9901789505a61d.png)
  - **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Trigger Period**: triggers the backup operation for the MySQL Backup function. Every day, every week, and custom periods are supported.
- - **Cron Expression**: If you use a custom period, you can use Cron to specify the trigger period rule. Cron follows China Standard Time (UTC+8:00). For detailed configuration policies, please see [Cron Documentation](https://intl.cloud.tencent.com/document/product/583/9708).
+ - **Cron Expression**: If you use a custom period, you can use Cron to specify the trigger period rule. Cron follows Local Standard Time. For detailed configuration policies, please see [Cron Documentation](https://intl.cloud.tencent.com/document/product/583/9708).
  - **Database Instance**: MySQL instance in the region where the current bucket resides
  - **Delivery Path**: delivery path prefix of the backup files. If not specified, backup files will be stored in the root directory of the bucket.
  - **SCF Authorization**: SCF needs to be authorized so that it can read the MySQL instances as well as their backup files, and store the backup files to the specified bucket.
