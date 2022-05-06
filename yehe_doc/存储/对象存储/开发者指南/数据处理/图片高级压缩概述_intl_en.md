@@ -1,4 +1,4 @@
-# Overview
+## Overview
 
 Image Advanced Compression is a COS feature based on Cloud Infinite. It allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.
 
