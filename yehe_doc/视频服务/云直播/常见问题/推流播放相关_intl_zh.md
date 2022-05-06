@@ -123,7 +123,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 [](id:que18)
 ###  推流过程中显示“RTMP close”并推流失败，但日志提醒推流成功是什么情况？ 
-可能是您当前推流地址有问题，建议使用 [小程序 Demo](https://intl.cloud.tencent.com/document/product/1071/38147) 测试推流地址是否能正常推流。更多问题排查方法请参见 [推流失败问题排查](https://intl.cloud.tencent.com/document/product/267/33383) 。
+可能是您当前推流地址有问题，建议使用 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147) 测试推流地址是否能正常推流。更多问题排查方法请参见 [推流失败问题排查](https://intl.cloud.tencent.com/document/product/267/33383) 。
 
 [](id:que19)
 ###  修改帧率后无法正常推流，需要本地多次重启服务，并经常断开，如何处理？ 
