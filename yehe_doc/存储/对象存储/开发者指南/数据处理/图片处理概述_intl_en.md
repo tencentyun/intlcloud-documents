@@ -16,51 +16,51 @@ Tencent Cloud COS has integrated the professional All-in-One media solutions of 
    </tr>
    <tr>
       <td rowspan=12>Image Processing-Basic Services</td>
-      <td>Scaling</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">Scaling</a></td>
       <td>Proportional scaling, scaling image to target width and height, and more</td>
    </tr>
    <tr>
-      <td>Cropping</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36367">Cropping</a></td>
       <td>Cut (regular cropping), crop (scaling and cropping), iradius (inscribed circle cropping), and scrop (smart cropping)</td>
    </tr>
    <tr>
-      <td>Rotation</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36368">Rotation</a></td>
       <td>Adaptive rotation and common rotation</td>
    </tr>
    <tr>
-      <td>Format conversion</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36369">Format conversion</a></td>
       <td>Format conversion, GIF optimization, and progressive display</td>
    </tr>
    <tr>
-      <td>Changing quality</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36370">Changing quality</a></td>
       <td>Changes the quality of images in JPG and WEBP formats</td>
    </tr>
    <tr>
-      <td>Gaussian blur</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36371">Gaussian blur</a></td>
       <td>Blurs images</td>
    </tr>
    <tr>
-      <td>Sharpening</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36372">Sharpening</a></td>
       <td>Sharpens images</td>
    </tr>
    <tr>
       <td>Watermarking</td>
-      <td>Adds image or text watermarks</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36373">Adds image watermarks</a>,<a href="https://intl.cloud.tencent.com/document/product/436/36374">Adds text watermarks</a></td>
    </tr>
    <tr>
       <td>Obtaining image information</td>
-      <td>Gets the basic information, EXIF data, and average hue of an image</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36375">Gets the basic information</a>,<a href="https://intl.cloud.tencent.com/document/product/436/36376">EXIF data </a>,<a href="https://intl.cloud.tencent.com/document/product/436/36377">average hue of an image</a></td>
    </tr>
    <tr>
-      <td>Removing metadata</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36378">Removing metadata</a></td>
       <td>Including EXIF data</td>
    </tr>
    <tr>
-      <td>Quick thumbnail template</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36379">Quick thumbnail template</a></td>
       <td>Performs quick format conversion, scaling, and cropping to generate thumbnails</td>
    </tr>
    <tr>
-      <td>Setting styles</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443#.E6.A0.B7.E5.BC.8F.E7.AE.A1.E7.90.86">Setting styles</a></td>
       <td>Sets image styles to easily manage images for different purposes</td>
    </tr>
 </table>
