@@ -12,4 +12,5 @@ This document describes how to sort/filter objects in the file list of the bucke
 3. Click the name of the desired bucket to view its file list.
 4. Click ![](https://main.qcloudimg.com/raw/9cb8c1e8fb00fb0dc31fd7792fd58f04.png), ![](https://main.qcloudimg.com/raw/c58ddef0a2ded480638fb7c63b92b189.png), or ![](https://main.qcloudimg.com/raw/43e6115ed99073c15fcbd7e699aeeb39.png), ![](https://main.qcloudimg.com/raw/495dd77739700bb4ea138f1190bbbfa1.png) to sort/filter objects as needed.
 >? Currently, sorting by file name/file size/modification time, and filtering by storage class are supported. 
->![](https://main.qcloudimg.com/raw/a9df9035b3dc4161de409bc7c1ba29b7.png)
+
+![](https://main.qcloudimg.com/raw/a9df9035b3dc4161de409bc7c1ba29b7.png)
