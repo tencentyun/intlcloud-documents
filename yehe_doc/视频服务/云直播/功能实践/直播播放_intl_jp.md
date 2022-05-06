@@ -1,5 +1,5 @@
 ## 準備作業
-1. [Tencent CSSサービス](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)をアクティブ化し、 [実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了します。実名認証を実施していないユーザーは中国本土のCSSインスタンスを購入できません。
+1. [Tencent CSSサービス](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)をアクティブ化し。
 2. [CSSコンソール](https://console.cloud.tencent.com/live/livestat)に アクセスし、プッシュアドレスを取得して、CSSプッシュを実現します。具体的な操作については、 [CSSプッシュ](https://intl.cloud.tencent.com/document/product/267/31558)をご参照ください 。
 3. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)を選択して、【ドメイン名の追加】を選択し、ICP登録済みのドメイン名を入力して、【再生ドメイン名】タイプを選択し、【保存】をクリックしてください。
 >!
