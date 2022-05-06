@@ -21,6 +21,7 @@
  - _dmarc 记录：
 记录值中填入 `v=DMARC1; p=none;rua=mailto:xxx@163.com;ruf=mailto:xxx@163.com;`
 ![](https://qcloudimg.tencent-cloud.cn/raw/64dc22f5ec2da2840115bb869a1ba95e.png)
+ <dx-alert infotype="explain"> `xxx@163.com`为示例，此处应填入您自己的发信地址。</dx-alert>
 6. 再次回到 [发信域名](https://console.cloud.tencent.com/ses/domain) 配置详情页，单击**验证**即可。
 ![](https://qcloudimg.tencent-cloud.cn/raw/b65213aa84bd379a250084e72c8c3a34.png)
 :::
