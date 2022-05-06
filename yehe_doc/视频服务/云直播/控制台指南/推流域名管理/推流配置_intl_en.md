@@ -71,7 +71,7 @@ We offer sample code in PHP and Java for generating push URLs. To view the code,
     *        key: Authentication key
     *        time: Expiration time (accurate to the second). Example: 2016-11-12 12:00:00
     * @return String url
-*/
+
 function getPushUrl($domain, $streamName, $key = null, $time = null){
    if($key && $time){
       $txTime = strtoupper(base_convert(strtotime($time),10,16));
