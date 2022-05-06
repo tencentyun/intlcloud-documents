@@ -33,6 +33,8 @@
 3. `GenerateTestUserSig.java`ファイル内の関連パラメータを設定します。
 	<ul><li/>SDKAPPID：デフォルトはPLACEHOLDER、実際のSDKAppIDを設定してください。
 	<li/>SECRETKEY：デフォルトはPLACEHOLDER、実際のキー情報を設定してください。</ul>
+	<img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
+	
 4. 貼り付け完了後、【貼り付けました。次へ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソールの概要ページに戻る】をクリックすればOKです。
 
