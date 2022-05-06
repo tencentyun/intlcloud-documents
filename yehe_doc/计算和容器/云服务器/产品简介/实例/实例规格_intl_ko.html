@@ -44,6 +44,7 @@
 <td>
 <ul style="margin-bottom: 0;">
 	<li><a href="#M5">메모리형 M6</a> </li>
+	<li><a href="#M6ce">보안 향상 메모리형 M6ce</a> </li>
 	<li><a href="#M5">메모리형 M5</a> </li>
 	<li><a href="#MA2">메모리형 MA2</a> </li>
 	<li><a href="#M4">메모리형 M4</a> </li>
@@ -10798,6 +10799,344 @@
 </tbody>
 </table>
 
+<table class="tableblock frame-none grid-all spread custom-style">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="sect2">
+<h3 id="S6 메모리형 인스턴스 패밀리">보안 향상 메모리형 M6ce</h3>
+<div class="paragraph">
+		<p>보안 향상 메모리형 M6ce 인스턴스는 시리즈 3의 메모리형 인스턴스로, 새롭게 최적화된 가상화 플랫폼에 기반합니다. 메모리 내의 대형 데이터 그룹을 처리하는 워크로드에 빠르고 안정적인 딜리버리 성능을 제공하므로, 높은 메모리의 컴퓨팅 애플리케이션에 가장 적합한 인스턴스입니다.
+</p>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>설명: </p><p>해당 인스턴스는 현재 얼로우리스트 오픈 상태입니다. 프리세일즈 매니저에게 문의하여 인스턴스 구매 권한을 활성화하십시오.</p>
+</blockquote>
+<div class="sect3">
+<h4 id="_인스턴스 특징_8">인스턴스 특징</h4>
+<div class="ulist">
+<ul>
+<li><p>Tencent Cloud가 자체 개발한 차세대 StarLake 듀얼 채널 서버, 3세대 Intel® Xeon® 확장 가능 프로세서 탑재</p></li>
+<li><p>Intel® Xeon® Ice Lake 프로세서, 클럭 속도 2.7GHz, turbo 3.3GHz</p></li>
+<li><p>Intel® SGX 암호화 컴퓨팅 지원, 단일 인스턴스에는 최고 428G 암호화 메모리 포함, 키 데이터 및 코드의 기밀성과 보안성 보장</p></li>
+<li><p>프로세서 대 메모리의 비율은 1:8, 그 중 암호화된 메모리 약 50%</p></li>
+<li><p>같은 크기의 메모리 구매 시 인스턴스 가격이 가장 저렴</p></li>
+<li><p>인스턴스 네트워크 성능은 사양에 따라 다르며, 사양이 높을수록 네트워크 전송 성능이 뛰어나고 내부 네트워크 대역폭 상한도 높음</p></li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_사용 시나리오_8">사용 시나리오</h4>
+<div class="paragraph">
+<p>다음의 상황에 매우 적합합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li><p>데이터 공유 및 컴퓨팅, 다양한 사용자 또는 벤더 간에 공유되는 기밀 데이터 보호</p></li>
+<li><p>블록체인 애플리케이션. 트랜잭션, 키 스토리지 등의 프라이버시 및 보안성 향상</p></li>
+<li><p>금융, 정부 기관, 의료 등 높은 보안 신뢰를 요구하는 시나리오</p></li>
+<li><p>기밀 컴퓨팅 시나리오, 데이터 암호화 애플리케이션</p></li>    
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_인스턴스 요구 사항_8">인스턴스 요구 사항</h4>
+<div class="ulist">
+<ul>
+<li><p>M6ce 인스턴스는 종량제 인스턴스로 사용할 수 있습니다.</p></li>
+<li><p>VPC에서만 M6ce 인스턴스를 실행할 수 있습니다.</p></li>
+<li><p>M6ce 인스턴스 구성을 구매할 수 있습니다. 다음의 인스턴스 사양을 참고하십시오. </p></li>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>설명: </p><p>하드웨어 바인딩 키 암호화 데이터를 Intel SGX Enclave(예: SGX Sealing)에 사용한 경우 다음과 같은 시나리오로 인해 호스트가 변경된 후에는 해당 데이터를 복호화할 수 없습니다. 응용 레이어에 데이터 백업을 완료하여 애플리케이션의 신뢰성을 보장할 것을 권장합니다.
+호스트 변경을 유발할 수 있는 시나리오: 호스트 장애, 인스턴스 사양 조정, 종료 시 미과금 기능 사용, 인스턴스 배치 그룹 수정 등 </p>
+</blockquote>
+<p>보안 향상 메모리 M6ce 인스턴스 사용 방법에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/45510">SGX 기밀 컴퓨팅 환경 구축 을 참고하십시오.</a></p>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__a_href_instancetype_맨 위로 돌아가기_a_8">&nbsp; &nbsp;<a href="#INSTANCETYPE">맨 위로 돌아가기</a></h4>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="doc-table-wrap"><table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 15%;">
+<col style="width: 5%;">   
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>사양</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>vCPU</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>메모리(GB)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>기밀 메모리 포함(GB)</p>
+</div></div></td>    
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>네트워크 송수신 패킷(pps)(출력+입력)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>연결 수</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>큐 수</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>내부 네트워크 대역폭 성능(Gbps)(출력+입력)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>클럭 속도</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>비고</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.MEDIUM16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>30만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>25만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.LARGE32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>60만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>50만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.2XLARGE64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>120만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>100만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>7</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.4XLARGE128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>250만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>200만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>13</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.8XLARGE256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>500만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>400만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>26</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.31MEDIUM428</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>62</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>428</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>214</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1000만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>800만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>48</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>50</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>    
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M6ce.31XLARGE856</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>124</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>856</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>428</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1900만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>800만</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>48</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>100</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.7/3.3GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+	
+	
+	
 <table class="tableblock frame-none grid-all spread custom-style">
 <colgroup>
 <col style="width: 100%;">
