@@ -1,8 +1,8 @@
 COS supports object upload and download using pre-signed URLs, which are signed links with signatures embedded. You can control the effective time of a pre-signed URL based on the validity period of the corresponding signature.
 
-You can use pre-signed URLs to download objects, obtain temporary URLs for sharing files and folders temporarily, or set a long signature validity period to obtain long-term URLs for sharing files for a long time. For more information, see Sharing Files.
+You can use pre-signed URLs to download objects, obtain temporary URLs for sharing files and folders temporarily, or set a long signature validity period to obtain long-term URLs for sharing files for a long time. For more information, see [Sharing Files](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#sharing-a-folder).
 
-You can also use pre-signed URLs to upload objects. For more information, see Uploading Files.
+You can also use pre-signed URLs to upload objects. For more information, see [Uploading Files](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#uploading-files).
 
 <span id="Sharing Files"></span>
 ## Sharing Files (Downloading Files)
