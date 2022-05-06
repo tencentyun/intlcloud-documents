@@ -19,12 +19,12 @@
 3. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
 ![](https://main.qcloudimg.com/raw/19050dd982abfe75080843148f3abbc4.png)
 4. 在弹出的【开启旁路推流功能】弹框中，**仔细阅读风险说明**；若确认开通，单击【开启旁路推流功能】即可。
-![](https://main.qcloudimg.com/raw/19050dd982abfe75080843148f3abbc4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3968e2410d8f351dfe82a581cde7314.png)
 
 [](id:select)
 ### 选择旁路推流方式
 [旁路推流功能开启](#open_bypass) 后，您可以根据实际业务情况选择旁路的推流方式：
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
 - **指定流旁路**：选择“指定流旁路”后：如果不需要混流转码，请调用客户端 SDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) 接口直接发起旁路推流；如果需要混流转码，请根据 [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 文档指引操作，混流转码后会自动旁路推流。
 - **全局自动旁路**：选择“全局自动旁路”后，TRTC 所有上行音视频流都会被自动旁路推流到云直播系统。
@@ -35,7 +35,7 @@
 如果您需要关闭旁路推流功能，具体操作步骤如下：
 1. 单击【[应用管理](https://console.cloud.tencent.com/trtc/app)】，选择需要修改功能配置的应用，单击目标应用所在行的【功能配置】。
 2. 在【旁路推流配置】中，单击【启用旁路推流】右侧的按钮。
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4f9e38098c65b9332d7b939cf1335fa9.png)
 3. 在弹出的【关闭旁路推流功能】弹框中，**仔细阅读风险说明**；若确认关闭，单击【关闭旁路推流功能】即可。
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
