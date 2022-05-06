@@ -1,17 +1,26 @@
->? 本文为容器镜像服务 TCR 企业版产品动态，容器服务 TKE 产品动态请参见 [产品动态](https://intl.cloud.tencent.com/zh/document/product/1051/38387)。
+>? 本文为容器镜像服务 TCR 企业版产品动态，容器服务 TKE 产品动态请参见 [产品动态](https://intl.cloud.tencent.com/zh/document/product/457/35312)。
+
+## 2021年12月
+
+<table>
+ <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
+<tr><td>镜像加速-按需下载能力全面升级</td><td>镜像加速能力升级，一键开通，部署应用时无需拉取全部镜像数据即可秒级启动容器。</td><td>-</td></tr>
+<tr><td>个人版服务全地域支持镜像自动部署功能</td><td>个人版服务已在全部可用地域支持基于 CODING DevOps 的镜像自动部署功能，可实现代码推送自动触发镜像构建，并自动推送至个人版镜像仓库，更新指定集群内的容器应用。</td><td>-</td></tr>
+</table>
 
 ## 2021年11月
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
-<tr><td>个人版服务控制台入口切换</td><td>自2021年11月01日起，个人版服务（原容器服务 > 镜像仓库）控制台入口灰度切换至 TCR 控制台内，现有功能在新旧控制台的对应关系请参考相关文档。</td><td>关于个人版及企业版控制台入口合并公告</a></td></tr>
+<tr><td>个人版服务全地域支持镜像构建功能</td><td>个人版服务已在全部可用地域内支持基于 CODING DevOps 的镜像构建功能，可在统一后的产品控制台内选择指定的<b>镜像仓库 > 镜像构建</b>进行配置。</td><td>-</td></tr>
+<tr><td>个人版服务控制台入口切换</td><td>自2021年11月01日起，个人版服务（原容器服务 > 镜像仓库）控制台入口灰度切换至 TCR 控制台内，现有功能在新旧控制台的对应关系请参考相关文档。</td><td>-</td></tr>
 </table>
 
 ## 2021年10月
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
-<tr><td>实例复制支持查看复制日志</td><td>实例复制功能现已支持查看复制日志，并支持 API 接口查询。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/39845">配置实例复制</a></td></tr>
+<tr><td>实例复制支持查看复制日志</td><td>实例复制功能现已支持查看复制日志，并支持 API 接口查询。</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/1051/39845">配置实例复制</a></td></tr>
  <tr><td>控制台支持统一管理个人版镜像仓库</td><td>产品控制台已支持统一管理个人版镜像仓库，可查看个人版实例，管理命名空间，镜像仓库等。</td><td>-</td></tr>
 </table>
 
@@ -19,7 +28,7 @@
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
-<tr><td>支持跨主账号实例同步</td><td>实例同步功能支持跨主账号的目标实例，实现跨主账号的实例数据同步。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35494">配置实例同步</a></td></tr>
+<tr><td>支持跨主账号实例同步</td><td>实例同步功能支持跨主账号的目标实例，实现跨主账号的实例数据同步。</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/1051/35494">配置实例同步</a></td></tr>
  <tr><td>支持镜像版本不可变</td><td>支持对托管在 TCR 的镜像开启版本不可变功能，可确保相同版本的镜像仅被成功推送一次。</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/1051/41707">配置镜像版本不可变</a></td></tr>
 </table>
 
@@ -44,7 +53,7 @@
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
-<tr><td>自定义域名</td><td>TCR 支持配置使用自定义域名，为企业版实例添加自定义域名和 SSL 证书，实现通过 HTTPS 协议访问实例。</td><td>配置自定义域名</a></td></tr>
+<tr><td>自定义域名</td><td>TCR 支持配置使用自定义域名，为企业版实例添加自定义域名和 SSL 证书，实现通过 HTTPS 协议访问实例。</td><td>-</td></tr>
 </table>
 
 
@@ -52,12 +61,11 @@
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
- <tr><td>支持单实例全球多地域复制</td><td>高级版实例支持在多个地域创建复制实例，访问域名及访问凭证统一，底层镜像数据实时高速同步。单次上传，即可在多个地域就近内网高速下载。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/39845">配置实例复制</a></td></tr>
+ <tr><td>支持单实例全球多地域复制</td><td>高级版实例支持在多个地域创建复制实例，访问域名及访问凭证统一，底层镜像数据实时高速同步。单次上传，即可在多个地域就近内网高速下载。</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/1051/39845">配置实例复制</a></td></tr>
  <tr><td>兼容支持云原生应用制品及多架构镜像</td><td>企业版实例支持兼容云原生应用制品（OCI），镜像仓库可直接托管 Helm Chart、CNAB 等云原生应用制品。支持托管多架构容器镜像，如 amd64、arm 等，满足物联网及边缘计算使用场景。</td><td>-</td></tr>
- <tr><td>支持按需加载容器镜像</td><td>高级版实例支持开启按需加载容器镜像特性，集群批量拉取容器镜像时可按需加载，提高容器启动速度。</td><td>按需加载容器镜像</a></td></tr>
+ <tr><td>支持按需加载容器镜像</td><td>高级版实例支持开启按需加载容器镜像特性，集群批量拉取容器镜像时可按需加载，提高容器启动速度。</td><td>-</td></tr>
  <tr><td>内网访问功能优化</td><td>国内实例新建内网访问链路时，支持同时使用 VPCDNS 配置实例访问域名的内网解析，无需使用自建 DNS 或配置 Host。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35492">内网访问控制</a></td></tr>
  <tr><td>开放北京金融、中国台北地域</td><td>开放北京金融、中国台北地域，费用详情可参见计费概述。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35483">计费概述</a></td></tr>
-
 
 </table>
 
@@ -73,8 +81,8 @@
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
- <tr><td>镜像构建功能新增多个代码源支持</td><td>新增支持私有 GitLab，腾讯工蜂代码源支持，并优化了代码源授权流程。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/37252">配置镜像构建</a></td></tr>
- <tr><td>交付流水线部署功能支持镜像过滤</td><td>新增支持使用本地推送镜像触发部署过程，同时支持配置过滤规则，仅部署符合规则的最新推送镜像。</td><td>使用交付流水线实现容器 DevOps</a></td></tr>
+ <tr><td>镜像构建功能新增多个代码源支持</td><td>新增支持私有 GitLab，腾讯工蜂代码源支持，并优化了代码源授权流程。</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/1051/37252">配置镜像构建</a></td></tr>
+ <tr><td>交付流水线部署功能支持镜像过滤</td><td>新增支持使用本地推送镜像触发部署过程，同时支持配置过滤规则，仅部署符合规则的最新推送镜像。</td><td>-</td></tr>
 </table>
 
 ## 2020年09月
@@ -89,16 +97,17 @@
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
  <tr><td>TCR 专属插件上线容器服务 TKE</td><td>TKE 集群一键安装 TCR 企业版专属插件，即可实现内网免密拉取容器镜像及 Helm Chart，显著提升应用部署体验。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/38386">TKE 集群使用 TCR 插件内网免密拉取容器镜像</a></td></tr>
-  <tr><td>新增支持腾讯云标签</td><td>支持为企业版实例绑定腾讯云标签，可利用云标签实现实例资源过滤及权限管理。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/39088">创建企业版实例</a></td></tr>
+  <tr><td>新增支持腾讯云标签</td><td>支持为企业版实例绑定腾讯云标签，可利用云标签实现实例资源过滤及权限管理。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35486">创建企业版实例</a></td></tr>
 </table>
 
 ## 2020年07月
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
- <tr><td>交付流水线上线</td><td>快速配置交付流水线，即可实现代码更新自动触发镜像构建、推送及应用更新，结合容器服务 TKE 快速实现容器 DevOps。</td><td>使用交付流水线实现容器 DevOps</a></td></tr>
+ <tr><td>交付流水线上线</td><td>快速配置交付流水线，即可实现代码更新自动触发镜像构建、推送及应用更新，结合容器服务 TKE 快速实现容器 DevOps。</td><td>-</td></tr>
   <tr><td>Helm Chart 功能更新</td><td>支持控制台上传、下载 Chart 包。TKE 支持使用 TCR 私有 Helm 仓库部署应用。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35493">管理 Helm Chart</a></td></tr>
 </table>
+
 
 ## 2020年06月
 
