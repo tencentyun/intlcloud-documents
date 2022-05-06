@@ -2,7 +2,7 @@
 
 This document describes how to access CKafka to receive/send messages with the SDK for Java on the public network.
 
-If you need to use SDKs for other languages, please see [SDK Documentation](https://intl.cloud.tencent.com/document/product/597/40049).
+If you need to use SDKs for other languages, see [SDK Documentation](https://intl.cloud.tencent.com/document/product/597/40049).
 
 ## Prerequisites
 
@@ -242,6 +242,6 @@ public class KafkaSaslConsumerDemo {
    
    ```
 
-4. On the **Consumer Group** page in the CKafka console, select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
+4. On the **Consumer Group** page in the CKafka console, select the corresponding consumer group, enter the topic name in **Topic Name**, and click **View Consumer Details** to view the consumption details.
 ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
 
