@@ -21,9 +21,9 @@ A bucket tag is a key-value pair (key = value), which is comprised of a tag key 
 
 - Bucket dimension: A resource has at most 10 different bucket tags.
 - Tag dimension:
- - A user has at most 1,000 different keys. 
- - A key has at most 1,000 values.
- - Multiple same keys are not allowed in the same bucket.
+    - A user has at most 1,000 different keys. 
+    - A key has at most 1,000 values.
+    - Multiple same keys are not allowed in the same bucket.
 
 ## Usage
 
