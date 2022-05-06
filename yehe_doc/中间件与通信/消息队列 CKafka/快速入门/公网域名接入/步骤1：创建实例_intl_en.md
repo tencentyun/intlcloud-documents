@@ -22,7 +22,7 @@ This document describes how to create an instance and deploy a VPC via the CKafk
    - Message Retention: select a value between 24 and 2160 hours.
      When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability.
    - VPC: select the created VPC.
-   - Instance name: when purchasing multiple instances, you can batch create instances by its numeric suffix (which is numbered in an ascending order) or its designated pattern string. For specific operations, please see [Naming with Consecutive Numeric Suffixes or Designated Pattern String](https://cloud.tencent.com/document/product/597/59246).
+   - Instance Name: when purchasing multiple instances, you can batch create instances by its numeric suffix (which is numbered in an ascending order) or its designated pattern string. For specific operations, please see [Naming with Consecutive Numeric Suffixes or Designated Pattern String](https://cloud.tencent.com/document/product/597/59246).
 3. Click **Buy Now**. The instance created is displayed in the instance list in about 3-5 minutes.
 
 
