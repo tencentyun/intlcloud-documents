@@ -26,7 +26,7 @@ After you configure a log backup rule for a bucket, SCF will dump the CDN logs t
  - **Function Name**: uniquely identifies a function and cannot be modified after being set. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
  - **Associated Bucket**: a COS bucket that stores the CDN logs
  - **Trigger Period**: a period to trigger the CDN log backup (a timer is used). Every day and custom periods are supported.
- - **Cron Expression**: If you use a custom period, you can use Cron to specify the trigger period rule. Cron follows China Standard Time (UTC+8:00). For detailed configuration policies, please see [Cron Documentation](https://intl.cloud.tencent.com/document/product/583/9708).
+ - **Cron Expression**: If you use a custom period, you can use Cron to specify the trigger period rule. Cron follows Local Standard Time. For detailed configuration policies, please see [Cron Documentation](https://intl.cloud.tencent.com/document/product/583/9708).
  - **CDN Acceleration Domain**: one or multiple domains whose logs are to dump
  - **Destination Path**: a path to deliver the logs. You can deliver logs to the root directory or specify a path prefix.
  - **SCF Authorization**: (required) SCF needs to be authorized to read CDN logs and dump them to the specified bucket.
