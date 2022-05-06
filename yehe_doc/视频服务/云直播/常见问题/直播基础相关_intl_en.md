@@ -76,9 +76,6 @@ If you use a webcam that supports RTMP, you can also set the RTMP publishing add
 ### Can I enable text chat for live streaming?
 Yes. You can use the Instant Messaging (IM) component to realize text chat for live streaming. In addition, IM provides on-screen comments, likes, gifts, repeat notifications and other interactive features. You can also use the room management feature to realize co-anchoring, manage user identities and the permission to mute members, among others.
 
-[](id:Que11)
-### Can I activate CSS with a new account after using the service? 
-Any account can activate CSS as long as it has completed identify verification. 
 [](id:Que13)
 
 ### Is CSS a software?
