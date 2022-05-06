@@ -60,7 +60,7 @@ dep: compiled executable JAR package
 
 ## FAQs and Help
 #### Configuration information
-Please make sure that the entered configuration information is correct, including bucket, region, and API key information. The bucket name is formed by connecting the user-defined string and system-generated `APPID` with a hyphen, such as `examplebucket-1250000000`. Please also make sure that the time on the server is in sync with local time time (if there is a difference of about 1 minute, it is okay, but if the difference is large, please set the server time correctly).
+Please make sure that the entered configuration information is correct, including bucket, region, and API key information. The bucket name is formed by connecting the user-defined string and system-generated `APPID` with a hyphen, such as `examplebucket-1250000000`. Please also make sure that the time on the server is in sync with the local time  (if there is a difference of about 1 minute, it is okay, but if the difference is large, please set the server time correctly).
 
 #### DataNode
 Please make sure that the server where the copy program is located can also access the DataNode. The NameNode uses a public IP address and can be accessed, but the DataNode where the obtained block is located uses a private IP address and cannot be accessed directly; therefore, it is recommended that the copy program be placed in a Hadoop node for execution, so that both the NameNode and DataNode can be accessed.
