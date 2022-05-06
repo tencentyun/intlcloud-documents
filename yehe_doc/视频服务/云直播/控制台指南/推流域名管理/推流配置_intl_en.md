@@ -7,7 +7,7 @@ To protect your live streaming content, push authentication is enabled for push 
 
 ## Prerequisites
 
-You have activated the CSS service and completed identity verification.
+You have activated the CSS service.
 
 ## Authentication Configuration
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **push domain name** or click **Manage** to enter the domain details page. 
