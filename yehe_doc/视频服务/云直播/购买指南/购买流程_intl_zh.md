@@ -5,7 +5,7 @@
 #### 注册腾讯云账号
 若您已经注册腾讯云账号，可忽略此步骤。若您未注册腾讯云账号，可参见文档 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 进行注册。腾讯云支持邮箱注册。
 #### 完成实名认证
-若您已经在腾讯云完成实名认证，可忽略此步骤。若您未完成实名认证，可参见文档 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 完成认证，未进行实名认证的用户无法购买中国境内的云直播实例。完成个人实名或企业实名认证后，均可申请开通云直播服务。
+若您已经在腾讯云完成实名认证，可忽略此步骤。若您未完成实名认证，可参见文档 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 完成认证。完成个人实名或企业实名认证后，均可申请开通云直播服务。
 #### 申请服务
 进入 [云直播控制台](https://console.cloud.tencent.com/live) 页面，并单击【申请开通】，提交成功后就可以直接使用标准直播（原云直播）的功能，标准直播（原云直播）服务默认日结流量计费。
 ![](https://main.qcloudimg.com/raw/dec97eeb50fc64dbcbd2b443fa7b96d4.png)
