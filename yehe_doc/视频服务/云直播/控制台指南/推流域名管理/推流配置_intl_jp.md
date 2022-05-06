@@ -57,7 +57,7 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
 
 Tencent CloudはPHPおよびJavaのプッシュアドレスのサンプルコードを提供します。サンプルコードを直接参照して、プッシュアドレスのアクセスを完了することができます。具体的な操作は次のとおりです。
 
-1. **[ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)**に進みます。
+1. [ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)に進みます。
 2. プッシュドメイン名を選択するか、右側の**管理**をクリックしてドメイン名詳細ページに進みます。
 3. **プッシュ設定**を選択し、一番下までプルダウンして**プッシュアドレスサンプルコード**タグを表示します。
 4. 以下に示すように、タグ切り替えボタンをクリックして、PHP/Javaサンプルコードを表示します。
