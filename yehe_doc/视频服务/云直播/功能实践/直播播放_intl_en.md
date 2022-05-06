@@ -1,5 +1,5 @@
 ## Preparations
-1. Activate the [CSS service](https://console.cloud.tencent.com/live?from=product-banner-use-lvb) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+1. Activate the [CSS service](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
 2. Log in to the [CSS console](https://console.cloud.tencent.com/live/livestat) to get a URL for live push. For detailed directions, please see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
 3. Select [Domain Management](https://console.cloud.tencent.com/live/domainmanage), click **Add Domain**, enter your domain name, select **Playback Domain** as the type, and click **Save**.
 >! If you do not have a domain name, you can register and purchase one through Tencent Cloud **Products** > **Domain Name and Website** > [**Domain Name Registration**](https://buy.cloud.tencent.com/domain?from=console). You can also purchase one at another domain name service provider.
