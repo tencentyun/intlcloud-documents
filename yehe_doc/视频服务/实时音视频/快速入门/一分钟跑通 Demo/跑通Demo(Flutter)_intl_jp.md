@@ -48,7 +48,7 @@
 3. `GenerateTestUserSig.dart` ファイル内の関連パラメータを設定します：
 <ul><li/>SDKAPPID：デフォルト値はPLACEHOLDERです。実際のSDKAppIDに設定してください。
 	<li/>SECRETKEY：デフォルト値はPLACEHOLDERです。実際のキー情報に設定してください。</ul>
-<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png"/>
 
 4. 貼り付け完了後、【貼り付け済み。次へ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソールの概要ページに戻る】をクリックすればOKです。
