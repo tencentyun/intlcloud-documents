@@ -11,7 +11,7 @@ Fees for VOD traffic and storage will be incurred when you enable the time shift
 
 ### Prerequisites
 
--  You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verified your identity. 
+-  You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985). 
 -  You have activated the CSS service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970). 
 
 <span id="step1"></span>
