@@ -32,7 +32,7 @@
 <ul>
  <li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
  <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
- <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
 5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
 
