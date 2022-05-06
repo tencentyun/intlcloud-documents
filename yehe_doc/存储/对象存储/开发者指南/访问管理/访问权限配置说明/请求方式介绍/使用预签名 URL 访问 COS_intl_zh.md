@@ -1,8 +1,8 @@
 对象存储（Cloud Object Storage，COS）支持使用预签名 URL 进行对象的上传、下载，原理是将签名嵌入 URL 生成签名链接。您可以通过签名的有效期，控制预签名 URL 的生效时间。
 
-您可以使用预签名 URL 进行下载，获取临时 URL 用于临时分享文件、文件夹，也可以通过设置一个很长的签名有效期，获得长期有效的 URL 用于长期分享文件；详情可参考 [文件分享](#文件分享)。
+您可以使用预签名 URL 进行下载，获取临时 URL 用于临时分享文件、文件夹，也可以通过设置一个很长的签名有效期，获得长期有效的 URL 用于长期分享文件；详情可参考 [文件分享](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#sharing-a-folder)。
 
-您也可以使用预签名 URL 进行上传，详情可参考使用 [上传文件](#上传文件)。
+您也可以使用预签名 URL 进行上传，详情可参考使用 [上传文件](https://intl.cloud.tencent.com/document/product/436/45243?!editLang=zh&!preview#uploading-files)。
 
 <span id="文件分享"></span>
 ## 文件分享（下载文件）
