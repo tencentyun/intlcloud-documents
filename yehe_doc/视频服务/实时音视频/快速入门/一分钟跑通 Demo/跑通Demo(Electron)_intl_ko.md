@@ -124,7 +124,7 @@ $ npm run start # 처음 실행 시 잠시 기다리면 창에 UI가 나타납�
 ​```![mac에서 프로젝트 실행](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
 :::
 </dx-tabs>
-    
+
 ### 프로젝트 주요 명령어
 
 | 명령어 | 설명 |
@@ -148,7 +148,6 @@ TRTC SDK 6.6 버전(2019년 08월)부터 새로운 서명 알고리즘 HMAC-SHA2
 
 2대의 디바이스가 Demo를 실행할 경우 각자 다른 UserID를 사용해야 합니다. TRTC에서는 동일 UserID(SDKAppID가 다를 경우 제외)를 2개의 디바이스에서 동시에 사용할 수 없습니다.
 
-![](https://main.qcloudimg.com/raw/9a03335e435de0f12e2a26882f53db02.png)
 
 ### 3. 방화벽에 어떤 제한이 있습니까?
 
