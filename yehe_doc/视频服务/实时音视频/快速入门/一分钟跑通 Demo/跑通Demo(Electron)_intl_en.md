@@ -124,7 +124,7 @@ $ npm run start # On first run, it may take a while to show the UI.
 ​```![Running the project in macOS](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
 :::
 </dx-tabs>
-    
+
 ### Main project commands
 
 | Command | Description |
@@ -147,8 +147,6 @@ TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HM
 ### 2. The demo is running on two devices, but why can't they display the images of each other?
 
 Make sure that the two devices use different `UserIDs`. With TRTC, you cannot use the same `UserID` on two devices simultaneously unless the `SDKAppIDs` are different.
-
-![](https://main.qcloudimg.com/raw/9a03335e435de0f12e2a26882f53db02.png)
 
 ### 3. What firewall restrictions does the SDK face?
 
