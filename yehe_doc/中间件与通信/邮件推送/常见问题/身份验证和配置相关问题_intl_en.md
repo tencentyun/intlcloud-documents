@@ -21,6 +21,7 @@ SES supports all industry-standard authentication mechanisms, including DomainKe
  - _dmarc record:
 Enter `v=DMARC1; p=none;rua=mailto:xxx@163.com;ruf=mailto:xxx@163.com;` as the record value.
 ![](https://qcloudimg.tencent-cloud.cn/raw/64dc22f5ec2da2840115bb869a1ba95e.png)
+ <dx-alert infotype="explain"> `xxx@163.com` is an example only. Here you need to replace the example with your sender address.</dx-alert>
 6. Go back to the [Sender Domain](https://console.cloud.tencent.com/ses/domain) configuration details page and click **Submit**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b65213aa84bd379a250084e72c8c3a34.png)
 :::
