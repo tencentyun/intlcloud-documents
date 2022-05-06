@@ -71,7 +71,7 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
     *        key 安全密钥
     *        time 过期时间 sample 2016-11-12 12:00:00。过期时间戳，单位是s
     * @return String url
-*/
+
 function getPushUrl($domain, $streamName, $key = null, $time = null){
    if($key && $time){
       $txTime = strtoupper(base_convert(strtotime($time),10,16));
