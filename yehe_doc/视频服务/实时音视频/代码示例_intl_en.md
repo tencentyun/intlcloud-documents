@@ -170,7 +170,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Interactive Live Streaming</h3>
                 <p style="color:#586376;" ;>Low-code solution to implement interactive video streaming applications including showroom, live shopping, and sports event streaming</p>
-                <a href="https://github.com/tencentyun/TUILiveRoom">GitHub source code</a>
+                <a href="https://github.com/tencentyun/TUILiveRoom">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">Integration guide</a>
             </div>
         </div>
@@ -183,8 +183,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Chat Salon</h3>
                 <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly implement chat salon applications</p>
-                <a href="https://github.com/tencentyun/TUIChatSalon">GitHub source code</a>
-                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/39803">Integration guide</a>
+                <a href="https://github.com/tencentyun/TUIChatSalon">GitHub</a>
             </div>
         </div>
     </div>
@@ -196,7 +195,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Audio Chat Room</h3>
                 <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly implement audio chat room applications</p>
-                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub source code</a>
+                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">Integration guide</a>
             </div>
         </div>
@@ -209,7 +208,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Online Karaoke</h3>
                 <p style="color:#586376;" ;>Low-code solution with component-based UI design to help you quickly implement online karaoke applications</p>
-                <a href="https://github.com/tencentyun/TUIKaraoke">GitHub source code</a>
+                <a href="https://github.com/tencentyun/TUIKaraoke">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/41940">Integration guide</a>
             </div>
         </div>
@@ -227,7 +226,7 @@
                 <h3 style="color:191919;">Interactive Classroom</h3>
                 <p style="color:#586376" ;>Cross-platform Electron component to help you quickly implement interactive classroom applications</p>
                 <a
-                    href="https://github.com/TencentCloud/trtc-education-electron">GitHub source code</a>
+                    href="https://github.com/TencentCloud/trtc-education-electron">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37278">Integration guide</a>
             </div>
         </div>
@@ -244,7 +243,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Group Audio/Video Room</h3>
                 <p style="color:#586376" ;>Low-code solution with component-based UI design to help you quickly implement audio/video room applications</p>
-                <a href="https://github.com/tencentyun/TUIMeeting">GitHub source code</a>
+                <a href="https://github.com/tencentyun/TUIMeeting">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">Integration guide</a>
             </div>
         </div>
@@ -257,7 +256,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Audio Call</h3>
                 <p style="color:#586376" ;>Component-based UI design to help you quickly implement WeChat-like audio call applications</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub source code</a>
+                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36067">Integration guide</a>
             </div>
         </div>
@@ -270,7 +269,7 @@
             <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
                 <h3 style="color:191919;">Video Call</h3>
                 <p style="color:#586376" ;>Component-based UI design to help you quickly implement WeChat-like video call applications</p>
-                <a href="https://github.com/tencentyun/TUICalling">GitHub source code</a>
+                <a href="https://github.com/tencentyun/TUICalling">GitHub</a>
                 <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">Integration guide</a>
             </div>
         </div>
