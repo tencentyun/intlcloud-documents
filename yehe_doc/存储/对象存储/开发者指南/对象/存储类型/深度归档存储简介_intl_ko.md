@@ -9,10 +9,10 @@ DEEP ARCHIVE는 99.999999999%(11개 중 9)의 데이터 지속성 및 99.95%의 
 ## 사용 방법
 
 1. 콘솔을 사용한 업로드
- 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인합니다.
- 2. **버킷 리스트**를 클릭하여 지원되는 리전(예시: 베이징 리전)에 버킷을 생성합니다.
- 3. 생성이 완료되면 **파일 리스트** 인터페이스에서 **파일 업로드**를 클릭합니다.
- 4. 업로드할 로컬 파일을 선택하고, 객체 속성 설정에서 스토리지 유형을 **DEEP ARCHIVE**로 선택합니다. 자세한 내용은 [객체 업로드](https://intl.cloud.tencent.com/document/product/436/13321)를 참고하십시오.
+ a. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인합니다.
+ b. **버킷 리스트**를 클릭하여 지원되는 리전(예시: 베이징 리전)에 버킷을 생성합니다.
+ c. 생성이 완료되면 **파일 리스트** 인터페이스에서 **파일 업로드**를 클릭합니다.
+ d. 업로드할 로컬 파일을 선택하고, 객체 속성 설정에서 스토리지 유형을 **DEEP ARCHIVE**로 선택합니다. 자세한 내용은 [객체 업로드](https://intl.cloud.tencent.com/document/product/436/13321)를 참고하십시오.
 ![](https://main.qcloudimg.com/raw/fd3d5c061007c71dfd382b75a9982fee.png)
 2. API를 사용한 업로드
 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749), [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) 또는 [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) 인터페이스에서 `x-cos-storage-class`를 `DEEP_ARCHIVE`로 설정하여 다이렉트 DEEP ARCHIVE를 구현합니다.
