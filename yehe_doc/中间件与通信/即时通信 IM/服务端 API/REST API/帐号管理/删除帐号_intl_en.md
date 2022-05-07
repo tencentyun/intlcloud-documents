@@ -11,7 +11,7 @@
 ### Sample request URL
 
 ```
-https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/im_open_login_svc/account_delete?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### Request parameters
