@@ -2,7 +2,7 @@ This document shows you how to get started with LEB. Before using LEB, please re
 
 [](id:step0)
 ## Preparations
-1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629). Unverified users cannot purchase CSS instances in the Chinese mainland.
+1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb).
 2. Go to the [CSS console](https://console.cloud.tencent.com/live?from=product-banner-use-lvb), agree to **Tencent Cloud Service Agreement**, and click **Apply for Activation** to activate CSS.
 >?  
 >-  After activating CSS, you will get 20 GB of playback traffic for the Chinese mainland for free.
