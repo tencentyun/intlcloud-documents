@@ -81,7 +81,7 @@ This document describes how to use the migration tool provided by CKafka to migr
 4. Set the `checkFlag` parameter in `ckafka-migrate.py` to 1 and run `python ckafka-migrate.py` to execute the script to start migrating the topics.
    ![](https://main.qcloudimg.com/raw/eed68b25e287092fc370b7b91b09a35c.png)
 
-5. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka), view the task list on the **Cloud Migration** page, and wait for the topics to be completely migrated.
+5. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka), view the task list on the **Migration to Cloud** page, and wait for the topics to be completely migrated.
 	The topic list is as shown below:
 	<img src="https://main.qcloudimg.com/raw/1c9a76e32926abf8cb296f9622b67a23.png" width="600px">
 	
