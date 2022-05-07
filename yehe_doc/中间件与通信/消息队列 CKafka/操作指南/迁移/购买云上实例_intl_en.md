@@ -11,11 +11,11 @@ This document describes how to use the **Specification Calculator** in the CKafk
    | Parameter         | Description                                                         |
    | ------------ | ------------------------------------------------------------ |
    | Kafka Version | Select the version of your self-built Kafka cluster. For more information on CKafka version selection, please see [Suggestions for CKafka Version Selection](https://intl.cloud.tencent.com/document/product/597/40964). |
-   | Business Peak Bandwidth | Business peak bandwidth = max (production peak bandwidth * number of replicas, consumption peak bandwidth). |
+   | Peak Business Bandwidth | Peak business bandwidth = max (production peak bandwidth * number of replicas, consumption peak bandwidth). |
    | Disk | Estimate according to the current peak value of actual disk usage. |
-   | Partitions | Total number of partitions of the topic to be migrated. The number of replicas should be considered. For example, if one topic replica has 5 partitions, then two replicas have 10 partitions in total. CKafka does not support single-replica topics. |
-   | Multi-AZ Deployment | Select whether to deploy in multiple AZs according to your business needs. For more information, please see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243). |
-   | Data Compression | CKafka does not support the Gzip compression format. For more information, please see [Data Compression](https://intl.cloud.tencent.com/document/product/597/34004). |
+   | Total Partitions | Total number of partitions of the topic to be migrated. The number of replicas should be considered. For example, if one topic replica has 5 partitions, then two replicas have 10 partitions in total. CKafka does not support single-replica topics. |
+   | Multi-AZ Deployment | Select whether to deploy in multiple AZs according to your business needs. For more information, see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243). |
+   | Data Compression | CKafka does not support the Gzip compression format. For more information, see [Data Compression](https://intl.cloud.tencent.com/document/product/597/34004). |
 
 4. Click **Next** to get the recommended CKafka instance specification.
 5. Click **Buy Now** to redirect to the instance purchase page.
