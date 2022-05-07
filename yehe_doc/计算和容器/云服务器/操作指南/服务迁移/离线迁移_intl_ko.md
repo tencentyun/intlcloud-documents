@@ -1,12 +1,10 @@
 
-
-
 ## 작업 시나리오
 
 서비스 마이그레이션은 Tencent Cloud가 기업 사용자의 클라우드에 쉽게 액세스할 수 있도록 연구 개발한 마이그레이션 플랫폼입니다. 해당 마이그레이션 플랫폼은 소스 단말기 호스트의 운영 체제, 애플리케이션 및 애플리케이션 데이터 등을 Tencent Cloud CVM(Cloud Virtual Machine) 및 CBS(Cloud Block Storage) 마이그레이션하여 기업의 클라우드 액세스, 클라우드 플랫폼 간의 마이그레이션, 계정/지역 간의 마이그레이션 및 하이브리드 클라우드 배포 등 업무 수요를 실현합니다.
 
 서비스 마이그레이션은 현재 오프라인 마이그레이션 및 온라인 마이그레이션을 포함하며 이 중에서 오프라인 마이그레이션은 다음과 같이 두 가지가 있습니다：
-- [오프라인 인스턴스 마이그레이션](#cvmStep)을 사용하면 시스템 디스크 이미지(혹은 시스템 디스크 이미지 및 데이터 디스크 이미지)를 특정 CVM으로 마이그레이션할 수 있습니다.
+- [오프라인 인스턴스 마이그레이션](#cvmStep)을 사용하면 시스템 디스크 이미지(인스턴스에 마운트된 데이터 디스크를 동시에 마이그레이션해야 하는 경우 시스템 디스크 이미지와 데이터 디스크 이미지)를 특정 CVM으로 마이그레이션할 수 있습니다.
 - [오프라인 데이터 마이그레이션](#csmStep)을 사용하면 데이터 디스크 이미지를 특정 CBS로 마이그레이션할 수 있습니다.
 
 ## 전제 조건
@@ -28,28 +26,27 @@
 
 
 - 미러 이미지의 문서 생성에 따라 마이그레이션 서버의 미러 이미지 파일을 생성하십시오.
- - Windows 시스템인 경우 [Windows 미러 이미지 문서 생성](https://intl.cloud.tencent.com/document/product/213/17815)을 참고하십시오.
- - Linux 시스템인 경우 [Linux 미러 이미지 문서 생성](https://intl.cloud.tencent.com/document/product/213/17814)을 참고하십시오.
+ - Windows 시스템인 경우 [Windows 이미지 생성](https://intl.cloud.tencent.com/document/product/213/17815)을 참고하십시오.
+ - Linux 시스템인 경우 [Linux 이미지 생성](https://intl.cloud.tencent.com/document/product/213/17814)을 참고하십시오.
 - 생성한 미러 이미지 파일을 COS에 업로드합니다.  
  - 미러 이미지 문서는 비교적 커서 웹 페이지에 업로드할 때 끊기기 쉬우므로 COSCMD를 사용하여 미러 이미지 업로드를 권장합니다. 작업에 대한 자세한 내용은 [COSCMD 툴 문서](https://intl.cloud.tencent.com/document/product/436/10976)를 참고하십시오.  
  - 다른 클라우드 플랫폼에서 내보낸 이미지가 압축 파일 형식(예.tar.gz)일 경우, 압축을 해제할 필요 없이 COS에 바로 업로드 및 마이그레이션할 수 있습니다.
 - 미러 이미지에 업로드한 COS 주소를 가져옵니다.
-[COS 콘솔](https://console.cloud.tencent.com/cos5/bucket)에서 방금 업로드한 미러 이미지 파일을 찾아 파일 정보를 조회하고 파일 링크를 가져옵니다.
+[COS 콘솔](https://console.cloud.tencent.com/cos5/bucket)에서 방금 업로드한 이미지 파일을 찾아 이미지 파일 상세 페이지의 임시 링크를 복사합니다.
 - 마이그레이션할 CVM 및 CBS를 준비합니다.
-[CVM 구매>>](https://buy.intl.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly®ionId=8)
-[CBS 구매 가이드>>](https://intl.cloud.tencent.com/document/product/362/32414)
+[CVM 구매 페이지 링크 >>](https://buy.intl.cloud.tencent.com/cvm?regionId=5&projectId=-1)
+[CBS 구매 가이드 링크 >>](https://intl.cloud.tencent.com/document/product/362/32414)
 
 
 ## 작업 단계
 <dx-tabs>
 ::: 오프라인 인스턴스 마이그레이션[](id:cvmStep)
-1. CVM 콘솔에 로그인한 뒤, 왼쪽 메뉴의 **[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)**을 클릭합니다.
+1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바의 **[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)**을 클릭합니다.
 2. **생성**을 클릭하고 **인스턴스 마이그레이션**을 선택합니다.
 3. 마이그레이션이 준비 및 확인 완료되면 **다음 단계**를 클릭합니다.
 4. 소재 리전을 선택한 뒤 작업 이름, COS 링크, 마이그레이션할 CVM 등의 마이그레이션 설정 정보를 입력하고 **완료**를 클릭하면 마이그레이션 작업이 생성됩니다.
-마이그레이션 진행 중에 ‘[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)’ 페이지를 나가거나 닫을 수 있으며, 언제든지 해당 화면으로 돌아와 마이그레이션 진행 상황을 조회할 수 있습니다. 
+마이그레이션 진행 중에 ‘[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)’ 페이지를 떠나거나 닫을 수 있으며, 언제든지 해당 화면으로 돌아와 마이그레이션 진행 상황을 조회할 수 있습니다. 
 <dx-alert infotype="notice" title="">
-- COS 파일을 먼저 [공개 읽기 및 개인 쓰기 권한](https://intl.cloud.tencent.com/document/product/436/13327)으로 설정해야 합니다.
 - 마이그레이션한 인스턴스의 시스템 디스크 용량이 업로드한 미러 이미지 파일 크기보다 작으면 작업이 실패할 수 있습니다.
 - 시스템 디스크 이미지와 데이터 디스크 이미지를 동시에 가져와야 하는 경우 마이그레이션된 인스턴스에 해당 수량의 데이터 디스크를 마운트해야 합니다.
 - 타깃 디스크 용량은 원본 디스크 용량보다 크거나 같아야 합니다(초과 권장).
@@ -58,7 +55,7 @@
 
 :::
 ::: 오프라인 데이터 마이그레이션[](id:csmStep)
-1. CVM 콘솔에 로그인한 뒤, 왼쪽 메뉴의 **[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)**을 클릭합니다.
+1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바의 **[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)**을 클릭합니다.
 3. **생성**클릭 후, **데이터 마이그레이션**을 선택합니다.
 4. 마이그레이션이 준비 및 확인 완료되면 **다음 단계**를 클릭합니다.
 5. 소재 리전을 선택한 뒤 작업 이름, COS 링크, 마이그레이션할 클라우드 디스크 등 설정 정보를 입력하고 **완료**를 클릭하면 마이그레이션 작업이 생성됩니다.
