@@ -5,12 +5,9 @@ Tencent Real-Time Communication（TRTC）は、Tencentが長年にわたり蓄�
 - 低遅延のインタラクティブライブストリーミングソリューション
  業界をリードするネットワークおよびオーディオビデオ技術の力と、Tencent Cloudの高品質なノードリソースを結合させ、開発者が、ラグ率がより低く、レイテンシー1秒未満のインタラクティブライブストリーミングを構築し、CDN 2.0時代に踏み出せるように支援をします。
 
-
-
-
 ## 製品アーキテクチャ
 Tencent Real-Time Communication（TRTC）は、全プラットフォームでの相互通信による多人数のオーディオビデオ通話と低遅延でインタラクティブライブストリーミングのソリューションをメインに打ち出しています。Web、Android、iOS、Electron、Windows、macOSなどのプラットフォームのSDKを提供し、開発者がクイックインテグレーションを行い、Tencent Real-Time Communication（TRTC）クラウドサービスのバックエンドと連携できるようにしています。またTencent Cloudの様々な製品と連動させることで、TRTCとInstant Messaging（IM）、Cloud Streaming Services（CSS）、Video on Demand（VOD）などのクラウド製品の機能を同時に使用することができ、業務でのユースケースをより広げることが可能です。製品構成は下図のとおりです。
-![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2d18a7fbc3ef4815752104ff95675e4a.jpg)
 
 ## サポートプラットフォーム
 Tencent Real-Time Communicationは、**業界で真の全プラットフォーム相互通信を実現したソリューション**です。具体的なプラットフォームのサポートおよび開発環境要件は下表のとおりです。
