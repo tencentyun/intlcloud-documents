@@ -2,7 +2,7 @@
 
 [](id:step0)
 ## 準備作業
-1. [Tencent Cloudアカウント](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)にログインし、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)、を完了していること。実名認証を行っていないユーザーは中国本土のCSSインスタンスを購入できません。
+1. [Tencent Cloudアカウント](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)を登録します。
 2. [Tencent Cloud CSSサービスアクティブ化ページ](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)に入り、『Tencent Cloudサービス契約』の同意にチェックを入れ、**アクティブ化申請**をクリックすればCSSサービスをアクティブ化できます。
 >?  
 >- CSSサービスのアクティブ化申請後、国内の再生トラフィック20GBの無料体験がご利用になれます。
