@@ -2,8 +2,9 @@
 
 CLS provides quick statistical analysis of fields. You can quickly analyze field value distribution, trends over time, and numerical statistics without writing query statements. For example, you can quickly collect statistics on the top 5 request APIs and API response time trends.
 
->! The quick analysis feature supports only fields for which the statistics feature is enabled in index configuration.
->
+## Prerequisite
+
+You have enabled quick analysis feature for fields in index configuration.
 
 ## Directions
 
