@@ -26,13 +26,10 @@ Tencent Cloud는 go2tencentcloud 마이그레이션 툴을 제공하며, 마이�
 ## 마이그레이션 시작
 
 <dx-alert infotype="explain" title="">
-콘솔 온라인 마이그레이션 서비스는 현재 베타 테스트 기간 중이며, 이용을 원하시면 [문의하기](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 서비스 신청을 해주시기 바랍니다.
+콘솔 온라인 마이그레이션 서비스는 현재 베타 테스트 기간 중이며, 이용을 원하시면 [문의하기](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 QQ 그룹을 추가하여 서비스 활성화를 신청하십시오.
 </dx-alert>
 
-
-온라인 마이그레이션은 **콘솔 마이그레이션** 및 **툴 마이그레이션** 2가지 마이그레이션 방법을 제공합니다.
-- 콘솔 마이그레이션: 온라인 마이그레이션 콘솔을 통해 마이그레이션 소스 및 마이그레이션 작업을 쉽고 빠르게 확인하고 관리할 수 있습니다. 자세한 내용은 [콘솔 마이그레이션 작업 가이드](https://intl.cloud.tencent.com/document/product/213/44338)를 참고하십시오.
-- Tencent Cloud가 제공하는 go2tencentcloud 툴로 마이그레이션할 수 있습니다. 자세한 내용은 [툴 마이그레이션 작업 사용 가이드](https://intl.cloud.tencent.com/document/product/213/35640)를 참고하십시오.
+Tencent Cloud에서 제공하는 go2tencentcloud 툴을 이용하여 Tencent Cloud에 마이그레이션 원본을 등록한 후, Tencent Cloud 온라인 마이그레이션 콘솔을 통해 마이그레이션 원본을 관리하고 마이그레이션 작업을 완료하십시오. 자세한 내용은 [온라인 마이그레이션 작업 가이드](https://intl.cloud.tencent.com/document/product/213/44338)를 참고하십시오.
 
 ## FAQ
 
