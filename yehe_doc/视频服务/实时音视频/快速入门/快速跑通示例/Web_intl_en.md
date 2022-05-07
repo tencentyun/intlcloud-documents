@@ -28,7 +28,7 @@ The TRTC web SDK uses the following ports and domain names for data transfer, wh
 
 
 ## Prerequisites
-You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account.
 
 ## Directions
 
