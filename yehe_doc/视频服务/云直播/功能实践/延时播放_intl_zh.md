@@ -8,7 +8,7 @@
 >? 目前不建议使用接口的方式，因为调用接口会涉及到配置缓存，生效时间比较难控制，建议直接在推流地址后面加参数方式来快速实现。
 
 ## 准备工作
-1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)。
 2. 登录云直播控制台，选择 [【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击【添加域名】添加您已备案的拉流域名，详细请参见 [添加自有域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 
 [](id:push_delay)
