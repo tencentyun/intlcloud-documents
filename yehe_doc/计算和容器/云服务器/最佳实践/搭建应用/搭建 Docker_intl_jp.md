@@ -7,14 +7,14 @@ Windows OSのCVMでDockerを構築、使用する必要がある場合は、[Win
 
 
 
-## ソフトウェアのバージョン
-Docker環境を構築するために使用するソフトウェアのバージョンとコンポーネントについて、以下にご説明します。
-オペレーティングシステム：Linuxシステム。ここではentOS 8.2および7.6を例として取り上げます。
-
+## デモ用オペレーティングシステム
+このドキュメントでは、CVMインスタンスのオペレーティングシステムの例としてCentOS 8.2および7.6をを使用します。
+TencentOS Serverオペレーティングシステムを使用している場合は、実際の対応バージョンを使用してください：
+  - TencentOS Server 2.4：イメージにはDockerが組み込まれたため、インストールする必要はありません。[Dockerの使用](#userDocker)を参照してそのまま使用してください。
+  - TencentOS Server 3.1(TK4)：ドキュメントの手順を参照して構築してください。
 
 ##  前提条件
 Linux CVMを購入済みであること。
-
 <dx-alert infotype="explain" title="">
 Dockerの構築には64ビットシステムを使用し、カーネルバージョンが3.10以上である必要があります。
 </dx-alert>
@@ -25,7 +25,7 @@ Dockerの構築には64ビットシステムを使用し、カーネルバージ
 
 ### Dockerのインストール
 
-実際に使用しているOSのバージョンに応じて、次の手順で操作します。
+実際に使用しているOSのバージョンに応じて、次の手順で操作します：
 
 <dx-tabs>
 ::: CentOS 8.2
@@ -50,7 +50,7 @@ systemctl start docker
 ```
 docker info
 ```
-次のような情報が返されれば、インストールに成功しています。
+次のような情報が返されれば、インストールが完了しています。
 ![](https://main.qcloudimg.com/raw/113b820e4efc6441d88410488441291f.png)
 :::
 ::: CentOS 7.6
@@ -86,18 +86,18 @@ docker info
 </dx-tabs>
 
 
-### Dockerの使用
-Dockerを使用するための基本的なコマンドは次のとおりです。
+### Docker[](id:userDocker)の使用
+Dockerを使用するための基本的なコマンドは次のとおりです：
 - Dockerデーモンを管理します。
- - Dockerデーモンを実行します。
+ - Dockerデーモンを実行します：
 ```
 systemctl start docker
 ```
- - Dockerデーモンを停止します。
+ - Dockerデーモンを停止します：
 ```
 systemctl stop docker
 ```
- - Dockerデーモンを再起動します。
+ - Dockerデーモンを再起動します：
 ```
 systemctl restart docker
 ```
@@ -109,26 +109,26 @@ docker pull nginx
 ```
 docker tag docker.io/nginx:latest tencentyun/nginx:v1
 ```
- - 既存イメージを確認します。
+ - 既存イメージを確認します：
 ```
 docker images
 ```
- - イメージを強制的に削除します。
+ - イメージを強制的に削除します：
 ```
 docker rmi -f tencentyun/nginx:v1
 ```
 - コンテナを管理します。
- - コンテナにログインします。
+ - コンテナにログインします：
 ```
 docker run -it ImageId /bin/bash
 ```
 そのうち、`ImageId`は`docker images`コマンドを実行することで取得できます。
  - コンテナからのログアウト：`exit`コマンドを実行し、現在のコンテナからログアウトします。
- - バックグラウンドで実行されているコンテナにログインします。
+ - バックグラウンドで実行されているコンテナにログインします：
 ```
 docker exec -itコンテナID /bin/bash
 ```
- - コンテナのイメージ化。
+ - コンテナをイメージ化します：
 ```
 docker commit <コンテナIDまたはコンテナ名> [<リポジトリ名>[:<タグ>]]
 ```
