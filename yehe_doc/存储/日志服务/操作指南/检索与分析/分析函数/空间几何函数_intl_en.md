@@ -88,7 +88,7 @@ When a length is calculated (for example, `ST_Distance()` and `ST_Length()`), th
 | ST_Length(SphericalGeography)                       | double     | Returns the length of a LineString or MultiLineString on a spherical geometry.              |
 | ST_XMax(Geometry)                                   | double     | Returns the X maxima of a bounding box of a geometry.                                 |
 | ST_YMax(Geometry)                                   | double     | Returns the Y maxima of a bounding box of a geometry.                                 |
-| T_XMin(Geometry)                                    | double     | Returns the X minima of a bounding box of a geometry.                                 |
+| ST_XMin(Geometry)                                    | double     | Returns the X minima of a bounding box of a geometry.                                 |
 | ST_YMin(Geometry)                                   | double     | Returns the Y minima of a bounding box of a geometry.                                 |
 | ST_StartPoint(Geometry)                             | point      | Returns the first point of a LineString geometry.                               |
 | ST_EndPoint(Geometry)                             | point      | Returns the last point of a LineString geometry.                               |
