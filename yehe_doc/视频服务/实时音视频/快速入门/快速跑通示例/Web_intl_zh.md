@@ -28,7 +28,7 @@ TRTC Web SDK 依赖以下端口及域名进行数据传输，请将其加入防�
 
 
 ## 前提条件
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
 ## 操作步骤
 
