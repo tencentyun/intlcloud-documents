@@ -8,7 +8,7 @@
 >? インターフェースを呼び出すと、設定キャッシュが関連し、有効化時間の制御が難しいため、現在インターフェースを使用する方法は推奨していません。すぐに実現するには、プッシュアドレスの後ろにパラメータを直接追加する方法をお勧めします。
 
 ## 準備作業
-1. [Tencent CSSサービス](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)をアクティブにし、 [実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了します。
+1. [Tencent CSSサービス](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)にします。
 2. CSSコンソールにログインし、[【ドメイン名管理】](https://console.cloud.tencent.com/live/domainmanage)を選択して、【ドメイン名の追加】をクリックし、ICP登録したプルストリーミングドメイン名を追加します。詳細については、[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
 
 [](id:push_delay)
