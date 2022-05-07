@@ -2,7 +2,7 @@
 
 ## 前提条件
 
-[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を行い、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)が完了済みであること。
+ すでに[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)済みです。
 
 ## 操作手順
 
@@ -106,19 +106,12 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 $ brew install node
 ```
 
-3. Homebrewのデフォルトアドレスを使用したNode.jsのインストールが遅い場合は、国内のイメージアドレスに置き替えることをご検討ください。
- ```shell
-$ cd `brew --repo`
-$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ brew update
- ```
-
-4.  cdコマンドによってプロジェクトディレクトリの位置を特定し、以下のコマンドを実行します。
+3.  cdコマンドによってプロジェクトディレクトリの位置を特定し、以下のコマンドを実行します。
 ```shell
 $ npm install 
 ​```![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
 
-5. npm依存パッケージのインストールが完了してから、引き続きコマンドラインウィンドウで以下のコマンドを実行し、Demoを実行します。
+4. npm依存パッケージのインストールが完了してから、引き続きコマンドラインウィンドウで以下のコマンドを実行し、Demoを実行します。
 ​```shell
 $ npm run start # 初回の実行の場合、しばらくしてからウィンドウにUIが現れます
 ​```![macでの項目実行](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)

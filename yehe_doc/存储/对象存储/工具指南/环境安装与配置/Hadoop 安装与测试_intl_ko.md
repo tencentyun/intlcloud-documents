@@ -273,5 +273,5 @@ hadoop fs -cat /output/part-r-00000
 ```
 ![6762940-623e7b1c1b81cb4c_사본](//mc.qcloudimg.com/static/img/6d777bc87c16b0fb10713bbecda1636d/image.jpg)
 
-> <font color="#0000cc">**주의 사항:** </font>
-> 단독 모드 및 의사 분산 모드의 자세한 작업 방법은 공식 홈페이지 [Hadoop 입문](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html)을 참조하십시오.
+
+>? 단독 모드 및 의사 분산 모드의 자세한 작업 방법은 공식 홈페이지 [Hadoop 입문](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html)을 참조하십시오.

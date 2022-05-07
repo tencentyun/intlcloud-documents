@@ -27,7 +27,7 @@ In addition to the data storage sites already provided inside the Chinese mainla
 One-to-one chat supports various message types including text, emojis, locations, images, audio, short video, and custom message. It provides special features such as red packets, chatbots, read receipt, and message recall as well as services such as offline messages and roaming messages. For more information, see [One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/33523).
 
 ### Group chat
-A group chat involves multiple participants. IM supports the following four group types based on group joining and organization management methods to meet the requirements of different group chat scenarios.
+A group chat involves multiple participants. IM supports the following five group types based on group joining and organization management methods to meet the requirements of different group chat scenarios.
 
 - A **work group for friends (Work)** is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
 - A **public group (Public)** is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group.
@@ -68,4 +68,4 @@ Private deployment allows an enterprise to deploy systems directly to its own se
 ## Security and Compliance
 Compliance is the foundation for the development of Tencent Cloud IM, which meets the compliance requirements of different countries and industries. In addition to ensuring the **security, compliance, availability, confidentiality, and privacy** of the services it provides, IM also provide relevant support for its customers to **meet their and their customers' compliance requirements, reduce repeated investment in audit work, and improve auditing and management efficiency**.
 
-**IM has passed SOC reports (including SOC 1, SOC 2, and SOC 3), Cybersecurity Classified Protection 2.0, and ISO certifications (including ISO 9001 and ISO 20000).**
+<b>IM has passed SOC 1, SOC 2, and SOC 3 audits, meets the requirements of China's Cybersecurity Classified Protection 2.0 (Level 3), and is certified to ISO 9001, ISO 20000, ISO 27001, ISO 27017, ISO 27018, ISO 27701, ISO 29151, CSA STAR, NIST CSF, BS 10012, and K-ISMS.</b>

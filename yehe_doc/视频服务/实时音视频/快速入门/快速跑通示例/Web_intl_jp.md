@@ -28,7 +28,7 @@ TRTC Web SDKは次のポートとドメイン名によってデータ転送を�
 
 
 ##  前提条件
-[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を行い、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)が完了済みであること。
+ すでに[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985) 済みです。
 
 ## 操作手順
 
@@ -63,9 +63,9 @@ TRTC Web SDKは次のポートとドメイン名によってデータ転送を�
 ### 手順4：Demoの動作 
 
 さまざまなお客様のニーズに応えるため、TRTC Webでは現在次のような基本Demoが提供されています：
-- **`base-js`**はTRTC Webの基本Demoです。TRTC Webの基本Demoは、TRTC Web SDKの基本的なオディオ・ビデオ通話、デバイス選択などの機能を統合し、jQueryを使用して開発を行い、ブラウザで直接実行できます。体験したい場合は、[Base-jsオンライン体験アドレス](https://web.sdk.qcloud.com/trtc/webrtc/demo/latest/official-demo/index.html)にアクセスしてください。
-- **`quick-demo-js`**はTRTC Webを素早く実行するためのDemo（ネイティブJsバージョン）です。TRTC Webを素早く実行するためのDemo（ネイティブJsバージョン）では、TRTC Web SDKの基本的なオーディオ・ビデオ通話、デバイス選択などの機能を統合し、ネイティブJsを使用して開発を行い、ブラウザから直接実行できます。体験したい場合は、[quick-demo-jsオンライン体験アドレス](https://web.sdk.qcloud.com//trtc/webrtc/demo/quick-demo-js/index.html)にアクセスしてください。
-- **`quick-demo-vue2-js`**はTRTC Webを素早く実行するためのDemo (Vue2バージョン)です。TRTC Webを素早く実行するためのDemo（Vue2バージョン）は、TRTC Web SDKの基本的なオーディオ・ビデオ通話、デバイス選択などの機能を統合し、Vue2を使用して開発を行い、Node環境をインストールしてください。体験したい場合は、[quick-demo-vue2-jsオンライン体験アドレス](https://web.sdk.qcloud.com/trtc/webrtc/demo/quick-demo-vue2-js/index.html)にアクセスしてください。
+- `base-js`はTRTC Webの基本Demoです。TRTC Webの基本Demoは、TRTC Web SDKの基本的なオディオ・ビデオ通話、デバイス選択などの機能を統合し、jQueryを使用して開発を行い、ブラウザで直接実行できます。体験したい場合は、[Base-jsオンライン体験アドレス](https://web.sdk.qcloud.com/trtc/webrtc/demo/latest/official-demo/index.html)にアクセスしてください。
+- `quick-demo-js`はTRTC Webを素早く実行するためのDemo（ネイティブJsバージョン）です。TRTC Webを素早く実行するためのDemo（ネイティブJsバージョン）では、TRTC Web SDKの基本的なオーディオ・ビデオ通話、デバイス選択などの機能を統合し、ネイティブJsを使用して開発を行い、ブラウザから直接実行できます。体験したい場合は、[quick-demo-jsオンライン体験アドレス](https://web.sdk.qcloud.com//trtc/webrtc/demo/quick-demo-js/index.html)にアクセスしてください。
+- `quick-demo-vue2-js`はTRTC Webを素早く実行するためのDemo (Vue2バージョン)です。TRTC Webを素早く実行するためのDemo（Vue2バージョン）は、TRTC Web SDKの基本的なオーディオ・ビデオ通話、デバイス選択などの機能を統合し、Vue2を使用して開発を行い、Node環境をインストールしてください。体験したい場合は、[quick-demo-vue2-jsオンライン体験アドレス](https://web.sdk.qcloud.com/trtc/webrtc/demo/quick-demo-vue2-js/index.html)にアクセスしてください。
 
 <dx-tabs>
 ::: Demo 1：base-js       
@@ -75,6 +75,7 @@ TRTC Web SDKは次のポートとドメイン名によってデータ転送を�
   - SECRETKEY：デフォルトでは空文字列です。実際の`キー`情報を設定してください。 
 3. Demoの実行
 Chromeブラウザを使用してDemoルートディレクトリの`index.html` ファイルを開けば、Demoを実行できます。
+
 <dx-alert infotype="notice">
 <li>通常の場合は、体験Demoは、サーバーにデプロイし、`https://域名/xxx`経由でアクセスするか、または直接ローカルにサーバーを構築して、`localhost:ポート経由で`アクセスしてください。</li>
 <li>現在デスクトップ版Chromeブラウザは、TRTC Web SDK関連機能のサポート状況がかなり整っていますので、Chromeブラウザを使用して体験することをお勧めします。</li></dx-alert>
@@ -87,11 +88,10 @@ Chromeブラウザを使用してDemoルートディレクトリの`index.html` 
 
 <dx-alert infotype="explain">WebRTCは、カメラとマイクを使用して、オーディオとビデオをキャプチャする必要があります。体験中、Chromeブラウザから関連プロンプトが表示されることがありますが、その場合、**許可**をクリックします。</dx-alert>
 
- 
-
 :::
 ::: Demo 2：quick-demo-js    
 1. ダウンロードしたソースで`TRTC_Web/quick-demo-js/index.html`ファイルを探してブラウザで開きます。
+
 <dx-alert infotype="explain">
 <li>TRTC Web SDKのサポートするブラウザについては、[TRTC Web SDKがサポートするプラットフォーム](https://intl.cloud.tencent.com/document/product/647/41664)をご参照ください。</li>
 <li>TRTC Web SDKドメイン名とポートのホワイトリストの構成については[TRTC Web SDKドメイン名とポートのホワイトリストの構成](https://intl.cloud.tencent.com/document/product/647/35164#webrtc-.E9.9C.80.E8.A6.81.E9.85.8D.E7.BD.AE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.E6.88.96.E5.9F.9F.E5.90.8D.E4.B8.BA.E7.99.BD.E5.90.8D.E5.8D.95.EF.BC.9F)をご参照ください。</li></dx-alert>
@@ -113,6 +113,7 @@ Chromeブラウザを使用してDemoルートディレクトリの`index.html` 
 npm start
 ```
 デフォルトでブラウザは自動的に`[http://localhost:8080/](http://localhost:8080/)`アドレスを開きます。
+
 <dx-alert infotype="notice">
 <li>ポート番号はDemoをローカルで実行した後の実際のポート番号とし、デフォルトでは8080です。</li>
 <li>TRTC Web SDKがサポートするブラウザについては、[TRTC Web SDKがサポートするプラットフォーム](https://intl.cloud.tencent.com/document/product/647/41664)をご参照ください。</li>

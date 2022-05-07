@@ -28,7 +28,7 @@ TRTC Web SDK 依赖以下端口及域名进行数据传输，请将其加入防�
 
 
 ## 前提条件
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
 ## 操作步骤
 
@@ -75,6 +75,7 @@ TRTC Web SDK 依赖以下端口及域名进行数据传输，请将其加入防�
   - SECRETKEY：默认为空字符串，请设置为实际的`密钥`信息。 
 3. 运行 Demo：
 使用 Chrome 浏览器打开 Demo 根目录下的 `index.html` 文件即可运行 Demo。
+
 <dx-alert infotype="notice">
 <li> 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口` 访问。</li>
 <li>目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。</li></dx-alert>
@@ -87,7 +88,6 @@ TRTC Web SDK 依赖以下端口及域名进行数据传输，请将其加入防�
 
 <dx-alert infotype="explain">WebRTC 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击 **允许**。</dx-alert>
 
- 
 
 :::
 ::: Demo 2：quick-demo-js    

@@ -1,76 +1,71 @@
 ## Overview
-This article describes how to install MySQL 8.0 on a CVM instance with Windows Server 2012 R2 Datacenter Edition 64bit. 
-SQL Server is perhaps the most popular database software on Windows. However, it is commercial and requires you to obtain your own license. As an alternative, you can purchase [CDB instances for Tencent Cloud SQLServer database](https://intl.cloud.tencent.com/product/sqlserver?from_cn_redirect=1).
+This document describes how to install MySQL 8.0.19 on a CVM instance with the Windows Server 2012 R2 DataCenter 64-bit Chinese installed.
+SQL Server is more popular on Windows. However, it is commercial and requires you to obtain your own license. As an alternative, you can purchase a [TencentDB for SQL Server instance](https://intl.cloud.tencent.com/zh/products/sqlserver).
 
-## Procedure
+## Directions
 
 ### Downloading MySQL
-1. Log in to your CVM instance.
-2. Open a browser window and go to the [official MySQL site](https://www.mysql.com/) to download the MySQL installation file.
+1. Log in to your CVM.
+2. Open a browser and go to the [MySQL official website](https://www.mysql.com/) to download the MySQL installation file.
 
 ### Installing MySQL
 
-1. Launch the MySQL installer by double-clicking the installation file. The **Choose a Setup Type** window appears. Select **Developer Default** and click **Next**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/4077db7bfe9f7b97e1d7ddd649efa966.png)
-2. In the **Check Requirements** window that appears, click **Execute** and resolve unmet requirements as shown in the figure below:
-![](https://main.qcloudimg.com/raw/16a5f7190d7720562681528072cf8129.png)
+1. Double-click the MySQL installation file. The **Choosing a Setup Type** window appears. Select **Developer Default** and click **Next**, as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/46578b0e47c0a8283c72680070578916.png)
+2. In the **Check Requirements** window that appears, click **Execute** and resolve unmet requirements.
 3. Click **Next**.
-4. In the **Installation** window, click **Execute** to install the required packages, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/1b4a3e338bb816e7c47b4603a7a1dbb4.png)
-5. Click **Next** when the package installation finishes to open the **Product Configuration** window.
+4. In the **Installation** window, click **Execute** to install the required packages.
+5. Click **Next** when the package installation completes to open the **Product Configuration** window.
 
 
 ### Configuring MySQL
 
 #### Configuring MySQL service
 
-1. In the **Product Configuration** window, click **Next** to open the **High Availability** window.
-2. Select **Standalone MySQL Server / Classic MySQL Replication** and click **Next**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/5355f286598388f9e9846bf8122e6d98.png)
-3. In the **Type and Networking** window, keep the default configuration. Click **Next**, as shown in the following figure:
-> 
-> - TCP/IP network is enabled by default.
-> - Port 3306 is used by default.
-> 
-![](https://main.qcloudimg.com/raw/fbece2fafb34beb5825ae294a8e214fd.png)
-4. In the **Authentication Method** window, keep the default configuration. Click **Next**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/402624aaf02dce01ca2912d3548c03de.png)
-5. Set a root password and click **Next** as shown in the following figure:
-![](https://main.qcloudimg.com/raw/a0472f0b93c590997e78c2f590a0f901.png)
-6. In the **Windows Service** window, keep the default configuration and click **Next**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/a85625c446218a275e743ff0ec599ece.png)
+1. In the **Product Configuration** window, click **Next*.
+2. In the **High Availability** window, select **Standalone MySQL Server / Classic MySQL Replication** and click **Next**, as shown below.
+![](https://qcloudimg.tencent-cloud.cn/raw/821c0ab18a477ffdf3458889ff698b08.png)
+3. In the **Type and Networking** window, keep the default configuration, and click **Next**.
+<dx-alert infotype="explain" title="">
+- TCP/IP network is enabled by default.
+- Port 3306 is used by default.
+</dx-alert>
+4. In the **Authentication Method** window, select <b>Use Legacy Authentication Method(Retain MySQL 5.x Compatibility)</b> and click **Next**.
+In this document, this option is set to set up a WordPress website as an example. You can set it as needed.
+![](https://qcloudimg.tencent-cloud.cn/raw/599dff879af20e25ce1d8e7fb5b1a33f.png)
+5. Set the password for the `root` user and click **Next**.
+![](https://qcloudimg.tencent-cloud.cn/raw/a85f3a6affb6d71dda27a7a1fe5a5870.png)
+6. In the **Windows Service ** window, keep the default configuration, and click **Next**.
 7. In the **Apply Configuration** window, click **Execute**.
-![](https://main.qcloudimg.com/raw/2ee6000630d88774951ddf8aaea16fbb.png)
-8. Click **Finish** to complete MySQL configuration.
+8. Click **Finish**.
 
-#### Configuring MySQL Router
+#### Configuring MySQL router
 
-1. In the **Product Configuration** window, click **Next**.
-2. In the **MySQL Router Configuration** window, keep the default configuration and click **Finish**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/adece1334b6e1579eb2ace782cf47c59.png)
+1. In the **Product Configuration** window, click **Next*.
+2. In the **MySQL Router Configuration** window, keep the default configuration and click **Finish**.
+![](https://qcloudimg.tencent-cloud.cn/raw/f13a5db6d40390a3b5c650e00720d587.png)
 
 #### Configuring MySQL samples
 
-1. In the **Product Configuration** window, click **Next**.
-2. In the **Connect to Server** window, input the root password. Click **Check**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/ab8637391012a14ab2e5160c61675912.png)
-3. After the password is successfully authenticated, click **Next**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/bff0aece8da11d15a52f4db91b4d7e69.png)
+1. In the **Product Configuration** window, click **Next*.
+2. In the **Connect To Server** window, input the root password, and click **Check**.
+3. After the password is successfully authenticated, click **Next**.
+![](https://qcloudimg.tencent-cloud.cn/raw/5e4157ae76b5ae7aa4f7e9d99f40bfe8.png)
 4. In the **Apply Configuration** window, click **Execute**.
-![](https://main.qcloudimg.com/raw/8fe1f90eed50860e064044b314719cf6.png)
 5. Click **Finish** to complete the MySQL sample configuration.
-6. In the **Product Configuration** window, click **Next**.
-7. In the **Installation Complete** window, select the MySQL environment component you want to start and click **Finish**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/13f46296b85b00ce7e3bd08be13108c9.png)
- - If MySQL Workbench starts, MySQL is successfully installed, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/288f4cfbf1a9671b73dff64a940e0dc1.png)
- - If MySQL Shell starts, MySQL is successfully installed, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/90b788ffe3a8f92e0e5e70f35fb94356.png)
+6. In the **Product Configuration** window, click **Next*.
+7. In the **Installation Complete** window, select the MySQL environment component you want to start and click **Finish**.
+   - If MySQL Workbench as shown below starts, MySQL has been successfully installed.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/7f960c3d6e8c26f9fb68ee9de5d5b96b.png)
+   - If MySQL Shell as shown below starts, MySQL has been successfully installed.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/985d2e239aae0bcc1d84f51e3eecd296.png)
 
 
-### Adding Security Group Rules
+### Adding security group rules
 
-Add an inbound rule to allow traffic on port 3306 to the security group that is bound to the CVM instance on which MySQL is installed.
+Add an inbound rule to open the port 3306 to the security group that is bound to the CVM instance on which MySQL is installed.
+For more information, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).
+
 
 
 

@@ -28,7 +28,7 @@ The TRTC web SDK uses the following ports and domain names for data transfer, wh
 
 
 ## Prerequisites
-You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account.
 
 ## Directions
 
@@ -75,6 +75,7 @@ We offer the following demos for the TRTC web SDK to meet different customer nee
   - `SECRETKEY`: Left empty by default. Set it to the actual key. 
 3. Run the demo:
 Open `index.html` in the root directory of the demo with Chrome to run the demo.
+
 <dx-alert infotype="notice">
 <li>Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.</li>
 <li>Currently, the desktop version of Chrome offers better support for the features of the TRTC web SDK; therefore, Chrome is recommended.</li></dx-alert>
@@ -87,11 +88,10 @@ Open `index.html` in the root directory of the demo with Chrome to run the demo.
 
 <dx-alert infotype="explain">WebRTC uses the camera and mic of your device to capture audio and video. During the demo run, when prompted by Chrome, you should click **Allow**.</dx-alert>
 
- 
-
 :::
 ::: Demo 2: quick-demo-js    
 1. Find `TRTC_Web/quick-demo-js/index.html` and open it with a browser.
+
 <dx-alert infotype="explain">
 <li>For details about the browsers supported by the TRTC web SDK, please see [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/41664).</li>
 <li>For information about the ports and domain names used by the TRTC web SDK, see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164#webrtc-.E9.9C.80.E8.A6.81.E9.85.8D.E7.BD.AE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.E6.88.96.E5.9F.9F.E5.90.8D.E4.B8.BA.E7.99.BD.E5.90.8D.E5.8D.95.EF.BC.9F).</li></dx-alert>
@@ -113,6 +113,7 @@ Open `index.html` in the root directory of the demo with Chrome to run the demo.
 npm start
 ```
 The `[http://localhost:8080/](http://localhost:8080/)` address will be opened in your default browser automatically.
+
 <dx-alert infotype="notice">
 <li>The default port number is 8080. Please use the number of the actual port used to run the demo locally.</li>
 <li>For details about the browsers supported by the TRTC web SDK, see [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/41664).</li>

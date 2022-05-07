@@ -28,7 +28,7 @@ TRTC Web SDK는 데이터 전송을 위해 다음 포트 및 도메인 이름에
 
 
 ## 전제 조건
-[Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)된 계정이 있고 [실명 인증](https://intl.cloud.tencent.com/document/product/378/3629)이 완료되어야 합니다.
+[Tencent Cloud 계정 가입](https://intl.cloud.tencent.com/document/product/378/17985)이 완료된 상태여야 합니다. 
 
 ## 작업 단계
 
@@ -54,7 +54,7 @@ TRTC Web SDK는 데이터 전송을 위해 다음 포트 및 도메인 이름에
 
 [](id:step3)
 ### 3단계: SDKAppId 및 키(SecretKey) 가져오기
-1. 1. 설정 변경 페이지로 이동하여 'SDKAppID' 및 '키'를 가져옵니다.
+1. 설정 변경 페이지로 이동하여 'SDKAppID' 및 '키'를 가져옵니다.
 2. SDKAppId 및 키(SecretKey)를 복사하여 붙여넣은 후 **붙여넣기 완료, 다음 단계**를 클릭하면 성공적으로 생성됩니다.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png)
@@ -63,9 +63,9 @@ TRTC Web SDK는 데이터 전송을 위해 다음 포트 및 도메인 이름에
 ### 4단계: Demo 실행 
 
 다양한 고객의 요구 사항을 충족하기 위해 TRTC Web은 현재 다음과 같은 기본 Demo를 제공합니다.
-- **`base-js`**는 TRTC Web 기본 Demo입니다. TRTC Web 기본 Demo는 기본 음성/영상 통화, 장치 선택 등 기타 TRTC Web SDK 기능을 통합한 것으로 jQuery로 개발되었으며 브라우저에서 직접 실행할 수 있습니다. 빠른 체험을 원하시면 [base-js 온라인 체험 주소](https://web.sdk.qcloud.com/trtc/webrtc/demo/latest/official-demo/index.html)로 이동하십시오.
-- **`quick-demo-js`** TRTC Web Demo(네이티브 Js 버전)를 빠르게 실행합니다. TRTC Web 빠른 실행 Demo(네이티브 Js 버전)는 기본 음성/영상 통화, 장치 선택 등 기타 TRTC Web SDK 기능을 통합한 것으로, 네이티브 Js를 사용하여 개발되었으며 브라우저에서 직접 실행할 수 있습니다. 빠른 체험을 원하시면 [quick-demo-js 온라인 체험 주소](https://web.sdk.qcloud.com//trtc/webrtc/demo/quick-demo-js/index.html)로 이동하십시오.
-- **`quick-demo-vue2-js`** TRTC Web Demo(Vue2 버전)를 빠르게 실행합니다. TRTC Web 빠른 실행 Demo(Vue2 버전)는 기본 음성/영상 통화, 장치 선택 등 기타 TRTC Web SDK 기능을 통합합니다. Vue2로 개발하려면 Node 환경을 설치해야 합니다. 빠른 체험을 원하시면 [quick-demo-vue2-js 온라인 체험 주소](https://web.sdk.qcloud.com/trtc/webrtc/demo/quick-demo-vue2-js/index.html)로 이동하십시오.
+- `base-js`는 TRTC Web 기본 Demo입니다. TRTC Web 기본 Demo는 기본 음성/영상 통화, 장치 선택 등 기타 TRTC Web SDK 기능을 통합한 것으로 jQuery로 개발되었으며 브라우저에서 직접 실행할 수 있습니다. 빠른 체험을 원하시면 [base-js 온라인 체험 주소](https://web.sdk.qcloud.com/trtc/webrtc/demo/latest/official-demo/index.html)로 이동하십시오.
+- `quick-demo-js` TRTC Web Demo(네이티브 Js 버전)를 빠르게 실행합니다. TRTC Web 빠른 실행 Demo(네이티브 Js 버전)는 기본 음성/영상 통화, 장치 선택 등 기타 TRTC Web SDK 기능을 통합한 것으로, 네이티브 Js를 사용하여 개발되었으며 브라우저에서 직접 실행할 수 있습니다. 빠른 체험을 원하시면 [quick-demo-js 온라인 체험 주소](https://web.sdk.qcloud.com//trtc/webrtc/demo/quick-demo-js/index.html)로 이동하십시오.
+- `quick-demo-vue2-js` TRTC Web Demo(Vue2 버전)를 빠르게 실행합니다. TRTC Web 빠른 실행 Demo(Vue2 버전)는 기본 음성/영상 통화, 장치 선택 등 기타 TRTC Web SDK 기능을 통합합니다. Vue2로 개발하려면 Node 환경을 설치해야 합니다. 빠른 체험을 원하시면 [quick-demo-vue2-js 온라인 체험 주소](https://web.sdk.qcloud.com/trtc/webrtc/demo/quick-demo-vue2-js/index.html)로 이동하십시오.
 
 <dx-tabs>
 ::: Demo 1: base-js       
@@ -75,6 +75,7 @@ TRTC Web SDK는 데이터 전송을 위해 다음 포트 및 도메인 이름에
   - SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 `키` 정보로 설정하십시오. 
 3. Demo 실행:
 Chrome 브라우저에서 Demo의 루트 디렉터리에 있는 `index.html` 파일을 열면 Demo가 실행됩니다.
+
 <dx-alert infotype="notice">
 <li>일반적으로 체험용 Demo는 서버에 배포가 필요하며, `https://도메인/xxx`로 액세스하거나 직접 로컬에서 서버를 구축하여 `localhost:포트`를 통해 액세스할 수 있습니다.</li>
 <li>현재 데스크톱 Chrome 브라우저가 TRTC Web SDK를 비교적 완벽하게 지원하므로 Chrome 브라우저를 사용하여 체험하는 것을 권장합니다.</li></dx-alert>
@@ -87,11 +88,10 @@ Chrome 브라우저에서 Demo의 루트 디렉터리에 있는 `index.html` 파
 
 <dx-alert infotype="explain">WebRTC는 카메라와 마이크를 사용하여 멀티미디어를 수집합니다. 체험 과정에서 Chrome 브라우저로부터 관련 안내를 수신할 수 있습니다. **허용**을 클릭하십시오.</dx-alert>
 
- 
-
 :::
 ::: Demo 2: quick-demo-js    
 1. 다운로드한 소스 코드에서 'TRTC_Web/quick-demo-js/index.html' 파일을 브라우저로 찾아 엽니다.
+  
 <dx-alert infotype="explain">
 <li>TRTC Web SDK가 지원하는 브라우저는 [TRTC Web SDK가 지원하는 플랫폼](https://intl.cloud.tencent.com/document/product/647/41664)을 참고하십시오.</li>
 <li>TRTC Web SDK 도메인 및 포트 얼로우리스트 설정은 [TRTC Web SDK 도메인 및 포트 얼로우리스트 설정](https://intl.cloud.tencent.com/document/product/647/35164#webrtc-.E9.9C.80.E8.A6.81.E9.85.8D.E7.BD.AE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.E6.88.96.E5.9F.9F.E5.90.8D.E4.B8.BA.E7.99.BD.E5.90.8D.E5.8D.95.EF.BC.9F)을 참고하십시오.</li></dx-alert>
@@ -113,6 +113,7 @@ Chrome 브라우저에서 Demo의 루트 디렉터리에 있는 `index.html` 파
 npm start
 ```
 기본 브라우저는 ` [http://localhost:8080/](http://localhost:8080/)` 주소를 자동으로 엽니다.
+
 <dx-alert infotype="notice">
 <li>포트 번호는 로컬에서 Demo를 실행한 후 실제 포트 번호를 기준으로 하며 기본값은 8080입니다.</li>
 <li>TRTC Web SDK가 지원하는 브라우저는 [TRTC Web SDK가 지원하는 플랫폼](https://intl.cloud.tencent.com/document/product/647/41664)을 참고하십시오.</li>

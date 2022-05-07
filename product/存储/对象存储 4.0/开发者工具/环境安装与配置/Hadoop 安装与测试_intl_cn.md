@@ -273,5 +273,5 @@ hadoop fs -cat /output/part-r-00000
 ```
 ![6762940-623e7b1c1b81cb4c_副本](//mc.qcloudimg.com/static/img/6d777bc87c16b0fb10713bbecda1636d/image.jpg)
 
-> <font color="#0000cc">**注意：** </font>
-> 单机模式与伪分布式模式的操作方法的详细过程可以参考官网：[Hadoop入门](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html)。
+
+>? 单机模式与伪分布式模式的操作方法的详细过程可以参考官网：[Hadoop入门](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html)。

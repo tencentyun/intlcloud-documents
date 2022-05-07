@@ -7,14 +7,14 @@ If you need to build and use Docker in a Windows CVM instance, see [Install Dock
 
 
 
-## Software
-This document uses the following software to build the Docker environment:
-- Operating system: Linux operating system. This document uses CentOS 8.2 and 7.6 as examples.
-
+## About OS Versions
+This document uses CentOS 8.2 and 7.6 as examples for CVM instance OSs.
+If you are using a TencentOS Server OS, perform operations based on the actual version:
+  - TencentOS Server 2.4: a Docker image is preset, and you do not need to install Docker again. You can use Docker directly by referring to [Using Docker](#userDocker).
+  - TencentOS Server 3.1 (TK4): build Docker according to the directions in this document.
 
 ## Prerequisites
 You have purchased a Linux CVM.
-
 <dx-alert infotype="explain" title="">
 Docker must be built on a 64-bit operating system with the kernel version 3.10 or later.
 </dx-alert>
@@ -86,7 +86,7 @@ If you see the following prompt, it indicates that Docker has been successfully 
 </dx-tabs>
 
 
-### Using Docker
+### Using Docker[](id:userDocker)
 You can use Docker with the following commands:
 - Manage the Docker daemon.
  - Run the Docker daemon.
@@ -139,7 +139,7 @@ docker commit 1c23456cd7**** tencentyun/nginx:v2
 
 ### Creating images
 
-1. Run the following command to open the "Dockerfile" file.
+1. Run the following command to open the “Dockerfile” file.
 ```
 vim Dockerfile
 ```
@@ -166,12 +166,12 @@ docker ps                        #Check the running container.
 docker ps -a                     #Check all containers including those that are not running.
 docker logs CONTAINER ID/IMAGE   #Check the startup log to troubleshoot the issue based on the container ID or name if you do not see the container in the returned results
 ```
-6. Run the following commands in sequence to create an image.
+7. Run the following commands in sequence to create an image.
 ```
 docker commit fb2844b6**** nginxweb:v2 #Add the container ID and the name and version of the new image. after the commit command.
 docker images                    #List local images that have been downloaded and created.
 ```
-7. Run the following command to push the image to the remote repository.
+8. Run the following command to push the image to the remote repository.
 The image is pushed to Docker Hub by default. To push the image, log in to Docker, tag and name the image in the following format: `Docker username/image name: tag`.
 ```
 docker login #Enter the username and password of the image registry after running the command

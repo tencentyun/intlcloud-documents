@@ -8,7 +8,7 @@ This API is used to batch import app-owned accounts to IM and create an internal
 ## Call Description
 ### Example request URL
 ```
-https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/im_open_login_svc/multiaccount_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 

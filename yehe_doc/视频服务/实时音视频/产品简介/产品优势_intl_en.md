@@ -1,6 +1,5 @@
 ### Cross-platform global connection
-**TRTC is a cross-platform solution compatible with more than 5,000 device models.** It provides client SDKs and Tencent Cloud APIs for mobile and desktop platforms including iOS, Android, Windows, macOS, and web. End users can also use its services via QQ and WeCom.
-
+**TRTC is a cross-platform solution compatible with more than 5,000 device models.** It provides client SDKs and Tencent Cloud APIs for mobile and desktop platforms including iOS, Android, Windows, macOS, and web.
 ### Easy and quick integration
 You can run a TRTC demo and integrate basic TRTC features into your project with a few lines of simple code. In as little as 1 minute, you can build a real-time audio/video communication product from scratch featuring low latency, low stutter rate, and high-quality. For detailed directions, see [Quick Demo Start](https://intl.cloud.tencent.com/document/product/647/35086) and [SDK Quick Integration](https://intl.cloud.tencent.com/document/product/647/35092).
 

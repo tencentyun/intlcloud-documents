@@ -274,6 +274,5 @@ hadoop fs -cat /output/part-r-00000
 ```
 ![](//mc.qcloudimg.com/static/img/6d777bc87c16b0fb10713bbecda1636d/image.jpg)
 
-> <font color="#0000cc">**Note:**</font>
-> For more information on how to run Hadoop in stand-alone and pseudo-distributed modes, see [Get Started with Hadoop](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html) on the official website.
+>?For more information on how to run Hadoop in stand-alone and pseudo-distributed modes, see [Get Started with Hadoop](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html) on the official website.
 

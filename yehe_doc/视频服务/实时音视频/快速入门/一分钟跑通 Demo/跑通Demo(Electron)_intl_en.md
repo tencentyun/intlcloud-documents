@@ -2,7 +2,7 @@ This document describes how to quickly run the TRTC demo for Electron.
 
 ## Prerequisites
 
-You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account.
 
 ## Directions
 
@@ -106,19 +106,12 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 $ brew install node
 ```
 
-3. If it is too slow for you to install Node.js via Homebrew, consider using a mirror address in your country or region.
- ```shell
-$ cd `brew --repo`
-$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ brew update
- ```
-
-4. Run the `cd` command to go to the project directory and run the following command.
+3. Run the `cd` command to go to the project directory and run the following command.
 ```shell
 $ npm install 
 ​```![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
 
-5. After the npm dependencies are installed, run the following command in the Command Prompt to run the demo.
+4. After the npm dependencies are installed, run the following command in the Command Prompt to run the demo.
 ​```shell
 $ npm run start # On first run, it may take a while to show the UI.
 ​```![Running the project in macOS](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)

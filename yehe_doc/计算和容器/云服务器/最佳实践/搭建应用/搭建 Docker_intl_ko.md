@@ -7,14 +7,14 @@ Windows 운영 체제의 CVM에서 Docker를 빌드 및 사용하려면 [Windows
 
 
 
-## 소프트웨어
-본문에서 사용된 Docker 환경의 소프트웨어 버전 및 구성은 다음과 같습니다.
-운영 체제: Linux 시스템, 본문은 CentOS 8.2 및 7.6을 예시로 사용합니다.
-
+## 예시 운영 체제
+본 문서에서는 CVM 인스턴스 운영 체제 CentOS 8.2 및 7.6을 예시로 사용합니다.
+TencentOS Server 운영 체제를 사용하는 경우 실제 버전에 해당하는 작업 수행:
+  - TencentOS Server 2.4: 이미지가 Docker로 미리 구성되어 있으므로 다시 설치할 필요가 없습니다. [Docker 사용하기](#userDocker)를 참고하여 직접 사용을 시작할 수 있습니다.
+  - TencentOS Server 3.1 (TK4): 문서를 참고하여 구축하십시오.
 
 ## 전제 조건
 구매한 Linux CVM이 있어야 합니다.
-
 <dx-alert infotype="explain" title="">
 Docker를 빌드하려면 64비트 시스템을 사용해야 하며 커널 버전은 3.10 이상이어야 합니다.
 </dx-alert>
@@ -86,7 +86,7 @@ docker info
 </dx-tabs>
 
 
-### Docker 사용
+### Docker[](id:userDocker) 사용
 Docker의 기본 사용 명령어는 다음과 같습니다.
 - Docker 데몬을 관리합니다.
  - Docker 데몬을 실행합니다.

@@ -1,10 +1,17 @@
->! 2019年12月6日后，腾讯云将不支持在云服务器购买页勾选配置公网网关。如果您有需要，请按照本文所示方法自行配置。
->
+
+<dx-alert infotype="alarm" title="">
+**使用单台云服务器 CVM 作为公网网关存在单点故障风险，生产环境建议使用 [NAT 网关](https://intl.cloud.tencent.com/document/product/1015/30226)。**
+</dx-alert>
+2019年12月6日后，腾讯云将不支持在云服务器购买页勾选配置公网网关。如果您有需要，请按照本文所示方法自行配置。
+
+
+
 
 ## 操作场景
 
 当您在腾讯云 VPC 中的部分云服务器没有普通公网 IP，但需要访问公网时，可以利用带有公网 IP（普通公网 IP 或弹性公网 IP） 的云服务器访问公网。公网网关云服务器将对出网流量进行源地址转换，所有其他云服务器访问公网的流量经过公网网关云服务器后，源 IP 都被转换为公网网关云服务器的公网 IP 地址，如下图所示：
 ![](https://main.qcloudimg.com/raw/4879fa2798946972e8496c13a1bfa3cc.png)
+
 ## 前提条件
 - 已登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 - 公网网关云服务器只能转发非所在子网的路由转发请求，因此，公网网关云服务器不能与需要借助公网网关访问公网的云服务器处于同一个子网下。
@@ -12,17 +19,24 @@
 
 ## 操作步骤
 ### 步骤1：绑定弹性公网 IP（可选）
->?如果用作公网网关的云服务器已经有公网 IP 地址，请跳过此步骤，完成后续步骤。
 
-1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，在左侧导航栏中，单击**[弹性公网IP](https://console.cloud.tencent.com/cvm/eip)**，进入弹性公网 IP 管理页面。
-2. 在需要绑定实例的弹性公网 IP 的操作栏下，选择**更多**>**绑定**。
+<dx-alert infotype="explain" title="">
+如果用作公网网关的云服务器已经有公网 IP 地址，请跳过此步骤，完成后续步骤。
+</dx-alert>
+
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，在左侧导航栏中，单击 **[弹性公网IP](https://console.cloud.tencent.com/cvm/eip)**，进入弹性公网 IP 管理页面。
+2. 在需要绑定实例的弹性公网 IP 的操作栏下，选择**更多** > **绑定**。
 ![](https://main.qcloudimg.com/raw/c9e46426e64fd6de3d4a2a9dccb91822.png)
-3. 在**绑定资源**弹框中，选择一个被选做公网网关的 CVM 实例进行绑定。
+3. 在“绑定资源”弹框中，选择一个被选做公网网关的 CVM 实例进行绑定。
 ![](https://main.qcloudimg.com/raw/1642880850b505fa57a598d10247edbc.png)
 
 ### 步骤2：配置网关所在子网路由表
+
+<dx-alert infotype="notice" title="">
 网关子网和普通子网不能关联同一张路由表，需要新建一张独立的网关路由表，并将网关子网关联该路由表。
-1. [创建自定义路由表](https://intl.cloud.tencent.com/zh/document/product/215/35236#.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B7.AF.E7.94.B1.E8.A1.A8)。
+</dx-alert>
+
+1. [创建自定义路由表](https://intl.cloud.tencent.com/document/product/215/35236)。
 2. 创建后会提示关联子网操作，直接关联公网网关服务器所在子网即可。
 ![](https://main.qcloudimg.com/raw/4f804600a0d2120a959e722daf21fa59.png)
 
@@ -32,11 +46,11 @@
 - 目的端：您要访问的公网地址。
 - 下一跳类型：云服务器。
 - 下一跳：步骤1中绑定弹性公网 IP 的云服务器实例的内网 IP。
-具体操作请参见 [配置路由策略](https://intl.cloud.tencent.com/zh/document/product/215/35236#.E9.85.8D.E7.BD.AE.E8.B7.AF.E7.94.B1.E7.AD.96.E7.95.A5)。
+具体操作请参见 [配置路由策略](https://intl.cloud.tencent.com/document/product/215/40080)。
 ![](https://main.qcloudimg.com/raw/68e072841dc6d528fe2ff269e5a982a5.png)
 
 ### 步骤4：配置公网网关
-1. 登录[公网网关云服务器](https://intl.cloud.tencent.com/document/product/213/5436)，执行如下操作开启网络转发及NAT 代理功能。
+1. 登录[ 公网网关云服务器](https://intl.cloud.tencent.com/document/product/213/5436)，执行如下操作开启网络转发及NAT 代理功能。
  1. 执行如下命令，在`usr/local/sbin`目录下新建脚本`vpcGateway.sh`。
 ```
 vim /usr/local/sbin/vpcGateway.sh
@@ -77,7 +91,7 @@ chmod +x /usr/local/sbin/vpcGateway.sh
 echo "/usr/local/sbin/vpcGateway.sh >/tmp/vpcGateway.log 2>&1" >> /etc/rc.local
 ```
 2. 设置公网网关的 rps：
- 1. 执行如下命令，在`usr/local/sbin`目录下新建脚本`set_rps.sh`。
+ 1. 执行如下命令，在 `usr/local/sbin` 目录下新建脚本 `set_rps.sh`。
 ```
 vim /usr/local/sbin/set_rps.sh
 ```
@@ -170,3 +184,6 @@ echo "/usr/local/sbin/set_rps.sh >/tmp/setRps.log 2>&1" >> /etc/rc.local
 chmod +x /etc/rc.d/rc.local
 ```
 3. 完成上述配置后，重启公网网关云服务器使配置生效，并在无公网 IP 的云服务器上，测试是否能够成功访问公网。
+
+
+
