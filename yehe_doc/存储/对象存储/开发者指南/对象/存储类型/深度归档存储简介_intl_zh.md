@@ -9,10 +9,10 @@
 ## 使用方法
 
 1. 使用控制台上传
- 1. 登录 [COS 控制台](https://console.cloud.tencent.com/cos5)。
- 2. 单击**存储桶列表**，创建所支持地域（例如北京地域）的存储桶。
- 3. 创建完成后，在**文件列表**界面中，单击**上传文件**。
- 4. 选择本地文件进行上传，并在设置对象属性中将存储类型选择为**深度归档存储**，详情请参见 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321)。
+ a. 登录 [COS 控制台](https://console.cloud.tencent.com/cos5)。
+ b. 单击**存储桶列表**，创建所支持地域（例如北京地域）的存储桶。
+ c. 创建完成后，在**文件列表**界面中，单击**上传文件**。
+ d. 选择本地文件进行上传，并在设置对象属性中将存储类型选择为**深度归档存储**，详情请参见 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321)。
 ![](https://main.qcloudimg.com/raw/fd3d5c061007c71dfd382b75a9982fee.png)
 2. 使用 API 上传
 通过在 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749)、[POST Object](https://intl.cloud.tencent.com/document/product/436/14690) 或 [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) 接口中将`x-cos-storage-class`设置为  `DEEP_ARCHIVE`，实现直传深度归档。

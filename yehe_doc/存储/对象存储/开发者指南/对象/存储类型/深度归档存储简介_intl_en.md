@@ -9,10 +9,10 @@ DEEP ARCHIVE is designed for 99.999999999% durability and 99.95% availability. Y
 ## Directions
 
 1. Upload using the console.
- 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
- 2. Click **Bucket List** and create a bucket in a supported region (such as Beijing).
- 3. After creating the bucket, click **Upload File** in **File List**.
- 4. Select a local file for upload and select **DEEP ARCHIVE** for **Storage Class** in **Set Properties**. For more information, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
+a. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+b. Click **Bucket List** and create a bucket in a supported region (such as Beijing).
+c. After creating the bucket, click **Upload File** in **File List**.
+d. Select a local file for upload and select **DEEP ARCHIVE** for **Storage Class** in **Set Properties**. For more information, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 ![](https://main.qcloudimg.com/raw/fd3d5c061007c71dfd382b75a9982fee.png)
 2. Upload using APIs.
 Set `x-cos-storage-class` to `DEEP_ARCHIVE` in the [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749), [POST Object](https://intl.cloud.tencent.com/document/product/436/14690), or [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API for direct upload to the DEEP ARCHIVE storage class.
