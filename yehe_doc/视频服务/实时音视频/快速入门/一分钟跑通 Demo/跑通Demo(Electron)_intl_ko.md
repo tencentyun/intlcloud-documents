@@ -2,7 +2,7 @@
 
 ## 전제 조건
 
-[Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)된 계정이 있고 [실명 인증](https://intl.cloud.tencent.com/document/product/378/3629)이 완료되어야 합니다.
+[Tencent Cloud 계정 가입](https://intl.cloud.tencent.com/document/product/378/17985)이 완료된 상태여야 합니다. 
 
 ## 작업 단계
 
@@ -106,19 +106,12 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 $ brew install node
 ```
 
-3.  Homebrew의 기본 주소를 사용한 Node.js 설치 속도가 느린 경우, 중국 내 이미지 주소로의 전환을 고려해볼 수 있습니다.
- ```shell
-$ cd `brew --repo`
-$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ brew update
- ```
-
-4.  cd 명령어를 통해 프로젝트 디렉터리를 지정하고 다음 명령어를 실행합니다.
+3.  cd 명령어를 통해 프로젝트 디렉터리를 지정하고 다음 명령어를 실행합니다.
 ```shell
 $ npm install 
 ​```![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
 
-5.  npm 종속 패키지의 설치가 모두 완료된 후, 명령 프롬프트에 다음 명령어를 실행하여 Demo를 실행합니다.
+4.  npm 종속 패키지의 설치가 모두 완료된 후, 명령 프롬프트에 다음 명령어를 실행하여 Demo를 실행합니다.
 ​```shell
 $ npm run start # 처음 실행 시 잠시 기다리면 창에 UI가 나타납니다.
 ​```![mac에서 프로젝트 실행](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
