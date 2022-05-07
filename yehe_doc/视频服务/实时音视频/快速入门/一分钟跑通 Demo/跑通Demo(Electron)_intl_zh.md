@@ -2,7 +2,7 @@
 
 ## 前提条件
 
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
 ## 操作步骤
 
@@ -106,19 +106,12 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 $ brew install node
 ```
 
-3.  如果使用 Homebrew 的默认地址安装 Node.js 较慢，您可以考虑替换为国内镜像地址。
- ```shell
-$ cd `brew --repo`
-$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ brew update
- ```
-
-4.  通过 cd 命令定位项目目录，并执行以下命令。
+3.  通过 cd 命令定位项目目录，并执行以下命令。
 ```shell
 $ npm install 
 ​```![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
 
-5.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
+4.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
 ​```shell
 $ npm run start # 首次运行，稍等片刻后，窗口中才会出现 UI
 ​```![mac下运行项目](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
