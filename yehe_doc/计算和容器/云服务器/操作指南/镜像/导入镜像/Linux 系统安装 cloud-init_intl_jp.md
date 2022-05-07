@@ -1,103 +1,115 @@
-## 概要
+## 操作シナリオ
 
-Cloud-initは、主にインスタンスが最初に初期化されるときにカスタマイズ設定機能を提供します。インポートされたイメージにcloud-initサービスがインストールされていない場合、イメージを介して起動されたインスタンスは正しく初期化できなくなり、イメージのインポートに失敗する可能性があります。このドキュメントでは、cloud-initサービスをインストールする方法について説明します。
+Cloud-initは、主にインスタンスが最初に初期化されるときにカスタマイズ設定機能を提供します。インポートされたイメージにcloud-initサービスがインストールされていない場合、イメージを介して起動されたインスタンスは正しく初期化できず、イメージのインポートに失敗します。このドキュメントでは、cloud-initサービスをインストールする方法について説明します。
 cloud-initをインストールするには、次の2つの方法をお勧めします。
-
 - [手動でcloud-initソースパッケージをダウンロードする](#ManualDown) 
 - [ソフトウェアソースにあるcloud-initパッケージを使用する](#SoftSources)
 
 ## 注意事項
-Linuxシステムイメージをインポートする前に、イメージにcloud-initサービスが正しくインストールされていることを確認してください。
+Linux OS対応のイメージをインポートする前に、イメージにcloud-initサービスが正しくインストールされていることを確認してください。
 
-## 前提条件
-cloud-initサービスがインストールされているサーバーは、外部ネットワークに正しくアクセスできます。
+##  前提条件
+cloud-initサービスをインストールするサーバーは、外部ネットワークに正常にアクセスできること。
 
 ## 操作手順
+<dx-tabs>
+::: \scloud-init\sソースコードパッケージを手動でダウンロードする方法[](id:ManualDown)
+
+### cloud-initソースパッケージのダウンロード
 
 
-- [手動でcloud-initソースパッケージをダウンロードする](#ManualDown)
 
-#### cloud-initソースパッケージのダウンロード
->?  
->- 正常にインストールされた状態では、cloud-init-17.1バージョンはTencent Cloudとの互換性が最も高く、そのイメージで作成されたCVMのすべての設定アイテムを正しく初期化することができます。**cloud-init-17.1.tar.gz** バージョンをインストールすることをお薦めします。また [ここをクリック](https://launchpad.net/cloud-init/+download) してそのほかのバージョンのcloud-initソースパッケージをダウンロードすることもできます。 このドキュメントでは、cloud-init-17.1バージョンを例に説明します。
->- cloud-init-17.1または他のバージョンのcloud-initソースパッケージによるインストールが失敗した場合は、[手動で簡易バージョンのcloud-initソースパッケージをダウンロード](#greeninitCloudInit) してインストールできます。
->
+<dx-alert infotype="explain" title="">
+- 正常にインストールされた状態では、cloud-init-17.1バージョンがTencent Cloudとの互換性が最も高く、そのイメージで作成されたCVMのすべての設定項目は正常に初期化されます。**cloud-init-17.1.tar.gz** バージョンをインストールすることを推奨します。また [ここをクリック](https://launchpad.net/cloud-init/+download)して、その他のバージョンのcloud-initソースパッケージをダウンロードすることもできます。 このドキュメントでは、cloud-init-17.1バージョンを例に説明します。
+- cloud-init-17.1または他のバージョンのcloud-initソースパッケージによるインストールに失敗した場合は、[手動で簡易バージョンのcloud-initソースパッケージをダウンロード](#greeninitCloudInit) してインストールできます。
+</dx-alert>
+
+
 次のコマンドを実行して、cloud-initソースパッケージをダウンロードします。
-```
+```shellsession
 wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.gz
 ```
 
-#### cloud-initをインストールする
+### cloud-initのインストール
 1. 次のコマンドを実行して、cloud-initインストールパッケージを解凍します。
->? OSがUbuntuの場合は、rootアカウントに切り替えてください。
->
-```
+<dx-alert infotype="explain" title="">
+OSがUbuntuの場合は、rootアカウントに切り替えてください。
+</dx-alert>
+```shellsession
 tar -zxvf cloud-init-17.1.tar.gz 
 ```
-2. 次のコマンドを実行して、解凍されたcloud-initのインストールパッケージディレクトリ（cloud-init-17.1ディレクトリ）に入ります。
-```
+2. 次のコマンドを実行して、解凍されたcloud-initインストールパッケージのディレクトリ（cloud-init-17.1ディレクトリ）に入ります。
+```shellsession
 cd cloud-init-17.1
 ```
 3. OSバージョンに応じてPython-pipをインストールします。
- - CentOS 6/7の場合、次のコマンドを実行します：
-```
+  - CentOS 6/7の場合、次のコマンドを実行します。
+```shellsession
 yum install python-pip -y
 ```
- - Ubuntuの場合、次のコマンドを実行します：
-```
+  - Ubuntuの場合、次のコマンドを実行します。
+```shellsession
 apt-get install python-pip -y
 ```
-インストール中に「インストールに失敗しました」または「インストールパッケージが見つかりません」などのエラーが発生した場合は、 [Python-pipがインストールできない時の解決法](#updateSoftware)を参考して問題のトラブルシューティングを行ってください。
-4. 以下のコマンドを実行して、依存関係をインストールします。
->! cloud-initがrequests 2.20.0を使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターバージョンが2.6以下の場合、cloud-initの依存関係をインストールする前、`pip install 'requests<2.20.0'` コマンドを実行して、requests 2.20.0以降のバージョンをインストールしてください。
->
-```
+インストール中に「インストールに失敗しました」または「インストールパッケージが見つかりません」などのエラーが発生した場合は、 [Python-pipがインストールできない時の解決方法](#updateSoftware)を参照してトラブルシューティングを行ってください。
+4. 次のコマンドを実行して、依存関係をインストールします。
+<dx-alert infotype="notice" title="">
+Cloud-initがrequests 2.20.0コンポーネントを使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターバージョンが2.6以前の場合、cloud-initの依存関係をインストールする前、`pip install ';2.20.0'` コマンドを実行して、requests 2.20.0以前のバージョンをインストールしてください。
+</dx-alert>
+```shellsession
 pip install -r requirements.txt
 ```
-4. OSのバージョンによりcloud-utilsコンポーネントをインストールします。
- - CentOS 6の場合、次のコマンドを実行します。
-```
+5. OSのバージョンに応じて、cloud-utilsコンポーネントをインストールします。
+  - CentOS 6の場合、次のコマンドを実行します。
+```shellsession
 yum install cloud-utils-growpart dracut-modules-growroot -y
 dracut -f
 ```
- - CentOS 7の場合、次のコマンドを実行します。
-```
+  - CentOS 7の場合、次のコマンドを実行します。
+```shellsession
 yum install cloud-utils-growpart -y
 ```
- - Ubuntuの場合、次のコマンドを実行します。
-```
+  - Ubuntuの場合、次のコマンドを実行します。
+```shellsession
 apt-get install cloud-guest-utils -y
 ```
-5. 以下のコマンドを実行して、cloud-initをインストールします。
-```
+6. 次のコマンドを実行して、cloud-initをインストールします。
+```shellsession
 python setup.py build
+```
+```shellsession
 python setup.py install --init-system systemd
-```
->! --init-systemのオプションパラメータは：(systemd、sysvinit、sysvinit_deb、sysvinit_FreeBSD、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法に従ってパラメータを選択してください。誤ったパラメーターが構成されている場合、Cloud―initサービスはシステムの起動時に自動的に開始できません。このドキュメントでは、systemdの自動起動サービス管理を例として説明します。
+``` <dx-alert infotype="notice" title="">
+--init-systemのオプションパラメータには、：(systemd、sysvinit、sysvinit_deb、sysvinit_FreeBSD、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法によってパラメータを選択してください。選択したパラメータが間違った場合、Cloud―initサービスはシステムの起動時に自動的に起動できません。このドキュメントでは、systemdの自動起動サービス管理を例として説明します。
+</dx-alert>
 
-#### cloud-init構成ファイルを変更する
 
-1. OSの違いに応じて、cloud.cfgをダウンロードします。
- - Ubuntu用のcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) してください。
- - CentOS用のcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) してください。
-2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
+### cloud-init設定ファイルの変更
 
-#### Syslogユーザーの追加
+1. OSに応じて、cloud.cfgをダウンロードします。
+  - Ubuntu用のcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg)してください。
+  - CentOS用のcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg)してください。
+2. `/etc/cloud/cloud.cfg` をダウンロードしたcloud.cfgファイルで置き換えます。
+
+
+### syslogユーザーの追加
 次のコマンドを実行して、syslogユーザーを追加します。
-```
+```shellsession
 useradd syslog
 ```
 
-#### cloud-initサービスの自動起動を設定します
+
+### cloud-initサービスの自動起動の設定
 - **OSが systemd自動起動管理サービスの場合は、以下のコマンドを実行して設定します。**
->? ユーザーは `strings /sbin/init | grep "/lib/system"` コマンドを実行でき、返信メッセージがある場合は、OSは systemd自動起動管理サービスになります。
->
+<dx-alert infotype="explain" title="">
+`strings /sbin/init | grep "/lib/system"`  コマンドを実行します。メッセージが返却された場合は、OSは systemd自動起動管理サービスです。
+</dx-alert>
  1. **UbuntuまたはDebianの場合、次のコマンドを実行します。**
-```
+```shellsession
  ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
 ```
- 2. **すべてのOSで次のコマンドを実行する必要があります。**
-```
+ 2. **OSを問わず、次のコマンドを実行します。**
+```shellsession
 systemctl enable cloud-init-local.service 
 systemctl start cloud-init-local.service
 systemctl enable cloud-init.service
@@ -111,9 +123,9 @@ systemctl status cloud-init.service
 systemctl status cloud-config.service
 systemctl status cloud-final.service
 ```
- 3. **CentOSまたはRedhatで次のコマンドを実行します。**
- /lib/systemd/system/cloud-init-local.service ファイルを以下の内容に置き換えます：
-```
+ 3. **CentOSまたはRedhat系OSの場合、次のコマンドを実行します。**
+ /lib/systemd/system/cloud-init-local.service ファイルを以下の内容で置き換えます。
+```shellsession
 [Unit]
 Description=Initial cloud-init job (pre-networking)
 Wants=network-pre.target
@@ -134,8 +146,8 @@ StandardOutput=journal+console
 [Install]
 WantedBy=cloud-init.target
 ```
-/lib/systemd/system/cloud-init.service ファイルを以下の内容に置き換えます：
-```
+/lib/systemd/system/cloud-init.service ファイルを以下の内容で置き換えます。
+```shellsession
 [Unit]
 Description=Initial cloud-init job (metadata service crawler)
 Wants=cloud-init-local.service
@@ -161,9 +173,10 @@ StandardOutput=journal+console
 WantedBy=cloud-init.target
 ```
 - **OSがsysvinit自動起動管理サービスの場合は、以下のコマンドを実行して設定します。**
->?ユーザーは `strings /sbin/init | grep "/lib/system"` コマンドを実行でき、返信メッセージがある場合は、OSはsysvinit自動起動管理サービスになります。
->
-```
+<dx-alert infotype="explain" title="">
+`strings /sbin/init | grep "sysvinit"`コマンドを実行します。メッセージが返却された場合は、OSはsysvinit自動起動管理サービスです。
+</dx-alert>
+```shellsession
 chkconfig --add cloud-init-local
 chkconfig --add cloud-init
 chkconfig --add cloud-config
@@ -173,40 +186,56 @@ chkconfig cloud-init on
 chkconfig cloud-config on 
 chkconfig cloud-final on 
 ```
-
-
-<span id="SoftSources"></span>
-### ソフトウェアソースにあるcloud-initパッケージを使用する
-
-#### cloud-initのインストール
+:::
+::: ソフトウェアソースの\scloud-init\sパッケージを使用する方法[](id:SoftSources)
+### cloud-initのインストール
 
 次のコマンドを実行して、cloud-initをインストールします。
-```
+```shellsession
 apt-get/yum install cloud-init
 ```
->? デフォルトでは、apt-getまたはyumコマンドを介してインストールされたcloud-initバージョンは、現在のOSに構成されたソフトウェアソースのデフォルトのcloud-initバージョンです。 この方式でインストールされたイメージを使用して作成されたインスタンスは、一部の構成アイテムが予想通りに初期化されていない可能性があるため、 [手動でcloud-initソースコードパッケージをダウンロード](#ManualDown)してサービスをインストールすることをお勧めします。
->
+<dx-alert infotype="explain" title="">
+デフォルトでは、apt-getまたはyumコマンドでインストールされるcloud-initは、現在のOSで設定されたソフトウェアソース中のデフォルトcloud-initバージョンを使用します。 この方法でインストールされたイメージを使用して作成したインスタンスは、一部の設定項目が予想通りに初期化されない可能性があるため、 [手動でcloud-initソースコードパッケージをダウンロード](#ManualDown)してサービスをインストールすることをお勧めします。
+</dx-alert>
 
-#### cloud-init構成ファイルの変更
-1. OSの違いに応じて、cloud.cfgをダウンロードします。
+
+
+### cloud-init設定ファイルの変更
+1. OSに応じて、cloud.cfgをダウンロードします。
  - Ubuntu用のcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg)してください。
  - CentOS用のcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg)してください。
-2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
+2. `/etc/cloud/cloud.cfg` をダウンロードしたcloud.cfgファイルで置き換えます。
+:::
+</dx-tabs>
+
+
 
 ## 関連する操作
->! 以下の操作が完了したら、サーバーを再起動しないでください。再起動した場合は、以下の操作を再度実行する必要があります。
->
+
+
+<dx-alert infotype="notice" title="">
+以下の操作が完了した後、サーバーを再起動しないでください。再起動した場合は、以下の操作を再度実施する必要があります。
+</dx-alert>
+
+
 1. 次のコマンドを実行して、cloud-initが正しく設定されているかどうかを確認します。
-```
+```shellsession
 cloud-init init --local
+```
+次のようなメッセージが返却された場合、cloud-initの設定が完了したことがわかります。
+```shellsession
+Cloud-init v. 20.1 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
+```
+2. 次のコマンドを実行し、cloudinitのキャッシュをクリアします。
+```shellsession
 rm -rf /var/lib/cloud
 ```
-2. UbuntuまたはDebianの場合、次のコマンドを実行します。
-```
+3. UbuntuまたはDebianの場合、次のコマンドを実行します。
+``` shellsession
 rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 ```
-3. UbuntuまたはDebianの場合、`/etc/network/interfaces` の内容を次のように置き換えます。
-```
+4. UbuntuまたはDebianの場合、`/etc/network/interfaces` の内容を次のように変更します。
+```shellsession
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 source /etc/network/interfaces.d/*
@@ -214,45 +243,43 @@ source /etc/network/interfaces.d/*
 
 ## 付録
 
-<span id="greeninitCloudInit"></span>
-### 手動で簡易バージョンのcloud-initパッケージをダウンロードする
-[手動で簡易バージョンのcloud-initソースパッケージをダウンロード](#ManualDown) してcloud-initサービスをインストールできない場合は、次の手順を実行してcloud-initをインストールします。
+### 手動で cloud-init 簡易パッケージをダウンロードする方法[](id:greeninitCloudInit)
+[手動で簡易バージョンのcloud-initソースパッケージをダウンロード](#ManualDown) してcloud-initサービスをインストールできない場合は、次の手順を実施してcloud-initをインストールします。
 1. [ここをクリック](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz)して簡易バージョンのcloud-initパッケージを取得します。
 2. 次のコマンドを実行して、簡易バージョンのcloud-initパッケージを解凍します。
-```
+```shellsession
 tar xvf greeninit-x64-beta.tgz 
 ```
-3. 次のコマンドを実行して、解凍された簡易バージョンのcloud-initパッケージディレクトリ（つまり、greeninitディレクトリ）に入ります。
-```
+3. 次のコマンドを実行して、解凍された簡易バージョンcloud-initパッケージのディレクトリ（greeninitディレクトリ）に入ります。
+```shellsession
 cd greeninit
 ```
 4.  次のコマンドを実行して、cloud-initをインストールします。
-```
+```shellsession
 sh install.sh 
 ```
 
-<span id="updateSoftware"></span>
-
-### Python-pipがインストールできない時の解決法
-
-インストール中に「インストールに失敗しました」や「インストールパッケージが見つかりません」などのエラーが発生した場合は、ご使用のOSに基づいて次のようにトラブルシューティングを行います。
-- CentOS 6/7の場合：
-  1. .次のコマンドを実行して、EPELストレージリポジトリを設定します。
-```
+### Python-pip がインストールできない問題の解決方法[](id:updateSoftware)
+インストール中に「インストールに失敗しました」や「インストールパッケージが見つかりません」などのエラーが発生した場合は、ご使用のOSによって次のようにトラブルシューティングを行います。
+<dx-tabs>
+::: CentOS\s6/7の場合
+  1. 次のコマンドを実行して、EPELストレージリポジトリを設定します。
+```shellsession
 yum install epel-release -y
 ```
   2. 次のコマンドを実行して、Python-pipをインストールします。
-```
+```shellsession
 yum install python-pip -y
 ```
-- Ubuntuの場合：
+:::
+::: Ubuntu\sの場合
   1. 次のコマンドを実行して、ソフトウェアパッケージリストを更新します。
-```
+```shellsession
 apt-get update -y
 ```
   2. 次のコマンドを実行して、Python-pipをインストールします。
-```
+```shellsession
 apt-get install python-pip -y
 ```
-
-
+:::
+</dx-tabs>
