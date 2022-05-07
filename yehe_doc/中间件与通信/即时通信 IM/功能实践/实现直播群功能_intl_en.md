@@ -9,7 +9,7 @@ IM audio-video groups (AVChatRooms) have the following features:
 ## Use Cases
 
 #### On-screen comments for live streaming
- An audio-video group (AVChatRoom) supports various message types, including on-screen comments, gifts, and likes. It can easily build a good chatting and interactive experience for live streaming. It also supports on-screen comment moderation to protect your live streams from sensitive words.
+ An audio-video group (AVChatRoom) supports various message types, including on-screen comments, gifts, and likes. It can easily build a good chatting and interactive experience for live streaming.
 #### Influencer marketing
  An audio-video group (AVChatRoom), when combined with business live streaming, supports specific message types, such as likes, inquiries, and vouchers, helping you monetize your traffic.
 
@@ -34,7 +34,7 @@ IM audio-video groups (AVChatRooms) have the following features:
 - [Group Management (Web & Mini Programs)](https://intl.cloud.tencent.com/document/product/1047/34330)
 
 ## Instructions
-<span id="Step1"></span>
+[](id:Step1)
 ### Step 1: create an app
 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im).
@@ -45,7 +45,7 @@ IM audio-video groups (AVChatRooms) have the following features:
 3. In the **Create Application** dialog box, enter a name for your app and click **OK**. After the app is created, you can view the status, version, SDKAppID, creation time, and expiration time of the app on the overview page of the console.
 4. Take note of the SDKAppID.
 
-<span id="Step2"></span>
+[](id:Step2)
 ### Step 2: create an audio-video group (AVChatRoom)
 You can create a group in the console or by calling [Creating a Group](https://intl.cloud.tencent.com/document/product/1047/34895). This document creates a group in the console.
 
@@ -56,7 +56,7 @@ You can create a group in the console or by calling [Creating a Group](https://i
 4. Click **OK**. After the group is created, take note of the **Group ID**. `@TGS#aC72FIKG3` is used as an example here.
 
 
-<span id="Step3"></span>
+[](id:Step3)
 ### Step 3: integrate the SDK
 You can integrate the SDK using NPM or Script, and we recommend NPM. The example in this document uses NPM integration.
 
@@ -77,7 +77,7 @@ npm install tim-wx-sdk --save-dev
 npm config set registry http://r.cnpmjs.org/
 ```
 
-<span id="Step4"></span>
+[](id:Step4)
 ### Step 4: create an SDK instance
 
 <pre><code><span class="hljs-comment">// Create an SDK instance. The TIM.create() method returns the same instance for the same SDKAppID.</span>
@@ -168,7 +168,7 @@ _handleGroupSystemNotice(message) {
   <span class="hljs-comment">// For more information on how to use a RESTful API to send group system notifications, see <a href="https://intl.cloud.tencent.com/document/product/1047/34958">Sending System Messages in a Group</a>.</span>
 }</code></pre>
 
-<span id="Step5"></span>
+[](id:Step5)
 ### Step 5: log in to the SDK
 
 ```javascript
@@ -180,7 +180,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step6"></span>
+[](id:Step6)
 ### Step 6: set your nickname and profile photo
 Starting from SDK v2.6.2, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in audio-video groups. You can call [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) to set your nickname and profile photo.
 
@@ -198,7 +198,7 @@ promise.then(function(imResponse) {
 });
 ```
 
-<span id="Step7"></span>
+[](id:Step7)
 ### Step 7: join a group
 ```javascript
 // An anonymous user joins the group (no login is required and the user will only receive messages after joining the group).
