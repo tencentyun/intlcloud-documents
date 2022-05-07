@@ -1,188 +1,48 @@
 <style>
 .markdown-text-box table th,.markdown-text-box table td{text-align: center;}
 .inbuttom{height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;}
-.preview-demo-section .preview-demo-item {
-    display: inline-block;
-    width: 200px;
-    height: 300px;
-    background: #fff;
-    box-shadow: 0 1px 8px 0 rgba(156,175,204,0.25);
-    border-radius: 1px;
-    text-align: center;
-    padding: 0 15px;
-    margin: 10px 10px 10px 0;
-    vertical-align: top;
-}
-
-.preview-demo-section .preview-demo-item .demo-item-header {
-    margin-top: 30px;
-}
-
-.preview-demo-section .preview-demo-item .demo-item-desc {
-    font-size: 12px;
-}
-
-.preview-demo-section .preview-demo-item .demo-item-platform {
-    font-size: 20px;
-    font-weight: bold;
-}
-.preview-demo-section .preview-demo-item .demo-logo-wrapper {
-    line-height: 1;
-}
-.preview-demo-section .preview-demo-item .demo-item-header img {
-    box-shadow: none;
-    width: 40px;
-    height: 40px;
-}
-.preview-demo-section .preview-demo-item.style-qrcode .demo-item-download {
-    margin-top: 15px;
-}
-.preview-demo-section .preview-demo-item.style-web .demo-item-download {
-    margin-top: 25px;
-}
-.preview-demo-section .preview-demo-item.style-single-download-btn .demo-item-download {
-    margin-top: 50px;
-}
-.preview-demo-section .preview-demo-item.style-flutter .demo-item-download {
-    margin-top: 55px;
-}
-.preview-demo-section .preview-demo-item.style-electron .demo-item-download {
-    margin-top: 25px;
-}
-.preview-demo-section .preview-demo-item.style-electron .demo-item-download-btn:first-child {
-    margin-bottom: 10px;
-}
-.preview-demo-section .preview-demo-item .demo-item-download img {
-    box-shadow: none;
-    width: 110px;
-    height: 110px;
-}
-.preview-demo-section .preview-demo-item .demo-item-download .demo-item-download-btn {
-    background-color: #00a4ff;
-    border-radius: 20px;
-    color: #fff;
-    font-size: 14px;
-    width: 135px;
-    height: 35px;
-    line-height: 35px;
-    margin: 0 auto;
-}
-.preview-demo-section .preview-demo-item.style-web .demo-item-download .demo-item-download-btn {
-    color: #fff;
-    background-color: #00a4ff;
-    height: 24px;
-    line-height: 24px;
-    margin-bottom: 6px;
-}
-.preview-demo-section .preview-demo-item .demo-item-download .demo-item-download-btn:hover {
-    cursor: pointer;
-}
 </style>
 
-<div class="preview-demo-section">
-    <div class="preview-demo-item style-qrcode">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/53be7f245c4d11d3aefcb6dc53918757.svg" alt="">
-            </div>
-            <div class="demo-item-platform">Android</div>
-        </div>
-        <div class="demo-item-desc">
-            Audio/Video call, group conference, karaoke, <br>audio chat room,interactive live streaming
-        </div>
-        <div class="demo-item-download">
-            <img src="https://main.qcloudimg.com/raw/8a603ced0a61983018c794df842f7029.png" data-nonescope="true">
-        </div>
-    </div>
-    <div class="preview-demo-item style-qrcode">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/36154dc8bb7c93826dbdc6fdcec4e194.svg" alt="">
-            </div>
-            <div class="demo-item-platform">iOS</div>
-        </div>
-        <div class="demo-item-desc">
-            Audio/Video call, group conference, karaoke, <br>audio chat room,interactive live streaming
-        </div>
-        <div class="demo-item-download">
-            <img src="https://main.qcloudimg.com/raw/a1a6fd4a9bc3ad2b5fe60e31202c8fda.png" data-nonescope="true">
-        </div>
-    </div>
-    <div class="preview-demo-item style-single-download-btn">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/7622934bfd307936181d3a57ed69706d.svg" alt="">
-            </div>
-            <div class="demo-item-platform">Windows</div>
-        </div>
-        <div class="demo-item-desc">
-            Audio/Video call, group conference, audio chat room
-        </div>
-        <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe');reportEvent({name: 'demo-click-native', ext1: 'windows'});">Download</div>
-        </div>
-    </div>
-    <div class="preview-demo-item style-single-download-btn">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/2f867a868913c590fbb2929b8b240f45.svg" alt="">
-            </div>
-            <div class="demo-item-platform">Mac OS</div>
-        </div>
-        <div class="demo-item-desc">
-            Audio/Video call, group conference, audio chat room
-        </div>
-        <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2');reportEvent({name: 'demo-click-native', ext1: 'windows'});">Download/div>
-        </div>
-    </div>
-    <div class="preview-demo-item style-web">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/ff4dc34a1c72fdb26fc41c1268898025.svg" alt="">
-            </div>
-            <div class="demo-item-platform">Web</div>
-        </div>
-        <div class="demo-item-desc">
-           Try now
-        </div>
-        <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html');reportEvent({name: 'demo-click-web', ext1: 'api-example'});">Video call</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/pusher.html');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">interactive live streaming-Pusher</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/player.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">interactive live streaming-Player</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html');reportEvent({name: 'demo-click-web', ext1: 'calling'});">One-to-one audio/video call</div>
-        </div>
-    </div>
-    <div class="preview-demo-item style-flutter">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/0fae0aca728ba2ce98e66d1b9641aa56.svg" alt="">
-            </div>
-            <div class="demo-item-platform">Flutter</div>
-        </div>
-        <div class="demo-item-desc">
-            Audio/Video call, group conference
-        </div>
-        <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://comm.qq.com/im_demo_download/trtc_flutter_demo.apk');reportEvent({name: 'demo-click-flutter', ext1: 'android'});">Download</div>
-        </div>
-    </div>
-    <div class="preview-demo-item style-electron">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/96a6b7e86eb8d7a93f830d3686d3164c.svg" alt="">
-            </div>
-            <div class="demo-item-platform">Electron</div>
-        </div>
-        <div class="demo-item-desc">
-            Audio/Video call, group conference, screen sharing
-        </div>
-        <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-windows-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'windows'});">Windows</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-mac-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'mac'});">macOS</div>
-        </div>
-    </div>
-</div> 
+
+## Native Demos
+<table>
+<tr>
+<th>iOS</th><th>Android</th><th>Windows</th><th >Mac OS</th>
+</tr>
+<tr>
+<td><img style="width:150px;" src="https://main.qcloudimg.com/raw/a1a6fd4a9bc3ad2b5fe60e31202c8fda.png" data-nonescope="true"></td>
+<td><a onclick="window.open('https://dldir1.qq.com/hudongzhibo/liteav/TRTCDemo.apk');reportEvent({name: 'intl-demo-click-native', ext1: 'android'});"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/8a603ced0a61983018c794df842f7029.png);background-size: cover;">
+</button></a></td>
+<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe');reportEvent({name: 'intl-demo-click-native', ext1: 'windows'});"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
+</button></a></td>
+<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2');reportEvent({name: 'intl-demo-click-native', ext1: 'mac'});"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
+</button></a></td>
+</tr>
+</table>
+
+## Cross-Platform Demos
+<table>
+<tr>
+<th>Web</th><th>Flutter </th><th>Electron</th>
+</tr>
+<tr>
+</div></a></td>
+<td>
+<input type="button" value="Sample Code for Web" style="height: 30px;width: 230px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html');reportEvent({name: 'intl-demo-click-web', ext1: 'api-sample'});" /><br><br>
+<input type="button" value="Interactive Live Streaming - Pusher" style="height: 30px;width: 230px;min-width: 50px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en');reportEvent({name: 'intl-demo-click-web', ext1: 'pusher'});" /><br><br>
+<input type="button" value="Interactive Live Streaming - Player" style="height: 30px;width: 230px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en');reportEvent({name: 'intl-demo-click-web', ext1: 'player'});" />
+</td>
+<td>
+<img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
+</td>
+<td>
+<input type="button" value="Windows" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-windows.zip');reportEvent({name: 'intl-demo-click-electron', ext1: 'windows'});" /><br><br>
+<input type="button" value="macOS" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-mac.zip');reportEvent({name: 'intl-demo-click-electron', ext1: 'mac'});" /></td>
+</table>
+
+
+
+
 
 
 ## Video Call
@@ -284,6 +144,20 @@ In the karaoke mode, the room owner and audience can turn their mics on and sing
 </tr>
 </table>
 
+## Duet
+
+In the duet mode, the room owner can sing together with a user from the audience. It supports smooth mic on/off without waiting, with singer latency shorter than 100 ms. In the low-latency live streaming mode, up to 100,000 users can play back at the same time, with latency as low as 1,000 ms. In the CDN live streaming mode, there is no limit on audience size. Common duet scenarios include duet singing, karaoke room, FM radio, etc.
+
+<table>
+     <tr>
+         <th style="text-align:center;width:50%">Request Song (Room Owner)</th>  
+         <th style="text-align:center">View Song List (Mic-on Audience)</th>  
+     </tr>
+<tr>
+<td><img src="https://main.qcloudimg.com/raw/0c3b9a7c40f2d0eb6cb7fa0b14acf547.png"/></td>
+<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
+</tr>
+</table>
 
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>
