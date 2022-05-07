@@ -24,7 +24,7 @@
 
 点播视频 DRM 加密和解密播放的整体架构流程图如下：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/8b5128a2d3504f6aa8181ea0e1b73570.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae358775adc9711065239394b246ab50.png)
 
 ## 接入参考
 
