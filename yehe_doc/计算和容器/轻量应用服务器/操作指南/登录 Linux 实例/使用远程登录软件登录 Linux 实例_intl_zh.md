@@ -4,7 +4,7 @@
 ## 适用本地操作系统
 Windows
 <dx-alert infotype="explain" title="">
-如果您的本地计算机为 Linux 或者 MacOS 操作系统，请 [使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/1103/41525)。
+如果您的本地计算机为 Linux 或者 MacOS 操作系统，请使用 SSH 登录 Linux 实例。
 </dx-alert>
 
 
@@ -16,7 +16,7 @@ Windows
 
 - 您已获取登录实例的用户名及密码（或密钥）。
 <dx-alert infotype="notice" title="">
-首次通过本地远程登录软件登录 Linux 实例之前，您需要重置用户名（如 `root`、`ubuntu`）的密码，或者绑定密钥。具体操作请参考 [重置密码](https://intl.cloud.tencent.com/document/product/1103/41553) 或 [管理密钥](https://intl.cloud.tencent.com/document/product/1103/41392) 文档。
+首次通过本地远程登录软件登录 Linux 实例之前，您需要重置用户名（如 `root`、`ubuntu`）的密码，或者绑定密钥。具体操作请参考[管理密钥](https://intl.cloud.tencent.com/document/product/1103/41392) 文档。
 </dx-alert>
 - 请确认本地计算机与实例之间的网络连通正常，以及实例的防火墙已放行22端口（创建实例时默认已开通22端口）。
 
