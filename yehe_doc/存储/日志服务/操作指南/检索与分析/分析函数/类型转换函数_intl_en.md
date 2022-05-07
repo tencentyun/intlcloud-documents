@@ -21,7 +21,7 @@ The `cast` function is used to parse the data type of `x`. During `cast` executi
 cast(x as type)
 ```
 
-### Parameter description
+#### Parameter description
 
 | Parameter | Description |
 | ---- | ------------------------------------------------------------ |
@@ -30,11 +30,11 @@ cast(x as type)
 
 If `type` is `timestamp`, `x` must be a timestamp in milliseconds (such as 1597807109000) or a time string in the ISO 8601 time format (such as 2019-12-25T16:17:01+08:00).
 
-### Return value type
+#### Return value type
 
 The return value type is determined by the `type` parameter.
 
-### Example
+#### Example
 
 1. Parse the numeric value 0.01 into a BIGINT value:
 ```
@@ -50,24 +50,24 @@ The return value type is determined by the `type` parameter.
 
 The `try_cast` function is used to parse the data type of `x`. During `try_cast` execution, if a value fails to be parsed, the system returns `NULL` and continues processing by skipping the value.
 
-### Syntax
+#### Syntax
 
 ```
 try_cast(x as type)
 ```
 
-### Parameter description
+#### Parameter description
 
 | Parameter | Description |
 | ---- | ------------------------------------------------------------ |
 | x    | The parameter value can be of any type.                                       |
 | type | SQL data type. Valid values: `bigint`, `varchar`, `double`, `boolean`, `timestamp`, `decimal`, `array`, or `map`.</br>For the mappings between index and SQL data types, please see [Appendix: Data Type Mappings](#DataTypeMapping). |
 
-### Return value type
+#### Return value type
 
 The return value type is determined by the `type` parameter.
 
-### Example
+#### Example
 
 Parse the **remote_user** field value into a VARCHAR value:
 
