@@ -6,7 +6,7 @@ Leveraging Tencent's 21 years of experience in network and audio/video technolog
  This solution leverages Tencent Cloud's industry-leading network and audio/video technologies as well as high-quality node resources to help you build interactive live streaming services with minimal lag and latency below 1 second, taking live streaming into the era of CDN 2.0.
 
 ## Product Architecture
-TRTC offers cross-platform solutions for audio/video calls and low-latency interactive live streaming. With SDKs for mini programs, web, Android, iOS, Electron, Windows, macOS, and other platforms, you can quickly integrate TRTC services into your projects and connect to the TRTC backend. You can also combine TRTC with other Tencent Cloud products such as Instant Messaging (IM), Live Video Broadcasting (LVB), and Video on Demand (VOD) to explore more use cases. The figure below shows how TRTC works together with other products.
+TRTC offers cross-platform solutions for audio/video calls and low-latency interactive live streaming. With SDKs for mini programs, web, Android, iOS, Electron, Windows, macOS, and other platforms, you can quickly integrate TRTC services into your projects and connect to the TRTC backend. You can also combine TRTC with other Tencent Cloud products such as Instant Messaging (IM), Cloud Streaming Services (CSS), and Video on Demand (VOD) to explore more use cases. The figure below shows how TRTC works together with other products.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/2d18a7fbc3ef4815752104ff95675e4a.jpg)
 
