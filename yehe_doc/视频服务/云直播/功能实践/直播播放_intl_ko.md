@@ -1,5 +1,5 @@
 ## 준비 작업
-1. [Tencent CSS 서비스](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)가 활성화되어 있고 [실명 인증](https://intl.cloud.tencent.com/document/product/378/3629)이 완료되어야 합니다. 실명 인증을 하지 않은 사용자는 중국 내 CSS 인스턴스를 구매할 수 없습니다.
+1. [Tencent CSS 서비스](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)가 활성화되어. 
 2. [CSS 콘솔](https://console.cloud.tencent.com/live/livestat)에 액세스하여 푸시 스트리밍 주소를 획득해 라이브 방송 푸시 스트리밍을 구현합니다. 자세한 방법은 [라이브 방송 푸시 스트리밍](https://intl.cloud.tencent.com/document/product/267/31558)을 참조하십시오.
 3. [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)를 선택해 [도메인 추가]를 클릭하여 ICP비안을 받은 도메인을 입력하고 [재생 도메인] 유형을 선택한 후 [저장]을 클릭합니다.
 >!

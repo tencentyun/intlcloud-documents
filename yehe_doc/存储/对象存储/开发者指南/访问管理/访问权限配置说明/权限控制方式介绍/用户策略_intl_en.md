@@ -65,7 +65,7 @@ You have already created a CAM sub-account. If you haven't, see [Create a sub-ac
 <span id="Custom Policy"></span>
 ### Directions
 
-CAM provides [preset policies and custom policies](https://intl.cloud.tencent.com/document/product/598/10601). A preset policy is a policy preset in the system provided by CAM. For COS related preset policies, see [Preset Policy](#Preset Policy). A custom policy allows users to customize elements such as resources and actions. The following describes how to create a custom policy to grant permissions to a sub-account:
+CAM provides [preset policies and custom policies](https://intl.cloud.tencent.com/document/product/598/10601). A preset policy is a policy preset in the system provided by CAM. For COS related preset policies, see [Preset Policy](https://intl.cloud.tencent.com/document/product/436/45236?lang=en&pg=#preset-policy). A custom policy allows users to customize elements such as resources and actions. The following describes how to create a custom policy to grant permissions to a sub-account:
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam).
 2. Choose **Policy** > **Create Custom Policy** > **Create by Policy Syntax** to go to the policy creation page.
@@ -95,7 +95,7 @@ The policy syntax must contain the following elements:
 CAM provides some preset policies. You can view them (filtered by "COS") in **Policy** > **Preset Policy** in the [CAM console](https://console.cloud.tencent.com/cam).
 
 
-Click a policy name and choose **Policy Syntax** > **JSON** to view the policy context. In a preset policy, `resource` is set to `"*"` (indicating all resources in COS) and its value cannot be modified. If you want to grant permissions on certain COS buckets or objects, you can copy the JSON preset policy to create a [Custom Policy](#Custom Policy).
+Click a policy name and choose **Policy Syntax** > **JSON** to view the policy context. In a preset policy, `resource` is set to `"*"` (indicating all resources in COS) and its value cannot be modified. If you want to grant permissions on certain COS buckets or objects, you can copy the JSON preset policy to create a [Custom Policy](https://intl.cloud.tencent.com/document/product/436/45236?lang=en&pg=#directions).
 
 
 

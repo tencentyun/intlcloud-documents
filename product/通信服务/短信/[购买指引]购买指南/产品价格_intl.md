@@ -5,7 +5,7 @@ Global SMS is daily [pay-as-you-go](https://intl.cloud.tencent.com/document/prod
 
 > !Due to the rates adjustment by carriers in 129 countries/regions including Israel, Argentina, Belarus, Sri Lanka, Canada, Pakistan, Indonesia, and India, the prices of Tencent Cloud Global SMS in the above countries/regions will be adjusted from **00:00 on May 01, 2022**.For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
 
-Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw/6d9038bc9f2b53601adfa33d5b5275f2.pdf).
+Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw/3b8a94ee3cf56a9b1e38e6190ecbd707.pdf).
 
 | Country/Region | Code	| Country/Region Code |	Unit Price (USD) |
 |--------------------|-------|---------|---------------|
@@ -167,7 +167,7 @@ Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw
 | Peru                             | PE   | 51     | 0.0749 |
 | French Polynesia                 | PF   | 689    | 0.1246 |
 | Papua New Guinea                 | PG   | 675    | 0.0692 |
-| Philippines                      | PH   | 63     | 0.2761 |
+| Philippines                      | PH   | 63     | 0.0403 |
 | Pakistan                         | PK   | 92     | 0.1093 |
 | Poland                           | PL   | 48     | 0.0411 |
 | Saint Pierreand Miquelon         | PM   | 508    | 0.1136 |

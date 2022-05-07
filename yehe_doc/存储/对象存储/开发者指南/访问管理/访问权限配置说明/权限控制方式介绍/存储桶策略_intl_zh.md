@@ -41,7 +41,7 @@
 |操作|所有操作|
 |条件|无|
 
-控制台支持 [图形化配置](#图形化配置) 和 [策略配置](#策略配置) 两种方式添加、管理存储桶策略。
+控制台支持 [图形化配置](https://intl.cloud.tencent.com/document/product/436/45235?lang=en&pg=#visual-editor) 和 [策略配置](https://intl.cloud.tencent.com/document/product/436/45235?lang=en&pg=#json) 两种方式添加、管理存储桶策略。
 
 <span id="图形化配置"></span>
 

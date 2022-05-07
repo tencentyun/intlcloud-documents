@@ -123,7 +123,7 @@ For example, an upper limit of 200 requests per second indicates that Tencent Cl
 
 [](id:que18)
 ### What should I do if "RTMP close" is displayed during push and the push fails, but the log notifies a successful push? 
-It may be that there is a problem with your current push URL. We recommend you use the [trial demo](https://intl.cloud.tencent.com/document/product/1071/38147) to test whether the URL works normally. For more information on troubleshooting, see [Troubleshooting Push Failure](https://intl.cloud.tencent.com/document/product/267/33383).
+It may be that there is a problem with your current push URL. We recommend you use the [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147) to test whether the URL works normally. For more information on troubleshooting, see [Troubleshooting Push Failure](https://intl.cloud.tencent.com/document/product/267/33383).
 
 [](id:que19)
 ### What should I do if the stream cannot be pushed normally after I modify the frame rate, the push needs to be restarted several times, and the stream is frequently interrupted? 

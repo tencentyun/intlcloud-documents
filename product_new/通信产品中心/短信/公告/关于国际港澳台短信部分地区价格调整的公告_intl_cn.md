@@ -90,7 +90,7 @@
 | Nepal                             | 尼泊尔               | NP            | 977                                     | 0.1050                         |
 | Oman                              | 阿曼                 | OM            | 968                                     | 0.0712                         |
 | Peru                              | 秘鲁                 | PE            | 51                                      | 0.0749                         |
-| Philippines                       | 菲律宾               | PH            | 63                                      | 0.2761                         |
+| Philippines                       | 菲律宾               | PH            | 63                                      | 0.0403                     |
 | Pakistan                          | 巴基斯坦             | PK            | 92                                      | 0.1093                         |
 | Saint Pierre and Miquelon         | 圣彼埃尔和密克隆岛   | PM            | 508                                     | 0.1136                         |
 | Romania                           | 罗马尼亚             | RO            | 40                                      | 0.0776                         |

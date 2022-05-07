@@ -8,7 +8,7 @@ CSSプッシュの情報セキュリティを保護するため、CSSプッシ�
 
 ##  前提条件
 
-CSSを開始し、実名認証を完了しました。
+CSSを開始し。
 
 ## 認証設定
 1. [**ドメイン名管理**](https://console.cloud.tencent.com/live/domainmanage)に進み、設定したい**プッシュドメイン名**または**管理**をクリックしてドメイン名詳細ページに進みます。 
@@ -22,7 +22,7 @@ CSSを開始し、実名認証を完了しました。
 ## プッシュアドレスジェネレーター
 
 ### 操作手順
-1. [**ドメイン名管理**](https://console.cloud.tencent.com/live/domainmanage)に進み、設定したいプッシュドメイン名を選択するか、**管理**をクリックし、ドメイン名詳細ページに進みます。
+1. [ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)に進み、設定したいプッシュドメイン名を選択するか、**管理**をクリックし、ドメイン名詳細ページに進みます。
 2. **プッシュ設定**>**プッシュアドレスジェネレーター**を選択し、次のとおり設定を行います。
    1. 期限切れ時間を選択します（例：`2021-06-30 19:26:02）。
    2. カスタマイズされたStreamNameを入力します（例：liveteststream）。
@@ -57,7 +57,7 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
 
 Tencent CloudはPHPおよびJavaのプッシュアドレスのサンプルコードを提供します。サンプルコードを直接参照して、プッシュアドレスのアクセスを完了することができます。具体的な操作は次のとおりです。
 
-1. **[ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)**に進みます。
+1. [ドメイン名管理](https://console.cloud.tencent.com/live/domainmanage)に進みます。
 2. プッシュドメイン名を選択するか、右側の**管理**をクリックしてドメイン名詳細ページに進みます。
 3. **プッシュ設定**を選択し、一番下までプルダウンして**プッシュアドレスサンプルコード**タグを表示します。
 4. 以下に示すように、タグ切り替えボタンをクリックして、PHP/Javaサンプルコードを表示します。
@@ -72,7 +72,7 @@ Tencent CloudはPHPおよびJavaのプッシュアドレスのサンプルコー
     *        key セキュリティキー
     *        time有効期限sample 2016-11-12 12:00:00。有効期限のタイムスタンプ、単位はsです
     * @return String url
-*/
+
 function getPushUrl($domain, $streamName, $key = null, $time = null){
 	if($key && $time){
 		$txTime = strtoupper(base_convert(strtotime($time),10,16));

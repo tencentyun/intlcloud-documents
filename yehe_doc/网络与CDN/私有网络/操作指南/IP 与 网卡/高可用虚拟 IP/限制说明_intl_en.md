@@ -3,6 +3,7 @@
 - The backend RS but not the HAVIP determines whether to migrate based on the configuration file negotiation.
 - Only VPC instances are supported, and the basic network is not supported.
 - Heartbeat detection must be done by an application on the CVM, but not by the HAVIP, which serves only as a floating IP address declared by ARP (the experience is consistent with that of a traditional physical machine.)
+- The HAVIP unbound to a CVM cannot be published to the CCN. Please retry after binding it to a CVM. For more information, see [Remarks](https://intl.cloud.tencent.com/document/product/215/35501).
 
 ### Quota Limits
 <table style="width:450px !important">

@@ -41,7 +41,7 @@
 3. `SDKAPPID`と`SECRETKEY`パラメータを設定します。
 <ul><li/>SDKAPPID：デフォルトはPLACEHOLDER、実際のSDKAppIDを設定してください。
     <li/>SECRETKEY：デフォルトはPLACEHOLDER、実際のキー情報を設定してください。</ul>
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
 5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
 
@@ -69,7 +69,8 @@
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->!  `android:hardwareAccelerated="false"`は設定しないでください。ハードウェアアクセラレーションを無効にすると、相手側のビデオストリームがレンダリングできなくなります。
+  
+<dx-alert infotype="notice">`android:hardwareAccelerated="false"`は設定しないでください。ハードウェアアクセラレーションを無効にすると、相手側のビデオストリームがレンダリングできなくなります。</dx-alert>
 2. Android端末のオーディオ/ビデオの権限は手動でリクエストする必要があります。
 ```java
 if (Platform.OS === 'android') {

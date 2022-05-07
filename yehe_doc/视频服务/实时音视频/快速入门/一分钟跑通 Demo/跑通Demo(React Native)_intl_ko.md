@@ -41,7 +41,7 @@
 3. `SDKAPPID` 및 `SECRETKEY` 매개변수를 설정합니다.
 <ul><li/>SDKAPPID: PLACEHOLDER로 기본 설정되어 있으며, 실제 SDKAppID로 설정하십시오.
     <li/>SECRETKEY: PLACEHOLDER로 기본 설정되어 있으며, 실제 키 정보로 설정하십시오.</ul>
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. 붙여넣기 완료 후 **붙여넣기 완료, 다음 단계** 를 클릭하면 생성이 완료됩니다.
 5. 컴파일 완료 후 **콘솔 개요로 돌아가기**를 클릭합니다.
 
@@ -69,7 +69,8 @@
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->! `android:hardwareAccelerated="false"`를 설정하지 마십시오. 하드웨어 가속을 비활성화하면 상대방의 비디오 스트리밍을 렌더링할 수 없습니다.
+  
+<dx-alert infotype="notice">`android:hardwareAccelerated="false"`를 설정하지 마십시오. 하드웨어 가속을 비활성화하면 상대방의 비디오 스트리밍을 렌더링할 수 없습니다.</dx-alert>
 2. Android 오디오 및 비디오 권한은 수동으로 적용해야 합니다.
 ```java
 if (Platform.OS === 'android') {

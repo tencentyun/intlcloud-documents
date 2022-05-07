@@ -46,11 +46,11 @@
 3. 在左侧菜单栏中，单击【图片处理】，进入**样式管理**页面。
    **分隔符**：样式分隔符是分割文件名称和处理样式的符号，包含中划线（-）、下划线（_）、斜杠（/）和感叹号（!）。此处选择感叹号（!），然后保存。
 4. 单击【添加样式】，进入**新增样式**页面，配置信息如下：
-	- **样式名称**：输入自定义的样式名称，此处举例输入：yunstyle。
+  - **样式名称**：输入自定义的样式名称，此处举例输入：yunstyle。
 > ! 
 > - 样式名需要区分大小写，且保存之后不可修改。
 > - 为避免歧义，处理样式名中不可出现当前所启用的间隔标志符。
-	- **编辑模式**：选择基本编辑。
+  - **编辑模式**：选择基本编辑。
   - 缩略方式：选择只缩放。
   - 缩放选择：选择限定宽高缩放。
   - 缩略尺寸：宽480px，高270px。
@@ -68,8 +68,8 @@
 ```
 对象地址 + 分隔符 + 处理样式名
 ```
-最后得到的对象地址为：`https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle`，将此地址粘贴至地址栏回车，即可看到缩放后的效果图如下。
-![](https://main.qcloudimg.com/raw/f48dba67ddfac797136a552dc6a14816.jpg)
-如需携带签名，则URL为 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle?q-sign-algorithm=<signature>`，并以`/sample.jpg!yunstyle`作为资源来计算签名`<signature>`。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后得到的对象地址为：`https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle`，将此地址粘贴至地址栏回车，即可看到缩放后的效果图如下。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](https://main.qcloudimg.com/raw/f48dba67ddfac797136a552dc6a14816.jpg)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如需携带签名，则URL为 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg!yunstyle?q-sign-algorithm=<signature>`，并以`/sample.jpg!yunstyle`作为资源来计算签名`<signature>`。
 
 

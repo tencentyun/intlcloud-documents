@@ -2,10 +2,10 @@
 
 [](id:step0)
 ## 准备工作
-1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云直播实例。
+1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)。
 2. 进入 [腾讯云直播服务开通页](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，勾选同意《腾讯云服务协议》，并单击 **申请开通** 即可开通云直播服务。
 >?  
->- 云直播服务申请开通后，会赠送20GB国内播放流量免费体验使用。
+>- 云直播服务申请开通后，会赠送20GB中国大陆境内播放流量免费体验使用。
 >- 域名配置与标准直播一致，如您已接入标准直播，可直接从 [步骤4：获取播放地址](#step4) 部分了解快直播拉流。
 
 [](id:step1)
@@ -13,7 +13,7 @@
 使用云直播服务，至少需要**2**个域名，一个作为**推流域名**，一个作为**播放域名**，推流和播放不能使用相同的域名。
 您可通过使用 [**自有域名**](https://intl.cloud.tencent.com/document/product/267/35970)添加已完成备案的自有域名。
 
-1. 准备自有域名，如果要在中国内地（大陆）使用需要完成域名备案。
+1. 准备自有域名，如果要在中国大陆（境内））使用需要完成域名备案。
 
 2. 登录云直播控制台，进入[ **域名管理** ](https://console.cloud.tencent.com/live/domainmanage)。
 

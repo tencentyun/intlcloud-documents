@@ -16,7 +16,7 @@ This document describes how to configure SASL authentication and ACL (access con
 3. On the instance details page, click the **User Management** tab at the top.
 4. On the user management page, click **Create** and enter the username and password to create a user.
 5. Click **ACL Policy Management** at the top.
-6. On the ACL policy details page, click **Batch Configuration** to grant permissions to the user.
+6. On the ACL policy details page, click **Batch Set** to grant permissions to the user.
 >?
 >- If allow rules are configured only, any IPs other than those configured with allow rules cannot connect to the instance.
 >- If deny rules are configured only, any IPs other than those configured with deny rules can connect to the instance.

@@ -27,18 +27,18 @@ On the **Visual Editor** tab page, click **Add Policy**. In the pop-up window, c
 COS provides you with different templates depending on the combination of authorized users (grantees) and resource scope you choose to help you quickly configure bucket policies.
 
 - Grantee
- - **All users (allow anonymous access)**: if you want to grant operation permissions to anonymous users, select this option. If you select this option, all users (`*`) will be automatically selected for you during policy configuration in step 2. Because it is risky to grant permissions on operations such as listing buckets (`ListBucket`) and configuring bucket configuration permissions to anonymous users, COS does not provide corresponding templates when this option is selected. You can add policies during policy configuration in step 2 if necessary.
- - **Specified user**: you can select designated users when you want to grant operation permissions to designated sub-accounts, root accounts, or cloud services. During policy configuration in step 2, you need to further specify the account UINs.
+    - **All users (allow anonymous access)**: if you want to grant operation permissions to anonymous users, select this option. If you select this option, all users (`*`) will be automatically selected for you during policy configuration in step 2. Because it is risky to grant permissions on operations such as listing buckets (`ListBucket`) and configuring bucket configuration permissions to anonymous users, COS does not provide corresponding templates when this option is selected. You can add policies during policy configuration in step 2 if necessary.
+    - **Specified user**: you can select designated users when you want to grant operation permissions to designated sub-accounts, root accounts, or cloud services. During policy configuration in step 2, you need to further specify the account UINs.
 
 
 - Resource Scope
- - **The whole bucket**: if you want to configure bucket configuration permissions or set the resource scope to the entire bucket, you can select this option to automatically add the entire bucket as a resource for you during policy configuration in step 2.
- - **Specified directory**: select this option if you want to restrict the resource scope to a specified folder. During policy configuration in step 2, you need to further specify the specific directory. When this option is selected, COS does not provide policy templates related to bucket configuration, because for such permissions, the entire bucket must be specified as the resource.
+    - **The whole bucket**: if you want to configure bucket configuration permissions or set the resource scope to the entire bucket, you can select this option to automatically add the entire bucket as a resource for you during policy configuration in step 2.
+    - **Specified directory**: select this option if you want to restrict the resource scope to a specified folder. During policy configuration in step 2, you need to further specify the specific directory. When this option is selected, COS does not provide policy templates related to bucket configuration, because for such permissions, the entire bucket must be specified as the resource.
 
 
 - Template: collection of operations that you want to authorize.
- - **Custom (no preset configuration)**: if you do not need to use a template, select this option and add policies as needed during policy configuration in step 2.
- - **Other templates**: COS provides you with different recommended templates depending on the combination of authorized users and resource scope you choose. After you select a template, COS automatically adds the corresponding operation permissions for you during policy configuration in step 2.
+    - **Custom (no preset configuration)**: if you do not need to use a template, select this option and add policies as needed during policy configuration in step 2.
+    - **Other templates**: COS provides you with different recommended templates depending on the combination of authorized users and resource scope you choose. After you select a template, COS automatically adds the corresponding operation permissions for you during policy configuration in step 2.
 
 >?If the authorized operations provided by the template do not meet your requirements, you can add or delete authorized operations during policy configuration in step 2.
 

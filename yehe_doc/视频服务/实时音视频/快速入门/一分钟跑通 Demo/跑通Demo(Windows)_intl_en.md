@@ -57,7 +57,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 3. Set parameters in the `GenerateTestUserSig.js` file:
   <ul><li>SDKAPPID: `0` by default. Set it to the actual `SDKAppID`.</li>
   <li>SECRETKEY: left empty by default. Set it to the actual key.</li></ul> 
-  <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+  <img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
 

@@ -25,7 +25,7 @@ As instâncias do TencentDB for MySQL de dois e três nós são compatíveis com
 
 ## Observações
 - Desde 26 de fevereiro de 2019, o recurso de backup automático do TencentDB for MySQL aceita apenas backup físico (tipo padrão) e não fornece mais backup lógico. Os backups lógicos automáticos existentes serão alternados para backups físicos automaticamente.
-Isso não afetará seu acesso dos seus negócios, mas pode afetar seus hábitos de backup automático. Se precisar de backups lógicos, você pode usar o recurso de backup manual no [console do TencentDB for MySQL] (https://console.cloud.tencent.com/cdb) ou chamar a [API CreateBackup](https://intl.cloud.tencent.com/document/product/236/15844) para gerar backups lógicos.
+Isso não afetará seu acesso dos seus negócios, mas pode afetar seus hábitos de backup automático. Se precisar de backups lógicos, você pode usar o recurso de backup manual no [console do TencentDB for MySQL](https://console.cloud.tencent.com/cdb) ou chamar a [API CreateBackup](https://intl.cloud.tencent.com/document/product/236/15844) para gerar backups lógicos.
 - Os arquivos de backup de instância ocupam espaço de backup. Recomendamos que você planeje o uso do espaço de backup adequadamente. O uso do espaço de backup que excede a camada gratuita incorrerá em taxas. Para obter mais informações, consulte [Faturamento de espaço de backup](https://intl.cloud.tencent.com/document/product/236/32344).
 - Recomendamos que você faça backup de seus dados fora do horário de pico.
 - Recomendamos que você baixe os arquivos de backup localmente antes que eles sejam excluídos após o término do período de retenção.

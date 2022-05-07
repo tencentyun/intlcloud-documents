@@ -32,7 +32,7 @@
 <ul>
  <li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
  <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
- <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. 貼り付け完了後、**貼り付けました。次のステップ**をクリックすれば、作成が完了します。
 5. コンパイル完了後、 **コンソール概要に戻る** をクリックすれば終了です。
 
@@ -124,7 +124,7 @@ $ npm run start # 初回の実行の場合、しばらくしてからウィン�
 ​```![macでの項目実行](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
 :::
 </dx-tabs>
-    
+
 ### プロジェクトのメインコマンド
 
 | コマンド | 説明 |
@@ -147,8 +147,6 @@ TRTC SDK 6.6バージョン（2019年08月）では、新しい署名アルゴ�
 ### 2. 2台のデバイスで同時にDemoを実行しているのに、お互いの画面が表示されないのはなぜですか。
 
 2台のデバイスでDemoを実行するときは、異なるUserIDを使用していることを確認してください。TRTCでは、2台のデバイスでの同一UserID（SDKAppIDが異なる場合を除く）の同時使用をサポートしていません。
-
-![](https://main.qcloudimg.com/raw/9a03335e435de0f12e2a26882f53db02.png)
 
 ### 3. ファイアウォールにはどのような制限がありますか。
 

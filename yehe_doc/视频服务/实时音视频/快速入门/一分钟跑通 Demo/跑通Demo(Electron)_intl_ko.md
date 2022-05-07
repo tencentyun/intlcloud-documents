@@ -32,7 +32,7 @@
 <ul>
  <li/>SDKAPPID: 0으로 기본 설정되어 있습니다. 실제 SDKAppID로 설정하십시오.
  <li/>SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 키 정보로 설정하십시오.</ul>
- <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. 붙여넣기 완료 후 **붙여넣기 완료, 다음 단계**를 클릭하면 생성이 완료됩니다.
 5. 컴파일 완료 후 **콘솔 개요로 돌아가기**를 클릭합니다.
 
@@ -124,7 +124,7 @@ $ npm run start # 처음 실행 시 잠시 기다리면 창에 UI가 나타납�
 ​```![mac에서 프로젝트 실행](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
 :::
 </dx-tabs>
-    
+
 ### 프로젝트 주요 명령어
 
 | 명령어 | 설명 |
@@ -148,7 +148,6 @@ TRTC SDK 6.6 버전(2019년 08월)부터 새로운 서명 알고리즘 HMAC-SHA2
 
 2대의 디바이스가 Demo를 실행할 경우 각자 다른 UserID를 사용해야 합니다. TRTC에서는 동일 UserID(SDKAppID가 다를 경우 제외)를 2개의 디바이스에서 동시에 사용할 수 없습니다.
 
-![](https://main.qcloudimg.com/raw/9a03335e435de0f12e2a26882f53db02.png)
 
 ### 3. 방화벽에 어떤 제한이 있습니까?
 

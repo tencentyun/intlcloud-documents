@@ -29,8 +29,6 @@ The following ports are not allowed as they have security risks and are very lik
 For more information, see [Common Server Ports](https://intl.cloud.tencent.com/document/product/215/35520).
 
 ## Security Group-related FAQs
-### Why is there a reject rule set by default in a security group?
-Security group rules are selected to go into effect based on their order from top to bottom, so after the allow rule that was first set is validated, then the other rules will be rejected by default. If the rule opens all ports to the Internet, then the final reject rule will be invalid. We provide this default setting due to security concerns.
 
 ### If I bind an incorrect security group with an instance, what is the effect on the instance? How can this be fixed?
 - **Potential problems**

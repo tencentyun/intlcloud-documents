@@ -7,7 +7,7 @@ To protect your live streaming content, push authentication is enabled for push 
 
 ## Prerequisites
 
-You have activated the CSS service and completed identity verification.
+You have activated the CSS service.
 
 ## Authentication Configuration
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **push domain name** or click **Manage** to enter the domain details page. 
@@ -71,7 +71,7 @@ We offer sample code in PHP and Java for generating push URLs. To view the code,
     *        key: Authentication key
     *        time: Expiration time (accurate to the second). Example: 2016-11-12 12:00:00
     * @return String url
-*/
+
 function getPushUrl($domain, $streamName, $key = null, $time = null){
    if($key && $time){
       $txTime = strtoupper(base_convert(strtotime($time),10,16));

@@ -44,7 +44,7 @@ You have [signed up](https://intl.cloud.tencent.com) for a Tencent Cloud account
 3. Set parameters in `GenerateTestUserSig.dart` as follows.
 <ul><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
 	<li/>`SECRETKEY`: a placeholder by default. Set it to the actual key.</ul>
-<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.

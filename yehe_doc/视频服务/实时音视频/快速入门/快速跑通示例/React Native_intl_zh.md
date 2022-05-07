@@ -41,6 +41,7 @@
 3. 设置 `SDKAPPID`和`SECRETKEY` 参数：
 <ul><li/>SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
     <li/>SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的密钥信息。</ul>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 
 4. 粘贴完成后，单击 **已复制粘贴，下一步** 即创建成功。
 5. 编译完成后，单击 **回到控制台概览** 即可。
@@ -69,7 +70,8 @@
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->! 请勿设置 `android:hardwareAccelerated="false"`，关闭硬件加速之后，会导致对方的视频流无法渲染。
+  
+<dx-alert infotype="notice">请勿设置 `android:hardwareAccelerated="false"`，关闭硬件加速之后，会导致对方的视频流无法渲染。</dx-alert>
 2. Android 端音视频权限需要手动申请。
 ```java
 if (Platform.OS === 'android') {

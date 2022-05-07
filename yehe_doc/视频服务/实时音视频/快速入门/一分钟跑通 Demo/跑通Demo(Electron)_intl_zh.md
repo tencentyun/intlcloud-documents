@@ -32,7 +32,7 @@
 <ul>
  <li/>SDKAPPID：默认为0 ，请设置为实际的 SDKAppID。
  <li/>SECRETKEY：默认为空字符串 ，请设置为实际的密钥信息。</ul>
- <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. 粘贴完成后，单击**已复制粘贴，下一步**即创建成功。
 5. 编译完成后，单击**回到控制台概览**即可。
 
@@ -124,7 +124,7 @@ $ npm run start # 首次运行，稍等片刻后，窗口中才会出现 UI
 ​```![mac下运行项目](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
 :::
 </dx-tabs>
-    
+ 
 ### 项目主要命令
 
 | 命令 | 说明 |
@@ -148,7 +148,6 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 
 请确保两台设备在运行 Demo 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个设备同时使用。
 
-![](https://main.qcloudimg.com/raw/9a03335e435de0f12e2a26882f53db02.png)
 
 ### 3. 防火墙有什么限制？
 

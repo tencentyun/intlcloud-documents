@@ -14,7 +14,7 @@ Este documento descreve como atualizar uma instância do TencentDB for MySQL de 
  - **Modo de replicação de dados**: para obter mais informações, consulte [Replicação de instância de banco de dados](https://intl.cloud.tencent.com/document/product/236/7913).
  - **Implantação multi-AZ**: a implantação multi-AZ protege o serviço de banco de dados de ser interrompido em caso de falhas de banco de dados ou falhas de zona de disponibilidade.
     - Para uma instância de três nós, suas réplicas podem ser implantadas na zona de disponibilidade de origem ou em diferentes zonas de disponibilidade. Recomendamos que você implante uma réplica na zona de disponibilidade de origem e outra réplica em uma zona de disponibilidade diferente.
-    - Atualmente, apenas algumas zonas de disponibilidade de origem oferecem suporte à seleção de diferentes zonas de disponibilidade como zonas de disponibilidade de réplica. Você pode visualizar essas zonas de disponibilidade de origem e as zonas de disponibilidade de réplica compatíveis na [página de compra].(https://buy.cloud.tencent.com/cdb).
+    - Atualmente, apenas algumas zonas de disponibilidade de origem oferecem suporte à seleção de diferentes zonas de disponibilidade como zonas de disponibilidade de réplica. Você pode visualizar essas zonas de disponibilidade de origem e as zonas de disponibilidade de réplica compatíveis na [página de compra](https://buy.cloud.tencent.com/cdb).
 ![](https://main.qcloudimg.com/raw/6b1a4c2b43587cc99c7b01d544f53cd2.png)
 4. Após a conclusão do pagamento, você será redirecionado para a lista de instâncias. Depois que o status da instância mudar de **Changing configuration (Alterando configuração)** para **Running (Em execução)**, ela poderá ser usada normalmente.
 

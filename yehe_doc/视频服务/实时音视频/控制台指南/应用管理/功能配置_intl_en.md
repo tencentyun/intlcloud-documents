@@ -20,12 +20,12 @@ After creating an application, you can enable [relayed push](#bypass), [on-cloud
 3. In **Relayed Push Configuration**, click the button next to **Enable Relayed Push**.
 ![](https://main.qcloudimg.com/raw/19050dd982abfe75080843148f3abbc4.png)
 4. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to enable the feature, check the box and click **Enable Relayed Push**.
-![](https://main.qcloudimg.com/raw/0c81b0ef96e7e07f9fba0d7f8827c7f8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3968e2410d8f351dfe82a581cde7314.png)
 
 [](id:select)
 ### Choosing relayed push mode
 After [enabling relayed push](#open_bypass), you can choose the relayed push mode that fits your needs.
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
 - **Specified stream for relayed push**: After selecting this mode, if you do not need the On-Cloud MixTranscoding service, call the client-side SDK API [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) to start relayed push; if you need the service, follow the steps in [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618), and relayed push will start automatically after On-Cloud MixTranscoding.
 - **Global auto-relayed push**: After you select this mode, all upstream audio/video streams of TRTC are automatically pushed to the CSS system.
@@ -36,7 +36,7 @@ After [enabling relayed push](#open_bypass), you can choose the relayed push mod
 To disable relayed push, follow these steps:
 1. Click **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and click **Function Configuration** for the application whose configuration you want to modify.
 2. In **Relayed Push Configuration**, click the button next to **Enable Relayed Push**.
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4f9e38098c65b9332d7b939cf1335fa9.png)
 3. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to disable the feature, check the box and click **Disable Relayed Push**.
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 

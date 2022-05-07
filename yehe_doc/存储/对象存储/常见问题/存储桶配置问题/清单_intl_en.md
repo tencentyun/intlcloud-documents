@@ -1,6 +1,6 @@
 ### How can I know whether an inventory file has been delivered successfully?
 
-When an inventory file is generated depends on your configuration. If you have selected “daily”, the inventory file will usually be delivered early in the morning on the next day (Beijing time). If you have selected “weekly”, the inventory file will be generated and delivered on the last day of the current week in most cases.
+When an inventory file is generated depends on your configuration. If you have selected “daily”, the inventory file will usually be delivered early in the morning on the next day. If you have selected “weekly”, the inventory file will be generated and delivered on the last day of the current week in most cases.
 
 If you want to be notified upon a successful inventory file delivery, you can go to the [SCF console](https://console.cloud.tencent.com/scf) to configure a COS trigger and set **Event Type** to **Use Put Bucket inventory API to create an inventory task**.
 

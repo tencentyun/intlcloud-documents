@@ -123,7 +123,7 @@ CSS는 계정에 속한 모든 SecretId가 보낸 총 요청 수에 대한 상�
 
 [](id:que18)
 ###  푸시 스트림 중 ‘RTMP close’가 표시되며 푸시 스트림이 실패했습니다. 그런데 로그에서 성공으로 나타나는 이유는 무엇입니까? 
-현재 푸시 주소에 문제가 있을 수 있으니 [미니프로그램 Demo](https://intl.cloud.tencent.com/document/product/1071/38147)를 이용하여 푸시 여부를 테스트해보십시오. 더 많은 문제 해결 방법은 [푸시 스트리밍 실패 문제 해결](https://intl.cloud.tencent.com/document/product/267/33383)을 참고하십시오.
+현재 푸시 주소에 문제가 있을 수 있으니 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)를 이용하여 푸시 여부를 테스트해보십시오. 더 많은 문제 해결 방법은 [푸시 스트리밍 실패 문제 해결](https://intl.cloud.tencent.com/document/product/267/33383)을 참고하십시오.
 
 [](id:que19)
 ###  프레임 레이트 수정 후 정상적으로 푸시 스트림이 되지 않아 로컬에서 서비스를 여러 번 재시작해야 하며 자주 끊깁니다. 어떻게 처리해야 합니까? 
@@ -140,7 +140,7 @@ API KEY는 구버전의 API 인터페이스 인증으로, 공식 홈페이지의
 
 [](id:que21)
 ### 재생 중에 H.265 인코딩을 재생할 수 없는 이유는 무엇입니까?
-H.265의 호환성은 H.264보다 못하기 때문에, 플레이어가 H.265 인코딩을 지원하지 않아 재생에 실패하면, [트랜스코딩 템플릿](https://intl.cloud.tencent.com/document /product /267/31071) 설정을 통해 H.264 인코딩으로 변환하여 재생합니다.
+H.265의 호환성은 H.264보다 못하기 때문에, 플레이어가 H.265 인코딩을 지원하지 않아 재생에 실패하면, [트랜스코딩 템플릿](https://intl.cloud.tencent.com/document/product/267/31071) 설정을 통해 H.264 인코딩으로 변환하여 재생합니다.
 
 [](id:que22)
 ### m3u8 파일은 중국어 이름이 지원됩니까?

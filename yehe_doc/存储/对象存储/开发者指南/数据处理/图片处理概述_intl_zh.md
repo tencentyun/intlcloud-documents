@@ -60,7 +60,7 @@
       <td>快速实现图片格式转换、缩略、剪裁等功能，生成缩略图</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">样式设置</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443#.E6.A0.B7.E5.BC.8F.E7.AE.A1.E7.90.86">样式设置</a></td>
       <td>设置图片的样式，方便管理不同需求的图片</td>
    </tr>
 </table>

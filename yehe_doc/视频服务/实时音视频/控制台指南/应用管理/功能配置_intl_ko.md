@@ -19,12 +19,12 @@
 3. [릴레이 푸시 스트림 설정]에서 [릴레이 푸시 스트림 활성화] 오른쪽에 있는 버튼을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/19050dd982abfe75080843148f3abbc4.png)
 4. 팝업된 [릴레이 푸시 스트림 기능 활성화] 창에서 **리스크 설명을 꼼꼼히 읽은 후** [릴레이 푸시 스트림 기능 활성화]를 클릭하면 활성화가 완료됩니다.
-![](https://main.qcloudimg.com/raw/0c81b0ef96e7e07f9fba0d7f8827c7f8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e3968e2410d8f351dfe82a581cde7314.png)
 
 [](id:select)
 ### 릴레이 푸시 스트림 방식 선택
 [릴레이 푸시 스트림 기능 활성화](#open_bypass) 후 실제 작업 상황에 따라 릴레이 푸시 스트림 방식을 선택할 수 있습니다.
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
 - **지정 스트림 릴레이**: ‘지정 스트림 릴레이’를 선택한 후, 혼합 스트림 트랜스 코딩이 필요 없는 경우, 클라이언트 SDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) 인터페이스를 호출하여 직접 릴레이 푸시 스트림을 실행할 수 있습니다. 혼합 스트림 트랜스 코딩이 필요한 경우에는 [클라우드 혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/34618) 문서 가이드에 따라 진행하면 혼합 스트림 트랜스 코딩 후 자동으로 푸시 스트림을 릴레이 합니다.
 - **전체 자동 릴레이**: '전체 자동 릴레이'를 선택하면 TRTC의 모든 업스트림 멀티미디어 스트림은 자동으로 CSS 시스템에 릴레이 푸시 스트림됩니다.
@@ -34,9 +34,9 @@
 ### 릴레이 푸시 스트림 기능 비활성화
 릴레이 푸시 스트림 기능을 비활성화하고 싶은 경우, 다음과 같이 설정합니다.
 1. [[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)]를 클릭하여 기능 설정 수정이 필요한 애플리케이션을 선택한 후, 대상 애플리케이션 라인에서 [기능 설정]을 클릭합니다.
-3. [릴레이 푸시 스트림 설정]에서 [릴레이 푸시 스트림 활성화] 오른쪽에 있는 버튼을 클릭합니다.
-![](https://main.qcloudimg.com/raw/98b5a33c06846dc755a1e1b6a2853048.png)
-4. [릴레이 푸시 스트림 기능 비활성화] 팝업창에 보이는 **리스크 설명을 자세히 읽습니다.** 비활성화 하려면 [릴레이 푸시 스트림 기능 비활성화]를 클릭합니다.
+2. [릴레이 푸시 스트림 설정]에서 [릴레이 푸시 스트림 활성화] 오른쪽에 있는 버튼을 클릭합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/4f9e38098c65b9332d7b939cf1335fa9.png)
+3. [릴레이 푸시 스트림 기능 비활성화] 팝업창에 보이는 **리스크 설명을 자세히 읽습니다.** 비활성화 하려면 [릴레이 푸시 스트림 기능 비활성화]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/42501fc7a48d9384fa271280fad9fb50.png)
 
 

@@ -11,7 +11,7 @@ CSSタイムシフトは、CSSレコーディング機能に基づいて、TS（
 
 ### 前提条件
 
--   [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985) でアカウントを作成済みであり、かつ身分認証が完了していること。身分認証を実施していないユーザーは中国国内のCSSインスタンスを購入できません。
+- すでに[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985) 済みです。
 - Tencent CSSサービスをアクティブ化し、[プッシュドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)を追加済みであること。 
 
 <span id="step1"></span>

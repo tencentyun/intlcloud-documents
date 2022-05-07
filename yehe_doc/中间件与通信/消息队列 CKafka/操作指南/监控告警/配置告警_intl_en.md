@@ -12,7 +12,7 @@ The created alarm can determine whether an alarm notification should be sent bas
 >?Be sure to configure alarms for your instance to prevent exceptions caused by a sudden traffic spike or specification limits.
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
-2. In the instance list, click **Configure Alarms** in the **Operation** column to go to the alarm configuration page.
+2. In the instance list, click **Configure Alarm Policy** in the **Operation** column to go to the alarm configuration page.
 3. On the alarm configuration page, select a policy type and instance and set the alarm rule and notification template.
    - **Policy Type**: select **CKafka**.
    - **Alarm Object**: select the CKafka resource for which to configure the alarm policy.
@@ -33,7 +33,7 @@ For more information on alarms, please see [Creating Alarm Policy](https://intl.
 3. Click **Create** on the trigger template page.
 4. On the template creation page, configure the policy type.
    - **Policy Type**: select **CKafka**.
-   - **Use preset trigger condition**: select this option and the system recommended alarm policy will be displayed.
+   - **A preset trigger conditions**: select this option and the system recommended alarm policy will be displayed.
 5. After confirming that everything is correct, click **Save**.
     ![](https://main.qcloudimg.com/raw/df3e52dff6035c3870ce442d028a4dd6.png)
 6. Return to alarm policy creation page and click **Refresh**. The alarm policy template just configured will be displayed.

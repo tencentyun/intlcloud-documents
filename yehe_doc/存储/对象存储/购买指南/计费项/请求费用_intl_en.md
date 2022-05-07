@@ -57,7 +57,7 @@ Requests that incur fees include read/write requests, INTELLIGENT TIERING object
 
 Assume that on November 1, 2020, user A uploaded 10 GB of data to a bucket residing in the Guangzhou region in the STANDARD storage class and called the `Bucket API` API to query the object list 50,000 times on the same day. Apart from these operations, user A did not perform any other operations in November. As storage usage fees and request fees are calculated and billed on the 1st in the next month, they will be calculated and billed on December 1, 2020 as follows:
 
- -  Pay-as-you-go:
+ Pay-as-you-go:
   -  STANDARD storage usage fees = 0.024 USD/GB/month x 10 GB = 0.24 USD
   -  STANDARD request fees = 0.002 USD/10,000 requests x 50,000 requests = 0.01 USD
 

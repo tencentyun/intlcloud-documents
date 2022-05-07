@@ -26,7 +26,7 @@ CDN 日志备份是腾讯云对象存储（Cloud Object Storage，COS）基于 [
  - **函数名称**：作为函数的唯一标识名称，创建后不可修改。您可以在 [云函数控制台](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) 上查看该函数。
  - **关联存储桶**：存放 CDN 日志的 COS 存储桶。
  - **触发器周期**：CDN 日志备份通过定时触发器来触发备份转存操作，触发周期支持每天、自定义周期。
- - **Cron 表达式**：当触发器周期设置为自定义时，可通过 Cron 指定具体的触发周期规则。Cron 当前以 UTC +8 中国标准时间 （China Standard Time）运行，即北京时间。详细配置策略请参见 [Cron 相关文档](https://intl.cloud.tencent.com/document/product/583/9708)。
+ - **Cron 表达式**：当触发器周期设置为自定义时，可通过 Cron 指定具体的触发周期规则。Cron 当前以当地标准时间运行。详细配置策略请参见 [Cron 相关文档](https://intl.cloud.tencent.com/document/product/583/9708)。
  - **CDN 域名**：可选择转存指定的一个或多个域名的日志。
  - **投递的路径**：日志文件的投递路径，可选择投递至根目录或指定的路径前缀。
  - **SCF 授权**：CDN 日志备份需要授权云函数从您的 CDN 服务中读取日志文件，并将日志文件转存至您指定的存储桶中。因此需要添加此授权。

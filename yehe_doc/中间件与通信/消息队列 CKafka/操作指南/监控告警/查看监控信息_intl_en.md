@@ -8,7 +8,7 @@ This document describes how to view monitoring metrics and their descriptions in
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
-3. At the top of the instance details page, Click **Monitor**, select resource tags, and set the time range to view the monitoring data about the instance.
+3. At the top of the instance details page, Click **Monitoring**, select resource tags, and set the time range to view the monitoring data about the instance.
 
 ### Monitoring information display
 

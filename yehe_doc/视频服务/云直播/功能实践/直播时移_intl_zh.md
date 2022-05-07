@@ -11,7 +11,7 @@
 
 ### 前提条件
 
--  已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成实名认证，未进行实名认证的用户无法购买中国境内的云直播实例。
+-  已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 -  已开通腾讯云直播服务，并添加 [推流域名](https://intl.cloud.tencent.com/document/product/267/35970)。 
 
 <span id="step1"></span>

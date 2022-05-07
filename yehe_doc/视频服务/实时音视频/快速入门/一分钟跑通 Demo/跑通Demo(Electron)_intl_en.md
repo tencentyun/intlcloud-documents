@@ -32,7 +32,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 <ul>
  <li/>SDKAPPID: `0` by default. Set it to the actual `SDKAppID`.
  <li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
- <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/e210b7b71cf273de59d6e2df917101e4.png">
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
 
@@ -124,7 +124,7 @@ $ npm run start # On first run, it may take a while to show the UI.
 ​```![Running the project in macOS](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
 :::
 </dx-tabs>
-    
+
 ### Main project commands
 
 | Command | Description |
@@ -147,8 +147,6 @@ TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HM
 ### 2. The demo is running on two devices, but why can't they display the images of each other?
 
 Make sure that the two devices use different `UserIDs`. With TRTC, you cannot use the same `UserID` on two devices simultaneously unless the `SDKAppIDs` are different.
-
-![](https://main.qcloudimg.com/raw/9a03335e435de0f12e2a26882f53db02.png)
 
 ### 3. What firewall restrictions does the SDK face?
 

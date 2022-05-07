@@ -32,7 +32,7 @@ You can configure up to 1,000 lifecycle rules for a bucket. For more information
 
 ### When will a lifecycle rule configured take effect?
 
-Rules configured at any time will always start executing at 00:00 the next day (GMT+08:00). As objects are executed asynchronously, the execution of qualified objects uploaded after the rule is configured will be completed before 24:00 the next day in most cases.
+Rules configured at any time will always start executing at 00:00 the next day. As objects are executed asynchronously, the execution of qualified objects uploaded after the rule is configured will be completed before 24:00 the next day in most cases.
 
 For example, you configured a lifecycle rule at 15:00 on the 1st day of the month to delete files one day or longer after they are modified. Then, at 00:00 on the 2nd day, the lifecycle task scans for files that were modified over one day ago and deletes them. Files uploaded on the 1st day will not be deleted at 00:00 on the 2nd day, as the time elapsed since their modification is less than one day. Instead, these files will be deleted at 00:00 on the 3rd day.
 

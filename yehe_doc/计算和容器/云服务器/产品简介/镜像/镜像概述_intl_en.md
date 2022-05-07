@@ -4,7 +4,6 @@ A Tencent Cloud image provides all the information needed to start a CVM instanc
 ## Image Types
 Tencent Cloud provides the following types of images:
 - **Public image**: Available to all users and cover major operating systems.
-- **Marketplace image**: Available to all users and integrated with certain applications in addition to operating systems.
 - **Custom image**: Only available to the creator and the users with whom the image is shared. A custom image is created from running instances or imported from external sources.
 - **Shared image**: Shared by other users. They can only be used to create instances.
 
@@ -19,10 +18,6 @@ Using images incur fees. The fees for each image type are as described below:
 <tr>
 <td>Public image</td>
 <td>Windows images in regions outside the Chinese mainland are charged. All other images are free of usage.</td>
-</tr>
-<tr>
-<td>Marketplace image</td>
-<td>Marketplace images are priced by image service providers, including both free and paid images. The image billing rules stipulated by the corresponding provider should apply.</td>
 </tr>
 <tr>
 <td>Custom image</td>

@@ -26,9 +26,9 @@ COS FTP Server allows you to directly operate on COS objects and directories ove
 >? FTP Server does not support Python 3.
 >
 - Dependent packages:
- - [cos-python-sdk-v5](https://pypi.org/project/cos-python-sdk-v5/) (v1.6.5 or later)
- - [pyftpdlib](https://pypi.org/project/pyftpdlib/) (v1.5.2 or later)
- - [psutil](https://pypi.org/project/psutil/) (v5.6.1 or later)
+     - [cos-python-sdk-v5](https://pypi.org/project/cos-python-sdk-v5/) (v1.6.5 or later)
+     - [pyftpdlib](https://pypi.org/project/pyftpdlib/) (v1.5.2 or later)
+     - [psutil](https://pypi.org/project/psutil/) (v5.6.1 or later)
 
 
 #### Use limits

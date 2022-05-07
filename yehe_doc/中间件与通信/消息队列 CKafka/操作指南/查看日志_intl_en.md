@@ -47,5 +47,5 @@ You can view the log details of a CKafka Pro Edition instance in the CKafka cons
 </tbody></table>
 4. Click **Details** in the **Operation** column to view the specific log.
 	 ![](https://main.qcloudimg.com/raw/e448ba202830dddbfeb97b8982846621.png)
-5. Click **Configure Alarm** in the **Operation** column to configure an alarm policy for a metric to which alarming has been enabled. For detailed directions, see [Configuring Alarm](https://intl.cloud.tencent.com/document/product/597/40976).
+5. Click **Configure Alarm Policy** in the **Operation** column to configure an alarm policy for a metric to which alarming has been enabled. For detailed directions, see [Configuring Alarm](https://intl.cloud.tencent.com/document/product/597/40976).
 
