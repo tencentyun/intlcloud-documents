@@ -5,12 +5,9 @@ Tencent Real-Time Communication(TRTC)은 Tencent가 다년간 네트워크와 �
 - 저지연 ILVB 솔루션
  업계 선두의 네트워크 및 멀티미디어 기술과 Tencent Cloud의 우수한 노드 리소스를 접목해 랙 발생률이 낮고, 딜레이 시간 1초 이내의 TRTC 사용 환경을 제공하며, 라이브 방송의 CDN 2.0시대를 구현합니다.
 
-
-
-
 ## 제품 아키텍처
 TRTC는 다양한 플랫폼을 대상으로 그룹 멀티미디어 통화 및 저지연의 ILVB를 지원하는 솔루션으로서 Web, Android, iOS, Electron, Windows, macOS 등 플랫폼에 SDK를 제공합니다. 이로써 신속한 통합이 가능하며, TRTC의 클라우드 서비스 백그라운드와 연결할 수 있습니다. Tencent Cloud의 다양한 제품과 상호 연동이 가능해 TRTC를 IM, CSS, VOD 등 클라우드 서비스와 연계 사용함으로써 보다 다양한 작업이 가능합니다. 제품 구성은 아래 이미지와 같습니다.
-![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2d18a7fbc3ef4815752104ff95675e4a.jpg)
 
 ## 플랫폼 지원
 TRTC는 **업계 모든 플랫폼의 상호 연동을 구현하는 솔루션**입니다. 플랫폼 지원 사항 및 개발 환경에 관한 자세한 사항은 아래 표를 참고하십시오.
