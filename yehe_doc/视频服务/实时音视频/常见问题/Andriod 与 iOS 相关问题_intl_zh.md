@@ -8,10 +8,6 @@
 ###  移动端 SDK 推流怎么设置1080p分辨率？
 1080P在 TX_Enum_Type_VideoResolution 定义是114，直接设置分辨率传枚举值即可。
 
-[](id:que3)
-###  在小程序端创建了一个房间，移动端能否进入该房间？
-可以，实时音视频支持全平台互通。
-
 [](id:que4)
 ###  TRTC 移动端怎么实现录屏（屏幕分享）？	
 - **Android 端**：Version 7.2 及以上版本支持手机录屏，具体实践方法请参见 [实时屏幕分享（Android）](https://intl.cloud.tencent.com/document/product/647/37337)。
