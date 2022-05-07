@@ -11,7 +11,7 @@ CSS billable items include basic services and value-added services. Extended ser
 
 [](id:live_que2)
 ### How can I know whether my account has overdue payments?
-You can log in to the [CSS console](https://console.cloud.tencent.com/live) and click **Fees** at the top right to enter the fees overview page. If your available balance is below 0, your account has overdue payment. To continue using CSS and other services, you need to pay the overdue balance in time.
+You can log in to the [CSS console](https://console.cloud.tencent.com/live) and click **Fees** at the top right to enter the fees overview page. If your available balance is below 0 USD, your account has overdue payment. To continue using CSS and other services, you need to pay the overdue balance in time.
 
 [](id:live_que3)
 ### Will I be charged for upstream push?
@@ -31,7 +31,7 @@ Live transcoding is billed by the transcoding codec, resolution, and correspondi
 Transcoding fees will only be charged once if the same live stream is watched by multiple viewers at the same bitrate.
 
 **Example:** suppose you used live transcoding and live watermarking on January 1, 2021, where live stream A was transcoded to `H.264_720P` for 1 hour and live stream B was watermarked at 480p for 30 minutes.
-Then, the transcoding fees you would need to pay on January 2, 2021 would be = 0.0325 (CNY/minute) x 60 (minutes) + 0.016 (CNY/minute) x 30 (minutes) = CNY 2.43
+Then, the transcoding fees you would need to pay on January 2, 2021 would be 0.0057 (USD/min) × 60 (min) + 0.0028 (USD/min) × 30 (min) = 0.426 USD.
 
 [](id:tran_que2)
 ### Why was a transcoding bill generated when I didn't use live transcoding?
@@ -109,7 +109,7 @@ When one live stream (one stream ID) is recorded in one file format, it will be 
 
 
 [](id:record_que3)
-### Why is 60 CNY charged when I use live recording? 
-If two live streams are recorded simultaneously or one live stream is recorded into two file formats, two recording channels will be generated. Recording is billed by the recording channel peak at a price of 30 CNY per channel per month, so if there are two channels in the month, then the fees will be 60 CNY. For more information, please see [Live Recording Billing](https://intl.cloud.tencent.com/document/product/267/39605).
-We recommend you go to **Bill Details** > **[Bill by Instance](https://console.cloud.tencent.com/expense/bill/summary)** in the Billing Center to check the billing details for live recording. You can click **Bill Details** in the **Operation** column to view the actual recording channel peak of the last month.
+### Why was I charged 10.5882 USD after using live recording? 
+If two live streams are recorded simultaneously or one live stream is recorded into two file formats, two recording channels will be generated. Live recording is billed by the recording channel peak at a price of 5.2941 USD per channel per month, so if there are two channels in a month, then a fee of 10.5882 USD will be charged. For more information, please see [Live Recording Billing](https://intl.cloud.tencent.com/document/product/267/39605).
+We recommend you go to **Bill Details** > **[Bill by Instance](https://console.cloud.tencent.com/expense/bill/summary)** in the Billing Center to check the billing details for live recording. You can click **Bill Details** in the "Operation" column to view the actual recording channel peak of the last month.
 
