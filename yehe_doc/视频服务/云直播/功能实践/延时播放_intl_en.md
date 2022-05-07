@@ -8,7 +8,7 @@ You can enable delayed playback via two methods:
 >? The API method is not recommended because calling an API involves configuration caching, which makes it difficult to estimate when the feature takes effect. You are advised to enable the feature using the second method.
 
 ## Preparations
-1. Activate [CSS](https://console.cloud.tencent.com/live?from=product-banner-use-lvb) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+1. Activate [CSS](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
 2. Log in to the CSS console, select [**Domain Management**](https://console.cloud.tencent.com/live/domainmanage), and click **Add Domain Name** to add a push domain name. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 [](id:push_delay)

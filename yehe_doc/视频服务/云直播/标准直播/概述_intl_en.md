@@ -34,13 +34,11 @@ You can use the demo to try out LVB features.
 <table>
 <thead>
 <tr>
-<th style="text-align:center;">WeChat</th>
 <th style="text-align:center"><b>iOS</b></th>
 <th style="text-align:center"><b>Android</b></th>
 </tr>
 </thead>
 <tbody><tr>
-<td style="text-align:center;"><img src="https://main.qcloudimg.com/raw/cfa28f8c5e74baa115330bd72fcc2123.png" width="165px"></img></td>
 <td style="text-align:center;"><img src="https://main.qcloudimg.com/raw/dfe90a5a9156eb894080a705c7454eb0.png" width="165px"></img></td>
 <td style="text-align:center;"><img src="https://main.qcloudimg.com/raw/72d7ca30509b5f03195a220f67f8c6c1.png" width="165px"></img></td>
 </tr>
