@@ -2,11 +2,11 @@
 
 您可以登录对象存储（Cloud Object Storage，COS）控制台，为存储桶开启CLS日志服务的实时日志功能。 CLS提供**存储桶对象操作**相关的各种请求日志的分钟粒度的上报、实时检索、可视化与告警的强大功能。 开启实时日志功能，可以帮助您更好的分析当前存储桶的访问情况，并且在访问异常时，快速定位问题。
 
+## 前提条件
 
-<dx-alert infotype="notice" title="前提条件">
-<li>目前 COS 的实时日志功能开启需要开启白名单， 请前往 <a href="https://intl.cloud.tencent.com/contact-sales">联系我们</a> 申请开启实时日志功能。</li>
-<li>为 COS 存储桶开启实时日志功能，需先 <a href="https://intl.cloud.tencent.com/product/cls">开通 CLS 日志服务</a>。</li>
-</dx-alert>
+- 目前 COS 的实时日志功能开启需要开启白名单， 请前往 <a href="https://intl.cloud.tencent.com/contact-sales">联系我们</a> 申请开启实时日志功能。
+- 为 COS 存储桶开启实时日志功能，需先 <a href="https://intl.cloud.tencent.com/product/cls">开通 CLS 日志服务</a>。
+
 
 
 
@@ -15,13 +15,13 @@
 ## 操作步骤
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
-2. 在左侧导航栏中， 单击【存储桶列表】， 进入存储桶列表管理页面。
+2. 在左侧导航栏中， 单击**存储桶列表**， 进入存储桶列表管理页面。
 3. 找到需要开启实时日志功能的存储桶， 单击该存储桶名称， 进入该存储桶管理页面。
-4. 在左侧导航栏中， 选择【日志管理】> 【日志检索】。
-5. 页面将提示“当前Bucket未开通实时日志功能”， 单击【立即开通】开启。
+4. 在左侧导航栏中， 选择**日志管理 > 日志检索**。
+5. 页面将提示“当前Bucket未开通实时日志功能”， 单击**立即开通**开启。
 
 6. 完成开通后，该存储桶的访问日志将被投递至CLS同地域下的日子主题中，日志主题名称为cos-log-store。
-7. 在【日志管理】> 【日志检索】下， 输入检索分析语句，选择时间范围，单击检索分析即可检索该存储桶上报到 CLS 的访问日志。 CLS检索与分析语句的使用介绍请参见  [检索语法](https://intl.cloud.tencent.com/document/product/614/30439)。
+7. 在**日志管理 > 日志检索**下， 输入检索分析语句，选择时间范围，单击检索分析即可检索该存储桶上报到 CLS 的访问日志。 CLS检索与分析语句的使用介绍请参见  [检索语法](https://intl.cloud.tencent.com/document/product/614/30439)。
 
 8. 针对存储桶访问日志分析方法， 可参见 [COS 访问日志分析最佳实践](https://intl.cloud.tencent.com/document/product/614/42749)。
 9. 若要进一步对存储桶访问日志进行可视化与告警的配置， 请前往 [CLS 控制台](https://console.cloud.tencent.com/cls)。
