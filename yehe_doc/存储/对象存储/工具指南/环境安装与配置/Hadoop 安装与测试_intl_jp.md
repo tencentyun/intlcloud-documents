@@ -273,5 +273,4 @@ hadoop fs -cat /output/part-r-00000
 ```
 ![6762940-623e7b1c1b81cb4c_レプリカ](//mc.qcloudimg.com/static/img/6d777bc87c16b0fb10713bbecda1636d/image.jpg)
 
-> <font color="#0000cc">**注意：** </font>
-> スタンドアロンモードと疑似分散モードの詳細な操作方法については、公式サイトの[Hadoop入門](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html)をご参照ください。
+>? スタンドアロンモードと疑似分散モードの詳細な操作方法については、公式サイトの[Hadoop入門](https://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html)をご参照ください。
