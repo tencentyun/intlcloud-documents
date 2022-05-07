@@ -24,7 +24,7 @@ Commercial DRM solutions provide high-level protection for your video content, b
 
 Below is the workflow of the VOD DRM scheme:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/8b5128a2d3504f6aa8181ea0e1b73570.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae358775adc9711065239394b246ab50.png)
 
 ## Integration Guide
 
