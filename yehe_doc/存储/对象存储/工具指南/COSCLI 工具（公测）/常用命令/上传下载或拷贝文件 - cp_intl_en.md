@@ -14,11 +14,11 @@ The `cp` command is used to upload, download, or copy objects.
 
 `cp` includes the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name   | Description                     |
 | --------- | --------------- | ------------------------------------ |
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
-| -r        | --recursive | Whether to traverse all objects in the directory recursively  |
+| -r        | --recursive | Specifies whether to traverse all objects in the directory recursively  |
 |   None  | --storage-class | Specifies the storage class for the object to upload. Default value: `STANDARD` |
 |   None       | --part-size     | Part size. Default value: `32 MB`      |
 |   None       | --thread-num    | Number of concurrent threads. Default value: `5`      |
@@ -122,7 +122,7 @@ The `cp` command is used to upload, download, or copy objects.
 ./coscli cp cos://bucket1/example1/ cos://bucket2/example2/ -r
 ```
 
-#### Copying all MP4 objects in the `example1` directory in `bucket1` to the `example2` directory in `bucket2`
+#### Uploading all MP4 objects in the `example1` directory in `bucket1` to the `example2` directory in `bucket2`
 
 ```plaintext
 ./coscli cp cos://bucket1/example1/ cos://bucket2/example2/ -r --include .*.mp4

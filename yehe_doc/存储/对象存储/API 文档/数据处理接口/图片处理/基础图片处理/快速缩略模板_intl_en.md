@@ -1,5 +1,5 @@
 ## Overview
-COS uses the **imageView2** API provided by Cloud Infinite (CI) to generate a thumbnail. You can append parameters to the download URL to generate the desired thumbnail. The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million.
+COS uses the **imageView2** API of Cloud Infinite (CI) to provide a common image processing template. You can append parameters to the download URL to generate the desired thumbnail. The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (width x height x number of frames) cannot exceed 250 million (GIF frame limit: 300).
 
 An image can be processed:
 
@@ -7,7 +7,7 @@ An image can be processed:
 - Upon upload
 - In cloud
 
->! Image processing is charged by CI. For detailed pricing, please see the image processing prices of CI.
+>! Image Processing is charged by CI. For detailed pricing, see **basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/45582).
 >
 
 
@@ -71,7 +71,7 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>?Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
 >
 
 ## Parameters
@@ -87,15 +87,15 @@ Pic-Operations:
 | /format/&lt;Format> | Format of the thumbnail, which can be JPG, BMP, GIF, PNG, or WebP. Default value: format of the input image |
 | /q/&lt;Quality> | Image quality. Value range: 0−100. Default value: quality of the input image. The smaller value between the input image quality and the specified quality will be used. If there is an exclamation mark (!) after `&lt;Quality>`, the specified quality will be used. |
 | /rq/&lt;quality> | Relative quality of the image, relative to that of the input image. Value range: 0−100. For example, if the input image quality is 80 and `rquality` is set to `80`, the quality of the output image is 64 (that is, 80 x 80%). |
-| /lq/&lt;quality> | The lowest quality of the output image. Value range: 0−100. <br>If the input image quality is 85 and `lquality` is set to `80`, the quality of the output image is 85.<br>If the input image quality is 60 and `lquality` is set to `80`, the quality of the output image will be improved to 80. |
+| /lq/&lt;quality> | Minimum quality of the image. Value range: 0−100. <br>If the input image quality is 85 and `lquality` is set to `80`, the quality of the output image is 85.<br>If the input image quality is 60 and `lquality` is set to `80`, the quality of the output image will be improved to 80. |
 
 
 ## Examples
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) and use **Processing upon upload** or **Processing in-cloud data**.
 
 
-#### Example 1: using mode 1
+#### Example 1: Using mode 1
 The following example uses mode 1, and sets the minimum width and height of the thumbnail to 400x600, and the absolute quality to 85:
 
 ```plaintext
@@ -105,7 +105,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageView2/1
 Generated thumbnail:
 ![](https://main.qcloudimg.com/raw/281a2f6474ad29b430355f785f158a5c.jpeg)
 
-#### Example 2: using mode 1 with a signature carried
+#### Example 2: Using mode 1 with a signature carried
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&):
 
 ```plaintext
@@ -117,7 +117,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algor
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext

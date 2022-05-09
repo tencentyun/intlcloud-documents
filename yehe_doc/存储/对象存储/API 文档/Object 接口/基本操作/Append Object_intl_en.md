@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 This API is used to upload an object to a bucket in the form of parts. If an object is uploaded using the `APPEND Object` API, it will be automatically determined as "appendable", while objects uploaded using other APIs are determined as "normal" (if you upload an object that already exists and the object type is appendable, the object type will be overwritten to "normal"). You can call the [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) or [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API to obtain the `x-cos-object-type` header to determine the object type. `APPEND Object` is available only for appendable objects.
 
@@ -7,7 +7,7 @@ The default maximum size of each object part is 5 GB (no minimum size limit), an
 >! 
 >- Appendable objects do not support replication, versioning, or lifecycle management.
 >- The `APPEND` API does not verify the storage class carried in the request. The storage class will subject to that of the existing object.
->- The `APPEND Object` API is not available for INTELLIGENT TIERING.
+>- The `APPEND Object` API is not available for the intelligent tiering feature.
 
 ## Request
 
@@ -23,19 +23,19 @@ Authorization: Auth String
 ```
 
 >? 
-> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request headers
 
-#### Common headers
+#### Common request headers
 
 This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Non-common request headers
 
-**Required header**
+**Required headers**
 This API uses the following required header:
 
 | Header | Description | Type | Required |
@@ -59,7 +59,7 @@ This API uses the following recommended headers:
 **Permission-related headers**
 You can use the `x-cos-acl` header of the POST request to set the object access permission, which can be `public-read-write`, `public-read`, or `private` (default). You can also grant read, write, or read/write permission to a user explicitly. The content is described as follows:
 
->?For more information about ACL requests, please see [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737).
+>?For more information about ACL requests, see [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737).
 
 | Header | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
@@ -82,7 +82,7 @@ The request body of this request is empty.
 
 ## Response
 
-#### Response Headers
+#### Response headers
 
 #### Common response headers
 
@@ -100,7 +100,7 @@ The response headers of this request are as follows:
 
 #### Response body
 
-The response body is empty.
+The response body returned is empty.
 
 #### Error codes
 
@@ -110,9 +110,9 @@ The operation is not valid for the current state of the object.
 3. If the request does not contain the `Content-Length` header, the "411 Length Required" error will be returned. The error message is as follows:
 You must provide the Content-Length HTTP header.
 
-For more information about COS error codes or the complete list of error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+For more information about COS error codes or the complete list of error codes, see Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Examples
 
 #### Request
 

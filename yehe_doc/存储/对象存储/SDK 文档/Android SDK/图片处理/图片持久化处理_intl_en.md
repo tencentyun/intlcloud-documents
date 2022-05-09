@@ -1,6 +1,6 @@
 ## Overview
 
-COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
+COS has integrated [Cloud Infinite](://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
 
 <table>
    <tr>
@@ -9,7 +9,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <th>Description</td>
    </tr>
    <tr>
-      <td rowspan=11>Basic Image Processing</td>
+      <td rowspan=12>Basic Image Processing</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">Scaling</a></td>
       <td>Proportional scaling, scaling image to target width and height, and more</td>
    </tr>
@@ -53,53 +53,41 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36379">Quick thumbnail template</a></td>
       <td>Performs quick format conversion, scaling, and cropping to generate thumbnails</td>
    </tr>
+   <tr>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">Setting styles</a></td>
+      <td>Sets image styles to easily manage images for different purposes</td>
+   </tr>
 </table>
 
 
-## Basic Image Processing
+## SDK API References
 
-Samples of basic image processing are as follows:
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
-### Scaling
+## Processing Image Upon Upload
 
+The following example shows how to automatically process an image when you upload it to COS.
+
+When the image is uploaded successfully, COS will save both the original and the processed images. You can later obtain the processing results using a general download request.
+
+#### Sample code
+
+[//]: # ".cssg-snippet-upload-with-pic-operation"
 ```java
-String bucketName = "examplebucket-1250000000";
-String key = "qrcode.png";
-GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// Scale the width and height to 50% of the original image.
-String rule = "imageMogr2/thumbnail/!50p";
-getObj.putCustomQueryParameter(rule, null);
-cosClient.getObject(getObj, new File("qrcode-50p.png"));
+List<PicOperationRule> rules = new LinkedList<>();
+// Add a rule to convert the image to PNG format, and the processed image will be saved in a bucket with a location identifier in the format:
+// examplepngobject
+rules.add(new PicOperationRule("examplepngobject", "imageView2/format/png"));
+PicOperations picOperations = new PicOperations(true, rules);
+
+PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
+putObjectRequest.setPicOperations(picOperations);
+
+// If the upload is successful, you will get two images: the original and the processed images
+COSXMLUploadTask cosxmlUploadTask = transferManager.upload(putObjectRequest, uploadId);
 ```
 
-### Cropping
-
-```java
-String bucketName = "examplebucket-1250000000";
-String key = "qrcode.png";
-GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// Crop the radius of an inscribed circle to an integer greater than 0 and less than half of the shorter side of the original image. The center of the inscribed circle is the center of the image.
-String rule = "imageMogr2/iradius/150";
-getObj.putCustomQueryParameter(rule, null);
-cosClient.getObject(getObj, new File("qrcode-cropping.png"));
-```
-
-### Rotation
-
-```java
-String bucketName = "examplebucket-1250000000";
-String key = "qrcode.png";
-GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// Rotate 90 degrees clockwise
-String rule = "imageMogr2/rotate/90";
-getObj.putCustomQueryParameter(rule, null);
-cosClient.getObject(getObj, new File("qrcode-rotate.png"));
-```
-
-
-
-
-
-
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java).
+>
 
 
