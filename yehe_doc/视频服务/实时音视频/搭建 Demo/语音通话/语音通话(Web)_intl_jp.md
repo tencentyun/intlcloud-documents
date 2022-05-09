@@ -42,7 +42,7 @@
 
 [](id:step1)
 ### 手順1：アプリケーションの新規作成
-1.[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を行い、実名認証を完了します。
+1.[Tencent Cloudアカウント](https://intl.cloud.tencent.com/document/product/378/17985)を登録します。
 2. TRTCコンソールにログインし、**開発支援** > [**Demoクイックスタート**](https://console.cloud.tencent.com/trtc/quickstart)を選択します。
 3. アプリケーション名（例：`TestTRTC`）を入力し、**作成**をクリックします。
 
