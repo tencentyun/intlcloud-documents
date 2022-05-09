@@ -2,14 +2,14 @@
 
 ## Viewing Payment Methods
 The [Payment Methods](https://console.cloud.tencent.com/accountv1/paymentmethods) page displays details of your payment methods, such as payment type, account ID, payer name, account status and action.
- ![](https://main.qcloudimg.com/raw/e5aa09620f8f808f6e4a7a4bd1dd01a2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2227c55e715d1e1c5601bd17bfd13e51.png)
 
-Notes:
-• Click “Make Default” to mark a payment method as the default payment method.
-• There can only be one default payment method. This payment method will be used to for auto payments on the payment due date (the 10th of every month) or when your available credit is insufficient.
+>! 
+>- Click “Make Default” to mark a payment method as the default payment method.
+>- There can only be one default payment method. This payment method will be used to for auto payments on the payment due date (the 10th of every month) or when your available credit is insufficient.
 
 ## Adding Payment Methods
- ![](https://main.qcloudimg.com/raw/f8b154e92414167be5322888207bcb2c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e25dc2b3158cfa06d9565cf87d4fdcb7.png)
  
 • Click **Add Payment Method** to add a credit card.
 ![](https://main.qcloudimg.com/raw/78a5ba0765427c7dec5ded28b0a13a6b.png)
