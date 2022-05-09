@@ -13,7 +13,7 @@ This document describes how to quickly run the TRTC demo for React Native.
 - For how to set up the environment, see the React Native [official document](https://reactnative.dev/docs/environment-setup).
 
 ## Prerequisites
-You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com) and verified your identity.
+You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com).
 
 ## Directions
 [](id:step1)
