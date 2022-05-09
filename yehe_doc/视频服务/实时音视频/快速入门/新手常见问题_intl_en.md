@@ -109,10 +109,10 @@ Open the console with the browser and enter `navigator.mediaDevices.enumerateDev
 ### How do live streaming, interactive live streaming, TRTC, and relayed live streaming differ from and relate to each other?
 - **Live streaming** (keywords: one-to-many, RTMP/HLS/HTTP-FLV, CDN)
  Live streaming consists of the push end, the playback end, and the cloud live streaming service. Streams are pushed over the universal protocol RTMP, delivered through CDNs, and can be watched over protocols including RTMP, HTTP-FLV, or HLS (for HTML5).
-- *Interactive live streaming** (keywords: co-anchoring, anchor competition)
+- **Interactive live streaming** (keywords: co-anchoring, anchor competition)
  In interactive live streaming, audience can co-anchor with anchors and anchors from different rooms can compete with each other.
 - **Real-time communication** (keywords: multi-person interaction, UDP-based proprietary protocol, low latency)
- The main application scenarios for TRTC (Tencent Real-Time Communication) are audio/video interaction and low-latency live streaming. It uses a UDP-based proprietary protocol and can keep the latency as low as 100 ms. Typical applications include QQ calls, VooV Meeting, and online group classes. TRTC is supported by mainstream platforms including iOS, Android, and Windows and can communicate over WebRTC. It supports relaying streams to CDNs through on-cloud stream mixing.
+ The main application scenarios for TRTC (Tencent Real-Time Communication) are audio/video interaction and low-latency live streaming. It uses a UDP-based proprietary protocol and can keep the latency as low as 100 ms. Typical applications include zoom meeting, FaceTime, and online group classes. TRTC is supported by mainstream platforms including iOS, Android, and Windows and can communicate over WebRTC. It supports relaying streams to CDNs through on-cloud stream mixing.
 - **Relayed live streaming** (keywords: on-cloud stream mixing, RTC relayed live streaming, CDN)
  The relayed live streaming technology replicates multiple streams in a low-latency co-anchoring room and mixes them into one stream in the cloud before pushing it to a live streaming CDN for delivery and playback. 
 
