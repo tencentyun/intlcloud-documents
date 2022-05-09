@@ -43,7 +43,7 @@ You can use the XML language in request body to configure the inventory job by f
 
 >!
 >- The one-time inventory job cannot include `IsEnabled` or `Schedule` parameter.
->- All other parameters are the same as [PUT Bucket Inventory](https://cloud.tencent.com/document/product/436/33707).  
+>- All other parameters are the same as [PUT Bucket Inventory](https://intl.cloud.tencent.com/document/product/436/30625).  
 >
 
   
