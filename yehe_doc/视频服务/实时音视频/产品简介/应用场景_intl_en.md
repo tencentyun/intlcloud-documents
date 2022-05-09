@@ -82,7 +82,7 @@ With a call latency of less than 300 ms, a packet loss prevention rate of over 8
 
 ### Audio conferencing
 
-TRTC supports cross-platform compatibility, enabling users to join meetings on their mobile phones, PCs, tablets, and from WeChat. With outstanding 3A processing technologies, it can eliminate echoes and howling and ensure smooth and clear conference calls. It also supports interactive whiteboard and file sharing, allowing participants to communicate more efficiently during audio conferences.
+TRTC supports cross-platform compatibility, enabling users to join meetings on their mobile phones, PCs, and tablets. With outstanding 3A processing technologies, it can eliminate echoes and howling and ensure smooth and clear conference calls. It also supports interactive whiteboard and file sharing, allowing participants to communicate more efficiently during audio conferences.
 
 
 
@@ -115,7 +115,7 @@ TRTC supports 1080p FHD image quality and allows you to flexibly adjust the vide
 
 ### Video customer service
 
-With a call latency of less than 300 ms, packet loss prevention rate of over 70%, and network jitter prevention of over 1,000 ms, TRTC guarantees smooth and stable calls even in weak network environments. It enables interconnection across various platforms such as mobile apps, PC, mini programs, and web, making video customer service accessible any time, anywhere. It can record and play back video calls, which helps greatly improve the quality of customer service.
+With a call latency of less than 300 ms, packet loss prevention rate of over 70%, and network jitter prevention of over 1,000 ms, TRTC guarantees smooth and stable calls even in weak network environments. It enables interconnection across various platforms such as mobile apps, PC, and web, making video customer service accessible any time, anywhere. It can record and play back video calls, which helps greatly improve the quality of customer service.
 
 
 
