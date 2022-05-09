@@ -18,7 +18,7 @@
     - [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)をインストールします。
 
 ## 前提条件
-[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com)を行い、実名認証が完了済みであること。
+ すでに[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com)済みです。
 
 ## 操作手順
 [](id:step1)
