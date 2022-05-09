@@ -13,7 +13,7 @@
 - 环境安装请参见 [官方文档](https://reactnative.cn/docs/environment-setup)
 
 ## 前提条件
-您已 [注册腾讯云](https://intl.cloud.tencent.com) 账号，并完成实名认证。
+您已 [注册腾讯云](https://intl.cloud.tencent.com) 账号。
 
 ## 操作步骤
 [](id:step1)
