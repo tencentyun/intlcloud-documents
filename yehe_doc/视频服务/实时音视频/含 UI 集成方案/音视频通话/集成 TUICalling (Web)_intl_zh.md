@@ -21,7 +21,7 @@ TUICalling 组件是一个开源的音视频组件，帮助您快速在您的桌
 
 [](id:step1)
 ### 步骤一：获取 SdkAppId 和签名密钥
-- 如果您还没有腾讯云账号，请注册一个腾讯云账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。然后跳转到 TRTC  管理控制台中的[应用管理](https://console.cloud.tencent.com/trtc/app)界面。
+- 如果您还没有腾讯云账号，请注册一个腾讯云账号。然后跳转到 TRTC  管理控制台中的[应用管理](https://console.cloud.tencent.com/trtc/app)界面。
 - 如果您的应用列表为空，可以点击**创建应用**按钮创建一个新的应用，之后单击**应用信息**，打开该应用管理界面。在该界面中寻找**快速上手**页签，就能够看到如下界面：
  <img src="https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png" width="700">
 - **SDKAppID**：TRTC 的应用 ID，用于业务隔离，即不同的 SDKAppID 的通话彼此不能互通；
