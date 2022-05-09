@@ -1,5 +1,5 @@
 ## Prerequisites
-- Before purchasing a DDoS Edge Defender instance, you have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for Tencent Cloud and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+- Before purchasing a DDoS Edge Defender instance, you have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for Tencent Cloud.
 
 >? DDoS Edge Defender is currently available to beta users. To use it, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
