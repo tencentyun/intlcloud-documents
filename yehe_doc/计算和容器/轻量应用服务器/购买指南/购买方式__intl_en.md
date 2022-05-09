@@ -9,13 +9,8 @@
  >
  - **Purchase Quantity**: it indicates the number of Lighthouse instances to be purchased.
 3. Click **Buy Now**.
-4. After confirming that the configuration information is correct, click **Submit Order** and make the payment as prompted. For more information on how to use available vouchers, please see [Voucher Use Description](#Voucher). 
+4. After confirming that the configuration information is correct, click **Submit Order** and make the payment as prompted. 
 After making the payment, you can enter the [Lighthouse console](https://console.cloud.tencent.com/lighthouse) to check your Lighthouse instance. Generally, it takes 1–3 minutes to create an instance.
 
 
 
-## [Voucher Use Description](id:Voucher)
- Lighthouse allows you to use all Tencent Cloud service vouchers meeting the following conditions:
- - The voucher was claimed after December 10, 2020.
- - Lighthouse is within the voucher's scope of application (for applicable services and excluded services). Whether a voucher in your account is applicable to Lighthouse is subject to the actual information displayed on the order settlement page. 
- For use limits on Tencent Cloud vouchers, please see [Voucher](https://intl.cloud.tencent.com/document/product/555/7428).
