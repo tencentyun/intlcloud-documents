@@ -1,5 +1,5 @@
-TencentDB for MySQLは、単一ノード（元のBasic Edition）、2ノード（元のHigh-availability Edition）および3ノード（元のFinance Edition）の3つのアーキテクチャをサポートしています。
->?元の単一ノード高IOエディションも単一ノードアーキテクチャであり、その分離ポリシーは汎用型です。
+TencentDB for MySQLは、単一ノード（元のBasic Edition）、2ノード（元のHigh-availability Edition）および3ノード（元のFinance Edition）の3つのアーキテクチャをサポートしています。元の単一ノード高IOエディションも単一ノードアーキテクチャであり、その分離ポリシーは汎用型です。
+>!単一ノード（元のBasic Edition）は現在、リビルドアップグレード中であり、その間は販売を一時停止しています。
 
 ## インスタンスアーキテクチャの確認
 - インスタンスを購入時に[MySQL購入ページ](https://buy.cloud.tencent.com/cdb)にログインし、「アーキテクチャ」で対応するアーキテクチャを選択します。
@@ -11,7 +11,7 @@ TencentDB for MySQLは、単一ノード（元のBasic Edition）、2ノード�
 <tr><th>アーキテクチャ</th><th >2ノード</th><th>3ノード</th><th colspan=2>単一ノード</th>
 </thead>
 <tbody><tr>
-<td><a href="https://cloud.tencent.com/document/product/236/53253">分離ポリシー</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/39794">分離ポリシー</a></td>
 <td>汎用型</td><td>汎用型</td><td>汎用型</td><td>基本型</td></tr>
 <tr>
 <td>サポートされているバージョン</td>
