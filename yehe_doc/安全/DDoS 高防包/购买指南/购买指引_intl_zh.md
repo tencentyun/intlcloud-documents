@@ -1,5 +1,5 @@
 ## 前提条件
-在购买 DDoS 高防包（中国大陆）实例前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在购买 DDoS 高防包（中国大陆）实例前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
 ## 操作步骤
 1. 登录腾讯云官网，进入 [DDoS 高防包购买页](https://buy.cloud.tencent.com/antiddos#/native) 进行选购。
