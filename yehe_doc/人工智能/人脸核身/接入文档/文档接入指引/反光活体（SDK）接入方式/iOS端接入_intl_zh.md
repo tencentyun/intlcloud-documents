@@ -60,7 +60,7 @@ end
 
 3. pod install 更新
 
->文件层级和具体的设置可以参考Demo
+>?文件层级和具体的设置可以参考Demo
 
 ### Build Phases设置
 
