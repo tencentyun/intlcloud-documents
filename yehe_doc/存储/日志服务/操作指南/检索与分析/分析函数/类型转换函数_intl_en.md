@@ -7,6 +7,7 @@ If you need to distinguish more detailed data types when querying and analyzing 
 | ------------ | ------------------- | ------------------------------------------------------------ |
 | cast     | cast(x as type)     | Parses the data type of `x`.</br>During `cast` execution, if a value fails to be parsed, the system terminates the entire query and analysis operation. |
 | try_cast | try_cast(x as type) | Parses the data type of `x`.</br>During `try_cast` execution, if a value fails to be parsed, the system returns `NULL` and continues processing by skipping the value. |
+| typeof   |         typeof(x)  |         Returns the data type of `x`.   |
 
 >? When dirty data may exist in logs, you are advised to use the `try_cast` function to avoid query and analysis failures caused by dirty data.
 >

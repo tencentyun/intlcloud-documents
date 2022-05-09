@@ -183,7 +183,6 @@
                 <h3 style="color:191919;">语音沙龙</h3>
                 <p style="color:#586376" ;>组件化 UI 助您低代码快速实现语音沙龙场景</p>
                 <a href="https://github.com/tencentyun/TUIChatSalon">GitHub 源码</a>
-                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/39803">接入文档</a>
             </div>
         </div>
     </div>
