@@ -95,7 +95,7 @@ if (Platform.OS === 'android') {
 </dx-tabs>
 
 [](id:step5)
-### 手順5：コンパイル動作
+### ステップ5：コンパイル動作
 Metroを起動し、React Nativeプロジェクトディレクトリ下で`npx react-native start`を実行します。
 <dx-tabs>
 :::  Android端末
