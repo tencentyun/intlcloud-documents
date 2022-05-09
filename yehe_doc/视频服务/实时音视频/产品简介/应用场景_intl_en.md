@@ -91,7 +91,7 @@ TRTC supports cross-platform compatibility, enabling users to join meetings on t
 
 ### Group video call
 
-TRTC supports group video calls and provides HD image quality of 720p and 1080p. A single room can sustain up to 300 concurrent online users, and up to 50 users can turn on their videos at the same time. It has diverse features such as instant messaging, video on-demand, recording, and porn detection, making it ideal for many scenarios. In addition, it provides a scenario-based multi-person video call component, which can be directly reused to minimize the development costs. For more information on how to use the component, see [Video Call](https://intl.cloud.tencent.com/document/product/647/36065).
+TRTC supports group video calls and provides HD image quality of 720p and 1080p. A single room can sustain up to 300 concurrent online users, and up to 50 users can turn on their videos at the same time. It has diverse features such as instant messaging, video on-demand, recording, and porn detection, making it ideal for many scenarios. In addition, it provides a scenario-based group video call component, which can be directly reused to minimize the development costs. For more information on how to use the component, see [Video Call](https://intl.cloud.tencent.com/document/product/647/36065).
 
 
 
