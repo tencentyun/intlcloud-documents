@@ -13,11 +13,14 @@
 #### 集群免运维
 用户业务在 IDC，但期望由 TKE 公有云来管理集群创建、升级、监控等集群生命周期管理问题，同时获得与公有云一致的 API 与用户体验。
 
+
+
 ## 注意事项
 
-- 第三方节点功能目前处于内测阶段，如果您想要使用第三方节点功能，请 [提交工单](https://console.intl.cloud.tencent.com/workorder) 联系我们。
-- 目前暂不支持在同一集群内混部第三方节点和云上节点，所以在使用第三方节点池功能前，请您封锁集群内所有腾讯云上节点（CVM、裸金属等)。
-- 第三方节点功能仅支持在版本为**1.18及以上**，且部署模式为**“托管集群”**的 TKE 集群中使用。
+- 第三方节点特性目前处于内测阶段，如果您想要使用第三方节点功能，请通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 联系我们。
+- IDC 节点的操作系统必须使用 [TencentOS Server 3.1](https://intl.cloud.tencent.com/document/product/213/40223) 。
+- 第三方节点特性仅支持在版本为**1.18及以上** TKE 集群中使用。
+- 第三方节点特性仅支持在网络插件为 **VPC-CNI-单网卡多IP模式** 或者 **Cilium-Overlay** 的 TKE 集群开启。
 - 为了保障第三方节点的稳定性，第三方节点仅支持内网连接。
 
 ## 相关概念
@@ -26,3 +29,10 @@
 
 为帮助您高效管理 Kubernetes 集群内节点，腾讯云容器服务引入节点池概念，节点池利用节点模板，来管理一组同质节点。借助节点池基本功能，您可以方便快捷地创建、管理和销毁节点，以及实现节点的动态扩缩容。详情请参见 [节点池概述](https://intl.cloud.tencent.com/document/product/457/35900)。
 
+## 相关操作
+您可以登录 [容器服务控制台](https://console.cloud.tencent.com/tke2) 并参考以下文档， 进行对应第三方节点操作：
+<li><a href="https://intl.cloud.tencent.com/zh/document/product/457/45987?has_map=1#.E5.BC.80.E5.90.AF.E7.AC.AC.E4.B8.89.E6.96.B9.E8.8A.82.E7.82.B9.E5.8A.9F.E8.83.BD" title="开启第三方节点功能">开启第三方节点功能</a></li>
+<li><a href="https://intl.cloud.tencent.com/zh/document/product/457/45987?has_map=1#.E5.88.9B.E5.BB.BA.E7.AC.AC.E4.B8.89.E6.96.B9.E8.8A.82.E7.82.B9.E6.B1.A0" title="创建第三方节点池">创建第三方节点池</a></li>
+<li><a href="https://intl.cloud.tencent.com/zh/document/product/457/45987?has_map=1#.E6.96.B0.E5.BB.BA.E7.AC.AC.E4.B8.89.E6.96.B9.E8.8A.82.E7.82.B9" title="新建第三方节点">新建第三方节点</a></li>
+<li><a href="https://intl.cloud.tencent.com/zh/document/product/457/45987?has_map=1#.E7.BC.96.E8.BE.91.E7.AC.AC.E4.B8.89.E6.96.B9.E8.8A.82.E7.82.B9.E6.B1.A0" title="编辑第三方节点池">编辑第三方节点池</a></li>
+<li><a href="https://intl.cloud.tencent.com/zh/document/product/457/45987?has_map=1#.E5.88.A0.E9.99.A4.E7.AC.AC.E4.B8.89.E6.96.B9.E8.8A.82.E7.82.B9.E6.B1.A0" title="删除第三方节点池">删除第三方节点池</a></li>
