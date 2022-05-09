@@ -290,7 +290,7 @@ GNV4 实例支持可用区为：北京六区、上海五区、广州六区、重
 
 
 <dx-alert infotype="notice" title="">
-GPU 渲染型 GN7vw 现处于限量购买阶段，如需使用，请前往 [申请](https://cloud.tencent.com/apply/p/l133eutcwd9) 页面。
+GPU 渲染型 GN7vw 现处于限量购买阶段。
 </dx-alert>
 
 
