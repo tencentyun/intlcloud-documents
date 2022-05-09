@@ -23,3 +23,35 @@
 ![2](https://qcloudimg.tencent-cloud.cn/raw/491abd12442624139fef0b39959a6745.png)
 
 相关后台接口：[ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
+
+
+### 兼容性说明
+
+因Web实时音视频技术对浏览器和手机系统存在兼容性要求，实时音视频技术的兼容性情况如下:
+
+<table>
+	<tr><td>手机平台</td><td>浏览器</td><td>兼容性要求</td></tr>
+	<tr ><td rowspan="3" style= "vertical-align: middle;">IOS</td><td>微信内嵌浏览器</td><td>iOS 系统版本14.3+，微信版本6.5+</td></tr>
+	<tr><td>Safari 浏览器</td><td>iOS 系统版本11.1.2+，浏览器版本11+</td></tr>
+	<tr><td>Chrome 浏览器</td><td>iOS 系统版本14.3+</td></tr>
+	<tr><td rowspan="3" style= "vertical-align: middle;">Android</td><td>微信内嵌浏览器</td><td>支持</td></tr>
+	<tr><td>自带浏览器</td><td>Android 系统版本7+ 华为、OPPO、VIVO、魅族、荣耀、三星等自带浏览器兼容性较好（支持率80%），小米自带浏览器兼容性一般（支持率30%）</td></tr>
+	<tr><td>其他浏览器</td><td>Android 系统版本7+，支持 Chrome 浏览器，不支持QQ 、UC浏览器</td></tr>
+</table>
+
+
+>!
+>1. 由于 H.264 版权限制，华为系统的 Chrome 浏览器和以 Chrome WebView 为内核的浏览器,均不支持实时音视频技术的正常运行
+>2. 对于不支持实时音视频技术的情况,Web人脸核身会将光线活体检测切换为视频录制模式,保证用户可正常完成核验流程
+
+### 模式切换说明
+
+在Web人脸核验流程后，优先使用光线活体检测模式，但在不满足实时音视频兼容性要求下，会自动切换为静默(视频录制)模式。两种模式服务流程如下:
+
+光线活体检测模式用户做Web人脸核验流程:
+
+![img](https://qcloudimg.tencent-cloud.cn/raw/5bc060671b612d043a5dbb354f2f513a.png)
+
+静默模式用户做Web人脸核验流程:
+
+![img](https://qcloudimg.tencent-cloud.cn/raw/f15bd944c395b48bdbf3e0f9df3c873c.png)
