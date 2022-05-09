@@ -12,7 +12,7 @@
 
 ## 时序图（简）
 
-# 图片1 在这
+![1](https://qcloudimg.tencent-cloud.cn/raw/f963c590fc88067f81da0b7ca3df50f8.png)
 
 相关后台接口：[ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
 ## 时序图（详）
@@ -20,6 +20,6 @@
 实际使用时，后台获取token的接口需要传入比对图URL，具体使用和原因可以见[如何传递资源](https://console.intl.cloud.tencent.com/faceid) 。
 *CreateUploadUrl在图中将作为一个独立的参与角色*
 
-#  图片2 在这
+![2](https://qcloudimg.tencent-cloud.cn/raw/491abd12442624139fef0b39959a6745.png)
 
 相关后台接口：[ApplyWebVerificationToken](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[GetWebVerificationResult](https://intl.cloud.tencent.com/zh/document/product/1061/44246)，[CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
