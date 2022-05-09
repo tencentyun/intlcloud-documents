@@ -21,7 +21,7 @@ In addition to `TUICalling` for web, we also provide source code for Android, iO
 
 [](id:step1)
 ### Step 1. Get the `SdkAppId` and signature key
-- If you don't have a Tencent Cloud account, sign up and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629). Then, go to the [Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console.
+- If you don't have a Tencent Cloud account, please register a Tencent Cloud account. Then, go to the [Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console.
 - If your application list is empty, you can click **Create Application** to create an application. Click **Application Info** to enter the Application Management page, select the **Quick Start** tab to see the following content:
  <img src="https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png" width="700">
 - **SDKAppID**: TRTC application ID, which is used for business isolation; that is, calls with different `SDKAppID` values cannot be interconnected.
