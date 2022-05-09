@@ -2,9 +2,9 @@
 [](id:step1)
 ## Overview
 
-Currently, the default alarm policy is only supported for CVM - basic monitoring, TencentDB for MongoDB, TencentDB for MySQL - server monitoring, TencentDB for Redis, TDSQL for MySQL, TDSQL for PostgreSQL, CKafka - instance, ES, DTS, and EMR.
+Currently, the default alarm policy is only supported for CVM (basic monitoring), TencentDB for MongoDB (server monitoring), TencentDB for MySQL (server monitoring), TencentDB for Redis, TDSQL for MySQL, TDSQL for PostgreSQL, CKafka (instance monitoring), ES, DTS, EMR, and CLB.
 
-- When you successfully purchase a Tencent Cloud service that supports the default policy for the first time, Cloud Monitor will automatically create the default alarm policy for you. For more information on the metrics/events supported by the default policy or alarm rules, please see the [default policy description](#step1).
+- When you successfully purchase a Tencent Cloud service that supports the default policy for the first time, Cloud Monitor will automatically create the default alarm policy for you. For more information on the metrics/events supported by the default policy or alarm rules, see the [default policy description](#step1).
 - You can also manually create an alarm policy and set it as the default alarm policy. After the default policy is set, newly purchased instances will be automatically associated with the default policy without requiring manual addition.
 ![](https://main.qcloudimg.com/raw/acb5a0ed0f4f44b65a87337d910e17c1.png)
 
@@ -43,7 +43,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td>-</td>
     </tr>
     <tr>
-        <td rowspan="3">TencentDB for MySQL<br> - server monitoring</td>
+        <td rowspan="3">TencentDB for MySQL<br> (server monitoring)</td>
         <td rowspan="2">Metric alarm</td>
         <td>Disk utilization</td>
         <td>The statistical period is 1 minute, the threshold is >80%, and the continuous monitoring duration is 5 monitoring data points</td>
@@ -128,7 +128,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td>-</td>
     </tr>
     <tr>
-        <td rowspan="2"><span>EMR - server monitoring - disk</span></td>
+        <td rowspan="2"><span>EMR (server monitoring - disk)</span></td>
         <td  rowspan="2"><span>Metric alarm</span></td>
         <td><span>Disk utilization (used_all)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;80%, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -138,31 +138,31 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is &gt;50%, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td ><span>EMR - server monitoring - CPU</span></td>
+        <td ><span>EMR (server monitoring - CPU)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>CPU utilization (idle)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &lt;2%, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - server monitoring - memory</span></td>
+        <td><span>EMR (server monitoring - memory)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>Memory utilization (used_percent)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;95%, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - server monitoring - network</span></td>
+        <td><span>EMR (server monitoring - network)</span></td>
         <td><span>Event alarm</span></td>
         <td><span>Metadatabase ping failure</span></td>
         <td><span>-</span></td>
     </tr>
     <tr>
-        <td><span>EMR - cluster monitoring</span></td>
+        <td><span>EMR (cluster monitoring)</span></td>
         <td><span>Event alarm</span></td>
         <td><span>Elastic scaling failure</span></td>
         <td><span>-</span></td>
     </tr>
     <tr>
-        <td rowspan="2"><span>EMR - HBase - overview</span></td>
+        <td rowspan="2"><span>EMR (HBase - overview)</span></td>
         <td  rowspan="2"><span>Metric alarm</span></td>
         <td><span>Number of cluster RSs (numDeadRegionServers)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;0, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -172,13 +172,13 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is &gt;0, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - HBase - HMaster</span></td>
+        <td><span>EMR (HBase - HMaster)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td rowspan="3"><span>EMR - HBase - RegionServer</span></td>
+        <td rowspan="3"><span>EMR (HBase - RegionServer)</span></td>
         <td rowspan="3"><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -192,7 +192,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is &gt;500, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td rowspan="3"><span>EMR - HDFS - NameNode</span></td>
+        <td rowspan="3"><span>EMR (HDFS - NameNode)</span></td>
         <td rowspan="2"><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -207,7 +207,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>-</span></td>
     </tr>
     <tr>
-        <td rowspan="2"><span>EMR - HDFS - DataNode</span></td>
+        <td rowspan="2"><span>EMR (HDFS - DataNode)</span></td>
         <td rowspan="2"><span>Metric alarm</span></td>
         <td><span>Number of XCeivers (XceiverCount)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;1,000, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -217,7 +217,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td rowspan="4"><span>EMR - HDFS - overview</span></td>
+        <td rowspan="4"><span>EMR (HDFS - overview)</span></td>
         <td rowspan="4"><span>Metric alarm</span></td>
         <td><span>Disk failure</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;0, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -235,31 +235,31 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is 90%, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - Presto - Presto_Coordinator</span></td>
+        <td><span>EMR (Presto - Presto_Coordinator)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - Presto - Presto_Worker</span></td>
+        <td><span>EMR (Presto - Presto_Worker)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - Presto - overview</span></td>
+        <td><span>EMR (Presto - overview)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>Number of nodes (Failed)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;0, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - ClickHouse - server</span></td>
+        <td><span>EMR (ClickHouse - server)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>Number of largest active data blocks in partition</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;250, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td rowspan="3"><span>EMR - Hive - HiveMetaStore</span></td>
+        <td rowspan="3"><span>EMR (Hive - HiveMetaStore)</span></td>
         <td rowspan="3"><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -273,7 +273,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is &gt;2,000, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td rowspan="3"><span>EMR - Hive - HiveSever2</span></td>
+        <td rowspan="3"><span>EMR (Hive - HiveServer2)</span></td>
         <td rowspan="3"><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -287,7 +287,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is &gt;2,000, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td rowspan="2"><span>EMR - YARN - overview</span></td>
+        <td rowspan="2"><span>EMR (YARN - overview)</span></td>
         <td rowspan="2"><span>Metric alarm</span></td>
         <td><span>Number of nodes (NumUnhealthyNMs)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;0, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -297,13 +297,13 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>The statistical period is 1 minute, the threshold is &gt;0, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td><span>EMR - YARN - NodeManager</span></td>
+        <td><span>EMR (YARN - NodeManager)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
     </tr>
     <tr>
-        <td rowspan="2"><span>EMR - YARN - ResourceManger</span></td>
+        <td rowspan="2"><span>EMR (YARN - ResourceManger)</span></td>
         <td><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -314,7 +314,7 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
         <td><span>-</span></td>
     </tr>
     <tr>
-        <td rowspan="3"><span>EMR - ZooKeeper - ZooKeeper</span></td>
+        <td rowspan="3"><span>EMR (ZooKeeper - ZooKeeper)</span></td>
         <td rowspan="3"><span>Metric alarm</span></td>
         <td><span>GC time (FGCT)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;5s, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
@@ -326,5 +326,31 @@ Currently, the default alarm policy is only supported for CVM - basic monitoring
     <tr>
         <td><span>Number of queuing requests (zk_outstanding_requests)</span></td>
         <td><span>The statistical period is 1 minute, the threshold is &gt;50, and an alarm will be triggered once every 5 consecutive times the conditions are met</span></td>
+    </tr>
+		   <tr>
+        <td rowspan="6"><span>CLB (public network CLB instance)</span></td>
+        <td rowspan="6"><span>Metric alarm</span></td>
+        <td><span>Discarded connections</span></td>
+        <td><span>The statistical period is 1 minute, the threshold is &gt;10, and an alarm will be triggered once every 3 consecutive times the conditions are met</span></td>
+    </tr>
+    <tr>
+        <td><span>Discarded inbound data packets</span></td>
+        <td><span>The statistical period is 1 minute, the threshold is &gt;10, and an alarm will be triggered once every 3 consecutive times the conditions are met</span></td>
+    </tr>
+    <tr>
+        <td><span>Discarded inbound bandwidth</span></td>
+        <td><span>The statistical period is 1 minute, the threshold is &gt;10 MB, and an alarm will be triggered once every 3 consecutive times the conditions are met</span></td>
+    </tr>  
+		<tr>
+        <td><span>Discarded outbound bandwidth</span></td>
+        <td><span>The statistical period is 1 minute, the threshold is &gt;10 MB, and an alarm will be triggered once every 3 consecutive times the conditions are met</span></td>
+    </tr>
+		   <tr>
+        <td><span>Inbound bandwidth utilization</span></td>
+        <td><span>The statistical period is 1 minute, the threshold is &gt;80%, and an alarm will be triggered once every 3 consecutive times the conditions are met</span></td>
+    </tr>
+		   <tr>
+        <td><span>Outbound bandwidth utilization</span></td>
+        <td><span>The statistical period is 1 minute, the threshold is &gt;80%, and an alarm will be triggered once every 3 consecutive times the conditions are met</span></td>
     </tr>
 </table>
