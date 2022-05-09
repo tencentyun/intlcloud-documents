@@ -17,7 +17,7 @@
     - [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/) 설치.
 
 ## 전제 조건
-[Tencent Cloud 가입](https://intl.cloud.tencent.com) 계정이 있으며, 실명인증을 완료해야 합니다.
+[Tencent Cloud 계정 가입](https://intl.cloud.tencent.com) 이 완료된 상태여야 합니다. 
 
 ## 작업 단계
 [](id:step1)
