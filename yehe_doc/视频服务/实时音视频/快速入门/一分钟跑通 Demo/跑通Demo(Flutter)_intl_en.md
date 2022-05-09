@@ -17,7 +17,7 @@ This document describes how to quickly run the TRTC demo for Flutter.
     - Install [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## Prerequisites
-You have [signed up](https://intl.cloud.tencent.com) for a Tencent Cloud account and completed identity verification.
+You have [signed up](https://intl.cloud.tencent.com) for a Tencent Cloud account.
 
 ## Directions
 [](id:step1)
