@@ -1,8 +1,8 @@
 ### 如何绑定云服务器？
 用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc) 绑定云服务器。详情请参见 [绑定云服务器](https://intl.cloud.tencent.com/document/product/576/18535)。
 
-### 如何配置云服务器？
-弹性网卡在控制台绑定后，需要在云服务器内配置后才可正常使用，详情请参见 [配置云服务器](https://intl.cloud.tencent.com/document/product/576/18535)。
+### 如何为云服务器配置弹性网卡？
+弹性网卡在控制台绑定后，需要在云服务器内配置后才可正常使用，详情请参见 [绑定并配置弹性网卡](https://intl.cloud.tencent.com/document/product/576/41740)。
 
 ### 如何分配内网 IP？
 用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc)  为云服务器的弹性网卡分配内网 IP 并在云服务器内配置使其正式生效。详情请参见 [申请辅助内网 IP](https://intl.cloud.tencent.com/document/product/576/32938)。
