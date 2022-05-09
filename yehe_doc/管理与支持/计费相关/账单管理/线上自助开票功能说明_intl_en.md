@@ -1,47 +1,62 @@
-﻿# Online Invoicing
+## Self-Service Invoice
 
-Tencent Cloud has launched a convenient and efficient self-service invoicing feature.
-
-
-## Application
-
-The invoice receiving feature is not enabled by default. After finishing identity verification, you can choose whether to check “Receive PDF invoice via email”. If it is checked, the system will verify whether the previous months’ bill amounts have been confirmed on the 6th days of the following months. If so, the system will send a PDF invoice to your mailbox within 3-5 business days.
-
-To enable this feature, log in to the Tencent Cloud console and go to **Billing Center** > **Bills** > **Invoicing**.
-
-![](https://main.qcloudimg.com/raw/ad5b48ac2b323a882be01007bf451bce.png)
+You can request invoices for your transactions at Tencent Cloud in the console.
 
 
-## Changing the email addresses for receiving invoices
+## Directions
 
-Log in to the console and click **Bills** > **Invoicing** > **Change Email**.
+### Requesting invoices
 
-![](https://main.qcloudimg.com/raw/7eaa25974d8968a1c474c4cad5abde5d.png)
+- **Verify your identity**: You need to [complete identity verification](https://console.intl.cloud.tencent.com/developer/auth) before you submit your first invoice request.
+- **Fill in the information**: Go to **Billing Center** > **Bills** > **Invoicing** and fill in your invoice information in the **Invoice Settings** area.
 
-Go to **User List** and click the email icon to change the email address for receiving invoices.
+>! If the entity who registered your account is located in Europe (VAT) or Singapore (GST), you need to enter the entity’s tax ID in the console as well. Make sure you enter the correct tax ID, or you may fail to submit your tax returns.
 
-![](https://main.qcloudimg.com/raw/c7ff08995bc10e3b8c42b1c38db706ba.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0ce7f132e09fd8c27d06f15d1c5e415b.png)
+
+- **Check your monthly bill**: Bills are generated on the 2nd or 3rd day of each month. Make sure to [check your bills](https://console.intl.cloud.tencent.com/expense/bill) in a timely manner.
+
+>! If you cannot find a button to confirm your bill information, continue to the next step.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/205b35099aeeee66b5271caa38d07c35.png)
+
+**Request an invoice**: Find the month for which you want to request an invoice and click **Apply for Invoice**.
+
+>! You can only request invoices for the last six months. After you submit a request, the invoice will be sent to your email inbox in 2-3 hours.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/5f98af4a9c71feb00b3b459c607d1774.png)
+
+- **View/Download your invoice**: Check your inbox to download the invoice. You can also download it in the console.
 
 
-## Tax identification numbers
 
-If you (the registered user of the account) are located in Europe (VAT) or Singapore (GST), you need go to the console and click **Bills** > **Invoicing** to enter your tax identification number, which will be displayed on your invoices. Entering incorrect tax identification numbers may affect your tax reporting.
+### Auto invoicing
 
-![](https://main.qcloudimg.com/raw/6719b87e22d51a69b1a66260ee0897ba.png)
- 
- 
-## Applying for the invoices of previous months
+The **Auto Invoicing** checkbox is unselected by default. If you select it, on the 6th day of each month, the system will automatically issue an invoice (PDF) for your transactions in the previous month and will send a copy to your inbox in 1-3 business days.
+![](https://qcloudimg.tencent-cloud.cn/raw/7b8c912a2d75c2050106699c1705c16c.png)
 
-### 1. Confirm your bills
 
-Log in to the console, click **Bills** > **Bill Details** > **Bill by Instance**, and then click **Confirm Bill** in the upper-right corner. 
+### Requesting invoices for past months
 
-![](https://main.qcloudimg.com/raw/7497b5b320ecbfac74c835352e71ca59.png)
+Go to **Billing Center** and select **Bills** > **Invoicing**. Find the month for which you want to request an invoice and click **Apply for Invoice**. You can only request an invoice for the past six months. After submitting your request, the invoice will be sent to the email address you specify in 2-3 hours. If you are unable to find the invoice in your inbox, you can also download it from the **Invoicing** page of the console.
+![](https://qcloudimg.tencent-cloud.cn/raw/54d98d19fa334db74bf7c40e2209295c.png)
 
-### 2. Reissue the invoices of previous months
 
-After confirming your bills, go to **Invoicing** > **Reissue (Invoice)** and then click the calendar icon to select the months to reissue invoices for.
-You can only select the months within the last 6 months. The reissued invoices will be sent to your mailbox in 2-3 hours.
- 
-![](https://main.qcloudimg.com/raw/94c0d9216eb78e2f0d55e3f417384c81.png)
+## FAQs
 
+### How do I change my invoice information?
+
+#### How do I change the email address to receive invoices?
+
+In the console, hover your mouse over the profile icon in the top right corner, click [Account Information](https://console.intl.cloud.tencent.com/developer), and then click icon next to **Contact Email** to change your email address.
+![](https://qcloudimg.tencent-cloud.cn/raw/f01f532e43ea03d03a33db2eee2fda1e.png)
+
+#### How do I change my invoice address?
+
+In the console, hover your mouse over the profile icon in the top right corner, click [Account Information](https://console.intl.cloud.tencent.com/developer), and then click **Modify** to modify your invoice address.
+![](https://qcloudimg.tencent-cloud.cn/raw/cd54dd0339727188be427c563a386ad6.png)
+
+
+### What is the invoicing currency?
+
+Tencent Cloud International issues invoices in USD.
