@@ -6,14 +6,14 @@ Tencent Real-Time Communication (TRTC) features two major solutions: low-latency
 
 ### Audio chat room
 
-TRTC allows up to 50 users to mic on and chat at the same time and smoothly mic on/off with a latency below 300 ms. It supports multiple audio effects such as voice changing, sound effects, and reverb, creating a rich audio chat experience. It can be integrated with Tencent Cloud IM to support various interactions such as public chat, private chat, group chat, liking, and gifting. It also provides a scenario-based voice chat room component, which can be directly reused to minimize development costs. For more information on how to use the component, see. [Audio Chat Room](https://intl.cloud.tencent.com/zh/document/product/647/37287).
+TRTC allows up to 50 users to mic on and chat at the same time and smoothly mic on/off with a latency below 300 ms. It supports multiple audio effects such as voice changing, sound effects, and reverb, creating a rich audio chat experience. It can be integrated with Tencent Cloud IM to support various interactions such as public chat, private chat, group chat, liking, and gifting. It also provides a scenario-based voice chat room component, which can be directly reused to minimize development costs. For more information on how to use the component, see. [Audio Chat Room](https://intl.cloud.tencent.com/document/product/647/37287).
 
 
 
 
 ### Radio
 
-TRTC supports 48 kHz sample rate, 128 Kbps bitrate, and stereo sound, delivering clear sound that is comparable to CD quality. It can play back local music in various formats such as MP3, AAC, and WAV as the background music, allowing you to build a high-quality radio station. It offers a rich set of voice changing effects which make radio shows more entertaining. In addition, it provides a scenario-based radio component, which can be directly reused to minimize your development costs. For more information on how to use the component, see [Audio Chat Room](https://intl.cloud.tencent.com/zh/document/product/647/37287).
+TRTC supports 48 kHz sample rate, 128 Kbps bitrate, and stereo sound, delivering clear sound that is comparable to CD quality. It can play back local music in various formats such as MP3, AAC, and WAV as the background music, allowing you to build a high-quality radio station. It offers a rich set of voice changing effects which make radio shows more entertaining. In addition, it provides a scenario-based radio component, which can be directly reused to minimize your development costs. For more information on how to use the component, see [Audio Chat Room](https://intl.cloud.tencent.com/document/product/647/37287).
 
 
 
@@ -34,7 +34,7 @@ TRTC delivers latency below 300 ms for cross-room communication and enables seam
 
 ### Interactive large class
 
-TRTC allows up to 100,000 students to watch an online class at the same time with latency below 300 ms. Teachers and students can smoothly mic on/off for uninterrupted discussion and interaction during the class. It supports various features such as screen sharing, interactive whiteboard, and recording and playback, allowing teachers to use diverse teaching aides. In addition, it provides a scenario-based interactive large class component, which can be directly reused to minimize your development costs. For more information on how to use the component, see [Real-Time Interactive Teaching](https://cloud.tencent.com/document/product/647/45465).
+TRTC allows up to 100,000 students to watch an online class at the same time with latency below 300 ms. Teachers and students can smoothly mic on/off for uninterrupted discussion and interaction during the class. It supports various features such as screen sharing, interactive whiteboard, and recording and playback, allowing teachers to use diverse teaching aides. In addition, it provides a scenario-based interactive large class component, which can be directly reused to minimize your development costs. For more information on how to use the component, see [Real-Time Interactive Teaching](https://intl.cloud.tencent.com/document/product/647/37278).
 
 
 
@@ -95,7 +95,7 @@ TRTC supports one-to-one video calls and provides HD image quality of 720p and 1
 
 ### Online conferencing
 
-TRTC supports features such as screen sharing, file sharing, and interactive whiteboard, making online conferencing more efficient. By integrating with Tencent Cloud IM, it offers multiple discussion methods like text/image-based communications without interrupting the conferencing process. In addition, it provides a scenario-based online conferencing component, which can be directly reused to minimize the development costs. For more information on how to use the component, see [Group Audio/Video Room](https://intl.cloud.tencent.com/zh/document/product/647/37284).
+TRTC supports features such as screen sharing, file sharing, and interactive whiteboard, making online conferencing more efficient. By integrating with Tencent Cloud IM, it offers multiple discussion methods like text/image-based communications without interrupting the conferencing process. In addition, it provides a scenario-based online conferencing component, which can be directly reused to minimize the development costs. For more information on how to use the component, see [Group Audio/Video Room](https://intl.cloud.tencent.com/document/product/647/37284).
 
 
 
