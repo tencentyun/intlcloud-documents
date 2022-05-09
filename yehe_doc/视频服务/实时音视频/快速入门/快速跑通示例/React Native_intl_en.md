@@ -69,7 +69,7 @@ You need to configure permission requests in order to run the demo.
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->! Do not set `android:hardwareAccelerated="false"`. Disabling hardware acceleration will result in failure to render remote users’ videos.</dx-alert>
+<dx-alert infotype="notice">Do not set `android:hardwareAccelerated="false"`. Disabling hardware acceleration will result in failure to render remote users’ videos.</dx-alert>
 2. Manually configure audio and video permission requests.
 ```java
 if (Platform.OS === 'android') {
