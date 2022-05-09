@@ -13,7 +13,7 @@
 - 環境構築については、[公式ドキュメント](https://reactnative.cn/docs/environment-setup)をご参照ください
 
 ##  前提条件
-[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com)を行い、実名認証が完了済みであること。
+[Tencent Cloudアカウント](https://intl.cloud.tencent.com)を登録します。
 
 ## 操作手順
 [](id:step1)
