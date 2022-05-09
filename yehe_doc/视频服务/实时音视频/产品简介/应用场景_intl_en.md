@@ -45,14 +45,6 @@ TRTC supports multiple small class sizes, including classes for 1, 2, 6, and 32 
 
 
 
-
-### Mini program live streaming
-
-TRTC supports interconnection across mini programs, applications, and PC, so live streaming content can be quickly delivered to users on different platforms. By integrating with features such as instant messaging, video-on-demand, and UGSV, it supports a diversity of features like live room on-screen commenting, liking, gifting, LVB recording, and recording playback, which improve the Mini Program live streaming experience. Moreover, it is capable of intelligently detecting porn in videos and images, and it can process non-compliant contents within seconds to help ensure content compliance and business security.
-
-
-
-
 ### Q&A live streaming
 
 TRTC supports low-latency live streaming under high-concurrency, making it ideal for Q&A scenarios in which questions need to be displayed synchronously on viewer clients. It supports multiple sync mechanisms such as message passthrough, timestamp, and signaling channel so that audio, images, and questions are in sync, meeting the requirements for ultra-high-concurrence IM interaction. It also supports quiz interaction, result statistics collection, and co-anchoring in live streaming, making online Q&A more exciting. In addition, it can filter keywords and answer hints during interactive live streaming in real time, which helps improve the user experience and reduce the risks of non-compliance.
