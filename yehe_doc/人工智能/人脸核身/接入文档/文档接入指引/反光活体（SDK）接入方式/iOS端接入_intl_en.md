@@ -60,9 +60,9 @@ end
 
 3. Run `pod install`.
 
-> For the file levels and specific settings, see the demo.
+>? For the file levels and specific settings, see the demo.
 
-### `Build Phases` settings
+### Build Phases settings
 
 1. Click `Other Linker Flags` to add **-ObjC**.
 2. Change the extension of `ViewController.m` to `.mm`.
