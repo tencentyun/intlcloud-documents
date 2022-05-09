@@ -4,7 +4,7 @@
 
 如想要接收 APNs 离线消息通知，需要遵从如下几个步骤：
 
-1. [申请 APNs 证书](#ApplyForCertificate)。
+1. [申请 APNs 证书](https://intl.cloud.tencent.com/zh/document/product/1047/39157?!editLang=en&lang=zh&pg=#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.B3.E8.AF.B7-apns-.E8.AF.81.E4.B9.A6)。
 2. [上传证书到 IM 控制台](#UploadCertificate)。
 3. 在 App 每次登录时，向苹果获取 [deviceToken](#DeviceToken)。
 4. 调用 [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) 接口将其上报到 IM 后台。
