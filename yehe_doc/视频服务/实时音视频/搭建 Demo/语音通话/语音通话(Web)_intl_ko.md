@@ -42,7 +42,7 @@ TRTCCalling은 다음 포트에 종속되어 데이터를 전송합니다. 해�
 
 [](id:step1)
 ### 1단계: 신규 애플리케이션 생성
-1. [Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)하여 계정을 생성하고 실명 인증을 완료합니다.
+1. [Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)하여 계정을 생성하고.
 2. TRTC 콘솔에 로그인한 후, **개발 지원** > [**Demo 빠른 실행**](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
 3. 애플리케이션 이름(예시: `TestTRTC`)을 입력한 후 **생성**을 클릭합니다.
 
