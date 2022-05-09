@@ -18,7 +18,7 @@
     - 安装 [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)。
 
 ## 前提条件
-您已 [注册腾讯云](https://intl.cloud.tencent.com) 账号，并完成实名认证。
+您已 [注册腾讯云](https://intl.cloud.tencent.com) 账号。
 
 ## 操作步骤
 [](id:step1)
