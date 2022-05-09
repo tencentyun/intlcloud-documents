@@ -7,14 +7,14 @@
 
 ### 如何申请发票
 
-- **实名认证**：首次开票前请您先完成腾讯云账号实名认证，点击 **[实名](https://console.intl.cloud.tencent.com/developer/auth)**。
+- **实名认证**：首次开票前请您先完成腾讯云账号实名认证，点击 <b>[实名](https://console.intl.cloud.tencent.com/developer/auth)</b>。
 - **发票抬头填写**：发票控制台 -【发票】->【开票设置】填写发票抬头、发票接收邮箱 、税号等相关信息；
 
 >! 账号注册地主体为欧洲（VAT）或新加坡（GST）需填写对应主体的税号信息，税号信息将显示在您的发票上，错误的税号信息可能会影响您税费申报，请注意填写。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/0ce7f132e09fd8c27d06f15d1c5e415b.png)
 
-- **月账单确认**：系统月账单出账日为每月2 - 3日，请于每月出账后及时确认月账单信息。点击 **[确认月账单](https://console.intl.cloud.tencent.com/expense/bill)**。
+- **月账单确认**：系统月账单出账日为每月2 - 3日，请于每月出账后及时确认月账单信息。点击 <b>[确认月账单](https://console.intl.cloud.tencent.com/expense/bill)</b>。
 
 >! 如无账单确认按钮，请直接至申请【开票步骤】申请开票。
 
