@@ -42,7 +42,7 @@ The service supports the following platforms:
 
 [](id:step1)
 ### Step 1. Create an application
-1. [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verify your identity.
+1. [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) .
 2. In the TRTC console, click **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 3. Enter an application name such as `TestTRTC` and click **Create**.
 
