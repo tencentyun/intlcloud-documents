@@ -1,5 +1,5 @@
-O TencentDB for MySQL fornece três tipos de arquiteturas: nó único (anteriormente Edição básica), dois nós (anteriormente Edição de alta disponibilidade) e três nós (anteriormente Edição financeira).
->?As instâncias de nó único geral eram conhecidas como instâncias de edição de alta E/S de nó único (single-node).
+O TencentDB for MySQL fornece três tipos de arquiteturas: nó único (anteriormente Edição básica), dois nós (anteriormente Edição de alta disponibilidade) e três nós (anteriormente Edição financeira).As instâncias de nó único geral eram conhecidas como instâncias de edição de alta E/S de nó único (single-node).
+>! Nó único (anteriormente Edição básica) está atualmente em processo de reconstrução e modernização, e as vendas serão suspensas durante esse período.
 
 ## Exibição das arquiteturas de instâncias
 - Para instâncias a serem adquiridas, faça login na [página de aquisição do TencentDB for MySQL](https://buy.cloud.tencent.com/cdb) e selecione a arquitetura na seção **Architecture (Arquitetura)**.
