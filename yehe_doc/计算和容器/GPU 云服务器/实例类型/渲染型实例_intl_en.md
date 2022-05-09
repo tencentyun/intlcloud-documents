@@ -290,7 +290,7 @@ A **NVIDIA GN7vw instance** is a rendering instance configured with a vDWS licen
 
 
 <dx-alert infotype="notice" title="">
-GPU Rendering GN7vw is offered with limited availability. To purchase it, [submit a ticket](https://cloud.tencent.com/apply/p/l133eutcwd9) for application.
+GPU Rendering GN7vw is offered with limited availability. 
 </dx-alert>
 
 
