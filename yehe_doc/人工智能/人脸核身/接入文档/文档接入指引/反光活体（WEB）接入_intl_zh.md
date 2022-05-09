@@ -55,3 +55,14 @@
 静默模式用户做Web人脸核验流程:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/f15bd944c395b48bdbf3e0f9df3c873c.png)
+
+
+### 光线活体摄像机授权说明
+
+调用Web人脸核验流程时，光线活体检测模式需要用户摄像机的使用授权.如果用户拒绝授权,需要重新进入人脸核验流程和允许授权.部分浏览器会存在无法拉起授权界面,可以尝试清理浏览器的缓存
+
+| 返回信息                                                     | 处理措施                             |
+| ------------------------------------------------------------ | ------------------------------------ |
+| Unable to access your camera/mic. Please make sure that there is no other app requesting access to them and try again. | 建议用户检查所需的摄像机是否被占用   |
+| Mic and camera permissions of your device are required during the whole verification. Please clear your browser cache and try again. | 建议用户重新进入并允许摄像机的授权   |
+| Please check whether the camera/mic can be accessed normally and try again | 建议用户检查所需的摄像头设备是否正常 |
