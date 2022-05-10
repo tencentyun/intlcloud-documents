@@ -1097,6 +1097,9 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 ```
 
+>?  From SDK v1.2.6.0, the session keep-alive feature will be disabled by default. You can omit this API.
+>
+
 #### Parameter description
 
 - `context`: Application context
