@@ -31,7 +31,7 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
     4.  新しく追加した列で、ホストレコードとしてドメイン名プレフィックスを入力し、レコードタイプはCNAMEを選択し、レコード値としてCNAMEドメイン名を入力します。
     5. **保存**をクリックするとCNAMEレコードが追加できます。
 >!
-> -CNAMEが正常に追加された後、通常、有効になるまでに一定時間がかかります。CNAME設定が失敗した場合、CSSは使用できません。
+>- CNAMEが正常に追加された後、通常、有効になるまでに一定時間がかかります。CNAME設定が失敗した場合、CSSは使用できません。
 >- ドメイン名のCNAMEに成功すると、CSSコンソールの[**ドメイン名管理**](https://console.cloud.tencent.com/live/domainmanage)リストでドメイン名CNAMEのアドレス状態の記号が![](https://main.qcloudimg.com/raw/0fc346399ae095d69113d4944e511a20.png)に変更されていることが確認できます。
 >- CNAME操作後の検出で失敗が続く場合は、ドメイン名登録サービスプロバイダに問い合わせることをお勧めします。
 >- 他のDNSサービスプロバイダを使用する場合、その他の操作については、[ドメイン名CNAME設定](https://intl.cloud.tencent.com/document/product/267/31057)をご参照ください。
@@ -96,7 +96,7 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
 ### プルURLの生成
 ライブイベントストリーミングプルURLとTencent Cloud CSSプルURLは、基本的に同じです。Tencent Cloud CSSプルURLの前にある`rtmp`を`webrtc`に置き換えるだけで済みます。
 
-ライブイベントストリーミングプルURL形式は、 `webrtc://domain/path/stream_id`です。[ホットリンク防止認証](https://intl.cloud.tencent.com/document/product/267/31560)が必要な場合、プルURL形式は、**`webrtc://domain/path/stream_id?txSecret=xxx&txTime=xxx`**となります。Tencent Cloud CSSプルURLの生成については、[再生アドレスの取得](#step4)をご参照ください。
+ライブイベントストリーミングプルURL形式は、 `webrtc://domain/path/stream_id`です。[ホットリンク防止認証](https://intl.cloud.tencent.com/document/product/267/31560)が必要な場合、プルURL形式は、`webrtc://domain/path/stream_id?txSecret=xxx&txTime=xxx`となります。Tencent Cloud CSSプルURLの生成については、[再生アドレスの取得](#step4)をご参照ください。
 
 >? 異なる解像度とビットレートのストリームをプルする必要がある場合は、トランスコードされたストリームをプルできます。トランスコードされたストリームのURL生成については、[CSSカプセル化とトランスコーディング](https://intl.cloud.tencent.com/document/product/267/31561)をご参照ください。
 
