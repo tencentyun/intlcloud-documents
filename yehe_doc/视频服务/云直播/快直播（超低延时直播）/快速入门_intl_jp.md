@@ -60,7 +60,7 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
 - PC端末プッシュの場合、OBSプッシュを推奨します。まず、[OBSプラグイン](https://intl.cloud.tencent.com/document/product/267/42131)を設定してください。プラグインの設定を完了後に、[OBSプッシュ](https://intl.cloud.tencent.com/document/product/267/31569)を参照しながら操作してください。
 - Web端末プッシュの場合、**支援ツール** >[**Webプッシュ**](https://console.cloud.tencent.com/live/tools/webpush)の利用を推奨します。プッシュするドメイン名を選択し、カスタムストリーム名StreamNameを入力し、アドレスの有効期限を選択してから、カメラをオンにして、**プッシュ開始**をクリックします。
 - ミニプログラムプッシュの場合、WeChatでミニプログラム [Tencent Cloudビデオクラウド](https://intl.cloud.tencent.com/document/product/1071/38147)を検索し、**RTMPプッシュ**を選択してから、**開始**をクリックして、プッシュを開始します。    
-- モバイル端末プッシュの場合、TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)をダウンロードしてインストールします。起動後に**MLVB**>**プッシュデモ（カメラプッシュ）**を選択します。QRコードをスキャンするかプッシュアドレスを手動でアドレス編集ボックスに入力して、**プッシュ開始**をクリックします。
+- モバイル端末プッシュの場合、[TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)をダウンロードしてインストールします。起動後に**MLVB**>**プッシュデモ（カメラプッシュ）**を選択します。QRコードをスキャンするかプッシュアドレスを手動でアドレス編集ボックスに入力して、**プッシュ開始**をクリックします。
 
 >? 
 >
