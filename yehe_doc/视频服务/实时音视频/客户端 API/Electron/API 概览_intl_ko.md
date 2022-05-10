@@ -288,7 +288,7 @@ Tencent Cloud 영상 통화 기능의 콜백 인터페이스 유형.
 | API | 설명 |
 |-----|-----|
 | [onRemoteUserEnterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onRemoteUserEnterRoom) | 사용자가 현재 방에 입장함. |
-|onRemoteUserLeaveRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onRemoteUserLeaveRoom) | 사용자가 현재 방에서 퇴장함. |
+|[onRemoteUserLeaveRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onRemoteUserLeaveRoom) | 사용자가 현재 방에서 퇴장함. |
 | [onUserVideoAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) | 사용자의 카메라 비디오 활성화 여부. |
 | [onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable) | 사용자의 화면 공유 활성화 여부. |
 | [onUserAudioAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onUserAudioAvailable) | 사용자의 오디오 업스트림 활성화 여부. |
