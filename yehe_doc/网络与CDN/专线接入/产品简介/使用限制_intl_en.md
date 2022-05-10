@@ -1,15 +1,77 @@
 ## Resource Limits
-| Resource | Limit | Allow Applying for Higher Quota | Description |
-|-------|-------|------------------|------------------|
-| Connections per user | 10 | Yes | Each user can access up to 10 connections. |
-| Dedicated tunnels per connection | 5 | Yes | Up to 5 dedicated tunnels can be created in a connection. |
-| Direct connect gateway per VPC | 2 (one standard and the other supports NAT) | No | Each VPC supports up to two direct connect gateways. |
-| Local IP translations per direct connect gateway | 100 | Yes | Each direct connect gateway supports up to 100 local IP translations. |
-| Peer IP translations per direct connect gateway | 100 | Yes | Each direct connect gateway supports up to 100 peer IP translations. |
-| Local source IP port translations per direct connect gateway | 20 | Yes | Each direct connect gateway supports up to 20 local source IP port translations. |
-| Local destination IP port translations per direct connect gateway | 100 | Yes | Each direct connect gateway supports up to 100 local destination IP port translations. |
-| Number of static routes per dedicated tunnel | 20    | No   | A dedicated tunnel supports up to 20 static routes. |
-| Number of BGP routes per dedicated tunnel | 100 | No   | A dedicated tunnel supports up to 100 BGP routes. |
+<table>
+<tr>
+<th>Resource</th>
+<th>Limit</th>
+<th>Support Increasing Quota</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Connections per user</th>
+<td>10</th>
+<td>Yes</th>
+<td>Each user can have up to 10 connections.</th>
+</tr>
+<tr>
+<td>Dedicated tunnels per connection</th>
+<td>5</th>
+<td>Yes</th>
+<td>Up to 5 dedicated tunnels can be created in each connection</th>
+</tr>
+<tr>
+<td>DC gateways per VPC</th>
+<td>2 (One standard gateway and one NAT gateway)</th>
+<td>No</th>
+<td>Up to 2 Direct Connect gateways can be configured in each VPC.</th>
+</tr>
+<tr>
+<td>Local IP translations per DC gateway</th>
+<td>100</th>
+<td>Yes</th>
+<td>Up to 100 local IP translations can be configured for each Direct Connect gateway.</th>
+</tr>
+<tr>
+<td>Peer IP translations per DC gateway</th>
+<td>100</th>
+<td>Yes</th>
+<td>Up to 100 peer IP translations can be configured for each Direct Connect gateway.</th>
+</tr>
+<tr>
+<td>Local source IP port translations per DC gateway</th>
+<td>20</th>
+<td>Yes</th>
+<td>Up to 20 local source IP port translations can be configured for each dedicated gateway.</th>
+</tr>
+<tr>
+<td>Local destination IP port translations per DC gateway</th>
+<td>100</th>
+<td>Yes</th>
+<td>Up to 100 local destination IP port translations can be configured for each Direct Connect gateway.</th>
+</tr>
+<tr>
+<td rowspan="2">Static routes per dedicated tunnel</th>
+<td>Dedicated tunnel 1.0: 20</th>
+<td>No</th>
+<td>Up to 20 static routes can be configured for a dedicated tunnel 1.0.</th>
+</tr>
+<tr>
+<td>Dedicated tunnel 2.0: 50</th>
+<td>Yes</th>
+<td>Up to 50 static routes can be configured for a dedicated tunnel 2.0. To adjust the quota, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</th>
+</tr>
+<tr>
+<td rowspan="2">BGP routes per dedicated tunnel</th>
+<td>Dedicated tunnel 1.0: 100</th>
+<td>No</th>
+<td>Up to 100 BGP routes can be configured for a dedicated tunnel 1.0.</th>
+</tr>
+<tr>
+<td>Dedicated tunnel 2.0: 100</th>
+<td>Yes </th>
+<td>Up to 100 BGP routes can be configured for a dedicated tunnel 2.0. To adjust the quota, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</th>
+</tr>
+</table>
+
 
 ## Access Limits
 ### Direct Connect
@@ -57,19 +119,16 @@ Split as: `192.168.0.0/17` + `192.168.128.0/17`
 - If both IP translation and IP port translation are configured, IP translation takes priority when both are hit.
 
 ## Network Limits
-Before using connections to connect CPE and Tencent Cloud, check that the MAC addresses of both parties meet the following requirements to ensure proper network connection.
+To establish a connection between the cusotmer IDC and Tencent Cloud, check that the MAC addresses of both parties meet the following requirements.
 
 ### MAC
-The Tencent Cloud access exchange uses a fixed MAC address of 3c:fd:fe:29:cb:c2. This MAC address cannot be used by the CPE access device. Otherwise, the MAC address conflict will cause MAC address flapping (switching jump), which leads to network problems such as unreachable networks, slow response, and no response.
+The Tencent Cloud access exchange uses a fixed MAC address of 3c:fd:fe:29:cb:c2. This MAC address cannot be used by the customer IDC access device. Otherwise, the MAC address conflict will cause MAC address flapping (switching jump), which leads to network problems such as unreachable networks, slow response, and no response.
 >?MAC address flapping (switching jump) occurs when a MAC address is learned by two outbound interfaces in the same VLAN and the MAC address entry learned later overrides the earlier one, making the MAC address unstable.
 
 The following are scenarios where MAC address flapping occurs.
-![](https://qcloudimg.tencent-cloud.cn/raw/17260e52033989f2c1dc743dbe2b3382.png)
-As shown in the figure above, CPE exchange B connects to Tencent Cloud exchanges A and A1 through two connections (connections 1 and 2).
-MAC address flapping occurs in exchange B when Tencent Cloud returns packets to the CPE.
-
-### VRRP
-Currently, Tencent Cloud Direct Connect does not allow CPE to interconnect with Tencent Cloud via VRRP.
+![](https://qcloudimg.tencent-cloud.cn/raw/9bbc9008b10850527a7f919d49b695b7.png)
+As shown in the figure above, customer exchange B connects to Tencent Cloud exchanges A and A1 through two connections (connections 1 and 2).
+MAC address flapping occurs in exchange B when Tencent Cloud returns packets to the customer IDC.
 
 ### Access Limits
 To prevent network congestion due to network loops, you are advised to use layer-3 network sub-interfaces to connect to Tencent Cloud Direct Connect devices.
