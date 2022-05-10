@@ -56,7 +56,7 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
 
 Tencent Cloud가 제공하는 PHP 및 Java 언어 푸시 스트림 주소 예시 코드는 직접 해당 코드를 참고하여 푸시 스트림 주소를 연결할 수 있습니다. 자세한 작업 방법은 다음과 같습니다.
 
-1. **[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)**로 이동합니다.
+1. [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)로 이동합니다.
 2. 푸시 스트림 도메인 또는 오른쪽 **관리**를 클릭하여 도메인 상세 페이지로 이동합니다.
 3. **푸시 스트림 설정**을 선택하고 스크롤을 끝까지 내려 **푸시 스트림 주소 예시 코드** 탭을 확인합니다.
 4. 탭 전환 버튼을 클릭하여 아래와 같이 PHP/Java 예시 코드를 확인합니다.
@@ -71,7 +71,7 @@ Tencent Cloud가 제공하는 PHP 및 Java 언어 푸시 스트림 주소 예시
     *        key 보안 키
     *        time 만료 시간 sample 2016-11-12 12:00:00. 만료 타임스탬프. 단위: s
     * @return String url
-*/
+
 function getPushUrl($domain, $streamName, $key = null, $time = null){
    if($key && $time){
       $txTime = strtoupper(base_convert(strtotime($time),10,16));
