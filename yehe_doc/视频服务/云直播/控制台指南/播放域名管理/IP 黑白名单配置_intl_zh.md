@@ -33,7 +33,7 @@
 </tbody></table>
 
 4. 单击**保存**即可保存配置，配置需要一定时间才可生效。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/8a0bf90247475062eef4aa43d34eb08f.png)
 
 [](id:change)
 ## 修改 IP 黑白名单
@@ -48,4 +48,4 @@
 1.选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击需关闭 IP 黑白名单配置的**播放域名**或右侧的**管理**，进入域名管理页。
 2.在**访问控制> IP 黑白名单配置**中，单击**编辑**进入 IP 黑白名单配置页。
 3.单击![img](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png)按钮，选择关闭 IP 黑白名单。
-![](https://qcloudimg.tencent-cloud.cn/raw/f60c0cdf3fe6cb94f15867f349bc4cc3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/226d47604696996735ec23b887931d35.png)

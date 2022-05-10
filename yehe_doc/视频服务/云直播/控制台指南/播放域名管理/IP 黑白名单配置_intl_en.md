@@ -33,7 +33,7 @@ This document shows you how to configure an IP allowlist/blocklist to filter req
 </tbody></table>
 
 4. Click **Save** to save the configuration (it takes a while for the configuration to take effect).
-
+![](https://qcloudimg.tencent-cloud.cn/raw/8a0bf90247475062eef4aa43d34eb08f.png)
 
 [](id:change)
 ## Modifying IP Allowlist/Blocklist Configuration
@@ -48,4 +48,4 @@ Follow the steps below to disable IP allowlist/blocklist:
 1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, and click the target **playback domain** or click **Manage** on the right to enter the domain management page.
 2. Click **Access Control** and find **IP Allowlist/Blocklist**.
 3. Click ![img](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png) to disable IP allowlist/blocklist.
-![](https://qcloudimg.tencent-cloud.cn/raw/f60c0cdf3fe6cb94f15867f349bc4cc3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/226d47604696996735ec23b887931d35.png)

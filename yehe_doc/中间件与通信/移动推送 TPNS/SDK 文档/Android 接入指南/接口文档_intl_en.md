@@ -407,8 +407,9 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 ## In-App Message Display
 Starting with SDK v1.2.7.0, you can set whether to allow the display of in-app message windows. For example, you can enable the display of in-app message windows in one Activity page, while disable it in another Activity page.
 
->! In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the TPNS SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
->```
+<dx-alert infotype="notice"> 
+In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the TPNS SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
+```
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
 // Starting with Android 9, you need to set different WebView data directories for the WebView instances of apps’ non-main processes.
 String processName = getProcessName()
@@ -418,7 +419,8 @@ if (processName != null
 }
 }
 ```
-> Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
+ Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
+</dx-alert>
 
 ### Setting whether to allow the display of in-app message windows
 ​```java
@@ -428,7 +430,7 @@ XGPushConfig.enableShowInMsg(Context context, boolean flag);
 #### Parameter description
 
 - `context`: `Context` object
-`flag`: Whether to allow in-app message display. `true`: Allow; `false`: Not allow; default: `false`.
+- `flag`: Whether to allow in-app message display. `true`: Allow; `false`: Not allow; default: `false`.
 
 #### Sample code
 ```java
@@ -1096,6 +1098,9 @@ TPNS enables the session keep-alive feature by default. To disable it, please ca
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 ```
+
+>?  From SDK v1.2.6.0, the session keep-alive feature will be disabled by default. You can omit this API.
+>
 
 #### Parameter description
 

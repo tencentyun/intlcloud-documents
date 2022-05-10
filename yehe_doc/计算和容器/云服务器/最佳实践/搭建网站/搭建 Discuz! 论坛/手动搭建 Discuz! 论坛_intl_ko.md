@@ -6,9 +6,6 @@ Discuz!는 전 세계에서 완성도 및 커버율이 가장 높은 포럼 웹 
 Discuz! 포럼 수동 구축을 위해 자주 사용하는 커맨드인 [CentOS 환경에서 YUM을 통해 소프트웨어 설치](https://intl.cloud.tencent.com/document/product/213/2046) 등의 Linux 커맨드에 익숙해져야 하며, 설치된 소프트웨어의 사용 및 버전 호환성에 대한 이해도가 있어야 합니다.
 
 
-<dx-alert infotype="notice" title="">
-Tencent Cloud는 클라우드 마켓의 미러 이미지 환경을 통한 Discuz! 포럼 배포를 권장합니다. 수동 구축 과정은 시간이 오래 걸릴 수 있습니다.
-</dx-alert>
 
 
 
