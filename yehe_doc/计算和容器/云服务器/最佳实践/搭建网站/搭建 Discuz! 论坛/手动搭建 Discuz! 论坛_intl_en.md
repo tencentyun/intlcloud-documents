@@ -6,9 +6,6 @@ Used by over 2 million websites, Discuz! is the world’s most sophisticated and
 To manually set up a Discuz! website, you should be familiar with common Linux commands (see [Installing Software via YUM under CentOS Environment](https://intl.cloud.tencent.com/document/product/213/2046)), and understand the usage and version compatibility of the software to be installed.
 
 
-<dx-alert infotype="notice" title="">
-It's recommended that you can configure a Discuz! forum through the image environment of Tencent Cloud marketplace, and it may take a long time to set up the Discuz! forum manually.
-</dx-alert>
 
 
 
