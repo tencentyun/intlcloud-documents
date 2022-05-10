@@ -1,5 +1,4 @@
-Direct Connect connects Tencent Cloud with the user IDC with a dedicated physical line. After configuring the Direct Connect gateway and dedicated tunnel on the Tencent Cloud side, users need to configure routes on the local IDC. Using the layer-3 sub-interfaces to connect to Tencent Cloud is recommended.
-
+Direct Connect connects Tencent Cloud with the user IDC with a dedicated physical line. After configuring the Direct Connect gateway and dedicated tunnel on the Tencent Cloud side, users need to configure routes on the local IDC.
 >?This document only introduces the local routing configurations associated with Tencent Cloud Direct Connect. For other information, please see the local router documentation or consult your router provider.
 
 ## Routing Configuration
@@ -9,28 +8,31 @@ Direct Connect connects Tencent Cloud with the user IDC with a dedicated physica
 # Configure ports
 interfaces <interface_number>
 description <interface_desc>
-port link-mode route
 undo shutdown
 speed <interface_speed>
 duplex full
+undo negotiation auto
+commit
 
-# Configure layer 3 sub-interfaces
-interface  interface-number.subnumber
-description <vlan_description>
-dot1q termination vid <vlanid>
+# Set virtual tunnels
+interfaces <interface_number>.<subinterface_number>
+description <subinterface_desc>
+vlan-type dot1q <subinterface_vlanid>
 ip address <subinterface_ipaddress> <subinterface_netmask>
-bfd min-transmit-interval <value> //BFD parameter
-bfd min-receive-interval <value>  //BFD parameter
-bfd detect-multiplier <value>  //BFD parameter
-
+commit
 
 # Set eBGP
 bgp <as_number>
-#router-id <route_id>
+router-id <route_id>
 peer <bgp_peer_address> as-number <bgp_peer_as_number>
 peer <bgp_peer_address> password cipher <bgp_auth_key>
 peer <bgp_peer_address> description <bgp_desc>
+ipv4-family unicast
+peer <bgp_peer_address> enable
+commit
 
 # Configure BFD for eBGP
-peer <bgp_peer_address> bfd
+bgp <as_number>
+router-id <route_id>
+peer <bgp_peer_address> bfd min-tx-interval <time value> min-rx-interval <time value> detect-multiplier <value>
 ```
