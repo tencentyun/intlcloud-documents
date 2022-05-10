@@ -82,8 +82,9 @@
 `9.0.0.0/8`, `10.0.0.0/8`, `11.0.0.0/8`, `30.0.0.0/8`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12`, and `192.168.0.0/16`.
 >! The direct connect gateway will directly reject large IP ranges.
 >
- You can split the above large routes as follows for distribution:
-  - <strong>`9.0.0.0/8`</strong>
+
+You can split the above large routes as follows for distribution:
+ - <strong>`9.0.0.0/8`</strong>
 Split as: `9.0.0.0/9` + `9.128.0.0/9`
  - <strong>`10.0.0.0/8`</strong>
 Split as: `10.0.0.0/9` + `10.128.0.0/9`
