@@ -10,7 +10,9 @@ VODは、Androidプラットフォームでビデオをアップロードする�
 1. ソースコードディレクトリ`Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`をプロジェクトディレクトリにコピーして、package名を手動で変更する必要があります。
 2. `Demo/app/build.gradle`を参照して、プロジェクトに依存関係を追加します。
     ```
-    implementation 'com.qcloud.cos:cos-android-nobeacon:5.8.3'
+    implementation ('com.qcloud.cos:cos-android:5.8.3') {
+        exclude group: 'com.qcloud.cos', module: 'beacon-android-release'
+    }
     implementation 'com.qcloud.cos:quic:1.5.37'
     ```
 >?[手動統合](https://intl.cloud.tencent.com/document/product/436/12159) を参照して、対応するバージョンの依存ライブラリを統合することもできます。
@@ -30,7 +32,7 @@ VODは、Androidプラットフォームでビデオをアップロードする�
 	</receiver>
 	```
 
-##  シンプルアップロード
+##  シンプルビデオアップロード
 #### アップロードオブジェクトの初期化
 
 ```java
@@ -61,7 +63,7 @@ TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishPara
 param.signature = "xxx";
 param.videoPath = "xxx";
 ```
-> `signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
+`signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
 
 #### アップロードの呼び出し
 
@@ -101,7 +103,7 @@ param.signature = "xxx";
 param.mediaPath = "xxx";
 ```
 
-> `signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
+`signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
 
 #### アップロードの呼び出し
 
@@ -125,7 +127,7 @@ param.signature = "xxx";
 param.videoPath = "xxx";
 param.coverPath = "xxx";
 ```
- `signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
+`signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
 
 #### アップロードのキャンセルと再開
 
@@ -191,7 +193,7 @@ VOD appIdの設定：`TXUGCPublish.setAppId`
 
 | パラメータ名         | パラメータの説明                               | タイプ      | 入力必須   |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。 | String  | はい    |
+| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。       | String  | はい   |
 | videoPath    | ローカルビデオファイルパス。                           | String  | はい    |
 | coverPath    | ローカルカバーファイルパス。デフォルトではカバーファイルは含まれません。                  | String  | いいえ    |
 | enableResume | 中断ポイントからの再開の有効無効を指定。デフォルトでは有効になっています。                      | boolean | いいえ    |
@@ -216,7 +218,7 @@ VOD appIdの設定：`TXUGCPublish.setAppId`
 
 | 変数名   | 変数の説明 | タイプ                                  |
 | ------ | ---- | ----------------------------------- |
-| result | アップロード結果。 | TXUGCPublishTypeDef.TXPublishResult |
+| result   | アップロード結果。 | TXUGCPublishTypeDef.TXPublishResult |
 
 アップロード結果：`TXUGCPublishTypeDef.TXPublishResult`
 
@@ -297,7 +299,7 @@ VOD appIdの設定：`TXUGCPublish.setAppId`
 
 | パラメータ名  | パラメータの説明                                     | タイプ   | 入力必須 |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。 | String | はい   |
+| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。       | String  | はい   |
 
 ## エラーコード
 

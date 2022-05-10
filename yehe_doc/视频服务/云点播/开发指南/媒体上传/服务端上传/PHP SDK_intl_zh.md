@@ -12,12 +12,8 @@
 ```
 
 ### 通过源码包安装
-如果项目中没有使用 composer 工具进行依赖管理，可以直接下载源码，导入项目中使用：
-
-* [从 Github 访问](https://github.com/tencentyun/vod-php-sdk-v5)
-* [单击下载 PHP SDK](https://github.com/tencentyun/vod-php-sdk-v5/raw/master/packages/vod-sdk.zip)
-
-解压 vod-sdk.zip 文件到项目中，引入 autoload.php 文件即可使用。
+1. 如果项目中没有使用 composer 工具进行依赖管理，[从 Github 访问](https://github.com/tencentyun/vod-php-sdk-v5) 可以直接下载源码，导入项目中使用。
+2. 解压 vod-sdk.zip 文件到项目中，引入 autoload.php 文件即可使用。
 
 ##  简单视频上传
 ### 初始化上传对象
@@ -32,6 +28,7 @@ use Vod\VodUploadClient;
 
 $client = new VodUploadClient("your secretId", "your secretKey");
 ```
+
 
 **使用源码导入**
 ```php
@@ -248,7 +245,7 @@ try {
 | MediaName   | 上传后的媒体名称，若不填默认采用 MediaFilePath 的文件名。      | String | 否    |
 | CoverFilePath   | 待上传的封面文件路径。必须为本地路径，不支持 URL。| String | 否    |
 | CoverType   | 待上传的封面文件类型，可选类型请参见 [视频上传综述](https://intl.cloud.tencent.com/document/product/266/9760)，若 CoverFilePath 路径带后缀可不填。        | String | 否    |
-| Procedure   | 上传后需要自动执行的任务流名称，该参数在创建任务流（[API 方式](https://intl.cloud.tencent.com/zh/document/product/266/33897) 或 [控制台方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）时由用户指定。具体请参考 [任务流综述](https://intl.cloud.tencent.com/document/product/266/33931)。        | String | 否    |
+| Procedure   | 上传后需要自动执行的任务流名称，该参数在创建任务流（[API 方式](https://intl.cloud.tencent.com/document/product/266/34167) 或 [控制台方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）时由用户指定。具体请参考 [任务流综述](https://intl.cloud.tencent.com/document/product/266/33931)。        | String | 否    |
 | ExpireTime   | 媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://intl.cloud.tencent.com/document/product/266/11732)。        | String | 否    |
 | ClassId   | 分类 ID，用于对媒体进行分类管理，可通过 [创建分类](https://intl.cloud.tencent.com/document/product/266/35325) 接口，创建分类，获得分类 ID。        | Integer | 否    |
 | SourceContext   | 来源上下文，用于透传用户请求信息，上传回调接口将返回该字段值，最长250个字符。        | String | 否    |
@@ -268,7 +265,7 @@ try {
 
 | 参数名称      | 参数描述                   | 类型      | 必填   |
 | --------- | ---------------------- | ------- | ---- |
-| region   | 接入点地域，即请求到哪个地域的云点播服务器，不同于存储地域，具体参考支持的 [地域列表](https://intl.cloud.tencent.com/zh/document/product/266/34113#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。        | String | 是    |
+| region   | 接入点地域，即请求到哪个地域的云点播服务器，不同于存储地域，具体参考支持的 [地域列表](https://intl.cloud.tencent.com/document/product/266/34113)。        | String | 是    |
 | request   | 上传请求。        | VodUploadRequest | 是    |
 
 ## 错误码表
@@ -281,3 +278,4 @@ try {
 | InvalidParameterValue.SubAppId       | 参数值错误：子应用 ID。              |
 | InvalidParameterValue.VodSessionKey       | 参数值错误：点播会话。              |
 | ResourceNotFound       | 资源不存在。              |
+
