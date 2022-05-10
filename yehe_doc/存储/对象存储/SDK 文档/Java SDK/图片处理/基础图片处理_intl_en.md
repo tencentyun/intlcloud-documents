@@ -1,6 +1,6 @@
 ## Overview
 
-COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, please see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
+COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
 
 <table>
    <tr>
@@ -9,7 +9,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <th>Description</td>
    </tr>
    <tr>
-      <td rowspan=11>Image Processing-Basic Services</td>
+      <td rowspan=11>Basic Image Processing</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">Scaling</a></td>
       <td>Proportional scaling, scaling image to target width and height, and more</td>
    </tr>

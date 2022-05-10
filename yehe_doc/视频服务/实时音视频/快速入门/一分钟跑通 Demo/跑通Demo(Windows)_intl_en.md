@@ -17,7 +17,7 @@ This document describes how to quickly run the TRTC demo for Windows.
 >! The `debug`/`release` folder is created automatically after environment setup is completed in VS.
 
 ## Prerequisites
-You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account.
 
 ## Directions
 [](id:step1)

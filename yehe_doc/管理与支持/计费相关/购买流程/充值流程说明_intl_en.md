@@ -1,24 +1,26 @@
 
 
-You can purchase Tencent Cloud services only if your account has a sufficient balance. Most Tencent Cloud services are billed hourly. To prevent service suspension due to overdue payments, use "online payment" or "bank transfer" to pay the overdue charges in a timely manner.
+If your account has negative available credit, you need to top up before you can purchase new Tencent Cloud services. Most Tencent Cloud services are billed hourly. If your available credit remains negative, we may suspend services for your account. To avoid this, we recommend you keep your available credit positive. You can top up by **credit card** or via **bank transfer**.
 
-To ensure data security, only creators and collaborators authorized with financial permissions can enter the "Payment" page.
+For data security, only account creators and collaborators with financial permissions have access to the **Payment** page.
 
-### Online Payments
-Go to **Billing Center**, click **Payment Management** > **Payment**, and pay with your credit card.
+### Top up by credit card
+1. Log in to the console and go to **Billing Center** > **Payment Management** > **Payment**. Enter the top-up amount and payment account and click **Pay Now**.
 ![](https://main.qcloudimg.com/raw/2696012d2ed0e14ac49ad6e40634ddb4.png)
 
-If you topped up your account with the exact same amount within the last minute, a pop-up window will remind you to check your top-up records to avoid making duplicate payments.
-
+2. To avoid duplicate payments, if you top up the same amount twice within a minute, a confirmation window will pop up asking you to check.
 ![](https://main.qcloudimg.com/raw/33e2b541d95aa81b42ad764d7f712f90.png)
 
-After the payment is completed, you can go to **Transactions** to view the details of the payment.
+3. The maximum top-up amount by credit card is 500 USD daily and 1,500 USD monthly. If your spending is high, our **auto payment** mechanism can help meet your needs. For details, see [Auto Payment](https://intl.cloud.tencent.com/document/product/555/31994).
+![](https://qcloudimg.tencent-cloud.cn/raw/27ae549f69e038cb6c80ae35ba08ff45.png)
+
+4. After payment, you can go to [Transactions](https://console.intl.cloud.tencent.com/expense/transactions) to view the payment details.
  ![](https://main.qcloudimg.com/raw/45ec8479b54b15bfec31d62d97c62198.png)
 
 
-### Bank Transfers
-1- If you select bank transfer, please transfer money from your bank account to our bank account through online banking or cash deposits over the counter. You can view the beneficiary account information in the following list. Please list your Tencent Cloud account in the “notes” section of your payment.
-Note: if you select bank transfer, please use USD as the payment currency.
+### Top up via bank transfer
+1. To top up via bank transfer, please transfer or deposit the money to our bank account and provide your Tencent Cloud account ID by adding a note. You can find the information of our bank accounts below.
+>! If you top up via bank transfer, please make sure you pay in USD.
 
 | A. Users located in the following regions: |  |
 |---------|---------|
@@ -35,7 +37,7 @@ Note: if you select bank transfer, please use USD as the payment currency.
 | Haiti | Bahamas |
 | Antigua and Barbuda | |
 
-Beneficiary Name: Tencent Cloud, LLC
+Beneficiary name: Tencent Cloud, LLC
 Beneficiary account: 000271829 (USD account)
 Beneficiary bank: HSBC Bank USA, N.A.
 Address: 2747 Park Blvd., Palo Alto, CA 94306
@@ -84,6 +86,6 @@ Address: 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622
 SWIFT Code: HSBCSGSG
 Remarks: Cloud service fee + developer account (unique ID)
 
-2- Bank transfers typically require three to five business days, and cross-border transfers will take longer. After you transfer the payment amount successfully, please submit a ticket to confirm the transfer. We will then top-up your account based on your transfer information. If you have any questions, please submit a remittance credential in the console.
+2. Bank transfers typically take 3-5 business days or longer if they are cross-border. After your transfer succeeds, please submit a ticket to confirm the transfer information so that we can top up your account. If you have any questions, please upload your payment document in the console.
 
-3- You will be responsible for any additional service fees incurred during the bank transfer process.
+3. You will be responsible for any additional service fees incurred for bank transfer.

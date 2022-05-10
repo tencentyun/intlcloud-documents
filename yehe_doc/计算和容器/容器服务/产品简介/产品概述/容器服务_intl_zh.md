@@ -5,6 +5,8 @@
 
 腾讯云容器服务 TKE 基于原生 Kubernetes 提供以容器为核心的解决方案，解决用户开发、测试及运维过程的环境问题、帮助用户降低成本，提高效率。腾讯云容器服务 TKE 完全兼容原生 Kubernetes API，并扩展了腾讯云的云硬盘、负载均衡等 Kubernetes 插件，同时以腾讯云私有网络为基础，实现了高可靠、高性能的网络方案。
 
+
+
 ## 名词解释
 使用腾讯云容器服务 TKE，会涉及到以下基本概念：
 - **集群**：是指容器运行所需云资源的集合，包含了若干台云服务器、负载均衡器等云资源。
@@ -19,6 +21,7 @@
 ## 使用流程
 腾讯云容器服务 TKE 使用流程如下图所示：
 ![](https://main.qcloudimg.com/raw/4a7b3a025c99e264eda78431ee964552.png)
+
 1. 角色授权
    注册并登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，完成服务授权获取相关资源操作权限，即可开始使用容器服务产品。
 2. 创建集群
@@ -30,14 +33,14 @@
 
 
 ## 产品定价
-腾讯云容器服务 TKE 暂不收取服务本身费用，用户只需要按实际使用的云资源进行付费。关于收费模式和具体价格，请参阅 [计费说明](https://intl.cloud.tencent.com/document/product/457/6770)。
+腾讯云容器服务 TKE 针对不同规格的托管集群，会收取相应的集群管理费用，以及用户实际使用的云资源费用。关于收费模式和具体价格，请参阅 [容器服务计费概述](https://intl.cloud.tencent.com/document/product/457/45157)。
 
 ## 相关服务
 
-- 通过购买若干个云服务器组成容器服务集群，容器运行在云服务器中。有关更多信息，请参阅 [云服务器产品文档](https://intl.cloud.tencent.com/doc/product/213)。
-- 集群可以建立在私有网络下，集群内主机可以分配在不同可用区的子网下。有关更多信息，请参阅 [私有网络产品文档](https://intl.cloud.tencent.com/doc/product/215)。
-- 可以使用负载均衡，自动分配横跨多个云服务实例的客户端请求流量，转发至主机内容器。有关更多信息，请参阅 [负载均衡产品文档](https://intl.cloud.tencent.com/doc/product/214)。
-- 监控容器服务集群和容器实例的运行统计数据，可使用云监控。有关更多信息，请参阅 [云监控产品文档](https://intl.cloud.tencent.com/doc/product/248)。
+- 通过购买若干个云服务器组成容器服务集群，容器运行在云服务器中。有关更多信息，请参阅 [云服务器产品文档](https://intl.cloud.tencent.com/document/product/213)。
+- 集群可以建立在私有网络下，集群内主机可以分配在不同可用区的子网下。有关更多信息，请参阅 [私有网络产品文档](https://intl.cloud.tencent.com/document/product/215)。
+- 可以使用负载均衡，自动分配横跨多个云服务实例的客户端请求流量，转发至主机内容器。有关更多信息，请参阅 [负载均衡产品文档](https://intl.cloud.tencent.com/document/product/214)。
+- 监控容器服务集群和容器实例的运行统计数据，可使用云监控。有关更多信息，请参阅 [云监控产品文档](https://intl.cloud.tencent.com/document/product/248)。
 
 
 

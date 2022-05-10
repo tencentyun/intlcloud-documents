@@ -1,5 +1,5 @@
 ## 前提条件
-在购买 DDoS 高防 IP  实例前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)， 未完成实名认证的用户无法购买中国境内的 DDoS 高防 IP  实例。
+在购买 DDoS 高防 IP  实例前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
 
 ## 操作步骤
 ### 购买中国大陆区域 DDoS 高防 IP

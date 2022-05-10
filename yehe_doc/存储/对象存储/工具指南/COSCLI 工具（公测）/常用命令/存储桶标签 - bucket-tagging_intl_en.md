@@ -3,7 +3,7 @@ The `bucket-tagging` command is used to create (modify), get, and delete bucket 
 ## Command Options
 The `bucket-tagging` command contains the following optional flags:
 
-| Flag Abbreviation | Flag Name | Purpose |
+| Flag Abbreviation | Flag Name | Description |
 |----|----|----|
 |-m|--method| Specifies the operation to be performed, including PUT, GET, and DELETE  |
 
@@ -12,7 +12,7 @@ The `bucket-tagging` command contains the following optional flags:
 
 ## Adding or Modifying Bucket Tag
 
-A bucket tag is represented by a key-value pair. Only the bucket owner and users with the `PutBucketTagging` permission can add or modify bucket tags. Error code 403 AccessDenied will be returned for other users.
+A bucket tag is represented by a key-value pair. Only the bucket owner and users with the `PutBucketTagging` permission can add or modify bucket tags. Error message “403 AccessDenied” will be returned for other users.
 
 ### Command format
 

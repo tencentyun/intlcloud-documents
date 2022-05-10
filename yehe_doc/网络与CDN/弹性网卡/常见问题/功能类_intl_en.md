@@ -2,7 +2,7 @@
 You can log in to the [VPC console](https://console.cloud.tencent.com/vpc) to bind your CVM. For more information, see [Binding CVM](https://intl.cloud.tencent.com/document/product/576/18535).
 
 ### How do I configure an ENI on the CVM?
-After being bound in the console, the ENI needs to be configured on the CVM before it can be used. For more information, see [Binding and Configuring an ENI](https://intl.cloud.tencent.com/document/product/576/18535).
+After being bound in the console, the ENI needs to be configured on the CVM before it can be used. For more information, see [Binding and Configuring an ENI](https://intl.cloud.tencent.com/document/product/576/41740).
 
 ### How do I assign private IPs?
 You can log in to the [VPC console](https://console.cloud.tencent.com/vpc) to assign private IPs to an ENI that is bound to the CVM, and configure them to take effect. For more information, see [Requesting Secondary Private IPs](https://intl.cloud.tencent.com/document/product/576/32938).

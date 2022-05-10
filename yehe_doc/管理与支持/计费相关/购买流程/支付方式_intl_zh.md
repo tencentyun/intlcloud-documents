@@ -10,7 +10,7 @@
 
 ## 添加付款方式
  ![](https://qcloudimg.tencent-cloud.cn/raw/e25dc2b3158cfa06d9565cf87d4fdcb7.png)
-- 登录腾讯云官网**费用中心** > **资金管理** > **支付方式**，单击**添加付款方式**按钮跳转到添加付款方式页面，输入信用卡信息绑定支付方式。
+- 登录腾讯云官网**费用中心** > **资金管理** > <b>[支付方式](https://console.intl.cloud.tencent.com/accountv1/paymentmethods)</b>，单击**添加付款方式**按钮跳转到添加付款方式页面，输入信用卡信息绑定支付方式。
 ![](https://main.qcloudimg.com/raw/78a5ba0765427c7dec5ded28b0a13a6b.png)
 - 成功添加付款帐户后，用户的腾讯云帐户将与该付款帐户关联，然后用户可以使用该付款帐户进行充值和付款。
 

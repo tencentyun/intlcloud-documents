@@ -1,7 +1,7 @@
 Chinese Mainland SMS provides various services such as SMS verification code, system notification, and event notification, meeting your diverse needs in basic services and marketing campaigns.
 
 ### Signature Customization
-An SMS signature is an identifier added before the message text for identification of a company or business. You can use the name or abbreviation of your company, trademark, product, website, WeChat Official Account, or WeChat Mini Program as the signature.
+An SMS signature is an identifier added before the message text for identification of a company or business. You can use the name or abbreviation of your company, trademark, product, website as the signature.
 
 ### Body Template
 The SMS body content can be verification code, system notification, member-targeted marketing, etc. An SMS body template allows you to use parameters (variables) to customize the SMS body content, which can be shared by Chinese Mainland SMS and Global SMS.

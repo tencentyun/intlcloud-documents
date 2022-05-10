@@ -6,7 +6,7 @@
 - Qt Creator 4.13.3(Mac) 또는 이후 버전.
 
 ## 전제 조건
-[Tencent Cloud 가입](https://intl.cloud.tencent.com/document/product/378/17985)된 계정이 있고 [실명 인증](https://intl.cloud.tencent.com/document/product/378/3629)이 완료되어야 합니다.
+[Tencent Cloud 계정 가입](https://intl.cloud.tencent.com/document/product/378/17985)이 완료된 상태여야 합니다. 
 
 ## 작업 단계
 [](id:step1)

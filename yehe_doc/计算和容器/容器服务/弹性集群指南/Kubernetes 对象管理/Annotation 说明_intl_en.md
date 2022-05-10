@@ -21,7 +21,7 @@ You can define `spec.template.metadata.annotations` in a YAML file to implement 
 <td>eks.tke.cloud.tencent.com/security-group-id</td>
 <td>Default security group bound with a workload. Specify the <a href="https://console.cloud.tencent.com/cvm/securitygroup" target="_blank">security group ID</a>.
 	<ul class="params">
-	<li>You can specify multiple security group IDs and separate them by commas (<code>,</code>). For example, <code>sg-id1,sg-id2</code>.</li>
+	<li>You can specify multiple security group IDs and separate each of them by commas (<code>,</code>). For example, <code>sg-id1,sg-id2</code>.</li>
 	<li>Network policies take effect based on the sequence of security groups.</li>
 	<li>Please note that a single security group can be associated with only 2,000 computing instances, such as CVM instances and Elastic Kubernetes Service (EKS) Pods. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">Security Group Restrictions</a>.</li>
 	</ul>
@@ -29,13 +29,13 @@ You can define `spec.template.metadata.annotations` in a YAML file to implement 
 <td> No. If you do not specify it, the <code>default</code> security group in the same region bound with the workload is associated by default.<br>If you specify it, ensure that the security group ID already exists in the region where the workload resides.</td></tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu</td>
-<td>Number of CPU cores required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit is core by default.</td>
-<td>No. If you specify it, ensure that the specifications are supported and specify the <code>cpu</code> and <code>mem</code> parameters.</td>
+<td>Number of CPU cores required by a Pod. See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
+<td>No. Make sure the entered specification is supported and both the <code>cpu</code> and <code>mem</code> are specified.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/mem</td>
-<td>Memory required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit must be included in the value, for example, 512 MiB, 0.5 GiB, or 1 GiB.</td>
-<td>No. If you specify it, ensure that the specifications are supported and specify the <code>cpu</code> and <code>mem</code> parameters.</td>
+<td>Memory required by a Pod. See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit must be included in the value, for example, `512Mi`, `0.5Gi` and `1Gi`.</td>
+<td>No. Make sure the entered specification is supported and both the <code>cpu</code> and <code>mem</code> are specified.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu-type</td>
@@ -46,26 +46,26 @@ You can define `spec.template.metadata.annotations` in a YAML file to implement 
 <li>S5,S4</li>
 <li>You can specify the model by priority. For example, `amd,intel` indicates AMD resource Pods will be created first. If the AMD resources in the selected region are insufficient, Intel resource Pods will be created.</li>
 </ul>
-For specific configurations supported by each model, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
-<td>No. If you do not specify it, the CPU type is not forcibly specified by default. The system will match the most suitable specifications according to <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Specifying Resource Specifications</a>. If the matched specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
+See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
+<td>No. If it’s not specified, the system automatically choose the best-suit specification. See <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Specifying Resource Specifications</a>. If the matched specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/gpu-type</td>
-<td>Model of the GPU resources required by a Pod. Currently, the supported models include:
+<td>Model of the GPU resources required by a Pod. The supported models include:
 <ul  class="params">
 <li>V100</li>
 <li>1/4*T4</li>
 <li>1/2*T4</li>
 <li>T4</li>
-<li>You can specify the model by priority. For example, "T4,V100" indicates T4 resource Pods will be created first. If the T4 resources in the selected region are insufficient, V100 resource Pods will be created.</li>
+<li>You can specify the model by priority. For example, “T4,V100” indicates T4 resource Pods will be created first. If the T4 resources in the selected region are insufficient, V100 resource Pods will be created.</li>
 </ul>
-For specific configurations supported by each model, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
+For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
 <td>If GPUs are required, this option is required. When specifying it, ensure that the GPU model is supported. Otherwise, an error will be reported.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/gpu-count</td>
-<td>Number of GPUs required by a Pod. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit is card by default.</td>
-<td>No. If you specify it, ensure that the specification is supported.</td>
+<td>Number of GPU cards required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. </td>
+<td>No. Make sure that the entered specification is supported.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/retain-ip</td>
@@ -89,12 +89,12 @@ For specific configurations supported by each model, please see <a href="https:/
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/eip-attributes</td>
-<td>Indicates that the Pod of the Workload needs to be associated with EIP. When the value is "", it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M. Note: this cannot be used for non-bill-by-IP accounts.</td>
+<td>Attributes of the EIP associated with Pods of the Workload. When the value is `""`, it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in within "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M. Note that it is only applicable to bill-by-IP accounts.</td>
 <td>No</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/eip-claim-delete-policy</td>
-<td>Indicates whether to repossess the EIP after the Pod is deleted. `Never` indicates not to repossess. The default value is to repossess. This parameter takes effect only when `eks.tke.cloud.tencent.com/eip-attributes` is specified. Note: this cannot be used for non-bill-by-IP accounts.</td>
+<td>Whether to release the EIP once the Pod is deleted. `Never`: Do not release. This parameter takes effect only when eks.tke.cloud.tencent.com/eip-attributes is specified. Note that it is only applicable to bill-by-IP accounts.</td>
 <td>No</td>
 </tr>
 <tr>
@@ -104,12 +104,17 @@ For specific configurations supported by each model, please see <a href="https:/
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/registry-insecure-skip-verify</td>
-<td>Image repository address (for multiple ones, separate them by "," or enter `all`). When you use an image in a self-built HTTPS-based self-signed image repository to create a Workload in EKS, you may encounter the "ErrImagePull" error and fail to pull the image. You can add this annotation to solve this problem. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use the external image repository that is created based on the self-signed certificate or HTTP?</a></td>
+<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTPS-based self-signed external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028?lang=zh&pg=#.E5.BC.B9.E6.80.A7.E9.9B.86.E7.BE.A4.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8.E8.87.AA.E5.BB.BA.E7.9A.84.E8.87.AA.E7.AD.BE.E5.90.8D.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.E6.88.96-http-.E5.8D.8F.E8.AE.AE.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.EF.BC.9F">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
 <td>No</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/registry-http-endpoint</td>
-<td>Image repository address (for multiple ones, separate them by "," or enter `all`). When you use an image in a self-built HTTP-based image repository to create a Workload in EKS, you may encounter the "ErrImagePull" error and fail to pull the image. You can add this annotation to solve this problem. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028">How do I use the external image repository that is created based on the self-signed certificate or HTTP?</a></td>
+<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTP-based external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028?lang=zh&pg=#.E5.BC.B9.E6.80.A7.E9.9B.86.E7.BE.A4.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8.E8.87.AA.E5.BB.BA.E7.9A.84.E8.87.AA.E7.AD.BE.E5.90.8D.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.E6.88.96-http-.E5.8D.8F.E8.AE.AE.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.EF.BC.9F">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
+<td>No</td>
+</tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/image-cache-disk-retain-minute</td>
+<td>Whether to delay the termination of CBS data disks used for image caching. The unit is “min”. You can set the duration of delayed termination as needed. The default value is “0”, which means the data disks are terminated at the time of Pod termination. If the value is set to “10”, it indicates that the data disks used for image caching are retained for 10 minutes after the Pod is terminated.</a></td>
 <td>No</td>
 </tr>
 </tbody></table>

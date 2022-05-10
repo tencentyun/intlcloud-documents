@@ -20,11 +20,11 @@ The `ls` command is used to query the list of buckets, objects in a bucket, and 
 
 `ls` includes the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name   | Description                     |
 | --------- | ----------- | ------------------------------------ |
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
-| -r        | --recursive | Whether to traverse directories recursively and list all objects. |
+| -r        | --recursive | Specifies whether to traverse directories recursively and list all objects. |
 
 >? 
 > - `--include` and `--exclude` support standard regular expressions. You can use regular expressions to filter objects that meet your requirements.

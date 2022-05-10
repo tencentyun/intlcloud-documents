@@ -22,6 +22,7 @@
 >  若在应用信息>我的应用中无法找到 SecretKey，可前往项目设置>常规中查看 Client Secret。
 > ![](https://qcloudimg.tencent-cloud.cn/raw/84a66ae0ce0cf7bd3a27f977ba3d5a44.png)
 
+
 ### 配置 SHA256 证书指纹
 
 获取 SHA256 证书指纹，并在华为推送平台中配置证书指纹，**单击 <img src="https://main.qcloudimg.com/raw/f74e3aa948316533ce91f9add4a81a29.png"></img> 保存**。证书指纹获取可参见 [生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger)。
@@ -45,7 +46,7 @@
 
 ### Android Studio Gradle 自动集成
 
-1. 在安卓项目级目录 build.gradle 文件，**buildscript**>【repositories & dependencies】下分别添加华为仓库地址和 HMS gradle 插件依赖：
+1. 在在 Android 项目级目录 build.gradle 文件，**buildscript**>【repositories & dependencies】下分别添加华为仓库地址和 HMS gradle 插件依赖：
 ```
 buildscript {
     repositories {
@@ -58,7 +59,7 @@ buildscript {
     }
 }
 ```
-2. 在安卓项目级目录 build.gradle 文件，**allprojects**>**repositories**下添加华为依赖仓库地址：
+2. 在 Android 项目级目录 build.gradle 文件，**allprojects**>**repositories**下添加华为依赖仓库地址：
 ```
 allprojects {
     repositories {
@@ -82,12 +83,12 @@ android {
 dependencies {
 		// ... 程序其他依赖
 		implementation 'com.tencent.tpns:huawei:[VERSION]-release'      //  华为推送 [VERSION] 为当前最新 SDK 版本号，版本号可在 Android SDK 发布动态 查看
-		implementation 'com.huawei.hms:push:6.1.0.300'       // HMS Core Push 模块依赖包
+		implementation 'com.huawei.hms:push:6.3.0.302'       // HMS Core Push 模块依赖包
 		}
 ```
 
 >?
-> - 华为推送 hms:push 依赖自6.1.300起适配安卓11预置 `<queries>` 标签，请注意升级 Android Studio 至3.6.1或更高版本、Android Gradle 插件至 3.5.4或更高版本，否则可能导致工程构建出错。
+> - 华为推送 hms:push 依赖自6.1.300起适配Android 11预置 `<queries>` 标签，请注意升级 Android Studio 至3.6.1或更高版本、Android Gradle 插件至 3.5.4或更高版本，否则可能导致工程构建出错。
 > - 华为推送 \[VERSION\] 为当前最新 SDK 版本号，版本号可在 [Android SDK 发布动态](https://intl.cloud.tencent.com/document/product/1024/36191) 查看。
 > - TPNS Android SDK 自1.2.1.3版本起正式支持华为推送 V5 版本，请使用1.2.1.3及以上版本的 TPNS 华为依赖以避免集成冲突问题。
 >
@@ -99,7 +100,7 @@ dependencies {
 
 1. 下载 [SDK 安装包](https://console.cloud.tencent.com/tpns/sdkdownload)。
 2. 打开 Other-Push-jar 文件夹， 导入 huaweiv5 推送相关依赖包，将全部 jar、aar 包复制到项目工程中。
-3. 在安卓项目级目录 build.gradle 文件，**buildscript**>**dependencies**下添加 HMS gradle 插件的依赖：
+3. 在Android 项目级目录 build.gradle 文件，**buildscript**>**dependencies**下添加 HMS gradle 插件的依赖：
 ```
 buildscript {
     repositories {

@@ -1,5 +1,5 @@
-TencentDB for MySQL mendukung tiga jenis arsitektur: node tunggal (sebelumnya Edisi Dasar), dua-node (sebelumnya Edisi Ketersediaan Tinggi), dan tiga-node (sebelumnya Edisi Keuangan).
->?Instans node tunggal umum sebelumnya dikenal sebagai instans Edisi IO Tinggi node tunggal.
+TencentDB for MySQL mendukung tiga jenis arsitektur: node tunggal (sebelumnya Edisi Dasar), dua-node (sebelumnya Edisi Ketersediaan Tinggi), dan tiga-node (sebelumnya Edisi Keuangan). Instans node tunggal umum sebelumnya dikenal sebagai instans Edisi IO Tinggi node tunggal.
+>! Node tunggal (sebelumnya Edisi Dasar) sedang dalam proses rekonstruksi dan penataran, dan penjualan akan ditangguhkan selama periode ini.
 
 ## Melihat Arsitektur Instans
 - Untuk instans yang akan dibeli, login ke [halaman pembelian TencentDB for MySQL](https://buy.cloud.tencent.com/cdb) dan pilih arsitektur di bagian **Architecture** (Arsitektur).

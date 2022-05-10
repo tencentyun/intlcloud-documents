@@ -1,12 +1,12 @@
 
 ## Billable Items
-The service fee for TKE consists of two parts, cluster management fee and Tencent Cloud service resources fee.
-#### Cluster management fee
+The service fees for TKE consists of two parts, **cluster management fees** and **Tencent Cloud service resources fees**.
+- **Cluster management fees**
 >! Tencent Cloud starts charging for managed clusters from 10:00, March 21, 2022 (UTC +8). See [Starting Charging for Managed Clusters](https://intl.cloud.tencent.com/zh/document/product/457/45156).
 >
-**Managed clusters** incur the cluster management fee based on their cluster models. For more information, see [Cluster Management Fees](#cluster).
+**Managed clusters** incur the cluster management fees based on their cluster models. For more information, see [Cluster Management Fees].(#cluster).
 
-#### Tencent Cloud services resources fees
+- **Tencent Cloud service resources fees**
 Other Tencent Cloud services resources (such as CVM, CBS and CLB) created during the usage of TKE will be charged based on the billing mode for each resource. For more information, see [Tencent Cloud Services Resources Fees](#cloudproducts).
 
 ## Cluster Management Fees[](id:cluster)
@@ -19,7 +19,7 @@ The billing mode of pay-as-you-go is usually adopted for TKE.
 | Number of clusters | Pay-as-you-go | [Freeze the fees](https://intl.cloud.tencent.com/document/product/555/12039) at the time of purchase, and the service is billed at an hourly basis | USD/hour |
 
 ### Recommendations for small clusters
-- If your cluster has only a small number of nodes (less than 20), we highly recommend you use [Elastic Kubernetes Service](https://intl.cloud.tencent.com/document/product/457/34040) (EKS). With EKS, you can deploy workloads and pay for actual container usage, with no need to purchase nodes and pay cluster management fees.
+- If your cluster has only a few nodes (less than 20), we highly recommend you use [Elastic Kubernetes Service](https://intl.cloud.tencent.com/document/product/457/34040) (EKS). With EKS, you can deploy workloads and pay for actual container usage, with no need to purchase nodes and pay cluster management fees.
 - You can choose to migrate your existing TKE clusters as needed in the following ways:
 	- Conduct smooth business migration through [virtual nodes](https://intl.cloud.tencent.com/document/product/457/39759) to reduce the number of nodes in the TKE cluster and thereby lower the cluster management fees (such fees are not charged for virtual nodes; for more information, see [Pricing](#price) below).
 	- Completely migrate the TKE cluster to the EKS cluster through the migration tool. You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
@@ -27,24 +27,28 @@ The billing mode of pay-as-you-go is usually adopted for TKE.
 
 
 ### Pricing[](id:price)
->? 
->- The nodes indicate Kubernetes nodes, including CVM nodes, BM nodes, and external nodes.
->- Virtual nodes are not included in the node quantity.
->- Cluster management fees are not charged on clusters that are in idle status.
->
-| Maximum Number of Nodes | Price (USD/hour) |
+>! 
+>- The unit prices are varied depending on the region. Please refer to the prices displayed in the console. 
+- Please read the [Purchase Instructions](https://intl.cloud.tencent.com/document/product/457/45158) carefully before you choose the specification.
+
+
+
+
+
+| Cluster Specification | Price (USD/hour) |
 | ---------------- | -------------- |
-| 5                | 0.02040816           |
-| 20               | 0.06279435           |
-| 50               | 0.11459969           |
-| 100              | 0.19152276           |
-| 200              | 0.40031397           |
-| 500              | 0.8021978           |
-| 1000             | 1.47252747           |
-| 3000             | 2.44897959          |
-| 5000             | 4.40188383          |
-## Tencent Cloud Services Resources Fees[](id:cloudproducts)
-Other Tencent Cloud services resources (such as CVM, CBS and CLB) created during the usage of TKE will be charged based on each billing mode. For more information, see billing description for each resource.
+| L5                | 0.02040816           |
+| L20               | 0.06279435           |
+| L50               | 0.11459969           |
+| L100              | 0.19152276           |
+| L200              | 0.40031397           |
+| L500              | 0.8021978            |
+| L1000             | 1.47252747           |
+| L3000             | 2.44897959           |
+| L5000             | 4.40188383           |
+
+## Tencent Cloud Service Resources Fees[](id:cloudproducts)
+Other Tencent Cloud service resources (such as CVM, CBS and CLB) created during the usage of TKE will be charged based on each billing mode. For more information, see billing description for each resource.
 
 | Tencent Cloud Service | Documentation | 
 |---------|---------|

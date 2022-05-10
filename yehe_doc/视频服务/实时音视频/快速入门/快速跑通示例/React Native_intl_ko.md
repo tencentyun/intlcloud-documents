@@ -13,7 +13,7 @@
 - 환경 설치는 [공식 문서](https://reactnative.cn/docs/environment-setup)를 참고하십시오.
 
 ## 전제 조건
-[Tencent Cloud 가입](https://intl.cloud.tencent.com) 계정이 있으며, 실명인증을 완료해야 합니다.
+[Tencent Cloud 가입](https://intl.cloud.tencent.com) 등록.
 
 ## 작업 단계
 [](id:step1)

@@ -1,42 +1,35 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to object downloads.
+This document provides an overview of APIs and SDK code samples for object download.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
 
 ## Advanced APIs (Recommended)
 
 The advanced API allows you to suspend, resume (via checkpoint restart), or cancel download tasks.
 
->? When downloading an object, the advanced API directly writes the object into a specified local file. If you need a download stream, see the simple operation section on the current page.
+>? When downloading an object, the advanced API directly writes the object into a specified local file. If you need a download stream, see the simple operation section on this page.
 >
 
 ### Creating a TransferManager instance
 
-Before using the advanced API, you need to create a TransferManager instance.
+Before using the advanced API, first create a TransferManager instance.
 
 ```java
 // Create a TransferManager instance, which is used to call the advanced API later.
 TransferManager createTransferManager() {
     // Create a COSClient client, which is the basic instance for accessing the COS service.
-    // For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+    // For the detailed code, see "Simple Operations -> Creating a COSClient instance" on this page.
     COSClient cosClient = createCOSClient();
 
-    // Set the thread pool size. You are advised to the size of your thread pool to 16 or 32 to maximize network resource utilization, provided your client and COS networks are sufficient (for example, by using Tencent Cloud CVM and uploading to COS in the same region).
+    // Set the thread pool size. You are advised to set the size of your thread pool to 16 or 32 to maximize network resource utilization if you have sufficient client and COS network resources (for example, by using Tencent Cloud CVM and uploading to COS in the same region).
     // We recommend using a smaller value to avoid timeout due to slow network speed if you are transferring data over a public network with poor bandwidth quality.
     ExecutorService threadPool = Executors.newFixedThreadPool(32);
 
-    // Pass a threadpool. Otherwise, a single-thread pool will be generated in TransferManager by default.
+    // Pass a `threadpool`. Otherwise, a single-thread pool will be generated in `TransferManager` by default.
     TransferManager transferManager = new TransferManager(cosClient, threadPool);
-
-    // Set the configuration items of the advanced API.
-    // Set the threshold and part size for multipart upload to 5 MB and 1 MB respectively.
-    TransferManagerConfiguration transferManagerConfiguration = new TransferManagerConfiguration();
-    transferManagerConfiguration.setMultipartUploadThreshold(5*1024*1024);
-    transferManagerConfiguration.setMinimumUploadPartSize(1*1024*1024);
-    transferManager.setConfiguration(transferManagerConfiguration);
 
     return transferManager;
 }
@@ -48,10 +41,10 @@ The `TransferManagerConfiguration` class is used to record the configuration of 
 
 | Member Name | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| minimumUploadPartSize | Set method | Part size of the multipart upload in bytes. Default: 5 MB | long |
-| multipartUploadThreshold | Set method | If a file is greater than or equal to this value, it will be uploaded in concurrent parts. Unit: byte; default: 5 MB | long |
-| multipartCopyThreshold | Set method | If a file is greater than or equal to this value, it will be replicated in concurrent parts. Unit: byte; default: 5 GB | long |
-| multipartCopyPartSize | Set method | Part size in bytes for multipart replication. Default: 100 MB | long |
+| minimumUploadPartSize | `set` method | Part size of the multipart upload in bytes. Default: 5 MB | long |
+| multipartUploadThreshold | `set` method | If a file is greater than or equal to this value, it will be uploaded in concurrent parts. Unit: byte; default: 5 MB | long |
+| multipartCopyThreshold | `set` method | If a file is greater than or equal to this value, it will be replicated in concurrent parts. Unit: byte; default: 5 GB | long |
+| multipartCopyPartSize | `set` method | Part size in bytes for multipart replication. Default: 100 MB | long |
 
 ### Closing a TransferManager instance
 
@@ -79,12 +72,12 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 ```java
 // Before using the advanced API, ensure that the process contains a TransferManager instance. If such an instance does not exist, create one.
-// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on the current page.
+// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on this page.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, the unique ID of an object in a bucket. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
 // Local file path
 String localFilePath = "/path/to/localFile";
@@ -92,7 +85,7 @@ File downloadFile = new File(localFilePath);
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 try {
-    // Return an asynchronous result `Download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be thrown.
+    // Return an asynchronous result `Download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be reported.
     Download download = transferManager.download(getObjectRequest, downloadFile);
     download.waitForCompletion();
 } catch (CosServiceException e) {
@@ -104,7 +97,7 @@ try {
 }
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
-// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
+// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on this page.
 shutdownTransferManager(transferManager);
 ```
 
@@ -115,19 +108,19 @@ shutdownTransferManager(transferManager);
 | getObjectRequest | Object download request | GetObjectRequest | No |
 | file | Destination file | File | No |
 
-The request members are described as follows:
+Description of the `Request` member:
 
-| Request Member | Set Method | Description | Type |
+| Request Member | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
-| key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| key | Constructor or `set` method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | range | Set method | Download range | Long[] |
 | trafficLimit | Set method | Traffic limits (in bit/s) on the downloaded object. There is no limit by default. | int |
 
 #### Returned values
 
 - Success: returns `Download`. You can query whether the download is complete, or wait until the download is finished.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Downloading an object (checkpoint restart)
 
@@ -138,6 +131,9 @@ This API is suitable for downloading large files.
 
 ```java
 public Download download(final GetObjectRequest getObjectRequest, final File file,
+        boolean resumableDownload);
+
+public Download download(final GetObjectRequest getObjectRequest, final File file,
         boolean resumableDownload, String resumableTaskFile,
         int multiThreadThreshold, int partSize);
 ```
@@ -146,21 +142,21 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 ```java
 // Before using the advanced API, ensure that the process contains a TransferManager instance. If such an instance does not exist, create one.
-// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on the current page.
+// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on this page.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, the unique ID of an object in a bucket. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
 // Local file path
 String localFilePath = "/path/to/localFile";
 File downloadFile = new File(localFilePath);
 
-GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key, true);
+GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 try {
-    // Return an asynchronous result `Download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be thrown.
-    Download download = transferManager.download(getObjectRequest, downloadFile);
+    // Return an asynchronous result `Download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be reported.
+    Download download = transferManager.download(getObjectRequest, downloadFile, true);
     download.waitForCompletion();
 } catch (CosServiceException e) {
     e.printStackTrace();
@@ -171,7 +167,7 @@ try {
 }
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
-// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
+// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on this page.
 shutdownTransferManager(transferManager);
 ```
 
@@ -188,17 +184,17 @@ shutdownTransferManager(transferManager);
 
 The request members are described as follows:
 
-| Request Member | Set Method | Description | Type |
+| Request Member | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
-| key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| range | Set method | Download range | Long[] |
-| trafficLimit | Set method | Traffic limits (in bit/s) on the downloaded object. There is no limit by default. | int |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).  | String |
+| key | Constructor or `set` method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| range | `set` method | Download range | Long[] |
+| trafficLimit | `set` method | Traffic limits (in bit/s) on the downloaded object. There is no limit by default. | int |
 
 #### Returned values
 
 - Success: returns `Download`. You can query whether the download is complete, or wait until the download is finished.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Displaying the download progress
 
@@ -215,13 +211,13 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 ```java
 // You can adjust the following sample code as needed to form your own code.
 void showTransferProgress(Transfer transfer) {
-    // Here, `Transfer` is the parent class of the async download result `Download`.
+    // Here, `Transfer` is the parent class of the async upload result `Upload`.
     System.out.println(transfer.getDescription());
 
-    // Use `transfer.isDone()` to check whether the download is completed.
+    // Use `transfer.isDone()` to check whether the upload is completed.
     while (transfer.isDone() == false) {
         try {
-            // Get the progress every 2 seconds.
+            // Get the progress every two seconds.
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             return;
@@ -239,16 +235,16 @@ void showTransferProgress(Transfer transfer) {
 }
 ```
 
-The sample code combined with the file download operation is as follows:
+The sample code combined with the file upload operation is as follows:
 
 ```java
 // Before using the advanced API, ensure that the process contains a TransferManager instance. If such an instance does not exist, create one.
-// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on the current page.
+// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on this page.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, the unique ID of an object in a bucket. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
 // Local file path
 String localFilePath = "/path/to/localFile";
@@ -256,9 +252,9 @@ File downloadFile = new File(localFilePath);
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 try {
-    // Return an asynchronous result `Download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be thrown.
+    // Return an asynchronous result `Download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be reported.
     Download download = transferManager.download(getObjectRequest, downloadFile);
-    // Print the download progress until the download is completed.
+    // Print the upload progress until the upload is completed.
     showTransferProgress(download);
     // Possible exceptions are captured here.
     download.waitForCompletion();
@@ -271,19 +267,19 @@ try {
 }
 
 // After confirming that the process does not use the TransferManager instance anymore, close it.
-// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
+// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on this page.
 shutdownTransferManager(transferManager);
 ```
 
 #### Description of progress obtaining
 
-You can use the `getProgress()` method of the `Upload` class to obtain the `TransferProgress` class, which has the following three methods to obtain the upload progress:
+You can use the `getProgress` method of the `Upload` class to obtain the `TransferProgress` class, which has the following three methods to obtain the upload progress:
 
 | Method Name | Description | Type |
 | ----------------------- | ------------------ | -----   |
-| getBytesTransferred     | Obtains the number of bytes downloaded  | long   |
+| getBytesTransferred     | Obtains the number of bytes uploaded  | long   |
 | getTotalBytesToTransfer | Obtains the total number of bytes of the file | long   |
-| getPercentTransferred   | Obtains the percentage of the number of bytes downloaded  | double |
+| getPercentTransferred   | Obtains the percentage of the number of bytes uploaded  | double |
 
 #### Parameter description
 
@@ -294,17 +290,17 @@ You can use the `getProgress()` method of the `Upload` class to obtain the `Tran
 
 The request members are described as follows:
 
-| Request Member | Set Method | Description | Type |
+| Request Member | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
-| key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| range | Set method | Download range | Long[] |
-| trafficLimit | Set method | Traffic limits (in bit/s) on the downloaded object. There is no limit by default. | int |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).  | String |
+| key | Constructor or `set` method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| range | `set` method | Download range | Long[] |
+| trafficLimit | `set` method | Traffic limits (in bit/s) on the downloaded object. There is no limit by default. | int |
 
 #### Returned values
 
 - Success: returns `Download`. You can query whether the download is complete, or wait until the download is finished.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Suspending, resuming, or cancelling a download
 
@@ -320,12 +316,12 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 ```java
 // Before using the advanced API, ensure that the process contains a TransferManager instance. If such an instance does not exist, create one.
-// For the detailed code, see "Advanced APIs -> Sample code: Creating a TransferManager instance" on the current page.
+// For the detailed code, see "Advanced APIs -> Sample code: Creating a TransferManager instance" on this page.
 TransferManager transferManager = createTransferManager();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, the unique ID of an object in a bucket. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
 // Local file path
 String localFilePath = "/path/to/localFile";
@@ -333,14 +329,14 @@ File downloadFile = new File(localFilePath);
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 
 try {
-    // Return an asynchronous result `download`. You can synchronously call `waitForCompletion` to wait for the download to end. If successful, `void` is returned; otherwise, an exception will be thrown.
+    // Return an async result `copy`. You can synchronously call `waitForCompletion` to wait for the `download` to end. If successful, `void` is returned; otherwise, an exception will be reported.
     Download download = transferManager.download(getObjectRequest, downloadFile);
     // Wait 3 seconds for part of the file to be downloaded.
     Thread.sleep(3000L);
-    // Suspend the download and get a PersistableDownload instance for resuming the download later.
+    // Suspend the download and get a `PersistableUpload` instance for resuming the download later.
     PersistableDownload persistableDownload = download.pause();
     // Complex suspension and resuming:
-    // The PersistableDownload instance can also be serialized and stored, and then deserialized to resume the download.
+    // `PersistableDownload` instance can be used to serialize the file content and store it and then deserialize it to resume the upload.
     // persistableDownload.serialize(out);
     // Resume download
     download = transferManager.resumeDownload(persistableDownload);
@@ -371,21 +367,21 @@ shutdownTransferManager(transferManager);
 
 The request members are described as follows:
 
-| Request Member | Set Method | Description | Type |
+| Request Member | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
-| key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| range | Set method | Download range | Long[] |
-| trafficLimit | Set method | Traffic limits (in bit/s) on the downloaded object. There is no limit by default. | int |
+| bucketName | Constructor or `set` method | Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).  | String |
+| key | Constructor or `set` method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| range | `set` method | Download range | Long[] |
+| trafficLimit | `set` method | Traffic limits (in bit/s) on the downloaded object. There is no limit by default. | int |
 
 #### Returned values
 
 - Success: returns `Download`. You can query whether the download is complete, or wait until the download is finished.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Downloading a directory
 
-This API is used to download COS objects that have a specified prefix (a virtual directory) to a specified local directory. The files downloaded are in the same directory structure as in that in COS.
+This API is used to download COS objects that have a specified prefix (a virtual directory) to a specified local directory. The downloaded files are in the same directory structure as in COS.
 
 #### Method prototype
 
@@ -443,17 +439,17 @@ shutdownTransferManager(transferManager);
 #### Returned values
 
 - Success: returns MultipleFileUpload. You can query whether the download is complete, or wait until the download is finished.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ## Simple Operations
 
-Requests for simple operations need to be initiated through COSClient instances. You need to create a COSClient instance before performing simple operations.
+Requests for simple operations need to be initiated through `COSClient` instances. You need to create a `COSClient` instance before performing simple operations.
 
-COSClient instances are concurrency safe. You are advised to create only one COSClient instance for a process and then close it when it is no longer used to initiate requests.
+`COSClient` instances are concurrency-safe. You are advised to create only one COSClient instance for a process and then close it when it is no longer used to initiate requests.
 
 ### Creating a COSClient instance
 
-Before calling the COS API, you need to create a COSClient instance.
+Before calling the COS API, first create a COSClient instance.
 
 ```java
 // Create a COSClient instance, which is used to initiate requests later.
@@ -468,12 +464,12 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
-    // Set the request protocol, `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // Set the request protocol to `HTTP` or `HTTPS`.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional.
@@ -492,17 +488,17 @@ COSClient createCOSClient() {
 }
 ```
 
-### Creating a COSClient client with a temporary key
+### Creating a COSClient instance with a temporary key
 
 If you want to request COS with a temporary key, you need to create a COSClient instance with the temporary key.
-This SDK does not generate temporary keys. For how to generate a temporary key, please see [Generating a Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048#cos-sts-sdk).
+This SDK does not generate temporary keys. For how to generate a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048#cos-sts-sdk).
 
 ```java
 
 // Create a COSClient instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Here, the temporary key information is needed.
-    // For how to generate temporary keys, please visit https://intl.cloud.tencent.com/document/product/436/14048.
+    // For how to generate temporary keys, visit https://intl.cloud.tencent.com/document/product/436/14048.
     String tmpSecretId = "TMPSECRETID";
     String tmpSecretKey = "TMPSECRETKEY";
     String sessionToken = "SESSIONTOKEN";
@@ -513,12 +509,12 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224.
+    Self-built Migration
     clientConfig.setRegion(new Region("COS_REGION"));
 
-    // Set the request protocol, `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // Set the request protocol to `HTTP` or `HTTPS`.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional.
@@ -560,7 +556,7 @@ COSClient cosClient = createCOSClient();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, the unique ID of an object in a bucket. For more information, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
 
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
@@ -603,18 +599,18 @@ cosClient.shutdown();
 
 The request members are described as follows:
 
-| Request Member | Set Method | Description | Type |
+| Request Member | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| range | Set method | Download range | Long[] |
-| trafficLimit | Set method | Traffic limits (in bit/s) on the downloaded object. The default setting is no limit. | Int |
+| key | Constructor or `set` method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| range | `set` method | Download range | Long[] |
+| trafficLimit | `set` method | Traffic limits (in bit/s) on the downloaded object. The default setting is no limit. | Int |
 
 
 #### Response description
 
 - Success: returns the `COSObject` class, including the input stream and object attributes.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameters
 
@@ -622,7 +618,7 @@ The `COSObject` class is used to return request results. Its main members are de
 
 | Member Name | Description | Type |
 | --------------- | --------------------------------------------------- | ------------------- |
-| bucketName |  Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| bucketName |  Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see the object key section in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | metadata | Object metadata  | ObjectMetadata |
 | objectContent | Data stream containing COS object content  | COSObjectInputStream |

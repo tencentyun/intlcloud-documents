@@ -17,7 +17,7 @@
 >! `debug/release` フォルダは、すべて VS 上の環境設定が完了後に自動的に生成されます。
 
 ## 前提条件
-[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を行い、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)が完了済みであること。
+ すでに[Tencent Cloudアカウントを登録](https://intl.cloud.tencent.com/document/product/378/17985)済みです。
 
 ## 操作手順
 [](id:step1)

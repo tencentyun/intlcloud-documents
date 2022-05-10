@@ -1,17 +1,19 @@
+
+
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom domain name.
+This document provides an overview of APIs and SDK code samples for custom domains.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ----------------- | -------------- | -------------------------- |
-| PUT Bucket domain    | Setting custom domain name | Sets custom domain name information for a bucket |
-| GET Bucket domain | Querying custom domain name | Queries the custom domain name information of a bucket |
+| PUT Bucket domain    | Setting a custom domain | Sets a custom domain for a bucket |
+| GET Bucket domain    | Querying a custom domain | Queries the custom domain of a bucket |
 
-## Setting Custom Domain Name
+## Setting Custom Domains
 
 #### Feature description
 
-This API (PUT Bucket domain) is used to configure a custom domain name for a bucket.
+This API is used to set a custom domain for a bucket.
 
 #### Method prototype
 
@@ -24,7 +26,12 @@ public void setBucketDomainConfiguration(SetBucketDomainConfigurationRequest set
 
 [//]: # (.cssg-snippet-put-bucket-domain)
 ```java
+// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// For the detailed code, select **Object Operations** > **Uploading Objects** on the left sidebar, and see **simple operations** > **uploading a COSClient instance**.
+COSClient cosClient = createCOSClient();
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
+
 BucketDomainConfiguration bucketDomainConfiguration = new BucketDomainConfiguration();
 DomainRule domainRule = new DomainRule();
 domainRule.setStatus(DomainRule.ENABLED);
@@ -32,57 +39,56 @@ domainRule.setType(DomainRule.REST);
 domainRule.setName("qq.com");
 domainRule.setForcedReplacement(DomainRule.CNAME);
 bucketDomainConfiguration.getDomainRules().add(domainRule);
-cosclient.setBucketDomainConfiguration(bucketName, bucketDomainConfiguration);
-BucketDomainConfiguration bucketDomainConfiguration1 = cosclient.getBucketDomainConfiguration(bucketName);
+cosClient.setBucketDomainConfiguration(bucketName, bucketDomainConfiguration);
 ```
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------------------------------- | ------------------------ | ----------------------------------- |
-| setBucketDomainConfigurationRequest | Request to set custom domain name for bucket | SetBucketDomainConfigurationRequest |
+| setBucketDomainConfigurationRequest | Sets a custom domain request for a bucket | SetBucketDomainConfigurationRequest |
 
-`Request` member description:
+Description of the `Request` member:
 
 | Request Member | Setting Method | Description | Type |
 | ------------- | ------------------- | ------------------------------------------------------------ | ------------------------- |
-| bucketName  | Constructor or set method | Bucket for which to set a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                 |
-| configuration | Constructor or set method | Custom domain name configuration of bucket                                        | BucketDomainConfiguration |
+| bucketName | Constructor or `set` method | Bucket that the custom domain is set for, formatted as `BucketName-APPID`. For more information, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| configuration | Constructor or `set` method | Custom domain configuration of the bucket | BucketDomainConfiguration |
 
-`BucketDomainConfiguration` member description:
+Description of the `BucketDomainConfiguration` member:
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------- | ---------------------- | ---------------------------- |
-| domainRules | Custom domain name configuration of bucket | List<DomainRule> domainRules |
+| domainRules | Custom doamin configuration of the bucket | List&lt;DomainRule> domainRules |
 
-`DomainRule` member description:
+Description of the `DomainRule` member:
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------------- | ----------------------------------------- | ------ |
-| name                  | Custom domain name                                                   | String |
-| status            | Domain name status. Valid values: ENABLED, DISABLED                     | String |
-| type              | Type of bound origin server. Valid values: REST, WEBSITE                       | String |
-| forcedReplacement | Forcibly overwrites existing configuration. Valid values: CNAME, TXT | String |
+| name    | Custom domain name                                                                           | String      |
+| status | Status of the domain name. Valid values: `ENABLED`, `DISABLED` | String |
+| type    | Type of the origin server to bind. Valid values: `REST`, `WEBSITE`                                                             | String      |
+| forcedReplacement | Replaces existing configurations. Valid values: `CNAME`, `TXT`                    | String |
 
-#### Returned result description
+#### Response description
 
-- Success: no returned value.
-- Failure: an error (e.g., authentication failed) occurred and a `CosClientException` or `CosServiceException` exception was thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+- Success: No value is returned.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-#### Returned error code description
+#### Error codes
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some common errors that may occur when you call this API:
 
 | Status Code | Description |
 | -------------------------------------- | ------------------------------------------------------------ |
-| HTTP 409 Conflict                      | The domain name record already exists, and no forced overwriting is set in the request. Or, the domain name record does not exist, but forced overwriting is set in the request. |
-| HTTP 451 Unavailable For Legal Reasons | The domain name is served in Mainland China but has no ICP filing.                          |
+| HTTP 409 Conflict | The domain record already exists, and forced overwrite is not specified in the request; OR the domain record does not exist, and forced overwrite is specified in the request |
+| HTTP 451 Unavailable For Legal Reasons | The domain does not have an ICP filing in the Chinese mainland                          |
 
-## Querying Custom Domain Name
+## Querying a Custom Domain
 
-#### Feature description
+#### Description
 
-This API (GET Bucket domain) is used to query the custom domain name information of a bucket.
+This API is used to query the custom domain set for a bucket.
 
 #### Method prototype
 
@@ -95,24 +101,36 @@ throws CosClientException, CosServiceException;
 
 [//]: # (.cssg-snippet-get-bucket-domain)
 ```java
+// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// For the detailed code, select **Object Operations** > **Uploading Objects** on the left sidebar, and see **simple operations** > **uploading a COSClient instance**.
+COSClient cosClient = createCOSClient();
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-BucketDomainConfiguration bucketDomainConfiguration1 = cosclient.getBucketDomainConfiguration(bucketName);
-String domainTxtVerification = bucketDomainConfiguration1.getDomainTxtVerification()
+
+BucketDomainConfiguration bucketDomainConfiguration = cosClient.getBucketDomainConfiguration(bucketName);
+String domainTxtVerification = bucketDomainConfiguration1.getDomainTxtVerification();
+System.out.println(domainTxtVerification);
+for (DomainRule rule : bucketDomainConfiguration.getDomainRules()) {
+    System.out.println(rule.getName());
+    System.out.println(rule.getStatus());
+    System.out.println(rule.getType());
+    System.out.println(rule.getClass());
+}
 ```
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket for which to query a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket for custom domain query, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
-#### Returned result description
+#### Response description
 
-- Success: `BucketDomainConfiguration` is returned, which contains the custom domain name configuration information of the bucket.
-- Failure: an error (e.g., authentication failed) occurred and a `CosClientException` or `CosServiceException` exception was thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+- Success: returns `BucketDomainConfiguration`, including the custom domain configuration of the bucket.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-#### Return parameter description
+#### Response parameters
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------ |
-| domainTxtVerification | Domain name verification information. This field is an MD5 check value, whose original string is in the following format: `cos[Region][BucketName-APPID][BucketCreateTime]`, where `Region` is the bucket region and `BucketCreateTime` is the bucket creation time in GMT | String |
+| domainTxtVerification | Domain verification information. This field is an MD5 checksum of a character string in the format: `cos[Region][BucketName-APPID][BucketCreateTime]`, where `Region` is the bucket region and `BucketCreateTime` is the time the bucket was created in GMT format | String |

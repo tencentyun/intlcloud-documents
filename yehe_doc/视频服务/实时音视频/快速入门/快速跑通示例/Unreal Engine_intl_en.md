@@ -18,7 +18,7 @@ This document describes how to quickly run the TRTC demo for Unreal Engine.
     - [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## Prerequisites
-You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com) and verified your identity.
+You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com).
 
 ## Directions
 [](id:step1)

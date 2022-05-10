@@ -26,13 +26,13 @@ The `config` command is used to generate and modify the configuration file.
 
 `config` and its sub-commands include the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name     | Description                         |
 | --------- | ------------- | -------------------------- |
 | -c        | --config-path | Path of the configuration file to use |
 
 The `config add` sub-command includes the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name   | Description                     |
 | --------- | --------- | ------------ |
 | -a        | --alias   | Bucket alias |
 | -b        | --bucket  | Bucket name |
@@ -40,13 +40,13 @@ The `config add` sub-command includes the following optional flags:
 
 The `config delete` sub-command includes the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name   | Description                     |
 | --------- | --------- | ------------ |
 | -a        | --alias   | Bucket alias |
 
 The `config set` sub-command includes the following optional flags:
 
-| Flag Abbreviation | Flag Full Name   | Description                     |
+| Flag Abbreviation | Flag Name   | Description                     |
 | --------- | ------------ | ----------------- |
 | -i        | --secret_id  | Secret ID  |
 | -k        | --secret_key | Secret key |

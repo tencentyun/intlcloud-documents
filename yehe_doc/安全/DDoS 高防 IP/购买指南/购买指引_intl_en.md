@@ -1,5 +1,5 @@
 ## Prerequisites
-Before purchasing an Anti-DDoS Advanced instance, you have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for Tencent Cloud and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629). If your identity verification is not completed, your purchase will fail.
+Before purchasing an Anti-DDoS Advanced instance, you have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for Tencent Cloud.
 
 ## Directions
 ### Purchase an Anti-DDoS Advanced instance (Chinese mainland)

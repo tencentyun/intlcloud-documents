@@ -6,29 +6,31 @@
 腾讯云容器服务（Tencent Kubernetes Engine，TKE）是基于原生 kubernetes 提供以容器为核心的、高度可扩展的高性能容器管理服务，您可以在托管的云服务器实例集群上轻松运行应用程序。同时腾讯云也提供 [弹性容器服务](https://intl.cloud.tencent.com/document/product/457/34040)（Elastic Kubernetes Service，EKS）和 [边缘容器服务](https://intl.cloud.tencent.com/document/product/457/35390)（Tencent Kubernetes Engine for Edge，TKE Edge），方便您按需选择。
 
 
-腾讯云容器服务支持您通过 [容器服务控制台](https://console.cloud.tencent.com/tke2/overview)、[Kubectl](https://intl.cloud.tencent.com/document/product/457/30639) 操作集群与服务。
+腾讯云容器服务支持您通过 [容器服务控制台](https://console.cloud.tencent.com/tke2/overview)、[Kubectl](https://intl.cloud.tencent.com/document/product/457/30639)  操作集群与服务。
 
 
 
 
 ## 2. 了解容器服务的计费
-腾讯云容器服务暂不收取服务本身费用，按用户实际使用的云资源收费。您需要了解在使用容器服务过程中相关产品产生的资源费用，详情请参见 [计费说明](https://intl.cloud.tencent.com/document/product/457/6770)。
+腾讯云容器服务 TKE 针对不同规格的托管集群，会收取相应的集群管理费用，以及用户实际使用的云资源费用。关于收费模式和具体价格，请参阅 [容器服务计费概述](https://intl.cloud.tencent.com/document/product/457/45157)。
+
 
 
 
 
 ## 3. 使用容器服务
 #### 3.1 注册与认证
-在使用腾讯云容器服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在使用腾讯云容器服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/zh/account/register) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 #### 3.2 角色授权
 您需要为当前服务角色授权，赋予容器服务操作权限后才能正常地访问您的其他云服务资源。
-在腾讯云控制台中，选择**云产品**>**容器服务**，进入 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=1)，按照界面提示为容器服务授权。完成服务授权获取相关资源操作权限，即可开始创建集群。
+在腾讯云控制台中，选择**云产品** > **容器服务**，进入 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster?rid=1)，按照界面提示为容器服务授权。完成服务授权获取相关资源操作权限，即可开始创建集群。
 
 
 
 #### 3.3 创建集群
-如果您需要使用更多类型的集群，请参见 [创建弹性集群](https://intl.cloud.tencent.com/document/product/457/34048) 和 [创建边缘集群](https://intl.cloud.tencent.com/document/product/457/35385) 文档。
+您可参考 [快速创建一个标准集群](https://intl.cloud.tencent.com/document/product/457/40029) 文档，了解快速创建标准托管版集群的方法。可参考 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 文档，了解创建标准托管版集群的完整过程。
+如果您需要使用更多类型的集群，请参见 [创建弹性集群](https://intl.cloud.tencent.com/document/product/457/34048)和 [创建边缘集群](https://intl.cloud.tencent.com/document/product/457/35385) 文档。
 
 
 #### 3.4 部署工作负载
@@ -42,9 +44,9 @@
 #### 3.5 集群运维
 容器服务 TKE 作为集群、应用、存储、网络等模块的管理平台，如果您需获取更多信息或需进行更多实践操作，请参考以下内容进一步了解并使用。
 
-| 如果您想 | 您可以阅读 |
+| 如果您想 | 您可以阅读 | 
 |---------|---------|
-| 通过 Kubernetes 命令行工具 Kubectl 从本地客户端机器连接到 TKE 集群 | [连接集群](https://intl.cloud.tencent.com/document/product/457/30639) |
+| 通过 Kubernetes 命令行工具 Kubectl 从本地客户端机器连接到 TKE 集群 | [连接集群](https://intl.cloud.tencent.com/document/product/457/30639) | 
 | 对运行中的 Kubernetes 集群进行升级 | [升级集群](https://intl.cloud.tencent.com/document/product/457/30640) |
 | 在已创建的 Kubernetes 集群中添加实例 | [新增节点](https://intl.cloud.tencent.com/document/product/457/30652) |
 | 管理 Kubernetes 集群内节点| [创建节点池](https://intl.cloud.tencent.com/document/product/457/35901) |
@@ -54,6 +56,7 @@
 | 使用容器服务的存储能力 | [存储管理概述](https://intl.cloud.tencent.com/document/product/457/37769) |
 | 为集群内容器分配在容器网络地址范围内的 IP 地址 | [容器网络概述](https://intl.cloud.tencent.com/document/product/457/38966) |
 | 对 Kubernetes 集群内服务日志进行存储和分析 | [日志采集](https://intl.cloud.tencent.com/document/product/457/32419) |
+| 对集群进行监控 | [监控实例管理](https://intl.cloud.tencent.com/document/product/457/38824) |
 | 使用容器镜像服务内托管的私有镜像进行应用部署 | [使用 TCR 企业版实例内容器镜像创建工作负载](https://intl.cloud.tencent.com/document/product/457/36838) |
 
 
@@ -86,7 +89,7 @@
 服务内容器若无持续运行的进程，会导致服务一直处于启动中，更多服务启动的问题见 [事件常见问题](https://intl.cloud.tencent.com/document/product/457/8187)。
 
 - **创建集群前如何规划网络？**
-创建集群时，集群网络和容器网络网段不能重叠。通常情况下，您可以选择私有网络 VPC 中的子网用于集群的节点网络。详情见 [容器网络与集群网络说明](https://intl.cloud.tencent.com/document/product/457/38966)。
+创建集群时，集群网络和容器网络网段不能重叠。通常情况下，您可以选择私有网络 VPC 中的子网用于集群的节点网络。详情见 [容器网络与集群网络说明](https://intl.cloud.tencent.com/document/product/457/38966#.E5.AE.B9.E5.99.A8.E7.BD.91.E7.BB.9C.E4.B8.8E.E9.9B.86.E7.BE.A4.E7.BD.91.E7.BB.9C.E8.AF.B4.E6.98.8E)。
 
 - **创建好的服务如何访问？**
 不同的访问方式提供不同的访问入口，详情见 [服务访问方式](https://intl.cloud.tencent.com/document/product/457/36832)。
@@ -106,6 +109,6 @@ TKE 集成的 Helm 3.0 相关功能，为您提供创建 helm chart、容器镜�
 ## 5. 反馈与建议	
 
 使用腾讯云容器服务产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
-- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可[提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 **文档反馈**或选中存在问题的内容进行反馈。
+- 如果遇到产品相关问题，您可咨询 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 寻求帮助。
 

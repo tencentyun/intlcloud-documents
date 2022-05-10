@@ -1,18 +1,20 @@
 ## Overview
 
-This document provides an overview of APIs and SDK sample codes related to cross-origin access.
+This document provides an overview of APIs and SDK sample codes for cross-origin resource sharing (CORS).
+
+For more information, see [Cross-Origin Resource Sharing](https://intl.cloud.tencent.com/document/product/436/40697). When you set the CORS configuration, see [Setting Cross-Origin Resource Sharing (CORS)](https://intl.cloud.tencent.com/document/product/436/13318) or [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/11488).
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting a cross-origin access configuration | Sets the cross-origin access permissions of bucket |
-| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying a cross-origin access configuration | Queries the cross-origin access configuration of a bucket |
-| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting cross-origin access configuration | Deletes the cross-origin access configuration of a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS configuration | Sets the CORS permissions of bucket |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying CORS configuration | Queries the CORS configuration of a bucket |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting CORS configuration | Deletes the CORS configuration of a bucket |
 
-## Setting Cross-Origin Access Configuration
+## Setting CORS Configuration
 
-#### Feature description
+#### Description
 
-This API (PUT Bucket cors) is used to set cross-origin access configuration on a bucket.
+This API is used to set the CORS configuration of a specified bucket.
 
 #### Method prototype
 
@@ -24,7 +26,7 @@ public void setBucketCrossOriginConfiguration(String bucketName, BucketCrossOrig
 
 [//]: # (.cssg-snippet-put-bucket-cors)
 ```java
-// Enter the bucket name in the format of BucketName-APPID
+// Enter the bucket name in the format: BucketName-APPID.
 String bucketName = "examplebucket-1250000000";
 | bucketCrossOriginConfiguration | The cross-domain access rules set for a bucket | BucketCrossOriginConfiguration |
 List<CORSRule> corsRules = new ArrayList<CORSRule>();
@@ -47,20 +49,20 @@ cosClient.setBucketCrossOriginConfiguration(bucketName, bucketCORS);
 
 | Parameter | Description | Type |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------ |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| bucketCrossOriginConfiguration | Cross-origin access policy set for a bucket | BucketCrossOriginConfiguration |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| bucketCrossOriginConfiguration | The cross-origin access rules set for a bucket | BucketCrossOriginConfiguration |
 
 #### Response description
 
-- Success: no value is returned.
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: No value is returned.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-## Querying Cross-Origin Access Configuration
+## Querying CORS Configuration
 
-#### Feature description
+#### Description
 
-This API is used to query the cross-origin access configuration of a bucket.
+This API is used to query the CORS configuration of a bucket.
 
 #### Method prototype
 
@@ -73,7 +75,7 @@ throws CosClientException, CosServiceException;
 
 [//]: # (.cssg-snippet-get-bucket-cors)
 ```java
-// Enter the bucket name in the format of BucketName-APPID
+// Enter the bucket name in the format: BucketName-APPID.
 String bucketName = "examplebucket-1250000000";
 BucketCrossOriginConfiguration corsGet = cosClient.getBucketCrossOriginConfiguration(bucketName);
 List<CORSRule> corsRules = corsGet.getRules();
@@ -91,19 +93,19 @@ for (CORSRule rule : corsRules) {
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
 #### Response description
 
-- Success: the cross-origin access rule of the bucket is returned.
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+-Success: Returns the cross-origin rules for the bucket.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-## Deleting Cross-Origin Access Configuration
+## Deleting CORS Configuration
 
-#### Feature description
+#### Description
 
-This API is used to delete the cross-origin access configuration of a bucket.
+This API is used to delete the CORS configuration of a bucket.
 
 #### Method prototype
 
@@ -116,7 +118,7 @@ throws CosClientException, CosServiceException;
 
 [//]: # (.cssg-snippet-delete-bucket-cors)
 ```java
-// Bucket name in the format of BucketName-APPID
+Bucket. Format: BucketName-APPID
 String bucketName = "examplebucket-1250000000";
 cosClient.deleteBucketCrossOriginConfiguration(bucketName);
 ```
@@ -125,9 +127,9 @@ cosClient.deleteBucketCrossOriginConfiguration(bucketName);
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
 #### Response description
 
-- Success: no value is returned.
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: No value is returned.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).

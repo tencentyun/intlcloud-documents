@@ -7,5 +7,5 @@
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**帐号管理**页，选择所需帐号，在**操作**列单击**删除帐号**。
 ![](https://main.qcloudimg.com/raw/8d847514135473abca2e1fd431cce5a6.png)
-3. 在弹出的对话框，单击**删除**即可。
+3. 在弹出的对话框，确认无误后，单击**删除**。
 

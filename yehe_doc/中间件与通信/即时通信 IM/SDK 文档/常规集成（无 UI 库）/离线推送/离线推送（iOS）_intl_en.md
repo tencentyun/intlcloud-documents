@@ -1,10 +1,10 @@
-[](id: configuring push)
 
-## Configuring Offline Push
+
+## Configuring Offline Push[](id:configuring-push)
 
 If you want to receive APNs offline message notifications, follow these steps:
 
-1. [Apply for an APNs certificate](#ApplyForCertificate).
+1. [Apply for an APNs certificate](#step-1.3A-apply-for-an-apns-certificate).
 2. [Upload the certificate to the console](#UploadCertificate).
 3. The app requests [deviceToken](#DeviceToken) from Apple every time it logs in.
 4. Call [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) to report the token to the IM backend.
@@ -12,8 +12,8 @@ If you want to receive APNs offline message notifications, follow these steps:
 When the app configured with APNs switches to the background or is killed by the user, the Tencent Cloud backend pushes offline messages to the device through Apple’s APNs. For more information, see [Apple Push Notification Service](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 >!Users who have logged out normally or have been forced offline will not receive any message notifications.
 
-[](id:ApplyForCertificate)
 
+[](id:ApplyForCertificate)
 ### Step 1: apply for an APNs certificate
 
 For more information on how to apply for an APNs certificate, see [Applying for an Apple Push Certificate](https://intl.cloud.tencent.com/document/product/1047/34346).
@@ -117,7 +117,7 @@ The APNs push content consists of the content of each `Elem` in the message body
 
 ### Communication among multiple apps
 
-If you set `SDKAppID` to the same value for multiple apps, these apps communicate with each other. Different apps need to use different push certificates, and you need to [apply for an APNs certificate](https://intl.cloud.tencent.com/document/product/1047/34346) for each app and complete [offline push configuration](#configuring push).
+If you set `SDKAppID` to the same value for multiple apps, these apps communicate with each other. Different apps need to use different push certificates, and you need to [apply for an APNs certificate](https://intl.cloud.tencent.com/document/product/1047/34346) for each app and complete [offline push configuration](#configuring-push).
 
 
 ## Setting Custom iOS Push Alert Sound

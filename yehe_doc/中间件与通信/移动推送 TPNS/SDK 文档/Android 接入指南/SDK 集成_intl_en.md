@@ -48,11 +48,11 @@ dependencies {
 }
 ```
 
->!
-> - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
-> - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
-> Add the following metadata in the `application` tag in the `AndroidManifest` file:
->  ```
+<dx-alert infotype="notice"> 
+- If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+- If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
+ Add the following metadata in the `application` tag in the `AndroidManifest` file:
+ ```
  <application>
              // Other Android components
              <meta-data
@@ -60,11 +60,11 @@ dependencies {
                                       android:value="Domain names of other service access points" />
  </application>
  ```
->The domain names of other service access points are as follows:
->- Shanghai: `tpns.sh.tencent.com`
->- Singapore: `tpns.sgp.tencent.com`
->- Hong Kong (China): `tpns.hk.tencent.com`
-> 
+The domain names of other service access points are as follows:
+       - Shanghai: `tpns.sh.tencent.com`
+       - Singapore: `tpns.sgp.tencent.com`
+       - Hong Kong (China): `tpns.hk.tencent.com`
+</dx-alert>
 
 
 #### Notes
@@ -295,11 +295,11 @@ You need to configure the permissions required for proper operation of the TPNS 
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
->!
-> - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
-> - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
-> Add the following metadata in the `application` tag in the `AndroidManifest` file:
->```
+<dx-alert infotype="notice"> 
+ - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+ - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), follow the step to complete the configuration; otherwise, the push service registration will fail, with an error code -502 or 1008003 returned.
+ Add the following metadata in the `application` tag in the `AndroidManifest` file:
+```
 <application>
 // Other Android components
 <meta-data
@@ -308,11 +308,11 @@ android:value="Domain names of other service access points" />
 </application>
 ```
 
->The domain names of other service access points are as follows:
->   - Shanghai: `tpns.sh.tencent.com`
->   - Singapore: `tpns.sgp.tencent.com`
->   - Hong Kong (China): `tpns.hk.tencent.com`
-
+The domain names of other service access points are as follows:
+        - Shanghai: `tpns.sh.tencent.com`
+        - Singapore: `tpns.sgp.tencent.com`
+        - Hong Kong (China): `tpns.hk.tencent.com`
+</dx-alert>
 
 ## Debugging and Registering Devices
 
@@ -407,7 +407,9 @@ If you perform code obfuscation by using tools such as ProGuard in your project,
 ### Disabling session keep-alive
 
 To disable the feature, call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in `false`:
->! The session keep-alive feature can be disabled only in SDK v1.1.6.0 or later. In SDKs earlier than v1.1.6.0, the feature is enabled by default and cannot be disabled.
+>! 
+>- The session keep-alive feature can be disabled only in SDK v1.1.6.0 or later. In SDKs earlier than v1.1.6.0, the feature is enabled by default and cannot be disabled.
+>- From SDK v1.2.6.0, the session keep-alive feature will be disabled by default. You can omit this API.
 >
 
 ```java

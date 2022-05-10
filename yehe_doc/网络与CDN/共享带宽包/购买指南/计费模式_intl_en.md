@@ -12,8 +12,8 @@ This document describes the two pay-as-you-go billing modes of bandwidth package
 >?View the component usage details shown in the bills obtained from the billing center. Usage = BWP monthly peak x Number of valid days/Number of billable days in the month.
 >
 - **Peak bandwidth**
- - Single instance: the peak bandwidth of an instance billed on bandwidth packages is 2 Gbps. The peak bandwidth is only regarded as the maximum bandwidth for reference, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.
- - Single region: the sum of peak bandwidths of all the running instances billed on bandwidth packages cannot exceed 50 Gbps in one region. If your application requires a guaranteed or higher bandwidth, contact your sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category). In this case, you need to pay the guaranteed bandwidth fee on a pro rata basis.
+   - Single instance: the peak bandwidth of an instance billed on bandwidth packages is 2 Gbps. The peak bandwidth is only regarded as the maximum bandwidth for reference, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.
+   - Single region: the sum of peak bandwidths of all the running instances billed on bandwidth packages cannot exceed 50 Gbps in one region. If your application requires a guaranteed or higher bandwidth, contact your sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category). In this case, you need to pay the guaranteed bandwidth fee on a pro rata basis.
 
 ## Monthly Top 5 Billing[](id:mtop5)
 
