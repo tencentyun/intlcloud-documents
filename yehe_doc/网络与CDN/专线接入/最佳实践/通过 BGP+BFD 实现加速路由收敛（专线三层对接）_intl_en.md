@@ -73,7 +73,7 @@ peer <bgp_peer_address> bfd min-tx-interval
 ```
 
 
-- **Mode 2: Layer 2 Vlanif interface+BGP (It is recommended to disable STP of Layer 2 interfaces)**：
+- <b>Mode 2: Layer 2 Vlanif interface+BGP (It is recommended to disable STP of Layer 2 interfaces)</b>：
 ``` 
 # Set ports
 interfaces
