@@ -5,31 +5,34 @@
 >?通过 BGP 连通的对接参数，Keepalive 及 holdtime 参数推荐使用缺省配置；推荐 Holdtime 时间60 * 3=180秒（此时 keepalive 报文周期60s）
 >
 ``` 
-# 配置物理接口
+# 设置物理接口
 interfaces <interface_number>
 description <interface_desc>
-no shutdown
+undo shutdown
 speed <interface_speed>
 duplex full
-no negotiation auto
+undo negotiation auto
 commit
 
-# 配置虚拟通道
+# 设置虚拟通道
 interfaces <interface_number>.<subinterface_number>
 description <subinterface_desc>
-encapsulation dot1q <subinterface_vlanid>
-ipv4 address <subinterface_ipaddress> <subinterface_netmask>
-bfd interval <value> min_rx <value> multiplier <value> //BFD 参数
+vlan-type dot1q <subinterface_vlanid>
+ip address <subinterface_ipaddress> <subinterface_netmask>
 commit
 
 # 设置 eBGP
-router bgp <as_number>
-#bgp router-id <router_id>
-neighbor <bgp_peer_address>
-remote-as <bgp_peer_as_number>
-password encrypted <bgp_auth_key>
-description <bgp_peer_desc>
-remote-as <bgp_peer_as_number> fall-over bfd //设置 BGP 联动 BFD
+bgp <as_number>
+router-id <route_id>
+peer <bgp_peer_address> as-number <bgp_peer_as_number>
+peer <bgp_peer_address> password cipher <bgp_auth_key>
+peer <bgp_peer_address> description <bgp_desc>
+ipv4-family unicast
+peer <bgp_peer_address> enable
 commit
 
+# 设置 eBGP 的BFD配置
+bgp <as_number>
+router-id <route_id>
+peer <bgp_peer_address> bfd min-tx-interval <time value> min-rx-interval <time value> detect-multiplier <value>
 ```

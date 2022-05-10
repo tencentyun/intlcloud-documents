@@ -1,8 +1,10 @@
-Direct Connect connects Tencent Cloud to the user IDC through connections. After configuring the direct connect gateway and dedicated tunnel on the Tencent Cloud side, users need to configure routes on the local IDC.
+Direct Connect connects Tencent Cloud with the user IDC with a dedicated physical line. After configuring the Direct Connect gateway and dedicated tunnel on the Tencent Cloud side, users need to configure routes on the local IDC.
 >?This document only introduces the local routing configurations associated with Tencent Cloud Direct Connect. For other information, please see the local router documentation or consult your router provider.
 >
 
 ## Routing Configuration
+>?It's recommended that you use the default configurations of `Keepalive` and `holdtime` for the BGP connection between the two peers. The `holdtime` is three times the interval at which keepalive messages are sent. The recommended `holdtime` value is 180s.
+>
 ``` 
 # Configure ports
 set interfaces <interface_number> description <interface_desc>
@@ -10,7 +12,7 @@ set interfaces <interface_number> vlan-tagging
 set interfaces <interface_number> link-mode full-duplex
 set interfaces <interface_number> speed <interface_speed> // Whether this command can be configured depends on whether the module supports it
 set interfaces <interface_number> gigether-options no-auto-negotiation // This command is recommended to be used in combination with
-the previous one
+Usage
 commit
 
 # Configure virtual tunnels
@@ -29,4 +31,6 @@ set protocols bgp group ebgp neighbor <bgp_peer_address> authentication-key <bgp
 set protocols bgp group ebgp neighbor <bgp_peer_address> description <bgp_peer_desc>
 commit
 
+# Configure BFD for eBGP
+set protocols bgp group ebgp neighbor <bgp_peer_address> bfd-liveness-detection minimum-interval <value>
 ```
