@@ -1,4 +1,4 @@
-Cloud Streaming Services (CSS) is designed to deliver professional, stable, and swift cloud-based live streaming services. Catering for the needs of different scenarios, it offers Live Video Broadcasting (LVB) for large-scale real-time playback and Live Event Broadcasting (LEB) for ultra-low latency live streaming. Together with the Mobile Live Video Broadcasting SDK (MLVB SDK), we offer a one-stop audiovisual live streaming solution.
+Cloud Streaming Services (CSS) is designed to deliver professional, stable, and swift cloud-based live streaming services. Catering for the needs of different scenarios, it offers Live Video Broadcasting (LVB) for large-scale real-time playback and Live Event Broadcasting (LEB) for ultra-low latency live streaming. Together with the Mobile Live Video Broadcasting SDK (MLVB SDK), we offer a one-stop audiovisual live streaming solution. 
 
 
 
