@@ -52,7 +52,7 @@
 
 2. Windows & Mac OS X平台PerfDog客户端版本都支持用户对iOS和Android设备进行测试。PC上PerfDog可多开，单PC可同时测试多台手机。
 
-3. PerfDog支持移动平台所有应用程序（游戏、APP应用、浏览器、小程序、小游戏、H5、后台系统进程等）、Android模拟器、云真机等性能测试。
+3. PerfDog支持移动平台所有应用程序（游戏、APP应用、浏览器、小游戏、H5、后台系统进程等）、Android模拟器、云真机等性能测试。
 
 4. 支持APP多进程测试，如Android多子进程及iOS扩展进程APP Extension。
 
