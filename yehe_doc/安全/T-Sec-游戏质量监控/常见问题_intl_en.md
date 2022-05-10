@@ -55,7 +55,7 @@
 
 2.  PerfDog's Windows & Mac OS X desktop app support users testing on iOS and Android devices.PerfDog can test multiple mobile devices at the same time on a single PC.
 
-3.  PerfDog supports all applications on the mobile platform (games, apps, browsers, mini programs, mini-games, H5, background system processes, etc.) and Android Emulator, Cloud Real Machine performance tests.
+3.  PerfDog supports all applications on the mobile platform (games, apps, browsers, mini-games, H5, background system processes, etc.) and Android Emulator, Cloud Real Machine performance tests.
 
 4.  Support APP multi-process testing, such as Android multi-child process and iOS extension process APP Extension.
 
