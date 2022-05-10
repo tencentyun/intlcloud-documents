@@ -96,7 +96,7 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
 ### プルURLの生成
 ライブイベントストリーミングプルURLとTencent Cloud CSSプルURLは、基本的に同じです。Tencent Cloud CSSプルURLの前にある`rtmp`を`webrtc`に置き換えるだけで済みます。
 
-ライブイベントストリーミングプルURL形式は、 **`webrtc://domain/path/stream_id`**です。[ホットリンク防止認証](https://intl.cloud.tencent.com/document/product/267/31560)が必要な場合、プルURL形式は、**`webrtc://domain/path/stream_id?txSecret=xxx&txTime=xxx`**となります。Tencent Cloud CSSプルURLの生成については、[再生アドレスの取得](#step4)をご参照ください。
+ライブイベントストリーミングプルURL形式は、 `webrtc://domain/path/stream_id`です。[ホットリンク防止認証](https://intl.cloud.tencent.com/document/product/267/31560)が必要な場合、プルURL形式は、**`webrtc://domain/path/stream_id?txSecret=xxx&txTime=xxx`**となります。Tencent Cloud CSSプルURLの生成については、[再生アドレスの取得](#step4)をご参照ください。
 
 >? 異なる解像度とビットレートのストリームをプルする必要がある場合は、トランスコードされたストリームをプルできます。トランスコードされたストリームのURL生成については、[CSSカプセル化とトランスコーディング](https://intl.cloud.tencent.com/document/product/267/31561)をご参照ください。
 
