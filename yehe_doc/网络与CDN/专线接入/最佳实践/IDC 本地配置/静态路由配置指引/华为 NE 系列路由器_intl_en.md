@@ -1,5 +1,6 @@
 Direct Connect connects Tencent Cloud with the user IDC with a dedicated physical line. After configuring the Direct Connect gateway and dedicated tunnel on the Tencent Cloud side, users need to configure routes on the local IDC.
 >?This document only introduces the local routing configurations associated with Tencent Cloud Direct Connect. For other information, please see the local router documentation or consult your router provider.
+>
 
 ## Routing Configuration
 >?It's recommended that you use the default configurations of `Keepalive` and `holdtime` for the BGP connection between the two peers. The `holdtime` is three times the interval at which keepalive messages are sent. The recommended `holdtime` value is 180s.
@@ -14,25 +15,35 @@ duplex full
 undo negotiation auto
 commit
 
-# Set virtual tunnels
+# Configure virtual tunnels
 interfaces <interface_number>.<subinterface_number>
 description <subinterface_desc>
 vlan-type dot1q <subinterface_vlanid>
 ip address <subinterface_ipaddress> <subinterface_netmask>
 commit
 
-# Set eBGP
-bgp <as_number>
-router-id <route_id>
-peer <bgp_peer_address> as-number <bgp_peer_as_number>
-peer <bgp_peer_address> password cipher <bgp_auth_key>
-peer <bgp_peer_address> description <bgp_desc>
-ipv4-family unicast
-peer <bgp_peer_address> enable
+# Configure NQA detection for static routes
+nqa test-instance <admin-name>< test-name>
+ test-type icmp  //Default detection type
+ destination-address  x.x.x.x（nexthop-address ）//Detection address
+ interval seconds <value> //Detection interval
+ timeout <value> //Timeout period
+ probe-count <value> //Number of packets per detection
+ frequency <value> //Detection frequency
+ start now
+
+
+# Configure static routing
+# Configure global static routes
+ip route-static <ip-address> <mask | mask-length> <nexthop-address> track nqa  <admin-name>< test-name>
+//<ip-address>Destination IP ranges for users to access Tencent network services
+such as ip route-static 172.16.0.192 255.255.255.192 10.128.152.1 track nqa user test
+
+
+# Configure static routes for users to access Tencent Cloud in VRF mode
+ip route-static <vpn-instance vpn-instance-name> <ip-address> <mask | mask-length> <nexthop-
+address> track nqa  <admin-name>< test-name>
+such as ip route-static vpn-instance GLOBAL 9.0.0.0 255.0.0.0 10.128.152.1 track nqa user test
 commit
 
-# Configure BFD for eBGP
-bgp <as_number>
-router-id <route_id>
-peer <bgp_peer_address> bfd min-tx-interval <time value> min-rx-interval <time value> detect-multiplier <value>
 ```

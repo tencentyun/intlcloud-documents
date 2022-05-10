@@ -22,15 +22,18 @@ set interfaces <interface_number> unit <subinterface_number> family inet address
 <subinterface_ipaddress>/<subinterface_netmask>
 commit
 
-# Set eBGP 
-set protocols bgp group ebgp type external // Define protocol group. Changing ebgp name is allowed.
-set protocols bgp group ebgp neighbor <bgp_peer_address> loacal-as <as_number> // If not configured, the global AS number will be used
- by default (set routing-options autonomous-system XX)
-set protocols bgp group ebgp neighbor <bgp_peer_address> peer-as <bgp_peer_as_number>
-set protocols bgp group ebgp neighbor <bgp_peer_address> authentication-key <bgp_auth_key>
-set protocols bgp group ebgp neighbor <bgp_peer_address> description <bgp_peer_desc>
+# Configure static routing
+# Configure a static route to the user IP globally
+set routing-options static route <customer_prefix/mask> next-hop <customer_interface_ip>
+# Configure BFD for the static routes. To configure RPM for the static routes, consult equipment vendors.
+set routing-options static route <customer_prefix/mask>bfd-liveness-detection minimum-interval <value> 
+
+such as set routing-options static route 1.1.1.0/24 next-hop 192.168.1.2 bfd-liveness-detection minimum-interval 1000 
+
+# Configure a static route to the user IP in VRF mode
+set routing-instances <vrf_name> routing-options static route <customer_prefix/mask> next-hop
+<customer_interface_ip>
+such as set routing-instances cap routing-options static route 1.1.1.0/24 next-hop 192.168.1.2
 commit
 
-# Configure BFD for eBGP
-set protocols bgp group ebgp neighbor <bgp_peer_address> bfd-liveness-detection minimum-interval <value>
 ```

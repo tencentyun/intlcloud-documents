@@ -1,6 +1,6 @@
-Direct Connect connects Tencent Cloud with the user IDC with a dedicated physical line. After configuring the Direct Connect gateway and dedicated tunnel on the Tencent Cloud side, users need to configure routes on the local IDC. Using the layer-3 sub-interfaces to connect to Tencent Cloud is recommended.
-
+Direct Connect connects Tencent Cloud with the user IDC with a dedicated physical line. After configuring the Direct Connect gateway and dedicated tunnel on the Tencent Cloud side, users need to configure routes on the local IDC.
 >?This document only introduces the local routing configurations associated with Tencent Cloud Direct Connect. For other information, please see the local router documentation or consult your router provider.
+>
 
 ## Routing Configuration
 >?It's recommended that you use the default configurations of `Keepalive` and `holdtime` for the BGP connection between the two peers. The `holdtime` is three times the interval at which keepalive messages are sent. The recommended `holdtime` value is 180s.
@@ -19,18 +19,21 @@ interface  interface-number.subnumber
 description <vlan_description>
 dot1q termination vid <vlanid>
 ip address <subinterface_ipaddress> <subinterface_netmask>
-bfd min-transmit-interval <value> //BFD parameter
-bfd min-receive-interval <value>  //BFD parameter
-bfd detect-multiplier <value>  //BFD parameter
 
+# Configure NQA detection for static routes
+nqa entry <admin-name> < test-name>
+type icmp-echo  //Default detection type
+destination-address  x.x.x.x（nexthop-address ）//Detection address
+interval seconds 2 //Detection interval
+frequency <value> //Detection frequency
+history-record enable
+probe count  <value> //Number of packets per detection
+probe timeout <value> //Timeout period 
 
-# Set eBGP
-bgp <as_number>
-#router-id <route_id>
-peer <bgp_peer_address> as-number <bgp_peer_as_number>
-peer <bgp_peer_address> password cipher <bgp_auth_key>
-peer <bgp_peer_address> description <bgp_desc>
+# Configure Track 
+track <number> nqa entry  <admin-name>< test-name> //Associate Track with NQA
 
-# Configure BFD for eBGP
-peer <bgp_peer_address> bfd
+# Configure static routing
+ip route-static <Destination_IP_address> <Mask_of_the-IP_address> <VLAN_interface> track <number> 
+
 ```
