@@ -23,7 +23,7 @@ CSSサービスを使用するには、少なくとも**2つ**のドメイン名
 >?
 >- CSSは、デフォルトでテストドメイン名 `xxxx.livepush.myqcloud.com`を提供しています。このドメイン名でプッシュテストを行うことはできますが、正式なサービスでこのドメイン名をプッシュドメイン名として使用することはお勧めしません。
 >- ドメイン名の追加に成功すると、**ドメイン名管理**のドメイン名リストでドメイン名情報を確認することができます。追加したドメイン名の管理を行いたい場合は、[ドメイン名管理](https://intl.cloud.tencent.com/document/product/267/31056)をご参照ください。
->-  ライブブロードキャストドメイン名の詳細については、[Basic CSS Features]（https://intl.cloud.tencent.com/document/product/267/7968）をご参照ください。
+>-  ライブブロードキャストドメイン名の詳細については、[Basic CSS Features](https://intl.cloud.tencent.com/document/product/267/7968)をご参照ください。
 5. ドメイン名の追加に成功すると、システムが自動的にCNAMEドメイン名（`.tlivecdn.com`または`.tlivepush.com`を拡張子とする）を割り当てます。CNAMEドメイン名は直接アクセスできません。ドメイン名サービスプロバイダのところでCNAME設定を完了させる必要があり、設定が有効になるとCSSサービスを利用できるようになります。例として、DNSサービスプロバイダがTencent Cloudとなる場合のCNAMEレコード追加の操作手順は次のようになります：[](id:step1_1_1)
     1. [ドメイン名サービスコンソール](https://console.cloud.tencent.com/domain)にログインします。
     2. CNAMEを追加する必要のあるドメイン名を選択し、**解析**をクリックします。
