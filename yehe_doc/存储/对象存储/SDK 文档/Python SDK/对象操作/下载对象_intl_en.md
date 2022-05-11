@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to simple operations, multipart operations, and other object operations.
+This document provides an overview of APIs and SDK code samples for simple operations, multipart operations, and other object operations.
 
 
 | API | Operation | Description |

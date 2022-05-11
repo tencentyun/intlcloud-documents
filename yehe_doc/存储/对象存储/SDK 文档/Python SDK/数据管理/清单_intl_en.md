@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to COS inventory.
+This document provides an overview of APIs and SDK code samples for COS inventory.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
