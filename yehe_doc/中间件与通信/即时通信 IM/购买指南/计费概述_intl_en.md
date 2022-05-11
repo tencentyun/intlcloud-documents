@@ -5,9 +5,7 @@ Instant Messaging (IM) is pay-as-you-go on a monthly billing cycle.
 
 ## Basic Services
 Three IM plans are available: Trial Edition, Pro Edition, and Flagship Edition. Applications will be assigned the free Trial Edition by default. You can select the plan that best suits your business needs. 
-
->!The push to all users service is only to users of the Ultimate Edition (It becomes unavailable if you are downgraded to the Pro Edition). You can apply for this service by submitting a [configuration change ticket](https://intl.cloud.tencent.com/document/product/1047/44322). After the application is approved, the service will be turned on in 48 hours.
-
+>! The feature of pushing to all users is available only to users with Flagship edition accounts. See [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322) to apply for this feature. The feature will be enabled **48 hours** after your application is approved.
 The following table compares the features of different editions:
 
 | Feature | Trial Edition | Pro Edition | Flagship Edition |
@@ -23,10 +21,12 @@ The following table compares the features of different editions:
 | Free retention period of historical messages | 7 days | 7 days | 30 days |
 | Quota of free daily active users (DAU) | 100/month | 10,000/month | 10,000/month |
 | Free peak group count | 100,000/month | 100,000/month | 100,000/month |
-| [Pushing to all users](https://intl.cloud.tencent.com/document/product/1047/37165) | Not supported | Not supported |Supported([Application](https://intl.cloud.tencent.com/document/product/1047/44322)) |
+| [Pushing to all users](https://intl.cloud.tencent.com/document/product/1047/37165) | Not supported | Not supported |Supported. You need to [apply for this feature](https://intl.cloud.tencent.com/document/product/1047/44322). |
 | Concurrent logins on multiple devices on the same platform | Not supported | Not supported |Supported |
 | Local message search (Android, iOS) | Not supported | Not supported |Supported |
-
+| Viewing of the message history in an audio-video group |  Not supported | Not supported |Supported |
+| Community  | Not supported | Not supported |100,000. You need to [apply for this feature](https://intl.cloud.tencent.com/document/product/1047/44322).  |
+| Read receipts for group messages |  Not supported | Not supported |Supported |
 
 - **Maximum audio-video groups that can be created**: indicates the total number of audio-video groups that can be created by all users in a single SDKAppID. Audio-video groups support only text, image, short audio, and custom messages. Services such as [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267) and [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647) need to be activated separately.
 - **Maximum net increase in group quantity per day**: indicates the net total number of groups (of all types) that can be created by all users in a single SDKAppID in a calendar day. The maximum net increase in group quantity per day is 10,000, in which up to 5 online broadcasting chat rooms can be created. If you have reached the group creation threshold of the day but need to create more groups, you can delete the groups that are no longer needed and create new groups. For more information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
