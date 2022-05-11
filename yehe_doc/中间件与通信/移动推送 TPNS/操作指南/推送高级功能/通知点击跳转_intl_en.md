@@ -344,12 +344,3 @@ If you use iOS SDK integration, you can obtain custom parameters using click cal
 }
 ```
 
-If you use Flutter plugin integration, use the following APIs in the `runner->AppDelegate->didFinishLaunchingWithOptions` method at cold startup to get parameters:
-```objective-c
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-	{
-			// Get the message content.
-			NSDictionary *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-			// Perform logical processing according to the message content.
-	}
-```
