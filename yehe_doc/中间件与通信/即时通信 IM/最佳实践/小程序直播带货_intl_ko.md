@@ -17,8 +17,6 @@
 
 라이브 커머스의 핵심 기능은 IM 기능과 라이브 방송 기능으로 구분되는 것을 알 수 있으며, [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)과 [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/1047)를 니즈 실현의 기반으로 사용합니다.
 
-## Demo 체험
-![](https://main.qcloudimg.com/raw/3158cc06a9e6fafa48554bbe1918fa8e.jpg)
 
 ## 시나리오 기반 SDK
 
@@ -114,12 +112,9 @@ public async sendCustomMsgAndEmitEvent(type: string, extension?: string) {
 라이브 방송 시나리오에서 사용자는 프로필 사진, 닉네임 등 외에도 레벨 정보를 가지고 있습니다. 메시지 발송, 선물하기를 하면 사용자의 레벨이 상승합니다. 콜백을 통해 관련 기능을 구현할 수 있습니다. 콜백을 통해 사용자의 그룹, 관계망, 1:1 채팅, 온라인 상태 등의 상태가 변경될 때 알림을 받을 수 있으며, 그룹 채팅에서 사용자의 텍스트 메시지 발송, 선물하기 등에 근거하여 사용자 레벨을 변경할 수 있습니다. 
 콜백 관련 작업은 [콜백 설정](https://intl.cloud.tencent.com/document/product/1047/34520) 및 [서드 파티 콜백 소개](https://intl.cloud.tencent.com/document/product/1047/34354)를 참고하십시오.
 
-### 5단계: 콘텐츠 필터링을 통한 민감한 단어 차단
-
-안전 차단(콘텐츠 필터링) 기능은 라이브 방송, 소셜, 컨설팅 및 기타 분야에서 항상 필수 불가결한 기능이었습니다. 라이브 방송 시나리오에서 민감한 콘텐츠 유포가 의심될 경우 그 결과는 매우 심각합니다. IM은 민감한 단어 필터링 기능을 제공합니다. 기본적으로 일부 국가의 지도자 이름에 대한 민감한 단어 필터링을 지원합니다. 또한 [콘텐츠 필터링 서비스](https://intl.cloud.tencent.com/document/product/1047/34350) 34350)를 부가적으로 구매할 수 있습니다.
 
 
-### 6단계: CSS를 통한 푸시 주소 생성 및 라이브 방송 시작 
+### 5단계: CSS를 통한 푸시 주소 생성 및 라이브 방송 시작 
 Tencent Cloud LVB는 전자상거래 플랫폼의 발전을 도와, 업체가 상품 정보를 더욱 복합적으로 전달할 수 있게 하고, 사용자의 효과적인 의사 결정을 도와 마케팅 비용 절감과 거래량을 증가시켰습니다.
 라이브 방송 시작 전 [주소 생성기](https://intl.cloud.tencent.com/document/product/267/31084)를 통해 푸시 스트림 주소를 생성한 후, [라이브 방송 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31558)을 진행합니다.
 
