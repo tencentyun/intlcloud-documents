@@ -2,8 +2,6 @@
 1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)。
 2. 访问 [云直播控制台](https://console.cloud.tencent.com/live/livestat)，获取推流地址，实现直播推流，具体操作请参见 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 。
 3. 选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击【添加域名】，填写您已备案成功的域名，选择类型为【播放域名】，单击【保存】即可。
->!
->- 若您没有播放域名，可以前往 [【域名注册】](https://buy.cloud.tencent.com/domain?from=console) 购买域名。您也可以通过其他域名服务商购买域名。
 
 4. 登录 [域名服务控制台](https://console.cloud.tencent.com/domain)，对已添加成功的播放域名进行 CNAME 配置，具体操作请参见 [配置域名 CNAME](https://intl.cloud.tencent.com/document/product/267/31057)。
 
@@ -14,7 +12,9 @@
 - 填写与推流地址相同的 StreamName，播放地址 StreamName 要与推流地址 StreamName 一致才能播放对应的流。
 - 选择地址过期时间，例如：`2019-12-13  23:59:59`。
 - 单击 【生成地址】即可。
-![](https://main.qcloudimg.com/raw/22849cdba8e95de22b9fbc2dbe6bf4eb.png)
+
+![](https://main.qcloudimg.com/raw/a2f130098eb40df252956ffb3752d230.png)
+
 >?除上述方法，您还可以在云直播控制台的[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中，选择播放域名单击【管理】，选择【播放配置】，选择播放地址的过期时间，输入与推流地址相同的 StreamName，单击【生成播放地址】即可。
 
 ## 直播播放
@@ -22,7 +22,7 @@
 
 ### 场景一： PC 端播放
 您可使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg 及 [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html)  等工具进行播放。
-![](https://main.qcloudimg.com/raw/10aa7116cbfb227f28ef5e6cf850d02f.png)
+![](https://main.qcloudimg.com/raw/e47f8d4d9ca63e678439df3e8a17c9b4.png)
 ### 场景二：移动端播放
 1. 下载安装 [腾讯云工具包 App](https://intl.cloud.tencent.com/document/product/1071/38147)。
 2. 打开选择【移动直播】>【标准直播播放】或【快直播播放】。

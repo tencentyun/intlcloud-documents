@@ -15,7 +15,7 @@ Cloud Streaming Services (CSS) provides users with fast, stable, and professiona
 </thead>
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/41224">LVB</a></td>
-<td>Backed by Tencent's well-established audiovisual platforms, global network of cache nodes, and leading AI technologies in audio and video, LVB offers professional, stable, and quick-to-integrate live streaming and distribution solutions.</td>
+<td>Backed by Tencent's suite of audio/video platforms, global network of cache nodes, and leading AI technologies in audio and video, LVB offers professional live streaming and distribution solutions that are stable and easy to integrate.</td>
 <td>Showroom, live game streaming, live streaming for TV and radio, live shopping</td>
 </tr>
 <tr>

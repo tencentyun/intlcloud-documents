@@ -2,9 +2,6 @@
 1. [Tencent CSS 서비스](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)가 활성화되어. 
 2. [CSS 콘솔](https://console.cloud.tencent.com/live/livestat)에 액세스하여 푸시 스트리밍 주소를 획득해 라이브 방송 푸시 스트리밍을 구현합니다. 자세한 방법은 [라이브 방송 푸시 스트리밍](https://intl.cloud.tencent.com/document/product/267/31558)을 참조하십시오.
 3. [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)를 선택해 [도메인 추가]를 클릭하여 ICP비안을 받은 도메인을 입력하고 [재생 도메인] 유형을 선택한 후 [저장]을 클릭합니다.
->!
->
->- 재생 도메인이 없는 경우 [[도메인 등록]](https://intl.cloud.tencent.com)을 통해 도메인을 구매할 있습니다. 다른 도메인 서비스 제공 업체를 통해서도 도메인을 구매할 수 있습니다.
 4. [도메인 서비스 콘솔](https://console.cloud.tencent.com/domain)에 로그인하여 추가된 재생 도메인의 CNAME을 설정합니다. 자세한 방법은 [도메인 CNAME 설정](https://intl.cloud.tencent.com/document/product/267/31057)을 참조하십시오.
 
 ## 재생 주소 획득
