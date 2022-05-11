@@ -6,4 +6,4 @@ Tencent Cloud는 CentOS 8 시리즈 이미지를 비활성화하지 않지만 Ce
 - [OpenCloudOS Server](https://intl.cloud.tencent.com/document/product/213/46209)
 - CentOS Stream 버전 및 Ubuntu와 같은 기타 릴리스 버전
 
-CentOS를 사용하는 경우 가능한 한 빨리 해당 버전의 TencentOS로 마이그레이션할 것을 권장하며, 구체적인 마이그레이션 작업은 [CentOS 마이그레이션 TencentOS 가이드](https://intl.cloud.tencent.com/document/product/213/46210)를 참고하십시오.
+CentOS를 사용하는 경우 가능한 한 빨리 해당 버전의 TencentOS로 마이그레이션할 것을 권장하며, 구체적인 마이그레이션 작업은 [CentOS 마이그레이션 TencentOS 가이드](https://intl.cloud.tencent.com/document/product/213/46962)를 참고하십시오.
