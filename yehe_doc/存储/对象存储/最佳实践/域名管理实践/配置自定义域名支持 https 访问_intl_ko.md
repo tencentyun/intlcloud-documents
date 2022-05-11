@@ -48,7 +48,7 @@ server {
     }
 }
 ```
-`server.crt;`, `server.key`는 귀하의 자체(사용자 정의) 도메인 HTTPS 인증서입니다. 귀하의 도메인에 HTTPS 인증서가 없는 경우 [Tencent Cloud SSL 인증서](https://intl.cloud.tencent.com/products/ss) 페이지에서 신청하십시오.
+`server.crt;`, `server.key`는 귀하의 자체(사용자 정의) 도메인 HTTPS 인증서입니다. 귀하의 도메인에 HTTPS 인증서가 없는 경우 [Tencent Cloud SSL 인증서](https://intl.cloud.tencent.com/products/ssl) 페이지에서 신청하십시오.
 현재 인증서가 없는 경우 다음과 같은 설정 정보를 삭제할 수 있습니다. 액세스 시 알람이 뜰 수 있으나 계속을 클릭하면 액세스할 수 있습니다.
 ```shell
 ssl on;

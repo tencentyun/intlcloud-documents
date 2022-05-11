@@ -18,22 +18,11 @@ You must already have admin account/password for logging into Windows instance r
 ## Directions
 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
-2. On the instance management page, proceed according to the actually used view mode:
-<dx-tabs>
-::: List view
-Locate the Windows CVM instance you want to log in to and click **Log In** on the right as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/bad0e4e6670096461c7e9498d5d47654.png)
-
-:::
-::: Tab view
-Locate the Windows CVM instance you want to log in to and click **Log In** as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/2cdbf7a52ed228109fd1bc55a6ed1d6c.png)
-:::
-</dx-tabs>
-
+2. On the **Instances** page, locate the Windows CVM instance you want to log in to and click **Log In** as shown below:
+![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. In the **Standard Login | Windows Instance** window that is opened, select **login with VNC** as shown below:
 ![](https://main.qcloudimg.com/raw/9f964c1ebdec90f7e371b42340e13662.png)
-4. In the login window that pops up, select **Send CtrlAltDel** in the top-left corner and press **Ctrl-Alt-Delete** to open the system login window as shown below:
+4. In the login window that pops up, select **Send CtrlAltDel** in the upper-left corner and press **Ctrl-Alt-Delete** to open the system login window as shown below:
 ![](https://main.qcloudimg.com/raw/c07755c1e0d0040e2ecb87f048b8be1b.png)
 5. Enter the login password and press **Enter** to log in to the Windows CVM instance.
 

@@ -218,7 +218,7 @@ Create a group and specify group member custom fields. `AppMemberDefinedData` is
 ```
 
 
-<span id="Parameters"></span>
+[](id:Parameters)
 ### Request packet fields
 
 | Field | Type | Required | Description |
@@ -287,7 +287,7 @@ The list below contains error codes specific to this API.
 | 10036 | The number of AVChatRoom groups created exceeds the limit. Delete some AVChatRoom groups first or refer to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to purchase an upgrade. |
 | 10037 | The request specifies Owner_Account, but the number of groups that the group owner has created or joined exceeds the limit. The group owner needs to quit some groups first or refer to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to purchase an upgrade. |
 | 10038 | The number of members imported in the request packet exceeds the limit. Reduce the number of members imported in the `MemberList` parameter or refer to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to purchase an upgrade. |
-| 80001 | The group information failed text content filtering. Check whether the group name, group announcement, group introduction, or other content contains sensitive words. |
+
 
 ## API Debugging Tool
 

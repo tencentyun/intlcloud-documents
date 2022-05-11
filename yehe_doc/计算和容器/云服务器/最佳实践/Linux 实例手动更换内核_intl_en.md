@@ -1,5 +1,7 @@
 ## Overview
-Bottleneck Bandwidth and Round-trip propagation time (BBR) is a TCP congestion control algorithm developed by Google in 2016. It helps significantly improve the throughput and the TCP connection latency of Linux servers. However, enabling BBR requires a Linux kernel version of 4.10 or later. If you use an earlier version, you need to upgrade your kernel. This document guides you through how to manually change the kernel and enable BBR on your Linux server.
+Bottleneck Bandwidth and Round-trip propagation time (BBR) is a TCP congestion control algorithm developed by Google in 2016. It helps significantly improve the throughput and the TCP connection latency of Linux servers. However, enabling BBR requires a Linux kernel version of 4.10 or later. If you use an earlier version, you need to upgrade your kernel.
+
+This document describes how to manually change the kernel and enable BBR in a Linux CVM instance on CentOS 7.5 as an example.
 
 ## Directions
 
@@ -39,7 +41,7 @@ vim /etc/default/grub
 ```
 2. Press **i** to switch to the edit mode and change `GRUB_DEFAULT=saved` to `GRUB_DEFAULT=0`.
 ![](https://main.qcloudimg.com/raw/484e7a6e818dc44c2d4debb9230e0b46.png)
-3. Press **Esc** and enter **:wq** to save and close the file.
+3. Click **Esc** and enter **:wq** to save and close the file.
 4. Run the following command to generate the kernel configuration again.
 ```
 grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -77,7 +79,7 @@ vim /etc/sysctl.conf
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 ```
-3. Press **Esc** and enter **:wq** to save and close the file.
+3. Click **Esc** and enter **:wq** to save and close the file.
 4. Run the following command to load the kernel parameter settings to the `/etc/sysctl.conf` configuration file.
 ```
 sysctl -p

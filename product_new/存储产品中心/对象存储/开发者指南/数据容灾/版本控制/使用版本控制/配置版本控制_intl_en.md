@@ -2,7 +2,7 @@
 Versioning allows you to store multiple versions of an object in a bucket and retrieve, delete, or restore a specified version.
 For more information, see [Versioning Overview](https://cloud.tencent.com/document/product/436/19883).
 
->Only the root account and authorized sub-accounts can configure the versioning state of a bucket.
+>!Only the root account and authorized sub-accounts can configure the versioning state of a bucket.
 
 ## Directions
 ### Using the COS console
@@ -28,9 +28,10 @@ Call the Versioning method in the SDK. For more information, see the SDK documen
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#versioning)
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35271#versioning)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#versioning)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#versioning)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#versioning)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37695#versioning)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/10199#versioning)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35804#versioning)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34997#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)
+
