@@ -17,8 +17,6 @@
 
 由此可以看出，直播带货的核心功能分为即时通信 IM 能力和直播能力，您可以选用 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 与 [云直播](https://intl.cloud.tencent.com/document/product/1047) 作为需求实现的基础。
 
-## Demo 体验
-![](https://main.qcloudimg.com/raw/3158cc06a9e6fafa48554bbe1918fa8e.jpg)
 
 ## 场景化 SDK
 
@@ -114,12 +112,8 @@ public async sendCustomMsgAndEmitEvent(type: string, extension?: string) {
 在直播场景中，用户除了头像、昵称等一般还有等级信息，例如观众发消息、送礼之后用户的成长等级需要增加。您可以通过回调实现相关功能，业务方可通过回调获取用户在群组、关系链、单聊消息、在线状态等方面状态改变时的消息，根据在群聊中用户发普通文本消息以及送礼消息来改变用户的等级。
 回调相关操作请参见 [回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 和 [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)。
 
-### 步骤5：通过安全打击来实现敏感词的拦截
 
-安全打击能力一直是直播、社交、咨询等领域中必不可少的能力。在直播场景中，如果涉嫌传播敏感内容，后果非常严重。即时通信 IM 提供敏感词过滤功能，默认支持对部分国家领导人名进行敏感词过滤，您也可以增值购买 [安全打击服务](https://intl.cloud.tencent.com/document/product/1047/34350)。
-
-
-### 步骤6：使用云直播生成推流地址并开始直播
+### 步骤5：使用云直播生成推流地址并开始直播
 腾讯云标准直播助力电商平台发展，使商家更加全面地传递了商品信息，促进用户的有效决策，降低营销成本，增加成交量。
 在开始直播前，您需要通过 [地址生成器](https://intl.cloud.tencent.com/document/product/267/31084) 生成推流地址，然后再进行 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558)。
 
