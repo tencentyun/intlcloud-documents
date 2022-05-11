@@ -6,7 +6,7 @@ CSS supports live streaming with high numbers of concurrent access requests requ
 - CSS covers all live streaming uses cases and provides live streaming solutions for various industries such as gaming, sports, ecommerce, media, and education.
 - For different live streaming scenarios such as high-concurrency playback and push and ultra-low latency, CSS provides different tailor-made solutions for specific use cases, which ensures a higher cost performance.
 
-### Video Delivery Coverage
+### Global Distribution
 With over 2,000 cache nodes deployed globally, CSS can ensure high service availability and media transfer speed even during peak hours with high concurrency.
 
 ### Video Data Analysis
