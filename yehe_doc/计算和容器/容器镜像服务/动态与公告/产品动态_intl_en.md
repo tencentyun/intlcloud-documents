@@ -81,9 +81,10 @@ N/A
 
 <table>
  <tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Related Documents</th></tr>
- N/A
- N/A
+ <tr><td>Adds support for multiple code sources in the image building feature</td><td>The private GitLab and TGit code sources are now supported, and the code source authorization process has been optimized.</td><td>-</a></td></tr>
+ <tr><td>Image filtering is supported in the delivery pipeline deployment feature</td><td>Local push images can be used to trigger the deployment process, and filtering rules can be configured to deploy only the most recently pushed images that meet the rules.</td><td>-</td></tr>
 </table>
+
 
 ## September 2020
 
