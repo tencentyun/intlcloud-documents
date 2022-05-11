@@ -105,7 +105,7 @@ N/A
 
 <table>
  <tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Related Documents</th></tr>
- N/A
+ <tr><td>Launches the delivery pipeline feature</td><td>After a delivery pipeline is configured, code updates can automatically trigger image building, image push, and application updates. When used with TKE, this feature can quickly implement container DevOps.</td><td>-</a></td></tr>
   <tr><td>Updates the Helm Chart feature</td><td>Users can upload and download Chart packages through the console. TKE can use TCR private Helm repositories for application deployment.</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35493">Managing Helm Charts</a></td></tr>
 </table>
 
