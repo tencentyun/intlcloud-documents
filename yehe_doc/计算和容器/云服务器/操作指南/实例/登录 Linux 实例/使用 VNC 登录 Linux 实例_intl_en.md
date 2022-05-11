@@ -3,7 +3,7 @@
 VNC login provided by Tencent Cloud allows users to remotely log in to CVM via a web browser. If a client does not have remote login installed or it cannot be used, user can log in to the CVM using VNC login to check the CVM status and perform basic management operations using the CVM account.
 
 
-## Usage Limits
+## Use Limits
 
 - VNC login currently does not support copy and paste, Chinese input method, and file upload or download.
 - When you use VNC to log in to CVM, mainstream browsers must be used, such as Chrome, Firefox, IE 10 and above.
@@ -18,19 +18,8 @@ You already have the admin account and password to log in to the instance.
 ## Directions
 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
-2. On the instance management page, proceed according to the actually used view mode:
-<dx-tabs>
-::: List view
-Locate the Linux CVM instance you want to log in to and click **Log In** on the right as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/bad0e4e6670096461c7e9498d5d47654.png)
-
-:::
-::: Tab view
-Select the tab of the Linux CVM instance you want to log in to and click **Log In** as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/2cdbf7a52ed228109fd1bc55a6ed1d6c.png)
-
-:::
-</dx-tabs>
+2. On the **Instances** page, locate the Linux CVM instance you want to log in to and click **Log In** as shown below:
+![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
 3. In the **Standard Login | Linux Instance** window that is opened, select **login with VNC** as shown below:
 ![](https://main.qcloudimg.com/raw/1bd4877abc15d06adb8c54fc7ed1318e.png)
 4. In the opened window, enter the username after **login** and press **Enter**.
@@ -40,7 +29,7 @@ The entered password is not displayed by default. After login, the information o
 ![](https://main.qcloudimg.com/raw/03a8492f66e8342221858709b6068669.png)
 
 
-## Subsequent Operations
+## Operations
 
 
 After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, please see:
