@@ -5,16 +5,17 @@
 <table>
  <tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Related Documents</th></tr>
 <tr><td>Upgrade of image acceleration to download the data in the image on demand</td><td>Upgrades the capability of image acceleration. It can be enabled with one click. The container can be started in seconds when deploying the application, without the need to pull all image data.</td><td>-</td></tr>
-N/A
+<tr><td>The Personal Edition service supports automatic image deployment in all regions</td><td>The personal version service supports the automatic image deployment function based on CODING DevOps in all available regions, which can automatically trigger image construction for code push and automatically push to the personal version image repository to update container applications in the specified cluster.</td><td>-</td></tr>
 </table>
 
 ## November 2021
 
 <table>
  <tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Related Documents</th></tr>
-N/A
+<tr><td>The Personal Edition service supports image building in all regions</td><td>The Personal Edition service supports image building based on CODING DevOps in all available regions, and you can select the specified image repository > image build in the unified product console to configure it.</td><td>-</td></tr>
 <tr><td>Changes the entry point of TCR Individual in the console</td><td>Starting from November 1, 2021 (UTC +8), entry of TCR Individual (the original path: TKE > Image Repository) in the console will be changed to be located in the TCR console and this will be in beta test. For the relationship of the existing features in the two consoles, see related documents.</td><td>-</td></tr>
 </table>
+
 
 ## October 2021
 
