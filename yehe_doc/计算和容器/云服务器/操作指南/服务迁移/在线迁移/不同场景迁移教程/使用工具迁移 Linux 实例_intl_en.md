@@ -172,7 +172,7 @@ The client.json configuration file is described as below:
 	<td>Client.Net.Mode</td>
 	<td>Integer</td>
 	<td>Yes</td>
-	<td>Migration mode, the value of which defaults to <code>0</code>, indicating the public network migration. Valid values: <code>0</code>(<a href="https://intl.cloud. tencent.com/document/product/213/44340">Public network migration mode</a>), <code>1</code>(<a href="https://intl.cloud.tencent.com/document /product/213/44340">Private network migration mode: Scenario 1</a>), <code>2</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 2</a>), <code>3</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 3</a>).</td>
+	<td>Migration mode, the value of which defaults to <code>0</code>, indicating the public network migration. Valid values: <code>0</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Public network migration mode</a>), <code>1</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 1</a>), <code>2</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 2</a>), <code>3</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 3</a>).</td>
   </tr>
   <tr>
 	<td>Client.Extra.IgnoreCheck</td>
