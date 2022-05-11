@@ -47,7 +47,7 @@ A codec standard for highly-compressed digital video. H.264 is developed by ITU-
 [](id:h265)
 ### H.265
 H.265 is optimized based on the H.264 video codec while still having some of the same features as H.264. It has the following advantages in transcoding:
-- It allows general HD audio/video (720p at a resolution of 1280 x 720) to transfer at 1-2 Mbps.
+- It allows general HD audio/video (720p at a resolution of 1280 x 720) to be transferred at 1-2 Mbps.
 - It achieves the optimal balance between the bitstream, encoding quality, latency, and algorithm complexity.
 
 
