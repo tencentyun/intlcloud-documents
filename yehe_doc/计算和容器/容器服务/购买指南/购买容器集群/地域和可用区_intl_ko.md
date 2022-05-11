@@ -4,7 +4,7 @@
 
 리전(Region)은 물리적 데이터센터의 지리적 구역입니다. Tencent Cloud는 리전별로 철저히 격리되어, 리전별 안정성과 내고장성을 최대한 확보합니다. 액세스 지연 시간 축소 및 액세스 속도 향상을 위해 클라이언트와 가장 가까운 리전을 선택하시기 바랍니다.
 
-다음 리스트 혹은 API 인터페이스 [DescribeRegion](http://intl.cloud.tencent.com/document/product/213/9456)을 통해 전체 리전 리스트를 조회할 수 있습니다.
+다음 리스트 혹은 API 인터페이스 [DescribeRegion](https://intl.cloud.tencent.com/document/product/213/15708)을 통해 전체 리전 리스트를 조회할 수 있습니다.
 
 ### 관련 특징
 
