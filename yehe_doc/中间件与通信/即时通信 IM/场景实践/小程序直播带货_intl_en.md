@@ -16,8 +16,6 @@ The following features must be implemented for interactive scenarios:
 
 As you can see, the core functionality of livestream marketing consists of Instant Messaging (IM) and livestreaming. Therefore, you can use [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047) and [Live Video Broadcasting (LVB)](https://intl.cloud.tencent.com/document/product/267) as the underlying services to meet your needs.
 
-## Demo
-![](https://main.qcloudimg.com/raw/3158cc06a9e6fafa48554bbe1918fa8e.jpg)
 
 ## Scenario-based SDK
 
@@ -110,12 +108,10 @@ The assistant calls the [RESTful API for modifying basic group profiles](https:/
 In addition to a profile photo and nickname, every livestreaming audience member has a level, which increases after sending messages or gifts. This feature can be enabled with callbacks. You can use callbacks to be notified of user changes related to groups, relationship chains, one-to-one chat messages, and online statuses and then change a user’s level depending on whether the user sends text messages or gift messages.
 For callback-related operations, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520) and [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354).
 
-### Step 5: Block sensitive words with content filtering
-
-Content filtering capabilities are essential in fields like livestreaming, social networking, and consultation. In the live streaming scenario, sending sensitive content could have serious consequences. IM provides a feature to filter out sensitive words and supports filtering some national leader names by default. You can also purchase the value-added [content filtering service](https://intl.cloud.tencent.com/document/product/1047/34350) for this purpose.
 
 
-### Step 6: Generate a push address and start streaming with LVB
+
+### Step 5: Generate a push address and start streaming with LVB
 Tencent Cloud Live Video Broadcasting (LVB) helps with the growth of e-commerce platforms by enabling merchants to display items in greater detail and assisting consumers in making informed decisions, ultimately reducing marketing costs and boosting sales.
 Before starting a live stream, you need to generate a push address through the [address generator](https://intl.cloud.tencent.com/document/product/267/31084) and then begin [LVB push](https://intl.cloud.tencent.com/document/product/267/31558).
 
