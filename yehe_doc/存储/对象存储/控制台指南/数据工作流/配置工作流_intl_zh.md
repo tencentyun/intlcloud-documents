@@ -2,12 +2,12 @@
 
 通过数据工作流，您可以快速、灵活、按需搭建视频处理流程。每个工作流与输入存储桶的一个路径绑定，当视频文件**上传**至该路径时，该媒体工作流就会被**自动触发**，执行指定的处理操作，并将处理结果自动保存至目标存储桶的指定路径下。
 
-在数据工作流中可以实现**音视频转码（包括极速高清转码、广电专业格式转码）**、**视频截帧**、 **视频转动图**、**智能封面**、**音视频拼接**、**人声分离**、**精彩集锦**、**hls自适应多码率**、**SDRtoHDR** 、**视频增强**、**超分辨率**、**音视频分段**、**自定义函数**、**图片处理**等功能。
+在数据工作流中可以实现**音视频转码（包括极速高清转码、广电专业格式转码）**、**视频截帧**、 **视频转动图**、**智能封面**、**音视频拼接**、**人声分离**、**精彩集锦**、**自适应码流**、**SDRtoHDR** 、**视频增强**、**超分辨率**、**音视频分段**、**自定义函数**、**图片处理**等功能。
 
 >! 
-> - 工作流目前支持处理 3gp、asf、avi、dv、flv、f4v、m3u8、m4v、mkv、mov、mp4、mpg、mpeg、mts、ogg、rm、rmvb、swf、vob、wmv、webm、mp3、aac、flac、amr、m4a、wma、wav 格式的文件，您在发起媒体处理请求时，请务必输入完整的文件名和文件格式，否则无法识别格式和处理。
-> - 目前工作流功能仅支持对上传中的视频文件进行操作，若您需要对云上数据进行媒体处理操作，请使用 [任务](https://intl.cloud.tencent.com/document/product/436/46409) 功能。
-> 
+>- 工作流目前支持处理 3gp、asf、avi、dv、flv、f4v、m3u8、m4v、mkv、mov、mp4、mpg、mpeg、mts、ogg、rm、rmvb、swf、vob、wmv、webm、mp3、aac、flac、amr、m4a、wma、wav 格式的文件，您在发起媒体处理请求时，请务必输入完整的文件名和文件格式，否则无法识别格式和处理。
+>- 目前工作流功能仅支持对上传中的视频文件进行操作，若您需要对云上数据进行媒体处理操作，请使用 [任务](https://intl.cloud.tencent.com/document/product/436/46409) 功能。
+>
 
 ## 操作步骤
 
@@ -52,7 +52,7 @@
 ::: 精彩集锦
 ![](https://qcloudimg.tencent-cloud.cn/raw/d320ea46e01a3969811deecf3ee245ff.png)
 :::
-::: hls自适应多码率
+::: 自适应码流
 ![](https://qcloudimg.tencent-cloud.cn/raw/b6f7821676471e7f505dd4f4e0c09574.png)
 说明：将多码率、多音轨的多个文件打包生成一个文件，一步生成多码率自适应的视频文件。
 :::
@@ -60,31 +60,32 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/51ba2ccf5a680c5217a08cfdbaccc146.png)
 :::
 ::: 视频增强
-![](https://qcloudimg.tencent-cloud.cn/raw/ab8e4f29c3843b83510321a57177fbc7.png)
+
 :::
 </dx-tabs>
 <dx-tabs>
-::: 超分辨率
-![](https://qcloudimg.tencent-cloud.cn/raw/d8baeec986771fd7b80266af801f97a5.png)
-:::
 ::: 音视频分段
 ![](https://qcloudimg.tencent-cloud.cn/raw/2fd5506dabedfbc051a13bb019ca601f.png)
 :::
+
+::: 超分辨率
+
+:::
 ::: 自定义函数
-![](https://main.qcloudimg.com/raw/d2720047917038d5c9682e5d6c4bf51e.png)
+
 :::
 :::图片处理
-![](https://qcloudimg.tencent-cloud.cn/raw/fd2ab4c60df5733debfeac15bafc2c98.png)
+
 :::
 </dx-tabs>
 7. 以上配置无误后，单击**保存**，即可看到刚创建的工作流。
-![](https://main.qcloudimg.com/raw/d72a2ce91f802bc4c5e65b78122319b9.png)
+
 工作流默认为未启用状态，单击该工作流对应的状态按钮，即可启用工作流。工作流启用后，将在5分钟内生效。工作流生效后，后续上传的视频文件将自动进行媒体处理操作，待处理完成后，将新生成的文件输出到指定文件路径中。
 
 ### 管理工作流
 
 进入工作流管理页面，查看已创建工作流的列表。
-![](https://main.qcloudimg.com/raw/b603c8a249e36230eaf1ade521df2afd.png)
+
 工作流列表展示了工作流名称、工作流 ID、输入路径、创建时间以及启用状态等信息。支持按照工作流名称、工作流 ID 搜索以及对指定工作流进行查看详情、编辑和删除操作。
 
  - **启用按钮**：启动工作流后，您上传至输入存储桶对应路径下的视频文件将会根据工作流配置自动处理。再次单击该启用按钮，可暂停工作流。暂停工作流后，将不会对上传至对应路径下的视频文件进行自动处理。
@@ -104,11 +105,11 @@
 每个视频文件执行完一遍工作流，就会产生一个执行实例，执行实例页面展示源文件地址、工作流执行状态、执行时间等信息。
 
 1. 进入工作流管理页面，找到目标工作流，并在操作栏中单击**查看执行实例**，进入执行实例列表页面。
-   ![](https://main.qcloudimg.com/raw/b603c8a249e36230eaf1ade521df2afd.png)
+
 2. 在列表页面，找到目标实例，并在操作栏中单击**详情**，进入实例详情页面。
-   ![](https://main.qcloudimg.com/raw/9adfdda6e20fe90c1675a0192bbe4e95.png)
+
 3. 在实例详情页面中，您可查看工作流各节点的任务 ID、执行状态、开始/结束时间等信息。
-   ![](https://main.qcloudimg.com/raw/0c2f798838b18d708e00edb66d5c36cb.png)
+
 
 ### 触发工作流
 
@@ -144,6 +145,3 @@
 若目标文件名的参数格式设置为：`${InputNameAndExt}_${RunId}.${Ext}`。
 
 当工作流执行时产生两个执行实例（例如执行实例 ID 分别为000001和000002）时，则最后目标文件名为 test1.mp4_000001.flv 和 test2.mp4_000002.flv。
-
-
-
