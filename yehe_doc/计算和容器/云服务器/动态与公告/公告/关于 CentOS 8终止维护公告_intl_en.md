@@ -6,4 +6,4 @@ Tencent Cloud will not discontinue CentOS 8 images, but will stop updating CentO
 - [OpenCloudOS Server](https://intl.cloud.tencent.com/document/product/213/46209)
 - CentOS Stream and other released versions such as Ubuntu
 
-If you are using CentOS, you are advised to migrate to the corresponding TencentOS version as soon as possible. For the detailed migration directions, see [Migrating CentOS to TencentOS](https://intl.cloud.tencent.com/document/product/213/46210).
+If you are using CentOS, you are advised to migrate to the corresponding TencentOS version as soon as possible. For the detailed migration directions, see [Migrating CentOS to TencentOS](https://intl.cloud.tencent.com/document/product/213/46962).
