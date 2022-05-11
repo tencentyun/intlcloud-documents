@@ -2,8 +2,6 @@
 1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)。
 2. 访问 [云直播控制台](https://console.cloud.tencent.com/live/livestat)，获取推流地址，实现直播推流，具体操作请参见 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 。
 3. 选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击【添加域名】，填写您已备案成功的域名，选择类型为【播放域名】，单击【保存】即可。
->!
->- 若您没有播放域名，可以前往 [【域名注册】](https://buy.cloud.tencent.com/domain?from=console) 购买域名。您也可以通过其他域名服务商购买域名。
 
 4. 登录 [域名服务控制台](https://console.cloud.tencent.com/domain)，对已添加成功的播放域名进行 CNAME 配置，具体操作请参见 [配置域名 CNAME](https://intl.cloud.tencent.com/document/product/267/31057)。
 
