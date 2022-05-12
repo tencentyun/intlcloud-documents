@@ -591,5 +591,9 @@ The following Modules shall apply and form part of this privacy policy if you us
 33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).
 34.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46315).
 35.[FaceID](https://intl.cloud.tencent.com/document/product/1061/46725).
+36.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46973).
+
+
+
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
