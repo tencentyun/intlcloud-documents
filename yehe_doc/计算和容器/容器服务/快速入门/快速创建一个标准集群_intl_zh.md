@@ -3,10 +3,10 @@
 
 ## 步骤1：注册腾讯云账号
 如果您已在腾讯云注册，可忽略此步骤。
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/378/17985" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/account/register" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
 
 ## 步骤2：在线充值
-容器服务暂不收取服务本身费用，按用户实际使用的云资源收费。本文中我们创建的是“托管集群”，该模式下您依然要为集群的工作节点、持久化存储以及服务绑定的负载均衡等服务付费。购买前，需要在账号中进行充值。具体操作请参考 [在线充值](https://intl.cloud.tencent.com/document/product/555/7425) 文档。
+腾讯云容器服务 TKE 针对不同规格的托管集群，会收取相应的集群管理费用，以及用户实际使用的云资源费用。关于收费模式和具体价格，请参阅 [容器服务计费概述](https://intl.cloud.tencent.com/document/product/457/45157)。本文中我们创建的是“托管集群”，该模式下您依然要为集群的工作节点、持久化存储以及服务绑定的负载均衡等服务付费。购买前，需要在账号中进行充值。具体操作请参考 [在线充值](https://intl.cloud.tencent.com/document/product/555/7425) 文档。
 
 
 
@@ -24,7 +24,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/48966b45ba60fe9116bb58edec3c58dd.png)
 
  - **集群名称**：输入要创建的集群名称。本文以“test”为例。
- - **所在地域**：选择与您最近的一个地区。
+ - **所在地域**：选择与您最近的一个地区，例如我在 “深圳”，地域选择 “广州”。
  - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。这里我们选择已有的 VPC 网络。
  - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。这里我们选择可用的容器网络。
 
@@ -35,7 +35,7 @@
 
 - **节点来源**：提供**新增节点**和**已有节点**两个选项。这里我们选择 “新增节点”。
 - **Master 节点** ：提供**平台托管**和**独立部署**两种集群模式选择。这里我们选择 “平台托管”。
-- **计费模式**：提供**按量计费**一种计费模式。这里我们选择 “按量计费”。
+- **计费模式**：提供**按量计费**一种计费模式。
 - **Worker 配置**：该模块下只需选择可用区及对应的子网并确认节点的机型，其他设置项保持默认。
   - **可用区** ：这里我们选择 “广州三区”。
   - **节点网络**：这里我们选择当前 VPC 网络下的子网。
@@ -81,8 +81,8 @@
 - [单实例版 WordPress](https://intl.cloud.tencent.com/document/product/457/7205)
 - [使用 TencentDB 的 WordPress](https://intl.cloud.tencent.com/document/product/457/7447)
 - [手动搭建 Hello World 服务](https://intl.cloud.tencent.com/document/product/457/7204)
-- [构建简单 Web 应用](https://intl.cloud.tencent.com/zh/document/product/457/6996)
+- [构建简单 Web 应用](https://intl.cloud.tencent.com/document/product/457/6996)
 
 
 ## 遇到问题？
-非常抱歉您在使用时出现问题，您可以 [提交工单](https://console.intl.cloud.tencent.com/workorder)来寻求帮助。
+非常抱歉您在使用时出现问题，您可以[提交工单](https://console.intl.cloud.tencent.com/workorder/category) 来寻求帮助。
