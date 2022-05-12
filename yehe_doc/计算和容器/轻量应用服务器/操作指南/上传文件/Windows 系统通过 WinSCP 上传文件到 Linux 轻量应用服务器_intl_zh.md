@@ -12,7 +12,7 @@ WinSCP 是一个在 Windows 环境下使用 SSH 的开源图形化 SFTP 客户�
 ### 登录 WinSCP
 
 1. 打开 WinSCP，弹出“WinSCP 登录”对话框。如下图所示：
-![](https://mc.qcloudimg.com/static/img/98d96ee1c3b65a3d94e99bb447c8a294/22.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/91c1ef2566ea60df7d9cee3f36b3e8b0.png)
 2. 设置登录参数：
  - **协议**：选填 SFTP 或者 SCP 均可。
  - **主机名**：轻量应用服务器的公网 IP。登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index) 即可查看对应轻量应用服务器的公网 IP。
@@ -20,20 +20,20 @@ WinSCP 是一个在 Windows 环境下使用 SSH 的开源图形化 SFTP 客户�
  - **用户名**：轻量应用服务器的系统用户名。
  - **密码**：轻量应用服务器的用户名对应的密码。
 3. 单击**登录**，进入 “WinSCP” 文件传输界面。如下图所示：
-![](https://main.qcloudimg.com/raw/6434c5c5e622db6eff83af85d6bd1d16.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ff4497378f2faf81816ce2f34ce75fd1.png)
 
 ### 上传文件
 1. 在 “WinSCP” 文件传输界面的右侧窗格中，选择文件在服务器中待存放的目录，如“/user”。
 2. 在 “WinSCP” 文件传输界面的左侧窗格中，选择本地计算机存放文件的目录，如“F:\SSL证书\Nginx”，选中待传输的文件。
 3. 在 “WinSCP” 文件传输界面的左侧菜单栏中，单击**上传**。如下图所示：
-![上传](https://main.qcloudimg.com/raw/3d0ed8cf62d43bc2b5ece58ae9b513a6.png)
+![上传](https://qcloudimg.tencent-cloud.cn/raw/94607a5024f8900e92f26403e5f68c6c.png)
 4. 在弹出的“上传”对话框中，确认需要上传的文件及远程目录，单击**确定**，即可从本地计算机将文件上传到轻量应用服务器中。
 
 ### 下载文件
 1. 在 “WinSCP” 文件传输界面的左侧窗格中，选择待下载至本地计算机的存放目录，如“F:\SSL证书\Nginx”。
 2. 在 “WinSCP” 文件传输界面是右侧窗格中，选择服务器存放文件的目录，如“/user”，选中待传输的文件。
 3. 在 “WinSCP” 文件传输界面的右侧菜单栏中，单击**下载**。如下图所示：
-![下载](https://main.qcloudimg.com/raw/b287a5507406fc97a4718f3e314e2aaf.png)
+![下载](https://qcloudimg.tencent-cloud.cn/raw/71b400fac63f032c582183c76d188f42.png)
 4. 在弹出的“下载”对话框中，确认需要下载的文件及远程目录，单击**确定**，即可从轻量应用服务器将文件下载到本地计算机中。
 
 

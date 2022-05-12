@@ -31,14 +31,14 @@
 2. 在“镜像”页面上方，选择地域，并单击**自定义镜像**页签。
 3. 选择需共享镜像所在行右侧的**更多** > **共享/取消共享**。
 4. 在弹出的“共享镜像”窗口中单击**确定**即可。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/731c1b61d27be0fad1bf958fdef84c6d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1388a2a23765a99606352967e0fcd65c.png)
 共享完成后，您可前往云服务器的 [共享镜像](https://console.cloud.tencent.com/cvm/image/index) 列表页面查看。
 
 
 ### 镜像取消共享至云服务器
 1. 在**自定义镜像**页签中，选择需取消共享镜像所在行右侧的**更多** > **共享/取消共享**。
 2. 在弹出的“取消共享镜像”窗口中，单击**确定**即可。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/a2c5b499d657fb1d76cb01577f170ca7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8205e83f5c743437b0e270f5300fcf70.png)
 
 
 ### 镜像共享至轻量应用服务器[](id:shareToLH)
@@ -51,7 +51,7 @@
 1. 登录轻量应用服务器控制台，选择左侧导航栏中的 <b>[镜像](https://console.cloud.tencent.com/lighthouse/image)</b>。
 2. 在“镜像”页面上方，选择地域，并单击**共享镜像**页签。
 3. 单击**共享云服务器镜像**，并在弹出的“共享镜像”窗口中，选择需共享镜像。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/38208c2d6f1c8faf2e18205421356d67.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f55e5bd04fb58f3bb092f9436a68c7d.png)
 4. 单击**确定**即可。
 :::
 ::: 通过云服务器控制台
@@ -59,7 +59,7 @@
 2. 在“镜像”页面上方，选择地域，并单击**自定义镜像**页签。
 3. 选择需共享镜像所在行右侧的**共享**。
 4. 在弹出的“共享镜像”窗口中，“目的端”选择**轻量应用服务器**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/b622a9bb386b5b4d54d184dab67cdb99.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/30ca2641b57efe3be79125528e71f122.png)
 5. 单击**确定**即可共享。
 :::
 </dx-tabs>
@@ -73,7 +73,7 @@
 1. 登录轻量应用服务器控制台，选择左侧导航栏中的 <b>[镜像](https://console.cloud.tencent.com/lighthouse/image)</b>。
 2. 在“镜像”页面上方，选择地域，并单击**共享镜像**页签。
 3. 单击需取消共享镜像所在行右侧**取消共享**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/b4453ba35f6971642023ef4074938cc1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7b1a9ef7aee1560f88b6213ff2e173ad.png)
 4. 在弹出的“取消共享镜像”窗口中，单击**确定**即可。
 
 :::
@@ -82,7 +82,7 @@
 2. 在“镜像”页面上方，选择地域，并单击**自定义镜像**页签。
 3. 选择需取消共享镜像所在行右侧的**更多** > **取消共享**。
 4. 在镜像详情页的**镜像共享**页签中，选择镜像共享记录所在行右侧的**取消共享**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/f7f02f7f2c87cd92cad750cf6f325101.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d89ff1c02727113f0380be255f09c185.png)
 5. 在弹出的“取消共享”窗口中，单击**确定**即可。
 :::
 </dx-tabs>
@@ -103,7 +103,7 @@
 1. 登录轻量应用服务器控制台，选择左侧导航栏中的 <b>[镜像](https://console.cloud.tencent.com/lighthouse/image)</b>。
 2. 在“镜像”页面上方选择地域，并单击**共享镜像**页签。
 3. 单击镜像所在行右侧的**创建实例**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/04884458995fdc4e6d30fda7b04b45ec.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/73562914d1ba988c7d8f92dd249a8e0e.png)
 4. 进入轻量应用服务器购买页面后，按需选择配置并创建实例。
 其中，“镜像”已选择该共享镜像，其余配置请参考 [购买方式](https://intl.cloud.tencent.com/document/product/1103/41404) 进行选择。
 

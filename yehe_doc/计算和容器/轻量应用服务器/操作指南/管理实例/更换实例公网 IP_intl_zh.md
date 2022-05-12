@@ -13,5 +13,5 @@
 
 1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index)，选择需更换公网 IP 的实例。
 2. 在实例详情页中，选择右上角的**更多操作** > **更换公网IP**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/58fd1441b2d9a08c68c322e0f5c3e9e7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/20c188c29bb17cf2e3e23c4fac7306ab.png)
 3. 在弹出的“更换公网IP” 窗口中，单击**确定**即可更换。

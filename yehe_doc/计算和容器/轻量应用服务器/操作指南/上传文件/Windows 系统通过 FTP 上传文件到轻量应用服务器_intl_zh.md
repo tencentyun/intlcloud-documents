@@ -3,8 +3,7 @@
 
 ## 前提条件
 已在轻量应用服务器中搭建 FTP 服务。
-- 如果您的轻量应用服务器为 Linux 操作系统。
-- 如果您的轻量应用服务器为 Windows 操作系统。
+
 
 
 ## 操作步骤
@@ -15,7 +14,7 @@
 >
 2. 打开 FileZilla。
 3. 在 FileZilla 窗口中，填写主机、用户名、密码和端口等信息，单击【快速连接】。如下图所示：
-![](https://mc.qcloudimg.com/static/img/dc603f912adf94a33749155c69ddddd2/24.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/878b3396866b46ca73952327b630b918.png)
 **配置信息说明：**
  - **主机**：轻量应用服务器的公网 IP。在 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index) 的页面中可查看对应轻量应用服务器的公网 IP。
  - **用户名**：搭建 FTP 服务时设置的 FTP 用户的帐号。图中以 “ftpuser1” 为例。
@@ -29,9 +28,9 @@
 >- 轻量应用服务器 FTP 通道不支持上传 tar 压缩包后自动解压，以及删除 tar 包功能。
 >- 远程站点路径为上传文件至 Linux 轻量应用服务器的默认路径。
 >
-![](https://main.qcloudimg.com/raw/45cd8f030ca74145b11e6c64203cedf2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7cf9ea5a5105636c2e943a01c5127b95.png)
 
 ### 下载文件
 在右下方“远程站点”窗口中，右键单击待下载的轻量应用服务器文件，选择【下载】，即可将文件下载到本地。如下图所示：
-![](https://main.qcloudimg.com/raw/17fb8472353c4bea5e3c44a3a5b95220.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b07de298a243b21ee5f334cb217d0f61.png)
 
