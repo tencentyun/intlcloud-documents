@@ -80,7 +80,7 @@ securityContext:
   - KubeSchedulerConfiguration
   - HugePageStorageMediumSize
   - ImmutableEphemeralVolumes
-  Secret 和 ConfigMap 卷可以标记为 immutable，在有大量 Secret 和 ConfigMap 卷时，可以大大减少对 apiserver 的压力
+  Secret 和 ConfigMap 卷可以标记为 immutable，在有大量 Secret 和 ConfigMap 卷时，可以极大减少对 apiserver 的压力
   - NodeDisruptionExclusion
   - NonPreemptingPriority
   - ServiceNodeExclusion
