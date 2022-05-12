@@ -3,8 +3,6 @@ This document describes how to use the FTP service to upload files from a local 
 
 ## Prerequisites
 You have set up the FTP service in the Lighthouse instance.
-- 如果您的轻量应用服务器为 Linux 操作系统。
-- 如果您的轻量应用服务器为 Windows 操作系统。
 
 
 ## Directions
