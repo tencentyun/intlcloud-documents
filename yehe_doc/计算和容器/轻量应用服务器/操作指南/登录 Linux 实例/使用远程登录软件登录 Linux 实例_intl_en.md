@@ -1,26 +1,26 @@
 ## Overview
 This document takes PuTTY as an example to describe how to log in to a Linux instance from a Windows local computer by using the remote login software.
 
-## Supported Systems
+## Supported Operating Systems
 Windows
 <dx-alert infotype="explain" title="">
-For Linux and MacOs instances, log in with SSH keys.
+If your local computer uses Linux or macOS, [use SSH to log in to the Linux instance](https://intl.cloud.tencent.com/document/product/1103/41525).
 </dx-alert>
 
 
 
 ## Authentication Method
-**Password** or **SSH Key**
+**Password** or **Key**
 
-## Prerequisite
+## Prerequisites
 
 - You have obtained the username and password (or SSH key) to log in to the instance.
 <dx-alert infotype="notice" title="">
-For the first time to log in to a Linux instance by using remote login software, you need to reset the password of your username (e.g. `root`, `ubuntu`) or bind your key. For more information, see [Managing Keys](https://intl.cloud.tencent.com/document/product/1103/41392) Document.
+If it is your first time to log in to a Linux instance through a local remote login application, you need to reset the password of your username (e.g., `root` and `ubuntu`) or bind your key. For detailed directions, see [Resetting Password](https://intl.cloud.tencent.com/document/product/1103/41553) and [Managing Key](https://intl.cloud.tencent.com/document/product/1103/41392).
 </dx-alert>
-- Make sure the network connection between the local computer and the instance is working, and the port 22 is open in the firewall policies of the instance (Port 22 is open by default upon the creation of instance).
+- Make sure the network connection between the local computer and the instance is working, and the port 22 is open in the firewall policies of the instance (Port 22 is open by default upon the creation of the instance).
 
-## Notes
+## Limits
 
 For instances created with Ubuntu images, password login is disabled by default for the `root` account. To enable it, see [Uploading Local Files](https://intl.cloud.tencent.com/document/product/1103/41257).
 
@@ -28,19 +28,19 @@ For instances created with Ubuntu images, password login is disabled by default 
 
 <dx-tabs>
 ::: Password login
-1. Download the Windows remote login software PuTTY.
+1. Download the Windows remote login software: PuTTY.
 [Download PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-2. Double click **putty.exe** to open the PuTTY Client.
-3. In the **PuTTY Configuration** window, complete the settings.
+2. Double-click **putty.exe** to open the PuTTY Client.
+3. In the **PuTTY Configuration** window, enter the following content, as shown below:
 ![](https://main.qcloudimg.com/raw/7ac87da9721ef7d64fe8cac81a3dab33.png)
 Configure parameters as follows:
    - **Host Name (or IP address)**: The public IP of the Lighthouse instance. You can check this public IP in the [Lighthouse console](https://console.cloud.tencent.com/cvm/index). 
    - **Port**: The port open for remote login on the Lighthouse side. For a Linux instance, it defaults to 22.
    - **Connection type**: Select **SSH**.
    - **Saved Sessions**: Enter the session name, such as `test`.
-After configuring **Host Name**, configure and save **Saved Sessions**. You can double-click the session name saved under **Saved Sessions** to log in to the server.
+After configuring **Host Name**, configure and save **Saved Sessions**. You can double-click the session name saved under **Saved Sessions** to log in to the instance.
 4. Click **Open** to enter the **PuTTY** page. The **login as:** command prompt appears.
-5. Enter your username after **login as:** (e.g. `root`) and press **Enter**.
+5. Enter your username after **login as:** (e.g., `root`) and press **Enter**.
 <dx-alert infotype="explain" title="">
 For all Linux images, except Ubuntu images, you can log in with the `root` account. For Ubuntu system, the default username is `ubuntu`. To log in with the `root` account, see [How do I log in to an instance with root on Ubuntu?](https://intl.cloud.tencent.com/document/product/1103/41257).
 </dx-alert>
@@ -60,8 +60,8 @@ For example, select and open the private key file `david`.
 4. <span id="Step4"></span>In the **PuTTY Key Generator** window, you can enter the key name and create a password for the key (optional). When finished, click **Save private key**, as shown below:
 ![](https://main.qcloudimg.com/raw/58a250d3f3d1b78eff3edaab64cd01c0.png)
 5. In the pop-up window, select the path to store the key. In the **File name** field, enter “[Key Name].ppk” and click **Save**. For example, save the private key file `david` as `david.ppk`.
-![](https://main.qcloudimg.com/raw/d0fa9fd8aad7d2259bd8a0ce48ae5160.png)
-6. Double-click **putty.exe** to open the PuTTY client.
+![](https://qcloudimg.tencent-cloud.cn/raw/9742e84d2b9ab282eda4a4ef5fe96b7a.png)
+6. Double-click **putty.exe** to open the PuTTY Client.
 In the left sidebar, select **Connection** > **SSH** > **Auth** to enter the Auth configuration page.
 8. Click **Browse** to select and open the path where the key is saved.
 ![](https://main.qcloudimg.com/raw/61993f3977ff681b8b2d78beac55f2ca.png)
@@ -71,8 +71,8 @@ In the left sidebar, select **Connection** > **SSH** > **Auth** to enter the Aut
    - **Port**: The port open for remote login on the Lighthouse side. For a Linux instance, it defaults to 22.
    - **Connection type**: Select **SSH**.
    - **Saved Sessions**: Enter the session name, such as `test`.
-After configuring **Host Name**, configure and save **Saved Sessions**. You can double-click the session name saved under **Saved Sessions** to log in to the server.
-10. Click **Open** to enter the **PuTTY** page. The **login as:** command prompt appears.
+After configuring **Host Name**, configure and save **Saved Sessions**. You can double-click the session name saved under **Saved Sessions** to log in to the instance.
+10. Click **Open** to enter the **PuTTY** running interface. The **login as:** command prompt appears.
 11. Enter your username after **login as:** and press **Enter**.
 <dx-alert infotype="explain" title="">
 For all Linux images, except Ubuntu images, you can log in with the `root` account. For Ubuntu system, the default username is `ubuntu`. To log in with the `root` account, see [How do I log in to an instance with root on Ubuntu?](https://intl.cloud.tencent.com/document/product/1103/41257).

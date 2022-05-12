@@ -23,14 +23,13 @@ Windows、Linux 和 Mac OS 都可以使用远程桌面登录轻量应用服务�
 
 
 1. 在本地 Windows 计算机上，单击  <img src="https://main.qcloudimg.com/raw/370daffec54024ee262d1e5dbcd4bde2.png" style="margin: 0;width: 35px;">，在**搜索程序和文件**中，输入 **mstsc**，按 **Enter**，打开远程桌面连接对话框。如下图所示：
-![](https://main.qcloudimg.com/raw/38e9d9ac0485bf8ad3a209092a1284ba.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/942c8d417f971cd22f5574de8445521c.png)
 2. 在“计算机”后面，输入 Windows 实例的公网 IP，单击**连接**。
 Windows 实例公网 IP 可前往 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index) 获取。
 3. 在弹出的 “Windows 安全” 窗口中，输入实例的管理员帐号和密码，如下图所示：
 <dx-alert infotype="explain" title="">
 若弹出 “是否信任此远程连接？” 对话框，可勾选 “不再询问我是否连接到此计算机”，单击**连接**。
 </dx-alert>
-<img src="https://main.qcloudimg.com/raw/3a9aa79200ace4a6ebd68a6e511a341d.png"/>
 4. 单击**确定**，即可登录到 Windows 实例。
 
 :::
@@ -70,6 +69,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
    - `Administrator` 即为前提条件中获得的管理员帐号。
    - `<your-password>` 即为您设置的登录密码。
+
     如果您忘记密码，请 [重置密码](https://intl.cloud.tencent.com/document/product/1103/41553)。
    - `<hostname or IP address>` 即为您的 Windows 实例公网 IP 或自定义域名。
 
@@ -87,18 +87,18 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 2. 启动 MRD，并单击 **Add Desktop**。如下图所示：
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
 3. 弹出的 “Add Desktop” 窗口，按以下步骤创建连接。如下图所示：
-![](https://main.qcloudimg.com/raw/d8e20278dd7c8aed487be2c43986f5e4.png)
+  ![](https://main.qcloudimg.com/raw/d8e20278dd7c8aed487be2c43986f5e4.png)
     1. 在 “PC name” 处输入实例公网 IP。
     2. 单击 **Add** 确认创建 。
     3. 其余选项保持默认设置，完成创建连接。
     即可在窗口中查看已成功创建的连接。如下图所示：
- ![](https://main.qcloudimg.com/raw/1c0eff28aa68a7f02e8f295917bb603b.png)
+      ![](https://main.qcloudimg.com/raw/1c0eff28aa68a7f02e8f295917bb603b.png)
 4. 双击打开新创建的连接，并在弹出的窗口中根据提示，输入在前提条件中获取的管理员帐号和密码，单击 **Continue**。
 如果您忘记密码，请 [重置密码](https://intl.cloud.tencent.com/document/product/1103/41553)。
 5. 在弹出的窗口中单击 **Continue** 确认连接。如下图所示：
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 成功连接后将打开 Windows 实例界面。如下图所示：
-![](https://main.qcloudimg.com/raw/5a524210acd13624af7263b6de3aea54.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/09da9b26eb5ec4475ffe266e2761cf03.png)
 :::
 </dx-tabs>
 

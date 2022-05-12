@@ -14,9 +14,9 @@
 1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse)。
 2. 在服务器列表中，找到待销毁的轻量应用服务器，进入服务器详情页。
 3. 在服务器详情页“概要”的“计费信息”栏中，选择**销毁/退还**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/6c6929d55b4324a86162ec956c86e09e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/67b603961cd8630f076cb8bf6a63e534.png)
 4. 在弹出的窗口中，若该实例已挂载数据盘，则可勾选“同时退还挂载在实例上的数据盘”，以同时销毁。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/d23edd5590077536bfd71348c8f19973.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3ee8c1c1f31d1fee97307aa3b366d06b.png)
 5. 勾选“已阅读并同意[退费规则](https://intl.cloud.tencent.com/document/product/1103/41406)”，并单击**确定**。
 6. 核对轻量应用服务器的退款信息，单击**确认退款**。提交后，系统将发起退款并销毁实例，销毁的实例将进入“待回收”状态。
 <dx-alert infotype="explain" title="">
@@ -40,6 +40,6 @@
 
 1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse)。
 2. 在服务器列表中，找到待销毁的待回收轻量应用服务器，单击**更多** > **销毁/退还**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/42ea6ace8cf1a3624bd08873013037b3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9edd38e07445ffe5c3097db3689417d5.png)
 3. 在弹出的窗口中，勾选“已阅读并同意”，单击**确定**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/f840d5f2262c94067f5a8d73b79de582.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3b33a569f3160a80101ec35db9b5bc11.png)

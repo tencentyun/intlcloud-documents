@@ -49,7 +49,8 @@ rdesktop 118.xx.248.xxx  -u Administrator -p 12345678 -r disk:share=/home
 ```
 成功共享后将打开 Windows 轻量应用服务器界面。
 选择左下角的<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px"> > 【这台电脑】，您可在轻量应用服务器系统界面查看已共享的文件夹。如下图所示：
-![](https://main.qcloudimg.com/raw/85bbb5408d198b3ee2efc52cee86a639.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7f6950ed657e939472de4f7bb0094689.png)
+
 2. 双击打开共享文件夹，并将需要上传的本地文件复制到 Windows 轻量应用服务器的其他硬盘中，即完成文件上传操作。
 例如，将 `share` 文件夹中的 A 文件复制到 Windows 轻量应用服务器的 C: 盘中。
 
