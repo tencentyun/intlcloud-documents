@@ -254,7 +254,7 @@ VOD는 복잡한 매개변수 세트 대신 매개변수 템플릿을 사용한 
  <tr>
   <td>HD</td>
   <td>비율에 따라 축소/확대 x 720</td>
-  <td>512kbps</td>
+  <td>1024kbps</td>
   <td>24</td>
   <td>H.264</td>
   <td>48kbps</td>
@@ -265,7 +265,7 @@ VOD는 복잡한 매개변수 세트 대신 매개변수 템플릿을 사용한 
  <tr>
   <td>FHD</td>
   <td>비율에 따라 축소/확대 x 1080</td>
-  <td>1024kbps</td>
+  <td>2500kbps</td>
   <td>24</td>
   <td>H.264</td>
   <td>48kbps</td>
