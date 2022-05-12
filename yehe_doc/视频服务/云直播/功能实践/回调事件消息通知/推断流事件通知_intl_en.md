@@ -1,18 +1,18 @@
-Stream push/interruption callback is used to call back the push status information, including whether the push is successful or interrupted. You need to configure the server address for receiving push/interruption callback messages in a callback template and bind the template with the push domain name. When push starts via the generated push URL, Tencent Cloud backend will call back the push results to the server you set.
+The stream pushing callback informs you whether stream pushing is successful or interrupted. You need to configure a server address for the callback in a callback template and bind the template with your push domain name. After push starts via a URL generated under the domain, the Tencent Cloud backend will send the callback to the server you set.
 
-This document describes the parameters in callback message notifications sent by Tencent Cloud CSS after a stream push/interruption callback event is triggered.
+This document describes the parameters in a stream pushing callback notification sent to you by CSS.
 
 ## Note
-You need to understand how to configure callbacks and how to receive messages on Tencent Cloud CSS before reading this document. For more information, see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080). 
+This guide assumes that you understand how to configure callbacks and receive callback notifications from CSS. For details, see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080). 
 
 
-## Stream Push/Interruption Event Parameters
-### Event type parameters
+## Stream Pushing Event Parameters
+### Event type
 
-| Event Type | Parameter Value |
+| Event Type | Value           |
 |---------|---------|
-| Live push | event_type = 1 |
-| Live stream interruption | event_type = 0 |
+| Successful push | event_type = 1 |
+| Push interrupted | event_type = 0 |
 
 ### Common callback parameters
 <table>
@@ -20,17 +20,17 @@ You need to understand how to configure callbacks and how to receive messages on
 <tr>
 <td>t</td>
 <td>int64</td>
-<td>Expiration time, which is the Unix timestamp when the event notification signature expires. <ul style="margin:0"><li>The default expiration time of a message notification from Tencent Cloud is 10 minutes. If the time specified by the `t` value in a message notification has elapsed, it can be determined that this notification is invalid, thereby preventing network replay attacks. <li>The format of `t` is a decimal Unix timestamp, i.e., the number of seconds that have elapsed since 00:00:00 (UTC/GMT time), January 1, 1970.</ul></td>
+<td>Expiration time, which is the Unix timestamp when the event notification signature expires. <ul style="margin:0"><li>The default validity period of a callback notification from Tencent Cloud is 10 minutes. If the time specified by the `t` value in a notification has elapsed, then this notification is considered invalid. This prevents network replay attacks. <li>The value of `t` is a decimal Unix timestamp, that is, the number of seconds that have elapsed since 00:00:00 (UTC/GMT time), January 1, 1970.</ul></td>
 </tr><tr>
 <td>sign</td>
 <td>string</td>
-<td>Event notification security signature sign = MD5(key + t). <br>Note: Tencent Cloud concatenates the encryption <a href="#key">key</a> and `t`, calculates the `sign` value through MD5, and places it in the notification message. When your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.</td>
+<td>Security signature. sign = MD5(key + t). <br>Tencent Cloud splices the encryption <a href="#key">key</a> and `t`, generates the MD5 hash of the spliced string, and embeds it in callback messages. Your backend server can perform the same calculation when it receives a callback message. If the signature matches, it indicates the message is from Tencent Cloud.</td>
 </tr></table>
 
->? [](id:key)`key` is the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. We recommend filling in this field to ensure data security.
->![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
+>? [](id:key)You can set the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is used for authentication. We recommend you set this field to ensure data security.
+![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
-### Callback message parameters
+### Callback parameters
 
 | Parameter | Type   | Description           |
 | :------------ | :----- | :----------------------------------------------------------- |
@@ -40,21 +40,21 @@ You need to understand how to configure callbacks and how to receive messages on
 | stream_id     | string | Live stream name                 |
 | channel_id    | string | Same as the live stream name                     |
 | event_time    | int64  | UNIX timestamp when the event message is generated               |
-| sequence      | string | Message serial number, which is used to identify a push event. A push event generates push and interruption messages with the same serial number. |
-| node          | string |  Upstream node IP                                          |
+| sequence      | string | Message sequence number, which identifies a push. The notifications for a push, whether they are for successful push or stream interruption, have the same sequence number. |
+| node          | string |  IP of the live stream access point                                              |
 | user_ip       | string | User push IP                                                  |
 | stream_param  | string | User push URL parameters                                        |
 | push_duration | string | Push duration of the interrupted stream in milliseconds                               |
-| errcode       | int    | Stream push/interruption error code                      |
-| errmsg        | string | Stream push/interruption error message                                               |
-| set_id          | int  | Whether the push is from inside the Chinese mainland. 1-6: yes; 7-200: no  |
-|width       |  int   |Video width. This value may be `0` if the video header information is missing in the callback of the beginning of live push.  |
-|height       |  int   |Video height. This value may be `0` if the video header information is missing in the callback of the beginning of live push.  |
+| errcode       | int    | Stream pushing error code                      |
+| errmsg        | string | Stream pushing error message                                               |
+| set_id          | int  | Whether the push is from inside the Chinese mainland. 1-6: yes; 7-200: no.  |
+|width       |  int   |Video width. The value of this parameter may be `0` if the video header information is missing at the beginning of a push.  |
+|height       |  int   |Video height. The value of this parameter may be `0` if the video header information is missing at the beginning of a push.  |
 
-### Stream push and interruption error codes
-For error codes and error messages of stream push/interruption, see [Stream interruption error codes](https://intl.cloud.tencent.com/document/product/267/31083).
+### Causes of stream interruption
+For a list of the causes of stream interruption, see [Stream Interruption Records](https://intl.cloud.tencent.com/document/product/267/31083).
 
-### Sample callback message
+### Sample callback
 ```JSON
 {
 	"app":"test.domain.com",
