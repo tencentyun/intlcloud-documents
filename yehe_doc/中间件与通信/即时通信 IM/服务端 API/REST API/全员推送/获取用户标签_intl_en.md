@@ -74,7 +74,7 @@ The maximum call frequency is 100 times per second.
 | ErrorInfo | String | Error information |
 | UserTags | Array | List of user tag content |
 | To_Account | String | User account |
-| Tags | Object | Tags content. |
+| Tags | Array | Tags content. |
 
 ## Error Codes
 The HTTP return code for this API is always 200 unless a network error (such as error 502) occurs. **The actual error code and error message are indicated by ErrorCode and ErrorInfo in the response packet, respectively.** For public error codes 60000 to 79999, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
