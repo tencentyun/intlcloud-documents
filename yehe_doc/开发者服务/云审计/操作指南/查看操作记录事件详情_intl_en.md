@@ -21,7 +21,7 @@ Filter descriptions:
 If you can't find a product event name that you want to query in the list, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
 </dx-alert>
  - **Username**: You can filter logs by root account, sub-account ID, or role ID.
- - **Sensitive Operation**: You can filter all sensitive and non-sensitive operations. Sensitive operations are defined by the platform as events that may involve key operations on cloud resources. If you need to include certain operations as sensitive operations, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
+ - **Operation Query**: You can filter all sensitive and non-sensitive operations. Sensitive operations are defined by the platform as events that may involve key operations on cloud resources. If you need to include certain operations as sensitive operations, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
  - **Resource Name**: You can enter a resource ID for search, such as `ins-fi8oxxxx`.
  - **Key ID**: You can enter a key ID for search, such as `AKIDZ0GSXSG2nT5c6Xxxxxxxxxxxxxxxxx`.
  - **Request ID**: You can enter a request ID for search, such as `a7da0568-7580-4798-88c8-xxxxxxxxxx`.
