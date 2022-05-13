@@ -2,8 +2,7 @@
 
 Tencent Cloud View Cube Android Super Player Adapterは、サードパーティのプレーヤーまたは自社開発のプレーヤーを使用して開放されたクラウドPAASリソースに接続を希望する顧客向けにVODのためのプレーヤープラグインを提供します。カスタムプレーヤー機能を必要とするユーザーにおいて一般的に使用されます。
 
-[](id:sdkDownload)
-## SDKのダウンロード
+## SDKのダウンロード[](id:sdkDownload)
 
 Tencent Cloud View Cube Android Super Player Adapter SDKとDemoプロジェクトのダウンロードアドレスは[TXCPlayerAdapterSDK_Android](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_Android.zip)です。 
 
@@ -11,8 +10,7 @@ Tencent Cloud View Cube Android Super Player Adapter SDKとDemoプロジェク�
 
 このドキュメントの内容の一部は、Tencent Cloud専用の機能となっていますので、使用前に、[Tencent Cloud](https://intl.cloud.tencent.com)関連サービスのアクティブ化を行ってください。アカウント登録がないユーザーは登録し、[無料試用](https://intl.cloud.tencent.com/login)が可能です。
 
-[](id:guide)
-## 統合ガイド
+## 統合ガイド[](id:guide)
 
 SDKを統合し、TXCPlayerAdapter-release-1.0.0.aarをlibsディレクトリにコピーして、依存プロジェクトを追加します。
 
@@ -27,8 +25,8 @@ implementation(name:'TXCPlayerAdapter-release-1.0.0', ext:'aar')
 ```
 
 
-[](id:usePlayer)
-### プレーヤーの使用
+
+### プレーヤーの使用[](id:usePlayer)
 
 変数ステートメント。プレーヤーのメインクラスは`ITXCPlayerAssistor`です。作成後すぐにビデオを再生できます。
 
@@ -84,7 +82,7 @@ mPlayerAssistor.requestVideoInfo(new ITXCRequestVideoInfoCallback() {
                 if (mPlayerAssistor.getStreamingInfo() != null) {
                   	//ビデオの再生
                     mSuperPlayerView.play(mPlayerAssistor.getStreamingInfo().playUrl);
-                } else {
+                }else{
                     Toast.makeText(VideoActivity.this, "streamInfo = null", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -100,8 +98,8 @@ TXCPlayerAdapter.destroy();
 ```
 
 
-[](id:sdkList)
-## SDKインターフェースリスト
+
+## SDKインターフェースリスト[](id:sdkList)
 
 #### TXCPlayerAdatperの初期化
 
