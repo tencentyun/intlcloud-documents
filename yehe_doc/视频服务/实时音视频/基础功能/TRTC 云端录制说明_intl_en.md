@@ -318,7 +318,7 @@ To record to VOD, specify the `CloudVod` parameter in `StorageParams` when calli
 
 ### Script for merging single-stream recording files
 
-We offer a [script]() for merging single-stream audio and video files into MP4 files.
+We offer a [script](https://trtc-partner-sg-1253488539.cos.ap-singapore.myqcloud.com/media-file-toolkit.zip) for merging single-stream audio and video files into MP4 files.
 
 >? If two segment files are more than 15 seconds apart, during which no audio or video data is recorded (if the substream is disabled, its data will be ignored), the two segments will be considered to belong to different sections, one being the ending segment of the previous section, and the other the starting segment of the next section.
 
