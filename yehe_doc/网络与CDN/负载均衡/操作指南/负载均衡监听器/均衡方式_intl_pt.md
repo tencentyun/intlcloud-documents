@@ -11,7 +11,7 @@ O algoritmo de programação do round-robin ponderado é usado na programação 
 Em situações reais, o tempo que as solicitações do cliente permanecem no servidor pode variar muito. À medida que o período de trabalho fica mais longo, se um algoritmo de balanceamento de carga aleatório ou round-robin simples for usado, a quantidade de processos de conexão em cada servidor pode variar muito, podendo não atingir o efeito de balanceamento de carga.
 Ao contrário da programação de round-robin, a de conexão mínima é um algoritmo de programação dinâmico que estima a carga de um servidor por sua quantidade de conexões ativas. O programador precisa registrar a quantidade de conexões estabelecidas atualmente em cada servidor. Se uma solicitação for programada para um servidor, a quantidade de conexões aumentará em 1. Se uma conexão for interrompida ou expirar, a quantidade de conexões diminuirá em 1.
 No algoritmo de programação de conexão mínima ponderada que é baseado na programação de conexão mínima, pesos diferentes são alocados aos servidores de acordo com a capacidade de processamento deles. Dessa forma, um servidor pode receber uma quantidade de solicitações proporcional ao seu peso, o que é uma melhoria na programação de conexão mínima.
-> Suponha que o peso de um servidor de back-end seja wi e a quantidade atual de conexões seja ci. Os valores de ci/wi de cada servidor são calculados em sequência. O servidor de back-end com o menor valor de ci/wi será o próximo servidor que receberá uma nova solicitação. Se houver servidores de back-end com o mesmo valor de ci/wi, eles serão programados com base na programação de round-robin ponderado.
+>?Suponha que o peso de um servidor de back-end seja wi e a quantidade atual de conexões seja ci. Os valores de ci/wi de cada servidor são calculados em sequência. O servidor de back-end com o menor valor de ci/wi será o próximo servidor que receberá uma nova solicitação. Se houver servidores de back-end com o mesmo valor de ci/wi, eles serão programados com base na programação de round-robin ponderado.
 
 - **Vantagem**: esse algoritmo é adequado para solicitações que requerem processamento de longo prazo, como FTP.
 - **Desvantagem**: devido às restrições da API, a conexão mínima e a persistência de sessão não podem ser ativadas ao mesmo tempo.
@@ -25,23 +25,23 @@ O algoritmo de programação de hash de origem (ip_hash) usa o endereço IP de o
 
 ## Escolha do algoritmo de balanceamento de carga e configuração do peso
 Para permitir que clusters de servidores de back-end realizem negócios de maneira estável em cenários diferentes, alguns casos sobre como escolher o algoritmo de balanceamento de carga e como configurar o peso são fornecidos abaixo, para sua referência.
-- Cenário 1:
+- **Cenário 1**:
  1. Suponha que existam três servidores de back-end com a mesma configuração (CPU e memória) e você defina todos os seus pesos como 10, pois eles têm o mesmo desempenho.
  2. 100 conexões TCP foram estabelecidas entre cada servidor de back-end e o cliente, e um novo servidor de back-end foi adicionado.
  3. Nesse cenário, é recomendável usar o algoritmo de programação de conexão mínima, que pode aumentar rapidamente a carga do 4º servidor de back-end e reduzir a pressão nos outros 3.
-- Cenário 2:
+- **Cenário 2**:
  1. Suponha que você esteja usando os serviços do Tencent Cloud pela primeira vez e que seu site tenha sido criado com carga baixa. É recomendável adquirir servidores de back-end com a mesma configuração, pois são todos servidores de camada de acesso equivalentes.
  2. Nesse cenário, você pode definir os pesos de todos os servidores de back-end como o valor padrão de 10 e usar o algoritmo de programação de round-robin ponderado para distribuir o tráfego.
-- Cenário 3:
+- **Cenário 3**:
  1. Suponha que você tenha cinco servidores de back-end que realizam solicitações de acesso simples a páginas estáticas, e a proporção da capacidade de computação (calculada pela CPU e memória) desses servidores seja 9:3:3:3:1.
  2. Nesse cenário, você pode definir o peso dos servidores de back-end para 90, 30, 30, 30 e 10, respectivamente. Como a maioria das solicitações de acesso a páginas da web estáticas são do tipo de conexão não persistente, você pode usar o algoritmo de programação de round-robin ponderado, para que a instância do CLB possa alocar solicitações com base na taxa de desempenho dos servidores.
-- Cenário 4:
+- **Cenário 4**:
  1. Suponha que você tenha dez servidores de back-end para realizar muitas solicitações de acesso à web e não deseja adquirir mais servidores, pois isso aumentará as despesas, e um dos servidores reinicia com frequência devido à sobrecarga.
  2. Nesse cenário, é recomendável definir os pesos dos servidores existentes com base no desempenho deles e definir um peso relativamente pequeno para servidores com alta carga. Além disso, você pode usar o algoritmo de programação de conexão mínima para alocar solicitações a servidores de back-end com menos conexões ativas, a fim de evitar a sobrecarga do servidor.　
-- Cenário 5:
+- **Cenário 5**:
  1. Suponha que você tenha três servidores de back-end para processar algumas conexões persistentes, e que a proporção da capacidade de computação (calculada pela CPU e memória) desses servidores seja 3:1:1.
  2. O servidor com o melhor desempenho processa mais solicitações, mas você não quer que ele fique sobrecarregado e deseja alocar solicitações novas para servidores inativos.
  3. Nesse cenário, você pode usar o algoritmo de programação de conexão mínima e reduzir de forma apropriada o peso do servidor ocupado, de modo que a instância do CLB possa alocar solicitações para servidores de back-end com menos conexões ativas, conseguindo alcançar o balanceamento de carga.
-- Cenário 6:
+- **Cenário 6**:
  1. Suponha que você queira que as solicitações posteriores do cliente sejam alocadas ao mesmo servidor. A programação de round-robin ponderado ou de conexão mínima ponderada não pode garantir que as solicitações do mesmo cliente sejam alocadas para o mesmo servidor.
  2. Para satisfazer os requisitos de seu servidor de aplicativos específico e manter a "aderência" (ou "continuidade") das sessões do cliente, você pode usar o ip_hash para distribuir o tráfego. Esse algoritmo pode garantir que todas as solicitações do mesmo cliente sejam distribuídas para o mesmo servidor de back-end, a menos que a quantidade de servidores mude ou que o servidor fique indisponível.

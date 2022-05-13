@@ -1,4 +1,4 @@
-본 문서에서는 MySQL 커널 버전 업데이트 동향에 대해 소개합니다. 업그레이드 하려면 [커널 마이너 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/36816)를 참고하십시오.
+본 문서는 MySQL 커널 버전의 업데이트 동향에 대해 소개합니다. 업그레이드하려면 [커널 마이너 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/45627)를 참고하십시오.
 
 ## MySQL 8.0
 ### 20211202
@@ -249,8 +249,8 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 ### 20200331
 #### 새로운 기능:
 - 공식 MySQL 5.7.22 버전의 JSON 시리즈 함수를 신규 추가하였습니다.
-- 이커머스 타임 세일 시나리오에 대한 [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037#.E7.83.AD.E7.82.B9.E6.9B.B4.E6.96.B0.E4.BF.9D.E6.8A.A4) 기능을 지원합니다.
-- [SQL Throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81)을 지원합니다.
+- 전자상거래의 타임세일 시나리오를 기반으로 한 [핫 스팟 업데이트](https://intl.cloud.tencent.com/document/product/1035/36037) 기능을 지원합니다.
+- [SQL 제한](https://intl.cloud.tencent.com/document/product/1035/36037)을 지원합니다.
 - 데이터 암호화 기능으로 KMS 사용자 지정 키 암호화를 지원합니다.
 
 #### bug 수정:
@@ -342,19 +342,6 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 비동기화 모드에서 속도 제한 플러그 인을 사용할 수 없는 문제 수정.
 
 ## MySQL 5.6
-### 20220301
-#### 새로운 기능:
-- 스핀 주기의 동적 구성을 지원합니다. 스핀 주기(0~100)는 동적 매개변수 innodb_spin_wait_pause_multiplier를 통해 동적으로 조정할 수 있습니다.
-이 매개변수는 임시 조정에 사용되며, 콘솔을 통한 고정된 수정은 지원하지 않습니다.
-- 교착 상태 루프 정보 출력 기능을 지원합니다.
-innodb_print_dead_lock_loop_info 매개변수를 통해 활성화하고 활성화 후 교착 상태가 발생하면 show engine innodb status를 사용하여 교착 상태 루프 정보를 확인합니다.
-
-#### Bug 수정:
-- slave 재시작 후 memory 테이블의 익명 GTID 트랜잭션 문제 수정.
-- root@localhost 권한이 누락되어 업그레이드가 실패하는 문제 수정.
-- innodb_row_lock_current_waits 등의 모니터링 변수 값이 비정상인 문제 수정.
-- 감사 플러그 인의 sql type 매핑이 잘못된 문제 수정.
-
 ### 20211030
 #### 새로운 기능:
 - 대규모 트랜잭션 복제 최적화를 지원합니다.
@@ -389,7 +376,7 @@ innodb_print_dead_lock_loop_info 매개변수를 통해 활성화하고 활성�
 
 ### 20200915
 #### 새로운 기능:
-- [SQL 제한](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81) 기능 지원.
+- [SQL 스로틀링](https://intl.cloud.tencent.com/document/product/1035/36037) 기능을 지원합니다.
 
 #### 성능 최적화:   
 - buffer pool 초기화 가속을 최적화하였습니다.

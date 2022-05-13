@@ -35,7 +35,7 @@ Parameter description:
   - Parameter value: It can contain 1–1000 characters.
 - During one HTTP request header modification operation, you can add up to 30 headers of different types, which will be executed in sequence from top to bottom.
 - The following standard headers cannot be modified:
-```
+```js.
 Date
 Expires
 Content-Type

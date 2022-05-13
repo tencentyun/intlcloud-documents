@@ -21,21 +21,22 @@ None of the existing public cloud object storage services in the industry provid
 ## Directions
 
 
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5), create a workflow, customize a format filter rule, and create a custom function node.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. create a workflow, customize a format filter rule, and create a custom function node,For detailed steps, see [Configuring a Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
 
-2. In the function node pop-up window, click **Add Function**.
+3. In the function node pop-up window, click **Add Function**.
      
-3. On the SCF creation page, select the **Calculate COS object hash** template.
+4. On the SCF creation page, select the **Calculate COS object hash** template.
 
-4. Based on the user's file size, configure the execution timeout period in the basic settings and configure sufficient memory in the advanced settings.
-5. Configure the function code. This function template supports the following two environment variables:
+5. Based on the user's file size, configure the execution timeout period in the basic settings and configure sufficient memory in the advanced settings.
+6. Configure the function code. This function template supports the following two environment variables:
   - hashTypeList: indicates the list of calculation algorithms. This variable is optional. The default value is `["crc64", "md5", "sha1", "sha256"]`.
   - caseType: indicates the hash case. This variable is optional. The default value is `lowercase`. You can also pass in `uppercase`.
-6. Enable permission configuration and bind a role that has the read/write permission of the current bucket. If you need to create an execution role, see [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176).
-7. Click **Finish**.
-8. Go back to the previous workflow page, select the custom transcoding function created just now, and save the workflow.
+7.  Enable permission configuration and bind a role that has the read/write permission of the current bucket. If you need to create an execution role, see [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176).
+8.Click **Finish**.
+9. Go back to the previous workflow page, select the custom transcoding function created just now, and save the workflow.
 
-9. Upload the file. After the workflow processing is successful, you can see that multiple hash headers are successfully added to the uploaded file.
+10. Upload the file. After the workflow processing is successful, you can see that multiple hash headers are successfully added to the uploaded file.
 
 
 
