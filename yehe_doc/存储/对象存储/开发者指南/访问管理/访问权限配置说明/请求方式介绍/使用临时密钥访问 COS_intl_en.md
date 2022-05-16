@@ -20,14 +20,14 @@ You need a CAM user account (Tencent Cloud root account or sub-account) to apply
 Assume that A represents the original permissions of the CAM user, B represents the permissions that are set for the temporary key by using the `policy` parameter, and the intersection of A and B is the final valid permissions of the temporary key.
 
 As shown in the figure below, the intersection of the CAM user permissions and the temporary permissions specified by `policy` is valid permissions:
-![](https://qcloudimg.tencent-cloud.cn/raw/d7897c607e0fc93729cd924908c1b0be.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/60982ace7d24b98f97210e674fd373a9.png)
 
 As shown in the figure below, the temporary permissions specified by `policy` are within the CAM user permissions, and therefore, the temporary permissions specified by `policy` are valid permissions.
-![](https://qcloudimg.tencent-cloud.cn/raw/0611470aff77eef075b58109c3014f4a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/03b30ed344faa1a9e28a6210810866d1.png)
 
 ## Accessing COS Using a Temporary Key
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e3e735b970a04e2afe3efa74cfb30fcb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0127017176d6014ec8957f47d4858666.png)
 A temporary key consists of a SecretId, a SecretKey, and a token. Multiple temporary keys can be generated for each root account or sub-account. Compared with permanent keys, temporary keys have shorter validity periods (30 minutes to 36 hours). Therefore, temporary keys are suitable for temporary authorization scenarios such as frontend direct upload. Compared with permanent keys, temporary keys are more secure to be distributed to untrusted users. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) and [Temporary Key Security Guide for Frontend Direct Upload to COS](https://intl.cloud.tencent.com/document/product/436/35265).
 
 - Initiating API requests
