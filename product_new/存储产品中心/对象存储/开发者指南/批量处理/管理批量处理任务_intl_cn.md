@@ -17,7 +17,7 @@
 ## 任务状态
 
 当您创建一项任务后，任务状态将会在以下几项状态中切换。状态切换图如下所示：
-<img src="https://main.qcloudimg.com/raw/1b2edc84eb8cc664dc006f56c6810e2e.png"  width="95%">
+![](https://qcloudimg.tencent-cloud.cn/raw/f1b6e51eadf4930922a1f929351903bb.png)
 
 
 下表详细介绍了不同任务状态的含义。
