@@ -13,13 +13,13 @@ CSSプッシュでは、デフォルトではウォーターマークが無効�
 ## ウォーターマークテンプレートのバインド
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したい**プッシュドメイン名**または【管理】をクリックしてドメイン名詳細画面に入ります。
 2.【テンプレート設定】タブを選択し、【ウォーターマーク設定】タブの右上隅にある【編集】をクリックします。
-![](https://main.qcloudimg.com/raw/c46b5fc50d2bfaaa995f55750a05cca1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c9a415b0848a1d22b6e236c0ab4771ba.png)
 4.ウォーターマーク設定テンプレートを選択し、【保存】をクリックすれば完了です。
-![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b597758441bcabcbb3f38d74e649b4da.png)
 >? 操作バーの【プレビュー】をクリックすると、ウォーターマーク効果を表示できます。
 
 ## ウォーターマークテンプレートのバインド解除
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したい**プッシュドメイン名**または【管理】をクリックしてドメイン名詳細画面に入ります。
 2. 【テンプレート設定】のタブを選択し、【ウォーターマーク設定】のタブ右上角の【編集】をクリックします。
 3. 対応するテンプレートのチェックをクリックして外し、【保存】をクリックすれば完了です。
-![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7a009d4780d4c91f0f06707abd9e22d9.png)
