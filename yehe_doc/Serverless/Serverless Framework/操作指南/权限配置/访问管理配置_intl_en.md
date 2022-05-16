@@ -50,7 +50,7 @@ You can log in to the [CAM console](https://console.cloud.tencent.com/cam/policy
 ```
 
 #### Read-only access permission
-- Grant a sub-account read-only access to Serverless SSR (SLS).
+- Grant a sub-account read-only access to SLS.
 - Policy name: QcloudSLSReadOnlyAccess
 
 ```json
