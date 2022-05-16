@@ -4,7 +4,7 @@
 >!中国港澳台地区及境外地区数据是指通过腾讯云海外直播 CDN 分发产生的流量数据，不以用户端所在地 IP 作为统计标准。
 
 
-![](https://main.qcloudimg.com/raw/43baae51f20517a3e33542f40db58230.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6c16ed7196afe8896b9f8d52046536c5.png)
 
 **带宽**：直播下行播放数据。
 **流量**：直播当前一分钟内的累计流量。也是直播下行播放数据。
