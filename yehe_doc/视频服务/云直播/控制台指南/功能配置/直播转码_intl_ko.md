@@ -28,7 +28,7 @@
   - 고급 설정 항목(선택 입력): **고급 설정**을 클릭하여 펼쳐 보기 후 설정할 수 있습니다. 자세한 내용은 [표준 트랜스 코딩 고급 설정 설명](#C_trans_high)을 참고하십시오.
 3. 입력 후 **저장**을 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/cde1db91ea2796656a0297889e918daa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a687312d5f0cb459a9684fe9f2de6459.png)
 
 <table id="C_trans_normal">
 <tr><th width="20%">표준 트랜스 코딩 기본 설정 항목</th><th>필수 입력 여부</th><th>설명</th></tr>
@@ -94,7 +94,7 @@
   - 고급 설정 항목(선택 입력): **고급 설정**을 클릭하여 펼쳐 보기 후 설정할 수 있습니다. 자세한 내용은 [초고속 고화질 트랜스 코딩 고급 설정 설명](#C_topspeed_high)을 참고하십시오.
 3. **저장**을 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/68e80755dce7d3fa52210d7237f89418.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54a0334f1d24f7e0acb4e4f923b27d23.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">초고속 고화질 트랜스 코딩 기본 설정 항목</th><th>필수 입력 여부</th><th>설명</th>
@@ -151,7 +151,7 @@
 1. CSS 콘솔에 로그인하여 **기능 설정** > [**라이브 방송 트랜스 코딩**](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
 2. **트랜스 코딩 템플릿 생성**을 클릭하고 트랜스 코딩 유형을 『**퓨어 오디오 트랜스 코딩**』으로 선택합니다. [설정 항목](#C_audio_normal)을 입력하고 **저장**을 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/c12170c861b0ed188aed7047822902a6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3cfe98bcc9f21c445e5db220a9ea0673.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">퓨어 오디오 트랜스 코딩 기본 설정 항목</th><th>필수 입력 여부</th><th>설명</th>
@@ -183,14 +183,13 @@
 1. CSS 콘솔에 로그인하여 **기능 설정** > [**라이브 방송 트랜스 코딩**](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
 2. 다음과 같이 도메인 바인딩 창으로 이동합니다.
   - **도메인 직접 연결:** 왼쪽 상단에 있는 **도메인 바인딩**을 클릭합니다.
-    ![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/7bcbc02fbc3ec3390ed16475b62482c5.png)
   - **신규 트랜스 코딩 템플릿 생성 완료 후 도메인 연결**: [트랜스 코딩 템플릿 생성](#create) 완료 후 팝업 창의 **도메인 바인딩**을 클릭합니다.
-    ![](https://main.qcloudimg.com/raw/82060d2edf81b37a0706cc11833c9d9a.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/2927d94d3e07f7344b6d740593265a0b.png)
 3. 도메인 바인딩 창에서 바인딩할 **트랜스 코딩 템플릿**과 **재생 도메인**을 선택하고 **확인**을 클릭하면 바인딩이 완료됩니다.
-![](https://main.qcloudimg.com/raw/8d0f571fab2c3765e3cebe5f5a819720.png)
->?**추가**를 클릭하여 현재 템플릿에 여러 개의 재생 도메인을 바인딩할 수 있습니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/1dc995d90d354e72613c699d59836f05.png)
 
-
+>? **추가**를 클릭하여 현재 템플릿에 여러 개의 재생 도메인을 바인딩할 수 있습니다.
 
 [](id:untie)
 ## 바인딩 해제
@@ -200,21 +199,16 @@
 3. 현재 연결된 도메인의 바인딩 해제 여부를 확인하고 **확인**을 클릭하면 바인딩 해제가 완료됩니다.
 ![](https://main.qcloudimg.com/raw/e335a8c597413b90dfabda9a1f7f3150.png)
 
-
-
 [](id:modify)
 ## 템플릿 수정
 1. CSS 콘솔에 로그인하여 **기능 설정** > [**라이브 방송 트랜스 코딩**](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
 2. 생성된 트랜스 코딩 템플릿을 선택하고 오른쪽에 있는 **편집**을 클릭하면 템플릿 정보 수정 페이지로 이동합니다.
 3. **저장**을 클릭합니다.
-
-![](https://main.qcloudimg.com/raw/202923ad5334c6ee3e5a879042aa0d5c.png)
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0e27dc5c0ebfc2915161894c3d6a337c.png)
 
 [](id:delect)
 ## 템플릿 삭제
->!   템플릿이 이미 연결되어 있는 경우 먼저 [바인딩 해제](#unite)를 진행해야 삭제할 수 있습니다. 
+>! 템플릿이 이미 연결되어 있는 경우 먼저 [바인딩 해제](#unite)를 진행해야 삭제할 수 있습니다. 
 
 1. CSS 콘솔에 로그인하여 **기능 설정** > [**라이브 방송 트랜스 코딩**](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
 2. 재생 도메인에 연결되지 않은 트랜스 코딩 템플릿을 선택하고 **삭제**를 클릭합니다.
