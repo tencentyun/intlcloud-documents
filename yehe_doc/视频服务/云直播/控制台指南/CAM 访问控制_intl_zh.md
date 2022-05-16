@@ -26,11 +26,11 @@
 - 方法一：进入用户/用户组页面，选择需添加策略的用户/用户组，单击操作列表中的【授权】/【关联策略】，选中相应的直播策略，同时单击【确定】即可添加成功。
 ![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
 
-![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
-
 ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
 - 方法二：进入策略页面，选择需添加的策略，单击操作列表中的【关联用户/组】，选中需授权的用户，单击【确定】即可添加成功。
+
+![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
 ![](https://main.qcloudimg.com/raw/5b5e0dc032934846e39e7aee740ae34b.png)
 
 **可添加的策略有**：
