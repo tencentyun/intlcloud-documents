@@ -12,7 +12,7 @@ You have activated the [CSS](https://cloud.tencent.com/product/css) service.
     1. To add a **push domain**, enter the domain name, select its type as **Push Domain**, and click **Confirm**.
     2. To add a **playback domain**, enter the domain name, select its type as **Playback Domain**, select an acceleration region (**Chinese mainland** by default), and click **Confirm**.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/31990dfff7956a2b6405948c2931a992.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bde55a20b40da9d2d0fe2eda9613b63b.png)
 
 >! 
 >- The domain name can be up to **45** characters and cannot contain uppercase letters.
