@@ -12,18 +12,13 @@
 標準のCSSサービスの料金については、[標準CSS価格一覧](https://intl.cloud.tencent.com/document/product/267/2819)をご参照ください。
 
 
-
-
 > ?個人の請求書情報を確認したい場合は、 [請求書の照会](https://intl.cloud.tencent.com/document/product/267/36278)をご参照ください。
->
-
-
 
 ## 三、コンソール概要
 
  以下が、 [CSSコンソール](https://console.cloud.tencent.com/live/livestat)のオーバービュー画面になります。 
 
-![](https://main.qcloudimg.com/raw/d064207bb8e3f69f2eef152a41a49fa2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc1b2ed1e8f0cbf859c75b8e48f11811.png)
 
 ## 四、機能の説明
 
