@@ -74,5 +74,5 @@ CSSではCSSコールバック機能を提供し、コンソールでのコー�
 2. 作成済みのコールバック設定テンプレートを選択し、右側の**削除**をクリックします。
 3. 現在のスクリーンキャプチャ・ポルノ検出設定テンプレートの削除の是非を確認し、**OK**をクリックすれば削除できます。
 
-![](https://main.qcloudimg.com/raw/1bf90e6b3197dd2e18aff8c52cbe331c.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/9cc8d3a6c82a8b54ae904ddcc9ca01f6.png)
 
