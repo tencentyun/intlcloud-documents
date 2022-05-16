@@ -12,13 +12,13 @@ If you need more information, you can get all the information of a job using the
 
 You can set priority for your batch operation jobs, and COS will execute them based on priority, i.e., executing jobs of a higher priority first. Priority is expressed as an integer; the greater the value, the higher the priority. You can modify the priority during job execution. If a higher-priority job needs to be added, you can run it first by pausing the lower-priority job.
 
-> Although higher-priority jobs generally take precedence over lower-priority ones, priority is not a criterion for sequential execution. If you want to run batch operation jobs sequentially, please monitor the execution status of each job on your own and start them manually.
+>! Although higher-priority jobs generally take precedence over lower-priority ones, priority is not a criterion for sequential execution. If you want to run batch operation jobs sequentially, please monitor the execution status of each job on your own and start them manually.
 
 ## Job Status
 
 Job status changes as the execution proceeds, as shown below:
-<img src="https://main.qcloudimg.com/raw/1b2edc84eb8cc664dc006f56c6810e2e.png"  width="95%">
 
+![](https://qcloudimg.tencent-cloud.cn/raw/f1b6e51eadf4930922a1f929351903bb.png)
 
 The specific meaning of each job status is as follows:
 
@@ -45,7 +45,7 @@ If a problem arises during job execution, such as trouble in parsing the object 
 
 COS sets a task failure threshold for each batch operation job to avoid frequent task failures. If a job involves more than 1,000 tasks, COS will monitor the task failure rate, i.e., proportion of failed tasks to all tasks executed. If the rate exceeds the threshold of 50% at any moment, COS will terminate the job and return the failure message. You can check the cause why this happens (e.g., the object inventory contains large amounts of information on non-existing objects). Then, you can fix the problem accordingly and create a job again.
 
-> COS executes batch operation jobs in an async manner and does not necessarily perform tasks in the same order that the objects are listed in the inventory. Therefore, you cannot determine which object is being operated on according to the order in the object inventory and whether a task is successful or fails. However, you can get the information on successful or failed tasks from the job report.
+>! COS executes batch operation jobs in an async manner and does not necessarily perform tasks in the same order that the objects are listed in the inventory. Therefore, you cannot determine which object is being operated on according to the order in the object inventory and whether a task is successful or fails. However, you can get the information on successful or failed tasks from the job report.
 
 
 ## Job Report
