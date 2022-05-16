@@ -18,9 +18,9 @@ CSSプッシュ機能は、デフォルトでは無効になっています。�
 ## レコーディングテンプレートのバインド
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したい**プッシュドメイン名**または【管理】をクリックしてドメイン名詳細画面に入ります。
 2. 【テンプレート設定】のタブを選択し、【レコーディング設定】のタブ右上角の【編集】をクリックします。
-![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a56ed2f940b60babab0e2bbbe4eebaab.png)
 3. レコーディング設定テンプレートを選択し、【OK】をクリックすれば完了です。
-![](https://main.qcloudimg.com/raw/8ecacaebb47ab9ae476d9286c1796b46.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c94bd3bedcd4fc4be97b48302a55163b.png)
 
 
 [](id:unite)
