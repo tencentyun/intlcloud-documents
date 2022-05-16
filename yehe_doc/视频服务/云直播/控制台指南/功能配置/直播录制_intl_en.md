@@ -24,7 +24,7 @@ You can create a recording template in two ways:
 ## Creating a Recording Template
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Recording](https://console.cloud.tencent.com/live/config/record)**.
 2. Click **Create Recording Template** and set template information as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/a142c4c29169faa53164e7e264f4aa82.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca30bd94a2f81ecead5c1684b8007744.png)
 
 <table>
    <thead><tr><th width="20%" colspan=2>Item</th><th>Description</th></tr></thead>
@@ -96,9 +96,9 @@ You can create a recording template in two ways:
     - **Bind a domain name to an existing transcoding template**: Click **Bind Domain Name** in the top left.
     ![](https://main.qcloudimg.com/raw/bcb6c5da46a3455f94d441134e49825a.png)
     - You can also click **Bind Domain Name** in the dialog box that pops up **upon successful [template creation](#C_record)**.
-    ![](https://main.qcloudimg.com/raw/7f26a83d95d0f08ceda1b10e93e30389.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b45ec9863fe4c6f16fe5551605ce46d9.png)
 2. In the pop-up window, select a **recording template** and a **push domain name** and then click **Confirm**.
-![](https://main.qcloudimg.com/raw/a9411818457b4e708fd624f970d92ab6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9abc1af79841e877d4e194d0d5741efc.png)
 
 >? You can click **Add** to bind multiple push domain names to a template.
 
