@@ -11,15 +11,15 @@ The watermark feature is disabled by default for live push. This document descri
 
 
 ## Binding Watermark Template
-1. 	Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **push domain name** to be configured or **Manage** to enter the domain name details page.
+1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **push domain name** to be configured or **Manage** to enter the domain name details page.
 2. 	Select **Template Configuration** and click **Edit** in the **Watermark Configuration** section.
-![](https://main.qcloudimg.com/raw/c46b5fc50d2bfaaa995f55750a05cca1.png)
-4. 	Select a watermark template and click **Confirm**.
-![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c9a415b0848a1d22b6e236c0ab4771ba.png)
+3. Select a watermark template and click **Confirm**.
+![](https://qcloudimg.tencent-cloud.cn/raw/b597758441bcabcbb3f38d74e649b4da.png)
 >? You can click **Preview** in the **Operation** column to view the watermark.
 
 ## Unbinding Watermark Template
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **push domain name** to be configured or **Manage** to enter the domain name details page.
 2. Select **Template Configuration** and click **Edit** in the **Watermark Configuration** section.
 3. Clear the target template and click **Confirm**.
-![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7a009d4780d4c91f0f06707abd9e22d9.png)
