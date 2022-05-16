@@ -14,13 +14,13 @@ The screencapture and porn detection feature is disabled by default for live pus
 
 1. 	Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the push domain name to be configured or **Manage** to enter the domain name details page.
 2. Select **Template Configuration** and click **Edit** in the **Screencapture & Porn Detection Configuration** section.
-![](https://main.qcloudimg.com/raw/13d8bdd830ed06a6c3e16960628c04a5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/17f2d3e8f3fff6a1c3eeec09651caf37.png)
 3. Select a screencapture and porn detection template and click **Confirm**.
-![](https://main.qcloudimg.com/raw/1b237b96fb034d4795f5512769f0a34b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/39d729e20b7bb2b152d29eba3723f382.png)
 
 
 ## Unbinding Screencapture and Porn Detection Template
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the push domain name to be configured or **Manage** to enter the domain name details page.
 2. Select **Template Configuration** and click **Edit** in the **Screencapture & Porn Detection Configuration** section.
 3. Clear the target template and click **Confirm**.
-![](https://main.qcloudimg.com/raw/1258bc65cb1ea0627d6c2f23e9fdc023.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f369adcf9c705a00024c50e8d6f94fea.png)
