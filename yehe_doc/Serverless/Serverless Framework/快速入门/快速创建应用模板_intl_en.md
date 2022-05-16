@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to quickly create, configure, and deploy a web framework application in Tencent Cloud through Serverless Framework.
+This document describes how to create, configure, and deploy a web framework application in Tencent Cloud through Serverless Framework.
 
 
 ## Prerequisites
@@ -110,23 +110,23 @@ npm install && sls deploy
 >?If you want to view the details during the removal process, you can add the `--debug` parameter after `sls deploy`.
 
 ### Continuous development
-After the deployment is completed, you can log in to the [SSR console](https://console.cloud.tencent.com/ssr) to view the monitoring metric data output after project deployment, such as the basic information, the number of project requests, and project error statistics.
+After the deployment is completed, you can log in to the [SLS console](https://console.cloud.tencent.com/ssr) to view the monitoring metric data output after project deployment, such as the basic information, the number of project requests, and project error statistics.
 View the monitoring metric data output after project deployment, such as the basic information, the number of project requests, and project error statistics, and implement the continuous development and deployment of the project.
 
-For more information, please see [Console Deployment Guide](https://github.com/AprilJC/Serverless-Framework-Docs/blob/main/docs/%E6%A1%86%E6%9E%B6%E8%BF%81%E7%A7%BB/%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md).
+For more information, see [Console Deployment Guide](https://github.com/AprilJC/Serverless-Framework-Docs/blob/main/docs/%E6%A1%86%E6%9E%B6%E8%BF%81%E7%A7%BB/%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.md).
 Serverless Framework supports running different commands to help you implement continuous development, deployment, and grayscale release for the project. You can also use this component in conjunction with other advanced capabilities such as **layer** and **custom domain name** to configure advanced features for the application.
 
 
 ## FAQs
 
-- Problem 1: the wizard does not pop up by default when `serverless` is entered.
-  Solution: add the `SERVERLESS_PLATFORM_VENDOR=tencent` configuration item to the `.env` file.
+- Problem 1: The wizard does not pop up by default when `serverless` is entered.
+  Solution: Add the `SERVERLESS_PLATFORM_VENDOR=tencent` configuration item to the `.env` file.
 	
-- Problem 2: after `sls deploy` is entered in a network environment outside the Chinese mainland, the deployment is very slow.
-  Solution: add the `GLOBAL_ACCELERATOR_NA=true` configuration item to the `.env` file to enable acceleration outside the Chinese mainland. 
+- Problem 2: After `sls deploy` is entered in a network environment outside the Chinese mainland, the deployment is very slow.
+  Solution: Add the `GLOBAL_ACCELERATOR_NA=true` configuration item to the `.env` file to enable acceleration outside the Chinese mainland. 
 	
-- Problem 3: after `sls deploy` is entered, the deployment reports a network error.
-  Solution: add the following proxy configuration to the `.env` file.
+- Problem 3: Ater `sls deploy` is entered, the deployment reports a network error.
+  Solution: Add the following proxy configuration to the `.env` file.
   ```
   HTTP_PROXY=http://127.0.0.1:12345 # Replace "12345" with your proxy port
   HTTPS_PROXY=http://127.0.0.1:12345 # Replace "12345" with your proxy port
