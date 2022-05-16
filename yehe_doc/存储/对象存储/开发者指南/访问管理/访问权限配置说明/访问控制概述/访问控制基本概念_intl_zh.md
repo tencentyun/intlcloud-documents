@@ -8,7 +8,7 @@
 
 授予访问权限，指的是用户可以决定什么人、在何种条件下、对哪些资源、执行具体操作的控制能力组合。因此描述一个访问权限行为，通常包括四个元素：**身份、资源、操作、条件（可选）**。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/164bdaaee60662fb9848d305f355cd49.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/58d70d36503b2f1a61800b5b7a672442.png)
 
 ## 访问权限的元素
 
