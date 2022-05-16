@@ -4,7 +4,7 @@
 - [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
 - **재생 도메인**이 추가되어 있어야 합니다.
 >? 시나리오 선택, 도메인 추가, 재생 도메인 선택 시 라이브 방송을 재생 배포하는 가속 리전(예: "중국대륙")을 선택하고, [확인]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1915d256b28e4e9a6b997ae464326b8a.png)
 
 ##  주의 사항
 - **해외 라이브 방송 요금은 중국 국내 요금과 다릅니다. 과금에 대한 자세한 내용은 [가격 리스트](https://intl.cloud.tencent.com/document/product/267/2819)를 참고하십시오.
