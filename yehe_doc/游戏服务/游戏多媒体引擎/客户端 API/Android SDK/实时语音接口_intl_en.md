@@ -615,7 +615,7 @@ This API is used to mute a user by specifying the ID. It only applies on the inv
 - B does not mute anyone, so they can hear A and C.
 - C does not mute anyone, so they can hear A and B.
 
-此接口适用于在语音房间中将某用户禁言的场景。
+
 
 #### Function prototype  
 
