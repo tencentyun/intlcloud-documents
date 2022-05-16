@@ -1,39 +1,18 @@
 SES can be prepaid or postpaid.
 
 ## Resource Package
+| Resource Package Specification | Resource Package Price | Validity Period | Unit Price    |
+| ----- | ----- | --- | --------- |
+| 60,000 emails   | 13 USD   | 6 months | 0.00026 USD/email |
+| 200,000 emails  | 50 USD | 6 months | 0.00025 USD/email |
+| 600,000 emails  | 144 USD  | 6 months | 0.00024 USD/email |
+| 1 million emails | 230 USD | 6 months | 0.00023 USD/email |
+| 5 million emails | 1100 USD | 6 months | 0.00022 USD/email |
 - Resource packages are prepaid and take effect after purchase. Click [here](http://buy.cloud.tencent.com/ses) to purchase packages.
 - The validity period of each resource package is calculated separately, and any unused traffic after package expiration cannot be unsubscribed or refunded. If your account is used to send non-compliant content, we will block your account, and your prepaid resources cannot be refunded.
 - Email usage will be deducted first from valid resource packages in order of expiration time.
 - After all resource package are used up, the service can still be used and will become pay-as-you-go.
-<escape>
-<table>
-<tr>
-<th>Resource Package Specification</th>
-<th>Resource Package Price</th>
-<th>Validity Period</th>
-<th>Unit Price</th>
-</tr>
-<tr>
-<td>600,000 emails</td>
-<td>264 USD</td>
-<td>6 months</td>
-<td>0.00044 USD/email</td>
-</tr>
-<tr>
-<td>1 million emails</td>
-<td>430 USD</td>
-<td>6 months</td>
-<td>0.00043 USD/email</td>
-</tr>
-<tr>
-<td>5 million emails</td>
-<td>2,125 USD</td>
-<td>6 months</td>
-<td>0.00042 USD/email</td>
-</tr>
-</table>
 
-</escape>
 
 ## Pay-as-You-Go
 You will be charged according to your actual usage at the price of 0.0005 USD/email. Up to 300,000 emails can be sent per day by default. This quantity can be increased.
