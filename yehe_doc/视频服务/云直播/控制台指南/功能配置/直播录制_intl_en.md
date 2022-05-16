@@ -50,6 +50,7 @@ You can create a recording template in two ways:
    <td>Videos can be outputted in formats of .hls, .mp4, .flv, and .aac (for audio-only recording).</td>
    </tr>
    </tbody></table>
+
 >! 
 >- If you select **Original stream**, you cannot record the audio of WebRTC streams.
 >- You cannot record transcoded streams if you use the time shifting feature. If a recording template has time shifting configured, original streams will be recorded.
