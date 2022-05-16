@@ -34,7 +34,7 @@
 ## [精品 BGP 带宽包](id:cn2)
 >?
 >- 目前仅标准账户类型支持精品 BGP 带宽包，传统账户类型需升级后才能使用，升级详情请参见 [账户类型升级说明](https://intl.cloud.tencent.com/document/product/684/15246)。如需体验，请联系商务经理。
->- 仅香港地域支持精品 BGP IP。
+>- 仅中国香港地域支持精品 BGP IP。
 >
 <table>
 <thead>
