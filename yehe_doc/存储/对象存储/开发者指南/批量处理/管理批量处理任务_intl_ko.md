@@ -17,7 +17,7 @@
 ## 작업 상태
 
 작업을 생성하면 아래 표의 작업 상태로 전환됩니다. 상태 전환 프로세스는 다음 이미지와 같습니다.
-<img src="https://main.qcloudimg.com/raw/1b2edc84eb8cc664dc006f56c6810e2e.png"  width="95%">
+![](https://qcloudimg.tencent-cloud.cn/raw/f1b6e51eadf4930922a1f929351903bb.png)
 
 
 작업 상태에 대한 자세한 의미는 다음 표와 같습니다.
