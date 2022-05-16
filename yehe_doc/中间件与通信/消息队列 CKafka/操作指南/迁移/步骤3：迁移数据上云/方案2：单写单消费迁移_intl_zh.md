@@ -13,7 +13,7 @@
 
 单写单消费的方式简单清晰便于操作，但是 在生产切到新集群后，旧消费切到新集群之前，新集群会存在一定量的堆积。
 
-其迁移步骤如下所示：![](https://main.qcloudimg.com/raw/a24b388a3259dfe609e94ed14037c862.png)
+其迁移步骤如下所示：![](https://main.qcloudimg.com/raw/d25503d1d258cc9266c816daded70029.png)
 
 1. 切换生产流，生产者将数据生产到 CKafka 实例。
    修改 broker-list 中的 IP 为 CKafka 实例的接入网络，在控制台的实例详情页面**接入方式**模块的网络列复制；topicName 为 CKafka 实例中的 Topic 名称。
