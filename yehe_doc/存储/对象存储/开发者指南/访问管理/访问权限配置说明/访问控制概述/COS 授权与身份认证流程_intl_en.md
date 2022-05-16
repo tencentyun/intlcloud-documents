@@ -5,7 +5,7 @@ COS resources (buckets and objects) are configured with the Private Read/Write p
 
 COS's authorization and identity verification process consists of five steps, as shown in the figure below.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3a138071100124990572dd986c3c4350.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/13f73015cca361a685a63531e7eab02e.png)
 
 #### Step 1. Register a Tencent Cloud account
 
