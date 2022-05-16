@@ -18,9 +18,9 @@
 ## 关联录制模板
 1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2.	选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
-![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a56ed2f940b60babab0e2bbbe4eebaab.png)
 3. 选择录制配置模板，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/8ecacaebb47ab9ae476d9286c1796b46.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c94bd3bedcd4fc4be97b48302a55163b.png)
 
 
 [](id:unite)
