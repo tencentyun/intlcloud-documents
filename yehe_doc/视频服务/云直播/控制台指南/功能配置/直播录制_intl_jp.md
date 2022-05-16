@@ -24,7 +24,7 @@ CSSでは、ライブストリーミングの画面をレコーディングし�
 ## レコーディングテンプレートの作成
 1. CSSコンソールにログインし、**機能設定** > [**CSSレコーディング**](https://console.cloud.tencent.com/live/config/record)に進みます。
 2. **レコーディングテンプレート作成**をクリックしてテンプレート情報を以下のように設定します：
-![](https://qcloudimg.tencent-cloud.cn/raw/a142c4c29169faa53164e7e264f4aa82.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca30bd94a2f81ecead5c1684b8007744.png)
 
 <table>
    <thead><tr><th width="20%" colspan=2>設定項目</th><th>設定の説明</th></tr></thead>
@@ -96,9 +96,9 @@ CSSでは、ライブストリーミングの画面をレコーディングし�
     - **ドメイン名の直接的関連付け：**左上にある**ドメイン名のバインド**をクリックします。
     ![](https://main.qcloudimg.com/raw/bcb6c5da46a3455f94d441134e49825a.png)
     - **新規レコーディングテンプレート作成完了後のドメイン名関連付け：**[レコーディングテンプレートの作成](#C_record)の完了後、プロンプトボックスの中の**ドメイン名のバインドに進む**をクリックします。
-    ![](https://main.qcloudimg.com/raw/7f26a83d95d0f08ceda1b10e93e30389.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b45ec9863fe4c6f16fe5551605ce46d9.png)
 2. ドメイン名バインドのウィンドウの中で、バインドしたい**レコーディングテンプレート**および**プッシュドメイン名**を選択し、**OK**をクリックすればバインドが完了します。
-![](https://main.qcloudimg.com/raw/a9411818457b4e708fd624f970d92ab6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9abc1af79841e877d4e194d0d5741efc.png)
 
 > ? **追加**をクリックして現在のテンプレートに複数のプッシュドメイン名をバインドする機能をサポートしています。
 
