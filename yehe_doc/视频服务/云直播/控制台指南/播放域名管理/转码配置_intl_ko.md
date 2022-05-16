@@ -21,7 +21,7 @@ CSS 재생은 기본적으로 원래 비트 레이트로 출력됩니다. 재생
 3. 각 트랜스코딩을 선택하여 템플릿을 설정하고, 해당 도메인의 재생 주소에 컴파일 방식과 비트 레이트가 설정된 템플릿을 지정합니다.
 4. [저장]을 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/8ab50571f4260ba070cf3270f8487e30.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2d8cb5be76debfbd04d60329891c5830.png)
 
 [](id:descript)
 ## 트랜스코딩 재생 주소 설명
@@ -42,6 +42,6 @@ http://domain/AppName/<b style="color:yellow;">StreamName_hd</b>.flv?txSecret=Md
 2. [템플릿 설정] 탭을 선택해 [트랜스코딩 설정]을 선택합니다.
 3. 오른쪽 [편집]을 클릭하여 해당 템플릿 선택을 해제합니다.
 4. [저장]을 클릭하면 템플릿과 도메인 연결이 취소됩니다.
-![](https://main.qcloudimg.com/raw/497478a836b8017c7e8be177b26af24d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/872b71589554e8d89abf50db40f75777.png)
 
 >? 템플릿을 삭제하려면 템플릿 바인딩 해제 후 [기능 템플릿]>[[트랜스코딩 설정]](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동하여 삭제할 수 있습니다. 자세한 내용은 [템플릿 삭제](https://intl.cloud.tencent.com/document/product/267/31071#delect)를 참고하십시오.
