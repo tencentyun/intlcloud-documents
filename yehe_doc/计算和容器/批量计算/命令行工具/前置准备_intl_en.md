@@ -119,7 +119,6 @@ The following table lists the information to be modified.
 	<td>imageId</td>
 	<td>
 		<ul class="params">
-		<li>The image containing the Cloud-init service is required. The Tencent Cloud market provides the image of the <a href="https://market.cloud.tencent.com/products/3081">CentOS v6.5</a> that can be directly used. The image ID is <b>img-m4q71qnf</b>.</li>
 		<li>Custom images are created based on this image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/599/13035">Windows Custom Image</a>.</li>
 		</ul>
 	</td>
