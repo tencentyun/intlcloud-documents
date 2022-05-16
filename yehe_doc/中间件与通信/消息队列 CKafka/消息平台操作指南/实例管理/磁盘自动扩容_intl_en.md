@@ -32,7 +32,7 @@ The default dynamic policy reduces the message retention time by 10% when the di
 4. Click **View** to view the message retention time of each topic.
 5. Click **Configure** in the **Operation** column of the dynamic retention policy to configure **Policy** and **Minimum Time**.
    - Dynamic Policy: after message retention time adjustment is triggered, the broker will delete the oldest historical data according to the new retention time. This feature has a certain delay.
-   - Minimum Time: it can be 1 minute to 30 hours. If the dynamic retention time is lower than this parameter, no dynamic adjustment will be triggered.
+   - Minimum Retention Period: it can be 1 minute to 30 hours. If the dynamic retention time is lower than this parameter, no dynamic adjustment will be triggered.
 
 :::
 
