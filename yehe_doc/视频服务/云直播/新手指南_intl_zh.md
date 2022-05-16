@@ -5,25 +5,18 @@
 - [控制台概览指引](https://intl.cloud.tencent.com/document/product/267/31054)
 - [云直播快速入门](https://intl.cloud.tencent.com/document/product/267/13551)
 
-
-
 ## 二、云直播计费
 
 标准直播服务计费说明请参见请参见[标准直播价格总览](https://intl.cloud.tencent.com/document/product/267/2819)
 
-
-
-
 > ?若您需查看个人账单信息，请参见  [账单查询](https://intl.cloud.tencent.com/document/product/267/36278)。
->
-
 
 
 ## 三、控制台概览
 
  以下为 [云直播控制台](https://console.cloud.tencent.com/live/livestat) 总览页面： 
 
-![](https://main.qcloudimg.com/raw/d064207bb8e3f69f2eef152a41a49fa2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc1b2ed1e8f0cbf859c75b8e48f11811.png)
 
 ## 四、功能概述
 
