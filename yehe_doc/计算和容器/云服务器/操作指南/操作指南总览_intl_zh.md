@@ -25,7 +25,7 @@
 
 ## 制作、导入或者删除自定义镜像
 
-[镜像](https://intl.cloud.tencent.com/document/product/213/4940) 提供启动云服务器实例所需的所有信息。通俗的说，镜像就是云服务器的“装机盘”。目前腾讯云提供四种类型的镜像：公有镜像、服务市场镜像、自定义镜像以及共享镜像。下面介绍镜像目前支持的常见操作。
+[镜像](https://intl.cloud.tencent.com/document/product/213/4940) 提供启动云服务器实例所需的所有信息。通俗的说，镜像就是云服务器的“装机盘”。目前腾讯云提供三种类型的镜像：公有镜像、自定义镜像以及共享镜像。下面介绍镜像目前支持的常见操作。
 
 - [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942)
 - [删除自定义镜像](https://intl.cloud.tencent.com/document/product/213/6036)
