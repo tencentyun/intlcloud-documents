@@ -21,7 +21,7 @@
 3. 选择不同的转码配置模板，为该域名下播放地址指定模板设置的编译方式和码率。
 4. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/8ab50571f4260ba070cf3270f8487e30.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2d8cb5be76debfbd04d60329891c5830.png)
 
 [](id:descript)
 ## 转码播放地址说明
@@ -42,6 +42,6 @@ http://domain/AppName/<b style="color:yellow;">StreamName_hd</b>.flv?txSecret=Md
 2. 选择【模板配置】页签，选择【转码配置】。
 3. 单击右侧的【编辑】，取消相应模板的勾选。
 4. 然后单击【保存】，即可取消模板与域名的关联。
-![](https://main.qcloudimg.com/raw/497478a836b8017c7e8be177b26af24d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/872b71589554e8d89abf50db40f75777.png)
 
 >? 若需删除模板，可在解绑模板后，进入【功能模板】>[【转码配置】](https://console.cloud.tencent.com/live/config/transcode)进行删除操作，具体请参见 [删除模板](https://intl.cloud.tencent.com/document/product/267/31071#delect)。
