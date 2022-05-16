@@ -11,9 +11,9 @@
 	2. カスタマイズしたStreamNameを入力します（例：`liveteststream`）。再生アドレスのStreamNameがプッシュアドレスStreamNameと一致している場合のみ、対応するストリームを再生できます。
 	3. 期限切れ時間を選択します（例：`2021-06-30 19:00:44`）。
 	4. **アドレスの発行**をクリックすれば完了です。
-![](https://main.qcloudimg.com/raw/6bea977acb754ec9c36422aef3189f39.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae67aa5386d9f47d7bd20d7cce7c7603.png)
 3. 再生ドメイン名の再生認証が有効になっていない場合は、**再生設定**>**再生アドレス解析**タグで、当該再生ドメイン名でのRTMP、FLV、HLS、UDPの4種類の再生アドレスが確認できます。再生アドレスの中のStreamName（ストリーム名）を置き換えてプッシュアドレスをバインドすると、その後すぐに再生アドレス経由でライブストリーミングの画面を見ることができるようになります。
-![](https://main.qcloudimg.com/raw/8d8a9ee63dc12045da418c1539051eb6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16a192a0090e8f4f470ace2b78cac52e.png)
 >? CSS再生に関連する詳細情報については、[CSS再生](https://intl.cloud再生.tencent.com/document/product/267/31559)をご参照ください。
 
 
