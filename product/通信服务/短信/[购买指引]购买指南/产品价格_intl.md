@@ -5,7 +5,7 @@ Global SMS is daily [pay-as-you-go](https://intl.cloud.tencent.com/document/prod
 
 > !Due to the rates adjustment by carriers in 2 countries/regions including Russia and Philippines, the prices of Tencent Cloud Global SMS in the above countries/regions will be adjusted from  **00:00 on June 01, 2022**. For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
 
-Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw/3b8a94ee3cf56a9b1e38e6190ecbd707.pdf).
+Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw/4bcaede5c351344bf9494c498a5213ad.pdf).
 
 | Country/Region | Code	| Country/Region Code |	Unit Price (USD) |
 |--------------------|-------|---------|---------------|
