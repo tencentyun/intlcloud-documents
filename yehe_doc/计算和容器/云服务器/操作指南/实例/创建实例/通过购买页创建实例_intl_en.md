@@ -54,7 +54,7 @@ For more information on instances, see <a href="https://intl.cloud.tencent.com/d
 
 5. Click **Next: Confirm Configuration** to access the configuration information confirmation page.
 6. Validate the information of the CVM to be purchased and the cost details of each configuration item.
-7. Read and click **Tencent Cloud Terms of Service** and/or **Refund Policy**.
+7. Read and click **Tencent Cloud Terms of Service**.
 8. You can perform the following operations as needed:
  - Select **Save as Launch Template** to save the configuration of this instance as a launch template, based on which you can quickly create instances.
  - Select **Generate API Explorer Reusable Script** to generate the OpenAPI reusable script code for instance creation corresponding to the selected configuration. You can save the code for purchasing CVM instances with the same configuration. For more information, see [Generating API Explorer Reusable Scripts to Create Instances](https://intl.cloud.tencent.com/document/product/213/39811).
