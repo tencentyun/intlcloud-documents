@@ -1,4 +1,4 @@
-Serverless SSR is deployed based on Serverless Framework and supports the following CLI commands:
+Serverless Application Center is deployed based on Serverless Framework and supports the following CLI commands:
 
 - **`serverless registry`**: views the list of available components.
 
