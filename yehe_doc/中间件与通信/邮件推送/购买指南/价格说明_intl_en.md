@@ -15,7 +15,7 @@ SES can be prepaid or postpaid.
 
 
 ## Pay-as-You-Go
-You will be charged according to your actual usage at the price of 0.0005 USD/email. Up to 300,000 emails can be sent per day by default. This quantity can be increased.
+You will be charged according to your actual usage at the price of 0.00028 USD/email. Up to 300,000 emails can be sent per day by default. This quantity can be increased.
 ## Free Tier
 Each Tencent Cloud account is entitled to a free tier of 1,000 emails. You will be billed for emails sent beyond the free tier.
 ## Rules for Service Suspension
