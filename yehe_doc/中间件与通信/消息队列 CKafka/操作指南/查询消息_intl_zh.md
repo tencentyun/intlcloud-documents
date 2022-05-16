@@ -23,7 +23,7 @@ CKafka 控制台支持按位点查询和按时间查询两种方式查询消息�
    - 分区 ID：消息的 Topic 分区。
    - 位点：消息的消费位点。
    - 时间戳：为 `ProducerRecord` 中的 `timestamp`。
-   - 操作：单击**消息详情**可查看消息的 key 和 value。
+   - 操作：单击**查看消息详情**可查看消息的 key 和 value。
     ![](https://main.qcloudimg.com/raw/2d7d204213d422228a4a892a94496fe8.png)
 
    
@@ -39,7 +39,7 @@ CKafka 控制台支持按位点查询和按时间查询两种方式查询消息�
    - 分区 ID：消息的 Topic 分区。
    - 位点：消息的消费位点。
    - 时间戳：为 `ProducerRecord` 中的 `timestamp`。
-   - 操作：单击**消息详情**可查看消息的 key 和 value。
+   - 操作：单击**查看消息详情**可查看消息的 key 和 value。
    ![](https://main.qcloudimg.com/raw/f033408d8698fbd24bab907cbc2af85a.png)
 
 
