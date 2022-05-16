@@ -1,0 +1,5 @@
+O TencentDB for MySQL permite o uso de [VPC](https://intl.cloud.tencent.com/document/product/236/8468) para obter um nível elevado de isolamento e controle de rede. O uso de [grupo de segurança](https://intl.cloud.tencent.com/document/product/236/14470) e VPC juntos pode melhorar muito a segurança do acesso a instâncias do TencentDB for MySQL.
+
+Uma VPC é um espaço de rede logicamente isolado estabelecido para usuários na Tencent Cloud. Em uma VPC, você pode definir livremente a segmentação de intervalo de IP, endereços IP e políticas de roteamento para obter o isolamento de rede no nível dos recursos.
+
+Por padrão, as instâncias do TencentDB for MySQL implantadas em uma VPC só podem ser acessadas por instâncias da CVM na mesma VPC. Se as instâncias da CVM e do MySQL estiverem em VPCs diferentes, elas poderão se comunicar após você solicitar o acesso à rede pública. Por uma questão de segurança de rede, não recomendamos acessar seus bancos de dados pela rede pública. Se você precisar fazer isso, configure grupos de segurança apropriados para implementar o controle de acesso de clientes.

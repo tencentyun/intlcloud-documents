@@ -1,0 +1,4 @@
+O TencentDB for MySQL fornece a funcionalidade [Ativação da criptografia de dados transparente](https://intl.cloud.tencent.com/document/product/236/38491) desenvolvida pela equipe de banco de dados da Tencent Cloud. A criptografia transparente significa que a criptografia e a descriptografia de dados são imperceptíveis para você. Ao criar uma tabela criptografada, você não precisa especificar uma chave de criptografia e os dados serão criptografados durante a gravação no disco e descriptografados durante a leitura do disco.
+
+A criptografia de dados transparente (TDE, na sigla em inglês) usa o algoritmo AES conhecido internacionalmente e as chaves de criptografia de 256 bits, que são gerenciadas no [KMS](https://intl.cloud.tencent.com/document/product/1030/31961) da Tencent Cloud. Você precisa estar autorizado a acessar o KMS e pode alternar as chaves no console do KMS para melhorar ainda mais a segurança do sistema.
+
