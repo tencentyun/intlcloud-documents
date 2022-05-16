@@ -71,14 +71,11 @@ EIPs can be decoupled from the lifecycle of the cloud resource and operate indep
 
 > By default, the EIP quota cannot be adjusted. You can free some quota by converging IPs in [NAT gateway](https://intl.cloud.tencent.com/product/nat) and [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214).
 > - If you do need to adjust the quota, submit a ticket or contact your sales rep.
-> - 如要求的配额较高，超出的配额有可能收费。
-> - 如调整后存在频繁更换 IP、违反适用法律法规的情况，腾讯云有权收回配额。
 >
 
 
 ### Limits on public IPs bound to CVM
 
-从2019年9月18日（含）起，根据 CPU 配置的差异，单台云服务器支持绑定的公网 IP 数量上限将会发生变化，具体数额如下表所示：
 > For CVM instances purchased before 00:00, September 18, 2019, the number of public IPs can be bound to each instance is equal to the [number of supported private IPs](https://intl.cloud.tencent.com/document/product/576/18527).
 >
 
