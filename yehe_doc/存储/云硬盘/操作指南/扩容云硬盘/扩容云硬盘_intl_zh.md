@@ -24,8 +24,8 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 2. 选择目标云服务器所在行的**更多** > **资源调整** > **云硬盘扩容**。
 3. 在弹出的“云硬盘扩容”窗口中选择需扩容的数据盘，并单击**下一步**。
 4. 在“调整容量”步骤中，设置目标容量（必须大于或等于当前容量），并单击**下一步**。
-5. 在“扩容分区及文件系统”步骤中，查阅注意事项，单击**开始调整**即可。如下图所示：
-![](https://main.qcloudimg.com/raw/86ea905419737239d3cca8d21e3e477d.png)
+5. 在“扩容分区及文件系统”步骤中，查阅注意事项，单击**开始调整**即可。
+
 6. 根据目标云服务的操作系统类型，您需要 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)或 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995)将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成独立的新分区。
 :::
 ::: 通过云硬盘控制台扩容[](id:useCBSConsole)
@@ -49,17 +49,17 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 4. 通过以下扩容方式，完成扩容操作：
 <dx-tabs>
 ::: 离线扩容
-1. 在“扩容分区及文件系统”步骤中，查阅注意事项，勾选“同意强制关机”后，单击**开始调整**即可。如下图所示：
-<img src="https://main.qcloudimg.com/raw/232ce749cdf80647fc49a13933c851b5.png"/>
+1. 在“扩容分区及文件系统”步骤中，查阅注意事项，勾选“同意强制关机”后，单击**开始调整**即可。
+
 2. 完成控制台的扩容操作后，请对应云服务器实际的操作系统，[查看 Linux 实例 cloudinit 配置](#confirmLinuxConfig) 或 [查看 Windows 实例 cloudinit 配置](#confirmwindowsConfig)，根据确认结果按需进行扩容分区及文件系统操作。
 
 :::
 ::: 在线扩容
 <dx-alert infotype="explain" title="">
-云服务器支持作为系统盘的云硬盘进行在线扩容，即不停服扩容。如需使用此功能，请 [提交申请](https://cloud.tencent.com/apply/p/izfummd7ayp)，审核通过后即可开始使用。
+云服务器支持作为系统盘的云硬盘进行在线扩容，即不停服扩容。如需使用此功能，请 [提交申请](https://console.intl.cloud.tencent.com/workorder/category)，审核通过后即可开始使用。
 </dx-alert>
- 1. 在“扩容分区及文件系统”步骤中，查阅注意事项，单击**开始调整**即可。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/2ac6dfa7572ea6f5a031c23188c1eba0.png)
+ 1. 在“扩容分区及文件系统”步骤中，查阅注意事项，单击**开始调整**即可。
+
  2. 完成控制台扩容操作后，请登录实例确认是否已自动扩展文件系统。若未扩展，则请参考在线扩展系统盘及文件系统进行扩容分区及文件系统操作。
 
 :::
@@ -76,7 +76,7 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 2. 执行以下命令，查看到云硬盘与设备名之间的对应关系。
 ```
 ls -l /dev/disk/by-id
-​```返回结果如下图所示：
+​```
 ![](https://main.qcloudimg.com/raw/66b6a19695ef4ba21b74ce0cd96503db.png)
 其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
 :::
@@ -91,8 +91,8 @@ wmic diskdrive get caption,deviceid,serialnumber
 
 ```
 wmic path win32_physicalmedia get SerialNumber,Tag
-```返回结果如下图所示：
-![](https://main.qcloudimg.com/raw/e91aa2f938ddda304844d7ac28840859.png)
+```
+
 其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
 :::
 </dx-tabs>
@@ -102,7 +102,7 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 <dx-tabs>
 ::: 查看\sLinux\s实例\scloudinit\s配置[](id:confirmLinuxConfig)
 完成扩容操作后，请 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 确认 `/etc/cloud/cloud.cfg` 是否包含 growpart 及 resizefs 配置项。
- - 是，则无需进行其他操作。如下图所示：
+ - 是，则无需进行其他操作。
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
     - **growpart**：扩展分区大小到磁盘大小。
     - **resizefs**：扩展调整`/`分区文件系统到分区大小。
@@ -114,5 +114,3 @@ wmic path win32_physicalmedia get SerialNumber,Tag
  - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
 :::
 </dx-tabs>
-
-```
