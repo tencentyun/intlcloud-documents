@@ -1,94 +1,364 @@
-### Hive - HiveMetaStore
-
-| Metric Name | Unit | Description |
-| -------------------------------------------------- | -------- | --------------------------------------- |
-| GC count_YGC                                         | -       | Number of young GCs                         |
-| GC count_FGC                                         | -       | Number of full GCs                           |
-| GC time_FGCT                                        | s        | Time taken by full GCs                    |
-| GC time_GCT                                         | s        | Time taken by GCs                        |
-| GC time_YGCT                                        | s        | Time taken by young GCs                       |
-| Memory utilization_S0                                    | %        | Memory utilization of survivor 0 space                |
-| Memory utilization_E                                     | %        | Memory utilization of eden space   |
-| Memory utilization_CCS                                   | %        | Memory utilization of compressed class space  |
-| Memory utilization_S1                                    | %        | Memory utilization of survivor 1 space    |
-| Memory utilization_O                                     | %        | Memory utilization of old space                      |
-| Memory utilization_M                                     | %        | Memory utilization of metaspace space   |
-| HiveMetaStore_JVM memory_MemHeapUsedM                 | MB       | Size of HeapMemory used by the JVM    |
-| HiveMetaStore_JVM memory_MemHeapCommittedM            | MB       | Size of HeapMemory committed by the JVM    |
-| HiveMetaStore_JVM memory_MemHeapMaxM                  | MB       | Size of HeapMemory configured for the JVM              |
-| HiveMetaStore_JVM memory_MemHeapInitM                 | MB       | Initial size of HeapMem for the JVM               |
-| HiveMetaStore_JVM memory_MemNonHeapUsedM              | MB       | Size of NonHeapMemory used by the JVM |
-| HiveMetaStore_JVM memory_MemNonHeapCommittedM         | MB       | Size of NonHeapMemory committed by the JVM     |
-| HiveMetaStore_JVM memory_MemNonHeapInitM              | MB       | Initial size of NonHeapMemory for the JVM           |
-| HiveMetaStore_file descriptor count_MaxFileDescriptorCount  | -     | Number of open file descriptors                   |
-| HiveMetaStore_file descriptor count_OpenFileDescriptorCount | -       | Maximum number of file descriptors                     |
-| HiveMetaStore_CPU utilization_ProcessCpuLoad             | %        | Process CPU utilization                          |
-| HiveMetaStore_CPU utilization_SystemCpuLoad              | %        | System CPU utilization                          |
-| HiveMetaStore_worker thread count_DaemonThreadCount         | -       | Number of daemon threads                           |
-| HiveMetaStore_worker thread_ThreadCount               | -       | Total number of threads                                |
-| HiveMetaStore_cumulative CPU usage time_ProcessCpuTime       | ms       | Cumulative CPU usage time                         |
-| HiveMetaStore_process run time_Uptime                  | s        | Process run time                            |
-| HiveMetaStore_GC extra sleep time per second_ExtraSleepTime    | ms/s       | GC extra pause time per second                      |
-| HiveMetaStore_CPU usage time_CPURate              | %        | Percentage of CPU usage time                         |
+### Hive - HiveMetaStore 
+<table>
+<tr>
+<th width=20%>Title</th>
+<th width=20%>Metric</th>
+<th width=15%>Unit</th>
+<th width=45%>Description</th>
+</tr><tr>
+<td rowspan=2>GC count</td>
+<td >YGC </td>
+<td >- </td>
+<td >Young GC count</td>
+</tr><tr>
+<td >FGC </td>
+<td >- </td>
+<td >Full GC count</td>
+</tr><tr>
+<td rowspan=3>GC time</td>
+<td >FGCT </td>
+<td >s </td>
+<td >Full GC time</td>
+</tr><tr>
+<td >GCT </td>
+<td >s </td>
+<td >Garbage collection time</td>
+</tr><tr>
+<td >YGCT </td>
+<td >s </td>
+<td >Young GC time</td>
+</tr><tr>
+<td rowspan=6>Memory zone proportion</td>
+<td >S0</td>
+<td >% </td>
+<td >Percentage of used Survivor 0 memory</td>
+</tr><tr>
+<td >E </td>
+<td >% </td>
+<td >Percentage of used Eden memory</td>
+</tr><tr>
+<td >CCS </td>
+<td >% </td>
+<td >Percentage of used compressed class space memory</td>
+</tr><tr>
+<td >S1 </td>
+<td >% </td>
+<td >Percentage of used Survivor 1 memory</td>
+</tr><tr>
+<td >O </td>
+<td >% </td>
+<td >Percentage of used Old memory</td>
+</tr><tr>
+<td >M </td>
+<td >% </td>
+<td >Percentage of used Metaspace memory</td>
+</tr><tr>
+<td rowspan=7>JVM memory</td>
+<td >MemHeapUsedM </td>
+<td >MB </td>
+<td >Size of HeapMemory currently used by JVM</td>
+</tr><tr>
+<td >MemHeapCommittedM	</td>
+<td >MB </td>
+<td >Size of HeapMemory committed by JVM</td>
+</tr><tr>
+<td >MemHeapMaxM </td>
+<td >MB </td>
+<td >Size of HeapMemory configured by JVM</td>
+</tr><tr>
+<td >MemHeapInitM </td>
+<td >MB </td>
+<td >Size of initial JVM HeapMem</td>
+</tr><tr>
+<td >MemNonHeapUsedM </td>
+<td >MB </td>
+<td >Size of NonHeapMemory currently used by JVM</td>
+</tr><tr>
+<td >MemNonHeapCommittedM </td>
+<td >MB </td>
+<td >Size of NonHeapMemory currently committed by JVM</td>
+</tr><tr>
+<td >MemNonHeapInitM </td>
+<td >MB </td>
+<td >Size of initial JVM NonHeapMem</td>
+</tr><tr>
+<td rowspan=2>File descriptors</td>
+<td >OpenFileDescriptorCount</td>
+<td >-</td>
+<td >Number of opened file descriptors</td>
+</tr><tr>
+<td >MaxFileDescriptorCount</td>
+<td >-</td>
+<td >Maximum number of file descriptors</td>
+</tr><tr>
+<td rowspan=2>CPU utilization</td>
+<td >ProcessCpuLoad</td>
+<td >%</td>
+<td >Process CPU utilization</td>
+</tr><tr>
+<td >SystemCpuLoad</td>
+<td >%</td>
+<td >System CPU Utilization</td>
+</tr><tr>
+<td >Percentage of CPU usage time</td>
+<td >CPURate</td>
+<td >seconds/second</td>
+<td >Percentage of CPU usage time</td>
+</tr><tr>
+<td rowspan=2>Worker threads</td>
+<td >DaemonThreadCount</td>
+<td >-</td>
+<td >Number of daemon threads</td>
+</tr><tr>
+<td >ThreadCount</td>
+<td >-</td>
+<td >Total number of threads</td>		
+</tr><tr>
+<td >Cumulative CPU usage time</td>
+<td >ProcessCpuTime</td>
+<td >ms</td>
+<td >Cumulative CPU usage time</td>
+</tr><tr>
+<td >Process execution duration</td>
+<td >Uptime</td>
+<td >s</td>
+<td >Process execution duration</td>
+</tr><tr>
+<td >GC extra sleep time</td>
+<td >ExtraSleepTime</td>
+<td >ms/s</td>
+<td >GC extra sleep time</td>
+</tr>
+</table>
 
 ### Hive - HiveServer2
-
-| Metric Name | Unit | Description |
-| ------------------------------------ | -------- | ------------------------------------------------------------ |
-| GC count_YGC                           | -       | Number of young GCs                                                |
-| GC count_FGC                           | -       | Number of full GCs                                                 |
-| GC time_FGCT                          | s        | Time taken by full GCs                                             |
-| GC time_GCT                           | s        | Time taken by GCs                                            |
-| GC time_YGCT                          | s        | Time taken by young GCs                                            |
-| Memory utilization_S0                      | %        | Memory utilization of survivor 0 space                                     |
-| Memory utilization_E                       | %        | Memory utilization of eden space                                          |
-| Memory utilization_CCS                     | %        | Memory utilization of compressed class space                        |
-| Memory utilization_S1                      | %        | Memory utilization of survivor 1 space                                     |
-| Memory utilization_O                       | %        | Memory utilization of old space                                           |
-| Memory utilization_M                       | %        | Memory utilization of  metaspace space                                     |
-| JVM memory_MemNonHeapUsedM              | MB       | Amount of NonHeapMemory used by the JVM                        |
-| JVM memory_MemNonHeapCommittedM         | MB       | Amount of NonHeapMemory committed by the JVM                        |
-| JVM memory_MemHeapUsedM                 | MB       | Amount of HeapMemory used by the JVM                           |
-| JVM memory_MemHeapCommittedM            | MB       | Amount of HeapMemory committed by the JVM                           |
-| JVM memory_MemHeapMaxM                  | MB       | Amount of HeapMemory configured for the JVM                                 |
-| JVM memory_MemHeapInitM                 | MB       | Initial amount of HeapMem for the JVM                                      |
-| JVM memory_MemNonHeapInitM              | MB       | Initial amount of NonHeapMem for the JVM                                    |
-| CPU utilization_ProcessCpuLoad             | %        | CPU utilization                                                   |
-| File descriptor count_MaxFileDescriptorCount  | -       | Maximum number of file descriptors                                             |
-| File descriptor count_OpenFileDescriptorCount | -       | Number of open file descriptors                                           |
-| Cumulative CPU usage time_ProcessCpuTime       | ms       | Cumulative CPU usage time                                             |
-| Process run time_Uptime                  | s        | Process run time                                                 |
-| Worker thread count_DaemonThreadCount         | -       | Number of daemon threads                                                |
-| Worker thread count_ThreadCount               | -       | Total number of threads                                                     |
-| H2_driver execution latency_99th_percentile    | ms       | 99th percentile latency of driver execution                                          |
-| H2_driver execution latency_Avg                | ms       | Average latency of driver execution                                       |
-| H2_process open connections_NumOpenConnections | -       | Number of open connections                                                 |
-| H2_async thread pool count_PoolSize           | -       | Number of HS2 async thread pools                                        |
-| H2_async operation queue count_QueueSize        | -       | Number of HS2 async operation queues                                      |
-| H2_GC extra sleep time per second_ExtraSleepTime | ms/s     | GC extra pause time per second                                           |
-| MaxFileDescriptorCount               | -       | Maximum number of file descriptors                                             |
-| File descriptor count_OpenFileDescriptorCount | -       | Number of open file descriptors                                           |
-| H2_closed operation count_Closed         | Operations/s     | Number of closed operations per second                                               |
-| H2_finished operation count_Finished           | Operations/s     | Number of finished operations per second                                              |
-| H2_canceled operation count_Canceled           | Operations/s     | Number of canceled operations per second                                              |
-| H2_erroneous operation count_Error              | Operations/s     | Number of erroneous operations per second                                               |
-| H2_JVM heap memory utilization_MemHeapUsedRate   | %        | Percentage of the amount of HeapMemory used by the JVM in the amount of HeapMemory configured for the JVM |
-| H2_CPU usage time per second_CPURate           | s        | Percentage of CPU usage time                                              |
+<table>
+<tr>
+<th width=20%>Title</th>
+<th width=20%>Metric</th>
+<th width=15%>Unit</th>
+<th width=45%>Description</th>
+</tr><tr>
+<td rowspan=2>GC count</td>
+<td >YGC </td>
+<td >- </td>
+<td >Young GC count</td>
+</tr><tr>
+<td >FGC </td>
+<td >- </td>
+<td >Full GC count</td>
+</tr><tr>
+<td rowspan=3>GC time</td>
+<td >FGCT </td>
+<td >s </td>
+<td >Full GC time</td>
+</tr><tr>
+<td >GCT </td>
+<td >s </td>
+<td >Garbage collection time</td>
+</tr><tr>
+<td >YGCT </td>
+<td >s </td>
+<td >Young GC time</td>
+</tr><tr>
+<td rowspan=6>Memory zone proportion</td>
+<td >S0</td>
+<td >% </td>
+<td >Percentage of used Survivor 0 memory</td>
+</tr><tr>
+<td >E </td>
+<td >% </td>
+<td >Percentage of used Eden memory</td>
+</tr><tr>
+<td >CCS </td>
+<td >% </td>
+<td >Percentage of used compressed class space memory</td>
+</tr><tr>
+<td >S1 </td>
+<td >% </td>
+<td >Percentage of used Survivor 1 memory</td>
+</tr><tr>
+<td >O </td>
+<td >% </td>
+<td >Percentage of used Old memory</td>
+</tr><tr>
+<td >M </td>
+<td >% </td>
+<td >Percentage of used Metaspace memory</td>
+</tr><tr>
+<td rowspan=7>JVM memory</td>
+<td >MemNonHeapUsedM </td>
+<td >MB </td>
+<td >Size of NonHeapMemory currently used by JVM</td>
+</tr><tr>
+<td >MemNonHeapCommittedM </td>
+<td >MB </td>
+<td >Size of NonHeapMemory currently committed by JVM</td>
+</tr><tr>
+<td >MemHeapUsedM </td>
+<td >MB </td>
+<td >Size of HeapMemory currently used by JVM</td>
+</tr><tr>
+<td >MemHeapCommittedM </td>
+<td >MB </td>
+<td >Size of HeapMemory currently committed by JVM</td>
+</tr><tr>
+<td >MemHeapMaxM </td>
+<td >MB </td>
+<td >Size of HeapMemory configured by JVM</td>
+</tr><tr>
+<td >MemHeapInitM </td>
+<td >MB </td>
+<td >Size of initial JVM HeapMem</td>
+</tr><tr>
+<td >MemNonHeapInitM </td>
+<td >MB </td>
+<td >Size of initial JVM NonHeapMem</td>
+</tr><tr>
+<td >Percentage of used heap memory</td>
+<td >MemHeapUsedRate </td>
+<td >% </td>
+<td >Proportion of the heap memory size currently used by JVM to the heap memory size configured for JVM</td>
+</tr><tr>
+<td>CPU utilization</td>
+<td> ProcessCpuLoad </td>
+<td > % </td>
+<td >CPU utilization</td>
+</tr><tr>
+<td>Percentage of CPU usage time</td>
+<td> CPUUsedRate </td>
+<td > seconds/second</td>
+<td >Percentage of CPU usage time</td>
+</tr><tr>
+<td rowspan=2>File descriptors</td>
+<td>MaxFileDescriptorCount </td>
+<td > - </td>
+<td >Maximum number of file descriptors</td>
+</tr><tr>
+<td>OpenFileDescriptorCount </td>
+<td > - </td>
+<td >Number of opened file descriptors</td>
+</tr><tr>
+<td>Cumulative CPU usage time</td>
+<td>ProcessCpuTime </td>
+<td > ms </td>
+<td >Cumulative CPU usage time</td>
+</tr><tr>
+<td>Process execution duration</td>
+<td> Uptime </td>
+<td > s </td>
+<td >Process execution duration</td>
+</tr><tr>
+<td rowspan=2>Worker threads</td>
+<td> DaemonThreadCount </td>
+<td > - </td>
+<td > Number of daemon threads</td>
+</tr><tr>
+<td> ThreadCount </td>
+<td > - </td>
+<td >Total number of threads</td>
+</tr><tr>
+<td rowspan=2> Driver execution latency</td>
+<td> 99th_percentile </td>
+<td > ms </td>
+<td >99th percentile of driver execution latency</td>
+</tr><tr>
+<td> Avg </td>
+<td > ms </td>
+<td >Average driver execution latency</td>
+</tr><tr>
+<td >Open connections</td>
+<td>NumOpenConnections </td>
+<td > - </td>
+<td >Number of open connections</td>
+</tr><tr>
+<td >Current size of the pool of async HiveServer2 threads</td>
+<td >PoolSize </td>
+<td > - </td>
+<td >Current size of the pool of async HiveServer2 threads</td>
+</tr><tr>
+<td >Current size of the queue for async HiveServer2 operations</td>
+<td>QueueSize </td>
+<td > - </td>
+<td >Current size of the queue for async HiveServer2 operations</td>
+</tr><tr>
+<td rowspan=4>Hive operations</td>
+<td> Closed </td>
+<td > - </td>
+<td >Number of closed operations</td>
+</tr><tr>
+<td>Finished </td>
+<td > - </td>
+<td >Number of completed operations</td>
+</tr><tr>
+<td>Canceled </td>
+<td > - </td>
+<td >Number of canceled operations</td>
+</tr><tr>
+<td>Error </td>
+<td >-</td>
+<td >Number of erroneous operations</td>
+</tr><tr>
+<td>GC extra sleep time</td>
+<td> ExtraSleepTime </td>
+<td >ms/s</td>
+<td >GC extra sleep time</td>
+</tr>
+</table>
 
 ### Hive - HiveWebHcat
-
-| Metric Name | Unit | Description |
-| ---------------- | -------- | ------------------------------------- |
-| GC count_YGC       | -       | Number of young GCs                         |
-| GC count_FGC       | -       | Number of full GCs                          |
-| GC time_FGCT      | s        | Time taken by full GCs                      |
-| GC time_GCT       | s        | Time taken by GCs                      |
-| GC time_YGCT      | s        | Time taken by young GCs                     |
-| Memory utilization_S0  | %        | Memory utilization of survivor 0 space             |
-| Memory utilization_E   | %        | Memory utilization of eden space                   |
-| Memory utilization_CCS | %        | Memory utilization of compressed class space |
-| Memory utilization_S1  | %        | Memory utilization of survivor 1 space             |
-| Memory utilization_O   | %        | Memory utilization of old space                    |
-| Memory utilization_M   | %        | Memory utilization of metaspace space              |
-
- 
+<table>
+<tr>
+<th width=20%>Title</th>
+<th width=20%>Metric</th>
+<th width=15%>Unit</th>
+<th width=45%>Description</th>
+</tr><tr>
+<td rowspan=2>GC count</td>
+<td >YGC </td>
+<td >- </td>
+<td >Young GC count</td>
+</tr><tr>
+<td >FGC </td>
+<td >- </td>
+<td >Full GC count</td>
+</tr><tr>
+<td rowspan=3>GC time</td>
+<td >FGCT </td>
+<td >s </td>
+<td >Full GC time</td>
+</tr><tr>
+<td >GCT </td>
+<td >s </td>
+<td >Garbage collection time</td>
+</tr><tr>
+<td >YGCT </td>
+<td >s </td>
+<td >Young GC time</td>
+</tr><tr>
+<td rowspan=6>Memory zone proportion</td>
+<td >S0</td>
+<td >% </td>
+<td >Percentage of used Survivor 0 memory</td>
+</tr><tr>
+<td >E </td>
+<td >% </td>
+<td >Percentage of used Eden memory</td>
+</tr><tr>
+<td >CCS </td>
+<td >% </td>
+<td >Percentage of used compressed class space memory</td>
+</tr><tr>
+<td >S1 </td>
+<td >% </td>
+<td >Percentage of used Survivor 1 memory</td>
+</tr><tr>
+<td >O </td>
+<td >% </td>
+<td >Percentage of used Old memory</td>
+</tr><tr>
+<td >M </td>
+<td >% </td>
+<td >Percentage of used Metaspace memory</td>
+</tr>
+</table>
