@@ -14,13 +14,13 @@ CSSプッシュのスクリーンキャプチャ・ポルノ検出機能は、�
 
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したいプッシュドメイン名または【管理】をクリックしてドメイン名詳細画面に入ります。
 2. 【テンプレート設定】のタブを選択し、【Screencapturing and Porn Detection Configuration】のタブ右上角の【編集】をクリックします。
-![](https://main.qcloudimg.com/raw/13d8bdd830ed06a6c3e16960628c04a5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/17f2d3e8f3fff6a1c3eeec09651caf37.png)
 3. スクリーンキャプチャ・ポルノ検出の設定テンプレートを選択し、【保存】をクリックすれば設定完了です。
-![](https://main.qcloudimg.com/raw/1b237b96fb034d4795f5512769f0a34b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/39d729e20b7bb2b152d29eba3723f382.png)
 
 
 ## スクリーンキャプチャ・ポルノ検出テンプレートのバインド解除
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したいプッシュドメイン名または【管理】をクリックしてドメイン名詳細画面に入ります。
 2. 【テンプレート設定】タブを選択し、【Screencapturing and Porn Detection Configuration】タブの右上隅にある【編集】をクリックします。
 3. 対応するテンプレートのチェックをクリックして外し、【保存】をクリックすれば完了です。
-![](https://main.qcloudimg.com/raw/1258bc65cb1ea0627d6c2f23e9fdc023.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f369adcf9c705a00024c50e8d6f94fea.png)
