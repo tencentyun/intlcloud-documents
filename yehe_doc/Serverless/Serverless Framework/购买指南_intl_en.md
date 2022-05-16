@@ -2,7 +2,7 @@
 
 ## Free Tiers of Associated Services
 
-Currently, Tencent Cloud services used by Serverless SLS, such as SCF, API Gateway, and COS, all provide a free tier as detailed below:
+Currently, Tencent Cloud services used by SLS, such as SCF, API Gateway, and COS, all provide a free tier as detailed below:
 
 
 | Service | Free Tier |
