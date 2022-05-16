@@ -9,7 +9,7 @@
 
 ## 查看域名
 您可以在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)页面，查看已添加域名 CNAME 配置状态、所属类型、场景、区域、当前状态、域名开始时间以及域名过期时间。若您需要查看域名详情，单击需要查看的域名或其右侧【管理】，即可进入查看域名信息。
-![](https://main.qcloudimg.com/raw/b26af663a41a018e6bda8920c65e2dca.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1185effbf2807268ab782557bfed00c5.png)
 
 ## 配置域名
 若您需要配置推流域名，可参见 [推流配置](https://intl.cloud.tencent.com/document/product/267/31059)。
@@ -20,14 +20,14 @@
 若您需要禁用域名，单击需要禁用的域名右侧【禁用】，在弹窗中确认是否禁用当前域名。单击【确定】后，当该域名状态由**“已启用”**变为**“未启用”**，表示域名禁用成功。
 >? 禁用域名后该域名无法访问，重新启用后可正常访问，播放域名和推流域名操作相同。
 
-![](https://main.qcloudimg.com/raw/16c8c3f389c8e3a3c06c77e3c3ad8a23.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dedf2826ba84a215a22120c5bb8518c9.png)
 
 ## 启用域名
 若您需要将已禁用的域名重新启用，单击所需启用的域名右侧【启用】，当该域名状态由“未启用”变为“已启用”，表示域名启用成功。
-![](https://main.qcloudimg.com/raw/aff5677a3fedc365b09ce6991afe2b3a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2132cd3c69e68f844731ed272872ab14.png)
 
 
 ## 删除域名
 若您需要删除域名，单击目标域名右侧的【删除】，在弹窗中确认是否需要删除当前域名，单击【确定】后即可删除域名。
-![](https://main.qcloudimg.com/raw/16c8c3f389c8e3a3c06c77e3c3ad8a23.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5086887185d04fcdab0ee74209393eb6.png)
 
