@@ -1,10 +1,10 @@
 ## CAM Overview
 Cloud Access Management (CAM) is a web-based Tencent Cloud service that helps you securely manage and control access permissions, resources, and use permissions of your Tencent Cloud account. Using CAM, you can create, manage, and terminate users (groups), and control the Tencent Cloud resources that can be used by the specified user through identity and policy management.
 
-Serverless SSR supports **resource-level authorization**. You can use policy syntax to grant sub-accounts permissions to manage individual resources. For more information, please see [Authorization Scheme Examples](#examples).
+Tencent Cloud SLS supports **resource-level authorization**. You can use policy syntax to grant sub-accounts permissions to manage individual resources. For more information, please see [Authorization Scheme Examples](#examples).
 
 ## Authorizable Resource Types
-Serverless SSR supports resource-level authorization. You can grant a specified sub-account the API permission of a specified resource. APIs supporting resource-level authorization include:
+SLS supports resource-level authorization. You can grant a specified sub-account the API permission of a specified resource. APIs supporting resource-level authorization include:
 
 | API Name | Description | Six-Segment Example of Resource |
 |---------|---------|---------|
