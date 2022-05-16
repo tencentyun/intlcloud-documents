@@ -1,17 +1,16 @@
 ## Overview
 
-This document describes how to quickly deploy a local Next.js SSR project to the cloud through a web function.
+This document describes how to deploy a local Next.js SSR project to Tencent Cloud through an HTTP-triggered function.
 
 
 
->?This document mainly describes how to deploy in the console. You can also complete the deployment on the command line. For more information, please see [Deploying Framework on Command Line](https://intl.cloud.tencent.com/document/product/583/41586).
+>?This document describes how to deploy in the console. You can also complete the deployment on the command line. For more information, see [Deploying Framework on Command Line](https://intl.cloud.tencent.com/document/product/583/41586).
 
 
 
 ## Prerequisites
 
-Before using SCF, you need to sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) first.
-
+[Register on Tencent Cloud](https://intl.cloud.tencent.com/register) and complete the [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 
 
@@ -37,7 +36,7 @@ Before using SCF, you need to sign up for a [Tencent Cloud account](https://intl
 
 #### Prerequisites
 
-The Node.js runtime environment has been installed locally.
+Install the Node.js runtime environment on your local machine.
 
 #### Local development
 
@@ -55,7 +54,7 @@ cd my-app && npm run dev
 
 #### Deployment in cloud
 
-Next, perform the following steps to make simple modifications to the initialized project, so that it can be quickly deployed through a web function. The project transformation here is usually divided into the following two steps:
+Next, perform the following steps to make simple modifications to the initialized project, so that it can be quickly deployed through an HTTP-triggered function. The project transformation here is usually divided into the following two steps:
 
 - Change the listening address and port to `0.0.0.0:9000`.
 - Add the `scf_bootstrap` bootstrap file.
@@ -70,7 +69,7 @@ nextStart([ '--port', '9000', '--hostname', '0.0.0.0' ])
 :::
 </dx-codeblock>
 <dx-alert infotype="notice" title="">
-- Here is only a sample bootstrap file. Please adjust the specific operations according to your actual business scenario.
+- Here is only a sample bootstrap file. Adjust the specific operations as needed.
 - The sample uses the standard node environment path of SCF. When debugging locally, you need to change it to your local path.
 </dx-alert>
 2. After the creation is completed, you need to run the following command to modify the executable permission of the file. By default, the permission `777` or `755` is required for it to start normally. Below is the sample code:
@@ -83,7 +82,7 @@ chmod 777 scf_bootstrap
 4. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
 5. Select **Custom Creation** for **Creation Method** and configure the options as prompted as shown below:
 ![](https://main.qcloudimg.com/raw/5ea3c99b29d6a21d158635f314f760e3.png)
-	- **Function Type**: select **Web function**.
+	- **Function Type**: select **HTTP-triggered function**.
 	- **Function Name**: enter the name of your function.
 	- **Region**: enter your function deployment region, which is **Guangzhou** by default.
 	- **Runtime Environment**: select **Nodejs 12.16**.
