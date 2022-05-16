@@ -14,7 +14,7 @@
 单写双消费的方式简单清晰便于操作且无数据积压，平滑过渡； 但是需要业务侧新增一套消费者。
 
 其迁移步骤如下所示：
-![](https://main.qcloudimg.com/raw/7b41c8c1f3740a9b5b6ad45f6b369cc0.png)
+![](https://main.qcloudimg.com/raw/51d15605b01dd1095239001a966b2671.png)
 
 1. 旧的消费者保持不动，消费端新起消费者，配置新的集群的 bootstrap-server，消费新的 CKafka 集群。
     需要配置 `--bootstrap-server` 中的 IP 为 CKafka 实例的接入网络，在控制台的实例详情页面**接入方式**模块的网络列复制。
