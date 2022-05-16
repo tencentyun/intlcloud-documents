@@ -84,7 +84,7 @@ This document describes how to use the migration tool provided by CKafka to migr
 5. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka), view the task list on the **Migration to Cloud** page, and wait for the topics to be completely migrated.
 	The topic list is as shown below:
 	<img src="https://main.qcloudimg.com/raw/1c9a76e32926abf8cb296f9622b67a23.png" width="600px">
-	
+
 	The result of successful migration is as shown below:
 	<img src="https://main.qcloudimg.com/raw/574f0dd1ead9397a7da91f26f82c9bc8.png" width="600px">
 
