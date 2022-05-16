@@ -24,7 +24,7 @@ CSS는 라이브 방송 화면 녹화 및 파일을 Video on Demand(VOD)에 저�
 ## 녹화 템플릿 생성
 1. CSS 콘솔에 로그인하여 **기능 설정** > [**라이브 방송 녹화**](https://console.cloud.tencent.com/live/config/record) 페이지로 이동합니다.
 2. **녹화 템플릿 생성**을 클릭하여 다음과 같이 템플릿 정보를 설정합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/a142c4c29169faa53164e7e264f4aa82.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca30bd94a2f81ecead5c1684b8007744.png)
 
 <table>
    <thead><tr><th width="20%" colspan=2>설정 항목</th><th>설정 설명</th></tr></thead>
@@ -96,9 +96,9 @@ CSS는 라이브 방송 화면 녹화 및 파일을 Video on Demand(VOD)에 저�
     - **도메인 직접 연결:** 왼쪽 상단에 있는 **도메인 바인딩**을 클릭합니다.
     ![](https://main.qcloudimg.com/raw/bcb6c5da46a3455f94d441134e49825a.png)
     - **신규 녹화 템플릿 생성 완료 후 도메인 연결:** [녹화 템플릿 생성](#C_record) 완료 후 안내 창의 **도메인 바인딩**을 클릭합니다.
-    ![](https://main.qcloudimg.com/raw/7f26a83d95d0f08ceda1b10e93e30389.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b45ec9863fe4c6f16fe5551605ce46d9.png)
 2. 도메인 바인딩 창에서 바인딩할 **녹화 템플릿**과 **푸시 도메인**을 선택하고 **확인**을 클릭하면 바인딩이 완료됩니다.
-![](https://main.qcloudimg.com/raw/a9411818457b4e708fd624f970d92ab6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9abc1af79841e877d4e194d0d5741efc.png)
 
 >? **추가**를 클릭하여 현재 템플릿에 여러 개의 푸시 도메인을 추가할 수 있습니다.
 
