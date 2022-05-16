@@ -1,11 +1,11 @@
 ## Overview
-Due to the limits of SCF, only code packages below 50 MB in size can be uploaded currently. If your project is too large, you can put dependencies in layers instead of the deployment package to reduce the package size. For specific usages of layers, please see [Operations](https://intl.cloud.tencent.com/document/product/583/34878).
+Due to the limits of SCF, only code packages below 50 MB in size can be uploaded currently. If your project is too large, you can put dependencies in layers instead of the deployment package to reduce the package size. For specific usages of layers, see [Operations](https://intl.cloud.tencent.com/document/product/583/34878).
 
 ## Directions
 ### Creating layer
 You can create a layer and upload dependencies in the following two ways:
-- Create in the [SSR console](https://console.cloud.tencent.com/ssr)
-- Use the Layer component of Serverless Framework (for more information, please see [Layer Component](https://intl.cloud.tencent.com/document/product/1040/37262)) 
+- Create in the [SSL console](https://console.cloud.tencent.com/sls)
+- Use the Layer component of Serverless Framework (for more information, see [Layer Component](https://intl.cloud.tencent.com/document/product/1040/37262)) 
 
 ### Using layer
 You can use layer deployment in project configuration in the following two ways: console configuration and local configuration.
