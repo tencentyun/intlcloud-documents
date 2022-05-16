@@ -9,9 +9,9 @@
 ## 变更方式
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live)，在左侧目录中，单击 **概览** 进入概览页。
 2. 查看 **计费方式** 标签，可选择中国大陆（境内）或国际港澳台（境外）的计费方式，单击 **切换**。
-   ![](https://main.qcloudimg.com/raw/ee8e815c10fdf6dd8c9a95c04082471e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/706c7397b9f535d0f2cf9cab0537301b.png)
 3. 将原有计费方式**日结流量计费**切换为**日结带宽计费**，变更产品为标准直播、快直播，单击 **确定** 即可。
-   ![](https://main.qcloudimg.com/raw/f45e16f7fc10b4102cc420a8fd945253.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b5d96781ac1ab7057b16a31d70ddb39f.png)
 
 >!
 >- 中国大陆或国际/港澳台的标准直播、快直播计费方式均是日结的情况下，才能进行切换计费方式。
@@ -23,6 +23,6 @@
 
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live)，在左侧目录中，单击 **概览** 进入概览页。
 2. 查看**计费方式**标签，可查看到目前待生效计费方式，单击 **取消**。
-![](https://qcloudimg.tencent-cloud.cn/raw/aabbc869dbc07964b779d5a068181e6b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/79c4b03ec28a8b64a2a70ba9b70c9b9e.png)
 3. 取消中国大陆（境内）计费变更，取消变更后，当日不可再进行修改计费操作，单击 **确定** 即可。
-![](https://qcloudimg.tencent-cloud.cn/raw/37ad273fab16e7d18b38cdae945b2d28.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bf040aa63ae33d6d0f2cb2c598ef4a8d.png)
