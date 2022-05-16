@@ -28,7 +28,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
   - Advanced configuration (optional): Click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Standard Transcoding](#C_trans_high).
 3. Click **Save**.
 
-![](https://main.qcloudimg.com/raw/cde1db91ea2796656a0297889e918daa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a687312d5f0cb459a9684fe9f2de6459.png)
 
 <table id="C_trans_normal">
 <tr><th width="20%">Basic Configuration for Standard Transcoding</th><th>Required</th><th>Description</th></tr>
@@ -94,7 +94,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
   - Advanced configuration (optional): Click **Advanced Configuration** to show advanced settings. For details, see [Advanced Configuration for Top Speed Codec Transcoding](#C_topspeed_high).
 3. Click **Save**.
 
-![](https://main.qcloudimg.com/raw/68e80755dce7d3fa52210d7237f89418.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54a0334f1d24f7e0acb4e4f923b27d23.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">Basic Configuration for Top Speed Codec Transcoding</th><th>Required</th><th>Description</th>
@@ -151,7 +151,7 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Audio-only Transcoding** for transcoding type, complete the [configuration](#C_audio_normal), and then click **Save**.
 
-![](https://main.qcloudimg.com/raw/c12170c861b0ed188aed7047822902a6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3cfe98bcc9f21c445e5db220a9ea0673.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">Basic Configuration for Audio-only Transcoding</th><th>Required</th><th>Description</th>
@@ -183,11 +183,11 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Enter the domain name binding page in either of the following ways:
   - **Bind a domain name to an existing transcoding template**: Click **Bind Domain Name** in the top left.
-    ![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/7bcbc02fbc3ec3390ed16475b62482c5.png)
   - **Bind a domain name after creating a transcoding template**: After [creating a template](#create), click **Bind Domain Name** in the pop-up window.
-    ![](https://main.qcloudimg.com/raw/82060d2edf81b37a0706cc11833c9d9a.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/2927d94d3e07f7344b6d740593265a0b.png)
 3. Select a transcoding template and a playback domain name in the domain name binding window and then click **Confirm**.
-![](https://main.qcloudimg.com/raw/8d0f571fab2c3765e3cebe5f5a819720.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1dc995d90d354e72613c699d59836f05.png)
 >? You can click **Add** to bind multiple playback domain names to a template.
 
 
@@ -200,30 +200,22 @@ Live transcoding (including video transcoding and audio transcoding) refers to t
 3. In the pop-up window, click **Confirm**.
 ![](https://main.qcloudimg.com/raw/e335a8c597413b90dfabda9a1f7f3150.png)
 
-
-
 [](id:modify)
 ## Modifying Template
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select the target transcoding template and click **Edit** on the right to modify it.
 3. After modification, click **Save**.
-
 ![](https://main.qcloudimg.com/raw/202923ad5334c6ee3e5a879042aa0d5c.png)
-
-
 
 [](id:delect)
 ## Deleting Template
->!   If the template has been bound with a domain name, you need to [unbind](#untie) it before deleting the template. 
+>! If the template has been bound with a domain name, you need to [unbind](#untie) it before deleting the template. 
 
 1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select a template which is not bound with any playback domain name, and click **Delete**.
 ![](https://main.qcloudimg.com/raw/c3109628fcb4a5a4fabce8ad58c03db5.png)
 3. In the pop-up window, click **Confirm**.
-![](https://main.qcloudimg.com/raw/af5f6c3cc83c8ed5b1f50d37a054ce1d.png)
-
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0e27dc5c0ebfc2915161894c3d6a337c.png)
 
 ## Related Operations
 For more information about **binding** and **unbinding** domain names, see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31062).
