@@ -242,6 +242,6 @@ public class KafkaSaslConsumerDemo {
    
    ```
 
-4. 在 CKafka 控制台【Consumer Group】页面，选择对应的消费组名称，在主题名称输入 topic 名称，点击【查询详情】，查看消费详情。
+4. 在 CKafka 控制台【Consumer Group】页面，选择对应的消费组名称，在主题名称输入 topic 名称，点击【查看消费者详情】，查看消费详情。
 ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
 
