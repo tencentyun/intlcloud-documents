@@ -29,11 +29,8 @@
 <dx-alert infotype="explain" title="">
 默认动态策略是当磁盘负载达到90%以后，向前调整消息保留时间10%。
 </dx-alert>
-   ![](https://qcloudimg.tencent-cloud.cn/raw/77e078fc3c63a467c8de2e32e39e999e.png)
 4. 单击**查看**，可查看每个Topic的消息保留时间。
-   ![](https://main.qcloudimg.com/raw/9debb1aedbdb65461f17788276ef0202.png)
 5. 单击动态保留策略操作列的**配置**，可设置动态策略和保底时长。
-   ![](https://main.qcloudimg.com/raw/381d81ec44b0fccc326076fea03c9084.png)
    - 动态策略：触发调整消息保留时间后，Broker 会根据新的保留时间删除部分最早的历史数据，该效果会有一定延迟。
    - 保底时长：1分钟-30小时，动态调整到该时间后不再触发动态调整。
 
@@ -47,9 +44,7 @@
 <dx-alert infotype="explain" title="">
 默认当磁盘负载达到 90% 时，磁盘自动扩容 10% 。最大磁盘 5000GB。
 </dx-alert>
-![](https://qcloudimg.tencent-cloud.cn/raw/14e630c4b14e0d33b8658745d2cbed57.png)
 4. 单击磁盘自动扩容操作列的**配置**，可设置动态策略和最高磁盘。
-![](https://qcloudimg.tencent-cloud.cn/raw/ee2b8b36740b0286491a3e751faa9cc9.png)
    - 动态策略：磁盘负载到达触发阈值后，会自动根据扩容策略调整磁盘容量，该效果会有一定延迟。
 <dx-alert infotype="explain" title="">
 磁盘扩容的步长是100GB。
