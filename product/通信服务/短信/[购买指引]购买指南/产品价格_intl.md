@@ -3,7 +3,7 @@
 ## Pricing for Global SMS
 Global SMS is daily [pay-as-you-go](https://intl.cloud.tencent.com/document/product/382/18052). The prices in the table are in US dollars.
 
-> !Due to the rates adjustment by carriers in 129 countries/regions including Israel, Argentina, Belarus, Sri Lanka, Canada, Pakistan, Indonesia, and India, the prices of Tencent Cloud Global SMS in the above countries/regions will be adjusted from **00:00 on May 01, 2022**.For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
+> !Due to the rates adjustment by carriers in 2 countries/regions including Russia and Philippines, the prices of Tencent Cloud Global SMS in the above countries/regions will be adjusted from  **00:00 on June 01, 2022**. For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
 
 Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw/3b8a94ee3cf56a9b1e38e6190ecbd707.pdf).
 
@@ -167,7 +167,7 @@ Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw
 | Peru                             | PE   | 51     | 0.0749 |
 | French Polynesia                 | PF   | 689    | 0.1246 |
 | Papua New Guinea                 | PG   | 675    | 0.0692 |
-| Philippines                      | PH   | 63     | 0.0403 |
+| Philippines                      | PH   | 63     | 0.0740 |
 | Pakistan                         | PK   | 92     | 0.1093 |
 | Poland                           | PL   | 48     | 0.0411 |
 | Saint Pierreand Miquelon         | PM   | 508    | 0.1136 |
@@ -180,7 +180,7 @@ Download the Global SMS Price List [here](https://qcloudimg.tencent-cloud.cn/raw
 | Réunion Island                   | RE   | 262    | 0.2108 |
 | Romania                          | RO   | 40     | 0.0776 |
 | Serbia                           | RS   | 381    | 0.0504 |
-| Russia                           | RU   | 7      | 0.0818 |
+| Russia                           | RU   | 7      | 0.1400 |
 | Rwanda                           | RW   | 250    | 0.0739 |
 | Saudi Arabia                     | SA   | 966    | 0.0700 |
 | Solomon Islands                  | SB   | 677    | 0.0447 |
