@@ -33,7 +33,7 @@ For more information on alarms, please see [Creating Alarm Policy](https://intl.
 3. Click **Create** on the trigger template page.
 4. On the template creation page, configure the policy type.
    - **Policy Type**: select **CKafka**.
-   - **A preset trigger conditions**: select this option and the system recommended alarm policy will be displayed.
+   - **Apply preset trigger conditions**: select this option and the system recommended alarm policy will be displayed.
 5. After confirming that everything is correct, click **Save**.
     ![](https://main.qcloudimg.com/raw/df3e52dff6035c3870ce442d028a4dd6.png)
 6. Return to alarm policy creation page and click **Refresh**. The alarm policy template just configured will be displayed.
