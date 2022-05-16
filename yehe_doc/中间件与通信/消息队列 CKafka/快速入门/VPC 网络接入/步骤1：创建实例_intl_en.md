@@ -21,7 +21,7 @@ This document describes how to create an instance and deploy a VPC via the CKafk
    - Product Specification: select a model based on the peak bandwidth and disk capacity.
    - Message Retention: select a value between 24 and 2160 hours.
      When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), previous messages will be deleted in advance to ensure the service availability.
-   - Instance Name: when purchasing multiple instances, you can batch create instances by its numeric suffix (which is numbered in an ascending order) or its designated pattern string. For detailed directions, please see [Naming with Consecutive Numeric Suffixes or Designated Pattern String](https://cloud.tencent.com/document/product/597/59246).
+   - Instance Name: when purchasing multiple instances, you can batch create instances by its numeric suffix (which is numbered in an ascending order) or its designated pattern string. For detailed directions, please see [Naming with Consecutive Numeric Suffixes or Designated Pattern String](https://intl.cloud.tencent.com/document/product/597/41581).
 3. Select the VPC where the CVM resides.
    If you want to use other VPCs, follow the steps in [Adding Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555) to modify the routing rules.
 4. Click **Buy Now**. The instance created is displayed in the instance list in about 3-5 minutes.
