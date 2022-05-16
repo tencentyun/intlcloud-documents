@@ -3,8 +3,6 @@ SES can be prepaid or postpaid.
 ## Resource Package
 | Resource Package Specification | Resource Package Price | Validity Period | Unit Price    |
 | ----- | ----- | --- | --------- |
-| 60,000 emails   | 13 USD   | 6 months | 0.00026 USD/email |
-| 200,000 emails  | 50 USD | 6 months | 0.00025 USD/email |
 | 600,000 emails  | 144 USD  | 6 months | 0.00024 USD/email |
 | 1 million emails | 230 USD | 6 months | 0.00023 USD/email |
 | 5 million emails | 1100 USD | 6 months | 0.00022 USD/email |
