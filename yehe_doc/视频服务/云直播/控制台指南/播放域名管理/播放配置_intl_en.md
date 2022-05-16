@@ -11,9 +11,9 @@ After the push via a domain name is successful, you can go to the CSS console, c
 	2. Enter a custom `StreamName`, such as `liveteststream`. To play back the stream corresponding to the push URL, you need to enter the `StreamName` in the push URL.
 	3. Select an expiration time, such as `2021-06-30 19:00:44`.
 	4. Click **Generate Address**.
-![](https://main.qcloudimg.com/raw/6bea977acb754ec9c36422aef3189f39.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae67aa5386d9f47d7bd20d7cce7c7603.png)
 3. If you haven’t enabled authentication for your playback domain, you can find four playback URLs in the **Playback URL** section, namely RTMP, FLV, HLS, and UDP URLs. Replace `StreamName` with your stream name and you can use the URLs to play the stream.
-![](https://main.qcloudimg.com/raw/8d8a9ee63dc12045da418c1539051eb6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16a192a0090e8f4f470ace2b78cac52e.png)
 >?For more information, please see [Live Playback](https://intl.cloud.tencent.com/document/product/267/31559).
 
 
