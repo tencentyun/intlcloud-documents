@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes how to deploy a local Next.js SSR project to Tencent Cloud through an HTTP-triggered function.
+This document describes how to deploy a local Next.js project to Tencent Cloud through an HTTP-triggered function.
 
 
 
