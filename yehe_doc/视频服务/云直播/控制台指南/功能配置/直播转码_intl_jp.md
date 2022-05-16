@@ -28,7 +28,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
   - 高度な設定項目（任意入力）：**高度な設定**をクリックしてコンテンツを開くと、設定を選択できます。詳細は[標準トランスコーディングの高度な設定の説明](#C_trans_high)をご参照ください。
 3. 入力が完了したら、**保存**をクリックして終了します。
 
-![](https://main.qcloudimg.com/raw/cde1db91ea2796656a0297889e918daa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a687312d5f0cb459a9684fe9f2de6459.png)
 
 <table id="C_trans_normal">
 <tr><th width="20%">標準トランスコーディングの基本設定項目</th><th>必須入力かどうか</th><th>説明</th></tr>
@@ -80,10 +80,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
 <td>パラメータ制限</td>
 <td>いいえ</td>
 <td>デフォルトでは無効になっており、手動で有効にできます。<br>パラメータ制限を有効にすると、入力CSSストリームのオリジナルパラメータが、設定した出力パラメータよりも小さいときは、CSSストリームはオリジナルパラメータに従って出力され、低クオリティのCSSストリームが強制的にパラメータ値を引き上げられて実際の画質への影響を防止します。</td>
-</tr></table>
-
-
-   
+</tr></table> 
 
 [](id:C_topspeed)
 
@@ -94,7 +91,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
   - 高度な設定項目（任意入力）：**高度な設定**をクリックしてコンテンツを開くと、設定を選択できます。詳細は[高速高画質トランスコーディングの高度な設定の説明](#C_topspeed_high)をご参照ください。
 3. **保存**をクリックすれば完了です。
 
-![](https://main.qcloudimg.com/raw/68e80755dce7d3fa52210d7237f89418.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54a0334f1d24f7e0acb4e4f923b27d23.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">高速高画質トランスコーディングの基本設定項目</th><th>必須入力かどうか</th><th>説明</th>
@@ -151,7 +148,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
 1. CSSコンソールにログインし、**機能設定** > [**CSSトランスコード**](https://console.cloud.tencent.com/live/config/transcode)と進みます。
 2. **トランスコードテンプレートの作成**をクリックして、トランスコードタイプに『**オーディオのみのトランスコーディング**』を選択し、[設定項目](#C_audio_normal)を入力して、**保存**をクリックします。
 
-![](https://main.qcloudimg.com/raw/c12170c861b0ed188aed7047822902a6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3cfe98bcc9f21c445e5db220a9ea0673.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">オーディオのみのトランスコーディングの基本設定項目</th><th>必須入力かどうか</th><th>説明</th>
@@ -183,11 +180,11 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
 1. CSSコンソールにログインし、**機能設定** > [**CSSトランスコード**](https://console.cloud.tencent.com/live/config/transcode)と進みます。
 2. 以下の方法でドメイン名をバインドするウィンドウに入ります。
   - **ドメイン名の直接的関連付け：**左上にある**ドメイン名のバインド**をクリックします。
-    ![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/7bcbc02fbc3ec3390ed16475b62482c5.png)
   - **新規トランスコードテンプレート作成完了後のドメイン名のバインド**：[トランスコードテンプレートの作成](#create)の完了後、プロンプトボックスの中の**ドメイン名のバインドに進む**をクリックします。
-    ![](https://main.qcloudimg.com/raw/82060d2edf81b37a0706cc11833c9d9a.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/2927d94d3e07f7344b6d740593265a0b.png)
 3. ドメイン名バインドのウィンドウの中で、バインドしたい**トランスコードテンプレート**および**再生ドメイン名**を選択し、**OK**をクリックすればバインドが完了します。
-![](https://main.qcloudimg.com/raw/8d0f571fab2c3765e3cebe5f5a819720.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1dc995d90d354e72613c699d59836f05.png)
 >? **追加**をクリックして現在のテンプレートに複数の再生ドメイン名をバインドする機能をサポートしています。
 
 
@@ -207,10 +204,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
 1. CSSコンソールにログインし、**機能設定** > [**CSSトランスコード**](https://console.cloud.tencent.com/live/config/transcode)と進みます。
 2. 作成済みのトランスコードテンプレートを選択し、右側の**編集**をクリックすれば、テンプレートの情報を変更できます。
 3. **保存**をクリックすれば完了です。
-
 ![](https://main.qcloudimg.com/raw/202923ad5334c6ee3e5a879042aa0d5c.png)
-
-
 
 [](id:delect)
 ## テンプレートの削除
@@ -220,10 +214,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
 2. 再生ドメイン名をバインドしていないトランスコードテンプレートを選択して、**削除**をクリックします。
 ![](https://main.qcloudimg.com/raw/c3109628fcb4a5a4fabce8ad58c03db5.png)
 3. 現在のトランスコードテンプレートを削除するかどうかを確認し、**OK**をクリックすれば削除が完了します。
-![](https://main.qcloudimg.com/raw/af5f6c3cc83c8ed5b1f50d37a054ce1d.png)
-
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/0e27dc5c0ebfc2915161894c3d6a337c.png)
 
 ## 関連する操作
 ドメイン次元によるトランスコードテンプレートの**バインド**と**バインドの解除**についての具体的な操作および関連説明は、[トランスコーディング設定](https://intl.cloud.tencent.com/document/product/267/31062)をご参照ください。
