@@ -25,7 +25,7 @@ If you forgot your password or lost your key, refer to the following documents t
 
 ## Creating, Importing or Deleting a Custom Image
 
-An [Image](https://intl.cloud.tencent.com/document/product/213/4940) provides the information required for launching an CVM instances. Tencent Cloud provides four types of images: public image, marketplace image, custom image and shared image. We currently support the following image-related operations.
+An [Image](https://intl.cloud.tencent.com/document/product/213/4940) provides the information required for launching an CVM instances. Tencent Cloud provides three types of images: public image, custom image and shared image. We currently support the following image-related operations.
 
 - [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942)
 - [Deleting Custom Images](https://intl.cloud.tencent.com/document/product/213/6036)
