@@ -25,15 +25,12 @@ You can enable either dynamic message retention or automatic disk capacity expan
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the basic information page.
-3. In the **Disk Utilization Processing** module on the instance's basic information page, enable **Dynamic Retention Policy**.
+3. In the **Disk Utilization Processing** module on the instance's basic information page, enable **Dynamic Message Retention Policy**.
 <dx-alert infotype="explain" title="">
 The default dynamic policy reduces the message retention time by 10% when the disk load reaches 90%.
 </dx-alert>
-   ![](https://qcloudimg.tencent-cloud.cn/raw/77e078fc3c63a467c8de2e32e39e999e.png)
 4. Click **View** to view the message retention time of each topic.
-   ![](https://main.qcloudimg.com/raw/9debb1aedbdb65461f17788276ef0202.png)
 5. Click **Configure** in the **Operation** column of the dynamic retention policy to configure **Policy** and **Minimum Time**.
-   ![](https://main.qcloudimg.com/raw/381d81ec44b0fccc326076fea03c9084.png)
    - Dynamic Policy: after message retention time adjustment is triggered, the broker will delete the oldest historical data according to the new retention time. This feature has a certain delay.
    - Minimum Time: it can be 1 minute to 30 hours. If the dynamic retention time is lower than this parameter, no dynamic adjustment will be triggered.
 
@@ -47,9 +44,7 @@ The default dynamic policy reduces the message retention time by 10% when the di
 <dx-alert infotype="explain" title="">
 When the disk load reaches 90%, the disk capacity will be automatically expanded by 10% by default. The maximum disk capacity is 5,000 GB.
 </dx-alert>
-![](https://qcloudimg.tencent-cloud.cn/raw/14e630c4b14e0d33b8658745d2cbed57.png)
 4. Click **Configure** in the **Operation** column of the automatic disk capacity expansion policy to configure **Policy** and **Maximum Disk Capacity**.
-![](https://qcloudimg.tencent-cloud.cn/raw/ee2b8b36740b0286491a3e751faa9cc9.png)
    - Dynamic Policy: after the disk load reaches the trigger threshold, the disk capacity will be automatically adjusted according to the capacity expansion policy, with a certain delay.
 <dx-alert infotype="explain" title="">
 The disk capacity will be expanded in increments of 100 GB.
