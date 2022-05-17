@@ -26,7 +26,7 @@ You can enable either dynamic message retention or automatic disk capacity expan
 
 1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the basic information page.
-3. In the **Disk Utilization Policy** module on the instance's basic information page, enable **Dynamic Retention Policy**.
+3. In the **Disk Utilization Policy** module on the instance's basic information page, enable **Dynamic Message Retention Policy**.
    <dx-alert infotype="explain" title="">
    The default dynamic policy reduces the message retention time by 10% when the disk load reaches 90%.
    </dx-alert>
