@@ -12,7 +12,7 @@ To enable playback authentication, you need to generate an encrypted URL and pro
 
 ## Directions
 1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **playback domain** for which you want to enable authentication or click **Manage**.
-2. Select **Access Control** and click **Edit** in **Authentication Configuration**.
+2. Click **Access Control** and, in the **Key Authentication** area, click **Edit**.
 3. Complete the following settings on the authentication configuration page:
 	1. Click the switch next to **Playback Authentication** to enable playback authentication.
 	2. Enter a custom primary key, such as `testlive`.
