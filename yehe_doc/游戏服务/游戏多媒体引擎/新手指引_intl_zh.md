@@ -32,7 +32,7 @@
 
 可以通过 [下载指引](https://intl.cloud.tencent.com/document/product/607/18521) 下载所需平台的 SDK 文件。**目前游戏多媒体引擎支持 Windows、Mac、Android 以及 iOS 平台，游戏引擎支持 UnrealEngine4、Unity3D 以及 Cocos2DX**。
 
-目前也支持在 H5 端进行实时语音通话，以及在小程序端听房间内的语音聊天。
+目前支持在 H5 端进行实时语音通话。
 
 #### 4.4 接入 SDK
 接入各平台 SDK 可以先参考各平台的 [工程配置](https://intl.cloud.tencent.com/document/product/607/10783) 文档，配置工程完成后再查看对应平台的 [接口文档](https://intl.cloud.tencent.com/document/product/607/15228) 调用接口使用游戏多媒体引擎服务。实时语音服务接口的调用顺序一般是【Init 初始化】>【Poll 触发回调】>【EnterRoom 进入语音房间】>【EnableMic 打开麦克风】>【EnableSpeaker 打开扬声器】>【ExitRoom 退房】>【Unit 反初始化】。
