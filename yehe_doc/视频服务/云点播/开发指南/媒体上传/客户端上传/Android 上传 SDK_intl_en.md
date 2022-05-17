@@ -214,7 +214,7 @@ Progress callback: `TXUGCPublishTypeDef.ITXVideoPublishListener.onPublishProgres
 
 Result callback: `TXUGCPublishTypeDef.ITXVideoPublishListener.onPublishComplete`
 
-| Variable Name   | Description | Type                                  ||
+| Variable Name   | Description | Type                                  |
 | ------ | ---- | ----------------------------------- |
 | result | Upload result. | TXUGCPublishTypeDef.TXPublishResult |
 
