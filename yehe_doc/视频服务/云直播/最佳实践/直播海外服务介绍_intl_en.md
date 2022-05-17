@@ -45,6 +45,6 @@ The Global CSS service can be directly activated in the [CSS console](https://co
 - If you already have a Tencent Cloud account and have activated CSS, you can proceed directly to the next step.
 
 Go to the CSS console, select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** on the left sidebar, and click **Add Domain**.
-![](https://main.qcloudimg.com/raw/8966d84b046460251f38b49927117826.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e0131c5904b8e2a8c20034b10fb7127b.png)
 
 In the pop-up window, select the type as **Playback Domain**, select the corresponding **Acceleration Region**, and enter the **Domain Name** that needs to be accelerated.
