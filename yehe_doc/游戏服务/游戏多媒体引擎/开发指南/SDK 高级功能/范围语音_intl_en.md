@@ -64,7 +64,7 @@ A range voice room is different from a team voice room because you must choose s
 
 Once you enter the room, call `UpdateAudioRecvRange` (once at least), and call `UpdateSelfPosition` once per frame.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e238a74c747ea08c123c9c1c762b23c4.png"  width="60%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/4f531ae31457f031b0034d8dc39eda3c.png"  width="60%"/></img>
 
 >!
 >- Make sure to follow the flow chart to call the API.
