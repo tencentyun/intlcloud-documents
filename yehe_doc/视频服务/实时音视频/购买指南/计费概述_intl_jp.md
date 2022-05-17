@@ -3,10 +3,6 @@
   [ここをクリック](https://intl.cloud.tencent.com/contact-us)し、ビジネスに関するお問い合わせから、詳細情報をお調べください。
 
 - **毎月、10000分間[無料時間](https://intl.cloud.tencent.com/document/product/647/42735)が提供されます**。
-
-- **[前払いパッケージ](https://intl.cloud.tencent.com/document/product/647/42736)から予約購入すると割引が適用されます**。
-
-  TRTC前払いパッケージを購入するには、[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)を実施してください。
   
 - **[価格計算ツール](https://intl.cloud.tencent.com/pricing/trtc/calculator)で速やかにビジネス費用を見積ります**。
 
