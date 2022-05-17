@@ -35,6 +35,5 @@ This feature is free of charge. There is no charge even for migrating an instanc
 1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the basic information page.
 3. In the **Basic Info** module, click **Edit** on the right of the current AZ and select the AZ you want to switch to.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/f8307326974bbae58af6d0d1c21b6ce7.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/602a60c710f974db8ea903d82b1f2ad1.png)
 4. Click **OK**. It will take 5–10 minutes to complete the configuration adjustment. You can view the progress in the **Status** column in the instance list.
-![](https://qcloudimg.tencent-cloud.cn/raw/7a2e65ad428af0ffeec2a3342fe7fe61.png)
