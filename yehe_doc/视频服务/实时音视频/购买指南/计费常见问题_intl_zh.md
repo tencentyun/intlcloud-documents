@@ -75,7 +75,7 @@
 [](id:que10)
 
 ### CDN 直播观看如何计费？
-TRTC 通过旁路推流使用 [云直播](https://intl.cloud.tencent.com/document/product/267) 的能力为您提供 CDN 直播观看的功能。**云直播**将根据实际使用情况向您收取 [CDN 直播观看 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35242)。
+TRTC 通过旁路推流使用 [云直播](https://intl.cloud.tencent.com/document/product/267) 的能力为您提供 CDN 直播观看的功能。**云直播**将根据实际使用情况向您收取 CDN 直播观看 > 相关费用。
 
 [](id:que12)
 
