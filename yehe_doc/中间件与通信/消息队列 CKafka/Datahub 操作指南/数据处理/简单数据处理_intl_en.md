@@ -31,6 +31,7 @@ DataHub provides the simple data processing feature. You only need to pass in da
 >?Currently, only JSON is supported as an output format.
 >
 <img src = "https://qcloudimg.tencent-cloud.cn/raw/173eb91993a5e4333066f7ebf034811a.png" style="width: 100%">  
+
    - Filter: It outputs only data meeting the filter rules. Supported filter match modes include **By prefix**, **By suffix**, **Contains**, **Except**, **By value**, and **By IP**. For more information, see [Filter Rule Description](https://intl.cloud.tencent.com/document/product/597/46823).
    - Data Processing: Valid values of `TYPE` are **Default**, **Preset**, **Mapping**, **Custom**, and **JSONPATH**.
      - TYPE = Default: `VALUE` is mapped based on the parsing result and cannot be modified.
