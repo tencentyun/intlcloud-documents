@@ -3,10 +3,6 @@
   [点击这里](https://intl.cloud.tencent.com/contact-us)，联系商务获得更多信息。
 
 - **每月赠送10,000分钟**[免费时长](https://intl.cloud.tencent.com/document/product/647/42735)。
-
-- **[预付费套餐包]**(https://intl.cloud.tencent.com/document/product/647/42736)，预购享折扣。
-
-  请注意，在购买TRTC预付费套餐包之前，您需要先 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
   
 - **[价格计算器](https://intl.cloud.tencent.com/pricing/trtc/calculator)，快速预估业务费用**。
 
