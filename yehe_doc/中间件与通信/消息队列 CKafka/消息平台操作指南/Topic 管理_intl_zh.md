@@ -8,7 +8,7 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
 
 ### 创建 Topic
 
-1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
+1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka)。
 2. 在**实例列表**页，单击目标实例的“ID/名称”，进入实例详情页。
 3. 在实例详情页，单击页面顶部的 **Topic 管理**，单击**新建**。
 4. 在编辑 Topic 窗口中，选择分区数和副本数等信息。
@@ -20,15 +20,16 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
    - 标签：设置资源标签，关于标签的详细介绍请参见 [标签管理](https://intl.cloud.tencent.com/document/product/597/41600)。
    - 预设 ACL 策略：勾选提前设置好的 ACL 策略，关于 ACL 策略详情请参见 [配置 ACL 策略](https://intl.cloud.tencent.com/document/product/597/39084)。
 5. 单击**提交**完成 Topic 创建。
-    ![](https://main.qcloudimg.com/raw/e7bc2169b2d7985f287854f509f330c0.png)
+   ![](https://main.qcloudimg.com/raw/e7bc2169b2d7985f287854f509f330c0.png)
 
 ### 查看 Topic 详情
 
-1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 。
+1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka) 。
 2. 在左侧导航栏单击**实例列表**，单击目标实例的“ID/名称”，进入实例详情页。
 3. 在实例详情页，单击 **topic 管理**标签页，查看 Topic 信息，进入 Topic 列表页。
 4. 在 Topic 列表页，单击 Topic 名称左侧右三角符号，查看 Topic 详情。
    ![](https://main.qcloudimg.com/raw/6fea6378fa2710a6f8083723e1849601.png)
+
 <table>
     <thead>
     <tr>
@@ -59,7 +60,7 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
     </tr>
     <tr>
         <td>末端 offset</td>
-        <td>消息最后写入的位置，若末端 offset 大于起始 offset，则代表有消息还没有被消费</td>
+        <td>消息最后写入的位置</td>
     </tr>
     <tr>
         <td>消息数</td>
@@ -73,11 +74,12 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
 </table>
 
 
+
 ### 发送消息
 
 1. 在实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
 2. 在实例详情页，单击 **topic 管理**标签页，在操作栏单击**发送消息**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/1f0c4e65ded79440077b0ddb9f8b843a.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/1f0c4e65ded79440077b0ddb9f8b843a.png)
    - 消息内容：填写发送消息内容，必填。
    - 消息Key：填写发送 Key，选填。
    - 发送到指定分区：支持将消息发送到指定分区，默认关闭。
@@ -89,7 +91,7 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
 
 1. 在实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
 2. 在实例详情页，单击 **topic 管理**标签页，在操作栏单击**生产端连接关系**，查看与 Topic 连接的生产者列表信息。
-![](https://qcloudimg.tencent-cloud.cn/raw/5964448721f3c3a94d4deced5ec2ba88.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/5964448721f3c3a94d4deced5ec2ba88.png)
 
 
 
@@ -111,9 +113,10 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
 1. 在实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
 2. 在实例详情页，单击 **topic 管理**标签页。
 3. 单击操作列的**编辑** > **展示高级配置**，设置如下参数：
-     ![](https://main.qcloudimg.com/raw/52c8c0c4e99edd52247c1152129e5ddd.png)
+    ![](https://main.qcloudimg.com/raw/52c8c0c4e99edd52247c1152129e5ddd.png)
 
 参数说明如下：
+
 <table>
     <thead>
     <tr>
@@ -157,7 +160,7 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
     <tr>
         <td style='text-align:left;'>retention.bytes</td>
         <td style='text-align:left;'>默认为实例的消息保留大小</td>
-        <td style='text-align:left;'>1MB - 1024GB</td>
+        <td style='text-align:left;'>1GB - 1024GB</td>
         <td style='text-align:left;'>Topic 维度的消息保留大小。对于一个 Topic，如果同时设置了消息保留时间和消息保留大小，实际保留消息时会以先达到的阈值为准</td>
     </tr>
     <tr>
@@ -168,3 +171,22 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
     </tr>
     </tbody>
 </table>
+
+
+
+
+### 设置 Topic 限流规则
+
+您可以针对 Topic 进行限流，避免单个 Topic 流量过大而影响其他 Topic。
+
+1. 在实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
+2. 在实例详情页，单击 **topic 管理**标签页。
+3. 单击操作列的**编辑** > **限流**，设置限流阈值。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/3963798dd53c757c0a4f72f24e66d34b.png)
+   - topic 最大生产流量：不含副本流量，取值范围为1MB/s到该实例购买的最大带宽/该 Topic 副本数。
+   - topic 最大消费流量：取值范围为1MB/s到该实例购买的最大带宽。
+> ?
+>
+> - 底层针对 broker 进行限流，实际限流值（等于 broker 数量的整数倍）可能会与设置的限流值略有区别。
+> - 关于软限流机制说明请参见 [限流说明](https://intl.cloud.tencent.com/document/product/597/39874)。
+
