@@ -8,7 +8,7 @@ Tencent Cloud 서브 계정을 생성한 후 액세스 정책을 통해 서브 �
 
 액세스 권한 부여는 누가, 어떤 조건 하에서, 어떤 리소스에 대해, 구체적인 작업을 실행할 제어 능력을 가질지에 대한 조합을 결정하는 것을 의미합니다. 따라서 액세스 권한에는 일반적으로 **자격, 리소스, 작업, 조건(선택 사항)** 총 네 가지 요소가 포함됩니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/164bdaaee60662fb9848d305f355cd49.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/58d70d36503b2f1a61800b5b7a672442.png)
 
 ## 액세스 권한 요소
 

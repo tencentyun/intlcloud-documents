@@ -9,16 +9,16 @@
 - 支持固定带宽套餐（该套餐已下线，配置为1核、1GB内存、20GB SSD系统盘、1Mbps带宽）升级至流量包套餐。
 - 在目标套餐的 CPU、内存、SSD 系统盘、带宽/峰值带宽和每月流量均大于等于当前套餐的情况下，支持跨类型升级套餐。即实例在升级套餐时无套餐类型限制。例如，通用型套餐可升级至存储型套餐。
 - 升级套餐费用规则请参见 [升级实例套餐费用说明](https://intl.cloud.tencent.com/document/product/1103/41407)。
- 
+
 
 ## 操作步骤
 1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index)。
 2. 在服务器列表中，找到并进入待升级套餐实例的详情页。
 3. 在“计费信息”中选择**升级套餐**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/b3383496bed35cc6c319654ddda13e68.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1b647d16dcf19061c1e3ea8dc705ec43.png)
 4. 在弹出的“升级套餐”窗口中，选择目标套餐。
 5. 阅读并勾选“实例升级套餐说明”，并单击**下一步：关机提示**。如下图所示：
-<img src="https://main.qcloudimg.com/raw/f1c38c5480bc9883b6d5f7f9fa3d5c08.png" style="width:80%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1523d050542b401dbba584573a2d0601.png" style="width:80%">
 6. 在“关机提示”步骤中，勾选“同意强制关机”并单击**开始升级**即可。
 <dx-alert infotype="notice" title="">
 - 支持操作关机状态的实例，若您需操作开机状态的实例，则需确认进行强制关机，重启后即生效。

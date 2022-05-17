@@ -12,12 +12,8 @@
 ```
 
 ### ソースコードパッケージによるインストール
-プロジェクトの中でcomposerツールを使用して依存管理を行なっていない場合は、ソースコードを直接ダウンロードし、プロジェクトの中にインポートして使用することができます。
-
-* [Githubからアクセス](https://github.com/tencentyun/vod-php-sdk-v5)
-* [クリックしてPHP SDKダウンロード](https://github.com/tencentyun/vod-php-sdk-v5/raw/master/packages/vod-sdk.zip)
-
-vod-sdk.zipファイルをプロジェクトの中で解凍し、autoload.phpファイルをインポートすれば使用できます。
+1. プロジェクトの中で依存管理用のcomposerツールを使用していない場合は、[Githubからアクセス](https://github.com/tencentyun/vod-php-sdk-v5)でソースコードを直接ダウンロードして、プロジェクトにインポートすると使用できます。
+2. vod-sdk.zipファイルをプロジェクトの中で解凍し、autoload.phpファイルをインポートすれば使用できます。
 
 ##  シンプルビデオアップロード
 ### アップロードオブジェクトの初期化
@@ -32,6 +28,7 @@ use Vod\VodUploadClient;
 
 $client = new VodUploadClient("your secretId", "your secretKey");
 ```
+
 
 **ソースコードを使用してインポート**
 ```php
@@ -159,8 +156,8 @@ try {
 }
 ```
 
-### 一時的な証明書の使用によるアップロード
-一時的な証明書の関連キー情報を渡し、一時的な証明書を使用して身分を検証し、アップロードします。
+### 臨時証明書の使用によるアップロード
+臨時証明書の関連キー情報を渡し、臨時証明書を使用して身分を検証し、アップロードします。
 ```
 <?php
 require 'vendor/autoload.php';
@@ -243,12 +240,12 @@ try {
 
 | 属性名      | 属性説明                   | タイプ      | 入力必須   |
 | --------- | ---------------------- | ------- | ---- |
-| MediaFilePath   | アップロード予定のメディアファイルパス。ローカルパスにする必要があります。URLはサポートしていません。| String | はい    |
+| MediaFilePath   | アップロード予定のメディアファイルパス。ローカルパスにしてください。URLはサポートしていません。| String | はい    |
 | MediaType   | アップロード予定のメディアファイルタイプ。選択可能なタイプの詳細は、[ビデオアップロードの概要](https://intl.cloud.tencent.com/document/product/266/9760)をご参照ください。MediaFilePathに拡張子が付いている場合は入力不要です。        | String | いいえ    |
 | MediaName   | アップロード後のメディアの名前。入力しない場合は、デフォルトでMediaFilePathのファイル名を採用します。      | String | いいえ    |
-| CoverFilePath   | アップロード予定のカバーファイルパス。ローカルパスにする必要があります。URLはサポートしていません。| String | いいえ    |
+| CoverFilePath   | アップロード予定のカバーファイルパス。ローカルパスにしてください。URLはサポートしていません。| String | いいえ    |
 | CoverType   | アップロード予定のカバーファイルタイプ。選択可能なタイプの詳細は、[ビデオアップロードの概要](https://intl.cloud.tencent.com/document/product/266/9760)をご参照ください。CoverFilePathに拡張子が付いている場合は入力不要です。        | String | いいえ    |
-| Procedure   | アップロード後に自動的に実行させたいタスクフロー名。このパラメータは、タスクフローの作成（[API方式](https://intl.cloud.tencent.com/zh/document/product/266/33897) または[コンソール方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）時にユーザーが指定します。具体的な内容は、[タスクフロー概要](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。        | String | いいえ    |
+| Procedure   | アップロード後に自動的に実行させたいタスクフロー名。このパラメータは、タスクフローの作成（[API方式](https://intl.cloud.tencent.com/document/product/266/34167) または[コンソール方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）時にユーザーが指定します。詳細内容は、[タスクフロー概要](https://intl.cloud.tencent.com/document/product/266/33931)をご参照ください。        | String | いいえ    |
 | ExpireTime   | メディアファイルの期限。表記形式はISO 8601規格に準拠します。詳細については、[ISO日時表記形式の説明](https://intl.cloud.tencent.com/document/product/266/11732)をご参照ください。        | String | いいえ    |
 | ClassId   | カテゴリーID。メディアのカテゴリー管理に使用します。[カテゴリー作成](https://intl.cloud.tencent.com/document/product/266/35325) インターフェースによってカテゴリーを作成し、カテゴリーIDを取得することができます。        | Integer | いいえ    |
 | SourceContext   | ソースコンテキスト。ユーザーリクエスト情報のパススルーに使用します。アップロードコールバックインターフェースは、このフィールドの値を戻します。最長250文字。        | String | いいえ    |
@@ -262,13 +259,13 @@ try {
 | FileId   | メディアファイルの一意の標識。        | String |
 | MediaUrl | メディア再生アドレス。 | String  |
 | CoverUrl | メディアカバーアドレス。 | String  |
-| RequestId | 一時的なリクエストID。リクエストごとに返されます。問題を特定する時はその回のリクエストのRequestIdを提供する必要があります。 | String  |
+| RequestId | 一時的なリクエストID。リクエストごとに返されます。問題を特定する時はその回のリクエストのRequestIdを提供してください。 | String  |
 
 アップロードメソッド`VodUploadClient.upload(String region, VodUploadRequest request)`
 
 | パラメータ名      | パラメータの説明                   | タイプ      | 入力必須   |
 | --------- | ---------------------- | ------- | ---- |
-| region   | アクセスポイントリージョン。どのリージョンのVODサーバーにリクエストするかであり、ストレージリージョンとは異なります。具体的な内容は、サポートする[リージョンリスト](https://intl.cloud.tencent.com/zh/document/product/266/34113#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)をご参照ください。        | String | はい    |
+| region   | アクセスポイントリージョン。どのリージョンのVODサーバーにリクエストするかであり、ストレージリージョンとは異なります。詳細内容は、サポートする[リージョンリスト](https://intl.cloud.tencent.com/document/product/266/34113)をご参照ください。        | String | はい    |
 | request   | アップロードリクエスト。        | VodUploadRequest | はい    |
 
 ## エラーコードリスト
@@ -281,3 +278,4 @@ try {
 | InvalidParameterValue.SubAppId       | パラメータ値のエラー：サブアプリケーションID。              |
 | InvalidParameterValue.VodSessionKey       | パラメータ値のエラー：VODセッション。              |
 | ResourceNotFound       | リソースがありません。              |
+

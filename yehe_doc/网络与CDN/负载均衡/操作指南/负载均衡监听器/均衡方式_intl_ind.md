@@ -11,7 +11,7 @@ Algoritme penjadwalan round-robin tertimbang adalah untuk menjadwalkan permintaa
 Pada situasi sebenarnya, waktu yang dihabiskan permintaan-permintaan klien di server bisa sangat bervariasi.Makin panjang waktu pengerjaannya, jika round-robin sederhana atau algoritme penyeimbangan beban acak digunakan, jumlah proses koneksi di setiap server bisa sangat bervariasi sehingga tidak bisa mencapai efek penyeimbangan beban.
 Berbeda dengan penjadwalan round-robin, penjadwalan koneksi terkecil adalah algoritme penjadwalan dinamis yang memperkirakan beban server berdasarkan kuantitas koneksi aktifnya.Penjadwal harus merekam jumlah koneksi di setiap server yang saat ini tersambung.Jika ada permintaan yang dijadwalkan ke satu server, jumlah koneksinya akan bertambah 1.Jika koneksi terhenti atau habis waktu, jumlah koneksinya akan berkurang 1.
 Pada algoritme penjadwalan koneksi terkecil tertimbang yang didasarkan pada penjadwalan koneksi terkecil, bobot berbeda dialokasikan ke server-server sesuai kemampuan pemrosesannya.Dengan cara ini, satu server bisa mencapai jumlah permintaan terkait yang sesuai dengan bobotnya, yang merupakan peningkatan di penjadwalan koneksi terkecil.
-> Misalkan bobot satu server asli adalah wi, dan jumlah koneksi saat ini adalah ci.Nilai ci/wi setiap server dihitung secara berurutan.Server asli dengan nilai ci/wi terkecil akan menjadi server yang menerima permintaan baru berikutnya.Jika ada server asli dengan nilai ci/wi yang sama, mereka akan dijadwalkan sesuai penjadwalan round-robin tertimbang.
+>? Misalkan bobot satu server asli adalah wi, dan jumlah koneksi saat ini adalah ci.Nilai ci/wi setiap server dihitung secara berurutan.Server asli dengan nilai ci/wi terkecil akan menjadi server yang menerima permintaan baru berikutnya.Jika ada server asli dengan nilai ci/wi yang sama, mereka akan dijadwalkan sesuai penjadwalan round-robin tertimbang.
 
 - **Advantage** (Keunggulan): algoritme ini cocok untuk permintaan yang pemrosesannya butuh waktu lama, seperti FTP.
 - **Disadvantage** (Kekurangan): karena batasan API, koneksi terkecil dan persistensi sesi tidak bisa diaktifkan di waktu yang sama.
@@ -25,23 +25,23 @@ Algoritme penjadwalan hashing sumber (ip_hash) menggunakan alamat IP sumber dari
 
 ## Memilih Algoritme Penyeimbangan Beban dan Mengonfigurasi Bobot
 Agar kluster server asli bisa menjalankan bisnis dengan stabil dalam berbagai skenario, beberapa kasus mengenai cara memilih algoritme penyeimbangan beban dan mengonfigurasi bobot tersedia di bawah ini untuk referensi Anda.
-- Skenario 1:
+- **Skenario 1**:
 1.Misalkan ada 3 server asli dengan konfigurasi yang sama (CPU dan memori) dan Anda mengatur semua bobotnya ke 10 karena performanya sama.
 2.100 koneksi TCP telah dibuat antara setiap server asli dan klien, dan satu server asli baru ditambahkan.
 3.Dalam skenario ini, Anda sebaiknya menggunakan algoritme penjadwalan koneksi terkecil, yang bisa dengan cepat menambah beban server asli ke-4 dan mengurangi tekanan pada 3 server lainnya.
-- Skenario 2:
+- **Skenario 2**:
 1.Misalkan Anda menggunakan layanan Tencent Cloud untuk pertama kalinya dan situs web Anda baru saja dibuat dengan beban rendah.Anda sebaiknya membeli server asli dengan konfigurasi yang sama, karena semuanya merupakan server layer akses setara.
 2.Di skenario ini, Anda bisa mengatur bobot semua server asli ke nilai default 10 dan menggunakan algoritme penjadwalan round-robin tertimbang untuk mendistribusikan lalu lintas.
-- Skenario 3:
+- **Skenario 3**:
 1.Misalkan kamu memiliki 5 server asli yang menjalankan permintaan akses ke halaman statis sederhana, dan rasio daya komputasi (dihitung berdasarkan CPU dan memori) server-server ini adalah 9:3:3:3:1.
 2.Pada skenario ini, Anda bisa mengatur bobot server asli itu masing-masing ke 90, 30, 30, 30, dan 10.Karena kebanyakan permintaan akses ke halaman statis adalah jenis koneksi non-persisten, Anda bisa menggunakan algoritme penjadwalan round-robin, agar instance CLB bisa mengalokasikan permintaan sesuai rasio performa servernya.
-- Skenario 4:
+- **Skenario 4**:
 1.Misalkan Anda memiliki 10 server asli untuk menjalankan sejumlah besar permintaan akses web dan tidak ingin membeli server lagi, karena bisa menambah pengeluaran, dan salah satu server itu sering mulai ulang karena kelebihan beban.
 2.Dalam skenario ini, Anda sebaiknya mengatur bobot server itu sesuai performanya dan mengatur bobot yang cukup kecil untuk server dengan beban tinggi.Selain itu, Anda bisa menggunakan algoritme penjadwalan koneksi terkecil untuk mengalokasikan permintaan ke server asli dengan koneksi aktif yang lebih sedikit agar server tidak kelebihan beban
-- Skenario 5:
+- **Skenario 5**:
 1.Misalkan Anda memiliki 3 server asli untuk memproses beberapa koneksi persisten, rasio daya komputasi (dihitung dari CPU dan memori) server-server ini adalah 3:1:1.
 2.Server dengan performa terbaik memproses lebih banyak permintaan, tetapi Anda tidak ingin sampai kelebihan beban dan ingin mengalokasikan permintaan baru ke server diam,.
 3.Dalam skenario ini, Anda bisa menggunakan algoritme penjadwalan koneksi terkecil dan dengan tepat mengurangi bobot server yang sibuk, agar instance CLB bisa mengalokasikan permintaan ke server asli dengan koneksi aktif yang lebih sedikit sehingga mencapai penyeimbangan beban.
-- Skenario 6:
+- **Skenario 6**:
 1.Misalkan Anda ingin permintaan dari klien berikutnya dialokasikan ke server yang sama.Karena penjadwalan round-robin tertimbang atau koneksi terkecil tertimbang tidak bisa memastikan bahwa permintaan dari klien yang sama dialokasikan ke server yang sama,
 2.Untuk memenuhi persyaratan server aplikasi tertentu Anda dan mempertahankan "kelengketan" (atau "kelanjutan") sesi klien tersebut, Anda bisa menggunakan ip_hash untuk mendistribusikan lalu lintasnya.Algoritme ini bisa memastikan semua permintaan dari klien yang sama akan didistribusikan ke server asli yang sama, kecuali jika jumlah server berubah atau server menjadi tidak tersedia.

@@ -1,5 +1,5 @@
 ## Ikhtisar
-Anda dapat mengatur alarm ambang batas untuk memantau performa CVM, serta alarm peristiwa untuk melihat status instans CVM dan infrastruktur platform yang mendasarinya. Ketika terjadi pengecualian, Anda akan segera menerima notifikasi melalui WeChat, email, SMS, telepon, dll. Kebijakan alarm yang tepat akan membantu meningkatkan ketahanan dan keandalan aplikasi Anda. Dokumen ini menjelaskan cara membuat kebijakan alarm. Untuk informasi selengkapnya, lihat [Membuat Kebijakan Alarm](https://intl.cloud.tencent.com/document/product/248/38916).
+Anda dapat mengatur alarm ambang batas untuk memantau performa CVM, serta alarm peristiwa untuk melihat status instans CVM dan infrastruktur platform yang mendasarinya. Ketika terjadi pengecualian, Anda akan segera menerima notifikasi melalui , email, SMS, telepon, dll. Kebijakan alarm yang tepat akan membantu meningkatkan ketahanan dan keandalan aplikasi Anda. Dokumen ini menjelaskan cara membuat kebijakan alarm. Untuk informasi selengkapnya, lihat [Membuat Kebijakan Alarm](https://intl.cloud.tencent.com/document/product/248/38916).
 
 ## Petunjuk
 1. Login ke [Konsol Cloud Monitor], lalu pilih **Alarm Configuration** (Konfigurasi Alarm) > [**Alarm Policy** (Kebijakan Alarm)](https://console.cloud.tencent.com/monitor/alarm2/policy) di bilah sisi kiri.

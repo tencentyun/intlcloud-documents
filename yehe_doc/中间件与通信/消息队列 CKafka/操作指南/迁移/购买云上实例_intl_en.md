@@ -4,7 +4,7 @@ This document describes how to use the **Specification Calculator** in the CKafk
 
 ## Directions
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
-2. On the left sidebar, select **Cloud Migration**, select the region you want to migrate to, and click **Specification Calculator**.
+2. On the left sidebar, select **Migration to Cloud**, select the region you want to migrate to, and click **Specification Calculator**.
 3. Enter the specification of your self-built Kafka cluster on the specification calculator page.
 	 ![](https://main.qcloudimg.com/raw/15b721ef605d238f01f888b6a54a334e.png)
 

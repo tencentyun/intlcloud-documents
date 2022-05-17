@@ -1,52 +1,47 @@
-
-## Feature Overview
+## Overview
 A bootstrap action is a custom script executed when a cluster is created to help you modify the cluster environment, install third-party software, and use your own data.
 
 An EMR instance can be created in the following steps:
 ![](https://main.qcloudimg.com/raw/a36ebd385e369317db55596fd1753937.png)
-A bootstrap action can be executed on the following three occasions:
-- a (after the node is initialized): after server resource initialization and  before EMR cluster software installation.
-- b (before the cluster is launched): before cluster service startup.
-- c (after the cluster is launched): after cluster service startup.
+A bootstrap action can be executed at the following three time slots:
 
-A bootstrap action will run bootstrap scripts during cluster creation and scaling. Bootstrap scripts will be executed in sequence in the order of addition, and there can be up to 16 bootstrap actions.
+- a (after node initialization): After server resource initialization and before EMR cluster software installation.
+- b (before cluster start): Before cluster service start.
+- c (after cluster start): After cluster service start.
 
+Bootstrap actions run scripts during cluster creation and scale-out in the order in which the scripts are added. The number of bootstrap actions cannot exceed 16.
 >!Create a small pay-as-you-go cluster first to test whether the bootstrap action works properly, and if yes, create a production cluster.
 
 ## Directions
-**Method 1. Add a bootstrap action when creating a cluster on the [purchase page](https://buy.cloud.tencent.com/emapreduce#/).**
+**Option 1. Add a bootstrap action when creating a cluster on the [purchase page](https://buy.cloud.tencent.com/emr).**
 1. Select **Basic Configuration** > **Advanced Settings** > **Add Bootstrap Action** to add a bootstrap action.
 ![](https://main.qcloudimg.com/raw/9bbf283b82525bef787a19e4b5596529.png)
 2. You can edit or delete the added bootstrap action.
- - Select the running occasion and enter relevant parameters.
- - Name: you are recommended to keep it the same as your "object name".
- - Script Location: you are recommended to copy the location information on the COS details page. Enter the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List**, select the desired script, and select **Operation** > **Details**.
+ - Select a run and enter relevant parameters.
+ - Name: Your "object name" is recommended.
+ - Script Location: We recommend you copy the location information from the COS details page. Go to the [COS console](https://console.cloud.tencent.com/cos5), click **Bucket List**, select the target script, and click **Operation** > **Details**.
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
-On the **Details** page, you can view the "Object Name" and "Object Address".
+On the **Details** page, you can see the "object name" and "object address".
 ![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
+ - Parameter: This refers to the parameters for running the script. Separate multiple parameters by spaces, and do not add spaces in individual parameters. The total length of **Parameter** and **Name** cannot exceed 240 characters.
 
- - Parameter: this refers to the parameters for running the script. Separate multiple parameters by spaces, and do not add spaces in individual parameters. The total length of "Parameter" and "Name" cannot exceed 240 characters.
-
-
-**Method 2. Add a bootstrap action on the **Basic Info** page of the cluster.**
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page. Select **Basic Info** -> **Bootstrap Actions** -> **Add Bootstrap Action** to add a bootstrap action.
+**Option 2. Add a bootstrap action on the **Basic information** page of the cluster.**
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page. Then, select **Basic information** > **Bootstrap Actions** and click **Add Bootstrap Action**.
 2. You can edit or delete the added bootstrap action.
- - Select the running occasion and enter relevant parameters.
- - Name: you are recommended to keep it the same as your "object name".
- - Script Location: you are recommended to copy the location information on the COS details page. Enter the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List**, select the desired script, and select **Operation** > **Details**.
+ - Select a run and enter relevant parameters.
+ - Name: Your "object name" is recommended.
+ - Script Location: We recommend you copy the location information from the COS details page. Go to the [COS console](https://console.cloud.tencent.com/cos5), click **Bucket List**, select the target script, and click **Operation** > **Details**.
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
 ![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
- - Parameter: this refers to the parameters for running the script. Separate multiple parameters by spaces, and do not add spaces in individual parameters. The total length of "Parameter" and "Name" cannot exceed 240 characters.
+ - Parameter: This refers to the parameters for running the script. Separate multiple parameters by spaces, and do not add spaces in individual parameters. The total length of **Parameter** and **Name** cannot exceed 240 characters.
 
 ## Viewing Bootstrap Result
-Currently, you cannot specify a bootstrap action during scaling in the console. The bootstrap action specified during cluster creation will be executed during scaling.
-
-If you want to specify a bootstrap action for scaling, use APIs to scale. If a bootstrap action is specified for scaling, it will be executed during scaling; otherwise, the one specified during cluster creation will be executed.
+Currently, you can specify a bootstrap action during scale-out via API but not in the console. If a bootstrap action is specified, it will be executed during scale-out; otherwise, the one specified during cluster creation will be executed.
 
 Logs and script files to be executed are stored in the `/usr/local/service/scripts/` directory. The script system log is `script_syslog`.
-- Naming convention: "execution sequence" + "\_" + "running occasion" + "script name" + "\_" + stderr.
-- Naming convention: "execution sequence" + "\_" + "running occasion" + "script name" + "\_" + stdout.
->!
->The scripts will be executed on all types of nodes, and the script files and output log files of script execution will be stored on each node.
-> Bootstrap script content needs to be encoded in UTF-8.
+- Naming convention: "Execution order" + "\_" + "run" + "script name" + "\_" + stderr.
+- Naming convention: "Execution order" + "\_" + "run" + "script name" + "\_" + stdout.
 
+>!
+>- The scripts will be executed on all types of nodes, and the script files and log files output by script execution will be stored on each node.
+>- Bootstrap script content needs to be encoded in UTF-8.

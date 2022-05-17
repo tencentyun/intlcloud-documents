@@ -18,10 +18,10 @@ Referer URL is based on the HTTP protocol. CSS uses the referer field in an HTTP
 [](id:open)
 ## Enabling Referer
 
-1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, and click the target **playback domain** or click **Manage** on the right to enter the domain management page.
-2. In **Access Control** > **Referer Configuration**, click **Edit** to enter the referer configuration page.
+1.Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, and click the target **playback domain** or click **Manage** on the right to enter the domain management page.
+2.In **Access Control** > **Referer Configuration**, click **Edit** to enter the referer configuration page.
  ![](https://main.qcloudimg.com/raw/32461edf0353c2c95925b74d80dc25b3.png)
-3. Click ![](https://main.qcloudimg.com/raw/c032c517e25867ff592f128424154688.png) to enable the referer and configure as follows:
+3.Click ![](https://main.qcloudimg.com/raw/c032c517e25867ff592f128424154688.png) to enable the referer and configure as follows:
  ![](https://main.qcloudimg.com/raw/551044de4acd79683ae69cf106a87c0b.png)
 
 <table id="setmess">
@@ -50,6 +50,7 @@ Referer URL is based on the HTTP protocol. CSS uses the referer field in an HTTP
 <li>If you enter no referer pattern, the blocklist/allowlist is not configured.</li>
 </ul></td>
 </tr></table>
+
 4. Click **Save** to save the configuration.
 
 
@@ -68,7 +69,6 @@ After [enabling the referer](#open), you can disable it by performing the follow
 1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, and click the target **playback domain** or click **Manage** on the right to enter the domain management page.
 2. In **Access Control** > **Referer Configuration**, click **Edit** to enter the referer configuration page.
 3. Click ![](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png) to disable the referer.
-4. Click **Save**.
 
 ![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png)
 

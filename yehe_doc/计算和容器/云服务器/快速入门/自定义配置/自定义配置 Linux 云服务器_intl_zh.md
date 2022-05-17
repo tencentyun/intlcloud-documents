@@ -24,7 +24,7 @@
 <tr><td>网络</td><td>必选</td><td>表示在腾讯云上构建的逻辑隔离的网络空间，一个私有网络由至少一个子网组成。系统会为您在每个地域提供的默认私有网络和子网。</br>
 如现有的私有网络/子网不符合您的要求，可以在私有网络控制台进行创建。</br><b>注意</b>：<ul><li>同一私有网络内资源默认内网互通。</li><li>购买时，云服务器需要创建在与云服务器相同可用区属性的子网内。</li></ul></td></tr>
 <tr><td>实例</td><td>必选</td><td>根据底层硬件的不同，腾讯云目前提供了多种不同的实例类型。为获得最佳性能，建议使用新一代实例类型。</br>更多实例详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/11518">实例规格</a>。</td></tr>
-<tr><td>镜像</td><td>必选</td><td>腾讯云提供公共镜像、自定义镜像、共享镜像、服务市场镜像，您可参考 <a href="https://intl.cloud.tencent.com/document/product/213/4941">镜像类型</a> 进行选择。</br>对于刚开始使用腾讯云的用户，推荐选择公共镜像。</td></tr>
+<tr><td>镜像</td><td>必选</td><td>腾讯云提供公共镜像、自定义镜像、共享镜像，您可参考 <a href="https://intl.cloud.tencent.com/document/product/213/4941">镜像类型</a> 进行选择。</br>对于刚开始使用腾讯云的用户，推荐选择公共镜像。</td></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">系统盘</a></td><td>必选</td><td>用于安装操作系统，默认为50GB。</br>地域的不同将会影响可供选择的云硬盘类型，请根据实际页面提示进行选择。</br>更多关于云硬盘的介绍，请参考 <a href="https://intl.cloud.tencent.com/document/product/362/31636">云硬盘类型</a>。</td></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">数据盘</a></td><td>可选</td><td>用于扩展云服务器的存储容量，提供高效可靠的存储设备。默认不添加云硬盘数据盘。</br>更多关于云硬盘的介绍，请参考 <a href="https://intl.cloud.tencent.com/document/product/362/31636">云硬盘类型</a>。</td></tr>
 <tr><td>定期快照</td><td>可选</td><td>可针对系统盘或数据盘设置定期快照策略。更多关于定期快照的介绍，请参见 <a href="https://intl.cloud.tencent.com/document/product/362/35238">定期快照</a>。</td></tr>
@@ -128,7 +128,7 @@
 ## 确认配置信息
 
 1. 核对购买的云服务器信息，了解各项配置的费用明细。
-2. 阅读并勾选“同意《腾讯云服务协议》和《退款规则》”或“同意《腾讯云服务协议》”。
+2. 阅读并勾选“同意《腾讯云服务协议》”。
 3. 您可根据实际需求，进行以下操作：
    - 选择**保存为启动模板**：将该实例的配置保存为启动模板，您可使用启动模板快速创建实例。详情请参见 [管理实例启动模板](https://intl.cloud.tencent.com/document/product/213/45221)。
    - 选择**生成 API Explorer 最佳实践脚本**：生成已选配置对应的创建实例 OpenAPI 最佳实践脚本代码，您可保存代码用于购买同配置云服务器。详情请参见 [生成创建实例 API Explorer 最佳实践脚本](https://intl.cloud.tencent.com/document/product/213/39811)。

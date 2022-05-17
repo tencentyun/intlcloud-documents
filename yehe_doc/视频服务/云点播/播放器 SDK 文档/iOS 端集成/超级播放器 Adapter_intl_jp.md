@@ -2,17 +2,15 @@
 
 Tencent Cloud View Cube ios Super Player Adapterは、サードパーティのプレーヤーまたは自社開発のプレーヤーを使用して開放されたクラウドPAASリソースに接続を希望する顧客向けにVODのためのプレーヤープラグインを提供します。カスタムプレーヤー機能を必要とするユーザーにおいて一般的に使用されます。
 
-[](id:sdkDownload)
-## SDKのダウンロード
+## SDKのダウンロード[](id:sdkDownload)
 
 Tencent Cloud View Cube iOS Super Player Adapter SDKとDemoプロジェクトのダウンロードアドレスは[TXCPlayerAdapterSDK_iOS](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_iOS.zip)です。 
 
 ## 対象となる読者
 
-このドキュメントの内容の一部は、Tencent Cloud専用の機能となっていますので、使用前に、[Tencent Cloud](https://intl.cloud.tencent.com)関連サービスのアクティブ化を行ってください。アカウント登録がないユーザーは登録し、[無料試用](https://intl.cloud.tencent.com/login)が可能です。
+このドキュメントの内容の一部は、Tencent Cloud専用の機能となっていますので、使用前に、[Tencent Cloud](https://cloud.tencent.com)関連サービスのアクティブ化を行ってください。アカウント登録がないユーザーは登録し、[無料試用](https://cloud.tencent.com/login)が可能です。
 
-[](id:guide)
-## 統合ガイド
+## 統合ガイド[](id:guide)
 
 ### 環境要件
 
@@ -99,7 +97,7 @@ Adapterを初期化します。1回のみ。
 
 **パラメータの説明**
 
-appId：appidを入力します（サブアプリケーションを使用している場合はsubappidを入力）。
+appId：appidを入力します（サブアプリケーションを使用している場合はsubappidを入力）
 
 ### Adatperの破棄
 Adapterを破棄します。プロセス終了後に呼び出します。

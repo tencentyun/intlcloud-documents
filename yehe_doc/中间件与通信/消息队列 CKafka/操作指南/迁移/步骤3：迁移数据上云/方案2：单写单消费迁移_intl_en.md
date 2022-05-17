@@ -13,7 +13,7 @@ The prerequisite for guaranteeing message ordering is to strictly limit data con
 
 The single-producer single-consumer scheme is simple, clear, and easy to implement; however, after the production is switched to the new cluster, before the old consumer is switched to the new cluster, there will be a certain amount of data heap in the new cluster.
 
-The migration steps are as follows: ![](https://main.qcloudimg.com/raw/a24b388a3259dfe609e94ed14037c862.png)
+The migration steps are as follows:![](https://main.qcloudimg.com/raw/d25503d1d258cc9266c816daded70029.png)
 
 1. Switch the production flow so that the producer produces data to the CKafka instance.
    Configure the accessed network of the CKafka instance as the IP in `broker-list` by copying the information in the **Network** column in the **Access Mode** section on the **Instance Details** page in the console, and change the `topicName` to the topic name in the CKafka instance.

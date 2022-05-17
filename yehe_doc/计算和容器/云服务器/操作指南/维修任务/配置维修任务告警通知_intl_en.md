@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes how to use [EventBridge](https://intl.cloud.tencent.com/document/product/1108/42267) to set a CVM instance event alarm in the CVM console. You can set an alarm for a CVM instance maintenance task, so that you will be notified immediately that you need to take countermeasures through channels such as WeChat, email, SMS, and phone when an exception occurs.
+This document describes how to use [EventBridge](https://intl.cloud.tencent.com/document/product/1108/42267) to set a CVM instance event alarm in the CVM console. You can set an alarm for a CVM instance maintenance task, so that you will be notified immediately that you need to take countermeasures through channels such as email, SMS, and phone when an exception occurs.
 
 
 

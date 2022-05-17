@@ -24,6 +24,7 @@
 
 :::设置动态消息保留策略
 
+<<<<<<< HEAD
 1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏单击**实例列表**，单击目标实例的 “ID/名称”，进入基本信息页。
 3. 在实例基本信息页面的**磁盘水位处理**模块，开启**动态保留策略**。
@@ -33,8 +34,16 @@
    ![](https://qcloudimg.tencent-cloud.cn/raw/77e078fc3c63a467c8de2e32e39e999e.png)
 4. 单击**查看**，可查看每个 Topic 的消息保留时间。
    ![](https://main.qcloudimg.com/raw/9debb1aedbdb65461f17788276ef0202.png)
+=======
+1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
+2. 在左侧导航栏单击**实例列表**，单击目标实例的”ID/名称“，进入基本信息页。
+3. 在实例基本信息页面的**磁盘水位处理**模块，开启**动态消息保留策略**。
+<dx-alert infotype="explain" title="">
+默认动态策略是当磁盘负载达到90%以后，向前调整消息保留时间10%。
+</dx-alert>
+4. 单击**查看**，可查看每个Topic的消息保留时间。
+>>>>>>> 4c0ee768bf0276e04d7ad55207e181473466eaf0
 5. 单击动态保留策略操作列的**配置**，可设置动态策略和保底时长。
-   ![](https://main.qcloudimg.com/raw/381d81ec44b0fccc326076fea03c9084.png)
    - 动态策略：触发调整消息保留时间后，Broker 会根据新的保留时间删除部分最早的历史数据，该效果会有一定延迟。
    - 保底时长：1分钟-30小时，动态调整到该时间后不再触发动态调整。
 
@@ -47,12 +56,19 @@
 1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka) 。
 2. 在左侧导航栏单击**实例列表**，单击目标实例的 “ID/名称”，进入基本信息页。
 3. 在实例基本信息页面的**磁盘水位处理**模块，开启**磁盘自动扩容**。
+<<<<<<< HEAD
    <dx-alert infotype="explain" title="">
    默认当磁盘负载达到 90% 时，磁盘自动扩容 10% 。最大磁盘 5000GB。
    </dx-alert>
     ![](https://qcloudimg.tencent-cloud.cn/raw/14e630c4b14e0d33b8658745d2cbed57.png)
 4. 单击磁盘自动扩容操作列的**配置**，可设置动态策略和最高磁盘。
     ![](https://qcloudimg.tencent-cloud.cn/raw/ee2b8b36740b0286491a3e751faa9cc9.png)
+=======
+<dx-alert infotype="explain" title="">
+默认当磁盘负载达到 90% 时，磁盘自动扩容 10% 。最大磁盘 5000GB。
+</dx-alert>
+4. 单击磁盘自动扩容操作列的**配置**，可设置动态策略和最高磁盘。
+>>>>>>> 4c0ee768bf0276e04d7ad55207e181473466eaf0
    - 动态策略：磁盘负载到达触发阈值后，会自动根据扩容策略调整磁盘容量，该效果会有一定延迟。
      <dx-alert infotype="explain" title="">
      磁盘扩容的步长是100GB。

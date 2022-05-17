@@ -316,7 +316,7 @@ let HlsSourceHandler = {
       return 'probably';
     } else if (hlsExtRE.test(source.src)) {
       return 'maybe';
-    } else {
+    }else{
       return '';
     }
   },
@@ -325,7 +325,7 @@ let HlsSourceHandler = {
     if (tech.hlsProvider) {
       tech.hlsProvider.dispose();
       tech.hlsProvider = null;
-    } else {
+    }else{
       // hlsが自動ロードをオフにした後、手動でリソースをロードする必要があります
       if (options.hlsConfig && options.hlsConfig.autoStartLoad === false) {
         tech.on('play', function () {
@@ -356,7 +356,7 @@ function mountHlsProvider(enforce) {
     } catch (e) {
       console.error('hls.js init failed');
     }
-  } else {
+  }else{
     //tcadapterが導入されていないか、MSEが使用できないか、x5カーネルが無効になっています
   }
 }

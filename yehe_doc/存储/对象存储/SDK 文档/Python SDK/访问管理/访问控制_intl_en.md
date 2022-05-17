@@ -1,5 +1,5 @@
 ## Overview
-This document provides an overview of APIs and SDK code samples related to the access control lists (ACLs) for buckets and objects.
+This document provides an overview of APIs and SDK code samples for for the ACL of buckets and objects.
 
 
 **Bucket ACL**

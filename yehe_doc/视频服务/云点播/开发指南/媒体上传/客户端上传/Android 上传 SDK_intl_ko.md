@@ -2,7 +2,7 @@ VOD는 Android 클라이언트에 비디오를 업로드하기 위한 SDK를 제
 
 ## 소스 코드 다운로드
 
-1. Android 업로드 Demo 및 소스 코드를 [클릭하여 다운로드](https://ugcupload-1252463788.file.myqcloud.com/LiteAVSDK_UGC_Upload_Android.zip)하십시오.
+1. Android 업로드 Demo 및 소스 코드를 [클릭하여 다운로드](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_Android.zip)하십시오.
 2. 다운로드한 zip 파일의 압축을 풀면 `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`에서 Demo 디렉터리와 업로드 소스 코드를 찾을 수 있습니다.
 
 ##  업로드 라이브러리와 소스 코드 통합
@@ -10,7 +10,9 @@ VOD는 Android 클라이언트에 비디오를 업로드하기 위한 SDK를 제
 1. `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`를 프로젝트 디렉터리에 복사하고 패키지 이름을 수동으로 수정합니다.
 2. 프로젝트에 종속성을 추가하려면 `Demo/app/build.gradle`을 참고하십시오.
     ```
-    implementation 'com.qcloud.cos:cos-android-nobeacon:5.8.3'
+    implementation ('com.qcloud.cos:cos-android:5.8.3') {
+        exclude group: 'com.qcloud.cos', module: 'beacon-android-release'
+    }
     implementation 'com.qcloud.cos:quic:1.5.37'
     ```
 >?[수동 통합](https://intl.cloud.tencent.com/document/product/436/12159)을 참고하여 해당 종속 라이브러리를 통합할 수도 있습니다.
@@ -61,7 +63,7 @@ TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishPara
 param.signature = "xxx";
 param.videoPath = "xxx";
 ```
-`signature` 계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 #### 업로드 메소드 호출
 
@@ -101,7 +103,7 @@ param.signature = "xxx";
 param.mediaPath = "xxx";
 ```
 
-`signature` 계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 #### 업로드 메소드 호출
 
@@ -110,8 +112,8 @@ int publishCode = mVideoPublish.publishMedia(param);
 ```
 
 >?
->- 업로드 방법은 파일 크기에 따라 일반 업로드 또는 멀티파트 업로드를 자동으로 선택하므로 멀티파트 업로드의 각 단계를 신경 쓸 필요가 없습니다.
->- 지정된 서브 애플리케이션에 업로드하려면 [서브 애플리케이션 시스템 - 클라이언트 업로드](https://intl.cloud.tencent.com/document/product/266/33987)를 참고하십시오.
+>- 업로드 방법은 파일 크기에 따라 단순 업로드 또는 멀티파트 업로드를 자동으로 선택하므로, 멀티파트 업로드의 모든 단계를 처리할 필요가 없습니다.
+>- 지정된 서브 애플리케이션에 업로드하려면 [서브 애플리케이션 시스템 - 클라이언트에서 업로드](https://intl.cloud.tencent.com/document/product/266/33987)를 참고하십시오.
 >
 ## 고급 기능
 
@@ -125,11 +127,11 @@ param.signature = "xxx";
 param.videoPath = "xxx";
 param.coverPath = "xxx";
 ```
-`signature` 계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 #### 업로드 취소 및 재개
 
-업로드를 취소하려면 `TXUGCPublish의 cancelPublish()` API를 호출합니다.
+업로드를 취소하려면 `TXUGCPublish`의 `cancelPublish()` API를 호출합니다.
 
 ```java
 mVideoPublish.canclePublish();
@@ -143,7 +145,7 @@ VOD는 업로드 중 체크포인트 재시작을 지원합니다. 업로드가 
 
 체크포인트 재시작은 1일 이내에 유효합니다. 비디오 업로드가 중단되었다가 하루 이내에 재개되면 업로드를 재개할 수 있습니다. 그렇지 않으면 전체 비디오가 다시 업로드됩니다.
 
-업로드 매개변수 `enableResume`은 체크포인트 재시작 스위치로 기본 값은 활성화입니다.
+업로드 매개변수 `enableResume`은 체크포인트 재시작 스위치로, 기본 값은 활성화입니다.
 
 #### 사전 업로드
 
@@ -162,21 +164,21 @@ App을 활성화할 때 `TXUGCPublishOptCenter.getInstance().prepareUpload(signa
 </receiver>
 ```
 
-`signature` 계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 
 ## 비디오 업로드 API 설명
 
 업로드 객체 초기화: `TXUGCPublish`
 
-| 매개변수 이름      | 매개변수 설명                  | 유형     | 필수 입력 |
+| 매개변수 이름     | 매개변수 설명                   | 유형     | 필수 입력 |
 | --------- | ---------------------- | ------- | ---- |
 | context   | application 컨텍스트.        | Context | Yes    |
 | customKey | 이 매개변수는 사용자를 구별하는 데 사용됩니다. 향후 문제 해결을 위해 App 계정 ID를 이 매개변수의 값으로 사용하는 것이 좋습니다. | String  | No    |
 
 VOD appId 설정: `TXUGCPublish.setAppId`
 
-| 매개변수 이름      | 매개변수 설명                  | 유형     | 필수 입력 |
+| 매개변수 이름     | 매개변수 설명                   | 유형     | 필수 입력 |
 | --------- | ---------------------- | ------- | ---- |
 | appId   | VOD appId.        | int | Yes    |
 
@@ -191,7 +193,7 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 | 매개변수 이름      | 매개변수 설명                  | 유형     | 필수 입력 |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature    | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922). | String  | Yes    |
+| signature    | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 | videoPath    | 로컬 비디오 파일 경로.                           | String  | Yes    |
 | coverPath    | 로컬 커버 이미지 파일 경로. 기본 값: 커버 파일 미사용.                  | String  | No    |
 | enableResume | 체크포인트 재시작 활성화 여부. 기본 값: 활성화.                      | boolean | No    |
@@ -216,7 +218,7 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 | 변수 이름   | 변수 설명 | 유형                                  |
 | ------ | ---- | ----------------------------------- |
-| result | 업로드 결과. | TXUGCPublishTypeDef.TXPublishResult |
+| result   | 업로드 결과. | TXUGCPublishTypeDef.TXPublishResult |
 
 업로드 결과: `TXUGCPublishTypeDef.TXPublishResult`
 
@@ -230,7 +232,7 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 사전 업로드: `TXUGCPublishOptCenter.prepareUpload`
 
-| 매개변수 이름      | 매개변수 설명                  | 유형     | 필수 입력 |
+| 매개변수 이름     | 매개변수 설명                   | 유형     | 필수 입력 |
 | --------- | ---------------------- | ------- | ---- |
 | signature   | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922).        | String | Yes    |
 
@@ -295,9 +297,9 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 사전 업로드: `TXUGCPublishOptCenter.prepareUpload`
 
-| 매개변수 이름      | 매개변수 설명                  | 유형     | 필수 입력 |
+| 매개변수 이름  | 매개변수 설명                        | 유형   | 필수 입력 |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922). | String | Yes   |
+| signature    | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 
 ## 오류 코드
 

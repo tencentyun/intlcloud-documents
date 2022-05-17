@@ -4,7 +4,6 @@ The Meizu push channel is a system-level push channel **officially provided by M
 >?
 > - For the Meizu push channel, the notification title can support up to 32 characters, and the notification content can support up to 100 characters.
 > - The Meizu push channel does not support in-app messages.
-> - Meizu channel supports arrival callback and click callback but not passthrough.
 > 
 
 ## Directions

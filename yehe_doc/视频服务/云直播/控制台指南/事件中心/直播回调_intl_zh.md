@@ -74,5 +74,5 @@
 2. 选择您已创建成功的回调配置模板，单击右侧的**删除**。
 3. 确认是否删除当前截图鉴黄配置模板，单击**确定**即可成功删除。
 
-![](https://main.qcloudimg.com/raw/1bf90e6b3197dd2e18aff8c52cbe331c.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/9cc8d3a6c82a8b54ae904ddcc9ca01f6.png)
 

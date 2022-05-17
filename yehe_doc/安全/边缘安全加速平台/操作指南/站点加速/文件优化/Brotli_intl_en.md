@@ -17,7 +17,7 @@ A node can perform Brotli compression on resources to reduce the size of transfe
 - The platform supports gzip compression by default but responds to Brotli compression first.
 - Files that are 256 B–30 MB in size can be compressed with Brotli.
 - Brotli compression supports the following file types:
-```
+```js.
 text/html
 text/xml
 text/plain

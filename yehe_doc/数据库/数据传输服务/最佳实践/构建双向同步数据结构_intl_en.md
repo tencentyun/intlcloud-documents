@@ -43,7 +43,7 @@ Example: a two-way sync task consisting of two one-way sync tasks (1 and 2) need
 This document uses MySQL two-way sync (where database A has database/table structures and data, and database B has only database/table structures but no data) as an example. The two-way sync operations for other databases are similar.
 
 ### Creating sync task 1: forward sync (database A > database B)
-1. Log in to the [data sync purchase page](https://buy.intl.cloud.tencent.com/dts), select appropriate configuration items, and click **Buy Now**.
+1. Log in to the [data sync purchase page](https://buy.intl.cloud.tencent.com/migration), select appropriate configuration items, and click **Buy Now**.
 <table>
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>

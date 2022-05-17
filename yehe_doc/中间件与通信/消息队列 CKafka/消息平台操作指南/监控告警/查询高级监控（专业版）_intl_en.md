@@ -17,33 +17,33 @@ This document describes how to view advanced monitoring metrics in the console a
 <dx-tabs>
 ::: Core service
 
-![](https://qcloudimg.tencent-cloud.cn/raw/4f0963cf4eef8ea8ad4b6184f092d87b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9361c64e18166fdb974666469db095bb.png)
 
 ::: 
 
 ::: Production
 
-![](https://qcloudimg.tencent-cloud.cn/raw/53790d47796c9280facda8e89e7aeaf7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7e5fd602eaa236007d83d1bbfbe1adff.png)
 
 :::
 
 ::: Consumption
 
-![](https://qcloudimg.tencent-cloud.cn/raw/eff8c858dea2b4abd880435bb3b2186c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f9832f7519968ec071e3e95ee2407d83.png)
 
 :::
 
 ::: Instance resource
 
-![](https://qcloudimg.tencent-cloud.cn/raw/9f93d841bb4a8975c65fc4ade8ee5435.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c97bddedf2db767a533cfc405dc6e5fa.png)
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1ed50fb5f5970b63a8f8fc4419516a7a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3c9fc64f6a323e84d781f9087f8b9d75.png)
 
 :::
 
 ::: Broker GC
 
-![](https://qcloudimg.tencent-cloud.cn/raw/81016aa5c097e6e6ebb0491c48a74c36.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d98f7a038967c71e1eeeb7922037f1ec.png)
 
 :::
 

@@ -14,7 +14,7 @@ If your requirement for message ordering is not high, you can migrate the data w
 The single-producer dual-consumer scheme is simple, clear, and easy to implement, with no data heap for smooth transition; however, it requires adding a new consumer.
 
 The migration steps are as follows:
-![](https://main.qcloudimg.com/raw/7b41c8c1f3740a9b5b6ad45f6b369cc0.png)
+![](https://main.qcloudimg.com/raw/51d15605b01dd1095239001a966b2671.png)
 
 1. Keep the old consumer intact, start a new consumer in CKafka, and configure the bootstrap-server of the new CKafka cluster for consumption.
     You need to configure the accessed network of the CKafka instance as the IP in `--bootstrap-server` by copying the information in the **Network** column in the **Access Mode** section on the **Instance Details** page in the console.

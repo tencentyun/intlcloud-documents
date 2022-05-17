@@ -6,16 +6,12 @@
 - [Getting Started](https://intl.cloud.tencent.com/document/product/267/13551)
 
 
-
 ## 2. Billing
 
 For more information, please see [CSS Pricing](https://intl.cloud.tencent.com/document/product/267/2819).
 
 
-
-
 > ?For more information about how to view your bill, please see [Bill Query](https://console.cloud.tencent.com/expense/bill).
->
 
 
 
@@ -23,7 +19,7 @@ For more information, please see [CSS Pricing](https://intl.cloud.tencent.com/do
 
  The overview page of the [CSS console](https://console.cloud.tencent.com/live/livestat) is shown below: 
 
-![](https://main.qcloudimg.com/raw/d064207bb8e3f69f2eef152a41a49fa2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc1b2ed1e8f0cbf859c75b8e48f11811.png)
 
 ## 4. Features
 

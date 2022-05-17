@@ -1,21 +1,22 @@
-You can view records of live push interruptions and the causes in the CSS console.
+You can view records of live push interruptions and their causes in the CSS console.
 
-## Prerequisites
+## Prerequisite
 - You have logged in to the [CSS console](https://console.cloud.tencent.com/live).
 - There is a live stream whose push was interrupted under your account.
 
 ## Directions
 
-In the console, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** in the left sidebar.
-
+In the console, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7109f254ed3f4c892bd93632d9f04629.png)
 
-On the **Stream Interruption Records** page:
+It includes the following fields:
 - **Path**: `AppName` in the push URL.
 - **Stream Name**: `StreamName` in the push URL.
 
 [](id:erro_code)
 ## Causes of Stream Interruption
+You can use the [DescribeLiveStreamEventList](https://intl.cloud.tencent.com/document/product/267/30800) API to query stream interruptions.
+
 See the table below for a list of the causes of stream interruption: 
 
 <table border='0' >
@@ -41,9 +42,6 @@ See the table below for a list of the causes of stream interruption:
 <td>The system interrupted the stream because no data was generated for a long period.</td>
  </tr>
  <tr>
-<td>CSS system internal error.</td>
- </tr>
- <tr>
 <td>The proxy layer received an interruption command.</td>
  </tr>
  <tr>
@@ -56,7 +54,7 @@ See the table below for a list of the causes of stream interruption:
 <td>Your CSS service has been suspended.</td>
  </tr>
  <tr  >
-<td>Your CSS service has been suspended due to overdue payment. Please make the payment.</td>
+<td>Your CSS service has been suspended due to an overdue payment. Please make the payment to resume service.</td>
  </tr>
  <tr>
 <td>We have suspended CSS services for your account.</td>
@@ -122,9 +120,6 @@ See the table below for a list of the causes of stream interruption:
 <td>Third-party authentication failed.</td>
  </tr>
  <tr>
-<td>The system interrupted the stream as no data was generated for a long period.</td>
- </tr>
- <tr>
 <td>CSS received a request for stream interruption from the customer.</td>
  </tr>
  <tr>
@@ -134,24 +129,11 @@ See the table below for a list of the causes of stream interruption:
 <td>A new push URL replaced this one.</td>
  </tr>
  <tr  >
-<td>The push URL did not generate data and was replaced by a new one.</td>
- </tr>
- <tr  >
 <td>Unknown reason.</td>
- </tr>
- <tr>
-<td>Abnormal RTMP protocol content.</td>
- </tr>
- <tr>
-<td>CSS system internal error.</td>
  </tr>
  <tr>
 <td>RTMP AMF data exception.</td>
  </tr>
- <tr>
-<td>Push client interrupted the push.</td>
- </tr>
 </table>
 
 
-You can also use the [DescribeLiveStreamEventList](https://intl.cloud.tencent.com/document/product/267/30800) API to query stream interruptions.

@@ -20,14 +20,14 @@
 假设，“A”代表 CAM 用户的原有权限，“B”代表通过 policy 参数为临时密钥设置的权限，“A”和“B”的交集代表了临时密钥最终的有效权限。
 
 如下图，CAM 用户权限和 policy 临时权限的交集为有效权限：
-![](https://qcloudimg.tencent-cloud.cn/raw/d7897c607e0fc93729cd924908c1b0be.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/60982ace7d24b98f97210e674fd373a9.png)
 
 如下图，policy 在 CAM 用户权限以内，policy 为有效权限：
-![](https://qcloudimg.tencent-cloud.cn/raw/0611470aff77eef075b58109c3014f4a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/03b30ed344faa1a9e28a6210810866d1.png)
 
 ## 使用临时密钥访问 COS
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e3e735b970a04e2afe3efa74cfb30fcb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0127017176d6014ec8957f47d4858666.png)
 临时密钥包括 SecretId、SecretKey 和 Token，每个主账号和子账号都可以生成多个临时密钥。相比永久密钥，临时密钥的有效期只有30分钟 - 36小时。临时密钥适用于前端直传等临时授权场景，相比永久密钥，分发临时密钥给不受信任的用户，安全性更高，详情参考 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048) 及 [用于前端直传的临时密钥使用指引](https://intl.cloud.tencent.com/document/product/436/35265)。
 
 - 发起 API 请求

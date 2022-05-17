@@ -4,7 +4,7 @@ To use content delivery, acceleration, and playback services for your playback d
 - You have logged in to the [CSS console](https://console.cloud.tencent.com/live).
 - You have added a **playback domain name**.
 >?After adding a domain name and selecting playback domain as its type, select an acceleration region, such as Chinese mainland, and click **Confirm**.
-![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1915d256b28e4e9a6b997ae464326b8a.png)
 
 ## Notes
 - **CSS pricing differs in and outside Chinese mainland. For details, please see [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819).**

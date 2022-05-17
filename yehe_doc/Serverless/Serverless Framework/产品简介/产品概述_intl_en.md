@@ -1,7 +1,7 @@
-Well-received in the industry, Serverless Framework allows you to deploy a complete and available serverless application framework without having to care about underlying resources. Based on Serverless Framework, Serverless SSR features resource orchestrating, auto scaling, and event driving and covers the full development lifecycle from coding and debugging to testing and deploying, helping you quickly build serverless applications with the aid of Tencent Cloud resources.
+Well-received in the industry, Serverless Framework allows you to deploy a complete and available serverless application framework without having to care about underlying resources. Based on Serverless Framework, Tencent Cloud Serverless Application Center (SLS) features resource orchestrating, auto scaling, and event driving and covers the full development lifecycle from coding and debugging to testing and deploying, helping you quickly build serverless applications with the aid of Tencent Cloud resources.
 
 ## Use Cases
-Serverless SSR is suitable for the following development scenarios:
+Serverless Framework is suitable for the following development scenarios:
 
 - **SCF CLI-based development**
 

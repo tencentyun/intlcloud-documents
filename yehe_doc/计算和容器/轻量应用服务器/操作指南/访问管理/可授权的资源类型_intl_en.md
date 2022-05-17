@@ -1,4 +1,4 @@
-Resource-Level permission can be used to specify which resources a user can manipulate. For example, you can grant a user the permission to manipulate Lighthouse instances in the Guangzhou region.
+With Cloud Access Management (CAM), you can grant resource-level permissions for users.
 In CAM, the types of Lighthouse resources that can be authorized are as follows:
 <table>
 <thead>
@@ -26,7 +26,7 @@ In CAM, the types of Lighthouse resources that can be authorized are as follows:
 </tbody></table>
 
 The table below lists the API operations of Lighthouse that currently support resource-level permissions, as well as their resources and condition keys. When setting the resource path, you need to replace the variable parameters such as `$region` and `$account` with your actual parameter values. You can also use the `*` wildcard in the path.
-For relevant concepts such as `region`, `action`, `account`, and `resource` in CAM policies, please see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
+For relevant concepts such as `region`, `action`, `account`, and `resource` in CAM policies, see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
 >!Lighthouse API operations not listed here do not support resource-level permissions. You can still authorize a user to perform such an API operation, but you must specify `*` as the resource element of the policy statement.
 >
 
@@ -34,8 +34,8 @@ For relevant concepts such as `region`, `action`, `account`, and `resource` in C
 <table>
 <thead>
 <tr>
-<th align="left" width="40%">API: action</th>
-<th align="left">Resource path: resource</th>
+<th align="left" width="40%">API</th>
+<th align="left">Resource</th>
 </tr>
 </thead>
 <tbody>
@@ -109,8 +109,8 @@ For relevant concepts such as `region`, `action`, `account`, and `resource` in C
 <table>
 <thead>
 <tr>
-<th align="left" width="40%">API: action</th>
-<th align="left">Resource path: resource</th>
+<th align="left" width="40%">API</th>
+<th align="left">Resource</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -141,8 +141,8 @@ For relevant concepts such as `region`, `action`, `account`, and `resource` in C
 <table>
 <thead>
 <tr>
-<th align="left" width="40%">API: action</th>
-<th align="left">Resource path: resource</th>
+<th align="left" width="40%">API</th>
+<th align="left">Resource</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -172,8 +172,8 @@ For relevant concepts such as `region`, `action`, `account`, and `resource` in C
 <table>
 <thead>
 <tr>
-<th align="left" width="40%">API: action</th>
-<th align="left">Resource path: resource</th>
+<th align="left" width="40%">API</th>
+<th align="left">Resource</th>
 </tr>
 </thead>
 <tbody>
@@ -205,8 +205,8 @@ For relevant concepts such as `region`, `action`, `account`, and `resource` in C
 <table>
 <thead>
 <tr>
-<th align="left" width="40%">API: action</th>
-<th align="left">Resource path: resource</th>
+<th align="left" width="40%">API</th>
+<th align="left">Resource</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -228,12 +228,12 @@ For relevant concepts such as `region`, `action`, `account`, and `resource` in C
 </tr>
 </tbody></table>
 
-### Package
+### Bundle
 <table>
 <thead>
 <tr>
-<th align="left" width="40%">API: action</th>
-<th align="left">Resource path: resource</th>
+<th align="left" width="40%">API</th>
+<th align="left">Resource</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -246,8 +246,8 @@ For relevant concepts such as `region`, `action`, `account`, and `resource` in C
 <table>
 <thead>
 <tr>
-<th align="left" width="40%">API: action</th>
-<th align="left">Resource path: resource</th>
+<th align="left" width="40%">API</th>
+<th align="left">Resource</th>
 </tr>
 </thead>
 <tbody>

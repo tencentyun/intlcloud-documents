@@ -2,17 +2,15 @@
 
 Tencent Cloud RT-Cube Superplayer Adapter for iOS is a player plugin provided by VOD for customers who want to use a third-party or proprietary player to connect to Tencent Cloud PaaS resources. It is generally used by customers who strongly need to customize player features.
 
-[](id:sdkDownload)
-## SDK Download
+## SDK Download[](id:sdkDownload)
 
-The Tencent Cloud RT-Cube Superplayer Adapter SDK and demo for iOS can be downloaded [here](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_iOS.zip). 
+The Tencent Cloud RT-Cube Superplayer Adapter SDK and demo for iOS can be downloaded [here](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.2.0/TXCPlayerAdapterSDK_1.2.0_iOS.zip). 
 
 ## Target Audience
 
-This document describes Tencent Cloud's proprietary capabilities. Please make sure that you have activated the relevant [Tencent Cloud](https://intl.cloud.tencent.com) services before reading it. If you haven't registered an account, please [sign up for free trial](https://intl.cloud.tencent.com/login) first.
+This document describes Tencent Cloud's proprietary capabilities. Make sure that you have activated the relevant [Tencent Cloud](https://intl.cloud.tencent.com) services before reading it. If you haven't registered an account, [sign up for free trial](https://intl.cloud.tencent.com/login) first.
 
-[](id:guide)
-## Integration Guide
+## Integration Guide[](id:guide)
 
 ### Environment requirements
 
@@ -43,7 +41,7 @@ If the file already exists in Tencent Cloud, you can go to [Media Assets](https:
 ```objective-c
 NSInteger appId; //// `appid` can be applied for in Tencent Cloud VOD
 NSString *fileId;
-// `psign` is a signature for superplayer. For more information on the signature and how to generate it, please visit https://intl.cloud.tencent.com/document/product/266/38099
+// `psign` is a signature for superplayer. For more information on the signature and how to generate it, visit https://intl.cloud.tencent.com/document/product/266/38099
 NSString *pSign = self.pSignTextView.text;
     
 TXCPlayerAdapter *adapter = [TXCPlayerAdapter shareAdapterWithAppId:appId];
@@ -54,7 +52,7 @@ Request the video information and play back the video:
 ```objective-c
 id<ITXCPlayerAssistorProtocol> assistor = [TXCPlayerAdapter createPlayerAssistorWithFileId:fileId pSign:pSign];
 [assistor requestVideoInfo:^(id<ITXCPlayerAssistorProtocol> response, NSError *error) {
-    if (error) {
+    if (error){
         NSLog(@"create player assistor error : %@",error);
         [self.view makeToast:error.description duration:5.0 position:CSToastPositionBottom];
         return;
@@ -99,7 +97,7 @@ This API is used to initialize an Adapter singleton.
 
 **Parameter description**
 
-appId: enter the `appid` (if a subapplication is used, enter the `subappid`). |
+appId: Enter the `appid` (if a subapplication is used, enter the `subappid`). |
 
 ### Terminating Adapter
 This API is used to terminate Adapter. It can be called after the program exits.
@@ -178,7 +176,7 @@ The parameters of `TXCVideoBasicInfo` are as follows:
 | size | Int | Video size in bytes |
 | duration | Float | Video duration in seconds |
 | description | String | Video description |
-| coverUrl | String | Video cover |
+| coverUrl | String | Video thumbnail |
 
 
 

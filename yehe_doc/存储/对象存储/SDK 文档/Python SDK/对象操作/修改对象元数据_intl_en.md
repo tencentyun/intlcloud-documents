@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides SDK code samples related to object metadata modification.
+This document provides SDK code samples for modifying object metadata.
 
 ## Modifying Object Metadata
 

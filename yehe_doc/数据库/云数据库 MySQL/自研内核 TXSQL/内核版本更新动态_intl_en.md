@@ -1,4 +1,4 @@
-This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
+This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/45627).
 
 ## MySQL 8.0
 ### 20211202
@@ -249,8 +249,8 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 ### 20200331
 #### New features
 - Added the official MySQL 5.7.22 JSON series functions.
-- Supported the [real-time session](https://intl.cloud.tencent.com/document/product/1035/36037#.E7.83.AD.E7.82.B9.E6.9B.B4.E6.96.B0.E4.BF.9D.E6.8A.A4) feature for ecommerce flash sale scenarios.
-- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81).
+- Supported the [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037) feature for ecommerce flash sale scenarios.
+- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
 - Supported encryption with custom KMS keys.
 
 #### Bug fixes
@@ -342,19 +342,6 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Fixed the issue where speed limit plugin became unavailable in async mode.
 
 ## MySQL 5.6
-### 20220301
-#### New features
-- Supported dynamically configuring the spin cycle (0–100) with the dynamic parameter `innodb_spin_wait_pause_multiplier`.
-This parameter is used for temporary adjustment and does not support fixing the change through the console.
-- Supported printing deadlock loop information.
-After this feature is enabled through the parameter `innodb_print_dead_lock_loop_info`, when a deadlock occurs, you can run `show engine innodb status` to view the deadlock loop information.
-
-#### Bug fixes
-- Fixed the issue where anonymous GTID transactions were generated in memory tables after replica restart.
-- Fixed the issue where upgrade failed due to the missing root@localhost permission.
-- Fixed the issue where the values of monitoring variables such as `innodb_row_lock_current_waits` were abnormal.
-- Fixed the SQL type mapping error in the audit plugin.
-
 ### 20211030
 #### New features
 - Supported large transaction replication optimization.
@@ -389,7 +376,7 @@ After this feature is enabled through the parameter `innodb_print_dead_lock_loop
 
 ### 20200915
 #### New features
-- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81).
+- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
 
 #### Performance optimizations   
 - Optimized the initialization acceleration of buffer pool.

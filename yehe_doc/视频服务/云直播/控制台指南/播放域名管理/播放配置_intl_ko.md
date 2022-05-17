@@ -11,9 +11,9 @@
 	2. 사용자 정의 스트림 이름 StreamName을 작성합니다(예시: liveteststream). 재생 주소 StreamName과 푸시 스트리밍 주소 StreamName이 일치해야 해당 스트림을 재생할 수 있습니다.
 	3.  만료 시간을 선택합니다. (예시: `2021-06-30 19:00:44`)
 	4. **주소 생성**을 클릭합니다.
-![](https://main.qcloudimg.com/raw/6bea977acb754ec9c36422aef3189f39.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae67aa5386d9f47d7bd20d7cce7c7603.png)
 3. 재생 도메인의 재생 인증이 비활성화 상태인 경우, **재생 설정** > **재생 주소 리졸브** 탭에서 해당 재생 도메인의 RTMP, FLV, HLS, UDP의 네 가지 재생 주소를 확인할 수 있습니다. 재생 주소 상의 StreamName(스트림 이름)을 변경하여 푸시 스트리밍 주소와 연결하면 재생 주소로 라이브 방송 화면을 확인할 수 있습니다.
-![](https://main.qcloudimg.com/raw/8d8a9ee63dc12045da418c1539051eb6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/16a192a0090e8f4f470ace2b78cac52e.png)
 >?CSS 재생에 관한 자세한 내용은 [라이브 방송 재생](https://intl.cloud.tencent.com/document/product/267/31559)을 참고하십시오.
 
 

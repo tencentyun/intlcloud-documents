@@ -5,6 +5,12 @@ When upgrading the TPNS SDK for OPPO PUSH to v1.3.2.0, please add the following 
 implementation 'com.google.code.gson:gson:2.6.2'
 implementation 'commons-codec:commons-codec:1.15'
 ```
+### Corresponding push dependency versions of vendors
+Huawei: 6.3.0.302
+Mi: 4.9.1
+Meizu: 4.1.0
+OPPO: 3.0.0
+vivo: 3.0.0.4
 
 ## TPNS Android SDK v1.2.7.0
 

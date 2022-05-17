@@ -218,8 +218,8 @@ https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=
 }
 ```
 
+[](id:Parameters)
 
-<span id="Parameters"></span>
 ### 请求包字段说明
 
 | 字段 | 类型 | 属性 |说明|
@@ -288,7 +288,7 @@ https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=
 | 10036 | 创建的音视频聊天室数量超过限制，请先解散部分音视频聊天室或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
 | 10037 |请求中指定了群主（Owner_Account），但该群主创建和加入的群组数量超过了限制。请该群主退出部分群组或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
 | 10038 | 请求包中导入的成员数量超过了限制，请减少`MemberList`参数中导入的成员数量或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
-| 80001 | 文本安全打击，请检查群名称、群公告和群简介等是否有敏感词汇 |
+
 
 ## 接口调试工具
 

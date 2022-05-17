@@ -1,3 +1,6 @@
+As earlier EMR versions don't come with the Timeline Server and Tomcat packages necessary for Tez UI integration, you need to complete the steps below.
+>! As starting Tez UI requires running Timeline Server, which uses a lot of resources, you need to assess the impact on your business and proceed with caution.
+
 This document describes how to integrate Knox with Tez, such as installing Tomcat and Tez UI, creating roles, configuring Timeline Server, configuring Tez, and starting services. `172.**.**.9` is the private IP of the master node, `159.**.**.70` is the public IP of the master node, and the Tez version is v0.9.2.
 
 ## Installing Tomcat and Tez UI 
@@ -26,7 +29,7 @@ vim ./config/configs.env
 Change `localhost` to the private IP of the current server.
 ![](https://main.qcloudimg.com/raw/c62c7ad792096c3033d1e38ba94a3cbe.png)
 
-## Creating roles
+## Creating Roles
 ```
 vim /usr/local/service/knox/conf/topologies/emr.xml 
 ```
@@ -74,7 +77,7 @@ Modify the `yarn-site.xml` file in configuration management, save the changes, a
 | yarn.timeline-service.generic-application-history.enabled | true              |
 | yarn.timeline-service.handler-thread-count                | 24                |
 
-   
+
 ## Modifying Tez Configuration
 In the `tez-site.xml` file, add the following parameters, save the changes, and restart the components whose configuration has been changed.
 
@@ -82,7 +85,7 @@ In the `tez-site.xml` file, add the following parameters, save the changes, and 
 | --------------------------------- | ------------------------------------------------------------ |
 | tez.tez-ui.history-url.base       | `http://172.**.**.9:2000/tez-ui/` (replace it with your IP)                           |
 | tez.history.logging.service.class | org.apache.tez.dag.history.logging.ats.ATSHistoryLoggingService |
- 
+
 
 ## Starting Services
 1. Start Timeline Server.
@@ -108,3 +111,17 @@ rm -rf  /usr/local/service/knox/data/deployments/*
 ```
 https://{public IP of the cluster}:30002/gateway/emr/tez/  
 ```
+
+## Stopping Services
+If you find that the Timeline Server significantly affects your business after running it for a period of time, you can stop relevant services as follows:
+
+1. Stop Tomcat.
+```
+/usr/local/service/tomcat/bin/shutdown.sh
+```
+
+2. Stop Timeline Server.
+```
+/usr/local/service/hadoop/sbin/yarn-daemon.sh  stop  timelineserver
+```
+

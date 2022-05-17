@@ -1,6 +1,6 @@
 ## 简介
 
-腾讯云对象存储（Cloud Object Storage，COS）集成了 [数据万象](://intl.cloud.tencent.com/document/product/1045)（Cloud Infinite，CI）专业的一体化多媒体解决方案，涵盖以下图片处理功能，详情可见 [图片处理概述](https://intl.cloud.tencent.com/document/product/436/35280)。
+腾讯云对象存储（Cloud Object Storage，COS）集成了 [数据万象](https://intl.cloud.tencent.com/document/product/1045)（Cloud Infinite，CI）专业的一体化多媒体解决方案，涵盖以下图片处理功能，详情可见 [图片处理概述](https://intl.cloud.tencent.com/document/product/436/35280)。
 
 <table>
    <tr>

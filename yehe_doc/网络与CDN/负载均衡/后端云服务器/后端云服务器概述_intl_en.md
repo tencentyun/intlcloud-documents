@@ -5,4 +5,4 @@ A real server is a [CVM instance](https://intl.cloud.tencent.com/doc/product/213
 When adding a real server, we recommend that you:
 - Install a web server (e.g., Apache or IIS) on all CVM instances to be bound to the CLB instance and ensure application consistency.
 - You are recommended to enable [session persistence](https://intl.cloud.tencent.com/document/product/214/6154), so that CLB can maintain a longer TCP connection for reuse by multiple requests, thereby reducing load on the web server and improving CLB throughput.
-- Make sure that the real instance's security group has inbound rules for CLB listener ports and health check ports. For more information, please see [Real Server Access Control](https://intl.cloud.tencent.com/document/product/214/6157).
+- Make sure that the real instance's security group has inbound rules for CLB listener ports and health check ports. For more information, please see [Security Group Configuration of the Real Server](https://intl.cloud.tencent.com/document/product/214/6157).

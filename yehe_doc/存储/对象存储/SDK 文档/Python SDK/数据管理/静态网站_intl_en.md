@@ -2,11 +2,11 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to static website.
+This document provides an overview of APIs and SDK code samples for static website.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website configuration | Configures a static website for a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Configuring a static website configuration | Configures a static website for a bucket |
 | [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying a static website configuration | Queries the static website configuration of a bucket |
 | [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting a static website configuration | Deletes the static website configuration of a bucket |
 
@@ -79,9 +79,9 @@ response = client.put_bucket_website(
 
 | Parameter | Description | Type | Required |
 | --------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for which a static website is configured, in the format of `BucketName-APPID`. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
+| Bucket | Bucket for which a static website is configured, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 | IndexDocument               | Sets the homepage of static website                                       | Dict   | Yes       |
-| Suffix                      | Suffix configuration for the homepage address of static website                                   | String | Yes       |
+| Suffix                      | Configures suffix for the homepage address of static website                                   | String | Yes       |
 | ErrorDocument               | Sets the error page configuration of static website                                     | Dict   | No       |
 | Key                         | Error page address                                                 | String | No       |
 | RedirectAllRequestsTo       | Sets the global redirect configuration                                           | Dict   | No       |
@@ -144,7 +144,7 @@ response = client.get_bucket_website(
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for static website configuration query, in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for static website configuration query, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
 
 #### Response description
 
@@ -181,7 +181,7 @@ Static website configuration of the bucket in dict type.
 | Parameter | Description | Type |
 | --------------------------- | ---------------------------------------- | ------ |
 | IndexDocument               | Sets the homepage of static website                                       | Dict   |
-| Suffix                      | Suffix configuration for the homepage address of static website                                   | String |
+| Suffix                      | Configures suffix for the homepage address of static website                                   | String |
 | ErrorDocument               | Sets the error page configuration of static website                                     | Dict   |
 | Key                         | Error page address                                                 | String |
 | RedirectAllRequestsTo       | Sets the global redirect configuration                                           | Dict   |
@@ -240,7 +240,7 @@ response = client.delete_bucket_website(
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for static website configuration deletion, in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
+| Bucket | Bucket for static website configuration deletion, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
 
 #### Response description
 

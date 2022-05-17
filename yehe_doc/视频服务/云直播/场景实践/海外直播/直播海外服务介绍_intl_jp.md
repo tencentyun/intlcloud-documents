@@ -37,6 +37,6 @@
 - Tencent Cloudアカウントをお持ちで、CSSサービスのアクティブ化を申請済みの場合は、以下の操作手順を直接行うことができます。
 
 CSSコンソールに入り、左側ナビゲーションバーから[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)選択し、その後【ドメイン名の追加】をクリックします。
-![](https://main.qcloudimg.com/raw/8966d84b046460251f38b49927117826.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e0131c5904b8e2a8c20034b10fb7127b.png)
 
 ポップアップしたドメイン名追加のボックスの中でタイプ【再生ドメイン名】を選択し、さらに対応する【アクセラレーションリージョン】を選択します。最後にアクセラレーションが必要な【ドメイン名】を入力すれば完了です。

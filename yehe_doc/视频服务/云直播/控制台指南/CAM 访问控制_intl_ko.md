@@ -27,7 +27,7 @@ CAM을 사용할 경우 정책을 하나의 사용자 또는 하나의 사용자
 사용자/사용자 그룹 페이지로 이동하여 정책을 추가할 추가 사용자/사용자 그룹을 선택합니다.
 - 왼쪽의 **사용자**>**사용자 리스트**를 클릭하고 정책을 추가할 사용자/사용자 그룹을 선택합니다. 오른쪽의 **권한 부여**를 클릭하고 해당 라이브 방송 정책을 선택한 후 **확인**을 클릭하면 추가됩니다. ![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
 
-  ![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
+  
 
   ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
@@ -67,6 +67,7 @@ CAM을 사용할 경우 정책을 하나의 사용자 또는 하나의 사용자
 <td>조건</td><td>옵션</td>
 <td>상기 권한의 적용 조건을 설정하고, 권한을 부여할 소스 IP를 입력합니다. 지정된 IP 주소 범위에서 요청이 올 때만 지정된 작업에 대한 액세스를 허용합니다. 정책에 대한 제한을 강화하려면 다른 조건을 추가합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/598/10608">적용 조건</a>을 참고하십시오.</td>
 </tr></table>
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/da4b1d1379c74e8d5eeb3f79908191e6.png">
 
 > ! 여러 서비스에 대한 지원을 설정하려면 **권한 추가**를 클릭하고 여러 권한 성명을 계속 추가하여 다른 서비스에 대한 권한 정책을 설정합니다.

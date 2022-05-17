@@ -4,11 +4,11 @@ This player is based on a Flutter plugin of SuperPlayer and supports both Androi
 
 ## SDK Download
 
-The Tencent Cloud RT-Cube Superplayer SDK for Flutter can be downloaded [here](https://github.com/tencentyun/SuperPlayer/tree/main/Flutter). 
+The Tencent Cloud RT-Cube Superplayer SDK for Flutter can be downloaded [here](https://github.com/LiteAVSDK/Player_Flutter). 
 
 ## Target Audience
 
-This document describes Tencent Cloud's proprietary capabilities. Please make sure that you have activated the relevant [Tencent Cloud](https://cloud.tencent.com) services before reading it. If you haven't registered an account, please [sign up for free trial](https://intl.cloud.tencent.com/login) first.
+This document describes Tencent Cloud's proprietary capabilities. Make sure that you have activated the relevant [Tencent Cloud](https://intl.cloud.tencent.com) services before reading it. If you haven't registered an account, [sign up for free trial](https://intl.cloud.tencent.com/login) first.
 
 ## Integration Guide[](id:Guide)
 
@@ -16,7 +16,7 @@ This document describes Tencent Cloud's proprietary capabilities. Please make su
 ```yaml
   super_player:
     git:
-      url: https://github.com/tencentyun/SuperPlayer
+      url: https://github.com/LiteAVSDK/Player_Flutter
       path: Flutter
 ```
 
@@ -31,13 +31,13 @@ This document describes Tencent Cloud's proprietary capabilities. Please make su
 Add the following configuration to the `AndroidManifest.xml` file of Android.
 
 ```xml
-<!--Network permission-->
+<!--network permission-->
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <!--VOD player floating window permission -->
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-<!--Storage-->
+<!--storage-->
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
@@ -177,14 +177,11 @@ The main class of the player is `SuperPlayerVideo`, and videos can be played bac
   }
 ```
 
-Run the code and you can see that the video is played back on the phone and most of the features in the UI are available.
-
-
+Run the code and you can see that the video is played on the phone and most of the features in the interface are available.
 
 ## Multiple Definitions[](id:resolution)
 
 Only one definition is specified in the sample code above. It is easy to add multiple definitions. For example, open the [CSS console](https://console.cloud.tencent.com/live/livemanage), find the live stream to be played back, and enter the details page.
-
 
 Here, different playback addresses for different definitions and formats are provided. We recommend you use the FLV address for playback. The code is as follows:
 
@@ -248,8 +245,6 @@ Here, different playback addresses for different definitions and formats are pro
 
 You can see these definitions in the player and click them to switch.
 
-
-
 ## Time Shifting Playback[](id:timeShift)
 
 It is easy to enable time shifting for the player, and you only need to configure the `appId` before playback.
@@ -263,9 +258,7 @@ playModel.appId = 1252463788;// Replace it with your `appID` here
 
 You can see the progress bar below the live stream being played back and seek to a desired point. You can also click **Return to Live Stream** to watch the latest live stream.
 
-
-
->?The time shifting feature is currently in beta test. If you need to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder) for application.
+>?The time shifting feature is currently in beta test. If you need to use it, [submit a ticket](https://console.cloud.tencent.com/workorder) for application.
 
 ## Playback Through FileId
 In addition to setting the definition by entering the URL, an easier way is playback through `fileId`, which is usually returned by the server after the video is uploaded:
@@ -288,9 +281,9 @@ playModel.videoId = videoId;
 _playerController.playWithModel(playModel);
 ```
 
-After the video is uploaded, it will be automatically transcoded on the backend (for all transcoding formats, please see [Transcoding Template](https://console.cloud.tencent.com/vod/video-process/template)). After the transcoding is completed, the player will automatically display multiple definitions.
+After the video is uploaded, it will be automatically transcoded on the backend (for all transcoding formats, see [Transcoding Template](https://console.cloud.tencent.com/vod/video-process/template)). After the transcoding is completed, the player will automatically display multiple definitions.
 
 ## More Features[](id:moreFeature)
 
-To try out the complete features, scan the QR code below to download the Tencent Video Cloud toolkit or run the project demo directly.
+To experience all features, scan the QR code to download the Tencent Video Cloud toolkit or run the project demo directly.
 <img src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png" width="150">

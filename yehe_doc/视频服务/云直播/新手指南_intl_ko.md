@@ -11,19 +11,14 @@
 
 CSS 서비스의 과금에 대한 자세한 설명은 [CSS 가격 리스트](https://intl.cloud.tencent.com/document/product/267/2819)를 참조하십시오.
 
-
-
-
 > ?개인 청구서 정보 조회는 [청구서 조회](https://intl.cloud.tencent.com/document/product/267/36278)를 확인하십시오.
->
-
 
 
 ## 3. 콘솔 개요
 
  다음은 [CSS 콘솔](https://console.cloud.tencent.com/live/livestat) 총람 페이지입니다. 
 
-![](https://main.qcloudimg.com/raw/d064207bb8e3f69f2eef152a41a49fa2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc1b2ed1e8f0cbf859c75b8e48f11811.png)
 
 ## 4. 기능 개요
 

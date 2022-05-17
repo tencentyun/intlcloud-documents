@@ -81,7 +81,7 @@
 
 <table>
  <tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
- <tr><td>镜像构建功能新增多个代码源支持</td><td>新增支持私有 GitLab，腾讯工蜂代码源支持，并优化了代码源授权流程。</td><td><a href="https://intl.cloud.tencent.com/zh/document/product/1051/37252">配置镜像构建</a></td></tr>
+ <tr><td>镜像构建功能新增多个代码源支持</td><td>新增支持私有 GitLab，腾讯工蜂代码源支持，并优化了代码源授权流程。</td><td>-</a></td></tr>
  <tr><td>交付流水线部署功能支持镜像过滤</td><td>新增支持使用本地推送镜像触发部署过程，同时支持配置过滤规则，仅部署符合规则的最新推送镜像。</td><td>-</td></tr>
 </table>
 

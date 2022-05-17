@@ -9,9 +9,15 @@
 5. 变配机型规格需大于或等于当前规格。
 
 ## 操作步骤
-1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在**集群列表**中单击对应的集群**ID/名称**进入集群详情页。
-2. 在集群详情页中选择**集群资源**进入**资源管理**页。根据业务需要和节点类型选择需要变更的实例，选择**操作**>**变更配置**。
+1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在集群列表中单击对应的集群 **ID/名称**进入集群详情页。
+2. 在集群详情页中选择**集群资源**进入**资源管理**页。根据业务需要和节点类型选择需要变更的实例，选择**操作 > 变更配置**。
 3. 在调整配置页，确认相关变配信息，需认真阅读重要提示并勾选同意变更信息。
 ![](https://main.qcloudimg.com/raw/9449daf9a2f23296a5809e067a2278ac.png)
-![](https://main.qcloudimg.com/raw/f9a125d7198c26904e82ac37936a7123.png)![](https://main.qcloudimg.com/raw/9a7f927da4e46d3c2fe1d0db1ea39d08.png)
+![](https://main.qcloudimg.com/raw/f9a125d7198c26904e82ac37936a7123.png)
+![](https://main.qcloudimg.com/raw/9a7f927da4e46d3c2fe1d0db1ea39d08.png)
 4. 选择目标配置，选择变配的配置。费用确认无误后，单击**开始调整**即可调整配置。
+5. （可选）变更配置后，如需调整相应组件的资源，需要去配置管理中重新下发配置，并重启服务。
+	- 以更新 Yarn NodeManager 资源为例，在集群详情页中选择集群服务，在集群服务列表中，选择 YARN 面板右上角**操作 > 配置管理**。
+	- 进入配置管理页后，选择配置文件 yarn-site.xml，单击**修改配置**。
+	- Yarn 资源默认根据机型规格自动调整，若需要手动调整 Yarn 资源，可修改配置项yarn.nodemanager.resource.cpu-vcores和yarn.nodemanager.resource.memory-mb 的参数。
+	- 单击**保存配置**，进行配置下发后，重启 NodeManager 服务，则完成 Yarn 资源配置更新。

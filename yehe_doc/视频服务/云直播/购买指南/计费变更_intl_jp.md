@@ -9,9 +9,9 @@
 ## 変更方法
 1. [CSSコンソール](https://console.cloud.tencent.com/live)にログインし、左側のディレクトリで **概要**をクリックし、概要ページに進みます。
 2. **課金方式**タグを確認します。中国大陸（中国本土）またはグローバル/中国香港・中国マカオ・中国台湾（中国本土以外）の課金方式を選択することができます。**切り替え**をクリックします。
-   ![](https://main.qcloudimg.com/raw/ee8e815c10fdf6dd8c9a95c04082471e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/706c7397b9f535d0f2cf9cab0537301b.png)
 3. 元の課金方式**日次トラフィック課金**を**日次帯域幅課金**に切り替え、変更する製品を標準ライブストリーミング、ライブイベントストリーミングとし、**OK**をクリックすれば完了です。
-   ![](https://main.qcloudimg.com/raw/f45e16f7fc10b4102cc420a8fd945253.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b5d96781ac1ab7057b16a31d70ddb39f.png)
 
 >!
 >- 中国大陸または グローバル/中国香港・中国マカオ・中国台湾の標準ライブストリーミング、ライブイベントストリーミングの課金方式がいずれも日次課金の場合のみ、課金方式を切り替えることができます。
@@ -23,6 +23,6 @@
 
 1. [CSSコンソール](https://console.cloud.tencent.com/live)にログインし、左側のディレクトリで **概要**をクリックし、概要ページに進みます。
 2. **課金方式**タグで、現時点で有効化待ちとなっている課金方式を確認することができます。**キャンセル**をクリックします。
-![](https://qcloudimg.tencent-cloud.cn/raw/aabbc869dbc07964b779d5a068181e6b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/79c4b03ec28a8b64a2a70ba9b70c9b9e.png)
 3. 中国大陸（中国本土）の課金の変更をキャンセルします。変更をキャンセルした場合、当日はそれ以降、課金変更操作を行うことはできません。**OK**をクリックすれば完了です。
-![](https://qcloudimg.tencent-cloud.cn/raw/37ad273fab16e7d18b38cdae945b2d28.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bf040aa63ae33d6d0f2cb2c598ef4a8d.png)

@@ -5,7 +5,7 @@
 
 COSの権限承認およびID認証のフローは、Tencent Cloudアカウントの登録から始まる5段階となっています。Tencent Cloudアカウントの登録、COSサービスの有効化、権限承認IDの作成、IDへの権限設定、アクセスとID認証の開始、の5つです。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3a138071100124990572dd986c3c4350.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/13f73015cca361a685a63531e7eab02e.png)
 
 
 #### ステップ1：Tencent Cloudアカウントの登録

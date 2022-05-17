@@ -1,5 +1,5 @@
 ## Overview
-This document provides an overview of APIs and SDK code samples related to how to create a bucket.
+This document provides an overview of APIs and SDK code samples for creating a bucket.
 
 | API | Operation |  Description |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
@@ -33,7 +33,7 @@ import (
 
 func main() {
         // Bucket name in the format of `BucketName-APPID` (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-        // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+        // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
         u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
         b := &cos.BaseURL{BucketURL: u}
         client := cos.NewClient(b, &http.Client{

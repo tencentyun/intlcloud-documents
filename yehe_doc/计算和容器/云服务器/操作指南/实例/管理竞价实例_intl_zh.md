@@ -44,7 +44,7 @@ RunInstance 接口内的 [InstanceMarketOptionsRequest](https://intl.cloud.tence
 
 ### 示例场景描述
 您有一台地域为广州三区的实例，该实例的付费模式为按小时后付费竞价模式。具体竞价模式的配置信息如下：
-- 最高竞价出价：0.0923元/小时
+- 最高竞价出价：0.0923/小时
 - 竞价请求模式：一次性请求
 - 镜像 ID：img-pmqg1cw7
 - 选择机型：2C4G 二代标准型（S2.MEDIUM4）

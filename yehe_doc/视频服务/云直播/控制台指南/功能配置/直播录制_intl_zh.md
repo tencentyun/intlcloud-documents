@@ -24,7 +24,7 @@
 ## 创建录制模板
 1. 登录云直播控制台，进入 **功能配置** > [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
 2. 单击 **创建录制模板** 设置模板信息，进行如下配置：
-![](https://qcloudimg.tencent-cloud.cn/raw/a142c4c29169faa53164e7e264f4aa82.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca30bd94a2f81ecead5c1684b8007744.png)
 
 <table>
    <thead><tr><th width="20%" colspan=2>配置项</th><th>配置描述</th></tr></thead>
@@ -100,9 +100,9 @@
     - **直接关联域名：**单击左上方的 **绑定域名**。
     ![](https://main.qcloudimg.com/raw/bcb6c5da46a3455f94d441134e49825a.png)
     - **新录制模板创建成功后关联域名：**[录制模板创建](#C_record) 成功后，单击提醒框中的 **去绑定域名**。
-    ![](https://main.qcloudimg.com/raw/7f26a83d95d0f08ceda1b10e93e30389.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b45ec9863fe4c6f16fe5551605ce46d9.png)
 2. 在域名绑定窗口中，选择您需绑定的**录制模板**及**推流域名**，单击 **确定** 即可绑定成功。
-![](https://main.qcloudimg.com/raw/a9411818457b4e708fd624f970d92ab6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9abc1af79841e877d4e194d0d5741efc.png)
 
 >? 支持通过单击 **添加** 为当前模板绑定多个推流域名。
 

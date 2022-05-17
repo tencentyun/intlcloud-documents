@@ -179,8 +179,6 @@ class _TestSuperPlayerState extends State<TestSuperPlayer> {
 
 コードを実行すると、携帯電話で再生したビデオを視聴でき、インターフェース上の機能もほとんどが使用可能な状態になります。
 
-
-
 ## 複数の解像度[](id:resolution)
 
 上述のサンプルコードは解像度が1種類のみですが、複数の解像度を追加したい場合もとても簡単です。例えば、ライブストリーミングでは、[CSSコンソール](https://console.cloud.tencent.com/live/livemanage)を開き、再生したいCSSストリームを探して、詳細に移動します。
@@ -248,8 +246,6 @@ class _TestSuperPlayerState extends State<TestSuperPlayer> {
 
 プレーヤーでこれら複数の解像度を確認することができ、クリックすれば、すぐに切り替えることができます。
 
-
-
 ## タイムシフト再生[](id:timeShift)
 
 プレーヤーのタイムシフトを有効にするのはとても簡単で、再生前にappIdを設定するだけです。
@@ -262,8 +258,6 @@ playModel.appId = 1252463788;// ここでappIDに変更
 >?appIdを【Tencent Cloudコンソール】>【[アカウント情報](https://console.cloud.tencent.com/developer)】で表示します。
 
 再生中のCSSストリームは下のプログレスバーで確認できます。ドラッグすれば指定の位置まで戻ることができ、【ライブストリーミングに戻る】をクリックすれば最新のCSSストリームを視聴することができます。
-
-
 
 >?タイムシフト機能はパブリックベータテスト申請フェーズにあり、必要に応じて[チケットを提出](https://console.cloud.tencent.com/workorder)し、使用を申請することができます。
 

@@ -1,20 +1,21 @@
-VOD provides an SDK for uploading videos on Android client. For more information on the upload process, please see [Guide - Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921).
+VOD provides an SDK for uploading videos on Android client. For more information on the upload process, see [Guide - Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921).
 
 ## Downloading Source Code
 
-1. Click [here](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_Android.zip) to download the Android Upload Demo and source code.
+1. Click [here](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_Android.zip) to download Android upload demo and source code.
 2. After decompressing the downloaded zip file, you can see the demo directory and find the upload source code in `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`.
 
-## Integrating Upload Library and Source Code
+##  Integrating Upload Library and Source Code
 
 1. Copy `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload` to your project directory, and modify the package name manually.
 2. Refer to `Demo/app/build.gradle` to add dependencies in your project:
     ```
-    implementation 'com.qcloud.cos:cos-android-nobeacon:5.8.3'
+    implementation ('com.qcloud.cos:cos-android:5.8.3') {
+        exclude group: 'com.qcloud.cos', module: 'beacon-android-release'
+    }
     implementation 'com.qcloud.cos:quic:1.5.37'
     ```
 >?You can also refer to [Manual integration](https://intl.cloud.tencent.com/document/product/436/12159) and integrate corresponding dependent libraries.
-
 3. Network and storage access permissions are required for video uploading. You can add the following permission declarations in `AndroidManifest.xml`:
 	```xml
 	<uses-permission android:name="android.permission.INTERNET"/>
@@ -31,7 +32,7 @@ VOD provides an SDK for uploading videos on Android client. For more information
 	</receiver>
 	```
 
-## Uploading Videos
+##  Uploading Videos
 #### Initializing upload object
 
 ```java
@@ -62,7 +63,7 @@ TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishPara
 param.signature = "xxx";
 param.videoPath = "xxx";
 ```
-For details on how to calculate `signature`, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
+For details on how to calculate `signature`, see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 #### Calling upload method
 
@@ -102,7 +103,7 @@ param.signature = "xxx";
 param.mediaPath = "xxx";
 ```
 
-For details on how to calculate `signature`, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
+For details on how to calculate `signature`, see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 #### Calling upload method
 
@@ -112,13 +113,13 @@ int publishCode = mVideoPublish.publishMedia(param);
 
 >?
 >- The upload method automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload.
->- To upload to the specified subapplication, please see [Subapplication System - Upload from client](https://intl.cloud.tencent.com/document/product/266/33987).
+>- To upload to the specified subapplication, see [Subapplication System - Upload from client](https://intl.cloud.tencent.com/document/product/266/33987).
 >
 ## Advanced Features
 
-#### Uploading a cover image
+#### Uploading thumbnail image
 
-Add the path to the cover image as an upload parameter.
+Add the path to the thumbnail image as an upload parameter.
 
 ```java
 TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishParam();
@@ -126,7 +127,7 @@ param.signature = "xxx";
 param.videoPath = "xxx";
 param.coverPath = "xxx";
 ```
-For details on how to calculate `signature`, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
+For details on how to calculate `signature`, see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 #### Canceling and resuming upload
 
@@ -136,7 +137,7 @@ To cancel an upload, call the `cancelPublish()` API of `TXUGCPublish`.
 mVideoPublish.cancelPublish();
 ```
 
-To resume an upload, call `publishVideo` of `TXUGCPublish` again using the same upload parameters and same video and cover image paths.
+To resume an upload, call `publishVideo` of `TXUGCPublish` again using the same upload parameters and same video and thumbnail image paths.
 
 #### Checkpoint restart
 
@@ -163,10 +164,10 @@ We recommend you call `TXUGCPublishOptCenter.getInstance().prepareUpload(signatu
 </receiver>
 ```
 
-For details on how to calculate `signature`, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
+For details on how to calculate `signature`, see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 
-## Video Upload API Description
+## Video Upload API
 
 Initialize the upload object: `TXUGCPublish`
 
@@ -194,7 +195,7 @@ Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 | ------------ | ---------------------------------- | ------- | ---- |
 | signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922). | String  | Yes    |
 | videoPath    | Path to a local video file. | String                           | Yes    |
-| coverPath | Path to a local cover image file. No cover file will be used by default.                  | String  | No.    |
+| coverPath | Path to a local thumbnail image file. No thumbnail file will be used by default.                  | String  | No.    |
 | enableResume | Whether to enable checkpoint restart. It is enabled by default.                      | boolean | No    |
 | enableHttps | Whether to enable HTTPS, which is disabled by default.                      | boolean | No |
 | fileName     | Name of a video file uploaded to Tencent Cloud. If this parameter is left empty, the name of the local file will be used by default. | String  | No    |
@@ -215,7 +216,7 @@ Progress callback: `TXUGCPublishTypeDef.ITXVideoPublishListener.onPublishProgres
 
 Result callback: `TXUGCPublishTypeDef.ITXVideoPublishListener.onPublishComplete`
 
-| Variable Name   | Description | Type                                  |
+| Variable Name   | Description | Type                                  ||
 | ------ | ---- | ----------------------------------- |
 | result | Upload result. | TXUGCPublishTypeDef.TXPublishResult |
 
@@ -227,7 +228,7 @@ Upload result: `TXUGCPublishTypeDef.TXPublishResult`
 | descMsg  | Error description of failed upload. | String |
 | videoId | VOD file ID. | String |
 | videoURL | Address where the video is stored. | String |
-| coverURL | Address where the cover is stored. | String |
+| coverURL | Address where the thumbnail is stored. | String |
 
 Pre-upload: `TXUGCPublishOptCenter.prepareUpload`
 
@@ -259,7 +260,7 @@ Upload image: `TXUGCPublish.publishMedia`
 Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 
 | Parameter | Description                                            Type    | Required |
-| ------------ | -------------------------------------------------- | ------- | 
+| ------------ | -------------------------------------------------- | ------- | ---- |
 | signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 | mediaPath    | Path to a local image file.                                   | String  | Yes   |
 | enableResume | Whether to enable checkpoint restart. It is enabled by default.                         | boolean | No   |
@@ -298,7 +299,7 @@ Pre-upload: `TXUGCPublishOptCenter.prepareUpload`
 
 | Parameter | Description                                     | Type    | Required |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922). | String | Yes    |
+| signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 
 ## Error Codes
 
@@ -310,7 +311,7 @@ The SDK listens to the video upload status via API `TXUGCPublishTypeDef.ITXVideo
 | 1001 | ERR_UGC_REQUEST_FAILED         | Upload request failed due to invalid or expired client’s signature. Apply for another signature for the App.                 |
 | 1002 | ERR_UGC_PARSE_FAILED           | Failed to parse the request information.               |
 | 1003 | ERR_UPLOAD_VIDEO_FAILED        | Failed to upload the video.                 |
-| 1004 | ERR_UPLOAD_COVER_FAILED        | Failed to upload the cover image.                 |
+| 1004 | ERR_UPLOAD_COVER_FAILED        | Failed to upload the thumbnail image.                 |
 | 1005  |  ERR_UGC_FINISH_REQUEST_FAILED  | Cancel upload request failed                |
 | 1006 | ERR_UGC_FINISH_RESPONSE_FAILED | An error occurred with the response to ending the upload.               |
 | 1007 | ERR_CLIENT_BUSY                | The client is busy (the object cannot process more requests).      |
@@ -321,7 +322,7 @@ The SDK listens to the video upload status via API `TXUGCPublishTypeDef.ITXVideo
 | 1013 | ERR_UGC_INVALID_VIDOPATH | The video file path is empty.     |
 | 1014  |  ERR_UGC_INVALID_VIDEO_FILE     |  The video file does not exist under the current path.           |
 | 1015 | ERR_UGC_FILE_NAME               | The file name of the video exceeds 40 characters or contains special symbols. |
-| 1016 | ERR_UGC_INVALID_COVER_PATH     | The path to the cover image is invalid. The file does not exist       |
+| 1016 | ERR_UGC_INVALID_COVER_PATH     | The path to the thumbnail image is invalid. The file does not exist       |
 | 1017 | ERR_USER_CANCEL                | The user cancelled the upload.       |
 | 1018 | ERR_UPLOAD_VOD                 | Failed to upload a file of less than 5 MB directly to VOD.       |
 

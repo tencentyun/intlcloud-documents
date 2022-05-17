@@ -7,7 +7,7 @@
 3. 负载伸缩和时间伸缩策略，只能二选一不能同时使用。
 
 ## 操作步骤
-登录 [EMR 控制台](https://console.cloud.tencent.com/emr) 在集群列表中单击**集群 ID/名称**，进入集群详情页面后，选择**自动伸缩**>**基础设置**>**编辑**配置自动伸缩功能相关触发策略。
+登录 [EMR 控制台](https://console.cloud.tencent.com/emr) 在集群列表中单击集群 **ID/名称**，进入集群详情页面后，选择**自动伸缩 > 基础设置 > 编辑**配置自动伸缩功能相关触发策略。
 ![](https://main.qcloudimg.com/raw/daeb0420d0cf9803526169ba30544c03.png)
 
 
@@ -33,13 +33,13 @@
 伸缩规则是配置扩缩容动作触发条件以及变化节点数量的业务策略，支持按负载伸缩和时间伸缩两种伸缩策略（这两种策略只能二选一，不能同时使用）。策略切换时，原伸缩规则会保留，但处于失效状态，不会被触发执行。当前已扩容的节点也会保留，除非缩容规则触发，否则不会被缩容。每种策略最多可配置10条伸缩规则，当两条规则同时触发时，会先执行优先级较高的规则。
 ![](https://main.qcloudimg.com/raw/542494e6a15c96cb0a9503715beaef99.png)
 
-设置伸缩规则，需要在**伸缩规则管理**模块，选择**自动伸缩类型**为**负载伸缩**或**时间伸缩**，然后单击**添加规则**即可。
+设置伸缩规则，需要在**伸缩规则管理**模块，选择**自动伸缩类型**为负载伸缩或时间伸缩，然后单击**添加规则**即可。
 ![](https://main.qcloudimg.com/raw/e1f8703dc9b3a125139aed3b90f9ee7d.png)
 
 #### 负载伸缩
 无法准确的预估集群计算的波峰和波谷时，为确保重要作业按时完成，可使用按负载伸缩进行策略配置。负载主要基于预设 YARN 的指标统计规则，触发预设条件时自动调整 task 节点。
 
-添加负载伸缩规则，需要选择**自动伸缩类型**为**负载伸缩**，然后单击**添加规则**，在“新建规则”页面，配置如下内容：
+添加负载伸缩规则，需要选择**自动伸缩类型**为负载伸缩，然后单击**添加规则**，在“新建规则”页面，配置如下内容：
 - 规则名称：伸缩规则的名称，在一个集群中，伸缩规则名称不允许重复（包括扩容规则和缩容规则）。
 - 有效时间：仅在有效时间内触发负载伸缩规则；默认时间范围选择**不限制**，支持自定义时间段按负载进行伸缩规则配置。    
 - 负载指标：根据选定的集群负载指标设置触发阈值的条件规则，此处指 YARN 的负载指标。
@@ -52,19 +52,61 @@
 </thead>
 <tbody><tr>
 <td>AvailableVCores#root</td>
-<td>The  number of available virtual cores(root queue)</td>
-</tr>
-<tr>
+<td>Root 队列可用虚拟核数的数量</td>
+</tr><tr>
 <td>PendingVCores#root</td>
-<td>The  number of pending virtual cores(root queue)</td>
-</tr>
-<tr>
+<td>Root 队列等待可用的虚拟核数</td>
+</tr><tr>
 <td>AvailableMB#root</td>
-<td>The  amount of memory available in MB(root queue)</td>
-</tr>
-<tr>
+<td>Root 队列可用内存数量（MB）</td>
+</tr><tr>
 <td>PendingMB#root</td>
-<td>The  amount of memory pending in MB (root queue)</td>
+<td>Root 队列等待可用的内存数量（MB）</td>
+</tr><tr>
+<td>AvailableMemPercentage</td>
+<td>剩余内存的百分比</td>
+</tr><tr>
+<td>ContainerPendingRatio</td>
+<td>待分配的容器数与已分配的容器数的比率</td>
+</tr><tr>
+<td>AppsRunning#root</td>
+<td>Root 队列运行中的任务数</td>
+</tr><tr>
+<td>AppsPending#root</td>
+<td>Root 队列挂起的任务数</td>
+</tr><tr>
+<td>PendingContainers#root</td>
+<td>Root 队列待分配的容器数</td>
+</tr><tr>
+<td>AllocatedMB#root</td>
+<td>Root 队列已分配的内存量</td>
+</tr><tr>
+<td>AllocatedVCores#root</td>
+<td>Root 队列已分配的虚拟核数</td>
+</tr><tr>
+<td>ReservedVCores#root</td>
+<td>Root 队列预留的虚拟核数</td>
+</tr><tr>
+<td>AllocatedContainers#root</td>
+<td>Root 队列已分配的容器数</td>
+</tr><tr>
+<td>ReservedMB#root</td>
+<td>Root 队列预留的内存量</td>
+</tr><tr>
+<td>AppsKilled#root</td>
+<td>Root 队列终止的任务数</td>
+</tr><tr>
+<td>AppsFailed#root</td>
+<td>Root 队列失败的任务数</td>
+</tr><tr>
+<td>AppsCompleted#root</td>
+<td>Root 队列完成的任务数</td>
+</tr><tr>
+<td>AppsSubmitted#root</td>
+<td>Root 队列提交的任务数</td>
+</tr><tr>
+<td>AvailableVCoresPercentage#root</td>
+<td>Root 队列可用虚拟核数百分比</td>
 </tr>
 </tbody></table>
 - 统计规则：用户选定的集群负载指标在一个统计周期内，按照选定的聚合维度（平均值），达到触发阈值为一次触发。
@@ -80,7 +122,7 @@
 #### 时间伸缩
 集群计算量存在一定周期内的明显波峰和波谷，为确保重要作业按时完成，可以使用时间伸缩进行策略配置。时间伸缩策略可以设置在每天、每周或每月的固定时间段添加或减少 task 节点。
 
-添加时间伸缩规则，需要选择**自动伸缩类型**为**时间伸缩**，然后单击**添加规则**，在“新建规则”页面，配置如下内容：
+添加时间伸缩规则，需要选择**自动伸缩类型**为时间伸缩，然后单击**添加规则**，在“新建规则”页面，配置如下内容：
 - 规则名称：伸缩规则的名称，在一个集群中，伸缩规则名称不允许重复（包括扩容规则和缩容规则）。
 - 执行一次：指特定的时间进行触发伸缩动作，精确到分钟。
 - 重复执行：指设定每个时间段或特定的时间触发伸缩动作，分别支持“每日”、“每周”、“每月”。
@@ -103,4 +145,3 @@
  - 成功：根据伸缩规则，所有自动伸缩中的所有节点被加入或移出集群。
  - 部分成功：根据伸缩规则，有部分节点成功被加入或移出集群，但是受磁盘配额管理或 cvm 库存的影响，部分节点执行失败。
  - 失败：根据伸缩规则，没有一个节点被加入或移出集群。
-

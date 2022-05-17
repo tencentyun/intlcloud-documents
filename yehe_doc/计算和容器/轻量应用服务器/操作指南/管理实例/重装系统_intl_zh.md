@@ -23,7 +23,7 @@
 1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index)。
 2. 在服务器列表中，找到待重装系统的实例。根据实际的操作习惯，选择不同的方式进行重装。
  - 在实例卡片中，选择**更多** > **重装系统**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/3ee467d12dbf2a3e9f678b1bbc6d3d10.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dc9015130e76d6e42a8ff42d93658c95.png)
  - 单击实例卡片，进入实例详情页。在**概要**页签中，单击“镜像信息”中的**重装系统**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/ce759d182b030207c73ca36de9f6d102.png)
  - 单击实例卡片，进入实例详情页。在**应用管理**页签中，单击“应用信息”栏的**重装系统**。如下图所示：

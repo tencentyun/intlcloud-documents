@@ -5,7 +5,7 @@
 
 ## 基础服务详情
 即时通信 IM 套餐包分为体验版、专业版和旗舰版，创建应用后默认为体验版（免费），您可以根据实际业务需求选择不同的套餐包。
->! 全员推送功能仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见[配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322)指引，提交全员推送开通申请。申请通过后，该功能将在48小时后开启。
+>! 全员推送功能仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见[配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322)指引，提交全员推送开通申请。申请通过后，该功能将在**48小时**后开启。
 
 套餐包功能对比详情如下表所示：
 
@@ -25,7 +25,9 @@
 | [全员推送](https://intl.cloud.tencent.com/document/product/1047/37165) | 不支持 | 不支持 |支持，需[申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) |
 | 同平台多设备在线 | 不支持 | 不支持 |支持 |
 | 本地消息搜索（Android、iOS) | 不支持 | 不支持 |支持 |
-
+| 直播群新成员查看入群前消息  | 不支持 | 不支持 |支持 |
+| [创建社群（Community）](https://intl.cloud.tencent.com/document/product/1047/33529)   | 不支持 | 不支持 | 10万个，需 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322)  |
+| 群消息已读回执  | 不支持 | 不支持 |支持 |
 
 - **可创建直播群个数**：指单个 SDKAppID 内所有用户可创建的总个数，直播群仅提供群内发送文字、图片、短语音及其他自定义消息的能力，如需使用 [云直播](https://intl.cloud.tencent.com/document/product/267)、[实时音视频](https://intl.cloud.tencent.com/document/product/647) 等服务，您需要开通对应服务。
 - **日净增群组数**：指每个自然日内，单个 SDKAppID 所有用户创建的所有类型的群组净增总和。日净增群组数最大支持10000个，其中最多可包含5个在线成员广播大群。若创建群组数已达日净增群组数阈值但仍需创建群组，您可以及时解散删除当天创建的无需再使用的群组后再创建新群组，更多详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。

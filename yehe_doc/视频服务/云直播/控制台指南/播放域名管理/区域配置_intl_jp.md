@@ -4,7 +4,7 @@
 -  [LVBコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
 - **再生ドメイン名**を追加済みであること。
 >?シナリオを選択してドメイン名を新規追加し、再生ドメイン名を選択する時に、ライブストリーミングを再生・配信したいアクセラレーションリージョン（例：“中国大陸”）を選択し、【OK】をクリックする必要があります。
-![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1915d256b28e4e9a6b997ae464326b8a.png)
 
 ## 注意事項
 - **海外ライブストリーミングの価格と中国国内のライブストリーミング価格は異なります。課金の詳細については、[価格一覧](https://intl.cloud.tencent.com/document/product/267/2819)をご参照ください。**

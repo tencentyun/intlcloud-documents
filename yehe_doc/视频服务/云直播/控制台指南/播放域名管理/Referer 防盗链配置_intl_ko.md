@@ -50,6 +50,7 @@ Referer 링크 도용 방지는 HTTP 프로토콜이 지원하는 Referer 매커
 <li>규칙 내용이 공란인 경우 블랙리스트와 화이트리스트 모두 미설정 상태임을 의미합니다. </li>
 </ul></td>
 </tr></table>
+
 4. **저장**을 클릭하면 설정이 저장됩니다.
 
 
@@ -68,7 +69,6 @@ Referer 링크 도용 방지는 HTTP 프로토콜이 지원하는 Referer 매커
 1.   **[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)**를 선택하고 Referer 링크 도용 방지 설정을 비활성화할 **재생 도메인**을 클릭하거나 오른쪽의 **관리**를 클릭하여 도메인 관리 페이지로 이동합니다.
 2.   **액세스 제어**>**Referer 링크 도용 방지 설정**에서 **편집**을 클릭하여 Referer 링크 도용 방지 설정 페이지로 이동합니다.
 3.   ![](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png) 버튼을 클릭해 Referer 링크 도용 방지 비활성화를 선택합니다.
-4.   **저장**을 클릭합니다.
 
 ![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png)
 

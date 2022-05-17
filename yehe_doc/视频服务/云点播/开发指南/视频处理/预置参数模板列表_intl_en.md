@@ -268,7 +268,7 @@ Preset parameter templates for video conversion:
  <tr>
   <td>HD</td>
   <td>Vertical: 720; horizontal: proportionally scaled</td>
-  <td>512 Kbps</td>
+  <td>1024 Kbps</td>
   <td>24</td>
   <td>H.264</td>
   <td>48 Kbps</td>
@@ -279,7 +279,7 @@ Preset parameter templates for video conversion:
  <tr>
   <td >FHD</td>
   <td>Vertical: 1080; horizontal: proportionally scaled</td>
-  <td>1,024 Kbps</td>
+  <td>2,500 Kbps</td>
   <td>24</td>
   <td>H.264</td>
   <td>48 Kbps</td>

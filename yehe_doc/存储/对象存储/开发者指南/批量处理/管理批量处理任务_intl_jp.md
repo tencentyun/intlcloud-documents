@@ -17,7 +17,7 @@
 ## タスクのステータス
 
 あるタスクを作成した後、タスクのステータスは次のいくつかのステータスの間で切り替わります。ステータス切り替えの図は次のとおりです。
-<img src="https://main.qcloudimg.com/raw/1b2edc84eb8cc664dc006f56c6810e2e.png"  width="95%">
+![](https://qcloudimg.tencent-cloud.cn/raw/f1b6e51eadf4930922a1f929351903bb.png)
 
 
 タスクの各ステータスの意味について、次の表で詳しくご説明します。

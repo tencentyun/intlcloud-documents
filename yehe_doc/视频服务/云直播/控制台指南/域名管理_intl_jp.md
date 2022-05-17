@@ -9,7 +9,7 @@ CSSは、デフォルトでテストドメイン名 `xxxx.livepush.myqcloud.com`
 
 ## ドメイン名の照会
 [【ドメイン名管理】](https://console.cloud.tencent.com/live/domainmanage)ページで、追加済みのドメイン名CNAME設定状態、タイプ、シナリオ、リージョン、現在の状態、ドメイン名開始時間およびドメイン名有効期限を照会できます。ドメイン名の詳細を照会したい場合は、照会したいドメイン名をクリックするか、右側の【管理】をクリックすれば、ドメイン名情報に移動できます。
-![](https://main.qcloudimg.com/raw/b26af663a41a018e6bda8920c65e2dca.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1185effbf2807268ab782557bfed00c5.png)
 
 ## ドメイン名の設定
 プッシュドメイン名を設定したい場合は、[プッシュ設定](https://intl.cloud.tencent.com/document/product/267/31059)をご参照ください。
@@ -20,14 +20,14 @@ CSSは、デフォルトでテストドメイン名 `xxxx.livepush.myqcloud.com`
 ドメイン名を無効にしたい場合は、無効にしたいドメイン名右側の【無効】をクリックし、ポップアップウィンドウで現在のドメイン名を無効にするかどうかを確認します。【OK】をクリックした後、そのドメイン名のステータスが**「有効」**から**「無効」**に変われば、ドメイン名の無効化が正常に実行されたことを意味します。
 >? ドメイン名の無効化後、そのドメイン名にはアクセスできなくなりますが、再び有効にすると、正常にアクセスできます。再生ドメイン名とプッシュドメイン名の場合も操作は同じです。
 
-![](https://main.qcloudimg.com/raw/16c8c3f389c8e3a3c06c77e3c3ad8a23.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dedf2826ba84a215a22120c5bb8518c9.png)
 
 ## ドメイン名の有効化
 無効化したドメイン名を再び有効化したい場合は、有効化したいドメイン名右側の【有効】をクリックします。そのドメイン名のステータスが「無効」から「有効」に変われば、ドメイン名の有効化に成功したことを意味します。
-![](https://main.qcloudimg.com/raw/aff5677a3fedc365b09ce6991afe2b3a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2132cd3c69e68f844731ed272872ab14.png)
 
 
 ## ドメイン名の削除
 ドメイン名を削除したい場合は、対象のドメイン名右側の【削除】をクリックし、ポップアップウィンドウで現在のドメイン名を削除したいかどうかを確認し、【OK】をクリックすれば、そのドメイン名を削除することができます。
-![](https://main.qcloudimg.com/raw/16c8c3f389c8e3a3c06c77e3c3ad8a23.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5086887185d04fcdab0ee74209393eb6.png)
 

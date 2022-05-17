@@ -68,7 +68,7 @@ For more information about CVM instance types, see <a href="https://intl.cloud.t
 <tr>
 <td>Web service</td>
 <td>Nginx<br>Apache</td>
-<td>The Web service generally covers personal website, blog, mini program and large-scale ecommerce website. This use case requires a balance of compute, storage, and memory resources. We recommend <b>Standard</b> instances.</td>
+<td>The Web service generally covers personal website, blog and large-scale ecommerce website. This use case requires a balance of compute, storage, and memory resources. We recommend <b>Standard</b> instances.</td>
 <td>Standard S and SA</td>
 </tr>
 <tr>

@@ -1,5 +1,5 @@
 
-## Overview
+## About Bill Subscription
 As an access control policy, token authentication verifies access requests according to the configured authentication rules to filter out unauthorized access requests. This effectively prevents your site resources from being maliciously hotlinked and thus protects your business content.
 
 **How does token authentication implement access control?**
@@ -7,7 +7,7 @@ As an access control policy, token authentication verifies access requests accor
 When the client initiates a request, an authentication URL needs to be generated based on the access request URL according to authentication rules. The request will be considered authorized, and the node will respond normally only when the authentication information such as timestamp in the authentication URL passes node verification (i.e., successful authentication). If the verification fails, the node will reject the request and directly return 403.
 
 ## Directions
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Rule Engine** on the left sidebar.
 2. On the rule engine page, select the target site and click ![](https://qcloudimg.tencent-cloud.cn/raw/fe4d4900f8ad69d506adc49bdb70fa32.png) to configure token authentication rules as needed.
 >?Currently, you can configure token authentication only if the match condition is **All (any request)** or **Host**.
 
@@ -25,15 +25,15 @@ Parameter description:
 </tr>
 <tr>
 <td>Primary key</td>
-<td>Primary key of the authentication method.</td>
+<td>A primary key must be between 6-40 characters and contains letters and numbers.</td>
 </tr>
 <tr>
 <td>Secondary key</td>
-<td>Secondary key of the authentication method.</td>
+<td>A secondary key must be between 6-40 characters and contains letters and numbers.</td>
 </tr>
 <tr>
 <td>Authentication parameter</td>
-<td>Authentication parameter name, which can contain 1–100 letters, digits, and underscores. The parameter value will be verified by the node. The default name is <code>sign</code>, which can be customized.</td>
+<td>An authentication parameter must be between 1-100 characters and contains letters, numbers and underscores. The parameter value will be authenticated by nodes.</td>
 </tr>
 <tr>
 <td>Validity period</td>
@@ -45,7 +45,7 @@ Parameter description:
 ## Notes
 1. After the authentication is passed, the node will automatically ignore the URL after the authentication parameters and use it as the cache key to improve the cache hit rate and reduce the origin-pull traffic.
 2. After the authentication is passed, if no node cache is hit, origin-pull will be performed, and the actual origin-pull URL will be in the same format as the authentication URL to retain the authentication parameters. You can configure the origin server to ignore authentication parameters or perform secondary verification as needed.
-3. The URL cannot contain Chinese characters.
+3. The access URL cannot contain any Chinese characters.
 
 ## Authentication Methods[](id:jqfs)
 
@@ -58,7 +58,7 @@ http://Hostname/Filename?sign=timestamp-rand-uid-md5hash
 
 #### Parameter description
 
-| Parameter      | Description                                                         |
+| Field       | Description                                                         |
 | --------- | ------------------------------------------------------------ |
 | Hostname  | Site acceleration domain                                                 |
 | Filename  | Actually accessed URL in origin-pull, which must start with `/`                              |
@@ -77,7 +77,7 @@ http://Hostname/timestamp/md5hash/Filename
 
 #### Parameter description
 
-| Parameter      | Description                                                         |
+| Field       | Description                                                         |
 | --------- | ------------------------------------------------------------ |
 | Hostname  | Site acceleration domain                                                 |
 | Filename  | Actually accessed URL in origin-pull, which must start with `/`                              |
@@ -94,7 +94,7 @@ http://Hostname/md5hash/timestamp/Filename
 
 #### Parameter description
 
-| Parameter      | Description                                                         |
+| Field       | Description                                                         |
 | --------- | ------------------------------------------------------------ |
 | Hostname  | Site acceleration domain                                                 |
 | Filename  | Actually accessed URL in origin-pull, which must start with `/`                              |

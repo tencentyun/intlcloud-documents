@@ -139,7 +139,7 @@ pTRTCCloud->enterRoom(params, trtc::TRTCAppSceneVideoCall);
 ## Packaging
 <dx-tabs>
 ::: macOS\s
-1. Go to **File > Package Project > Mac**.
+1. Go to **File** > **Package Project** > **Mac**.
 2. Configure permissions. Right-click the `xxx.app` file compiled in the previous step and select **Show Package Contents**. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/3eb106ee3307c206dff5314a43920132.png)
 3. Go to **Contents > Info.plist**.

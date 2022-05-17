@@ -21,7 +21,7 @@ CSSの再生は、デフォルトではオリジナルのビットレートで�
 3. 個々のトランスコーディング設定テンプレートを選択し、当該ドメイン名での再生アドレスのために、テンプレート設定のエンコード方式とビットレートを指定します。
 4. 【保存】をクリックすれば完了です。
 
-![](https://main.qcloudimg.com/raw/8ab50571f4260ba070cf3270f8487e30.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2d8cb5be76debfbd04d60329891c5830.png)
 
 [](id:descript)
 ## トランスコーディング再生アドレスの説明
@@ -42,6 +42,6 @@ http://domain/AppName/<b style="color:yellow;">StreamName_hd</b>.flv?txSecret=Md
 2. 【テンプレート設定】のタブを選択し、【トランスコーディング設定】を選択します。
 3. 右側の【編集】をクリックし、対応するテンプレートのチェックを外します。
 4. その後【保存】をクリックすれば、テンプレートとドメイン名の関連付けを取り消すことができます。
-![](https://main.qcloudimg.com/raw/497478a836b8017c7e8be177b26af24d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/872b71589554e8d89abf50db40f75777.png)
 
 >? テンプレートを削除したい場合は、テンプレートのバインド解除をした後、【機能テンプレート】>[【トランスコーディング設定】](https://console.cloud.tencent.com/live/config/transcode)に入り、削除操作を行うことができます。具体的な内容については、[テンプレートの削除](https://intl.cloud.tencent.com/document/product/267/31071#delect)をご参照ください。

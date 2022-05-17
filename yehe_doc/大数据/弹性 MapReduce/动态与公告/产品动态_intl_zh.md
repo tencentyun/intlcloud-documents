@@ -1,0 +1,1090 @@
+## 2022年04月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hadoop 集群新增产品版本 EMR-V3.4.0</td>
+<td><li>支持 Spark3.2.1、Trino372、Flink1.14.3、Hbase2.4.5、Zookeeper3.6.3、Impala4.0.0、Zeppelin0.10.1、Alluxio2.8.0、Hudi0.10.1、Iceberg0.13.1、Goosefs1.2.0<li>新版本中 PrestoSQL 更名为 Trino，并支持 Ranger，新版本中监控指标告警需按 Trino 配置</td>
+<td>2022-04-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a><br>Trino 监控指标</td>
+</tr>	
+<tr>
+<td>事件功能及事件项</td>
+<td><li>事件列表新版交互功能上线<li>增加节点单盘 Inode 使用率、单盘空间使用率、单盘 IO 使用率、Hbase-HMaster均StandBy、HDFS-NameNode 均 StandBy 事件项</td>
+<td>2022-04-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a></td>
+</tr>	
+<tr>
+<td>HDFS-DataNode 丰富盘相关指标</td>
+<td><li>丰富 Block 数、使用磁盘容量、空闲磁盘容量、预留磁盘容量等指标</td>
+<td>2022-04-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36880" target="_blank">HDFS 监控指标</a></td>
+</tr>	
+<tr>
+<td>支持 EMR 容器版</td>
+<td>北京、上海、广州、南京地域支持 Spark 基于弹性容器（EKS）部署</td>
+<td>2022-04-12</td>
+<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">EMR 容器版概述</a></td>
+</tr>	
+</tbody></table>
+
+
+## 2022年03月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 StarRocks 集群类型</td>
+<td>新增 StarRocks 集群类型，并集成 StarRocks 社区版</td>
+<td>2022-03-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46453" target="_blank">StarRocks 开发指南</a></td>
+</tr>
+<tr>
+<td>弹性节点默认不分配 ApplicationMaster</td>
+<td>自动伸缩节点默认不分配ApplicationMaster，保证运行的 ApplicationMaster不被销毁，Job 可以正常进行</td>
+<td>2022-03-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41045" target="_blank">自动扩容 Task 节点不分配 ApplicationMaster</a></td>
+</tr><tr>
+<td>负载伸缩新增指标</td>
+<td>按负载自动伸缩新增 ContainerPending、AppPending、AppRunning 等负载伸缩指标</td>
+<td>2022-03-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">自动伸缩</a></td>
+</tr>	<tr>
+<td>扩容 host 资源支持设置 Node Label</td>
+<td>支持添加 host 资源设置 Yarn Node Label，提升资源利用效率</td>
+<td>2022-03-08</td>
+<td>-</td>
+</tr>	
+</tbody></table>
+
+## 2022年01月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Doris 集群版本 Doris-V1.2.0</td>
+<td> 新增 Doris 0.15版本</td>
+<td>2022-01-21</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">组件版本</a></td>
+</tr>
+<tr>
+<td>组件配置共享</td>
+<td> 支持用户使用一套组件的配置和使用方式管理多个集群时，使用已构建集群的组件共享给其他集群使用，而不必再部署相同的组件</td>
+<td>2022-01-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46451" target="_blank">组件配置共享</a></td>
+</tr>
+<tr>
+<td>新增监控指标</td>
+<td>新增 Kylin、Zeppelin、Oozie、Storm、Livy、Kyuubi 监控指标<br>丰富 CosRanger 监控指标</td>
+<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46448" target="_blank">Kylin 监控指标</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/46436" target="_blank">Zeppelin 监控指标</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/46437" target="_blank">Oozie 监控指标</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/46438" target="_blank">Storm 监控指标</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/46439" target="_blank">Livy 监控指标</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/46440" target="_blank">Kyuubi 监控指标</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/1026/42330" target="_blank">CosRanger 监控指标</a>
+</td>
+</tr>
+<tr>
+<td>日志搜索优化</td>
+<td>覆盖更多组件、支持境外地域、日志搜索交互优化</td>
+<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35372"  target="_blank">日志搜索</a></td>
+</tr>
+</tbody></table>
+
+## 2021年12月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hadoop 集群类型新增4种应用场景</td>
+<td> Hadoop 集群类型在原有默认场景下新增：zookeeper、Hbase、Presto、kudu 应用场景，帮助用户根据业务场景快速构建集群</td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">集群类型</a></td>
+</tr>
+<tr>
+<td>支持新版购买页</td>
+<td> 优化现有集群创建流程，支持置放群组节点维度便于用户资源统一管理</td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31099" target="_blank">创建 EMR 集群</a></td>
+</tr>
+<tr>
+<td>系统盘可选</td>
+<td> 支持用户根据实际需要自定义选择系统盘类型及大小</td>
+<td>2021-12-17</td>
+<td>-</td>
+</tr>
+<tr>
+<td>任务中心优化</td>
+<td> 支持集群内部查看当前集群所有任务详情，优化任务中心交互路径，便于用户查看使用</td>
+<td>2021-12-17</td>
+<td>-</td>
+</tr>
+<tr>
+<td>组件操作功能丰富</td>
+<td> HDFS、YARN 等组件指令级操作可界面化设置</td>
+<td>2021-12-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46444" target="_blank">服务操作</a></td>
+</tr>
+<tr>
+<td>新增监控指标</td>
+<td> 新增 Doris 监控指标<br>原 HBase 表负载调整为 HBase 表级监控</td>
+<td>2021-12-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46445" target="_blank">Doris 监控指标</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/46446" target="_blank">HBase 表级监控</a></td>
+</tr>
+<tr>
+<td>操作系统升级</td>
+<td> Hadoop 类型所有 EMR 版本升级操作系统为 TencenOS Server，提供更稳定、安全和高性能的云原生运行环境。
+已建集群操作系统相关安全问题加固修复，请联系售后渠道或腾讯云助手</td>
+<td>2021-12-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/40223" target="_blank">TencentOS Server 简介</a></td>
+</tr>
+</tbody></table>
+
+
+## 2021年09月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 hadoop 集群版本 EMR-V3.3.0</td>
+<td> 新增 Hadoop3.x 标准发行版 EMR-V3.3.0，支持 HBase2.3.5、Phoneix 5.1.2、Kudu1.15.0、Hue4.10.0、Hudi0.8.0、Tez0.10.1、Livy0.8.0、Ganglia3.7.2、Kyuubi1.1.0、LDAP2.4.44 </td>
+<td>2021-09-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+<tr>
+<td>新增监控指标</td>
+<td> 丰富 Alluxio 服务监控指标，新增 CosRanger 监控指标</td>
+<td>  2021-09-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39434" target="_blank">Alluxio 监控指标</a><br/><a href="https://intl.cloud.tencent.com/document/product/1026/42330" target="_blank">COSRanger 监控指标</a></td>
+</tr>
+<tr>
+<td>接入云监控默认告警</td>
+<td>云监控支持弹性 MapReduce 指标/事件默认告警策略</td>
+<td>  2021-09-15</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
+## 2021年08月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Yarn 资源调度</td>
+<td>提供界面化的 Yarn 的资源调度的配置能力</td>
+<td>  2021-08-31</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/42328" target="_blank">Yarn 资源调度</a></td>
+</tr>
+<tr>
+<td>新增用户管理</td>
+<td>提供可视化的 Kerberos 和 Ranger 用户管理能力</td>
+<td>  2021-08-31</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/43326" target="_blank">用户管理</a></td>
+</tr>
+</tbody></table>
+
+
+
+## 2021年07月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 hadoop 集群版本 EMR-V2.6.0</td>
+<td>新增 Hadoop2.x 标准发行版 EMR-V2.6.0，支持 Spark 3.0.2、Impala 3.4.0、Goosefs 1.0.0、OpenLDAP 2.4.44、Kyuubi 1.1.0 等</td>
+<td>  2021-07-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+</tbody></table>
+
+
+## 2021年06月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Yarn 作业查询</td>
+<td>提供 Yarn 作业的明细指标统计</td>
+<td>2021-06-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41278" target="_blank">Yarn 作业查询</a></td>
+</tr>
+<tr>
+<td>新增 Impala 查询管理</td>
+<td>提供 Impala 的查询作业的明细指标统计</td>
+<td>2021-06-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41279" target="_blank">Impala 查询管理</a></td>
+</tr>
+<tr>
+<td>自动伸缩支持竞价实例</td>
+<td>通过自动伸缩，弹性补充计算节点支持竞价实例计费类型</td>
+<td>2021-06-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">自动伸缩</a></td>
+</tr>
+<tr>
+<td>支持优雅缩容</td>
+<td>节点在执行任务时，缩容触发时不会立即释放节点，在等待任务执行完成后进行缩容节点</td>
+<td>2021-06-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40694" target="_blank">优雅缩容</a></td>
+</tr>
+<tr>
+<td>Knox 支持集成 TEZ</td>
+<td>支持 tez 任务使用 ui 查看</td>
+<td>2021-06-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40686" target="_blank">Knox 集成 TEZ 操作指南</a></td>
+</tr>
+<tr>
+<td>新增可用区</td>
+<td>支持新加坡地域三区和东京二区</td>
+<td>2021-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>国际站新增地域</td>
+<td>国际站支持：莫斯科、法兰克福、弗吉尼亚、曼谷、孟买、东京、多伦多、首尔等</td>
+<td>2021-06-03</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2021年05月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Kafka 集群版本 Kafka-V1.0.0</td>
+<td>新增 KAFKA 标准发行版 KAFKA-V1.0.0，支持 Kafka1.1.1、KafkaManager2.0.0.2、Knox1.2.0、Zookeeper3.6.1</td>
+<td>  2021-05-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40256" target="_blank">Kafka 开发指南</a></td>
+</tr>
+  <tr>
+<td>新增 Doris 集群版本 Doris-V1.0.0</td>
+<td>新增 DORIS 标准版发行版 DORIS-V1.0.0，支持 Doris0.13.0、Knox1.2.0</td>
+<td> 2021-05-13 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40258" target="_blank">Doris 开发指南</a></td>
+</tr>
+</tbody></table>
+
+
+## 2021年04月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 hadoop 集群版本 EMR-V3.2.0</td>
+<td>新增 Hadoop3.x 标准发行版 EMR-V3.2.0，支持 hadoop3.2.2、Spark3.0.2、presto350、Flink1.12.1、Alluxio2.5.0、Ranger2.1.0、iceberg0.11.0、hudi0.7.0</td>
+<td> 2021-04-30 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+  <tr>
+<td>启停服务</td>
+<td>支持单节点上启停全部服务</td>
+<td> 2021-04-27 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40259" target="_blank">启停服务</a></td>
+</tr>
+<tr>
+<td> 新增 Hadoop 集群版本 EMRv2.5.1  </td>
+<td> 新增 Hadoop2.x 标准版发行版 EMR-V2.5.1，支持 alluxio2.5.0、hudi0.5.1，alluxio 支持 cos 透明 URI</td>
+<td> 2021-04-10 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40172" target="_blank">Alluxio 支持 COS 透明 URI</a></td>
+</tr>
+</tbody></table>
+
+
+## 2021年02月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 新增境外地域开服  </td>
+<td>  中国站境外地域新增曼谷、首尔、东京、弗吉尼亚、多伦多地域开服</td>
+<td>2021-02-02 </td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
+## 2021年01月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 新增集群脚本功能  </td>
+<td>  支持批量选择节点运行指定脚本，以便高效进行批量运维操作  </td>
+<td>  2021-01-26  </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39664" target="_blank">  集群脚本  </a></td>
+</tr>
+<tr>
+<td>支持跨机型变配  </td>
+<td>在节点配置变更时，可以选择其它机型，满足当前机型售罄场景的变配需求  </td>
+<td>  2021-01-26  </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">  变更配置  </a></td>
+</tr>
+<tr>
+<td>  自动伸缩  </td>
+<td>  根据预设策略自动增加或减少 Task 节点，在满足集群计算能力的同时并节约成本  </td>
+<td>  2021-01-26  </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">自动伸缩 </a></td>
+</tr>
+<tr>
+<td>新增监控指标</td>
+<td><ol style="margin:0"><li>hdfs、yarn、hbase、hive、druid 服务监控指标丰富</li><li>kudu、alluxio 新增服务监控</li></ol></td>
+<td>2021-01-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">监控指标</a></td>
+</tr>
+<tr>
+<td>新加坡国际站开服</td>
+<td>新加坡一区、新加坡二区支持国际站购买</td>
+<td>2021-01-13</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2020年12月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 hadoop 集群版本 EMRv3.1.0</td>
+<td>新增 Hadoop3.x 标准发行版 EMR-V3.1.0，支持 impala3.4.0、flink1.10.0、hbase2.3.3、Phoenix5.0.0、alluxio2.3.0、kudu1.13.0、zookeeper3.6.1</td>
+<td>2020-12-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+</tbody></table>
+
+## 2020年11月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 EMR 天穹版本</td>
+<td>腾讯增强版 Hadoop 集群发行版天穹上线，主要推出 Spark 物化视图能力</td>
+<td>2020-11-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR 天穹版本介绍</a></td>
+</tr>
+<tr>
+<td>监控告警完善</td>
+<td><li>磁盘监控指标支持在云监控设置告警
+<li>支持在云监控 DashBoard 自定义 EMR 监控面板
+<li>支持在云监控订阅 EMR 事件监控告警
+</td>
+<td>2020-11-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/248/38461" target="_blank">DashBoard</a></td>
+</tr>
+</tbody></table>
+
+## 2020年10月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支持对象存储 COS 免密访问</td>
+<td>通过角色授权方式对 COS 的访问，无需填写授权 key 和密钥，提升易用性。</td>
+<td>2020-10-26</td>
+<td>-</td>
+</tr>
+<tr>
+<td>巡检系统新增服务巡检项</td>
+<td>新增 hdfs、yarn、hbase、hive、zookeeper 服务巡检项，提升指标的健康检查</td>
+<td>2020-10-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">集群巡检</a></td>
+</tr>
+<tr>
+<td>支持自定义配置事件策略</td>
+<td>支持自定义配置事件策略，提升集群事件发现自主性</td>
+<td>2020-10-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a></td>
+</tr>
+</tbody></table>
+
+## 2020年09月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 hadoop 集群版本 EMRv2.5.0</td>
+<td>升级 Alluxio 组件至稳定版本2.3.0，优化 Alluxio 在计算存储分离场景下性能</td>
+<td>2020-09-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+</tbody></table>
+
+## 2020年08月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 hadoop 集群版本 EMRv2.4.0</td>
+<td>新增支持 KUDU 组件，部分组件升级</td>
+<td>2020-08-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+<tr>
+<td>ClickHouse 支持数据迁移</td>
+<td>提升集群资源利用率，保证数据安全</td><td>2020-08-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/38165" target="_blank">ClickHouse 数据迁移指引</a></td>
+</tr>
+</tbody></table>
+
+## 2020年07月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自定义配置文件</td>
+<td>支持自定义配置文件，提升配置管理的灵活性</td><td>2020-07-29</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31109" target="_blank">配置管理</a></td>
+</tr>
+<tr>
+<td>配置项编辑优化</td>
+<td>配置项增加提示，并支持恢复默认值</td>
+<td>2020-07-29</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2020年06月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Druid  服务监控和 Hbase thrift 角色监控 </td>
+<td>新增 Druid 服务监控、Hbase thrift 角色监控，提升问题排查效率</td><td>2020-06-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36888" target="_blank">Druid 监控指标</a></td>
+</tr>
+<tr>
+<td>新增 hadoop 集群版本 EMRv2.3.0</td>
+<td>新增支持 Tensorflow 和 Jupyter Notebook 组件</td>
+<td>2020-06-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36892" target="_blank">Tensorflow 简介</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36894" target="_blank">Jupyter Notebook 简介</a></td>
+</tr>
+<tr>
+<td>Clickhouse 类型集群新增发行版 clickhouse-v1.1.0</td>
+<td>Clickhouse 组件版本升级至 LTS 版本，新增支持 superset 组件</td><td>2020-06-15</td>
+<td>-</td>
+</tr>
+<tr>
+<td>支持集群事件和集群巡检 </td>
+<td>控制台支持记录集群发生的关键变化事件或异常事件，提升集群排障效率。支持集群设置及时巡检或定期巡检任务，便于掌握集群健康情况，及时对异常或风险点进行处理
+ </td><td>2020-06-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">集群巡检</a></td>
+</tr>
+</tbody></table>
+
+## 2020年05月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>控制台交互展示与操作路径优化 </td>
+<td>操作路径层级更加清晰，提升服务管理的易用性 </td><td>2020-05-15</td>
+<td>-</td>
+</tr>
+<tr>
+<td>支持 ClickHouse 集群服务监控 </td>
+<td>便于掌握 ClickHouse 运行状况</td><td>2020-05-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36887" target="_blank">ClickHouse 监控指标</a></td>
+</tr>
+<tr>
+<td>角色管理新增监控状态</td>
+<td>以便于了解角色进程实时状态</td>
+<td>2020-05-15</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
+## 2020年04月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增集群类型 </td>
+<td>新增 ClickHouse 集群以及 druid 集群，提供更丰富的实时查询解决方案 </td><td>2020-04-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35872" target="_blank">ClickHouse 简介</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/35875" target="_blank">Druid 简介</a></td>
+</tr>
+<tr>
+<td>引导操作优化 </td>
+<td>引导操作增加集群启动前执行时机，并支持集群创建成功后调整引导操作，以便于业务变化后优化引导操作</td><td>2020-04-15</td>
+<td>-</td>
+</tr>
+<tr>
+<td>服务重启策略优化</td>
+<td>服务重启支持设置重启策略，便于选择恰当的重启方式以及重启异常处理策略</td>
+<td>2020-04-15</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
+## 2020年03月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>集群监控页面优化 </td>
+<td>优化集群概览、服务监控、节点监控页面，增强可读可用性；监控指标支持自定义和节点热点图功能 </td><td>2020-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>新增日志搜索功能 </td>
+<td>可根据日志文件、节点 IP 和时间范围条件过滤，查看集群日志内容<strong>（当前仅支持广州地域）</strong></td><td>2020-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35372" target="_blank">日志搜索</a></td>
+</tr>
+<tr>
+<td>新增发行版 EMR-V2.2.0</td>
+<td>Hadoop 版本升级至2.8.5版本，spark、hive、hbase 等常用组件升级，新增 hudi、superset、livy、impala、zeppelin、kylin 组件</td>
+<td>2020-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+</tbody></table>
+
+## 2020年02月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hive 元数据库共享</td>
+<td>选择 Hive 组件时，支持选择关联外部 Hive 元数据库存放新集群的 Hive 元数据，以使多个 Hive 集群可共享同一元数据，实现多个集群数据交换</td><td>2020-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35013" target="_blank">Hive 元数据管理</a></td>
+</tr>
+<tr>
+<td>集群操作日志优化</td>
+<td>丰富集群操作日志展示项，提升操作日志可读性</td><td>2020-02</td>
+<td>-</td>
+</tr>
+<tr>
+<td>国际站版本上线</td>
+<td>国际版地域支持北京、上海、广州、孟买</td><td>2020-02</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2020年01月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EMR 支持云硬盘加密</td>
+<td>EMR 支持 cbs 白名单用户在创建 EMR 集群时选择云硬盘加密功能</td><td>2020-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/362/33139" target="_blank">云硬盘加密</a></td>
+</tr>
+<tr>
+<td>TASK 节点支持挂载多云盘</td>
+<td>创建或扩容集群时，task 节点支持挂载云盘</td><td>2020-01</td>
+<td>-</td>
+</tr>
+<tr>
+<td>开放南京地域</td>
+<td>EMR 新增支持南京地域</td><td>2020-01</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2019年12月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增配置分组下发功能</td>
+<td>配置分组下发即当配置组中存在节点配置与当前配置组配置不一致时，将配置组配置下发到配置不一致的节点</td><td>2019-12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CAM 资源级授权</td>
+<td>支持 CAM 资源级授权</td><td>2019-12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上线关联 CHDFS 功能</td>
+<td>支持关联 CHDFS，可读写 CHDFS 上的数据</td><td>2019-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35773" target="_blank">挂载云 HDFS</a></td>
+</tr>
+<tr>
+<td>支持 AMD 机型</td>
+<td>北上广地域支持 AMD 机型标准型 SA2</td><td>2019-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/11518" target="_blank">标准型 SA2</a></td>
+</tr>
+<tr>
+<td>新增集群监控概览页</td>
+<td>集群监控概览页，提供集群状态、节点及服务状态整体视图</td><td>2019-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31117" target="_blank">集群概览</a></td>
+</tr>
+<tr>
+<td>服务监控页支持按需选择指标展示粒度</td>
+<td>优化服务监控页，指标展示粒度可按需选择</td><td>2019-12</td>
+<td>-</td>
+</tr>
+<tr>
+<td>节点监控页增加节点服务部署和负载状态视图</td>
+<td>优化节点监控页，增加节点服务部署状态、负载状态视图</td><td>2019-12</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2019年11月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增节点规格管理</td>
+<td>节点规格管理，根据计费类型设置不同节点类型的默认规格，默认为按量计费规格</td><td>2019-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34533" target="_blank">设置节点规格</a></td>
+</tr>
+<tr>
+<td>配置管理支持 zookeeper、alluxio、flink 组件</td>
+<td>配置管理支持 zookeeper、alluxio、flink 组件</td><td>2019-11</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上线对集群及集群下节点分配标签</td>
+<td>支持对集群及集群下节点分配标签</td><td>2019-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">设置标签</a></td>
+</tr>
+<tr>
+<td>北上广地域新机型</td>
+<td>北上广地域支持 S5、M5、C3、CN3 机型</td><td>2019-11</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
+## 2019年10月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增 EMR-V3.0.0 版本</td>
+<td>新增 EMR-V3.0.0 版本，同时升级相关主要的组件版本</td><td>2019-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+</tbody></table>
+
+## 2019年09月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>云 API 全量支持3.0版本</td>
+<td>云 API 全量支持3.0版本，规范原已提供部分3.0版本 API 接口的出/入参数、以及在3.0版本中全量支持原2.0版本接口</td><td>2019-09</td>
+<td>-</td>
+</tr>
+<tr>
+<td>控制台修改配置</td>
+<td>取消对特殊字符转义功能</td><td>2019-09</td>
+<td>-</td>
+</tr>
+<tr>
+<td>支持云监控配置告警策略</td>
+<td>节点监控和服务监控关键指标支持在云监控（弹性 MapReduce 产品类别下）配置告警策略</td><td>2019-09</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2019年08月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增软件配置功能</td>
+<td>新增软件配置功能支持自定义组件参数创建集群，同时兼容访问外部集群功能</td><td>2019-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34530" target="_blank">软件配置</a></td>
+</tr>
+<tr>
+<td>新购集群时，远程登录端口可自行设置</td>
+<td>新购集群过程中支持自主开启/关闭远程登录端口</td><td>2019-08</td>
+<td>-</td>
+</tr>
+<tr>
+<td>新购集群支持多云盘挂载</td>
+<td>对于新购集群可支持多云盘挂载功能</td><td>2019-08</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上线指定组件扩容功能</td>
+<td>支持指定组件扩容功能，可实现对指定组件的扩容</td><td>2019-08</td>
+<td>-</td>
+</tr>
+<tr>
+<td>增加组件监控指标</td>
+<td>新增 Spark、Hive、Presto、Zookeeper 组件监控指标</td><td>2019-08</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2019年07月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上线 Hbase 表级监控功能</td>
+<td>支持对 Hbase 的表级监控， 提供了 HBASE 中各表的读写请求数以及表存储情况的监控。</td><td>2019-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31118" target="_blank">Hbase 表级监控</a></td>
+</tr>
+<tr>
+<td>EMR 支持新地域</td>
+<td>支持新加坡、孟买、成都地域</td><td>2019-07</td>
+<td>-</td>
+</tr>
+<tr>
+<td>支持新机型</td>
+<td>北上广地域支持机型标准型 S4、标准网络优化 SN3ne</td><td>2019-07</td>
+<td>-</td>
+</tr>
+<tr>
+<td>监控页面交互优化，并新增部分监控指标</td>
+<td>监控页面交互优化，并新增部分监控指标</td><td>2019-07</td>
+<td>-</td>
+</tr>
+<tr>
+<td>优化 WebUI 代理地址</td>
+<td>WebUI 代理地址优化</td><td>2019-07</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2019年06月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上线访问外部集群功能</td>
+<td>支持访问外部集群功能，可实现对外部集群的访问</td>
+<td>2019-06</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上线设置引导操作功能</td>
+<td>支持设置引导操作功能，可在配置集群时设置</td>
+<td>2019-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34521" target="_blank">引导操作</a></td>
+</tr>
+<tr>
+<td>上线组件参数配置下发支持到节点维度功能</td>
+<td>组件参数配置下发支持到节点维度</td>
+<td>2019-06</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上线参数配置回滚功能</td>
+<td>支持参数配置回滚，可实现对配置参数的回滚还原</td>
+<td>2019-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">配置回滚</a></td>
+</tr>
+</tbody></table>
+
+## 2019年05月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 EMR2.1.0 版本</td>
+<td>新增 EMR 2.1.0 版本，相关主要组件版本升级</td>
+<td>2019-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+<tr>
+<td>上线 Kerberos 安全集群</td>
+<td>支持创建安全类型集群，即集群中的开源组件以 Kerberos 的安全模式启动，在这种安全环境下只有经过认证的客户端（Client）才能访问集群的服务（Service，例如 HDFS）</td>
+<td>2019-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31163" target="_blank">Kerberos 简介</a></td>
+</tr>
+<tr>
+<td>监控指标优化</td>
+<td>节点、HDFS、YARN、Hbase 监控指标</td>
+<td>2019-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">监控指标</a></td>
+</tr>
+<tr>
+<td>优化控制台样式</td>
+<td>控制台样式升级，提升交互体验</td>
+<td>2019-05</td>
+<td>-</td>
+</tr>
+<tr>
+<td>优化 CVM 与  TencentDB 命名</td>
+<td>CVM 与  TencentDB 命名带 EMR 集群序列号，以便对应集群信息</td>
+<td>2019-05</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Master 节点外网  IP 改为可选</td>
+<td>更新 Master 节点的外网 IP 为可选</td>
+<td>2019-05</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上线 Common 节点数量可调节功能</td>
+<td>支持 Common 节点数量可按需调节</td>
+<td>2019-05</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+## 2019年03月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>支持新机型</td>
+<td>北上广地域支持 I3 机型，I3 机型是 CVM 白名单机型，需要相关账户为 I3 机型白名单才可购买</td>
+<td>2019-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>支持新地域</td>
+<td>开放对硅谷地区售卖</td>
+<td>2019-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>支持 Router 节点</td>
+<td>Router 节点主要用于缓解主节点负载和用作任务提交机</td>
+<td>2019-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">节点类型</a></td>
+</tr>
+<tr>
+<td>增加节点的配置变更功能</td>
+<td>支持节点的配置变更，可更改为更高的配置</td>
+<td>2019-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">变更配置</a></td>
+</tr>
+</tbody></table>
+
+## 2019年01月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对已有集群添加新组件</td>
+<td>对于已创建的集群，增加新增组件功能</td>
+<td>2019-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31108" target="_blank">新增组件</a></td>
+</tr>
+</tbody></table>

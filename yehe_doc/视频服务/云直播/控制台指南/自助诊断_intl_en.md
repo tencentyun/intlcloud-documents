@@ -6,15 +6,15 @@
 
 
 ## Directions
-When you detect exceptions in the push/playback of a live stream, you make diagnosis by performing the following steps:
-1. Log in to the CSS console and select **[Self-Diagnosis](https://console.cloud.tencent.com/live/tools/selfcheck)** in the left sidebar.
+Follow the steps below to diagnose a push/playback problem in a live stream:
+1. Log in to the CSS console and select **[Self-Diagnosis](https://console.cloud.tencent.com/live/tools/selfcheck)** on the left sidebar.
 2. Enter the push or playback URL you want to diagnose.
 3. Click **Execute Diagnosis**.
 
 ![](https://main.qcloudimg.com/raw/90fc6fce80283550af50214782c25b3c.png)
 
 ## Result
-After the diagnosis, you will see the result and suggestions for handling the exceptions. Diagnosis items include:
+You will see the diagnostic result and suggestion for troubleshooting the problem.
 
 <table>
 <thead><tr><th width=15%>Item</th><th width=15%>Sub-Item</th><th>Description</th></tr></thead>
@@ -28,7 +28,7 @@ After the diagnosis, you will see the result and suggestions for handling the ex
 </tr><tr>
 <td rowspan=3>Domain Name</td>
 <td>Domain Name</td>
-<td>Domain name</td>
+<td>Domain Name</td>
 </tr><tr>
 <td>Domain Name Type</td>
 <td>Push/Playback domain</td>
@@ -45,13 +45,13 @@ After the diagnosis, you will see the result and suggestions for handling the ex
 </tr><tr>
 <td rowspan=12>URL</td>
 <td>URL</td>
-<td>Push/Playback domain name</td>
+<td>Push/Playback URL</td>
 </tr><tr>
 <td>AppName</td>
-<td>URL path parameter</td>
+<td>URL path</td>
 </tr><tr>
 <td>StreamName</td>
-<td>`StreamName` for calculating the `txSecret` authentication information</td>
+<td>Stream name, which is used to calculate `txSecret`</td>
 </tr><tr>
 <td rowspan=3>Authentication Configuration</td>
 <td>Whether authentication is enabled</td>
@@ -69,9 +69,9 @@ After the diagnosis, you will see the result and suggestions for handling the ex
 </tr><tr>
 <td>txSecret: Authentication string generated after push/playback authentication is enabled.</td>
 </tr><tr>
-<td>txTime: Expiration timestamp set for the push/playback URL.</td>
+<td>txTime: Expiration timestamp set for the push/playback URL</td>
 </tr><tr>
-<td>URL expiration time</td>
+<td>URL actual expiration time</td>
 </tr><tr>
 <td rowspan=4>Access Bandwidth</td>
 <td rowspan=2>Bandwidth Cap Configuration</td>
@@ -87,15 +87,15 @@ After the diagnosis, you will see the result and suggestions for handling the ex
 <td rowspan=6>Application</td>
 <td rowspan=3>Client</td>
 <td>
-<li/>Publish from PC: We recommend you use <a href="https://intl.cloud.tencent.com/document/product/267/31569">OBS for push</a>.
- <li/>Playback on PC: We recommend you use the <a href="https://intl.cloud.tencent.com/document/product/267/32483">VLC player</a>.</td>
+<li/>Push from PC: We recommend you use <a href="https://intl.cloud.tencent.com/document/product/267/31569">OBS for push</a> to test the push.
+ <li/>Playback on PC: We recommend you use the <a href="https://intl.cloud.tencent.com/document/product/267/32483">VLC player</a> to test the playback.</td>
 </tr><tr>
 <td>
-<li/>Publish from web: We recommend you use <a href="https://console.cloud.tencent.com/live/tools/webpush">Web Push</a>.</td>
+<li/>Push from web: We recommend you use <a href="https://console.cloud.tencent.com/live/tools/webpush">Web Push</a> to test the push.</td>
 </tr><tr>
 <td>
-<li/>Publish from mobile apps: Install <a href="https://intl.cloud.tencent.com/document/product/1071/38147">TCToolkit App</a> and select RTMP for push.
-<li/>Playback on mobile apps: Install <a href="https://intl.cloud.tencent.com/document/product/1071/38147">TCToolkit App</a> and select "Standard Live Broadcast".</td>
+<li/>Push from mobile apps: Install <a href="https://intl.cloud.tencent.com/document/product/1071/38147">TCToolkit App</a> and select "RTMP for push" to test the push.
+<li/>Playback on mobile apps: Install <a href="https://intl.cloud.tencent.com/document/product/1071/38147">TCToolkit App</a> and select "Standard Live Broadcast" to test the playback.</td>
 </tr><tr>
 <td>IP Restriction</td>
 <td>Check for exceptions caused by the IP allowlist/blocklist or regional restrictions</td>

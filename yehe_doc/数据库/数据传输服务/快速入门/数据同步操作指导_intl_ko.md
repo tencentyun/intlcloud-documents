@@ -14,7 +14,7 @@
 
 ## 데이터 동기화 작업 예시
 
-1. [데이터 동기화 구매 페이지](https://buy.cloud.tencent.com/dts)에 로그인하여 알맞은 설정을 선택하고 **즉시 구매**를 클릭합니다.
+1. [데이터 동기화 구매 페이지](https://buy.intl.cloud.tencent.com/migration)에 로그인하여 알맞은 설정을 선택하고 **즉시 구매**를 클릭합니다.
 2. 구매 성공 후 [데이터 동기화 목록](https://console.cloud.tencent.com/dts/replication)으로 돌아가면 새로 생성된 데이터 동기화 작업을 볼 수 있습니다. 사용하기 전에 설정해야 합니다.
 3. 데이터 동기화 목록의 **작업** 열에서 **설정**을 클릭하여 동기화 작업 설정 페이지로 들어갑니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/afe583b0dd3569cad36da0f3f19acba0.png)

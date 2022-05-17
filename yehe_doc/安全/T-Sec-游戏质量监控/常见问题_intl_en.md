@@ -7,7 +7,7 @@
  In order to avoid waste of resources, if you stay in the cloud mobile phone debugging interface for 30 minutes without any operation, the system will automatically and forcibly end the debugging.
 
 **3. What should I do if there is a lag, black screen, or connection failure when I use a cloud mobile phone.**
- You can contact the online customer service, describe your problem clearly, and we will help you solve it as soon as possible.
+ You can [contact us](https://intl.cloud.tencent.com/contact-us), describe your problem clearly, and we will help you solve it as soon as possible.
 
 **4. Is there an upper limit on the duration of a single use of device？**
  The maximum duration of single use of device is 5 hours, and it will be forced to end if it exceeds 5 hours.
@@ -55,7 +55,7 @@
 
 2.  PerfDog's Windows & Mac OS X desktop app support users testing on iOS and Android devices.PerfDog can test multiple mobile devices at the same time on a single PC.
 
-3.  PerfDog supports all applications on the mobile platform (games, apps, browsers, mini programs, mini-games, H5, background system processes, etc.) and Android Emulator, Cloud Real Machine performance tests.
+3.  PerfDog supports all applications on the mobile platform (games, apps, browsers, mini-games, H5, background system processes, etc.) and Android Emulator, Cloud Real Machine performance tests.
 
 4.  Support APP multi-process testing, such as Android multi-child process and iOS extension process APP Extension.
 

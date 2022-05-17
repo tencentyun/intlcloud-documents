@@ -12,12 +12,8 @@ VOD는 서버에서 동영상을 업로드할 수 있는 PHP용 SDK를 제공합
 ```
 
 ### 소스 패키지를 통해 설치
-Composer 툴이 프로젝트의 종속성 관리에 사용되지 않는 경우, 소스 코드를 다운로드하여 프로젝트로 가져올 수 있습니다.
-
-* [GitHub에서 액세스](https://github.com/tencentyun/vod-php-sdk-v5)
-* [PHP용 SDK 다운로드 링크](https://github.com/tencentyun/vod-php-sdk-v5/raw/master/packages/vod-sdk.zip)
-
-vod-sdk.zip 파일을 프로젝트에 압축 해제하고 autoload.php 파일을 가져옵니다.
+1. 프로젝트에서 종속성 관리를 위해 composer 툴을 사용하지 않는 경우, [Github에서 액세스](https://github.com/tencentyun/vod-php-sdk-v5)에서 직접 소스 코드를 다운로드하여 프로젝트에서 사용할 수 있도록 가져올 수 있습니다.
+2. vod-sdk.zip 파일을 프로젝트에 압축 해제하고 autoload.php 파일을 가져옵니다.
 
 ##  비디오 간편 업로드
 ### 업로드 객체 초기화
@@ -32,6 +28,7 @@ use Vod\VodUploadClient;
 
 $client = new VodUploadClient("your secretId", "your secretKey");
 ```
+
 
 **소스 코드를 사용하여 가져오기**
 ```php
@@ -64,7 +61,7 @@ try {
 }
 ```
 
->?업로드 방법은 파일 크기에 따라 일반 업로드 또는 멀티파트 업로드를 자동으로 선택하므로 멀티파트 업로드의 각 단계를 신경 쓸 필요가 없습니다.
+>?업로드 방법은 파일 크기에 따라 일반 업로드 또는 멀티파트 업로드를 자동으로 선택하므로 멀티파트 업로드의 각 단계를 처리할 필요가 없습니다.
 
 ## 고급 기능
 ### 커버 업로드
@@ -244,11 +241,11 @@ try {
 | 속성 이름      | 속성 설명                   | 유형      | 필수 입력   |
 | --------- | ---------------------- | ------- | ---- |
 | MediaFilePath   | 업로드할 미디어 파일의 경로로, 로컬 경로여야 하며 URL을 지원하지 않습니다.| String | Yes    |
-| MediaType   | 업로드할 미디어 파일의 유형입니다. 유효 값은 [미디어 업로드 개요](https://intl.cloud.tencent.com/document/product/266/9760)를 참고하십시오. MediaFilePath 경로에 파일 확장자가 포함된 경우 이 매개변수를 비워 둘 수 있습니다.        | String | No    |
+| MediaType   | 업로드할 미디어 파일의 유형입니다. 유효한 값은 [미디어 업로드 개요](https://intl.cloud.tencent.com/document/product/266/9760)를 참고하십시오. MediaFilePath 경로에 파일 확장자가 포함된 경우 이 매개변수를 비워 둘 수 있습니다.        | String | No    |
 | MediaName   | 업로드된 미디어 파일의 이름입니다. 이 매개변수를 비워 두면 기본적으로 MediaFilePath의 파일 이름이 사용됩니다.      | String | No    |
 | CoverFilePath   | 업로드할 커버 파일의 경로로, URL을 지원하지 않는 로컬 경로여야 합니다.| String | No    |
 | CoverType   | 업로드할 커버 파일의 유형입니다. 유효 값은 [미디어 업로드 개요](https://intl.cloud.tencent.com/document/product/266/9760)를 참고하십시오. CoverFilePath 경로에 파일 확장자가 포함되어 있으면 이 매개변수를 비워 둘 수 있습니다.        | String | No    |
-| Procedure   | 업로드 완료 후 자동으로 실행될 태스크 플로우의 이름으로, 태스크 플로우([API 방식](https://intl.cloud.tencent.com/document/product/266/33897) 또는 [콘솔 방식](https://console.cloud.tencent.com/vod/video-process/taskflow))를 생성할 때 지정하는 매개변수입니다. 자세한 내용은 [태스크 플로우](https://intl.cloud.tencent.com/document/product/266/33931)를 참고하십시오.       | String | No    |
+| Procedure   | 업로드 완료 후 자동으로 실행될 태스크 플로우의 이름으로, 태스크 플로우([API 방식](https://intl.cloud.tencent.com/document/product/266/34167) 또는 [콘솔 방식](https://console.cloud.tencent.com/vod/video-process/taskflow))를 생성할 때 지정하는 매개변수입니다. 자세한 내용은 [태스크 플로우](https://intl.cloud.tencent.com/document/product/266/33931)를 참고하십시오.       | String | No    |
 | ExpireTime   | ISO 8601 형식의 미디어 파일 만료 시간으로, 자세한 내용은 [ISO 날짜 형식](https://intl.cloud.tencent.com/document/product/266/11732)을 참고하십시오.        | String | No    |
 | ClassId   | 관리할 미디어를 분류하는 데 사용되는 클래스 ID로, [CreateClass](https://intl.cloud.tencent.com/document/product/266/35325) API를 사용하여 클래스를 생성하고, 클래스 ID를 얻을 수 있습니다.        | Integer | No    |
 | SourceContext   | 최대 250자의 소스 컨텍스트로, 사용자 요청 정보를 전달하는 데 사용되며 업로드 콜백 API에서 반환됩니다.      | String | No    |
@@ -268,16 +265,17 @@ try {
 
 | 매개변수 이름     | 매개변수 설명                   | 유형     | 필수 입력 |
 | --------- | ---------------------- | ------- | ---- |
-| region   | VOD 서버를 요청하는 액세스 포인트 리전으로 스토리지 리전과 다릅니다. 자세한 내용은 [지원 리전 리스트](https://intl.cloud.tencent.com/zh/document/product/266/34113#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참고하십시오.        | String | Yes    |
+| region   | VOD 서버를 요청하는 액세스 포인트 리전으로 스토리지 리전과 다릅니다. 자세한 내용은 [지원 리전 리스트](https://intl.cloud.tencent.com/document/product/266/34113)를 참고하십시오.        | String | Yes    |
 | request   | 업로드 요청.        | VodUploadRequest | Yes    |
 
 ## 오류 코드
 | 상태 코드         | 의미               |
 | ----------- | ----------------- |
-| InternalError       | 내부 오류. |
-| InvalidParameter.ExpireTime       | 잘못된 매개변수 값: 만료 시간. |
+| InternalError       | 내부 오류.  |
+| InvalidParameter.ExpireTime       | 잘못된 매개변수 값: 만료 시간.  |
 | InvalidParameterValue.CoverType       | 잘못된 매개변수 값: 커버 유형.     |
 | InvalidParameterValue.MediaType       | 잘못된 매개변수 값: 미디어 유형.           |
 | InvalidParameterValue.SubAppId       | 잘못된 매개변수 값: 서브 애플리케이션 ID.              |
 | InvalidParameterValue.VodSessionKey       | 잘못된 매개변수 값: VOD 세션.              |
 | ResourceNotFound       | 리소스가 존재하지 않음.              |
+

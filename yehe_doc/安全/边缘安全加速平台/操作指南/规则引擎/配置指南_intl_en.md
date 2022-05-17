@@ -105,7 +105,7 @@ Finer granularities are supported, so you can use conditional statements to flex
 
 You can configure the following content to create rules with a finer granularity for the current site `example.com`, customize the cache policies for two subdomains `www.example.com` and `blog.example.com`, and add an HTTP request header to indicate that origin-pull is requested from an EdgeOne node:
 #### www.example.com rule
-```
+```js.
 IF 
 Host = www.example.com
 
@@ -116,7 +116,7 @@ HTTP request header modification: Add `CDN = EdgeOne`
 ```
 
 #### blog.example.com rule
-```
+```js.
 IF
 Host = blog.example.com
 

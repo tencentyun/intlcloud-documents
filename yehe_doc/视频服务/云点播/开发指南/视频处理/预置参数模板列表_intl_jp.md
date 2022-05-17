@@ -254,7 +254,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
  <tr>
   <td>HD</td>
   <td>比例ズーム x 720</td>
-  <td>512kbps</td>
+  <td>1024kbps</td>
   <td>24</td>
   <td>H.264</td>
   <td>48kbps</td>
@@ -265,7 +265,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
  <tr>
   <td>FHD</td>
   <td>比例ズーム x 1080</td>
-  <td>1024kbps</td>
+  <td>2500kbps</td>
   <td>24</td>
   <td>H.264</td>
   <td>48kbps</td>

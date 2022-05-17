@@ -4,11 +4,11 @@
 
 ## SDK下载
 
-腾讯云视立方 Flutter 超级播放器项目的地址是 [SuperPlayer Flutter](https://github.com/tencentyun/SuperPlayer/tree/main/Flutter)。 
+腾讯云视立方 Flutter 超级播放器项目的地址是 [SuperPlayer Flutter](https://github.com/LiteAVSDK/Player_Flutter)。 
 
 ## 阅读对象
 
-本文档部分内容为腾讯云专属能力，使用前请开通 [腾讯云](https://cloud.tencent.com) 相关服务，未注册用户可注册账号 [免费试用](https://intl.cloud.tencent.com/login)。
+本文档部分内容为腾讯云专属能力，使用前请开通 [腾讯云](https://intl.cloud.tencent.com) 相关服务，未注册用户可注册账号 [免费试用](https://intl.cloud.tencent.com/login)。
 
 ## 集成指引[](id:Guide)
 
@@ -16,7 +16,7 @@
 ```yaml
   super_player:
     git:
-      url: https://github.com/tencentyun/SuperPlayer
+      url: https://github.com/LiteAVSDK/Player_Flutter
       path: Flutter
 ```
 
@@ -42,7 +42,7 @@
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-Android 依赖原生播放器 SDK，把目录下`example/android/superplayerkit`文件夹复制到你的工程目录下，在`setings.gradle` 插入 `include ':superplayerkit'`，当然，您也可以在官网搜索合适版本进行导入。
+Android 依赖原生播放器 SDK，把目录下`example/android/superplayerkit`文件夹复制到您的工程目录下，在`setings.gradle` 插入 `include ':superplayerkit'`，当然，您也可以在官网搜索合适版本进行导入。
 
 ### iOS 配置[](id:iOS_config)
 
@@ -55,7 +55,7 @@ Android 依赖原生播放器 SDK，把目录下`example/android/superplayerkit`
     </dict>
 ```
 
-iOS原生采用`pod`方式进行依赖，编辑`podfile`文件，指定你的播放器版本。
+iOS原生采用`pod`方式进行依赖，编辑`podfile`文件，指定您的播放器版本。
 ```xml
 pod 'SuperPlayer/Player', '3.3.9'
 ```
@@ -179,12 +179,10 @@ class _TestSuperPlayerState extends State<TestSuperPlayer> {
 
 运行代码，可以看到视频在手机上播放，并且界面上大部分功能都处于可用状态。
 
-![](https://main.qcloudimg.com/raw/13d179bcb281d0c39e4f0dc59a277641.png)
-
 ## 多清晰度[](id:resolution)
 
 上面的示例代码只有一种清晰度，如果要添加多个清晰度，也非常简单。以直播为例，打开 [直播控制台](https://console.cloud.tencent.com/live/livemanage)，找到需要播放的直播流，进入详情。
-![](https://main.qcloudimg.com/raw/6a81bd4c1629cc2c26ce058c68adf8e3.png)
+
 
 这里有不同清晰度、不同格式的播放地址。推荐使用 FLV 地址播放，代码如下
 
@@ -248,8 +246,6 @@ class _TestSuperPlayerState extends State<TestSuperPlayer> {
 
 在播放器中即可看到这几个清晰度，单击即可立即切换。
 
-<img src="https://main.qcloudimg.com/raw/8cb10273fe2b6df81b36ddb79d0f4890.jpeg" width="670"/>
-
 ## 时移播放[](id:timeShift)
 
 播放器开启时移非常简单，您只需要在播放前配置好 appId。
@@ -262,8 +258,6 @@ playModel.appId = 1252463788;// 这里换成您的 appID
 >?appId 在【腾讯云控制台】>【[账号信息](https://console.cloud.tencent.com/developer)】中查看。
 
 播放的直播流就能在下面看到进度条。往后拖动即可回到指定位置，单击【返回直播】可观看最新直播流。
-
-<img src="https://main.qcloudimg.com/raw/a3a4a18819aed49b919384b782a13957.jpeg" width="670"/>
 
 >?时移功能处于公测申请阶段，如您需要可 [提交工单](https://console.cloud.tencent.com/workorder) 申请使用。
 

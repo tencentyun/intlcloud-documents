@@ -19,9 +19,9 @@ CSS playback is output to the original bitrate by default. If you want to limit 
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the playback domain name to be configured or **Manage** on the right to go to the domain details page.
 2. Select **Template Configuration**, and click **Edit** in the top-right corner of the **Transcoding Configuration** tab.
 3. Select a transcoding template with the desired codec and bitrate for the playback URL under the domain name.
-4. Click **Save**.
+4. Click **Confirm**.
 
-![](https://main.qcloudimg.com/raw/8ab50571f4260ba070cf3270f8487e30.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2d8cb5be76debfbd04d60329891c5830.png)
 
 [](id:descript)
 ## Notes on Playback URL
@@ -41,7 +41,7 @@ http://domain/AppName/<b style="color:yellow;">StreamName_hd</b>.flv?txSecret=Md
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the playback domain name to be configured or **Manage** on the right to enter the domain details page.
 2. Select **Template Configuration** > **Transcoding Configuration**.
 3. Click **Edit** on the right and uncheck the corresponding template.
-4. Click **Save** to disassociate the template from the domain name.
-![](https://main.qcloudimg.com/raw/497478a836b8017c7e8be177b26af24d.png)
+4. Click **Confirm** to disassociate the template from the domain name.
+![](https://qcloudimg.tencent-cloud.cn/raw/872b71589554e8d89abf50db40f75777.png)
 
 >? To delete a template, you need to disassociate it first and then go to **Feature Template** > **[Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode)** to delete it. For more information, see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31071#delect).

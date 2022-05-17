@@ -9,9 +9,9 @@
 ## 변경 방법
 1. [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인하고 왼쪽 목록에서 **개요**를 클릭하여 개요 페이지로 이동합니다.
 2. **과금 방식** 탭에서 중국대륙(국내) 또는 글로벌/홍콩·마카오·대만(국외) 과금 방식을 선택한 다음 **전환**을 클릭합니다.
-   ![](https://main.qcloudimg.com/raw/ee8e815c10fdf6dd8c9a95c04082471e.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/706c7397b9f535d0f2cf9cab0537301b.png)
 3. 기존 과금 방식 **트래픽 일 결산 과금**을 **대역폭 일 결산 과금**으로 전환하고, 제품을 LVB 및 LEB으로 변경한 후 **확인**을 클릭합니다.
-   ![](https://main.qcloudimg.com/raw/f45e16f7fc10b4102cc420a8fd945253.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/b5d96781ac1ab7057b16a31d70ddb39f.png)
 
 >!
 >- 중국대륙 또는 글로벌/홍콩·마카오·대만의 LVB 및 LEB 과금 방식이 모두 일 결산인 경우에만 과금 방식을 전환할 수 있습니다.
@@ -23,6 +23,6 @@
 
 1. [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인한 후, 왼쪽 목록에서 **개요**를 클릭하여 개요 페이지로 이동합니다.
 2. **과금 방식** 탭에서 현재 보류 중인 과금 방식을 확인하고 **취소**를 클릭합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/aabbc869dbc07964b779d5a068181e6b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/79c4b03ec28a8b64a2a70ba9b70c9b9e.png)
 3. 중국대륙(국내) 과금 변경 취소 후 **확인**을 클릭합니다. 변경 취소 당일에는 더 이상 과금을 변경할 수 없습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/37ad273fab16e7d18b38cdae945b2d28.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bf040aa63ae33d6d0f2cb2c598ef4a8d.png)

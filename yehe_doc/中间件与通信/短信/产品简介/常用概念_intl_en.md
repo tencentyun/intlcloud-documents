@@ -5,18 +5,18 @@ Click [here](https://intl.cloud.tencent.com/document/api/382/40466?lang=en#regio
 
 ## SMS Message Format
 An SMS message consists of a signature and a body. Before sending an SMS message, you need to apply for an SMS signature and an SMS body template.
-For example, if the SMS signature is `Tencent Technology` and the SMS body is `The login verification code for your QQ account is 1234 and valid for 5 minutes.`, then the content of the complete SMS message will be as follows:
+For example, if the SMS signature is `Tencent Technology` and the SMS body is `The login verification code for your account is 1234 and valid for 5 minutes.`, then the content of the complete SMS message will be as follows:
 ```
-[Tencent Technology] The login verification code for your QQ account is 1234 and valid for 5 minutes.
+[Tencent Technology] The login verification code for your account is 1234 and valid for 5 minutes.
 ```
 Before sending the above sample SMS message, you need to perform the following steps:
 1. Apply for an SMS signature whose **Signature Content** is `Tencent Technology`.
-2. Apply for an SMS body template whose **SMS Content** is `The login verification code for your QQ account is {1} and valid for {2} minutes.`, where {1} and {2} are customizable parameters when an SMS message is sent.
+2. Apply for an SMS body template whose **SMS Content** is `The login verification code for your account is {1} and valid for {2} minutes.`, where {1} and {2} are customizable parameters when an SMS message is sent.
 
 ## SMS Signature
 An SMS signature is the signature enclosed in [] before an SMS body, which is used to identify a company or business. To apply for an SMS signature, an enterprise user needs to upload a qualification certificate, while an individual user needs to upload an identity certificate. Only an approved SMS signature can be used.
 **Sample SMS signature:**
-Shenzhen Tencent Computer Systems Company Limited can apply for a signature associated with its company name, such as `[Tencent Technology]`, or one associated with the name of any product provided by it, such as `[WeChat]` or `[Tencent Cloud]`.
+Shenzhen Tencent Computer Systems Company Limited can apply for a signature associated with its company name, such as `[Tencent Technology]`, or one associated with the name of any product provided by it, such as `[Tencent Cloud]`.
 
 >!You do not need to enter "[]" when applying for an SMS signature in the console. For example, if you want to use `[Tencent Technology]` as a signature, you simply need to enter `Tencent Technology` as the **Signature Content**.
 
@@ -26,10 +26,10 @@ An SMS template is the SMS body content. SMS templates divide into verification 
 
 Before applying for an SMS template, you need to apply for an SMS signature first. Only an approved SMS template can be used.
 **Sample SMS template:**
-If Tencent Technology wants to send an SMS verification code: `[Tencent Technology] The login verification code for your QQ account is 1234 and valid for 2 minutes.`, where the verification code (1234 in the sample) and validity period (2 minutes in the sample) can be changed in specific circumstances, then:
+If Tencent Technology wants to send an SMS verification code: `[Tencent Technology] The login verification code for your  account is 1234 and valid for 2 minutes.`, where the verification code (1234 in the sample) and validity period (2 minutes in the sample) can be changed in specific circumstances, then:
 You can apply for a signature and a template as below:
 - SMS signature: `Tencent Technology`
-- SMS template: `The login verification code for your QQ account is {1} and valid for {2} minutes.`
+- SMS template: `The login verification code for your account is {1} and valid for {2} minutes.`
  {1} and {2} are variables that are arranged in order, and their values can be customized by setting the values of the template parameters when you send the SMS message.
 
 ## Regular SMS

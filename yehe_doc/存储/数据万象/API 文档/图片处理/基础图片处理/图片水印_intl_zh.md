@@ -88,7 +88,8 @@ Pic-Operations:
 | /scatype/    | 根据原图的大小，缩放调整水印图的大小：<br><li>当 scatype 设置为1时，按原图的宽缩放<br><li>当 scatype 设置为2时，按原图的高缩放<br><li>当 scatype 设置为3时，按原图的整体面积缩放</li>                      |
 | /spcent/     | 与 scatype 搭配使用：<li>当 scatype 设置为1时，该有效值为[1,1000]，单位为千分比<li>当 scatype 设置为2时，该有效值为[1,1000]，单位为千分比<li>当 scatype 设置为3时，该有效值为[1,250]，单位为千分比。示例：`http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/xxxxxxx/scatype/3/spcent/250`</li>                      |
 |  /dissolve/  |  图片水印的透明度，取值为1 - 100，默认90（90%不透明度）   |
-
+| /batch/  | 平铺水印功能，可将图片水印平铺至整张图片。值为1时，表示开启平铺水印功能 |
+| /degree/ | 当 batch 值为1时生效。图片水印的旋转角度设置，取值范围为0 - 360，默认0 |
 
 >! 指定的水印图片必须同时满足如下3个条件：  
 > - 水印图片与源图片必须位于同一个存储桶下。
@@ -123,7 +124,16 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/
 添加图片水印后效果如下：
 ![](https://main.qcloudimg.com/raw/6412c0d6eaaadc5c193515f40d736dad.jpeg)
 
-#### 案例二：添加图片水印并携带私有文件签名
+#### 案例二：添加图片水印并设置平铺、透明度
+
+```plaintext
+https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast/batch/1/degree/45/dissolve/40/
+```
+
+添加图片水印并设置旋转45度平铺、透明度为40%后，效果如下：
+![](https://qcloudimg.tencent-cloud.cn/raw/d7e49b9cf7ea1dcc0459b2a5e3b2af8d.jpg)
+
+#### 案例三：添加图片水印并携带私有文件签名
 
 处理方式同上，仅增加签名部分，并与图片处理参数以“&”连接，示例如下：
 

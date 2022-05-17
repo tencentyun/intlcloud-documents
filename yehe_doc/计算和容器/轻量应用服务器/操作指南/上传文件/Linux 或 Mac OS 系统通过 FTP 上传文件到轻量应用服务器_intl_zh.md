@@ -47,10 +47,10 @@ get A.txt /home/A.txt
 ### Mac OS 系统使用 FTP 服务
 1. 单击左下角的 <img src="https://main.qcloudimg.com/raw/992cc18057d7ab31bcc0c01cb571d395.png" style="margin:-5px 0px; width:4%">，在右上角菜单栏中选择【前往】>【连接服务器...】。
 2. 在“连接服务器”窗口中输入 `ftp://轻量应用服务器的 IP 地址`，并单击【连接】。如下图所示：
-![](https://main.qcloudimg.com/raw/0cb8e99214441e8ea93db3cf25867cd5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c64b97fcaf48fabaf1f93e7f679b7cc3.png)
 3. 在弹出的窗口中选择“注册用户”，输入 ftp 服务的用户名和密码后单击【连接】。
 进入如下界面，即表示连接成功。
-![](https://main.qcloudimg.com/raw/9551fbefacded0216cf55b6fe69e2762.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d38e4d739c6fa26d66cab1841416bcf.png)
 
 #### 上传及下载文件
 您可直接将文件复制至 FTP 访达窗口，即可完成文件上传操作。

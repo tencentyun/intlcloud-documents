@@ -89,11 +89,11 @@ CSS는 화면 캡처&음란물 감지 기능을 지원합니다. 콘솔을 통�
 1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처&음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh) 페이지로 이동합니다.
 2. 다음과 같은 방식으로 도메인 바인딩 창으로 이동합니다.
     - **도메인 직접 연결:** 왼쪽 상단에 있는 [도메인 바인딩]을 클릭합니다.
-    ![](https://main.qcloudimg.com/raw/20490c4aa318f5b5253d0b82c1672087.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/92b7542783d6d5ac59ef5faedbf53746.png)
     - **신규 화면 캡처&음란물 감지 템플릿 생성 완료 후 도메인 연결: **[화면 캡처&음란물 감지 템플릿 생성](#Screenshot) 완료 후 안내창의 [도메인 바인딩]을 클릭합니다.
-    ![](https://main.qcloudimg.com/raw/727b1d25f256a655478312ee45814a32.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/61c40816a357ce0f79677e238a1a31ba.png)
 1. 도메인 바인딩 창에서 바인딩할 **화면 캡처&음란물 감지 템플릿**과 **푸시 도메인**을 선택하고 [확인]을 클릭하면 바인딩이 완료됩니다.
-![](https://main.qcloudimg.com/raw/5612913bcbb6ac1cb5207dcc03e997c4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e632f4a7712256fdd3f3a282e09a9c7.png)
 > ? [추가]를 클릭하여 현재 템플릿에 여러 개의 푸시 도메인을 바인딩할 수 있습니다.
 
 
@@ -102,7 +102,7 @@ CSS는 화면 캡처&음란물 감지 기능을 지원합니다. 콘솔을 통�
 
 1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처&음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh) 페이지로 이동합니다.
 2. 연결되어 있는 도메인의 라이브 방송 화면 캡처&음란물 감지 템플릿을 선택하고 [바인딩 해제]를 클릭합니다.
-   ![](https://main.qcloudimg.com/raw/fd20557cc393cc483d9a36dd0ddb6652.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
 3. 현재 연결된 도메인의 바인딩 해제 여부를 확인하고 [확인]을 클릭하면 바인딩 해제가 완료됩니다.
    ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
@@ -114,7 +114,7 @@ CSS는 화면 캡처&음란물 감지 기능을 지원합니다. 콘솔을 통�
 2. 생성된 화면 캡처&음란물 감지 템플릿을 선택하고 오른쪽에 있는 [편집]을 클릭하면 템플릿 정보 수정 페이지로 이동합니다.
 3. [저장]을 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/0ec0dcb3dc35571e1aab74b20d533c35.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/786b4fd9630a178a0aebb65cda16a49c.png)
 
 
 <span id="delete"></span>

@@ -89,11 +89,11 @@
 1. 登录云直播控制台，进入【功能配置】>[【直播截图&鉴黄】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 通过以下方式进入域名绑定窗口：
     - **直接关联域名：**单击左上方的【绑定域名】。
-    ![](https://main.qcloudimg.com/raw/20490c4aa318f5b5253d0b82c1672087.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/92b7542783d6d5ac59ef5faedbf53746.png)
     - **新截图&鉴黄模板创建成功后关联域名：**[截图&鉴黄模板创建](#Screenshot) 成功后，单击提醒框中的【去绑定域名】。
-    ![](https://main.qcloudimg.com/raw/727b1d25f256a655478312ee45814a32.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/61c40816a357ce0f79677e238a1a31ba.png)
 1. 在域名绑定窗口中，选择您需绑定的**截图&鉴黄模板**及**推流域名**，单击【确定】即可绑定成功。
-![](https://main.qcloudimg.com/raw/5612913bcbb6ac1cb5207dcc03e997c4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e632f4a7712256fdd3f3a282e09a9c7.png)
 > ? 支持通过单击【添加】为当前模板绑定多个推流域名。
 
 
@@ -102,7 +102,7 @@
 
 1. 登录云直播控制台，进入【功能配置】>[【直播截图&鉴黄】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择已关联域名的直播截图&鉴黄模板，单击【解绑】。
-   ![](https://main.qcloudimg.com/raw/fd20557cc393cc483d9a36dd0ddb6652.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
 3. 确认是否解绑当前关联域名，单击【确定】即可解绑。
    ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
@@ -114,7 +114,7 @@
 2. 选择您已创建成功的截图鉴黄模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/0ec0dcb3dc35571e1aab74b20d533c35.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/786b4fd9630a178a0aebb65cda16a49c.png)
 
 
 <span id="delete"></span>

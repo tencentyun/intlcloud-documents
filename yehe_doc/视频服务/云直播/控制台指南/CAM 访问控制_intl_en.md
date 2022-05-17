@@ -27,7 +27,7 @@ You can add policies and authorize users or user groups on the user or user grou
 Enter the user/user group page and select the user/user group to which to add a policy.
 - Click **Users** > **User List** on the left sidebar, select the user/user group to which to add a policy, click **Authorize** on the right, select the corresponding CSS policy, and click **Confirm**. ![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
 
-  ![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
+  
 
   ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
@@ -66,6 +66,7 @@ Click **Policies** on the left sidebar, select the policy to be added, click **A
 <td>Condition</td><td>No</td>
 <td>Set the effective condition of the above authorization and enter the source IP to be authorized, so as to allow access to specified operations only when requests come from the specified IP range. You can also add other conditions to further restrict the policy. For more information, see <a href="https://intl.cloud.tencent.com/document/product/598/10608">Condition</a>.</td>
 </tr></table>
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/da4b1d1379c74e8d5eeb3f79908191e6.png">
 
 > ! If you want to authorize multiple services, you can click **Add Permissions** to configure authorization policies for these services.

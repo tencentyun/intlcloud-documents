@@ -6,4 +6,4 @@ Tencent Cloudは、CentOS 8シリーズのイメージを一時的に削除し�
 - [OpenCloudOS Server](https://intl.cloud.tencent.com/document/product/213/46209)
 - CentOS StreamバージョンおよびUbuntuなどの他のリリースされたバージョン
 
-CentOSを使用している場合は、できる限り早く対応するバージョンのTencentOSに移行することをお勧めします。移行操作の詳細については、[CentOSからTencentOSへの移行ガイドライン](https://intl.cloud.tencent.com/document/product/213/46210)をご参照ください。
+CentOSを使用している場合は、できる限り早く対応するバージョンのTencentOSに移行することをお勧めします。移行操作の詳細については、[CentOSからTencentOSへの移行ガイドライン](https://intl.cloud.tencent.com/document/product/213/46962)をご参照ください。
