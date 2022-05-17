@@ -75,7 +75,7 @@ TRTCの課金項目はサービスのタイプによって基本サービスと�
 [](id:que10)
 
 ### CDNライブストリーミングの視聴はどのように課金されますか。
-TRTCはRelayed Pushにより[CSS](https://intl.cloud.tencent.com/document/product/267)の能力を使用し、CDN relayed live streamingの機能をご提供しています。**CSS**は実際のご利用状況に応じて[CDN relayed live streaming≻関連費用](https://intl.cloud.tencent.com/document/product/647/35242)を請求します。
+TRTCはRelayed Pushにより[CSS](https://intl.cloud.tencent.com/document/product/267)の能力を使用し、CDN relayed live streamingの機能をご提供しています。**CSS**は実際のご利用状況に応じてCDN relayed live streaming≻関連費用を請求します。
 
 [](id:que12)
 
