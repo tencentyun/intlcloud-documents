@@ -7,7 +7,7 @@ Este documento usa a instância CVM com a seguinte especificação de hardware c
 - Memória: 8 GB
 
 Este documento usa as seguintes versões de software como exemplo:
-- Sistema operacional: Windows Server 2012 R2 Datacenter 64 bits (chinês)
+- Sistema operacional: Windows Server 2012 R2 Datacenter 64 bits (Inglês)
 - Base de dados: SQL Server 2014
 
 ## Pré-requisitos
