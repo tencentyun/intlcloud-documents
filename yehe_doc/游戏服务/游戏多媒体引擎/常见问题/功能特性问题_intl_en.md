@@ -14,13 +14,6 @@ Yes. Backed by Tencent's 10-Gigabit cloud-based data centers and 20 BGP lines, G
 
 GME supports Unity, Unreal, and Cocos2d engines, and Windows, Mac, iOS, Android, and HTML5 platforms.
 
-### Does GME support WeChat Mini Program?
-
-Yes. In GME, however, only pull (listening) from WeChat Mini Program is supported, while push (speaking) is not.
-
-### Does GME provide a demo for WeChat Mini Program?
-
-No. GME currently does not have a demo for WeChat Mini Program.
 
 ### Can GME on Android and GME on iOS communicate with each other?
 
