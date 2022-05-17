@@ -79,10 +79,7 @@ This document describes how to manage the topics under an existing instance in t
 
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management** and click **Send Message** in the **Operation** column.
-<<<<<<< HEAD
-    ![](https://qcloudimg.tencent-cloud.cn/raw/1f0c4e65ded79440077b0ddb9f8b843a.png)
-=======
->>>>>>> 4c0ee768bf0276e04d7ad55207e181473466eaf0
+    ![](https://qcloudimg.tencent-cloud.cn/raw/e64260b777be32b2189ab026853725ae.png)
    - Message Content: Enter the content of the message to be sent, which is required.
    - Message Key: Enter the sending key, which is optional.
    - Send to Specified Partition: This parameter supports sending messages to the specified partition, which is disabled by default.
@@ -94,10 +91,7 @@ This document describes how to manage the topics under an existing instance in t
 
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management** and click **Producer Connection** in the **Operation** column to view the list of producers connected to the topic.
-<<<<<<< HEAD
-    ![](https://qcloudimg.tencent-cloud.cn/raw/5964448721f3c3a94d4deced5ec2ba88.png)
-=======
->>>>>>> 4c0ee768bf0276e04d7ad55207e181473466eaf0
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b815b0c65eaaeb804e3206eac41c6c42.png)
 
 
 
@@ -188,7 +182,6 @@ You can throttle the topic traffic to prevent the excessive traffic of one topic
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management**.
 3. In the **Operation** column, click **Edit** > **Traffic Throttling** and set the threshold.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/3963798dd53c757c0a4f72f24e66d34b.png)
    - Maximum Topic Production Traffic: This value excludes replica traffic and ranges from 1 MB/s to the maximum bandwidth purchased for the instance / number of replicas of the topic.
    - Maximum Topic Consumption Traffic: This value ranges from 1 MB/s to the maximum bandwidth purchased for the instance.
 > ?
