@@ -5,7 +5,7 @@
 - **产品间联动**：例如，当新文件上传到 COS 后，自动刷新 CDN 缓存。新文件上传到 COS 后，自动更新数据库。
 - **系统集成**：当 COS 上的文件发生变更（新建、删除、覆盖），自动调用您自己的服务接口。在 UGC（User Generated Content）场景下，您就可以基于事件通知功能，完成移动端和服务端的联动。
 - **数据处理**：对 COS 上的文件进行自动处理，例如，自动解压缩、AI 识别等。
-![](https://main.qcloudimg.com/raw/d3b76080a15393556c8aa5b79f9439f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4a32cb2d7739e6d183cbb94523689e1c.png)
 
 COS 事件通知具有以下特点：
 
