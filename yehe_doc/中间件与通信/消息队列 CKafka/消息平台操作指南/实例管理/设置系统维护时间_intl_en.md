@@ -12,6 +12,6 @@ Maintenance time is a very important concept for CKafka. To ensure the stability
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the basic information page.
 3. In the **Basic Info** module, click **Edit** next to the system maintenance time.
 4. In the pop-up window, select **Maintenance Window** and **Maintenance Time** and click **OK**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/f02c29e74a9fdaab3d65dfff5ea30568.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/3a704cdf77023480676a38ab9757c81b.png)
 5. Click **OK**.
 
