@@ -82,9 +82,9 @@ Initialize the GME and the core API has been called correctly, e.g. the Poll fun
 
 - The team ID (`TeamID`) must be set by calling the API `SetRangeAudioTeamID` before `EnterRoom`. Otherwise, GME will return the error code `AV_ERR_ROOM_NOT_EXITED(1202)`. If you enter the room after exiting the room, please call the API `SetRangeAudioTeamID` after exiting the room successfully.
 
-<dx-alert infotype="notice" title="">
+
 >!This parameter will not be automatically reset to `0` upon room exit. Therefore, once you decide to use range voice, please use this method to set `TeamID` before calling `EnterRoom` each time.
-</dx-alert>
+
 
 
 
