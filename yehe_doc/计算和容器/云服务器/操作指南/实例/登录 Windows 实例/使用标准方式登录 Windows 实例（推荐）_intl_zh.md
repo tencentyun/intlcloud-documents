@@ -38,7 +38,7 @@
  - **用户名**：Windows 实例用户名默认为 `Administrator`，请按需填写。
  - **密码**：填写已从 [前提条件](#Prerequisites) 步骤中获取的登录密码。
 5. 单击**登录**，即可登录 Windows 实例。
-本文以登录操作系统为 Windows Server 2016 数据中心版64位中文版的云服务器为例，登录成功则出现类似如下图所示界面：
+本文以登录操作系统为 Windows Server 2016 数据中心版64位英文版的云服务器为例，登录成功则出现类似如下图所示界面：
 ![](https://main.qcloudimg.com/raw/60abc6a9f51ae33ea95aa11edc53e009.jpg)
 
 
