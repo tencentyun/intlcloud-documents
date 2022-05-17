@@ -75,7 +75,7 @@ TRTC 요금은 서비스 종류에 따라 기본 서비스와 부가 서비스�
 [](id:que10)
 
 ### CDN 라이브 방송 시청은 어떻게 과금되나요?
-TRTC는 릴레이 푸시 스트림을 통해 [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267) 기능을 사용하여 CDN 라이브 방송 시청 기능을 제공합니다. **CSS**는 실제 사용 현황에 따라 [CDN 라이브 방송 시청 > 관련 요금](https://intl.cloud.tencent.com/document/product/647/35242)을 청구합니다.
+TRTC는 릴레이 푸시 스트림을 통해 [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267) 기능을 사용하여 CDN 라이브 방송 시청 기능을 제공합니다. **CSS**는 실제 사용 현황에 따라 CDN 라이브 방송 시청 > 관련 요금을 청구합니다.
 
 [](id:que12)
 
