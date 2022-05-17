@@ -35,6 +35,5 @@
 1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏单击**实例列表**，单击目标实例的“ID/名称”，进入基本信息页。
 3. 在基本信息模块，单击可用区右边的的**编辑按钮**，选择您要选择的切换的可用区。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/f8307326974bbae58af6d0d1c21b6ce7.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/602a60c710f974db8ea903d82b1f2ad1.png)
 4. 单击**确认**，预计等待5-10分钟完成变配，在实例列表的状态栏可以查看变配进度。
-![](https://qcloudimg.tencent-cloud.cn/raw/7a2e65ad428af0ffeec2a3342fe7fe61.png)
