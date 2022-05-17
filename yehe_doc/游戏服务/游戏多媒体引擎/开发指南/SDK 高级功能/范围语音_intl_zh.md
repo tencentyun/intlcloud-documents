@@ -64,7 +64,7 @@ b. 不同小队情况下，双方开启“所有人”的语音状态情况下�
 
 在进房成功后，调用 UpdateAudioRecvRange（至少一次），及每帧调用 UpdateSelfPosition。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e238a74c747ea08c123c9c1c762b23c4.png"  width="60%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/4f531ae31457f031b0034d8dc39eda3c.png"  width="60%"/></img>
 
 >!
 >- 请务必参照此流程调用接口。
