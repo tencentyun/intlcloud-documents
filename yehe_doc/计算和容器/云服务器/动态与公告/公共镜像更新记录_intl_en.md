@@ -486,7 +486,7 @@
 	<td>Updates the system with the latest patch.</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2016 DataCenter 64-bit Chinese</td>
+	<td rowspan="4">Windows Server 2016 DataCenter 64-bit English</td>
 	<td rowspan="4">Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9id7emv7">img-9id7emv7</a></td>
   </tr>
