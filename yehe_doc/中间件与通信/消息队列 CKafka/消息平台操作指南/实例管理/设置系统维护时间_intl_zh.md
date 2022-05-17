@@ -12,6 +12,6 @@
 2. 在左侧导航栏单击**实例列表**，单击目标实例的“ID/名称”，进入基本信息页。
 3. 在基本信息模块，单击系统维护时间旁的**编辑按钮**。
 4. 在弹出的对话框，选择您所需的“维护周期”和“维护时间”。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/f02c29e74a9fdaab3d65dfff5ea30568.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/3a704cdf77023480676a38ab9757c81b.png)
 5. 单击**确定**，完成设置。
 
