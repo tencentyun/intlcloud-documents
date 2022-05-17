@@ -10,6 +10,44 @@ This document describes how to view advanced monitoring metrics in the console a
 2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
 3. At the top of the instance details page, click **Monitoring** > **Advanced Monitoring**, select the metric to be viewed, and set the time range to view the monitoring data.
 
+### Monitoring information display
+
+>?You can click the following tabs to view the monitoring information of the core service, production, consumption, instance resource, and broker GC.
+
+<dx-tabs>
+::: Core service
+
+![](https://qcloudimg.tencent-cloud.cn/raw/9361c64e18166fdb974666469db095bb.png)
+
+::: 
+
+::: Production
+
+![](https://qcloudimg.tencent-cloud.cn/raw/7e5fd602eaa236007d83d1bbfbe1adff.png)
+
+:::
+
+::: Consumption
+
+![](https://qcloudimg.tencent-cloud.cn/raw/f9832f7519968ec071e3e95ee2407d83.png)
+
+:::
+
+::: Instance resource
+
+![](https://qcloudimg.tencent-cloud.cn/raw/c97bddedf2db767a533cfc405dc6e5fa.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/3c9fc64f6a323e84d781f9087f8b9d75.png)
+
+:::
+
+::: Broker GC
+
+![](https://qcloudimg.tencent-cloud.cn/raw/d98f7a038967c71e1eeeb7922037f1ec.png)
+
+:::
+
+</dx-tabs>
 
 ### Monitoring metric description
 
