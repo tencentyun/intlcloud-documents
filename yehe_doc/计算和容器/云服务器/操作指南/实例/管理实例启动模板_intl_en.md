@@ -12,7 +12,7 @@ This document describes how to create, manage, and use an instance launch templa
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance/index?rid=1) and select **Instance Launch Template** on the left sidebar.
 2. On the **Instance Launch Template** page, click **Create Template**.
 3. On the **instance launch template** creation page, customize **Template Name** and **Template Description** and set other configuration items as instructed in [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
-4. In the **Confirm Configuration** step, read and indicate your consent to the **Tencent Cloud Terms of Service** and **Refund Policy** and click **Create Now**.
+4. In the **Confirm Configuration** step, read and indicate your consent to the **Tencent Cloud Terms of Service** and click **Create Now**.
 After successful creation, you can view the instance launch template in the console .
 You can click the template ID to enter the template details page and view the specific information.
 
@@ -20,7 +20,7 @@ You can click the template ID to enter the template details page and view the sp
 ### Creating instance launch template version
 1. On the **Instance Launch Template** page, select **Create Version** on the right of the target template .
 2. On the **instance launch template** creation page, configure the version as instructed in [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
-3. In the **Confirm Configuration** step, read and indicate your consent to the **Tencent Cloud Terms of Service** and **Refund Policy**.
+3. In the **Confirm Configuration** step, read and indicate your consent to the **Tencent Cloud Terms of Service**.
 You can select **Compare with Original Configuration** to confirm the difference between the new version and original instance launch template in the **Compare with Original Configuration** pop-up window.
 4. After confirming that everything is correct, click **Create Now**.
 After successful creation, you can click <img src="https://main.qcloudimg.com/raw/bc4f9debb43518cdf0e1552f76f9b7fa.png" style="margin:-3px 0px"> before the target template on the **Instance Launch Template** page to view the version in the expanded list.

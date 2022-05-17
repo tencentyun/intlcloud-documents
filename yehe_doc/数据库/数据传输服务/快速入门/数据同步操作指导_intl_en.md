@@ -14,7 +14,7 @@
 
 ## Sample Data Sync Task
 
-1. Log in to the [data sync purchase page](https://buy.cloud.tencent.com/dts), select the corresponding configuration items, and click **Buy Now**.
+1. Log in to the [data sync purchase page](https://buy.intl.cloud.tencent.com/migration), select the corresponding configuration items, and click **Buy Now**.
 2. After successful purchase, return to the [data sync list](https://console.cloud.tencent.com/dts/replication), and you can see the newly created data sync task. You need to configure it before you can use it.
 3. In the data sync list, click **Configure** in the **Operation** column to enter the sync task configuration page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/afe583b0dd3569cad36da0f3f19acba0.png)
