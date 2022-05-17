@@ -32,7 +32,7 @@ After activating the GME service, you can find the AppID and permission key in t
 
 You can download the GME SDKs for different platforms. For details, see [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521). **Currently, GME supports Windows, Mac, Android, and iOS, and GSE supports UnrealEngine4, Unity3D, and Cocos2DX**.
 
-GME also supports the real-time audio call on H5 and listening to the voice chat in the room on the mini program.
+GME supports the real-time audio call on H5 .
 
 #### 4.4 Accessing SDK
 To access the SDK of each platform, you can refer to the [project configuration](https://intl.cloud.tencent.com/document/product/607/10783) document of each platform to configure the project, and then check the [API Documentation](https://intl.cloud.tencent.com/document/product/607/15228) of the corresponding platform to call the APIs to use GME services. The calling sequence of voice chat APIs is **Init API (for initialization)** > **Poll API (for callback trigger)** > **EnterRoom API (for entering a voice chat room)** > **EnableMic API (for enabling the mic)** > **EnableSpeaker API (for enabling the speaker)** > **ExitRoom API (for exiting the room)** > **Unit API (for uninitialize)**.
