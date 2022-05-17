@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 This API (`CreateMediaJobs`) is used to submit a task.
 
 ## Request
@@ -16,13 +16,13 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 >
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -50,16 +50,16 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | None | Request container | Container | Yes   |
+| Request            | None     | Request container | Container | Yes   |
 
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
 | Tag                | Request | Task type: VideoMontage                                | String    | Yes   |
-| Input              | Request | Information about the media to be operated                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to 6 operation rules are supported.                                  | Container | Yes   |
-| QueueId            | Request | ID of the queue where the task is in                                         | String    | Yes   |
+| Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
+| Operation          | Request | Operation rule                                  | Container | Yes   |
+| QueueId            | Request | Queue ID of the task                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
 `Input` has the following sub-nodes:
@@ -76,16 +76,18 @@ The nodes are described as follows:
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
+
 >!`TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding task type parameter is used.
 
 `VideoMontage` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description |
 | ------------------ | :----------------------------- | -------------------------------------- |
-| Container          | Request.Operation.VideoMontage | Same as `Request.Container` in the video montage template creation API `CreateMediaTemplate`. | 
+| Container          | Request.Operation.VideoMontage | Same as `Request.Container` in the video montage template creation API `CreateMediaTemplate`. |
 | Video              | Request.Operation.VideoMontage | Same as `Request.Video` in the video montage template creation API `CreateMediaTemplate`.     |
 | Duration           | Request.Operation.VideoMontage | Same as `Request.Duration` in the video montage template creation API `CreateMediaTemplate`.  |
 | Audio              | Request.Operation.VideoMontage | Same as `Request.Audio` in the video montage template creation API `CreateMediaTemplate`.     |
+| AudioMix           | Request.Operation.VideoMontage | Same as `Request.AudioMix` in the video montage template creation API `CreateMediaTemplate`.     |
 
 `Output` has the following sub-nodes:
 
@@ -93,15 +95,13 @@ The nodes are described as follows:
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Result file name                                             | String | Yes   |
-
-
+| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -139,7 +139,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Response           | None | Response container | Container |
+| Response | None | Response container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -156,13 +156,13 @@ The nodes are described as follows:
 | Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Task ID                               | String    |
 | Tag| Response.JobsDetail | Task type: VideoMontage | String |
-| State | Response.JobsDetail | Task status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` |  String |
+| State | Response.JobsDetail | Task status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
 | CreationTime | Response.JobsDetail | Task creation time |  String |
 | StartTime | Response.JobsDetail | Task start time |  String |
 | EndTime | Response.JobsDetail | Task end time |  String |
-| QueueId            | Response.JobsDetail | ID of the queue where the task is in                       | String    |
+| QueueId            | Response.JobsDetail | Queue ID of the task                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the task                   | Container |
-| Operation          | Response.JobsDetail | Operation rule. Up to 6 operation rules are supported.                           | Container |
+| Operation          | Response.JobsDetail | Operation rule                           | Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -173,7 +173,8 @@ Same as the `Request.Input` node in the request.
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | Task template ID |  String |
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
-| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. Not returned when there is no output video. | Container |
+| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
+
 
 `Output` has the following sub-nodes:
 Same as the `Request.Operation.Output` node in the request.
@@ -181,13 +182,15 @@ Same as the `Request.Operation.Output` node in the request.
 `MediaInfo` has the following sub-nodes:
 Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
+
+
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Use Cases
 
-#### Example 1: using the video montage template ID
+#### Use case 1. Using the video montage template ID
 
 #### Request
 
@@ -258,7 +261,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Example 2: using the video montage processing parameter
+#### Use case 2. Using the video montage processing parameter
 
 #### Request
 
@@ -294,6 +297,11 @@ Content-Type: application/xml
         <Bitrate>128</Bitrate>
         <Channels>4</Channels>
       </Audio>
+      <AudioMix>
+        <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+        <MixMode>Once</MixMode>
+        <Replace>true</Replace>
+      </AudioMix>
       <Duration></Duration>
     </VideoMontage>
     <Output>
@@ -347,6 +355,11 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <Bitrate>128</Bitrate>
         <Channels>4</Channels>
       </Audio>
+      <AudioMix>
+        <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+        <MixMode>Once</MixMode>
+        <Replace>true</Replace>
+      </AudioMix>
       <Duration></Duration>
       <Output>
         <Region>ap-beijing</Region>
