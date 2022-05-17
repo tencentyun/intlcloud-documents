@@ -10,10 +10,8 @@ VODは、Androidプラットフォームでビデオをアップロードする�
 1. ソースコードディレクトリ`Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`をプロジェクトディレクトリにコピーして、package名を手動で変更する必要があります。
 2. `Demo/app/build.gradle`を参照して、プロジェクトに依存関係を追加します。
     ```
-    implementation ('com.qcloud.cos:cos-android:5.8.3') {
-        exclude group: 'com.qcloud.cos', module: 'beacon-android-release'
-    }
-    implementation 'com.qcloud.cos:quic:1.5.37'
+    implementation 'com.qcloud.cos:cos-android-nobeacon:5.8.5'
+    implementation 'com.qcloud.cos:quic:1.5.38'
     ```
 >?[手動統合](https://intl.cloud.tencent.com/document/product/436/12159) を参照して、対応するバージョンの依存ライブラリを統合することもできます。
 3. ビデオアップロードを使用するには、ネットワークとストレージ関連のアクセス許可が必要です。`AndroidManifest.xml`に次の許可ステートメントを追加することができます。
