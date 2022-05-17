@@ -57,7 +57,7 @@ If the existing VPC or subnet does not meet your requirements, you can create a 
 ## Confirming the Configuration Information
 
 1. Validate the information of the CVM to be purchased and the cost details of each configuration item.
-2. Read and click **Tencent Cloud Terms of Service** and/or **Refund Policy**.
+2. Read and click **Tencent Cloud Terms of Service**.
 4. You can perform the following operations as needed:
  - Select **Save as Launch Template** to save the configuration of this instance as a launch template, based on which you can quickly create instances.
  - Select **Generate API Explorer Reusable Script** to generate the OpenAPI reusable script code for instance creation corresponding to the selected configuration. You can save the code for purchasing CVM instances with the same configuration. For more information, see [Generating API Explorer Reusable Scripts to Create Instances](https://intl.cloud.tencent.com/document/product/213/39811).
