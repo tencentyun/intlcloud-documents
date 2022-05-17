@@ -27,7 +27,7 @@ You can add policies and authorize users or user groups on the user or user grou
 Enter the user/user group page and select the user/user group to which to add a policy.
 - Click **Users** > **User List** on the left sidebar, select the user/user group to which to add a policy, click **Authorize** on the right, select the corresponding CSS policy, and click **Confirm**. ![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
 
-  ![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
+  
 
   ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
@@ -36,7 +36,6 @@ Enter the user/user group page and select the user/user group to which to add a 
 :::
 ::: Method 2. Associate policy with user/user group
 Click **Policies** on the left sidebar, select the policy to be added, click **Associate Users/Groups** in the **Operation** column, select the user/user group to be authorized, and click **Confirm**.
-![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
 ![](https://main.qcloudimg.com/raw/5b5e0dc032934846e39e7aee740ae34b.png)
 
 :::

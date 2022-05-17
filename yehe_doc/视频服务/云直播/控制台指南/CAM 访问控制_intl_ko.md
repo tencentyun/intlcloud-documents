@@ -27,7 +27,7 @@ CAM을 사용할 경우 정책을 하나의 사용자 또는 하나의 사용자
 사용자/사용자 그룹 페이지로 이동하여 정책을 추가할 추가 사용자/사용자 그룹을 선택합니다.
 - 왼쪽의 **사용자**>**사용자 리스트**를 클릭하고 정책을 추가할 사용자/사용자 그룹을 선택합니다. 오른쪽의 **권한 부여**를 클릭하고 해당 라이브 방송 정책을 선택한 후 **확인**을 클릭하면 추가됩니다. ![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
 
-  ![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
+  
 
   ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
@@ -36,7 +36,6 @@ CAM을 사용할 경우 정책을 하나의 사용자 또는 하나의 사용자
 :::
 ::: 방법 2: 정책 관련 사용자/사용자 그룹 추가
 왼쪽의 **정책**을 클릭하여 추가할 정책을 선택하고, 작업 리스트에서 **사용자/그룹 연결**을 클릭한 후, 권한을 부여할 사용자를 선택하고 **확인**을 클릭하면 추가됩니다.
-![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
 ![](https://main.qcloudimg.com/raw/5b5e0dc032934846e39e7aee740ae34b.png)
 
 :::
