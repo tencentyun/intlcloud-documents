@@ -468,7 +468,7 @@
 	<th style="width: 30%;">업데이트 콘텐츠</th>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2019 데이터센터 버전의 64비트 중국어 버전</td>
+	<td rowspan="4">Windows Server 2019 데이터센터 버전의 64비트 영어 버전</td>
 	<td rowspan="4">이미지 ID:
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
   </tr>
@@ -490,7 +490,7 @@
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2016 데이터센터 버전의 64비트 중국어 버전</td>
+	<td rowspan="4">Windows Server 2016 데이터센터 버전의 64비트 영어 버전</td>
 	<td rowspan="4">이미지 ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
   </tr>
@@ -524,7 +524,7 @@
 	<td>Windows-CVE-2019-1125 취약점 수정 및 8월 패치 업데이트.</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2012 R2 데이터센터 버전의 64비트 중국어 버전</td>
+	<td rowspan="4">Windows Server 2012 R2 데이터센터 버전의 64비트 영어 버전</td>
 	<td rowspan="4">이미지 ID:
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
   </tr>
