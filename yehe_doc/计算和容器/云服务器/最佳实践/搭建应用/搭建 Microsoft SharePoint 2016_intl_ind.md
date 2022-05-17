@@ -7,7 +7,7 @@ Dokumen ini menggunakan instans CVM dengan spesifikasi perangkat keras berikut s
 - Memori: 8 GB
 
 Dokumen ini menggunakan versi perangkat lunak berikut sebagai contoh:
-- Sistem operasi: Windows Server 2012 R2 Datacenter 64-bit (Bahasa Mandarin)
+- Sistem operasi: Windows Server 2012 R2 Datacenter 64-bit (Inggris)
 - Database: SQL Server 2014
 
 ## Prasyarat
