@@ -277,7 +277,7 @@ _appId = _appIdText.text;
 
 #### 语音消息及语音转文字流程图
 
-<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/39fb54637b7957509d00ed440f7ae0a9.png" width="70%">
 
 
 
