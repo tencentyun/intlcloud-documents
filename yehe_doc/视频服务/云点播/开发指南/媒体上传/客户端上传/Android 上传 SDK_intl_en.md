@@ -257,7 +257,7 @@ Upload image: `TXUGCPublish.publishMedia`
 
 Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 
-| Parameter | Description                                            Type    | Required |
+| Parameter | Description                             |     Type    | Required |
 | ------------ | -------------------------------------------------- | ------- | ---- |
 | signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 | mediaPath    | Path to a local image file.                                   | String  | Yes   |
