@@ -16,7 +16,7 @@ You can view the log details of a CKafka Pro Edition instance in the CKafka cons
 1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. In the instance list, click the **ID/Name** of your instance to enter the instance details page.
 3. On the instance details page, click **Log** at the top and select the log type to view log details.
-	![](https://main.qcloudimg.com/raw/d2b0653fced0563093015983ebcb8151.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/5c7d37834729a75e45f40be43025e867.png)
 <table>
 <thead>
 <tr>
@@ -46,6 +46,5 @@ You can view the log details of a CKafka Pro Edition instance in the CKafka cons
 </tr>
 </tbody></table>
 4. Click **Details** in the **Operation** column to view the specific log.
-	 ![](https://main.qcloudimg.com/raw/e448ba202830dddbfeb97b8982846621.png)
-5. Click **Configure Alarm** in the **Operation** column to configure an alarm policy for a metric to which alarming has been enabled. For detailed directions, see [Configuring Alarm](https://intl.cloud.tencent.com/document/product/597/40976).
+5. Click **Configure Alarm Policy** in the **Operation** column to configure an alarm policy for a metric to which alarming has been enabled. For detailed directions, see [Configuring Alarm](https://intl.cloud.tencent.com/document/product/597/40976).
 
