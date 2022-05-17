@@ -468,7 +468,7 @@
 	<th style="width: 30%;">Updates</th>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2019 DataCenter 64-bit Chinese</td>
+	<td rowspan="4">Windows Server 2019 DataCenter 64-bit English</td>
 	<td rowspan="4">Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-mmy6qctz">img-mmy6qctz</a></td>
   </tr>
@@ -520,7 +520,7 @@
 	<td>Fixes the Windows-CVE-2019-1125 vulnerability and updates the system with the August patch.</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2012 R2 DataCenter 64-bit Chinese</td>
+	<td rowspan="4">Windows Server 2012 R2 DataCenter 64-bit English</td>
 	<td rowspan="4">Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
   </tr>
