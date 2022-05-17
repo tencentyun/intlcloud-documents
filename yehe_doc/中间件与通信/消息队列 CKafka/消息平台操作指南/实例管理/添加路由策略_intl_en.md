@@ -31,7 +31,9 @@ This document describes how to configure a routing rule in the CKafka console to
    If you select VPC access, you can specify the IP. In this way, when changing the access method, you can specify the IP to keep the IP unchanged.
    </dx-alert>
 5. Click **Submit** to add the VPC network.
->?The VPC access address provided in the console (such as `172.16.0.12:9092`) represents the communication address used to obtain the backend service. There may be multiple ports in a real access address. You should open all ports after 9092 to the internet on your server, so that the service can be accessed normally.
+<dx-alert infotype="explain" title="">
+The VPC access address provided in the console (such as `172.16.0.12:9092`) represents the communication address used to obtain the backend service. There may be multiple ports in a real access address. You should open all ports after 9092 to the internet on your server, so that the service can be accessed normally.
+</dx-alert>
 
 ::: 
 
