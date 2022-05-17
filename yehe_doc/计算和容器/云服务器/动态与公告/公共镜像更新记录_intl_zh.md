@@ -468,7 +468,7 @@
 	<th style="width: 30%;">更新内容</th>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2019 数据中心版 64位中文版</td>
+	<td rowspan="4">Windows Server 2019 数据中心版 64位英文版</td>
 	<td rowspan="4">镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
   </tr>
@@ -489,7 +489,7 @@
 	<td>更新最新系统补丁。</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2016 数据中心版 64位中文版</td>
+	<td rowspan="4">Windows Server 2016 数据中心版 64位英文版</td>
 	<td rowspan="4">镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
   </tr>
@@ -523,7 +523,7 @@
 	<td>修复 Windows-CVE-2019-1125 漏洞以及8月补丁更新。</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2012 R2 数据中心版 64位中文版</td>
+	<td rowspan="4">Windows Server 2012 R2 数据中心版 64位英文版</td>
 	<td rowspan="4">镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
   </tr>
