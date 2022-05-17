@@ -16,7 +16,7 @@ CKafka 专业版实例支持在控制台上查看日志详情，包含消费分�
 1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka) 。
 2. 在实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
 3. 在实例详情页，单击页面顶部的**日志**，选择好日志类型，可查看日志情况。
-	![](https://main.qcloudimg.com/raw/d2b0653fced0563093015983ebcb8151.png)
+	![](https://qcloudimg.tencent-cloud.cn/raw/5c7d37834729a75e45f40be43025e867.png)
 <table>
 <thead>
 <tr>
@@ -46,6 +46,5 @@ CKafka 专业版实例支持在控制台上查看日志详情，包含消费分�
 </tr>
 </tbody></table>
 4. 单击操作栏的**详情**，可以查看对应的具体日志。
-	 ![](https://main.qcloudimg.com/raw/e448ba202830dddbfeb97b8982846621.png)
 5. 单击操作栏的**配置告警**，可以为已经接入告警的指标配置告警策略。详细说明参见 [配置告警](https://intl.cloud.tencent.com/document/product/597/40976)。
 
