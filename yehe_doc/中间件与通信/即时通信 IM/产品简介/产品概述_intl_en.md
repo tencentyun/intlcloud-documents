@@ -1,5 +1,5 @@
 ## Overview
-Tencent is the earliest and biggest instant messaging developer in China. QQ and WeChat, both developed by Tencent, have become indispensable apps for every Internet user. In conformity with the trend of industrial digital transformation, Tencent now shares its high-concurrency and highly reliable instant messaging capabilities as SDKs and RESTful APIs and launched the Tencent Cloud product Instant Massaging (IM). You can integrate the IM SDKs provided by Tencent Cloud into your apps in a simple way. By calling RESTful APIs on the server side, you can easily have the same powerful instant communication capabilities as those of WeChat and QQ. The following figure shows the interaction between the IM service and your apps.
+Tencent is the earliest and biggest instant messaging developer in China. QQ and WeChat, both developed by Tencent, have become indispensable apps for every Internet user. In conformity with the trend of industrial digital transformation, Tencent now shares its high-concurrency and highly reliable instant messaging capabilities as SDKs and RESTful APIs and launches the Tencent Cloud product Instant Massaging (IM). You can integrate the IM SDKs provided by Tencent Cloud into your apps in a simple way. By calling RESTful APIs on the server side, you can easily have the same powerful instant communication capabilities as those of WeChat and QQ. The following figure shows the interaction between the IM service and your apps.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2e57bf9cbb3a1855efe7abdfd7d8beab.png)
 For developer requirements and scenarios in different phases, the Instant Messaging (IM) team provides a series of solutions, including the Android, iOS, Windows, and web SDK components, as well as capabilities for integrating [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34620) and [Third-Party Callback APIs](https://intl.cloud.tencent.com/document/product/1047/34354) on the server. With these components and capabilities, developers can construct reliable and stable IM products for free and global communication.
 
@@ -14,17 +14,17 @@ When terminals log in, the IM SDK connects to the nearest access nodes. IM acces
 
 - China: South China, North China, East China, Hong Kong, and Taiwan
 - Other regions:
- - Asia: Singapore, Indonesia, UAE, Thailand, Malaysia, Japan, Vietnam, India, South Korea, and Philippines
- - Europe: United Kingdom, Netherlands, France, Germany, Italy, Norway, France, Russia, and Spain
- - South America: Brazil
- - North America: United States, Canada, and Mexico
- - Oceania: Australia
- - Africa: South Africa and Nigeria
+  - Asia: Singapore, Indonesia, UAE, Thailand, Malaysia, Japan, Vietnam, India, South Korea, and Philippines
+  - Europe: United Kingdom, Netherlands, France, Germany, Italy, Norway, France, Russia, and Spain
+  - South America: Brazil
+  - North America: United States, Canada, and Mexico
+  - Oceania: Australia
+  - Africa: South Africa and Nigeria
 
 ### Data storage sites
 In addition to the data storage sites already provided inside the Chinese mainland, IM also provides data storage sites in South Asia (India), Southeast Asia (Singapore), Northeast Asia (Seoul, South Korea) and Europe (Frankfurt, Germany) for Chinese enterprises going global. To deploy data storage sites outside the Chinese mainland, go to the [IM console](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fim%3Ffrom%3D15210).
 ### One-to-one chat
-One-to-one chat supports various message types including text, emojis, locations, images, audio, short video, and custom message. It provides special features such as red packets, chatbots, read receipt, and message recall as well as services such as offline messages and roaming messages. For more information, see [One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/33523).
+One-to-one chat supports various message types including text, emojis, locations, images, audio, short video, and custom message. It provides special features such as red packets, chatbots, read receipt, and message recall as well as services such as offline messages and roaming messages. For more information, see [One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/33523).
 
 ### Group chat
 A group chat involves multiple participants. IM supports the following five group types based on group joining and organization management methods to meet the requirements of different group chat scenarios.
@@ -33,7 +33,7 @@ A group chat involves multiple participants. IM supports the following five grou
 - A **public group (Public)** is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group.
 - A **meeting group (Meeting)** allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
 - An **audio-video group (AVChatRoom)** allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios.
-- A **community group (Community)** allows users to join and exit freely and is ideal for ultra-large community group chat scenarios, such as knowledge sharing and game communication
+- A **community group (Community)** allows users to join and exit freely and is ideal for ultra-large community group chat scenarios, such as knowledge sharing and game communication.
 >?The community group (Community) feature is supported only in Terminal SDK 5.8.1668 enhanced edition or higher and Web SDK enhanced edition or higher. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/37275).
 
 Groups are highly customizable, supporting custom group types, group fields, group member fields, group IDs, and event callbacks. You can fully customize your group based on the needs of your app. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
@@ -42,30 +42,30 @@ Groups are highly customizable, supporting custom group types, group fields, gro
 
 
 ### Profile and relationship chain hosting
-IM provides a holistic solution for profile and relationship chain management, storing user profiles (for example, nicknames, profile photos, and custom profile fields), friend lists, blacklists, and other information. IM's profile and relationship chain hosting service provides a backup service with up to 12 copies and multi-data center remote deployment to improve service quality and disaster recovery performance. For more information, see [Profile Management](https://intl.cloud.tencent.com/document/product/1047/33520) and [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521).
+IM provides a holistic solution for profile and relationship chain management, storing user profiles (for example, nicknames, profile photos, and custom profile fields), friend lists, blocklists, and other information. IM's profile and relationship chain hosting service provides a backup service with up to 12 copies and multi-data center remote deployment to improve service quality and disaster recovery performance. For more information, see [Profile Management](https://intl.cloud.tencent.com/document/product/1047/33520) and [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521).
 
 ### Account authentication
 Data security is ensured with asymmetric encryption ECDSA-SHA256 and hash encryption HMAC-SHA256 (HMAC-SHA256 is recommended). Developers can directly use the app’s own account to quickly integrate IM services, freeing themselves from tedious account mapping work. With simple SDK integration and convenient API calls, it is easy to authenticate user accounts (UserID) and passwords (UserSig). For more information, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
 
 ## Management and Monitoring
-In addition to basic instant messaging features, IM provides a convenient, easy-to-use console, which allows you to create apps, download IM SDKs, query app configurations, perform joint app testing, and integrate instant messaging capabilities. IM console also supports various features such as backend message delivery, group management, and statistics. For more information, see [Console Guide](https://intl.cloud.tencent.com/document/product/1047/34577).
+In addition to basic instant messaging features, IM provides a convenient and easy-to-use console, which allows you to create apps, download IM SDKs, query app configurations, perform joint app testing, and integrate instant messaging capabilities. IM console also supports various features such as backend message delivery, group management, and statistics. For more information, see [Console Guide](https://intl.cloud.tencent.com/document/product/1047/34577).
 
 ## Advanced Features
 ### RESTful APIs
 RESTful APIs are HTTP management APIs that provide the app backend with a management entry at the backend. For the list of RESTful APIs currently supported by IM, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
-In addition to RESTful APIs, IM Console also provides simple features such as data management and one-to-one and one-to-many messaging. Developers can manage, view, and test data in IM Console. In contrast, RESTful APIs are less user-friendly, but they can provide more powerful management capabilities.
+In addition to RESTful APIs, IM Console also provides simple features such as data management and one-to-one and one-to-many messaging. Developers can manage, view, and test data in IM Console. RESTful APIs are less user-friendly, but they can provide more powerful management capabilities.
 
 
 ### Third-party callbacks
 When IM initiates a [third-party callback](https://intl.cloud.tencent.com/document/product/1047/34354), it sends requests to the app backend before or after an event. Then, the app backend synchronizes data accordingly or intervenes in the subsequent processing of the event.
-IM provides a diverse set of callback APIs, which are free of charge. For more information, see the [List of Callback Commands](https://intl.cloud.tencent.com/document/product/1047/34355).
+IM provides a diverse set of callback APIs, which are free of charge. For more information, see the [Callback Command List](https://intl.cloud.tencent.com/document/product/1047/34355).
 
 ## Support for Private Deployment
 Private deployment allows an enterprise to deploy systems directly to its own servers and save data locally. IM provides the private deployment feature to assist enterprises in the deployment, implementation, and OPS of the private version. If needed, please apply for the [IM private service](https://intl.cloud.tencent.com/apply/p/itvi76h023).
 >?To apply for the IM private service, you need to log in with your root account of Tencent Cloud.
 
 ## Security and Compliance
-Compliance is the foundation for the development of Tencent Cloud IM, which meets the compliance requirements of different countries and industries. In addition to ensuring the **security, compliance, availability, confidentiality, and privacy** of the services it provides, IM also provide relevant support for its customers to **meet their and their customers' compliance requirements, reduce repeated investment in audit work, and improve auditing and management efficiency**.
+Compliance is the foundation for the development of Tencent Cloud IM, which meets the compliance requirements of different countries and industries. In addition to ensuring the **security, compliance, availability, confidentiality, and privacy** of the services it provides, IM also provides relevant support for its customers to **meet their and their customers' compliance requirements, reduce repeated investment in audit work, and improve auditing and management efficiency**.
 
-<b>IM has passed SOC 1, SOC 2, and SOC 3 audits, meets the requirements of China's Cybersecurity Classified Protection 2.0 (Level 3), and is certified to ISO 9001, ISO 20000, ISO 27001, ISO 27017, ISO 27018, ISO 27701, ISO 29151, CSA STAR, NIST CSF, BS 10012, and K-ISMS.</b>
+<b>IM passes SOC 1, SOC 2, and SOC 3 audits, meets the requirements of China's Cybersecurity Classified Protection 2.0 (Level 3), and is certified to ISO 9001, ISO 20000, ISO 27001, ISO 27017, ISO 27018, ISO 27701, ISO 29151, CSA STAR, NIST CSF, BS 10012, and K-ISMS.</b>
