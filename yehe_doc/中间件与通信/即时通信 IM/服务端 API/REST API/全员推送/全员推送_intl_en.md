@@ -34,11 +34,12 @@ This API supports push to all users, push by attribute, and push by tag. By defa
 
 ### Sample request
 - **Pushing messages to all users**
-The admin pushes messages to all users.
+The admin pushes messages to all users and retains the messages offline for 120s.
 ```
 {
 	"From_Account": "admin",
     "MsgRandom": 56512,
+    "MsgLifeTime": 120,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -49,11 +50,12 @@ The admin pushes messages to all users.
     ]
 }
 ```
-The admin specifies an account to push messages to all users. (In this example, the sender account is `xiaoming`.)
+The admin specifies an account to push messages to all users and retains the messages offline for 120s. (In this example, the sender account is `xiaoming`.)
 ```
 {
 	"From_Account": "xiaoming",
     "MsgRandom": 3674128,
+    "MsgLifeTime": 120,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -64,11 +66,12 @@ The admin specifies an account to push messages to all users. (In this example, 
     ]
 }
 ```
-The admin specifies an account to push messages to all users and sets the offline push information.
+The admin specifies an account to push messages to all users and sets the offline push information. The messages can be retaed offline for 120 s.
 ```
 {
 	"From_Account": "xiaoming",
     "MsgRandom": 3674128,
+    "MsgLifeTime": 120,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -111,31 +114,14 @@ The admin pushes messages to all users and retains the messages offline for 120s
 }
 ```
 - **Pushing messages by user tag**
-The admin pushes messages to users tagged with "A shares" and "B shares".
+The admin pushes messages to users tagged with "A shares" and "B shares" and retains the messages offline for 120s.
 ```
 {
 	"From_Account": "admin",
 	"MsgRandom": 214,
+    "MsgLifeTime": 120,
 	"Condition": {
 		"TagsAnd": ["A shares","B shares"]
-	},
-	"MsgBody": [
-		{
-			"MsgType": "TIMTextElem",
-			"MsgContent": {
-				"Text": "hi, beauty"
-			}
-		}
-	]
-}
-```
-The admin pushes messages to users tagged with "A shares" or "B shares".
-```
-{
-	"From_Account": "admin",
-	"MsgRandom": 103698523,
-	"Condition": {
-		"TagsOr": ["A shares","B shares"]
 	},
 	"MsgBody": [
 		{
@@ -167,35 +153,15 @@ The admin pushes messages to users tagged with "A shares" and "B shares" and ret
 }
 ```
 - **Pushing messages by user attribute**
-The admin pushes messages to Shenzhen Platinum Premier users.
+The admin pushes messages to Shenzhen Platinum Premier users and retains the messages offline for 120s.
 ```
 {
 	"From_Account": "admin",
     "MsgRandom": 389475,
+    "MsgLifeTime": 120,
     "Condition": {
         "AttrsAnd": {
             "Membership Level": "Platinum Premier members",
-            "city": "Shenzhen"
-        }
-    },
-    "MsgBody": [
-        {
-            "MsgType": "TIMTextElem",
-            "MsgContent": {
-                "Text": "hi, beauty"
-            }
-        }
-    ]
-}
-```
-The admin pushes messages to users in Shenzhen or male users.
-```
-{
-	"From_Account": "admin",
-    "MsgRandom": 9657,
-    "Condition": {
-        "AttrsOr": {
-            "sex": "M",
             "city": "Shenzhen"
         }
     },

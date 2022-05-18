@@ -35,12 +35,12 @@ Before creating a TMP instance, you must complete the following operations:
 <tr>
 <td>Product Specs</td>
 <td>Yes</td>
-<td>The price varies by product specs. For more information, please see <a href = "https://cloud.tencent.com/document/product/1416/55777">Pricing</a>.</td>
+<td>The price varies by product specs. For more information, please see <a href = "https://intl.cloud.tencent.com/document/product/1116/43156">Pricing</a>.</td>
 </tr>
 <tr>
 <td>Data Retention Period</td>
 <td>Yes</td>
-<td>The price varies by data retention period. For more information, please see <a href = "https://cloud.tencent.com/document/product/1416/55777">Pricing</a>.</td>
+<td>The price varies by data retention period. For more information, please see <a href = "https://intl.cloud.tencent.com/document/product/1116/43156">Pricing</a>.</td>
 </tr>
 <tr>
 <td>Instance Name</td>

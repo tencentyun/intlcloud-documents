@@ -39,7 +39,7 @@ In addition to basic services, we also offer value-added services. For details, 
 | Category      | Resolution                                                 |
 | :---------------- | :----------------------------------------------------------- |
 | HD        | Resolution ≤ 921,600 (1280 x 720)                           |
-| FHD） | 921,600 (1280 x 720) < Resolution ≤ 2,073,600 (1920 x 1080)    |
+| FHD | 921,600 (1280 x 720) < Resolution ≤ 2,073,600 (1920 x 1080)    |
 | 2K                | 2,073,600 (1920 x 1080) < Resolution ≤ 3,686,400 (2560 x 1440) |
 | 2K+               | 3,686,400 (2560 x 1440) < Resolution ≤ 8,847,360 (4096 x 2160) |
 

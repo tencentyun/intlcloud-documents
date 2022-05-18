@@ -24,7 +24,7 @@ Finer granularities are supported, so you can use conditional statements to flex
 | Action       | Description                                                         |
 | ---------- | ------------------------------------------------------------ |
 | Create a rule   | Click ![](https://qcloudimg.tencent-cloud.cn/raw/9841d7c20f4a9cc1d61f9f7b1f481599.png) to create a rule.                                                 |
-| Save and release | Save the currently edited rule and release it to the production network for it to take effect.                         |
+| Save and publish | Save the currently edited rule and release it to the production network for it to take effect.                         |
 | Save only     | Save the currently edited rule without releasing it to the production network.                       |
 | Sort       | Multiple IF statements in a single rule can be sorted in a custom way.<br>Multiple rules under a single site can be sorted in a custom way. Click ![](https://qcloudimg.tencent-cloud.cn/raw/9137077558f0404693d07da409b6b831.png) and drag and drop items to adjust the order. |
 | Rule status   | Status icon ![](https://qcloudimg.tencent-cloud.cn/raw/ec67f18d322643c8c111c9658ec5ec77.png)  after each rule: <li>Enabled: It has been released to the production network and taken effect.</li><li>Disabled: It hasn't been released to the production network, and only the rule content is saved.</li> |

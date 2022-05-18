@@ -299,7 +299,7 @@ If `Audio.Codec` is `mp3`, `Container.Format` supports the sample rates as shown
 
 The `AdjDarMethod` parameter is illustrated as follows:
 
-![](https://main.qcloudimg.com/raw/3436731be8c1caa5ffd565b2c44b9643.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e2eb1d7346df8f51756fdab7bdce2ca0.png)
 
 
 `HlsEncrypt` has the following sub-nodes:

@@ -35,12 +35,12 @@
 <tr>
 <td>产品规格</td>
 <td>必选</td>
-<td>不同的产品规格价格有差异，详情请参见 <a href = "https://cloud.tencent.com/document/product/1416/55777">产品定价</a>。 </td>
+<td>不同的产品规格价格有差异，详情请参见 <a href = "https://intl.cloud.tencent.com/document/product/1116/43156">产品定价</a>。 </td>
 </tr>
 <tr>
 <td>数据存储时间</td>
 <td>必选</td>
-<td>不同的存储时长价格有差异，详情请参见 <a href = "https://cloud.tencent.com/document/product/1416/55777">产品定价</a>。</td>
+<td>不同的存储时长价格有差异，详情请参见 <a href = "https://intl.cloud.tencent.com/document/product/1116/43156">产品定价</a>。</td>
 </tr>
 <tr>
 <td>实例名称</td>
