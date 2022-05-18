@@ -4,7 +4,7 @@
 
 To integrate the TPNS push feature, see [TPNS Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/1047/45554). To receive APNs offline message notifications, you need to follow the directions:
 
-1. [Apply for an APNs certificate](#ApplyForCertificate).
+1. [Apply for an APNs certificate](#step-1.3A-apply-for-an-apns-certificate).
 2. [Upload the certificate to the IM console](#UploadCertificate).
 3. The app requests [deviceToken](#DeviceToken) from Apple every time it logs in.
 4. Call [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) to report the token to the IM backend.
