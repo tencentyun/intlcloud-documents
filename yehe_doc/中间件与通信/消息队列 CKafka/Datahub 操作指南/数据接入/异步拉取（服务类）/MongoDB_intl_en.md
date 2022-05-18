@@ -16,7 +16,7 @@ This document takes MongoDB as an example to describe how to create an async dat
    ![](https://qcloudimg.tencent-cloud.cn/raw/54de252cc0d3839df7dedf39d874c91a.png)
 4. Click **Next** and enter the task details.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bc25013acab15fa51237f80ef1353828.png)
- - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and".").
+ - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and ".").
  - Target CKafka Instance: Select a CKafka instance.
  - Target Topic: Select the target CKafka topic for data access.
  - Source Database Type:
