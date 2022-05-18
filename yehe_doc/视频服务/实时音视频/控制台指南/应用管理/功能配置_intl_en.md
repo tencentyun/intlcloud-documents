@@ -27,7 +27,7 @@ After creating an application, you can enable [relayed push](#bypass), [on-cloud
 After [enabling relayed push](#open_bypass), you can choose the relayed push mode that fits your needs.
 ![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
-- **Specified stream for relayed push**: After selecting this mode, if you do not need the On-Cloud MixTranscoding service, call the client-side SDK API [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) to start relayed push; if you need the service, follow the steps in [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618), and relayed push will start automatically after On-Cloud MixTranscoding.
+- **Specified stream for relayed push**: After selecting this mode, if you do not need the On-Cloud MixTranscoding service, call the client-side SDK API [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) to start relayed push; if you need the service, follow the steps in On-Cloud MixTranscoding, and relayed push will start automatically after On-Cloud MixTranscoding.
 - **Global auto-relayed push**: After you select this mode, all upstream audio/video streams of TRTC are automatically pushed to the CSS system.
 
 
