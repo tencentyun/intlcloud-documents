@@ -94,7 +94,7 @@ Company A's website receives 100 million requests per day, and each request prod
 #### Eligibility
 
 TKE audit/event logs written by log topics automatically created by TKE are eligible for this perk. Such log topics are marked with TKE-Audit or TKE-Event. You can view them on the **[Log Topic](https://console.cloud.tencent.com/cls/topic)** page.
-![](https://qcloudimg.tencent-cloud.cn/raw/7223bddfb78150749ab88dc51eac4cd4.png)
+
 
 #### Rules
 
@@ -105,6 +105,3 @@ TKE audit/event logs written by log topics automatically created by TKE are elig
 
 Now through 23:59:59 on June 30, 2022.
 
-#### Samples
-![](https://main.qcloudimg.com/raw/1955438aa1c136c081e72087bdeee7da.png)
-![](https://main.qcloudimg.com/raw/a2051816f647312a2301f7a41d3598ae.png)
