@@ -128,6 +128,7 @@ After the migration source is imported successfully, don't close the migration t
  ii. In the **Create Migration Task** pop-up window, configure the task as instructed in [Migration Task Configuration Description](https://intl.cloud.tencent.com/document/product/213/44338).
 For example, to migrate a Linux source server to the Shanghai region of Tencent Cloud in private network mode and generate the destination CVM image, you can configure the migration task.
 ![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+
 7. Start the migration task
 <dx-alert infotype="explain" title="">
 You can skip this step if your task is scheduled, which will automatically start running at the scheduled execution time.
@@ -137,6 +138,7 @@ After creating a migration task, you can click the <b>Migration Task</b> tab to 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
 You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating**.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
+
 8. Wait for the migration task to end
 After the migration task status becomes **Successful**, the migration is completed successfully.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
