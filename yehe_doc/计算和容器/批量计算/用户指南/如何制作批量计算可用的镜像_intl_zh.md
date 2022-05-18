@@ -11,7 +11,7 @@
 
 已包含 Cloud-init 的常用操作系统镜像 ID 如下：
 * img-31tjrtph（CentOS 7.2 64位）
-* img-er9shcln（Windows Server 2012 R2 标准版 64位中文版）
+* img-er9shcln（Windows Server 2012 R2 标准版 64位英文版）
 * img-pyqx34y1（Ubuntu Server 16.04.1 LTS 64位）
 
 
