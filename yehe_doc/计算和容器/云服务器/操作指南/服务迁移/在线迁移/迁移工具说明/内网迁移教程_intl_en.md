@@ -22,12 +22,12 @@ Compared with the public network mode, migration over the private network has a 
 ### Download the migration tool  
 [Click here](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) to obtain the compressed migration tool package.
 
-### Choosing the migration mode
+### Choose the migration mode
 
 Choose the appropriate migration mode according to the network environments of your source servers and destination CVMs.
 You can choose to transfer over the public and private network. The private network mode applies to three scenarios. Each migration mode or scenario has different network requirements for source servers and destination CVMs. If both source servers and destination CVMs can access the public network, you can use the default mode for migration. If source servers or destination CVMs cannot directly access the public network, you need to establish a connection between them through [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216) before using the private network mode for migration.
 
-### Checking before the migration
+### Check before the migration
 Before migration, you need to check the following configuration based on the actual conditions:
 - To migrate to a CVM instance, you need to check the source server and destination CVM.
 - To migrate to a CVM image, you need to check only the source server.
