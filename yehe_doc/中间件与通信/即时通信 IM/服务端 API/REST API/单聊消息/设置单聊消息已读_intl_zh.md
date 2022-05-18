@@ -1,5 +1,5 @@
 ## 功能说明
-- 设置用户的某个单聊会话的消息全部已读。
+- 设置用户的某个单聊会话的消息已读。
 
 
 ## 接口调用说明
@@ -7,9 +7,6 @@
 ```
 https://xxxxxx/v4/openim/admin_set_msg_read?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
-
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
@@ -23,7 +20,7 @@ https://xxxxxx/v4/openim/admin_set_msg_read?sdkappid=88888888&identifier=admin&u
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -46,7 +43,7 @@ https://xxxxxx/v4/openim/admin_set_msg_read?sdkappid=88888888&identifier=admin&u
 |---------|---------|---------|---------|
 | Report_Account | String |必填 | 进行消息已读的用户 UserId |
 | Peer_Account | String |必填| 进行消息已读的单聊会话的另一方用户 UserId  |
-
+| MsgReadTime | String |选填 | 时间戳（秒），该时间戳之前的消息全部已读。若不填，则取当前时间戳 |
 
 
 ### 应答包体示例
@@ -88,3 +85,4 @@ https://xxxxxx/v4/openim/admin_set_msg_read?sdkappid=88888888&identifier=admin&u
 - 批量发单聊消息（[v4/openim/batchsendmsg](https://intl.cloud.tencent.com/document/product/1047/34920)）
 - 查询单聊消息（[v4/openim/admin_getroammsg](https://intl.cloud.tencent.com/document/product/1047/35478)）
 - 撤回单聊消息（[v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015)）
+
