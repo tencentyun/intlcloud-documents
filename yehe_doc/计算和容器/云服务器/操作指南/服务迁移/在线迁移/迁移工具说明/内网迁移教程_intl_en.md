@@ -94,10 +94,12 @@ cd go2tencentcloud-linux
 ```
 <dx-alert infotype="explain" title="">
  The files in the `go2tencentcloud` directory will not be migrated. Do not place the files to be migrated in this directory.
+	
 </dx-alert>
+
 3. (Optional) Exclude files and directories on the source server that do not need to be migrated. 
 If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt](https://intl.cloud.tencent.com/document/product/213/44340) file.
-4. (Optiona) Set the network proxy.
+4. (Optional) Set the network proxy.
  - If the migration is in [Private network migration mode: scenario 2](https://intl.cloud.tencent.com/document/product/213/44340), skip this step.
  - If the migration is in [private network migration mode: scenario 3](https://intl.cloud.tencent.com/document/product/213/44340), configure the IP address and port of the proxy network.
     - Configure `Client.Net.Proxy.Ip` and `Client.Net.Proxy.Port` in the `client.json` file to the IP address and port of the network proxy.
@@ -110,11 +112,11 @@ chmod +x go2tencentcloud_x64
 ```shellsession
 sudo ./go2tencentcloud_x64
 ```
- ii. Enter the `SecretId` and `SecretKey` of the account API access key obtained in [Prerequisites](#prerequisites) and press **Enter** as shown below:
+ ii. Enter the `SecretId` and `SecretKey` of the account API access key obtained in [Prerequisites](#prerequisites) and press **Enter**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6e38d7e0487da4a2f6fd001e9953466a.png)
 If the information in the following figure is displayed in the window of the migration tool, the migration source has been imported to the console successfully, and you can go to the console to view it:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9261d9c0ce1789c1b7afa1accd6bf884.png"/>
-You can log in to the <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">CVM console</a> and enter the online migration page to view the imported migration source, whose status is **Online** as shown below:
+You can log in to the <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">CVM console</a> and enter the online migration page to view the imported migration source, whose status is **Online**.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
 If "Import source server successfully" isn't displayed, the migration source failed to be imported, and you can view the log (which is the `logs/log` file in the migration tool directory by default) for troubleshooting. Then, run the migration tool to import the migration source again.
 <dx-alert infotype="notice" title="">
@@ -123,18 +125,18 @@ After the migration source is imported successfully, don't close the migration t
 6. Go to the online migration page in the CVM console to create a migration task.
  i. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create Migration Task** on the right of the desired migration source.
  ii. In the **Create Migration Task** pop-up window, configure the task as instructed in [Migration Task Configuration Description](https://intl.cloud.tencent.com/document/product/213/44338).
-For example, to migrate a Linux source server to the Shanghai region of Tencent Cloud in private network mode and generate the destination CVM image, you can configure the migration task as shown below:
+For example, to migrate a Linux source server to the Shanghai region of Tencent Cloud in private network mode and generate the destination CVM image, you can configure the migration task.
 ![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
 7. Start the migration task
 <dx-alert infotype="explain" title="">
 You can skip this step if your task is scheduled, which will automatically start running at the scheduled execution time.
 </dx-alert>
-After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
+After creating a migration task, you can click the <b>Migration Task</b> tab to view the task.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
-You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating** as shown below:
+You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating**.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 8. Wait for the migration task to end
-After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
+After the migration task status becomes **Successful**, the migration is completed successfully.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
 <dx-alert infotype="explain" title="">
 The time required for data transfer depends on the size of the data on the source server, network bandwidth, etc. Please wait for the migration process to end. The migration tool supports checkpoint restart for data transfer.
