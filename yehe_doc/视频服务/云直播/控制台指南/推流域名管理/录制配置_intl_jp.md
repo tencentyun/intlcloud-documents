@@ -20,7 +20,7 @@ CSSプッシュ機能は、デフォルトでは無効になっています。�
 2. 【テンプレート設定】のタブを選択し、【レコーディング設定】のタブ右上角の【編集】をクリックします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a56ed2f940b60babab0e2bbbe4eebaab.png)
 3. レコーディング設定テンプレートを選択し、【OK】をクリックすれば完了です。
-![](https://qcloudimg.tencent-cloud.cn/raw/c94bd3bedcd4fc4be97b48302a55163b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b4e5b04ee6e79636e52ae907556cd5d1.png)
 
 
 [](id:unite)
@@ -28,7 +28,7 @@ CSSプッシュ機能は、デフォルトでは無効になっています。�
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したい**プッシュドメイン名**または【管理】をクリックしてドメイン名詳細画面に入ります。
 2. 【テンプレート設定】のタブを選択し、【レコーディング設定】のタブ右上角の【編集】をクリックします。
 3. 対応するテンプレートのチェックをクリックして外し、【OK】をクリックすれば完了です。
-![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae44efc51b581100735c7faafe2414e8.png)
 
 >? 
 >- レコーディングテンプレートのバインド解除後、ライブストリーミング中のストリームには影響しません。
