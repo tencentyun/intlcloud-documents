@@ -26,7 +26,7 @@
 [릴레이 푸시 스트림 기능 활성화](#open_bypass) 후 실제 작업 상황에 따라 릴레이 푸시 스트림 방식을 선택할 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
-- **지정 스트림 릴레이**: ‘지정 스트림 릴레이’를 선택한 후, 혼합 스트림 트랜스 코딩이 필요 없는 경우, 클라이언트 SDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) 인터페이스를 호출하여 직접 릴레이 푸시 스트림을 실행할 수 있습니다. 혼합 스트림 트랜스 코딩이 필요한 경우에는 [클라우드 혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/34618) 문서 가이드에 따라 진행하면 혼합 스트림 트랜스 코딩 후 자동으로 푸시 스트림을 릴레이 합니다.
+- **지정 스트림 릴레이**: ‘지정 스트림 릴레이’를 선택한 후, 혼합 스트림 트랜스 코딩이 필요 없는 경우, 클라이언트 SDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) 인터페이스를 호출하여 직접 릴레이 푸시 스트림을 실행할 수 있습니다. 혼합 스트림 트랜스 코딩이 필요한 경우에는 클라우드 혼합 스트림 트랜스 코딩 문서 가이드에 따라 진행하면 혼합 스트림 트랜스 코딩 후 자동으로 푸시 스트림을 릴레이 합니다.
 - **전체 자동 릴레이**: '전체 자동 릴레이'를 선택하면 TRTC의 모든 업스트림 멀티미디어 스트림은 자동으로 CSS 시스템에 릴레이 푸시 스트림됩니다.
 
 
