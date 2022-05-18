@@ -15,22 +15,22 @@ Compared with the public network mode, migration over the private network has a 
 
 ## Directions
 
-### Data Backup
+### Backup data
 - Source server: You can use the source server snapshot feature or other methods to back up data.
 - Destination CVM: You can [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) or use other methods to back up data.
 
-### Getting migration tool  
+### Download the migration tool  
 [Click here](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) to obtain the compressed migration tool package.
 
-### Choosing a Migration Mode Based on the Network Environment
+### Choosing the migration mode
 
 Choose the appropriate migration mode according to the network environments of your source servers and destination CVMs.
-Currently, the CVM console supports the online migration in the public and private network modes. The private network mode applies to three scenarios. Each migration mode or scenario has different network requirements for source servers and destination CVMs. If both source servers and destination CVMs can access the public network, you can use the default mode for migration. If source servers or destination CVMs cannot directly access the public network, you need to establish a connection between them through [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216) before using the private network mode for migration.
+You can choose to transfer over the public and private network. The private network mode applies to three scenarios. Each migration mode or scenario has different network requirements for source servers and destination CVMs. If both source servers and destination CVMs can access the public network, you can use the default mode for migration. If source servers or destination CVMs cannot directly access the public network, you need to establish a connection between them through [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216) before using the private network mode for migration.
 
-### Checking Before the Migration
+### Checking before the migration
 Before migration, you need to check the following configuration based on the actual conditions:
-- If the migration destination is a CVM instance, you need to check the source server and destination CVM.
-- If the migration destination is a CVM image, you need to check only the source server.
+- To migrate to a CVM instance, you need to check the source server and destination CVM.
+- To migrate to a CVM image, you need to check only the source server.
 
 <table>
   <tr>
@@ -40,8 +40,8 @@ Before migration, you need to check the following configuration based on the act
 		<li>Check and install Virtio. For more information, see  
 		<a href="https://intl.cloud.tencent.com/document/product/213/9929">Checking Virtio Drivers in Linux</a>.</li>
 		<li>Run  
-		the <code>which rsync</code> command to check whether Rsync is installed, and if not, install it as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32395#installRsync">How do I install Rsync?</a>.</li>
-		<li>Check whether SELinux is enabled, and if yes, disable it as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32395#closeSELinux">How do I disable SELinux?</a>.</li>
+		the <code>which rsync</code> command to check whether Rsync is installed, and if not, install it as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32395#installRsync">How do I install Rsync?</a></li>
+		<li>Check whether SELinux is enabled, and if yes, disable it as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/32395#closeSELinux">How do I disable SELinux?</a></li>
 		<li>After a migration request is made to the Tencent Cloud API, the API will use the current UNIX time to check the generated
 		token. You need to make sure that the current system time is correct.</li>
 	  </ol>
@@ -52,10 +52,10 @@ Before migration, you need to check the following configuration based on the act
 	<td>
 	  <ol style="margin: 0;">
 		<li>
-		Storage space: The cloud disks (including the system disk and data disk) of the destination CVM must offer sufficient storage space for saving data from the source server.</li>
-		<li>Security group: Port 443 and port 80 cannot be restricted in the security group.</li>
+		Storage space: Both the system disk and data disk of the destination CVM have sufficient storage space for saving data from the source server.</li>
+		<li>Security group: Port 443 and port 80 must be open.</li>
 		<li>
-		Bandwidth setting: It is recommended that you maximize bandwidths at the 2 ends to speed up the migration. During the process, the traffic consumed is approximately the amount of data migrated. Adjust the billing mode before the migration if necessary.</li>
+		Bandwidth: It is recommended that you maximize bandwidths at the two ends to speed up the migration. During the process, the traffic consumed is approximately the amount of data migrated. Adjust the billing mode before the migration if necessary.</li>
 		<li>
 		OS consistency: If the OSs of the source server and destination CVM are inconsistent, the created image may be inconsistent with the actual OS. We recommend that the OS of the destination CVM be the same as that of the source server. For example, to migrate a CentOS 7 source server, select a CentOS 7 CVM as the destination.
 		</li>
