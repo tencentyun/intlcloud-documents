@@ -25,7 +25,7 @@ If you are creating a logset and log topic on this page for the first time, plea
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and select **Flow Log** > **Topic** in the left sidebar.
 2. On the page that appears, click **Create a logset** and then click **OK**. The logset “flowlog_logset” is created automatically.
 ![]()
-		
+
 ### Creating a log topic
 1. Click **+ New** in the log topic section.
 ![]()
