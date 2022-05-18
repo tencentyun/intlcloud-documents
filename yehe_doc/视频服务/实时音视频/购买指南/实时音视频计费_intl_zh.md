@@ -1,155 +1,74 @@
-本文介绍 TRTC 如何按月统计使用[语音通话](https://intl.cloud.tencent.com/document/product/647/36068)、[视频通话](https://intl.cloud.tencent.com/document/product/647/36066)、[音视频互动直播](https://intl.cloud.tencent.com/document/product/647/36061)的费用。
+本文介绍 TRTC 如何按月统计使用[语音通话](https://intl.cloud.tencent.com/document/product/647/36066)、[视频通话](https://intl.cloud.tencent.com/document/product/647/36066)、[音视频互动直播](https://intl.cloud.tencent.com/document/product/647/37286)的费用。
 
 如需预估业务费用，请使用[TRTC价格计算器](https://intl.cloud.tencent.com/pricing/trtc/calculator)。
 
 如果你已与我们的销售签约，则实际计费信息以合同为准。
 
->? 2021年10月27日起首次在 TRTC 控制台创建[应用](https://intl.cloud.tencent.com/zh/document/product/647/37714)的账号，开始按照本文档中的“集合分辨率”方式计量计费。
+>? 2021年10月27日起首次在 TRTC 控制台创建[应用](https://intl.cloud.tencent.com/document/product/647/37714)的账号，开始按照本文档中的“订阅视频的总分辨率”方式计量计费。
 
-## 费用组成
 
-每月结束时，TRTC 会统计你 [腾讯云账号](https://console.intl.cloud.tencent.com/trtc)下所有项目当月产生的音频和视频时长用量（单位为分钟）。需注意，视频时长用量按照集合分辨率分为三个档位，分档定价。扣除 TRTC 为每个开发者账号提供的[每月一万分钟免费分钟数](https://intl.cloud.tencent.com/document/product/647/42735)后，TRTC 将剩余的音频时长用量和视频时长用量乘以对应的单价，最后相加得出本月总费用。
 
-基础的计费公式如下：
+## 费用计算 
 
-**月度费用** = **音频时长用量** × **音频单价** + **各档位视频的时长用量** × **相应视频单价**
+每月结束时，TRTC 会统计你 [腾讯云账号](https://console.intl.cloud.tencent.com/trtc)下所有项目当月产生的音频和视频时长用量（单位为分钟）。需注意，视频时长用量按照“订阅视频的总分辨率”分为四个档位，分档定价。扣除 TRTC 为每个开发者账号提供的[每月一万分钟免费分钟数](https://intl.cloud.tencent.com/document/product/647/42735)后，TRTC 将剩余的音频时长用量和视频时长用量乘以对应的单价，最后相加得出本月总费用。
 
-### 时长用量
+### 第一步，了解基础的计费公式：
 
-每个会话的时长用量，是这个会话中**所有用户产生的时长用量之和**。
+**月度费用** = **音频时长用量** × **音频单价** + **各档位视频时长用量** × **对应视频单价**
+
+### 第二步，计算音频和视频时长用量：
+
+其中，每个会话的时长用量，是这个会话中**所有用户产生的时长用量之和**。
 
 -   **视频时长用量**：如果用户成功订阅了视频流，则产生视频用量。注意，如果同时订阅音频流和视频流，只计算视频用量。
--   **音频时长用量**：如果用户没有订阅视频流，则无论其是否订阅了音频流，都会产生音频用量。
+-   **音频时长用量**：如果用户没有订阅视频流，则无论其是否订阅了音频流，都会产生音频用量。也就是说，当用户进入房间后，若其订阅了视频流，则只计算视频用量，但若其未订阅任何视频或者音频流，都会计算其在房的时长，算作音频时长用量。
 
-### 单价
+### 第三步，不同档位对应的单价：
 
-音视频时长用量的单价如下：
+| 用量类型          | 单价（美元/千分钟） | 用户订阅视频的总分辨率                                       |
+| :---------------- | :------------------ | ------------------------------------------------------------ |
+| 音频              | 0.99                | -                                                            |
+| 高清（HD）        | 3.99                | 分辨率 ≤ 921,600（1280x720）                                 |
+| 全高清（Full HD） | 8.99                | 921,600（1280 × 720）＜ 分辨率 ≤ 2,073,600（1920 × 1080）    |
+| 视频2K            | 15.99               | 2,073,600 (1920 × 1080) ＜ 分辨率 ≤ 3,686,400 （2560 × 1440） |
+| 视频4K            | 35.99               | 3,686,400 （2560 × 1440）＜ 分辨率 ≤ 8,847,360 （4096 × 2160） |
 
-| 用量类型          | 单价（美元/千分钟） |
-| :---------------- | :------------------ |
-| 音频              | 0.99                |
-| 标清（SD）        | 1.99                |
-| 高清（HD）        | 3.99                |
-| 全高清（Full HD） | 14.99               |
+例如，用户 A 同时订阅 2 路分辨率为 960 × 720 的视频流，则该用户接收的视频总面积为 960 × 720 + 960 × 720 = 1,382,400，其视频用量按全高清（Full HD）类型的单价计费。
 
-TRTC 根据用户接收到的所有视频的集合分辨率，将视频分为如下三个类型并分别计算各类型视频的费用：
 
-| 视频用量类型      | 用户订阅视频的集合分辨率                                  |
-| :---------------- | :-------------------------------------------------------- |
-| 标清（SD）        | 集合分辨率 ≤ 307,200（640 × 480）                         |
-| 高清（HD）        | 307,200（640 × 480）＜ 集合分辨率 ≤ 921,600（1280 × 720） |
-| 全高清（Full HD） | 921,600（1280 × 720）＜ 集合分辨率                        |
 
-例如，用户 A 同时订阅 2 路分辨率为 960 × 720 的视频流，则该用户订阅的视频集合分辨率为 960 × 720 + 960 × 720 = 1,382,400，其视频用量按全高清（Full HD）类型的单价计费。
+## 计费示例1
 
-## 预付费套餐包
+本节举例说明 TRTC 如何计算费用。
 
-TRTC 为您提供音视频通用套餐包，可按照**1:2:4:15**分别抵扣语音、标清 SD、高清 HD 和全高清 FHD 时长，例如 1 分钟高清 HD 视频时长扣除 4 分钟通用套餐包时长。
+假设有 6 位用户同时加入一个频道，并且进行了 60 分钟的视频互动直播。
 
-通用套餐包定价如下表所示：
+在视频互动直播中，有 3 位主播（主播 A、B 和 C），A 主播的视频分辨率为 960 × 720，B 和 C 主播的视频分辨率为 640 × 480。2 位观众订阅了所有主播的视频流，另1位观众没有订阅视频流，仅订阅音频流。 此外，主播 A 向频道中的所有其他用户共享了自己的屏幕。 发送和接收的屏幕共享流的分辨率均为 1920 × 1080。
 
-<table>
-     <tr>
-         <th style="text-align:center">套餐包类型</th>  
-         <th style="text-align:center">套餐包时长（千分钟）</th> 
-         <th style="text-align:center">刊例价（美元/千分钟）</th> 
-         <th style="text-align:center">套餐内单价（美元/千分钟）</th> 
-         <th style="text-align:center">套餐包价格（美元）</th> 
-          <th style="text-align:center">折扣</th> 
-     </tr>
-     <tr>
-         <td style="text-align:center" rowspan="4">固定套餐包</td>   
-         <td style="text-align:center">25</td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.960</td>
-         <td style="text-align:center">24</td>   
-         <td style="text-align:center">3% off</td>     
-     </tr> 
-     <tr>
-         <td style="text-align:center">250 </td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.908</td>
-         <td style="text-align:center">227</td>   
-         <td style="text-align:center">8% off</td>   
-     </tr> 
-     <tr>
-         <td style="text-align:center">1000 </td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.856</td>
-         <td style="text-align:center">856</td>   
-         <td style="text-align:center">13.5% off</td>   
-     </tr> 
-     <tr>
-         <td style="text-align:center">3000</td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.805</td>
-         <td style="text-align:center">2416</td>   
-         <td style="text-align:center">18.7% off</td>   
-     </tr> 
-     <tr>
-         <td style="text-align:center" rowspan="5">自定义套餐包</td>   
-         <td style="text-align:center">0 ＜ T ＜ 25</td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center" rowspan="5">套餐内单价*套餐包时长 T</td>   
-         <td style="text-align:center"> original </td>    
-     </tr> 
-     <tr>
-         <td style="text-align:center">25 ≤ T ＜ 250</td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.960</td>
-         <td style="text-align:center">3% off</td>    
-     </tr> 
-     <tr>
-         <td style="text-align:center">250 ≤ T ＜ 1000</td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.908</td>
-         <td style="text-align:center">8% off</td>   
-     </tr> 
-     <tr>
-         <td style="text-align:center">1000 ≤ T ＜ 3000</td>
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.856</td>
-         <td style="text-align:center">13.5% off</td>   
-     </tr> 
-     <tr> 
-         <td style="text-align:center">T ≥ 3000</td>   
-         <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.805</td>
-         <td style="text-align:center">18.7% off</td>   
-     </tr> 
-</table>
+### 第一步，计算各用户订阅的视频总分辨率，以及时长用量
 
-> ?
->-   表格中套餐内单价按每千分钟单价向上取整精确到小数点后 3 位，实际计费按每分钟单价精确到小数点后 8 位。详情说明
->-   目前使用 TRTC 预付费服务需要进行白名单审核，请[联系我们](https://intl.cloud.tencent.com/contact-us)进行开通。
->-   如果您的月均分钟数超过 3M 分钟，并希望获得进一步的支持与报价服务，请[联系销售](https://intl.cloud.tencent.com/contact-us)。
+下表展示了如何计算每位用户接收视频流的总分辨率，从而得出各用户视频用量的档位和对应的单价：
 
-## 计费示例
+| 用户              | 订阅的视频流                            | 视频的分辨率                                  | 总分辨率  | 总分辨率档位 | 时长（分钟） |
+| :---------------- | :-------------------------------------- | :-------------------------------------------- | :-------- | :----------- | ------------ |
+| 主播 A + 屏幕共享 | 主播B+主播C的视频流                     | 640 × 480 × 2                                 | 614,400   | 高清 (HD)    | 60           |
+| 主播 B            | 主播A + 主播C + 主播 A 共享的屏幕视频流 | (960 × 720) + (640 × 480) + (1920 x 1080)     | 3,072,000 | 视频2K       | 60           |
+| 主播 C            | 主播A +主播B + 主播 A 共享的屏幕视频流  | (960 × 720) + (640 × 480) + (1920 x 1080)     | 3,072,000 | 视频2K       | 60           |
+| 观众 1            | 3 位主播 + 主播 A 共享的屏幕            | (960 × 720) + (640 × 480 × 2) + (1920 x 1080) | 3,379,200 | 视频2K       | 60           |
+| 观众 2            | 3 位主播 + 主播 A 共享的屏幕            | (960 × 720) + (640 × 480 × 2) + (1920 x 1080) | 3,379,200 | 视频2K       | 60           |
+| 观众 3            | 未订阅视频流，只订阅音频流              | -                                             | -         | 音频         | 60           |
 
-本节说明 TRTC 如何计算视频的集合分辨率、每种服务类型的时长用量以及相关费用。
+示例图片：
 
-假设有 5 位用户同时加入一个频道，并且进行了 60 分钟的视频互动直播。 在视频互动直播中，有 3 位主播（主播 A、B 和 C），A 主播的视频分辨率为 960 × 720，B 和 C 主播的视频分辨率为 640 × 480。2 位观众订阅了所有主播的视频流。 此外，主播 A 向频道中的所有其他用户共享了自己的屏幕。 发送和接收的屏幕共享流的分辨率均为 1920 × 1080。
+![计费说明图例 -2@2x](https://qcloudimg.tencent-cloud.cn/raw/b9284fc7114058229815f4ce13168aa3.png)
 
-### 计算视频的集合分辨率
+### 第二步，查询对应档位单价，根据公式计算最终费用
 
-下表展示了如何计算每位用户订阅视频流的集合分辨率，以确定各用户视频用量的类型和单价：
-
-| 用户              | 订阅的视频流                 | 视频的集合分辨率                              | 总分辨率  | 视频用量类型 |
-| :---------------- | :--------------------------- | :-------------------------------------------- | :-------- | :----------- |
-| 主播 A + 屏幕共享 | 2 位主播                     | 640 × 480 × 2                                 | 614,400   | 高清 (HD)    |
-| 主播 B            | 2 位主播 + 主播 A 共享的屏幕 | (960 × 720) + (640 × 480) + (1920 x 1080)     | 3,072,000 | 全高清 (FHD) |
-| 主播 C            | 2 位主播 + 主播 A 共享的屏幕 | (960 × 720) + (640 × 480) + (1920 x 1080)     | 3,072,000 | 全高清 (FHD) |
-| 观众 1            | 3 位主播 + 主播 A 共享的屏幕 | (960 × 720) + (640 × 480 × 2) + (1920 x 1080) | 3,379,200 | 全高清 (FHD) |
-| 观众 2            | 3 位主播 + 主播 A 共享的屏幕 | (960 × 720) + (640 × 480 × 2) + (1920 x 1080) | 3,379,200 | 全高清 (FHD) |
-
-### 计费
-
-下表展示了如何计算视频互动直播中产生的总费用：
+按**月度费用** = **音频时长用量** × **音频单价** + **各档位视频时长用量** × **对应视频单价**计算上述场景的费用：
 
 <table>
      <tr>
-         <th style="text-align:center">收费服务（视频用量类型）</th>
+         <th style="text-align:center">收费服务（视频面积档位）</th>
          <th style="text-align:center">总时长用量（分钟） = 各用户时长用量总和</th>
          <th style="text-align:center">单价（美元/千分钟）</th>
          <th style="text-align:center">各服务费用（美元）</th>
@@ -157,18 +76,72 @@ TRTC 为您提供音视频通用套餐包，可按照**1:2:4:15**分别抵扣语
      </tr>
      <tr>
          <td style="text-align:center">高清 (HD)</td>
-         <td style="text-align:center">60</td>
+         <td style="text-align:center">60 × 1 = 60</td>
          <td style="text-align:center">3.99</td>
          <td style="text-align:center">(60/1000) × 3.99 = 0.2394</td>
-         <td style="text-align:center" rowspan="2">13.68</td>
+         <td style="text-align:center" rowspan="3">4.14</td>
      </tr>
      <tr>
-         <td style="text-align:center">全高清 (FHD)</td>
+         <td style="text-align:center">视频2K</td>
          <td style="text-align:center">60 × 4 = 240</td>
-         <td style="text-align:center">14.99</td>
-         <td style="text-align:center">(240/1000) × 14.99 = 13.44</td>
+         <td style="text-align:center">15.99</td>
+         <td style="text-align:center">(240/1000) × 15.99 = 3.8376</td>
+     </tr>
+ 		 <tr>
+         <td style="text-align:center">音频</td>
+         <td style="text-align:center">60 × 1 = 60</td>
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">(60/1000) × 0.99 = 0.0594</td>
      </tr>
 </table>
+
+
+## 计费示例2
+
+本节举例说明 TRTC 如何计算费用。
+假设有 6 位用户同时加入一个频道，并且进行了 60 分钟的视频互动直播。
+在视频互动直播中，有 4 位主播（主播 A、B 、 C、D），A 、B、C主播直播设置的视频分辨率为 480 × 480，D主播仅推送音频流。1 位观众订阅了所有主播的视频流，另1位观众没有订阅视频流，仅订阅音频流。
+
+### 第一步，计算各用户订阅的视频总分辨率，以及时长用量
+
+下表展示了如何计算每位用户接收视频流的总分辨率，从而得出各用户视频用量的档位和对应的单价：
+
+| 用户   | 订阅的视频流                                  | 视频的分辨率  | 分辨率之和 | 视频总分辨率档位 | 时长（分钟） |
+| ------ | --------------------------------------------- | ------------- | ---------- | ---------------- | ------------ |
+| 主播 A | 主播B + 主播C的视频流 + 主播D的音频流         | 480× 480 × 2  | 460,800    | 高清 (HD)        | 60           |
+| 主播 B | 主播A + 主播C的视频流 + 主播D的音频流         | 480× 480 × 2  | 460,800    | 高清 (HD)        | 60           |
+| 主播 C | 主播A + 主播B的视频流 + 主播D的音频流         | 480× 480 × 2  | 460,800    | 高清 (HD)        | 60           |
+| 主播 D | 主播A + 主播B + 主播C的视频流                 | 480 × 480 × 3 | 691,200    | 高清 (HD)        | 60           |
+| 观众 1 | 主播A + 主播B + 主播C的视频流 + 主播D的音频流 | 480 × 480 × 3 | 691,200    | 高清 (HD)        | 60           |
+| 观众 2 | 未订阅视频流，只订阅音频流                    | -             | -          | 音频             | 60           |
+
+### 第二步，查询对应档位单价，根据公式计算最终费用
+
+按**月度费用** = **音频时长用量** × **音频单价** + **各档位视频时长用量** × **对应视频单价**计算上述场景的费用：
+
+<table>
+     <tr>
+         <th style="text-align:center">收费服务（视频面积档位）</th>
+         <th style="text-align:center">总时长用量（分钟） = 各用户时长用量总和</th>
+         <th style="text-align:center">单价（美元/千分钟）</th>
+         <th style="text-align:center">各服务费用（美元）</th>
+         <th style="text-align:center">总费用（美元） （四舍五入至小数点后两位）</th>
+     </tr>
+     <tr>
+         <td style="text-align:center">高清 (HD)</td>
+         <td style="text-align:center">60 × 5 = 300</td>
+         <td style="text-align:center">3.99</td>
+         <td style="text-align:center">(300/1000) × 3.99 = 1.197</td>
+         <td style="text-align:center" rowspan="3">1.26</td>
+     </tr>
+ 		 <tr>
+         <td style="text-align:center">音频</td>
+         <td style="text-align:center">60 × 1 = 60</td>
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">(60/1000) × 0.99 = 0.0594</td>
+     </tr>
+</table>
+
 
 ## 注意事项
 
@@ -202,4 +175,4 @@ TRTC 以秒为时长统计精度，以当月累计秒数转换成分钟数后进
 
 ### 其他产品或服务计费
 
-在你的场景中，如果除视频通话、互动直播外还涉及其他 TRTC 产品或服务，如[云端混流转码](https://intl.cloud.tencent.com/document/product/647/38929)等，则需要额外收费。详见各 TRTC 产品或服务的计费说明。
+在你的场景中，如果除音视频通话、互动直播外还涉及其他 TRTC 产品或服务，如[云端录制](https://intl.cloud.tencent.com/document/product/647/45176)等，则需要额外收费。详见各 TRTC 产品或服务的计费说明。
