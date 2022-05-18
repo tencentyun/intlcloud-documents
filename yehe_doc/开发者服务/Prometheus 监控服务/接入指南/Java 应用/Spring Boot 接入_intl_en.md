@@ -14,10 +14,10 @@ This document uses deploying a Spring Boot application in TKE as an example to d
 
 > !Spring Boot provides the Actuator component to monitor applications, which reduces the development costs. Therefore, Actuator is directly used in this document to track Spring Boot metrics. You should use Spring Boot v2.0 or above in the following steps, as lower versions may have different configurations.
 >**If you use Spring Boot v1.5 for integration, the integration process will differ from that for v2.0, and you should note the following:**
-1. The address for accessing `prometheus metrics` is different from that for v2.0. On v1.5, the default address is `/prometheus`, i.e., `http://localhost:8080/prometheus`.
-2. If error 401 is reported, it indicates no permissions (Whitelabel Error Page). On v1.5, security control is enabled for the `management` API by default, so you need to set `management.security.enabled=false`.
-3. If `bootstrap.yml` is used to configure parameters in the project, modifying `management` in it will not work, which should be modified in `application.yml` due to the Spring Boot start and load sequence.
-4. You cannot add `metric common tag` through YML; instead, you can add it only by adding a `bean` to the code. For more information, please see [Spring Boot 1.5](https://micrometer.io/docs/ref/spring/1.5).
+>1. The address for accessing `prometheus metrics` is different from that for v2.0. On v1.5, the default address is `/prometheus`, i.e., `http://localhost:8080/prometheus`.
+>2. If error 401 is reported, it indicates no permissions (Whitelabel Error Page). On v1.5, security control is enabled for the `management` API by default, so you need to set `management.security.enabled=false`.
+>3. If `bootstrap.yml` is used to configure parameters in the project, modifying `management` in it will not work, which should be modified in `application.yml` due to the Spring Boot start and load sequence.
+>4. You cannot add `metric common tag` through YML; instead, you can add it only by adding a `bean` to the code.
 
 ### Modifying application dependencies and configuration
 
