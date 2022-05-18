@@ -662,7 +662,7 @@
 <td>Related APIs of the TKE cluster scaling group have been updated to API 3.0</td>
     <td>TKE APIs have been updated to 3.0 and support all-region access. <b>The new API documentation is more standardized and comprehensive, with unified parameter styles and common error codes. The SDK/CLI version is consistent with the API documentation</b>, providing a simple and convenient user experience.</td>
 <td>2019-09-12</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/33852">CreateClusterAsGroup</a></td>
+<td>-</a></td>
 <tr>
 <td>TKE Kubernetes 1.14 is fully launched and has passed conformance verification</td>
     <td>TKE <b>Kubernetes 1.14 is fully launched</b> and has passed conformance verification to ensure that the latest Kubernetes version is available.</td>
