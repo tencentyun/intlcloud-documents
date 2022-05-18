@@ -44,7 +44,7 @@ For example, if a user subscribes to two 960 × 720 video streams, the aggregate
 
 ## Prepaid Package
 
-TRTC offers [general packages](https://intl.cloud.tencent.com/document/product/647/42736), from which audio, SD video, HD video, and FHD video durations are deducted at ratios of **1:1, 2:1, 4:1, and 15:1** respectively. For example, if you use one minute of HD video duration, four minutes will be deducted from the general package.
+TRTC offers general packages, from which audio, SD video, HD video, and FHD video durations are deducted at ratios of **1:1, 2:1, 4:1, and 15:1** respectively. For example, if you use one minute of HD video duration, four minutes will be deducted from the general package.
 
 Below are the prices of general packages:
 
