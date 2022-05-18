@@ -22,7 +22,7 @@ This document takes COS data as an example to describe how to create an async da
 4. Click **Next** and enter the task details.
    ![](https://qcloudimg.tencent-cloud.cn/raw/f66dd956b5693de59ea19e853bb3ceb6.png)
    
-   - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and".").
+   - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and ".").
    - Target CKafka Instance: Select a CKafka instance.
    - Target Topic: Select the target CKafka topic for data delivery.
    - Source Bucket: Select the source data bucket.
