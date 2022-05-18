@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to install MySQL 8.0.19 on a CVM instance with the Windows Server 2012 R2 DataCenter 64-bit Chinese installed.
+This document describes how to install MySQL 8.0.19 on a CVM instance with the Windows Server 2012 R2 DataCenter 64-bit English installed.
 SQL Server is more popular on Windows. However, it is commercial and requires you to obtain your own license. As an alternative, you can purchase a [TencentDB for SQL Server instance](https://intl.cloud.tencent.com/zh/products/sqlserver).
 
 ## Directions
