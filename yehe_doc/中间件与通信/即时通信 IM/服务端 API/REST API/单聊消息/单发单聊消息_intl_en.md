@@ -47,7 +47,6 @@ Here, we use sending a text message as an example. To send messages of other typ
     "MsgLifeTime":60, // Retain the message for 60 seconds.
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -71,7 +70,6 @@ Here, we use sending a text message as an example. To send messages of other typ
     "MsgLifeTime":60, // Retain the message for 60 seconds.
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "ForbidCallbackControl":[
         "ForbidBeforeSendMsgCallback",
         "ForbidAfterSendMsgCallback"], // Callback forbidding control option
@@ -98,7 +96,6 @@ Here, we use sending a text message as an example. To send messages of other typ
     "MsgLifeTime":3600, // Retain the message for one hour.
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -136,7 +133,6 @@ Here, we use sending a text message as an example. To send messages of other typ
     "To_Account": "lumotuwe2",
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -159,7 +155,6 @@ Here, we use sending a text message as an example. To send messages of other typ
 | MsgLifeTime | Integer | No | Offline retention period (seconds) of the message; max. period: 7 days (604800 seconds). <li>If this field is set to `0`, the message will only be sent to the recipient online and not retained offline. </li><li>If this field is set to a period longer than 7 days (604800 seconds), the message will still be retained for only 7 days. </li><li>If this field is not set, the message will be retained for 7 days by default.</li> |
 | MsgSeq | Integer | No | Sequence number (32-bit unsigned integer) of the message. The backend will use this field to deduplicate messages and sort messages in the same second. For details, see **Feature Description**. If this field is left empty, the backend will enter a random number. |
 | MsgRandom | Integer | Yes | Random number (32-bit unsigned integer) of the message. It is used by the backend for message deduplication within a second. Make sure a random number is entered. |
-| MsgTimeStamp | Integer | No | Message timestamp in UNIX format (unit: second) |
 | ForbidCallbackControl | Array | No | Message callback forbidding field, which is valid only for this message. `ForbidBeforeSendMsgCallback` forbids the callback before sending the message. `ForbidAfterSendMsgCallback` forbids the callback after sending the message. |
 | SendMsgControl | Array | No | Message sending control option. It is a string array and is valid only for the current message. `NoUnread` means not to include this message in the unread count, and `NoLastMsg` means not to refresh the conversation list. `WithMuteNotifications` means to enable the Mute Notifications option for the message recipient (the option is disabled by default). Example: "SendMsgControl": ["NoUnread","NoLastMsg","WithMuteNotifications"] |
 | MsgBody | Array | Yes | Message body. For details on formats, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). (Note: A message can contain multiple message elements, in which case `MsgBody` is an array.) |
