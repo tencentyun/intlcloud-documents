@@ -9,6 +9,7 @@ If you already have a Tencent Cloud account, you can ignore this step.
 ## Step 2. Apply for service activation
 
 <div style="background-color:#00A4FF; width: 350px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/ecm" target="_blank"  style="color: white; font-size:16px;">Click here to log in to the ECM console</a></div>
+
 On the **Activate Service** page in the ECM console, click **Submit Application** to enter the application page, enter the user information, submit the application, and wait for approval.
 After your application is approved, you can create and use ECM resources.
 
