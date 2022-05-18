@@ -122,6 +122,7 @@ If "Import source server successfully" isn't displayed, the migration source fai
 <dx-alert infotype="notice" title="">
 After the migration source is imported successfully, don't close the migration tool in the instance until the migration task is completed; otherwise, the migration task can't be completed after the migration source becomes offline.
 </dx-alert>
+
 6. Go to the online migration page in the CVM console to create a migration task.
  i. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create Migration Task** on the right of the desired migration source.
  ii. In the **Create Migration Task** pop-up window, configure the task as instructed in [Migration Task Configuration Description](https://intl.cloud.tencent.com/document/product/213/44338).
@@ -131,6 +132,7 @@ For example, to migrate a Linux source server to the Shanghai region of Tencent 
 <dx-alert infotype="explain" title="">
 You can skip this step if your task is scheduled, which will automatically start running at the scheduled execution time.
 </dx-alert>
+
 After creating a migration task, you can click the <b>Migration Task</b> tab to view the task.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
 You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating**.
