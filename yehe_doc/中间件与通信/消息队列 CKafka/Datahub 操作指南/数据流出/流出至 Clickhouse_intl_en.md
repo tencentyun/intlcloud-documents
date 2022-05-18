@@ -47,8 +47,10 @@ Go to the [CLB](https://console.intl.cloud.tencent.com/clb) console, create a CL
 After creating a listener, click **Bind Backend Service** and enter the TCP port of ClickHouse, which is 9000 by default.
 After binding, you can select the created CLB instance and enter the port listened on by the **CLB** instance on the data distribution page in the CKafka console.
 
->? Currently, you can create a data distribution to ClickHouse task only in the same region as the CLB instance.
->
+<dx-alert infotype="explain"> 
+Currently, you can create a data distribution to ClickHouse task only in the same region as the CLB instance.
+</dx-alert>
+
 :::
 </dx-tabs>
 
