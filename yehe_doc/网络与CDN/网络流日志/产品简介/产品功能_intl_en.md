@@ -95,13 +95,13 @@ It refers to the time period during which FL takes around 5 minutes to aggregate
   V1 1251762227 eni-lq6mkcis - - - - - - - 1431280876 1431280934 - SKIPDATA
   ```
 - Flow log record of security group and network ACL rules:
- - The security group is stateful; therefore, it allows response to the accepted traffic.
- - The network ACL is stateless; therefore, the response to the accepted traffic should follow the network ACL rules.
+   - The security group is stateful; therefore, it allows response to the accepted traffic.
+   - The network ACL is stateless; therefore, the response to the accepted traffic should follow the network ACL rules.
 
   For example, if you ping your instance (private IP of the network interface: 172.31.16.139) from your home computer (IP: 203.0.113.12), and the security group's inbound rule allows the ICMP traffic while its outbound rule does not, your instance will respond to the ping command as the security group is stateful.
   If your network ACL allows the inbound but rejects the outbound ICMP traffic, response to the ping command will be discarded and will not be sent to your home computer as the network ACL is stateless. In this case, the flow log has two records:
-  - The ACCEPT record for sending the ping command allowed by both network ACL and security group (so that the traffic can reach your instance).
-  - The REJECT record for the response to the ping command rejected by the network ACL.
+   - The ACCEPT record for sending the ping command allowed by both network ACL and security group (so that the traffic can reach your instance).
+   - The REJECT record for the response to the ping command rejected by the network ACL.
 
   ```
   V1 1251762227 eni-lq6mkcis 203.0.113.12 172.31.16.139 0 0 1 4 336 1432917027 1432917142 ACCEPT OK
