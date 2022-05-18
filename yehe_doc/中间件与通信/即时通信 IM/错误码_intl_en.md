@@ -124,7 +124,7 @@
 | -302 | The number of server connections exceeds the limit. The server refused to provide services. |
 | -10001 | Key expired. A key is an internal credential generated based on the UserSig. The validity period of a key is less than or equal to that of the UserSig. Call the `TIMManager.getInstance().login` API again to generate a new key. |
 | -10003 | Ticket expired. A ticket is an internal credential generated based on the UserSig. The validity period of a ticket is less than or equal to that of the UserSig. Call the `TIMManager.getInstance().login` API again to generate a new ticket. |
-| -10004 | Credential failed to pass authentication or was filtered by a security policy when handling downstream packets. Call the `TIMManager.getInstance().login` API again to generate a new credential. |
+| -10004 | Credential failed to pass authentication. Call the `TIMManager.getInstance().login` API again to generate a new credential. |
 | -10005 | The key cannot be empty.                                       |
 | -10006 | The account in `Key` does not match the account in the request packet header.                     |
 | -10007 | Verification code delivery timed out. |
@@ -176,7 +176,7 @@
 | 60017 | The request is disabled. |
 | 60018 | Too many requests. Try again later. |
 | 60019 | Too many requests. Try again later. |
-| 60020 | Your Pro Edition standard billing plan has expired and been disabled. To repurchase the standard billing plan, log in to [Instant Messaging Purchase Page](https://buy.cloud.tencent.com/avc). The new standard billing plan will take effect 5 minutes later. |
+| 60020 | Your Pro Edition standard billing plan has expired and been disabled. To repurchase the standard billing plan, log in to [Instant Messaging Purchase Page](https://intl.cloud.tencent.com/document/product/1047/36021). The new standard billing plan will take effect 5 minutes later. |
 | 60021  | The source IP of the RESTful API call is invalid. |
 | 80002 | The outgoing message packet exceeds the length limit of 8 KB. Reduce the packet size and try again. |
 | 80003  | The message was not sent because the callback failed or timed out before the one-to-one or group message was sent. Configure the [policy for handling callback timeouts before event occurrence](https://intl.cloud.tencent.com/document/product/1047/34354) in the console. |
@@ -203,10 +203,10 @@
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether the required fields are all set and whether the parameter settings meet the protocol requirements. |
 | 70403 | Request failed. App admin permissions are required to perform this operation. |
-| 70398 | The number of accounts exceeds the limit. To create more than 100 accounts, upgrade your app to the Pro Edition. For specific steps, see [Purchase Guide](https://cloud.tencent.com/document/product/269/32458). |
+| 70398 | The number of accounts exceeds the limit. To create more than 100 accounts, upgrade your app to the Pro Edition. For specific steps, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/36021). |
 | 70500 | Internal server error. Try again later. |
 | 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is of the Pro Edition and therefore cannot be deleted. |
-| 72000  | Your app is now using the Trial Edition, and the free daily active users (DAU) quota was exceeded. To lift the restriction, upgrade your app to the Pro Edition or Flagship Edition. For detailed directions, see [Purchase Guide](https://cloud.tencent.com/document/product/269/32458).      |
+| 72000  | Your app is now using the Trial Edition, and the free daily active users (DAU) quota was exceeded. To lift the restriction, upgrade your app to the Pro Edition or Flagship Edition. For detailed directions, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/36021).      |
 
 ### Profile error codes
 
@@ -452,7 +452,6 @@
 | 6224 | The UGC extension package is missing. |
 | 6226 | Auto login failed because the local ticket expired. Manual login with the UserSig is needed. |
 | 6300 | No available SSO for short connections. |
-| 80101 | Message content is filtered due to security reasons. |
 | 70101 | Ticket expired. This error is returned during login. |
 | 90101 | The IM SDK has been initialized and does not need to be re-initialized. |
 | 115000 | OpenBDH error code. |

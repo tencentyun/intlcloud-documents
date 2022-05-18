@@ -63,5 +63,5 @@ On the **[Data Access](https://console.intl.cloud.tencent.com/ckafka/datahub-acc
 On the **[Data Access](https://console.intl.cloud.tencent.com/ckafka/datahub-access)** page, click **Delete** in the **Operation** column of the target task and click **OK** in the pop-up window to delete the task.
 
 > ?
-> - Once the task is deleted, data dumping will be stopped and the task record will be deleted, but the previously dumped data and CKafka instance involved will not be affected.
+> - Once the task is deleted, data access will be stopped and the task record will be deleted, but the previously dumped data and CKafka instance involved will not be affected.
 > - A task cannot be recovered once deleted. Proceed with caution.

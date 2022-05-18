@@ -8,7 +8,7 @@ CentOS 6 reached end-of-life (EOL) on November 30, 2020, and is no longer mainta
 
 
 ## Directions
-1. Log in to a Linux instance using Web Shell (See [documentation](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
+1. [Log in to a Linux instance using Web Shell](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
 	- [Log in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
 	- [Log in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 2. Run the following command to check the CentOS version of the current operating system.
