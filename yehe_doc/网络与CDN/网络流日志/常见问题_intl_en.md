@@ -34,5 +34,5 @@ For more information, see [Getting Started](https://intl.cloud.tencent.com/docum
 First, as flow log data is stored in CLS, make sure that you [have granted FL the access to CLS](https://intl.cloud.tencent.com/document/product/682/47040). Secondly, when creating the flow log, if you select a log topic created in the CLS console without the "Flowlog" flag, then you need to go to the **Index Configuration** tab on the log topic details page, and confirm that **Index Status** is **Enabled**. Otherwise, you cannot find the log data in CLS.
 **A log topic without the "Flowlog" flag:**
 ![]()
-**The **Index Status** needs to be "Enabled":**
+**The Index Status needs to be "Enabled":**
 ![]()
