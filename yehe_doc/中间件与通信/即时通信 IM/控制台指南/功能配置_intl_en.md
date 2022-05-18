@@ -29,7 +29,7 @@ Historical messages are stored for seven days by default. **Extending the storag
 3. Click **Confirm**.
 
 
->?The feature of message history for new members is **available only for Flagship Edition users**. If you are not a Flagship Edition user, please upgrade your **client SDK** to **v5.8.0 or higher**.
+>?The feature of message history for new members is **available only for Flagship Edition users**. If you are not a Flagship Edition user, please upgrade your **client SDK** to **v5.9.0 or later** and your **web SDK** to **v2.16.0 or later**.
 
 ### Blocklist check
 You can enable or disable **Show "Sent successfully" After Sending Messages** in the **Blocklist check** area on the **Login and Message** page.
@@ -41,17 +41,31 @@ You can enable or disable **Check Relationship for One-to-One Messages** in the 
 - Enabled: check relationships before a one-to-one chat starts and only allow sending one-to-one messages to friends. When a user sends a one-to-one message to a stranger, the SDK will receive [error code 20009](https://intl.cloud.tencent.com/document/product/1047/34348).
 - Disabled: do not check relationships before a one-to-one chat starts and allow users to send and receive one-to-one messages to and from friends and strangers. This is the default setting.
 
+### Configuring group message read receipts
+1. On the **Login and Message** page, click **Edit** in the upper-right corner of the **Group Message Read Receipts** area.
+2. In the pop-up **Group Message Read Receipts** dialog box, set the group types that support message receipts.
+3. Click **Confirm**.
+>?The group message read receipt feature is **available only to Flagship Edition users**. If you are not a Flagship Edition user, please upgrade your package to the Flagship Edition package. The feature is supported by **native SDK v6.1.2155 or later** and is applicable to **work groups (Work)**, **public groups (Public)**, and **meeting groups (Meeting)** that support up to 200 members per group.
+
 ### Multi-client synchronization settings
 
 You can enable or disable **Sync Conversation Deletion Across Clients** in the **Multi-client Synchronization Settings** area on the **Login and Message** page.
 - Enabled: if multiple clients are online concurrently, deleting a conversation from one client will be synced to other clients (that is, the conversation will also be deleted from other clients).
 - Disabled: if multiple clients are online concurrently, deleting a conversation from one client will not be synced to other clients. The feature of syncing conversation deletion across clients is disabled by default.
->?The feature of syncing conversation deletion across clients is available only for **clients with SDK 5.1.1, Web SDK 2.14.0** and **higher**. To support this feature on lower SDK versions, please **upgrade the SDK**.
+>?The feature of syncing conversation deletion across clients is available only to **native SDK v5.1.1 and web SDK v2.14.0 or later**. If you are using an earlier SDK version, you need to **upgrade your SDK** before you can use the feature.
+
+### Configuration of the number of recent contacts to pull
+In the **Configuration of Recent Contacts to Pull** area on the **Login and Message** page, you can configure the number of recent contacts to be pulled from the cloud. The default number is 100, and you can change the number to up to 500.
+>?
+>- The feature of configuring the number of recent contacts to pull is available only to **Flagship Edition** users. If you are not a Flagship Edition user, you need to upgrade your package to the Flagship Edition package before you can use the feature.
+>- The feature of configuring the number of recent contacts to pull is available only to **native SDK v5.1.1 and web SDK v2.0 or later**. If you are using an earlier SDK version, you need to upgrade your SDK before you can use the feature.
+
 ## Friends and Relationship Chain
 Setting verification method for adding friends and custom friend fields.
 ### Verification method for adding friends
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target IM app card.
 2. On the left sidebar, choose **Feature Configuration** > **Friend and Relationship**, and click **Edit** in the upper-right corner of the **Default Verification for Adding Friends** area.
+![](https://qcloudimg.tencent-cloud.cn/raw/6d5a4de703ec20c4a337c1e504f95de8.png)
 3. Select a verification method as needed and click **Confirm**.
 
 ### Custom friend fields

@@ -1,4 +1,5 @@
 [](id:Q1)
+
 ### 同时集成了即时通信 IM 和 TPNS，存在大量的厂商类冲突，这种问题怎么解决？
 目前即时通信 IM 已使用 [移动推送 TPNS](https://intl.cloud.tencent.com/product/tpns) 提供的厂商 jar 包，您可参见文档 [IM 离线推送（Android）](https://intl.cloud.tencent.com/document/product/1047/39156)替换相关依赖包即可解决该问题。
 
@@ -24,7 +25,7 @@
 ### 收不到离线推送怎么处理？
 
 - APNs
-参考 [离线推送（iOS）](https://intl.cloud.tencent.com/zh/document/product/1047/34347) 说明文档进行以下确认：
+参考 [离线推送（iOS）](https://intl.cloud.tencent.com/document/product/1047/39157) 说明文档进行以下确认：
  - 确认是否正确上传证书到腾讯云控制台。
  - 确认在登录成功后，是否成功上传 token 到腾讯云。
  - 确认在上报 token 时，是否上报了正确的证书 ID。
@@ -47,9 +48,9 @@
 不管是 APNs 推送还是 Android 上的离线推送，在以上步骤无法确认问题时，需要继续确认以下情况：
 1. 确认接收方 ID 是否与消息要推送的用户 ID 一致。
 2. 确认是否设置了离线推送监听器（Android）。
-3. 确认是否设置了免打扰，iOS 参考 [设置自定义推送提示音](https://intl.cloud.tencent.com/zh/document/product/1047/34347)，Android 参考 [设置全局离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE)。
+3. 确认是否设置了免打扰，iOS 参考 [设置自定义推送提示音](https://intl.cloud.tencent.com/document/product/1047/39157#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.AE.9A.E4.B9.89.E6.8E.A8.E9.80.81.E6.8F.90.E7.A4.BA.E9.9F.B3)，Android 参考 [设置全局离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE)。
 4. 确认消息是否是通过 `sendOnlineMessage` 接口发送的在线消息，或者通过 REST API 推送的时候设置了 `MsgLifeTime` 为 `0`。
-5. 确认消息是否设置了不进行离线推送的标识，iOS 参考 [自定义离线消息属性](https://intl.cloud.tencent.com/zh/document/product/1047/34347)，Android 参考 [设置单条消息的离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81)。
+5. 确认消息是否设置了不进行离线推送的标识，iOS 参考 [自定义离线消息属性](https://intl.cloud.tencent.com/document/product/1047/39157#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7)，Android 参考 [设置单条消息的离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81)。
 6. 若还是无法定位，可提供相关信息给技术人员进行排查。
 
 [](id:Q4)
@@ -145,10 +146,24 @@ msg.setPriority(TIMMessagePriority.High);
 单聊消息及非直播群消息具备历史消息存储能力，您可以登录 <a href="https://console.cloud.tencent.com/im">即时通信 IM 控制台</a> 修改相关配置。不同套餐包默认配置如下：<ul style="margin:0;"><li>体验版：7天，不支持延长</li><li>专业版：7天，支持延长</li><li>旗舰版：30天，支持延长</li></ul>延长历史消息存储时长是付费增值服务，具体计费说明请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">增值服务资费</a>
 
 [](id:Q7)
-
 ### 为什么发送者已经被拉入黑名单但消息依旧显示发送成功？
 即时通信 IM 在控制台的 [黑名单检查](https://intl.cloud.tencent.com/document/product/1047/34419) 管理中提供发送消息后展示发送成功功能，当启用该功能时被拉黑用户侧发消息后仍展示发送成功 (实际对方不会收到消息) 。停用本设置项，则被拉黑用户侧发消息后会提示失败，SDK 会收到 [错误码 20007](https://intl.cloud.tencent.com/document/product/1047/34348) 。具体配置请参照文档 [黑名单检查](https://intl.cloud.tencent.com/document/product/1047/34419)。
 
+[](id:Q8)
 ### 如何通过 COS 将图片地址变成可下载的域名格式？
 上传需要用户自己处理。如果使用存储服务私有读，需要 URL 签名确保有下载权限（[预签名下载](https://intl.cloud.tencent.com/document/product/436/14116)）。
 
+[](id:Q9)
+### 即时通信 IM 的消息唯一标识的规则是怎样的？
+即时通信 IM 客户端单聊/群聊消息，Web 端单聊/群聊消息及服务端单聊消息唯一标识分别对应 msg_id，msgID 及 msgKey。
+
+各端不同类型消息唯一标识的规则不同，具体规则如下：
+- 客户端单聊/群聊消息 msg_id 的组成是：tinyid-clientTime-random。
+- Web 端单聊/群聊消息 msgID 的组成是（v2.17.0及以下）：会话 id-msgSeq-random-1（我发送的消息） / 0（非我发送的消息）。
+- Web 端单聊/群聊消息 msgID 的组成是（v2.18.0及以上）：tinyid-clientTime-random。
+- 服务端单聊消息 msgKey 的组成是：clientSeq_random_serverTime。
+- 服务端群聊消息通过群 id + msgSeq 来进行唯一标识。
+
+[](id:Q10)
+### 直播群、社群是否支持 @ 消息？
+直播群（AVChatRoom）不支持发送 @ 消息，社群（Community）支持 @ 单个用户，不支持 @ALL。

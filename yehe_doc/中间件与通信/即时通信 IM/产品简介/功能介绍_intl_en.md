@@ -4,15 +4,16 @@ The following platforms can communicate with each other and provide services acr
 
 | Platform | SDK and Compatibility | Demo | Source Code | UI Component |
 | ------- | --------------| -------- | -------- | -------- |
-| Android | Compatible with JDK 1.6 and Android SDK version 14 and later | Supported | Supported | Supported |
-| iOS | Compatible with iOS 8.0 and later | Supported | Supported | Supported |
-| Mac | Compatible with OS X 10.10 and later | Supported | Supported | - |
+| Android | Compatible with JDK 1.6 and Android SDK version 14 and later | Supported | - | Supported |
+| iOS | Compatible with iOS 8.0 and later | Supported | - | Supported |
+| Mac | Compatible with OS X 10.10 and later | Supported | - | - |
 | Windows | C and C++ are included. Compatible with Windows 7, Windows 8 and 8.1, and Windows 10. Both 32-bit and 64-bit programs can be connected. | - | - | - |
 | Web | Supports Internet Explorer 11+, Chrome 7+, Firefox 3.6+, Opera 12+ and Safari 6+ | Supported | - | - |
-| Mini Program | Supported | Supported | - | - |
-| Unity | Supports 2020.2.7f1c1 or later | Supported | Supported | - |
-| Flutter |Supports Flutter 2.0.12 | Supported | Supported | - |
-|Electron|Supported|Supported|Supported|-|
+| Mini Program   | Supported   | Supported     | - | Supported |
+| Unity | Supports 2020.2.7f1c1 or later | Supported | - | - |
+|Flutter| Flutter 2 & dart 2.12 or later | Supported |-|-|
+|Electron| Supported | Supported |-|-|
+
 
 ### Global access
 
@@ -20,9 +21,9 @@ The following platforms can communicate with each other and provide services acr
 | -------------- | -------------- |
 | Global access overview | IM provides highly reliable and secure network connections with global coverage. With its proprietary multi-level optimal addressing algorithm, IM can perform scheduling across the entire network. When terminals log in from outside the Chinese mainland, IM SDK connects to the nearest access nodes or cache nodes. |
 | China | South China, North China, East China, Hong Kong, Taiwan, etc. |
-| Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE, Indonesia<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain, Netherlands<br>North America: United States, Canada, Mexico<br>South America: Brazil<br><br>Oceania: Australia<br>Africa: South Africa, Nigeria, etc. |
+| Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE, Indonesia<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain, Netherlands<br>North America: United States, Canada, Mexico<br>South America: Brazil<br>Oceania: Australia<br>Africa: South Africa, Nigeria, etc. |
 
-
+>?The Chinese site you are currently using supports only data storage in China (the service is available globally). If you need to deploy data storage sites outside the Chinese mainland, go to the [IM console](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fim%3Ffrom%3D15211).
 ### Account features
 
 | Feature Type | Description |
@@ -31,7 +32,7 @@ The following platforms can communicate with each other and provide services acr
 | Deactivate accounts | Invalidate UserSig |
 | Delete accounts | Delete accounts in batches |
 | User online status | Manage the online and offline statuses after users log in |
-| Query accounts | Check whether accounts are imported |
+| Query accounts | Batch check whether accounts are imported |
 
 ### Multi-client login
 
@@ -56,7 +57,7 @@ The following platforms can communicate with each other and provide services acr
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
 | Short video | The message content includes the URL, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
 | Custom | Message types that are customized by developers, such as red packet and rock-paper-scissor. |
-| System notification | This type of messages include built-in system notification messages and system notification messages customized by developers. |
+| System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 | Group tips | System messages pushed when a member joins or leaves a group, group description is modified, group member profile changes, etc. |
 | Combined messages | Up to 300 messages can be combined. |
 
@@ -128,10 +129,12 @@ The following platforms can communicate with each other and provide services acr
 
 ### Group features
 Based on common use cases, IM has set the following default group types:
-- A work group (Work) allows users to join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
-- A public group (Public) allows the group owner to designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group.
+- A work group for friends (Work) is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
+- A social networking group for strangers (Public) is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send an application, and the application needs to be approved by the group owner or an admin before the user can join the group.
 - A meeting group (Meeting) allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
-- An audio-video group (AVChatRoom) allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios.
+- An audio-video group (AVChatRoom) allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Livestreaming groups can be used with Live Video Broadcasting (LVB) to support on-screen comment chat scenarios.
+- A community group (Community) allows users to join and exit freely, supports up to 100,000 members, and stores message history. To join the group, a user needs to search for the group ID and send an application, and the application does not need to be approved by an admin before the user can join the group.
+>?Community group (Community) is supported only in native SDK 5.8.1668 enhanced edition or higher and web SDK 2.17.0 or later. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/44322).
 
 The following table compares the default features of each group type:
 
@@ -142,34 +145,40 @@ The following table compares the default features of each group type:
 			 <th width="0px" style="text-align:center">Public</td>
        <th width="0px" style="text-align:center">Meeting</td>
 			 <th width="0px" style="text-align:center">AVChatRoom</td>
+			 <th width="0px" style="text-align:center">Community</td>
    </tr>
    <tr>
       <td style="text-align:center">Maximum number of members</td>
-      <td ><li>Trial Edition: 20 per group</li><br><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><br><li>Flagship Edition: 2,000 per group by default; can be increased to 6,000</li></td>
-			      <td><li>Trial Edition: 20 per group</li><br><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><br><li>Flagship Edition: 2,000 by default; can be increased to 6,000 per group</li></td>
-						      <td ><li>Trial Edition: 20 per group</li><br><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><br><li>Flagship Edition: 2,000 per group by default; can be increased to 6,000 per group</li></td>
-									      <td>Unlimited</td>
+      <td ><li>Trial Edition: 20 per group</li><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><li>Flagship Edition: 2,000 per group by default; can be increased to 6,000</li></td>
+			      <td ><li>Trial Edition: 20 per group</li><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><li>Flagship Edition: 2,000 per group by default; can be increased to 6,000</li></td>
+						      <td ><li>Trial Edition: 20 per group</li><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><li>Flagship Edition: 2,000 per group by default; can be increased to 6,000</li></td>
+									      <td>Unlimited</td><td>Trial Edition and Pro Edition: not supported. Flagship Edition: 100,000 per group by default</td>
    </tr>
    <tr>
      <td>Permission to modify a group profile</td>
      <td>Group members</td>
-    <td><li>Group admins</li><br><li>Group owner</li><br><li>App admins</li></td>
-    <td><li>Group owner</li><br><li>App admins</li></td>
-    <td>App admins</td>
+    <td><li>Group admins</li><li>Group owner</li><li>App admins</li></td>
+    <td><li>Group owner</li><li>App admins</li></td>
+    <td>App admins</td><td><li>Group admins</li><li>Group owner</li><li>App admins</li>
+</td>
    </tr>
 	   <tr>
      <td>Member lists</td>
      <td>Show all</td>
     <td>Show all</td>
     <td>Show all</td>
-    <td>Show 300 members</td>
+    <td>Not show</td>
+<td>Show all</td>
    </tr>
 	   <tr>
      <td>Permission to delete a group</td>
      <td>App admins</td>
-    <td><li>Group owner</li><br><li>App admins</li></td>
-    <td><li>Group owner</li><br><li>App admins</li></td>
-    <td><li>Group owner</li><br><li>App admins</li></td>
+    <td><li>Group owner</li><li>App admins</li></td>
+    <td><li>Group owner</li><li>App admins</li></td>
+    <td><li>Group owner</li><li>App admins</li></td>
+<td><li>Group owner </li>
+<li>App admins</li>
+</td>
    </tr>
 	   <tr>
      <td>Request to join a group</td>
@@ -177,6 +186,7 @@ The following table compares the default features of each group type:
     <td>Supported</td>
     <td>Supported</td>
     <td>Supported</td>
+<td>Supported</td>
    </tr>
 	   <tr>
      <td>Membership request approval</td>
@@ -184,6 +194,7 @@ The following table compares the default features of each group type:
     <td>Required</td>
     <td>Not required</td>
     <td>Not required</td>
+<td>Not required</td>
    </tr>
 	   <tr>
      <td>Inviting others to a group</td>
@@ -191,6 +202,7 @@ The following table compares the default features of each group type:
     <td>Not supported</td>
     <td>Not supported</td>
     <td>Not supported</td>
+<td>Confirmation from the invitee is not required.</td>
    </tr>
 	 	   <tr>
      <td>Group owner leaving the group</td>
@@ -198,6 +210,7 @@ The following table compares the default features of each group type:
     <td>Not supported</td>
     <td>Not supported</td>
     <td>Not supported</td>
+<td>Not supported</td>
    </tr>
 	 	   <tr>
      <td>Setting admins</td>
@@ -205,13 +218,15 @@ The following table compares the default features of each group type:
     <td>Supported</td>
     <td>Supported</td>
     <td>Not supported</td>
+<td>Supported</td>
    </tr>
 		 	   <tr>
      <td>Removing members from a group</td>
-    <td><li>Group owner</li><br><li>App admins</li></td>
-    <td><li>Group admins</li><br><li>Group owner</li><br><li>App admins</li></td>
-    <td><li>Group admins</li><br><li>Group owner</li><br><li>App admins</li></td>
+    <td><li>Group owner</li><li>App admins</li></td>
+    <td><li>Group admins</li><li>Group owner</li><li>App admins</li></td>
+    <td><li>Group admins</li><li>Group owner</li><li>App admins</li></td>
     <td>Not supported</td>
+<td><li>Group admins</li><li>Group owner</li><li>App admins</li></td>
    </tr>
 		 	   <tr>
      <td>Viewing message history from before the user joined the group</td>
@@ -219,13 +234,15 @@ The following table compares the default features of each group type:
     <td>Not supported</td>
     <td>Supported</td>
     <td>Not supported</td>
+<td>Supported</td>
    </tr>
 		 	   <tr>
      <td>Member change notifications</td>
      <td>All members</td>
     <td>All members</td>
-    <td>None</td>
+    <td>N/A</td>
     <td>All members</td>
+<td>All members</td>
    </tr>
 		 	   <tr>
      <td>Group activation</td>
@@ -233,6 +250,7 @@ The following table compares the default features of each group type:
     <td>Not required</td>
     <td>Not required</td>
     <td>Not required</td>
+<td>Not required</td>
    </tr>
 	 	   <tr>
      <td>Muting members</td>
@@ -240,6 +258,7 @@ The following table compares the default features of each group type:
     <td>Supported</td>
     <td>Supported</td>
     <td>Supported</td>
+<td>Supported</td>
    </tr>
 		 	   <tr>
      <td>Unread message count</td>
@@ -247,6 +266,7 @@ The following table compares the default features of each group type:
     <td>Supported</td>
     <td>Not supported</td>
     <td>Not supported</td>
+<td>Supported</td>
    </tr>
 		 	   <tr>
      <td>Receiving messages as a guest</td>
@@ -254,6 +274,7 @@ The following table compares the default features of each group type:
     <td>Not supported</td>
     <td>Not supported</td>
     <td>Supported</td>
+<td>Not supported</td>
    </tr>
 		 	   <tr>
      <td>Historical message storage</td>
@@ -261,6 +282,7 @@ The following table compares the default features of each group type:
     <td>Supported</td>
     <td>Supported</td>
     <td>Not supported</td>
+<td>Supported</td>
    </tr>
 		 	   <tr>
      <td>Default message receiving option</td>
@@ -268,6 +290,7 @@ The following table compares the default features of each group type:
     <td>Receive online and offline pushed messages.</td>
     <td>Receive only online pushed messages.</td>
     <td>Receive only online pushed messages.</td>
+<td>Receive online and offline pushed messages.</td>
    </tr>
 		 	   <tr>
      <td>Importing groups</td>
@@ -275,6 +298,7 @@ The following table compares the default features of each group type:
     <td>Supported</td>
     <td>Supported</td>
     <td>Not supported</td>
+    <td>Supported</td>
    </tr>
 </table>
 
@@ -299,10 +323,9 @@ You can log in to Tencent Cloud [IM console](https://console.cloud.tencent.com/i
 
 
 
-
 ### Statistics
 
-The [statistics and analytics](https://console.cloud.tencent.com/im) feature in the IM console allows you to view operational data in various dimensions.
+The [statistics and analytics](https://console.cloud.tencent.com/im) feature in the IM console allows you to view operations data in various dimensions.
 
 | Statistic Type | Description |
 | -------- | ----------------- |
@@ -332,5 +355,6 @@ The [statistics and analytics](https://console.cloud.tencent.com/im) feature in 
 | Audio-video group messages today | Number of audio-video group messages of the current day  |
 
 ### Support for private deployment
-Private deployment allows an enterprise to deploy systems directly to its own servers and keep data locally. IM provides the private deployment feature to assist enterprises in the deployment, implementation, and operation and maintenance of the private version. If needed, please apply for the [IM private service](https://intl.cloud.tencent.com/apply/p/itvi76h023).
+Private deployment allows an enterprise to deploy systems directly to its own servers and save data locally. IM provides the private deployment feature to assist enterprises in the deployment, implementation, and OPS of the private version. If needed, please apply for the [IM private service](https://intl.cloud.tencent.com/apply/p/itvi76h023).
 >?To apply for the IM private service, you need to log in with your root account of Tencent Cloud.
+

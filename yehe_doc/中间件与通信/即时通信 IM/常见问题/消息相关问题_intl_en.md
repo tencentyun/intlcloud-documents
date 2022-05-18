@@ -1,4 +1,5 @@
 [](id:Q1)
+
 ### Large numbers of vendor conflicts occur after the simultaneous integration of IM and TPNS. What should I do?
 Currently, IM uses the vendor JAR package provided by [TPNS](https://intl.cloud.tencent.com/product/tpns). You can solve this problem by referring to the [IM Offline Push (Android)](https://intl.cloud.tencent.com/document/product/1047/39156) documentation and replacing relevant dependency packages.
 
@@ -24,7 +25,7 @@ Whether it’s a C2C message or a group message, if the problem cannot be confir
 ### What should I do if offline push messages fail to be received?
 
 - APNs
-Refer to [Offline Push (iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347) to confirm the following:
+Refer to [Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/1047/39157) to confirm the following:
  - Confirm that the correct certificate has been uploaded to the Tencent Cloud console.
  - Confirm that the token was successfully uploaded to Tencent Cloud after successful login.
  - Confirm that the correct certificate ID was reported when you reported the token.
@@ -47,9 +48,9 @@ Refer to [Offline Push Configuration](https://intl.cloud.tencent.com/document/pr
 When using either APNs push or Android offline push, if the problem cannot be located through the above steps, you need to continue on to confirm the following issues:
 1. Confirm that the recipient ID is consistent with the target user ID of the push message.
 2. Confirm that you have enabled the offline push listener (Android).
-3. Confirm that notifications are enabled. For iOS, see [Offline Push (iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347); for Android, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE).
+3. Confirm that notifications are enabled. For iOS, see [Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/1047/39157#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.AE.9A.E4.B9.89.E6.8E.A8.E9.80.81.E6.8F.90.E7.A4.BA.E9.9F.B3); for Android, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE).
 4. Confirm that the message is an online message sent through the `sendOnlineMessage` API or that `MsgLifeTime` was set to `0` during push through a RESTful API.
-5. Confirm that the offline notification is enabled for the message. For iOS, see (https://intl.cloud.tencent.com/zh/document/product/1047/34347); for Android, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81).
+5. Confirm that the offline notification is enabled for the message. For iOS, see (https://intl.cloud.tencent.com/document/product/1047/39157#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7); for Android, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81).
 6. If you still cannot identify the problem, you can provide the relevant information to tech support personnel for troubleshooting.
 
 [](id:Q4)
@@ -142,13 +143,27 @@ msg.setPriority(TIMMessagePriority.High);
 
 [](id:Q6)
 ### What’s the storage period of an IM message?
-Historical message storage is available for one-to-one chat messages and non–audio-video group messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. The default configuration for different packages is as follows: <ul style="margin:0;"><li>Trial edition: 7 days, with no extension supported</li><li>Pro edition: 7 days, with extension supported</li><li>Flagship edition: 30 days, with extension supported</li></ul>The extension of the historical message storage period is a value-added service. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
+Historical message storage is available for one-to-one chat messages and non-audio-video group messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. The default configuration for different packages is as follows: <ul style="margin:0;"><li>Trial edition: 7 days, with no extension supported</li><li>Pro edition: 7 days, with extension supported</li><li>Flagship edition: 30 days, with extension supported</li></ul>The extension of the historical message storage period is a value added service. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
 
 [](id:Q7)
-
 ### Why does it show that messages are sent successfully even though the senders are blocklisted?
 When you enable **Show "Sent successfully" After Sending Messages** in the [Blocklist Check](https://intl.cloud.tencent.com/document/product/1047/34419) section in the IM console, blocklisted users will be prompted that the messages are sent successfully when they send messages, but the recipients will not receive the messages. When you disable this feature, blocklisted users will be prompted that message sending fails when they send messages and the SDK will receive [error code 20007](https://intl.cloud.tencent.com/document/product/1047/34348). For more information, see the **Blocklist check** section in [Feature Configuration](https://intl.cloud.tencent.com/document/product/1047/34419).
 
-
+[](id:Q8)
 ### How to convert an image address into the downloadable domain name format by using COS?
 You need to upload the image yourself. If the image uses COS private read, you need to get a signed URL to obtain the download permission ([Download via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14116)).
+
+[](id:Q9)
+### What are the rules for unique identification of IM messages?
+IM uses `sg_id`, `msgID`, and `msgKey` as the unique identifiers of one-to-one and group chat messages.
+
+Different types of IM messages and SDKs use different unique identifiers:
+- For client SDKs, one-to-one and group chat messages are identified by `msg_id` in the following format: tinyid-clientTime-random.
+- For web SDKs of v2.17.0 or earlier, one-to-one and group chat messages are identified by `msgID` in the following format: Conversation ID-msgSeq-random-1 (messages sent by me) / 0 (messages sent by others).
+- For web SDKs of v2.18.0 or later, one-to-one and group chat messages are identified by `msgID` in the following format: tinyid-clientTime-random.
+- For server SDKs, one-to-one messages are identified by `msgKey` in the following format: clientSeq_random_serverTime.
+- For server SDKs, group chat messages are identified by "Group ID + msgSeq".
+
+[](id:Q10)
+### Do audio-video groups and community groups support @ messages?
+Audio-video groups do not support sending @ messages. Community groups support @ a single user but do not support @ all users.
