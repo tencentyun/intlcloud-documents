@@ -1,7 +1,6 @@
 IM audio-video groups (AVChatRooms) have the following features:
 - **Support interactive live streaming scenarios with unlimited group members.**
 - Support pushing messages (group system notifications) to all online members.
-- Allow users to receive messages as guests without logging in using the web client or WeChat Mini Program.
 - Allow users to join a group without admin approval.
 
 >? This document uses the SDK for the web client and WeChat Mini Program as an example. The implementation processes of other SDKs are the same with slightly different operations.
@@ -20,7 +19,7 @@ IM audio-video groups (AVChatRooms) have the following features:
 - [Recalling messages](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#revokeMessage) is not supported.
 - The group owner cannot directly quit the group and can only achieve the same result by disbanding the group.
 - Group members cannot be removed.
-
+-Historical message storage is not supported.
 
 ## Related Documentation
 - [Group Management](https://intl.cloud.tencent.com/document/product/1047/33530)
@@ -260,16 +259,9 @@ You can use a custom message to mute a specific group member. The custom message
 
 You can use a custom message to remove a specific group member. The custom message must contain the Members_Account of the group member to be removed. Set the priority of the custom message to High to prevent the message from being discarded by the backend due to the message sending frequency limit of 40 messages per second. After the SDK receives the message, it calls the [kickGroupMember API](https://intl.cloud.tencent.com/document/product/1047/36169) to remove the group member from the group.
 
-<span id ="p4"></span>
 
-### 4. A group member quits an audio-video group on the Android, iOS, or PC client when the API for quitting a group is called on the WeChat Mini Program or web client. However, when the API for quitting a group is called on the Android, iOS, or PC client, the group member does not quit the audio-video group on the WeChat Mini Program or web client. Why is this the case?
 
-The WeChat Mini Program and web client allow users to join audio-video groups as guests. When the API for quitting a group is called on the Android, iOS, or PC client, the WeChat Mini Program or web client will not proactively trigger the quit group operation.
-
-- To ensure synchronized group quitting on all clients, configure the [Callback After a Group Member Drops Out](https://intl.cloud.tencent.com/document/product/1047/34373) and determine the quit platform based on the OptPlatform field. When the quit platform is Android, iOS, or PC, call [Send a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34919) to send a custom message to the group member who quits the group. The frontend screens the conversation and does not display it on the UI. After the WeChat Mini Program or web client receives the message, it calls the [quitGroup API](https://intl.cloud.tencent.com/document/product/1047/33999).
-- To ensure independent group quitting on different clients, configure [Callback After a Group Member Drops Out](https://intl.cloud.tencent.com/document/product/1047/34373) and determine the quit platform based on the OptPlatform field. Call [Send a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34919) to send a custom message to the group member who quits the group. The frontend screens the conversation and does not display it on the UI. After a non-quit platform receives the message, it calls the [joinGroup API](https://intl.cloud.tencent.com/document/product/1047/36169) to join the group. To prevent multiple system notifications for joining and quitting a group, you can submit a ticket to disable system notifications for joining and quitting a group.
-
-### 5. Why are messages lost?
+### 4. Why are messages lost?
 
 Messages can be lost due to the following conditions:
 
@@ -279,11 +271,11 @@ Messages can be lost due to the following conditions:
 
 If the fault persists, submit a ticket to contact us.
 
-### 6. How can I compile statistics on likes and follows?
+### 5. How can I compile statistics on likes and follows?
 
 Customize the like or follow message type. When a user clicks the like or follow icon on the frontend to deliver a custom message, send the like or follow message to the business side by calling the [Callback Before Delivering Group Messages](https://intl.cloud.tencent.com/document/product/1047/34374). The business side counts the number of received like and follow messages and updates the data to the group profile field every 3 to 5 seconds by calling [Modify Basic Group Profiles](https://intl.cloud.tencent.com/document/product/1047/34962). The SDK calls the [getGroupsInfo API](https://intl.cloud.tencent.com/document/product/1047/36169) to count the number of like or follow messages.
 
-### 7. How can I properly set message priorities?
+### 6. How can I properly set message priorities?
 
 To prevent important messages from being discarded, an audio-video group provides three message priorities for all messages. The SDK preferentially obtains high priority messages. We recommend that you set the priorities of custom messages as follows:
 
@@ -291,7 +283,7 @@ To prevent important messages from being discarded, an audio-video group provide
 - Normal: common text messages
 - Low: likes and follows
 
-### 8. Are there any open-source audio-video components that can be directly used to watch videos and chat?
+### 7. Are there any open-source audio-video components that can be directly used to watch videos and chat?
 
 Yes. The code is also open-source. For more information, see [Tencent Cloud TWebLive](https://github.com/tencentyun/TWebLive).
 
