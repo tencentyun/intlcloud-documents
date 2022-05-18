@@ -20,7 +20,7 @@ The recording feature is disabled for CSS push by default. This document describ
 2. 	Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** section.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a56ed2f940b60babab0e2bbbe4eebaab.png)
 3. Select a recording configuration template and click **Confirm**.
-![](https://qcloudimg.tencent-cloud.cn/raw/c94bd3bedcd4fc4be97b48302a55163b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b4e5b04ee6e79636e52ae907556cd5d1.png)
 
 
 [](id:unite)
@@ -28,7 +28,7 @@ The recording feature is disabled for CSS push by default. This document describ
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page.
 2. Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** section.
 3. Clear the target template and click **Confirm**.
-![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae44efc51b581100735c7faafe2414e8.png)
 
 >? 
 >- Unbinding the recording template will not affect ongoing live streams.
