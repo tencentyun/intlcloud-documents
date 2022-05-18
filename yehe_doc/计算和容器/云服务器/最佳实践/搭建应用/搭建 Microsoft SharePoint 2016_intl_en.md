@@ -7,7 +7,7 @@ This document uses the CVM instance with the following hardware specification as
 - Memory: 8 GB
 
 This document uses the following software versions as an example:
-- Operating system: Windows Server 2012 R2 Datacenter 64-bit (Chinese)
+- Operating system: Windows Server 2012 R2 Datacenter 64-bit (English)
 - Database: SQL Server 2014
 
 ## Prerequisites

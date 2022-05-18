@@ -75,7 +75,7 @@ Screen sharing data is pushed as a separate video stream. If a user subscribed t
 [](id:que10)
 
 ### How is CDN relayed live streaming billed?
-TRTC leverages the capabilities of [CSS](https://intl.cloud.tencent.com/document/product/267) to relay streams to CDNs and enable CDN relayed live streaming. **CSS** charges you according to [CDN Relayed Live Streaming > Billing](https://intl.cloud.tencent.com/document/product/647/35242).
+TRTC leverages the capabilities of [CSS](https://intl.cloud.tencent.com/document/product/267) to relay streams to CDNs and enable CDN relayed live streaming. **CSS** charges you according to CDN Relayed Live Streaming > Billing.
 
 [](id:que12)
 

@@ -64,7 +64,7 @@ b. 不同小队情况下，双方开启“所有人”的语音状态情况下�
 
 在进房成功后，调用 UpdateAudioRecvRange（至少一次），及每帧调用 UpdateSelfPosition。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e238a74c747ea08c123c9c1c762b23c4.png"  width="60%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/4f531ae31457f031b0034d8dc39eda3c.png"  width="60%"/></img>
 
 >!
 >- 请务必参照此流程调用接口。
@@ -199,7 +199,7 @@ public abstract int UpdateSelfPosition(int position[3], float axisForward[3], fl
 ## 使用流程
 使用范围语音的同时，如果需要同时使用 3D 音效功能，需要以下几个步骤，在进房后使用范围语音步骤1、2、3完成后，初始化 3D 引擎以及打开3D音效。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/acd2c698c057cc7f62ce04e42305c665.png"  width="60%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/39fb54637b7957509d00ed440f7ae0a9.png"  width="60%"/></img>
 
 >?流程图中绿色部分为范围语音所需流程。
 

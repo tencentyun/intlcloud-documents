@@ -16,7 +16,7 @@
 
 ### 截图配置方式
 - [云直播 API](https://intl.cloud.tencent.com/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
-- 【云直播控制台】>【功能模板】>【[截图鉴黄配置](https://console.cloud.tencent.com/live/config/jtjh)】，详情请参见 [直播截图鉴黄](https://cloud.tencent.com/document/product/267/20386)。
+- 【云直播控制台】>【功能配置】>【[直播截图&鉴黄](https://console.cloud.tencent.com/live/config/jtjh)】，详情请参见 [直播截图鉴黄](https://intl.cloud.tencent.com/document/product/267/31072)。
 
 ### 截图间隔配置
 

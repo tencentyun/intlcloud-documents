@@ -2,19 +2,19 @@
 ## Quick Start
 This document guides you through the console steps to submit a job, render objects with 3ds Max 2018, and export the rendered objects. 
 
-### Step 1 Create a custom image
+### Step 1. Create a custom image
 1. Create a custom image. See [Windows Custom Image](https://intl.cloud.tencent.com/document/product/599/13035) 
 2. Install 3ds Max 2018. See [Official Homepage](https://www.autodesk.com/products/3ds-max/overview) 
 >- Disable the Windows Firewall temporarily to avoid blocking software downloads.
 >- Select an appropriate graphics card model by referring to the [Graphics Card Selection Guide](https://knowledge.autodesk.com/zh-hans/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2015/CHS/3DSMax/files/GUID-3D6B4C8E-8C0D-4A9C-BFB0-2463803268CE-htm.html) to avoid graphics card initialization failures. Nitrous Software is recommended for general usage.
 
-### Step 2 Prepare files to render
+### Step 2. Prepare files to render
 You can choose to store the files to render on [COS](https://intl.cloud.tencent.com/zh/document/product/436) or [CFS](https://intl.cloud.tencent.com/zh/document/product/582). Complete the mounting configuration. BatchCompute will mounts the COS or CFS path to the local machine before the rendering job runs, which allows the rendering software to access files stored on COS or CFS as local files.
 
 - COS is recommended for small-sized objects. See [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 - CFS is recommended for large-sized objects.
 
-### Step 3. Create a Task template
+### Step 3. Create a task template
 1. Log in to the BatchCompute console and choose **[Task Template](https://console.cloud.tencent.com/batch/task)** on the left sidebar.
 2. Select the target region at the top on the **Task Template** page and click **Create**.
 3. Click **Create**, complete the configurations in the **New Task Template** page.
@@ -60,5 +60,5 @@ You can choose to store the files to render on [COS](https://intl.cloud.tencent.
 ## Subsequent Operations
 This document illustrates a simple rendering job to demonstrate fundamental BatchCompute capabilities. You can try the advanced capabilities of BatchCompute as instructed in the Console User Guide.
 - **Various CVM configurations**: BatchCompute provides a variety of CVM configuration options. You can customize your own CVM configuration based on your business scenario.
-- **Remote storage mapping**: BatchCompute optimizes storage access and simplifies access to remote storage services into operations in the local file system.
-- **Concurrent multi-object rendering**: you can launch multiple instances to read and render different objects at the same time. The instances are distinguished by [environment variables](https://intl.cloud.tencent.com/document/product/599/11752).
+- **Remote storage mapping**: Batch Compute optimizes storage access and simplifies access to remote storage services into operations in the local file system.
+- **Concurrent multi-object rendering**: You can launch multiple instances to read and render different objects at the same time. The instances are distinguished by [environment variables](https://intl.cloud.tencent.com/document/product/599/11752).

@@ -64,7 +64,7 @@ A range voice room is different from a team voice room because you must choose s
 
 Once you enter the room, call `UpdateAudioRecvRange` (once at least), and call `UpdateSelfPosition` once per frame.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e238a74c747ea08c123c9c1c762b23c4.png"  width="60%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/4f531ae31457f031b0034d8dc39eda3c.png"  width="60%"/></img>
 
 >!
 >- Make sure to follow the flow chart to call the API.
@@ -82,9 +82,9 @@ Initialize the GME and the core API has been called correctly, e.g. the Poll fun
 
 - The team ID (`TeamID`) must be set by calling the API `SetRangeAudioTeamID` before `EnterRoom`. Otherwise, GME will return the error code `AV_ERR_ROOM_NOT_EXITED(1202)`. If you enter the room after exiting the room, please call the API `SetRangeAudioTeamID` after exiting the room successfully.
 
-<dx-alert infotype="notice" title="">
+
 >!This parameter will not be automatically reset to `0` upon room exit. Therefore, once you decide to use range voice, please use this method to set `TeamID` before calling `EnterRoom` each time.
-</dx-alert>
+
 
 
 
@@ -199,7 +199,7 @@ The range voice feature controls the reachability of sound through distance. It 
 ## Directions
 If you want to use 3D sound effects while using range voice, please complete the step 1, 2, 3 and then initialize 3D engine and open 3D sound effects.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/acd2c698c057cc7f62ce04e42305c665.png"  width="60%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/39fb54637b7957509d00ed440f7ae0a9.png"  width="60%"/></img>
 
 >? The green part of the flow chart shows the process of the range voice.
 

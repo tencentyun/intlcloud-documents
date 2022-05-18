@@ -7,15 +7,32 @@
 
 ## 操作步骤
 1. 登录 [邮件推送控制台](https://console.cloud.tencent.com/ses/domain)，选择**邮件配置**>**发信域名**，进入“发信域名” 配置页面，单击**新建**。
-![](https://main.qcloudimg.com/raw/7e4ba21b39ef0d2eb1de2e7ad8d8147a.png)
-
-| 属性 | 含义 |
-|---------|---------|
-| 发信域名 | 配置的发信域名地址。 |
-| 状态 |<li>待验证：需要验证通过才可以通过此域名发送该邮件。</li><br><li>已验证：已完成验证后，此域名具备发送邮件的使用条件。</li> |
-| 操作 | 如状态为待验证，您可单击**验证**进行修改，或者单击**删除**移除该条发信域名配置。 |
-
+![](https://qcloudimg.tencent-cloud.cn/raw/50a47b56343acb2cb2289f705bd7514e.png)
 2. 进入新建发信域名配置，请输入您的域名地址，单击**提交**即可完成保存。
-![](https://main.qcloudimg.com/raw/c2c75b71aaaf762f545ad530c6554aeb.png)
->? 不可使用企业邮箱域名，以免产生 SPF、MX 记录的冲突。
->如果您需要更换发信域名，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
+![](https://qcloudimg.tencent-cloud.cn/raw/7e53b2e8ecfaf818c8cb56bb38b9ed4e.png)
+3. 返回到“发信域名”配置界面，对域名完成验证后才可以使用该域名发送邮件，验证方法请参见 [身份验证和配置相关问题](https://intl.cloud.tencent.com/document/product/1084/42371)。
+![](https://qcloudimg.tencent-cloud.cn/raw/040ac5bd4115f1739c65e01629a5f51b.png)
+<table>
+   <tr>
+      <th width="0px" >属性</td>
+      <th width="0px" >含义</td>
+   </tr>
+   <tr>
+      <td>发信域名</td>
+      <td>配置的发信域名地址</td>
+   </tr>
+   <tr>
+      <td>状态</td>
+      <td>待验证：需要验证通过才可以通过此域名发送邮件。<br>已验证：已完成验证后，此域名具备发送邮件的使用条件。</td>
+   </tr>
+   <tr>
+      <td>操作</td>
+      <td>如状态为待验证，您可单击<b>验证</b>进行修改，或者单击<b>删除</b>移除该条发信域名配置。</td>
+   </tr>
+</table>
+
+<dx-alert infotype="explain" title="">
+- 不可使用企业邮箱域名，以免产生 SPF、MX 记录的冲突。
+- 如果您需要更换发信域名，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
+</dx-alert>
+

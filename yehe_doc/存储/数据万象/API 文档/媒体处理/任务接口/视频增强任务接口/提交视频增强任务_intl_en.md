@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 This API (`CreateMediaJobs`) is used to submit a video enhancement task.
 
@@ -17,13 +17,13 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 >
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -53,16 +53,16 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |
-| Request            | None | Request container | Container | Yes   |
+| Request            | None     | Request container | Container | Yes   |
 
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
 | Tag                | Request | Task type: VideoProcess                                | String    | Yes   |
-| Input              | Request | Information about the media to be operated                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to 6 operation rules are supported.                                                | Container | Yes   |
-| QueueId            | Request | ID of the queue where the task is in                                         | String    | Yes   |
+| Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
+| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| QueueId            | Request | Queue ID of the task                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
 `Input` has the following sub-nodes:
@@ -79,8 +79,9 @@ The nodes are described as follows:
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
 | TranscodeTemplateId| Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
-| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to 3 `Watermark` parameters can be passed. | Container | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to 3 `WatermarkTemplateId` parameters can be passed. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
 >!`TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding task type parameter is used.
@@ -89,8 +90,18 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description |
 | ------------------ | :----------------------------- | -------------------------------------- |
-| ColorEnhance       | Request.Operation.VideoProcess | Same as `Request.ColorEnhance` in the video enhancement template creation API `CreateMediaTemplate`. | 
+| ColorEnhance       | Request.Operation.VideoProcess | Same as `Request.ColorEnhance` in the video enhancement template creation API `CreateMediaTemplate`. |
 | MsSharpen          | Request.Operation.VideoProcess | Same as `Request.MsSharpen` in the video enhancement template creation API `CreateMediaTemplate`. |
+
+`DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| ------------------ | :-------------------------- | -------------------------------------- | --------- | ---- |
+| Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*)    | string | Yes   |
+| Type               | Request.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only      | String | Yes |
+| Version            | Request.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only       | String | Yes |
+| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the task. Valid values: true, false (default)  |string | Yes   |
+
 
 `Output` has the following sub-nodes:
 
@@ -98,7 +109,7 @@ The nodes are described as follows:
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Result file name                                             | String | Yes   |
+| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
 
 
 
@@ -106,7 +117,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -130,6 +141,12 @@ The response body returns **application/xml** data. The following contains all t
       <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
       <TranscodeTemplateId></TranscodeTemplateId>
       <WatermarkTemplateId></WatermarkTemplateId>
+      <DigitalWatermark>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+        <IgnoreError>false</IgnoreError>
+      </DigitalWatermark>
       <Output>
         <Region></Region>
         <Bucket></Bucket>
@@ -163,13 +180,13 @@ The nodes are described as follows:
 | Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Task ID                               | String    |
 | Tag| Response.JobsDetail | Task type: VideoProcess | String |
-| State | Response.JobsDetail | Task status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` |  String |
+| State | Response.JobsDetail | Task status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
 | CreationTime | Response.JobsDetail | Task creation time |  String |
 | StartTime | Response.JobsDetail | Task start time |  String |
 | EndTime | Response.JobsDetail | Task end time |  String |
-| QueueId            | Response.JobsDetail | ID of the queue where the task is in                       | String    |
+| QueueId            | Response.JobsDetail | Queue ID of the task                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the task                   | Container |
-| Operation          | Response.JobsDetail | Task rule                           | Container |
+| Operation          | Response.JobsDetail | Operation rule                           | Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -180,7 +197,8 @@ Same as the `Request.Input` node in the request.
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | Task template ID |  String |
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
-| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. Not returned when there is no output video. | Container |
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
+| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
 
 `Output` has the following sub-nodes:
 Same as the `Request.Operation.Output` node in the request.
@@ -188,13 +206,23 @@ Same as the `Request.Operation.Output` node in the request.
 `MediaInfo` has the following sub-nodes:
 Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
+`DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| ------------------ | :-------------------------- | -------------------------------------- | --------- |
+| Message               | Response.Operation.DigitalWatermark |  The string in the digital watermark successfully embedded in the video, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (\*)    | string |
+| Type               | Response.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only      | String |
+| Version            | Response.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only      | String |
+| IgnoreError        | Response.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the task. Valid values: true, false (default)  |string |
+| State        | Response.Operation.DigitalWatermark | Whether the watermark is added successfully. Valid values: Running, Success, Failed  | string |
+
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Use Cases
 
-#### Example 1: using the video enhancement template ID
+#### Use case 1. Using the video enhancement template ID
 
 #### Request
 
@@ -214,6 +242,12 @@ Content-Type: application/xml
     <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
     <TranscodeTemplateId></TranscodeTemplateId>
     <WatermarkTemplateId></WatermarkTemplateId>
+    <DigitalWatermark>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+        <IgnoreError>false</IgnoreError>
+    </DigitalWatermark>
     <Output>
         <Region>ap-beijing</Region>
         <Bucket>examplebucket-1250000000</Bucket>
@@ -253,6 +287,12 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
         <TranscodeTemplateId></TranscodeTemplateId>
         <WatermarkTemplateId></WatermarkTemplateId>
+        <DigitalWatermark>
+            <Type>Text</Type>
+            <Message>123456789ab</Message>
+            <Version>V1</Version>
+            <IgnoreError>false</IgnoreError>
+        </DigitalWatermark>
         <Output>
             <Region>ap-beijing</Region>
             <Bucket>examplebucket-1250000000</Bucket>
@@ -265,7 +305,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Example 2: using the video enhancement processing parameter
+#### Use case 2. Using the video enhancement processing parameter
 
 #### Request
 
@@ -297,6 +337,12 @@ Content-Type: application/xml
     <VideoProcess>
     <TranscodeTemplateId></TranscodeTemplateId>
     <WatermarkTemplateId></WatermarkTemplateId>
+    <DigitalWatermark>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+        <IgnoreError>false</IgnoreError>
+    </DigitalWatermark>
     <Output>
       <Region>ap-beijing</Region>
       <Bucket>examplebucket-1250000000</Bucket>
@@ -347,6 +393,13 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
       <VideoProcess>
       <TranscodeTemplateId></TranscodeTemplateId>
       <WatermarkTemplateId></WatermarkTemplateId>
+      <DigitalWatermark>
+        <State>Success</State>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+        <IgnoreError>false</IgnoreError>
+      </DigitalWatermark>
       <Output>
         <Region>ap-beijing</Region>
         <Bucket>examplebucket-1250000000</Bucket>

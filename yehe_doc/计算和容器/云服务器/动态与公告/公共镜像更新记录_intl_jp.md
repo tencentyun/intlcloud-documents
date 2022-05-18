@@ -468,7 +468,7 @@
 	<th style="width: 30%;">更新内容</th>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2019データセンターバージョン64ビット中国語版</td>
+	<td rowspan="4">Windows Server 2019データセンターバージョン64ビット英語版</td>
 	<td rowspan="4">イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
   </tr>
@@ -490,7 +490,7 @@
 	<td>最新のシステムパッチを更新します。</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2016データセンターバージョン64ビット中国語版</td>
+	<td rowspan="4">Windows Server 2016データセンターバージョン64ビット英語版</td>
 	<td rowspan="4">イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
   </tr>
@@ -524,7 +524,7 @@
 	<td>Windows-CVE-2019-1125の脆弱性を修正し、システムを8月の月例パッチで更新します。</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2012 R2データセンターバージョン64ビット中国語版</td>
+	<td rowspan="4">Windows Server 2012 R2データセンターバージョン64ビット英語版</td>
 	<td rowspan="4">イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
   </tr>

@@ -45,6 +45,6 @@
 - Tencent Cloud 계정에 이미 가입하였고 라이브 방송 서비스 활성화를 이미 신청한 경우 다음 단계로 넘어갑니다.
 
 CSS 콘솔로 이동하여 왼쪽 메뉴에서 [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)를 선택한 후 [도메인 추가]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/8966d84b046460251f38b49927117826.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e0131c5904b8e2a8c20034b10fb7127b.png)
 
 팝업된 도메인 추가 창에서 [재생 도메인] 유형을 선택하고 해당 [가속 지역]을 선택한 후 가속할 [도메인]을 입력합니다.

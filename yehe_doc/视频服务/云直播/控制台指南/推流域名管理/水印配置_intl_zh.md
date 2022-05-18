@@ -12,7 +12,7 @@
 
 ## 关联水印模板
 1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
-2.	选择【模板配置】页签，单击【水印配置】标签右上角的【编辑】。
+2.	选择【模板配置】页签，单击【直播水印】标签右上角的【编辑】。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c9a415b0848a1d22b6e236c0ab4771ba.png)
 4.	选择水印配置模板，单击【确定】即可。
 ![](https://qcloudimg.tencent-cloud.cn/raw/b597758441bcabcbb3f38d74e649b4da.png)

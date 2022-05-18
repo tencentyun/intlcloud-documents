@@ -10,10 +10,8 @@ VOD는 Android 클라이언트에 비디오를 업로드하기 위한 SDK를 제
 1. `Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`를 프로젝트 디렉터리에 복사하고 패키지 이름을 수동으로 수정합니다.
 2. 프로젝트에 종속성을 추가하려면 `Demo/app/build.gradle`을 참고하십시오.
     ```
-    implementation ('com.qcloud.cos:cos-android:5.8.3') {
-        exclude group: 'com.qcloud.cos', module: 'beacon-android-release'
-    }
-    implementation 'com.qcloud.cos:quic:1.5.37'
+    implementation 'com.qcloud.cos:cos-android-nobeacon:5.8.5'
+    implementation 'com.qcloud.cos:quic:1.5.38'
     ```
 >?[수동 통합](https://intl.cloud.tencent.com/document/product/436/12159)을 참고하여 해당 종속 라이브러리를 통합할 수도 있습니다.
 3. 비디오 업로드를 위해서는 네트워크 및 스토리지 접근 권한이 필요합니다. `AndroidManifest.xml`에 다음 권한 선언을 추가할 수 있습니다.

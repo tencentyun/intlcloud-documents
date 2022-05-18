@@ -9,6 +9,7 @@ If you already have a Tencent Cloud account, you can ignore this step.
 ## Step 2. Apply for service activation
 
 <div style="background-color:#00A4FF; width: 350px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/ecm" target="_blank"  style="color: white; font-size:16px;">Click here to log in to the ECM console</a></div>
+
 On the **Activate Service** page in the ECM console, click **Submit Application** to enter the application page, enter the user information, submit the application, and wait for approval.
 After your application is approved, you can create and use ECM resources.
 
@@ -28,9 +29,11 @@ After your application is approved, you can create and use ECM resources.
  - **Default Network Bandwidth Cap**: if the network bandwidth exceeds this cap, packets will be discarded by default. The default value is 25 Mbps, and the maximum value is 1,024 Mbps. To increase the upper limit, [submit a ticket](https://console.intl.cloud.tencent.com/workorder) or contact your Tencent Cloud rep.
  - **Advanced Settings**: you can modify the settings of default IP direct access and default tags as needed:
     - **Default IP Direct Access**: the IP direct access feature is applicable for scenarios where the public IP needs to be viewed in edge CVM instances; for example, private network traffic and public network traffic need to be forwarded to different IP addresses.
+    
     <dx-alert infotype="notice" title="">
-    When you create a Linux ECM instance, the system will enable IP direct access by default (you can also disable it during instance creation in **Advanced Settings**). After an instance is created, the IP direct access status cannot be changed. If you create a Windows ECM instance, the system will not enable IP direct access by default (as Windows currently doesn't support IP direct access).
+    When you create a Linux ECM instance, the system will enable IP direct access by default (you can also disable it during instance creation in <b>Advanced Settings</b>). After an instance is created, the IP direct access status cannot be changed. If you create a Windows ECM instance, the system will not enable IP direct access by default (as Windows currently doesn't support IP direct access).
     </dx-alert>
+    
     - **Default Tags**: you can set default tags to manage instances in the ECM module by group. During instance creation, the default tags set in the ECM module will be used as the recommended tag key-value pairs, and you can also modify them as needed.
     <dx-alert infotype="notice" title="">
     This configuration item only modifies the tag key-value pairs of the ECM module but doesn't automatically sync changes to those of successfully created instances.
@@ -51,8 +54,10 @@ After your application is approved, you can create and use ECM resources.
 
  	- **IP Direct Access**: the IP direct access feature is applicable for scenarios where the public IP needs to be viewed in edge CVM instances; for example, private network traffic and public network traffic need to be forwarded to different IP addresses.
 <dx-alert infotype="notice" title="">
+	
 When you create a Linux ECM instance, the system will enable IP direct access by default (you can also disable it during instance creation in **Advanced Settings**). After an instance is created, the IP direct access status cannot be changed. If you create a Windows ECM instance, the system will not enable IP direct access by default (as Windows currently doesn't support IP direct access).
 </dx-alert>
+
  	- **Tags**: you can set default tags to manage instances in the ECM module by group. During instance creation, the default tags set in the ECM module will be used as the recommended tag key-value pairs, and you can also modify them as needed.
 <dx-alert infotype="notice" title="">
 This configuration item only modifies the tag key-value pairs of the ECM module but doesn't automatically sync changes to those of successfully created instances.
@@ -62,9 +67,9 @@ This configuration item only modifies the tag key-value pairs of the ECM module 
 3. Click **Next**.
 4. On the **Region Deployment** tab of the **Create and Deploy Instance** page, configure the following information as prompted:
 ![](https://qcloudimg.tencent-cloud.cn/raw/4a817e9a4488e55a17b7110c361c2e81.png)
- - **Node Province**: we recommend you select the province closest to your end users to minimize the access latency and accelerate the access.
- - **Node Region**: select a region as needed.
- - **Network Type**: select a public network ISP as needed.
+ - **Node Province**: We recommend you select the province closest to your end users to minimize the access latency and accelerate the access.
+ - **Node Region**: Select a region as needed.
+ - **Network Type**: Select a public network ISP as needed.
  - **Instance Quantity**: enter the number of ECM instances to be purchased.
 5. Click **Confirm Purchase**.
 After an instance is successfully created, its relevant information will be sent to you through the notification channel you subscribe to. You can also view the newly created resource in the [Instance List](https://console.cloud.tencent.com/ecm/instance).
@@ -75,4 +80,4 @@ ECM has two billable items: computing storage and network bandwidth. Computing s
 
 ## Step 5. Log in to the instance
 
-After creating an ECM instance, you can log in to it as instructed in [Logging in to Linux Instance](https://intl.cloud.tencent.com/document/product/1119/43412).
+After creating an ECM instance, you can log in to it as instructed in [Logging In to Linux Instance](https://intl.cloud.tencent.com/document/product/1119/43412).

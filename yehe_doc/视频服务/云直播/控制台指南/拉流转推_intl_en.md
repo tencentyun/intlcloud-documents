@@ -143,7 +143,7 @@ If you disable a task, **the task will stop**. You can click [Enable](#enable) t
 If you enable a task, **the task will start from the beginning**. Perform the following to enable a task:
 
 1. In the [task list](https://console.cloud.tencent.com/live/tools/relay), find the relay task you want to enable, and click **Enable**.
-2. In the pop-up window, click **Confirm**.
+2. In the pop-up window, click **OK**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/77417a9c8406fe9d763c4d3960d98b21.png)
 
 [](id:delete)

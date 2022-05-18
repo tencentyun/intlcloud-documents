@@ -12,7 +12,7 @@ The watermark feature is disabled by default for live push. This document descri
 
 ## Binding Watermark Template
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **push domain name** to be configured or **Manage** to enter the domain name details page.
-2. 	Select **Template Configuration** and click **Edit** in the **Watermark Configuration** section.
+2. Click **Template Configuration** and, in the **Live Watermarking** area, click **Edit**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c9a415b0848a1d22b6e236c0ab4771ba.png)
 3. Select a watermark template and click **Confirm**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b597758441bcabcbb3f38d74e649b4da.png)

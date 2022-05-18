@@ -151,13 +151,13 @@
 <table>
 <tr><th style="width: 30%;">Tag Citra</th><th style="width: 26%;">Detail Citra</th><th style="width: 14%;">Tanggal Pembaruan</th><th style="width: 30%;">Perbarui</th></tr>
  <tr>
- <td>Windows Server 2019 DataCenter 64-bit Mandarin</td>
+ <td>Windows Server 2019 DataCenter 64-bit Inggris</td>
  <td>ID Citra: <a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
  <td>18 Maret 2020</td>
  <td>Memperbarui sistem dengan patch terbaru.</td>
  </tr>
  <tr>
- <td rowspan=2>Windows Server 2016 DataCenter 64-bit Bahasa Mandarin</td>
+ <td rowspan=2>Windows Server 2016 DataCenter 64-bit Bahasa Inggris</td>
  <td rowspan=2>ID Citra: <a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
  <td>2 Juni 2020</td>
  <td>Memperbarui sistem dengan patch terbaru.</td>
@@ -177,7 +177,7 @@
 	<td>Memperbaiki kerentanan Windows-CVE-2019-1125 dan memperbarui sistem dengan patch Agustus.</td>
 	</tr>
 		<tr>
-		<td rowspan=2>Windows Server 2012 R2 DataCenter 64-bit Bahasa Mandarin</td>
+		<td rowspan=2>Windows Server 2012 R2 DataCenter 64-bit Bahasa Inggris</td>
 		<td rowspan=2>ID Citra: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
 		<td>13 Januari 2020</td>
 		<td>Memperbarui sistem dengan patch terbaru.</td>

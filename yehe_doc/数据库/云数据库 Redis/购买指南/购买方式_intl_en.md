@@ -30,16 +30,16 @@ This document describes how to purchase and configure a TencentDB for Redis inst
    <tr><th>Parameter</th><th>Description</th></tr>
    <tr>
    <td>Billing Mode</td>
-   <td><b>Pay-as-you-go</b>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/31954">Billing Overview</a>.</td></tr>	
+   <td><b>Pay-as-you-go</b> is supported. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/31954">Billing Overview</a>.</td></tr>	
    <tr>
    <td>Region</td>
-   <td>Select a region where your instance resides. Please select a region closest to you to reduce access latency.<ul><li>Note that the region cannot be changed after the instance is successfully created.</li><li>We recommend you select the same region as the CVM instance for private network communication.</li></ul></td></tr>
+   <td>Select a region where your instance resides. You should select a region closest to you to reduce access latency.<ul><li>Note that the region cannot be changed after the instance is successfully created.</li><li>We recommend you select the same region as the CVM instance for private network communication.</li></ul></td></tr>
    <tr>
    <td>Instance Edition</td>
    <td>Select the <b>Memory Edition</b>. The CKV Edition is unavailable currently.</td></tr>
    <tr>
    <td>Compatible Version</td>
-   <td>Select a high-performance version based on the open-source Redis engine, which is compatible with Redis 6.0, 5.0, 4.0, and 2.8. v2.8 is unavailable currently, and v4.0 or later is recommended. To purchase an instance of Redis v2.8, <a href="https://intl.cloud.tencent.com/document/product/239/31959">submit a ticket</a> for application.</td></tr>	 
+   <td>Select a high-performance version based on the open-source Redis engine, which is compatible with Redis 6.0, 5.0, 4.0, and 2.8. v2.8 is unavailable currently, and v4.0 or later is recommended. To purchase an instance of Redis 2.8 or 6.0, <a href="https://intl.cloud.tencent.com/document/product/239/31959">submit a ticket</a> for application.</td></tr>	 
    <tr> 
        <td>Architecture</td>
    <td>v4.0 or later supports the standard architecture and cluster architecture, while v2.8 only supports the standard architecture. For more information on the product architecture, see <a href="https://intl.cloud.tencent.com/document/product/239/31959">Memory Edition (Standard Architecture)</a> and <a href="https://intl.cloud.tencent.com/document/product/239/18336">Memory Edition (Cluster Architecture)</a>.</td></tr>
@@ -61,18 +61,18 @@ This document describes how to purchase and configure a TencentDB for Redis inst
    <tr>    
    <td>Read-Only Replica</td>
    <td>Specify whether to enable read/write separation. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/33132">Read/Write Separation</a>.</td></tr>
-   <tr>
-   <td>Network</td>
-   <td>Both <b>VPC</b> and <b>classic network</b> are supported. If you select VPC, only devices in the selected subnet can access the database instance. If you select the classic network, only devices in the selected classic network can access the database instance, and multi-AZ deployment is not supported.</td></tr>
+	 <tr>
+<td>Network</td>
+    <td>Both <b>VPC</b> and <b>classic network</b> are supported. <ul><li>If you select VPC, only devices in the selected subnet can access the database instance. If you select the classic network, only devices in the selected classic network can access the database instance, and public network address and multi-AZ deployment are not supported. For more information, see <a href="https://intl.cloud.tencent.com/document/product/215/41417">Classic Network</a>. </li><li>After the instance is created, you can switch the network from the classic network to VPC or from one VPC to another VPC but not from VPC to the classic network. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/239/31944">Configuring Network</a>.</li></ul></td></tr>
    <tr>
    <td>AZ</td>
    <td>Specify whether to enable multi-AZ deployment. Both single-AZ deployment and multi-AZ deployment are supported. A multi-AZ deployed instance has higher availability and disaster recovery capabilities than a single-AZ deployed instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/39812">Multi-AZ Deployment</a>. <ul><li>For single-AZ deployment, select an AZ for the master node from <b>Master Node Group (Master AZ)</b>. </li><li>For multi-AZ deployment, select a master AZ from the drop-down list of <b>Master Node Group (Master AZ)</b> and specify an AZ for the replica from the drop-down list of replica x, where x is the replica number, such as replica 1 and replica 2.</li></ul></tr>
    <tr>
    <td>IPv4 Network</td>
-       <td>Select a VPC and subnet. We recommend you select the same <a href="https://cloud.tencent.com/document/product/215">VPC</a> in the same region as the CVM instance to be connected to. After purchasing a TencentDB instance, you can switch its network from classic to VPC, but not vice versa. You can also click <b>Create VPCs</b> and <b>Create Subnets</b> to create a required network environment as instructed in <a href="https://intl.cloud.tencent.com/document/product/215/31805">Creating VPCs</a>.</td></tr>
+       <td><b>Network:</b> Select <b>VPC</b>. You should select a specific VPC and subnet, preferably the same <a href="https://cloud.tencent.com/document/product/215">VPC</a> in the same region as the CVM instance. VPCs are region-specific (e.g., Guangzhou), while subnets are AZ-specific (e.g., Guangzhou Zone 1). One VPC can be divided into one or multiple subnets, which are interconnected over the private network by default. Different VPCs are isolated over the private network by default, no matter whether they are in the same or different regions. You can switch the VPC after instance purchase as instructed in <a href="https://intl.cloud.tencent.com/document/product/239/31944">Configuring Network</a>. You can also click <b>Create VPCs</b> and <b>Create Subnets</b> to create a required network environment as instructed in <a href="https://intl.cloud.tencent.com/document/product/215/31805">Creating VPCs</a>.</td></tr>
    <tr>
    <td>Port</td>
-   <td>Custom port. Value range: 1024–65535.</td></tr>
+   <td>Custom port. The default port is 6379. Value range: 1024–65535.</td></tr>
    <tr>
    <td>Parameter Template</td>
    <td>Apply a parameter template to configure parameters in batches for the instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/41810">Applying Parameter Templates</a>.</td></tr>
@@ -84,7 +84,7 @@ This document describes how to purchase and configure a TencentDB for Redis inst
    <td>Add tags to your instance for easy classification and management. Click <b>Add</b> to select tag keys and values.</td></tr> 
    <tr>
    <td>Security Group</td>
-   <td>Set security group rules to control the inbound/outbound traffic to/from your instance. You can either select a security group from the <b>Existing Security Groups</b> drop-down list or click <b>Custom Security Groups</b> to create one and set <b>inbound</b>/<b>outbound</b> rules. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/31945">Security Group</a>.</td></tr> 
+   <td>Set security group rules to control the inbound traffic to your database. You can either select a security group from the <b>Existing Security Groups</b> drop-down list or click <b>Custom Security Groups</b> to create one and set <b>inbound rules</b>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/239/31945">Configuring Security Group</a>.</td></tr> 
    <tr>
    <td>Instance Name</td>
    <td>Enter up to 60 letters, digits, hyphens, and underscores.</td></tr>  

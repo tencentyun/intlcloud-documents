@@ -3,10 +3,6 @@
   [Contact us](https://intl.cloud.tencent.com/contact-us) to learn more.
 
 - **10,000-minute [free package](https://intl.cloud.tencent.com/document/product/647/42735) per month**
-
-- **[Prepaid packages](https://intl.cloud.tencent.com/document/product/647/42736), offered at discounted prices**
-
-  You need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) before you can purchase a TRTC prepaid package.
   
 - **[Price calculator](https://intl.cloud.tencent.com/pricing/trtc/calculator) for a quick estimate of costs**
 

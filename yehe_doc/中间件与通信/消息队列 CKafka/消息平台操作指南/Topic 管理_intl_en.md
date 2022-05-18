@@ -8,27 +8,28 @@ This document describes how to manage the topics under an existing instance in t
 
 ### Creating topic
 
-1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
+1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, click **Topic Management** at the top and click **Create**.
-4. In the **Create Topic** window, set configuration information such as the number of partitions and replicas.
+4. In the **Create Topic** window, set the number of partitions and replicas and other parameters.
      ![](https://main.qcloudimg.com/raw/b059e7bddbb29b16b9449e1dbbcf1b4d.png)
-   - Name: The topic name, which cannot be changed once entered and can contain only letters, digits, underscores, hyphens, and periods.
+   - Name: The topic name. It cannot be changed once entered and can contain only letters, digits, underscores, hyphens, and periods.
    - Partition Count: It is a concept in physical partition, where one topic can contain one or more partitions. CKafka uses partition as an allocation unit.
    - Replica Count: The number of partition replicas is used to ensure the high availability of the partition. To ensure data reliability, creating a single-replica topic is not supported. Two replicas are enabled by default.
-     Replicas are also counted into the number of partitions. For example, if you create 1 topic with 6 partitions and 2 replicas for each partition, then you have a total of 12 partitions (1 x 6 x 2).
+     Replicas are also counted into the number of partitions. For example, if you create 1 topic with 6 partitions, and 2 replicas for each partition, then you have a total of 12 partitions (1 x 6 x 2).
    - **Tag**: Set a resource tag. For more information, see [Tag Overview](https://intl.cloud.tencent.com/document/product/597/41600).
-   - Preset ACL policy: Select the preset ACL policy. For more information on ACL policy, see [Configuring ACL Policy](https://intl.cloud.tencent.com/document/product/597/39084).
+   - Preset ACL Policy: Select the preset ACL policy. For more information on ACL policy, see [Configuring ACL Policy](https://intl.cloud.tencent.com/document/product/597/39084).
 5. Click **Submit**.
-    ![](https://main.qcloudimg.com/raw/e7bc2169b2d7985f287854f509f330c0.png)
+   ![](https://main.qcloudimg.com/raw/e7bc2169b2d7985f287854f509f330c0.png)
 
 ### Viewing topic details
 
-1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
+1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, click **Topic Management** to view the topic information and enter the topic list page.
 4. On the topic list page, click the right triangle icon on the left of the topic name to view the topic details.
    ![](https://main.qcloudimg.com/raw/6fea6378fa2710a6f8083723e1849601.png)
+
 <table>
     <thead>
     <tr>
@@ -59,7 +60,7 @@ This document describes how to manage the topics under an existing instance in t
     </tr>
     <tr>
         <td>End Offset</td>
-        <td>The last position of message write. If the end offset is greater than the start offset, there are messages that have not been consumed yet</td>
+        <td>The last position of message write</td>
     </tr>
     <tr>
         <td>Messages</td>
@@ -73,12 +74,14 @@ This document describes how to manage the topics under an existing instance in t
 </table>
 
 
-### Sending message
+
+### Sending messages
 
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management** and click **Send Message** in the **Operation** column.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/e64260b777be32b2189ab026853725ae.png)
    - Message Content: Enter the content of the message to be sent, which is required.
-   - Message Key: enter the sending key, which is optional.
+   - Message Key: Enter the sending key, which is optional.
    - Send to Specified Partition: This parameter supports sending messages to the specified partition, which is disabled by default.
 3. Click **OK** to send the message. In the **Sent the message successfully** pop-up window, click **Message Query** to view the message just sent.
 
@@ -88,6 +91,7 @@ This document describes how to manage the topics under an existing instance in t
 
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management** and click **Producer Connection** in the **Operation** column to view the list of producers connected to the topic.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b815b0c65eaaeb804e3206eac41c6c42.png)
 
 
 
@@ -95,7 +99,7 @@ This document describes how to manage the topics under an existing instance in t
 
 > !
 >
->- Deleting a topic will also delete the messages stored in the topic. Do so with caution.
+>- Deleting a topic will delete the messages stored in the topic too. Proceed with caution.
 >- Topic deletion is an async operation. After you finish the steps required to delete a topic, it takes 1 minute for the configuration to take effect with ZooKeeper. During this period, if you try to create a topic with the same name as the deleted one, the system will return the error code `[4000]10011`. Wait and try again later.
 
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
@@ -109,9 +113,10 @@ This document describes how to manage the topics under an existing instance in t
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management**.
 3. In the **Operation** column, click **Edit** > **Show advanced configuration** and set the following parameters:
-     ![](https://main.qcloudimg.com/raw/52c8c0c4e99edd52247c1152129e5ddd.png)
+    ![](https://main.qcloudimg.com/raw/52c8c0c4e99edd52247c1152129e5ddd.png)
 
-The parameters are as detailed below:
+The parameters are described as follows:
+
 <table>
     <thead>
     <tr>
@@ -155,7 +160,7 @@ The parameters are as detailed below:
     <tr>
         <td style='text-align:left;'>retention.bytes</td>
         <td style='text-align:left;'>Message retention size of the instance</td>
-        <td style='text-align:left;'>1 MB–1024 GB</td>
+        <td style='text-align:left;'>1–1024 GB</td>
         <td style='text-align:left;'>Message retention size at the topic level. If both the message retention period and size are set for a topic, the threshold first reached by actually retained messages will prevail.</td>
     </tr>
     <tr>
@@ -166,3 +171,21 @@ The parameters are as detailed below:
     </tr>
     </tbody>
 </table>
+
+
+
+
+### Setting topic traffic throttling rule
+
+You can throttle the topic traffic to prevent the excessive traffic of one topic from affecting other topics.
+
+1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
+2. On the instance details page, select **Topic Management**.
+3. In the **Operation** column, click **Edit** > **Traffic Throttling** and set the threshold.
+   - Maximum Topic Production Traffic: This value excludes replica traffic and ranges from 1 MB/s to the maximum bandwidth purchased for the instance / number of replicas of the topic.
+   - Maximum Topic Consumption Traffic: This value ranges from 1 MB/s to the maximum bandwidth purchased for the instance.
+> ?
+>
+> - The underlying layer throttles the traffic for brokers, and the actual traffic throttling value (equal to an integer multiple of the number of brokers) may be slightly different from the set value.
+> - For more information on the soft traffic throttling mechanism, see [Traffic Throttling](https://intl.cloud.tencent.com/document/product/597/39874).
+

@@ -23,7 +23,7 @@ Total Cost|Total cost = Original cost × (1 - Discount rate)
 
 Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
 >? If the component type is **VOD transcoding**, the transcoding template type is indicated in the instance ID. For example:
->- `XXX_h265_sd_640_480` indicates a basic transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
+>- `XXX_h265_sd_640_480` indicates a general transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
 >- `XXX_h265_eshd_sd_640_480` indicates a TESHD template with codec set to H.265 and resolution set to SD (640 × 480) and below.
 
 ### Bill Details
@@ -41,7 +41,7 @@ Total Cost| Total cost = Component’s original cost x (1 - Discount rate). <br>
 
 Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
 >? If the component type is **VOD transcoding**, the transcoding template type is indicated in the instance ID. For example:
->- `XXX_h265_sd_640_480` indicates a basic transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
+>- `XXX_h265_sd_640_480` indicates a general transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
 >- `XXX_h265_eshd_sd_640_480` indicates a TESHD transcoding template with codec set to H.265 and resolution set to SD (640 × 480) and below.
 
 For example, suppose a user uses the template with codec set to H.264 and resolution set to HD (1280 × 720) and below, and the component’s published unit price is 0.0061 USD/min.
@@ -52,31 +52,31 @@ Total cost = 0.0305 USD × 1 = 0.0305 (USD)
 
 <span id="p2"></span>
 ### VOD bill-by-traffic
-- Billing mode: bill-by-traffic
-- Valid days: the number of valid calendar days used for monthly billing
-- Billing traffic: the amount of consumed traffic used for billing
+- Billing mode: Bill-by-traffic
+- Valid days: The number of valid calendar days used for monthly billing
+- Billing traffic: The amount of consumed traffic used for billing
 Traffic consumption is recorded every five minutes by calendar day, and the total billed traffic is the sum of the traffic of all recorded time points.
 
 <span id="p3"></span>
 ### VOD pay-as-you-go storage
-- Date: a valid calendar day used for monthly billing
-- Usage: peak VOD storage usage in the day
+- Date: A valid calendar day used for monthly billing
+- Usage: Peak VOD storage usage in the day
 >! Monthly storage cost = Total daily peak storage usage × Unit price (the VOD console displays the peak storage usage of the current day)
 
 <span id="p4"></span>
 #### VOD transcoding
-- Date: a calendar day
-- Appid: user account ID
+- Date: A calendar day
+- Appid: User account ID
 - Task ID: ID of the executed task
-- Transcoding type: basic transcoding, TESHD transcoding, audio transcoding, and video editing.
+- Transcoding type: General transcoding, TESHD transcoding, audio transcoding, and video editing.
 - Codec: H.264, H.265
-- Definition: the definition as specified in the transcoding template
-- Transcoding duration: transcoding duration of the day
+- Definition: The definition as specified in the transcoding template
+- Transcoding duration: Transcoding duration of the day
 
 <span id="p5"></span>
 ### VOD video inappropriate content recognition
-- Date: a calendar day
-- Usage: video duration for inappropriate content recognition in the day
+- Date: A calendar day
+- Usage: Video duration for inappropriate content recognition in the day
 
 
 

@@ -1,8 +1,8 @@
-Tencent Cloud Conference (TCC) can be widely used in business conferences, industry forums, annual meetings, road shows, lectures, etc. With features such as face recognition, electronic business card, simultaneous interpretation, and live streaming, TCC enables online, digital, and paperless conference organization via WeChat Mini Programs or HTML5 pages.
+Tencent Cloud Conference (TCC) can be widely used in business conferences, industry forums, annual meetings, road shows, lectures, etc. With features such as face recognition, electronic business card, simultaneous interpretation, and live streaming, TCC enables online, digital, and paperless conference organization via PC site，WeChat Mini Programs or HTML5 pages.
 
 ### High efficiency
 
-You, as an organizer, only need to submit basic information online to apply for access to TCC, and our sales team will contact you to learn more about your needs. After creating a TCC account, you can quickly create a WeChat Mini Program for conferences, without any time-consuming development processes.
+You, as an organizer, only need to submit basic information online to apply for access to TCC, and our sales team will contact you to learn more about your needs. After creating a TCC account, you can quickly create a dedicated website or WeChat Mini Program for conferences, without any time-consuming development processes.
 
 ### Low costs
 

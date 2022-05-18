@@ -5,7 +5,7 @@ If any change is made to Cloud Object Storage (COS) resources (such as new files
 - **Interaction with other Tencent Cloud services**: For example, purge CDN cache or update the database when a new file is uploaded to COS.
 - **System integration**: Your own service APIs can be called when files in COS are created, deleted, or overwritten. In user-generated content (UGC) scenarios, with the event notification feature, the client side will be able to interact with the server side.
 - **Data processing**: Files in COS can be automatically processed, such as automatic decompression and AI recognition.
-  ![COS event notification](https://main.qcloudimg.com/raw/4c6a24712462cd5a263f202d21ac18f5.png)
+  ![COS event notification](https://qcloudimg.tencent-cloud.cn/raw/4a32cb2d7739e6d183cbb94523689e1c.png)
 
 COS event notification has the following features:
 

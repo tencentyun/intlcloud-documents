@@ -151,13 +151,13 @@
 <table>
 <tr><th style="width: 30%;">Tag da imagem</th><th style="width: 26%;">Detalhes da imagem</th><th style="width: 14%;">Data da atualização</th><th style="width: 30%;">Atualização</th></tr>
  <tr>
- <td>Windows Server 2019 Datacenter 64 bits chinês</td>
+ <td>Windows Server 2019 Datacenter 64 bits inglês</td>
  <td>ID da imagem: <a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
  <td>18 de março de 2020</td>
  <td>Atualiza o sistema com o patch mais recente.</td>
  </tr>
  <tr>
- <td rowspan=2>Windows Server 2016 Datacenter 64 bits chinês</td>
+ <td rowspan=2>Windows Server 2016 Datacenter 64 bits inglês</td>
  <td rowspan=2>ID da imagem: <a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
  <td>2 de junho de 2020</td>
  <td>Atualiza o sistema com o patch mais recente.</td>
@@ -177,7 +177,7 @@
 	<td>Corrige a vulnerabilidade Windows-CVE-2019-1125 e atualiza o sistema com o patch de agosto.</td>
 	</tr>
 		<tr>
-		<td rowspan=2>Windows Server 2012 R2 Datacenter 64 bits chinês</td>
+		<td rowspan=2>Windows Server 2012 R2 Datacenter 64 bits inglês</td>
 		<td rowspan=2>ID da imagem: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
 		<td>13 de janeiro de 2020</td>
 		<td>Atualiza o sistema com o patch mais recente.</td>

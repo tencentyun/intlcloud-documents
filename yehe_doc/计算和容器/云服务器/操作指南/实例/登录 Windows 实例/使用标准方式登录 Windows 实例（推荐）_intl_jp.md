@@ -38,7 +38,7 @@
  - **ユーザー名**：Windowsインスタンスのデフォルトのユーザー名は`Administrator`です。必要に応じて入力してください。
  - **パスワード**：[前提条件](#Prerequisites)のステップで取得したログインパスワードを入力します。
 5. **ログイン**をクリックすると、Windowsインスタンスにログインできます。
-ここでは、OSがWindows Server 2016 Data center Edition 64ビット中国語版であるCVMを例とします。ログインに成功すると、次のようなインターフェースが表示されます。
+ここでは、OSがWindows Server 2016 Data center Edition 64ビット英語版であるCVMを例とします。ログインに成功すると、次のようなインターフェースが表示されます。
 ![](https://main.qcloudimg.com/raw/60abc6a9f51ae33ea95aa11edc53e009.jpg)
 
 

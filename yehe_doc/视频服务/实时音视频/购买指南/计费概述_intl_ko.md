@@ -3,10 +3,6 @@
   자세한 내용은 [이곳을 클릭](https://intl.cloud.tencent.com/contact-us)하여 영업팀에 문의하시기 바랍니다.
 
 - **매월 10,000분의 [무료 시간](https://intl.cloud.tencent.com/document/product/647/42735) 증정**.
-
-- **[선불 패키지](https://intl.cloud.tencent.com/document/product/647/42736), 선결제 할인 혜택 제공**.
-
-  TRTC 선불 패키지를 구매하려면 먼저 [Tencent Cloud 계정에 가입](https://intl.cloud.tencent.com/document/product/378/17985)해야 합니다.
   
 - **[가격 계산기](https://intl.cloud.tencent.com/pricing/trtc/calculator)를 통해 빠르게 예상 비용을 알아볼 수 있습니다**.
 
