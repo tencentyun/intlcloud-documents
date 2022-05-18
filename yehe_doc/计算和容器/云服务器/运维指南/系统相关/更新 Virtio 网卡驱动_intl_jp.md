@@ -14,7 +14,7 @@ Windows CVMにログインしていること。
 1. CVMにログインし、<img src="https://qcloudimg.tencent-cloud.cn/raw/67b4c8b9bac6c8f0c8a60a5ed9c6b5dd.png" style="margin:-3px 0px">を右クリックし、表示されたメニューから**実行**を選択します。
 2. 開いた「実行」ウィンドウに`cmd`と入力して**Enter**を押します。
 3. 開いた「cmd」ウィンドウで`systeminfo`コマンドを実行すると、システム情報が確認できます。
-今回のシステムバージョンは「Windows Server 2016データセンター版64ビット中国語版」を例としているため、下図のような情報が取得されます。
+今回のシステムバージョンは「Windows Server 2016データセンター版64ビット英語版」を例としているため、下図のような情報が取得されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/8c46c9c368201575fafed26272638544.png)
 
 ###  Virtio ENIドライバーの更新方法
