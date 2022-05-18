@@ -33,7 +33,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
 <table >
    <tr >
     <th width="6%"  rowspan="2" style = "text-align:center;">Model</th>
-    <th  width="8%"  rowspan="2" style = "text-align:center;">Instance Type</th>
+    <th width="8%"  rowspan="2" style = "text-align:center;">Instance Type</th>
     <th width="86%" colspan="10" style = "text-align:center;">Number of ENIs</th>
    </tr>
    <tr >
@@ -44,46 +44,6 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
     <th style = "text-align:center;">CPU: 8 cores</th>
     <th style = "text-align:center;">CPU: 10 cores</th>
     <th style = "text-align:center;">CPU: 12 cores</th>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <th style = "text-align:center;">CPU: 14 cores</th>
     <th style = "text-align:center;">CPU: 16 cores</th>
     <th style = "text-align:center;">CPU: &gt;16 cores</th>
