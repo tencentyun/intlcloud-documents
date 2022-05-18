@@ -1,3 +1,65 @@
+## April 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+</tr><tr>
+<td>SDK 9.8 release</td>
+<td>All platforms:<ul style="margin:0">
+Improved the SDK performance in video scenarios.
+</ul>
+<br>Windows:<ul style="margin:0">
+<li>Added APIs for audio effects such as heavy metal and little girl. For details, see <code>ITXAudioEffectManager.setVoiceChangerType</code>.</li>
+<li>Added support for showing an image when local video is paused.</li>
+</ul>
+</td>
+<td>2022-04-21</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr><tr>
+<td>SDK 9.7 release</td>
+<td> iOS & Android:<ul style="margin:0">
+Improved audio quality in the music mode.
+</ul>
+<br>Windows:<ul style="margin:0">
+<li>Improved audio quality and reduced audio loss in the music mode.</li>
+<li>Improved compatibility with high-end sound cards, boosting audio quality.</li>
+<li>Optimized audio mixing with third-party processes for more scenarios.</li>
+</ul>
+</td>
+<td>2022-04-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+</table>
+
+
+## March 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
+</tr><tr>
+<td>SDK 9.6 release</td>
+<td>All platforms:<ul style="margin:0">
+<li>Enhanced third-party library compliance with regulations inside and outside the Chinese mainland.
+<li>Reduced the SDK storage footprint. For details, see <a href="https://intl.cloud.tencent.com/document/product/647/39426">Release Notes (App)</a>.
+<li>Fixed known issues, improving stability.
+</ul>
+<br>Windows:<ul style="margin:0">
+<li>Updated the live streaming component from V1 to V2 APIs, improving its stability.</li>
+<li>Improved compatibility with the GPUs of low-end devices.</li>
+</ul>
+<br>iOS:<ul style="margin:0">
+Fixed occasional overexposure when fill lights are used.
+</ul>
+<br>Android: <ul style="margin:0">
+Improved pre-processing methods for beauty filters and other features, fixing capturing stutter on low-end devices.
+</ul>
+<br>macOS: <ul style="margin:0">
+Optimized texture uploading.
+</ul>
+</td>
+<td>2022-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>
+</tr>
+</table>
+
+
 ## January 2022
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th>  <th width="15%">Release Date</th>  <th width="15%">Document</th>
@@ -367,7 +429,7 @@ All platforms: <ul style="margin:0">
 <td>On-Cloud MixTranscoding, which relies on the MCU cluster, became a billable service.
 </td>
 <td>2020-11-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38929">Billing of On-Cloud MixTranscoding</a></td>
+<td>-</td>
 </tr>
 </table> 
 
@@ -545,7 +607,7 @@ All platforms: <ul style="margin:0">
 <td>Change of billing standards</td>
 <td>Added the <b>bill-by-duration</b>mode for on-cloud recording.</td>
 <td>2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/45176">Billing of on-cloud recording</a></td>
+<td>-</td>
 </tr>
 </table>
 
@@ -690,7 +752,7 @@ All platforms: <ul style="margin:0">
          <td>On-cloud recording optimization</td>   
          <td>Supported enabling/disabling on-cloud recording and configuring recording file formats and callback addresses for specific applications.</td>   
        <td>2020-02-14</td>   
-       <td><a href="https://intl.cloud.tencent.com/document/product/647/35426">On-Cloud Recording and Playback</a></td>   
+       <td>-</td>   
      </tr> 
 </table>
 
@@ -714,7 +776,7 @@ All platforms: <ul style="margin:0">
 </ul><br>Windows: <ul style="margin:0;"><li>The SDK for C# supported onscreen rendering and custom rendering.</li>
      <li>The SDK for C# supported local audio recording.</li>
 </ul></td>   
-       <td>2020-01-14</td>   
+       <td>January 14, 2020</td>   
        <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK download</a></td>   
      </tr> 
    <tr>      

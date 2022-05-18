@@ -1,5 +1,4 @@
 ## 错误码表
-
 ### 基础错误码
 
 | 符号 | 值 | 含义 |
@@ -19,7 +18,7 @@ TRTCCloud.enterRoom() 在进房失败时会触发此类错误码，您可以通�
 |ERR_USER_ID_INVALID|-3319|进房参数 userID 不正确|
 |ERR_USER_SIG_INVALID|-3320|进房参数 userSig 不正确|
 |ERR_ROOM_REQUEST_ENTER_ROOM_TIMEOUT|-3308|请求进房超时，请检查网络|
-|ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|服务不可用。请检查：腾讯云账号是否欠费|
+|ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|服务不可用。请检查：套餐包剩余分钟数是否大于0，腾讯云账号是否欠费|
 
 
 ### 退房相关错误码
@@ -122,8 +121,8 @@ TRTCCloud.ConnectOtherRoom() 在跨房失败时会触发此类错误码，您可
 |ERR_SERVER_CENTER_CONN_ROOM_NO_KEY|-102038|未找到跨房间连麦签名解密密钥|
 |ERR_SERVER_CENTER_CONN_ROOM_PARSE_SIG|-102039|跨房间连麦签名解析错误|
 |ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|跨房间连麦签名时间戳错误|
-|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|跨房间连麦签名不匹配|
-|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|本房间无连麦|
+|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|跨房间连麦签名内房间号不匹配|
+|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|跨房间连麦签名内用户名不匹配|
 |ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|本用户未发起连麦|
 |ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|跨房间连麦失败|
 |ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|取消跨房间连麦失败|
@@ -165,8 +164,8 @@ TRTCCloud.ConnectOtherRoom() 在跨房失败时会触发此类错误码，您可
 |WARNING_ROOM_DISCONNECT|5101|网络断开连接|
 |WARNING_IGNORE_UPSTREAM_FOR_AUDIENCE|6001|当前是观众角色，忽略上行音视频数据|
 |WARNING_NET_BUSY|1101|网络状况不佳：上行带宽太小，上传数据受阻|
-|WARNING_RTMP_SERVER_RECONNECT|1102|直播，网络断连, 已启动自动重连（自动重连连续失败超过三次会放弃）|
-|WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|直播，网络断连, 已启动自动重连（自动重连连续失败超过三次会放弃）|
+|WARNING_RTMP_SERVER_RECONNECT|1102|直播推流，网络断连, 已启动自动重连（自动重连连续失败超过三次会放弃）|
+|WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|直播拉流，网络断连, 已启动自动重连（自动重连连续失败超过三次会放弃）|
 |WARNING_RECV_DATA_LAG|2104|网络来包不稳：可能是下行带宽不足，或由于主播端出流不均匀|
 |WARNING_RTMP_DNS_FAIL|3001|直播，DNS 解析失败|
 |WARNING_RTMP_SEVER_CONN_FAIL|3002|直播，服务器连接失败|
@@ -180,4 +179,4 @@ TRTCCloud.ConnectOtherRoom() 在跨房失败时会触发此类错误码，您可
 |WARNING_NO_STEAM_SOURCE_FAIL|3010|直播，连接失败，该流地址无视频（SDK 内部错误码，不会对外抛出）|
 |WARNING_ROOM_RECONNECT|5102|网络断连，已启动自动重连|
 |WARNING_ROOM_NET_BUSY|5103|网络状况不佳：上行带宽太小，上传数据受阻|
-
+    

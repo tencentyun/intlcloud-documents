@@ -330,7 +330,7 @@ TRTC 是 [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html
 | [getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getCameras)           | 返回摄像头设备列表。          |
 | [getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getMicrophones)           | 返回麦克风设备列表。          |
 | [getSpeakers](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getSpeakers)         | 返回扬声器设备列表。          |
-| [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)    | 创建一个实时音视频通话的客户端对象，在每次会话中仅需要调用一次。          |
+| [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)    | 创建一个实时音视频通话的客户端对象，用于实现进退房间，发布、订阅音视频流等功能。          |
 | [createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createStream)    | 创建一个本地流 Stream 对象，本地流 Stream 对象通过 [publish()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#publish) 方法发布本地音视频流。 |
 
 ### TRTC.Logger

@@ -8,9 +8,12 @@
 ###  移动端 SDK 推流怎么设置1080p分辨率？
 1080P在 TX_Enum_Type_VideoResolution 定义是114，直接设置分辨率传枚举值即可。
 
-[](id:que4)
+[](id:que3)
+###  在小程序端创建了一个房间，移动端能否进入该房间？
+可以，实时音视频支持全平台互通。
 
-###  TRTC 移动端怎么实现录屏（屏幕分享）？	
+[](id:que4)
+###  TRTC 移动端怎么实现录屏（屏幕分享）？  
 - **Android 端**：Version 7.2 及以上版本支持手机录屏，具体实践方法请参见 [实时屏幕分享（Android）](https://intl.cloud.tencent.com/document/product/647/37337)。
 - **iOS 端**：Version 7.2 及以上版本支持 App 内录屏；Version 7.6 及以上版本支持手机录屏和 App 内录屏。具体实践方法请参见 [实时屏幕分享（iOS）](https://intl.cloud.tencent.com/document/product/647/37338)。
 
@@ -24,6 +27,7 @@ TRTC 6.3 版本开始已提供 arm64-v8a 架构 ABI 支持。
 [](id:que7)
 ###  在 iOS 端是否支持 Swift 集成？
 支持，直接按照支持集成三方库的流程集成 SDK 即可，还可以参考 [跑通Demo(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35086)。
+
 
 [](id:que9)
 ###  TRTC SDK 是否支持 iOS 后台运行？
@@ -49,10 +53,11 @@ TRTC 6.3 版本开始已提供 arm64-v8a 架构 ABI 支持。
 双方都可以主动发起，观众和主播发起逻辑一致，具体操作请参见  [跑通直播模式(Android)](https://intl.cloud.tencent.com/document/product/647/35108) 。
 
 [](id:que14)
-### 多人视频会议中，移动端和 Web 端是否可以进入同一房间？
+### 多人音视频房间中，移动端和 Web 端是否可以进入同一房间？
 可以。需保证 [SDKAppID](https://console.cloud.tencent.com/trtc/app) 和房间号一致，且用户 ID 不一致。
 
 [](id:que15)
+
 ### 同一个页面中，是否可以创建 N 个 TRTC 对象，通过 N 个 UserID，分别登录到 N 个房间？
 可以。[Version 7.6 版本](https://intl.cloud.tencent.com/document/product/647/34615) 开始支持一个用户进入多个房间了。
 
@@ -64,5 +69,9 @@ TRTC 6.3 版本开始已提供 arm64-v8a 架构 ABI 支持。
   - iOS & Android 端，请参见 [发布日志（App）](https://intl.cloud.tencent.com/document/product/647/39426)。
   - Web 端，请参见 [发布日志（Web）](https://intl.cloud.tencent.com/document/product/647/39779)。
   - Electron 端，请参见 [发布日志（Electron）](https://intl.cloud.tencent.com/document/product/647/38702)。
+
+
+
+
 
 

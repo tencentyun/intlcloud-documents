@@ -1,6 +1,6 @@
 ## Supported Platforms
 
-The TRTC Web SDK is based on WebRTC and can be used on mainstream desktop and mobile browsers. For details about browser support, see the table below.
+The TRTC web SDK is based on WebRTC and can be used on mainstream desktop and mobile browsers. For details about browser support, see the table below.
 If your browser (for example, WebView) is not in the list, you can run a [TRTC Web SDK Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in the browser to test whether it fully supports WebRTC.
 
 <table>
@@ -265,9 +265,9 @@ If your browser (for example, WebView) is not in the list, you can run a [TRTC W
 </table>
 
 >!
->- Due to patent issues, H.264 encoding, which is required for stream publishing, is unavailable for Chrome versions earlier than v88 on Huawei devices. To run the TRTC Web SDK on Chrome or Chrome WebView-based browsers on Huawei devices, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable VP8 encoding/decoding.
->- Firefox for macOS is weak in terms of screen sharing and no solution has been found yet. We recommend that you use Chrome or Safari instead.[](id:attention3)
->- If you want the TRTC Web SDK to support dual-channel audio encoding for publishing, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>- Due to H.264 copyright restrictions, H.264 encoding, which is required for stream publishing, is unavailable for Chrome versions earlier than v88 on Huawei devices. If you want to use the TRTC web SDK to publish streams on Chrome or Chrome WebView-based browsers on Huawei devices, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable VP8 encoding/decoding.
+>- Firefox for macOS performs poorly in terms of screen sharing, and no solution has been found yet. We recommend you use Chrome or Safari instead.[](id:attention3)
+>- If you want to add support for dual-channel encoding on web, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >- For service stability and better online support, we recommend you to keep your SDK updated to the latest version. For notes on version updates, see [Update Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-00-info-update-guideline.html).
 
 ## URL Protocol Support
@@ -290,13 +290,13 @@ For details about the initialization process and the use of APIs, see the tutori
 | Audio/Video call  | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-11-basic-video-call.html)               |
 | Interactive live streaming           | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-12-basic-live-video.html)    |
 | Switching cameras/mics | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)      |
-| Setting local video properties           | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html)    |
+| Setting local video attributes           | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html)    |
 | Disabling/Enabling local audio/video | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-15-basic-dynamic-add-video.html)    |
 | Screen sharing                   | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html)                   |
-| Detecting volume       | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)        |
+| Measuring volume       | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)        |
 | Custom capturing and rendering | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-20-advanced-customized-capture-rendering.html) |
-| Maximum number of upstream users in a room | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-04-info-uplink-limits.html) |
-| Adding music and audio effects | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-22-advanced-audio-mixer.html)                  |
+| Limit on the number of upstream users in a room | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-04-info-uplink-limits.html) |
+| Adding background music and audio effects | [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-22-advanced-audio-mixer.html)                  |
 | Environment and device check before calls| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-23-advanced-support-detection.html) |
 | Network quality check before calls| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-24-advanced-network-quality.html) |
 | Device change check| [Tutorial](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-25-advanced-device-change.html)|
@@ -310,42 +310,42 @@ For details about the initialization process and the use of APIs, see the tutori
 
 
 >? 
->- Learn more [here](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html).
+>- Learn more about the features of the TRTC web SDK [here](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html).
 >- For FAQs, see [Web](https://intl.cloud.tencent.com/document/product/647/37340).
 
 ## API Details
 ### TRTC
 
->!This document applies to 4.x.x versions of the TRTC Web SDK.
+>!This document applies to 4.x.x versions of the TRTC web SKD.
 
-`TRTC` is the main entry to the [TRTC Web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html). You can use `TRTC` APIs to create a client object (`Client`) and local audio/video stream object (`Stream`) for real-time communication, check a browser's compatibility and whether it supports screen sharing, as well as set the log output level and enable/disable log upload.
+`TRTC` is the main entry to the [TRTC web SDK](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/index.html). You can use `TRTC` APIs to create a client object (`Client`) and local audio/video stream object (`Stream`) for real-time communication, check a browser's compatibility and whether it supports screen sharing, as well as set the log output level and enable/disable log upload.
 
 | API                          | Description                |
 |----------------------------|-----------------------|
-| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.VERSION)                                 | Version of the TRTC Web SDK                                                                                                                                 |
-| [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) | Checks whether a browser is compatible with the TRTC Web SDK. If not, ask users to download the latest version of Chrome. |
-| [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported) | Checks whether a browser supports screen sharing. Call this API before creating a screen sharing stream.      |
-| [isSmallStreamSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#isSmallStreamSupported)    | Checks whether a browser supports the dual-stream mode. Call this API before enabling the dual-stream mode.     |
-| [getDevices](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getDevices)   | Gets the list of media input/output devices.                         |
-| [getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getCameras)   | Gets the list of cameras.                                        |
-| [getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getMicrophones) | Gets the list of mics.                                   |
-| [getSpeakers](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getSpeakers)   | Gets the list of speakers. |
+| [VERSION](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.VERSION)                                 | Version of the TRTC web SDK                                                                                                                                 |
+| [checkSystemRequirements](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.checkSystemRequirements) | Checks whether a browser is compatible with the TRTC web SDK. If not, ask users to download the latest version of Chrome. |
+| [isScreenShareSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.isScreenShareSupported) | Checks whether a browser supports screen sharing. Call this API before creating a screen sharing stream.                                                                  |
+| [isSmallStreamSupported](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#isSmallStreamSupported)    | Checks whether a browser supports the dual-stream mode. Call this API before you enable the dual-stream mode.     |
+| [getDevices](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getDevices)                           | Gets the list of media input/output devices.                                                                                                                                    |
+| [getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getCameras)                           | Gets the list of cameras.                                                                                                                                          |
+| [getMicrophones](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getMicrophones)                   | Gets the list of mics.                                                                                                                                          |
+| [getSpeakers](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.getSpeakers)                         | Gets the list of speakers.                                                                                                                                          |
 | [createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient)    | Creates a client object, which can enter a room, publish streams, subscribe to streams, and perform other actions.          |
-| [createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createStream) | Creates a local stream object, which can use the [publish()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#publish) API to publish the local audio/video stream. |
+| [createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createStream) | Creates a local `Stream` object, which uses the [publish()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#publish) API to publish the local audio/video stream. |
 
 ### TRTC.Logger
 
-`TRTC.Logger` provides APIs for log settings, including [logging level](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.LogLevel) setting and log upload enabling/disabling.
+`TRTC.Logger` provides APIs for log settings, including [log output level](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.LogLevel) setting and log upload enabling/disabling.
 
-| API                          | Description                 |
-|---------------------|-----------------|
+| API                                             | Description                                                         |
+| ---------------------------------- | ------------------ |
 | [setLogLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.setLogLevel) | Sets the log output level. |
 | [enableUploadLog](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.enableUploadLog) | Enables log upload.     |
 | [disableUploadLog](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.Logger.html#.disableUploadLog) | Disables log upload. |
 
 ### Client
 
-A client object is created through [createClient()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) and represents an audio/video call.
+A client object (`Client`) is created through [createClient()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) and represents an audio/video call.
 
 | API      | Description                         |
 |----------------------------|---------------------|
@@ -366,8 +366,8 @@ A client object is created through [createClient()](https://web.sdk.qcloud.com/t
 | [getLocalVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getLocalVideoStats) | Gets the video statistics of the published local stream. This API can be used only after [publish()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#publish) is called.           |
 | [getRemoteAudioStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteAudioStats) | Gets the audio statistics of all remote streams.        |
 | [getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#getRemoteVideoStats) | Gets the video statistics of all remote streams.       |
-| [startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startPublishCDNStream)             | Publishes the stream of the current client to a CDN.              |
-| [stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#stopPublishCDNStream)               | Stops publishing the stream of the current client to the CDN.  |
+| [startPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startPublishCDNStream)             | Publishes the stream of the current client to CDN.              |
+| [stopPublishCDNStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#stopPublishCDNStream)               | Stops publishing the stream of the current client to CDN.  |
 | [startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode)       | Starts On-Cloud MixTranscoding. This API works only after stream publishing.           |
 | [stopMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#stopMixTranscode)         | Stops On-Cloud MixTranscoding. This API works only after successful local stream publishing (`publish`) and stream mixing ([startMixTranscode](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#startMixTranscode)). |
 | [enableAudioVolumeEvaluation](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#enableAudioVolumeEvaluation) | Enables/Disables the volume callback.            |
@@ -386,8 +386,8 @@ A local audio/video stream is created through [createStream](https://web.sdk.qcl
 | [setAudioProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioProfile) | Sets audio parameters. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
 | [setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoProfile) | Sets video parameters. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
 | [setScreenProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setScreenProfile) | Sets screen sharing parameters. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
-| [setVideoContentHint](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoContentHint) | Sets reminder about video content. This helps improve video encoding quality in different scenarios. This API works only if it is called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize). |
-| [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice)               | Switches the media input device.                                                                                                                                                                       |
+| [setVideoContentHint](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setVideoContentHint) | Sets video content hint, mainly in order to improve the video encoding quality in different scenarios. This method must be called before [initialize()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#initialize) is called. |
+| [switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice)               | Switches media input devices.                                                                                                                                                                       |
 | [addTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#addTrack)                       | Adds an audio or video track to the local stream.                                                                                                                                                                     |
 | [removeTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#removeTrack)                 | Removes the video track of the local stream.                                                                                                                                                                           |
 | [replaceTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#replaceTrack)               | Replaces the audio or video track of the local stream.                                                                                                                                                                     |
@@ -402,7 +402,7 @@ A local audio/video stream is created through [createStream](https://web.sdk.qcl
 | [getId](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getId)                   | Gets the stream ID.                                                                          |
 | [getUserId](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getUserId)                     | Gets the ID of the user to whom the stream belongs.                                                                                                                                                                  |
 | [setAudioOutput](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#setAudioOutput)           | Sets the audio output device.                                                                                                                                                                       |
-| [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioLevel)             | Gets the current volume. This method works only if there is audio data in the local stream or a remote stream.                                                                                                                               |
+| [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioLevel)             | Gets the current volume. This API works only if there is audio data in the local stream or a remote stream.                                                                                                                               |
 | [hasAudio](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasAudio)                       | Queries whether there is an audio track.                                                                                                                                                                       |
 | [hasVideo](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#hasVideo)                       | Queries whether there is a video track.                                                                                                                                                                       |
 | [getAudioTrack](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#getAudioTrack)             | Gets the audio track of the local stream.                                                                                                                                                                           |
@@ -457,8 +457,8 @@ A list of client events, which are also the values of `eventName` in the `client
 | ---------- | ---------- |
 | [stream-added](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED) | There was a new remote stream. This callback is triggered after a remote user starts publishing.             |
 | [stream-removed](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_REMOVED) | A remote stream was removed. This callback is triggered after a remote user stops publishing.         |
-| [stream-updated](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_UPDATED) | A remote stream was updated. This callback is triggered after a remote user adds, removes, or replaces their audio or video track. |
-| [stream-subscribed](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_SUBSCRIBED) | A remote stream was subscribed. This callback is triggered after the local user calls `subscribe()` to successfully subscribe to a remote stream.    |
+| [stream-updated](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_UPDATED) | A remote stream was updated. This callback is triggered after a remote user adds, removes, or replaces an audio or video track. |
+| [stream-subscribed](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_SUBSCRIBED) | A remote stream was subscribed to. This callback is triggered after the local user calls `subscribe()` to successfully subscribe to a remote stream.    |
 | [connection-state-changed](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.CONNECTION_STATE_CHANGED) | The connection status between the local client and Tencent Cloud changed.       |
 | [peer-join](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.PEER_JOIN) | A remote user entered the room.      |
 | [peer-leave](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.PEER_LEAVE) | A remote user left the room.      |

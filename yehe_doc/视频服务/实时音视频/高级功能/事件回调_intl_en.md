@@ -2,25 +2,25 @@ The event callback service can notify your server of TRTC events in the form of 
 
 [](id:deploy)
 ## Configuration Information
-You can configure callback information in the TRTC console, and will receive event callback notifications after the configuration. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559).
+You can configure callback information in the TRTC console, and will receive event callback notifications after the configuration. For detailed directions, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559).
 
 
->! You need to provide the following information:
->- **Required**: an HTTP/HTTPS server address to receive callback notifications
->- **Optional**: a custom key containing up to 32 uppercase and lowercase letters and digits, which is needed for the calculation of signatures
+>!You need to provide the following information:
+>- **Required**: An HTTP/HTTPS server address to receive callback notifications
+>- **Optional**: A custom key containing up to 32 uppercase and lowercase letters and digits, which is needed for the calculation of signatures
 
 ## Timeout and Retry
-A notification will be considered failed if the callback server does not receive a response from your server within 5 seconds of message sending. It will try again immediately after the first failure and retry **10 seconds** after every subsequent failure. No retries will be made 1 minute after the first try.
+A notification will be considered failed if the callback server does not receive a response from your server within 5 seconds of message sending. It will try again immediately after the first failure and retry **10 seconds** after every subsequent failure. The retries will stop 1 minute after the first try.
 
 [](id:format)
 ## Format of Callback Messages
 
-Callback messages are sent to your server in the form of HTTP/HTTPS POST requests, which consist of the following parts.
+Callbacks are sent to your server in the form of HTTP/HTTPS POST requests, which consist of the following parts:
 
 - **Character encoding**: UTF-8
 - **Request**: JSON for the request body
 - **Response**: HTTP STATUS CODE = 200. The server ignores the content of the response packet. For protocol-friendliness, we recommend adding `JSON: `{"code":0}` to the response.
-- **Package body sample**: below is an example of the package body for room entry under the room event group.
+- **Packet body sample**: Below is an example of the packet body for room entry under the room event group.
 <dx-codeblock>
 ::: JSON JSON
 {
@@ -32,10 +32,10 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
         "EventTs": 1615554922,        #Event occurrence time, in seconds
         "UserId": "test",        #User ID
         "UniqueId": 1615554922656,        #Unique identifier
-        "Role": 20,                     #User role: anchor
+        "Role": 20,                     #User role: Anchor
         "TerminalType": 3,        #Device type: iOS
-        "UserType": 3,        #User type: native SDK
-        "Reason": 1        #Reason: voluntary entry
+        "UserType": 3,        #User type: Native SDK
+        "Reason": 1        #Reason: Voluntary entry
 	}
 }
 :::
@@ -102,6 +102,8 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 | EVENT_TYPE_START_ASSIT  | 205  | Starting pushing substream data |
 | EVENT_TYPE_STOP_ASSIT   | 206  | Stopping pushing substream data |
 
+>! Room exit will trigger only the `104` callback and not the `202` or `204` callback. `202` and `204` are triggered only if a user manually turns their video and audio off.
+
 [](id:event_infor)
 ### Event information
 
@@ -109,18 +111,18 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 
 | Field  | Type   | Description                              |
 | ------- | ------ | --------------------------------- |
-RoomId      |     String/Number       |     Room ID (same type as Room ID on the client)    |
-|EventTs      |    Number     |      Unix timestamp (s) of event occurrence. This field is reserved for compatibility purposes.|
+|RoomId      |     String/Number       |     Room ID, which is of the same type as the room ID on the client    |
+|EventTs      |    Number     |      Unix timestamp (seconds) of event occurrence. This field is reserved for compatibility purposes.|
 | EventMsTs | Number | Unix timestamp (ms) of event occurrence    |
 | UserId | String | User ID |
-| UniqueId  | Number | Unique identifier, optional and carried by the room event group. [](id:UniqueId)<br> When a user experiences unusual events such as network change or abnormal exit and reentry, your server may receive multiple callbacks for the entry and exit of the same user. A unique identifier helps identify that the multiple exits and entries are by the same user. |
-| Role    | Number | [Role type](#role_type), optional and carried during room entry/exit  |
-|TerminalType  |  Number    |   [Device type](#terminal), optional and carried during room entry |
-|UserType  |  Number   |    [User type](#usertype), optional and carried during room entry |
-| Reason  | Number | [Reason](#reason), optional and carried during room entry/exit |
+| UniqueId  | Number | Unique identifier, optional, carried by the room event group. [](id:UniqueId)<br> When a user experiences unusual events such as network change or abnormal exit and reentry, your server may receive multiple callbacks for the entry and exit of the same user. A unique identifier helps identify that the multiple exits and entries are by the same user. |
+| Role    | Number | [Role type](#role_type), optional, carried during room entry/exit  |
+|TerminalType  |  Number    |   [Device type](#terminal), optional, carried during room entry |
+|UserType  |  Number   |    [User type](#usertype), optional, carried during room entry |
+| Reason  | Number | [Reason](#reason), optional, carried during room entry/exit |
 
 
->! We have developed a policy that prevents repeated callbacks resulting from unusual events on the client. If you start using the callback service after July 30, 2021, the policy will be applied by default, and the room event group will no longer carry [UniqueId](#UniqueId).
+>! We have developed a policy that prevents repeated callbacks resulting from unusual events on the client. If you start using the callback service after July 30, 2021, the policy will apply by default, and the room event group will no longer carry [UniqueId](#UniqueId).
 
 
 [](id:role_type)
@@ -156,21 +158,20 @@ RoomId      |     String/Number       |     Room ID (same type as Room ID on the
 
 | Field    | Description                              |
 | -------  | --------------------------------- |
-|Room entry   |<li/>1: voluntary entry <li/>2: network change<li/>3: timeout and retry <li/>4: co-anchoring |
-|Room exit | <li/>1: voluntary exit <li/>2: timeout <li/>3: removed from the room <li/>4: canceling of co-anchoring <li/>5: force killing|
+|Room entry   |<li/>1: Voluntary entry <li/>2: Network change<li/>3: Timeout and retry <li/>4: Co-anchoring |
+|Room exit | <li/>1: Voluntary exit <li/>2: Timeout<li/>3: Removed from the room<li/>4: Co-anchoring was canceled.<li/>5: The process was force-killed.<br>**Note: TRTC cannot capture a force-kill event on Android and will send a callback only after timeout (`reason` = `2`).**|
 
 
 
 
 ### Signature calculation
-A signature is calculated with the HMAC SHA256 encryption algorithm. After your event callback receiving server receives a callback message, it will calculate the signature in the same way. If the two signatures are the same, it means that the event callback is from TRTC and not forged. For the principle and sample code of callback event signature calculation, see [Signature v3](https://intl.cloud.tencent.com/document/product/647/34264). The signature calculation process is as follows:
+Signatures are calculated using the HMAC SHA256 encryption algorithm. Upon receiving a callback message, your server will calculate a signature using the same method, and if the results match, it indicates that the callback is from TRTC and not forged. See below for the calculation method.
 ```
 // In the formula below, `key` is the key used to calculate a signature.
 Sign = base64(hmacsha256(key, body))
 ```
 
->! `body` is the original package body of the callback request you receive. Do not make any modifications. Below is an example.
-
-```
-> body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
-```
+>! `body` is the original packet body of the callback request you receive. Do not make any modifications. Below is an example.
+>```
+>body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
+>```

@@ -48,9 +48,10 @@
 
 [](id:v9)
 ### 如何横屏推流？
-开发者可能用设备是电视或者因场景需要横屏推流。
+开发者可能用设备是电视或者因场景需要横屏推流，具体实现请参见[视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)
 
 [](id:v10)
+
 ### 直播中出现播放黑屏是什么原因呢？
 - 播放失败或解码失败，参看播放失败的处理办法。
 - Metadata 问题，例如 metadata 中只有音频流信息，但实际数据中即有音频也有视频;或者是开始的数据只有音频，但播放一段时间后又加入了视频信息。这种情况一般建议修改源流的 metadata 信息。
@@ -116,7 +117,7 @@
 
 [](id:q1)
 ### TRTC 怎么监测网络状态，实现信号强弱展示功能？
-可以使用 onNetworkQuality() 监听当前网络的上行和下行质量，可参考 [官方 Demo](https://github.com/tencentyun/TRTCSDK) 实现信号强弱功能。
+可以使用 onNetworkQuality() 监听当前网络的上行和下行质量，以Android为例，可参考 [TRTC-API-Example](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/SpeedTest) 实现信号强弱功能。
 
 [](id:q2)
 ### 为什么设备摄像头或麦克风出现被占用等异常现象？

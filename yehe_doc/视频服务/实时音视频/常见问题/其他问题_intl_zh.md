@@ -1,16 +1,16 @@
 [](id:que1)
 ###  直播、互动直播、实时音视频以及旁路直播有什么区别和关系？
-- 直播（关键词：一对多，RTMP/HLS/HTTP-FLV，CDN）
+- **直播**（关键词：一对多，RTMP/HLS/HTTP-FLV，CDN）
  直播分为推流端、播放端以及直播云服务，云服务使用 CDN 进行直播流的分发。推流使用的是通用标准的协议 RTMP，经过 CDN 分发后，播放时一般可以选择 RTMP、HTTP-FLV 或 HLS（H5 支持）等方式进行观看。
-- 互动直播（关键词：连麦、PK）
+- **互动直播**（关键词：连麦、PK）
  互动直播是一种业务形式，指主播与观众之间进行互动连麦，主播与主播之间进行互动PK的一种直播类型。
-- 实时音视频（关键词：多人互动，UDP 私有协议，低延时）
- 实时音视频（Tencent Real-Time Communication，TRTC）主要应用场景是音视频互动和低延时直播，使用基于 UDP 的私有协议，其延迟可低至100ms，典型的场景就是 QQ 电话、腾讯会议、大班课等。 腾讯云实时音视频（TRTC）覆盖全平台，除了iOS/Android/Windows之外，还支持 WebRTC 互通，并且支持通过云端混流的方式将画面旁路直播到 CDN。
-- 旁路直播（关键词：云端混流，RTC 旁路转推，CDN）
+- **实时音视频**（关键词：多人互动，UDP 私有协议，低延时）
+ 实时音视频（Tencent Real-Time Communication，TRTC）主要应用场景是音视频互动和低延时直播，使用基于 UDP 的私有协议，其延迟可低至100ms，典型的场景就是 QQ 电话、腾讯会议、大班课等。 腾讯云实时音视频（TRTC）覆盖全平台，除了iOS/Android/Windows之外，还支持小程序以及 WebRTC 互通，并且支持通过云端混流的方式将画面旁路直播到 CDN。
+- **旁路直播**（关键词：云端混流，RTC 旁路转推，CDN）
  旁路直播是一种技术，指的是将低延时连麦房间里的多路推流画面复制出来，在云端将画面混合成一路，并将混流后的画面推流给直播 CDN 进行分发播放。 
 
-
 [](id:que2)
+
 ###  两台设备同时运行 Demo，为什么看不到彼此的画面？
 请确保两台设备在运行 Demo 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个设备同时使用。
 
@@ -24,18 +24,21 @@ VideoCall 模式针对视频通话做了优化，所以在房间中只有一个�
 
 可能因为房间权限控制已开启。房间权限控制开启后，当前 SDKAppID 下的房间将需要在 TRTCParamEnc 中设置 privateMapKey 才能进入。如果您线上业务正在运营中，并且线上版本并没有加入 privateMapKey 的相关逻辑，请不要开启该功能，更多详情请参见 [进房权限保护](https://intl.cloud.tencent.com/document/product/647/35157)。
 
-
-
 [](id:que5)
 ###  如何查看 TRTC 日志？
 TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以通过 setLogCompressEnabled 来控制，生成的文件名里面含 C(compressed) 的就是加密压缩的，含 R(raw) 的就是明文的。
 
 - iOS&Mac：`sandbox的Documents/log`
 - Android：
-  - 6.7及之前的版本：`/sdcard/log/tencent/liteav`
-  - 6.8之后的版本：`/sdcard/Android/data/包名/files/log/tencent/liteav/`
-- Windows：`%appdata%/tencent/liteav/log`
+	- 6.7及之前的版本：`/sdcard/log/tencent/liteav`
+	- 6.8之后的版本：`/sdcard/Android/data/包名/files/log/tencent/liteav/`
+	- 8.5之后的版本：`/sdcard/Android/data/包名/files/log/liteav/`
+- Windows：
+	- 8.8之前的版本：`%appdata%/tencent/liteav/log`
+	- 8.8以及8.8之后的版本：`%appdata%/liteav/log`
 - Web：打开浏览器控制台，或使用 vConsole 记录 SDK 打印信息
+
+  
 
 >?
 >- 查看 .xlog 文件需要下载解密工具，在python 2.7环境中放到 xlog 文件同目录下直接使用 `python decode_mars_log_file.py` 运行即可。
@@ -46,7 +49,7 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
 ###  出现10006 error 该如何处理？
 如果出现"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"，请确认您的实时音视频应用的服务状态是否为可用状态。
 登录 **实时音视频控制台** > **[应用管理](https://console.cloud.tencent.com/trtc/app)** ，选择您创建的应用，单击 **应用信息** ，在应用信息面板即可确认服务状态。
-![](https://main.qcloudimg.com/raw/57e63830a368520c5e81e8e4b43d09b7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5004e787b0f76d62f899234cf974b645.png)
 
 [](id:que7)
 ###  进入房间返回错误码-100018是什么原因？
@@ -136,7 +139,7 @@ TRTC 支持手动录制，具体操作办法如下：
 
 [](id:que37)
 ###  是否可以至少两个人进入房间，才开始录音？
-可以。若您需获取录制混流后的音频数据，您可在 [启动云端混流](https://intl.cloud.tencent.com/document/product/647/34618) 后，制定输出流 ID，并调用直播接口 [创建录制任务](https://intl.cloud.tencent.com/document/product/267/37309)。
+可以。若您需获取录制混流后的音频数据，您可在 启动云端混流 后，制定输出流 ID，并调用直播接口 [创建录制任务](https://intl.cloud.tencent.com/document/product/267/37309)。
 
  [](id:que38)
 ###  Windows 端怎么采集到被分享应用播放的声音？
@@ -156,3 +159,7 @@ TRTC 支持手动录制，具体操作办法如下：
 [](id:que41)
 ### TRTC 有 Linux SDK 吗？
 Linux SDK 暂未完全开放，若您需咨询或使用相关服务，请联系：colleenyu@tencent.com。
+
+[](id:que42)
+### TRTC 是否支持在视频通话（或连麦互动）时进行屏幕分享吗？
+支持。TRTC 连麦互动或者视频通话时，摄像头采集画面作为主流画面，同时还支持屏幕分享作为辅流画面。分享出去的屏幕就是当前手机屏幕画面，包含连麦互动或者视频通话的窗口。

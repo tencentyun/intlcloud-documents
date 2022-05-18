@@ -18,7 +18,7 @@
 | SIGNAL_CHANNEL_RECONNECTION_FAILED | 16390   | 0x4006 | Failed to reconnect WebSocket to the signaling channel.<ul style="margin:0"><li/>When WebSocket is disconnected, the SDK will try to reconnect it. If multiple retries fail, it will return this error.<li/>Suggested solution: Ask users to check their network connection and enter the room again.      |
 | UPLINK_RECONNECTION_FAILED         | 16391   | 0x4007 | Upstream peer reconnection failed.<ul style="margin:0"><li/>When upstream peers are disconnected, the SDK will try to reconnect them. If multiple retries fail, it will return this error.<li/>Suggested solution: Ask users to check their network connection and publish or enter the room again.        |
 | DOWNLINK_RECONNECTION_FAILED       | 16392   | 0x4008 | Downstream peer reconnection failed. <ul style="margin:0"><li/>When downstream peers are disconnected, the SDK will try to reconnect them. If multiple retries fail, it will return this error.<li/>Suggested solution: Ask users to check their network connection and enter the room again.       |
-| REMOTE_STREAM_NOT_EXIST            | 16400   | 0x4010 | The remote stream does not exist.<ul style="margin:0"><li/>If user A tries to subscribe to the stream of user B, but user B has stopped publishing his or her stream, this error will be returned.<li/>This error does not need to be handled.     |
+| REMOTE_STREAM_NOT_EXIST            | 16400   | 0x4010 | The remote stream does not exist.<ul style="margin:0"><li/>If user A tries to subscribe to the stream of user B, but user B has stopped publishing his or her stream, this error will be returned.<li/>You don’t need to handle this error.     |
 | CLIENT_BANNED       | 16448   | 0x4040 | The user was removed from the room for one of the following reasons: <ul style="margin:0"><li/>A user with the same username entered the room. **Note**: Avoid repeated room entry with the same username because it will cause an error.<li/>The account admin called a server-side API to remove the user from the room.  |
 | SERVER_TIMEOUT              | 16449   | 0x4041 | Media transmission service timed out.       |
 | SUBSCRIPTION_TIMEOUT        | 16450   | 0x4042 | Remote stream subscription timed out.         |
@@ -53,7 +53,7 @@
 | 70014  | Account system | `SDKAppID` in `userSig` is different from that in the request. Check whether the `SDKAppID` entered during login is the same as that in `userSig`. |
 | 70015  | Account system | No verification method was found for this `SDKAppID` and account type. Check whether account integration has been performed. |
 | 70016  | Account system | The length of the public key pulled is 0. Check whether a public key has been uploaded. If it was just uploaded, try again in 10 minutes.  |
-| 70017  | Account system | Internal verification of third-party ticket timed out. Try again.                      |
+| 70017  | Internal validation of third-party ticket timed out. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70018  | Account system | Internal verification of third-party ticket failed.                                       |
 | 70019  | Account system | The ticket field for HTTPS-based verification is empty. Enter the correct `userSig`.        |
 | 70020  | Account system | The application (`SDKAppID`) was not found. Make sure you have created it in Tencent Cloud. |
@@ -70,10 +70,10 @@
 | 70115  | Account system | The UIN does not match that of the application developer.                           |
 | 70140  | Account system | `SDKAppID` and `acctype` do not match.                                   |
 | 70145  | Account system | Incorrect account type.                                                 |
-| 70169  | Account system | Internal error. Try again.                      |
-| 70201  | Account system | Internal error. Try again.                      |
-| 70202  | Account system | Internal error. Try again.                      |
-| 70203  | Account system | Internal error. Try again.                       |
+| 70169  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70201  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70202  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70203  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70204  | Account system | The `SDKAppID` has no matching `acctype`.                                 |
 | 70205  | Account system | Failed to find `acctype`. Try again.                                    |
 | 70206  | Account system | Invalid quantity for batch operation in the request.                                        |
@@ -82,24 +82,24 @@
 | 70209  | Account system | Failed to get the developer's UIN.                                      |
 | 70210  | Account system | The UIN in the request is not the developer’s.                                    |
 | 70211  | Account system | Invalid UIN in the request.                                              |
-| 70212  | Account system | Internal error. Try again.                       |
-| 70213  | Account system | Failed to access internal data. Try again.                      |
+| 70212  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70213  | Account system | Failed to access internal data. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70214  | Account system | Internal ticket verification failed.                                             |
 | 70221  | Account system | Invalid login status. Verify login with `UserSig` again.                        |
 | 70222  | Account system | Internal error. Try again.                                           |
-| 70225  | Account system | Internal error. Try again.                       |
-| 70231  | Account system | Internal error. Try again.                       |
+| 70225  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70231  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70236  | Account system | Failed to verify the user signature.                                     |
-| 70308  | Account system | Internal error. Try again.                      |
+| 70308  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70346  | Account system | Ticket verification failed.                                               |
 | 70347  | Account system | Failed to verify the ticket because it has expired. |
-| 70348  | Account system | Internal error. Try again.                      |
-| 70362  | Account system | Internal timeout. Try again.                       |
+| 70348  | Account system | Internal error. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70362  | Account system | Internal timeout. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70401  | Account system | Internal error. Try again                                           |
 | 70402  | Account system | Invalid parameter. Check whether all required fields are filled in and the values entered meet the requirements. |
 | 70403  | Account system | The initiator is not the application admin and is not authorized to perform the operation.                      |
 | 70050  | Account system | The account is temporarily locked due to multiple failed login retries. Please check whether the ticket is correct and try again in a minute. |
-| 70051  | Account system | Blocked account.                                                         |
+| 70051  | Account system | Blocked account. Please [contact us](https://intl.cloud.tencent.com/contact-us). |
 
 ## Room Entry Errors
 | Error Code | Description              |
@@ -115,7 +115,7 @@
 | -10020 | Server connection timed out. Try again. |
 
 ## Common Errors and Solutions
-The following errors must be fixed through application-side intervention. For example, if camera access is denied, your application needs to prompt users to grant it camera access in order to be able to make video calls.
+The following errors must be fixed through application-side intervention. For example, if camera access is denied, your application needs to prompt users to grant it camera access in order to make calls.
 
 
 | Error Message    | Description    | Solution    |
@@ -127,10 +127,10 @@ The following errors must be fixed through application-side intervention. For ex
 | ICE/DTLS Transport connection failed                       | Failed to establish media transport connection.                                                     | Check your [firewall configuration](https://intl.cloud.tencent.com/document/product/647/35164).                                                             |
 | previous publishing is ongoing, please avoid re-publishing | Already publishing.                                                     | Do not call `publish()` again after publishing.                                                                                                            |
 | AbortError            | The device could not be accessed due to an unknown device/system error.         | Test the device before making a call.        |
-| NotReadableError                                           | The device was inaccessible due to a hardware, browser or webpage error. | Handle the error according to the error message returned, and send this message to the user: “The camera/mic cannot be accessed. Please make sure that no other applications are requesting access and try again.” |
+| NotReadableError                                           | The device was inaccessible due to a hardware, browser or webpage error. | Handle the error according to the error message returned, and send this message to the user: “The camera/mic cannot be accessed. Please make sure it is not used by another application and try again.” |
 | NotFoundError         | Could not find the media (audio, video, or screen sharing) specified by the request parameter.                       | Test the device before making a call.                                                                                                              |
 | NotAllowedError| The user rejected the request of the current browser instance to access the camera/mic or share the screen.| Remind the user that audio/video calls cannot be made without camera/mic access. |
 | SignalChannel reconnect failed      | WebSocket was disconnected.             | Refresh and try again.      |
 | duplicate publishing, please unpublish and then re-publish | Repeated `publish` calls.              | Call `unpublish()` first before `publish()`.      |
 | OverconstrainedError            | The browser could not get the camera/mic.        | Make sure that the value of `cameraId/`microphoneId` is a valid non-empty string.      |
-| RtcError: no valid ice candidate found                     | The TRTC Web SKD failed with regard to hole punching via Session Traversal Utilities for NAT (STUN).       | Check your [firewall configuration](https://intl.cloud.tencent.com/document/product/647/35164).                                                             |
+| RtcError: no valid ice candidate found                     | The TRTC web SKD failed with regard to hole punching via Session Traversal Utilities for NAT (STUN).       | Check your [firewall configuration](https://intl.cloud.tencent.com/document/product/647/35164).                                                             |
