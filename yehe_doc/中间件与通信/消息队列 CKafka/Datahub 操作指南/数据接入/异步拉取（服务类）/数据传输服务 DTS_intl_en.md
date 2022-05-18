@@ -21,7 +21,7 @@ This document takes DTS data as an example to describe how to create an async da
 4. Click **Next** and enter the task details.
    ![](https://qcloudimg.tencent-cloud.cn/raw/c781a56c89f41ae535d69658f8ded1eb.png)
    
-   - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and".").
+   - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and ".").
    - Target CKafka Instance: Select a CKafka instance.
    - Target Topic: Select the target CKafka topic for data delivery.
    - DTS Instance: Select a DTS instance. The partition count of the topics that are subscribed to in DTS must be set to the same as that of the target Kafka topics.
