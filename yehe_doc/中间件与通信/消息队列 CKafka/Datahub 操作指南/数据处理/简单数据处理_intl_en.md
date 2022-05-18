@@ -10,7 +10,7 @@ DataHub provides the simple data processing feature. You only need to pass in da
 2. Click **Data Processing** on the left sidebar, select the region, and click **Create Task**.
 3. Enter the basic task information.
    ![](https://qcloudimg.tencent-cloud.cn/raw/73e8fc56b2851cefa6603d697e9dd986.png)
-   - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and".").
+   - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and ".").
    - Source Topic: CKafka topic of the source data.
    - Target Topic: CKafka topic of the target data.
    - Starting Position: Select the topic offset of historical messages when dumping.
