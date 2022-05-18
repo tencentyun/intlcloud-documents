@@ -1,5 +1,5 @@
 ## 概要
-本ドキュメントでは、Windows Server 2012 R2 データセンターバージョン64ビット中国語版OSのCVMを例として、MySQL 8.0.19の構築を具体的な手順を紹介します。
+本ドキュメントでは、Windows Server 2012 R2 データセンターバージョン64ビット英語版OSのCVMを例として、MySQL 8.0.19の構築を具体的な手順を紹介します。
 通常の状況下では、WindowsシステムにはSQL Serverデータベースが多く使用されますが、SQL Serverは優勝製品であり、自ら認証を行う必要があるため、 [TencentDB for SQL Serverインスタンス](https://intl.cloud.tencent.com/product/sqlserver)を購入することもできます。
 
 ## 操作手順
