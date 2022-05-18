@@ -21,7 +21,7 @@ powercfg -L
 The returned result is as follows:
  ![](https://main.qcloudimg.com/raw/54ceb4faddc8745b30556621268ac318.png)
 
-4. On the desktop of the operating system, click img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> > **Control Panel** > **System and Security** > **Power Options**.
+4. On the desktop of the operating system, click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> > **Control Panel** > **System and Security** > **Power Options**.
 5. In the **Power Options** window, click **Change plan settings**.
 ![](https://main.qcloudimg.com/raw/54183c1f9d914789b986781b8a4da6ec.png)
 6. In the **Edit Plan Settings** window, modify the idle turn-off times of the monitor and disk.
