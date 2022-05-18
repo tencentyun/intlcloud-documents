@@ -199,7 +199,7 @@ The range voice feature controls the reachability of sound through distance. It 
 ## Directions
 If you want to use 3D sound effects while using range voice, please complete the step 1, 2, 3 and then initialize 3D engine and open 3D sound effects.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/acd2c698c057cc7f62ce04e42305c665.png"  width="60%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/39fb54637b7957509d00ed440f7ae0a9.png"  width="60%"/></img>
 
 >? The green part of the flow chart shows the process of the range voice.
 
