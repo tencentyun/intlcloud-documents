@@ -27,12 +27,12 @@ The created instances are suffixed with numbers starting from 1 by default. You 
 The following example assumes that you have purchased three instances and want to name these instances in the form of "CVM+Sequence number" (for example, CVM 1, CVM 2, and CVM 3).
 
 <dx-tabs>
-::: Operations on the purchase page
+::: Purchase page
 1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855). On the **2. Security Group and CVM** tab page, enter the instance name in the form of **Prefix+Sequence number**. In this case, enter `CVM` as the instance name.
 ![](https://main.qcloudimg.com/raw/820a52077080be5da4c1fb4715452e6b.png)
 2. Follow the prompts on the page and complete payment.
 :::
-::: Operations via API
+::: API
 In the [RunInstances](https://intl.cloud.tencent.com/zh/document/product/213/33237) API, set the relevant fields:
 - Instance name: set `InstanceName` to `CVM`.
 - Host name: set `HostName` to `CVM`.
@@ -52,12 +52,12 @@ The instance name with a specified pattern string is in the form of **{R:x}**, w
 The following example assumes that you want to create three instances and name them with ascending numbers starting from 3.
 
 <dx-tabs>
-::: Operations on the purchase page
+::: Purchase page
 1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855). On the **2. Set the CVM** tab page, enter the instance name in the form of **Prefix+Specified pattern string {R:x}**. In this case, enter `CVM{R:3}` as the instance name.
 ![](https://main.qcloudimg.com/raw/4e09732d612222f619cf7a1e8da1ee06.png)
 2. Follow the prompts on the page and complete payment.
 :::
-::: Operations via API
+::: API
 In the [RunInstances](https://intl.cloud.tencent.com/zh/document/product/213/33237) API, set the relevant fields:
 - Instance name: set `InstanceName` to `CVM{R:3}`.
 - Host name: set `HostName` to `CVM{R:3}`.
@@ -70,13 +70,13 @@ In the [RunInstances](https://intl.cloud.tencent.com/zh/document/product/213/332
 The following example assumes that you want to create three instances and name them with the **cvm**, **Big**, and **test** prefixes, where **cvm** and **Big** are followed by ascending numbers starting from 13 and 2, respectively. For example, their names are cvm13-Big2-test, cvm14-Big3-test, and cvm15-Big4-test, respectively.
 
 <dx-tabs>
-::: Operations on the purchase page
+::: Purchase page
 1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](http://intl.cloud.tencent.com/document/product/213/4855). On the **2. Set the CVM** tab page, enter the instance name in the form of **Prefix+Specified pattern string {R:x}-Prefix+Specified pattern string {R:x}-Prefix**. In this case, enter `cvm{R:13}-Big{R:2}-test` as the instance name.
 ![](https://main.qcloudimg.com/raw/1042e86262bc7ce3939f1842a8025c23.png)
 2. Follow the prompts on the page and complete payment.
 
 :::
-::: Operations via API
+::: API
 In the [RunInstances](https://intl.cloud.tencent.com/zh/document/product/213/33237) API, set the relevant fields:
 - Instance name: set `InstanceName` to `cvm{R:13}-Big{R:2}-test`.
 - Host name: set `HostName` to `cvm{R:13}-Big{R:2}-test`.
