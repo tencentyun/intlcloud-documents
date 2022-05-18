@@ -111,7 +111,7 @@ The table below shows the cumulative resolution of videos received by each user,
 | A | B’s and C’s video streams + D’s audio stream         | 480 x 480 x 2  | 460,800    | HD        | 60           |
 | B | A’s and C’s video streams + D’s audio stream         | 480 x 480 x 2  | 460,800    | HD        | 60           |
 | C | A’s and B’s video streams + D’s audio stream         | 480 x 480 x 2  | 460,800    | HD        | 60           |
-| C | A’s, B’s, and C’s video streams         | 480 x 480 x 3  | 691,200    | HD        | 60           |
+| D | A’s, B’s, and C’s video streams         | 480 x 480 x 3  | 691,200    | HD        | 60           |
 | Audience 1 | A’s, B’s and C’s video streams + D’s audio stream         | 480 x 480 x 3  | 691,200    | HD        | 60           |
 | Audience 2 | Audio streams only                    | -             | -          | Audio             | 60           |
 
