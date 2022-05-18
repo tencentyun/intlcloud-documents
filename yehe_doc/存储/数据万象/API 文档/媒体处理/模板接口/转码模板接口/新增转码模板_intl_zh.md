@@ -299,7 +299,7 @@ Container 类型 TransConfig 的具体数据描述如下：
 
 AdjDarMethod 参数图示：
 
-![](https://main.qcloudimg.com/raw/3436731be8c1caa5ffd565b2c44b9643.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e2eb1d7346df8f51756fdab7bdce2ca0.png)
 
 
 Container 类型 HlsEncrypt 的具体数据描述如下：
