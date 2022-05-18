@@ -47,7 +47,6 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
     "MsgLifeTime":60, // 消息保存60秒
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -71,7 +70,6 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
     "MsgLifeTime":60, // 消息保存60秒
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "ForbidCallbackControl":[
         "ForbidBeforeSendMsgCallback",
         "ForbidAfterSendMsgCallback"], // 禁止回调控制选项
@@ -98,7 +96,6 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
     "MsgLifeTime":3600, // 消息保存一小时
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -136,7 +133,6 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
     "To_Account": "lumotuwe2",
     "MsgSeq": 93847636,
     "MsgRandom": 1287657,
-    "MsgTimeStamp": 1557387418,
     "MsgBody": [
         {
             "MsgType": "TIMTextElem",
@@ -159,7 +155,6 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
 | MsgLifeTime | Integer |选填| 消息离线保存时长（单位：秒），最长为7天（604800秒）<li>若设置该字段为0，则消息只发在线用户，不保存离线</li><li>若设置该字段超过7天（604800秒），仍只保存7天</li><li>若不设置该字段，则默认保存7天</li>|
 | MsgSeq | Integer |选填|消息序列号（32位无符号整数），后台会根据该字段去重及进行同秒内消息的排序，详细规则请看本接口的功能说明。若不填该字段，则由后台填入随机数  |
 | MsgRandom | Integer |必填| 消息随机数（32位无符号整数），后台用于同一秒内的消息去重。请确保该字段填的是随机
-| MsgTimeStamp | Integer |选填| 消息时间戳，UNIX 时间戳（单位：秒）  |
 | ForbidCallbackControl | Array |选填| 消息回调禁止开关，只对本条消息有效，ForbidBeforeSendMsgCallback 表示禁止发消息前回调，ForbidAfterSendMsgCallback 表示禁止发消息后回调  |
 | SendMsgControl | Array |选填| 消息发送控制选项，是一个 String 数组，只对本条消息有效。"NoUnread"表示该条消息不计入未读数。"NoLastMsg"表示该条消息不更新会话列表。"WithMuteNotifications"表示该条消息的接收方对发送方设置的免打扰选项生效（默认不生效）。示例："SendMsgControl": ["NoUnread","NoLastMsg","WithMuteNotifications"]  |
 | MsgBody | Array |必填| 消息内容，具体格式请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（注意，一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
