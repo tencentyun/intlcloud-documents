@@ -14,7 +14,7 @@
 1. 登录云服务器，右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/67b4c8b9bac6c8f0c8a60a5ed9c6b5dd.png" style="margin:-3px 0px">，并在弹出菜单中选择**运行**。
 2. 在打开的“运行”窗口中，输入 **cmd** 并按 **Enter**。
 3. 在打开的 “cmd” 窗口中，执行 `systeminfo` 命令即可查看系统信息。
-本文系统版本以 “Windows Server 2016 数据中心版 64位中文版”为例，则获取信息如下图所示：
+本文系统版本以 “Windows Server 2016 数据中心版 64位英文版”为例，则获取信息如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/8c46c9c368201575fafed26272638544.png)
 
 ### 更新 Virtio 网卡驱动方法
