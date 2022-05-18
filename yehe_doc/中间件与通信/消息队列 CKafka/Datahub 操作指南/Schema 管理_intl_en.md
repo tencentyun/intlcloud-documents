@@ -9,7 +9,7 @@ DataHub offers the schema management feature. You can associate a created schema
 1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. Select **Schema Management** on the left sidebar, select the region, click **Create Schema**, and enter the schema name.
    ![](	https://qcloudimg.tencent-cloud.cn/raw/1dec3b1d34b51ab98957e59eb099e73f.png)
-   - Schema Name: Enter the schema name. It can only contain letters, digits, underscores, or symbols("-" and ".").
+   - Schema Name: Enter the schema name. It can only contain letters, digits, underscores, or symbols ("-" and ".").
    - Description: Enter the optional schema description.
    - Field Configuration: Add up to 100 fields.
      - Field Name: Enter the field name.
