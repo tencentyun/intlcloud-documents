@@ -18,7 +18,7 @@ This document takes HTTP data as an example to describe how to create an active 
 4. Click **Next**, enter the task name, and select the created CKafka instance and topic.
    ![](https://qcloudimg.tencent-cloud.cn/raw/a44723d55be51388c47616fff20f6ed0.png)
    - Task Name: Enter the task name. It can only contain letters, digits, underscores, or symbols ("-" and ".").
-   - Target CKafka Instance: Select the target CKafka instance.
+   - CKafka Instance: Select the target CKafka instance.
    - Target Topic: Select the target CKafka topic for data shipping. The data distribution feature cannot be normally used if ACL policies are configured for the selected topic.
    - Schema: After a schema is associated, it will be used to verify data format. If there is no appropriate schema, you can click [Create Schema](https://console.intl.cloud.tencent.com/ckafka/datahub-schema?rid=8&createStatus=true) to enter the schema creation page.
    - QPS Limit: Enter the QPS limit.
