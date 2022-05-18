@@ -11,7 +11,7 @@ Note the following while installing and configuring Cloud-init:
 
 Common operating system images that already contain Cloud-init are as follows:
 * img-31tjrtph (CentOS 7.2 64-bit)
-* img-er9shcln (Windows Server 2012 R2 Standard 64-bit Chinese)
+* img-er9shcln (Windows Server 2012 R2 Standard 64-bit English)
 * img-pyqx34y1 (Ubuntu Server 16.04.1 LTS 64-bit)
 
 

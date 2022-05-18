@@ -53,7 +53,6 @@ Count the PV value every 5 minutes:
 * | select histogram(__TIMESTAMP__, INTERVAL 5 MINUTE) AS dt, count(*) as PV group by dt order by dt limit 1000
 ```
 
-![image-20210719003224086](https://main.qcloudimg.com/raw/13bfe6019fb000314de02acbeb7b68f7.png)
 
 
 
@@ -87,7 +86,7 @@ Complete data with a time unit of 2 minutes:
 * | select time_series(__TIMESTAMP__, '2m', '%Y-%m-%dT%H:%i:%s+08:00', '0')  as time, count(*) as count group by time order by time limit 1000
 ```
 
-![](https://qcloudimg.tencent-cloud.cn/raw/99a7347df11c30457ae49f63e4df1ecf.png)
+
 
 ## Time Truncation Functions
 
@@ -171,7 +170,7 @@ Return the interval value in seconds between '2020-03-01 00:00:00' and '2020-03-
 ```
 * | SELECT date_diff('second', TIMESTAMP '2020-03-01 00:00:00', TIMESTAMP '2020-03-02 00:00:00')
 ```
-![image-20210715010326425](https://main.qcloudimg.com/raw/30aa668d55d1689a15840f8a14ebae43.png)
+
 
 
 
@@ -200,7 +199,6 @@ Parse the unit value string '3.81 d' into a duration string:
 ```
 * | SELECT parse_duration('3.81 d')
 ```
-![image-20210715012028686](https://main.qcloudimg.com/raw/7a6b418727cc5366166f1272e43358d1.png)
 
 
 <span id="date_parse"></span>
@@ -251,5 +249,4 @@ Parse the time string '2017-05-17 09:45:00' in `format` into a date and time exp
 ```
 * | SELECT date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')
 ```
-![image-20210715155837224](https://main.qcloudimg.com/raw/543fc20f5945d5ca1f33aa5b2356ac91.png)
 

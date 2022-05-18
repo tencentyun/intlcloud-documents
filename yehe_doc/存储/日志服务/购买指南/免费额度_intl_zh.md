@@ -94,7 +94,7 @@
 #### 活动对象
 
 由 TKE 侧自动创建的日志主题，且写入日志为 TKE 审计/事件日志。参与活动的日志主题带有 TKE-Audit 或 TKE-Event 标识，用户可在 **[日志主题](https://console.cloud.tencent.com/cls/topic)** 中查看。
-![](https://qcloudimg.tencent-cloud.cn/raw/7223bddfb78150749ab88dc51eac4cd4.png)
+
 
 #### 活动规则
 
@@ -105,6 +105,3 @@
 
 持续至2022年06月30日23点59分59秒。
 
-#### 示例页面
-![](https://main.qcloudimg.com/raw/1955438aa1c136c081e72087bdeee7da.png)
-![](https://main.qcloudimg.com/raw/a2051816f647312a2301f7a41d3598ae.png)

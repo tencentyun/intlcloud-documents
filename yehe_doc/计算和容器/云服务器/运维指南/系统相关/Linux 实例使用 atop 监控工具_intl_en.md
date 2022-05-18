@@ -7,7 +7,7 @@ This document introduces how to use the atop monitoring tool with an example of 
 ## Directions
 
 ### Installing atop
-1. [Log in to a Linux instance](https://intl.cloud.tencent.com/document/product/213/5436).
+1. [Log in to a Linux instance using WebShell](https://intl.cloud.tencent.com/document/product/213/5436).
 2. Run the following command to install atop.
 ```
 yum install atop -y
@@ -23,7 +23,7 @@ vim /etc/sysconfig/docker
 ```
 2. Press **i** to enter the edit mode and modify the configuration below:
  - Modify `LOGINTERVAL=600` to ` LOGINTERVAL=30`. This means to modify the monitoring period of 600s by default to a recommended value-30s. You can modify it to other values as you needed.
- -Modify `LOGGENERATIONS=28` to `LOGGENERATIONS=7`. This means to modify the log retention time of 28 days by default to 7 days. To prevent overmuch disk storage space from being occupied due to the long-term running of atop, it’s recommended to modify it to 7 days. You can modify it to other values as needed.
+ - Modify `LOGGENERATIONS=28` to `LOGGENERATIONS=7`. This means to modify the log retention time of 28 days by default to 7 days. To prevent overmuch disk storage space from being occupied due to the long-term running of atop, it’s recommended to modify it to 7 days. You can modify it to other values as needed.
 The result should be as follows:
 ![](https://main.qcloudimg.com/raw/764fee905a0f1d89d1c48c6d2f6aa372.png) 
 3. Press **Esc** and enter **:wq** to save the modification and exit VIM editor.
@@ -33,7 +33,7 @@ systemctl restart atop
 ```
 
 ### Analyzing atop
-The launched atop records the collected data in the log file under the `/var/log/atop` directory. Please check the required log file name, execute the following command to view the log file, and analyze the data with reference to [atop Common Commands ](#commands) and [System Resource Monitoring Field Description ](#monitoringField).
+The launched atop records the collected data in the log file under the `/var/log/atop` directory. Please check the required log file name, execute the following command to view the log file, and analyze the data with reference to [atop Common Commands](#commands) and [System Resource Monitoring Field Description](#monitoringField).
 ```
 atop -r /var/log/atop/atop_2021xxxx
 ```
@@ -48,10 +48,10 @@ You can use the following commands to filter the required data after opening the
 -**n**: Filter by network usage of the process in descending order (This command is not supported by default. To use it, you need to install additional kernel modules).
 -**t**: Redirect to the next monitoring data collection spot.
 -**T**: Redirect to the previous monitoring data collection spot.
-- **b**: Specify point in time, in the format YYYYMMDDhhmm.
+-**b**: Specify point in time, in the format YYYYMMDDhhmm.
 
 
-#### Description of system resource monitoring fields [] (id:monitoringField)
+#### Description of system resource monitoring fields [](id:monitoringField)
 Some monitoring fields and values are shown below. These values obtained according to the sampling period are only for reference.
 ![](https://main.qcloudimg.com/raw/977bd4f82338866d3a09c6766c67dc9e.png)
 The main parameters are as follows:

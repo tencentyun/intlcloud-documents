@@ -57,4 +57,3 @@
 ```
 * | SELECT diff [1] AS today, round((diff [3] -1.0) * 100, 2) AS growth FROM (SELECT compare(pv, 86400) as diff FROM (SELECT COUNT(*) as pv FROM log))
 ```
-![](https://main.qcloudimg.com/raw/1842619be8d9ef38f76898ea4b495434.png)

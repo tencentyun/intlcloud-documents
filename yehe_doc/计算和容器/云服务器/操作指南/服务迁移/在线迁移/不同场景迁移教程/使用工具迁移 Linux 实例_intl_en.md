@@ -1,4 +1,4 @@
-This document introduces how to use the migration tool "go2tencentcloud" to migrate the Linux-based CVM online.
+This document introduces how to use the migration tool go2tencentcloud to migrate the Linux-based CVM online.
 
 ## Preparations
 
@@ -324,7 +324,7 @@ The destination CVM enters migration mode after the migration starts. Do not rei
 
 <dx-tabs>
 
-:::  Public network migration
+:::  Public network
 
 1. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.
   i. Run the following commands in sequence to decompress `go2tencentcloud.zip` and enter the directory.
@@ -365,7 +365,7 @@ After the tool runs, wait patiently for the migration to end. Generally, the con
 ![](https://main.qcloudimg.com/raw/b056d6b1d5ac457ff43e48883848af01.png)
 
 :::
-:::  Private network migration scenario 1
+:::  Private network (Scenario 1)
 
 1. Establish a connection between the source server and the destination CVM.
 - Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
@@ -440,7 +440,7 @@ If `Migrate successfully` is prompted, the entire migration task has been comple
 
 
 :::
-:::  Private network migration scenario 2
+:::  Private network (Scenario 2)
 
 1. Establish a connection between the source server and the destination CVM.
 - Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
@@ -486,7 +486,7 @@ After the tool runs, wait patiently for the migration to end. Generally, the con
 
 
 :::
-:::  Private network migration scenario 3
+:::  Private network (Scenario 3)
 1. Establish a connection between the source server and the destination CVM.
 - Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
 2. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.

@@ -40,9 +40,9 @@ The following information will appear:
 ## Directions[](id:RelatedOperations)
 ### Viewing memory utilization
 The `free` command output may vary with the Linux distributions, which is unreliable for calculating the memory utilization. Perform the following steps to view the memory utilization on the **Monitoring** page of the CVM console.
-1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index) and access the **Instances* page.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index) and access the **Instances** page.
 2. Click the **ID/Name** of the instance to enter its details page. Select the **Monitoring** tab.
-3. View memory utilization in the **Memory Monitor** section, as shown below:
+3. View memory utilization in the **Memory Monitor** section.
 ![](https://main.qcloudimg.com/raw/4f9f423e6d9d460d1413ff0ead6c7e96.png)
 
 ### Calculating memory utilization

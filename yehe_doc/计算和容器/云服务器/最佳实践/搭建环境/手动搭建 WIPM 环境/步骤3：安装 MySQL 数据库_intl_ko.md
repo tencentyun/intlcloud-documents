@@ -1,5 +1,5 @@
 ## 작업 시나리오
-본문은 Windows Server 2012 R2 데이터센터 버전인 64비트 중국어 버전 운영 체제 Cloud Virtual Machine(CVM)을 예시로, MySQL 8.0.19를 구축하는 자세한 순서를 소개합니다.
+본문은 Windows Server 2012 R2 데이터센터 버전인 64비트 영어 버전 운영 체제 Cloud Virtual Machine(CVM)을 예시로, MySQL 8.0.19를 구축하는 자세한 순서를 소개합니다.
 일반적으로 Windows 시스템은 SQL Server 데이터베이스를 사용하지만 SQL Server는 유료 제품이므로 사용자가 직접 권한을 부여하거나 [TencentDB for SQL Server](https://intl.cloud.tencent.com/zh/products/sqlserver)를 구매할 수 있습니다.
 
 ## 작업 단계
