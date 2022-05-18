@@ -17,5 +17,5 @@
 
 ## 関連資料
 - アプリケーションの機能設定情報を設定または確認したい場合、具体的な操作方法については、[機能設定](https://intl.cloud.tencent.com/document/product/647/39080)をご参照ください。
-- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。具体的な操作については、[素材管理](https://intl.cloud.tencent.com/document/product/647/39081)をご参照ください。
+- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。
 - アプリケーションとセットになるDemoソースコードのクイック実行が必要な場合、具体的な操作方法については、[クイックマスター](https://intl.cloud.tencent.com/document/product/647/39082)をご参照ください。
