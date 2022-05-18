@@ -19,7 +19,7 @@ If multiple cloud disks of the same capacity and type are attached to the CVM, y
 
 
 <dx-tabs>
-::: Expanding data disks via the CVM console (recommended)[](id:useCVMConsole)
+::: CVM console (recommended)[](id:useCVMConsole)
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 2. Select **More** > **Resource Adjustment** > **Expand System Disk** in the **Operation** column.
 3. Select the data disk to be expanded in the pop-up window, and click **Next**.
@@ -28,14 +28,14 @@ If multiple cloud disks of the same capacity and type are attached to the CVM, y
 ![](https://main.qcloudimg.com/raw/dad3bd1f80569718a74a70df1579c4de.png)
 6. Assign its expanded capacity to an existing partition, or format it into an independent new partition. Depending on the operating system of the CVM, see [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Determining the Expansion Method](https://intl.cloud.tencent.com/document/product/362/39995).
 :::
-::: Expanding data disks on the console[](id:useCBSConsole)
+::: CBS console[](id:useCBSConsole)
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. Select **More** > **Expand** for the target cloud disk.
 3. Select a new capacity. It must be greater than or equal to the current capacity.
 4. Complete the payment.
 5. Assign its expanded capacity to an existing partition, or format it into an independent new partition. Depending on the operating system of the CVM, see [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Determining the Expansion Method](https://intl.cloud.tencent.com/document/product/362/39995).
 :::
-::: Expanding data disks via an API[](id:useAPI)
+::: API[](id:useAPI)
 You can use the `ResizeDisk` API to expand the specified cloud disks. For more information, see [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310).
 :::
 </dx-tabs>
@@ -48,13 +48,13 @@ You can use the `ResizeDisk` API to expand the specified cloud disks. For more i
 3. Select a new capacity (it must be greater than or equal to the current capacity) and click **Next**.
 4. Complete the capacity expansion operation in the following methods:
 <dx-tabs>
-::: Offline capacity expansion
+::: Offline expansion
 1. Read the notes, select **Agree to a forced shutdown**, and click **Adjust Now**, as shown below:
 <img src="https://main.qcloudimg.com/raw/b3702c6323dfd650665a1293db56b295.png"/>
 2. After the expansion is completed on the console, check the cloudinit configuration for [Linux instances](#confirmLinuxConfig) or [Windows instances](#confirmwindowsConfig) according to the operating system of the CVM. Then expand partitions and file systems as needed.
 
 :::
-::: Online capacity expansion
+::: Online expansion
 <dx-alert infotype="explain" title="">
 CVM supports online capacity expansion for cloud disk serving as system disk, i.e., non-stop capacity expansion. To use this feature, [submit a ticket](https://console.intl.cloud.tencent.com/workorder) for application.
 </dx-alert>
@@ -98,7 +98,7 @@ Note that `disk-xxxx` is the ID of a cloud disk. You can use it to view cloud di
 ### Checking the cloudinit configuration
 Check cloud disks according to the operating system of the CVM.
 <dx-tabs>
-::: Checking the cloudinit configuration for Linux instances[](id:confirmLinuxConfig)
+::: Linux instances[](id:confirmLinuxConfig)
 After the system disk is expanded, [log in to the Linux instance](https://intl.cloud.tencent.com/document/product/213/5436) and check whether the `/etc/cloud/cloud.cfg` file contains the `growpart` and `resizefs` configuration items.
  - If yes, ignore other operations.
    ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
@@ -106,7 +106,7 @@ After the system disk is expanded, [log in to the Linux instance](https://intl.c
     - **resizefs**: expands or adjusts the file system in the `/` partition to the partition size.
  - If no, manually [extend partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995) according to the operating system, and assign its extended capacity to an existing partition, or format it into an independent new partition.
 :::
-::: Checking the cloudinit configuration for Windows instances[](id:confirmwindowsConfig)
+::: Windows instances[](id:confirmwindowsConfig)
 After the system disk is expanded, [log in to the Windows instance](https://intl.cloud.tencent.com/zh/document/product/213/5435) and check whether the `ExtendVolumesPlugin` configuration item exists in the `plugin` under `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf`.
  - If yes, ignore other operations.
  - If no, manually [extend partitions and file systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) according to the operating system, and assign its extended capacity to an existing partition, or format it into an independent new partition.
