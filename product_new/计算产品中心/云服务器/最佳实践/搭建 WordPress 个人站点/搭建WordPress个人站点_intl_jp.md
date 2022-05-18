@@ -68,7 +68,7 @@ ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('�
 
 ### ステップ5： WordPressをインストールして設定する
 ####  WordPressのダウンロード
-> WordPress は [WordPress 公式サイト](https://wordpress.org/download/releases/) から WordPress の最新中国語版をダウンロードしインストールすることが可能です。本マニュアルはWordPressの中国語版を採用しています。
+> WordPress は [WordPress 公式サイト](https://wordpress.org/download/releases/) から WordPress の最新英語版をダウンロードしインストールすることが可能です。本マニュアルはWordPressの英語版を採用しています。
 >
 1. 下記のコマンドを実行し、ウェブサイトのルートディレクトリにあるPHP-Nginx設定のテストに使われる`index.php`ファイルを削除します。
 ```
