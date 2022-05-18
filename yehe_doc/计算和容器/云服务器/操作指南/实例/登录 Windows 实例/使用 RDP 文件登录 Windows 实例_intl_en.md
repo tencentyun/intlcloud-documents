@@ -1,11 +1,11 @@
->! Currently, the **standard login method (WebRDP)** is used for Windows instances by default. It allows you to log in to a Windows instance in the console without downloading a local login client.
+>!  **WebRDP is the default login method** for Windows instances. It allows you to log in to a Windows instance in the CVM console without downloading a local login client.
 >
 
 ## Overview
 Remote Desktop Protocol (RDP) is a multiple-channel protocol developed by Microsoft that allows a local computer to connect to a remote computer. We recommend you use RDP to log in to your Windows CVMs. This document describes how to log in to Windows instances using RDP files.
 
 ## Supported Systems
-You can log in to your CVMs from Windows, Linux, and MacOS using RDP.
+You can log in to your CVMs from Windows, Linux, and MacOS servers using RDP.
 
 ## Prerequisites
 
@@ -20,9 +20,9 @@ You can log in to your CVMs from Windows, Linux, and MacOS using RDP.
 
 ## Directions
 <dx-tabs>
-::: Logging in to your Windows CVM using RDP[](id:windowsRDP)
+::: From Windows server[](id:windowsRDP)
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
-2. On the **Instances** page, locate the Windows CVM instance you want to log in to and click **Log In** as shown below:
+2. On the **Instances** page, locate the Windows CVM instance you want to log in to and click **Log In**.
 ![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. In the **Standard Login | Windows Instance** window that is opened, select **Download RDP File**.
 >?If you have changed the remote login port, append the IP address with `:port` in the RDP file.
@@ -32,7 +32,7 @@ You can log in to your CVMs from Windows, Linux, and MacOS using RDP.
  - If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
  - If you forgot your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
 :::
-::: Logging in to your Linux CVM using RDP[](id:LinuxRDP)
+::: From Linux server[](id:LinuxRDP)
 >?We recommend you use rdesktop as the remote desktop client. For more information, please see the [official introduction to rdesktop](http://www.rdesktop.org/).
 >
 1. Run the following command to check whether rdesktop has been installed.
@@ -64,25 +64,25 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
    If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message). If you forgot your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
  - `<hostname or IP address>` is the public IP or custom domain name of your Windows instance. For more information on how to get the public IP, please see [Getting Public IP Addresses](https://intl.cloud.tencent.com/document/product/213/17940).
 :::
-::: Logging into you MacOS CVM using RDP[](id:MacRDP)
+::: From MacOS server[](id:MacRDP)
 >?
 >- The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client. Go to [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) to download a Beta version.
 >- The following operations use a CVM on Windows Server 2012 R2 as an example.
 >
 1. Download and install Microsoft Remote Desktop for Mac on your local computer.
-2. Start MRD and click **Add Desktop**, as shown below:
+2. Start MRD and click **Add Desktop**.
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
 3. In the **Add PC** pop-up window, follow the steps illustrated in the following image to establish a connection to your Windows CVM.
 ![](https://main.qcloudimg.com/raw/d8e20278dd7c8aed487be2c43986f5e4.png)
     1. In the **PC name** text file, enter the public IP address of your CVM instance. For more information on how to obtain the public IP address, please see [Getting Public IP Addresses](https://intl.cloud.tencent.com/document/product/213/17940).
     2. Click **Add**.
     3. Retain the default settings for the other options and establish the connection.
-    Your entry has now been saved, as shown below:
+    Your entry has now been saved.
 ![](https://main.qcloudimg.com/raw/1c0eff28aa68a7f02e8f295917bb603b.png)
 4. Double-click the new entry. Input your username and password for CVM and click **Continue**.
  - If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
  - If you forgot your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
-5. In the pop-up window, click **Continue** to establish the connection, as shown below:
+5. In the pop-up window, click **Continue** to establish the connection.
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 If the connection is successful, the following page will appear:
 ![](https://main.qcloudimg.com/raw/5a524210acd13624af7263b6de3aea54.png)
