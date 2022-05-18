@@ -26,7 +26,7 @@
 [旁路推流功能开启](#open_bypass) 后，您可以根据实际业务情况选择旁路的推流方式：
 ![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
-- **指定流旁路**：选择“指定流旁路”后：如果不需要混流转码，请调用客户端 SDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) 接口直接发起旁路推流；如果需要混流转码，请根据 [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 文档指引操作，混流转码后会自动旁路推流。
+- **指定流旁路**：选择“指定流旁路”后：如果不需要混流转码，请调用客户端 SDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265) 接口直接发起旁路推流；如果需要混流转码，请根据 云端混流转码 文档指引操作，混流转码后会自动旁路推流。
 - **全局自动旁路**：选择“全局自动旁路”后，TRTC 所有上行音视频流都会被自动旁路推流到云直播系统。
 
 
