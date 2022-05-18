@@ -127,7 +127,8 @@ If `To_Account` is added to the message body, and a message recipient is specifi
 }
 ```
 - **Specifying that messages do not trigger conversation update**
-If the value of `SendMsgControl` includes `NoLastMsg`, the message does not trigger conversation update; if it includes `NoUnread`, the message is not included in the unread count. The setting takes effect only for the current message. The parameter is not available for AVChatRoom.
+If the value of `SendMsgControl` includes `NoLastMsg`, the message does not trigger conversation update; if it includes `NoUnread`, the message is not included in the unread count. The setting takes effect only for the current message.This feature is not available for an AVChatRoom group. `NoUnread` is set for a meeting group by default. If necessary, submit [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322).
+
 ```
 {
      "GroupId": "@TGS#2C5SZEAEF",
