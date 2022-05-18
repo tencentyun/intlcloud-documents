@@ -777,7 +777,7 @@ Example 2. Return dates between 2017-10-23 and 2021-08-12 at an interval of one 
 * | SELECT sequence(from_unixtime(1508737026),from_unixtime(1628734085),interval '1' year to month )
 ```
 - Search and analysis result
-![image-20211108040449945](https://qcloudimg.tencent-cloud.cn/raw/abcd036ba6222b1e8b913679631c7e84.png)
+
 
 Example 3. Return UNIX timestamps between 1628733298 and 1628734085 at an interval of 60 seconds.
 
