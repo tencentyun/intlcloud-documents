@@ -777,7 +777,7 @@ array 类型。
 * | SELECT sequence(from_unixtime(1508737026),from_unixtime(1628734085),interval '1' year to month )
 ```
 - 查询和分析结果
-![image-20211108040449945](https://qcloudimg.tencent-cloud.cn/raw/abcd036ba6222b1e8b913679631c7e84.png)
+
 
 示例3：返回1628733298,1628734085之间的 Unix 时间戳，间隔为60秒。
 
