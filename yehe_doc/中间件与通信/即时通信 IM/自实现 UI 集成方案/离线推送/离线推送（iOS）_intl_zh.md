@@ -4,7 +4,7 @@
 
 如想要接入 TPNS 推送，请参照 [TPNS 离线推送（推荐)](https://intl.cloud.tencent.com/document/product/1047/45554) 接入推送功能。如想要接收 APNs 离线消息通知，需要遵从如下几个步骤：
 
-1. [申请 APNs 证书](#ApplyForCertificate)。
+1. [申请 APNs 证书](https://intl.cloud.tencent.com/zh/document/product/1047/39157?!editLang=zh&!preview=&lang=zh&pg=#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.B3.E8.AF.B7-apns-.E8.AF.81.E4.B9.A6)。
 2. [上传证书到 IM 控制台](#UploadCertificate)。
 3. 在 App 每次登录时，向苹果获取 [deviceToken](#DeviceToken)。
 4. 调用 [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) 接口将其上报到 IM 后台。
@@ -12,7 +12,6 @@
 配置过 APNs 的 App ，当其切到后台或者被用户 Kill 之后，腾讯云就可以通过苹果的 APNs 后台对该设备进行离线消息推送，详细推送原理请参见 [Apple Push Notification Service](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)。
 >!对于已经退出登录（主动登出或者被踢下线）的用户，不会收到任何消息通知。
 
-[](id:ApplyForCertificate)
 
 ### 步骤1：申请 APNs 证书
 
