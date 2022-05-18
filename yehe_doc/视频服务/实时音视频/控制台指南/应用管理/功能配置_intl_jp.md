@@ -26,7 +26,7 @@ Relayed Push### Relayed Push方式の選択
 [Relayed Push機能をオン](#open_bypass)にした後、実際の業務の状況に応じてRelayed Pushの方式を選択することができます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/00779b00e7d5993240c71c79807eb78a.png)
 
-- **Relayed Push用指定ストリーム**：「Relayed Push用指定ストリーム」の選択後、ミクスストリーミングトランスコードが不要な場合は、クライアントSDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265)のインターフェースを呼び出して、直接Relayed Pushを起動させてください。ミクスストリーミングトランスコードが必要な場合は、[Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618)のドキュメントのガイド操作に従ってください。MixTranscoding後にAuto-Relayed Pushが実行されます。
+- **Relayed Push用指定ストリーム**：「Relayed Push用指定ストリーム」の選択後、ミクスストリーミングトランスコードが不要な場合は、クライアントSDK [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a7cbe48ea2cd3fb05a5b10350b6d81265)のインターフェースを呼び出して、直接Relayed Pushを起動させてください。ミクスストリーミングトランスコードが必要な場合は、Cloud MixTranscodingのドキュメントのガイド操作に従ってください。MixTranscoding後にAuto-Relayed Pushが実行されます。
 - **Global Auto-relay**：「Global Auto-relay」を選択すると、すべてのTRTCのアップストリームのオーディオビデオストリーミングはCSSシステムにAuto-Relayed Pushされます。
 
 
