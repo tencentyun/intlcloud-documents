@@ -7,7 +7,7 @@ An image can be processed:
 - Upon upload
 - In cloud
 
->! Image Processing is charged by CI. For detailed pricing, see **basic image processing fee** in [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/45582).
+>! Image Processing is charged by CI. For detailed pricing, see **basic image processing fee** in Billing and Pricing.
 >
 
 
