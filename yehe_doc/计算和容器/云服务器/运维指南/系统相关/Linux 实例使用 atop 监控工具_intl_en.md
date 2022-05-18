@@ -33,7 +33,7 @@ systemctl restart atop
 ```
 
 ### Analyzing atop
-The launched atop records the collected data in the log file under the `/var/log/atop` directory. Please check the required log file name, execute the following command to view the log file, and analyze the data with reference to [atop Common Commands ](#commands) and [System Resource Monitoring Field Description ](#monitoringField).
+The launched atop records the collected data in the log file under the `/var/log/atop` directory. Please check the required log file name, execute the following command to view the log file, and analyze the data with reference to [atop Common Commands](#commands) and [System Resource Monitoring Field Description](#monitoringField).
 ```
 atop -r /var/log/atop/atop_2021xxxx
 ```
@@ -51,7 +51,7 @@ You can use the following commands to filter the required data after opening the
 -**b**: Specify point in time, in the format YYYYMMDDhhmm.
 
 
-#### Description of system resource monitoring fields [] (id:monitoringField)
+#### Description of system resource monitoring fields [](id:monitoringField)
 Some monitoring fields and values are shown below. These values obtained according to the sampling period are only for reference.
 ![](https://main.qcloudimg.com/raw/977bd4f82338866d3a09c6766c67dc9e.png)
 The main parameters are as follows:
