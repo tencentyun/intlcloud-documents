@@ -1,12 +1,4 @@
-This document describes Tencent Cloud CLS pricing.
-
-## Pay-As-You-Go Pricing
-
-- The pay-as-you-go pricing varies by region, including CLS public cloud regions and financial cloud regions.
-- For more information on billing mode and billable items, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
-- To learn more about the cost estimate, use the [Price Calculator](https://buy.cloud.tencent.com/price/cls/calculator) to view it.
-
-#### Pricing
+CLS is a pay-as-you-go service which bills you according to actual resource usage and deducts fees on a daily basis. Pay-as-you-go billing applies to all available regions. For more information on billable items, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
 
 <table>
    <tr>
@@ -16,21 +8,22 @@ This document describes Tencent Cloud CLS pricing.
    <tr>
       <th colspan="5"><center>Traffic</center></th>
       <th colspan="4"><center>Storage</center></th>
-      <th colspan="3"><center>Other</center></th>
+      <th colspan="1"><center>Computing</center></th>
+      <th colspan="2"><center>Others</center></th>
    </tr>
    <tr>
       <td>Write traffic (USD/GB/day)</td>
       <td>Public network read traffic (USD/GB/day)</td>
       <td>Private network read traffic (USD/GB/day)</td>
-      <td>Index traffic (USD/GB/day)</td>
+      <td>Standard index traffic (USD/GB/day)</td>
 			<td>IA index traffic (USD/GB/day)</td>
-      <td>Index storage (USD/GB/day)</td>
-      <td>Real-time storage (USD/GB/day)</td>
+      <td>Standard index storage (USD/GB/day)</td>
+      <td>Standard log storage (USD/GB/day)</td>
 			<td>IA index storage (USD/GB/day)</td>
 			<td>IA log storage (USD/GB/day)</td>
-      <td>Service request (USD/1 million requests/day)</td>
-      <td>Number of partitions (USD/partition/day)</td>
-    <td>Data processing (USD/GB/day)</td>
+      <td>Data processing (USD/GB/day)</td>
+      <td>Partitions (USD/partition/day)</td>
+      <td>Service request (USD/million requests/day)</td>
    </tr>
    <tr>
       <td>Chinese mainland</td>
@@ -49,8 +42,8 @@ This document describes Tencent Cloud CLS pricing.
     <td>0.026</td>
    </tr>
    <tr>
-      <td>Hong Kong/Macao/Taiwan, China</td>
-      <td  nowrap="nowrap">Hong Kong, China<br>Taiwan, China</td>
+      <td>Hong Kong/Macao/Taiwan (China)</td>
+      <td  nowrap="nowrap">Hong Kong (China)<br>Taipei (China)</td>
       <td>0.032</td>
       <td>0.141</td>
       <td>0.032</td>
@@ -60,9 +53,9 @@ This document describes Tencent Cloud CLS pricing.
       <td>0.00243</td>
 			<td>0.00064</td>
 			<td>0.00064</td>
-      <td>0.028</td>
+      <td>0.032</td>
       <td>0.007</td>
-     <td>0.032</td>
+     <td>0.028</td>
    </tr>
    <tr>
       <td>Asia Pacific</td>
@@ -76,9 +69,9 @@ This document describes Tencent Cloud CLS pricing.
       <td>0.00243</td>
 			<td>0.00064</td>
 			<td>0.00064</td>
-      <td>0.028</td>
+      <td>0.032</td>
       <td>0.007</td>
-     <td>0.032</td>
+     <td>0.028</td>
    </tr>
    <tr>
       <td rowspan="3">North America</td>
@@ -107,9 +100,9 @@ This document describes Tencent Cloud CLS pricing.
       <td>0.0034</td>
 			<td>0.00073</td>
 			<td>0.00073</td>
-      <td>0.034</td>
+      <td>0.026</td>
       <td>0.007</td>
-     <td>0.026</td>
+     <td>0.034</td>
    </tr>
 	 <tr>
       <td>Virginia</td>
@@ -138,13 +131,12 @@ This document describes Tencent Cloud CLS pricing.
       <td>0.00243</td>
 			<td>0.00064</td>
 			<td>0.00064</td>
-      <td>0.028</td>
+      <td>0.032</td>
       <td>0.007</td>
-     <td>0.032</td>
+     <td>0.028</td>
    </tr>
 </table>
 
 
->! 
-> - Offline storage of CLS is currently in beta test, during which the log topic write traffic fee and storage fee for offline storage are waived.
-> - Data processing is currently in beta test and free of charge. Billing will begin at 00:00 on April 26, 2022.
+
+>! Currently, the IA storage class is in beta test, during which write traffic, index traffic, index storage, and log storage for IA log topics are free of charge. Billing will officially start at 00:00:00 on May 11, 2022.
