@@ -20,7 +20,7 @@
 2.	选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a56ed2f940b60babab0e2bbbe4eebaab.png)
 3. 选择录制配置模板，单击【确定】即可。
-![](https://qcloudimg.tencent-cloud.cn/raw/c94bd3bedcd4fc4be97b48302a55163b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b4e5b04ee6e79636e52ae907556cd5d1.png)
 
 
 [](id:unite)
@@ -28,7 +28,7 @@
 1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2. 选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
 3. 单击取消相应模板的勾选，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ae44efc51b581100735c7faafe2414e8.png)
 
 >? 
 >- 录制模板解除绑定后，不影响正在直播中的流。
