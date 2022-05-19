@@ -128,7 +128,7 @@ Guzzle\Service\Resource\Model Object
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | Encoding method of the returned value | None |
+| EncodingType | String | Encoding method of the returned value | None |
 | Marker | String | The object after which the returned list begins. Objects are listed in UTF-8 binary order by default. Set the returned `Key` to `Marker` to turn pages | None |
 | Prefix | String | Key prefix by which objects are queried       | None |
 | MaxKeys | Int | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | None |
