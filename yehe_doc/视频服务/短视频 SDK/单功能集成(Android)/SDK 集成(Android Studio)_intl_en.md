@@ -125,11 +125,8 @@ Configure application permissions in `AndroidManifest.xml`. Audio/Video applicat
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.CALL_PHONE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.READ_LOGS" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-feature android:name="android.hardware.Camera"/>
@@ -324,15 +321,6 @@ android {
     }
 }
 
-    # If you use the Enterprise or Enterprise Pro edition of the SDK, add the code below (not required for the Lite or Basic edition).
-    packagingOptions {
-        pickFirst '**/libc++_shared.so'
-        doNotStrip "*/armeabi/libYTCommon.so"
-        doNotStrip "*/armeabi-v7a/libYTCommon.so"
-        doNotStrip "*/x86/libYTCommon.so"
-        doNotStrip "*/arm64-v8a/libYTCommon.so"
-    }
-    # If you use the Enterprise or Enterprise Pro edition of the SDK, add the above code (not required for the Lite or Basic edition).
 
 dependencies {
     # Copying starts.
@@ -594,7 +582,6 @@ See the documents below for a detailed description of different UGSV modules.
 - [Video Splicing](https://intl.cloud.tencent.com/document/product/1069/38025)
 - [Video Upload](https://intl.cloud.tencent.com/document/product/1069/38026)
 - [Player](https://intl.cloud.tencent.com/document/product/1069/38027)
-- [Animated Effects and Face Changing (Enterprise)](https://intl.cloud.tencent.com/document/product/1069/38031)
 
 
 [](id:que2)
