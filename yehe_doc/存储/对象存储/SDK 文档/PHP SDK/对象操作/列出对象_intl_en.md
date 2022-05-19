@@ -258,7 +258,7 @@ Guzzle\Service\Resource\Model Object
 | ------------------- | ------ | ------------------------------------------------------------ | -------- |
 | Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
 | Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | Encoding method of the returned value | None |
+| EncodingType | String | Encoding method of the returned value | None |
 | KeyMarker | String  | The key of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.  | None |
 | VersionIdMarker | String |  The version ID of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.   |  None |
 | NextKeyMarker | String | The key of the object after which the next returned list begins if `IsTruncated` is `true` | None |
