@@ -60,11 +60,3 @@ TRTC **supports a wide range of platforms**. Below is a list of the supported pl
   <li>Android 4.1 (SDK API Level 16) or above.</li>
 </td>
 </tr></table>
-
-[](id:safe)
-## Security and Compliance
-TRTC is developed to meet the compliance requirements of multiple countries and industries. We are dedicated to ensuring the **security, compliance, availability, confidentiality, and privacy** of our services. We also offer support to help you and your customers **meet regulatory requirements, reduce auditing costs, and improve your auditing and management efficiency**.
-
-TRTC has passed **SOC auditing (SOC 1, SOC 2, and SOC 3)**, meets the requirements of China's **Cybersecurity Classified Protection 2.0**, and is **ISO certified (ISO 9001 and ISO 20000)**.
-
-![](https://main.qcloudimg.com/raw/3cd618fd25165dde224dd0c3781cf129.png)
