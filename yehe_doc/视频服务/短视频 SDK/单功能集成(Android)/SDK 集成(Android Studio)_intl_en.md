@@ -320,8 +320,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
-
 dependencies {
     # Copying starts.
     compile fileTree(include: ['*.jar'], dir: 'libs')
