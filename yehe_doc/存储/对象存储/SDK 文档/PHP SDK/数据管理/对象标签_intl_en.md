@@ -208,6 +208,6 @@ try {
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
 | Bucket | Bucket of the object to delete in the format of `BucketName-APPID`. For more information, see [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
-| Key | Key of the object to delete | Object key is the unique identifier of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| Key | Key of the object to delete Object key is the unique identifier of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 
 
