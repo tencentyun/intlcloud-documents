@@ -125,11 +125,8 @@ defaultConfig {
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.CALL_PHONE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.READ_LOGS" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-feature android:name="android.hardware.Camera"/>
@@ -324,15 +321,7 @@ android {
     }
 }
 
-    # 如果您使用的是商业版或商业版Pro，请加如下这段，基础版/精简版不需要
-    packagingOptions {
-        pickFirst '**/libc++_shared.so'
-        doNotStrip "*/armeabi/libYTCommon.so"
-        doNotStrip "*/armeabi-v7a/libYTCommon.so"
-        doNotStrip "*/x86/libYTCommon.so"
-        doNotStrip "*/arm64-v8a/libYTCommon.so"
-    }
-    # 如果您使用的是商业版或商业版Pro，请加如上这段，基础版/精简版不需要
+
 
 dependencies {
     # 拷贝开始
@@ -594,7 +583,6 @@ protected void onResume() {
 - [视频拼接](https://intl.cloud.tencent.com/document/product/1069/38025)
 - [视频上传](https://intl.cloud.tencent.com/document/product/1069/38026)
 - [视频播放](https://intl.cloud.tencent.com/document/product/1069/38027)
-- [动效变脸（企业版）](https://intl.cloud.tencent.com/document/product/1069/38031)
 
 
 [](id:que2)
