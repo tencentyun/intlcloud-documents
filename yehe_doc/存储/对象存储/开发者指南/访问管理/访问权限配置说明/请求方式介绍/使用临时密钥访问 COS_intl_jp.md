@@ -20,14 +20,15 @@
 例えば、「A」がCAMユーザーの従来の権限を表し、「B」がpolicyパラメータによって一時キーに設定した権限を表すとした場合、「A」と「B」の共通部分が一時キーの最終的に有効な権限となります。
 
 下図のように、CAMユーザー権限とpolicyの一時権限の共通部分が有効な権限です。
-![](https://qcloudimg.tencent-cloud.cn/raw/d7897c607e0fc93729cd924908c1b0be.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/60982ace7d24b98f97210e674fd373a9.png)
+
 
 下図のように、policyがCAMユーザー権限の範囲内にある場合は、policyが有効な権限となります。
-![](https://qcloudimg.tencent-cloud.cn/raw/0611470aff77eef075b58109c3014f4a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/03b30ed344faa1a9e28a6210810866d1.png)
 
 ## 一時キーを使用したCOSアクセス
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e3e735b970a04e2afe3efa74cfb30fcb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0127017176d6014ec8957f47d4858666.png)
 一時キーにはSecretId、SecretKey、Tokenが含まれます。各ルートアカウントおよびサブアカウントはいずれも複数の一時キーを生成することができます。パーマネントキーと異なり、一時キーの有効期間は30分から36時間しかありません。一時キーはフロントエンドの直接転送などの、一時的な権限承認のシーンに適します。信頼性の低いユーザーに対しては、パーマネントキーではなく一時キーを発行することで、安全性を高めることができます。詳細については、[一時キーの生成および使用ガイド](https://intl.cloud.tencent.com/document/product/436/14048)および[フロントエンドの直接転送に用いる一時キーの使用ガイド](https://intl.cloud.tencent.com/document/product/436/35265)をご参照ください。
 
 - APIリクエストの送信
