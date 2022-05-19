@@ -205,7 +205,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
-37.[FaceID](https://intl.cloud.tencent.com/document/product/1061/46726).
+37.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
 38.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
 ## 10.Jurisdiction-specific Requirements
 
