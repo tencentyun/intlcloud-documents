@@ -32,7 +32,6 @@ $ brew install node
 ```shell
 $ npm install electron@latest --save-dev
 ```
->?在国内网络安装 Electron 可能会遇到一系列下载过程的障碍。如果您安装 Electron 没有成功，可[联系我们](https://intl.cloud.tencent.com/contact-us) 进行处理。
 
 ### 步骤3：安装 Electron 版的 TRTC SDK
 1. 在您的 Electron 项目中使用 npm 命令安装 SDK 包：
