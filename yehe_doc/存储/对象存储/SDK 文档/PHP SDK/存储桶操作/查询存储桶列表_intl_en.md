@@ -95,5 +95,5 @@ Array
 | Buckets      | None      | Bucket list             | Array  |
 | Bucket       | Buckets | Bucket information             | Array  |
 | Name        | Bucket  | Bucket name | String |
-| Location   | Name of bucket region | String |                                     
+| Location   | Bucket  | Name of bucket region | String |                                     
 | CreationDate | Bucket  |  Time of Bucket creation | String |
