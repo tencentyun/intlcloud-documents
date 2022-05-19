@@ -39,6 +39,7 @@ $ npm install electron@latest --save-dev
 $ npm install trtc-electron-sdk@latest --save
 ```
 >?TRTC Electron SDK 最新版可在 [trtc-electron-sdk](https://www.npmjs.com/package/trtc-electron-sdk) 中查看。
+
 2. 在项目脚本里引入模块并使用：
 ```javascript
 const TRTCCloud = require('trtc-electron-sdk').default;
@@ -91,6 +92,7 @@ const targetPlatform = (function(){
 })();
 ```
 >! `os.platform()` 返回的结果中，"darwin" 表示 Mac 平台。"win32" 表示 Windows 平台，不论 64 位还是 32 位。
+
 2. 然后在 `rules` 选项中添加以下配置，`targetPlatform` 变量可以使 `rewritePath` 可以根据不同的目标平台切换不同的配置：
 ```js
 rules: [
@@ -103,9 +105,9 @@ rules: [
 		},
 ]
 ```
-	该配置的含义是：
-	- 打包 Windows 下的 `.exe` 文件时，让 `native-ext-loader` 到 `[应用程序根目录]/resources` 目录下加载 TRTC SDK。
-	- 打包 Mac 下的 `.dmg` 时，让 `native-ext-loader` 到 `[应用程序目录]/Contents/Frameworsk/../Resources` 目录下加载 TRTC SDK。
+该配置的含义是：
+- 打包 Windows 下的 `.exe` 文件时，让 `native-ext-loader` 到 `[应用程序根目录]/resources` 目录下加载 TRTC SDK。
+- 打包 Mac 下的 `.dmg` 时，让 `native-ext-loader` 到 `[应用程序目录]/Contents/Frameworsk/../Resources` 目录下加载 TRTC SDK。
 
 还需要在 `package.json` 中的构建脚本中添加 `--target_platform` 参数，将在下一步进行。
 
@@ -239,7 +241,7 @@ $ npm run pack:win64
 - 如果您在集成 Electron 过程中遇到异常：例如安装超时或失败，打包后出现 trtc_electron_sdk.node 文件加载失败等情况，相关问题解答请[联系我们](https://intl.cloud.tencent.com/contact-us)。
 [](id:QQ)
 ## 技术咨询
-了解更多详情您可 QQ 咨询：<dx-tag-link link="#QQ" tag="技术交流群">695855795</dx-tag-link>
+了解更多详情，您可[联系我们](https://intl.cloud.tencent.com/contact-us)。
 
 ## 参考文档
 
