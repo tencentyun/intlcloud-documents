@@ -1,7 +1,7 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to object tagging.
+This document provides an overview of APIs and SDK code samples for object tagging.
 
 | API | Operation | Description |
 | :----------------------------------------------------------- | :----------- | :--------------------------- |
@@ -11,9 +11,9 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 ## Tagging an Object
 
-#### Description
+#### Feature description
 
-This API (PUT Object tagging) is used to tag an object.
+This API (`PUT Object tagging`) is used to tag an object.
 
 
 #### Method prototype
@@ -30,9 +30,9 @@ public Guzzle\Service\Resource\Model PutObjectTagging(array $args = array());
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -66,8 +66,8 @@ try {
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket | Bucket of the object to tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| Key | Key of the object to tag. An object key uniquely identifies an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| Bucket | Bucket of the object to tag in the format of `BucketName-APPID`. For more information, see [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| Key | Key of the object to tag. Object key is the unique identifier of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | TagSet    | Tags to add to the object                                                     | Array |
 
 Description of the `TagSet` member:
@@ -79,9 +79,9 @@ Description of the `TagSet` member:
 
 ## Querying Object Tags
 
-#### Description
+#### Feature description
 
-This API (GET Object tagging) is used to query the existing tags of an object.
+This API (`GET Object tagging`) is used to query the existing tags of an object.
 
 #### Method prototype
 
@@ -96,9 +96,9 @@ public Guzzle\Service\Resource\Model GetObjectTagging(array $args = array());
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -124,8 +124,8 @@ try {
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket | Bucket of the object to tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| Key | Key of the object to tag. An object key uniquely identifies an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| Bucket | Bucket of the object to query in the format of `BucketName-APPID`. For more information, see [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| Key | Key of the object to query. Object key is the unique identifier of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 
 
 
@@ -157,14 +157,14 @@ GuzzleHttp\Command\Result Object
 
 | Member Variable | Description | Type |
 | -------- | -------- | ------ |
-| Key      | Tag key | String |
-| Value    | Tag value | String |
+| Key      | Key of the tag                                                     | String |
+| Value    | Value of the tag                                                     | String |
 
 ## Deleting Object Tags
 
-#### Description
+#### Feature description
 
-This API (DELETE Object tagging) is used to delete the existing tags of an object.
+This API (`DELETE Object tagging`) is used to delete the existing tags of an object.
 
 #### Method prototype
 
@@ -179,9 +179,9 @@ public Guzzle\Service\Resource\Model DeleteObjectTagging(array $args = array());
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -207,7 +207,7 @@ try {
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Bucket | Bucket of the object to tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| Key | Key of the object to tag. An object key uniquely identifies an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| Bucket | Bucket of the object to delete in the format of `BucketName-APPID`. For more information, see [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| Key | Key of the object to delete | Object key is the unique identifier of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 
 
