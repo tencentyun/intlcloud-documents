@@ -6,7 +6,7 @@ COS Select機能は現在CSV、JSON、Parquet形式によるストレージオ�
 
 COSコンソール、API、SDK、COSCMDなどの方法でSQL照会を実行することができます。COSコンソールを使用したファイル検索には一定の制限があり、検索できるファイルは最大128Mまでで、返されるデータ量は40MBに限られる点に注意が必要です。より多くのデータを検索したい場合は、その他の方法を使用して行ってください。
 
->
+>?
 >- COS Selectがサポートするデータタイプおよび現在の予約フィールドについて詳しくお知りになりたい場合は、[データタイプ](https://intl.cloud.tencent.com/document/product/436/32476)および[予約フィールド](https://intl.cloud.tencent.com/document/product/436/32475)をご参照ください。
 >- 現在検索機能は中国大陸のパブリッククラウドリージョンのみサポートしており、他のリージョンでは現時点ではこの機能をサポートしていません。
 
@@ -26,7 +26,7 @@ COS Select機能は現在次のSQL句をサポートしています。
 - WHERE句
 - LIMIT句
 
->SQL句に関する詳細情報については、[Selectコマンド](https://intl.cloud.tencent.com/document/product/436/32473)をご参照ください。
+>?SQL句に関する詳細情報については、[Selectコマンド](https://intl.cloud.tencent.com/document/product/436/32473)をご参照ください。
 
 COS Selectが現在サポートしている関数は次のとおりです。
 
@@ -36,7 +36,7 @@ COS Selectが現在サポートしている関数は次のとおりです。
 - 日付関数：DATE_ADD関数、DATE_DIFF関数、EXTRACT関数、TO_STRING関数、TO_TIMESTAMP関数、UTCNOW関数など。
 - 文字列関数：CHAR_LENGTH関数、CHARACTER_LENGTH関数、LOWER関数、SUBSTRING関数、TRIM関数、UPPER関数など。
 
->SQL関数に関する詳細情報については、[SQL関数](https://intl.cloud.tencent.com/document/product/436/32474)をご参照ください。
+>?SQL関数に関する詳細情報については、[SQL関数](https://intl.cloud.tencent.com/document/product/436/32474)をご参照ください。
 
 COS Selectは現在次の演算子をサポートしています。
 
@@ -45,7 +45,7 @@ COS Selectは現在次の演算子をサポートしています。
 - パターンマッチ演算子：`LIKE`
 - 算術演算子：`+，-，*，%`
 
->演算子に関する詳細情報については、[演算子](https://intl.cloud.tencent.com/document/product/436/32477)をご参照ください。
+>?演算子に関する詳細情報については、[演算子](https://intl.cloud.tencent.com/document/product/436/32477)をご参照ください。
 
 
 
