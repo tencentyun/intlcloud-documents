@@ -7,7 +7,7 @@
 ## 产品组成
 云联网有以下组成部分：
 - 关联网络实例：加入到同一个云联网内的网络实例即可实现互通，支持类型包含：VPC、VPC（黑石）、专线网关、VPN 网关（详情请参见 [关联网络实例](https://intl.cloud.tencent.com/document/product/1003/30064)）。
->?目前云联网关联 VPN 网关灰度中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。具体操作，请参见 [ IDC 通过 VPN 网关接入云联网](https://intl.cloud.tencent.com/document/product/1037/36018) 。
+>?云联网自动添加 VPN 网关路由的前提为：云联网关联的 VPN 网关已建立 VPN 通道且完成 SPD 策略的配置，详情请参见 [IDC 通过 VPN 网关接入云联网](https://intl.cloud.tencent.com/document/product/1037/36018)。
 - 路由表：网络实例加入到云联网后，云联网即可自动学习到相关路由，呈现在该路由表中（详情请参见 [查看路由信息](https://intl.cloud.tencent.com/document/product/1003/30066)）。
 
 
@@ -26,8 +26,8 @@
 
 上述场景如果使用腾讯云云联网，您只需创建一个云联网实例，将需要互联的 VPC 和 IDC 加入到该云联网中，即可实现所有 VPC、IDC 与多个 VPC 的互通。云联网的路由自动转发及学习，使您只需一次操作将实例加入到云联网中，无需再手动配置、管理各实例的路由表。
 >?已有业务迁移上云联网，详情请参见 [最佳实践](https://intl.cloud.tencent.com/document/product/1003/30078) 。
-
-![](https://main.qcloudimg.com/raw/7ea188ff1d607fc0141fee39ca4b2841.png)
+>
+![]()
 
 <table>
 	<tr>
@@ -41,7 +41,7 @@
 			2. 单个专用通道只能打通一个 VPC。 <br />	
 			3. 网段重叠的 VPC 间不可建对等连接。
 		</td>
-		<td>1. 无需创建对等，加入云联网的实例 fullmesh 互联。 <br />
+		<td>1. 加入云联网的实例 fullmesh 互联。 <br />
 			2. 单个专用通道，可与所有 VPC、IDC 通信。 <br />	
 			3. CIDR 网段重叠可以一键加入云联网，更灵活。<br />
 		</td>
