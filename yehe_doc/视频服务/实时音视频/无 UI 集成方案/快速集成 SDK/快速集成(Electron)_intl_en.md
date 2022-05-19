@@ -32,7 +32,6 @@ Run the following command in the command prompt to install Electron. V4.0.0 or l
 ```shell
 $ npm install electron@latest --save-dev
 ```
->?在国内网络安装 Electron 可能会遇到一系列下载过程的障碍。如果您安装 Electron 没有成功，可[联系我们](https://intl.cloud.tencent.com/contact-us) 进行处理。
 
 ### Step 3. Install the TRTC Electron SDK
 1. Use the following nmp command in your Electron project to install the SDK.
