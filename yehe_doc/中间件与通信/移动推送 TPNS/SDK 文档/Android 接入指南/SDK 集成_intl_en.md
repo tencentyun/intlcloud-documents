@@ -120,6 +120,7 @@ You need to configure the permissions required for proper operation of the TPNS 
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
 <!-- **Common** Permissions required by TPNS SDK -->
 <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -134,9 +135,9 @@ You need to configure the permissions required for proper operation of the TPNS 
 | android.permission.INTERNET              | Yes   | Allows the application to access the internet, which may incur GPRS traffic        |
 | android.permission.ACCESS_WIFI_STATE     | Yes   | Allows the application to get the current Wi-Fi access status and WLAN hotspot information |
 | android.permission.ACCESS_NETWORK_STATE  | Yes   | Allows the application to get the network information status                 |
-| android.permission.WAKE_LOCK             | No  | Allows the application to run in the background after the screen is off       |
+| android.permission.WAKE_LOCK             | Yes | Allows the application to run in the background after the screen is off       |
+| android.permission.SCHEDULE_EXACT_ALARM             |Yes     | Allows scheduled broadcasting        |
 | android.permission.VIBRATE                | No     | Allows the application to access the vibrator |
-| android.permission.READ_PHONE_STATE      | No   | Allows the application to access the phone status                   |
 | android.permission.RECEIVE_USER_PRESENT  | No   | Allows the application to receive screen-on or unlock broadcast          |
 | android.permission.WRITE_EXTERNAL_STORAGE | No   | Allows the application to write to external storage                   |
 | android.permission.RESTART_PACKAGES      | No   | Allows the application to end a task                     |
