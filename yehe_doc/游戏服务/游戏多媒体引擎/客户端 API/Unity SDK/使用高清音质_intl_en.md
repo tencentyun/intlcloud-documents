@@ -8,9 +8,9 @@ Starting from GME SDK v2.9, GME SDK for Unity does not support the use of HD voi
 ## Involved Features
 Without adaptation, the SDK for Unity lacks the following features:
 
-HD voice chat room. For more information, see [Sound Quality Selection](https://intl.cloud.tencent.com/zh/document/product/607/18522).
-Accompaniment playback. For more information, see [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/zh/document/product/607/31504).
-Voice changing for voice chat and voice message. For more information, see [Voice Changing Effect](https://intl.cloud.tencent.com/zh/document/product/607/31503#.E5.8F.98.E5.A3.B0.E7.89.B9.E6.95.88).
+HD voice chat room. For more information, see [Sound Quality Selection](https://intl.cloud.tencent.com/document/product/607/18522).
+Accompaniment playback. For more information, see [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/document/product/607/31504).
+Voice changing for voice chat and voice message. For more information, see [Voice Changing Effect](https://intl.cloud.tencent.com/document/product/607/31503#.E5.8F.98.E5.A3.B0.E7.89.B9.E6.95.88).
 
 ## SDK Update
 
@@ -29,7 +29,7 @@ Delete the original GME library files and use the downloaded ones. The added lib
 You may import only required library files according to your own needs. For example, if you only need the voice changing feature, you only need to import `libgme_soundtouch`.
 
 | Library File | Feature |
-|----|-----|
+| ----------------- | ---------------------------------------------------------- |
 |libgme_fdkaac| 1. Used to enter an SD or HD voice room. 2. Used to play back accompaniment files in ACC format |
 |libgme_faad2| Used to play back accompaniment files in MP4 format |
 |libgme_ogg| Used to play back accompaniment files in OGG format |
@@ -44,7 +44,7 @@ After configuring the required library files, you need to configure the iOS dyna
 
 #### Configuration principle
 
-Create an `Editor OnPostprocessBuild` script and use the `UnityEditor.iOS.Xcode.PBXProject.AddDynamicFramework` API, which will automatically copy the dynamic library to the `framework` directory of the final output Bundle and sign it.
+Create an `Editor OnPostprocessBuild` script and use the `UnityEditor.iOS.Xcode.Extensions.PBXProjectExtensions.AddFileToEmbedFrameworks` API, which will automatically copy the dynamic library to the `framework` directory of the final output Bundle and sign it.
 
 #### Sample code
 You can refer to the `add_dylib.cs` script file in the demo project and put this part of code in the `Editor` folder of the project as needed.
@@ -54,12 +54,15 @@ You can refer to the `add_dylib.cs` script file in the demo project and put this
 	public  static void OnPostprocessBuild (UnityEditor.BuildTarget BuildTarget, string path){  
 		if (BuildTarget == UnityEditor.BuildTarget.iOS) {
 			UnityEngine.Debug.Log ("OnPostprocessBuild add_dylib:" + path);
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
 			{
 				string projPath = UnityEditor.iOS.Xcode.PBXProject.GetPBXProjectPath (path);  
 				UnityEditor.iOS.Xcode.PBXProject proj = new UnityEditor.iOS.Xcode.PBXProject ();  
 
 				proj.ReadFromString (System.IO.File.ReadAllText (projPath));  
-				string targetGuid = proj.TargetGuidByName (UnityEditor.iOS.Xcode.PBXProject.GetUnityTargetName ()); 
+				// string targetGuid = proj.TargetGuidByName (UnityEditor.iOS.Xcode.PBXProject.GetUnityTargetName ()); // 2018
+				string targetGuid = proj.GetUnityMainTargetGuid();	// 2019
+				
 				
 				// Delete according to the imported frameworks
 				string[] framework_names = {
@@ -91,7 +94,7 @@ You can refer to the `add_dylib.cs` script file in the demo project and put this
 
 ### Unity below 2019
 
-Currently, only Unity 2019 and higher can use `UnityEditor.iOS.Xcode`. You can export the `UnityEditor.iOS.Xcode` package from a higher version for use in a lower version, or directly decompress the attachment [UnityEditorAV.iOS.XCode.zip](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.0/Other/UnityEditorAV.iOS.XCode.zip) and place it in the `Editor` folder of the project directory.
+Currently, only Unity 2019 and higher can use `UnityEditor.iOS.Xcode.Extensions`. You can export the `UnityEditor.iOS.Xcode` package from a higher version for use in a lower version, or directly decompress the attachment [UnityEditorAV.iOS.XCode.zip](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.0/Other/UnityEditorAV.iOS.XCode.zip) and place it in the `Editor` folder of the project directory.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/a141d2c41dc4494148e9451d3d63cd38.png)
 
