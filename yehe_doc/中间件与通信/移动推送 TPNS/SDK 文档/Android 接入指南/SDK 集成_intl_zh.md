@@ -48,11 +48,11 @@ dependencies {
 }
 ```
 
->!
-> - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
-> - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
-> 在 AndroidManifest 文件 application 标签内添加以下元数据：
-> ```
+<dx-alert infotype="notice"> 
+ - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
+ 在 AndroidManifest 文件 application 标签内添加以下元数据：
+ ```
 <application>
 	// 其他安卓组件
 	<meta-data
@@ -60,11 +60,11 @@ dependencies {
 			android:value="其他服务接入点域名" />
 </application>
 ```
-> 其他服务接入点域名如下：
->   - 上海：`tpns.sh.tencent.com`
->  - 新加坡：`tpns.sgp.tencent.com`
->  - 中国香港：`tpns.hk.tencent.com`
->  
+ 其他服务接入点域名如下：
+       - 上海：`tpns.sh.tencent.com`
+       - 新加坡：`tpns.sgp.tencent.com`
+       - 中国香港：`tpns.hk.tencent.com`
+</dx-alert> 
 
 #### 注意事项
 
@@ -119,6 +119,7 @@ dependencies {
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
 <!-- 【常用】 移动推送 TPNS SDK所需权限 -->
 <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -133,9 +134,9 @@ dependencies {
 | android.permission.INTERNET               | 必选 | 允许程序访问网络连接，可能产生 GPRS 流量              |
 | android.permission.ACCESS_WIFI_STATE      | 必选 | 允许程序获取当前 Wi-Fi 接入的状态以及 WLAN 热点的信息 |
 | android.permission.ACCESS_NETWORK_STATE   | 必选 | 允许程序获取网络信息状态                              |
-| android.permission.WAKE_LOCK              | 可选     | 允许程序在手机屏幕关闭后，后台进程仍然运行            |
+| android.permission.WAKE_LOCK              | 必选     | 允许程序在手机屏幕关闭后，后台进程仍然运行            |
+| android.permission.SCHEDULE_EXACT_ALARM             | 必选     | 允许定时广播            |
 | android.permission.VIBRATE                | 可选     | 允许应用震动                                          |
-| android.permission.READ_PHONE_STATE       | 可选     | 允许应用访问手机状态                                  |
 | android.permission.RECEIVE_USER_PRESENT   | 可选     | 允许应用可以接收点亮屏幕或解锁广播                    |
 | android.permission.WRITE_EXTERNAL_STORAGE | 可选     | 允许程序写入外部存储                                  |
 | android.permission.RESTART_PACKAGES       | 可选     | 允许程序结束任务                                      |
@@ -294,11 +295,11 @@ dependencies {
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
->!
-> - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
-> - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
-> 在 AndroidManifest 文件 application 标签内添加以下元数据：
->```
+<dx-alert infotype="notice"> 
+ - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
+ 在 AndroidManifest 文件 application 标签内添加以下元数据：
+```
 <application>
 // 其他安卓组件
 <meta-data
@@ -306,10 +307,11 @@ dependencies {
 		android:value="其他服务接入点域名" />
 </application>
 ```
-> 其他服务接入点域名如下：
->   - 上海：`tpns.sh.tencent.com`
->   - 新加坡：`tpns.sgp.tencent.com`
->   - 中国香港：`tpns.hk.tencent.com`
+ 其他服务接入点域名如下：
+       - 上海：`tpns.sh.tencent.com`
+       - 新加坡：`tpns.sgp.tencent.com`
+       - 中国香港：`tpns.hk.tencent.com`
+</dx-alert> 
 
 
 ## 调试及设备注册
@@ -405,7 +407,9 @@ new XGPushConfig.Build(context).setLogLevel(Log.ERROR);
 ### 关闭联合保活
 
 如需关闭联合保活功能，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
->! 仅 1.1.6.0 之后版本支持关闭联合保活功能，1.1.6.0之前版本TPNS 默认开启联合保活能力，且不可关闭。
+>!
+>- 仅 1.1.6.0 之后版本支持关闭联合保活功能，1.1.6.0之前版本TPNS 默认开启联合保活能力，且不可关闭。
+>- 1.2.6.0 起默认关闭联合保活功能，可不再调用此接口。
 >
 
 ```java
