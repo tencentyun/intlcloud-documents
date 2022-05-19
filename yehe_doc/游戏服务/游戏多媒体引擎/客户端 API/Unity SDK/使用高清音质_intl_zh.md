@@ -8,9 +8,9 @@
 ## 涉及功能
 如果没有进行适配，Unity SDK 缺失以下功能：
 
-实时语音高清音质房间，参考 [音质选择](https://intl.cloud.tencent.com/zh/document/product/607/18522)。
-播放伴奏功能，参考 [实时语音伴奏](https://intl.cloud.tencent.com/zh/document/product/607/31504)。
-实时语音变声、语音消息变声功能，参考 [变声音效文档](https://intl.cloud.tencent.com/zh/document/product/607/31503#.E5.8F.98.E5.A3.B0.E7.89.B9.E6.95.88)。
+实时语音高清音质房间，参考 [音质选择](https://intl.cloud.tencent.com/document/product/607/18522)。
+播放伴奏功能，参考 [实时语音伴奏](https://intl.cloud.tencent.com/document/product/607/31504)。
+实时语音变声、语音消息变声功能，参考 [变声音效文档](https://intl.cloud.tencent.com/document/product/607/31503#.E5.8F.98.E5.A3.B0.E7.89.B9.E6.95.88)。
 
 ## 更新 SDK
 
@@ -28,8 +28,8 @@
 
 可以根据自己的需求只引入相应的库文件。例如只需要变声功能，则只需引入 libgme_soundtouch。
 
-|库文件|对应功能|
-|----|-----|
+| 库文件            | 对应功能                                                   |
+| ----------------- | ---------------------------------------------------------- |
 |libgme_fdkaac|1. 用于进入标准、高清音质房间 2. 用于播放 acc 格式伴奏文件|
 |libgme_faad2|用于播放 mp4 格式伴奏文件|
 |libgme_ogg|用于播放 ogg 格式伴奏文件|
@@ -44,7 +44,8 @@
 
 #### 配置原理
 
-新建一个 Editor OnPostprocessBuild 脚本，利用UnityEditor.iOS.Xcode.PBXProject.AddDynamicFramework，这个 API 会自动将动态库拷贝到最终出包 Bundle 的 framework 目录下，并为其签名。
+新建一个 Editor OnPostprocessBuild 脚本，利用UnityEditor.iOS.Xcode.Extensions.PBXProjectExtensions.AddFileToEmbedFrameworks，这个 API 会自动将动态库拷贝到最终出包 Bundle 的 framework 目录下，并为其签名。
+
 
 #### 示例代码
 可参考 Demo 工程中的 add_dylib.cs 脚本文件，根据自己工程需求将此部分代码放在工程中 Editor 文件夹下。
@@ -54,12 +55,14 @@
 	public  static void OnPostprocessBuild (UnityEditor.BuildTarget BuildTarget, string path){  
 		if (BuildTarget == UnityEditor.BuildTarget.iOS) {
 			UnityEngine.Debug.Log ("OnPostprocessBuild add_dylib:" + path);
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
 			{
 				string projPath = UnityEditor.iOS.Xcode.PBXProject.GetPBXProjectPath (path);  
 				UnityEditor.iOS.Xcode.PBXProject proj = new UnityEditor.iOS.Xcode.PBXProject ();  
 
 				proj.ReadFromString (System.IO.File.ReadAllText (projPath));  
-				string targetGuid = proj.TargetGuidByName (UnityEditor.iOS.Xcode.PBXProject.GetUnityTargetName ()); 
+				// string targetGuid = proj.TargetGuidByName (UnityEditor.iOS.Xcode.PBXProject.GetUnityTargetName ()); // 2018
+				string targetGuid = proj.GetUnityMainTargetGuid();	// 2019
 				
 				//根据导入的 framework 进行删减
 				string[] framework_names = {
@@ -79,8 +82,12 @@
 						UnityEngine.Debug.LogWarning (framework_name + " guid not found");
 					} else {
 						UnityEngine.Debug.LogWarning (framework_name + " guid:" + dylibGuid);
-						proj.AddDynamicFramework (targetGuid, dylibGuid);
+						// proj.AddDynamicFramework (targetGuid, dylibGuid);
+						UnityEditor.iOS.Xcode.Extensions.PBXProjectExtensions.AddFileToEmbedFrameworks(proj, targetGuid, dylibGuid);
+
+						proj.AddBuildProperty(targetGuid, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks");
 						System.IO.File.WriteAllText (projPath, proj.WriteToString ());
+
 					}
 				}
 			}
@@ -91,7 +98,7 @@
 
 ### Unity 版本低于2019
 
-目前只有 Unity 2019 及以后版本可以使用 UnityEditor.iOS.Xcode，如果是早期 Unity 版本，可以从高版本 Unity 导出 UnityEditor.iOS.Xcode 包给低版本 Unity 使用，或者直接参考附件  [UnityEditorAV.iOS.XCode.zip](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.0/Other/UnityEditorAV.iOS.XCode.zip) 将此文件解压后放置于工程目录 Editor 文件夹下。
+目前只有 Unity 2019 及以后版本可以使用 UnityEditor.iOS.Xcode.Extensions，如果是早期 Unity 版本，可以从高版本 Unity 导出 UnityEditor.iOS.Xcode 包给低版本 Unity 使用，或者直接参考附件  [UnityEditorAV.iOS.XCode.zip](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.9.0/Other/UnityEditorAV.iOS.XCode.zip) 将此文件解压后放置于工程目录 Editor 文件夹下。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/a141d2c41dc4494148e9451d3d63cd38.png)
 
