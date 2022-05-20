@@ -14,7 +14,7 @@ To help you better use CBS services, we offer standard and 5-day free returns fo
 - Each verified individual or enterprise account can return **one** monthly subscribed elastic cloud disk within 5 (inclusive) days after purchase with no questions asked. The full refund will be returned to the Tencent Cloud account of the payer.
 - Each account can return **199** monthly subscribed elastic cloud disks per year as standard returns. Fees for consumed resources will be deducted from the refund. The remaining amount, including **cash and free credits**, will be returned to the Tencent Cloud account of the payer.
 
-For more information, see [Refunds](https://intl.cloud.tencent.com/document/product/362/36875).
+For more information, see Refunds.
 
 ### How are users notified about the expiration of monthly subscribed CBS data disks?
 Starting 7 days before the expiration date of monthly subscribed resources, an expiration alert is sent every other day (i.e., on the 7th, 5th, 3rd, and 1st day before expiration). The account creator will be notified via email, SMS, and the Message Center. Collaborators can configure to receive this alert in console -> Message Center -> [Message Subscription](https://console.cloud.tencent.com/message/subscription).
