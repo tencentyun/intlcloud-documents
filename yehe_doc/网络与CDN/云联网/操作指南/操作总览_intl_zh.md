@@ -3,13 +3,15 @@
 ### 实例管理
 - [新建云联网实例](https://intl.cloud.tencent.com/document/product/1003/30062)
 - [关联网络实例](https://intl.cloud.tencent.com/document/product/1003/30064)
-- [删除云联网实例](https://intl.cloud.tencent.com/document/product/1003/30063)
 - [解除网络实例关联](https://intl.cloud.tencent.com/document/product/1003/30065)
-- [添加 IDC 网段](https://intl.cloud.tencent.com/document/product/1003/30075)
-- [解关联跨账号 VPC](https://intl.cloud.tencent.com/document/product/1003/30077)
+- [删除云联网实例](https://intl.cloud.tencent.com/document/product/1003/30063)
+- [专线网关发布网段至云联网](https://intl.cloud.tencent.com/document/product/1003/30075)
 - [关联跨账号 VPC](https://intl.cloud.tencent.com/document/product/1003/30076)
+- [解关联跨账号 VPC](https://intl.cloud.tencent.com/document/product/1003/30077)
+
 
 ### 路由管理
+- [路由概述](https://intl.cloud.tencent.com/document/product/1003/34259)
 - [查看路由信息](https://intl.cloud.tencent.com/document/product/1003/30066)
 - [查看已关联 VPC 的路由表](https://intl.cloud.tencent.com/document/product/1003/30067)
 - [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)
@@ -21,3 +23,5 @@
 
 ### 监控与告警
 - [查看监控信息](https://intl.cloud.tencent.com/document/product/1003/30071)
+
+

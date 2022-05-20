@@ -1,0 +1,31 @@
+## Halaman Daftar Instans
+Login ke [konsol TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver) dan masuk ke halaman daftar instans untuk melihat informasi instans dan mengelola instans Anda.
+![](https://qcloudimg.tencent-cloud.cn/raw/cba6ded87c20defaa547fb61ebcf6b73.png)
+
+| Fitur | Deskripsi |
+| --------- | ------------------------------------------------------------ |
+| Mulai ulang | Dalam daftar instans, Anda dapat memilih sebuah instans dan klik **Restart** (Mulai Ulang) di bagian atas untuk memulai ulang. Anda juga dapat memilih beberapa instans untuk memulai ulang batch. <li>Selama memulai ulang, instans tidak akan dapat diakses, dan koneksi yang ada akan ditutup. <li>Selama mulai ulang, jika jumlah penulisan bisnis tinggi, mulai ulang akan gagal. Dalam hal ini, instans akan kembali ke status sebelum memulai ulang dan dapat diakses. <li>Mulai ulang instans selama jam tidak sibuk untuk memastikan tingkat keberhasilan memulai ulang dan mengurangi dampaknya pada bisnis Anda.</li> |
+| Pengeditan tag | Anda dapat mengklik **More** (Lainnya) > **Edit Tag** (Edit Tag) di atas daftar instans atau di kolom **Operation** (Operasi) dari sebuah instans untuk mengelola tag-nya. Jika Anda belum membuat tag, Anda dapat mengklik **Tag Management** (Manajemen Tag) untuk membuatnya. |
+| Tingkatkan | Dalam daftar instans, Anda dapat menyesuaikan konfigurasi instans database Anda. Peningkatan instans dan penyesuaian mode pemulihan bencana didukung. Untuk informasi selengkapnya, lihat [Menyesuaikan Spesifikasi Instans](https://intl.cloud.tencent.com/document/product/238/35783). |
+| Penerbitan/Langganan | Dalam daftar instans, Anda dapat memilih **More** (Lainnya) > **Publish/Subscribe** (Publikasikan/Berlangganan) di kolom **Operation** (Operasi) sebuah instans untuk melakukan publikasi/langganan guna memenuhi persyaratan replikasi dan sinkronisasi data bisnis Anda. |
+| Penghentian/Pengembalian | Dalam daftar instans, Anda dapat memilih **More** (Lainnya) > **Terminate/Return** (Hentikan/Kembalikan) untuk menghentikan/mengembalikan instans database. Untuk informasi selengkapnya, lihat [Menghentikan Instans](https://intl.cloud.tencent.com/document/product/238/35787). |
+| Instans Baca Saja | Dalam daftar instans, Anda dapat mengklik **More** (Lainnya) > **Read-Only Instance** (Instans Baca Saja) di kolom **Operation** (Operasi) dari sebuah instans untuk melihat instans baca saja dan mengonfigurasi grup RO. Jika tidak ada instans baca saja, Anda dapat mengklik **Create** (Buat) setelah pengalihan untuk menambahkan satu atau beberapa instans baca saja. |
+
+## Halaman Manajemen Instans
+Login ke [konsol TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver). Setelah sebuah instans diinisialisasi, klik ID-nya dalam daftar instans atau klik **Manage** (Kelola) di kolom **Operation** (Operasi) untuk masuk ke halaman manajemen instans, tempat Anda dapat melihat detailnya, memantaunya, dan mengelola database.
+![](https://qcloudimg.tencent-cloud.cn/raw/4dfe4194f4ade5d6d17ee00f20e84f0e.png)
+
+| Fitur | Deskripsi |
+| ---------- | ------------------------------------------------------------ |
+| Detail instans | Pada tab **Instance Details** (Detail Instans), Anda dapat melihat dan memanipulasi berbagai informasi database Anda, termasuk mengatur informasi pemeliharaan dan menambahkan "instans baca saja" dalam diagram arsitektur instans. |
+| Pemantauan sistem | Pada tab**Instance Monitoring** (Pemantauan Instans), Anda dapat melihat data pemantauan dari berbagai metrik core dari database saat ini. Untuk informasi selengkapnya, lihat [Fitur Pemantauan](https://intl.cloud.tencent.com/document/product/238/7524) dan [Fitur Alarm](https://intl.cloud.tencent.com/document/product/238/35791). |
+| Pencadangan dan pemulihan | Pada tab **Backup and Restoration** (Pencadangan dan Pemulihan), Anda dapat membuat kueri data pencadangan dan pemulihan serta membuat tugas pencadangan dan pemulihan. Metode unggah cadangan yang didukung termasuk mengunggah file dan mengunduh file dari COS, dan mode pemulihan yang didukung termasuk file cadangan penuh, cadangan penuh + log, dan cadangan penuh + cadangan diferensial. |
+| Penerbitan/Langganan | Pada tab **Publish/Subscribe** (Publikasikan/Berlangganan), Anda dapat membuat atau menghapus satu atau beberapa layanan penautan pub/sub. |
+| Grup keamanan | Pada tab **Security Group** (Grup Keamanan), Anda dapat mengonfigurasi grup keamanan untuk database Anda. Untuk informasi selengkapnya, lihat [Mengonfigurasi Grup Keamanan](https://intl.cloud.tencent.com/document/product/238/35789). |
+| Manajemen akun | Pada tab **Account Management** (Manajemen Akun), Anda dapat mengelola akun administrator, seperti mengubah izin dan mengatur ulang sandi. Anda juga dapat membuat dan menghapus akun. Untuk informasi selengkapnya, lihat [Manajemen Akun](https://intl.cloud.tencent.com/document/product/238/7521). |
+| Manajemen database | Pada tab **Database Management** (Manajemen Database), Anda dapat membuat, mengatur izin, dan menghapus database. Untuk informasi selengkapnya, lihat [Manajemen Database](https://intl.cloud.tencent.com/document/product/238/35780). |
+| Instans Baca Saja | Pada tab **Read-Only Instance** (Instans Baca Saja), Anda dapat membuat satu atau beberapa instans baca saja, yang dapat diterapkan pada skenario aplikasi pemisahan baca/tulis dan satu-sumber-beberapa-replika untuk meningkatkan kapasitas beban baca database Anda. Untuk informasi selengkapnya, lihat [Membuat Instans Baca Saja](https://intl.cloud.tencent.com/document/product/238/43142).|
+| Manajemen cadangan | Pada tab **Backup and Restoration** (Pencadangan dan Pemulihan), Anda dapat membuat cadangan, mengunduh cadangan, mengatur pencadangan terjadwal, memulihkan cadangan, dan melakukan pengembalian secara manual. Untuk informasi selengkapnya, lihat [Manajemen Cadangan](https://intl.cloud.tencent.com/document/product/238/35790). |
+| Log kueri lambat | Pada tab **Operation Log** (Log Operasi), Anda dapat mengunduh log kueri lambat. |
+| Pengaturan parameter | Pada tab **Parameter Configuration** (Konfigurasi Parameter), Anda dapat melihat dan memodifiaksi parameter tertentu dan catatan modifikasi parameter kueri. Untuk informasi selengkapnya, lihat [Konfigurasi Parameter](https://intl.cloud.tencent.com/document/product/238/41609). |
+
