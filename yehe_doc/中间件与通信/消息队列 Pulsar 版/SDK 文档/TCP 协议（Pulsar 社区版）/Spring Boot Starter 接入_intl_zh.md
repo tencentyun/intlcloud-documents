@@ -58,11 +58,11 @@ pulsar:
 </tr>
 <tr>
 <td>service-url</td>
-<td>集群接入地址，可以在控制台 <a href = "https://console.intl.cloud.tencent.com/tdmq/cluster"><b>集群管理</b></a> 页面查看并复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/d9cc1ac7ceeae77df150143127f2396e.png"></td>
+<td>集群接入地址，可以在控制台 <a href = "https://console.intl.cloud.tencent.com/tdmq/cluster"><b>集群管理</b></a> 页面查看并复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/0870f78ee97b38799824fd0ff0d3d4b7.png"></td>
 </tr>
 <tr>
 <td>token-auth-value</td>
-<td>角色密钥，在 <a href = "https://console.intl.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制密钥列复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/6abfb90ff4e80bdf8c00a555f3dd3634.png"></td>
+<td>角色密钥，在 <a href = "https://console.intl.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制密钥列复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/a585d077b08ae9b11fffcebf6cde926e.png"></td>
 </tr>
 <tr>
 <td>tenant</td>
@@ -120,6 +120,7 @@ customProducer.send("topic4", myMessage);
 defaultProducer.send("topic2", ("Hello pulsar client, this is a order message" + i + ".").getBytes(StandardCharsets.UTF_8));
 :::
 </dx-codeblock>
+
 > !
 >
 > - 发送消息的 Topic 是在生产者配置中已经声明的 Topic。
@@ -153,8 +154,8 @@ public void topicConsume(String msg) {
 ### 步骤5：查询消息
 
 1. 登录控制台，进入 **[消息查询](https://console.intl.cloud.tencent.com/tdmq/message)** 页面，可查看 Demo 运行后的消息轨迹。
-![](https://qcloudimg.tencent-cloud.cn/raw/bb160d0e4cbe3bb77437713025b1fcca.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7945598f64d3cfe6ee3fc07feb4b778c.png)
    消息轨迹如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/a5794d7dad969cc77b1d0b78d0a93dab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9bbfbc3236aec54f1654c520eaa0cba4.png)
 
 >?以上是基于 Springboot Starter 方式对 Pulsar 简单使用的配置。详细使用可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/pulsar/tcp/tdmq-pulsar-springboot-demo.zip) 或 [Starter 文档](https://github.com/majusko/pulsar-java-spring-boot-starter)。
