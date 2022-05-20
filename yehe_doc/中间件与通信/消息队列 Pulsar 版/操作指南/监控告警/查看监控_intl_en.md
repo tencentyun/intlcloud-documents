@@ -11,7 +11,7 @@ This document describes how to view monitoring metrics and their descriptions in
 3. In the topic list, find the target topic, click ![](https://qcloudimg.tencent-cloud.cn/raw/ac572a960433508f64f226e6ea218c10.png) in the **Monitoring** column, select the time range and granularity, and you can view the topic monitoring data.
 
 **Monitoring information display**
-![](https://qcloudimg.tencent-cloud.cn/raw/3d9feea91eb5c2e8c17251412c0d6642.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5814ed429887ea94ee789b4c5ff625fa.png)
 
 **Descriptions of monitoring metrics**
 <table>
