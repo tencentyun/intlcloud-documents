@@ -6,7 +6,7 @@
 
 1. [登录 TDMQ Pulsar 版控制台](https://console.intl.cloud.tencent.com/tdmq)，在左侧导航栏中单击**Topic 管理**。
 2. 在 Topic 管理列表页中，找到需要查看生产者的 Topic，单击操作列的**查看生产者**，进入订阅列表。
-![](https://qcloudimg.tencent-cloud.cn/raw/9b83daa89ea1539262708571a28afbe1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c2a334610843499a74620b8eee8de0aa.png)
 
 **生产者概览**
 - 当前生产 TPS：当前与 Topic 连接的生产者每秒生产的消息数量总和。
