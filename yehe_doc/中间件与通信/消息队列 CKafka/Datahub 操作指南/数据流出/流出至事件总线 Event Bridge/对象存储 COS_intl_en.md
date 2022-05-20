@@ -1,7 +1,7 @@
 ## Overview
 
 DataHub offers data distribution capabilities. You can distribute CKafka data to COS for data analysis and download. The process and architecture are as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/632ca05c1fa3c65507f1a89388427bc3.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/1c4859184b043389514ea8ab7fa5fe7d.png)
 
 
 
