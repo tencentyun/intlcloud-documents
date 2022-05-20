@@ -56,7 +56,7 @@
         <td style='text-align:left;'>$secretId、$secretKey</td>
         <td style='text-align:left;'>云 API 密钥，登录 <a href='https://console.cloud.tencent.com/cam'>访问管理控制台</a>，在<strong>访问密钥</strong>
             &gt; <strong>API 密钥管理</strong>页面复制。<img
-                    src="https://main.qcloudimg.com/raw/8ec140474be0ced1352695b372b2934d.png"
+                    src="https://qcloudimg.tencent-cloud.cn/raw/ba7e9efacb7444d65e24c14ebd864a1a.png"
                     referrerpolicy="no-referrer" alt="img"></td>
     </tr>
     <tr>
@@ -106,7 +106,7 @@
         <td style='text-align:left;'>$token</td>
         <td style='text-align:left;'>角色密钥，在 <strong><a
                 href='https://console.cloud.tencent.com/tdmq/role'>角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img
-                src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" referrerpolicy="no-referrer"
+                src="https://qcloudimg.tencent-cloud.cn/raw/5a3bd084903926be994e3e1ac2f9631c.png" referrerpolicy="no-referrer"
                 alt="img"></td>
     </tr>
     <tr>
