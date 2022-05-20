@@ -138,7 +138,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 37.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
-
+38.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
 ## Requisitos específicos da jurisdição
 
 **Europa**

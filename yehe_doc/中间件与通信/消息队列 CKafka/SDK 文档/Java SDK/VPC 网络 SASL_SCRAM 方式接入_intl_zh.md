@@ -20,10 +20,10 @@
    2. 在 **基本信息** > **接入方式** 中，单击**添加路由策略**。在打开窗口中选择：
 	 - 路由类型：公网域名接入。
 	 - 接入方式：SASL_SCRAM。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/2afdb0937589d6384004690ef450f81a.png)
+   ![](https://main.qcloudimg.com/raw/e3c2304070064b93e082895b9bd7b9b2.png)
 2. 创建角色。
    在**用户管理**页面新建角色，设置密码。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/b4fd547ddb7d4fdac1c24d59bb4806bc.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/c9e06ace7d959ae91331a241c2126cc5.png)
 3. 创建 Topic。
    在控制台 **topic 管理**页面新建 Topic（参见 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/32554)）。
 
@@ -98,12 +98,12 @@ java.security.auth.login.config.plain=/xxxx/ckafka_client_jaas.conf
     <tr>
         <td><code>bootstrap.servers</code></td>
         <td>接入网络，在控制台的实例详情页面<strong>接入方式</strong>模块的网络列复制。<br><img
-                src="https://qcloudimg.tencent-cloud.cn/raw/a2802b0c7747df72164ed7a767e73fe6.png" referrerpolicy="no-referrer">
+                src="https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png" referrerpolicy="no-referrer">
         </td>
     </tr>
     <tr>
         <td><code>topic</code></td>
-        <td>Topic 名称，您可以在控制台上 <strong>topic 管理</strong>页面复制。<br><img src="https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png" referrerpolicy="no-referrer">
+        <td>Topic 名称，您可以在控制台上 <strong>topic 管理</strong>页面复制。<br><img src="https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png" referrerpolicy="no-referrer">
         </td>
     </tr>
     <tr>
@@ -235,7 +235,7 @@ java.security.auth.login.config.plain=/xxxx/ckafka_client_jaas.conf
    :::
    </dx-codeblock>
 4. 在 CKafka 控制台 **topic 管理**页面，选择对应的 Topic，单击**更多** > **消息查询**，查看刚刚发送的消息。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/236b886212bd8dc2e53242bbaab6cb2c.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 ### 步骤4：消费消息
@@ -322,4 +322,4 @@ java.security.auth.login.config.plain=/xxxx/ckafka_client_jaas.conf
    :::
    </dx-codeblock>
 4. 在 CKafka 控制台 **Consumer Group** 页面，选择对应的消费组名称，在主题名称输入 Topic 名称，单击**查询详情**，查看消费详情。
-   ![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)

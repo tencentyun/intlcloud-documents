@@ -138,7 +138,10 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 37.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
+38.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
+
 ## Persyaratan khusus yurisdiksi
+
 
 **Eropa**
 
