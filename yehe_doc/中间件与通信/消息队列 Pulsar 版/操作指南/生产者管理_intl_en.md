@@ -6,7 +6,7 @@ This document describes how to view the details of a producer connected to a top
 
 1. Log in to the [TDMQ for Pulsar console](https://console.intl.cloud.tencent.com/tdmq) and click **Topic Management** on the left sidebar.
 2. On the **Topic Management** list page, click **View Producer** in the **Operation** column of the target topic to enter the producer list.
-![](https://qcloudimg.tencent-cloud.cn/raw/9b83daa89ea1539262708571a28afbe1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c2a334610843499a74620b8eee8de0aa.png)
 
 **Producer overview**
 - Current Production TPS: Total number of messages produced by producers currently connected to the topic per second.
