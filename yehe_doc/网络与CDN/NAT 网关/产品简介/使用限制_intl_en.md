@@ -16,10 +16,10 @@ For example, a NAT Gateway enables traffic from VPC1 to the Internet, and VPC1 e
 - When an EIP is disassociated from a NAT gateway, the SANT rule is also deleted if the EIP is the only EIP.
 - If the subnet configured for a SNAT rule does not exist, the SNAT rule is deleted as well.
 - If the CVM configured for a SNAT rule does not exist, the SNAT rule is also deleted if this is the last CVM; otherwise, the CVM is deleted from the SNAT rule.
-
+- Restricted by standard protocols, for the NAT gateways with the same protocol/destination IP/destination port, the number of maximum connections = the number of bound EIPs × 55000. To increase the number of connections, bind new EIPs or adjust the destination IP/port.
 
 ## Service Quota
-The following table lists the restrictions on the supported resources for the NAT Gateway. For limits on other VPC resources, see [Quota Limit](https://intl.cloud.tencent.com/document/product/215/38959).
+The following table lists the restrictions on the supported resources for the NAT Gateway. For limits on other VPC resources, see [Quota Limit](https://intl.cloud.tencent.com/zh/document/product/215/38959).
 <table>
 <tbody>
 <tr>
@@ -32,7 +32,7 @@ The following table lists the restrictions on the supported resources for the NA
 </tr>
 <tr>
 <td >Number of EIPs per NAT Gateway</td>
-<td  >10</td>
+<td >10</td>
 </tr>
 <tr>
 <td >Maximum forwarding capability per NAT Gateway</td>
@@ -40,10 +40,10 @@ The following table lists the restrictions on the supported resources for the NA
 </tr>
 <tr>
 <td >Maximum number of forwarding rules per NAT Gateway</td>
-<td>200</td>
+<td >200</td>
 </tr>
 <tr>
-<td >Maximum number of SNAT rules per NAT Gateway</td>
+<td >Number of SNAT rules per NAT Gateway</td>
 <td >200</td>
 </tr>
 <tr>

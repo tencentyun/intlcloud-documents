@@ -3,26 +3,26 @@ You can bind multiple EIPs to a NAT gateway and assign them to different CVMs ba
 Assume that a NAT gateway is bound with EIPs including EIP1, EIP2, EIP3, and EIP4. The load balancer distributes the access traffic to these EIPs for CVM access to the public network. If EIP1, EIP2 and EIP3 are added to the SNAT address pool, CLB will distribute the access traffic to the three EIPs, and CVM will use them to access the public network.
 >?
 >- When the load on a CVM instance surges, one EIP may not be enough to support huge access traffic, so you can choose to configure multiple EIPs.
->- The maximum number of connections from one EIP to the same destination service is 55,000. If the limit is exceeded, packet loss occurs.
->- In a NAT gateway, an EIP can be set in the SNAT rule and port forwarding rule at the same time. See [Managing Port Forwarding Rules](https://intl.cloud.tencent.com/document/product/1015/30237).
+>- In a NAT gateway, an EIP can be set in the SNAT rule and port forwarding rule at the same time. See [Creating Port Forwarding Rule](https://intl.cloud.tencent.com/document/product/1015/30237).
 >
 
 
 This document describes how to create and manage a SNAT rule.
 
-## SNAT Rule Limits
+## Rule Limits
 - When an EIP is disassociated from a NAT gateway, the SANT rule is also deleted if the EIP is the only EIP.
 - If the subnet configured for a SNAT rule does not exist, the SNAT rule is deleted as well.
-- If the CVM configured for a SNAT rule does not exist, the SNAT rule is also deleted if this is the last CVM; otherwise, the CVM will be deleted from the SNAT rule.
+- If the CVM configured for a SNAT rule does not exist, the SNAT rule is also deleted if this is the last CVM; otherwise, the CVM is deleted from the SNAT rule.
+- Restricted by standard protocols, for the NAT gateways with the same protocol/destination IP/destination port, the number of maximum connections = the number of bound EIPs × 55000. To increase the number of connections, bind new EIPs or adjust the destination IP/port.
 
 
 ## Prerequisites
 Before creating a SNAT rule, make sure the route table where the subnet resides points to the corresponding NAT gateway. See [Routing to NAT Gateway](https://intl.cloud.tencent.com/document/product/1015/30236).
 
 
-## Creating a SNAT rule [] (id:cjgz)
+## Creating a SNAT rule [](id:cjgz)
 1. Log in to the [**NAT Gateway console**](https://console.cloud.tencent.com/vpc/nat?fromNav).
-2. In the list, click the ID of the desired NAT gateway to go to its details page.
+2. Click the ID of the target NAT gateway to go to its details page.
 3. Select the **SNAT Rule** tab and enter the SNAT rule admin page.
 4. Click **Create**.
 5. In the **Create SNAT Rule** dialog box, configure a SNAT rule as follows:
