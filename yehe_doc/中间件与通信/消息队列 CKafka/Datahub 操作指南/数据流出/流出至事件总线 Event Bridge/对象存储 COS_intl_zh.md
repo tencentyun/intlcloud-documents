@@ -1,7 +1,7 @@
 ## 操作场景
 
 Datahub 提供数据流出能力，您可以将 CKafka 数据分发至 COS 以便于对数据进行分析与下载等操作。处理流程及架构如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/632ca05c1fa3c65507f1a89388427bc3.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/1c4859184b043389514ea8ab7fa5fe7d.png)
 
 
 
