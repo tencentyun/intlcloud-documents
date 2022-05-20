@@ -2,7 +2,8 @@
 
 DataHub is a data access and processing platform in Tencent Cloud, which provides data access, processing, and distribution features at one stop. Data is vital in internet businesses, and data access and reporting serve as the bridge between data generation, computing, storage, and analysis throughout the entire linkage. Therefore, simple yet efficient data access is critical. A business usually has data to be reported to the backend for storage, analysis, computing, and search, such as business metrics, process information, and monitoring data. The general processing linkage is as shown below:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/66b42d8592956e8e96883253a34175ef.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/73d7892b3fcbe4529d9a8f5ed037bfd3.png)
+
 
 You can set up a classic data reporting architecture generally in the following steps:
 
