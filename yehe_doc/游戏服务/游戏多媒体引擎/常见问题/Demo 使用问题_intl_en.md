@@ -25,7 +25,7 @@ If an error occurs for room access parameters, check whether your SDKAppID and a
 
 ### How do I use a downloaded demo?
 
-- See [Usage Documentation](https://intl.cloud.tencent.com/document/product/607/39154).
+- See Usage Documentation.
 - For Unity Demo users, see [Using Unity Demo](https://intl.cloud.tencent.com/document/product/607/38535).
 
 ### Why is the Unity exported demo muted when using?

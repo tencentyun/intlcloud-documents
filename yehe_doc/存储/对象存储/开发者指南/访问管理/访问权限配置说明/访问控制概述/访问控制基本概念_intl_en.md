@@ -59,7 +59,7 @@ COS provides multiple permission setting methods to implement access control, in
 
 These methods can be classified into resource-based authorization and user-based authorization according to the starting point of policy setting, and classified into policy-based authorization and ACL-based authorization according to the authorization mode.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/2adcbc5554e21fafae569d3c7abb209c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca32b98c546c2b039cd29ba842dc9755.png)
 
 **Classification method 1: resource-based authorization vs user-based authorization**
 ![](https://qcloudimg.tencent-cloud.cn/raw/f92521c28d8a4841f71f267ca9964dcc.png)

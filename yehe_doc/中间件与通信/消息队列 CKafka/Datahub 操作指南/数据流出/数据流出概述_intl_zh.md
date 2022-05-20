@@ -2,7 +2,7 @@
 
 Datahub 提供数据流出能力，利用云函数或者 sink connector，分发数据到下游的各种云产品，用户可以编写应用程序或者使用流计算引擎来处理数据例如实时 Web 访问日志、应用日志、各种事件等，并产出各种实时的数据处理结果例如实时图表、报警信息、实时统计等。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/813660dbc2b33dc4c3758c49faf1dbf0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b9e6c83a34d60b3a9e4a9b8fa17b1c60.png)
 
 当前支持数据流出至以下对象：
 

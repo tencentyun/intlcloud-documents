@@ -10,7 +10,7 @@ There are three versioning states for a bucket:
 - **Versioning enabled:** When bucket versioning is enabled, it will be applied to **all the objects** in the bucket. After versioning is enabled for the first time, objects uploaded to the bucket thereafter will be assigned a unique version ID.
 - **Versioning suspended:** Once the versioning state is changed from enabled to suspended (versioning cannot be disabled once enabled), objects uploaded to the bucket thereafter will no longer be subject to versioning.
 
->
+>!
 >1. Once versioning is enabled for the bucket, it cannot return to the prior status (initial status). However, you can suspend versioning for the bucket so that subsequent uploads of objects will not generate multiple versions.
 >2. For objects existing in the bucket before versioning is enabled, the version ID is "null".
 >3. Enabling or suspending versioning will change the way COS makes requests when handling the objects but not the objects themselves.
@@ -27,7 +27,7 @@ You can upload, query, and delete objects in a bucket no matter what the version
 ### Managing objects in a versioning-enabled bucket
 For objects in the bucket before versioning is enabled, their version ID will be “null”. Enabling versioning will change the way COS handles the objects, such as how COS makes requests, but not the objects themselves. Objects with the same name uploaded thereafter will be stored in the same bucket with different version IDs. You can manage objects in a bucket with versioning enabled as described below:
 
->An object is uploaded to both buckets with versioning enabled and not enabled in the same way, but with different version IDs. If versioning is enabled, COS will assign a unique version ID to any object uploaded to the bucket; if versioning is not enabled, the version ID will remain null.
+>!An object is uploaded to both buckets with versioning enabled and not enabled in the same way, but with different version IDs. If versioning is enabled, COS will assign a unique version ID to any object uploaded to the bucket; if versioning is not enabled, the version ID will remain null.
 
 #### Uploading an object
 
@@ -53,7 +53,7 @@ GET /?versions&prefix=ObjectKey HTTP/1.1
 
 A GET request with no version ID specified returns the current version of an object. The following figure shows how a GET request returns the current version (the latest version) of the `123.txt` object.
 
-![](https://main.qcloudimg.com/raw/8c4bb589985ea664a8266278877898e8.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/e4d854e8df16c19c2abeabdf45cfccdb.png)
 
 A GET request with a version ID specified returns the specified version of an object. The following figure shows how such a request returns the specified version of the object. The request can also return the current version.
 
@@ -72,7 +72,7 @@ You can delete unnecessary object versions. When you make a DELETE request in a 
 This is similar to putting the deleted objects to the "recycle bin". The objects are not permanently deleted and can be restored if needed.
 As you can see below, if you do not specify a version ID, the DELETE operation will not delete the 123.txt object; instead, it will insert a delete marker and add a new version ID.
 ![](https://main.qcloudimg.com/raw/fe53cffa9dc6799ed91438c14ab1f57e.png)
->COS will insert a delete marker with a new version ID for the deleted objects. The delete marker will become the current version of the deleted objects. When you try to GET the objects with a delete marker, COS will assume that the objects do not exist and will return a 404 error.
+>!COS will insert a delete marker with a new version ID for the deleted objects. The delete marker will become the current version of the deleted objects. When you try to GET the objects with a delete marker, COS will assume that the objects do not exist and will return a 404 error.
 
 2. If you delete an object with a version ID specified, the specified version of the object will be deleted permanently.
 ![](https://main.qcloudimg.com/raw/7b36446f98a66c73901ab5007a2b008d.png)
@@ -108,7 +108,7 @@ If versioning is suspended, a DELETE request will result in one of the following
 - If an object has a null version in the bucket, the null version of the object will be deleted.
 As you can see below, when you use a simple DELETE operation, COS will insert a delete marker for objects with a version ID of null.
 ![](https://main.qcloudimg.com/raw/6cf8895af9e63736e1ee7160628c58fd.png)
->Since a delete marker does not have content, you will lose the original content of the null version when a delete marker replaces it.
+>!Since a delete marker does not have content, you will lose the original content of the null version when a delete marker replaces it.
 
 - If an object does not have a null version in the bucket, a new delete marker will be added to the bucket.
 As you can see below, if an object does not have a null version in the bucket, a simple DELETE will not remove anything; COS will just insert a delete marker.

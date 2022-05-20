@@ -22,7 +22,7 @@ Data access consists of two parts:
 ### Active reporting
 
 An SDK is provided. The process is as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/1e6792185d7c1f8bd135cd6df1e3965a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a83493f64fc177852938961463b41210.png)
 
 ### Async pull
 

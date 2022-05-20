@@ -13,7 +13,7 @@
 - 仪表盘：将检索分析结果快速生成自定义 Dashborad。
 - 告警：异常日志秒级告警，支持通过电话、短信、邮件、微信、企业微信和自定义接口回调等方式通知用户。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/494195352bb346cbb9fb256b001c03e8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eb15438795c5f95dc1e3454f05173bae.png)
 
 #### 日志采集
 日志服务目前支持 LogListener 、API、kafka 协议、对象存储（Cloud Object Storage，COS）导入等多种采集方式：

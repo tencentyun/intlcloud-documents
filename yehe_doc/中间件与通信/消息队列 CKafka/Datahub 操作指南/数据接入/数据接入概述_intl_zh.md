@@ -22,7 +22,7 @@ DataHub 的数据源可以分为：主动上报、服务类和日志类。
 ### 主动上报
 
 提供 SDK，使用流程为：
-![](https://qcloudimg.tencent-cloud.cn/raw/1e6792185d7c1f8bd135cd6df1e3965a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a83493f64fc177852938961463b41210.png)
 
 ### 异步拉取
 

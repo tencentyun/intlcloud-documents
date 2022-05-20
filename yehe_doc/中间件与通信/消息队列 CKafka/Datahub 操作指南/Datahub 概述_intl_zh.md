@@ -2,9 +2,7 @@
 
 数据接入平台（DataHub）是腾讯云上的数据接入和处理平台，一站式提供对数据的接入、处理和分发功能。Datahub 可以持续不断地接收和采集(APP、Web、云产品日志等)数据，实时处理，低成本搭建数据流转链路，构建数据源和数据处理系统间的桥梁。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/cc9b5e6d29bb701cdf0e1a72cb8e7237.png)
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/3437622997ffa0c441889ae3602cfc1a.png)
 
 ## 产品优势
 
@@ -41,7 +39,7 @@ DataHub 具有高可用、实时性、高扩展性、高安全性等优势。
 CKafka 是一个分布式、高吞吐量、高可扩展性的消息系统，基于发布/订阅模式，通过消息解耦，使生产者和消费者异步交互，具有数据压缩、同时支持离线和实时数据处理等优点。
 DataHub 作为 CKafka 的一个功能模块，可以帮助用户以 CKafka 为入口，通过界面化配置，即时连接到常用的数据源和接收器，构建数据源和数据处理系统间的桥梁，将数据处理系统同业务侧的数据源解耦。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1b3bbe962219cf9b8560e63041252348.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8b896407d65d7c53143b72b69c45686a.png)
 
 ### 数据分发枢纽
 

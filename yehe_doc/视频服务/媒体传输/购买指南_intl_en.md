@@ -57,6 +57,18 @@ If you use StreamLink to relay video to third parties, you will be charged relay
 
 | Region     | City     | Traffic Tier (Daily) | List Price (USD/GB) |
 | :------- | -------- | ---------------- | ----------------- |
+| Asia Pacific | Shanghai   | 0-300 GB          | 0.51              |
+| Asia Pacific | Shanghai   | 300 GB - 1.5 TB       | 0.486             |
+| Asia Pacific | Shanghai   | 1.5-5 TB        | 0.462             |
+| Asia Pacific | Shanghai   |  ≥ 5 TB              | 0.438             |
+| Asia Pacific | Chengdu   | 0-300 GB            | 0.402             |
+| Asia Pacific | Chengdu   | 300 GB - 1.5 TB      | 0.378             |
+| Asia Pacific | Chengdu   | 1.5-5 TB        | 0.354             |
+| Asia Pacific | Chengdu   | ≥5TB             | 0.342             |
+| Asia Pacific | Jakarta | 0-300 GB           | 0.198             |
+| Asia Pacific | Jakarta | 300 GB - 1.5 TB     | 0.186             |
+| Asia Pacific | Jakarta | 1.5-5 TB         | 0.174             |
+| Asia Pacific | Jakarta | ≥5TB             | 0.162             |
 | Asia Pacific     | Hong Kong     | 0-300 GB          | 0.1176            |
 | Asia Pacific     | Hong Kong     | 300 GB - 1.5 TB      | 0.0833            |
 | Asia Pacific     | Hong Kong     | 1.5-5 TB      | 0.0804            |

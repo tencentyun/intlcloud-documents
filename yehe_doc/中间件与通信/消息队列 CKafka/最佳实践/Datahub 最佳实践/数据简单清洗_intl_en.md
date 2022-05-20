@@ -17,7 +17,7 @@ Based on the long-term experience of technical experts in the CKafka team, the b
 ## How It Works
 
 The overall data processing flow is as shown below, with each component structure detailed as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/fb205375b1f11cdfdcfc47e7e92f5bd4.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/73b910c34418e527a9f555e7735f89c1.svg)
 
 - In the data processing component cluster, multiple workers form a consumer group to batch read messages from the source topic and process each message in sequence.
 - In each message, the nested structure of message fields is expanded according to the processing chain sequence configured in the console, and operations such as replacement, extraction, data conversion, and time formatting are performed.

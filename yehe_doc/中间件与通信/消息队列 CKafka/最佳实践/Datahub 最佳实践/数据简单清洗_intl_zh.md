@@ -17,7 +17,7 @@
 ## 运行原理
 
 整个数据处理过程如下图所示，各个组件结构说明如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/fb205375b1f11cdfdcfc47e7e92f5bd4.svg)
+![](https://qcloudimg.tencent-cloud.cn/raw/73b910c34418e527a9f555e7735f89c1.svg)
 
 - 数据处理组件集群中，多个 worker 共同组成一个消费者组，批量读取源 topic 中的消息，并且对于每条消息顺序执行处理操作。
 - 对于每条消息，根据控制台设置的处理链顺序，依次展开消息字段的嵌套结构，并进行替换/截取/数据转换/时间格式化等操作。

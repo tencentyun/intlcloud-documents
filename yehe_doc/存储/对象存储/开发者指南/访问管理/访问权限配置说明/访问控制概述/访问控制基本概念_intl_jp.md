@@ -59,7 +59,7 @@ COSは複数の権限設定方式をご提供してアクセス制御を実現�
 
 これらはポリシー設定の出発点に基づき、リソースベースとユーザーベースの2種類の方式に分けられます。また権限承認の方式に基づき、ポリシーとACLの2種類の方式に分けられます。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/2adcbc5554e21fafae569d3c7abb209c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca32b98c546c2b039cd29ba842dc9755.png)
 
 **分類方法1：リソースベース vs ユーザーベース**
 ![](https://qcloudimg.tencent-cloud.cn/raw/f92521c28d8a4841f71f267ca9964dcc.png)

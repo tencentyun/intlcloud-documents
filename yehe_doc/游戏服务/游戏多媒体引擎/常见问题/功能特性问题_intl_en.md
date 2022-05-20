@@ -29,6 +29,6 @@ GME's HD sound quality can meet the needs of karaoke, however, mic sequence is s
 
 ### What should I do if another player (such as QQ Player) is required to play back the accompaniment on the Windows client?
 
-For more information, please see the API user guide in [Accompaniment with Windows](https://intl.cloud.tencent.com/document/product/607/39153). As the accompaniment with a third-party player feature uses an advanced API, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance and provide the `tmg_adv_win.h` header file.
+For more information, please see the API user guide in Accompaniment with Windows. As the accompaniment with a third-party player feature uses an advanced API, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance and provide the `tmg_adv_win.h` header file.
 
 

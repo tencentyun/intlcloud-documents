@@ -2,9 +2,7 @@
 
 DataHub is a data access and processing platform in Tencent Cloud for one-stop data access, processing, and distribution. It can continuously receive and collect data from applications, web, cloud product logs, and other sources, and process the data in real time. This helps build a data flow linkage at low costs to connect data sources and data processing systems.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/cc9b5e6d29bb701cdf0e1a72cb8e7237.png)
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/3437622997ffa0c441889ae3602cfc1a.png)
 
 ## Benefits
 
@@ -41,7 +39,7 @@ DataHub provides a complete set of Ops services empowered by the Tencent Cloud p
 CKafka is a high-throughput scalable distributed messaging system. Based on the publish/subscribe pattern, it enables async interactions between producers and consumers through message decoupling. It has many strengths, such as data compression and offline/real-time data processing.
 As a feature module of CKafka, DataHub allows you to perform GUI-enabled configuration in CKafka to connect common data sources and receivers immediately. It connects data sources to data processing systems so as to decouple such systems from business data sources.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1b3bbe962219cf9b8560e63041252348.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8b896407d65d7c53143b72b69c45686a.png)
 
 ### Data distribution hub
 

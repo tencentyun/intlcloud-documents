@@ -25,7 +25,7 @@
 
 ### 如何使用已下载的 Demo？
 
-- 您可以请参见 [Demo 使用文档](https://intl.cloud.tencent.com/document/product/607/39154)。
+- 您可以请参见 Demo 使用文档。
 - 如果是 Unity Demo，请参见 [Unity Demo 使用](https://intl.cloud.tencent.com/document/product/607/38535)。
 
 ### Unity 导出的 Demo 为何使用时候经常无声？

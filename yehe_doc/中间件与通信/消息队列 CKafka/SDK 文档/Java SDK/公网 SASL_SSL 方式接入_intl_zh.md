@@ -16,7 +16,7 @@ SSL 证书的核心功能是保护服务器-客户端通信。数据通过 SSL �
 
 ### 步骤1：控制台配置
 1. 创建接入点。
-	1. 在 **[实例列表](https://console.cloud.tencent.com/ckafka/index)** 页面，单击目标实例 ID，进入实例详情页。
+	1. 在 **[实例列表](https://console.intl.cloud.tencent.com/ckafka/index)** 页面，单击目标实例 ID，进入实例详情页。
 	2. 在 **基本信息** > **接入方式** 中，单击**添加路由策略**，在打开窗口中选择：`路由类型：公网域名接入`,`接入方式：SASL_SSL`。
 	![](https://qcloudimg.tencent-cloud.cn/raw/fb9e6cb8740ecff2f2c13c88a128c270.png)
 2. 创建角色。
@@ -31,7 +31,7 @@ SSL 证书的核心功能是保护服务器-客户端通信。数据通过 SSL �
 1. 在 pom.xml 中添加以下依赖。
 <dx-codeblock>
 :::  xml
-<dependency>
+<dependencies>
    <dependency>
       <groupId>org.apache.kafka</groupId>
       <artifactId>kafka-clients</artifactId>
@@ -47,7 +47,7 @@ SSL 证书的核心功能是保护服务器-客户端通信。数据通过 SSL �
       <artifactId>slf4j-simple</artifactId>
       <version>1.6.4</version>
    </dependency>
-</dependency>
+</dependencies>
 :::
 </dx-codeblock>
 2. 创建 JAAS 配置文件 `ckafka_client_jaas.conf`，使用**用户管理**界面创建的用户进行修改。
@@ -67,7 +67,7 @@ username 是`实例 ID` + `#` + `配置的用户名`，password 是配置的用�
 <dx-codeblock>
 :::  properties
 ## 配置接入网络，在控制台的实例详情页面接入方式模块的网络列复制。
-bootstrap.servers=xx.xx.xx.xx:xxxx
+bootstrap.servers=ckafka-xxxxxxx
 ## 配置 Topic，在控制台上 topic 管理页面复制。
 topic=XXX
 ## 配置 consumer group，您可以自定义设置
