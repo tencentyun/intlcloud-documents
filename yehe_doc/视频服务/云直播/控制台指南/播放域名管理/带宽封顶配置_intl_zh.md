@@ -3,11 +3,10 @@
 
 ## 前提条件
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
-- 已添加 [播放域名](https://cloud.tencent.com/document/product/267/20381)。
+- 已添加 [播放域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 
-
-<h2 id="limit">使用限制</h2>
-
+[](id:limit)
+## 使用限制
 | 播放域名加速区域类型 | 限制区域默认类型 | 备注 |
 |---------|---------|---------|
 | 中国大陆 | 中国大陆 | 限制区域不可修改 |
@@ -16,27 +15,30 @@
 
 
 ## 创建带宽封顶配置
-1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的【管理】进入域名详情页。
-2. 选择【高级配置】页签，进入查看【带宽封顶配置】标签。
-3. 单击标签右侧的【编辑】，进入带宽封顶配置页。
-4. 打开【带宽封顶】滑动开关![](https://main.qcloudimg.com/raw/96d86bb811611dbc89c4757fb64af536.png)。
-5. 单击【+ 新增限制】按钮，进行如下配置
-	1. 	限制区域根据该播放域名加速区域类型自行判定，相关配置规则请参见  [使用限制](#limit)。
-	2. 填写带宽阈值。
-	3. 选择阈值单位为 Mbps、Gbps 或 Tbps。
-6. 单击【保存】即可。
+1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的**管理**进入域名详情页。
+2. 选择**高级配置**页签，进入查看**带宽封顶配置**标签。
+3. 单击标签右侧的**编辑**，进入带宽封顶配置页。
+4. 打开**带宽封顶**滑动开关![](https://main.qcloudimg.com/raw/96d86bb811611dbc89c4757fb64af536.png)，进行如下配置：
+	- **限制区域**根据该播放域名加速区域类型自行判定，相关配置规则请参见 [使用限制](#limit)。
+	- 填写带宽阈值。
+	- 选择阈值单位为 Mbps、Gbps 或 Tbps。
+5. 打开 **告警阈值** 滑动开关![](https://main.qcloudimg.com/raw/96d86bb811611dbc89c4757fb64af536.png)， 
+     输入告警阈值百分比，当访问带宽/带宽阈值达到告警阈值时，系统将通过站内信等方式进行告警。 
+6. 单击**保存**即可。
 
-![](https://main.qcloudimg.com/raw/88017c4326a9392dba00163476887a97.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b0cb7574efca181f31062e272211f103.png)
+
 >! 
 >- 各个单位之间进制为1000，例如：1Tbps=1000Gbps，1Gbps=1000Mbps。
 >- 切换区域配置会导致带宽封顶配置失效，需要重新设置带宽封顶配置。
+>- 告警阈值默认为80%，范围：100>告警阈值>0。
 
 
 ## 关闭带宽封顶配置
-1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的【管理】进入域名详情页。
-2. 选择【高级配置】页签，进入查看【带宽封顶配置】标签。
-3. 单击标签右侧的【编辑】，进入带宽封顶配置页。
-![](https://main.qcloudimg.com/raw/4dad76e233af788367fd5753a97a01bf.png)
-4. 关闭【带宽封顶】滑动开关![](https://main.qcloudimg.com/raw/a02cf62f7cf3e9c072047690a6818ac2.png)。
-5. 单击【保存】即可。
+1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的**管理**进入域名详情页。
+2. 选择**高级配置**页签，进入查看**带宽封顶配置**标签。
+3. 单击标签右侧的**编辑**，进入带宽封顶配置页。
+4. 关闭**带宽封顶**滑动开关![](https://main.qcloudimg.com/raw/a02cf62f7cf3e9c072047690a6818ac2.png)。
+5. 单击**保存**即可。
 
+![](https://qcloudimg.tencent-cloud.cn/raw/490bd4983649a535f888a91a11446521.png)

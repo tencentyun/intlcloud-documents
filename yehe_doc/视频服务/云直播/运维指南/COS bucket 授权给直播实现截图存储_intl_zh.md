@@ -18,7 +18,7 @@
 
 ### 授权给云直播截图存储
 
-1.为腾讯云截图存储开通数据写入权限，授权的主账号 ID：`3508645126`。
+1.为腾讯云截图存储开通**数据写入**权限，鉴黄开通**数据读取**权限，授权的主账号 ID：`3508645126`。
 
   1. 在存储桶的 **[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)** 选择授权的存储桶，单击右侧 **配置管理** 进入该存储桶配置管理界面，选择 **权限管理**> **[存储桶访问权限](https://console.cloud.tencent.com/cos5/bucket/setting?type=aclconfig&anchorType=accessPermission&bucketName=text-1258968577&projectId=&path=%2F®ion=ap-guangzhou)** 添加用户，用户类型选择主账号，**并输入主账号 ID：`3508645126`**。单击 **保存**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f31e4a9251f1c959954b958b284bfb44.png)
@@ -29,7 +29,6 @@
 >!**账号 ID 需填入主账号 ID：`3508645126` 进行授权。（主账号 ID：`3508645126` 即为云直播服务 APPID，直接输入 `3508645126` 即可）**。
 
    2. 存储桶访问权限设置 API 请参考 [PUT Bucket acl 文档](https://intl.cloud.tencent.com/document/product/436/7737)。
-
 2. 获取已授权 COS Bucket 信息。
    1. 在存储桶的 **[概览](https://console.cloud.tencent.com/cos5/bucket/setting?type=bucketoverview&bucketName=text-1258968577&projectId=&path=%252F&region=ap-guangzhou)** 里即可查看到 COS 的所有信息。访问域名（源站域名）包含 bucket name、cos appid 和 bucket region。
 ![](https://qcloudimg.tencent-cloud.cn/raw/2b1fa50e6551966b3a7fe946f59d6260.png)
