@@ -40,7 +40,7 @@
     <tbody>
     <tr>
         <td style='text-align:left;'>SECRET_ID、SECRET_KEY</td>
-        <td style='text-align:left;'><img src="https://main.qcloudimg.com/raw/8ec140474be0ced1352695b372b2934d.png"
+        <td style='text-align:left;'><img src="https://qcloudimg.tencent-cloud.cn/raw/ec875f8da34679a80bd512ac327813a9.png"
                                           referrerpolicy="no-referrer" alt="img"></td>
     </tr>
     <tr>
@@ -91,7 +91,7 @@
         <td style='text-align:left;'>token</td>
         <td style='text-align:left;'>角色密钥，在 <strong><a
                 href='https://console.cloud.tencent.com/tdmq/role'>角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img
-                src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" referrerpolicy="no-referrer"
+                src="https://qcloudimg.tencent-cloud.cn/raw/d94994d333555d12304f4737f89d47cd.png" referrerpolicy="no-referrer"
                 alt="img"></td>
     </tr>
     <tr>
