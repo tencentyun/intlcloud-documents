@@ -37,7 +37,7 @@ To create a VPC-based VPN gateway, you need to create a VPC in the same region a
 </tr>
 <tr>
 <td>Associated Network</td>
-<td>This parameter indicates whether you create a CCN-based VPN/VPN gateway or a VPC-based VPN/VPN gateway.<ul><li>If you want to use a VPN connection to implement the interconnection with multiple VPCs or other Direct Connect networks, please create the <b>CCN</b>-based VPN.
+<td>This parameter indicates whether you create a CCN-based VPN/VPN gateway or a VPC-based VPN/VPN gateway.<ul><li>If you want to use a VPN connection to implement the interconnection with multiple VPCs or other Direct Connect networks, please create the <b>CCN</b> based VPN.
 <dx-alert infotype="notice" title="">
 You cannot associate the CCN-based VPN gateway with a CCN instance during its creation. You can associate a created VPN gateway to a CCN instance in the gateway details page. If you create a policy-based VPN tunnel, you also need to enable the route published to the CCN in the IDC IP range of the VPN gateway.
 </dx-alert>
