@@ -28,7 +28,7 @@
     <dx-codeblock>
     :::  bash
       ## 配置接入网络，在控制台的实例详情页面接入方式模块的网络列复制。
-      bootstrap.servers=ckafka-xxxxxxxxxxxxxxxxx
+      bootstrap.servers=xx.xx.xx.xx:xxxx
       ## 配置Topic，在控制台上topic管理页面复制。
       topic=XXX
       ## 配置Consumer Group，您可以自定义设置
@@ -153,8 +153,8 @@ Produce ok:ckafka-topic-demo-0@198
 Produce ok:ckafka-topic-demo-0@199
 :::
 </dx-codeblock>
-4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的 **topic 管理**页面，选择对应的 Topic ，单击**更多** > **消息查询**，查看刚刚发送的消息。
-     ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+4. 在 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka) 的 **topic 管理**页面，选择对应的 Topic ，单击**更多** > **消息查询**，查看刚刚发送的消息。
+    ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 ### 步骤3：消费消息
@@ -224,5 +224,5 @@ Consume partition:0 offset:298
 Consume partition:0 offset:299
 :::
 </dx-codeblock>
-4. 在  [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的**Consumer Group**页面，选择对应的消费组名称，在主题名称输入 Topic 名称，单击**查询详情**，查看消费详情。
-   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
+4. 在  [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka) 的**Consumer Group**页面，选择对应的消费组名称，在主题名称输入 Topic 名称，单击**查询详情**，查看消费详情。
+    ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)

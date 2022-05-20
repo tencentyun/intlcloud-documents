@@ -1,20 +1,20 @@
 ## Overview
 
-This document describes how to access CKafka to send/receive messages with the SDK for Java in a VPC.
+This document describes how to access CKafka to receive/send messages with the SDK for Java in a VPC.
 
 ## Prerequisites
 
-- [Install JDK 1.8 or above](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [Install Maven 2.5 or above](http://maven.apache.org/download.cgi#)
-- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/javakafkademo/VPC)
+- [You have installed JDK 1.8 or later](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [You have installed Maven 2.5 or later](http://maven.apache.org/download.cgi#)
+- [You have downloaded the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/javakafkademo/VPC)
 
 ## Directions
 
-### Step 1. Prepare the configuration
+### Step 1. Prepare configurations
 
 1. Upload the `javakafkademo` in the downloaded demo to the Linux server.
 2. Log in to the Linux server, enter the `javakafkademo` directory, and configure related parameters.
-    2. Add the following dependencies to the `pom.xml` file: 
+    1. Add the following dependencies to the `pom.xml` file: 
     <dx-codeblock>
     :::  xml
       <dependency>
@@ -24,11 +24,11 @@ This document describes how to access CKafka to send/receive messages with the S
       </dependency>
     :::
     </dx-codeblock>
-   2. Create a CKafka configuration file named `kafka.properties`.
+   2. Create a Kafka configuration file named `kafka.properties`.
     <dx-codeblock>
     :::  bash
-      ## Configure the accessed network by copying the information in the **Network** column in the **Access Mode** section on the instance details page in the console
-      bootstrap.servers=ckafka-xxxxxxxxxxxxxxxxx
+      ## Configure the accessed network by copying the information in the **Network** column in the **Access Mode** section on the instance details** page in the console
+      bootstrap.servers=xx.xx.xx.xx:xxxx
       ## Configure the topic by copying the information on the **Topic Management** page in the console
       topic=XXX
       ## Configure the consumer group as needed
@@ -72,11 +72,11 @@ This document describes how to access CKafka to send/receive messages with the S
               if (null != properties) {
                   return properties;
               }
-              // Get the content of the configuration file `kafka.properties`.
+              //Obtain the content of the configuration file `kafka.properties`
               Properties kafkaProperties = new Properties();
               try {
                   kafkaProperties.load(CKafkaProducerDemo.class.getClassLoader().getResourceAsStream("kafka.properties"));
-              } catch (Exception e) {
+              } catch (Exception e){
                   System.out.println("getCKafkaProperties error");
               }
               properties = kafkaProperties;
@@ -87,44 +87,44 @@ This document describes how to access CKafka to send/receive messages with the S
 </dx-codeblock>
 
 
-### Step 2. Send a message
+### Step 2. Send messages
 
-1. Write a message producer named `CKafkaProducerDemo.java`.
+1. Write a message production program named `CKafkaProducerDemo.java`.
 <dx-codeblock>
 :::  java
 public class CKafkaProducerDemo {
 
     public static void main(String args[]) {
-        // Load `kafka.properties`.
+        //Load `kafka.properties`
         Properties kafkaProperties = CKafkaConfigurer.getCKafkaProperties();
 
         Properties properties = new Properties();
-        // Set the access point. Get the access point of the corresponding topic in the console.
+        //Set the access point. Obtain the access point of the topic via the console.
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getProperty("bootstrap.servers"));
         
-        // Set the method for serializing Kafka messages. `StringSerializer` is used in this demo.
+        //Set the method for serializing Kafka messages. `StringSerializer` is used in this demo.
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringSerializer");
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringSerializer");
-        // Set the maximum request wait time.
+        //Set the maximum request wait time
         properties.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, 30 * 1000);
-        // Set the number of retries for the client.
+        //Set the number of retries for the client
         properties.put(ProducerConfig.RETRIES_CONFIG, 5);
-        // Set the internal retry interval for the client.
+        //Set the retry interval for the client.
         properties.put(ProducerConfig.RECONNECT_BACKOFF_MS_CONFIG, 3000);
-        // Construct a producer object.
+        //Construct a producer object
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
         
-        // Construct a CKafka message.
-        String topic = kafkaProperties.getProperty("topic"); // Topic of the message. Enter the topic you created in the console
-        String value = "this is ckafka msg value"; // Message content
+        //Construct a Kafka message
+        String topic = kafkaProperties.getProperty("topic"); //Topic of the message. Enter the topic you created in the console.
+        String value = "this is ckafka msg value"; //Message content.
         
         try {
-            // Batch getting future objects can speed up the process. Note that the batch size should not be too large.
+            //Batch obtaining future objects can speed up the process, but the batch size should not be too large.
             List<Future<RecordMetadata>> futureList = new ArrayList<>(128);
             for (int i = 0; i < 10; i++) {
-                // Send the message and get a future object.
+                //Send the message and obtain a future object
                 ProducerRecord<String, String> kafkaMsg = new ProducerRecord<>(topic,
                         value + ": " + i);
                 Future<RecordMetadata> metadataFuture = producer.send(kafkaMsg);
@@ -133,12 +133,12 @@ public class CKafkaProducerDemo {
             }
             producer.flush();
             for (Future<RecordMetadata> future : futureList) {
-                // Sync the future object obtained.
+                //Sync the future object obtained
                 RecordMetadata recordMetadata = future.get();
                 System.out.println("produce send ok: " + recordMetadata.toString());
             }
-        } catch (Exception e) {
-            // If the sending still fails after client internal retries, the system needs to report and handle the error.
+        } catch (Exception e){
+            //If the sending still fails after client internal retries, the system needs to report and handle the error
             System.out.println("error occurred");
         }
     }
@@ -153,11 +153,11 @@ Produce ok:ckafka-topic-demo-0@198
 Produce ok:ckafka-topic-demo-0@199
 :::
 </dx-codeblock>
-4. On the **Topic Management** tab on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic and click **More** > **Message Query** to view the message just sent.
-     ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.intl.cloud.tencent.com/ckafka), select the topic, and click **More** > **Message Query** to view the message just sent.
+    ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
-### Step 3. Consume the message
+### Step 3. Consume messages
 
 1. Create a program named `CKafkaConsumerDemo.java` for a consumer to subscribe to messages.
 <dx-codeblock>
@@ -165,32 +165,32 @@ Produce ok:ckafka-topic-demo-0@199
 public class CKafkaConsumerDemo {
 
     public static void main(String args[]) {
-        // Load `kafka.properties`.
+        //Load `kafka.properties`
         Properties kafkaProperties = CKafkaConfigurer.getCKafkaProperties();
 
         Properties props = new Properties();
-        // Set the access point. Get the access point of the corresponding topic in the console.
+        //Set the access point. Obtain the access point of the topic via the console.
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getProperty("bootstrap.servers"));
-        // Set the maximum interval between two polls.
-        // If the consumer does not return a heartbeat message within the interval, the broker will determine that the consumer is not alive, and then remove the consumer from the consumer group and trigger rebalancing. The default value is 30s.
+        //Set the maximum interval between two polls
+        //If the consumer does not return a heartbeat message within the interval, the broker will determine that the consumer is not alive, and then remove the consumer from the consumer group and trigger rebalancing. The default value is 30s.
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 30000);
-        // Set the maximum number of messages that can be polled at a time.
-        // Do not set this parameter to an excessively large value. If polled messages are not all consumed before the next poll starts, load balancing is triggered and lagging occurs.
+        //Set the maximum number of messages that can be polled at a time
+        //Do not set this parameter to an excessively large value. If polled messages are not consumed before the next poll, load balancing is triggered and lagging occurs.
         props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 30);
-        // Set the method for deserializing messages.
+        //Set the method for deserializing messages
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringDeserializer");
-        // The instances in the same consumer group consume messages in load balancing mode.
+        //The instances in the same consumer group consume messages in load balancing mode
         props.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaProperties.getProperty("group.id"));
-        // Construct a consumer object. This generates a consumer instance.
+        //Create a consumer object, which means generating a consumer instance
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-        // Set one or more topics to which the consumer group subscribes.
-        // We recommend you configure consumer instances with the same `GROUP_ID_CONFIG` value to subscribe to the same topics.
+        //Set one or more topics to which the consumer group subscribes
+        //You are advised to configure consumer instances with the same `GROUP_ID_CONFIG` value to subscribe to the same topics
         List<String> subscribedTopics = new ArrayList<>();
-        // If you want to subscribe to multiple topics, add the topics here.
-        // You must create the topics in the console in advance.
+        //If you want to subscribe to multiple topics, add the topics here
+        //You must create the topics in the console in advance.
         String topicStr = kafkaProperties.getProperty("topic");
         String[] topics = topicStr.split(",");
         for (String topic : topics) {
@@ -198,17 +198,17 @@ public class CKafkaConsumerDemo {
         }
         consumer.subscribe(subscribedTopics);
         
-        // Consume messages in loop.
+        //Consume messages in loop
         while (true) {
             try {
                 ConsumerRecords<String, String> records = consumer.poll(1000);
-                // All messages must be consumed before the next poll, and the total duration cannot exceed the timeout interval specified by `SESSION_TIMEOUT_MS_CONFIG`.
-                // We recommend you create an independent thread to consume messages and then return the result in async mode.
+                //All messages must be consumed before the next poll, and the total duration cannot exceed the timeout interval specified by `SESSION_TIMEOUT_MS_CONFIG`
+                //You are advised to create a separate thread to consume messages and then return the result in async mode
                 for (ConsumerRecord<String, String> record : records) {
                     System.out.println(
                             String.format("Consume partition:%d offset:%d", record.partition(), record.offset()));
                 }
-            } catch (Exception e) {
+            } catch (Exception e){
                 System.out.println("consumer error!");
             }
         }
@@ -216,7 +216,7 @@ public class CKafkaConsumerDemo {
 }
 :::
 </dx-codeblock>
-2. Compile and run `CKafkaConsumerDemo.java` to consume the message.
+2. Compile and run `CKafkaConsumerDemo.java` to consume messages.
 3. View the execution result.
 <dx-codeblock>
 :::  bash
@@ -224,5 +224,5 @@ Consume partition:0 offset:298
 Consume partition:0 offset:299
 :::
 </dx-codeblock>
-4. On the **Consumer Group** tab in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name, and click **View Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
+4. On the **Consumer Group** tab page in the [CKafka console](https://console.intl.cloud.tencent.com/ckafka), select the consumer group name, enter the topic name, and click **View Details** to view the consumption details.
+    ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)

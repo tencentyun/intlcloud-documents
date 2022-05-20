@@ -4,8 +4,8 @@ This document describes how to access CKafka to send/receive messages with the S
 
 ## Prerequisites
 
-- [Install Go](https://golang.org/dl/)
-- [Download demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo/VPC)
+- [You have installed Go](https://golang.org/dl/)
+- [You have downloaded the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo/VPC)
 
 ## Directions
 
@@ -26,7 +26,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
       "test"
   ],
   "bootstrapServers": [
-      "xxx-.ap-changsha-ec.ckafka.tencentcloudmq.com:6000"
+      "xx.xx.xx.xx:xxxx"
   ],
   "consumerGroupId": "yourConsumerId"
 }  
@@ -36,12 +36,12 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 | Parameter              | Description                                                         |
 | ---------------- | :----------------------------------------------------------- |
 | topic             | Topic name, which can be copied in **Topic Management** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
-| bootstrapServers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section in **Basic Info** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)  |
+| bootstrapServers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section in **Basic Info** on the instance details page in the console. <br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
 | consumerGroupId  | You can customize it. After the demo runs successfully, you can see the consumer in **Consumer Group** on the instance details page. |
 
 ### Step 2. Send messages
 
-1. Write the message production program.
+1. Write a message production program.
 <dx-codeblock>
 :::  go
    package main
@@ -58,7 +58,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
        		log.Fatal(err)
    		}
        p, err := kafka.NewProducer(&kafka.ConfigMap{
-       // Set the access point of the corresponding topic, which can be obtained in the console
+       // Set the access point of the topic, which can be obtained in the console
        "bootstrap.servers": strings.Join(cfg.Servers, ","),
        // If you do not configure this parameter, the default value will be 1. You can customize this according to your business requirements.
        "acks": 1,
@@ -114,8 +114,8 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
    Delivered message to test[0]@629
    ```
 
-4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic, and click **More** > **Message Query** to view the messages just sent.
-   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.intl.cloud.tencent.com/ckafka), select the topic, and click **More** > **Message Query** to view the messages just sent.
+    ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 ### Step 3. Consume messages
 
@@ -141,7 +141,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
       }
       
       c, err := kafka.NewConsumer(&kafka.ConfigMap{
-          // Set the access point of the corresponding topic, which can be obtained in the console
+          // Set the access point of the topic, which can be obtained in the console
           "bootstrap.servers": strings.Join(cfg.Servers, ","),
           // The set message consumer group
           "group.id":          cfg.ConsumerGroupId,
@@ -161,7 +161,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
           log.Fatal(err)
       }
       
-      for  {
+      for {
           msg, err := c.ReadMessage(-1)
           if err == nil {
               fmt.Printf("Message on %s: %s\n", msg.TopicPartition, string(msg.Value))
@@ -187,6 +187,6 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 	Message on test[0]@629: Golang Client Message
 	```
 
-4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name, and click **View Details** to view the consumption details.
-     ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
+4. On the **Consumer Group** tab page in the [CKafka console](https://console.intl.cloud.tencent.com/ckafka), select the consumer group name, enter the topic name, and click **View Details** to view the consumption details.
+    ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
 
