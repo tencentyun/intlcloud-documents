@@ -10,7 +10,8 @@ This document describes message sending in the HTTP-based data access feature of
 
 After the HTTP data access layer is enabled, an HTTP client in the public network can directly send messages to a CKafka instance through TencentCloud API as shown below:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/37a35f97e9ede93e35b3a3567cc50884.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/905e901dc880c188facfd4e76671b08e.png)
+
 
 ### Prerequisites
 
@@ -36,7 +37,6 @@ For detailed directions, see [Reporting over HTTP](https://intl.cloud.tencent.co
 :::
 </dx-codeblock>
 2. Click **Task Details** in [Data Access](https://console.intl.cloud.tencent.com/ckafka/datahub-access) and copy the access point information to the SDK for data writes.
-![](https://qcloudimg.tencent-cloud.cn/raw/c0cdd9480626d044fbab71b63d35679e.png)
 3. Enter the access point information. In the sample code, `generateMsgFromUserAccess` is used to assemble all messages to be sent.
    <dx-codeblock>
    :::  java
@@ -86,7 +86,7 @@ try {
 ### Querying message
 
 You can query messages sent at the HTTP access layer in the [CKafka console](https://intl.cloud.tencent.com/document/product/597/39719). For detailed directions, see [Querying Message](https://intl.cloud.tencent.com/document/product/597/39719). In this example, messages at offset 2 in partition 4 in the `topicDev` topic are queried as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/9aa559445ddd6053bc6bcba0eceb9cbf.png)
+   ![](https://main.qcloudimg.com/raw/195ca10f4a0868b12a03c7c831eff1fd.png)
 
 
 ### Pausing task
@@ -94,9 +94,7 @@ You can query messages sent at the HTTP access layer in the [CKafka console](htt
 If you find that the data access task affects the normal business, you can pause the task.
 
 1. On the [Data Access](https://console.intl.cloud.tencent.com/ckafka/datahub-access) page, click **Pause** in the **Operation** column of the target task to pause the task.
-![](https://qcloudimg.tencent-cloud.cn/raw/d41b251855cc6f057c4cdb2497069f19.png)
 2. If the prompt in the top-right corner in the following figure is displayed, the task was paused successfully.
-![](https://qcloudimg.tencent-cloud.cn/raw/417a61130eefa1d41ee1a29bfdb4a394.png)
 3. At this time, if you send a message at the HTTP access layer, you will receive the following response:
 <dx-codeblock>
 :::  json
