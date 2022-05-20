@@ -1,10 +1,10 @@
-Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推出的云服务之一，经过多年的发展，S3 协议在对象存储行业事实上已经成为标准。腾讯云对象存储 COS（下文简称 COS）提供了兼容 S3 的实现方案，因此您可以在大部分兼容 S3 应用中直接使用 COS 服务。本文将重点介绍如何将此类应用配置为使用 COS 服务。
+Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推出的云服务之一，经过多年的发展，S3 协议在对象存储行业事实上已经成为标准。腾讯云对象存储（Cloud Object Storage，COS）提供了兼容 S3 的实现方案，因此您可以在大部分兼容 S3 应用中直接使用 COS 服务。本文将重点介绍如何将此类应用配置为使用 COS 服务。
 
 ## 准备工作
 
 ### 确认应用是否可以使用 COS 服务
 
-- 如果您在应用的说明中看到类似`S3 Compatible`字样，那么大多数情况可以使用 COS 服务。如果您在实际使用过程中发现应用的某些功能无法正常使用，您可以向我们 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行咨询，在提交工单时，请说明您是从该文档中看到的指引，并提供相关应用的名称和截图等信息，以便我们可以更快的帮您解决问题。
+- 如果您在应用的说明中看到类似`S3 Compatible`字样，那么大多数情况可以使用 COS 服务。如果您在实际使用过程中发现应用的某些功能无法正常使用，您可以 [联系我们]( https://intl.cloud.tencent.com/contact-sales)。联系时，请说明您是从该文档中看到的指引，并提供相关应用的名称和截图等信息，以便我们可以更快的帮您解决问题。
 - 如果您的应用只说明支持`Amazon S3`，这表明该应用可以使用 S3 服务，但能否使用 COS 服务，还需要在相关的配置中进一步尝试，本文也会在后续的配置说明中做进一步的说明。
 
 ### 准备 COS 服务
@@ -13,7 +13,7 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 （如果已在腾讯云注册，可忽略此步骤。）
 
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
 
 #### 步骤2：完成实名认证
 
@@ -21,7 +21,7 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 
-详细认证流程，请参见 <a href="https://intl.cloud.tencent.com/document/product/378/3629">实名认证介绍</a>。未进行实名认证的用户无法购买中国境内的 COS 服务。
+详细认证流程，请参见 <a href="https://intl.cloud.tencent.com/document/product//378/3629">实名认证介绍</a>。
 
 #### 步骤3：开通 COS 服务
 
@@ -32,20 +32,14 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 在访问管理控制台的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面中获取并记录 **APPID**、**SecretId** 和 **SecretKey**。
 
-![](https://main.qcloudimg.com/raw/974b7e89ba39d4f301daa6deac0711c3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/82216475f85f3bb8c9662e35998cbbc3.png)
 
 <span id="step5"></span>
 #### 步骤5：创建存储桶
 
-部分应用内置创建存储桶的过程，如果您希望由应用去创建存储桶，您可以忽略此步骤。
+参见 [创建存储桶](https://intl.cloud.tencent.com/document/product//436/13309) 创建一个存储桶。
 
-1. 在 [对象存储控制台](https://console.cloud.tencent.com/cos5) 左侧导航栏中单击【存储桶列表】，进入存储桶管理页。
-2. 单击【创建存储桶】，输入存储桶信息。
-	- 名称：存储桶名称，如 examplebucket。
-	- 所属地域：存储桶存放地域，选择与您最近的一个地区，例如我在 “深圳”，地域可以选择 “广州”。
-	- 访问权限：存储桶访问权限，此处我们选择“私有读写”。
-		![](https://main.qcloudimg.com/raw/f8582be0ef7e9cc7bcd52b607e619d4c.png)
-3. 单击【确定】，即可创建存储桶。
+部分应用内置创建存储桶的过程，如果您希望由应用去创建存储桶，您可以忽略此步骤。
 
 
 ## 在应用中配置 COS 服务
@@ -54,7 +48,8 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 大部分应用在配置使用的存储服务时，都有类似的配置项，下面列举这些配置项的常见名称及相关说明：
 
->? 如果您在配置过程中有任何疑问，也可以向我们 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询，在提交工单时，请说明您是从该文档中看到的指引，并提供相关应用的名称和截图等信息，以便我们可以更快的帮您解决问题。
+>? 如果您在配置过程中有任何疑问，也可以 [联系我们]( https://intl.cloud.tencent.com/contact-sales)。联系时，请说明您是从该文档中看到的指引，并提供相关应用的名称和截图等信息，以便我们可以更快的帮您解决问题。
+>
 
 
 <table>
@@ -92,7 +87,6 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 </tbody></table>
 
 
-
 ### 其他项与高级配置说明
 
 部分应用除了上述基本配置外，还有一些其他项与高级配置，下面将提供部分 COS 的功能说明，以便您更好的在应用中使用 COS 服务。
@@ -106,4 +100,4 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 ## 结语
 
-COS 不保证与 S3 的完全兼容，如果您在应用中使用 COS 服务时遇到任何问题，欢迎向我们 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询，在提交工单时，请说明您是从该文档中看到的指引，并提供相关应用的名称和截图等信息，以便我们可以更快的帮您解决问题。
+COS 不保证与 S3 的完全兼容，如果您在应用中使用 COS 服务时遇到任何问题，您可以 [联系我们]( https://intl.cloud.tencent.com/contact-sales)。联系时，请说明您是从该文档中看到的指引，并提供相关应用的名称和截图等信息，以便我们可以更快的帮您解决问题。

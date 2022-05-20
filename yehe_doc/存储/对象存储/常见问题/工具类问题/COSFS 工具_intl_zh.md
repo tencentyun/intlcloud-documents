@@ -4,7 +4,7 @@
 
 使用临时密钥（STS）挂载存储桶，需要执行如下两个步骤：
 
-步骤一：创建临时密钥配置文件，例如为 /tmp/passwd-sts，用于 COSFS 命令选项 -opasswd-file=\[path\] 指定密钥配置文件。临时密钥相关概念可参考  [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048) 文档。临时密钥配置文件示例如下：
+步骤一：创建临时密钥配置文件，例如为 /tmp/passwd-sts，用于 COSFS 命令选项 -opasswd-file=\[path\] 指定密钥配置文件。临时密钥相关概念可参考  [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product//436/14048) 文档。临时密钥配置文件示例如下：
 ```shell
 COSAccessKeyId=AKIDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  #以下为临时密钥的Id、Key和Token字段
 COSSecretKey=GYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
@@ -109,8 +109,13 @@ echo log-1250000000:AKIDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:GYYYYYYYYYYYYYYYYYYYYYYY
 
 
 ### COSFS 如何查看已使用的存储容量？
-COSFS 不支持直接查看已使用的存储容量。如果您想要统计 COS 存储桶的存储量，对于数据量较小的场景，请登录 COS 控制台进行查看；对于数据量大的场景，请使用 [清单](https://intl.cloud.tencent.com/document/product/436/30622) 功能。
+COSFS 不支持直接查看已使用的存储容量。如果您想要统计 COS 存储桶的存储量，对于数据量较小的场景，请登录 COS 控制台进行查看；对于数据量大的场景，请使用 [清单](https://intl.cloud.tencent.com/document/product//436/30622) 功能。
 
+### 如何查看有哪些进程访问了挂载目录？
+执行如下命令，即可查看哪些进程访问了挂载目录（如 /mnt/cosfs）。
+```
+lsof /mnt/cosfs 
+```
 
 
 ## 故障排查
@@ -124,7 +129,7 @@ umount -l /path/to/mnt_dir
 cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
-如果 COSFS 进程不是由于误操作挂掉，可以检查机器上的 fuse 版本是否低于 2.9.4，libfuse 在低于 2.9.4 版本的情况下可能会导致 COSFS 进程异常退出。此时，建议您参见 [COSFS 工具](https://intl.cloud.tencent.com/document/product/436/6883) 文档更新 fuse 版本或安装最新版本的 COSFS。
+如果 COSFS 进程不是由于误操作挂掉，可以检查机器上的 fuse 版本是否低于 2.9.4，libfuse 在低于 2.9.4 版本的情况下可能会导致 COSFS 进程异常退出。此时，建议您参见 [COSFS 工具](https://intl.cloud.tencent.com/document/product//436/6883) 文档更新 fuse 版本或安装最新版本的 COSFS。
 
 ### 通过 COSFS 上传的文件 Content-Type 被变为 "application/octet-stream"怎么办？
 
