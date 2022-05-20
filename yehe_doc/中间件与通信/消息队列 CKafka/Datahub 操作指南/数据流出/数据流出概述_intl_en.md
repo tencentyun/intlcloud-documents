@@ -2,7 +2,7 @@ The low-latency processing capability of CKafka makes it easier to process (cons
 
 DataHub offers data distribution capacities. It can distribute data such as real-time web access logs, application logs, and various types of events to downstream Tencent Cloud products by using SCF or a sink connector. You can then write an application or use the Oceanus engine to process such data and generate real-time data processing results such as charts, alarms, and statistics.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/813660dbc2b33dc4c3758c49faf1dbf0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b9e6c83a34d60b3a9e4a9b8fa17b1c60.png)
 
 Currently, data can be distributed to the following targets:
 
