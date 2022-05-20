@@ -20,7 +20,7 @@ This document describes how to access CKafka to receive/send messages with the S
    2. In **Basic Info** > **Access Mode**, click **Add a routing policy**. In the pop-up window, select
 	 - `Route Type: Public domain name access`
 	 - `Access Mode: SASL_SCRAM`
-  ![](https://qcloudimg.tencent-cloud.cn/raw/fb9e6cb8740ecff2f2c13c88a128c270.png)
+  ![](https://main.qcloudimg.com/raw/e3c2304070064b93e082895b9bd7b9b2.png)
 2. Create a role.
    On the **User Management** tab page, create a role and set the password.
   ![](https://qcloudimg.tencent-cloud.cn/raw/c9e06ace7d959ae91331a241c2126cc5.png)
