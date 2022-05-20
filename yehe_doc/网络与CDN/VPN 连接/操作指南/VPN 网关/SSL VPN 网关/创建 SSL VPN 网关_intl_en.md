@@ -36,7 +36,7 @@ You've created a VPC. See [Creating VPCs](https://intl.cloud.tencent.com/documen
 </tr>
 <tr>
 <td>Associated Network</td>
-<td>Select **VPC**</td>
+<td>Select <b>VPC</b></td>
 </tr>
 <tr>
 <td>Network</td>
