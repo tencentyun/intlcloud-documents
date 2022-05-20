@@ -8,15 +8,15 @@ SCF follows the execution logic that one concurrent instance processes only one 
 
 ### Concurrent processing for async invocations
 
-Async events will first enter a queue in SCF, where they will be processed in a FIFO manner. The system will select an appropriate concurrency processing method based on the conditions such as queue length and current number of concurrent instances of the function to pull sufficient concurrent instances and process the events in sequence.
+Async events enter a queue on SCF, where they will be processed in a FIFO manner. The system will select an appropriate concurrency processing method based on the conditions such as queue length and current number of concurrent instances of the function to pull sufficient concurrent instances and process the events in sequence.
 
-If an async invocation fails, SCF will retry according to certain rules. For more information, please see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/39851).
+If an async invocation fails, SCF will retry according to certain rules. For more information, see [Error Types and Retry Policies](https://intl.cloud.tencent.com/document/product/583/39851).
 
 ### Concurrent processing for sync invocations
 
-After sync events arrive at SCF, it will check whether there are any idle concurrent instances, and if so, the events will be immediately sent to instances for processing; otherwise, it will start new concurrent instances to process them.
+When sync events arrive, SCF checks for idle concurrent instances. If yes, the events are immediately sent to idle instances; otherwise, new concurrent instances are started to process them.
 
-If a sync invocation fails, you need to retry by yourself.
+When a sync invocation fails, you need to retry on your own.
 
 
 
@@ -36,72 +36,69 @@ For example, if the QPS of a business is 2,000, and the average time per request
 
 After a concurrent instance processes a request event, it will not be repossessed immediately; instead, it will be retained for a certain period of time for reuse. During the retention duration, if there are new request events that need to be processed, the retained concurrent instance will be used first, so the events can be processed quickly with no need to start new concurrent instances.
 
-After the retention duration elapses, if there are no requests that need to be processed by the instance, SCF will repossess it. For low concurrency scenarios, no retention duration is set, and SCF will enable the smart repossession mechanism for resource repossession.
+After the retention duration elapses, if there are no requests that need to be processed by the instance, the SCF platform will repossess it. For low concurrency scenarios, no retention duration is set, and the platform will enable the smart repossession mechanism for resource repossession.
 
 The concurrent instance retention duration is dynamically adjusted by SCF as needed; therefore, you cannot assume a certain retention duration when writing the function business code.
 
 
-## Concurrency Expansion
+## Concurrency Scale-out
 
-If a request arrives, but no concurrent instances for that version can process it, SCF will start a new concurrent instance for processing. After initialization, the new instance can process events, which is called expansion by elastic concurrency.
+When a request arrives, but no concurrent instance for that version is available, a new concurrent instance is automatically launched and initialized for it. This is called elastic concurrency scale-out, and its speed limit is called **function burst**.
 
-The **maximum expansion speed of new concurrent instances in a region under one account is 500 instances/minute by default**, that is, up to 500 new concurrent instances can be started in one minute. If the limit is reached in one minute, no more new instances will be started until the minute elapses, during which a limited expansion error (429 ResourceLimit) will occur if new instance expansion requests are initiated. For more information, please see [Function Status Code](https://intl.cloud.tencent.com/document/product/583/35311).
+The **default upper limit of scale-out speed (function burst) per region under each account is 500 instances/minute**, that is, up to 500 new concurrent instances can be started in one minute for all functions in this region. If the limit is hit in one minute, no more new instances will be started until the minute elapses, during which a over-limit error (429 ResourceLimit) occurs if new scale-out requests are initiated. For more information, see [Function Status Code](https://intl.cloud.tencent.com/document/product/583/35311).
 
 For example, the concurrency quota of an account in the Guangzhou region is 1,000 concurrent instances by default for a 128 MB function, and if many requests arrive, 500 concurrent instances can be started from 0 in the first minute. If there are still other requests to be processed, 500 more concurrent instances can be started to reach 1,000 instances in total in the second minute, until the number of concurrent instances is sufficient for the requests or reaches the upper limit.
 
-The elastic concurrency expansion speed of 500 instances per minute can meet the requirements in most business scenarios. If your business is limited by this speed, please select provisioned concurrency for prefetch or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to increase the limit.
+Currently, the function burst of 500 instances/minute can meet the requirements in most business scenarios. If your business is limited by this scale-out speed, or you need to add namespace-level function burst management capabilities, you can select provisioned concurrency for prefetch or purchase a [function package](https://console.cloud.tencent.com/scf/buy?rid=1&ns=default) to increase the limit.
 
 ### Provisioned concurrency
 
-Concurrent instances in elastic concurrency expansion in SCF need to be initialized, which includes initialization of the runtime environment and the business code.
-You can use the **provisioned concurrency** feature to configure concurrent instances in advance. **SCF will start the concurrent instances after you configure them and will not actively repossess the provisioned instances, so as to guarantee a certain number of concurrent instances as much as possible.** If errors such as code memory leak occur on a concurrent instance, SCF will replace it with a new instance. For more information, please see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
+Concurrent instances launched for elastic concurrency scale-out need to be initialized, which includes initialization of the runtime environment and the business code.
+You can configure the **provisioned concurrency** to get concurrent instances ready in advance. **When the provisioned concurrency is configured, SCF will start the concurrent instances, and will not actively repossess the provisioned instances, so as to guarantee the number of concurrent instances.** If errors such as code memory leak occur on a concurrent instance, it will be replaced by a new one. For more information, see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
 
 ### Concurrency service level
 
-#### Concurrency expansion limit
-|| Individual User | Organizational User | Additional Quota Available for Application |
-|-|---------|---------|---------|
-| Elastic concurrency expansion limit | 500 concurrent instances/minute | 1,000 concurrent instances/minute | Concurrency expansion speed at the 10,000 concurrent instances/minute level is supported, which you can apply for by submitting a ticket. |
-| Provisioned concurrency expansion limit | 100 concurrent instances/minute | 100 concurrent instances/minute | The speed of starting provisioned concurrency can be automatically adjusted according to business conditions. |
+#### Concurrency scale-out limit
+| Limit on Concurrency Scale-out | Default Limit | Additional Quota Available for Application |
+|-|---------|---------|
+| Elastic concurrency scale-out speed limit (function burst) | 500 concurrent instances/minute | Concurrency scale-out speed at the 10,000 concurrent instances/minute level is supported, which you can get by purchasing a function package. |
+| Provisioned concurrency scale-out speed limit (provisioned burst) | 100 concurrent instances/minute | The speed of starting provisioned concurrency can be automatically adjusted according to business conditions. |
 
 
-At the region level, the elastic concurrency expansion speed is limited to 500 concurrent instances/minute for individual users and 1,000 concurrent instances/minute for organizational users by default. For example, if you need 100,000 concurrent instances, it will take 100000/1000 = 100 minutes to complete the expansion at the maximum elastic concurrency expansion speed. If you need to increase the quotas, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. SCF will adjust the speed of starting provisioned concurrency based on your business, which is 100 concurrent instances per minute by default.
+At the region level, the function burst is limited to 500 concurrent instances/minute by default. For example, if you need 50,000 concurrent instances, it will take 50000/500 = 100 minutes to complete the scale-out at the maximum function burst speed. If you need to increase function burst, you can directly purchase a [function package](https://console.cloud.tencent.com/scf/buy?rid=1&ns=default). SCF will adjust the provisioned burst based on your business, which is 100 concurrent instances/minute by default.
 
-#### Concurrency quota
+#### Concurrent function quota
+SCF provides concurrency management capabilities at the function granularity by default for you to flexibly control the concurrency of different functions. Each account has a limit on the quota of total concurrent functions in different regions as detailed below. If you want to increase the quotas or add concurrency quota management capabilities at the namespace granularity, you can directly purchase a [function package](https://console.cloud.tencent.com/scf/buy?rid=1&ns=default).
+
+
 <table>
-<th> </th>
+<th></th>
 <th>Region</th>
-<th>Individual User</th>
-<th>Organizational User</th>
+<th>Default Quota</th>
 <th >Additional Quota Available for Application</th>
 <tr>
-<td rowspan=2>Concurrency quota</td>
+<td rowspan=2>Concurrent function quota</td>
 <td>Guangzhou, Shanghai, Beijing, Chengdu, and Hong Kong (China)</td>
 <td>128,000 MB</td>
-<td>256,000 MB</td>
-<td rowspan=2>At the 1 million MB level, which can be increased by submitting a ticket</td>
+<td rowspan=2>At the one million MB level, which can be increased by purchasing a function package</td>
 </tr>
 <tr>
 <td>Mumbai, Singapore, Tokyo, Toronto, Silicon Valley, Frankfurt, Shenzhen Finance, and Shanghai Finance</td>
 <td>64,000 MB</td>
-<td>128,000 MB</td>
 </td>
 </tr>
 </table>      
 
 
-Each account has concurrency restrictions at the region level, and you cannot modify the regional quotas. SCF configures different concurrency quotas in different regions for individual and organizational users as detailed in the table. If you need to increase the quotas, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
-
+ 
 
 
 
 
 ## Concurrency Management
 
-SCF provides concurrency management capabilities at the function granularity for you to flexibly control the concurrency of different functions. For more information, please see [Reserved Concurrency](https://intl.cloud.tencent.com/document/product/583/39464).
+SCF provides concurrency management capabilities at the function granularity. For more information, see [Concurrency Management System](https://intl.cloud.tencent.com/document/product/583/39464).
 
-
-Each account has a total concurrency quota limit at the region level. The default value is 128,000 MB or 64,000 MB. For more information, please see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). The concurrency quotas between regions are independent of each other.
 
 ### Concurrent memory and concurrency
 
@@ -109,15 +106,15 @@ To help you manage concurrency more precisely, the SCF concurrency quota is calc
 
 ### Reserved quota
 
-When you set a reserved quota for a function, it will have the following two effects:
+What a reserved quota does:
 
-- The reserved quota is the **upper limit of the concurrency quota of this function**. The sum of the concurrency quotas of all versions is less than or equal to the reserved quota.
-- After the concurrency quota is allocated to this function, it will be **exclusive to** this function and will no longer be provided to other functions.
+- The reserved quota is the upper limit of the concurrency quota for all versions of this function. The sum of the concurrency quotas of all versions cannot exceed this limit.
+- The concurrency quota is allocated **exclusively** to this function and will not be shared by other functions.
 
 
 ## Concurrency Monitoring
 
-When a concurrent instance of a function is processing actual requests, it will be marked as running concurrent instance. In SCF monitoring information, you can query the running concurrent instances of a function, a specific function version, or an alias. As there are certain intervals in running instance information collection, if a function's execution time is very short and its number of concurrent instances is high, the current monitoring data may not be completely accurate.
+A concurrent instance is marked as running when it’s processing requests. In SCF monitoring information, you can query the running concurrent instances of a function, a specific function version, or an alias. Because of the time difference between function execution and data collection, if a function has a large number of concurrent instances running in a very short time, the current monitoring data may not be completely accurate.
 
 
 
@@ -127,11 +124,11 @@ By using reserved quota and provisioned concurrency together, you can flexibly a
 
 ### Shared quota
 
-If nothing is configured, all functions share the account quota by default. If a function generates a surge of business invocations, it can make full use of the unused quota to ensure that the surge will not cause overrun errors.
+If nothing is configured, all functions share the account quota by default. When the requests to a function increase, it can make full use of the unused quota to prevent overrun errors.
 
 ### Guaranteed concurrency
 
-If the business features of a specific function are sensitive or critical, and you need to do your best to ensure a high request success rate, then you can use the reserved quota feature to this end. Reserved quota can give the function exclusive quota to guarantee the concurrency reliability and avoid overruns caused by concurrency preemption by multiple functions.
+For functions used for key business, a high request success rate is required. We can set up the reserved quota to allocate dedicated resources for the function, so as to guarantee the concurrency reliability and avoid overruns caused by concurrency preemption by multiple functions.
 
 ### Provisioned concurrency
 

@@ -1,27 +1,31 @@
-The billable items of SCF are priced as follows:
+The billable items of SCF are priced as follows. You can estimate the fees by using the [SCF price calculator](https://intl.cloud.tencent.com/pricing/scf).
 
-Event-Triggered function:
+#### Event-triggered function
 
-| Billing item | Unit | Price |
+| Billable Item | Unit | Price |
 |---|---|---|
 | Resource usage | GBs | 0.0000167 USD/GBs |
 | Invocations | 10,000 invocations | 0.002 USD/10,000 invocations |
 | Public network outbound traffic | GB | Variable by region as shown below |
 | Idle provisioned concurrency | GBs | 0.00000847 USD/GBs |
 
-HTTP-Triggered function:
 
-| Billing item | Unit | Price |
+
+#### HTTP-triggered function 
+
+| Billable Item | Unit | Price |
 |---|---|---|
 | Resource usage | GBs | 0.0000167 USD/GBs |
-| HTTP-Triggered function invocations | 10,000 invocations | 0.002 USD/10000 invocations |
+| HTTP-Triggered function invocations | 10,000 invocations | 0.002 USD/10,000 invocations |
 | Public network outbound traffic | GB | Variable by region as shown below |
 | Response outbound traffic | GB | Variable by region as shown below |
 | Idle provisioned concurrency | GBs | 0.00000847 USD/GBs |
 
 
-The prices of public traffic outbound traffic and response outbound traffic vary by region as shown below:
 
+
+#### Public network outbound traffic and response outbound traffic
+The prices of public network outbound traffic and response outbound traffic vary by region as shown below:
 
 
 <table>
@@ -43,9 +47,8 @@ The prices of public traffic outbound traffic and response outbound traffic vary
 <td>Bangkok, Silicon Valley, Virginia, and Toronto</td>
 <td>0.0752</td>
 </tr>
-
 <tr>
 <td>Mumbai</td>
-<td>0.58</td>
+<td>0.0872</td>
 </tr>
 </tbody></table>

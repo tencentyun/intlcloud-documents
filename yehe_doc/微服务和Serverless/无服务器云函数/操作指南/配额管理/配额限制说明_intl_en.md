@@ -18,13 +18,16 @@ SCF has certain quota limits for each user account.
 <td>100 GB</td>
 </tr>
 <tr>
-<td rowspan="2">Total function concurrency quota per region</td>
+<td rowspan="2">Total concurrent function quota per region</td>
 <td>128,000 MB<br>(Guangzhou, Shanghai, Beijing, Chengdu, and Hong Kong (China))</td></tr>
 <tr><td>64,000 MB<br>(Mumbai, Singapore, Tokyo, Toronto, Silicon Valley, Frankfurt, Shenzhen Finance, and Shanghai Finance)</td>
 </tr>
 <tr>
 <td>Number of namespaces per region</td>
 <td>5</td>
+</tr>
+<td>Total concurrent function quota per namespace</td>
+<td>You can purchase a <a href="https://console.cloud.tencent.com/scf/buy?rid=1&amp;ns=default">function package</a> to adjust the quota.</td>
 </tr>
 <tr>
 <td>Number of functions per namespace</td>
@@ -81,11 +84,11 @@ SCF has certain quota limits for each user account.
 </tbody></table>
 
 >! 
->- SCF currently supports 10,000-level concurrency, which can effectively support scenarios with high concurrency demand such as ecommerce promotions and parallel processing of medical and biological data.
->- The concurrency quota per region on the SCF platform is shared by all functions by default. You can [customize the concurrency for specific functions](https://intl.cloud.tencent.com/document/product/583/37040) to meet your actual needs. To request an increase in the quota, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) to apply.
+>- SCF currently supports one million MB-level concurrency, which can effectively support scenarios with high concurrency demand such as ecommerce promotions and parallel processing of medical and biological data.
+>- The concurrency quota per region on the SCF platform is shared by all functions by default. You can customize the [function concurrency](https://intl.cloud.tencent.com/document/product/583/37040) to meet your actual needs. If you want to increase the quotas or add concurrency quota management capabilities at the namespace granularity, you can directly purchase a [function package](https://console.cloud.tencent.com/scf/buy?rid=1&ns=default).
 > - In SCF, a [COS trigger](https://intl.cloud.tencent.com/document/product/583/9707) has limits in two dimensions: SCF and COS, as detailed below:
->  - SCF dimension: one function can be bound to 10 COS triggers at most. 
->  - COS dimension: the same event and prefix/suffix rule of one function can trigger up to 3 functions, and one COS bucket can be bound to 10 rules at most.
+>  - SCF dimension: One function can be bound to ten COS triggers at most. 
+>  - COS dimension: The same event and prefix/suffix rule of one function can trigger up to three functions, and one COS bucket can be bound to ten rules at most.
 
 
 
@@ -102,5 +105,5 @@ SCF has certain quota limits for each user account.
 | Sync request response size | 6 MB |
 | Async request event size | 128 KB |
 
->! If the size of a Base64-encoded file is below 6 MB, you can pass the encoded file to SCF through [API Gateway](https://intl.cloud.tencent.com/zh/product/apigateway). Otherwise, we recommend you upload the file to [COS](https://intl.cloud.tencent.com/zh/product/cos) and pass the object address to SCF first. Then, SCF will pull the file from COS to complete the upload.
+>! If the size of a Base64-encoded file is below 6 MB, you can pass the encoded file to SCF through [API Gateway](https://intl.cloud.tencent.com/products/apigateway). Otherwise, we recommend you upload the file to [COS](https://intl.cloud.tencent.com/products/cos) and pass the object address to SCF first. Then, SCF will pull the file from COS to complete the upload.
 
