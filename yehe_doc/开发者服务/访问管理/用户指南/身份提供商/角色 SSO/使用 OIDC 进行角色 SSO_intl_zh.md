@@ -32,7 +32,7 @@
 腾讯云不支持使用OIDC登录控制台，需要使用程序访问的方式完成OIDC SSO流程（即通过调用 API 获取临时秘钥，再使用临时秘钥访问腾讯云）。由于生成OIDC Token本质上是个OAuth流程，所以需要通过标准的OAuth 2.0流程从 OIDC 身份提供商（例如：Okta）获取OIDC Token，具体方式参见提供商的相关文档。
 
 ## 四、使用 OIDC Token 换取 STS Token
-从身份提供商处获取到 OIDC Token 后，可以直接调用 AssumeRoleWithWebIdentity API 以换取可以访问腾讯云的 STS Token。
+从身份提供商处获取到 OIDC Token 后，可以直接调用 [AssumeRoleWithWebIdentity](https://intl.cloud.tencent.com/zh/document/product/598/47141) API 以换取可以访问腾讯云的 STS Token。
 请求示例：
 ```
 POST / HTTP/1.1
