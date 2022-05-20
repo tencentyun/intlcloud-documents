@@ -58,11 +58,11 @@ pulsar:
 </tr>
 <tr>
 <td>service-url</td>
-<td>Cluster access address, which can be viewed and copied on the <a href = "https://console.intl.cloud.tencent.com/tdmq/cluster"><b>Cluster</b></a> page in the console.<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/d9cc1ac7ceeae77df150143127f2396e.png"></td>
+<td>Cluster access address, which can be viewed and copied on the <a href = "https://console.intl.cloud.tencent.com/tdmq/cluster"><b>Cluster</b></a> page in the console.<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/0870f78ee97b38799824fd0ff0d3d4b7.png"></td>
 </tr>
 <tr>
 <td>token-auth-value</td>
-<td>Role key, which can be copied in the **Key** column on the <a href = "https://console.intl.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/6abfb90ff4e80bdf8c00a555f3dd3634.png"></td>
+<td>Role key, which can be copied in the <b>Key</b> column on the <a href = "https://console.intl.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.<br><img src = "	https://qcloudimg.tencent-cloud.cn/raw/a585d077b08ae9b11fffcebf6cde926e.png"></td>
 </tr>
 <tr>
 <td>tenant</td>
@@ -120,6 +120,7 @@ customProducer.send("topic4", myMessage);
 defaultProducer.send("topic2", ("Hello pulsar client, this is a order message" + i + ".").getBytes(StandardCharsets.UTF_8));
 :::
 </dx-codeblock>
+
 > !
 >
 > - The topic sending messages is that declared in the producer configuration.
@@ -153,8 +154,8 @@ public void topicConsume(String msg) {
 ### Step 5. Query messages
 
 1. Log in to the console and enter the **[Message Query](https://console.intl.cloud.tencent.com/tdmq/message)** page to view the message trace after running the demo.
-![](https://qcloudimg.tencent-cloud.cn/raw/bb160d0e4cbe3bb77437713025b1fcca.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7945598f64d3cfe6ee3fc07feb4b778c.png)
    The message trace is as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/a5794d7dad969cc77b1d0b78d0a93dab.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9bbfbc3236aec54f1654c520eaa0cba4.png)
 
 >? Above is a simple configuration for using TDMQ for Pulsar through Spring Boot Starter. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/pulsar/tcp/tdmq-pulsar-springboot-demo.zip) or [Spring Boot Starter for Apache Pulsar](https://github.com/majusko/pulsar-java-spring-boot-starter).
