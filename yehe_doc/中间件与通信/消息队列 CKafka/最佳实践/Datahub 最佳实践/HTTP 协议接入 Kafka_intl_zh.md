@@ -10,7 +10,7 @@
 
 HTTP 数据接入层开启后，公网的 HTTP 客户端可通过云 API 直接向 CKafka 所在的实例发送消息。示意图如下：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/37a35f97e9ede93e35b3a3567cc50884.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/905e901dc880c188facfd4e76671b08e.png)
 
 ### 前提条件
 
@@ -36,7 +36,6 @@ HTTP 数据接入层开启后，公网的 HTTP 客户端可通过云 API 直接�
 :::
 </dx-codeblock>
 2. 单击 [数据接入](https://console.intl.cloud.tencent.com/ckafka/datahub-access) 的任务详情， 复制接入点信息到 SDK 中使用，用于写入数据。
-![](https://qcloudimg.tencent-cloud.cn/raw/c0cdd9480626d044fbab71b63d35679e.png)
 3. 示例中通过 **generateMsgFromUserAccess** 将所有要发送的消息组装起来，复制接入点信息。
    <dx-codeblock>
    :::  java
@@ -86,7 +85,7 @@ try {
 ### 查询消息
 
 通过 [CKafka 控制台](https://intl.cloud.tencent.com/document/product/597/39719) 查询 HTTP 接入层发送的消息，详细操作参见 [消息查询](https://intl.cloud.tencent.com/document/product/597/39719)。如下图，示例 topic 名称为 topicDev 的4号分区查询2号位点消息。
-![](https://qcloudimg.tencent-cloud.cn/raw/9aa559445ddd6053bc6bcba0eceb9cbf.png)
+   ![](https://main.qcloudimg.com/raw/195ca10f4a0868b12a03c7c831eff1fd.png)
 
 
 ### 任务暂停
@@ -94,9 +93,7 @@ try {
 当您发现数据接入任务影响了正常业务时，可以暂停数据接入。
 
 1. 在 [数据接入](https://console.intl.cloud.tencent.com/ckafka/datahub-access) 页面，单击目标任务的操作栏的**暂停**，可暂停任务。
-![](https://qcloudimg.tencent-cloud.cn/raw/d41b251855cc6f057c4cdb2497069f19.png)
 2. 出现右上角的提示，则任务暂停成功。
-![](https://qcloudimg.tencent-cloud.cn/raw/417a61130eefa1d41ee1a29bfdb4a394.png)
 3. 此时通过 HTTP 接入层发送消息得到示例如下：
 <dx-codeblock>
 :::  json
