@@ -11,7 +11,7 @@ TDMQ Pulsar 版支持监控您账户下创建的 Topic 资源，帮助您实时�
 3. 在 Topic 列表找到目标 Topic，单击**监控**列的![](https://qcloudimg.tencent-cloud.cn/raw/ac572a960433508f64f226e6ea218c10.png)图标，选择好时间范围和时间粒度后，可以查看 Topic 监控数据。
 
 **监控信息展示**
-![](https://qcloudimg.tencent-cloud.cn/raw/3d9feea91eb5c2e8c17251412c0d6642.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5814ed429887ea94ee789b4c5ff625fa.png)
 
 **监控指标含义及说明**
 <table>
