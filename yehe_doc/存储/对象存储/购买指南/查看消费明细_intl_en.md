@@ -1,6 +1,6 @@
 ## Overview
 You can go to the **Billing Center** in Tencent Cloud console to view the details of your account’s COS usage fees. Please note bills before March 2019 can only be viewed in Bills 1.0. For more information, see [Bills 1.0](#JBZD).
-
+>!
 > - At the time of COS bill settlement, the system will settle in the order of **Free Tier > Pay-as-You-Go billing**.
 > - By default, the system uses the pay-as-you-go billing method for bill settlement, that is, the system will deduct the free quota first (if available) and then bill the excessive usage (if any) in a pay-as-you-go manner.
 > - For more information on free tier, billing descriptions, and precautions, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240) and [Billing Overview](https://intl.cloud.tencent.com/document/product/555/7432).
@@ -20,7 +20,7 @@ Bills after March 2019 can be viewed on the Billing Overview page.
 Available options are as described below:
  - **Region:** Select different regions in the **All Regions** drop-down list to view the bill details by region.
  - **Billing Mode:** Select **Pay-as-You-Go** in the Billing Mode drop-down list to view details by billing mode.
- - **Transaction Type:** Select **Daily settlement** to view details by transaction types. 
+ - **Transaction Type:** Select **Pay-as-You-Go** to view details by transaction types. 
 ![](https://main.qcloudimg.com/raw/b53decf61f43802686f8adf0ab2bb00b.png)
 6. At the top right of the billing page, click <img src="https://main.qcloudimg.com/raw/e421450264489d44d20f11a44e15dfaa.png"  style="margin:0;"> to download your monthly COS bills.
 
