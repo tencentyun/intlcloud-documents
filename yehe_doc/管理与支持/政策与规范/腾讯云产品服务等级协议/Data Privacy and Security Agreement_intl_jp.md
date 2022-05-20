@@ -134,7 +134,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
 36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 37.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
-
+38.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
 ## 法域特定の要件
 
 **ヨーロッパ**
