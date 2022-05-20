@@ -55,14 +55,14 @@ This document describes how to use open-source SDK to send and receive messages 
         <td style='text-align:left;'>serviceUrl</td>
         <td style='text-align:left;'>Cluster access address, which can be viewed and copied on the <a href='https://console.cloud.tencent.com/tdmq/cluster'><strong>Cluster Management</strong></a> page in the console.<br>
                 <img
-                src="https://qcloudimg.tencent-cloud.cn/raw/1221f6b1be8ad150a6544a3f9394a8eb.png"
+                src="https://qcloudimg.tencent-cloud.cn/raw/8612bb79a799375eb97d5e871e239372.png"
                 referrerpolicy="no-referrer" alt="img"></td>
     </tr>
     <tr>
         <td style='text-align:left;'>Authentication</td>
         <td style='text-align:left;'>Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href='https://console.cloud.tencent.com/tdmq/role'>Role Management</a></strong> page.
                 <img
-                src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" referrerpolicy="no-referrer"
+                src="https://qcloudimg.tencent-cloud.cn/raw/65a283caa4b28d9fab366114ea8636b1.png" referrerpolicy="no-referrer"
                 alt="img"></td>
     </tr>
     </tbody>
@@ -117,11 +117,13 @@ You need to enter the complete path of the topic name, i.e., `persistent://clust
    defer consumer.Close()
 :::
 </dx-codeblock>
+
 > ?
 >
 > - You need to enter the complete path of the topic name, i.e., `persistent://clusterid/namespace/Topic`, where the `clusterid/namespace/topic` part can be copied directly from the **[Topic Management](https://console.cloud.tencent.com/tdmq/topic)** page in the console.
->   ![img](https://qcloudimg.tencent-cloud.cn/raw/dc1bc50c434546755565c6dcb8d3e7f0.png)
+>   ![img](https://qcloudimg.tencent-cloud.cn/raw/4bb986f5e871cb9d72d9066ecf7eea66.png)
 > - You need to enter the subscription name in the `subscriptionName` parameter, which can be viewed on the **Consumption Management** page.
+
 6. Consume the message.
 <dx-codeblock>
 :::  go
@@ -139,6 +141,6 @@ You need to enter the complete path of the topic name, i.e., `persistent://clust
 :::
 </dx-codeblock>
 7. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq), click **Topic Management** > **Topic Name** to enter the **Consumption Management** page, and click the triangle below a subscription name to view the production and consumption records.
-   ![img](https://main.qcloudimg.com/raw/3bee532dab55b7cab1167416aac95f4d.png)
+   ![img](https://qcloudimg.tencent-cloud.cn/raw/206f52b4a67a3a5eba82309e0d5bc001.png)
 
 >? The above is a brief introduction to the way of publishing and subscribing to messages. For more operations, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/pulsar/tcp/tdmq-pulsar-go-sdk-demo.zip) or [Pulsar Go client](https://pulsar.apache.org/docs/en/client-libraries-go/).
