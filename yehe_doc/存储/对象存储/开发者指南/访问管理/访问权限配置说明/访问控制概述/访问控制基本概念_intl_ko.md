@@ -58,7 +58,7 @@ COS는 리소스에 대한 다양한 API 작업을 제공합니다. 자세한 �
 COS는 버킷 ​​정책, 사용자 정책(CAM 정책), 버킷 ACL 및 객체 ACL을 포함하여 액세스 제어를 구현하기 위한 여러 권한 설정 방법을 제공합니다.
 
 정책 설정의 시작점에 따라 리소스 기반과 사용자 기반의 두 가지 방법으로 나눌 수 있으며, 권한 부여 방법에 따라 정책과 ACL의 두 가지 방법으로 나눌 수 있습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/2adcbc5554e21fafae569d3c7abb209c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ca32b98c546c2b039cd29ba842dc9755.png)
 
 
 **분류 방법1: 리소스 기반 vs 사용자 기반**
