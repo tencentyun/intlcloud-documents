@@ -137,8 +137,8 @@
 34.[消息队列 TDMQ](https://intl.cloud.tencent.com/document/product/1110/45939)。
 35.[全栈式风控引擎](https://intl.cloud.tencent.com/document/product/1123/45973)。
 36.[边缘安全加速平台](https://intl.cloud.tencent.com/document/product/1145/46316)。
-37.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46726).
-
+37.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46726)。
+38.[Prometheus 监控服务](https://intl.cloud.tencent.com/document/product/1116/46974)。
 ## 特定司法管辖区要求
 
 **欧洲**
