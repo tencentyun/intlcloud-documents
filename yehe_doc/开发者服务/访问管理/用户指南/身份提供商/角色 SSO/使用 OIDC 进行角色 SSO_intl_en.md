@@ -32,7 +32,7 @@ Before implementing the OpenID Connect (OIDC)-based role-based single sign-on (S
 You cannot log in to the Tencent Cloud console using OIDC. Instead, you must implement OIDC-based SSO through programmatic access, that is, you need to call an API to obtain the temporary key and use the temporary key to access Tencent Cloud. As the OIDC token generation process is essentially based on OAuth, you need to use OAuth 2.0 to obtain the OIDC token from an OIDC IdP such as Okta. For more information, see the IdP-related documentation.
 
 ## Using the OIDC token to obtain the STS token
-After you get the OIDC token from the IdP, you can directly call the `[AssumeRoleWithWebIdentity](https://intl.cloud.tencent.com/zh/document/product/598/47141)` API to obtain the STS token to access Tencent Cloud.
+After you get the OIDC token from the IdP, you can directly call the [AssumeRoleWithWebIdentity](https://intl.cloud.tencent.com/zh/document/product/598/47141) API to obtain the STS token to access Tencent Cloud.
 Sample request:
 ```
 POST / HTTP/1.1
