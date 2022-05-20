@@ -20,7 +20,7 @@
    2. 在 **基本信息** > **接入方式** 中，单击**添加路由策略**。在打开窗口中选择：
 	 - 路由类型：公网域名接入。
 	 - 接入方式：SASL_SCRAM。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/fb9e6cb8740ecff2f2c13c88a128c270.png)
+   ![](https://main.qcloudimg.com/raw/e3c2304070064b93e082895b9bd7b9b2.png)
 2. 创建角色。
    在**用户管理**页面新建角色，设置密码。
    ![](https://qcloudimg.tencent-cloud.cn/raw/c9e06ace7d959ae91331a241c2126cc5.png)
