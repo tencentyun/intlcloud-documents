@@ -51,7 +51,7 @@ This document uses Java as an example to describe how to connect to TDMQ for Pul
         <td style='text-align:left;'>secretId、secretKey</td>
         <td style='text-align:left;'>TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.cloud.tencent.com/cam'>CAM console</a>.
             <img
-                    src="https://main.qcloudimg.com/raw/8ec140474be0ced1352695b372b2934d.png"
+                    src="https://qcloudimg.tencent-cloud.cn/raw/4b469f96a2a45a5642fa0087ef07e002.png"
                     referrerpolicy="no-referrer" alt="img"></td>
     </tr>
     <tr>
@@ -61,7 +61,6 @@ This document uses Java as an example to describe how to connect to TDMQ for Pul
     <tr>
         <td style='text-align:left;'>region</td>
         <td style='text-align:left;'>Cluster region. For more regions, see <a href='https://cloud.tencent.com/document/api/1179/46067#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8'>Region List</a>.
-                href='https://cloud.tencent.com/document/api/1179/46067#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8'>地域列表</a>。
         </td>
     </tr>
     </tbody>
@@ -97,19 +96,17 @@ This document uses Java as an example to describe how to connect to TDMQ for Pul
         <td style='text-align:left;'>token</td>
         <td style='text-align:left;'>Role key, which can be copied in the <strong>Key</strong> column on the <strong><a href='https://console.cloud.tencent.com/tdmq/role'>Role Management</a></strong> page.
                 <img
-                src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" referrerpolicy="no-referrer"
+                src="https://qcloudimg.tencent-cloud.cn/raw/12c36d5b811e9aeb80ca43d22dffd385.png" referrerpolicy="no-referrer"
                 alt="img"></td>
     </tr>
     <tr>
         <td style='text-align:left;'>userName</td>
         <td style='text-align:left;'>Role name, which can be copied in the <strong>Name</strong> column on the <strong><a href='https://console.cloud.tencent.com/tdmq/role'>Role Management</a></strong> page.
-                href='https://console.cloud.tencent.com/tdmq/role'>角色管理</a></strong> 页面复制<strong>名称</strong>列复制。
         </td>
     </tr>
     <tr>
         <td style='text-align:left;'>topicName</td>
         <td style='text-align:left;'>Topic name in the following format: cluster (tenant) ID/namespace/topic name, such as `pulsar-xxx/sdk_http/topic1`. You can directly copy it on the <strong><a href='https://console.cloud.tencent.com/tdmq/topic'>Topic Management</a></strong> page in the console.
-                href='https://console.cloud.tencent.com/tdmq/topic'>Topic 管理</a></strong> 页面直接复制。
         </td>
     </tr>
     </tbody>
@@ -142,7 +139,6 @@ This document uses Java as an example to describe how to connect to TDMQ for Pul
     <tr>
         <td style='text-align:left;'>topicName</td>
         <td style='text-align:left;'>Topic name in the following format: cluster (tenant) ID/namespace/topic name, such as `pulsar-xxx/sdk_http/topic1`. You can directly copy it on the <strong><a href='https://console.cloud.tencent.com/tdmq/topic'>Topic Management</a></strong> page in the console.
-                href='https://console.cloud.tencent.com/tdmq/topic'>Topic 管理</a></strong> 页面直接复制。
         </td>
     </tr>
     <tr>
@@ -181,7 +177,6 @@ This document uses Java as an example to describe how to connect to TDMQ for Pul
     <tr>
         <td style='text-align:left;'>topicName</td>
         <td style='text-align:left;'>Topic name in the following format: cluster (tenant) ID/namespace/topic name, such as `pulsar-xxx/sdk_http/topic1`. You can directly copy it on the <strong><a href='https://console.cloud.tencent.com/tdmq/topic'>Topic Management</a></strong> page in the console.
-                href='https://console.cloud.tencent.com/tdmq/topic'>Topic 管理</a></strong> 页面直接复制。
         </td>
     </tr>
     <tr>
