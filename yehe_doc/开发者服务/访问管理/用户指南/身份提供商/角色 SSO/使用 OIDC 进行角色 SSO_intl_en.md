@@ -1,4 +1,4 @@
->!Before implementing the OpenID Connect (OIDC)-based role-based single sign-on (SSO), you need to create an identity provider (IdP) and create a role for it in the Tencent Cloud console, and then use the OIDC token issued by the IdP to obtain the Tencent Cloud STS token (the role’s temporary key).
+Before implementing the OpenID Connect (OIDC)-based role-based single sign-on (SSO), you need to create an identity provider (IdP) and create a role for it in the Tencent Cloud console, and then use the OIDC token issued by the IdP to obtain the Tencent Cloud STS token (the role’s temporary key).
 
 ## Creating an OIDC IdP
 
