@@ -11,7 +11,7 @@
 ### 步骤1：创建主题
 1. 登录 [TDMQ CMQ 版](https://console.intl.cloud.tencent.com/tdmq/cmq-queue) 控制台。
 2. 在左侧导航栏选择**主题订阅**，选择好地域，单击**新建**，填写主题名称。
-![](https://qcloudimg.tencent-cloud.cn/raw/4f88f47403bdf226a16ccf3b977d99f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/34011988c4d2d43b002da28c732b1208.png)
 - 主题名称：以字母起始，只能包含字母、数字、“-”及“\_”，最大64字符，创建后不能修改，不区分大小写。
 - 消息堆积：未触发推送到订阅者，或订阅者接收失败的消息，暂时堆积到主题中。
 - 消息过滤类型：
@@ -28,7 +28,7 @@
 
 1. 在 **[主题订阅](https://console.intl.cloud.tencent.com/tdmq/cmq-queue)** 页面，单击刚刚创建的主题的“ID”，进入主题详情页面。
 2. 选择页面上方的**订阅者**页签，单击**新建**，填写订阅者相关信息。
-   ![](https://main.qcloudimg.com/raw/ae9095b2ef8d56cf563dc272b40a5e29.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/30fd0b2366a0462242dc0fb24886c7a2.png)
    - 订阅者类型
      - Queue 队列服务：订阅者可以填写一个 Queue，使用队列来接收发布的消息。
      - URL地址：订阅者也可以不与 Queue 结合，自己来处理消息。详情请参见 [投递消息](https://intl.cloud.tencent.com/document/product/406/7420)。
@@ -71,13 +71,13 @@
 <tr>
 <td>SERVER_ENDPOINT</td>
 <td>API 调用地址，在 <a href = "https://console.cloud.tencent.com/tdmq">TDMQ CMQ 版控制台</a>的<b>队列服务</b> > <b>API 请求地址</b>处复制。
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/f6334447f903ae629b518280e933c31b.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/910150612a00a6461ff923cd53a1ec97.png">
 </td>
 </tr>
 <tr>
 <td>SECRET_ID、SECRET_KEY</td>
 <td>云 API 密钥，登录 <a href = "https://console.intl.cloud.tencent.com/cam/overview">访问管理控制台</a>，在<b>访问密钥</b> > <b>API 密钥管理</b>页面复制。
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/867837e2b1e6d347ecb04d7085938c08.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/82946cd1e7b1d46a9ccb06ef171137da.png">
 </td>
 </tr>
 <tr>
