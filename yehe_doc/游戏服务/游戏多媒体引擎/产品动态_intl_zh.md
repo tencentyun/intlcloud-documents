@@ -1,3 +1,101 @@
+﻿## 2022年04月
+
+<table >
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th>  
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 SDK v2.9.1 正式版本 </td>
+<td ><ul style="margin:0;">
+<li >提高语音消息流式识别成功率。</li>
+
+</ul ></td>
+<td>2022-04-12</td> 
+<td>-</tr>
+</tbody></table>
+
+## 2022年03月
+
+<table >
+<thead>
+<tr>
+<th width="17%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>  
+<th width="23%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<tr>
+<td>发布 SDK v2.9.1 正式版本</td>
+<td ><ul style="margin:0;">
+<li >新增文字转语音功能，可以在体验 Demo 中体验此功能。</li>
+<li >新增文本翻译功能。</li>
+<li >伴奏功能支持控制是否发送给房间内其他人。</li>
+<li >Android 平台 SDK ndr 版本升级到 r23。</li>
+<li >iOS 平台 SDK Xcode 支持版本提升到 Xcode13.1。</li>
+</ul ></td>
+<td>2022-03-16</td> 
+<td>
+<li><a href="https://cloud.tencent.com/document/product/607/48323">Demo体验
+</tr></tbody>
+</table >
+
+## 2021年11月
+
+<table >
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th>  
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 SDK v2.8.4 正式版本</td>
+<td ><ul style="margin:0;"><li >新增静音键检测、设备占用检测功能。</li>
+<li >新增支持修改日志文件大小。</li>
+<li >GME Unity 引擎 SDK 新增支持 PS5 平台。</li>
+<li >GME Unreal 引擎 SDK 新增适配 Unreal 4.26版本。</li>
+<li >优化网络模块，提升 Windows 平台进房成功率。</li>
+<li >提高流式语音消息转文本速度。</li>
+<li >优化 Android 平台蓝牙耳机体验。</li>
+</ul ></td>
+<td>2021-11-08</td> 
+<td><a href="https://cloud.tencent.com/document/product/607/15210">实时语音</tr>
+</tbody></table>
+
+## 2021年07月
+
+<table >
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th>  
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 SDK v2.8.3 正式版本</td>
+<td ><ul style="margin:0;"><li >增加实时语音识别功能，在语音通话的过程中可以将说话的声音实时识别成文字（目前处于灰度内测阶段，您可以进行 <a href="https://cloud.tencent.com/online-service?from=connect-us">在线咨询</a> 申请使用）</li>
+<li >优化网络模块，提升 Windows 平台进房成功率</li>
+<li >更新 H5 平台 SDK，增加浏览器适配范围</li>
+<li >性能优化，提升进房速度，提升 SDK 稳定性</li>
+<li >优化新版本 iOS 系统开麦音效</li>
+<li >适配海外合规</li>
+</ul ></td>
+<td>2021-07-09</td> 
+<td><a href="https://cloud.tencent.com/document/product/607/15210">实时语音</tr>
+</tbody></table>
+
 ## 2021年06月
 <table >
 <thead>

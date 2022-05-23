@@ -35,7 +35,7 @@ Init 之后不会开始计费，调用 <dx-tag-link link="#EnterRoom" tag="接�
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参考 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
+- 错误码详情可参考 <dx-tag-link link="https://cloud.tencent.com/document/product/607/15173" tag="ErrorCode">错误码</dx-tag-link>。
 
 ### C# 类
 
@@ -275,7 +275,6 @@ ITMGContext.GetInstance().EnterRoom(strRoomId, ITMGRoomType.ITMG_ROOM_TYPE_FLUEN
 [计费相关问题。](https://intl.cloud.tencent.com/document/product/607/30255)
 [使用实时语音后，如果客户端掉线了，是否还会继续计费？](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
-
 
 #### 函数原型
 
@@ -788,7 +787,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 ### [开启或关闭扬声器](id:EnableSpeaker)
 
 此接口用于开启关闭扬声器。
-**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
+**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://cloud.tencent.com/document/product/607/34377) 进行调用。**
 
 **EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv**
 
