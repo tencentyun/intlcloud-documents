@@ -19,7 +19,7 @@ The following platforms can communicate with each other and provide services acr
 
 | Feature Type | Description |
 | -------------- | -------------- |
-| Global access overview | IM provides highly reliable and secure network connections with global coverage. With its proprietary multi-level optimal addressing algorithm, IM can perform scheduling across the entire network. When terminals log in from outside the Chinese mainland, IM SDK connects to the nearest access nodes or cache nodes. |
+| Global access | IM provides highly reliable and secure network connections with global coverage. With its proprietary multi-level optimal addressing algorithm, IM can perform scheduling across the entire network. When terminals log in from outside the Chinese mainland, IM SDK connects to the nearest access nodes or cache nodes. |
 | China | South China, North China, East China, Hong Kong, Taiwan, etc. |
 | Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE, Indonesia<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain, Netherlands<br>North America: United States, Canada, Mexico<br>South America: Brazil<br>Oceania: Australia<br>Africa: South Africa, Nigeria, etc. |
 
@@ -50,15 +50,15 @@ The following platforms can communicate with each other and provide services acr
 | Feature Type | Description |
 | ------------ | ----------------- |
 | Text | The message content is plain text. |
-| Image | The message content includes the URL, dimensions, and size of the image. |
+| Image | The message content includes URLs, dimensions, and size of the image. |
 | Emoji | Emoji messages are customized by developers. |
 | Audio | Audio data must include the duration in seconds. |
 | Location | The message content includes the caption, longitude, and latitude of the location. |
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
-| Short video | The message content includes the URL, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
+| Short video | The message content includes URLs, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
 | Custom | Message types that are customized by developers, such as red packet and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
-| Group tips | System messages pushed when a member joins or leaves a group, group description is modified, group member profile changes, etc. |
+| Group tips | System messages pushed when a member joins or leaves a group, group description is modified, group member profile is changed, etc. |
 | Combined messages | Up to 300 messages can be combined. |
 
 
@@ -69,7 +69,7 @@ The following platforms can communicate with each other and provide services acr
 | -------- | -------- |
 | Download messages | The app admin can obtain all one-to-one or group messages for a specified hour of a specified day in the past 7 days through this API. |
 | Offline messages | IM supports offline push when a user logs in, the app switches to work in the background, and other users send messages. |
-| Roaming messages | When a user logs in on a new device, the historical message storage recorded (on the cloud) by the server is synchronized to the new device. Roaming messages are stored for 7 days by default. You can pay to increase the roaming message storage period. |
+| Roaming messages | When a user logs in on a new device, the historical message recorded (on the cloud) by the server is synchronized to the new device. Roaming messages are stored for 7 days by default. You can pay to increase the roaming message storage period. |
 | Multi-device synchronization | Messages are synchronized and received across multiple devices. |
 | Historical messages | Both local and cloud historical messages are supported. |
 | Recall messages | Recall a message that has been delivered successfully. By default, messages that were delivered more than 2 minutes ago cannot be recalled. Only one-to-one and group chat messages can be recalled. Messages sent in audio-video chat rooms (AVChatRooms) cannot be recalled. |
@@ -77,18 +77,18 @@ The following platforms can communicate with each other and provide services acr
 | Forward messages | Users can forward messages to other users or groups. |
 | @ feature | There is no essential difference between an in-group @ message and an ordinary message, although the user specified by @ will see a special UI effect. |
 | Typing status indicator | This feature can be implemented in online messaging scenarios. |
-| Offline push | Apple APNs, Xiaomi push, Huawei push, Meizu push, OPPO push, vivo push, and Google FCM push are supported. |
+| Offline push | Support Apple APNs, Xiaomi push, Huawei push, Meizu push, OPPO push, vivo push, and Google FCM push. |
 | Delete messages | Use the remove method for messages to delete messages locally. |
 | Red packets | Red packet messages are similar to @ messages and can be implemented through TIMCustomElem. |
 | Push to all users | A set of RESTful APIs based on the IM communication architecture to enable push to all users, push by tag, and push by attribute in an app. You can integrate the client with the SDK for capabilities such as online push, offline push (Android background notification and APNs), and message receiving. |
-| Local message search | Support search for friends, search for groups/group members, search for messages, and grouping by conversation. |
+| Local message search | Support searching for friends, searching for groups/group members, searching for messages, and grouping by conversation. |
 
 
 ### Profile features
 
 | Feature Type | Description |
 | ------------------ | ---------------- |
-| Set user profiles | Users can set information including the nickname, verification method, profile photo, gender, age, signature, and location. |
+| Set user profiles | Users can set information including the nickname, verification method, profile photo, gender, age, status, and location. |
 | Obtain user profiles | Users can view their own profiles and the profiles of friends and strangers. |
 | Obtain user information by fields | This feature can obtain user information based on specific fields. |
 | Custom user information | Up to 20 custom user profile fields are supported. |
@@ -100,22 +100,22 @@ The following platforms can communicate with each other and provide services acr
 | Feature Type | Description |
 | -------------------- | ---------------------- |
 | Search for friends | Search for a friend by account ID. |
-| Apply for friend requests | Specify whether a request reason is required. The default is no. |
+| Friend requests | Specify whether a request reason is required. The default is no. |
 | Add friends | Send friend requests. |
-| Import friends |Support importing multiple one-way friends at a time. |
+| Import friends |Support importing one-way friends in batches. |
 | Update friends | Support updating the relationship chain data of multiple friends of a user at a time. |
 | Delete friends | Friends can be deleted after they are added to the contact list. |
-| Obtain all friends | This feature can obtain all friends. Only basic information of friends is pulled by default. |
+| Obtain all friends | Support obtaining all friends. Only basic information of friends is pulled by default. |
 | Accept/Reject friend requests | Accept or reject a friend request after receiving a friend request system notification. |
-| Add to the blocklist | Blocklist any user. If you blocklist friends, you also unfriend them. |
+| Add to the blocklist | Add a user to blocklist. If you blocklist friends, you also unfriend them. |
 | Remove from the blocklist | Remove a user from the blocklist. |
 | Obtain the blocklist | Pull the blocklist of users. |
 | Remarks | Add remarks for a friend. |
 | Set custom friend profile fields | Up to 20 custom fields are allowed. |
 | Create a friend list | When creating a list, you can choose who goes to the list. A user can be added to multiple lists. |
 | Delete a friend list | Delete a friend list. |
-| Verify friends | Support verifying multiple friends at a time.|
-| Verify users on a blocklist | Support verifying multiple users at a time.|
+| Verify friends | Support verifying friends in batches.|
+| Verify users on a blocklist | Support verifying users in batches.|
 | Add a friend to a list | Add a friend to a list. |
 | Delete a friend from a list | Remove a friend from a list. |
 | Rename a friend list | Rename a friend list. |
@@ -130,10 +130,10 @@ The following platforms can communicate with each other and provide services acr
 ### Group features
 Based on common use cases, IM has set the following default group types:
 - A work group for friends (Work) is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
-- A social networking group for strangers (Public) is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send an application, and the application needs to be approved by the group owner or an admin before the user can join the group.
+- A social networking group for strangers (Public) is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group.
 - A meeting group (Meeting) allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
 - An audio-video group (AVChatRoom) allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Livestreaming groups can be used with Live Video Broadcasting (LVB) to support on-screen comment chat scenarios.
-- A community group (Community) allows users to join and exit freely, supports up to 100,000 members, and stores message history. To join the group, a user needs to search for the group ID and send an application, and the application does not need to be approved by an admin before the user can join the group.
+- A community group (Community) allows users to join and exit freely, supports up to 100,000 members, and stores message history. To join the group, a user needs to search for the group ID and send a request, and the request does not need to be approved by an admin before the user can join the group.
 >?Community group (Community) is supported only in native SDK 5.8.1668 enhanced edition or higher and web SDK 2.17.0 or later. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/44322).
 
 The following table compares the default features of each group type:
@@ -171,7 +171,7 @@ The following table compares the default features of each group type:
 <td>Show all</td>
    </tr>
 	   <tr>
-     <td>Permission to delete a group</td>
+     <td>Permission to disband a group</td>
      <td>App admins</td>
     <td><li>Group owner</li><li>App admins</li></td>
     <td><li>Group owner</li><li>App admins</li></td>
@@ -246,7 +246,7 @@ The following table compares the default features of each group type:
    </tr>
 		 	   <tr>
      <td>Group activation</td>
-     <td>Activate via messages.</td>
+     <td>Activate via messages</td>
     <td>Not required</td>
     <td>Not required</td>
     <td>Not required</td>
@@ -354,7 +354,7 @@ The [statistics and analytics](https://console.cloud.tencent.com/im) feature in 
 | Ordinary group messages today | Number of non-audio-video group messages of the current day |
 | Audio-video group messages today | Number of audio-video group messages of the current day  |
 
-### Support for private deployment
+### Private deployment
 Private deployment allows an enterprise to deploy systems directly to its own servers and save data locally. IM provides the private deployment feature to assist enterprises in the deployment, implementation, and OPS of the private version. If needed, please apply for the [IM private service](https://intl.cloud.tencent.com/apply/p/itvi76h023).
 >?To apply for the IM private service, you need to log in with your root account of Tencent Cloud.
 
