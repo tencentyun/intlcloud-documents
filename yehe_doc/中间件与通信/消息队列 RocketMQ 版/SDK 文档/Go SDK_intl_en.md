@@ -1,12 +1,12 @@
 ## Overview
 
-This document describes how to use open-source SDK to send and receive messages using the SDK for Go as an example and helps you better understand the message sending and receiving processes.
+This document describes how to use open-source SDK to send and receive messages by using the SDK for Go as an example and helps you better understand the message sending and receiving processes.
 
 ## Prerequisites
 
-- [You have created the required resources](https://intl.cloud.tencent.com/document/product/1112/43069).
-- [You have installed Go](https://golang.org/dl/)
-- [You have downloaded the demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip)
+- [You have created the required resources.](https://intl.cloud.tencent.com/document/product/1112/43069)
+- [You have installed Go.](https://golang.org/dl/)
+- [You have downloaded the demo.](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip)
 
 ## Directions
 ### Step 1. Prepare the environment
@@ -23,7 +23,7 @@ Run the following command in the client environment to RocketMQ client dependenc
 1. Create, compile, and run a message production program.
 <dx-codeblock>
 :::  go
-   // Service access address  (Note: Add “http://” or “https://” before the access address; otherwise, it cannot be resolved)
+   // Service access address (Note: Add "http://" or "https://" before the access address; otherwise, it cannot be resolved)
    var serverAddress = "https://rocketmq-xxx.rocketmq.ap-bj.public.tencenttdmq.com:9876"
    // Authorize the role name
    var secretKey = "admin"
@@ -60,15 +60,15 @@ Run the following command in the client environment to RocketMQ client dependenc
 <table>
     <tr>
         <th>Parameter</th>
-        <th>Description</th>
+        <th>Remarks</th>
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Producer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
+        <td>Producer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>serverAddress</td>
-				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
+				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/5ec413fb25af95bbd7ce9beb17cc62f6.png" style="width: 100%">
 						<b>Note: </b>Add <code>http://</code> or <code>https://</code> before the access address; otherwise, it cannot be resolved.
         </td>
@@ -80,12 +80,12 @@ Run the following command in the client environment to RocketMQ client dependenc
     <tr>
         <td>accessKey</td>
         <td>Role token, which can be copied in the <b>Token</b> column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.
-           <img src = "https://qcloudimg.tencent-cloud.cn/raw/679d9eb0c39df9722fc8e2e82f52cb46.png" style="width: 100%">
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/679d9eb0c39df9722fc8e2e82f52cb46.png" style="width: 100%">
         </td>
     </tr>
     <tr>
         <td>nameSpace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/823fb2bd90d17ecb24960ffea027a910.png" style="width: 100%">
         </td>
     </tr>
@@ -104,7 +104,7 @@ Run the following command in the client environment to RocketMQ client dependenc
    msg.WithTag("TAG")
    // Set keys
    msg.WithKeys([]string{"yourKey"})
-   // Send the messages
+   // Send the message
    res, err := p.SendSync(context.Background(), msg)
    
    if err != nil {
@@ -117,11 +117,11 @@ Run the following command in the client environment to RocketMQ client dependenc
 <table>
     <tr>
         <th>Parameter</th>
-        <th>Description</th>
+        <th>Remarks</th>
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/2b52e1983fb576cc10b074cd7f1a15a8.png" style="width: 100%">
         </td>
     </tr>
@@ -147,7 +147,7 @@ If multiple message producer instances are created in the same process, you need
    }
 :::
 </dx-codeblock>
- 
+
 
 <dx-alert infotype="explain" title="">
 For more information on async sending and one-way sending, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip) or [RocketMQ-Client-Go Example](https://github.com/apache/rocketmq-client-go/tree/master/examples).
@@ -158,7 +158,7 @@ For more information on async sending and one-way sending, see [Demo](https://td
 1. Create a consumer.
 <dx-codeblock>
 :::  go
-   // Service access address  (Note: Add “http://” or “https://” before the access address; otherwise, it cannot be resolved)
+   // Service access address (Note: Add "http://" or "https://" before the access address; otherwise, it cannot be resolved)
    var serverAddress = "https://rocketmq-xxx.rocketmq.ap-bj.public.tencenttdmq.com:9876"
    // Authorize the role name
    var secretKey = "admin"
@@ -195,15 +195,15 @@ For more information on async sending and one-way sending, see [Demo](https://td
 <table>
     <tr>
         <th>Parameter</th>
-        <th>Description</th>
+        <th>Remarks</th>
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Consumer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
+        <td>Consumer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>serverAddress</td>
-				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
+				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/baf2bd3e35110f2fae6b936eaa2f723b.png" style="width: 100%">
 						<b>Note: </b>Add <code>http://</code> or <code>https://</code> before the access address; otherwise, it cannot be resolved.
         </td>
@@ -220,12 +220,12 @@ For more information on async sending and one-way sending, see [Demo](https://td
     </tr>
     <tr>
         <td>nameSpace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/dd397f141e6388407e99018e7d4fc8a7.png" style="width: 100%">
         </td>
     </tr>
 </table>
-2. Send messages.
+2. Consume the message.
 <dx-codeblock>
 :::  go
    // Topic name
@@ -266,11 +266,11 @@ For more information on async sending and one-way sending, see [Demo](https://td
 <table>
     <tr>
         <th>Parameter</th>
-        <th>Description</th>
+        <th>Remarks</th>
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b2b11c05edaa3ef5f8be278a1a49852.png" style="width: 100%">
         </td>
     </tr>
