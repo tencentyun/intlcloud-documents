@@ -33,7 +33,6 @@ All instance attributes, configurations, and connection address will stay unchan
 7. In the **Modify AZs** window, read the prompt carefully and confirm AZ modification.
 > !
 >-  AZ modification may lead to primary/secondary switch and a momentary disconnection of about 10 seconds; therefore, proceed in off-peak hours of your business.
->-  To avoid increasing latency, after modifying the AZ of the primary node, you need to change the network of the primary node to one in the new AZ and modify its private IP as soon as possible.
 8. Set AZs in the drop-down lists after **Primary Node** and **Secondary Node** respectively.
 9. Select the time for executing the AZ switch task after **Switch Time**.
   - **Upon modification completion**: the task will be executed immediately after the configuration is completed.
