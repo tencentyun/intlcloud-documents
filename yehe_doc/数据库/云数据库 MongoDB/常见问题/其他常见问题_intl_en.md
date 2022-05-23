@@ -1,5 +1,5 @@
 ### What is the latest version of TencentDB for MongoDB?
-Currently, TencentDB for MongoDB 3.2, 3.6, and 4.0 are available.
+Currently, TencentDB for MongoDB 3.2, 3.6, 4.2 and 4.2 are available.
 
 ### How do I delete a TencentDB for MongoDB instance? Will it be deleted automatically if I don't renew it after it expires?
 A TencentDB for MongoDB instance will be automatically terminated if it is not renewed after expiration. Please confirm and back up your data promptly. You can also manually terminate it by selecting **More** > **Return and Refund**/**Terminate** in its **Operation** column in the instance list in the [console](https://console.cloud.tencent.com/mongodb).
