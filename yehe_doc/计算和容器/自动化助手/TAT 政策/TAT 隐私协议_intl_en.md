@@ -23,7 +23,7 @@ We will use the information in the following ways:
       <td>We process this information as it’s necessary for us to perform our contract with you to provide the Services.</td>
      </tr>
    <tr>
-       <td><b>  Error Log File that contains: command ID, command name, username, description, formatted description, content, command type, working directory, timeout, enable parameter, default parameters", output COS bucket URL, output COS key prefix, invocation ID, invocation task ID, task status, exit code, output, instance ID, action, request ID, APPID, UIN, sub account UIN, client IP, region, version, request source, language</td>
+       <td><b>  Error Log File that contains:</b> command ID, command name, username, description, formatted description, content, command type, working directory, timeout, enable parameter, default parameters", output COS bucket URL, output COS key prefix, invocation ID, invocation task ID, task status, exit code, output, instance ID, action, request ID, APPID, UIN, sub account UIN, client IP, region, version, request source, language</td>
       <td>We use this information for troubleshooting, including to analyze system abnormalities and identify program errors and faults.<br/>Please note that error log data for this Feature will be uploaded to our Cloud Log Service (CLS) feature for real-time log queries and display.<br/>Please note that APPID, UIN, sub account UIN, client IP, instance ID and command ID will also be integrated with our Tag feature for cloud resource management. </td>
       <td>We process this information as it’s necessary for us to perform our contract with you to provide the Services.</td>
     </tr>
