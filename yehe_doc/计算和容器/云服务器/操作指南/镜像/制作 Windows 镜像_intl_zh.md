@@ -13,7 +13,7 @@
 
 1. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;">，打开 Windows PowerShell 窗口。
 2. 在 Windows PowerShell 窗口中，输入 **diskmgmt.msc**，按 **Enter**，打开 “磁盘管理”。
-3. 右键单击需要检查的磁盘 >【属性】，选择【卷】页签，查看磁盘分区形式。
+3. 右键单击需要检查的磁盘 >****属性****，选择****卷****页签，查看磁盘分区形式。
 2. 判断磁盘分区形式是否为 GPT 分区。
  - 是，因服务迁移暂不支持 GPT 分区，请通过 [提交工单](https://console.intl.cloud.tencent.com/workorder
 ) 反馈。
@@ -56,7 +56,7 @@ bootmenupolicy          Standard
 
 #### 检查或安装 Virtio 驱动
 
-1. 打开【控制面板】>【程序和功能】，并在搜索栏中搜索 Virtio。
+1. 打开**控制面板**>**程序和功能**，并在搜索栏中搜索 Virtio。
  - 若返回结果如下图示，则表示已安装了 Virtio 驱动。
 ![](https://main.qcloudimg.com/raw/ff1dffb01a7f77d515061bce184e033b.png)
  - 若没有安装 Virtio 驱动，则需要手动安装。
@@ -84,10 +84,10 @@ bootmenupolicy          Standard
 当您的需要导出物理机上的系统或者不想使用平台工具导出时，可以使用 disk2vhd 工具进行导出。
 1. 安装并打开 disk2vhd 工具。
 [点此下载 disk2vhd 工具 >>](https://download.sysinternals.com/files/Disk2vhd.zip)
-3. 选择需要导出的镜像存放路径，勾选需要复制的卷，单击【Create】。如下图所示：
+3. 选择需要导出的镜像存放路径，勾选需要复制的卷，单击**Create**。如下图所示：
 >! 
 > - disk2vhd 需要 Windows 预装 VSS（卷影拷贝服务）功能后才能运行。关于 VSS 功能的更多信息请参见 [Volume Shadow Copy Service](https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN)。
-> - 请勿勾选 “Use Vhdx”，目前系统不支持 vhdx 格式的镜像。
+> - 请勿勾选 “Use Vhdx”，目前系统不支持 vhdx 格式的镜像。**
 > - 建议勾选 “Use volume Shadow Copy”，使用卷影复制功能，将能更好地保证数据完整性。
 > 
 ![image](https://main.qcloudimg.com/raw/68d9c4e5e7db49c4cefdd3785ce9b68d.jpg)
@@ -106,8 +106,8 @@ bootmenupolicy          Standard
 
 本文以 Windows 平台为例，通过“磁盘管理”中的“附加 VHD”，查看 vhd 格式镜像。步骤如下：
 1. 在操作系统界面，右键单击 <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-4px 0px">，并在弹出菜单中选择【计算机管理】。
-2. 选择【存储】>【磁盘管理】，进入磁盘管理界面。
-3. 在窗口上方选择【操作】>【附加 VHD】。如下图所示：
+2. 选择**存储**>**磁盘管理**，进入磁盘管理界面。
+3. 在窗口上方选择**操作**>**附加 VHD**。如下图所示：
 ![](https://main.qcloudimg.com/raw/90a6ce24b78ca128ade5018833011708.png)
 出现如下图所示结果，表示已成功制作镜像。
 ![](https://main.qcloudimg.com/raw/41eac48fe77d3773dcf1ac9121b251ce.png)
