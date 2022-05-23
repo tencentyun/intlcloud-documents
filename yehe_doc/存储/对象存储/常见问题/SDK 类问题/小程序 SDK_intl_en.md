@@ -1,4 +1,4 @@
-### How do I configure and limit the allowlist if multiple endpoints are requested in the mini program or the bucket name is uncertain?
+### How do I configure and limit the allowlist if multiple domain names are requested in the mini program or the bucket name is unknown?
 
 When the SDK is instantiated, `ForcePathStyle:true` can be used to enable suffixed request, and then only the URL of the real request is needed, which is in the following format:
 ```
@@ -13,7 +13,7 @@ When a suffixed request is signed, the bucket name `/<BucketName-APPID>` will al
 3. Click **Save** and call `wx.saveImageToPhotosAlbum` to save the image to the album.
 
 
-### Can QQ mini programs use the Mini Program SDK to upload files to COS?
+### Can I upload files to COS by using the Mini Program SDK for QQ mini programs?
 
 COS currently supports only WeChat mini programs, but WeChat mini programs do not interconnect with QQ mini programs. Therefore, the Mini Program SDK cannot be used.
 

@@ -12,7 +12,7 @@ COS Migration is an all-in-one tool that integrates the COS data migration featu
 
 >!
 >- COS Migration only supports UTF-8 encoding.
->- If you use this tool to upload a file whose name already exists, the existing file will be overwritten. You need to configure the tool to skip files with the same name.
+>- If you use this tool to upload a file that already has the same name, the existing file will be overwritten. You need to configure the tool to skip files with the same name.
 >- If you need to migrate from cloud storage service to COS, use the migration service platform.
 >
 
@@ -60,8 +60,8 @@ COS_Migrate_tool
 ```
 
 >?
- - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped; otherwise, it will be migrated.
- - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, check `error.log` in this directory first.
+> - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped; otherwise, it will be migrated.
+> - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, check `error.log` in this directory first.
 
 ### 3. Modify the config.ini file
 Before running the migration start script, modify the `config.ini` file (path: `./conf/config.ini`) first. This file contains the following parts:
@@ -147,7 +147,7 @@ ignoreModifiedTimeLessThanSeconds=
 | ------| ------ |
 | localPath | Absolute path of the local directory <ul  style="margin: 0;"><li>Linux uses a slash (/) as the delimiter, for example, `/a/b/c`. </li><li>Windows uses two backlashes (\\) as the delimiter, for example, `E:\\a\\b\\c`.</li></ul> |
 | excludes | Absolute path of the directory or file to be excluded, indicating some directories or files under `localPath` are not to be migrated. Multiple absolute paths need to be separated by semicolons. If this is left blank, all files under `localPath` will be migrated. |
-| ignoreModifiedTimeLessThanSeconds | Exclude files whose update time is less than a certain period of time from the current time (in seconds). This item is left blank by default, indicating files are not to be filtered by the time specified by `lastmodified`. It is suitable for scenarios where you run the migration tool while updating files and don't want files being updated to be migrated to COS. For example, if it is configured as `300`, only files updated at least 5 minutes ago will be uploaded. |
+| ignoreModifiedTimeLessThanSeconds | Exclude files that have an update time less than a certain period of time from the current time (in seconds). This item is left blank by default, indicating files are not to be filtered by the time specified by `lastmodified`. It is suitable for scenarios where you run the migration tool while updating files and don't want files being updated to be migrated to COS. For example, if it is configured as `300`, only files updated at least 5 minutes ago will be uploaded. |
 
 **3.3.2 Configure a URL list data source migrateUrl**
 
@@ -210,7 +210,7 @@ sh start_migrate.sh -Dcommon.cosPath=/savepoint0403_10/
 ## Migration Mechanism and Process
 ### Migration mechanism
 
-COS Migration has a status. Successful migrations will be recorded in the format of `KV` in the `leveldb` file under the `db` directory. Before each migration, check whether the path to which data is migrated has been recorded in the `db` directory. If yes, and its attribute is the same as that in `db`, the migration will be skipped; otherwise, the migration will be executed. The attribute varies by migration type. For local migration, `mtime` determines whether to migrate. For migration from other cloud storage services and bucket replication, the ETag and length of the source file determine whether to migrate. Therefore, we search for records of successful migrations in the `db` directory rather than in COS. If a file is deleted or modified via COSCMD or the console rather than the migration tool, the migration tool cannot detect this change, and the file will not be re-migrated.
+COS Migration has a status. Successful migrations will be recorded in the format of `KV` in the `leveldb` file under the `db` directory. Before each migration, check whether the path to which data is migrated has been recorded in the `db` directory. If yes, and its attribute is the same as that in `db`, the migration will be skipped; otherwise, the migration will be executed. The attribute varies by migration type. For local migration, `mtime` determines whether to migrate. For migration from other cloud storage services and bucket replication, the etag and length of the source file determine whether to migrate. Therefore, we search for records of successful migrations in the `db` directory rather than in COS. If a file is deleted or modified via COSCMD or the console rather than the migration tool, the migration tool cannot detect this change, and the file will not be re-migrated.
 
 ### Migration process
 
@@ -222,5 +222,5 @@ COS Migration has a status. Successful migrations will be recorded in the format
 ![](https://main.qcloudimg.com/raw/2534fd390218db29bb03f301ed2620c8.png)
 
 ## FAQs
-If an exception such as migration failure or execution error occurs when you use the COS Migration tool, troubleshoot as instructed in [COS Migration](https://intl.cloud.tencent.com/document/product/436/30585).
+If an exception such as migration failure or execution error occurs when you use the COS Migration, troubleshoot as instructed in [COS Migration](https://intl.cloud.tencent.com/document/product/436/30585).
 
