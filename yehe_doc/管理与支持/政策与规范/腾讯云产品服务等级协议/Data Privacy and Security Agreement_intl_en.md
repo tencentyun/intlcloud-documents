@@ -208,6 +208,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 37.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
 38.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
 39.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179).
+40.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
 
 ## 10.Jurisdiction-specific Requirements
 
