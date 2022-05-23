@@ -49,7 +49,7 @@ You can install the Java SDK using Maven or source code:
 Uninstall the SDK by removing the POM dependencies or source code.
 
 ## Getting Started
-Before use, don't rush to write the code first. We recommend you spend two minutes conducting the following test to ensure that sent requests can arrive at the COS service. This helps you verify whether you may encounter any problems encountered by most users with the Java SDK.
+Before use, don't rush to write the code first. We recommend you spend two minutes conducting the following test to ensure that sent requests can arrive at the COS service. This helps you determine whether you will encounter any of the problems that most Java SDK users have encountered.
 The following test assumes that you are accessing the COS service in the Guangzhou region.
 
 ### Using ping to test

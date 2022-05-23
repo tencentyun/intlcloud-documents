@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to object downloads.
+This document provides an overview of APIs and SDK code samples for downloading an object.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
