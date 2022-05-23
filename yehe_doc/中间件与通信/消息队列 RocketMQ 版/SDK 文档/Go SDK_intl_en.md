@@ -64,11 +64,11 @@ Run the following command in the client environment to RocketMQ client dependenc
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Producer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Producer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>serverAddress</td>
-				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
+				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/5ec413fb25af95bbd7ce9beb17cc62f6.png" style="width: 100%">
 						<b>Note: </b>Add <code>http://</code> or <code>https://</code> before the access address; otherwise, it cannot be resolved.
         </td>
@@ -85,7 +85,7 @@ Run the following command in the client environment to RocketMQ client dependenc
     </tr>
     <tr>
         <td>nameSpace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/823fb2bd90d17ecb24960ffea027a910.png" style="width: 100%">
         </td>
     </tr>
@@ -121,7 +121,7 @@ Run the following command in the client environment to RocketMQ client dependenc
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
+        <td>Topic name, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/2b52e1983fb576cc10b074cd7f1a15a8.png" style="width: 100%">
         </td>
     </tr>
@@ -199,11 +199,11 @@ For more information on async sending and one-way sending, see [Demo](https://td
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Consumer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Consumer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>serverAddress</td>
-				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
+				<td>Cluster access address, which can be obtained in the console by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/baf2bd3e35110f2fae6b936eaa2f723b.png" style="width: 100%">
 						<b>Note: </b>Add <code>http://</code> or <code>https://</code> before the access address; otherwise, it cannot be resolved.
         </td>
@@ -220,7 +220,7 @@ For more information on async sending and one-way sending, see [Demo](https://td
     </tr>
     <tr>
         <td>nameSpace</td>
-        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the **Topic** tab on the cluster details page in the console.
+        <td>Full namespace name in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/dd397f141e6388407e99018e7d4fc8a7.png" style="width: 100%">
         </td>
     </tr>
@@ -270,7 +270,7 @@ For more information on async sending and one-way sending, see [Demo](https://td
     </tr>
     <tr>
         <td>topicName</td>
-        <td>Topic name, which can be copied under the **Topic** tab on the cluster details page in the console.
+        <td>Topic name, which can be copied under the <b>Topic</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/4b2b11c05edaa3ef5f8be278a1a49852.png" style="width: 100%">
         </td>
     </tr>
