@@ -16,5 +16,5 @@ The source and target database versions must be supported by MongoDB.
 Only migration from Basic Edition to High Availability Edition (including Dual-Server High Availability Edition and Cluster Edition) is supported, and the version number of the target database must be above that of the source database. 
 
 ## Fix
-Check the source and target databases as instructed in [Databases Supported for Data Migration](https://intl.cloud.tencent.com/document/product/571/42580) and [Databases Supported for Data Sync](https://intl.cloud.tencent.com/document/product/571/42579). If the source or target database version is not supported, upgrade the target database version or use a database instance on a higher version.
+Check the source and target databases as instructed in [Databases Supported for Data Migration](https://intl.cloud.tencent.com/document/product/571/42647) and [Databases Supported for Data Sync](https://intl.cloud.tencent.com/document/product/571/42579). If the source or target database version is not supported, upgrade the target database version or use a database instance on a higher version.
 
