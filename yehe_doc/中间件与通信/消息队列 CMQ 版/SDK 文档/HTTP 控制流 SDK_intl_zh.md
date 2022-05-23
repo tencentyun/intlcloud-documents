@@ -58,7 +58,7 @@
 
 输入参数填写完成后，在页面上方选择**在线调用**页签，单击**发送请求**，返回结果如下。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/cdb47132f961ffbb7573417b905db6a4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8b9a107ed03c44c39f1fecb86771319b.png)
 
 #### 5. 生成代码示例
 
