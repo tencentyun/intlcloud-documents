@@ -105,7 +105,7 @@ bootmenupolicy          Standard
 当镜像格式和当前平台支持的格式一致时，您可以直接打开镜像检查文件系统。 例如，Windows 平台可以直接附加 vhd 格式镜像，Linux 平台可以使用 qemu-nbd 打开 qcow2 格式镜像，Xen 平台可以直接启用 vhd 文件。
 
 本文以 Windows 平台为例，通过“磁盘管理”中的“附加 VHD”，查看 vhd 格式镜像。步骤如下：
-1. 在操作系统界面，右键单击 <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-4px 0px">，并在弹出菜单中选择【计算机管理】。
+1. 在操作系统界面，右键单击 <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-4px 0px">，并在弹出菜单中选择**计算机管理**。
 2. 选择**存储**>**磁盘管理**，进入磁盘管理界面。
 3. 在窗口上方选择**操作**>**附加 VHD**。如下图所示：
 ![](https://main.qcloudimg.com/raw/90a6ce24b78ca128ade5018833011708.png)
