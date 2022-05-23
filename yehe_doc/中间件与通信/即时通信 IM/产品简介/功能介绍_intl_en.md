@@ -114,8 +114,8 @@ The following platforms can communicate with each other and provide services acr
 | Set custom friend profile fields | Up to 20 custom fields are allowed. |
 | Create a friend list | When creating a list, you can choose who goes to the list. A user can be added to multiple lists. |
 | Delete a friend list | Delete a friend list. |
-| Verify friends | Support verifying friends in batches.|
-| Verify users on a blocklist | Support verifying users in batches.|
+| Verify friends | Support verifying friends in batches. |
+| Verify users on a blocklist | Support verifying users in batches. |
 | Add a friend to a list | Add a friend to a list. |
 | Delete a friend from a list | Remove a friend from a list. |
 | Rename a friend list | Rename a friend list. |
