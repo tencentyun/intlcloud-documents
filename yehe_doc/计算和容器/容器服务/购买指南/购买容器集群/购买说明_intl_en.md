@@ -36,7 +36,7 @@ Assume that you want to deploy 50 nodes in a cluster and need 2,000 Pods. You ne
 >- It is recommended that the size of all objects under each type of resource does not exceed 800 MiB, and the size of each object does not exceed 100 KB.
 >
 
-| Cluster specification| | Max nodes | Max Pods (recommended) | Max ConfigMap (recommended) | Maximum CRDs/Maximum other resources (recommended) | 
+| Cluster specification | Max nodes | Max Pods (recommended) | Max ConfigMap (recommended) | Maximum CRDs/Maximum other resources (recommended) | 
 | ---------------- | ------------------- | ------------------------- | ------------------- |------------------- |
 | L5           | 5                | 150                 | 128                        | 150                 | 
 | L20           | 20               | 600                 | 256                       | 600                 |
