@@ -61,14 +61,12 @@ require '/path/to/vendor/autoload.php';
     <tbody>
     <tr>
         <td>$endPoint</td>
-        <td>API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png"
-            <strong>API 请求地址</strong>处复制。<img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png"
+        <td>API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/cb2e6187e2f068963cc103060a641b01.png"
                                              referrerpolicy="no-referrer" alt="img"></td>
     </tr>
     <tr>
         <td>$secretId, $secretKey</td>
-        <td>TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png"
-            <strong>API 密钥管理</strong>页面复制。<img src="https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png"
+        <td>TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/700ed5884d809e1c5fe2a4bfac9f0609.png"
                                               referrerpolicy="no-referrer" alt="img"></td>
     </tr>
     </tbody>
@@ -107,7 +105,7 @@ try {
 <table>
 <thead>
 <tr><th >Parameter</th><th >Description</th></tr></thead>
-<tbody><tr><td >endpoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >secretId, secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td style='text-align:left;' >$queue_name</td><td style='text-align:left;' >Queue name, which can be obtained on the <strong>Queue Service</strong> page in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>.</td></tr></tbody>
+<tbody><tr><td >endpoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/92c790353cd0cc2d2ab591fb392d41ab.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >secretId, secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/3016e226c7fdcf9f0f58fa1b8180d1a4.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td style='text-align:left;' >$queue_name</td><td style='text-align:left;' >Queue name, which can be obtained on the <strong>Queue Service</strong> page in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>.</td></tr></tbody>
 </table>
 7. Consume messages.
 <dx-codeblock>
@@ -141,7 +139,7 @@ try {
 <table>
 <thead>
 <tr><th >Parameter</th><th >Description</th></tr></thead>
-<tbody><tr><td >endpoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >secretId, secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$queue_name</td><td >Queue name, which can be obtained on the <strong>Queue Service</strong> page in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>.</td></tr></tbody>
+<tbody><tr><td >endpoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/be5b7ee21a739a55e624574d09176946.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >secretId, secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/26f869fa79255d152e96338d3b8210ac.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$queue_name</td><td >Queue name, which can be obtained on the <strong>Queue Service</strong> page in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>.</td></tr></tbody>
 </table>
 
 ## Topic Model
@@ -174,7 +172,7 @@ try {
 <table>
 <thead>
 <tr><th >Parameter</th><th >Description</th></tr></thead>
-<tbody><tr><td >$endPoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$secretId, $secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png" referrerpolicy="no-referrer" alt="img"></td></tr></tbody>
+<tbody><tr><td >$endPoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/56dc56235cbc77d521fb82cd7ace5a7c.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$secretId, $secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/26ca35304a71fa48412ad75cbe00f68f.png" referrerpolicy="no-referrer" alt="img"></td></tr></tbody>
 </table>
    2. Create a subscriber in the console or via TencentCloud API. To use TencentCloud API, you need to install the SDK 3.0 for PHP.
 <dx-codeblock>
@@ -219,7 +217,7 @@ try {
 <table>
 <thead>
 <tr><th >Parameter</th><th >Description</th></tr></thead>
-<tbody><tr><td >$endPoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$secretId, $secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png" referrerpolicy="no-referrer" alt="img"></td></tr></tbody>
+<tbody><tr><td >$endPoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/160e677fdd998c1ddf790d1ae8ce957c.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$secretId, $secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/cce457a02b5c0d9b0544b74b6f1a4d46.png" referrerpolicy="no-referrer" alt="img"></td></tr></tbody>
 </table>
 2. Import [CMQ files](https://github.com/tencentyun/cmq-php-sdk) into the project.
 3. Create `my_topic` to publish messages.
@@ -235,7 +233,7 @@ try {
 <table>
 <thead>
 <tr><th >Parameter</th><th >Description</th></tr></thead>
-<tbody><tr><td >endpoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://main.qcloudimg.com/raw/397c634ac38494666e878caf69cf55e7.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >secretId, secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://main.qcloudimg.com/raw/867837e2b1e6d347ecb04d7085938c08.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$topic_name</td><td >Topic subscription name, which can be obtained on the <strong>Topic Subscription</strong> page in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>.</td></tr></tbody>
+<tbody><tr><td >endpoint</td><td >API call address, which can be copied from <strong>Queue Service</strong> &gt; <strong>API Request Address</strong> in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/752cffa9a08398a830e4a4ca633bebc4.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >secretId, secretKey</td><td >TencentCloud API key, which can be copied on the <strong>Access Key</strong> &gt; <strong>API Key Management</strong> page in the <a href='https://console.intl.cloud.tencent.com/cam/overview'>CAM console</a>. <img src="https://qcloudimg.tencent-cloud.cn/raw/b9c0cee8353ae1ced4dcfc33e973f21d.png" referrerpolicy="no-referrer" alt="img"></td></tr><tr><td >$topic_name</td><td >Topic subscription name, which can be obtained on the <strong>Topic Subscription</strong> page in the <a href='https://console.intl.cloud.tencent.com/tdmq'>TDMQ for CMQ console</a>.</td></tr></tbody>
 </table>
 4. Send tag messages.
 <dx-codeblock>
