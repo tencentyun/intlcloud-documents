@@ -31,7 +31,7 @@ public Boolean deleteWorkflow(MediaWorkflowListRequest request);
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
+| bucketName  | Bucket    | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
 | workflowId         | Request | Workflow ID | String    | Yes   |
 
 #### Response description
