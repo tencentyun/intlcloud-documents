@@ -13,7 +13,7 @@
 
 1. OS画面で、<img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;"> をクリックして、Windows PowerShellウインドウを開きます。
 2. Windows PowerShellウィンドウで、**diskmgmt.msc**を入力し、**Enter**キーを押して「ディスクの管理」ウィンドウを開きます。
-3. チェックするディスクを右クリックし、 【プロパティ】をクリックして、【ボリューム】タブを選択することにより、ディスクのパーティション形式を確認できます。
+3. チェックするディスクを右クリックし、 **プロパティ**をクリックして、**ボリューム**タブを選択することにより、ディスクのパーティション形式を確認できます。
 2. ディスクのパーティション形式がGPTパーティションかどうかを確認します。
  - GPTパーティションである場合、マイグレーションサービスは現在GPTパーティションをサポートしていないため、[チケットを提出](https://console.intl.cloud.tencent.com/workorder
 )してフィードバックしてください。
@@ -24,7 +24,7 @@ bcdedit /enum {current}
 ```
 次のような結果が返されます。
 ```
-Windows ブートローダー
+Windows ブートローダー**
 識別子             {current}
 device                  partition=C:
 path                    \WINDOWS\system32\winload.exe
@@ -56,8 +56,8 @@ bootmenupolicy          Standard
 
 #### Virtioドライバーの確認またはインストール
 
-1. 【コントロールパネル】>【プログラムと機能】を開き、検索ボックスに「Virtio」と入力します。
- - 次の図に示すように、Virtioドライバーがすでにインストールされていることを示します。
+1. **コントロールパネル**>**プログラムと機能**を開き、検索ボックスに「Virtio」と入力します。
+ - 次の図に示すように、Virtioドライバーがすでにインストールされていることを示します。****
 ![](https://main.qcloudimg.com/raw/ff1dffb01a7f77d515061bce184e033b.png)
  - Virtioドライバーがインストールされていない場合は、手動でインストールする必要があります。
     - Microsoft Windows Server 2008 R2（Standard、Datacenter、Enterprise）、Microsoft Windows Server 2012 R2（Standard）、Microsoft Windows Server 2016（Datacenter）、Microsoft Windows Server 2019（Datacenter）の場合は、Tencent Cloudのカスタマイズ版Virtioをダウンロードしてください。ダウンロードアドレスは以下のとおりです。実際のネットワーク環境に合わせてダウンロードしてください。
@@ -84,7 +84,7 @@ VMWare vCenter ConvertまたはCitrix XenConvert などの仮想化プラトフ�
 物理マシンのシステムをエクスポートする場合、またはプラットフォームツールを使用してイメージをエクスポートしたくない場合は、disk2vhdツールを使用してイメージをエクスポートします。
 1. disk2vhdツールをインストールして実行します。
 [ここをクリックしてdisk2vhdツールをダウンロードする >>](https://download.sysinternals.com/files/Disk2vhd.zip)
-3. エスクポートするイメージの保存場所を選択し、コピーするボリュームをチェックして、【作成】をクリックします。次の図に示すように：
+3. エスクポートするイメージの保存場所を選択し、コピーするボリュームをチェックして、****作成****をクリックします。次の図に示すように：
 >! 
 > - disk2vhdは、Windowsシステムにボリュームシャドウコピーサービス（VSS）がインストールされた後にのみ起動できます。VSS機能の詳細については、 [Volume Shadow Copy Service](https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN)をご参照ください。
 > - 「Use Vhdx」をチェックしないでください。システムは現在vhdx 形式のイメージをサポートしていません。
@@ -105,9 +105,9 @@ VMWare vCenter ConvertまたはCitrix XenConvert などの仮想化プラトフ�
 イメージの形式が現在のプラットフォームでサポートしている形式と一致している場合は、イメージを直接開いてファイルシステムを確認できます。例えば、Windowsプラットフォームではvhd形式のイメージを追加でき、Linuxプラットフォームではqemu-nbd を利用してqcow2 形式のイメージを開くことができ、Xenプラットフォームではvhdファイルを直接開くことができます。
 
 このドキュメントでは、Windowsプラットフォームを例として、「ディスクの管理」中の「VHDの接続」を通じて、vhd形式のイメージを表示する方法について説明します。
-1. OSインターフェースで、 <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-4px 0px">を右クリックし、ポップアップメニューから【コンピュータの管理】を選択します。
-2. 【ストレージ】>【ディスクの管理】を選択して、ディスク管理インターフェイスに入ります。
-3. 画面上部にある【アクション】>【VHDの接続】を選択します。次の図に示すように：
+1. OSインターフェースで、 <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-4px 0px">を右クリックし、ポップアップメニューから**コンピュータの管理**を選択します。
+2. **ストレージ**>**ディスクの管理**を選択して、ディスク管理インターフェイスに入ります。
+3. 画面上部にある**アクション**>**VHDの接続**を選択します。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/90a6ce24b78ca128ade5018833011708.png)
 次図のような結果が表示された場合、イメージの作成が成功したことを示します。
 ![](https://main.qcloudimg.com/raw/41eac48fe77d3773dcf1ac9121b251ce.png)
