@@ -35,6 +35,4 @@ An alarm policy can determine whether an alarm notification should be sent based
    - **Policy Type**: Select **TDMQ-RocketMQ-topic alarm**.
    - **Use preset trigger condition**: Select this option and the system recommended alarm policy will be displayed.
 5. After confirming that everything is correct, click **Save**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/9a5a1b3f49ba4ee56449c33dbecf500b.png)
 6. Return to the **Create Alarm Policy** page, click **Refresh**, and the alarm policy template just configured will be displayed.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/301a9303dad98c23de61f4aff815cfbd.png)
