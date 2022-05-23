@@ -49,13 +49,6 @@ The meaning of peak bandwidth varies by network billing modes as detailed below:
 			 <th>Difference</th>
 			 <th>Description</th>
        </tr>
-       <tr>          
-            <td>Billed by fixed bandwidth<br/>(including hourly bandwidth subscription and monthly bandwidth)</td>
-            <td>This peak bandwidth is the committed bandwidth, and is guaranteed in case of bandwidth competition.</td>
-						<td>The sum of peak bandwidth of all the running instances that are billed at a fixed bandwidth (including hourly-subscribed bandwidth and monthly-subscribed bandwidth) cannot exceed 50 Gbps in one region. If you require a higher bandwidth, contact your sales rep.
-
-</td> 
-            </tr> 
 						<tr>
 			 <td>Bill-by-traffic</td>
 			 <td  rowspan="2">The peak bandwidth is only regarded as the <strong>maximum peak bandwidth</strong>, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.</td> 
