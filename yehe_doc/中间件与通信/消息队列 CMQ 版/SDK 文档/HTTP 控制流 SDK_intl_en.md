@@ -58,7 +58,7 @@ The input parameters are as detailed below:
 
 After entering the input parameters, select the **Online Call** tab at the top of the page and click **Send Request**. The returned result is as follows:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/cdb47132f961ffbb7573417b905db6a4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8b9a107ed03c44c39f1fecb86771319b.png)
 
 #### 5. Generate sample code.
 
