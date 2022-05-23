@@ -41,7 +41,7 @@ width: 300px;
 | [DeleteRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44105) | Deletes RocketMQ consumer group |
 | [DescribeRocketMQGroups](https://intl.cloud.tencent.com/document/api/1110/44101) | Gets the list of RocketMQ consumer groups |
 | [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44109) | Creates RocketMQ consumer group |
-| [ResetRocketMQConsumerOffSet](https://cloud.tencent.com/document/api/1179/71662) | Resets RocketMQ consumption offset
+| [ResetRocketMQConsumerOffSet](https://intl.cloud.tencent.com/document/product/1110/46786) | Resets RocketMQ consumption offset
 
 ## Role APIs
 
