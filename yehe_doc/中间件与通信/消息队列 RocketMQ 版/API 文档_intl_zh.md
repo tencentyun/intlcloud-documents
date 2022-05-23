@@ -41,7 +41,7 @@ width: 300px;
 | [DeleteRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44105) | 删除 RocketMQ 消费组     |
 | [DescribeRocketMQGroups](https://intl.cloud.tencent.com/document/api/1110/44101) | 获取 RocketMQ 消费组列表 |
 | [CreateRocketMQGroup](https://intl.cloud.tencent.com/document/api/1110/44109) | 创建 RocketMQ 消费组     |
-| [ResetRocketMQConsumerOffSet](https://cloud.tencent.com/document/api/1179/71662) | 重置 RocketMQ 消费位点     |
+| [ResetRocketMQConsumerOffSet](https://intl.cloud.tencent.com/document/product/1110/46786) | 重置 RocketMQ 消费位点     |
 
 ## 角色相关接口
 
