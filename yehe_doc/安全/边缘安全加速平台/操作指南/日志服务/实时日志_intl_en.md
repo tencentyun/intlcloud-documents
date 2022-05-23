@@ -1,5 +1,7 @@
 ## Overview
 EdgeOne's real-time log feature can collect and publish access logs in real time, enabling fast retrieval and analysis of log data. You can quickly access comprehensive, stable, and reliable one-stop logging services such as log collection, log storage, and log search in the EdgeOne console.
+>?The EdgeOne console is not yet fully available. To access the console, please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
+
 
 ## Use Cases
 You can access log data to view or analyze business conditions in multiple dimensions in real time.
@@ -9,8 +11,8 @@ You can access log data to view or analyze business conditions in multiple dimen
 Currently, real-time logs can be pushed to CLS only. To use CLS in EdgeOne, you need to activate [CLS](https://console.cloud.tencent.com/cls) first and grant EdgeOne access to create free logsets.
 >? We recommend you use the root account to enable this feature. If you are a sub-account or collaborator, enable the real-time log feature as instructed in [Activate Real-time Logging as Sub-account/Collaborator](https://intl.cloud.tencent.com/document/product/228/43581).
 
-## Creating push task
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Log analysis** > **Real-time log** on the left sidebar.
+## Creating a Push Task
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Log Service** > **Real-time Logs** on the left sidebar.
 2. On the real-time log page, select the target site and click **Create push task** to create a real-time log push task.
 >?Currently, real-time logs can be pushed to CLS only.
 3. On the push task creation page, enter a task name, select the desired data and target subdomain under the current site, and click **Next**.
@@ -21,7 +23,7 @@ Currently, real-time logs can be pushed to CLS only. To use CLS in EdgeOne, you 
  - Data: Currently, only site acceleration data can be pushed.
  - Subdomain: Subdomain under the current site to which logs need to be pushed.
 
->? All subdomains can be added in only one push task.
+>? All subdomain names can be added in only one push task.
 
 4. Select the required parameters and click **Push**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4d42f3254c7ca7e6c6bdbf44042851a0.png)
@@ -31,11 +33,10 @@ Currently, real-time logs can be pushed to CLS only. To use CLS in EdgeOne, you 
  - Region: Select the target region to which logs will be pushed.
  - Target logset name: Select a logset in the target region.
 
->?If there are no options or you need to create a logset, click **Create** to create a logset in the selected region.
+>? If there are no options or you need to create a logset, click **Create** to create a logset in the selected region.
+
  - Log topic name: You can enter 1–200 letters, digits, underscores, and hyphens.
  - Log retention period: Enter a positive integer between 1 and 366.
-
-
 
 ## Managing Push Task
 #### Editing push task
@@ -61,7 +62,7 @@ You can enable a log push task to ship logs to the specified log topic.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bc3e23770d0165a8c2960390adc55bf9.png)
 2. Once the push task is deleted, its subdomain logs will stop being shipped to the specified log topic, its log topic will be deleted, and all shipped logs will be cleared.
 
-## Log search
+## Log Search
 Log search supports various search and analysis methods and chart types. For more information, see [Cloud Log Service](https://intl.cloud.tencent.com/document/product/614/12503).
 EdgeOne logs can be searched for by push task. On the [Real-time log](https://console.cloud.tencent.com/edgeone/log/realtime) page, select the target push task and click **Search** to enter the log search page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a4899c8e69269c2689792cf5e07f3f04.png)
@@ -73,46 +74,46 @@ You can manage modules such as logsets in [CLS](https://console.cloud.tencent.co
 A logset is a project management unit in CLS. It is used to distinguish between logs of different projects and corresponds to a set. An EdgeOne logset has the following basic attributes:
 - Region: The [region](https://intl.cloud.tencent.com/document/product/614/18940) to which a logset belongs.
 - Logset name: The name of a logset.
-- Log retention period: Retention period of data in the current logset.
+- Retention period: The retention period of data in the current logset.
 - Creation time: Logset creation time.
 
 #### Log topic
-A log topic is the basic management unit in CLS. One logset can contain multiple log topics, and one log topic corresponds to one type of applications or services. We recommend you collect similar logs on different machines into the same log topic. For example, if a business project has three types of logs: operation, application, and access logs, you can create a log topic for each type of logs.
+A log topic is the basic management unit in the Tencent Cloud log service (CLS). One logset can contain multiple log topics, and one log topic corresponds to one type of application or service. We recommend you collect similar logs on different machines into the same log topic. For example, if a business project has three types of logs: operation log, application log, and access log, you can create a log topic for each type of log.
 
 The log service system manages different log data based on different log topics. Each log topic can be configured with different data sources, index rules, and shipping rules. Therefore, a log topic is the basic unit for configuring and managing log data in the log service. You need to configure corresponding rules first after creating a log topic before you can perform log collection, search, analysis, and shipping.
 
 Log topic features include:
 - Collect logs to log topics.
 - Store and manage logs based on log topics.
-- Search for and analyze logs by log topics.
+- Search and analyze logs by log topics.
 - Ship logs to other platforms based on log topics.
 - Download and consume logs from log topics.
 
->? 
+> ? 
 >- The above information is quoted from the product documentation of [CLS](https://intl.cloud.tencent.com/document/product/614). If there are any differences, the CLS documentation shall prevail.
 >- Each real-time log push task that ships logs to CLS pushes the logs of selected subdomains to the specified log topic.
 
-## Real-time log field description
+## Real-time Log Fields
 
 | Log Field      | Raw Log Type | Log Service Type | Description                                                         |
 | ------------- | ------------ | ------------ | ------------------------------------------------------------ |
 | app_id        | Integer      | long         | Tencent Cloud account `APPID`                                             |
 | client_ip     | String       | text         | Client IP                                                    |
 | file_size     | Integer      | long         | File size                                                     |
-| hit           | String       | text         | Cache hit/miss. Both hits on EdgeOne edge nodes and parent nodes are marked as hit |
-| host          | String       | text         | Domain                                                         |
+| hit           | String       | text         | Cache hit/miss. Both hits on Tencent Cloud EdgeOne edge and parent nodes are marked as hit |
+| host          | String       | text         | Domain name                                                         |
 | http_code     | Integer      | long         | HTTP status code                                                  |
 | isp           | String       | text         | ISP                                                       |
 | method        | String       | text         | HTTP method                                                  |
 | param         | String       | text         | Parameter carried in URL                                               |
 | proto         | String       | text         | HTTP protocol identifier                                                |
-| prov          | String       | text         | ISP province/state                                                  |
+| prov          | String       | text         | ISP province                                                   |
 | referer       | String       | text         | Referer information, i.e., HTTP source address                                 |
 | request_range | String       | text         | Range parameter, i.e., request range                                         |
-| request_time  | Integer      | long         | Response time (in milliseconds), which refers to the time it takes for a node to return all packets to the client after receiving a request |
+| request_time  | Integer      | long         | Response time (in milliseconds), which refers to the time it takes for a node to return all packets to the client after receiving a request.|
 | remote_port   | String       | long         | A port connecting the client and EdgeOne nodes. This field will be displayed as `-` if the port does not exist |
 | rsp_size      | Integer      | long         | Number of returned bytes                                                   |
-| time          | Integer      | long         | Request timestamp in UNIX format in seconds                          |
+| time          | Integer      | long         | Request timestamp in UNIX format (in seconds)                                        |
 | ua            | String       | text         | `User-Agent` information                                              |
 | url           | String       | text         | Request path                                                     |
 | uuid          | String       | text         | Unique request ID                                               |
