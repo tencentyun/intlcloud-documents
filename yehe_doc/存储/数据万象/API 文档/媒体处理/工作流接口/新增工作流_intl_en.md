@@ -17,18 +17,18 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 >
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
 This request requires the following request body:
 
-#### Request body 1: audio/video transcoding, top speed codec, frame capturing, conversion to animated images, voice separation, video montage, audio/video concatenation, smart cover, video enhancement, SDR-to-HDR, function customization, super resolution, and audio/video segmentation
+#### Request body 1: Audio/Video transcoding, TESHD, frame capturing, conversion to animated image, voice/sound separation, video montage, audio/video splicing, intelligent thumbnail, video enhancement, SDR-to-HDR, custom function, super resolution, audio/video remuxing, and image processing
 
 
 ```plaintext
@@ -38,7 +38,7 @@ This request requires the following request body:
         <State>Active</State>
         <Topology>
             <Dependencies>
-                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667</Start>
+                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667,PicProcess_1581665960668</Start>
                 <Snapshot_1581665960536>End</Snapshot_1581665960536>
                 <Transcode_1581665960537>End</Transcode_1581665960537>
                 <Animation_1581665960538>End</Animation_1581665960538>
@@ -51,21 +51,25 @@ This request requires the following request body:
                 <SCF_1581665960566>End</SCF_1581665960566>
                 <SuperResolution_1581665960583>End</SuperResolution_1581665960583>
                 <Segment_1581665960667>End</Segment_1581665960667>
+                <PicProcess_1581665960668>End</PicProcess_1581665960668>
             </Dependencies>
             <Nodes>
                 <Start>
                     <Type>Start</Type>
                     <Input>
                         <QueueId></QueueId>
+                        <PicProcessQueueId></PicProcessQueueId>
                         <ObjectPrefix></ObjectPrefix>
                         <NotifyConfig>
                             <Url>http://www.callback.com</Url>
                             <Event>TaskFinish,WorkflowFinish</Event>
                             <Type>Url</Type>
+                            <ResultFormat></ResultFormat>
                         </NotifyConfig>
                         <ExtFilter>
                             <State>on</State>
                             <Audio>true</Audio>
+                            <Image>true</Image>
                             <Custom>true</Custom>
                             <CustomExts>mp4/mp3</CustomExts>
                             <AllFile>true</AllFile>
@@ -222,13 +226,24 @@ This request requires the following request body:
                         </Output>
                     </Operation>
                 </Segment_1581665960667>
+                <PicProcess_1581665960668>
+                    <Type>PicProcess</Type>
+                    <Operation>
+                        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+                        <Output>
+                            <Region></Region>
+                            <Bucket></Bucket>
+                            <Object>bcd/${RunId}/trans.jpg</Object>
+                        </Output>
+                    </Operation>
+                </PicProcess_1581665960668>
             </Nodes>
         </Topology>
     </MediaWorkflow>
 </Request>
 ```
 
-#### Request 2: HLS adaptive bitrate multi-streaming
+#### Request body 2: Adaptive bitrate streaming
 
 ```plaintext
 <Request>
@@ -237,11 +252,11 @@ This request requires the following request body:
         <State>Active</State>
         <Topology>
             <Dependencies>
-                <Start>HlsPackConfig_1581665960532</Start>
-                <HlsPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</HlsPackConfig_1581665960532>
-                <VideoStream_1581665960536>HlsPack</VideoStream_1581665960536>
-                <VideoStream_1581665960537>HlsPack</VideoStream_1581665960537>
-                <HlsPack_1581665960538>End</HlsPack_1581665960538>
+                <Start>StreamPackConfig_1581665960532</Start>
+                <StreamPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</StreamPackConfig_1581665960532>
+                <VideoStream_1581665960536>StreamPack</VideoStream_1581665960536>
+                <VideoStream_1581665960537>StreamPack</VideoStream_1581665960537>
+                <StreamPack_1581665960538>End</StreamPack_1581665960538>
             </Dependencies>
             <Nodes>
                 <Start>
@@ -253,6 +268,7 @@ This request requires the following request body:
                             <Url>http://www.callback.com</Url>
                             <Event>TaskFinish,WorkflowFinish</Event>
                             <Type>Url</Type>
+                            <ResultFormat></ResultFormat>
                         </NotifyConfig>
                         <ExtFilter>
                             <State>on</State>
@@ -263,16 +279,20 @@ This request requires the following request body:
                         </ExtFilter>
                     </Input>
                 </Start>
-                <HlsPackConfig_1581665960532>
-                    <Type>HlsPackConfig</Type>
+                <StreamPackConfig_1581665960532>
+                    <Type>StreamPackConfig</Type>
                     <Operation>
                         <Output>
                             <Region></Region>
                             <Bucket></Bucket>
                             <Object>${InputPath}/${InputName}._${RunId}.${ext}</Object>
                         </Output>
+                        <StreamPackConfig>
+                            <PackType>HLS</PackType>
+                            <IgnoreFailedStream>true</IgnoreFailedStream>
+                        </StreamPackConfig>
                     </Operation>
-                </HlsPackConfig_1581665960532>
+                </StreamPackConfig_1581665960532>
                 <VideoStream_1581665960536>
                     <Type>VideoStream</Type>
                     <Operation>
@@ -295,10 +315,10 @@ This request requires the following request body:
                         </Output>
                     </Operation>
                 </VideoStream_1581665960537>
-                <HlsPack_1581665960538>
-                    <Type>HlsPack</Type>
+                <StreamPack_1581665960538>
+                    <Type>StreamPack</Type>
                     <Operation>
-                        <HlsPackInfo>
+                        <StreamPackInfo>
                             <VideoStreamConfig>
                                 <VideoStreamName>VideoStream_1581665960536</VideoStreamName>
                                 <BandWidth>0</BandWidth>
@@ -307,9 +327,9 @@ This request requires the following request body:
                                 <VideoStreamName>VideoStream_1581665960537</VideoStreamName>
                                 <BandWidth>0</BandWidth>
                             </VideoStreamConfig>
-                        </HlsPackInfo>
+                        </StreamPackInfo>
                     </Operation>
-                </HlsPack_1581665960538>
+                </StreamPack_1581665960538>
             </Nodes>
         </Topology>
     </MediaWorkflow>
@@ -320,52 +340,53 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | -------- |
-| Request            | None | Request container | Container | Yes   |
+| Request            | None     | Request container | Container | Yes       |
 
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ---------- | --------- | -------- |
-| MediaWorkflow      | Request | Workflow node | Container | Yes       |
+| MediaWorkflow      | Request | Workflow node. | Container | Yes       |
 
 
 `MediaWorkflow` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |                                                 |
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | --------------------- | ---------- | --------- | -------- | ------------------------------------------- |
-| Name               | Request.MediaWorkflow | Workflow name | String    | Yes       | The value can be up to 128 characters in length and contain Chinese characters, letters, digits, dashes (–), and underscores (_). |
-| State              | Request.MediaWorkflow | Workflow status | String    | No       | Paused/Active                               |
-| Topology           | Request.MediaWorkflow | Topology information   | Container | Yes       | None                                          |
+| Name               | Request.MediaWorkflow | Workflow name. | String    | Yes       | The value can contain up to 128 letters, digits, hyphens, and underscores. |
+| State              | Request.MediaWorkflow | Workflow status. | String    | No       | Paused/Active                               |
+| Topology           | Request.MediaWorkflow | Topology information.   | Container | Yes       | None                                          |
 
 
 
 `Topology` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |                                                 |
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------- | ------| --------- | ---- | ---- |
-| Dependencies      | Request.MediaWorkflow.</br>Topology | Node dependencies | Container    | Yes   | None |
-| Nodes             | Request.MediaWorkflow.</br>Topology | Node list | Container    | Yes   | None |
+| Dependencies      | Request.MediaWorkflow.</br>Topology | Node dependencies. | Container    | Yes   | None |
+| Nodes             | Request.MediaWorkflow.</br>Topology | Node list. | Container    | Yes   | None |
 
 `Nodes` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |                                                 |
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------ | --------------- | --------- | ------------ | ------------------------------------------------------------ |
-| Start         | Request.MediaWorkflow.</br>Topology.Nodes | Start node | Container    | Yes   | There is only one start node. |
+| Start         | Request.MediaWorkflow.</br>Topology.Nodes | Start node. | Container    | Yes   | There is only one start node. |
 | Animation\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Animated image type node | Container    | No   | The node name must be prefixed with "Animation". There can be multiple animated image nodes. |
 | Snapshot\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Screenshot type node | Container    | No   | The node name must be prefixed with "Snapshot". There can be multiple screenshot nodes. |
-| SmartCover\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Smart cover node | Container    | No   | The node name must be prefixed with "SmartCover". There can be multiple smart cover nodes. |
+| SmartCover\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Intelligent thumbnail node | Container    | No   | The node name must be prefixed with "SmartCover". There can be multiple intelligent thumbnail nodes. |
 | Transcode\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Transcoding node | Container    | No   | The node name must be prefixed with "Transcode". There can be multiple transcoding nodes. |
-| Concat\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Audio/video concatenation node | Container    | No   | The node name must be prefixed with "Concat". There can be multiple audio/video concatenation nodes. |
-| VoiceSeparate\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Voice node | Container    | No   | The node name must be prefixed with "VoiceSeparate". There can be multiple voice separation nodes. |
+| Concat\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Audio/Video splicing node | Container    | No   | The node name must be prefixed with "Concat". There can be multiple audio/video splicing nodes. |
+| VoiceSeparate\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Voice/Sound separation node | Container    | No   | The node name must be prefixed with "VoiceSeparate". There can be multiple voice/sound separation nodes. |
 | VideoMontage\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Video montage node | Container    | No   | The node name must be prefixed with "VideoMontage". There can be multiple video montage nodes. |
-| HlsPackConfig\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | HLS packaging configuration node | Container    | No   | The node name must be prefixed with "HlsPackConfig". There can be only one HLS packaging configuration node. An HLS packaging configuration node must follow a start node and be followed by a video substream node. There can be multiple video substream nodes. |
-| VideoStream\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | Video substream node | Container    | No   | The node name must be prefixed with "VideoStream". There can be multiple video substream nodes. A video substream node must follow a HlsPackConfig node and be followed by a HlsPack node. |
-| HlsPack\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | HLS packaging node | Container    | No   | The node name must be prefixed with "HlsPack". There can be only one HLS packaging node. The HLS packaging node must follow a video substream node and be followed by an End node. |
+| StreamPackConfig\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | Adaptive bitrate streaming node | Container    | No   | The node name must be prefixed with "StreamPackConfig". There can be only one adaptive bitrate streaming node. This node must follow a start node and be followed by a video substream node. There can be multiple video substream nodes. |
+| VideoStream\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | Video substream node | Container    | No   | The node name must be prefixed with "VideoStream". There can be multiple video substream nodes. This node must follow a StreamPackConfig node and be followed by a StreamPack node. |
+| StreamPack\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | Adaptive bitrate streaming packaging node | Container    | No   | The node name must be prefixed with "StreamPack". There can be only one adaptive bitrate streaming packaging node. This node must follow a video substream node and be followed by an end node. |
 | SDRtoHDR\_\*\*\*       | Request.MediaWorkflow.</br>Topology.Nodes | SDR-to-HDR node    | Container | No           | The node name must be prefixed with "SDRtoHDR". There can be multiple SDR-to-HDR nodes.              |
-| VideoProcess\_\*\*\*   | Request.MediaWorkflow.</br>Topology.Nodes | video processing node    | Container | No           | The node name must be prefixed with "VideoProcess". There can be multiple video processing nodes.         |
+| VideoProcess\_\*\*\*   | Request.MediaWorkflow.</br>Topology.Nodes | Video processing node    | Container | No           | The node name must be prefixed with "VideoProcess". There can be multiple video processing nodes.         |
 | SCF\_\*\*\*            | Request.MediaWorkflow.</br>Topology.Nodes | SCF function node     | Container | No           | The node name must be prefixed with "SCF". There can be multiple SCF function nodes.                   |
 | SuperResolution\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Super resolution node | Container| No | The node name must be prefixed with "SuperResolution". There can be multiple super resolution nodes. |
-| Segment\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Audio/Video segmentation node | Container| No | The node name must be prefixed with "Segment". There can be multiple audio/video segmentation nodes. |
+| Segment\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Audio/Video remuxing node | Container| No | The node name must be prefixed with `Segment`. There can be multiple audio/video remuxing nodes. |
+| PicProcess\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Image processing node | Container| No | The node name must be prefixed with "PicProcess". There can be multiple image processing nodes. |
 
 `Start` has the following sub-nodes:
 
@@ -378,19 +399,21 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------ | ---------------------------------------- | --------- | -------- | ---- |
-| ObjectPrefix       | Request.MediaWorkflow.<br>Topology.Nodes.Start.Input | Object prefix | String | Yes       | None   |
+| ObjectPrefix       | Request.MediaWorkflow.<br>Topology.Nodes.Start.Input | Object prefix. | String | Yes       | None   |
 | QueueId            | Request.MediaWorkflow.<br>Topology.Nodes.Start.Input | Queue ID     | String | Yes       | None   |
+| PicProcessQueueId  | Request.MediaWorkflow.<br>Topology.Nodes.Start.Input | Image processing queue ID     | String | No       | This parameter is required when there is an image processing node.   |
 | NotifyConfig       | Request.MediaWorkflow.<br>Topology.Nodes.Start.Input | Callback information. If none is specified, the queue callback information is used. | Container | No       | None   |
-| ExtFilter          | Request.MediaWorkflow.<br>Topology.Nodes.Start.Input | Filename extension filter                           | Container | No       | None   |
+| ExtFilter          | Request.MediaWorkflow.<br>Topology.Nodes.Start.Input | Filename extension filter.                           | Container | No       | None   |
 
 
 `Start.Input.NotifyConfig` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
-| ------------------ | ------------------------------------------------------------ | -------- | ------ | ---- | ------------------------------------------------------------ |
-| Url                | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.NotifyConfig | Callback address | String | Yes   | The callback address cannot be a private network address.                                               |
-| Type               | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.NotifyConfig | Callback type | String | Yes   |  Url: URL callback                                         |
-| Event              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.NotifyConfig | Callback information | String | Yes   | 1. TaskFinish: task completed </br> 2. WorkflowFinish: workflow completed </br> 3. You can configure multiple events, separated with commas (,). |
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
+| ------------------ | ------------------------------------------------------------ | -------- | ------ | ---- | ---- | ------------------------------------------------------------ |
+| Url                | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.NotifyConfig | Callback address | String | Yes   | None | The callback address cannot be a private network address.                                               |
+| Type               | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.NotifyConfig | Callback type | String | Yes   | None |  Url: URL callback                                         |
+| Event              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.NotifyConfig | Callback information | String | Yes   | None | 1. TaskFinish: Job completed </br> 2. WorkflowFinish: Workflow completed </br> 3. You can configure multiple events separated with commas. |
+| ResultFormat       | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.NotifyConfig | Callback format | String | No   |  XML | 1. XML</br> 2. JSON |
 
 
 
@@ -398,12 +421,13 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------ | ---------------------------------------------------------- | ------------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
-| State              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Switch                | String | No   | Off    | On/Off                                                       |
-| Video              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require a video extension    | String | No   | false  | false/true                                                   |
-| Audio              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require an audio extension    | String | No   | false  | false/true                                                   |
-| ContentType        | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require a content type | String | No   | false  | false/true                                                   |
-| Custom             | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require a custom extension  | String | No   | false  | false/true                                                   |
-| CustomExts         | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Custom extension          | String | No   | None     | 1. Separate filename extensions with slashes (/). Up to 10 extensions are supported.</br>2. If `Custom` is `true`, this parameter is required. |
+| State              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Switch.                | String | No   | Off    | On/Off                                                       |
+| Video              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require a video extension.    | String | No   | false  | false/true                                                   |
+| Audio              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require an audio extension.    | String | No   | false  | false/true                                                   |
+| Image              | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require an image extension    | String | No   | false  | false/true                                                   |
+| ContentType        | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require a content type. | String | No   | false  | false/true                                                   |
+| Custom             | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Require a custom extension.  | String | No   | false  | false/true                                                   |
+| CustomExts         | Request.MediaWorkflow.Topology.</br>Nodes.Start.Input.ExtFilter | Custom extension.          | String | No   | None     | 1. Separate filename extensions with slashes (/). Up to ten extensions are supported.</br>2. If `Custom` is `true`, this parameter is required. |
 | AllFile    | Request.MediaWorkflow.Topology.Nodes.Start.Input.ExtFilter | All files          |  String  |  No   | false    |  false/true  |
 
 
@@ -412,7 +436,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Node type | String    | Yes       | Animation |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Operation rule | Container | Yes       | None        |
 
 `Animation\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -427,15 +451,15 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | ---- | ------------------------------------------------------------ |
 | Region             | Request.MediaWorkflow.Topology.<br>Nodes.Animation\_\*\*\*.Operation.Output | Bucket region | String | Yes   | None                                                           |
-| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.Animation\_\*\*\*.Operation.Output | Bucket name | String | Yes   | None                                                           |
-| Object             | Request.MediaWorkflow.Topology.<br>Nodes.Animation\_\*\*\*.Operation.Output | Result file name | String | Yes   | 1. bcd/${RunId}/bcd.gif <br/> 2. bcd/${RunId}/bcd.webp <br/> |
+| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.Animation\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.<br>Nodes.Animation\_\*\*\*.Operation.Output | Result filename | String | Yes   | 1. bcd/${RunId}/bcd.gif <br/> 2. bcd/${RunId}/bcd.webp <br/> |
 
 `Snapshot\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | -------- | --------- | -------- | -------- |
 | Type               | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*\*\*\* | Node type | String    | Yes       | Snapshot |
-| Operation          | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None       |
+| Operation          | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*\*\*\* | Operation rule | Container | Yes       | None       |
 
 `Operation` has the following sub-nodes:
 
@@ -449,8 +473,8 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | ------------ | ------------------------------------------------------------ |
 | Region             | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*.Operation.Output | Bucket region | String | Yes           | None                                                           |
-| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*.Operation.Output | Bucket name | String | Yes           | None                                                           |
-| Object             | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*.Operation.Output | Result file name | String | No           | <li>abc/${RunId}/snapshot-${number}.${Ext}<br/><li>bcd/${RunId}/snapshot-${number}.jpg |
+| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*.Operation.Output | Result filename | String | No           | <li>abc/${RunId}/snapshot-${number}.${Ext}<br/><li>bcd/${RunId}/snapshot-${number}.jpg |
 | SpriteObject       | Request.MediaWorkflow.Topology.<br>Nodes.Snapshot\_\*\*\*.Operation.Output | Image sprite name | String | No           | <li>abc/${RunId}/snapshot-${number}.jpg<br/><li>bcd/${RunId}/snapshot-${number}.jpg  |
 
 `SmartCover_***` has the following sub-nodes:
@@ -458,72 +482,82 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------- | -------- | --------- | -------- | ---------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover_*** | Node type | String    | Yes       | SmartCover |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover_*** | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None         |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover_*** | Operation rule | Container | Yes       | None        |
 
 `SmartCover_***.Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | -------- | --------- | -------- | ---- |
 | Output             | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation | Output address | Container | Yes       | None   |
-| SmartCover         | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation | Cover configuration      | Container | No   | None   |
+| SmartCover         | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation | Thumbnail configuration      | Container | No   | None   |
 
 `SmartCover_***.Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ------------------------------- |
 | Region             | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation.Output | Bucket region | String | Yes       | None                              |
-| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation.Output | Bucket name | String | Yes       | None                              |
-| Object             | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation.Output | Result file name | String | Yes       | The parameters ${Number} and ${RunId} must be included. |
+| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.<br>Nodes.SmartCover_***.Operation.Output | Result filename | String | Yes       | The parameters ${Number} and ${RunId} must be included. |
 
 `SmartCover_***.SmartCover` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- | ---- | ---- |
-| Format             | Request.Operation.SmartCover | Cover image type    | String | Yes  | None | png, jpg, webp  |
-| Width              | Request.Operation.SmartCover | Cover image width    | String | Yes  | None | 1. Value range: [128, 4096]<br/> 2. Unit: px<br/> |
-| Height             | Request.Operation.SmartCover | Cover image height    | String | Yes  | None | 1. Value range: [128, 4096]<br/> 2. Unit: px<br/> |
-| Count              | Request.Operation.SmartCover | Number of covers        | String | No  | 3 | Value range: [1, 10] |
-| DeleteDuplicates   | Request.Operation.SmartCover | Whether to deduplicate covers    | String | No  | false | true/false |
+| Format             | Request.Operation.SmartCover | Thumbnail image type.    | String | Yes  | None | png, jpg, webp  |
+| Width              | Request.Operation.SmartCover | Thumbnail image width    | String | Yes  | None | 1. Value range: [128, 4096]<br/> 2. Unit: px<br/> |
+| Height             | Request.Operation.SmartCover | Thumbnail image height    | String | Yes  | None | 1. Value range: [128, 4096]<br/> 2. Unit: px<br/> |
+| Count              | Request.Operation.SmartCover | Number of thumbnails.        | String | No  | 3 | Value range: [1, 10] |
+| DeleteDuplicates   | Request.Operation.SmartCover | Whether to deduplicate thumbnails.    | String | No  | false | true/false |
 
 `Transcode_***` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------ | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Transcode_*** | Node type | String    | Yes       | Transcode |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Transcode_*** | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Transcode_*** | Operation rule | Container | Yes       | None        |
 
 `Transcode_***.Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------- | ------------------------------------------------------------ | ------------ | --------- | -------- | ------------------------------ |
 | TemplateId          | Request.MediaWorkflow.Topology.</br>Nodes.Transcode_***.Operation | Transcoding template ID   | String    | Yes       | None                             |
-| WatermarkTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.Transcode_***.Operation | Watermark template ID   | String    | No       | Up to 3 watermark template IDs are supported. |
+| WatermarkTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.Transcode_***.Operation | Watermark template ID   | String    | No       | Up to three watermark template IDs are supported. |
 | RemoveWatermark       | Request.MediaWorkflow.Topology.</br>Nodes.Transcode\_\*\*\*.Operation | Watermark removal parameter        | Container | No   |None|
+| DigitalWatermark    | Request.MediaWorkflow.Topology.</br>Nodes.Transcode\_\*\*\*.Operation | Digital watermark parameter | Container | No | None |
 | Output       | Request.MediaWorkflow.Topology.</br>Nodes.Transcode\_\*\*\*.Operation | Output address | Container | Yes   | None |
 
 `Transcode\_\*\*\*.RemoveWatermark` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | :----------------------------------------------------------- | --------------------- | ------ | -------- | ------------------------------------ |
-| Dx                 | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.RemoveWatermark | X-axis offset of the top-left corner origin | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
-| Dy                 | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.RemoveWatermark | Y-axis offset of the top-left corner origin | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
+| Dx                 | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.RemoveWatermark | X-axis offset of the top-left corner origin. | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
+| Dy                 | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.RemoveWatermark | Y-axis offset of the top-left corner origin. | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
 | Width              | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.RemoveWatermark | Watermark width            | string | Yes       | 1. Value range: (0, 4096]<br/>2. Unit: px |
 | Height             | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.RemoveWatermark | Watermark height            | string | Yes       | 1. Value range: (0, 4096]<br/>2. Unit: px |
+
+`Transcode\_\*\*\*.DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
+| Message            | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.DigitalWatermark | The watermark information embedded by the digital watermark | String | Yes       | It can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*)   |
+| Type            | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.DigitalWatermark | Digital watermark type | String | Yes       | It currently can be set to `Text` only.   |
+| Version            | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.DigitalWatermark | Digital watermark version | String | Yes       | It currently can be set to `V1` only.   |
+| IgnoreError            | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. | String | Yes       | Valid values: true, false   |
 
 `Transcode\_\*\*\*.Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
 | Region             | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.Output | Bucket region | String | Yes       | None   |
-| Bucket             | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None   |
-| Object             | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.Output | Result file name | String | Yes       | None   |
+| Bucket             | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.Nodes.<br>Transcode\_\*\*\*.Operation.Output | Result filename | String | Yes       | None   |
 
 `Concat\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------- | -------- | --------- | -------- | ------ |
 | Type               | Request.MediaWorkflow.Topology.<br>Nodes.Concat\_\*\*\* | Node type | String    | Yes       | Concat |
-| Operation          | Request.MediaWorkflow.Topology.<br>Nodes.Concat\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None     |
+| Operation          | Request.MediaWorkflow.Topology.<br>Nodes.Concat\_\*\*\* | Operation rule | Container | Yes       | None     |
 
 `Concat\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -537,7 +571,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | ------------- |
 | Type               | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\* | Node type | String    | Yes       | VoiceSeparate |
-| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None            |
+| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\* | Operation rule | Container | Yes       | None            |
 
 `VoiceSeparate\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -551,9 +585,9 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------------ | ------ | -------- | ---- |
 | Region             | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\*.Operation.Output | Bucket region       | String | Yes       | None   |
-| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\*.Operation.Output | Bucket name       | String | Yes       | None   |
-| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\*.Operation.Output | Background audio result file name | String | Yes       | None   |
-| AuObject           | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\*.Operation.Output | Voice result file name   | String | Yes       | None   |
+| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\*.Operation.Output | Background sound result filename | String | Yes       | None   |
+| AuObject           | Request.MediaWorkflow.Topology.</br>Nodes.VoiceSeparate\_\*\*\*.Operation.Output | Voice result filename   | String | Yes       | None   |
 
 
 `VideoMontage\_\*\*\*` has the following sub-nodes:
@@ -561,7 +595,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | --------------------------------------------------------- | -------- | --------- | -------- | ------------ |
 | Type               | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\* | Node type | String    | Yes       | VideoMontage |
-| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None           |
+| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\* | Operation rule | Container | Yes       | None           |
 
 `VideoMontage\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -570,42 +604,51 @@ The nodes are described as follows:
 | TemplateId         | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation | Template ID  | String    | Yes       | None   |
 | Output             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation | Output address | Container | Yes       | None   |
 
+
+
 `VideoMontage\_\*\*\*.Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
 | Region             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Bucket region | String | Yes       | None   |
-| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None   |
-| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Result file name | String | Yes       | None   |
+| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Result filename | String | Yes       | None   |
 
-`HlsPackConfig\_\*\*\*` has the following sub-nodes:
+`StreamPackConfig\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | ------------- |
-| Type               | Request.MediaWorkflow.Topology.</br>Nodes.HlsPackConfig\_\*\*\* | Node type | String    | Yes       | HlsPackConfig |
-| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.HlsPackConfig\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None            |
+| Type               | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\* | Node type | String    | Yes       | StreamPackConfig |
+| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\* | Operation rule | Container | Yes       | None            |
 
-`HlsPackConfig\_\*\*\*.Operation` has the following sub-nodes:
+`StreamPackConfig\_\*\*\*.Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | -------- | --------- | -------- | ---- |
-| Output             | Request.MediaWorkflow.Topology.</br>Nodes.HlsPackConfig\_\*\*\*.Operation | Output address | Container | Yes       | None   |
+| Output             | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\*.Operation | Output address | Container | Yes       | None   |
+| StreamPackConfig   | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\*.Operation | Packaging configuration | Container | Yes       | None   |
 
-`HlsPackConfig\_\*\*\*.Operation.Output` has the following sub-nodes:
+`StreamPackConfig\_\*\*\*.Operation.Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
-| Region             | Request.MediaWorkflow.Topology.</br>Nodes.HlsPackConfig\_\*\*\*.Operation.Output | Bucket region | String | Yes       | None   |
-| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.HlsPackConfig\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None   |
-| Object             | Request.MediaWorkflow.Topology.</br>Nodes.HlsPackConfig\_\*\*\*.Operation.Output | Result file name | String | Yes       | None   |
+| Region             | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\*.Operation.Output | Bucket region | String | Yes       | None   |
+| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None   |
+| Object             | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\*.Operation.Output | Result filename | String | Yes       | None   |
 
+`StreamPackConfig\_\*\*\*.Operation.StreamPackConfig` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
+| PackType | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\*.Operation.StreamPackConfig | Packaging type. Default value: HLS. | string | No   | HLS/DASH   |
+| IgnoreFailedStream | Request.MediaWorkflow.Topology.</br>Nodes.StreamPackConfig\_\*\*\*.Operation.StreamPackConfig | Whether to ignore the substream failed to be transcoded and continue packaging. Default value: true. | string | No   | true/false   |
 
 `VideoStream\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------- | ------| --------- | ---- | ---- |
 | Type       | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\* | Node type | String    | Yes   | VideoStream |
-| Operation  | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes   | None |
+| Operation  | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\* | Operation rule | Container | Yes   | None |
 
 `VideoStream\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -613,7 +656,7 @@ The nodes are described as follows:
 | ------------------ | ------- | ------| --------- | ---- | ---- |
 | TemplateId   | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\*.Operation | Template ID  | String    | Yes   | None |
 | Output       | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\*.Operation | Output address | Container | Yes   | None |
-| WatermarkTemplateId   | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\*.Operation | Watermark template ID  | String    | Yes   | Up to 3 watermark template IDs are supported. |
+| WatermarkTemplateId   | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\*.Operation | Watermark template ID  | String    | Yes   | Up to three watermark template IDs are supported. |
 | RemoveWatermark       | Request.MediaWorkflow.Topology.</br>Nodes.VideoStream\_\*\*\*.Operation | Watermark removal parameter        | Container | No   |None|
 
 `VideoStream\_\*\*\*.Output` has the following sub-nodes:
@@ -621,44 +664,44 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
 | Region             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Bucket region | String | Yes       | None   |
-| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None   |
-| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Result file name | String | Yes       | None   |
+| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VideoMontage\_\*\*\*.Operation.Output | Result filename | String | Yes       | None   |
 
 `VideoStream\_\*\*\*.RemoveWatermark` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | :----------------------------------------------------------- | --------------------- | ------ | -------- | ------------------------------------ |
-| Dx                 | Request.MediaWorkflow.Topology.Nodes.</br>VideoStream\_\*\*\*.Operation.RemoveWatermark | X-axis offset of the top-left corner origin | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
-| Dy                 | Request.MediaWorkflow.Topology.Nodes.</br>VideoStream\_\*\*\*.Operation.RemoveWatermark | Y-axis offset of the top-left corner origin | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
+| Dx                 | Request.MediaWorkflow.Topology.Nodes.</br>VideoStream\_\*\*\*.Operation.RemoveWatermark | X-axis offset of the top-left corner origin. | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
+| Dy                 | Request.MediaWorkflow.Topology.Nodes.</br>VideoStream\_\*\*\*.Operation.RemoveWatermark | Y-axis offset of the top-left corner origin. | string | Yes       | 1. Value range: [0, 4096]<br/>2. Unit: px |
 | Width              | Request.MediaWorkflow.Topology.Nodes.</br>VideoStream\_\*\*\*.Operation.RemoveWatermark | Width                    | string | Yes       | 1. Value range: (0, 4096]<br/>2. Unit: px |
 | Height             | Request.MediaWorkflow.Topology.Nodes.</br>VideoStream\_\*\*\*.Operation.RemoveWatermark | Height                    | string | Yes       | 1. Value range: (0, 4096]<br/>2. Unit: px |
 
 
-`HlsPack\_\*\*\*` has the following sub-nodes:
+`StreamPack\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------ | -------- | --------- | -------- | ------- |
-| Type       | Request.MediaWorkflow.Topology.</br>Nodes.HlsPack\_\*\*\* | Node type | String    | Yes   | HlsPack |
-| Operation          | Request.MediaWorkflow.</br>Topology.Nodes.HlsPack\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None      |
+| Type       | Request.MediaWorkflow.Topology.</br>Nodes.StreamPack\_\*\*\* | Node type | String    | Yes   | StreamPack |
+| Operation          | Request.MediaWorkflow.</br>Topology.Nodes.StreamPack\_\*\*\* | Operation rule | Container | Yes       | None      |
 
-`HlsPack\_\*\*\*.Operation` has the following sub-nodes:
+`StreamPack\_\*\*\*.Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | ---- | ---- |
-| HlsPackInfo        | Request.MediaWorkflow.Topology.</br>Nodes.HlsPack\_\*\*\*.Operation | Packaging rule | Container | No   | None   |
+| StreamPackInfo        | Request.MediaWorkflow.Topology.</br>Nodes.StreamPack\_\*\*\*.Operation | Packaging rule | Container | No   | None   |
 
-`HlsPack\_\*\*\*.Operation.HlsPackInfo` has the following sub-nodes:
+`StreamPack\_\*\*\*.Operation.StreamPackInfo` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | --------- | ---- | ---- |
-| VideoStreamConfig  | Request.MediaWorkflow.Topology.</br>Nodes.HlsPack\_\*\*\*.Operation.HlsPackInfo | Video substream configuration | Container | No   | None   |
+| VideoStreamConfig  | Request.MediaWorkflow.Topology.</br>Nodes.StreamPack\_\*\*\*.Operation.StreamPackInfo | Video substream configuration | Container | No   | None   |
 
-`HlsPack\_\*\*\*.Operation.HlsPackInfo.VideoStreamConfig` has the following sub-nodes:
+`StreamPack\_\*\*\*.Operation.StreamPackInfo.VideoStreamConfig` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | --------------------------------------------------------- | --------- | ---- | ------------------------ |
-| VideoStreamName    | Request.MediaWorkflow.Topology.Nodes.</br>HlsPack\_\*\*\*.Operation.HlsPackInfo.VideoStreamConfig | Video substream name                                              | Container | Yes   | The name must be consistent with the existing video node. |
-| BandWidth          | Request.MediaWorkflow.Topology.Nodes.</br>HlsPack\_\*\*\*.Operation.HlsPackInfo.VideoStreamConfig | Video substream bandwidth limit. Unit: b/s. Value range: [0, 2000000000], where 0 indicates no limit | Container | No   | The value must be equal to or greater than 0. The default value is `0`.     |
+| VideoStreamName    | Request.MediaWorkflow.Topology.Nodes.</br>StreamPack\_\*\*\*.Operation.StreamPackInfo.VideoStreamConfig | Video substream name                                              | Container | Yes   | It must be consistent with the existing video node. |
+| BandWidth          | Request.MediaWorkflow.Topology.Nodes.</br>StreamPack\_\*\*\*.Operation.StreamPackInfo.VideoStreamConfig | Video substream bandwidth limit. Unit: b/s. Value range: [0, 2000000000], where 0 indicates no limit. | Container | No   | The value must be equal to or greater than 0. The default value is 0.     |
 
 
 `SDRtoHDR\_\*\*\*` has the following sub-nodes:
@@ -666,7 +709,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------- | -------- | --------- | ---- | -------- |
 | Type               | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\* | Node type | Container | Yes   | SDRtoHDR |
-| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes   | None       |
+| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\* | Operation rule | Container | Yes   | None       |
 
 `SDRtoHDR\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -674,7 +717,7 @@ The nodes are described as follows:
 | ------------------- | ----------------------------------------------------------- | ------------ | --------- | ---- | ------------------------------ |
 | SDRtoHDR            | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation | SDR-to-HDR configuration | Container | Yes   | None                             |
 | TranscodeTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation | Transcoding template ID   | String    | Yes   | None                             |
-| WatermarkTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation | Watermark template ID   | String    | No   | Up to 3 watermark template IDs are supported. |
+| WatermarkTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation | Watermark template ID   | String    | No   | Up to three watermark template IDs are supported. |
 | Output              | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation | Output address     | Container | Yes   | None                             |
 
 `SDRtoHDR\_\*\*\*.SDRtoHDR` has the following sub-nodes:
@@ -688,8 +731,8 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | ---- | ---- |
 | Region             | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation.Output | Bucket region | String | Yes   | None   |
-| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation.Output | Bucket name | String | Yes   | None   |
-| Object             | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation.Output | Result file name | String | Yes   | None   |
+| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.</br>Nodes.SDRtoHDR\_\*\*\*.Operation.Output | Result filename | String | Yes   | None   |
 
 
 
@@ -698,7 +741,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ----------------------------------------------------- | -------- | --------- | ---- | ------------ |
 | Type               | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\* | Node type | String    | Yes   | VideoProcess |
-| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes   | None           |
+| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\* | Operation rule | Container | Yes   | None           |
 
 `VideoProcess\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -706,7 +749,8 @@ The nodes are described as follows:
 | ------------------- | ------------------------------------------------------------ | ---------- | --------- | ---- | ------------------------------ |
 | TemplateId          | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation | Template ID     | String    | Yes   | None                             |
 | TranscodeTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation | Transcoding template ID | String    | Yes   | None                             |
-| WatermarkTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation | Watermark template ID | String    | No   | Up to 3 watermark template IDs are supported. |
+| WatermarkTemplateId | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation | Watermark template ID | String    | No   | Up to three watermark template IDs are supported. |
+| DigitalWatermark   | Request.MediaWorkflow.Topology..<br>Nodes.VideoProcess\_\*\*\*.Operation | Digital watermark parameter | Container | No   | None |
 | Output              | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation | Output address   | Container | Yes   | None                             |
 
 `VideoProcess\_\*\*\*.Operation.Output` has the following sub-nodes:
@@ -714,15 +758,25 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ------------------------------------------------------------ | ------------ | ------ | ---- | ---- |
 | Region             | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation.Output | Bucket region | String | Yes   | None   |
-| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation.Output | Bucket name | String | Yes   | None   |
-| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation.Output | Result file name | String | Yes   | None   |
+| Bucket             | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object             | Request.MediaWorkflow.Topology.</br>Nodes.VideoProcess\_\*\*\*.Operation.Output | Result filename | String | Yes   | None   |
+
+
+`VideoProcess\_\*\*\*.Operation..DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
+| Message            | Request.MediaWorkflow.Topology.<br>Nodes.VideoProcess\_\*\*\*.Operation.<br>DigitalWatermark | The watermark information embedded by the digital watermark | String | Yes       | It can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*)   |
+| Type            | Request.MediaWorkflow.Topology.<br>Nodes.VideoProcess\_\*\*\*.Operation.<br>DigitalWatermark | Digital watermark type | String | Yes       | It currently can be set to `Text` only.   |
+| Version            | Request.MediaWorkflow.Topology.<br>Nodes.VideoProcess\_\*\*\*.Operation.<br>DigitalWatermark | Digital watermark version | String | Yes       | It currently can be set to `V1` only.   |
+| IgnoreError            | Request.MediaWorkflow.Topology.<br>Nodes.VideoProcess\_\*\*\*.Operation.<br>DigitalWatermark | Whether to ignore the watermarking failure and continue the job. | String | Yes       | Valid values: true, false   |
 
 `SCF\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | -------------------------------------------- | -------- | --------- | ---- | ---- |
 | Type               | Request.MediaWorkflow.Topology.</br>Nodes.SCF\_\*\*\* | Node type | String    | Yes   | SCF  |
-| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.SCF\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes   | None   |
+| Operation          | Request.MediaWorkflow.Topology.</br>Nodes.SCF\_\*\*\* | Operation rule | Container | Yes   | None   |
 
 `SCF\_\*\*\*.Operation` has the following sub-nodes:
 
@@ -744,16 +798,26 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | ------ | ---- | ---- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Node type | String    | Yes | SuperResolution |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes     | None       |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Operation rule | Container | Yes     | None       |
 
 `SuperResolution\_\*\*\*.Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | ------ | ---- | ---- |
-| TemplateId   | Request.MediaWorkflow.Topology.<br>Nodes.SuperResolution\_\*\*\*.Operation | Template ID  | String    | Yes   | None |
-| TranscodeTemplateId | Request.MediaWorkflow.Topology..<br>Nodes.SuperResolution\_\*\*\*.Operation | Transcoding template ID  | String    | Yes   | None |
-| WatermarkTemplateId | Request.MediaWorkflow.Topology..<br>Nodes.SuperResolution***.Operation | Watermark template ID  | String    | No   | Up to 3 watermark template IDs are supported. |
-| Output       | Request.MediaWorkflow.Topology.<br>Nodes.SuperResolution\_\*\*\*.Operation | Output address | Container | Yes   | None |
+| TemplateId   | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation | Template ID   | String    | Yes   | None   |
+| TranscodeTemplateId | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation | Transcoding template ID   | String    | Yes   | None |
+| WatermarkTemplateId | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution***.Operation | Watermark template ID   | String    | No       | Up to three watermark template IDs are supported. |
+| DigitalWatermark   | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation | Digital watermark parameter | Container | No   | None |
+| Output       | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation | Output address | Container | Yes       | None   |
+
+`SuperResolution\_\*\*\*\*.DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ------------------------------------------------------------ | ------------ | ------ | -------- | ---- |
+| Message            | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation.DigitalWatermark | The watermark information embedded by the digital watermark | String | Yes       | It can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*)   |
+| Type            | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation.DigitalWatermark | Digital watermark type | String | Yes       | It currently can be set to `Text` only.   |
+| Version            | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation.DigitalWatermark | Digital watermark version | String | Yes       | It currently can be set to `V1` only.   |
+| IgnoreError            | Request.MediaWorkflow.Topology.Nodes.<br>SuperResolution\_\*\*\*.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. | String | Yes       | Valid values: true, false   |
 
 
 `Output` has the following sub-nodes:
@@ -761,8 +825,8 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | ------ | ---- | ---- |
 | Region             | Request.MediaWorkflow.Topology.<br>Nodes.SuperResolution\_\*\*\*.Operation.Output | Bucket region | String | Yes           | None                                                     |
-| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.SuperResolution\_\*\*\*.Operation.Output | Bucket name | String | Yes           | None                                                     |
-| Object   | Request.MediaWorkflow.Topology.<br>Nodes.SuperResolution\_\*\*\*.Operation.Output | Result file name  | String  | Yes  | None |
+| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.SuperResolution\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object   | Request.MediaWorkflow.Topology.<br>Nodes.SuperResolution\_\*\*\*.Operation.Output | Result filename  | String  | Yes  | None |
 
 
 `Segment\_\*\*\*` has the following sub-nodes:
@@ -770,42 +834,64 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | ------ | ---- | ---- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Node type | String    | Yes       | Segment |
-| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Operation rule. Up to 6 operation rules are supported. | Container | Yes       | None        |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Operation rule | Container | Yes       | None        |
 
 `Segment\_\*\*\*.Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | ------ | ---- | ---- |
-| Segment   | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation | Audio/Video segmentation parameter  | Container    | Yes   | None |
+| Segment   | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation | Audio/Video remuxing parameter.  | Container    | Yes   | None |
 | Output   | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation | Output address | Container | Yes   | None |
 
 `Segment` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | ------ | ---- | ---- |
-| Format            | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Segment | Encapsulation format | String | Yes  | AAC, MP3, FLAC, MP4, TS, MKV, AVI |
-| Duration          | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Segment | Segment duration, in seconds | String | Yes  | The value must be an integer equal to or greater than 5. |
+| Format            | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Segment | Container format. | String | Yes | aac, mp3, flac, mp4, ts, mkv, avi |
+| Duration          | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Segment | Remuxing duration in seconds | String | No  | The value must be an integer equal to or greater than 5. |
 
 `Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | ------ | ---- | ---- |
-| Region             | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Output | Bucket region | String | Yes     | None                                                     |
-| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Output | Bucket name | String | Yes     | None                                                     |
-| Object   | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Output | Result file name  | String  | Yes  | The ${Number} parameter must be included and used as the output sequence number of each audio/video segment after custom segmentation. |
+| Region             | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Output | Bucket region. | String | Yes     | None                                                     |
+| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None |
+| Object   | Request.MediaWorkflow.Topology.<br>Nodes.Segment\_\*\*\*.Operation.Output | Result filename  | String  | Yes  | The `${Number}` parameter must be included and used as the output sequence number of each audio/video segment after custom remuxing. |
 
+`PicProcess\_\*\*\*.Operation` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ------------------------------------------------------------ | -------- | --------- | -------- | -------- |
+| Type               | Request.MediaWorkflow.Topology.<br>Nodes.PicProcess\_\*\*\*\*\*\* | Node type | String    | Yes       | PicProcess |
+| Operation          | Request.MediaWorkflow.Topology.<br>Nodes.PicProcess\_\*\*\*\*\*\* | Operation rule | Container | Yes       | None     |
+
+`Operation` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ------------------------------------------------------------ | -------- | --------- | -------- | ---- |
+| TemplateId         | Request.MediaWorkflow.Topology.<br>Nodes.PicProcess\_\*\*\*.Operation | Template ID   | String    | Yes   | None   |
+| Output             | Request.MediaWorkflow.Topology.<br>Nodes.PicProcess\_\*\*\*.Operation | Output address | Container | Yes       | None   |
+
+`Output` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ------------------------------------------------------------ | ------------ | ------ | ------------ | ------------------------------------------------------------ |
+| Region             | Request.MediaWorkflow.Topology.<br>Nodes.PicProcess\_\*\*\*.Operation.Output | Bucket region | String | Yes       | None                                                           |
+| Bucket             | Request.MediaWorkflow.Topology.<br>Nodes.PicProcess\_\*\*\*.Operation.Output | Bucket name | String | Yes       | None                                                           |
+| Object             | Request.MediaWorkflow.Topology.<br>Nodes.PicProcess\_\*\*\*.Operation.Output | Result filename | String | No           | 1. The `${InputName}` parameter must be included. <br/>2. For example: ${InputName}-process.jpg |
+</br>
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
 The response body returns **application/xml** data. The following contains all the nodes:
 
-#### Response 1: audio/video transcoding, top speed codec, frame capturing, conversion to animated images, voice separation, video montage, audio/video concatenation, smart cover, video enhancement, SDR-to-HDR, function customization, super resolution, and audio/video segmentation
+#### Response body 1: Audio/Video transcoding, TESHD, frame capturing, conversion to animated image, voice/sound separation, video montage, audio/video splicing, intelligent thumbnail, video enhancement, SDR-to-HDR, custom function, super resolution, audio/video remuxing, and image processing
 
 
 ```plaintext
@@ -816,7 +902,7 @@ The response body returns **application/xml** data. The following contains all t
         <WorkflowId></WorkflowId>
         <Topology>
             <Dependencies>
-                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667</Start>
+                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667,PicProcess_1581665960668</Start>
                 <Snapshot_1581665960536>End</Snapshot_1581665960536>
                 <Transcode_1581665960537>End</Transcode_1581665960537>
                 <Animation_1581665960538>End</Animation_1581665960538>
@@ -829,21 +915,25 @@ The response body returns **application/xml** data. The following contains all t
                 <SCF_1581665960566>End</SCF_1581665960566>
                 <SuperResolution_1581665960583>End</SuperResolution_1581665960583>
                 <Segment_1581665960667>End</Segment_1581665960667>
+                <PicProcess_1581665960668>End</PicProcess_1581665960668>
             </Dependencies>
             <Nodes>
                 <Start>
                     <Type>Start</Type>
                     <Input>
                         <QueueId></QueueId>
+                        <PicProcessQueueId></PicProcessQueueId>
                         <ObjectPrefix></ObjectPrefix>
                         <NotifyConfig>
                             <Url>http://www.callback.com</Url>
                             <Event>TaskFinish,WorkflowFinish</Event>
                             <Type>Url</Type>
+                            <ResultFormat></ResultFormat>
                         </NotifyConfig>
                         <ExtFilter>
                             <State>on</State>
                             <Audio>true</Audio>
+                            <Image>true</Image>
                             <Custom>true</Custom>
                             <CustomExts>mp4/mp3</CustomExts>
                             <AllFile>true</AllFile>
@@ -1000,6 +1090,17 @@ The response body returns **application/xml** data. The following contains all t
                         </Output>
                     </Operation>
                 </Segment_1581665960667>
+                <PicProcess_1581665960668>
+                    <Type>PicProcess</Type>
+                    <Operation>
+                        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+                        <Output>
+                            <Region></Region>
+                            <Bucket></Bucket>
+                            <Object>bcd/${RunId}/trans.jpg</Object>
+                        </Output>
+                    </Operation>
+                </PicProcess_1581665960668>
             </Nodes>
         </Topology>
         <BucketId></BucketId>
@@ -1009,7 +1110,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-#### Response body 2: updating the HLS adaptive packaging workflow
+#### Response body 2: Adaptive bitrate streaming
 
 ```
 <Response>
@@ -1020,11 +1121,11 @@ The response body returns **application/xml** data. The following contains all t
         <BucketId></BucketId>
         <Topology>
             <Dependencies>
-                <Start>HlsPackConfig_1581665960532</Start>
-                <HlsPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</HlsPackConfig_1581665960532>
-                <VideoStream_1581665960536>HlsPack</VideoStream_1581665960536>
-                <VideoStream_1581665960537>HlsPack</VideoStream_1581665960537>
-                <HlsPack_1581665960538>End</HlsPack_1581665960538>
+                <Start>StreamPackConfig_1581665960532</Start>
+                <StreamPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</StreamPackConfig_1581665960532>
+                <VideoStream_1581665960536>StreamPack</VideoStream_1581665960536>
+                <VideoStream_1581665960537>StreamPack</VideoStream_1581665960537>
+                <StreamPack_1581665960538>End</StreamPack_1581665960538>
             </Dependencies>
             <Nodes>
                 <Start>
@@ -1036,6 +1137,7 @@ The response body returns **application/xml** data. The following contains all t
                             <Url>http://www.callback.com</Url>
                             <Event>TaskFinish,WorkflowFinish</Event>
                             <Type>Url</Type>
+                            <ResultFormat></ResultFormat>
                         </NotifyConfig>
                         <ExtFilter>
                             <State>on</State>
@@ -1046,16 +1148,20 @@ The response body returns **application/xml** data. The following contains all t
                         </ExtFilter>
                     </Input>
                 </Start>
-                <HlsPackConfig_1581665960532>
-                    <Type>HlsPackConfig</Type>
+                <StreamPackConfig_1581665960532>
+                    <Type>StreamPackConfig</Type>
                     <Operation>
                         <Output>
                             <Region></Region>
                             <Bucket></Bucket>
                             <Object>${InputPath}/${InputName}._${RunId}.${ext}</Object>
                         </Output>
+                        <StreamPackConfig>
+                            <PackType>HLS</PackType>
+                            <IgnoreFailedStream>true</IgnoreFailedStream>
+                        </StreamPackConfig>
                     </Operation>
-                </HlsPackConfig_1581665960532>
+                </StreamPackConfig_1581665960532>
                 <VideoStream_1581665960536>
                     <Type>VideoStream</Type>
                     <Operation>
@@ -1078,10 +1184,10 @@ The response body returns **application/xml** data. The following contains all t
                         </Output>
                     </Operation>
                 </VideoStream_1581665960537>
-                <HlsPack_1581665960538>
-                    <Type>HlsPack</Type>
+                <StreamPack_1581665960538>
+                    <Type>StreamPack</Type>
                     <Operation>
-                        <HlsPackInfo>
+                        <StreamPackInfo>
                             <VideoStreamConfig>
                                 <VideoStreamName>VideoStream_1581665960536</VideoStreamName>
                                 <BandWidth>0</BandWidth>
@@ -1090,9 +1196,9 @@ The response body returns **application/xml** data. The following contains all t
                                 <VideoStreamName>VideoStream_1581665960537</VideoStreamName>
                                 <BandWidth>0</BandWidth>
                             </VideoStreamConfig>
-                        </HlsPackInfo>
+                        </StreamPackInfo>
                     </Operation>
-                </HlsPack_1581665960538>
+                </StreamPack_1581665960538>
             </Nodes>
         </Topology>
         <BucketId></BucketId>
@@ -1103,37 +1209,37 @@ The response body returns **application/xml** data. The following contains all t
 
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None | Response container | Container |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :----------- | :-------- |
-| RequestId          | Response | Unique ID of the request                   | String    |
-| MediaWorkflow      | Response | Workflow array   | Container |
+| RequestId          | Response | Unique ID of the request.                   | String    |
+| MediaWorkflow      | Response | Workflow array.   | Container |
 
 `MediaWorkflow` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ---------------------- | ----------------------------------------------------------- | --------- |
-| Name               | Response.MediaWorkflow | Workflow name                                                  | String    |
-| WorkflowId         | Response.MediaWorkflow | Workflow ID                                                    | String    |
-| State              | Response.MediaWorkflow | Workflow status                                                  | String    |
-| CreateTime         | Response.MediaWorkflow | Creation time                                                    | String    |
-| UpdateTime         | Response.MediaWorkflow | Update time                                                    | String    |
+| Name               | Response.MediaWorkflow | Workflow name.                                                  | String    |
+| WorkflowId         | Response.MediaWorkflow | Workflow ID.                                                    | String    |
+| State              | Response.MediaWorkflow | Workflow status.                                                  | String    |
+| CreateTime         | Response.MediaWorkflow | Creation time.                                                    | String    |
+| UpdateTime         | Response.MediaWorkflow | Update time.                                                    | String    |
 | Topology           | Response.MediaWorkflow | Topology information. Same as `Request.MediaWorkflow.Topology` in `POST Workflow`.  | Container |
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Use Cases
 
-#### Request 1: audio/video transcoding, top speed codec, frame capturing, conversion to animated images, voice separation, video montage, smart cover, audio/video concatenation, function customization, super resolution, and audio/video segmentation
+#### Request 1: Sample for audio/video transcoding, TESHD, frame capturing, conversion to animated image, voice/sound separation, video montage, intelligent thumbnail, audio/video splicing, custom function, super resolution, audio/video remuxing, and image processing
 
 ```plaintext
 POST /workflow HTTP/1.1
@@ -1148,7 +1254,7 @@ Content-Type: application/xml
         <State>Active</State>
         <Topology>
             <Dependencies>
-                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667</Start>
+                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667,PicProcess_1581665960668</Start>
                 <Snapshot_1581665960536>End</Snapshot_1581665960536>
                 <Transcode_1581665960537>End</Transcode_1581665960537>
                 <Animation_1581665960538>End</Animation_1581665960538>
@@ -1161,21 +1267,25 @@ Content-Type: application/xml
                 <SCF_1581665960566>End</SCF_1581665960566>
                 <SuperResolution_1581665960583>End</SuperResolution_1581665960583>
                 <Segment_1581665960667>End</Segment_1581665960667>
+                <PicProcess_1581665960668>End</PicProcess_1581665960668>
             </Dependencies>
             <Nodes>
                 <Start>
                     <Type>Start</Type>
                     <Input>
                         <QueueId></QueueId>
+                        <PicProcessQueueId></PicProcessQueueId>
                         <ObjectPrefix></ObjectPrefix>
                         <NotifyConfig>
                             <Url>http://www.callback.com</Url>
                             <Event>TaskFinish,WorkflowFinish</Event>
                             <Type>Url</Type>
+                            <ResultFormat>XML</ResultFormat>
                         </NotifyConfig>
                         <ExtFilter>
                             <State>on</State>
                             <Audio>true</Audio>
+                            <Image>true</Image>
                             <Custom>true</Custom>
                             <CustomExts>mp4/mp3</CustomExts>
                             <AllFile>true</AllFile>
@@ -1332,6 +1442,17 @@ Content-Type: application/xml
                         </Output>
                     </Operation>
                 </Segment_1581665960667>
+                <PicProcess_1581665960668>
+                    <Type>PicProcess</Type>
+                    <Operation>
+                        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+                        <Output>
+                            <Region></Region>
+                            <Bucket></Bucket>
+                            <Object>bcd/${RunId}/trans.jpg</Object>
+                        </Output>
+                    </Operation>
+                </PicProcess_1581665960668>
             </Nodes>
         </Topology>
     </MediaWorkflow>
@@ -1356,7 +1477,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <WorkflowId></WorkflowId>
         <Topology>
             <Dependencies>
-                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667</Start>
+                <Start>Snapshot_1581665960536,Transcode_1581665960537,Animation_1581665960538,Concat_1581665960539,SmartCover_1581665960539,VoiceSeparate_1581665960551,VideoMontage_1581665960551,SDRtoHDR_1581665960553,VideoProcess_1581665960554,SCF_1581665960566,SuperResolution_1581665960583,Segment_1581665960667,PicProcess_1581665960668</Start>
                 <Snapshot_1581665960536>End</Snapshot_1581665960536>
                 <Transcode_1581665960537>End</Transcode_1581665960537>
                 <Animation_1581665960538>End</Animation_1581665960538>
@@ -1369,21 +1490,25 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <SCF_1581665960566>End</SCF_1581665960566>
                 <SuperResolution_1581665960583>End</SuperResolution_1581665960583>
                 <Segment_1581665960667>End</Segment_1581665960667>
+                <PicProcess_1581665960668>End</PicProcess_1581665960668>
             </Dependencies>
             <Nodes>
                 <Start>
                     <Type>Start</Type>
                     <Input>
                         <QueueId></QueueId>
+                        <PicProcessQueueId></PicProcessQueueId>
                         <ObjectPrefix></ObjectPrefix>
                         <NotifyConfig>
                             <Url>http://www.callback.com</Url>
                             <Event>TaskFinish,WorkflowFinish</Event>
                             <Type>Url</Type>
+                            <ResultFormat>XML</ResultFormat>
                         </NotifyConfig>
                         <ExtFilter>
                             <State>on</State>
                             <Audio>true</Audio>
+                            <Image>true</Image>
                             <Custom>true</Custom>
                             <CustomExts>mp4/mp3</CustomExts>
                             <AllFile>true</AllFile>
@@ -1540,6 +1665,17 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                         </Output>
                     </Operation>
                 </Segment_1581665960667>
+                <PicProcess_1581665960668>
+                    <Type>PicProcess</Type>
+                    <Operation>
+                        <TemplateId>t1460606b9752148c4ab182f55163ba7cd</TemplateId>
+                        <Output>
+                            <Region></Region>
+                            <Bucket></Bucket>
+                            <Object>bcd/${RunId}/trans.jpg</Object>
+                        </Output>
+                    </Operation>
+                </PicProcess_1581665960668>
             </Nodes>
         </Topology>
         <BucketId></BucketId>
@@ -1550,7 +1686,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 ```
 
 
-#### Request 2: HLS adaptive packaging
+#### Request 2: Sample for adaptive bitrate streaming
 
 
 ```plaintext
@@ -1565,11 +1701,11 @@ Content-Type: application/xml
         <Name>demo</Name>
         <Topology>
             <Dependencies>
-                <Start>HlsPackConfig_1581665960532</Start>
-                <HlsPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</HlsPackConfig_1581665960532>
-                <VideoStream_1581665960536>HlsPack</VideoStream_1581665960536>
-                <VideoStream_1581665960537>HlsPack</VideoStream_1581665960537>
-                <HlsPack_1581665960538>End</HlsPack_1581665960538>
+                <Start>StreamPackConfig_1581665960532</Start>
+                <StreamPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</StreamPackConfig_1581665960532>
+                <VideoStream_1581665960536>StreamPack</VideoStream_1581665960536>
+                <VideoStream_1581665960537>StreamPack</VideoStream_1581665960537>
+                <StreamPack_1581665960538>End</StreamPack_1581665960538>
             </Dependencies>
             <Nodes>
                 <Start>
@@ -1579,8 +1715,8 @@ Content-Type: application/xml
                         <ObjectPrefix></ObjectPrefix>
                     </Input>
                 </Start>
-                <HlsPackConfig_1581665960532>
-                    <Type>HlsPackConfig</Type>
+                <StreamPackConfig_1581665960532>
+                    <Type>StreamPackConfig</Type>
                     <Operation>
                         <Output>
                             <Region></Region>
@@ -1588,7 +1724,7 @@ Content-Type: application/xml
                             <Object>${InputPath}/${InputName}._${RunId}.${ext}</Object>
                         </Output>
                     </Operation>
-                </HlsPackConfig_1581665960532>
+                </StreamPackConfig_1581665960532>
                 <VideoStream_1581665960536>
                     <Type>VideoStream</Type>
                     <Operation>
@@ -1611,9 +1747,9 @@ Content-Type: application/xml
                         </Output>
                     </Operation>
                 </VideoStream_1581665960537>
-                <HlsPack_1581665960538>
-                    <Type>HlsPack</Type>
-                </HlsPack_1581665960538>
+                <StreamPack_1581665960538>
+                    <Type>StreamPack</Type>
+                </StreamPack_1581665960538>
             </Nodes>
         </Topology>
     </MediaWorkflow>
@@ -1640,22 +1776,24 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <BucketId></BucketId>
         <Topology>
             <Dependencies>
-                <Start>HlsPackConfig_1581665960532</Start>
-                <HlsPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</HlsPackConfig_1581665960532>
-                <VideoStream_1581665960536>HlsPack</VideoStream_1581665960536>
-                <VideoStream_1581665960537>HlsPack</VideoStream_1581665960537>
-                <HlsPack_1581665960538>End</HlsPack_1581665960538>
+                <Start>StreamPackConfig_1581665960532</Start>
+                <StreamPackConfig_1581665960532>VideoStream_1581665960536,VideoStream_1581665960537</StreamPackConfig_1581665960532>
+                <VideoStream_1581665960536>StreamPack</VideoStream_1581665960536>
+                <VideoStream_1581665960537>StreamPack</VideoStream_1581665960537>
+                <StreamPack_1581665960538>End</StreamPack_1581665960538>
             </Dependencies>
             <Nodes>
                 <Start>
                     <Type>Start</Type>
                     <Input>
                         <QueueId></QueueId>
+                        <PicProcessQueueId></PicProcessQueueId>
                         <ObjectPrefix></ObjectPrefix>
                         <NotifyConfig>
                             <Url>http://www.callback.com</Url>
                             <Event>TaskFinish,WorkflowFinish</Event>
                             <Type>Url</Type>
+                            <ResultFormat>XML</ResultFormat>
                         </NotifyConfig>
                         <ExtFilter>
                             <State>on</State>
@@ -1666,16 +1804,20 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                         </ExtFilter>
                     </Input>
                 </Start>
-                <HlsPackConfig_1581665960532>
-                    <Type>HlsPackConfig</Type>
+                <StreamPackConfig_1581665960532>
+                    <Type>StreamPackConfig</Type>
                     <Operation>
                         <Output>
                             <Region></Region>
                             <Bucket></Bucket>
                             <Object>${InputPath}/${InputName}._${RunId}.${ext}</Object>
                         </Output>
+                        <StreamPackConfig>
+                            <PackType>HLS</PackType>
+                            <IgnoreFailedStream>true</IgnoreFailedStream>
+                        </StreamPackConfig>
                     </Operation>
-                </HlsPackConfig_1581665960532>
+                </StreamPackConfig_1581665960532>
                 <VideoStream_1581665960536>
                     <Type>VideoStream</Type>
                     <Operation>
@@ -1698,10 +1840,10 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                         </Output>
                     </Operation>
                 </VideoStream_1581665960537>
-                <HlsPack_1581665960538>
-                    <Type>HlsPack</Type>
+                <StreamPack_1581665960538>
+                    <Type>StreamPack</Type>
                     <Operation>
-                        <HlsPackInfo>
+                        <StreamPackInfo>
                             <VideoStreamConfig>
                                 <VideoStreamName>VideoStream_1581665960536</VideoStreamName>
                                 <BandWidth>0</BandWidth>
@@ -1710,9 +1852,9 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                                 <VideoStreamName>VideoStream_1581665960537</VideoStreamName>
                                 <BandWidth>0</BandWidth>
                             </VideoStreamConfig>
-                        </HlsPackInfo>
+                        </StreamPackInfo>
                     </Operation>
-                </HlsPack_1581665960538>
+                </StreamPack_1581665960538>
             </Nodes>
         </Topology>
         <BucketId></BucketId>
