@@ -147,7 +147,7 @@
    }
 :::
 </dx-codeblock>
- 
+
 
 <dx-alert infotype="explain" title="">
 异步发送、单向发送等，可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-go-sdk-demo.zip) 示例或参见 [rocketmq-client-go 示例](https://github.com/apache/rocketmq-client-go/tree/master/examples)。
@@ -225,7 +225,7 @@
         </td>
     </tr>
 </table>
-2. 发送消息。
+2. 消费消息。
 <dx-codeblock>
 :::  go
    // topic名称
