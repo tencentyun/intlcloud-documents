@@ -25,6 +25,7 @@
 将 Ingress 中的每条转发规则与 `kubernetes.io/ingress.http-rules` 及 `kubernetes.io/ingress.https-rules` 进行匹配，并添加到对应规则集中。若 Ingress 注解中的未找到对应规则，则默认添加到 HTTPS 规则集中。
 3. **校验匹配项**    
     匹配时请注意校验 Host、Path、ServiceName 及 ServicePort，其中 Host 默认为 `VIP`、Path 默认为 `/`。
+> !  IPv6 的负载均衡没有 IPv4 地址，不具备提供默认域名的功能。
 
 ## 示例
 
@@ -55,3 +56,4 @@ spec:
 - 描述了默认证书，证书 ID 应该存在于名为 `tencent-com-cert` 的 Secret 资源中。
 - 开启了混合协议，并在 `kubernetes.io/ingress.http-rules` 及 `kubernetes.io/ingress.https-rules` 中都描述了 `ingress.spec.rule` 中描述的转发规则。
 3. 此时负载均衡会同时在 HTTP、HTTPS 中配置转发规则对外暴露服务。
+

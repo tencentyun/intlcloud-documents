@@ -1,3 +1,13 @@
+## 2022年03月
+<table >
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+<td style="word-wrap:break-word;word-break:break-all;">边缘集群支持边缘节点池管理和节点池的分组管理</td><td style="word-wrap:break-word;word-break:break-all;">边缘集群支持对边缘节点进行节点池管理和节点池的分组管理。本次更新重构了旧版本的 NodeGroup 和 NodeUnit 的界面交互，2022年3月29日之后的新建集群将使用新的交互逻辑，使用旧版本的集群不受影响。</td><td>2022-03-29</td><td style="word-wrap:break-word;word-break:break-all;">-</a></td>
+</tr>
+</table>
+
+
 ## 2022年02月
 <table >
 <tr>
