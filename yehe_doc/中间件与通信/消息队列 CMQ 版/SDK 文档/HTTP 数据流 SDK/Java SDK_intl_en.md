@@ -39,13 +39,13 @@ This document uses the SDK for Java as an example to describe how to connect the
 <tr>
 <td>SERVER_ENDPOINT</td>
 <td>API call address, which can be copied from <b>Queue Service</b> > <b>API Request Address</b> in the <a href = "https://console.intl.cloud.tencent.com/tdmq">TDMQ for CMQ console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/f6334447f903ae629b518280e933c31b.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/282b35a8eeff075cd664d433cb770439.png">
 </td>
 </tr>
 <tr>
 <td>SECRET_ID, SECRET_KEY</td>
 <td>TencentCloud API key, which can be copied on the <b>Access Key</b> > <b>API Key Management</b> page in the <a href = "https://console.intl.cloud.tencent.com/cam/overview">CAM console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/867837e2b1e6d347ecb04d7085938c08.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/e256875df075dbb08d6904ff8e12877e.png">
 </td>
 </tr>
 <tr>
@@ -71,13 +71,13 @@ This document uses the SDK for Java as an example to describe how to connect the
 <tr>
 <td>SERVER_ENDPOINT</td>
 <td>API call address, which can be copied from <b>Queue Service</b> > <b>API Request Address</b> in the <a href = "https://console.intl.cloud.tencent.com/tdmq">TDMQ for CMQ console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/f6334447f903ae629b518280e933c31b.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/03650ee4728ee3a1bcd5a05aadec1af2.png">
 </td>
 </tr>
 <tr>
 <td>SECRET_ID, SECRET_KEY</td>
 <td>TencentCloud API key, which can be copied on the <b>Access Key</b> > <b>API Key Management</b> page in the <a href = "https://console.intl.cloud.tencent.com/cam/overview">CAM console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/867837e2b1e6d347ecb04d7085938c08.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/a60335230ab808d18701a3f4b42c4848.png">
 </td>
 </tr>
 <tr>
@@ -118,13 +118,13 @@ This document uses the SDK for Java as an example to describe how to connect the
 <tr>
 <td>SERVER_ENDPOINT</td>
 <td>API call address, which can be copied from <b>Queue Service</b> > <b>API Request Address</b> in the <a href = "https://console.intl.cloud.tencent.com/tdmq">TDMQ for CMQ console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/f6334447f903ae629b518280e933c31b.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/12c353b93a1d2d13e81ba85ad23bb61e.png">
 </td>
 </tr>
 <tr>
 <td>SECRET_ID, SECRET_KEY</td>
 <td>TencentCloud API key, which can be copied on the <b>Access Key</b> > <b>API Key Management</b> page in the <a href = "https://console.intl.cloud.tencent.com/cam/overview">CAM console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/867837e2b1e6d347ecb04d7085938c08.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/01deb72dc6437ec5625775ad0043ac2e.png">
 </td>
 </tr>
 <tr>
