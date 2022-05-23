@@ -11,7 +11,7 @@ This document describes how to create a queue service from scratch and use the S
 ### Step 1. Create a topic
 1. Log in to the [TDMQ for CMQ console](https://console.intl.cloud.tencent.com/tdmq/cmq-queue).
 2. Select **Topic Subscription** on the left sidebar, select the region, click **Create**, and enter the topic name.
-![](https://qcloudimg.tencent-cloud.cn/raw/4f88f47403bdf226a16ccf3b977d99f7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/34011988c4d2d43b002da28c732b1208.png)
 - Topic Name: It can contain up to 64 letters, digits, "-", or "_", and must start with a letter. It cannot be modified once created.
 - Message Heap: Messages will be heaped temporarily if the message push is not triggered or the subscriber fails to receive them.
 - Message Filter Type:
@@ -28,7 +28,7 @@ A topic can publish messages only if it is subscribed to by at least one subscri
 
 1. On the **[Topic Subscription](https://console.intl.cloud.tencent.com/tdmq/cmq-queue)** page, click the ID of the topic you just created to enter the topic details page.
 2. Select the **Subscriber** tab at the top, click **Create**, and enter the subscriber information.
-   ![](https://main.qcloudimg.com/raw/ae9095b2ef8d56cf563dc272b40a5e29.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/30fd0b2366a0462242dc0fb24886c7a2.png)
    - Subscriber Type
      - Queue service: You can enter a queue for the subscriber to use it to receive published messages.
      - URL: Subscribers can process messages on their own without using queues. For more information, see [Delivering Message](https://intl.cloud.tencent.com/document/product/406/7420).
@@ -71,13 +71,13 @@ A topic can publish messages only if it is subscribed to by at least one subscri
 <tr>
 <td>SERVER_ENDPOINT</td>
 <td>API call address, which can be copied from <b>Queue Service</b> > <b>API Request Address</b> in the <a href = "https://console.cloud.tencent.com/tdmq">TDMQ for CMQ console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/f6334447f903ae629b518280e933c31b.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/910150612a00a6461ff923cd53a1ec97.png">
 </td>
 </tr>
 <tr>
 <td>SECRET_ID, SECRET_KEY</td>
 <td>TencentCloud API key, which can be copied on the <b>Access Key</b> > <b>API Key Management</b> page in the <a href = "https://console.intl.cloud.tencent.com/cam/overview">CAM console</a>.
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/867837e2b1e6d347ecb04d7085938c08.png">
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/82946cd1e7b1d46a9ccb06ef171137da.png">
 </td>
 </tr>
 <tr>
