@@ -35,6 +35,4 @@ TDMQ RocketMQ 版支持监控您账户下创建的资源，帮助您实时掌握
    - **策略类型**：选择**消息队列 TDMQ-RocketMQ-主题告警**。
    - **使用预置触发条件**：勾选此选项，会出现系统建议的告警策略。
 5. 确认无误后，单击**保存**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/9a5a1b3f49ba4ee56449c33dbecf500b.png)
 6. 返回新建告警策略页，单击**刷新**，则会显示刚配置的告警策略模板。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/301a9303dad98c23de61f4aff815cfbd.png)
