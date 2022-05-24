@@ -109,16 +109,16 @@ Each user has a blocklist, which is used to store the accounts blocked by this u
 After user A adds user B to the blocklist, user A will unfriend user B (if they are friends), and users A and B cannot send friend requests to each other in the future.
 Each user can add up to 1,000 accounts to their IM blocklist.
 
-### Adding users to the blocklist
-IM allows you to add users to the blocklist in batches. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34911">Blocklisting Users</a>.
+### Adding users to a blocklist
+IM allows you to add multiple users to a blocklist at a time. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34911">Blocklisting Users</a>.
 
-### Removing users from the blocklist
-IM allows you to remove users from the blocklist in batches. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34912">Unblocklisting Users</a>.
+### Removing users from a blocklist
+IM allows you to remove multiple users from a blocklist at a time. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34912">Unblocklisting Users</a>.
 
-### Pulling blocklist
+### Pulling a blocklist
 IM supports pulling a full blocklist by page. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34914">Pulling a Blocklist</a>.
 
-### Verifying blocklist
+### Verifying a blocklist
 IM supports two blocklist verification modes: one-way verification and two-way verification.
 
 
