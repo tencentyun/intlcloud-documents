@@ -53,7 +53,7 @@ This document uses Python as an example to describe how to connect to TDMQ for P
     </tr>
     <tr>
         <td style='text-align:left;'>REGION</td>
-        <td style='text-align:left;'>Cluster region. For more regions, see <a href='https://cloud.tencent.com/document/api/1179/46067#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8'>Region List</a>.
+        <td style='text-align:left;'>Cluster region.
         </td>
     </tr>
     </tbody>
