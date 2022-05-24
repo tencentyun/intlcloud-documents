@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API enables the app backend to promptly monitor (and reject if so configured) group members’ requests to add other users to the group.
+This API enables the app backend to promptly view (and reject if so configured) group members' requests to add other users to the group.
 
 ## Precautions
 
