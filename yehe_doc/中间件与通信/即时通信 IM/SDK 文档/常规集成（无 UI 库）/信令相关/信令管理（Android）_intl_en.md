@@ -52,3 +52,35 @@ In this scenario, the teacher asks students to "raise hands" and then chooses on
 4. The teacher calls the [inviteInGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#ad51059e9f430650da09bcae01f0bb3b8) API to invite one of the students who raise their hands to speak. At this time, the system specifies the "speaking" operation in the custom field `data`. The students receive the [onReceiveNewInvitation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#aecc2341ca87eb58be37fdadf7a58c014) callback.
 5. Based on the `inviteeList` and `data` fields in the [onReceiveNewInvitation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#aecc2341ca87eb58be37fdadf7a58c014) callback, a student determines that he/she is one of the invitees and the operation is speaking. Then the student calls the [accept](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#a4cd3629a0952db7c59186e0c222e17a0) API to speak.
 6. If a student speaks, others can receive the [onInviteeAccepted](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#af4896215b6bf6febda701c100566b04c) callback, and their systems determine that the `data` field is speaking and display the list of students who speak.
+
+
+
+## FAQs
+
+### 1. Can a user be invited by two users at the same time?
+The signaling API ([iOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Signaling_08.html)/[Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html)) provided by the IM SDK does not limit the invite logic. One user can receive multiple signaling invitations at the same time. For such occasions in audio/video call scenarios, the TUICalling component provides a "busy" alert.
+
+### 2. Can I send multiple signaling invitations at the same time?
+Yes. The upper-layer semantics need to distinguish the required operations in the invitations based on the actual business requirements.
+
+### 3. IM SDK provides signaling APIs only for initiating, rejecting/accepting, and canceling invitations. How do I implement the hang-up operation?
+* The invite operation can be considered as a **connection request** by upper-layer semantics.
+* The hang-up operation can be considered as a **hang-up request** by upper-layer semantics.
+
+You can call the **invite** API of the IM SDK to initiate an invitation and indicate whether the current invitation is a **connection or hang-up request** in the custom data of the API. Then IM passes through the invitation to the peer for processing. You can refer to the hang-up logic of the TUICalling ([iOS](https://github.com/TencentCloud/TIMSDK/blob/master/iOS/TUIKit/TUICalling/Source/Model/Impl/TRTCCalling%2BSignal.m)/[Android](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUICalling/tuicalling/src/main/java/com/tencent/liteav/trtccalling/model/TRTCCalling.java)) component.
+
+### 4. What is the handling logic when sending signaling invitations times out?
+* If both the invitation sender and receiver are online, the timeout signaling is triggered by the receiver, and both the sender and receiver receive the `onInvitationTimeout` callback.
+* If the receiver is offline, the timeout signaling is triggered by the sender, who receives the `onInvitationTimeout` callback.
+* Timeout signaling is sent by IM SDK.
+
+### 5. If I go offline and then go online again, do I receive signaling messages that have not timed out?
+If you cold start the app (kill the process and click the app icon again to start the app), there are two situations according to the chat type:
+
+* For a one-to-one chat, the IM SDK automatically synchronizes all signaling messages. If the signaling messages have not timed out, the IM SDK calls back `onReceiveNewInvitation`.
+* For a group chat, the IM SDK automatically synchronizes signaling messages of the last 30 seconds. If some of the signaling messages have not timed out, the IM SDK calls back `onReceiveNewInvitation`.
+If you hot start the app (click the app icon when the app runs in the background), the IM SDK synchronizes all signaling messages that have not timed out and calls back `onReceiveNewInvitation`, no matter whether the current chat is a one-to-one or group chat.
+
+### 6. Is the `inviteID` unique in signaling callbacks?
+Yes. An `inviteID` is a unique identifier of a set of signaling messages (including invitation initiation, acceptance/rejection, and timeout messages).
+
