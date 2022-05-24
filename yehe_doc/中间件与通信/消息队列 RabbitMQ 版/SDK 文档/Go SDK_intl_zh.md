@@ -56,10 +56,10 @@ import (amqp "github.com/rabbitmq/amqp091-go")
 
    | 参数     | 说明                                                         |
    | :------- | :----------------------------------------------------------- |
-   | host     | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+   | host     | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/b69f4d057db7758046aff3598f65378a.png) |
    | username | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-   | password | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-   | vhost    | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+   | password | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![](https://qcloudimg.tencent-cloud.cn/raw/9354cc833c8524d7cd9edb83b1690eb6.png) |
+   | vhost    | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/13cf5fe0796be0e2d4cbcb48354a0b2f.png) |
 
 2. 声明交换机。
    ```go
@@ -95,7 +95,7 @@ import (amqp "github.com/rabbitmq/amqp091-go")
    	})
    failOnError(err, "Failed to publish a message")
    ```
-发布消息到指定队列：
+	 发布消息到指定队列：
    ```go
    // 发布消息到指定的消息队列
    err = ch.Publish(
