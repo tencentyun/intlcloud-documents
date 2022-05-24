@@ -52,7 +52,7 @@
    </tr>
    <tr>
       <td style="text-align:center">The link in a message is invalid or non-compliant.</td>
-      <td>The link is irrelevant to the message content, or the link is invalid./td>
+      <td>The link is irrelevant to the message content, or the link is invalid.</td>
       <td><li>Only fixed-text links are supported so that we can review the link content.</li><br><li>If the link is invalid or cannot be opened, please check whether it is correct first.</li><br><li>If the link content is inconsistent with the template content, the message cannot be sent.</li></td>
    </tr>
    <tr>
@@ -99,6 +99,6 @@
    <tr>
       <td style="text-align:center">Out-of-date content.</td>
       <td>For example, a promotional template designed for an important festival is submitted after the festival has passed.</td>
-      <td>Any festival advertising template (such as May Day or China's National Day) must be submitted for approval ahead of time. Otherwise, the message may not be delivered timely.</td>
+      <td>Any festival advertising template must be submitted for approval ahead of time. Otherwise, the message may not be delivered timely.</td>
    </tr>
 </table>
