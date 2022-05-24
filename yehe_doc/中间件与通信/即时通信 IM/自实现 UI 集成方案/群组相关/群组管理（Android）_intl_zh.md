@@ -110,14 +110,13 @@
 
 >?
 >- 新版 SDK 已全面升级群组类型。新群组类型有**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom）**五个群组类型。旧版群组类型（Public、Private、ChatRoom、AVChatRoom）中的 Private 类型对应新群组类型 Work（好友工作群），ChatRoom 类型对应新群组类型 Meeting（临时会议群）。
->- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">套餐外超量费用</a>。
->- 社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需购买旗舰版套餐包并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
+>- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">超量费用</a>。
+>- 社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需购买旗舰版并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
 >- 好友工作群（Work）、陌生人社交群（Public）默认不支持查看入群前消息记录。如需使用此功能，请参见 [配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322) 指引提交变更申请。
 
 
 ## 群组管理
 [](id:create)
-
 ### 创建群组
 #### 简化版接口
 调用 [createGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af836e4912f668dddf6cc679233cfb0bb) 接口，并指定需要的 `groupType`、`groupID` 和 `groupName` 参数，即可简单创建一个群组。
@@ -158,6 +157,7 @@ V2TIMManager.getGroupManager().createGroup(
 - 参数 `groupName` 用于指定群的描述信息，最长支持30个字节。
 
 [](id:join)
+
 ### 加入群组
 不同类型的群，加群的方法不同， 下面根据加群流程从简单到复杂进行逐一介绍：
 
@@ -176,7 +176,7 @@ V2TIMManager.getGroupManager().createGroup(
 现有的群成员调用 [inviteUserToGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#afd219107653b877e446c149531d65e92) 邀请另一个用户入群，全体群成员（包括邀请者自己）会收到 [onMemberInvited](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#af6119ca3c6eabcc63acbf012f508b1b1) 回调。
 
 #### 场景三：需要审批才能进入群
-陌生人社交群（Public）类似 QQ 中的各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过 [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) 接口调整加群选项（`V2TIMGroupAddOpt`），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
+陌生人社交群（Public）为各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过 [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) 接口调整加群选项（`V2TIMGroupAddOpt`），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
 - V2TIM_GROUP_ADD_FORBID ：禁止任何人加群。
 - V2TIM_GROUP_ADD_AUTH ：需要群主或管理员审批才能加入（默认值）。
 - V2TIM_GROUP_ADD_ANY ：取消审批流程，任何用户都可以加入。
@@ -211,9 +211,11 @@ V2TIMManager.getGroupManager().createGroup(
 调用 [getJoinedGroupList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a05bfd8f7df6bfba718abc96fdad49791) 可以获取已加入的好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）、社群（Community）列表，但直播群（AVChatRoom）不包含在此列表中。
 
 ## 群资料和群设置
+[](id:getGroupsInfo)
 ### 获取群资料
 调用 [getGroupsInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ada614335043d548c11f121500e279154) 可以获取群资料，该接口支持批量获取。您可以一次传入多个 `groupID` 获取多个群的群资料。
 
+[](id:setGroupsInfo)
 ### 修改群资料
 调用 [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) 可以修改群资料。群资料被修改后，全员会收到 [onGroupInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ad5968cdb7ca01e2f7a702e2ca2f648fb) 回调。
 >!
@@ -238,6 +240,7 @@ V2TIMManager.getGroupManager().setGroupInfo(v2TIMGroupInfo, new V2TIMCallback() 
 });
 ```
 
+[](id:setGroupReceiveMessageOpt)
 ### 设置群消息的接收选项
 任何群成员都可以调用 [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a2735427ac22485626aea278a9d465b3e) 接口修改群消息接收选项。群消息接收选项包括：
 - V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_MESSAGE：在线正常接收消息，离线时会有厂商的离线推送通知。
@@ -279,6 +282,7 @@ V2TIMManager.getGroupManager().setGroupInfo(v2TIMGroupInfo, new V2TIMCallback() 
 群属性有任何的更新变化，都会通过 [onGroupAttributeChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#aa390fa93bc73a0262bdddb540227dc45) 回调出来所有的群属性字段。
 
 ##  群成员管理
+[](id:getGroupMemberList)
 ### 获取群成员列表
 调用 [getGroupMemberList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be) 可以获取某个群的群成员列表，该列表中包含了各个群成员的资料信息，例如用户ID（`userID`）、群名片（`nameCard`）、头像（`faceUrl`）、昵称（`nickName`）、进群时间（`joinTime`）等信息。
 一个群中的成员人数可能很多（例如5000+），群成员列表的拉取接口支持过滤器（`filter`）和分页拉取（`nextSeq`）两个高级特性。
@@ -348,10 +352,11 @@ public void getGroupMemberList(long nextSeq) {
 }
 ```
 
-
+[](id:getGroupMembersInfo)
 ### 获取群成员资料
 调用 [getGroupMembersInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#adb08e1c4fa9aff407c7b2678757f66d5) 可以获取群成员资料，该接口支持批量获取，您可以一次传入多个 `userID` 获取多个群成员的资料，从而提升网络传输效率。
 
+[](id:setGroupMemberInfo)
 ### 修改群成员资料
 群主或管理员可以调用 [setGroupMemberInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) 接口修改群成员的群名片（`nameCard`）、 群成员角色（`role`）、禁言时间（`muteUntil`）以及自定义字段等与群成员相关的资料。
 
@@ -376,6 +381,283 @@ public void getGroupMemberList(long nextSeq) {
 群主可以调用 [transferGroupOwner](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ac16d66c8e293c2ee95c7b673e5ad80c4) 把群主转让给其他群成员。
 群主转让后，全员会收到 [onGroupInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ad5968cdb7ca01e2f7a702e2ca2f648fb) 回调，其中 `V2TIMGroupChangeInfo` 的 type 为 `V2TIMGroupChangeInfo.V2TIM_GROUP_INFO_CHANGE_TYPE_OWNER`，value 值为新群主的 UserID。
 
+
+
+## 社群话题
+
+社群是一个由于共同主题而让大家聚集在一起的超大群组，可以在社群下根据不同兴趣创建多个话题。
+社群用来管理群成员。社群下的所有话题共享社群成员，还可以独立收发消息而不相互干扰。
+
+>!  6.2.2363 及以上版本支持
+
+### 社群管理
+#### 创建社群
+
+创建支持话题的社群分两步：
+
+1. 创建 [V2TIMGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupInfo.html) 对象，其中 `groupType` 设置为 `Community`，`isSupportTopic` 设置为 true。
+2. 调用 [createGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a121d53137a38d0fc0bc8a8e0a9c55647) 接口创建群组
+
+代码示例：
+
+```java
+V2TIMGroupInfo v2TIMGroupInfo = new V2TIMGroupInfo();
+v2TIMGroupInfo.setGroupName("This is a Community");
+v2TIMGroupInfo.setGroupType(V2TIMManager.GROUP_TYPE_COMMUNITY);
+v2TIMGroupInfo.setSupportTopic(true);
+V2TIMManager.getGroupManager().createGroup(v2TIMGroupInfo, null, new V2TIMValueCallback<String>() {
+  @Override
+  public void onSuccess(String groupID) {
+    // 创建社群成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+  	// 创建社群失败
+  }
+});
+```
+
+#### 获取加入的社群列表
+
+调用 [getJoinedCommunityList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#acb37b83f357fc7ee04905f8bcd5a5c67)  获取已经加入的支持话题的社群列表。
+
+代码示例：
+
+```java
+V2TIMManager.getGroupManager().getJoinedCommunityList(new V2TIMValueCallback<List<V2TIMGroupInfo>>() {
+  @Override
+  public void onSuccess(List<V2TIMGroupInfo> v2TIMGroupInfos) {
+  	// 获取社群列表成功
+  }
+  @Override
+  public void onError(int code, String desc) {
+  	// 获取社群列表失败
+  }
+});
+
+```
+#### 其他管理接口
+
+社群的其他管理接口以及社群成员的管理接口如下表所示：
+
+<table>
+<tr>
+<th width="15%">分类</th>
+<th width="25%">功能</th>
+<th width="60%">接口</th>
+</tr>
+<tr>
+<td rowspan="5">社群管理</td>
+<td><a href="#join">加入社群</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564">joinGroup</a></td>
+</tr>
+<tr>
+<td><a href="#quit">退出社群</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a6d140dbeb44906de9cb69f69c2ce5919">quitGroup</a></td>
+</tr>
+<tr>
+<td><a href="#dismiss">解散社群</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd0221c0c842a6dcfa0acc657e50caeb">dismissGroup</a></td>
+</tr>
+<tr>
+<td><a href="#getGroupsInfo">获取社群资料</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ada614335043d548c11f121500e279154">getGroupsInfo</a></td>
+</tr>
+<tr>
+<td><a href="#setGroupsInfo">修改社群资料</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad4ceef92975fa00c4a5dddc8f7e1edcf">setGroupInfo</a></td>
+</tr>
+<tr>
+<td rowspan="4">社群成员管理</td>
+<td><a href="#getGroupMemberList">获取社群成员列表</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be">getGroupMemberList</a></td>
+</tr>
+<tr>
+<td><a href="#getGroupMembersInfo">获取社群成员资料</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#adb08e1c4fa9aff407c7b2678757f66d5">getGroupMembersInfo</a></td>
+</tr>
+<tr>
+<td><a href="#setGroupMemberInfo">修改社群成员资料</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b">setGroupMemberInfo</a></td>
+</tr>
+<tr>
+<td><a href="#kick">踢出社群成员</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6da6755c6e0c46e96cb02575074a5333">kickGroupMember</a></td>
+</tr>
+</table>
+
+### 话题管理
+
+#### 创建话题
+创建话题分两步：
+
+1. 创建 [V2TIMTopicInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMTopicInfo.html)  对象
+2. 调用 [createTopicInCommunity](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a52eed1b07ad64a3aa3d3561d8cd147f0) 接口创建话题
+
+代码示例：
+
+```java
+V2TIMTopicInfo topicInfo = new V2TIMTopicInfo();
+topicInfo.setTopicName(topicName);
+topicInfo.setTopicFaceUrl(topicFaceUrl);
+topicInfo.setIntroduction(topicIntroduction);
+topicInfo.setNotification(topicNotification);
+topicInfo.setCustomString(topicCustomString);
+
+// groupID 填支持话题的社群 ID
+V2TIMManager.getGroupManager().createTopicInCommunity(groupID, topicInfo, new V2TIMValueCallback<String>() {
+  @Override
+  public void onSuccess(String topicID) {
+  	// 创建话题成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+  	// 创建话题失败
+  }
+});
+
+```
+#### 删除话题
+调用 [deleteTopicFromCommunity](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a77c4502346e800e43c22a0f15138d699) 接口删除话题。
+代码示例：
+
+```java
+V2TIMManager.getGroupManager().deleteTopicFromCommunity(groupID, topicIDList, new V2TIMValueCallback<List<V2TIMTopicOperationResult>>() {
+  @Override
+  public void onSuccess(List<V2TIMTopicOperationResult> v2TIMTopicOperationResults) {
+  	// 删除话题成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+  	// 删除话题失败
+  }
+});
+```
+
+#### 修改话题信息
+修改话题信息分两步：
+
+1. 创建 [V2TIMTopicInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMTopicInfo.html) 对象，并设置需要修改的字段
+2. 调用 [setTopicInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#acaff2edad6eb208478be9ab06d30035d) 接口修改话题信息
+
+代码示例：
+
+```java
+V2TIMTopicInfo topicInfo = new V2TIMTopicInfo();
+topicInfo.setTopicID(topicID);
+topicInfo.setTopicName(topicName);
+topicInfo.setTopicFaceUrl(topicFaceUrl);
+topicInfo.setIntroduction(topicIntroduction);
+topicInfo.setNotification(topicNotification);
+topicInfo.setCustomString(topicCustomString);
+topicInfo.setDraft(topicDraft);
+topicInfo.setAllMute(false);
+V2TIMManager.getGroupManager().setTopicInfo(topicInfo, new V2TIMCallback() {
+  @Override
+  public void onSuccess() {
+  	// 修改话题信息成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+  	// 修改话题信息失败
+  }
+});
+
+```
+
+修改话题其他信息可参考 [禁言成员](#mute)、[修改话题消息接收选项](#setGroupReceiveMessageOpt)。
+
+#### 获取话题列表
+调用 [getTopicInfoList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a5d2b18a76cff650cb9bb2abf2ef07306) 接口获取话题列表。
+- 当 topicIDList 列表为空时，为获取该社群下的所有话题列表
+- 当 topicIDList 填入指定的话题 ID 时，为获取填入的话题列表
+
+代码示例：
+
+```java
+V2TIMManager.getGroupManager().getTopicInfoList(groupID, topicIDList, new V2TIMValueCallback<List<V2TIMTopicInfoResult>>() {
+  @Override
+  public void onSuccess(List<V2TIMTopicInfoResult> v2TIMTopicInfoResults) {
+		// 获取话题列表成功
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+		// 获取话题列表失败
+  }
+});
+```
+
+#### 监听话题回调
+在 [V2TIMGroupListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html) 中增加了话题相关的回调方法，`onTopicCreated`，`onTopicDeleted`，`onTopicInfoChanged`，用来监听话题事件。 
+
+示例代码：
+
+```java
+V2TIMGroupListener v2TIMGroupListener = new V2TIMGroupListener() {
+  @Override
+  public void onTopicCreated(String groupID, String topicID) {
+  	// 监听话题创建通知
+  }
+
+  @Override
+  public void onTopicDeleted(String groupID, List<String> topicIDList) {
+  	// 监听话题删除通知
+  }
+
+  @Override
+  public void onTopicInfoChanged(String groupID, V2TIMTopicInfo topicInfo) {
+  	// 监听话题信息更新通知
+  }
+};
+// 添加群组监听
+V2TIMManager.getInstance().addGroupListener(v2TIMGroupListener);
+```
+
+### 话题消息
+
+在话题中可以收发消息，并且不同话题之间的消息相互独立。
+
+话题消息的相关接口在核心类 `V2TIMMessageManager` 中，接口及说明如下表所示：
+
+<table>
+<tr>
+<th width="15%">功能</th>
+<th width="40%">接口</th>
+<th width="30%">说明</th>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/36359">发送消息</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a28e01403acd422e53e999f21ec064795">sendMessage</a></td>
+<td>参数 groupID 填为话题 topicID</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/36359">接收消息</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html">V2TIMAdvancedMsgListener</a> 中的 onRecvNewMessage 方法 </td>
+<td>消息中的 groupID 即为话题 topicID</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/36359">标记消息已读</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ac0a65f18d361abde8a0ac16132027e69">markGroupMessageAsRead</a></td>
+<td>参数 groupID 填为话题 topicID</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/36359">获取历史消息</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597">getGroupHistoryMessageList</a></td>
+<td>参数 groupID 填为话题 topicID</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/36359">撤回消息</a></td>
+<td><a href="https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad0dfce6be749165cd90a9ff67a1308b1">revokeMessage</a></td>
+<td>参数 groupID 填为话题 topicID</td>
+</tr>
+</table>
+
+
 ## 常见问题
 
 ### 1. 直播群（AVChatRoom）中途掉线又连接上后，能否继续接收消息？
@@ -388,3 +670,4 @@ public void getGroupMemberList(long nextSeq) {
 
 ### 3. 为什么会议群（Meeting） 中的未读数一直为零?
 临时会议群（Meeting）和直播群（AVChatRoom）分别配合会议和直播的音视频场景，因此这两类群组均不支持未读消息计数。
+
