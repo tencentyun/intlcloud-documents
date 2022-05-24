@@ -27,7 +27,6 @@
    ```shell
    composer.phar install
    ```
-
    或者使用下述命令：
    ```shell
    composer install
@@ -37,7 +36,6 @@
    ```php
    require_once('../vendor/autoload.php');
    ```
-
    完成上述步骤即可创建连接与服务端进行交互。
 
 
@@ -88,12 +86,12 @@ $connection->close();
 | :---------------- | :----------------------------------------------------------- |
 | $exchange_name    | Exchange 名称，在控制台 Exchange 列表获取。                  |
 | $exchange_type    | 类型需与上述 Exchange 的类型保持一致。                         |
-| $host             | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| $host             | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/25fa29cbd4558973eba4645db1942f32.png) |
 | $port             | 集群接入地址中的端口号。                                     |
 | $username         | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| $password         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| $vhost            | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
-| $routing_keys[$x] | 消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的**绑定 Key**列获取。![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| $password         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/3b1372347067abadbe8848c22df665fc.png) |
+| $vhost            | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/135399240e27162af544b20ef0ce54f9.png) |
+| $routing_keys[$x] | 消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的**绑定 Key**列获取。![img](https://qcloudimg.tencent-cloud.cn/raw/2fc168768fdd01bb1476576f54f72c91.png) |
 
 ### 步骤3：消费消息
 
@@ -157,12 +155,12 @@ $connection->close();
 | $exchange_name    | Exchange 名称，可在控制台 Exchange 列表获取。                |
 | $exchange_type    | 类型需与上述exchange的类型保持一致。                         |
 | $queue_name       | Queue名称，可在控制台 Queue 列表获取。                       |
-| $host             | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| $host             | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/8e032a165ed6b94548d77a4358d5dd04.png) |
 | $port             | 集群接入地址中的端口号。                                     |
 | $username         | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| $password         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| $vhost            | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
-| $routing_keys[$x] | 消息队列支持的routing key。消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的**绑定 Key**列获取。![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| $password         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/6322cc8d7f251a78c906ea53be692af6.png) |
+| $vhost            | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/90998c05bce789c1a73b411e75da69b1.png) |
+| $routing_keys[$x] | 消息队列支持的routing key。消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的**绑定 Key**列获取。![img](https://qcloudimg.tencent-cloud.cn/raw/a73031e2ed05980fdc89bcde13d84ba4.png) |
 
 
 
@@ -170,7 +168,7 @@ $connection->close();
 
 如果您想确认消息是否成功发送至 TDMQ RabbitMQ 版，可以在控制台 **[集群管理](https://console.intl.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面查看接入的消费者情况。
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/808280beb9a7c350af07fc111c13d7ed.png)
 
 
 
