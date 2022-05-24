@@ -122,7 +122,7 @@
 <tr>
 <td>444<br>PullImageFailed</td>
 <td>拉取镜像失败。</td>
-<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
+<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
 </tr>
 <tr>
 <td>445<br>ContainerInitError</td>
@@ -137,7 +137,7 @@
 <tr>
 <td>447<br>PullImageTimeOut</td>
 <td>拉取镜像超时</td>
-<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像或者调大 <a href="https://intl.cloud.tencent.com/document/product/583/19805">初始化超时时间</a> 后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
+<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像或者调大 <a href="https://intl.cloud.tencent.com/document/product/583/19805">初始化超时时间</a> 后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
 </tr>
 <tr>
 <td>449<br>InsufficientResources</td>
@@ -155,7 +155,7 @@
 <tr>
 <td>500<br>InternalError</td>
 <td>内部错误。</td>
-<td>内部错误，请稍后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
+<td>内部错误，请稍后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
 </tr>
 </tbody>
 </table>
