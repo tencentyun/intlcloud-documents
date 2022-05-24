@@ -1,8 +1,8 @@
 ## API Description
 
-This API is used by the app backend to monitor users' one-to-one messages in real time, including:
+This API is used by the app backend to operate users' one-to-one messages in real time, including:
 - Records one-to-one messages sent in real time, for example, by recording a log or synchronizing the messages to other systems.
-- Blocks users' requests to send one-to-one messages of any type, such as text, image, and custom messages.
+- Blocks users' requests to send illegal messages of any type, such as text, image, and custom messages.
 - Modifies users' message content, for example, by filtering out restricted words or adding custom information defined by the app. Currently, this API cannot modify the content of rich media messages such as audio, image, file, and video, but can change these rich media messages to text or custom messages.
 
 ## Notes
