@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend can use this callback to monitor users who quit groups in real time, including recording users’ quitting information (for example, recording a log or synchronizing the quitting information to other systems).
+The app backend can use this callback to view users who quit groups in real time, including recording users' quitting information (for example, recording a log or synchronizing the quitting information to other systems).
 
 ## Precautions
 
