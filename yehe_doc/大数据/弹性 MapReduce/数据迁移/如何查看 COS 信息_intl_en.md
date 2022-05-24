@@ -2,7 +2,7 @@ Log in to the [COS console](https://console.cloud.tencent.com/cos5) and select *
 - If you don't have a bucket, you can select **Create Bucket** to create one.
 ![](https://main.qcloudimg.com/raw/fa538c7bbc01aad17564958354f9cc6f.png)
 
-- If you already have a bucket, you can select it and view its endpoint.
+- If you already have a bucket, you can select it and view its access endpoint.
 ![](https://qcloudimg.tencent-cloud.cn/raw/1a6ce278db7cdd3d9be4a18b8f436cff.png)
 
 - To query the key, click **API Key** on the left sidebar.

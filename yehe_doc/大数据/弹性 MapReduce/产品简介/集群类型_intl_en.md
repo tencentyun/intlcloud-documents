@@ -1,4 +1,4 @@
-EMR supports six cluster types and their respective use cases and defines five node types. Different cluster types and their respective use cases support different node types, numbers of deployed nodes, and deployed services. You can select the most appropriate cluster type and use case based on your business needs when creating a cluster.
+EMR supports six cluster types and their respective use cases and defines five node types. Different cluster types and their respective use cases support different node types, number of deployed nodes, and deployed services. You can select the most appropriate cluster type and use case based on your business needs when creating a cluster.
 
 ## Cluster Type Description
 ### Hadoop cluster

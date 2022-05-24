@@ -29,9 +29,9 @@
 </tr>	
 <tr>
 <td>Added support for container-based EMR clusters.</td>
-<td>Added support for Spark deployment based on EKS in the Beijing, Shanghai, Guangzhou, and Nanjing regions.</td>
+<td>Added support for Spark deployment based on EKS in Beijing, Shanghai, Guangzhou, and Nanjing regions.</td>
 <td>2022-04-12</td>
-<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">Overview</a></td>
+<td>-</td>
 </tr>	
 </tbody></table>
 
@@ -682,7 +682,7 @@ If you encounter any security issues related to the operating system of an exist
 </tr>
 <tr>
 <td>Added support for log search.</td>
-<td>Added support for filtering by log file, node IP, and time range, and viewing cluster log content. <strong>(Currently, this feature is supported only in the Guangzhou region.)</strong></td><td>2020-03</td>
+<td>Added support for filtering by log file, node IP, and time range, and viewing cluster log content. <strong>(Currently, this feature is supported only in Guangzhou region.)</strong></td><td>2020-03</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/35372" target="_blank">Log Search</a></td>
 </tr>
 <tr>
@@ -715,7 +715,7 @@ If you encounter any security issues related to the operating system of an exist
 </tr>
 <tr>
 <td>Released the international version.</td>
-<td>Released the international version in the Beijing, Shanghai, Guangzhou, and Mumbai regions.</td><td>2020-02</td>
+<td>Released the international version in Beijing, Shanghai, Guangzhou, and Mumbai regions.</td><td>2020-02</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -741,8 +741,8 @@ If you encounter any security issues related to the operating system of an exist
 <td>-</td>
 </tr>
 <tr>
-<td>Released EMR in the Nanjing region.</td>
-<td>Released EMR in the Nanjing region.</td><td>2020-01</td>
+<td>Released EMR in Nanjing region.</td>
+<td>Released EMR in Nanjing region.</td><td>2020-01</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -774,7 +774,7 @@ If you encounter any security issues related to the operating system of an exist
 </tr>
 <tr>
 <td>Released the AMD model.</td>
-<td>Released the AMD Standard SA2 model in the Beijing, Shanghai, and Guangzhou regions.</td><td>2019-12</td>
+<td>Released the AMD Standard SA2 model in Beijing, Shanghai, and Guangzhou regions.</td><td>2019-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/213/11518" target="_blank">Instance Types</a></td>
 </tr>
 <tr>
@@ -820,8 +820,8 @@ If you encounter any security issues related to the operating system of an exist
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">Setting Tag</a></td>
 </tr>
 <tr>
-<td>Released new models in the Beijing, Shanghai, and Guangzhou regions.</td>
-<td>Released the S5, M5, C3, and CN3 models in the Beijing, Shanghai, and Guangzhou regions.</td><td>2019-11</td>
+<td>Released new models in Beijing, Shanghai, and Guangzhou regions.</td>
+<td>Released the S5, M5, C3, and CN3 models in Beijing, Shanghai, and Guangzhou regions.</td><td>2019-11</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -930,7 +930,7 @@ If you encounter any security issues related to the operating system of an exist
 </tr>
 <tr>
 <td>Released new models.</td>
-<td>Released the Standard S4 and Standard Network-Optimized SN3ne models in the Beijing, Shanghai, and Guangzhou regions.</td><td>2019-07</td>
+<td>Released the Standard S4 and Standard Network-Optimized SN3ne models in Beijing, Shanghai, and Guangzhou regions.</td><td>2019-07</td>
 <td>-</td>
 </tr>
 <tr>
@@ -1047,7 +1047,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody><tr>
 <td>Released new models.</td>
-<td>Released the I3 model in the Beijing, Shanghai, and Guangzhou regions. This model is a CVM allowlist model, and you can purchase it only if you are in the I3 allowlist.</td>
+<td>Released the I3 model in Beijing, Shanghai, and Guangzhou regions. This model is included in the CVM allowlist, and you can purchase it only if you are in the I3 allowlist.</td>
 <td>2019-03</td>
 <td>-</td>
 </tr>

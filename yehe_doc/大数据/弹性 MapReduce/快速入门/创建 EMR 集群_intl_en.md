@@ -7,7 +7,7 @@ Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **C
 ### 1. Software configuration
 **Region**: A region is the physical location of an IDC. Currently supported regions include Guangzhou, Shanghai, Beijing, Singapore, Silicon Valley, Chengdu, Nanjing, and Mumbai. Tencent Cloud products in different regions cannot communicate with each other over a private network.
 
-- **Cluster Type**: There are six types of EMR clusters, namely, Hadoop cluster, ClickHouse cluster, Druid cluster, Doris cluster, Kafka cluster, and StarRocks cluster. You can choose one to deploy as needed.
+**Cluster Type**: There are six types of EMR clusters, namely, Hadoop cluster, ClickHouse cluster, Druid cluster, Doris cluster, Kafka cluster, and StarRocks cluster. You can choose one to deploy as needed.
 **Use Cases**: Hadoop clusters support five use cases, namely, the default use case, ZooKeeper, HBase, Presto, and Kudu. You can choose one to deploy as needed.
 **Product Version and Components to Deploy**: EMR recommends some commonly used combinations of components for Hadoop. You can also combine the components based on your needs.
 **Kerberos Secure Cluster**: It specifies whether to enable Kerberos authentication for the cluster. This feature is not required for individual users and disabled by default.
@@ -18,7 +18,7 @@ Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **C
 **Billing Mode**: Pay-as-you-go.
 
 - Pay-as-you-go: You are charged by usage duration of the cluster. This billing mode requires identity verification and will freeze the amount of one hour's usage fees when the cluster is created (vouchers cannot be used here). After this cluster is terminated, the frozen amount will be refunded.
-**AZ**: Different AZs in the same region support different models and specifications. Tencent Cloud products in different regions cannot communicate with each other over a private network. The AZ cannot be changed after purchase. We recommend you select a latest AZ close to the region of your business data so as to reduce the access latency and increase the download speed.
+**AZ**: Different AZs in the same region support different models and specifications. Tencent Cloud products in different regions cannot communicate with each other over a private network. The AZ cannot be changed after purchase. We recommend you select an AZ closest to the region of your business data so as to reduce the access latency and increase the download speed.
 **Cluster Network**: To ensure the security of the EMR cluster, all nodes of the cluster are placed in a VPC; therefore, you need to set up a VPC before you can successfully create the EMR cluster.
 - **Security Group**: The security group has a firewall feature used to set the network access control of the CVM instance. If there is no security group, EMR will automatically create one for you; otherwise, you can choose to use an existing one directly. If the number of security groups has reached the upper limit and new ones cannot be created, you can delete some obsolete ones after checking the security groups that are being used.
 - Create Security Group: EMR will create a security group for you and open ports 22 and 30001 and the necessary IP range for communication over the private network.

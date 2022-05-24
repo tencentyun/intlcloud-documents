@@ -1,15 +1,15 @@
 ## StarRocks Overview
-- StarRocks is a new-gen super fast MPP database for nearly all data analysis scenarios.
-- StarRocks leverages the strengths of relational Online Analytical Processing (OLAP) databases and distributed storage systems. Through architectural upgrades and functional optimizations, it has been developed into an enterprise-level product.
-- StarRocks is committed to creating a super fast and unified analysis experience to meet your needs in diversified data analysis scenarios. It supports multiple data models (detail, aggregation, and update) and various data import methods (batch and streaming) for up to 10,000 columns of data. It can be integrated with and connected to different existing systems, such as Spark, Flink, Hive, and Elasticsearch.
-- StarRocks is compatible with the MySQL protocol, so you can use the MySQL client and common BI tools to connect to it for data analysis.
-- StarRocks uses a distributed architecture to shard data tables horizontally and store them in multiple replicas. The cluster is elastically scalable and supports 10 PB-level data analysis, MPP frameworks, concurrently accelerated computing, multi-replica, and elastic fault tolerance.
-- StarRocks adopts a relational model, strong data typing, and columnar storage engine, which help reduce read-write amplification through encoding and compression technologies. It uses vectorized query execution to fully unleash the power of parallel computing on multi-core CPUs and greatly improve the query performance.
+- StarRocks is a new-generation and high-speed MPP database for nearly all data analytics scenarios.
+- StarRocks takes advantage of the relational Online Analytical Processing (OLAP) database and distributed storage system. Through architectural upgrades and functional optimization, StarRocks has developed into an enterprise-level product.
+- StarRocks is committed to accommodating multiple data analysis scenarios for enterprise users.  It supports multiple data warehouse schemas (flat tables, pre-aggregations, star or snowflake schema) and various data import methods (batch and streaming) for up to 10,000 columns of data. It allows direct access to data from Hive, MySQL and Elasticsearch without importing.
+- StarRocks is compatible with the MySQL protocol. You can use the MySQL client and common Business Intelligence (BI) tools to connect to StarRocks for data analysis.
+- StarRocks uses a distributed architecture to divide the table horizontally and store it in multiple replications. The clusters are highly scalable and therefore support 10PB-level data analysis, Massively Parallel Processing (MPP), and data replication and elastic fault tolerance.
+- Leveraging a relational model, strong data typing, and a columnar storage engine, StarRocks reduces read-write amplification through encoding and compression techniques. Using vectorized query execution, it fully unleashes the power of parallel computing on multicore CPUs, therefore significantly improves query performance.
 
 ## StarRocks Features
 StarRocks integrates the design ideas of MPP databases and distributed systems into its architecture and has the following features:
 ### Simplified architecture
-StarRocks performs the specific execution of SQL through the MPP computing framework. The framework itself can make full use of the computing power of multiple nodes and execute the entire query in parallel, so as to deliver an excellent interactive analysis experience. StarRocks does not rely on any external systems. Its simple architecture makes it easier to deploy, maintain, and scale out. Its minimalist architectural design reduces its complexity and maintenance cost and increases its reliability and scalability. Admins only need to focus on the StarRocks system itself, with no need to learn and manage other external systems.
+StarRocks performs the specific execution of SQL through the MPP computing framework. The framework itself can make full use of the computing power of multiple nodes and execute the entire query in parallel, so as to deliver an excellent interactive analysis experience. StarRocks does not rely on any external systems. Its clean architecture makes it easier to deploy, maintain, and scale out. Its minimalist architectural design reduces its complexity and maintenance cost and increases its reliability and scalability. Admins only need to focus on the StarRocks system itself, with no need to learn and manage other external systems.
 
 ### Native vectorized SQL engine
 The computing layer of StarRocks fully adopts the vectorization technology to systematically optimize all operators, functions, scanning, filtering, and import and export modules. Through the columnar memory layout and the SIMD instruction set adapted to CPU, it makes full use of the parallel computing power of CPU, achieving sub-second query returns in multidimensional analyses.
@@ -22,8 +22,8 @@ StarRocks enables you to perform federated queries by using external tables. Cur
 
 ### Efficient update
 StarRocks supports multiple data models. Among them, the update model can perform UPSERT/DELETE operations according to the primary key and achieve efficient query during concurrent updates through storage and indexing optimization. This better serves real-time data warehouses.
-### Smart materialized view
-StarRocks supports smart materialized views. You can create views and generate preaggregated tables to speed up aggregate queries. Such views automatically run the aggregation when data is imported, keeping it consistent with the original table. When querying, you don't need to specify a materialized view, because StarRocks can automatically select the best one to satisfy the query.
+### Intelligent materialized view
+StarRocks supports intelligent materialized views. Users can create materialized views and generate pre-aggregated tables to speed up aggregate queries. StarRocks' materialized view automatically runs the aggregation when data is imported, keeping it consistent with the original table. When querying, users do not need to specify a materialized view, StarRocks can automatically select the best-materialized view to satisfy the query.
 ### Standard SQL
 StarRocks supports standard SQL syntax, including aggregation, join, sorting, window functions, and custom functions. It also fully supports 22 SQL queries from TPC-H and 99 SQL queries from TPC-DS. In addition, it is compatible with the MySQL protocol, so you can use various existing client tools and BI software programs to access StarRocks and perform data analysis with simple drag-and-drops in StarRocks.
 ### Unified batch processing and streaming
