@@ -43,7 +43,7 @@
 </thead>
 <tbody><tr>
 <td align="left">host</td>
-<td align="left">集群接入地址，在<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。<img src="https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png" alt="img"></td>
+<td align="left">集群接入地址，在<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/cefeaa6929d8c0b5565739924a70d499.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">port</td>
@@ -55,11 +55,11 @@
 </tr>
 <tr>
 <td align="left">password</td>
-<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt="img"></td>
+<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/5334afbe5e78680da2f7755c26d63852.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">vhost</td>
-<td align="left">Vhost 名称，在控制台 Vhost 页面复制，格式是<strong>“集群 ID + | + vhost 名称”</strong>。<img src="https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png" alt="img"></td>
+<td align="left">Vhost 名称，在控制台 Vhost 页面复制，格式是<strong>“集群 ID + | + vhost 名称”</strong>。<img src="https://qcloudimg.tencent-cloud.cn/raw/3838fa2613ceafce1585a9502962ddb0.png" alt="img"></td>
 </tr>
 </tbody></table>
 2. 发送消息。
@@ -117,7 +117,7 @@ channel.onError([&handler](const char *message) {
 </thead>
 <tbody><tr>
 <td align="left">host</td>
-<td align="left">集群接入地址，在<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。<img src="https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png" alt="img"></td>
+<td align="left">集群接入地址，在<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/580f962992ff34fbafa7a647d010c3f0.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">port</td>
@@ -129,11 +129,11 @@ channel.onError([&handler](const char *message) {
 </tr>
 <tr>
 <td align="left">password</td>
-<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt="img"></td>
+<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/894511a1bb5f3a4dd895ee6cc78735a3.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">vhost</td>
-<td align="left">Vhost 名称，在控制台 Vhost 页面复制，格式是<strong>“集群 ID + | + vhost 名称”</strong>。<img src="https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png" alt="img"></td>
+<td align="left">Vhost 名称，在控制台 Vhost 页面复制，格式是<strong>“集群 ID + | + vhost 名称”</strong>。<img src="https://qcloudimg.tencent-cloud.cn/raw/4b6f6629c0f12e3ce09ad9949c5a11d7.png" alt="img"></td>
 </tr>
 </tbody></table>
 2. 声明交换机、消息队列，并将消息队列绑定到交换机
