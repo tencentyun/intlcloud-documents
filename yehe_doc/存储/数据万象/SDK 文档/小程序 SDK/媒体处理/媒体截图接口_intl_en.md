@@ -2,11 +2,11 @@
 
 This document provides an overview of APIs and SDK code samples for media screenshot.
 
->! The COS JavaScript SDK version must be at least v1.3.1.
+>! The COS Mini Program SDK version must be at least v1.1.1.
 
 | API | Operation |  Description |
 | ------------------------------------------------------------ | --------------------------|---------------------------- |
-| [GetSnapshot](https://intl.cloud.tencent.com/document/product/436/6224) | Querying screenshot	 |   Query the screenshot of media file at some time point     |
+|   [GetSnapshot](https://intl.cloud.tencent.com/document/product/436/46912)     |  Querying screenshot	 |   Query the screenshot of media file at some time point     |
 
 
 ## Querying Screenshot
