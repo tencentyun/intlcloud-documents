@@ -56,10 +56,10 @@ After the import, you can use the client in your project.
 
    | Parameter | Description |
    | :------- | :----------------------------------------------------------- |
-   | host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+   | host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/b69f4d057db7758046aff3598f65378a.png) |
    | username          | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-   | password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-   | vhost    | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+   | password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![](https://qcloudimg.tencent-cloud.cn/raw/9354cc833c8524d7cd9edb83b1690eb6.png) |
+   | vhost    | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/13cf5fe0796be0e2d4cbcb48354a0b2f.png) |
 
 2. Declare the exchange.
    ```go
@@ -95,7 +95,7 @@ After the import, you can use the client in your project.
    	})
    failOnError(err, "Failed to publish a message")
    ```
-Publish messages to the specified queue:
+	 Publish messages to the specified queue:
    ```go
    // Publish messages to the specified message queue
    err = ch.Publish(
