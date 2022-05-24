@@ -61,12 +61,12 @@ connection.close()
 | Parameter | Description |
 | :-------------- | :----------------------------------------------------------- |
 | rolename        | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| eyJr***          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| eyJr***          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/4888f178ea288d44685b8d7347cbcf70.png) |
+| host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/cd3184b4da945fadd138ac1651485d38.png) |
 | port              | Cluster access port, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. |
-| virtual_host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| virtual_host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/4063f65f2eb4ca14abe38ae939a3ac26.png) |
 | direct_exchange        | Exchange name, which can be obtained from the exchange list in the console.                  |
-| routingKeys     | Message routing rule, which can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| routingKeys     | Message routing rule, which can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/63ddc4564efd2b741b12bee97481dc6c.png) |
 
 ### Step 3. Consume messages
 
@@ -123,18 +123,18 @@ if __name__ == '__main__':
 | Parameter | Description |
 | :-------------- | :----------------------------------------------------------- |
 | rolename        | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| eyJr***          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| eyJr***          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/32045def87e6ebf4142b19718f2cc9e7.png) |
+| host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/2d915273c7157f67ac6cdcfe0993a7ad.png) |
 | port              | Cluster access port, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. |
-| virtual_host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| virtual_host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/ae7071f7a102ff6553b6332cd19aa7df.png) |
 | direct_exchange        | Exchange name, which can be obtained from the exchange list in the console.                  |
 | route_queue1      | Queue name, which can be obtained from the queue list in the console.                         |
-| routingKey     | Message routing rule, which can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| routingKey     | Message routing rule, which can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/7f5f401a9bd32a1ba06c17e50e8c4690.png) |
 
 ### Step 4. View messages
 
 To check whether messages are sent to TDMQ for RabbitMQ successfully, view the connected consumer status on the **[Cluster](https://console.cloud.tencent.com/tdmq/rabbit-cluster)** > **Queue** page in the console.
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/787f5f8df79d4ba86ddaf2a9223a93bb.png)
 
 >? For the complete sample code and other use cases, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-python-sdk-demo.zip) or [RabbitMQ Tutorials](https://www.rabbitmq.com/getstarted.html).
