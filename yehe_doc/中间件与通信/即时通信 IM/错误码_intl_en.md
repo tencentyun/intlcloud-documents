@@ -233,7 +233,6 @@
 | 30002 | SDKAppID mismatch. |
 | 30003 | The requested user account does not exist. |
 | 30004 | The request requires the app admin permission. |
-| 30005 | The relationship chain field contains sensitive words. |
 | 30006 | Internal server error. Please try again. |
 | 30007 | Network timeout. Please try again later. |
 | 30008 | A write conflict has occurred due to concurrent writes. You are advised to use batch processing. |
