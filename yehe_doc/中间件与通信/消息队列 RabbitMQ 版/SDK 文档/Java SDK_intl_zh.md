@@ -75,10 +75,10 @@ public class MessageProducer {
 | 参数                   | 说明                                                         |
 | :--------------------- | :----------------------------------------------------------- |
 | EXCHANGE_NAME          | Exchange 名称，在控制台 Exchange 列表获取。                  |
-| factory.setUri         | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
-| factory.setVirtualHost | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| factory.setUri         | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/f2d5228d4dc7c9584f5382e55e575265.png) |
+| factory.setVirtualHost | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/87ac99b72fea26c833f35e0f695b316c.png) |
 | factory.setUsername    | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| factory.setPassword    | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| factory.setPassword    | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/f986acaebeb6ee05ea4d612cd8c63288.png) |
 
 ### 步骤3：消费消息
 
@@ -152,16 +152,16 @@ public class MessageConsumer1 {
 | :--------------------- | :----------------------------------------------------------- |
 | QUEUE_NAME             | Queue名称，在控制台 Queue 列表获取。                         |
 | EXCHANGE_NAME          | Exchange 名称，在控制台 Exchange 列表获取。                  |
-| factory.setUri         | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
-| factory.setVirtualHost | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| factory.setUri         | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/1effad008e7ef43ddedb91fb5c943528.png) |
+| factory.setVirtualHost | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/d5a6d52160d5bcd1d852313a3595f137.png) |
 | factory.setUsername    | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| factory.setPassword    | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| factory.setPassword    | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/c64e418997a7e669741b57ba807b4aa8.png) |
 
 ### 步骤4：查询消息
 
 如果您想确认消息是否成功发送至 TDMQ RabbitMQ 版，可以在控制台 **[集群管理](https://console.intl.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面查看接入的消费者情况。
 
-![](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/959b4c46aec3e06076e0864224b979df.png)
 
 >?上述是基于 RabbitMQ 的发布订阅模型的一个简单示例。其他示例可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-java-sdk-demo.zip) 或 [RabbitMQ 官网](https://www.rabbitmq.com/getstarted.html) 实例。
 
