@@ -75,10 +75,10 @@ public class MessageProducer {
 | Parameter                     | Description                                                         |
 | :--------------------- | :----------------------------------------------------------- |
 | EXCHANGE_NAME    | Exchange name, which can be obtained from the exchange list in the console.                  |
-| factory.setUri              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
-| factory.setVirtualHost  | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| factory.setUri              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/f2d5228d4dc7c9584f5382e55e575265.png) |
+| factory.setVirtualHost  | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/87ac99b72fea26c833f35e0f695b316c.png) |
 | factory.setUsername        | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| factory.setPassword          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| factory.setPassword          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/f986acaebeb6ee05ea4d612cd8c63288.png) |
 
 ### Step 3. Consume messages
 
@@ -152,16 +152,16 @@ public class MessageConsumer1 {
 | :--------------------- | :----------------------------------------------------------- |
 | QUEUE_NAME      | Queue name, which can be obtained from the queue list in the console.                         |
 | EXCHANGE_NAME    | Exchange name, which can be obtained from the exchange list in the console.                  |
-| factory.setUri              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
-| factory.setVirtualHost  | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| factory.setUri              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/1effad008e7ef43ddedb91fb5c943528.png) |
+| factory.setVirtualHost  | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/d5a6d52160d5bcd1d852313a3595f137.png) |
 | factory.setUsername        | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| factory.setPassword          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
+| factory.setPassword          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/c64e418997a7e669741b57ba807b4aa8.png) |
 
 ### Step 4. Query messages
 
 To check whether messages are sent to TDMQ for RabbitMQ successfully, view the connected consumer status on the **[Cluster](https://console.cloud.tencent.com/tdmq/rabbit-cluster)** > **Queue** page in the console.
 
-![](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/959b4c46aec3e06076e0864224b979df.png)
 
 >? Above is a sample based on the pub/sub pattern of RabbitMQ. For more samples, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-java-sdk-demo.zip) or [RabbitMQ Tutorials](https://www.rabbitmq.com/getstarted.html).
 
