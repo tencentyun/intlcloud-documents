@@ -116,8 +116,8 @@ The following table describes the features and limitations of each group type:
 >
 >- Group types are upgraded in the new SDK version and they are **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, **community group (Community)**, and **audio-video group (AVChatRoom)**. Private group (Private) and chat room (ChatRoom) in earlier versions (which have Public, Private, ChatRoom, and AVChatRoom groups) correspond to work group (Work) and meeting group (Meeting) in the new version respectively.
 >- In the Pro Edition or Flagship Edition SDKAppID, the maximum net increase in group count per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to <a href="https://intl.cloud.tencent.com/document/product/1047/34350"> pay for usage not covered by the free quota</a>.
->- Community groups (Community) are supported only in native SDK 5.8.1668 Enhanced Edition or higher and web SDK 2.17.0 or later. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://cloud.tencent.com/document/product/269/3916).
->- Work groups (Work) and public groups (Public) do not allow group members to view messages sent before they join the group. To enable the feature, submit a change request by referring to [Configuration Change Ticket](https://cloud.tencent.com/document/product/269/3916).
+>- Community groups (Community) are supported only in native SDK 5.8.1668 Enhanced Edition or higher and web SDK 2.17.0 or later. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/44322).
+>- Work groups (Work) and public groups (Public) do not allow group members to view messages sent before they join the group. To enable the feature, submit a change request by referring to [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322).
 
 
 ## Group Management
