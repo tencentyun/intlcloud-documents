@@ -96,10 +96,10 @@ All messages are subject to the frequency limit of 40 messages per second. You c
 #### Offline group messages are processed as follows:
 1. User A calls `sendMessage` to send messages to group C when user B is offline.
     1.1 Group C is added to the recent contacts of user B, with up to 100 messages cached.
-    1.2 A user updates the message information of the group, including the latest group message seq.
+    1.2 A user updates the message information of the group, including the latest group message SEQ.
     1.3 Messages are stored on the roaming server for 7 days.
 2. User B calls the `login` API to log in to IM.
-3. The SDK automatically pulls the seq information of all group messages, including the latest message seq and unread message count.
+3. The SDK automatically pulls the SEQ of all group messages, including the latest message SEQ and unread message count.
 4. The SDK automatically pulls recent contacts and outputs through the `OnNewMessage` API.
 5. Users are notified through the `OnRefresh` API when group message synchronization is completed.
 6. Users call `getMessage`, and the SDK automatically pulls the messages from the roaming server.
