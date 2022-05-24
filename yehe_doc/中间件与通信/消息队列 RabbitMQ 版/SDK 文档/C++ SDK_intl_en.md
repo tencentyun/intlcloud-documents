@@ -43,7 +43,7 @@ This document describes how to use open-source SDK to send and receive messages 
 </thead>
 <tbody><tr>
 <td align="left">String</td>
-<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Access Address</strong> in the “Operation” column on the <strong>Cluster</strong> page. <img src="https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png" alt="img"></td>
+<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Access Address</strong> in the “Operation” column on the <strong>Cluster</strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/cefeaa6929d8c0b5565739924a70d499.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">port</td>
@@ -55,11 +55,11 @@ This document describes how to use open-source SDK to send and receive messages 
 </tr>
 <tr>
 <td align="left">password</td>
-<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt=""></td>
+<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/5334afbe5e78680da2f7755c26d63852.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">vhost</td>
-<td align="left">Vhost name in the format of <strong>“cluster ID + | + vhost name”</strong>. <img src="https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png" alt="img"></td>
+<td align="left">Vhost name in the format of <strong>“cluster ID + | + vhost name”</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/3838fa2613ceafce1585a9502962ddb0.png" alt="img"></td>
 </tr>
 </tbody></table>
 2. Send messages.
@@ -117,7 +117,7 @@ channel.onError([&handler](const char *message) {
 </thead>
 <tbody><tr>
 <td align="left">String</td>
-<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Access Address</strong> in the “Operation” column on the <strong>Cluster</strong> page. <img src="https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png" alt="img"></td>
+<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Access Address</strong> in the “Operation” column on the <strong>Cluster</strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/580f962992ff34fbafa7a647d010c3f0.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">port</td>
@@ -129,11 +129,11 @@ channel.onError([&handler](const char *message) {
 </tr>
 <tr>
 <td align="left">password</td>
-<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png" alt=""></td>
+<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/894511a1bb5f3a4dd895ee6cc78735a3.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">vhost</td>
-<td align="left">Vhost name in the format of <strong>“cluster ID + | + vhost name”</strong>. <img src="https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png" alt="img"></td>
+<td align="left">Vhost name in the format of <strong>“cluster ID + | + vhost name”</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/4b6f6629c0f12e3ce09ad9949c5a11d7.png" alt="img"></td>
 </tr>
 </tbody></table>
 2. Declare an exchange and a message queue and bind them.
@@ -167,7 +167,7 @@ channel.bindQueue(exchange_name, queue_name, routing_key);
 <td align="left">The routing key supported by the message queue.</td>
 </tr>
 </tbody></table>
-#### 2. Subscribe to messages
+3. Subscribe to messages
 <dx-codeblock>
 :::  c++
 // Subscribe to the message
