@@ -14,18 +14,18 @@ The format of TIMMsgElement is defined as follows:
 | MsgType | String | The type of the message element. Currently, these message objects are supported: TIMTextElem (text message), TIMLocationElem (location message), TIMFaceElem (emoji message), TIMCustomElem (custom message), TIMSoundElem (audio message), TIMImageElem (image message), TIMFileElem (file message), and TIMVideoFileElem (video message). |
 | MsgContent | Object | The content of the message element. Each MsgType has its own MsgContent format. For more information, see below. |
 
-The following table lists the message types (MsgType) that are currently supported:
+The following table lists the supported message types (MsgType):
 
 | Value of MsgType | Type |
 |---------|---------|
-| TIMTextElem | Text |
-| TIMLocationElem | Geographic location |
+| TIMTextElem | Text message |
+| TIMLocationElem | Geographic location message|
 | TIMFaceElem | Emoji |
-| TIMCustomElem | Custom. When the receiver is an iOS device and the app is working in the background, this type of message provides fields other than text to APNs. A combined message can contain only one TIMCustomElem custom message element. |
-| TIMSoundElem | Voice |
+| TIMCustomElem | Custom message. When the receiver is an iOS device and the app is working in the background, this type of message provides fields other than text to APNs. A combined message can contain only one TIMCustomElem custom message element. |
+| TIMSoundElem | Audio message |
 | TIMImageElem | Image |
 | TIMFileElem | File |
-| TIMVideoFileElem | Video |
+| TIMVideoFileElem | Video message |
 
 >!Messages of the above types can be sent by server-side integrated RESTful APIs.
 
@@ -89,7 +89,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 When the receiver is an iOS or Android device and the app is working in the background, the offline push text is **[Face]** for the English version.
 
 
-<dx-alert infotype="explain" title="description">
+<dx-alert infotype="explain" title="Description">
 When a message contains only one `TIMCustomElem` custom message element, if both the `Desc` and `OfflinePushInfo.Desc` fields are not entered, the offline push of the message will not be received, unless the `OfflinePushInfo.Desc` field is entered.
 </dx-alert>
 
@@ -119,11 +119,11 @@ When a message contains only one `TIMCustomElem` custom message element, if both
 
 When the receiver is an iOS or Android device and the app is working in the background, the `Desc` field is delivered as push text, the `Ext` field is delivered as an `Ext` key value in APNs request packet payloads, and the `Data` field is not delivered as a payload field by APNs. Note that a combined message can contain only one TIMCustomElem custom message element.
 
-### Voice message element
+### Audio message element
 
->!To send a voice message through the server-side RESTful API, you need to enter the `Url`, `UUID`, and `Download_Flag` fields. Make sure that the voice can be downloaded via the `Url` and the `UUID` is a globally unique string value, usually the MD5 value of the voice file. The message recipient can obtain the specified `UUID` through `V2TIMSoundElem.getUUID()` and the app can use the `UUID` to identify the voice. `Download_Flag` must be set to `2`.
+>!To send an audio message through the server-side RESTful API, you need to enter the `Url`, `UUID`, and `Download_Flag` fields. Make sure that the audio can be downloaded via the `Url` and the `UUID` is a globally unique string value, usually the MD5 value of the audio file. The message recipient can obtain the specified `UUID` through `V2TIMSoundElem.getUUID()` and the app can use the `UUID` to identify the audio. `Download_Flag` must be set to `2`.
 
-4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send voice message elements in the following format:
+4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -139,20 +139,20 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 | Field | Type | Description |
 |---------|---------|---------|
-| Url | String | Voice download URL, through which the voice content can be downloaded directly. |
-| UUID | String | Unique identifier of the voice, key value used by the client to index the voice |
-| Size | Number | Voice data size, in bytes. |
-| Second | Number | Voice duration, in seconds. |
-| Download_Flag | Number | Flag of the voice download method. Currently, the value of `Download_Flag` must be `2`, which means that the voice content can be downloaded from the URL specified by the `Url` field. |
+| Url | String | Audio download URL, through which the audio content can be downloaded directly. |
+| UUID | String | Unique identifier of the audio, key value used by the client to index the audio |
+| Size | Number | Audio data size, in bytes. |
+| Second | Number | Audio duration, in seconds. |
+| Download_Flag | Number | Flag of the audio download method. Currently, the value of `Download_Flag` must be `2`, which means that the audio content can be downloaded from the URL specified by the `Url` field. |
 
 >?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
-        "UUID": "305c0201", //Unique identifier of the voice in String type. This is the key value the client uses to index the voice. The voice cannot be downloaded through this field. To obtain the voice, upgrade the IM SDK to version 4.X.
-        "Size": 62351,      //Voice data size in bytes, in Number type.
-        "Second": 1         //Voice duration in seconds, in Number type.
+        "UUID": "305c0201", //Unique identifier of the audio in String type. This is the key value the client uses to index the audio. The audio cannot be downloaded through this field. To obtain the audio, upgrade the IM SDK to version 4.X.
+        "Size": 62351,      //Audio data size in bytes, in Number type.
+        "Second": 1         //Audio duration in seconds, in Number type.
     }
 }
 ```
@@ -200,8 +200,8 @@ When the receiver is an iOS or Android device and the app is working in the back
 | UUID | String | Unique identifier of the image, key value used by the client to index the image |
 | ImageFormat | Number | Image format. JPG = 1, GIF = 2, PNG = 3, BMP = 4, Others = 255. |
 | ImageInfoArray | Array | Download information of the original image, thumbnail, or large image. |
-| Type | Number | Image type. 1: original image, 2: large image, 3: thumbnail. |
-| Size | Number | Size of image data in bytes. |
+| Type | Number | Image type. 1: Original image, 2: Large image, 3: Thumbnail. |
+| Size | Number | Image size in bytes. |
 | Width | Number | Image width in pixels |
 | Height | Number | Image height in pixels |
 | URL | String | Download URL of the image. |
@@ -356,10 +356,10 @@ The following single message contains two text message elements and one emoji me
 
 >!A combined message can contain only one `TIMCustomElem` custom message element, and an unlimited number of other message elements.
 
-## Description of Custom Message Data CloudCustomData
+## Custom Message Data CloudCustomData
 Each message can carry custom data `CloudCustomData`.
 
-`CloudCustomData` is saved in the cloud together with the `MsgBody` of the message. It will be sent to the opposite end and can still be pulled after the program is uninstalled and reinstalled.
+`CloudCustomData` is saved on the cloud together with the `MsgBody` of the message. It will be sent to the peer end and can still be pulled after the program is uninstalled and reinstalled.
 
 The following example shows the formats of `CloudCustomData` and `MsgBody`:
 ```
@@ -423,7 +423,7 @@ The following table summarizes the push text of different message elements.
 RESTful API for setting the account nickname: [Setting the Profile](https://intl.cloud.tencent.com/document/product/1047/34916).
 RESTful API for setting the group name: [Modifying Basic Group Information](https://intl.cloud.tencent.com/document/product/1047/34962).
 
-### Advanced apps
+### Advanced usage
 #### Customizing push sounds and extended fields delivered by APNs
 Use TIMCustomElem to customize message elements. In the `Sound` field, enter the file name of the custom audio. In the `Ext` field, enter the delivered extended field, which can be obtained from the `Ext` field in the APNs payload.
 ```
@@ -503,16 +503,16 @@ The preceding fields are described as follows:
 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
-| PushFlag | Integer | Optional | 0: enable push, 1: disable offline push. |
+| PushFlag | Integer | Optional | 0: Enable push, 1: Disable offline push. |
 | Title | String | Optional | Offline push title. This field is applicable to both iOS and Android. |
 | Desc | String | Optional | Offline push content. This field overwrites the offline push display text of the [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527) element, this `Desc` field will overwrite the `Desc` field in the TIMCustomElem. If neither of the `Desc` fields is filled in, the offline push notification for the message will not be received. |
 | Ext | String | Optional | Passthrough content of offline push. To make sure the offline push of all Android vendors are attainable, this field must be in JSON format. |
 | AndroidInfo.Sound | String | Optional | Path to the offline push sound file in Android. |
-| AndroidInfo.HuaWeiChannelID | String | Optional | Notification channel field for Huawei phones with EMUI 10.0 or above. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
-| AndroidInfo.XiaoMiChannelID | String | Optional | Notification type (Channel) adaptation field for Mi phones with MIUI 10 or above. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
-| AndroidInfo.OPPOChannelID | String | Optional | `NotificationChannel` notification adaptation field for OPPO phones with Android 8.0 or above. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
+| AndroidInfo.HuaWeiChannelID | String | Optional | Notification channel field for Huawei phones with EMUI 10.0 or later. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
+| AndroidInfo.XiaoMiChannelID | String | Optional | Notification type (Channel) adaptation field for Mi phones with MIUI 10 or later. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
+| AndroidInfo.OPPOChannelID | String | Optional | `NotificationChannel` notification adaptation field for OPPO phones with Android 8.0 or later. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
 | AndroidInfo.GoogleChannelID | String | Optional | Notification channel field for Google mobile phones with Android 8.0 or later. This field is supported by the new Google push API (uploading the certificate file) but not the old API (entering the server key). |
-| AndroidInfo.VIVOClassification | Integer | Optional | Push message classification for Vivo phones. Valid values: 0: operation message; 1: system message (default value). |
+| AndroidInfo.VIVOClassification | Integer | Optional | Push message classification for Vivo phones. Valid values: 0: Operation message; 1: System message (default value). |
 | AndroidInfo.HuaWeiImportance | String | Optional | Push notification message classification for Huawei phones. Valid values: LOW, NORMAL (default value). |
 | AndroidInfo.ExtAsHuaweiIntentParam | Integer | Optional | After Huawei Push is configured to **Open specified in-app page** in the console, "1" indicates to use the passthrough content `Ext` as the `Intent` parameter, while "0" (default value) indicates to use the passthrough content `Ext` as the `Action` parameter. For the differences between the two parameters, see [Guides](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/andorid-basic-clickaction-0000001087554076#section20203190121410). |
 | ApnsInfo.BadgeMode | Integer | Optional | The default value or 0 indicates that counting is required. 1 indicates that counting is not required for this message, in which case the number in the upper-right icon does not increase. |
@@ -525,5 +525,5 @@ The preceding fields are described as follows:
 
 ## References
 
-[APNs development documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)
+APNs development: [Local and Remote Notifications Overview](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)
 [Offline Push (iOS)](https://intl.cloud.tencent.com/zh/document/product/1047/34347).
