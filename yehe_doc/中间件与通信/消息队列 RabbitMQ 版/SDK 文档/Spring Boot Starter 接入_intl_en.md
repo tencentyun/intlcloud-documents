@@ -43,16 +43,16 @@ Add dependencies to the `pom.xml` file.
 
    | Parameter         | Description                                                         |
    | :----------- | :----------------------------------------------------------- |
-   | host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+   | host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/8fabb0bfb1bc2a4144b3910b24ad9cb5.png) |
    | port              | Cluster access port, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. |
    | username          | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-   | password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-   | virtual-host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+   | password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/81ca86f2f26f57999cc38fde8096ce22.png) |
+   | virtual-host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/b3f6bd5245f04a73c7054640b6b1d390.png) |
 
 2. Create a configuration file loading program (with the `Fanout exchange` as an example).
 >?For the configurations of exchanges in other types, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-springboot-amqp-demo.zip).
 
-   ```java
+```java
    /**
     * Fanout exchange configuration
     */
@@ -101,7 +101,7 @@ Add dependencies to the `pom.xml` file.
                    .to(fanoutExchange());
        }
    }
-   ```
+```
 
 | Parameter                     | Description                                                         |
 | ---------------------- | ------------------------------------------------------------ |
@@ -150,7 +150,7 @@ public class FanoutReceiver {
 
 To check whether messages are sent to TDMQ for RabbitMQ successfully, view the connected consumer status on the **[Cluster](https://console.cloud.tencent.com/tdmq/rabbit-cluster)** > **Queue** page in the console.
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/ca12348ded6a3a1449c1f18fb414f4c3.png)
 
 
 
