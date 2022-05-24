@@ -81,18 +81,18 @@ spring:
 
 | 参数              | 说明                                                         |
 | :---------------- | :----------------------------------------------------------- |
-| bindingRoutingKey | 消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的**绑定 Key**列获取。![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| bindingRoutingKey | 消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的**绑定 Key**列获取。![img](https://qcloudimg.tencent-cloud.cn/raw/554ac6e974817a9c066e7ec7d993c133.png) |
 | direct_log        | Exchange 名称，在控制台 Exchange 列表获取。                  |
 | route_queue1      | Queue名称，在控制台 Queue 列表获取。                         |
-| host              | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| host              | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/8b09343ada668e380641f03f786d5496.png) |
 | port              | 集群接入地址端口，在**集群管理**页面操作列的**获取接入地址**获取。 |
 | username          | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| password          | 角色密钥，在 **[角色管理](https://console.intl.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| virtual-host      | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| password          | 角色密钥，在 **[角色管理](https://console.intl.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/b16cbf2b818a5faf318661db1d0468de.png) |
+| virtual-host      | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/632be662b675293f4ffa9531c63ed911.png) |
 
 2. 创建配置文件加载程序。
    - OutputMessageBinding.java
-     ```java
+```java
      public interface OutputMessageBinding {
          /**
           * 要使用的通道名称(输出channel名称)
@@ -102,10 +102,10 @@ spring:
          @Output(OUTPUT)
          MessageChannel output();
      }
-     ```
+```
 
    - InputMessageBinding.java
-     ```java
+```java
      public interface InputMessageBinding {
      
          /**
@@ -116,7 +116,7 @@ spring:
          @Input(INPUT)
          SubscribableChannel input();
      }xxxxxxxxxx public interface InputMessageBinding {    /**     * 要使用的通道名称     */    String INPUT = "input";    @Input(INPUT)    SubscribableChannel input();}public interface OutputMessageBinding {    /**     * 要使用的通道名称(输出channel名称)     */    String OUTPUT = "output";    @Output(OUTPUT)    MessageChannel output();}
-     ```
+```
 
 ### 步骤3：发送消息
 
@@ -170,7 +170,7 @@ public class MessageConsumer {
 
 如果您想确认消息是否成功发送至 TDMQ RabbitMQ 版，可以在控制台 **[集群管理](https://console.intl.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面查看接入的消费者情况。
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/6ba8a057e8127ca8cd09f30e66d33c5e.png)
 
 >?上述是基于 RabbitMQ 的发布订阅模型的一个简单示例，可根据实际使用进行不同配置，具体可参见 [Demo 示例](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-springcloud-stream-demo.zip) 或 [Spring cloud stream 官网](https://github.com/spring-cloud/spring-cloud-stream-binder-rabbit#rabbit-prod-props)。
 
