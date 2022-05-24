@@ -2,7 +2,7 @@
 You can use the offline push feature to allow users to receive new messages even when the app is running in the background or the process has been killed. iOS devices use APNs for offline push, while Android devices need you to register for offline message callbacks.
 
 ## iOS APNs Push Notifications
-### Push notification formats
+### Push notification format
 
 ![](https://main.qcloudimg.com/raw/8bb11ef0a0ff210c1b0a1ab65da63c2f.png)
 
