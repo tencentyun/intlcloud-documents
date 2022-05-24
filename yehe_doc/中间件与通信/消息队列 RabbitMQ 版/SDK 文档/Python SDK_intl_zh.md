@@ -61,12 +61,12 @@ connection.close()
 | 参数            | 说明                                                         |
 | :-------------- | :----------------------------------------------------------- |
 | rolename        | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| eyJr***         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| host            | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| eyJr***         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/4888f178ea288d44685b8d7347cbcf70.png) |
+| host            | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/cd3184b4da945fadd138ac1651485d38.png) |
 | port            | 集群接入地址端口，在**集群管理**页面操作列的**获取接入地址**获取。 |
-| virtual_host    | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| virtual_host    | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/4063f65f2eb4ca14abe38ae939a3ac26.png) |
 | direct_exchange | Exchange 名称，在控制台 Exchange 列表获取。                  |
-| routingKeys     | 消息的路由规则，在控制台 绑定关系列表的**绑定 Key**列获取。![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| routingKeys     | 消息的路由规则，在控制台 绑定关系列表的**绑定 Key**列获取。![img](https://qcloudimg.tencent-cloud.cn/raw/63ddc4564efd2b741b12bee97481dc6c.png) |
 
 ### 步骤3：消费消息
 
@@ -123,18 +123,18 @@ if __name__ == '__main__':
 | 参数            | 说明                                                         |
 | :-------------- | :----------------------------------------------------------- |
 | rolename        | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| eyJr***         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| host            | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| eyJr***         | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/32045def87e6ebf4142b19718f2cc9e7.png) |
+| host            | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/2d915273c7157f67ac6cdcfe0993a7ad.png) |
 | port            | 集群接入地址端口，在**集群管理**页面操作列的**获取接入地址**获取。 |
-| virtual_host    | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| virtual_host    | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/ae7071f7a102ff6553b6332cd19aa7df.png) |
 | direct_exchange | Exchange 名称，在控制台 Exchange 列表获取。                  |
 | route_queue1    | Queue名称，在控制台 Queue 列表获取。                         |
-| routingKey      | 消息的路由规则，在控制台 绑定关系列表的**绑定 Key**列获取。![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| routingKey      | 消息的路由规则，在控制台 绑定关系列表的**绑定 Key**列获取。![img](https://qcloudimg.tencent-cloud.cn/raw/7f5f401a9bd32a1ba06c17e50e8c4690.png) |
 
 ### 步骤4：查看消息
 
 如果您想确认消息是否成功发送至 TDMQ RabbitMQ 版，可以在控制台 **[集群管理](https://console.intl.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面查看接入的消费者情况。
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/787f5f8df79d4ba86ddaf2a9223a93bb.png)
 
 >?完整示例或其他使用可参见 [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-python-sdk-demo.zip) 或者 [RabbitMQ 官方使用文档](https://www.rabbitmq.com/getstarted.html)。
