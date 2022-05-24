@@ -14,13 +14,13 @@
 
 ### 新增角色
 
-1. 登录 [TDMQ 控制台](https://console.intl.cloud.tencent.com/tdmq)，在左侧导航栏单击 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role?rid=4&protocol=AMQP&clusterId=)**，进入角色管理页面。
+1. 登录 [TDMQ 控制台](https://console.intl.cloud.tencent.com/tdmq)，在左侧导航栏单击 <b>[角色管理](https://console.intl.cloud.tencent.com/tdmq/role?rid=4&protocol=AMQP&clusterId=)</b>，进入角色管理页面。
 2. 在角色管理页面顶部选择需要设置的 RabbitMQ 集群，单击**新建**进入新建角色页面。
 3. 在新建角色页面，填写角色名称和说明：
    - 角色：最长为32个字符，支持数字、大小写字母和分隔符（"_","-"）。
    - 说明（选填）：不得超过100个字符。
 4. 单击**提交**，完成当前集群的角色创建。
-   ![img](https://main.qcloudimg.com/raw/030444db462129f54a35ce19f7a92e41.png)
+   ![img](https://qcloudimg.tencent-cloud.cn/raw/60772b7108bbe136dfab07c12d443a09.png)
 
 ### 角色授权
 
@@ -29,22 +29,23 @@
    <dx-tabs>
        ::: 方式一：<b>密钥</b>列复制
        单击密钥列的**复制**。
-       ![](https://main.qcloudimg.com/raw/bbb512dd0255b2fca33706dafd4c8b9a.png)
+       ![](https://qcloudimg.tencent-cloud.cn/raw/5095ab7e4c79491ce987f71ba684dd8e.png)
        :::
        ::: 方式二：<b>操作</b>列查看并复制
        单击操作列的**查看密钥**，在查看密钥弹框中单击复制图标。
-       ![](https://main.qcloudimg.com/raw/97acb6323c59344f7193c736786472e0.png)
+       ![](https://qcloudimg.tencent-cloud.cn/raw/2f32cdb822bb80417ee67f31b1d2db23.png)
        :::
        </dx-tabs>
+
 >!密钥泄露很可能导致您的数据泄露，请妥善保管您的密钥。
 
 2. 将复制的角色密钥添加到客户端的参数中。如何在客户端代码中添加密钥参数请参考 RabbitMQ 的 [SDK文档](https://intl.cloud.tencent.com/document/product/1112/46550)，对应其中的 Username 和 password。
 
 3. 在 TDMQ RabbitMQ 控制台选择之前设定了角色的集群，单击集群“ID”，进入集群基本信息页面，切换到 **Vhost**，选择需要配置生产消费权限的一个 Vhost，单击操作列的**配置权限**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/0932393badf8b852dbfcb251f1af1df3.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/bb053c60fc0832c49aecb63a83837805.png)
 
 4. 单击**添加角色**，在下拉列表中找到刚刚新创建的角色，勾选上需要的权限，单击**保存**。
-   ![img](https://main.qcloudimg.com/raw/7afe9cdf20fb2db9a06079b1f261493e.png)
+   ![img](https://qcloudimg.tencent-cloud.cn/raw/a4f4520f973f63c2cefe1a17456db52e.png)
 
 5. 检查权限是否生效。
    您可以运行配置好的客户端访问对应 Vhost 中的 Exchange 和 Queue 资源，按照刚刚配置的权限进行生产或消费，看是否会产生没有权限的报错信息，如果没有即代表配置成功。
