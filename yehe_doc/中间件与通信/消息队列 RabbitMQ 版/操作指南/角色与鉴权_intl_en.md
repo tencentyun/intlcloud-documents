@@ -20,7 +20,7 @@ For example, your company has departments A and B, and department A's system pro
    - Role Name: It can contain up to 32 digits, letters, and delimiters (underscore or hyphen).
    - Remarks (optional): Enter remarks of up to 100 characters.
 4. Click **Submit**.
-   ![img](https://main.qcloudimg.com/raw/030444db462129f54a35ce19f7a92e41.png)
+   ![img](https://qcloudimg.tencent-cloud.cn/raw/60772b7108bbe136dfab07c12d443a09.png)
 
 ### Granting permission to role
 
@@ -29,22 +29,23 @@ For example, your company has departments A and B, and department A's system pro
    <dx-tabs>
        ::: Option 1. Copy in the <b>Key</b> column
        Click **Copy** in the **Key** column.
-       ![](https://main.qcloudimg.com/raw/bbb512dd0255b2fca33706dafd4c8b9a.png)
+       ![](https://qcloudimg.tencent-cloud.cn/raw/5095ab7e4c79491ce987f71ba684dd8e.png)
        :::
        ::: Option 2. View and copy in the <b>Operation</b> column
        Click **View Key** in the **Operation** column and click **Copy** in the pop-up window.
-       ![](https://main.qcloudimg.com/raw/97acb6323c59344f7193c736786472e0.png)
+       ![](https://qcloudimg.tencent-cloud.cn/raw/2f32cdb822bb80417ee67f31b1d2db23.png)
        :::
        </dx-tabs>
+
 >!Key leakage may lead to data leakage; therefore, you should keep your key confidential.
 
 2. Add the copied role key to the client parameters. For directions on how to add the key parameters to the client code, see [here](https://intl.cloud.tencent.com/document/product/1112/46550) (the key parameters in this document are the username and password).
 
 3. Select the cluster with the previously set role in the TDMQ for RabbitMQ console and click the cluster ID to enter the cluster's basic information page. Switch to the **Vhost** tab, select a vhost for which to configure production and consumption permissions, and click **Configure Permission** in the **Operation** column.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/0932393badf8b852dbfcb251f1af1df3.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/bb053c60fc0832c49aecb63a83837805.png)
 
 4. Click **Add Role**, find the role just created in the drop-down list, select the required permission, and click **Save**.
-   ![img](https://main.qcloudimg.com/raw/7afe9cdf20fb2db9a06079b1f261493e.png)
+   ![img](https://qcloudimg.tencent-cloud.cn/raw/a4f4520f973f63c2cefe1a17456db52e.png)
 
 5. Check whether the permission has taken effect.
    You can run the configured client to access the exchange and queue resources in the vhost and produce/consume messages according to the configured permission. Check whether a no permission error is reported, and if not, the permission has been configured successfully.
