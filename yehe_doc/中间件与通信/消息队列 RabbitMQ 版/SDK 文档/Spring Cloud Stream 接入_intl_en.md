@@ -81,18 +81,18 @@ spring:
 
 | Parameter | Description |
 | :---------------- | :----------------------------------------------------------- |
-| bindingRoutingKey | Routing key bound to the consumer message queue, which is also the message routing rule and can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| bindingRoutingKey | Routing key bound to the consumer message queue, which is also the message routing rule and can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/554ac6e974817a9c066e7ec7d993c133.png) |
 | direct_log        | Exchange name, which can be obtained from the exchange list in the console.                  |
 | route_queue1      | Queue name, which can be obtained from the queue list in the console.                         |
-| host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/8b09343ada668e380641f03f786d5496.png) |
 | port              | Cluster access port, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. |
 | username          | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| virtual-host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+| password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/b16cbf2b818a5faf318661db1d0468de.png) |
+| virtual-host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/632be662b675293f4ffa9531c63ed911.png) |
 
 2. Create a configuration file loading program.
    - OutputMessageBinding.java
-     ```java
+```java
      public interface OutputMessageBinding {
          /**
           * Name of the channel to be used (output channel name)
@@ -102,10 +102,9 @@ spring:
          @Output(OUTPUT)
          MessageChannel output();
      }
-     ```
-
+```
    - InputMessageBinding.java
-     ```java
+```java
      public interface InputMessageBinding {
      
          /**
@@ -116,7 +115,7 @@ spring:
          @Input(INPUT)
          SubscribableChannel input();
      }xxxxxxxxxx public interface InputMessageBinding {    /**     * Name of the channel to be used     */    String INPUT = "input";    @Input(INPUT)    SubscribableChannel input();}public interface OutputMessageBinding {    /**     * Name of the channel to be used (output channel name)     */    String OUTPUT = "output";    @Output(OUTPUT)    MessageChannel output();}
-     ```
+```
 
 ### Step 3. Send messages
 
@@ -170,7 +169,7 @@ public class MessageConsumer {
 
 To check whether messages are sent to TDMQ for RabbitMQ successfully, view the connected consumer status on the **[Cluster](https://console.cloud.tencent.com/tdmq/rabbit-cluster)** > **Queue** page in the console.
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/6ba8a057e8127ca8cd09f30e66d33c5e.png)
 
 >? Above is a sample based on the pub/sub pattern of RabbitMQ, which can be configured as needed. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-springcloud-stream-demo.zip) or [Rabbit Producer Properties](https://github.com/spring-cloud/spring-cloud-stream-binder-rabbit#rabbit-prod-props).
 
