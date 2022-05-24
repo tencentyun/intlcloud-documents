@@ -27,7 +27,6 @@ RabbitMQ officially recommends the `php-amqplib` client. First, you need to impo
    ```shell
    composer.phar install
    ```
-
    You can also run the following command:
    ```shell
    composer install
@@ -37,7 +36,6 @@ RabbitMQ officially recommends the `php-amqplib` client. First, you need to impo
    ```php
    require_once('../vendor/autoload.php');
    ```
-
    After completing the above steps, you can create a connection for interaction with the server.
 
 
@@ -88,12 +86,12 @@ $connection->close();
 | :---------------- | :----------------------------------------------------------- |
 | $exchange_name    | Exchange name, which can be obtained from the exchange list in the console.                  |
 | $exchange_type    | It must be the same as the type of the above exchange.                         |
-| $host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| $host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/25fa29cbd4558973eba4645db1942f32.png) |
 | $port             | Cluster access port.                                     |
 | $username        | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| $password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| $vhost       | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
-| $routing_keys[$x] | Routing key bound to the consumer message queue, which is also the message routing rule and can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| $password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/3b1372347067abadbe8848c22df665fc.png) |
+| $vhost       | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/135399240e27162af544b20ef0ce54f9.png) |
+| $routing_keys[$x] | Routing key bound to the consumer message queue, which is also the message routing rule and can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/2fc168768fdd01bb1476576f54f72c91.png) |
 
 ### Step 3. Consume messages
 
@@ -157,12 +155,12 @@ $connection->close();
 | $exchange_name    | Exchange name, which can be obtained from the exchange list in the console.                  |
 | $exchange_type    | It must be the same as the type of the above exchange.                         |
 | $queue_name      | Queue name, which can be obtained from the queue list in the console.                         |
-| $host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+| $host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/8e032a165ed6b94548d77a4358d5dd04.png) |
 | $port             | Cluster access port.                                     |
 | $username        | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| $password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-| $vhost       | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
-| $routing_keys[$x] | Routing key bound to the consumer message queue, which is also the message routing rule and can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://main.qcloudimg.com/raw/66d31e7d7ec8519843a8fc67bff87265.png) |
+| $password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/6322cc8d7f251a78c906ea53be692af6.png) |
+| $vhost       | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/90998c05bce789c1a73b411e75da69b1.png) |
+| $routing_keys[$x] | Routing key bound to the consumer message queue, which is also the message routing rule and can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/a73031e2ed05980fdc89bcde13d84ba4.png) |
 
 
 
@@ -170,7 +168,7 @@ $connection->close();
 
 To check whether messages are sent to TDMQ for RabbitMQ successfully, view the connected consumer status on the **[Cluster](https://console.cloud.tencent.com/tdmq/rabbit-cluster)** > **Queue** page in the console.
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/808280beb9a7c350af07fc111c13d7ed.png)
 
 
 
