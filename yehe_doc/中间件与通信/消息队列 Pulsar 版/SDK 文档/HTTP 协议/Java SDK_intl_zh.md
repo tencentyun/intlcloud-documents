@@ -60,8 +60,7 @@
     </tr>
     <tr>
         <td style='text-align:left;'>region</td>
-        <td style='text-align:left;'>集群所属地域，详见产品支持的 <a
-                href='https://cloud.tencent.com/document/api/1179/46067#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8'>地域列表</a>。
+        <td style='text-align:left;'>集群所属地域，详见产品支持的地域列表。
         </td>
     </tr>
     </tbody>
