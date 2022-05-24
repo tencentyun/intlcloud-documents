@@ -78,7 +78,7 @@ During the sync, do not perform the following operations; otherwise, the sync ta
 </table>
 
 ## Directions
-1. Log in to the [data sync purchase page](https://buy.cloud.tencent.com/dts), select the corresponding configuration items, and click **Buy Now**.
+1. Log in to the [data sync purchase page](https://buy.intl.cloud.tencent.com/migration), select the corresponding configuration items, and click **Buy Now**.
 <table>
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>

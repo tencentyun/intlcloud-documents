@@ -1,8 +1,8 @@
 ## Profile System Overview
 Instant Messaging (IM) provides a complete set of profile solutions through its user profile hosting capacity. IM’s profile hosting service enables your users to easily set and pull profiles.
-- IM can store profile information, ensuring that your data has remote disaster recovery, cross-region deployment, and auto scaling capabilities. In this way, you are completely free from complex processing flows, such as server downtime, multi-copy primary-secondary replication, and capacity scaling.
+- IM can store profile information, ensuring that your data has disaster recovery, cross-region deployment, and auto scaling capabilities. In this way, you are completely free from complex processing flows, such as server downtime, multi-copy primary-secondary replication, and capacity scaling.
 - IM provides the business processing flows commonly used in the industry, with which you do not have to worry about user profile business logic.
-- IM provides professional operation processes and teams, ensuring 99.99% service quality annually and helping you offer services known for their stability.
+- IM provides professional operations processes and teams, ensuring 99.99% service quality annually and helping you offer stable services.
 - IM provides easy-to-use service APIs and easy-to-access guidelines, with premium services throughout the whole process.
 
 By using IM’s profile hosting service, you will be able to:
@@ -16,8 +16,8 @@ A profile is a set of data that describes user properties. IM’s profile system
 - Value has the following types:
    a. An integer of uint32_t type (not supported for custom fields)
    b. An integer of uint64_t type (not supported for custom fields)
-   c. A string of string type (the length of the string cannot exceed 500 bytes.)
-   d. A buffer of bytes type (the length of the buffer cannot exceed 500 bytes.)
+   c. A string of string type (the length of the string cannot exceed 500 bytes)
+   d. A buffer of bytes type (the length of the buffer cannot exceed 500 bytes)
 
 - You can configure the read and write permissions for each key. The read and write permissions of profile fields are as follows:
 
@@ -124,7 +124,7 @@ Currently, IM supports the following standard profile fields:
 				<td>uint32</td>
 				<td>Language</td>
 				<td>Yes</td>
-				<td>No</td>
+				<td>None</td>
 			</tr>
 			<tr>
 				<td>Tag_Profile_IM_Image</td>
@@ -175,7 +175,7 @@ Currently, IM supports the following standard profile fields:
 Custom profile fields are the user data set by each app according to its own business needs. By using custom profile fields, an app can add additional data to user profiles and perform read and write operations through existing APIs.
 
 ### Applying for custom profile fields
-To apply for custom profile fields, the app admin can log in to the [IM console](https://console.cloud.tencent.com/im) and choose **Application Configuration** > **Feature Configuration**. After the application is submitted, custom profile fields will take effect in 5 minutes.
+To apply for custom profile fields, the app admin can log in to the [IM console](https://console.cloud.tencent.com/im) and select **Application Configuration** > **Feature Configuration**. After the application is submitted, custom profile fields will take effect in 5 minutes.
 When applying for custom profile fields, you need to submit the following information for each field:
 - The name of the custom profile field (Key). For more information, see [Naming Rules for Custom Profile Fields](#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5.E7.9A.84.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
 - The type of the custom profile field (Value). For more information, see [Profile Fields](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5).
@@ -185,8 +185,8 @@ When applying for custom profile fields, you need to submit the following inform
 The rules for naming custom profile fields are as follows:
 - The name of the custom profile field contains the prefix and keyword parts.
 - The prefix of the custom profile field is Tag_Profile_Custom.
-- Keyword: the keyword must be a string of letters with a length no more than 8 bytes. We recommend you use an English word or its abbreviation as the keyword.
-- Example: if the custom field to be applied for by an app has the keyword **Test**, then the name of the custom profile field is: Tag_Profile_Custom_Test.
+- Keyword: The keyword must be a string of letters with a length no more than 8 bytes. We recommend you use an English word or its abbreviation as the keyword.
+- Example: If the custom field to be applied for by an app has the keyword **Test**, then the name of the custom profile field is: Tag_Profile_Custom_Test.
 
 ## Documentation
 

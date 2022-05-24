@@ -12,8 +12,7 @@ Tag，即消息标签，用于对某个Topic下的消息进行分类。TDMQ Puls
 
 针对上述场景，TDMQ Pulsar 提供 Broker 端过滤的方式，用户可在生产消息时设置一个或者多个 Tag 标签，消费时指定 Tag 订阅。
 
-![img](https://main.qcloudimg.com/raw/32953b29d96dce605fa4a1598b3f5146.png)
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/b8f99a8fe44f31f67367d5b64bde8b88.png)
 
 
 ## 使用说明

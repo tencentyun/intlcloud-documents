@@ -12,8 +12,7 @@ Generally, messages with the same business attributes are stored in the same top
 
 To solve this problem, TDMQ for Pulsar supports filtering on the broker. You can set one or more tags during message production and subscribe to specified tags during consumption.
 
-![img](https://main.qcloudimg.com/raw/32953b29d96dce605fa4a1598b3f5146.png)
-
+![img](https://qcloudimg.tencent-cloud.cn/raw/b8f99a8fe44f31f67367d5b64bde8b88.png)
 
 
 ## Limits

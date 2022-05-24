@@ -4,7 +4,7 @@ When you use a hybrid cloud architecture, your business may be deployed in both 
 
 An API Gateway dedicated instance runs in a VPC and supports forwarding client requests to various services deployed in the VPC or local IDC or on the public network. It is deeply integrated with common backend services to provide a productized connection method. Therefore, it is very suitable as a unified access layer in complex network environments. This document describes how to connect to backend resources in an IDC by using an API Gateway dedicated instance.
 
-## Scheme Advantages
+## Solution Strengths
 
 ![](https://main.qcloudimg.com/raw/2adf52e12df99cc9d0eecc998c8b6ecc.png)
 
@@ -14,27 +14,28 @@ An API Gateway dedicated instance runs in a VPC and supports forwarding client r
 
 ## Directions
 
-### Step 1. Create a CCN instance and associate it with a network instance[](id:Step-1)
+### Step 1. Create a CCN instance and associate it with a network instance[](id:Step 1)
 
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
-2. On the left sidebar, click **Cloud Connect Network** to enter the CCN management page.
-3. Click **+ New**.
-4. In the pop-up window, enter the name and description of the CCN instance and select the billing mode, service level, and bandwidth limit mode.
+2. Click **CCN** in the left sidebar to go to the CCN management page.
+3. Click **+New**.
+4. In the box that pops up, enter the name and description for the CCN instance. Select its billing mode, service quality, and bandwidth limit mode.
 5. Associate the IDC's Direct Connect gateway with the VPC.
 	 ![](https://main.qcloudimg.com/raw/7063ae428f1bb924e9eeb5a999a67eab.png)
 
 ### Step 2. Purchase an API Gateway dedicated instance
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway) and select **Instance** on the left sidebar.
-2. Click **Create** to enter the API Gateway dedicated instance purchase page.
+1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway). Select **Instance** in the left sidebar.
+2. Click **Create** to go to the API Gateway dedicated instance purchase page.
 3. Select and enter the instance configuration information.
->!The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#Step-1).
+>!The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#Step 1).
 >
-4. Click **Buy Now** and make the payment.
+	 ![](https://main.qcloudimg.com/raw/e9c6f89988b23af471f53f669e4b3b5e.png)
+4. Click **Buy now** and make the payment.
 
 ### Step 3. Create a service and API under the instance
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway) and select **Service** on the left sidebar.
+1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway). Select **Service** in the left sidebar.
 2. Click **Create** and select **Dedicated** as the instance type.
 3. In the pop-up window for instance selection, select the dedicated instance purchased in step 1 and click **Submit**.
 4. Click the name of the created service in the service list to enter its API management page.

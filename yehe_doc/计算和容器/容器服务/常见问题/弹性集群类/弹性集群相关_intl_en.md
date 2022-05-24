@@ -1,51 +1,51 @@
-This document summarizes the FAQs of EKS cluster, the causes for these FAQs and the corresponding solutions.
+This document summarizes the FAQs, causes, and solutions regarding EKS clusters.
 
-<dx-accordion>
+ 
 
-::: Why are the specifications of the Pod inconsistent with the filled-in Request/Limit? [](id:FAQ1)
+### Why is the Pod specification inconsistent with the set `Request` and `Limit` values?[](id:FAQ1)
 
 [](id:1) When allocating the resources for Pod, EKS will calculate the Request and Limit set by the workload, and automatically determine the amount of resources required for running the Pod, instead of allocating resources according to the set Request and Limit values. For more information, see [CPU specifications calculation methods for pods](https://intl.cloud.tencent.com/document/product/457/36161) and [GPU specification calculation methods for pods](https://intl.cloud.tencent.com/document/product/457/36161).
 
-:::
+---
 
 
-::: How to create or modify the container network of EKS cluster? [](id:FAQ2)
+### How do I create or modify the container network of an EKS cluster?[](id:FAQ2)
 
-When creating a cluster, you need to select a VPC as the cluster network and specify a subnet as the container network. For more information, see [Notes on the Container Network](https://intl.cloud.tencent.com/document/product/457/ 34048). The Pod of EKS directly occupies an IP address of the container network subnet. When using the cluster, you can create or modify the container network through creating or removing the virtual node. The detailed instructions are shown below.
+When creating a cluster, you need to select a VPC as the cluster network and specify a subnet as the container network. For more information, see [Notes on the Container Network](https://intl.cloud.tencent.com/document/product/457/34048). The Pod of EKS directly occupies an IP address of the container network subnet. When using the cluster, you can create or modify the container network through creating or removing the virtual node. The detailed instructions are shown below.
 
-#### Step 1: Create a virtual node to add a new container network. [] (id:create)
+#### Step 1: Create a virtual node to add a container network[](id:create)
 
-1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster that you want to modify the container network.
-2. On the cluster details page, click **Virtual Node** in the left sidebar, and then click **Create Virtual Node**.
-3. On **Create Virtual Node** page, select the container network with sufficient IPs and click **Confirm**.
+1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster for which you need to modify the container network.
+2. On the cluster details page, click **Virtual node** in the left sidebar to enter the **Virtual node** page, and click **Create virtual node**.
+3. On the **Create virtual node** page, select the container network with sufficient IP addresses and click **OK**.
    ![](https://qcloudimg.tencent-cloud.cn/raw/28da152bf95cd0c8eb1898c50955547c.png)
 
 
-#### Step 2: Remove the virtual node to delete the container network.
+#### Step 2: Remove the virtual node to delete the container network
 
-<dx-alert infotype="notice" title="">
-At least one virtual node is required for the elastic cluster. If there is only one virtual node, it cannot be removed.
+<dx-alert infotype="notice" title=" ">
+Make sure that at least one virtual node remains in the elastic cluster after the removal. If there is only one virtual node, you cannot remove it.
 </dx-alert>
 
-Before removing a virtual node, you need to drain all Pods on this virtual node to other virtual nodes (not including Pods managed by DaemonSet). After the draining is completed, you can remove the virtual node, otherwise the node will fail to remove. The detailed instructions are shown below.
+Before removing a virtual node, you need to drain all Pods on it (excluding those managed by DaemonSet) to other virtual nodes. After the draining is completed, you can remove the virtual node; otherwise, the removal will fail. The detailed directions are as shown below.
 
-1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster that you want to remove the virtual node.
-2. On the cluster details page, select **Virtual Node** in the left sidebar, and select **More** > **Drain** on the right of the node name. See the figure below:
+1. Log in to the TKE console, click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar, and click the ID of the cluster from which you need to remove the virtual node.
+2. On the cluster details page, select **Virtual node** in the left sidebar, and click **More** > **Drain** on the right of the node name.
    ![](https://qcloudimg.tencent-cloud.cn/raw/e6f6450c760f8d76f5b45146b74238d8.png)
-3. In the **Drain Node** window, click **OK**.
-   <dx-alert infotype="notice" title="">
-   Once drained, the Pod will be rebuilt.
+3. In the **Drain node** window, click **OK**.
+   <dx-alert infotype="notice" title=" ">
+   Note that Pods will be rebuilt once the node is drained.
    </dx-alert>
-    After being drained, the status of the virtual node will be changed to "Cordoned", and no more Pods will be scheduled to this node.
-4. On the **Virtual Node** page, select the virtual node to remove and click **Remove** on the right.
-5. In the **Delete Node** window, click **OK**.
+    After the node is drained, it will enter the "Blocked" status, and no more Pods can be scheduled to it.
+4. On the **Virtual node** page, click **Remove** on the right of the node name.
+5. In the **Delete node** pop-up window, click **OK**.
 
-:::
+---
 
 
-::: How to deal with if the Pod fails to schedule because of the insufficient subnet IPs? [](id:FAQ3)
+### What should I do if a Pod fails to be scheduled due to insufficient subnet IP addresses?[](id:FAQ3)
 
-When the Pod fails to schedule because of the insufficient subnet IPs, you can find two events in the node logs, as shown below:
+When a Pod fails to be scheduled due to insufficient subnet IP addresses, you can find two events in the node logs.
 
 - Event 1:
   ![](https://qcloudimg.tencent-cloud.cn/raw/632e4e3182548067ffe48939f475a03b.png)
@@ -54,13 +54,13 @@ When the Pod fails to schedule because of the insufficient subnet IPs, you can f
 
 
 
-You can query the YAML of the virtual node via the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1) or running the following command in the command line tool.
+You can query the YAML of the virtual node in the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1) or by running the following command in the command line tool.
 
 ```sh
 kubectl get nodes -oyaml
 ```
 
-The following information will appear:
+The returned result is as follows:
 
 ```yaml
 spec:
@@ -79,22 +79,24 @@ spec:
       type: NetworkUnavailable
 ```
 
-It shows that the Pod fails to schedule because the subnet IPs of the container network is insufficient. In this case, you need to create virtual nodes to add subnets to add available IP ranges for the cluster Pod. For how to create a virtual node, see [Create a Virtual Node](#create).
+It shows that the Pod fails to be scheduled due to insufficient subnet IP addresses of the container network. In this case, you need to create virtual nodes to add subnets and available IP ranges. For how to create a virtual node, see [Creating Virtual Node](#create).
 
-:::
+---
 
-::: What about the guidelines and instructions for use of EKS security group? [](id:FAQ4)
+### How do I use EKS security groups?[](id:FAQ4)
 
-When creating the elastic cluster Pod, if you do not specify a security group, the default security group will be used. You can also specify security group for the Pod through `Annotation eks.tke.cloud.tencent.com/security-group-id: security group ID`. Please ensure that the security group ID already exists in the region where the workload resides. For more information on this annotation, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
-:::
-::: How to set container’s termination message? [](id:FAQ5)
+When creating the elastic cluster Pod, if you do not specify a security group, the default security group will be used. You can also specify security group for the Pod through `Annotation eks.tke.cloud.tencent.com/security-group-id: security group ID`. Make sure that the security group ID already exists in the region where the workload resides. For more information on this annotation, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
+
+---
+
+### How do I set a container termination message?[](id:FAQ5)
 
 
-Kubernetes can set the message source of the container exit through `terminationMessagePath`, that is, when the container exits, Kubernetes will retrieve termination messages from the termination message file specified in the `terminationMessagePath` field of a container, and use this contents from the specified file to populate the container's termination message. The default value of the message is `/dev/termination-log`.
+Kubernetes can set the message source of the container exit through `terminationMessagePath`, that is, when a container exits, Kubernetes will retrieve the termination message from the termination message file specified in the `terminationMessagePath` field of the container, and use the message to populate the container termination message. The default value of the message is `/dev/termination-log`.
 
-Moreover, you can set the `terminationMessagePolicy` field of a container for further termination message customization. This field defaults to “File”, which means the termination messages are retrieved only from the termination message file. You can set the `terminationMessagePolicy` to `FallbackToLogsOnError` as needed, and Kubernetes will use the last chunk of container log output if the termination message file is empty and the container exited with an error.
+Moreover, you can set the `terminationMessagePolicy` field of a container for further termination message customization. This field defaults to `File`, which means the termination message is retrieved only from the termination message file. You can set it to `FallbackToLogsOnError` as needed, which means the last chunk of container log output will be used as the termination message if the container exits with an error and the termination message file is empty.
 
-The code sample is shown as follows:
+The sample code is as shown below:
 
 
 ```yaml
@@ -120,24 +122,24 @@ spec:
 
 With the above configuration, when the container exits with an error and the termination message file is empty, Get Pod will find that the output of stderr is displayed in containerStatuses.
 
-:::
-::: How to use Host parameters? [](id:FAQ6)
+---
+### How do I use the `Host` parameter?[](id:FAQ6)
 
-Please note the following when using elastic clusters:
+Note the following when using elastic clusters:
 
-Elastic cluster does not have node, but it is compatible with Host related parameters, such as Hostpath, Hostnetwork: true, DnsPolicy: ClusterFirstWithHostNet.
+Elastic clusters do not have nodes but are compatible with `Host` parameters, such as `Hostpath`, `Hostnetwork: true`, and `DnsPolicy: ClusterFirstWithHostNet`.
 
-Please note that, because there is no node, the capacity to provide these parameters can not be fully aligned with that of the standard K8s.
+Note that these parameters cannot deliver the full capabilities of K8s, as there is no node.
 
-For example, it is expected to use Hostpath to share data, but the two Pods scheduled to the same virtual node see the Hostpath of different sub-machines. If the Pod is rebuilt, files of Hostpath are deleted at the same time.
+For example, you may want to use `Hostpath` to share data, but the two Pods scheduled to the same virtual node will see the `Hostpath` of different hosts. In addition, if the Pod is rebuilt, `Hostpath` files will be deleted at the same time.
 
-:::
-::: How to mount CFS/NFS? [](id:FAQ7)
+---
+### How do I mount CFS/NFS?[](id:FAQ7)
 
-In elastic clusters, you can use Tencent Cloud's [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582/9127) or mount an external NFS file storage as a Volume to Pod, so as to achieve persistent data storage. A YAML example of Pod mounting CFS/NFS is shown below:
+In elastic clusters, you can use Tencent Cloud's [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582/9127) or mount an external NFS as a volume to a Pod for persistent data storage. A sample YAML to mount CFS/NFS to a Pod is as shown below:
 
 <dx-codeblock>
-:::  yaml
+###  yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -154,7 +156,7 @@ spec:
         nfs:
           path: /dir
           server: 127.0.0.1
-    :::
+    ---
     </dx-codeblock>
 
 
@@ -162,53 +164,122 @@ spec:
 - spec.volumes.nfs: Set the NFS/CFS disk.
 - spec.containers.volumeMounts: Set the mount point of the volume in the Pod.
 
-For the detailed operation of Pod mounting Volume, see [Instructions for Other Storage Volumes](https://intl.cloud.tencent.com/document/product/457/30678).
+For detailed directions of mounting a volume to a Pod, see [Instructions for Other Storage Volumes](https://intl.cloud.tencent.com/document/product/457/30678).
 
 
-:::
-::: How to speed up container start-up by image reuse?
-EKS supports caching container images to speed up the start-up the next time you start up a container with the same image.
+---
+### How do I speed up container startup by image reuse?[](id:FAQ8)
+EKS supports caching container images to speed up the next startup of the container with the same images.
 
-**Conditions for Reuse:**
+**Conditions for reuse:**
 
-1. For the Pod of the same workload, if a Pod is created and terminated at the same availability zone (zone) within the cache time, the newly created Pod will not pull the same image by default.
-2. If the Pods of different workloads (including Deployment, Statefulset, and Job) want to reuse a image, the following annotation can be used:
+1. For Pods with the same Workload, if a Pod is created and terminated at the same AZ within the cache time, the new Pod will not pull the same image by default.
+2. If you want to reuse images for Pods with different Workloads (including Deployment, Statefulset, and Job), use the following annotation:
 ```
 eks.tke.cloud.tencent.com/cbs-reuse-key
 ```
-For the Pods with the same annotation value under the same user account, the start-up image will be reused within cache time as much as possible. It is recommended to enter the image name of the annotation value: **eks.tke.cloud.tencent.com/cbs-reuse-key: "image-name"**.
+For the Pods with the same annotation value under the same user account, the start-up image will be reused within the cache time as much as possible. We recommend you enter the image name of the annotation value: **eks.tke.cloud.tencent.com/cbs-reuse-key: "image-name"**.
 
-**Cache time:** 48 hours.
+**Cache time:** 6 hours.
 
 
-:::
-::: Instructions for exceptional image reuse [](id:FAQ9)
-When image reuse function is enabled, if a Pod is created, `$kubectl describe pod` may see the following errors:
-
+---
+### Instructions for exceptional image reuse[](id:FAQ9)
+When the image reuse feature is enabled and a Pod is created, `$kubectl describe pod` may encounter the following errors:
 - `no space left on device: unknown`
 - `Warning FreeDiskSpaceFailed 26m eklet, eklet-subnet-xxx failed to garbage collect required amount of images. Wanted to free 4220828057 bytes, but freed 3889267064 bytes`
 
-**Methods for Resume:**
-
+**Solution:**
 No action is required. Wait for a few minutes and the Pod will run automatically.
-<br>
+
 **Cause:**
-
 - `no space left on device: unknown`
-When the Pod reuses the system disk by default, the original image in the system disk occupies all of the disk space, and the disk currently does not have enough space to download the new image, so the error "no space left on device: unknown" is reported. EKS supports a regular image repossess mechanism. When the disk space is full, it will automatically delete the existing redundant images in the system disk to make free space for the current disk. (It takes several minutes)
-
+When the Pod reuses the system disk by default, the original image in the system disk occupies all of the space, and the disk does not have enough space to download the new image, so the error "no space left on device: unknown" is reported. EKS supports a regular image repossession mechanism, which, when the whole space is occupied, will automatically delete the existing redundant images in the system disk to free up the current disk (It takes several minutes).
 - `Warning FreeDiskSpaceFailed 26m eklet, eklet-subnet-xxx failed to garbage collect required amount of images. Wanted to free 4220828057 bytes, but freed 3889267064 bytes`
-This log shows that the current Pod needs 4220828057 space to download the image, but currently only 38892670644 space is available. The reason for this event is that there are multiple images on the disk. Currently, only some images have been cleaned up. EKS's regular image repossess mechanism will continue to clean up the images until a new image can be successfully pulled.
+This log shows that the current Pod needs 4220828057 bytes to download the image, but currently only 3889267064 bytes are available. The cause is that there are multiple images on the disk and only some images have been freed up. EKS's regular image repossession mechanism will continue to free up until a new image can be successfully pulled.
 
 
 
-:::
-::: When you mount an external NFS, the event Operation not permitted is reported [](id:FAQ10)
+---
+### What should I do if `Operation not permitted` is reported when I mount an external NFS[](id:FAQ10)
 
-If you use an external NFS to achieve persistent storage, the event Operation not permitted is reported when connecting. You need to modify the /etc/exports file of the external NFS and add the /&lt;path&gt;&lt;ip-range&gt;(rw,insecure) parameter. See example as below:
+If you use an external NFS for persistent storage, the event `Operation not permitted` will be reported when a connection is made. You need to modify the `/etc/exports` file of your NFS and add the `/&lt;path&gt;&lt;ip-range&gt;(rw,insecure)` parameter. See example below:
 ```
 /data/  10.0.0.0/16(rw,insecure)
 ```
 
-:::
-</dx-accordion>
+---
+
+
+### How do I free up a full Pod disk (ImageGCFailed)?
+
+EKS Pods provide 20 GB of free system disk space by default. If the disk is full, you can free it up in the following ways.
+
+#### 1. Free up unused container images 
+
+If 80% of the space is used, the EKS backend will trigger the container image repossession process to recover the unused images and free up the space. If this fails, `ImageGCFailed: failed to garbage collect required amount of images` will be reported to remind you of the insufficient disk space.
+
+Common causes of insufficient disk space include:
+- The business has a lot of temporary outputs. You can confirm this with the `du` command.
+- The business holds deleted file descriptors, so disk space is not freed up. You can confirm this with the `lsof` command.
+
+If you want to adjust the threshold for the container image repossession, set the following annotation:
+```
+eks.tke.cloud.tencent.com/image-gc-high-threshold: "80"
+```
+
+#### 2. Clean up exited containers 
+
+If your business has been upgraded in-place or a container has abnormally exited, the exited container will be retained until the disk utilization reaches 85%. The cleanup threshold can be adjusted with the following annotation:
+```
+eks.tke.cloud.tencent.com/container-gc-threshold: "85"
+```
+If you don't want to have the exited container automatically cleaned up (for example, you need the exit information for further troubleshooting), you can disable the automatic cleanup with the following annotation; however, the disk space cannot be automatically freed up in this case.
+```
+eks.tke.cloud.tencent.com/must-keep-last-container: "true"
+```
+
+>? This feature was launched on September 15, 2021 (UTC +8) and is not available on Pods created earlier.
+
+#### 3. **Restart Pods with high disk usage**
+
+You need to restart a Pod with the following annotation after the container's system disk usage exceeds a certain percentage:
+
+```
+eks.tke.cloud.tencent.com/pod-eviction-threshold: "85"
+```
+
+Only the Pod is restarted, but the host will not be rebuilt. Normal gracestop, prestop, and health checks are performed for the exit and startup.
+
+>? This feature was launched on April 27, 2022 (UTC +8) and can be enabled on Pods created earlier only after they are rebuilt.
+
+
+
+---
+
+### 9100 port issue
+
+EKS Pods expose monitoring data via port 9100 by default, and you can access 9100/metrics to get the data by running the following command:
+- Get all metrics:
+```
+curl -g "http://<pod-ip>:9100/metrics" 
+```
+- We recommend you remove the `ipvs` metric for large clusters:
+```
+curl -g "http://<pod-ip>:9100/metrics?collect[]=ipvs"
+```
+
+If your business requires listening on port 9100, you can avoid conflicts by using other ports to collect monitoring data when creating a Pod. The configuration is as shown below:
+```
+eks.tke.cloud.tencent.com/metrics-port: "9110" 
+```
+
+If the port for monitoring data exposure is not changed and the business listens on port 9100 directly, an error will be reported in the new EKS network scheme, indicating that port 9100 is already in use:
+```
+listen() to 0.0.0.0:9100, backlog 511 failed (1: Operation not permitted)
+```
+
+When this error is reported, you need to add the annotation `metrics-port` to the Pod to change the monitoring port and then rebuild the Pod.
+
+>! If the Pod has a public EIP, you need to set up a security group. Pay attention to port 9100 and open required ports.
+

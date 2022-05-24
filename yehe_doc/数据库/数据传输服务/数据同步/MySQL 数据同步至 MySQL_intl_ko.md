@@ -78,7 +78,7 @@ FLUSH PRIVILEGES;
 </table>
 
 ## 작업 단계
-1. [데이터 동기화 구매 페이지](https://buy.cloud.tencent.com/dts)에 로그인하여 알맞은 설정을 선택하고 **즉시 구매**를 클릭합니다.
+1. [데이터 동기화 구매 페이지](https://buy.intl.cloud.tencent.com/migration)에 로그인하여 알맞은 설정을 선택하고 **즉시 구매**를 클릭합니다.
 <table>
 <thead><tr><th>매개변수</th><th>설명</th></tr></thead>
 <tbody><tr>

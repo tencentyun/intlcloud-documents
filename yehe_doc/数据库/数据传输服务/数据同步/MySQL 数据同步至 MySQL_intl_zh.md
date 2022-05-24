@@ -78,7 +78,7 @@ FLUSH PRIVILEGES;
 </table>
 
 ## 操作步骤
-1. 登录 [数据同步购买页](https://buy.cloud.tencent.com/dts)，选择相应配置，单击**立即购买**。
+1. 登录 [数据同步购买页](https://buy.intl.cloud.tencent.com/migration)，选择相应配置，单击**立即购买**。
 <table>
 <thead><tr><th>参数</th><th>描述</th></tr></thead>
 <tbody><tr>

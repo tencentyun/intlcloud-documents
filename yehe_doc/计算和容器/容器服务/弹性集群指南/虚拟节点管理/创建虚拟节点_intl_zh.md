@@ -1,6 +1,6 @@
 
 
-## 虚拟节点简介
+## 虚拟节点简介 
 
 虚拟节点是弹性集群提供的一种调度能力，在创建弹性集群时会对应在容器网络所在的每个子网中创建一个虚拟节点。
 
@@ -20,30 +20,36 @@ EVENT MESSAGE : “Failed to create pod sandbox in underlay (will retry): insuff
 
 ## 计费方式
 
-虚拟节点本身不收取费用，实际会根据工作负载申请的 CPU、GPU、内存数值以及工作负载的运行时间来核算费用，计费详情请参见 [弹性容器计费概述](https://intl.cloud.tencent.com/document/product/457/34054)、[弹性容器产品定价](https://intl.cloud.tencent.com/document/product/457/34055)、[弹性容器购买限制](https://intl.cloud.tencent.com/document/product/457/34056)。
+虚拟节点本身不收取费用，实际会根据工作负载申请的 CPU、GPU、内存数值以及工作负载的运行时间来核算费用，计费详情请参见 [弹性容器计费概述 ](https://intl.cloud.tencent.com/document/product/457/34054)、[弹性容器产品定价](https://intl.cloud.tencent.com/document/product/457/34055)、[弹性容器购买限制](https://intl.cloud.tencent.com/document/product/457/34056)。
 
 
 
 ## 操作场景
 
-本文介绍如何通过容器服务控制台在弹性集群中新建虚拟节点。
+本文介绍如何通过容器服务控制台 在弹性集群中新建虚拟节点。
 
 
 ## 前提条件
 
 - 请确保已经创建弹性集群。
-- 建议阅读 [虚拟节点 Pod 调度说明](https://intl.cloud.tencent.com/zh/document/product/457/39760)。
+- 建议阅读 [虚拟节点 Pod 调度说明](https://intl.cloud.tencent.com/document/product/457/39760)。
 
 
 
 ## 操作步骤
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**弹性容器** > **弹性集群**。
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**弹性容器** > **弹性集群**。
 2. 在“弹性集群”列表页，选择目标集群 ID，进入该集群 “Deployment” 页面。
 3. 选择左侧菜单栏中的**虚拟节点**，进入虚拟节点列表页面。
 4. 单击**新建节点**，在“新建虚拟节点”弹窗中，参考以下提示进行设置。
  - 容器网络：指定 Pod 调度到虚拟节点时所分配的网络。调度到虚拟节点上的 Pod 采用的是与云服务器、云数据库等云产品平级的 VPC 网络，每个 Pod 都会占用一个 VPC 子网 IP。可以选择弹性集群所在VPC的任意子网，请根据实际需求选择合适的可用子网并保证所选的子网可用 IP 数量充足。
 5. 点击**确定**，创建虚拟节点。
+
+
+
+## 相关操作
+
+虚拟节点创建完成之后，您可参考 [管理虚拟节点](https://intl.cloud.tencent.com/document/product/457/41743) 进行后续的节点管理。
 
 
 
