@@ -43,16 +43,16 @@
 
    | 参数         | 说明                                                         |
    | :----------- | :----------------------------------------------------------- |
-   | host         | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://main.qcloudimg.com/raw/0238d2d64bd896704ebef400fc08a7f1.png) |
+   | host         | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/8fabb0bfb1bc2a4144b3910b24ad9cb5.png) |
    | port         | 集群接入地址端口，在**集群管理**页面操作列的**获取接入地址**获取。 |
    | username     | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-   | password     | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://main.qcloudimg.com/raw/52907691231cc11e6e4801298ba90a6c.png) |
-   | virtual-host | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://main.qcloudimg.com/raw/ae6ec1a5a94c9befea289ad7f5b46aed.png) |
+   | password     | 角色密钥，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/81ca86f2f26f57999cc38fde8096ce22.png) |
+   | virtual-host | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/b3f6bd5245f04a73c7054640b6b1d390.png) |
 
 2. 创建配置文件加载程序（以`Fanout交换机`为例）。
 >?其他类型的交换机配置可参见具体 [Demo 示例](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-springboot-amqp-demo.zip)。
 
-   ```java
+```java
    /**
     * Fanout交换机配置
     */
@@ -101,7 +101,7 @@
                    .to(fanoutExchange());
        }
    }
-   ```
+ ```
 
 | 参数                   | 说明                                                         |
 | ---------------------- | ------------------------------------------------------------ |
@@ -150,7 +150,7 @@ public class FanoutReceiver {
 
 如果您想确认消息是否成功发送至 TDMQ RabbitMQ 版，可以在控制台 **[集群管理](https://console.intl.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面查看接入的消费者情况。
 
-![img](https://main.qcloudimg.com/raw/a7d78cc58efadfb614b890cc33d08632.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/ca12348ded6a3a1449c1f18fb414f4c3.png)
 
 
 
