@@ -1,7 +1,7 @@
 ## Overview
 This document describes how to migrate metadata from open-source RabbitMQ to TDMQ for RabbitMQ.
 
-## Prerequisite
+## Prerequisites
 
 Before the metadata import, you need to first export the metadata file from open-source RabbitMQ. For metadata file export instructions, see [Export open-source RabbitMQ metadata](#export).
 
@@ -27,7 +27,15 @@ Before the metadata import, you need to first export the metadata file from open
 	```plaintext
 	wget http://<Open-source RabbitMQ IP address>:15672/api/definitions/<Vhost name> --user <Open-source RabbitMQ username>  --password <Open-source RabbitMQ password>  -O <Metadata file storage path>
 	```
->!If &lt;Vhost name&gt; contains a slash (/), replace the slash with “2%F”. For example, “/vhost” needs to be changed to “2%Fvhost”.
+
+
+<dx-alert infotype="notice" title="">
+Currently, TDMQ for RabbitMQ doesn’t support the slash character “/”, but you don’t need to modify the metadata in case of such characters because TDMQ for RabbitMQ will escape the names that contain “/” when you import the metadata. The escape rules are as follows:
+<li>The default RabbitMQ vhost name that starts with “/” will be renamed “__default_vhost__”.</li>
+<li>For other vhost names that start with “/”, the slash character will be deleted and other characters will be retained.</li>
+</dx-alert>
+
+
 
 ### Import the metadata to the TDMQ for RabbitMQ console
 
@@ -76,7 +84,7 @@ After that, the metadata file format will be automatically verified. Once the ve
 | Timed out | The metadata file import timed out.                                       |
 
 3. Click **View Details** in the **Operation** column to view the metadata file import details.
-	![](https://qcloudimg.tencent-cloud.cn/raw/298ff7c0bb77d7da146cc864331511dc.png)
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/298ff7c0bb77d7da146cc864331511dc.png)
 
 ## Metadata import description
 
