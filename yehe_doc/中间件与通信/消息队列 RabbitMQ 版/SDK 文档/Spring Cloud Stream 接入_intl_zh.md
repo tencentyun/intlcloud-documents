@@ -103,7 +103,6 @@ spring:
          MessageChannel output();
      }
 ```
-
    - InputMessageBinding.java
 ```java
      public interface InputMessageBinding {
