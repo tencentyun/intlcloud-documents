@@ -60,7 +60,7 @@
     </tr>
     <tr>
         <td style='text-align:left;'>region</td>
-        <td style='text-align:left;'>集群所属地域，详见产品支持的地域列表。
+        <td style='text-align:left;'>集群所属地域。
         </td>
     </tr>
     </tbody>
