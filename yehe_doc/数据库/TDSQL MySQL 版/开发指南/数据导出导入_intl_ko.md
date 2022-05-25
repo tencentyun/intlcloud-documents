@@ -4,8 +4,9 @@ TDSQL for MySQL은 mysqldump로 데이터 내보내기를 지원합니다. 내�
 mysqldump --compact --single-transaction --no-create-info -c db_name table_name  -utest -h10.xx.xx.34 -P3336  -ptest123
 ```
 
->?db 및 table 매개변수는 실제 상황에 따라 지정해야 합니다. 내보낸 데이터를 MySQL 환경용 TDSQL의 다른 세트로 가져오려면 -c 옵션을 추가해야 합니다.
-
+>?
+>- db 및 table 매개변수는 실제 상황에 따라 지정해야 합니다. 내보낸 데이터를 MySQL 환경용 TDSQL의 다른 세트로 가져오려면 -c 옵션을 추가해야 합니다.
+>- 계정을 내보내려면 `select on *.*`가 필요합니다.의 권한입니다.
 
 ## 데이터 가져오기
 TDSQL for MySQL은 load data outfile에서 지정한 데이터를 가져오기 위한 전문 툴을 제공합니다. 이 툴은 shardkey 라우팅 규칙에 따라 소스 파일을 여러 파일로 분할하고 각 파일을 해당 백엔드 데이터베이스로 전달합니다.
