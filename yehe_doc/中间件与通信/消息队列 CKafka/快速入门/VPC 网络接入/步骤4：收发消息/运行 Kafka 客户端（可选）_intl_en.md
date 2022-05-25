@@ -71,11 +71,14 @@ bash kafka-console-producer.sh --broker-list XXXX:port --topic XXXX --producer.c
  ![](https://main.qcloudimg.com/raw/1233548b38c82e92116eedbba9de534e.png)
 - topic: Replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
 </dx-alert>
+
    Enter the content of the message and press Enter.
    **Producing a message:**
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/30f5a8207a552023b2954b1e599c7f88.png"> 
+   <img src = "https://qcloudimg.tencent-cloud.cn/raw/30f5a8207a552023b2954b1e599c7f88.png"> 
+
    **Consuming a message:**
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/2a09bee955acd0cd238977ec5bc250e5.png"> 	 
+   <img src = "https://qcloudimg.tencent-cloud.cn/raw/2a09bee955acd0cd238977ec5bc250e5.png"> 
+ 
 3. In the message querying page of the CKafka console, query the message sent.
    ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
     The details of the message are as follows:
