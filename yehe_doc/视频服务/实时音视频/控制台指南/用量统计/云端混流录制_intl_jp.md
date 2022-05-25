@@ -4,7 +4,7 @@ TRTCコンソールの**クラウドミクスストリーミングの使用量�
 使用統計はリアルタイム更新ではありません。5分ごとに1回統計し、データの表示には5分～20分の遅れがあります。
 
 ## 操作手順
-1. **TRTCコンソール**に入り、左側のバーの**使用量統計**>**[Cloud MixTranscoding](https://console.cloud.tencent.com/trtc/cloudmcu)**を選択します。
+1. **TRTCコンソール**に入り、左側のバーの**使用量統計**>**Cloud MixTranscoding**を選択します。
 2. 確認したいアプリケーションを選択し、確認したい時間帯を選択します（時間課金モデルを例示します）。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/b2dd0bee1dfe92f965f9d58bcd89b12a.png)
