@@ -4,7 +4,7 @@ In **Usage Statistics > On-Cloud MixTranscoding**, you can view your [usage of t
 The data is updated every 5 minutes instead of in real time, so there may be a delay of 5-20 minutes in the display of statistics.
 
 ## Directions
-1. Log in to the TRTC console, and select **Usage Statistics** > **[On-Cloud MixTranscoding](https://console.cloud.tencent.com/trtc/cloudmcu)** on the left sidebar.
+1. Log in to the TRTC console, and select **Usage Statistics** > **On-Cloud MixTranscoding** on the left sidebar.
 2. Select the target application and time period (taking bill-by-duration mode as an example).
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/b2dd0bee1dfe92f965f9d58bcd89b12a.png)
