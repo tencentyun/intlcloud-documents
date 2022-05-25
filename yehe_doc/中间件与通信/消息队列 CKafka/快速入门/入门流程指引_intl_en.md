@@ -1,11 +1,8 @@
-The process of accessing CKafka varies according to the network type:
+The process of accessing CKafka varies by network type:
 
-- Access via a VPC: you can use the VPC of an existing CVM to access the CKafka service, eliminating the need to add an extra route.
+- For access via VPC, you can select an appropriate VPC according to your business needs.
+- For access via public network route, you need to enable a separate public route and configure an ACL policy for the topic.
 
-- Access via a public network route: you need to enable a separate public route and configure an ACL policy for the topic.
+### Flowchart
 
->?Currently, a single broker can support up to 1 MB/s public network bandwidth. As public network access runs the risk of issues such as delay and network environment security, we do not recommend long-term use of public network transfer.
-
-### Operation Procedures
-![](https://main.qcloudimg.com/raw/a910d6bff17b993ccc07328fe3c53932.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b9f0319af4367571b769d42402c4f28d.jpg)

@@ -1,6 +1,6 @@
 ## Overview
 
-This document explains how to start using Kafka APIs after you purchase the CKafka service. After setting up a CKafka environment on a CVM instance, you need to download and decompress the Kafka installation file and perform simple testing on Kafka APIs.
+This document explains how to start using Kafka APIs after you purchase the CKafka service. You need to download and decompress the Kafka installation file and perform simple testing on Kafka APIs.
 
 ## Directions
 
@@ -9,12 +9,12 @@ This document explains how to start using Kafka APIs after you purchase the CKaf
 #### 1. Check Java installation.
 
 Open a terminal window and run this command:
-
-```
+<dx-codeblock>
+:::  sh
 java -version
-```
-
-If the Java version number is output, Java installation is successful. If Java has not been installed, [download and install the JDK](http://kafka.apache.org/downloads).
+:::
+</dx-codeblock>
+If the Java version number is output, Java installation is successful. If Java has not been installed, [download and install the JDK](https://www.oracle.com/java/technologies/downloads/).
 
 
 #### 2. Set up the Java environment.
@@ -40,58 +40,67 @@ For example, if you use Java JDK 1.8.0_20, the outputs on different operating sy
 
 ### Step 2. Download the Kafka installation file.
 
-Download and decompress the [Kafka installation file](http://kafka.apache.org/downloads).
-Currently, CKafka is fully compatible with Kafka 0.9, 0.10, 1.1, and 2.4. We recommend that you download one of these versions. This document uses kafka_2.12-1.1.1 as an example.
+Download and decompress the [Kafka installation file](https://archive.apache.org/dist/kafka/1.1.1/kafka_2.11-1.1.1.tgz).
+
 
 ### Step 3. Test Kafka APIs.
 
 1. Configure an ACL policy locally.
    1. In the `./config` directory of the installation file, add the following content at the end of `producer.properties` and `consumer.properties`.
-      ```properties
+   <dx-codeblock>
+   :::  properties
       security.protocol=SASL_PLAINTEXT 
       sasl.mechanism=PLAIN
-      ```
+   :::
+   </dx-codeblock>
    2. Create a file named `ckafka_client_jaas.conf`, and add the following content.
-      ```properties
+   <dx-codeblock>
+   :::  properties
       KafkaClient {
                  org.apache.kafka.common.security.plain.PlainLoginModule required
                  username="yourinstance#yourusername"
                  password="yourpassword";
       };
-      ```
-      >?Set `username` to a value in the format of `instance ID` + `#` + `configured username`, and `password` to a configured password.
+   :::
+   </dx-codeblock>
+   <dx-alert infotype="explain" title="">
+   Set `username` to a value in the format of `instance ID` + `#` + `configured username`, and `password` to a configured password.
+   </dx-alert>
    3. In the `./bin` directory of the installation file, add the statement of the full path of the JAAS file at the beginning of `kafka-console-producer.sh` and `kafka-console-consumer.sh`.
-      ```bash
+   <dx-codeblock>
+   :::  bash
       export KAFKA_OPTS="-Djava.security.auth.login.config=****/config/ckafka_client_jaas.conf"
-      ```
-
+   :::
+   </dx-codeblock>
 2. Go to the `./bin` directory, and produce and consume a message via CLI commands.
    1. Open a terminal window to start a consumer.
-      ```bash
+   <dx-codeblock>
+   :::  bash
       bash kafka-console-consumer.sh --bootstrap-server XXXX:port --topic XXXX --consumer.config ../config/consumer.properties
-      ```
-      >?
-      >- broker-list: replace `XXXX:port` with the domain name and port for public network access, which can be obtained in the **Access Mode** section on the **Instance Details** page in the console.
-      >  ![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
-      >- topic: replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
+   :::
+   </dx-codeblock>
+   <dx-alert infotype="explain" title="">
+- broker-list: Replace `XXXX:port` with the domain name and port for public network access, which can be obtained in the **Access Mode** section on the **Instance Details** page in the console.
+  ![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
+- topic: Replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
+</dx-alert>
    2. Open another terminal window to start a producer.
-      ``` bash
-      bash kafka-console-producer.sh --broker-list XXXX:port --topic XXXX --producer.config ../config/producer.properties
-      ```
-      >?
-      >- broker-list: replace `XXXX:port` with the domain name and port for public network access, which can be obtained in the **Access Mode** section on the **Instance Details** page in the console.
-      >  ![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
-      >- topic: replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
-
+<dx-codeblock>
+:::  bash
+ bash kafka-console-producer.sh --broker-list XXXX:port --topic XXXX --producer.config ../config/producer.properties
+:::
+</dx-codeblock>
+<dx-alert infotype="explain" title="">
+- broker-list: Replace `XXXX:port` with the domain name and port for public network access, which can be obtained in the **Access Mode** section on the **Instance Details** page in the console.
+  ![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
+- topic: Replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
+</dx-alert>
       Enter the content of the message and press Enter.
-
       **Producing a message:**
-      ![](https://main.qcloudimg.com/raw/c25bdccd293ea4382064b57eec08a2fe.png)
-
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/34e000095c6bd53b191d644593c466a8.png"> 
       **Consuming a message:**
-      ![](https://main.qcloudimg.com/raw/22860d730e70cfbe9eb5fcbca215d5a5.png)
-
-3. On the message query page of the CKafka console, query the message sent.
-     ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
+<img src = "https://qcloudimg.tencent-cloud.cn/raw/14ec265fe6ef5edd5f95c98891245637.png">  
+3. In the message querying page of the CKafka console, query the message sent.
+   ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
     The details of the message are as follows:
-     ![](https://main.qcloudimg.com/raw/06cdc6450beefae7f6cc6f3d704390a0.png)
+   ![](https://main.qcloudimg.com/raw/06cdc6450beefae7f6cc6f3d704390a0.png)

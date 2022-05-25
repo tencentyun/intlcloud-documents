@@ -8,9 +8,9 @@
 
 ## 操作步骤
 
-1. 在 CKafka [实例列表](https://console.cloud.tencent.com/ckafka/index?rid=1) 页面，单击 [步骤1](https://intl.cloud.tencent.com/document/product/597/40044) 创建的实例的“ID/名称”。
-2. 在实例详情页面，选择【接入方式】模块中的【添加路由策略】，新增一条公网路由。
-   ![](https://main.qcloudimg.com/raw/dcb5bb0a6975a847067387d7730efa0d.png)
-   添加后获得公网访问的域名和接口。
-   ![](https://main.qcloudimg.com/raw/71b6caefb12f44280d83b138df614845.png)
+1. 在 CKafka [实例列表](https://console.intl.cloud.tencent.com/ckafka/index?rid=1) 页面，单击 [步骤1](https://intl.cloud.tencent.com/document/product/597/40044) 创建的实例的“ID/名称”。
+2. 在实例详情页面，选择**接入方式**模块中的**添加路由策略**，新增一条公网路由。
+![](https://main.qcloudimg.com/raw/dcb5bb0a6975a847067387d7730efa0d.png)
+添加后获得公网访问的域名和接口。
+![](https://main.qcloudimg.com/raw/71b6caefb12f44280d83b138df614845.png)
 
