@@ -46,7 +46,7 @@ Example: a sync task among databases A, B, and C needs to be created, where data
 The following uses MySQL two-to-one sync (databases A and B have database/table structures and data, and database C is empty) as an example. The many-to-one sync operations for other databases are similar.
 
 ### Creating sync task 1 (database A > database C)
-1. Log in to the [data sync purchase page](https://buy.cloud.tencent.com/dts), select appropriate configuration items, and click **Buy Now**.
+1. Log in to the [data sync purchase page](https://buy.intl.cloud.tencent.com/migration), select appropriate configuration items, and click **Buy Now**.
 <table>
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>
