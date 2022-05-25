@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used by the app backend to monitor users' one-to-one messages in real time, including:
+This API is used by the app backend to view users' one-to-one messages in real time, including:
 - Records one-to-one messages in real time, for example, by recording a log or synchronizing the messages to other systems.
 - Collects statistics on one-to-one messages, for example, in terms of the number of users or the number of messages.
 

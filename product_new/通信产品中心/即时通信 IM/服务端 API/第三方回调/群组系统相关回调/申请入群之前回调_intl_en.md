@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend uses this callback to monitor users’ requests to join groups in real time, including blocking these requests.
+The app backend uses this callback to view users' requests to join groups in real time, including blocking these requests.
 
 ## Precautions
 

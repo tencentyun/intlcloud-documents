@@ -1,6 +1,6 @@
 ## Feature Description
 
-Through this callback, the app backend can monitor information about creating groups by users in real time. When the app backend is notified that a group has been created successfully, it performs operations such as data synchronization accordingly.
+Through this callback, the app backend can view information about creating groups by users in real time. When the app backend is notified that a group has been created successfully, it performs operations such as data synchronization accordingly.
 
 ## Notes
 

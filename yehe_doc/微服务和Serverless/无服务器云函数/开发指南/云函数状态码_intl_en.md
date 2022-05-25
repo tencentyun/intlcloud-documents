@@ -124,7 +124,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>444<br>PullImageFailed</td>
 <td>Image pull fails.</td>
-<td>Check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
+<td>Check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, contact the  <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
 </tr>
 <tr>
 <td>445<br>ContainerInitError</td>
@@ -139,7 +139,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>447<br>PullImageTimeOut</td>
 <td>Image pull times out.</td>
-<td>It may be a timeout caused by a large image or network jitters. Minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
+<td>It may be a timeout caused by a large image or network jitters. Minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, contact the <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
 </tr>
 <tr>
 <td>449<br>InsufficientResources</td>
@@ -157,7 +157,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>500<br>InternalError</td>
 <td>An internal error occurs.</td>
-<td>An internal error occurs. Try again later. If the problem persists, contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+<td>An internal error occurs. Try again later. If the problem persists, contact the <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 </tbody>
 </table>

@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend system uses this callback to monitor group member addition messages in real time. This callback can notify the app backend system that new members are added to the group so that the app can perform necessary data synchronization.
+The app backend system uses this callback to view group member addition messages in real time. This callback can notify the app backend system that new members are added to the group so that the app can perform necessary data synchronization.
 
 ## Precautions
 

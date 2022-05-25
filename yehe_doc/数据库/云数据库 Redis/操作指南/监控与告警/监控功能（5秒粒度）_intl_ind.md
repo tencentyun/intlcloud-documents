@@ -194,7 +194,7 @@ Pemantauan instans mencakup semua data pemantauan instans, termasuk data pemanta
 
 ### [Jenis perintah](id:mlfl)
 
-| Jenis | Perintah 
+| Jenis | Perintah |
 | -------- | ------------------------------------------------------------ |
 | Perintah baca   | get, strlen, exists, getbit, getrange, substr, mget, llen, lindex, lrange, sismember, scard, srandmember,<br>sinter, sunion, sdiff, smembers, sscan, zrange, zrangebyscore, zrevrangebyscore, zrangebylex,<br>zrevrangebylex, zcount, zlexcount, zrevrange, zcard, zscore, zrank, zrevrank, zscan, hget, hmget,<br>hlen, hstrlen, hkeys, hvals, hgetall, hexists, hscan, randomkey, keys, scan, dbsize, type, ttl, touch, pttl,<br>dump, object, memory, bitcount, bitpos, georadius_ro, georadiusbymember_ro, geohash, geopos, geodist, pfcount |
 | Perintah tulis  | set, setnx, setex, psetex, append, del, unlink, setbit, bitfield, setrange, incr, decr, rpush, lpush, rpushx,<br>lpushx, linsert, rpop, lpop, brpop, brpoplpush, blpop, lset, ltrim, lrem, rpoplpush, sadd, srem, smove, spop,<br>sinterstore, sunionstore, sdiffstore, zadd, zincrby, zrem, zremrangebyscore, zremrangebyrank,<br>zremrangebylex, zunionstore, zinterstore, hset, hsetnx, hmset, hincrby, hincrbyfloat, hdel, incrby, decrby,<br>incrbyfloat, getset, mset, msetnx, swapdb, move, rename, renamenx, expire, expireat, pexpire, pexpireat,<br>flushdb, flushall, sort, persist, restore, restore-asking, migrate, bitop, geoadd, georadius, georadiusbymember,<br>pfadd, pfmerge, pfdebug |

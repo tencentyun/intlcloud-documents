@@ -11,7 +11,8 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 | Text blind watermarking (type 3) | Adds text to the image | Adding terminal information  |
 
 >?
->- Blind watermarking is a paid service, which needs to be activated with the **Enable** button in the configuration page of the bucket. Each account is entitled to a free tier of 3,000 blind watermarks, and any excessive usage will be billed by CI as detailed in [Billing Overview](https://intl.cloud.tencent.com/document/product/1045/33431).
+>- Blind watermarking is a paid service, which needs to be activated with the **Enable** button in the configuration page of the bucket.
+>- When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed by CI as detailed in [Billing Overview](https://intl.cloud.tencent.com/document/product/1045/33431).
 >- The blind watermarking feature is available in all public cloud regions.
 
 ## Use Cases
@@ -27,16 +28,17 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 - Currently, you cannot add a blind watermark to animated images such as GIF.
 - Both the width and height of the image watermark must not be greater than 1/8 of the input image.
 - You need to choose a white watermark with a black background for the effect of blind watermarking.
-- Each account is entitled to a free tier of 3,000 blind watermarks, and any excessive usage will be billed. The unused part of the free tier will not roll over to the next month. For more information, see Free Tier.
+- When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For more information, see CI Free Tier.
 - Text watermarks can contain digits and letters.
-- Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is related to the original image size and the attack intensity. For more information, [contact us](https://intl.cloud.tencent.com/contact-sales).
+- Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is subject to the original image size and the attack intensity. For more information, [contact us](https://intl.cloud.tencent.com/contact-sales).
+https://intl.cloud.tencent.com/contact-sales)。
 
 ## How to Use
 
-### Using COS console
+### Through COS console
 
-You can enable blind watermarking in the COS console as instructed in [Setting Blind Watermarking].
+You can enable blind watermarking in the COS console as instructed in Setting Blind Watermark.
 
-### Using REST APIs
+### Through RESTful APIs
 
-You can use APIs to add or extract blind watermarks. For more information, see [Blind Watermarking](https://intl.cloud.tencent.com/document/product/1045/43029).
+You can use APIs to add or extract blind watermarks. For more information, see Blind Watermarking.

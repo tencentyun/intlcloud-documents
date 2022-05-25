@@ -1,6 +1,6 @@
 ## Feature Description
 
-Through this callback, the app backend can monitor the user deletion from blocklist in real time.
+Through this callback, the app backend can view the user deletion from blocklist in real time.
 
 ## Precautions
 

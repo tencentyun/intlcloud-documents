@@ -44,7 +44,7 @@ Setelah granularitas pemantauan dipersempit dari satu menit menjadi lima detik, 
 |   -               | LatencyMax                 | Latensi eksekusi maksimum antara proxy dan server Redis                          |
 |   -               | LatencyP99                  | Latensi P99 antara proksi dan server Redis                       |
 | LatencyGetMin    | LatencyRead       | Latensi eksekusi rata-rata perintah baca antara proksi dan server Redis                       |
-| LatencySetMin    | LatencyWrite       | LatensiTulis | Latensi eksekusi rata-rata dari perintah tulis antara proksi dan server Redis                       |
+| LatencySetMin    | LatencyWrite       | Latensi eksekusi rata-rata dari perintah tulis antara proksi dan server Redis                       |
 | LatencyOtherMin  | LatencyOther     | Latensi eksekusi rata-rata perintah (tidak termasuk perintah tulis dan baca) antara proksi dan server Redis          |
 | QpsMin           | Commands            | QPS, yaitu jumlah eksekusi perintah per detik                                            |
 | StatGetMin       | CmdRead          | Jumlah eksekusi perintah baca. Untuk informasi selengkapnya tentang jenis perintah baca, lihat "Fitur Pemantauan > Kategori perintah".               |

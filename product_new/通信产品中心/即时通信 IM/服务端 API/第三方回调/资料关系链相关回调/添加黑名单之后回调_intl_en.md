@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend uses this callback to monitor information about users added to the blocklist in real time.
+The app backend uses this callback view information about users added to the blocklist in real time.
 
 ## Precautions
 

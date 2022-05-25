@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend can use this callback to monitor information about deleting friends by users in real time.
+The app backend can use this callback to view information about deleting friends by users in real time.
 
 ## Notes
 

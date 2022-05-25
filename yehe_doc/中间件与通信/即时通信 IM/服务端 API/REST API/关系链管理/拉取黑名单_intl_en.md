@@ -49,7 +49,7 @@ The maximum invocation frequency is 200 times per second.
 | From_Account | String | Required | The identifier of the blocklist to be pulled. |
 | StartIndex | Integer | Required | The starting pull position. |
 | MaxLimited | Integer | Required | The maximum number of blocked users that can be pulled on each page. |
-| LastSequence | Integer | Required | The sequence that was returned by the server to the client during the previous blocklist pull. Its value is 0 for the initial pull. |
+| LastSequence | Integer | Required | The sequence that was returned by the server to the client during the previous blocklist pull. Its value is 0 for the initial pull. （REST API can be filled with 0）|
 
 ### Response packet examples
 

@@ -1,9 +1,9 @@
 ## Roaming Message Storage
 
-IM supports message roaming, which means that, when users log in on different devices, they still have access to chat history with other users or groups.
-By default, one-to-one chat messages and group chat messages roam for 7 days, and they will be deleted then. IM allows you to change the message roaming period in the console. Extending the message roaming period is a value-added service. For the billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+IM supports message roaming, which means that, when users log in on different devices, they still have access to chat history.
+By default, roaming one-to-one chat messages and group chat messages are stored for 7 days, and they will be deleted then. IM allows you to change the message roaming period in the console. Extending the message roaming period is a value-added service. For the billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 [](id:MsgType)
-Different SDK versions allow you to extend the storage time of historical messages for different message types, as shown in the following table.
+Different SDK versions allow you to extend the storage time of historical messages for different message types.
 
 | SDK Version | Text | Custom Message | Image | File | Short Audio | Short Video | Rich Media Message | 
 |---------|---------|---------|---------|---------|---------|---------|---------|
@@ -35,7 +35,7 @@ By default, the client will pull the recent contacts through the SDK upon login 
 
 ## App Local Storage
 
-Users do not need to store messages because the SDK stores the messages it receives by default. Users can call the API to obtain local messages (no networking required). Additionally, local messages can be obtained through the getMessage API. When gaps exist in local message history, roaming messages are used to fill in the gaps.
+Users do not need to store messages because the SDK stores the received messages by default. Users can call the API to obtain local messages (no network required). Additionally, local messages can be obtained through the `getMessage` API. When gaps exist in local message history, roaming messages are used to fill in the gaps.
 By default, the SDK does not delete user messages, but you are provided with the option to delete local messages.
 
 

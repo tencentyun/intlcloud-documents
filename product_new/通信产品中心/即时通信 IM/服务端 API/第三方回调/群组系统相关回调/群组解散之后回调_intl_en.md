@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend uses this callback to monitor group dismissal in real time, including recording group dismissal information in real time (for example, recording a log or synchronizing the information to other systems).
+The app backend uses this callback to view group dismissal in real time, including recording group dismissal information in real time (for example, recording a log or synchronizing the information to other systems).
 
 ## Precautions
 
