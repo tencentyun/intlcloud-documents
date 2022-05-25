@@ -10,11 +10,10 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object in whole | Uploads an object in whole to a bucket. |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object. |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to the destination path. |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to a destination path. |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes a specified object from a bucket. |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket. |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
-| GET Object URL | Get the URL of an object | Gets the unsigned URL of an object. |
 
 ### Multipart operations
 
@@ -23,7 +22,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload. |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads a file in parts. |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part. |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
@@ -32,7 +31,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 ### Querying objects
 
-#### API description
+#### Description
 
 This API is used to query some or all the objects in a bucket.
 
@@ -42,25 +41,26 @@ This API is used to query some or all the objects in a bucket.
 CosResult GetBucket(const GetBucketReq& req, GetBucketResp* resp)
 ```
 
-#### Sample request
+#### Sample request 1: Listing objects in a directory
 
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 
-// The bucket_name is required in the constructor of GetBucketReq.
 qcloud_cos::GetBucketReq req(bucket_name);
+req.SetPrefix("image/"); // List objects in the `image/` directory
 qcloud_cos::GetBucketResp resp;
 qcloud_cos::CosResult result = cos.GetBucket(req, &resp);
 
 // The call is successful. You can call the resp member functions to get the return content.
 if (result.IsSucc()) {
-    std::cout << "Name=" << resp.GetName() << std::endl;
-    std::cout << "Prefix=" << resp.GetPrefix() << std::endl;
-    std::cout << "Marker=" << resp.GetMarker() << std::endl;
-    std::cout << "MaxKeys=" << resp.GetMaxKeys() << std::endl;
+   std::vector<Content> contents = get_bucket_resp.GetContents();
+   // Traverse the listed objects
+   for (auto &content: contents) {
+     // do something
+   }
 } else {
     std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
     std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
@@ -72,6 +72,40 @@ if (result.IsSucc()) {
 } 
 ```
 
+#### Sample request 2: Listing all objects in a bucket
+
+```cpp
+#include "cos_api.h"
+#include "cos_sys_config.h"
+#include "cos_defines.h"
+
+int main(int argc, char *argv[]) {
+    // 1. Specify the path to the configuration file and initialize CosConfig
+    qcloud_cos::CosConfig config("./config.json");
+    qcloud_cos::CosAPI cos(config);
+    
+    // 2. Construct a request to query the object list
+    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    qcloud_cos::GetBucketReq req(bucket_name);
+    qcloud_cos::CosResult result;   
+	bool is_truncated = false;
+
+    // 3. Traverse all objects
+    do {
+    	qcloud_cos::GetBucketResp resp;
+        result = cos.GetBucket(req, &resp);
+        if (result.IsSucc()) {
+            std::vector<Content> contents = get_bucket_resp.GetContents();
+            for (auto &content: contents) {
+            	// do something
+            }
+            req.SetMarker(resp.GetNextMarker()); // Set the start key for the next listing
+            is_truncated = resp.IsTruncated();
+        }
+    } while (result.IsSucc() && is_truncated);
+}
+```
+
 #### Parameter description
 
 | Parameter | Description | Type | Required |
@@ -79,17 +113,42 @@ if (result.IsSucc()) {
 | req  | Request of the `GetBucket` operation | GetBucketReq | Yes |
 | resp | Response of the `GetBucket` operation | GetBucketResp | Yes |
 
-
-`GetBucketResp` provides the following member functions to get the specific content (in XML format) returned by `Get Bucket`. 
+`GetBucketReq` provides the following member functions: 
 
 ```cpp
-std::vector<Content> GetContents();
-std::string GetName();
-std::string GetPrefix();
-std::string GetMarker();
-uint64_t GetMaxKeys();
-bool IsTruncated();
-std::vector<std::string> GetCommonPrefixes();
+/// \@brief Set a prefix, specifying the addresses of the returned files
+void SetPrefix(const std::string& prefix);
+/// \brief Set a delimiter, specifying that paths that start with the specified prefix and end with the first occurrence of the delimiter will be returned
+void SetDelimiter(const std::string& delimiter);
+/// \brief Encoding type of returned values. Valid value: `url`
+void SetEncodingType(const std::string& encoding_type);
+/// \brief By default, entries are listed in UTF-8 binary order. The list starts after the marker.
+void SetMarker(const std::string& marker);
+/// \brief Maximum number of entries returned at a time. Default: 1000
+void SetMaxKeys(uint64_t max_keys);
+```
+
+`GetBucketResp` provides the following member functions: 
+
+```cpp
+/// \brief Get the metadata of an object in a bucket.
+std::vector<Content> GetContents() const;
+/// \brief Bucket name
+std::string GetName() const;
+/// \brief Get the delimiter.
+std::string GetDelimiter() const;
+/// \brief Encoding format
+std::string GetEncodingType() const;
+/// \brief Prefix of the returned file
+std::string GetPrefix() const;
+/// \brief By default, entries are listed in UTF-8 binary order. The list starts after the marker.
+std::string GetMarker() const;
+/// \brief Maximum number of entries returned in a single response
+uint64_t GetMaxKeys() const;
+// \brief Whether the returned list is truncated. The parameter is a boolean (true or false).
+bool IsTruncated() const;
+// \brief If the returned list is truncated, "NextMarker" represents the object after which the next returned list begins.
+std::string GetNextMarker() const;
 ```
 
 `Content` is defined as follows:
@@ -107,7 +166,7 @@ struct Content {
 
 ### Uploading an object in whole
 
-#### API description
+#### Description
 
 This API is used to upload an object to a specified bucket.
 
@@ -121,65 +180,85 @@ CosResult PutObject(const PutObjectByStreamReq& req, PutObjectByStreamResp* resp
 CosResult PutObject(const PutObjectByFileReq& req, PutObjectByFileResp* resp)
 ```
 
-#### Sample request
+#### Sample request 1: Stream upload
 
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "object_name";
+std::istringstream iss("put object");
+// istream is required in the request constructor.
+qcloud_cos::PutObjectByStreamReq req(bucket_name, object_name, iss);
+// Call the Set method to set metadata, ACL, etc.
+req.SetXCosStorageClass("STANDARD_IA");
+// Disable MD5 checksum. To enable it, use "req.TurnOnComputeConentMd5()". MD5 checksum is enabled by default.
+req.TurnOffComputeConentMd5();
+qcloud_cos::PutObjectByStreamResp resp;
+qcloud_cos::CosResult result = cos.PutObject(req, &resp);
 
-// Upload in whole (stream)
-{
-    std::istringstream iss("put object");
-    // istream is required in the request constructor.
-    qcloud_cos::PutObjectByStreamReq req(bucket_name, object_name, iss);
-    // Call the Set method to set metadata, ACL, etc.
-    req.SetXCosStorageClass("STANDARD_IA");
-    // Disable MD5 checksum. To enable it, use "req.TurnOnComputeConentMd5()". MD5 checksum is enabled by default.
-    req.TurnOffComputeConentMd5();
-    qcloud_cos::PutObjectByStreamResp resp;
-    qcloud_cos::CosResult result = cos.PutObject(req, &resp);
-    
-    if (result.IsSucc()) {
-        // The call is successful. You can call the resp member functions to get the return content.
-        do sth
-    } else {
-        // The call failed. You can call the result member functions to get the error information.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
-        std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
-        std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
-        std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
-        std::cout << "ResourceAddr=" << result.GetResourceAddr() << std::endl;
-        std::cout << "XCosRequestId=" << result.GetXCosRequestId() << std::endl;
-        std::cout << "XCosTraceId=" << result.GetXCosTraceId() << std::endl;
-     }
+if (result.IsSucc()) {
+    // The call is successful. You can call the resp member functions to get the return content.
+} else {
+    // The call failed. You can call the result member functions to get the error information.
+    std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
+    std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
+    std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
+    std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
+    std::cout << "ResourceAddr=" << result.GetResourceAddr() << std::endl;
+    std::cout << "XCosRequestId=" << result.GetXCosRequestId() << std::endl;
+    std::cout << "XCosTraceId=" << result.GetXCosTraceId() << std::endl;
 }
+```
 
-// Upload a file in whole
-{
-    // The local file path is required in the request constructor.
-    qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
-    // Call the Set method to set metadata, ACL, etc.
-    req.SetXCosStorageClass("STANDARD_IA");
-    // Disable MD5 checksum. To enable it, use "req.TurnOnComputeConentMd5()". MD5 checksum is enabled by default.
-    req.TurnOffComputeConentMd5();
-    qcloud_cos::PutObjectByFileResp resp;
-    qcloud_cos::CosResult result = cos.PutObject(req, &resp);
-        if (result.IsSucc()) {
-        // The call is successful. You can call the resp member functions to get the return content.
-        do sth
-    } else {
-        // The call failed. You can call the result member functions to get the error information.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
-        std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
-        std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
-        std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
-        std::cout << "ResourceAddr=" << result.GetResourceAddr() << std::endl;
-        std::cout << "XCosRequestId=" << result.GetXCosRequestId() << std::endl;
-        std::cout << "XCosTraceId=" << result.GetXCosTraceId() << std::endl;
-     }
+#### Sample request 2: Uploading a file
+
+```cpp
+qcloud_cos::CosConfig config("./config.json");
+qcloud_cos::CosAPI cos(config);
+
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+std::string object_name = "object_name";
+// The local file path is required in the request constructor.
+qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
+// Call the Set method to set metadata, ACL, etc.
+req.SetXCosStorageClass("STANDARD_IA");
+// Disable MD5 checksum. To enable it, use "req.TurnOnComputeConentMd5()". MD5 checksum is enabled by default.
+req.TurnOffComputeConentMd5();
+qcloud_cos::PutObjectByFileResp resp;
+qcloud_cos::CosResult result = cos.PutObject(req, &resp);
+if (result.IsSucc()) {
+    // The call is successful. You can call the resp member functions to get the return content.
+} else {
+    // The call failed. You can call the result member functions to get the error information.
+    std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
+    std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
+    std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
+    std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
+    std::cout << "ResourceAddr=" << result.GetResourceAddr() << std::endl;
+    std::cout << "XCosRequestId=" << result.GetXCosRequestId() << std::endl;
+    std::cout << "XCosTraceId=" << result.GetXCosTraceId() << std::endl;
+}
+```
+
+#### Sample 3: limiting the upload speed
+
+```cpp
+qcloud_cos::CosConfig config("./config.json");
+qcloud_cos::CosAPI cos(config);
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+std::string object_name = "object_name";
+// The local file path is required in the request constructor.
+qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
+// The speed range is 819200 to 838860800 (in bit/s), that is, 100 KB/s to 100 MB/s.
+req.SetTrafficLimitByHeader(1048576);
+qcloud_cos::PutObjectByFileResp resp;
+qcloud_cos::CosResult result = cos.PutObject(req, &resp);
+if (result.IsSucc()) {
+    // The call is successful. You can call the resp member functions to get the return content.
+} else {
+    // The call failed. You can call the result member functions to get the error information.
 }
 ```
 
@@ -249,7 +328,7 @@ std::string GetXCosServerSideEncryption();
 
 ### Querying object metadata
 
-#### API description
+#### Description
 
 This API is used to query the metadata of an object.
 
@@ -266,7 +345,7 @@ CosResult HeadObject(const HeadObjectReq& req, HeadObjectResp* resp)
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "object_name";
 qcloud_cos::HeadObjectReq req(bucket_name, object_name);
 qcloud_cos::HeadObjectResp resp;
@@ -305,24 +384,66 @@ std::string GetXCosServerSideEncryption();
 
 ### Downloading an object
 
-#### API description
+#### Description
 
-This API (`Get Object`) is used to download an object to the local file system.
+This API is used to download an object to the local file system.
 
 #### Method prototype
 
 ```cpp
-// Download the object to a local file.
+// Download the object to a local file
 CosResult GetObject(const GetObjectByFileReq& req, GetObjectByFileResp* resp)
 
-// Download the object to a stream.
+// Download the object to a stream
 CosResult GetObject(const GetObjectByStreamReq& req, GetObjectByStreamResp* resp)
 
-// Download the object to a local file (multi-threaded).
+// Download the object to a local file (multi-threaded)
 CosResult GetObject(const MultiGetObjectReq& req, MultiGetObjectResp* resp)
 ```
 
-#### Sample request
+#### Sample request 1: Downloading an object to a local file
+
+```cpp
+qcloud_cos::CosConfig config("./config.json");
+qcloud_cos::CosAPI cos(config);
+
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+std::string object_name = "object_name";
+std::string local_path = "/tmp/object_name";
+
+// appid, bucketname, object, and a local path (including filename) are required for the request.
+qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
+qcloud_cos::GetObjectByFileResp resp;
+qcloud_cos::CosResult result = cos.GetObject(req, &resp);
+if (result.IsSucc()) {
+    // The download is successful. You can call the GetObjectByFileResp member functions.
+} else {
+    // You can call the CosResult member functions to get the error information, such as requestID.
+}
+```
+
+#### Sample request 2: Downloading an object to a stream
+
+```cpp
+qcloud_cos::CosConfig config("./config.json");
+qcloud_cos::CosAPI cos(config);
+
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+std::string object_name = "object_name";
+std::string local_path = "/tmp/object_name";
+// appid, bucketname, object, and output stream are required for the request.
+std::ostringstream os;
+qcloud_cos::GetObjectByStreamReq req(bucket_name, object_name, os);
+qcloud_cos::GetObjectByStreamResp resp;
+qcloud_cos::CosResult result = cos.GetObject(req, &resp);
+if (result.IsSucc()) {
+    // The download is successful. You can call the GetObjectByStreamResp member functions.
+} else {
+    // The download failed. You can call the CosResult member functions to get the error information, such as requestID.
+}
+```
+
+#### Sample request 3: Downloading an object to a local file via multiple threads
 
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
@@ -332,44 +453,14 @@ std::string bucket_name = "examplebucket-1250000000";
 std::string object_name = "object_name";
 std::string local_path = "/tmp/object_name";
 
-// Download to a local file
-{
-    // appid, bucketname, object, and a local path (including filename) are required for the request.
-    qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
-    qcloud_cos::GetObjectByFileResp resp;
-    qcloud_cos::CosResult result = cos.GetObject(req, &resp);
-    if (result.IsSucc()) {
-        // The download is successful. You can call the GetObjectByFileResp member functions.
-    } else {
-        // You can call the CosResult member functions to get the error information, such as requestID.
-    }
-}
-
-// Download to a stream
-{
-    // appid, bucketname, object, and output stream are required for the request.
-    std::ostringstream os;
-    qcloud_cos::GetObjectByStreamReq req(bucket_name, object_name, os);
-    qcloud_cos::GetObjectByStreamResp resp;
-    qcloud_cos::CosResult result = cos.GetObject(req, &resp);
-    if (result.IsSucc()) {
-        // The download is successful. You can call the GetObjectByStreamResp member functions.
-    } else {
-        // The download failed. You can call the CosResult member functions to get the error information, such as requestID.
-    }
-}
-
-// Multi-threaded download to local
-{
-    // appid, bucketname, object, and local path (including the filename) are required for the request
-    qcloud_cos::MultiGetObjectReq req(bucket_name, object_name, local_path);
-    qcloud_cos::MultiGetObjectResp resp;
-    qcloud_cos::CosResult result = cos.GetObject(req, &resp);
-    if (result.IsSucc()) {
-        // The download is successful. You can call the MultiGetObjectResp member functions.
-    } else {
-        // The download failed. You can call the CosResult member functions to get the error information, such as requestID.
-    }
+// appid, bucketname, object, and local path (including the filename) are required for the request
+qcloud_cos::MultiGetObjectReq req(bucket_name, object_name, local_path);
+qcloud_cos::MultiGetObjectResp resp;
+qcloud_cos::CosResult result = cos.GetObject(req, &resp);
+if (result.IsSucc()) {
+    // The download is successful. You can call the MultiGetObjectResp member functions.
+} else {
+    // The download failed. You can call the CosResult member functions to get the error information, such as requestID.
 }
 ```
 
@@ -427,7 +518,7 @@ std::string GetXCosMeta(const std::string& key);
 std::string GetXCosServerSideEncryption(); 
 ```
 
-### Copying an object
+### Copying objects
 
 This API (`PUT Object - Copy`) is used to copy a file to the destination path.
 
@@ -437,17 +528,36 @@ This API (`PUT Object - Copy`) is used to copy a file to the destination path.
 CosResult PutObjectCopy(const PutObjectCopyReq& req, PutObjectCopyResp* resp)
 ```
 
-#### Sample request
+#### Sample 1. Copying an object
 
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
-
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "sevenyou";
-
-qcloud_cos::PutObjectCopyReq req(bucket_name, object_name);                                                                                                                       
+qcloud_cos::PutObjectCopyReq req(bucket_name, object_name);                                         
 req.SetXCosCopySource("sevenyousouthtest-12345656.cn-south.myqcloud.com/sevenyou_source_obj");
+qcloud_cos::PutObjectCopyResp resp;
+qcloud_cos::CosResult result = cos.PutObjectCopy(req, &resp);
+```
+
+#### Sample request 2: Modifying object metadata
+
+```cpp
+qcloud_cos::PutObjectCopyReq req(bucket_name, object_name);
+req.SetXCosMeta("key1", "val1"); // Custom metadata
+req.SetXCosMeta("key2", "val2"); // Custom metadata
+req.SetXCosMetadataDirective("Replaced"); // This line must be added
+qcloud_cos::PutObjectCopyResp resp;
+qcloud_cos::CosResult result = cos.PutObjectCopy(req, &resp);
+```
+
+#### Sample 3: modifying storage class
+
+```cpp
+qcloud_cos::PutObjectCopyReq req(bucket_name, object_name);
+req.SetXCosStorageClass("STANDARD_IA");
+req.SetXCosMetadataDirective("Replaced"); // This line must be added
 qcloud_cos::PutObjectCopyResp resp;
 qcloud_cos::CosResult result = cos.PutObjectCopy(req, &resp);
 ```
@@ -505,7 +615,7 @@ void SetXCosGrantFullControl(const std::string& str);
 // Customizable headers, which will be returned as object metadata of up to 2 KB
 void SetXCosMeta(const std::string& key, const std::string& value);
 
-// Set the algorithm for server-side encryption. Currently, AES-256 is supported.
+/// Set the algorithm for server-side encryption. Currently, AES-256 is supported.
 void SetXCosServerSideEncryption(const std::string& str);
 
 ```
@@ -522,14 +632,14 @@ std::string GetLastModified();
 // Return the version ID.
 std::string GetVersionId();
 
-/// Return the algorithm for server-side encryption.
+/// Get the algorithm for server-side encryption.
 std::string GetXCosServerSideEncryption();
 
 ```
 
 ### Deleting an object
 
-#### API description
+#### Description
 
 This API is used to delete a specified object from a bucket.
 
@@ -545,7 +655,7 @@ CosResult DeleteObject(const DeleteObjectReq& req, DeleteObjectResp* resp)
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "test_object";
 
 qcloud_cos::DeleteObjectReq req(bucket_name, object_name);
@@ -570,7 +680,7 @@ if (result.IsSucc()) {
 
 ### Deleting multiple objects
 
-#### API description
+#### Description
 
 This API is used to delete multiple objects from a bucket.
 
@@ -586,7 +696,7 @@ CosResult DeleteObjects(const DeleteObjectsReq& req, DeleteObjectsResp* resp)
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 
 std::vector<std::string> objects;
 std::vector<ObjectVersionPair> to_be_deleted;
@@ -608,7 +718,6 @@ if (result.IsSucc()) {
 } else {
     // You can call the CosResult member functions to get the error information, such as requestID.
 } 
-
 ```
 
 #### Parameter description
@@ -653,7 +762,7 @@ struct ErrorInfo{
 
 ### Restoring an archived object 
 
-#### API description
+#### Description
 
 This API is used to restore an archived object for access.
 
@@ -669,7 +778,7 @@ CosResult PostObjectRestore(const PostObjectRestoreReq& req, PostObjectRestoreRe
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "sevenyou";
 
 {   
@@ -705,46 +814,7 @@ void SetExiryDays(uint64_t days);
 void SetTier(const std::string& tier);
 ```
 
-### Getting an object’s URL
-
-#### API description
-
-This API is used to get the unsigned URL of an object.
-
-#### Method prototype
-
-```cpp
-std::string GetObjectUrl(const std::string& bucket, const std::string& object, bool https = true, const std::string& region = "");
-```
-
-#### Sample request
-
-```cpp
-qcloud_cos::CosConfig config("./config.json");
-qcloud_cos::CosAPI cos(config);
-
-std::string bucket_name = "examplebucket-1250000000";
-std::string object_name = "sevenyou";
-//Get the HTTPS URL of the object. The region is the one configured in config.json.
-cos.GetObjectUrl(bucket_name, object_name);
-//Get the HTTP URL of the object. The region is the one configured in config.json.
-cos.GetObjectUrl(bucket_name, object_name, false);
-//Get the HTTPS URL of the object. The region is ap-shanghai.
-cos.GetObjectUrl(bucket_name, object_name, true, "ap-shanghai");  
-```
-
-#### Parameter description
-
-| Parameter | Description | Type | Required |
-| ------ | ------------- | ------ | -------- |
-| bucket | Bucket name      | String | Yes       |
-| object | Object name        | String | Yes       |
-| https  | Whether to use HTTPS | Bool   | No       |
-| region | Region        | String | No       |
-
-
-
-## Multipart Operations
+## Multipart Upload Operations
 
 Multipart operations include:
 
@@ -754,7 +824,7 @@ Multipart operations include:
 
 ### Querying multipart uploads
 
-#### API description
+#### Description
 
 This API (`List Multipart Uploads`) is used to query in-progress multipart uploads in a specified bucket.
 
@@ -770,7 +840,7 @@ CosResult CosAPI::ListMultipartUpload(const ListMultipartUploadReq& request, Lis
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "test_object";
 
 qcloud_cos::ListMultipartUploadReq req(bucket_name, object_name);
@@ -813,7 +883,7 @@ void SetEncodingType(const std::string& encoding_type);
 // This field is used together with "upload-id-marker". If "upload-id-marker" is not specified, multipart uploads whose "ObjectName" is lexicographically greater than "key-marker" will be listed. If "upload-id-marker" is specified, multipart uploads whose "ObjectName" is lexicographically greater than "key-marker" will be listed, and multipart uploads whose "ObjectName" is lexicographically equal to "key-marker" with "UploadID" greater than "upload-id-marker" will be listed.
 void SetKeyMarker(const std::string& marker);
 
-// Set the maximum number of parts to return. Value range: 1-1000 (default)
+// Set the maximum number of parts to return. Value range: 1-1000 (default: 1000)
 void SetMaxUploads(const std::string& max_uploads);
 
 // This field is used together with "key-marker". If "key-marker" is not specified, "upload-id-marker" will be ignored. If "key-marker" is specified, multipart uploads whose "ObjectName" is lexicographically greater than "key-marker" will be listed, and multipart uploads whose "ObjectName" is lexicographically equal to "key-marker" with "UploadID" greater than "upload-id-marker" will be listed.
@@ -824,36 +894,34 @@ void SetUploadIdMarker(const std::string& upload_id_marker);
 
 ```
 // Get the metadata of an object in a bucket.
-std::vector<Upload> GetUpload()；
+std::vector<Upload> GetUpload();
 // Bucket name
-std::string GetName()；
+std::string GetName();
 // Encoding format
-std::string GetEncodingType() const；
+std::string GetEncodingType() const;
 // By default, entries are listed in UTF-8 binary order. The list starts after the marker.
-std::string GetMarker() const；
+std::string GetMarker() const;
 // The entry list starts after UploadId.
-std::string GetUploadIdMarker() const；
+std::string GetUploadIdMarker() const;
 // If the returned list is truncated, "NextKeyMarker" represents the key after which the next returned list begins.
-std::string GetNextKeyMarker() const；
+std::string GetNextKeyMarker() const;
 // If the returned list is truncated, "UploadId" represents the upload ID after which the next returned list begins.
-std::string GetNextUploadIdMarker() const；
-// The maximum number of returned parts allowed. Value range: 1-1000
-std::string GetMaxUploads () const；
+std::string GetNextUploadIdMarker() const;
+// The maximum number of returned parts allowed. Value range: 0-1000
+std::string GetMaxUploads () const;
 // Whether the returned list is truncated. The parameter is a boolean (true or false).
-bool IsTruncated()；
+bool IsTruncated();
 // The prefix of returned objects
-std::string GetPrefix() const；
+std::string GetPrefix() const;
 // The delimiter 
-std::string GetDelimiter() const；
+std::string GetDelimiter() const;
 // Objects with identical paths between the specified prefix and the delimiter are grouped together and defined as common prefixes.
 std::vector<std::string> GetCommonPrefixes() const
 ```
 
-
-
 ### Initializing a multipart upload
 
-#### API description
+#### Description
 
 This API (`Initiate Multipart Upload`) is used to initialize a multipart upload and obtain its `uploadId`.
 
@@ -868,7 +936,7 @@ CosResult InitMultiUpload(const InitMultiUploadReq& req, InitMultiUploadResp* re
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "object_name";
 
 qcloud_cos::InitMultiUploadReq req(bucket_name, object_name);
@@ -929,7 +997,7 @@ void SetXcosGrantRead(const std::string& str);
 // To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>".
 void SetXcosGrantFullControl(const std::string& str);
 
-// Set the algorithm for server-side encryption. Currently, AES-256 is supported.
+/// Set the algorithm for server-side encryption. Currently, AES-256 is supported.
 void SetXCosServerSideEncryption(const std::string& str);
 
 ```
@@ -964,7 +1032,7 @@ CosResult UploadPartData(const UploadPartDataReq& request, UploadPartDataResp* r
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "test_object";
 
 // Upload the first part.
@@ -1051,7 +1119,7 @@ CosResult UploadPartCopyData(const UploadPartCopyDataReq& request,UploadPartCopy
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "test_object";
 
 std::string upload_id;
@@ -1066,7 +1134,7 @@ req.SetXCosCopySource("sevenyousouth-1251668577.cos.ap-guangzhou.myqcloud.com/se
 req.SetXCosCopySourceRange("bytes=0-1048576000");
 qcloud_cos::UploadPartCopyDataResp resp;
 qcloud_cos::CosResult result = cos.UploadPartCopyData(req, &resp);
-if（result.IsSucc()) {
+if (result.IsSucc()) {
     etag1 = resp.GetEtag();
 }
 numbers.push_back(1);
@@ -1078,10 +1146,10 @@ req2.SetXCosCopySource("sevenyoutest-7319456.cos.cn-north.myqcloud.com/sevenyou_
 req2.SetXCosCopySourceRange("bytes=1048576000-2097152000");
 qcloud_cos::UploadPartCopyDataResp resp2;
 qcloud_cos::CosResult result = cos.UploadPartCopyData(req2, &resp2);
-if（result.IsSucc()) {
+if (result.IsSucc()) {
     etag2 = resp2.GetEtag();
 }
-numbers.push_back(2)；
+numbers.push_back(2);
 etags.push_back(etag2);
 
 CompleteMultiUpload(cos, bucket_name, object_name, upload_id, etags, numbers);
@@ -1125,7 +1193,7 @@ std::string GetXCosServerSideEncryption() const
 
 ### Querying uploaded parts
 
-#### API description
+#### Description
 
 This API is used to query the uploaded parts of a specified multipart upload.
 
@@ -1141,7 +1209,7 @@ CosResult ListParts(const ListPartsReq& req, ListPartsResp* resp)
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "test_object";
 
 // uploadId is obtained by calling InitMultiUpload.
@@ -1252,7 +1320,7 @@ struct Part {
 
 ### Completing a multipart upload
 
-#### API description
+#### Description
 
 This API is used to complete the multipart upload of a file.
 
@@ -1318,7 +1386,7 @@ std::string GetXCosServerSideEncryption();
 
 ### Aborting a multipart upload
 
-#### API description
+#### Description
 
 This API is used to abort a multipart upload and delete the uploaded parts.
 
@@ -1353,15 +1421,13 @@ AbortMultiUploadReq(const std::string& bucket_name,
 
 No specific methods provided. You can call the `BaseResp` member functions to get the common header.
 
-
-
 ## Advanced APIs (Recommended)
 
 ### Composite upload
 
-#### API description
+#### Description
 
-This API is used to upload multiple parts concurrently using the multipart upload APIs.
+This API is used to upload multiple parts concurrently via multiple threads using the multipart upload APIs.
 
 #### Method prototype
 
@@ -1375,7 +1441,7 @@ CosResult MultiUploadObject(const MultiUploadObjectReq& request, MultiUploadObje
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "exampleobject";
 std::string local_file = "./test"
 
@@ -1424,15 +1490,14 @@ std::string GetXCosServerSideEncryption() const
 
 ### Composite download
 
-#### API description
+#### Description
 
-This API is used to download multiple byte ranges concurrently.
+This API is used to download multiple ranges concurrently via multiple threads.
 
 #### Method prototype
 
 ```cpp
-CosResult GetObject(const MultiGetObjectReq& request, 
-MultiGetObjectResp* response)
+CosResult GetObject(const MultiGetObjectReq& request, MultiGetObjectResp* response)
 ```
 
 #### Sample request
@@ -1441,7 +1506,7 @@ MultiGetObjectResp* response)
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 std::string object_name = "exampleobject";
 std::string file_path = "./test";
 
@@ -1480,3 +1545,113 @@ void SetThreadPoolSize(int size)
 /// Algorithm for server-side encryption
 std::string GetXCosServerSideEncryption() const
 ```
+
+### Resumable download
+
+#### Description
+
+This API is used to download multiple ranges concurrently via resumable download.
+
+#### Method prototype
+
+```cpp
+CosResult ResumableGetObject(const MultiGetObjectReq& request, MultiGetObjectResp* response)
+```
+
+#### Sample request
+
+```cpp
+qcloud_cos::CosConfig config("./config.json");
+qcloud_cos::CosAPI cos(config);
+
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+std::string object_name = "exampleobject";
+std::string file_path = "./test";
+
+qcloud_cos::MultiGetObjectReq req(bucket_name, object_name, file_path);  
+qcloud_cos::MultiGetObjectResp resp;                                    
+qcloud_cos::CosResult result = cos.ResumableGetObject(req, &resp); 
+
+// The call is successful. You can call the resp member functions to get the return content.
+if (result.IsSucc()) {
+    // ...
+} else {
+    // You can call the CosResult member functions to get the error information, such as requestID.
+} 
+```
+
+#### Parameter description
+
+| Parameter | Description | Type | Required |
+| ---- | ------------------------- | ------------------ | -------- |
+| req  | Request of the `MultiGetObject` operation | MultiGetObjectReq  | Yes |
+| resp | Response of the `MultiGetObject` operation | MultiGetObjectResp | Yes |
+
+### Batch downloading files (downloading a COS directory)
+
+#### Description
+
+The following example shows how to use the SDK’s basic APIs to download a COS directory to local storage.
+
+#### Sample request
+
+```cpp
+qcloud_cos::CosConfig config("./config.json");
+qcloud_cos::CosAPI cos(config);
+
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+std::string server_dir_name = "image/"; // COS directory
+std::string local_dir_name = "/data/"; // Local directory
+
+qcloud_cos::GetBucketReq get_bucket_req(bucket_name);
+get_bucket_req.SetPrefix(server_dir_name);
+qcloud_cos::CosResult get_bucket_result;
+bool is_truncated = false;
+
+do {
+    qcloud_cos::GetBucketResp get_bucket_resp;
+    // List objects
+    get_bucket_result = cos.GetBucket(get_bucket_req, &get_bucket_resp);
+    if (get_bucket_result.IsSucc()) {
+        std::vector<Content> contents = get_bucket_resp.GetContents();
+        for (auto& content : contents) {
+            std::cout << "====process " << content.m_key << std::endl;
+            std::string local_file_name = local_dir_name + content.m_key;
+
+            if (StringUtil::StringEndsWith(local_file_name, "/")) {
+                continue;
+            }
+
+            // Create a local directory
+            size_t found_dir = local_file_name.find_last_of("/");
+            if (found_dir) {
+                std::string dirname = local_file_name.substr(0, found_dir);
+                char* p_dirname = const_cast<char*>(dirname.c_str());
+                struct stat buffer;
+                if (stat(p_dirname, &buffer) != 0) {
+                    std::cout << "====mkdir " << dirname << std::endl;
+                    std::string mkdir_cmd = "mkdir -p " + dirname;
+                    system(mkdir_cmd.c_str());
+                }
+            }
+			// Download an object
+            GetObjectByFileReq get_req(bucket_name, content.m_key, local_file_name);
+            GetObjectByFileResp get_resp;
+            CosResult get_result = cos.GetObject(get_req, &get_resp);
+            if (get_result.IsSucc()) {
+                std::cout << "====download " << content.m_key << " to "
+                    << local_file_name << " succeed" << std::endl;
+            } else {
+                std::cout << "====download " << content.m_key << " to "
+                    << local_file_name << " failed" << std::endl;
+            }
+        }
+        get_bucket_req.SetMarker(
+            get_bucket_resp.GetNextMarker());  // Set the start key for the next listing
+        is_truncated = get_bucket_resp.IsTruncated();
+    }
+} while (get_bucket_result.IsSucc() && is_truncated);
+```
+
+
+### 

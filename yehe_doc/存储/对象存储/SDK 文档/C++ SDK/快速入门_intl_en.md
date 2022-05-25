@@ -17,7 +17,7 @@ Linux/Windows/macOS: [ XML Linux C++ SDK](https://github.com/tencentyun/cos-cpp-
 Download the [XML C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5). In the `libs` directory, you can find the ready-to-use pre-compiled libraries. Please choose one that suits your system version.
 
 ```shell
-libs/linux/libcossdk.a # Linux static library
+libs/linux/libcossdk.a # Linux static library. `libcossdk.a` is compiled based on GCC v4.8.5. If your compilation environment uses a different GCC version, you need to compile `libcossdk.a` again.
 libs/linux/libcossdk-shared.so # Linux dynamic library
 libs/Win32/cossdk.lib # Win32 library
 libs/x64/cossdk.lib # Win64 library
@@ -30,7 +30,7 @@ libs/macOS/libcossdk-shared.dylib # macOS dynamic library
 The following third-party dependent libraries can be found in the `Third-party` directory:
 
 ```shell
-third_party/lib/linux/poco/ # Linux-dependent POCO dynamic library
+third_party/lib/linux/poco/ # Linux-dependent POCO dynamic library. The POCO library is compiled based on OpenSSL v1.0.2. If your compilation environment uses a different OpenSSL version, you need to compile the POCO library again.
 third_party/lib/Win32/openssl/ # Win32-dependent OpenSSL library
 third_party/lib/Win32/poco/ # Win32-dependent POCO library
 third_party/lib/x64/openssl/ # Win64-dependent OpenSSL library
@@ -141,9 +141,43 @@ The POCO libraries are in the `third_party/lib/macOS/poco` directory. You can in
 4. Run the demo. 
 >?You can skip this step if you don’t need to test the demo.
 >
-Modify the demo code and compile it. The generated `cos_demo` is in the `bin` directory. You can modify `bin/config.json` to run `cos_demo`.
+Modify the demo code and compile it. The generated `cos_demo` is in the `bin` directory. Copy `cos-cpp-sdk-v5/demo/config.json` to the `bin` directory and modify `bin/config.json`. Then you can run `cos_demo`.
 5. Use the SDK. 
 The compiled libraries can be found in the `build/lib` directory. The static library is named `libcossdk.a`. During actual use, copy the library to your project and copy the `include` directory to the `include` directory of your project.
+
+### Common compilation errors
+
+1. The following error information is displayed when the executable program is compiled:
+```shell
+   PocoCrypto.so.64: undefined reference to `PEM_write_bio_PrivateKey@libcrypto.so.10'
+   libPocoNetSSL.so.64: undefined reference to `X509_check_host@libcrypto.so.10'
+   ibPocoCrypto.so.64: undefined reference to `ECDSA_sign@OPENSSL_1.0.1_EC'
+   libPocoCrypto.so.64: undefined reference to `CRYPTO_set_id_callback@libcrypto.so.10'
+   ibPocoCrypto.so.64: undefined reference to `EVP_PKEY_id@libcrypto.so.10'
+   libPocoNetSSL.so.64: undefined reference to `SSL_get1_session@libssl.so.10'
+   libPocoNetSSL.so.64: undefined reference to `SSL_get_shutdown@libssl.so.10'
+   libPocoCrypto.so.64: undefined reference to `EVP_PKEY_set1_RSA@libcrypto.so.10'
+libPocoCrypto.so.64: undefined reference to `SSL_load_error_strings@libssl.so.10'
+```
+This is usually caused by the inconsistency between the project's built-in SSL version on which the POCO library compilation depends and the SSL version on your device. You need to recompile the POCO library again and replace the POCO library in `third_party`.
+```shell
+wget https://github.com/pocoproject/poco/archive/refs/tags/poco-1.9.4-release.zip
+cd poco-poco-1.9.4-release/
+./configure --omit=Data/ODBC,Data/MySQL
+mkdir my_build
+cd my_build
+cmake .. 
+make -j5
+```
+2. The PocoNetSSL library failed to be compiled during POCO library compilation. This is usually because the openssl-devel library is not installed.
+```shell
+yum install -y openssl-devel
+```
+3. The following error information is displayed when the executable program is compiled:
+```shell
+undefined reference to `qcloud_cos::CosConfig::CosConfig(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+```
+This is usually caused by the inconsistency between the project's built-in GCC version used by the `libcossdk.a` compilation and the GCC version on your device. You need to recompile the POCO library and `libcossdk.a` again.
 
 ## Getting Started
 
@@ -157,9 +191,10 @@ The section below describes how to use the COS C++ SDK to perform basic operatio
 Fields in the configuration file are described as follows:
 
 ```
-"SecretId":"********************************",  // Use AccessKey for versions before 5.4.3.
-"SecretKey":"*******************************",
-"Region":"ap-guangzhou",                // COS region, which must be correctly set. For the regions and abbreviations, visit https://cloud.tencent.com/document/product/436/6224 
+{
+"SecretId":"********************************", // Replace the value with your SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
+"SecretKey":"*******************************", // Replace the value with your SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
+"Region":"ap-guangzhou",                // Bucket region. Replace it with your bucket region, which can be viewed on the overview page in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
 "SignExpiredTime":360,              // Signature expiration time, in seconds
 "ConnectTimeoutInms":6000,          // Connection timeout, in milliseconds
 "ReceiveTimeoutInms":60000,         // Receive timeout, in milliseconds
@@ -174,18 +209,8 @@ Fields in the configuration file are described as follows:
 "IsDomainSameToHost":false,         // Whether there is a dedicated host
 "DestDomain":"",                    // Dedicated host
 "IsUseIntranet":false,              // Whether a specific IP and port number are used
-"IntranetAddr":""                   // IP and port number, such as “127.0.0.1:80”               
-```
-
-### Using a custom domain name to access COS
-
-To access COS using a custom domain name, go to the COS console to configure a custom domain first. For detailed directions, please see [Enabling Custom Origin Server Domains](https://intl.cloud.tencent.com/document/product/436/31507).
-
-For example, if you want to use the domain `mydomain.com`, add the following configurations to `config.json`:
-
-```cpp
-"IsDomainSameToHost":true,
-"DestDomain":"mydomain.com",
+"IntranetAddr":""                   // IP and port number, such as “127.0.0.1:80”
+}
 ```
 
 ### Accessing COS using a temporary key
@@ -198,7 +223,7 @@ To access COS using a temporary key, see the code below:
 #include "cos_defines.h"
 int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
-    // Set the temporary key.
+    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://intl.cloud.tencent.com/document/product/436/14048
     config.SetTmpToken("xxx");
     qcloud_cos::CosAPI cos(config);
 }
@@ -238,7 +263,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct the PUT Bucket request
-    std::string bucket_name = "examplebucket-1250000000"; // Bucket name
+    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
     qcloud_cos::PutBucketReq req(bucket_name);
     qcloud_cos::PutBucketResp resp;
     
@@ -247,7 +272,7 @@ int main(int argc, char *argv[]) {
     
     // 4. Process the call result
     if (result.IsSucc()) {
-        // Bucket created successfully
+        // Room created successfully
     } else {
         // Failed to create the bucket. You can call the CosResult member functions to output the error information such as the requestID.
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
@@ -319,11 +344,10 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to upload a file
-    std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object’s access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
-    // The local file path is required in the request constructor.
-    qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
-    req.SetXCosStorageClass("STANDARD_IA"); // Call the `Set` method to set metadata, etc.
+    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string object_name = "exampleobject"; // `exampleobject` is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`. Replace it with your object name.
+    qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file"); // Replace the value with your file path.
+    //req.SetXCosStorageClass("STANDARD_IA"); // `STANDARD_IA` is the default value. You can call the `Set` method to set the storage class.
     qcloud_cos::PutObjectByFileResp resp;
     
     // 3. Call the PUT Object API
@@ -358,7 +382,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to query the object list
-    std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
+    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
     qcloud_cos::GetBucketReq req(bucket_name);
     qcloud_cos::GetBucketResp resp;
     qcloud_cos::CosResult result = cos.GetBucket(req, &resp);   
@@ -386,7 +410,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Downloading an object
+### Download an object
 
 ```cpp
 #include "cos_api.h"
@@ -399,8 +423,8 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to download the object
-    std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
+    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string object_name = "exampleobject"; // `exampleobject` is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`. Replace it with your object name.
     std::string local_path = "/tmp/exampleobject";
     // appid, bucketname, object, and a local path (including filename) are required for the request.
     qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
@@ -438,8 +462,8 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to delete the object
-    std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
+    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string object_name = "exampleobject"; // `exampleobject` is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`. Replace it with your object name.
     // 3. Call the object deleting API
 	qcloud_cos::DeleteObjectReq req(bucket_name, object_name);
 	qcloud_cos::DeleteObjectResp resp;

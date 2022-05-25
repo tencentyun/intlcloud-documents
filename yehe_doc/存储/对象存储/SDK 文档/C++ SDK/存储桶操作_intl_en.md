@@ -6,14 +6,14 @@ This document provides an overview of APIs and SDK code samples related to basic
 | API | Operation |  Description |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
 | [GET Service (List Buckets)](https://intl.cloud.tencent.com/document/product/436/8291) | Querying a bucket list | Queries the list of all buckets under a specified account |
-| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates bucket under a specified account |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under a specified account |
 | [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Checking a bucket and its permissions | Checks whether a bucket exists and whether you have permission to access it |
 | [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket from a specified account |
 
 
-## Querying Bucket List
+## Querying a Bucket List
 
-#### API description
+#### Description
 
 This API is used to query the list of all buckets under a specified account.
 
@@ -23,19 +23,19 @@ This API is used to query the list of all buckets under a specified account.
 CosResult GetService(const GetServiceReq& request, GetServiceResp* response)
 ```
 
-#### Sample request 
+#### Sample request
 
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 
 qcloud_cos::GetServiceReq req;
 qcloud_cos::GetServiceResp resp;
 qcloud_cos::CosResult result = cos.GetService(req, &resp);
 
-// The call is successful. You can call the resp member functions to get the return content
+// The call is successful. You can call the resp member functions to get the return content.
 if (result.IsSucc()) {
     const qcloud_cos::Owner& owner = resp.GetOwner();
     const std::vector<qcloud_cos::Bucket>& buckets = resp.GetBuckets();
@@ -91,7 +91,7 @@ struct Bucket {
 
 ## Creating a Bucket
 
-#### API description
+#### Description
 
 This API (PUT Bucket) is used to create a bucket.
 
@@ -101,19 +101,19 @@ This API (PUT Bucket) is used to create a bucket.
 CosResult PutBucket(const PutBucketReq& req, PutBucketResp* resp)
 ```
 
-#### Sample request 
+#### Sample request
 
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 
 qcloud_cos::PutBucketReq req(bucket_name);
 qcloud_cos::PutBucketResp resp;
 qcloud_cos::CosResult result = cos.PutBucket(req, &resp);
 
-// The call is successful. You can call the resp member functions to get the return content
+// The call is successful. You can call the resp member functions to get the return content.
 if (result.IsSucc()) {
     // ...
 } else {
@@ -136,27 +136,27 @@ if (result.IsSucc()) {
 // Default: private
 void SetXCosAcl(const std::string& str);
 
-// Grant read permission in the format: x-cos-grant-read: id=" ",id=" ".
-// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"
-// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
+// Grant read permission in the format of x-cos-grant-read: id=" ",id=" ".
+// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>".
+// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>".
 void SetXCosGrantRead(const std::string& str);
 
-// Grant write permission in the format: x-cos-grant-write: id=" ",id=" "./
-// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
-// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
+// Grant write permission in the format of x-cos-grant-write: id=" ",id=" "./
+// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>".
+// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>".
 void SetXCosGrantWrite(const std::string& str);
     
-// Grant read-write permission in the format: x-cos-grant-full-control: id=" ",id=" ".
-// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
-// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
+// Grant read-write permission in the format of x-cos-grant-full-control: id=" ",id=" ".
+// To authorize a sub-account, use id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>".
+// To authorize the root account, use id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>".
 void SetXCosGrantFullControl(const std::string& str);
 ```
 
 ## Checking a Bucket and Its Permissions
 
-#### API description
+#### Description
 
-This API is used to verify whether a bucket exists and you have permission to access it.
+This API is used to verify whether a bucket exists and whether you have permission to access it.
 
 #### Method prototype
 
@@ -164,19 +164,19 @@ This API is used to verify whether a bucket exists and you have permission to ac
 CosResult HeadBucket(const HeadBucketReq& req, HeadBucketResp* resp)
 ```
 
-#### Sample request 
+#### Sample request
 
 ```C++
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 
 qcloud_cos::HeadBucketReq req(bucket_name);
 qcloud_cos::HeadBucketResp resp;
 qcloud_cos::CosResult result = cos.HeadBucket(req, &resp);
 
-// The call is successful. You can call the resp member functions to get the return content
+// The call is successful. You can call the resp member functions to get the return content.
 if (result.IsSucc()) {
     // ...
 } else {
@@ -194,9 +194,9 @@ if (result.IsSucc()) {
 
 ## Deleting a Bucket
 
-#### API description
+#### Description
 
-This API (DELETE Bucket) is used to delete an empty bucket under a specified account.
+This API is used to delete an empty bucket under a specified account.
 
 #### Method prototype
 
@@ -204,20 +204,20 @@ This API (DELETE Bucket) is used to delete an empty bucket under a specified acc
 CosResult DeleteBucket(const DeleteBucketReq& req, DeleteBucketResp* resp)
 ```
 
-#### Sample request 
+#### Sample request
 
 ```cpp
 qcloud_cos::CosConfig config("./config.json");
 qcloud_cos::CosAPI cos(config);
 
-std::string bucket_name = "examplebucket-1250000000";
+std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
 
 // The bucket_name is required in the constructor of DeleteBucketReq
 qcloud_cos::DeleteBucketReq req(bucket_name);
 qcloud_cos::DeleteBucketResp resp;
 qcloud_cos::CosResult result = cos.DeleteBucket(req, &resp);
 
-// The call is successful. You can call the resp member functions to get the return content
+// The call is successful. You can call the resp member functions to get the return content.
 if (result.IsSucc()) {
     // ...
 } else {

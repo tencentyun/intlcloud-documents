@@ -1,22 +1,22 @@
 ## Overview
 
-This document provides an overview of APIs and SDK sample codes related to cross-origin access (or cross-origin resource sharing, CORS).
+This document provides an overview of APIs and SDK sample codes for cross-origin resource sharing (CORS).
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting cross-origin access configuration | Sets cross-origin access permissions for a bucket |
-| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying cross-origin access configuration | Queries the cross-origin access configuration of a bucket |
-| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting cross-origin access configuration | Deletes the cross-origin access configuration from a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting CORS configuration | Sets the CORS permissions of bucket |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying CORS configuration | Queries the CORS configuration of a bucket |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting CORS configuration | Deletes the CORS configuration of a bucket |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For parameters and method description of all APIs in the SDK, see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Cross-Origin Access Configuration
+## Setting CORS Configuration
 
-#### API description 
+#### Feature description
 
-This API is used to set a cross-origin access (CORS) configuration on a specified bucket.
+This API is used to set the CORS configuration of a specified bucket.
 
 #### Sample code
 **Objective-C**
@@ -28,31 +28,31 @@ QCloudCORSConfiguration* cors = [QCloudCORSConfiguration new];
 
 QCloudCORSRule* rule = [QCloudCORSRule new];
 
-// Set the rule ID
+// Set rule ID
 rule.identifier = @"sdk";
 
-// Custom HTTP request headers allowed in the request. The wildcard "*" is supported.
+// Allowed HTTP request headers. The wildcard "*" is supported.
 rule.allowedHeader = @[@"origin",@"host",@"accept",
                        @"content-type",@"authorization"];
 rule.exposeHeader = @"ETag";
 
-// Allowed HTTP methods. Enumerated values: GET, PUT, HEAD, POST, DELETE
+// Allowed HTTP method values (such as GET, PUT, HEAD, POST and DELETE)
 rule.allowedMethod = @[@"GET",@"PUT",@"POST", @"DELETE", @"HEAD"];
 
-// Set the validity duration of the request result
+// Validity period of results
 rule.maxAgeSeconds = 3600;
 
-// Allowed origin; wildcard "*" is supported. Format: protocol://domain name[:port]
+// Allowed origin in the format of `protocol://domain name[:port number]`. The wildcard * is supported.
 rule.allowedOrigin = @"http://cloud.tencent.com";
 
 cors.rules = @[rule];
 putCORS.corsConfiguration = cors;
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putCORS.bucket = @"examplebucket-1250000000";
 
 [putCORS setFinishBlock:^(id outputObject, NSError *error) {
-    // “outputObject” contains headers returned by the server
+    // You can get the header information returned by the server from outputObject
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
 
@@ -71,30 +71,30 @@ let corsConfig = QCloudCORSConfiguration.init();
 
 let rule = QCloudCORSRule.init();
 
-// Set the rule ID
+// Set rule ID
 rule.identifier = "rule1";
 
-// Custom HTTP request headers allowed in the request. The wildcard "*" is supported.
+// Allowed HTTP request headers. The wildcard "*" is supported.
 rule.allowedHeader = ["origin","host","accept","content-type","authorization"];
 rule.exposeHeader = "Etag";
 
-// Allowed HTTP methods. Enumerated values: GET, PUT, HEAD, POST, DELETE
+// Allowed HTTP method values (such as GET, PUT, HEAD, POST and DELETE)
 rule.allowedMethod = ["GET","PUT","POST", "DELETE", "HEAD"];
 
-// Set the validity duration of the request result
+// Validity period of results
 rule.maxAgeSeconds = 3600;
 
-// Allowed origin; wildcard "*" is supported. Format: protocol://domain name[:port]
+// Allowed origin in the format of `protocol://domain name[:port number]`. The wildcard * is supported.
 rule.allowedOrigin = "*";
 
 corsConfig.rules = [rule];
 putBucketCorsReq.corsConfiguration = corsConfig;
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putBucketCorsReq.bucket = "examplebucket-1250000000";
 putBucketCorsReq.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains headers returned by the server
+        // You can get the header information returned by the server from result
     } else {
         print(error!)
     }
@@ -104,30 +104,30 @@ QCloudCOSXMLService.defaultCOSXML().putBucketCORS(putBucketCorsReq);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
-## Querying Cross-Origin Access Configuration
+## Querying CORS Configuration
 
-#### API description
+#### Feature description
 
-This API is used to query the cross-origin access (CORS) configuration of a bucket.
+This API is used to query the CORS configuration of a bucket.
 
 #### Sample code
 **Objective-C**
 
 [//]: # (.cssg-snippet-get-bucket-cors)
 ```objective-c
-QCloudGetBucketCORSRequest* corsReqeust = [QCloudGetBucketCORSRequest new];
+QCloudGetBucketCORSRequest* corsRequest = [QCloudGetBucketCORSRequest new];
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 corsRequest.bucket = @"examplebucket-1250000000";
 
 [corsRequest setFinishBlock:^(QCloudCORSConfiguration * _Nonnull result,
                               NSError * _Nonnull error) {
-    // List cross-origin rules
+    // List of CORS rules
     NSArray<QCloudCORSRule*> *rules = result.rules;
     
 }];
 
-[[QCloudCOSXMLService defaultCOSXML] GetBucketCORS:corsReqeust];
+[[QCloudCOSXMLService defaultCOSXML] GetBucketCORS:corsRequest];
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
@@ -138,11 +138,11 @@ corsRequest.bucket = @"examplebucket-1250000000";
 ```swift
 let  getBucketCorsRes = QCloudGetBucketCORSRequest.init();
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketCorsRes.bucket = "examplebucket-1250000000";
 getBucketCorsRes.setFinish { (corsConfig, error) in
     if let corsConfig = corsConfig {
-        // List cross-origin rules
+        // List of CORS rules
         let rules = corsConfig.rules
     } else {
         print(error!)
@@ -153,11 +153,11 @@ QCloudCOSXMLService.defaultCOSXML().getBucketCORS(getBucketCorsRes);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
-## Deleting Cross-Origin Access Configuration
+## Deleting CORS Configuration
 
-#### API description
+#### Feature description
 
-This API is used to delete the cross-origin access (CORS) configuration from a bucket.
+This API is used to delete the CORS configuration of a bucket.
 
 #### Sample code
 **Objective-C**
@@ -166,11 +166,11 @@ This API is used to delete the cross-origin access (CORS) configuration from a b
 ```objective-c
 QCloudDeleteBucketCORSRequest* deleteCORS = [QCloudDeleteBucketCORSRequest new];
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 deleteCORS.bucket = @"examplebucket-1250000000";
 
 [deleteCORS setFinishBlock:^(id outputObject, NSError *error) {
-    // “outputObject” contains headers returned by the server
+    // You can get the header information returned by the server from outputObject
    NSDictionary* info = (NSDictionary *) outputObject;
 }];
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketCORS:deleteCORS];
@@ -185,12 +185,12 @@ deleteCORS.bucket = @"examplebucket-1250000000";
 ```swift
 let deleteBucketCorsRequest = QCloudDeleteBucketCORSRequest.init();
 
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 deleteBucketCorsRequest.bucket = "examplebucket-1250000000";
 
 deleteBucketCorsRequest.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains headers returned by the server
+        // You can get the header information returned by the server from result
     } else {
         print(error!)
     }

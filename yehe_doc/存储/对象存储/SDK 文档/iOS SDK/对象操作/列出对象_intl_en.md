@@ -1,44 +1,44 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to listing objects.
+This document provides an overview of APIs and SDK code samples for listing objects.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying a list of objects and their version history | Queries some or all objects in a bucket as well as their version history |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying objects and their version history | Queries some or all the objects in a bucket and their version history. |
 
-## SDK API Reference
+## SDK API References
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For parameters and method description of all APIs in the SDK, see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Querying an Object List
 
-#### API description
+#### Feature description
 
-This API is used to query some or all objects in a bucket.
+This API is used to query some or all the objects in a bucket.
 
-#### Sample 1. Getting the first page of objects
+#### Sample 1. Getting the first page of data
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
-// The maximum number of objects returned at a time; the default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 request.maxKeys = 100;
 
-// Prefix to match, which is used to specify the URL prefix of returned objects
+// Prefix match, which is used to specify the address prefix of the returned files
 request.prefix = @"dir1/";
 
 [request setFinishBlock:^(QCloudListBucketResult * result, NSError* error) {
-    //“result” contains the request result
+    // result contains the request result
     // `QCloudListBucketResult.contents` is the array of files in the bucket
     // `QCloudListBucketResult.commonPrefixes` is the array of folders in the bucket
     if (result.isTruncated) {
-        // Indicate the listing is truncated, and you need to request subsequent pages
+        // The data is truncated, and the next page of data needs to be pulled
         self->prevPageResult = result;
     }
 }];
@@ -50,26 +50,26 @@ request.prefix = @"dir1/";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
 
-// The maximum number of objects returned at a time; the default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 getBucketReq.maxKeys = 100;
 
-// Prefix to match
+// Prefix match
 getBucketReq.prefix = "dir/";
 
 getBucketReq.setFinish { (result, error) in
     if let result = result {
-        // A list of objects
+        // Object list
         let contents = result.contents
         
         if (result.isTruncated) {
-            // Indicate the listing is truncated, and you need to request subsequent pages
+            // The data is truncated, and the next page of data needs to be requested
             self.prevPageResult = result;
         }
     } else {
@@ -79,31 +79,31 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
 
-#### Sample 2. Requesting the next page of objects
+#### Sample 2. Requesting the next page of data
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket-next-page"
+[//]: # (.cssg-snippet-get-bucket-next-page)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
-// `prevPageResult` contains the result returned on the previous page
-// Specify pagination parameters. By default, objects are listed in UTF-8 binary order starting from the object after the marker
+// prevPageResult is the result returned on the previous page
+// Paging parameter. By default, entries are listed in UTF-8 binary order starting with the marker
 request.marker = prevPageResult.nextMarker;
 
-// The maximum number of objects returned at a time; the default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 request.maxKeys = 100;
 
 [request setFinishBlock:^(QCloudListBucketResult * result, NSError* error) {
-    //“result” contains the request result
+    // result contains the request result.
     // `QCloudListBucketResult.contents` is the array of files in the bucket
     // `QCloudListBucketResult.commonPrefixes` is the array of folders in the bucket
     if (result.isTruncated) {
-        // Indicate the listing is truncated, and you need to request subsequent pages
+        // The data is truncated, and the next page of data needs to be pulled
         self->prevPageResult = result;
     }
 }];
@@ -115,30 +115,30 @@ request.maxKeys = 100;
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket-next-page"
+[//]: # (.cssg-snippet-get-bucket-next-page)
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
 
-// Specify pagination parameters. By default, objects are listed in UTF-8 binary order starting from the object after the marker
+// Paging parameter. By default, entries are listed in UTF-8 binary order starting with the marker
 if let result = self.prevPageResult {
     getBucketReq.marker = result.marker
 }
 
-// The maximum number of objects returned at a time; the default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 getBucketReq.maxKeys = 100;
-// Prefix to match
+// Prefix match
 getBucketReq.prefix = "dir/";
 
 getBucketReq.setFinish { (result, error) in
     if let result = result {
-        // A list of objects
+        // Object list
         let contents = result.contents
         
         if (result.isTruncated) {
-            // Indicate the listing is truncated, and you need to request subsequent pages
+            // The data is truncated, and the next page of data needs to be requested
             self.prevPageResult = result;
         }
     } else {
@@ -148,39 +148,39 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
 
 #### Sample 3. Getting an object list and subdirectories
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 request.bucket = @"examplebucket-1250000000";
 
-// The maximum number of objects returned at a time; the default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 request.maxKeys = 100;
 
-// Prefix to match, which is used to specify the URL prefix of returned objects
+// Prefix match, which is used to specify the address prefix of the returned files
 request.prefix = @"dir1/";
 
-// “delimiter” is a symbol. If “prefix” is specified, identical paths between “prefix” and “delimiter” will be grouped together and
-// defined as a “Common Prefix”. Then, all common prefixes are listed. If “prefix” is not specified, the listing starts from the beginning of the path
-// delimiter: path separator, which is always `/`
+// The delimiter is a symbol. If the Prefix exists, identical paths between the Prefix and delimiter will be grouped together, 
+// which is defined as Common Prefix. Then, all common prefixes are listed. If there is no Prefix, the listing starts from the beginning of the path.
+// delimiter: path separator, which is fixed to `/`
 request.delimiter = @"/";
 
-// `prevPageResult` is the result returned on the previous page
-// Specify pagination parameters. By default, objects are listed in UTF-8 binary order starting from the object after the marker
+// prevPageResult is the result returned on the previous page.
+// Paging parameter. By default, entries are listed in UTF-8 binary order starting with the marker
 request.marker = prevPageResult.nextMarker;
 
 [request setFinishBlock:^(QCloudListBucketResult * result, NSError* error) {
-    //“result” contains the request result
+    // result contains the request result
     // `QCloudListBucketResult.contents` is the array of files in the bucket
     // `QCloudListBucketResult.commonPrefixes` is the array of folders in the bucket
     if (result.isTruncated) {
-        // Indicate the listing is truncated, and you need to request subsequent pages
+        // The data is truncated, and the next page of data needs to be pulled.
         self->prevPageResult = result;
     }
 }];
@@ -192,36 +192,36 @@ request.marker = prevPageResult.nextMarker;
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getBucketReq.bucket = "examplebucket-1250000000";
 
-// The maximum number of objects returned at a time; the default value is 1,000
+// Maximum number of objects to return at a time. Default value: 1000
 getBucketReq.maxKeys = 100;
 
-// Prefix to match, which is used to specify the URL prefix of returned objects
+// Prefix match, which is used to specify the address prefix of the returned files
 getBucketReq.prefix = "dir/";
 
-// “delimiter” is a symbol. If “prefix” is specified, identical paths between “prefix” and “delimiter” will be grouped together and
-// defined as a “Common Prefix”. Then, all common prefixes are listed. If “prefix” is not specified, the listing starts from the beginning of the path
+// The delimiter is a symbol. If the Prefix exists, identical paths between the Prefix and delimiter will be grouped together, 
+// which is defined as Common Prefix. Then, all common prefixes are listed. If there is no Prefix, the listing starts from the beginning of the path.
 // delimiter: path separator, which is always `/`
 getBucketReq.delimiter = "/";
 
-// Specify pagination parameters. By default, objects are listed in UTF-8 binary order starting from the object after the marker
+// Paging parameter. By default, entries are listed in UTF-8 binary order starting with the marker
 if let result = self.prevPageResult {
     getBucketReq.marker = result.marker
 }
 
 getBucketReq.setFinish { (result, error) in
     if let result = result {
-        // A list of objects
+        // Object list
         let contents = result.contents
         
         if (result.isTruncated) {
-            // Indicate the listing is truncated, and you need to request subsequent pages
+            // The data is truncated, and the next page of data needs to be requested
             self.prevPageResult = result;
         }
     } else {
@@ -231,41 +231,41 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
 
 ## Querying an Object Version List
 
-#### API description 
+#### Feature description
 
 This API is used to query some or all objects in a versioning-enabled bucket.
 
-#### Sample. Getting the first page of object versions
+#### Sample code: Getting the first page of data from an object version
 
-[//]: # ".cssg-snippet-list-objects-versioning"
+[//]: # (.cssg-snippet-list-objects-versioning)
 ```objective-c
 QCloudListObjectVersionsRequest* listObjectVersionsRequest = [[QCloudListObjectVersionsRequest alloc] init];
 
-// Bucket name
+// Bucket Name
 listObjectVersionsRequest.bucket = @"bucketname";
 
-// Maximum number of entries returned per page. Default value: 1000
+// Number of requested data entries per page. Default value: 1000.
 listObjectVersionsRequest.maxKeys = 100;
 
-// Specify the key after which remaining entries are to be listed
+// List the unrequested entries from the current key
 listObjectVersionsRequest.keyMarker = prevPageResult.nextKeyMarker;
-// Specify the version ID after which remaining entries are to be listed
+// List the unrequested entries from an object version in the current key
 listObjectVersionsRequest.versionIdMarker = prevPageResult.nextVersionIDMarkder;
 [listObjectVersionsRequest setFinishBlock:^(QCloudListVersionsResult * _Nonnull result,
                                             NSError * _Nonnull error) {
     
-    // Deleted objects
+    // Deleted files
     NSArray<QCloudDeleteMarker*> *deleteMarker = result.deleteMarker;
     
-    // List object versions
+    // Number of object version entries
     NSArray<QCloudVersionContent*> *versionContent = result.versionContent;
     
     if (result.isTruncated) {
-        // Indicate the listing is truncated, and you need to request subsequent pages
+        // The data is truncated, and the next page of data needs to be pulled
         self->prevPageResult = result;
     }
 

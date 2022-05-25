@@ -1,22 +1,22 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to COS inventory.
+This document provides an overview of APIs and SDK code samples for COS inventory.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
-| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job for a bucket |
-| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of bucket |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Creating an inventory job | Creates an inventory job for a bucket |
+| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of a bucket |
 | [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
 
-## SDK API Reference
+## SDK API References
 
 For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting an Inventory Job
+## Creating an Inventory Job
 
-#### API description
+#### Feature description
 
-This API is used to create an inventory job for a bucket.
+This API (PUT Bucket inventory) is used to create an inventory job for a bucket.
 
 #### Sample code
 **Objective-C**
@@ -25,25 +25,25 @@ This API is used to create an inventory job for a bucket.
 ```objective-c
 QCloudPutBucketInventoryRequest *putReq = [QCloudPutBucketInventoryRequest new];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putReq.bucket= @"examplebucket-1250000000";
 
-// ID of the inventory job
+// Name of the inventory job
 putReq.inventoryID = @"list1";
 
-// You can use XML to set specific configuration information for the inventory job in the request body, including the objects to be analyzed,
+// You can use XML to set specific configuration information for the inventory job in the request body, including the objects to be analyzed by the inventory job,
 // analysis frequency, analysis dimensions, result format, and storage location.
 QCloudInventoryConfiguration *config = [QCloudInventoryConfiguration new];
 
-// Inventory ID, corresponding to the ID in the request parameter
+// Inventory name, corresponding to the ID in the request parameter
 config.identifier = @"list1";
 
 // Specifies whether inventory is enabled:
-// if it is set to `true`, inventory is enabled;
-// if `false`, no inventories will be generated
+// if it is set to true, inventory is enabled;
+// if false, no inventories will be generated
 config.isEnabled = @"True";
 
-// Information on storage of the inventory result
+// Information on the storage of the inventory result
 QCloudInventoryDestination *des = [QCloudInventoryDestination new];
 
 QCloudInventoryBucketDestination *btDes =[QCloudInventoryBucketDestination new];
@@ -54,7 +54,7 @@ btDes.cs = @"CSV";
 // ID of the bucket owner
 btDes.account = @"1278687956";
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 btDes.bucket  = @"qcs::cos:ap-guangzhou::examplebucket-1250000000";
 
 // Prefix of the inventory result
@@ -67,10 +67,10 @@ enc.ssecos = @"";
 // Option to provide server-side encryption for the inventory result
 btDes.encryption = enc;
 
-// Information on the bucket where the exported inventory result is stored
+// Information on the bucket where the inventory result is stored after export
 des.bucketDestination = btDes;
 
-// Information on storage of the inventory result
+// Information on the storage of the inventory result
 config.destination = des;
 
 // Configure the frequency of the inventory job
@@ -96,7 +96,7 @@ fields.field = @[ @"Size",
 config.optionalFields = fields;
 putReq.inventoryConfiguration = config;
 [putReq setFinishBlock:^(id outputObject, NSError *error) {
-    // “outputObject” returns information such as the Etag or custom headers in the response
+    // outputObject contains information such as the ETag or custom headers in the response
     NSDictionary * result = (NSDictionary *)outputObject;
 
 }];
@@ -112,25 +112,25 @@ putReq.inventoryConfiguration = config;
 ```swift
 let putReq = QCloudPutBucketInventoryRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 putReq.bucket = "examplebucket-1250000000";
 
-// ID of the inventory job
+// Name of the inventory job
 putReq.inventoryID = "list1";
 
 // You can use XML to set specific configuration information for the inventory job in the request body, including the objects to be analyzed by the inventory job,
 // analysis frequency, analysis dimensions, result format, and storage location.
 let config = QCloudInventoryConfiguration.init();
 
-// Inventory ID, corresponding to the ID in the request parameter
+// Inventory name, corresponding to the ID in the request parameter
 config.identifier = "list1";
 
 // Specifies whether inventory is enabled:
-// if it is set to `true`, inventory is enabled;
-// if `false`, no inventories will be generated
+// if it is set to true, inventory is enabled;
+// if false, no inventories will be generated
 config.isEnabled = "True";
 
-// Information on storage of the inventory result
+// Information on the storage of the inventory result
 let des = QCloudInventoryDestination.init();
 let btDes = QCloudInventoryBucketDestination.init();
 
@@ -153,10 +153,10 @@ enc.ssecos = "";
 // Option to provide server-side encryption for the inventory result
 btDes.encryption = enc;
 
-// Information on the bucket where the exported inventory result is stored
+// Information on the bucket where the inventory result is stored after export
 des.bucketDestination = btDes;
 
-// Information on storage of the inventory result
+// Information on the storage of the inventory result
 config.destination = des;
 
 // Configure the frequency of the inventory job
@@ -182,8 +182,8 @@ putReq.inventoryConfiguration = config;
 
 putReq.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains response headers
-    } else {
+        // result contains response headers
+    } else{
         print(error!);
     }
 }
@@ -191,22 +191,22 @@ putReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketInventory(putReq);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketInventory.swift).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketInventory.swift).
 
 
 #### Error codes
 
-The following describes some common errors that may occur when making requests using this API.
+The following describes some common errors that may occur when you call this API:
 
 | Error Code | Description | Status Code |
 | --------------------- | -------------------------------------------- | -------------------- |
 | InvalidArgument | Invalid parameter value | HTTP 400 Bad Request |
 | TooManyConfigurations | The number of inventories has reached the upper limit of 1,000 | HTTP 400 Bad Request |
-| AccessDenied          | Unauthorized access. You most likely do not have access to the bucket. | HTTP 403 Forbidden |
+| AccessDenied          | Unauthorized access. You most likely do not have access permission for the bucket | HTTP 403 Forbidden   |
 
 ## Querying Inventory Jobs
 
-#### API description 
+#### Feature description
 
 This API is used to query the inventory jobs of a bucket.
 
@@ -217,14 +217,14 @@ This API is used to query the inventory jobs of a bucket.
 ```objective-c
 QCloudGetBucketInventoryRequest *getReq = [QCloudGetBucketInventoryRequest new];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 getReq.bucket = @"examplebucket-1250000000";
 
-// ID of the inventory job
+// Name of the inventory job
 getReq.inventoryID = @"list1";
 [getReq setFinishBlock:^(QCloudInventoryConfiguration * _Nonnull result,
                          NSError * _Nonnull error) {
-    // `result` contains the inventory information
+    // result contains the inventory information
 }];
 [[QCloudCOSXMLService defaultCOSXML] GetBucketInventory:getReq];
 ```
@@ -237,15 +237,15 @@ getReq.inventoryID = @"list1";
 ```swift
 let req = QCloudGetBucketInventoryRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 req.bucket = "examplebucket-1250000000";
-// ID of the inventory job
+// Name of the inventory job
 req.inventoryID = "list1";
 req.setFinish {(result,error) in
     if let result = result {
-        // Information on the job
+        // Job information
         let enabled = result.isEnabled
-    } else {
+    } else{
         print(error!);
     }
 }
@@ -256,7 +256,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucketInventory(req);
 
 ## Deleting an Inventory Job
 
-#### API description 
+#### Feature description
 
 This API is used to delete a specified inventory job from a bucket.
 
@@ -267,13 +267,13 @@ This API is used to delete a specified inventory job from a bucket.
 ```objective-c
 QCloudDeleteBucketInventoryRequest *delReq = [QCloudDeleteBucketInventoryRequest new];
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 delReq.bucket = @"examplebucket-1250000000";
 
-// ID of the inventory job
+// Name of the inventory job
 delReq.inventoryID = @"list1";
 [delReq setFinishBlock:^(id outputObject, NSError *error) {
-    // “outputObject” returns information such as the Etag or custom headers in the response
+    // outputObject contains information such as the ETag or custom headers in the response
     NSDictionary * result = (NSDictionary *)outputObject;
     
 }];
@@ -288,15 +288,15 @@ delReq.inventoryID = @"list1";
 ```swift
 let delReq = QCloudDeleteBucketInventoryRequest.init();
 
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of BucketName-APPID, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
 delReq.bucket = "examplebucket-1250000000";
 
-// ID of the inventory job
+// Name of the inventory job
 delReq.inventoryID = "list1";
 delReq.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains response headers
-    } else {
+        // result contains response headers
+    } else{
         print(error!);
     }
 }
