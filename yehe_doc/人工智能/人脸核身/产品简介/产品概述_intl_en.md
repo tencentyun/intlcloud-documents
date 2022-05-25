@@ -1,12 +1,13 @@
-## Product Overview
-Tencent Cloud FaceID is a service kit used to verify users’ identity information. It provides features such as liveness detection and 1:1 face comparison to meet various identity verification needs in industries such as social security, finance, and insurance. 
+
+### Overview
+The electronic Know Your Customer (eKYC) uses the AI technology to remotely verify user identities automatically. It helps you know your users and reduce the risks posed by identity frauds. It is more simple, efficient, and user-friendly than the traditional offline KYC process.
+By leveraging Tencent's leading AI technologies in document recognition, liveness detection, and face comparison, Tencent Cloud eKYC solution simplifies the complicated traditional identity verification process into three automated steps, and accurately verifies the authenticity of user identities with the AI algorithms.
+Features
+### Document OCR
+The document OCR feature enables the automatic extraction of identity information and photo from a document image, effectively eliminating the need for manual data entry. Currently, this feature supports the recognition of various types of documents in many countries and regions including Hong Kong (China), Taiwan (China), Macao (China), Malaysia, and Thailand.
+### Document authentication
+The document authentication feature enables video-based authentication of forged documents based on the algorithms for image processing and deep learning. It can effectively block common forged or fake documents produced by reproducing, copying, color printing, image processing, blocking and other means, thus increasing the risk identification coverage and reducing the manual review workload.
+### Liveness detection and face comparison
+eKYC performs liveness detection and face comparison for the user's video selfie to verify the user's identity. Combined with liveness detection technologies such as motion-based and colored light-based verification, it can effectively block various types of identity attacks, including static photo, video reproducing, and 3D-based face mask/headform spoofing.
 
 
-
-
-## Features
-### Liveness detection
-Liveness detection can meet the high security requirements of facial recognition in different verification scenarios. It can analyze videos and decide whether they come from a live person or a fake, and guard against presentation attacks such as photos, videos, and static 3D models. Currently, it supports lip movement, motion silent live detection, etc.
-
-### Face comparison
-Face comparison can calculate the similarity of facial features between two faces and automatically perform identity verification. It is based on massive amounts of face data and technologies such as high-dimensional LBP, PCA, Bayesian LDA, metric learning, transfer learning, and deep neural network. With an accuracy rate of 99.80% as tested during LFW (a database for face verification) in 2017, it supports face recognition and verification in different scenarios regardless of age, posture or lighting conditions.

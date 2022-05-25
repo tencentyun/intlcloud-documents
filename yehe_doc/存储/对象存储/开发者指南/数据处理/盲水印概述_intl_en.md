@@ -1,6 +1,6 @@
 ## Overview
 
-Blind watermarking is a brand-new watermarking feature based on Tencent Cloud CI. It allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If you think your image might have been stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.
+Blind watermarking is a brand-new watermarking feature based on Tencent Cloud CI. It allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If you suspect that your image has been stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.
 
 Blind watermarking comes in three types: semi-blind watermarking, perfectly blind watermarking, and text blind watermarking:
 
@@ -28,7 +28,7 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 - Currently, you cannot add a blind watermark to animated images such as GIF.
 - Both the width and height of the image watermark must not be greater than 1/8 of the input image.
 - You need to choose a white watermark with a black background for the effect of blind watermarking.
-- When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For more information, see CI Free Tier.
+>- When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For more information, see CI Free Tier.
 - Text watermarks can contain digits and letters.
 - Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is subject to the original image size and the attack intensity. For more information, [contact us](https://intl.cloud.tencent.com/contact-sales).
 https://intl.cloud.tencent.com/contact-sales)。
