@@ -45,7 +45,7 @@
 다음은 MySQL 2대1 동기화(데이터베이스 A와 B에는 데이터베이스/테이블 구조와 데이터가 있고 데이터베이스 C는 비어 있음)를 예로 사용합니다. 다른 데이터베이스에 대한 다대일 동기화 작업도 비슷합니다.
 
 ### 동기화 작업1 생성(데이터베이스 A > 데이터베이스 C)
-1. [데이터 동기화 구매 페이지](https://buy.cloud.tencent.com/dts)에 로그인하여 알맞은 설정을 선택하고 **즉시 구매**를 클릭합니다.
+1. [데이터 동기화 구매 페이지]([https://buy.cloud.tencent.com/dts](https://buy.intl.cloud.tencent.com/migration))에 로그인하여 알맞은 설정을 선택하고 **즉시 구매**를 클릭합니다.
 <table>
 <thead><tr><th>매개변수</th><th>설명</th></tr></thead>
 <tbody><tr>
