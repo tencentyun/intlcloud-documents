@@ -38,7 +38,7 @@ Upgrade is only available when the service version of your app is **IM**. The up
 You can change the configuration when the service version of your app is **Pro Edition-Postpaid** or **Ultimate Edition-Postpaid**. The change configuration operation allows you to change the service version, enable an unlimited number of audio-video chat rooms, enable content filtering, increase the maximum number of groups a single user can join, and increase the maximum number of members in a single group. The changed configuration may incur corresponding fees, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to learn more.
 >!
 >- You can change the service version and each value-added service plan of your app once every calendar month.
->- A change configuration operation that is performed in the same month in which the service version is adjusted takes effect immediately and does not incur fees until the first day of the next month. A change configuration operation that is performed in the month after service version adjustment or later takes effect and incurs fees immediately.
+>- A change configuration operation that is performed in the same month in which the service version is adjusted takes effect immediately and does not incur fees until the first day of the next month. A change configuration operation that is performed in the next month after service version adjustment or later takes effect and incurs fees immediately.
 For example, assume you changed the service version of your app to **Pro Edition-Postpaid** on February 10, 2019.
 Scenario 1: If you upgraded the configuration to enable audio-video chat rooms on February 15, 2019 and then disabled it on February 25, 2019, no fees related to audio-video chat rooms are incurred.
 Scenario 2: If you upgraded the configuration to enable audio-video chat rooms on February 15, 2019 and keep it enabled, you will be charged for audio-video chat rooms from March 2019 and receive the bill on April 1, 2019.
@@ -51,7 +51,7 @@ Scenario 3: You did not change the configuration in February 2019, or you change
 
 
 
->!After your service version changes to Free edition, the existing audio-video chat rooms, ordinary groups, and the groups created or joined by users will not be affected. However, the new audio-video chat rooms, groups, or the groups your users subsequently create or join will be subject to the limitations of the Free Edition. You will receive [error code](https://intl.cloud.tencent.com/document/product/1047/34348) messages once any of the limitations are exceeded.
+>!After your app changes to Free edition, the existing audio-video chat rooms, ordinary groups, and the groups created or joined by users will not be affected. However, the new audio-video chat rooms, groups, or the groups your users subsequently create or join will be subject to the limitations of the Free Edition. You will receive [error code](https://intl.cloud.tencent.com/document/product/1047/34348) messages once any of the limitations are exceeded.
 
 ## Disabling Your App
 **Once your app is disabled, all the services under the app become inactive immediately and cannot be restored, so proceed with caution.**
