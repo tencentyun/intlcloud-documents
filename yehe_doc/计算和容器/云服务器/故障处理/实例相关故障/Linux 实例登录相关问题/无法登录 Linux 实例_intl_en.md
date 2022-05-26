@@ -68,4 +68,3 @@ To define a custom rule for the security group, see [Adding Security Group Rules
 
 ## Other Solutions
 If you still cannot log in to the Linux instance using the preceding troubleshooting methods, save your self-diagnosis results and [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
-) 进行反馈。
