@@ -9,7 +9,7 @@ This document uses the video upload and transcoding process as an example to des
 An HTTP service is built based on SCF in the demo to receive event notification requests from VOD. It initiates video transcoding and gets the transcoding result by processing `NewFileUpload` ([video upload completion](https://intl.cloud.tencent.com/document/product/266/33950)) and `ProcedureStateChanged` ([task flow status change](https://intl.cloud.tencent.com/document/product/266/33953)) event notifications.
 
 The system mainly involves four components: console, API Gateway, SCF, and VOD. Here, API Gateway and SCF are the deployment objects of this demo as shown below:
-<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ec5a27df9988417547c884df4ac28816.png" width="550">
 
 The specific business process is as follows:
 
