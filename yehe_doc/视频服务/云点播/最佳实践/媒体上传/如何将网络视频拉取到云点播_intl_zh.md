@@ -33,14 +33,15 @@
 
 访问云点播控制台的 [上传页面](https://console.cloud.tencent.com/vod/media/upload)，上传方式选择【视频拉取】，然后单击【添加一行】，填写待拉取视频的 URL（本文以 [测试视频 URL](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 为例，其余项为选填，开发者可以根据需要进行填写），最后单击左下角的【拉取视频】：
 
-![](https://main.qcloudimg.com/raw/3871a2c05ca1f26f62e0518cb3943309.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d22654ee0f5d490a09df93d2c8cce778.png)
 >?拉取视频所花费的时间和视频文件的大小成正比。建议开发者选择较小的视频（如几十MB以内）进行测试，避免长时间等待。
 <span id="p13"></span>
 ### 步骤3：查看拉取结果
 
 等待一两分钟后（根据视频文件的大小有所差别），在 [媒资管理页面](https://console.cloud.tencent.com/vod/media) 可以看到已经拉取完成的视频：
 
-![](https://main.qcloudimg.com/raw/7329a44db45f6cc11fa48ac41ae9cf7c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d25e0d8e54b2a59b5aa190c3ced62c8.png)
+
 >?如果拉取过程中浏览器一直停留在媒资管理页面，那么需要刷新页面才能看到拉取完成的视频。
 
 ## 调用云 API 拉取上传
