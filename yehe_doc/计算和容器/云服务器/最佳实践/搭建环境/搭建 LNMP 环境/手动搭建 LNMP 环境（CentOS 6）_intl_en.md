@@ -34,20 +34,19 @@ baseurl=https://nginx.org/packages/mainline/centos/6/$basearch/
 gpgcheck=0
 enabled=1
 ```
-5. Press **Esc** and input **:wq** to save the file and go back.
+3. Press **Esc** and input **:wq** to save the file and go back.
 4. Run the following command to install Nginx.
 ```
 yum install -y nginx
 ```
-5. Run the following command to open `nginx.conf`.
+5. Run the following command to open `default.conf`.
 ```
-vim /etc/nginx/nginx.conf
+vim /etc/nginx/conf.d/default.conf
 ```
 6. Press **i** to switch to edit mode.
 7. Find `server{...}` and replace the content inside the curly brackets with the following:
    This cancels the monitoring of IPv6 addresses and configures Nginx to interact with PHP.
-> If you cannot find `server{...}` in `nginx.conf`, add the following above `include /etc/nginx/conf.d/*conf;`
->
+
 ```
 server {
 	listen       80;
