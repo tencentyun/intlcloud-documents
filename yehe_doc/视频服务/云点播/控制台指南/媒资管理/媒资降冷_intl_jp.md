@@ -24,7 +24,8 @@ VODコンソールによって、VOD上のメディア資産の冷却操作を�
  
 ## 直接冷却
 1. VODコンソールにログインし、【メディア資産管理】>[【メディア資産冷却】](https://console.cloud.tencent.com/vod/pics)を選択して、「直接冷却」画面をクリックすると、ユーザーはFileIDによって冷却をトリガーできます。
-![](https://qcloudimg.tencent-cloud.cn/raw/0eb7eb77ed62962fd26f353ae79a434a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3afab3949c9ab544ad4d56c80f45e72b.png)
+
 >?1回の直接冷却でサポートできるのは100個のFileID冷却のみです。
 
 
