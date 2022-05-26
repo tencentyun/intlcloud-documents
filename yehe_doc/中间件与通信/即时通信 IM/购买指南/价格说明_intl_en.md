@@ -1,7 +1,7 @@
 ## Basic Service Pricing
 
 
-### IM Plan Prices[](id:Package)
+### IM plan prices[](id:Package)
 A plan can be applied only to a single `SDKAppID`. You must purchase a plan for each `SDKAppID` if you want to [upgrade](https://intl.cloud.tencent.com/document/product/1047/34577?lang=en&pg=#upgrading-an-app) multiple ones to the Pro or Ultimate edition.
 IM plans are pay-as-you-go on a monthly basis. Fees incurred within a calendar month will be deducted on the third day of the next month. See the table below for billing details:
 
