@@ -21,11 +21,11 @@
         </tr>	
         <tr>
             <td>Size of a single file</td>
-		<td><li>SDKs support a maximum file size of 100 MB for any single file to be sent. </li><li>Mini Program SDK does not support creating and sending file messages. </li><li>WebIM SDK does not support creating and sending voice messages.</li></td>
+		<td><li>SDKs support a maximum file size of 100 MB for any single file to be sent. </li><li>Mini Program SDK does not support creating and sending file messages. </li><li>WebIM SDK does not support creating and sending audio messages.</li></td>
         </tr>
 	<tr>
             <td>Message history storage period</td>
-            <td>Historical message storage is available for one-to-one messages and non–audio-video group messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. The default configurations for different service packages are as follows: <ul style="margin:0;"><li>Trial Edition: 7 days, with no extension supported</li><li>Pro Edition: 7 days, with extension supported</li><li>Ultimate Edition: 30 days, with extension supported</li></ul>The extension of the historical message storage period is a value-added service. For the specific costs, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</td>
+            <td>Historical message storage is available for one-to-one messages and non–audio-video group messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. The default configurations for different service packages are as follows: <ul style="margin:0;"><li>Free Edition: 7 days, with no extension supported</li><li>Pro Edition: 7 days, with extension supported</li><li>Ultimate Edition: 30 days, with extension supported</li></ul>The extension of the historical message storage period is a value-added service. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</td>
         </tr>
         <tr>
             <td>System message</td>
@@ -54,25 +54,25 @@
         </tr>
         <tr>
             <td  rowspan="2">User relationship chain</td>
-            <td>Friends and friend groups</td>
+            <td>Friends and friend lists</td>
             <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>The maximum number of pending friend requests supported is 100.</li><li>The maximum number of friend lists supported is 32.</li><li>The maximum length of a friend list name is 30 characters.</li><li>The maximum length of friend remarks is 96 characters.</li><li>WebIM SDK supports friend relationship chain starting from v2.13.0.</li></ul></td>
         </tr>
         <tr>
             <td>Blocklist</td>
-            <td>A single user can blocklist a maximum of 1,000 users.</td>
+            <td>A single user can add a maximum of 1,000 users to the blocklist.</td>
         </tr>
          <tr>
             <td  rowspan="7">Group</td>
             <td>Number of groups</td>
-            <td>This refers to the total number of groups of all group types that simultaneously exist in a single SDKAppID, excluding deleted groups. If the upper limit has been reached, you can delete unneeded groups and then create new ones. The upper limits for different service packages are as follows:<li>Trial Edition: 100</li><li>Pro Edition or Ultimate Edition: no upper limit</li><br>The maximum daily net increase of groups is 10,000, and the free peak group count is 100,000/month. If the peak group count exceeds the free quota, extra fees will be generated. For more information on the costs, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Fees for Usage Exceeding the Free Quota</a>.</li></ul></td>
+            <td>This refers to the total number of groups of all group types that simultaneously exist in a single SDKAppID, excluding disbanded groups. If the upper limit has been reached, you can disband unneeded groups and then create new ones. The upper limits for different service packages are as follows:<li>Free Edition: 100</li><li>Pro Edition or Ultimate Edition: no upper limit</li><br>The maximum daily net increase of groups is 10,000, and the free peak group count is 100,000/month. If the peak group count exceeds the free quota, extra fees will be generated. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Fees for Usage Exceeding the Free Quota</a>.</li></ul></td>
         </tr>
         <tr>
             <td>Number of group members</td>
-            <td>Audio-video group (AvChatRoom): no upper limit on the number of group members. <br>For non–audio-video groups, the default configurations for different service packages are as follows: <ul style="margin:0;"><li>Trial Edition: 20 members/group </li><li>Pro Edition: 200 members/group, which can be extended to 2,000 members/group</li><li>Ultimate Edition: 2,000 members/group, which can be extended to 6,000 members/group</li>Extending the upper limit on the number of group members is a paid value-added service. For the specific costs, see<a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</ul></td>
+            <td>Audio-video group (AvChatRoom): no upper limit on the number of group members. <br>For non–audio-video groups, the default configurations for different service packages are as follows: <ul style="margin:0;"><li>Free Edition: 20 members/group </li><li>Pro Edition: 200 members/group, which can be extended to 2,000 members/group</li><li>Ultimate Edition: 2,000 members/group, which can be extended to 6,000 members/group</li>Extending the upper limit on the number of group members is a paid value-added service. For the specific costs, see<a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</ul></td>
         </tr>
         <tr>
             <td>Number of groups a user can join</td>
-            <td>This refers to the total number of groups of all group types that a user can join. The limits for different service packages are as follows: <ul style="margin:0;"><li>Trial Edition: 50 groups/user</li><li>Pro Edition: 500 groups/user, which can be extended to 1,000 groups/user</li><li>Ultimate Edition: can be extended to 3,000 groups/user</li></ul>Extending the upper limit on the number of groups that a user can join is a paid value-added service. For the specific costs, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</li></td>
+            <td>This refers to the total number of groups of all group types that a user can join. The limits for different service packages are as follows: <ul style="margin:0;"><li>Free Edition: 50 groups/user</li><li>Pro Edition: 500 groups/user, which can be extended to 1,000 groups/user</li><li>Ultimate Edition: Can be extended to 3,000 groups/user</li></ul>Extending the upper limit on the number of groups that a user can join is a paid value-added service. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</li></td>
         </tr>
         <tr>
             <td>Group profile</td>
@@ -88,12 +88,12 @@
         </tr>
         <tr>
             <td>Group member custom field</td>
-            <td>Group Member supports up to 5 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores. </li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for Group Member is 64 bytes.</li></ul></td>
+            <td>Group member supports up to 5 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores. </li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for group member is 64 bytes.</li></ul></td>
         </tr>
 </table>
 
 ## API-related Limits
->? This document lists only the RESTful APIs that have use limits. For a complete list of APIs, see [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34621).
+>? This document lists only the RESTful APIs that have use limits. For a complete list of APIs, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621).
 
 ### General limits
 
