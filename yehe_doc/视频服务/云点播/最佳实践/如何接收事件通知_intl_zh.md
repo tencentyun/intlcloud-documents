@@ -99,7 +99,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 如 [避免影响生产环境](#p0) 一节所述，操作之前请先确认您的线上业务不依赖于 VOD 事件通知。
 
 登录 [云点播控制台](https://console.cloud.tencent.com/vod/callback)，单击【设置】，回调模式选择【普通回调】，回调 URL 填写 [步骤4](#p4) 中获得的事件通知接收服务地址，回调事件全部勾选，然后单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e5631bc9013b6e30283a7ac5411e332.png)
+
 >!如果您在控制台同时看到两个回调 URL 设置（2.0版本格式和3.0版本格式），请填写3.0版本。
 
 ### 步骤6：测试 Demo
