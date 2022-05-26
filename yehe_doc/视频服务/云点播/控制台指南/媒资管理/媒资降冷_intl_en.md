@@ -33,12 +33,12 @@ You can perform cold storage operations on VOD resources in the VOD console. VOD
 1. Click **Create Policy** and enter the policy name, which can contain up to 20 letters, digits, spaces, underscores, hyphens, and dots.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3ef4fa3afca1eac8a4fac27a186efdb1.png)
 2. Cold storage policy: the final storage class of a media asset file based on the cold storage policy, which supports only one storage class.
-![](https://qcloudimg.tencent-cloud.cn/raw/8d8d508d682f1adc9ace2b0c78ae0fbe.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3fd49596748620a800becaac9141455a.png)
 3. Policy configuration: you can configure different policies to implement the cold storage logic.
  - Time: you can specify the upload time and storage time.
-		- Specify upload time: you can configure a cold storage policy by specifying a time point/period.
-			 - Specify time point/period: if no start time point is specified, the oldest stored video file will be cold stored by default. If no end time point is specified, all video files after the start time point will be cold stored. If neither is specified, all video files in VOD will be cold stored.
-			 - Specify storage time: a media asset will be cold stored after the entered time elapses.
+	- Specify upload time: you can configure a cold storage policy by specifying a time point/period.
+		- Specify time point/period: if no start time point is specified, the oldest stored video file will be cold stored by default. If no end time point is specified, all video files after the start time point will be cold stored. If neither is specified, all video files in VOD will be cold stored.
+		- Specify storage time: a media asset will be cold stored after the entered time elapses.
  - Category: cold storage by category ID is supported. You can set multiple category IDs/names.
  - Source: cold storage is supported for different media sources. You can set multiple media sources.
  - Access policy: it can be set by setting the number of times to play back the video during a period of time. A cold storage policy supports only one access policy.
