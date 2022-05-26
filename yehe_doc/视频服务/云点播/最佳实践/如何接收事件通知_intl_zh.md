@@ -9,7 +9,7 @@
 Demo 基于云函数（SCF） 搭建了一个 HTTP 服务，用于接收来自 VOD 的事件通知请求。该服务通过对 NewFileUpload（[视频上传完成事件通知](https://intl.cloud.tencent.com/document/product/266/33950)）和 ProcedureStateChanged（[任务流状态变更](https://intl.cloud.tencent.com/document/product/266/33953)）的处理，实现发起视频转码和获取转码结果。
 
 系统主要涉及四个组成部分：控制台、API 网关、云函数和云点播，其中 API 网关和云函数即是本 Demo 的部署对象，如下图所示：
-<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ec5a27df9988417547c884df4ac28816.png" width="550">
 
 具体业务流程为：
 
