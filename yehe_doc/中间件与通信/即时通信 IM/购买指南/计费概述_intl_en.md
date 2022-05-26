@@ -8,6 +8,7 @@ We provide three IM plans: Free Edition, Pro Edition, and Ultimate Edition. Appl
 >! The feature of pushing to all users is available only to users with Ultimate edition accounts. See [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322) to apply for this feature. The feature will be enabled **48 hours** after your application is approved.
 
 The following table compares the features of different editions:
+
 | Feature | Free Edition | Pro Edition | Ultimate Edition |
 | ----------------- |---------- |----------------- | ------------------- |
 | Global coverage | Supported | Supported | Supported |
