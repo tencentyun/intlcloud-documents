@@ -107,7 +107,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/8c2143b18f7b88b715b3881e25062e9b.png)
 
 ### 步骤2：配置降冷策略
-![](https://qcloudimg.tencent-cloud.cn/raw/d0c4864520a38107b5f4c43d3b6ac56c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54b2b7b0bc76bea32f58bb347d7542b5.png)
 按照用户的需求进行降冷策略的配置。
 示例：如图所示则为若媒体在30日内，视频播放次数低于300次，则触发低频降冷策略；云点播会选取满足所有规则的媒体进行降冷。
 
