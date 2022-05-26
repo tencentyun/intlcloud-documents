@@ -24,7 +24,8 @@ You can perform cold storage operations on VOD resources in the VOD console. VOD
  
 ## FileId-based Cold Storage
 1. Log in to the VOD console, select **Media Assets** > [**Cold Storage**](https://console.cloud.tencent.com/vod/pics), and click the **FileId-based** tab. You can trigger cold storage by `FileId`.
-![](https://qcloudimg.tencent-cloud.cn/raw/0eb7eb77ed62962fd26f353ae79a434a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3afab3949c9ab544ad4d56c80f45e72b.png)
+
 >?FileId-based cold storage supports up to 100 `FileId` values at a time.
 
 
