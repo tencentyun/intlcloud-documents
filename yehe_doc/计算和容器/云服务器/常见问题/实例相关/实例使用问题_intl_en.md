@@ -53,7 +53,7 @@ The IP address of a CVM instance is located in the same region where you purchas
 ### Do CVM instances provide databases by default?
 No. To use database services, you can:
 - Deploy your own database. For example, you can [install and build MySQL](https://intl.cloud.tencent.com/document/product/213/10190).
-- Purchase [TencentDB for MySQL](https://cloud.tencent.com/product/cdb) separately.
+- Purchase [TencentDB for MySQL](https://intl.cloud.tencent.com/products/cdb) separately.
 - Configure the environment database using the image marketplace.
 
 ### Can I build a database on a CVM instance?
