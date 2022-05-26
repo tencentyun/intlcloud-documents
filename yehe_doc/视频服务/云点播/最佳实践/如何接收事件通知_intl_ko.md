@@ -9,7 +9,7 @@
 HTTP 서비스는 Demo의 SCF를 기반으로 구축되어 VOD에서 이벤트 알림 요청을 수신합니다. NewFileUpload([비디오 업로드 완료 알림](https://intl.cloud.tencent.com/document/product/266/33950)) 및 ProcedureStateChanged([태스크 플로우 상태 변경](https://intl.cloud.tencent.com/document/product/266/33953)) 이벤트 알림을 처리하여 동영상 트랜스코딩을 시작하고 트랜스코딩 결과를 가져옵니다.
 
 시스템은 주로 콘솔, API 게이트웨이, SCF 및 VOD의 네 가지 구성 요소로 구성됩니다. 여기에서 API Gateway 및 SCF는 아래와 같이 이 Demo의 배포 객체입니다.
-<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ec5a27df9988417547c884df4ac28816.png" width="550">
 
 자세한 서비스 프로세스는 다음과 같습니다.
 
