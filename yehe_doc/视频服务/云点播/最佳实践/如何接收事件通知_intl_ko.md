@@ -99,7 +99,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 [프로덕션 환경에 영향을 주지 않기](#p0)에 설명된 대로 다음 작업을 수행하기 전에 프로덕션 환경에서 비즈니스가 VOD 이벤트 알림에 의존하지 않는지 확인하십시오.
 
 [VOD 콘솔](https://console.cloud.tencent.com/vod/callback)에 로그인하여 설정을 클릭하고 콜백 모드로 [일반 콜백]을 선택하고, 콜백 URL로 [4단계](#p4)에서 얻은 이벤트 알림 수신 서비스 주소를 입력하고, 모든 콜백 이벤트를 확인하고 아래와 같이 [확인]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e5631bc9013b6e30283a7ac5411e332.png)
+
 >!두 개의 콜백 URL 설정 항목(v2.0 형식과 v3.0 형식)이 콘솔에 동시에 표시되는 경우 v3.0 형식으로 설정하십시오.
 
 ### 6단계: Demo 테스트
