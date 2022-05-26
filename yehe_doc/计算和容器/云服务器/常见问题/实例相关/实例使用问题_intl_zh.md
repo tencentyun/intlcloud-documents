@@ -16,7 +16,7 @@
 
 ### 如何销毁实例？
 
-具体操作请参考 [销毁实例](https://intl.cloud.tencent.com/document/product/213/4930)。
+具体操作请参考 [销毁实例](https://intl.cloud.tencent.com/zh/document/product/213/4930)。
 
 ### 如何查询 Linux 实例的帐号和密码？
 云服务器实例的帐号和密码会在创建成功后将以 [站内信](https://console.cloud.tencent.com/message) 的方式发送到您的腾讯云账户上。Linux 系统的默认管理员帐号是 root。
@@ -41,6 +41,9 @@
 ### 购买了云服务器实例，想对云服务器实例添加声卡和显卡，发现无法添加，是什么原因？
 腾讯云云服务器提供的是常规服务器，不是多媒体服务器，默认不提供声卡和显卡组件，所以在系统中无法添加声卡和显卡。
 
+### 购买云服务实例时支持指定 MAC 地址吗？
+不支持。创建云服务器实例时将随机分配 MAC 地址，无法进行指定。
+
 ### 可以转移某台云服务器剩余使用时间到其他云服务器上吗？
 不支持。如果您需要兼顾灵活性和成本，建议在购买实例时选择按量付费实例。
 
@@ -50,10 +53,11 @@
 ### 云服务器默认提供数据库吗？
 云服务器默认不提供数据库，您可以：
 - 自行部署数据库。例如 [安装 MySQL 数据库](https://intl.cloud.tencent.com/document/product/213/10190)。
-- 单独购买 [腾讯云数据库 MySQL](https://intl.cloud.tencent.com/product/cdb) 服务。
+- 单独购买 [腾讯云数据库 MySQL](https://cloud.tencent.com/product/cdb) 服务。
+- 使用镜像市场配置环境数据库。
 
 ### 云服务器上是否可以搭建数据库？
-可以。您可以根据需求安装数据库软件和配置环境，云服务器不作限制。同时，您也可以单独购买 [腾讯云数据库 MySQL](https://intl.cloud.tencent.com/product/cdb) 服务。
+可以。您可以根据需求安装数据库软件和配置环境，云服务器不作限制。同时，您也可以单独购买 [腾讯云数据库 MySQL](https://intl.cloud.tencent.com/zh/products/cdb) 服务。
 
 ### 云服务器是否支持 Oracle 数据库？
 支持。建议您在安装 Oracle 数据库前压测云服务器性能，确认云服务器实例可以满足您的数据库读写需求。

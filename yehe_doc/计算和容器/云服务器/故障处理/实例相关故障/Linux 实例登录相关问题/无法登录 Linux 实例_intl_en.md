@@ -1,64 +1,71 @@
-This document describes the possible causes of Linux instance login failures and troubleshooting methods, helping you detect, locate, and resolve problems.
+This document describes how to troubleshoot problems when a Linux instance cannot be connected. It also analyzes the possible causes for the connection failure and provides guidance on troubleshooting, locating, and solving the problem.
 
-## Possible Causes
-The primary causes of Linux instance login failures include:
+
+## Troubleshooting the Issue
+### Using the diagnosis tool
+Tencent Cloud provides a diagnosis tool to help you determine whether the problem is due to common bandwidth, firewall, or security group configurations issues. More than 70% of the problems can be located by this tool. You can locate problems that result in login failures based on the detected causes.
+1. Click [Self-diagnose](https://console.intl.cloud.tencent.com/workorder/check) to open the self-diagnosis tool.
+2. Select the CVM to be diagnosed as prompted and click **Start Detection**.
+
+
+## Common Causes
+The main causes for failing to log in to a Linux instance include the following:
 - [SSH key problems](#UseSSHLogin)
-- [Password problems](#CryptographicProblem)
-- [Excessive bandwidth utilization](#BandwidthUtilization)
+- [Password issues](#CryptographicProblem)
+- [High bandwidth utilization](#BandwidthUtilization)
 - [High server load](#HighServerLoad)
-- [Incorrect security group rules](#SafetyGroupRule)
-
-
-If you cannot check your problem by using the self-diagnose tool, we recommend that you [log in to the CVM through VNC](#VNC) and troubleshoot step by step.
+- [Improper security group rules](#SafetyGroupRule)
 
 ## Troubleshooting
-### Logging in by using VNC
-<span id="VNC"></span>
+### Logging in through VNC[](id:VNC)
+
 If you cannot use the standard method (Webshell) or remote login software to log in to a Linux instance, you can use Tencent Cloud VNC to log in and locate the problem causes.
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
-2. On the instance management page, select the instance to access and click **Log In**, as shown in the following figure:
+2. On the instance management page, locate the instance you want to access and click **Log In**, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
-3. In the "Log in to Linux Instance" window that appears, select **Alternative login methods (VNC)** and click **Log In Now**.
-> During login, if you forget the password of this instance, you can reset it in the console. For more information, see [Resetting the Instance Password](http://intl.cloud.tencent.com/document/product/213/16566).
->
-4. Enter the username and password in the dialog box that appears to complete the login process.
+3. In the **Standard Login | Linux Instance** window that pops up, select **Login with VNC**.
+<dx-alert infotype="explain" title="">
+ If you forget the password for the instance, you can reset it in the console. For more information, see [Resetting Instance Password](https://intl.cloud.tencent.com/document/product/213/16566).
+</dx-alert>
+4. Enter the username and password to complete the login process.
 
-<span id="UseSSHLogin"></span>
-### SSH problems
-**Problem**: during [login to a Linux instance by using SSH](https://intl.cloud.tencent.com/document/product/213/32501), a message indicating that the connection is unavailable or failed appears.
-**Steps**: see [Unable to Log In to a Linux Instance by Using SSH](https://intl.cloud.tencent.com/document/product/213/32486) for troubleshooting.
+
+### SSH key problems[](id:UseSSHLogin)
+**Problem**: during [login to a Linux instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501), a message appears indicating that the connection is unavailable or failed.
+**Steps**: see [Unable to Use the SSH Method to Log in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/32486) to perform troubleshooting.
 
 <span id="CryptographicProblem"></span>
-### Password problems
-**Problem**: unable to log in because you forget the password, enter it incorrectly, or fail to reset it.
-**Solution**: reset the password of this instance in the [Tencent Cloud console](https://console.cloud.tencent.com/cvm/index), and restart the instance.
-**Steps**: for information on how to reset the password of an instance, see [Resetting the Instance Password](http://intl.cloud.tencent.com/document/product/213/16566).
+### Password issues
+**Problem**: the login attempt failed because you forgot the password, entered an incorrect password, or failed to reset your password.
+**Solution**: reset the password for this instance in the [CVM console](https://console.cloud.tencent.com/cvm/index) and restart the instance.
+**Procedure**: see [Resetting Instance Password](https://intl.cloud.tencent.com/document/product/213/16566) for the detailed procedure.
 
-<span id="BandwidthUtilization"></span>
-### Excessive bandwidth utilization
+
+### High bandwidth utilization[](id:BandwidthUtilization)
 **Problem**: the self-diagnosis tool shows that bandwidth utilization is too high.
-**Steps**:
-1. Log in to the instance by using [VNC](#VNC).
-2. Check the bandwidth utilization of the instance and troubleshoot accordingly. For details, see [Unable to Log In Due to High Bandwidth Utilization](https://intl.cloud.tencent.com/document/product/213/32542).
+**Procedure**:
+1. Log in to the instance by using [VNC login](#VNC).
+2. Check the bandwidth utilization of the instance and perform troubleshooting accordingly. For details, see [Login Failure Due to High Bandwidth Occupation](https://intl.cloud.tencent.com/document/product/213/32542).
 
-<span id="HighServerLoad"></span>
-### High server load
-**Problem**: Cloud Monitor shows that load of the server CPU is high, and the system cannot be accessed remotely or access is slow.
-**Possible Causes**: viruses, trojans, third-party anti-virus software, application exceptions, driver exceptions, and software backend automatic updates may lead to high CPU usage, causing CVM login failures or slow access.
-**Steps**:
-1. Log in to the instance by using [VNC](#VNC).
-2. In "Task manager", find the process with a high load. For details, see [Unable to Log In Due to High CPU and Memory Usage](https://intl.cloud.tencent.com/document/product/213/32387).
 
-<span id="SafetyGroupRule"></span>
-### Incorrect security group rules
-**Problem**: unable to log in due to incorrect security group rules.
-**Steps**: troubleshoot by using the [port verification tool for security groups](https://console.cloud.tencent.com/vpc/helper).
+### High server load[](id:HighServerLoad)
+**Problem**: The self-diagnosis tool or Cloud Monitor shows that server CPU workload is too high, and the system is unable to perform remote connection or access is slow.
+**Possible cause**: viruses, trojans, third-party antivirus software, application exceptions, driver exceptions, and automatic updates of software on the backend may lead to high CPU utilization, causing CVM login failures or slow access.
+**Procedure**:
+1. Log in to the instance by using [VNC login](#VNC).
+2. In **Task manager**, find the process with a high load. For details, see [Failed to Log in to a Linux CVM Due to High CPU and Memory Usage](https://intl.cloud.tencent.com/document/product/213/32387).
+
+
+### Improper security group rules[](id:SafetyGroupRule)
+**Problems**: The self-diagnosis tool shows that the security group rule configuration is improper, leading to login failures.
+**Procedure**: Troubleshoot with the [security group (port) verification tool](https://console.cloud.tencent.com/vpc/helper).
 ![](https://main.qcloudimg.com/raw/278c7f0abd9b7224d32fa5402554544a.png)
-If the problem is caused by the incorrect security group port configuration, you can use **Open All Tools** to open all ports.
+If the problem is caused by a port issue of the security group, you can use the **Open all ports** function to open all ports.
 ![](https://main.qcloudimg.com/raw/e4a40dafcc9607ce18ee7001129d9655.png)
-If you need to define a custom rule for the security group, see [Adding Rules to Security Groups](https://intl.cloud.tencent.com/document/product/213/34272) for information on how to reconfigure security group rules.
+To define a custom rule for the security group, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).
 
 
 
 ## Other Solutions
-If you still cannot log in to the Linux instance after trying the preceding troubleshooting methods, save your self-diagnosis results and [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you still cannot log in to the Linux instance using the preceding troubleshooting methods, save your self-diagnosis results and [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
+) 进行反馈。
