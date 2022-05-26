@@ -46,8 +46,8 @@ You can also use other video upload methods as appropriate for your business. Fo
 1. To use pseudo-live streaming, you must enable hotlink protection. Log in to the [VOD console](https://console.cloud.tencent.com/vod) and click **Distribution and Playback** > **Domain Name** on the left sidebar. Find the target domain name and click **Set**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f21443e506aab6c9020d4a98575c1e7b.png)
 2. Click **Edit**.
-![](https://qcloudimg.tencent-cloud.cn/raw/e4fecb5f16b4157959b86acbc9d33ee0.png)
-2. Enable referer/key hotlink protection.
+![](https://qcloudimg.tencent-cloud.cn/raw/63d1a7a738d3031a81116bde7727024b.png)
+3. Enable referer/key hotlink protection.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f13f03767df78e476012158fb44eebd.png)
 For details on settings, see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/14060). After the configuration, please save the key for calculating the hotlink protection signature.
 
