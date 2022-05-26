@@ -11,9 +11,9 @@
 ## 操作场景
 
 您可参考以下案例，完成自己的数据加工。
-- [日志过滤和分发](https://cloud.tencent.com/document/product/614/71487)
-- [单行文本日志结构化](https://cloud.tencent.com/document/product/614/71488)
-- [数据脱敏](https://cloud.tencent.com/document/product/614/71489)
-- [嵌套 JSON 的处理](https://cloud.tencent.com/document/product/614/71490)
-- [多格式的日志结构化](https://cloud.tencent.com/document/product/614/71491)
-- [利用分割符提取日志指定内容](https://cloud.tencent.com/document/product/614/71492)
+- [日志过滤和分发](https://intl.cloud.tencent.com/document/product/614/46135)
+- [单行文本日志结构化](https://intl.cloud.tencent.com/document/product/614/46136)
+- [数据脱敏](https://intl.cloud.tencent.com/document/product/614/46137)
+- [嵌套 JSON 的处理](https://intl.cloud.tencent.com/document/product/614/46138)
+- [多格式的日志结构化](https://intl.cloud.tencent.com/document/product/614/46139)
+- [利用分割符提取日志指定内容](https://intl.cloud.tencent.com/document/product/614/46140)
