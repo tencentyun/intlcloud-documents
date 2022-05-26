@@ -107,7 +107,7 @@ Log in to the [VOD console](https://console.cloud.tencent.com/vod/media) (non-ad
 ![](https://qcloudimg.tencent-cloud.cn/raw/8c2143b18f7b88b715b3881e25062e9b.png)
 
 ### Step 2. Configure the cold storage policy
-![](https://qcloudimg.tencent-cloud.cn/raw/d0c4864520a38107b5f4c43d3b6ac56c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54b2b7b0bc76bea32f58bb347d7542b5.png)
 Configure the cold storage policy as needed.
 Example: as shown above, if the number of video playbacks is less than 300 in 30 days for a video, the STANDARD_IA storage policy will be triggered, and VOD will store all media assets meeting the rule in STANDARD_IA.
 
