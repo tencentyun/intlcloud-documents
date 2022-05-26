@@ -23,8 +23,9 @@
 
  
 ## 直接降冷
-1. 登录云点播控制台，选择【媒资管理】>[【媒资降冷】](https://console.cloud.tencent.com/vod/pics)，单击“直接降冷”页面，用户可以通过 FileID 触发降冷。
-![](https://qcloudimg.tencent-cloud.cn/raw/0eb7eb77ed62962fd26f353ae79a434a.png)
+1. 登录云点播控制台，选择【媒体资产】>[【冷存储】](https://console.cloud.tencent.com/vod/pics)，单击基于文件标识的选项卡。您可以通过 触发冷存储FileId。
+![](https://qcloudimg.tencent-cloud.cn/raw/3afab3949c9ab544ad4d56c80f45e72b.png)
+
 >?直接降冷一次仅支持提供100个 FileID 降冷。
 
 
