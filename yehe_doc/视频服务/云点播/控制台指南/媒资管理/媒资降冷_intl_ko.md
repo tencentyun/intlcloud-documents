@@ -24,7 +24,8 @@ VOD 콘솔을 통해 미디어 자산을 콜드 스토리지할 수 있으며, V
  
 ## 수동 콜드 스토리지
 1. VOD 콘솔에 로그인하여 [미디어 자산 관리]>[[미디어 자산 콜드 스토리지]](https://console.cloud.tencent.com/vod/pics)를 선택하고 ‘수동 콜드 스토리지’ 페이지에서 사용자는 FileID를 통해 콜드 스토리지를 트리거할 수 있습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/0eb7eb77ed62962fd26f353ae79a434a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3afab3949c9ab544ad4d56c80f45e72b.png)
+
 >?수동 콜드 스토리지는 한 번에 100개의 FileID를 콜드 스토리지할 수 있습니다.
 
 
