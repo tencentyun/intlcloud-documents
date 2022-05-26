@@ -99,7 +99,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
  [本番環境への影響の回避](#p0) の節で記述したとおり、操作前にまずオンライン業務がVODイベント通知に依存していないことを確認してください。
 
  [VODコンソール](https://console.cloud.tencent.com/vod/callback)にログインして、【設定】をクリックし、コールバックモードで【通常のコールバック】を選択します。コールバックURLとして [手順4](#p4)で取得したイベント通知受信サービスアドレスを入力します。すべてのコールバックイベントを確認して、下図に示すとおり【OK】をクリックします。
-![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e5631bc9013b6e30283a7ac5411e332.png)
+
 >!コンソールに2個のコールバックURL設定（2.0バージョン形式および3.0バージョン形式）が同時にあった場合は、3.0バージョンを設定してください。
 
 ### 手順6：Demoテスト
