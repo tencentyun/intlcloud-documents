@@ -122,7 +122,6 @@ Tencent Cloud IM SDK supports four preset group types, each of which pertains to
 | [getGroupAttributes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupAttributes.html) | Gets specified group attributes. Passing in null for keys means getting all attributes. |
 | [searchGroups](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/searchGroups.html) | Searches for the group list. |
 | [searchGroupByID](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/searchGroupByID.html) | Searches for a group by `groupID`. |
-| [setReceiveMessageOpt](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/setReceiveMessageOpt.html) | Sets the group message receiving option. |
 | [getGroupOnlineMemberCount](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupOnlineMemberCount.html) | Gets the number of online users in an audio-video group. |
 | [getGroupMemberList](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) | Gets the group member list. |
 | [getGroupMembersInfo](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMembersInfo.html) | Gets the profiles of specified group members. |
