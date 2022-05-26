@@ -122,7 +122,6 @@
 | [getGroupAttributes](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupAttributes.html) | 获取指定群属性，keys 传 null 则获取所有群属性。 |
 | [searchGroups](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/searchGroups.html) | 搜索群列表 |
 | [searchGroupByID](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/searchGroupByID.html) | 通过 groupID 搜索群组 |
-| [setReceiveMessageOpt](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/setReceiveMessageOpt.html) | 设置群消息的接收选项 |
 | [getGroupOnlineMemberCount](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupOnlineMemberCount.html) | 获取指定群在线人数(目前只支持直播群) |
 | [getGroupMemberList](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMemberList.html) | 获取群成员列表 |
 | [getGroupMembersInfo](https://comm.qq.com/en_doc_site/flutter/api/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupMembersInfo.html) | 获取指定的群成员资料 |
