@@ -99,7 +99,8 @@ Copy the address of the event notification receipt service in the output log (wh
 As described in [Avoiding affecting production environment](#p0), please confirm that your business in the production environment does not depend on VOD event notifications before performing the following operations:
 
 Log in to the [VOD console](https://console.cloud.tencent.com/vod/callback), click **Set**, select **Normal Callback** as the event notification method, enter the event notification receipt service address obtained in [step 4](#p4) as the callback URL, select all callback events, and click **Confirm** as shown below:
-![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e5631bc9013b6e30283a7ac5411e332.png)
+
 >!If two callback URL configuration items (v2.0 format and v3.0 format) are displayed at the same time in the console, please configure the v3.0 one.
 
 ### Step 6. Test the demo
