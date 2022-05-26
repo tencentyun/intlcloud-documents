@@ -53,7 +53,7 @@
 ### 云服务器默认提供数据库吗？
 云服务器默认不提供数据库，您可以：
 - 自行部署数据库。例如 [安装 MySQL 数据库](https://intl.cloud.tencent.com/document/product/213/10190)。
-- 单独购买 [腾讯云数据库 MySQL](https://cloud.tencent.com/product/cdb) 服务。
+- 单独购买 [腾讯云数据库 MySQL](https://intl.cloud.tencent.com/products/cdb)服务。
 - 使用镜像市场配置环境数据库。
 
 ### 云服务器上是否可以搭建数据库？
