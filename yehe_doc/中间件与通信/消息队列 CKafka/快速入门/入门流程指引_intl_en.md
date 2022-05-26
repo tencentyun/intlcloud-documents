@@ -5,4 +5,4 @@ The process of accessing CKafka varies by network type:
 
 ### Flowchart
 
-![](https://qcloudimg.tencent-cloud.cn/raw/b9f0319af4367571b769d42402c4f28d.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/2277bd9fc0fc773a53d089d95f4ac19a.png)
