@@ -9,7 +9,7 @@
 Demoは、クラウド関数（SCF）を基にHTTPサービスを構築して、VODからのイベント通知リクエストを受信するのに使用します。このサービスは、NewFileUpload（[ビデオアップロード完了イベント通知](https://intl.cloud.tencent.com/document/product/266/33950)）および ProcedureStateChanged（[タスクフロー状態の変更](https://intl.cloud.tencent.com/document/product/266/33953)）を処理することによって、ビデオトランスコードの開始およびトランスコード結果の取得を実現します。
 
 システムは主に4つの構成部分に及びます：コンソール、API Gateway、Serverless Cloud Function、VODであり、このうちAPI GatewayおよびServerless Cloud Functionは、下図に示すとおりこのDemoのデプロイオブジェクトです。
-<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ec5a27df9988417547c884df4ac28816.png" width="550">
 
 具体的な業務フローは次のとおりです：
 
