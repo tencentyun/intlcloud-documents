@@ -9,11 +9,12 @@ Before reading this document, make sure that you have read [Stage 1. Play back a
 1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** in the VOD console, select the target video (FileId: 528xxx3757278095), and click **Process Video**.
 2. On the video processing page:
  - Select **Task Flow** for **Processing Type**.
- * Select **SimpleAesEncryptPreset** for **Task Flow Template**.
-<img src="https://main.qcloudimg.com/raw/4cc8649c21b5c60305b925120f84d7e6.png" width="" /><span>
+ - Select **SimpleAesEncryptPreset** for **Task Flow Template**.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/810b84b193ad96be992810e3877b1ac7.png" width="" /><span>
 >? 
 >- **SimpleAesEncryptPreset** is a preset task flow, which uses template 12 for adaptive bitrate streaming, template 10 for thumbnail generating, and template 10 for image sprite capturing.
 >- Adaptive bitrate streaming with template 12 is to output an encrypted multi-bitrate stream.
+
 3. Click **Confirm** and wait until the **Video Status** changes from "Processing" to "Normal", which indicates that video processing is completed.
 ![](https://qcloudimg.tencent-cloud.cn/raw/da5e02a95cf19cae9146e009874ccf55.png)
 4. Click **Manage** in the **Operation** column of the video to enter the management page:
@@ -28,7 +29,9 @@ In the previous step, you have uploaded and processed the video. Now, you can us
 1. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)**, find the video uploaded and processed in **step 1**, click **Manage** in the **Operation** column, and select **Superplayer Preview**.
 2. Select **basicDrmPreset** for **Superplayer Configuration**.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/60418fcab52a70fc2fbcf7056f7929f2.png" width="622" />
+
 >? **basicDrmPreset** is a preset superplayer configuration, which is used to output the adaptive bitstream with template 12 and the image sprite with template 10.
+
 3. As hotlink protection is enabled for the default distribution domain name, you can set the hotlink protection expiration time and the preview duration on the **Playback Control** tab. You can use the default parameter settings here (the default expiration time of playback hotlink protection is one day, and the preview duration and maximum number of IPs allowed for playback are left empty).
  <img src="https://qcloudimg.tencent-cloud.cn/raw/5968a5d6428bff9c3e3e0e1d4ce7431e.png" width="622" />
 4. In **Web Player**, click the button in the middle of the player to play back the video on web.
