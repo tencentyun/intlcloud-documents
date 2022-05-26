@@ -9,7 +9,7 @@ This document describes how to create a topic in a created instance in the CKafk
 3. On the instance details page, click **Topic Management** at the top and click **Create**.
 4. In the **Edit Topic** window, set the number of partitions and replicas and other parameters.
     ![](https://main.qcloudimg.com/raw/a0a6444b0bb665691a1e4c61ff1114ec.png)
-   - Name: The topic name. It cannot be changed once entered and can contain only letters, digits, underscores, or symbols ("-" and ".")..
+   - Name: The topic name. It cannot be changed once entered and can contain only letters, digits, underscores, or symbols ("-" and ".").
    - Partition Count: It is a concept in physical partition, where one topic can contain one or more partitions. CKafka uses partition as a message allocation unit.
    - Replica Count: The number of partition replicas is used to ensure the high availability of the partition. To ensure data reliability, creating a single-replica topic is not supported. Two replicas are enabled by default.
      Replicas are also counted into the number of partitions. For example, if you create 1 topic with 6 partitions and 2 replicas for each partition, then you have a total of 12 partitions (1 x 6 x 2).
