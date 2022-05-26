@@ -64,6 +64,6 @@ Each value-added service has its own billing method. Value-added services are av
      </tr> 
 </table>
 
-## Reference
+## References
 - [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
 - [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/34351)
