@@ -60,7 +60,7 @@ TRTCは月末に、[Tencent Cloudアカウント](https://console.intl.cloud.ten
 
 図例：
 
-![課金説明例 -2@2x](https://qcloudimg.tencent-cloud.cn/raw/24870c3e59d38a03d1f99e84ce4223a7.png)
+![課金説明例 -2@2x](https://qcloudimg.tencent-cloud.cn/raw/b9284fc7114058229815f4ce13168aa3.png)
 
 ### ステップ2：対応するグレードの単価を検索し、計算式により費用を計算します
 
