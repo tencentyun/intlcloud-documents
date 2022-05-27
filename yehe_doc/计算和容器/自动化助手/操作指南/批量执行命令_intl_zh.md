@@ -13,9 +13,9 @@
 ::: 使用控制台批量执行命令
 1. 登录云服务器控制台，选择左侧导航栏中的**自动化助手** > **[我的命令](https://console.cloud.tencent.com/cvm/command)**。
 2. 在“我的命令”页面上方选择实例所在地域，并单击需执行命令所在行右侧的**执行**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/932a05d66f77a105a0c17310ad9caba8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/adcbfb45385ff3d34f6c95e7d7c7ae99.png)
 3. 在“执行命令”页面，您可修改命令配置，并勾选需执行的实例。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/4ce30ed74fa47b69a8474b26315bab56.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/debcc41154286ff612001aa56d4322fc.png)
 4. 单击**执行命令**即可。
 
 :::
