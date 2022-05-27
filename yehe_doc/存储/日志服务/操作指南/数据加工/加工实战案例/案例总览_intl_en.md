@@ -11,9 +11,9 @@ The cases in this document will help you get a general and perceptual understand
 ## Overview
 
 You can refer to the following cases to complete your data processing:
-- [Filtering and Distributing Logs](https://cloud.tencent.com/document/product/614/71487)
-- [Structuring Single-Line Text Logs](https://cloud.tencent.com/document/product/614/71488)
-- [Masking Data](https://cloud.tencent.com/document/product/614/71489)
-- [Processing Logs in Nested JSON Format](https://cloud.tencent.com/document/product/614/71490)
-- [Structuring Logs in Multiple Formats](https://cloud.tencent.com/document/product/614/71491)
-- [Using Separators to Extract Specified Content from Logs](https://cloud.tencent.com/document/product/614/71492)
+- [Filtering and Distributing Logs](https://intl.cloud.tencent.com/document/product/614/46135)
+- [Structuring Single-Line Text Logs](https://intl.cloud.tencent.com/document/product/614/46136)
+- [Masking Data](https://intl.cloud.tencent.com/document/product/614/46137)
+- [Processing Logs in Nested JSON Format](https://intl.cloud.tencent.com/document/product/614/46138)
+- [Structuring Logs in Multiple Formats](https://intl.cloud.tencent.com/document/product/614/46139)
+- [Using Separators to Extract Specified Content from Logs](https://intl.cloud.tencent.com/document/product/614/46140)
