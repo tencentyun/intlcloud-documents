@@ -60,7 +60,7 @@
 
 예시 이미지:
 
-![과금 안내 이미지 예시 -2@2x](https://qcloudimg.tencent-cloud.cn/raw/24870c3e59d38a03d1f99e84ce4223a7.png)
+![과금 안내 이미지 예시 -2@2x](https://qcloudimg.tencent-cloud.cn/raw/b9284fc7114058229815f4ce13168aa3.png)
 
 ### 2단계, 해당 등급의 단가 조회 및 공식에 따라 최종 비용 계산
 
