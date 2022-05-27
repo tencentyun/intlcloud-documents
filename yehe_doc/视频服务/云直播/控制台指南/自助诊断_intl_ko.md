@@ -1,8 +1,8 @@
  Tencent Cloud CSS는 자가 진단 툴을 제공합니다. 이 툴은 자가 점검을 수행하고 사용자, URL, 도메인 및 스트림과 같은 진단 항목을 포함하여 일반적인 라이브 스트리밍/재생 문제를 신속하게 진단하는 솔루션을 제공합니다. 현재 오픈 베타 테스트 단계이며 진단 결과는 참고용입니다.
 
 ## 전제 조건
-- [직접 조합 URL](https://intl.cloud.tencent.com/document/product/267/38393) 또는 [주소 생성기 생성](https://intl.cloud.tencent.com/document/product/267/31084) 방식을 통해 푸시 스트림/재생 주소를 생성합니다.
-- 푸시 스트림 주소는 온라인 [라이브 스트리밍](https://intl.cloud.tencent.com/document/product/267/31558) 상태입니다.
+- [라이브 방송 URL 직접 조합](https://intl.cloud.tencent.com/document/product/267/38393) 또는 [주소 생성기](https://intl.cloud.tencent.com/document/product/267/31084) 방식을 통해 푸시 스트림/재생 주소를 생성합니다.
+- 푸시 스트림 주소는 온라인 [라이브 방송 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31558) 상태입니다.
 
 
 ## 진단 단계
@@ -67,9 +67,9 @@
 </tr><tr>
 <td>StreamnNme 인증</td>
 </tr><tr>
-<td>txSecret: 푸시 스트림 인증을 활성화하면 생성되는 인증 문자열입니다.</td>
+<td>txSecret: 푸시 스트림/재생 인증을 활성화하면 생성되는 인증 문자열입니다.</td>
 </tr><tr>
-<td>txTime: 푸시 스트림 주소에 설정된 타임스탬프</td>
+<td>txTime: 푸시 스트림/재생 주소에 설정된 타임스탬프</td>
 </tr><tr>
 <td>URL 실제 만료 시간</td>
 </tr><tr>
@@ -87,11 +87,11 @@
 <td rowspan=6>서비스 자체 검사</td>
 <td rowspan=3>클라이언트 자체 검사</td>
 <td>
-<li/>PC 푸시 스트림: <a href="https://intl.cloud.tencent.com/document/product/267/31569">OBS 푸시 스트림</a>사용 권장
- <li/>PC 재생: <a href="https://intl.cloud.tencent.com/document/product/267/32483">VLC 플레이어</a></td>사용 권장
+<li/>PC 푸시 스트림: <a href="https://intl.cloud.tencent.com/document/product/267/31569">OBS 푸시 스트림</a> 사용 권장
+ <li/>PC 재생: <a href="https://intl.cloud.tencent.com/document/product/267/32483">VLC 플레이어</a></td> 사용 권장
 </tr><tr>
 <td>
-<li/>Web 푸시 스트림: <a href="https://console.cloud.tencent.com/live/tools/webpush">Web 푸시 스트림</a></td>사용 권장
+<li/>Web 푸시 스트림: <a href="https://console.cloud.tencent.com/live/tools/webpush">Web 푸시 스트림</a></td> 사용 권장
 </tr><tr>
 <td>
 <li/>모바일 푸시 스트림: <a href="https://intl.cloud.tencent.com/document/product/1071/38147">TCToolkit App</a> 다운로드 및 설치, RTMP 푸시 스트림 선택
@@ -106,4 +106,4 @@
 </tbody></table>
 
 
->? 진단 보고서로 문제가 해결되지 않으면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 진행하거나 Tencent Cloud 기술자에게 문의하시기 바랍니다.
+>? 진단 보고서로 문제가 해결되지 않으면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 진행하거나 Tencent Cloud 기술팀에게 문의하시기 바랍니다.

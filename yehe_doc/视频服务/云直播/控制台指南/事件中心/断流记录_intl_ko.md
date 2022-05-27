@@ -6,8 +6,7 @@ Tencent Cloud CSS는 라이브 방송 푸시 중단 기록을 통해 푸시 중�
 
 ## 작업 단계
 
-라이브 방송 푸시 스트림이 중단되면 왼쪽 사이드바에 있는 **이벤트 센터** > **[스트림 중단 기록](https://console.cloud.tencent.com/live/tools/streamevent
-)**, 푸시 스트림 중단 기록 페이지로 이동합니다.
+라이브 방송 푸시 스트림이 중단되면 왼쪽 사이드바의 **이벤트 센터** > **[스트림 중단 기록](https://console.cloud.tencent.com/live/tools/streamevent)**을 선택하여, 스트림 중단 기록 페이지로 이동합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7109f254ed3f4c892bd93632d9f04629.png)
 
 이 중,
@@ -16,6 +15,8 @@ Tencent Cloud CSS는 라이브 방송 푸시 중단 기록을 통해 푸시 중�
 
 [](id:erro_code)
 ## 스트림 중단 원인
+CSS는 API를 통한 조회 방법을 제공합니다. 자세한 내용은 [DescribeLiveStreamEventList](https://intl.cloud.tencent.com/document/product/267/30800)를 참고하십시오.
+
 스트림 중단 원인: 
 
 <table border='0' >
@@ -39,9 +40,6 @@ Tencent Cloud CSS는 라이브 방송 푸시 중단 기록을 통해 푸시 중�
  </tr>
  <tr >
 <td >시스템에서 장시간 데이터가 없는 푸시 스트림 차단.</td>
- </tr>
- <tr>
-<td  >라이브 방송 시스템 내부 오류.</td>
  </tr>
  <tr >
 <td  >프록시 레이어에서 스트리밍 중단 명령 수신.</td>
@@ -101,7 +99,7 @@ Tencent Cloud CSS는 라이브 방송 푸시 중단 기록을 통해 푸시 중�
 <td  >푸시 스트림에 만료 시간 매개변수 없음.</td>
  </tr>
  <tr >
-<td  >만료 시간의 매개변수 값 만료.</td>
+<td  >푸시 스트림 타임스탬프 매개변수 값 만료.</td>
  </tr>
  <tr  >
 <td  >푸시 스트림에 인증 매개변수 없음.</td>
@@ -122,9 +120,6 @@ Tencent Cloud CSS는 라이브 방송 푸시 중단 기록을 통해 푸시 중�
 <td  >3rd party 인증 실패.</td>
  </tr>
  <tr >
-<td  >시스템에서 장시간 데이터가 없는 푸시 스트림 차단.</td>
- </tr>
- <tr >
 <td  >클라이언트에서 호출한 스트리밍 중단 요청 수신.</td>
  </tr>
  <tr >
@@ -134,24 +129,11 @@ Tencent Cloud CSS는 라이브 방송 푸시 중단 기록을 통해 푸시 중�
 <td  >새로운 푸시 링크로 현재 푸시 스트림 대체 수신.</td>
  </tr>
  <tr  >
-<td  >현재 데이터가 없는 푸시 스트림을 대체하는 새 푸시 링크 수신.</td>
- </tr>
- <tr  >
 <td  >알 수 없는 원인.</td>
- </tr>
- <tr >
-<td  >RTMP 프로토콜 내용 오류.</td>
- </tr>
- <tr >
-<td  >라이브 방송 시스템 내부 오류.</td>
  </tr>
  <tr >
 <td  >RTMP AMF 데이터 오류.</td>
  </tr>
- <tr>
-<td  >푸시 클라이언트에서 자발적으로 스트리밍을 중단함.</td>
- </tr>
 </table>
 
 
-CSS는 API를 통한 조회 방법도 제공합니다. 자세한 내용은 [스트리밍 중단 이벤트 조회](https://intl.cloud.tencent.com/document/product/267/30800)를 참고하십시오.
