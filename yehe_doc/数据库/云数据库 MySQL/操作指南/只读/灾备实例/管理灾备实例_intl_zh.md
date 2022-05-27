@@ -22,6 +22,7 @@
 
 ## 操作步骤
 ### 创建灾备实例
+#### 步骤一：创建灾备实例
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入详情页。
 2. 在实例详情页的基本信息中确认 GTID 功能开启，在实例架构图中单击**添加灾备实例**，进入灾备实例购买页。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3535c0274c3dfa18134ccc735edd0f46.png)
@@ -32,17 +33,21 @@
 
 ### 管理灾备实例
 - **查看灾备实例**
-灾备实例可在其所在地域查看，可在实例列表筛选出该地域全部灾备实例。
-![](https://qcloudimg.tencent-cloud.cn/raw/096486c7562d5385bfd50a187f85b307.png)
+  灾备实例可在其所在地域查看，可在实例列表筛选出该地域全部灾备实例。
+  ![](https://qcloudimg.tencent-cloud.cn/raw/096486c7562d5385bfd50a187f85b307.png)
+
 - **查看从属关系**
-单击每个灾备实例或主实例右方的图标，即可查看从属关系。
-![](https://qcloudimg.tencent-cloud.cn/raw/89d342733d4c2264dd5dc00a1c7d4143.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/b403e312c47c98d79f1015c6e821082d.png)
+  单击每个灾备实例或主实例右方的图标，即可查看从属关系。
+  ![](https://qcloudimg.tencent-cloud.cn/raw/89d342733d4c2264dd5dc00a1c7d4143.png)
+
+  ![](https://qcloudimg.tencent-cloud.cn/raw/b403e312c47c98d79f1015c6e821082d.png)
+
 - **查看同步延迟**
-可在灾备实例的实例详情页上方查看到主实例和灾备实例之间的同步延迟。
-![](https://qcloudimg.tencent-cloud.cn/raw/053c38735dd3dd5b7e46d5c82687dd09.png)
+  可在灾备实例的实例详情页上方查看到主实例和灾备实例之间的同步延迟。
+  ![](https://qcloudimg.tencent-cloud.cn/raw/053c38735dd3dd5b7e46d5c82687dd09.png)
+
 - **灾备实例功能**
-灾备实例提供实例详情、实例监控、备份管理、慢查询日志功能。
+灾备实例提供实例详情、实例监控、数据库管理、安全组、备份恢复等功能。
 
 ### 灾备实例升级为主实例
 当您需要切换灾备实例为主实例时，可在控制台主动切换灾备实例为主实例。
