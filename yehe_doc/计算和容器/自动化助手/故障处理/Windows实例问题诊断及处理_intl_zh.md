@@ -162,15 +162,12 @@ Windows 实例通过自动化助手检查，检测结果中出现相关问题。
 1. 登录实例，详情请参见 [使用标准方式登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/41018)。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中输入 `resmon` 并按 **Enter**，打开“资源监视器”窗口。
-4. 在“资源监视器”窗口中，选择**内存**页签，并检查“为硬件保留的内存”是否大于512MB。如下图所示：
-	![](https://qcloudimg.tencent-cloud.cn/raw/ae6886f97b1ea3fd1d1dfcf492d8ee1b.png)
+4. 在“资源监视器”窗口中，选择**内存**页签，并检查“为硬件保留的内存”是否大于512MB。
    - 小于，则表示正常。
    - 大于，请参考以下步骤进行修复。
    1. 在 powershell 窗口中输入 `msconfig` 并按 **Enter**，打开“系统配置”窗口。
-   2. 在“系统配置”窗口中，选择**引导**页签，并单击**高级选项**。如下图所示：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/d29df9b834e14607e08f6df6ef20b720.png)
-	 3. 在弹出的“引导高级选项”窗口中，取消勾选“最大内存”。如下图所示：
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/3b44522c23ea82e3c8ac2baa1b3cf9a5.png)
+   2. 在“系统配置”窗口中，选择**引导**页签，并单击**高级选项**。
+	 3. 在弹出的“引导高级选项”窗口中，取消勾选“最大内存”。
 	 4. 单击**确定**。
 	 5. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，选择**设置**。
 	 6. 在“设置”窗口中选择**更新与安全**，并在左侧单击**激活**。
@@ -191,10 +188,8 @@ Windows 操作系统无法最大化使用 CPU，可能存在 CPU 瓶颈导致不
 1. 登录实例，详情请参见 [使用标准方式登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/41018)。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中输入 `msconfig` 并按 **Enter**，打开“系统配置”窗口。
-4. 在“系统配置”窗口中，选择**引导**页签，并单击**高级选项**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/d29df9b834e14607e08f6df6ef20b720.png)
-5. 在弹出的“引导高级选项”中，取消勾选“处理器个数”。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/f0cfb11a9edc44dafb5bb132042e6f4b.png)
+4. 在“系统配置”窗口中，选择**引导**页签，并单击**高级选项**。
+5. 在弹出的“引导高级选项”中，取消勾选“处理器个数”。
 6. 通过控制台重启实例，使配置生效。详情请参见 [重启实例](https://intl.cloud.tencent.com/document/product/213/4928)。
 
 
@@ -210,13 +205,10 @@ Windows 操作系统无法最大化使用 CPU，可能存在 CPU 瓶颈导致不
 若无法登录实例，请 [重启实例](https://intl.cloud.tencent.com/document/product/213/4928) 后进行登录。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中输入 `taskmgr.exe` 并按 **Enter**，打开“任务管理器”窗口。
-4. 在“任务管理器”窗口中，选择**详细信息**并单击**性能**页签。可查看句柄总数，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/4d17e9aea9f87095cad6c453c41c3895.png)
+4. 在“任务管理器”窗口中，选择**详细信息**并单击**性能**页签。可查看句柄总数。
 5. 选择**详细信息**页签，并在详细信息首行右键单击，在弹出菜单中单击**选择列**。
 6. 在弹出的“选择列”窗口中，勾选“句柄”并单击**确定**。
-7. 单击行首的**句柄**，进行降序排列。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/8f4f2ac46c240d09c55eb15a3592ee81.png)
-8. 右键单击占用句柄最多的进程，在弹出菜单中选择**创建转储文件**。
+7. 单击行首的**句柄**，进行降序排列。
 9. 在弹出的“转储进程”窗口中单击**确定**。
 10. 按需更新系统补丁、安装杀毒软件，进行全盘病毒扫描。
 
@@ -241,11 +233,9 @@ Windows 操作系统无法最大化使用 CPU，可能存在 CPU 瓶颈导致不
 1. 登录实例，详情请参见 [使用标准方式登录 Windows 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/41018)。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中输入 `sysdm.cpl` 并按 **Enter**，打开“系统属性”窗口。
-4. 在“系统属性”窗口中，选择**高级**页签，并单击**环境变量**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/ddbbb55a834f3e3ab2c7acf714a323bf.png)
+4. 在“系统属性”窗口中，选择**高级**页签，并单击**环境变量**。
 5. 双击“系统变量”中的 `Path`，检查环境变量。
-	请确保以下4个环境变量存在、顺序无误且位置处在最顶端。若您还有其他自定义环境变量，请尽量放至最底端。如下图所示：
-	![](https://qcloudimg.tencent-cloud.cn/raw/0b6e2510590dc3f8c41b60c4b6cbdfb1.png)
+	请确保以下4个环境变量存在、顺序无误且位置处在最顶端。若您还有其他自定义环境变量，请尽量放至最底端。
 	若您的环境变量出现问题，请进行修复：
 	- `%SystemRoot%\system32`
 	- `%SystemRoot%`
@@ -266,8 +256,7 @@ Windows 操作系统无法最大化使用 CPU，可能存在 CPU 瓶颈导致不
 2. 通过检查结果，或任务管理器查看占用内存最高的进程。本文以使用任务管理器查看，步骤如下：
    1. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
    2. 在 powershell 窗口中输入 `resmon` 并按 **Enter**，打开“资源监视器”。
-   3. 在“资源监视器”窗口中，确认占用内存最高的进程运行是否正常。如下图所示：
-   	![](https://qcloudimg.tencent-cloud.cn/raw/c2071d79cb77a8065361e12259000efd.png)
+   3. 在“资源监视器”窗口中，确认占用内存最高的进程运行是否正常。
 	    若排查出的业务：
 		 - 为业务自身需要，则请参考 [调整实例配置](https://intl.cloud.tencent.com/document/product/213/2178) 进行配置升级。
 		 - 非业务自身进程，可优先通过更新系统补丁、安装杀毒软件进行全盘病毒扫描。
@@ -284,12 +273,9 @@ Windows 操作系统无法最大化使用 CPU，可能存在 CPU 瓶颈导致不
 1. 登录实例，详情请参见 [使用标准方式登录 Windows 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/41018)。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中输入 `sysdm.cpl` 并按 **Enter**，打开“系统属性”窗口。
-4. 在弹出的“系统属性”窗口中，单击“性能”下的**设置**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/a67f6e69660ef6c1463287eebb73482c.png)
-5. 在弹出的“性能选项”窗口中，选择**高级**页签，并单击**更改**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/d08b1885d2617ec3d208093f9e23798a.png)
-6. 在弹出的“虚拟内存”窗口中，进行以下设置。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/8fccb1307fae4c08f7d35b9b854a1f5b.png)
+4. 在弹出的“系统属性”窗口中，单击“性能”下的**设置**。
+5. 在弹出的“性能选项”窗口中，选择**高级**页签，并单击**更改**。
+6. 在弹出的“虚拟内存”窗口中，进行以下设置。
     1. 取消勾选“自动管理所有驱动器的分页文件大小”。
     2. 选择磁盘空间充足的盘符，即将分页文件设置在该磁盘。本文以选择 C 盘为例。
     3. 选择“自定义大小”，并自定义分页文件大小。
@@ -312,8 +298,7 @@ CPU 使用率过高，系统性能会降低，可用 CPU 资源不足系统可�
 2. 通过检查结果、任务管理器或资源监视器查看占用 CPU 最高的进程。本文以使用资源监视器查看，步骤如下：
    1. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
    2. 在 powershell 窗口中输入 `resmon` 并按 **Enter**，打开“资源监视器”。
-   3. 在“资源监视器”窗口中，选择 **CPU** 页签，确认占用 CPU 最高的进程运行是否正常。如下图所示：
-		![](https://qcloudimg.tencent-cloud.cn/raw/d4e3089819e7a47bfde96b8b862e688c.png)
+   3. 在“资源监视器”窗口中，选择 **CPU** 页签，确认占用 CPU 最高的进程运行是否正常。
 	    若排查出的业务：
 		 - 为业务自身需要，则请参考 [调整实例配置](https://intl.cloud.tencent.com/document/product/213/2178) 进行配置升级。
 		 - 非业务自身进程，可优先通过更新系统补丁、安装杀毒软件进行全盘病毒扫描。
@@ -359,7 +344,7 @@ Ntfs 文件系统隐藏的元文件总大小占用过高，导致系统可用空
 Get-Service termservice |Start-Service -Verbose
 ```
    - 正确返回结果如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/d154b1a2f63ee5173910cc8a722e9d2d.png)
+![]((https://qcloudimg.tencent-cloud.cn/raw/c362638db2ec00bd33440253cfd5f5b7.png))
    - 若在服务重启过程中卡住，则参考以下步骤处理。
    1. 执行以下命令，获取 PID。
 ```
@@ -420,8 +405,7 @@ netsh.exe winsock reset
    1. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
    2. 在 powershell 窗口中，输入 `regedit` 并按 **Enter**，打开“注册表编辑器”。
    3. 在“注册表编辑器”左侧文件树中，根据 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations** 路径找到  `WinStations` 文件。
-   4. 右键单击 `WinStations` 文件，在弹出菜单中选择**导出**。如下图所示：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/31f426407555d48405c4120b46357e7d.png)
+   4. 右键单击 `WinStations` 文件，在弹出菜单中选择**导出**。
 	 5. 在弹出窗口中设置导出文件名，本文以 `WinStations.reg` 为例。
    6. 单击**确定**，即可在已指定位置查看导出文件 `WinStations.reg`。
    7. 备份完成后，请参考以上步骤导出正常实例的注册表 `WinStations` 文件，并将导出的 `WinStations` 文件导入异常实例。请双击需导入的 `WinStations.reg` 文件，并在弹出窗口中单击**是**即可完成导入。
@@ -516,8 +500,7 @@ Windows 实例内部防火墙未放通远程桌面服务端口，无法远程登
 1. [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中，输入 `wf` 并按 **Enter**，打开“高级安全 Windows 防火墙”窗口。
-4. 在“高级安全 Windows 防火墙”中，单击“概述”中的 **Windows 防火墙属性**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/d71d9a601da72b4c1f52d779c3ffd510.png)
+4. 在“高级安全 Windows 防火墙”中，单击“概述”中的 **Windows 防火墙属性**。
 5. 在弹出的“本地计算机-属性”窗口中，分别切换至**域配置文件/专用配置文件/公用配置文件**页签，并将“防火墙状态”设置为“关闭”。
 6. 单击**确定**保存设置。
 关闭实例本身防火墙后，请通过控制台中的安全组放通实例远程桌面端口，详情请参见 [添加安全组规则](https://intl.cloud.tencent.com/document/product/213/34272)。
@@ -580,8 +563,7 @@ Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\ -Name
     - 再次右键单击后，再选择**启用**，以尝试快速修复。
 5. 若仍未修复，请确认网卡是否为自动获取 IP 地址。若非此设置，建议调整为自动获取 IP 地址。步骤如下：
    1. 在“网络连接”窗口中，右键单击网卡，在弹出的菜单中选择**属性**。
-   2. 在弹出的“以太网 属性”窗口中，选择 “Internet 协议版本 4（TCP/IPv4）”，并单击**属性**。如下图所示：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/2e59ccc6a9a06f925f333e469e3b0c74.png)
+   2. 在弹出的“以太网 属性”窗口中，选择 “Internet 协议版本 4（TCP/IPv4）”，并单击**属性**。
    3. 在弹出的 “Internet 协议版本 4（TCP/IPv4）”窗口中，选择“自动获得 IP 地址”。
    4. 单击**确定**，设置完成后再次检查网关状态。
 
@@ -598,10 +580,8 @@ MAC 地址异常可能会导致机器网络不通。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中，输入 `ncpa.cpl` 并按 **Enter**，打开“网络连接”窗口。
 4. 在“网络连接”窗口中，右键单击网卡，在弹出的菜单中选择**属性**。
-5. 在弹出的“以太网 属性”窗口中，单击**配置**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/75f386098e85a05734fb71cef06c0782.png)
-6. 在弹出的 “Tencent VirtIO Ethernet Adapter 属性”窗口中，选择**高级**页签，并选择属性中的 **Assign MAC**，设置其为“不存在”。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/4ab18d143228863478a6c55eb849b5d0.png)
+5. 在弹出的“以太网 属性”窗口中，单击**配置**。
+6. 在弹出的 “Tencent VirtIO Ethernet Adapter 属性”窗口中，选择**高级**页签，并选择属性中的 **Assign MAC**，设置其为“不存在”。
 7. 单击**确定**，保存设置。
 8.  在“网络连接”窗口中，重启网卡：
     - 右键单击网卡，在弹出的菜单中选择**禁用**。
@@ -621,8 +601,7 @@ MAC 地址异常可能会导致机器网络不通。
 2. 在操作系统桌面左下角右键单击 <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">，在弹出菜单中选择 <b>Windows PowerShell (管理员)</b>。
 3. 在 powershell 窗口中，输入 `ncpa.cpl` 并按 **Enter**，打开“网络连接”窗口。
 4. 在“网络连接”窗口中，右键单击网卡，在弹出的菜单中选择**属性**。
-5. 在弹出的“以太网 属性”窗口中，选择 “Internet 协议版本 4（TCP/IPv4）”，并单击**属性**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/2e59ccc6a9a06f925f333e469e3b0c74.png)
+5. 在弹出的“以太网 属性”窗口中，选择 “Internet 协议版本 4（TCP/IPv4）”，并单击**属性**。
 6. 在弹出的 “Internet 协议版本 4（TCP/IPv4）” 窗口中：
     - 建议使用“自动获得 DNS 服务器地址”设置，或者添加 CVM 默认 DNS 地址（私有网络通常是 `183.60.83.19` 和 `183.60.82.98`）。
     - 若实例为域环境，则请单击**高级**，在“高级 TCP/IP 设置”窗口中，建议将 CVM 默认 DNS 地址放置在域 DNS 后。
