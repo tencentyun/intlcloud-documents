@@ -14,7 +14,7 @@ See [Installing TAT Agent](https://intl.cloud.tencent.com/document/product/1147/
 1. Log in to the Lighthouse console and select [My Commands](https://console.cloud.tencent.com/lighthouse/command) under **Automation Tools** on the left sidebar.
 2. In the **My commands** page, click **Create command**.
 3. Configure the parameters in the **Create command** page.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/4976802fc3d9274103281c70ea4ed204.png" style="width:70%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/81724cc3c157d55c8492839bcb9b5ad8.png" style="width:70%"/>
 <table>
 <tr>
 <th style="width:14%">Parameter</th>
