@@ -24,7 +24,9 @@ IM 패키지는 체험판, 프로 버전 그리고 울티메이트 버전으로 
 | [전체 푸시](https://intl.cloud.tencent.com/zh/document/product/1047/37165) | 미지원 | 미지원 |지원됩니다. 활성화하려면 [신청](https://intl.cloud.tencent.com/document/product/1047/44322)해야 합니다. |
 | 동일 플랫폼 멀티 디바이스 로그인 | 미지원 | 미지원 |지원 |
 | 로컬 메시지 검색(Android, iOS) | 미지원 | 미지원 |지원 |
-
+| 라이브 방송 그룹 신규 구성원 그룹 입장 전 메시지 확인  | 미지원 | 미지원 |지원 |
+| [커뮤니티(Community) 생성](https://intl.cloud.tencent.com/document/product/1047/33529)   | 미지원 | 미지원 | 10만 개, [활성화 신청](https://intl.cloud.tencent.com/document/product/1047/44322) 필요|
+| 메시지 읽음 확인  | 미지원 | 미지원 |지원 |
 
 - **생성 가능한 최대 멀티미디어 채팅방 수량**: 단일 SDKAppID 내 모든 사용자가 생성 가능한 멀티미디어 채팅방 총 수량을 뜻합니다. 멀티미디어 채팅방은 텍스트, 이미지, 짧은 음성 및 기타 사용자 정의 메시지 발송 기능만 제공하며, [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267), [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647) 등의 서비스를 사용하려면 해당 서비스를 활성화해야 합니다.
 - **일별 순 증가 그룹 수**: 매일 단일 SDKAppID에서 모든 사용자가 생성한 모든 유형의 그룹의 순 증가량 총 수량을 뜻합니다. 1일 최대 순 증가 그룹 수는 최대 10000개이며, 이 중 온라인 방송 채팅방은 최대 5개를 포함할 수 있습니다. 생성된 그룹의 수가 일별 순 증가 그룹 수의 임계값에 도달했지만 더 많은 그룹을 생성해야 하는 경우, 불필요한 그룹을 삭제하고 새로운 그룹을 만들 수 있습니다. 자세한 내용은 [그룹 시스템](https://intl.cloud.tencent.com/document/product/1047/33529)을 참고하십시오.

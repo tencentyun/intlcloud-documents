@@ -8,11 +8,13 @@
 - 已 [创建云数据库 SQL Server](https://intl.cloud.tencent.com/document/product/238/31571)。
 - 源数据库和目标数据库符合迁移功能和版本要求，请参见 [数据迁移支持的数据库](https://intl.cloud.tencent.com/document/product/571/42647) 进行核对。
 - 已完成 [准备工作](https://intl.cloud.tencent.com/document/product/571/42652)。
-- 当源实例非腾讯云 SQL Server 实例（公网/CVM 自建实例、其他云厂商实例）或腾讯云基础版 SQL Server 实例时，需使用具有 sysadmin 权限的帐号进行迁移，且需要能够运行 xp_cmdshell 存储过程，当源实例为腾讯云高可用版和集群版 SQL Server 时，无权限限制。
-- 迁移账号需要为 localsystem。
 - 源数据库所在的服务要开放文件共享端口445。
 - 源数据库必须得设置为“完全恢复模式”，且在迁移前建议用户自己做下全量备份。
 - 源数据库所在本地磁盘空间需要足够大，剩余空闲空间能放下要迁移库的大小。 
+- 当源实例非腾讯云 SQL Server 实例（公网/CVM 自建实例、其他云厂商实例）或腾讯云基础版 SQL Server 实例时，目标端需使用具有 sysadmin 权限的帐号进行迁移，且需要能够运行 xp_cmdshell 存储过程，当源实例为腾讯云高可用版和集群版 SQL Server 时，目标端帐号无权限限制。
+- 迁移源端的 SQL 服务启动需要改为 local，源端迁移的数据库账号无限制，但是需要有 sysadmin 权限。
+![](https://qcloudimg.tencent-cloud.cn/raw/8f4122383bab0e02ce19d10ca79823b5.png)
+如图所示，迁移源端的 SQL 服务启动，启动配置中的登录身份内置账户需要修改为 Local System。
 
 ## 应用限制
 - 同一源实例同一时间只能发起一个迁移任务。
@@ -42,7 +44,25 @@
 
 ## 操作步骤
 1. 登录 [DTS 控制台](https://console.cloud.tencent.com/dts/migration)，在左侧导航选择**数据迁移**页，单击**新建迁移任务**，进入新建迁移任务页面。
-2. 在新建迁移任务页面，选择迁移的目标实例所属地域，单击**0美元购买**，目前 DTS 数据迁移功能免费使用。
+2. 在新建迁移任务页面，选择迁移的源实例类型和所属地域，目标实例类型和所属地域，规格等，然后单击**立即购买**。
+<table>
+<thead><tr><th>配置项</th><th>说明</th></tr></thead>
+<tbody><tr>
+<td>源实例类型</td>
+<td>请根据您的源数据库类型选择，购买后不可修改。本场景选择“SQL Server”。</td></tr>
+<tr>
+<td>源实例地域</td>
+<td>选择源数据库所属地域。如果源库为自建数据库，选择离自建数据库最近的一个地域即可。</td></tr>
+<tr>
+<td>目标实例类型</td>
+<td>请根据您的目标数据库类型选择，购买后不可修改。本场景选择“SQL Server”。</td></tr>
+<tr>
+<td>目标实例地域</td>
+<td>选择目标数据库所属地域。</td></tr>
+<tr>
+<td>规格</td>
+<td>根据业务情况选择迁移链路的规格，不同规格的性能和计费详情请参考<a href="https://intl.cloud.tencent.com/document/product/571/35322">计费概述</a>。</td></tr>
+</tbody></table>
 3. 在设置源和目标数据库页面，完成任务设置、源库设置和目标库设置，测试源库和目标库连通性通过后，单击**新建**。
 >?如果连通性测试失败，请根据提示和 [修复指导](https://intl.cloud.tencent.com/document/product/571/42552) 进行排查和解决，然后再次重试。
 >
@@ -61,16 +81,16 @@
 <td>标签用于从不同维度对资源分类管理。如现有标签不符合您的要求，请前往控制台管理标签。</td></tr>
 <tr>
 <td rowspan=6>源库设置</td>
-<td>源库类型</td><td>根据您的源数据库类型选择，本场景选择“SQL Server”。</td></tr>
-<td>接入类型</td><td>请根据您的场景选择，本场景以“云数据库”为例，不同接入类型的准备工作请参考 <a href="https://cloud.tencent.com/document/product/571/59968">准备工作概述</a>。
+<td>源库类型</td><td>购买时选择的源库类型，不可修改。</td></tr>
+<tr>
+<td>所属地域</td><td>购买时选择的源库地域，不可修改。</td></tr>
+<td>接入类型</td><td>请根据您的场景选择，本场景以“云数据库”为例，不同接入类型的准备工作请参考 <a href="https://intl.cloud.tencent.com/document/product/571/42652">准备工作概述</a>。
 <ul><li>公网：源数据库可以通过公网 IP 访问。</li>
-<li>云主机自建：源数据库部署在 <a href="https://cloud.tencent.com/document/product/213">腾讯云服务器 CVM</a> 上。</li>
-<li>专线接入：源数据库可以通过 <a href="https://cloud.tencent.com/document/product/216">专线接入</a> 方式与腾讯云私有网络打通。</li>
-<li>VPN接入：源数据库可以通过 <a href="https://cloud.tencent.com/document/product/554">VPN 连接</a> 方式与腾讯云私有网络打通。</li>
+<li>云主机自建：源数据库部署在 <a href="https://intl.cloud.tencent.com/document/product/213">腾讯云服务器 CVM</a> 上。</li>
+<li>专线接入：源数据库可以通过 <a href="https://intl.cloud.tencent.com/document/product/216">专线接入</a> 方式与腾讯云私有网络打通。</li>
+<li>VPN接入：源数据库可以通过 <a href="https://intl.cloud.tencent.com/document/product/1037">VPN 连接</a> 方式与腾讯云私有网络打通。</li>
 <li>云数据库：源数据库属于腾讯云数据库实例。</li>
 </ul>对于第三方云厂商数据库，一般可以选择公网方式，也可以选择 VPN 接入，专线或者云联网的方式，需要根据实际的网络情况选择。</td></tr>
-<tr>
-<td>所属地域</td><td>选择源库所属地域。</td></tr>
 <tr>
 <td>数据库实例</td><td>选择源库的实例 ID。</td></tr>
 <tr>
@@ -79,11 +99,11 @@
 <td>密码</td><td>源库 SQL Server 的数据库帐号的密码。</td></tr>
 <tr>
 <td rowspan=6>目标库设置</td>
-<td>目标库类型</td><td>选择“SQL Server”。</td></tr>
+<td>目标库类型</td><td>购买时选择的目标库类型，不可修改。</td></tr>
+<tr>
+<td>所属地域</td><td>购买时选择的目标库地域，不可修改。</td></tr>
 <tr>
 <td>接入类型</td><td>根据您的场景选择，本场景选择“云数据库”。</td></tr>
-<tr>
-<td>所属地域</td><td>选择目标库所属地域。</td></tr>
 <tr>
 <td>数据库实例</td><td>选择目标库的实例 ID。</td></tr>
 <tr>
@@ -97,7 +117,7 @@
 <thead><tr><th>配置项</th><th>说明</th></tr></thead>
 <tbody><tr>
 <td>迁移类型</td>
-<td>请根据您的场景选择。<ul><li>全量迁移：迁移整个数据库。</li><li>全量 + 增量迁移：迁移整个数据库和后续增量数据，如果迁移过程中有数据写入，需要不停机平滑迁移，请选择此场景。</li></ul></td></tr>
+<td>请根据您的场景选择。<ul><li>全量迁移：迁移整个数据库，迁移数据仅针对任务发起时，源数据库已有的内容，不包括任务发起后源库实时新增的数据写入。</li><li>全量 + 增量迁移：迁移数据包括任务发起时源库的已有内容，也包括任务发起后源库实时新增的数据写入。如果迁移过程中源库有数据写入，需要不停机平滑迁移，请选择此场景。</li></ul></td></tr>
 <tr>
 <td>指定对象</td>
 <td>只支持库粒度迁移，即指定库的所有对象需要一起迁移。在源库对象中选择待迁移的库，然后将其移到已选对象框中。</td></tr>
