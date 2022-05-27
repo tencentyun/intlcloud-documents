@@ -1,25 +1,37 @@
-As a premium service provided by EdgeOne, smart acceleration uses route optimization to process your business access requests more quickly, stably, and securely. EdgeOne intelligently selects the optimal transfer route based on the real-time network latency to minimize problems between your server and end users, such as high network latency, connection errors, and request failures.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
+Smart Acceleration is a route optimization service, which always selects the best route for your business according to the network condition in real time, so as to lower the network latency, reduce connection and request failures. Smart Acceleration is a value-added feature of EdgeOne.
+>?The EdgeOne console is now only available to beta users. [Contact us](https://intl.cloud.tencent.com/contact-us) to join the beta.
 
-## Overview
-
+## Use Cases
 #### Dynamic resources
-Smart acceleration can be used in scenarios where dynamic content needs to be requested frequently, including online game, ecommerce, finance, payment, and online education.
+Smart Acceleration can be used in scenarios where dynamic content needs to be requested frequently, including online game, ecommerce, finance, payment, and online education.
 
 #### Dynamic and static resources
 For dynamic content use cases, you can refer to the above scenarios. Your static content still provides service through data cached on edge servers. In addition, when any cached content expires, it will be quickly updated through smart acceleration.
 
 ## Directions
-To enable smart acceleration for all domains added in EdgeOne, set the proxy mode of the corresponding subsites to **Secure acceleration** on the DNS service page.
+### Enabling Smart Acceleration for a Site 
 
->? If you enable **smart acceleration** for your site in the smart acceleration configuration or enable smart acceleration for the corresponding **subdomain** in the rule engine, secure acceleration will be enabled for the selected site or subdomain, and additional fees will be incurred.
+>? **Smart Acceleration** is a paid service.
 
-1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **DNS service** on the left sidebar.
-2. On the DNS service page, select the target site and click **Record management**.
-3. On the record management page, select the target record, click **Edit**, change the proxy mode to **Secure acceleration**, and click **Save**.
-![](https://qcloudimg.tencent-cloud.cn/raw/95410cf671fe524e0264bf036cb1505e.png)
+1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site acceleration** > **Network optimization** on the left sidebar.
+2. On the **Smart acceleration** page, select the target site, and enable/disable the feature.
+![](https://qcloudimg.tencent-cloud.cn/raw/bb30c3beaf81355c15eb06b5b1ff3cb7.png)
 
-## Notes
-- To enable smart acceleration for you domain, you need to add the corresponding record on the **DNS service** page in the EdgeOne console and switch to the secure acceleration mode.
-- As smart acceleration is a value-added service provided by EdgeOne, additional usage fees will be incurred. Before enabling this feature, read the billing description on the **Secure acceleration page**.
->? For more billing details, contact us, and we will evaluate the prices based on your business conditions.
+### Enabling Smart Acceleration for a Subdomain
+You can also enable Smart Acceleration for a specific subdomain.
+
+1. Go to the [Rule engine](https://console.cloud.tencent.com/edgeone/rules) page, select the site and click ![](https://qcloudimg.tencent-cloud.cn/raw/0f0a8aa7913c1c31284b692eadbccd85.png)
+2. Complete the parameters as instructed below, and click **Save and publish**. For more information, see [Configuring Rule Engine](https://cloud.tencent.com/document/product/1552/70901).
+![](https://qcloudimg.tencent-cloud.cn/raw/ce44de89e8b4c158aae985566269ddb4.png)
+Parameters:
+ - Match type: Host
+ - Operator: Equals to 
+ - Value: Subdomain
+ - Operation: Smart Acceleration 
+ - On/Off: Toggle on or off the feature as necessary
+ 
+## Must-knows
+- If your site supports **Content Acceleration**, **Smart Acceleration** only works on subdomains in Sec-MCA mode but not Content Acceleration mode.
+- Make sure you have added a record at your domain name provider. See [Domain Name Service](https://cloud.tencent.com/document/product/1552/70825).
+- Smart Acceleration is a value-added service. 
+>? For more billing details, please submit a ticket or contact your sales rep.
