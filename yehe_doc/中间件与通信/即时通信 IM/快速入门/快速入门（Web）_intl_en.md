@@ -42,6 +42,7 @@ cd TIMSDK/Web/Demo
 npm install
 :::
 </dx-codeblock>
+
 2. Open the project in the web directory, and find the file `GenerateTestUserSig` via the path /public/debug/GenerateTestUserSig.js.
 3. Set relevant parameters in the `GenerateTestUserSig` file:
  - SDKAPPID: Set it to the SDKAppID obtained in [Step 1](#step1).
