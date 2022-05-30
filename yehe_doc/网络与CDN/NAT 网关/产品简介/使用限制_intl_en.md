@@ -19,7 +19,7 @@ For example, a NAT Gateway enables traffic from VPC1 to the Internet, and VPC1 e
 - Restricted by standard protocols, for the NAT gateways with the same protocol/destination IP/destination port, the number of maximum connections = the number of bound EIPs × 55000. To increase the number of connections, bind new EIPs or adjust the destination IP/port.
 
 ## Service Quota
-The following table lists the restrictions on the supported resources for the NAT Gateway. For limits on other VPC resources, see [Quota Limit](https://intl.cloud.tencent.com/zh/document/product/215/38959).
+The following table lists the restrictions on the supported resources for the NAT Gateway. For limits on other VPC resources, see [Quota Limit](https://intl.cloud.tencent.com/document/product/215/38959).
 <table>
 <tbody>
 <tr>
