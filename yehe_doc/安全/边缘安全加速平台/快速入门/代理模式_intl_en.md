@@ -8,7 +8,7 @@ You can enable or disable the proxy for each host record (subdomain) under the s
 >?The EdgeOne console is now only available to beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 
-## DNS Only (Proxy Disabled)
+## Only DNS (Proxy Disabled)
 In this mode, EdgeOne only provides the DNS resolution service. Relying on cluster nodes in over 60 countries/districts, EdgeOne offers a worldwide DNS resolution service with the capability to defense DNS attacks up to hundreds of Gbps.
 
 ## Enable Proxy
