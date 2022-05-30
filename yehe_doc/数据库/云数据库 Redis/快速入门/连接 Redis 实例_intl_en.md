@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes three methods for connecting to a database. After an instance is created, you can access it and run Redis commands for read, write, and query.
+This document describes three methods for connecting to a database. After an instance is created and the status is **Running**, you can access it and run Redis commands for read, write, and query.
 
 - Connection via client: You can connect to a TencentDB instance at its automatically assigned private address from a Windows or Linux CVM instance. This connection method utilizes the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region or reside in the classic network.
 > ?
