@@ -40,7 +40,7 @@ A Tencent Cloud account can create a maximum of 300 IM apps. If you want to crea
 				 <td><ul><li>If your app is a trial app, you can only select **Pro** or **Ultimate**. You cannot purchase value-added service plans.</li><li>If your app is a pro or ultimate app, you can only purchase **value-added service plans**.</li></ul></td>   
      </tr> 
 	 <tr>      
-         <td nowrap="nowrap">Value-added Features</td>   
+         <td nowrap="nowrap">Value-added features</td>   
 				 <td>Value-added features include **max groups per user**, **max number of members in a group (non-audio-video group)**, **content filtering (advanced)**, and **extending storage period of historical messages**.</ul></td>   
      </tr> 
 	 <tr> 
