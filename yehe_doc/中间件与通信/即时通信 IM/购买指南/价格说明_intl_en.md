@@ -52,9 +52,5 @@ Value-added services are available only for the Pro and Flagship editions. See t
 <td  rowspan = "2">Billed by calendar month. Fees incurred within a calendar month will be deducted on the third day of the next month. Billing starts from the month the service is activated.</td>
 <td>30 days: 99.99 USD/month<br>90 days: 179.99 USD/month<br>180 days: 269.99 USD/month<br>360 days: 399.99 USD/month</td>
 <td>90 days: 99.99 USD/month<br>180 days: 179.99 USD/month<br>360 days: 319.99 USD/month</td>
-</tr>
-<td>Audio-video group (AvChatRoom) on-screen comment bandwidth</td>
-<td>International bandwidth: 2.09 USD/Mbps/day</td>
-<td>International bandwidth: 2.09 USD/Mbps/day</td>
 </tr></table>
 
