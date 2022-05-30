@@ -1,8 +1,8 @@
 > !
 >
->-  このドキュメントでは、[TRTCが提供するMCUクラスターによるCloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618)を使用することで発生するバイパストランスコード料金についてのみ説明しています。TRTCのオーディオビデオストリーミングをCSSにRelayed Pushした後、[CSSの提供するクラウドミクスストリーミング機能](https://intl.cloud.tencent.com/document/product/267/37665)を使用される場合は、CSSから[CSSトランスコード](https://intl.cloud.tencent.com/document/product/267/39604)の料金が請求されます。
-> -   トランスコード後に出力したオーディオビデオストリーミングをCSSシステムに転送し、視聴者に[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)をさせた場合、CSSはお客様に対し、[トラフィック/帯域幅](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) の料金を請求します。
-> -   当社と販売契約を結んでいる場合、実際の課金情報は契約書のとおりとなります。
+>- このドキュメントでは、TRTCが提供するMCUクラスターによるCloud MixTranscodingを使用することで発生するバイパストランスコード料金についてのみ説明しています。TRTCのオーディオビデオストリーミングをCSSにRelayed Pushした後、[CSSの提供するクラウドミクスストリーミング機能](https://intl.cloud.tencent.com/document/product/267/37665)を使用される場合は、CSSから[CSSトランスコード](https://intl.cloud.tencent.com/document/product/267/39604)の料金が請求されます。
+>- トランスコード後に出力したオーディオビデオストリーミングをCSSシステムに転送し、視聴者に[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)をさせた場合、CSSはお客様に対し、[トラフィック/帯域幅](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) の料金を請求します。
+>- 当社と販売契約を結んでいる場合、実際の課金情報は契約書のとおりとなります。
 
 <span id="Billing_items"></span>
 
