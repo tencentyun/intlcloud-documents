@@ -55,7 +55,7 @@ flutter run --dart-define=SDK_APPID=xxxx --dart-define=ISPRODUCT_ENV=false --dar
 ![](https://qcloudimg.tencent-cloud.cn/raw/6516f9b17c58915c4ebc93c5c8829831.png)
 2. Start an Android simulator, tap **Build And Run** to run the demo. Enter a random UserID (a combination of digits and letters).
 
->? The UI of the latest version of the demo may look different after adjustments.
+    >? The UI of the latest version of the demo may look different after adjustments.
 :::
 ::: iOS[](id:ios)
 1. Open Xcode and the file discuss/ios/Runner.xcodeproj:
