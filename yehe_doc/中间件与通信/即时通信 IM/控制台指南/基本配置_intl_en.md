@@ -17,26 +17,26 @@ You can click **Upgrade Plan** in the **Standard Billing Plan** section to updat
 >**Only apps in "Disabled" status can be deleted. Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
 
 
-**Trial Edition Apps**
-- Trial Edition apps can be manually disabled.
+**Free Edition Apps**
+- Free Edition apps can be manually disabled.
  In the **Basic Info** area, click **Disable** next to **Status**. In the pop-up dialog box, click **OK**.
-- Trial Edition apps can be manually deleted.
+- Free Edition apps can be manually deleted.
  In the **Basic Info** area, click **Delete** next to **Status**. In the pop-up dialog box, click **OK**.
 
-**Pro and Flagship Edition Apps**
+**Pro and Ultimate Edition Apps**
 - Apps that have overdue payments for seven days will be automatically **Disabled**. To delete such disabled apps, [contact us](https://console.cloud.tencent.com/workorder/category).
-- Apps become **Expired** after refund and **Disabled** after seven days. To delete such disabled apps, [contact us](https://console.cloud.tencent.com/workorder/category).
+- Apps become **Expired** after refund, and **Disabled** after seven days. To delete such disabled apps, [contact us](https://console.cloud.tencent.com/workorder/category).
 
 **TRTC Trial Edition Apps**
 Once a TRTC trial app is disabled by the TRTC administrator, you can [contact us](https://console.cloud.tencent.com/workorder/category) to disable and delete the app.
 
 ## Configuring App Information
 ![](https://main.qcloudimg.com/raw/867f34d67ddcca7de31ff17327dee744.png)
-In the **App Information** section, you can:
+In the **Basic Info** section, you can:
 Edit the basic information of your app, including the app name, type, and introduction.
 
 ### Editing basic information
-1. Click **Edit** on the right of **App Information** to edit the app settings.
+1. Click **Edit** on the right of **Basic Info** to edit the app settings.
 2. You can modify the app name, type, and introduction.
 3. Click **Save**.
 
@@ -50,14 +50,14 @@ Obtain the key of the app.
 
 1. Click **Display key** to the right of **Key**.
 2. Click **Copy** to copy and save the key information.
-    The key can be used to generate UserSig. For more information, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
+    The key can be used to generate UserSig. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ## Configuring Account Admins
 Account admins can call RESTful APIs, disband groups, and perform operations on all members. You can use the default account admin `administrator` or manually add a new account admin. Each app supports up to 10 account admins.
 ![](https://main.qcloudimg.com/raw/9cf8914c53cb998fd7ee619ef30836a9.jpg)
 [](id:AddAdmin)
 
-###  Adding an admin
+### Adding an admin
 1. Click **Add Admin** to the right of **Account Administrator**.
 2. In the **Add Admin** dialog that pops up, enter a name for the account admin.
 3. Click **Add**.
@@ -88,7 +88,7 @@ Account admins can call RESTful APIs, disband groups, and perform operations on 
 1. Click **Delete** in the certificate area.
 2. In the pop-up dialog box, click **Confirm**.
 
-## Tag Configuration
+## Configuring Tags 
 ### Editing tags
 
 1. Click **Edit** on the right of **Tag Configuration**.

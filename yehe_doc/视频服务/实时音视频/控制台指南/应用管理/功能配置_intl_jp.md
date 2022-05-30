@@ -7,7 +7,7 @@
 
 - UDPトランスポートプロトコルに基づくTRTCサービスは、プロトコル変換を介してオーディオストリームとビデオストリームを [CSS](https://intl.cloud.tencent.com/document/product/267)システムに接続します。このプロセスは「Relayed Push」と呼ばれます。
 - デフォルトではRelayed Push機能はオフになっています。Relayed Push機能を有効にするには、先にCSSサービスをオンにする必要があります。
-- Relayed Pushを[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)に使用する場合、CSSではRelayed live Streamingによる下りトラフィック/帯域幅に基づき、関連費用が課金されます。詳細は、[CSS>トラフィック帯域幅課金](https://intl.cloud.tencent.com/document/product/267/2818)の説明をご参照ください。
+- Relayed PushをCDN relayed live streaming に使用する場合、CSSではRelayed live Streamingによる下りトラフィック/帯域幅に基づき、関連費用が課金されます。詳細は、[CSS>トラフィック帯域幅課金](https://intl.cloud.tencent.com/document/product/267/2818)の説明をご参照ください。
 - Relayed Pushを[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426) に使用する時は、レコーディング、レコーディングファイル保存などの費用が発生します。詳細は、[クラウドレコーディングと再生>関連費用](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8)の説明をご参照ください。
 - [CSSコンソール](https://console.cloud.tencent.com/live/domainmanage)でRelayed Pushに使用されるプッシュドメイン名（`xxxx.livepush.myqcloud.com`）にレコーディング、トランスコーディング、スクリーンキャプチャ・ポルノ検出、ウォーターマークなどの課金機能のテンプレートをバインドする場合は、Relayed Push時に、テンプレートに対応する[付加価値サービス費用](https://intl.cloud.tencent.com/document/product/267/2819)が発生します。
 

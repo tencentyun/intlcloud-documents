@@ -241,7 +241,7 @@ SDKがUDPプロトコルを使用してオーディオビデオ伝送を行っ�
 - Electron統合中にトラブルが生じた場合、例えばインストールのタイムアウトまたは失敗、パッケージ後にtrtc_electron_sdk.nodeファイルのロード失敗などの状況が生じた場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)までご連絡いただければご質問にお答えします。
 [](id:QQ)
 ## 技術的なお問い合わせ
-詳細な情報についてはQQ：<dx-tag-link link="#QQ" tag="技術コミュニケーショングループ">695855795</dx-tag-link>にお問い合わせください
+ご不明点や要望などございましたら、お気軽に[お問い合わせ](https://intl.cloud.tencent.com/contact-us)ください。
 
 ## 参考ドキュメント
 
