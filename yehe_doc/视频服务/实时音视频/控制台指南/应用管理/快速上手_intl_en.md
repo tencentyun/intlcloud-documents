@@ -12,8 +12,8 @@ After creating an application, you can follow the steps in **Quick Start** to ru
 
    
 ## References
-- To create an application, see [Creating Application](https://intl.cloud.tencent.com/zh/document/product/647/39077).
-- To search for an application in the application list, see [Searching for Application](https://intl.cloud.tencent.com/zh/document/product/647/39078).
-- To view the basic information of an application, see [Application Info](https://intl.cloud.tencent.com/zh/document/product/647/39079).
-- To configure the functions of an application or view configuration information, see [Function Configuration](https://intl.cloud.tencent.com/zh/document/product/647/39080).
-- If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**. For details, see [Material Management](https://intl.cloud.tencent.com/zh/document/product/647/39081).
+- To create an application, see [Creating Application](https://intl.cloud.tencent.com/document/product/647/39077).
+- To search for an application in the application list, see [Searching for Application](https://intl.cloud.tencent.com/document/product/647/39078).
+- To view the basic information of an application, see [Application Info](https://intl.cloud.tencent.com/document/product/647/39079).
+- To configure the functions of an application or view configuration information, see [Function Configuration](https://intl.cloud.tencent.com/document/product/647/39080).
+- If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**. 
