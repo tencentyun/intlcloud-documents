@@ -1,6 +1,6 @@
 > !
 >
-> -   本文档仅针对使用 [TRTC 提供的 MCU 集群进行云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 产生的旁路转码费用作出相关说明。若您将 TRTC 的音视频流旁路推流到云直播后，再使用 [云直播提供的云端混流功能](https://intl.cloud.tencent.com/document/product/267/37665)，云直播将向您收取 [直播转码](https://intl.cloud.tencent.com/document/product/267/39604) 费用。
+> -   本文档仅针对使用 TRTC 提供的 MCU 集群进行云端混流转码 产生的旁路转码费用作出相关说明。若您将 TRTC 的音视频流旁路推流到云直播后，再使用 [云直播提供的云端混流功能](https://intl.cloud.tencent.com/document/product/267/37665)，云直播将向您收取 [直播转码](https://intl.cloud.tencent.com/document/product/267/39604) 费用。
 > -   若您将转码后输出的音视频流转推到云直播系统中，让观众 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)，云直播将向您收取 [流量/带宽](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 费用。
 > -   如果你已与我们的销售签约，则实际计费信息以合同为准。
 
