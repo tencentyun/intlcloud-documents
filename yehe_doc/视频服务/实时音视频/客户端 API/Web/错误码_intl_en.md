@@ -53,7 +53,7 @@
 | 70014  | Account system | `SDKAppID` in `userSig` is different from that in the request. Check whether the `SDKAppID` entered during login is the same as that in `userSig`. |
 | 70015  | Account system | No verification method was found for this `SDKAppID` and account type. Check whether account integration has been performed. |
 | 70016  | Account system | The length of the public key pulled is 0. Check whether a public key has been uploaded. If it was just uploaded, try again in 10 minutes.  |
-| 70017  | Internal validation of third-party ticket timed out. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70017  |Account system | Internal validation of third-party ticket timed out. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70018  | Account system | Internal verification of third-party ticket failed.                                       |
 | 70019  | Account system | The ticket field for HTTPS-based verification is empty. Enter the correct `userSig`.        |
 | 70020  | Account system | The application (`SDKAppID`) was not found. Make sure you have created it in Tencent Cloud. |
