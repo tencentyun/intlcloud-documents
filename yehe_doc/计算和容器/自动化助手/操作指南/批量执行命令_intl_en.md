@@ -13,9 +13,9 @@ After creating a command, you can execute it on one or more CVM or Lighthouse in
 ::: Console
 1. Log in to the CVM console and select [My Commands](https://console.cloud.tencent.com/cvm/command) under **TencentCloud Automation Tools** from the left sidebar.
 2. In the **My commands** page, select the region, locate the target command and click **Execute**.
-![](https://qcloudimg.tencent-cloud.cn/raw/932a05d66f77a105a0c17310ad9caba8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/adcbfb45385ff3d34f6c95e7d7c7ae99.png)
 3. In the **Execute command** page, modify the command configuration and select the target instances.
-![](https://qcloudimg.tencent-cloud.cn/raw/4ce30ed74fa47b69a8474b26315bab56.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/debcc41154286ff612001aa56d4322fc.png)
 4. Click **Execute command**.
 
 :::

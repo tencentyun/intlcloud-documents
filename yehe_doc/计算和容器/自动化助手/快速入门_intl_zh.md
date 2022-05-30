@@ -14,7 +14,7 @@
 1. 登录轻量应用服务器控制台，选择左侧导航栏中的 <b>[命令列表](https://console.cloud.tencent.com/lighthouse/command)</b>。
 2. 在“命令列表”页面中，选择**创建命令**。
 3. 在弹出的“创建命令”窗口中，根据参数说明设置参数。如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/4976802fc3d9274103281c70ea4ed204.png" style="width:70%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/81724cc3c157d55c8492839bcb9b5ad8.png" style="width:70%"/>
 <table>
 <tr>
 <th style="width:14%">参数</th>

@@ -10,7 +10,7 @@ When the number of replica nodes is greater than or equal to 1, automatic read/w
 The Memory Edition (cluster architecture) automatically enables auto-sharding and achieves horizontal scaling of system performance by assigning different keys to multiple nodes.
 
 ## Cluster Specifications
-- Shard size (GB): 2, 4, 8, 12, 16, 20, 24, 28, 32, 40, 48, 64
+- Shard size (GB): 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64
 - Number of shards: 1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 128
 - Number of replicas: 1, 2, 3, 4, 5 
 
