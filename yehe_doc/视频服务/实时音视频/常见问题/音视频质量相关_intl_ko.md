@@ -108,7 +108,7 @@ setSystemVolumeType 인터페이스를 통해 통화 음량 및 미디어 음량
 통화 수/발신자의 디바이스가 너무 가까이 있는 경우는 정상적인 현상이므로 더 멀리 떨어져서 테스트하시기 바랍니다. 다른 단말에서 Web 오디오에 에코, 소음, 잡음 등이 들리는 경우 Web의 3A 처리가 적용되지 않은 것을 의미합니다. 사용자 정의 수집에 브라우저의 기본 [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) API를 사용하는 경우 3A 매개변수를 수동으로 설정해야 합니다.
 - echoCancellation: 에코 제거 스위치.
 - noiseSuppression: 소음 억제 스위치.
-- autoGainControl: 자동 게인 제어. 
+- autoGainControl：자동 이득 제어 스위치
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) 인터페이스로 수집하는 경우 3A 매개변수를 수동으로 설정할 필요 없이 SDK가 기본적으로 3A를 활성화합니다.
 
@@ -116,7 +116,7 @@ setSystemVolumeType 인터페이스를 통해 통화 음량 및 미디어 음량
 
 [](id:q1)
 ### TRTC는 어떻게 네트워크 상태를 모니터링하여 신호 강약 표시 기능을 나타냅니까?
-onNetworkQuality()를 사용하여 현재 네트워크의 업스트림과 다운스트림 품질을 수신할 수 있습니다. [공식 Demo](https://github.com/tencentyun/TRTCSDK)를 참고하여 신호 강도 기능을 실행하십시오.
+onNetworkQuality()를 사용하여 현재 업스트림/다운스트림 네트워크 품질을 모니터링 할 수 있습니다. 예를 들어 Android에서 신호 강도를 표시하려면 [TRTC-API-Example](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/SpeedTest)을 참고하십시오.
 
 [](id:q2)
 ### 디바이스 카메라 또는 마이크 사용 중 등 이상 현상이 나타나는 이유는 무엇입니까?

@@ -7,19 +7,67 @@
 > - 제품의 안정성 및 온라인 지원을 위해 항상 최신 버전을 유지하시기 바랍니다.
 > - 버전 업데이트에 대한 주의 사항은 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
+## Version 4.12.3 @2022.04.19
+
+**Improvement**
+
+- iOS 13, 14 고해상도 캡처 로직이 최적화되었습니다.
+- SDK가 프로젝트 측에서 오류를 캡처하는 경우를 피하기 위해 이벤트 수신 로직을 최적화했습니다.
+- 대시보드 문제 해결에 도움이 되도록 Safari에서 볼륨 감지 지원을 추가했습니다.
+
+**Bug Fixed**
+
+- live 스트리밍 모드에서 연결이 끊긴 후 간헐적으로 다시 연결되지 않는 문제를 수정했습니다.
+- iOS 11에서 오디오 볼륨을 가져오는 오류가 수정되었습니다.
+
+## Version 4.12.2 @2022.04.02
+
+**Improvement**
+
+볼륨 감지 로직을 최적화하여 메모리 사용량과 오버헤드를 줄였습니다.
+
+**Bug Fixed**
+
+- 사용자가 백그라운드에서 SDK를 장기간 유지하면 간헐적으로 방에서 퇴장(client-banned 콜백 수신)되는 현상이 수정되었습니다.
+- iOS 15.2 - 15.4에서 카메라 전환 후 에코가 들리는 문제가 수정되었습니다. 자세한 내용은 WebRTC 알려진 문제 및 솔루션 [iOS Safari 기존 문제 case 11](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html#h2-4)을 참고하십시오.
+
+## Version 4.12.1 @2022.03.18
+
+**Note**
+
+- 이 버전으로 업그레이드하려면 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+
+**Improvement**
+
+- 이제 [stream.play](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play) API를 여러 번 호출하고 이를 사용하여 미러 모드를 켜거나 끄고 실시간으로 재생 매개변수를 설정할 수 있습니다.
+- 게시된 스트림에 워터마크를 표시하지 못하는 경우를 수정하기 위해 자동 캡처 재개 로직을 최적화했습니다.
+
+**Bug Fixed**
+
+- 로컬 사용자가 muteVideo/unmuteVideo를 호출한 후 원격 사용자가 로컬 사용자의 작은 스트림을 재생하려고 할 때 검은색 화면이 표시되는 문제가 수정되었습니다.
+- 사용자가 작은 스트림으로 전환한 후 stream-subscribed 콜백이 수신되는 문제가 수정되었습니다.
+
+**Breaking Change**
+
+- [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) API의 mirror 속성을 더 이상 사용하지 않습니다. 대신 [stream.play(elementId, { mirror: true })](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Stream.html#play)를 사용하십시오.
+
 ## Version 4.12.0 @2022.03.04
 
 **Note**
-이 버전으로 업그레이드하기 위해 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
+
+- 이 버전으로 업그레이드하려면 [업데이트 가이드](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)를 참고하십시오.
 
 **Feature**
-[client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType)은 비동기식으로 변경되어 Promise를 반환하며, Promise 상태에 따라 크기 스트림이 성공적으로 전환되었는지 판단할 수 있습니다.
+
+- [client.setRemoteVideoStreamType](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#setRemoteVideoStreamType) 전환 성공 여부를 나타내는 Promise를 반환하는 비동기 API를 만들었습니다.
 
 **Improvement**
-해외 서비스 스케쥴링의 정확성을 최적화했습니다.
+
+- 중국 본토 이외의 서비스에 대한 스케쥴링의 정확도가 향상되었습니다.
 
 **Bug Fixed**
-간헐적으로 user_time_out이 강제 오프라인되는 문제를 수정했습니다.
+
+- user_time_out으로 인해 간헐적으로 사용자가 방에서 제거되는 문제가 수정되었습니다.
 
 ## Version 4.11.13 @2022.02.17
 
