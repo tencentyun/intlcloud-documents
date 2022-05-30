@@ -1,0 +1,171 @@
+## 什么是轻量应用服务器（TencentCloud Lighthouse）？
+
+轻量应用服务器（TencentCloud Lighthouse）是新一代开箱即用、面向轻量应用场景的云服务器产品，助力中小企业和开发者便捷高效的在云端构建网站、小游戏、电商、云盘/图床以及各类开发测试和学习环境，相比普通云服务器更加简单易用，提供高带宽流量包并以套餐形式整体售卖基础云资源，将热门开源软件融合打包实现一键构建应用，是您使用腾讯云的最佳入门途径。
+
+
+## 为什么选择轻量应用服务器？
+
+使用腾讯云轻量应用服务器，您可以获取以下收益：
+- 入门简单，使用便捷，单击鼠标即可快速搭建云端环境或构建应用。
+- 无需自己采购服务器，无需管理硬件基础设施，随用随取、开箱即用。
+- 节省成本，按需使用，能够获取高性价比且优质的产品和服务。
+- 稳定可靠，安全性高。
+
+更多选择理由，请参考 [产品优势](https://intl.cloud.tencent.com/document/product/1103/41262) 和 [应用场景](https://intl.cloud.tencent.com/document/product/1103/41263)。
+
+## 与云服务器 CVM 的区别
+请前往 [产品对比](https://intl.cloud.tencent.com/document/product/1103/41521) 了解轻量应用服务器与云服务器 CVM 的区别。
+
+## 实例
+
+云端的虚拟计算资源，包括 CPU、操作系统、网络、磁盘等最基础的组件。轻量应用服务器的实例通常适用于支撑小型网站、Web 应用、博客、论坛、云端开发/测试/学习环境等轻量级、低负载且访问量适中的应用场景，实例规格选择可参考 [轻量应用服务器-实例套餐](https://intl.cloud.tencent.com/document/product/1103/41264)。
+如果您需要使用更丰富的实例类型，如内存优化型、高 IO 型、大数据型、裸金属、GPU/FPGA 异构计算型等，支持高并发网站、视频编解码、大型游戏、复杂分布式集群应用等业务场景，请使用云服务器 CVM 产品，具体可以参考 [云服务器-实例规格](https://intl.cloud.tencent.com/document/product/213/11518)。
+
+## [镜像](id:OS)
+镜像是轻量应用服务器启动和运行的预制模板，其中包含预置的操作系统和预装的软件。通俗的说，您可以将镜像理解为轻量应用服务器的“装机盘”。您可以通过镜像创建一台或多台轻量应用服务器。
+轻量应用服务器支持如下五种镜像类型：
+<dx-tabs>
+::: 应用镜像[](id:appOS)
+- **镜像描述**
+应用镜像除了包含底层的操作系统（如 CentOS、Windows Server 等操作系统的不同版本）外，还封装了应用软件（如 LAMP、WordPress、ASP.NET、Node.js、宝塔面板等），以及应用依赖的运行环境和相关的初始化配置文件，可以为您提供开箱即用的体验。
+- **适用场景**
+适合于快速部署应用的场景，可实现应用的开箱即用。使用应用镜像创建轻量应用服务器之后，应用系统可自动完成初始化配置，用户只需经过几步简单的配置即可完成应用搭建，无需手动安装应用和上传软件包等操作。
+- **包含镜像**
+<ul class="params">
+<li>SRS Release </li>
+<li>房间服务 Release </li>
+<li>WordPress 社区版</li>
+<li>Typecho</li>
+<li>Cloudreve</li>
+<li>Matomo</li>
+<li>LAMP</li>
+<li>Node.js</li>
+<li>ASP.NET</li>
+<li>Theia IDE</li>
+<li>Docker CE</li>
+<li>K3s</li>
+</ul>
+
+具体镜像版本信息，可前往 <a href="https://buy.intl.cloud.tencent.com/lighthouse?region=5&zone=ap-hongkong-2&blueprintType=APP_OS&blueprintId=lhbp-8wbnak86&loginSet=AUTO&zone=ap-hongkong-2">轻量应用服务器购买页</a> 查看。
+:::
+::: 系统镜像
+
+- **镜像描述**
+系统镜像中仅包含初始的操作系统（如 CentOS、Ubuntu、Windows Server 等操作系统的不同版本），不包含应用软件、应用依赖的运行环境以及相关的初始化配置文件。 
+- **适用场景**
+适合于熟悉服务器操作系统、软件安装与环境配置的用户。使用系统镜像创建的轻量应用服务器仅安装了操作系统初始环境，用户可以按需自行安装软件或应用系统。
+- **包含镜像**
+<ul class="params">
+<li>TencentOS Server 2.4</li>
+<li>TencentOS Server 3.1 (TK4)</li>
+<li>CentOS 7.6</li>
+<li>CentOS 8.0</li>
+<li>CentOS 8.2</li>
+<li>Ubuntu 18.04.1 LTS</li>
+<li>Ubuntu 20.04 LTS</li>
+<li>Debian 11.1</li>
+<li>Debian 10.2</li>
+<li>Windows Server 2012 R2</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+</ul>
+:::
+::: Docker 基础镜像[](id:DokcerOS)
+- **镜像描述**
+Docker 基础镜像中除了包含底层的操作系统（如 CentOS、Ubuntu 等）外，还默认封装了 Docker 软件、运行环境以及相关配置文件。
+- **适用场景**
+适用于快速部署容器化应用场景，用户可以在使用 Docker 基础镜像的轻量应用服务器实例中通过控制台快速创建和管理 Docker 容器。
+- **包含镜像**
+  - CentOS 8.2 - Docker 20
+  - CentOS 7.6 - Docker 20
+  - Ubuntu 20.04 - Docker 20
+  :::
+  ::: 自定义镜像[](id:customOS)
+- **镜像描述**
+自定义镜像是用户通过镜像制作功能制作的镜像。仅创建者可以使用。
+- **适用场景**
+选择一个已经部署好应用的轻量应用服务器实例创建镜像，并可以此为模板快速创建更多实例。
+- **包含镜像**
+可参考 [管理自定义镜像](https://intl.cloud.tencent.com/document/product/1103/41395) 自行创建。
+:::
+::: 共享镜像[](id:shareOS)
+- **镜像描述**
+共享镜像是由同账号、同地域下由云服务器共享至轻量应用服务器的镜像。
+- **适用场景**
+适用于云服务器及轻量应用服务器间的服务快速离线迁移。并可使用该镜像快速创建实例，从中获取需要的组件及添加自定义内容。
+- **包含镜像**
+可参考 [管理共享镜像](https://intl.cloud.tencent.com/document/product/1103/46403) 自行创建。
+:::
+</dx-tabs>
+
+<dx-alert infotype="explain" title="">
+您可通过最佳实践中的实际操作，开始使用镜像搭建个人站点、论坛或其他平台。
+</dx-alert>
+
+## 网络
+
+轻量应用服务器的网络基于腾讯云私有网络 VPC 服务，为您构建稳定、安全的云上网络。
+<dx-alert infotype="explain" title="">
+轻量应用服务器不同实例以及轻量应用服务器与其他腾讯云产品之间的内网连通性，详情请参见 [内网连通性说明](https://intl.cloud.tencent.com/document/product/1103/41266)。
+</dx-alert>
+
+<dx-accordion>
+::: 公网 IP
+每个轻量应用服务器创建完成后默认分配1个独立的公网 IP，并配置独享的公网带宽（或峰值带宽），可用于 Internet 公网访问。您无法为服务器增加额外的公网 IP，但可更换公网 IP。
+:::
+::: 公网带宽
+中国内地各个地域的轻量应用服务器提供的公网出方向带宽，可保障稳定、低延迟的网络质量。
+
+
+<dx-alert infotype="explain" title="">
+- 在 [实例套餐](https://intl.cloud.tencent.com/document/product/1103/41264) 中简称为“带宽”。
+- 入网带宽和出网带宽上限说明请参见 [带宽上限说明](https://intl.cloud.tencent.com/document/product/1103/41264#BandwidthUpperLimit)。
+</dx-alert>
+
+
+:::
+::: 内网\sIP
+
+- 每个轻量应用服务器创建完成后默认分配1个内网 IP，可用于不同轻量应用服务器实例之间的通信。
+- 同账号下，同地域中的多个轻量应用服务器实例默认处于同一个 VPC 中，不同地域中的轻量应用服务器实例处于不同的 VPC 中。
+- 内网带宽为共享网络的带宽，无法保证带宽持续稳定。
+- 不同轻量应用服务器实例间可以通过防火墙设置网络隔离。
+
+:::
+::: 流量包
+轻量应用服务器 Lighthouse 的套餐采用流量包模式，流量包为每月公网流量的限额（仅统计服务器的出流量）。如果实例当月使用的流量超过流量包的限制，则超出部分的流量将按照使用量进行计费。具体可以参考 [计费概述](https://intl.cloud.tencent.com/document/product/1103/41403)。
+:::
+</dx-accordion>
+
+## 存储
+云硬盘（Cloud Block Storage，CBS）是一种高可用、高可靠、低成本、可定制化的块存储设备，是为轻量应用服务器实例提供高效可靠的存储设备。云硬盘提供数据块级别的持久性存储，通常用作需要频繁更新、细粒度更新的数据（如文件系统、数据库等）的主存储设备，具有高可用、高可靠和高性能的特点。云硬盘采用三副本的分布式机制，将您的数据备份在不同的物理机上，避免单点故障引起的数据丢失等问题，提高数据的可靠性。
+
+您可通过控制台轻松购买及管理您的云硬盘设备，根据生命周期的不同，云硬盘可分为：
+
+<dx-accordion>
+::: 系统盘
+- 系统盘的生命周期完全跟随轻量应用服务器，随轻量应用服务器一起购买并作为系统盘使用，不支持挂载与卸载。
+- 轻量应用服务器所有套餐的实例系统盘均采用腾讯云 SSD 云硬盘，底层基于全 NVMe SSD 存储介质，采用三副本的分布式机制，提供低时延、高随机 IOPS、高吞吐量的 I/O 能力及数据安全性高达99.9999999%的存储服务。
+
+:::
+::: 数据盘
+- 数据盘的生命周期独立于轻量应用服务器，可单独购买然后手动挂载至轻量应用服务器。数据盘支持随时在同一可用区内的轻量应用服务器上挂载或卸载。您可以将多块数据硬盘挂载至同一个轻量应用服务器，也可以将数据盘从轻量应用服务器 A 中卸载然后挂载到轻量应用服务器 B。
+- 轻量应用服务器数据盘支持**高性能云硬盘**及 **SSD 云硬盘**两种类型，您可参考 [云硬盘类型简介](https://intl.cloud.tencent.com/document/product/362/31636) 按需选择。
+:::
+</dx-accordion>
+
+
+
+## 安全
+默认免费开通 DDoS 基础防护和 [主机安全基础版](https://intl.cloud.tencent.com/document/product/296/2222) 防护，帮助用户构建服务器安全防护体系。
+<dx-alert infotype="explain" title="">
+- 可登录 DDoS 控制台，在 [DDoS 基础防护](https://console.cloud.tencent.com/ddos/ddos-basic) 页面上方选择“轻量应用服务器专区”，查看 DDoS 防护状态。
+- 可登录主机安全控制台，在 [主机列表](https://console.cloud.tencent.com/cwp/asset/machine) 页面上方选择“轻量应用服务器专区”，查看轻量应用服务器主机安全防护状态。
+</dx-alert>
+
+
+## 其他相关云产品
+- 如果您想要在 Internet 上建立网站并发布信息，则需注册相应的域名并完成备案（所有对中国大陆境内提供服务的网站都必须先进行 ICP 备案）。
+- 如果您想通过域名直接访问您的网站，则需将域名进行绑定及解析。
+- 如果您想要使网站具备 HTTPS 解决方案、身份验证及数据加密传输，则需安装安全套接层（SSL）证书。更多信息，请参考 [SSL 证书](https://intl.cloud.tencent.com/zh/document/product/1007)。
+- 如果您想对 [云监控](https://intl.cloud.tencent.com/document/product/248/32799) 支持的轻量应用服务器资源设置性能消耗类指标的阈值告警，使发生异常时可及时通过邮件、短信、电话等渠道通知您采取措施，则需创建告警策略。更多信息，请参考 [新建告警策略](https://intl.cloud.tencent.com/document/product/248/38916)。
