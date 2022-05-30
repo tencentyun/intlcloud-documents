@@ -24,12 +24,6 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 ```shell
 $ brew install node
 ```
-3.  Homebrew의 기본 주소를 사용한 Node.js 설치 속도가 느린 경우, 중국 내 이미지 주소로의 전환을 고려해볼 수 있습니다.
-```shell
-$ cd `brew --repo`
-$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ brew update
-```
 :::
 </dx-tabs>
 
@@ -38,7 +32,6 @@ $ brew update
 ```shell
 $ npm install electron@latest --save-dev
 ```
->?중국 내 네트워크에 Electron을 설치하면 다운로드 과정에서 일련의 장애가 발생할 수 있습니다. Electron 설치에 실패한 경우 [고객센터](https://intl.cloud.tencent.com/contact-us)로 문의하시기 바랍니다.
 
 ### 3단계: Electron 버전의 TRTC SDK 설치
 1. Electron 프로젝트에 npm 명령어를 사용하여 SDK 패키지를 설치합니다.

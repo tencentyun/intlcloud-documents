@@ -24,12 +24,6 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 ```shell
 $ brew install node
 ```
-3. Homebrewのデフォルトアドレスを使用したNode.jsのインストールが遅い場合は、国内のイメージアドレスに置き替えることをご検討ください。
-```shell
-$ cd `brew --repo`
-$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ brew update
-```
 :::
 </dx-tabs>
 
@@ -38,7 +32,6 @@ $ brew update
 ```shell
 $ npm install electron@latest --save-dev
 ```
->?国内ネットワークでElectronをインストールすると、ダウンロードに際して様々な障害が発生する可能性があります。Electronのインストールに成功しなかった場合、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)から連絡してください。
 
 ### 手順3： ElectronバージョンTRTC SDKのインストール
 1. Electron項目でnpmコマンドを使用してSDKパッケージをインストールします：
