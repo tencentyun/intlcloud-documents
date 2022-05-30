@@ -1,8 +1,7 @@
-> !
->
-> -   본 문서는 [TRTC의 MCU 클러스터 클라우드 혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/34618) 사용으로 발생하는 릴레이 트랜스 코딩 비용 관련 설명을 제공합니다. TRTC 멀티미디어 스트림을 CSS로 릴레이 푸시한 후, [CSS의 클라우드 혼합 스트림 기능](https://intl.cloud.tencent.com/document/product/267/ 37665)을 사용할 경우, CSS는 [라이브 방송 트랜스 코딩](https://intl.cloud.tencent.com/document/product/267/39604) 비용을 청구합니다.
-> -   트랜스 코딩 후 출력된 멀티미디어 스트림을 CSS 시스템에 푸시하여, 시청자에게 [CDN 라이브 방송 시청 실행](https://intl.cloud.tencent.com/document/product/647/35242)을 할 경우, CSS는 [트래픽/대역폭](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 요금을 청구합니다.
-> -   당사 영업팀과 계약을 체결한 경우 실제 과금 정보는 해당 계약을 기준으로 합니다.
+>!
+>- 본 문서는 TRTC의 MCU 클러스터 클라우드 혼합 스트림 트랜스 코딩 사용으로 발생하는 릴레이 트랜스 코딩 비용 관련 설명을 제공합니다. TRTC 멀티미디어 스트림을 CSS로 릴레이 푸시한 후, [CSS의 클라우드 혼합 스트림 기능](https://intl.cloud.tencent.com/document/product/267/ 37665)을 사용할 경우, CSS는 [라이브 방송 트랜스 코딩](https://intl.cloud.tencent.com/document/product/267/39604) 비용을 청구합니다.
+>- 트랜스 코딩 후 출력된 멀티미디어 스트림을 CSS 시스템에 푸시하여, 시청자에게 [CDN 라이브 방송 시청 실행](https://intl.cloud.tencent.com/document/product/647/35242)을 할 경우, CSS는 [트래픽/대역폭](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 요금을 청구합니다.
+>- 당사 영업팀과 계약을 체결한 경우 실제 과금 정보는 해당 계약을 기준으로 합니다.
 
 <span id="Billing_items"></span>
 
