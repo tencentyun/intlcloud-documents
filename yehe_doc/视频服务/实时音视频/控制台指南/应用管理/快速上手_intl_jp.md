@@ -8,6 +8,6 @@
 5. ダウンロードしたソースコードパッケージを解凍して、指定のファイルを見つけて開き、SDKAppIDとキーを指定の位置にペーストします。
 
 ## 関連資料
-- アプリケーションリストで関連アプリケーションを検索したい場合、具体的な操作方法については、[アプリケーション検索](https://intl.cloud.tencent.com/zh/document/product/647/39078)をご参照ください。
-- アプリケーションの機能設定情報を設定または確認したい場合、具体的な操作方法については、[機能設定](https://intl.cloud.tencent.com/zh/document/product/647/39080)をご参照ください。
-- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。具体的な操作については、[素材管理](https://intl.cloud.tencent.com/zh/document/product/647/39081)をご参照ください。
+- アプリケーションリストで関連アプリケーションを検索したい場合、具体的な操作方法については、[アプリケーション検索](https://intl.cloud.tencent.com/document/product/647/39078)をご参照ください。
+- アプリケーションの機能設定情報を設定または確認したい場合、具体的な操作方法については、[機能設定](https://intl.cloud.tencent.com/document/product/647/39080)をご参照ください。
+- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。
