@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes three methods for connecting to a database. After an instance is initialized, you can access it and run Redis commands for read, write, and query.
+This document describes three methods for connecting to a database. After an instance is created, you can access it and run Redis commands for read, write, and query.
 
 - Connection via client: You can connect to a TencentDB instance at its automatically assigned private address from a Windows or Linux CVM instance. This connection method utilizes the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region or reside in the classic network.
 > ?
@@ -34,7 +34,7 @@ If your instance is passwordless, the connection command is as follows:
 redis-cli -h IP address -p port
 ```
 Here, the IP address and port are the **Private IPv4 Address** and **Port** obtained in the **Network Info** section on the **Instance Details** page in the [TencentDB for Redis console](https://console.cloud.tencent.com/redis).
-<img src="https://qcloudimg.tencent-cloud.cn/raw/7ea367b16f92cac9d382d37755380190.png" style="zoom:50%;" />
+
 
 - **Access with default account**
 To use the default account with a password to access the database, the following open-source connection command is supported:
@@ -81,13 +81,13 @@ redis-cli -h IP address -p port -a account name@password
 3. In the instance list, find the target instance.
 4. Click **Log In** in the **Operation** column.
 5. You will be redirected to the login page of the [DMC console](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login). Enter the default account password of the target instance and click **Log In**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f2af1b50cfe1d9d7321b10beece8e043.png" style="zoom:67%;" />
+
 6. You can view the instance monitoring information on the **Instance Info** tab on the **Database Management** page.
-![](https://qcloudimg.tencent-cloud.cn/raw/efbb51bbb06165c93ed21108ccbd76d1.png)
+
 7. Click the **Command Line** tab and enter a Redis command in the input box at the bottom to run it as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ab2d86e213b760dbd246c07d064df1b7.png" style="zoom: 38%;" />
+
 8. If you are unfamiliar with Redis command parameters, you can select the slot range and database for storing key values in the **Object List** section on the left of the page, click **Create**, select the key data type, click **OK**, edit the key name in the **Key Name** input box, and click **Add element and create key**. Then, enter the corresponding key value and click **OK** in the **Add Element** window. The system will run commands based on the set key and key value.
-![](https://qcloudimg.tencent-cloud.cn/raw/78092100467a03226f1ed35a5f5487e9.png)
+
 
 ## Connection via SDK
 TencentDB for Redis can be accessed via SDKs for various programming languages, including PHP, Java, Node.js, Python, C, Go, and .NET. For specific samples, see [PHP Connection Example](https://intl.cloud.tencent.com/document/product/239/7042). You can download an SDK client and then connect to a TencentDB for Redis instance by configuring its private IP, port, instance ID, and password as instructed in the sample code.
