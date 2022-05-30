@@ -135,30 +135,11 @@ The service registration or certificates in user clusters may be deleted by user
  - You can also [submit a ticket](https://console.intl.cloud.tencent.com/workorder) to apply for the CLB-to-Pod direct access. This method is not recommended as the IP verification feature, which is available in CCN, is not provided in this case.
 
 
-### Directions
-
-<dx-tabs>
-::: Console
-**Prerequisites**
-<li>Add `GlobalRouteDirectAccess: "true"`` to the `kube-system/tke-service-controller-config` ConfigMap to enable the direct access capability of GlobalRoute.</li>
-<li>This feature is only available to beta users of CLB SNAT Pro. To become a beta user, please <a href="https://console.intl.cloud.tencent.com/workorder">submit a ticket</a>.</li>
-<br>
-
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. Refer to the steps of [Creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833) to go to the "Create a Service" page and set the service parameters as required.
-    Some key parameters need to be set as follows:
-    ![](https://main.qcloudimg.com/raw/1f9ff7c6ebcffd2cfb35404f9d1f728e.png)
- - **Service Access Method**: select **Public Network CLB Access** or **Private Network CLB Access**.
- - **Network Mode**: check **Enable CLB-to-Pod Direct Access**.
- - **Workload Binding**: select **Reference Workload**.
-3. Click **Create Service**. 
-:::
-::: YAML
+### YAML Directions
 The YAML configuration for a service in CLB-to-Pod direct access mode is the same as that for a common service. In this example, the annotation indicates whether to enable the CLB-to-Pod direct access mode.
 
 **Prerequisites**
 <li>Add `GlobalRouteDirectAccess: "true"` to the `kube-system/tke-service-controller-config` ConfigMap to enable the direct access capability of GlobalRoute.</li>
-<li>This feature is only available to beta users of CLB SNAT Pro. To become a beta user, please <a href="https://console.intl.cloud.tencent.com/workorder">submit a ticket</a>.</li>
 <br>
 
 **Enable the direct access mode in the Service's YAML**
