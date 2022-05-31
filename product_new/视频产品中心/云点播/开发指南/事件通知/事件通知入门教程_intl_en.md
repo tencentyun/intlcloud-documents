@@ -23,10 +23,10 @@ After the command is executed, the standard output of the CVM instance should pr
 ### Configuring normal callback
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview) and click **Callback Settings** on the left sidebar.
 2. Click **Settings**:
-	- Callback Mode: select **Normal Callback**.
-	- Callback URL: enter `http://134.XXX.XXX.167:8080`.
-	- Callback Event: check **Callback on video upload completion**.
-3. Click **OK**.
+    - Event Notification Method: Select **Normal Callback**.
+    - Callback URL: enter `http://134.XXX.XXX.167:8080`.
+    - Event Notification: Select **Finished video uploading**.
+3. Click **Confirm**.
 
 ### Initiating and receiving normal callback
 
