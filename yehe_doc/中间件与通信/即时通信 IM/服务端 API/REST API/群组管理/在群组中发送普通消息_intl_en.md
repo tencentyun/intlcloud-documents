@@ -277,6 +277,7 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
 | OnlineOnlyFlag | Integer | No | `1`: send to online members only; `0` (default value): send to all members. This field is not valid for audio-video groups (AVChatRoom). |
 | SendMsgControl | Array | No | Message sending permission, only valid for the current message. `NoLastMsg`: do not trigger conversation update; `NoUnread`: do not include the message in the unread count. (If `OnlineOnlyFlag` is set to `1` for the message, this field cannot be used.) |
 | CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
+| To_Account | Array | No | Specifying message recipients (up to 50). If this field is used, the message is excluded from the unread count. Only the Ultimate edition supports this feature. Supported group types include Private, Public, and ChatRoom.|
 
 ### Sample responses
 ```
