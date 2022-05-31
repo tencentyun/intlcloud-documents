@@ -34,7 +34,7 @@
  * [작업 흐름 템플릿]에 대해 [LongVideoPreset]을 선택합니다.
  >?LongVideoPreset은 어댑티브 비트 레이트 스트리밍, 썸네일 생성 및 이미지 스프라이트 캡처를 위해 템플릿 10을 사용하는 사전 설정 작업 흐름입니다.
 
-![](https://main.qcloudimg.com/raw/c5d53f748ce95ab0c8accea42687256a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/56e6b4249722884eed34b167d6e6d6ed.png)
 3. [업로드]를 클릭하여 ‘업로드 중’ 페이지로 이동하고 업로드가 완료될 때까지 기다립니다.
 4. [미디어 자산]>[[비디오 관리]](https://console.cloud.tencent.com/vod/media)를 선택하고 새로 업로드된 비디오를 찾습니다(FileId: 528xxx3757278095). 여기서 ID는 업로드된 비디오의 FileId입니다.
 ![](https://main.qcloudimg.com/raw/f2b3744a3c42a07863db0b7545dd892f.png)
