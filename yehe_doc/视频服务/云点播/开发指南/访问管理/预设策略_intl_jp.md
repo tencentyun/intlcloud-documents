@@ -15,15 +15,15 @@ CAMは、実質的にはサブアカウントをポリシーにバインドす�
 1. [ルートアカウント](https://intl.cloud.tencent.com/document/product/598/32633)として、CAMコンソールの[【ユーザーリスト】](https://console.cloud.tencent.com/cam)にアクセスし、【ユーザーの作成】をクリックします。
    ![](https://main.qcloudimg.com/raw/e700947b468ef25d4bf70ad1fecc6348.png)
 2. 「ユーザーの作成」ページでサブユーザータイプの【カスタム作成】を選択し、「サブユーザーの作成」ページに進みます。
-   ![](https://main.qcloudimg.com/raw/b8351b38a1df79df1836cb62268ecc74.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/24a4e0e0b9461bdcbc0b4ea50e3e1267.png)
 3. ユーザー情報を入力します。
    - ユーザー名を入力し、【プログラムアクセス】と【Tencent Cloudコンソールアクセス】にチェックを入れ 、その他オプションを必要に応じて設定します。
    - 【次のステップ】をクリックし、ページのプロンプトに従って本人確認を完了します。
-     ![](https://main.qcloudimg.com/raw/19b98c0b2dde4824d5eeaa52304ea3df.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/389813710fb711d28bb80f2f9979cd10.png)
 4. ユーザー権限を設定します。
    - プリセットポリシー`QcloudVODFullAccess`を検索してチェックを入れます。
    - 【次のステップ】をクリックします。
-		<img src="https://main.qcloudimg.com/raw/0bd65772428242306300e315537853cd.png" width="704">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/597de21489df26315d604469d6906ec2.png" width="704">
 5. 「情報と権限のチェック」フィールドの下にある【完了】をクリックして、サブユーザーの作成を完了します。成功ページで、サブユーザーのログインリンクとセキュリティ証明書をダウンロードして保管します。そこには、次のような情報が含まれます。
    ![](https://main.qcloudimg.com/raw/cc223f380730f8dbfe81caa799be2dfc.png)
 <table>
