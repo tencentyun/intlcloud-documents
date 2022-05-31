@@ -78,22 +78,15 @@ As mentioned above, the action granularity of permission control in VOD is serve
 In the example below, we will create a custom policy, which allows all actions except the server API `ProcessMedia` to be performed on VOD subapplication 1400000001.
 
 1. Access the **[Policy](https://console.cloud.tencent.com/cam/policy)** page in the CAM Console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create Custom Policy**.
-2. Select **Create by Policy Builder** to enter the policy creation page.
+2. Select **Create by Policy Generator** to enter the policy creation page.
 3. Select services and actions.
 	- Select **Allow** for **Effect**.
 	- Select **VOD** for **Service**.
 	- Check all items for **Action**.
 	- Enter `qcs::vod::uin/12345678:subAppId/1400000001` for **Resource** according to the [syntax description for resource](#p1).
 	- The **Condition** configuration item does not need to be configured.
-	- Click **Add Statement** and a statement saying that "Any action is allowed on VOD subapplication 1400000001" will appear at the bottom of the page.
-4. Continue adding another statement on the same page.
-	- Select **Deny** for **Effect**.
-	- Select **VOD** for **Service**.
-	- Check `ProcessMedia` (which can be selected by search) for **Action**.
-	- Enter `qcs::vod::uin/12345678:subAppId/1400000001` for **Resource** according to the [syntax description for resource](#p1).
-	- The **Condition** configuration item does not need to be configured.
-	- Click **Add Statement** and a statement saying that "The `ProcessMedia` action is denied on VOD subapplication 1400000001" will appear at the bottom of the page.
-     ![](https://main.qcloudimg.com/raw/1ac34ffafb9719e36e46d4a5e7ccf1cf.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/1dc5fbe8e5534fafafce351769af1583.png)
 5. Click **Next** and rename the policy name as needed (or leave it unchanged).
 6. Click **Complete** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [granting full permissions of VOD to existing subusers](https://intl.cloud.tencent.com/document/product/266/33971#p2).
 
