@@ -76,9 +76,9 @@ client
   });
 ```
 
-4. 원격 스트림은 이벤트 리슨[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED)을 통해 해당 이벤트를 획득한 뒤 [Client.subscribe()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#subscribe)를 통해 원격 멀티미디어 스트림을 구독합니다.
+4. 원격 스트림은 이벤트 리슨[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED)을 통해 해당 이벤트를 획득한 뒤 [Client.subscribe()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#subscribe)를 통해 원격 멀티미디어 스트림을 구독합니다.
 >?
->- [Client.join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)에서 방에 입장하기 전 원격 사용자의 방 입장 알림을 놓치지 않도록 [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED) 이벤트를 등록하십시오.
+>- [Client.join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#join)에서 방에 입장하기 전 원격 사용자의 방 입장 알림을 놓치지 않도록 [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED) 이벤트를 등록하십시오.
 >- 원격 스트림 퇴장 등 다른 이벤트는 [API 소개 문서](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html)에서 확인할 수 있습니다.
 ```javascript
 client.on('stream-added', event => {
