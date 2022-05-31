@@ -9,7 +9,7 @@ This document describes the features and differences of TencentDB for SQL Server
 <td>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td></tr>
 <tr>
 <td rowspan=10>Lifecycle</td>
-<td>Instance creation</td><td rowspan=11>Supported</td><td rowspan=11>Supported</td><td rowspan=11>Supported</td></tr>
+<td>Instance creation</td><td rowspan=10>Supported</td><td rowspan=10>Supported</td><td rowspan=10>Supported</td></tr>
 <tr><td>Instance restart</td></tr>
 <tr><td>Billing mode change</td></tr>
 <tr><td>Instance termination</td></tr>
