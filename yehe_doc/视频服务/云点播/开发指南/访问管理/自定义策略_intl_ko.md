@@ -89,8 +89,8 @@ CAM에서 [사전 설정된 정책](https://intl.cloud.tencent.com/document/prod
 	- [조건(Condition)] 설정 항목은 설정할 필요가 없습니다.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/1dc5fbe8e5534fafafce351769af1583.png)
-5. [다음]을 클릭하고 필요에 따라 정책 이름을 수정합니다(또는 변경하지 않은 상태로 둡니다).
-6. [완료]를 클릭하여 사용자 지정 정책을 생성합니다. 이후 [기존 서브 계정에 VOD의 전체 권한 부여](https://intl.cloud.tencent.com/document/product/266/33971#p2)하는 것과 동일한 방식으로 이 정책을 서브 계정에게 부여할 수 있습니다.
+4. [다음]을 클릭하고 필요에 따라 정책 이름을 수정합니다(또는 변경하지 않은 상태로 둡니다).
+5. [완료]를 클릭하여 사용자 지정 정책을 생성합니다. 이후 [기존 서브 계정에 VOD의 전체 권한 부여](https://intl.cloud.tencent.com/document/product/266/33971#p2)하는 것과 동일한 방식으로 이 정책을 서브 계정에게 부여할 수 있습니다.
 
 
 ### 정책 구문 사용
