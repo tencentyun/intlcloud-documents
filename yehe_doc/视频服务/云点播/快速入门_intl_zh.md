@@ -13,7 +13,7 @@
 ## 步骤2：上传视频
 1. 单击左侧导航栏的[【媒资管理】](https://console.cloud.tencent.com/vod/media)。
 2. 单击【上传视频】，【上传方式】配置项选择【本地上传】。
-![](https://main.qcloudimg.com/raw/1d54bda88e541f56d8c2fdec162761f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9e5822b2298211fd833aa64af813ae2f.png)
 3. 单击【选择视频】，选择本地视频文件“腾讯云.mp4”。
 4. 在【视频处理】配置项选择【只上传，暂不进行视频处理】，最后单击左下角的【开始上传】。
 
