@@ -87,8 +87,8 @@
 	- 【条件(Condition)】配置项无需配置。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/1dc5fbe8e5534fafafce351769af1583.png)
-5. 单击【下一步】，按需修改策略名称（也可以不修改）。
-6. 单击【完成】完成自定义策略的创建。后续将该策略授予子用户的方法同 [将云点播完整权限授予已存在的子用户](https://intl.cloud.tencent.com/document/product/266/33971#p2)。
+4. 单击【下一步】，按需修改策略名称（也可以不修改）。
+5. 单击【完成】完成自定义策略的创建。后续将该策略授予子用户的方法同 [将云点播完整权限授予已存在的子用户](https://intl.cloud.tencent.com/document/product/266/33971#p2)。
 
 
 ### 使用策略语法
