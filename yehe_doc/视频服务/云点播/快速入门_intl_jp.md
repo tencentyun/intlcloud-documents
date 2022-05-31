@@ -26,12 +26,12 @@
 ## ステップ4：ビデオを処理する
 1. [Media asset](https://console.cloud.tencent.com/vod/media)タブで【Uploaded】を選択します。
 2.「Tencent Cloud.mp4」にチェックを入れて、【Video Processing】をクリックします。
-![](https://main.qcloudimg.com/raw/535b71cfc6374ff65bc46c1ab07eccd1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8fb2f59e5144a86f385ea0a73ffc4b79.png)
 3.「Video Processing 」ポップアップボックスで、【Processing Type】設定項目で【Transcode】を選択します。
 4.【Transcoding Template】の設定項目で、左側のドロップダウンリストをクリックして【Select Transcoding Template】を選択します。次に、右側のドロップダウンリストをクリックして【MP4-SD(20)】 と【MP4-HD(30)】 (複数トランスコーディングテンプレートを選択可能)を選択します。
 5.【Watermarking Template】の設定項目で、ドロップダウンリストをクリックして【Select Watermarking Template】を選択します。右側にドロップダウンリストが表示され、【p001】を選択します。
 6. 【Video Cover】の設定項目で【Use First Frame as Cover】にチェックを入れ、【OK】をクリックします。
-<img src="https://main.qcloudimg.com/raw/69abe9f386f0e12a79ae6596d6a994e4.png">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6bbc4412d57f654a6202afdacf1eb2cc.png">
 
 ## ステップ5：再生リンクを取得する
 1. 「Tencent Cloud.mp4」の行の操作欄で【Manage】をクリックします。
