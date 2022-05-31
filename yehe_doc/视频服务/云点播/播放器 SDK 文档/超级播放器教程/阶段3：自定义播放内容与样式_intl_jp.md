@@ -72,7 +72,7 @@
  * 【サンプリング間隔】：20%。
  * 【小さい画像の行数】：10。
  * 【小さい画像の列数】：10。
-![](https://qcloudimg.tencent-cloud.cn/raw/9c0f52f7a6948f693ddc2e7bda48462a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7ec21a1d127a0b5284a491fcac90c3a9.png)
 3. 【作成】をクリックすると、テンプレートIDが113272となるスプライトイメージテンプレートが生成されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/4cf44757d6dbb339aa29c3c29fc480d7.png)
 
