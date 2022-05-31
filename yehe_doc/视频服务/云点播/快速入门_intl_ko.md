@@ -13,7 +13,7 @@
 ## 2단계: 비디오 업로드
 1. 왼쪽 사이드바에서 [[미디어 자산 관리]](https://console.cloud.tencent.com/vod/media)를 클릭합니다.
 2. [비디오 업로드]를 클릭하고 [업로드 방법]은 [로컬 업로드]를 선택합니다.
-![](https://main.qcloudimg.com/raw/1d54bda88e541f56d8c2fdec162761f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9e5822b2298211fd833aa64af813ae2f.png)
 3. [비디오 선택]을 클릭하고 로컬 비디오 파일 ‘Tencent Cloud.mp4’를 선택합니다.
 4. [비디오 처리]에서 [업로드 후 처리 안 함]을 선택하고 왼쪽 하단 모서리에서 [업로드]를 클릭합니다.
 
