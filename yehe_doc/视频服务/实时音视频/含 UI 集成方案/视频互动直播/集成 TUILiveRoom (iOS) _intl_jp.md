@@ -15,7 +15,7 @@ TUILiveRoomはオープンソースのオーディオビデオUIコンポーネ�
 ## コンポーネントの統合
 
 ### ステップ1：TUILiveRoomコンポーネントのダウンロードとインポート
-xcodeプロジェクトの`Podfile`ファイルと同一階層のディレクトリ下に`TUILiveRoom`フォルダを作成し、[Githubリポジトリ iOSディレクトリ](https://github.com/One-time/TUILiveRoom/tree/main/iOS)下の[TXAppBasic](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TXAppBasic)、[TCBeautyKit](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TCBeautyKit)、[Resources](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Resources)、[Source](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Source)、[TUIVoiceRoom.podspec](https://github.com/One-time/TUILiveRoom/blob/main/iOS/TUILiveRoom.podspec)などのファイルを、ご自身のプロジェクトで作成した`TUILiveRoom`ディレクトリ下にコピーします。さらに、次のようにインポート動作を完了します。
+xcodeプロジェクトの`Podfile`ファイルと同一階層のディレクトリ下に`TUILiveRoom`フォルダを作成し、[Githubリポジトリ iOSディレクトリ](https://github.com/One-time/TUILiveRoom/tree/main/iOS)下の[TXAppBasic](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TXAppBasic)、[TCBeautyKit](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TCBeautyKit)、[Resources](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Resources)、[Source](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Source)、[TUILiveRoom.podspec](https://github.com/One-time/TUILiveRoom/blob/main/iOS/TUILiveRoom.podspec)などのファイルを、ご自身のプロジェクトで作成した`TUILiveRoom`ディレクトリ下にコピーします。さらに、次のようにインポート動作を完了します。
 - プロジェクトのPodfileファイルを開き、TUILiveRoom.podspecをインポートします。次をご参照ください。
 ```
 # :path => "TXAppBasic.podspecのあるディレクトリを指定する相対パス"

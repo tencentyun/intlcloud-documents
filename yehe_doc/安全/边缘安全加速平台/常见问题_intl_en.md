@@ -7,6 +7,8 @@ It can prevent web application layer, DDoS, CC, bot, and crawler attacks and all
 ### Does EdgeOne support line acceleration in each region?
 If you run your business in different regions, you may easily encounter problems such as network jitters and packet losses in cross-region and cross-ISP data transfer. EdgeOne deploys edge nodes in multiple regions outside the Chinese mainland to fully meet your cross-region business needs. For specific available regions, [contact us](https://intl.cloud.tencent.com/contact-us).
 
+### Does EdgeOne provide protection for businesses deployed outside Tencent Cloud?
+Yes. For more details, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 ### Does EdgeOne support API operations?
 It supports two types of API operations: TencentCloud API and Terraform API. You can select an appropriate type to perform operations as needed.

@@ -60,8 +60,8 @@ COS_Migrate_tool
 ```
 
 >?
-> - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped; otherwise, it will be migrated.
-> - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, check `error.log` in this directory first.
+ - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped; otherwise, it will be migrated.
+ - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, check `error.log` in this directory first.
 
 ### 3. Modify the config.ini file
 Before running the migration start script, modify the `config.ini` file (path: `./conf/config.ini`) first. This file contains the following parts:
@@ -223,4 +223,3 @@ COS Migration has a status. Successful migrations will be recorded in the format
 
 ## FAQs
 If an exception such as migration failure or execution error occurs when you use the COS Migration, troubleshoot as instructed in [COS Migration](https://intl.cloud.tencent.com/document/product/436/30585).
-
