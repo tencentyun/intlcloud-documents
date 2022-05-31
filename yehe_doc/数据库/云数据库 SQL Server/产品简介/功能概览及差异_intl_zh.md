@@ -9,7 +9,7 @@
 <td>2008R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td></tr>
 <tr>
 <td rowspan=10>生命周期</td>
-<td>创建实例</td><td rowspan=11>支持</td><td rowspan=11>支持</td><td rowspan=11>支持</td></tr>
+<td>创建实例</td><td rowspan=10>支持</td><td rowspan=10>支持</td><td rowspan=10>支持</td></tr>
 <tr><td>重启实例</td></tr>
 <tr><td>变更计费方式</td></tr>
 <tr><td>销毁实例</td></tr>
