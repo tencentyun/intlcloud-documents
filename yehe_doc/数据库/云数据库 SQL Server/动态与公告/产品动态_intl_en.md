@@ -1,3 +1,59 @@
+## March 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody><tr>
+<td>Supported concurrently executing multiple tasks at the database level</td>
+<td>TencentDB for SQL Server allows you to execute up to five concurrent tasks, including backup, restoration, account authorization, database deletion, and renaming, in different databases in the same instance under the same account.</td>
+<td>2022-03-14</td>
+<td>-</td></tr>
+</tbody></table>
+
+## February 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Released the commercial edition of the backup feature</td>
+<td>The commercial edition of the backup feature of TencentDB for SQL Server is released, which supports customizing the automatic backup policy. Data backup supports custom retention period and cycle, and log backup supports view and download.<br>The backup statistics overview of all instances is added. You can quickly view the backup space statistics and trends of all instances in each region under your account, free tier usage, as well as the real-time backup space statistics of each instance.</td>
+<td>2022-02-15</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/238/45852" target="_blank">Viewing Backup List</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/45850" target="_blank">Viewing Backup Space</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/45849" target="_blank">Backup Space Billing</a></td></tr>
+<tr>
+<td>Optimized the system monitoring feature</td>
+<td>The system monitoring page in the TencentDB for SQL Server console is optimized to support full-screen data display, time comparison, monitoring granularity configuration, and data export.</td>
+<td>2022-02-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46503" target="_blank">Viewing Monitoring Chart</a></td></tr>
+<tbody><tr>
+</tbody></table>
+
+## January 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported SSD cloud disks on Basic Edition</td>
+<td>You can use SSD cloud disks on TencentDB for SQL Server Basic Edition with a specification of up to 24-core 96 GB MEM.</td>
+<td>2022-01-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/32561" target="_blank">Performance Test Report</a></td></tr>
+<tr>
+<td>Supported setting instance remarks</td>
+<td>TencentDB for SQL Server allows you to edit instance remarks in the console for easier instance identification and management.</td>
+<td>2022-01-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46507" target="_blank">Setting Instance Remarks</a></td></tr>
+<tr>
+<td>Supported switching from classic network to VPC</td>
+<td>TencentDB for SQL Server allows you to switch from the classic network to VPC in the console for easier network management based on your business requirements.</td>
+<td>2022-01-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46498" target="_blank">Switching from Classic Network to VPC</a></td></tr>
+<tr>
+<td>Supported specifying IP for VPC</td>
+<td>TencentDB for SQL Server allows you to change the instance network in the console. You can change from VPC A to VPC B in another AZ in the same region and specify the subnet IP.</td>
+<td>2022-01-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46497" target="_blank">Changing Network (from VPC to VPC)</a></td></tr>
+</tbody></table>
+
+
 ## December 2021
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr></thead>
