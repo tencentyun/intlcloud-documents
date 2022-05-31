@@ -1,6 +1,6 @@
 ## Short Video Applications
 ### Background
-Mobile user generated short video (UGSV) apps have a wide variety of use cases in online shopping, entertainment videos, and video software. Tencent Cloud VOD provides a one-stop UGSV solution covering all stages from video generation, upload, and processing to distribution and playback. This enables you to quickly implement and launch your mobile UGSV app while focusing on your business development.
+Mobile user generated short video (UGSV) apps have a wide variety of use cases in online shopping, entertainment, and video software. Tencent Cloud VOD provides a one-stop UGSV solution covering all stages from video generation, upload, and processing to distribution and playback. This enables you to quickly implement and launch your mobile UGSV app while focusing on your business development.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/976f305c0df90849fa6e190c764d346e.png)
 
@@ -9,7 +9,7 @@ VOD's UGSV SDK provides a rich set of features such as video capturing, editing 
 - Options to quickly bind VOD resource packages to integrate video processing and playback acceleration capabilities.
 - UGSV demos, open-source code, and comments to help guide you through using the UGSV SDK.
 
-### Scheme architecture
+### Solution architecture
 ![](https://main.qcloudimg.com/raw/73ddb32ea58515cc362d19f262818c14.png)
 
 ### Directions
