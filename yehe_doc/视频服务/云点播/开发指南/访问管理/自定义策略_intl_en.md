@@ -87,8 +87,8 @@ In the example below, we will create a custom policy, which allows all actions e
 	- The **Condition** configuration item does not need to be configured.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/1dc5fbe8e5534fafafce351769af1583.png)
-5. Click **Next** and rename the policy name as needed (or leave it unchanged).
-6. Click **Complete** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [granting full permissions of VOD to existing subusers](https://intl.cloud.tencent.com/document/product/266/33971#p2).
+4. Click **Next** and rename the policy name as needed (or leave it unchanged).
+5. Click **Complete** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [granting full permissions of VOD to existing subusers](https://intl.cloud.tencent.com/document/product/266/33971#p2).
 
 
 ### Using policy syntax
