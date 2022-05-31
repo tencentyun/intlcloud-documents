@@ -17,15 +17,15 @@ CAM은 기본적으로 서브 계정을 정책과 바인딩하거나 정책을 �
 1. [루트 계정](https://intl.cloud.tencent.com/document/product/598/32633)으로 CAM 콘솔의 [[사용자 리스트]](https://console.cloud.tencent.com/cam) 페이지에 액세스하고 [사용자 생성]을 클릭합니다.
    ![](https://main.qcloudimg.com/raw/e700947b468ef25d4bf70ad1fecc6348.png)
 2. ‘사용자 생성’ 페이지에서 서브 계정 아래의 [사용자 정의]을 클릭하여 ‘서브 계정 생성’ 페이지로 들어갑니다.
-   ![](https://main.qcloudimg.com/raw/b8351b38a1df79df1836cb62268ecc74.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/24a4e0e0b9461bdcbc0b4ea50e3e1267.png)
 3. [다음]을 클릭하고 사용자 정보를 입력합니다.
    - 사용자 이름을 입력하고 [프로그래밍 액세스] 및 [Tencent Cloud 콘솔 액세스]를 선택한 다음 필요에 따라 다른 옵션을 구성합니다.
    - [다음]을 클릭하고 안내에 따라 실명 인증을 완료합니다.
-     ![](https://main.qcloudimg.com/raw/19b98c0b2dde4824d5eeaa52304ea3df.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/389813710fb711d28bb80f2f9979cd10.png)
 4. 사용자 권한을 설정합니다.
    - 사전 설정 정책 ‘QcloudVODFullAccess’를 검색 및 선택합니다.
    - [다음]을 클릭합니다.
-		<img src="https://main.qcloudimg.com/raw/0bd65772428242306300e315537853cd.png" width="704">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/597de21489df26315d604469d6906ec2.png" width="704">
 5. ‘정보 및 권한 검토’ 열 아래의 [완료]를 클릭합니다. 사용자가 성공적으로 생성되면 아래와 같이 로그인 링크와 보안 자격 증명을 다운로드하여 안전하게 보관하십시오.
    ![](https://main.qcloudimg.com/raw/cc223f380730f8dbfe81caa799be2dfc.png)
 <table>
