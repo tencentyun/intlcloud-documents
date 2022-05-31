@@ -76,9 +76,9 @@ client
   });
 ```
 
-4. リモートストリーミングは、[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED)のイベント監視によって取得され、このイベントを受信した後、[Client.subscribe()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#subscribe)を介して、リモート側のオーディオビデオストリーミングを閲覧します。
+4. リモートストリーミングは、[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED)のイベント監視によって取得され、このイベントを受信した後、[Client.subscribe()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#subscribe)を介して、リモート側のオーディオビデオストリーミングを閲覧します。
 >?
->- [Client.join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)で入室する前に、[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED)イベントを登録し、リモートユーザーの入室通知を見落とすことがないようにしてください。
+>- [Client.join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#join)で入室する前に、[Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED)イベントを登録し、リモートユーザーの入室通知を見落とすことがないようにしてください。
 >- リモートストリーミングから退出するなどその他のイベントは、[API詳細ドキュメント](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html)で確認できます。
 ```javascript
 client.on('stream-added', event => {
