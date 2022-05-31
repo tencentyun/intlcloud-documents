@@ -150,7 +150,7 @@ Audio 的具体数据描述如下：
 | Samplerate         | Request.Audio | 采样率         | String | 否   | 44100  | <li>单位：Hz<br/><li>可选 11025、22050、32000、44100、48000、96000<br/><li>不同的封装，mp3 支持不同的采样率，如下表所示|
 | Bitrate            | Request.Audio | 原始音频码率   | String | 否   | 无    | <li>单位：Kbps<br/><li>值范围：[8，1000]                       |
 | Channels           | Request.Audio | 声道数         | String | 否   | 无      | <li>当 Codec 设置为 aac，支持1、2、4、5、6、8<br/><li>当 Codec 设置为 mp3，支持1、2 |
-| Remove             | Request.Audio | 是否删除音频流 | String | 否   | false    | 取值 true、false    
+| Remove             | Request.Audio | 是否删除音频流 | String | 否   | false    | 取值 true、false     |
 
 
 Y表示支持这种采样率，N表示不支持
