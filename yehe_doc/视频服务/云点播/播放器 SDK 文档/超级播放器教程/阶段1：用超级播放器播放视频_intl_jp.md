@@ -34,7 +34,7 @@
  * 【タスクフローテンプレート】は【LongVideoPreset】を選択します。
  >?LongVideoPreset はプリセットのタスクフローです。テンプレート10のアダプティブビットレートストリーム、テンプレート10のスクリーンキャプチャによるタイトル画像作成、テンプレート10のキャプチャしたスプライトイメージを使用します。
 
-![](https://main.qcloudimg.com/raw/c5d53f748ce95ab0c8accea42687256a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/56e6b4249722884eed34b167d6e6d6ed.png)
 3. 【アップロード開始】をクリックすると、「アップロード中」の画面に入ります。アップロードが完了するのを待ちます。
 4. 【メディア資産管理】>[【ビデオ管理】](https://console.cloud.tencent.com/vod/media)と選択し、新しくアップロードしたビデオ（FileId：528xxx3757278095）を探します。その中のIDがアップロードしたビデオのFileIdです。
 ![](https://main.qcloudimg.com/raw/f2b3744a3c42a07863db0b7545dd892f.png)
