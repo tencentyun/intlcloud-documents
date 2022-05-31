@@ -150,7 +150,7 @@ Audio/Video formats supported by different container formats are as follows:
 | Samplerate         | Request.Audio | Sample rate         | String | No   | 44100  |<li>Unit: Hz<br/><li>Valid values: 11025, 22050, 32000, 44100, 48000, 96000<br/><li>Different container formats support different MP3 sample rates, as shown in the table below.|
 | Bitrate            | Request.Audio | Original audio bitrate | String | No       | None     | <li>Unit: Kbps<br/><li>Value range: [8, 1000]                     |
 | Channels           | Request.Audio | Number of sound channels         | String | No   |  None      | <li>If `Codec` is `aac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.<br/><li>If `Codec` is `mp3`, the value can be `1` or `2`. |
-| Remove             | Request.Audio | Whether to delete the audio stream | String | No   | false    | Valid values: true, false    
+| Remove             | Request.Audio | Whether to delete the audio stream | String | No   | false    | Valid values: true, false    |
 
 
 Y indicates supported, and N indicates unsupported.
