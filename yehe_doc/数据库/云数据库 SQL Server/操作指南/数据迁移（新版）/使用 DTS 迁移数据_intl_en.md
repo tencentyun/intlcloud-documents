@@ -1,6 +1,6 @@
 This document describes how to use the data migration feature of DTS to migrate data from SQL Server to TencentDB for SQL Server.
 
-## Notes 
+## Overview 
 - When DTS performs full data migration, it will occupy certain source instance resources, which may increase the load of the source instance and the database pressure. If your database has low configurations, we recommend that you migrate data during off-peak hours.
 - Full migration is implemented with tables locked, during which write operations will be blocked for seconds.
 
@@ -8,13 +8,11 @@ This document describes how to use the data migration feature of DTS to migrate 
 - You have created a [TencentDB for SQL Server](https://intl.cloud.tencent.com/document/product/238/31571) instance.
 - The source and target databases must meet the requirements for the migration feature and version as instructed in [Databases Supported by Data Migration](https://intl.cloud.tencent.com/document/product/571/42647).
 - You have completed all [preparations](https://intl.cloud.tencent.com/document/product/571/42652).
+- If the source instance is not a TencentDB for SQL Server or TencentDB for SQL Server Basic Edition instance (such as a public network/CVM-based self-built instance or instance in another cloud), an account with the `sysadmin` permission needs to be used for migration at the target, and the `xp_cmdshell` stored procedure must be able to run. If the source instance is a TencentDB for SQL Server High Availability Edition or Cluster Edition instance, there is no permission restriction on the target account.
+- You need to change to "local" for SQL service startup in the source database. The source database account is unlimited but needs to have the `sysadmin` permission.
 - The service where the source database is located must open the file sharing port 445.
 - The source database must be set to "full recovery mode", and we recommend you make a full backup before migration.
 - The local disk space of the source database must be large enough, so that the remaining free space can fit the size of the database to be migrated. 
-- If the source instance is not a TencentDB for SQL Server or TencentDB for SQL Server Basic Edition instance (such as a public network/CVM-based self-built instance or instance on another cloud), an account with the `sysadmin` permission needs to be used in the target database for migration, and the `xp_cmdshell` stored procedure must be able to run. If the source instance is a TencentDB for SQL Server High-Availability Edition or Cluster Edition instance, there is no permission restriction on the target database account.
-- You need to change to "local" for SQL service startup in the source database. The source database account is unlimited but needs to have the `sysadmin` permission.
-![](https://qcloudimg.tencent-cloud.cn/raw/8f4122383bab0e02ce19d10ca79823b5.png)
-As shown in the figure, the SQL service of the source database is running, and the login identity's built-in account in the startup configuration needs to be changed to **Local System**.
 
 ## Application Restrictions
 - Only one migration task can be initiated at any time for the same source instance.
@@ -31,8 +29,8 @@ As shown in the figure, the SQL service of the source database is running, and t
 ## Supported SQL Operations
 | Operation Type | Supported SQL Operations                                              |
 | -------- | ------------------------------------------------------------ |
-| DML      | INSERT, UPDATE, DELETE, and REPLACE                              |
-| DDL      | TABLE: CREATE TABLE, ALTER TABLE, DROP TABLE, TRUNCATE TABLE, and RENAME TABLE <br>VIEW: CREATE VIEW, ALTER VIEW, and DROP VIEW<br>INDEX: CREATE INDEX and DROP INDEX <br>DATABASE: CREATE DATABASE, ALTER DATABASE, and DROP DATABASE |
+| DML | INSERT, UPDATE, DELETE, and REPLACE |
+| DDL | TABLE: CREATE TABLE, ALTER TABLE, DROP TABLE, TRUNCATE TABLE, and RENAEM TABLE <br>VIEW: CREATE VIEW, ALTER VIEW, and DROP VIEW<br>INDEX: CREATE INDEX and DROP INDEX <br>DATABASE: CREATE DATABASE, ALTER DATABASE, and DROP DATABASE |
 
 ## Environment Requirements
 >?The system will automatically check the following environment requirements before starting a migration task and report an error if a requirement is not met. If you can identify the failed check item, fix it as instructed in [Database Connection Check](https://intl.cloud.tencent.com/document/product/571/42552); otherwise, wait for the system verification to complete and fix the problem according to the error message.
@@ -40,7 +38,7 @@ As shown in the figure, the SQL service of the source database is running, and t
 | **Type** | **Environment Requirements** |
 | :------------- | :----------------------------------------------------------- |
 | Source database requirements | <li>The service where the source instance resides must open the file sharing port 445. <br><li>The source and target databases can be connected. <br/><li>The server where the source database resides must have enough outbound bandwidth; otherwise, the migration speed will be affected. |
-| Target database requirements | <li>Only migration from Basic Edition to High Availability Edition (including Dual-Server High Availability Edition and Cluster Edition) is supported, and the version number of the target instance must be later than that of the source database.<br/><li>The target database cannot have the same name as the source database. <br/><li>The disk space of the target database must be at least 1.5 times the size of the source database. <br/><li>The target database cannot have access requests or active businesses; otherwise, migration will fail. </li> |
+| Target database requirements | <li>Only migration from Basic Edition to High Availability Edition (including Dual-Server High Availability Edition and Cluster Edition) is supported, and the version number of the target instance must be later than that of the source instance.<br/><li>The target database cannot have the same name as the source database. <br/><li>The disk space of the target database must be at least 1.5 times the size of the source database. <br/><li>The target database cannot have access requests or active businesses; otherwise, migration will fail. </li> |
 
 ## Directions
 1. Log in to the [DTS console](https://console.cloud.tencent.com/dts/migration), select **Data Migration** on the left sidebar, and click **Create Migration Task** to enter the **Create Migration Task** page.
@@ -49,13 +47,13 @@ As shown in the figure, the SQL service of the source database is running, and t
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. In this document, select <b>SQL Server</b>.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. In this document, select **SQL Server**.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. In this document, select <b>SQL Server</b>.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. In this document, select **SQL Server**.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -84,13 +82,13 @@ As shown in the figure, the SQL service of the source database is running, and t
 <td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
 <tr>
 <td>Region</td><td>The source database region selected during purchase, which cannot be changed.</td></tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this document, <b>Database</b> is selected as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>Select a type based on your scenario. In this document, **Database** is selected as an example. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
-<li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
-<li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
-<li>VPN Access: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connections</a>.</li>
+<li>Self-Build on CVM: The source database is deployed in a <a href="https://cloud.tencent.com/document/product/213">CVM</a> instance.</li>
+<li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
+<li>VPN Access: The source database can be interconnected with VPCs through <a href="https://cloud.tencent.com/document/product/554">VPN Connection</a>.</li>
 <li>Database: The source database is a TencentDB instance.</li>
-</ul>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions.</td></tr>
+</ul>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the source database.</td></tr>
 <tr>
@@ -103,11 +101,11 @@ As shown in the figure, the SQL service of the source database is running, and t
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this document, select <b>Database</b>.</td></tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this document, select **Database**.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 <tr>
-<td>Account</td><td>Account of the target database, which must have the required permissions.</td></tr>
+<td>Account.</td><td>Account of the target database, which must have the required permissions.</td></tr>
 <tr>
 <td>Password</td><td>Password of the target database.</td></tr>
 </tbody></table>
@@ -120,7 +118,7 @@ As shown in the figure, the SQL service of the source database is running, and t
 <td>Select a type based on your scenario. <ul><li>Full migration: The entire database will be migrated. The migrated data will only be existing content of the source database when the task is initiated but not include the incremental data written to the source database after the task is initiated. </li><li>Full + incremental migration: The migrated data will include the existing content of the source database when the task is initiated as well as the incremental data written to the source database after the task is initiated. If there are data writes to the source database during migration, and you want to smoothly migrate the data in a non-stop manner, select this option.</li></ul></td></tr>
 <tr>
 <td>Specified objects</td>
-<td>Only database-level migration is supported; that is, all objects in the specified database must be migrated together. Select the database to be migrated in <b>Source Database Object</b> and move it to the <b>Selected Object</b> box.</td></tr>
+<td>Only database-level migration is supported; that is, all objects in the specified database must be migrated together. Select the database to be migrated in **Source Database Object** and move it to the **Selected Object** box.</td></tr>
 </tbody></table>
 5. On the task verification page, verify the task. After the verification is passed, click **Start Task**.
     If the verification failed, fix the problem as instructed in [Database Connection Check](https://intl.cloud.tencent.com/document/product/571/42552) and initiate the verification task again.
@@ -132,6 +130,6 @@ As shown in the figure, the SQL service of the source database is running, and t
    - Select **Full + Incremental migration**: After full migration is completed, the migration task will automatically enter the incremental data sync stage, which will not stop automatically. You need to click **Complete** to manually stop the incremental data sync.
       - Manually complete incremental data sync and business switchover at appropriate time.
       - Observe whether the migration task is in the incremental sync stage and is not in the lag status. If so, stop writing data to the source database for a few minutes.
-      - When the source-target database data gap is 0 MB, and the source-target database time lag is 0s, manually complete the incremental sync.
+      - Manually complete incremental sync when the data gap between the target and the source databases is 0 MB and the time lag between them is 0 seconds.
 7. (Optional) If you want to view, delete, or perform other operations on a task, click the task and select the target operation in the **Operation** column. For more information, see [Viewing Task](https://intl.cloud.tencent.com/document/product/571/42637).
 8. After the migration task status becomes **Task successful**, you can formally cut over the business. For more information, see [Cutover Description](https://intl.cloud.tencent.com/document/product/571/42612).
