@@ -57,7 +57,7 @@ At this point, you have uploaded a video and performed a transcoding task on it.
 
 ### Initiating reliable callback
 
-1. Click **Media Assets** on the left sidebar, select **Uploaded**, and click **Upload Video**.
+1. Select **Media Assets > Video Management** on the left sidebar, select **Uploaded**, and click **Upload Video**.
 ![](https://main.qcloudimg.com/raw/4724951966b46c801498efed4b6ebec9.png)
 
 2. In the **Upload Video** dialog box that pops up, select **Local Upload**, click **Select Video**, and upload the **demo video** to the VOD platform.
