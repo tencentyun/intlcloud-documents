@@ -87,15 +87,8 @@ CAM에서 [사전 설정된 정책](https://intl.cloud.tencent.com/document/prod
 	- [작업(Action)]에 대한 모든 항목을 선택합니다.
 	- [리소스(Resource)] 설정 항목은 [리소스에 대한 구문 설명](#p1)에 따라 `qcs::vod::uin/12345678:subAppId/1400000001`을 입력합니다.
 	- [조건(Condition)] 설정 항목은 설정할 필요가 없습니다.
-	- [성명서 추가]를 클릭하면, 페이지 하단에 ‘VOD 서브 애플리케이션 1400000001에 대해 모든 작업이 허용됩니다’라는 문구가 나타납니다.
-4. 같은 페이지에 다른 성명문을 계속 추가합니다.
-	- [효과(Effect)] 설정 항목에서 [거부]를 선택합니다.
-	- [서비스(Service)] 설정 항목은 [VOD]를 선택합니다.
-	- [작업(Action)]에 대해 `ProcessMedia`(검색으로 선택할 수 있음)를 체크합니다.
-	- [리소스(Resource)]설정 항목은 [리소스에 대한 구문 설명](#p1)에 따라 `qcs::vod::uin/12345678:subAppId/1400000001`을 입력합니다.
-	- [조건(Condition)] 설정 항목은 설정할 필요가 없습니다.
-	- [성명서 추가]를 클릭하면 페이지 하단에 ‘VOD 서브 애플리케이션 1400000001에서 `ProcessMedia` 작업이 거부되었습니다’라는 명령문이 표시됩니다.
-     ![](https://main.qcloudimg.com/raw/1ac34ffafb9719e36e46d4a5e7ccf1cf.png)
+
+![](https://qcloudimg.tencent-cloud.cn/raw/1dc5fbe8e5534fafafce351769af1583.png)
 5. [다음]을 클릭하고 필요에 따라 정책 이름을 수정합니다(또는 변경하지 않은 상태로 둡니다).
 6. [완료]를 클릭하여 사용자 지정 정책을 생성합니다. 이후 [기존 서브 계정에 VOD의 전체 권한 부여](https://intl.cloud.tencent.com/document/product/266/33971#p2)하는 것과 동일한 방식으로 이 정책을 서브 계정에게 부여할 수 있습니다.
 
