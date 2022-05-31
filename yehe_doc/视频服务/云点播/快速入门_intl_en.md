@@ -13,7 +13,7 @@ This document guides you through how to quickly upload a video from your local f
 ## Step 2. Upload a video
 1. Click **[Media Assets > Video Management](https://console.cloud.tencent.com/vod/media)** on the left sidebar.
 2. Click **Upload Video** and select **Local Upload** as the **Upload Method**.
-![](https://main.qcloudimg.com/raw/1d54bda88e541f56d8c2fdec162761f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9e5822b2298211fd833aa64af813ae2f.png)
 3. Click **Select Video** and select the local video file `Tencent Cloud.mp4`.
 4. For **Process Video**, select **No processing after upload** and click **Upload** in the bottom-left corner.
 
