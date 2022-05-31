@@ -1,18 +1,6 @@
 After you add your domain name to VOD, the system will automatically assign you a CNAME domain name (suffixed with `.cdn.dnsv1.com`), which you can check on [Domain Management](https://console.cloud.tencent.com/vod/distribute-play/domain ) in the VOD console. The automatically assigned CNAME domain name cannot be accessed before you complete the CNAME configuration at your DNS service provider.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/9ddc932f9b5072705d5d155f7ed2c8b5.png)
-## Settings for Tencent Cloud
-If your DNS service provider is Tencent Cloud, use the following steps to add a CNAME record:
-1. Log in to the [Domains console](https://console.cloud.tencent.com/domain) and click **Resolve** on the right of the domain name to be resolved.
-2. After you are directed to the **Record Management** page of the specified domain name, click **Add Record**.
-3. In the pop-up window, set the **Record Type** to CNAME, enter the domain name prefix (such as `www`) in **Host Record**, enter the CNAME domain name in **Record Value**, and click **Confirm** to add a CNAME record.
-
-	1. Enter the subdomain name for the host record. For example, if you want to resolve `www.123.com`, you only need to enter `www` as the host record; if you want to resolve `123.com`, you can leave the host record empty and the system will automatically enter an `@`. A CNAME record with `@` will affect the resolution of the MX record.
-	2. Select **CNAME** as the record type.
-	3. Set the split zone type (required by default; if it is left empty, requests of some users may not be resolved. In the figure below, the default value means that all users except those of China Unicom will be pointed to `1.com`).
-	4. Set the record value to the domain name pointed to by CNAME resolution. Only a domain name can be entered. After the record is generated, a "." will be automatically added after the domain name, which is normal.
-	5. MX priority is not required.
-	6. TTL (Time to Live) is the cache period for the record. The smaller the value is, the faster the modified record takes effect globally. If you leave it empty, it defaults to 600s. 
 
 
 ## Wanwang
