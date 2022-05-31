@@ -26,12 +26,12 @@
 ## 步骤4：处理视频
 1. 在 [媒资管理](https://console.cloud.tencent.com/vod/media) 页签栏选择【已上传】。
 2. 选中“腾讯云.mp4”前的勾选框，单击【视频处理】。
-![](https://main.qcloudimg.com/raw/246099e6f6c37bca0f3b4901b4125412.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8fb2f59e5144a86f385ea0a73ffc4b79.png)
 3. 在“视频处理”弹框中，【处理类型】配置项选择【转码】。
 4. 在【转码模板】配置项，单击【转码模板】，然后选择对应模板（可勾选多个转码模板）。
 5. 在【水印模板】配置项，单击下拉框选择【选择水印模板】，右侧弹出下拉框，选择【p001】。
 6. 在【视频封面】配置项，勾选即可，最后单击【确定】。
-![](https://main.qcloudimg.com/raw/31ecab7ef88cc80f103a16a7dee3deb8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6bbc4412d57f654a6202afdacf1eb2cc.png)
 
 ## 步骤5：获取播放链接
 1. 单击“腾讯云.mp4”所在行操作栏的【管理】。
