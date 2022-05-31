@@ -26,12 +26,12 @@
 ## 4단계: 비디오 처리
 1. [미디어 자산 관리](https://console.cloud.tencent.com/vod/media) 탭에서 [업로드됨]을 선택합니다.
 2. ‘Tencent Cloud.mp4’ 앞의 체크박스를 클릭하고 [비디오 처리]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/246099e6f6c37bca0f3b4901b4125412.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8fb2f59e5144a86f385ea0a73ffc4b79.png)
 3. ‘비디오 처리’ 팝업 창에서 [처리 유형] 항목 중 [트랜스코딩]을 선택합니다.
 4. [트랜스코딩 템플릿]을 클릭한 다음 하나 이상의 [트랜스코딩 템플릿]을 선택합니다.
 5. [워터마크 템플릿]의 드롭다운 목록을 클릭한 다음 [워터마크 선택]에서 [p001]을 선택합니다.
 6. [썸네일]을 클릭하고 [확인]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/31ecab7ef88cc80f103a16a7dee3deb8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6bbc4412d57f654a6202afdacf1eb2cc.png)
 
 ## 5단계: 재생 URL 가져오기
 1. ‘Tencent Cloud.mp4’ 작업 열에서 [관리]를 클릭합니다.
