@@ -6,18 +6,18 @@
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 对象复制   | 复制文件到目标路径                       |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product//436/10881) | 对象复制   | 复制文件到目标路径                       |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传/复制   | 查询正在进行中的分块上传/复制信息         |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传/复制 | 初始化分块上传/复制操作     |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传/复制块   | 查询特定分块操作中的已上传/复制的块   |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传/复制   | 完成整个文件的分块上传/复制              |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传/复制   | 终止一个分块操作并删除已上传/复制的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product//436/7736) | 查询分块上传/复制   | 查询正在进行中的分块上传/复制信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product//436/7746) | 初始化分块上传/复制 | 初始化分块上传/复制操作     |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product//436/8287) | 复制分块       | 将其他对象复制为一个分块             |
+| [List Parts](https://intl.cloud.tencent.com/document/product//436/7747) | 查询已上传/复制块   | 查询特定分块操作中的已上传/复制的块   |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product//436/7742) | 完成分块上传/复制   | 完成整个文件的分块上传/复制              |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product//436/7740) | 终止分块上传/复制   | 终止一个分块操作并删除已上传/复制的块 |
 
 ## 高级接口（推荐）
 
@@ -144,16 +144,16 @@ Request 成员说明：
 | --------------------- | ------------------------------------------------------------ | ------ |
 | sourceBucketRegion    | 源 Bucket Region 。默认值：与当前 clientconfig 的 region 一致，表示统一地域复制 | String |
 | sourceBucketName      | 源存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| sourceKey             | 源对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| sourceKey             | 源对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324) | String |
 | sourceVersionId       | 源文件 version id（适用于开启了版本控制的源 Bucket）。默认值：源文件当前最新版本 | String |
 | destinationBucketName | 目标存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| storageClass          | 复制的目标文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |
+| destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324) | String |
+| storageClass          | 复制的目标文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product//436/30925) | String |
 
 #### 返回值
 
 - 成功：返回 Copy，可以查询 Copy 是否结束，也可同步的等待上传结束。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ### 跨地域复制
 
@@ -183,6 +183,7 @@ String srcBucketName = "srcbucket-1250000000";
 // 复制的源文件路径
 String srcKey = "path/srckey";
 
+// 注意：复制的目的桶所在地域是在创建 TransferManager/CosClient 时通过函数: createTransferManager() -> createCOSClient() -> clientConfig.setRegion(dstRegion) 设置的
 // 复制的目的桶名, 命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String destBucketName = "destbucket-1250000000";
 // 复制的目的文件路径
@@ -224,16 +225,16 @@ Request 成员说明：
 | --------------------- | ------------------------------------------------------------ | ------ |
 | sourceBucketRegion    | 源 Bucket Region 。默认值：与当前 clientconfig 的 region 一致，表示统一地域复制 | String |
 | sourceBucketName      | 源存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| sourceKey             | 源对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| sourceKey             | 源对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324) | String |
 | sourceVersionId       | 源文件 version id（适用于开启了版本控制的源 Bucket）。默认值：源文件当前最新版本 | String |
 | destinationBucketName | 目标存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| storageClass          | 复制的目标文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |
+| destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324) | String |
+| storageClass          | 复制的目标文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product//436/30925) | String |
 
 #### 返回值
 
 - 成功：返回 Copy，可以查询 Copy 是否结束，也可同步的等待上传结束。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ### 移动对象
 
@@ -291,7 +292,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -318,14 +319,14 @@ COSClient createCOSClient() {
 ### 使用临时密钥创建 COSClient
 
 如果要使用临时密钥请求 COS，则需要用临时密钥创建 COSClient。
-本 SDK 并不能生成临时密钥，而需要使用额外的操作来生成，参考 [临时密钥生成](https://intl.cloud.tencent.com/document/product/436/14048)。
+本 SDK 并不能生成临时密钥，而需要使用额外的操作来生成，参考 [临时密钥生成](https://intl.cloud.tencent.com/document/product//436/14048)。
 
 ```java
 
 // 创建 COSClient 实例，这个实例用来后续调用请求
 COSClient createCOSClient() {
     // 这里需要已经获取到临时密钥的结果。
-    // 临时密钥的生成参考 https://intl.cloud.tencent.com/document/product/436/14048
+    // 临时密钥的生成参考 https://intl.cloud.tencent.com/document/product//436/14048
     String tmpSecretId = "TMPSECRETID";
     String tmpSecretKey = "TMPSECRETKEY";
     String sessionToken = "SESSIONTOKEN";
@@ -336,7 +337,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -399,7 +400,7 @@ COSClient cosClient = createCOSClient();
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, srcBucketName,
         srcKey, destBucketName, destKey);
 try {
-    CopyObjectResult copyObjectResult = cosclient.copyObject(copyObjectRequest);
+    CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
     System.out.println(copyObjectResult.getRequestId());
 } catch (CosServiceException e) {
     e.printStackTrace();
@@ -408,7 +409,7 @@ try {
 }
 
 // 确认本进程不再使用 cosClient 实例之后，关闭之
-cosclient.shutdown();
+cosClient.shutdown();
 ```
 
 #### 参数说明
@@ -422,17 +423,17 @@ Request 成员说明：
 | 参数名称              | 描述                                                         | 类型   |
 | --------------------- | ------------------------------------------------------------ | ------ |
 | sourceBucketRegion    | 源 Bucket region。默认值：与当前 clientConfig 的 region 一致，表示同地域拷贝 | String |
-| sourceBucketName      | 源存储桶名称，命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| sourceKey             | 源对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| sourceBucketName      | 源存储桶名称，命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product//436/13312) | String |
+| sourceKey             | 源对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324) | String |
 | sourceVersionId       | 源文件 version id（适用于开启了版本控制的源 Bucket）。默认值：源文件当前最新版本 | String |
 | destinationBucketName | 目标存储桶名称，Bucket 的命名格式为 BucketName-APPID ，name 由字母数字和中划线构成 | String |
-| destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| storageClass          | 拷贝的目的文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |
+| destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324) | String |
+| storageClass          | 拷贝的目的文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product//436/30925) | String |
 
 #### 返回结果说明
 
 - 成功：返回 CopyObjectResult，包含新文件的 Etag 等信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ## 分块操作
 
@@ -481,7 +482,7 @@ public InitiateMultipartUploadResult initiateMultipartUpload(
 COSClient cosClient = createCOSClient();
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)
+// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)
 String key = "exampleobject";
 
 InitiateMultipartUploadRequest request = new InitiateMultipartUploadRequest(bucketName, key);
@@ -513,13 +514,13 @@ Request 成员说明：
 
 | 参数名称   | 设置方法            | 描述                                                         | 类型   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key        | 构造函数或 set 方法 | 指定分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)。例如对象键为 folder/picture.jpg  | String |
+| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product//436/13312) | String |
+| key        | 构造函数或 set 方法 | 指定分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)。例如对象键为 folder/picture.jpg  | String |
 
 #### 返回结果说明
 
 - 成功：返回 InitiateMultipartUploadResult ，包含标志本次分块上传的 uploadId。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ### 查询分块复制任务
 
@@ -557,7 +558,7 @@ MultipartUploadListing multipartUploadListing = null;
 boolean found = false;
 
 do {
-    multipartUploadListing = cosclient.listMultipartUploads(listMultipartUploadsRequest);
+    multipartUploadListing = cosClient.listMultipartUploads(listMultipartUploadsRequest);
     List<MultipartUpload> multipartUploads = multipartUploadListing.getMultipartUploads();
 
     for (MultipartUpload mUpload : multipartUploads) {
@@ -589,7 +590,7 @@ Request 成员说明：
 
 | 参数名称       | 描述                                                         | 类型   |
 | -------------- | ------------------------------------------------------------ | ------ |
-| bucketName     | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName     | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product//436/13312) | String |
 | keyMarker      | 列出条目从该 Key 值开始                                      | String |
 | delimiter      | 定界符为一个符号，如果有 Prefix，则将 Prefix 到 delimiter 之间的相同路径归为一类，定义为 Common Prefix，然后列出所有 Common Prefix。如果没有 Prefix，则从路径起点开始 | String |
 | prefix         | 限定返回的 Object key 必须以 Prefix 作为前缀。注意使用 prefix 查询时，返回的 key 中仍会包含 Prefix | String |
@@ -600,7 +601,7 @@ Request 成员说明：
 #### 返回结果说明
 
 - 成功：返回 MultipartUploadListing，包含正在进行分块上传的信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ### 复制分块
 
@@ -621,7 +622,7 @@ public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws CosClient
 COSClient cosClient = createCOSClient();
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)
+// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)
 String key = "exampleobject";
 // uploadId 是一次分块复制任务的唯一标识，通过初始化分块复制或者查询分块复制任务获得
 String uploadId = "exampleuploadid";
@@ -657,7 +658,7 @@ copyPartRequest.setPartNumber(1);
 copyPartRequest.setUploadId(uploadId);
 
 try {
-    CopyPartResult copyPartResult = cosclient.copyPart(copyPartRequest);
+    CopyPartResult copyPartResult = cosClient.copyPart(copyPartRequest);
     PartETag partETag = copyPartResult.getPartETag();
     System.out.println(partETag);
 } catch (CosServiceException e) {
@@ -677,20 +678,20 @@ Request 成员说明：
 
 | 参数名称              | 设置方法 | 描述                                                         | 类型   |
 | --------------------- | -------- | ------------------------------------------------------------ | ------ |
-| destinationBucketName | set 方法 | 目标存储桶名称，Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| destinationKey        | set 方法 | 目标对象名称，指定分块被复制后所存放的 COS 路径，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)。例如对象键为 folder/picture.jpg | String |
+| destinationBucketName | set 方法 | 目标存储桶名称，Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product//436/13312) | String |
+| destinationKey        | set 方法 | 目标对象名称，指定分块被复制后所存放的 COS 路径，即 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)。例如对象键为 folder/picture.jpg | String |
 | uploadId              | set 方法 | 标识指定分块上传的 uploadId                                  | String |
 | partNumber            | set 方法 | 标识指定分块的编号，必须 >= 1                                | int    |
 | sourceBucketRegion    | set 方法 | 源存储桶的地域                                               | Region |
 | sourceBucketName      | set 方法 | 源存储桶的名称                                               | String |
-| sourceKey             | set 方法 | 源对象名称，分块在复制前所在的 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)。例如对象键为 folder/picture.jpg | String |
+| sourceKey             | set 方法 | 源对象名称，分块在复制前所在的 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)。例如对象键为 folder/picture.jpg | String |
 | firstByte             | set 方法 | 源对象的首字节偏移                                           | Long   |
 | lastByte              | set 方法 | 源对象的最后一字节偏移                                       | Long   |
 
 #### 返回结果说明
 
 - 成功：返回 CopyPartResult，包含分块的 ETag 信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ### 查询已复制的分块
 
@@ -712,7 +713,7 @@ public PartListing listParts(ListPartsRequest request)
 COSClient cosClient = createCOSClient();
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)
+// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)
 String key = "exampleobject";
 // uploadId 是一次分块复制任务的唯一标识，通过初始化分块复制或者查询分块复制任务获得
 String uploadId = "exampleuploadid";
@@ -743,7 +744,7 @@ do {
 
 | 参数名称         | 设置方法            | 描述                                                         | 类型   |
 | ---------------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName       | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName       | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product//436/13312) | String |
 | key              | 构造函数或 set 方法 | 对象的名称                                                   | String |
 | uploadId         | 构造函数或 set 方法 | 本次要查询的分块上传的 uploadId                               | String |
 | maxParts         | set 方法            | 单次返回最大的条目数量，默认1000                             | String |
@@ -753,7 +754,7 @@ do {
 #### 返回结果说明
 
 - 成功：返回 PartListing，包含每一分块的 ETag 和编号，以及下一次 list 的起点 marker。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ### 完成分块复制
 
@@ -777,7 +778,7 @@ public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUp
 COSClient cosClient = createCOSClient();
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)
+// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)
 String key = "exampleobject";
 // uploadId 是一次分块复制任务的唯一标识，通过初始化分块复制或者查询分块复制任务获得
 String uploadId = "exampleuploadid";
@@ -806,15 +807,15 @@ cosClient.shutdown();
 
 | 参数名称   | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型              |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
-| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String            |
-| key        | 构造函数或 set 方法 | 指定分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)。例如对象键为 folder/picture.jpg | String            |
+| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product//436/13312) | String            |
+| key        | 构造函数或 set 方法 | 指定分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)。例如对象键为 folder/picture.jpg | String            |
 | uploadId   | 构造函数或 set 方法 | 标识指定分块上传的 uploadId                                  | String            |
 | partETags  | 构造函数或 set 方法 | 标识分块块的编号和上传返回的 eTag                            | List&lt;PartETag&gt; |
 
 #### 返回结果说明
 
 - 成功：返回 CompleteMultipartUploadResult，包含完成对象的 eTag 信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。
 
 ### 终止分块复制
 
@@ -838,7 +839,7 @@ public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws Co
 COSClient cosClient = createCOSClient();
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)
+// 对象键(Key)是对象在存储桶中的唯一标识。详情请参见 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)
 String key = "exampleobject";
 // uploadId 是一次分块复制任务的唯一标识，通过初始化分块复制或者查询分块复制任务获得
 String uploadId = "exampleuploadid";
@@ -860,11 +861,11 @@ cosClient.shutdown();
 
 | 参数名称   | 设置方法            | 描述                                                         | 类型   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key        | 构造函数或 set 方法 | 分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)。例如对象键为 folder/picture.jpg | String |
+| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product//436/13312) | String |
+| key        | 构造函数或 set 方法 | 分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product//436/13324)。例如对象键为 folder/picture.jpg | String |
 | uploadId   | 构造函数或 set 方法 | 标识指定分块上传的 uploadId                                  | String |
 
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（例如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。 详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
+- 失败：发生错误（例如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。 详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product//436/31537)。

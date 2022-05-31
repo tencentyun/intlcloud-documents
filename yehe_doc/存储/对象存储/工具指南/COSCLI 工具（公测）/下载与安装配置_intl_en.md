@@ -2,12 +2,13 @@ COSCLI provides binary packages for Windows, macOS, and Linux, which can be used
 
 ## Download URL
 
-- [Windows](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-windows.exe)
-- [macOS](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-mac)
-- [Linux](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-linux)
+| GitHub Address | Address in Chinese Mainland                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Windows](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-windows.exe) | [Windows](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-windows.exe) |
+| [Mac](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-mac) | [Linux](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-linux) |
+| [Linux](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-linux) | [Mac](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-mac) |
 
-
->?The current version is 0.11.0-beta. To get the latest version and update logs, go to [Releases](https://github.com/tencentyun/coscli/releases) for download.
+>? The current version is v0.11.0-beta. To get the latest and earlier versions and changelogs of the tool, see [Releases](https://github.com/tencentyun/coscli/releases).
 
 ## Installation
 
@@ -19,7 +20,7 @@ COSCLI provides binary packages for Windows, macOS, and Linux, which can be used
 4. Press `Windows + R` to launch the `Run` program.
 5. In the dialog box, enter `cmd` and press `Enter` to open the command line window.
 6. Enter `coscli --version` in the command line window. If the following information is printed out, the installation is successful:
->? On Windows, the method for using COSCLI may vary slightly by command line client. If COSCLI does not work properly after `coscli [command]` is entered, try `./coscli [command]`.
+>? On Windows, the method to use COSCLI may vary slightly by command line client. If COSCLI does not work properly after `coscli [command]` is entered, try `./coscli [command]`.
 >
 ```
 coscli version v0.11.0-beta
@@ -83,9 +84,9 @@ The configuration items in the configuration file are as described below:
 | Secret Key     | Key, which can be created and obtained from the [CAM console](https://console.cloud.tencent.com/cam/capi). |
 | Session Token | Temporary key token, which should be specified if a temporary key is used; otherwise, press `Enter` to skip it. |
 | APP ID        | `APP ID` is the account you get after successfully registering your Tencent Cloud account. It is automatically assigned by the system and can be obtained from [Account Information](https://console.cloud.tencent.com/developer). The full name of a bucket consists of `Bucket Name` and `APP ID` in the format of `<BucketName-APPID>`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). |
-| Bucket Name   | Bucket name, which forms the full name of the bucket together with the APP ID in the format of `<BucketName-APPID>`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). |
-| Bucket Region | Bucket region. For details, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
-| Bucket Alias  | Bucket alias, which can be used to replace `BucketName-APPID` after configuration to shorten required commands. If it is not configured, its value will be the value of `BucketName-APPID`. |
+| Bucket Name   | Bucket name, which forms the full name of the bucket together with the APP ID in the format of `<BucketName-APPID>`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). |
+| Bucket Region | Bucket region. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
+| Bucket Alias  | Bucket alias, which can be used to replace `BucketName-APPID` after configuration so as to shorten required commands. If it is not configured, its value will be the value of `BucketName-APPID`. |
 
 ### Other configuration methods
 
@@ -100,7 +101,7 @@ cos:
   buckets:
   - name: examplebucket1-1250000000
     alias: bucket1
-    region:       ap-shanghai
+    region: ap-shanghai
   - name: examplebucket2-1250000000
     alias: bucket2
     region: ap-guangzhou
