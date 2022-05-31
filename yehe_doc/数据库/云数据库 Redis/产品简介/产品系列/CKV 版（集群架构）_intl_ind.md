@@ -47,18 +47,18 @@ Edisi CKV (arsitektur kluster) hanya mendukung format kata sandi: `instance id:p
 | auth | geoadd | hdel | pfadd | del | lindex | psubscribe | 
 | echo | geohash | hexists | pfcount | exists | linsert | pubsub | 
 | ping | geopos | hget | pfmerge | expire | llen | publish  time |
-| quit | geodist | hgetall | -　 | expireat| lpop | punsubscribe | - |
-| select | georadius | hincrby | -　 | type | lpush | subscribe | -　 |
-| -　 | georadiusbymember | hincrbyfloat | - | ttl| lpushx | unsubscribe | -　 |
-| -　 | -　 | hkeys | -　 | persist | lrange | -　 | -　 |
-| -　 | -　 | hlen | -　 | pexpire | lrem | -　 | -　 |
-| -　 | -　 | hmget | -　 | pexpireat | lset | -　 | -　 |
-| -　 | -　 | hmset | -　 | pttl | ltrim | -　 | -　 |
-| -　 | -　 | hset | -　 | rename | rpop | -　 | -　 |
-| -　 | -　 | hsetnx | -　 | renamenx | rpoplpush | -　 | -　 |
-| -　 | -　 | hstrlen | -　 | sort | rpush | -　 | -　 |
-| -　 | -　 | hvals | -　 | - | rpushx | -　 | -　 |
-| -　 |- 　 | hscan | -　 |-  | -　 | -　 | -　 |
+| quit | geodist | hgetall | -　 | expireat| lpop | punsubscribe | 
+| select | georadius | hincrby | -　 | type | lpush | subscribe | 
+| -　 | georadiusbymember | hincrbyfloat | - | ttl| lpushx | unsubscribe |
+| -　 | -　 | hkeys | -　 | persist | lrange | -　 |
+| -　 | -　 | hlen | -　 | pexpire | lrem | -　 |
+| -　 | -　 | hmget | -　 | pexpireat | lset | -　 |
+| -　 | -　 | hmset | -　 | pttl | ltrim | -　 |
+| -　 | -　 | hset | -　 | rename | rpop | -　 |
+| -　 | -　 | hsetnx | -　 | renamenx | rpoplpush | -　 | 
+| -　 | -　 | hstrlen | -　 | sort | rpush | -　 |
+| -　 | -　 | hvals | -　 | - | rpushx | -　 |
+| -　 |- 　 | hscan | -　 |-  | -　 | -　 |
 
 |**sets Group** | **sorted sets Group** | **strings Group** | **transactions Group** |**server Group** | 
 | --- | --- | --- | --- | --- |
