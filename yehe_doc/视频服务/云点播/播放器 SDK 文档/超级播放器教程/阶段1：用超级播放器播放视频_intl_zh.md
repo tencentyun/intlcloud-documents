@@ -34,7 +34,7 @@
 	- **任务流模板** 选择 **LongVideoPreset**。
 >?LongVideoPreset 是预置任务流，使用10模板转自适应码流，10模板截图做封面，10模板截雪碧图。
 
-![](https://main.qcloudimg.com/raw/c5d53f748ce95ab0c8accea42687256a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/56e6b4249722884eed34b167d6e6d6ed.png)
 3. 单击 **开始上传**，进入“正在上传”页，等待上传完成。
 4. 选择 **媒资管理**>[**视频管理**](https://console.cloud.tencent.com/vod/media)，找到新上传的视频（FileId 为528xxx3757278095），其中 ID 即为上传视频的 FileId。
 ![](https://main.qcloudimg.com/raw/f2b3744a3c42a07863db0b7545dd892f.png)
