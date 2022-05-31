@@ -15,7 +15,7 @@
 ## Component Integration
 
 ### Step 1. Download and import the `TUILiveRoom` component
-Create the `TUILiveRoom` folder at the same level as the `Podfile` in your Xcode project, copy the [TXAppBasic](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TXAppBasic), [TCBeautyKit](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TCBeautyKit), [Resources](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Resources), [Source](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Source) and [TUIVoiceRoom.podspec](https://github.com/One-time/TUILiveRoom/blob/main/iOS/TUILiveRoom.podspec) files from the [`iOS` directory in the GitHub repository](https://github.com/One-time/TUILiveRoom/tree/main/iOS) to the folder, and complete the following import operations:
+Create the `TUILiveRoom` folder at the same level as the `Podfile` in your Xcode project, copy the [TXAppBasic](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TXAppBasic), [TCBeautyKit](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TCBeautyKit), [Resources](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Resources), [Source](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Source) and [TUILiveRoom.podspec](https://github.com/One-time/TUILiveRoom/blob/main/iOS/TUILiveRoom.podspec) files from the [`iOS` directory in the GitHub repository](https://github.com/One-time/TUILiveRoom/tree/main/iOS) to the folder, and complete the following import operations:
 - Open the project's `Podfile` and import `TUILiveRoom.podspec` as follows:
 ```
 # :path => "Points to the relative path of the directory of `TXAppBasic.podspec`"
