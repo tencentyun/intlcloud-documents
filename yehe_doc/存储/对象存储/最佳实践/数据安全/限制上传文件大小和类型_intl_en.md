@@ -6,7 +6,7 @@ The samples use the information below:
 - APPID of the root account: 1250000000
 - Bucket name: examplebucket-1250000000
 
-在实际使用中，请替换为您自身的存储桶，并且使用拥有存储桶操作权限的账号和密钥操作存储桶。
+
 
 
 ## Sample 1. Specifying a Size Range During POST Object Uploads
@@ -163,53 +163,6 @@ Server: tencent-cos
 x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0****
 ```
 
-## 案例三：通过存储桶策略限制文件上传类型
-
-可以通过存储桶策略中指定文件上传类型，存储桶策略语法示例请参见 [存储桶策略示例](https://intl.cloud.tencent.com/document/product//436/45235)。
-
-通过存储桶策略限制文件上传类型操作步骤如下：
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. On the left sidebar, click **Bucket List**. Then, click the bucket for which you want to add a policy.
-3. 单击**权限管理 > Policy权限设置**。
-4. 根据实际需求，选择**图形设置**或**策略语法**，添加存储桶策略。
-A collaborator is a special sub-account. For more information, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
-
-5. 在配置存储桶权限配置时，设置 `content-type` 以指定文件类型。
->? 目前支持的文件类型：jpg、jpeg、png。
->
-6. 单击**确定**，保存策略。
-7. 验证策略是否生效。
- 1. 通过上述步骤，设置只允许 `PNG` 文件上传，上传一个 `PNG` 格式文件：
-```
-{
-  "Statement":[
-    {
-      "Action":[
-        "name/cos:PutObject"
-      ],
-      "Effect": "Allow",
-      "Principal":{
-        "qcs":[
-          "qcs::cam::anyone:anyone"
-        ]
-      },
-      "Resource":[
-        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
-      ],
-      "Condition":{
-                "ForAllValues:StringEquals": {
-                    "cos:content-type":"image/jpeg"
-                }
-    }
-  ],
-  "version": "2.0"
-}
-```
- 2. 验证上传一个`PNG`格式文件是否可以成功：
-![](https://main.qcloudimg.com/raw/f2cac50180dd506ae3d8351fcaa65f41.png)
- 3. 验证上传一个`JPEG`格式文件是否可以成功：
-![](https://main.qcloudimg.com/raw/a3ad75720c61ae87151727188fb303fc.png)
-由此可看到，该策略成功拦截住了非 `PNG` 格式的文件上传到 COS 中。
 
 
 
