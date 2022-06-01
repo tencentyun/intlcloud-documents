@@ -39,7 +39,7 @@
 }
 ```
 
-如何构造完整的请求，请参见 [POST Object](https://intl.cloud.tencent.com/document/product//436/14690) API 文档。
+如何构造完整的请求，请参见 [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) API 文档。
 
 #### 响应
 
