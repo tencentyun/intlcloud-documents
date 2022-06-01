@@ -57,7 +57,7 @@ Anda harus memilih jenis tanda tangan saat membuat tanda tangan:
 </tr>
 <tr>
 <td>Akun Resmi WeChat atau Program Mini WeChat</td>
-<td>Anda perlu mengunggah <b>tangkapan layar kepemilikan Akun Resmi WeChat atau Program Mini WeChat</b>: <ul><li>Akun Resmi WeChat: tangkapan layar halaman **Account Information** > **Account Details** (Informasi Akun > Detail Akun)</li><li>Program Mini WeChat: tangkapan layar halaman **Settings** > **Basic Settings** (Pengaturan > Pengaturan Dasar)</li></ul></td>
+<td>Anda perlu mengunggah <b>tangkapan layar kepemilikan Akun Resmi WeChat atau Program Mini WeChat</b>: <ul><li>Akun Resmi WeChat: tangkapan layar halaman <b>Account Information</b> > <b>Account Details</b> (Informasi Akun > Detail Akun)</li><li>Program Mini WeChat: tangkapan layar halaman <b>Settings</b> > <b>Basic Settings</b> (Pengaturan > Pengaturan Dasar)</li></ul></td>
 <tr>
 <td>Merek dagang</td>
 <td>Anda perlu mengunggah <b>sertifikat pendaftaran merek dagang</b></td>
@@ -93,7 +93,7 @@ Anda harus memilih jenis tanda tangan saat membuat tanda tangan:
 </tr>
 <tr>
 <td>Akun Resmi WeChat atau Program Mini WeChat</td>
-<td>Anda perlu mengunggah <b>tangkapan layar kepemilikan Akun Resmi WeChat atau Program Mini WeChat</b>: <ul><li>Akun Resmi WeChat: tangkapan layar halaman **Account Information** > **Account Details** (Informasi Akun > Detail Akun)</li><li>Program Mini WeChat: tangkapan layar halaman **Settings** > **Basic Settings** (Pengaturan > Pengaturan Dasar)</li></ul></td>
+<td>Anda perlu mengunggah <b>tangkapan layar kepemilikan Akun Resmi WeChat atau Program Mini WeChat</b>: <ul><li>Akun Resmi WeChat: tangkapan layar halaman <b>Account Information</b> > <b>Account Details</b> (Informasi Akun > Detail Akun)</li><li>Program Mini WeChat: tangkapan layar halaman <b>Settings</b> > <b>Basic Settings</b> (Pengaturan > Pengaturan Dasar)</li></ul></td>
 </tr>
 <tr>
 <td>Merek dagang</td>
@@ -119,7 +119,7 @@ Saat membuat tanda tangan untuk entitas terverifikasi, Anda perlu mengunggah mat
 </tr>
 <tr>
 <td>Akun Resmi WeChat atau Program Mini WeChat</td>
-<td>Anda perlu mengunggah <b>tangkapan layar kepemilikan Akun Resmi WeChat atau Program Mini WeChat</b>: <ul><li>Akun Resmi WeChat: tangkapan layar halaman **Account Information** > **Account Details** (Informasi Akun > Detail Akun)</li><li>Program Mini WeChat: tangkapan layar halaman **Settings** > **Basic Settings** (Pengaturan > Pengaturan Dasar)</li></ul></td>
+<td>Anda perlu mengunggah <b>tangkapan layar kepemilikan Akun Resmi WeChat atau Program Mini WeChat</b>: <ul><li>Akun Resmi WeChat: tangkapan layar halaman <b>Account Information</b> > <b>Account Details</b> (Informasi Akun > Detail Akun)</li><li>Program Mini WeChat: tangkapan layar halaman <b>Settings</b> > <b>Basic Settings</b> (Pengaturan > Pengaturan Dasar)</li></ul></td>
 </tr>
 </table>
 
