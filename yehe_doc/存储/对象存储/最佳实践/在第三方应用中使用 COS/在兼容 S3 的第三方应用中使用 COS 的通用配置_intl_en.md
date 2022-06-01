@@ -13,19 +13,19 @@ Amazon Simple Storage Service (S3) is one of the earliest cloud services launche
 
 (If you already have a Tencent Cloud account, skip this step.)
 
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 300px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
 
 #### Step 2. Verify your identity
 
 (If you have already done so, skip this step.)
 
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
+<div style="background-color:#00A4FF; width: 280px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
 
 For more information on how to verify your identity, see <a href="https://intl.cloud.tencent.com/document/product/378/3629">Identity Verification Guide</a>.
 
 #### Step 3. Activate the COS service
 
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:16px;">Click here to activate the COS service.</a></div>
+<div style="background-color:#00A4FF; width: 260px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:16px;">Click here to activate the COS service.</a></div>
 
 <span id="step4"></span>
 #### Step 4. Prepare the APPID and access key
