@@ -52,7 +52,6 @@ The IM console provides you with data statistics and analysis features. You can 
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
  - In the message monitoring area, you can view the number and success rate of one-to-one messages and group messages on different clients.
- - 
    >? Currently, only message data reported by iOS, Android, Windows, and Mac devices with SDK version 4.8.10 or later can be displayed. We recommend that you use the [latest SDK](https://intl.cloud.tencent.com/document/product/1047/33996). Web clients and Mini Program do not support message count statistics by chat type.
    >
  - In the callback monitoring area, you can view the number of callbacks and callback success rate.
