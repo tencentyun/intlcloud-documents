@@ -9,7 +9,7 @@
     }
 
     .card {
-        height: 190px; 
+        height: 250px; 
         border-radius: 10px;
         padding-top: 20px;
         padding-left: 10px;
@@ -61,7 +61,7 @@ You can download the latest source codes of IM SDKs and demos.
         <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
         <p class="titlename">Web & H5 SDK</p>
         <p style="color:#586376;">Includes all IM features and the capability to co-anchor in a live stream in a group</p>
-        <div style="margin-top: 13px;" >
+        <div style="margin-top: 15px;" >
         <a  href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">Download via GitHub</a>
         <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-js-sdk">Download via npm</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">Integration Guide</a>
@@ -211,7 +211,7 @@ IM demos demonstrate IM features in various scenarios. You can [install](https:/
                     <div style="margin-top: 13px;" >
                     <a  href="https://github.com/tencentyun/TIMSDK/tree/master/iOS">Download via GitHub</a>
                           <a style="margin-left: 10px;" href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">Download via ZIP</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45914">Integration Guide</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45913">Integration Guide</a>
                     </div>
             </div>
         </div>
@@ -229,17 +229,6 @@ IM demos demonstrate IM features in various scenarios. You can [install](https:/
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename"> IM Demo (uni-app)</p>
-                <p style="color:#586376;">Includes the main features of IM and capabilities for the online customer service scenario</p>
-                    <div style="margin-top: 13px; " >
-                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/uni-app">Download via GitHub</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45911">Integration Guide</a>
-                    </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
                                 <p class="titlename"> IM Demo (Flutter)</p>
                 <p style="color:#586376;">Includes the main features of IM</p>
                      <div style="margin-top: 13px; " >
@@ -247,38 +236,6 @@ IM demos demonstrate IM features in various scenarios. You can [install](https:/
                      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45907">Integration Guide</a></div>
             </div>
         </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://qcloudimg.tencent-cloud.cn/raw/d6fd52f011bdbb13302b2ae261e8a756.png" data-nonescope="true">
-                                <p class="titlename"> IM Demo (Electron)</p>
-                <p style="color:#586376;">Includes all features of IM, and the audio/video call and video conference features</p> 
-                     <div style="margin-top: 13px;" >
-                        <a href="https://github.com/tencentyun/im_electron_demo">Download via GitHub</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45910">Integration Guide</a>
-                     </div>
-            </div>
-        </div>
-            <div class="card-container">
-                <div class="card">
-                                <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-                                    <p class="titlename">Live Commerce Demo (WeChat Mini Program)</p>
-                <p style="color:#586376;">Includes live commerce capabilities such as on-screen comments, coupons, and shopping carts</p>
-                    <div style="margin-top: 13px;" >
-                    <a href="https://github.com/tencentyun/TencentIMDemos">Download via GitHub</a>
-                            <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/36403">Integration Guide</a>
-                    </div>
-                        </div>
-            </div>
-        <div class="card-container">
-            <div class="card">
-                            <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename">Interactive Live Streaming Demo (Web)</p>
-            <p style="color:#586376;">Includes interactive capabilities such as starting live streaming and giving likes</p>
-                <div style="margin-top: 13px;" >
-                <a  href="https://github.com/tencentyun/TUILiveRoom/tree/main/Web">Download via GitHub</a>
-                        <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/38175">Integration Guide</a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
