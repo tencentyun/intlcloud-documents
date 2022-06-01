@@ -73,7 +73,7 @@ Setting verification method for adding friends and custom friend fields.
 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target IM app card.
 2. On the left sidebar, select **Feature Configuration** > **Friend and Relationship**.
-3. Click **Add** in the upper-right corner of the **Custom Friend Fields** area.
+3. Click **Add** in the upper-right corner of the **Custom Friend Field** area.
 4. In the pop-up dialog box, enter a field name and select a field type.
 
 <dx-alert infotype="explain" title="">
