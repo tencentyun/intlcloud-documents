@@ -126,4 +126,4 @@ https://xxxxxx/v4/recentcontact/get_list?sdkappid=88888888&identifier=admin&user
 | 50005  | 网络超时，请稍后重试                                       |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/recentcontact/get_list) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
