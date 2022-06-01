@@ -64,7 +64,7 @@ In the **Configuration of Recent Contacts to Pull** area on the **Login and Mess
 Setting verification method for adding friends and custom friend fields.
 ### Verification method for adding friends
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target IM app card.
-2. On the left sidebar, choose **Feature Configuration** > **Friend and Relationship**, and click **Edit** in the upper-right corner of the **Default Verification for Adding Friends** area.
+2. On the left sidebar, select **Feature Configuration** > **Friend and Relationship**, and click **Edit** in the upper-right corner of the **Default Verification for Adding Friends** area.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6d5a4de703ec20c4a337c1e504f95de8.png)
 3. Select a verification method as needed and click **Confirm**.
 
@@ -72,7 +72,7 @@ Setting verification method for adding friends and custom friend fields.
 >?You can add up to 20 custom friend fields, which cannot be deleted and whose field name and type cannot be modified. Please set the fields properly as needed.
 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target IM app card.
-2. On the left sidebar, choose **Feature Configuration** > **Friend and Relationship**.
+2. On the left sidebar, select **Feature Configuration** > **Friend and Relationship**.
 3. Click **Add** in the upper-right corner of the **Custom Friend Fields** area.
 4. In the pop-up dialog box, enter a field name and select a field type.
 
