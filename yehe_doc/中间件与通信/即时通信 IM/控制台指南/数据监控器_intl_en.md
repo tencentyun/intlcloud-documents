@@ -47,7 +47,7 @@ The IM console provides you with data statistics and analysis features. You can 
 2. In the overview area, you can view **One-to-One Messages Today**, **Group Messages Today**, and **Web/Mini Program Messages**.
 3. In the monitoring data details area, the time axis displays 24-hour data by calendar day by default. When you hover the cursor over the data chart area, you can scroll the scroll bar to magnify the time axis to view details, drag the time axis leftwards or rightwards to view data at different time points, and click the legend below the time axis to hide or display values in the chart.
  - In the login monitoring area, you can view the number of logins and login success rate on different clients.
-  >? Currently, only login data reported by iOS, Android, Windows, and Mac devices with SDK version 4.8.10 or later can be displayed. We recommend that you use the [latest SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
+   >? Currently, only login data reported by iOS, Android, Windows, and Mac devices with SDK version 4.8.10 or later can be displayed. We recommend that you use the [latest SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
   >
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
