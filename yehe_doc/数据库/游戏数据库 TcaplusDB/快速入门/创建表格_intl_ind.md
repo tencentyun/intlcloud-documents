@@ -17,6 +17,5 @@ https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/game
  - Jika verifikasi gagal, kesalahan akan dikembalikan, dan Anda harus memodifikasi file yang sesuai dan mengunggahnya lagi.
  - Jika verifikasi berhasil, metadata tabel yang ditentukan dalam file akan ditampilkan, dan Anda dapat melanjutkan ke langkah selanjutnya.
 4. Pada halaman konfigurasi tabel, pilih tabel yang akan dibuat dan masukkan kapasitas serta parameter baca dan tulis yang dicadangkan. Biaya harian tabel akan dihitung secara otomatis.
-![](https://main.qcloudimg.com/raw/32aa5c8a292df17249a62e88b6fca4e6.png)
 5. Setelah mengonfirmasi bahwa informasi tabel benar, klik **Create** (Buat) dan sistem akan menunjukkan bahwa pembuatan berhasil.
-![](https://main.qcloudimg.com/raw/7a39640da609a65df7040fc9c1d7be3d.png)
+
