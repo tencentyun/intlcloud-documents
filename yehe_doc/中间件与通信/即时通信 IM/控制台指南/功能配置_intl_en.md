@@ -86,7 +86,7 @@ Log in to the [IM console](https://console.cloud.tencent.com/im), click the targ
 
 ### Adding a custom user field
 
-1. On the **Custom User Fields** page, click **Add** in the upper-right corner.
+1. On the **Custom User Field** page, click **Add** in the upper-right corner.
 2. In the pop-up dialog box, enter a field name, select a field type, and set read/write permissions.
 <dx-alert infotype="explain" title="">
  - The field name must be all letters and cannot exceed eight characters.
@@ -97,7 +97,7 @@ Log in to the [IM console](https://console.cloud.tencent.com/im), click the targ
 3. Click **Confirm**.
 
 ### Modifying the permissions of a custom user field
-1. On the **Custom User Fields** page, click **Change Permissions** in the row of the target field.
+1. On the **Custom User Field** page, click **Change Permissions** in the row of the target field.
 2. In the pop-up dialog box, change the read or write permission.
 ![](https://main.qcloudimg.com/raw/01081d71fe7ec45b470a249d685696c1.png)
 3. Click **Confirm**.
