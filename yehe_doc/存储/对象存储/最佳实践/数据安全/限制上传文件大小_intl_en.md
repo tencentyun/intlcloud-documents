@@ -1,13 +1,12 @@
-
 Cloud Object Storage (COS) supports limiting object sizes upon the upload, which allows you to manage storage space flexibly by avoiding uploading objects that are too large or too small to make full use of the bandwidth and storage space. This document gives two samples to describe how to control the objects sizes in a refined way.
 
-## Preparations
+## Prerequisites
 
 The samples use the information below:
 - APPID of the root account: 1250000000
 - Bucket name: examplebucket-1250000000
 
-Please replace the information above with your actual one.
+在实际使用中，请替换为您自身的存储桶，并且使用拥有存储桶操作权限的账号和密钥操作存储桶。
 
 
 ## Sample 1. Specifying a Size Range During POST Object Uploads
@@ -18,7 +17,7 @@ When uploading objects using `POST Object`, you can add `content-length-range` i
 [ "content-length-range", minNum, maxNum ]
 ```
 
-Example:
+Sample:
 
 ```plaintext
 [ "content-length-range", 1, 10]
@@ -42,7 +41,7 @@ The JSON-formatted field above is added to policy > conditions in the POST reque
 
 For more information about how to construct a complete request, please see [POST Object](https://intl.cloud.tencent.com/document/product/436/14690).
 
-#### Responses
+#### Response
 
 The following response will be returned as follows if the size of the object is within the specified size range:
 
@@ -115,7 +114,7 @@ To solve the problem above, bucket managers can use the following fields to limi
 | -------------------------- | ------------ | ------------------------------------------------------------ |
 | numeric_greater_than | A number greater than | {"numeric_greater_than": {"cos:content_length": 1}}, <br>The object size must be greater than 1 byte.
 | numeric_greater_than_equal | A number greater than or equal to  | {"numeric_greater_than_equal": {"cos:content_length": 1}}, <br>The object size must be greater than or equal to 1 byte. |
-| numeric_less_than | A number smaller than | {"numeric_less_than": {"cos:content_length": 1}}, <br>The object must be smaller than 10 bytes. |
+| numeric_less_than | A number smaller than | {"numeric_less_than": {"cos:content_length": 1}}, <br>The object must be smaller than 1 bytes. |
 | numeric_less_than_equal | A number smaller than or equal to | {"numeric_less_than_equal": {"cos:content_length": 1}}, <br>The object must be smaller than 10 bytes. |
 
 For the complete request sample, please see the <b>Obtaining a Temporary Access Credential</b> API Documentation of STS. A complete policy is as follows:
@@ -130,7 +129,7 @@ For the complete request sample, please see the <b>Obtaining a Temporary Access 
                 "cos:PutObject",
                 "cos:PostObject",
             ],
-            "resource": [
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
 
@@ -146,10 +145,11 @@ For the complete request sample, please see the <b>Obtaining a Temporary Access 
 With the temporary credential obtained using the following policy, you can call the `PUT Object` or `POST Object` API to upload objects to the `examplebucket-1250000000` bucket, with the object sizes limited to [1, 10), in bytes.
 
 >!This policy is only applicable to the `cos:PutObject` and `cos:PostObject` actions. Using other actions such as `cos:GetObject` will fail.
+>
 
 This method allows bucket managers or the authentication center to centrally apply for temporary credentials and limit the size during the application, after which the credentials can be distributed to operators or business modules. In this way, object sizes can be controlled, avoiding uploading objects beyond the size range due to parameter modification.
 
-#### Responses
+#### Response
 
 If the size of the uploaded object is within the specified range, the upload request will succeed with 200 or 204 returned. Otherwise, 403 will be returned, as shown below:
 
@@ -162,4 +162,54 @@ Date: Wed, 23 Aug 2020 08:14:53 GMT
 Server: tencent-cos
 x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0****
 ```
+
+## 案例三：通过存储桶策略限制文件上传类型
+
+可以通过存储桶策略中指定文件上传类型，存储桶策略语法示例请参见 [存储桶策略示例](https://intl.cloud.tencent.com/document/product//436/45235)。
+
+通过存储桶策略限制文件上传类型操作步骤如下：
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. On the left sidebar, click **Bucket List**. Then, click the bucket for which you want to add a policy.
+3. 单击**权限管理 > Policy权限设置**。
+4. 根据实际需求，选择**图形设置**或**策略语法**，添加存储桶策略。
+A collaborator is a special sub-account. For more information, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
+
+5. 在配置存储桶权限配置时，设置 `content-type` 以指定文件类型。
+>? 目前支持的文件类型：jpg、jpeg、png。
+>
+6. 单击**确定**，保存策略。
+7. 验证策略是否生效。
+ 1. 通过上述步骤，设置只允许 `PNG` 文件上传，上传一个 `PNG` 格式文件：
+```
+{
+  "Statement":[
+    {
+      "Action":[
+        "name/cos:PutObject"
+      ],
+      "Effect": "Allow",
+      "Principal":{
+        "qcs":[
+          "qcs::cam::anyone:anyone"
+        ]
+      },
+      "Resource":[
+        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
+      ],
+      "Condition":{
+                "ForAllValues:StringEquals": {
+                    "cos:content-type":"image/jpeg"
+                }
+    }
+  ],
+  "version": "2.0"
+}
+```
+ 2. 验证上传一个`PNG`格式文件是否可以成功：
+![](https://main.qcloudimg.com/raw/f2cac50180dd506ae3d8351fcaa65f41.png)
+ 3. 验证上传一个`JPEG`格式文件是否可以成功：
+![](https://main.qcloudimg.com/raw/a3ad75720c61ae87151727188fb303fc.png)
+由此可看到，该策略成功拦截住了非 `PNG` 格式的文件上传到 COS 中。
+
+
 
