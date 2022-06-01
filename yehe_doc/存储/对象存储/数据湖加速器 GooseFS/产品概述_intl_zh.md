@@ -4,7 +4,7 @@
 
 GooseFS 旨在提供一站式的缓存解决方案，在利用数据本地性和高速缓存，统一存储访问语义等方面具有天然的优势；GooseFS 在腾讯云数据湖生态中扮演着“上承计算，下启存储”的核心角色，如下图所示。
 
-![](https://main.qcloudimg.com/raw/df495c832c77106c65195fa7887f4ccd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/340d0455880b295e1990fef8182275c7.png)
 
 GooseFS 提供了以下功能：
 
