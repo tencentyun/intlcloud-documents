@@ -9,5 +9,5 @@ Catatan: Voucher tidak berlaku untuk produk SMS.
 Harga satuan untuk pembayaran sesuai pemakaian:
 
 | Negara/Wilayah | Singkatan | Kode Negara/Wilayah | Harga Satuan (USD) |
-| -------------- | ------------ | ---- | ---------------- | ------------ |
+| -------------- | ------------ | ---- | ---------------- |
 | Tiongkok Daratan | CN | 86 | 0,0140 |
