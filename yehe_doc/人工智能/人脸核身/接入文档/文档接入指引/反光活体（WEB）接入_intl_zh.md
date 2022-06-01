@@ -54,7 +54,7 @@
 
 静默模式用户做Web人脸核验流程:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/f15bd944c395b48bdbf3e0f9df3c873c.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/7ea4ecb0d5815ef727df1b9ee97d1935.png)
 
 
 ### 光线活体摄像机授权说明
