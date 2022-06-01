@@ -53,7 +53,7 @@ Web face recognition process in reflection-based liveness detection mode:
 
 Web face recognition process in video-based liveness detection mode:
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/f15bd944c395b48bdbf3e0f9df3c873c.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/7ea4ecb0d5815ef727df1b9ee97d1935.png)
 
 ### Camera access description for reflection-based liveness detection
 
