@@ -29,7 +29,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 [](id:step2)
 ### Step 2. Download the SDK and source code
-1. Download the SDK and [demo source code](https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im_discuss) that fit your needs.
+1. Download the SDK and [demo source code](https://github.com/TencentCloud/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit) that fit your needs.
 2. Then, go to the directory TIMSDK/Flutter/Demo/im_discuss.
 ![](https://qcloudimg.tencent-cloud.cn/raw/8b865854e14e8848b4e8d31d8daf55ac.png)
 3. Run `Flutter pub get` to install the dependencies, launch the demo project, and enter the following command:
@@ -55,7 +55,7 @@ flutter run --dart-define=SDK_APPID=xxxx --dart-define=ISPRODUCT_ENV=false --dar
 ![](https://qcloudimg.tencent-cloud.cn/raw/6516f9b17c58915c4ebc93c5c8829831.png)
 2. Start an Android simulator, tap **Build And Run** to run the demo. Enter a random UserID (a combination of digits and letters).
 
-    >? The UI of the latest version of the demo may look different after adjustments.
+>? The UI of the latest version of the demo may look different after adjustments.
 :::
 ::: iOS[](id:ios)
 1. Open Xcode and the file discuss/ios/Runner.xcodeproj:
