@@ -1,7 +1,7 @@
 
 ## Mode Verifikasi
 ### Ikhtisar verifikasi identitas
-[Verifikasi identitas] Tencent Cloud(https://intl.cloud.tencent.com/document/product/378/3629) terdiri dari verifikasi individu dan organisasi. **Mode verifikasi yang berbeda sesuai dengan fitur SMS yang berbeda. Sebaiknya Anda memilih mode verifikasi identitas berdasarkan kepemilikan akun Anda yang sebenarnya.**
+[Verifikasi identitas](https://intl.cloud.tencent.com/document/product/378/3629) terdiri dari verifikasi individu dan organisasi. **Mode verifikasi yang berbeda sesuai dengan fitur SMS yang berbeda. Sebaiknya Anda memilih mode verifikasi identitas berdasarkan kepemilikan akun Anda yang sebenarnya.**
 
 | Jenis             | Objek                           | Kepemilikan Akun | Panduan Pengoperasian                                                     |
 | :--------------- | :--------------------------------- | :------- | :----------------------------------------------------------- |
