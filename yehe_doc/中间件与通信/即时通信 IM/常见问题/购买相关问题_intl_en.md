@@ -1,4 +1,4 @@
-### Do IM Pro edition and IM Flagship edition have a DAU limit?
+### Do IM Pro edition and IM Ultimate edition have a DAU limit?
 Pro edition and Flagship edition do not have an upper limit on DAU. The first 10,000 DAU per month is free. DAU over free quota will be charged at 149.99 USD/10,000 DAU per month, with counts less than 10,000 billed as 10,000. The DAU fee is pay-as-you-go on a monthly basis. Fees incurred within a month will be deducted on the third day of the next month.
 If the DAU of each day within a month is lower than 10,000, no DAU fees will be incurred for that month. If for any day within a month, the DAU is higher than 10,000, you will be charged based on the highest DAU value in that month. 
 For more information on billing rules, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
