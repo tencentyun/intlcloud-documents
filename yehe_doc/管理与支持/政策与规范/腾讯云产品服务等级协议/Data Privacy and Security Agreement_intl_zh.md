@@ -139,6 +139,7 @@
 36.[边缘安全加速平台](https://intl.cloud.tencent.com/document/product/1145/46316)。
 37.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46726)。
 38.[Prometheus 监控服务](https://intl.cloud.tencent.com/document/product/1116/46974)。
+39.[自动化助手](https://intl.cloud.tencent.com/document/product/1147/47223)。
 ## 特定司法管辖区要求
 
 **欧洲**
