@@ -140,7 +140,7 @@
 37.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46726)。
 38.[Prometheus 监控服务](https://intl.cloud.tencent.com/document/product/1116/46974)。
 39.[自动化助手](https://intl.cloud.tencent.com/document/product/1147/47223)。
-40.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179)。
+40.[云点播](https://intl.cloud.tencent.com/document/product/266/47179)。
 
 ## 特定司法管辖区要求
 
