@@ -593,5 +593,5 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 35.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46725)。
 36.[Prometheus 监控服务](https://intl.cloud.tencent.com/document/product/1116/46973)。
 37.[自动化助手](https://intl.cloud.tencent.com/document/product/1147/47222)。
-38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47178)。
+38.[云点播](https://intl.cloud.tencent.com/document/product/266/47178)。
 
