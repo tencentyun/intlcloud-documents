@@ -4,7 +4,7 @@ CDN memiliki lebih dari 2000 simpul cache yang di-deploy ke semua provinsi di Ti
 ![img](https://main.qcloudimg.com/raw/c7af2903e117b831a68bbaaf13967181.png)
 
 ### Simpul di luar Tiongkok daratan
-CDN sudah lama menggarap akselerasi global sejak 2017.Hingga Mei 2021, CDN memiliki lebih dari 800 simpul cache di lebih dari 70 negara dan wilayah dengan total cadangan bandwidth di atas 40 Tbps sehingga memudahkan dan mempercepat bisnis Anda terjun ke kancah global.
+CDN sudah lama menggarap akselerasi global sejak 2017.Hingga Mei 2021, CDN memiliki lebih dari 800 simpul cache di lebih dari 70 negara dan wilayah dengan total cadangan bandwidth di atas 50 Tbps sehingga memudahkan dan mempercepat bisnis Anda terjun ke kancah global.
 ![image-20200210165753661](https://main.qcloudimg.com/raw/034a95d5f46fb8bf848c0a53dd265611.png)
 
 | Wilayah | Distribusi |
