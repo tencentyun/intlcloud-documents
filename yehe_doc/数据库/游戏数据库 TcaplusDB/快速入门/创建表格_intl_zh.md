@@ -17,6 +17,4 @@ https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/game
  - 校验不通过，将返回错误，请根据错误提示修改文件后重新上传。
  - 校验通过，将显示文件中定义的表格元信息，请继续执行下一步。
 4. 在配置表格页，勾选要创建的表格，输入容量、预留读和预留写参数，系统将自动计算表格每日的花费价格。
-![](https://main.qcloudimg.com/raw/32aa5c8a292df17249a62e88b6fca4e6.png)
 5. 确认表格信息无误后，单击**创建**，系统返回创建成功提示。
-![](https://main.qcloudimg.com/raw/7a39640da609a65df7040fc9c1d7be3d.png)

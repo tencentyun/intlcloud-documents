@@ -204,15 +204,6 @@ Tencent Real-Time Communication(TRTC)は、Tencent Cloudが提供する低遅延
 								<a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/43297">Demoを実行</a>
             </div>
         </div>
-				<div class="card-container">
-            <div class="card">
-                            <img src="https://qcloudimg.tencent-cloud.cn/raw/e9d18b164152f08bc0694c01e966daea.png" data-nonescope="true">
-                                <p class="titlename">uni-app SDK</p>
-                <p style="color:#586376;">uni-appプラグインのパッケージに基づくTRTC SDKにより、リアルタイムのオーディオ・ビデオサービスを迅速かつ簡単に統合できます。</p>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_UniApp">GitHub</a>
-								<a style="margin-left: 10px;" Demoを実行します</a>
-            </div>
-        </div>
 </div>
 
 

@@ -308,7 +308,6 @@ TRTC Web SDK 基于 WebRTC 实现，目前支持桌面端和移动端的主流�
 | 实现云端混流               | [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-31-advanced-mix-transcode.html)  |
 | 实现云端录制               | [指引链接](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-32-advanced-cloud-record.html)   |
 
-
 >? 
 >- [单击查看](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-10-basic-get-started-with-demo.html) 更多能力。
 >- 常见问题参见 [Web 端相关](https://intl.cloud.tencent.com/document/product/647/37340)。
@@ -415,7 +414,7 @@ LocalStream 本地音视频流，通过 [createStream](https://web.sdk.qcloud.co
 
 ### RemoteStream
 
-远端音视频流，通过监听 [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED) 事件获得。是 [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html) 的子类。
+远端音视频流，通过监听 [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED) 事件获得。是 [Stream](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html) 的子类。
 
 | API  | 描述              |
 |-----------------|-----------|

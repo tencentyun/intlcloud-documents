@@ -126,4 +126,4 @@ The following table describes the error codes specific to this API:
 | 50005  | Network timeout. Try again later.                                       |
 
 ## API Debugging Tool
-Use our [RESTful API Tester](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/recentcontact/get_list) to test your requests.
+Use our [RESTful API Tester](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to test your requests.

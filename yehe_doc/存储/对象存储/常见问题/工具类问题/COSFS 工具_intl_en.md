@@ -37,14 +37,14 @@ cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.
 ```
 >!my-dir must begin with `/`.
 >
-In versions below v1.0.5, the mounting command is:
+In versions earlier than v1.0.5, the mounting command is:
 ```shell
 cosfs 1250000000:examplebucket:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
 ### How does a non-root user mount COSFS?
 
-If you are not a root user, you are recommended to create a .passwd-cosfs file in the `Home` directory, set the permission to 600, and then mount COSFS using the mounting command. In addition, you can also specify the key file path using the `-opasswd_file=path` option and set the permission to 600.
+If you are not a root user, we recommend you create a .passwd-cosfs file in the `Home` directory, set the permission to 600, and then mount COSFS using the mounting command. In addition, you can also specify the key file path using the `-opasswd_file=path` option and set the permission to 600.
 
 ### Does COSFS support mounting over HTTPS?
 
@@ -54,7 +54,7 @@ Yes. Mounting methods over HTTP and HTTPS are as shown below:
 -ourl=https://cos.ap-guangzhou.myqcloud.com
 ```
 
-If the version of the NSS library that libcurl depends on is v3.12.3 or higher (check the NSS version using `curl -V`), you can mount the bucket over HTTPS by running the following command:
+If the version of the NSS library that libcurl depends on is v3.12.3 or later (check the NSS version using `curl -V`), you can mount the bucket over HTTPS by running the following command:
 
 ```shell
 echo "export NSS_STRICT_NOFORK=DISABLED" >> ~/.bashrc
@@ -78,9 +78,9 @@ Add the following to the `/etc/fstab` file. The `_netdev` option specifies that 
 cosfs#examplebucket-1250000000 /mnt/cosfs fuse _netdev,allow_other,url=http://cos.ap-guangzhou.myqcloud.com,dbglevel=info
 ```
 
-### How do I set the user and user group of files or directories under a mount point?
+### How do I set the user and user group of files or directories under a mount target?
 
-In certain scenarios (such as NGINX server), you need to set the user and user group of files or directories under a mount point, such as user `www` (uid = 1002, gid =1002). In this case, you need to add the following mount parameters:
+In certain scenarios (such as NGINX server), you need to set the user and user group of files or directories under a mount target, such as user `www` (uid = 1002, gid =1002). In this case, you need to add the following mount parameters:
 
 ```shell
 -ouid=1002 -ogid=1002
@@ -111,6 +111,11 @@ In the internal logic of COSFS, a HEAD request is used to determine whether the 
 ### How can I view the storage usage with COSFS?
 COSFS does not support viewing the storage usage. If you need statistics on bucket usage and your data volume is small, log in to the COS console to view the usage. If the data volume is high, you can leverage the [Inventory](https://intl.cloud.tencent.com/document/product/436/30622) feature.
 
+### How do I check which processes have accessed the mounted directory?
+Run the following command to check which processes have accessed the mounted directory, such as `/mnt/cosfs`.
+```
+lsof /mnt/cosfs 
+```
 
 
 ## FAQs About Troubleshooting
@@ -124,7 +129,7 @@ umount -l /path/to/mnt_dir
 cosfs examplebucket-1250000000:/my-dir /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info
 ```
 
-If the COSFS process error is not caused by faulty operations, you can check whether the fuse version of the server is below v2.9.4. The libfuse on versions below v2.9.4 can cause exceptional exit of the COSFS process. In this case, it is recommended to update the fuse version or install the latest version of COSFS as described in [COSFS](https://intl.cloud.tencent.com/document/product/436/6883).
+If the COSFS process error is not caused by faulty operations, you can check whether the fuse version of the server is earlier than v2.9.4. The libfuse on versions earlier than v2.9.4 can cause abnormal exit of the COSFS process. In this case, we recommend you update the fuse version or install the latest version of COSFS as described in [COSFS](https://intl.cloud.tencent.com/document/product/436/6883).
 
 ### What should I do if the Content-Type of a file uploaded via COSFS is changed to "application/octet-stream"?
 
@@ -146,20 +151,20 @@ Check the parameter `-ourl` to ensure that the bucket part is not included in th
 
 ### Why can't I write to files that I could write to previously?
 
-Because of the adjustment to the COS authentication policy, using the COSFS tool below v1.0.0 will cause the policy check to fail. You can install the latest COSFS tool and mount it again.
+Because of the adjustment to the COS authentication policy, using the COSFS tool earlier than v1.0.0 will cause the policy check to fail. You can install the latest COSFS tool and mount it again.
 
 ### What should I do if an error such as "Input/Output ERROR" occurs when using the COSFS tool?
 
-Please follow the steps below to identify the cause of the error:
+Follow the steps below to identify the cause of the error:
 
 1. Check whether the server can access the COS domain name normally.
 2. Check whether the account is configured correctly. 
-3. If you used the `cp` command containing the `-p` or `-a` parameter for copying, it is recommended that you remove the parameter and run the command again.
+3. If you used the `cp` command containing the `-p` or `-a` parameter for copying, we recommend you remove the parameter and run the command again.
 
 After confirming that the above configurations are correct, open the `/var/log/messages` log file on the server and locate the log entry for s3fs, which can help you identify the cause of error. If the error persists, [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### I've set auto-amounting at startup for COSFS using /etc/fstab, but the error "wrong fs type, bad option, bad superblock on cosfs" occurs when I run "mount -a". Why?
-This error happens generally because the fuse library is missing on your server. It is recommended to install the fuse library by running the following command:
+This error happens generally because the fuse library is missing on your server. We recommend you install the fuse library by running the following command:
 - CentOS
 ```shell
 sudo yum install fuse
@@ -174,7 +179,7 @@ In the internal logic of COSFS, a HEAD request is used to determine whether the 
 
 ### Why does the file that I see in COS have a size of 0?
 Generally, when you write data to COSFS, a file with a size of 0 will be first created in COS, and the data will be written to the local cache file.
-During the write process, the result of the mount point ls command shows the change in file size. When the file is closed, COSFS will upload the data written to the local cache file to COS. If the upload fails, you may only see a file with a size of 0, in which case you can try copying the failed file again.
+During the write process, the result of the mount target ls command shows the change in file size. When the file is closed, COSFS will upload the data written to the local cache file to COS. If the upload fails, you may only see a file with a size of 0, in which case you can try copying the failed file again.
 
 ### Are the files in the COSFS cache directory the same as those in COS? Can I use them directly?
 No. The files in the cache directory are used to accelerate reads and writes in COSFS and may include only a part of the files in COS.
@@ -194,12 +199,12 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 ### What should I do if the error message "fuse: failed to open /dev/fuse: Operation not permitted" is displayed when I use docker to mount COSFS?
 To start a docker image, you need to add the parameter --privileged.
 
-### Can I use a directory as a shared cache directory for multiple mount points?
-It is not recommended that multiple mount points share a cache directory. The cache directory contains metadata used by COSFS, and sharing it may mess up the metadata.
+### Can I use a directory as a shared cache directory for multiple mount targets?
+We recommend you not make multiple mount targets share a cache directory. The cache directory contains metadata used by COSFS, and sharing it may mess up the metadata.
 
 ### What should I do if the error message "/bin/mount:unrecognized option --no-canonicalize" is displayed when I use COSFS for mounting?
 
-Lower versions of the mounting tool do not support the `--no-canonicalize` option. Please update the tool. You are recommended to [download v2.17](https://cdn.kernel.org/pub//linux/utils/util-linux/v2.17/) and then mount it again. The installation command is as follows:
+Earlier versions of the mounting tool do not support the `--no-canonicalize` option. Update the tool. We recommend you [download v2.17](https://cdn.kernel.org/pub//linux/utils/util-linux/v2.17/) and then mount it again. The installation command is as follows:
 
 ```shell
 tar -jxvf util-linux-ng-2.17.tar.bz2
@@ -218,15 +223,15 @@ Step 2. Check whether the server time is correct by running the date command. If
 
 ### Is it normal that the time of a mounted directory changes to 1970-01-01 08:00 when I use the `ls -l --time-style=long-iso` command?
 
-Yes. After you unmount the mount point, the time of the mounted directory will return back to the time before mounting.
+Yes. After you unmount the mount target, the time of the mounted directory will return back to the time before mounting.
 
  ### Can a mounted directory be non-empty?
 
-You can mount a non-empty directory using the `-ononempty` parameter, but you are not recommended to do so because a problem may occur when the mount point and the original directory have files with the same path.
+You can mount a non-empty directory using the `-ononempty` parameter, but we recommend you not do so, because a problem may occur when the mount target and the original directory have files with the same path.
 
 ### Why does it take the `ls` command so long to return when I run it in a COSFS directory?
 If there are a lot of files in a mounted directory, executing the `Is` command requires a HEAD operation on each file in the directory, so it takes a lot of time to read the directory system before the command returns.
->! You are recommended not to enable IO hung which may result in unnecessary restarts.
+>! We recommend you not enable IO hung which may result in unnecessary restarts.
 >
 
 

@@ -5,9 +5,6 @@ This document provides common examples of using COS condition keys in bucket pol
 >? When using condition keys in writing a bucket policy, comply with the principle of least privilege, add the corresponding condition keys only applicable requests (actions), and avoid using the \* wildcard when specifying the actions. Using the wildcard will cause the requests to fail. For more information about condition keys, see [here](https://intl.cloud.tencent.com/document/product/436/46205).
 >
 
-## Applicable Regions of Condition Keys
-
-The condition keys `qcs:ip`, `vpc:requester_vpc`, and `cos:content-type` can be used in all regions. The rest condition keys currently can be used in only the Chengdu, Guangzhou, Shanghai, Jakarta, Sao Paulo, Virginia, Tokyo, and Seoul regions, and will be supported in other regions in the future.
 
 ## Use Cases of Condition Keys
 

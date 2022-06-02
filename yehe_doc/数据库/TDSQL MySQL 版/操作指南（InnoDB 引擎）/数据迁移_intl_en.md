@@ -1,0 +1,1 @@
+You can migrate data to TDSQL for MySQL through [DTS](https://intl.cloud.tencent.com/document/product/571) as instructed in [Migration from MySQL to TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/571/42642).

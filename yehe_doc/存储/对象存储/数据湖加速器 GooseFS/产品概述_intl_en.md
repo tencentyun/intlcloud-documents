@@ -4,7 +4,7 @@ Data Lake Accelerator Goose FileSystem (GooseFS) is a highly available, reliable
 
 GooseFS aims to offer a one-stop cache solution and has native strengths in leveraging data locality, high-speed cache, and unified storage access syntax. It plays a core role in the data lake ecosystem as a connector between computing and storage as shown below:
 
-![](https://main.qcloudimg.com/raw/df495c832c77106c65195fa7887f4ccd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/340d0455880b295e1990fef8182275c7.png)
 
 GooseFS has the following features:
 

@@ -9,7 +9,7 @@
     }
 
     .card {
-        height: 260px; 
+        height: 250px; 
         border-radius: 10px;
         padding-top: 20px;
         padding-left: 10px;
@@ -185,6 +185,60 @@ IM SDK 및 Demo의 최신 소스 코드를 다운로드할 수 있습니다.
         </div>
 </div>
 </div>
+<h2> Demo 및 솔루션 다운로드 </h2>
+
+IM Demo는 다양한 시나리오에서 IM 기능을 보여줍니다. 다양한 플랫폼 및 사용 사례에 대한 Demo를 [설치](https://intl.cloud.tencent.com/document/product/1047/34279)하고 사용해 볼 수 있습니다.
+<div>
+<div style="margin-top: 15px;">
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                                <p class="titlename"> IM Demo (Android)</p>
+                <p style="color:#586376;">모든 IM 기능과 그룹의 라이브 스트림 공동 앵커 기능 포함</p>
+                    <div style="margin-top: 13px;" >
+                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/Android">Github 다운로드</a>
+                                <a style="margin-left: 10px;" href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP 다운로드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45914">통합 가이드</a>
+                    </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                                <p class="titlename"> IM Demo (iOS)</p>
+                <p style="color:#586376;">모든 IM 기능과 그룹의 라이브 스트림 공동 앵커 기능 포함</p>
+                    <div style="margin-top: 13px;" >
+                    <a  href="https://github.com/tencentyun/TIMSDK/tree/master/iOS">Github 다운로드</a>
+                          <a  style="margin-left: 10px;"href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP 다운로드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45913">통합 가이드</a>
+                    </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
+                                <p class="titlename"> IM Demo (Web)</p>
+                <p style="color:#586376;">모든 IM 기능과 그룹의 라이브 스트림 공동 앵커 기능 포함</p>
+                    <div style="margin-top: 13px;" >
+                    <a " href="https://github.com/tencentyun/TIMSDK/tree/master/Web">Github 다운로드</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">통합 가이드</a>
+                    </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
+                                <p class="titlename"> IM Demo (Flutter)</p>
+                <p style="color:#586376;">IM의 주요 기능 포함</p>
+                     <div style="margin-top: 13px; " >
+                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit">Github 다운로드</a>
+                     <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45907">통합 가이드</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
 <h2 style="margin-top: 36px;"> 패키지 크기 </h2>
 
 <table>

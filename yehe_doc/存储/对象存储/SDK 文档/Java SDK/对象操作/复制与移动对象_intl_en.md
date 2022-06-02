@@ -1,55 +1,55 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to object copy and movement.
+This document provides an overview of APIs and SDK code samples for copying and moving an object.
 
 **Simple operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to a destination path |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying object | Copies object to destination path. |
 
-**Multipart operations**
+**Multipart upload operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads/copy | Queries in-progress multipart uploads/copy. |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload/copy operation | Initializes a multipart upload/copy operation. |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part. |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded/copied parts | Queries the uploaded/copied parts of a multipart operation. |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload/copy | Completes the multipart upload/copy of a file. |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload/copy | Aborts a multipart operation and deletes the uploaded/copied parts. |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads/copies | Queries multipart uploads/copies in progress. |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing multipart upload/copy operation | Initializes multipart upload/copy operation. |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying part | Copies object as part. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded/copied parts | Queries uploaded/copied parts of multipart upload. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing multipart upload/copy | Completes multipart upload/copy. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting multipart upload/copy | Aborts multipart upload operation and deletes uploaded/copied parts. |
 
 ## Advanced APIs (Recommended)
 
-The advanced APIs encapsulate simple APIs via the TransferManager class to provide APIs for easier operations. Internally, a thread pool is used to concurrently accept and process requests from users, so users can choose to execute tasks asynchronously after submitting multiple tasks.
+The advanced APIs encapsulate simple APIs via the TransferManager class to provide APIs for easier operations. Internally, a thread pool is used to concurrently accept and process requests, so you can choose to execute tasks asynchronously after submitting multiple tasks.
 
-TransferManager instances are concurrency safe. You are advised to create only one TransferManager instance for a process and then close it when it is no longer used to call advanced APIs.
+TransferManager instances are concurrency safe. We recommend you create only one TransferManager instance for a process and then shut it down when it is no longer used to call advanced APIs.
 
-### Description
+### Feature description
 
-The advanced APIs encapsulate the simple copy and multipart copy APIs and automatically choose the copy mode based on the file size.
+The advanced APIs encapsulate the APIs for copy in whole and multipart copy and automatically select the copy method based on the file size.
 
-### Creating a TransferManager instance
+### Creating TransferManager instance
 
-Before using the advanced API, you need to create a TransferManager instance.
+Before using advanced APIs, you must create a TransferManager instance first.
 
 ```java
-// Create a TransferManager instance, which is used to call the advanced API later.
+// Create a TransferManager instance, which is used to call advanced APIs later.
 TransferManager createTransferManager() {
     // Create a COSClient client, which is the basic instance for accessing the COS service.
     // The COSClient instance created here is based on the information of the destination for copying.
-    // For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+    // For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
     COSClient cosClient = createCOSClient();
 
-    // Set the thread pool size. You are advised to the size of your thread pool to 16 or 32 to maximize network resource utilization, provided your client and COS networks are sufficient (for example, by using Tencent Cloud CVM and uploading to COS in the same region).
-    // We recommend using a smaller value to avoid timeout due to slow network speed if you are transferring data over a public network with poor bandwidth quality.
+    // Set the thread pool size. We recommend you set the size of your thread pool to 16 or 32 to maximize network resource utilization, provided your client and COS networks are sufficient (for example, uploading a file to a COS bucket from a CVM instance in the same region).
+    // We recommend you use a smaller value to avoid timeout caused by slow network speed if you are transferring data over a public network with poor bandwidth quality.
     ExecutorService threadPool = Executors.newFixedThreadPool(32);
 
-    // Pass a threadpool. Otherwise, a single-thread pool will be generated in TransferManager by default.
+    // Pass a `threadpool`; otherwise, a single-thread pool will be generated in `TransferManager` by default.
     TransferManager transferManager = new TransferManager(cosClient, threadPool);
 
     // Set the configuration items of the advanced API.
-    // Set the threshold and part size for multipart xopy to 5 MB and 1 MB respectively.
+    // Set the threshold and part size for multipart copy to 5 MB and 1 MB respectively.
     TransferManagerConfiguration transferManagerConfiguration = new TransferManagerConfiguration();
     transferManagerConfiguration.setMultipartCopyThreshold(5*1024*1024);
     transferManagerConfiguration.setMultipartCopyPartSize(1*1024*1024);
@@ -61,23 +61,23 @@ TransferManager createTransferManager() {
 
 ### Parameter description
 
-The `TransferManagerConfiguration` class is used to record the configuration of the advanced API. Its main members are described as follows:
+The `TransferManagerConfiguration` class is used to record the configuration information of advanced APIs. Its main members are as described below:
 
-| Member Name | Setting Method | Description | Type |
+| Member Name | Configuration Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| minimumUploadPartSize | Set method | Part size of the multipart upload in bytes. Default: 5 MB | long |
-| multipartUploadThreshold | Set method | If a file is greater than or equal to this value, it will be uploaded in concurrent parts. Unit: byte; default: 5 MB | long |
-| multipartCopyThreshold | Set method | If a file is greater than or equal to this value, it will be replicated in concurrent parts. Unit: byte; default: 5 GB | long |
-| multipartCopyPartSize | Set method | Part size in bytes for multipart replication. Default: 100 MB | long |
+| minimumUploadPartSize | Set method | Part size of the multipart upload in bytes. Default value: 5 MB. | long |
+| multipartUploadThreshold | Set method | If a file is greater than or equal to this value in bytes, it will be uploaded in concurrent parts. Default value: 5 MB. | long |
+| multipartCopyThreshold | Set method | If a file is greater than or equal to this value in bytes, it will be copied in concurrent parts. Default value: 5 GB. | long |
+| multipartCopyPartSize | Set method | Part size in bytes for multipart copy. Default value: 100 MB. | long |
 
-### Closing a TransferManager instance
+### Shutting down TransferManager instance
 
-After confirming that the process does not use the TransferManager instance to call the advanced API anymore, be sure to close it to avoid leaking resources.
+After confirming that the process no longer uses the TransferManager instance to call advanced APIs, be sure to shut it down to avoid resource leakage.
 
 ```java
 void shutdownTransferManager(TransferManager transferManager) {
-    // If the parameter is set to `true`, the COSClient instance in the TransferManager instance will also be closed at the same time.
-    // If the parameter is set to `false`, the COSClient instance in the TransferManager instance will not be closed.
+    // If the parameter is set to `true`, the COSClient instance in the TransferManager instance will also be shut down at the same time.
+    // If the parameter is set to `false`, the COSClient instance in the TransferManager instance will not be shut down.
     transferManager.shutdownNow(true);
 }
 ```
@@ -89,34 +89,34 @@ Intra-region replication is possible only when the source and destination object
 #### Method prototype
 
 ```java
-// Upload an object
+// Upload an object.
 public Copy copy(final CopyObjectRequest copyObjectRequest);
 ```
 
 #### Sample request
 
 ```java
-// Before using the advanced API, ensure that the process contains a TransferManager instance. If such an instance does not exist, create one.
-// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on the current page.
+// Before using advanced APIs, you must make sure that the process contains a TransferManager instance; if not, then create one.
+// For the detailed code, see **Advanced APIs** > **Creating TransferManager instance** on this page.
 TransferManager transferManager = createTransferManager();
-// Source bucket region
+// Source bucket region.
 Region srcBucketRegion = new Region("ap-beijing");
-// Source bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the source bucket name in the format of `BucketName-APPID`.
 String srcBucketName = "srcbucket-1250000000";
-// Source file path
+// Source file path.
 String srcKey = "path/srckey";
 
-// Destination bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 String destBucketName = "destbucket-1250000000";
-// Destination file path
+// Destination file path.
 String destKey = "path/destkey";
 
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, srcBucketName,
         srcKey, destBucketName, destKey);
 try {
     Copy copy = transferManager.copy(copyObjectRequest);
-    // The advanced API returns an asynchronous result `copy`.
-    // You can synchronously call waitForCopyResult to wait for the replication to end. If the replication is successful, `CopyResult` is returned; otherwise, an exception will be thrown.
+    // The advanced API returns an asynchronous result `Copy`.
+    // You can synchronously call `waitForCopyResult` to wait for the copy to complete. If the copy is successful, `CopyResult` is returned; otherwise, an exception will be thrown.
     CopyResult copyResult = copy.waitForCopyResult();
     System.out.println(copyResult.getRequestId());
 } catch (CosServiceException e) {
@@ -127,8 +127,8 @@ try {
     e.printStackTrace();
 }
 
-// After confirming that the process does not use the TransferManager instance anymore, close it.
-// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
+// After confirming that the process no longer uses the TransferManager instance, shut it down.
+// For the detailed code, see **Advanced APIs** > **Shutting down TransferManager instance** on this page.
 shutdownTransferManager(transferManager);
 ```
 
@@ -138,26 +138,26 @@ shutdownTransferManager(transferManager);
 | ----------------- | ------------ | ----------------- |
 | copyObjectRequest | Object copy request | CopyObjectRequest |
 
-The request members are described as follows:
+The request members are as described below:
 
 | Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------ |
-| sourceBucketRegion | Region of the source bucket. Default value: the value of "region" in `clientconfig`, meaning intra-region replication | String |
+| sourceBucketRegion | Region of the source bucket. Default value: The value of `region` in `clientconfig`, indicating intra-region replication. | String |
 | sourceBucketName  | Source bucket name in the format of `BucketName-APPID` | String |
-| sourceKey | Source object key. The object key is the unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
-| sourceVersionId | Version ID of the source file (for source buckets with versioning enabled). Default: The latest version of the source file. | String |
-| destinationBucketName  | Destination bucket name in the format of `BucketName-APPID` | String |
-| destinationKey | Destination object key. The object key is the unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
-| storageClass | Storage class for the destination file. For the enumerated values, such as `Standard` (default) and `Standard_IA`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
+| sourceKey        | Unique identifier of the source object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, its key is `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| sourceVersionId | Version number of the source file (for source buckets with versioning enabled). Default value: The latest version of the source file. | String |
+| destinationBucketName  | Destination bucket name in the format of `BucketName-APPID`. | String |
+| destinationKey        | Unique identifier of the destination object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, its key is `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| storageClass | Storage class of the destination file, such as `STANDARD` (default) and `STANDARD_IA`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 
 #### Returned values
 
-- Success: returns Copy. You can query whether the copy is completed, or wait until the copy finishes synchronously.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `Copy` is returned. You can query whether the copy is complete, or wait for the copy to complete.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Cross-region replication
 
-This API applies to scenarios where the source and destination objects for replication belong to different regions, for example, when you need to replicate an object from the Beijing bucket to the Shanghai bucket.
+Cross-region replication is possible only when the source and destination objects belong to different regions, for example, when you want to copy an object from the Beijing bucket to the Shanghai bucket.
 
 >? Cross-region replication is not supported between Finance Cloud regions and Public Cloud regions because these regions are not interconnected.
 >
@@ -165,38 +165,40 @@ This API applies to scenarios where the source and destination objects for repli
 #### Method prototype
 
 ```java
-// Upload an object
+// Upload an object.
 public Copy copy(final CopyObjectRequest copyObjectRequest);
 ```
 
 #### Sample request
 
 ```java
-// Before using the advanced API, ensure that the process contains a TransferManager instance. If such an instance does not exist, create one.
-// For the detailed code, see "Advanced APIs -> Creating a TransferManager instance" on the current page.
+// The COSClient instance created here is based on the information of the destination for copying.
+// Before using advanced APIs, you must make sure that the process contains a TransferManager instance; if not, then create one.
+// For the detailed code, see **Advanced APIs** > **Creating TransferManager instance** on this page.
 TransferManager transferManager = createTransferManager();
-// Source bucket region
+// Source bucket region.
 Region srcBucketRegion = new Region("ap-beijing");
-// Source bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the source bucket name in the format of `BucketName-APPID`.
 String srcBucketName = "srcbucket-1250000000";
-// Source file path
+// Source file path.
 String srcKey = "path/srckey";
 
-// Destination bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Note: The region of the destination bucket is set through the `createTransferManager() -> createCOSClient() -> clientConfig.setRegion(dstRegion)` function when TransferManager/COSClient is created.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 String destBucketName = "destbucket-1250000000";
-// Destination file path
+// Destination file path.
 String destKey = "path/destkey";
 
-// The COSClient instance created here is based on the information of the replication source.
-// For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+// The COSClient instance created here is based on the information of the source for copying.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
 COSClient srcCOSClient = createCOSClient();
 
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, srcBucketName,
         srcKey, destBucketName, destKey);
 try {
     Copy copy = transferManager.copy(copyObjectRequest, srcCOSClient, null);
-    // The advanced API returns an asynchronous result `copy`.
-    // You can synchronously call waitForCopyResult to wait for the replication to end. If the replication is successful, `CopyResult` is returned; otherwise, an exception will be thrown.
+    // The advanced API returns an asynchronous result `Copy`.
+    // You can synchronously call `waitForCopyResult` to wait for the copy to complete. If the copy is successful, `CopyResult` is returned; otherwise, an exception will be thrown.
     CopyResult copyResult = copy.waitForCopyResult();
 } catch (CosServiceException e) {
     e.printStackTrace();
@@ -206,9 +208,9 @@ try {
     e.printStackTrace();
 }
 
-// After confirming that the process does not use the TransferManager instance anymore, close it.
-// For the detailed code, see "Advanced APIs -> Closing a TransferManager instance" on the current page.
-shutdownTransferManager(transferManager);;
+// After confirming that the process no longer uses the TransferManager instance, shut it down.
+// For the detailed code, see **Advanced APIs** > **Shutting down TransferManager instance** on this page.
+shutdownTransferManager(transferManager);
 ```
 
 #### Parameter description
@@ -217,71 +219,71 @@ shutdownTransferManager(transferManager);;
 | ----------------- | ------------ | ----------------- |
 | copyObjectRequest | Object copy request | CopyObjectRequest |
 
-The request members are described as follows:
+The request members are as described below:
 
 | Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------ |
-| sourceBucketRegion | Region of the source bucket. Default value: the value of "region" in `clientconfig`, meaning intra-region replication | String |
+| sourceBucketRegion | Region of the source bucket. Default value: The value of `region` in `clientconfig`, indicating intra-region replication. | String |
 | sourceBucketName  | Source bucket name in the format of `BucketName-APPID` | String |
-| sourceKey | Source object key. The object key is the unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
-| sourceVersionId | Version ID of the source file (for source buckets with versioning enabled). Default: The latest version of the source file. | String |
-| destinationBucketName  | Destination bucket name in the format of `BucketName-APPID` | String |
-| destinationKey | Destination object key. The object key is the unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
-| storageClass | Storage class for the destination file. For the enumerated values, such as `Standard` (default) and `Standard_IA`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
+| sourceKey        | Unique identifier of the source object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, its key is `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| sourceVersionId | Version number of the source file (for source buckets with versioning enabled). Default value: The latest version of the source file. | String |
+| destinationBucketName  | Destination bucket name in the format of `BucketName-APPID`. | String |
+| destinationKey        | Unique identifier of the destination object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, its key is `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| storageClass | Storage class of the destination file, such as `STANDARD` (default) and `STANDARD_IA`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 
 #### Returned values
 
-- Success: returns Copy. You can query whether the copy is completed, or wait until the copy finishes synchronously.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `Copy` is returned. You can query whether the copy is complete, or wait for the copy to complete.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-### Moving an object
+### Moving object
 
 Object movement involves two steps: copying the source object to the destination location and then deleting the source object.
 
-Since COS uses the bucket name (`Bucket`) and object key (`ObjectKey`) to identify objects, moving an object will change the object identifier. Currently, COS’s Java SDK does not provide a standalone API to change object identifiers. However, you can still move the object with a combination of basic operations (**object copy** and **object delete**).
+As COS uses the bucket name (`Bucket`) and object key (`ObjectKey`) to identify objects, moving an object will change the object identifier. Currently, COS's Java SDK does not provide a standalone API to change object identifiers. However, you can still move an object through a combination of basic operations (**object copy** and **object delete**).
 
-For example, if you want to move the `picture.jpg` object to the “doc” directory that is in the same bucket (`mybucket-1250000000`), you can copy the `picture.jpg` to the “doc” directory (making the object key `doc/picture.jpg`) and then delete the source object.
+For example, if you want to move the `picture.jpg` object to the `doc` directory that is in the same bucket (`mybucket-1250000000`), you can copy the `picture.jpg` object to the `doc` directory first (making the object key `doc/picture.jpg`) and then delete the source object.
 
-Likewise, if you need to move `picture.jpg` in the `mybucket-1250000000` bucket to another bucket `myanothorbucket-1250000000`, you can copy the object to the `myanothorbucket-1250000000` bucket first and then delete the source object.
+Similarly, if you want to move the `picture.jpg` object in the `mybucket-1250000000` bucket to another bucket `myanothorbucket-1250000000`, you can copy the object to the `myanothorbucket-1250000000` bucket first and then delete the source object.
 
 #### Sample request
 
 ```java
-// Source bucket region
+// Source bucket region.
 Region srcBucketRegion = new Region("ap-beijing");
-// Source bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the source bucket name in the format of `BucketName-APPID`.
 String srcBucketName = "srcbucket-1250000000";
-// Source file path
+// Source file path.
 String srcKey = "path/srckey";
 
-// Destination bucket region
+// Destination bucket region.
 Region destBucketRegion = new Region("ap-shanghai");
-// Destination bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 String destBucketName = "destbucket-1250000000";
-// Destination file path
+// Destination file path.
 String destKey = "path/destkey";
 
-// For the implementation details, see "Advanced APIs -> Copying objects" on the current page.
+// For the implementation details, see **Advanced APIs** > **Copying object** on this page.
 copyObject();
-// For the implementation details, see "Deleting objects".
+// For the implementation details, see **Deleting object**.
 deleteObject();
 ```
 
 ## Simple Operations
 
-Requests for simple operations need to be initiated through COSClient instances. You need to create a COSClient instance before performing simple operations.
+Requests for simple operations need to be initiated through `COSClient` instances. You need to create a `COSClient` instance before performing simple operations.
 
-COSClient instances are concurrency safe. You are advised to create only one COSClient instance for a process and then close it when it is no longer used to initiate requests.
+`COSClient` instances are concurrency safe. We recommend you create only one COSClient instance for a process and then shut it down when it is no longer used to initiate requests.
 
-### Creating a COSClient instance
+### Creating COSClient instance
 
-Before calling the COS API, you need to create a COSClient instance.
+Before calling the COS API, you must create a COSClient instance first.
 
 ```java
 // Create a COSClient instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Set the user identity information.
-    // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SecretId` and `SecretKey` of your project.
+    // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SECRETID` and `SECRETKEY` of your project.
     String secretId = "SECRETID";
     String secretKey = "SECRETKEY";
     COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
@@ -290,15 +292,15 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
-    // Set the request protocol, `http` or `https`.
+    // Set the request protocol to `http` or `https`.
     // For 5.6.53 and earlier versions, HTTPS is recommended.
     // Starting from 5.6.54, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
-    // The following settings are optional.
+    // The following settings are optional:
 
     // Set the read timeout period, which is 30s by default.
     clientConfig.setSocketTimeout(30*1000);
@@ -314,17 +316,17 @@ COSClient createCOSClient() {
 }
 ```
 
-### Creating a COSClient client with a temporary key
+### Creating COSClient instance with temporary key
 
 If you want to request COS with a temporary key, you need to create a COSClient instance with the temporary key.
-This SDK does not generate temporary keys. For how to generate a temporary key, please see [Generating a Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048#cos-sts-sdk).
+This SDK does not generate temporary keys. For how to generate a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ```java
 
 // Create a COSClient instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Here, the temporary key information is needed.
-    // For how to generate temporary keys, please visit https://intl.cloud.tencent.com/document/product/436/14048.
+    // For directions on how to generate a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
     String tmpSecretId = "TMPSECRETID";
     String tmpSecretKey = "TMPSECRETKEY";
     String sessionToken = "SESSIONTOKEN";
@@ -335,15 +337,15 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
-    // Set the request protocol, `http` or `https`.
+    // Set the request protocol to `http` or `https`.
     // For 5.6.53 and earlier versions, HTTPS is recommended.
     // Starting from 5.6.54, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
-    // The following settings are optional.
+    // The following settings are optional:
 
     // Set the read timeout period, which is 30s by default.
     clientConfig.setSocketTimeout(30*1000);
@@ -359,11 +361,11 @@ COSClient createCOSClient() {
 }
 ```
 
-### Copying objects
+### Copying object
 
 This API (`PUT Object-Copy`) is used to copy an object to a destination path.
 
->? It is recommended to use the advanced API for copying directly.
+>? We recommend you use the advanced API for copying directly.
 >
 
 #### Method prototype
@@ -376,29 +378,29 @@ public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
 #### Sample request
 
 ```java
-// Source bucket region
+// Source bucket region.
 Region srcBucketRegion = new Region("ap-beijing");
-// Source bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the source bucket name in the format of `BucketName-APPID`.
 String srcBucketName = "srcbucket-1250000000";
-// Source file path
+// Source file path.
 String srcKey = "path/srckey";
 
-// Destination bucket region
+// Destination bucket region.
 Region destBucketRegion = new Region("ap-beijing");
-// Destination bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 String destBucketName = "destbucket-1250000000";
-// Destination file path
+// Destination file path.
 String destKey = "path/destkey";
 
-// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
 // The COSClient instance created here is based on the information of the destination for copying.
-// For the detailed code, see "Simple Upload -> Creating a COSClient instance" on the current page.
+// For the detailed code, see **Upload in Whole** > **Creating COSClient instance** on this page.
 COSClient cosClient = createCOSClient();
 
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketRegion, srcBucketName,
         srcKey, destBucketName, destKey);
 try {
-    CopyObjectResult copyObjectResult = cosclient.copyObject(copyObjectRequest);
+    CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
     System.out.println(copyObjectResult.getRequestId());
 } catch (CosServiceException e) {
     e.printStackTrace();
@@ -406,8 +408,8 @@ try {
     e.printStackTrace();
 }
 
-// After confirming that the process does not use the COSClient instance anymore, close it.
-cosclient.shutdown();
+// After confirming that the process no longer uses the COSClient instance, shut it down.
+cosClient.shutdown();
 ```
 
 #### Parameter description
@@ -416,53 +418,53 @@ cosclient.shutdown();
 | ----------------- | ------------ | ----------------- |
 | copyObjectRequest | File copy request | CopyObjectRequest |
 
-The request members are described as follows:
+The request members are as described below:
 
 | Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------ |
-| sourceBucketRegion | Region of the source bucket. Default: same as the `region` value in the current clientConfig, which represents intra-region replication | String |
-| sourceBucketName | Source bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| sourceKey | Source object key. An object key is the unique identifier of an object in a bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
-| sourceVersionId | Version ID of the source file (for source buckets with versioning enabled). Default: The latest version of the source file. | String |
-| destinationBucketName | Destination bucket name in the format of `BucketName-APPID`. It should contain letters, numbers, and hyphens. | String |
-| destinationKey | Destination object key. An object key is the unique identifier of an object in a bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
-| storageClass | Storage class for the destination file. For the enumerated values, such as `Standard` (default) and `Standard_IA`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
+| sourceBucketRegion | Region of the source bucket. Default value: The value of `region` in `clientConfig`, indicating intra-region replication. | String |
+| sourceBucketName | Source bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| sourceKey        | Unique identifier of the source object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, its key is `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| sourceVersionId | Version number of the source file (for source buckets with versioning enabled). Default value: The latest version of the source file. | String |
+| destinationBucketName | Destination bucket name in the format of `BucketName-APPID`, which can contain letters, numbers, and hyphens. | String |
+| destinationKey        | Unique identifier of the destination object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, its key is `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| storageClass | Storage class of the destination file, such as `STANDARD` (default) and `STANDARD_IA`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 
 #### Response description
 
-- Success: returns `CopyObjectResult`, including the ETag and other information on the new file.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `CopyObjectResult` is returned, which contains the `Etag` and other information of the new file.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-## Multipart Operations
+## Multipart Upload Operations
 
-When a large file is copied, the file is copied as a series of parts to address the possible interruptions caused by the long upload time of the large file.
+When a large file is copied, the file is copied in a series of parts to eliminate the possible interruptions caused by the long upload time of the large file.
 
->? It is recommended to use the advanced API for copying directly.
+>? We recommend you use the advanced API for copying directly.
 >
 
-### Operation procedures
+### Directions
 
-#### Performing a multipart copy
+#### Performing multipart copy
 
-1. Initialize parts with `Initiate Multipart Upload` and get the `UploadId`.
+1. Initialize the multipart copy with `Initiate Multipart Upload` to get the `UploadId`.
 2. Use the `UploadId` to copy the parts with `Upload Part`.
 3. Complete the multipart copy with `Complete Multipart Upload`.
 
-#### Resuming a multipart copy
+#### Resuming multipart copy
 
-1. If you did not record the `UploadId` of the multipart copy, you can query the multipart copy job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
+1. If you did not record the `UploadId` of the multipart copy, you can query the multipart copy job with `List Multipart Uploads` to get the `UploadId` of the file.
 2. Use the `UploadId` to list the copied parts with `List Parts`.
 3. Use the `UploadId` to copy the remaining parts with `Upload Part`.
 4. Complete the multipart copy with `Complete Multipart Upload`.
 
-#### Multipart copy abortion process
+#### Aborting multipart copy
 
 1. If you did not record the `UploadId` of the multipart copy, you can query the multipart copy job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Abort the multipart copy and delete the copied parts with `Abort Multipart Upload`.
 
-### Initializing a multipart copy
+### Initializing multipart copy
 
-This API is used to initialize a multipart copy and get the corresponding `UploadId` for future operations.
+This API is used to initialize a multipart copy and get the `UploadId` for subsequent operations.
 
 #### Method prototype
 
@@ -474,25 +476,25 @@ public InitiateMultipartUploadResult initiateMultipartUpload(
 #### Sample request
 
 ```java
-// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
 // The COSClient instance created here is based on the information of the destination for copying.
-// For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, which is the unique identifier of the object in the bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
 
 InitiateMultipartUploadRequest request = new InitiateMultipartUploadRequest(bucketName, key);
 
 // During multipart copy, you can specify the metadata of a copied file only by initializing the multipart copy.
-// Specify desired headers.
+// Specify the desired headers.
 ObjectMetadata objectMetadata = new ObjectMetadata();
 request.setObjectMetadata(objectMetadata);
 
 try {
     InitiateMultipartUploadResult initResult = cosClient.initiateMultipartUpload(request);
-    // Get `UploadId`.
+    // Get `uploadid`.
     String uploadId = initResult.getUploadId();
     System.out.println(uploadId);
 } catch (CosServiceException e) {
@@ -508,21 +510,21 @@ try {
 | ------------------------------ | ---- | ------------------------------ |
 | initiateMultipartUploadRequest | Request | InitiateMultipartUploadRequest |
 
-The request members are described as follows:
+The request members are as described below:
 
-| Parameter | Setting Method | Description | Type |
+| Parameter | Configuration Method | Description | Type |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| key | Constructor or set method | Path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, such as  `folder/picture.jpg`. | String |
 
 #### Response description
 
-- Success: returns `InitiateMultipartUploadResult`, including the `uploadId` that identifies the multipart upload.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `InitiateMultipartUploadResult` is returned, which contains the `uploadId` that identifies the multipart upload.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-### Querying multipart copies
+### Querying multipart copy
 
-This API (`List Multipart Uploads`) is used to get all ongoing multipart copy tasks to obtain the `UploadId` of a desired multipart copy task.
+This API (`List Multipart Uploads`) is used to get all multipart copy jobs in progress and get the `uploadId` of a desired multipart copy job.
 
 #### Method prototype
 
@@ -535,20 +537,20 @@ public MultipartUploadListing listMultipartUploads(
 #### Sample request
 
 ```java
-// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
 // The COSClient instance created here is based on the information of the destination for copying.
-// For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 
-// Key of the multipart copy tasks to be queried
+// Key of the multipart copy jobs to be queried.
 String targetKey = "targetKey";
 
 ListMultipartUploadsRequest listMultipartUploadsRequest = new ListMultipartUploadsRequest(bucketName);
-// Maximum number of multipart upload tasks listed per request
+// Maximum number of multipart upload jobs that can be listed per request.
 listMultipartUploadsRequest.setMaxUploads(100);
-// Set the target prefix (key) of the multipart copy tasks to be queried.
+// Set the target prefix (key) of the multipart copy jobs to be queried.
 listMultipartUploadsRequest.setPrefix("targetKey");
 
 MultipartUploadListing multipartUploadListing = null;
@@ -556,7 +558,7 @@ MultipartUploadListing multipartUploadListing = null;
 boolean found = false;
 
 do {
-    multipartUploadListing = cosclient.listMultipartUploads(listMultipartUploadsRequest);
+    multipartUploadListing = cosClient.listMultipartUploads(listMultipartUploadsRequest);
     List<MultipartUpload> multipartUploads = multipartUploadListing.getMultipartUploads();
 
     for (MultipartUpload mUpload : multipartUploads) {
@@ -584,24 +586,24 @@ if (!found) {
 | --------------------------- | ---- | --------------------------- |
 | listMultipartUploadsRequest | Request | ListMultipartUploadsRequest |
 
-The request members are described as follows:
+The request members are as described below:
 
 | Parameter | Description | Type |
 | -------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| keyMarker | Specifies the key after which the listing should begin | String |
-| delimiter | A symbol used to limit the results of a list operation. If a particular prefix is specified, identical paths between the prefix and the delimiter will be grouped together and defined as a common prefix, and then all common prefixes will be listed. If no prefix is specified, the listing will start from the beginning of the path. | String |
-| prefix | Specifies that the returned object key must be prefixed with this value. Note that when you use a prefix to query object keys, the returned key will contain the same prefix. | String |
-| uploadIdMarker | Specifies the `uploadId` after which the listing should begin | String |
-| maxUploads | Sets the maximum number of multipart uploads returned. Valid values: 1-1000 | String |
-| encodingType | Encoding type of returned values. Valid value: `url` | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| keyMarker | Specifies the key where the list starts | String |
+| delimiter | A symbol used to limit the results of a listing operation. If a prefix is specified, identical paths between the prefix and the delimiter will be grouped together and defined as a common prefix, and then all common prefixes will be listed. If no prefix is specified, the listing will start from the beginning of the path. | String |
+| prefix | Specifies that returned object keys must be prefixed with the value of this parameter. Note that if you use this parameter, returned keys will contain the prefix. | String |
+| uploadIdMarker | Specifies the `uploadId` where the list starts | String |
+| maxUploads | Sets the maximum number of multipart uploads that can be returned at a time. Value range: 1–1000. | String |
+| encodingType | Encoding type of the returned value. Valid value: url. | String |
 
 #### Response description
 
-- Success: returns `MultipartUploadListing`, including the in-progress multipart uploads.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `MultipartUploadListing` is returned, which contains the information of the multipart uploads in progress.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-### Copying an object part
+### Copying object part
 
 This API (`Upload Part - Copy`) is used to copy an object by parts.
 
@@ -614,29 +616,29 @@ public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws CosClient
 #### Sample request
 
 ```java
-// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
 // The COSClient instance created here is based on the information of the destination for copying.
-// For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, which is the unique identifier of the object in the bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
-// `UploadId` is the unique identifier of a multipart copy task. You can obtain it by initializing the multipart copy or querying the multipart copy task.
+// `uploadId` is the unique identifier of a multipart copy job. It can be obtained by initializing the multipart copy or querying the multipart copy job.
 String uploadId = "exampleuploadid";
 
-// Source bucket region
+// Source bucket region.
 Region srcBucketRegion = new Region("ap-beijing");
-// Source bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the source bucket name in the format of `BucketName-APPID`.
 String srcBucketName = "srcbucket-1250000000";
-// Source file path
+// Source file path.
 String srcKey = "path/srckey";
 
-// Destination bucket region
+// Destination bucket region.
 Region destBucketRegion = new Region("ap-beijing");
-// Destination bucket. Enter the bucket name in the format of `BucketName-APPID`.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 String destBucketName = "destbucket-1250000000";
-// Destination file path
+// Destination file path.
 String destKey = "path/destkey";
 
 CopyPartRequest copyPartRequest = new CopyPartRequest();
@@ -644,7 +646,7 @@ copyPartRequest.setSourceBucketRegion(srcBucketRegion);
 copyPartRequest.setSourceBucketName(srcBucketName);
 copyPartRequest.setSourceKey(srcKey);
 
-// Specify the range of data of the source file to be copied (similar to `content-range`).
+// Specify the scope of data in the source file to be copied (similar to `content-range`).
 copyPartRequest.setFirstByte(0L);
 copyPartRequest.setLastByte(1048575L);
 
@@ -656,7 +658,7 @@ copyPartRequest.setPartNumber(1);
 copyPartRequest.setUploadId(uploadId);
 
 try {
-    CopyPartResult copyPartResult = cosclient.copyPart(copyPartRequest);
+    CopyPartResult copyPartResult = cosClient.copyPart(copyPartRequest);
     PartETag partETag = copyPartResult.getPartETag();
     System.out.println(partETag);
 } catch (CosServiceException e) {
@@ -672,24 +674,24 @@ try {
 | --------------- | ---- | --------------- |
 | copyPartRequest | Request | CopyPartRequest |
 
-The request members are described as follows:
+The request members are as described below:
 
-| Parameter | Set Method | Description | Type |
+| Parameter | Configuration Method | Description | Type |
 | --------------------- | -------- | ------------------------------------------------------------ | ------ |
-| destinationBucketName | Set method | Destination bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| destinationKey | Set method | Name of the destination object (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to store the replicated part, for example, `folder/picture.jpg` | String |
-| uploadId | Set method | Identifies the `uploadId` of the specified multipart upload | String |
-| partNumber | Set method | Number (>= 1) that identifies the specified part | int |
+| destinationBucketName | Set method | Destination bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| destinationKey | Set method | Name of the destination object (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to store the replicated part, such as `folder/picture.jpg`. | String |
+| uploadId | Set method | ID that identifies the specified multipart upload | String |
+| partNumber | Set method | Number (≥1) that identifies the specified part | int |
 | sourceBucketRegion | Set method | Region of the source bucket | Region |
 | sourceBucketName | Set method | Source bucket name | String |
-| sourceKey | Set method | Name/Path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) of the source object before the replication, for example, `folder/picture.jpg` | String |
+| sourceKey | Set method | Name/Path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) of the source object before the replication, such as `folder/picture.jpg`. | String |
 | firstByte | Set method | First byte offset of the source object | Long |
 | lastByte | Set method | Last byte offset of the source object | Long |
 
 #### Response description
 
-- Success: returns `CopyPartResult`, including the ETag of the part.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `CopyPartResult` is returned, which contains the `ETag` of the part.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Querying copied parts
 
@@ -705,15 +707,15 @@ public PartListing listParts(ListPartsRequest request)
 #### Sample request
 
 ```java
-// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
 // The COSClient instance created here is based on the information of the destination for copying.
-// For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, which is the unique identifier of the object in the bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
-// `UploadId` is the unique identifier of a multipart copy task. You can obtain it by initializing the multipart copy or querying the multipart copy task.
+// `uploadId` is the unique identifier of a multipart copy job. It can be obtained by initializing the multipart copy or querying the multipart copy job.
 String uploadId = "exampleuploadid";
 
 // It is used to store the information of the copied parts.
@@ -740,25 +742,25 @@ do {
 
 #### Parameter description
 
-| Parameter  | Set Method | Description | Type |
+| Parameter  | Configuration Method | Description | Type |
 | ---------------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 | key | Constructor or set method | Object name | String |
 | uploadId | Constructor or set method | `uploadId` of the multipart upload to be queried | String |
-| maxParts | Set method | Maximum number of entries returned at a time. Default value: `1000` | String |
-| partNumberMarker | Set method | By default, entries are listed in UTF-8 binary order, starting from the part number after the marker. | String |
-| encodingType | Set method | Encoding type of the returned value | String |
+| maxParts | Set method | Maximum number of entries that can be returned at a time. Default value: 1000. | String |
+| partNumberMarker | Set method | The marker after which the returned list begins. By default, entries are listed in UTF-8 binary order. | String |
+| encodingType | Set method | Encoding type of the returned value. | String |
 
 #### Response description
 
-- Success: returns `PartListing`, including the ETag and number of each part as well as the starting marker of the next list.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `PartListing` is returned, which contains the `ETag` and number of each part as well as the starting marker of the next list.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-### Completing a multipart copy
+### Completing multipart copy
 
-This API (`Complete Multipart Upload`) is used to complete the multipart copy of a file.
+This API (`Complete Multipart Upload`) is used to complete a multipart copy.
 
->? After the multipart copy is completed, the multipart copy task is deleted and the `UploadId` corresponding to the task is no longer valid.
+>? After the multipart copy is complete, the multipart copy job will be deleted, and the `UploadId` of the job will no longer be valid.
 >
 
 #### Method prototype
@@ -770,21 +772,21 @@ public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUp
 #### Sample request
 
 ```java
-// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
 // The COSClient instance created here is based on the information of the destination for copying.
-// For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, which is the unique identifier of the object in the bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
-// `UploadId` is the unique identifier of a multipart copy task. You can obtain it by initializing the multipart copy or querying the multipart copy task.
+// `uploadId` is the unique identifier of a multipart copy job. It can be obtained by initializing the multipart copy or querying the multipart copy job.
 String uploadId = "exampleuploadid";
 
-// It is used to store the information of the uploaded parts. In actual practice, the content here is obtained from the multipart upload API.
+// It is used to store the information of the uploaded parts and is obtained from the multipart upload API.
 List<PartETag> partETags = new LinkedList<>();
 
-// After the multipart upload is completed, call `complete` to complete the multipart copy.
+// Call `complete` to complete the multipart copy after the multipart upload is complete.
 CompleteMultipartUploadRequest completeMultipartUploadRequest =
         new CompleteMultipartUploadRequest(bucketName, key, uploadId, partETags);
 try {
@@ -797,29 +799,29 @@ try {
     throw e;
 }
 
-// After confirming that the COSClint is not used any more, close it.
+// After confirming that the COSClient instance is no longer used, shut it down.
 cosClient.shutdown();
 ```
 
 #### Parameter description
 
-| Parameter | Set Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Parameter | Configuration Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
-| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String            |
-| uploadId | Constructor or set method | Identifies a specified multipart upload. | String |
-| partETags  | Constructor or set method | Identifies the number and ETag returned for an uploaded part. | List&lt;PartETag&gt; |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| key | Constructor or set method | Path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, such as  `folder/picture.jpg`. | String |
+| uploadId | Constructor or set method | ID that identifies the specified multipart upload | String |
+| partETags  | Constructor or set method | Number that identifies the specified part and `eTag` returned for it | List&lt;PartETag&gt; |
 
 #### Response description
 
-- Success: returns `CompleteMultipartUploadResult`, including the ETag of the completed object.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: `CompleteMultipartUploadResult` is returned, which contains the `eTag` of the completed object.
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-### Aborting a multipart copy
+### Aborting multipart copy
 
 This API (`Abort Multipart Upload`) is used to abort a multipart copy and delete the copied parts.
 
->? After a multipart copy is aborted, both the multipart copy task and the copied parts are deleted, and the corresponding `UploadId` is no longer valid.
+>? After a multipart copy is aborted, both the multipart copy job and the copied parts will be deleted, and the `UploadId` will no longer be valid.
 >
 
 #### Method prototype
@@ -831,15 +833,15 @@ public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws Co
 #### Sample request
 
 ```java
-// Before using the COS API, ensure that the process contains a COSClient instance. If such an instance does not exist, create one.
+// Before using the COS API, you must make sure that the process contains a COSClient instance; if not, then create one.
 // The COSClient instance created here is based on the information of the destination for copying.
-// For the detailed code, see "Simple Operations -> Creating a COSClient instance" on the current page.
+// For the detailed code, see **Simple Operations** > **Creating COSClient instance** on this page.
 COSClient cosClient = createCOSClient();
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, which is the unique identifier of the object in the bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
-// `UploadId` is the unique identifier of a multipart copy task. You can obtain it by initializing the multipart copy or querying the multipart copy task.
+// `uploadId` is the unique identifier of a multipart copy job. It can be obtained by initializing the multipart copy or querying the multipart copy job.
 String uploadId = "exampleuploadid";
 
 AbortMultipartUploadRequest abortMultipartUploadRequest = new AbortMultipartUploadRequest(bucketName, key, uploadId);
@@ -851,19 +853,19 @@ try {
     e.printStackTrace();
 }
 
-// After confirming that the COSClint is not used any more, close it.
+// After confirming that the COSClient instance is no longer used, shut it down.
 cosClient.shutdown();
 ```
 
 #### Parameter description
 
-| Parameter | Setting Method | Description | Type |
+| Parameter | Configuration Method | Description | Type |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String |
-| uploadId | Constructor or set method | Identifies a specified multipart upload. | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| key | Constructor or set method | Path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, such as  `folder/picture.jpg`. | String |
+| uploadId | Constructor or set method | ID that identifies the specified multipart upload | String |
 
 #### Response description
 
 - Success: No value is returned.
-- Failure: An error occurs (such as authentication failure), throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).

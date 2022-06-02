@@ -103,7 +103,7 @@ After you enable advanced permission control for an SDKAppID, all users using th
 - To create an application, see [Creating Application](https://intl.cloud.tencent.com/document/product/647/39077).
 - To search for an application in the application list, see [Searching Application](https://intl.cloud.tencent.com/document/product/647/39078).
 - To view the basic information of an application, see [Application Info](https://intl.cloud.tencent.com/document/product/647/39079).
-- If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**. For details, see [Material Management](https://intl.cloud.tencent.com/document/product/647/39081).
+- If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**. 
 - To get the demo source code for a quick start, see [Quick Start](https://intl.cloud.tencent.com/document/product/647/39082).
 
 

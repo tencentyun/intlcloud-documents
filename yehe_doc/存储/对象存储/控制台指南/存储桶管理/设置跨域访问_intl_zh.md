@@ -2,7 +2,7 @@
 
 您可以通过对象存储（Cloud Object Storage，COS）控制台，对存储桶中的对象设置跨域访问。COS 提供了响应 OPTIONS 请求的配置，支持多条规则。跨域访问即通过 HTTP 请求，从一个域去请求另一个域的资源。只要协议、域名、端口有任何一个不相同，都会被当作是不同的域。
 
-对象存储服务针对跨域访问，支持响应 OPTIONS 请求 ，并根据开发者设定的规则向浏览器返回具体设置的规则。但服务端并不会校验随后发起的跨域请求是否符合规则。更多详细资料请参见 [关于 HTTP 访问控制的说明](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS) 和 [设置跨域访问](https://intl.cloud.tencent.com/document/product//436/11488) 最佳实践文档。
+对象存储服务针对跨域访问，支持响应 OPTIONS 请求 ，并根据开发者设定的规则向浏览器返回具体设置的规则。但服务端并不会校验随后发起的跨域请求是否符合规则。更多详细资料请参见 [关于 HTTP 访问控制的说明](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS) 和 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/11488) 最佳实践文档。
 
 ## 操作步骤
 
@@ -26,7 +26,7 @@
     - Header 容易遗漏，没有特殊需求的情况下，建议设置为`*`，表示允许所有。
     - 支持英文大小写[a-z,A-Z]，不允许带有下划线`_`。
     - 在 Access-Control-Request-Headers 中指定的每个 Header，都必须在 Allowed-Header 中有对应项。
- - **Expose-Headers**：Expose-Header 里返回的是 COS 的常用 Header，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product//436/7728)。具体的配置需要根据应用的需求确定，默认推荐填写 Etag。不允许使用通配符，大小写不敏感，支持多行且每行只能填写一个。
+ - **Expose-Headers**：Expose-Header 里返回的是 COS 的常用 Header，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728)。具体的配置需要根据应用的需求确定，默认推荐填写 Etag。不允许使用通配符，大小写不敏感，支持多行且每行只能填写一个。
  - **超时 Max-Age**：设置 OPTIONS 请求得到结果的有效期（秒）。数值必须为正整数，例如600。
 6. 设置完成后，单击**提交**即可。此时您可以看到跨域访问规则已添加完成。如需修改，可单击**修改**进行设置。
 ![](https://main.qcloudimg.com/raw/c4399193611b4f81e57a549634ea865a.png)

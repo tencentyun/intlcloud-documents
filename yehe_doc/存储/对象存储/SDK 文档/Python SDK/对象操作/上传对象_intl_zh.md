@@ -6,20 +6,20 @@
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [PUT Object](https://intl.cloud.tencent.com/document/product//436/7749) | 简单上传对象       | 上传一个对象至存储桶    |
-| [APPEND Object](https://intl.cloud.tencent.com/document/product//436/7741) | 追加上传对象 | 将对象以分块追加的方式上传至存储桶                      |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个对象至存储桶    |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 追加上传对象 | 将对象以分块追加的方式上传至存储桶                      |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product//436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product//436/7746) | 初始化分块上传 | 	初始化分块上传任务     |
-| [Upload Part](https://intl.cloud.tencent.com/document/product//436/7750) | 上传分块       | 分块上传文件                         |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product//436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://intl.cloud.tencent.com/document/product//436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product//436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product//436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 	初始化分块上传任务     |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 
 
 ## 高级接口（推荐）
@@ -122,29 +122,29 @@ response = client.upload_file(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
-|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 | 
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 |
 |  LocalFilePath  | 本地文件的路径名 |  String |  是 |
 |  PartSize  | 分块上传的分块大小，默认为1MB |  Int |  否 |
 |  MAXThread  | 分块上传的并发数量，默认为5个线程上传分块 |  Int |  否 |
 |progress_callback |  上传进度的回调函数，可以通过自定义此函数，来获取上传进度| Func| 否 |
-| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否| 
+| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否|
 | ACL |设置对象的 ACL，例如 private，public-read  |String| 否|
 | GrantFullControl |赋予被授权者所有的权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予被授权者读的权限，格式为 `id="OwnerUin"`  |String|否|
- |  StorageClass  |  设置对象的存储类型，例如 STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD，更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product//436/30925) | String |   否 |
- |  Expires  | 设置 Expires | String|  否 | 
- |  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
- |  ContentType  | 内容类型，设置 Content-Type |String |   否 |  
- |  ContentDisposition  |  文件名称，设置 Content-Disposition | String |   否 |
- |  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
- |  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
- |  ContentLength  | 设置传输长度 | String |   否 | 
- |  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 | 
- |  Metadata | 用户自定义的对象元数据 | Dict |   否 |
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
+|  StorageClass  |  设置对象的存储类型，例如 STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD，更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |   否 |
+|  Expires  | 设置 Expires | String|  否 |
+|  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
+|  ContentType  | 内容类型，设置 Content-Type |String |   否 |
+|  ContentDisposition  |  文件名称，设置 Content-Disposition | String |   否 |
+|  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
+|  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
+|  ContentLength  | 设置传输长度 | String |   否 |
+|  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 |
+|  Metadata | 用户自定义的对象元数据 | Dict |   否 |
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
 
 #### 返回结果说明
 上传对象的属性，类型为 dict：
@@ -155,7 +155,7 @@ response = client.upload_file(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 |  ETag   |  分块上传的对象，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性  | String  |
 
@@ -418,26 +418,26 @@ response = client.put_object(
 
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
- |  Body  | 上传对象的内容，可以为文件流或字节流 |  file/bytes |  是 |
- |  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 | 
-| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后将增加上传耗时|Bool | 否| 
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
+|  Body  | 上传对象的内容，可以为文件流或字节流 |  file/bytes |  是 |
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 |
+| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后将增加上传耗时|Bool | 否|
 | ACL |设置对象的 ACL，例如 'private'，'public-read' |String| 否|
 | GrantFullControl |赋予被授权者所有的权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予被授权者读的权限，格式为 `id="OwnerUin"`  |String|否|
- |  StorageClass  |  设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD。更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product//436/30925) | String |   否 |
- |  Expires  | 设置 Expires | String|  否 | 
- |  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
- |  ContentType  | 内容类型，设置 Content-Type |String |   否 |  
- |  ContentDisposition  |  对象名称，设置 Content-Disposition | String |   否 |
- |  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
- |  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
- |  ContentLength  | 设置传输长度 | String |   否 | 
- |  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 | 
- |  Metadata | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | Dict |  否 |
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
+|  StorageClass  |  设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD。更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |   否 |
+|  Expires  | 设置 Expires | String|  否 |
+|  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
+|  ContentType  | 内容类型，设置 Content-Type |String |   否 |
+|  ContentDisposition  |  对象名称，设置 Content-Disposition | String |   否 |
+|  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
+|  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
+|  ContentLength  | 设置传输长度 | String |   否 |
+|  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 |
+|  Metadata | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | Dict |  否 |
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
 
 #### 返回结果说明
 上传对象的属性，类型为 dict：
@@ -450,7 +450,7 @@ response = client.put_object(
 ```
 
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 |  ETag   |  上传对象的 MD5 值  | String  |
 |  x-cos-version-id   |  开启版本控制后，对象的版本号 | String  |
@@ -509,7 +509,7 @@ response = client.append_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg|String|是|
@@ -587,14 +587,14 @@ response = client.list_multipart_uploads(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 是|
-| Prefix   |  默认为空，对分块上传的 key 进行筛选，匹配 prefix 为前缀的分块上传  | String  |  否| 
+| Prefix   |  默认为空，对分块上传的 key 进行筛选，匹配 prefix 为前缀的分块上传  | String  |  否|
 | Delimiter   |   默认为空，设置分隔符| String|  否|
 | KeyMarker   |  和 UploadIdMarker 一起使用，指明列出分块上传的起始位置  | String  |  否|
 | UploadIdMarker   |  和 KeyMarker 一起使用，指明列出分块上传的起始位置。如果未指定 KeyMarker，UploadIdMarker 将被忽略| String  |  否|
-| MaxUploads   | 最多返回的分块上传的数量，默认为最大的1000  | Int  |  否| 
+| MaxUploads   | 最多返回的分块上传的数量，默认为最大的1000  | Int  |  否|
 | EncodingType   |   默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 
 #### 返回结果说明
@@ -637,9 +637,9 @@ response = client.list_multipart_uploads(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
-| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 
+| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | Prefix   |  默认为空，对分块上传的 key 进行筛选，匹配 prefix 为前缀的分块上传  | String  |
 | Delimiter   |   默认为空，设置分隔符| String|
 | KeyMarker   |  和 UploadIdMarker 一起使用，指明列出分块上传的 key 起始位置  | String  |
@@ -719,19 +719,19 @@ uploadid = response['UploadId']
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- | Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 |
- | Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
- | StorageClass  | 设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD。更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product//436/30925) | String |  否 | 
- | Expires  |  设置 Expires | String| 否 |
- | CacheControl  | 缓存策略，设置 Cache-Control | String |  否 | 
- | ContentType  | 内容类型，设置 Content-Type | String |  否 | 
- | ContentDisposition  | 文件名称，设置 Content-Disposition | String |  否 | 
- | ContentEncoding  | 编码格式，设置 Content-Encoding | String |  否 | 
- | ContentLanguage  | 语言类型，设置 Content-Language |  String |  否 |
- | Metadata |用户自定义的对象元数据 | Dict |  否 |
- | ACL |设置对象的 ACL，例如 'private'，'public-read' |String| 否|
+| Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 |
+| Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
+| StorageClass  | 设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD。更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |  否 |
+| Expires  |  设置 Expires | String| 否 |
+| CacheControl  | 缓存策略，设置 Cache-Control | String |  否 |
+| ContentType  | 内容类型，设置 Content-Type | String |  否 |
+| ContentDisposition  | 文件名称，设置 Content-Disposition | String |  否 |
+| ContentEncoding  | 编码格式，设置 Content-Encoding | String |  否 |
+| ContentLanguage  | 语言类型，设置 Content-Language |  String |  否 |
+| Metadata |用户自定义的对象元数据 | Dict |  否 |
+| ACL |设置对象的 ACL，例如 'private'，'public-read' |String| 否|
 | GrantFullControl |赋予被授权者所有的权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予被授权者读的权限，格式为 `id="OwnerUin"` |String|否|
 
@@ -748,7 +748,7 @@ uploadid = response['UploadId']
 
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 |UploadId | 标识分块上传的 ID|String|
 |Bucket|存储桶名称，由 BucketName-APPID 组成|String|
@@ -813,18 +813,18 @@ response = client.upload_part(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- | Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |  是|
- | Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是|
- | Body  | 上传分块的内容，可以为本地文件流或输入流 | file/bytes |  是|
- | PartNumber  |标识上传分块的序号 |  Int |  是|
- | UploadId  | 标识分块上传的 ID | String |  是|
- | EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否| 
- | ContentLength  |设置传输长度 |  String |  否|
- | ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |  否|
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
- 
+| Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |  是|
+| Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是|
+| Body  | 上传分块的内容，可以为本地文件流或输入流 | file/bytes |  是|
+| PartNumber  |标识上传分块的序号 |  Int |  是|
+| UploadId  | 标识分块上传的 ID | String |  是|
+| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否|
+| ContentLength  |设置传输长度 |  String |  否|
+| ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |  否|
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
+
 #### 返回结果说明
 
 上传分块的属性，类型为 dict：
@@ -835,8 +835,8 @@ response = client.upload_part(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | ETag |上传分块的 MD5 值。|String|
 
 ### 复制分块
@@ -907,7 +907,7 @@ response = client.upload_part_copy(
 
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String|  是 |
 |  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String| 是 |
@@ -931,11 +931,11 @@ response = client.upload_part_copy(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | ETag |拷贝分块的 MD5 值|String|
 | LastModified |拷贝分块的最后一次修改时间|String|
-| x-cos-copy-source-version-id | 源对象的版本号 | String | 
+| x-cos-copy-source-version-id | 源对象的版本号 | String |
 
 ### 查询已上传块
 
@@ -991,7 +991,7 @@ response = client.list_parts(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg |String| 是|
@@ -1034,20 +1034,20 @@ response = client.list_parts(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  |
-|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 
-|  UploadId  |  标识分块上传的 ID | String | 
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |
+|  UploadId  |  标识分块上传的 ID | String |
 | EncodingType   |   默认不编码，规定返回值的编码方式，可选值：url  | String  |
 | MaxParts   | 最多返回的分块的数量，默认为最大的1000  | String  |
 | IsTruncated   |  表示返回的分块是否被截断  | String|
 | PartNumberMarker   | 默认为0，从第一块列出分块，从 PartNumberMarker 下一个分块开始列出  | String  |
 | NextPartNumberMarker   |  指明下一次列出分块的起始位置  | String  |
- |  StorageClass  |  对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD，更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product//436/30925) | String |
+|  StorageClass  |  对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD，更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |
 |  Part |上传分块的相关信息，包括 ETag，PartNumber，Size，LastModified | String |
- |  Initiator  | 分块上传的创建者，包括 DisplayName 和 ID | Dict | 
- |  Owner  | 对象拥有者的信息，包括 DisplayName 和 ID | Dict | 
+|  Initiator  | 分块上传的创建者，包括 DisplayName 和 ID | Dict |
+|  Owner  | 对象拥有者的信息，包括 DisplayName 和 ID | Dict |
 
 
 
@@ -1106,12 +1106,12 @@ response = client.complete_multipart_upload(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |   是| 
-|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String  |   是| 
-|  UploadId  | 标识分块上传的 ID | String  |   是| 
-|  MultipartUpload  |所有分块的 ETag 和 PartNumber 信息 |  Dict |   是| 
+|  Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |   是|
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String  |   是|
+|  UploadId  | 标识分块上传的 ID | String  |   是|
+|  MultipartUpload  |所有分块的 ETag 和 PartNumber 信息 |  Dict |   是|
 
 #### 返回结果说明
 
@@ -1126,12 +1126,12 @@ response = client.complete_multipart_upload(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
- |  ETag  |	合并后对象的唯一标签值，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性。如需校验对象内容，可以在上传过程中校验单个分块的 ETag 值。|  String | 
- |  Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String | 
- |  Location  | URL 地址 |  String | 
- |  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
+|  ETag  |	合并后对象的唯一标签值，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性。如需校验对象内容，可以在上传过程中校验单个分块的 ETag 值。|  String |
+|  Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String |
+|  Location  | URL 地址 |  String |
+|  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |
 
 
 ### 终止分块上传
@@ -1176,7 +1176,7 @@ response = client.abort_multipart_upload(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg|String| 是|
