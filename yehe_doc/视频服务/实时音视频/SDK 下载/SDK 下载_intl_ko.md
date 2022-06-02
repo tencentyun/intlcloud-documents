@@ -204,15 +204,6 @@ TRTC는 Tencent Cloud에서 제공하는 저지연 고품질 오디오/비디오
 								<a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/43297">Demo 실행</a>
             </div>
         </div>
-				<div class="card-container">
-            <div class="card">
-                            <img src="https://qcloudimg.tencent-cloud.cn/raw/e9d18b164152f08bc0694c01e966daea.png" data-nonescope="true">
-                                <p class="titlename">uni-app SDK</p>
-                <p style="color:#586376;">uni-app 플러그 인으로 캡슐화된 TRTC SDK를 사용하면 실시간 멀티미디어 서비스를 빠르고 쉽게 통합할 수 있습니다.</p>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_UniApp">GitHub</a>
-								<a style="margin-left: 10px;" Demo 실행</a>
-            </div>
-        </div>
 </div>
 
 
