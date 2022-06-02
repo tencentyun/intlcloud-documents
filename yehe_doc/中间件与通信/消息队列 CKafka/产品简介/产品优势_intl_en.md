@@ -18,7 +18,7 @@ This document describes the strengths of CKafka compared to Apache Kafka.
 
 #### High availability
 
-- Leveraging Tencent's years of experience in monitoring technologies, CKafka offers comprehensive monitoring on clusters and has a professional OPS team in place that responds to alarms on a 24/7 basis to ensure high availability.
+- Leveraging Tencent's years of experience in monitoring technologies, CKafka offers comprehensive monitoring on clusters and has a professional Ops team in place that responds to alarms on a 24/7 basis to ensure high availability.
 - Custom multi-AZ deployments in the same region is supported to improve disaster recovery ability.
 
 #### High reliability
