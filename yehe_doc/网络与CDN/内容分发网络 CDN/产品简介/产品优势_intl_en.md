@@ -1,6 +1,6 @@
 ## Vast Resource Reserves
 
-Tencent Cloud CDN has strong resource reserves with over 2,800 cache nodes across more than 70 countries and regions, a total reserved bandwidth of over 160 Tbps, and over 100 million active connections, helping safeguard your business.
+Tencent Cloud CDN has strong resource reserves with over 2,800 cache nodes across more than 70 countries and regions, a total reserved bandwidth of over 160 Tbps .
 
 ### Nodes in mainland China
 
