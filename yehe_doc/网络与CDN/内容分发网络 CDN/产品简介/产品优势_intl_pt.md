@@ -19,7 +19,7 @@ O CDN tem mais de 2.000 nós de cache implantados em todas as províncias da Chi
 
 ### Nós fora da China continental
 
-O CDN vem trabalhando diligentemente na aceleração global desde 2017. Desde maio de 2021, o CDN conta com mais de 8,00 nós de cache em mais de 70 países e regiões com uma largura de banda total reservada de mais de 40 Tbps, ajudando sua empresa a se tornar global de forma fácil e rápida.
+O CDN vem trabalhando diligentemente na aceleração global desde 2017. Desde maio de 2021, o CDN conta com mais de 8,00 nós de cache em mais de 70 países e regiões com uma largura de banda total reservada de mais de 50 Tbps, ajudando sua empresa a se tornar global de forma fácil e rápida.
 ![image-20200210165753661](https://main.qcloudimg.com/raw/034a95d5f46fb8bf848c0a53dd265611.png)
 
 | Região | Distribuição |
