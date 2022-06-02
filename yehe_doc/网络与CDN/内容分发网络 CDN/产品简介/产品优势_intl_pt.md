@@ -1,6 +1,6 @@
 ## Amplas reservas de recursos
 
-O CDN da Tencent Cloud tem uma sólidas reservas de recursos com mais de 2.800 nós de cache em mais de 70 países e regiões, uma largura de banda total reservada de mais de 200 Tbps e mais de 100 milhões de conexões ativas, ajudando a proteger seus negócios.
+O CDN da Tencent Cloud tem uma sólidas reservas de recursos com mais de 2.800 nós de cache em mais de 70 países e regiões, uma largura de banda total reservada de mais de 160 Tbps e mais de 100 milhões de conexões ativas, ajudando a proteger seus negócios.
 
 ### Nós na China continental
 
