@@ -1,4 +1,4 @@
-A region is the physical location of an IDC. Availability zone (AZ) refers to the physical IDC of Tencent Cloud in the same region with independent power supplies and network resources. For more information, see [CVM - Regions and AZs](https://intl.cloud.tencent.com/document/product/213/6091).
+A region is the physical location of an IDC. Availability Zone (AZ) refers to the physical IDC of Tencent Cloud in the same region with independent power supplies and network resources. For more information, see [CVM - Regions and AZs](https://intl.cloud.tencent.com/document/product/213/6091).
 
 ## Supported Regions
 
@@ -103,12 +103,12 @@ A region is the physical location of an IDC. Availability zone (AZ) refers to th
 <td>ap-tokyo</td>
 </tr>
 <tr>
-<td>Western US</td>
+<td>West US</td>
 <td>Silicon Valley</td>
 <td>na-siliconvalley</td>
 </tr>
 <tr>
-<td>Eastern US</td>
+<td>East US</td>
 <td>Virginia</td>
 <td>na-ashburn</td>
 </tr>
