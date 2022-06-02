@@ -1,14 +1,14 @@
 ## Nickname and Profile Photo Update in Conversations
 **Conversations do not store nicknames and profile photos**. Therefore, the SDK needs to obtain them from user profiles or group profiles saved in the local storage and use them in conversations. For a one-to-one conversation, the SDK obtains and uses the other user's nickname and profile photo. For a group conversation, the SDK obtains and uses the group name and group profile photo. To keep local user profiles and group profiles up-to-date, the latest SDK version has the following optimizations:
 
-**Ono-to-one conversations:**
+**Ono-to-one chats:**
 - 1. When a user actively obtains a conversation or the SDK calls back a conversation update, if the SDK detects that the local storage does not have the other user's profile, it will synchronize the user's profile from the server and save it locally.
 - 2. If a friend's profile is changed, the SDK will receive a notification of the change from the backend and update the friend's profile locally. If a stranger's profile is changed, the backend will not send notifications, so the stranger's profile will not be updated locally. However, you can call the `getFriendsInfo` API to get strangers' profiles and update them locally.
 - 3. When sending a message, the backend will attach the user's latest nickname and profile photo to the message body. After receiving the message, the SDK will update the nickname and profile photo locally if the user's profile already exists in the local storage.
 
 In summary, the SDK will ensure that the nicknames and profile photos in conversations with friends are up-to-date. While with strangers, the SDK cannot guarantee that and you need to actively pull the nicknames and profile photos if needed.
 
-**Group conversations:**
+**Group chats:**
 - 1. After you join a group successfully, the SDK will actively obtain the group profile and save it locally.
 - 2. When the profile of a group that you have joined is modified, the backend will notify the client, which will then update the group profile locally in time.
 
@@ -35,7 +35,7 @@ The change of nicknames and profile photos do not trigger conversation update. T
 There is no relationship chain between you and a stranger. If the stranger's profile is changed, the backend will not send notifications, and the stranger's local profile will not be updated. It will be updated only when you actively pull the stranger's profile or receive a message from the stranger. The message will carry the stranger's latest nickname and profile photo, and the SDK will update them locally after receiving the message.
 
 ### Why can't the nicknames and profile photos of historical messages be updated?
-Please refer to [optimization 2](#Update) in **Nickname and Profile Photo Update in the Message List**. If the local storage does not have the senders' profiles, the nicknames and profile photos of historical messages won't be updated. They will be updated only when you actively pulls the senders' profiles.
+Please refer to [optimization 2](#Update) in **Nickname and Profile Photo Update in the Message List**. If the local storage does not have the senders' profiles, the nicknames and profile photos of historical messages won't be updated. They will be updated only when you actively pull the senders' profiles.
 
-### Why doesn't the SDK actively pull user profiles when conversations are updated or messages are received?
+### Why doesn't the SDK actively pull user profiles when conversations are updated, or messages are received?
 Conversation update and message sending/receiving are both frequent events. Synchronizing user profiles every time will cause huge pressure on the client and backend, seriously affecting application performance. We don't recommend that you actively pull user profiles in both cases, because it also affects application performance. The recommended approach is to pull user profiles when users click on the profile photos of messages.
