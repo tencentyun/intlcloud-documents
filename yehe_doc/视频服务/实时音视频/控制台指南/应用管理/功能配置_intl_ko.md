@@ -102,7 +102,7 @@ TRTC의 클라우드 녹화는 각 방마다 사용자별 멀티미디어 스트
 - 신규 애플리케이션 생성에 대한 자세한 방법은 [애플리케이션 생성](https://intl.cloud.tencent.com/document/product/647/39077)을 참고하십시오.
 - 애플리케이션 리스트에서 관련 애플리케이션을 검색하는 자세한 방법은 [애플리케이션 검색](https://intl.cloud.tencent.com/document/product/647/39078)을 참고하십시오.
 - 애플리케이션 기본 정보 조회에 대한 자세한 방법은 [애플리케이션 정보](https://intl.cloud.tencent.com/document/product/647/39079)를 참고하십시오.
-- 클라우드에서 혼합 스트림 트랜스 코딩 시 사용자 정의 배경 이미지 설정이 필요한 경우 리소스 관리에서 상응하는 이미지 리소스를 추가할 수 있으며, 자세한 방법은 [리소스 관리](https://intl.cloud.tencent.com/document/product/647/39081)를 참고하십시오.
+- 클라우드에서 혼합 스트림 트랜스 코딩 시 사용자 정의 배경 이미지 설정이 필요한 경우 리소스 관리에서 상응하는 이미지 리소스를 추가할 수 있으며.
 - 애플리케이션 빠른 실행 관련 Demo 소스 코드에 대한 자세한 내용은 [퀵 스타트](https://intl.cloud.tencent.com/document/product/647/39082)를 참고하십시오.
 
 
