@@ -149,7 +149,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 37.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
 38.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
 39.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
-
+40.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179).
 
 ## 관할권별 요구 사항
 
