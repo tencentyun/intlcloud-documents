@@ -148,7 +148,6 @@ TRTC is a set of low-latency and high-quality audio/video communication services
                           <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_CSharp_latest.zip">ZIP file</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">Integration guide</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46747">Demo guide</a>
             </div>
         </div>
 </div>
@@ -203,15 +202,6 @@ TRTC is a set of low-latency and high-quality audio/video communication services
                 <a style="margin-left: 10px;" href="https://github.com/tencentyun/TRTCReactNative">GitHub</a>
 								<a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/43298">Integration guide</a>
 								<a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/43297">Demo guide</a>
-            </div>
-        </div>
-				<div class="card-container">
-            <div class="card">
-                            <img src="https://qcloudimg.tencent-cloud.cn/raw/e9d18b164152f08bc0694c01e966daea.png" data-nonescope="true">
-                                <p class="titlename">uni-app SDK</p>
-                <p style="color:#586376;">An SDK packaged for uni-app, which allows you to quickly integrate TRTC capabilities into your project.</p>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_UniApp">GitHub</a>
-								<a style="margin-left: 10px;" Demo guide</a>
             </div>
         </div>
 </div>
