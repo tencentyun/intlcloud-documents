@@ -5,7 +5,7 @@ SMS Global bersifat harian [bayar sesuai pemakaian](https://intl.cloud.tencent.c
 
 > !Karena penyesuaian tarif oleh operator di Israel, Argentina, Belarusia, Sri Lanka, Kanada, Pakistan, Indonesia, dan India, harga SMS Global Tencent Cloud di negara-negara di atas akan disesuaikan mulai pukul 00.00 pada 15 September 2021. Untuk detail selengkapnya, lihat [Pemberitahuan Penyesuaian Harga SMS Global Tencent Cloud](https://intl.cloud.tencent.com/document/product/382/35602).
 
-Unduh Daftar Harga SMS Global [di sini](https://qcloudimg.tencent-cloud.cn/raw/46eeb51b661e52cafcb91f2e9fedf88d.pdf).
+
 
 | Negara/Wilayah | Kode| Kode Negara/Wilayah |Harga Satuan (USD) |
 |--------------------|-------|---------|---------------|
