@@ -103,7 +103,7 @@ TRTCのクラウドレコーディングは、ルーム内の各ユーザーの�
 - 新しいアプリケーションを作成したい場合、具体的な操作方法については、[アプリケーションの作成](https://intl.cloud.tencent.com/document/product/647/39077)をご参照ください。
 - アプリケーションリストで関連アプリケーションを検索したい場合、具体的な操作方法については、[アプリケーションの検索](https://intl.cloud.tencent.com/document/product/647/39078)をご参照ください。
 - アプリケーションの基本情報を確認する必要がある場合、操作の詳細は[アプリケーション情報](https://intl.cloud.tencent.com/document/product/647/39079)をご参照ください。
-- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。操作の詳細は[素材管理](https://intl.cloud.tencent.com/document/product/647/39081)をご参照ください。
+- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。
 - アプリケーションとセットになるDemoソースコードのクイック実行が必要な場合、具体的な操作については、[クイックマスター](https://intl.cloud.tencent.com/document/product/647/39082)をご参照ください。
 
 
