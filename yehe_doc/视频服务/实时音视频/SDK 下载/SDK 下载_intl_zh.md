@@ -205,15 +205,6 @@
 								<a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/43297">运行 Demo</a>
             </div>
         </div>
-				<div class="card-container">
-            <div class="card">
-                            <img src="https://qcloudimg.tencent-cloud.cn/raw/e9d18b164152f08bc0694c01e966daea.png" data-nonescope="true">
-                                <p class="titlename">uni-app SDK</p>
-                <p style="color:#586376;">基于 uni-app 插件封装的 TRTC SDK，让您快速便捷集成实时音视频服务。</p>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_UniApp">GitHub</a>
-								<a style="margin-left: 10px;" 运行 Demo</a>
-            </div>
-        </div>
 </div>
 
 
