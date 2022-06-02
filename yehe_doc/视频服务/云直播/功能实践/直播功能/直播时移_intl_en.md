@@ -51,7 +51,7 @@ Follow the steps below to add a VOD domain name for time shifting:
 - The ID of the recording template added in [Step 3](#step3).
 - A custom value (seconds) for `timeshift_dur` (time-shift duration).
 > ? 
-> - The time-shift duration indicates how far back from the current time you can play back the video stream. Currently, the longest time-shift duration allowed is 7 days.
+> - The time-shift duration indicates how far back from the current time you can play back the video stream. Currently, the longest time-shift duration allowed is 30 days.
 >- Given that the time-shift duration you configure may not exactly match the actual time-shift duration, we recommend you set the duration a little longer than you actually need.
 >- For example, if the parameter is set to `7200` (2 hours), you will be able to request content generated 2 hours ago or later, and the value range for the playback delay parameter `delay` is 90 seconds to 2 hours. If `delay` is set to a value larger than 2 hours, `HTTP 404` will be returned even if there is live streaming content at that time point. 
 
