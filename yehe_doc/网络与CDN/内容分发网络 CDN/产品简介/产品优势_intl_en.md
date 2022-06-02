@@ -19,7 +19,7 @@ CDN has over 2,000 cache nodes deployed across all provinces in mainland China, 
 
 ### Nodes outside mainland China
 
-CDN has been working industriously on global acceleration since 2017. As of May 2021, CDN has over 8,00 cache nodes across more than 70 countries and regions with a total reserved bandwidth of over 40 Tbps, helping your business go global with ease and speed.
+CDN has been working industriously on global acceleration since 2017. As of May 2021, CDN has over 8,00 cache nodes across more than 70 countries and regions with a total reserved bandwidth of over 50 Tbps, helping your business go global with ease and speed.
 ![image-20200210165753661](https://main.qcloudimg.com/raw/034a95d5f46fb8bf848c0a53dd265611.png)
 
 | Region   | Distribution                                                     |
