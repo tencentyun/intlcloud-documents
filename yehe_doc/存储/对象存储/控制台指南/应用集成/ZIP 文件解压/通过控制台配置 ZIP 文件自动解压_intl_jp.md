@@ -2,7 +2,7 @@
 
 ZIPファイル解凍機能は、Cloud Object Storage（COS）が[Serverless Cloud Function（SCF）](https://intl.cloud.tencent.com/document/product/583)をベースとしてユーザーに提供するデータ処理ソリューションです。ユーザーは、バケットにZIPファイル解凍ルールを追加し、ZIP圧縮ファイルをCOSにアップロードする時に、自動トリガーのCOSを、プリセットしたSCFにすることで、ファイルを指定のバケットおよびパスに自動解凍できます。フローチャートは次のとおりです。
 
-![解凍フロー](https://main.qcloudimg.com/raw/8595c7c538a7d951779b9e5b849377b4.png)
+![](https://main.qcloudimg.com/raw/4899b5c92bb085a0f18a522dfae344ae.jpg)
 
 ユーザーは次の2つの方法で、ZIPファイルの解凍機能を使用することができます。
 - コンソールによる使用：コンソールでZIPファイルの解凍関数を設定します。設定完了後、バケットに新規アップロードされたZIPファイルに対して、自動解凍が行われます。
