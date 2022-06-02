@@ -1,48 +1,45 @@
-TDSQL supports the SEQUENCE keyword, whose syntax is compatible with MariaDB and Oracle. Sequences must be globally incremented and unique in the distributed architecture. This document describes how to use SEQUENCE.
+The sequence keyword syntax is compatible with MariaDB/Oracle, but a sequence must be globally incremental and unique. The specific usage is as follows:
 
-To create a sequence, you need the `CREATE SEQUENCE` system permission. The syntax to create a sequence is as follows:
+>?
+>- When using a sequence in TDSQL for MySQL, the keyword must be prefixed with `tdsql_`, and the proxy version must be later than 1.19.5-M-V2.0R745D005. You can view the proxy version by running the `/*Proxy*/show status` statement. If the proxy is on an earlier version, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for upgrade.
+>- Currently, sequence is used to guarantee the global uniqueness of the distributed transaction, which has a relatively low performance and is therefore only suitable for scenarios with low concurrency.
+
+Creating a sequence requires the `CREATE SEQUENCE` system permission. The creation syntax is as follows:
 ```
-　　CREATE SEQUENCE sequence name
-　　[INCREMENT BY n]
+　　CREATE TDSQL_SEQUENCE sequence name
 　　[START WITH n]
-　　[{MAXVALUE/ MINVALUE n| NOMAXVALUE}]
-　　[{CYCLE|NOCYCLE}]
-　　[{CACHE n| NOCACHE}];
+　　[{TDSQL_MINALUE/ TDSQL_MAXMINVALUE n| TDSQL_NOMAXVALUE}]
+　　[TDSQL_INCREMENT BY n]
+　　[{TDSQL_CYCLE|TDSQL_NOCYCLE}]
 ```
 
->?Currently, sequences must be globally incremented and unique in the distributed architecture, resulting in a relatively low performance, so they are only suitable for scenarios with low concurrency.
+## Creating Sequence
+```
+create tdsql_sequence test.s1 start with 12 tdsql_minvalue 10 maxvalue 50000 tdsql_increment by 5 tdsql_nocycle
+create tdsql_sequence test.s2 start with 12 tdsql_minvalue 10 maxvalue 50000 tdsql_increment by 1 tdsql_cycle
+```
+- The above SQL statements include six parameters: start value, minimum value, maximum value, increment, buffer size, and whether to cycle, all of which should be positive integers.
+- The default values of these parameters are as follows: start value (1), minimum value (1), maximum value (LONGLONG_MAX-1), increment (1), and whether to cycle (0).
 
-## Creating a Sequence
-Sample code:
+## Deleting Sequence
 ```
-create sequence test.s1 start with 12 minvalue 10 maxvalue 50000  increment by 5  nocycle 
-create sequence test.s2 start with 12 minvalue 10 maxvalue 50000  increment by 1  cycle 
-```
-Parameters include start value, minimum value, maximum value, increment, and whether to cycle.
-
-## Deleting a Sequence
-Sample code:
-```
-drop sequence test.s1
-```
-Current constraint: all parameters should be positive integers.
-
-## Viewing a Sequence
-Sample code:
-```
-show create sequence test.s1
+drop tdsql_sequence test.s1
 ```
 
-## Using a Sequence
-#### Manipulating the sequence of a table
+## Querying Sequence
 ```
-select nextval(test.s1)
-select next value for test.s1
+show create tdsql_sequence test.s2
 ```
 
-Sample code:
+## Using Sequence
+#### Getting next value
 ```
-mysql> select nextval(test.s1);
+select tdsql_nextval(test.s2)
+select next value for test.s2
+```
+
+```
+mysql> select tdsql_nextval(test.s1);
 +----+
 | 12 |
 +----+
@@ -50,7 +47,7 @@ mysql> select nextval(test.s1);
 +----+
 1 row in set (0.18 sec)
 
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 12 |
 +----+
@@ -58,7 +55,7 @@ mysql> select nextval(test.s2);
 +----+
 1 row in set (0.13 sec)
 
-mysql> select nextval(test.s1);
+mysql> select tdsql_nextval(test.s1);
 +----+
 | 17 |
 +----+
@@ -66,7 +63,7 @@ mysql> select nextval(test.s1);
 +----+
 1 row in set (0.01 sec)
 
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 13 |
 +----+
@@ -83,7 +80,7 @@ mysql> select next value for test.s1;
 1 row in set (0.01 sec)
 ```
 
-NEXTVAL can be used in SELECT or other statements.
+#### Using nextval in INSERT and other statements
 ```
 mysql> select * from test.t1;
 +----+------+
@@ -93,7 +90,7 @@ mysql> select * from test.t1;
 +----+------+
 1 row in set (0.00 sec)
 
-mysql> insert into test.t1(a,b) values(nextval(test.s2),3);
+mysql> insert into test.t1(a,b) values(tdsql_nextval(test.s2),3);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> select * from test.t1;
@@ -106,16 +103,14 @@ mysql> select * from test.t1;
 2 rows in set (0.00 sec)
 ```
 
-#### Querying the last value
-If NEXTVAL has not been used to query data, 0 will be returned.
+The last value is needed to join relevant data. If it has never been obtained with the `nextval` command, 0 will be returned.
 ```
-select lastval(test.s1)
-select previous value for test.s1;
+select tdsql_lastval(test.s1)
+select tdsql_previous value for test.s1;
 ```
 
-Sample code:
 ```
-mysql> select lastval(test.s1);
+mysql> select tdsql_lastval(test.s1);
 +----+
 | 22 |
 +----+
@@ -123,7 +118,7 @@ mysql> select lastval(test.s1);
 +----+
 1 row in set (0.00 sec)
 
-mysql> select previous value for test.s1;
+mysql> select tdsql_previous value for test.s1;
 +----+
 | 22 |
 +----+
@@ -132,15 +127,14 @@ mysql> select previous value for test.s1;
 1 row in set (0.00 sec)
 ```
 
-#### Setting the next value
-The next value must be incremented or else 0 will be returned.
+Set the next value for the sequence, which must be greater than the current value; otherwise, 0 will be returned.
 ```
-select setval(test.s2,1000,bool use)  // "use" is 1 by default, indicating that the value of 1,000 has been used and the next value will not be 1,000. If "use" is 0, the next value will start from 1,000.
+select tdsql_setval(test.s2,1000,bool use)  // `use` is 1 by default, indicating that the value of 1,000 has been used and will not be included next time. If this is 0, the next return will start from 1,000.
 ```
 
-If the next value is decremented, 0 will be returned.
+If the next value of the sequence is smaller than the current value, the system will make no response.
 ```
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 15 |
 +----+
@@ -148,7 +142,7 @@ mysql> select nextval(test.s2);
 +----+
 1 row in set (0.01 sec)
 
-mysql> select setval(test.s2,10);
+mysql> select tdsql_setval(test.s2,10);
 +---+
 | 0 |
 +---+
@@ -156,7 +150,7 @@ mysql> select setval(test.s2,10);
 +---+
 1 row in set (0.03 sec)
 
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 16 |
 +----+
@@ -164,16 +158,16 @@ mysql> select nextval(test.s2);
 +----+
 ```
 
-If the next value is incremented, the value you just set will be successfully returned.
+If the set next value is larger than the current value, the set value will be successfully returned.
 ```
-mysql> select setval(test.s2,20);
+mysql> select tdsql_setval(test.s2,20);
 +----+
 | 20 |
 +----+
 | 20 |
 +----+
 1 row in set (0.02 sec)
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 21 |
 +----+
@@ -182,8 +176,31 @@ mysql> select nextval(test.s2);
 1 row in set (0.01 sec)
 ```
 
+Forcibly set the next sequence value (you can set a value smaller than the current value).
+```
+select tdsql_resetval(test.s2,1000)
+```
 
-Note that the following sequence keywords are prefixed with `TDSQL_`:
+If the forced setting is successful, the set value will be returned, from which the next sequence value will start.
+```
+mysql> select tdsql_resetval(test.s2,14);
++----+
+| 14 |
++----+
+| 14 |
++----+
+1 row in set (0.00 sec)
+
+mysql> select tdsql_nextval(test.s2);
++----+
+| 14 |
++----+
+| 14 |
++----+
+1 row in set (0.01 sec)
+```
+
+Note that some sequence keywords are prefixed with `TDSQL_`:
 ```
  TDSQL_CYCLE
  TDSQL_INCREMENT
