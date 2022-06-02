@@ -63,7 +63,7 @@ The bandwidth price comparison between Peering Connection and CCN in the Chinese
 <table>
 <tr>
 <th>Bandwidth Range (Mbps)</th>
-<>Daily Peak Bandwidth Billing of Peering Connection (USD/Mbps/Day)</th>
+<th>Daily Peak Bandwidth Billing of Peering Connection (USD/Mbps/Day)</th>
 <th>Monthly 95th Percentile Billing of Peering Connection (USD/Mbps/Day)</th>
 <th>Monthly 95th Percentile Billing of Cross-Region CCN Connection (Service Level: Gold; Availability: 99.95%)</th>
 <th>Monthly 95th Percentile Billing of Cross-Region CCN Connection (Service Level: Silver; Availability: 99.5%)</th>
