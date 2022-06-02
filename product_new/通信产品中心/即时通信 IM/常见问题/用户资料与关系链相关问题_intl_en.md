@@ -1,4 +1,4 @@
-### Why did I encounter error code 30001?
+### Why do I encounter error code 30001?
 
 There are several possible reasons for the occurrence of error code 30001:
 1. A request parameter is invalid.
