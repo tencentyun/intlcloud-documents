@@ -31,13 +31,16 @@ Cloud Object Storage（COS）コンソールを使用して、バケットのbac
 
  - **back-to-originアドレス**：ドメイン名またはIPアドレスを入力するだけで、ドメイン名またはIPアドレスの後にポート番号を追加できます。プレフィックス`http://`または`https://`を付ける必要はありません。
 正しいアドレスの例は次のとおりです。
+
 ```shell
 abc.example.com
 abc.example.com:8080
 202.96.128.86
 202.96.128.86:8080
 ```
+
 back-to-originアドレスは、具体的なアドレスの設定をサポートしています。次のような項目を設定することができます。
+
     - **固定ファイル**：back-to-originルールがトリガーされると、デフォルトですべてが固定されたファイルにジャンプします。
     - **指定プレフィックス**：back-to-originルールがトリガーされると、指定されたプレフィックスを持つファイルにジャンプします。例えば、指定されたプレフィックスが`test`の場合、`https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`にアクセスした際にback-to-originルールがトリガーされ、`<back-to-originアドレス>/test/prefix123.jpg`にジャンプします。
     - **指定拡張子**：back-to-originルールがトリガーされると、指定された拡張子を持つファイルにジャンプします。例えば、指定された拡張子が`.jpg`の場合、`https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`にアクセスした際にback-to-originルールがトリガーされ、`<back-to-originアドレス>prefix123.jpg`にジャンプします。
