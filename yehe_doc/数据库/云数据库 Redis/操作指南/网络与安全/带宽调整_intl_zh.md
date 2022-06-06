@@ -65,5 +65,5 @@
 
 | 接口名称                                                     | 接口功能         |
 | :----------------------------------------------------------- | :--------------- |
-| [ResetInstancesInternetMaxBandwidth](https://intl.cloud.tencent.com/document/product/213/33241) | 调整实例带宽上限 |
+| [ResetInstancesInternetMaxBandwidth](https://intl.cloud.tencent.com/document/product/213/33241) | 修改实例网络配置来修改带宽 |
 
