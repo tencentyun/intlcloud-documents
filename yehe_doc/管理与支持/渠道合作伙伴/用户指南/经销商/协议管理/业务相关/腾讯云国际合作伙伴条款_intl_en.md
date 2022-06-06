@@ -1,4 +1,4 @@
-**Welcome your participation in Tencent Cloud Partner Program! **
+**Welcome your participation in Tencent Cloud Partner Program!** 
 ### PLEASE READ THESE TERMS CAREFULLY
 YOUR PARTICIPATION IN THE TENCENT CLOUD PARTNER PROGRAM AND YOUR ACCESS AND USE OF THE TENCENT CLOUD PARTNER CONSOLE IS SUBJECT TO THESE TERMS AND CONDITIONS (THESE “**TERMS**”). DO NOT PARTICIPATE IN TENCENT CLOUD PARTNER PROGRAM OR ACCESS TENCENT CLOUD PARTNER CONSOLE IF YOU DO NOT AGREE TO THESE TERMS IN FULL.
 BY CLICKING “AGREE” BUTTON BELOW, YOU REPRESENT AND WARRANT THAT YOU HAVE READ AND UNDERSTOOD THESE TERMS AND YOU ARE DULY AUTHORISED TO ACT ON BEHALF OF THE ENTITY APPLYING TO PARTICIPATE IN THE TENCENT CLOUD PARTNER PROGRAM AND TO ENTER INTO THESE TERMS AND LEGALLY BIND SUCH ENTITY (“**PARTNER**”) TO THESE TERMS. IF YOU ARE NOT AUTHORISED TO BIND THE PARTNER OR DO NOT AGREE TO THESE TERMS IN FULL, DO NOT CLICK THE “AGREE” BUTTON BELOW AND DO NOT ACCESS THE PARTNER PORTAL.
@@ -56,7 +56,7 @@ Additional Terms may include additional agreements and policies that apply to yo
 (m)“**Partner Tier**” means the Partner’s level in the Partner Tier Program relevant to the Partner Type applicable to the Partner. 
 (n)“**Partner Type**” means (a) reseller partner; (b) sales agent partner; (c) referral partner; or (d) any other partner type designated and added by Tencent. 
 (o)“**Personal Data**” and “**Processed**” shall have the meaning as set out in the Applicable Data Protection Laws, and where such term is not defined in Applicable Data Protection Laws such term shall be defined by reference to the materially analogous term in the Applicable Data Protection Laws, and in respect of Data Subjects located in the state of California, “Data Subject” shall have the meaning given to the term “Consumer” in the CCPA and “Personal Data” shall have the meaning given to the term “Personal Information” in the CCPA.
-(p)“**Tencent Cloud Data Processing Agreement**” means any additional data processing agreement between Tencent and Partner if required by Tencent for the relevant Partner Program. 
+(p)“**Tencent Cloud Partner Data Processing Agreement**” means any additional data processing agreement between Tencent and Partner if required by Tencent for the relevant Partner Program. 
 (q)“**Tencent Services**” means software, content, digital materials and other items and services as made available by Tencent to Partner under the terms of this Agreement, including, without limitation, those software, content, digital materials, items or services made available to Partner to conduct Partner Type related activities through the Tencent Cloud international portal at intl.cloud.tencent.com.
 
 #### 2.REQUIREMENTS FOR PARTICIPATION IN TENCENT CLOUD PARTNER PROGRAM
@@ -83,6 +83,7 @@ Additional Terms may include additional agreements and policies that apply to yo
 (i)**Training**
    - Partner will ensure that all of their respective sales representatives, technical support personnel, and agents will receive appropriate and adequate training relating to the Tencent Services. Partner will inform and educate its sales representatives, technical support personnel, and agents about the nature of the business relationship between the parties and Tencent Services.
    - Tencent, at its discretion, may provide Partner’s sales and technical support personnel training, which may include: (1) demonstrations of the Tencent Services; (2) summaries of market and competitive positioning; (3) materials regarding key features, benefits, and value of Tencent Services to customers; (4) marketing materials; (5) common technical and support issues; and (6) any other information that may be beneficial for the provision of sales and technical support. Such training may be provided at additional fees and expenses, in which case such additional fees and expenses will be subject to separate agreement between Tencent and Partner.
+
 (j)**Consents and Permits**. Partner is solely responsible (at its sole expense) for obtaining all licenses, consents, and approvals that are necessary to its performance of these Terms (including those that are required for the resale of Tencent Services in the Territory).
 (k)**Demonstration Versions or Accounts**. Tencent, at its sole discretion, may provide Partner with demonstration versions or accounts of the Tencent Services for Partner to use in its marketing and promotion of the Tencent Services. Partner’s use of such demonstration versions may be subject to additional terms and restrictions.
 
