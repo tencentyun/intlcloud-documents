@@ -7,10 +7,10 @@ The global replication feature can replicate data in the same AZ or across AZs b
 | Guangzhou | Guangzhou Zone 6 |
 | Shanghai | Shanghai Zones 5 and 6 |
 | Nanjing | Nanjing Zone 3 |
-| Beijing | Beijing Zone 5 |
+| Beijing | Beijing Zone 5 and 7 |
 | Chengdu     | Chengdu Zone 1           |
-| Hong Kong (China) | Hong Kong Zone 3 |
-| Singapore | Singapore Zone 2 |
+| Hong Kong (China) | Hong Kong Zone 2 and 3 |
+| Singapore | Singapore Zone 2 and 4|
 | Virginia | Virginia Zone 2 |
 | Toronto   | Toronto Zone 1         |
 
