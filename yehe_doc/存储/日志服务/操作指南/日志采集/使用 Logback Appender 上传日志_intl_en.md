@@ -33,9 +33,9 @@ Logback is an open source project of Apache. Logback allows you to deliver logs 
 ```
   <appender name="LoghubAppender" class="com.tencentcloudapi.cls.LoghubAppender">
         <!--Required-->
-        <endpoint>ap-guangzhou.cls.tencentcs.com</endpoint>
-        <accessKeyId>${accesskey}</accessKeyId>
-        <accessKeySecret>${accessKeySecret}</accessKeySecret>
+        <endpoint><region>.cls.tencentcs.com</endpoint>
+        <accessKeyId>${SecretID}</SecretID>
+        <accessKeySecret>${SecretKey}</SecretKey>
         <topicId>${topicId}</topicId>
 
         <!-- Optional. For details, see 'Parameter description'-->
