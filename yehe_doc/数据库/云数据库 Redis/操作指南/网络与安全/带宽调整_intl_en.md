@@ -65,5 +65,5 @@ Increasing the bandwidth will not affect your business, but reducing the bandwid
 
 | API | Description |
 | :----------------------------------------------------------- | :--------------- |
-| [ResetInstancesInternetMaxBandwidth](https://intl.cloud.tencent.com/document/product/213/33241) | Adjusts instance bandwidth cap |
+| [ResetInstancesInternetMaxBandwidth](https://intl.cloud.tencent.com/document/product/213/33241) |  Adjusts the instance network configuration to modify bandwidth |
 
