@@ -34,7 +34,7 @@
 <tr>
 <td>广州七区<br> ap-guangzhou-7</td><td>100007</td></tr>
 <tr>
-<td rowspan="7">华东地区（上海）<br>ap-shanghai</td>
+<td rowspan="8">华东地区（上海）<br>ap-shanghai</td>
 <td>上海一区<br>ap-shanghai-1</td><td>200001</td></tr>
 <tr>
 <td>上海二区<br>ap-shanghai-2</td><td>200002</td></tr>
@@ -49,10 +49,14 @@
 <tr>
 <td>上海七区<br>ap-shanghai-7</td><td>200007</td></tr>
 <tr>
-<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
+<td>上海八区<br>ap-shanghai-8</td><td>200008</td></tr>
+<tr>
+<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
 <td>南京一区<br>ap-nanjing-1</td><td>330001</td></tr>
 <tr>
 <td>南京二区<br>ap-nanjing-2</td><td>330002</td></tr>
+<tr>
+<td>南京三区<br>ap-nanjing-3</td><td>330003</td></tr>
 <tr>
 <td rowspan="7">华北地区（北京）<br>ap-beijing</td>
 <td>北京一区<br>ap-beijing-1</td><td>800001</td></tr>
@@ -89,15 +93,19 @@
 <table class="table-striped">
 <tbody><tr><th>地域</th><th>可用区</th><th>ZoneId</th></tr>
 <tr>
-<td rowspan="3">亚太东南（新加坡）<br>ap-singapore</td>
+<td rowspan="4">亚太东南（新加坡）<br>ap-singapore</td>
 <td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td><td>900001</td></tr>
 <tr>
 <td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td><td>900002</td></tr>
 <tr>
 <td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td><td>900003</td></tr>
 <tr>
-<td>亚太东南（雅加达）<br>ap-jakarta</td>
+<td>新加坡四区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-4</td><td>900004</td></tr>
+<tr>
+<td rowspan="2">亚太东南（雅加达）<br>ap-jakarta</td>
 <td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td><td>720001</td></tr>
+<tr>
+<td>雅加达二区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-2</td><td>720002</td></tr>
 <tr>
 <td rowspan="2">亚太东南（曼谷）<br>ap-bangkok </td>
 <td>曼谷一区（曼谷节点可用于覆盖亚太东南地区）<br>ap-bangkok-1</td><td>230001</td></tr>
