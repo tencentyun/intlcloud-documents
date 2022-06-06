@@ -1,39 +1,39 @@
 ### Video Upload
-+ VOD supports multiple video upload methods such as local upload, video pull from URL, upload via API, and upload from client.
-+ VOD can convert live recording to video on-demand and has various features such as multi-format video upload, large file upload, upload resumption, and redundant file backup.
++ VOD supports multiple ways to upload videos. You can upload from a local disk or client or pull videos from URLs or via APIs.
++ You can convert live recordings to video on-demand, upload different formats, upload large files, resume upload after interruption, and backup files.
 
 
 ### Video Storage
 + VOD features redundant storage of video files across architectures and devices to support remote disaster recovery and isolation of resources.
-+ VOD supports cold/hot storage separation of video files to provide multiple options for your storage needs.
++ You can specify policies for hot and cold storage of video files, giving you better control of your video storage.
 
-### Video Transcoding
-+ VOD offers more than 12,000 distributed transcoding clusters, which can support up to 2,000 concurrent transcoding tasks and provide high-quality and efficient transcoding capabilities.
+### Transcoding
++ VOD offers more than 12,000 distributed transcoding clusters, which can support up to 2,000 concurrent transcoding tasks.
 + VOD supports TESHD which can effectively repair the video quality without reducing it.
-+ VOD supports adding watermarks on demand and setting different transcoding formats to flexibly satisfy your needs in different application scenarios.
++ You can add watermarks to your videos and configure different transcoding formats, giving you more flexibility in different scenarios.
 
 ### Video Distribution
 + VOD has access to over 1,100 Tencent Cloud CDN cache nodes, which can provide a smooth video content delivery acceleration experience based on the BGP networks and 17+ ISPs across China.
-+ VOD has a built-in default domain name. If you do not have a domain name, the preset domain name can be used to deliver resources based on the nearby region. This allows you to quickly get the video resources for playback, effectively solving the delay problem. In addition, custom domain names can be configured.
++ VOD provides a default domain name for video playback. If you don't have your own domain name, you can use the default domain to deliver resources based on the nearby region to reduce latency. You can also configure your own domain name.
 
-### Video AI Capabilities
-+ VOD has various intelligent features such as speech and text recognition, which can effectively perform automated operations like video editing, splicing, and screencapturing, as well as AI-based intelligent video recognition and sensitive information processing, so as to reduce the manual workload.
-+ VOD features intelligent recognition in console, which makes it easy for you to customize intelligent video recognition in the VOD console.
+### Video AI
++ VOD has various AI-powered features such as speech and text recognition. These features allow you to automate video editing, splicing, and screen capturing, as well as content recognition and auditing, reducing the amount of time spent doing manual operations.
++ Smart recognition can be configured from the VOD console, making it easy to customize.
 
 
 ### Adaptive Bitrate Streaming
-+ VOD can determine the change in network connection speed to select the most suitable bitstream for playback, ensuring the smoothness of video playback and improving the user experience.
-+ VOD can select the most appropriate bitstream according to the network environment to make full use of the network bandwidth.
++ VOD can transcode video content into multi-bitrate streams. During playback, it can select the most suitable bitstream based on the current network conditions, ensuring a smooth viewing experience.
++ Using adaptive bitrate streaming to dynamically select the optimal bitrate helps make full use of your network bandwidth.
 
 ### TESHD
 
-Based on the technologies such as audio/video encoding, intelligent scenario recognition, dynamic encoding, and three-level (CTU/line/frame) precise bitrate control model accumulated by Tencent Video Cloud over the years, TESHD enables video businesses such as LVB and VOD to provide higher-definition streaming services at lower bitrates (reduced by over 30% on average).
+Tencent Extreme Speed High Definition (TESHD) enables VOD to provide higher-definition streaming services at lower bitrates (30% lower on average). It leverages Tencent Cloud technologies such as dynamic encoding, smart scene recognition, and a three-level (CTU/line/frame) precise bitrate control model. 
 
 ### Superplayer
 
 Superplayer is a free player provided by VOD.
-- It offers simple encoding, where videos can be played back with only video ID required.
+- It offers simple encoding. Videos can be played back with only the video ID required.
 - It features adaptive bitrate streaming to improve the playback experience.
 - It supports playing back videos with hotlink protection enabled.
-- It has a wide range of features such as thumbnail preview and video cover generation.
+- It includes other features such as thumbnail preview and video cover generation.
 
