@@ -560,7 +560,7 @@ In the following table, &#10003; indicates "supported", x indicates "unsupported
 <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>-</td></tr>
 <tr>
 <td>dbsize</td>
-<td>&#10003;</td><td>&#10003;</td><td>x</td><td>&#10003;</td><td>x</td><td>-</td></tr>
+<td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>-</td></tr>
 <tr>
 <td>info</td>
 <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>-</td></tr>
