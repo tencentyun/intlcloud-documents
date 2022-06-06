@@ -344,7 +344,7 @@
 <tbody><tr>
 <td>Supported read-only mode for replica servers</td>
 <td>TencentDB for SQL Server supports read-only mode for replica servers. You can select memory and disks as needed to tailor the database specification for your actual business. The read-only mode is implemented through snapshots, facilitating online data analysis. It doesn't increase the costs, affect the primary database performance, or compromise high availability.</td>
-<td>2016-12</td>
+<td>2016-12</td><td>-</td>
 </tr>
 </tbody></table>
 
@@ -354,7 +354,7 @@
 <tbody><tr>
 <td>Supported SQL Server 2012 Enterprise Edition</td>
 <td>TencentDB for SQL Server is now available on SQL Server 2012 Enterprise Edition, which is compatible with all features of SQL Server 2008.</td>
-<td>2016-05</td>
+<td>2016-05</td><td>-</td>
 </tr>
 </tbody></table>
 
