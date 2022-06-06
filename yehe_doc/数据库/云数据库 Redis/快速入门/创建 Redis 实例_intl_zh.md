@@ -13,7 +13,7 @@
     <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 - 已规划数据库实例所在地域、可用区，请参见 [地域与可用区](https://intl.cloud.tencent.com/document/product/239/4106)。
 - 已规划数据库实例需满足的规格与性能，请参见 [产品系列](https://intl.cloud.tencent.com/document/product/239/31959) 与 [产品性能](https://intl.cloud.tencent.com/document/product/239/17952)。
-- 已规划数据库实例的私有网络与安全组，请参见  [私有网络](https://cloud.tencent.com/document/product/215)  与 [安全组](https://intl.cloud.tencent.com/document/product/239/31945) 。
+- 已规划数据库实例的私有网络与安全组，请参见  [私有网络](https://intl.cloud.tencent.com/document/product/215)  与 [安全组](https://intl.cloud.tencent.com/document/product/239/31945) 。
 - 如需在同一地域的多个可用区部署实例，您可以先了解 [多可用区部署](https://intl.cloud.tencent.com/document/product/239/39812) 的部署架构。
 - 如需支持读写分离的能力，请您先了解 [读写分离](https://intl.cloud.tencent.com/document/product/239/33132) 的实现原理。
 - 已了解数据库实例的计费详情，请参见 [计费概述](https://intl.cloud.tencent.com/document/product/239/31954)。按量计费数据库创建时会冻结一个小时的数据库费用，请确保您的账户余额充足再进行购买。
