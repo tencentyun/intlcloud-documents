@@ -13,7 +13,7 @@
     <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 - 已规划数据库实例所在地域、可用区，请参见 [地域与可用区](https://intl.cloud.tencent.com/document/product/239/4106)。
 - 已规划数据库实例需满足的规格与性能，请参见 [产品系列](https://intl.cloud.tencent.com/document/product/239/31959) 与 [产品性能](https://intl.cloud.tencent.com/document/product/239/17952)。
-- 已规划数据库实例的私有网络与安全组，请参见  [私有网络](https://intl.cloud.tencent.com/document/product/215)  与 [安全组](https://intl.cloud.tencent.com/document/product/239/31945) 。
+- 已规划数据库实例的私有网络与安全组，请参见  [私有网络](https://cloud.tencent.com/document/product/215)  与 [安全组](https://intl.cloud.tencent.com/document/product/239/31945) 。
 - 如需在同一地域的多个可用区部署实例，您可以先了解 [多可用区部署](https://intl.cloud.tencent.com/document/product/239/39812) 的部署架构。
 - 如需支持读写分离的能力，请您先了解 [读写分离](https://intl.cloud.tencent.com/document/product/239/33132) 的实现原理。
 - 已了解数据库实例的计费详情，请参见 [计费概述](https://intl.cloud.tencent.com/document/product/239/31954)。按量计费数据库创建时会冻结一个小时的数据库费用，请确保您的账户余额充足再进行购买。
@@ -58,18 +58,18 @@
    <tr>    
    <td>副本只读</td>
    <td>请选择是否开启读写分离的功能。具体信息，请参见 <a href="https://intl.cloud.tencent.com/document/product/239/33132">读写分离</a>。</td></tr>
-   <tr>
-   <td>网络类型</td>
-   <td>支持<b>私有网络</b>和<b>基础网络</b>。选择某个私有网络时，仅当前子网下的设备才能访问所创建的数据库实例；选择基础网络时，仅基础网络的设备才能访问所创建的数据库实例，且基础网络不支持多可用区部署。<br>私有网络和基础网络的区别请参见  <a href="https://intl.cloud.tencent.com/document/product/215/35505">私有网络与基础网络</a>。</br></td></tr>
+	 <tr>
+<td>网络类型</td>
+    <td>支持<b>私有网络</b>和<b>基础网络</b>。<ul><li>选择某个私有网络时，仅当前子网下的设备才能访问所创建的数据库实例；选择基础网络时，仅基础网络的设备才能访问所创建的数据库实例，且基础网络不支持开启外网地址，不支持多可用区部署。更多信息，请参见 <a href="https://intl.cloud.tencent.com/document/product/215/41417">基础网络与私有网络区别</a>。</li><li>切换网络，创建实例完成后，支持基础网络切换私有网络，不支持私有网络切换基础网络。且私有网络之间也支持切换。具体操作，请参见 <a href="https://intl.cloud.tencent.com/document/product/239/31944">配置网络</a>。</li></ul></td></tr>
    <tr>
    <td>可用区</td>
    <td>选择是否启用多可用区部署。支持单可用区与多可用区部署，相对单可用区实例，多可用区实例具有更高的可用性和容灾能力，请参见 <a href="https://intl.cloud.tencent.com/document/product/239/39812">多可用区部署</a>。<ul><li>单可用区部署，请在<b>主节点组（主可用区）</b>选择主节点的可用区。</li><li>多可用区部署，请在<b>主节点组（主可用区）</b>的下拉列表选择主可用区，在副本x的下拉列表，给副本指定所属可用区。其中x指副本的编号，例如副本1，副本2。</li></ul></tr>
    <tr>
    <td>IPv4 网络</td>
-       <td>选择具体的私有网络及其子网。建议您选择与云服务器同一个地域下的同一 <a href="https://cloud.tencent.com/document/product/215">私有网络</a>，实例购买后支持基础网络转换为私有网络，不支持私有网络转换为基础网络。您还可以单击<b>新建私有网络</b>和<b>新建子网</b>重新创建所需的网络环境。具体操作，请参见 <a href="https://intl.cloud.tencent.com/document/product/215/31805">创建私有网络</a>。</td></tr>
+       <td><b>网络类型</b>选择<b>私有网络</b>，需要选择具体的私有网络及其子网。建议您选择与云服务器同一个地域下的同一个 <a href="https://intl.cloud.tencent.com/document/product/215">私有网络</a>。私有网络具有 地域（Region） 属性（如广州），而子网具有 可用区（Zone） 属性（如广州一区），私有网络可划分一个或多个子网，同一私有网络下不同子网默认内网互通，不同私有网络间（无论是否在同一地域）默认内网隔离。实例购买后支持切换私有网络，具体操作，请参见 <a href="https://intl.cloud.tencent.com/document/product/239/31944">切换网络</a>。您也可以单击<b>新建私有网络</b>和<b>新建子网</b>重新创建所需的网络环境。具体操作，请参见 <a href="https://intl.cloud.tencent.com/document/product/215/31805">创建私有网络</a>。</td></tr>
    <tr>
    <td>端口</td>
-   <td>自定义端口号，取值范围【1024,65535】。</td></tr>
+   <td>自定义端口号，默认端口号是6379，取值范围【1024,65535】。</td></tr>
    <tr>
    <td>参数模板</td>
    <td>通过使用参数模板，您可以给实例批量配置参数。参数模板详情，请参见 <a href="https://intl.cloud.tencent.com/document/product/239/41810">使用参数模板</a>。</td></tr>
@@ -81,7 +81,7 @@
    <td>给实例设定标签。您可以根据标签归类管理实例。单击<b>添加</b>，可以选择标签键与标签值。</td></tr> 
    <tr>
    <td>安全组</td>
-   <td>给实例设置安全组规则，以控制安全组内的实例的出流量和入流量。您可以在<b>选择已有安全组</b>下拉框中选择已有的安全组，也可以单击<b>自定义安全组</b>，设置新的安全组<b>入站规则</b>与<b>出站规则</b>。具体信息，请参见 <a href="https://intl.cloud.tencent.com/document/product/239/31945">安全组</a>。</td></tr> 
+   <td>给实例设置安全组规则，以控制数据库的入站流量。您可以在<b>选择已有安全组</b>下拉框中选择已有的安全组，也可以单击<b>自定义安全组</b>，设置新的安全组<b>入站规则</b>。具体信息，请参见 <a href="https://intl.cloud.tencent.com/document/product/239/31945">配置安全组</a>。</td></tr> 
    <tr>
    <td>实例名</td>
    <td>仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</td></tr>  
@@ -116,7 +116,7 @@
 
 #### 编辑实例标签
 
-已指定标签的实例也可以重新编辑标签键与标签键，具体操作，请参见 [编辑实例标签](https://intl.cloud.tencent.com/document/product/239/46559)。
+已指定标签的实例也可以重新编辑标签键与标签值，具体操作，请参见 [编辑实例标签](https://intl.cloud.tencent.com/document/product/239/46559)。
 
 #### 修改实例名称
 

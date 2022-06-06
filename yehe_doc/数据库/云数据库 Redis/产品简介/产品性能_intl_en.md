@@ -2,7 +2,8 @@
 ## Specifications
 ### Memory edition
 >?
->- As a trial version, the 256 MB specification on v4.0 or v5.0 is only suitable for product verification in testing environments but not recommended for use in production environments. It is available only in Shanghai Zone 5, Beijing Zone 6, and Guangzhou Zone 6. Specifications of 1 GB and greater cannot be downgraded to the 256 MB specification.
+>- As a trial version, the 256 MB specification on v4.0 or v5.0 is only suitable for product verification in testing environments but not recommended for use in production environments. It is available only in:
+>Guangzhou (Zones 6 and 7), Shanghai (Zones 2, 3, 4 and 5), and Beijing (Zones 1, 2, 3, 4, 5, 6, and 7). Other 1 GB and above specifications cannot be downgraded to the 256 MB specification.
 >- v2.8 is unavailable currently, and v4.0 or later is recommended. To purchase v2.8, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 <table>
 <thead><tr>
@@ -19,7 +20,7 @@
 <tr>
 <td>Max connections</td><td>10,000 by default and up to 40,000</td><td>10,000 by default and up to 40,000</td><td>10,000/shard by default and up to 40,000</td></tr>
 <tr>
-<td>Traffic limit</td><td>10 MB/s to 64 MB/s</td><td>528 MB/s to 608 MB/s</td><td>288 MB/s to 72 GB/s</td></tr>
+<td>Traffic limit</td><td>10–64 MB/s</td><td>528–608 MB/s</td><td>288 MB/s–72 GB/s</td></tr>
 <tr>
 <td>Multi-Database</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
@@ -78,36 +79,36 @@
 |  :----------: |  :----------: |  :-------------------: |
 | 0.25          | 3,000       | 10                  |
 | 1          | 40,000       | 16                  |
-| 2          | 40,000       | 24                  | 
+| 2          | 40,000       | 24                  |
 | 4          | 40,000       | 24                  |
 | 8          | 40,000       | 24                  |
-| 12         | 40,000       | 32                  | 
-| 16         | 40,000       | 32                  | 
+| 12         | 40,000       | 32                  |
+| 16         | 40,000       | 32                  |
 | 20         | 40,000       | 48                  |
-| 24         | 40,000       | 48                  | 
-| 32         | 40,000       | 48                  | 
-| 40         | 40,000       | 64                  | 
-| 48         | 40,000       | 64                  | 
-| 60         | 40,000       | 64                  | 
+| 24         | 40,000       | 48                  |
+| 32         | 40,000       | 48                  |
+| 40         | 40,000       | 64                  |
+| 48         | 40,000       | 64                  |
+| 60         | 40,000       | 64                  |
 
 #### CKV edition
-| Specification (GB) | Max Connections | Max Throughput (MB/s) | 
+| Specification (GB) | Max Connections | Max Throughput (MB/s) |
 |  :----------: |  :----------: |  :-------------------: |
 | 4          | 10,000       | 24                  |
 | 8          | 10,000       | 24                  |
-| 16         | 10,000       | 32                  | 
-| 24         | 10,000       | 32                  | 
-| 32         | 10,000       | 32                  | 
-| 48         | 18,000      | 64                  | 
-| 64         | 18,000      | 64                  | 
+| 16         | 10,000       | 32                  |
+| 24         | 10,000       | 32                  |
+| 32         | 10,000       | 32                  |
+| 48         | 18,000      | 64                  |
+| 64         | 18,000      | 64                  |
 | 80         | 18,000      | 64                  |
-| 96         | 18,000      | 64                  | 
-| 128        | 24,000      | 128                 | 
-| 160        | 24,000      | 128                 | 
-| 192        | 24,000      | 128                 | 
-| 256        | 24,000      | 256                 | 
-| 320        | 24,000      | 256                 | 
-| 384        | 24,000      | 256                 | 
+| 96         | 18,000      | 64                  |
+| 128        | 24,000      | 128                 |
+| 160        | 24,000      | 128                 |
+| 192        | 24,000      | 128                 |
+| 256        | 24,000      | 256                 |
+| 320        | 24,000      | 256                 |
+| 384        | 24,000      | 256                 |
 
 Cluster edition connections = number of connections per shard * number of shards;
 Cluster edition throughput = shard throughput * number of shards
@@ -132,7 +133,7 @@ CKV Edition (Cluster Architecture) performance = CKV Edition (Standard Architect
 #### Testing environment
 | Number of CVMs where Pressure Test Clients Are Installed | CVM Cores | CVM MEM | Region | Redis Instance Specification |
 |:---------:|:---------:|:---------:|:---------:|:---------:|
-| 3 | 2 |8 GB | Guangzhou Zone 2 | Memory Edition (Standard Architecture), 8 GB | 
+| 3 | 2 |8 GB | Guangzhou Zone 2 | Memory Edition (Standard Architecture), 8 GB |
 | 3 | 2 |8 GB | Guangzhou Zone 2 | CKV Edition (Standard Architecture), 8 GB |
 
 #### Test parameters
@@ -140,7 +141,7 @@ CKV Edition (Cluster Architecture) performance = CKV Edition (Standard Architect
 redis-benchmark -h 10.66.187.x -p 6379 -a crs-1znib6aw:chen2016 -t set -c 3500 -d 128 -n 25000000 -r 5000000
 redis-benchmark -h 10.66.187.x -p 6379 -a crs-1z5536aw:chen2016 -t set -c 3500 -d 128 -n 25000000 -r 5000000
 redis-benchmark -h 10.66.187.x -p 6379 -a crs-090rjlih:1234567 -t set -c 3500 -d 128 -n 25000000 -r 5000000
-```
+ ```
 
 #### QPS calculation
 Sum of the QPS values of three pressure test clients (tested by redis-benchmark).
