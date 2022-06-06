@@ -29,9 +29,6 @@ TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) | 通话质量监控 | 查询异常体验事件       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | 通话质量监控 | 查询用户列表与通话指标 |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | 通话质量监控 | 查询历史房间和用户数   |
-| DescribeRealtimeNetwork | 通话质量监控 | 查询实时网络状态       |
-| DescribeRealtimeQuality | 通话质量监控 | 查询实时质量数据       |
-| DescribeRealtimeScale | 通话质量监控 | 查询实时规模           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | 通话质量监控 | 查询房间列表           |
 | [DescribeUserInformation](https://intl.cloud.tencent.com/document/product/647/39096) | 通话质量监控 | 查询历史用户列表 |
 
