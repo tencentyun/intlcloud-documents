@@ -34,7 +34,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 <tr>
 <td>Guangzhou Zone 7<br> ap-guangzhou-7</td><td>100007</td></tr>
 <tr>
-<td rowspan="7">East China (Shanghai)<br>ap-shanghai</td>
+<td rowspan="8">East China (Shanghai)<br>ap-shanghai</td>
 <td>Shanghai Zone 1<br>ap-shanghai-1</td><td>200001</td></tr>
 <tr>
 <td>Shanghai Zone 2<br>ap-shanghai-2</td><td>200002</td></tr>
@@ -49,10 +49,14 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 <tr>
 <td>Shanghai Zone 7<br>ap-shanghai-7</td><td>200007</td></tr>
 <tr>
-<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
+<td>Shanghai Zone 8<br>ap-shanghai-8</td><td>200008</td></tr>
+<tr>
+<td rowspan="3">East China (Nanjing)<br>ap-nanjing</td>
 <td>Nanjing Zone 1<br>ap-nanjing-1</td><td>330001</td></tr>
 <tr>
 <td>Nanjing Zone 2<br>ap-nanjing-2</td><td>330002</td></tr>
+<tr>
+<td>Nanjing Zone 3<br>ap-nanjing-3</td><td>330003</td></tr>
 <tr>
 <td rowspan="7">North China (Beijing)<br>ap-beijing</td>
 <td>Beijing Zone 1<br>ap-beijing-1</td><td>800001</td></tr>
@@ -89,15 +93,19 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 <table class="table-striped">
 <tbody><tr><th>Region</th><th>Availability Zone</th><th>Zone ID</th></tr>
 <tr>
-<td rowspan="3">Southeast Asia (Singapore)<br>ap-singapore</td>
+<td rowspan="4">Southeast Asia (Singapore)<br>ap-singapore</td>
 <td>Singapore Zone 1 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-1</td><td>900001</td></tr>
 <tr>
 <td>Singapore Zone 2 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td><td>900002</td></tr>
 <tr>
 <td>Singapore Zone 3 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-3</td><td>900003</td></tr>
 <tr>
-<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
+<td>Singapore Zone 4 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-4</td><td>900004</td></tr>
+<tr>
+<td rowspan="2">Southeast Asia (Jakarta)<br>ap-jakarta</td>
 <td>Jakarta Zone 1 (Jakarta nodes cover services in Southeast Asia)<br>ap-jakarta-1</td><td>720001</td></tr>
+<tr>
+<td>Jakarta Zone 2 (Jakarta nodes cover services in Southeast Asia)<br>ap-jakarta-2</td><td>720002</td></tr>
 <tr>
 <td rowspan="2">Southeast Asia (Bangkok)<br>ap-bangkok</td>
 <td>Bangkok Zone 1 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-1</td><td>230001</td></tr>
