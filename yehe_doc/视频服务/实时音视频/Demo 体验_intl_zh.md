@@ -203,7 +203,7 @@ ul.rno-tabs-operation {
             音视频通话·多人会议<br>KTV语音聊天·互动直播等
         </div>
         <div class="demo-item-download">
-            <img src="https://web.sdk.qcloud.com/document/assets/ios-download.png" data-nonescope="true">
+            <img src="https://qcloudimg.tencent-cloud.cn/raw/eebba4153838ac9252eeab3275215c2f.png" data-nonescope="true">
         </div>
     </div>
     <div class="preview-demo-item style-single-download-btn">
