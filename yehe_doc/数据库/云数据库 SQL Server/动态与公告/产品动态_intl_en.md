@@ -334,7 +334,7 @@
 <tbody><tr>
 <td>Launched SQL Server 2016</td>
 <td>TencentDB for SQL Server is now available on SQL Server 2016.</td>
-<td>2017-09</td>
+<td>2017-09</td><td>-</td>
 </tr>
 </tbody></table>
 
