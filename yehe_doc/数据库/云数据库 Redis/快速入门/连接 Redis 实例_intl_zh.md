@@ -12,7 +12,7 @@
 ## 准备工作
 
 - 准备好 Redis 实例，请参见 [创建 Redis 实例](https://intl.cloud.tencent.com/document/product/239/37712)。
-- 准备好数据库账号及密码，请参见 [管理帐号](https://intl.cloud.tencent.com/document/product/239/34590)，您可以使用默认帐号或自定义账号。
+- 准备好数据库账号及密码，请参见 [管理帐号](https://intl.cloud.tencent.com/document/product/239/34590)，您可以使用默认账号或自定义账号。
 - 配置云服务器 CVM 和 Redis 的安全组出入站规则，请参见 [管理云数据库安全组](https://intl.cloud.tencent.com/document/product/239/31945)。
 - 已在 [Redis 控制台](https://console.cloud.tencent.com/redis) 的**实例详情**页面的**网络信息**区域获取连接数据库**内网IPv4地址**。
 
@@ -34,7 +34,6 @@ yum install redis -y
 redis-cli -h IP地址 -p 端口
 ```
 其中，IP 地址和端口指在 [Redis 控制台](https://console.cloud.tencent.com/redis) 的**实例详情**页面的**网络信息**区域获取的**内网IPv4地址**与端口。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/7ea367b16f92cac9d382d37755380190.png" style="zoom:50%;" />
 
 - **默认账号访问**
 如果需通过仅有密码的默认账号访问数据库，则支持开源格式类型的连接方式：
@@ -81,13 +80,13 @@ redis-cli -h IP地址 -p 端口 -a 账号名@密码
 3. 在实例列表中，找到目标实例。
 4. 在其**操作**列，单击**登录**。
 5. 跳转至云数据库管理工具 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login) 登录页面，输入目标实例默认账户的密码，单击**登录**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f2af1b50cfe1d9d7321b10beece8e043.png" style="zoom:67%;" />
+
 6. 在**数据库管理**页面的实例信息页签，可查看实例的监控信息。
-![](https://qcloudimg.tencent-cloud.cn/raw/efbb51bbb06165c93ed21108ccbd76d1.png)
+
 7. 单击**命令行**页签，在下方的输入框输入 Redis 的命令并执行命令，示例如下图所示。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ab2d86e213b760dbd246c07d064df1b7.png" style="zoom: 38%;" />
+
 8. 如果您对 Redis 的命令参数不是很熟悉，可以在页面左侧的**对象列表**区域，选择键值存放的 Slot 区间以及 DB，单击**新建**，并选择键的数据类型，单击**确定**，在**键名**输入框编辑键名称，单击**新建元素并创建key**，在**新建元素**对话框，输入键对应的键值，单击**确定**。系统将根据设置的键与键值的信息运行命令。
-![](https://qcloudimg.tencent-cloud.cn/raw/78092100467a03226f1ed35a5f5487e9.png)
+
 
 ## 多语言 SDK 连接
 云数据库 Redis 支持多语言 SDK 访问，包括：PHP、Java、Node.js、Python、C、Go、.Net 等。具体示例，请参见 [多语言 SDK 连接](https://intl.cloud.tencent.com/document/product/239/7042)。请根据示例，下载多语言 SDK 对应客户端，并参考代码配置 Redis 实例的内网 IP、端口号、实例 ID 和密码，即可连接数据库。
