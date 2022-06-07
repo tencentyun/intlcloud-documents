@@ -5,10 +5,10 @@ TDSQL-C allows you to create one or more read-only instances in a cluster, which
 
 - A TDSQL-C cluster supports two instance types: primary instance (read-write instance) and secondary instance (read-only instance).
 - A TDSQL-C cluster provides read-write and read-only addresses by default. You can access all read-only instances at the cluster's read-only address. After a read-only instance is created, new read-only connection requests to the read-only address will be automatically forwarded to the read-only instance.
-- A read-only instance is billed in the same way as the read-write instance. For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/1098/40620).
+- A read-only instance is billed in the same way as the read-write instance. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1098/40620).
 - Unified read/write separation addresses (i.e., read and write requests are separated automatically) are not supported currently.
 
->?For more information on how to access a TDSQL-C cluster, please see [Connecting to TDSQL-C Cluster](https://intl.cloud.tencent.com/document/product/1098/40627).
+>?For more information on how to access a TDSQL-C cluster, see [Connecting to TDSQL-C Cluster](https://intl.cloud.tencent.com/document/product/1098/40627).
 
 ## Notes
 - Read-only and read-write instances share the same storage, so there is no need to maintain the account and database.
