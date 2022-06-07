@@ -1,5 +1,5 @@
 
-You can view and modify certain parameters and query parameter modification logs in [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb).
+You can view and modify certain parameters and query parameter modification logs in the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb).
 
 ## Notes
 - To ensure instance stability, only some parameters can be modified in the console. These parameters are displayed on the **Parameter Settings** page.
