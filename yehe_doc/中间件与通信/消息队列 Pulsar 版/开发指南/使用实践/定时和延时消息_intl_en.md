@@ -10,13 +10,6 @@ There is no difference between implementing delay from your business code or a t
 
 Given this, it will be a good option to deliver delayed messages to a message queue based on their attributes, as the delay period can be calculated in a unified manner, while the retry and dead letter mechanisms ensure that messages will not get lost.
 
-Below are some sample use cases:
-- After a WeChat red packet is sent, the producer sends a message with a delay of 24 hours, and the consumer receives the message after 24 hours and determines whether the user has opened the red packet; if not, the consumer returns the red packet to the original account.
-- After an order is placed for an item on a mini program, a message with a delay of 30 minutes is stored on the backend, and the consumer receives the message after 30 minutes to determine the payment result; if the order has not been paid, the consumer cancels it. This implements the logic of canceling orders not paid within 30 minutes.
-- After a WeChat user sets a message as a to-do, a scheduled message can be sent, and the server receives the message and reminds the user about the to-do.
-
-
-
 ## Directions
 The TDMQ for Pulsar SDK provides dedicated APIs to implement scheduled and delayed messages.
 - For a scheduled message, you need to specify a moment to send it.
@@ -66,7 +59,7 @@ MessageId msgId = producer.newMessage()
 
 
 ## Use Instructions and Limits
-- When using scheduled and delayed messages, make sure that the time on the client is in sync with the time on the server (UTC+8 Beijing time in all regions); otherwise, there will be a time difference.
+- When using scheduled and delayed messages, make sure that the time on the client is in sync with the time on the server; otherwise, there will be a time difference.
 
 - There is a precision deviation of about 1 second for scheduled and delayed messages.
 
