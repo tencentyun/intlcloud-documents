@@ -16,7 +16,7 @@ Datahub 支持接入各种数据源产生的不同类型的数据，统一管理
 3. 在弹窗中数据源类型选择**主动上报**。
    ![](https://qcloudimg.tencent-cloud.cn/raw/c323d26aa295f945b2aeac6a8c08d9b8.png)
 4. 单击**下一步**，填写任务名称，选择创建好的目标 CKafka 实例和 Topic。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/a44723d55be51388c47616fff20f6ed0.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ab5e0672d6eaacfcf900833a7ae66c9e.png)
    - 任务名称：填写任务名称，只能包含字母、数字、下划线、"-"、"."。
    - CKafka 实例：选择目标 CKafka 实例。
    - 目标 CKafka Topic：选择数据投递的目标 CKafka Topic，若选择的 Topic 设置了ACL 策略，会影响功能正常使用。
