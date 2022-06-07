@@ -50,6 +50,6 @@ You can view and modify certain parameters and query parameter modification logs
 2. On the cluster management page, select the **Parameter Settings** tab and click **Save as Template** to save the existing parameter configuration as a parameter template.
 
 ## Subsequent Operations
-- You can use templates to manage database parameters in batches. For more information, see [Managing Parameter Template](https://intl.cloud.tencent.com/document/product/1098/44601).
+- You can use templates to manage database parameters in batches. For more information, see [Managing Parameter Template.](https://intl.cloud.tencent.com/document/product/1098/44601).
 - For suggestions for configuration of key parameters, see [Suggestions on Parameter Settings](https://intl.cloud.tencent.com/document/product/1098/44600).
 
