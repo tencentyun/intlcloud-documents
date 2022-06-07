@@ -450,7 +450,7 @@ coscmd info <cospath>
 coscmd info doc/picture.jpg
 ```
 
-> - 「<>」のパラメータを、表示する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
+>?「<>」のパラメータを、表示する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
 >
 
 
