@@ -16,7 +16,7 @@ This document takes HTTP data as an example to describe how to create an active 
 3. In the pop-up window, select **Actively reported data** for **Data Source Type**.
    ![](https://qcloudimg.tencent-cloud.cn/raw/c323d26aa295f945b2aeac6a8c08d9b8.png)
 4. Click **Next**, enter the task name, and select the created CKafka instance and topic.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/a44723d55be51388c47616fff20f6ed0.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/ab5e0672d6eaacfcf900833a7ae66c9e.png)
    - Task Name: Enter the task name. It can only contain letters, digits, underscores, or symbols ("-" and ".").
    - CKafka Instance: Select the target CKafka instance.
    - Target Topic: Select the target CKafka topic for data shipping. The data distribution feature cannot be normally used if ACL policies are configured for the selected topic.
