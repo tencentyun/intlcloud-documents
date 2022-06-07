@@ -2,7 +2,7 @@
 
 Tencent Cloud provides the Cloud Monitor service for all users by default; therefore, you do not need to manually activate it. Cloud Monitor will start collecting monitoring data only after a Tencent Cloud product is used.
 
-TDMQ for CMQ allows you to monitor the resources (topics and queues) created under your account, so that you can keep track of the status of your resources in real time. You can configure alarm rules for monitoring metrics. When a monitoring metric reaches the set alarm threshold, Cloud Monitor will notify you of exceptions in time via email, SMS, WeChat, phone call, etc.
+TDMQ for CMQ allows you to monitor the resources (topics and queues) created under your account, so that you can keep track of the status of your resources in real time. You can configure alarm rules for monitoring metrics. When a monitoring metric reaches the set alarm threshold, Cloud Monitor will notify you of exceptions in time via the notification channels you specified. 
 
 ## Directions
 

@@ -24,9 +24,12 @@ Hadoop-2.6.0以降、Hadoop-COSプラグイン5.9.3以降。
 
 #### COSDistCpjarパッケージの取得
 
-- Hadoop 2.xのユーザーは、[cos-distcp-1.9-2.8.5.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5.jar)をダウンロードし、jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-2.8.5-md5.txt)からダウンロードしたjarパッケージが完全であることを確認します。
-- Hadoop 3.xのユーザーは、[cos-distcp-1.9-3.1.0.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0.jar)をダウンロードできます。jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.9-3.1.0-md5.txt)からダウンロードしたjarパッケージが完全であることを確認します。
+- Hadoop 2.x ユーザーは、[cos-distcp-1.10-2.8.5.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5.jar)をダウンロードし、jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5-md5.txt)に基づき、ダウンロードしたjarパッケージが完全かどうかを確認します。
+- Hadoop 3.xユーザーは、[cos-distcp-1.10-3.1.0.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0.jar)をダウンロードし、jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0-md5.txt)に基づき、ダウンロードしたjarパッケージが完全かどうかを確認します。
 
+#### インストール説明
+
+Hadoop環境において、[Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884) をインストールすると、直接COSDistCpツールを実行できます。
 
 
 ## 原理の説明
@@ -44,7 +47,7 @@ COSDistCpはMapReduceフレームワークをベースとして実装されて�
 |              --help              | COSDistCpでサポートされているパラメータオプションを出力します<br> 例：--help               |   なし   |    いいえ    |
 |          --src=LOCATION          | コピーのソースディレクトリを指定します。これはHDFSまたはCOSパスにすることができます<br> 例：--src=hdfs://user/logs/ |   なし   |    はい    |
 |         --dest=LOCATION          | コピーのターゲットディレクトリを指定します。これは、HDFSまたはCOSパスにすることができます<br> 例：--dest=cosn://examplebucket-1250000000/user/logs |   なし   |    はい |
-|       --srcPattern=PATTERN       | 正規表現を指定して、ソースディレクトリにあるファイルをフィルタリングします。<br>例：`--srcPattern='.*.log'`<br>**注意：記号`*`がshellによって解釈されるのを避けるために、パラメータをシングルクォーテーションで囲む必要があります** |   なし   |    いいえ    |
+|       --srcPattern=PATTERN       | 正規表現を指定して、ソースディレクトリにあるファイルをフィルタリングします。<br>例：`--srcPattern='.*\.log$'`<br>**注意：記号`*`がshellによって解釈されるのを避けるために、パラメータをシングルクォーテーションで囲む必要があります** |   なし   |    いいえ    |
 |       --taskNumber=VALUE       | コピープロセス数を指定します。例：--taskNumber=10 |   10   |    いいえ    |
 |       --workerNumber=VALUE       | コピースレッド数を指定します。COSDistCpは、各コピープロセスでこのパラメータサイズのコピースレッドプールを作成します<br>例：--workerNumber=4 |   4    |    いいえ    |
 |      --filesPerMapper=VALUE      | Mapper入力ファイル1ファイルあたりの行数を指定します<br>例：--filesPerMapper=10000 | 500000 |    いいえ    |
@@ -60,10 +63,10 @@ COSDistCpはMapReduceフレームワークをベースとして実装されて�
 |        --copyFromManifest        | --previousManifest=LOCATIONとともに使用すると、--previousManifest内のファイルをターゲットファイルシステムにコピーできます<br>例：--copyFromManifest | false  |    いいえ    |
 |       --storageClass=VALUE       | COSタイプを指定します。オプションの値は、STANDARD、STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、INTELLIGENT_TIERINGです。サポートされているストレージタイプと概要については、[ストレージタイプの概要](https://intl.cloud.tencent.com/document/product/436/30925)をご参照ください |   なし   |    いいえ    |
 |    --srcPrefixesFile=LOCATION    | ローカルファイルを指定します。ファイルの各行には、コピーする必要のあるソースディレクトリが含まれます</br>例：--srcPrefixesFile=file:///data/migrate-folders.txt |   なし   |    いいえ    |
-|         --skipMode=MODE          | ファイルをコピーする前に、ソースファイルとターゲットファイルが同じかどうかをチェックし、同じであればスキップします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-checksum（長さ+ CRC値）が選択可能です</br>例：--skipMode=length |  length-checksum  |    いいえ    |
-|         --checkMode=MODE         | ファイルコピー完了時に、ソースファイルとターゲットファイルが同じかどうかをチェックします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-checksum（長さ+ CRC値）が選択可能です</br>例：--checkMode=length-checksum |  length-checksum  |    いいえ    |
-|         --diffMode=MODE          | ソースディレクトリとターゲットディレクトリの差分ファイルリストを指定して取得します。length（長さ）、checksum（CRC値）、length-checksum（長さ+ CRC値）が選択可能です</br>例：--diffMode=length-checksum |   なし   |    いいえ    |
-|      --diffOutput=LOCATION       | 差分ファイルリストのHDFS出力ディレクトリを指定します。この出力ディレクトリは、必ず空である必要があります<br/>例：--diffOutput=/diff-output |   なし   |    いいえ    |
+|         --skipMode=MODE          | ファイルをコピーする前に、ソースファイルとターゲットファイルが同じかどうかをチェックし、同じであればスキップします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-mtime(長さ+mtime値)、length-checksum（長さ+CRC値）が選択可能です</br>例：--skipMode=length |  length-checksum  |    いいえ    |
+|         --checkMode=MODE         | ファイルコピー完了時に、ソースファイルとターゲットファイルが同じかどうかをチェックします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-checksum（長さ+mtime値）、length-checksum（長さ+ CRC値）が選択可能です</br>例：--checkMode=length-checksum |  length-checksum  |    いいえ    |
+|         --diffMode=MODE          | ソースディレクトリとターゲットディレクトリの差分ファイルリストを指定して取得します。length（長さ）、checksum（CRC値）、length-checksum（長さ+mtime値）、length-checksum（長さ+CRC値）が選択可能です</br>例：--diffMode=length-checksum |   なし   |    いいえ    |
+|      --diffOutput=LOCATION       | diffModeのHDFS出力ディレクトリを指定します。この出力ディレクトリは、必ず空である必要があります<br/>例：--diffOutput=/diff-output |   なし   |    いいえ    |
 |      --cosChecksumType=TYPE      | Hadoop-COSプラグインが使用するCRCアルゴリズムを指定します。オプション値はCRC32CとCRC64です<br/>例：--cosChecksumType=CRC32C | CRC32C |    いいえ    |
 |      --preserveStatus=VALUE      | ソースファイルのuser、group、permission、xattr、timestampsのメタ情報をターゲットファイルにコピーするかどうかを指定します。オプション値は、ugpxt（user、group、permission、xattr、timestampsの英語頭文字）です<br/>例：--preserveStatus=ugpt |   なし   |    いいえ    |
 |      --ignoreSrcMiss      | ファイルリストには存在しても、コピー時には存在しないファイルを無視します |   false   | いいえ       |
@@ -121,7 +124,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 ```
 
 
-COSDistCpは、コピーが失敗したファイルをデフォルトで5回再試行します。それでも失敗した場合、失敗したファイル情報を/tmp/${randomUUID}/output/failed/ディレクトリに書き込みます。ここで${randomUUID}は、ランダム文字列です。失敗したファイル情報を記録した後、COSDistcpは残りのファイルの移行を続行しますが、一部のファイルが失敗したために移行タスクが失敗することはありません。移行タスクが完了すると、COSDistcpはカウンター情報を出力し、ファイルの移行に失敗したかどうかを判断します。失敗した場合は、タスクを送信したクライアントに異常が報告されます。
+COSDistCpは、コピーが失敗したファイルをデフォルトで5回再試行します。それでも失敗した場合、失敗したファイル情報を/tmp/${randomUUID}/output/failed/ディレクトリに書き込みます。ここで${randomUUID}は、ランダム文字列です。失敗したファイル情報を記録した後、COSDistcpは残りのファイルの移行を続行しますが、一部のファイルが失敗したために移行タスクが失敗することはありません。移行タスクが完了すると、COSDistcpはカウンター情報（タスクがマシンへ送信され、MapReduceタスクの提出側INFOログの出力が設定されたことを確認してください）を出力し、移行に失敗したファイルが存在するかどうかを判断します。存在した場合は、タスクを送信したクライアントに異常が報告されます。
 
 出力ファイルには、次のようなソースファイル情報が含まれます。
 1. ソースファイルのリストに存在しますが、コピー時にソースファイルが存在しないため、SRC_MISSと記録されます
@@ -193,14 +196,13 @@ hadoop fs  -Ddfs.checksum.combine.mode=COMPOSITE_CRC -checksum /data/test.txt
  - `--diffMode=length`は、ファイルサイズが同じかどうかによって、差分ファイルのリストを取得することを表します。
  - `--diffMode=length-checksum`、ファイルサイズとCRCチェックサムが同じかどうかによって、差分ファイルのリストを取得することを表します。
 - `--diffOutput`は、diff操作の出力ディレクトリを指定します。
-
 ターゲットファイルシステムがCOSで、ソースファイルシステムのCRCアルゴリズムが異なる場合、COSDistCpはソースファイルをプルしてターゲットファイルシステムのCRCを計算し、同じCRCアルゴリズム値を比較します。以下の例では、移行が完了した後、--diffModeパラメータを使用して、ファイルサイズとCRC値に基づきソースファイルとターゲットファイルが同じであることをチェックしています。
 
 ```plaintext
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --diffMode=length-checksum --diffOutput=/tmp/diff-output
 ```
 
-上記のコマンドの実行が成功すると、ソースファイルシステムのファイルのリストをもとにカウンター情報が出力されます。このカウンター情報をもとに、ソースとターゲットが同じであるか分析することができます。カウンター情報の説明は、次のとおりです。
+上記のコマンドの実行が成功すると、ソースファイルシステムのファイルリストを基準にカウンター情報（タスクがマシンへ送信され、MapReduceタスクの提出側INFOログの出力が設定されたことを確認してください）が出力されます。このカウンター情報を基に、ソースとターゲットが同じであるか分析することができます。カウンター情報の説明は、次のとおりです。
 
 1. ソースファイルとターゲットファイルが同じ場合、SUCCESSと記録されます
 2. ターゲットファイルが存在しない場合、DEST_MISSと記録されます
@@ -210,7 +212,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 6. 読み込み権限が不十分であるなどの要因により、diff操作が失敗した場合、DIFF_FAILEDと記録されます
 7. ソースがディレクトリ、ターゲットがファイルの場合、TYPE_DIFFと記録されます
 
-また、COSDistcpは、HDFSの`/tmp/diff-output/failed`ディレクトリ（下位バージョンでは/tmp/diff-output）に差分ファイルリストを発行します。次のコマンドを使用して、SRC_MISS以外の差分ファイルリストを取得することができます。
+また、COSDistcpは、HDFSの`/tmp/diff-output/failed`ディレクトリ（1.0.5および以前のバージョンでは/tmp/diff-output）に差分ファイルリストを発行します。次のコマンドを使用して、SRC_MISS以外の差分ファイルリストを取得することができます。
 
 ```plaintext
 hadoop fs -getmerge /tmp/diff-output/failed diff-manifest
@@ -262,10 +264,14 @@ hadoop jar  cos-distcp-${version}.jar --src /data/warehouse  --srcPrefixesFile f
 
 - 入力ファイルの正規表現でのフィルタリング
 
-パラメータ`--srcPattern`によりコマンドを実行すると、`/data/warehouse/logs`ディレクトリにある.logで終わるログファイルのみを同期します。次に例を示します。
+パラメータ`--srcPattern`でコマンドを実行すると、`/data/warehouse`ディレクトリにある.logで終わるログファイルのみを同期します。次に例を示します。
 
 ```plaintext
-hadoop jar cos-distcp-${version}.jar  --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse --srcPattern='.*/logs/.*\.log'
+hadoop jar cos-distcp-${version}.jar  --src /data/warehouse/ --dest cosn://examplebucket-1250000000/data/warehouse --srcPattern='.*\.log$'
+```
+.tempまたは.tmpで終わるファイルは移行されません。
+```
+ hadoop jar cos-distcp-${version}.jar --src /data/warehouse/ --dest cosn://examplebucket-1250000000/data/warehouse/ --srcPattern='.*(?<!\.temp|\.tmp)$'
 ```
 
 ### Hadoop-COSのファイルチェックとタイプの指定
@@ -293,7 +299,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse/logs-gzip --outputCodec=gzip
 ```
 
->! keepオプションを除いて、まずファイルを解凍し、それからターゲットの圧縮タイプに変換します。そのためkeepオプション以外では、圧縮パラメータなどの不整合により、ターゲットファイルがソースファイルと一致しないことがありますが、解凍後のファイルは同じになります。--groupByが指定されておらず、-outputCodecがデフォルトの場合は、--checkModeでデータチェックを行うことができます。
+>! keepオプションを除いて、まずファイルを解凍し、それからターゲットの圧縮タイプに変換します。そのためkeepオプション以外では、圧縮パラメータなどの不整合により、ターゲットファイルがソースファイルと一致しないことがありますが、解凍後のファイルは同じになります。--groupByが指定されておらず、--outputCodecがデフォルトの場合は、--skipModeで増分の移行を行い、--checkModeでデータチェックを行うことができます。
 >
 
 ### ソースファイルの削除
@@ -363,7 +369,7 @@ hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://exampl
 ```
 
 事例の[Grafana Dashboard](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/COSDistcp-Grafana-Dashboard.json)をダウンロードしてインポートすると、Grafanaは次のように表示されます。
-![COSDistcp-Grafana](https://main.qcloudimg.com/raw/8bc614ef9364b03f8dd27075fcb8380e.png)
+![COSDistcp-Grafana](https://qcloudimg.tencent-cloud.cn/raw/004d8f1a4fc79011c26f6667f085a3b7.png)
 
 
 ### ファイルコピー失敗時のアラート
@@ -418,11 +424,11 @@ hadoop jar cos-distcp-1.4-2.8.5.jar \
 
 ## よくあるご質問
 ### COSDistcpを使用したHDFSデータの移行にはどのような段階があり、どのように移行パフォーマンスを調整してデータの正確性を確保すればよいですか。
-次の2段階のコマンドを実行することで、データの正確性を確保できます。まず次のコマンドを実行して移行を行います。
+COSDistcpでは各ファイルの移行完了ごとに、checkModeに基づいて、移行したファイルに対してチェックが行われます。
 ```
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --taskNumber=20
 ```
-移行が完了したら、以下のコマンドを実行し、ソースとターゲットの差分ファイルリストを表示します。
+また、移行が完了したら、以下のコマンドを実行し、ソースとターゲットの差分ファイルリストを確認することができます。
 ```
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --diffMode=length-checksum --diffOutput=/tmp/diff-output
 ```
@@ -470,3 +476,13 @@ COSDistCpは、ネットワークの異常、ソースファイルの欠落、�
 
 ### COSバケットに、目に見えず完了していないアップロードファイルがあり、ストレージ容量を占有しています。どうすればよいですか。
 マシンの異常やプロセスのKillなどの要因により、COSバケット内でフラグメントファイルがストレージ容量を占有する場合があります。この場合、公式ウェブサイトの[ライフサイクルドキュメント](https://intl.cloud.tencent.com/document/product/436/14605)を参照して、フラグメントの削除ルールを設定し、クリーンアップを行うことができます。
+
+### 移行プロセスでは、メモリオーバーフローとタスクタイムアウトが発生した場合、どのようにパラメータチューニングを行いますか。
+移行プロセスでは、COSDistcpとCOSへのアクセスとCHDFSのツールは、 自身のロジックに基づき、メモリの一部を占有します。メモリオーバーフローとタスクタイムアウトを防ぐため、下の例のようにしてMapReduceタスクのパラメータ調整をすることができます。
+```
+hadoop jar cos-distcp-${version}.jar -Dmapreduce.task.timeout=18000 -Dmapreduce.reduce.memory.mb=8192 --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse  
+```
+そのうち、タスクのタイムアウト時間mapreduce.task.timeoutを18000秒に調整することで、大容量のファイルをコピーするとき、タスクタイムアウトの発生を防ぐことができます。Reduceプロセスのメモリ容量mapreduce.reduce.memory.mbサイズを8GBに調整することで、メモリオーバーフローを防ぐことができます。
+
+### 専用回線の移行で、どのように移行タスクの移行帯域幅をコントロールしますか。
+COSDistcpでは移行の総帯域幅制限計算式は、taskNumber * workerNumber * bandWidthです。workerNumberを1に設定し、パラメータtaskNumberによる移行の同時実行数のコントロール、およびパラメータbandWidthによる単一の同時実行帯域幅のコントロールができます。
