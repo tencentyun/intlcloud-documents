@@ -51,5 +51,5 @@ You can view and modify certain parameters and query parameter modification logs
 
 ## Subsequent Operations
 - You can use templates to manage database parameters in batches. For more information, see [Applying Parameter Template](https://intl.cloud.tencent.com/document/product/1098/44601).
-- For suggestions for configuration of key parameters, see [Suggestions on Parameter Settings](https://intl.cloud.tencent.com/document/product/1098/44600).
+- For suggestions for configuration of key parameters, see [Suggestions on Parameter Configuration](https://intl.cloud.tencent.com/document/product/1098/44600).
 
