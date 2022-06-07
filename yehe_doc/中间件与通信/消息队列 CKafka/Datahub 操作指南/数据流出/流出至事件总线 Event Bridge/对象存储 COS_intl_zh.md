@@ -19,7 +19,7 @@ Datahub 提供数据流出能力，您可以将 CKafka 数据分发至 COS 以�
    ![](https://qcloudimg.tencent-cloud.cn/raw/d05e333c479553515b07ee03292801ac.png)
 > ?通过云函数和事件总线处理，需要确认同意 [云函数使用说明](https://intl.cloud.tencent.com/document/product/583) 和 [云函数计费说明](https://intl.cloud.tencent.com/document/product/583/17299)。
 4. 在任务设置页面，填写任务详情。
- ![](https://qcloudimg.tencent-cloud.cn/raw/33f48b5b33add35f1b94e73409b9d35d.png)  
+ ![](https://qcloudimg.tencent-cloud.cn/raw/c725f344a75ff5f7997add62f08bfd83.png)  
    - 任务名称：只能包含字母、数字、下划线、"-"、"."。
    - CKafka 实例：选择数据源 CKafka。
    - 源 Topic：选择源 Topic。
