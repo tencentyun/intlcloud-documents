@@ -1,5 +1,5 @@
 ## 操作场景
-云数据库 SQL Server 支持授权和修改数据库的帐号权限，由于 root 帐号默认拥有 SQL Server 实例下所有数据库的读写权限，所以不支持对 SQL Server 实例下的数据库进行 root 帐号的授权修改，您可以在数据库管理页面对已创建的数据库授权其他帐号对其进行读写或只读权限。
+云数据库 SQL Server 支持授权和修改数据库的帐号权限，由于 root 帐号默认拥有 SQL Server 实例下所有数据库的读写权限，所以不支持对 SQL Server 实例下的数据库进行 root 帐号的授权修改，您可以在数据库管理页面对已创建的数据库授权其他帐号对其进行读写或只读权限设置。
 
 ## 前提条件
 - SQL Server 实例下有除了 root 帐号以外的帐号，操作方法请参见 [创建帐号](https://intl.cloud.tencent.com/document/product/238/7521)。
