@@ -1,5 +1,5 @@
 
-TDSQL-C for MySQL can be changed from pay-as-you-go to serverless. TDSQL-C for MySQL implements this change by converting the cluster type on the backend. After this change, the [bills and details](https://console.cloud.tencent.com/expense/bill/summary) will also change, while the payment mode will remain as pay-as-you-go.
+TDSQL-C for MySQL can be changed from pay-as-you-go to serverless. TDSQL-C for MySQL implements this change by converting the cluster type on the backend. After this change, the [bill details](https://console.cloud.tencent.com/expense/bill/summary) will also change, while the payment mode will remain as pay-as-you-go.
 
 >!
 >- During the change from pay-as-you-go billing to serverless billing, the database can be accessed normally but will experience a momentary interruption when the billing mode is changed. Therefore, we recommend you configure an automatic reconnection feature for your application.
