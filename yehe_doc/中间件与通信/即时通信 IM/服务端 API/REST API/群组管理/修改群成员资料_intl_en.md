@@ -155,7 +155,7 @@ The following table describes the error codes specific to this API:
 | 10007 | No operation permissions. For example, a common member in a public group tries to remove other users from the group, but only the app admin can do so. |
 | 10010 | The group does not exist or has been deleted. |
 | 10015 | Invalid group ID. Be sure to use the correct group ID. |
-| 80001 | The modified group member information failed text content filtering. Check whether the modified group member information contains sensitive words. |
+
 
 ## Debugging Tool
 Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/modify_group_member_info) to debug this API.
