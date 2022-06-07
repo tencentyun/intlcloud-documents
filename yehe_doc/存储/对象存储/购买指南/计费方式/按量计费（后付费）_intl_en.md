@@ -60,11 +60,11 @@ COS is billed on a daily or monthly basis. Different billable items might have d
 
 | Billable Item  | Billing Cycle | Description        |
 | ------------ | -------- | -------------------------------------- |
-| Storage usage | Monthly | Fees incurred last month will be settled on the 1st day of the month     |
-| Requests | Monthly | Fees incurred last month will be settled on the 1st day of the month   |
-| Data retrievals | Monthly | Fees incurred last month will be settled on the 1st day of the month        |
-| Traffic | Daily | Fees incurred yesterday (00:00−23:59:59) will be settled every day |
-| Management features | Daily | Fees incurred yesterday (00:00−23:59:59) will be settled every day |
+| Storage usage | Monthly | Fees incurred this month will be settled on the 1st day of next month     |
+| Requests | Monthly | Fees incurred this month will be settled on the 1st day of next month   |
+| Data retrievals | Monthly | Fees incurred this month will be settled on the 1st day of next month        |
+| Traffic | Daily | Fees incurred today (00:00−23:59:59) will be settled on the next day |
+| Management features | Daily | Fees incurred today (00:00−23:59:59) will be settled on the next day |
 
 >?
 > The bill in the system might have a certain delay. The daily or monthly bill will be generated at around 08:00.
