@@ -11,6 +11,7 @@
 | Public | Yes. |
 | ChatRoom | Yes. Same as meeting group (Meeting) in the new version. |
 | AVChatRoom | Yes. |
+|Community | Yes. |
 
 Above are the IM built-in groups. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
@@ -153,7 +154,7 @@ The following table describes the error codes specific to this API:
 | 10007  | Insufficient operation permissions. Check whether the operator is the app admin or whether the operator has the permission to modify the fields in the request. |
 | 10010 | The group does not exist or has been deleted. |
 | 10015 | Invalid group ID. Be sure to use the correct group ID. |
-| 80001 | The modified group member information failed text content filtering. Check whether the modified group member information contains sensitive words. |
+
 
 ## API Debugging Tool
 Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/modify_group_base_info) to debug this API.
