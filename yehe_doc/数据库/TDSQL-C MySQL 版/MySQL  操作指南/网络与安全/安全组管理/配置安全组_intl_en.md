@@ -61,7 +61,7 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 
 ## Importing Security Group Rules
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID/name of the target security group.
-2. On the inbound rule or outbound rule tab, click **Import Rule**.
+2. On the **Inbound Rules** or **Outbound Rules** tab, click **Import Rule**.
 3. In the pop-up window, select an edited inbound/outbound rule template file and click **Import**.
 >? As existing rules will be overwritten after importing, we recommend that you export the existing rules before importing new ones.
 
