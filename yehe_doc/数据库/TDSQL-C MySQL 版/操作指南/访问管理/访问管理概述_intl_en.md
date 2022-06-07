@@ -9,7 +9,7 @@ You can avoid the problems above by allowing different users to manage different
 
 [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/10583) is a web-based Tencent Cloud service that helps you securely manage and control access permissions to your Tencent Cloud resources. Using CAM, you can create, manage, and terminate users (groups), and control the specified Tencent Cloud resources that can be used by the specified user through identity and policy management.
 
-When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, please see [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603). For detailed directions, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
+When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, see [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603). For detailed directions, see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 
 You can skip this section if you do not need to manage permissions to TDSQL-C for MySQL resources for sub-accounts. This will not affect your understanding and use of the other sections of the document.
 
