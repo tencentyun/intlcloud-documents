@@ -4,11 +4,11 @@ iOS용 Tencent Cloud RT-Cube Superplayer Adapter는 타사 또는 독점 플레�
 
 ## SDK 다운로드[](id:sdkDownload)
 
-Tencent Cloud RT-Cube Superplayer Adapter SDK 및 iOS용 Demo는 [TXCPlayerAdapterSDK_iOS](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_iOS.zip)에서 다운로드할 수 있습니다. 
+Tencent Cloud RT-Cube Superplayer Adapter SDK 및 iOS용 Demo는 [TXCPlayerAdapterSDK_iOS](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.2.0/TXCPlayerAdapterSDK_1.2.0_iOS.zip)에서 다운로드할 수 있습니다. 
 
 ## 타겟 오디언스
 
-이 문서는 Tencent Cloud의 독점 기능에 대해 설명합니다. 읽기 전에 관련 [Tencent Cloud](https://cloud.tencent.com) 서비스를 활성화했는지 확인하십시오. 계정을 등록하지 않은 경우 먼저 [무료 평가판](https://cloud.tencent.com/login)에 등록하십시오.
+본 문서의 일부 내용은 Tencent Cloud의 독점적 기능이므로, 사용하기 전에 [Tencent Cloud](https://intl.cloud.tencent.com) 관련 서비스를 활성화해 주십시오. 미등록 사용자는 [무료 베타](https://intl.cloud.tencent.com/login) 계정에 가입하실 수 있습니다.
 
 ## 통합 가이드[](id:guide)
 
@@ -30,7 +30,7 @@ GCDWebServer는 GCD를 기반으로 하는 경량 HTTP server이며 OS X & iOS�
 
 변수를 선언한 다음 인스턴스를 만듭니다. 플레이어의 메인 클래스는 `TXCPlayerAdapter`이며, 동영상을 생성한 후 재생할 수 있습니다.
 
-fileId는 일반적으로 비디오가 업로드된 후 서버에서 반환됩니다.
+FileId는 일반적으로 비디오가 업로드된 후 서버에서 반환됩니다.
 
 1. 비디오가 클라이언트에 게시된 후 서버는 클라이언트에 fileId를 반환합니다.
 2. 동영상이 서버에 업로드되면 업로드 확인 알림에 해당 fileId가 포함됩니다.
@@ -41,7 +41,7 @@ fileId는 일반적으로 비디오가 업로드된 후 서버에서 반환됩�
 ```objective-c
 NSInteger appId; ////Tencent Cloud VOD에서 appid 신청 가능
 NSString *fileId;
-// psign은 Superplayer를 위한 서명입니다. 서명 및 생성 방법에 대한 자세한 내용은 다음 링크를 참고하십시오. https://intl.cloud.tencent.com/document/product/266/38099
+//psign은 Superplayer 서명입니다. 서명 및 생성 방법에 대한 자세한 내용은 다음 링크를 참고하십시오. https://intl.cloud.tencent.com/document/product/266/38099
 NSString *pSign = self.pSignTextView.text;
     
 TXCPlayerAdapter *adapter = [TXCPlayerAdapter shareAdapterWithAppId:appId];
@@ -97,10 +97,10 @@ id<ITXCPlayerAssistorProtocol> assistor = [TXCPlayerAdapter createPlayerAssistor
 
 **매개변수 설명**
 
-appId: appid를 입력합니다(서브 애플리케이션을 사용하는 경우 subappid 입력).
+appId: appid 입력(서브 애플리케이션을 사용하는 경우 subappid 입력)
 
 ### Adatper 종료
-이 API는 Adapter를 종료하는 데 사용됩니다. 프로그램 종료 후 호출할 수 있습니다.
+이 API는 어댑터를 폐기하는 데 사용됩니다. 프로그램 종료 후 호출할 수 있습니다.
 
 **API**
 
@@ -146,7 +146,7 @@ appId: appid를 입력합니다(서브 애플리케이션을 사용하는 경우
 
 ### 플레이어의 보조 클래스 종료
 
-이 API는 보조 클래스를 종료하는 데 사용됩니다. 플레이어를 종료하거나 재생을 위해 다음 비디오로 전환할 때 호출할 수 있습니다.
+이 API는 보조 클래스를 종료하는 데 사용됩니다. 플레이어 종료 또는 다음 비디오 재생으로 전환 시 호출할 수 있습니다.
 
 **API**
 

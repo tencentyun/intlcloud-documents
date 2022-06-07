@@ -1,14 +1,14 @@
 ## 製品概要
 
-Tencent Cloud View Cube ios Super Player Adapterは、サードパーティのプレーヤーまたは自社開発のプレーヤーを使用して開放されたクラウドPAASリソースに接続を希望する顧客向けにVODのためのプレーヤープラグインを提供します。カスタムプレーヤー機能を必要とするユーザーにおいて一般的に使用されます。
+Tencent Cloud View Cube iOS Super Player Adapterは、サードパーティのプレーヤーまたは自社開発のプレーヤーを使用して開放されたクラウドPAASリソースへの接続を希望する顧客向けにVODのためのプレーヤープラグインを提供します。カスタムプレーヤー機能を必要とするユーザーにおいて一般的に使用されます。
 
 ## SDKのダウンロード[](id:sdkDownload)
 
-Tencent Cloud View Cube iOS Super Player Adapter SDKとDemoプロジェクトのダウンロードアドレスは[TXCPlayerAdapterSDK_iOS](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_iOS.zip)です。 
+Tencent Cloud View Cube iOS Super Player Adapter SDKとDemoプロジェクトのダウンロードアドレスは[TXCPlayerAdapterSDK_iOS](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.2.0/TXCPlayerAdapterSDK_1.2.0_iOS.zip)です。 
 
 ## 対象となる読者
 
-このドキュメントの内容の一部は、Tencent Cloud専用の機能となっていますので、使用前に、[Tencent Cloud](https://cloud.tencent.com)関連サービスのアクティブ化を行ってください。アカウント登録がないユーザーは登録し、[無料試用](https://cloud.tencent.com/login)が可能です。
+このドキュメントの内容の一部は、Tencent Cloud専用の機能となっていますので、使用前に、[Tencent Cloud](https://intl.cloud.tencent.com)関連サービスのアクティブ化を行ってください。アカウント登録がないユーザーは登録し、[無料試用](https://intl.cloud.tencent.com/login)が可能です。
 
 ## 統合ガイド[](id:guide)
 
@@ -41,13 +41,13 @@ FileIdは、通常、ビデオのアップロード後にサーバーから返�
 ```objective-c
 NSInteger appId; ////appidをTencent Cloud VODで申請します
 NSString *fileId;
-//psignはSuper Playerの署名です。署名についての紹介および生成方法は、以下のリンクをご参照ください。https://intl.cloud.tencent.com/document/product/266/38099
+//psignはSuper Playerの署名です。署名についての紹介および生成方法は、リンクhttps://intl.cloud.tencent.com/document/product/266/38099をご参照ください。
 NSString *pSign = self.pSignTextView.text;
     
 TXCPlayerAdapter *adapter = [TXCPlayerAdapter shareAdapterWithAppId:appId];
 ```
 
-ビデオリクエスト情報と再生：
+ビデオ情報のリクエストと再生：
 
 ```objective-c
 id<ITXCPlayerAssistorProtocol> assistor = [TXCPlayerAdapter createPlayerAssistorWithFileId:fileId pSign:pSign];
@@ -76,7 +76,7 @@ id<ITXCPlayerAssistorProtocol> assistor = [TXCPlayerAdapter createPlayerAssistor
 }
 ```
 
-使用後にPlayerを破棄します。
+使用後にPlayerを廃棄します。
 
 ```objective-c
 [TXCPlayerAdapter destroy];
@@ -99,8 +99,8 @@ Adapterを初期化します。1回のみ。
 
 appId：appidを入力します（サブアプリケーションを使用している場合はsubappidを入力）
 
-### Adatperの破棄
-Adapterを破棄します。プロセス終了後に呼び出します。
+### Adatperの廃棄
+Adapterを廃棄します。プロセス終了後に呼び出します。
 
 **インターフェース**
 
@@ -110,7 +110,7 @@ Adapterを破棄します。プロセス終了後に呼び出します。
 
 ### プレーヤー補助クラスの作成
 
-プレーヤー補助クラスを介して再生fileId関連情報を取得し、DRM暗号化インターフェースなどを処置することができます。
+プレーヤー補助クラスを介してfileId再生の関連情報を取得し、DRM暗号化インターフェースなどを処置することができます。
 
 **インターフェース**
 
@@ -121,14 +121,14 @@ Adapterを破棄します。プロセス終了後に呼び出します。
 
 **パラメータの説明**
 
-| パラメータ名 | タイプ   | 説明               |
+| パラメータ名     | タイプ   | 説明          |
 | :----- | :----- | :----------------- |
 | fileId | String | 再生したいビデオfileId |
 | pSign  | String | Super Player署名     |
 
 ### ビデオ再生情報のリクエスト
 
-このインターフェースでは、Tencent Cloud VODサーバーをリクエストし，ビデオ再生ストリーム情報などを取得することができます。
+このインターフェースでは、Tencent Cloud VODサーバーをリクエストし、ビデオ再生ストリーム情報などを取得することができます。
 
 **インターフェース**
 
@@ -144,9 +144,9 @@ Adapterを破棄します。プロセス終了後に呼び出します。
 
 
 
-### プレーヤー補助クラスの破棄
+### プレーヤー補助クラスの廃棄
 
-補助クラスを破棄し、プレーヤーを終了するか、または次のビデオ再生に切り替える時に呼び出します。
+補助クラスを廃棄し、プレーヤーを終了するか、または次のビデオ再生に切り替える時に呼び出します。
 
 **インターフェース**
 
@@ -208,9 +208,9 @@ TXCSubStreamInfoパラメータは次のとおりです。[](id:TXCSubStreamInfo
 | height         | Int    | サブストリームのビデオの高さ。単位：px               |
 | resolutionName | String | プレーヤーで表示するサブストリームのビデオの仕様名       |
 
-### キーフレームキーモーメント情報を取得
+### キーフレームのタイムスタンプ情報を取得
 
-ビデオのキーフレームキーモーメント情報の取得を有効にするには、`id<ITXCPlayerAssistorProtocol>.requestVideoInfo`でコールバックする必要があります。
+ビデオのキーフレームのタイムスタンプ情報の取得を有効にするには、`id<ITXCPlayerAssistorProtocol>.requestVideoInfo`でコールバックする必要があります。
 
 **インターフェース**
 

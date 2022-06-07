@@ -10,7 +10,7 @@
 
 ## 1단계: 어댑티브 비트 레이트 스트리밍 템플릿 만들기
 
-1. VOD 콘솔에 로그인하여 [비디오 처리]>[[템플릿 설정]](https://console.cloud.tencent.com/vod/video-process/template)을 선택한 후 ‘어댑티브 비트레이트 스트리밍’에서 [템플릿 생성]을 클릭합니다.
+1. VOD 콘솔에 로그인하여 [비디오 처리]>[[템플릿 설정]](https://console.cloud.tencent.com/vod/video-process/template)을 선택한 후 ‘어댑티브 비트레이트 스트리밍’ 탭에서 [템플릿 생성]을 클릭합니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/19f292b6dbd89cf702ba27b3e9adf042.png" width="800" />
 2. ‘템플릿 설정’ 페이지에서 [서브스트림 추가]를 클릭하여 서브스트림 1, 2, 3을 생성하고 다음과 같이 매개변수를 입력합니다.
 	- **기본 정보 모듈**:
@@ -64,7 +64,7 @@
 
 ## 2단계: 이미지 스프라이트 템플릿 생성
 
-1. VOD 콘솔에 로그인하여 [비디오 처리]>[[템플릿 설정]](https://console.cloud.tencent.com/vod/video-process/template)을 선택한 후, ‘스크린샷’ 탭에서 [스크린샷 템플릿 만들기]를 클릭합니다.
+1. VOD 콘솔에 로그인하여 [비디오 처리]>[[템플릿 설정]](https://console.cloud.tencent.com/vod/video-process/template)을 선택한 후, ‘스크린샷’ 탭에서 [스크린샷 템플릿 생성]을 클릭합니다.
 2. ‘템플릿 설정’ 페이지에서 템플릿 매개변수를 입력합니다.
  * [템플릿 이름]: MyTestTemplate.
  * [스크린샷 유형]: [이미지 스프라이트 스크린샷].
@@ -72,25 +72,26 @@
  * [샘플링 간격]: 20%.
  * [행]: 10.
  * [열]: 10.
-![](https://qcloudimg.tencent-cloud.cn/raw/7ec21a1d127a0b5284a491fcac90c3a9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9c0f52f7a6948f693ddc2e7bda48462a.png)
 3. [생성]을 클릭합니다. ID가 113272인 이미지 스프라이트 템플릿이 생성됩니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4cf44757d6dbb339aa29c3c29fc480d7.png)
 
-## 3단계: 작업 흐름 생성 및 처리 시작
+## 3단계: 태스크 플로우 생성 및 처리 시작
 
-어댑티브 비트 레이트 스트리밍 템플릿(ID: 1145464) 및 이미지 스프라이트 템플릿(ID: 113272)을 생성한 후 작업 흐름을 생성해야 합니다.
+어댑티브 비트 레이트 스트리밍 템플릿(ID: 1145464) 및 이미지 스프라이트 템플릿(ID: 113272)을 생성한 후 태스크 플로우를 생성해야 합니다.
 
-1. VOD 콘솔에 로그인하고 [비디오 처리]>[[작업 흐름 설정]](https://console.cloud.tencent.com/vod/video-process/taskflow)을 선택하고 [작업 흐름 생성]을 클릭합니다. [작업 흐름 이름]: MyTestProcedure를 입력합니다.
+1. VOD 콘솔에 로그인하고 [비디오 처리]>[[태스크 플로우 설정]](https://console.cloud.tencent.com/vod/video-process/taskflow)을 선택하고 [태스크 플로우 생성]을 클릭합니다.
+ * [태스크 플로우 이름]: MyTestProcedure를 입력합니다.
  * [구성 항목]: [어댑티브 비트 레이트 스트리밍], [스크린샷 작업] 및 [커버 스크린샷]을 선택합니다. [어댑티브 비트 레이트 스트리밍 작업 구성] 영역에서 [템플릿 추가]를 클릭하고 ‘어댑티브 비트 레이트 스트리밍 템플릿/ID’에 대해 **1단계**에서 만든 사용자 정의 어댑티브 비트 레이트 스트리밍 템플릿 MyTestTemplate(1145464)을 선택합니다.
 	 *  [스크린샷 작업 구성] 영역에서 [템플릿 추가]를 클릭하고 ‘스크린샷을 찍는 방법’에 대해 [이미지 스프라이트]를 선택하고 ‘스크린샷/ID’에 대해 **2단계**에서 만든 사용자 정의 이미지 스프라이트 템플릿 MyTestTemplate(113272)을 선택합니다.
 	 *  [커버 스크린샷 캡처 작업 구성] 영역에서 [템플릿 추가]를 클릭하고 ‘스크린샷 템플릿/ID’로 [TimepointScreenshot]을 선택한 후, [퍼센트]를 선택하고 50%를 입력합니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/0d91b5aeb8c2fe41d844e4c36c0a3d12.png" width="900" />
-2. [제출]을 클릭합니다. MyTestProcedure라는 작업 흐름이 생성됩니다.
+2. [제출]을 클릭합니다. MyTestProcedure라는 태스크 플로우가 생성됩니다.
 ![](https://main.qcloudimg.com/raw/e33008c55dcc18bed3b41f96d88c5c8c.png)
 3. 콘솔에서 [미디어 자산]>[[비디오 관리]](https://console.cloud.tencent.com/vod/media)를 선택하고 대상 비디오(FileId: 528xxx3757278095)를 선택한 후 [비디오 처리]를 클릭합니다.
 4. 비디오 처리 팝업 창에서:
- * [처리 유형]에 대해 [작업 흐름]을 선택합니다.
- * [작업 흐름 템플릿]에 대해 [MyTestProcedure]를 선택합니다.<span></span>
+ * [처리 유형]에 대해 [태스크 플로우]를 선택합니다.
+ * [태스크 플로우 템플릿]에 대해 [MyTestProcedure]를 선택합니다.<span></span>
  <img src="https://qcloudimg.tencent-cloud.cn/raw/649b07dfd248670d057795f3498b61ee.png" width="500" />
 5. [확인]을 클릭하고 **비디오 상태**가 ‘처리 중’에서 ‘정상’으로 변경될 때까지 기다리십시오. 이는 비디오 처리가 완료되었음을 나타냅니다.
 ![](https://main.qcloudimg.com/raw/2894b49729ef223941360f2f814a63fa.png)
@@ -121,7 +122,10 @@
  <img src="https://qcloudimg.tencent-cloud.cn/raw/b5d25e5c5cd9f55cf14be336f4abd967.png" width="522" />
 4. [Web 플레이어]에서 플레이어 중앙에 있는 버튼을 클릭하면 Web에서 동영상을 재생할 수 있습니다.
 <img src="https://main.qcloudimg.com/raw/976ec23a988bcb494c4b225e635a5dba.png" width="522" />
-
+5. [모바일 플레이어]에서 [코드 스캔하여 다운로드]를 클릭하여 ‘Tencent Cloud Toolkit’을 설치합니다.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f0e72b414ee3dc8084dda39d8a5d5c91.png" style="zoom:67%;" />
+6. 휴대폰에서 Tencent Cloud Toolkit을 열고 [플레이어]>[Superplayer]를 선택하고 오른쪽 상단 모서리를 클릭하여 QR 코드를 스캔하면 휴대폰에서 비디오를 재생할 수 있습니다.
+ <img src="https://qcloudimg.tencent-cloud.cn/raw/06e77f14c2e1020e8936ce1ab30a6ca3.png" width="522" />
 
 ##  6단계: 검증을 위해 Demo 사용
 
@@ -136,9 +140,9 @@
  * [링크 만료 시간]: 6시간 후 16진법 Unix 시간으로 설정할 수 있는 Key 링크 도용 방지의 만료 시간: 5ee09b44.
  * [링크 도용 방지 Key]: 이전에 획득한 링크 도용 방지 Key인 2WExxx48eW입니다.
 2. [서명 생성]을 클릭하면 생성된 서명이 ‘서명 생성 결과’ 텍스트 상자에 표시됩니다.
-img src="https://main.qcloudimg.com/raw/c7eff5906fbf01d8f28ec37119f8caf0.png" width="700" />
 
-Superplayer 서명을 받은 후 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html), [Android](https://github.com/tencentyun/SuperPlayer_Android) 및 [iOS](https://github.com/tencentyun/SuperPlayer_iOS)용 Superplayer Demo를 사용하여 확인할 수 있습니다. 자세한 내용은 Demo 소스 코드를 참고하십시오.
+
+Superplayer 서명을 받은 후 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html), [Android](https://github.com/LiteAVSDK/Player_Android) 및 [iOS](https://github.com/LiteAVSDK/Player_iOS)용 Superplayer Demo를 사용하여 확인할 수 있습니다. 자세한 내용은 Demo 소스 코드를 참고하십시오.
 >?콘솔의 [미디어 자산]>[[비디오 관리]](https://console.cloud.tencent.com/vod/media)>[Superplayer 미리 보기]에서 참고용으로 비디오 미리 보기에 해당하는 Web 플레이어 소스 코드를 얻을 수 있습니다.
 <img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
 
@@ -146,3 +150,4 @@ Superplayer 서명을 받은 후 [Web](https://imgcache.qq.com/open/qcloud/video
 
 이제 Superplayer가 재생하는 비디오의 콘텐츠와 스타일을 사용자 정의하는 방법을 학습 완료했습니다.
 동영상을 암호화하고 암호화된 동영상을 재생하려면 [4단계: 암호화된 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38294)을 참고하십시오.
+

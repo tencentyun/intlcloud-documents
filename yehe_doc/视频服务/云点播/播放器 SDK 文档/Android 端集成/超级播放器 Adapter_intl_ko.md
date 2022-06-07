@@ -4,7 +4,7 @@ Android용 Tencent Cloud RT-Cube Superplayer Adapter는 타사 또는 독점 플
 
 ## SDK 다운로드[](id:sdkDownload)
 
-Tencent Cloud RT-Cube Superplayer Adapter SDK 및 Android용 Demo는 [TXCPlayerAdapterSDK_Android](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_Android.zip)에서 다운로드할 수 있습니다. 
+Tencent Cloud RT-Cube Superplayer Adapter SDK 및 Android용 Demo는 [TXCPlayerAdapterSDK_Android](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.2.0/TXCPlayerAdapterSDK_1.2.0_Android.zip)에서 다운로드할 수 있습니다. 
 
 ## 타겟 오디언스
 

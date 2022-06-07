@@ -1,10 +1,10 @@
 ## 製品概要
 
-Tencent Cloud View Cube Android Super Player Adapterは、サードパーティのプレーヤーまたは自社開発のプレーヤーを使用して開放されたクラウドPAASリソースに接続を希望する顧客向けにVODのためのプレーヤープラグインを提供します。カスタムプレーヤー機能を必要とするユーザーにおいて一般的に使用されます。
+Tencent Cloud View Cube Android Super Player Adapterは、サードパーティのプレーヤーまたは自社開発のプレーヤーを使用して開放されたクラウドPAASリソースへの接続を希望する顧客向けにVODのためのプレーヤープラグインを提供します。カスタムプレーヤー機能を必要とするユーザーにおいて一般的に使用されます。
 
 ## SDKのダウンロード[](id:sdkDownload)
 
-Tencent Cloud View Cube Android Super Player Adapter SDKとDemoプロジェクトのダウンロードアドレスは[TXCPlayerAdapterSDK_Android](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.0.0/TXCPlayerAdapterSDK_1.0.0_Android.zip)です。 
+Tencent Cloud View Cube Android Super Player Adapter SDKとDemoプロジェクトのダウンロードアドレスは[TXCPlayerAdapterSDK_Android](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TXCPlayerAdapter/Release/1.2.0/TXCPlayerAdapterSDK_1.2.0_Android.zip)です。 
 
 ## 対象となる読者
 
@@ -39,7 +39,7 @@ FileIdは、通常、ビデオのアップロード後にサーバーから返�
 ファイルがすでにTencent Cloudに存在する場合は、[メディア資産管理](https://console.cloud.tencent.com/vod/media)にアクセスし、対応するファイルを検索することができます。クリックして、右側のビデオ詳細で関連パラメータを確認することができます。
 
 ```java
-//psignはSuper Playerの署名です。署名についての紹介および生成方法は、以下のリンクをご参照ください。https://intl.cloud.tencent.com/document/product/266/38099
+//psignはSuper Playerの署名です。署名についての紹介および生成方法は、リンクhttps://intl.cloud.tencent.com/document/product/266/38099をご参照ください。
 private String mFileId, mPSign;
 ITXCPlayerAssistor mPlayerAssistor = TXCPlayerAdapter.createPlayerAssistor(mFileId, mPSign);
 ```
@@ -55,7 +55,7 @@ mSuperPlayerView = findViewById(R.id.sv_videoplayer);
 mPlayerAssistor = TXCPlayerAdapter.createPlayerAssistor(mFileId, mPSign);
 ```
 
-ビデオリクエスト情報と再生
+ビデオ情報のリクエストと再生
 
 ```java
 mPlayerAssistor.requestVideoInfo(new ITXCRequestVideoInfoCallback() {
@@ -91,7 +91,7 @@ mPlayerAssistor.requestVideoInfo(new ITXCRequestVideoInfoCallback() {
 });
 ```
 
-使用後にPlayerを破棄します
+使用後にPlayerを廃棄します
 
 ```java
 TXCPlayerAdapter.destroy();
@@ -119,11 +119,11 @@ appId：appidを入力します（サブアプリケーションを使用して�
 
 
 
-#### TXCPlayerAdatperを破棄
+#### TXCPlayerAdatperを廃棄
 
 **説明**
 
-Adapterを破棄します。プロセス終了後に呼び出します。
+Adapterを廃棄します。プロセス終了後に呼び出します。
 
 **インターフェース**
 
@@ -137,7 +137,7 @@ TXCPlayerAdapter.destroy();
 
 **説明**
 
-プレーヤー補助クラスを介して再生fileId関連情報を取得し、DRM暗号化インターフェースなどを処置することができます。
+プレーヤー補助クラスを介してfileId再生の関連情報を取得し、DRM暗号化インターフェースなどを処置することができます。
 
 **インターフェース**
 
@@ -154,11 +154,11 @@ ITXCPlayerAssistor playerAssistor = TXCPlayerAdapter.createPlayerAssistor(String
 
 
 
-**プレーヤー補助クラスの破棄**
+**プレーヤー補助クラスの廃棄**
 
 **説明**
 
-補助クラスを破棄し、プレーヤーを終了するか、または次のビデオ再生に切り替える時に呼び出します。
+補助クラスを廃棄し、プレーヤーを終了するか、または次のビデオ再生に切り替える時に呼び出します。
 
 **インターフェース**
 
@@ -172,7 +172,7 @@ TXCPlayerAdapter.destroyPlayerAssistor(ITXCPlayerAssistor assistor);
 
 **説明**
 
-このインターフェースでは、Tencent Cloud VODサーバーをリクエストし，ビデオ再生ストリーム情報などを取得することができます。
+このインターフェースでは、Tencent Cloud VODサーバーをリクエストし、ビデオ再生ストリーム情報などを取得することができます。
 
 **インターフェース**
 
@@ -247,11 +247,11 @@ SubStreamInfo
 
 
 
-#### キーフレームキーモーメント情報を取得
+#### キーフレームのタイムスタンプ情報を取得
 
 **説明**
 
-ビデオのキーフレームキーモーメント情報の取得を有効にするには、playerAssistor.requestPlayInfoでコールバックする必要があります。
+ビデオのキーフレームのタイムスタンプ情報の取得を有効にするには、playerAssistor.requestPlayInfoでコールバックする必要があります。
 
 **インターフェース**
 
@@ -289,5 +289,5 @@ TCXImageSpriteInfo
 | パラメータ名    | タイプ   | 説明                                  |
 | --------- | ------ | ------------------------------------- |
 | imageUrls | List   | サムネイルダウンロードURLアレイ。タイプはString。|
-| webVttUrl | String | サムネイルVTTファイルダウンロードURL 。            |
+| webVttUrl | String | サムネイルVTTファイルダウンロードURL。            |
 

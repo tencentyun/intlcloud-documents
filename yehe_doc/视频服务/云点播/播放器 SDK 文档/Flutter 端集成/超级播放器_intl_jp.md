@@ -1,14 +1,14 @@
-Tencent Cloud View Cube Flutter Super Playerは、Tencent Cloudによるオープンソースのプレーヤーコンポーネントです。簡単な数行のコードで、Tencent Videoのような強力な再生機能を備えることができます。画面の縦横切り替え、解像度の選択、ジェスチャー、ミニウィンドウなどの基本機能を備えるほか、ビデオキャッシュ、ソフトウェア/ハードウェアデコードの切り替え、倍速再生などの特殊機能もサポートしています。システムのプレーヤーよりも、サポートする形式が多く、互換性に優れ、機能もより強力です。同時に、CSSストリーム（flv+rtmp）再生をサポートし，トップ画面の秒速起動、低遅延などの優位性、解像度のシームレスな切り替え、CSSタイムシフトなどの高度な機能を備えています。
+Tencent Cloud View Cube Flutter Super Playerは、Tencent Cloudによるオープンソースのプレーヤーコンポーネントです。簡単な数行のコードで、Tencent Videoのような強力な再生機能を備えることができます。画面の縦横切り替え、解像度の選択、ジェスチャー、ピクチャーインピクチャーなどの基本機能を備えるほか、ビデオキャッシュ、ソフトウェア/ハードウェアデコードの切り替え、倍速再生などの特殊機能もサポートしています。システムのプレーヤーと比べて、サポートする形式がより多く、互換性により優れ、機能もより強力です。同時に、CSSストリーム（flv+rtmp）再生をサポートし、トップ画面のインスタントブロードキャスティング、低遅延などの優位性、解像度のシームレスな切り替え、ライブストリーミングタイムシフトなどの高度な機能を備えています。
 
-このプレーヤーはSuperPlayerのFlutterプラグインを基にしており、AndroidおよびiOSの両プラットフォームを同時にサポートしています。完全に無料のオープンソースであり、再生アドレスソースに対する制限がないので、安心してご使用いただけます。
+このプレーヤーはSuperPlayerのFlutterプラグインを基にしており、AndroidおよびiOSの2つのプラットフォームを同時にサポートしています。完全に無料のオープンソースであり、再生アドレスソースに対する制限がないので、安心してご使用いただけます。
 
 ## SDKのダウンロード
 
-Tencent Cloud View Cube Flutter Super Playerのプロジェクトアドレスは、[SuperPlayer Flutter](https://github.com/tencentyun/SuperPlayer/tree/main/Flutter)です。 
+Tencent Cloud View Cube Flutter Super Playerのプロジェクトアドレスは、[SuperPlayer Flutter](https://github.com/LiteAVSDK/Player_Flutter)です。 
 
 ## 対象となる読者
 
-このドキュメントの内容の一部は、Tencent Cloud専用の機能となっていますので、使用前に、[Tencent Cloud](https://cloud.tencent.com)関連サービスのアクティブ化を行ってください。アカウント登録がないユーザーは登録し、[無料試用](https://intl.cloud.tencent.com/login)が可能です。
+このドキュメントの内容の一部は、Tencent Cloud専用の機能となっていますので、使用前に、[Tencent Cloud](https://intl.cloud.tencent.com)関連サービスのアクティブ化を行ってください。アカウント登録がないユーザーは登録し、[無料試用](https://intl.cloud.tencent.com/login)が可能です。
 
 ## 統合ガイド[](id:Guide)
 
@@ -16,11 +16,11 @@ Tencent Cloud View Cube Flutter Super Playerのプロジェクトアドレスは
 ```yaml
   super_player:
     git:
-      url: https://github.com/tencentyun/SuperPlayer
+      url: https://github.com/LiteAVSDK/Player_Flutter
       path: Flutter
 ```
 
-2. 依存パッケージの更新
+2. 依存パッケージのアップデート
 ```yaml
    flutter pub upgrade
 ```
@@ -42,7 +42,7 @@ Androidの`AndroidManifest.xml`に次の設定を追加します。
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-AndroidはネイティブPlayer+に依存しています。ディレクトリの`example/android/superplayerkit`フォルダをプロジェクトディレクトリにコピーし、`setings.gradle`に`include ':superplayerkit'`を挿入します。もちろん、公式サイトで適切なバージョンを検索してインポートすることもできます。
+AndroidはネイティブPlayer+に依存しています。ディレクトリ下の`example/android/superplayerkit`フォルダをプロジェクトディレクトリにコピーし、`setings.gradle`に`include ':superplayerkit'`を挿入します。もちろん、公式サイトで適切なバージョンを検索してインポートすることもできます。
 
 ### iOSの設定[](id:iOS_config)
 
@@ -55,7 +55,7 @@ iOSの`Info.plist`に次の設定を追加します。
     </dict>
 ```
 
-iOSは`pod`方式をネイティブに使用して依存するため、`podfile`ファイルを編集して、プレーヤーのバージョンを指定します。
+iOS依存は`pod`方式をネイティブに使用し、`podfile`ファイルを編集して、プレーヤーのバージョンを指定します。
 ```xml
 pod 'SuperPlayer/Player', '3.3.9'
 ```
@@ -177,14 +177,16 @@ class _TestSuperPlayerState extends State<TestSuperPlayer> {
   }
 ```
 
-コードを実行すると、携帯電話で再生したビデオを視聴でき、インターフェース上の機能もほとんどが使用可能な状態になります。
+コードを実行すると、携帯電話で再生したビデオを視聴でき、インターフェース上のほとんどの機能が使用可能な状態になります。
+
+
 
 ## 複数の解像度[](id:resolution)
 
 上述のサンプルコードは解像度が1種類のみですが、複数の解像度を追加したい場合もとても簡単です。例えば、ライブストリーミングでは、[CSSコンソール](https://console.cloud.tencent.com/live/livemanage)を開き、再生したいCSSストリームを探して、詳細に移動します。
 
 
-ここに各種解像度、形式の再生アドレスがあります。FLVアドレスを使用して再生することをお勧めします。コードは次のとおりです
+ここにさまざまな解像度、さまざまな形式の再生アドレスがあります。FLVアドレスを使用して再生することをお勧めします。コードは次のとおりです
 
 ```dart
   void initState() {
@@ -246,35 +248,39 @@ class _TestSuperPlayerState extends State<TestSuperPlayer> {
 
 プレーヤーでこれら複数の解像度を確認することができ、クリックすれば、すぐに切り替えることができます。
 
+
+
 ## タイムシフト再生[](id:timeShift)
 
 プレーヤーのタイムシフトを有効にするのはとても簡単で、再生前にappIdを設定するだけです。
 
 ```dart
 SuperPlayerViewModel playModel = SuperPlayerViewModel();
-playModel.appId = 1252463788;// ここでappIDに変更
+playModel.appId = 1252463788;// ここでappIDを変更
 ```
 
 >?appIdを【Tencent Cloudコンソール】>【[アカウント情報](https://console.cloud.tencent.com/developer)】で表示します。
 
 再生中のCSSストリームは下のプログレスバーで確認できます。ドラッグすれば指定の位置まで戻ることができ、【ライブストリーミングに戻る】をクリックすれば最新のCSSストリームを視聴することができます。
 
+
+
 >?タイムシフト機能はパブリックベータテスト申請フェーズにあり、必要に応じて[チケットを提出](https://console.cloud.tencent.com/workorder)し、使用を申請することができます。
 
 ## FileId再生
 解像度の設定にurlを入力するよりも、さらに簡単な使用方法がfileIdを使用して再生する方法です。fileIdは、通常、ビデオのアップロード後にサーバーから返されます。
-1. クライアントからビデオが公開されると、サーバーがfileIdをクライアントに返します。
+1. クライアントからビデオがリリースされると、サーバーがfileIdをクライアントに返します。
 2. サーバーからのビデオアップロード時、アップロード確認の通知に対応するfileIdが含まれています。
 
 
 ファイルがすでにTencent Cloudに存在する場合は、[メディア資産管理](https://console.cloud.tencent.com/vod/media)にアクセスし、対応するファイルを検索することができます。クリックして、右側のビデオ詳細でappIdとfileIdを確認することができます。
 
 
-再生fileIdのコードは次のとおりです。
+fileId再生のコードは次のとおりです。
 
 ```dart
 SuperPlayerViewModel playModel = SuperPlayerViewModel();
-playModel.appId = 1252463788;// ここでappIDに変更
+playModel.appId = 1252463788;// ここでappIDを変更
 SuperPlayerVideoId videoId = SuperPlayerVideoId();
 videoId.fileId = "4564972819219071679";
 playModel.videoId = videoId;
@@ -282,9 +288,9 @@ playModel.videoId = videoId;
 _playerController.playWithModel(playModel);
 ```
 
-ビデオがアップロードされると、バックグランドで自動的にトランスコードされます（すべてのトランスコード形式については、[トランスコードテンプレート](https://console.cloud.tencent.com/vod/video-process/template)）をご参照ください。トランスコード完了後、プレーヤーは複数の解像度を自動的に表示します。
+ビデオがアップロードされると、バックグランドで自動的にトランスコーディングされます（すべてのトランスコーディング形式については、[トランスコーディングテンプレート](https://console.cloud.tencent.com/vod/video-process/template)）をご参照ください。トランスコーディング完了後、プレーヤーは複数の解像度を自動的に表示します。
 
 ## その他の機能[](id:moreFeature)
 
-完全な機能は、2次元コードをスキャニングし、ビデオクラウドツールキットをダウンロードして体験するか、またはプログラムのDemoを直接実行することもできます。
+完全な機能は、QRコードをスキャニングし、ビデオクラウドツールキットをダウンロードして体験するか、またはプログラムのDemoを直接実行することもできます。
 <img src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png" width="150">
