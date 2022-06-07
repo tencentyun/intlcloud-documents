@@ -19,7 +19,7 @@ Currently, this feature relies on the SCF and COS services, which should be acti
    ![](https://qcloudimg.tencent-cloud.cn/raw/d05e333c479553515b07ee03292801ac.png)
 > ?Before using SCF and EventBridge to process data, you need to read and agree to [SCF Description](https://intl.cloud.tencent.com/document/product/583) and [Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
 4. On the **Configure Task** page, enter the task details.
- ![](https://qcloudimg.tencent-cloud.cn/raw/33f48b5b33add35f1b94e73409b9d35d.png)  
+ ![](https://qcloudimg.tencent-cloud.cn/raw/c725f344a75ff5f7997add62f08bfd83.png)  
    - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and ".").
    - CKafka Instance: Select the source CKafka instance.
    - Source Topic: Select the source topic.
