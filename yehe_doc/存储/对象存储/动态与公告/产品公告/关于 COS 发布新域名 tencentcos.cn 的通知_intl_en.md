@@ -1,4 +1,4 @@
-COS will release a new domain name `tencentcos.cn` on XX XX, 2022. The current domain name `myqcloud.com` will remain available, but will not support new features of COS. We recommend you switch to the new domain name, which is more secure and reliable.
+COS will release a new domain name `tencentcos.cn` on July 25, 2022. The current domain name `myqcloud.com` will remain available, but will not support new features of COS. We recommend you switch to the new domain name, which is more secure and reliable.
 
 
 >! The current domain name `myqcloud.com` will remain available, and its existing features will not be affected. However, it will not support new COS features provided later.
