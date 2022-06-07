@@ -36,7 +36,7 @@ The multi-AZ deployment scheme of TDSQL-C for MySQL guarantees the high availabi
 </tbody></table>
 
 ## How to Implement Multi-AZ Architecture
-You can create a cluster in multi-AZ deployment mode in the TDSQL-C for MySQL console. Your existing single-AZ clusters will also be upgraded to the multi-AZ mode. The upgrade will be automatically completed through online data migration without affecting your business. For more information, see [Configuring Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/1098/44326).
+You can create a cluster in multi-AZ deployment mode in the TDSQL-C for MySQL console. Your existing single-AZ clusters will also be upgraded to the multi-AZ mode. The upgrade will be automatically completed through online data migration without affecting your business. For more information, see [Setting Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/1098/44326).
 
 ## Multi-AZ Billing Description
 There are no additional fees for the multi-AZ feature for the time being.
