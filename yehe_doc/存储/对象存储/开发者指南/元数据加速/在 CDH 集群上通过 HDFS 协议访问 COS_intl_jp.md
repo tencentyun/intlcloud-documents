@@ -36,7 +36,7 @@ CDH(Cloudera's Distribution, including Apache Hadoop)は、業界で流行りの
 
 1. CDH管理ページにログインします。
 2. 下図に示すとおり、**設定** > *サービス範囲** > **高度**を選択して、コードセグメントの高度な設定ページに進みます。
-![](https://main.qcloudimg.com/raw/95a05ec2090a84861c99222c9d26d4df.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f0913ec665e54a6619a3acc052e8f0c3.png)
 3. Cluster-wide Advanced Configuration Snippet(Safety Valve) for core-site.xmlのコードボックスに、COSビッグデータサービス設定を入力します。
 ```
 <property>
