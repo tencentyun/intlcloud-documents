@@ -1,6 +1,6 @@
 ## 1、基本環境についての質問
 [](id:b1)
-### Web端末SDKはどのブラウザをサポートしていますか。
+### Web端末SDKはどのブラウザをサポートしていますか？
 TRTC Web SDKの、ブラウザに対する詳細なサポートの程度については、[TRTC Web SDKのブラウザサポート状況](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)をご参照ください。
 上記に記載されていない環境については、現在のブラウザで[TRTC能力テスト](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)を開き、WebRTC機能を完全にサポートしているかテストすることができます。
 
@@ -9,29 +9,29 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 [通話前の環境およびデバイステスト](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html)で確認できます。
 
 [](id:b3)
-### 現在のネットワーク状況をリアルタイムに検出するにはどうすればよいですか。
+### 現在のネットワーク状況をリアルタイムに検出するにはどうすればよいですか？
 具体的には[通話前のネットワーク品質テスト](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html)をご参照ください。
 
 [](id:b4)
-### ローカルの開発テストではTRTC Web SDKを正常に使用できたのに、オンラインにデプロイすると使用できなくなりましたが、なぜですか。
+### ローカルの開発テストではTRTC Web SDKを正常に使用できましたが、オンラインにデプロイすると使用できなくなりました。なぜですか？
 
 ユーザーに対するセキュリティ、プライバシーなどの観点から、ブラウザの制限ページは安全な環境下（例えば、`https`、`localhost`、`file://`などのプロトコル）でなければ、マイク、カメラのキャプチャが行えないようになっています。HTTPプロトコルは安全ではないため、ブラウザはHTTPプロトコルでのメディアデバイスのキャプチャを禁止する場合があります。
 
 ローカルの開発テストではすべて正常でも、ウェブページのデプロイ後にカメラ、マイクを正常にキャプチャできなくなった場合は、ウェブページがHTTPプロトコルにデプロイされているかどうかを確認してください。もしデプロイされていなければ、HTTPSを使用してウェブページのデプロイを行ってください。その場合は適切なHTTPSセキュリティ証明書があることを確認してください。
 
-より詳しい情報については、[URLドメイン名およびプロトコル制限の説明](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html#h2-2)をご参照ください。
+詳細情報については、[URLドメイン名およびプロトコル制限の説明](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html#h2-2)をご参照ください。
 
 [](id:b5)
-### ミクスストリーミング、Relayed Push、大小のストリーム、美顔、ウォーターマークをサポートしていますか。
-[ミクスストリーミング](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)、[Relayed Push](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)、[大小のストリーム](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)、[美顔](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)、[ウォーターマーク](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-29-advance-water-mark.html)をご参照ください。これらのドキュメントを参照して高度な機能を実現することができます。
+### ミクスストリーミング、Relayed Push、ビッグスモールストリーム、美顔、ウォーターマークをサポートしていますか。
+[ミクスストリーミング](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)、[Relayed Push](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)、[ビッグスモールストリーム](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-27-advanced-small-stream.html)、[美顔](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)、[ウォーターマーク](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-29-advance-water-mark.html)をご参照ください。これらのドキュメントを参照して高度な機能を実現することができます。
 
 [](id:b6)
-### WebRTCの既知の問題にはどのようなものがありますか。
+### WebRTCの既知の問題にはどのようなものがありますか？
 具体的には、[WebRTCの既知の問題と回避方法](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-02-info-webrtc-issues.html)をご参照ください。
 
 ## 2、プッシュプルストリームについての質問
 [](id:p1)
-### Web端末SDKログのエラーメッセージのうち、NotFoundError、NotAllowedError、NotReadableError、OverConstrainedErrorおよびAbortErrorは、それぞれどういう意味ですか。
+### Web端末SDKログのエラーメッセージのうち、NotFoundError、NotAllowedError、NotReadableError、OverConstrainedErrorおよびAbortErrorは、それぞれどういう意味ですか？
 | エラー名               | 説明 | 推奨する対処方法 |
 | -------------------- | -------------------- | -------------------- |
 | NotFoundError | リクエストを満たすパラメータのメディアタイプ（オーディオ、ビデオ、画面共有を含む）が見つかりません。例えば、PCにカメラがないのに、ブラウザにビデオストリームを取得するようリクエストがあった場合、このエラーが発生します。 | ユーザーが通話を開始する前に、通話に必要なカメラやマイクなどのデバイスを確認することをお勧めします。カメラがなく、音声通話を行う必要がある場合は、[TRTC.createStream({ audio: true, video: false })](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.createStream)で、マイクのみをキャプチャするように指定できます。 |
@@ -52,15 +52,15 @@ TRTC Web SDKの、ブラウザに対する詳細なサポートの程度につ�
 デバイスとブラウザの制限によって、ビデオの解像度が完全にマッチするとは限りません。マッチしない場合、ブラウザは自動的に解像度を調整し、Profileに対応する解像度に近づけます。詳細については、[setVideoProfile](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html?#setVideoProfile)をご参照ください。
 
 [](id:p4)
-### Web端末の画面共有形式の変更はサポートしていますか。
+### Web端末の画面共有形式の変更はサポートしていますか？
 画面共有形式はブラウザによって制御されており、現在は変更できません。
 
 [](id:p5)
-### Web端末ではミクスストリーミングをサポートしていますか。
-Web端末ではミクスストリーミングの開始をサポートしています。具体的には[ミクスストリーミングトランスコードインターフェースの呼び出し方法](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)をご参照ください。
+### Web端末ではミックスストリーミングをサポートしていますか？
+Web端末ではミックスストリーミングの開始をサポートしています。具体的には[ミックスストリーミングトランスコードインターフェースの呼び出し方法](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)をご参照ください。
 
 [](id:p6)
-###  Web端末SDKの使用中にカメラを取り外したときに、カメラリストのデータをクリアにするにはどうしたらいいですか。
+###  Web端末SDKの使用中にカメラを取り外したときに、カメラリストのデータをクリアにするにはどうしたらいいですか？
 [TRTC.getCameras](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#.getCameras) メソッドを呼び出し、新しいデバイスリストを取得してみてください。取り外したカメラの情報がまだある場合は、ブラウザの最下層がリストを更新しておらず、Web端末SDKも新しいデバイスリストの情報を取得できないことを意味します。
 
 [](id:p7)
@@ -80,20 +80,20 @@ Web画面上でデータを取得できているかどうかを確認します�
 [](id:v3)
 ### Web通話中にエコー、雑音、ノイズ、音量が小さくなる問題が発生します。
 通話双方のデバイス間の距離が近すぎる場合に発生する正常な現象です。テストの際に距離を少し離してみてください。他の端末でWeb端末の音声のエコー、ノイズ、雑音などが聞こえる場合、Web端末の3A処理が有効になっていないことを意味します。
-ブラウザネイティブの[getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia)APIを使用してユーザー定義キャプチャを行っている場合は、3Aパラメータを手動で設定する必要があります。
-- echoCancellation：エコー除去スイッチ
+ブラウザネイティブの[getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia)APIを使用してユーザー定義キャプチャを行っている場合は、3Aパラメータを手動で設定してください。
+- echoCancellation：エコーキャンセルスイッチ
 - noiseSuppression：ノイズ抑制スイッチ
-- autoGainControl：自動ゲインスイッチ
+- autoGainControl：自動ゲインスイッチ。詳細な設定については、[メディアトラック制約](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints)をご参照ください。
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream)インターフェースを使用してキャプチャを行う場合は、3Aパラメータを手動で設定する必要はありません。SDKでは3Aがデフォルトでオンになっています。
 
 ## 4、その他
 [](id:o0)
-### 2.x、3.xバージョンのSDKでは、Chrome 96+バージョンで正常に通話できないのですが、どうすればよいですか。
+### 2.x、3.xバージョンのSDKでは、Chrome 96+バージョンで正常に通話できないのですが、どうすればよいですか？
 最新バージョンの[Chrome 96のPlan-B廃止](https://www.chromestatus.com/feature/5823036655665152)により、TRTCの旧バージョン(2.x, 3.x)のWeb SDKにおいて、通話ができない状況が発生しています。お早めにWeb SDKを最新バージョン(4.x)にアップグレードしてください。バージョン4.xのSDKのインターフェースは旧バージョン(2.x, 3.x)と互換性を有しないため、[クイックインテグレーション(Web)](https://intl.cloud.tencent.com/document/product/647/35096)を参照し、バージョン4.xのSDKへのアップグレードを行ってください。
 
 [](id:o1)
-###  Web端末でSDKを実行すると、「RtcError: no valid ice candidate found」というエラーが表示されますが、どうすればいいですか。
+###  Web端末でSDKを実行すると、「RtcError: no valid ice candidate found」というエラーが表示されますが、どうすればいいですか？
 このエラーが発生した場合、TRTCデスクトップブラウザSDKがSTUNトンネリングに失敗したことを意味しますので、ファイアウォールのコンフィグレーションを確認してください。TRTCデスクトップ型ブラウザSDKは以下のポートに依存してデータ伝送を行います。それをファイアウォールのホワイトリストに追加して設定を完了してから、 [公式サイトDemo](https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
 
 具体的には、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
@@ -106,11 +106,11 @@ Web画面上でデータを取得できているかどうかを確認します�
 
 
 [](id:o3)
-###  Web端末SDKは現在の音量を取得できますか。
+###  Web端末SDKは現在の音量を取得できますか？
 [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel)で現在の音量を取得することができます。具体的には、[カメラとマイクの切り替え](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-13-basic-switch-camera-mic.html)をご参照ください。
 
 [](id:o4)
-### Client.on(‘client-banned’)はどのような状況でトリガーされますか。
+### Client.on(‘client-banned’)はどのような状況でトリガーされますか？
 
 ユーザーがキックされた場合にこのイベントがトリガーされます。例えば、同名のユーザーが同時にログインした場合、バックエンドのRESTAPI[ユーザーの削除](https://intl.cloud.tencent.com/document/product/647/34268)を呼び出して、ユーザーを強制退室させた場合などです。
 >! 同名ユーザーの同時ログインは許可されない行為であり、双方の通話異常を起こすおそれがあるため、ビジネス層では同名ユーザーの同時ログインを避けなければなりません。
@@ -123,29 +123,38 @@ Web画面上でデータを取得できているかどうかを確認します�
 
 [](id:o6)
 ### TRTCのWeb端末、PC端末は相互通信できますか。
-とれます。TRTCでは全プラットフォームの相互通信をサポートしています。
+できます。TRTCでは全プラットフォームの相互通信をサポートしています。
 
 [](id:o7)
-### TRTC Web端末のスクリーンキャプチャ機能は、どうすれば実装できますか。
+### TRTC Web端末のスクリーンキャプチャ機能は、どうすれば実装できますか？
 具体的には、[Stream.getVideoFrame()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Stream.html#getVideoFrame)のインターフェースをご参照ください。
 
 [](id:o8)
-###  Web端末SDKは、ピュアオーディオのプッシュをどのようにレコーディングするのでしょうか。コンソールでAuto-relayと自動レコーディングを起動すると失敗するのはなぜですか。
-[createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) の pureAudioPushMode パラメータを設定する必要があります。
+###  Web端末SDKは、ピュアオーディオのプッシュをどのようにレコーディングしますか？コンソールでAuto-relayと自動レコーディングを起動できないのはなぜですか？
+[createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#.createClient) の pureAudioPushMode パラメータを設定してください。
 
 [](id:o9)
-### Client.on(‘error’)が発生したときはどう対処すればよいでしょうか。
+### Client.on(‘error’)が発生したときはどう対処すればよいですか？
 これは、SDKにリカバリできないエラーが起こったことを表します。ビジネス層では、画面を更新してリトライするか、またはClient.leaveを呼び出して退室した後、再度Client.joinを呼び出してリトライします。
 
 [](id:o10)
-### ミニプログラムとWeb端末はカスタムストリームIDをサポートしていますか。
+### ミニプログラムとWeb端末はカスタムストリームIDをサポートしていますか？
 Web端末4.3.8以降のバージョンではカスタムストリームIDがサポートされているので、SDKのバージョンを更新してください。ミニプログラムは現時点ではサポートしていません。
 
 [](id:011)
-### Web端末で画面共有の際にシステム音声をキャプチャするにはどうすればよいですか。
+### Web端末で画面共有の際にシステム音声をキャプチャするにはどうすればよいですか？
 具体的な操作については、[画面共有時のシステム音声キャプチャ](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-16-basic-screencast.html#h2-6)をご参照ください。
 現時点でシステム音声キャプチャはChrome M74+のみサポートしており、WindowsおよびChrome OS上ではシステム全体のオーディオをキャプチャすることができ、LinuxおよびMacではオプションタブのオーディオのみキャプチャできます。その他のChromeのバージョン、その他のシステム、その他のブラウザはいずれもサポートしていません。
 
 [](id:012)
-### Web端末でカメラおよびマイクを切り替えるにはどうすればよいですか。
+### Web端末でカメラおよびマイクを切り替えるにはどうすればよいですか？
 先にシステムのカメラおよびマイクデバイスを取得してから、[switchDevice](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/LocalStream.html#switchDevice)を呼び出せば切り替えることができます。具体的な操作については、[カメラとマイクの切り替え](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-13-basic-switch-camera-mic.html)をご参照ください。
+
+[](id:013)
+### iframeでTRTC Web SDKを使用して、Permission deniedのエラーが発生する場合はどうすればよいですか？
+
+iframeでWebRTCを使用するには、iframeタグに属性を追加して、関連する権限を有効にしてください。詳細については、以下をご参照ください。
+マイク、カメラ、画面共有の権限：
+```javascript
+<iframe allow="microphone; camera; display-capture;">
+```

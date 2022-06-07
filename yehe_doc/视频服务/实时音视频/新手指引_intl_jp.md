@@ -1,152 +1,382 @@
-## Tencent Real-Time Communicationの簡単な紹介
+<style>
 
-- [サポートされているプラットフォーム](https://intl.cloud.tencent.com/document/product/647/35078)
-- [サポートされている機能](https://intl.cloud.tencent.com/document/product/647/35428)
-- [ユースケース](https://intl.cloud.tencent.com/document/product/647/37713)
-- [基本コンセプト](https://intl.cloud.tencent.com/document/product/647/37714)
+.tp-grid__row.tp-grid--gutter-5n {
+    margin-right: -10px;
+    margin-bottom: -20px;
+    margin-left: -10px;
+}
 
-## 課金モード
+.tp-grid__row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
 
-Tencent Real-Time Communicationは、サービスタイプに応じて**基本サービス**と**付加価値サービス**の2つのタイプに分かれます。 
+.tp-grid__row.tp-grid--gutter-5n .tp-grid__col {
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.tp-grid__col--6 {
+    display: block;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 25%;
+    -webkit-box-flex: 0;
+}
 
-<table>
-<tr><th>サービスタイプ</th><th>ユースケース</th><th>課金説明</th></tr>
-<tr>
-<td rowspan="4">基本サービス</td>
-<td>音声ILVB</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">音声ILVBの課金説明</a></td>
-</tr><tr>
-<td>ビデオILVB</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">ビデオILVBの課金説明</a></td>
-</tr><tr>
-<td>音声通話</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">音声通話の課金説明</a></td>
-</tr><tr>
-<td>ビデオ通話</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">ビデオ通話の課金説明</a></td>
-</tr><tr>
-<td rowspan="2">付加価値サービス</td>
-<td>クラウドレコーディング</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38385">クラウドレコーディングの課金説明</a></td>
-</tr><tr>
-<td>Cloud MixTranscoding</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/38929">Cloud MixTranscodingの課金説明</a></td>
-</tr>
-</table>
+.tp-grid__col {
+    display: block;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 14px;
+    -webkit-box-flex: 1;
+}
 
+	.tpm-experience__item {
+	display: flex;
+	height: 100%;
+	background-image: linear-gradient(0deg,#fff,#f3f5f8);
+	border: 2px solid #fff;
+	box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%), -8px -8px 20px 0 #fff;
+	border-radius: 4px;
+	padding: 20px 28px;
+	justify-content: space-between;
+		}
+		
+	.tpm-experience__item-cnt {
+	flex: 1;
+	max-width: 192px;
+   }
 
-
-## 開発サポート
-
-## Demo 体験
-
-Tencent Real-Time Communicationでは、**iOS**、**Android**、**Mac OS**、**Windows**、**デスクトップブラウザ**の体験Demoを提供します。詳細については、[Demo 体験](https://intl.cloud.tencent.com/document/product/647/35076)をご参照ください。
-
-### SDKのダウンロード
-
-Tencent Real-Time Communicationは、以下に示すように、**簡易版**、**プロフェッショナル版**、**エンタープライズ版**という3つのSDKバージョンを提供しています。
-
-| バージョンタイプ                                                     | 説明                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [簡易版（TRTC）](https://intl.cloud.tencent.com/document/product/647/34615) | TRTCとライブストリーミング（TXLivePlayer）の2つの機能のみが含まれ、アプリパッケージを最小化し、TRTC機能だけを希望されるユーザー向けです。 |
-| [プロフェッショナル版（Professional）](https://intl.cloud.tencent.com/document/product/647/34615) | [ MLVB](https://intl.cloud.tencent.com/zh/product/mlvb)や[UGSV](https://intl.cloud.tencent.com/zh/product/ugsv)など、TRTCを含む複数の音声・ビデオ関連のコア機能が含まれます。基盤となるモジュールの多くがサービス間で共有されるため、アプリパッケージのサイズは2つの独立したSDKよりも小さくなります。またシンボルの重複問題もなくなります。|
-| [エンタープライズ版（Enterprise）](https://intl.cloud.tencent.com/document/product/647/34615) | プロフェッショナル版のすべての機能に加えて、AIフェイスエフェクトコンポーネント（付加価値サービス）も統合して、デカ目、小顔、美肌、アニメーションステッカー、ウイジェットなどのエフェクトをサポートします。 |
-
-> 各バージョンの違いの比較については、[SDKダウンロード](https://intl.cloud.tencent.com/document/product/647/34615)をご参照ください。
-
-
-
-### APIの統合
-
-- **クライアントAPI：** [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Unity](https://intl.cloud.tencent.com/document/product/647/40139)、[デスクトップブラウザ](https://intl.cloud.tencent.com/document/product/647/35143)、[Electron](https://intl.cloud.tencent.com/document/product/647/35141)、Flutterを含むプラットフォームでの機能の統合のためにSDKインターフェースの呼び出しをサポートします。
-- **サーバーAPI：** [通話品質の監視](https://intl.cloud.tencent.com/zh/document/product/647/36754)、[MixTranscoding](https://intl.cloud.tencent.com/document/product/647/37760)、[ルーム管理](https://intl.cloud.tencent.com/document/product/647/34268)といった機能の統合のためのAPI 3.0インターフェースの呼び出しをサポートします。
-
-
-
-## 初心者向け（入門編）
-
-### Demoクイックスタート
-
-Tencent Real-Time Communicationコンソールは、さまざまなプラットフォーム用のDemoソースコードを提供します。具体的な実行方法については、以下をご参照ください。
-
-| プラットフォーム       | 関連ドキュメント                                                     |
-| ---------- | ------------------------------------------------------------ |
-| iOSおよびMac    | [Demoクイックスタート(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35086) |
-| Android    | [Demoクイックスタート(Android)](https://intl.cloud.tencent.com/document/product/647/35084) |
-| Windows    | [Demoクイックスタート(Windows)](https://intl.cloud.tencent.com/document/product/647/35085) |
-| デスクトップブラウザ | [Demoクイックスタート（デスクトップブラウザ）](https://intl.cloud.tencent.com/document/product/647/35607) |
-| Electron   | [Demoクイックスタート(Electron)](https://intl.cloud.tencent.com/document/product/647/35089) |
-| Flutter | [Demoクイックスタート(Flutter)](https://intl.cloud.tencent.com/zh/document/product/647/39243) |
-
-### SDKクイックインテグレーション
-
-SDKのダウンロードが完了したら、次の方法でTRTC SDKをお客様のプロジェクトにすばやく統合することができます。
-
-| プラットフォーム       | 関連ドキュメント                                                     |
-| ---------- | ------------------------------------------------------------ |
-| iOS        | [クイックインテグレーション(iOS)](https://intl.cloud.tencent.com/document/product/647/35092) |
-| Mac        | [クイックインテグレーション(Mac)](https://intl.cloud.tencent.com/document/product/647/35094) |
-| Android    | [クイックインテグレーション(Android)](https://intl.cloud.tencent.com/document/product/647/35093) |
-| Windows    | [クイックインテグレーション(Windows)](https://intl.cloud.tencent.com/document/product/647/35095) |
-| デスクトップブラウザ | [クイックインテグレーション（デスクトップブラウザ）](https://intl.cloud.tencent.com/document/product/647/35096) |
-| Electron   | [クイックインテグレーション(Electron)](https://intl.cloud.tencent.com/document/product/647/35097) |
-| Flutter | [クイックインテグレーション(Flutter)](https://intl.cloud.tencent.com/zh/document/product/647/35098) |
-
-### TWebLiveクイックスタート
-
-Tencent Real-Time Communicationは、完全なTWebLive体験Demoを提供します。具体的な統合方法については、[TWebLiveクイックスタート](https://intl.cloud.tencent.com/document/product/647/38172)をご参照ください。
-
-## シーンの実践
-
-Tencent Real-Time Communicationとその他のTencent Cloud製品を組み合わせ、さまざまなタイプのライブストリーミングシーンの体験Demoを提供します。
-
-<table>
-<tr><th width="17%">シーンタイプ</th><th>サポートされる機能</th><th width="20%">関連ドキュメント</th>
-</tr><tr>
-<td>多人数ビデオ通話</td>
-<td>インタラクティブなマイク接続、オフライン応答、その他関連機能</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36065" target="_blank">リアルタイムビデオ通話</a></td>
-</tr><tr>
-<td>多人数音声通話</td>
-<td>インタラクティブなマイク接続、オフライン応答、その他関連機能</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36067" target="_blank">リアルタイム音声通話</a></td>
-</tr><tr>
-<td>ILVB</td>
-<td>インタラクティブマイク接続、キャスターPK、低遅延視聴、弾幕チャット、その他関連機能</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36060" target="_blank">ビデオILVB</a></td>
-</tr><tr>
-<td>リアルタイムインタラクティブ授業</td>
-<td>音声、ビデオ、画面共有などの授業方法を含み、さらに教師による質問、学生の挙手、教師による学生の招待、学生の回答、回答の終了、などの関連機能もカプセル化</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37278" target="_blank">リアルタイムインタラクティブ授業</a></td>
-</tr><tr>
-<td>多人数ビデオミーティング</td>
-<td>画面共有、フェイスエフェクト、低レイテンシーでのミーティング、その他関連機能</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37284" target="_blank">多人数ビデオミーティング</a></td>
-</tr><tr>
-<td>ボイスチャットルーム</td>
-<td>マイク管理、低レイテンシーの音声インタラクション、テキストチャット、その他関連機能</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37287" target="_blank">ボイスチャットルーム</a></td>
-</tr></table>
+ .tpm-experience__item-hd {
+    padding-top: 8px; 
+  }
+	
+	.tpm-experience__item-title {
+	font-size: 18px;
+	color: #000;
+	line-height: 26px;
+	font-weight: 500;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: top;
+}
+	
+	.tpm-experience__item-qr {
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	border-radius: 4px;
+	padding: 4px;
+	margin-left: 12px;
+	}
 
 
+element.style {
+}
+.tpm-experience__item-btns {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ .tpm-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 104px;
+    height: 36px;
+    padding: 0 24px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 34px;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #0052d9;
+    border: 1px solid transparent;
+    outline: 0 none;
+    cursor: pointer;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+}
+
+.tpm-experience__item .tpm-btn {
+    min-width: 120px;
+    margin-bottom: 12px;
+    box-shadow: 8px 8px 20px 0 rgb(55 99 170 / 10%);
+    -webkit-font-smoothing: auto;
+}
+
+.tpm-btn.size-s {
+    min-width: 104px;
+    height: 32px;
+    padding: 0 24px;
+    line-height: 30px;
+}
+
+    .card-container {
+        width: 293px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        text-align: center;
+    }
+    
+    .scene-card-container {
+        width: 450px;
+        display: block;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    .scene-card {
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        border: 1px solid #ebeef5;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    }
+    
+    .image_card {
+        margin-top: 10px;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 1px 0 rgb(0 0 0 / 10%);
+    }
+    .markdown-text-box img {
+        box-shadow: none;
+    }
 
 
-入門者のよくあるご質問
+    h3 {
+        position: relative;
+        top: -2px;
+    }
+    	
+    	@media (max-width: 768px){
+    			.card-container,
+    			.scene-card-container{
+    					width: 100%;
+    			}
+    			.scene-card > div{
+    					width: 100%!important;
+    					margin-left: 0!important;
+    			}
+    			img {
+        box-shadow: none;
+    }
+    	}
+</style>
 
--  [クライアントのネイティブSDKは、どのポートまたはドメイン名をホワイトリストに設定する必要がありますか？](https://intl.cloud.tencent.com/document/product/647/35164)
--  [iOS/Androidのインストールパッケージのボリュームを縮小する方法とは？](https://intl.cloud.tencent.com/document/product/647/35165)
--  [UserSigキーを取得する方法とは？](https://intl.cloud.tencent.com/document/product/647/35166)
--  [TRTC簡易版、プロフェッショナル版、エンタープライズ版の違いとは？](https://intl.cloud.tencent.com/document/product/647/36057) 
--  [Tencent Real-Time CommunicationのRoomIDとは？値の範囲は？](https://intl.cloud.tencent.com/document/product/647/36057) 
--  [AndroidとWebの相互通信はサポートされていますか？](https://intl.cloud.tencent.com/document/product/647/37341) 
--  [デスクトップブラウザSDKはどのブラウザをサポートしていますか？](https://intl.cloud.tencent.com/document/product/647/37340) 
 
-> ? その他の質問については、[よくあるご質問](https://intl.cloud.tencent.com/document/product/647/36058)にアクセスしてドキュメントをご確認ください。
+## 手順1：製品についての理解 
+Tencent Real-Time Communication (TRTC)は、Tencent Cloudが提供する低遅延、高品質のオーディオおよびビデオ通信サービスのセットであり、Tencent Cloudのお客様に安定した、高信頼で低コストのオーディオおよびビデオ転送機能を提供することを目的としています。このサービスを使用して、「ビデオ通話」、「オンライン教育」、「ライブブロードキャストのマイク接続」、「オンライン会議」など、通信遅延が厳しく要求されたオーディオおよびビデオアプリケーションをすばやく構築できます。
+<div class="doc-video-mod"><iframe src="https://cloudcache.intl.tencent-cloud.com/cms/backend-cms/Qv57087_%E3%80%8A%E5%AE%9E%E6%97%B6%E9%9F%B3%E8%A7%86%E9%A2%91%20TRTC%E3%80%8B%E8%8B%B1-%E8%85%BE%E8%AE%AF%E4%BA%91_0117.mp4"></iframe></div>
+
+## 手順2：製品の体験
+当社の製品を迅速に理解できるように、TRTCサービスを統合した機能デモ(Demo)を提供しています。インストール後、次のようなTRTCのさまざまな機能を体験できます：
+<div style="position: relative; box-sizing: border-box;  overflow:hidden">
+    <a href="https://intl.cloud.tencent.com/document/product/647/35076" target="view_window">
+            <div class="image_card">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/bb2facb7474a5c065b14d2996ead8d48.png"/>
+            </div>
+    </a>
+</div>
+
+- **ビデオ通話**：WeChatの通話機能と類似しており、ウィンドウの切り替え、美顔、ネットワーク信号の提示などの機能をサポートしています。
+- **マルチプレイヤー会議**：複数のユーザーが同じ部屋でコミュニケーションと対話を行えるようにサポートしています。オンライン会議やオンライン教育などのシーンで使用できます。
+- **ショーのライブブロードキャスト**：キャスターはオンラインで才能を展示します。美顔、伴奏、いいね、弾幕インタラクティブおよびオンラインマイク接続をサポートします。
+- **オンラインコーラス**：2名のキャスターがオンラインで一緒に歌を歌い、TRTCが提供する低遅延の通信機能を感じることができます。
+- **オンラインカラオケ**：何万人もの人々が同時に聞くことをサポートするとともに、音声対話、音楽伴奏および歌詞同期などの機能をサポートするオンライン音楽のライブブロードキャストスキームです。
 
 
-## フィードバックおよび助言
+## 手順3：機能の統合
+TRTC機能をアプリケーションにすばやく統合できるようにするために、2つの異なる統合スキームが用意されています。必要に応じて、そのうちの1つを選択して統合できます。
 
-Tencent Real-Time Communicationの製品やサービスの使用中にご質問やご提案がある場合は、次のチャネルを通じてフィードバックすることができます。
+### スキーム1：UIコンポーネントが統合されたスキーム
+標準化されたUIコンポーネントのセットを開発し、ソースコードを提供しました。適切なUIコンポーネントをプロジェクトに直接インポートし、必要に応じてロードできます。この統合スキームは非常に高速で、通常は1時間で完了できます。
 
-- 製品のドキュメントの間違い等を発見した場合（リンク先、内容、など）は、ドキュメントのページ右側の【ドキュメントに関するフィードバック】をクリックするか、または問題が存在するコンテンツを選択してフィードバックしてください。
-- 製品関連の質問がある場合には、[チケットを提出](https://console.intl.cloud.tencent.com/workorder/category?level1_id=29&level2_id=801&source=14&data_title=Tencent%20Real%20Time%20Communication&step=1) してサポートを求めることができます。
+<div style="position: relative; box-sizing: border-box; padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/4f6e018388bce36b0f5b7807ed76c82a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">オーディオおよびビデオ通話</h3>
+                <p style="color:#586376" ;>コンポーネント化されたUIによって、「WeChatのような」ビデオ通話シーンなどをすばやく実現</p>
+                <a href="https://github.com/tencentyun/TUICalling">GitHubソースコード</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36065">ドキュメントにアクセス</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/129edf43d9adf4df6f022dec79ba6db0.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">多人数ビデオミーティング</h3>
+                <p style="color:#586376" ;>コンポーネント化されたUIによって、ミーティング、ブラインドデート、面接シーンをローコードですばやく実現</p>
+                <a href="https://github.com/tencentyun/TUIMeeting">GitHubソースコード</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37284">ドキュメントにアクセス</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/ab32f135f2847eaf22733e9a9ad1636a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">音声によるInteractive Live Video Broadcasting</h3>
+                <p style="color:#586376;" ;>コンポーネント化されたUIによって、ボイスチャットルームシーンをローコードですばやく実現</p>
+                <a href="https://github.com/tencentyun/TUIVoiceRoom">GitHubソースコード</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/37287">ドキュメントにアクセス</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/ab32f135f2847eaf22733e9a9ad1636a.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">画面によるInteractive Live Video Broadcasting</h3>
+                <p style="color:#586376;" ;>コンポーネント化されたUIによって、ライブブロードキャスト、マイク接続、PKシーンをローコードですばやく実現</p>
+                <a href="https://github.com/tencentyun/TUILiveRoom">GitHubソースコード</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/36060">ドキュメントにアクセス</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/7a7b51c1536587f0fea130d375661552.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">オンラインカラオケ</h3>
+                <p style="color:#586376;" ;>コンポーネント化されたUIによって、オンラインKTVシーンをローコードですばやく実現</p>
+                <a href="https://github.com/tencentyun/TUIKaraoke">GitHubソースコード</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/41940">ドキュメントにアクセス</a>
+            </div>
+        </div>
+    </div>
+    <div class="scene-card-container">
+        <div class="scene-card">
+            <div style="float: left; margin-top: 20px;">
+                <img src="https://main.qcloudimg.com/raw/7a7b51c1536587f0fea130d375661552.png" width="160" data-nonescope="true">
+            </div>
+            <div style="float: left; width: 200px; margin-left: 30px; margin-top: 20px; ">
+                <h3 style="color:191919;">リアルタイムコーラス</h3>
+                <p style="color:#586376;" ;>コンポーネント化されたUIによって、リアルタイムコーラスシーンをローコードですばやく実現</p>
+                <a href="https://github.com/tencentyun/TUIChorus">GitHubソースコード</a>
+                <a style="margin-left: 30px;" href="https://intl.cloud.tencent.com/document/product/647/42689">ドキュメントにアクセス</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+### スキーム2：UIコンポーネントが統合されていないスキーム
+プロジェクトにTRTC SDKを直接インポートし、SDK APIを介して目的の業務形態を構築できます。この統合スキームは自由度が高いですが、UIインターフェースとインタラクションロジックを自分で構築する必要があるため、統合速度はスキーム1よりもわずかに遅くなります。
+
+SDK APIの使用スキームをすばやく理解できるように、各プラットフォームSDKのAPIサンプルのソースコードを提供しました。ソースコードフォルダーのBasicディレクトリには基本機能のサンプルコードが含まれ、Advancedディレクトリには高度機能（解像度、背景音、ネットワーク速度の測定など）のサンプルコードが含まれています。
+
+<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+    <a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img class="icon" src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
+                <h3>iOS APIサンプル</h3>
+                <p>RTC iOS API使用方法のデモンストレーション <br>オーディオビデオアプリケーションをゼロから構築する</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
+                <h3>Android APIサンプル</h3>
+                <p>RTC Android API使用方法のデモンストレーション <br>オーディオビデオアプリケーションをゼロから構築する</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/tencentyun/TRTCSDK/tree/master/Windows/QTDemo" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
+                <h3>Windows APIサンプル</h3>
+                <p>RTC Windows API使用方法のデモンストレーション <br>オーディオビデオアプリケーションをゼロから構築する</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/Live_Mac/tree/main/QTDemo" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
+                <h3>Mac OS APIサンプル</h3>
+                <p>RTC Mac OS API使用方法のデモンストレーション <br>オーディオビデオアプリケーションをゼロから構築する</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Web/tree/main/base-react-next" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
+                <h3>Web APIサンプル</h3>
+                <p>RTC Web API使用方法のデモンストレーション <br>オーディオビデオアプリケーションをゼロから構築する</p>
+            </div>
+        </div>
+    </a>
+    <a href="https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
+                <h3>Electron APIサンプル</h3>
+                <p>RTC Electron API使用方法のデモンストレーション <br>オーディオビデオアプリケーションをゼロから構築する</p>
+            </div>
+        </div>
+    </a>
+</div>
+
