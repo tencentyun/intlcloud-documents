@@ -137,8 +137,8 @@
 **操作步骤**
 
 1. 登录 [腾讯云控制台](https://console.cloud.tencent.com/)。
-2. 在右上方导航栏**费用**中，单击 **[费用中心](https://console.cloud.tencent.com/expense)**，进入费用中心总览页面。
-3. 单击 **费用账单** > **[账单详情](https://console.cloud.tencent.com/expense/bill/summary)**，进入账单详情页面。
+2. 在右上方导航栏**费用**中，单击 [**费用中心**](https://console.cloud.tencent.com/expense)，进入费用中心总览页面。
+3. 单击 **费用账单** > [**账单详情**](https://console.cloud.tencent.com/expense/bill/summary)，进入账单详情页面。
 4. 在“资源 ID 账单”选项卡页面，下拉列表中选择 COS 对象存储，可按照地域、计费模式和交易类型等维度查看您的 COS 消费情况。
 5. 在 **[账单下载中心](https://console.cloud.tencent.com/expense/bill/downloadCenter)** 可下载账单。
 
