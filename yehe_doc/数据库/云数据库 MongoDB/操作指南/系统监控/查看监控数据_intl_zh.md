@@ -33,9 +33,6 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/dd81a40ff7cb5cecc63cad274cda4c78.png)
    - 单击**配置告警**，进入云监控的**新建告警策略**页面。设置**策略类型**为**云数据库 / MongoDB / 实例**，选择**告警对象**，并设置监控指标的**触发条件**，配置告警通知方式， 帮助您第一时间了解业务异常，并及时预防风险、避免故障发生。具体操作，请参见 [新建告警策略](https://intl.cloud.tencent.com/document/product/248/38916)。
 
-### 大屏展示监控数据
-在目标实例的**监控/状态**列，单击<img src="https://qcloudimg.tencent-cloud.cn/raw/9f09fd5be10ed038087abe183892a3ef.png" style="zoom:50%;" />，大屏展示监控数据。如下图所示。
-![](https://qcloudimg.tencent-cloud.cn/raw/3f30313c3f6182cb4ec99592d98ec41b.png)
 
 ### 查看监控详情
 1. 在 [实例列表](https://console.cloud.tencent.com/mongodb) 中，找到目标实例。
