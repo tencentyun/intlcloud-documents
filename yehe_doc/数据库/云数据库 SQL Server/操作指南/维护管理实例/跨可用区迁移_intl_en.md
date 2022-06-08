@@ -2,8 +2,8 @@
 You can migrate an instance to another availability zone (AZ) within the same region. All attributes and configurations (including the private network address and the subnet) of the instance remain unchanged after migration. The amount of time required is proportional to the volume of data in the instance. The more data there is, the longer the data migration takes. In addition, the instance access is not affected during migration.
 
 ## Supported Instance Types
-- Primary instances of high availability edition and cluster edition are supported.
->?If a primary instance of high availability edition or cluster edition has read-only instances or implements the pub/sub messaging paradigm, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to migrate it across AZs.
+- Primary instances of dual-server high availability edition and cluster edition are supported.
+>?If a primary instance of dual-server high availability edition or cluster edition has read-only instances or implements the pub/sub messaging paradigm, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to migrate it across AZs.
 - Basic edition instances are not supported.
 - Read-Only instances are not supported.
 
