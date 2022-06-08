@@ -53,7 +53,7 @@ TRTC SDKは3種類の共有モードをサポートしており、[selectScreenC
  - 共有ターゲットを選択した後、[startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97)インターフェースを使用して画面共有を起動することができます。
  - 2つの関数[pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280)と[stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb)の違いは、pauseはスクリーンコンテンツのキャプチャを停止し、その瞬間のスクリーンパッドを一時停止するため、[resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15)まで最後の画面がリモート側に表示され続けることです。
 
-```Objective-C
+```ObjC
  /**
  *  7.6 【画面共有】画面共有の起動
  *  @param viewレンダリングウィジェットが配置される親ウィジェット
@@ -98,7 +98,7 @@ TRTC SDKは3種類の共有モードをサポートしており、[selectScreenC
   ユーザーがAndroid / iOSを介して画面共有を実行する場合は、メインストリームを介して共有を実行します。ルームにいるその他ユーザーはTRTCCloudDelegateの中の[onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80)イベントを介してこの通知を受け取ります。
   画面共有を確認したいユーザーは[startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)インターフェースを介して、リモートユーザーのメインストリーム画面のレンダリングを起動することができます。
 
-```Objective-C
+```ObjC
 //サンプルコード：画面共有の画面を見る
 
 - (void)onUserSubStreamAvailable:(NSString *)userId available:(BOOL)available {
