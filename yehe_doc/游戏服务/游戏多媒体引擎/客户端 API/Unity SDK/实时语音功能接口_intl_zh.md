@@ -787,7 +787,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 ### [开启或关闭扬声器](id:EnableSpeaker)
 
 此接口用于开启关闭扬声器。
-**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://cloud.tencent.com/document/product/607/34377) 进行调用。**
+**如果有使用伴奏的情况，请参考 [实时语音伴奏流程图](https://intl.cloud.tencent.com/document/product/607/31504) 进行调用。**
 
 **EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv**
 
