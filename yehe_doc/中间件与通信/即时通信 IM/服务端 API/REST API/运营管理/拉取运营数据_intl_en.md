@@ -172,4 +172,4 @@ The following table describes the error codes specific to this API.
 
 ## API Commissioning Tool
 
-Use the [RESTful online commissioning tool for APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openconfigsvr/getappinfo) to commission this API.
+Use the [RESTful online commissioning tool for APIs](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to commission this API.
