@@ -9,7 +9,7 @@ You've created the security group(s) as instructed in [Creating a security group
 
 ### Operation Guide
 1. Log in to the [ENI console](https://console.cloud.tencent.com/vpc/eni?rid=1).
-2 Click the ID of the ENI to which the security group needs to be bound.
+2. Click the ID of the ENI to which the security group needs to be bound.
 3. Click **Bind** in the **Associate security group** tab.
     ![]()
 4. In the **Configure security group** pop-up interface, check your created security group(s), and click **OK**. When multiple security groups are bound, the higher the security group is, the higher its priority will be, and it will be matched earlier.
@@ -21,7 +21,7 @@ You've created the security group(s) as instructed in [Creating a security group
 >
 ### Operation Guide
 1. Log in to the [ENI console](https://console.cloud.tencent.com/vpc/eni?rid=1).
-2 Click the ID of the ENI from which the security group needs to be unbound.
+2. Click the ID of the ENI from which the security group needs to be unbound.
 3. In the ENI details page, click **Associate security group** tab, and then click **Unbind** in the **operation** column of the **Bound security groups** list.
    ![]()
 4. In the pop-up window, click **OK**.
