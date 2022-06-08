@@ -261,7 +261,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td rowspan='3' style="text-align:center">Playing</td>
+    <td rowspan='4' style="text-align:center">Playing</td>
     <td style="text-align:center">RTMP</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
@@ -276,6 +276,11 @@ TRTC is a set of low-latency and high-quality audio/video communication services
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
+  <tr>
+    <td style="text-align:center">Ultra-low latency streaming</td>
+    <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>		
   <tr>
     <td rowspan='3' style="text-align:center">Video on demand</td>
     <td style="text-align:center">MP4</td>
