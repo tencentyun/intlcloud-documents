@@ -11,7 +11,7 @@ GME 范围语音是专门为吃鸡类游戏开发的定制化产品。其有别�
 ## 体验效果
 可以到 [Demo 体验](https://intl.cloud.tencent.com/document/product/607/38535#windows-.E5.B9.B3.E5.8F.B0-3d-.E8.AF.AD.E9.9F.B3.E4.BD.93.E9.AA.8C-demo) 中下载体验程序，体验 3D 音效及范围语音的效果。
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/linaji.gif"  width="70%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/23cd82f978016559de9c40a413dc23b9.png"  width="70%"/></img>
 
 ## 基本概念
 
