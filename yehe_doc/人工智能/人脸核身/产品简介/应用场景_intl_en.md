@@ -12,6 +12,6 @@ Per laws and regulations, identity registration is required in places such as in
 ## Telecommunications
 **Typical scenarios: SIM card registration, activation, etc. with carriers**
 
-To protect social security and prevent cell phone frauds where criminals obtain your information to set up an account in your name, identity registration is required to use phone services (including landline telephones, mobile phones, wireless Internet cards, and broadband services).
+To protect social security and prevent wire fraud where criminals obtain your information to set up an account in your name, identity registration is required to use phone services (including landline telephones, mobile phones, wireless Internet cards, and broadband services).
 
 
