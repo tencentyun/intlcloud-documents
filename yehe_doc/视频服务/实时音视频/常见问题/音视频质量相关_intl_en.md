@@ -82,11 +82,11 @@ You can call the `setSystemVolumeType` API to select the media or call volume ty
 [](id:a4)
 ### What should I do if the audio volume is low?
 - If **the volume is low for all users**, then it is an upstream issue.
-  - Check whether `volume` is set to lower than 50 in the [setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5) API for Windows and macOS or the [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a53681962139b81140f2d66abc4ea6a0f) API for all platforms. If so, set it to a larger value.
+  - Check whether `volume` is set to lower than 50 in the [setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__csharp.html#ae07615c5d80ac1f7f32a07c41654a5b0) API for Windows and macOS or the [setAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a8677a812326511ef92f963bbe049d42e) API for all platforms. If so, set it to a larger value.
   - Check whether automatic gain control (AGC) is enabled.
   - Check whether the use of Bluetooth earphones caused the problem.
 -If **the volume is low for only some users**, then it is a downstream issue.
-  - Check whether `volume` is set to lower than 50 in the [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a9b8946403b8b3ac8e11f3a78e9d531ca) or [setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5) API. If so, set it to a larger value.
+  - Check whether `volume` is set to lower than 50 in the [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a338984f5503d59ae06d67f55bd8f0766) or [setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ae06c4a3c51e1a6e9db48219f996c0177) API. If so, set it to a larger value.
   - On mobile phones, check whether the `setAudioRoute` API was called to switch to the receiver for playback.
 
 [](id:a5)
