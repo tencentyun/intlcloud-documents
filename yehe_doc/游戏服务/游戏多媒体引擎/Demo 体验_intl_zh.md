@@ -135,12 +135,12 @@
 ### 8. 操作方式
 
 键盘上的"W"、"S"、"A"、"D"分别对应“前进”、“后退”、“左转”、“右转”，鼠标转动可以调整视角。连接后的客户端上可以看到另一个客户端上所操作的角色。
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/linaji.gif"  width="80%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/23cd82f978016559de9c40a413dc23b9.png"  width="80%"/></img>
 
 ### 9. 如何体验
 
 如果是本地双开演示程序，可以先把其中一个演示程序的视角移动到金币旁边，打开麦克风，另一个演示程序的小人尽可能的跑远，期间不停说话，便可以体验3D的语音效果，跑到地图边界，此时的声音会衰减到几乎听不到。
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/yuan.gif"  width="80%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/01cfbded69436d29042ba1a14cc0e737.png"  width="80%"/></img>
 
 
 ## 高级变声音效体验
@@ -158,7 +158,7 @@
 
 ### 运行界面
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b4e2a3c8ef86b7ce8a8750adbc21cae8.png" width=80%/><img>
+
 
 ### 1. 填入 AppID 以及 Key
 
@@ -186,7 +186,6 @@
 
 变声效果配置说明：
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/dc5f3b8312cc4cab666c2d43719f79cc.png" width=80%/><img>
 
 ### 6. 退出房间
 测试完成后请单击 **ExitRoom** 退出房间，避免产生额外费用。
