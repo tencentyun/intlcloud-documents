@@ -81,7 +81,7 @@
 
 按住 **Push to Talk** 按钮，对着麦克风进行说话，放开后语音会转成文本显示在界面中。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e2fecfdc7ed880315e6ec50179be2eaf.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/a6634573204ad4df2820357a247e8677.jpg)
 
 ## 工程示例代码介绍
 
