@@ -278,6 +278,11 @@
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
+    <td style="text-align:center">快直播（WebRTC）</td>
+    <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>	
+  <tr>
     <td rowspan='3' style="text-align:center">点播播放</td>
     <td style="text-align:center">MP4 格式</td>
     <td style="text-align:center">-</td>
