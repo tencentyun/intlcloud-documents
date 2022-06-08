@@ -132,7 +132,7 @@
 .tab-img {
     width: 100%;
     background-color: #F4F7FA;
-    padding: 0 0 18px 0;
+    padding: 0 0 50px 0;
 }
 .tab-experience-button{
     height: 60px;
@@ -142,7 +142,7 @@
     
 }
 .rno-tabs-operation-bd {
-    padding: 18px 0 0 0;
+    padding: 50px 0 0 0;
     background-color: #F4F7FA;
 }
 ul.rno-tabs-operation {
@@ -203,7 +203,7 @@ ul.rno-tabs-operation {
             Audio&Video call<br>Video conferencing<br>Interactive live streaming
         </div>
         <div class="demo-item-download">
-            <img src="https://qcloudimg.tencent-cloud.cn/raw/eebba4153838ac9252eeab3275215c2f.png" data-nonescope="true">
+            <img src="https://qcloudimg.tencent-cloud.cn/raw/8df711941c1a822949b727c5064e4f8f.png" data-nonescope="true">
         </div>
     </div>
     <div class="preview-demo-item style-single-download-btn">
@@ -296,7 +296,7 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
-        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/584b9e4444422c19af20536317680ed3.svg" class="platform-img">Uni-App</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">Try now<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
     <div style="text-align:center;">Read the <a href="https://intl.cloud.tencent.com/document/product/647/46660" style="color:#06A4FF;">integration guide</a> or download the <a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">source code</a> at GitHub</div>
@@ -315,6 +315,7 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">Try now<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
     <div style="text-align:center;">Read the <a href="https://intl.cloud.tencent.com/document/product/647/46660" style="color:#06A4FF;">integration guide</a> or download the <a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">source code</a> at GitHub</div>
@@ -339,6 +340,8 @@ ul.rno-tabs-operation {
          <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
+    </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">Try now<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
     <div style="text-align:center;">Read the <a href="https://intl.cloud.tencent.com/document/product/647/46666" style="color:#06A4FF;">integration guide</a> or download the <a href="https://github.com/tencentyun/TUILiveRoom" style="color:#06A4FF;">source code</a> at GitHub</div>
     </div>
@@ -355,7 +358,7 @@ ul.rno-tabs-operation {
          <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
-        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/4dcbeb0def10b73f0ce7bee9609054a4.svg" class="platform-img">H5</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">Try now<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
     <div style="text-align:center;">Read the <a href="https://intl.cloud.tencent.com/document/product/647/46666" style="color:#06A4FF;">integration guide</a> or download the <a href="https://github.com/tencentyun/TUILiveRoom" style="color:#06A4FF;">source code</a> at GitHub</div>
