@@ -33,9 +33,6 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support instance monitor
 ![](https://qcloudimg.tencent-cloud.cn/raw/dd81a40ff7cb5cecc63cad274cda4c78.png)
    - Click **Configure Alarms** to enter the **Create Alarm Policy** page in CM, set **Policy Type** to **TencentDB for MongoDB Instance**, select an **alarm recipient**, set the **trigger condition** of the monitoring metric, and configure the alarm notification method. In this way, you can stay on top of the business exceptions and prevent risks and failures promptly. For detailed directions, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
-### Displaying monitoring data on dashboard
-In the **Monitoring/Status** column of the target instance, click <img src="https://qcloudimg.tencent-cloud.cn/raw/9f09fd5be10ed038087abe183892a3ef.png" style="zoom:50%;" /> to view the monitoring data dashboard as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/3f30313c3f6182cb4ec99592d98ec41b.png)
 
 ### Viewing monitoring details
 1. In the [instance list](https://console.cloud.tencent.com/mongodb), find the target instance.
