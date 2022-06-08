@@ -143,4 +143,4 @@ with gzip.open('1104620500_Group_2015120121.gz', 'rb') as fp:
 ```
 
 ## API Commissioning Tool
-Use the [RESTful API online commissioning tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/open_msg_svc/get_history) to commission this API.
+Use the [RESTful API online commissioning tool](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to commission this API.
