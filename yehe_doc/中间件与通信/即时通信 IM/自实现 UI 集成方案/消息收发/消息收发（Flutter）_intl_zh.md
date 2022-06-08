@@ -10,8 +10,8 @@
 
 | 消息分类 | API 关键词 | 说明 |
 |---------|---------|---------|
-| 文本消息 | TextElem | 即普通的文字消息，该类消息会经过即时通信 IM 的敏感词过滤，发送包含的敏感词消息时会报80001错误码。 |
-| 自定义消息 | CustomElem | 即一段二进制 buffer，通常用于传输您应用中的自定义信令，内容不会经过敏感词过滤。 |
+| 文本消息 | TextElem | 即普通的文字消息。 |
+| 自定义消息 | CustomElem | 即一段二进制 buffer，通常用于传输您应用中的自定义信令。 |
 | 图片消息 | ImageElem | SDK 会在发送原始图片的同时，自动生成两种不同尺寸的缩略图，三张图分别被称为原图、大图、微缩图。 |
 | 视频消息 | VideoElem | 一条视频消息包含一个视频文件和一张配套的缩略图。 |
 | 语音消息 | SoundElem | 支持语音是否播放红点展示。 |
@@ -52,7 +52,7 @@
 ```
 在createMessage后，会返回一个消息创建 id，将消息创建 id 传递给 sendMessage 即可将消息发送出去。sendMessage 方法为所有消息发送的通用方法 receiver、groupID 二选一填写，另一个传递空字符串即可。
 
->!发送文本消息，其中文本消息会经过即时通信 IM 的敏感词过滤，包含的敏感词消息在发送时会报80001错误码。调用 createMessage 再调用 sendMessage 可以发送 C2C 自定义（信令）消息，自定义消息本质是一段二进制 buffer，通常用于传输您应用中的自定义信令，内容不会经过敏感词过滤。此外 Flutter IM SDK 额外封装了一个信令供您调用（将在下方介绍）。
+>!调用 createMessage 再调用 sendMessage 可以发送 C2C 自定义（信令）消息，自定义消息本质是一段二进制 buffer，通常用于传输您应用中的自定义信令。此外 Flutter IM SDK 额外封装了一个信令供您调用（将在下方介绍）。
 
 ### 接收文本和信令消息
 通过  [addSimpleMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/addSimpleMsgListener.html) 可以监听简单的文本和信令消息，复杂的图片、视频、语音消息则需要通过 v2TIMManager.getMessageManager() 中定义的 [addAdvancedMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/addAdvancedMsgListener.html) 实现。
@@ -70,7 +70,7 @@
 为直播间增加“点赞飘心”的功能，“点赞飘心”属于一条指令，操作步骤如下：
 1. 定义一个的自定义消息类型，例如一个 JSON 字符串：` { "command": "favor", "value": 101 }`。
 2. 通过 [createCustomMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/createCustomMessage.html) 和
-[sendMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessage.html) 接口进行消息的发送，并通过  [onRecvGroupCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSimpleMsgListener.html#a46b48869e411b41c25a98211d951335c) 进行接收。
+[sendMessage](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/sendMessage.html) 接口进行消息的发送，并通过  [onRecvGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSimpleMsgListener.html#a46b48869e411b41c25a98211d951335c) 进行接收。
 
 ## 收发富媒体消息
 图片、视频、语音、文件、地理位置等类型的消息称为“富媒体消息”。
@@ -154,7 +154,7 @@
 
 ### 接收群 @ 消息
 1. 在加载和更新会话处，需要监听 [V2TIMConversation](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_conversation/V2TimConversation-class.html) 的 [OnConversationChangedCallback](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/enum_callbacks/OnConversationChangedCallback.html) 回调来获取会话的@列表，将来会提供方法`getGroupAtInfoList`手动获取 atInfoList。
-2. 通过列表中 [V2TIMGroupAtInfo](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_at_info/V2TimGroupAtInfo-class.html) 对象的 [atType](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_at_info/V2TimGroupAtInfo/atType.html) 接口获取 @ 数据类型，并更新到当前会话的 @ 信息。
+2. 在返回列表中找到 [V2TIMGroupAtInfo](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_at_info/V2TimGroupAtInfo-class.html) 对象，其中有一个 [atType](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_group_at_info/V2TimGroupAtInfo/atType.html) 字段来获取 @ 数据类型，并更新到当前会话的 @ 信息。
 
 ### 经典示例：收发群 @ 消息
 - **发送群 @ 消息**：
@@ -237,7 +237,7 @@ List<String> atUserList = ['AT_ALL_TAG',"何大佬的userID"]; // 既 @全体又
 2、调用 [sendMessage](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/sendMessage.html) 接口发送合并消息。
 
 - **接收合并转发消息：**
-当我们收到一条合并消息 [V2TIMMessage](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage-class.html)，可以先通过合并消息元素 [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html) 获取 [title](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#a864916a91d453e2124c12e0ccbb66550) 和  [abstractList](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_merger_elem/V2TimMergerElem/abstractList.html)  UI 展示，当用户单击合并消息的时候再调用 [downloadMergerMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#af34d8228a9842875652a726f24ac3d30) 接口下载合并消息列表 UI 展示。
+当我们收到一条合并消息 [V2TIMMessage](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_message/V2TimMessage-class.html)，可以先通过合并消息元素 [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html) 获取 [title](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#a864916a91d453e2124c12e0ccbb66550) 和  [abstractList](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/models_v2_tim_merger_elem/V2TimMergerElem/abstractList.html)  UI 展示，当用户单击合并消息的时候再调用 [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#af34d8228a9842875652a726f24ac3d30) 接口下载合并消息列表 UI 展示。
 
 
 ### 经典示例：收发合并转发消息
@@ -548,7 +548,7 @@ SDK 支持分页拉取历史消息，一次分页拉取的消息数量不宜太�
 SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友之间发送单聊消息，您可以在 [**即时通信 IM 控制台**](https://console.cloud.tencent.com/im) > **功能配置** > **登录与消息** > **好友关系检查** 中开启"发送单聊消息检查关系链"。开启后，用户只能给好友发送消息，当用户给非好友发消息时，SDK 会报20009错误码。
 
 ### 不接收某人的消息
-不接收某人消息可以选择拉黑某人或则设置某人消息免打扰，拉黑某人后再也收不到对方的任何消息，设置消息免打扰后可以更改消息 [免打扰状态](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a90a89f5b4855dad72b784101667998c5)，flutter IM SDK中请使用ReceiveMsgOptEnum枚举来进行获取
+不接收某人消息可以选择拉黑某人或则设置某人消息免打扰，拉黑某人后再也收不到对方的任何消息，设置消息免打扰后可以更改消息 [免打扰状态](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a90a89f5b4855dad72b784101667998c5)，flutter IM SDK中请使用ReceiveMsgOptEnum枚举来进行获取
 **拉黑某人：**
 调用 [addToBlackList](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_friendship_manager/V2TIMFriendshipManager/addToBlackList.html) 接口把该用户加入黑名单，即拉黑该用户。
 当消息发送者被拉黑后，发送者默认不会感知到“被拉黑”的状态，即发送消息后仍展示发送成功（实际上此时接收方不会收到消息）。如果需要被拉黑的发送者收到消息发送失败的提示，请在 [**即时通信 IM 控制台**](https://console.cloud.tencent.com/im) > **功能配置** > **登录与消息** > **黑名单检查** 中关闭"发送消息后展示发送成功"，关闭后，被拉黑的发送者在发送消息时，SDK 会报20007错误码。
