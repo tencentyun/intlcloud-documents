@@ -184,7 +184,7 @@ Click **EnableMic**, **EnableSpeaker**, **EnableLoopback** to enable devices and
 Speak into the microphone and experience the voice changing effect.
 
 configuration description:
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/97aa3d6feabc0d4e79fe4ac689271c6b.png"  width="80%"/></img>
 
 
 ### 6. Exit the room
