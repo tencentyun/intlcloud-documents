@@ -10,9 +10,9 @@ TDSQL for MySQL의 롤백 기능은 프로덕션 인스턴스에 영향을 미�
 ## 인스턴스 롤백
 1. [TDSQL for MySQL 콘솔](https://console.cloud.tencent.com/dcdb)에 로그인하고 인스턴스 ID를 클릭하고 인스턴스 관리 페이지로 들어갑니다.
 2. 인스턴스 관리 페이지에서 **백업 및 복원** > **인스턴스 롤백** 탭을 선택하고 **롤백 인스턴스 생성**을 클릭합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/e9e27a2301edc4f91abe3591188b1c51.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/67193b3ce2426449b8d790e89904fd50.png)
 3. 팝업 창에서 롤백 시간을 설정하고 **확인**을 클릭합니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5402bb613182e2bde6bb1b7e42167714.png" style="zoom:45%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5eb6c84e9f6bccdfef8d1b9fa9f4e4c4.png" style="zoom:45%;" />
 4. 인스턴스 구매 페이지에서 필요에 따라 구성을 조정하고 **구매하기**를 클릭한 다음 인스턴스 롤백이 완료될 때까지 기다립니다.
 5. 롤백이 완료된 후 **백업 및 복원** > **인스턴스 롤백** 페이지 또는 인스턴스 목록에서 생성된 롤백 인스턴스를 볼 수 있습니다.
 
