@@ -1,4 +1,57 @@
-## 6.0.1975 @2021.01.14 - 인핸스드 버전
+## 6.1.2166 @2022.04.02 - 인핸스드 버전
+
+### SDK
+
+- 로컬 메시지를 검색하기 위해 senderUserIDList에 두 개 이상의 사용자 ID를 입력했을 때 데이터가 반환되지 않는 문제 수정
+- 사용자가 rest api를 사용하여 여러 메시지를 회수할 때 Android용 sdk가 하나의 메시지만 회신하는 문제 수정
+- Windows에서 읽지 않은 메시지를 빠르게 지울 때 가끔 발생하는 크래쉬 수정
+
+### TUIKit & Demo
+
+- International Edition Demo 출시
+- 벤더 채널로 오프라인 푸시백 전환
+- 휴대폰번호 로그인을 aPaas 서비스로 전환
+- 여러 클라이언트 간의 음성/영상 통화 동기화 실패 수정
+
+## 6.1.2155 @2022.03.18 - 인핸스드 버전
+
+### SDK
+
+- 그룹 메시지에 대한 수신 확인 지원 추가([iOS 문서,](https://intl.cloud.tencent.com/document/product/1047/36360#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7) [Android 문서](https://intl.cloud.tencent.com/document/product/1047/36359#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7))
+- Android 오프라인 푸시 메시지에 대한 사운드 설정 지원 추가
+- 모바일 SDK용 네트워크 프록시 설정을 위한 API 추가
+- C/C++ 플랫폼용으로 보완된 오프라인 푸시 API
+- 로그인 후 그룹의 신호 메시지 자동 동기화 지원 추가
+- 사용자 정의 필드 변경에 대한 알림을 받은 후 사용자가 완전한 사용자 정의 필드를 얻을 수 없는 문제 수정
+- 약한 네트워크에서 대화 목록을 끌어올 때 간헐적으로 발생하는 알림 음소거 상태 반환 오류 수정
+- 로그 출력 로직 최적화
+- 최적화된 오류 설명
+
+### TUIKit
+- 규정 준수 요구 사항을 충족하기 위해 TUIKit Demo 개인 정보 보호법 업그레이드
+- 사용자가 오프라인 푸시 알림을 받은 후 배너 알림을 눌러 음성/화상 통화를 시작할 수 없는 문제 수정
+- 사용자가 App을 백그라운드로 전환하고 오프라인 푸시 알림을 받은 후 App을 직접 열어 음성/화상 통화를 시작할 수 없는 문제 수정
+
+## 6.0.1992 @2022.02.09 - 인핸스드 버전
+### SDK
+
+- 삭제되거나 존재하지 않는 그룹에 두 개의 연속 메시지를 보낼 때 가끔 발생하는 crash 수정
+
+### TUIKit
+
+- 테마 설정 기능 추가
+- 언어 설정 기능 추가
+- 그룹 관리의 그룹 프로필 기능 추가
+- 애니메이션 업로드/다운로드 파일 메시지 기능 추가
+- 기록 메시지를 탐색할 때 ‘X 개의 새 메시지 수신’ 리디렉션 항목 추가
+- 기록 메시지를 탐색할 때 ‘최신 위치로 돌아가기’ 리디렉션 항목 추가
+- 그룹 @ 메시지에 대한 원 클릭 리디렉션 항목 추가
+- 대화 목록의 마지막 메시지 표시 스타일 최적화
+- 문자 메시지에 대해 선택된 상태 추가
+- A2 및 D2 오류 설명 최적화
+- iOS15 시스템 UI 적응
+
+## 6.0.1975 @2022.01.14 - 인핸스드 버전
 
 ### SDK
 
@@ -678,6 +731,7 @@ _ Windows SDK에서 새 메시지 콜백이 트리거될 때 클라이언트 스
 ### TUIKit & Demo
 
 **iOS/Android**
+
 - 공동 앵커, 선물, 뷰티 필터, 음성 변조 등의 [그룹 라이브 스트리밍](https://intl.cloud.tencent.com/document/product/1047/34547) 기능 추가
 - 공동 앵커, PK, 좋아요, 선물, 뷰티 필터, 댓글 자막, 친구 팔로우 및 기타 기능을 지원하는 [라이브 룸](https://intl.cloud.tencent.com/document/product/1047/34547) 추가
 - 멀티미디어 신호 인식 최적화
@@ -1032,7 +1086,7 @@ Android Q 버전과 호환되도록 기본 로그 저장 위치를 /sdcard/Andro
 
 **Android 플랫폼**
 
-- 일부 시나리오의 안정성 문제 수정
+- 일부 시나리오에서 안정성 문제 수정
 - Android 8.0 이상을 실행하는 OPPO 휴대폰에서 오프라인 푸시 알림을 수신할 수 없는 문제 수정
 - getElementCount API의 반환 유형 최적화
 
@@ -1240,9 +1294,9 @@ TIMManager에서 setOfflinePushListener API 및 TIMOfflinePushNotification 클�
 - 그룹 함수 modifyReciveMessageOpt를 modifyReceiveMessageOpt로 변경
 - iOS 2.X 또는 3.X를 실행하는 장치에서 iOS 4.X를 실행하는 장치로 보낸 비디오 스크린샷을 얻을 수 없는 문제 수정
 - 종료 시 데이터가 리포트될 때 간헐적으로 발생하는 크래쉬 수정
-- 로그인 모듈 최적화(반복 로그인/수시 로그인/수시 계정 전환/자동 연결/오프라인 사용자 킥오프)
+- 로그인 모듈 최적화(반복 로그인/수시 로그인/빈번한 계정 전환/자동 연결/오프라인 사용자 킥오프)
 - 회원이 그룹을 탈퇴하거나 그룹이 삭제된 후 읽지 않은 카운트를 삭제할 수 없는 문제 수정
-- 간헐적으로 그룹 삭제 공지가 수신되지 않는 문제 수정
+- 간헐적으로 그룹 삭제 알림이 수신되지 않는 문제 수정
 - 앱이 백엔드에서 오랜 시간 머물다가 포그라운드로 이동했을 때 메시지 전달에 더 오랜 시간이 소요되는 문제 수정
 - 1:1 채팅 읽지 않은 수 최적화
 - autoLogin의 입력 매개변수 TIMLoginParam을 userID로 변경
@@ -1272,7 +1326,7 @@ TIMManager에서 setOfflinePushListener API 및 TIMOfflinePushNotification 클�
 - 일부 Android 휴대폰에서 queryUserProfile이 null인 문제 수정
 - 온라인 메시지가 전송된 후에도 발신자의 장치에서 conversation이 여전히 lastMsg를 받을 수 있는 문제 수정
 - getSenderProfile의 반환 값을 제거하고 콜백 사용
-- 종료 시 데이터가 리포트될 때 간헐적으로 크래쉬가 발생하는 문제 수정
+- 종료 시 데이터가 리포트될 때 간헐적으로 발생하는 크래쉬 수정
 - 로그인 모듈 최적화(반복 로그인/수시 로그인/빈번한 계정 전환/자동 연결/오프라인 사용자 킥오프)
 - 회원이 그룹을 탈퇴하거나 그룹이 삭제된 후 읽지 않은 카운트를 삭제할 수 없는 문제 수정
 - 간헐적으로 그룹 삭제 알림이 수신되지 않는 문제 수정
@@ -1323,9 +1377,9 @@ TIMManager에서 setOfflinePushListener API 및 TIMOfflinePushNotification 클�
 - 시스템 시간 변경 후 휴대폰에서 메시지 전송이 되지 않는 문제 수정
 - 일부 경우 읽은 대화 리포트 및 읽지 않은 수 가져오기가 실패하는 문제 수정 
 - 대화의 getLastMessage를 통해 전송된 온라인 메시지를 확인할 수 있는 문제 수정
-- 마지막 메시지를 회수한 후 대화를 통해 lastMsg 상태 가져오기 오류 수정
+- 마지막 메시지를 회수한 후 대화를 통해 lastMsg 상태를 가져오는 것이 예외적인 문제 수정
 - 피어의 대화 목록에 회수된 메시지 내용이 여전히 존재하는 문제 수정
-- 네트워크 재접속 후 이미지/음성/파일 메시지 전송 상태 오류 문제 수정
+- 네트워크 재접속 후 이미지/음성/파일 메시지 전송 상태 오류 수정
 - 특수 문자가 포함된 로그인 계정으로 음성 및 이미지를 보낼 수 없는 문제 수정
 - V4 버전에서 V2 버전에서 전송한 썸네일의 너비와 높이를 가져오지 못하는 문제 수정
 - 대화에 대해 saveMessage를 생성한 후 최근 대화를 가져오지 못하는 문제 수정
@@ -1384,7 +1438,7 @@ TIMManager에서 setOfflinePushListener API 및 TIMOfflinePushNotification 클�
 
 **iOS 플랫폼**
 
-- 오프라인 메시지를 풀링할 때 메시지 손실 문제 수정
+- 오프라인 메시지 풀링 시 메시지 손실 문제 수정
 - SDKAppID 변경으로 인한 로그인 실패 문제 수정
 - 음성 메시지가 재생되지 않는 문제 수정
 - 그룹 메시지 회수로 인한 크래쉬 수정
@@ -1395,11 +1449,11 @@ TIMManager에서 setOfflinePushListener API 및 TIMOfflinePushNotification 클�
   - 새로운 UI 디자인
   - 새로운 아키텍처 디자인
   - 연락처, 그룹 관리 및 관계 체인 등 기능 개선
-  - 수정된 bug
+  - bug 수정
 
 **Android 플랫폼**
 
-- 오프라인 메시지를 풀링할 때 메시지 손실 문제 수정
+- 오프라인 메시지 풀링 시 메시지 손실 문제 수정
 - SDKAppID 변경으로 인한 로그인 실패 문제 수정
 - 음성 메시지가 재생되지 않는 문제 수정
 - 그룹 메시지 회수로 인한 크래쉬 수정
@@ -1497,7 +1551,7 @@ TIMManager에서 setOfflinePushListener API 및 TIMOfflinePushNotification 클�
 **Windows 플랫폼**
 
 - 사용자 정의 필드 데이터 리포트에 대한 지원 추가
-- 읽은 후 사라지는 메시지 추가
+- 온라인 메시지 추가
 - 메시지 회수를 위한 사용 사례 추가
 - 업로드 파일 설정에서 간헐적으로 오류가 발생하는 문제 수정
 - 메시지 목록에서 삭제된 메시지가 보이는 문제 수정
@@ -1647,9 +1701,9 @@ TIMManager에서 setOfflinePushListener API 및 TIMOfflinePushNotification 클�
  - TIMMessage가 senderProfile을 통해 사용자 프로필을 가져오지 못하는 문제 수정
  - 수신 확인 콜백 및 상태 문제 수정
  - 읽지 않은 메시지 동기화 시 마지막 메시지가 콜백되지 않는 문제 수정
- - 간헐적으로 그룹 메시지가 수신되지 않는 문제 수정
+ - 간혹 그룹 메시지가 수신되지 않는 문제 수정
  - login 응답 패킷을 복호화할 수 없는 문제 수정
- - IP 연결 및 login 정보 보고에 대한 지원 추가
+ - IP 연결 및 login 정보 리포트에 대한 지원 추가
  - 메시지 seq 오류 수정
 
 **Android**
@@ -1786,7 +1840,7 @@ WebIM은 .amr 녹음을 재생할 수 있음
 **iOS**
 - TUIKit.framework는 bitcode 2 지원
 - 비효율적인 그룹 음소거 수정
-- 그룹에서 사용자의 역할을 수정 기능 수정
+- 그룹에서 사용자의 역할 수정 기능 수정
 
 **Android**
 - 비효율적인 그룹 음소거 수정
@@ -1921,7 +1975,7 @@ TIMUserProfile에 level 및 role 필드 추가
 - 사용자가 AVChatRoom 그룹에서 그룹 메시지를 수신할 수 없는 문제 수정
 - 조정된 API
     i. 사용되지 않는 TIMFileElem 및 TIMSoundElem의 setData API
-    ii. TIMManagerExt에서 getConversionList API의 철자가 getConversationList로 수정
+    ii. TIMManagerExt 중의 getConversionList API 철자 getConversationList로 수정
 
 ## IM SDKV3 3.0.1 2017-5-15
 - 일부 .so 라이브러리가 Android 5.0 이전 시스템을 실행하는 기기와 호환되지 않는 문제 수정
@@ -1956,7 +2010,6 @@ TIMUserProfile에 level 및 role 필드 추가
 
 **API 변경 사항:**
 - TIMMessageOfflinePushSettings.AndroidSettings 및 TIMMessageOfflinePushSettings.IOSSettings 구성 방법 변경. 
-자세한 내용은 [오프라인 푸시](https://intl.cloud.tencent.com/document/product/1047/34336) 문서를 참고하십시오.
 
 ## IM Android SDK 2.5.2 2017-3-1
 - 나가는 패킷의 반환이 가끔 시간 초과되는 문제 수정(반환 코드 6205)
@@ -2162,5 +2215,4 @@ TIMUserProfile에 level 및 role 필드 추가
 - 1:1 채팅 및 그룹 채팅(토론 그룹)에 대한 지원 추가
 - 텍스트, 그림 이모티콘, 이미지, 오디오, 위치 및 사용자 정의 메시지에 대한 지원 추가
 - APNs 푸시 알림(Token 리포트, 포그라운드 및 백엔드 전환 이벤트 리포트)
-- 메시지를 로컬에 저장할 수 있음
-
+- 메시지 로컬 저장 가능
