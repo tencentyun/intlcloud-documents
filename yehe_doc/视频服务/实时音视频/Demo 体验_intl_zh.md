@@ -203,7 +203,7 @@ ul.rno-tabs-operation {
             音视频通话·多人会议<br>KTV语音聊天·互动直播等
         </div>
         <div class="demo-item-download">
-            <img src="https://web.sdk.qcloud.com/document/assets/ios-download.png" data-nonescope="true">
+            <img src="https://qcloudimg.tencent-cloud.cn/raw/eebba4153838ac9252eeab3275215c2f.png" data-nonescope="true">
         </div>
     </div>
     <div class="preview-demo-item style-single-download-btn">
@@ -287,7 +287,7 @@ ul.rno-tabs-operation {
 <dx-tabs>
 ::: iOS&Android
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/55e49f7fbefcc17a8a9e9685d841365c.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/990efb74019c885eccc47468afba9363.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -296,16 +296,16 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
-        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/584b9e4444422c19af20536317680ed3.svg" class="platform-img">Uni-App</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">立即体验<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/zh/document/product/647/46660" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
+    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/document/product/647/46660" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
     </div>
 </div>
 :::
 ::: Web
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/d1ebc0f76b824d4a65a895aee4ab6931.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/00ebeb4ac808df2b9366351ac7f46648.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -314,10 +314,10 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
-        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/584b9e4444422c19af20536317680ed3.svg" class="platform-img">Uni-App</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">立即体验<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/zh/document/product/647/46660" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
+    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/document/product/647/46660" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
     </div>
 </div>
 :::
@@ -329,7 +329,7 @@ ul.rno-tabs-operation {
 <dx-tabs>
 ::: iOS&Android
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/f4386698a3457904a88b06673aced475.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/86a3d489c0ea7c9897cf63a67a97ad0f.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -338,7 +338,7 @@ ul.rno-tabs-operation {
          <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
-        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/4dcbeb0def10b73f0ce7bee9609054a4.svg" class="platform-img">H5</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">立即体验<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
     <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/zh/document/product/647/46666" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUILiveRoom" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
@@ -347,7 +347,7 @@ ul.rno-tabs-operation {
 :::
 ::: Web
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/0b75ece13658346006f6bd421e55c97a.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/fd41c8627d4e6911e9fae1a0309a82c2.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -356,7 +356,7 @@ ul.rno-tabs-operation {
          <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
-        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/4dcbeb0def10b73f0ce7bee9609054a4.svg" class="platform-img">H5</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">立即体验<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
     <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/zh/document/product/647/46666" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUILiveRoom" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
@@ -371,7 +371,7 @@ ul.rno-tabs-operation {
 <dx-tabs>
 ::: iOS&Android
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/1d18841399850926793fbe5406eabcc8.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/b1dabc803a241dd26b89e4b5ef60cf27.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -392,7 +392,7 @@ ul.rno-tabs-operation {
 <dx-tabs>
 ::: iOS&Android
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/9d68584d0fba88dc740ae70e5cdc41e5.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/86285a62460edd04313d97e06bd369d5.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -412,7 +412,7 @@ ul.rno-tabs-operation {
 :::
 ::: Web
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/6b6bf774e10964ae3e4d4589b58a776c.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/a34feae74aaa845cab05626eae52ac9f.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -432,7 +432,7 @@ ul.rno-tabs-operation {
 :::
 ::: Windows & Mac
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/c5f67e544d2143dcac8a5ffc8645f944.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/bd486997590c2c60326b04d997a9bd0c.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -446,7 +446,7 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/5300d0170d592174fc94411d162a09a1.svg" class="platform-img">Mac OS</span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">立即体验<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/zh/document/product/647/46662" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUIRoom" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
+    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/document/product/647/46662" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUIRoom" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
     </div>
 </div>
 :::
@@ -458,7 +458,7 @@ ul.rno-tabs-operation {
 <dx-tabs>
 ::: iOS&Android
 <div class="tab-img">
-    <img src="https://qcloudimg.tencent-cloud.cn/raw/9d5e3e1001eee2dbcd35ddd1f9e01883.png"/>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/e71e6aaf11de33e132819493be699c19.png"/>
 </div>
 <div class="tab-bottom">
     <div>
@@ -468,7 +468,7 @@ ul.rno-tabs-operation {
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
     </div>
     <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">立即体验<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/zh/document/product/647/46668" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUIKaraoke" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
+    <div style="text-align:center;">您可以点击<a href="https://intl.cloud.tencent.com/document/product/647/46668" style="color:#06A4FF;">接入指引</a>了解如何快速集成，或点击<a href="https://github.com/tencentyun/TUIKaraoke" style="color:#06A4FF;">源码下载</a>到Github下载最新代码</div>
     </div>
 </div>
 

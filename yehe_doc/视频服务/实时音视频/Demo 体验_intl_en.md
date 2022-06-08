@@ -203,7 +203,7 @@ ul.rno-tabs-operation {
             Audio&Video call<br>Video conferencing<br>Interactive live streaming
         </div>
         <div class="demo-item-download">
-            <img src="https://qcloudimg.tencent-cloud.cn/raw/8df711941c1a822949b727c5064e4f8f.png" data-nonescope="true">
+            <img src="https://qcloudimg.tencent-cloud.cn/raw/eebba4153838ac9252eeab3275215c2f.png" data-nonescope="true">
         </div>
     </div>
     <div class="preview-demo-item style-single-download-btn">
