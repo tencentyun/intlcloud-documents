@@ -1,6 +1,7 @@
 
 ### Overview
 The electronic Know Your Customer (eKYC) uses the AI technology to remotely verify user identities automatically. It helps you know your users and reduce the risks posed by identity frauds. It is more simple, efficient, and user-friendly than the traditional offline KYC process.
+
 By leveraging Tencent's leading AI technologies in document recognition, liveness detection, and face comparison, Tencent Cloud eKYC solution simplifies the complicated traditional identity verification process into three automated steps, and accurately verifies the authenticity of user identities with the AI algorithms.
 
 ### Features
