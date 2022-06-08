@@ -5,7 +5,7 @@ Instant Messaging (IM) empowers apps with social communication capabilities and 
 
 
 ### Interactive live streaming
-IM allows you to deploy live chat rooms that can support an unlimited number of participants and hundreds of millions of concurrent messages. IM makes chat room management easy and supports various message types, such as on-screen comments, gifts, and likes, helping you deliver good chatting experience to live chat room users. IM also supports content moderation for on-screen comments, preventing illegal or non-compliant message during your live streams.
+IM allows you to deploy live chat rooms that can support an unlimited number of participants and hundreds of millions of concurrent messages. IM makes chat room management easy and supports various message types, such as on-screen comments, gifts, and likes, helping you deliver good chatting experience to live chat room users. 
 **Examples**: Live streaming
 **Recommended features**: Audio-video group
 

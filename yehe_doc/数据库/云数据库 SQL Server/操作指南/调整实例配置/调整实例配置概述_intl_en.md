@@ -20,7 +20,6 @@ You can adjust the configuration of a TencentDB for SQL Server instance and its 
 | High-Availability Edition instance |  &#10003; |  &#10003; |  &#10003; |  &#10003; | X  | X  |  &#10003;  |  &#10003;  |
 | Cluster Edition instance | X | X |   &#10003; |   &#10003; | X  | X  |  &#10003;  | &#10003;  |
 | Read-Only instance | X| X |   &#10003; |  &#10003; | X  | X  |  &#10003;  |  &#10003;  |
-| High-Availability/Cluster Edition instance associated with read-only instance | Submit a ticket | Submit a ticket |  Submit a ticket |  Submit a ticket | X  | X  | Submit a ticket  |  Submit a ticket |
 
 ## Instance Disk Space Description
 - To ensure business continuity, upgrade your instance specifications or purchase additional disk capacity in time before disk capacity is used up.
