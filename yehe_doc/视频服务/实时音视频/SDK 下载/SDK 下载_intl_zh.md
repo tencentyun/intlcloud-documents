@@ -262,7 +262,7 @@
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td rowspan='3' style="text-align:center">直播播放</td>
+    <td rowspan='4' style="text-align:center">直播播放</td>
     <td style="text-align:center">RTMP 协议</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
