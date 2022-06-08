@@ -11,8 +11,8 @@ IM messages can also be classified by content into text messages, image messages
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
-| Text message | kTIMElem_Text | It refers to a common text message. Sensitive words of text messages will be filtered out in the IM service. If a message containing sensitive words is sent, the 80001 error code is returned. |
-| Custom message | kTIMElem_Custom | It is a section of binary buffer and often used to transfer custom signaling in your application. Its content is not filtered for sensitive words. |
+| Text message | kTIMElem_Text | It refers to a common text message. |
+| Custom message | kTIMElem_Custom | It is a section of binary buffer and often used to transfer custom signaling in your application.  |
 | Image message | kTIMElem_Image | When the IM SDK sends an original image, it automatically generates two images in different sizes. The three images are called the original image, large image, and thumbnail. |
 | Video message | kTIMElem_Video | A video message contains a video file and an image. |
 | Voice message | kTIMElem_Sound | The SDK supports displaying a red dot upon playback of the voice message. |
