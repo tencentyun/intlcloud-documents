@@ -277,7 +277,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">Live Event Broadcasting(WebRTC)</td>
+    <td style="text-align:center">Live Event Broadcasting (WebRTC)</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">&#10003;</td>
   </tr>		
