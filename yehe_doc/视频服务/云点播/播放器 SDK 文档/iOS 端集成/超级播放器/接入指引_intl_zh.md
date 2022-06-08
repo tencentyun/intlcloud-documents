@@ -1,7 +1,6 @@
 ## 产品概述
 
-腾讯云视立方 iOS 超级播放器是腾讯云开源的一款播放器组件，简单几行代码即可拥有类似腾讯视频强大的播放功能，包括横竖屏切换、清晰度选择、手势和小窗等基础功能，还支持视频缓存，软硬解切换和倍速播放等特殊功能，相比系统播放器，支持格式更多，兼容性更好，功能更强大，同时还具备首屏秒开、低延迟的优点，以及视频缩略图等高级能力。
-
+腾讯云 iOS 超级播放器是腾讯云开源的一款播放器组件，简单几行代码即可拥有类似腾讯视频强大的播放功能，包括横竖屏切换、清晰度选择、手势和小窗等基础功能，还支持视频缓存，软硬解切换和倍速播放等特殊功能，相比系统播放器，支持格式更多，兼容性更好，功能更强大，同时还具备首屏秒开、低延迟的优点，以及视频缩略图等高级能力。
 
 ## 准备工作
 1. 开通 [云点播](https://intl.cloud.tencent.com/product/vod) 相关服务，未注册用户可注册账号 [试用](https://intl.cloud.tencent.com/login)。
@@ -24,6 +23,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/a38a9995bfe13d645bcd1d2e5242a297.png)
 :::
 ::: Git 命令下载[](id:git)
+
 1. 首先确认您的电脑上安装了 Git。如果没有安装，可以参见 [Git 安装教程](https://git-scm.com/downloads) 进行安装。
 2. 执行下面的命令把超级播放器组件工程代码 clone 到本地。
 ```shell
@@ -100,10 +100,11 @@ _playerView.fatherView = self.holderView;
 2. 服务端视频上传时，在 确认上传 的通知中包含对应的 FileId。
 如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
->!
->- 通过 FileId 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用超级播放器签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用超级播放器播放视频](https://intl.cloud.tencent.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://intl.cloud.tencent.com/document/product/266/38099)。
->- 若您在通过 FileId 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。
->- **未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**
+
+<dx-alert infotype="notice">
+- 通过 FileId 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用超级播放器签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用超级播放器播放视频](https://intl.cloud.tencent.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://intl.cloud.tencent.com/document/product/266/38099)。</li>
+- 若您在通过 FileId 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。</li>
+- **未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**</li></dx-alert>
 
 <dx-codeblock>
 :::  java
@@ -212,7 +213,7 @@ CFDanmakuView：弹幕的属性在初始化时配置。
 
 ### 2、悬浮窗播放
 
-超级播放器支持悬浮窗小窗口播放，可在切换到其它应用时，不打断视频播放功能。功能效果可在 [**腾讯云视立方 App**](#qrcode) > **播放器** > **超级播放器** 中体验，单击界面左上角**返回**，即可体验悬浮窗播放功能。
+超级播放器支持悬浮窗小窗口播放，可以在切换到应用内其它页面时，不打断视频播放功能。功能效果可在 [**腾讯云视立方 App**](#qrcode) > **播放器** > **超级播放器** 中体验，单击界面左上角**返回**，即可体验悬浮窗播放功能。
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:45%;" />
 

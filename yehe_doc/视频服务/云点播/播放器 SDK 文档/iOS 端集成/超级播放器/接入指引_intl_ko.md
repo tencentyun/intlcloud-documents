@@ -1,7 +1,6 @@
 ## 제품 개요
 
-iOS용 Tencent Cloud RT-Cube Superplayer는 오픈 소스 Tencent Cloud 플레이어 컴포넌트입니다. 몇 줄의 코드로 Tencent Video와 유사한 강력한 재생 기능을 제공할 수 있습니다. 가로/세로 모드 전환, 해상도 선택, 제스처 및 작은 창 재생과 같은 기본 기능과 비디오 버퍼링, 소프트웨어/하드웨어 디코딩 전환 및 조정 가능한 속도 재생과 같은 특수 기능이 있습니다. 시스템 기본 플레이어보다 더 많은 형식을 지원하고 더 나은 호환성과 기능을 제공합니다. 또한 첫 번째 프레임 바로 재생과 저지연성의 장점을 보유하고 있으며 비디오 썸네일과 같은 고급 기능을 제공합니다.
-
+iOS용 Tencent Cloud Superplayer는 오픈 소스 Tencent Cloud 플레이어 컴포넌트입니다. 몇 줄의 코드로 Tencent Video와 유사한 강력한 재생 기능을 제공할 수 있습니다. 가로/세로 모드 전환, 해상도 선택, 제스처 및 작은 창 재생과 같은 기본 기능과 비디오 버퍼링, 소프트웨어/하드웨어 디코딩 전환 및 조정 가능한 속도 재생과 같은 특수 기능이 있습니다. 시스템 기본 플레이어보다 더 많은 형식을 지원하고 더 나은 호환성과 기능을 제공합니다. 또한 첫 번째 프레임 바로 재생과 저지연성의 장점을 보유하고 있으며 비디오 썸네일과 같은 고급 기능을 제공합니다.
 
 ## 준비 작업
 1. [VOD](https://intl.cloud.tencent.com/)를 활성화합니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login)을 하십시오.
@@ -20,10 +19,11 @@ iOS용 Tencent Cloud RT-Cube Superplayer는 [SuperPlayer_iOS](https://github.com
 iOS용 Tencent Cloud RT-Cube Superplayer는 **[플레이어 컴포넌트 ZIP 패키지 다운로드](#zip)** 또는 **[Git 명령 실행](#git)**을 통해 다운로드할 수 있습니다.
 <dx-tabs>
 ::: 플레이어 컴포넌트 ZIP 패키지 다운로드[](id:zip)
-**Code** > **Download ZIP**을 클릭하여 플레이어 컴포넌트 ZIP 패키지를 직접 다운로드할 수 있습니다.
+**Code** > **Download ZIP**를 클릭하여 플레이어 컴포넌트 ZIP 패키지를 직접 다운로드할 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a38a9995bfe13d645bcd1d2e5242a297.png)
 :::
 ::: Git 명령 실행[](id:git)
+
 1. 먼저 컴퓨터에 Git이 설치되어 있는지 확인하십시오. 그렇지 않은 경우 [Git 설치 튜토리얼](https://git-scm.com/downloads)을 참고하여 설치할 수 있습니다.
 2. 다음 명령을 실행하여 Superplayer 컴포넌트 프로젝트의 코드를 로컬 시스템에 clone합니다.
 ```shell
@@ -94,16 +94,17 @@ _playerView.fatherView = self.holderView;
 이 단계에서는 비디오를 재생하는 방법을 설명합니다. iOS용 Tencent Cloud RT-Cube Superplayer는 [VOD FileId](#fileid) 또는 [URL](#url)의 FileId를 통한 재생을 지원합니다. 완전한 기능을 사용하려면 **FileId를 통합**하는 것이 좋습니다.
 <dx-tabs>
 ::: VOD에서 FileId를 통한 재생[](id:fileid)
-비디오 FileId는 일반적으로 비디오 업로드 후 서버에서 반환됩니다.
+비디오 FileId는 일반적으로 비디오 업로딩 후 서버에서 반환됩니다.
 
 1. 클라이언트에서 비디오 배포 후 서버가 FileId를 클라이언트로 반환합니다.
-2. 비디오가 서버에 업로드되면 해당 FileId가 업로드 확인 알림에 포함됩니다.
+2. 비디오가 서버에 업로딩되면 해당 FileId가 업로딩 확인 알림에 포함됩니다.
 Tencent Cloud에 이미 파일이 존재하는 경우에는 [미디어 자산 관리](https://console.cloud.tencent.com/vod/media)에서 해당 파일을 찾아 FileId를 조회할 수 있습니다. 아래 이미지와 같이 ID는 FileId를 나타냅니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
->!
->- FileId를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Superplayer 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Superplayer로 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Superplayer 서명](https://intl.cloud.tencent.com/document/product/266/38099)을 참고하십시오.
->- FileId를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.
->- **트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**
+
+<dx-alert infotype="notice">
+- FileId를 통해 재생하려면 먼저 Adaptive-HLS(10) 트랜스 코딩 템플릿을 사용하여 비디오를 트랜스 코딩하거나 Superplayer 서명 psign을 사용하여 재생할 비디오를 지정해야 합니다. 그렇지 않으면 비디오가 재생되지 않을 수 있습니다. 비디오를 트랜스 코딩하는 방법에 대한 자세한 내용은 [Superplayer로 비디오 재생](https://intl.cloud.tencent.com/document/product/266/38098)을 참고하십시오. psign을 생성하는 방법에 대한 자세한 내용은 [Superplayer 서명](https://intl.cloud.tencent.com/document/product/266/38099)을 참고하십시오.</li>
+- FileId를 통한 재생 중 ‘no v4 play info’ 예외가 발생하면 위와 같은 문제가 있을 수 있습니다. 이 경우 상기 지침에 따라 조정하는 것이 좋습니다. [URL](#url)을 통해 재생할 원본 비디오의 재생 링크를 직접 얻을 수도 있습니다.</li>
+- **트랜스 코딩되지 않은 원본 비디오는 재생 중에 호환성 문제가 발생할 수 있으므로 재생을 위해 비디오를 트랜스 코딩하는 것이 좋습니다.**</li></dx-alert>
 
 <dx-codeblock>
 :::  java
@@ -141,8 +142,6 @@ model.videoURL = @"http://your_video_url.mp4";   // 재생할 동영상의 url �
 ### 1. 전체 화면 재생
 
 Superplayer는 제스처, 화면 댓글, 화면 캡처 및 해상도 전환을 통해 화면 잠금, 볼륨 및 밝기 제어를 설정할 수 있는 전체 화면 재생을 지원합니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > **Superplayer**에서 체험해볼 수 있으며, 전체 화면 아이콘을 탭하면 **전체 화면** 재생 모드로 진입할 수 있습니다.
-
-
 
 창 재생 모드에서 다음 API를 호출하여 전체 화면 재생 모드로 들어갈 수 있습니다.
 
@@ -207,16 +206,16 @@ CFDanmakuView: 초기화 중 댓글 자막의 속성을 구성합니다.
 Superplayer는 재생 중 현재 비디오 프레임을 캡처하는 기능을 제공하며 공유를 위해 스크린샷을 저장할 수 있습니다. Screencapture 버튼을 탭하면 화면 캡처 성공 또는 실패에 대한 콜백 없이 SDK에서 내부적으로 처리되며 캡처된 스크린샷의 폴더는 휴대폰 사진첩입니다.
 :::
 ::: 해상도 전환[](id:resolution)
-HD, SD 및 FHD와 같은 다양한 비디오 재생 해상도를 필요에 따라 선택할 수 있습니다. 버튼을 탭한 후 해상도 표시 view가 트리거되고 해상도 옵션은 콜백 없이 SDK에서 내부적으로 처리됩니다.
+HD, SD 및 FHD와 같은 다양한 비디오 재생 정의를 필요에 따라 선택할 수 있습니다. 버튼을 탭한 후 정의 표시 보기가 트리거되고 정의 옵션은 콜백 없이 SDK에서 내부적으로 처리됩니다.
 :::
 </dx-tabs>
 
 
 ### 2. 플로팅 창 재생
 
-Superplayer는 사용자가 비디오 재생을 중단하지 않고 다른 앱으로 전환할 수 있도록 하는 작은 플로팅 창에서 재생을 지원합니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > **Superplayer**에서 왼쪽 상단 모서리에 있는 **Back**을 탭하여 사용해 볼 수 있습니다.
+Superplayer는 작은 플로팅 창 재생을 지원하므로 사용자가 비디오 재생을 중단하지 않고 다른 앱으로 전환할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > **Superplayer**에서 왼쪽 상단의 **Back**을 눌러 사용해 볼 수 있습니다.
 
-
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:45%;" />
 
 
 
@@ -261,8 +260,6 @@ Superplayer는 비디오 목록 루프를 지원합니다. 즉, 비디오 목록
 
 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > Superplayer** > **비디오 목록 루프 데모**에서 사용해 볼 수 있습니다.
 
-
-
 ```objective-c
 //1단계: 루프 데이터를 위한 NSMutableArray 생성
 NSMutableArray *modelArray = [NSMutableArray array];
@@ -300,6 +297,8 @@ API 매개변수 설명
 
 Superplayer는 비VIP 회원 미리보기에 적합한 비디오 미리보기 기능을 지원합니다. 비디오 미리보기 지속 시간, 프롬프트 메시지 및 미리보기 최종 화면을 제어하기 위해 다른 매개변수를 전달할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App** ](#qrcode) > **플레이어** > **Superplayer** > **미리보기 기능 데모**에서 사용해 볼 수 있습니다.
 
+
+
 ```objective-c
  //1단계: 미리보기 model 생성
  TXVipWatchModel *model = [[TXVipWatchModel alloc] init];
@@ -320,14 +319,12 @@ Superplayer는 비VIP 회원 미리보기에 적합한 비디오 미리보기 �
 
 ### 6. 동적 워터마크
 
-Superplayer를 사용하면 무단 녹화를 방지하기 위해 재생 화면에 불규칙하게 움직이는 텍스트 워터마크를 추가할 수 있습니다. 워터마크는 전체 화면 재생 모드와 창 재생 모드에서 모두 표시할 수 있습니다. 워터마크 텍스트, 크기 및 색상을 수정할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > **Superplayer** > **동적 워터마크 데모**에서 사용해 볼 수 있습니다.
-
-
+Superplayer를 사용하면 무단 녹화을 방지하기 위해 재생 화면에 불규칙하게 움직이는 텍스트 워터마크를 추가할 수 있습니다. 워터마크는 전체 화면 재생 모드와 창 재생 모드에서 모두 표시할 수 있습니다. 워터마크 텍스트, 크기 및 색상을 수정할 수 있습니다. 이 기능은 [**Tencent Cloud RT-Cube App**](#qrcode) > **플레이어** > **Superplayer** > **동적 워터마크 데모**에서 사용해 볼 수 있습니다.
 
 ```objective-c
-//1단계: 비디오 소스 정보 model 생성
+//1단계: 비디오 원본 정보 model 생성
 SuperPlayerModel *  playermodel   = [SuperPlayerModel new];
-//비디오 소스의 다른 정보 추가
+//비디오 원본 기타 정보 추가
 //2단계: 동적 워터마크 model 생성
 DynamicWaterModel *model = [[DynamicWaterModel alloc] init];
 //3단계: 동적 워터마크 데이터 설정
@@ -360,6 +357,6 @@ DynamicWaterModel 클래스 매개변수 설명:
 [](id:qrcode)
 ### Tencent Cloud RT-Cube App
 
-**Tencent Cloud RT-Cube App** > **플레이어**에서 Superplayer의 더 많은 기능을 사용해 볼 수 있습니다.
+**Tencent Cloud RT-Cube App** > **플레이어**에서 Superplayer 의 더 많은 기능을 사용해 볼 수 있습니다.
 
 <img src="https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png" width="150">
