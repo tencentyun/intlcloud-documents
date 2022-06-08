@@ -45,7 +45,7 @@ Unreal SDK 已同时集成 Windows、Mac、Android、iOS 平台架构。如需�
 ### 步骤2：编译插件
 
 导入之后，在 Unreal Engine 引擎中对插件进行编译。
-![](https://main.qcloudimg.com/raw/562882f1d39aa0d4fc77e835290d99df.png)
+
 
 ### 步骤3：编译完成
 
