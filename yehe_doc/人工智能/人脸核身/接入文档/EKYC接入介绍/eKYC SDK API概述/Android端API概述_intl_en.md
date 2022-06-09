@@ -49,7 +49,7 @@ public static void startEkycCheck(final String ekycToken, EkycHyConfig ekycHyCon
 
 Feature:
 
-It is a function for starting the eKYC process.
+It is an API for starting the  function for the eKYC process.
 
 Input parameters:
 
