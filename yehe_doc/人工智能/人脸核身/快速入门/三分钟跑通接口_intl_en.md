@@ -32,7 +32,7 @@ Integrate the SDK into the project as instructed in the usage guide on the upper
 - If the request result is as shown below, you need to manually configure the signature type:
  ```
 [TencentCloudSDKException]message:AuthFailure.SignatureFailure-The provided credentials
-could not be validated because of exceeding request size limit, please use new signature 
+could not be validated because of exceeding request size limit, you need to use new signature 
 method `TC3-HMAC-SHA256`. requestId:719970d4-5814-4dd9-9757-a3f11ecc9b20
  ```
 Configure the signature type:
