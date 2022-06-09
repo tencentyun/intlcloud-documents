@@ -1,23 +1,23 @@
-#### Request address
+### Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`, which can be obtained in the console.
 
-#### Request path and method
+### Request path and method
 
 Path: `/_msearch`
 Method: GET
 
-#### Request parameters
+### Request parameters
 
 You can set the `_routing` parameter during data write to improve the query efficiency as instructed in the sample. You can also set the `filter_path` parameter to filter and simplify the returned results. Its value contains multiple JSON paths separated by commas, and each JSON path is constructed by concatenating elements with dots. You can also use the `*` wildcard to match any character, the `**` wildcard to match any path, and the `-` prefix to remove certain returned fields.
 
 For example, `responses._shard.f*` indicates fields starting with "f" in `_shards` in `responses`, and `responses.**._score` indicates all `_score` fields in `responses`.
 
-#### Request content
+### Request content
 
 Queries mainly include regular queries and aggregate queries. Query requests are fully compatible with Elasticsearch APIs. For the specific request content, see the samples.
 
-#### Response content
+### Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description. Some common returned fields for queries are as detailed below. You can set the `filter_path` parameter to simplify the returned query results.
 
@@ -29,9 +29,9 @@ You need to judge whether a request is successful based on the `error` field. If
 | timed_out | Indicates whether query timed out. Valid values: false, true.                         |
 | status    | Status code returned for the query. `2XX` indicates success.                             |
 
-#### Sample code for curl
+### Sample code for curl
 
-##### **Request without the `filter_path` parameter**
+#### **Request without the `filter_path` parameter**
 
 Request:
 
@@ -93,7 +93,7 @@ Response:
 }
 ```
 
-##### **Request with the `filter_path` parameter**
+#### **Request with the `filter_path` parameter**
 
 Request:
 
@@ -134,7 +134,7 @@ Response:
 }
 ```
 
-> Note:
->
+
+>!
 > If both match and filter conditions are set in the `filter_path` parameter, the filter condition will be applied first for the returned results and then the match condition.
 
