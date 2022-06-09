@@ -137,10 +137,10 @@ Tencent Cloud公式サイトのコンソールにログインし、料金セン�
 **操作手順**
 
 1. [Tencent Cloudコンソール](https://console.cloud.tencent.com/)にログインします。
-2. 右上のナビゲーションバーの**料金**で、 **[料金センター](https://console.cloud.tencent.com/expense)**をクリックして、料金センターの概要ページに入ります。
-3. **請求書** > **[料金詳細](https://console.cloud.tencent.com/expense/bill/summary)**をクリックして、請求書の詳細ページに入ります。
+2. 右上のナビゲーションバーの**料金**で、 [**料金センター**](https://console.cloud.tencent.com/expense)をクリックして、料金センターの概要ページに入ります。
+3. **請求書** > [**料金詳細**](https://console.cloud.tencent.com/expense/bill/summary)をクリックして、請求書の詳細ページに入ります。
 4. 「リソースIDの請求書」タブで、プルダウンリストからCOSオブジェクトストレージを選択して、リージョン、課金モード、取引種類などでCOSの料金を参照することができます。
-5. **[請求書ダウンロードセンター](https://console.cloud.tencent.com/expense/bill/downloadCenter)**で請求書をダウンロードできます。
+5. [**請求書ダウンロードセンター**](https://console.cloud.tencent.com/expense/bill/downloadCenter)で請求書をダウンロードできます。
 
 ### どのように価格を確認しますか
 
