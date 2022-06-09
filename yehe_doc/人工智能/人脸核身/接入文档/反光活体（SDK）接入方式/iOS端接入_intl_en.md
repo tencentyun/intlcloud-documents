@@ -5,7 +5,7 @@
 
 ### **1. Manual integration**
 
-1. Import libraries and files
+1. Import libraries and files.
 
 Click `Link Binary With Libraries` to add frameworks.
 
