@@ -50,7 +50,7 @@ This document describes how to construct and combine filter conditions and proce
 Sample code of time range query for curl:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "range": {
@@ -68,7 +68,7 @@ Sample code of time range query for curl:
 Sample code of numeric range query for curl:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "query": {
         "range": {
@@ -88,7 +88,7 @@ The `terms` keyword can be used to match specific fields during query, and its v
 Sample code for curl:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    { 
        "query": {
            "terms": {
@@ -105,7 +105,7 @@ A composite query usually uses bool keywords to combine multiple query condition
 #### 1. Sample code of `AND` condition for curl
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
      "query": {
     "bool": {
@@ -148,7 +148,7 @@ A composite query usually uses bool keywords to combine multiple query condition
 #### 2. Sample code of `OR` condition for curl
 
 ```
- curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
      "query": {
     "bool": {
@@ -198,7 +198,7 @@ A composite query usually uses bool keywords to combine multiple query condition
 #### 3. Sample code of `NOT` condition for curl
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
      "query": {
     "bool": {
@@ -249,7 +249,7 @@ You can paginate query results by setting the `from` and `size` keywords. The `f
 Sample code for curl:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "from": 0,
     "size": 5,
@@ -451,7 +451,7 @@ The `sort` keyword is mainly used to sort query results and has two orders: `asc
 Sample code for curl:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "bool": {
@@ -491,7 +491,7 @@ The `docvalue_fields` keyword specifies the names of the fields to be returned i
 Sample code for curl:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "terms": {
@@ -510,7 +510,7 @@ The `agg` keyword is mainly used to construct aggregate queries. You can get the
 | :----------- | :----------------------------------------------------------- |
 | hits      | Matched query results. Here, the `total` field indicates the number of data records participating in aggregate. The `hits` field is an array, which contains the first ten query results if not specified. Each result in the `hits` array contains `_index` ([child metric](https://intl.cloud.tencent.com/document/product/1100/45525) involved in the query). If `docvalue_fields` is specified in the query, the `fields` field will be returned to indicate the value of each field. |
 | took      | Time in milliseconds taken by the entire query.                                       |
-| _shards  | Number of shards involved in the query. Here, `total` indicates the total number of shards, `successful` the shards that were successfully queried, `failed` the shards that failed to be queried, and `skipped` skipped shards. |
+| `_shards`  | Number of shards involved in the query. Here, `total` indicates the total number of shards, `successful` the shards that were successfully queried, `failed` the shards that failed to be queried, and `skipped` skipped shards. |
 | timed_out | Indicates whether query timed out. Valid values: false, true.                         |
 | aggregations | Returned aggregate result.                                               |
 
@@ -523,7 +523,7 @@ For a regular aggregate, you need to specify the aggregate name, mode (common mo
 Sample code for curl:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "size":0,
        "query": {
@@ -558,7 +558,10 @@ Response:
    "failed": 0
  },
  "hits": {
-   "total": 7,
+ "total": {
+            "value":7,
+            "relation":"eq"
+        },
    "max_score": 0,
    "hits": []
  },
@@ -579,7 +582,7 @@ Sample code for curl:
 Request:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
     "aggs": {
         "myname": {
@@ -641,7 +644,7 @@ You can use the `size` field to specify the number of unique values to be return
 Request:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
     "aggs": {
         "myname": {
@@ -693,7 +696,7 @@ You can sort the returned results as instructed in the sample below:
 1. Request (the returned results are sorted by number of unique values in descending order):
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
    {
      "aggs": {
          "myname": {
@@ -752,7 +755,7 @@ Response:
 2. Request (the returned results are sorted alphabetically in ascending order):
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
    {
      "aggs": {
          "myname": {
@@ -814,7 +817,7 @@ Sample code of fuzzy match:
 Request (only the `region` fields whose values contain `sport` and don't start with `water_` are aggregated and returned):
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
  "aggs": {
      "myname": {
@@ -855,7 +858,7 @@ Sample code of exact match:
 Request (the `region` fields whose values are `sh`, `bj`, `cd`, and `gz` are aggregated in `region_zone`, and the `region` fields whose values are not `sh`, `bj`, `cd`, and `gz` are aggregated in `region_sports`):
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
 "aggs" : {
  "region_zone" : {
@@ -929,7 +932,7 @@ A date histogram is mainly used to aggregate dates into a histogram.
 Sample code for curl:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "terms": {
@@ -1106,7 +1109,7 @@ You can specify the percentile in percentiles aggregate. The system default perc
 Sample code for curl:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "query": {
         "terms": {
@@ -1212,7 +1215,7 @@ A cardinality aggregate is mainly used to get the number of deduplicated results
 Sample code for curl:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "query": {
         "terms": {
