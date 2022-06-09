@@ -105,42 +105,41 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 2.[Anti-Cheat Expert](https://intl.cloud.tencent.com/document/product/1018/36785).
 3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37004).
 4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37523).
-5.[Game Server Elastic-scaling](https://intl.cloud.tencent.com/document/product/1055/39482)
-6.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36804).
-7.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
-8.[StreamLive](https://intl.cloud.tencent.com/document/product/1048/38989).
-9.[StreamPackage](https://intl.cloud.tencent.com/document/product/1063/38992).
-10.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40236).
-11.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41227).
-12.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41576).
-13.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706).
-14.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073).
-15.[Database Audit](https://intl.cloud.tencent.com/document/product/1102/43295).
-16.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43457).
-17.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44014).
-18.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
-19.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
-20.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
-21.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45408).
-22.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
-23.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45413).
-24.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
-25.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
-26.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45475).
-27.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591).
-28.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45789).
-29.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45792).
-30.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45795).
-31.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45798).
-32.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
-33.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
-34.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
-35.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
-36.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
-37.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
-38.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
+5.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36804).
+6.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
+7.[StreamLive](https://intl.cloud.tencent.com/document/product/1048/38989).
+8.[StreamPackage](https://intl.cloud.tencent.com/document/product/1063/38992).
+9.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40236).
+10.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41227).
+11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41576).
+12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706).
+13.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073).
+14.[Database Audit](https://intl.cloud.tencent.com/document/product/1102/43295).
+15.[TencentDB for Tendis](https://intl.cloud.tencent.com/document/product/1083/43457).
+16.[Database Management Center](https://intl.cloud.tencent.com/document/product/1125/44014).
+17.[Tencent Cloud Weiling](https://intl.cloud.tencent.com/document/product/1115/44314).
+18.[Event Bridge](https://intl.cloud.tencent.com/document/product/1108/44830).
+19.[TencentCloud Lighthouse](https://intl.cloud.tencent.com/document/product/1103/45280).
+20.[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/45408).
+21.[Edge Computing Machine](https://intl.cloud.tencent.com/document/product/1119/45416).
+22.[Data Security Center](https://intl.cloud.tencent.com/document/product/1126/45413).
+23.[Tencent Cloud TI Platform](https://intl.cloud.tencent.com/document/product/1141/45465).
+24.[Cloud Data Warehouse](https://intl.cloud.tencent.com/document/product/1129/45473).
+25.[Vulnerability Scan Service](https://intl.cloud.tencent.com/document/product/1142/45475).
+26.[IoT Hub](https://intl.cloud.tencent.com/document/product/1105/45591).
+27.[CODING Code Repositories](https://intl.cloud.tencent.com/document/product/1132/45789).
+28.[CODING Project Management](https://intl.cloud.tencent.com/document/product/1133/45792).
+29.[CODING Test Management](https://intl.cloud.tencent.com/document/product/1134/45795).
+30.[CODING Continuous Integration](https://intl.cloud.tencent.com/document/product/1135/45798).
+31.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
+32.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
+33.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
+34.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+35.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
+36.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
+37.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
+38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179).
 39.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
-40.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179).
 
 ## Requisitos específicos da jurisdição
 
