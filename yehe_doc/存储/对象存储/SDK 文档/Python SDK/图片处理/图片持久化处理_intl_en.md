@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples related to persi
 
 | API | Operation    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Persistent Image Processing](https://cloud.tencent.com/document/product/436/54050) | COS supports processing images upon upload. You can also process images that are already stored in COS and save the processed images to COS. |
+| [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) | COS（Cloud Object Storage） supports processing images upon upload. You can also process images that are already stored in COS and save the processed images to COS. |
 
 ## Processing upon Upload
 
@@ -66,7 +66,7 @@ response = client.ci_put_object(
 | Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes  |
 | Body  | Content of the uploaded object, which can be file stream or byte stream     | file/bytes | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| PicOperations      | CI image processing parameter. For more information, please see [Persistent Image Processing](https://cloud.tencent.com/document/product/436/54050) | String     | Yes       |
+| PicOperations      | CI image processing parameter. For more information, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) | String     | Yes       |
 | EnableMD5 | Specifies whether the SDK needs to calculate the Content-MD5 value. This feature is disabled by default. The upload will take longer if it is enabled | Bool | No |
 | ACL | Sets the object ACL, such as 'private' or 'public-read'                | String     | No |
 | GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
@@ -222,7 +222,7 @@ response, data = client.ci_image_process(
 | ------------- | ------------------------------------------------------------ | ------ | -------- |
 | Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes  |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| PicOperations      | CI image processing parameter. For more information, please see [Persistent Image Processing](https://cloud.tencent.com/document/product/436/54050) | String     | Yes       |
+| PicOperations      | CI image processing parameter. For more information, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) | String     | Yes       |
 
 `PicOperations` is a JSON string. Its parameters are as follows:
 
