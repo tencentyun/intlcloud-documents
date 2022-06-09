@@ -102,6 +102,7 @@ insert into account select generate_series(1,10000000), random_string(20),random
 create index tag_inx on account USING GIN(tag);
 ```
 3. Run a query to list users with tags `GN` and `o`.
+
 ```
 explain analyze select uin,name from account where tag @>ARRAY['GN','o'];
 
@@ -119,7 +120,9 @@ Index Cond: (tag @> '{GN,o}'::text[])
 Planning Time: 0.108 ms
 Execution Time: 4.528 ms
 ```
+
 4. Run a query to list xx users with tags `lvXe` and `Zt` (the query will be slow when executed for the first time).
+
 ```
 explain analyze select count(uin) from account where tag && ARRAY['lvXe','Zt'];
 
@@ -200,6 +203,7 @@ Execution Time: 0.171 ms
 (6 rows)
 ```
 6. List users with both tag IDs 61568 and 97350.
+
 ```
 test=> explain analyze select uin,name from account1 where tag @> ARRAY[61568,97350];
 QUERY PLAN
@@ -213,7 +217,9 @@ Planning Time: 0.071 ms
 Execution Time: 0.151 ms
 (7 rows)
 ```
+
 7. List xx users who share interests with xx users (tag IDs 100 and 5711).
+
 ```
 test=> explain analyze select count(uin) from account1 where tag && ARRAY[61568,97350];
 QUERY PLAN
@@ -265,6 +271,7 @@ from account1
 group by tagid, uin_offset;
 ```
 4. Query the number of users with tags 1, 3, 10, and 200.
+
 ```
 explain analyze select sum(ub) from
 (
@@ -296,7 +303,9 @@ Planning Time: 0.289 ms
 Execution Time: 1.083 ms
 (13 rows)
 ```
+
 5. View the list of users with tags 1, 3, 10, and 200.
+
 ```
 explain analyze select uin_offset,rb_or_agg(uinbits) as ub
 from tag_uin_list
