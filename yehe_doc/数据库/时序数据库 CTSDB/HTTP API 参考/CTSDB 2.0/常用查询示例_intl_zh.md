@@ -50,7 +50,7 @@ Range 即区间查询，Range 查询支持的字段类型包括 string、long、
 时间范围查询的 CURL 示例：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "range": {
@@ -68,7 +68,7 @@ Range 即区间查询，Range 查询支持的字段类型包括 string、long、
 数字范围查询 CURL 示例：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "query": {
         "range": {
@@ -88,7 +88,7 @@ Terms 关键字用于查询时匹配特定字段，其值需要用中括号包�
 CURL 示例说明：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    { 
        "query": {
            "terms": {
@@ -105,7 +105,7 @@ CURL 示例说明：
 #### 1. AND 条件 CURL 示例说明
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
      "query": {
     "bool": {
@@ -147,7 +147,7 @@ CURL 示例说明：
 #### 2. OR 条件 CURL 示例说明
 
 ```
- curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
      "query": {
     "bool": {
@@ -197,7 +197,7 @@ CURL 示例说明：
 #### 3.NOT 条件 CURL 示例说明
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
      "query": {
     "bool": {
@@ -248,7 +248,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 CURL 示例说明：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "from": 0,
     "size": 5,
@@ -294,7 +294,7 @@ CURL 示例说明：
 scroll 初始化：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/ctsdb_test/_search?scroll=1m -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/ctsdb_test/_search?scroll=1m -d'
    {
       "size":5,
       "query": {
@@ -431,7 +431,7 @@ scroll 初始化返回：
 scroll 遍历：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/_search/scroll  -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/_search/scroll  -d'
    {
    "scroll" : "1m", 
    "scroll_id" : "DnF1ZXJ5VGhlbkZldGNoAwAAAAAADrOFFm5YSEhnMjdnUWNPcndHS1k5Wjc3bHcAAAAAAAz_1RZiRkZTcGp4dFRXR18xMGtzSmhEUFJRAAAAAAAP5vQWOXFOR29lc0hROHFWMmFGTkVmSkxmZw==" 
@@ -450,7 +450,7 @@ Sort 关键字主要用于对查询结果进行排序。排序方式有 asc 和 
 CURL 示例说明：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "bool": {
@@ -490,7 +490,7 @@ docvalue_fields 关键词指定需要返回的字段名称，需要以数组的�
 CURL 示例说明：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "terms": {
@@ -522,7 +522,7 @@ agg 关键字主要用于构造聚合查询。用户可到返回的 aggregations
 CURL 示例说明：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "size":0,
        "query": {
@@ -557,7 +557,10 @@ CURL 示例说明：
    "failed": 0
  },
  "hits": {
-   "total": 7,
+   "total": {
+            "value":7,
+            "relation":"eq"
+        },
    "max_score": 0,
    "hits": []
  },
@@ -578,7 +581,7 @@ CURL 示例说明：
 请求：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
     "aggs": {
         "myname": {
@@ -640,7 +643,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 请求：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
     "aggs": {
         "myname": {
@@ -692,7 +695,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 1.请求（返回结果按照唯一值的个数降序排列）：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
    {
      "aggs": {
          "myname": {
@@ -751,7 +754,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 2.请求（返回结果按照唯一值的字母升序进行排列）：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
    {
      "aggs": {
          "myname": {
@@ -810,10 +813,10 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 用户可设置正则表达式对参与 terms 聚合的数据字段进行模糊匹配或者指定字段进行精确匹配，详情请参考示例。
 
 模糊匹配示例：
-请求（只针对 region 字段中有 sport 并且不是以 water_ 开头的数据进行聚合并返回结果）：
+请求（只针对 region 字段中有 sport 并且不是以 `water_`开头的数据进行聚合并返回结果）：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
  "aggs": {
      "myname": {
@@ -854,7 +857,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 请求（region_zone 指定值为"sh"，"bj"，"cd"，"gz"的 region 字段进行聚合，而 region_sports 指定值不为"sh"，"bj"，"cd"，"gz"的 region 字段进行聚合）
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search?filter_path=aggregations -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search?filter_path=aggregations -d'
 {
 "aggs" : {
  "region_zone" : {
@@ -928,7 +931,7 @@ Date Histogram 主要对日期做直方图聚合。
 CURL 示例说明：
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
    {
        "query": {
            "terms": {
@@ -1105,7 +1108,7 @@ Percentiles 聚合即百分位聚合。百分位可以任意指定，系统默�
 CURL 示例说明：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "query": {
         "terms": {
@@ -1210,7 +1213,7 @@ Cardinality 聚合主要用于统计去重后的数量。默认情况下，当�
 CURL 示例说明：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/ctsdb_test/_search -d'
 {
     "query": {
         "terms": {
