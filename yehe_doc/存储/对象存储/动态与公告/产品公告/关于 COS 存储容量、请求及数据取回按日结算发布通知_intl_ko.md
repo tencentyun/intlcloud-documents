@@ -137,10 +137,10 @@ Tencent Cloud 콘솔에 로그인하여 [청구 센터](https://console.cloud.te
 **작업 단계**
 
 1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인합니다.
-2. 오른쪽 상단 모서리에 있는 **[청구 센터](https://console.cloud.tencent.com/expense)**를 클릭하여 개요 페이지로 들어갑니다.
-3. **청구서** > **[청구서 세부사항](https://console.cloud.tencent.com/expense/bill/summary)**을 클릭하여 청구서 세부 사항 페이지로 들어갑니다.
+2. 오른쪽 상단 모서리에 있는 [**청구 센터**](https://console.cloud.tencent.com/expense)를 클릭하여 개요 페이지로 들어갑니다.
+3. **청구서** > [**청구서 세부사항**](https://console.cloud.tencent.com/expense/bill/summary)을 클릭하여 청구서 세부 사항 페이지로 들어갑니다.
 4. ‘인스턴스별 청구’ 탭의 드롭다운 목록에서 COS를 선택하여 리전, 과금 방식, 거래 유형 등의 COS 사용량을 확인합니다.
-5. **[다운로드 센터](https://console.cloud.tencent.com/expense/bill/downloadCenter)**에서 청구서를 다운로드합니다.
+5. [**다운로드 센터**](https://console.cloud.tencent.com/expense/bill/downloadCenter)에서 청구서를 다운로드합니다.
 
 ### 가격을 확인하는 방법
 
