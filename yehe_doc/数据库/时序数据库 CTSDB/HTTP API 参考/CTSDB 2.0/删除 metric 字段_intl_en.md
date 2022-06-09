@@ -1,41 +1,34 @@
-## Deleting Metric Field
 
-- [Request address](hyperlink)
-- [Request path and method](hyperlink)
-- [Request parameters](hyperlink)
-- [Request content](hyperlink)
-- [Response content](hyperlink)
-- [Sample code for curl](hyperlink)
 
-#### Request address
+### Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`, which can be obtained in the console.
 
-#### Request path and method
+### Request path and method
 
 Path: `/_metric/${metric_name}/delete`, where `${metric_name}` is the metric name.
 Method: PUT
 
-#### Request parameters
+### Request parameters
 
 None
 
-#### Request content
+### Request content
 
 | Parameter | Required | Type  | Description                                                |
 | :------- | :--- | :---- | :-------------------------------------------------- |
 | tags     | No   | Array | Enumeration of the tag fields to be deleted, such as `"tags": ["ip"]`          |
 | fields   | No   | Array | Enumeration of the data fields to be deleted, such as `"fields": ["diskUsage"]` |
 
-> Note:
->
-> As historical data cannot be modified, after fields are deleted, the metric information will not change until the next [child metric](hyperlink) is generated. If you want to check whether the deletion is successful, you can call the `GET /_metric/${metric_name}?v` API.
 
-#### Response content
+>!
+> As historical data cannot be modified, after fields are deleted, the metric information will not change until the next [child metric](https://intl.cloud.tencent.com/document/product/1100/45525) is generated. If you want to check whether the deletion is successful, you can call the `GET /_metric/${metric_name}?v` API.
+
+### Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-#### Sample code for curl
+### Sample code for curl
 
 Request:
 
