@@ -1,11 +1,4 @@
-## Creating Metric
 
-- [Request address](hyperlink)
-- [Request path and method](hyperlink)
-- [Request parameters](hyperlink)
-- [Request content](hyperlink)
-- [Response content](hyperlink)
-- [Sample code for curl](hyperlink)
 
 ### Request address
 
@@ -16,9 +9,9 @@ The address is the instance IP and port, such as `10.13.20.15:9200`, which can b
 - Path: `/_metric/${metric_name}`, where `${metric_name}` is the name of the metric to be created.
 - Method: PUT
 
-> Note:
->
-> For the naming limits of metrics, see [System limits](hyperlink).
+
+>!
+> For the naming limits of metrics, see [System limits](https://intl.cloud.tencent.com/document/product/1100/45526).
 
 ### Request parameters
 
