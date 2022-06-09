@@ -1,10 +1,10 @@
 
 
-### Request address
+## Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`, which can be obtained in the console.
 
-### Request path and method
+## Request path and method
 
 - Path: `/_metric/${metric_name}`, where `${metric_name}` is the name of the metric to be created.
 - Method: PUT
@@ -13,11 +13,11 @@ The address is the instance IP and port, such as `10.13.20.15:9200`, which can b
 >!
 > For the naming limits of metrics, see [System limits](https://intl.cloud.tencent.com/document/product/1100/45526).
 
-### Request parameters
+## Request parameters
 
 None
 
-### Request content
+## Request content
 
 | Parameter | Required | Type | Description                                                         |
 | :------- | :--- | :--- | :----------------------------------------------------------- |
@@ -38,11 +38,11 @@ None
 
   - number_of_shards: Number of metric shards, which is a positive integer and 3 by default. This parameter can be ignored for small metrics. A large metric can be divided into shards, and each shard can be up to 25 GB in size.
 
-  - number_of_replicas: Number of replicas, which is a non-negative integer; for example, 1 indicates one master and one replica. The default value is 1.
+  - number_of_replicas: Number of replicas, which is a positive integer; for example, 1 indicates one master and one replica. The default value is 1.
 
   - rolling_period: Child metric period (in days), which is a non-zero integer. When CTSDB stores data, to facilitate data expiration and improve query efficiency, it stores data in **child metrics** by the specified time interval, which is subject to the data expiration time by default. The relationships between the default child metric period and data expiration time are as detailed below:
 
-  - max_string_length: Maximum length of a custom string, which is a positive integer. Its maximum value is 2^31 - 1, and its default value is 256.
+  - max_string_length: Maximum length of a custom string, which is a positive integer. Its maximum value is 32765, and its default value is 256.
 
   - default_date_format: Format of the `date` data type of custom tags and fields, which is `strict_date_optional_time` or `epoch_millis` by default.
 
@@ -59,16 +59,16 @@ None
     | > 3 months         | 30 days     |
     | Never expires | 30 days |
 
-### Response content
+## Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-### Sample code for curl
+## Sample code for curl
 
 Request:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.16.345.14:9201/_metric/ctsdb_test -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.xx.xx.4:9201/_metric/ctsdb_test -d'
 {
     "tags":
     {
