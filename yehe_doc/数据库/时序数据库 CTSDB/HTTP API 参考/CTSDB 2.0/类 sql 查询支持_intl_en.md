@@ -1,27 +1,27 @@
 CTSDB 2.0 supports using SQL-like statements for querying, which is only for the convenience of beginners. If you are concerned about the query time, we recommend you use CTSDB's native query statements.
 
-#### Request address
+### Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`, which can be obtained in the console.
 
-#### Request path and method
+### Request path and method
 
 Path: `_nlpcn/sql`.
 Method: GET
 
-#### Request parameters
+### Request parameters
 
 You can add the `pretty` parameter value when querying to get the response in a sorted format. For details, see the sample.
 
-#### Request content
+### Request content
 
 Queries mainly include regular queries and aggregate queries. For the specific request content, see the samples.
 
-#### Response content
+### Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description. If the parameter or metric name is incorrect, you need to check and correct it on your own.
 
-#### Sample code for curl
+### Sample code for curl
 
 For specific queries, see the following samples:
 
@@ -91,8 +91,8 @@ Sample response of regular query:
 }
 ```
 
-> Note:
->
+
+>!
 > During regular query, `docvalue` should be added to the field to be queried, so that the instance can get the data from its columnar storage.
 
 
@@ -136,8 +136,8 @@ Sample response of regular query with search criteria:
 }
 ```
 
-> Note:
->
+
+>!
 > For regular queries with search criteria, there is no need to add `docvalue` to the fields used as criteria.
 
 
@@ -199,8 +199,8 @@ Sample response of aggregate query grouped by tag:
 }
 ```
 
-> Note:
->
+
+>!
 > For aggregate queries grouped by tag, there is no need to add `docvalue` to the field used for grouping.
 
 Sample code of aggregate query grouped by time for curl:
