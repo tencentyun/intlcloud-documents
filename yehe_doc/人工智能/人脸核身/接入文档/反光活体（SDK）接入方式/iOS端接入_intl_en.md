@@ -1,6 +1,6 @@
 ### Environment Requirements
 
-1. Development environment: Xcode 11.0 or later
+1. Development environment: Xcode 11.0 or later.
 2. The FaceID SDK for iOS is only supported by iOS 9.0 or later.
 
 ### **1. Manual integration**
