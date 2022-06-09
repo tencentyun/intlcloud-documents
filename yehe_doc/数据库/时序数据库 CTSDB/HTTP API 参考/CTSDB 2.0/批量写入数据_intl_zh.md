@@ -1,25 +1,25 @@
-### 往单个 metric 批量写入数据
+## 往单个 metric 批量写入数据
 
 此接口同时适用于批量和非批量写入数据至单个 metric 的场景，为提高写入性能，建议批量写入数据。
 
-#### 请求地址
+### 请求地址
 
 地址为实例的 IP 和 PORT，可从控制台获取到，例如10.13.20.15:9200。
 
-#### 请求路径和方法
+### 请求路径和方法
 
 请求路径：`/${metric_name}/_doc/_bulk`，${metric_name}为 metric 的名称。
 方法：POST
 
-> 说明：
->
+
+>!
 > _doc 关键字为写入数据的 _type，为了便于以后系统做解析和升级，请务必加上 _doc 关键字。
 
-#### 请求参数
+### 请求参数
 
 可通过设置 filter_path 参数来过滤并简化返回结果，具体请参考 [批量查询数据](https://intl.cloud.tencent.com/document/product/1100/45519)。
 
-#### 请求内容
+### 请求内容
 
 批量写入 metric 需要一种 NDJSON 格式的结构数据，类似于如下：
 
@@ -51,14 +51,14 @@
 }
 ```
 
-#### 返回内容
+### 返回内容
 
 需要注意的是，批量写入数据接口与其他接口返回结果稍有不同。请优先关注 json 结果的 errors（注意不是 error）字段，如果为 false，代表所有数据写入成功；如果为 true，代表有部分写入失败，具体失败的详情可以通过 items 字段得到。
 items 字段为一个数组，数组中每一个元素与写入请求一一对应，可通过每个元素是否有 error 字段判断请求是否成功，若有 error 字段则表示请求失败，具体错误内容在 error 字段内，若无 error 字段表示请求成功。
 
-#### CURL 示例说明
+### CURL 示例说明
 
-##### **返回成功的示例：**
+#### **返回成功的示例：**
 
 请求：
 
@@ -119,11 +119,10 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 }
 ```
 
-> 说明：
->
+>!
 > 上面返回中的 errors 为 false，代表所有数据写入成功。items 数组标识每一条记录写入结果，与 bulk 请求中的每一条写入顺序对应。items 的单条记录中，status 为 2XX 代表此条记录写入成功，_index 标识了写入的 metric [子表](https://intl.cloud.tencent.com/document/product/1100/45525)，_shards 记录副本写入情况，上例中 total 表示两副本，successful 代表两副本均写入成功。
 
-##### **返回失败的示例：**
+#### **返回失败的示例：**
 
 请求：
 
@@ -176,28 +175,28 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 }
 ```
 
-> 说明：
->
+
+>!
 > 上面返回中的 errors 为 true，代表部分数据写入失败。items 数组标识每一条记录写入结果，与 bulk 请求中的每一条写入顺序对应。items 的单条记录中，status 为 2XX 代表此条记录写入成功，error 字段详细给出了错误内容，_index 标识了写入的 metric 子表，_shards 记录副本写入情况，上例中 total 表示两副本，successful 代表两副本均写入成功。
 
-### 往多个 metric 批量写入数据
+## 往多个 metric 批量写入数据
 
 此接口同时适用于批量和非批量写入单个 metric 或者多个 metric 的场景。为提高写入性能，建议批量写入数据。
 
-#### 请求地址
+### 请求地址
 
 地址为实例的 IP 和 PORT，可从控制台获取到，例如10.13.20.15:9200。
 
-#### 请求路径和方法
+### 请求路径和方法
 
 请求路径：`_bulk`
 方法：PUT
 
-#### 请求参数
+### 请求参数
 
 可通过设置 filter_path 参数来过滤并简化返回结果，具体请参考 [批量查询数据](https://intl.cloud.tencent.com/document/product/1100/45519)。
 
-#### 请求内容
+### 请求内容
 
 批量写入 metric 需要一种 NDJSON 格式的结构数据，类似于如下：
 
@@ -230,11 +229,11 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 }
 ```
 
-#### 返回内容
+### 返回内容
 
 需要通过 error 字段判断请求是否成功，若返回内容有 error 字段则请求失败，具体错误内容在 error 字段内。注意：若请求成功，但是 errors（注意不是 error）字段非等于 false，则该 errors 字段具体指出写入失败的具体数据。
 
-#### CURL 示例说明
+### CURL 示例说明
 
 请求：
 
@@ -292,7 +291,8 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.16.345.14:92
 }
 ```
 
-> 说明：
->
+
+>!
 > 上面返回中的 errors 为 false，代表所有数据写入成功。items 数组标识每一条记录写入结果，与 bulk 请求中的每一条写入顺序对应。items 的单条记录中，status 为 2XX 代表此条记录写入成功，_index 标识了写入的 metric 子表，_shards 记录副本写入情况，上例中 total 表示两副本，successful 代表两副本均写入成功。
+
 
