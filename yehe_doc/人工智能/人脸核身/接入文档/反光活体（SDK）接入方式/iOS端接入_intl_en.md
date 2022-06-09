@@ -62,7 +62,7 @@ end
 
 >? For the file levels and specific settings, see the demo.
 
-### Build Phases settings
+### Build Phases Settings
 
 1. Click `Other Linker Flags` to add **-ObjC**.
 2. Change the extension of `ViewController.m` to `.mm`.
@@ -163,7 +163,7 @@ withFailCallback:(HuiYanConfigFailCallback)huiYanConfigFailCallback;
 
 Feature:
 
-In the local detection, the FaceID SDK pulls the configuration parameters as the parameters for getting the light sequence in subsequent steps.
+It is an API for the FaceID SDK to pull configuration parameters during local detection that are used as the parameters for getting the light sequence in subsequent steps.
 
 Input parameters:
 
