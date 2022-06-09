@@ -1,12 +1,12 @@
-#### Request address and method
+### Request address and method
 
 The address is the instance IP and port, such as `10.13.20.15:9200`, which can be obtained in the console.
 
-#### Request parameters
+### Request parameters
 
 None
 
-#### Request content
+### Request content
 
 The `tags`, `time`, `fields`, and `options` fields are all of the `map` type and optional. For their formats, see [Creating Metric](https://intl.cloud.tencent.com/document/product/1100/45525). The specific requirements are as detailed below:
 tags: You can add tag fields and modify the types of existing tag fields without deleting existing fields.
@@ -26,18 +26,15 @@ fields: You can add metric fields and modify the types of existing metric fields
 | indexed_fields      | No   | array   | Fields whose indexes need to be retained in the fields. You can use an array to specify multiple fields   |
 | default_type        | No   | string  | Default type of new fields. Its valid values are `tag` and `field`, and its default value is `tag` |
 
-> Note:
->
-> 
->
-> - As the historical data cannot be modified, after fields are updated, the metric information will not immediately change until the next [child metric](hyperlink) is generated. If you want to confirm whether the update is successful, you can call the `GET /_metric/${metric_name}?v` API.
+> !
+> - As the historical data cannot be modified, after fields are updated, the metric information will not immediately change until the next [child metric](https://intl.cloud.tencent.com/document/product/1100/45525) is generated. If you want to confirm whether the update is successful, you can call the `GET /_metric/${metric_name}?v` API.
 > - Only fields of the `short`, `integer`, `float` data types can be changed to another type. The `short` type can be changed to the `integer` or `long` type, `integer` to `long`, and `float` to `double`.
 
-#### Response content
+### Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-#### Sample code for curl
+### Sample code for curl
 
 Request:
 
