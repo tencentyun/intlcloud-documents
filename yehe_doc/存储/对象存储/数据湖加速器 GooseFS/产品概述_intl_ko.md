@@ -4,7 +4,7 @@ Data Lake Accelerator Goose FileSystem(GooseFS)은 Tencent Cloud에서 제공하
 
 GooseFS는 원스톱 캐시 솔루션을 제공하는 것을 목표로 하며 데이터 지역성, 고속 캐시 및 통합 스토리지 액세스 구문을 활용하는 고유한 강점을 가지고 있습니다. 아래와 같이 ‘컴퓨팅과 스토리지’를 연결하는 커넥터로서 데이터 레이크 생태계에서 핵심적인 역할을 합니다.
 
-![](https://main.qcloudimg.com/raw/df495c832c77106c65195fa7887f4ccd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/340d0455880b295e1990fef8182275c7.png)
 
 GooseFS에는 다음과 같은 기능이 있습니다.
 
