@@ -13,7 +13,7 @@
 
 
 >!
-> _doc 关键字为写入数据的 _type，为了便于以后系统做解析和升级，请务必加上 _doc 关键字。
+> `_doc` 关键字为写入数据的 `_type`，为了便于以后系统做解析和升级，请务必加上 `_doc` 关键字。
 
 ### 请求参数
 
@@ -63,7 +63,7 @@ items 字段为一个数组，数组中每一个元素与写入请求一一对�
 请求：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/ctsdb_test/_doc/_bulk -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/ctsdb_test/_doc/_bulk -d'
  {"index":{"routing": "sh" }}
  {"region":"sh","cpuUsage":2.5,"timestamp":1505294654}
  {"index":{"routing": "sh" }}
@@ -127,7 +127,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 请求：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/hcbs_client_trace/_doc/_bulk -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/hcbs_client_trace/_doc/_bulk -d'
     {"index":{"_id":"5"}}
     {"vol_id":"c57e008c-0ae0-41cd-8da8-6989d0522fc6","io_type":2,"data_len":4096,"latency":3,"try_times":1,"errcode":0,"start_time":1503404266}
     {"index":{"_id":"6"}}
@@ -238,7 +238,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 请求：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.16.345.14:9201/_bulk -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.xx.xx.4:9201/_bulk -d'
 {"index":{"_index" : "ctsdb_test"}}
 {"region":"sh","cpuUsage":2.5,"timestamp":1505294654}
 {"index":{"_index" : "ctsdb_test2"}}
@@ -294,5 +294,4 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.16.345.14:92
 
 >!
 > 上面返回中的 errors 为 false，代表所有数据写入成功。items 数组标识每一条记录写入结果，与 bulk 请求中的每一条写入顺序对应。items 的单条记录中，status 为 2XX 代表此条记录写入成功，_index 标识了写入的 metric 子表，_shards 记录副本写入情况，上例中 total 表示两副本，successful 代表两副本均写入成功。
-
 
