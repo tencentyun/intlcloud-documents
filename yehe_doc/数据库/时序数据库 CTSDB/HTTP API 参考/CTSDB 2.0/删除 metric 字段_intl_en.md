@@ -33,7 +33,7 @@ You need to judge whether a request is successful based on the `error` field. If
 Request:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.16.345.14:9201/_metric/ctsdb_test1/delete -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.xx.xx.4:9201/_metric/ctsdb_test1/delete -d'
 {
 "tags": ["ip"],        
 "fields": ["cpu"]   
