@@ -25,14 +25,14 @@
    }
 ```
 
-### 组合查询
+## 组合查询
 
 这里的组合查询即可以用于单查询也可用于复合查询。查询体中的 query 关键字通过 Query DSL（Domain Specific Language）来定义查询条件。
 下文会先介绍如何构造过滤条件，再介绍怎样组合过滤条件和如何处理返回结果集。
 
-#### 常用过滤条件
+### 常用过滤条件
 
-##### 1. Range
+#### 1. Range
 
 Range 即区间查询，Range 查询支持的字段类型包括 string、long、integer、short、double、float、date。Range 查询可包含的参数如下表所示：
 
@@ -43,8 +43,8 @@ Range 即区间查询，Range 查询支持的字段类型包括 string、long、
 | lte      | 小于或等于 |
 | lt       | 小于       |
 
-> 说明：
->
+
+>!
 > 当 Range 查询涉及时间类型时，可通过 format 参数来指定时间格式。具体时间格式请参考 [新建 metric](https://intl.cloud.tencent.com/document/product/1100/45525)。
 
 时间范围查询的 CURL 示例：
@@ -81,7 +81,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 }'  
 ```
 
-##### 2. Terms
+#### 2. Terms
 
 Terms 关键字用于查询时匹配特定字段，其值需要用中括号包裹。
 
@@ -98,11 +98,11 @@ CURL 示例说明：
    }'
 ```
 
-#### 过滤条件组合
+### 过滤条件组合
 
 复合查询常使用 Bool 关键字来组合多个查询条件，常见的用于 Bool 查询的组合关键字有 filter（类似于 AND）、must_not（类似于 NOT）、should（类似于 OR）。为提高查询性能，请务必加上 time 字段的 range 查询，且 time 字段，不论查询时以何种方式写入，返回值统一为 epoch_millis 格式。query-bool-filter 的组合形式可显著提升查询性能，请务必采用这种查询方式。
 
-##### 1. AND 条件 CURL 示例说明
+#### 1. AND 条件 CURL 示例说明
 
 ```
    curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
@@ -141,11 +141,10 @@ CURL 示例说明：
 }'
 ```
 
-> 说明：
->
+>!
 > 此查询条件类似于 timestamp>='2017-11-06 23:00:00' AND timestamp<'2018-03-06 23:05:00' AND region=sh AND cpuUsage=2.0。
 
-##### 2. OR 条件 CURL 示例说明
+#### 2. OR 条件 CURL 示例说明
 
 ```
  curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
@@ -191,11 +190,11 @@ CURL 示例说明：
 }'
 ```
 
-> 说明：
->
+
+>!
 > 此查询条件类似于 timestamp>='2017-11-06 23:00:00' AND timestamp<'2018-11-06 23:05:00' AND region='gz' AND (cpuUsage=2.0 or cpuUsage=2.5)。minimum_should_match 参数的意义在于设置 cpuUsage=2.0 和 cpuUsage=2.5 至少匹配的个数，系统默认 minimum_should_match 为0。
 
-##### 3.NOT 条件 CURL 示例说明
+#### 3.NOT 条件 CURL 示例说明
 
 ```
 curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
@@ -236,13 +235,13 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
      }'
 ```
 
-> 说明：
->
+
+>!
 > 此查询条件类似于 timestamp>=2017-11-06 23:00:00 AND timestamp<2018-11-06 23:05:00 AND region='gz' AND cpuUsage !=2.0。
 
-#### 返回结果集处理
+### 返回结果集处理
 
-##### 1. From/Size
+#### 1. From/Size
 
 通过设置 From 和 Size 关键字可对查询结果进行分页。From 关键字定义了查询结果中第一条数据的偏移量，Size 关键字配置返回结果的最大条数。From 系统默认为 0，Size 系统默认为 10，From 与 Size 的总和系统默认不能超过 65536。若想要更大的返回结果，请参考本文的 scroll 关键字查询。
 
@@ -275,7 +274,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 }'
 ```
 
-##### 2. Scroll
+#### 2. Scroll
 
 Scroll 可以理解为关系型数据库里的 cursor，因此 scroll 并不适合用来做实时搜索，而更适用于后台批处理任务。
 可以把 scroll 分为初始化和遍历两个阶段，初始化时将所有符合搜索条件的搜索结果缓存起来，类似于快照，在遍历时，从这个快照里取数据。注意，在 Scroll 初始化后对 metric 的插入、删除、更新都不会影响遍历结果。
@@ -439,14 +438,12 @@ scroll 遍历：
    }'
 ```
 
-> 说明：
->
-> 
->
+
+>!
 > - 此请求中的 scroll_id 是 scroll 初始化返回的 _scroll_id 值。而下一次遍历则需要将 scroll_id 参数调整为上一次遍历返回的 _scroll_id 值，即每次请求中的 scroll_id 参数是上一次请求返回的 _scroll_id 值，直到返回结果为空，遍历结束。
 > - 两次遍历返回的 _scroll_id 值可能相同，无法利用 _scroll_id 进行指定页跳转。
 
-##### 3. Sort
+#### 3. Sort
 
 Sort 关键字主要用于对查询结果进行排序。排序方式有 asc 和 desc 两种，CTSDB 对于用户自定义字段的默认排序方式为 asc。排序模式有 min、max、sum、avg、median。其中 sum、avg、median 只适用于类型为 array 并存储数字的字段。
 
@@ -486,7 +483,7 @@ CURL 示例说明：
    }'
 ```
 
-##### 4. docvalue_fields
+#### 4. docvalue_fields
 
 docvalue_fields 关键词指定需要返回的字段名称，需要以数组的形式指定。
 
@@ -504,7 +501,7 @@ CURL 示例说明：
    }'
 ```
 
-### 聚合查询
+## 聚合查询
 
 agg 关键字主要用于构造聚合查询。用户可到返回的 aggregations 字段取聚合结果。聚合返回字段说明详见下表。如果只关注聚合结果，请在查询时设置 size 参数为0。
 
@@ -518,7 +515,7 @@ agg 关键字主要用于构造聚合查询。用户可到返回的 aggregations
 
 下面列举几种常用的聚合方式。
 
-#### 普通聚合
+### 普通聚合
 
 普通聚合需要指定聚合名称、聚合方式（常用的聚合方式有 min、max、avg、value_count、sum 等）和聚合所作用的字段。
 
@@ -543,8 +540,8 @@ CURL 示例说明：
    }'
 ```
 
-> 说明：
->
+
+>!
 > 上例中对字段 cpuUsage 做 max 聚合（用户也可指定 min、avg 等），返回结果取别名 myname（用户可任意指定该名称）。
 
 返回结果：
@@ -572,7 +569,7 @@ CURL 示例说明：
 }
 ```
 
-#### terms 聚合
+### terms 聚合
 
 terms 聚合主要用于查询某个字段的所有唯一值以及该值的个数，用户可指定唯一值返回时的排序规则，以及返回结果数，并且可对参与聚合的数据字段进行模糊或者精确匹配，详情请参考如下示例,使用 filter_path 参数可定制返回结果字段，使用方法请参考 [批量查询数据](https://intl.cloud.tencent.com/document/product/1100/45519)。
 
@@ -634,8 +631,8 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 }
 ```
 
-> 说明：
->
+
+>!
 > 上例表示查看 ctsdb_test 的 region 字段中所有的唯一值及其出现的次数。分析返回字段 aggregations 中的 buckets 字段发现，region 字段共有7种类型的值，分别是 sh、Motor_sports、gz、bj、cd、Winter_sports、water_sports， 并且返回字段通过 doc_count 指明了每种值的个数。
 
 用户可通过 size 字段指定返回的唯一值的个数，例如某字段名为 region，其唯一值有7个，可通过设置 size 字段为5指定只返回前5个，具体请参考示例。
@@ -925,7 +922,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 }
 ```
 
-#### Date Histogram 聚合
+### Date Histogram 聚合
 
 Date Histogram 主要对日期做直方图聚合。
 CURL 示例说明：
@@ -1097,11 +1094,11 @@ CURL 示例说明：
    }
 ```
 
-> 说明：
->
+
+>!
 > 上例是对字段 cpuUsage 进行粒度为1小时的 date_histogram 聚合。返回结果中总的聚合名称为 time_1h_agg（用户可任意指定该名称），每个时间分段内的聚合名称为 avgCpuUsage（用户可任意指定该名称）。interval 字段可选的时间粒度有 year、quarter、 month、week、day、hour、minute、second，用户也可将时间粒度用时间单位来表示，例如1y代表1year，1h代表1hour。系统不支持小数粒度的时间单位，例如1.5h您需要转换为90min。
 
-#### Percentiles 聚合
+### Percentiles 聚合
 
 Percentiles 聚合即百分位聚合。百分位可以任意指定，系统默认的百分位是 1、5、25、50、75、95、99，可自行选择其他数值。
 
@@ -1203,11 +1200,10 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
    }
 ```
 
-> 说明：
->
+>!
 > 上例中是对字段 cpuUsage 做 percentiles 聚合，选取的百分位为 1,25,50,70,99。聚合返回结果的别名是 myname（用户可任意指定该名称）。
 
-#### Cardinality 聚合
+### Cardinality 聚合
 
 Cardinality 聚合主要用于统计去重后的数量。默认情况下，当聚合结果小于等于3000时，Cardinality 返回的结果是精确值，大于3000时，为近似值。
 
@@ -1302,7 +1298,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
    }
 ```
 
-> 说明：
->
+
+>!
 > 上例的聚合是对字段 cpuUsage 做 cardinality 聚合，返回的聚合结果取别名 myname（用户可任意指定该名称）。
 
