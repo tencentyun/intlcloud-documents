@@ -201,7 +201,7 @@ public static void startGetAuthConfigData(HuiYanOsConfig startConfig, HuiYanConf
 
 Feature:
 
-It is a configuration parameter pulled by the FaceID SDK during local detection in order to obtain the light sequence in subsequent steps.
+It is an API for the FaceID SDK to pull configuration parameters during local detection that are used as the parameters for getting the light sequence in subsequent steps.
 
 Input parameters:
 
@@ -236,7 +236,7 @@ Input parameters:
 | Type | Name | Description | Default Value |
 | -------------- | ------------------ | ------------------------------------ | -------------------- |
 | PageColorStyle | pageColorStyle | Color pattern of the current face authentication | PageColorStyle.Light |
-| String | authLicense | Name of the license file requested for user identity verification | Empty |
+| String | authLicense | Name of the license file requested for user identity verification | Null |
 | long | authTimeOutMs | Liveness detection timeout period | 10,000 ms (10s) |
 | boolean | isDeleteVideoCache | Whether to delete the local cache of the identity verification video | true |
 
