@@ -1,7 +1,7 @@
 Content Delivery Network(CDN)を使用してCloud Object Storage (COS)のアクセラレーションを行うことで、バケット内のコンテンツを広範囲にダウンロード、配信することができます。特に、同一のコンテンツを繰り返しダウンロードするユースケースに適しています。back-to-origin認証機能を使用すると、CDNを使用したプライベート読み取りバケット内のコンテンツのアクセラレーションを実現できます。CDN認証機能により、コンテンツは正当なユーザーにのみダウンロードされ、ダウンロード制限なしに伴うデータセキュリティやトラフィックコストなどの問題を防ぐことができます。
 
 
->?CDNアクセラレーションドメイン名を有効にした場合、CDNアクセラレーションドメイン名を使用してデータのダウンロードやアクセスを行うと、CDN back-to-originラフィックとCDNトラフィックが発生します。詳しくは、「COSをCDNオリジンサーバーとした場合発生するトラフィック」(https://intl.cloud.tencent.com/document/product/436/33776)をご参照ください。
+>?CDNアクセラレーションドメイン名を有効にした場合、CDNアクセラレーションドメイン名を使用してデータのダウンロードやアクセスを行うと、CDN back-to-originラフィックとCDNトラフィックが発生します。詳しくは、[COSをCDNオリジンサーバーとした場合発生するトラフィック](https://intl.cloud.tencent.com/document/product/436/33776)をご参照ください。
 
 
 ## Content Delivery Network
@@ -70,7 +70,7 @@ CDNコンソールで[認証設定](https://intl.cloud.tencent.com/document/prod
 - HEAD Object：オブジェクトのメタデータの検索
 - OPTIONS Object：クロスドメイン設定のプリフライトリクエスト
 
-「CDNコンソール」(https://console.cloud.tencent.com/cdn)と「COSコンソール」(https://console.cloud.tencent.com/cos5)ともにワンクリックによる権限付与の機能を提供しています。つまり、**CDNサービス認証の追加**をクリックして完了できます。この操作を実施した後、「Origin-pull認証」オプションをオンにしてください。これで、CDNエッジはそのサービスIDでCOSにおけるデータにアクセスします。
+[CDNコンソール](https://console.cloud.tencent.com/cdn)と[COSコンソール](https://console.cloud.tencent.com/cos5)ともにワンクリックによる権限付与の機能を提供しています。つまり、**CDNサービス認証の追加**をクリックして完了できます。この操作を実施した後、「Origin-pull認証」オプションをオンにしてください。これで、CDNエッジはそのサービスIDでCOSにおけるデータにアクセスします。
 
 >!
 > 1. バケットがプライベート読み取りに設定されている場合は、権限を追加し、back-to-origin認証を有効にしてください。これを行わなければCOSはアクセスが拒否されます。
