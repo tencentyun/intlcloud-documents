@@ -2,12 +2,13 @@ COSCLI 툴은 간단한 설치 및 설정 후에 사용할 수 있는 Windows, M
 
 ## 다운로드 주소
 
-- [Windows](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-windows.exe)
-- [Mac](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-mac)
-- [Linux](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-linux)
+| Github 주소                                                   | 중국 내 사이트                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Windows](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-windows.exe) | [Windows](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-windows.exe) |
+| [Mac](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-mac) | [Linux](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-linux) |
+| [Linux](https://github.com/tencentyun/coscli/releases/download/v0.11.0-beta/coscli-linux) | [Mac](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-mac) |
 
-
->?현재 버전 번호는 v0.11.0-beta입니다. 툴의 최신 버전 및 업데이트 로그를 얻으려면 [release](https://github.com/tencentyun/coscli/releases)로 이동하여 다운로드하십시오.
+>?현재 버전 넘버는 v0.11.0-beta입니다. 툴의 최신 버전, 이전 버전 및 업데이트 로그는 [release](https://github.com/tencentyun/coscli/releases)로 이동하여 확인하십시오.
 
 ## 설치
 
