@@ -1,10 +1,10 @@
 This document describes relevant operations and provides documentation links to help you better use Tencent Cloud FaceID.
 ## Access Process
 ### Step 1. Sign up and log in
-Log in to [Tencent Cloud official website](https://intl.cloud.tencent.com/login). If you do not have an account yet, please sign up as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
+Log in to [Tencent Cloud](https://intl.cloud.tencent.com/login). If you do not have an account yet, sign up as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985).
 
 ### Step 2. Apply for the service
-Log in to the [FaceID Console](https://console.cloud.tencent.com/faceid) to activate the service.
+Log in to the [FaceID console](https://console.cloud.tencent.com/faceid) to activate the service.
 
 ### Step 3. Use the service
 We recommend using the [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=) for online call, signature verification, SDK code generation, quick API search and more, which significantly reduces the difficulty in using TencentCloud API 3.0. You can use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=) to generate **server SDKs** and use them with the compiled Tencent Cloud SDKs to quickly call the FaceID service. The server SDKs are available in multiple programming languages, such as Python, Java, PHP, Go, Node.js, .NET, etc. You can download the corresponding SDK in the documentation of each service or get it from the [SDK Center](https://intl.cloud.tencent.com/document/product/494).
@@ -12,6 +12,6 @@ We recommend using the [API 3.0 Explorer](https://console.cloud.tencent.com/api/
 FaceID also provides a "Quick API Run" tutorial to help you debug and test the service.
 
 ### Step 4. View calls
-For more information on FaceID billing and payment modes, please see Purchase Guide.
+For more information on FaceID billing and payment modes, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1061/37023?!editLang=en).
 
-You can log in to the [FaceID Console](https://console.cloud.tencent.com/faceid) to view service call details.
+You can log in to the [FaceID console](https://console.cloud.tencent.com/faceid) to view call details.
