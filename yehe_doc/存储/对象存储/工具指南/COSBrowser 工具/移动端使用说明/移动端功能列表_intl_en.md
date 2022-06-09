@@ -5,7 +5,7 @@ COSBrowser mobile app allows you to easily view and manage COS resources anytime
 
 | Operation | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Usage overview](https://intl.cloud.tencent.com/document/product/436/46382#UsageOverview) | You can view the recent data usage.                                   |                                             |
+| [Usage overview](https://intl.cloud.tencent.com/document/product/436/46382#UsageOverview) | You can view the recent data usage.                                   |             
 | [Bucket monitoring](https://intl.cloud.tencent.com/document/product/436/46382#BucketMonitoring) | You can view the recent data usage by bucket.                                   |
 | [Widget](https://intl.cloud.tencent.com/document/product/436/46382#TheWidget) | You can view the data usage without opening the app.   |
 
