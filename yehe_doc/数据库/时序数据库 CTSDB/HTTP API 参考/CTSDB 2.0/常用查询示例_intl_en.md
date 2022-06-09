@@ -25,14 +25,14 @@ This document describes how to use common queries and keywords in CTSDB with sim
    }
 ```
 
-### Combined query
+## Combined query
 
 Combined queries can be used for single queries as well as composite queries. The `query` keyword in the query body can use query domain-specific language (DSL) to define query conditions.
 This document describes how to construct and combine filter conditions and process the returned result set.
 
-#### Common filter conditions
+### Common filter conditions
 
-##### 1. Range
+#### 1. Range
 
 `Range` indicates range query, which supports fields of `string`, `long`, `integer`, `short`, `double`, `float`, and `date` types. The parameters that can be contained in a range query are as detailed below:
 
@@ -43,8 +43,8 @@ This document describes how to construct and combine filter conditions and proce
 | lte      | Less than or equal to |
 | lt       | Less than       |
 
-> Note:
->
+
+>!
 > If a range query involves time types, you can use the `format` parameter to specify the time format. For the specific time formats, see [Creating Metric](https://intl.cloud.tencent.com/document/product/1100/45525).
 
 Sample code of time range query for curl:
@@ -81,7 +81,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 }'  
 ```
 
-##### 2. Terms
+#### 2. Terms
 
 The `terms` keyword can be used to match specific fields during query, and its value needs to be enclosed by brackets ([]).
 
@@ -98,11 +98,11 @@ Sample code for curl:
    }'
 ```
 
-#### Filter condition combination
+### Filter condition combination
 
 A composite query usually uses bool keywords to combine multiple query conditions. Common combination keywords used for bool queries include `filter` (similar to `AND`), `must_not` (similar to `NOT`), and `should` (similar to `OR`). To improve the query efficiency, you must add a range query for the `time` field, which always returns a value in `epoch_millis` format no matter how the query is written. The combination of `query-bool-filter` can greatly improve the query performance; therefore, be sure to use it.
 
-##### 1. Sample code of `AND` condition for curl
+#### 1. Sample code of `AND` condition for curl
 
 ```
    curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
@@ -141,11 +141,11 @@ A composite query usually uses bool keywords to combine multiple query condition
 }'
 ```
 
-> Note:
->
+
+>!
 > The query conditions are similar to `timestamp>='2017-11-06 23:00:00' AND timestamp<'2018-03-06 23:05:00' AND region=sh AND cpuUsage=2.0`.
 
-##### 2. Sample code of `OR` condition for curl
+#### 2. Sample code of `OR` condition for curl
 
 ```
  curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
@@ -191,11 +191,11 @@ A composite query usually uses bool keywords to combine multiple query condition
 }'
 ```
 
-> Note:
->
+
+>!
 > The query conditions are similar to `timestamp>='2017-11-06 23:00:00' AND timestamp<'2018-11-06 23:05:00' AND region='gz' AND (cpuUsage=2.0 or cpuUsage=2.5)`. The `minimum_should_match` parameter is used to set the minimum number of results that should match `cpuUsage=2.0` and `cpuUsage=2.5`, and its default value is 0.
 
-##### 3. Sample code of `NOT` condition for curl
+#### 3. Sample code of `NOT` condition for curl
 
 ```
 curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/ctsdb_test/_search -d'
@@ -236,13 +236,13 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
      }'
 ```
 
-> Note:
->
+
+>!
 > The query conditions are similar to `timestamp>=2017-11-06 23:00:00 AND timestamp<2018-11-06 23:05:00 AND region='gz' AND cpuUsage !=2.0`.
 
-#### Processing of returned result set
+### Processing of returned result set
 
-##### 1. From/Size
+#### 1. From/Size
 
 You can paginate query results by setting the `from` and `size` keywords. The `from` keyword defines the offset of the first data entry in the query results, and `size` the maximum number of returned results. The default values of `from` and `size` are 0 and 10, respectively. The sum of `from` and `size` cannot exceed 65,536 by default. If you want to have more results returned, see the description of query with the `scroll` keyword in this document.
 
@@ -275,7 +275,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:92
 }'
 ```
 
-##### 2. Scroll
+#### 2. Scroll
 
 A scroll operation is similar to a cursor in a relational database. Therefore, it is suitable for backend bulk processing rather than real-time search.
 You can divide a scroll operation into two phases: initialization and traversal. During initialization, all search results matching the search conditions will be cached like with a snapshot, from which data will be taken out during traversal. Note that insertion, deletion, and update of metrics after scroll initialization will not affect the traversal result.
@@ -439,14 +439,12 @@ Scroll traversal:
    }'
 ```
 
-> Note:
->
-> 
->
+
+>!
 > - `scroll_id` in this request is the value of `_scroll_id` returned in scroll initialization. In the next traversal, the `scroll_id` parameter value should be adjusted to the `_scroll_id` value returned in the previous traversal, that is, the `scroll_id` parameter value in each request is the `_scroll_id` value returned in the previous request, and traversal will end until the returned result is empty.
 > - The `_scroll_id` values returned by the two traversals may be the same, so `_scroll_id` cannot be used to redirect to the specified page.
 
-##### 3. Sort
+#### 3. Sort
 
 The `sort` keyword is mainly used to sort query results and has two orders: `asc` and `desc`. The default sorting order for custom fields in CTSDB is `asc`. Available sorting modes include `min`, `max`, `sum`, `avg`, and `median`, where `sum`, `avg`, and `median` are suitable only for fields of `array` type that store numbers only.
 
@@ -486,7 +484,7 @@ Sample code for curl:
    }'
 ```
 
-##### 4. docvalue_fields
+#### 4. docvalue_fields
 
 The `docvalue_fields` keyword specifies the names of the fields to be returned in an array.
 
@@ -504,13 +502,13 @@ Sample code for curl:
    }'
 ```
 
-### Aggregate query
+## Aggregate query
 
 The `agg` keyword is mainly used to construct aggregate queries. You can get the aggregate results in the returned `aggregations` field. The returned aggregate fields are as detailed below. If you want to focus only on the aggregate results, set the `size` parameter to 0 during query.
 
 | Field | Description                                                         |
 | :----------- | :----------------------------------------------------------- |
-| hits      | Matched query results. Here, the `total` field indicates the number of data records participating in aggregate. The `hits` field is an array, which contains the first ten query results if not specified. Each result in the `hits` array contains `_index` ([child metric](hyperlink) involved in the query). If `docvalue_fields` is specified in the query, the `fields` field will be returned to indicate the value of each field. |
+| hits      | Matched query results. Here, the `total` field indicates the number of data records participating in aggregate. The `hits` field is an array, which contains the first ten query results if not specified. Each result in the `hits` array contains `_index` ([child metric](https://intl.cloud.tencent.com/document/product/1100/45525) involved in the query). If `docvalue_fields` is specified in the query, the `fields` field will be returned to indicate the value of each field. |
 | took      | Time in milliseconds taken by the entire query.                                       |
 | _shards  | Number of shards involved in the query. Here, `total` indicates the total number of shards, `successful` the shards that were successfully queried, `failed` the shards that failed to be queried, and `skipped` skipped shards. |
 | timed_out | Indicates whether query timed out. Valid values: false, true.                         |
@@ -518,7 +516,7 @@ The `agg` keyword is mainly used to construct aggregate queries. You can get the
 
 The following lists some common aggregate modes:
 
-#### Regular aggregate
+### Regular aggregate
 
 For a regular aggregate, you need to specify the aggregate name, mode (common modes include `min`, `max`, `avg`, `value_count`, and `sum`), and target fields.
 
@@ -543,8 +541,8 @@ Sample code for curl:
    }'
 ```
 
-> Note:
->
+
+>!
 > The above sample aggregates the `cpuUsage` field in `max` mode (you can also use other modes such as `min` and `avg`), and the returned aggregate results are named the alias `myname` field (you can also specify another name).
 
 Response:
@@ -572,7 +570,7 @@ Response:
 }
 ```
 
-#### `terms` aggregate
+### `terms` aggregate
 
 A `terms` aggregate is mainly used to query all the unique values and the number of such values of a field. You can specify the rule of sorting the returned unique values and the number of returned results and perform fuzzy or exact match for data fields participating in the aggregate. For more information, see the sample below. You can use the `filter_path` parameter to customize the returned result fields as instructed in [Bulk Querying Data](https://intl.cloud.tencent.com/document/product/1100/45519).
 
@@ -634,8 +632,8 @@ Response:
 }
 ```
 
-> Note:
->
+
+>!
 > The above sample returns all the unique values and their numbers of occurrences in the `region` field in `ctsdb_test`. By analyzing the `buckets` field in the returned `aggregations` field, you can find that the `region` field has seven types of values, i.e., `sh`, `Motor_sports`, `gz`, `bj`, `cd`, `Winter_sports`, and `water_sports`, and the occurrence number of each value of the returned fields is indicated in `doc_count`.
 
 You can use the `size` field to specify the number of unique values to be returned; for example, if the `region` field has seven unique values, you can set the `size` field to 5 to return only the first five values. For more information, see the sample.
@@ -925,7 +923,7 @@ Response:
 }
 ```
 
-#### Date histogram aggregate
+### Date histogram aggregate
 
 A date histogram is mainly used to aggregate dates into a histogram.
 Sample code for curl:
@@ -1097,11 +1095,11 @@ Response:
    }
 ```
 
-> Note:
->
+
+>!
 > The above sample aggregates the `cpuUsage` field in `date_histogram` mode with a granularity of one hour. The total aggregate name of the returned results is `time_1h_agg` (you can specify another name), and the aggregate name in each time interval is `avgCpuUsage` (you can specify another name). The valid time granularities for `interval` include `year`, `quarter`, `month`, `week`, `day`, `hour`, `minute`, and `second`. You can also represent the time granularity as a time unit; for example, `1y` represents one year, and `1h` one hour. The system does not support decimal time units; therefore, you need to convert `1.5h` to `90min` for example.
 
-#### Percentiles aggregate
+### Percentiles aggregate
 
 You can specify the percentile in percentiles aggregate. The system default percentiles are 1, 5, 25, 50, 75, 95, and 99. You can select other values as needed.
 
@@ -1203,11 +1201,11 @@ Response:
    }
 ```
 
-> Note:
->
+
+>!
 > The above sample aggregates the `cpuUsage` field in `percentiles` mode, and the selected percentiles are 1, 25, 50, 70, and 99. The returned aggregate results are named the alias `myname` (you can also specify another name).
 
-#### Cardinality aggregate
+### Cardinality aggregate
 
 A cardinality aggregate is mainly used to get the number of deduplicated results. By default, if the number of aggregate results is less than or equal to 3,000, the result returned by `cardinality` will be precise; otherwise, the result will be approximate.
 
@@ -1302,7 +1300,7 @@ Response:
    }
 ```
 
-> Note:
->
+
+>!
 > The above sample aggregates the `cpuUsage` field in `cardinality` mode, and the returned aggregate result is named the alias `myname` (you can also specify another name).
 
