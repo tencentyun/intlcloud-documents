@@ -63,7 +63,7 @@ The `items` field is an array, where each element corresponds to a write request
 Request:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/ctsdb_test/_doc/_bulk -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/ctsdb_test/_doc/_bulk -d'
  {"index":{"routing": "sh" }}
  {"region":"sh","cpuUsage":2.5,"timestamp":1505294654}
  {"index":{"routing": "sh" }}
@@ -128,7 +128,7 @@ Response:
 Request:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/hcbs_client_trace/_doc/_bulk -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/hcbs_client_trace/_doc/_bulk -d'
     {"index":{"_id":"5"}}
     {"vol_id":"c57e008c-0ae0-41cd-8da8-6989d0522fc6","io_type":2,"data_len":4096,"latency":3,"try_times":1,"errcode":0,"start_time":1503404266}
     {"index":{"_id":"6"}}
@@ -239,7 +239,7 @@ You need to judge whether a request is successful based on the `error` field. If
 Request:
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.16.345.14:9201/_bulk -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X PUT 172.xx.xx.4:9201/_bulk -d'
 {"index":{"_index" : "ctsdb_test"}}
 {"region":"sh","cpuUsage":2.5,"timestamp":1505294654}
 {"index":{"_index" : "ctsdb_test2"}}
