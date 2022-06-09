@@ -6,13 +6,13 @@ The default QPS is 5 calls/sec. If this does not meet your needs, you can contac
 
 ### Resource passing FAQs
 
-See [Passing Resources](https://intl.cloud.tencent.com/zh/document/product/1061/46849?). 
+See [Passing Resources](https://intl.cloud.tencent.com/document/product/1061/46849?!editLang=en). 
 
 
 # SDK integration FAQs
 
 
-### What should I do if **Invoke-customs are only supported starting with Android O (--min-api 26)** appears?
+### What should I do if "Invoke-customs are only supported starting with Android O (--min-api 26)" appears?
 
 Add the following configuration to the `build.gradle` file:
   ```
