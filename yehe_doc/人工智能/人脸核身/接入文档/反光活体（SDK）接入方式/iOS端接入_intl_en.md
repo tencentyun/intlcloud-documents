@@ -203,7 +203,7 @@ Input parameters:
 | --------- | ------------------ | ------------------------------------ | ----------------- |
 | NSSString | authLicense | Name of the license file requested for user identity verification | Null |
 | long | authTimeOutMs | Timeout period of liveness detection | 10,000 ms (10s) |
-| BOOL | isDeleteVideoCache | Whether to delete the local cache of the identity verification video | YES |
+| BOOL | isDeleteVideoCache | Whether to delete the local cache of the identity verification video | true |
 
 ### HuiYanConfigSuccCallback
 
