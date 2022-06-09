@@ -26,7 +26,7 @@ COSBrowser는 홈 화면에 위젯으로 추가할 수 있어 COSBrowser를 열�
 
 ### 위젯 추가
 
-1. iPhone에 iOS용 COSBrowser를 다운로드하여 설치합니다. 그런 다음 App이 흔들릴 때까지 홈 스크린의 빈 영역을 길게 터치하고 왼쪽 상단 모서리의 **+**를 탭합니다.
+1. iPhone에 iOS용 COSBrowser를 다운로드하여 설치합니다. 그런 다음 App이 흔들릴 때까지 홈 스크린의 빈 영역을 길게 터치하고 왼쪽 상단 모서리의 <b>+</b>를 탭합니다.
 
 2. COSBrowser를 찾아서 탭합니다.
 
