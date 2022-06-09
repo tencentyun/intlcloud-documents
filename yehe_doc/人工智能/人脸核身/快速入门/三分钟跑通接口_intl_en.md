@@ -22,7 +22,7 @@ Enter the parameters on the left to generate codes. Part of the field informatio
 
 ### Step 4
 Integrate the SDK into the project.
-Integrate the SDK into the project as instructed in the usage guide on the upper right-hand corner. You can call the corresponding API using the code generated in [Step 3](###Step 3).
+Integrate the SDK into the project as instructed in the usage guide on the upper right-hand corner. You can call the corresponding API using the code generated in [Step 3](https://intl.cloud.tencent.com/document/product/1061/37029?lang=en&pg=#step-3).
 ![](https://main.qcloudimg.com/raw/426025dfc6dcaa3b42525821804c92a7.png)
 
 ## Notes
