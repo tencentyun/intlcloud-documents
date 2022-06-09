@@ -41,7 +41,7 @@
 请求：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/_rollup/ctsdb_rollup_task_test -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/_rollup/ctsdb_rollup_task_test -d'
 {
    "base_metric": %{base_metric_name},      
    "rollup_metric": %{rollup_metric_name},    
@@ -135,7 +135,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 ### 6. CURL 示例说明
 
 请求：
-`curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/_rollups`
+`curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/_rollups`
 
 返回：
 
@@ -179,7 +179,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 ### 6. CURL 示例说明
 
 请求：
-`curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/_rollup/rollup_jgq_6?v`
+`curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201/_rollup/rollup_jgq_6?v`
 
 返回：
 
@@ -256,7 +256,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 ### 6. CURL 示例说明
 
 请求：
-`curl -u root:le201909 -H 'Content-Type:application/json' -X DELETE 172.16.345.14:9201/_rollup/ctsdb_rollup_task_test`
+`curl -u root:le201909 -H 'Content-Type:application/json' -X DELETE 172.xx.xx.4:9201/_rollup/ctsdb_rollup_task_test`
 
 返回：
 
@@ -300,7 +300,7 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9
 请求：
 
 ```
-curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/_rollup/ctsdb_rollup_task_test/update -d'
+curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/_rollup/ctsdb_rollup_task_test/update -d'
 {
    "state":"running",
    "start_time": "1511918989",
