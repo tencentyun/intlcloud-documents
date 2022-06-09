@@ -16,7 +16,7 @@ None
 | Parameter | Required | Type | Description                                                         |
 | -------- | ---- | ---- | ------------------------------------------------------------ |
 | tags     | Yes   | map  | Tag, which is used to uniquely identify data. It must contain at least one tag and supports the following data types: `text` (string with tokens and full-text index), `string` (string without tokens), `long`, `integer`, `short`, `byte`, `double`, `float`, `date`, and `boolean` <br>The format is `{"region": "string","set":  "long","host": "string"}` |
-| time     | No   | map  | Configuration of time column, which is used to store the unique time when data is written into the database, such as `{"name": "timestamp", "format":  "epoch_second"}`. If this parameter is left empty, it will be specified as `{"name": "timestamp", "format":  "epoch_millis"}` by the system by default |
+| time     | Yes   | map  | Configuration of time column, which is used to store the unique time when data is written into the database, such as `{"name": "timestamp", "format":  "epoch_second"}`. If this parameter is left empty, it will be specified as `{"name": "timestamp", "format":  "epoch_millis"}` by the system by default |
 | fields   | No   | map  | Fields for data storage. We recommend you use data types most suitable for your actual business to save the space. The following data types are supported: `string`, `long`, `integer`, `short`, `byte`, `double`, `float`, `date`, and `boolean` <br>Example: `{"cpu_usage":"float"}` |
 | options  | No   | map  | Common fine-tuning configuration information <br>Example: `{"expire_day":7,"refresh_interval":"10s","number_of_shards":5,"number_of_replicas":1,"rolling_period":1,"max_string_length": 256,"default_date_format":"strict_date_optional_time","indexed_fields":["host"]}` |
 
@@ -26,9 +26,9 @@ None
  - expire_day: data expiration time in days, which is a non-zero integer. Once expired, the data will be automatically cleared. By default, it is the minimum value -1, which indicates that the data will never expire.
  - refresh_interval: data refresh interval, which is 10 seconds by default. The written data can be queried after being refreshed from the memory to disk.
  - number_of_shards: number of metric shards, which is a positive integer and 3 by default. This parameter can be ignored for small metrics. A large metric can be divided into shards, and each shard can be up to 25 GB in size.
- - number_of_replicas: number of replicas, which is a non-negative integer; for example, 1 indicates one master and one replica. The default value is 1.
+ - number_of_replicas: number of replicas, which is a positive integer; for example, 1 indicates one master and one replica. The default value is 1.
  - [rolling_period](id:rolling): child metric period (in days), which is a non-zero integer. When CTSDB stores data, to facilitate data expiration and improve query efficiency, it stores data in **child metrics** by the specified time interval, which is subject to the data expiration time by default. The relationships between the default child metric period and data expiration time are as detailed below:
- - max_string_length: maximum length of a custom string, which is a positive integer. Its maximum value is 2^31 - 1, and its default value is 256.
+ - max_string_length: maximum length of a custom string, which is a positive integer. Its maximum value is 32765, and its default value is 256.
  - default_date_format: format of the `date` data type of custom tags and fields, which is `strict_date_optional_time` or `epoch_millis` by default.
  - indexed_fields: fields whose indexes need to be retained in the fields. You can use an array to specify multiple fields.
  - default_type: default type of new fields. Its valid values are `tag` and `field`, and its default value is `tag`.
