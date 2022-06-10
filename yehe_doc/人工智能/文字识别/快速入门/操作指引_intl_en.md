@@ -22,4 +22,4 @@ This method allows you to make API calls, verify signatures, generate SDK codes,
 If you are an experienced developer, you can call OCR APIs with SDKs complied by Tencent Cloud, which support languages such as Python, Java, PHP, Go, NodeJS, .Net, etc. You can download the SDK in the corresponding service documentation or through the SDK Center.
 
 ### Viewing the service usage
-Log in to the [OCR Console](https://console.cloud.tencent.com/ocr/general) to view the usage of each OCR service.
+Log in to the [OCR onsole](https://console.cloud.tencent.com/ocr/general) to view the usage of each OCR service.
