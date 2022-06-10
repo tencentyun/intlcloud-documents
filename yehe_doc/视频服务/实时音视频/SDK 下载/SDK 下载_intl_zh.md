@@ -148,7 +148,6 @@
                           <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_CSharp_latest.zip">ZIP 下载</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">集成指引</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46747">运行 Demo</a>
             </div>
         </div>
 </div>
