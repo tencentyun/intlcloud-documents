@@ -153,7 +153,7 @@ CAM 권한을 부여할 수 있는 리소스 유형: [애플리케이션](https:
 |[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|통화 품질 모니터링|상세 이벤트 가져오기|매개변수를 입력했으나 SDKAppID가 존재하지 않아, 리소스 권한 부여가 불가능합니다. |
 | [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | 기타 API |클라우드 녹화 과금 시간 쿼리  |리소스 수준 권한 부여 미지원 |
 | [DescribeTrtcInteractiveTime](https://intl.cloud.tencent.com/document/product/647/42971) | 기타 API |멀티미디어 인터랙션 과금 시간 쿼리 |리소스 수준 권한 부여 미지원 |
-| [DescribeTrtcMcuTranscodeTime](https://intl.cloud.tencent.com/document/product/647/42970) |  기타 API |릴레이 트랜스 코딩 과금 시간 쿼리   |리소스 수준 권한 부여 미지원 |
+| DescribeTrtcMcuTranscodeTime|  기타 API |릴레이 트랜스 코딩 과금 시간 쿼리   |리소스 수준 권한 부여 미지원 |
 
 ### 콘솔 API 작업
 <table>
