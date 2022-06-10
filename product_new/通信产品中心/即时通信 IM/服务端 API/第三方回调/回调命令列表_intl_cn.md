@@ -38,5 +38,5 @@
 |群内发言之后回调|[Group.CallbackAfterSendMsg](https://intl.cloud.tencent.com/document/product/1047/34375)|
 |群组满员之后回调|[Group.CallbackAfterGroupFull](https://intl.cloud.tencent.com/document/product/1047/34376)|
 |群组解散之后回调|[Group.CallbackAfterGroupDestroyed](https://intl.cloud.tencent.com/document/product/1047/34377)|
-|群组资料修改之后回调|[Group.CallbackAfterGroupInfoChanged](https://intl.cloud.tencent.com/document/product/1047/34378)|
+|群组资料变动之后回调|[Group.CallbackAfterGroupInfoChanged](https://intl.cloud.tencent.com/document/product/1047/34378)|
 
