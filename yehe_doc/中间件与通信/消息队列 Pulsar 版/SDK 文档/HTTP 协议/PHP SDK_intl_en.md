@@ -82,10 +82,8 @@ This document uses PHP as an example to describe how to connect to TDMQ for Puls
        "Topic" => $fullTopicName,
        // Message content
        "Payload" => "this is a new message.",
-       // Authorized role name
-       "ProducerName" => $userName,
        // Message sending timeout period
-       "SendTimeout" => 3000A
+       "SendTimeout" => 3000
    );
    $req->fromJsonString(json_encode($params));
    
