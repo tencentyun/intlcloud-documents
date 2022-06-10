@@ -211,7 +211,6 @@ The following table describes the error codes specific to this API.
 | 30002 | The SDKAppIDs are inconsistent. |
 | 30003 | The requested user account does not exist. |
 | 30004 | The request requires app admin permissions. |
-| 30005 | The relationship chain field contains sensitive words. |
 | 30006 | An internal server error occurred. To correct it, try again. |
 | 30007 | The network connection timed out. To correct it, try again later. |
 | 30008 | A write conflict occurred due to concurrent writes. To correct it, we recommend that you use the batch mode. |
