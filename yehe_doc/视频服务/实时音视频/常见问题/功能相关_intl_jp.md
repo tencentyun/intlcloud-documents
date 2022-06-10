@@ -85,7 +85,7 @@ TRTCのプライベート化したデプロイは、まだ完全にはリリー�
 
 [](id:que16)
 ### TRTCでRelayed live streamingをアクティブ化した場合、利用にはドメイン名のICP登録が必要ですか。
-Relayed live streamingをアクティブ化する必要がある場合は、国の関連部門の要件に基づき、再生ドメイン名のICP登録をしないと使用できません。詳細は[CDN Relayed live Streaming](https://intl.cloud.tencent.com/document/product/647/35242)をご参照ください。
+Relayed live streamingをアクティブ化する必要がある場合は、国の関連部門の要件に基づき、再生ドメイン名のICP登録をしないと使用できません。
 
 [](id:que17)
 ### TRTCの遅延はどのくらいですか。
@@ -325,8 +325,7 @@ TRTCCloudのsetVideoEncoderParam()インターフェースで、TRTCVideoEncPara
 
 [](id:que66)
 ### TRTCオーディオ・ビデオストリームは、CDNを介したプルストリームによる視聴をサポートしていますか。 
-サポートしています。詳細については、[CDN relayed live streamingの実装](https://intl.cloud.tencent.com/document/product/647/35242)をご参照ください。
-
+サポートしています。
 [](id:que67)
 ### TRTCのカスタムレンダリングはどの形式をサポートしていますか。 
 - iOS端末ではi420、NV12、BGRAをサポートしています。
