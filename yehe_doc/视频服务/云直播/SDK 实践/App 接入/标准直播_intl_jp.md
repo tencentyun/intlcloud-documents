@@ -6,6 +6,6 @@ MLVB SDKとは、 標準ライブストリーミングサービス をスマー�
 
 ## Demo体験
 
-モバイルライブストリーミングにはTCToolkit Appがあり、関連ソースコードのダウンロードサポートをご提供しています。具体的には[TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)をご参照ください。
+モバイルライブストリーミングにはTCToolkit Appがあり、関連ソースコードのダウンロードサポートをご提供しています。具体的にはTCToolkit Appをご参照ください。
 
 
