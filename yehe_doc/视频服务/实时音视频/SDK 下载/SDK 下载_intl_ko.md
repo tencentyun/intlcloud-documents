@@ -147,7 +147,6 @@ TRTC는 Tencent Cloud에서 제공하는 저지연 고품질 오디오/비디오
                           <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_CSharp_latest.zip">ZIP 다운로드</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">통합 가이드</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46747">Demo 실행</a>
             </div>
         </div>
 </div>
