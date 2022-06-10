@@ -150,9 +150,9 @@ TRTC CAMが承認可能なリソースタイプは、[アプリケーション](
 ### サーバーAPIの操作
 |インターフェース名|インターフェースの分類|機能の説明|特殊な制限の説明|
 |---|---|---|---|
-|[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|通話品質の監視|詳細なイベントを取得|入力パラメータにSDKAppIDがないため、リソースレベルの認証を実行できません。|
-| [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | その他インターフェース |クラウドレコーディング課金時間の照会  |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
-| [DescribeTrtcInteractiveTime](https://intl.cloud.tencent.com/document/product/647/42971) | その他インターフェース |インタラクティブオーディオビデオ課金時間の照会 |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
+| DescribeDetailEvent|通話品質の監視|詳細なイベントを取得|入力パラメータにSDKAppIDがないため、リソースレベルの認証を実行できません。|
+| DescribeRecordStatistic | その他インターフェース |クラウドレコーディング課金時間の照会  |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
+| DescribeTrtcInteractiveTime | その他インターフェース |インタラクティブオーディオビデオ課金時間の照会 |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
 | DescribeTrtcMcuTranscodeTime |  その他インターフェース |バイパストランスコード課金時間の照会   |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
 
 ### コンソールAPIの操作
