@@ -1,6 +1,6 @@
 ## Overview
 
-The app backend can use this callback to monitor the login or logout behaviors of users in real time, including:
+The app backend can use this callback to view the login or logout behaviors of users in real time, including:
 - User login (a TCP connection is established)
 - User logout or network disconnection (a TCP connection is terminated)
 - App heartbeat timeout (the app is abnormally killed or crashes)
