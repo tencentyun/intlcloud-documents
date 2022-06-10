@@ -2,13 +2,14 @@
 ## 请求示例
 ```json
 {
-    "event":"bounce",
+   "event":"bounce",
     "email":"example@example.com",
     "bulkId":"qcloudses-30-251200670-date-20220601142439-8jolHvR2XcXC1",
     "timestamp":1654064683,
     "reason":"551 5.1.1 recipient is not exist",
     "bounceType":"hard_bounce",
     "username":"251200670",
+    "from":"test@fromexample.com",
     "fromDomain":"fromexample.com",
     "templateId":123456
 }
@@ -24,6 +25,7 @@
 | reason     | string | 邮件递送失败的原因                                                                          |
 | bounceType | string | 如果收件人邮件服务商拒信，拒信类型，取值：soft\_bounce \| hard\_bounce，仅在`event="bounce"`的时候生效           |
 | username   | string | 腾讯云账号对应的 appId                                                                      |
+| from       | string | 发信地址（不带发件人别名）                                                     |
 | fromDomain | string | 发信域名                                                                               |
 | templateId | int    | 模板 Id                                                                               |
 
