@@ -85,7 +85,7 @@ TRTC 프라이빗 배포는 현재 지원하지 않습니다. 서비스 사용 �
 
 [](id:que16)
 ### TRTC에서 릴레이 라이브 방송 활성화 시 도메인은 ICP비안이 필요합니까?
-릴레이 라이브 방송을 활성화하고자 할 경우, 중국 당국의 규정에 따라 ICP 비안이 있어야 재생 도메인을 사용할 수 있습니다. 자세한 내용은 [CDN 라이브 방송 시청](https://intl.cloud.tencent.com/document/product/647/35242)을 참고하십시오.
+릴레이 라이브 방송을 활성화하고자 할 경우, 중국 당국의 규정에 따라 ICP 비안이 있어야 재생 도메인을 사용할 수 있습니다. 
 
 [](id:que17)
 ### TRTC는 대략 어느 정도 딜레이됩니까?
@@ -325,7 +325,7 @@ TRTCCloud의 setVideoEncoderParam() 인터페이스를 통해 TRTCVideoEncParam 
 
 [](id:que66)
 ### TRTC 멀티미디어 스트리밍은 CDN 풀 스트리밍 시청을 지원합니까? 
-지원합니다. 자세한 내용은 [CDN 라이브 방송 시청 실행](https://intl.cloud.tencent.com/document/product/647/35242)을 참고하십시오.
+지원합니다. 
 
 [](id:que67)
 ### TRTC 사용자 정의 렌더링은 어떤 포맷을 지원합니까? 
