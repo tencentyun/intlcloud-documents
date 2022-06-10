@@ -64,7 +64,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 
 [](id:mobile)
 ### 场景三：移动端推流
-1. 使用手机扫描二维码，下载安装移动端 [视频云工具包](https://intl.cloud.tencent.com/document/product/1071/38147) 进行体验。
+1. 使用手机扫描二维码，下载安装移动端 视频云工具包 进行体验。
 2. 打开工具包，选择【移动直播】>【摄像头推流】。
 3. 手动输入或扫描二维码录入 [推流地址](#step1)。
 4. 单击左下角开始按钮，即可开始推流。
@@ -74,10 +74,10 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 [](id:sdk)
 ### 场景四：直播 SDK 推流
 如果您只需要在现有的 App 里集成直播推流功能，那么按照如下步骤可以快速实现目标。
-1. 下载 [移动直播 SDK](https://intl.cloud.tencent.com/document/product/1071/38150) 开发包。
-2. 参考对接文档（[iOS](https://intl.cloud.tencent.com/document/product/1071/38157) & [Android](https://intl.cloud.tencent.com/document/product/1071/38158)）完成接入。
+1. 下载 移动直播 SDK 开发包。
+2. 参考对接文档（iOS & Android）完成接入。
 
-直播 SDK 是一套移动终端直播解决方案的集合，它以免费源码的形式向您展示：如何利用云直播（CSS）、云点播（VOD）、即时通信（IM） 和对象存储（COS）等几项服务组合构建出适合您的直播解决方案。了解更多详情请参见 [移动直播](https://intl.cloud.tencent.com/product/mlvb) 
+直播 SDK 是一套移动终端直播解决方案的集合，它以免费源码的形式向您展示：如何利用云直播（CSS）、云点播（VOD）、即时通信（IM） 和对象存储（COS）等几项服务组合构建出适合您的直播解决方案。
 
 
 ## 常见问题
