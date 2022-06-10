@@ -1,3 +1,29 @@
+## 2022年05月
+<table >
+<th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> 
+<tr>
+  <td style="word-wrap:break-word;word-break:break-all;">
+   边缘集群支持 ServiceGroup
+  </td>
+  <td style="word-wrap:break-word;word-break:break-all;">
+  ServiceGroup 可以便捷地在共属同一个集群的不同机房或区域中各自部署一组服务，并且使得各个服务间的请求在本机房或本地域内部即可完成，避免服务跨地域访问。
+  </td><td>2022-05-18</td><td style="word-wrap:break-word;word-break:break-all;">-</a></td>
+</tr>
+</table>
+
+## 2022年04月
+<table >
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+  <td style="word-wrap:break-word;word-break:break-all;">集群资源配额调整说明</td><td style="word-wrap:break-word;word-break:break-all;">边缘集群会向节点数 (nodeNum）不超过 5 个 (0 < nodeNum ≤ 5) 、大于 5 个且小于 20 个 (5 < nodeNum < 20) 的集群上的命名空间自动应用一组资源配额。您将无法移除这些配额，此资源配额将保护集群控制平面，避免因部署到集群的应用中存在潜在 Bug 而导致其不稳定。</td><td>2022-04-29</td><td style="word-wrap:break-word;word-break:break-all;">-</a></td>
+</tr>
+<tr>
+  <td style="word-wrap:break-word;word-break:break-all;">跨地域服务互访</td><td style="word-wrap:break-word;word-break:break-all;">边缘集群支持在不同边缘地域 Pod 访问不同地域的服务。</td><td>2022-04-29</td><td style="word-wrap:break-word;word-break:break-all;">-</a></td>
+</tr>
+</table>
+
 ## 2022年03月
 <table >
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -106,7 +132,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td><li></a></li><li><</a></li><li></a></li></td>
+    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td>-</a></li></td>
 </tr>
 <tr>
     <td>节点安装脚本新增支持 check、clear 两个功能参数</td><td><li>check 参数，方便用户使用脚本手动检查节点环境中不满足安装要求的地方。</li><li>clear 参数，方便一键清理节点中的脏数据、关闭防火墙等。</li></td><td>2020-11-13</td><td>-</td>
@@ -115,6 +141,7 @@
     <td>上线边缘 DNS 方案</td><td>边缘 DNS 方案将不再占用节点53端口。</td><td>2020-11-4</td><td>-</a></td>
 </tr
 </table>
+
 
 
 ## 2020年10月

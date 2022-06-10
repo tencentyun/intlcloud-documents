@@ -6,8 +6,9 @@
 
 `TKE Service Controller` 默认不会将以下节点作为负载均衡后端：
 - Master 节点（不允许 Master 节点参与网络接入层的负载）。
-- 节点状态为 NotReady 或节点被设置为 Unschedulable（节点不健康或不可调度）。
+- 节点状态为 NotReady （节点不健康）。
 
+>! `TKE Service Controller` 可以绑定状态为 Unschedulable 的节点。Unschedulable 的节点也可以作为流量的入口，因为流量进入到节点之后，会再做一层容器网络里的流量转发，流量在 Unschedulable 的节点里面不会被丢弃，如上图所示。
 
 
 ## 指定接入层后端
@@ -22,7 +23,8 @@
 - 当 `service.kubernetes.io/qcloud-loadbalancer-backends-label` 的选择器没有选取到任何节点的时候，服务的后端将会被排空，会使得服务中断。使用此功能时，需要对集群节点的 Label 有一定的管理。
 - 新增符合要求的节点或变更存量节点也会触发 controller 更新。
 
-### 使用场景
+
+### 使用场景 
 #### 大规模集群下的测试应用
 在一个大规模集群下，部署一个仅包含一两个 Pod 的测试应用。通过 Service 进行服务暴露时，负载均衡将对所有的后端 NodePort 进行健康检查，此健康检查的请求量对测试应用有很大影响。此时可以在集群中通过 Label 指定一小部分节点作为后端，缓解健康检查带来的压力。详情请参见 [关于健康检查探测频率过高的说明](https://intl.cloud.tencent.com/document/product/214/38451)。
 
@@ -60,7 +62,8 @@ Kubernetes 提供了 Service 特性 `ExternalTrafficPolicy`。当 `ExternalTraff
   - 没有工作负载的节点，NodePort 将无法提供服务。
 
 ### 注意事项
-负载均衡的同步是需要时间的。当 Local 类型的服务工作负载数量很少时，工作负载的飘移或滚动更新会很快。此时后端如未来得及同步，后端的服务可能会出现不可用的情况。
+- 负载均衡的同步是需要时间的。当 Local 类型的服务工作负载数量很少时，工作负载的飘移或滚动更新会很快。此时后端如未来得及同步，后端的服务可能会出现不可用的情况。
+- 仅适用于处理低流量、低负载的业务，不建议在生产环境中使用。
 
 
 #### 示例：Service 开启 Local 转发（externalTrafficPolicy: Local）
@@ -127,5 +130,4 @@ spec:
     app: nginx
   type: LoadBalancer
 ```
-
 
