@@ -1,6 +1,6 @@
-## IM - Groups
+## IM - Developer Groups
 
-Join a Tencent Cloud IM group for:
+Join a Tencent Cloud IM developer group for:
 
 - Reliable technical support 
 - Product details
