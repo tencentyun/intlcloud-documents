@@ -330,7 +330,10 @@ scroll 初始化返回：
       "failed": 0
      },
      "hits": {
-       "total": 1592072666,
+       "total": {
+            "value":1592072666,
+            "relation":"eq"
+        },
        "max_score": 0.65708643,
        "hits": [
          {
@@ -969,7 +972,10 @@ CURL 示例说明：
        "failed": 0
      },
      "hits": {
-       "total": 6,
+       "total": {
+            "value":6,
+            "relation":"eq"
+        },
        "max_score": 0.074107975,
        "hits": [
          {
@@ -1142,7 +1148,10 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201
        "failed": 0
      },
      "hits": {
-       "total": 6,
+       "total": {
+            "value":6,
+            "relation":"eq"
+        },
        "max_score": 0.074107975,
        "hits": [
          {
@@ -1246,7 +1255,10 @@ curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.xx.xx.4:9201
        "failed": 0
      },
      "hits": {
-       "total": 6,
+       "total": {
+            "value":6,
+            "relation":"eq"
+        },
        "max_score": 0.074107975,
        "hits": [
          {
