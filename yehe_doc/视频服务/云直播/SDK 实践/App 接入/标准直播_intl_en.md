@@ -8,5 +8,5 @@ You can use an MLVB license to unlock features in MLVB International and quickly
 
 ## Free Demo
 
-MLVB offers a demo app TCToolkit, whose source code you can download at [Trial Demo](https://intl.cloud.tencent.com/document/product/1071/38147).
+MLVB offers a demo app TCToolkit, whose source code you can download at Trial Demo.
 
