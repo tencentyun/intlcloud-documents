@@ -1,9 +1,9 @@
 ## Unblocking Procedure
-
 ### Manual unblocking
-1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) and select **Anti-DDoS Advanced (New)** > **Overview** on the left sidebar.
-2. On the **DDoS protection** page, click **Unblock** on the right of the IP that is blocked.
-3. Click **OK** on the pop-up dialog box.
->?
->- If the unblocking fails, you will receive a failure message. Please wait for a while and then try again.
->- If you receive a notification indicating successful unblocking, the IP has been successfully unblocked. You can refresh the page to check whether the protected IP is in running status.
+1. Log in to the [Anti-DDoS console](https://console.cloud.tencent.com/ddos/unblock/list). Select **Self-Service Unblocking** > **Unblock Blocked IP** on the left sidebar to get to unblocking operation.
+2. Find the protected IP in **Pending Auto Unblocking** and click **Unblock** in the **Operation** column on the right.
+3. Click **OK** in the **Unblock Blocked IP** dialog box. If you receive a notification indicating successful unblocking, the IP has been successfully unblocked. You can refresh the page to check whether the protected IP is in running status.
+
+
+## Unblocking Operation Record
+Log in to the [Anti-DDoS console](https://console.cloud.tencent.com/ddos/unblock/log). Select **Self-Service Unblocking** > **Unblocking History** on the left sidebar. You can check all unblocking records in the specified period, including records of automatic and manual unblocking.
