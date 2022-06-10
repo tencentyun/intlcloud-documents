@@ -120,7 +120,7 @@ Yes. You can achieve this using the [Custom Capturing and Rendering](https://int
 
 [](id:que24)
 ### Can I record live streaming videos and store the recording files locally on my phone?
-Recording files cannot be stored locally on phones. They are stored in VOD by default. You can download and save them to your phone. For more information, please see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
+Recording files cannot be stored locally on phones. They are stored in VOD by default. You can download and save them to your phone.
 
 
 [](id:que25)
@@ -182,7 +182,6 @@ Yes. You can call `startAudioRecording` to record all the audio of a call, inclu
 [](id:que37)
 ### Can I record the video of a TRTC call into a file?
 TRTC supports audio/video recording on a local server. To use this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for the SDK and instructions.
-You can also use the [on-cloud recording and playback](https://intl.cloud.tencent.com/document/product/647/35426) feature to record videos.
 
 [](id:que38)
 ### Does TRTC support floating windows (like those in WeChat) or switching between the big and small images?
