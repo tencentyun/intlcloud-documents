@@ -83,7 +83,7 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 
    2. 모바일에서의 라이브 방송 스트림 테스트는 Tencent Cloud 툴 패키지App을 다운로드 및 설치하고 **MLVB** > **LVB 재생**을 선택한 후, 수동 또는 QR코드 스캔을 통해 주소 편집 창에 재생 URL을 입력하고, 왼쪽 하단의 재생 버튼을 클릭하여 재생할 것을 권장합니다.
 
->? App에서 푸시 스트림/재생하는 경우 [MLVB SDK](https://intl.cloud.tencent.com/product/mlvb)를 통합하여 CSS 서비스와 결합해 사용할 수 있습니다. 체험 과정에서 문제가 발생한 경우 CSS [FAQ](https://intl.cloud.tencent.com/document/product/267/7968)를 참고하십시오.
+>? App에서 푸시 스트림/재생하는 경우 MLVB SDK 를 통합하여 CSS 서비스와 결합해 사용할 수 있습니다. 체험 과정에서 문제가 발생한 경우 CSS [FAQ](https://intl.cloud.tencent.com/document/product/267/7968)를 참고하십시오.
 
 ## 관련 작업
 - **라이브 방송 녹화**를 사용하려면 녹화 템플릿을 생성하고 도메인과 연결 설정을 진행하십시오. 자세한 내용은 [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/34223)을 참고하십시오.
