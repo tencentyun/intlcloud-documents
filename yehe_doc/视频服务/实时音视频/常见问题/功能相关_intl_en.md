@@ -85,7 +85,7 @@ Private deployment of TRTC is not commercially available yet. If you have questi
 
 [](id:que16)
 ### To enable relayed live streaming in TRTC, do I need to get an ICP filing for my domain name?
-To enable relayed live streaming, according to the requirements of applicable authorities, the playback domain name needs an ICP filing before it can be used. For more information, please see [Watch over CDN](https://intl.cloud.tencent.com/document/product/647/35242).
+To enable relayed live streaming, according to the requirements of applicable authorities, the playback domain name needs an ICP filing before it can be used. 
 
 [](id:que17)
 ### How long is the average delay in TRTC?
@@ -325,8 +325,7 @@ Yes. For details, please see [Enabling Advanced Permission Control](https://intl
 
 [](id:que66)
 ### Can TRTC pull and play back streams through CDN? 
-Yes. For details, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
-
+Yes.
 [](id:que67)
 ### What formats does TRTC support for custom rendering? 
 - iOS: I420, NV12, and BGRA
