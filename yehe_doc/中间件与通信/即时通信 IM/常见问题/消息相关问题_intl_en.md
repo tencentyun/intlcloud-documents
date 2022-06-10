@@ -53,55 +53,6 @@ When using either APNs push or Android offline push, if the problem cannot be lo
 5. Check that the offline notification is enabled for the message. For iOS, see (https://intl.cloud.tencent.com/document/product/1047/39157#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7); for Android, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81).
 6. If you still cannot identify the problem, you can provide the relevant information to tech support personnel for troubleshooting.
 
-[](id:Q4)
-### How is a group @ message processed?
-There is no essential difference between an in-group @ message and an ordinary message, although the user specified by @ will see a special UI effect. For example, the message will be highlighted in red on the QQ message list. For the specific implementation, you can refer to the following scheme:
-1. When sending a message, listen for keyboard events to detect whether the @ character is input. If it is input, display the group member list on the UI of the sender, allowing the sender to select the @ target user. Here, it is assumed that the selected user is user1.
-2. After the @ target user is selected, add @ and the ID of the selected user, for example "@user1", to the message input box.
-3. Add a `TIMCustomElem` in the message, and in the `TIMCustomElem`, add a custom message protocol to mark the message as an @ message.
-A simple protocol definition can be as follows:
-```
-{
-	"type":"REMIND",
-	"target":"user1"
-}
-```
-The sample code for constructing an @ message is as follows (here, the Android platform is used as an example):
-
-```java
-// Send a text message and specify user1 as the @ target
-TIMMessage msg = new TIMMessage();
-// Construct the text message elements
-TIMTextElem txtElem = new TIMTextElem();
-txtElem.setText("@user1 nice to meet u");
-if(msg.addElement(txtElem) != 0){
-	Log.e(TAG, "add text elem failed");
-	return;
-}
-try{
-	// Specify the custom message protocol
-	JSONObject remindProto = new JSONObject();
-	remindProto.put("type", "REMIND");
-	remindProto.put("target", "user1");
-	// Construct custom message elements based on the custom protocol
-	TIMCustomElem customElem = new TIMCustomElem();
-	customElem.setDesc("remind msg");
-	customElem.setData(remindProto.toString().getBytes("utf-8"));
-	if(msg.addElement(customElem) != 0){
-		Log.e(TAG, "add custom elem failed");
-		return;
-	}
-}catch(Exception e){
-	Log.e(TAG, "build custom elem failed");
-	return;
-}
-```
-
->! In the configuration, `TIMTextElem` is not required. If you are sure that foul language filtering is not needed, you can fill the message content of `TIMTextElem` to the `desc` attribute in `TIMCustomElem`.
->
-4. After constructing the message, send the message to the group.
-5. After group members receive the message, check whether the message protocol in `TIMCustomElem` is the @ message protocol. If yes, go to the next step. Otherwise, skip it.
-6. Check whether the @ target user is consistent with the currently logged-in user. If yes, perform special processing on the UI. Otherwise, no processing is needed.
 
 [](id:Q5)
 ### How is a red packet message processed?
