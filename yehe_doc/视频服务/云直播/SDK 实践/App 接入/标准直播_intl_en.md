@@ -2,16 +2,11 @@ The [MLVB SDK](https://intl.cloud.tencent.com/product/mlvb) is the mobile versio
 
 ## SDK and Source Code Download
 
-You can use an MLVB license to unlock features in MLVB International and quickly integrate mobile streaming capabilities into your project. For details, see [SDK Download](https://intl.cloud.tencent.com/document/product/1071/38150).
+You can use an MLVB license to unlock features in MLVB International and quickly integrate mobile streaming capabilities into your project. 
 
 
 
 ## Free Demo
 
 MLVB offers a demo app TCToolkit, whose source code you can download at [Trial Demo](https://intl.cloud.tencent.com/document/product/1071/38147).
-
-## Learn More
-
-- For more about the capabilities of the MLVB SDK, see [Mobile Live Video Broadcasting](https://intl.cloud.tencent.com/document/product/1071).
-- For billing details of MLVB, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1071/38114).
 
