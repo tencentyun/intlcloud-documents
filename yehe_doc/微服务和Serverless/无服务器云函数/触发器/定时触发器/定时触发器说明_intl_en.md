@@ -81,7 +81,7 @@ Below are some examples of cron expressions and their meanings:
 | Expression | Description | 
 |---------|---------|
 | `*/5 * * * * * *` | Triggers once every 5 seconds | 
-|`0 15 10 * * MON-FRI *`| Triggers at 2 am on the 1st day of every month |
+|`0 15 10 1 * * *`| Triggers at 10:15 am on the 1st day of every month |
 |`0 15 10 * * MON-FRI *`| Triggers every day at 10:15 am Monday through Friday |
 |`0 0 10,14,16 * * * *`| Triggers every day at 10 am, 2 pm, and 4 pm |
 |`0 */30 9-17 * * * *`| Triggers every half hour from 9 am to 5 pm every day |

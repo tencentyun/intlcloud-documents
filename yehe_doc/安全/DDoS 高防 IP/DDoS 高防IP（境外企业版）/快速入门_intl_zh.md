@@ -26,15 +26,18 @@ DDoS 高防 IP（境外企业版）的使用生命周期包括购买 DDoS 高防
 登录[ DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic)控制台，单击 **DDoS 高防 IP** > **实例列表**中，选择对应 DDoS 高防 IP（境外企业版）实例，单击**防护配置**，配置方式可参考 [配置防护规则](https://intl.cloud.tencent.com/document/product/297/34092)。
 ![](https://main.qcloudimg.com/raw/75512d5a31b23fff0a5250d319aec8f8.png) 
 
+
 ### 关联云资源
-1. 登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台，单击 **DDoS 高防 IP** > **业务接入**进入业务接入页面。
-2. 在业务界面中选择 **IP 接入**，单击**添加规则**，弹出绑定资源页面。
-3. 在绑定资源页面，“关联 Anycast 高防 IP”处选择 DDoS 高防 IP（境外企业版）实例，单击**确定**，即可完成与云资源的绑定。
+1. 登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台，单击 **DDoS 高防 IP** > **业务接入** > **IP 接入**。
+2. 在 IP 接入页面，单击**开始接入**，弹出绑定资源页面。
+![](https://qcloudimg.tencent-cloud.cn/raw/3966fa7cca1745e1db55fa730fdee627.png)
+3. 在 IP 接入页面，“关联 Anycast 高防 IP”处选择 DDoS 高防 IP（境外企业版）实例，单击**确定**，即可完成与云资源的绑定。
 >?已绑定公网 IP 或 Anycast IP 的资源不能重复绑定。
 
 ![](https://main.qcloudimg.com/raw/0df0b4c8f905ccde1d1a6e6488766473.png)
 
 ### 解除云资源绑定
-1. 登录 [DDoS 高防 IP（境外企业版）](https://console.cloud.tencent.com/ddos/ddos-basic) 控制台，单击 **DDoS 高防 IP** > **业务接入**进入业务接入页面。
-2. 在业务界面中选择 **IP 接入**，单击右上角处**删除**，即可取消关联。
-![](https://main.qcloudimg.com/raw/2bb05580869f9f70b6f6454e2e530bab.png)
+1. 在 IP接入页面，选择所需实例，单击操作列的**删除**。
+2. 在解除绑定弹窗中，单击**确定**，即可取消关联。
+>!解除绑定可能导致您的云资源网络不通，请谨慎操作。解绑后，您可以将该资源绑定其他云资源。
+

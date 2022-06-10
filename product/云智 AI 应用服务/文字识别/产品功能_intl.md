@@ -10,7 +10,7 @@
 - ### Business License Recognition
   TIXOCR supports the recognition of all fields on a business license image, including registration number, legal representative, company name, address, business period, business scope and subject type.
 
-- ### Road-worthiness Certificate Recognition
+- ### Roadworthiness Certificate Recognition
   TIXOCR supports automatic location and recognition of all fields on the pages of a road-worthiness certificate, including license plate number, vehicle type, owner, address, nature of use, brand and model, vehicle identification number, engine number, registration date, date of issuance and issuing authority.
 
 - ### Driver's License Recognition

@@ -102,6 +102,7 @@ insert into account select generate_series(1,10000000), random_string(20),random
 create index tag_inx on account USING GIN(tag);
 ```
 3. 执行查询，查找标签带 GN 和 o 的用户列表。
+
 ```
 explain analyze select uin,name from account where tag @>ARRAY['GN','o'];
 
@@ -119,7 +120,9 @@ Index Cond: (tag @> '{GN,o}'::text[])
 Planning Time: 0.108 ms
 Execution Time: 4.528 ms
 ```
+
 4. 执行查询，查找标签 lvXe 和 Zt 的人有 xx 个（第一次查询会较慢）。
+
 ```
 explain analyze select count(uin) from account where tag && ARRAY['lvXe','Zt'];
 
@@ -164,6 +167,7 @@ insert into account1 select generate_series(1,10000000), random_string(20),rando
 ```
 5. 查找同时有标签 ID 为100和5711的用户列表。
 **索引前**：
+
 ```
 test=> explain analyze select uin,name from account1 where tag @> ARRAY[100,5711];
 QUERY PLAN
@@ -199,7 +203,9 @@ Planning Time: 0.410 ms
 Execution Time: 0.171 ms
 (6 rows)
 ```
+
 6. 查找同时有标签 ID 为61568，97350的用户列表。
+
 ```
 test=> explain analyze select uin,name from account1 where tag @> ARRAY[61568,97350];
 QUERY PLAN
@@ -214,6 +220,7 @@ Execution Time: 0.151 ms
 (7 rows)
 ```
 7. 查找与 xx 有共同爱好（标签100和5711）的人有 xx 个。
+
 ```
 test=> explain analyze select count(uin) from account1 where tag && ARRAY[61568,97350];
 QUERY PLAN
@@ -265,6 +272,7 @@ from account1
 group by tagid, uin_offset;
 ```
 4. 查询标签有1，3，10，200的用户个数。
+
 ```
 explain analyze select sum(ub) from
 (
@@ -296,7 +304,9 @@ Planning Time: 0.289 ms
 Execution Time: 1.083 ms
 (13 rows)
 ```
+
 5. 查看标签有1，3，10，200的用户列表。
+
 ```
 explain analyze select uin_offset,rb_or_agg(uinbits) as ub
 from tag_uin_list

@@ -41,7 +41,7 @@ require '/path/to/vendor/autoload.php';
    $params = array(
        "QueueName" => "queue_api",  // Message queue name
        // Below is the dead letter queue configuration
-       "DeadLetterQueueName" => "dead_queue_api", // Dead letter queue name
+       "DeadLetterQueueName" => "dead_queue_api", // Name of the dead letter queue that needs to be created first
        "Policy" => 0,  // Dead letter policy. 0: Message has been consumed multiple times but not deleted. 1: `Time-To-Live` has elapsed
        "MaxReceiveCount" => 3  // Maximum receipts. Value range: 1–1000
        // MaxTimeToLive: Maximum period in seconds before an unconsumed message expires, which is required if `policy` is 1. Value range: 300–43200. This value should be smaller than `msgRetentionSeconds` (maximum message retention period)

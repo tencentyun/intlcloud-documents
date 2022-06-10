@@ -235,7 +235,7 @@ df -h
 ![](https://main.qcloudimg.com/raw/cd9d36d49388882f0cb898c13d565bb0.png)
 
 ## 相关文档
-[扩展分区及文件系统（Windows）](https://cloud.tencent.com/document/product/362/6737)
+[扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)
 
 ## 常见问题
 如果您在使用云硬盘过程中遇到问题，可参考以下文档并结合实际情况分析并解决问题：

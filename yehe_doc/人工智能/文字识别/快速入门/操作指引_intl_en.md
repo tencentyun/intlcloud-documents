@@ -1,8 +1,8 @@
 ### Logging in to the console
-After account registration and identity verification, you can log in to the Tencent Cloud Console.
+After account registration and identity verification, you can log in to the Tencent Cloud console.
 
 ### Activating the service
-Click and log in to the [OCR Console](https://console.cloud.tencent.com/ocr/general) to activate the service.
+Log in to the [OCR console](https://console.cloud.tencent.com/ocr/general) to activate the service.
 
 ### Free tier and purchase
 
@@ -19,7 +19,7 @@ If you are a beginner developer who has a basic understanding of HTTP requests a
 This method allows you to make API calls, verify signatures, generate SDK codes, access APIs, etc.
 
 - Make OCR API calls with SDKs
-If you are an experienced developer, you can call OCR APIs with SDKs complied by Tencent Cloud, which support languages such as Python, Java, PHP, Go, NodeJS, .Net, etc. You can download the SDK in the corresponding service documentation or through the SDK Center.
+If you are an experienced developer, you can call OCR APIs with SDKs complied by Tencent Cloud, which support languages such as Python, Java, PHP, Go, Node.JS, and.Net. You can download the SDK in the corresponding service documentation or through the SDK Center.
 
 ### Viewing the service usage
-Log in to the [OCR Console](https://console.cloud.tencent.com/ocr/general) to view the usage of each OCR service.
+Log in to the [OCR onsole](https://console.cloud.tencent.com/ocr/general) to view the usage of each OCR service.

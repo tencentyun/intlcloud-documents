@@ -1,4 +1,4 @@
-The service fee of GAAP consists of basic items and value-added items. (For the billing information of other Tencent Cloud services, refer to related documentation or [contact us](https://intl.cloud.tencent.com/document/product/608/42346).
+The service fee of GAAP consists of basic items and value-added items. For the billing information of other Tencent Cloud services, refer to related documentation or [contact us](https://intl.cloud.tencent.com/document/product/608/42346).
 
 >? The fees of GAAP service in all Chinese mainland regions are collectively billed in Guangzhou. For regions outside the Chinese mainland, the fees are billed collectively in Singapore.
 
