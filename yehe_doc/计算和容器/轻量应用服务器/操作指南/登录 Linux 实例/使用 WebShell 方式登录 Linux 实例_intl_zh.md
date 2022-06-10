@@ -2,7 +2,6 @@
 WebShell 为腾讯云推荐的登录方式，您可以直接使用腾讯云 WebShell 工具一键登录 Linux 实例。其优点如下：
 - 支持复制、粘贴。
 - 支持鼠标滚屏。
-- 支持中文输入法。
 
 
 <dx-alert infotype="explain" title="">
