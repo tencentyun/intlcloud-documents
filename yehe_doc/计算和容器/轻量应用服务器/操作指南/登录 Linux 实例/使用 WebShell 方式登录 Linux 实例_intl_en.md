@@ -2,7 +2,7 @@
 WebShell is a login method recommended by Tencent Cloud. You can use it to directly log in to a Linux instance quickly. It has the following strengths:
 - Supports copy and paste.
 - Supports scrolling with mouse wheel.
-- Supports Chinese input.
+
 
 
 <dx-alert infotype="explain" title="">
