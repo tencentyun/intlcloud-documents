@@ -1,8 +1,8 @@
 ### Logging in to the console
-After account registration and identity verification, you can log in to the Tencent Cloud Console.
+After account registration and identity verification, you can log in to the Tencent Cloud console.
 
 ### Activating the service
-Click and log in to the [OCR Console](https://console.cloud.tencent.com/ocr/general) to activate the service.
+Log in to the [OCR console](https://console.cloud.tencent.com/ocr/general) to activate the service.
 
 ### Free tier and purchase
 
