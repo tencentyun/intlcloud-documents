@@ -72,7 +72,7 @@ Currently, backup is free of charge. We will notify you when billing for the bac
 <td><ul><li>The default start time is 01:00–02:00; that is, the system starts the backup task between 01:00 and 02:00 every day.</li><li>You can select a different time period to start data backup as needed by your business.</li><li>The specific start time varies by the specific scheduling of the backup task.</li></ul></td></tr>
 <tr>
 <td>Backup Exception Alert</td>
-<td><ul><li>It specifies whether to notify users through CM events if an exception occurs while executing a backup task. </li><li>Currently, only users in the allowlist can use the CM events. To get allowed, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>. </li>For more information on the supported TencentDB MongoDB events, see<a href="https://intl.cloud.tencent.com/document/product/248/32823">Product Event List</a>.</ul></td></tr>
+<td><ul><li>It specifies whether to notify users through CM events if an exception occurs while executing a backup task. </li><li>Currently, only users in the allowlist can use the CM events. To get allowed, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>. </li></ul></td></tr>
 </tbody></table>      
 
 ### Manual backup
