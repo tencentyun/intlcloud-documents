@@ -61,9 +61,9 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 - PC 푸시 스트림은 OBS 푸시 스트림 사용을 권장합니다. 자세한 작업 관련 내용은 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)을 참고하십시오.
 - Web에서의 푸시 스트림은 [**Web 푸시**](https://console.cloud.tencent.com/live/tools/webpush) 사용을 권장합니다. 푸시 스트림이 필요한 도메인을 선택하고 사용자 정의 스트림 이름 StreamName을 입력합니다. 주소 만료 시간을 선택하고 카메라를 켠 후 **푸시 스트림 시작**을 클릭합니다.
 
-- 모바일 푸시 스트림은 [Tencent Cloud 툴킷 App](https://intl.cloud.tencent.com/document/product/1071/38147)를 다운로드 및 설치하고, **MLVB** > **푸시 스트림 데모(카메라 푸시 스트림)** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 주소 입력란에 푸시 스트림 주소를 입력하고, **푸시 스트림 시작**을 클릭하면 스트리밍할 수 있습니다.
+- 모바일 푸시 스트림은 Tencent Cloud 툴킷 App를 다운로드 및 설치하고, **MLVB** > **푸시 스트림 데모(카메라 푸시 스트림)** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 주소 입력란에 푸시 스트림 주소를 입력하고, **푸시 스트림 시작**을 클릭하면 스트리밍할 수 있습니다.
 
->? 맞춤화된 App에서 Tencent Cloud가 제공하는 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071)를 통합해 푸시 스트림 기능을 구현할 수 있습니다.
+>? 맞춤화된 App에서 Tencent Cloud가 제공하는 MLVB SDK를 통합해 푸시 스트림 기능을 구현할 수 있습니다.
 
 [](id:step4)
 ## 4단계: 재생 주소 가져오기
@@ -81,7 +81,7 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 3. 서비스 시나리오에 따라 다음의 방식으로 라이브 방송 스트림이 정상적으로 재생되는지 테스트할 수 있습니다.
    1. PC 라이브 방송 스트림 테스트는 [VLC 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/32483) 등의 툴을 사용한 재생 테스트를 권장합니다. 자세한 내용은 [라이브 방송 재생](https://intl.cloud.tencent.com/document/product/267/31559)을 참고하십시오.
 
-   2. 모바일에서의 라이브 방송 스트림 테스트는 [Tencent Cloud 툴 패키지App](https://intl.cloud.tencent.com/document/product/1071/38147)을 다운로드 및 설치하고 **MLVB** > **LVB 재생**을 선택한 후, 수동 또는 QR코드 스캔을 통해 주소 편집 창에 재생 URL을 입력하고, 왼쪽 하단의 재생 버튼을 클릭하여 재생할 것을 권장합니다.
+   2. 모바일에서의 라이브 방송 스트림 테스트는 Tencent Cloud 툴 패키지App을 다운로드 및 설치하고 **MLVB** > **LVB 재생**을 선택한 후, 수동 또는 QR코드 스캔을 통해 주소 편집 창에 재생 URL을 입력하고, 왼쪽 하단의 재생 버튼을 클릭하여 재생할 것을 권장합니다.
 
 >? App에서 푸시 스트림/재생하는 경우 [MLVB SDK](https://intl.cloud.tencent.com/product/mlvb)를 통합하여 CSS 서비스와 결합해 사용할 수 있습니다. 체험 과정에서 문제가 발생한 경우 CSS [FAQ](https://intl.cloud.tencent.com/document/product/267/7968)를 참고하십시오.
 
