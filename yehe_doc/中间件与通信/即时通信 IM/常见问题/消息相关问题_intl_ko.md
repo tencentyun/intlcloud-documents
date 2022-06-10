@@ -53,55 +53,6 @@ APNs 푸시 또는 Android 오프라인 푸시를 사용할 때, 상기 방법�
 5. 메시지에 오프라인 푸시 하지 않음 식별자가 설정되었는지 확인합니다. iOS는 [사용자 정의 오프라인 메시지 속성](https://intl.cloud.tencent.com/document/product/1047/39157#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7)을, Android는 [단일 메시지의 오프라인 푸시 구성 설정](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81)을 참고하시기 바랍니다.
 6. 여전히 문제를 진단할 수 없으면, 기술 지원 담당자에게 관련 정보를 제공하여 해결할 수 있습니다.
 
-[](id:Q4)
-### 그룹 @ 메시지는 어떻게 처리되나요?
-그룹 내의 @메시지와 일반 메시지는 본질적인 차이는 없으며, 다만 @대상자가 메시지를 받았을 때 UI에서 특별 처리됩니다. 예를 들어, QQ 메시지 목록에서 빨간색으로 강조 표시됩니다. 다음을 참고하여 구현할 수 있습니다.
-1. 메시지를 보낼 때 키보드 이벤트를 수신하여 @ 텍스트가 입력되었는지 감지합니다. 입력이 감지되면 발신자의 UI에 그룹 구성원 목록이 팝업되어, 발신자가 @ 대상자를 선택할 수 있도록 합니다. 선택된 사용자가 user1이라고 가정합니다.
-2. @ 대상자를 선택한 후, 메시지 입력 상자에 @와 선택한 사용자의 ID(예: “@user1”)를 추가합니다.
-3. 메시지에 ‘TIMCustomElem’을 추가하고 ‘TIMCustomElem’에 사용자 지정 메시지 프로토콜을 추가하여, 메시지를 @ 메시지로 표시합니다.
-간단한 프로토콜 정의는 다음과 같습니다.
-```
-{
-	“type”:“REMIND”,
-	“target”:“user1”
-}
-```
-@ 메시지를 구성하는 샘플 코드는 다음과 같습니다(Android 플랫폼):
-
-```java
-// 텍스트 메시지를 보내고, user1을 @ 대상자로 지정합니다.
-TIMMessage msg = new TIMMessage();
-// 텍스트 메시지 요소를 구성합니다.
-TIMTextElem txtElem = new TIMTextElem();
-txtElem.setText(“@user1 nice to meet u”);
-if(msg.addElement(txtElem) != 0){
-	Log.e(TAG, “add text elem failed”);
-	return;
-}
-try{
-	// 사용자 정의 메시지 프로토콜 지정
-	JSONObject remindProto = new JSONObject();
-	remindProto.put(“type”, “REMIND”);
-	remindProto.put(“target”, “user1”);
-	// 사용자 정의 프로토콜을 기반으로 사용자 정의 메시지 요소 구성
-	TIMCustomElem customElem = new TIMCustomElem();
-	customElem.setDesc(“remind msg”);
-	customElem.setData(remindProto.toString().getBytes(“utf-8”));
-	if(msg.addElement(customElem) != 0){
-		Log.e(TAG, “add custom elem failed”);
-		return;
-	}
-}catch(Exception e){
-	Log.e(TAG, “build custom elem failed”);
-	return;
-}
-```
-
->!이 중, ‘TIMTextEle’은 필수 사항이 아닙니다. 비속어 필터링이 필요 없는 경우, ‘TIMTextElem’의 메시지 내용을 ‘TIMCustomElem’의 ‘desc’ 속성에 입력할 수 있습니다.
->
-4. 메시지 구성 완료 후, 그룹에 메시지를 보냅니다.
-5. 그룹 구성원이 메시지를 수신한 후 ‘TIMCustomElem’의 메시지 프로토콜이 @ 메시지 프로토콜인지 확인합니다. 그렇다면 다음 단계로 이동하고 그렇지 않으면 건너뜁니다.
-6. @ 대상자가 현재 로그인한 사용자와 일치하는지 확인합니다. 그렇다면 UI에서 특수 처리를 수행하고 그렇지 않으면 처리가 필요하지 않습니다.
 
 [](id:Q5)
 ### 홍바오 메시지는 어떻게 처리됩니까?
