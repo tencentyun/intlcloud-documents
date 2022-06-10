@@ -274,7 +274,7 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 #### 函数原型
 
 ```
-ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)
+ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuffer, int buffLen)
 ```
 
 |参数     | 类型         |含义|
@@ -717,7 +717,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioCaptureDeviceEnabled();
 #### 函数原型
 
 ```
-ITMGContext  virtual int EnableAudioSend(bool bEnable)
+ITMGContext  virtual int EnableAudioSend(bool Enable)
 ```
 
 | 参数      |  类型   | 含义                                                         |
@@ -894,7 +894,7 @@ EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv
 #### 函数原型  
 
 ```
-ITMGAudioCtrl virtual int EnableSpeaker(bool enabled)
+ITMGAudioCtrl virtual int EnableSpeaker(bool enable)
 ```
 
 | 参数      |  类型   | 含义                                                         |
@@ -1185,7 +1185,7 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 
 ```
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage) 
+ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* speechLanguage,const char* translateLanguage) 
 ```
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
