@@ -64,7 +64,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 
 [](id:mobile)
 ### Scenario 3. Mobile push
-1. Scan the QR code with a mobile phone to download and install the [Video Cloud Toolkit](https://intl.cloud.tencent.com/document/product/1071/38147).
+1. Scan the QR code with a mobile phone to download and install the Video Cloud Toolkit.
 2. Open the toolkit and select **MLVB** > **Camera Push**.
 3. Enter the [push address](#step1) manually or by scanning the QR code.
 4. Tap **Start** in the bottom-left corner to start the push.
@@ -74,10 +74,10 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 [](id:sdk)
 ### Scenario 4. Live SDK push
 If you need to integrate only live push into your existing application, follow the steps below:
-1. Download the [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38150).
-2. Complete the integration as instructed in the [iOS](https://intl.cloud.tencent.com/document/product/1071/38157) or [Android](https://intl.cloud.tencent.com/document/product/1071/38158) integration document.
+1. Download the MLVB SDK.
+2. Complete the integration as instructed in the iOS or Android integration document.
 
-The live SDK is a collection of mobile live streaming services. It demonstrates in the form of free source code how to use Tencent Cloud CSS, VOD, IM, and COS to build the most appropriate live streaming solution for your business. For more information, see [MLVB](https://intl.cloud.tencent.com/product/mlvb). 
+The live SDK is a collection of mobile live streaming services. It demonstrates in the form of free source code how to use Tencent Cloud CSS, VOD, IM, and COS to build the most appropriate live streaming solution for your business. 
 
 
 ## FAQs
