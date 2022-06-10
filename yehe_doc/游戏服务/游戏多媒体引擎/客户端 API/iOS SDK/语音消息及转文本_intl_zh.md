@@ -756,7 +756,7 @@ recordfilePath =[docDir stringByAppendingFormat:@"/test_%d.ptt",index++];
 #### 函数原型  
 
 ```
--(int)PlayRecordedFile:(NSString*)filePath;
+-(int)PlayRecordedFile:(NSString*)downloadFilePath;
 -(int)PlayRecordedFile:(NSString*)filePath VoiceType:(ITMG_VOICE_TYPE) type;
 
 ```

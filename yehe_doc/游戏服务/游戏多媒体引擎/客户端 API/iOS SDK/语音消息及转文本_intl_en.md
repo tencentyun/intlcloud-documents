@@ -4,10 +4,10 @@ This document describes how to access and debug the GME APIs for iOS.
 
 ## Key Considerations for Using GME
 
-GME provides two services: voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+GME provides two services: voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as InitEngine and Poll.
 
-<dx-alert infotype="notice" title="Note on Init API">
-If you need to use voice chat and voice message services, **you only need to call `Init` API once**.
+<dx-alert infotype="notice" title="Note on InitEngine API">
+If you need to use voice chat and voice message services, **you only need to call `InitEngine` API once**.
 </dx-alert>
 
 ![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
@@ -15,7 +15,7 @@ If you need to use voice chat and voice message services, **you only need to cal
 ### Directions
 
 <dx-steps>
--<dx-tag-link link="#Init" tag="API: Init">Initializing GME</dx-tag-link>
+-<dx-tag-link link="#Init" tag="API: InitEngine">Initializing GME</dx-tag-link>
 -<dx-tag-link link="#Poll" tag="API: Poll">Calling Poll periodically to trigger event callbacks</dx-tag-link>
 -<dx-tag-link link="#ApplyPtt" tag="API: ApplyPTTAuthbuffer">Initializing authentication</dx-tag-link>
 -<dx-tag-link link="#StartRWSR" tag="API: StartRecordingWithStreamingRecognition">Starting streaming speech recognition</dx-tag-link>
@@ -756,7 +756,7 @@ This API is used to play back audio.
 #### Function prototype  
 
 ```
--(int)PlayRecordedFile:(NSString*)filePath;
+-(int)PlayRecordedFile:(NSString*)downloadFilePath;
 -(int)PlayRecordedFile:(NSString*)filePath VoiceType:(ITMG_VOICE_TYPE) type;
 
 ```
