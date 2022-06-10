@@ -295,7 +295,7 @@ Sample code for curl:
 Scroll initialization:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/ctsdb_test/_search?scroll=1m -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/ctsdb_test/_search?scroll=1m -d'
    {
       "size":5,
       "query": {
@@ -331,7 +331,10 @@ Response of scroll initialization:
       "failed": 0
      },
      "hits": {
-       "total": 1592072666,
+       "total": {
+            "value":1592072666,
+            "relation":"eq"
+        },
        "max_score": 0.65708643,
        "hits": [
          {
@@ -432,7 +435,7 @@ Response of scroll initialization:
 Scroll traversal:
 
 ```
-   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.16.345.14:9201/_search/scroll  -d'
+   curl -u root:le201909 -H 'Content-Type:application/json' -X POST 172.xx.xx.4:9201/_search/scroll  -d'
    {
    "scroll" : "1m", 
    "scroll_id" : "DnF1ZXJ5VGhlbkZldGNoAwAAAAAADrOFFm5YSEhnMjdnUWNPcndHS1k5Wjc3bHcAAAAAAAz_1RZiRkZTcGp4dFRXR18xMGtzSmhEUFJRAAAAAAAP5vQWOXFOR29lc0hROHFWMmFGTkVmSkxmZw==" 
@@ -970,7 +973,10 @@ Response:
        "failed": 0
      },
      "hits": {
-       "total": 6,
+       "total": {
+            "value":6,
+            "relation":"eq"
+        },
        "max_score": 0.074107975,
        "hits": [
          {
@@ -1143,7 +1149,10 @@ Response:
        "failed": 0
      },
      "hits": {
-       "total": 6,
+       "total": {
+            "value":6,
+            "relation":"eq"
+        },
        "max_score": 0.074107975,
        "hits": [
          {
@@ -1248,7 +1257,10 @@ Response:
        "failed": 0
      },
      "hits": {
-       "total": 6,
+       "total": {
+            "value":6,
+            "relation":"eq"
+        },
        "max_score": 0.074107975,
        "hits": [
          {
