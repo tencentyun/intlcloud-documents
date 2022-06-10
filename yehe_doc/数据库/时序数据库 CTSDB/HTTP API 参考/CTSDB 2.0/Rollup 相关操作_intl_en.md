@@ -1,21 +1,21 @@
-### Creating rollup task
+## Creating rollup task
 
 In scenarios with massive amounts of data, a business system can generate petabytes of data per day or even per hour. Time series data is generally massive in amount, time-sensitive, and trending. Therefore, systems using such data (e.g., monitoring or data analysis systems) often only need high-precision data in the most recent time period while downsampling historical data for storage. You can configure a rollup task to periodically aggregate historical data and save it into a new metric. A rollup task not only saves downsampled historical data, but also improves query performance and reduces storage costs. Note that a rollup task automatically creates child metrics inheriting all configurations of the parent metric according to `base_metric`, and the parent metric configurations will be overwritten if `options` is specified.
 
-#### 1. Request address
+### 1. Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`, which can be obtained in the console.
 
-#### 2. Request path and method
+### 2. Request path and method
 
 Path: `/_rollup/${rollup_task_name}`, where `${rollup_task_name}` is the rollup task name.
 Method: PUT
 
-#### 3. Request parameters
+### 3. Request parameters
 
 None
 
-#### 4. Request content
+### 4. Request content
 
 | Parameter | Required | Type   | Description                                                         |
 | :------------ | :--- | :----- | :----------------------------------------------------------- |
@@ -32,11 +32,11 @@ None
 | end_time      | No   | string | Scheduling end time, which is the maximum timestamp value by default          |
 | options       | No   | map    | `rollup_metric` options, which are the same as the options for metric creation                   |
 
-#### 5. Response content
+### 5. Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-#### 6. Sample code for curl
+### 6. Sample code for curl
 
 Request:
 
@@ -109,30 +109,30 @@ Response:
 }
 ```
 
-### Getting names of all rollup tasks
+## Getting names of all rollup tasks
 
-#### 1. Request address
+### 1. Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`, which can be obtained in the console.
 
-#### 2. Request path and method
+### 2. Request path and method
 
 Path: `/_rollups`
 Method: GET
 
-#### 3. Request parameters
+### 3. Request parameters
 
 None
 
-#### 4. Request content
+### 4. Request content
 
 None
 
-#### 5. Response content
+### 5. Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-#### 6. Sample code for curl
+### 6. Sample code for curl
 
 Request:
 `curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/_rollups`
@@ -153,30 +153,30 @@ Response:
 }
 ```
 
-### Getting rollup task details
+## Getting rollup task details
 
-#### 1. Request address
+### 1. Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`.
 
-#### 2. Request path and method
+### 2. Request path and method
 
 Path: `/_rollup/${rollup_task_name}`, where `${rollup_task_name}` is the rollup task name.
 Method: GET
 
-#### 3. Request parameters
+### 3. Request parameters
 
 You can specify the `v` parameter to view the specific rollup progress. `@last_end_time` in the response structure is the latest rollup progress.
 
-#### 4. Request content
+### 4. Request content
 
 None
 
-#### 5. Response content
+### 5. Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-#### 6. Sample code for curl
+### 6. Sample code for curl
 
 Request:
 `curl -u root:le201909 -H 'Content-Type:application/json' -X GET 172.16.345.14:9201/_rollup/rollup_jgq_6?v`
@@ -230,30 +230,30 @@ Response:
 }
 ```
 
-### Deleting rollup task
+## Deleting rollup task
 
-#### 1. Request address
+### 1. Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`.
 
-#### 2. Request path and method
+### 2. Request path and method
 
 Path: `/_rollup/${rollup_task_name}`, where `${rollup_task_name}` is the rollup task name.
 Method: DELETE
 
-#### 3. Request parameters
+### 3. Request parameters
 
 None
 
-#### 4. Request content
+### 4. Request content
 
 None
 
-#### 5. Response content
+### 5. Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-#### 6. Sample code for curl
+### 6. Sample code for curl
 
 Request:
 `curl -u root:le201909 -H 'Content-Type:application/json' -X DELETE 172.16.345.14:9201/_rollup/ctsdb_rollup_task_test`
@@ -267,22 +267,22 @@ Response:
 }
 ```
 
-### Updating rollup task
+## Updating rollup task
 
-#### 1. Request address
+### 1. Request address
 
 The address is the instance IP and port, such as `10.13.20.15:9200`.
 
-#### 2. Request path and method
+### 2. Request path and method
 
 Path: `/_rollup/${rollup_task_name}/update`, where `${rollup_task_name}` is the rollup task name.
 Method: POST
 
-#### 3. Request parameters
+### 3. Request parameters
 
 None
 
-#### 4. Request content
+### 4. Request content
 
 | Parameter | Required | Type   | Description                                                    |
 | :--------- | :--- | :----- | :------------------------------------------------------ |
@@ -291,11 +291,11 @@ None
 | end_time      | No   | string | Scheduling end time, which is the maximum timestamp value by default          |
 | options       | No   | map    | Aggregate options, which are the same as the options for metric creation                   |
 
-#### 5. Response content
+### 5. Response content
 
 You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. For the error details, see the `error` field description.
 
-#### 6. Sample code for curl
+### 6. Sample code for curl
 
 Request:
 

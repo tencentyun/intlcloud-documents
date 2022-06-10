@@ -35,7 +35,7 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 | PartSize         | Int      | Minimum part size. Default value: 5 MB | No       |
 | Concurrency         | Int      | Concurrency. Default value: 10 | No       |
 | ResumableDownload         | Bool      | Whether to enable checkpoint restart. Default value: `False` | No       |
-| ResumableTaskFile         | Int      | Checkpoint file path. Default value: `&lt;saveAs.cosresumabletask>` | No       |
+| ResumableTaskFile         | String       | Checkpoint file path. Default value: `&lt;saveAs.cosresumabletask>` | No       |
 
 
 #### Sample request

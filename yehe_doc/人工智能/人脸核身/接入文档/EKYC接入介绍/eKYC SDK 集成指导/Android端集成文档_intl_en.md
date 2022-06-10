@@ -44,7 +44,7 @@ dependencies {
 
 
 
-3. Permission Declarations
+3. Permission declarations
 
 You also need to make the necessary permission declaration in the `AndroidManifest.xml` file.
 

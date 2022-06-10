@@ -1,12 +1,12 @@
-#### 请求地址和方法
+### 请求地址和方法
 
 地址为实例的 IP 和 PORT，可从控制台获取到，例如10.13.20.15:9200。
 
-#### 请求参数
+### 请求参数
 
 无
 
-#### 请求内容
+### 请求内容
 
 字段 tags、time、fields、options 均为 map 类型的，选填，格式请参考 API [新建 metric](https://intl.cloud.tencent.com/document/product/1100/45525)。具体要求如下：
 tags：允许新增维度字段和修改已存在的维度字段类型，不会删除原有字段。
@@ -26,14 +26,11 @@ options 属性如下：
 | indexed_fields      | 否   | array   | 指定指标列中需要保留索引的字段，可指定多个，以数组形式指定   |
 | default_type        | 否   | string  | 指定新增字段的默认类型。可选项为 tag、field，系统默认值为 tag |
 
-> 说明：
->
-> 
->
-> - 由于历史数据不可被修改，更新字段后 metric 信息不会立即变更，需要等待下一个 [子表](跳转超链接) 产生。如果需要确认更新操作是否成功，可通过`GET /_metric/${metric_name}?v`接口进行确认。
+>!
+> - 由于历史数据不可被修改，更新字段后 metric 信息不会立即变更，需要等待下一个 [子表](https://intl.cloud.tencent.com/document/product/1100/45525) 产生。如果需要确认更新操作是否成功，可通过`GET /_metric/${metric_name}?v`接口进行确认。
 > - 只有为 short、integer、float 的字段才允许修改类型。其中 short 类型可被修改为 integer 和 long 类型；integer 类型可被修改为 long 类型；float 类型可被修改为 double 类型。
 
-#### 返回内容
+### 返回内容
 
 需要通过 error 字段判断请求是否成功，若返回内容有 error 字段则请求失败，具体错误详情请参照 error 字段描述。
 

@@ -30,7 +30,7 @@
 | bucket       | ZIPパッケージが保存されているソースバケットで、命名形式はBucketName-APPIDです。ここに入力するバケット名は、この形式である必要があります。例：examplebucket-1250000000 | String | はい       |
 | region       | ZIPパッケージのソースバケットが配置されているリージョンです。列挙値については、[リージョンとアクセスドメイン名](https://intl.cloud.tencent.com/document/product/436/6224)をご参照ください | String | はい       |
 | key          | ZIPパッケージ名（Object名）、バケット内のオブジェクトの一意の識別子です。詳細については、[オブジェクトの概要](https://intl.cloud.tencent.com/document/product/436/13324)をご参照ください | String | はい       |
-|| targetBucket | 解凍生成物を最終的に配布するターゲットバケットで、命名形式はBucketName-APPIDです。ここに入力するバケット名は、この形式である必要があります。例：examplebucket-1250000000 | String | はい       |
+| targetBucket | 解凍生成物を最終的に配布するターゲットバケットで、命名形式はBucketName-APPIDです。ここに入力するバケット名は、この形式である必要があります。例：examplebucket-1250000000 | String | はい       |
 | targetRegion | 解凍生成物を最終的に配布するターゲットバケットが配置されているリージョンです。列挙値については、[リージョンとアクセスドメイン名](https://intl.cloud.tencent.com/document/product/436/6224)をご参照ください | String | はい       |
 | targetPrefix | 解凍生成物を最終的に配布するプレフィックスで、指定されたディレクトリへ配布しスラッシュ/で終了します。デフォルトまたは空の文字列は、ルートパスへの配布と見なされます | String | いいえ       |
 

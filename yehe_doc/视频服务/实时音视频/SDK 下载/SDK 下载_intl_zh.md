@@ -262,7 +262,7 @@
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td rowspan='3' style="text-align:center">直播播放</td>
+    <td rowspan='4' style="text-align:center">直播播放</td>
     <td style="text-align:center">RTMP 协议</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
@@ -277,6 +277,11 @@
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
+  <tr>
+    <td style="text-align:center">快直播（WebRTC）</td>
+    <td style="text-align:center">-</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>	
   <tr>
     <td rowspan='3' style="text-align:center">点播播放</td>
     <td style="text-align:center">MP4 格式</td>
@@ -327,7 +332,7 @@
   </tr>
 </table>
 
->! Windows SDK 和 Mac OS SDK 包含实时音视频（TRTC）、直播推流（TXLivePusher）、直播播放（TXLivePlayer）和点播播放（TXVodPlayer）等四项功能，暂不支持短视频相关功能，不区分精简版和全功能版。
+>! Windows SDK 和 Mac OS SDK 包含实时音视频（TRTC）、直播播放（TXLivePlayer）和点播播放（TXVodPlayer）等三项功能，暂不支持短视频相关功能，不区分精简版和全功能版。
 
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>

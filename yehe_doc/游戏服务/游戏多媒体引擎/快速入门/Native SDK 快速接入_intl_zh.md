@@ -13,7 +13,7 @@ GME 分为两个部分，提供实时语音服务、语音消息及转文本服�
 
 ### 接口调用流程图
 
-![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/20564e5a251c6a53a06fa2b660a93061.png)
 
 ### 接入步骤
 
@@ -434,7 +434,7 @@ context->EnterRoom(roomID, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen
 
 #### 加入房间事件回调
 
-加入房间完成后会发送信息 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM，在 OnEvent 函数中进行判断回调后处理。如果回调为成功，即此时进房成功，开始进行**计费**；如果本日通话总时长 < 700 分钟则免费。
+加入房间完成后会发送信息 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM，在 OnEvent 函数中进行判断回调后处理。如果回调为成功，即此时进房成功，开始进行**计费**。
 
 <dx-fold-block title="计费问题参考">
 [购买指南。](https://intl.cloud.tencent.com/document/product/607/36276)
@@ -686,7 +686,7 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 
 此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用 StopRecording**，停止之后才有回调。
 
-#### 函数原型  
+#### 接口原型  
 
 <dx-codeblock>
 ::: Java Java
@@ -864,7 +864,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 此接口用于停止录音。此接口为异步接口，停止录音后会有录音完成回调，成功之后录音文件才可用。
 
-#### 函数原型  
+#### 接口原型  
 
 <dx-codeblock>
 ::: Java Java

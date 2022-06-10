@@ -31,16 +31,22 @@ COSFS는 패키지 방식과 컴파일 소스 코드 방식의 두 가지 설치
 #### Ubuntu 시스템
 
 1. 시스템 버전에 따라 해당하는 설치 패키지를 선택합니다. 현재 지원하는 Ubuntu 릴리스 버전은 Ubuntu14.04, Ubuntu16.04, Ubuntu18.04, Ubuntu20.04r를 포함합니다.
+Github 다운로드 링크:
 ```plaintext
 #Ubuntu14.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb
 #Ubuntu16.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb
 #Ubuntu18.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb
 #Ubuntu20.04
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
 ```
+CDN 다운로드 링크:
+[cosfs_1.0.19-ubuntu14.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb)
+[cosfs_1.0.19-ubuntu16.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb)
+[cosfs_1.0.19-ubuntu18.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb)
+[cosfs_1.0.19-ubuntu20.04_amd64.deb](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb)
 2. 설치. (예시: Ubuntu16.04).
 ```shell
 sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
@@ -53,12 +59,16 @@ sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 sudo yum install  libxml2-devel libcurl-devel -y
 ```
 2. 시스템 버전에 따라 해당하는 설치 패키지를 선택합니다. 현재 지원하는 CentOS 릴리스 버전은 CentOS6.5, CentOS7.0을 포함합니다.
+Github 다운로드 링크:
 ```plaintext
 #CentOS6.5
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm
 #CentOS7.0
-wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
 ```
+CDN 다운로드 링크:
+[cosfs-1.0.19-centos6.5.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm)
+[cosfs-1.0.19-centos7.0.x86_64.rpm](https://cos-sdk-archive-1253960454.file.myqcloud.com/cosfs/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm)
 3. 설치. (예시: CentOS7.0)
 ```shell
 sudo rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
@@ -90,14 +100,14 @@ sudo zypper install gcc-c++ automake make libcurl-devel libxml2-devel openssl-de
 - macOS 시스템에서 종속 소프트웨어 설치
 ```shell
 brew install automake git curl libxml2 make pkg-config openssl 
-brew cask install osxfuse
+brew install cask osxfuse
 ```
 
 #### 2. 소스 코드 획득 
 
 GitHub에서 [COSFS 소스 코드](https://github.com/tencentyun/cosfs)를 지정 디렉터리로 다운로드합니다. 다음은 디렉터리를 `/usr/cosfs`로 지정한 예시이며, 실제 작업 시 구체적인 작업 환경에 따라 디렉터리를 선택하시기 바랍니다.
 ```shell
-git clone https://github.com/tencentyun/cosfs /usr/cosfs
+sudo git clone https://github.com/tencentyun/cosfs /usr/cosfs
 ```
 
 
@@ -105,29 +115,29 @@ git clone https://github.com/tencentyun/cosfs /usr/cosfs
 설치 디렉터리로 이동하여 다음 명령어를 실행해 컴파일 및 설치를 진행합니다.
 ```shell
 cd /usr/cosfs
-./autogen.sh
-./configure
-make
+sudo ./autogen.sh
+sudo ./configure
+sudo make
 sudo make install
 cosfs --version  #cosfs 버전 넘버 조회
 ```
 
 #### 4. Configure 작업 문제 처리
 
-운영 체제에 따라 configure 작업 시 서로 다른 안내가 표시됩니다. fuse 버전이 2.8.4보다 낮은 운영 체제에서는 configure 작업 시 다음과 같은 오류가 보고됩니다.
+운영 체제에 따라 configure 작업 시 서로 다른 안내가 표시됩니다. fuse 버전이 2.8.4 보다 낮은 운영 체제에서는 configure 작업 시 다음과 같은 오류가 보고됩니다.
 ```shell
 checking for common_lib_checking... configure: error: Package requirements (fuse >= 2.8.4 libcurl >= 7.0 libxml-2.0 >= 2.6) were not met:
   Requested 'fuse >= 2.8.4' but version of fuse is 2.8.3 
 ```
 이 경우, fuse 2.8.4 이상 버전을 직접 설치해야 하며 설치 명령어 예시는 다음과 같습니다.
 ```shell
-yum -y remove fuse-devel
-wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
+sudo yum -y remove fuse-devel
+sudo wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
 tar -zxvf fuse-2.9.4.tar.gz
 cd fuse-2.9.4
-./configure
-make
-make install
+sudo ./configure
+sudo make
+sudo make install
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
 modprobe fuse   #fuse 커널 모듈 마운트
 echo "/usr/local/lib" >> /etc/ld.so.conf
@@ -139,12 +149,12 @@ pkg-config --modversion fuse  #fuse 버전 넘버 조회, “2.9.4”가 표시�
 >
 ```shell
 zypper remove fuse libfuse2
-wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
+sudo wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
 tar -zxvf fuse-2.9.4.tar.gz
 cd fuse-2.9.4
-./configure
-make 
-make install
+sudo ./configure
+sudo make 
+sudo make install
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
 modprobe fuse   #fuse 커널 모듈 마운트
 echo "/usr/local/lib" >> /etc/ld.so.conf
@@ -196,7 +206,7 @@ chmod 640 /etc/passwd-cosfs
 ```shell
 cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
-그중에서,
+이 중,
 - &lt;MountPoint&gt;:는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
 - &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
 - -odbglevel은 로그 레벨을 지정합니다. 기본 값은 crit이며, 옵션값은 crit, error, warn, info, debug입니다.
@@ -251,8 +261,8 @@ COSFS 로그 기록 레벨을 설정합니다. info, dbg, warn, err, crit 중에
 이 옵션으로 특정 유형 사용자의 마운트 디렉터리 내 파일 작업 권한을 삭제할 수 있습니다. 예를 들어, -oumask=755로 설정하는 경우 해당 마운트 디렉터리의 권한이 022로 변경됩니다.
 
 #### -ouid=[uid]
-이 옵션으로 사용자 id가 [uid]인 사용자가 마운트 디렉터리 내 파일 권한 제한에 영향을 받지 않고 마운트 디렉터리의 모든 파일에 액세스할 수 있도록 허용할 수 있습니다.
-사용자의 uid는 id 명령어를 사용하여 획득할 수 있으며, 포맷은 ` id -u username`입니다. 예를 들어, `id -u user_00`을 실행하는 경우 사용자 user_00의 uid를 획득할 수 있습니다.
+이 옵션으로 사용자 ID가 [uid]인 사용자가 마운트 디렉터리 내 파일 권한 제한에 영향을 받지 않고 마운트 디렉터리의 모든 파일에 액세스할 수 있도록 허용할 수 있습니다.
+사용자의 uid는 ID 명령어를 사용하여 획득할 수 있으며, 포맷은 ` id -u username`입니다. 예를 들어, `id -u user_00`을 실행하는 경우 사용자 user_00의 uid를 획득할 수 있습니다.
 
 #### -oensure_diskfree=[size]
 

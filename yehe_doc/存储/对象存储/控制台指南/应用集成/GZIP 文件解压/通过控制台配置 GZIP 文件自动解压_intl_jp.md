@@ -6,7 +6,7 @@ GZIPファイル解凍機能は、Cloud Object Storage（COS）が[Serverless Cl
 - コンソールによる使用：コンソールでGZIPファイルの解凍関数を設定します。設定完了後、バケットに新規アップロードされたGZIPファイルに対して、自動解凍が行われます。
 - APIによる使用：APIを呼び出すことによって、GZIPファイルの解凍操作が自動でトリガーされます。
 
-このドキュメントでは、主にコンソールからどのようにGZIPファイル解凍機能を使用するかについてご説明します。APIによる使用方式は、[APIによるGZIPファイルの解凍] (https://intl.cloud.tencent.com/document/product/436/46202)をご参照ください。
+このドキュメントでは、主にコンソールからどのようにGZIPファイル解凍機能を使用するかについてご説明します。APIによる使用方式は、[APIによるGZIPファイルの解凍](https://intl.cloud.tencent.com/document/product/436/46202)をご参照ください。
 
 
 ## 注意事項

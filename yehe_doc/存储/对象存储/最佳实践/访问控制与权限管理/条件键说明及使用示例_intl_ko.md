@@ -1,12 +1,15 @@
 액세스 정책을 사용하여 권한을 부여할 때 정책 [조건](https://intl.cloud.tencent.com/document/product/436/18023)을 지정할 수 있습니다. 예를 들어 정책 조건을 사용하여 업로드할 파일의 스토리지 클래스와 사용자 액세스 소스를 제한할 수 있습니다.
 
-본 문서에서는 버킷 정책에서 COS 조건 키를 사용하는 일반적인 예시를 제공합니다. [Conditions](https://intl.cloud.tencent.com/document/product/436/46205)에서 COS 및 해당 요청이 지원하는 모든 조건 키를 볼 수 있습니다.
+이 문서는 버킷 정책에서 COS(Cloud Object Storage) 조건 키를 사용하는 일반적인 예시를 제공합니다. [조건](https://intl.cloud.tencent.com/document/product/436/46205) 문서에서 COS 및 해당 요청이 지원하는 모든 조건 키를 볼 수 있습니다.
 
->? 버킷 정책을 작성할 때 조건 키를 사용할 때 최소 권한 원칙을 준수하고 해당 조건 키를 해당 요청(action)에만 추가하고 작업 지정 시 ‘\*’ 와일드 카드를 사용하지 마십시오. 와일드카드를 사용하면 요청이 실패합니다. 조건 키에 대한 자세한 내용은 [Conditions](https://intl.cloud.tencent.com/document/product/436/46205)를 참고하십시오.
+>? 버킷 정책을 작성할 때 조건 키를 사용할 때 최소 권한 원칙을 준수하고, 해당 조건 키를 해당 요청(action)에만 추가하며, 작업 지정(action) 시 “\*” 와일드 카드를 사용하지 마십시오. 와일드카드를 사용하면 요청이 실패합니다. 조건 키에 대한 자세한 내용은 [조건](https://intl.cloud.tencent.com/document/product/436/46205) 문서를 참고하십시오.
 >
 
+## 조건 키의 적용 가능한 영역
 
-## 조건 키의 사용 예시
+조건 키 `qcs:ip`, `vpc:requester_vpc` 및 `cos:content-type`은 모든 리전에서 사용할 수 있습니다. 나머지 조건 키는 현재 청두, 광저우, 상하이, 자카르타, 상파울루, 버지니아, 도쿄, 서울 리전에서만 사용할 수 있으며 향후 다른 리전에서도 지원될 예정입니다.
+
+## 조건 키의 사용 사례
 
 <span id="RestrictUserAccessIP"></span>
 ### 사용자 액세스 IP 제한(qcs:ip)
@@ -45,7 +48,7 @@
 
 #### 조건 키 vpc:requester_vpc
 
-조건 키 `vpc:requester_vpc`를 사용하여 사용자 액세스 vpcid를 제한할 수 있습니다. vpcid에 대한 자세한 내용은 Tencent Cloud 제품 [VPC](https://intl.cloud.tencent.com/document/product/215)를 참고하십시오.
+조건 키 `vpc:requester_vpc`를 사용하여 사용자 액세스 vpcid를 제한할 수 있습니다. vpcid에 대한 자세한 내용은 Tencent Cloud 제품 [Virtual Private Cloud](https://intl.cloud.tencent.com/document/product/215)를 참고하십시오.
 
 #### 예시: vpcid를 aqp5jrc1로 제한
 
@@ -101,7 +104,7 @@
 
 examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계정이 다음 버킷 정책을 사용하여 uin이 100000000000인 서브 계정이 지정된 버전의 객체만 가져오도록 허용한다고 가정합니다.
 
-정책에 따르면 uin이 100000000002인 서브 계정으로 전송된 객체 다운로드 요청은 versionid 매개변수를 전달하고 versionid 값이 버전 번호 ‘Tg0NDUxNTc1NjIzMTQ1MDAwODg’인 경우에만 성공할 수 있습니다.
+정책에 따르면 uin이 100000000002인 서브 계정으로 전송된 객체 다운로드 요청은 versionid 매개변수를 전달하고 versionid 값이 버전 번호 ‘MTg0NDUxNTc1NjIzMTQ1MDAwODg’인 경우에만 성공할 수 있습니다.
 
 ```
 {
@@ -306,7 +309,7 @@ RFC 2616에 정의된 바이트 단위의 HTTP 요청 콘텐츠 길이는 PUT �
 
 객체를 업로드할 때 조건 키 `cos:content-length`를 사용하여 요청 헤더 `Content-Length`를 제한하고 업로드할 객체의 파일 크기를 제한할 수 있습니다. 이러한 방식으로 저장 공간을 유연하게 관리하고 너무 크거나 작은 파일을 업로드하여 저장 공간과 네트워크 대역폭을 낭비하지 않도록 할 수 있습니다.
 
-아래 두 예시에서 버킷 examplebucket-1250000000을 소유하는 uin 100000000001의 루트 계정은 cos:content-length 조건 키를 사용하여 uin이 100000000002인 서브 계정에서 시작한 업로드 요청의 Content-Length 헤더 값을 제한합니다.
+아래 두 예시에서는 루트 계정(uin: 100000000001)이 버킷 examplebucket-1250000000을 소유하고 있다고 가정하며, `cos:content-length` 조건 키를 사용하여 서브 계정(uin: 100000000002)에서 업로드한 요청의 Content-Length 헤더 값을 제한할 수 있습니다.
 
 #### 예시1: 요청 헤더 Content-Length의 최대값 제한
 
@@ -483,15 +486,15 @@ string_equal은 요청이 지정된 값과 정확히 동일한 값을 가진 Con
 
 #### 요청 매개변수 response-content-type
 
-GetObject API를 사용하면 요청 매개변수인 `reponse-content-type`을 추가하여 응답의 Content-Type 헤더 값을 지정할 수 있습니다.
+GetObject API를 사용하면 요청 매개변수인 `response-content-type`을 추가하여 응답의 Content-Type 헤더 값을 지정할 수 있습니다.
 
 #### 조건 키 cos:response-content-type
 
-`cos:response-content-type` 조건 키를 사용하여 요청이 요청 매개변수인 `reponse-content-type`을 전달해야 하는지 여부를 지정할 수 있습니다.
+`cos:response-content-type` 조건 키를 사용하여 요청이 요청 매개변수인 `response-content-type`을 전달해야 하는지 여부를 지정할 수 있습니다.
 
 #### 예시1: GetObject 요청 매개변수 response-content-type을 ‘image/jpeg’로 제한
 
-버킷 examplebucket-1250000000을 소유하고 uin이 100000000001인 루트 계정이 다음 버킷 정책을 사용하여 uin이 100000000002인 서브 사용자가 시작한 GetObject 요청이 “image/jpeg” 값과 함께 response-content-type 요청 매개변수를 전달해야 한다고 가정합니다. `response-content-type` 매개변수는 요청 매개변수이며 요청이 시작될 때 urlencode가 필요합니다(인코딩된 값: `response-content-type=image%2Fjpeg`). 따라서 Policy를 설정할 때 "image/jpeg"도 인코딩(urlencode)해야 하며 "image%2Fjpeg"를 입력해야 합니다.
+버킷 examplebucket-1250000000을 소유하고 uin이 100000000001인 루트 계정이 다음 버킷 정책을 사용하여 uin이 100000000002인 서브 사용자가 시작한 GetObject 요청이 “image/jpeg” 값과 함께 response-content-type 요청 매개변수를 전달해야 한다고 가정합니다. `response-content-type` 매개변수는 요청 매개변수이며 요청이 시작될 때 urlencode가 필요합니다(urlencode된 값: `response-content-type=image%2Fjpeg`). 따라서 Policy를 설정할 때 "image/jpeg"도 인코딩(urlencode)해야 하며 "image%2Fjpeg"를 입력해야 합니다.
 
 ```
 {
@@ -619,7 +622,7 @@ GetObject API를 사용하면 요청 매개변수인 `reponse-content-type`을 �
 
 조건 키 `cos:x-cos-storage-class`를 사용하여 요청 헤더 `x-cos-storage-class`를 제한하여 스토리지 클래스 수정 요청을 제한할 수 있습니다.
 
-COS의 스토리지 클래스 필드에는 STANDARD, MAZ_STANDARD, STANDARD_IA, MAZ_STANDARD_IA, INTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, ARCHIVE 및 DEEP_ARCHIVE가 있습니다.
+COS의 스토리지 클래스 필드에는 `STANDARD`, `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE` 및 `DEEP_ARCHIVE`가 있습니다.
 
 #### 예시1: PutObject 요청 시 스토리지 클래스를 반드시 STANDARD로 설정
 
@@ -813,7 +816,7 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 
 #### 예시1: 객체 업로드 요청(PutObject)에서 x-cos-forbid-overwrite 값을 true로 제한
 
-버킷 examplebucket-1250000000을 소유하는 uin이 100000000001인 루트 계정이 다음 버킷 정책을 사용하여 uin이 100000000002인 서브 계정이 객체를 업로드할 때 동일한 이름을 가진 객체를 덮어쓰지 않도록 제한한다고 가정합니다. 정책은 모든 PutObject 요청이 `"true"` 값을 가진 `x-cos-forbid-overwirte` 헤더를 포함하도록 요구합니다.
+버킷 examplebucket-1250000000을 소유하는 uin이 100000000001인 루트 계정이 다음 버킷 정책을 사용하여 uin이 100000000002인 서브 계정이 객체를 업로드할 때 동일한 이름을 가진 객체를 덮어쓰지 않도록 제한한다고 가정합니다. 정책은 모든 PutObject 요청이 `"true"` 값을 가진 `x-cos-forbid-overwrite` 헤더를 포함하도록 요구합니다.
 
 ```
 {

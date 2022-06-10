@@ -82,11 +82,11 @@ setSystemVolumeTypeインターフェースで、通話ボリュームとメデ�
 [](id:a4)
 ### 音量が小さい場合はどうすればよいですか？
 - **全視聴者に聞こえる音量がすべて小さい**場合は、アップストリーム側の要因によるものです：
-  - Windowsとmacの[setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5)、全プラットフォームの[setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a53681962139b81140f2d66abc4ea6a0f)インターフェースのvolume値が50より小さくなっていないかを確認し、適宜音量を大きくすることができます。
+  - Windowsとmacの[setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__csharp.html#ae07615c5d80ac1f7f32a07c41654a5b0)、全プラットフォームの[setAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a8677a812326511ef92f963bbe049d42e)インターフェースのvolume値が50より小さくなっていないかを確認し、適宜音量を大きくすることができます。
   - 3A処理のオートゲインコントロール(AGC)がオンになっていないか確認します。
   - Bluetoothイヤホンによるものかどうかを確認します。
 - **一部の視聴者に聞こえる音量が小さい**場合は、ダウンストリーム側の要因によるものです。
-  - [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a9b8946403b8b3ac8e11f3a78e9d531ca)、[setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5)インターフェースのvolume値が50より小さくなっていないかを確認し、適宜音量を大きくすることができます。
+  - [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a338984f5503d59ae06d67f55bd8f0766)、[setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ae06c4a3c51e1a6e9db48219f996c0177)インターフェースのvolume値が50より小さくなっていないかを確認し、適宜音量を大きくすることができます。
   - setAudioRoute APIを呼び出してヘッドホン再生に切り替えていないかを、携帯端末で確認することができます。
 
 [](id:a5)

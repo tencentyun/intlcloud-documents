@@ -82,7 +82,9 @@ Tencent Cloud services in the same VPC are interconnected over the private netwo
 <table class="table-striped">
 <tbody><tr><th>Region</th><th>AZ</th></tr>
 <tr>
-<td rowspan="1">Southeast Asia (Singapore)<br>ap-singapore</td>
+<td rowspan="2">Southeast Asia (Singapore)<br>ap-singapore</td>
+<td>Singapore Zone 1 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-1</td></tr>
+<tr>
 <td>Singapore Zone 2 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td></tr>
 </tr>
 <td>Southeast Asia (Jakarta)<br>ap-jakarta</td>

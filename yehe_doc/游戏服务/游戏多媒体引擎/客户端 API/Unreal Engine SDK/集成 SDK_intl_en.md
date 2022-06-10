@@ -45,7 +45,7 @@ In the Unreal Engine project directory, open the `Plugins` folder (create it if 
 ### Step 2: compile the plugin
 
 After importing, compile the plugin in Unreal Engine.
-![](https://main.qcloudimg.com/raw/562882f1d39aa0d4fc77e835290d99df.png)
+
 
 ### Step 3: complete compilation
 

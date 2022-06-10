@@ -2,7 +2,7 @@
 ## Integration Preparations
 - Sign up for a Tencent Cloud account and log in to the [FaceID console](https://console.intl.cloud.tencent.com/faceid) to activate the service. 
 - Download the latest [SDK](https://console.intl.cloud.tencent.com/faceid). 
-- Download the [license](https://console.intl.cloud.tencent.com/faceid) 
+- Download the [license](https://console.intl.cloud.tencent.com/faceid).
 
 ## Terms and Definitions
 
@@ -19,7 +19,7 @@ Major roles involved are as shown below:
 Backend APIs: [GenerateReflectSequence](https://intl.cloud.tencent.com/zh/document/product/1061/44246) and [DetectReflectLivenessAndCompare](https://intl.cloud.tencent.com/zh/document/product/1061/44246)
 ## Sequence Diagram (Detailed)
 
-In the real case, you need to input the URLs to the backend APIs. For use instructions and causes, see [Passing Resources](https://console.intl.cloud.tencent.com/faceid).
+In the real case, you need to input the URLs to the backend APIs. For use instructions and causes, see [Passing Resources](https://intl.cloud.tencent.com/document/product/1061/46849?lang=en&pg=).
 *`CreateUploadUrl` serves as an independent role in the diagram*
 ![Figure 2](https://qcloudimg.tencent-cloud.cn/raw/491abd12442624139fef0b39959a6745.png)
 Backend APIs: [GenerateReflectSequence](https://intl.cloud.tencent.com/zh/document/product/1061/44246), [DetectReflectLivenessAndCompare](https://intl.cloud.tencent.com/zh/document/product/1061/44246), and [CreateUploadUrl](https://intl.cloud.tencent.com/zh/document/product/1061/44246)

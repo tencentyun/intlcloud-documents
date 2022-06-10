@@ -135,12 +135,12 @@ Click <img src="https://main.qcloudimg.com/raw/1fd9f4e3f35cfc166e04bd26fb520abf.
 ### 8. Manipulate the avatar
 
 After successfully connected, you can see other avatars. Press the keys *W*, *S*, *A*, and *D* to manipulate the avatar to go forward, backward, left, and right, and move your mouse to change the visual angle.
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/linaji.gif"  width="80%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/23cd82f978016559de9c40a413dc23b9.png"  width="80%"/></img>
 
 ### 9. Experience
 
 If you open two sessions of the demo on one device, move the visual angle of the avatar on one demo to the coin. Then turn on the microphone. Manipulate the avatar on the other demo to run away, and keep speaking to test the 3D voice effect. If you run to the map edge, the sound is barely heard.
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/yuan.gif"  width="80%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/01cfbded69436d29042ba1a14cc0e737.png"  width="80%"/></img>
 
 
 ## Voice Changing effects
@@ -158,9 +158,7 @@ Click to download [Voice Changing Demo](https://dldir1.qq.com/hudongzhibo/QCloud
 
 ### Running interface
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b4e2a3c8ef86b7ce8a8750adbc21cae8.png" width=80%/><img>
-
-###1. Enter AppID and Key
+### 1. Enter AppID and Key
 
 To initialize the Demo, you need to enter the AppID and the key, which can be found in **Service Management** in [Game Multimedia Engine Console](https://console.cloud.tencent.com/gamegme/detail/1400391524). To apply for GME service, see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782). 
 
@@ -169,6 +167,7 @@ To initialize the Demo, you need to enter the AppID and the key, which can be fo
 - Keep the AppID and key secretly.
 - Make sure the userId in the other demo application is different from the current userId.
 </dx-alert>
+
 
 ### 2. Initialize
 Click **Init** to initialize.
@@ -185,8 +184,8 @@ Click **EnableMic**, **EnableSpeaker**, **EnableLoopback** to enable devices and
 Speak into the microphone and experience the voice changing effect.
 
 configuration description:
+<img src="https://qcloudimg.tencent-cloud.cn/raw/97aa3d6feabc0d4e79fe4ac689271c6b.png"  width="80%"/></img>
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/dc5f3b8312cc4cab666c2d43719f79cc.png" width=80%/><img>
 
 ### 6. Exit the room
 When the test is over, click **ExitRoom** to exit the room. Otherwise, it may incur additional charges.

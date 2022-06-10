@@ -82,11 +82,11 @@ setSystemVolumeType 인터페이스를 통해 통화 음량 및 미디어 음량
 [](id:a4)
 ### 소리가 작을 경우 어떻게 해결합니까?
 - **모든 시청자가 듣는 소리가 작다면** 업스트림 요인입니다.
-  - Windows 및 mac의 [setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5), 모든 플랫폼의 [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a53681962139b81140f2d66abc4ea6a0f) 인터페이스의 volume 값이 50 미만인지 확인하고 음량을 적절히 높일 수 있습니다.
+  - Windows 및 mac의 [setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__csharp.html#ae07615c5d80ac1f7f32a07c41654a5b0), 모든 플랫폼의 [setAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a8677a812326511ef92f963bbe049d42e) 인터페이스의 volume 값이 50 미만인지 확인하고 음량을 적절히 높일 수 있습니다.
   - 3A에서 처리한 AGC 자동 게인이 활성화되어 있는지 확인합니다.
   - 블루투스 헤드셋 문제인지 확인합니다.
 - **일부 시청자의 오디오만 작다면** 다운스트림 요인입니다.
-  - [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a9b8946403b8b3ac8e11f3a78e9d531ca), [setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5) 인터페이스의 volume 값이 50 미만인지 확인하고 적절하게 음량을 높일 수 있습니다.
+  - [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a338984f5503d59ae06d67f55bd8f0766), [setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ae06c4a3c51e1a6e9db48219f996c0177) 인터페이스의 volume 값이 50 미만인지 확인하고 적절하게 음량을 높일 수 있습니다.
   - setAudioRoute API를 호출하여 핸드셋 재생으로 전환하지 않았는지 확인합니다.
 
 [](id:a5)

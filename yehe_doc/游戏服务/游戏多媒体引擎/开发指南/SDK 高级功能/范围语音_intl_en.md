@@ -11,7 +11,7 @@ GME's range voice service is specially developed for PUBG-like games. Unlike a t
 ## Experience
 [Download free demo](https://intl.cloud.tencent.com/document/product/607/38535#windows-.E5.B9.B3.E5.8F.B0-3d-.E8.AF.AD.E9.9F.B3.E4.BD.93.E9.AA.8C-demo)
 
-<img src="https://gme-public-1256590279.cos.ap-nanjing.myqcloud.com/GMEResource/linaji.gif"  width="70%"/></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/23cd82f978016559de9c40a413dc23b9.png"  width="70%"/></img>
 
 ## Concepts
 

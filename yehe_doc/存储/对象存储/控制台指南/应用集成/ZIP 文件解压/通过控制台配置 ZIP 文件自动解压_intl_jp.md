@@ -8,7 +8,7 @@ ZIPファイル解凍機能は、Cloud Object Storage（COS）が[Serverless Clo
 - コンソールによる使用：コンソールでZIPファイルの解凍関数を設定します。設定完了後、バケットに新規アップロードされたZIPファイルに対して、自動解凍が行われます。
 - APIによる使用：APIを呼び出すことによって、ZIPファイルの解凍操作が自動でトリガーされます。
 
-このドキュメントでは、主にコンソールからどのようにZIPファイル解凍機能を使用するかについてご説明します。APIによる使用方式は、[APIによるZIPファイルの解凍] (https://intl.cloud.tencent.com/document/product/436/45164)をご参照ください。
+このドキュメントでは、主にコンソールからどのようにZIPファイル解凍機能を使用するかについてご説明します。APIによる使用方式は、[APIによるZIPファイルの解凍](https://intl.cloud.tencent.com/document/product/436/45164)をご参照ください。
 
 
 ## 注意事項

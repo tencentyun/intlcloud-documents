@@ -53,7 +53,7 @@ You can share a window by selecting a source whose `type` is `TRTCScreenCaptureS
  - After selecting a sharing source, you can call [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97) to start screen sharing.
  - The API [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) differs from [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) in that it stops screen capturing and displays the image captured at the moment of pausing. As a result, remote users will see a still image until [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15) is called.
 
-```Objective-C
+```ObjC
  /**
  * 7.6 **Screen Sharing** Start screen sharing
  * @param view Parent control of the rendering control
@@ -98,7 +98,7 @@ You can use [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-
   When an Android/iOS user starts screen sharing, the screen will be shared through the primary stream, and other users in the room will be notified through [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) in `TRTCCloudDelegate`.
   Users who want to watch the shared screen can start rendering the primary stream of the remote user by calling the [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) API.
 
-```Objective-C
+```ObjC
 //Sample code: watch the shared screen
 
 - (void)onUserSubStreamAvailable:(NSString *)userId available:(BOOL)available {

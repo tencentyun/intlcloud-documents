@@ -39,17 +39,8 @@ IFUNC needs to be supported on Linux and the binutils version in the running env
 If other problems occur, try to run the migration tool again. If the problem persists, please compress the configuration (with the key hidden) as well as the log directory and [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 
-### Does it need to pull data locally when I use COS Migration to migrate third-party data to Tencent Cloud?
 
-COS Migration can directly and quickly migrate data from third-party source addresses into COS without the need to pull data locally. For more information, see [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392).
 
-Currently, the following migration types are supported:
-
-| Migration Type       | Description                          |
-| :---------------- | :---------------------------- |
-| migrateLocal      | From local system to COS              |
-| migrateUrl        | From download URL to COS           |
-| migrateBucketCopy | From source bucket to destination bucket |
 
 
 

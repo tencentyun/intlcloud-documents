@@ -10,15 +10,15 @@ GME optimizes voice chat in depth based on use cases to reduce the end-to-end ca
 
 ## Strength 3. Multi-Terminal and Cross-Platform Compatibility
 
-As the only Chinese voice development tool that makes the list of third-party development tools and middleware for Nintendo Switch™, PlayStation®️4, and PlayStation®️5, GME provides SDKs for consoles and is compatible with the latest versions of all console platforms. It features deep optimizations for UE, Unity, Cocos, and other major game engines, supports macOS, Windows, iOS, and Android systems, and is adapted to 20,000+ device models.
+As the voice development tool that makes the list of third-party development tools and middleware for Nintendo Switch™, PlayStation®️4, and PlayStation®️5, GME provides SDKs for consoles and is compatible with the latest versions of all console platforms. It features deep optimizations for UE, Unity, Cocos, and other major game engines, supports macOS, Windows, iOS, and Android systems, and is adapted to 20,000+ device models.
 
 ## Strength 4. Global Service
 
-GME is available in six continents globally, covering regions such as East Asia, South America, and Australia. Relying on its 2,800+ cache nodes deployed in more than 70 countries/regions, it enables nearby access to low-latency and non-lagging voice chat services. Its voice messaging and speech-to-text conversion features support 125 languages, implementing barrier-free communications among global players and technically helping Chinese applications go global.
+GME is available in six continents globally, covering regions such as East Asia, South America, and Australia. Relying on its 2,800+ cache nodes deployed in more than 70 countries/regions, it enables nearby access to low-latency and non-lagging voice chat services. Its voice messaging and speech-to-text conversion features support 125 languages, implementing barrier-free communications among global players.
 
 ## Strength 5. High Stability and Reliability
 
-Based on the underlying audio/video technologies of QQ that have been verified by hundreds of millions of QQ users, GME serves thousands of global customers in the gaming industry and sustains voice calls of 1 billion minutes everyday on average. It features real-time monitoring, remote disaster recovery, and smart scheduling to ensure stable and reliable services and reduce the crash rate to below 0.01%. In addition, its 24/7 customer service and SLA help achieve carefree business operations.
+GME serves thousands of global customers in the gaming industry and sustains voice calls of 1 billion minutes everyday on average. It features real-time monitoring, remote disaster recovery, and smart scheduling to ensure stable and reliable services and reduce the crash rate to below 0.01%. In addition, its 24/7 customer service and SLA help achieve carefree business operations.
 
 ## Strength 6. Cost-Effective Access
 

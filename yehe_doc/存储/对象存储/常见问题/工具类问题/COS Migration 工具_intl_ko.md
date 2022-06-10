@@ -39,16 +39,5 @@ Linux 환경에서는 툴에 IFUNC 지원이 필요합니다. 실행 환경에�
 기타 문제가 발생한 경우 마이그레이션 툴을 재실행해 보십시오. 여전히 오류가 발생하는 경우 설정 정보(키 정보 숨김 필요) 및 log 디렉터리를 패키징한 후 [고객센터](https://intl.cloud.tencent.com/contact-sales)로 문의하십시오.
 
 
-### COS Migration을 사용해 3rd party 데이터를 Tencent Cloud에 마이그레이션할 때 로컬에서 데이터를 풀링해야 하나요?
-
-COS Migration은 3rd party 원본 주소 데이터를 COS에 빠르게 마이그레이션할 수 있으며, 로컬에서 데이터를 풀링할 필요가 없습니다. 자세한 내용은 [COS Migration 툴](https://intl.cloud.tencent.com/document/product/436/15392) 문서를 참조하십시오.
-
-현재 지원하는 마이그레이션 유형은 다음과 같습니다.
-
-| migrateType       | 설명                          |
-| :---------------- | :---------------------------- |
-| migrateLocal      | 로컬에서 COS로 마이그레이션              |
-| migrateUrl        | 다운로드 URL을 COS로 마이그레이션           |
-| migrateBucketCopy | 원본 Bucket에서 타깃 Bucket으로 복사|
 
 

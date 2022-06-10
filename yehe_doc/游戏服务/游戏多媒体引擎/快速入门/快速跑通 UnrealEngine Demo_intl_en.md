@@ -81,7 +81,7 @@ If `3D Voice Effect` is selected on both terminals, use the A, S, D, and W keys 
 
 Press and hold **Push to Talk** and speak into the mic. After you release the button, your voice message will be converted into text and displayed in the UI.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e2fecfdc7ed880315e6ec50179be2eaf.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/a6634573204ad4df2820357a247e8677.jpg)
 
 ## Project sample code overview
 

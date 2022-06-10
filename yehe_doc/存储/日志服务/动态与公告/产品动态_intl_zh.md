@@ -1,3 +1,43 @@
+
+## 2022年04月
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">动态名称</th>
+			<th width="50%">动态描述</th>
+			<th width="15%">发布时间</th>
+			<th width="15%">相关文档</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>仪表盘支持单位自动换算</td><td>支持图表单位自动换算，数值满足换算进率时，将自动换算为更高级别的单位，增强数据可读性。</td><td>2022-04-30</td><td><a href="https://cloud.tencent.com/document/product/614/74036">单位配置</a></td></tr>
+		<tr><td>时序图支持趋势对比</td><td>时序图支持添加过去周期的趋势对比曲线，增强了图表对比分析场景的能力。</td><td>2022-04-30</td><td><a href="https://cloud.tencent.com/document/product/614/74027#.E8.B6.8B.E5.8A.BF.E5.AF.B9.E6.AF.94">趋势对比</a></td></tr>
+		<tr><td>Kafka 协议消费上线，全地域可用</td><td>通过 Kafka 协议消费，可将数据消费到下游大数据组件或数据仓库，支持自建 Kafka 集群，ClickHouse、Hive、Flink，以及腾讯云弹性 MapReduce（EMR）、流计算 Oceanus 等。</td><td>2022-04-20</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42752">Kafka 协议消费</a></td></tr>
+		<tr><td>索引配置被修改时，支持使用 SQL 统计分析历史数据</td><td>索引配置被修改时，针对原配置中已有的字段，仍可使用 SQL 统计分析历史数据。（新增字段不支持统计分析历史数据）</td><td>2022-04-18</td><td>-</td></tr>
+		<tr><td>容器采集可选元数据采集范围</td><td>用户可根据业务需要自行选择目前默认采集容器元数据中的一个或多个，并配置是否开启索引。</td><td>2022-04-13</td><td>-</td></tr>
+		<tr><td>元数据/预置字段支持添加至全文索引</td><td>在索引配置中可按需添加元数据及预置字段至全文索引，使用全文方式检索字段。</td><td>2022-04-12</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">高级设置</a></td></tr>
+	</tbody>
+</table>
+
+
+## 2022年03月
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">动态名称</th>
+			<th width="50%">动态描述</th>
+			<th width="15%">发布时间</th>
+			<th width="15%">相关文档</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>仪表盘新增词云图</td><td>词云图功能发布，支持文本型数据可视化，突出高频词条。</td><td>2022-03-15</td><td>-</td></tr>
+	</tbody>
+</table>
+
+
 ## 2022年02月
 
 <table>
@@ -27,7 +67,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>日志主题支持永久保存</td><td>日志主题保存时间可在1 - 3600天内自定义，并支持开启永久保存。</td><td>2022-01-25</td><td>规格说明</td></tr>
+		<tr><td>日志主题支持永久保存</td><td>日志主题保存时间可在1 - 3600天内自定义，并支持开启永久保存。</td><td>2022-01-25</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37887">规格说明</a></td></tr>
 		<tr><td>索引配置导入功能上线</td><td>可一键导入已有日志主题中的索引配置规则，提升操作效率。</td><td>2022-01-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">导入索引配置</a></td></tr>
 	</tbody>
 </table>
@@ -45,8 +85,8 @@
 	</thead>
 	<tbody>
 		<tr><td>Kafka 协议上传日志</td><td><ul  style="margin: 0;"><li>支持 Kafka 协议版本覆盖0.11.X-2.8。</li><li>支持使用 gzip，snappy，lz4，zstd 格式的数据压缩。</li></ul></td><td>2021-12-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43574">使用 Kafka 协议上传日志</a></td></tr>
-		<tr><td>TKE 日志采集更新</td><td><ul  style="margin: 0;"><li>日志采集配置支持 label != 操作（exclude labels）。</li><li>日志采集配置支持多选/排除 namespace。</li><li>支持采集增量日志。</li><li>支持用户手动升级 Loglistener。</li></ul></td><td>2021-12-21</td><td>日志组件版本说明</a></td></tr>
-		<tr><td>支持通过云监控 Dashboard 查看日志主题使用量</td><td>日志存储量及写流量等使用量指标对接至云监控 Dashboard 及告警，便于集中查看多个日志主题的使用量。</td><td>2021-12-17</td><td>配置监控图表</a></td></tr>
+		<tr><td>TKE 日志采集更新</td><td><ul  style="margin: 0;"><li>日志采集配置支持 label != 操作（exclude labels）。</li><li>日志采集配置支持多选/排除 namespace。</li><li>支持采集增量日志。</li><li>支持用户手动升级 Loglistener。</li></ul></td><td>2021-12-21</td><td><a href="https://intl.cloud.tencent.com/document/product/457/46845">日志组件版本说明</a></td></tr>
+		<tr><td>支持通过云监控 Dashboard 查看日志主题使用量</td><td>日志存储量及写流量等使用量指标对接至云监控 Dashboard 及告警，便于集中查看多个日志主题的使用量。</td><td>2021-12-17</td><td><a href="https://cloud.tencent.com/document/product/248/46746">	配置监控图表</a></td></tr>
 		<tr><td>仪表盘可视化数据配置</td><td>可视化数据配置优化，支持显示隐藏字段、分组聚合指标的功能。</td><td>	2021-12-15</td><td>-</td></tr>
 		<tr><td>支持 COS 数据导入 CLS</td><td>	支持用户将对象存储 COS 内数据导入 CLS 进行检索分析、数据加工与清洗等操作。</td><td>2021-12-10</td><td><a href="https://intl.cloud.tencent.com/document/product/614/45468">导入 COS 数据</a></td></tr>
 	</tbody>
@@ -66,7 +106,7 @@
 	</thead>
 	<tbody>
 		<tr><td>CLS 功能体验 Demo 日志上线</td><td>面向产品试用、测试场景，提供一键即用的免费 Demo 数据接入与功能模板，助力用户简单快速地接入贴近真实场景的内容。</td><td>2021-11-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43572">CLB 分析场景体验 Demo</a></td></tr>
-		<tr><td>低频存储部分地域开启公测</td><td>以低成本方案解决海量低频日志的检索和存储问题，满足用户对历史日志的回溯检索，归档存储等诉求；适用于用户对日志无统计分析要求，且日志保存时间较长的场景。（公测阶段仅支持北京、广州、上海、中国香港地域）</td><td>2021-11-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">低频存储简介</a></td></tr>
+		<tr><td>低频存储部分地域开启公测</td><td>以低成本方案解决海量低频日志的检索和存储问题，满足用户对历史日志的回溯检索，归档存储等诉求；适用于用户对日志无统计分析要求，且日志保存时间较长的场景。（公测阶段仅支持北京、广州、上海、香港地域）</td><td>2021-11-30</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">低频存储简介</a></td></tr>
 		<tr><td>自建 K8s 集群快速接入 CLS</td><td>支持用户通过控制台配置采集规则，实现自有容器集群快速接入 CLS，节约用户学习成本与使用成本。</td><td>2021-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42745">自建 K8s 集群接入 CLS</a></td></tr>
 		<tr><td>数据加工功能重磅发布</td><td>数据加工提供对日志数据的结构化、过滤、脱敏、分发、富化等能力，为日志的检索分析、仪表盘展示提供结构化数据的基础。</td><td>2021-11-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43568">数据加工</a></td></tr>
 		<tr><td>支持 Kafka 协议上传日志</td><td>日志服务兼容 Kafka 协议来兼容开源生态，用户现有系统只需要修改写入源即可实现快速接入，支持众多开源采集组件，例如 Logstash、Fluentd、Filebeat 等。</td><td>2021-11-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43574">使用 Kafka 协议上传日志</a></td></tr>
@@ -86,7 +126,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>仪表盘支持模板变量</td><td>仪表盘新增数据源变量和快速过滤变量，满足用户多个数据源在同一仪表盘中灵活切换日志主题，以及指标条件快速筛选的场景使用。</td><td>2021-10-19</td><td><a href="https://intl.cloud.tencent.com/document/product/614/43561">模板变量</a></td></tr>
+		<tr><td>仪表盘支持模板变量</td><td>仪表盘新增数据源变量和快速过滤变量，满足用户多个数据源在同一仪表盘中灵活切换日志主题，以及指标条件快速筛选的场景使用。</td><td>2021-10-19</td><td><a href="https://cloud.tencent.com/document/product/614/63400">模板变量</a></td></tr>
 	</tbody>
 </table>
 
@@ -103,7 +143,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>支持 kafka 协议实时消费</td><td>CLS 上线 kafka 协议消费能力，您可以通过实时消费功能，高效便捷地将日志数据导出至指定应用中。</td><td>2021-09-17</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42752">	实时消费</a></td></tr>
+		<tr><td>支持 kafka 协议实时消费</td><td>CLS 上线 kafka 协议消费能力，您可以通过实时消费功能，高效便捷地将日志数据导出至指定应用中。</td><td>2021-09-17</td><td><a href="https://cloud.tencent.com/document/product/614/63036">	实时消费</a></td></tr>
 	</tbody>
 </table>
 
@@ -121,8 +161,8 @@
 	<tbody>
 		<tr><td>全新监控告警发布</td><td>	
 功能全新升级：<ul  style="margin: 0;"><li>支持自定义告警内容模板。</li><li>新增自定义多维分析功能。</li><li>新增微信、企业微信等移动端告警渠道。</li><li>1min 内告警异常信息。</li></ul></td><td>2021-08-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39573">监控告警简介</a></td></tr>
-		<tr><td>离线日志全网公测</td><td>离线日志定位以低成本方案解决海量低频日志的检索和存储问题，整体使用成本相比<B>实时日志</B>降低80%，目前已支持北京、上海、广州、南京、重庆、中国香港六大地域公测。</td><td>2021-08-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">离线存储简介</a></td></tr>
-		<tr><td>200+ 分析函数上线</td><td>全地域上线200+ SQL 分析函数，满足多场景日志数据聚合分析，持续增强 CLS 数据可视化能力。</td><td>2021-08-12</td><td><a href="https://intl.cloud.tencent.com/document/product/614/36745">分析函数</a></td></tr>
+		<tr><td>离线日志全网公测</td><td>离线日志定位以低成本方案解决海量低频日志的检索和存储问题，整体使用成本相比<B>实时日志</B>降低80%，目前已支持北京、上海、广州、南京、重庆、香港六大地域公测。</td><td>2021-08-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42004">离线存储简介</a></td></tr>
+		<tr><td>200+ 分析函数上线</td><td>全地域上线200+ SQL 分析函数，满足多场景日志数据聚合分析，持续增强 CLS 数据可视化能力。</td><td>2021-08-12</td><td><a href="https://cloud.tencent.com/document/product/614/44063">分析函数</a></td></tr>
 		<tr><td>用户自定义格式解析日志文件</td><td>新增 LogListener 高级数据处理功能，支持用户以自定义格式进行日志文件解析，实现复杂格式日志的采集。</td><td>2021-08-06</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42742">用户自定义格式</a></td></tr>
 	</tbody>
 </table>
@@ -139,8 +179,8 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>支持增量/全量采集策略</td><td>提供 LogListener 全量/增量可选采集配置，满足用户只投递新增日志数据的需求，极大减少了用户写流量的成本。</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">增量/全量采集策略</a></td></tr>
-		<tr><td>优化检索报错提示</td><td>报错提示整体规范化，友好化，人性化，大幅提高了检索错误信息的可读性。</td><td>2021-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/44224">	错误码 报错提示</a></td></tr>
+		<tr><td>支持增量/全量采集策略</td><td>提供 LogListener 全量/增量可选采集配置，满足用户只投递新增日志数据的需求，大大减少了用户写流量的成本。</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">增量/全量采集策略</a></td></tr>
+		<tr><td>优化检索报错提示</td><td>报错提示整体规范化，友好化，人性化，大幅提高了检索错误信息的可读性。</td><td>2021-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/44224">	错误码报错提示</a></td></tr>
 		<tr><td>支持中文分词</td><td>针对包含中文的日志，满足用户按照中文语法拆分成中文内容进行检索。</td><td>2021-07-08</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">中文分词</a></td></tr>
 	</tbody>
 </table>
@@ -231,7 +271,7 @@
 	<tbody>
 		<tr><td>LogListener 自动升级</td><td>支持用户在控制台预设时间段指定机器组进行 agent 自动升级，也可对目标机器实行手动升级。</td><td>2021-02-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/40233">LogListener 升级指南</a></td></tr>
 		<tr><td>CLS 全面支持毫秒级精度日志</td><td>LogListener 使用采集时间支持毫秒级时间戳。开启时间采集后，LogListener 携带毫秒级的 Unix 时间戳进行上传。</td><td>2021-02-20</td><td>-</td></tr>
-		<tr><td>百万级日志下载</td><td>最高可支持百万级日志下载，支持指定检索条件、检索时间范围自定义导出所需的日志数量，提供【CSV】和【JSON】两种导出格式。</td><td>2021-02-14</td><td><a href="https://intl.cloud.tencent.com/document/product/614/34234">日志下载</a></td></tr>
+		<tr><td>百万级日志下载</td><td>最高可支持百万级日志下载，支持指定检索条件、检索时间范围自定义导出所需的日志数量，提供 CSV 和 JSON 两种导出格式。</td><td>2021-02-14</td><td><a href="https://intl.cloud.tencent.com/document/product/614/34234">日志下载</a></td></tr>
 		<tr><td>上下文检索</td><td><ul  style="margin: 0;"><li>增加定位当前日志功能，快速定位目标日志滚动查看上下文。</li><li>增加多个字符串高亮功能，快速标记出用户检索的关键词。</li><li>增加过滤条件功能，快速定位目标字符串所在日志。</li></ul></td><td>2021-02-06</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39795">上下文检索分析</a></td></tr>
 	</tbody>
 </table>
@@ -250,8 +290,8 @@
 	<tbody>
 		<tr><td>监控告警2.0发布</td><td>CLS 支持对日志主题设置告警策略，查询分析结果满足触发条件时用户可及时接收告警通知，实时监控日志数据。</td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39573">监控告警</a></td></tr>
 		<tr><td>CLS 支持对接 Grafana</td><td>CLS 与 Grafana 打通，支持将 CLS 的原始日志数据与 SQL 聚合分析结果导出至 Grafana 展示。</td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39592">CLS 对接 Grafana</a></td></tr>
-		<tr><td>多行日志支持正则提取</td><td>LogListener 采集配置规则新增【多行-完全正则】提取模式采集日志。</td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39590">多行-完全正则</a></td></tr>
-		<tr><td>检索页2.0版本上新</td><td><ul  style="margin: 0;"><li>时间组件支持毫秒级，快速输入【自定义时间】，提高查询效率。</li><li>日志数据展示新增【原始布局和表格布局】功能以及【是否开启换行】功能，方便灵活切换。</li><li>新增偏好设置，用户可【自定义日志加载数量】、【历史记录数量】，满足数据浏览所需。</li></ul></td><td>2020-12-15</td><td>-</td></tr>
+		<tr><td>多行日志支持正则提取</td><td>LogListener 采集配置规则新增<b>多行-完全正则</b>提取模式采集日志。</td><td>2020-12-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39590">多行-完全正则</a></td></tr>
+		<tr><td>检索页2.0版本上新</td><td><ul  style="margin: 0;"><li>时间组件支持毫秒级，快速输入<b>自定义时间<b>，提高查询效率。</li><li>日志数据展示新增<b>原始布局和表格布局<b>功能以及<b>是否开启换行<b>功能，方便灵活切换。</li><li>新增偏好设置，用户可<b>自定义日志加载数量<b>、<b>历史记录数量<b>，满足数据浏览所需。</li></ul></td><td>2020-12-15</td><td>-</td></tr>
 	</tbody>
 </table>
 
@@ -304,7 +344,7 @@
 	<tbody>
 		<tr><td>台北、首尔新区上线</td><td>新增台北、首尔新地域，日志服务部署上线。</td><td>2020-09-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/18940">可用地域</a></td></tr>
 		<tr><td>检索页支持版面配置</td><td>检索页提供 LogListener 采集配置与索引配置入口，用户可快速查看机器组状态，索引字段信息。</td><td>2020-09-24</td><td>-</td></tr>
-		<tr><td>Lucene 语法全面支持</td><td>CLS 全面支持 Lucene 语法检索。</td><td>2020-09-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/30439">语法与规则</a></td></tr>
+		<tr><td>Lucene 语法全面支持</td><td>CLS 全面支持 Lucene 语法检索。</td><td>2020-09-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37803">语法与规则</a></td></tr>
 		<tr><td>免费额度发布</td><td>CLS 商业化后，腾讯云仍旧为所有用户在每个地域提供一定量的免费额度。</td><td>2020-09-12</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37889">免费额度</a></td></tr>
 	</tbody>
 </table>

@@ -5,7 +5,7 @@ COSBrowser App 是腾讯云对象存储（Cloud Object Storage，COS）官方出
 
 | 操作名                                  | 操作描述                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [用量概览](https://intl.cloud.tencent.com/document/product/436/46382#UsageOverview) | 支持展示近期的数据使用情况。                                   |                                             |
+| [用量概览](https://intl.cloud.tencent.com/document/product/436/46382#UsageOverview) | 支持展示近期的数据使用情况。                                   |                  
 | [存储桶监控](https://intl.cloud.tencent.com/document/product/436/46382#BucketMonitoring) | 支持从存储桶维度查看近期的数据使用情况。                                   |
 | [小组件](https://intl.cloud.tencent.com/document/product/436/46382#TheWidget) | 数据概览支持小组件模式，在不打开 App 的情况下也能浏览数据使用情况。   |
 
