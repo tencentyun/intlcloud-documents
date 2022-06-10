@@ -19,7 +19,7 @@ Push for LEB relies on WebRTC and therefore can only be used on OS and browsers 
 
 The audio/video capturing feature is poorly supported on mobile browsers. For example, mobile browsers do not support screen recording, and only iOS 14.3 and later allow requesting camera access. Therefore, the push SDK is mainly used on desktop browsers. The latest version of Chrome, Firefox, and Safari all support push for LEB.
 
-To push streams via mobile browsers, use the [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38157).
+To push streams via mobile browsers, use the MLVB SDK.
 
 ## SDK Integration
 
@@ -143,7 +143,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### Event callbacks
-The SDK supports callback event notifications. You can set an observer to receive callbacks of the SDK’s status and WebRTC-related statistics. For details, see [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709).
+The SDK supports callback event notifications. You can set an observer to receive callbacks of the SDK’s status and WebRTC-related statistics.
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({
