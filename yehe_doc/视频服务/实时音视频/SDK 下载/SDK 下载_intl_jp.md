@@ -147,7 +147,6 @@ Tencent Real-Time Communication(TRTC)は、Tencent Cloudが提供する低遅延
                           <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_CSharp_latest.zip">ZIPダウンロード</a>
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">統合ガイド</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46747">Demoを実行</a>
             </div>
         </div>
 </div>
