@@ -2,29 +2,34 @@ Tencent Cloud will notify the callback address of delivery success, delivery fai
 ## Sample Request
 ```json
 {
-  "event": "delivered",
-  "email": "example@example.com",
-  "bulkId": "qcloud-ses-4F001945B2D9BXXXXXX",
-  "timestamp": 1587953211,
-  "reason": "the reason when email failed to delivered",
-  "bounceType": ""
+    "event":"bounce",
+    "email":"example@example.com",
+    "bulkId":"qcloudses-30-251200670-date-20220601142439-8jolHvR2XcXC1",
+    "timestamp":1654064683,
+    "reason":"551 5.1.1 recipient is not exist",
+    "bounceType":"hard_bounce",
+    "username":"251200670",
+    "fromDomain":"fromexample.com",
+    "templateId":123456
 }
 ```
 
-Field | Type | Description
---|--|--
-event | string | Event type. For details, see [Event Types](#Event_Type).
-email | string | Recipient email address
-link | string | URL in the email that the recipient clicks. This field takes effect only when the value of `event` is `click`.
-bulkId | string | `MessageId` returned by the `SendEmail` API
-timestamp | int | Timestamp when the event is generated
-reason | string | Reason why the email fails to be delivered
-bounceType | string | Rejection type when the email is rejected by the recipient’s email service provider (ESP). Valid values: soft, hard. This field takes effect only when the value of `event` is `bounce`.
+| Field | Type | Description |
+| ---------- | ------ | ---------------------------------------------------------------------------------- |
+| event      | string | Event type. For more information, see [Email Event Notification](https://intl.cloud.tencent.com/document/product/1084/39492). |
+| email      | string | Recipient address                                                                              |
+| link       | string | Clickable URL in the email. This field takes effect only when the value of `event` is `click`.                                               |
+| bulkId     | string | `MessageId` returned by `SendEmail`                                                          |
+| timestamp  | int    | Event occurrence timestamp                                                                           |
+| reason     | string | Cause of email delivery failure                                                                          |
+| bounceType | string | Rejection type when the email is rejected by the recipient's email service provider (ESP). Valid values: soft\_bounce \| hard\_bounce. This field takes effect only when the value of `event` is `bounce`.           |
+| username   | string | Tencent Cloud account appId                                                                      |
+| fromDomain | string | Sender domain                                                                               |
+| templateId | int    | Template ID                                                                               |
 
 ## Event Types[](id:Event_Type)
 Value | Description
 --|--
-processed | Delivering. This state is an intermediate state and may not be called back.
 deferred | The delivery of the email has been delayed by the recipient's ESP and is being retried.
 delivered | Delivery is successful. The recipient's ESP receives the email.
 dropped | The email cannot be delivered and is dropped for some reasons.
