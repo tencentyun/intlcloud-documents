@@ -120,7 +120,7 @@ Access-Control-Allow-Methods: POST
 | 60017  | 请求被禁用。              |
 | 60018  | 请求过于频繁，请稍后重试。                                   |
 | 60019  | 请求过于频繁，请稍后重试。                                   |
-| 60020  | 您的专业版套餐包已到期并停用，请重新[购买套餐包](https://intl.cloud.tencent.com/document/product/1047/36021)。购买后，将在5分钟后生效。 |
+| 60020  | 您的专业版已到期并停用，请重新[购买](https://intl.cloud.tencent.com/document/product/1047/36021)。购买后，将在5分钟后生效。 |
 |60021  |RestAPI 调用来源 IP 非法。|
 
 ## FAQ
