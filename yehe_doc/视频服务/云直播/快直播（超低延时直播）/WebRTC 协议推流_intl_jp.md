@@ -19,7 +19,7 @@ Tencent Cloud CSSを使用する場合、プッシュアドレスは、次に示
 
 さらに、モバイル端末ではブラウザがオーディオとビデオ画像をキャプチャする機能が充分にサポートされていません。たとえば、モバイル端末ブラウザはスクリーンレコーディングをサポートしておらず、ユーザーカメラデバイスの取得をサポートしているのは、iOS 14.3以降のバージョンのみです。以上より、プッシュSDKは主にデスクトップブラウザに使用され、現在、chrome、FirefoxおよびSafariブラウザの最新バージョンはすべてライブイベントブロードキャストプッシュをサポートしています。
 
-モバイル端末では、[MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38157)を使用してプッシュを実行することをお勧めします。
+モバイル端末では、MLVB SDKを使用してプッシュを実行することをお勧めします。
 
 ## ドッキングレイダース
 
@@ -145,7 +145,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### コールバックイベント通知
-SDKは、現在、コールバックイベント通知を提供しています。Observerを設定することで、SDK内部の状態情報とWebRTCの関連データの統計を把握できます。 詳細については、[TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709)をご参照ください。
+SDKは、現在、コールバックイベント通知を提供しています。Observerを設定することで、SDK内部の状態情報とWebRTCの関連データの統計を把握できます。
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({
