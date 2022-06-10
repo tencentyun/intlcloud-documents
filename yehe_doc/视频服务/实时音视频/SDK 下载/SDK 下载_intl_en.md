@@ -278,7 +278,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
   </tr>
   <tr>
     <td style="text-align:center">Live Event Broadcasting (WebRTC)</td>
-    <td style="text-align:center">&#10003;</td>
+    <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>		
   <tr>
@@ -331,7 +331,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
   </tr>
 </table>
 
->! The Windows and macOS SDKs integrate TRTC, TXLivePusher, TXLivePlayer, and TXVodPlayer, but do not offer short video capabilities. They do not come in lite and professional editions.
+>! The Windows and macOS SDKs integrate TRTC, TXLivePlayer, and TXVodPlayer, but do not offer short video capabilities. They do not come in lite and professional editions.
 
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>
