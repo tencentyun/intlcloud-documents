@@ -9,6 +9,7 @@ Tencent Cloud will notify the callback address of delivery success, delivery fai
     "reason":"551 5.1.1 recipient is not exist",
     "bounceType":"hard_bounce",
     "username":"251200670",
+    "from":"test@fromexample.com",
     "fromDomain":"fromexample.com",
     "templateId":123456
 }
@@ -24,6 +25,7 @@ Tencent Cloud will notify the callback address of delivery success, delivery fai
 | reason     | string | Cause of email delivery failure                                                                          |
 | bounceType | string | Rejection type when the email is rejected by the recipient's email service provider (ESP). Valid values: soft\_bounce \| hard\_bounce. This field takes effect only when the value of `event` is `bounce`.           |
 | username   | string | Tencent Cloud account appId                                                                      |
+| from       | string | Sender address (without sender name)                                                |
 | fromDomain | string | Sender domain                                                                               |
 | templateId | int    | Template ID                                                                               |
 
