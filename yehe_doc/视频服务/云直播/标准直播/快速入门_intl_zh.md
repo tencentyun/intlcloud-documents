@@ -83,7 +83,7 @@
 
    2. 移动端直播流测试，建议您下载安装 TCToolkit App 打开选择 **移动直播 MLVB** > **标准直播播放**，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
 
->? 如需在 App 中进行进行推流/播放，可以集成 [移动直播 SDK](https://cloud.tencent.com/product/mlvb) 配合云直播服务使用。试用过程中如果您遇到问题，建议您阅读云直播 [常见问题](https://intl.cloud.tencent.com/document/product/267/7968) 解答疑问。
+>? 如需在 App 中进行进行推流/播放，可以集成 移动直播 SDK 配合云直播服务使用。试用过程中如果您遇到问题，建议您阅读云直播 [常见问题](https://intl.cloud.tencent.com/document/product/267/7968) 解答疑问。
 
 ## 相关操作
 - 若需开启**直播录制**，可创建录制模板，并与域名进行配置关联。相关文档请参见 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223)。
