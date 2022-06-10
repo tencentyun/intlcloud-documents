@@ -2,16 +2,11 @@
 
 ## SDK 与源码下载
 
-移动直播提供国际版的 SDK 版本， 可通过移动直播 License 使用相应的直播功能。可帮您快速上线手机直播功能 ，具体请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1071/38150)。
-
+移动直播提供国际版的 SDK 版本， 可通过移动直播 License 使用相应的直播功能。可帮您快速上线手机直播功能。
 
 
 ## Demo 体验
 
-移动直播提供了TCToolkit App，并提供相关源代码下载支持，具体请参见：[TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)
+移动直播提供了TCToolkit App，并提供相关源代码下载支持。
 
-## 了解更多
-
-- 若您需要了解更多移动直播 SDK 能力，请参见 [移动直播 SDK 文档](https://intl.cloud.tencent.com/document/product/1071)。
-- 若您需要了解移动直播 SDK 相关计费说明，请参见 [价格总览](https://intl.cloud.tencent.com/document/product/1071/38114)。
 
