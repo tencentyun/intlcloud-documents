@@ -1,11 +1,11 @@
-OCR uses pay-as-you-go pricing. You are billed according to the number of API calls. The bill will be generated and settled on the first to the third day of the next month.
+OCR is pay-as-you-go service. You only need to pay for the API calls you've made. The bill will be settled on the first three days of next month.
 
 
 ## Pricing
 
 
 ### Pay-as-you-go
-By default, all OCR services are billed at pay-as-you-go rates.
+By default, all OCR services are billed on a pay-as-you-go basis.
 
 <table>
 <tr>
