@@ -2,16 +2,9 @@
 
 ## SDK 및 소스 코드 다운로드
 
-MLVB는 인터네셔널 SDK 버전을 제공하며, 해당 라이브 방송 기능은 MLVB License를 통해 사용할 수 있습니다. 휴대폰 라이브 방송 기능을 빠르게 런칭할 수 있도록 지원합니다. 자세한 내용은 [SDK 다운로드](https://intl.cloud.tencent.com/document/product/1071/38150)를 참고하십시오.
-
-
+MLVB는 인터네셔널 SDK 버전을 제공하며, 해당 라이브 방송 기능은 MLVB License를 통해 사용할 수 있습니다. 휴대폰 라이브 방송 기능을 빠르게 런칭할 수 있도록 지원합니다. 
 
 ## Demo 체험
 
 MLVB는 TCToolkit App을 제공하며, 관련 소스코드 다운로드 지원을 제공합니다. 자세한 내용은 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)을 참고하십시오.
-
-## 더 알아보기
-
-- MLVB SDK 기능 관련 자세한 내용은 [MLVB SDK 문서](https://intl.cloud.tencent.com/document/product/1071)를 참고하십시오.
-- MLVB SDK 과금 관련 안내는 [가격 리스트](https://intl.cloud.tencent.com/document/product/1071/38114)를 참고하십시오.
 
