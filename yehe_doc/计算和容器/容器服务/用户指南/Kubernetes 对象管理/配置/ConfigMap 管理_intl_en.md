@@ -1,66 +1,74 @@
-## Introduction
+## Overview 
 
-ConfigMap allows you to decouple configuration artifacts from images to ensure that the application is more portable. ConfigMap is a key-value pair. You can log in to the console to create ConfigMap objects or use kubectl. ConfigMap is useful when mounting data volumes, environment variables, or running container commands.
+ConfigMap allows you to decouple configurations from images to make the application more portable. ConfigMap is a key-value pair. You can create a ConfigMap object by using kubectl in the console, and use a ConfigMap by mounting a volume, through environment variables, or by running commands in the container.
 
-## Using ConfigMap via the Console
 
-### Creating a ConfigMap
-1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2).
-2. In the left sidebar, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where ConfigMap needs to be created to go to the cluster management page.
-4. Select **Configuration Management** > **ConfigMap** to go to the ConfigMap information page.
-5. Click **Create** to go to the "Create a ConfigMap" page.
-6. Set the ConfigMap parameters.
- - Name: name of the ConfigMap.
- - Namespace: select the namespace type and set the variable name and value.
-7. Click **Create ConfigMap** to finish the process.
+## Operation Guide for ConfigMap in Console
 
-### Using a ConfigMap
+### Creating ConfigMap
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
+2. On the left sidebar, click **Cluster** to enter the cluster list page.
+3. Click the ID of the cluster where you want to create a ConfigMap to enter the cluster management page.
+4. Select **Configuration Management** > **ConfigMap** to enter the ConfigMap information page.
+5. Click **Create** to enter the **Create ConfigMap** page.
+6. Set the ConfigMap parameters as needed. Key parameters are as follows:
+ - Name: Customize a name.
+ - Namespace: Select the namespace type and set the variable name and value as needed.
+7. Click **Create ConfigMap**.
 
-#### Using the ConfigMap for a data volume
-1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2).
-2. In the left sidebar, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where workload needs to be deployed to enter the cluster management page.
-4. Under “Workload”, select any workload type to go to the page for the relevant information. For example, select **Workload** > **DaemonSet**, to go to the page for the relevant information.
-5. Click **Create** to go to the "Create a workload" page.
-6. Set the workload name, namespace and other information as instructed. For **Volume**, click **Add Volume** .
-7. Select "Use a ConfigMap", enter the name, and click **Select a ConfigMap**, as shown below:
+### Using ConfigMap
+
+#### Method 1. Use the ConfigMap type for a volume
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
+2. On the left sidebar, click **Cluster** to enter the cluster list page.
+3. Click the ID of the cluster where you want to deploy a workload to enter the cluster management page.
+4. Select any workload type under **Workload** to enter the information page. For example, select **Workload** > **DaemonSet** to enter the DaemonSet information page as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/c001d6fd4cdefaeed125b341099bd465.png)
+5. Click **Create** to enter the **Create Workload** page.
+6. Set the workload name, namespace, and other information as instructed. In **Volume**, click **Add Volume** as shown below:
+![Add Volume](https://qcloudimg.tencent-cloud.cn/raw/7309f6d8d47fc4a772aa644fb24db713.png)
+7. Select **Use ConfigMap**, enter the name, and click **Select ConfigMap** as shown below:
 ![](https://main.qcloudimg.com/raw/2549f59b529775a2b7453ebef596fd90.png)
-8. In the “Set ConfigMap” window that pops up, configure the mounting point (refer to the following information), and click **Submit**, as shown in the following figure.
- - **Use ConfigMap**: Select a ConfigMap as needed.
- - **Options**: select **All** or **Specific keys**.
- - **Items**: if you select **Specific keys**, you can mount a specific path by adding an item. For example, if the mounting point is `/data/config`, and the path is `dev`, it is saved under `/data/config/dev`.
-9. Click **Create a workload**. Now you have successfully created a workload.
+8. In the **Set ConfigMap** pop-up window, configure the mount point according to the following information and click **OK** as shown below:
+ - **Select ConfigMap**: Select a ConfigMap as needed.
+ - **Options**: **All** and **Specific keys** are available.
+ - **Items**: If you select **Specific keys**, you can mount to a specific path by adding an item. For example, if the mount point is `/data/config` and the filename is `filename`, the value of the key-value pair will be stored under `/data/config/filename`.
+![](https://qcloudimg.tencent-cloud.cn/raw/9cec4dc509b673e988c021a9e968f20d.png)
+9. Click **Create Workload**.
 
-#### Using ConfigMap with an environmental variable
+#### Method 2. Use the ConfigMap type for an environment variable
 
-1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2).
-2. In the left sidebar, click **Clusters** to go to the cluster management page.
-3. Click the ID of the cluster where the workload needs to be deployed to enter the cluster management page.
-4. Select a type for the **Workload** to go to the relevant information page. For example, select **Workload** > **DaemonSet** to go to the DaemonSet information page, as shown below:
-![](https://main.qcloudimg.com/raw/76a0a6c8e0f8f52a390893946671d066.png)
-5. Click **Create** to go to the "Create a workload" page.
-6. Set the workload name, namespace and other information as instructed. In **Environment Variable** under **Containers in the pod**, click **Reference ConfigMap/Secret** .
-7. Select **ConfigMap** for the environment variable and select the resource.
-![](https://main.qcloudimg.com/raw/2549f59b529775a2b7453ebef596fd90.png)
-8. Click **Create a workload** to finish the process.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
+2. On the left sidebar, click **Cluster** to enter the cluster list page.
+3. Click the ID of the cluster where you want to deploy a workload to enter the cluster management page.
+4. Select any workload type under **Workload** to enter the information page. For example, select **Workload** > **DaemonSet** to enter the DaemonSet information page as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/769018132b755cb219a17cccbfabb230.png)
+5. Click **Create** to enter the **Create Workload** page.
+6. Set the workload name, namespace, and other information as instructed. In **Environment Variable** under **Containers in the Pod**, click **Add Variable** as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/a57b0d0f387482ca924f448885ffefb6.png)
+7. Select **ConfigMap** for the environment variable and select the resources as needed.
+9. Click **Create Workload**.
 
-### Updating a ConfigMap
+### Updating ConfigMap
 
-1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2).
-2. In the left sidebar, click **Clusters** to go to the cluster management page.
-3. Click the cluster ID for which you want to update the YAML to go to the cluster management page.
-4. Select **Configuration Management** > **ConfigMap** to go to the ConfigMap information page.
-![ConfigMap](https://main.qcloudimg.com/raw/76a0a6c8e0f8f52a390893946671d066.png)
-5. In the row of the ConfigMap to update the YAML, click **Edit YAML** to go to the ConfigMap updating page.
-6. On the **Update a ConfigMap** page, edit the YAML and click **Finish** to update the YAML.
- > To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
+2. On the left sidebar, click **Cluster** to enter the cluster list page.
+3. Click the ID of the cluster where you want to update the ConfigMap to enter the cluster management page.
+4. Select **Configuration Management** > **ConfigMap** to enter the ConfigMap information page.
+5. Click **Update Configuration** on the right of the target ConfigMap to enter the **Update Configuration** page.
+![](https://qcloudimg.tencent-cloud.cn/raw/5f98fe781372b6324b302f57fe96f981.png)
+7. On the **Update Configuration** page, edit the key-value pair of the key-value type and click **Done**.
+![](https://qcloudimg.tencent-cloud.cn/raw/481f4d9b57d33cf40d64faf62786a8d3.png)
 
-## Using ConfigMaps with kubectl
 
-### Sample YAML
 
-```Yaml
+
+
+## Using kubectl to Manipulate ConfigMap
+
+### YAML sample
+<dx-codeblock>
+::: Yaml
 apiVersion: v1
 data:
   key1: value1
@@ -70,53 +78,56 @@ kind: ConfigMap
 metadata:
   name: test-config
   namespace: default
-```
-- data: ConfigMap data in the form of key-value pairs.
-- kind: ConfigMap resource type.
-- metadata: information such as ConfigMap name and Label.
-- metadata.annotations: an additional description of the ConfigMap. You can set additional enhancements to TKE through this parameter.
+:::
+</dx-codeblock>
 
-### Creating a ConfigMap
+- **data**: The data of ConfigMap presented as key-value.
+- **kind**: This identifies the ConfigMap resource type.
+- **metadata**: Basic information such as ConfigMap name and label.
+- **metadata.annotations**: An additional description of the ConfigMap. You can set additional enhancements to TKE through this parameter.
 
-#### Using a YAML file
+### Creating ConfigMap
 
-1. Use the [Sample YAML](#YAMLSample) to prepare the ConfigMap YAML file.
-2. Install kubectl and connect to a cluster. For detailed operations, refer to [Connecting to Clusters](https://intl.cloud.tencent.com/document/product/457/30639).
+#### Method 1. Create through the sample YAML file
+
+1. See the [YAML sample](#YAMLSample) to prepare the ConfigMap YAML file.
+2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting to a Cluster](https://intl.cloud.tencent.com/document/product/457/30639).
 3. Run the following command to create the ConfigMap YAML file.
 ```shell
-kubectl create -f ConfigMap YAML filename
+kubectl create -f <ConfigMap YAML filename>
 ```
-For example, to create a ConfigMap YAML file named web.yaml, run the following command:
+ For example, to create a ConfigMap YAML file named `web.yaml`, run the following command:
 ```shell
 kubectl create -f web.yaml
 ```
-4. Run the following command to check if the file was successfully created:
+4. Run the following command to check whether it is successfully created.
 ```shell
 kubectl get configmap
 ```
-A message similar to the one below indicates that the YAML file has successfully been created.
+ If a message similar to the following is returned, the creation is successful.
 ```
 NAME          DATA      AGE
 test          2         39d
 test-config   3         18d
 ```
 
-#### Using a command
 
-Run the following command to create a ConfigMap.
+#### Method 2. Create by running the command
+
+Run the following command to create the ConfigMap in the directory.
 ```
 kubectl create configmap <map-name> <data-source>
 ```
-- &lt;map-name&gt;: name of the ConfigMap.
-- &lt;data-source&gt;: the directory, file, or literal value to draw the data from.
+- &lt;map-name&gt;: Name of the ConfigMap.
+- &lt;data-source&gt;: Directory, file, or literal.
 
-For more details about the parameters, refer to [Kubernetes official documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-a-configmap).
+For more information about the parameters, see [Kubernetes' official document about ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-a-configmap).
 
-### Using a ConfigMap
+### Using ConfigMap
 
-#### Using the ConfigMap with a data volume
+#### Method 1. Use the ConfigMap type for a volume
 
-The following is a sample YAML file:
+Below is a YAML sample:
 ```Yaml
 apiVersion: v1
  kind: Pod
@@ -132,16 +143,16 @@ apiVersion: v1
    volumes:
         name: config-volume
         configMap:
-          name: test-config ## ConfigMap data source
+          name: test-config ## Set the ConfigMap source
           ## items: ## Set the key mounting of the specified ConfigMap
-          ## key: key1 ## Select specific keys
-          ## path: keys ## Mount to the specified path
+          ##   key: key1  ## Select the specified key
+          ##   path: keys ## Mount to the specified subpath
    restartPolicy: Never
 ```
 
-#### Using the ConfigMap with an environment variable
+#### Method 2. Use the ConfigMap type for an environmental variable
 
-The following is a sample YAML file:
+Below is a YAML sample:
 ```Yaml
 apiVersion: v1
  kind: Pod
@@ -155,7 +166,7 @@ apiVersion: v1
          - name: key1
            valueFrom:
              configMapKeyRef:
-               name: test-config ## file name of the source ConfigMap
-               key: test-config.key1 ## source of value of the environment variable
+               name: test-config ## Set the filename of the source ConfigMap
+               key: test-config.key1  ## Set the value source of the environment variable
    restartPolicy: Never
 ```
