@@ -150,8 +150,8 @@ Due to special restrictions, the following APIs do not support resource-level au
 #### Server API actions
 |API|Category|Description|Restriction|
 |---|---|---|---|
-|[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|Call quality monitoring|Queries specific events.|The parameters entered do not include `SDKAppID`, making resource-level authorization impossible.|
-| [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | Other APIs | Queries the billing period of on-cloud recording. | For business reasons, resource-level authorization is not supported currently. |
+| DescribeDetailEvent |Call quality monitoring|Queries specific events.|The parameters entered do not include `SDKAppID`, making resource-level authorization impossible.|
+| DescribeRecordStatistic | Other APIs | Queries the billing period of on-cloud recording. | For business reasons, resource-level authorization is not supported currently. |
 | DescribeTrtcInteractiveTime| Other APIs | Queries the billing period for audio/video interactive features. | For business reasons, resource-level authorization is not supported currently. |
 | DescribeTrtcMcuTranscodeTime | Other APIs | Queries the billing period of relayed transcoding. | For business reasons, resource-level authorization is not supported currently. |
 
