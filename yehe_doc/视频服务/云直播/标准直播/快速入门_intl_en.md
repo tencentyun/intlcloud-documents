@@ -83,7 +83,7 @@ You can enter the generated push URL into the push software as appropriate for y
 
    2. For playback test on mobile devices, you're advised to download and install Tencent Video Cloud Toolkit App, select **Mobile Live Video Broadcasting** > **LVB Playback**, enter the playback URL into the address box manually or by scanning the QR code, and tap the play icon in the bottom-left corner.
 
->? To push/play back a stream on an app, you can integrate the [MLVB SDK](https://cloud.tencent.com/product/mlvb) into the app to supplement the CSS service. If you encounter any problem during the trial period, please see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).
+>? To push/play back a stream on an app, you can integrate the MLVB SDK into the app to supplement the CSS service. If you encounter any problem during the trial period, please see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).
 
 ## Operations
 - To enable **live recording**, please create a recording template and bind it to a domain name first. For more information, please see [Creating Recording Template](https://intl.cloud.tencent.com/document/product/267/34223).
