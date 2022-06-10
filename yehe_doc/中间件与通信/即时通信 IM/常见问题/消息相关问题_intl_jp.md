@@ -53,55 +53,6 @@ APNプッシュか、またはAndroidでのオフラインプッシュかどう�
 5. メッセージにオフラインプッシュを実行しないフラグが設定されているかどうかを確認します。iOSについては、[オフラインメッセージプロパティのカスタマイズ](https://intl.cloud.tencent.com/document/product/1047/39157#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7)を参照し、Androidについては、[単一メッセージのオフラインプッシュ構成の設定](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81)をご参照ください。
 6. それでも場所を特定できない場合は、技術者に関連情報を提供し、トラブルシューティングを行うことができます。
 
-[](id:Q4)
-### グループ@メッセージはどのように処理すればよいですか？
-グループ内の@メッセージと通常メッセージの間に本質的な違いはありませんが、@の付いた人がメッセージを受信すると、UIで特別な処理が必要になります。例えば、QQのメッセージリストに赤いプロンプトが表示されます。具体的な実装については、以下のソリューションを参照できます：
-1. メッセージ送信時のキーボードイベントに、@文字が入力されているかどうかを監視します。送信者が@文字を入力したことが検出されると、グループメンバーリストがUIにポップアップ表示され、送信者が@を付ける必要のある人を選択できます。ここでは、選択したユーザーがuser1であると仮定します。
-2. @を付ける必要のある人を選択した後、メッセージ入力ボックスに「@ user1」など、@および選択した人のIDを追加します。
-3. メッセージに`TIMCustomElem`を追加し、`TIMCustomElem`で自分が設計したフラグを追加し、このメッセージを@メッセージのメッセージプロトコルとします。
-簡単なプロトコル定義は次のとおりです：
-```
-{
-	"type":"REMIND",
-	"target":"user1"
-}
-```
-@メッセージ作成プロセスのサンプルコードは次のとおりです（例としてAndroidプラットフォームを取り上げます）：
-
-```java
-// テキストメッセージを送信し、メッセージ内で@グループメンバーuser1とします
-TIMMessage msg = new TIMMessage();
-### テキストメッセージ要素を作成します
-TIMTextElem txtElem = new TIMTextElem();
-txtElem.setText("@user1 nice to meet u");
-if(msg.addElement(txtElem) != 0){
-	Log.e(TAG, "add text elem failed");
-	return;
-}
-try{
-	// カスタマイズしたメッセージプロトコルを入力します
-	JSONObject remindProto = new JSONObject();
-	remindProto.put("type", "REMIND");
-	remindProto.put("target", "user1");
-	// 自分で定義したプロトコルに従ってカスタムメッセージ要素を作成します
-	TIMCustomElem customElem = new TIMCustomElem();
-	customElem.setDesc("remind msg");
-	customElem.setData(remindProto.toString().getBytes("utf-8"));
-	if(msg.addElement(customElem) != 0){
-		Log.e(TAG, "add custom elem failed");
-		return;
-	}
-}catch(Exception e){
-	Log.e(TAG, "build custom elem failed");
-	return;
-}
-```
-
->!そのうち、`TIMTextElem`は必須ではありません。ダーティワードフィルタリングが不要であることが確認された場合、`TIMTextElem`のメッセージ内容を`TIMCustomElem`の`desc`属性に入力できます。
->
-4. メッセージを作成したら、グループに送信します。
-5. グループのメンバーがメッセージを受信したら、メッセージの`TIMCustomElem`のメッセージプロトコルが@メッセージプロトコルであるかどうかを確認します。そうである場合は次の手順に進み、そうでない場合はスキップします。
-6. @を付けられた人が、現在ログインしているユーザーと同じであるかどうかを確認します。同じである場合は、UIで特殊処理を行います。そうでない場合、処理は不要です。
 
 [](id:Q5)
 ### Red Packetメッセージはどのように処理すればよいですか？
