@@ -1,21 +1,3 @@
-## March 2021
-<table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
-<tbody>
-<tr>
-<td>Cloud Monitor optimization</td>
-<td>TencentDB for MongoDB now works with the latest version of Cloud Monitor, supporting dashboards, more monitoring metrics, and default alarms. The metric names are modified to better follow the naming conventions; and you can now use Cloud Monitor APIs to fetch TencentDB for MongoDB monitoring data.</td>
-<td>2021-03</td><td><a href="https://intl.cloud.tencent.com/document/product/248/40014" target="_blank">TencentDB for MariaDB Monitoring Metrics</a></td></tr>
-<tr>
-<td>One-primary-multi-replica instances are supported</td>
-<td>You can now create an instance with one primary node and up to five replica nodes, so as to provide higher data availability.</td>
-<td>2021-03</td><td>-</td></tr>
-<tr>
-<td>VPC configurations can be modified</td>
-<td>You can now modify the access address of an instance via network translation.</td>
-<td>2021-03</td><td><a href="https://intl.cloud.tencent.com/document/product/237/35410" target="_blank">Changing Networks</a></td></tr>
-</tbody></table>
-
 ## January 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
@@ -47,6 +29,24 @@
 <td>Supported modifying the read-only policy</td>
 <td>You can modify the policy of a read-only account to satisfy different read-only access and delay requirements.</td>	
 <td><a href="https://intl.cloud.tencent.com/document/product/237/35409" target="_blank">Read/Write Separation</a></td></tr>
+</tbody></table>
+
+## March 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
+<tbody>
+<tr>
+<td>Cloud Monitor optimization</td>
+<td>TencentDB for MongoDB now works with the latest version of Cloud Monitor, supporting dashboards, more monitoring metrics, and default alarms. The metric names are modified to better follow the naming conventions; and you can now use Cloud Monitor APIs to fetch TencentDB for MongoDB monitoring data.</td>
+<td>2021-03</td><td><a href="https://intl.cloud.tencent.com/document/product/248/40014" target="_blank">TencentDB for MariaDB Monitoring Metrics</a></td></tr>
+<tr>
+<td>One-primary-multi-replica instances are supported</td>
+<td>You can now create an instance with one primary node and up to five replica nodes, so as to provide higher data availability.</td>
+<td>2021-03</td><td>-</td></tr>
+<tr>
+<td>VPC configurations can be modified</td>
+<td>You can now modify the access address of an instance via network translation.</td>
+<td>2021-03</td><td><a href="https://intl.cloud.tencent.com/document/product/237/35410" target="_blank">Changing Networks</a></td></tr>
 </tbody></table>
 
 
