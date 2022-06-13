@@ -6,7 +6,7 @@ As shown in the following figure, Snapshot 1 retains data block information of t
 ## Snapshot Size
 A snapshot only saves data blocks in the cloud disk that have been written to or modified. Therefore, the size of the snapshot is smaller than the source cloud disk.
 See below for more details:
-![](https://main.qcloudimg.com/raw/8d6315f9b4136f8ba2162ab8988ec192.png)
+![](https://main.qcloudimg.com/raw/00913478170abba28952aa9c8dc13c82.png)
 
 ## Creaing Incremental Snapshots 
 Tencent Cloud snapshots use an incremental snapshot mechanism. When you continuously create multiple snapshots of the same cloud disk, only the first snapshot is a full snapshot, and subsequent snapshots only contain data that has been modified relative to the previous snapshot (incremental snapshot). This can minimize the total storage capacity occupied when users continuously create snapshots, reducing user costs.
