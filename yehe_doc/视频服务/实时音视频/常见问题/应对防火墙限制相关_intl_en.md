@@ -10,14 +10,16 @@ Add the following ports to the allowlist:
 Add the following domain names to the allowlist:
 
 ```
-cloud.tim.qq.com
-gz.file.myqcloud.com
-avc.qcloud.com
-yun.tim.qq.com
-dldir1.qq.com
-mlvbdc.live.qcloud.com
-query.tencent-cloud.com
-*.trtc.tencent-cloud.com        
+intl-query.trtc.tencent-cloud.com
+intl-accelerate.trtc.tencent-cloud.com
+trtc-client-log-overseas-1258344699.cos.ap-singapore.myqcloud.com
+intl-sdklog.trtc.tencent-cloud.com
+sdkdc.live.qcloud.com
+speedtestint.trtc.tencent-cloud.com
+intl-query.trtc.tencent-cloud.com
+hwapi.im.qcloud.com
+videoapi-sgp.im.qcloud.com
+trtc-sdk-config-1258344699.file.myqcloud.com        
 ```
 
  
@@ -33,9 +35,11 @@ Add the following ports to the allowlist:
 Add the following domain names to the allowlist:
 
 ```
-*.rtc.qcloud.com
-*.rtc.qq.com
-yun.tim.qq.com
+intl-signaling.rtc.qq.com
+intl-signaling.rtc.qcloud.com
+intl-schedule.rtc.qq.com
+intl-schedule.rtc.qcloud.com
+videoapi-sgp.im.qcloud.com
 ```
 
 ### How do I configure proxies for clients to access the TRTC SDK for web from a private network?
