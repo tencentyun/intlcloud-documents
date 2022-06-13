@@ -1,0 +1,30 @@
+The engine kernel of TDSQL-C for MySQL is fully compatible with native MySQL. You can migrate MySQL data to TDSQL-C for MySQL without modifying any application code or configuration.
+
+The engine kernel of TDSQL-C for MySQL provides various features similar to those in MySQL Enterprise Edition, including enterprise-level transparent data encryption, audit, thread pool, encryption function, and backup and restoration.
+
+The engine kernel of TDSQL-C for MySQL not only deeply optimizes the InnoDB storage engine and query performance, but also improves the ease of use and maintainability of databases. While providing all the benefits of MySQL, it offers more enterprise-grade advanced features such as disaster recovery, restoration, monitoring, performance optimization, read/write separation, transparent data encryption, and database audit.
+
+**For more information on the engine kernel of TDSQL-C for MySQL, see:**
+- For updates of the TDSQL-C for MySQL kernel engine version, see [Kernel Version Release Notes](https://intl.cloud.tencent.com/document/product/1098/44587).
+- The kernel minor version of TDSQL-C for MySQL can be upgraded automatically or manually. For more information, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/1098/44617).
+
+**Release dates of different TDSQL-C for MySQL kernel versions**:
+**TDSQL-C for MySQL 8.0**
+
+| Kernel Version | Release Date | 
+|---------|---------|
+| 3.1.2 | February 2022 |
+| 3.1.1 | November 2021 |
+| 3.0.1 | August 2021 |
+
+**TDSQL-C for MySQL 5.7**
+
+| Kernel Version | Release Date | 
+|---------|---------|
+| 2.0.16 | January 2022 |
+| 2.0.15 | October 2021 |
+| 2.0.14 | July 2021 |
+| 2.0.13 | March 2021 |
+| 2.0.12 | November 2020 |
+| 2.0.11 | June 2020 |
+

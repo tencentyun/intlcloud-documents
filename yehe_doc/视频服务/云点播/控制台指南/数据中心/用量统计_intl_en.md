@@ -27,32 +27,32 @@ In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **D
 - You can view transcoding statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
 - The duration (in minutes) and number of your general transcoding tasks are displayed at the top.
 - The graph displays the duration trends (in minutes) of all general transcoding types. You can also select a type to view its duration data.
-- In **Transcoding Details**, you can view the duration and number of tasks under each general transcoding type.
-- In **Transcoding Ratio**, you can view the percentages of different transcoding types by the number of tasks.
+- In **Transcoding tasks**, you can view the duration and number of tasks under each general transcoding type.
+- In **Transcoding types used**, you can view the percentages of different transcoding types by the number of tasks.
 - General transcoding statistics are real-time data.
 
 ### TESHD
 - You can view TESHD statistics for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
 - The duration (in minutes) and number of your TESHD transcoding tasks are displayed at the top.
 - The graph displays the duration trends (in minutes) of all TESHD transcoding types. You can also select a type to view its duration data.
-- In **Transcoding Details**, you can view the duration and number of tasks under each TESHD transcoding type.
-- In **Transcoding Ratio**, you can view the percentages of different TESHD transcoding types by the number of tasks.
+- In **Transcoding tasks**, you can view the duration and number of tasks under each TESHD transcoding type.
+- In **Transcoding types used**, you can view the percentages of different TESHD transcoding types by the number of tasks.
 - TESHD transcoding statistics are real-time data.
 
 ### Adaptive bitrate streaming
 - You can see the statistics of adaptive bitrate streaming for today, yesterday, last 7 days, last 30 days, and any custom time period within the last 30 days.
 - The duration (in minutes) and number of your adaptive bitrate streaming tasks are displayed at the top.
 - The graph displays the duration trends (in minutes) of all general transcoding types. You can also select a type to view its duration data.
-- In **Transcoding Details**, you can view the duration and number of tasks under each general transcoding type.
-- In **Transcoding Ratio**, you can view the percentages of different general transcoding types by the number of tasks.
+- In **Transcoding tasks**, you can view the duration and number of tasks under each general transcoding type.
+- In **Transcoding types used**, you can view the percentages of different general transcoding types by the number of tasks.
 - Adaptive bitrate streaming statistics are real-time data.
 
 ### Video editing
 - You can view your video editing statistics for today, yesterday, last 7 days, last 30 days, and any custom time period in the last 30 days.
 - The duration (in minutes) and number of your video editing tasks are displayed at the top.
 - The graph displays the duration trends (in minutes) of all types of video editing tasks. You can also select a type to view its duration data.
-- In **Task Details of Each Video Editing Type**, you can view the duration and number of tasks under each video editing type.
-- In **Ratio Details of Each Editing Type**, you can view the percentages of different types of video editing tasks.
+- In **Video editing tasks**, you can view the duration and number of tasks under each video editing type.
+- In **Video editing types used**, you can view the percentages of different types of video editing tasks.
 - Video editing statistics are real-time data.
 
 ### Watermark removing
@@ -60,8 +60,8 @@ In the [VOD console](https://console.cloud.tencent.com/vod/overview), select **D
 - You can view your watermark removing statistics for today, yesterday, last 7 days, last 30 days, and any custom time period in the last 30 days.
 - The duration (in minutes) and number of your watermark removing tasks are displayed at the top.
 - The graph displays the duration trends (in minutes) of all types of watermark removing tasks. You can also select a type to view its duration data.
-- In **Task Details of Each Watermark Removing Type**, you can view the duration and number of tasks under each watermark removing type.
-- In **Ratio Details of Each Removing Type**, you can view the percentages of different types of watermark removing tasks.
+- In **Watermark removing tasks**, you can view the duration and number of tasks under each watermark removing type.
+- In **Watermark removing types used**, you can view the percentages of different types of watermark removing tasks.
 - Watermark removing statistics are real-time data.
 
 ## Video Audit Statistics

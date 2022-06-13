@@ -1,34 +1,34 @@
-Serverless SSR is deployed based on Serverless Framework and supports the following CLI commands:
+Serverless Application Center (SLS) is deployed based on Serverless Framework and supports the following CLI commands:
 
-- **`serverless registry`**: views the list of available components.
+- **`serverless registry`**: Lists available components.
 
-- **`serverless registry publish`**: publishes component to Serverless registry.
+- **`serverless registry publish`**: Publishes components to the SLS component registry.
 
-   `--dev`: publishes component on `@dev` version for development or test.
+   `--dev`: Publishes components of the `@dev` version for development or testing.
 
-- **`serverless init xxx`**: downloads a specified template from the Registry by entering the name of the desired template after `init`, such as "$ serverless init fullstack".
+- **`serverless init xxx`**: Downloads a specified template from the component registry by entering the name of the template to download after `init`, such as "$ serverless init fullstack".
   
-    `sls init xxx --name my-app`: customizes project directory name.
+    `sls init xxx --name my-app`: Customizes the project directory name.
 	
-	 `--debug`: lists log information during template download.
+	 `--debug`: Lists log information during template download.
 
-- **`serverless deploy`**: deploys component instance in cloud.
+- **`serverless deploy`**: Deploys a component instance in the cloud.
 
-    `--debug`: lists log information such as deployment operations and status output by `console.log()` during component deployment.
+    `--debug`: Lists log information such as the deployment operations and the status output by `console.log()` during component deployment.
 
-    `---inputs publish=true`: publishes all function versions under project during deployment
+    `---inputs publish=true`: Publishes a new version during function deployment.
 
-    `---inputs traffic=0.1`: switches 10% traffic to the `$latest` function version during deployment and the rest traffic to the last published function version.
+    `---inputs traffic=0.1`: Switches 10% of the traffic to the `$latest` function version during deployment and switches the rest of the traffic to the last published function version.
+>?The legacy command format `sls deploy --inputs.key=value` has been changed to `sls deploy --inputs key=value` since Serverless CLI v3.2.3. Legacy commands cannot be used in new versions of Serverless CLI. If you have upgraded Serverless CLI, please use the new commands.
 
-    >?The legacy command format `sls deploy --inputs.key=value` has been changed to `sls deploy --inputs key=value` since Serverless CLI v3.2.3. Legacy commands cannot be used in new versions of Serverless CLI. If you have upgraded Serverles CLI, please use the new commands.
+- **`serverless remove`**: Removes a component instance from the cloud.
 
-- **`serverless remove`**: removes component instance from cloud.
+    `--debug`: Lists log information such as the removal operations and the status output by `console.log()` during component removal.
 
-    `--debug`: lists log information such as removal operations and status output by `console.log()` during component removal.
+- **`serverless info`**: Gets and displays the information about a component instance.
 
-- **`serverless info`**: gets and displays information related to component instance.
+   `--debug`: Lists more `state` values.
 
-   `--debug`: lists more `state` values.
+- **`serverless dev`**: Enables the development mode ("DEV Mode") and automatically deploys changed information when component status changes are detected. In development mode, information such as execution logs, invocation information, and errors can be displayed on the CLI in real time. The development mode also supports in-cloud debugging for Node.js applications.
 
-- **`serverless dev`**: starts development mode ("DEV Mode") and automatically deploys changed information when component status changes are detected. In development mode, information such as execution logs, invocation information, and errors can be output on the command line in real time. In addition, it supports in-cloud debugging for Node.js applications.
 
