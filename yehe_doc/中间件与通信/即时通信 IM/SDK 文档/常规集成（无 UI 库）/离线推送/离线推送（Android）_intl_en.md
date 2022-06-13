@@ -464,7 +464,7 @@ The offline push message can be intuitively expressed by the notification bar al
 -  "Settings - Notifications - Application Notifications - Notification Sound" and "Settings -  Notifications - Application Notifications - Notification Mute" will affect the effect of the offline push notification sound.
 
 #### 4. The failure still exists after integration as instructed
-- First, test whether messages can be properly pushed offline by using the [offline test tool](https://console.cloud.tencent.com/im-detail/tool-push-check) in the IM console.
+- First, test whether messages can be properly pushed offline by using the [offline test tool](https://console.cloud.tencent.com/im/tool-push-check) in the IM console.
 If offline push does not work properly, and the device status is exceptional, check the parameters in the IM console and then check the code initialization and registration logic, including the vendor push service registration and IM offline push configuration.
 If offline push does not work properly but the device status is normal, check whether the ChannelID is correct or whether the backend service is working properly.
 - The offline push feature relies on the vendor's capabilities. Some simple characters may be filtered by the vendor and cannot be passed through and pushed.
