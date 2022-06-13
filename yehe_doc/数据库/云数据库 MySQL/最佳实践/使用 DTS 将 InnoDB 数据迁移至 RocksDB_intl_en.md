@@ -21,13 +21,13 @@ You can sync InnoDB data to RocksDB through DTS to improve the write performance
 <thead><tr><th>Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Source Instance Type</td>
-<td>Select the source database type, which cannot be changed after purchase. Here, select **MySQL**.</td></tr>
+<td>Select the source database type, which cannot be changed after purchase. Here, select <b>MySQL</b>.</td></tr>
 <tr>
 <td>Source Instance Region</td>
 <td>Select the source database region. If the source database is a self-built one, select a region nearest to it.</td></tr>
 <tr>
 <td>Target Instance Type</td>
-<td>Select the target database type, which cannot be changed after purchase. Here, select **MySQL**.</td></tr>
+<td>Select the target database type, which cannot be changed after purchase. Here, select <b>MySQL</b>.</td></tr>
 <tr>
 <td>Target Instance Region</td>
 <td>Select the target database region.</td></tr>
@@ -54,7 +54,7 @@ You can sync InnoDB data to RocksDB through DTS to improve the write performance
 <li>Specified objects: Migrate specified objects.</li></ul> </td></tr>
 <tr>
 <td>Specified objects</td>
-<td>Select the objects to be migrated in **Source Database Object** and move them to the **Selected Object** box.</td></tr>
+<td>Select the objects to be migrated in <b>Source Database Object</b> and move them to the <b>Selected Object</b> box.</td></tr>
 <tr>
 <td>Migrate Account</td>
 <td>Select this feature if you want to migrate the account information of the source database.</td></tr>
