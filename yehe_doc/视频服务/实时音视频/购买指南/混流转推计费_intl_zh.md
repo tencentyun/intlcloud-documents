@@ -42,17 +42,53 @@
 #### 混流转码单价
 TRTC 音视频混流转码单价如下：
 
-|           | 视频用量类型        | 单价（美元/千分钟）   |
-| :----------- | :---------------- | :------------------ |
-| 音频 | 无                | 1.99                |
-| H.264 视频 | 高清（HD）        | 5.99                |
-|            | 全高清（Full HD） | 13.99               |
-|            | 2K                | 25.99               |
-|            | 2K+               | 69.99               |
-| H.265 视频 | 高清（HD）        | 17.99                |
-|            | 全高清（Full HD） | 37.99               |
-|            | 2K                | 69.99               |
-|            | 2K+               | 189.99               |
+<table>
+     <tr>
+         <th style="text-align:center">用量类型</th>
+         <th style="text-align:center">视频用量类型</th>
+         <th style="text-align:center">单价（美元/千分钟）</th>
+ </tr>
+     <tr>
+         <td style="text-align:center">音频</td>
+         <td style="text-align:center">无</td>
+         <td style="text-align:center">1.99</td>
+ </tr>
+  <tr>
+         <td style="text-align:center" rowspan="4">H.264 视频</td>
+         <td style="text-align:center">高清（HD）</td>
+         <td style="text-align:center">5.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">全高清（Full HD）</td>
+         <td style="text-align:center">13.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K</td>
+         <td style="text-align:center">25.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K+</td>
+         <td style="text-align:center">69.99</td>
+  <tr>
+  <tr>
+         <td style="text-align:center" rowspan="4">H.265 视频</td>
+         <td style="text-align:center">高清（HD）</td>
+         <td style="text-align:center">17.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">全高清（Full HD）</td>
+         <td style="text-align:center">37.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K</td>
+         <td style="text-align:center">69.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K+</td>
+         <td style="text-align:center">189.99</td>
+ </tr> 
+</table>
+
 
 TRTC 根据每个混流转推任务下订阅的所有视频的集合分辨率，将视频用量分为如下四个类型并分别计算各类型视频的费用：
 
@@ -92,9 +128,9 @@ TRTC 根据每个混流转推任务下订阅的所有视频的集合分辨率，
 **转推带宽费用** = **转推月峰值带宽用量** × **转推单价**
 
 #### 转推单价
-TRTC 音视频混流转码单价如下：
+TRTC 转推单价如下：
 
-|          | 单价（美元/Mbps/月） |
+| 用量类型 | 单价（美元/Mbps/月） |
 | :------- | :------------------- |
 | 月峰值带宽 | 18.99               |
 

@@ -42,17 +42,51 @@ Cost formula:
 #### Pricing
 The table below lists the unit prices of audio and video MixTranscoding durations:
 
-|           | Video Category        | Price (USD/1,000 Min)   |
-| :----------- | :---------------- | :------------------ |
-| Audio | -                | 1.99                |
-| H.264 video | HD        | 5.99                |
-|            | FHD | 13.99               |
-|            | 2K                | 25.99               |
-|            | 2K+               | 69.99               |
-| H.265 video | HD        | 17.99                |
-|            | FHD | 37.99               |
-|            | 2K                | 69.99               |
-|            | 2K+               | 189.99               |
+<table>
+     <tr>
+         <th style="text-align:center">Category</th>
+         <th style="text-align:center">Video Category</th>
+         <th style="text-align:center">Price (USD/1,000 Min)</th>
+ </tr>
+     <tr>
+         <td style="text-align:center">Audio</td>
+         <td style="text-align:center">None</td>
+         <td style="text-align:center">1.99</td>
+ </tr>
+  <tr>
+         <td style="text-align:center" rowspan="4">H.264 video</td>
+         <td style="text-align:center">HD</td>
+         <td style="text-align:center">5.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">FHD</td>
+         <td style="text-align:center">13.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K</td>
+         <td style="text-align:center">25.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K+</td>
+         <td style="text-align:center">69.99</td>
+   <tr>
+         <td style="text-align:center" rowspan="4">H.265 video</td>
+         <td style="text-align:center">HD</td>
+         <td style="text-align:center">17.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">FHD</td>
+         <td style="text-align:center">37.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K</td>
+         <td style="text-align:center">69.99</td>
+ </tr>
+     <tr>
+         <td style="text-align:center">2K+</td>
+         <td style="text-align:center">189.99</td>       
+ </tr> 
+</table>
 
 According to the sum of the resolutions of all videos mixed, TRTC classifies the resolution of video MixTranscoding durations into the following four categories:
 
@@ -94,7 +128,7 @@ Cost formula:
 #### Pricing
 The bandwidth used for relaying is priced as follows:
 
-|          | Price (USD/Mbps/Month) |
+| Category | Price (USD/Mbps/Month) |
 | :------- | :------------------- |
 | Monthly peak bandwidth | 18.99               |
 
