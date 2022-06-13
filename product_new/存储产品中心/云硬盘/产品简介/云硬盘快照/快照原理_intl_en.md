@@ -1,14 +1,14 @@
 ## Relationship between a snapshot and the source cloud disk
-A snapshot is the data backup of a cloud disk at a certain point in time. Data writing and modification to the cloud disk do not affect snapshots that are already created. Based on this feature, users can use snapshots to record cloud disk data at different points in time, which can be used to fulfill requirements for system recovery, disaster recovery, and cloud disk replication.
+A snapshot is the data backup of a cloud disk at a certain point in time. Data writing and modification to the cloud disk do not affect snapshots that are already created. Users can use snapshots to back up cloud disk data at different points in time, which can be used for system recovery, disaster recovery, and cloud disk replication.
 As shown in the following figure, Snapshot 1 retains data block information of the cloud disk at 10:00 (the snapshot creation time), regardless of any changes to the disk that occur after the snapshot is created.
 ![](https://main.qcloudimg.com/raw/61a22a0a479528cfac57042ea3ebc967.png)
 
-## Relationship between snapshot size and the source cloud disk
-A snapshot only saves data blocks in the cloud disk that have been written to or modified. Therefore, the size of the snapshot corresponding to the cloud disk will be smaller than the size of the cloud disk.
-The relationship between snapshot size and data disk is shown in the following figure:
+## Snapshot Size
+A snapshot only saves data blocks in the cloud disk that have been written to or modified. Therefore, the size of the snapshot is smaller than the source cloud disk.
+See below for more details:
 ![](https://main.qcloudimg.com/raw/8d6315f9b4136f8ba2162ab8988ec192.png)
 
-## Incremental snapshot creation process 
+## Creaing Incremental Snapshots 
 Tencent Cloud snapshots use an incremental snapshot mechanism. When you continuously create multiple snapshots of the same cloud disk, only the first snapshot is a full snapshot, and subsequent snapshots only contain data that has been modified relative to the previous snapshot (incremental snapshot). This can minimize the total storage capacity occupied when users continuously create snapshots, reducing user costs.
 For example: Assume a cloud disk has three data blocks, A, B, and C. You make snapshots at 10:00, 11:00, and 12:00 respectively. Changes of data blocks on the disk between these points in time are shown in the following figure, and each snapshot should save the following data:
 - Snapshot 1 (initial snapshot): Contains data backups of all data blocks on the cloud disk at that time.
@@ -17,12 +17,12 @@ For example: Assume a cloud disk has three data blocks, A, B, and C. You make sn
 
 ![](https://main.qcloudimg.com/raw/e75b405c65eef41634e91231c71d96f4.png)
 
-## Incremental snapshot rollback process 
+## Rolling Back with Incremental Snapshots 
 Based on the previous example, when you use Snapshot 3 to perform data rollback, the system will merge the data in Snapshot 1, Snapshot 2, and Snapshot 3. If there is a data block in the same location, data in the newest snapshot will be taken. During final rollback, the merged data will be written to the cloud disk to be rolled back.
 Incremental snapshot rollback process is as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/f55ff6e23d37837f29214a1c8e90c496.png)
 
-## Incremental snapshot deletion and merging process
+## Deleting and Merging Incremental Snapshots
 - When a full snapshot (that is, the first snapshot) is being deleted, the system automatically merges the full snapshot with the next incremental snapshot.
 - When an incremental snapshot is being deleted, the system automatically merges the incremental snapshot with the next incremental snapshot. If there is no next incremental snapshot, it is directly deleted.
 
