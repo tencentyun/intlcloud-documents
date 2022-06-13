@@ -13,8 +13,7 @@ DDoS 高防支持对已接入防护的网站业务配置精准防护策略。开
 | Accept   | 发起访问请求的客户端希望接受的数据类型                 | 等于，包含，不包含                                           |
 | Method   | 访问请求的方法，具体包括HEAD、GET、POST、DELTET、PUT。 | 等于，包含，不包含                                           |
 
->?轻量应用服务器（Lighthouse）定制版不支持 DDoS 防护、CC 防护的自定义防护配置。
->
+
 
 ## 前提条件
 您需要成功 [购买 DDoS 高防包](https://intl.cloud.tencent.com/document/product/1029/36115) ，并设置防护对象。
