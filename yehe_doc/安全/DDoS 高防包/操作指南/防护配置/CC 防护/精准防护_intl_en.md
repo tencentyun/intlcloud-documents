@@ -3,6 +3,7 @@
 Anti-DDoS supports precise protection for connected web businesses. With the precise protection, you can configure protection policies combining multiple conditions of common HTTP fields, such as URI, UA, Cookie, Referer, and Accept to screen access requests. For the requests matched the conditions, you can configure CAPTCHA to verify the requesters or a policy to automatically drop or allow the requests. Precise protection is available for policy customization in various use cases to precisely defend against CC attacks.
 
 The match conditions define the request characteristics to be checked, i.e., the attribute characteristics of the HTTP field in a request. Precise protection supports checking the HTTP fields below:
+
 <table>
     <tr>
         <th>Match Field</th>
@@ -33,8 +34,13 @@ The match conditions define the request characteristics to be checked, i.e., the
         <td>Accept</td>
         <td>The data type to be received by the client that initiates the access request.</td>
 				<td>Equals to, includes, or does not include.</td>
+    <tr>
+        <td>Method</td>
+        <td>Request methods, such as HEAD, GET, POST, DELETE, and PUT.</td>
+				<td>Equals to, includes, or does not include.</td>	    
     </tr>
 </table>
+
 
 ## Prerequisites
 You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the protected target.
