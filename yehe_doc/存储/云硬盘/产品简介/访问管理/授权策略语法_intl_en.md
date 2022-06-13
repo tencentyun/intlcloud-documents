@@ -16,12 +16,12 @@ CAM policy:
        ] 
 } 
 ```
-- **version**: is required. Currently, the only valid value is `"2.0"`.
-- **statement**: describes the detailed information of one or more permissions. Each permission is composed of a set of elements including effect, action, resource, and condition. A policy has only one statement element.
- 1. **action**: is **required**. It describes the operations to be allowed or denied, which can be APIs (described with the "name" prefix) or a feature set (a set of specific APIs described with the "permid" prefix).
- 2. **resource**: is **required**. It describes the specific data to be authorized in a six-segment format. Detailed resource definitions vary by product.
- 3. **condition**: is optional. It describes the conditions for the policy to take effect. A condition consists of an operator, operation key, and operation value. A condition value may contain information such as a time and IP address. Some services allow you to specify other information in conditions.
- 4. **effect**: is **required.** It describes the result returned by the statement, that is, whether the permission is allowed ("allow") or denied ("deny").
+- **version**: Required. It must be `"2.0"`.
+- **statement**: Detailed information of one or more permissions. Each permission is composed of a set of elements including effect, action, resource, and condition. A policy has only one statement element.
+ 1. **action**: Required. It describes the operations to be allowed or denied, which can be APIs (described with the "name" prefix) or a feature set (a set of specific APIs described with the "permid" prefix).
+ 2. **resource**: Required. It describes the specific data to be authorized in a six-segment format. Detailed resource definitions vary by product.
+ 3. **condition**: Optional. It describes the conditions for the policy to take effect. A condition consists of an operator, operation key, and operation value. A condition value may contain information such as a time and IP address. Some services allow you to specify other information in conditions.
+ 4. **effect**: Required. It describes the result returned by the statement, that is, whether the permission is allowed ("allow") or denied ("deny").
 
 <span id = "caozuo"></span>
 ## CBS Operations
