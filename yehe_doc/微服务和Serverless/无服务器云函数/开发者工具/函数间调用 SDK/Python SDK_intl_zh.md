@@ -13,6 +13,8 @@ Tencentserverless SDK 的功能特性可分为以下几点：
 * 支持跨地域函数调用。
 * 支持 Python 原生调用方式。
 
+>? 函数间调用 SDK 仅适用于事件函数，Web 函数可通过在函数代码中请求 Web 函数对应路径的方式发起调用。
+
 ## 快速开始
 
 ### 云端函数互调
@@ -21,7 +23,7 @@ Tencentserverless SDK 的功能特性可分为以下几点：
 
 >!
 >
->- 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://intl.cloud.tencent.com/zh/document/api/583/17238)。
+>- 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://intl.cloud.tencent.com/document/api/583/17238)。
 >- 如果不指定地域，默认为同地域下函数互调。
 >- 命名空间不指定，默认为 default。
 
