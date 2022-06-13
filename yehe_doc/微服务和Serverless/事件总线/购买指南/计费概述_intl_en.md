@@ -1,11 +1,11 @@
 >!
-> 1. EventBridge is currently in beta test, during which you can use it free of charge.
-> 2. EventBridge will start billing from May 9th, 2022.
+> 1. 事件总线 EventBridge 目前处于产品公测阶段，该阶段使用腾讯云事件总线产品，不收取任何费用。
+> 2. 自2022年5月9日起，事件总线 EventBridge 将结束免费公测，正式开始计费。
 
 This document introduces the billing mode and billable items of Tencent Cloud EventBridge.
 
 ## Billing Mode
-EventBridge is provided in a **Pay-as-you-go** manner.
+EventBridge is provided in a **pay-as-you-go** manner.
 
 |**Type**|**Pay-as-you-go**|
 |-----|------|
@@ -16,59 +16,18 @@ EventBridge is provided in a **Pay-as-you-go** manner.
 
 ## Pricing Details
 
-### Free tier
+EventBridge is billed according to the event bus type:
+- **Tencent Cloud service event bus**: The Tencent Cloud service event bus of the Gangzhou region is not billed.
+- **Custom event bus**: Event buses created by users in each region are billed based on the number of events delivered to the event buses.
 
-Events published to **default event buses for Tencent Cloud services** are free of charge.
-
-### Billable items and pricing
-
-#### Fee
-
-You are billed by the number of events published to your **custom event buses**, such as custom applications, message queues and databases. Details are as follows:
-
-<table><tr>
-<th rowspan="2"><nobr>Billing Tier</nobr></th>
-<th rowspan="2"><nobr>Total Events (Million/Month)</nobr></th>
-<th colspan="2"><p align="center">Unit Price (USD/Million) </p></th>
-</tr><tr>
-<th>Guangzhou, Nanjing, Shanghai, Hangzhou, Shenzhen, Beijing, Chengdu, Chongqing, Tianjin, Changsha</th>
-<th>Hong Kong (China), Singapore, Frankfurt, Toronto, Seoul, Silicon Valley</th>
-</tr><tr>
-<td >Tier 1</td>
-<td>N ≤ 1,000</td>
-<td>0.64</td>
-<td>0.832</td>
-</tr><tr>
-<td>Tier 2</td>
-<td>1,000 < N ≤ 5,000</td>
-<td>0.576</td>
-<td>0.7488 </td>
-</tr><tr>
-<td>Tier 3</td>
-<td>5,000 < N ≤ 10,000</td>
-<td>0.48</td>
-<td>0.624</td>
-</tr><tr>
-<td>Tier 4</td>
-<td>10,000 < N ≤ 50,000</td>
-<td> 0.416</td>
-<td> 0.5408</td>
-</tr><tr>
-<td>Tier 5</td>
-<td>N > 50,000</td>
-<td>0.384</td>
-<td>0.4992</td>
-</tr></table>
+For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1108/43288).
 
 
-Every 64 KB of data is counted as one event. When the data is less than 64 KB, it is rounded up. For example, 256 KB is counted as 4 events, and 220 KB is also counted as 4 events.
-
-
-## Billing Examples
+## Billing Example
 If you receive 3 million events in a month, with 2 million sent to the default event buses for Tencent Cloud services, and 1 million sent to your custom event buses, you will be billed as follows:
 
-- Total events: 3 million 
-- Default Tencent Cloud service events: 2 million (free of charge)
+- Total events: 3 million (64 KB or less per event)
+- Tencent Cloud service events: 2 million (free of charge)
 - Custom events: 1 million
 - Cost for the current month = 1 million * 0.64 USD / 1 million = 0.64 USD
 
