@@ -1,5 +1,3 @@
-# Billing of MixTranscoding and Relay to CDN
-
 This document describes the billing of MixTranscoding and relay to CDN.
 
 If you have a contract with TRTC, the billing details in the contract will apply.
