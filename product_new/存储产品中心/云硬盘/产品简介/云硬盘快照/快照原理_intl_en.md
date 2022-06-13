@@ -1,4 +1,4 @@
-## Relationship between a snapshot and the source cloud disk
+## Snapshot and Source Disk
 A snapshot is the data backup of a cloud disk at a certain point in time. Data writing and modification to the cloud disk do not affect snapshots that are already created. Users can use snapshots to back up cloud disk data at different points in time, which can be used for system recovery, disaster recovery, and cloud disk replication.
 As shown in the following figure, Snapshot 1 retains data block information of the cloud disk at 10:00 (the snapshot creation time), regardless of any changes to the disk that occur after the snapshot is created.
 ![](https://main.qcloudimg.com/raw/61a22a0a479528cfac57042ea3ebc967.png)
