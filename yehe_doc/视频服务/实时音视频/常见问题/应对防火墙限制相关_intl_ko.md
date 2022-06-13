@@ -10,14 +10,16 @@
 도메인 얼로우리스트:
 
 ```
-cloud.tim.qq.com
-gz.file.myqcloud.com
-avc.qcloud.com
-yun.tim.qq.com
-dldir1.qq.com
-mlvbdc.live.qcloud.com
-query.tencent-cloud.com
-*.trtc.tencent-cloud.com        
+intl-query.trtc.tencent-cloud.com
+intl-accelerate.trtc.tencent-cloud.com
+trtc-client-log-overseas-1258344699.cos.ap-singapore.myqcloud.com
+intl-sdklog.trtc.tencent-cloud.com
+sdkdc.live.qcloud.com
+speedtestint.trtc.tencent-cloud.com
+intl-query.trtc.tencent-cloud.com
+hwapi.im.qcloud.com
+videoapi-sgp.im.qcloud.com
+trtc-sdk-config-1258344699.file.myqcloud.com          
 ```
 
  
@@ -33,9 +35,11 @@ query.tencent-cloud.com
 도메인 얼로우리스트:
 
 ```
-*.rtc.qcloud.com
-*.rtc.qq.com
-yun.tim.qq.com
+intl-signaling.rtc.qq.com
+intl-signaling.rtc.qcloud.com
+intl-schedule.rtc.qq.com
+intl-schedule.rtc.qcloud.com
+videoapi-sgp.im.qcloud.com
 ```
 
 ### 클라이언트가 프라이빗 네트워크에서 web용 TRTC SDK에 액세스하도록 프록시를 구성하려면 어떻게 해야 합니까?
