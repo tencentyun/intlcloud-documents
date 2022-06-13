@@ -1,6 +1,6 @@
 ## 功能描述
 
-CreateMediaJobs 用于提交一个 SDR to HDR 任务。
+CreateMediaJobs 用于提交一个任务。
 
 ## 请求
 
@@ -26,25 +26,28 @@ Content-Type: application/xml
 此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
+
 该请求操作的实现需要有如下请求体。
 
 ```shell
 <Request>
-  <Tag>SDRtoHDR</Tag>
+  <Tag>SmartCover</Tag>
   <Input>
     <Object></Object>
   </Input>
   <Operation>
-    <SDRtoHDR>
-      <HdrMode>HLG</HdrMode>
-    </SDRtoHDR>
-    <TranscodeTemplateId></TranscodeTemplateId>
-    <WatermarkTemplateId></WatermarkTemplateId>
     <Output>
       <Region></Region>
       <Bucket></Bucket>
       <Object></Object>
     </Output>
+    <SmartCover>
+      <Format></Format>
+      <Width></Width>
+      <Height></Height>
+      <Count></Count>
+      <DeleteDuplicates></DeleteDuplicates>
+    </SmartCover>    
   </Operation>
   <QueueId></QueueId>
   <CallBack></CallBack>
@@ -61,11 +64,11 @@ Container 类型 Request 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 是否必选 |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | 创建任务的 Tag：SDRtoHDR                                   | String    | 是   |
+| Tag                | Request | 创建任务的 Tag：Transcode（转码）、Animation（动图）、SmartCover（智能封面）、Snapshot（截图）、Concat（拼接）                             | String    | 是   |
 | Input              | Request | 待操作的媒体信息                                         | Container | 是   |
-| Operation          | Request | 操作规则，支持对单个文件执行多个不同任务，最多可填写6个    | Container | 是   |
+| Operation          | Request | 操作规则，支持对单个文件执行多个不同任务，最多可填写6个                                               | Container | 是   |
 | QueueId            | Request | 任务所在的队列 ID                                         | String    | 是   |
-| CallBack           | Request | 回调地址                                                | String    | 否   |
+| CallBack           | Request | 回调地址                 | String    | 否   |
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -77,26 +80,28 @@ Container 类型 Operation 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| SDRtoHDR             | Request.Operation | 指定 SDRtoHDR 参数                                             | Container | 是   |
-| Transcode           | Request.Operation | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空              | Container | 否   |
-| TranscodeTemplateId | Request.Operation | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空   | String    | 否 |
-| Watermark           | Request.Operation | 指定水印模板参数，同创建水印模板 CreateMediaTemplate 接口的 Request.Watermark, 最多传3个 | Container | 否 |
-| WatermarkTemplateId | Request.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 id          | String    | 否 |
-| Output              | Request.Operation | 结果输出地址                                                            | Container | 是   |
+| SmartCover                   | Request.Operation | 封面配置        | Container | 否   |
+| Output                       | Request.Operation | 结果输出地址                                | Container | 是   |
 
-Container 类型 SDRtoHDR 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                      | 描述                                   | 类型      | 是否必选 |限制 |
-| ------------------ | :------------------------ | -------------------------------------- | --------- | ---- |---- |
-| HdrMode             | Request.Operation.SDRtoHDR | HDR 标准                                | string | 是   |1. HLG<br/>2. HDR10|
+Container 类型 SmartCover 的具体数据类型描述如下：
+
+| 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 | 默认值 | 限制 |
+| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- | ---- | ---- |
+| Format                   | Request.Operation.SmartCover | 封面图片类型        | String | 是 | 无 | png、jpg、webp  |
+| Width                    | Request.Operation.SmartCover | 封面图片宽度    | String | 是  | 无 | 1. 值范围：[128，4096]<br/> 2. 单位：px<br/> |
+| Height                   | Request.Operation.SmartCover | 封面图片高度    | String | 是 | 无 | 1. 值范围：[128，4096]<br/> 2. 单位：px<br/> |
+| Count                    | Request.Operation.SmartCover | 封面数量    | String | 否  | 3 | 1. 值范围：[1，10]<br/> |
+| DeleteDuplicates         | Request.Operation.SmartCover | 封面是否去重    | String | 否  | false | true/false |
+
 
 Container 类型 Output 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                   | 描述                                                         | 类型   | 是否必选 |
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Region             | Request.Operation.Output | 存储桶的地域                                                | String | 是   |
-| Bucket             | Request.Operation.Output | 存储结果的存储桶                                              | String | 是   |
-| Object             | Request.Operation.Output | 输出结果的文件名                                             | String | 是   |
+| Bucket             | Request.Operation.Output | 存储结果的存储桶                                             | String | 是   |
+| Object             | Request.Operation.Output | 输出结果的文件名。<br/>**当任务类型为 SmartCover 时，必须包含 ${Number} 参数。**<br/>如 Object 为 my-new-cover-${Number}.jpg，对应实际3张输出结果时，分别为<br/>my-new-cover-0.jpg<br/>my-new-cover-1.jpg<br/>my-new-cover-2.jpg | String | 是   |
 
 
 
@@ -117,24 +122,25 @@ Container 类型 Output 的具体数据描述如下：
     <JobId></JobId>
     <State></State>
     <CreationTime></CreationTime>
-    <StartTime></StartTime>
     <EndTime></EndTime>
     <QueueId></QueueId>
-    <Tag>SDRtoHDR</Tag>
+    <Tag>SmartCover</Tag>
     <Input>
       <Object></Object>
     </Input>
     <Operation>
-      <SDRtoHDR>
-        <HdrMode>HLG</HdrMode>
-      </SDRtoHDR>
-      <TranscodeTemplateId></TranscodeTemplateId>
-      <WatermarkTemplateId></WatermarkTemplateId>
       <Output>
         <Region></Region>
         <Bucket></Bucket>
         <Object></Object>
       </Output>
+      <SmartCover>
+        <Format></Format>
+        <Width></Width>
+        <Height></Height>
+        <Count></Count>
+        <DeleteDuplicates></DeleteDuplicates>
+      </SmartCover> 
       <MediaInfo>
       </MeidaInfo>
     </Operation>
@@ -159,17 +165,16 @@ Container 节点 JobsDetail 的内容：
 
 |节点名称（关键字）|父节点|描述|类型|
 |:---|:-- |:--|:--|
-| Code | Response.JobsDetail | 错误码，只有 State 为 Failed 时有意义 |  String |
+| Code | Response.JobsDetail | 错误码，只有 State为 Failed 时有意义 |  String |
 | Message | Response.JobsDetail | 错误描述，只有 State 为 Failed 时有意义 |  String |
 | JobId | Response.JobsDetail | 新创建任务的 ID |  String |
-| Tag | Response.JobsDetail | 新创建任务的 Tag：SDRtoHDR | String |
+| Tag | Response.JobsDetail | 新创建任务的 Tag：Transcode（转码）、Animation（动图）、SmartCover（智能封面）、Snapshot（截图）、Concat（拼接） | String |
 | State | Response.JobsDetail | 任务的状态，为 Submitted、Running、Success、Failed、Pause、Cancel 其中一个 |  String |
 | CreationTime | Response.JobsDetail | 任务的创建时间 |  String |
-| StartTime | Response.JobsDetail | 任务的开始时间 |  String |
 | EndTime | Response.JobsDetail | 任务的结束时间 |  String |
 | QueueId | Response.JobsDetail | 任务所属的队列 ID |  String |
 | Input | Response.JobsDetail | 该任务的输入资源地址 |  Container |
-| Operation | Response.JobsDetail | 该任务的规则，支持对单个文件执行多个不同任务，最多可填写6个 |  Container |
+| Operation | Response.JobsDetail | 该任务的操作规则，支持对单个文件执行多个不同任务，最多可填写6个 |  Container |
 
 Container 节点 Input 的内容：
 同请求中的 Request.Input 节点。
@@ -178,7 +183,7 @@ Container 节点 Operation 的内容：
 
 |节点名称（关键字）|父节点|描述|类型|
 |:---|:-- |:--|:--|
-| SDRtoHDR | Response.JobsDetail.Operation | 同请求中的 Request.Operation.SDRtoHDR |  Container |
+| TemplateId | Response.JobsDetail.Operation | 任务的模板 ID |  String |
 | Output | Response.JobsDetail.Operation | 文件的输出地址 |  Container |
 | MediaInfo | Response.JobsDetail.Operation | 转码输出视频的信息，没有时不返回 |  Container |
 
@@ -186,7 +191,7 @@ Container 节点 Output 的内容：
 同请求中的 Request.Operation.Output 节点。
 
 Container 节点 MediaInfo 的内容：
-同GenerateMediaInfo接口中的 Response.MediaInfo 节点。
+同GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
 
 #### 错误码
 
@@ -194,33 +199,40 @@ Container 节点 MediaInfo 的内容：
 
 ## 实际案例
 
+**使用模板 ID**
+
 #### 请求
 
 ```shell
 POST /jobs HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 Content-Length: 166
 Content-Type: application/xml
 
+
+
 <Request>
-  <Tag>SDRtoHDR</Tag>
+  <Tag>SmartCover</Tag>
   <Input>
     <Object>test.mp4</Object>
   </Input>
   <Operation>
-    <SDRtoHDR>
-      <HdrMode>HLG</HdrMode>
-    </SDRtoHDR>
-    <TranscodeTemplateId></TranscodeTemplateId>
-    <WatermarkTemplateId></WatermarkTemplateId>
     <Output>
-        <Region>ap-beijing</Region>
-        <Bucket>examplebucket-1250000000</Bucket>
-        <Object>test-trans.mkv</Object>
+      <Region>ap-beijing</Region>
+      <Bucket>abc-1250000000</Bucket>
+      <Object>my-new-cover-${Number}.jpg</Object>
     </Output>
+    <SmartCover>
+      <Format>png</Format>
+      <Width>128</Width>
+      <Height>128</Height>
+      <Count>3</Count>
+      <DeleteDuplicates>false</DeleteDuplicates>
+    </SmartCover> 
   </Operation>
   <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
+  <CallBack>https://www.callback.com</CallBack>
 </Request>
 ```
 
@@ -233,7 +245,9 @@ Content-Length: 230
 Connection: keep-alive
 Date: Thu, 15 Jun 2017 12:37:29 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+
+
 
 <Response>
   <JobsDetail>
@@ -242,24 +256,25 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
     <State>Submitted</State>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <StartTime></StartTime>
     <EndTime></EndTime>
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>SDRtoHDR</Tag>
+    <Tag>SmartCover</Tag>
     <Input>
       <Object>test.mp4</Object>
     </Input>
     <Operation>
-        <SDRtoHDR>
-          <HdrMode>HLG</HdrMode>
-        </SDRtoHDR>
-        <TranscodeTemplateId></TranscodeTemplateId>
-        <WatermarkTemplateId></WatermarkTemplateId>
-        <Output>
-            <Region>ap-beijing</Region>
-            <Bucket>examplebucket-1250000000</Bucket>
-            <Object>test-trans.mp4</Object>
-        </Output>
+      <Output>
+        <Region>ap-beijing</Region>
+        <Bucket>abc-1250000000</Bucket>
+        <Object>my-new-cover-${Number}.jpg</Object>
+      </Output>
+      <SmartCover>
+        <Format>png</Format>
+        <Width>128</Width>
+        <Height>128</Height>
+        <Count>3</Count>
+        <DeleteDuplicates>false</DeleteDuplicates>
+      </SmartCover> 
     </Operation>
   </JobsDetail>
 </Response>
