@@ -158,7 +158,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
@@ -247,7 +247,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
@@ -373,7 +373,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
@@ -472,7 +472,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 #### 返回值
 
@@ -581,7 +581,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -626,7 +626,7 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // 设置 bucket 的地域
-    // COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
+    // COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
     clientConfig.setRegion(new Region("COS_REGION"));
 
     // 设置请求协议, http 或者 https
@@ -708,7 +708,7 @@ cosClient.shutdown();
 
 Request 成员说明：
 
-| Request 成员 | 设置方法  | 描述                                                         | 类型   | 必填 |
+| Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 描述                                                         | 类型   | 必填 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String         | 是|
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         | 是|
@@ -741,7 +741,7 @@ PutObjectResult 类用于返回结果信息，其主要成员说明如下：
 | requestId | 请求 ID | String                |
 | dateStr  | 当前服务端时间                        | String             |
 | versionId    | 开启版本控制的存储桶，返回对象的版本号 ID              | String |
-| eTag        | 简单上传接口返回对象的 MD5 值                    | String |
+| eTag        | 简单上传接口返回对象的 MD5 值，例如：09cba091df696af91549de27b8e7d0f6，**注意：虽然在请求响应头域 ETag 的值是有双引号的，但是这里解析后的字符串 eTag 值是没有双引号的** | String |
 |crc64Ecma| 服务端根据对象内容计算出来的 CRC64| String |
 
 ### 上传流类型
@@ -809,7 +809,7 @@ cosClient.shutdown();
 
 Request 成员说明：
 
-| Request 成员 | 设置方法  | 描述                                                         | 类型   | 必填 |
+| Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 描述                                                         | 类型   | 必填 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String         | 是|
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         | 是|
@@ -842,7 +842,7 @@ PutObjectResult 类用于返回结果信息，其主要成员说明如下：
 | requestId | 请求 ID | String                |
 | dateStr  | 当前服务端时间                        | String             |
 | versionId    | 开启版本控制的存储桶，返回对象的版本号 ID              | String |
-| eTag        | 简单上传接口返回对象的 MD5 值                    | String |
+| eTag        | 简单上传接口返回对象的 MD5 值，例如：09cba091df696af91549de27b8e7d0f6，**注意：虽然在请求响应头域 ETag 的值是有双引号的，但是这里解析后的字符串 eTag 值是没有双引号的** | String |
 |crc64Ecma| 服务端根据对象内容计算出来的 CRC64| String |
 
 ### 创建目录
@@ -919,13 +919,13 @@ File part2File = new File("/path/to/part2File");
 try {
     AppendObjectRequest appendObjectRequest = new AppendObjectRequest(bucketName, key, part1File);
     appendObjectRequest.setPosition(0L);
-    AppendObjectResult appendObjectResult = cosclient.appendObject(appendObjectRequest);
+    AppendObjectResult appendObjectResult = cosClient.appendObject(appendObjectRequest);
     long nextAppendPosition = appendObjectResult.getNextAppendPosition();
     System.out.println(nextAppendPosition);
 
     appendObjectRequest = new AppendObjectRequest(bucketName, key, part2File);
     appendObjectRequest.setPosition(nextAppendPosition);
-    appendObjectResult = cosclient.appendObject(appendObjectRequest);
+    appendObjectResult = cosClient.appendObject(appendObjectRequest);
     nextAppendPosition = appendObjectResult.getNextAppendPosition();
     System.out.println(nextAppendPosition);
 } catch (CosServiceException e) {
@@ -934,7 +934,7 @@ try {
     e.printStackTrace();
 }
 // 关闭客户端
-cosclient.shutdown();
+cosClient.shutdown();
 ```
 
 #### 参数说明
@@ -1005,7 +1005,7 @@ String buildPostObjectBody(String boundary, Map<String, String> formFields, Stri
 ```java
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-// COS_REGION 请参照 https://intl.cloud.tencent.com/document/product/436/6224
+// COS_REGION 请参照 https://cloud.tencent.com/document/product/436/6224
 String endpoint = "cos.{COS_REGION}.myqcloud.com";
 // 对象键(Key)是对象在存储桶中的唯一标识。
 String key = "exampleobject";
@@ -1230,7 +1230,7 @@ MultipartUploadListing multipartUploadListing = null;
 boolean found = false;
 
 do {
-    multipartUploadListing = cosclient.listMultipartUploads(listMultipartUploadsRequest);
+    multipartUploadListing = cosClient.listMultipartUploads(listMultipartUploadsRequest);
     List<MultipartUpload> multipartUploads = multipartUploadListing.getMultipartUploads();
 
     for (MultipartUpload mUpload : multipartUploads) {
@@ -1475,7 +1475,7 @@ cosClient.shutdown();
 
 #### 参数说明
 
-| 参数名称   | 设置方法          | 描述                                                         | 类型              |
+| 参数名称   | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型              |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
 | bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String            |
 | key        | 构造函数或 set 方法 | 指定分块上传到 COS 上的路径，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324)。例如对象键为 folder/picture.jpg | String            |

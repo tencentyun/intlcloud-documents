@@ -46,11 +46,11 @@ Every CAM policy statement contains the resources applicable to the policy itsel
 ```
 qcs:project_id:service_type:region:account:resource
 ```
-- **project_id**: indicates project information, which is only used to enable compatibility with earlier CAM logics. This element can be left empty.
-- **service_type**: indicates the short name of a product, for example, "CVM".
-- **region**: indicates region information, for example, "bj".
-- **account**: indicates the root account of a resource owner, for example, "uin/164256472".
-- **resource**: indicates the specific resources of a product, for example, "volume/diskid1" or "volume/*".
+- **project_id**: (Optional) Project information, which is only used to enable compatibility with earlier CAM logics. 
+- **service_type**: Short name of a Tencent Cloud product, for example, "CVM".
+- **region**: Region information, for example, "bj".
+- **account**: Root account of a resource owner, for example, "uin/164256472".
+- **resource**: Specific resources of a product, for example, "volume/diskid1" or "volume/*".
 
 You can specify a CBS resource in the statement, for example, "disk-abcdefg", as shown below.
 ```

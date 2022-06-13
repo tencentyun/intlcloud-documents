@@ -1,6 +1,6 @@
 ### 什么是 COSBrowser 工具？
 
-COSBrowser 是腾讯云对象存储 COS 推出的可视化界面工具，让您可以使用更简单的交互轻松实现对 COS 资源的查看、传输和管理。目前 COSBrowser 提供桌面端（Windows、macOS、Linux）和移动端（Android、iOS），详细介绍请参见 [COSBrowser 简介](https://intl.cloud.tencent.com/document/product/436/11366)。
+COSBrowser 是腾讯云对象存储（Cloud Object Storage，COS）推出的可视化界面工具，让您可以使用更简单的交互轻松实现对 COS 资源的查看、传输和管理。目前 COSBrowser 提供桌面端（Windows、macOS、Linux）和移动端（Android、iOS），详细介绍请参见 [COSBrowser 简介](https://intl.cloud.tencent.com/document/product/436/11366)。
 
 
 ### 如何下载 COSBrowser 工具?
@@ -9,7 +9,7 @@ COSBrowser 是腾讯云对象存储 COS 推出的可视化界面工具，让您�
 
 ### 如何登录 COSBrowser？
 
-详细介绍可查看 [桌面端使用说明](https://intl.cloud.tencent.com/document/product/436/32565) 或 [移动端使用说明](https://intl.cloud.tencent.com/document/product/436/32566) 文档。
+详细介绍可查看 [桌面端使用说明](https://intl.cloud.tencent.com/document/product/436/32565) 或 [移动端使用说明](https://intl.cloud.tencent.com/document/product/436/41616) 文档。
 
 **桌面端登录**
 
@@ -45,6 +45,18 @@ COSBrowser 移动端支持以下三种登录方式：
 
 不支持临时密钥登录。
 
+### COSBrowser 工具体验版如何进入？
+
+**体验须知**
+
+**应用体验规则：**
+
+- 进入应用的体验版本后，COSBrowser 会自动生成临时账号并登录，临时账号为一次性使用，退出后将自动注销并抹除所有数据。
+- 临时账号的有效期为 24 小时，到期后如需继续体验，请在本页面重新点击体验。
+
+**应用体验限制：**
+
+体验版本仅提供了基本的数据管理能力，例如上传文件、下载文件、分享链接等。如需体验更多功能，请使用个人账号登录，可参阅 [COSBrowser 快速入门](https://intl.cloud.tencent.com/document/product/436/35276) 文档进一步了解。
 
 ### CentOS 图形界面双击无法启动 COSBrowser 客户端？
 
@@ -93,7 +105,7 @@ COSBrowser 默认上传为标准存储类型，您可以在上传对象时手动
 
 通过以下方式复制文件链接：
 1. 在文件列表中选择文件，右键单击**复制链接**，打开**自定义复制链接**窗口。
-2. 在文件列表中单击**详情**，打开**文件详情**窗口，直接复制“对象地址”或“创建临时链接”，如下图。
+2. 在文件列表中单击**详情**，打开**文件详情**窗口，直接复制“对象地址”或“创建临时链接”。
 
 
 
