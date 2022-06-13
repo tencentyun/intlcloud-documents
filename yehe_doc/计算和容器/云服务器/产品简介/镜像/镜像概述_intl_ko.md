@@ -28,7 +28,7 @@ Tencent Cloud는 다음과 같은 이미지를 제공합니다.
 <td>
 과금은 다음 두 부분을 포함합니다.
 <ul style="margin:0px">
-<li>스냅샷 요금: CBS 스냅샷 서비스는 이미지의 맨 아래 레이어에서 사용되기 때문에 사용자 정의 이미지를 유지하기 위해 일정 스냅샷 요금이 발생합니다. 중국 내 지역은 <a href="https://intl.cloud.tencent.com/document/product/362/32415">무료 한도</a> 80GB를 제공하며, 초과분 이후에는 용량에 따라 과금됩니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/362/32415">Snapshot Billing Overview</a>를 참고하십시오.</li>
+<li>스냅샷 요금: CBS 스냅샷 서비스는 이미지의 맨 아래 레이어에서 사용되기 때문에 사용자 정의 이미지를 유지하기 위해 일정 스냅샷 요금이 발생합니다.자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/362/32415">Snapshot Billing Overview</a>를 참고하십시오.</li>
 <li>이미지 요금: 사용자 정의 이미지의 최종 소스가 유료 이미지이고 사용자 정의 이미지를 사용하는 경우 이미지 요금이 부과됩니다.</li>
 </ul>
 </td>
@@ -38,6 +38,7 @@ Tencent Cloud는 다음과 같은 이미지를 제공합니다.
 <td>공유 이미지는 생성된 사용자 정의 이미지를 다른 Tencent Cloud 계정과 공유하는 이미지입니다. 이미지의 최종 소스가 유료 이미지이고 공유 이미지를 사용하는 경우 이미지 요금이 부과됩니다.</td>
 </tr>
 </table>
+
 
 
 ## 이미지의 응용

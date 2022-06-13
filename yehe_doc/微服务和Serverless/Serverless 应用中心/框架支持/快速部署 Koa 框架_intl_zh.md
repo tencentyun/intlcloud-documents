@@ -1,35 +1,30 @@
-## 操作场景
-
-本文将为您指导如何通过 Web Function，将您的本地 Koa 项目快速部署到云端。
+应用中心框架部署方案已经全新升级，您可以通过 `SCF Web Function`，快速部署您的 Koa 业务上云。
 
 
->?本文档主要介绍控制台部署方案，您也可以通过命令行完成部署，详情请参见 [通过命令行完成框架部署](https://intl.cloud.tencent.com/document/product/1040/41597)。
+>! **应用控制台部署与函数直接部署有什么区别？**
+通过应用部署或函数部署，均可以基于 Web 函数，快速部署常见 Web 框架。
+- 如果您只关注代码逻辑开发，无需额外资源创建，可以通过 SCF 云函数控制台，完成快速部署。
+- 如果除了代码部署外，您还需要更多能力或资源创建，如自动创建层托管依赖、一键实现静态资源分离、支持代码仓库直接拉取等，可以通过应用控制台，完成 Web 应用的创建工作。
 
 
 
 ## 前提条件
-
-在使用腾讯云云函数服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
-
+- 在使用腾讯云云函数服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/account/register?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fddos%2Funblock%2Flist) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+  
+>! 本篇文档为您介绍应用控制台的部署方案，您也可以通过命令行完成部署，具体操作请参考 [产品文档](https://intl.cloud.tencent.com/document/product/583/41376)。
 
 ## 操作步骤
 
-### 模版部署 -- 一键部署 Koa 项目
-
-1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的【函数服务】。
-2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-3. 选择使用【模版创建】来新建函数，在搜索框里输入 `koa` 筛选函数模版，选择【Koa 框架模版】并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/e0a04cd3cb345c6c9c8c2f229528a013.png)
-4. 在“配置”页面，您可以查看模版项目的具体配置信息并进行修改。
-5. 单击【完成】即可创建函数。函数创建完成后，您可在“函数管理”页面，查看 Web 函数的基本信息。
-6. 您可以通过 API 网关生成的访问路径 URL，访问您部署的 Koa 项目。单击左侧菜单栏中的【触发管理】，查看访问路径。如下图所示：
-![](https://main.qcloudimg.com/raw/e3b1e5cd072c81b14e2555468f4c9499.png)
-7. 单击访问路径 URL，即可访问服务 Koa 项目。
+### 模板部署 -- 部署 Koa 示例代码
+1. 登录 [Serverless 应用控制台](https://console.cloud.tencent.com/sls)。
+2. 单击**新建应用**，选择**Web 应用>Koa 框架**。
+3. 单击“下一步”，完成基础配置选择。
+4. 上传方式，选择**示例代码**直接部署，单击**完成**，即可开始应用的部署。
+5. 部署完成后，您可在应用详情页面，查看示例应用的基本信息，并通过 API 网关生成的访问路径 URL 进行访问，查看您部署的 Koa 项目
 
 
-### 自定义部署 -- 快速迁移本地项目上云
 
-
+### 自定义部署 -- 快速部署 Web 应用
 #### 前提条件
 
 本地已安装 Node.js 运行环境。
@@ -37,6 +32,7 @@
 #### 本地开发
 
 1. 参考 [Koa.js](https://koajs.com/) 官方文档，安装 Koa 环境并初始化您的 Koa 项目，此处以 `hello world` 为例，`app.js` 内容如下：
+
 ```js
 // app.js
 const Koa = require('koa');
@@ -49,13 +45,12 @@ const main = ctx => {
 app.use(main);
 app.listen(3000);
 ```
+
 2. 在根目录下，执行以下命令在本地直接启动服务。
 ```shell
 node app.js
 ```
 3. 打开浏览器访问 `http://localhost:3000`，即可在本地完成 Koa 示例项目的访问。
-
-
 
 #### 部署上云
 
@@ -65,36 +60,22 @@ node app.js
 - 新增 `scf_bootstrap` 启动文件。
 
 具体步骤如下：
-1. 在 Koa 示例项目中，修改监听端口到 `9000`。如下图所示：
+1. 在 Koa 示例项目中，修改监听端口到 `9000`
 ![](https://main.qcloudimg.com/raw/193b4e029355a0956eb5bfcb154c9ad3.png)
 2. 在项目根目录下新建 `scf_bootstrap` 启动文件，在该文件添加如下内容（用于配置环境变量和启动服务）：
-<dx-codeblock>
-:::  sh
+>? 您也可以在控制台完成该模块配置。
+>
+```sh
 #!/bin/bash
 /var/lang/node12/bin/node app.js
-:::
-</dx-codeblock>
-3. 新建完成后，还需执行以下命令修改文件可执行权限，默认需要 `777` 或 `755` 权限才可正常启动。示例如下：
-<dx-codeblock>
-:::  sh
+```
+新建完成后，还需执行以下命令修改文件可执行权限，默认需要 `777` 或 `755` 权限才可正常启动。示例如下： 
+```sh
 chmod 777 scf_bootstrap
-:::
-</dx-codeblock>
-4. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的【函数服务】。
-5. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-6. 选择【自定义创建】新建函数，根据页面提示配置相关选项。如下图所示：
-![](https://main.qcloudimg.com/raw/563fa4d0a8a3e8d098d1d2505f785e1a.png)
-	- **函数类型**：选择 “Web 函数”。
-	- **函数名称**：填写您自己的函数名称。
-	- **地域**：填写您的函数部署地域，默认为广州。
-	- **运行环境**：选择 “Nodejs 12.16”。
-	- **部署方式**：选择“代码部署”，上传您的本地项目。
-	- **提交方法**：选择“本地上传文件夹”。
-	- **函数代码**：选择函数代码在本地的具体文件夹。
-7. 单击【完成】完成 Koa 项目的部署。
+```
+3. 本地配置完成后，执行启动文件，确保您的服务可以本地正常启动，接下来，登录 [Serverless 应用控制台](https://console.cloud.tencent.com/sls)，选择**Web 应用>Koa 框架**，上传方式可以选择**本地上传**或**代码仓库拉取**
 
-
-
-
-#### 开发管理
-部署完成后，即可在 SCF 控制台快速访问并测试您的 Web 服务，并且体验云函数多项特色功能，例如层绑定、日志管理等，享受 Serverless 架构带来的低成本、弹性扩缩容等优势。
+您可以在控制台完成启动文件 `scf_bootstrap` 内容配置，配置完成后，控制台将为您自动生成 启动文件，和项目代码一起打包部署。
+>! 启动文件以项目内文件为准，如果您的项目里已经包含 `scf_bootstrap` 文件，将不会覆盖该内容。
+>
+配置完成后，单击**完成**，部署您的 Koa 项目。

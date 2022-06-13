@@ -21,6 +21,4 @@
 **自定义事件集**：需要您自行创建并管理的事件总线，您自己的应用程序的事件只能发布到自定义事件集。
 
 ### 事件总线 EventBridge 如何收费？
-
-1. 事件总线 EventBridge 目前处于产品公测阶段，该阶段使用腾讯云事件总线产品，不收取任何费用。
-2. 自2022年5月9日00:00（北京时间）起，事件总线 EventBridge 将结束免费公测，正式开始计费。计费详情见 [购买指南](https://intl.cloud.tencent.com/document/product/1108/43288)。
+计费详情见 [购买指南](https://intl.cloud.tencent.com/document/product/1108/43288)。

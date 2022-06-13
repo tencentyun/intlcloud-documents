@@ -509,7 +509,7 @@ The callback for quickly switching rooms is `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVEN
 #### API prototype
 
 ```
--(int) SwitchRoom:(NSString *)roomID  authBuffer:(NSData*)authBuffer;
+-(int) SwitchRoom:(NSString *)targetRoomID  authBuffer:(NSData*)authBuffer;
 
 ```
 
@@ -748,7 +748,7 @@ This API is used to enable/disable the mic. Mic and speaker are not enabled by d
 #### Function prototype  
 
 ```
--(QAVResult)EnableMic:(BOOL)enable;
+-(QAVResult)EnableMic:(BOOL)isEnabled;
 
 ```
 
@@ -962,7 +962,7 @@ This API is used to enable/disable the speaker.
 #### Function prototype  
 
 ```
--(void)EnableSpeaker:(BOOL)enable;
+-(void)EnableSpeaker:(BOOL)isEnabled;
 
 ```
 

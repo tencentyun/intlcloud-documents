@@ -13,7 +13,9 @@ Tencentserverless SDK has the following features:
 * Supports cross-region function chaining.
 * Supports native invocation methods in Python.
 
-## Quick Start
+>? Calling SDK across functions is only applicable to event-triggered functions. HTTP-triggered functions can be invoked by requesting the corresponding path of the function in the function code.
+
+## Getting Started
 
 ### Mutual function invocation
 
@@ -21,11 +23,11 @@ Tencentserverless SDK has the following features:
 
 >!
 >
->- To make functions in different regions invoke each other, you need to specify the region. For the naming rules, please see [Region List](https://intl.cloud.tencent.com/zh/document/api/583/17238).
+>- To make functions in different regions invoke each other, regions must be specified. For the naming convention, see [Common Params](https://intl.cloud.tencent.com/document/api/583/17238).
 >- If no region is specified, intra-region mutual function invocation will be used by default.
 >- If no namespace is specified, `default` will be used by default.
 
-1. Create an invoked Python function in the cloud named `FuncInvoked` in the **Guangzhou** region with the following content:
+1. Create an invoked Python function in the cloud named `FuncInvoked` in **Guangzhou** region with the following content:
 ``` python
 # -*- coding: utf8 -*-
 
@@ -38,7 +40,7 @@ def main_handler(event, context):
 
 ```
 
-2. Create an invoking Python function in the cloud named `PythonInvokeTest` in the **Chengdu** region. You can edit it as needed in the following two methods.
+2. Create an invoking Python function in the cloud named `PythonInvokeTest` in **Chengdu** region. You can edit it as needed in the following two methods.
 
  - Method 1. If you don't need to invoke the function frequently, you can use the following sample code:
 <dx-codeblock>
@@ -153,7 +155,7 @@ pip show tencentserverless
 
 #### Samples
 
-1. Create an invoked Python function in the cloud named `FuncInvoked` in the **Guangzhou** region with the following content:
+1. Create an invoked Python function in the cloud named `FuncInvoked` in **Guangzhou** region with the following content:
 ``` python
 # -*- coding: utf8 -*-
 

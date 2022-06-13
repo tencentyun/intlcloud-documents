@@ -1,23 +1,23 @@
 ## Overview
 
-This document provides an overview of SDK code samples related to generating pre-signed object URLs.
+This document provides an overview of code samples for generating a pre-signed object URL.
 
 >?
-> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
-> - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
+> - We recommend you use a temporary key to generate a pre-signed URL for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [principle of least privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you need to use a permanent key to generate a pre-signed URL, we recommend you limit the permission of the permanent key to uploads and downloads only to avoid risks.
 > 
 
 
 ## SDK API References
 
-For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method description of all the APIs in the SDK, see the [API documentation](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Generating a Pre-Signed Object URL
+## Generating Pre-Signed Object URL
 
-#### Sample code 1. Generating a pre-signed upload URL
+#### Sample 1. Generating pre-signed upload URL
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-presign-upload-url)
+[//]: # ".cssg-snippet-get-presign-upload-url"
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
@@ -27,7 +27,7 @@ getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive): @"GET", @"PUT", @"POST", @"DELETE"
 getPresignedURLRequest.HTTPMethod = @"PUT";
 
-// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+// Get the pre-signed URL function. By default, it is signed to the `host` header. You can also choose not to include the `host` header in the signature, but the request may fail or vulnerabilities may occur.
 getPresignedURLRequest.signHost = YES;
 
 // HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
@@ -36,25 +36,34 @@ getPresignedURLRequest.requestParameters = @{@"param1":@"value1",@"param1":@"val
 // HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
 getPresignedURLRequest.requestHeaders = @{@"param1":@"value1",@"param1":@"value1"};
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
                                          NSError * _Nonnull error) {
-    // Pre-Signed URL
+    // Pre-signed URL
     NSString* presignedURL = result.presienedURL;
-    
+    // Upload a file through the pre-signed URL
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:result.presienedURL]];
+    // Specify `HTTPMethod` as `PUT`
+    request.HTTPMethod = @"PUT";
+    // `fromData` is the file to be uploaded
+    [[[NSURLSession sharedSession]
+        uploadTaskWithRequest:request fromData:[@"testtest" dataUsingEncoding:NSUTF8StringEncoding] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // View the result in the response
+    }]resume];
+
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
+>? For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
 >
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-presign-upload-url)
+[//]: # ".cssg-snippet-get-presign-upload-url"
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
@@ -65,7 +74,7 @@ getPresign.bucket = "examplebucket-1250000000" ;
 // @"GET", @"PUT", @"POST", @"DELETE"
 getPresign.httpMethod = "PUT";
 
-// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+// Get the pre-signed URL function. By default, it is signed to the `host` header. You can also choose not to include the `host` header in the signature, but the request may fail or vulnerabilities may occur.
 getPresign.signHost = YES;
 
 // HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
@@ -74,11 +83,19 @@ getPresign.requestParameters = {"param1":"value1","param1":"value1"};
 // HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
 getPresign.requestHeaders = {"param1":"value1","param1":"value1"};
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {
         let url = result.presienedURL
+        // Upload a file through the pre-signed URL
+        let request = NSMutableURLRequest.init(url: NSURL.init(string:url) as! URL);
+        // Specify `HTTPMethod` as `PUT`
+        request.httpMethod = "PUT";
+        // `fromData` is the file to be uploaded
+        URLSession.shared.uploadTask(with: request, from:  "testtest".data(using: String.Encoding.utf8)) { data, res, err in
+            // View the result in the response
+        }.resume()
     } else {
         print(error!);
     }
@@ -86,13 +103,13 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
+>? For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
 >
 
-#### Sample code 2. Generating a pre-signed download URL
+#### Sample 2. Generating pre-signed download URL
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-presign-download-url)
+[//]: # ".cssg-snippet-get-presign-download-url"
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
@@ -102,7 +119,7 @@ getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive): @"GET", @"PUT", @"POST", @"DELETE"
 getPresignedURLRequest.HTTPMethod = @"GET";
 
-// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+// Get the pre-signed URL function. By default, it is signed to the `host` header. You can also choose not to include the `host` header in the signature, but the request may fail or vulnerabilities may occur.
 getPresignedURLRequest.signHost = YES;
 
 // HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
@@ -111,25 +128,33 @@ getPresignedURLRequest.requestParameters = @{@"param1":@"value1",@"param1":@"val
 // HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
 getPresignedURLRequest.requestHeaders = @{@"param1":@"value1",@"param1":@"value1"};
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
                                          NSError * _Nonnull error) {
-    // Pre-Signed URL
+    // Pre-signed URL
     NSString* presignedURL = result.presienedURL;
-   
+    // Download a file through the pre-signed URL
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:presignedURL]];
+    // Specify `HTTPMethod` as `GET`
+    request.HTTPMethod = @"GET";
+    [[[NSURLSession sharedSession]
+        downloadTaskWithRequest:request
+                completionHandler:^(NSURL *_Nullable location, NSURLResponse *_Nullable response, NSError *_Nullable error) {
+                // `location` is the local file path after successful download
+                }] resume];
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
+>? For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
 >
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-presign-download-url)
+[//]: # ".cssg-snippet-get-presign-download-url"
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
@@ -140,7 +165,7 @@ getPresign.bucket = "examplebucket-1250000000" ;
 // @"GET", @"PUT", @"POST", @"DELETE"
 getPresign.httpMethod = "GET";
 
-// Obtain the pre-signed URL function. By default, it is signed to the Host header. You can also choose not to sign it to Host (the request might fail or vulnerabilities might occur).
+// Get the pre-signed URL function. By default, it is signed to the `host` header. You can also choose not to include the `host` header in the signature, but the request may fail or vulnerabilities may occur.
 getPresignedURLRequest.signHost = YES;
 
 // HTTP request parameters, which should be the same as those passed to the actual request. This can prevent users from tampering with the HTTP request parameters.
@@ -149,11 +174,18 @@ getPresignedURLRequest.requestParameters = {"param1":"value1","param1":"value1"}
 // HTTP request headers, which should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here.
 getPresignedURLRequest.requestHeaders = {"param1":"value1","param1":"value1"};
 
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {
         let url = result.presienedURL
+        // Download a file through the pre-signed URL
+        let request = NSMutableURLRequest.init(url: NSURL.init(string: url) as! URL);
+           // Specify `HTTPMethod` as `GET`
+        request.httpMethod = "GET";
+        URLSession.shared.downloadTask(with: request) { location, response, error in
+            // `location` is the local file path after successful download
+        }.resume();
     } else {
         print(error!);
     }
@@ -161,6 +193,6 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
+>? For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
 >
 
