@@ -21,6 +21,4 @@ Tencent Cloud EventBridge is a secure, stable, and standardized serverless event
 **Custom event bus**: It is an event bus created and managed by yourself. Events of your applications can be published only to your custom event buses.
 
 ### How is EventBridge billed?
-
-1. 事件总线 EventBridge 目前处于产品公测阶段，该阶段使用腾讯云事件总线产品，不收取任何费用。
 For billing details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1108/43288).
