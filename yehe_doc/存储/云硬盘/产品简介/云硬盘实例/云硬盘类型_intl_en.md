@@ -1,9 +1,9 @@
 Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into four types: **Premium Cloud Storage**, **SSD**, **Enhanced SSD**, and **Tremendous SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
 
 ## Notes
-- Currently, Enhanced SSD and Tremendous SSD are only available in certain availabilities zone. They will be supported in more availability zones.
+- Enhanced SSD and Tremendous SSD are only available in certain availabilities zone. They will be supported in more availability zones.
 - The performance of Enhanced SSD is only guaranteed when it’s attached to S5, M5, and SA2 models created after August 1, 2020, and all later generation models.
-- **Tremendous SSD** can only be purchased and used with the Standard Storage Optimized S5se CVM instance.**
+- **Tremendous SSD** can only be purchased and used with the Standard Storage Optimized S5se CVM instance.
 - Enhanced SSD and Tremendous SSD cannot be used as the system disk.
 - Enhanced SSD and Tremendous SSD cannot be encrypted.
 - Enhanced SSD and Tremendous SSD cannot be upgraded from other disk types.
