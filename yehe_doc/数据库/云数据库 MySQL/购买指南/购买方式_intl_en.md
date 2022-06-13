@@ -1,8 +1,8 @@
-## Prerequisites
+﻿## Prerequisites
 To make a purchase, you need to complete identity verification first. For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Purchasing in Console
-1. Log in to the [TencentDB for MySQL purchase page](https://buy.intl.cloud.tencent.com/cdb), configure the following instance information, and click **Buy Now**.
+1. Log in to the [TencentDB for MySQL purchase page](https://buy.Intl.cloud.tencent.com/cdb), configure the following instance information, and click **Buy Now**.
  - **Billing Mode**: Monthly subscription and pay-as-you-go billing are supported.
     - If your business has a stable long-term demand, we recommend you select monthly subscription.
     - If the request volume of your business fluctuates greatly and instantaneously, we recommend you choose pay-as-you-go billing.
@@ -16,7 +16,7 @@ To make a purchase, you need to complete identity verification first. For more i
  - **Source AZ** and **Replica AZ**: Select different source and replica AZs (i.e., [multi-AZ deployment](https://intl.cloud.tencent.com/document/product/236/8459)) to protect your database from failures and AZ outages.
 >?
 >- If the source and replica are in different AZs, the network sync delay may increase by 2–3 ms.
->- When purchasing Tencent Cloud services, we recommend you choose the region closest to your end users to reduce access latency and improve download speed.
+>- When you purchase Tencent Cloud services, we recommend you select the region closest to your end users to minimize access latency and improve download speed.
 >
  - **Instance Type**: General or dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
  - **Instance Specification**: Select specifications as needed.
@@ -40,8 +40,11 @@ To make a purchase, you need to complete identity verification first. For more i
 2. You will be returned to the instance list after you purchase the instance. The instance will be in the **Delivering** status. You can use the instance after around 3–5 minutes when its status changes to **Running**.
 
 ## Purchasing via API
-For more information on how to purchase TencentDB instances via an API, see [CreateDBInstanceHour](https://intl.cloud.tencent.com/document/product/236/15865).
+For more information on how to purchase TencentDB instances via an API, see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15871).
 
 ## Subsequent Operations
 [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37788)
+
+
+
 
