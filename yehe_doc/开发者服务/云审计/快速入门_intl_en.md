@@ -18,20 +18,20 @@ In the operation record list, you can click <img src="https://main.qcloudimg.com
 
 ## Using Tracking Set
 1. **Create a tracking set**
- 1. Log in to the [CloudAudit console](https://console.cloud.tencent.com/cloudaudit) and select **Tracking Set** > **Create** on the left sidebar to enter the tracking set creation page. 
- 2. On the **Tracking Set** page, click **Create** as shown below:
+ (1) Log in to the [CloudAudit console](https://console.cloud.tencent.com/cloudaudit) and select **Tracking Set** > **Create** on the left sidebar to enter the tracking set creation page. 
+ (2) On the **Tracking Set** page, click **Create** as shown below:
 ![](https://main.qcloudimg.com/raw/ee793193029d08b873d46186b98039df.jpg)
 <dx-alert infotype="notice" title="">
 You can create up to 5 tracking sets.
 </dx-alert>
- 2. Enter the tracking set name, storage location, and other relevant information on the page and click **Creation completed** as shown below:
+ (3) Enter the tracking set name, storage location, and other relevant information on the page and click **Creation completed** as shown below:
 ![](https://main.qcloudimg.com/raw/022556d2c29e653523f5d5d4615683cf.jpg)
 2. **Disable/Enable the tracking set's logging feature**
- 1. After you successfully create a tracking set, it is **Enabled** by default as shown below:
+ (1) After you successfully create a tracking set, it is **Enabled** by default as shown below:
 ![](https://main.qcloudimg.com/raw/653c413004625b1add79a1eb4d6b5c3d.jpg)
- 2. Click the name of the tracking set in the **Name** column or **Edit** on the right on the tracking set row to enter the tracking set details page as shown below:
+ (2) Click the name of the tracking set in the **Name** column or **Edit** on the right on the tracking set row to enter the tracking set details page as shown below:
 ![](https://main.qcloudimg.com/raw/76376149a048ab52a7ce479287573a0a.jpg)
- 3. Click <img src="https://main.qcloudimg.com/raw/9d9892843390a003afe42d52123fd500.png" style="margin:-3px 0px"> on the right of **Enable Logging** in the top-right corner of the page to **disable or enable** the tracking set's logging feature (which is enabled in the screenshot).
+ (3) Click <img src="https://main.qcloudimg.com/raw/9d9892843390a003afe42d52123fd500.png" style="margin:-3px 0px"> on the right of **Enable Logging** in the top-right corner of the page to **disable or enable** the tracking set's logging feature (which is enabled in the screenshot).
 3. **Edit the storage location**
 Click **Edit** in the **Shipping Location** section on the tracking set details page. You can choose to ship to a COS bucket or CLS. After editing, click **Save** as shown below:
 ![](https://main.qcloudimg.com/raw/1f720f70cccb6daf0e7bcea5affc8aba.jpg)
