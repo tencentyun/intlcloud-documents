@@ -1,7 +1,7 @@
 
 
 本文将从云服务器实例功能特性、常见业务场景、注意事项及最佳实践等方面介绍如何进行实例选型，旨在帮助您了解应如何结合实际业务场景选购云服务器。实例选型分析过程如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/658160d46d903c9ee1ab6e12949d8726.png" style="width:100%"/>
+<img src="https://main.qcloudimg.com/raw/95b8731741d19f09f7ecc82f0b297aca.png" style="width:60%"/>
 
 ## 地域及可用区
 #### 地域
@@ -104,7 +104,7 @@ NVIDIA GPU 系列实例 采用 NVIDIA Tesla 系列 GPU，包括主流的 T4/V100
 <tr>
 <td>虚拟化</td>
 <td>Kvm<br>OpenStack</td>
-<td>黑石物理服务器2.0具备再次虚拟化的能力，线下的私有云均可迁移至腾讯云上，无需担心嵌套虚拟化带来的性能开销。</td>
+<td>虚拟化应用需要云上服务器具备嵌套虚拟化的能力，同时不引入额外性能开销，保持与传统物理机的虚拟化能力一致。推荐黑石物理服务器2.0产品。</td>
 <td>高性能计算集群<br>黑石物理服务器2.0</td>
 </tr>
 <tr>
@@ -122,10 +122,11 @@ NVIDIA GPU 系列实例 采用 NVIDIA Tesla 系列 GPU，包括主流的 T4/V100
 </table>
 
 
+
 ## 相关产品
 ### 常用云产品搭配推荐
 您可结合实际业务场景，搭配使用其他腾讯云产品。本文以典型的 Web 建站架构为例，推荐搭配云产品如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/8cb80fbc1dc476bc6e22eb3bf3c32c24.png" style="width:100%"/>
+<img src="https://main.qcloudimg.com/raw/f9dbd04108bb3ffff1d12944b77d51ed.png" style="width:70%"/>
 
 ### 其他云产品
 您还可结合实际需求，选择使用其他云产品。例如，当您的基本业务已部署完毕后，可采取一定的容灾措施，以确保系统架构的健壮性，同时也可保障数据安全。可结合以下腾讯云产品实现容灾：
@@ -141,3 +142,6 @@ NVIDIA GPU 系列实例 采用 NVIDIA Tesla 系列 GPU，包括主流的 T4/V100
 ## 相关文档
 - [地域和可用区](https://intl.cloud.tencent.com/document/product/213/6091)
 - [实例规格](https://intl.cloud.tencent.com/document/product/213/11518)
+
+
+

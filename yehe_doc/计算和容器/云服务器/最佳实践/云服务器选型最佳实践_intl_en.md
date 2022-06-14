@@ -1,7 +1,7 @@
 
 
 This document describes how to select a CVM model that suits you best from the aspects of features and scenarios, and provides detailed instructions and best practices.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/658160d46d903c9ee1ab6e12949d8726.png" style="width:100%"/>
+<img src="https://main.qcloudimg.com/raw/95b8731741d19f09f7ecc82f0b297aca.png" style="width:60%"/>
 
 ## Region and Availability Zone
 #### Regions
@@ -11,7 +11,7 @@ Note that there are regional differences on network quality, compliance policy a
 #### Availability zones
 Each region has one or more availability zones. The available CVM instance types may vary with availability zone in the same region. The resource interconnection may suffer different network latency between availability zones.
 
-For more information on regions and availability zones, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091).
+For more information on regions and availability zones, see [Regions and AZs](https://intl.cloud.tencent.com/document/product/213/6091).
 
 ## Instance Types
 Tencent Cloud provides various instance types. Each type supports multiple instance specifications. CVM types can be divided into x86, ARM, bare metal, heterogeneous computing (GPU/FPGA), and BatchCompute according to the architecture. They can also be classified into Standard, Computing, Memory Optimized, High I/O, Big Data according to features. This document takes the second classification method as detailed below.
@@ -68,7 +68,7 @@ For more information about CVM instance types, see <a href="https://intl.cloud.t
 <tr>
 <td>Web service</td>
 <td>Nginx<br>Apache</td>
-<td>The Web service generally covers personal website, blog and large-scale ecommerce website. This use case requires a balance of compute, storage, and memory resources. We recommend <b>Standard</b> instances.</td>
+<td>The Web service generally covers personal website, blog, and large-scale ecommerce website. This use case requires a balance of compute, storage, and memory resources. We recommend <b>Standard</b> instances.</td>
 <td>Standard S and SA</td>
 </tr>
 <tr>
@@ -104,7 +104,7 @@ For more information about CVM instance types, see <a href="https://intl.cloud.t
 <tr>
 <td>Virtualization</td>
 <td>Kvm<br>OpenStack</td>
-<td>The virtualization application requires the nested virtualization of a cloud server while maintaining the virtualization capability like a physical machine. We recommend <b>CPM 2.0</b>.</td>
+<td>The virtualization application requires the nested virtualization of a cloud server without incurring additional performance overhead while maintaining the virtualization capability like a physical machine. We recommend CPM 2.0 products.</td>
 <td>HPC<br>CPM 2.0</td>
 </tr>
 <tr>
@@ -122,22 +122,26 @@ For more information about CVM instance types, see <a href="https://intl.cloud.t
 </table>
 
 
+
 ## Relevant Products
 ### Associated Tencent Cloud services
 You can purchase other Tencent Cloud services to work with CVM instances as needed. This document takes building a website as an example to describe the associated Tencent Cloud services.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/8cb80fbc1dc476bc6e22eb3bf3c32c24.png" style="width:100%"/>
+<img src="https://main.qcloudimg.com/raw/f9dbd04108bb3ffff1d12944b77d51ed.png" style="width:70%"/>
 
 ### Other Tencent Cloud services
 You can also select other Tencent Cloud services to meet your specific requirements. For example, after deploying applications, you can use the following Tencent Cloud services to implement disaster recovery to ensure the system robustness and provide data security:
-- **[Snapshot](https://intl.cloud.tencent.com/document/product/362/31638)**
+- **[Snapshot Overview](https://intl.cloud.tencent.com/document/product/362/31638)**
 Snapshot provides a convenient and efficient data protection service, which is also a very important and effective data disaster recovery measure. Snapshots are recommended for business scenarios including daily data backup, quick data recovery, application of multiple replicas of production data, and quick environment deployment. Creating snapshots will incur a small fee, as detailed in [Snapshot Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415).
-- **[Tencent Cloud Monitor](https://intl.cloud.tencent.com/document/product/248/32799)**
+- **Tencent Cloud Monitor [Product Overview](https://intl.cloud.tencent.com/document/product/248/32799)**
 Setting alarm rules for cloud resources is also vital to business operation. You can view comprehensive information such as resource utilization, application performance and operation status of the Tencent Cloud services on Cloud Monitor (CM). The platform also provides features such as multi-metric monitoring, custom alarms, cross-region and cross-project instance grouping, dashboards for visual monitoring, and Prometheus hosting. CM can help you detect and handle emergencies in Tencent Cloud services, thereby enhancing system stability, improving OPS efficiency, and reducing OPS costs.
 - **[Tencent Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214/524)**
 You can use the Tencent Cloud Load Balancer (CLB) service to protect your business from single points of failure. CLB virtualizes multiple CVM instances in the same region into a high-performance and high-availability application service pool by setting a virtual IP address (VIP) and then distributes the network requests from clients to the pool in the manner specified by the application.
 CLB checks the health of the instances in the pool and automatically isolates unhealthy ones, thus resolving single points of failure issues and improving the overall service capabilities of the applications.
 
 
-## Reference
-- [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091)
+## References
+- [Regions and AZs](https://intl.cloud.tencent.com/document/product/213/6091)
 - [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518)
+
+
+

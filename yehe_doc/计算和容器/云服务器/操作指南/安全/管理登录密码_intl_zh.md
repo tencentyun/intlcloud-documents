@@ -4,28 +4,27 @@
 ## 限制条件
 
 设置密码时，须满足以下限制条件：
-- Linux 实例：密码长度需8-30位，推荐使用12位以上的密码，不能以 “/” 开头，至少包含三项（`a-z`、`A-Z`、`0-9`和```()`~!@#$%^&*-+=_|{}[]:;'<>,.?/```的特殊符号）。
-- Windows 实例：密码长度需12-30位，不能以 “/” 开头，至少包含三项（`a-z`、`A-Z`、`0-9`和```()`~!@#$%^&*-+=_|{}[]:;'<>,.?/```），不包括用户名。
+- **Linux 实例**：密码长度需8 - 30位，推荐使用12位以上的密码，不能以 “/” 开头，至少包含三项（`a-z`、`A-Z`、`0-9`和<code>()`~!@#$%^&*-+=_|{}[]:;'<>,.?/</code>的特殊符号）。
+- **Windows 实例**：密码长度需12 - 30位，不能以 “/” 开头，至少包含三项（`a-z`、`A-Z`、`0-9`和<code>()`~!@#$%^&*-+=_|{}[]:;'<>,.?/</code>的特殊符号），且不包括用户名。
 
 ## 操作步骤
 
 ### 设置初始密码
 在购买云服务器时，选择配置方式的不同，初始密码的设置也将不同。
- - 通过 [**快速配置**](https://buy.cloud.tencent.com/cvm?tab=lite) 方式创建实例：初始密码将会以电子邮件和控制台 [站内信](https://console.cloud.tencent.com/message) 发送给您。
- - 通过 [**自定义配置**](https://buy.cloud.tencent.com/cvm?tab=custom) 方式创建实例：在创建过程中，根据登录方式的不同，设置初始密码的方式不同。
+ - 通过 [**自定义配置**](https://buy.intl.cloud.tencent.com/cvm?regionId=4&projectId=-1) 方式创建实例：在创建过程中，根据登录方式的不同，设置初始密码的方式不同。
 <table>
 	<tr><th>登录方式</th><th>说明</th></tr>
 	<tr><td>自动生成密码</td><td>初始密码将会以电子邮件和控制台 <a href="https://console.cloud.tencent.com/message">站内信</a> 发送给您。</td></tr>
-	<tr><td>立即关联密钥</td><td><b>默认关闭</b>用户名密码登录，但初始密码仍会以电子邮件和控制台 <a href="https://console.cloud.tencent.com/message">站内信</a> 发送给您。</td></tr>
+	<tr><td>立即关联密钥</td><td><b>默认关闭</b>用户名密码登录。如后续需使用密码，可登录云服务器控制台 <a href="https://intl.cloud.tencent.com/document/product/213/16566">重置密码</a>。</td></tr>
 	<tr><td>设置密码</td><td>自定义的密码即为初始密码。</td></tr>
 </table>
 
 
 ### 查看密码
 
-登录云服务器的密码会以电子邮件和控制台 [站内信](https://console.cloud.tencent.com/message) 发送给您。以下操作内容以站内信为例。
+系统自动生成的登录密码会以电子邮件和控制台 [站内信](https://console.cloud.tencent.com/message) 发送给您。以下操作内容以站内信为例：
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
-2. 单击右上角的 <img src="https://main.qcloudimg.com/raw/f5d915ab4297418f3eae30fd28f41122.png" style="margin: 0;"></img>，选择对应的产品消息。如下图所示：
+2. 单击右上角的 <img src="https://qcloudimg.tencent-cloud.cn/raw/d47b595ce159b2946f5fbbe10509569a.png" style="margin: -3px 0px;"></img>，选择对应的产品消息。如下图所示：
 ![](https://main.qcloudimg.com/raw/e3c624a805d2f5776807df44bd373b59.png)
 进入该产品消息页面，即可查看密码。
 ![](https://main.qcloudimg.com/raw/73bef8b11ded3d0cee5441d3d3218e25.png)
@@ -33,3 +32,5 @@
 ### 重置密码
 
 请参见 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566)。
+	
+	
