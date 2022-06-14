@@ -7,7 +7,7 @@
 - You can configure different hotlink protection and release rules for different playback domain names.
 
 ### Hotlink protection
-- Referer hotlink protection lets your control the access to your video assets by using the `referer` field in HTTP requests. This allows you to protect your content from being hotlinked by other websites.
+- Referer hotlink protection lets you control the access to your video assets by using the `referer` field in HTTP requests. This allows you to protect your content from being hotlinked by other websites.
 - You can configure IP blocklists/allowlists to restrict access from certain IPs and protect media from malicious users.
 - VOD also supports key and timestamp hotlink protection so you can set an expiration time for access to videos.
 - The hotlink protection feature for member video preview allows you to configure a time limit for video previews. When a user previews a video, the video preview will end when the time limit is reached, and playback can be resumed after the user makes a membership payment.
