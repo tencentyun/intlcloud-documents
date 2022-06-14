@@ -40,8 +40,7 @@ Click **Edit** in the **Shipping Location** section on the tracking set details 
 This feature can be used only if the current account is a verified organizational account and an account organization has been created under it.
 </dx-alert>
 Click <b>Edit</b> in **Shipping Location** on the tracking set details page and select current account shipping (default) or cross-account shipping.
-<br>Select **All members under the organization account**, save, and the cross-account shipping feature is enabled. The tracking set will ship the logs of each member under the organization account to the shipping location you set as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/3076ac00d1fbb7e9e9beab29ae7f0f31.png"/>
+<br>Select **All members under the organization account**, save, and the cross-account shipping feature is enabled. The tracking set will ship the logs of each member under the organization account to the shipping location you set.
 5. **Delete the tracking set**
 Click **Delete** on the right on a tracking set row on the **Tracking Set** page or click **Delete Tracking Set** on the tracking set details page.
 
