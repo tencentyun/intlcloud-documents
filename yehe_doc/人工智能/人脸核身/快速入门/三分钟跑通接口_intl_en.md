@@ -39,7 +39,7 @@ Configure the signature type:
 ``` js
   clientProfile.setSignMethod("TC3-HMAC-SHA256"); // Specify the signature algorithm (default value: HmacSHA256)
 ```
-- If the API request exceeds 1 MB, only v3 authentication (TC3-HMAC-SHA256) can be used. API 3.0 SDK supports Node.js, Python, Java, PHP, and Go, but not .NET and C#.  For unsupported languages, you need to implement [API authentication v3](https://cloud.tencent.com/document/product/1007/31324) to call APIs, and we recommend using the signature generation tool in [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=GetActionSequence) to verify the signature.
+- If the API request exceeds 1 MB, only v3 authentication (TC3-HMAC-SHA256) can be used. API 3.0 SDK supports Node.js, Python, Java, PHP, and Go, but not .NET and C#.  For unsupported languages, you need to implement API authentication v3 to call APIs, and we recommend using the signature generation tool in [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=GetActionSequence) to verify the signature.
 ![](https://main.qcloudimg.com/raw/29fe779dac02bfef2024265f928556f3.png)
 
 
