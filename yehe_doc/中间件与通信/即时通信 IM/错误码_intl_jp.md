@@ -55,7 +55,6 @@
 | 8001   | メッセージ長が制限を超えています。8k以内にしてください。メッセージ長は各elemの長さの合計であり、elemの長さはすべてのelemフィールドの長さの合計です。 |
 | 8002   | メッセージKEYエラー、内部エラー。ネットワークリクエストパッケージのKEYとリターンパッケージが一致しません。 |
 | 8003   | 画像変換のHTTPリクエストに失敗しました。 |
-| 8004   | 画像がセンシティブコンテンツに関連しています。 |
 | 8005   | マージする転送メッセージのネストレベルが上限の100レベルを超えています。 |
 | 8010   | シグナリングのリクエストIDが無効か、またはすでに処理されています。 |
 | 8011   | シグナリングをリクエストする権限がありません。例えば、自分以外が行った招待をキャンセルする権限です。 |
@@ -190,11 +189,11 @@
 | 70003  | 不正なUserSigです。公式サイトで提供するAPIを使用して再度 [UserSigの生成](https://intl.cloud.tencent.com/document/product/1047/34385)で生成してください。 |
 | 70005 | 不正なUserSigです。公式サイトで提供するAPIを使用して再度 [UserSigの生成](https://intl.cloud.tencent.com/document/product/1047/34385)で生成してください。 |
 | 70009  | UserSig検証に失敗しました。UserSigの生成時にその他のSDKAppIDの秘密鍵または暗号鍵を混在させた可能性があります。対応するSDKAppIDの秘密鍵または暗号鍵を使用して、再度 [UserSigの生成](https://intl.cloud.tencent.com/document/product/1047/34385)で生成してください。 |
-| 70013  | リクエストの中のUserIDとUserSig生成時に使用したUserIDがマッチしません。IMコンソールの【 [開発支援ツール](https://console.cloud.tencent.com/im-detail/tool-usersig)】のページで UserSigを検証することができます。      |
-| 70014  | リクエストの中のSDKAppIDとUserSig生成時に使用したSDKAppIDがマッチしません。IMコンソールの【 [開発支援ツール](https://console.cloud.tencent.com/im-detail/tool-usersig)】のページで UserSigを検証することができます。          |
+| 70013  | リクエストの中のUserIDとUserSig生成時に使用したUserIDがマッチしません。IMコンソールの【 [開発支援ツール](https://console.cloud.tencent.com/im/tool-usersig)】のページで UserSigを検証することができます。      |
+| 70014  | リクエストの中のSDKAppIDとUserSig生成時に使用したSDKAppIDがマッチしません。IMコンソールの【 [開発支援ツール](https://console.cloud.tencent.com/im/tool-usersig)】のページで UserSigを検証することができます。          |
 | 70016  | 公開鍵が存在しないため、UserSig検証に失敗しました。IMコンソールで [キーを取得](https://intl.cloud.tencent.com/document/product/1047/34540)してください。 |
 | 70020  | SDKAppIDが見つかりません。IMコンソールでアプリケーション情報を確認してください。          |
-| 70050  | UserSig検証の頻度が高すぎます。UserSigが正しいかチェックし、1分後に再度検証してください。IMコンソールの【 [開発支援ツール](https://console.cloud.tencent.com/im-detail/tool-usersig)】のページで UserSigを検証することができます。 |
+| 70050  | UserSig検証の頻度が高すぎます。UserSigが正しいかチェックし、1分後に再度検証してください。IMコンソールの【 [開発支援ツール](https://console.cloud.tencent.com/im/tool-usersig)】のページで UserSigを検証することができます。 |
 | 70051  | アカウントがブラックリストに入れられました。                                           |
 | 70107  | リクエストしたユーザーアカウントが存在しません。                                       |
 | 70114  | セキュリティ上の理由によりログインが制限されています。頻繁にログインしないでください。                                             |
