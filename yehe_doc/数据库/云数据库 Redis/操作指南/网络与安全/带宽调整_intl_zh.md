@@ -52,9 +52,9 @@
 <td>在滑轴上选择需新增的带宽。</td></tr>
 <tr>
 <td><strong>实例总带宽</strong></td>
-<td>实例总带宽 = 附加带宽 x 分片数 + 标准带宽 x 分片数 x 副本数，其中，标准架构的分片数=1，副本数为主节点数与副本节点数量。</td></tr>
+<td>实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 *(主节点数 + 只读副本节点数），标准架构的分片数=1。</td></tr>
 <tr>
-<td><strong>总费用</strong></td>
+<td><strong>费用</strong></td>
 <td>暂时免费中。</td></tr>
 </tbody></table>
 7. 确认总带宽满足预期，单击**确定调整**。
@@ -65,5 +65,5 @@
 
 | 接口名称                                                     | 接口功能         |
 | :----------------------------------------------------------- | :--------------- |
-| [ResetInstancesInternetMaxBandwidth](https://intl.cloud.tencent.com/document/product/213/33241) | 修改实例网络配置来修改带宽 |
+| [ModifyNetworkConfig](https://intl.cloud.tencent.com/document/product/213/33241) | 修改实例网络配置来修改带宽 |
 
