@@ -55,7 +55,6 @@
 | 8001   | 메시지 길이 초과. 메시지 길이는 8k를 초과할 수 없습니다. 메시지 길이는 각 elem 길이의 합이며 elem 길이는 모든 elem 필드 길이의 합입니다.  |
 | 8002   | 메시지 KEY 오류. 내부 오류입니다. 네트워크 요청 패킷의 KEY와 응답 패킷이 일치하지 않습니다.  |
 | 8003   | 이미지 전환 HTTP 요청 실패. |
-| 8004   | 이미지에 민감 콘텐츠 포함. |
 | 8005   | 병합 전달 메시지의 임베디드 레이어 수가 100개를 초과했습니다. |
 | 8010   | 신호 요청 ID 무효 또는 처리 이력 있음. |
 | 8011   | 신호 요청 권한 없음. 예: 본인이 요청하지 않은 초대 취소 |
@@ -190,11 +189,11 @@
 | 70003  | 잘못된 UserSig. 공식 홈페이지에서 제공한 API로 다시 [UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)하십시오. |
 | 70005  | 잘못된 UserSig. 공식 홈페이지에서 제공한 API로 다시 [UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)하십시오.  |
 | 70009  | UserSig 인증 실패. UserSig 생성 시, 기타 SDKAppID의 개인키 또는 키 혼용으로 발생할 수 있습니다. 해당 SDKAppID의 개인키 또는 키를 사용하여 다시 [UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)을 진행하십시오. |
-| 70013  | 요청 중의 UserID가 UserSig를 생성하는 데 사용된 UserID와 일치하지 않습니다. IM 콘솔의 [[개발 보조 툴](https://console.cloud.tencent.com/im-detail/tool-usersig)]페이지에서 UserSig를 인증할 수 있습니다.       |
-| 70014  | 요청 중의 SDKAppID가 UserSig를 생성하는 데 사용된 SDKAppID와 일치하지 않습니다. IM 콘솔의 [[개발 보조 툴](https://console.cloud.tencent.com/im-detail/tool-usersig)]페이지에서 UserSig를 인증할 수 있습니다.       |
+| 70013  | 요청 중의 UserID가 UserSig를 생성하는 데 사용된 UserID와 일치하지 않습니다. IM 콘솔의 [[개발 보조 툴](https://console.cloud.tencent.com/im/tool-usersig)]페이지에서 UserSig를 인증할 수 있습니다.       |
+| 70014  | 요청 중의 SDKAppID가 UserSig를 생성하는 데 사용된 SDKAppID와 일치하지 않습니다. IM 콘솔의 [[개발 보조 툴](https://console.cloud.tencent.com/im/tool-usersig)]페이지에서 UserSig를 인증할 수 있습니다.       |
 | 70016  | 공개키 없음. UserSig 인증 실패. IM 콘솔에서 [키 가져오기](https://intl.cloud.tencent.com/document/product/1047/34540)를 진행하십시오. |
 | 70020  | SDKAppID 없음. IM 콘솔 애플리케이션 정보를 확인하십시오.          |
-| 70050  | UserSig 인증 횟수 과다. UserSig가 정확한지 확인하고 1분 후 다시 인증하십시오. IM 콘솔의 [[개발 보조 툴](https://console.cloud.tencent.com/im-detail/tool-usersig)]페이지에서 UserSig를 인증할 수 있습니다. |
+| 70050  | UserSig 인증 횟수 과다. UserSig가 정확한지 확인하고 1분 후 다시 인증하십시오. IM 콘솔의 [[개발 보조 툴](https://console.cloud.tencent.com/im/tool-usersig)]페이지에서 UserSig를 인증할 수 있습니다. |
 | 70051  | 블록리스트에 등록된 계정.                                           |
 | 70107  | 요청한 사용자 계정이 존재하지 않습니다.                                       |
 | 70114  | 보안 상의 이유로 인한 로그인 제한. 로그인 빈도를 줄여주십시오.                                             |
