@@ -4,7 +4,7 @@
 
 ## 费用组成
 混流转推常用于实现 CDN 直播观看，包含以下步骤：
- ![img](https://qcloudimg.tencent-cloud.cn/raw/ed75a3a341c86ee4edaa606c135674af.png)
+ ![img](https://qcloudimg.tencent-cloud.cn/raw/73a5c751bc87e73b28be8d3edf056796.png)
 
 1. 主播和上麦观众通过 TRTC 推流实现音视频通话和直播。
 2. 混流转码服务器从 TRTC 服务中订阅流（UDP 协议）。

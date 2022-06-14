@@ -4,7 +4,7 @@ If you have a contract with TRTC, the billing details in the contract will apply
 
 ## Billable Items
 To deliver content to viewers via a CDN, you need to relay TRTC streams to the CDN.
- ![img](https://qcloudimg.tencent-cloud.cn/raw/ed75a3a341c86ee4edaa606c135674af.png)
+ ![img](https://qcloudimg.tencent-cloud.cn/raw/73a5c751bc87e73b28be8d3edf056796.png)
 
 1. The anchor and co-anchoring audience members publish audio/video streams in a call or live stream.
 2. The MixTranscoding server subscribes to the streams (UDP).
