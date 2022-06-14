@@ -52,7 +52,7 @@ Increasing the bandwidth will not affect your business, but reducing the bandwid
 <td>Select the additional bandwidth on the slider bar.</td></tr>
 <tr>
 <td><strong>Total Instance Bandwidth</strong></td>
-<td>Total instance bandwidth = additional bandwidth x shard quantity + standard bandwidth x shard quantity x replica quantity. The shard quantity under the standard architecture is one, and the replica quantity is the sum of the number of master nodes and the number of replica nodes.</td></tr>
+<td>Total instance bandwidth = additional bandwidth x shard quantity + standard bandwidth x shard quantity x （master node quantity + read-only replica node quantity）. The shard quantity under the standard architecture is one, and the replica quantity is the sum of the number of master nodes and the number of replica nodes.</td></tr>
 <tr>
 <td><strong>Total Fees</strong></td>
 <td>Free of charge currently.</td></tr>
@@ -65,5 +65,5 @@ Increasing the bandwidth will not affect your business, but reducing the bandwid
 
 | API | Description |
 | :----------------------------------------------------------- | :--------------- |
-| [ResetInstancesInternetMaxBandwidth](https://intl.cloud.tencent.com/document/product/213/33241) |  Adjusts the instance network configuration to modify bandwidth |
+| [ModifyNetworkConfig](https://intl.cloud.tencent.com/document/product/213/33241) |  Adjusts the instance network configuration to modify bandwidth |
 
