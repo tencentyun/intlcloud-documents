@@ -165,7 +165,7 @@ When running the `chroot` command:
 cd /usr/bin/ && tar -zcvf bin.tar.gz *
 ```
 ```shellsession
-scp bin.tar.gz root@异常实例ip：/mnt/vm1/usr/bin/
+scp bin.tar.gz root@Exception instance ip：/mnt/vm1/usr/bin/
 ```
 <dx-alert infotype="explain" title="">
 If the instances have public network IPs, the copy can be performed through the public network; otherwise, the copy is performed through the private network.
