@@ -93,7 +93,7 @@ https://xxxxxx/v4/openim/get_c2c_unread_msg_num?sdkappid=88888888&identifier=adm
 | 字段 | 类型 |属性 |说明 |
 |---------|---------|---------|---------|
 | To_Account | String |必填 | 待查询的用户 UserId |
-| Peer_Account | Array |选填 | 待查询的单聊会话对端的用户 UserId。<li>若要查询单个会话的未读数，该字段必填</li><li>该数组最大小为10</li>|
+| Peer_Account | Array |选填 | 待查询的单聊会话对端的用户 UserId。<li>若要查询单个会话的未读数，该字段必填</li><li>该数组最大为10</li>|
 
 ### 应答包字段说明
 
