@@ -5,7 +5,7 @@ COSBrowser App은 Tencent Cloud Cloud Object Storage(COS)에서 공식 출시한
 
 | 작업 이름                                                       | 작업 설명                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [사용 개요](https://intl.cloud.tencent.com/document/product/436/46382#UsageOverview) | 최근 리소스 사용량 데이터를 표시합니다.                                   |                                             |
+| [사용 개요](https://intl.cloud.tencent.com/document/product/436/46382#UsageOverview) | 최근 리소스 사용량 데이터를 표시합니다.                                   |                 
 | [버킷 모니터링](https://intl.cloud.tencent.com/document/product/436/46382#BucketMonitoring) | 최근 리소스 사용량의 버킷 수준 데이터를 표시합니다.                                   |
 | [위젯](https://intl.cloud.tencent.com/document/product/436/46382#TheWidget) | 데이터 개요는 App을 열지 않고도 사용 데이터를 볼 수 있는 iOS 위젯을 지원합니다.   |
 
