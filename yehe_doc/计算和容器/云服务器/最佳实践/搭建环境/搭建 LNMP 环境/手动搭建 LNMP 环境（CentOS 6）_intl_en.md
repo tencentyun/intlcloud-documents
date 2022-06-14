@@ -1,52 +1,53 @@
-## Introduction
-The LNMP environment is a website server architecture run on Linux and consisting of Nginx, MySQL or MariaDB, and PHP. This article describes how to set up LNMP on a CVM.
+## Overview
+The LNMP environment is a website server architecture consisting of Nginx, MySQL or MariaDB, and PHP running on Linux. This document describes how to manually set up the LNMP environment on a Tencent Cloud CVM.
 
-To set up the LNMP environment, you should be familiar with common Linux commands, such as [Installing Software via YUM in CentOS](https://intl.cloud.tencent.com/document/product/213/2046) for some examples), and understand the versions of the installed software.
+To manually set up the LNMP environment, you should familiarize yourself with common Linux commands such as [installing software via YUM in CentOS](https://intl.cloud.tencent.com/document/product/213/2046), and understand the usage and version compatibility of the software to be installed.
+
+>! It’s recommended that you can configure the LNMP environment through the image environment of Tencent Cloud marketplace, and it may take a long time to set up the LNMP environment manually.
+
 
 ## Software
-The following software are involved:
-CentOS is a distribution of the Linux operating system. We use CentOS 6.9 in this article.
-Nginx is a web server. We use Nginx 1.17.5 in this article.
-MySQL is a database software. We use MySQL 5.1.73.
-PHP is a scripting language. We use PHP 7.1.32 in this article.
+The following software is used to build the LNMP environment.
+CentOS is a distribution of the Linux operating system. This document uses CentOS 6.9 as an example.
+Nginx is a web server. This document uses Nginx 1.17.5 as an example.
+MySQL is a database software. This document uses MySQL 5.1.73 as an example.
+PHP is a scripting language. This document uses PHP 7.1.32 as an example.
 
-## Prerequisites
+## Prerequisite
 
-You need a Linux CVM. If you have not purchased one yet, see [Getting Started with Linux CVMs](http://intl.cloud.tencent.com/document/product/213/2936).
+Setting up a LNMP environment requires a Linux CVM. If you have not purchased one yet, see [Getting Started with Linux CVMs](https://intl.cloud.tencent.com/zh/document/product/213/10517).
 
 
 ## Directions
-### Step 1: Logging in to a Linux instance
-[Log in to a Linux instance using WebShell (recommended)](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are comfortable with:
-- [Log in to a Linux instance using remote login software](https://intl.cloud.tencent.com/document/product/213/32502).
-- [Log in to a Linux instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501).
+### Step 1: log in to a Linux instance
+[Log in to the Linux instance using standard login method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use any of the following login methods you are comfortable with:
+- [Logging in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
+- [Logging in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 
-### Step 2: Installing Nginx
+### Step 2: install Nginx
 1. Run the following command to create a file named `nginx.repo` under `/etc/yum.repos.d/`.
 ```
 vi /etc/yum.repos.d/nginx.repo
 ```
-2. Press **i** to enter edit mode and input the following.
+2. Press **i** to switch to the editing mode and enter the following.
 ```
 [nginx]
-name = nginx repo
+name=nginx repo
 baseurl=https://nginx.org/packages/mainline/centos/6/$basearch/
 gpgcheck=0
 enabled=1
 ```
-3. Press **Esc** and input **:wq** to save the file and go back.
+3. Click **Esc** and enter **:wq** to save and close the file.
 4. Run the following command to install Nginx.
 ```
 yum install -y nginx
 ```
-5. Run the following command to open `default.conf`.
+5. Run the following command to open the `default.conf` file.
 ```
 vim /etc/nginx/conf.d/default.conf
 ```
-6. Press **i** to switch to edit mode.
-7. Find `server{...}` and replace the content inside the curly brackets with the following:
-   This cancels the monitoring of IPv6 addresses and configures Nginx to interact with PHP.
-
+6. Press **i** to switch to the edit mode to modify the `default.conf` file.
+7. Find `server{...}` and replace the content inside the curly brackets with the following. This is to cancel the listening of the IPv6 address and configure Nginx to realize linkage with PHP.
 ```
 server {
 	listen       80;
@@ -75,19 +76,19 @@ server {
 	}
 }
 ```
-8. Press **Esc** and input **:wq** to save the file and go back.
+8. Press **Esc** and enter **:wq**. Save and close the file.
 9. Run the following command to start Nginx.
 ```
 service nginx start
 ```
-10. Run the following command to set Nginx to start automatically when the system starts.
+10. Run the following commands to automatically launch Nginx at startup.
 ```bash
 chkconfig --add nginx
 ```
 ```
 chkconfig  nginx on
 ```
-11. In a local browser, visit the following URL to verify that the Nginx service is working properly.
+11. Enter the following URL in your local browser and verify whether the Nginx service is working properly.
 ```
 http://[Public IP address of the CVM instance]
 ```
@@ -95,18 +96,18 @@ If the following appears, Nginx has been successfully installed and configured.
 ![](https://main.qcloudimg.com/raw/fdc40877928729679d392eb304a3f12c.png)
 
 
-### Step 3: Installing MySQL
-1. Run the following command to check if MySQL is already installed.
+### Step 3: install a database
+1. Run the following command to check whether MySQL has been already installed.
 ```
 rpm -qa | grep -i mysql
 ```
- - If the following appears, MySQL is already installed.
+ - If the following appears, MySQL has already been installed.
 ![](https://main.qcloudimg.com/raw/74e544638637d39209cc1e474083d11d.png)
-To avoid conflict between different versions, run the following command to remove the existing MySQL.
+To avoid conflicts between different versions, run the following command to remove the existing MySQL.
 ```
 yum -y remove [Package name]
-``` 
- - If nothing is returned, MySQL is not installed. In this case, proceed to the next step.
+```
+ - If nothing is returned, MySQL has not been installed. In this case, proceed to the next step.
 2. Run the following command to install MySQL.
 ```
 yum install -y mysql-devel.x86_64 mysql-server.x86_64 mysql-libs.x86_64
@@ -115,25 +116,25 @@ yum install -y mysql-devel.x86_64 mysql-server.x86_64 mysql-libs.x86_64
 ```
 service mysqld start 
 ```
-4. Run the following command to set MySQL to start automatically when the system boots up.
+4. Run the following commands to automatically launch MySQL at startup.
 ```bash
 chkconfig --add mysqld
 ```
 ```
 chkconfig mysqld  on 
 ```
-5. Run the following command to verify MySQL installation.
+5. Run the following command to verify whether MySQL has been successfully installed.
 ```
 mysql
 ```
-If the following appears, MySQL has been successfully installed.
+If the following appears, MariaDB has been successfully installed.
 ![](https://main.qcloudimg.com/raw/9c9347ad0264ddad5e98c8dd48adcc6a.png)
 6. Run the following command to exit MySQL.
 ```
 \q
 ```
 
-### Step 4: Installing and configuring PHP
+### Step 4: install and configure PHP
 1. Run the following commands to update the software source of PHP in Yum.
 ```
 rpm -Uvh https://mirrors.cloud.tencent.com/epel/epel-release-latest-6.noarch.rpm
@@ -149,7 +150,7 @@ yum -y install mod_php71w.x86_64 php71w-cli.x86_64 php71w-common.x86_64 php71w-m
 ```
 service php-fpm start
 ```
-4. Run the following command to set the PHP-FPM service to start automatically.
+4. Run the following commands to automatically launch PHP-FPM at startup.
 ```bash
 chkconfig --add php-fpm  
 ```
@@ -167,26 +168,23 @@ echo "<?php phpinfo(); ?>" >> /usr/share/nginx/html/index.php
 ```
 service nginx restart
 ```
-3. In a local browser, visit the following URL to check whether the environment configuration is successful.
+3. In a local browser, visit the following URL to check whether the environment has been successfully configured.
 ```
 http://[Public IP address of the CVM instance]
 ```
-If the following results appear, the environment configuration is successful.
+If the following appears, the environment has been successfully configured.
 ![](https://main.qcloudimg.com/raw/64af927320f2121ae4daf15cf2eaba39.png)
 
 
 
 ## Related Operations
 
-After the LNMP environment is built, you can [start a WordPress website](https://intl.cloud.tencent.com/document/product/213/8044).
+After the LNMP environment is built, you can [manually build a WordPress website](https://intl.cloud.tencent.com/document/product/213/8044) to familiarize yourself with CVM and its features.
 
-## FAQ
+## FAQs
 
-If you encounter a problem when using CVM, refer to the following documents for troubleshooting based on your actual situation.
+If you encounter a problem when using CVM, refer to the following documents for troubleshooting:
 
-- For issues regarding CVM login, see [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
-- For issues regarding the CVM network, see [IP Addresses](https://intl.cloud.tencent.com/document/product/213/17285) and [Ports and Security Groups](https://intl.cloud.tencent.com/document/product/213/2502).
-- For issues regarding CVM disks, see [System and Data Disks](https://intl.cloud.tencent.com/document/product/213/17351).
-
-
-
+- CVM login: [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
+- CVM network: [IP Address](https://intl.cloud.tencent.com/document/product/213/17285) and [Port](https://intl.cloud.tencent.com/document/product/213/2502).
+- CVM disks: [System and Data Disks](https://intl.cloud.tencent.com/document/product/213/17351).
