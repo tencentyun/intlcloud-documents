@@ -55,7 +55,6 @@
 | 8001   | 消息长度超出限制，消息长度不要超过8k，消息长度是各个 elem 长度的总和，elem 长度是所有 elem 字段的长度总和。 |
 | 8002   | 消息 KEY 错误，内部错误，网络请求包的 KEY 和 回复包的不一致。 |
 | 8003   | 图片转换 HTTP 请求失败。 |
-| 8004   | 图片涉及敏感内容。 |
 | 8005   | 合并转发消息嵌套层数超过上限100层。 |
 | 8010   | 信令请求 ID 无效或已经被处理过。 |
 | 8011   | 信令请求无权限，比如取消非自己发起的邀请。 |
@@ -190,11 +189,11 @@
 | 70003  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
 | 70005  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。  |
 | 70009  | UserSig 验证失败，可能因为生成 UserSig 时混用了其他 SDKAppID 的私钥或密钥导致，请使用对应 SDKAppID 下的私钥或密钥重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
-| 70013  | 请求中的 UserID 与生成 UserSig 时使用的 UserID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。      |
-| 70014  | 请求中的 SDKAppID 与生成 UserSig 时使用的 SDKAppID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。          |
+| 70013  | 请求中的 UserID 与生成 UserSig 时使用的 UserID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im/tool-usersig)】页面校验 UserSig。      |
+| 70014  | 请求中的 SDKAppID 与生成 UserSig 时使用的 SDKAppID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im/tool-usersig)】页面校验 UserSig。          |
 | 70016  | 公钥不存在，UserSig 验证失败，请在即时通信 IM 控制台 [获取密钥](https://intl.cloud.tencent.com/document/product/1047/34540)。 |
 | 70020  | SDKAppID 未找到，请在即时通信 IM 控制台确认应用信息。          |
-| 70050  | UserSig 验证次数过于频繁。请检查 UserSig 是否正确，并于1分钟后重新验证。您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。 |
+| 70050  | UserSig 验证次数过于频繁。请检查 UserSig 是否正确，并于1分钟后重新验证。您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im/tool-usersig)】页面校验 UserSig。 |
 | 70051  | 帐号被拉入黑名单。                                           |
 | 70107  | 请求的用户帐号不存在。                                       |
 | 70114  | 因安全原因被限制登录，请不要频繁登录。                                             |
@@ -233,7 +232,6 @@
 | 30002  | SDKAppID 不匹配。                                            |
 | 30003  | 请求的用户帐号不存在。                                       |
 | 30004  | 请求需要 App 管理员权限。                                    |
-| 30005  | 关系链字段中包含敏感词。                                     |
 | 30006  | 服务端内部错误，请重试。                                     |
 | 30007  | 网络超时，请稍后重试。                                       |
 | 30008  | 并发写导致写冲突，建议使用批量方式。                         |
