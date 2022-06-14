@@ -11,8 +11,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 
 ## Prerequisites
 - You have learned about the concept of [Region](https://intl.cloud.tencent.com/document/product/382/13299#.E5.9C.B0.E5.9F.9F) and selected a region as needed.
-- You have activated the SMS service and created a signature and SMS template that have been approved. For details, see [Getting Started](https://intl.cloud.tencent.com/document/product/382/35449).
-- You have purchased a Chinese Mainland SMS package (if you need to send Chinese Mainland SMS messages).
+- You have activated the SMS service and created a signature and SMS template that have been approved. For details, see [Getting Started](https://intl.cloud.tencent.com/document/product/382/35452).
 - You have got the `SecretId` and `SecretKey` on the [**Manage API Key**](https://console.cloud.tencent.com/cam/capi) page in the CAM console.
   - `SecretId` is used to identify the API caller.
   - `SecretKey` is a key used to encrypt the signature and help the server verify the signature. **You should keep it private and avoid disclosure**.
