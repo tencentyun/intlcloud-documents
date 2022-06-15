@@ -83,7 +83,7 @@ using TencentMobileGaming;
 ### [初始化 SDK](id:Init)
 
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
-- **参数 sdkAppID 获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**。
+- **参数 sdkAppID 获取请参考** [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
 - **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
 
 
@@ -318,7 +318,7 @@ ITMGContext.GetInstance ().GetPttCtrl ().ApplyPTTAuthbuffer(authBuffer);
 
 ### [启动流式语音识别](id:StartRWSR)
 
-此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用 <dx-tag-link link="#Stop" tag="接口：StopRecording">停止录制</dx-tag-link>**。
+此接口用于启动流式语音识别，同时在回调中会有实时的语音转文字返回，可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。**停止录音调用** <dx-tag-link link="#Stop" tag="接口：StopRecording">停止录制</dx-tag-link>。
 
 #### 函数原型  
 
@@ -975,7 +975,7 @@ ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID);
 #### 函数原型  
 
 ```
-ITMGPTT int SpeechToText(String fileID,String speechLanguage)
+ITMGPTT int SpeechToText(String fileID,String speechLanguage,String translatelanguage )
 
 ```
 

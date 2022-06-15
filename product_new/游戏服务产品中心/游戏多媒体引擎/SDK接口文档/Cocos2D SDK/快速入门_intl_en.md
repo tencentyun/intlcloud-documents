@@ -12,7 +12,7 @@ This document only describes the most important APIs to help you get started wit
 |EnableMic	 	| Enables mic 	|
 |EnableSpeaker		| Enables speaker 	|
 
->
+
 - Configure your project before using GME; otherwise, the SDK will not take effect.
 - After a GME API is called successfully, `AV_OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
@@ -38,7 +38,7 @@ context->SetTMGDelegate(this);
 ### 2. Initialize the SDK
 For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 This API requires the `AppID` from the Tencent Cloud Console and the `openID` as parameters. The `openID` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
->The SDK must be initialized so that a room can be entered
+>!The SDK must be initialized so that a room can be entered
 #### Function prototype
 
 ```
@@ -112,7 +112,7 @@ For entering a common voice chat room that does not involve range voice, use the
 
 #### Function prototype
 ```
-ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)
+ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuffer, int buffLen)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -170,7 +170,7 @@ This API is used to enable/disable the speaker.
 
 #### Function prototype  
 ```
-ITMGAudioCtrl virtual int EnableSpeaker(bool enabled)
+ITMGAudioCtrl virtual int EnableSpeaker(bool enable )
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|

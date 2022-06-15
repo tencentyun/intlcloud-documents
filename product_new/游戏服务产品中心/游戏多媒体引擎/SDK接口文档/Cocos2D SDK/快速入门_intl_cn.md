@@ -12,7 +12,7 @@ GME 快速入门文档只提供最主要的接入接口，更多详细接口请�
 |EnableMic	 	|开麦克风 	|
 |EnableSpeaker		|开扬声器 	|
 
->
+
 - GME 使用前请对工程进行配置，否则 SDK 不生效。
 - GME 的接口调用成功后返回值为 AV_OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
@@ -38,7 +38,7 @@ context->SetTMGDelegate(this);
 ### 2、初始化 SDK
 参数获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)。
 此接口需要来自腾讯云控制台的 AppID 号码作为参数，再加上 openID，这个 openID 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
->初始化 SDK 之后才可以进房。
+>!初始化 SDK 之后才可以进房。
 ####  函数原型
 
 ```
@@ -112,7 +112,7 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 
 ####  函数原型
 ```
-ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)
+ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuffer , int buffLen)
 ```
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
@@ -170,7 +170,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
 
 ####  函数原型  
 ```
-ITMGAudioCtrl virtual int EnableSpeaker(bool enabled)
+ITMGAudioCtrl virtual int EnableSpeaker(bool enable  )
 ```
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
