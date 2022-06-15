@@ -975,7 +975,7 @@ This API can specify a language for recognition or translate the information rec
 #### Function prototype  
 
 ```
-ITMGPTT int SpeechToText(String fileID,String speechLanguage)
+ITMGPTT int SpeechToText(String fileID,String speechLanguage,String translatelanguage )
 
 ```
 
