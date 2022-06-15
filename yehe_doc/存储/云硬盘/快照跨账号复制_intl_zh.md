@@ -47,7 +47,7 @@
 ### 授权操作[](id:Authorization)
 若协作者不具备 action 权限，可参考以下步骤进行授权：
 1. 通过策略语法方式创建策略，详情请参见 [创建自定义策略](https://intl.cloud.tencent.com/document/product/598/35596)。创建完成的策略可参考以下代码示例：
-```
+```json
    {
        "version": "2.0",
        "statement": [

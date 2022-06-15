@@ -41,7 +41,7 @@ The new VPC-CNI mode network solution is an extension of the original VPC-CNI mo
 ## Use Limitations
 
 - The network mode is only available to some models such as S5, SA2, IT5 and SA3.
-- The number of Pods with exclusive ENIs running on a node is limited by the number of ENIs that can be bound to model. The maximum number of Pods with exclusive ENIs running on a node = the maximum number of bindable ENIs - 1.
+- The number of Pods with exclusive ENIs running on a node is limited by the number of ENIs that can be bound to model. The maximum number of Pods with exclusive ENIs running on a node = the maximum number of bindable ENIs - 1.For more information, see [Limits on the Number of Pods in VPC-CNI Mode](https://intl.cloud.tencent.com/document/product/457/43559).
 - The new network solution is only suitable for the new TKE clusters.
 - There are unified restrictions on the VPC-CNI mode:
   - You need to plan a dedicated subnet for containers, and the subnet is not recommended to be shared with other Tencent Cloud services such as CVMs and CLBs.
