@@ -9,7 +9,6 @@ Elastic MapReduce (EMR) will need to access or operate other cloud products. To 
 | QcloudEMRFullAccess | Full access to EMR | No | Full permission to use all EMR features. For more information, see [Purchasing and managing EMR clusters](#jump2). |
 | QcloudEMRReadOnlyAccess   | Read-only access to EMR | No | Permission to view EMR features  |
 | QcloudEMRPurchaseAccess  | EMR finance permission   | No      | For more information, see [Purchasing and managing EMR clusters](#jump2). This permission is not required if you don't need to purchase EMR clusters or adjust their configurations. |
-| Custom TencentDB instance purchase policy  | Permission to purchase TencentDB instances | No      | For more information, see [Purchasing and managing EMR clusters](#jump2). This permission is not required if you don't need to add components after the cluster is deployed. |
 
 >! The `QcloudEMRPurchaseAccess` preset policy allows you to manage all users' permission to purchase EMR instances. It grants users the finance permissions of CVM, TencentDB, and EMR at the same time. To restrict users from purchasing CVM or TencentDB instances, do not grant the permission to place orders for the corresponding product.
 
@@ -37,41 +36,14 @@ To create a cluster, add a component, or scale out a cluster, a sub-user or coll
 | Preset EMR policy  | QcloudEMRFullAccess     | Full access to EMR |
 | Preset EMR policy | QcloudEMRReadOnlyAccess | Read-only access to EMR |
 | Preset EMR policy  | QcloudEMRPurchaseAccess  | EMR finance permission   |
-| Custom policy   | Users can custom the name as needed.   | Permission to purchase TencentDB instances |
 
 The root account can grant the above permissions to a sub-user or collaborator via the following steps:
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview), click **Users** > **User List**, find the target sub-user or collaborator, and click **Authorize**.
 ![](https://main.qcloudimg.com/raw/f71fb2171be39b80e28306b68e718f7c.png) 
 2. Search for and select each policy listed in the above table in the **Associate Policy** dialog box, and then click **Confirm**. The `QcloudEMRFullAccess` policy is used as an example in the following figure:
->! The process of associating the EMR finance policy `QcloudEMRPurchaseAccess` is the same as step 2.
+3. The process of associating the EMR finance policy `QcloudEMRPurchaseAccess` is the same as step 2.
 
 ![](https://main.qcloudimg.com/raw/45261553e06052a261412a358ae73309.png)
-3. Custom a TencentDB purchase policy.
- - **(1). Create a custom policy.**
-Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview), click **Policies** > **Create Custom Policy** > **Create by Policy Syntax**, select **Blank Template** on the **Create by Policy Syntax** page, and click **Next**.
-![](https://main.qcloudimg.com/raw/517cc56fe1d70289b9c49941adcece01.png)
-Enter a policy name (such as `EMRvisitedCDB`) and a description (such as permission to purchase TencentDB instances for new EMR components), enter the following JSON content under **Policy Content**, and click **Done**.
-```
-{
-			 "version": "2.0",
-			 "statement": [
-				 {
-					 "effect": "allow",
-					 "resource": [
-						 "*"
-					 ],
-					 "action": [
-						 "cdb:CreateDBInstance",
-						 "cdb:CreateDBInstanceHour"
-					 ]
-				 }
-			 ]
- }
-```
-
- - **(2). Associate the sub-user or collaborator with the custom TencentDB policy.**
-Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview), select the target user name in **User List**, and select **Operation** > **Authorize**. Then, search for a custom policy (such as `EMRvisitedCDB`) and bind it.
-
 
 ### Custom Service Roles
 Tencent Cloud root accounts and collaborators and sub-users with the `QcloudCamRoleFullAccess` permission can precisely control COS bucket permissions and other cloud resource permissions. For more information see [Custom Service Roles](https://intl.cloud.tencent.com/document/product/1026/39661).
