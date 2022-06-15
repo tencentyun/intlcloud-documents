@@ -65,8 +65,8 @@ Operation name: thumbnail
 | /thumbnail/&lt;Width>x | The width of the output image, with the height scaled automatically |
 | /thumbnail/x&lt;Height> | The height of the output image, with the width scaled automatically |
 | /thumbnail/&lt;Width>x&lt;Height> | The maximum width and height of the thumbnail for scaling |
-| /thumbnail/&lt;Width>x&lt;Height>> | The maximum width and height of the thumbnail to scale down the image. The smaller value between the width scale ratio and height scale ratio will be used as the scale ratio. If both the output width and height are greater than the input width and height, the image will not be scaled. |
-|  /thumbnail/&lt;Width>x&lt;Height>< | The maximum width and height of the thumbnail to scale up the image. The smaller value between the width scale ratio and height scale ratio will be used as the scale ratio. If both the output width and height are smaller than the input width and height, the image will not be scaled. |
+| /thumbnail/&lt;Width>x&lt;Height>**>** | The maximum width and height of the thumbnail to scale down the image. The smaller value between the width scale ratio and height scale ratio will be used as the scale ratio. If both the output width and height are greater than the input width and height, the image will not be scaled. |
+|  /thumbnail/&lt;Width>x&lt;Height>**<** | The maximum width and height of the thumbnail to scale up the image. The smaller value between the width scale ratio and height scale ratio will be used as the scale ratio. If both the output width and height are smaller than the input width and height, the image will not be scaled. |
 | /thumbnail/!&lt;Width>x&lt;Height>r | The minimum width and height of the thumbnail for scaling |
 | /thumbnail/&lt;Width>x&lt;Height>! | The output width and height with the aspect ratio of the input image ignored. Note that the output image may be distorted. |
 | /thumbnail/&lt;Area>@ | The maximum number of pixels of the output image |
