@@ -360,7 +360,7 @@ This API is used to start streaming speech recognition. Text obtained from speec
 
 ```
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage) 
+ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* speechLanguage,const char* translateLanguage) 
 
 ```
 
@@ -878,7 +878,7 @@ public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 
 | Parameter | Type | Description |
 | -------- | :-----: | ----------------------- |
-| result   |  int32  | 0: recording is completed |
+| code   |  int32  | 0: recording is completed |
 | filepath | FString | Path of stored recording file |
 | fileid   | FString | File URL path |
 
