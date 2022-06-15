@@ -1,5 +1,5 @@
 
->!This document applies to 4.x.x versions of the TRTC web SKD.
+>! This document applies to 4.x.x versions of the TRTC web SDK.
 
 ## Error Code Definitions
 
@@ -22,7 +22,7 @@
 | CLIENT_BANNED       | 16448   | 0x4040 | The user was removed from the room for one of the following reasons: <ul style="margin:0"><li/>A user with the same username entered the room. **Note**: Avoid repeated room entry with the same username because it will cause an error.<li/>The account admin called a server-side API to remove the user from the room.  |
 | SERVER_TIMEOUT              | 16449   | 0x4041 | Media transmission service timed out.       |
 | SUBSCRIPTION_TIMEOUT        | 16450   | 0x4042 | Remote stream subscription timed out.         |
-| PLAY_NOT_ALLOWED    | 16451   | 0x4043 | Autoplay blocked.<ul style="margin:0"><li/>When you call `play()`, if audio/video fails to be played due to the [autoplay policy](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) of the browser, this error will be returned.<li/>Suggested solution: Instruct users through UI interactions to resume play via the calling of `resume()`. For details, see [Suggested Solutions for Autoplay Restrictions](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html) |
+| PLAY_NOT_ALLOWED    | 16451   | 0x4043 | Autoplay blocked.<ul style="margin:0"><li/>When you call `play()`, if audio/video fails to be played due to the [autoplay policy](https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide) of the browser, this error will be returned.<li/>Suggested solution: Instruct users through UI interactions to resume play via the calling of `resume()`. For details, see [Suggested Solutions for Autoplay Restrictions](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-21-advanced-auto-play-policy.html) |
 | DEVICE_AUTO_RECOVER_FAILED         | 16452   | 0x4044 | Failed to resume capturing data from the mic/camera. This is an error event for `LocalStream`.<ul style="margin:0"><li/>When a device change is detected (for example, if the camera or mic used for publishing is disconnected or reconnected), the SDK will try to resume capturing. If it fails, this error will be returned. <li/>Suggested solution: Notify users of the failure and ask them to check if their devices are disconnected or occupied by other applications.<li/>You can also add a retry button to the UI for users to manually resume capturing. |
 | START_PUBLISH_CDN_FAILED           | 16453   | 0x4045 | Failed to publish to CDN.          |
 | STOP_PUBLISH_CDN_FAILED            | 16454   | 0x4046 | Failed to stop publishing to CDN.          |
@@ -53,7 +53,7 @@
 | 70014  | Account system | `SDKAppID` in `userSig` is different from that in the request. Check whether the `SDKAppID` entered during login is the same as that in `userSig`. |
 | 70015  | Account system | No verification method was found for this `SDKAppID` and account type. Check whether account integration has been performed. |
 | 70016  | Account system | The length of the public key pulled is 0. Check whether a public key has been uploaded. If it was just uploaded, try again in 10 minutes.  |
-| 70017  |Account system | Internal validation of third-party ticket timed out. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
+| 70017  | Account system | Internal validation of third-party ticket timed out. Please try again. If the problem persists after multiple retries, please [contact us](https://intl.cloud.tencent.com/contact-us). |
 | 70018  | Account system | Internal verification of third-party ticket failed.                                       |
 | 70019  | Account system | The ticket field for HTTPS-based verification is empty. Enter the correct `userSig`.        |
 | 70020  | Account system | The application (`SDKAppID`) was not found. Make sure you have created it in Tencent Cloud. |
@@ -113,9 +113,10 @@
 | -10018 | Advanced permission control was enabled, but `client.join` did not carry `privateMapKey` or `privateMapKey` was ` `. For details, see [Enabling Advanced Permission Control](https://intl.cloud.tencent.com/document/product/647/35157). |
 | -10019 | Advanced permission control was enabled, but the `privateMapKey` carried by `client.join` did not meet the requirements. For details, see [Enabling Advanced Permission Control](https://intl.cloud.tencent.com/document/product/647/35157). |
 | -10020 | Server connection timed out. Try again. |
+| -100027  | Check whether the TRTC service status for your application is normal. If not, enable your application and enter the room again. |
 
 ## Common Errors and Solutions
-The following errors must be fixed through application-side intervention. For example, if camera access is denied, your application needs to prompt users to grant it camera access in order to make calls.
+The following errors must be fixed through application-side intervention. For example, if camera access is denied, your application needs to prompt users to grant it camera access.
 
 
 | Error Message    | Description    | Solution    |
