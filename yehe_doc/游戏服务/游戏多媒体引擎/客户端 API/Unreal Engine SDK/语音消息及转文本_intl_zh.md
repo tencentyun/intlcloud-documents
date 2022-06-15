@@ -459,7 +459,7 @@ void CTMGSDK_For_AudioDlg::HandleSTREAM2TEXTComplete(const char* data, bool isCo
 
 ### 启动录音
 
-此接口用于启动录音。需要将录音文件上传后才可以进行语音转文字等操作。**停止录音调用 StopRecording**。
+此接口用于启动录音。**停止录音调用 StopRecording**。
 
 #### 函数原型  
 
