@@ -17,12 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product//436/7778) 文档）。
+>? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product//1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 该请求操作的实现需要有如下请求体。
@@ -88,7 +88,7 @@ Container 类型 Container 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点  | 描述                                                     | 类型      | 必选 |
 | ------------------ | ------- | ---------------------------------------------------- | --------- | ---- |
-| Format             | Request.Container | 容器格式：mp4、flv、hls、ts、mp3、aac、WebM、dash | String | 是 |
+| Format             | Request.Container | 容器格式：mp4、flv、hls、ts、mp3、aac、WebM、dash、mov、avi | String | 是 |
 | ClipConfig         | Request.Container | 分片配置，当 format 为 hls 和 dash 时有效    | Container    | 否  |
 
 Container 类型 ClipConfig 的具体数据描述如下：
@@ -271,7 +271,7 @@ Container 类型 TransConfig 的具体数据描述如下：
 
 | 节点名称（关键字）    | 父节点              | 描述             | 类型   | 必选 | 默认值 | 限制                                                         |
 | --------------------- | ------------------- | ---------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
-| AdjDarMethod          | Request.TransConfig                        | 分辨率调整方式               | String    | 否       | none   | <ul  style="margin: 0;"><li>取值 scale、crop、pad、none</li><li>当输出视频的宽高比与原视频不等时，根据此参数做分辨率的相应调整</li><li>当视频编解码格式为H265时, 该参数无效</li></ul>  |
+| AdjDarMethod          | Request.TransConfig                        | 分辨率调整方式               | String    | 否       | none   | <ul  style="margin: 0;"><li>取值 scale、crop、pad、none</li><li>当输出视频的宽高比与原视频不等时，根据此参数做分辨率的相应调整</li></ul>  |
 | IsCheckReso           | Request.TransConfig                        | 是否检查分辨率               | String    | 否       | false  | <ul  style="margin: 0;"><li>true、false </li><li>当为 false 时，按照配置参数转码</li></ul>      |
 | ResoAdjMethod         | Request.TransConfig                        | 分辨率调整方式               | String    | 否       | 0      | <ul  style="margin: 0;"><li>取值0、1；0表示使用原视频分辨率；1表示返回转码失败</li><li>当 IsCheckReso 为 true 时生效</li></ul> |
 | IsCheckVideoBitrate   | Request.TransConfig                        | 是否检查视频码率             | String    | 否       | false  | <ul  style="margin: 0;"><li>true、false </li><li>当为 false 时，按照配置参数转码</li><li>当视频编解码格式为H265时, 该参数无效 </li></ul> |
@@ -281,7 +281,6 @@ Container 类型 TransConfig 的具体数据描述如下：
 | DeleteMetadata        | Request.TransConfig                         | 是否删除文件中的 MetaData 信息 | String    | 否       | false  | <ul  style="margin: 0;"><li> true、false </li><li> 当为 false 时, 保留源文件信息</li></ul> |
 | IsHdr2Sdr             | Request.TransConfig                        | 是否开启 HDR 转 SDR             | String    | 否       | false  | true、false                                                   |
 | HlsEncrypt            | Request.TransConfig                        | hls 加密配置                  | Container | 否       | 无     | 无                                                           |
-| StreamSegmentTime           | Request.TransConfig | dash等格式切片时间        | String | 否       | 5            | <ul  style="margin: 0;"><li>(0 视频时长] </li><li>单位为秒</li></ul>|
 
 AdjDarMethod 参数图示：
 
@@ -300,7 +299,7 @@ Container 类型 HlsEncrypt 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product//1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
@@ -371,7 +370,7 @@ Container 节点 Response 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product//1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
 
 ## 实际案例
 
@@ -479,3 +478,4 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     </Template>
 </Response>
 ```
+
