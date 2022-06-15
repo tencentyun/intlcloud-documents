@@ -22,7 +22,7 @@
 
 ### 本地开发
 
-1. 参考 [Egg.js](https://eggjs.org/zh-cn/intro/quickstart.html) 官方文档，快速初始化示例项目：
+1. 参考 [Egg.js](https://www.eggjs.org/intro/quickstart) 官方文档，快速初始化示例项目：
 ```sh
 mkdir egg-example && cd egg-example
 npm init egg --type=simple
