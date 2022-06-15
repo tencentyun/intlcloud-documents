@@ -360,7 +360,7 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 
 ```
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage) 
+ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* speechLanguage,const char* translateLanguage) 
 
 ```
 
@@ -878,7 +878,7 @@ public abstract event QAVUploadFileCompleteCallback OnUploadFileComplete;
 
 | 参数     |  类型   | 含义                    |
 | -------- | :-----: | ----------------------- |
-| result   |  int32  | 当 code 为0时，录制完成 |
+| code   |  int32  | 当 code 为0时，录制完成 |
 | filepath | FString | 录制的存放地址          |
 | fileid   | FString | 文件的 url 路径         |
 
