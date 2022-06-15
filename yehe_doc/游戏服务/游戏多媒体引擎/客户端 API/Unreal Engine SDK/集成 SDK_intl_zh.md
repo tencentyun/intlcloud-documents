@@ -17,7 +17,7 @@
 </thead>
 <tbody><tr>
 <td>GMESDK.uplugin</td>
-<td align="center">uplgin文件</td>
+<td align="center">uplugin文件</td>
 <td>插件配置文件</td>
 </tr>
 <tr>
