@@ -35,12 +35,6 @@ You can create up to 5 tracking sets.
 3. **Edit the storage location**
 Click **Edit** in the **Shipping Location** section on the tracking set details page. You can choose to ship to a COS bucket or CLS. After editing, click **Save** as shown below:
 ![](https://main.qcloudimg.com/raw/1f720f70cccb6daf0e7bcea5affc8aba.jpg)
-4. **Perform cross-account shipping under organization account**
-<dx-alert infotype="explain" title="">
-This feature can be used only if the current account is a verified organizational account and an account organization has been created under it.
-</dx-alert>
-Click <b>Edit</b> in **Shipping Location** on the tracking set details page and select current account shipping (default) or cross-account shipping.
-<br>Select **All members under the organization account**, save, and the cross-account shipping feature is enabled. The tracking set will ship the logs of each member under the organization account to the shipping location you set.
-5. **Delete the tracking set**
+4. **Delete the tracking set**
 Click **Delete** on the right on a tracking set row on the **Tracking Set** page or click **Delete Tracking Set** on the tracking set details page.
 
