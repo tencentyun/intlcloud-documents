@@ -14,7 +14,7 @@ Set the syntax policy as follows:
 			{
 					"action": "cos:*",
 					"effect": "allow",
-					"resource": "qcs::cos::uid/$appId:$bucketName/*"
+					"resource": "qcs::cos::uid/appId:bucketName/*"
 			}
 		]
 }
