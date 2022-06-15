@@ -1,8 +1,9 @@
 
 **지원 제품**
 데이터베이스 감사 기능 지원 사항:
-- TencentDB for MySQL 5.6, 5.7 이중 노드와 삼중 노드를 지원합니다. TencentDB for MySQL 5.5 버전 및 TencentDB for MySQL 단일 노드는 현재 지원하지 않습니다.
-- 클라우드 네이티브 데이터베이스 TDSQL-C ( MySQL 버전 호환)
+- TencentDB for MySQL 5.6, 5.7, 8.0 이중 노드와 삼중 노드를 지원합니다. TencentDB for MySQL 5.5 버전 및 TencentDB for MySQL 단일 노드는 현재 지원하지 않습니다.
+- TDSQL-C for MySQL.
+- TencentDB for MongoDB 4.0.
 
 ## 감사 가격
 [데이터베이스 감사] (https://console.cloud.tencent.com/dls/mysql) 감사 로그 저장량에 따라 과금합니다. 과금 단위는 1시간으로 1시간 이하는 모두 1시간으로 과금합니다.   
