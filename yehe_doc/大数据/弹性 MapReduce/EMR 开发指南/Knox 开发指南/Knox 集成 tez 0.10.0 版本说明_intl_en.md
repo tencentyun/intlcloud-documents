@@ -1,8 +1,8 @@
 1. Download and compile the [Tez v0.10.0 source code package](https://dlcdn.apache.org/tez/0.10.1/). 
 ```
-tar -zxvf  apache-tez-0.10.0-src.tar.gz
-chmod -R 777 apache-tez-0.10.0-src
-cd  apache-tez-0.10.0-src
+tar -zxvf  apache-tez-0.10.1-src.tar.gz
+chmod -R 777 apache-tez-0.10.1-src
+cd  apache-tez-0.10.1-src
 mvn -X clean package -DskipTests=true -Dmaven.javadoc.skip=true
 ```
 2. Decompress the compiled WAR package.
