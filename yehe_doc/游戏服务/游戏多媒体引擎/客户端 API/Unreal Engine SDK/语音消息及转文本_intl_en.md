@@ -459,7 +459,7 @@ void CTMGSDK_For_AudioDlg::HandleSTREAM2TEXTComplete(const char* data, bool isCo
 
 ### Starting recording
 
-This API is used to start recording. The recording file must be uploaded first before you can perform operations such as speech-to-text conversion. **To stop recording, call `StopRecording`**.
+This API is used to start recording. **To stop recording, call `StopRecording`**.
 
 #### Function prototype  
 
