@@ -80,7 +80,7 @@ using TencentMobileGaming;
 ### [初始化 SDK](id:Init)
 
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
-- **参数 sdkAppID 获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**。
+- **参数 sdkAppID 获取请参考** [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
 - **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
 
 <dx-alert infotype="notice" title="">
@@ -390,7 +390,7 @@ ITMGContext.GetInstance().IsRoomEntered();
 #### 接口原型
 
 ```
-public abstract int SwitchRoom(string roomID, byte[] authBuffer);
+public abstract int SwitchRoom(string targetRoomID, byte[] authBuffer);
 ```
 
 #### 类型说明
