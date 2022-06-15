@@ -22,7 +22,7 @@ The Node.js runtime environment has been installed locally.
 
 ### Local development
 
-1. Refer to [Quick Start](https://eggjs.org/zh-cn/intro/quickstart.html) to quickly initialize the sample project as follows:
+1. Refer to [Quick Start](https://www.eggjs.org/intro/quickstart) to quickly initialize the sample project as follows:
 ```sh
 mkdir egg-example && cd egg-example
 npm init egg --type=simple

@@ -27,7 +27,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 
 ### Step 2. Add a security group rule
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click **Modify Rule** in the **Operation** column on the row of the security group for which to configure a rule.
-2. On the security group rule page, click **Inbound Rules** > **Add Rule**.
+2. On the security group rule page, click **Inbound rule** > **Add Rule**.
 3. In the pop-up window, set the rule.
  - **Type**: **Custom** is selected by default. You can also choose another system rule template. MySQL(3306) is recommended.
  - **Source** or **Target**: traffic source (inbound rules) or target (outbound rules). You need to specify one of the following options:
@@ -61,7 +61,7 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 
 ## Importing Security Group Rules
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID/name of the target security group.
-2. On the **Inbound Rules** or **Outbound Rules** tab, click **Import Rule**.
+2. On the **Inbound rule** or **Outbound rule** tab, click **Import Rule**.
 3. In the pop-up window, select an edited inbound/outbound rule template file and click **Import**.
 >? As existing rules will be overwritten after importing, we recommend that you export the existing rules before importing new ones.
 
