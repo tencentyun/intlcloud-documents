@@ -7,7 +7,7 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 | Blind Watermarking Type | Feature | Applicable Scenario |
 | :---------------- | :----------------------------------------- | :---------------------- |
 | Semi-blind watermarking (type 1) | Has strong anti-theft effects but requires the input image for watermark extraction | Images smaller than 640 x 640 |
-| Perfectly blind watermarking (type 2) | Is easy to extract and requires only the image watermark itself for watermark extraction | Batch adding and verification  |
+| Perfectly blind watermarking (type 2) | Is easy to extract and requires only the watermarked image for watermark extraction | Batch adding and verification  |
 | Text blind watermarking (type 3) | Adds text to the image | Adding terminal information  |
 
 >?
