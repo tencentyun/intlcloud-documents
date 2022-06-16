@@ -33,14 +33,6 @@ You can view the configuration items of pre-installed applications.
 1. Log in to the instance created with the Node.js application image. Set up the FTP service as instructed in [Building FTP Service using Linux Instance](https://intl.cloud.tencent.com/document/product/1103/47402).
 2. Use an FTP tool (such as WinSCP) on your local computer to upload your website code to the instance and test and debug the service.
 
-### Setting domain name and DNS
-You can set a separate domain name for your mini program backend service website. In this way, users don't need to use a complex IP address to visit your website. If the website is built for learning purposes only, using an IP address is fine but not recommended.
-
-If you already have a domain name or want to visit your website via a domain name, see the directions below:
-1. Purchase a domain name through Tencent Cloud. See [Domain Name Registration](https://intl.cloud.tencent.com/document/product/242/42861).
-2. (Optional) Complete ICP filing. 
-You must get the ICP filing for domain names that point to a server in the Chinese mainland.
-3. Configure DNS by using Tencent Cloud [DNSPod](https://www.dnspod.com/).
 
 ### Enabling HTTPS access
 You can install an SSL certificate and enable HTTPS access for your website. See [Installing Certificate on NGINX Server](https://intl.cloud.tencent.com/document/product/1103/47406).
