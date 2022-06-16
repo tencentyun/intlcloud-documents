@@ -30,15 +30,6 @@ You can view the configuration items of pre-installed applications.
 ### Using FTP tool to upload code and debug
 The ASP.NET application image contains FileZilla, which allows you to connect to your local computer, upload your website code, and perform testing and debugging.
 
-### Setting domain name and DNS
-Using a domain name, but not an IP, can help your users remember your website.
-
-Directions: 
-1. Purchase a domain name through Tencent Cloud as instructed in [Domain Name Registration](https://intl.cloud.tencent.com/document/product/242/42861). Ignore this step if you already have a domain name.
-2. (Optional) Obtain the ICP filing number. 
-If the domain name is pointed to a server in the Chinese mainland, you must apply for an ICP filing number for the domain name.
-3. Configure DNS through [Tencent Cloud DNS service](https://www.dnspod.com/).
-
 ### Enabling HTTPS access
 Install the SSL certificate and enable HTTPS access for your website as instructed in [Selecting an Installation Type for an SSL Certificate](https://intl.cloud.tencent.com/document/product/1007/30173).
 
