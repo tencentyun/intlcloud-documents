@@ -42,7 +42,10 @@ Reply URL (Assertion Consumer Service (ACS) URL): https://cloud.tencent.com/logi
 > - If your Tencent Cloud account is located on Tencent Cloud International website, perform configuration as follows:
 Identifier (entity ID): intl.cloud.tencent.com
 Reply URL (Assertion Consumer Service (ACS) URL): https://intl.cloud.tencent.com/login/saml
-
+You can configure it according to the site where your Tencent Cloud account is located
+|Site |Identifier (entity ID)| Reply URL (Assertion Consumer Service (ACS) URL) | 
+|---------|---------|---------|
+| International website |intl.cloud.tencent.com| https://intl.cloud.tencent.com/login/saml|
 
 3. In the **SAML Single Sign-On** overview interface, click <image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png"> in the upper right corner of **User Attributes and Claims** to open the **User Attributes and Claims editor. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/77dddf7d3248815f0483f33ef8bc6dea.png)
