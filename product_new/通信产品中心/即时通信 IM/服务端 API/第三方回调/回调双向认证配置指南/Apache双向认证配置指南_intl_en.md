@@ -9,7 +9,7 @@ This document uses the third-party developer domain name `www.example.com` as an
 
 - **The third-party developer sends an application to IM, requesting IM to issue a certificate for its domain name.**
  - The developer [configures the callback URL](https://intl.cloud.tencent.com/document/product/1047/34520), such as `www.example.com`, in the console.
- - IM issues the certificate `www.example.com.crt` and assigns the private key `www.example.com.key` to the developer with the domain name `www.example.com`. The developer can [download the certificate](https://intl.cloud.tencent.com/document/product/1047/34520#.E4.B8.8B.E8.BD.BD-https-.E5.8F.8C.E5.90.91.E8.AE.A4.E8.AF.81.E8.AF.81.E4.B9.A6) from the [console](https://console.cloud.tencent.com/im-detail/callback-setting).
+ - IM issues the certificate `www.example.com.crt` and assigns the private key `www.example.com.key` to the developer with the domain name `www.example.com`. The developer can [download the certificate](https://intl.cloud.tencent.com/document/product/1047/34520#.E4.B8.8B.E8.BD.BD-https-.E5.8F.8C.E5.90.91.E8.AE.A4.E8.AF.81.E8.AF.81.E4.B9.A6) from the [console](https://console.cloud.tencent.com/im/callback-setting).
  - IM provides the developer backend with a CA certificate [TencentQQAuthCA.crt](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/TencentQQAuthCA.crt.zip), which is used to verify the certificate of the requesting party (IM).
  - Perform configuration by referring to the **Reference for Apache HTTPS Mutual Authentication Configuration** below.
 
