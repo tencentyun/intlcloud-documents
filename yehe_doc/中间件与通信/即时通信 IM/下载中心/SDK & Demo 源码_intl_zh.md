@@ -188,7 +188,7 @@
 
 <h2> Demo 及解决方案下载 </h2>
 
-即时通信 IM Demo 演示了各个场景下的 IM 功能，您可 [前往安装](https://intl.cloud.tencent.com/document/product/1047/34279) 并体验不同平台、不同使用场景下的 Demo。
+
 <div>
 <div style="margin-top: 15px;">
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
