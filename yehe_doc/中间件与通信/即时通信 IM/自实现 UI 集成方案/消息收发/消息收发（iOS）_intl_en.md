@@ -224,7 +224,7 @@ The chat UI will display only the title and abstract information of the combined
 - **Receiving a combined message**
 When receiving a combined message [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html), use [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html) to get [title](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) and [abstractList](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) for UI display. When a user clicks the combined message, call the [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad77abfe27eabf237aee7c951100e6755) API to download the combine message list for UI display.
 
-> Only available in Enhanced Edition v5.2.210 or later.
+>! Only available in Enhanced Edition v5.2.210 or later.
 
 ### Typical examples: Sending and receiving combined messages
 - **Sending a combined message**
@@ -284,9 +284,9 @@ The recipient receives and parses a combined message:
 ## Message Read Receipts
 When sending a message, you can set whether a message requires a read receipt. If yes, the receiver can send a read receipt only after the message is read.
 >?
-- This feature is available only in the Ultimate Edition.
-- Group message read receipts are available only in Enhanced Edition v6.1.2155 or later. One-to-one message read receipts are available only in Enhanced Edition v6.2.2363 or later.
-- You need to set the group types that support group message read receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
+>- This feature is available only in the Ultimate Edition.
+>- Group message read receipts are available only in Enhanced Edition v6.1.2155 or later. One-to-one message read receipts are available only in Enhanced Edition v6.2.2363 or later.
+>- You need to set the group types that support group message read receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
   
 
 
@@ -428,7 +428,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 
 In certain scenarios, if you need to send messages that are excluded from `lastMsg` of a conversation, send them as follows:
 
-> Only available in Enhanced Edition v5.4.666 or later.
+>? Only available in Enhanced Edition v5.4.666 or later.
 
 ```objectivec
 // Create the message object
@@ -674,7 +674,7 @@ You can call [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2T
 }];
 ```
 
-> Only available in Enhanced Edition v5.8.1668 or later.
+>? Only available in Enhanced Edition v5.8.1668 or later.
 
 ## Viewing Historical Messages
 You can call [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a63d51af9d34e0cd8011da374b7e7a786) to obtain historical messages of one-to-one chats, or call [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) to obtain historical messages of group chats. If the network connection of the current device is normal, the IM SDK pulls historical messages from the server by default. If the network connection is unavailable, the IM SDK directly reads historical messages from the local database.
