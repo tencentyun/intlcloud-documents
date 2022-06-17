@@ -14,6 +14,7 @@
     implementation 'com.qcloud.cos:quic:1.5.38'
     ```
 >?您也可以参考 [手动集成](https://intl.cloud.tencent.com/document/product/436/12159) 文档集成对应版本的依赖库。
+
 3. 使用视频上传需要网络、存储等相关访问权限，可在`AndroidManifest.xml`中增加如下权限声明：
 	```xml
 	<uses-permission android:name="android.permission.INTERNET"/>
@@ -112,7 +113,7 @@ int publishCode = mVideoPublish.publishMedia(param);
 >?
 >- 上传方法根据用户文件的长度，自动选择普通上传以及分片上传，用户不用关心分片上传的每个步骤，即可实现分片上传。
 >- 如需上传至指定子应用下，请参见 [子应用体系 - 客户端上传](https://intl.cloud.tencent.com/document/product/266/33987)。
->
+
 ## 高级功能
 
 #### 携带封面
@@ -164,6 +165,13 @@ mVideoPublish.canclePublish();
 
 `signature`计算规则请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
+#### 开启 https 上传
+将上传参数中 TXPublishParam 中的 enableHTTPS 置为 true 即可，默认 false。
+
+```java
+TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishParam();
+param.enableHttps = true;
+```
 
 ## 视频上传接口描述
 

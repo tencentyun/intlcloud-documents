@@ -14,6 +14,7 @@ VOD는 Android 클라이언트에 비디오를 업로드하기 위한 SDK를 제
     implementation 'com.qcloud.cos:quic:1.5.38'
     ```
 >?[수동 통합](https://intl.cloud.tencent.com/document/product/436/12159)을 참고하여 해당 종속 라이브러리를 통합할 수도 있습니다.
+
 3. 비디오 업로드를 위해서는 네트워크 및 스토리지 접근 권한이 필요합니다. `AndroidManifest.xml`에 다음 권한 선언을 추가할 수 있습니다.
 	```xml
 	<uses-permission android:name="android.permission.INTERNET"/>
@@ -61,7 +62,7 @@ TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishPara
 param.signature = "xxx";
 param.videoPath = "xxx";
 ```
-`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 #### 업로드 메소드 호출
 
@@ -101,7 +102,7 @@ param.signature = "xxx";
 param.mediaPath = "xxx";
 ```
 
-`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 #### 업로드 메소드 호출
 
@@ -112,7 +113,7 @@ int publishCode = mVideoPublish.publishMedia(param);
 >?
 >- 업로드 방법은 파일 크기에 따라 단순 업로드 또는 멀티파트 업로드를 자동으로 선택하므로, 멀티파트 업로드의 모든 단계를 처리할 필요가 없습니다.
 >- 지정된 서브 애플리케이션에 업로드하려면 [서브 애플리케이션 시스템 - 클라이언트에서 업로드](https://intl.cloud.tencent.com/document/product/266/33987)를 참고하십시오.
->
+
 ## 고급 기능
 
 #### 커버 업로드
@@ -125,7 +126,7 @@ param.signature = "xxx";
 param.videoPath = "xxx";
 param.coverPath = "xxx";
 ```
-`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 #### 업로드 취소 및 재개
 
@@ -162,8 +163,15 @@ App을 활성화할 때 `TXUGCPublishOptCenter.getInstance().prepareUpload(signa
 </receiver>
 ```
 
-`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
+#### https 업로드 활성화
+HTTPS 업로드를 활성화하려면 TXPublishParam의 enableHTTPS를 true로 설정하십시오. 기본값은 false입니다.
+
+```java
+TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishParam();
+param.enableHttps = true;
+```
 
 ## 비디오 업로드 API 설명
 
@@ -191,7 +199,7 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 | 매개변수 이름      | 매개변수 설명                  | 유형     | 필수 입력 |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature    | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
+| signature    | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 | videoPath    | 로컬 비디오 파일 경로.                           | String  | Yes    |
 | coverPath    | 로컬 커버 이미지 파일 경로. 기본 값: 커버 파일 미사용.                  | String  | No    |
 | enableResume | 체크포인트 재시작 활성화 여부. 기본 값: 활성화.                      | boolean | No    |
@@ -232,7 +240,7 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 | 매개변수 이름     | 매개변수 설명                   | 유형     | 필수 입력 |
 | --------- | ---------------------- | ------- | ---- |
-| signature   | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922).        | String | Yes    |
+| signature   | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922).        | String | Yes    |
 
 ## 이미지 업로드 API 설명
 
@@ -259,7 +267,7 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 | 매개변수 이름      | 매개변수 설명                  | 유형     | 필수 입력 |
 | ------------ | -------------------------------------------------- | ------- | ---- |
-| signature    | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
+| signature    | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 | mediaPath    | 로컬 이미지 파일 경로.                                   | String  | Yes   |
 | enableResume | 체크포인트 재시작 활성화 여부. 기본 값: 활성화.                         | boolean | No   |
 | enableHttps  | HTTPS 활성화 여부. 기본 값: 비활성화.                           | boolean | No   |
@@ -297,7 +305,7 @@ VOD appId 설정: `TXUGCPublish.setAppId`
 
 | 매개변수 이름  | 매개변수 설명                        | 유형   | 필수 입력 |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature    | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
+| signature    | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922).       | String  | Yes   |
 
 ## 오류 코드
 
