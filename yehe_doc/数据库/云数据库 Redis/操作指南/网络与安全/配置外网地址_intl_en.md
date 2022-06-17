@@ -21,7 +21,7 @@ This document describes how to enable/disable the public network address in the 
 2. Click **Enable** next to **Public Network Address** in the **Network Info** block.
 >!After the public network access is enabled, it will be controlled by the security group policy. You should configure the database access source in the security group's inbound rules and open the protocol port as instructed in [Configuring Security Group](https://intl.cloud.tencent.com/document/product/239/31945).
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/45ba379ace466f7256e489387661bacb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54150a1a9c419b57c5bc589ea212238d.png)
 3. In the pop-up window, confirm that everything is correct and click **OK**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7644853f0a294487b0fd44e0d9657479.png)
 4. Return to the instance details page, where you can see the instance in the **Enabling public network** status. If the status stays the same for a long time, refresh the page.
