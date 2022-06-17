@@ -1,11 +1,11 @@
 <dx-fold-block title="Traffic Throttling Mechanism Description">
-Kafka's traffic throttling mechanism is soft throttling; that is, when the user's traffic exceeds the quota, it uses the delayed response method for processing instead of returning an error to the client.
+Kafka's traffic throttling mechanism is soft throttling; that is, when the user's traffic exceeds the quota, Kafka uses the delayed response method for processing instead of returning an error to the client.
 
 Take API traffic throttling as an example:
 
-**Hard traffic throttling**: If the call rate is 100 times/s, when the client calls more than 100 times per second, the server will return an error, and the client needs to process it according to the business logic.
+**Hard traffic throttling**: If the call rate is 100 times/sec, when the client calls more than 100 times per second, the server will return an error, and the client needs to process it according to the business logic.
 
-**Soft traffic throttling**: If the call rate is 100 times/s, and the normal duration is 10 ms, when the client calls more than 100 times per second:
+**Soft traffic throttling**: If the call rate is 100 times/sec, and the normal duration is 10 ms, when the client calls more than 100 times per second:
 - If it is 110 times, this request will take 20 ms.
 - If it is 200 times, this request will take 50 ms. In this case, throttling is friendly to the client, no error alarms will be triggered due to traffic surges or fluctuations, and the business can continue normally.
 
@@ -21,9 +21,9 @@ Therefore, in high-traffic scenarios such as Kafka, soft traffic throttling is b
 </dx-fold-block>
 
 <dx-fold-block title="How Delayed Response Works">
-The underlying traffic throttling mechanism of a CKafka instance is implemented based on token bucket. Each second is divided into multiple time buckets measured in ms.
+The underlying traffic throttling mechanism of a CKafka instance is implemented based on token bucket. Each second is divided into multiple time buckets measured in milliseconds.
 
-The traffic throttling policy divides every second (1000 ms) into several time buckets. For example, if one second is divided into 10 time buckets, then the time of each bucket is 100 ms, and the traffic throttling threshold of each time bucket is 1/10 of the total instance specification speed. If the TCP request traffic in a certain time bucket exceeds such threshold, the delayed response time of the request will be increased according to the internal traffic throttling algorithm, so that the client cannot quickly receive the TCP response, thus achieving the traffic throttling effect in a period of time.
+The traffic throttling policy divides every second (1,000 ms) into several time buckets. For example, if one second is divided into 10 time buckets, then the time of each bucket is 100 ms, and the traffic throttling threshold of each time bucket is 1/10 of the total instance specification speed. If the TCP request traffic in a certain time bucket exceeds such threshold, the delayed response time of the request will be increased according to the internal traffic throttling algorithm, so that the client cannot quickly receive the TCP response, thus achieving the traffic throttling effect in a period of time.
 
 ![](https://main.qcloudimg.com/raw/08c055819baed6c403ef38c7ca42c0aa.png)
 </dx-fold-block>
@@ -31,15 +31,15 @@ The traffic throttling policy divides every second (1000 ms) into several time b
 
 ### Why is traffic throttling triggered when the monitored production/consumption traffic is lower than the instance specification?
 
-As mentioned above, traffic throttling is measured in ms, but the monitoring platform in the console collects data at the second level and aggregates the data at the minute level (maximum or average value).
+As mentioned above, traffic throttling is measured in milliseconds, but the monitoring platform in the console collects data at the second level and aggregates the data at the minute level (maximum or average value).
 
-According to the principle of token bucket, a single bucket does not force throttle the traffic. Suppose the bandwidth specification of instance A is 100 MB/s, then the traffic throttling threshold of each 100-ms time bucket is 100 MB/10 = 10 MB/bucket. If the production traffic of instance A reaches 30 MB in the first 100-ms time bucket of a certain second (3 times the threshold), then the broker's traffic throttling policy will be triggered to increase the delayed response time. Suppose the original normal TCP response time is 100 ms, then the delay may be increased by 500 ms before response after the threshold is exceeded. The final traffic in this second is 30 MB * 1 + 0 MB * 5 + 10 MB * 4 = 70 MB, so the traffic speed in this second (70 MB/s) is lower than the instance specification (100 MB/s).
+According to the principle of token bucket, a single bucket does not forcibly throttle the traffic. Suppose the bandwidth specification of instance A is 100 MB/sec, then the traffic throttling threshold of each 100-ms time bucket is 100 MB/10 = 10 MB/bucket. If the production traffic of instance A reaches 30 MB in the first 100-ms time bucket of a certain second (3 times the threshold), then the broker's traffic throttling policy will be triggered to increase the delayed response time. Suppose the original normal TCP response time is 100 ms, then the delay may be increased by 500 ms before response after the threshold is exceeded. The final traffic in this second is 30 MB * 1 + 0 MB * 5 + 10 MB * 4 = 70 MB, so the traffic speed in this second (70 MB/sec) is lower than the instance specification (100 MB/sec).
 
 ![](https://main.qcloudimg.com/raw/6fc11aa3b0dceb38dcc6bb5477e4851a.png) 
 
 ### Why is the peak production/consumption traffic higher than the instance specification?
 
-Suppose again the bandwidth specification of instance A is 100 MB/s, then the traffic throttling threshold of each 100-ms time bucket is 10 MB. If the production traffic of instance A reaches 70 MB in the first 100-ms time bucket of a certain second (7 times the threshold), then the broker's traffic throttling policy will be triggered to increase the delayed response time. Suppose the original normal TCP response time is 100 ms, then the delay may be increased by 800 ms before response after the threshold is exceeded. After the response is returned at the 900th ms, the client immediately injects 70 MB of traffic into the 10th time bucket. The final traffic in this second is (70 MB * 1 + 0 MB * 8 + 70 MB * 1) = 140 MB, so the traffic speed in this second (140 MB/s) is higher than the instance specification (100 MB/s).
+Suppose again the bandwidth specification of instance A is 100 MB/sec, then the traffic throttling threshold of each 100-ms time bucket is 10 MB. If the production traffic of instance A reaches 70 MB in the first 100-ms time bucket of a certain second (7 times the threshold), then the broker's traffic throttling policy will be triggered to increase the delayed response time. Suppose the original normal TCP response time is 100 ms, then the delay may be increased by 800 ms before response after the threshold is exceeded. After the response is returned at the 900th ms, the client immediately injects 70 MB of traffic into the 10th time bucket. The final traffic in this second is (70 MB * 1 + 0 MB * 8 + 70 MB * 1) = 140 MB, so the traffic speed in this second (140 MB/sec) is higher than the instance specification (100 MB/sec).
 
 ![](https://main.qcloudimg.com/raw/726f5a605fde9b087c818134124e887e.png) 
 
@@ -49,16 +49,17 @@ The number of traffic throttling events is counted based on TCP requests. If ins
 
 ### How does CKafka throttle traffic?
 
-To ensure stability of the service, CKafka implement network traffic control strategies on both inputting and outputting messages.
+To ensure service stability, CKafka implement network traffic control strategies on both input and output messages.
 
-- Throttling occurs when the total traffic of the user's all replicas exceeds the purchased peak traffic.
-- When the producer side is throttled, CKafka will extend the response time of a TCP connection. The delay period depends on how much the instantaneous traffic exceeds the limit. It is similar to the principle of road traffic control. The more traffic flow, the higher the delay value from the delay algorithm, up to 5 minutes.
-- When the consumer side is throttled, CKafka will reduce the size of each `fetch.request.max.bytes` request to control the traffic.
+- Throttling occurs when the total traffic of a user’s replicas exceeds the purchased peak traffic.
+- When the producer traffic is throttled, CKafka will extend the response time of a TCP connection. The delay period depends on how much the instantaneous traffic exceeds the limit. It is similar to the principle of road traffic control. The more traffic flow, the higher the delay value from the delay algorithm, up to 5 minutes.
+- When the consumer traffic is throttled, CKafka will reduce the size of each `fetch.request.max.bytes` request to control the traffic.
 
 ### How do I determine whether CKafka has been throttled?
 
-1. In the instance list, you can see the health status of each cluster. If it's "Warning", you can hover your mouse over it to view the detailed data. The data displays your peak traffic and the throttling times, by which you can determine whether this instance has been throttled.
-2. You can click the **Monitor** tab to view the max traffic value. If **the value of max traffic multiplied by replica quantity is greater than that of the purchased peak bandwidth**, you can determine that at least one throttling has occurred. You can also configure an alarm for traffic throttling.
+1. In the instance list, you can see the health status of each cluster. If it’s “Warning”, you can hover your mouse over it to view the detailed data. The data displays your peak traffic and the number of throttling occurrences, based on which you can determine whether this instance has been throttled.
+![](https://qcloudimg.tencent-cloud.cn/raw/c6b9ddc89165dde289a4bf033f5120d4.png)
+2. You can click the **Monitoring** tab to view the max traffic value. If **the value of max traffic multiplied by replica count is greater than that of the purchased peak bandwidth**, you can determine that throttling has occurred at least once.
      ![](https://main.qcloudimg.com/raw/3c0b2b6346b358287eea11c3f889b90d.png)
-3. View the instance monitoring data on the monitoring page in the CKafka console. If the number of throttling times is greater than 0, throttling has occurred.
+3. View the instance monitoring data on the monitoring page in the CKafka console. If the number of throttling occurrences is greater than 0, throttling has occurred.
      ![](https://qcloudimg.tencent-cloud.cn/raw/c08d9c6cf510cb0357353513a733ca14.png)

@@ -1,23 +1,11 @@
-The performance comparison between CKafka and open-source Apache Kafka is as follows:
-
-
+The performance comparison between CKafka and open-source Apache Kafka is detailed as follows:
 
 | Feature       | CKafka                                                       | Apache Kafka                                                 |
-| ---------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
-| Advantages       | <li>Very high throughput </li><li>Very elastic scalability </li><li>Very low OPS costs</li>           | High throughout                                                     |
-| Disadvantages       | Occasional message loss in extreme circumstances                                         | <li>Occasional message loss </li><li>Less flexible scalability </li><li>Multiple dependent components, leading to heavy OPS work </li><li>Limited security protection and poor isolation and compatibility</li> |
-| Throughput     | Very high                                                       | High                                                         |
-| General performance   | Million-level QPS                                                    | Million-level QPS                                                    |
-| <nobr>2-core 4 GB stress test</nobr> | 220,000 read/write QPS                                                  | 200,000 read/write QPS                                                  |
-| Cost       | Very flexible billing based on your estimated peak traffic and disk capacity             | High costs with labor and OPS environment required                        |
-| OPS       | Complete monitoring and alarming system, OPS ticket system, and CKafka R&D experts who answer questions at any time to quickly solve your problems | Cumbersome OPS and deployment where it is difficult to locate problems                |
-| Scalability   | Very flexible and easy to scale. Only the VIP address needs to be specified for message sending, and broker changes are imperceptible for both message sending and receiving | Not flexible enough. The broker address needs to be specified to send messages, and ZooKeeper coordination scheduling is required for message receiving |
-| Availability     | Very high availability. Automatic leader/follower switch is supported. CKafka guarantees an availability of 99.95%     | High availability. Automatic leader/follower switch is supported. Messages may be lost after switch due to async flush and replication |
-| Message reliability | <li>High reliability </li><li>Reliability can be further improved based on the three-copy mechanism, and the cluster features better disaster recovery where failures rarely occur</li>| <li>Low reliability </li><li>The broker has only async flush and async primary/secondary replication mechanisms, which may cause message loss</li> |
-| Security protection   | Supported                                                         | Not supported                                                       |
-| Monitoring and alarming   | Supported                                                         | Not supported                                                       |
-| Service support   | Supported                                                         | Not supported                                                       |
-
->?
->- "2-core 4 GB stress test" indicates the result of a stress test on a server with 2 CPU cores and 4 GB memory.
->- CKafka is compatible with the producer and consumer APIs of Apache Kafka 0.9 and above. To connect to a self-built Kafka instance on a legacy version (such as 0.8), API modification is needed. For more information, please see [Connecting to Legacy Self-Built Kafka](https://intl.cloud.tencent.com/document/product/597/11173).
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Basic features   | Supports adjusting topic parameter configurations and the number of topic partitions, sending messages, and resetting the consumption offset in the console; supports visual management for clusters, topics, and consumer groups. | Topic parameters and the number of partitions can only be configured with command lines in a non-customized manner; message sending is not supported; the consumption offset must be reset manually, which is complicated and error-prone; and an open-source management system is required, making Apache Kafka less user-friendly. |
+| Smart Ops | Supports automatic disk capacity scaling, quick diagnosis, smart inspection (with solutions provided), and smart disk configuration. | Not supported.                                                     |
+| Isolation     | The following features are supported: creating multiple instances based on one physical cluster; usage limit based on bandwidth and disk capacity; topic-level traffic throttling; the configuration of multiple access points; the isolation between the control plane and data plane; logically isolating cross-account data. | Not supported.                                                     |
+| Monitoring and alarming   | Offers out-of-the-box deployment and monitoring solutions that are mature and standardized; supports multidimensional monitoring and alarming, metric sorting, and viewing the details of logs (such as exception event logs) in the console for troubleshooting. | Not supported.                                                     |
+| High availability     | Supports high-availability and multi-AZ deployment and offers mature failure recovery solutions; supports upgrading from single-AZ deployment to multi-AZ deployment as well as cross-region disaster recovery. | Supported, but the process is time-consuming.                                             |
+| Security compliance | Supports ACL in topic dimension; supports configuring SASL and SSL authentication in the console; supports the permission control for management and control operations (which are rewindable) via CloudAudit | Parameters need to be configured with command lines, which is complicated and error-prone; operations are non-rewindable.     |
+| Others       | You can seamlessly upgrade CKafka to a new version when the community edition has bugs or security vulnerabilities. | N/A                                                     |
