@@ -10,9 +10,7 @@
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏选择**实例列表**，单击目标实例的“ID”，进入实例基本信息页面。
 3. 在**使用 Prometheus 监控**模块单击右上角的**获取监控目标**，选择 VPC 和子网。
-![](https://qcloudimg.tencent-cloud.cn/raw/017a4683d3ac2d6439839e4c5e756c4c.png)
 4. 单击**提交**，获取一组监控目标。
-![](https://qcloudimg.tencent-cloud.cn/raw/f1dd1da69ae1bfc8e30ead96a9e75aa0.png)
 5. 下载 [Prometheus](https://prometheus.io/download/)，并配置监控抓取地址。
    1. 进入 Prometheus 程序包所在目录，执行如下命令，解压 Prometheus 程序包。
    ```bash
