@@ -16,7 +16,7 @@ CKafka makes it possible for data to share one schema by registering the content
 1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of the target instance to enter its basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module.
-![](https://qcloudimg.tencent-cloud.cn/raw/29f6e49286caaa04c902216ad15f64d0.png)
+![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)
 4. Enable automatic topic creation in the **Auto-Create Topic** module.
 >?Automatic topic creation must be enabled as a topic named `schemas` will be automatically created when OSS is started.
 
@@ -31,10 +31,10 @@ CKafka makes it possible for data to share one schema by registering the content
    debug=true
    ```
 
-	<dx-alert infotype="explain" title="">
-	`bootstrap.servers`: Access network, which can be copied in the **Network** column in the **Access Mode** module on the instance details page in the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
-	![](https://qcloudimg.tencent-cloud.cn/raw/4b99aaaac3c10e75c7edb541aba21908.png)
-	</dx-alert>
+   <dx-alert infotype="explain" title="">
+   `bootstrap.servers`: Access network, which can be copied in the **Network** column in the **Access Mode** module on the instance details page in the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
+   ![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)
+   </dx-alert>
 
 
 2. Execute the following command to start Schema Registry.
@@ -64,11 +64,11 @@ Below is the content of the schema file:
 1. Register the schema in the topic named `test`.
    The script below is an example of registering a schema by calling an API with the `curl` command in the environment deployed in Schema Registry.
 
-	```xml
-	curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-	--data '{"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"id\", \"type\": \"int\"}, {\"name\": \"name\",  \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]}"}' \
-	http://127.0.0.1:8081/subjects/test/versions
-	```
+```xml
+curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
+--data '{"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"id\", \"type\": \"int\"}, {\"name\": \"name\",  \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]}"}' \
+http://127.0.0.1:8081/subjects/test/versions
+```
 
 2. The Kafka producer sends messages.
 <dx-codeblock>
