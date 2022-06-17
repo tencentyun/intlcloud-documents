@@ -10,6 +10,7 @@
 
 | 消息分类 | API 关键词 | 详细解释 |
 |---------|---------|---------|
+| 文本消息 | TextElem | 即普通的文字消息。 |
 | 自定义消息 | CustomElem | 即一段二进制 buffer，通常用于传输您应用中的自定义信令。 |
 | 图片消息 | ImageElem | SDK 会在发送原始图片的同时，自动生成两种不同尺寸的缩略图，三张图分别被称为原图、大图、微缩图。 |
 | 视频消息 | VideoElem | 一条视频消息包含一个视频文件和一张配套的缩略图。 |
@@ -62,7 +63,8 @@
 
 ### 经典示例：收发图片
 发送方创建一条图片消息并发送：
-```
+
+```objectivec
 // 获取本地图片路径
 NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"png"];
 // 创建图片消息
@@ -80,7 +82,8 @@ onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
 ```
 
 接收方识别一条图片消息并将解析中包含的原图、大图和微缩图：
-```
+
+```objectivec
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
   if (msg.elemType == V2TIM_ELEM_TYPE_IMAGE) {
     V2TIMImageElem *imageElem = msg.imageElem;
@@ -138,7 +141,7 @@ onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
 - **发送群 @ 消息：**
 发送方创建一条群 @ 消息并发送。
 
-```objective-c
+```objectivec
 // 获取@群成员的ID数据
 TUITextMessageCellData *text = (TUITextMessageCellData *)data;
 NSMutableArray<NSString *> *atUserList = text.atUserList;
@@ -165,7 +168,7 @@ V2TIMMessage *atMsg = [[V2TIMManager sharedInstance] createTextAtMessage:text.co
 - **接收群 @ 消息：**
  在加载和更新会话处，获取群 @ 数据列表，解析当前的 @ 类型，根据 @ 类型显示对应的提示文本。
 
-```objective-c
+```objectivec
 // 获取群@数据列表
 NSArray<V2TIMGroupAtInfo *> *atInfoList = conversation.groupAtInfolist;
 
@@ -203,7 +206,7 @@ if (atMe && atAll) {
 ```
 
 ## 收发合并转发消息
-要实现类似于微信的合并转发功能，首先需要根据原始消息列表创建一条合并消息，然后把合并消息发送到对端，对端收到合并消息后再解析出原始消息列表，合并消息的展示还需要标题和摘要信息。
+要实现合并转发功能，首先需要根据原始消息列表创建一条合并消息，然后把合并消息发送到对端，对端收到合并消息后再解析出原始消息列表，合并消息的展示还需要标题和摘要信息，如下图所示：
 
 - **发送合并转发消息：**
 通常我们在收到一条合并消息的时候，会在聊天界面这样显示：
@@ -221,13 +224,13 @@ if (atMe && atAll) {
 - **接收合并转发消息：**
 当我们收到一条合并消息 [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html)，可以先通过合并消息元素 [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html) 获取 [title](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) 和  [abstractList](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1)  UI 展示，当用户点击合并消息的时候再调用 [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad77abfe27eabf237aee7c951100e6755) 接口下载合并消息列表 UI 展示。
 
->? 仅增强版 5.2.210 及以上版本支持。
+> 仅增强版 5.2.210 及以上版本支持。
 
 ### 经典示例：收发合并转发消息
 - **发送合并转发消息：**
 发送方创建一条合并消息并发送。
 
-```objective-c
+```objectivec
 // 需要被转发的消息列表，消息列表里可以包含合并消息，不能包含群 Tips 消息
 NSArray *msgs = @[message1,message2...];  
 // 合并消息标题
@@ -246,7 +249,7 @@ abstractList:abstactList compatibleText:compatibleText];
 
 - **接收合并转发消息：**
 接收方收到一条合并消息并解析：
-```objective-c
+```objectivec
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
     if (msg.elemType == V2TIM_ELEM_TYPE_MERGER) {
             // 获取合并消息 elem
@@ -278,16 +281,19 @@ abstractList:abstactList compatibleText:compatibleText];
 ```
 
 
-## 群消息已读回执
-用户发送群消息时可以设置消息是否需要已读回执，如果需要，接收端查看消息后才可以发送消息已读回执。
+## 消息已读回执
+用户发送消息时可以设置消息是否需要已读回执，如果需要，接收端查看消息后才可以发送消息已读回执。
 >?
-- 仅增强版 6.1.2155 及以上版本支持。
-- 该功能需要购买旗舰版套餐包。
-- 需要主动在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >**功能配置**>**登录与消息**>**群已读消息回执配置**中设置支持已读回执消息的群类型。
+- 该功能需要购买旗舰版。
+- 群已读回执仅增强版 6.1.2155 及以上版本支持，单聊已读回执仅增强版 6.2.2363 及以上版本支持。
+- 群已读回执需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >**功能配置**>**登录与消息**>**群已读消息回执配置**中设置支持已读回执消息的群类型。
+  
 
-###  发送端设置群消息需要已读回执
-发送端创建消息后，先通过消息对象 [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html) 的 [needReadReceipt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html#a41267989ed78823270ff16faf2356bc9) 字段设置消息需要已读回执，再发送消息到群里。
-```java
+
+###  发送端设置消息需要已读回执
+发送端创建消息后，先通过消息对象 [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html) 的 [needReadReceipt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html#a41267989ed78823270ff16faf2356bc9) 字段设置消息需要已读回执，再发送消息到会话中。
+
+```objectivec
 /// 接口调用示例
 V2TIMMessage *message = [[V2TIMManager sharedInstance] createTextMessage:@"群已读回执消息"];
 // 设置消息需要已读回执
@@ -296,9 +302,10 @@ message.needReadReceipt = YES;
 [[V2TIMManager sharedInstance] sendMessage:message receiver:nil groupID:@"groupA" priority:V2TIM_PRIORITY_NORMAL onlineUserOnly:NO offlinePushInfo:nil progress:nil succ:nil fail:nil];
 ```
 
-### 接收端发送群消息已读回执
+### 接收端发送消息已读回执
 接收端收到消息后，可以通过消息对象 [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html) 的 [needReadReceipt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html#a41267989ed78823270ff16faf2356bc9) 字段判断消息是否需要已读回执，如果需要已读回执，当用户查看消息后，调用 [sendMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a375af7e0f3e0f0b3135ccd517de9fdd8) 接口发送消息已读回执。
-```java
+
+```objectivec
 /// 接口调用示例
 /// 假设 msg 消息用户已经查看
 if (!msg.isSelf && msg.needReadReceipt) {
@@ -310,28 +317,35 @@ if (!msg.isSelf && msg.needReadReceipt) {
 }
 ```
 
-### 发送端监听群消息已读回执通知
+### 发送端监听消息已读回执通知
 接收端发送消息已读回执后，发送端可以通过 [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) 的 [onRecvMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html#ac62bcff71b2876760e179178a91b8321)  回调监听消息已读回执通知。
-```java
+
+```objectivec
 /// 接口调用示例
 [[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
-- (void)onRecvMessageReadReceipts:(NSArray<V2TIMGroupMessageReceipt *> *)receiptList {
+- (void)onRecvMessageReadReceipts:(NSArray<V2TIMMessageReceipt *> *)receiptList {
     for(V2TIMMessageReceipt *receipt in receiptList) {
-        // 消息唯一 ID
+        // 已读回执消息 ID
         NSString *msgID = receipt.msgID;
-        // 消息最新已读数
+        // C2C 消息对方 ID
+        NSString * userID = receipt.userID;
+        // C2C 消息对方已读状态
+        BOOL isPeerRead = receipt.isPeerRead;
+        // 群组 ID
+        NSString * groupID = receipt.groupID;
+        // 群消息最新已读数
         uint64_t readCount = receipt.readCount;
-        // 消息最新未读数
+        // 群消息最新未读数
         uint64_t unreadCount = receipt.unreadCount;
     }
 }
 ```
 
-### 发送端主动拉取群消息已读回执信息
+### 发送端主动拉取消息已读回执信息
 发送端从其他界面进入消息列表后，先拉取历史消息，再调用 [getMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a69192bc43e551f34f5d483dae5e70410) 接口拉取消息已读回执信息。
 
-```java
-/// 接口调用示例
+```objectivec
+/// 接口调用示例（以 Group 消息为例）
 [[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
     NSMutableArray *receiptMsgs = [NSMutableArray array];
     // 自己发送的消息 && 需要已读回执，需要拉取消息的已读回执信息
@@ -347,6 +361,12 @@ if (!msg.isSelf && msg.needReadReceipt) {
        }
        for (V2TIMMessage *msg in msgs) {
            V2TIMMessageReceipt *receipt = param[msg.msgID];
+           // C2C 消息对方 ID
+           NSString * userID = receipt.userID;
+           // C2C 消息对方已读状态
+           BOOL isPeerRead = receipt.isPeerRead;
+           // 群组 ID
+           NSString * groupID = receipt.groupID;
            // 消息已读数，readCount 为 0，表示消息无人已读
            uint64_t readCount = receipt.readCount;
            // 消息未读数，unreadCount 为 0，表示消息全部已读
@@ -361,9 +381,9 @@ if (!msg.isSelf && msg.needReadReceipt) {
 ```
 
 ### 发送端主动拉取群消息已读或未读成员列表
-发送端在需要查看消息已读或未读成员列表时，可以调用 [getGroupMessageReadMemberList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#aa345a87cfa4da2983f878bb5385d0b82) 接口分页拉取消息已读或未读群成员列表。
+发送端在需要查看群消息已读或未读成员列表时，可以调用 [getGroupMessageReadMemberList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#aa345a87cfa4da2983f878bb5385d0b82) 接口分页拉取消息已读或未读群成员列表。
 
-```java
+```objectivec
 /// 接口调用示例
 [[V2TIMManager sharedInstance] getGroupMessageReadMemberList:message filter:V2TIM_GROUP_MESSAGE_READ_MEMBERS_FILTER_READ nextSeq:0 count:100 succ:^(NSMutableArray<V2TIMGroupMemberInfo *> *members, uint64_t nextSeq, BOOL isFinished) {
     // members 当前分页拉取的已读成员列表
@@ -382,41 +402,12 @@ if (!msg.isSelf && msg.needReadReceipt) {
 }];
 ```
 
-
-## 单聊消息已读回执
-在 C2C 单聊场景下，暂不支持消息级别的已读回执，当接收端通过 [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) 接口将会话标记为已读时，发送端将会收到 “对端会话已读通知” ， “对端会话已读通知” 携带了接收端会话已读时间，发送端可以认为该时间之前的消息均为对端已读。
-
-### 接收端标记会话已读
-
-```java
-//将来自 haven 的消息均标记为已读
-[[V2TIMManager sharedInstance] markC2CMessageAsRead:@"haven" succ:^{
-} fail:^(int code, NSString *msg) {
-}];
-```
-
-### 发送端监听对端会话已读通知
-对端会话已读通知事件位于高级消息监听器  [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) 中，如需感知该事件，需要先通过 [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) 设置监听器，然后通过 [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) 回调即可监听。
-
-```java
-- (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
-      // 发送方可能一次性会收到多个已读回执，因此这里采用数组的回调形式
-      for (V2TIMMessageReceipt *receipt in receiptList) {
-          // 消息接收者 receiver
-          NSString * receiver = receipt.userID;
-          // 已读回执时间，聊天窗口中时间戳小于或等于 timestamp 的消息都可以被认为已读
-          time_t timestamp = receipt.timestamp;
-      }
-}
-@end
-```
-
 ## 发送不计入未读数的消息
 正常情况下，无论是发送 C2C 单聊消息还是发送 Group 群消息，都会计入未读消息数（通过会话对象 [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html) 的 [unreadCount](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6) 接口，可以拿到一个会话的未读消息数）。当您希望发送一些不计入未读计数的消息时，比如提示类或者控制类的消息，可以按照下面的方式来发送：
 
->? 仅增强版 5.3.425 及以上版本支持。
+>! 仅增强版 5.3.425 及以上版本支持。
 
-```objective-c
+```objectivec
 // 创建消息对象
 V2TIMMessage *message = [[V2TIMManager sharedInstance] createTextMessage:@"这是一个信令消息"];
 
@@ -437,9 +428,9 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 
 某些场景下，不希望一些提示类型的消息显示为会话的最新消息，可以按照下面的方式来发送：
 
->? 仅增强版 5.4.666 及以上版本支持。
+> 仅增强版 5.4.666 及以上版本支持。
 
-```objective-c
+```objectivec
 // 创建消息对象
 V2TIMMessage *message = [V2TIMManager.sharedInstance createTextMessage:content];
 // 设置不计入会话 lastMsg 的标记
@@ -458,7 +449,7 @@ message.isExcludedFromLastMessage = YES;
 
 定向消息是指向群内部分成员发送消息，而其他群成员无法收到该消息，可以按照下面的方式实现：
 
-```objective-c
+```objectivec
 // 创建原始消息对象
 V2TIMMessage *message = [V2TIMManager.sharedInstance createTextMessage:@"这是一个群定向消息"];
 
@@ -480,7 +471,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:NO offlinePushInfo:nil progress:^
 
 >?
 >- 仅增强版 6.0.1975 及以上版本支持。
->- 该功能需要购买旗舰版套餐包。
+>- 该功能需要购买旗舰版。
 >- 创建定向群消息的原始消息对象不支持群 @ 消息。
 >- 社群（Community）和直播群（AVChatRoom）不支持发送定向群消息。
 >- 定向群消息默认不计入群会话的未读计数。
@@ -492,7 +483,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:NO offlinePushInfo:nil progress:^
 ### 设置 APNS 离线推送的标题和声音
 您可以在发送消息时，通过 [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 接口中的 **offlinePushInfo** 字段，设置 APNS 离线推送的标题和声音。
 
-```
+```objectivec
 // 创建一条图片消息发送给 groupA，并且自定义推送 Title、推送声音
 NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"png"];
 // 创建图片消息
@@ -515,7 +506,8 @@ onlineUserOnly:NO offlinePushInfo:pushInfo progress:^(uint32_t progress) {
 
 本文以 `“denny 给 vinson 发送消息”` 的场景为例。
 - 发送方：denny 需在发送消息时设置推送扩展字段 `ext`：
-```
+
+```objectivec
 // denny在发送消息时设置 offlinePushInfo，并指定 ext 字段
 V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"文本消息"];
 V2TIMOfflinePushInfo *info = [[V2TIMOfflinePushInfo alloc] init];
@@ -547,7 +539,8 @@ onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
 
 **经典示例：实现“对方正在输入”功能**
 在 C2C 单聊场景下，您可以通过 [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 接口发送 "自己正在输入" 的提示性消息，接收方收到该消息时可以在 UI 界面展示 "对方正在输入"，示例代码如下：
-```
+
+```objectivec
 // 给 userA 发送 "自己正在输入" 的提示消息
 NSString *customStr = @"{\"command\": \"textInput\"}";
 NSData *customData = [customStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -570,7 +563,7 @@ SDK 支持三种类型的消息接收选项：
 
 您可以调用 [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ace29641a1c691bc44705b9bc8b08be37) 接口设置单聊消息免打扰，调用 [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) 接口设置群聊消息免打扰。
 
->? 仅增强版 5.3.425 及以上版本支持。
+>! 仅增强版 5.3.425 及以上版本支持。
 
 ## 撤回消息
 发送方通过 [revokeMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a972ac3fb7744458eb0d6abd96ce35126) 接口可以撤回一条已经发送成功的消息。默认情况下，发送者只能撤回2分钟以内的消息，您可以按需更改消息撤回时间限制，具体操作请参见 [消息撤回设置](https://intl.cloud.tencent.com/document/product/1047/34419)。
@@ -578,7 +571,7 @@ SDK 支持三种类型的消息接收选项：
 
 ### 发送方撤回一条消息
 
-```
+```objectivec
 [[V2TIMManager sharedInstance] revokeMessage:msg succ:^{
      // 撤回消息成功
 } fail:^(int code, NSString *msg) {
@@ -590,7 +583,7 @@ SDK 支持三种类型的消息接收选项：
 1. 调用 [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) 设置高级消息监听。
 2. 通过 [onRecvMessageRevoked](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) 接收消息撤回通知。
 
-```
+```objectivec
 - (void)onRecvMessageRevoked:(NSString *)msgID {
       // msgList 为当前聊天界面的消息列表
       for(V2TIMMessage *msg in msgList){
@@ -601,13 +594,87 @@ SDK 支持三种类型的消息接收选项：
  }
 ```
 
+## 消息变更
+会话里的消息如果是发送成功状态，会话的参与者都可以针对消息做二次修改。消息修改成功后会同步给会话的所有参与者。
+>! 仅增强版 6.2.2363 及以上版本支持。
+
+### 变更消息
+会话参与者可以调用 [modifyMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a7609c2dd8550e43b23d24069200d37cb) 接口对会话里的消息做二次修改。
+修改消息时，IM SDK 仅限制了会话参与者才能修改，如果您需要更多限制，比如限制只有消息发送者才能修改，可以自行在业务层处理。
+
+```objectivec
+// 会话里面原始 message 对象
+V2TIMMessage *originMessage; 
+// 修改消息的 cloudCustomData 信息
+originMessage.cloudCustomData = [@"modify_cloud_custom_data" dataUsingEncoding:NSUTF8StringEncoding];
+// 如果是文本消息，修改文本消息内容
+if (V2TIM_ELEM_TYPE_TEXT == originMessage.elemType) {
+    originMessage.textElem.text = @"modify_text";
+}
+[[V2TIMManager sharedInstance] modifyMessage:originMessage completion:^(int code, NSString *desc, V2TIMMessage *msg) {
+    // 修改消息完成，msg 为修改之后的消息对象;
+}];
+
+```
+
+### 监听消息变更回调
+会话的参与者调用 [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) 添加高级消息监听器。
+当会话里的消息被修改后，会话的参与者都会收到 [onRecvMessageModified](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html#a1fb56e509cecc32663ebd460c1de88cb) 回调，回调里面会携带修改之后的消息对象。
+
+```objectivec
+// 添加消息监听
+[[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
+/// 消息内容被修改通知
+- (void)onRecvMessageModified:(V2TIMMessage *)msg {
+    // msg 为被修改之后的消息对象
+}
+```
+
 ## 清空未读消息数
 ### 清空单个会话的未读数
-接收方调用 [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) 和 [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40afaf1f06edd10c90d8d67fa98c2b14) 可以分别清空某个 C2C 单聊会话或者群聊会话的未读数，并会回调 [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) 方法通知界面更新。
-### 一键清空所有会话的未读数
-接收方调用 [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ab9e190495505a6fe226c9c4ed10e4eeb) 可以实现一键清空所有会话的未读数，并会回调 [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) 方法通知界面更新。
+您可以调用 [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) 和 [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40afaf1f06edd10c90d8d67fa98c2b14) 分别清空某个 C2C 单聊会话或者群聊会话的未读数，接口调用成功后，SDK 会回调 [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) 方法通知界面更新。
 
->? 仅增强版 5.8.1668 及以上版本支持。
+```objectivec
+// 清空 userA 单聊会话的未读数
+[[V2TIMManager sharedInstance] markC2CMessageAsRead:@"userA" succ:^{
+    // 清空未读数成功
+} fail:^(int code, NSString *desc) {
+    // 清空未读数失败
+}];
+// 清空 groupA 群里会话的未读数
+[[V2TIMManager sharedInstance] markGroupMessageAsRead:@"groupA" succ:^{
+    // 清空未读数成功
+} fail:^(int code, NSString *desc) {
+    // 清空未读数失败
+}];
+```
+
+当您调用 [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) 接口清空某个 C2C 单聊会话未读数时，对端用户会收到 [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html#aaa7cea1f7dec46b2300740e9cd60d837) 回调，回调里面会携带清空会话未读数的时间戳。
+```objectivec
+[[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
+- (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
+    for (V2TIMMessageReceipt *receipt in receiptList) {
+        // 清空会话未读数的用户 userID
+        NSString *userID = receipt.userID;
+        // 清空会话未读数的时间戳
+        time_t timestamp = receipt.timestamp;
+    }
+}
+```
+
+### 一键清空所有会话的未读数
+您可以调用 [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ab9e190495505a6fe226c9c4ed10e4eeb) 实现一键清空所有会话的未读数，接口调用成功后，SDK 会回调 [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) 方法通知界面更新。
+
+```objectivec
+// 清空会话所有未读数
+[[V2TIMManager sharedInstance] markAllMessageAsRead:^{
+    // 清空未读数成功
+} fail:^(int code, NSString *desc) {
+    // 清空未读数失败
+}];
+```
+
+> 仅增强版 5.8.1668 及以上版本支持。
 
 ## 查看历史消息
 您可以调用 [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a63d51af9d34e0cd8011da374b7e7a786) 获取单聊历史消息，调用 [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) 获取群聊历史消息。如果当前设备网络连接正常，SDK 会默认从服务器拉取历史消息；如果没有网络连接，SDK 会直接从本地数据库中读取历史消息。
@@ -616,7 +683,7 @@ SDK 支持三种类型的消息接收选项：
 SDK 支持分页拉取历史消息，一次分页拉取的消息数量不宜太大，否则会影响拉取速度， 建议一次最多拉取20条。
 本文以分页拉取名为 `groupA` 的群的历史消息，每次分页拉取 20 条为例，示例代码如下：
 
-```
+```objectivec
 // 第一次拉取 lastMsg 传 nil，表示从最新的消息开始拉取 20 条消息
 [[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 
 lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
@@ -659,12 +726,11 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 **设置某人消息免打扰:**
 调用 [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) 接口，设置消息接收选项为 `V2TIM_NOT_RECEIVE_MESSAGE` 状态。
 
->? 仅增强版 5.3.425 及以上版本支持。
+>! 仅增强版 5.3.425 及以上版本支持。
 
 ### 不接收某个群组的消息
 增强版 5.3.425 以上版本，请调用 [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) 接口，设置消息接收选项为 `V2TIM_NOT_RECEIVE_MESSAGE` 状态。
 其他 SDK 版本，请调用 `setReceiveMessageOpt` 接口，设置消息接收选项为 `V2TIM_GROUP_NOT_RECEIVE_MESSAGE` 状态。
-
 
 ## 常见问题
 ### 1. 为什么会收到重复的消息？
@@ -678,7 +744,7 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 如果您的消息需要多个 `elem`，可以在创建 `Message` 对象后，通过 `Message` 对象的 `Elem` 成员调用 [appendElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMElem.html#a632f3740c4c42014dc38a4c074a700c9) 方法添加下一个 `elem` 成员。
 以文本消息 + 自定义消息为例：
 
-```
+```objectivec
 V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"text"];
 V2TIMCustomElem *customElem = [[V2TIMCustomElem alloc] init];
 customElem.data = [@"自定义消息" dataUsingEncoding:NSUTF8StringEncoding];
@@ -688,7 +754,7 @@ customElem.data = [@"自定义消息" dataUsingEncoding:NSUTF8StringEncoding];
 1. 通过 `Message` 对象正常解析出第一个 `Elem` 对象。
 2. 通过第一个 `Elem` 对象的 [nextElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMElem.html) 方法获取下一个 `Elem` 对象，如果下一个 `Elem` 对象存在，会返回 `Elem` 对象实例，如果不存在，会返回 `nil`。
 
-```
+```objectivec
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
     // 查看第一个 Elem
     if (msg.elemType == V2TIM_ELEM_TYPE_TEXT) {
@@ -720,4 +786,4 @@ customElem.data = [@"自定义消息" dataUsingEncoding:NSUTF8StringEncoding];
 
 当使用 Xcode 工程内的 PNG 图片创建图片消息并发送时，会提示发送失败。原因是 Xcode 默认会对工程内的 PNG 图片做压缩并修改文件头，导致 IM 无法识别此类图片。可以按下图方式修改 Xcode 工程配置。
 
-![图片](https://main.qcloudimg.com/raw/844287d24d27a08f22cdba7272c556d9.png)
+![图片](https://qcloudimg.tencent-cloud.cn/raw/2595c0c1aa45830a921ef7be6c6a07c0.png)

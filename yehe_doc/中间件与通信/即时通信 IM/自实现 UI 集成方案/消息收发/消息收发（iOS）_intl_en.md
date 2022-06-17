@@ -3,17 +3,18 @@ IM messages are classified by message destination into two types: one-to-one mes
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
-| One-to-one message | C2CMessage | Also called C2C message. When sending a one-to-one message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
+| One-to-one message | C2CMessage | When sending a one-to-one message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
 | Group message | GroupMessage | When sending a group message, you must specify the groupID of the target group, and all users in this group can receive this message. |
 
-IM messages can also be classified by content into text messages, custom (signaling) messages, image messages, video messages, voice messages, file messages, location messages, combined messages, and group tips.
+IM messages can also be classified by content into text messages, custom (signaling) messages, image messages, video messages, audio messages, file messages, location messages, combined messages, and group tips.
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
+| Text message | TextElem | Common text message. |
 | Custom message | CustomElem | It is a section of binary buffer and often used to transfer custom signaling in your application. |
 | Image message | ImageElem | When the IM SDK sends an original image, it automatically generates two images in different sizes. The three images are called the original image, large image, and thumbnail. |
 | Video message | VideoElem | A video message contains a video file and an image. |
-| Voice message | SoundElem | It supports displaying a red dot upon playback of the voice message. |
+| Audio message | SoundElem | It supports displaying a red dot upon playback of the audio message. |
 | File message | FileElem | A file message cannot exceed 100 MB. |
 | Location message | LocationElem | A location message contains three fields: location description, longitude, and latitude. |
 | Combined message | MergerElem | Up to 300 messages can be combined. |
@@ -27,7 +28,7 @@ To send text messages, call [sendC2CTextMessage](https://im.sdk.qcloud.com/doc/e
 To send one-to-one custom (signaling) messages, call [sendC2CCustomMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a20c6ea174904a99fafebb5c1b3475b39) or [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#af8b149e054d532a8fb5ca12a7160c90f). A custom message is essentially a section of binary buffer, and is often used to transfer custom signaling in your application.
 
 ### Receiving text and signaling messages
-To listen to simple text and signaling messages, call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88). To listen to image, video, and voice messages, call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) defined in [V2TIMManager + Message.h](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html).
+To listen to simple text and signaling messages, call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88). To listen to image, video, and audio messages, call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) defined in [V2TIMManager + Message.h](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html).
 
 >! Do not use [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#a149cdf7924aa13746692d18d605def88) together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab); otherwise, logic bugs may occur.
 
@@ -44,7 +45,7 @@ In the livestreaming scenario, it is a common way of communication to send or re
 2. Call [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#af8b149e054d532a8fb5ca12a7160c90f) to send a message, and call [onRecvGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/protocolV2TIMSimpleMsgListener-p.html#ad01776119c059bff49b804c8152c70d9) to receive the message.
 
 ## Sending and Receiving Rich Media Messages
-Image, video, voice, file, and location messages are called rich media messages. Compared with sending or receiving simple messages, it is more complex to send or receive rich media messages.
+Image, video, audio, file, and location messages are called rich media messages. Compared with sending or receiving simple messages, it is more complex to send or receive rich media messages.
 - Before sending a rich media message, use the `create` function to create an object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html). Then, call the corresponding `send` API to send this message.
 - When receiving the rich media message, check `elemType` and perform secondary parsing on `Elem` obtained based on `elemType`.
 
@@ -62,7 +63,8 @@ The following takes an image message as an example to describe the process of se
 
 ### Typical example: Sending and receiving image messages
 The sender creates and sends an image message.
-```
+
+```objectivec
 // Obtain the local image path
 NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"png"];
 // Create an image message
@@ -80,7 +82,8 @@ onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
 ```
 
 The recipient identifies the image message, and parses the message to obtain the original image, large image, and thumbnail contained in the message.
-```
+
+```objectivec
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
   if (msg.elemType == V2TIM_ELEM_TYPE_IMAGE) {
     V2TIMImageElem *imageElem = msg.imageElem;
@@ -138,7 +141,7 @@ For a group @ message, the sender can listen to the input of the @ character in 
 - **Sending a group @ message:**
 The sender creates and sends a group @ message.
 
-```objective-c
+```objectivec
 // Obtain the ID data of the @ group member
 TUITextMessageCellData *text = (TUITextMessageCellData *)data;
 NSMutableArray<NSString *> *atUserList = text.atUserList;
@@ -165,7 +168,7 @@ V2TIMMessage *atMsg = [[V2TIMManager sharedInstance] createTextAtMessage:text.co
 - **Receiving a group @ message:**
  During conversation loading and update, obtain the group @ data list, parse the current @ type, and display the prompt text based on the @ type.
 
-```objective-c
+```objectivec
 // Obtain the group @ data list
 NSArray<V2TIMGroupAtInfo *> *atInfoList = conversation.groupAtInfolist;
 
@@ -203,7 +206,7 @@ if (atMe && atAll) {
 ```
 
 ## Sending and Receiving Combined Messages
-To implement the Combine and Forward feature similar to that in WeChat, it is necessary to create a combined message according to the original message list, and then send the combined message to the peer end. After the peer end receives the combined message, it will parse out the original message list. A title and abstracts are required to display the combined message. 
+To implement the Combine and Forward feature, it is necessary to create a combined message according to the original message list, and then send the combined message to the peer end. After the peer end receives the combined message, it will parse out the original message list. A title and abstracts are required to display the combined message. 
 
 - **Sending a combined message**
 Usually, when we receive a combined message, the chat UI will look like this:
@@ -221,13 +224,13 @@ The chat UI will display only the title and abstract information of the combined
 - **Receiving a combined message**
 When receiving a combined message [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html), use [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html) to get [title](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) and [abstractList](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) for UI display. When a user clicks the combined message, call the [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad77abfe27eabf237aee7c951100e6755) API to download the combine message list for UI display.
 
->? Only available in Enhanced Edition v5.2.210 or later.
+> Only available in Enhanced Edition v5.2.210 or later.
 
-### Typical examples: sending and receiving combined messages
+### Typical examples: Sending and receiving combined messages
 - **Sending a combined message**
 The sender creates and sends a combined message.
 
-```objective-c
+```objectivec
 // List of messages to be forwarded, which can contain combined messages but not group tips
 NSArray *msgs = @[message1,message2...];  
 // Title of the combined message
@@ -246,7 +249,7 @@ abstractList:abstactList compatibleText:compatibleText];
 
 - **Receiving a combined message**
 The recipient receives and parses a combined message:
-```objective-c
+```objectivec
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
     if (msg.elemType == V2TIM_ELEM_TYPE_MERGER) {
             // Get the combined message elements
@@ -278,17 +281,19 @@ The recipient receives and parses a combined message:
 ```
 
 
-## Read Receipts for Group Messages
-When sending a group message, you can set whether a message requires a read receipt. If yes, the receiver can send a read receipt only after the message is read.
+## Message Read Receipts
+When sending a message, you can set whether a message requires a read receipt. If yes, the receiver can send a read receipt only after the message is read.
 >?
-- Only available in Enhanced Edition v6.1.2155 or later.
-- This feature requires the Flagship Edition package.
-- You need to set the group types that support message receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
+- This feature is available only in the Ultimate Edition.
+- Group message read receipts are available only in Enhanced Edition v6.1.2155 or later. One-to-one message read receipts are available only in Enhanced Edition v6.2.2363 or later.
+- You need to set the group types that support group message read receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
   
 
-### The sender specifies that group messages require read receipts
-After creating a message, the sender specifies that the message requires a read receipt by using the [needReadReceipt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html#a41267989ed78823270ff16faf2356bc9) field of the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html), and sends the message to the group.
-```java
+
+### The sender specifies that messages require read receipts
+After creating a message, the sender specifies that the message requires a read receipt by using the [needReadReceipt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html#a41267989ed78823270ff16faf2356bc9) field of the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html), and sends the message to the conversation.
+
+```objectivec
 /// API call example
 V2TIMMessage *message = [[V2TIMManager sharedInstance] createTextMessage:@"Group message read receipt"];
 // Specify that the message requires a read receipt
@@ -297,9 +302,10 @@ message.needReadReceipt = YES;
 [[V2TIMManager sharedInstance] sendMessage:message receiver:nil groupID:@"groupA" priority:V2TIM_PRIORITY_NORMAL onlineUserOnly:NO offlinePushInfo:nil progress:nil succ:nil fail:nil];
 ```
 
-### The receiver sends the group message read receipt
+### The receiver sends the message read receipt
 When receiving a message, the receiver determines whether the message requires a read receipt by using the [needReadReceipt](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html#a41267989ed78823270ff16faf2356bc9) field of the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html). If a read receipt is required, and the user has read the message, the receiver calls the [sendMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a375af7e0f3e0f0b3135ccd517de9fdd8) API to send the message read receipt.
-```java
+
+```objectivec
 /// API call example
 /// Assume that the message is read by user
 if (!msg.isSelf && msg.needReadReceipt) {
@@ -311,28 +317,35 @@ if (!msg.isSelf && msg.needReadReceipt) {
 }
 ```
 
-### The sender listens for notifications of group message read receipts
+### The sender listens for notifications of message read receipts
 After the receiver sends a message read receipt, the sender can use the [onRecvMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html#ac62bcff71b2876760e179178a91b8321) callback of [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) to listen for the notifications of group message read receipts.
-```java
+
+```objectivec
 /// API call example
 [[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
-- (void)onRecvMessageReadReceipts:(NSArray<V2TIMGroupMessageReceipt *> *)receiptList {
+- (void)onRecvMessageReadReceipts:(NSArray<V2TIMMessageReceipt *> *)receiptList {
     for(V2TIMMessageReceipt *receipt in receiptList) {
-        // Unique ID of the message
+        // Read receipt message ID
         NSString *msgID = receipt.msgID;
-        // Latest message read count
+        // ID of the other party of the one-to-one message
+        NSString * userID = receipt.userID;
+        // Read status of the other party of the one-to-one message
+        BOOL isPeerRead = receipt.isPeerRead;
+        // Group ID
+        NSString * groupID = receipt.groupID;
+        // Latest group message read count
         uint64_t readCount = receipt.readCount;
-        // Latest message unread count
+        // Latest group message unread count
         uint64_t unreadCount = receipt.unreadCount;
     }
 }
 ```
 
-### The sender proactively pulls group message read receipt information
+### The sender proactively pulls message read receipt information
 When the sender enters the message list UI from other UIs, it pulls the message history first and then call the [getMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a69192bc43e551f34f5d483dae5e70410) API to pull message read receipt information.
 
-```java
-/// API call example
+```objectivec
+/// API call example (taking a group message as an example)
 [[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
     NSMutableArray *receiptMsgs = [NSMutableArray array];
     // If the message is sent by you and it requires a read receipt, the message read receipt information needs to be pulled.
@@ -348,6 +361,12 @@ When the sender enters the message list UI from other UIs, it pulls the message 
        }
        for (V2TIMMessage *msg in msgs) {
            V2TIMMessageReceipt *receipt = param[msg.msgID];
+           // ID of the other party of the one-to-one message
+           NSString * userID = receipt.userID;
+           // Read status of the other party of the one-to-one message
+           BOOL isPeerRead = receipt.isPeerRead;
+           // Group ID
+           NSString * groupID = receipt.groupID;
            // Message read count. If `readCount` is `0`, no one has read the message.
            uint64_t readCount = receipt.readCount;
            // Message unread count. If `unreadCount` is `0`, all members have read the message.
@@ -364,7 +383,7 @@ When the sender enters the message list UI from other UIs, it pulls the message 
 ### The sender proactively pulls the list of members who have read a group message
 The sender can call the [getGroupMessageReadMemberList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#aa345a87cfa4da2983f878bb5385d0b82) API to pull the list of members who have read a group message in pagination mode.
 
-```java
+```objectivec
 /// API call example
 [[V2TIMManager sharedInstance] getGroupMessageReadMemberList:message filter:V2TIM_GROUP_MESSAGE_READ_MEMBERS_FILTER_READ nextSeq:0 count:100 succ:^(NSMutableArray<V2TIMGroupMemberInfo *> *members, uint64_t nextSeq, BOOL isFinished) {
     // `members` is the list of members who have read the message pulled for the current page
@@ -383,41 +402,12 @@ The sender can call the [getGroupMessageReadMemberList](https://im.sdk.qcloud.co
 }];
 ```
 
-
-## Read Receipts for One-to-One Messages
-Currently, the one-to-one chat scenario does not support read receipts at the message level. In the scenario, when the receiver calls the [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) API to mark the conversation as read, and the sender will receive a read receipt, indicating that the peer has read the conversation. The read receipt carries the conversation read time of the receiver, and the sender can consider that all messages before this time are read by the peer.
-
-### The receiver marks a conversation as read
-
-```java
-// Mark messages coming from Haven as read
-[[V2TIMManager sharedInstance] markC2CMessageAsRead:@"haven" succ:^{
-} fail:^(int code, NSString *msg) {
-}];
-```
-
-### The sender listens for the notifications of conversation read receipts
-The event notification of the conversation read receipt is located in the advanced message listener [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html). To perceive the event, the sender must call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the listener. Then, the sender can perceive the event through the [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) callback.
-
-```java
-- (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
-      // The sender may receive multiple read receipts at a time. Therefore, the array callback mode is used here.
-      for (V2TIMMessageReceipt *receipt in receiptList) {
-          // Message recipient
-          NSString * receiver = receipt.userID;
-          // Time of the read receipt. A message is considered as read if the timestamp in the chat window is not later than `timestamp` here.
-          time_t timestamp = receipt.timestamp;
-      }
-}
-@end
-```
-
 ## Sending Messages Excluded from the Unread Count
 Normally, when you send one-to-one chat messages and group messages, the messages are included in the unread count (you can get the unread message count of a conversation via the [unreadCount](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6) API of the [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMConversation.html) conversation object). If you need to send messages that are excluded from the unread count, such as tips and control messages, send them as follows:
 
->? Only available in Enhanced Edition v5.3.425 or later.
+>! This feature is available only in Enhanced Edition v5.3.425 or later.
 
-```objective-c
+```objectivec
 // Create the message object
 V2TIMMessage *message = [[V2TIMManager sharedInstance] createTextMessage:@"This is a signaling message"];
 
@@ -438,9 +428,9 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 
 In certain scenarios, if you need to send messages that are excluded from `lastMsg` of a conversation, send them as follows:
 
->? Only available in Enhanced Edition v5.4.666 or later.
+> Only available in Enhanced Edition v5.4.666 or later.
 
-```objective-c
+```objectivec
 // Create the message object
 V2TIMMessage *message = [V2TIMManager.sharedInstance createTextMessage:content];
 // Set the identifier for excluding from lastMsg of the conversation
@@ -459,7 +449,7 @@ message.isExcludedFromLastMessage = YES;
 
 A targeted group message is a message sent only to specified members in a group. You can send it as follows:
 
-```objective-c
+```objectivec
 // Create an original message object
 V2TIMMessage *message = [[V2TIMManager sharedInstance] createTextMessage:@"This is a targeted group message"];
 
@@ -480,8 +470,8 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:NO offlinePushInfo:nil progress:^
 ```
 
 >?
-> Only available in Enhanced Edition v6.0.1975 or later.
->- This feature requires the Flagship Edition package.
+>- This feature is available only in Enhanced Edition v6.0.1975 or later.
+>- This feature is available only in the Ultimate Edition.
 >- The original message object for creating a targeted group message cannot be a group @ message.
 >- The targeted group message feature is not available for Community and AVChatRoom groups.
 >- By default, targeted group messages are excluded from the unread count of the group conversation.
@@ -493,7 +483,7 @@ When the recipient's app is killed or when the recipient switches to the backend
 ### Setting the title and voice for APNs offline push
 When sending messages, you can use the **offlinePushInfo** field in the [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) API to set the title and voice for APNs offline push.
 
-```
+```objectivec
 // Create and send an image message to groupA, and customize the title and voice for offline push.
 NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"png"];
 // Create an image message
@@ -516,7 +506,8 @@ To implement this feature, the sender needs to set the extended field `ext` of t
 
 The following example assumes that Denny sends a message to Vinson.
 - Sender: Denny needs to set `ext` before sending a message.
-```
+
+```objectivec
 // Denny sets `offlinePushInfo` and specifies `ext` before sending a message
 V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"Text message"];
 V2TIMOfflinePushInfo *info = [[V2TIMOfflinePushInfo alloc] init];
@@ -528,7 +519,7 @@ onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
 }];
 ```
 
-- Recipient: although Vinson's app is not online, it can still receive an APNs offline message notification. When Vinson clicks this notification, the app is started.
+- Recipient: Although Vinson's app is not online, it can still receive an APNs offline message notification. When Vinson clicks this notification, the app is started.
 <pre><code><span class="hljs-comment">// Vinson receives the following callback after starting the app.</span>
 <span class="hljs-selector-tag">-</span> (void)<span class="hljs-selector-tag">application</span><span class="hljs-selector-pseudo">:(UIApplication</span> *)<span class="hljs-selector-tag">application</span> <span class="hljs-selector-tag">didReceiveRemoteNotification</span><span class="hljs-selector-pseudo">:(NSDictionary</span> *)<span class="hljs-selector-tag">userInfo</span> 
 <span class="hljs-selector-tag">fetchCompletionHandler</span><span class="hljs-selector-pseudo">:(void</span> (^)(UIBackgroundFetchResult result))<span class="hljs-selector-tag">completionHandler</span> {
@@ -548,7 +539,8 @@ Set `onlineUserOnly` to `YES` when calling [sendMessage](https://im.sdk.qcloud.c
 
 **Typical example: displaying "The other party is typing..."**
 In the one-to-one chat scenario, you can call [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) to send the "I am typing..." message. When the recipient receives this message, "The other party is typing..." is displayed on the UI. The sample code is as follows:
-```
+
+```objectivec
 // Send the "I am typing..." message to userA
 NSString *customStr = @"{\"command\": \"textInput\"}";
 NSData *customData = [customStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -571,7 +563,7 @@ The SDK supports the following types of message receiving options:
 
 You can call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ace29641a1c691bc44705b9bc8b08be37) API to set the Mute Notifications option for one-to-one messages and call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the Mute Notifications option for group messages.
 
->? Only available in Enhanced Edition v5.3.425 or later.
+>! This feature is available only in Enhanced Edition v5.3.425 or later.
 
 ## Recalling Messages
 The sender can call the [revokeMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a972ac3fb7744458eb0d6abd96ce35126) API to recall a successfully sent message. By default, the sender can recall a message that is sent within 2 minutes. You can change the time limit for message recall. For detailed operations, see [Message recall settings](https://intl.cloud.tencent.com/document/product/1047/34419).
@@ -579,7 +571,7 @@ Message recall requires cooperation of the UI code at the recipient side. When t
 
 ### The sender recalls a message
 
-```
+```objectivec
 [[V2TIMManager sharedInstance] revokeMessage:msg succ:^{
      // The message was successfully recalled
 } fail:^(int code, NSString *msg) {
@@ -591,9 +583,9 @@ Message recall requires cooperation of the UI code at the recipient side. When t
 1. Call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to set the advanced message listener.
 2. Call [onRecvMessageRevoked](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html) to receive the message recall notification.
 
-```
+```objectivec
 - (void)onRecvMessageRevoked:(NSString *)msgID {
-      // msgList is the message list on the current chat interface
+      // `msgList` is the message list on the current chat interface
       for(V2TIMMessage *msg in msgList){
          if ([msg.msgID isEqualToString:msgID]) {
              // `msg` is the recalled message. You need to change the corresponding message bubble state on the UI.
@@ -602,13 +594,87 @@ Message recall requires cooperation of the UI code at the recipient side. When t
  }
 ```
 
+## Message Modification
+If a message in a conversation is successfully sent, participants of the conversation can make secondary modification to the message. After the message is modified successfully, it is synced to all participants of the conversation.
+>! This feature is available only in Enhanced Edition v6.2.2363 or later.
+
+### Modifying a message
+A participant of a conversation can call the [modifyMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a7609c2dd8550e43b23d24069200d37cb) API to make secondary modification to messages in the conversation.
+As for message modification, the IM SDK applies only one restriction: only participants of a conversation can modify the messages in the conversation. If you need to apply more restrictions, such as restricting only the message sender to modify messages, you can add the restrictions at the business layer.
+
+```objectivec
+// Original message object in the conversation
+V2TIMMessage *originMessage; 
+// Modify the `cloudCustomData` information of the message object
+originMessage.cloudCustomData = [@"modify_cloud_custom_data" dataUsingEncoding:NSUTF8StringEncoding];
+// If the message is a text message, modify the text message content
+if (V2TIM_ELEM_TYPE_TEXT == originMessage.elemType) {
+    originMessage.textElem.text = @"modify_text";
+}
+[[V2TIMManager sharedInstance] modifyMessage:originMessage completion:^(int code, NSString *desc, V2TIMMessage *msg) {
+    // After the message modification is completed, `msg` is the modified message object
+}];
+
+```
+
+### Listening for message modification callbacks
+A participant of a conversation can call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acf794752cc6bfa786aea5cd7fabadfab) to add an advanced message listener.
+When a message in the conversation is modified, the conversation participant will receive the [onRecvMessageModified](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html#a1fb56e509cecc32663ebd460c1de88cb) callback, which contains the modified message object.
+
+```objectivec
+// Add a message listener
+[[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
+/// Message content modification notification
+- (void)onRecvMessageModified:(V2TIMMessage *)msg {
+    // `msg` is the modified message object
+}
+```
+
 ## Marking Unread Messages as Read
 ### Marking unread messages in a conversation as read
-The recipient can call [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) or [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40afaf1f06edd10c90d8d67fa98c2b14), respectively, to mark incoming messages in a C2C conversation or a group conversation as read, and perform callback of [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) to notify the UI to update.
-### Quickly marking unread messages of all conversations as read
-The recipient can call [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ab9e190495505a6fe226c9c4ed10e4eeb) to quickly mark unread messages of all conversations as read, and perform callback of [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) to notify the UI to update.
+You can call [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) or [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40afaf1f06edd10c90d8d67fa98c2b14) to mark unread messages in a one-to-one or group conversation as read respectively. After the API call is successfully completed, the SDK calls back [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) to notify the UI to update accordingly.
 
->? Only available in Enhanced Edition v5.8.1668 or later.
+```objectivec
+// Mark unread messages in a one-to-one conversation as read for userA
+[[V2TIMManager sharedInstance] markC2CMessageAsRead:@"userA" succ:^{
+    // Marked unread messages as read successfully
+} fail:^(int code, NSString *desc) {
+    // Failed to mark unread messages as read
+}];
+// Mark unread messages in groupA's conversation as read
+[[V2TIMManager sharedInstance] markGroupMessageAsRead:@"groupA" succ:^{
+    // Marked unread messages as read successfully
+} fail:^(int code, NSString *desc) {
+    // Failed to mark unread messages as read
+}];
+```
+
+When you call the [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ad7d239caa69ec7da45f52d6bb02ee19c) API to mark unread messages in a one-to-one conversation as read, the peer user will receive the [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAdvancedMsgListener-p.html#aaa7cea1f7dec46b2300740e9cd60d837) callback, which contains the timestamp of marking unread messages in the conversation as read.
+```objectivec
+[[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
+- (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
+    for (V2TIMMessageReceipt *receipt in receiptList) {
+        // userID for which unread messages in the conversation were marked as read
+        NSString *userID = receipt.userID;
+        // Timestamp of marking unread messages in the conversation as read
+        time_t timestamp = receipt.timestamp;
+    }
+}
+```
+
+### Quickly marking unread messages of all conversations as read
+You can call [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#ab9e190495505a6fe226c9c4ed10e4eeb) to quickly mark unread messages of all conversations as read. After the API call is successfully completed, the SDK calls back [onConversationChanged](https://im.sdk.qcloud.com/doc/en/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) to notify the UI to update accordingly.
+
+```objectivec
+// Mark unread messages of all conversations as read
+[[V2TIMManager sharedInstance] markAllMessageAsRead:^{
+    // Marked unread messages as read successfully
+} fail:^(int code, NSString *desc) {
+    // Failed to mark unread messages as read
+}];
+```
+
+> Only available in Enhanced Edition v5.8.1668 or later.
 
 ## Viewing Historical Messages
 You can call [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a63d51af9d34e0cd8011da374b7e7a786) to obtain historical messages of one-to-one chats, or call [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) to obtain historical messages of group chats. If the network connection of the current device is normal, the IM SDK pulls historical messages from the server by default. If the network connection is unavailable, the IM SDK directly reads historical messages from the local database.
@@ -617,7 +683,7 @@ You can call [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categor
 The IM SDK supports the feature of pulling historical messages by page. The number of messages pulled per page cannot be too large; otherwise, the pulling speed is affected. We recommend that you pull 20 messages per page.
 The following example assumes that historical messages of `groupA` are pulled by page, and the number of messages per page is 20. The sample code is as follows:
 
-```
+```objectivec
 // The value `nil` of `lastMsg` is passed in for the first pulling, indicating that starting from the latest message, a total of 20 messages are pulled
 [[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 
 lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
@@ -641,7 +707,7 @@ lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
 In actual scenarios, pulling by page is often triggered by your swipe operation. Each time when you swipe on the message list, pulling by page is triggered once. However, the principle is similar to the preceding sample code. In either case, `lastMsg` specifies the start message for pulling, and `count` specifies the number of messages pulled each time.
 
 ### Precautions
-- The storage period of historical messages is as follows:<ul style="margin:0;"><li>Trial edition: free storage for 7 days, no extension supported. </li><li>Pro edition: free storage for 7 days, extension supported. </li><li>Flagship edition: free storage for 30 days, extension supported. </li></ul>It is a value-added service to extend the storage period of historical messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For information about billing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
+- The storage period of historical messages is as follows:<ul style="margin:0;"><li>Free edition: Free storage for seven days, with no extension supported. </li><li>Pro edition: Free storage for seven days, with extension supported. </li><li>Ultimate edition: Free storage for 30 days, with extension supported. </li></ul>It is a value-added service to extend the storage period of historical messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For information about billing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
 - Only the meeting group (corresponding to the ChatRoom of the earlier version) supports pulling historical messages of members **before they join the group**.
 - Messages in an audio-video group (AVChatRoom) do not support local storage and multi-device roaming. Therefore, the [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) API does not take effect on an audio-video group.
 
@@ -660,12 +726,11 @@ Call the [addToBlackList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_
 **Setting "Mute Notifications" for messages from a specified user: **
 Call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
 
->? Only available in Enhanced Edition v5.3.425 or later.
+>! This feature is available only in Enhanced Edition v5.3.425 or later.
 
 ### Rejecting messages from a specified group
 For Enhanced Edition v5.3.425 or later, call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a40f3e2ada605b73a39b05a3d3144636b) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
 For SDKs of other versions, call the `setReceiveMessageOpt` API to set the message receiving option to `V2TIM_GROUP_NOT_RECEIVE_MESSAGE`.
-
 
 ## FAQs
 ### 1. Why am I receiving duplicate messages?
@@ -679,7 +744,7 @@ In the one-to-one chat scenario, if the recipient calls [markC2CMessageAsRead](h
 You can call [appendElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMElem.html#a632f3740c4c42014dc38a4c074a700c9) after creating a `Message` object via the `Elem` member of the `Message` object to add the next `Elem` member.
 Below is an example of text message + custom message:
 
-```
+```objectivec
 V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"text"];
 V2TIMCustomElem *customElem = [[V2TIMCustomElem alloc] init];
 customElem.data = [@"custom message" dataUsingEncoding:NSUTF8StringEncoding];
@@ -689,7 +754,7 @@ customElem.data = [@"custom message" dataUsingEncoding:NSUTF8StringEncoding];
 1. Use the `Message` object to parse the first `Elem` object.
 2. Use the [nextElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMElem.html) method of the first `Elem` object to obtain the next `Elem` object. If the next `Elem` object exists, the `Elem` object instance is returned. Otherwise, `nil` is returned.
 
-```
+```objectivec
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
     // View the first Elem object
     if (msg.elemType == V2TIM_ELEM_TYPE_TEXT) {
@@ -721,4 +786,4 @@ It is complex to parse a message. We provide the [sample code](https://github.co
 
 When you use a PNG image in an Xcode project to create an image message and send it, a sending failure message will be displayed. The reason is that Xcode compresses the PNG images in projects and modifies the file headers by default, and as a result, the images cannot be identified by IM. To solve the problem, configure your Xcode project as shown in the following figure.
 
-![Image](https://main.qcloudimg.com/raw/844287d24d27a08f22cdba7272c556d9.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/2595c0c1aa45830a921ef7be6c6a07c0.png)

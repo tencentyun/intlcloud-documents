@@ -82,12 +82,36 @@
 <td>不支持</td>
 </tr>
 <tr>
-<td>是否支持查看入群前消息记录</td>
+<td>是否支持查看入群前历史消息</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
 <td>不支持</td>
+</tr>
+<tr>
+<td>群成员变更通知</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
 <td>不支持</td>
-<td>支持</td>
-<td>支持</td>
+</tr>
+<tr>
+<td>群资料变更通知</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
 <td>不支持</td>
+</tr>
+<tr>
+<td>群成员资料变更通知</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
+<td>支持 <a href="https://console.cloud.tencent.com/im-detail/qun-setting">控制台</a> 配置</td>
 </tr>
 <tr>
 <td>是否支持云端历史消息存储</td>
@@ -112,7 +136,6 @@
 >- 新版 SDK 已全面升级群组类型。新群组类型有**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）、社群（Community）和直播群（AVChatRoom）**五个群组类型。旧版群组类型（Public、Private、ChatRoom、AVChatRoom）中的 Private 类型对应新群组类型 Work（好友工作群），ChatRoom 类型对应新群组类型 Meeting（临时会议群）。
 >- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">超量费用</a>。
 >- 社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需购买旗舰版并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
->- 好友工作群（Work）、陌生人社交群（Public）默认不支持查看入群前消息记录。如需使用此功能，请参见 [配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322) 指引提交变更申请。
 
 
 ## 群组管理
@@ -171,12 +194,12 @@ V2TIMManager.getGroupManager().createGroup(
 用户调用 [joinGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564) 即可加入该群，加群成功后，全体群成员（包括加群者）都会收到 [onMemberEnter](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a85cbb33a40aaa41781e4835bf802db6d) 回调。 
 
 #### 场景二：需被邀请才能进入群
-好友工作群（Work）类似微信群和企业微信群，适用于工作交流，在交互设计上限制用户主动加入，只能由现有的群成员邀请才能加群。
+好友工作群（Work）适用于工作交流，在交互设计上限制用户主动加入，只能由现有的群成员邀请才能加群。
 
 现有的群成员调用 [inviteUserToGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#afd219107653b877e446c149531d65e92) 邀请另一个用户入群，全体群成员（包括邀请者自己）会收到 [onMemberInvited](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#af6119ca3c6eabcc63acbf012f508b1b1) 回调。
 
 #### 场景三：需要审批才能进入群
-陌生人社交群（Public）为各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过 [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) 接口调整加群选项（`V2TIMGroupAddOpt`），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
+陌生人社交群（Public）类似 QQ 中的各种兴趣群和部落区，任何人都可以申请入群，但需要经过群主或管理员审批才能真正入群。陌生人社交群默认需要群主或管理员进行审批才能加群的，但群主或管理员也可以通过 [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) 接口调整加群选项（`V2TIMGroupAddOpt`），可以设置为更严格的“禁止任何人加群”，也可以设置为更宽松的“放开审批流程”。
 - V2TIM_GROUP_ADD_FORBID ：禁止任何人加群。
 - V2TIM_GROUP_ADD_AUTH ：需要群主或管理员审批才能加入（默认值）。
 - V2TIM_GROUP_ADD_ANY ：取消审批流程，任何用户都可以加入。
@@ -243,17 +266,17 @@ V2TIMManager.getGroupManager().setGroupInfo(v2TIMGroupInfo, new V2TIMCallback() 
 [](id:setGroupReceiveMessageOpt)
 ### 设置群消息的接收选项
 任何群成员都可以调用 [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a2735427ac22485626aea278a9d465b3e) 接口修改群消息接收选项。群消息接收选项包括：
-- V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_MESSAGE：在线正常接收消息，离线时会有厂商的离线推送通知。
-- V2TIMGroupInfo.V2TIM_GROUP_NOT_RECEIVE_MESSAGE：不会接收到群消息。
-- V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE：在线正常接收消息，离线不会有推送通知。
+- V2TIMMessage.V2TIM_RECEIVE_MESSAGE：在线正常接收消息，离线时会有厂商的离线推送通知。
+- V2TIMMessage.V2TIM_NOT_RECEIVE_MESSAGE：不会接收到群消息。
+- V2TIMMessage.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE：在线正常接收消息，离线不会有推送通知。
 
 根据群消息接收选择可以实现群消息免打扰：
 - **完全不接收群内消息**
-群消息接收选项设置为 `V2TIMGroupInfo.V2TIM_GROUP_NOT_RECEIVE_MESSAGE` 后，群内的任何消息都收不到，会话列表也不会更新。
+群消息接收选项设置为 `V2TIMMessage.V2TIM_NOT_RECEIVE_MESSAGE` 后，群内的任何消息都收不到，会话列表也不会更新。
 - **接收群内消息但不提醒，在会话列表界面显示小圆点，而不显示未读数**
 >?此方式需使用未读计数功能，因此仅适用于好友工作群（Work）和陌生人社交群（Public）。
 >
-群消息接收选项设置为 `V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`，当群内收到新消息，会话列表需要更新时，可以通过会话中的  [getUnreadCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e) 获取到消息未读数。根据 [getRecvOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a82f673186669d31f7acd38c52d412ba2) 判断获取到的群消息接收选项为 `V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE` 时显示小红点而非消息未读数。
+群消息接收选项设置为 `V2TIMMessage.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE`，当群内收到新消息，会话列表需要更新时，可以通过会话中的  [getUnreadCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e) 获取到消息未读数。根据 [getRecvOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a82f673186669d31f7acd38c52d412ba2) 判断获取到的群消息接收选项为 `V2TIMMessage.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE` 时显示小红点而非消息未读数。
 
 ## 群属性（群自定义字段）
 基于 API2.0 我们设计了全新的群自定义字段，我们称之为 "群属性"，其特性如下：
@@ -362,7 +385,7 @@ public void getGroupMemberList(long nextSeq) {
 
 [](id:mute)
 ### 禁言
-群主或管理员可以通过 [muteGroupMember](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5) 禁言某一个群成员并设置禁言时间，禁言时间单位为秒，禁言信息存储于群成员的 [muteUtil](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberFullInfo.html#a2caecbec07bdd4fa8e6b8072bc39be58) 属性字段中。群成员被禁言后，全员（包括被禁言的群成员）都会收到 [onMemberInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a4ac777faad07e32408ae7ef5e2e3fc86) 事件回调。
+群主或管理员可以通过 [muteGroupMember](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5) 禁言某一个群成员并设置禁言时间，禁言时间单位为秒，禁言信息存储于群成员的 [muteUtil](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberFullInfo.html#a2caecbec07bdd4fa8e6b8072bc39be58) 属性字段中。群成员被禁言后，全员（包括被禁言的群成员）都会收到 [onMemberInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a4ac777faad07e32408ae7ef5e2e3fc86) 事件回调。
 群主或管理员也可以通过 [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) 接口对整个群进行禁言，将 [allMuted](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupInfo.html#a6faf73364372206bfee9c2b99ed5807e) 属性字段设置为 `true` 即可。全群禁言没有时间限制，需通过将群资料 `setAllMuted(false)` 解除禁言。
 
 
@@ -664,9 +687,9 @@ V2TIMManager.getInstance().addGroupListener(v2TIMGroupListener);
 可以继续接收消息，但是直播群（AVChatRoom）中的消息不支持云端存储，因此无法拉取到掉线期间的消息。
 
 ### 2. 为什么群成员进群和退群收不到通知？
-请确认群组类型：
-- 临时会议群（Meeting）不支持群成员变更通知。
-- 直播群（AVChatRoom）消息限制40条/秒，会优先保证高优先级消息的收发，超过限制后会优先丢弃低优先级的消息。
+- 请确保已在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im-detail/qun-setting) “群系统通知配置”中，配置群成员变更通知为“下发通知”。
+- 群消息限制40条/秒，会优先保证高优先级消息的收发，超过限制后会优先丢弃低优先级的消息。
+
 
 ### 3. 为什么会议群（Meeting） 中的未读数一直为零?
 临时会议群（Meeting）和直播群（AVChatRoom）分别配合会议和直播的音视频场景，因此这两类群组均不支持未读消息计数。

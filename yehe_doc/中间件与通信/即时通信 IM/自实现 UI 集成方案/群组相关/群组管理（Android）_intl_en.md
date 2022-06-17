@@ -32,9 +32,9 @@ The following table describes the features and limitations of each group type:
 <td>Requesting to join a group</td>
 <td>Not supported</td>
 <td>Supported with group owner or admin approval required</td>
-<td>Supported, and no approval required</td>
-<td>Supported, and no approval required</td>
-<td>Supported, and no approval required</td>
+<td>Supported with no approval required</td>
+<td>Supported with no approval required</td>
+<td>Supported with no approval required</td>
 </tr>
 <tr>
 <td>Joining group via invitation by a member</td>
@@ -82,27 +82,51 @@ The following table describes the features and limitations of each group type:
 <td>Not supported</td>
 </tr>
 <tr>
-<td>Viewing message history earlier than user's entry time</td>
-<td>Not supported</td>
-<td>Not supported</td>
-<td>Supported</td>
-<td>Supported</td>
+<td>Viewing message history from before the user joined the group</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
 <td>Not supported</td>
 </tr>
 <tr>
+<td>Group member change notifications</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Group profile change notifications</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Group member profile change notifications</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+<td>Supports <a href="https://console.cloud.tencent.com/im-detail/qun-setting">console</a> configuration</td>
+</tr>
+<tr>
 <td>Retaining message history in the cloud</td>
-<td colspan="4"><ul style="margin:0;padding-left:10px" ><li>Trial Edition: Seven days</li><li>Pro Edition: Seven days by default, which can be increased to up to 360 days via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li><li>Flagship Edition: 30 days by default, which can be increased to up to 360 days via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li></ul></td>
+<td colspan="4"><ul style="margin:0;padding-left:10px" ><li>Free Edition: Seven days</li><li>Pro Edition: Seven days by default, which can be increased to up to 360 days via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li><li>Ultimate Edition: 30 days by default, which can be increased to up to 360 days via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li></ul></td>
 <td>Not supported</td>
 </tr>
 <tr>
 <td>Number of groups</td>
-<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Trial Edition: Up to 100 existing groups, and deleted groups do not count against the quota.</li><li>Pro Edition or Flagship Edition: Unlimited</li></ul></td>
-<td><ul style="margin:0;padding-left:10px"><li>Trial Edition and Pro Edition: Not supported</li><li>Flagship Edition: 100,000</li></ul></td>
-<td><ul style="margin:0;padding-left:10px"><li>Trial Edition: Up to 10 existing groups, and deleted groups do not count against the quota.</li><li>Pro Edition: Up to 50 existing groups, and deleted groups do not count against the quota.<br>You can upgrade to unlimited number of audio-video groups by purchasing the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a>.</li><li>Flagship Edition: Unlimited</li></ul></td>
+<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Free Edition: Up to 100 existing groups, and deleted groups do not count against the quota.</li><li>Pro Edition or Ultimate Edition: Unlimited</li></ul></td>
+<td><ul style="margin:0;padding-left:10px"><li>Free Edition and Pro Edition: Not supported</li><li>Ultimate Edition: 100,000</li></ul></td>
+<td><ul style="margin:0;padding-left:10px"><li>Free Edition: Up to ten existing groups, and deleted groups do not count against the quota.</li><li>Pro Edition: Up to 50 existing groups, and deleted groups do not count against the quota.<br>You can upgrade to unlimited number of audio-video groups by purchasing the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a>.</li><li>Ultimate Edition: Unlimited</li></ul></td>
 </tr>
 <tr>
 <td>Number of group members</td>
-<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Trial Edition: 20 per group</li><li>Pro Edition: 200 per group by default, which can be increased to up to 2,000 per group via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li><li>Flagship Edition: 2,000 per group, which can be increased to up to 6,000 per group via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li></ul></td>
+<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Free Edition: 20 per group</li><li>Pro Edition: 200 per group by default, which can be increased to up to 2,000 per group via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li><li>Ultimate Edition: 2,000 per group, which can be increased to up to 6,000 per group via <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> </li></ul></td>
 <td>100,000</td>
 <td>Unlimited number of group members</td>
 </tr>
@@ -110,9 +134,8 @@ The following table describes the features and limitations of each group type:
 
 >?
 >- Group types are upgraded in the new SDK version and they are **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, **community group (Community)**, and **audio-video group (AVChatRoom)**. Private group (Private) and chat room (ChatRoom) in earlier versions (which have Public, Private, ChatRoom, and AVChatRoom groups) correspond to work group (Work) and meeting group (Meeting) in the new version respectively.
->- In the Pro Edition or Flagship Edition SDKAppID, the maximum net increase in group count per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to <a href="https://intl.cloud.tencent.com/document/product/1047/34350"> pay for usage not covered by the free quota</a>.
->- Community group (Community) is supported only in native SDK 5.8.1668 enhanced edition or higher and web SDK 2.17.0 or later. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/44322).
->- Work groups (Work) and public groups (Public) do not allow group members to view messages sent before they join the group. To enable the feature, submit a change request by referring to [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322).
+>- In the Pro Edition or Ultimate Edition SDKAppID, the maximum net increase in group count per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to <a href="https://intl.cloud.tencent.com/document/product/1047/34350"> pay for usage not covered by the free quota</a>.
+>- Community group (Community) is supported only in native SDK 5.8.1668 enhanced edition or higher and web SDK 2.17.0 or later. To use the feature, you need to purchase the Ultimate Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/44322).
 
 
 ## Group Management
@@ -152,7 +175,7 @@ V2TIMManager.getGroupManager().createGroup(
 });
 ```
 
-- The value of `groupType` is a string and can be one of `Work`, `Public`, `Meeting`, or `AVChatRoom`. For the differencesbetween group types, see [Group Types](#type).
+- The value of `groupType` is a string and can be one `Work`, `Public`, `Meeting`, or `AVChatRoom`. For the differences between group types, see [Group Types](#type).
 - `groupID` specifies the group ID, which uniquely identifies a group. Do not create groups with the same `groupID` in a SDKAppID. If you set `groupID` to `null`, you will be assigned a group ID by default.
 - `groupName` specifies the group description, which can have a maximum length of 30 bytes.
 
@@ -171,17 +194,17 @@ Meeting groups (Meeting) and audio-video groups (AVChatRoom) can be used for int
 After a user successfully joins a group by calling [joinGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564), all group members (including the joined user) receive the [onMemberEnter](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a85cbb33a40aaa41781e4835bf802db6d) callback. 
 
 #### Scenario 2: Users must be invited to join the group
-Resembling WeChat and WeCom groups, work groups (Work) are suitable for communication in work environments. The interaction pattern is designed to disable proactive group joining and only allow users to be invited to join the group by group members.
+Work groups (Work) are suitable for communication in work environments. The interaction pattern is designed to disable proactive group joining and only allow users to be invited to join the group by group members.
 
 A group member calls [inviteUserToGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#afd219107653b877e446c149531d65e92) to invite a user to the group, then all group members (including the inviter) receive the [onMemberInvited](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#af6119ca3c6eabcc63acbf012f508b1b1) callback.
 
 #### Scenario 3: Users can join the group only after their requests are approved
-Public groups (Public) are similar to interest groups and tribes. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) API to set the group joining option (`V2TIMGroupAddOpt`) to **forbid anyone to join** which is tighter, or to **disable the approval process**, which is more flexible.
+Public groups (Public) are similar to the interest groups and tribes in QQ. Any user can request to join the group, but will not become a member of the group until the request is approved by the group owner or admin. While approval is required by default, the group owner or admin can call the [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) API to set the group joining option (`V2TIMGroupAddOpt`) to **forbid anyone to join** which is tighter, or to **disable the approval process**, which is more flexible.
 - V2TIM_GROUP_ADD_FORBID: Forbid anyone to join the group.
 - V2TIM_GROUP_ADD_AUTH (default): Group owner or admin approval is required for group joining.
 - V2TIM_GROUP_ADD_ANY: Disable the approval process to allow any user to join the group.
 
-The diagram illustrates the process of group joining that requires approval:
+The following diagram illustrates the process of group joining that requires approval:
 ![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **The user sends a request to join the group**
@@ -196,15 +219,15 @@ After receiving the [onReceiveJoinApplication](https://im.sdk.qcloud.com/doc/en/
 [](id:quit)
 ### Leaving a group
 Call [quitGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a6d140dbeb44906de9cb69f69c2ce5919) to leave a group. The user who leaves the group then receives the [onQuitFromGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a489004526f1bd8daba7ac63fb0ad965f) callback and other group members receive the [onMemberLeave](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a2169676423875e4c9c376796245ca8d5) callback.
->!For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner is not allowed to leave the group but can [delete the group](#dismiss).
+>!For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner is not allowed to leave the group but can [disband the group](#dismiss).
 
 [](id:dismiss)
-### Deleting a group
-Call [dismissGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd0221c0c842a6dcfa0acc657e50caeb) to delete a group. Then all group members receive the [onGroupDismissed](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a6e89728e160e126460a6b8eeddf00ad5) callback.
+### Disbanding a group
+Call [dismissGroup](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd0221c0c842a6dcfa0acc657e50caeb) to disband a group. Then all group members receive the [onGroupDismissed](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a6e89728e160e126460a6b8eeddf00ad5) callback.
 
 >! 
->- For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner can delete the group at any time.
->- For a work group (Work), the group owner does not have the permission to delete the group. To delete the group, you must have your service server call the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/34896).
+>- For a public group (Public), meeting group (Meeting), community group (Community), or audio-video group (AVChatRoom), the group owner can disband the group at any time.
+>- For a work group (Work), the group owner does not have the permission to disband the group. To disband the group, you must have your service server call the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/34896).
 
 
 ### Getting the list of joined groups
@@ -243,27 +266,27 @@ V2TIMManager.getGroupManager().setGroupInfo(v2TIMGroupInfo, new V2TIMCallback() 
 [](id:setGroupReceiveMessageOpt)
 ### Setting the group message receiving option
 Any group member can call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a2735427ac22485626aea278a9d465b3e) API to modify the group message receiving option. Available values are as follows:
-- V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_MESSAGE: Messages will be received when the user is online, and push notifications will be received when the user is offline.
-- V2TIMGroupInfo.V2TIM_GROUP_NOT_RECEIVE_MESSAGE: No group messages will be received.
-- V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE: Messages will be received when the user is online, and no push notification will be received when the user is offline.
+- V2TIMMessage.V2TIM_RECEIVE_MESSAGE: messages will be received when the user is online, and push notifications will be received when the user is offline.
+- V2TIMMessage.V2TIM_NOT_RECEIVE_MESSAGE: no group message will be received.
+- V2TIMMessage.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE: messages will be received when the user is online, and no push notification will be received when the user is offline.
 
 The group message receiving option allows you to mute group messages:
 - **No group message will be received**
-With the group message receiving option set to `V2TIMGroupInfo.V2TIM_GROUP_NOT_RECEIVE_MESSAGE`, no group message will be received, and the conversation list will not be updated.
+With the group message receiving option set to `V2TIMMessage.V2TIM_NOT_RECEIVE_MESSAGE`, no group message will be received, and the conversation list will not be updated.
 - **Group messages will be received but the user will not be notified. A badge without the unread count will be displayed on the conversation list interface.**
 >?This mode requires the unread count feature and therefore it applies only to work groups (Work) and public groups (Public).
 >
-With the group message receiving option set to `V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`, when new group messages are received and the conversation list needs to be updated, you can get the unread count through [getUnreadCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e). Use [getRecvOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a82f673186669d31f7acd38c52d412ba2) to verify that a red dot instead of the unread count is displayed when the group message receiving option is `V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`.
+With the group message receiving option set to `V2TIMMessage.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE`, when new group messages are received and the conversation list needs to be updated, you can get the unread count through [getUnreadCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e). Use [getRecvOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a82f673186669d31f7acd38c52d412ba2) to verify that a red dot instead of the unread count is displayed when the group message receiving option is `V2TIMMessage.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE`.
 
 ## Group Attributes (Custom Group Fields)
 New custom group fields, also called group attributes, are designed based on API 2.0. They have the following features:
 1. You can CRUD group attributes directly in the client without console configuration.
 2. You can configure up to 16 group attributes. The size of each group attribute can be up to 4 KB, and the total size of all group attributes can be up to 16 KB.
 3. Only audio-video groups (AVChatRoom) support group attributes.
-4. The `initGroupAttributes`, `setGroupAttributes`, and `deleteGroupAttributes` APIs each can be called by the SDK for up to 10 times per five seconds, and the error code 8511 will be called back if the limit is exceeded. The APIs each can be called by the backend for up to five times per second, and the error code 10049 will be called back if the limit is exceeded.
+4. The `initGroupAttributes`, `setGroupAttributes`, and `deleteGroupAttributes` APIs each can be called by the SDK for up to ten times per five seconds, and the error code 8511 will be called back if the limit is exceeded. The APIs each can be called by the backend for up to five times per second, and the error code 10049 will be called back if the limit is exceeded.
 5. The `getGroupAttributes` API can be called by the SDK for up to 20 times per five seconds.
 
-With group attributes, you can manage the seats of audio chat rooms. When a user mic on, you can set a group attribute to manage the information of the user. When the user mic off, you can delete the group attribute. Other members can get the list of group attributes to display the seat list.
+With group attributes, you can manage the seats of audio chat rooms. When a user mics on, you can set a group attribute to manage the information of the user. When the user mics off, you can delete the group attribute. Other members can get the list of group attributes to display the seat list.
 
 ### Initializing group attributes
 Call the [initGroupAttributes](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a17569b57abc77adb6be9356b9eb70182) API to initialize group attributes. If the group has existing group attributes, they will be deleted first.
@@ -304,7 +327,7 @@ V2TIMManager.getGroupManager().getGroupMemberList("testGroup", role, 0,
     new V2TIMValueCallback<V2TIMGroupMemberInfoResult>() {
 	@Override
 	public void onError(int code, String desc) {
-		// Failed to pull
+		// Messages failed to be pulled
 	}
 
 	@Override
@@ -335,7 +358,7 @@ public void getGroupMemberList(long nextSeq) {
 	    new V2TIMValueCallback<V2TIMGroupMemberInfoResult>() {
 		@Override
 		public void onError(int code, String desc) {
-			// Failed to pull
+			// Messages failed to be pulled
 		}
 
 		@Override
@@ -362,7 +385,7 @@ The group owner or admin can call the [setGroupMemberInfo](https://im.sdk.qcloud
 
 [](id:mute)
 ### Muting group members
-The group owner or admin can mute a group member and set muting duration (in seconds) via [muteGroupMember](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5). Muting information is stored in the [muteUtil](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberFullInfo.html#a2caecbec07bdd4fa8e6b8072bc39be58) attribute field of the group member. After the group member is muted, all group members (including the muted member) receive the [onMemberInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a4ac777faad07e32408ae7ef5e2e3fc86) event callback.
+The group owner or admin can mute a group member and set muting duration (in seconds) via [muteGroupMember](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5). Muting information is stored in the [muteUtil](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberFullInfo.html#a2caecbec07bdd4fa8e6b8072bc39be58) attribute field of the group member. After the group member is muted, all group members (including the muted member) receive the [onMemberInfoChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a4ac777faad07e32408ae7ef5e2e3fc86) event callback.
 The group owner or admin can mute the entire group via the [setGroupInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) API by setting [allMuted](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupInfo.html#a6faf73364372206bfee9c2b99ed5807e) to `true`. There is no time limit for group muting. The group can be unmuted through `setAllMuted(false)` in the group profile.
 
 
@@ -628,7 +651,7 @@ Topic message APIs are in the core class `V2TIMMessageManager` and are described
 <tr>
 <th width="15%">Feature</th>
 <th width="40%">API</th>
-<th width="30%">Remarks</th>
+<th width="30%">Description</th>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1047/36359">Sending messages</a></td>
@@ -664,9 +687,9 @@ Topic message APIs are in the core class `V2TIMMessageManager` and are described
 Yes, but since an audio-video group (AVChatRoom) does not support storing message history in the cloud, it cannot pull the messages that were sent when it was disconnected.
 
 ### 2. Why doesn't the group receive notifications when a user joins or leaves the group?
-Verify the group type:
-- A meeting group (Meeting) does not support member change notifications.
-- An audio-video group (AVChatRoom) can receive up to 40 messages per second, and therefore it prioritizes the receiving and sending of high-priority messages and discards messages with the lowest priority first once the frequency limit is exceeded.
+- Ensure that you have configured IM to deliver group member change notifications in the group system notification configuration in the [IM console](https://console.cloud.tencent.com/im-detail/qun-setting).
+- A group can receive up to 40 messages per second, and therefore it prioritizes the receiving and sending of high-priority messages and discards messages with the lowest priority first once the frequency limit is exceeded.
+
 
 ### 3. Why does the unread count of a meeting group (Meeting) remain at zero?
 Meeting groups (Meeting) and audio-video groups (AVChatRoom) are designed for conference and live streaming scenarios respectively, and they do not support the unread count feature.
