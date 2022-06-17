@@ -14,7 +14,7 @@ Apache Flink requires real-time data from various sources (such as Apache Kafka 
 1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of the target instance to enter its basic information page.
 3. On the instance’s basic information page, get the instance access address in the **Access Mode** module, which is the `bootstrap-server` required by production and consumption.
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+   ![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)
 
 ### Step 2. Create a topic
 
