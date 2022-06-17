@@ -187,7 +187,7 @@ IM SDK 및 Demo의 최신 소스 코드를 다운로드할 수 있습니다.
 </div>
 <h2> Demo 및 솔루션 다운로드 </h2>
 
-IM Demo는 다양한 시나리오에서 IM 기능을 보여줍니다. 다양한 플랫폼 및 사용 사례에 대한 Demo를 [설치](https://intl.cloud.tencent.com/document/product/1047/34279)하고 사용해 볼 수 있습니다.
+
 <div>
 <div style="margin-top: 15px;">
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">

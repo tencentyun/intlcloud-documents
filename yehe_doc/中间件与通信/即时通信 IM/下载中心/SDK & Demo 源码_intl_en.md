@@ -187,7 +187,7 @@ You can download the latest source codes of IM SDKs and demos.
 </div>
 <h2> Demo and Solution Download </h2>
 
-IM demos demonstrate IM features in various scenarios. You can [install](https://intl.cloud.tencent.com/document/product/1047/34279) and try the demos for different platforms and use cases.
+
 <div>
 <div style="margin-top: 15px;">
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">

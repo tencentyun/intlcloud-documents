@@ -212,8 +212,8 @@ The admin pushes messages to Shenzhen Platinum Premier users and retains the mes
 | From_Account | String | No | Account of the message sender |
 | AttrsOr | Object | No | A set of attribute conditions connected by OR. Note that attribute conditions and tag conditions cannot be used at the same time. |
 | AttrsAnd | Object | No | A set of attribute conditions connected by AND. Note that attribute conditions and tag conditions cannot be used at the same time. |
-| TagsOr | Object | No | A set of tag conditions connected by OR. A tag is a string of no more than 50 bytes. Note that attribute conditions and tag conditions cannot be used at the same time. The number of tags in `TagsOr` cannot exceed 10. |
-| TagsAnd | Object | No | A set of tag conditions connected by AND. A tag is a string of no more than 50 bytes. Note that attribute conditions and tag conditions cannot be used at the same time. The number of tags in `TagsAnd` cannot exceed 10. |
+| TagsOr | Array | No | A set of tag conditions connected by OR. A tag is a string of no more than 50 bytes. Note that attribute conditions and tag conditions cannot be used at the same time. The number of tags in `TagsOr` cannot exceed 10. |
+| TagsAnd | Array | No | A set of tag conditions connected by AND. A tag is a string of no more than 50 bytes. Note that attribute conditions and tag conditions cannot be used at the same time. The number of tags in `TagsAnd` cannot exceed 10. |
 | OfflinePushInfo | Object | No | The information to be pushed offline. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 ### Sample response

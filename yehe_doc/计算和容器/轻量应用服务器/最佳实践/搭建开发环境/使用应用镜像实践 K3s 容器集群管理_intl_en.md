@@ -96,15 +96,5 @@ The result should be as follows:
 systemctl daemon-reload && systemctl restart k3s
 ```
 
-
-### Setting domain name and DNS
-Using a domain name, but not an IP, can help your users remember your website.
-
-Directions: 
-1. Purchase a domain name through Tencent Cloud as instructed in [Domain Name Registration](https://intl.cloud.tencent.com/document/product/242/42861). Ignore this step if you already have a domain name.
-2. (Optional) Obtain the ICP filing number. 
-If the domain name is pointed to a server in the Chinese mainland, you must apply for an ICP filing number for the domain name.
-3. Configure the DNS settings. You can use [Tencent Cloud DNS service](https://www.dnspod.com/products/dns) for the configuration.
-
 ### Enabling HTTPS access
 You can install an SSL certificate and enable HTTPS access for your website as instructed in [Installing Certificate on NGINX Server](https://intl.cloud.tencent.com/document/product/1103/47406).

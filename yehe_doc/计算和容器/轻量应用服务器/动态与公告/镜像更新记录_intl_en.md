@@ -6,8 +6,18 @@ The discontinued images involved in the image update will not affect the use of 
 <table>
     <tbody><tr><th style="width: 40%;">Image Type</th><th style="width:60%;">Update</th></tr>
 		<tr>
+		<td>System image</td>
+		<td><ul class="params">
+		<li>Adds the TencentOS Server 2.4 (TK4) image</li>
+		<li>Adds the Windows Server 2022 Chinese image</li>
+		<li>Adds the CentOS Stream 8 image</li>
+		<li>Discontinues the TencentOS Server 2.4 image</li>
+		</ul></td>
+		</tr>
+		<tr>
 		<td>Application image</td>
 		<td><ul class="params">
+		<li>Adds the WooCommerce 6.5.1 image</li>
 		<li>Adds the Matomo 4.9.1 image</li>
 		<li>Discontinues the Discuz! Q image</li>
 		</ul></td>
@@ -52,7 +62,7 @@ The discontinued images involved in the image update will not affect the use of 
 		<td>Adds the Debian 11.1 image</td>
 		</tr>
 		<td>Application image</td>
-		<td><ul class="params">
+		<td><ul class="params"> 
 		<li>Adds the SRS Release 4.0 image</li>
 		<li>Adds the LiveRoom Release 1.0 image</li>
 		<li>Discontinues the WordPress Tencent Cloud Plugin image</li>
@@ -88,12 +98,13 @@ The discontinued images involved in the image update will not affect the use of 
     <tbody><tr><th style="width: 40%;">Image Type</th><th style="width:60%;">Update</th></tr>
   <tr>
 		<td>Application image</td>
-		<td><ul class="params"><li>Updates the WordPress image to 5.7.1</li><li>Updates LAMP image to 7.4.16</li>
+		<td><ul class="params"><li>Updates the WordPress image to 5.7.1</li><li>Updates the LAMP image to 7.4.16</li>
 		<li>Updates Node.js image to 14.16</li><li>Updates the Theia IDE image to 1.12.1</li>
 		<li>Updates the underlying operating system of ASP.NET 4.8 image from Windows Server 2012 R2 to Windows Server 2019</li>
 		</ul></td>
 		</tr>
 </tbody></table>
+
 
 ## May 2021
 <table>
@@ -105,20 +116,19 @@ The discontinued images involved in the image update will not affect the use of 
 </tbody></table>
 
 
-
-
 ## March 2021
 <table>
     <tbody><tr><th style="width: 40%;">Image Type</th><th style="width:60%;">Update</th></tr>
   <tr>
 		<td>Application image</td>
-		<td>Adds the Cloudreve 3.1.1 image</li></ul></td>
+		<td>Cloudreve 3.1.1 image</td>
 		</tr>
 		 <tr>
 		<td>System image</td>
 		<td>Adds the following images: <ul class="params"><li>Windows Server 2016 Chinese</li><li>Windows Server 2019 Chinese</li></ul></td>
 		</tr>
 </tbody></table>
+
 
 ## December 2020
 <table>
@@ -180,6 +190,7 @@ The discontinued images involved in the image update will not affect the use of 
 		<li>ASP.NET 4.8</li><li> LAMP 7.3.15 </li>
 		</td></tr>
 </tbody></table>
+
 
 
 <style>

@@ -40,19 +40,5 @@ Access `http://LAMP instance public IP/phpinfo.php` to view the PHP configuratio
 
 
 
-### Using FTP tool to upload code and debug
-
-1. Log in to the instance created with the LAMP application image and build the FTP service as instructed in [Building FTP Service in Linux Lighthouse](https://intl.cloud.tencent.com/document/product/1103/47402).
-2. Use an FTP tool (such as WinSCP) on your local computer to upload your website code to the LAMP instance and test and debug the website.
-
-### Setting domain name and DNS
-Using a domain name, but not an IP, can help your users remember your website.
-
-Directions: 
-1. Purchase a domain name through Tencent Cloud as instructed in [Domain Name Registration](https://intl.cloud.tencent.com/document/product/242/42861). Ignore this step if you already have a domain name.
-2. (Optional) Obtain the ICP filing number.
-If the domain name is pointed to a server in the Chinese mainland, you must apply for an ICP filing number for the domain name.
-3. Configure DNS through [Tencent Cloud DNS service](https://www.dnspod.com/).
-
 ### Enabling HTTPS access
 Install the SSL certificate and enable HTTPS access for your LAMP instance as instructed in [Apache Server Certificate Installation](https://intl.cloud.tencent.com/document/product/1103/47407).

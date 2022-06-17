@@ -6,8 +6,18 @@
 <table>
     <tbody><tr><th style="width: 40%;">镜像类型</th><th style="width:60%;">更新内容</th></tr>
 		<tr>
+		<td>系统镜像</td>
+		<td><ul class="params">
+		<li>新增 TencentOS Server 2.4 (TK4) 镜像。</li>
+		<li>新增 Windows Server 2022 中文版镜像。</li>
+		<li>新增 CentOS Stream 8 镜像。</li>
+		<li>下线 TencentOS Server 2.4 镜像。</li>
+		</ul></td>
+		</tr>
+		<tr>
 		<td>应用镜像</td>
 		<td><ul class="params">
+		<li>新增 WooCommerce 6.5.1 镜像。</li>
 		<li>新增 Matomo 4.9.1 镜像。</li>
 		<li>下线 Discuz! Q 镜像。</li>
 		</ul></td>
@@ -52,7 +62,7 @@
 		<td>新增 Debian 11.1 镜像。</td>
 		</tr>
 		<td>应用镜像</td>
-		<td><ul class="params">
+		<td><ul class="params"> 
 		<li>新增 SRS Release 4.0镜像。</li>
 		<li>新增房间服务 Release 1.0镜像。</li>
 		<li>下线  Wordpress 腾讯云插件版镜像。</li>
@@ -88,12 +98,13 @@
     <tbody><tr><th style="width: 40%;">镜像类型</th><th style="width:60%;">更新内容</th></tr>
   <tr>
 		<td>应用镜像</td>
-		<td><ul class="params"><li>更新 WordPress 镜像至5.7.1版本，并增加宝塔面板。</li><li>更新 LAMP 镜像至7.4.16版本。</li>
+		<td><ul class="params"><li>更新 WordPress 镜像至5.7.1版本。</li><li>更新 LAMP 镜像至7.4.16版本。</li>
 		<li>更新 Node.js 镜像至14.16版本。</li><li>更新 Theia IDE 镜像至1.12.1版本。</li>
 		<li>ASP.NET 4.8镜像底层操作系统由 Windows Server 2012 R2 更新至 Windows Server 2019。</li>
 		</ul></td>
 		</tr>
 </tbody></table>
+
 
 ## 2021年05月
 <table>
@@ -110,7 +121,7 @@
     <tbody><tr><th style="width: 40%;">镜像类型</th><th style="width:60%;">更新内容</th></tr>
   <tr>
 		<td>应用镜像</td>
-		<td>Cloudreve 3.1.1 镜像。</td>
+		<td> Cloudreve 3.1.1 镜像。</td>
 		</tr>
 		 <tr>
 		<td>系统镜像</td>
@@ -176,9 +187,10 @@
 		<ul class="params">
 		<li>Discuz! Q v1.0</li>
 		<li>WordPress 5.3.2</li><li> Node.js 12.16.1 </li>
-		<li>ASP.NET 4.8</li><li>宝塔 Linux 面板 7.2.0 </li><li> LAMP 7.3.15 </li>
+		<li>ASP.NET 4.8</li><li> LAMP 7.3.15 </li>
 		</td></tr>
 </tbody></table>
+
 
 
 <style>

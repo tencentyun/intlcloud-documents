@@ -187,7 +187,7 @@
 </div>
 <h2> Demoとソリューションのダウンロード </h2>
 
-IM Demoが、各シーンでのIM機能を実演します。[インストールに進む](https://intl.cloud.tencent.com/document/product/1047/34279) から、様々なプラットフォームやユースケースでのDemoを体験できます。
+
 <div>
 <div style="margin-top: 15px;">
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
