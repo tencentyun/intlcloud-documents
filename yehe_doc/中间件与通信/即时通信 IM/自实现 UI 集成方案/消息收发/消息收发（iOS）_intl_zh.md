@@ -224,7 +224,7 @@ if (atMe && atAll) {
 - **接收合并转发消息：**
 当我们收到一条合并消息 [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessage.html)，可以先通过合并消息元素 [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html) 获取 [title](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1) 和  [abstractList](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad39b2fbc36bb32f1287f61db3d3477a1)  UI 展示，当用户点击合并消息的时候再调用 [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMergerElem.html#ad77abfe27eabf237aee7c951100e6755) 接口下载合并消息列表 UI 展示。
 
-> 仅增强版 5.2.210 及以上版本支持。
+>! 仅增强版 5.2.210 及以上版本支持。
 
 ### 经典示例：收发合并转发消息
 - **发送合并转发消息：**
@@ -284,9 +284,9 @@ abstractList:abstactList compatibleText:compatibleText];
 ## 消息已读回执
 用户发送消息时可以设置消息是否需要已读回执，如果需要，接收端查看消息后才可以发送消息已读回执。
 >?
-- 该功能需要购买旗舰版。
-- 群已读回执仅增强版 6.1.2155 及以上版本支持，单聊已读回执仅增强版 6.2.2363 及以上版本支持。
-- 群已读回执需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >**功能配置**>**登录与消息**>**群已读消息回执配置**中设置支持已读回执消息的群类型。
+>- 该功能需要购买旗舰版。
+>- 群已读回执仅增强版 6.1.2155 及以上版本支持，单聊已读回执仅增强版 6.2.2363 及以上版本支持。
+>- 群已读回执需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >**功能配置**>**登录与消息**>**群已读消息回执配置**中设置支持已读回执消息的群类型。
   
 
 
@@ -428,7 +428,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 
 某些场景下，不希望一些提示类型的消息显示为会话的最新消息，可以按照下面的方式来发送：
 
-> 仅增强版 5.4.666 及以上版本支持。
+>! 仅增强版 5.4.666 及以上版本支持。
 
 ```objectivec
 // 创建消息对象
@@ -674,7 +674,7 @@ if (V2TIM_ELEM_TYPE_TEXT == originMessage.elemType) {
 }];
 ```
 
-> 仅增强版 5.8.1668 及以上版本支持。
+>! 仅增强版 5.8.1668 及以上版本支持。
 
 ## 查看历史消息
 您可以调用 [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a63d51af9d34e0cd8011da374b7e7a786) 获取单聊历史消息，调用 [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#acc79b07f0ac1b4b29b72878850ce4ad1) 获取群聊历史消息。如果当前设备网络连接正常，SDK 会默认从服务器拉取历史消息；如果没有网络连接，SDK 会直接从本地数据库中读取历史消息。
