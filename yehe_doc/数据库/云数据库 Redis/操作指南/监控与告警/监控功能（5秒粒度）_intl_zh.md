@@ -12,7 +12,7 @@
 
 ## 查看实例监控粒度
 - 通过 [Redis 控制台](https://console.cloud.tencent.com/redis) 查看：单击实例 ID 进入实例管理页面，选择**系统监控** > **监控指标**页面，如果实例监控的时间粒度支持5秒，说明该实例支持5秒监控粒度，否则该实例是1分钟监控粒度。
-![](https://main.qcloudimg.com/raw/e7833ebba07a4dd949c911c58940a4d0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a0987948802352a202667493d6f255d5.png)
 - 通过 API 接口 [DescribeInstances](https://intl.cloud.tencent.com/document/product/239/32065) 返回的字段 InstanceSet.MonitorVersion 判断：MonitorVersion = 5s，表示为5秒粒度；MonitorVersion = 1m，表示为1分钟粒度。
 
 ## 监控粒度/保留时长
