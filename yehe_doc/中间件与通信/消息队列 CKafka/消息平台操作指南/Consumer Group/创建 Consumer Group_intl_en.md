@@ -2,16 +2,16 @@
 
 This document describes how to create a consumer group directly in the CKafka console.
 
-> ? We recommend you limit the number of consumer groups in each instance to 50 or less, since excess consumer groups will result in certain constraints.
+> ? We recommend you limit the number of consumer groups in each instance to 200 or less, since excess consumer groups will result in certain constraints.
 
 ## Directions
 
 ### Creating consumer group
 
-1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
+1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, select **Consumer Group** and click **Create**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/cd12b1e4f79376de477550f2be87ef16.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/cd12b1e4f79376de477550f2be87ef16.png)
 4. In the pop-up window, enter the consumer group name and select the topic to subscribe to.
    <dx-alert infotype="explain" title="">
    You can select multiple topics.
