@@ -16,7 +16,7 @@ CKafka 提供了数据共用一个 Schema 的方法：将 Schema 中的内容注
 1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏选择**实例列表**，单击实例的“ID”，进入实例基本信息页面。
 3. 在实例的基本信息页面的**接入方式**模块，可获取实例的接入地址。
-![](https://qcloudimg.tencent-cloud.cn/raw/29f6e49286caaa04c902216ad15f64d0.png)
+![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)
 4. 在**自动创建 Topic**模块开启自动创建 Topic。
 >?启动 oss 会创建 schemas 主题，所以实例中需要开启自动创建主题。
 
@@ -31,10 +31,10 @@ CKafka 提供了数据共用一个 Schema 的方法：将 Schema 中的内容注
    debug=true
    ```
 
-	<dx-alert infotype="explain" title="">
-	bootstrap.servers：接入网络，在 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka) 的实例详情页面**接入方式**模块的网络列复制。
-	![](https://qcloudimg.tencent-cloud.cn/raw/4b99aaaac3c10e75c7edb541aba21908.png)
-	</dx-alert>
+   <dx-alert infotype="explain" title="">
+   bootstrap.servers：接入网络，在 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka) 的实例详情页面**接入方式**模块的网络列复制。
+   ![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)
+   </dx-alert>
 
 
 2. 执行如下命令启动 Schema Registry。
@@ -64,11 +64,11 @@ CKafka 提供了数据共用一个 Schema 的方法：将 Schema 中的内容注
 1. 注册 schema 到对应 Topic（注册 Topic 名为 test）。
    下面的脚本是直接在 Schema Registry 部署的环境中使用 curl 命令调用对应 API 实现注册的一个示例：
 
-	```xml
-	curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-	--data '{"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"id\", \"type\": \"int\"}, {\"name\": \"name\",  \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]}"}' \
-	http://127.0.0.1:8081/subjects/test/versions
-	```
+```xml
+curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
+--data '{"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"id\", \"type\": \"int\"}, {\"name\": \"name\",  \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"int\"}]}"}' \
+http://127.0.0.1:8081/subjects/test/versions
+```
 
 2. Kafka Producer 发送数据：
 <dx-codeblock>
