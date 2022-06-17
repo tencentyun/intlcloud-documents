@@ -9,7 +9,7 @@
 <dx-alert infotype="explain" title="">
 如果您想对 [云监控](https://intl.cloud.tencent.com/document/product/248/32799) 支持的轻量应用服务器资源设置性能消耗类指标的阈值告警，使发生异常时可及时通过微信、邮件、短信、电话等渠道通知您采取措施，则请单击**设置告警**创建告警策略。更多信息，请参考 [新建告警策略](https://intl.cloud.tencent.com/document/product/248/38916)。
 </dx-alert>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e67ef836f2df427a43a04cff45d45f5d.png"/>
+<img src="(https://qcloudimg.tencent-cloud.cn/raw/e441395f19243a859f98e94a7afd9a11.png)"/>
 
 ## 相关操作
 
