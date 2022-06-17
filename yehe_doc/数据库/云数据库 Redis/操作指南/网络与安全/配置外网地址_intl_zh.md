@@ -21,7 +21,7 @@
 2. 在实例详情页右侧的**网络信息**模块中，单击**外网地址**处的**开启**。
 >!外网访问开通后将受到安全组网络访问策略的控制，请在安全组入站规则中配置访问数据库的来源信息，并放通协议端口。具体操作，请参见 [Redis 安全组配置](https://intl.cloud.tencent.com/document/product/239/31945)。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/45ba379ace466f7256e489387661bacb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54150a1a9c419b57c5bc589ea212238d.png)
 3. 在弹出的对话框，确认无误后，单击**确定**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7644853f0a294487b0fd44e0d9657479.png)
 4. 返回实例详情页，实例状态变为**开通外网中**，表示实例正在开启外网地址。若实例状态长时间不改变，请重新刷新网页。
