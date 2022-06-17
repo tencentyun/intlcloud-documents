@@ -4,7 +4,7 @@ This document describes how to quickly run the IM demo for Android.
 ### Step 1. Create an app
 1. Log in to the [IM console](https://console.cloud.tencent.com/im).
 >? If you already have an app, record its SDKAppID and [obtain key information](#step2).
->A Tencent Cloud account can create a maximum of 300 IM apps. If you want to create a new app, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost. Proceed with caution**.
+>A Tencent Cloud account can create a maximum of 300 IM apps. If you want to create a new app, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first. **Once an app (along with its SDKAppID) is deleted, the provided service and all its data are lost. Please proceed with caution**.
 >
 2. Click **Create Application**, enter your app name, and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
@@ -22,19 +22,20 @@ This document describes how to quickly run the IM demo for Android.
 [](id:step3)
 ### Step 3. Download and configure the demo source code
 
-1. Download the IM demo project. For more download information, see [SDK Download](https://intl.cloud.tencent.com/document/product/1047/33996).
+1. Download the IM demo project. For more information, see [SDK and Demo Source Code](https://intl.cloud.tencent.com/document/product/1047/33996).
 >? To respect the copyright of emoji design, the downloaded demo project does not contain sliced images of major emoji elements. You can use your local emoji packs to configure code. Unauthorized use of the emoji pack in the IM demo may infringe on the design copyright.
 >
->2. Open the project in the terminal directory and find the file `GenerateTestUserSig` in `Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/signature/GenerateTestUserSig.java`.
+2. Open the project in the terminal directory and find the file `GenerateTestUserSig` in `Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/signature/GenerateTestUserSig.java`.
+
 3. Set relevant parameters in the `GenerateTestUserSig` file:
 
- - SDKAPPID: set it to the SDKAppID obtained in [Step 1](#step1).
- - SECRETKEY: enter the key obtained in [Step 2](#step2).
+ - SDKAPPID: Set it to the SDKAppID obtained in [Step 1](#step1).
+ - SECRETKEY: Enter the key obtained in [Step 2](#step2).
  ![](https://qcloudimg.tencent-cloud.cn/raw/928dd6de772f31c5328737050baf8c5a.png)
 
 
 >! In this document, the method to obtain `UserSig` is to configure a `SECRETKEY` in the client code. In this method, the `SECRETKEY` is vulnerable to decompilation and reverse engineering. Once your `SECRETKEY` is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**.
-> The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain a dynamic `UserSig`. For more information, see [How to Generate UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
+> The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain a dynamic `UserSig`. For more information, see [Generating UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 [](id:step4)
 ### Step 4. Compile and run the demo
@@ -42,7 +43,7 @@ Import the demo project with Android Studio, and then compile and run it.
 For more information, see the file `README.md` in the corresponding directory of the demo project cloned in [Step 3](#step3).
 >!The demo is integrated with the audio/video call feature by default. However, the TRTC SDK on which the audio/video call feature relies currently does not support simulators. Please use real devices for demo running or debugging.
 ## Advanced Features
-- [UIKit](https://intl.cloud.tencent.com/document/product/1047/34547)
+- [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547)
 - [Enabling Video Calls](https://intl.cloud.tencent.com/document/product/1047/34287)
 
 ## References

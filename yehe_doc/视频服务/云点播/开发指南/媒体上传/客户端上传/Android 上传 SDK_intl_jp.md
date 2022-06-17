@@ -2,7 +2,7 @@ VODは、Androidプラットフォームでビデオをアップロードする�
 
 ## ソースコードのダウンロード
 
-1. [クリックしてダウンロード](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_Android.zip) して、AndroidアップロードDemoとソースコードをダウンロードします。
+1. AndroidアップロードDemoとソースコードを[クリックしてダウンロード](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_Android.zip)します。
 2. ダウンロードした圧縮パッケージを解凍すると、Demoディレクトリが表示されます。アップロードソースコードは、`Demo/app/src/main/java/com/tencent/ugcupload/demo/videoupload`ディレクトリにあります。
 
 ## アップロードライブラリとソースコードの統合
@@ -14,6 +14,7 @@ VODは、Androidプラットフォームでビデオをアップロードする�
     implementation 'com.qcloud.cos:quic:1.5.38'
     ```
 >?[手動統合](https://intl.cloud.tencent.com/document/product/436/12159) を参照して、対応するバージョンの依存ライブラリを統合することもできます。
+
 3. ビデオアップロードを使用するには、ネットワークとストレージ関連のアクセス許可が必要です。`AndroidManifest.xml`に次の許可ステートメントを追加することができます。
 	```xml
 	<uses-permission android:name="android.permission.INTERNET"/>
@@ -69,7 +70,7 @@ param.videoPath = "xxx";
 int publishCode = mVideoPublish.publishVideo(param);
 ```
 
-## 簡単な画像アップロード
+## 画像のシンプルアップロード
 
 #### アップロードオブジェクトの初期化
 
@@ -111,8 +112,8 @@ int publishCode = mVideoPublish.publishMedia(param);
 
 >?
 >- アップロード方法は、ファイルのサイズに応じて、通常アップロードとマルチパートアップロードが自動的に選択されます。マルチパートアップロードの各手順を気にすることなく、マルチパートアップロードを行うことができます。
->- 指定されたサブアプリケーションにアップロードする必要がある場合は、[サブアプリケーションシステム-クライアントからのアップロード](https://intl.cloud.tencent.com/document/product/266/33987)をご参照ください。
->
+>- 指定のサブアプリケーションにアップロードしたい場合は、[サブアプリケーションシステム - クライアントからのアップロード](https://intl.cloud.tencent.com/document/product/266/33987)をご参照ください。
+
 ## 高度な機能
 
 #### カバーの付加
@@ -141,7 +142,7 @@ mVideoPublish.canclePublish();
 
 VODはビデオのアップロード中、中断からの再開をサポートします。アップロードが予期せず終了した場合に、中断ポイントからアップロードを再開できるため、アップロード時間を短縮できます。
 
-中断からの再開の有効時間は1日です。つまり、ビデオのアップロードが中断しても、1日以内に同じビデオを再度アップロードすると、中断したポイントからアップロードすることができます。1日を超えると、デフォルトでビデオ全体が再度アップロードされます。
+中断からの再開の有効期限は1日です。つまり同じビデオのアップロードが中断された場合、1日以内に再度アップロードすると中断ポイントからそのままアップロードできます。1日を超えるとデフォルトでは、完全なビデオを再度アップロードします。
 
 アップロードパラメータの`enableResume`は、中断からの再開のスイッチであり、デフォルトで有効になっています。
 
@@ -162,8 +163,15 @@ Appを起動するときに`TXUGCPublishOptCenter.getInstance().prepareUpload(si
 </receiver>
 ```
 
-`signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
+> `signature`の計算ルールについては、[クライアントからのアップロード署名 ](https://intl.cloud.tencent.com/document/product/266/33922)をご参照ください。
 
+#### httpsアップロードの有効化
+アップロードパラメータのTXPublishParamの中のenableHTTPSをtrueに設定すれば完了です。デフォルトではfalseになっています。
+
+```java
+TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishParam();
+param.enableHttps = true;
+```
 
 ## ビデオアップロードインターフェースの説明
 
@@ -191,12 +199,12 @@ VOD appIdの設定：`TXUGCPublish.setAppId`
 
 | パラメータ名         | パラメータの説明                               | タイプ      | 入力必須   |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。       | String  | はい   |
+| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。 | String  | はい    |
 | videoPath    | ローカルビデオファイルパス。                           | String  | はい    |
 | coverPath    | ローカルカバーファイルパス。デフォルトではカバーファイルは含まれません。                  | String  | いいえ    |
 | enableResume | 中断ポイントからの再開の有効無効を指定。デフォルトでは有効になっています。                      | boolean | いいえ    |
 | enableHttps  | HTTPSの有効無効を指定。デフォルトでは無効になっています。                      | boolean | いいえ    |
-| fileName     | Tencent Cloudにアップロードされたビデオファイル名。空のままの場合、デフォルトでローカルファイル名が使用されます。 | String  | いいえ    |
+| fileName     | Tencent Cloudにアップロードされたビデオファイル名です。空のままの場合、デフォルトでローカルファイル名が使用されます。 | String  | いいえ    |
 
 アップロードコールバックの設定：`TXUGCPublish.setListener`
 
@@ -216,7 +224,7 @@ VOD appIdの設定：`TXUGCPublish.setAppId`
 
 | 変数名   | 変数の説明 | タイプ                                  |
 | ------ | ---- | ----------------------------------- |
-| result   | アップロード結果。 | TXUGCPublishTypeDef.TXPublishResult |
+| result | アップロード結果。 | TXUGCPublishTypeDef.TXPublishResult |
 
 アップロード結果：`TXUGCPublishTypeDef.TXPublishResult`
 
@@ -297,7 +305,7 @@ VOD appIdの設定：`TXUGCPublish.setAppId`
 
 | パラメータ名  | パラメータの説明                                     | タイプ   | 入力必須 |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。       | String  | はい   |
+| signature | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。 | String | はい   |
 
 ## エラーコード
 

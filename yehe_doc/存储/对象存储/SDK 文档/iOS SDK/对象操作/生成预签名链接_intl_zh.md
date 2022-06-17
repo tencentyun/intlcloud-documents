@@ -17,7 +17,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 #### 示例代码一：生成预签名上传链接
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-presign-upload-url)
+[//]: # ".cssg-snippet-get-presign-upload-url"
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
@@ -43,7 +43,16 @@ getPresignedURLRequest.object = @"exampleobject";
                                          NSError * _Nonnull error) {
     // 预签名 URL
     NSString* presignedURL = result.presienedURL;
-    
+    // 使用预签名链接进行上传文件
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:result.presienedURL]];
+    // 指定HTTPMethod 为PUT
+    request.HTTPMethod = @"PUT";
+    // fromData 为需要上传的文件
+    [[[NSURLSession sharedSession]
+        uploadTaskWithRequest:request fromData:[@"testtest" dataUsingEncoding:NSUTF8StringEncoding] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // response中查看上传结果
+    }]resume];
+
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
@@ -54,7 +63,7 @@ getPresignedURLRequest.object = @"exampleobject";
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-presign-upload-url)
+[//]: # ".cssg-snippet-get-presign-upload-url"
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
@@ -79,6 +88,14 @@ getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {
         let url = result.presienedURL
+        // 使用预签名链接进行上传文件
+        let request = NSMutableURLRequest.init(url: NSURL.init(string:url) as! URL);
+        // 指定HTTPMethod 为PUT
+        request.httpMethod = "PUT";
+        // fromData 为需要上传的文件
+        URLSession.shared.uploadTask(with: request, from:  "testtest".data(using: String.Encoding.utf8)) { data, res, err in
+            // response中查看上传结果
+        }.resume()
     } else {
         print(error!);
     }
@@ -92,7 +109,7 @@ QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 #### 示例代码二：生成预签名下载链接
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-presign-download-url)
+[//]: # ".cssg-snippet-get-presign-download-url"
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
@@ -118,7 +135,15 @@ getPresignedURLRequest.object = @"exampleobject";
                                          NSError * _Nonnull error) {
     // 预签名 URL
     NSString* presignedURL = result.presienedURL;
-   
+    // 使用预签名链接进行下载文件
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:presignedURL]];
+    // 指定HTTPMethod为GET
+    request.HTTPMethod = @"GET";
+    [[[NSURLSession sharedSession]
+        downloadTaskWithRequest:request
+                completionHandler:^(NSURL *_Nullable location, NSURLResponse *_Nullable response, NSError *_Nullable error) {
+                // location 下载成功后的本地文件路径
+                }] resume];
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
@@ -129,7 +154,7 @@ getPresignedURLRequest.object = @"exampleobject";
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-presign-download-url)
+[//]: # ".cssg-snippet-get-presign-download-url"
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
@@ -154,6 +179,13 @@ getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {
         let url = result.presienedURL
+        // 使用预签名链接进行下载文件
+        let request = NSMutableURLRequest.init(url: NSURL.init(string: url) as! URL);
+           // 指定HTTPMethod为GET
+        request.httpMethod = "GET";
+        URLSession.shared.downloadTask(with: request) { location, response, error in
+            // location 下载成功后的本地文件路径
+        }.resume();
     } else {
         print(error!);
     }

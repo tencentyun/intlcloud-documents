@@ -23,6 +23,9 @@ cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
+    onProgress: function (progressData) {
+        console.log(JSON.stringify(progressData));
+    }
 }, function(err, data) {
     console.log(err || data.Body);
 });
@@ -37,6 +40,9 @@ cos.getObject({
     Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
     Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
     Range: 'bytes=1-3',        /* 非必须 */
+    onProgress: function (progressData) {
+        console.log(JSON.stringify(progressData));
+    }
 }, function(err, data) {
     console.log(err || data.Body);
 });
@@ -51,6 +57,9 @@ cos.getObject({
     Region: 'COS_REGION',     /* 存储桶所在地域，必须字段 */
     Key: 'exampleobject',              /* 必须 */
     DataType: 'blob',        /* 非必须 */
+    onProgress: function (progressData) {
+        console.log(JSON.stringify(progressData));
+    }
 }, function(err, data) {
     console.log(err || data.Body);
 });
@@ -69,6 +78,9 @@ cos.getObject({
     Headers: {
       'x-cos-traffic-limit': 819200, // 限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，如果超出该范围将返回400错误。
     },
+    onProgress: function (progressData) {
+        console.log(JSON.stringify(progressData));
+    }
 }, function(err, data) {
     console.log(err || data.Body);
 });

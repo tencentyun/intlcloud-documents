@@ -55,7 +55,6 @@
 | 8001 | The message length exceeds the limit of 8 KB. The length of a message is the sum of the length of all elements in the message, and the length of an element is the sum of the length of all fields of the element. |
 | 8002 | Message key error. This is an internal error. The key of the network request packet is not consistent with that of the response packet. |
 | 8003 | The image conversion HTTP request failed. |
-| 8004 | The image involves sensitive content. |
 | 8005 | The number of nested levels of combined forwarded messages exceeds the upper limit of 100. |
 | 8010 | The signaling request ID is invalid or has been processed. |
 | 8011 | The signaling request is not authorized, such as canceling an invitation not initiated by the current user. |
@@ -190,11 +189,11 @@
 | 70003 | Invalid UserSig. Call the API provided on the official website to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 70005 | Invalid UserSig. Call the API provided on the official website to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 70009 | UserSig authentication failed, probably because the private key or key of another SDKAppID was mistakenly used to generate the UserSig. Use the private key or key of the desired SDKAppID to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
-| 70013 | The UserID in the request does not match the UserID used to generate the UserSig. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im-detail/tool-usersig)** page of the IM console. |
-| 70014 | The SDKAppID in the request does not match the SDKAppID used to generate the UserSig. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im-detail/tool-usersig)** page of the IM console. |
+| 70013 | The UserID in the request does not match the UserID used to generate the UserSig. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the IM console. |
+| 70014 | The SDKAppID in the request does not match the SDKAppID used to generate the UserSig. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the IM console. |
 | 70016 | UserSig authentication failed because the public key does not exist. [Obtain the key](https://intl.cloud.tencent.com/document/product/1047/34540) in the IM console. |
 | 70020 | SDKAppID not found. Check the app information in the IM console. |
-| 70050 | Too many UserSig authentication attempts. Check whether the UserSig is correct and try again 1 minute later. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im-detail/tool-usersig)** page of the IM console. |
+| 70050 | Too many UserSig authentication attempts. Check whether the UserSig is correct and try again 1 minute later. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the IM console. |
 | 70051 | The account is blocklisted. |
 | 70107 | The requested UserID does not exist. |
 | 70114 | Login is restricted for security reasons. Please reduce the login frequency. |

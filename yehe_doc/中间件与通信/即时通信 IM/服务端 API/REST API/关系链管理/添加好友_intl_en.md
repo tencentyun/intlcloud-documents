@@ -180,7 +180,6 @@ The list below contains only error codes specific to this API:
 | 30002 | The SDKAppID does not match. |
 | 30003 | The requested user account does not exist. |
 | 30004 | The request requires app administrator permissions. |
-| 30005 | The relationship chain field contains sensitive words. |
 | 30006 | Internal server error. Please try again. |
 | 30007 | Request timed out. Please try again later. |
 | 30008 | A write conflict has occurred due to concurrent write operations. We recommend that you use batch processing. |

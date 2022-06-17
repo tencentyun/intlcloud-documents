@@ -132,7 +132,7 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 | ErrorInfo | String | Error information |
 | ErrorCode | Integer | Error code. `0`: Successful; other values: Failed |
 | ImportMsgResult | Array | Message import result |
-| Result | Integer | Result of each message <ul><li>`0`: The message was imported successfully. </li><li>`10004`: The sending time of the message is invalid. </li><li>`80001`: The message contains restricted words and therefore cannot be stored. </li><li>`80002`: The message content exceeds the limit of 8,000 bytes. Please adjust the message size. |
+| Result | Integer | Result of each message <ul><li>`0`: The message was imported successfully. </li><li>`10004`: The sending time of the message is invalid. </li><li>`80002`: The message content exceeds the limit of 8,000 bytes. Please adjust the message size. |
 | MsgTime | Integer | Message timestamp   |
 | MsgSeq | Integer | Message sequence number, the unique identifier of a message |
 

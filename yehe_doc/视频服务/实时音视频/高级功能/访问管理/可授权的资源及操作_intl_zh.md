@@ -29,9 +29,6 @@ TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) | 通话质量监控 | 查询异常体验事件       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | 通话质量监控 | 查询用户列表与通话指标 |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | 通话质量监控 | 查询历史房间和用户数   |
-| DescribeRealtimeNetwork | 通话质量监控 | 查询实时网络状态       |
-| DescribeRealtimeQuality | 通话质量监控 | 查询实时质量数据       |
-| DescribeRealtimeScale | 通话质量监控 | 查询实时规模           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | 通话质量监控 | 查询房间列表           |
 | [DescribeUserInformation](https://intl.cloud.tencent.com/document/product/647/39096) | 通话质量监控 | 查询历史用户列表 |
 
@@ -153,10 +150,10 @@ TRTC 访问管理可授权的资源类型为 [应用](https://intl.cloud.tencent
 ### 服务端 API 操作
 |接口名称|接口分类|功能描述|特殊限制说明|
 |---|---|---|---|
-|[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|通话质量监控|获取详细事件|输入参数无 SDKAppID ，无法进行资源级授权。|
-| [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | 其他接口 |查询云端录制计费时长  |业务原因，暂不支持资源级授权 |
-| [DescribeTrtcInteractiveTime](https://intl.cloud.tencent.com/document/product/647/42971) | 其他接口 |查询音视频互动计费时长 |业务原因，暂不支持资源级授权 |
-| [DescribeTrtcMcuTranscodeTime](https://intl.cloud.tencent.com/document/product/647/42970) |  其他接口 |查询旁路转码计费时长   |业务原因，暂不支持资源级授权 |
+| DescribeDetailEvent|通话质量监控|获取详细事件|输入参数无 SDKAppID ，无法进行资源级授权。|
+| DescribeRecordStatistic | 其他接口 |查询云端录制计费时长  |业务原因，暂不支持资源级授权 |
+| DescribeTrtcInteractiveTime | 其他接口 |查询音视频互动计费时长 |业务原因，暂不支持资源级授权 |
+| DescribeTrtcMcuTranscodeTime |  其他接口 |查询旁路转码计费时长   |业务原因，暂不支持资源级授权 |
 
 ### 控制台 API 操作
 <table>

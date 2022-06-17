@@ -1,3 +1,4 @@
+
 本文将为刚入门云数据库 MongoDB 的用户提供一条学习的路径。
 
 ## 1. 熟悉云数据库 MongoDB 的基础知识
@@ -29,17 +30,18 @@
 -----
 
 ## 5. 控制台功能概述
-- [为实例指定项目](https://intl.cloud.tencent.com/document/product/240/31189)
+- [调整实例所属项目](https://intl.cloud.tencent.com/document/product/240/31189)
 - [设置实例维护时间](https://intl.cloud.tencent.com/document/product/240/31190)
-- [调整实例规格](https://intl.cloud.tencent.com/document/product/240/31192)
+- [调整实例配置](https://intl.cloud.tencent.com/document/product/240/31192)
+- [创建只读实例](https://intl.cloud.tencent.com/document/product/240/31193)
+- [创建灾备实例](https://intl.cloud.tencent.com/document/product/240/31194)
 - [销毁实例](https://intl.cloud.tencent.com/document/product/240/31485)
 - [备份数据](https://intl.cloud.tencent.com/document/product/240/7108)
-- [恢复数据](https://intl.cloud.tencent.com/document/product/240/7109)
+- [回档数据](https://intl.cloud.tencent.com/document/product/240/7109)
 - [数据迁移指引](https://intl.cloud.tencent.com/document/product/240/37865)
 - [配置安全组](https://intl.cloud.tencent.com/document/product/240/31489)
 - [监控功能](https://intl.cloud.tencent.com/document/product/240/7117)
-- [配置告警](https://intl.cloud.tencent.com/document/product/240/7118)
-- [查询慢日志](https://intl.cloud.tencent.com/document/product/240/31454)
+- [慢日志管理](https://intl.cloud.tencent.com/document/product/240/31454)
 
 -----
 
@@ -55,5 +57,5 @@
 ## 7. 反馈与建议
 使用云数据库 MongoDB 产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可咨询 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
 

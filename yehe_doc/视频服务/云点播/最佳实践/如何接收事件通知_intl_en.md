@@ -9,7 +9,7 @@ This document uses the video upload and transcoding process as an example to des
 An HTTP service is built based on SCF in the demo to receive event notification requests from VOD. It initiates video transcoding and gets the transcoding result by processing `NewFileUpload` ([video upload completion](https://intl.cloud.tencent.com/document/product/266/33950)) and `ProcedureStateChanged` ([task flow status change](https://intl.cloud.tencent.com/document/product/266/33953)) event notifications.
 
 The system mainly involves four components: console, API Gateway, SCF, and VOD. Here, API Gateway and SCF are the deployment objects of this demo as shown below:
-<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ec5a27df9988417547c884df4ac28816.png" width="550">
 
 The specific business process is as follows:
 
@@ -99,7 +99,8 @@ Copy the address of the event notification receipt service in the output log (wh
 As described in [Avoiding affecting production environment](#p0), please confirm that your business in the production environment does not depend on VOD event notifications before performing the following operations:
 
 Log in to the [VOD console](https://console.cloud.tencent.com/vod/callback), click **Set**, select **Normal Callback** as the event notification method, enter the event notification receipt service address obtained in [step 4](#p4) as the callback URL, select all callback events, and click **Confirm** as shown below:
-![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e5631bc9013b6e30283a7ac5411e332.png)
+
 >!If two callback URL configuration items (v2.0 format and v3.0 format) are displayed at the same time in the console, please configure the v3.0 one.
 
 ### Step 6. Test the demo

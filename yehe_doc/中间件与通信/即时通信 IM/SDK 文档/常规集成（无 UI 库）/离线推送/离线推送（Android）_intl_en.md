@@ -1,822 +1,499 @@
 ## Overview
 
-IM terminal users need to obtain the latest messages at any time. However, due to the limited performance and battery power of mobile devices, when the app is running in the background, IM recommends that you use the system-grade push channels provided by vendors for message notifications to avoid excessive resource consumption caused by maintaining a persistent connection. Compared with third-party push, system-grade push channels provide more stable system-grade persistent connections, enabling users to receive push messages at any time and greatly reducing resource consumption.
+IM terminal users need to obtain the latest messages at any time. However, considering the limited performance and battery SOC of mobile devices, IM recommends you use the system-grade push channels provided by vendors for message notifications when the app is running in the background to avoid excessive resource consumption caused by maintaining a persistent connection. Compared with third-party push channels, system-grade push channels provide more stable system-grade persistent connections, enabling users to receive push messages at any time and greatly reducing resource consumption.
+
+>!
+>- If you want users to receive IM message notifications when, without proactive logout, the app is switched to the background, the mobile phone screen is locked, or the app process is killed by a user, you can enable the IM offline push.
+>- If the `logout` API is called to log out proactively or you are forced to log out due to multi-device login, you cannot receive offline push messages even though IM offline push is enabled.
+
+## Running the demo for offline push
+
+The TUIKit demo has integrated the offline push feature as described below. You may see the code links in the documentation.
+
+### Step 1. Register your app with vendor push platforms
+
+The offline push feature depends on vendors' original channels. You need to register your app with each vendor's push platform to obtain parameters such as `AppID` and `AppKey`. Currently, mobile phone vendors supported are [Google FCM](https://firebase.google.com/), [Mi](https://dev.mi.com/console/doc/detail?pId=68), [Huawei](https://developer.huawei.com/consumer/en/hms/huawei-pushkit), [OPPO](https://developers.oppomobile.com/newservice/capability?pagename=push), [vivo](https://dev.vivo.com.cn/documentCenter/doc/281), and [Meizu](http://open-wiki.flyme.cn/doc-wiki/index#id?129).
 
 
-Supported vendor channels are as below:
+### Step 2. Create resources in the IM console
 
+You need to log in to the [IM console](https://console.qcloud.com/avc) to add the push certificates of required vendors, and configure parameters obtained in Step 1 such as `AppId`, `AppKey`, and `AppSecret` to the push certificates in the console. Take Google as an example.
 
-
->?If you need to improve the push delivery rate or implement diversified push, we recommend that you install the [SDK](https://intl.cloud.tencent.com/document/product/1024/34673) of [TPNS](https://intl.cloud.tencent.com/product/tpns) to enjoy the complete push service. If you use IM and [TPNS](https://intl.cloud.tencent.com/product/tpns) at the same time, you do not need to repeatedly integrate vendor channels.
 <table> 
    <tr> 
-     <th nowrap="nowrap">Push Channel</th> 
-     <th nowrap="nowrap">System Requirements</th> 
-     <th>Conditions</th> 
+     <th nowrap="nowrap">Vendor Push Platform</th> 
+     <th>Configuring in the IM console</th> 
    </tr> 
    <tr> 
-     <td>Mi Push</td> 
-     <td>MIUI</td> 
-     <td>To use Mi Push, add the dependency: implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'.
-</td> 
-   </tr> 
-   <tr> 
-     <td>Huawei Push</td> 
-     <td>EMUI</td> 
-     <td>To use Huawei Push, add the dependencies: implementation 'com.tencent.tpns:huawei:1.2.1.2-release' and implementation 'com.huawei.hms:push:5.0.2.300'.
-</td> 
-   </tr> 
-   <tr> 
-     <td nowrap="nowrap">Google FCM Push</td> 
-     <td nowrap="nowrap">Android 4.1 and later versions</td> 
-     <td>To use mobile phones installed with Google Play Services outside the Chinese mainland, add the dependency: implementation 'com.google.firebase:firebase-messaging:20.2.3'.
-</td> 
-   </tr> 
-   <tr> 
-     <td>Meizu Push</td> 
-     <td>Flyme</td> 
-     <td>To use Meizu Push, add the dependency: implementation 'com.tencent.tpns:meizu:1.2.1.2-release'.
-</td> 
-   </tr> 
-   <tr> 
-     <td nowrap="nowrap">OPPO Push</td> 
-     <td>ColorOS</td> 
-     <td>Not all OPPO models and versions support OPPO Push. To use OPPO Push, add the dependency: implementation 'com.tencent.tpns:oppo:1.2.1.2-release'.
-</td> 
-   </tr>  
-   <tr> 
-     <td nowrap="nowrap">vivo Push</td> 
-     <td nowrap="nowrap">Funtouch OS</td> 
-     <td>Not all vivo models and versions support vivo Push. To use vivo Push, add the dependency: implementation 'com.tencent.tpns:vivo:1.2.1.2-release'.
+     <td><img src="https://qcloudimg.tencent-cloud.cn/raw/c59eb48da0064f27f32052e340276a47.png" style="zoom:150%;" /></td> 
+     <td><img src="https://qcloudimg.tencent-cloud.cn/raw/bf75f9007c783bdf855cc4db8daa3295.png" style="zoom:300%;" />
 </td> 
    </tr> 
 </table>
 
-Here, “offline” means that the app is closed by the system or user without logging out. In such cases, if you want to receive IM SDK message reminders, you can integrate IM offline push.
+
+### Step 3. Configure the redirected-to page for offline push
+
+An offline push message received will be displayed in the notification bar as shown in the figure below. You can click the notification bar to open the app and go to the redirected-to page configured. Follow the steps below to configure the activities to be redirected to upon notification message clicking.
+
+- **Configuring in the console**
+The redirected-to page configuration varies by vendor as follows:
+<table> 
+   <tr> 
+     <th nowrap="nowrap">Vendor</th> 
+     <th nowrap="nowrap">Action after Click</th> 
+     <th>Specified In-app Page</th> 
+   </tr> 
+   <tr> 
+     <td>Mi</td> 
+     <td>Open the specified in-app page</td> 
+     <td>intent://`your hostname`/`your path`#Intent;scheme=`your protocol, that is, the scheme you defined`;launchFlags=0x4000000;component=`complete class name of the page to which your app is to be redirected`;end<br><br>TUIKit demo configuration: intent://com.tencent.qcloud/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.main.MainActivity;end
+</td> 
+   </tr> 
+   <tr> 
+     <td>Huawei</td> 
+     <td>Open the specified in-app page</td>  <td>intent://`your hostname`/`your path`#Intent;scheme=`your protocol, that is, the scheme you defined`;launchFlags=0x4000000;component=`complete class name of the page to which your app is to be redirected`;end<br><br>TUIKit demo configuration: intent://com.tencent.qcloud/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.main.MainActivity;end
+</td> 
+   </tr> 
+   <tr> 
+     <td>Meizu</td> 
+     <td>Open the specified in-app page</td> 
+     <td>Complete class name of the page to which your app is to be redirected<br><br>TUIKit demo configuration: com.tencent.qcloud.tim.demo.main.MainActivity
+</td> 
+   </tr> 
+   <tr> 
+     <td nowrap="nowrap">OPPO</td> 
+     <td>Open the specified in-app page</td> 
+     <td>Complete class name of the page to which your app is to be redirected<br><br>TUIKit demo configuration: activity: com.tencent.qcloud.tim.demo.main.MainActivity
+</td> 
+   </tr>  
+   <tr> 
+     <td nowrap="nowrap">vivo</td> 
+     <td nowrap="nowrap">Open the specified in-app page</td>  <td>intent://`your hostname`/`your path`#Intent;scheme=`your protocol, that is, the scheme you defined`;launchFlags=0x4000000;component=`complete class name of the page to which your app is to be redirected`;end<br><br>TUIKit demo configuration: intent://com.tencent.qcloud/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.main.MainActivity;end
+</td> 
+   </tr>
+	 </tr>  
+   <tr> 
+     <td nowrap="nowrap">Google FCM</td> 
+     <td nowrap="nowrap">No need to configure</td>   <td>Redirect to the Launcher page of the app by default
+</td> 
+   </tr>
+</table>
+
+-  **Manifest file configuration**
+In [AndroidManifest.xml](https://github.com/TencentCloud/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml), configure the redirected-to page parameters. Please note that this configuration must be consistent with the Action after Click configured in the corresponding certificate in the IM console.
+```
+<!-- The redirected-to page configured in the TUIKit demo is `MainActivity`, so you need to fill in `com.tencent.qcloud.tim.demo.main.MainActivity` here. After integration with your app, you need to replace the class name with the complete class name of the page to which your app is to be redirected.-->
+    <activity
+        android:name="complete class name of the page to which your app is to be redirected"
+        android:launchMode="singleTask"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustResize|stateHidden">
+
+        <!-- Open the in-app page for offline push -->
+        <intent-filter>
+            <action android:name="android.intent.a, and configuration for Google FCM: pushscheme://com.tencent.qcloud/detail -->
+                <data
+                    android:host="your hostname"
+                    android:path="your path"
+                    android:scheme="your protocol, that is, the scheme you defined" />
+        </intent-filter>
+
+    </activity>
+```
+
+### Step 4. Set vendor push rules
+-  **Applying the offline parameter configuration**
+After you successfully add a push certificate as instructed in Step 2, the IM console will assign a certificate ID that needs to be filled in as a configuration parameter in [PrivateConstants](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUIOfflinePush/tuiofflinepush/src/main/java/com/tencent/qcloud/tim/tuiofflinepush/PrivateConstants.java). This ID will be needed for registering the push service and reporting the token. Take Google as an example.
+**Push certificate ID:**
+![](https://qcloudimg.tencent-cloud.cn/raw/66a2692812e69bd3b8bae892febc4f43.png)
+**Parameters to be filled in:**
+```
+   public class PrivateConstants {
+  // Certificate ID generated after uploading a third-party push certificate in the IM console
+    public static final long GOOGLE_FCM_PUSH_BUZID = 15518;
+   }
+```
+
+-  **Set vendor push rules in the manifest file**
+You need to add vendor push rules in the manifest file. See configurations in the [manifest file](https://github.com/TencentCloud/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of TUIKit demo for details. Take Google as an example.
+```
+<!-- Note: The `applicationId` of the TUIKit demo is `com.tencent.qcloud.tim.tuikit`. You need to replace xxxx here with the `applicationId` of your app. -->
+
+<!-- ********Google cloud messaging starts******** -->
+<service
+    android:name="xxxx.GoogleFCMMsgService"
+    android:exported="false">
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+    </intent-filter>
+</service>
+<!-- ********Google cloud messaging ends******** -->
+```
+
+-  **Google FCM adaption**
+For Huawei and Google FCM, you need to integrate the corresponding plugin and json configuration files by the vendor's methods.
+
+ 1. Download the configuration file and place it under the root directory of the project.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/cca92fa6817e1941462489691ab76610.png" style="zoom:80%;" />
+
+ 2. Add the following configuration under "buildscript -> dependencies" of the project-level `build.gradle` file.
+```    
+dependencies {
+    ...
+    classpath 'com.google.gms:google-services:4.2.0'
+}
+```
+
+ 3. Add the following configuration in the app-level `build.gradle` file.
+```
+apply plugin: 'com.google.gms.google-services'
+```
+ 4. Click **Sync Now** of the project.
+
+### Step 5. Integrate the vendor push SDK
+
+- **Integrating SDK**
+In the [gradle](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/build.gradle) file, add the vendor push SDK.
+ ```
+ dependencies {
+    ......
+    // Main package
+    implementation 'com.tencent.tpns:tpns:1.3.1.1-release'
+    // Google FCM
+    implementation "com.tencent.tpns:fcm:1.3.1.1-release"
+    // Google cloud messaging
+    implementation ('com.google.firebase:firebase-messaging:19.0.1')
+    // Mi
+    implementation "com.tencent.tpns:xiaomi:1.3.1.1-release"
+    // Meizu
+    implementation "com.tencent.tpns:meizu:1.3.1.1-release"
+    // OPPO
+    implementation "com.tencent.tpns:oppo:1.3.1.1-release"
+    // vivo
+    implementation "com.tencent.tpns:vivo:1.3.2.0-release"
+    // Huawei
+    implementation 'com.tencent.tpns:huawei:1.3.1.1-release'
+    implementation 'com.huawei.hms:push:5.0.2.300'
+}
+ ```
+
+-  **Adding push classes**
+Include the vendor push classes. The methods are specific to vendors. See and copy the following files in [TUIOfflinePush code links](https://github.com/TencentCloud/TIMSDK/tree/master/Android/TUIKit/TUIOfflinePush/tuiofflinepush/src/main/java/com/tencent/qcloud/tim/tuiofflinepush/OEMPush):
+![](https://qcloudimg.tencent-cloud.cn/raw/e25a0e1de5649df68eed39545b4390af.png)
+
+-  **Registering push services**
+To meet compliance requirements, you need to initialize and register the vendor push service after the user agrees to the privacy policy and logs in successfully, store the token (obtained after successful registration) in the registration result callback, and call the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to report the push token to the backend. For some vendors, the token can also be returned via API calls after registration. See the following code for details.
+```
+public void init() {
+    ...
+        
+    if (BrandUtil.isBrandXiaoMi()) {
+        // Mi offline push
+        MiPushClient.registerPush(this, PrivateConstants.XM_PUSH_APPID, PrivateConstants.XM_PUSH_APPKEY);
+    } else if (BrandUtil.isBrandHuawei()) {
+        // For Huawei offline push, set whether to receive the call example of the push notification bar message
+        HmsMessaging.getInstance(this).turnOnPush().addOnCompleteListener(new com.huawei.hmf.tasks.OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(com.huawei.hmf.tasks.Task<Void> task) {
+                if (task.isSuccessful()) {
+                    DemoLog.i(TAG, "huawei turnOnPush Complete");
+                } else {
+                    DemoLog.e(TAG, "huawei turnOnPush failed: ret=" + task.getException().getMessage());
+                }
+            }
+        });
+						
+        new Thread(){
+            @Override
+            public void run() {
+                try{
+                    // read from agconnect-services.json
+                    String appId = AGConnectServicesConfig.fromContext(MainActivity.this).getString("client/app_id");
+                    String token = HmsInstanceId.getInstance(MainActivity.this).getToken(appId, "HCM");
+                    DemoLog.i(TAG, "huawei get token:" + token);
+                    if(!TextUtils.isEmpty(token)) {
+                        // Call the `setOfflinePushConfig` API of the IM SDK to report this token
+                        String token = (String) o;
+                    }
+                } catch (ApiException e) {
+                    DemoLog.e(TAG, "huawei get token failed, " + e);
+                }
+            }
+        }.start();
+    } else if (MzSystemUtils.isBrandMeizu(this)) {
+        // Meizu offline push
+        PushManager.register(this, PrivateConstants.MZ_PUSH_APPID, PrivateConstants.MZ_PUSH_APPKEY);
+    } else if (BrandUtil.isBrandVivo()) {
+        // vivo offline push
+        PushClient.getInstance(getApplicationContext()).initialize();
+						
+        DemoLog.i(TAG, "vivo support push: " + PushClient.getInstance(getApplicationContext()).isSupport());
+        PushClient.getInstance(getApplicationContext()).turnOnPush(new IPushActionListener() {
+            @Override
+            public void onStateChanged(int state) {
+                if (state == 0) {
+                    String regId = PushClient.getInstance(getApplicationContext()).getRegId();
+                    DemoLog.i(TAG, "vivopush open vivo push success regId = " + regId);
+                       
+					// // Call the `setOfflinePushConfig` API of the IM SDK to report this token
+					String token = (String) o;
+                } else {
+                    // According to the vivo documentation, state = 101 means this particular vivo device or system version does not support vivo Push. See https://dev.vivo.com.cn/documentCenter/doc/156 for details.
+                    DemoLog.i(TAG, "vivopush open vivo push fail state = " + state);
+                }
+            }
+        });
+    } else if (HeytapPushManager.isSupportPush()) {
+        // OPPO offline push
+        OPPOPushImpl oppo = new OPPOPushImpl();
+        oppo.createNotificationChannel(this);
+        // According to the OPPO documentation, the app must call the init(...) API before proceeding to subsequent operations.
+        HeytapPushManager.init(this, false);
+        HeytapPushManager.register(this, PrivateConstants.OPPO_PUSH_APPKEY, PrivateConstants.OPPO_PUSH_APPSECRET, oppo);
+    } else if (BrandUtil.isGoogleServiceSupport()) {
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new com.google.android.gms.tasks.OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            DemoLog.w(TAG, "getInstanceId failed exception = " + task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+                        DemoLog.i(TAG, "google fcm getToken = " + token);
+                        
+                        // Call the `setOfflinePushConfig` API of the IM SDK to report this token
+                        String token = (String) o;
+                    }
+                });
+    }
+}
+```
+Take Google FCM as an example. Store the token (obtained after successful registration) in the registration result callback, and call the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to report the token to the backend.
+```
+public class GoogleFCMMsgService extends FirebaseMessagingService {
+
+    ...
+
+    @Override
+    public void onNewToken(String token) {
+        DemoLog.i(TAG, "onNewToken token=" + token);
+        
+        // Call the `setOfflinePushConfig` API of the IM SDK to report this token
+        String pushToken = token;
+    }
+
+    ...
+}
+```
+
+- **Reporting the push certificate and token to the backend**
+Call the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to report the push token. Construct the V2TIMOfflinePushConfig class, where you need to set `businessID` as the certificate ID of the vendor and `isTPNSToken` as `false` and report the token obtained after successful registration of the vendor push service. Note: If you use the offline push service of [TPNS](https://cloud.tencent.com/document/product/548/36645), set `isTPNSToken` as `true` and report the token obtained after successful registration of the TPNS push service. Then, TPNS will provide the push service.
+```
+V2TIMOfflinePushConfig v2TIMOfflinePushConfig = null;
+// Set `businessID` as the certificate ID of the vendor and `isTPNSToken` as `false`, and report the token obtained after registration of the vendor push service.  
+v2TIMOfflinePushConfig = new V2TIMOfflinePushConfig(0, token, true);
+V2TIMManager.getOfflinePushManager().setOfflinePushConfig(v2TIMOfflinePushConfig, new V2TIMCallback() {
+        @Override
+        public void onError(int code, String desc) {
+            DemoLog.d(TAG, "setOfflinePushToken err code = " + code);
+        }
+
+        @Override
+        public void onSuccess() {
+            DemoLog.d(TAG, "setOfflinePushToken success");
+        }
+});
+```
+
+### Step 6. Sync foreground and background status [](id:step6)
+
+ If a message newly received needs to be displayed in the phone's notification bar when your app is switched to the background, call the [doBackground()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a2b191294ac4d68a2d69e482eae1b638f) API of the IM SDK to sync the app status to the IM backend. When your app is switched back to the foreground, call the [doForeground()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a4c2ff4eea609da1d0950648905fbf6aa) API of the IM SDK to sync the app status to the IM backend. For the scheme for listening for the app switching between foreground and background, see relevant logic in the initActivityLifecycle() class of [TUIOfflinePushService](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUIOfflinePush/tuiofflinepush/src/main/java/com/tencent/qcloud/tim/tuiofflinepush/TUIOfflinePushService.java).
+
+```
+// When the app is switched to the background
+V2TIMManager.getOfflinePushManager().doBackground(totalCount, new V2TIMCallback() {
+    @Override
+    public void onError(int code, String desc) {
+        DemoLog.e(TAG, "doBackground err = " + code + ", desc = " + desc);
+    }
+
+    @Override
+    public void onSuccess() {
+        DemoLog.i(TAG, "doBackground success");
+    }
+});
+// When the app is switched back to the foreground
+V2TIMManager.getOfflinePushManager().doForeground(new V2TIMCallback() {
+    @Override
+    public void onError(int code, String desc) {
+        DemoLog.e(TAG, "doForeground err = " + code + ", desc = " + desc);
+    }
+
+    @Override
+    public void onSuccess() {
+        DemoLog.i(TAG, "doForeground success");
+    }
+});
+```
+
+
+### Step 7. Set offline push parameters when sending messages
+
+When you call [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a28e01403acd422e53e999f21ec064795) to send messages, you can use V2TIMOfflinePushInfo to set offline push parameters. For more information, see the sendMessage() method in [ChatProvider](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java).
+
+```
+OfflineMessageContainerBean containerBean = new OfflineMessageContainerBean();
+OfflineMessageBean entity = new OfflineMessageBean();
+entity.content = message.getExtra().toString();
+entity.sender = message.getFromUser();
+entity.nickname = chatInfo.getChatName();
+entity.faceUrl = TUIChatConfigs.getConfigs().getGeneralConfig().getUserFaceUrl();
+containerBean.entity = entity;
+				
+V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
+v2TIMOfflinePushInfo.setExt(new Gson().toJson(containerBean).getBytes());
+// For OPPO, you must set the `ChannelID` to receive push messages. The `ChannelID` must be identical with that in the console.
+v2TIMOfflinePushInfo.setAndroidOPPOChannelID("tuikit");
+
+final V2TIMMessage v2TIMMessage = message.getTimMessage();
+String msgID = V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, isGroup ? null : userID, isGroup ? groupID : null,
+    V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
+        @Override
+        public void onProgress(int progress) {
+
+        }
+
+        @Override
+        public void onError(int code, String desc) {
+            TUIChatUtils.callbackOnError(callBack, TAG, code, desc);
+        }
+
+        @Override
+        public void onSuccess(V2TIMMessage v2TIMMessage) {
+            TUIChatLog.v(TAG, "sendMessage onSuccess:" + v2TIMMessage.getMsgID());
+            message.setMsgTime(v2TIMMessage.getTimestamp());
+            TUIChatUtils.callbackOnSuccess(callBack, message);
+        }
+    });
+```
+
+### Step 8. Parse offline push messages
+
+When a phone receives an offline push message, the message is displayed in the system notification bar. When you click the message in the notification bar, the system automatically redirects to the page configured in Step 4. On this page, you can call `getIntent().getExtras()` to get the offline push parameters configured in [Step 6](#step6). For sample code, see the [handleOfflinePush()](https://github.com/TencentCloud/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/main/MainActivity.java) method of the TUIKit demo.
+
+```
+private void handleOfflinePush() {
+    // Determine whether to log in to IM again based on the login status
+    // 1. If the login status is V2TIMManager.V2TIM_STATUS_LOGOUT, redirect to the login page and log in to IM again.
+    if (V2TIMManager.getInstance().getLoginStatus() == V2TIMManager.V2TIM_STATUS_LOGOUT) {
+        Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+        if (getIntent() != null) {
+            intent.putExtras(getIntent());
+        }
+        startActivity(intent);
+        finish();
+        return;
+    }
+ 
+    // 2. If the login status is not V2TIMManager.V2TIM_STATUS_LOGOUT, the app runs in the background, and the offline push parameters can be parsed directly.
+    final OfflineMessageBean bean = OfflineMessageDispatcher.parseOfflineMessage(getIntent());
+        if (bean != null) {
+            setIntent(null);
+            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            if (manager != null) {
+                manager.cancelAll();
+            }
+
+            if (bean.action == OfflineMessageBean.REDIRECT_ACTION_CHAT) {
+                if (TextUtils.isEmpty(bean.sender)) {
+                    return;
+                }
+                TUIUtils.startChat(bean.sender, bean.nickname, bean.chatType);
+            }
+        }
+}
+		
+```
 
 >!
->- Users who have logged out or have been forced offline will not receive any message notifications.
->- For Mi and Huawei vendors, if a ChannelID has been configured on the official website of the vendor developer, you need to configure the same ChannelID on the [IM console](https://console.qcloud.com/avc). Otherwise, push may fail. If you do not configure the ChannelID, you will be limited by the frequency limit.
+>
+>- For Google FCM, clicking the message in the notification bar will redirect to the Launcher page of the app by default. On this page, you can call `getIntent().getExtras()` to get the offline push parameters configured in [Step 6](#step6), and then parse messages and customize the redirection.
 
-The process of implementing offline message push is as follows:
+Upon completion of the above configurations, when your app is switched to the background or the process is killed, the messages will be pushed offline and displayed in the notification bar. You can click the message in the notification bar to redirect to the specified app page.
 
-1. Register with the vendor, apply to enable the push service and create an app. Obtain information such as AppID, AppKey, and AppSecret.
-2. Integrate the push SDK provided by the vendor with your project. Use the vendor’s console to test notification messages to ensure the SDK was integrated properly.
-3. Log in to the [IM console](https://console.qcloud.com/avc) to upload the certificate and enter other required information. The IM server uses the certificate to generate a unique certificate ID.
-4. Send your certificate ID and device information to IM server.
 
-When the client app is killed by the system or user without IM logout, the IM server will push the messages sent by other accounts through vendor’s channel.
+## IM - Groups
 
-## Mi Push
+Join a Tencent Cloud IM group for:
 
-### Configuring the push certificate
+- Reliable technical support
+- Product details
+- Constant exchange of ideas
 
-[](id:xiaomiStep1_1)
+Telegram group: [join](https://t.me/tencent_imsdk)
 
-1. Access the [Mi open platform website](https://dev.mi.com/console/) to register an account and pass the developer verification. Log in to the console of the Mi open platform, choose **App Service** > **Push Service**, and create a Mi Push service app. Take note of the **`Primary package name`**, **`AppID`**, and **`AppSecret`** information.
-   [](id:xiaomiStep1_2)
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#Step1_1) to configure the following parameters:
+Disacord group: [join](https://discord.com/invite/8EmN2ma25W)
 
- - **Push Platform**: choose **Mi**.
- - **SDKAppID**: the **primary package name** of the Mi Push service app.
- - **AppID**: enter the **AppID** you got from Mi Push.
- - **AppSecret**: enter the **AppSecret** you got from Mi Push.
- - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, see [Configuring Click Event](#xiaomi_click).
-   **Open app** or **Open specified in-app page** allows [custom content pass through(#xiaomi_custom).
-    ![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
-   Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/b85cbad82be257ea06334bc0dadab8a8.png)
-
-### Integrating the push SDK
-1. Add the Mi dependency: implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'.
-2. Refer to the [Integration Guide for Mi Push](https://dev.mi.com/console/doc/detail?pId=41), and use the Mi console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `MiPushClient.registerPush` to initialize the Mi Push service. After successful registration, you will receive the registration result in `onReceiveRegisterResult` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
-
-After the certificate ID and regId are successfully reported, the IM server sends messages via Mi Push notifications to the user when the app has been killed but the user has not logged out of IM.
-
-[](id:xiaomi_click)
-
-### Configuring click events
-
-You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
-
-#### Open app
-
-If you choose **Open app**, the `onNotificationMessageClicked` method of Mi will be called back, and the app itself can process app opening in this method.
-![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
-
-#### Open webpage
-
-You need to select **Open webpage** when [adding a certificate](#xiaomiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/3c8f71b696f39117105d0e67813aaa0f.png)
-
-#### Open specified in-app page
-
-1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
-<dx-codeblock>
-:::  xml
-    <activity
-        android:name="com.tencent.qcloud.tim.demo.main.MainActivity"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustResize|stateHidden">
-
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-            <data
-                android:host="com.tencent.qcloud"
-                android:path="/detail"
-                android:scheme="pushscheme" />
-        </intent-filter>
-    </activity>
-:::
-</dx-codeblock>
-
-2. Obtain the intent URL, as shown below:
-<dx-codeblock>
-:::  java
-    Intent intent = new Intent(this, MainActivity.class);
-    intent.setData(Uri.parse("pushscheme://com.tencent.qcloud.tim/detail"));
-    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    String intentUri = intent.toUri(Intent.URI_INTENT_SCHEME);
-    Log.i(TAG, "intentUri = " + intentUri);
-:::
-</dx-codeblock>
-
-    Print results:
-<dx-codeblock>
-::: txt
-        intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.main.MainActivity;end
-:::
-</dx-codeblock>
-
-3. Select **Open specified in-app page** when [adding a certificate](#xiaomiStep1_2) and enter the result above.
-   ![](https://main.qcloudimg.com/raw/94c3abe8ab0cb8c72ee79687d0ffe8d3.png)
-
-[](id:xiaomi_custom)
-
-### Custom content pass through
-
-Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#xiaomiStep1_2) to support custom content pass through.
-
-**Step 1. Set custom content (sender)**
-Set the custom content for the notification bar message before sending the message.
-
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
-<dx-codeblock>
-::: java
-OfflineMessageContainerBean containerBean = new OfflineMessageContainerBean();
-OfflineMessageBean entity = new OfflineMessageBean();
-entity.content = message.getExtra().toString();
-entity.sender = message.getFromUser();
-entity.nickname = chatInfo.getChatName();
-entity.faceUrl = TUIChatConfigs.getConfigs().getGeneralConfig().getUserFaceUrl();
-containerBean.entity = entity;
-V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
-v2TIMOfflinePushInfo.setExt(new Gson().toJson(containerBean).getBytes());
-// For OPPO, you must set the `ChannelID` to receive push messages. The `ChannelID` must be consistent with that in the console.
-v2TIMOfflinePushInfo.setAndroidOPPOChannelID("tuikit");
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
-            V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-    @Override
-    public void onError(int code, String desc) {}
-    @Override
-    public void onSuccess(V2TIMMessage v2TIMMessage) {}
-    @Override
-    public void onProgress(int progress) {}
-});
-:::
-</dx-codeblock>
-
-- For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
-
-**Step 2. Set custom content (receiver)**
-
-- If you selected **Open app** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), clicking the notification bar message triggers the `onNotificationMessageClicked(Context context, MiPushMessage miPushMessage)` callback. The custom content can be obtained from `miPushMessage`. You can refer to the parsing implementation in [XiaomiMsgReceiver.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OEMPush/XiaomiMsgReceiver.java).
-<dx-codeblock>
-::: java
-  Map extra = miPushMessage.getExtra();
-  String extContent = extra.get("ext");
-:::
-</dx-codeblock>
-
-- If you selected **Open specified in-app page** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), `MiPushMessage`, which is the object that encapsulates the message, is passed to the client through `Intent`. The client then obtains the custom content from `Activity`. You can refer to the implementation of the `parseOfflineMessage(Intent intent)` method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
-<dx-codeblock>
-::: java
-    Bundle bundle = getIntent().getExtras(); 
-    MiPushMessage miPushMessage = (MiPushMessage)bundle.getSerializable(PushMessageHelper.KEY_MESSAGE); 
-    Map extra = miPushMessage.getExtra(); 
-    String extContent = extra.get("ext");
-:::
-</dx-codeblock>
-
-## Huawei Push
-
-### Configuring the push certificate
-
-[](id:huaweiStep1_1)
-
-1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app. Take note of the **`Package name`**, **`APP ID`**, **`Client ID`** and **`Client SECRET`**.
-   [](id:huaweiStep1_2)
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#huaweiStep1_1) to configure the following parameters:
-
- - **Push Platform**: select **Huawei**.
- - **SDKAppID**: the **package name** of the Huawei Push service app.
- - **AppID**: enter the **App ID** you got from Huawei Push.
- - **AppSecret**: enter the **Client Secret** you got from Huawei Push.
- -**Badge Parameters**: enter the full `Activity` class name of the app entry, which will be used as the Huawei desktop app badge for display. For more information, see the description of desktop app badge in the Huawei Push service development document.
- - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#huawei_click).
-   **Open app** or **Open specified in-app page** allows [custom content pass through(#huawei_custom).
-    ![](https://main.qcloudimg.com/raw/116d7c636349ff6f6fca3f5edd405ef0.png)
-   Click **Save** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-   ![](https://main.qcloudimg.com/raw/50ce16755e98be14c40f5f402cb8150d.png)
-
-### Integrating the push SDK
-1. Add the Huawei dependencies: implementation 'com.tencent.tpns:huawei:1.2.1.2-release' and implementation 'com.huawei.hms:push:5.0.2.300'.
-2. Refer to the [Integration Guide for Huawei Push](https://developer.huawei.com/consumer/cn/doc/development/HMS-3-Guides/push-Preparations) and use the Huawei console to test notification messages to ensure that the SDK was integrated properly.
-3. Call the Huawei `HmsInstanceId.getToken` API to request the unique app identifier Push Token from the server. `Push Token` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **Push Token** to the IM server.
-
-After the certificate ID and regId are successfully reported, the IM server sends messages via Huawei Push notifications to the user when the app has been killed but the user has not logged out of IM.
-
-[](id:huawei_click)
-
-### Configuring click events
-
-You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
-
-#### Open app
-
-This is the default event, which opens the app once the notification bar message is clicked.
-
-#### Open webpage
-
-You need to select **Open webpage** when [adding a certificate](#huaweiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/5c10a94c4f768596b2e4562d5bcb3e14.png)
-
-#### Open specified in-app page
-
-1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
-<dx-codeblock>
-:::  xml
-    <activity
-        android:name="com.tencent.qcloud.tim.demo.main.MainActivity"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustResize|stateHidden">
-
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-            <data
-                android:host="com.tencent.qcloud"
-                android:path="/detail"
-                android:scheme="pushscheme" />
-        </intent-filter>
-    </activity>
-:::
-</dx-codeblock>
-
-
-2. Obtain the intent URL, as shown below:
-<dx-codeblock>
-:::  java
-    Intent intent = new Intent(this, MainActivity.class);
-    intent.setData(Uri.parse("pushscheme://com.tencent.qcloud.tim/detail"));
-    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    String intentUri = intent.toUri(Intent.URI_INTENT_SCHEME);
-    Log.i(TAG, "intentUri = " + intentUri);
-:::
-</dx-codeblock>
-    Print results:
-<dx-codeblock>
-:::  txt
-        intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.main.MainActivity;end
-:::
-</dx-codeblock>
-
-3. Select **Open specified in-app page** when [adding a certificate](#huaweiStep1_2) and enter the result above.
-
-[](id:huawei_custom)
-
-### Custom content pass through
-
->!Due to the compatibility issues of Huawei Push, the pass-through content can only be received on some EUI10+ devices.
-
-**Step 1. Set custom content (sender)**
-Set the custom content for the notification bar message before sending the message.
-
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
-<dx-codeblock>
-:::  java
-OfflineMessageContainerBean containerBean = new OfflineMessageContainerBean();
-OfflineMessageBean entity = new OfflineMessageBean();
-entity.content = message.getExtra().toString();
-entity.sender = message.getFromUser();
-entity.nickname = chatInfo.getChatName();
-entity.faceUrl = TUIChatConfigs.getConfigs().getGeneralConfig().getUserFaceUrl();
-containerBean.entity = entity;
-V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
-v2TIMOfflinePushInfo.setExt(new Gson().toJson(containerBean).getBytes());
-// For OPPO, you must set the `ChannelID` to receive push messages. The `ChannelID` must be consistent with that in the console.
-v2TIMOfflinePushInfo.setAndroidOPPOChannelID("tuikit");
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
-            V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-    @Override
-    public void onError(int code, String desc) {}
-    @Override
-    public void onSuccess(V2TIMMessage v2TIMMessage) {}
-    @Override
-    public void onProgress(int progress) {}
-});
-:::
-</dx-codeblock>
-
-
-
-- For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
-
-**Step 2. Set custom content (receiver)**
-- If you selected **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#huaweiStep1_1), the client can obtain the custom content from `Activity` when the notification bar message is clicked. You can refer to the parseOfflineMessage(Intent intent) implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
-<dx-codeblock>
-:::  java
-    Bundle bundle = getIntent().getExtras();
-    String value = bundle.getString("ext"); 
-:::
-</dx-codeblock>
-
-
-## OPPO Push
-
-### Configuring the push certificate
-
-[](id:oppoStep1_1)
-
-1. Refer to [How to enable OPPO Push](https://open.oppomobile.com/wiki/doc#id=10195) for instructions on how to enable OPPO Push. Go to [OPPO push platform](https://push.oppo.com/) > **Configuration Management** > **App Configuration** to view detailed app information. Take note of `AppId`, `AppKey`, `AppSecret`, and `MasterSecret`.
-   [](id:oppoStep1_2)
-
-2. The official OPPO documentation states that ChannelIDs are required for push messages on OPPO Android 8.0 and above. Therefore, create a ChannelID for your app. Below is a sample code that creates a ChannelID called `tuikit`:
-<dx-codeblock>
-:::  java
-   public void createNotificationChannel(Context context) {
-   				// Create the NotificationChannel, but only on API 26+ because
-   				// the NotificationChannel class is new and not in the support library
-   				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-   						CharSequence name = "oppotest";
-   						String description = "this is opptest";
-   						int importance = NotificationManager.IMPORTANCE_DEFAULT;
-   						NotificationChannel channel = new NotificationChannel("tuikit", name, importance);
-   						channel.setDescription(description);
-   						// Register the channel with the system; you can't change the importance
-   						// or other notification behaviors after this
-   						NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
-   						notificationManager.createNotificationChannel(channel);
-   				}
-   		}
- :::
-</dx-codeblock>
-
-   [](id:oppoStep1_3)
-
-3. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#oppoStep1_1) to configure the following parameters:
-
- - **Push Platform**: select **OPPO**.
- - **AppKey**: enter the **AppKey** you got from OPPO PUSH.
- - **AppID**: enter the **AppID** you got from OPPO PUSH.
- - **MasterSecret**: enter the **MasterSecret** you got from OPPO PUSH.
- - **ChannelID**: enter the **ChannelID** created in Step 2.
- - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#oppo_click).
-   **Open app** or **Open specified in-app page** allows [custom content pass through(#oppo_custom).
-    ![](https://main.qcloudimg.com/raw/b4f1c81290a40c972d95cc2e63ffbbed.png)
-   Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/9d514aedd6233e5f619278073232974e.png)
-
-### Integrating the push SDK
-1. Add the OPPO dependency: implementation 'com.tencent.tpns:oppo:1.2.1.2-release'.
-2. Refer to the [OPPO PUSH SDK API Documentation](https://open.oppomobile.com/wiki/doc#id=10704) and use the OPPO console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `HeytapPushManager.register(…)` in the OPPO SDK to initialize the Opush service.
-   After successful registration, you can obtain `regId` in the `onRegister` callback method of `ICallBackResultService`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
-
-After the certificate ID and regId are successfully sent, the IM server will push the notification to the client through OPPO PUSH when the app is killed by the system before the user logs out.
-
-[](id:oppo_click)
-
-### Configuring click events
-
-You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
-
-#### Open app
-
-This is the default event, which opens the app once the notification bar message is clicked.
-
-#### Open webpage
-
-You need to select **Open webpage** when [adding a certificate](#oppoStep1_3) and enter a URL that starts with either `http` or `https`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/6dd91b1d6ca02f658f340463a55726bd.png)
-
-#### Open specified in-app page
-
-These are the ways you can open a specific in-app interface:
-
-**Activity** (recommended)
-  This is rather simple. Enter the whole name of an Activity, such as `com.tencent.qcloud.tim.demo.main.MainActivity`.
-
-**Intent action**
-
-1. In AndroidManifest, set the following configuration in the Activity to be opened and add category without data. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
-<dx-codeblock>
-:::  xml
-<intent-filter>
-		<action android:name="android.intent.action.VIEW" />
-		<category android:name="android.intent.category.DEFAULT" />
-</intent-filter>
-:::
-</dx-codeblock>
-
-2. Enter `android.intent.action.VIEW` in the console.
-
-[](id:oppo_custom)
-
-### Custom content pass through
-
-Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#oppoStep1_3) to support custom content pass through.
-
-**Step 1. Set custom content (sender)**
-Set the custom content for the notification bar message before sending the message.
-
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
-<dx-codeblock>
-:::  java
-OfflineMessageContainerBean containerBean = new OfflineMessageContainerBean();
-OfflineMessageBean entity = new OfflineMessageBean();
-entity.content = message.getExtra().toString();
-entity.sender = message.getFromUser();
-entity.nickname = chatInfo.getChatName();
-entity.faceUrl = TUIChatConfigs.getConfigs().getGeneralConfig().getUserFaceUrl();
-containerBean.entity = entity;
-V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
-v2TIMOfflinePushInfo.setExt(new Gson().toJson(containerBean).getBytes());
-// For OPPO, you must set the `ChannelID` to receive push messages. The `ChannelID` must be consistent with that in the console.
-v2TIMOfflinePushInfo.setAndroidOPPOChannelID("tuikit");
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
-            V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-    @Override
-    public void onError(int code, String desc) {}
-    @Override
-    public void onSuccess(V2TIMMessage v2TIMMessage) {}
-    @Override
-    public void onProgress(int progress) {}
-});
-:::
-</dx-codeblock>
-
-- For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
-
-**Step 2. Set custom content (receiver)**
-When the notification bar message is clicked, the client can obtain the custom content from the launched `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
-<dx-codeblock>
-:::  java
-Bundle bundle = intent.getExtras();
-Set<String> set = bundle.keySet();
-if (set != null) {
-	for (String key : set) {
-		// `key` and `value` correspond to `extKey` and `ext content` set at the sender
-		String value = bundle.getString(key);
-		Log.i("oppo push custom data", "key = " + key + ":value = " + value);
-	}
-}
-:::
-</dx-codeblock>
-
-## vivo Push
-
-### Configuring the push certificate
-
-[](id:vivoStep1_1)
-
-1. Visit the [vivo open platform official website](https://dev.vivo.com.cn/home) and register for an account. Complete developer verification. Log in to the console of the vivo open platform, choose **Message Push** > **Create** > **Test Push**, and create a vivo push service app. Take note of **APP ID**, **APP key**, and **APP secret**.
-   [](id:vivoStep1_2)
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#vivoStep1_1) to configure the following parameters:
-
- - **Push Platform**: select **vivo**.
- - **AppKey**: enter the **AppKey** you got from vivo Push.
- - **AppID**: enter the **AppID** you got from vivo Push.
- - **AppSecret**: enter the **APP secret** you got from vivo Push.
- - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#vivo_click).
-   **Open app** or **Open specified in-app page** allows [custom content pass through(#vivo_custom).
-    ![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
-   Click **Confirm** to save the information. Take note of the **ID** of the certificate. Certificate information takes effect 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/0dd67469033b90045402908e14bf935e.png)
-
-### Integrating the push SDK
-1. Add vivo dependency: implementation 'com.tencent.tpns:vivo:1.2.1.2-release'.
-2. Refer to the [Integration Guide for vivo Push](https://dev.vivo.com.cn/documentCenter/doc/233#w2-08354405), and use the vivo console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `PushClient.getInstance(getApplicationContext()).initialize()` to initialize the vivo Push service and call `PushClient.getInstance(getApplicationContext()).turnOnPush()` to launch push. If this succeeds, you will receive the `regId` in the `onReceiveRegId` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
-
-After the certificate ID and regId are successfully reported, the IM server sends messages via vivo Push notifications to the user when the app has been killed but the user has not logged out of IM.
-
-[](id:vivo_click)
-
-### Configuring click events
-
-You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
-
-#### Open app
-
-This is the default event, which opens the app once the notification bar message is clicked.
-
-#### Open webpage
-
-You need to select **Open webpage** when [adding a certificate](#vivoStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/2bbfac1ddbd47123002844dc6dd768e9.png)
-
-#### Open specified in-app page
-
-1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
-<dx-codeblock>
-:::  xml
-    <activity
-        android:name="com.tencent.qcloud.tim.demo.main.MainActivity"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustResize|stateHidden">
-
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-            <data
-                android:host="com.tencent.qcloud.tim"
-                android:path="/detail"
-                android:scheme="pushscheme" />
-        </intent-filter>
-    </activity>
-:::
-</dx-codeblock>
-
-
-2. Obtain the intent URL, as shown below:
-<dx-codeblock>
-:::  java
-    Intent intent = new Intent(this, MainActivity.class);
-    intent.setData(Uri.parse("pushscheme://com.tencent.qcloud.tim/detail"));
-    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    String intentUri = intent.toUri(Intent.URI_INTENT_SCHEME);
-    Log.i(TAG, "intentUri = " + intentUri);
-:::
-</dx-codeblock>
-    Print results:
-<dx-codeblock>
-:::  txt
-        intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.main.MainActivity;end
-:::
-</dx-codeblock>
-
-3. Select **Open specified in-app page** when [adding a certificate](#vivoStep1_2) and enter the result above.
-
-[](id:vivo_custom)
-
-### Custom content pass through
-
-Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#vivoStep1_2) to support custom content pass through.
-
-**Step 1. Set custom content (sender)**
-Set the custom content for the notification bar message before sending the message.
-
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
-<dx-codeblock>
-:::  java
-OfflineMessageContainerBean containerBean = new OfflineMessageContainerBean();
-OfflineMessageBean entity = new OfflineMessageBean();
-entity.content = message.getExtra().toString();
-entity.sender = message.getFromUser();
-entity.nickname = chatInfo.getChatName();
-entity.faceUrl = TUIChatConfigs.getConfigs().getGeneralConfig().getUserFaceUrl();
-containerBean.entity = entity;
-V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
-v2TIMOfflinePushInfo.setExt(new Gson().toJson(containerBean).getBytes());
-// For OPPO, you must set the `ChannelID` to receive push messages. The `ChannelID` must be consistent with that in the console.
-v2TIMOfflinePushInfo.setAndroidOPPOChannelID("tuikit");
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
-            V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-    @Override
-    public void onError(int code, String desc) {}
-    @Override
-    public void onSuccess(V2TIMMessage v2TIMMessage) {}
-    @Override
-    public void onProgress(int progress) {}
-});
-:::
-</dx-codeblock>
-
-- For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
-
-**Step 2. Set custom content (receiver)**
-When the notification bar message is clicked, the `onNotificationMessageClicked(Context context, UPSNotificationMessage upsNotificationMessage)` callback of the vivo Push SDK is triggered. The custom content can be obtained from `upsNotificationMessage`. You can refer to the parsing implementation in [VIVOPushMessageReceiverImpl.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OEMPush/VIVOPushMessageReceiverImpl.java).
-
-<dx-codeblock>
-:::  java
-Map<String, String> paramMap = upsNotificationMessage.getParams();
-String extContent = paramMap.get("ext");
-:::
-</dx-codeblock>
-
-## Meizu Push
-
-### Configuring the push certificate
-
-[](id:meizuStep1_1)
-
-1. Access the [Meizu open platform website](http://open.flyme.cn) to register an account and pass the developer verification. Log in to the Meizu console, choose **Development Service** > **Flyme Push** and create a Meizu push service app. Take note of the **`app package name`**, **`App ID`**, and **`App Secret`**.
-   [](id:meizuStep1_2)
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#meizuStep1_1) to configure the following parameters:
-
- - **Push Platform**: choose **Meizu**.
- - **SDKAppID**: enter the **app package name** of the Meizu push service app.
- - **AppID**: enter the **App ID** of the Meizu push service app.
- - **AppSecret**: enter the **App Secret** of the Meizu push service app.
- - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#meizu_click).
-   **Open app** or **Open specified in-app page** allows [custom content pass through(#meizu_custom).
-    ![](https://main.qcloudimg.com/raw/7c2ff0ba523f6878cb40cd96c5992af8.png)
-   Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/37c945dea796be72a035afb9386ace39.png)
-
-### Integrating the push SDK
-
-1. Add Meizu dependency: implementation 'com.tencent.tpns:meizu:1.2.1.2-release'.
-2. Refer to [Meizu Push Integration](http://open-wiki.flyme.cn/doc-wiki/index#id?129), and use the Meizu console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `PushManager.register` to initialize the Meizu Push service. After successful registration, you will receive the registration result in `onRegisterStatus` of the custom `BroadcastReceiver`. `registerStatus.getPushId()`is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **PushId** to the IM server.
-
-After the certificate ID and regId are successfully reported, the IM server sends messages via Meizu Push notifications to the user when the app has been killed but the user has not logged out of IM.
-
-[](id:meizu_click)
-
-### Configuring click events
-
-You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
-
-#### Open app
-
-This is the default event, which opens the app once the notification bar message is clicked.
-
-#### Open webpage
-
-You need to select **Open webpage** when [adding a certificate](#meizuStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/823386b86c7994e5ebea8d48e8baead6.png)
-
-#### Open specified in-app page
-
-When [adding a certificate](#meizuStep1_2), you need to choose **Open specified in-app page** and enter the complete class name of the Activity to be opened, for example, `com.tencent.qcloud.tim.demo.main.MainActivity`.
-![](https://main.qcloudimg.com/raw/9d4bb882e67f7f27263455311669c43c.png)
-
-[](id:meizu_custom)
-
-### Custom content pass through
-
-Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#meizuStep1_2) to support custom content pass through.
-
-**Step 1. Set custom content (sender)**
-Set the custom content for the notification bar message before sending the message.
-
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
-<dx-codeblock>
-:::  java
-OfflineMessageContainerBean containerBean = new OfflineMessageContainerBean();
-OfflineMessageBean entity = new OfflineMessageBean();
-entity.content = message.getExtra().toString();
-entity.sender = message.getFromUser();
-entity.nickname = chatInfo.getChatName();
-entity.faceUrl = TUIChatConfigs.getConfigs().getGeneralConfig().getUserFaceUrl();
-containerBean.entity = entity;
-V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
-v2TIMOfflinePushInfo.setExt(new Gson().toJson(containerBean).getBytes());
-// For OPPO, you must set the `ChannelID` to receive push messages. The `ChannelID` must be consistent with that in the console.
-v2TIMOfflinePushInfo.setAndroidOPPOChannelID("tuikit");
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
-            V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-    @Override
-    public void onError(int code, String desc) {}
-    @Override
-    public void onSuccess(V2TIMMessage v2TIMMessage) {}
-    @Override
-    public void onProgress(int progress) {}
-});
-:::
-</dx-codeblock>
-
-
-- For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
-
-**Step 2. Set custom content (receiver)**
-
-Clicking a notification bar message triggers a callback of `onNotificationClicked(Context context, MzPushMessage mzPushMessage)`, which is part of the Meizu Push SDK. The custom content can be obtained from the value of `mzPushMessage` .
-
-<dx-codeblock>
-:::  java
-String extContent = mzPushMessage.getSelfDefineContentString();
-:::
-</dx-codeblock>
-
-Alternatively, the client can obtain the custom content from the opened `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
-
-<dx-codeblock>
-:::  java
-Bundle bundle = getIntent().getExtras();
-String extContent = bundle.getString("ext"); 
-:::
-</dx-codeblock>
-
-
-## Google FCM Push
-
-### Integrating the SDK
-
-[](id:fcmStep1_1)
-1. Register with [Firebase Cloud Messaging](https://firebase.google.com) and create an app.
-[](id:fcmStep1_2)
-2. Log in to the [Firebase console](https://console.firebase.google.com) and click your app card to go to the app configuration page. Click <img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;"> on the right side of **Project Overview**, choose **Project Settings** > **Service Account**, and click **Generate New Private Key** to generate a new private key file.
-[](id:fcmStep1_3)
-3. Log in to the Tencent Cloud [IM console](https://console.qcloud.com/avc) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Upload the private key file obtained in [Step 2](#fcmStep1_2).
- ![](https://main.qcloudimg.com/raw/eb7a864e1cc927e3359b9365634093ac.png)
-4. Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
- ![](https://main.qcloudimg.com/raw/4eaad62f4db9756e510c0ea5f010574d.png)
-
-### Integrating the push SDK
-
-1. Add the FCM dependency: implementation 'com.google.firebase:firebase-messaging:20.2.3'.
-1. Refer to [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/android/client) to set up Firebase. Refer to the [FCM Testing Guide](https://firebase.google.com/docs/cloud-messaging/android/first-message?authuser=0) to test notification messages to ensure that FCM was integrated properly.
-2. After calling `FirebaseInstanceId.getInstance().getInstanceId()`, you can obtain the token in the callback. The token is the unique identifier of the current app. After successful login to the IM SDK, you need to call [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **token** to the IM server.
-
-After the certificate ID and regId are successfully reported, the IM server sends messages via FCM Push notifications to the user when the app has been killed but the user has not logged out of IM.
-
-[](id:fcm_custom)
-
-### Custom content pass through
-
-**Step 1. Set custom content (sender)**
-Set the custom content for the notification bar message before sending the message.
-
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatProvider.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/model/ChatProvider.java) class in the TUIKit:
-<dx-codeblock>
-:::  java
-OfflineMessageContainerBean containerBean = new OfflineMessageContainerBean();
-OfflineMessageBean entity = new OfflineMessageBean();
-entity.content = message.getExtra().toString();
-entity.sender = message.getFromUser();
-entity.nickname = chatInfo.getChatName();
-entity.faceUrl = TUIChatConfigs.getConfigs().getGeneralConfig().getUserFaceUrl();
-containerBean.entity = entity;
-V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
-v2TIMOfflinePushInfo.setExt(new Gson().toJson(containerBean).getBytes());
-// For OPPO, you must set the `ChannelID` to receive push messages. The `ChannelID` must be consistent with that in the console.
-v2TIMOfflinePushInfo.setAndroidOPPOChannelID("tuikit");
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, userID, null,
-            V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-    @Override
-    public void onError(int code, String desc) {}
-    @Override
-    public void onSuccess(V2TIMMessage v2TIMMessage) {}
-    @Override
-    public void onProgress(int progress) {}
-});
-:::
-</dx-codeblock>
-
-
-- For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
-
-**Step 2. Set custom content (receiver)**
-When the notification bar message is clicked, the client can obtain the custom content from the corresponding `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
-
-<dx-codeblock>
-:::  java
-Bundle bundle = getIntent().getExtras();
-String value = bundle.getString("ext"); 
-:::
-</dx-codeblock>
-
-
-## Setting Custom iOS Push Alert Sound
-
-When calling [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send messages, use the [setIOSSound](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#acffd09150398b06c3d7eb42baee5aee1) API in `V2TIMOfflinePushInfo` to set the sound for push notifications on iOS devices.
-
-## Setting Custom Display for Offline Push
-
-When calling [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send messages, use [setTitle](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a7d4a73d6a1db487dd96f658bdbc98ae9) and [setDesc](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) in `V2TIMOfflinePushInfo` to set the title and content of notification bar messages respectively.
 
 ## FAQs
 
-### How to set a custom sound for push notifications on Android phones?
+### How could I customize alert tones for offline push？
 
-Currently, most vendors do not support setting a custom sound for push notifications, therefore it is not supported by the IM SDK.
+SDK v6.1.2155 or a later version supports customizing alert tones on devices of Huawei, Mi, FCM and APNS. See the [setAndroidSound()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a3ff923225d5a79802a02c47a07e07fc5) and [setIOSSound()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#acffd09150398b06c3d7eb42baee5aee1) APIs of V2TIMOfflinePushInfo for specific methods.
 
-### Why do OPPO mobile phones fail to receive offline push messages?
-
+### How could I troubleshoot if I cannot receive offline push messages?
+#### 1. OPPO devices
 This generally occurs for the following reasons:
+- According to requirements on the official website of OPPO Push, ChannelID must be configured on OPPO mobile phones that run Android 8.0 or later versions. Otherwise, push messages cannot be displayed. For the configuration method, see [OPPO Push configuration](https://cloud.tencent.com/document/product/269/44516#oppo-.E6.8E.A8.E9.80.81).
+- The [custom content in the message for pass-through offline push](https://cloud.tencent.com/document/product/269/44516#.E9.80.8F.E4.BC.A0.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.85.E5.AE.B93) is not in the JSON format. As a result, OPPO mobile phones do not receive push messages.
+- The notification bar display feature is disabled by default for applications installed on the OPPO device. If this is the case, check the feature button status.
 
-- According to requirements on the official website of OPPO Push, ChannelID must be configured on OPPO mobile phones that run Android 8.0 or later versions. Otherwise, push messages cannot be displayed. For the configuration method, see [OPPO Push configuration](#oppoStep1_2).
-- The [custom content in the message for pass-through offline push](#oppo_custom) is not in the JSON format. As a result, OPPO mobile phones do not receive the push message.
+#### 2. Sending custom messages
+The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages and determine the push content, custom messages are not pushed offline by default. If you need offline push for custom messages, set the [desc](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) field in [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) when you call [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe), and the `desc` information will be displayed by default in the push message.
 
-### Why doesn't offline push work for custom messages?
+#### 3. Effect of notification bar settings of the device
+The offline push message can be intuitively expressed by the notification bar alert, so, just as other notifications, it is subject to the notification settings of the device. Take a Huawei device as an example.
 
-The offline push for custom messages is different from that for ordinary messages. As we cannot parse the content of custom messages, the push content cannot be determined. Therefore, by default, custom messages are not pushed offline. If you need offline push for custom messages, you need to set the [desc](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) field in [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) during [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe), and the `desc` information will be displayed by default during push.
+- "Settings - Notifications - Notifications (Lock Screen) - Hide or Do not Disturb" will affect the display of offline push notifications when the screen is locked.
+- "Settings - Notifications - Advanced Settings - Show Notification Icons (Status Bar)" will affect the showing of the offline push notification icon in the status bar.
+- "Settings - Notifications - Application Notifications - Allow Notifications" will directly affect the display of offline push notifications.
+-  "Settings - Notifications - Application Notifications - Notification Sound" and "Settings -  Notifications - Application Notifications - Notification Mute" will affect the effect of the offline push notification sound.
 
-### How do I disable the receiving of offline push messages?
+#### 4. The failure still exists after integration as instructed
+- First, test whether messages can be properly pushed offline by using the [offline test tool](https://console.cloud.tencent.com/im/tool-push-check) in the IM console.
+If offline push does not work properly, and the device status is exceptional, check the parameters in the IM console and then check the code initialization and registration logic, including the vendor push service registration and IM offline push configuration.
+If offline push does not work properly but the device status is normal, check whether the ChannelID is correct or whether the backend service is working properly.
+- The offline push feature relies on the vendor's capabilities. Some simple characters may be filtered by the vendor and cannot be passed through and pushed.
+- If offline push messages are not pushed timely or cannot be received, you need to check the vendor's push restrictions.
 
-To disable the receiving of offline push messages, set the `config` parameter of the [setOfflinePushConfig](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) API to `null`. This feature is supported from v5.6.1200.
+### How could I troubleshoot redirection failure?
+
+Page redirection is implemented as follows: The backend delivers the redirection modes and page parameters that you configure for various vendors in the console to vendor servers based on vendor API rules. When you click the notification bar for offline push messages, the system opens and redirects to the corresponding page. Opening of the corresponding page also depends on the manifest file. Only when the configuration in the manifest file is consistent with that in the console, the corresponding page can be opened and redirected properly.
+
+1. First, you need to check whether the configuration in the console and that in the manifest file are correct and consistent with each other. For more information, see the configuration of the TUIKit demo. Note that the API modes may vary by vendor.
+2. If the system redirects to the configuration page, you need to check whether the parsing of offline messages on the configuration page and the page redirection are proper.
+
+
+### Vendor's push restrictions
+
+1. All vendors in China have adopted message classification mechanisms, and different push policies are assigned for different types of messages. To make the push timely and reliable, you need to set the push message type of your app as the system message or important message with a high priority based on the vendor's rules. In turn, offline push messages are affected by the vendor's push message classification and may vary from your expectations.
+2. In addition, some vendors set limits on the daily volumes of app push messages. You can check such limits in the vendor's console.
+If offline push messages are not pushed timely or cannot be received, consider the following:
+- Huawei: Push messages are classified into service & communication messages and information & marketing messages with different push effects and policies. In addition, message classification is associated with the self-help message classification permission.
+  - If there is no self-help message classification permission, the vendor will perform secondary intelligent message classification on push messages.
+  - If you have applied for the self-help message classification permission, push messages will be classified based on the custom classification and then pushed.
+For more information, see [Message Classification Criteria](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835).
+- vivo: Push messages are classified into system messages and operational messages with different push effects and policies. The system messages are further subject to the vendor's intelligent classification for correction. A message that cannot be intelligently identified as a system message will be automatically corrected as an operational message. If the judgment is incorrect, you can give a feedback by email. In addition, the total number of push messages is subject to a daily limit determined based on the app subscription statistics by the vendor. 
+See [vendor description 1](https://dev.vivo.com.cn/documentCenter/doc/359) or [vendor description 2](https://dev.vivo.com.cn/documentCenter/doc/156) for details.
+- OPPO: Push messages are classified into private messages and public messages with different push effects and policies. Private messages are those that the user pays certain attention to and wants to receive in time. The private message channel permission needs to be applied for via email. The public message channel is subject to a number limit.
+See [vendor description 1](https://open.oppomobile.com/wiki/doc#id=11227) or [vendor description 2](https://open.oppomobile.com/wiki/doc#id=11210) for details.
+- Mi: Push messages are classified into important messages and general messages with different push effects and policies. In particular, only instant messages, dynamics reminders of the user's interest events, agenda reminders, order status change, financial reminders, personal status change, resource changes, and device reminders fall into the important message category. The important message channel can be applied for in the vendor's console. General push messages are subject to a number limit.
+See [vendor description 1](https://dev.mi.com/console/doc/detail?pId=2422) or [vendor description 2](https://dev.mi.com/console/doc/detail?pId=2086) for details.
+- Meizu: Push messages are subject to a number limit.
+See [vendor description](http://open.res.flyme.cn/fileserver/upload/file/202201/85079f02ac0841da859c1da0ef351970.pdf) for details.
+- FCM: Upstream message push is subject to a frequency limit.
+See [vendor description](https://firebase.google.com/docs/cloud-messaging/concept-options?hl=zh-cn#upstream_throttling) for details.

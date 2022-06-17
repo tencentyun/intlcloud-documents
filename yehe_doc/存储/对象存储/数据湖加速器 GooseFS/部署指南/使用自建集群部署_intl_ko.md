@@ -8,15 +8,15 @@
 
 #### Master 노드
 
-- **CPU**: 작업 클럭 속도는 최소 1GHz 이상이어야 하며, Master의 대량 처리를 고려하여 프로덕션 환경은 멀티 코어 아키텍처 프로세서를 사용하는 것을 권장합니다. 
-- **물리 메모리**: 최소 1 GB 이상이어야 하며, 프로덕션 환경은 최소 8GB 이상의 물리 메모리 구성을 사용하는 것을 권장합니다. 
-- **디스크**: 최소 20 GB 이상이어야 하며, 프로덕션 환경에는 고성능 NVME SSD 디스크를 메타데이터 캐시 디스크를 구비하는 것을 권장합니다(RocksDB 모드).
+- **CPU**: 1GHz 이상의 클럭 속도이어야 하며, Master 노드는 많은 양의 데이터를 처리해야 하므로 프로덕션 환경에서는 멀티 코어 프로세서를 사용하는 것이 좋습니다.
+- **물리적 메모리**: 1GB 이상이어야 하며, 프로덕션 환경에서는 8GB 이상의 메모리를 사용하는 것이 좋습니다.
+- **디스크**: 20GB 이상이어야 하며, 프로덕션 환경에는 고성능 NVME SSD를 메타데이터 캐싱 디스크(RocksDB 모드)로 사용하는 것이 좋습니다.
 
 #### Worker 노드
 
-- **CPU**: 작업 클럭 속도는 최소 1GHz 이상이어야 하며, Worker 노드가 대량의 동시 요청을 처리하기 위하여 프로덕션 환경 또한 멀티 코어 아키텍처 프로세서를 사용하는 것을 권장합니다. 
-- **물리 메모리**: 최소 2GB 이상이어야 하며, 프로덕션 환경에서는 성능 수요에 따라 적절한 물리적 메모리 구성을 선택하는 것을 권장합니다. 예를 들어, 프로덕션 환경에서 Worker 노드의 메모리에 대량의 데이터 블록을 캐시해야 하거나 MEM + SSD/HDD의 하이브리드 스토리지를 사용하는 경우, 실제로 메모리에 캐시 가능성이 있는 양에 따라 물리적 메모리를 구비해야 합니다. 캐싱 모드에 관계없이 프로덕션 환경에서는 Worker 노드에 최소 16GB의 물리적 메모리를 장착할 것을 권장합니다.
--**디스크**: 최소 20GB 이상의 SSD/HDD 디스크, 실제 프로덕션 환경에서 프리패치해야 하는 데이터 양을 기준으로 각 Worker 노드에 필요한 디스크 공간을 추정하는 것이 좋습니다. 또한 더 나은 성능 경험을 위해 Worker 노드 데이터 디스크로 NVME 인터페이스를 사용하는 SSD 디스크를 장착하는 것을 권장합니다.
+- **CPU**: 작업 클럭 속도는 1GHz 이상이어야 하며, Worker 노드도 많은 동시 요청을 처리해야 하므로 프로덕션 환경에서는 멀티 코어 프로세서를 사용하는 것이 좋습니다.
+- **물리적 메모리**: 2GB 이상이어야 하며, 성능 요구 사항에 따라 프로덕션 환경에 메모리를 할당할 수 있습니다. 예를 들어 Worker 노드 메모리에 많은 데이터 블록을 캐시해야 하거나 혼합 스토리지(MEM + SSD/HDD)를 사용해야 하는 경우 메모리에 캐시될 수 있는 데이터의 양에 따라 물리적 메모리를 할당할 수 있습니다. 사용하는 캐싱 모드에 관계없이 프로덕션 환경의 Worker에 대해 16GB의 물리적 메모리를 사용하는 것이 좋습니다.
+- **디스크**: 20GB 이상의 SSD/HDD 디스크, 프로덕션 환경에 캐시해야 하는 데이터의 양을 추정하여 각 Worker 노드에 디스크 공간을 할당하는 것이 좋습니다. 또한 더 나은 성능을 위해 Worker 노드에 NVME SSD 디스크를 사용하는 것이 좋습니다.
 
 ### 소프트웨어 환경
 
@@ -44,14 +44,14 @@
 
 ### 배포
 
-1. 먼저 GooseFS의 이진법 배포 패키지 다운로드 를 합니다. 
+1. 먼저 [GooseFS의 이진법 배포 패키지 다운로드](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz)를 합니다.
 2. 배포 패키지 다운로드 후 압축 해제하여 GooseFS의 디렉터리로 이동하고 아래의 작업을 실행합니다. 
- - conf/goosefs-site.properties.template 복사를 통해 conf/goosefs-site.properties 구성 파일을 생성합니다. 
+   - conf/goosefs-site.properties.template 복사를 통해 /etc/goosefs/conf/goosefs-site.properties 구성 파일을 생성합니다.
 ```bash
- $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+ $ cp conf/goosefs-site.properties.template /etc/goosefs/conf/goosefs-site.properties
 ```
- - conf/goosefs-site.properties 구성 파일에서 `goosefs.master.hostname`를 `localhost`로 설정합니다. 
- - conf/goosefs-site.properties 구성 파일에서 `goosefs.master.mount.table.root.ufs`를 로컬 파일 시스템의 디렉터리로 설정합니다. 예시: /tmp 혹은 /data/goosefs 등.
+   - /etc/goosefs/conf/goosefs-site.properties 구성 파일에서 `goosefs.master.hostname`를 `localhost`로 설정합니다.
+   - /etc/goosefs/conf/goosefs-site.properties 구성 파일에서 `goosefs.master.mount.table.root.ufs`를 로컬 파일 시스템의 디렉터리로 설정합니다. 예시: /tmp 혹은 /data/goosefs 등.
 
 localhost의 SSH 비밀번호 없이 로그인으로 설정을 권장합니다. 그렇지 않을 경우 포맷과 실행 등 작업 시 localhost의 로그인 비밀번호를 입력해야 합니다. 
 
@@ -116,14 +116,14 @@ GooseFS는 ‘scripts’ 디렉터리에서 SSH 비밀번호 없이 로그인 �
 
 Standalone 아키텍처는 단일 Master 노드, 다중 Worker 노드의 클러스터 배포 아키텍처를 적용했습니다. 아래 순서를 참고하여 배포를 실행합니다. 
 
-1. GooseFS의 이진법 배포 패키지 다운로드 를 합니다. 
+1. [GooseFS의 이진법 배포 패키지 다운로드](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz)를 합니다. 
 2. `tar zxvf goosefs-x.x.x-bin.tar.gz` 명령어를 통해 설치 경로 뒤에 압축 해제합니다. 일괄 배포 툴의 소개를 참고하여 클러스터의 일괄 배포를 설정 및 실행할 수 있으며, 아래 상세한 수동 배포 프로세스 문장을 참고할 수 있습니다. 
 
  (1) ‘conf’ 디렉터리에서 ‘template’ 파일을 복사하여 구성 파일을 생성합니다. 
 ```bash
-$ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+$ cp conf/goosefs-site.properties.template /etc/goosefs/conf/goosefs-site.properties
 ```
- (2) `goosefs-site.properties` 구성 파일에서 아래와 같은 설정을 지정합니다.
+(2) `goosefs-site.properties` 구성 파일에서 아래와 같은 설정을 지정합니다.
 ```properties
 goosefs.master.hostname=<MASTER_HOSTNAME>
 goosefs.master.mount.table.root.ufs=<STORAGE_URI>
@@ -150,23 +150,23 @@ cvm2.compute-2.myqcloud.com
 cvm3.compute-3.myqcloud.com
 ```
 
-모든 설정 완료 후  `./bin/goosefs copyDir conf/`을 실행하면 구성을 모든 노드에 동기화할 수 있습니다. 
+모든 설정 완료 후 `./bin/goosefs copyDir /etc/goosefs/conf/`를 실행하면 구성을 모든 노드에 동기화할 수 있습니다. 
 
 마지막으로 `./bin/goosefs-start.sh all`을 실행하면 GooseFS 클러스터를 실행할 수 있습니다. 
 
 
 ### 고가용성 아키텍처 배포
 
-단일 Master 노드의 Standalone 아키텍처는 단일 문제가 쉽게 발생됨으로 실제 프로덕션 환경은 다중 Master 노드를 배포하여 고가용성 시스템 아키텍처로 사용을 권장합니다. 다수의 Master 노드 중 한 노드만 마스터(leader) 노드로 외부 서비스를 제공하고, 그 외 노드는 슬레이브(Standby) 노드로 공유 로그 (Journal)를 동기화하며 마스터 노드와 동일한 파일 시스템 상태를 유지합니다. 마스터 노드가 장애로 다운 됐을 경우 슬레이브 노드 중의 하나를 자동으로 선택하여 마스터 노드 대신 외부 서비스를 제공합니다. 이로써 시스템의 단일 장애를 제거하여 고가용성 아키텍처를 사용할 수 있습니다. 
+단일 Master 노드의 Standalone 아키텍처는 단일 문제가 쉽게 발생됨으로 실제 프로덕션 환경은 다중 Master 노드를 배포하여 고가용성 시스템 아키텍처로 사용을 권장합니다. 다수의 Master 노드 중 한 노드만 프라이머리(leader) 노드로 외부 서비스를 제공하고, 그 외 노드는 세컨더리(Standby) 노드로 공유 로그 (Journal)를 동기화하며 프라이머리 노드와 동일한 파일 시스템 상태를 유지합니다. 프라이머리 노드가 장애로 다운 됐을 경우 세컨더리 노드 중의 하나를 자동으로 선택하여 프라이머리 노드 대신 외부 서비스를 제공합니다. 이로써 시스템의 단일 장애를 제거하여 고가용성 아키텍처를 사용할 수 있습니다. 
 
-현재 GooseFS는 Raft 로그와 Zookeeper 기반의 2가지 방식으로 마스터/슬레이브 노드 상태의 강한 일치성을 지원합니다. 다음으로 이 2가지 배포 방식에 대하여 각각 소개하겠습니다. 
+현재 GooseFS는 Raft 로그와 Zookeeper 기반의 2가지 방식으로 프라이머리/세컨더리 노드 상태의 강한 일치성을 지원합니다. 다음으로 이 2가지 배포 방식에 대하여 각각 소개하겠습니다. 
 
 #### Raft 임베디드 로그 기반의 고가용성 배포 설정
 
 설정 템플릿에 따라 구성 파일을 생성합니다. 
 
 ```bash
-$ ./bin/goosefs cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+$ cp conf/goosefs-site.properties.template /etc/goosefs/conf/goosefs-site.properties
 ```
 
 ```properties
@@ -177,15 +177,15 @@ goosefs.master.embedded.journal.address=<EMBBEDDED_JOURNAL_ADDRESS>
 
 위의 구성 항목의 설명은 다음과 같습니다. 
 - `goosefs.master.hostname`은 모든 Master 대외 서비스의 ip 혹은 hostname을 설정하며 클라이언트와 Worker 노드 모두 액세스 가능합니다. 
-- `goosefs.master.mount.table.root.ufs`는 GooseFS 루트 디렉터리의 기본 스토리지 URI 마운트로 설정을 합니다. 
-- `goosefs.master.embedded.journal.address`는 모든 슬레이브 노드의 `ip:embedded_journal_port` 혹은 `host:embedded_journal_port`를 설정합니다. embedded_journal_port는 9202로 기본 설정되어 있습니다. 
+-  `goosefs.master.mount.table.root.ufs`는 GooseFS 루트 디렉터리의 기본 스토리지 URI 마운트로 설정을 합니다. 
+-  `goosefs.master.embedded.journal.address`는 모든 세컨더리 노드의 `ip:embedded_journal_port` 혹은 `host:embedded_journal_port`를 설정합니다. embedded_journal_port는 9202로 기본 설정되어 있습니다. 
 
 Raft 임베디드 로그 기반의 배포 방식은 [copycat](https://github.com/atomix/copycat)의 Leader 선출 메커니즘에 종속됨으로 Raft의 HA 배포 아키텍처는 Zookeeper와 함께 사용할 수 없습니다. 
 
 모든 설정 완료 후 아래 명령어를 통해 모든 설정을 동기화할 수 있습니다. 
 
 ```bash
-$ ./bin/goosefs copyDir conf/
+$ ./bin/goosefs copyDir /etc/goosefs/conf/
 ```
 
 포맷 완료 후 바로 GooseFS 클러스터를 실행할 수 있습니다. 
@@ -198,7 +198,7 @@ $ ./bin/goosefs format
 $ ./bin/goosefs-start.sh all
 ```
 
-아래 명령어를 통해 현재 마스터(Leader) 노드를 확인할 수 있습니다. 
+아래 명령어를 통해 현재 프라이머리(Leader) 노드를 확인할 수 있습니다. 
 
 ```bash
 $ ./bin/goosefs fs leader
@@ -213,8 +213,8 @@ $ ./bin/goosefs fsadmin report
 #### Zookeeper 기반의 공유 로그 배포 설정
 
 Zookeeper 서비스 구축 GooseFS의 고가용성 아키텍처 설정은 아래 조건을 만족해야 합니다. 
- - Zookeeper 클러스터, GooseFS Master는 Zookeeper를 통해 Leader를 선택하고, GooseFS의 클라이언트와  Worker 노드는 Zookeeper를 통해 마스터 Master 노드를 확인합니다. 
- - 모든 GooseFS의 Master 노드가 모두 액세스할 수 있는 고가용성, 고일치성 공유 스토리지 시스템. 마스터 Master 노드가 로그를 해당 스토리지 시스템에 쓰고 슬레이브 (Standby) 노드는 지속적으로 공유 스토리지 시스템에서 로그를 읽으며 마스터 로그의 상태와 일치하도록 유지합니다. 일반적으로 해당 공유 스토리지 시스템을 HDFS 혹은 COS로 설정을 권장합니다. 예시: `hdfs://10.0.0.1:9000/goosefs/journal` 혹은 `cosn://bucket-1250000000/journal`.
+ - Zookeeper 클러스터, GooseFS Master는 Zookeeper를 통해 Leader를 선택하고, GooseFS의 클라이언트와  Worker 노드는 Zookeeper를 통해 프라이머리 Master 노드를 확인합니다. 
+ - 모든 GooseFS의 Master 노드가 모두 액세스할 수 있는 고가용성, 고일치성 공유 스토리지 시스템. 프라이머리 Master 노드가 로그를 해당 스토리지 시스템에 쓰고 세컨더리 (Standby) 노드는 지속적으로 공유 스토리지 시스템에서 로그를 읽으며 프라이머리 로그의 상태와 일치하도록 유지합니다. 일반적으로 해당 공유 스토리지 시스템을 HDFS 혹은 COS로 설정을 권장합니다. 예시: `hdfs://10.0.0.1:9000/goosefs/journal` 혹은 `cosn://bucket-1250000000/journal`.
 
 설정은 아래와 같습니다. 
 
@@ -225,7 +225,7 @@ goosefs.master.journal.type=UFS
 goosefs.master.journal.folder=<JOURNAL_URI>
 ```
 
-`./bin/goosefs copyDir conf/`를 통해 클러스터의 모든 노드와 설정을 동기화 하고 클러스터`./bin/goosefs-start.sh all`을 실행합니다. 
+`./bin/goosefs copyDir /etc/goosefs/conf/`를 통해 클러스터의 모든 노드와 설정을 동기화 하고 클러스터 `./bin/goosefs-start.sh all`을 실행합니다.
 
 
 ## GooseFS의 프로세스 리스트

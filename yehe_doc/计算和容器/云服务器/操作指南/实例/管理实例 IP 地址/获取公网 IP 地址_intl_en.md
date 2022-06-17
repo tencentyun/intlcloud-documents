@@ -1,28 +1,33 @@
-## Scenario
-This document describes how to obtain the public IP address through console, API, or Instance metadata.
-
+## Overview
+This document describes how to obtain the public IP address of a CVM instance. 
 
 ## Directions
+<dx-tabs>
+::: Console
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
+2. On the instance management page, proceed according to the actually used view mode:
+  - **List view**: In the primary IP column, click <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"/> to copy the IP.
+![](https://qcloudimg.tencent-cloud.cn/raw/de3e24445d11fca4fc194dd51462c406.png)
+  - **Tab view**: On the instance page, click <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"/> after the public network address in "IP Address" to copy the public IP.
+![](https://qcloudimg.tencent-cloud.cn/raw/1a719829bf4f09d9f4785a97f66abfd0.png)
 
-### Obtaining the public IP address on the console
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
-2. On the instance management page, move the mouse to the primary IP column, and <img src = "https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style = "margin: 0;"> </ img> appears, as shown below:
-![](https://main.qcloudimg.com/raw/952664b0a70077ba49a031b98a57c782.png)
-3. Click <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"> to copy the IP address.	
->! The public IP address is mapped to the private IP address through NAT. If you view the network interface attributes from within the instance (for example by using commands such as `ifconfig (Linux)` or `ipconfig (Windows)`), the public IP address is not displayed. To obtain the public IP from within the instance, please see [Obtaining a Public IP Address of the Instance Using Instance Metadata](#jump).
->
+<dx-alert infotype="notice" title="">
+The public IP address is mapped to the private IP address through NAT. Therefore if you view the network interface attributes from within the instance (such as by using `ifconfig (Linux)` or `ipconfig (Windows)` commands), the public IP address is not displayed. To obtain the public IP from within the instance, you need to check the [instance metadata](#jump).
+</dx-alert>
 
-### Obtaining the public IP address using API
-Please see [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258).
 
-<span id = "jump">  </span>
-### Obtaining the public IP address using instance metadata
+:::
+::: API
+See [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258).
+:::
+::: Instance metadata[](id:jump)
 1. Log in to the CVM instance.
-For more information, please see [Log in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436) and [Log in to Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435).
-2. To obtain the public IP address, you can access the metadata by using the cURL tool or an HTTP GET request.
+For more information, see [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/zh/document/product/213/5436) and [Logging in to Windows Instance](https://intl.cloud.tencent.com/document/product/213/41018).
+2. Use the cURL tool or an HTTP GET request to access the metadata and obtain the public IP address.
 ```
 curl http://metadata.tencentyun.com/meta-data/public-ipv4
-```
-If the returned value is in the following structure, you can view the public IP address:
+``` Check the public IP in the result:
 ![](https://main.qcloudimg.com/raw/03f603e433b7a5da09e33a8b09d731b4.png)
-For more information, see [Instance Metadata](http://intl.cloud.tencent.com/document/product/213/4934).
+For more information, see [Instance Metadata](https://intl.cloud.tencent.com/document/product/213/4934).
+:::
+</dx-tabs>

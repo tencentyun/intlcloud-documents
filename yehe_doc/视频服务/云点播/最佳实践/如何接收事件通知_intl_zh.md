@@ -9,7 +9,7 @@
 Demo 基于云函数（SCF） 搭建了一个 HTTP 服务，用于接收来自 VOD 的事件通知请求。该服务通过对 NewFileUpload（[视频上传完成事件通知](https://intl.cloud.tencent.com/document/product/266/33950)）和 ProcedureStateChanged（[任务流状态变更](https://intl.cloud.tencent.com/document/product/266/33953)）的处理，实现发起视频转码和获取转码结果。
 
 系统主要涉及四个组成部分：控制台、API 网关、云函数和云点播，其中 API 网关和云函数即是本 Demo 的部署对象，如下图所示：
-<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ec5a27df9988417547c884df4ac28816.png" width="550">
 
 具体业务流程为：
 
@@ -99,7 +99,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 如 [避免影响生产环境](#p0) 一节所述，操作之前请先确认您的线上业务不依赖于 VOD 事件通知。
 
 登录 [云点播控制台](https://console.cloud.tencent.com/vod/callback)，单击【设置】，回调模式选择【普通回调】，回调 URL 填写 [步骤4](#p4) 中获得的事件通知接收服务地址，回调事件全部勾选，然后单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e5631bc9013b6e30283a7ac5411e332.png)
+
 >!如果您在控制台同时看到两个回调 URL 设置（2.0版本格式和3.0版本格式），请填写3.0版本。
 
 ### 步骤6：测试 Demo

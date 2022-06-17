@@ -72,7 +72,7 @@ Before reading this document, make sure that you have read [Stage 1. Play back a
  * **Sampling Interval**: 20%.
  * **Rows**: 10.
  * **Columns**: 10.
-![](https://qcloudimg.tencent-cloud.cn/raw/9c0f52f7a6948f693ddc2e7bda48462a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7ec21a1d127a0b5284a491fcac90c3a9.png)
 3. Click **Create**. An image sprite template whose ID is `113272` will be generated.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4cf44757d6dbb339aa29c3c29fc480d7.png)
 

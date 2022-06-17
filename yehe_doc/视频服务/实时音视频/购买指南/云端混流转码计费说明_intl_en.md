@@ -1,6 +1,6 @@
 > !
 >
->- This document describes the relaying and transcoding fees for using [TRTC’s MCU cluster for On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618). If you relay TRTC streams to CSS and then mix the streams using the [live stream mixing](https://intl.cloud.tencent.com/document/product/267/37665) feature of CSS, CSS will charge you [live transcoding](https://intl.cloud.tencent.com/document/product/267/39604) fees.
+>- This document describes the relaying and transcoding fees for using TRTC’s MCU cluster for On-Cloud MixTranscoding. If you relay TRTC streams to CSS and then mix the streams using the [live stream mixing](https://intl.cloud.tencent.com/document/product/267/37665) feature of CSS, CSS will charge you [live transcoding](https://intl.cloud.tencent.com/document/product/267/39604) fees.
 >- If you push transcoded audio and video streams to CSS and [stream them to audience via CDNs](https://intl.cloud.tencent.com/document/product/647/35242), CSS will charge you based on the [traffic/bandwidth](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) used.
 >- If you have a contract with TRTC, the billing details in the contract will apply.
 

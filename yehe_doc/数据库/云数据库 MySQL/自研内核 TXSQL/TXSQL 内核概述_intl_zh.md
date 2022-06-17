@@ -4,6 +4,5 @@ TXSQL 不仅对 InnoDB 存储引擎、查询优化、复制性能等方面进行
 
 有关 TXSQL 内核的更多信息：
 - 云数据库 MySQL 内核版本更新动态，请参见 [内核版本更新动态](https://intl.cloud.tencent.com/document/product/236/35989)。
-- 云数据库 MySQL 支持通过 instant 算法来避免数据拷贝，进而实现大表快速加列的功能，请参见 [快速加列功能](https://intl.cloud.tencent.com/document/product/236/35990)。
 - 云数据库 MySQL 支持自动或手动升级内核小版本，请参见 [升级内核小版本](https://intl.cloud.tencent.com/document/product/236/36816)。
 - 云数据库 MySQL 支持通过云服务器，登录到 MySQL 实例查看内核小版本，请参见 [查看内核小版本](https://intl.cloud.tencent.com/document/product/236/35995)。

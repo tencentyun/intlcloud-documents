@@ -10,6 +10,6 @@ You have [created an instance](https://intl.cloud.tencent.com/document/product/5
 
 1. On the [Instance List](https://console.intl.cloud.tencent.com/ckafka/index?rid=1) page, click the ID/name of the instance created in [Step 1. Create an Instance](https://intl.cloud.tencent.com/document/product/597/40043).
 2. On the instance details page, click **Add a routing policy** in the **Access Mode** section to add a VPC route.
-![](https://qcloudimg.tencent-cloud.cn/raw/eb022be6890ac9ad1f354f326b782e3b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d66baedc15e6d442e5fde3df5766b299.png)
    Then, you can get the domain name and port for VPC access.
-![](https://qcloudimg.tencent-cloud.cn/raw/95955c687e0fbdad024c8081882faf8c.png)
+![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png)

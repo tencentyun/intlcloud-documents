@@ -76,9 +76,9 @@ client
   });
 ```
 
-4. After receiving the [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED) callback, which is used to listen for remote streams, call [Client.subscribe()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#subscribe) to subscribe to the stream.
+4. After receiving the [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED) callback, which is used to listen for remote streams, call [Client.subscribe()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#subscribe) to subscribe to the stream.
 >?
->- To ensure that you are notified when a remote user enters the room, please register the [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html#.STREAM_ADDED) callback before you call [Client.join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join) to enter the room.
+>- To ensure that you are notified when a remote user enters the room, please register the [Client.on('stream-added')](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/module-ClientEvent.html#.STREAM_ADDED) callback before you call [Client.join()](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/Client.html#join) to enter the room.
 >- For other events such as the exit of a remote user, please see the [API documentation](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-Event.html).
 ```javascript
 client.on('stream-added', event => {

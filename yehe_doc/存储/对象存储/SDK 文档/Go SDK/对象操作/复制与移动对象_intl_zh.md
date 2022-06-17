@@ -31,7 +31,7 @@ func (s *ObjectService) Copy(ctx context.Context, key, sourceURL string, opt *Ob
 
 #### 请求示例1：简单复制对象
 
-[//]: # ".cssg-snippet-copy-object"
+[//]: # (.cssg-snippet-copy-object)
 ```go
 package main
 
@@ -64,7 +64,7 @@ func main() {
     f := strings.NewReader("test")
     _, err := client.Object.Put(context.Background(), name, f, nil)
 
-    sourceURL := fmt.Sprintf("%s/%s", client.BaseURL.BucketURL.Host, name)
+    sourceURL := fmt.Sprintf("examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/%s", name)
     dest := "example_dest"
     // 如果不是必要操作，建议上传文件时不要给单个文件设置权限，避免达到限制。若不设置默认继承桶的权限。
     // opt := &cos.ObjectCopyOptions{}
@@ -114,7 +114,7 @@ func main() {
 
     // 移动对象
     dest := "test/newfile"
-    sourceURL := fmt.Sprintf("%s/%s", u.Host, source)
+    sourceURL := fmt.Sprintf("examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/%s", source)
     _, _, err = client.Object.Copy(context.Background(), dest, sourceURL, nil)
     if err == nil {
         _, err = client.Object.Delete(context.Background(), source, nil)

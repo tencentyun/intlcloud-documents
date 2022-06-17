@@ -52,45 +52,21 @@ After getting the TPNS SDK package for OPPO PUSH, configure the major TPNS versi
 1. Open the `Other-push-jar` folder and import the OPPO PUSH-related JAR into the project.
 2. Add a class resource file to the project with the following code:
 ```java
-package com.heytap.mcssdk;
+package com.pushsdk;
+
 class R {
     public static final class string {
-        public static final int system_default_channel = 
-	com.tencent.android.tpns.demo.R.string.oppo_system_default_channel; //This can be changed to a custom string resource ID
+	public final static int system_default_channel = com.tencent.android.tpns.demo.R.string.app_name; //This can be changed to a custom string resource ID
     }
 }
 ```
-3. Add the following configuration to the `Androidmanifest.xml` file (two methods):
- - Use the following configuration for the TPNS SDK for Android below v1.2.0.2:
+3. Add the following configuration to the `Androidmanifest.xml` file :
+ 
 ```
 <!--Permissions required by OPPO PUSH-->
 <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
 <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE"/>
 <application>
-		<!--Components required by OPPO PUSH-->
-		<service
-			android:name="com.heytap.mcssdk.PushService"
-			android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
-			<intent-filter>
-				<action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
-			</intent-filter>
-		</service>
-		<service
-			android:name="com.heytap.mcssdk.AppPushService"
-			android:permission="com.heytap.mcs.permission.SEND_MCS_MESSAGE">
-			<intent-filter>
-				<action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE"/>
-			</intent-filter>
-		</service>
-</application>
-```
- - Use the following configuration for the TPNS SDK for Android v1.2.0.2 or later:
-```
-<!--Permissions required by OPPO PUSH-->
-<uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
-<uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE"/>
-<application>
-		<!-- The following are the OPPO components on v1.2.0.2 -->
 		<service
 			android:name="com.heytap.msp.push.service.CompatibleDataMessageCallbackService"
 			android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">

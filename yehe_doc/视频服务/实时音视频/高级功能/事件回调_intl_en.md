@@ -102,7 +102,6 @@ Callbacks are sent to your server in the form of HTTP/HTTPS POST requests, which
 | EVENT_TYPE_START_ASSIT  | 205  | Starting pushing substream data |
 | EVENT_TYPE_STOP_ASSIT   | 206  | Stopping pushing substream data |
 
->! Room exit will trigger only the `104` callback and not the `202` or `204` callback. `202` and `204` are triggered only if a user manually turns their video and audio off.
 
 [](id:event_infor)
 ### Event information

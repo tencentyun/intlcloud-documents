@@ -4,8 +4,9 @@ TDSQL for MySQL supports exporting data with mysqldump. Before export, you need 
 mysqldump --compact --single-transaction --no-create-info -c db_name table_name  -utest -h10.xx.xx.34 -P3336  -ptest123
 ```
 
->?The `db` and `table` parameters should be specified based on the actual situation. If the exported data is to be imported into another set of TDSQL for MySQL environment, the `-c` option must be added.
-
+>?
+>- The `db` and `table` parameters should be specified based on the actual situation. If the exported data is to be imported into another set of TDSQL for MySQL environment, the `-c` option must be added.
+>- Export account needs to have `select on *.*` permissions.
 
 ## Importing Data
 TDSQL for MySQL provides a professional tool to import data specified by `load data outfile`. This tool shards a source file into multiple files according to the shardkey routing rules, and passes each file through to the corresponding backend database.

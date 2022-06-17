@@ -10,10 +10,12 @@
 2. 在视频处理界面：
  - **处理类型** 选择 **任务流**。
  - **任务流模板** 选择 **SimpleAesEncryptPreset**。
-<img src="https://main.qcloudimg.com/raw/4cc8649c21b5c60305b925120f84d7e6.png" width="" /><span>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/810b84b193ad96be992810e3877b1ac7.png" width="" /><span>
+
 >? 
 >- SimpleAesEncryptPreset 是预置任务流：使用12模板转自适应码流，10模板截图做封面，10模板截雪碧图。
 >- 12模板自适应码流是转出加密的多码率输出。
+
 3. 单击 **确定**，等待“视频状态”栏从“处理中”变为“正常”，表示视频已处理完毕：
 ![](https://qcloudimg.tencent-cloud.cn/raw/da5e02a95cf19cae9146e009874ccf55.png)
 4. 单击视频“操作”栏下的 **管理**，进入管理页面：
@@ -26,9 +28,10 @@
 前面的步骤中，您已经上传视频，并对视频进行了处理。现在，将使用三端的超级播放器，快速体验播放效果。
 
 1. 选择 **媒资管理**>[**视频管理** ](https://console.cloud.tencent.com/vod/media)，找到**步骤1**上传和处理过的视频，单击“操作”栏下的 **管理**，选择 **超级播放器预览**。
-2.  **超级播放器配置** 选择 basicDrmPreset。
+2.  **播放配置** 选择 basicDrmPreset。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/60418fcab52a70fc2fbcf7056f7929f2.png" width="622" />
 >? basicDrmPreset 是预置超级播放器配置，用于播放12模板转自适应码流输出，10模板截雪碧图输出。
+
 3. 因为默认分发域名开启了防盗链， **播放控制** 选项卡支持预览时选定防盗链的过期时间、试看时长等。此处可维持默认参数（播放防盗链过期时间默认1天，试看时长和最多可播放 IP 个数不填写）。
  <img src="https://qcloudimg.tencent-cloud.cn/raw/5968a5d6428bff9c3e3e0e1d4ce7431e.png" width="622" />
 4. 在 **Web 播放器** 中，单击播放器中间的按钮，即可在 Web 端播放体验。
@@ -52,6 +55,7 @@
  -  **链接过期时间** ：Key 防盗链过期时间，可以填6小时后的十六进制 Unix 时间：5ee09b44。
  -  **防盗链 Key** ：填写之前获取到的防盗链 Key：2WExxx48eW。
 >! basicDrmPreset 是预置超级播放器配置，用于播放12模板转自适应码流输出，10模板截雪碧图输出。
+
 2. 单击 **生成签名**，生成出来的签名显示在 **生成签名结果** 文本框中。
 
 获取超级播放器签名后，您可以分别使用 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/LiteAVSDK/Player_Android) 和 [iOS](https://github.com/LiteAVSDK/Player_iOS)  三端的超级播放器 Demo 进行验证，具体请参考 Demo 的源码。

@@ -1,81 +1,96 @@
-A weak edge network will trigger the Kubernetes draining mechanism, resulting in unexpected pod draining. In edge computing scenarios, the network environment between an edge server and the cloud is very complex, the network connection cannot be guaranteed, and the API server and node connection can easily be interrupted. If native Kubernetes is used without modification, the node status will be abnormal, triggering the draining mechanism of Kubernetes. Consequently, pods will be drained, EndPoints will be lost, and ultimately, service interruption and fluctuation will occur.
+Poor edge network conditions will trigger the Kubernetes eviction mechanism to evict Pods that do not meet the expectations. In edge computing scenarios where the network environments of the edge nodes and the cloud are complex, and the network quality cannot be guaranteed, problems such as API server and node disconnection tend to occur. If native Kubernetes is used without modification, the node status will often become abnormal. This causes the Kubernetes eviction mechanism to take effect, where Pods are evicted and the Endpoint is lost, thereby causing service interruption and fluctuation.  
 
-To solve this problem, the [Tencent Kubernetes Engine for Edge](https://intl.cloud.tencent.com/document/product/457/35390) (TKE Edge) introduced the distributed node status determination mechanism, which can better determine the timing of draining to ensure the proper running of the system in weak-network situations and prevent service interruption and fluctuation.
+To solve this problem, [TKE Edge](https://intl.cloud.tencent.com/document/product/457/35390) offers the innovative distributed node status determination mechanism. This mechanism can better identify the eviction timing, guarantee system running under poor network conditions, and avoid service interruption and fluctuation.  
 
-## Requirement Scenario
+## Use Cases
 
-In edge scenarios, networks on the cloud edge are weak. Edge devices are located in edge cloud data centers and mobile edge sites, and the network environments between them and the cloud are complex. For example, the network connections between the cloud (control end) and the edge as well as the network connections between edge servers can be unreliable.
-<span id="SmartFactory"></span>
-### Smart factory
+An edge use case is subject to poor network conditions in the cloud. Edge devices are located in edge cloud data centers and mobile edge sites, facing complex network environments for their cloud connectivity, such as unreliable environments at the cloud (console) and edge as well as between edge nodes.  
 
-In the example of a smart factory, edge servers are located in plant warehouses and workshops, while the control-end Master node is in the Tencent Cloud central data center.
+### Smart factory[](id:SmartFactory)
 
-- The network between edge devices in warehouses and workshops and the cloud cluster is complex. It can be implemented via the Internet, 5G, Wi-Fi, and other formats. The network connection is not guaranteed.
-- Compared with the network environment on the cloud, the network between edge devices in warehouses and workshops is a local network, which is of better quality and more reliable than the connection between edge devices and the cloud cluster.
+In a smart factory, edge nodes are located in the warehouse and plant, and the master node in the console is in the central data center of Tencent Cloud, as shown below:
+![img](https://qcloudimg.tencent-cloud.cn/raw/84640ef52fcaa52a85b29b1d34fcebb3.png)
 
-### Audio and video pull scenario
-In consideration of user experiences and companies’ costs, audio and video pull scenarios often require the improvement of the edge cache hit rate to reduce origin-pull, scheduling of the same user-requested file to the same service pod, and service pod cache files.
+- The edge devices in the warehouse and plant and the cloud cluster can be connected over the internet, 5G, and Wi-Fi, with uneven and unguaranteed network quality.  
+- The edge devices in the warehouse and plant are connected over the local network, which is better and more reliable than that used to connect to cloud clusters.  
 
-In the case of native Kubernetes, if a pod is frequently rebuilt due to network fluctuation, the performance of the service pod cache will be affected, and the scheduling system will schedule user requests to other service pods. Both cases have a major and even unacceptable impact on CDN performance.
+### Audio/Video pull
+Audio/Video pull is as shown below:
+![img](https://qcloudimg.tencent-cloud.cn/raw/eabfbc0d849a7aac5cc6e6fbac2f5557.png)
 
-In fact, as long as edge servers are running properly, pod draining or rebuilding is unnecessary. To resolve this problem and ensure continuous service availability, the TKE Edge team introduced the distributed node status determination mechanism.
+Considering user experience and enterprise cost, you often need to improve the edge cache hit rate for audio/video pull to reduce the origin-pull traffic and schedule the same file requested by users to the same service instance and its cache file.  
 
-## Requirement Pain Points
+In the case of native Kubernetes, if Pods are frequently rebuilt due to network fluctuation, the service instance caching performance will be compromised, and the scheduling system will schedule user requests to other service instances. Both may have a significant or even unacceptable impact on the CDN performance.  
 
-### Processing by native Kubernetes
+In fact, if edge nodes are running normally, it is unnecessary to evict or rebuild Pods. To solve this problem and ensure the service continuity, the TKE Edge team proposed a distributed node status determination mechanism.  
 
-A weak network on the cloud edge can affect the communication between Kubelet on edge servers and the API Server on the cloud. As a result, the API Server on the cloud cannot receive heartbeat or lease renewal from Kubelet and cannot accurately detect the running status of the node and pods on the node. If this situation persists beyond the set threshold, the API Server will deem that the node is unavailable and perform the following actions:
+## Challenges
 
-- The status of the unavailable node will be set to NotReady or Unknown, and the taints of NoSchedule and NoExecute will be added to the node.
-- Pods on the unavailable node will be drained and be rebuilt on other nodes.
-- Pods on the unavailable node will be removed from the Endpoint list of Service.
+### Native Kubernetes processing method
 
-## Solutions
+Poor network conditions at the cloud edge affect the communication between the kubelet running on the edge node and the cloud API server, where the latter cannot receive the kubelet heartbeat or get a renewal and then cannot accurately get the running statuses of the node and its Pods. If the duration exceeds the set threshold, the API server will consider the node unavailable and perform the following operations:
 
-### Design principles
+- Set the status of the missing node to `NotReady` or `Unknown` and add the taints of `NoSchedule` and `NoExecute`.  
+- Evict the Pods on the missing node and rebuild them on other nodes.  
+- Remove the Pods on the missing node from the Service's Endpoint list.  
 
-In edge computing scenarios, it is unreasonable to rely solely on the connection between an edge end and the API Server for determining whether a node is running normally. We need to bring in an additional detection mechanism to make the system more robust.
+## Solution
 
-Compared with the network between the cloud and the edge end, the network between nodes on the edge end is more stable, and the more stable infrastructure can be used to improve accuracy. TKE Edge developed an innovative edge health distributed node status determination mechanism. In addition to considering the connection between a node and the API Server, the mechanism also brings in edge servers as an evaluation factor to judge the status of a node more comprehensively. Proven by testing and a large number of practical cases, this mechanism can greatly improve the accuracy of node status judgment in the case of weak cloud edge networks and guarantee the stable operation of services. The main principles of this mechanism are as follows:
-- Each node periodically detects the health status of other nodes.
-- All nodes in the cluster periodically vote to determine the status of each node.
-- The cloud and edge nodes jointly determine node status.
+### Design principle
 
-First of all, the nodes detect and vote among themselves to determine whether a specific node is in an exceptional status. Only by ensuring the consensus of the majority of nodes can the specific status of a node be determined. Secondly, even if the network status between nodes is generally better than the cloud-edge network, the complex network of edge servers should be considered, and the network is not 100% reliable. Therefore, the network between nodes cannot be completely trusted, and the status of nodes cannot be determined by the nodes themselves alone. Joint determination by the cloud and edge is more reliable. Based on this consideration, we developed the following design:
+In edge computing, it is unreasonable to determine whether a node is normal solely based on the connection between the edge and the API server. You need an additional determination mechanism to make the system more robust.  
 
-| Ultimate node status | Deemed normal by the cloud | Deemed exceptional by the cloud |
+The network between edge nodes is more stable than that between cloud and edge nodes. You can use a more stable infrastructure to improve the accuracy. TKE Edge adopts an innovative distributed mechanism to determine the node status, which considers edge nodes in addition to the connection between nodes and the API server. Tests and practices have shown that this mechanism has improved the accuracy to determine the node status in a system under poor network conditions at the cloud edge, safeguarding service running. It works as shown below:
+- Each node regularly checks the health status of other nodes.
+- All nodes in the cluster regularly vote on the status of each node.
+- Cloud and edge nodes determine the node status together.
+
+First, nodes check and vote for each other to decide whether a node is in abnormal status, and the decision will be made only when most of the nodes agree on the same determination. Second, even though the network between nodes is usually in a better condition than the cloud edge network, the complex situation at the edge node should be considered, as networks are not 100% reliable. Therefore, the network between nodes is not the only standard, and the node status should be decided by both nodes and the cloud edge. In this regard, the following design is made:
+
+| Final Node Status     | Normal to the Cloud | Abnormal to the Cloud                                                 |
 | ---------------- | ------------ | ------------------------------------------------------------ |
-| Deemed normal among nodes | Normal | No longer schedule new pods to the node |
-| Deemed exceptional among nodes | Normal | Drain existing pods; remove the exceptional node from the EndPoint list; no longer schedule new pods to the node |
+| Normal to other nodes | Normal         | No more Pods are scheduled to this node.                                    |
+| Abnormal to other nodes | Normal         | Existing Pods are evicted and removed from the Endpoint list. No more Pods are scheduled to this node. |
 
 ### Solution features    
 
-When the cloud determines that a node is exceptional but other nodes determine that the node is normal, existing pods will not be drained. However, to ensure the stability of new services, no new pods will be scheduled to the node. The normal running of existing nodes is also attributable to the edge autonomy of edge clusters.
+When the cloud determines that the node status is abnormal, but other nodes consider it normal, although existing Pods will not be evicted, new Pods will not be scheduled to the node to ensure the stability of the additional services. Existing nodes will run normally thanks to the edge autonomy capability of the edge cluster.  
 
-Due to the particularity of edge networks and their topology, single-point network failures often occur between node groups. For example, in the case of a [smart factory](#SmartFactory), although the warehouses and workshops belong to the plant area, the network connection between them only depends on one key link. Once this link is interrupted, it will cause a split between the node groups. The solution provided in this document can ensure that the majority of nodes in two split node groups will not be judged to be exceptional. This prevents the situation where, due to exception determinations, pods can only be scheduled to a small number of nodes, resulting in excessive node load.
+Due to the particularity of the edge network and topology, there are often single points of failure between node groups. In a [smart factory](#SmartFactory), although the warehouse and plant are in the same region, they are connected only through a key linkage. Once the linkage is broken, the network will be disconnected. The solution provided in this document ensures that the node group with more nodes will not be considered abnormal when two node groups are disconnected from each other. Therefore, Pods will always be scheduled to the one with more nodes, avoiding excessive node loads.  
 
-Edge devices may be located in different regions and cannot communicate with each other. The solution provided in this document supports node status determination in multiple regions, and can easily group nodes by region or other methods to realize intra-group check. Even if nodes are re-grouped, there is no need to re-deploy detection components or reinitialize to adapt to the edge computing network layout. After grouping, nodes will only determine the status of nodes in the same group.
+Edge devices may be in different regions and not be connected. The solution provided in this document supports the determination of statuses of nodes in multiple regions. It allows you to easily group nodes by region or other criteria for intra-group checks. Even if nodes are regrouped, you do not need to redeploy or re-initialize detection add-ons to adapt them to the network conditions of edge computing. After grouping, nodes will only determine the statuses of nodes within their group.  
 
-## Directions    
 
-The distributed node status determination mechanism is enabled for TKE Edge clusters by default, whereas the multi-region check feature is disabled by default. To enable the multi-region check feature, perform the following operations:
+## Prerequisites
 
-### Grouping nodes by editing labels for nodes
+To use this feature, you need to open port 51005 of the node for distributed, smart health checks between nodes.
 
-1. Log in to the [Tencent Kubernetes Engine console](https://console.cloud.tencent.com/tke2) and click **Edge Cluster** in the left sidebar.
-2. Select the ID of the cluster to which the target node for label editing belongs to go to the cluster management page.
-3. Choose **Node Management** > **Node** to go to the node list page, as shown in the figure below:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/7eb0f380d0e949961c3d1801f7670e4b.png)
-4. In the row of the node for label editing, choose **More** > **Edit a Label** on the right.
-5. In the pop-up “Edit a Label” window, add a label based on your need, as shown in the figure below:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/866a3570131ce8d80aed1d522dd51d36.png)
-6. Click **OK**.
+## Directions
+>! It takes some time to deploy and configure edge and multi-region checks. They do not take effect immediately.
+>
+### Enabling edge health[](id:open)
+**Edge Health** is disabled by default. It can be manually enabled as instructed below:
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/edge?rid=1).
+2. On the cluster list page, select the target edge cluster ID to enter the cluster details page.
+3. Select **Basic Information** on the left sidebar to enter the **Basic Information** page.
+4. On the **Basic Information** page, click **Enable Edge Health**.
 
-### Enabling multi-region check
+### Enabling multi-region
 
-> ! When multi-region check is enabled, if nodes have not been grouped, each node is considered as a group by default, and the other nodes of other groups will not be checked.
+Under **Multi-region**, nodes are grouped by region. Node regions are identified by the `tencent.tkeedgehealth/topology-zone` label on the node. For example, `tencent.tkeedgehealth/topology-zone: zone0` indicates to group the node to `zone0`. Nodes with the same label value are considered to be in the same region. After **Multi-region** is enabled, nodes in the same region will check and vote for each other.
+>! 
+>- If this feature is enabled without the `tencent.tkeedgehealth/topology-zone` label, the node will only check its own health status.
+>- If this feature is not enabled, all nodes in a cluster will check each other, even if the node is labeled `tencent.tkeedgehealth/topology-zone`.
 
-1. Log in to the [Tencent Kubernetes Engine console](https://console.cloud.tencent.com/tke2) and click **Edge Cluster** in the left sidebar.
-2. Click the ID of the cluster for which you want to enable the multi-region check feature to go to the cluster management page.
-3. Select **Basic Information** to go to the “Basic Information” page and select **Enable Multi-region Check**.
-   
+
+
+#### Setting node region label in the console
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/edge?rid=1).
+2. On the cluster list page, select the target edge cluster ID to enter the cluster details page.
+3. Select **Node Management** > **Node** on the left sidebar to enter the **Node List** page.
+4. Select **More** > **Edit Label** on the right of the target node.
+5. In the **Edit Label** pop-up window, edit the label and click **Submit** as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/866a3570131ce8d80aed1d522dd51d36.png)
+
+#### Enabling multi-region
+After [enabling Edge Health](#open), click **Enable Multi-region**.

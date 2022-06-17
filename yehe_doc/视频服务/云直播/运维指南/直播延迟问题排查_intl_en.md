@@ -8,7 +8,7 @@ Therefore, if you have to use HLS (M3U8) for playback, you can reduce latency by
 
 ### Step 2. Check player settings
 
-The player of the MLVB SDK supports three latency control modes: Speedy, Smooth, and Auto. For more information about their settings, please see [Latency Control](https://intl.cloud.tencent.com/document/product/1071/38160).
+The player of the MLVB SDK supports three latency control modes: Speedy, Smooth, and Auto.
 
 **Speedy:** this mode keeps latency at 2-3 seconds or lower in most application scenarios and is suitable for live showroom.
 **Smooth:** this mode keeps latency at 5 seconds or lower in most application scenarios and is suitable for application scenarios that require smooth playback but are not sensitive to latency, such as game streaming.
@@ -17,7 +17,7 @@ The player of the MLVB SDK supports three latency control modes: Speedy, Smooth,
 Tencent Cloud allows you to watermark videos in the cloud, but this will increase latency by 1-2 seconds. Therefore, if you use the MLVB SDK, we recommend you watermark videos at the host end instead of in the cloud to reduce latency.
 
 ### Step 4. Check third-party pushers
-We guarantee superior streaming experience via our integrated solution, but if you use third-party software to push streams, we recommend that you compare your pusher with Tencent Cloud’s using the [trial demo](https://intl.cloud.tencent.com/document/product/1071/38147) of the MLVB SDK to see if your pusher is the cause of high latency. Many third-party pushers tend to keep increasing the buffer size to mitigate the problem of low upstream bandwidth.
+We guarantee superior streaming experience via our integrated solution, but if you use third-party software to push streams, we recommend that you compare your pusher with Tencent Cloud’s using the trial demo of the MLVB SDK to see if your pusher is the cause of high latency. Many third-party pushers tend to keep increasing the buffer size to mitigate the problem of low upstream bandwidth.
 
 ### Step 5. Check OBS settings
 If you use OBS to push streams and experience high latency, check your configuration against [Push via OBS](https://intl.cloud.tencent.com/document/product/267/31569). Make sure you set the keyframe interval to 1 or 2 seconds.

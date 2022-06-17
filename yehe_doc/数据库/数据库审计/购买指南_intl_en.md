@@ -1,9 +1,9 @@
 
 ## Supported Services
 Database Audit currently supports:
-- TencentDB for MySQL 5.6 and 5.7 (two-node and three-node) instances but not TencentDB for MySQL 5.5 or single-node instances.
+- TencentDB for MySQL 5.6, 5.7 and 8.0 (two-node and three-node) instances but not TencentDB for MySQL 5.5 or single-node instances.
 - TDSQL-C for MySQL.
-
+- TencentDB for MongoDB 4.0.
 ## Audit Price
 [Database Audit](https://console.cloud.tencent.com/dls/mysql) is billed by the amount of audit log storage for every clock-hour, and usage duration shorter than one hour will be calculated as one hour.
 

@@ -1,0 +1,3 @@
+Pengguna Tencent Cloud yang terhormat,
+
+Menurut undang-undang dan peraturan yang berlaku, Anda dilarang keras mengirim pesan SMS terkait pemasaran keuangan, perjudian, penipuan, percabulan, pornografi, kekerasan, dan informasi ilegal lainnya melalui layanan SMS Tencent Cloud. Jika akun Tencent Cloud Anda dicurigai mengirim pesan tersebut, Tencent Cloud akan menghentikan layanan Anda atau memblokir akun Anda sesuai dengan Perjanjian Layanan SMS. Jika ada aktivitas kriminal yang dicurigai, Tencent Cloud akan mengumpulkan petunjuk yang relevan (termasuk tetapi tidak terbatas pada informasi verifikasi identitas Tencent Cloud) dan mengirimkannya ke otoritas keamanan publik untuk diproses. Terima kasih atas dukungan dan pengertian Anda!

@@ -33,14 +33,15 @@ VOD에서 제공하는 URL에서 가져오기 기능에는 다음과 같은 제�
 
 VOD 콘솔의 [업로드 페이지](https://console.cloud.tencent.com/vod/media/upload)로 이동하여 업로드 방법으로 [동영상 풀링]을 선택하고 [행 추가]를 클릭하고 가져올 동영상의 URL을 입력합니다(여기에서는 [테스트 URL](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4)이 예로 사용됩니다. 기타 구성 항목은 선택 사항이며, 필요에 따라 입력 가능합니다). 그런 다음 왼쪽 하단 모서리에 있는 [동영상 가져오기]를 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/3871a2c05ca1f26f62e0518cb3943309.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d22654ee0f5d490a09df93d2c8cce778.png)
 >?동영상을 가져오는 데 걸리는 시간은 동영상 파일 크기와 정비례합니다. 긴 대기 시간을 피하기 위해 테스트에 작은 동영상(수십 메가바이트 크기)를 사용하는 것이 좋습니다.
 <span id="p13"></span>
 ### 3단계: 풀링 결과 보기
 
 1 - 2분 동안 기다린 후(동영상 파일 크기에 따라 다름) [미디어 자산 페이지](https://console.cloud.tencent.com/vod/media)에서 가져온 동영상을 볼 수 있습니다.
 
-![](https://main.qcloudimg.com/raw/7329a44db45f6cc11fa48ac41ae9cf7c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d25e0d8e54b2a59b5aa190c3ced62c8.png)
+
 >?가져오기 프로세스 중 브라우저가 미디어 자산 페이지에서 멈춘 경우, 가져온 동영상을 보려면 페이지를 새로고침해야 합니다.
 
 ## Cloud API 호출하여 풀링 업로드

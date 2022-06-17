@@ -44,7 +44,7 @@ To make it easier for you to view and stay up to date with how instances work, T
 | Rows Deleted /sec             | tup_deleted       | -    | Average number of deleted tupes per second. This metric is unavailable for read-only instances                 |
 | Rows Inserted /sec             | tup_inserted      | -    | Average number of inserted tupes per second. This metric is unavailable for read-only instances                  |
 | Rows Updated /sec             | tup_updated       | -    | Average number of updated tupes per second. This metric is unavailable for read-only instances                |
-| Rows Scanned in Index Scans /sec     | tup_inserted      | -    | Average number of tupes scanned by the index per second                               |
+| Rows Scanned in Index Scans /sec     | tup_fetched      | -    | Average number of tupes scanned by the index per second                               |
 | Rows Scanned in Sequential Scans /sec         | tup_returned      | -    | Average number of tupes scanned in the full table per second                                   |
 | Deadlocks                     | deadlocks         | -    | Total number of deadlocks in a collection period                                 |
 

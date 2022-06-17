@@ -16,16 +16,16 @@ Currently, VOD provides the following preset policies:
 
 1. Access the [User List](https://console.cloud.tencent.com/cam) page in the CAM console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create User**.
    ![](https://main.qcloudimg.com/raw/e700947b468ef25d4bf70ad1fecc6348.png)
-2. On the **Create User** page, click **Custom** under "Subuser" to enter the **Create Subuser** page.
-   ![](https://main.qcloudimg.com/raw/b8351b38a1df79df1836cb62268ecc74.png)
+2. On the **Create User** page, click **Custom Creation**.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/24a4e0e0b9461bdcbc0b4ea50e3e1267.png)
 3. Click **Next** and enter the user information.
    - Enter the username, select **Programming Access** and **Tencent Cloud Console Access**, and configure other options as needed.
    - Click **Next** and complete authentication as prompted.
-     ![](https://main.qcloudimg.com/raw/19b98c0b2dde4824d5eeaa52304ea3df.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/389813710fb711d28bb80f2f9979cd10.png)
 4. Set user permissions.
    - Search for and select the preset policy `QcloudVODFullAccess`.
    - Click **Next**.
-		<img src="https://main.qcloudimg.com/raw/0bd65772428242306300e315537853cd.png" width="704">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/597de21489df26315d604469d6906ec2.png" width="704">
 5. Click **Complete** in the "Review Info and Permission" column. After the user is created successfully, download the login link and security credentials as shown below and keep them safe.
    ![](https://main.qcloudimg.com/raw/cc223f380730f8dbfe81caa799be2dfc.png)
 <table>

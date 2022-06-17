@@ -6,7 +6,7 @@
 - **Adding an access path**: this method applies to scenarios where a sub-account has permissions to operate on objects but no permissions to access a bucket list. The access path can be a **Bucket** or a **Path under the bucket**. Please make sure the added path is authorized.
 - **Adding a preset policy**: you can add a preset policy QcloudCOSGetServiceAccess with your root account for a sub-account to access a bucket list. This method also allows you to check the statistics overview in the console.
 
->This feature applies to scenarios where a sub-account accesses a bucket list using the console.
+>!This feature applies to scenarios where a sub-account accesses a bucket list using the console.
 
 
 
@@ -33,7 +33,7 @@ The sub-account has been granted user permissions on a bucket by the root accoun
 ## Adding a Preset Policy
 A sub-account can access the bucket list by **adding the preset policy QcloudCOSGetServiceAccess (i.e., the permission to obtain the bucket list)** to it.
 
->
+>!
 > - The preset policy QcloudCOSFullAccess or QcloudCOSReadOnlyAccess can also grant a sub-account access permission to the bucket list. However, due to the wide coverage of permissions granted by these two policies, **they are not recommended for security reasons**.
 > - The collection of statistics in the overview requires the access permission to the bucket list. When the sub-account needs to pull statistics, please make sure that the root account has added the preset policy [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2) to it; otherwise, the system will prompt that the sub-account has no access permission to the statistics.
 
@@ -47,4 +47,4 @@ A sub-account can access the bucket list by **adding the preset policy QcloudCOS
 4. Click **OK**.
 5. Click the sub-account name to enter its details page where you view the added policies. When you no longer need a policy, you can unbind it.
 ![](https://main.qcloudimg.com/raw/7c3a9b54e0c7fa582ae9c458135a5b16.png)
->Now, you have successfully added a preset policy for the sub-account through the root account. Log in to the COS console with the sub-account, and you can check the bucket list and statistics overview.
+>?Now, you have successfully added a preset policy for the sub-account through the root account. Log in to the COS console with the sub-account, and you can check the bucket list and statistics overview.

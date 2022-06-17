@@ -1,3 +1,13 @@
+## 概述
+
+即时通信 IM 的终端用户需要随时都能够得知最新的消息，而由于移动端设备的性能与电量有限，当 App 处于后台时，为了避免维持长连接而导致的过多资源消耗，即时通信 IM 推荐您使用 Apple 提供的系统级推送通道（APNs）来进行消息通知，APNs 相比第三方推送拥有更稳定的系统级长连接，可以做到随时接受推送消息，且资源消耗大幅降低。
+
+
+>!
+> - 在没有主动退出登录的情况下，应用退后台、手机锁屏、或者应用进程被用户主动杀掉三种场景下，如果想继续接收到 IM 消息提醒，可以接入即时通信 IM 离线推送。
+> - 如果应用主动调用 logout 退出登录，或者多端登录被踢下线，即使接入了 IM 离线推送，也收不到离线推送消息。
+
+
 
  [](id:配置推送)
 
@@ -5,102 +15,116 @@
 
 如想要接收 APNs 离线消息通知，需要遵从如下几个步骤：
 
-1. [申请 APNs 证书](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.B3.E8.AF.B7-apns-.E8.AF.81.E4.B9.A6)。
+1. [申请 APNs 证书](#ApplyForCertificate)。
 2. [上传证书到 IM 控制台](#UploadCertificate)。
 3. 在 App 每次登录时，向苹果获取 [deviceToken](#DeviceToken)。
 4. 调用 [setAPNS](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) 接口将其上报到 IM 后台。
 
+
+
 [](id:ApplyForCertificate)
+
 ### 步骤1：申请 APNs 证书
 
 ####  开启 APP 远程推送
 
-1. 登录 [苹果开发者中心](https://developer.apple.com/account/) 网站，单击**Certificates,Identifiers & Profiles**或者侧栏的**Certificates, IDS & Profiles**，进入 Certificates, IDS & Profiles 页面。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/5888bba294f17848ab8343d507ee427d.jpg" style="zoom:50%;" />
+1. 登录 [苹果开发者中心](https://developer.apple.com/account/) 网站，单击【Certificates,Identifiers & Profiles】或者侧栏的【Certificates, IDs & Profiles】，进入 Certificates, IDs & Profiles 页面。
+   <img src="https://main.qcloudimg.com/raw/71c3b2db72e1bdcb55c0a68bae15e546.jpg" style="zoom:50%;" />
 
-2. 单击 Identifiers 右侧的**+**。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/ba3222cc6bda236f5080e897351c36a2.png" style="zoom:50%;" />
+2. 单击 Identifiers 右侧的【+】。
+   <img src="https://main.qcloudimg.com/raw/185cbd57e0a1a206d1e97e9f59c9cec5.jpg" style="zoom:50%;" />
 
 3. 您可以参考如下步骤新建一个 AppID，或者在您原有的 AppID 上增加 `Push Notification` 的 `Service`。
 
-   > ? 您 App 的 `Bundle ID` 不能使用通配符 `*`，否则将无法使用远程推送服务。
+   > ? 需要注意的是，您 App 的 `Bundle ID` 不能使用通配符 `*`，否则将无法使用远程推送服务。
 
-4. 勾选**App IDs**，单击**Continue**进行下一步。
+4. 勾选【App IDs】，单击【Continue】进行下一步。
    <img src="https://main.qcloudimg.com/raw/1e047d154a30d4dc95e3d9fa52779a37.jpg" style="zoom:50%;" />
 
-5. 选择**App**，单击**Continue**进行下一步。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/d8c81677b1c06cad5d2b4017a17eb5ae.jpg" style="zoom:50%;" />
+5. 选择【App】，单击【Continue】进行下一步。
+   <img src="https://main.qcloudimg.com/raw/584b1b697c21832d864a75c541da7fde.jpg" style="zoom:50%;" />
 
-6. 配置 `Bundle ID` 等其他信息，单击**Continue**进行下一步。
+6. 配置 `Bundle ID` 等其他信息，单击【Continue】进行下一步。
    <img src="https://qcloudimg.tencent-cloud.cn/raw/bc8105688bc097e5028585f4a1a57088.png" style="zoom:50%;" />
 
-7. 勾选**Push Notifications**，开启远程推送服务。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/bcdc52d8bae2c8bfabdbe2364d1b1180.jpg" style="zoom:50%;" />
+7. 勾选【Push Notifications】，开启远程推送服务。
+   <img src="https://main.qcloudimg.com/raw/4720490316ac5180de0742ca1ed50c8f.jpg" style="zoom:50%;" />
 
 #### 生成证书
 
-1. 选中您的 AppID，选择**Configure**。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/7f1a06b0d5e7ae4ea74106218e3169c9.jpg" style="zoom:50%;" />
+1. 选中您的 AppID，选择【Configure】。
+   <img src="https://main.qcloudimg.com/raw/ef9be51df8bb1c5d56febd10d8deb2a2.jpg" style="zoom:50%;" />
 
-2. 可以看到在**Apple Push Notification service SSL Certificates**窗口中有两个 `SSL  Certificate` ，分别用于开发环境（Development）和生产环境（Production）的远程推送证书，如下图所示：
+2. 可以看到在【Apple Push Notification service SSL Certificates】窗口中有两个 `SSL  Certificate` ，分别用于开发环境（`Development`）和生产环境（`Production`）的远程推送证书，如下图所示：
    <img src="https://main.qcloudimg.com/raw/bd55cffb96e80b505e70db33c73e27dd.jpg" style="zoom:50%;" />
 
-3. <span id="step3"></span>我们先选择开发环境（Development）的**Create Certificate**，系统将提示我们需要一个 Certificate Signing Request（CSR）。
+3. <span id="step3"></span>我们先选择开发环境（`Development`）的【Create Certificate】，系统将提示我们需要一个 `Certificate Signing Request（CSR）`。
    <img src="https://main.qcloudimg.com/raw/637ce37ec54ca5a4bf3006b527572da5.jpg" style="zoom:50%;" />
 
-4. 在 Mac 上打开**钥匙串访问工具（Keychain Access）**，在菜单中选择**钥匙串访问**>**证书助理**>**从证书颁发机构请求证书**（`Keychain Access - Certificate Assistant - Request a Certificate From a Certificate Authority`）。
-   
-5. 输入用户电子邮件地址（您的邮箱）、常用名称（您的名称或公司名），选择**存储到磁盘**，单击继续，系统将生成一个 `*.certSigningRequest` 文件。
-   
-6. 返回上述 [第3步骤](#step3) 中 Apple Developer 网站刚才的页面，单击**Choose File**上传生成的`*.certSigningRequest`文件。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/ac9f49f0d8afbcdfa42f13511334f00b.png" style="zoom:50%;" />
+4. 在 Mac 上打开**钥匙串访问工具（Keychain Access）**，在菜单中选择【钥匙串访问】>【证书助理】>【从证书颁发机构请求证书】（`Keychain Access - Certificate Assistant - Request a Certificate From a Certificate Authority`）。
+   <img src="https://im.sdk.cloud.tencent.cn/tools/resource/offlinepush/ios/en/cert_assistant_en.png" style="zoom:80%;" />
 
-7. 单击**Continue**，即可生成推送证书。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/c19c9bbdbdd8fdfe6b4f95af08d9035c.jpg" style="zoom:50%;" />
+5. 输入用户电子邮件地址（您的邮箱）、常用名称（您的名称或公司名），选择【存储到磁盘】，单击继续，系统将生成一个 `*.certSigningRequest` 文件。
+   <img src="https://im.sdk.cloud.tencent.cn/tools/resource/offlinepush/ios/en/root_cert_apply_en.png" style="zoom:80%;" />
 
-8. 单击**Download**下载开发环境的 `Development SSL Certificate` 到本地。
+6. 返回上述 [第3步骤](#step3) 中 `Apple Developer` 网站刚才的页面，单击【Choose File】上传生成的`*.certSigningRequest`文件。
+   <img src="https://main.qcloudimg.com/raw/59dfdb08864d6469199684c50c53b7e6.jpg" style="zoom:50%;" />
+
+7. 单击【Continue】，即可生成推送证书。
+   <img src="https://main.qcloudimg.com/raw/c337d5282ac10f6bec7c5ef5864b94cb.jpg" style="zoom:50%;" />
+
+8. 单击【Download】下载开发环境的 `Development SSL Certificate` 到本地。
    ![](https://main.qcloudimg.com/raw/9dece7f318c93e97732fe7ea7806f961.jpg)
 
 9. 再次按照上述步骤1 - 8，将生产环境的 `Production SSL Certificate` 下载到本地。
 
-   > ? 生产环境的证书实际是开发（Sandbox）+生产（Production）的合并证书，可以同时作为开发环境和生产环境的证书使用。
+   > ? 生产环境的证书实际是开发(`Sandbox`)+生产(`Production`)的合并证书，可以同时作为开发环境和生产环境的证书使用。
 
    []()
 
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/4720f74f609c9225f43ab977215ff53f.jpg" style="zoom:50%;" />
+   <img src="https://main.qcloudimg.com/raw/eaa08da45f36435155a4a37938ddc84e.jpg" style="zoom:50%;" />
 
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/62f6ff03e36340507d66e519796258dc.jpg" style="zoom:50%;" />
+   <img src="https://main.qcloudimg.com/raw/bf80c3a06f74080bf81fd857f15a2b86.jpg" style="zoom:50%;" />
 
    
 
 10. 双击打开下载的开发环境和生产环境的 `SSL Certificate`，系统会将其导入钥匙串中。
 
-11. 打开钥匙串应用，在**登录**>**我的证书**，右键分别导出刚创建的开发环境（`Apple Development IOS Push Service`）和生产环境（`Apple Push Services`）的 `P12` 文件。
-    
-> ! 保存`P12`文件时，请务必要为其设置密码。
+11. 打开钥匙串应用，在【登录】>【我的证书】，右键分别导出刚创建的开发环境（`Apple Development IOS Push Service`）和生产环境（`Apple Push Services`）的 `P12` 文件。
+    <img src="https://im.sdk.cloud.tencent.cn/tools/resource/offlinepush/ios/en/push_cert_dev_en.png" style="zoom:80%;" />
+
+    > ! 保存`P12`文件时，请务必要为其设置密码。
 
 
 
 [](id:UploadCertificate)
 
 ### 步骤2：上传证书到控制台
+
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
+
 2. 单击目标应用卡片，进入应用的基础配置页面。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/621a7a2a4a674d34b388ada16192dc98.png" style="zoom:90%;" />
-3. 单击**iOS 原生离线推送设置**右侧的**添加证书**。
-4. 选择证书类型，上传 iOS 证书（p.12），设置证书密码，单击**确认**。
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/a49c35525061ff982334d5a2504f1421.png" style="zoom:90%;" />
+
+   <img src="https://im.sdk.cloud.tencent.cn/tools/resource/offlinepush/ios/en/console_en.png" style="zoom:50%;" />
+
+3. 单击【iOS 原生离线推送设置】右侧的【添加证书】。
+
+4. 选择证书类型，上传 iOS 证书（p.12），设置证书密码，单击【确认】。
+
+   <img src="https://im.sdk.cloud.tencent.cn/tools/resource/offlinepush/ios/en/console_upload_en.png" style="zoom:50%;" />
+
+   []()
 
 >!
 >- 上传证书名最好使用全英文（尤其不能使用括号等特殊字符）。
 >- 上传证书需要设置密码，无密码收不到推送。
 >- 发布 App Store 的证书需要设置为生产环境，否则无法收到推送。
 >- 上传的 p12 证书必须是自己申请的真实有效的证书。
-
 [](id:businessid)
 
 5. 待推送证书信息生成后，记录证书的 ID。
 
+   <img src="https://im.sdk.cloud.tencent.cn/tools/resource/offlinepush/ios/en/console_cert_en.png" style="zoom:50%;" />
 
 [](id:DeviceToken)
 
@@ -108,7 +132,7 @@
 
 您可以在您的 App 中添加如下代码，用来向苹果的后台服务器获取 deviceToken：
 
-> ? 考虑到合规，建议您在用户同意隐私协议之后再向苹果请求 deviceToken。
+> ? 考虑到合规，建议您在用户同意隐私协议之后再向苹果请求 deviceToken
 
 ```
 // 向苹果后台请求 DeviceToken
@@ -141,7 +165,7 @@
 
 ### 步骤4：登录 IM SDK 后上传 deviceToken 到腾讯云
 
-在 IM SDK 登录成功后，就可以调用 [setAPNS](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) 接口，将 [步骤3](#DeviceToken) 中获取的 deviceToken 上传到腾讯云后台，示例代码如下，可参考 [ TUIKitDemo](https://github.com/TencentCloud/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/AppDelegate+Push.m) 接入：
+在 IM SDK 登录成功后，就可以调用 [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a73bf19c0c019e5e27ec441bc753daa9e) 接口，将 [步骤3](#DeviceToken) 中获取的 deviceToken 上传到腾讯云后台，示例代码如下，可参考 [ TUIKitDemo](https://github.com/TencentCloud/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/AppDelegate+Push.m) 接入：
 
 ```
 - (void)push_registerIfLogined:(NSString *)userID
@@ -172,6 +196,9 @@
 
 ## 推送格式 
 
+推送格式示例如下图所示。
+<img src="https://im.sdk.cloud.tencent.cn/tools/resource/tuicalling/ios/offline_push_tuicalling_ios.png" width=480 />
+
 ### 通用推送规则
 
 对于单聊消息，APNs 推送规则如下，其中昵称是发送方用户昵称，如果未设置昵称，则只显示内容。
@@ -193,7 +220,7 @@ APNs 推送内容部分由消息体中各个 `Elem` 内容组成，不同 `Elem`
 | 语音 Elem   | 显示`[语音]`                                                 |
 | 文件 Elem   | 显示`[文件]`                                                 |
 | 图片 Elem   | 显示`[图片]`                                                 |
-| 自定义 Elem | 显示发送消息时设置的 [desc](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html#aca3d09a4807ffc6486d556c055605c41) 的字段，如果 `desc` 不设置，则不进行推送 |
+| 自定义 Elem | 显示发送消息时设置的 [desc](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html#aca3d09a4807ffc6486d556c055605c41) 的字段，如果 `desc` 不设置，则不进行推送 |
 
 > ? 如果默认的推送规则不满足您的要求，IMSDK 支持自定义，详见 [自定义离线推送展示](#customdisplay) 。
 
@@ -201,14 +228,15 @@ APNs 推送内容部分由消息体中各个 `Elem` 内容组成，不同 `Elem`
 
 如果您需要在多个 App 之间互相接收推送消息，可以将多个 App 中的 `SDKAppID` 设置为相同值。
 
-> ? 不同的 App 需要使用不同的推送证书，您需要为每一个 App [申请 APNs 证书](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.B3.E8.AF.B7-apns-.E8.AF.81.E4.B9.A6) 并完成 [离线推送配置](#配置推送)。
+> ? 不同的 App 需要使用不同的推送证书，您需要为每一个 App [申请 APNs 证书](#ApplyForCertificate) 并完成 [离线推送配置](#配置推送)。
 
 ## 自定义角标
 - 默认情况下，当 App 进入后台后，IMSDK 会将当前 IM 未读消息总数设置为角标。
 - 如果想自定义角标，可按照如下步骤设置：
- 1. App 调用 [- (void)setAPNSListener:(id<V2TIMAPNSListener>)apnsListener](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07APNS_08.html#a62e1694cf9e1d65b76f90064cbcbb683) 接口设置监听。
- 2. App 实现 [- (uint32_t)onSetAPPUnreadCount](https://im.sdk.qcloud.com/doc/zh-cn/protocolV2TIMAPNSListener-p.html#a164265ae900e0ddeb6d6393786a548ba) 接口，并在内部返回需要自定义的角标。
+ 1. App 调用 [- (void)setAPNSListener:(id<V2TIMAPNSListener>)apnsListener](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a62e1694cf9e1d65b76f90064cbcbb683) 接口设置监听。
+ 2. App 实现 [- (uint32_t)onSetAPPUnreadCount](https://im.sdk.qcloud.com/doc/en/protocolV2TIMAPNSListener-p.html#a164265ae900e0ddeb6d6393786a548ba) 接口，并在内部返回需要自定义的角标。
 - 如果 App 接入了离线推送，当接收到新的离线推送时，App 角标会在基准角标（默认是 IM 未读消息总数，如果自定义了角标，则以自定义角标为准）的基础上加 1 逐条递增。
+
 ```
 // 1. 设置监听
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -251,7 +279,7 @@ APNs 推送内容部分由消息体中各个 `Elem` 内容组成，不同 `Elem`
 
 ### iOS 推送提示音
 
-请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置 [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) 的 `iOSSound` 字段， `iOSSound` 传语音文件名。
+请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置 [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) 的 `iOSSound` 字段， `iOSSound` 传语音文件名。
 
 > ? 
 >
@@ -272,12 +300,11 @@ pushInfo.iOSSound = @"phone_ringing.mp3"; // your voice file's name
 
 ### Android 推送提示音
 
-请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置 [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) 的 `AndroidSound` 字段， `AndroidSound` 传语音文件名。
+请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置 [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) 的 `AndroidSound` 字段， `AndroidSound` 传语音文件名。
 
 > ? 
 >
-> * 离线推送声音设置（仅对 Android 生效, 仅 imsdk 6.1 及以上版本支持） 只有华为和谷歌手机支持设置铃音提示，
-> * 小米铃音设置请您参照：https://dev.mi.com/console/doc/detail?pId=1278%23_3_0 
+> * 离线推送声音设置（仅对 Android 生效, 仅 imsdk 6.1 及以上版本支持） 只有华为和谷歌手机支持设置铃音提示
 > * 如果要自定义 AndroidSound，需要先把语音文件放到 Android 工程的 raw 目录中，然后把语音文件名（不需要后缀名）设置给 AndroidSound。
 
 ```
@@ -299,7 +326,7 @@ pushInfo.AndroidSound = @"phone_ringing"; // your voice file's name
 
 ## 自定义离线推送展示
 
-请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置  [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) 的`title` 和 `desc`字段，其中 `title` 设置后，会在默认的推送内容上多展示 `title` 内容，`desc` 设置后，推送内容会变成 `desc` 内容。
+请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置  [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) 的`title` 和 `desc`字段，其中 `title` 设置后，会在默认的推送内容上多展示 `title` 内容，`desc` 设置后，推送内容会变成 `desc` 内容。
 
 ```
 V2TIMOfflinePushInfo *info = [[V2TIMOfflinePushInfo alloc] init];
@@ -324,7 +351,7 @@ info.desc = @"You hava a call invitation.";   // 离线推送展示的内容
 
 ## 自定义离线推送点击跳转逻辑
 
-请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置  [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) 的`ext` 字段，当用户收到离线推送启动 APP 的时候，可以在 `AppDelegate -> didReceiveRemoteNotification` 系统回调获取到 `ext` 字段，然后根据 `ext` 字段内容跳转到指定的 UI 界面。可以参考 [TUIKitDemo](https://github.com/TencentCloud/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/AppDelegate%2BPush.m) 接入。
+请在调用  [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 发送消息的时候设置  [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) 的`ext` 字段，当用户收到离线推送启动 APP 的时候，可以在 `AppDelegate -> didReceiveRemoteNotification` 系统回调获取到 `ext` 字段，然后根据 `ext` 字段内容跳转到指定的 UI 界面。可以参考 [TUIKitDemo](https://github.com/TencentCloud/TIMSDK/blob/master/iOS/Demo/TUIKitDemo/AppDelegate%2BPush.m) 接入。
 
 本文以 “denny 给 vinson 发送消息” 的场景为例。
 - 发送方：denny 需在发送消息时设置推送扩展字段 `ext`：
@@ -362,11 +389,11 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
 
 ### 自定义消息为什么收不到离线推送？
 
-自定义消息的离线推送和普通消息不太一样，自定义消息的内容我们无法解析，不能确定推送的内容，所以默认不推送，如果您有推送需求，需要您在 [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 的时候设置  [offlinePushInfo](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMOfflinePushInfo.html) 的 `desc`字段，推送的时候会默认展示 `desc` 信息。
+自定义消息的离线推送和普通消息不太一样，自定义消息的内容我们无法解析，不能确定推送的内容，所以默认不推送，如果您有推送需求，需要您在 [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 的时候设置  [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) 的 `desc`字段，推送的时候会默认展示 `desc` 信息。
 
 ### 如何关闭离线推送消息的接收？
 
-如果您想关闭离线推送消息的接收，可以通过设置 [setAPNS](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07APNS_08.html#a6aecbdc0edaa311c3e4e0ed3e71495b1) 接口的 `config` 参数为 `nil` 来实现。该功能从5.6.1200 版本开始支持。
+如果您想关闭离线推送消息的接收，可以通过设置 [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a6aecbdc0edaa311c3e4e0ed3e71495b1) 接口的 `config` 参数为 `nil` 来实现。该功能从5.6.1200 版本开始支持。
 
 ### 收不到推送，且后台报错 bad devicetoken。
 
@@ -399,4 +426,15 @@ confg.token = self.deviceToken;
 
 
 
+## 交流与反馈
+
+加入腾讯云即时通信 IM 技术交流群，您将获得：
+
+* 可靠的技术支持
+* 详细的产品信息
+* 紧密的行业交流
+
+Telegram交流群：[点击加入](https://t.me/tencent_imsdk)
+
+Discord交流群：[点击加入](https://discord.com/invite/8EmN2ma25W)
 

@@ -19,7 +19,7 @@ Clusters support security group and VPC network isolation and automatically main
 Compute nodes can be quickly upgraded/downgraded and scaled within seconds according to business needs, which, coupled with elastic storage, minimizes the costs of computing resources.
 
 ## Fast Read-Only Scaling
-1–15 read-only compute nodes can be quickly added in a cluster within seconds, enabling fast response to business surges and fluctuations.
+One to fifteen read-only compute nodes can be quickly added in a cluster within seconds, enabling fast response to business surges and fluctuations.
 
 ## Snapshot Backup and Restoration
 The fast snapshot backup feature based on multiple replicas of data provides continuous backup protection for your data and eliminates the need for the sync and migration of backup data in the primary-secondary architecture. Up to gigabytes of data can be rolled back per second, ensuring the rapid restoration of business data.

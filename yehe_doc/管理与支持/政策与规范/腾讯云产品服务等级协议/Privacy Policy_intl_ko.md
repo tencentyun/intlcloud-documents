@@ -593,6 +593,8 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 34.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46315).
 35.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46725).
 36.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46973).
+37.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47222).
+38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47178).
 
 ### 개정 기록
 [개인정보 처리방침](https://intl.cloud.tencent.com/document/product/301/43505)(버전1.0)

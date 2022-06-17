@@ -18,7 +18,9 @@
 |ERR_USER_ID_INVALID|-3319|Invalid `userID`.|
 |ERR_USER_SIG_INVALID|-3320|Invalid `userSig`.|
 |ERR_ROOM_REQUEST_ENTER_ROOM_TIMEOUT|-3308|Room entry request timed out. Please check your network.|
+|ERR_SERVER_INFO_PRIVILEGE_FLAG_ERROR|-100006|Failed to verify the permission ticket. Please check whether `privateMapKey` is correct.|
 |ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|Service unavailable. Please check whether there are remaining minutes in your packages and whether your Tencent Cloud account has overdue payment.|
+|ERR_SERVER_INFO_ECDH_GET_TINYID      |-100018| `userSig` verification failed. Please check whether `userSig` is correct.|
 
 
 ### Error code for room exit
@@ -36,16 +38,16 @@ You can use the callback function `TRTCCloudDelegate.OnError()` to capture relat
 
 | Code | Value | Description |
 |---|---|---|
-|ERR_CAMERA_START_FAIL|-1301|Failed to turn camera on. This error occurs when, for example, there is a problem with the camera configuration program (driver) on Windows or macOS. In this case, turn the camera off and on again, restart the camera, or update the configuration program.|
+|ERR_CAMERA_START_FAIL|-1301|Failed to turn camera on. This error may occur when there is a problem with the camera configuration program (driver) on Windows or macOS. In this case, disable and reenable the camera, restart the camera, or update the configuration program.|
 |ERR_CAMERA_NOT_AUTHORIZED|-1314|Camera not authorized. This error usually occurs on mobile devices and may be because users denied camera permission.|
 |ERR_CAMERA_SET_PARAM_FAIL|-1315|Failed to set camera parameters (unsupported values or others).|
 |ERR_CAMERA_OCCUPY|-1316|Camera occupied. Try using another camera. |
-|ERR_MIC_START_FAIL|-1302|Failed to turn mic on. This error occurs when, for example, there is a problem with the mic configuration program (driver) on Windows or macOS. In this case, turn the mic off and on again, restart the mic, or update the configuration program.|
+|ERR_MIC_START_FAIL|-1302|Failed to turn mic on. This error may occur when there is a problem with the mic configuration program (driver) on Windows or macOS. In this case, disable and reenable the mic, restart the mic, or update the configuration program.|
 |ERR_MIC_NOT_AUTHORIZED|-1317|Mic not authorized. This error usually occurs on mobile devices and may be because users denied mic permission.|
 |ERR_MIC_SET_PARAM_FAIL|-1318|Failed to set mic parameters.|
-|ERR_MIC_OCCUPY|-1319|Mic occupied. This error occurs when, for example, the user is in a call on the mobile device, in which case TRTC will fail to turn the mic on.|
+|ERR_MIC_OCCUPY|-1319|Mic already in use. This error may occur when the user is currently in a call on the mobile device, in which case TRTC will fail to turn the mic on.|
 |ERR_MIC_STOP_FAIL|-1320|Failed to turn mic off.|
-|ERR_SPEAKER_START_FAIL|-1321|Failed to turn speaker on. This error occurs when, for example, there is a problem with the speaker configuration program (driver) on Windows or macOS. In this case, turn the speaker off and on again, restart the speaker, or update the configuration program.|
+|ERR_SPEAKER_START_FAIL|-1321|Failed to turn speaker on. This error may occur when there is a problem with the speaker configuration program (driver) on Windows or macOS. In this case, disable and reenable the speaker, restart the speaker, or update the configuration program.|
 |ERR_SPEAKER_SET_PARAM_FAIL|-1322|Failed to set speaker parameters.|
 |ERR_SPEAKER_STOP_FAIL|-1323|Failed to turn speaker off.|
 
@@ -69,9 +71,9 @@ You can use the callback function `TRTCCloudDelegate.OnError()` to capture relat
 
 | Code | Value | Description |
 |---|---|---|
-|ERR_VIDEO_ENCODE_FAIL|-1303|Failed to encode video frames. This error occurs when, for example, a user on iOS switches to another app, which may cause the system to release the hardware encoder. When the user switches back, this error may be thrown before the hardware encoder is restarted.|
+|ERR_VIDEO_ENCODE_FAIL|-1303|Failed to encode video frames. This error may occur when a user on iOS switches to another app, which may cause the system to release the hardware encoder. When the user switches back, this error may be thrown before the hardware encoder is restarted.|
 | PUSH_ERR_UNSUPPORTED_RESOLUTION | -1305 | Unsupported video resolution. |
-|ERR_AUDIO_ENCODE_FAIL|-1304|Failed to encode audio frames. This error occurs when, for example, the SDK could not process the custom audio data passed in.|
+|ERR_AUDIO_ENCODE_FAIL|-1304|Failed to encode audio frames. This error may occur when the SDK could not process the custom audio data passed in.|
 | PUSH_ERR_UNSUPPORTED_SAMPLERATE | -1306 | Unsupported audio sample rate. |
 
 
@@ -101,37 +103,37 @@ You can use the callback functions `TRTCCloudDelegate.onStartPublishing()` and `
 |ERR_ROOM_REQUEST_STOP_PUBLISHING_ERROR|-3336|Abnormal signaling of stopping pushing to Tencent Cloud’s live streaming CDN.|
 
 
-### Error codes for cross-room co-anchoring
+### Error codes for cross-room communication
 
-"TRTCCloud.ConnectOtherRoom()" will trigger this type of error code if cross-room co-anchoring fails. You can use the callback function "TRTCCloudDelegate.onConnectOtherRoom()" to capture related notifications.
+`TRTCCloud.ConnectOtherRoom()` will trigger this type of error code if cross-room communication fails. You can use the callback function `TRTCCloudDelegate.onConnectOtherRoom()` to capture related notifications.
 
 | Code | Value | Description |
 |---|---|---|
-|ERR_ROOM_REQUEST_CONN_ROOM_TIMEOUT|-3326|Co-anchoring request timed out.|
-|ERR_ROOM_REQUEST_DISCONN_ROOM_TIMEOUT|-3327|Request to exit co-anchoring timed out.|
+|ERR_ROOM_REQUEST_CONN_ROOM_TIMEOUT|-3326|Cross-room communication request timed out.|
+|ERR_ROOM_REQUEST_DISCONN_ROOM_TIMEOUT|-3327|Request to end cross-room communication timed out.|
 |ERR_ROOM_REQUEST_CONN_ROOM_INVALID_PARAM|-3328|Invalid parameter.|
-|ERR_CONNECT_OTHER_ROOM_AS_AUDIENCE|-3330|You are in the role of audience and cannot initiate or end co-anchoring. You need to switch to the anchor role using `switchRole()`.|
-|ERR_SERVER_CENTER_CONN_ROOM_NOT_SUPPORT|-102031|Cross-room co-anchoring not supported.|
-|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_NUM|-102032|Reached the upper limit of co-anchoring calls.|
-|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_RETRY_TIMES|-102033|Reached the upper limit of retries for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_REQ_TIMEOUT|-102034|Cross-room co-anchoring request timed out.|
-|ERR_SERVER_CENTER_CONN_ROOM_REQ|-102035|Incorrect format of cross-room co-anchoring request.|
-|ERR_SERVER_CENTER_CONN_ROOM_NO_SIG|-102036|No signature for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_DECRYPT_SIG|-102037|Failed to decrypt signature for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_NO_KEY|-102038|Decryption key for cross-room co-anchoring signature not found.|
-|ERR_SERVER_CENTER_CONN_ROOM_PARSE_SIG|-102039|Signature parsing error for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|Incorrect timestamp of cross-room co-anchoring signature.|
-|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|Mismatch of room ID in cross-room co-anchoring signature.|
-|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|Mismatch of username in cross-room co-anchoring signature.|
-|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|The user did not initiate co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|Failed to start cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|Failed to cancel cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_ROOM_NOT_EXIST|-102046|The room being connected for co-anchoring does not exist.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_REACH_MAX_ROOM|-102047|The room being connected reached the upper limit of co-anchoring calls.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_NOT_EXIST|-102048|The user being called for co-anchoring does not exist.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_DELETED|-102049|The user being called for co-anchoring was deleted.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_FULL|-102050|All resources of the user being called for co-anchoring are occupied.|
-|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SEQ|-102051|Sequence number for co-anchoring not in sequential order.|
+|ERR_CONNECT_OTHER_ROOM_AS_AUDIENCE|-3330|You are an audience member and cannot initiate or end cross-room communication. You need to switch to the anchor role using `switchRole()`.|
+|ERR_SERVER_CENTER_CONN_ROOM_NOT_SUPPORT|-102031|Cross-room communication not supported.|
+|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_NUM|-102032|Reached the maximum number of cross-room calls.|
+|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_RETRY_TIMES|-102033|Reached the maximum number of retries for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_REQ_TIMEOUT|-102034|Cross-room communication request timed out.|
+|ERR_SERVER_CENTER_CONN_ROOM_REQ|-102035|Cross-room communication request format is incorrect.|
+|ERR_SERVER_CENTER_CONN_ROOM_NO_SIG|-102036|No signature for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_DECRYPT_SIG|-102037|Failed to decrypt signature for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_NO_KEY|-102038|Decryption key for cross-room communication signature not found.|
+|ERR_SERVER_CENTER_CONN_ROOM_PARSE_SIG|-102039|Signature parsing error for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|Incorrect timestamp of cross-room communication signature.|
+|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|Mismatch of room ID in cross-room communication signature.|
+|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|Mismatch of username in cross-room communication signature.|
+|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|The user did not initiate cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|Failed to start cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|Failed to cancel cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_ROOM_NOT_EXIST|-102046|The room being connected for cross-room communication does not exist.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_REACH_MAX_ROOM|-102047|The room being connected reached the maximum number of cross-room calls.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_NOT_EXIST|-102048|The user being called for cross-room communication does not exist.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_DELETED|-102049|The user being called for cross-room communication was deleted.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_FULL|-102050|All resources of the user being called for cross-room communication are occupied.|
+|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SEQ|-102051|Sequence number for cross-room communication not in sequential order.|
 
 
 ## Warning Codes
@@ -149,7 +151,7 @@ Warning codes do not require your special attention. You can choose whether to p
 |WARNING_CAMERA_NOT_AUTHORIZED|1112|User did not grant the application camera access.|
 |WARNING_MICROPHONE_DEVICE_EMPTY|1201|No available mic found.|
 |WARNING_SPEAKER_DEVICE_EMPTY|1202|No available speaker found.|
-|WARNING_MICROPHONE_NOT_AUTHORIZED|1203||User did not grant the application mic access.|
+|WARNING_MICROPHONE_NOT_AUTHORIZED|1203|User did not grant the application mic access.|
 |WARNING_MICROPHONE_DEVICE_ABNORMAL|1204|No audio capturing device available (for example, because the device is occupied).|
 |WARNING_SPEAKER_DEVICE_ABNORMAL|1205|No audio playback device available (for example, because the device is occupied).|
 |WARNING_VIDEO_FRAME_DECODE_FAIL|2101|Failed to decode current video frame.|
@@ -163,7 +165,7 @@ Warning codes do not require your special attention. You can choose whether to p
 |WARNING_AUDIO_RECORDING_WRITE_FAIL|7001|Failed to write recorded audio to file.|
 |WARNING_ROOM_DISCONNECT|5101|Network disconnected.|
 |WARNING_IGNORE_UPSTREAM_FOR_AUDIENCE|6001|You are in the role of audience. The request to send audio/video data is ignored.|
-|WARNING_NET_BUSY|1101|Bad network connection: data upload blocked due to limited upstream bandwidth.|
+|WARNING_NET_BUSY|1101|Bad network connection: Data upload blocked due to limited upstream bandwidth.|
 |WARNING_RTMP_SERVER_RECONNECT|1102|Push error. The network is disconnected. Reconnecting… (max attempts: 3).|
 |WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|Pull error. The network is disconnected. Reconnecting… (max attempts: 3).|
 |WARNING_RECV_DATA_LAG|2104|Unstable incoming packets. This may be caused by insufficient downstream bandwidth or unstable streams from the anchor.|
@@ -178,5 +180,5 @@ Warning codes do not require your special attention. You can choose whether to p
 |WARNING_PLAY_LIVE_STREAM_INFO_CONNECT_FAIL|3009|Live streaming error. Failed to call `connect` to connect to server. This is an internal error code of the SDK and is not thrown.|
 |WARNING_NO_STEAM_SOURCE_FAIL|3010|Live streaming error. Connection failed as there was no video in the stream address. This is an internal error code of the SDK and is not thrown.|
 |WARNING_ROOM_RECONNECT|5102|Network disconnected. Reconnecting…|
-|WARNING_ROOM_NET_BUSY|5103|Bad network connection: data upload blocked due to limited upstream bandwidth.|
+|WARNING_ROOM_NET_BUSY|5103|Bad network connection: Data upload blocked due to limited upstream bandwidth.|
     

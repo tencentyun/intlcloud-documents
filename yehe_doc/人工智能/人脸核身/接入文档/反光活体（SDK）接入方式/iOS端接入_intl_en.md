@@ -1,11 +1,11 @@
 ### Environment Requirements
 
-1. Development environment: Xcode 11.0 or later
+1. Development environment: Xcode 11.0 or later.
 2. The FaceID SDK for iOS is only supported by iOS 9.0 or later.
 
 ### **1. Manual integration**
 
-1. Import libraries and files
+1. Import libraries and files.
 
 Click `Link Binary With Libraries` to add frameworks.
 
@@ -62,7 +62,7 @@ end
 
 >? For the file levels and specific settings, see the demo.
 
-### Build Phases settings
+### Build Phases Settings
 
 1. Click `Other Linker Flags` to add **-ObjC**.
 2. Change the extension of `ViewController.m` to `.mm`.
@@ -163,7 +163,7 @@ withFailCallback:(HuiYanConfigFailCallback)huiYanConfigFailCallback;
 
 Feature:
 
-In the local detection, the FaceID SDK pulls the configuration parameters as the parameters for getting the light sequence in subsequent steps.
+It is an API for the FaceID SDK to pull configuration parameters during local detection that are used as the parameters for getting the light sequence in subsequent steps.
 
 Input parameters:
 
@@ -203,7 +203,7 @@ Input parameters:
 | --------- | ------------------ | ------------------------------------ | ----------------- |
 | NSSString | authLicense | Name of the license file requested for user identity verification | Null |
 | long | authTimeOutMs | Timeout period of liveness detection | 10,000 ms (10s) |
-| BOOL | isDeleteVideoCache | Whether to delete the local cache of the identity verification video | YES |
+| BOOL | isDeleteVideoCache | Whether to delete the local cache of the identity verification video | true |
 
 ### HuiYanConfigSuccCallback
 

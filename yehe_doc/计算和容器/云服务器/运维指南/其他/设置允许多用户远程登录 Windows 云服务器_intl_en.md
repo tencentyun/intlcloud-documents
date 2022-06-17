@@ -1,46 +1,90 @@
-## Scenario
-This document shows you how to configure a multi-user remote login to Windows CVM, taking a CVM with Windows Server 2012 R2 as the operating system as an example.
+## Overview
+This document shows you how to configure a multi-user remote login to Windows CVM, taking a CVM with Windows Server 2016 R2 as the operating system as an example.
 
-## Steps
+<dx-alert infotype="notice" title="">
+The trial period of the multi-user remote login feature provided by Microsoft is 120 days. If you haven't purchased multi-user login licenses (RDS CALs), after the trial ends, you can log in to CVM only through the `mstsc /admin` command but not Remote Desktop. Windows Server allows two users to log in at the same time by default, which meets most needs. Evaluate your needs based on your actual business scenarios, and if you strongly need to configure multi-user remote login, proceed as instructed in this document.
+</dx-alert>
+
+
+## Directions
+
 ### Adding remote desktop service
 1. Log in to the Windows CVM.
-2. In the operating system interface, click <img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img> to open **Server Manager**, as shown below:
-![](https://main.qcloudimg.com/raw/66bb5237846f1dd79e3145bfd82d9257.png)
-3. Click **Add roles and features**, and the **Add Roles and Features Wizard** window will pop up.
-4. In the “Add Roles and Features Wizard” window, keep the default parameters for the first 3 steps.
-5. In the **Select server roles** page, check **Remote Desktop Services** and click **Next**, as shown below: 
-![](https://main.qcloudimg.com/raw/54d329c2667ac5c60ffdc2b74f1fc555.png)
-6. Keep the default parameters and click **Next** two times in a row.
-7. In the **Select Role Service** interface, check **Remote Desktop Session Host**, as shown below:
-The “Add features that are required for remote desktop session host?” prompt box will pop up.
-![](https://main.qcloudimg.com/raw/8d24fd515bd363dc020257c2843c5562.png)
-8. In the “Add features required for remote desktop session host?” prompt box, click **Add Features**, as shown below: 
-![](https://main.qcloudimg.com/raw/2a33d896c16b1d98012536cdc3776248.png)
-9. In the **Select Role Service** page, check **Remote Desktop Licensing**, as shown below:
-The “Add features that required for Remote Desktop Licensing?” prompt box will pop up.
-![](https://main.qcloudimg.com/raw/1c908dc77f50488387a2fdbfda08ba35.png)
-10. In the “Add features that required for Remote Desktop Licensing?” prompt box, click **Add Features**.
-![](https://main.qcloudimg.com/raw/d7aa066366b168ac8a7475155d34ea19.png)
+2. On the desktop, click <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> and select <img src="https://qcloudimg.tencent-cloud.cn/raw/8a27d0993c99b2564c33df6bbabec4f7.png" style="margin: -5px 0px;"/> in the pop-up window to open **Server Manager** as shown below:
+    ![](https://main.qcloudimg.com/raw/66bb5237846f1dd79e3145bfd82d9257.png)
+3. Click **Add roles and features**, and the **Add Roles and Features Wizard** will pop up.
+4. In the **Add Roles and Features Wizard** window, keep the default parameters for the first three steps (click **Next** three times in a row).
+5. On the **Select server roles** page, select **Remote Desktop Services** and click **Next** as shown below:
+    ![](https://main.qcloudimg.com/raw/54d329c2667ac5c60ffdc2b74f1fc555.png)
+6. Keep the default parameters and click **Next** twice in a row.
+7. On the **Select role services** page, select **Remote Desktop Session Host** as shown below:
+    ![](https://main.qcloudimg.com/raw/8d24fd515bd363dc020257c2843c5562.png)
+8. In the **Add features that are required for Remote Desktop Session Host?** pop-up window, click **Add Features** as shown below:
+    ![](https://main.qcloudimg.com/raw/2a33d896c16b1d98012536cdc3776248.png)
+9. On the **Select role services** page, select **Remote Desktop Licensing** as shown below:
+    ![](https://main.qcloudimg.com/raw/1c908dc77f50488387a2fdbfda08ba35.png)
+10. In the **Add features that are required for Remote Desktop Licensing?** pop-up window, click **Add Features** as shown below:
+    ![](https://main.qcloudimg.com/raw/d7aa066366b168ac8a7475155d34ea19.png)
 11. Click **Next**.
-12. Check **Restart the destination server automatically if required**, and click **Yes** in the pop-up prompt box, as shown below:
-![](https://main.qcloudimg.com/raw/df280b0a66470be404f114bd17c47d21.png)
-13. Click **Install** and wait for the remote desktop service installation to complete.
-
-### Configuring multi-user remote login to instance
-1. Use VNC to log in to Windows CVM.
-2. In the operating system interface, click <img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;"></img> to open the Windows PowerShell window.
-3. In the Windows PowerShell window, enter **gpedit.msc** and press **Enter** to open the **Local Group Policy Editor**.
-4. In the left navigation tree, select **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Remote Desktop Services** > **Remote Desktop Session Host** > **Connections**, and double click **Limit number of connections**, as shown below:
-![](https://main.qcloudimg.com/raw/e0420d2bb8ddd3e1524ee688173cb9d1.png)
-5. In the **Limit number of connections** window that pops up, select **Enabled**, and enter the maximum number of simultaneous remote users in **RD Maximum Connections allowed**, as shown below:
-![](https://main.qcloudimg.com/raw/066c9dfb06dc4c092424c4e1142f7471.png)
-6. Click **OK**.
-4. In the left navigation tree, select **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Remote Desktop Services** > **Remote Desktop Session Host** > **Connections**, and double click **Restrict Remote Desktop Services users to a single Remote Desktop Services session**, as shown below:
-![](https://main.qcloudimg.com/raw/1183e9f4c6c08b6f99746db42b0d183e.png)
-8. In the “Restrict Remote Desktop Services users to a single Remote Desktop Services session” window that pops up, select **Disabled**, and click **OK**, as shown below:
-![](https://main.qcloudimg.com/raw/56d910ea359024d34dc05de3a274c91a.png)
-9. Close local group policy editor.
-10. Restart the instance.
+12. Select **Restart the destination server automatically if required** and click **Yes** in the pop-up window as shown below:
+    ![](https://main.qcloudimg.com/raw/df280b0a66470be404f114bd17c47d21.png)
+13. Click **Install** and wait for the Remote Desktop service installation to complete.
 
 
+### Applying for multi-user login license
+1. On the desktop, click <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> and select <img src="https://qcloudimg.tencent-cloud.cn/raw/8a27d0993c99b2564c33df6bbabec4f7.png" style="margin: -5px 0px;"/> in the pop-up window to open **Server Manager**.
+2. In the **Server Manager** window, select **Tools** > **Remote Desktop Services** > **Remote Desktop Licensing Manager** in the top-right corner.
+3. In the **Remote Desktop Licensing Manager** pop-up window, right-click the row of the target server and select **Activate Server** .
+4. In the **Activate Server Wizard** pop-up window, click **Next**.
+5. Select **Web Browser** for **Connection method** and click **Next** .
+You can also select other connection methods based on your actual conditions.
+6. [](id:Step6)In **License Server Activation**, record the product ID and visit the [Remote Desktop Licensing website](https://activate.microsoft.com/).
+7. At the Remote Desktop Licensing website, select **Activate a license server** and click **Next**,
+8. Enter the product ID obtained in [step 6](#Step6), enter the company information based on your actual conditions, and click **Next** .
+9. After confirming that everything is correct, click **Next**.
+10. [](id:Step10)Record the license server ID and click **Yes** .
+11. Enter the license server ID obtained in the previous step, select the licensing information as needed, enter the company information, and click **Next** .
+Here, **Enterprise agreement** is selected as the licensing information as an example.
+12. Select the product type and enter the product quantity and licensing information .
+<dx-alert infotype="explain" title="">
+You can go to the [Microsoft official website](https://www.microsoftstore.com.cn/software/software) and contact the customer service to purchase RDS CALs.
+</dx-alert>
+13. After confirming that everything is correct, click **Next**.
+14. [](id:Step14)Get and record the key pack ID .
+15. Click **Finish**.
 
+
+### Activating Remote Desktop license server
+1. On the desktop, click <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> and select <img src="https://qcloudimg.tencent-cloud.cn/raw/8a27d0993c99b2564c33df6bbabec4f7.png" style="margin: -5px 0px;"/> in the pop-up window to open **Server Manager**.
+2. In the **Server Manager** window, select **Tools** > **Remote Desktop Services** > **Remote Desktop Licensing Manager** in the top-right corner.
+3. In the **Remote Desktop Licensing Manager** pop-up window, right-click the row of the target server and select **Activate Server** .
+4. In the **Activate Server Wizard** pop-up window, click **Next**.
+5. Select **Web Browser** for **Connection method** and click **Next** .
+You can also select other connection methods based on your actual conditions.
+6. In **License Server Activation**, enter the license server ID obtained in [step 10](#Step10) and click **Next**.
+7. When the **Activate Server Wizard** prompts **You have completed the Activate Server Wizard**, click **Next** to install the license .
+
+
+### Installing RDS client access license
+1. In the **Install Licenses Wizard** window, confirm the license server information and click **Next**.
+2. In **Obtain Client License Key Pack**, enter the license server ID obtained in [step 14](#Step14) and click **Next** .
+3. When the **Install Licenses Wizard** prompts **You have completed the Install Licenses Wizard** as shown below, you have installed the license successfully.
+
+
+### Configuring Remote Desktop Session Host license server
+1. On the desktop, click <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> and select <img src="https://qcloudimg.tencent-cloud.cn/raw/8a27d0993c99b2564c33df6bbabec4f7.png" style="margin: -5px 0px;"/> in the pop-up window to open **Server Manager**.
+2. In the **Server Manager** window, select **Tools** > **Remote Desktop Services** > **Remote Desktop Licensing Diagnoser** and view the current server status .
+3. On the desktop, right-click <img src="https://qcloudimg.tencent-cloud.cn/raw/10c0728e4d194732be4eb6c1a95e0a8c.png" style="margin: -5px 0px;"/> and select **Run** in the pop-up window.
+4. In the **Run** window, enter **gpedit.msc** and press **Enter** to open Local Group Policy Editor.
+5. On the left sidebar, select **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Remote Desktop Services** > **Remote Desktop Session Host** > **Licensing** and double-click **Use the specified Remote Desktop license servers** .
+6. In the **Use the specified Remote Desktop license servers** pop-up window, select **Enabled**, enter a CVM instance public IP or host name for **License Servers to use**, and click **OK** .
+7. Double-Click **Set the Remote Desktop licensing mode** .
+8. In the **Set the Remote Desktop licensing mode** pop-up window, select **Enabled**, set the licensing mode for the Remote Desktop Session Host server to **By user**, and click **OK** .
+9. Restart the CVM instance.
+
+At this point, you have completed the configuration of multi-user remote login.
+
+## References
+- [License your RDS deployment with client access licenses (CALs)](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-client-access-license)
+- [Activate the Remote Desktop Services license server](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-activate-license-server)
+- [Install RDS client access licenses on the Remote Desktop license server](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-install-cals)

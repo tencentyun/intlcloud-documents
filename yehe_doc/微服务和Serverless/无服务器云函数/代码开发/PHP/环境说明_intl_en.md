@@ -1,18 +1,39 @@
 ## PHP Version Selection
 
-Currently, the following versions of PHP programming language are supported:
+Currently, SCF supports the following versions of PHP programming language:
 
+- PHP 8.0
+- PHP 7.4
 - PHP 7.2
 - PHP 5.6
 
-You can choose PHP 5 or PHP 7 as the runtime environment when creating a function.
+You can choose a desired runtime environment when creating a function, such as PHP 8.0, 7.4, 7.2, or 5.6.
+
+## Environment Variables
+
+The PHP environment variables built in the current PHP 8.0 and 7.4 runtime environments are as shown in the table below:
+
+| Environment Variable Key | Specific Value or Value Source |
+| ------------------ | ------------------------------------------ |
+| `PHP_INI_SCAN_DIR` | /opt/php_extension:/var/user/php_extension |
+
+The PHP environment variables built in the current PHP 7.2 and 5.6 runtime environments are as shown in the table below:
+
+| Environment Variable Key | Specific Value or Value Source |
+| ------------------ | ------------------------------------------ |
+| `PHP_INI_SCAN_DIR` | /var/user/php_extension:/opt/php_extension |
+
+
+For more information on environment variables, see [Environment Variables](https://intl.cloud.tencent.com/document/product/583/32748).
 
 ## List of Built-in Extensions
 
+>!
+>- For PHP 7.4 and later, the platform no longer has additional built-in dependency libraries. For more information on the dependencies required by code execution, see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
+>- If the built-in extensions cannot meet your business requirements, you can install custom extensions as instructed in [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
+>You can print and view the installed extensions at any time by using the `print_r(get_loaded_extensions());` code.
+>
 The currently installed PHP extensions are listed below:
-
->? If the built-in extensions cannot meet your business requirements, you can install custom extensions as instructed in [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
-> You can print and view the installed extensions at any time by using the `print_r(get_loaded_extensions());` code.
 
 
 
@@ -74,5 +95,6 @@ The currently installed PHP extensions are listed below:
 <li>swoole (PHP7)</li></td>
 </tbody>
 </table>
+
 
 

@@ -14,7 +14,6 @@ Redis 原生代码在跨地域复制的场景中，当本端实例写入量过�
 ![](https://qcloudimg.tencent-cloud.cn/raw/03cc44b805ae54db35c0627091cbb42f.png)
 
 
-> !全球复制给每个 KEY 记录了一个版本号，每个 KEY 将占有4字节的内存开销，占用内存会更高。
 
 ## 应用场景
 ### 只读/灾备场景

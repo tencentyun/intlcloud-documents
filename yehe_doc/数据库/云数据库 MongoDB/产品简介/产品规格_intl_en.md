@@ -8,14 +8,14 @@ A one-primary-two-secondary architecture with three storage nodes is supported b
 
 | CPU per Node | Memory per Node (GB) | Disk Capacity per Node (GB)         | Maximum Connections |
 | ------------- | ---------------- | ---------------------------- | ---------------- |
-| 2 cores            | 4 GB              | Default: 250 GB; range: [10,1500]   | 3000             |
-| 4 cores            | 8 GB              | Default: 500 GB; range: [20,3000]   | 6000             |
-| 6 cores            | 16 GB             | Default: 750 GB; range: [50,6000]   | 9000             |
-| 12 cores           | 32 GB             | Default: 1500 GB; range: [100,6000] | 12000            |
-| 24 cores           | 64 GB             | Default: 2500 GB; range: [100,6000] | 15000            |
-| 24 cores           | 128 GB            | Default: 3000 GB; range: [100,6000] | 18000            |
-| 32 cores           | 240 GB            | Default: 4000 GB; range: [100,6000] | 18000            |
-| 48 cores           | 512 GB            | Default: 4000 GB; range: [100,6000] | 18000            |
+| 2 cores            | 4 GB              | Default: 250 GB; range: [100,500]   | 3000             |
+| 4 cores            | 8 GB              | Default: 500 GB; range: [15,1000]   | 6000             |
+| 6 cores            | 16 GB             | Default: 750 GB; range: [250,1500]   | 9000             |
+| 12 cores           | 32 GB             | Default: 1500 GB; range: [500,6000] | 12000            |
+| 24 cores           | 64 GB             | Default: 2500 GB; range: [800,5000] | 15000            |
+| 24 cores           | 128 GB            | Default: 3000 GB; range: [1500,5000] | 18000            |
+| 32 cores           | 240 GB            | Default: 4000 GB; range: [1500,6000] | 18000            |
+| 48 cores           | 512 GB            | Default: 4000 GB; range: [1500,6000] | 18000            |
 
 
 ## Sharded Cluster
@@ -42,14 +42,14 @@ The default configServer specification is **1-core 2 GB** with **20 GB** storage
 
 | CPU per Node | Memory per Shard (GB) | Disk Capacity per Shard (GB)         |
 | ------------- | ---------------- | ---------------------------- |
-| 2 cores            | 4 GB              | Default: 250 GB; range: [10,1500]   |
-| 4 cores           | 8 GB              | Default: 500 GB; range: [20,3000]   |
-| 6 cores           | 16 GB             | Default: 750 GB; range: [50,6000]   |
-| 12 cores           | 32 GB             | Default: 1500 GB; range: [100,6000] |
-| 24 cores           | 64 GB             | Default: 2500 GB; range: [100,6000] |
-| 24 cores          | 128 GB            | Default: 3000 GB; range: [100,6000] |
-| 32 cores          | 240 GB            | Default: 4000 GB; range: [100,6000] |
-| 48 cores          | 512 GB            | Default: 4000 GB; range: [100,6000] |
+| 2 cores            | 4 GB              | Default: 250 GB; range: [100,500]   |
+| 4 cores           | 8 GB              | Default: 500 GB; range: [150,1000]   |
+| 6 cores           | 16 GB             | Default: 750 GB; range: [250,15000]   |
+| 12 cores           | 32 GB             | Default: 1500 GB; range: [500,6000] |
+| 24 cores           | 64 GB             | Default: 2500 GB; range: [800,5000] |
+| 24 cores          | 128 GB            | Default: 3000 GB; range: [1500,5000] |
+| 32 cores          | 240 GB            | Default: 4000 GB; range: [1500,6000] |
+| 48 cores          | 512 GB            | Default: 4000 GB; range: [1500,6000] |
 
 ## User Name for Instance Connection
 - TencentDB for MongoDB comes with a default user: "mongouser". It supports the SCRAM-SHA-1 authentication mechanism, and its role is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/). You can use it to read and write any database, but are not permitted to perform high-risk operations.

@@ -61,9 +61,9 @@
 - PC 端推流，建议使用 OBS 推流 ，具体操作请参见 [OBS推流](https://intl.cloud.tencent.com/document/product/267/31569)。
 - Web 端推流，建议使用 [**Web 推流**](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击 **开始推流** 即可。
 
-- 移动端推流，下载安装 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)，打开选择 **移动直播 MLVB** > **推流演示（摄像头推流）**，手动输入或扫描二维码录入推流地址到地址编辑框内，单击 **开始推流** 即可成功推流。
+- 移动端推流，下载安装 TCToolkit App，打开选择 **移动直播 MLVB** > **推流演示（摄像头推流）**，手动输入或扫描二维码录入推流地址到地址编辑框内，单击 **开始推流** 即可成功推流。
 
->? 定制化的 App 可以集成腾讯云提供的 [移动直播 SDK](https://intl.cloud.tencent.com/document/product/1071) 来实现您的推流功能。
+>? 定制化的 App 可以集成腾讯云提供的 移动直播 SDK 来实现您的推流功能。
 
 [](id:step4)
 ## 步骤4：获取播放地址
@@ -81,9 +81,9 @@
 3. 您可以根据业务场景使用以下方式测试直播流是否能正常播放：
    1. PC 端直播流测试，建议您使用 [VLC](https://intl.cloud.tencent.com/document/product/267/32483) 等工具进行播放体验，具体请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
 
-   2. 移动端直播流测试，建议您下载安装 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147) 打开选择 **移动直播 MLVB** > **标准直播播放**，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
+   2. 移动端直播流测试，建议您下载安装 TCToolkit App 打开选择 **移动直播 MLVB** > **标准直播播放**，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
 
->? 如需在 App 中进行进行推流/播放，可以集成 [移动直播 SDK](https://cloud.tencent.com/product/mlvb) 配合云直播服务使用。试用过程中如果您遇到问题，建议您阅读云直播 [常见问题](https://intl.cloud.tencent.com/document/product/267/7968) 解答疑问。
+>? 如需在 App 中进行进行推流/播放，可以集成 移动直播 SDK 配合云直播服务使用。试用过程中如果您遇到问题，建议您阅读云直播 [常见问题](https://intl.cloud.tencent.com/document/product/267/7968) 解答疑问。
 
 ## 相关操作
 - 若需开启**直播录制**，可创建录制模板，并与域名进行配置关联。相关文档请参见 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223)。

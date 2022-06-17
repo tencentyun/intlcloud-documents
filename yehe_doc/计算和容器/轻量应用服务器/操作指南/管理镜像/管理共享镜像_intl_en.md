@@ -7,13 +7,13 @@ Tencent Cloud allows you to share custom images between Lighthouse and CVM. You 
 </dx-alert>
 
 ## Usage Limits
-- Images can be shared only between Lighthouse and CVM instances in the same region under the same account.
-- You cannot share the following images from CVM to Lighthouse:
+- Custom images can be shared only between Lighthouse and CVM instances in the same region under the same account.
+- You cannot share the following custom images from CVM to Lighthouse:
  - Imported custom CVM instance images.
- - Images already shared from CVM to Lighthouse.
- - Images of entire CVM instances.
- - Images whose underlying operating system and version are not listed in [Supported Operating Systems](#supportOS).
- - Images without Cloud-init installed.
+ - Custom images already shared from CVM to Lighthouse.
+ - Custom images of entire CVM instances.
+ - Custom images whose underlying operating system and version are not listed in [Supported Operating Systems](#supportOS).
+ - Custom images without Cloud-init installed.
 
 ## Supported Operating Systems[](id:supportOS)
 

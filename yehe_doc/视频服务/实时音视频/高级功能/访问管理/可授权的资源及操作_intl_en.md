@@ -29,9 +29,6 @@ Barring a [few exceptions](#n_Support), all API actions listed in this section s
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) | Call quality monitoring | Queries abnormal events.       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | Call quality monitoring | Queries user list and call metrics. |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | Call quality monitoring | Queries room and user numbers in the past.   |
-| DescribeRealtimeNetwork | Call quality monitoring | Queries network conditions in real time.       |
-| DescribeRealtimeQuality | Call quality monitoring | Queries quality data in real time.       |
-| DescribeRealtimeScale | Call quality monitoring | Queries room and user numbers in real time.           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | Call quality monitoring | Queries room list.           |
 | [DescribeUserInformation](https://intl.cloud.tencent.com/document/product/647/39096) | Call quality monitoring | Queries the list of historical users. |
 
@@ -153,10 +150,10 @@ Due to special restrictions, the following APIs do not support resource-level au
 #### Server API actions
 |API|Category|Description|Restriction|
 |---|---|---|---|
-|[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|Call quality monitoring|Queries specific events.|The parameters entered do not include `SDKAppID`, making resource-level authorization impossible.|
-| [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | Other APIs | Queries the billing period of on-cloud recording. | For business reasons, resource-level authorization is not supported currently. |
+| DescribeDetailEvent |Call quality monitoring|Queries specific events.|The parameters entered do not include `SDKAppID`, making resource-level authorization impossible.|
+| DescribeRecordStatistic | Other APIs | Queries the billing period of on-cloud recording. | For business reasons, resource-level authorization is not supported currently. |
 | DescribeTrtcInteractiveTime| Other APIs | Queries the billing period for audio/video interactive features. | For business reasons, resource-level authorization is not supported currently. |
-| [DescribeTrtcMcuTranscodeTime](https://intl.cloud.tencent.com/document/product/647/42970) | Other APIs | Queries the billing period of relayed transcoding. | For business reasons, resource-level authorization is not supported currently. |
+| DescribeTrtcMcuTranscodeTime | Other APIs | Queries the billing period of relayed transcoding. | For business reasons, resource-level authorization is not supported currently. |
 
 ### Console API actions
 <table>

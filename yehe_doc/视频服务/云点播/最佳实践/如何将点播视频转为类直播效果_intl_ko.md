@@ -46,7 +46,7 @@
 1. 가상 라이브 방송은 반드시 링크 도용 방지를 활성화해야 합니다. [VOD 콘솔](https://console.cloud.tencent.com/vod)에 로그인하고 왼쪽 메뉴의 [배포 및 재생 설정]>[도메인 관리]를 선택한 뒤 타깃 도메인이 있는 행의 [설정]을 클릭하면 도메인 관련 설정 화면으로 이동합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f21443e506aab6c9020d4a98575c1e7b.png)
 2. [편집]을 클릭하여 Referer 링크 도용 방지를 활성화합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/e4fecb5f16b4157959b86acbc9d33ee0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/63d1a7a738d3031a81116bde7727024b.png)
 2. Referer 링크 도용 방지, Key 링크 도용 방지를 활성화합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f13f03767df78e476012158fb44eebd.png)
 옵션에 관한 더 자세한 내용은 [링크 도용 방지 설정](https://intl.cloud.tencent.com/document/product/266/14060)을 참고하십시오. 설정이 완료되면 링크 도용 방지 KEY의 내용을 저장하고 다음의 링크 도용 방지 서명 계산에 사용합니다.

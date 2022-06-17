@@ -13,7 +13,7 @@ This document describes the latest and historical specifications of TDSQL-C for 
 <th rowspan=2 >Max IOPS</th>
 <th rowspan=2 >I/O Bandwidth</th></tr>
 <tr>
-<th>MySQL 5.7 kernel minor version &lt; 2.0.15<br>MySQL 8.0 kernel minor version &lt; 3.1.2</th><th>MySQL 5.7 kernel minor version ≥ 2.0.15<br>MySQL 8.0 kernel minor version ≥ 3.1.2</th></tr>
+<th>MySQL 5.7 Kernel Minor Version &lt; 2.0.15<br>MySQL 8.0 Kernel Minor Version &lt; 3.1.2</th><th>MySQL 5.7 Kernel Minor Version ≥ 2.0.15<br>MySQL 8.0 Kernel Minor Version ≥ 3.1.2</th></tr>
 </thead><tbody>
 <tr>
 <td>1-core 1 GB MEM</td>

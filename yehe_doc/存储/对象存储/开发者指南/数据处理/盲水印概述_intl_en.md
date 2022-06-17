@@ -7,7 +7,7 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 | Blind Watermarking Type | Feature | Applicable Scenario |
 | :---------------- | :----------------------------------------- | :---------------------- |
 | Semi-blind watermarking (type 1) | Has strong anti-theft effects but requires the input image for watermark extraction | Images smaller than 640 x 640 |
-| Perfectly blind watermarking (type 2) | Is easy to extract and requires only the image watermark itself for watermark extraction | Batch adding and verification  |
+| Perfectly blind watermarking (type 2) | Is easy to extract and requires only the watermarked image for watermark extraction | Batch adding and verification  |
 | Text blind watermarking (type 3) | Adds text to the image | Adding terminal information  |
 
 >?
@@ -28,7 +28,7 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 - Currently, you cannot add a blind watermark to animated images such as GIF.
 - Both the width and height of the image watermark must not be greater than 1/8 of the input image.
 - You need to choose a white watermark with a black background for the effect of blind watermarking.
->- When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For more information, see CI Free Tier.
+- When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For more information, see CI Free Tier.
 - Text watermarks can contain digits and letters.
 - Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is subject to the original image size and the attack intensity. For more information, [contact us](https://intl.cloud.tencent.com/contact-sales).
 https://intl.cloud.tencent.com/contact-sales)。

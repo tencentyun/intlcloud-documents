@@ -1,5 +1,4 @@
 
-
 ## 機能説明
 
 ユーザーはCOSCMDツールを使用すれば、簡単なコマンドラインによって、オブジェクト(Object)の一括アップロード・ダウンロード・削除などの操作が行えます。
@@ -37,7 +36,7 @@ Windows、Linux 、macOSシステムをサポートします。
 ```plaintext
 pip install coscmd
 ```
-インストールに成功したら、ユーザーは`-v`または`--version`コマンドを使用して、現在のバージョン情報を確認することができます。
+インストールの成功後、ユーザーは`-v`または`--version`コマンドを使用して、現在のバージョン情報を確認することができます。
 >! Windowsでインストールした場合は、環境変数に`C:\python_install_dir;`と`C:\python_install_dir\Scripts`という2つのパスを追加する必要があります。 
 >
 
@@ -205,7 +204,7 @@ coscmd config [OPTION]...<FILE>...
 | -b               | 指定されたバケット名。バケットの命名形式はBucketName-APPIDです。[命名ルール](https://intl.cloud.tencent.com/document/product/436/13312)をご参照ください。初回設定時に使用する場合、COSコンソールでバケットを作成し、設定ツールとして用いる必要があります | 文字列 | はい       |
 | -r               | バケットの所在リージョンです。[リージョンとアクセスドメイン名](https://intl.cloud.tencent.com/document/product/436/6224)をご参照ください。| 文字列 | はい       |
 | -e               | リクエストのENDPOINTを設定します。ENDPOINTパラメータを設定すると、REGIONパラメータは無効になります。デフォルトのドメイン名を使用している場合、ここでの設定形式は、`cos.<region>.myqcloud.com`となります。グローバルアクセラレーションドメイン名を使用する場合、設定は`cos.accelerate.myqcloud.com`となります | 文字列 | いいえ       |
-| -m                | マルチスレッド操作の最大スレッド数（デフォルトは5、範囲は1～30）   | 数値 | いいえ        |
+| -m               | マルチスレッド操作の最大スレッド数（デフォルトは5、範囲は1～30）             | 数値     | いいえ       |
 | -p               | チャンク操作の1チャンクサイズ（MB単位、デフォルトは1MB、範囲は1～1000）     | 数値   | いいえ       |
 | --do-not-use-ssl | HTTPSではなく、HTTPプロトコルを使用します                              | 文字列 | いいえ       |
 | --anonymous      | 匿名操作（署名なし）                                       | 文字列 | いいえ       |
@@ -451,7 +450,7 @@ coscmd info <cospath>
 coscmd info doc/picture.jpg
 ```
 
->?  - 「<>」のパラメータを、表示する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
+>?「<>」のパラメータを、表示する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
 >
 
 
@@ -550,7 +549,7 @@ coscmd signurl doc/picture.jpg -t 100
 ```plaintext
 coscmd delete <cospath>
 ```
->? - 「<>」のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
+> - 「<>」のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
 >
 - 操作事例 - doc/exampleobject.txtを削除します
 ```plaintext
@@ -644,7 +643,8 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 > 
 
 ### ファイルまたはフォルダの移動
-
+>! 移動コマンドの<sourcepath>`は`<cospath>`と同一にすることはできません。同一にした場合はファイルが削除されます。moveコマンドは先にコピーを行ってから削除するため、`<sourcepath>`パスのファイルが最終的に削除されることが原因です。
+>
 #### ファイル移動のコマンド形式
 ```plaintext
 coscmd move <sourcepath> <cospath> 
@@ -743,8 +743,8 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 
 >?
 > - 「<>」のパラメータを、ファイルリストを照会する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
-> - `-d <day>`を使用して、一時コピーの有効期限を設定します。デフォルトは7です。
-> - `-t <tier>`を使用してリカバリモードを指定します。列挙値：Expedited （超高速モード）、Standard （標準モード）、Bulk（一括モード）、デフォルト値はStandardです。
+> - `-d <day>`を使用して、一時コピーの有効期限を設定します。デフォルト値は7です。
+> - `-t <tier>`を使用してリカバリモードを指定します。列挙値はExpedited （超高速モード）、Standard （標準モード）、Bulk（一括モード）であり、デフォルト値はStandardです。
 >
 
 ## よくあるご質問

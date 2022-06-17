@@ -107,7 +107,7 @@ VODバックエンドは、管理タスクを毎日実行し、指定された�
 ![](https://qcloudimg.tencent-cloud.cn/raw/8c2143b18f7b88b715b3881e25062e9b.png)
 
 ### 手順2：コールド化ポリシーの設定
-![](https://qcloudimg.tencent-cloud.cn/raw/d0c4864520a38107b5f4c43d3b6ac56c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54b2b7b0bc76bea32f58bb347d7542b5.png)
 ユーザーのニーズに応じてコールド化ポリシーを設定します。
 例：図に示すように、30日以内にメディアのビデオ再生回数が300回未満の場合、低頻度のコールド化ポリシーがトリガーされます。VODは、すべてのルールを満たすメディアを選択してコールド化を行います。
 

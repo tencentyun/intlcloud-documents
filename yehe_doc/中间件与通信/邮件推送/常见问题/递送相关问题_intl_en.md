@@ -4,7 +4,7 @@ After you create an email template, we will review the template content to ensur
 
 [](id:que2) 
 ### Can SES ensure successful delivery of my emails?
-Whether it is SES or any other email service, it cannot guarantee 100% successful delivery of every email, which is affected by many factors, such as email content, domain name reputation, open rate, and user complaint. For more information, please see [How do I prevent my emails from being marked as spam?](https://intl.cloud.tencent.com/document/product/1084/42369).
+Whether it is SES or any other email service, it cannot guarantee 100% successful delivery of every email, which is affected by many factors, such as email content, domain name reputation, open rate, and user complaint. For more information, see [Measures to prevent emails from being marked as spam](https://intl.cloud.tencent.com/document/product/1084/42369).
 
 
 [](id:que3) 
@@ -13,7 +13,7 @@ Generally, an email will be delivered to the recipient's inbox within 3 seconds 
 
 [](id:que4) 
 ### Will email bounces or complaints caused by other SES users affect my email delivery rate?
-Usually, if you are using a shared IP, email bounces or complaints caused by other SES users may have a certain impact on your email delivery rate. If you are using a dedicated IP, there will be no impact.
+Usually, if you are using a shared IP, email bounces or complaints caused by other SES users may have a certain impact on your email delivery rate. Dedicated IPs are unavailable currently.
 
 [](id:que5) 
 ### What should I do if the image in the email is not displayed?
@@ -29,14 +29,14 @@ Usually, enterprise email services block advertising emails, so do not include a
 
 [](id:que7) 
 ### Why did my email fail to be sent?
-Please check the error code document first to determine the error type.
+Check the error code document first to determine the error type.
 
 Then troubleshoot in the following order:
 1. Whether the account has the `QcloudFullAccess` permission and whether `SecretId` and `SecretKey` are correct.
 2. Whether the sender domain is verified. (Do not modify the configured DNS after it passes verification.)
 3. Whether the recipient email address is correct.
 4. Whether the template is approved and whether the format of `TemplateData` is correct.
-5. "You can only send emails using a template" indicates that you cannot directly send an email. Please send your email using a template.
+5. If "You can only send emails with a template" is returned, it indicates that you cannot directly send an email. Send your email with a template.
 
 If the issue persists, contact [Tencent Cloud technical team](https://console.cloud.tencent.com/workorder/category) for support.
 
@@ -46,8 +46,7 @@ When an end user unsubscribes from emails sent by a customer, Tencent Cloud will
 
 [](id:que9) 
 ### Why do some emails get blocked?
-Tencent Cloud maintains an address blocklist database and blocks sending emails to these blocklisted addresses. This helps customers filter out malicious email requests. Moreover, in order to protect customers' sender reputation, Tencent Cloud adds the recipient addresses that have been rejected recently to the blocklist database. The blocklist database is shared across all accounts, so the address blocklists generated in different accounts are added to the same database. The email addresses in the blocklist database will be blocked for 14 days. You can log in to the [SES console](https://console.cloud.tencent.com/ses/stats) or call the API to unblocklist them. If the recipient addresses are valid and not in your blocklist, they may be blocklisted by other accounts. In this case, you can contact [Tencent Cloud technical team](https://console.cloud.tencent.com/workorder/category) to unblocklist them.
-
+Tencent Cloud maintains an address blocklist database and blocks sending emails to these blocklisted addresses. This helps customers filter out malicious email requests. Moreover, in order to protect customers’ sender reputation, Tencent Cloud adds the recipient addresses that have been rejected recently to the blocklist database. The blocklist database is shared across all accounts, so the address blocklists generated in different accounts are added to the same database. The email addresses in the blocklist database will be blocked for 14 days. You can log in to the [SES console](https://console.cloud.tencent.com/ses/stats) or call the API to unblocklist them. If the recipient addresses are valid and not in your blocklist, they may be blocklisted by other accounts. In this case, you can contact [Tencent Cloud technical team](https://console.cloud.tencent.com/workorder/category) to unblocklist them.
 
 [](id:use)
 ### User open rate

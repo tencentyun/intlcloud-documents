@@ -1,8 +1,9 @@
 
 ## サポート製品
 データベース監査サポートの現状：
-- TencentDB for MySQL 5.6、5.7の2ノードと3ノード。TencentDB for MySQL 5.5 バージョン、およびTencentDB for MySQLシングルノードは現時点ではサポートしていません。
-- Cloud native database TDSQL-C（MySQLバージョンと互換性あり）
+- TencentDB for MySQL 5.6、5.7、8.0の2ノードと3ノード。TencentDB for MySQL 5.5 バージョン、およびTencentDB for MySQLシングルノードは現時点ではサポートしていません。
+- TDSQL-C for MySQL.
+- TencentDB for MongoDB 4.0。
 
 ## 監査価格
 [データベース監査](https://console.cloud.tencent.com/dls/mysql) は監査ログのストレージ容量に基づき従量課金を行います。1時間を課金周期とし、1時間に満たない場合は1時間として課金します。

@@ -4,7 +4,9 @@ TDSQL MySQL版 支持通过 mysqldump 导出数据，导出前须设置 net_writ
 mysqldump --compact --single-transaction --no-create-info -c db_name table_name  -utest -h10.xx.xx.34 -P3336  -ptest123
 ```
 
->?db 和 table名参数根据实际情况选择，如果导出的数据要导入到另外一套 TDSQL MySQL版 环境的话，必须加上-c选项。
+>?
+>- db 和 table 名参数根据实际情况选择，如果导出的数据要导入到另外一套 TDSQL MySQL版 环境的话，必须加上 -c 选项。
+>- 导出帐号需拥有 `select on *.*` 的权限。
 
 
 ## 导入数据

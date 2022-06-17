@@ -12,6 +12,7 @@ For example, if the SMS signature is `Tencent Technology` and the SMS body is `T
 Before sending the above sample SMS message, you need to perform the following steps:
 1. Apply for an SMS signature whose **Signature Content** is `Tencent Technology`.
 2. Apply for an SMS body template whose **SMS Content** is `The login verification code for your account is {1} and valid for {2} minutes.`, where {1} and {2} are customizable parameters when an SMS message is sent.
+>!The signature is optional for Global SMS.
 
 ## SMS Signature
 An SMS signature is the signature enclosed in [] before an SMS body, which is used to identify a company or business. To apply for an SMS signature, an enterprise user needs to upload a qualification certificate, while an individual user needs to upload an identity certificate. Only an approved SMS signature can be used.

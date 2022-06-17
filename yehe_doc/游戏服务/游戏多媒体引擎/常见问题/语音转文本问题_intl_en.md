@@ -22,7 +22,7 @@ A voice message file will be retained on the server for 90 days. Then, the downl
 
 ### Is there a time limit for voice message recording?
 
-Yes. The duration of a voice message is limited to 1 to 60 seconds.
+Yes. The duration of a voice message is limited to 1 to 58 seconds.
 
 ### It takes too long to upload or download a voice message file. How to fix it?
 

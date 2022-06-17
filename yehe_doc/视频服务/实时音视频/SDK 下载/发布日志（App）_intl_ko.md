@@ -1,7 +1,93 @@
-## Version 9.5 @ 2022.01.11
+### Version 9.8 @ 2022.04.21
+
+**새로운 기능:**
+- Windows: ‘헤비 메탈’ 및 ‘어린 소녀’와 같은 오디오 효과용 API를 추가했습니다. 자세한 내용은 `ITXAudioEffectManager.setVoiceChangerType`을 참고하십시오.
+- Windows: 로컬 비디오가 일시 중지될 때 이미지 표시에 대한 지원이 추가되었습니다.
+
+**기능 최적화:** 
+
+모든 플랫폼: 비디오 시나리오에서 SDK 성능이 향상되었습니다.
+
+**오류 수정:** 
+- Mac: 내장 사운드 카드의 오디오 녹음 시 드라이버 설치에 실패하는 현상이 수정되었습니다.
+- 모든 플랫폼: 로컬 화면이 (서브스트림을 통해) 공유될 때 사용자 지정 렌더링 오류가 수정되었습니다.
+
+
+### Version 9.7 @ 2022.04.06
+
+**기능 최적화:** 
+- iOS&Android: Music 모드의 오디오 품질이 향상되었습니다.
+<dx-alert infotype="explain" title="Tips：">
+[TRTCCloud.startLocalAudio (TRTCAudioQualityMusic)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a1dadf09b10a2d128e4cef11707934329) API를 사용하여 모든 플랫폼에서 Music 모드를 활성화할 수 있습니다.
+</dx-alert>
+- Windows: Music 모드에서 오디오 품질이 향상되고 오디오 손실이 감소했습니다.
+- Windows: 고급 사운드 카드와의 호환성이 향상되어 오디오 품질이 향상되었습니다.
+- Windows: 더 많은 시나리오를 위해 3rd party 프로세스와 오디오 믹싱을 최적화했습니다.
+
+**오류 수정:**
+- 모든 플랫폼: CDN 재생 중 간헐적으로 화면이 흐릿해지는 문제를 수정했습니다.
+- iOS&Android: 라이브 스트림을 재생할 때 수신기와 스피커 간에 전환하지 못하는 문제를 수정했습니다.
+- iOS&Android: Music 모드를 활성화하기 위해 API를 호출한 후 오디오 품질이 기대에 미치지 못하는 문제가 수정되었습니다.
+- iOS: 소프트웨어 인코딩 중 간헐적으로 발생하는 메모리 유출을 수정했습니다.
+- iOS: 가끔 로컬 비디오 렌더링을 위한 첫 번째 프레임 콜백이 수신되지 않는 문제가 수정되었습니다.
+- Windows: 화면 공유 중에 마우스 커서가 캡처될 때 SDK가 충돌하는 가끔 문제가 수정되었습니다.
+- Windows: Music 모드에서 스피커가 제대로 작동하지 않는 현상이 수정되었습니다.
+- Windows: startCameraDeviceTest API가 호출될 때 일부 카메라가 켜지지 않는 문제를 수정했습니다.
+
+
+### Version 9.6 @ 2022.03.24
+
+**주요 변화:**
+
+- 모든 플랫폼: 중국 본토 안팎의 규정을 준수하는 향상된 3rd party 라이브러리.
+- 모든 플랫폼: SDK 저장소 공간을 줄였습니다. 자세한 내용은 아래 표를 참고하십시오.
+<table>
+<thead>
+<tr>
+<th>플랫폼</th>
+<th><strong>전</strong></th>
+<th><strong>후</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Android</td>
+<td>armv7：6.95M<br>arm64：7.94M</td>
+<td>armv7：4.32M<br>arm64：4.85M</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td>arm64：3.23M</td>
+<td>arm64：3.15M</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>Win32：21.3M<br>Win64：26.9M</td>
+<td>Win32：15.0M<br>Win64：17.2M</td>
+</tr>
+<tr>
+<td>Mac</td>
+<td>x86_64：18.1M</td>
+<td>x86_64：15.8M</td>
+</tr>
+</tbody></table>
 
 **장애 수정:**
-- 모든 플랫폼: API 사용 편의성을 향상하고 일부 API 특정 호출 시퀀스로 인해 사용자 정의 렌더링 및 재생에 검은색 화면이 발생하는 문제가 수정되었습니다.
+
+모든 플랫폼: 알려진 문제를 수정하여 안정성을 개선했습니다.
+
+**기능 최적화:**
+- iOS: 필 라이트를 사용할 때 간헐적으로 과다 노출되는 문제를 수정했습니다.
+- Mac: 텍스처 업로드를 최적화했습니다.
+- Android: 뷰티 필터 및 기타 기능에 대한 개선된 전처리 방법, 저가형 장치에서 캡처 끊김 현상을 수정했습니다.
+- Windows: Live 스트리밍 컴포넌트를 Live V1에서 V2 API로 업데이트하여 안정성을 개선했습니다.
+- Windows: 저가형 장치의 GPU와의 호환성이 향상되었습니다.
+
+>?이전 버전 업데이트 내역은 [더 보기](https://intl.cloud.tencent.com/document/product/647/39426)를 클릭하십시오.
+
+### Version 9.5 @ 2022.01.11
+
+**장애 수정:**
+- 모든 플랫폼: 사용자가 사용자 지정 비디오 렌더링을 활성화하기 위해 특정 순서로 API를 요청하면 검은색 화면이 표시되는 문제가 수정되었습니다.
 - Windows: 화면 공유 수집 영역이 불완전한 문제가 수정되었습니다.
 - iOS: [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac3a158f935a99abd4965d308c0f88977) 호출 후, 방 퇴장하고 다음 방 입장 시 스트림 상태가 푸시되지 않는 문제가 수정되었습니다.
 - iOS: 혼합 스트림 설정의 배경 이미지가 유효하지 않은 문제를 수정되었습니다.
@@ -12,7 +98,7 @@
 - iOS: cocos2D와 같은 다른 렌더링 모듈과 공유할 때 호환성을 향상하고 충돌을 줄였습니다.
 - Android: 카메라를 껐다가 켰을 때, 재생 종료 전 마지막 프레임을 표시한 후 정상적으로 표시되는 문제를 복구했습니다.
 
-## Version 9.4 @ 2021.12.08
+### Version 9.4 @ 2021.12.08
 
 **새로운 기능:**
 - 전체 플랫폼: 새롭게 추가된 음성 추적 기능은 대규모 음성 마이크 연결 시나리오에 적합하며, 여러 사용자가 동시에 마이크를 켜는 노이즈 환경에서도 여전히 주요 사용자의 음성에 집중할 수 있습니다. [setRemoteAudioParallelParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b) API를 통해 설정할 수 있습니다.
@@ -22,7 +108,7 @@
 
 **문제 수정:**
 - 전체 플랫폼: [switchRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a1f3bed34f92b3ff908beb2d0ed2866c9)을 빠르게 호출하면 방 전환 실패가 발생하는 문제가 수정되었습니다.
-- iOS: 애플리케이션에서 화면 녹화 [startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf51acf26b2212192f7145468886b791) 프로세스 중  [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a200c174b27bbe7397b0639e707ee6547) 설정 오류 문제가 수정되었습니다.
+- iOS: 애플리케이션에서 화면 녹화 [startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf51acf26b2212192f7145468886b791) 프로세스 중 [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a200c174b27bbe7397b0639e707ee6547) 설정 오류 문제가 수정되었습니다.
 - iOS: 시스템 화면 녹화 [startScreenCaptureByReplaykit](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abebcd402e310d5d7dcbef9f6b601cfc4) 중 간헐적으로 발생하는 메모리 증가 문제가 수정되었습니다.
 
 **기능 최적화:**
@@ -32,7 +118,7 @@
 - Android: 비디오 하드웨어 솔루션의 호환성을 개선하여 일부 휴대폰의 비디오 해상도 변경 시 발생 가능한 블랙 스크린 문제를 해결했습니다.
 - Windows: 게인 알고리즘을 최적화하여 일부 장치의 과도한 게인으로 인한 노이즈 문제를 해결했습니다.
 
-## Version 9.3 @ 2021.11.03
+### Version 9.3 @ 2021.11.03
 
 **장애 복구**
 - 전체 플랫폼: point2PointDelay를 간헐적으로 사용할 수 없고 값이 0인 문제가 수정되었습니다.
@@ -48,7 +134,7 @@
 - 전체 플랫폼: 속도 측정 기능을 최적화하고 현재 네트워크 대역폭의 점검을 지원합니다.
 - 전체 플랫폼: 복잡한 네트워크 환경에 더 잘 대처할 수 있도록 TCP 전송 프로토콜에 대한 지원을 최적화했습니다.
 
-## Version 9.2 @ 2021.09.23
+### Version 9.2 @ 2021.09.23
 
 **새로운 기능**
 - Android&iOS: Socks5 프록시를 지원합니다.
@@ -68,7 +154,7 @@
 - Windows: AGC 알고리즘을 최적화해 소리가 너무 작거나 소리가 너무 큰 문제가 발생할 확률을 낮췄습니다.
 - 전체 플랫폼: 약한 네트워크 환경에서 지터 방지 알고리즘을 최적화하여 동영상 재생이 더 원활해졌습니다.
 
-## Version 9.1 @ 2021.09.04
+### Version 9.1 @ 2021.09.04
 
 **새로운 기능**
 - 전체 플랫폼: C++ 인터페이스에서 오디오 프레임 콜백 형식 설정을 지원합니다.
@@ -91,7 +177,7 @@
 - Android: 오디오 캡처 실행 실패 후 복구 로직을 최적화하여 성공률을 높였습니다.
 - Android: 특정 조건에서의 영상 화면 과다 노출 문제가 최적화되었습니다.
 
-## Version 9.0 @ 2021.08.06
+### Version 9.0 @ 2021.08.06
 
 **새로운 기능**
 - 시스템 수집 볼륨 설정을 지원합니다. 자세한 내용은 [setSystemAudioLoopbackVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afc45226807d84673bab78b21d1be54ae)을 참고하십시오.
@@ -110,7 +196,7 @@
 - Winodws: 화면 공유 시 수집 프레임 레이트 예외 문제가 수정되었습니다.
 - Windows: 화면 공유 중 타깃 전환 시, 시청자에게 이전 프레임 화면이 표시되는 문제가 수정되었습니다.
 
-## Version 8.9 @ 2021.07.15
+### Version 8.9 @ 2021.07.15
 
 **새로운 기능** 
 - Android: 사용자 정의 렌더링의 외부 GLContext 지정을 지원하여 OpenGL 환경을 보다 효율적으로 사용할 수 있습니다.
@@ -119,7 +205,7 @@
 - 전체 플랫폼: 회사 방화벽 내부 환경 보안 설정에 보다 친화적인 클라우드 프록시 지원이 추가되었습니다.
 - 전체 플랫폼: [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a22804c4112dee8c76475619f891e2eb5) 및 [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a74d8d9922a771114804517db66657f65) 인터페이스에 스트림 유형 매개변수를 추가했습니다.
 - 전체 플랫폼: 통계 상태 콜백 [onStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#ae7e4117f9c8004c9bcc5a29d64e840c9)에 사용자가 WiFi 공유기의 네트워크 품질을 판단하는데 사용되는 로컬 게이트웨이 지연에 대한 통계 gatewayRtt를 새롭게 추가했습니다.
-- 전체 플랫폼: 오디오 녹음 인터페이스[startAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5224523e00d5167eb75cee9b65f72677)은 더 많은 오디오 형식을 지원합니다.
+- 전체 플랫폼: 오디오 녹음 인터페이스 [startAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a5224523e00d5167eb75cee9b65f72677)은 더 많은 오디오 형식을 지원합니다.
 
 **품질 최적화**
 - 전체 플랫폼: 특정 시나리오에서 소리가 떨리는 문제가 최적화되었습니다.
@@ -133,7 +219,7 @@
 - iOS: 사용자 정의 렌더링이 원격 비디오에 대해서만 활성화되고, RGBA 형식이 사용 시 발생하는 메모리 누수 문제가 수정되었습니다.
 - 전체 플랫폼: 간혹 발생하는 방 입장 실패 문제가 수정되었습니다.
 
-## Version 8.8 @ 2021.06.21
+### Version 8.8 @ 2021.06.21
 
 **새로운 기능**
 Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. 자세한 내용은 [enableCustomAudioRendering](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803) API를 참고하십시오.
@@ -148,7 +234,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - iOS: AAC 형식의 로컬 오디오 파일 재생 시 전체 길이가 정확하지 않은 문제가 수정되었습니다.
 - Android: SDK 백그라운드 전환 후 일부 장치에서 오디오가 끊기는 문제가 수정되었습니다.
 
-## Version 8.7 @ 2021.5.25
+### Version 8.7 @ 2021.5.25
 **새로운 기능**
 - 전체 플랫폼: 외부 연결 오디오 기기에 대한 이상 검증이 추가되었습니다. onStatistics 콜백 등록 후, [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics)의 audioCaptureState로 장시간 음소거, 파음, 이상 끊김 문제를 실시간으로 검증할 수 있습니다.
 - Windows: 사용자 정의 수집은 RGBA 포맷의 비디오 데이터 입력을 지원합니다.
@@ -162,7 +248,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Android : setRemoteViewFillMode 일부 모델에 간혹 적용되지 않는 문제가 수정되었습니다.
 - iOS/Mac: 사용자 정의 뷰티 필터 중지 시 메모리 리소스가 릴리스되는 문제가 수정되었습니다.
 
-## Version 8.6 @ 2021.05.08
+### Version 8.6 @ 2021.05.08
 - 전체 플랫폼: 네트워크 트래픽 제어 알고리즘이 최적화되어 멀티미디어 전송 품질이 더욱 향상되었습니다.
 - 전체 플랫폼: 역할 전환으로 마이크 켜짐/꺼짐 시 원활하게 오디오가 재생되도록 최적화되었습니다.
 - iOS&Mac&Windows: 오디오 처리 모듈이 최적화되어 SPEECH 모드와 DEFAULT 모드의 음성 품질이 향상되었습니다.
@@ -172,12 +258,12 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Windows: 메모리 할당 로직이 최적화되어 안정성이 향상되었습니다.
 
 
-## Version 8.5 @ 2021.03.24
+### Version 8.5 @ 2021.03.24
 **새로운 기능**
 -  Mac: 스크린 공유 기능을 최적화하여 타깃 창을 공유하면서 다른 창을 지정하여 함께 공유할 수 있습니다. 이와 관련한 내용은 API [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233)를 참고하십시오.
 -  전체 플랫폼: 재생 기능을 추가하여 [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer)를 사용해 TRTCCloud와 바인딩하고, VOD가 현재 재생중인 콘텐츠를 TRTC의 우회 푸시 스트림을 통해 공유합니다.
 -  전체 플랫폼: 우회 사용자 정의 수집 기능을 추가하였습니다. 이와 관련한 내용은 [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629) API를 참고하십시오.
--  전체 플랫폼: 사용자 정의 오디오 믹싱 기능을 추가하여 사용자의 사운드 트랙을 SDK의 오디오 처리 프로세스에 혼입할 수 있으며, SDK는 먼저 두 개 사운드 트랙을 믹싱한 뒤 배포합니다. 이와 관련한 내용은 API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f)를 참고하십시오.
+-  전체 플랫폼: 사용자 정의 오디오 믹싱 기능을 추가하여 사용자의 사운드 트랙을 SDK의 오디오 처리 프로세스에 혼입할 수 있으며, SDK는 먼저 두 개 사운드 트랙을 믹싱한 뒤 배포합니다. 이와 관련한 내용은 API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f)을 참고하십시오.
 -  전체 플랫폼: 지정된 퓨어 비디오의 혼합 스트림을 지원하며, 더욱 유연한 혼합 스트림 제어가 가능합니다.
 
 **품질 최적화**
@@ -190,11 +276,11 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - iOS: 스크린 화면 정지 시 재생 중인 스크린 공유를 재생할 수 없는 문제가 수정되었습니다.
 
 
-## Version 8.4 @ 2021.02.08
+### Version 8.4 @ 2021.02.08
 **새로운 기능**
 - Mac: Windows와 동일하게 Mac 운영 체제의 출력 사운드를 수집하는 기능인 SystemLoopback 기능을 지원합니다. 이 기능은 SDK가 현재 시스템의 사운드를 수집할 수 있도록 하는 기능으로, 기능을 활성화하면 호스트가 손쉽게 다른 사용자에게 음악이나 영화 파일 라이브 방송을 할 수 있습니다.
 -  Mac: 화면 공유 시 로컬 미리보기 기능을 지원합니다. 미니 창을 통해 공유할 화면 콘텐츠를 미리 볼 수 있습니다.
--  Windows: 프로세스 볼륨 조절 기능이 추가되었습니다. [setApplicationPlayVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1)를 통해 시스템 볼륨 믹서의 볼륨을 조절할 수 있습니다.
+-  Windows: 프로세스 볼륨 조절 기능이 추가되었습니다. [setApplicationPlayVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1)을 통해 시스템 볼륨 믹서의 볼륨을 조절할 수 있습니다.
 -  전체 플랫폼: 로컬 멀티미디어 녹화 기능이 추가되었습니다. 호스트는 푸시 스트림 중에 로컬 오디오 및 비디오를 mp4 파일로 녹음 및 녹화할 수 있습니다. 이와 관련한 내용은 [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b)을 참고하십시오.
 
 **품질 최적화**
@@ -213,7 +299,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 -  iOS: VOD와 TRTC 동시 사용 시 VOD 재생을 중단했을 때 간혹 발생하는 crash 문제가 수정되었습니다.
 -  Android: 블루투스 이어폰 사용 중에 전화가 와서 연결이 끊어졌을 시, 전화 수신 거부 후 음성이 마이크를 통해 재생되는 문제가 수정되었습니다.
 
-## Version 8.3 @ 2021.01.15
+### Version 8.3 @ 2021.01.15
 
 **새로운 기능**
 
@@ -238,7 +324,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Mac: 렌더링 투시도 이동 시 블랙 스크린이 발생하는 문제가 수정되었습니다.
 
 
-## Version 8.2 @ 2020.12.23
+### Version 8.2 @ 2020.12.23
 
 **새로운 기능**
 - iOS & Android: 로컬 샘플링과 재생된 모든 오디오 데이터의 혼합 콜백이 추가되어 로컬 오디오가 더욱 편리해졌습니다.
@@ -258,7 +344,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Windows: 간혹 진행 중인 프로세스를 종료할 수 없는 문제가 수정되었습니다.
 
 
-## Version 8.1 @ 2020.12.03
+### Version 8.1 @ 2020.12.03
 
 **새로운 기능**
 -전체 플랫폼: 통계 정보(onStatistics)에 원격 비디오 랙과 관련된 통계 지표가 추가되었습니다.
@@ -276,7 +362,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Windows: 고 DPI 환경에서 화면 공유 시 간혹 크래시가 발생하는 문제가 수정되었습니다.
 
 
-## Version 8.0 @ 2020.11.13
+### Version 8.0 @ 2020.11.13
 
 **추가**
 - 전체 플랫폼에 C++ 통합 API가 추가되었습니다. cpp_interface/[ITRTCCloud.h](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html)를 참고하십시오.
@@ -313,7 +399,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 
 
 
-## Version 7.9 @ 2020.10.27
+### Version 7.9 @ 2020.10.27
 **추가**
 - Mac: 화면 공유가 선택된 창의 필터링 기능을 지원합니다. 공유하고 싶지 않은 창을 제거함으로서 보다 개선된 사생활 보호를 제공합니다.
 - Windows: 화면 공유의 ‘공유 중’ 알림창 프레임 색상과 프레임 크기 설정 기능을 지원합니다.
@@ -342,7 +428,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Windows: 개별 시나리오에서 간혹 잡음이 발생하는 문제가 수정되었습니다.
 - 전체 플랫폼: 간혹 발생하는 크래시 문제 중 일부가 해결되어 SDK 안정성이 향상되었습니다.
 
-## Version 7.8 @ 2020.09.29
+### Version 7.8 @ 2020.09.29
 **추가**
 - Mac: 시스템 음량 변화 콜백이 추가되었습니다. 세부 사항은 [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)를 참고하십시오.
 - Windows: 크로스 스크린을 지원하여 지정된 영역에 화면을 공유하는 기능이 추가되었습니다.
@@ -381,7 +467,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Windows: 일부 시스템에서 OpenGL을 사용할 경우 크래시가 발생하는 문제가 수정되었습니다.
 
 
-## Version 7.7 @ 2020.09.08
+### Version 7.7 @ 2020.09.08
 
 **최적화**
 
@@ -407,7 +493,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Windows: 수동 수신 모드(즉, [setDefaultStreamRecvMode(false, false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5))에서 onUserVideoAvailable 이벤트 콜백이 중복 수신되는 문제가 수정되었습니다.
 
 
-## Version 7.6 @ 2020.08.21
+### Version 7.6 @ 2020.08.21
 **추가**
 
 - Windows: HWND 유형의 렌더링 창의 실시간 조정을 보다 쉽게 최적화할 수 있는 [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299)와 [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) 인터페이스를 추가하였습니다.
@@ -439,7 +525,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - Android: 간혹 녹화 시 화면 흐림 현상이 나타나는 문제가 수정되었습니다.
 
 
-## Version 7.5 @ 2020.07.31
+### Version 7.5 @ 2020.07.31
 
 **추가**
 
@@ -464,7 +550,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 - 간혹 방에서 나간 이후에도 onEnterRoom 콜백을 수신할 수 있는 문제가 수정되었습니다.
 - 일부 모델에서 초저해상도 인코딩 및 복구가 되지 않는 문제가 수정되었습니다. 
 
-##  Version 7.4 @ 2020.06.24 
+###  Version 7.4 @ 2020.06.24 
 
 **최적화**
 
@@ -478,7 +564,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 
 
 
-##  Version 7.3 @ 2020.06.01
+###  Version 7.3 @ 2020.06.01
 
 **추가**
 
@@ -510,7 +596,7 @@ Android&Mac&iOS: 주변 장치를 통한 오디오 재생을 지원합니다. �
 
 
 
-## Version 7.2 @ 2020.04.16 
+###  Version 7.2 @ 2020.04.16 
 
 **추가**
 
@@ -527,7 +613,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-## Version 7.1 @ 2020.03.27 
+###  Version 7.1 @ 2020.03.27 
 
 **최적화**
 
@@ -545,7 +631,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-##  Version 7.0 @ 2020.03.09 
+###  Version 7.0 @ 2020.03.09 
 
 - 3A 활성화 정책이 개선되었습니다.
 - mcu 혼합 스트림 활용성이 향상되었습니다.
@@ -554,7 +640,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-##  Version 6.9 @ 2020.01.14 
+###  Version 6.9 @ 2020.01.14 
 
 **추가**
 
@@ -585,7 +671,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-##  Version 6.8 @ 2019.11.15 
+###  Version 6.8 @ 2019.11.15 
 
 **추가**
 
@@ -607,7 +693,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-## Version 6.7 @ 2019.09.30 
+###  Version 6.7 @ 2019.09.30 
 
 **추가**
 
@@ -619,7 +705,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 - 푸시 소모 시간이 최적화되었습니다.
 - 단일 사용자가 재생 음량을 독립적으로 조절할 수 있는 기능을 지원합니다.
 
-## Version 6.6 @ 2019.08.02 
+### Version 6.6 @ 2019.08.02 
 
 **추가**
 
@@ -647,7 +733,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-##  Version 6.5 @ 2019.06.12 
+###  Version 6.5 @ 2019.06.12 
 
 **추가**
 
@@ -679,7 +765,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-## Version 6.4 @ 2019.04.25 
+###  Version 6.4 @ 2019.04.25 
 
 **추가**
 
@@ -706,7 +792,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-## Version 6.3 @ 2019.04.02 
+### Version 6.3 @ 2019.04.02 
 
 **추가**
 
@@ -723,18 +809,14 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-## Version 6.2 @ 2019.03.08 
+###  Version 6.2 @ 2019.03.08 
 
 **추가**
-
 - 필터 농도 설정 인터페이스 setFilterConcentration()이 추가되었습니다.
 - sendSEIMsg() 인터페이스가 추가되었습니다. 비디오 프레임의 SEI 헤드 정보가 사용자 정의 메시지를 발송하는 것을 지원합니다. 비디오 스트리밍 중 타임스탬프 정보 삽입에 사용됩니다.
 - 라이브 룸 간 통화 기능인 connectOtherRoom이 추가되었습니다. 이미 존재하는 두 개의 TRTC 방을 서로 연결하는 기능으로, 라이브 방송 중 호스트 PK에 사용됩니다.
 
-
-
 **최적화**
-
 - CPU 사용률 및 안정성이 개선되었습니다.
 - 약한 네트워크(연결 상태가 좋지 않은 네트워크 환경)에서의 화면 해상도가 향상되었습니다.
 - TRTCCloud의 다중 인스턴스 기능을 취소하고 생성 모드를 단일 인스턴스 모드로 변경하여 다수의 TRTCCloud 인스턴스가 서로의 네트워크 리소스를 점유하는 일이 없도록 하였습니다.
@@ -745,7 +827,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-##  Version 6.1 @ 2019.01.31 
+###  Version 6.1 @ 2019.01.31 
 
 **최적화**
 
@@ -758,7 +840,7 @@ Android에 핸드폰 녹화 기능이 추가되었습니다. 해당 기능은 �
 
 
 
-## Version 6.0 @ 2019.01.18 
+###  Version 6.0 @ 2019.01.18 
 
 **최적화**
 

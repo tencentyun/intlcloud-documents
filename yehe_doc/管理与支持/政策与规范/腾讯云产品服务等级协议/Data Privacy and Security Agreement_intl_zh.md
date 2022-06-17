@@ -105,40 +105,42 @@
 2.[手游安全](https://intl.cloud.tencent.com/document/product/1018/36785)。
 3.[Web 应用防火墙](https://intl.cloud.tencent.com/document/product/627/37004)。
 4.[游戏多媒体引擎](https://intl.cloud.tencent.com/document/product/607/37523)。
-5.[游戏服务器伸缩](https://intl.cloud.tencent.com/document/product/1055/39482)。
-6.[DDoS 高防包](https://intl.cloud.tencent.com/document/product/1029/36804)。
-7.[人脸识别](https://intl.cloud.tencent.com/document/product/1059/38787)。
-8.[媒体直播](https://intl.cloud.tencent.com/document/product/1048/38989)。
-9.[媒体包装](https://intl.cloud.tencent.com/document/product/1063/38992)。
-10.[智慧会务](https://intl.cloud.tencent.com/document/product/1023/40236)。
-11.[云原生数据库 TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41227)。
-12.[弹性微服务](https://intl.cloud.tencent.com/document/product/1094/41576)。
-13.[时序数据库 CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706)。
-14.[私有域解析 Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073)。
-15.[数据库审计](https://intl.cloud.tencent.com/document/product/1102/43295)。
-16.[云数据库 Tendis](https://intl.cloud.tencent.com/document/product/1083/43457)。
-17.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44014)。
-18.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44314)。
-19.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44830)。
-20.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45280)。
-21.[即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/45408)。
-22.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416)。
-23.[T-Sec-数据安全中心](https://intl.cloud.tencent.com/document/product/1126/45413)。
-24.[腾讯云 TI 平台](https://intl.cloud.tencent.com/document/product/1141/45465)。
-25.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
-26.[漏洞扫描服务](https://intl.cloud.tencent.com/document/product/1142/45475)。
-27.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45591)。
-28.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45789)。
-29.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45792)。
-30.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45795)。
-31.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45798)。
-32.[制品库](https://intl.cloud.tencent.com/document/product/1136/45801)。
-33.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45804)。
-34.[消息队列 TDMQ](https://intl.cloud.tencent.com/document/product/1110/45939)。
-35.[全栈式风控引擎](https://intl.cloud.tencent.com/document/product/1123/45973)。
-36.[边缘安全加速平台](https://intl.cloud.tencent.com/document/product/1145/46316)。
-37.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46726)。
-38.[Prometheus 监控服务](https://intl.cloud.tencent.com/document/product/1116/46974)。
+5.[DDoS 高防包](https://intl.cloud.tencent.com/document/product/1029/36804)。
+6.[人脸识别](https://intl.cloud.tencent.com/document/product/1059/38787)。
+7.[媒体直播](https://intl.cloud.tencent.com/document/product/1048/38989)。
+8.[媒体包装](https://intl.cloud.tencent.com/document/product/1063/38992)。
+9.[智慧会务](https://intl.cloud.tencent.com/document/product/1023/40236)。
+10.[云原生数据库 TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41227)。
+11.[弹性微服务](https://intl.cloud.tencent.com/document/product/1094/41576)。
+12.[时序数据库 CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706)。
+13.[私有域解析 Private DNS](https://intl.cloud.tencent.com/document/product/1097/42073)。
+14.[数据库审计](https://intl.cloud.tencent.com/document/product/1102/43295)。
+15.[云数据库 Tendis](https://intl.cloud.tencent.com/document/product/1083/43457)。
+16.[数据库管理中心](https://intl.cloud.tencent.com/document/product/1125/44014)。
+17.[微瓴物联网类操作系统](https://intl.cloud.tencent.com/document/product/1115/44314)。
+18.[事件总线](https://intl.cloud.tencent.com/document/product/1108/44830)。
+19.[轻量应用服务器](https://intl.cloud.tencent.com/document/product/1103/45280)。
+20.[即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/45408)。
+21.[边缘计算机器](https://intl.cloud.tencent.com/document/product/1119/45416)。
+22.[T-Sec-数据安全中心](https://intl.cloud.tencent.com/document/product/1126/45413)。
+23.[腾讯云 TI 平台](https://intl.cloud.tencent.com/document/product/1141/45465)。
+24.[云数据仓库](https://intl.cloud.tencent.com/document/product/1129/45473)。
+25.[漏洞扫描服务](https://intl.cloud.tencent.com/document/product/1142/45475)。
+26.[物联网通信](https://intl.cloud.tencent.com/document/product/1105/45591)。
+27.[代码托管](https://intl.cloud.tencent.com/document/product/1132/45789)。
+28.[项目管理](https://intl.cloud.tencent.com/document/product/1133/45792)。
+29.[测试管理](https://intl.cloud.tencent.com/document/product/1134/45795)。
+30.[持续集成](https://intl.cloud.tencent.com/document/product/1135/45798)。
+31.[制品库](https://intl.cloud.tencent.com/document/product/1136/45801)。
+32.[持续部署](https://intl.cloud.tencent.com/document/product/1137/45804)。
+33.[消息队列 TDMQ](https://intl.cloud.tencent.com/document/product/1110/45939)。
+34.[全栈式风控引擎](https://intl.cloud.tencent.com/document/product/1123/45973)。
+35.[边缘安全加速平台](https://intl.cloud.tencent.com/document/product/1145/46316)。
+36.[人脸核身](https://intl.cloud.tencent.com/document/product/1061/46726)。
+37.[Prometheus 监控服务](https://intl.cloud.tencent.com/document/product/1116/46974)。
+38.[自动化助手](https://intl.cloud.tencent.com/document/product/1147/47223)。
+39.[云点播](https://intl.cloud.tencent.com/document/product/266/47179)。
+
 ## 特定司法管辖区要求
 
 **欧洲**

@@ -21,4 +21,4 @@ Below is a list of the languages the SDK is available in and their code.
 | Go | [tencentcloud-cls-sdk-go](https://github.com/TencentCloud/tencentcloud-cls-sdk-go)  |
 | Node.js | [tencentcloud-cls-sdk-js](https://github.com/TencentCloud/tencentcloud-cls-sdk-js)   |
 | Android | [tencentcloud-cls-sdk-android](https://github.com/TencentCloud/tencentcloud-cls-sdk-android) |
-
+| C++ | [tencentcloud-cls-sdk-c++](https://github.com/TencentCloud/tencentcloud-cls-sdk-cpp) |

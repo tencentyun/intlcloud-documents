@@ -7,7 +7,7 @@ TDSQL-C for MySQL allows you to configure different security groups for the read
 >- You can configure different access addresses with different security groups, which will control only sources that access the current address.
 
 ## Prerequisites
-You have created security groups for TencentDB instances in the security group console. For more information, see [Managing Security Groups](https://intl.cloud.tencent.com/document/product/1098/44594).
+You have created security groups for TencentDB instances in the security group console. For more information, see [Configuring Security Group](https://intl.cloud.tencent.com/document/product/1098/44594).
 
 ## Associating Read-Write Address/Read-Only Address with Security Group
 1. Log in to the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb?dbType=POSTGRESQL) and click a cluster ID in the cluster list to enter the cluster management page.

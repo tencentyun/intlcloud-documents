@@ -1,34 +1,29 @@
-COS will release a new domain – tencentcos.cn – on March 15, 2022. The current domain myqcloud.com will remain available, but will not support new features of COS. We recommend you switch to the new domain, which is more secure and reliable.
+COS will release a new domain name `tencentcos.cn` on July 25, 2022. The current domain name `myqcloud.com` will remain available, but will not support new features of COS. We recommend you switch to the new domain name, which is more secure and reliable.
 
 
->! The current domain myqcloud.com will remain available, and its existing features (e.g., intelligent resolution for public and private access) will not be affected. However, it will not support new features provided later.
+>! The current domain name `myqcloud.com` will remain available, and its existing features will not be affected. However, it will not support new COS features provided later.
 >
 
-Specifically, there will be two changes:
+Specifically, there will be the following changes:
 
-**1. The suffix tencentcos.cn will be used for domain names.**
+**1. The suffix `tencentcos.cn` will be used for domain names.**
 
-Take default bucket domains for example:
+Taking the default bucket domain name as an example, the new domain name will be in the format of &lt;bucket-appid&gt;.cos.&lt;region&gt;.tencentcos.cn.
 
-- Current domain names are in the format of &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.myqcloud.com.
-- New domain names will be in the format of &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.tencentcos.cn.
+**2. Private network domain names will be provided.**
 
-**2. Different domain names will be used for private and public access.**
+Independent private network domain names will be provided, which can be accessed only over the private network and thus avoid using public network traffic.
 
-Currently, domain names for private and public access have the same format. For example, all default bucket domains are in the format of &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.myqcloud.com.
+Taking the default bucket domain name as an example, the new private network domain name will be in the format of &lt;bucket-appid&gt;.cos-internal.&lt;region&gt;.tencentcos.cn.
 
-In the future, domain names for public and private access will use different formats. Take default bucket domains for example:
+**3. The `tencentcos.cn` domain name will be supported.**
+Except private network domain names, all new domain names support smart DNS, so the system will switch between the private and public networks automatically based on the access environment.
 
-- A domain name for public access will be in the format of &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.tencentcos.cn.
-- A domain name for private access will be in the format of &lt;BucketName-APPID&gt;.cos-internal.&lt;Region&gt;.tencentcos.cn.
-
-
-The table below compares current and new domains.
-
-| Type   | Current                    | New                |
-| -------------- | ---------------------------------- | ---------------- |
-| Default bucket domain | &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.myqcloud.com, the same for domains for private and public access | <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-internal.&lt;Region&gt;.tencentcos.cn  </li></ul>     |   
-| Global acceleration domain | &lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com, the same for domains for private and public access   |  <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos.accelerate.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-internal.accelerate.tencentcos.cn </li></ul>              |   
-| Domain for static website |&lt;BucketName-APPID&gt;.cos-website.&lt;Region&gt;.myqcloud.com, the same for domains for private and public access | <ul  style="margin: 0;"><li>Domain for public access: &lt;BucketName-APPID&gt;.cos-website.&lt;Region&gt;.tencentcos.cn </li><li>Domain for private access: &lt;BucketName-APPID&gt;.cos-website-internal.&lt;Region&gt;.tencentcos.cn</li></ul> |       
-
-
+| Domain Name | Example |
+| -------------- | ---------------- |
+| Default bucket domain name | &lt;bucket-appid&gt;.cos.&lt;region&gt;.tencentcos.cn  |
+| Default bucket domain name (private network) | &lt;bucket-appid&gt;.cos-internal.&lt;region&gt;.tencentcos.cn  |
+| Global acceleration domain name | &lt;bucket-appid&gt;.cos.&lt;accelerate&gt;.tencentcos.cn  |
+| Global acceleration domain name (private network) | &lt;bucket-appid&gt;.cos-internal.&lt;accelerate&gt;.tencentcos.cn  |
+| Static website domain name | &lt;bucket-appid&gt;.cos-website.&lt;region&gt;.tencentcos.cn  |
+| Static website domain name (private network) | &lt;bucket-appid&gt;.cos-website-internal.&lt;region&gt;.tencentcos.cn  |   

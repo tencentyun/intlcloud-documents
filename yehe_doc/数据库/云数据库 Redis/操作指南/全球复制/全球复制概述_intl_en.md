@@ -14,7 +14,7 @@ Global replication is a new feature added to the open-source version of the kern
 ![](https://qcloudimg.tencent-cloud.cn/raw/03cc44b805ae54db35c0627091cbb42f.png)
 
 
-> !Global replication records a version number for each `KEY`. Each `KEY` will occupy 4 bytes of memory overheads, taking up more memory.
+
 
 ## Use Cases
 ### Read-only instance and disaster recovery

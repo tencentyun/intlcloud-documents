@@ -32,14 +32,15 @@ Activate the VOD service as instructed in [Getting Started - Step 1](https://int
 
 Go to the [upload page](https://console.cloud.tencent.com/vod/media/upload) in the VOD console, select **Pull** as the upload method, click **Add a Row**, enter the URL of the video to be pulled (the [test URL](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) is used here as an example. Other configuration items are optional, which can be entered as needed), and click **Pull Video** in the bottom-left corner:
 
-![](https://main.qcloudimg.com/raw/3871a2c05ca1f26f62e0518cb3943309.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d22654ee0f5d490a09df93d2c8cce778.png)
 >?The time it takes to pull a video is directly proportional to the video file size. We recommend you use a small video (of dozens of megabytes in size) for the test to avoid long wait.
 <span id="p13"></span>
 ### Step 3. View the pull result
 
 After waiting for one or two minutes (subject to the video file size), you can see the pulled video on the [Media Assets page](https://console.cloud.tencent.com/vod/media).
 
-![](https://main.qcloudimg.com/raw/7329a44db45f6cc11fa48ac41ae9cf7c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d25e0d8e54b2a59b5aa190c3ced62c8.png)
+
 >?If the browser is stuck at the media assets page during the pull process, you need to refresh the page to view the pulled video.
 
 ## Calling TencentCloud API for Pull

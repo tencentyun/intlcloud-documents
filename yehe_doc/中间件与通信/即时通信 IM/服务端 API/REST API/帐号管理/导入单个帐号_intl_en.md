@@ -70,7 +70,6 @@ The following table describes the error codes specific to this API.
 
 | Error Code | Description |
 |---------|---------|
-| 40005 | The profile field contains sensitive words. |
 | 40006 | An internal server error occurred during profile setting. Try again later. |
 | 40601 | The length of the profile field value exceeds 500 bytes. |
 | 70169 | The server timed out. Try again later. |

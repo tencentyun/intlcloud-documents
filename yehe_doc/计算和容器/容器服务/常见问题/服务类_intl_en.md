@@ -1,16 +1,16 @@
-## FAQs on service creation
+## FAQs About Service Creation
 
 ### Why must a service name be unique?
 
-A service name is a unique identifier of a service in the current cluster. Services access each other by service name+access port.
+A service name is a unique identifier of a service in the current cluster. Services access each other through the service name and access port.
 
 ### Can I use a third-party image instead of a Tencent Cloud or Docker Hub image when creating services?
 
-Yes. You can log in to your CVM and execute the `docker login` command to log in to the third-party image repository and pull the image.
+Yes. You can log in to your CVM instance and run the `docker login` command to log in to the third-party image repository and pull the image.
 
 ### What are the prerequisites for using public network services?
 
-Ensure that the CVMs in the cluster have public bandwidth. Otherwise, public network services may fail to be created.
+Make sure that the CVM instances in the cluster have public bandwidth; otherwise, public network services may fail to be created.
 
 ### How do I configure memory and CPU limits?
 
@@ -18,23 +18,24 @@ For more information, see [Setting the Resource Limit of Workload](https://intl.
 
 ### What does the "Privileged" option mean when I am creating a service?
 
-If this option is enabled, applications in the container can have true root permission. It is recommended that you enable this option when you need to perform higher-level system operations on applications in the container; for example, building an NFS server.
-
-### 负载均衡可以在创建时就指定安全组吗？
-
-可以，目前支持以下两个方案，实现服务使用负载均衡时指定安全组：
-- 使用已有负载均衡。先创建负载均衡并配置安全组，再挂载给服务。详情请参见 [Service 使用已有 CLB](https://intl.cloud.tencent.com/document/product/457/36835)。
-- 可在服务中通过 `TkeServiceConfig` 配置安全组，负载均衡创建时会根据配置使用对应安全组。如需使用此功能，请 [提交工单](https://console.intl.cloud.tencent.com/workorder) 进行申请。
-
->Please do not access Service in the cluster via the load balancer IP to avoid access failure.
-Usually a layer-4 load balancer (LB) will bind multiple nodes as real servers (RS). In this case, please make sure that the client and RS are not on the same CVM, otherwise the packets will not be able to sent out due to the loopback.
-When a Pod accesses an LB, Pod is the source IP. When it is transmitted to the private network, LB will not transfer the source IP to the Node IP via SNAT. Therefore the LB cannot identify the source node of the packet. The LB’s loopback avoidance policy will not take effect, and packet may be forwareded to any RS. When the packet is forwarded to the Node where the client is located, LB will be unable to receive the response, leading to access failure.
+If this option is enabled, applications in the container will have true root permission. We recommend you enable it when you need to perform higher-level system operations on applications in the container, such as building an NFS server.
 
 
+### Can I specify the security group for a CLB instance when creating it?
+
+Yes. Currently, you can use the following two options to specify the security group for a CLB instance when a service uses it:
+- Use an existing CLB instance. You can create a CLB instance, configure the security group, and then mount it to the service. For more information, see [Using Existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835).
+- You can configure the security group through `TkeServiceConfig` in the service. A CLB instance will use a security group according to the configuration at the time of creation. If you need to use this feature, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for application.
+
+>?To avoid access failure, we recommend you not access a service in the cluster over the CLB IP.
+>In general, a layer-4 CLB instance will bind multiple nodes as real servers (RS). In this case, make sure that the client and RS are not on the same CVM instance; otherwise, there will be a certain probability that the packet will fail to loop back.
+When a Pod accesses a CLB instance, the Pod is the source IP. When it is transferred to the private network, the CLB instance will not translate the source IP to the Node IP via SNAT. Therefore, the CLB instance cannot identify the source node of the packet. The CLB instance's loopback avoidance policy will not take effect, and the packet may be forwarded to any RS. When the packet is forwarded to the Node where the client is located, the CLB instance will be unable to receive the response, leading to access failure.
 
 
 
-## FAQs on updating the number of service containers
+
+
+## FAQs About Updating the Number of Service Containers
 
 ### What should I pay attention to when I update the number of containers?
 
@@ -45,46 +46,46 @@ Confirm whether CPU and memory resources are sufficient. If the resources are in
 Yes. You can set the number of containers to 0 to release the resources while retaining service configurations.
 
 
-## FAQs on updating service configurations
+## FAQs About Service Configuration Update
 
 ### Is rolling update supported?
 
 Both rolling update and quick update are supported.
 
-### 公网负载均衡可以切换为内网负载均衡吗？
+### Can I switch from a public network CLB instance to a private network CLB instance?
 
-可以，目前支持公网切换至 VPC 内网、VPC 内网切换至公网及 VPC 不同子网间切换。详情请参见 [Service 生命周期管理](https://intl.cloud.tencent.com/document/product/457/36832)。
+Yes. You can switch from the public network to a VPC, from a VPC to the public network, or between different subnets of a VPC. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/457/36832).
 >!
-> - 若为服务负责负载均衡资源的生命周期管理，则负载均衡及其公网 IP 将会被释放。
-> - 公网切换内网的过程并不是瞬间的，公网负载均衡服务下线到内网负载均衡并提供服务，此过程需要一定的时间。建议您先在集群中配置一个内网服务资源，并进行测试。等到流量切换完成之后，再删除原有公网服务资源。
+> - If the service is responsible for lifecycle management of the CLB instance, the CLB instance and its public network IP will be released.
+> - The process of switching from the public network to the private network is not instantaneous. It takes a certain amount of time to deactivate the public network CLB instance and activate the private network CLB instance. We recommend you configure a private network service resource in the cluster, conduct a test, and delete the original public network service resource after the traffic switch is completed.
 
 
 
-## 删除服务常见问题[](id:service)
+## FAQs About Service Deletion[](id:service)
 
-### Is the CLB created by a service automatically terminated after I delete the service?
-删除服务时，将会同时删除创建该服务时自动创建的负载均衡。若在创建服务时选用的是已有负载均衡，则该负载均衡将不会受到任何影响。
+### Will the CLB instance auto-created by a service be terminated after I delete the service?
+When a service is deleted, the CLB instance auto-created at the time of the service creation will be deleted simultaneously. If an existing CLB instance is selected at the time of service creation, the CLB instance will not be affected at all.
 
-### 删除服务是否会影响业务数据？
-删除服务不会删除业务容器，数据不会受到影响，该操作无需提前备份数据。
+### Is business data affected by deleting a service?
+The business container will not be deleted and business data will not be affected if the service is deleted. No need to back up data in this regard.
 
 
 
-## FAQs on service running
+## FAQs About Service Running
 
 ### How do I set the container system time to UTC+8 time?
 
-容器默认使用 UTC 时间，使用容器时经常碰到容器系统时间和北京时间差8小时的问题，解决方法是在 dockerfile 中创建时区文件。详情请参见 [ 解决容器内时区不一致问题](https://intl.cloud.tencent.com/document/product/457/35292 )。 
+The container uses UTC time by default. Users often encounter the problem of eight hours difference between the container system time and UTC+8 time. You can create a time zone file in `dockerfile` to solve this problem. For more information, see [Solve the inconsistent time zone problem in the container](https://intl.cloud.tencent.com/document/product/457/35292).  
 
 
-### What should I do when some Docker Hub images, such as ubuntu, php, and busybox, encounter exceptions in TKE?
+### What should I do when some Docker Hub images, such as Ubuntu, PHP, and BusyBox, encounter exceptions in TKE?
 
-If no startup command is set or the default startup command is `bash`, the container will exit after the startup procedure is completed. To keep the container running, ensure that the process whose PID is 1 in the container is a permanent process. Otherwise, the container exits when this process ends. For some images such as centos, you can create services by using `/bin/bash` as the run command and `-c sleep 800000` as the run parameter. `-c` and `sleep 800000` must be entered in different rows in the console.
+If no start command is set or the default start command is `bash`, the container will exit after start. To keep the container running, make sure that the process whose PID is `1` in the container is a resident process; otherwise, the container will exit when this process ends. For some images such as CentOS, you can create services by using `/bin/bash` as the running command and `-c sleep 800000` as the running parameter. `-c` and `sleep 800000` must be entered in different rows in the console.
 
-Currently, images that cannot be started when default parameters are used include clearlinux, ros, mageia, amazonlinux, ubuntu, clojure, crux, gcc, photon, java, debian, oraclelinux, mono, bash, buildpack-deps, golang, sourcemage, swift, openjdk, centos, busybox, docker, alpine, ibmjava, php, and python.
+Currently, images that cannot be started when default parameters are used include Clear Linux, ROS, Mageia, Amazon Linux, Ubuntu, Clojure, CRUX, GCC, Photon, Java, Debian, Oracle Linux, Mono, Bash, buildpack-deps, Go, Source Mage, Swift, OpenJDK, CentOS, BusyBox, Docker, Alpine, IBM Java, PHP, and Python.
 
-### 容器执行 perf top -p 查看进程 CPU 情况提示 “Operation not permitted”
-容器执行 `perf top -p` 查看进程 CPU 情况提示 “Operation not permitted”，如下图所示：
+### What should I do if an error message "Operation not permitted" appears when a container is executing `perf top -p` to check the process CPU status?
+When a container is executing `perf top -p` to check the process CPU status, an error message "Operation not permitted" appears as shown below:
 ![](https://main.qcloudimg.com/raw/ba1cef19dd1ab83a91e082425b588744.png)
-Docker 默认配置文件阻止了重要的系统调用，perf_event_open 可能会泄漏主机上的大量信息所以被禁止使用。如果您需要调用请配置特权容器或者直接修改 Pod yaml 字段 privileged 为 true，您需自行评估安全风险。
+The default configuration file of Docker prevents important system calls. `perf_event_open` is disabled because it may leak a large amount of information on the host. If you need to call it, configure a privileged container or change the value of the Pod YAML field `privileged` to `true`. You need to assess the security risks yourself.
 

@@ -8,9 +8,12 @@
 ###  모바일 SDK 푸시 스트리밍에서 1080p 해상도를 어떻게 설정합니까?
 1080P는 TX_Enum_Type_VideoResolution에서 114로 정의되어 있어, 직접 해상도 열거 값을 설정하면 됩니다.
 
-[](id:que4)
+[](id:que3)
+###  미니프로그램에서 방을 만들 경우 모바일에서도 입장이 가능합니까?
+가능합니다. TRTC는 모든 플랫폼의 통신을 지원합니다.
 
-###  TRTC 모바일에서 어떻게 녹화(화면 공유)를 합니까?	
+[](id:que4)
+###  TRTC 모바일에서 어떻게 녹화(화면 공유)를 합니까?  
 - **Android**: Version 7.2 이상에서 휴대폰 녹화를 지원합니다. 자세한 방법은 [실시간 화면 공유(Android)](https://intl.cloud.tencent.com/document/product/647/37337)를 참고하십시오.
 - **iOS**: Version 7.2 이상에서 인앱 녹화를 지원하며, Version 7.6 이상에서는 휴대폰 녹화 및 인앱 녹화를 지원합니다. 자세한 방법은 [실시간 화면 공유(iOS)](https://intl.cloud.tencent.com/document/product/647/37338)를 참고하십시오.
 
@@ -24,6 +27,7 @@ TRTC 6.3 버전부터 arm64-v8a 아키텍처를 제공하며 ABI를 지원하고
 [](id:que7)
 ###  iOS에서 Swift 통합이 지원됩니까?
 지원합니다. Third Party 라이브러리 통합 지원 프로세스에 따라 SDK를 통합하면 됩니다. [Demo 실행(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35086)을 참고하십시오.
+
 
 [](id:que9)
 ###  TRTC SDK는 iOS 백그라운드 실행을 지원합니까?
@@ -41,18 +45,19 @@ TRTC 6.3 버전부터 arm64-v8a 아키텍처를 제공하며 ABI를 지원하고
 [](id:que12)
 ### Android와 Web의 통신이 지원됩니까?
 지원합니다. 동일한 [SDKAppID](https://console.cloud.tencent.com/trtc/app)를 사용하여 같은 방에 들어가면 통화할 수 있습니다. 자세한 내용은 다음 문서에 링크된 Demo 설정을 참고하십시오.
-- [Demo 실행(Android)](https://intl.cloud.tencent.com/document/product/647/35084)
-- [Demo 실행(Web)](https://intl.cloud.tencent.com/document/product/647/35607)
+- [Android](https://intl.cloud.tencent.com/document/product/647/35084)
+- [Web](https://intl.cloud.tencent.com/document/product/647/35607)
 
 [](id:que13)
 ### 라이브 방송 시 호스트와 관객 모두 마이크를 연결할 수 있습니까?
 양쪽 모두 가능하며, 관객과 호스트의 시작 로직은 같습니다. 자세한 내용은 [라이브 방송 모드 실행(Android)](https://intl.cloud.tencent.com/document/product/647/35108)을 참고하십시오.
 
 [](id:que14)
-### 다중 사용자 화상 회의 시 모바일과 Web에서 같은 방에 입장할 수 있습니까?
+### 다중 사용자 멀티미디어 룸에서 모바일과 Web으로 같은 방에 입장할 수 있습니까?
 가능합니다. [SDKAppID](https://console.cloud.tencent.com/trtc/app)와 방 번호가 일치하고 사용자 ID가 다르면 됩니다.
 
 [](id:que15)
+
 ### 동일한 페이지에서 N개의 TRTC 객체를 생성한 후 N개의 UserID를 사용하여 각각 N개의 방에 로그인할 수 있습니까?
 가능합니다. [Version 7.6 버전](https://intl.cloud.tencent.com/document/product/647/34615)부터 한 명의 사용자가 여러 개의 방에 입장할 수 있습니다.
 
@@ -64,5 +69,9 @@ TRTC 6.3 버전부터 arm64-v8a 아키텍처를 제공하며 ABI를 지원하고
   - iOS & Android는 [릴리스 노트(App)](https://intl.cloud.tencent.com/document/product/647/39426)를 참고하십시오.
   - Web은 [릴리스 노트(Web)](https://intl.cloud.tencent.com/document/product/647/39779)를 참고하십시오.
   - Electron은 [릴리스 노트(Electron)](https://intl.cloud.tencent.com/document/product/647/38702)를 참고하십시오.
+
+
+
+
 
 

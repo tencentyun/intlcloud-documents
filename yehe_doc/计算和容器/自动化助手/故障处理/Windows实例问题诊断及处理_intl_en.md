@@ -163,14 +163,14 @@ The system may have issues like degraded stability, pre-failure, inability to st
 2. Right-click in the lower left corner of the operating system's desktop <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `resmon` in the powershell window, and press **Enter** to open the **Resource Monitor** window.
 4. In the **Resource Monitor** window, select the **Memory** tab, and check if the **Hardware Reserved** is greater than 512 MB. 
-	![](https://qcloudimg.tencent-cloud.cn/raw/ae6886f97b1ea3fd1d1dfcf492d8ee1b.png)
+	
    - A value less than 512 MB indicates a normal state.
    - If the value is greater than 512 MB, perform the following steps to fix the issue:
    1. Enter `msconfig` in the powershell window, and press **Enter** to open the "System Configuration" window.
    2. In the "System Configuration" window, select the **Boot** tab, and then click **Advanced Options**. 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/d29df9b834e14607e08f6df6ef20b720.png)
+  
 	 3. In the "Boot Advanced Options" pop-up, deselect "Maximum Memory". 
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/3b44522c23ea82e3c8ac2baa1b3cf9a5.png)
+	
 	 4. Click **OK**.
 	 5. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select **Settings**.
 	 6. Select **Update & Security** in the "Settings" window, and click **Activate** on the left.
@@ -192,9 +192,9 @@ CPU underutilization occurs on the Windows operating system. CPU bottlenecks may
 2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `msconfig` in the powershell window, and press **Enter** to open the "System Configuration" window.
 4. In the "System Configuration" window, select the **Boot** tab, and then click **Advanced Options**. 
-![](https://qcloudimg.tencent-cloud.cn/raw/d29df9b834e14607e08f6df6ef20b720.png)
+
 5. In the "Boot Advanced Options" pop-up, deselect "Number of Processors". 
-![](https://qcloudimg.tencent-cloud.cn/raw/f0cfb11a9edc44dafb5bb132042e6f4b.png)
+
 6. Restart the instance through the console to make the settings take effect. For more information, see [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
 
 
@@ -210,12 +210,12 @@ Handle leak can cause a waste of system resources, and even failures of the syst
 If you are unable to log in to the instance, please [restart the instance](https://intl.cloud.tencent.com/document/product/213/4928).
 2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `taskmgr.exe` in the powershell window, and press **Enter** to open the "Task Manager" window.
-4. In the "Task Manager" window, select **Details** and click the **Performance** tab. You can check the total number of handles, as shown in the figure below:
-![](https://qcloudimg.tencent-cloud.cn/raw/4d17e9aea9f87095cad6c453c41c3895.png)
+4. In the "Task Manager" window, select **Details** and click the **Performance** tab. You can check the total number of handles.
+
 5. Select the **Details** tab, right-click the first row of the details, and then click **Select Column** in the pop-up menu.
 6. In the "Select Column" pop-up window, select "Handle", and then click **OK**.
 7. Click **Handle** in the first row to sort processes by the number of handles in descending order. 
-![](https://qcloudimg.tencent-cloud.cn/raw/8f4f2ac46c240d09c55eb15a3592ee81.png)
+
 8. Right-click the process with the most handles, and select **Create Dump File** from the pop-up menu.
 9. Click **OK** in the "Dump Process" pop-up window.
 10. Update system patches, install antivirus software, and perform virus scans as needed.
@@ -242,10 +242,10 @@ Issues related to environment variables can cause the failure of some commands (
 2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `sysdm.cpl` in the powershell window, and press **Enter** to open the "System Properties" window.
 4. In the "System Properties" window, select the **Advanced** tab, and click **Environment Variables**.
-![](https://qcloudimg.tencent-cloud.cn/raw/ddbbb55a834f3e3ab2c7acf714a323bf.png)
+
 5. Double-click `Path` in "System Variables" to check the environment variables.
 	Make sure the following 4 environment variables exist, are in the correct order, and are placed at the top. If you have other custom environment variables, put them at the bottom. 
-	![](https://qcloudimg.tencent-cloud.cn/raw/0b6e2510590dc3f8c41b60c4b6cbdfb1.png)
+	
 	If any issue occurs with your environment variables, fix it:
 	- `%SystemRoot%\system32`
 	- `%SystemRoot%`
@@ -267,7 +267,7 @@ If you cannot log in to your CVM due to high memory usage, please refer to [Fail
    1. Right-click in the lower left corner of the operating system's desktop,<img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
    2. Enter `resmon` in the powershell window, and press **Enter** to open "Resource Monitor".
    3. In "Resource Monitor", verify whether the process with the highest memory usage is running normally. 
-   	![](https://qcloudimg.tencent-cloud.cn/raw/c2071d79cb77a8065361e12259000efd.png)
+   	
 	    If the business is checked out：
 		 - If the identified process is necessary for your business, upgrade your instance configuration by referring to [Changing Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178).
 		 - If the process is not for your business, it is recommended to update system patches, install antivirus software, or perform virus scans as needed.
@@ -285,11 +285,8 @@ Long-term insufficient virtual memory can lead to problems such as Windows activ
 2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `sysdm.cpl` in the powershell window, and press **Enter** to open the "System Properties" window.
 4. In the "System Properties" pop-up window, click **Settings** under "Performance". 
-![](https://qcloudimg.tencent-cloud.cn/raw/a67f6e69660ef6c1463287eebb73482c.png)
 5. In the "Performance Options" pop-up window, select the **Advanced** tab, and click **Change**. 
-![](https://qcloudimg.tencent-cloud.cn/raw/d08b1885d2617ec3d208093f9e23798a.png)
 6. In the "Virtual Memory" pop-up window, set the following options. 
-![](https://qcloudimg.tencent-cloud.cn/raw/8fccb1307fae4c08f7d35b9b854a1f5b.png)
     1. Deselect "Automatically manage paging file size for all drives".
     2. Select a drive with sufficient disk space to host the paging file on this drive. Drive C is selected in this example.
     3. Select "Custom Size" and set the paging file size.
@@ -313,7 +310,6 @@ If you cannot log in to your CVM due to high memory usage, please refer to [Fail
    1. Right-click in the lower left corner of the operating system's desktop,<img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
    3. Enter `resmon` in the powershell window, and press **Enter** to open "Resource Monitor".
    3. In "Resource Monitor", select the **CPU** tab to verify whether the process with the highest CPU usage is running normally. 
-		![](https://qcloudimg.tencent-cloud.cn/raw/d4e3089819e7a47bfde96b8b862e688c.png)
 	    If the business is checked out：
 		 - If the identified process is necessary for your business, upgrade your instance configuration by referring to [Changing Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178).
 		 - If the process is not for your business, it is recommended to update system patches, install antivirus software, or perform virus scans as needed.
@@ -359,7 +355,7 @@ RDS has an abnormal status, which results in the failure to log in to the CVM re
 Get-Service termservice |Start-Service -Verbose
 ```
    - Normally, the returned result is as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/d154b1a2f63ee5173910cc8a722e9d2d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c362638db2ec00bd33440253cfd5f5b7.png)
    - If the restart of the service gets stuck, perform the following steps.
    1. Execute the following command to obtain the PID.
 ```
@@ -421,7 +417,6 @@ netsh.exe winsock reset
    2. Enter `regedit` in the powershell window, and press **Enter** to open "Registry Editor".
    3. In the file tree on the left of the "Registry Editor", locate the `WinStations` file under the path **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations**.
    4. Right-click the `WinStations` file, and select **Export** from the pop-up menu. As shown in the figure below:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/31f426407555d48405c4120b46357e7d.png)
 	 5. Set a name for the exported file in the pop-up window, such as `WinStations.reg` in this example.
    6. Click **OK**, and then view the exported file `WinStations.reg` in the specified location.
    7. After backup, export the registry file `WinStations` of the normal instance, and then import it to the abnormal instance. Double-click the `WinStations.reg` file to be imported, and click **Yes** in the pop-up window to import it.
@@ -517,7 +512,6 @@ The RDS port is blocked in the Windows CVM's firewall settings. As a result, you
 2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `wf` in the powershell window, and press **Enter** to open the "Windows Firewall with Advanced Security" window.
 4. In the "Windows Firewall with Advanced Security" window, click **Windows Firewall Properties** in "Overview". As shown in the figure below:
-![](https://qcloudimg.tencent-cloud.cn/raw/d71d9a601da72b4c1f52d779c3ffd510.png)
 5. In "Local Computer" > "Properties", switch to **"Domain Profile", "Private Profile", and "Public Profile"** respectively, and set "Firewall State" to "Off".
 6. Click **OK** to save the settings.
 After turning off the instance's firewall, allow the RDS port of the instance by configuring the security group in the console. For more information, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).
@@ -580,8 +574,7 @@ A gateway issue may cause network disconnection.
     - Right-click again, select **Enable** to try a quick fix.
 5. If the problem persists, verify whether the NIC obtains an IP address automatically. If not, it is recommended to set it to "Obtain an IP address automatically". The steps are as follows:
    1. Right-click the NIC in the "Network Connection" window, and select **Properties** from the pop-up menu.
-   2.Select "Internet Protocol Version 4 (TCP/IPv4)" in the "Ethernet X Properties" pop-up window, and then click **Properties**, as shown below:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/2e59ccc6a9a06f925f333e469e3b0c74.png)
+   2.Select "Internet Protocol Version 4 (TCP/IPv4)" in the "Ethernet X Properties" pop-up window, and then click **Properties**.
    3. In the "Internet Protocol Version 4 (TCP/IPv4)" pop-up window, select "Obtain an IP address automatically".
    4. Click **OK**, and then check the gateway status again.
 
@@ -598,10 +591,8 @@ An abnormal MAC address may cause network disconnection.
 2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `ncpa.cpl` in the powershell window, and press **Enter** to open the "Network Connection" window.
 4 Right-click the NIC in the "Network Connection" window, and select **Properties** from the pop-up menu.
-5. In the **Ethernet X Properties** pop-up window, click **Configuration**, as shown below.
-![](https://qcloudimg.tencent-cloud.cn/raw/75f386098e85a05734fb71cef06c0782.png)
-6. In the "Tencent VirtIO Ethernet Adapter Properties" pop-up window, select the **Advanced** tab, select **Assign MAC** in "Properties", and set it to "Absent". As shown in the figure below:
-![](https://qcloudimg.tencent-cloud.cn/raw/4ab18d143228863478a6c55eb849b5d0.png)
+5. In the **Ethernet X Properties** pop-up window, click **Configuration**.
+6. In the "Tencent VirtIO Ethernet Adapter Properties" pop-up window, select the **Advanced** tab, select **Assign MAC** in "Properties", and set it to "Absent". 
 7. Click **OK** to save the settings.
 8. In the "Network Connection" window, restart the NIC:
     - Right-click the NIC, and select **Disable** from the pop-up menu.
@@ -621,8 +612,7 @@ The nslookup and ping commands fail to query DNS data for an intranet, resulting
 2. Right-click in the lower left corner of the operating system's desktop, <img src="https://qcloudimg.tencent-cloud.cn/raw/0cfefcbe7474bf6b532a589c53314d5b.png" style="margin:-3px 0px">, and select <b>Windows PowerShell (Admin)</b> from the pop-up menu.
 3. Enter `ncpa.cpl` in the powershell window, and press **Enter** to open the "Network Connection" window.
 4 Right-click the NIC in the "Network Connection" window, and select **Properties** from the pop-up menu.
-5.Select "Internet Protocol Version 4 (TCP/IPv4)" in the "Ethernet X Properties" pop-up window, and then click **Properties**, as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/2e59ccc6a9a06f925f333e469e3b0c74.png)
+5.Select "Internet Protocol Version 4 (TCP/IPv4)" in the "Ethernet X Properties" pop-up window, and then click **Properties**.
 6. In the "Internet Protocol Version 4 (TCP/IPv4)" pop-up window:
     - It is recommended to select "Obtain DNS server address automatically", or add CVM default DNS addresses (generally, add `183.60.83.19` and `183.60.82.98` for a private network).
     - If the instance is a domain environment, click **Advanced**. Then in the "Advanced TCP/IP Settings" window, it is recommended to place the CVM default DNS addresses after the domain DNS.

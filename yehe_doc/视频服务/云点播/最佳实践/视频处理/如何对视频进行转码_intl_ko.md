@@ -125,7 +125,8 @@ Tencent Cloud의 고유한 TESHD는 이미지 품질 복원 및 향상, 콘텐�
 ### 2단계: 동영상 업로드[](id:p12)
 
 [시작하기 - 2단계](https://intl.cloud.tencent.com/document/product/266/8757)를 참고하여 테스트 동영상을 업로드합니다. Demo에 사용된 테스트 동영상을 보려면 [여기](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4)를 클릭합니다. 해당 FileId는 아래와 같이 8602268010602075659입니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cad41443d593fed8523ca26f1c245733.png)
+
 >?트랜스코딩에 너무 많은 시간이 소요되지 않도록 테스트에 짧은 동영상 파일(지속 시간 수십 초)을 사용하는 것이 좋습니다.
 
 ### 3단계: 트랜스코딩 시작[](id:p13)

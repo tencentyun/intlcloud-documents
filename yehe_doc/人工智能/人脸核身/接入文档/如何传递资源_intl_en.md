@@ -7,7 +7,7 @@ When backend APIs are used, due to requirements for stability and regional isola
   /Note: If you have not activated COS or don't know how to use it, but you want to complete the integration quickly, see the Best Practices first./ 
  
 The input links must meet the following requirements:
-- A link must be a COS domain name, and the bucket region must be same as the region given in the API to use. For example, for a service using `ap-singapore` as the region, the link should be like this: https://<your-bucket>-<your-appid>.cos.ap-singapore.myqcloud.com. For details, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/zh/document/product/436/6224). 
+- A link must be a COS domain name, and the bucket region must be same as the region given in the API to use. For example, for a service using `ap-singapore` as the region, the link should be like this: https://<your-bucket>-<your-appid>.cos.ap-singapore.myqcloud.com. For details, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224?lang=en&pg=). 
 - A link must be directly accessible to a GET request from a public network.
 	
 ## Best Practices
@@ -16,7 +16,7 @@ The input links must meet the following requirements:
 - Use the [Put Bucket](https://intl.cloud.tencent.com/zh/document/product/436/7738) API or [Creating a Bucket](https://intl.cloud.tencent.com/zh/document/product/436/13309) in the console. Make sure the bucket region is same as the region of the API to use.
 - Upload the object with the [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) API. 
 - Calculate the 32-bit MD5 checksum of the object (the object downloaded in the Tencent Cloud backend will be checked with this checksum to prevent file disorder).
-- [Download via Pre-Signed URL](https://intl.cloud.tencent.com/zh/document/product/436/14116). Make sure this link is available for getting the object within a specified period.
+- [Download via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14116?lang=en&pg=). Make sure this link is available for getting the object within a specified period.
 
 ### Transferring resources with `CreateUploadUrl`
 

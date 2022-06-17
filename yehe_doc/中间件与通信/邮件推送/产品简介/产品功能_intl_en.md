@@ -1,14 +1,13 @@
 [](id:senderConfig)
 ## Sender Configuration Options
-Simple Email Service (SES) provides three ways to send emails: SES console, SES API, and SES SMTP. You can send emails by calling APIs with SES command line interface (SES CLI) or [SES SDK] (https://intl.cloud.tencent.com/document/product/1084/39387) or by calling SMTP APIs.
+Simple Email Service (SES) provides three ways to send emails: SES console, SES API, and SES SMTP. You can send emails by calling APIs with SES command line interface (SES CLI) or [SES SDK](https://intl.cloud.tencent.com/document/product/1084/39387) or by calling SMTP APIs.
 
 To send an email, see [**Console Guide** > **Email Sending**](https://intl.cloud.tencent.com/document/product/1084/40178).
 ## Flexible Deployment Options
 ### Shared IP Addresses
 Generally, SES sends emails from shared IP addresses in the shared IP pool by default. Shared addresses are a fast and easy-to-use option for users who want to start sending with established IPs immediately. Tencent Cloud helps ensure the quality of shared IPs and a high delivery rate.
 ### Dedicated IP Addresses
-A dedicated IP is an IP specially assigned to you by Tencent Cloud for sending emails. Generally, it has never been used for email sending or has enjoyed a good reputation all along, ensuring that it will not be marked as a spam IP by anti-spam organizations. You can apply for a dedicated IP subject to your sending volume. If you need to send a large number of emails, contact your sales rep to apply for a dedicated IP.
-
+A dedicated IP is an IP specially assigned to you by Tencent Cloud for sending emails. Generally, it either has never been used to send emails or has a good reputation in the past. This ensures that it will not be marked as a spam IP by anti-spam organizations. Dedicated IPs are unavailable currently.
 
 ## Sender Identity Management and Security
 When receiving an email, an internet service provider (ISP) will check whether it is authenticated before delivering it to the recipient. Authentication proves to the ISP that you are the owner of the email address you are sending from. SES supports all industry-standard authentication mechanisms, including Sender Policy Framework (SPF), Domain Keys Identified Mail (DKIM), and Domain-Based Message Authentication, Reporting and Conformance (DMARC). It can ensure that your emails pass the ISP checks and are delivered to recipients successfully.
@@ -16,7 +15,6 @@ When receiving an email, an internet service provider (ISP) will check whether i
 SES provides a variety of methods to monitor email sending activities. For example, it can capture the information about the entire email response funnel (including the numbers of deliveries, opens, clicks, and bounces), and provide accurate data analysis. In addition, you can check the sending status of a specific email by calling [GetSendEmailStatus](https://intl.cloud.tencent.com/document/product/1084/39502) to help you adjust your email sending policy.
 
 [](id:warmUp)
-
 ## Automatic Warm-up 
 ### Features
 The email delivery process can be extremely complicated. The reputation of an IP/domain is vital to improving deliverability. Warm-up is a process of building up your sending reputation. The sending volume must be increased gradually day by day, and cannot be lifted to the desired level at a stroke. A good warm-up helps establish a good reputation with your ISP.
@@ -24,7 +22,7 @@ The email delivery process can be extremely complicated. The reputation of an IP
 ### Description
 Automatic warm-up is divided into two categories: [Standard Rules (Default)](#default) and [Upgraded Rules](#upgrade).
 
-#### Default rules:
+#### Default rules
 Standard warm-up rules apply by default under the batch sending mode. The backend will determine the warm-up progress based on a series of policies and automatically assign the daily sending quota. The entire process is completely automatic. When the maximum number of sent emails allowed per day is reached, email sending will stop and extra emails will enter the cache queue and be sent 24 hours later. The standard warm-up plan is shown here: [](id:default)
 
 <table style="width: 200px;">
@@ -115,15 +113,15 @@ Standard warm-up rules apply by default under the batch sending mode. The backen
 </table>
 
 [](id:customize)
-#### Custom rules:
+#### Custom rules
 If the standard warm-up plan cannot satisfy your needs, you can pursue a upgraded warm-up plan for high-quality emails. For details, contact your sales rep to apply for.
 [](id:batch)
 ## Batch Feature Set
 This is suitable for batch sending of marketing or notification emails. To send trigger-based emails (such as authentication and transactional emails), we recommend you call the `SendEmail` API.
 ### Features
 You can use the SES batch sending feature in either of the following ways:
-• Console: A template is required, the email size must not exceed 10 MB, and attachments are not supported.
-• API: A template is required, the email size must not exceed 10 MB, and attachments are supported.
+•	Console: A template is required, the email size must not exceed 10 MB, and attachments are not supported.
+•	API: A template is required, the email size must not exceed 10 MB, and attachments are supported.
 
 ### Description
 You can manage sender addresses on the **Email Sending** > **Recipient Groups** page in the console.

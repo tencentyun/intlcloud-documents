@@ -59,12 +59,12 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 서비스 시나리오에 따라 생성한 푸시 스트림 주소를 해당 푸시 스트림 소프트웨어에 입력하십시오.
 - PC용 푸시 스트림은 OBS 사용을 권장하며, 먼저 [OBS 플러그 인](https://intl.cloud.tencent.com/document/product/267/42131) 설정이 필요합니다. 플러그 인 설정 후 후속 작업은 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)을 참고하십시오..
 - Web에서 푸시의 경우 **CSS 툴킷** > [**Web 푸시**](https://console.cloud.tencent.com/live/tools/webpush)를 사용하는 것이 좋습니다. 푸시 도메인 이름을 선택하고 사용자 정의 StreamName을 입력하고 URL 만료 시간을 선택하고 카메라를 켜고 **푸시 시작**을 클릭합니다.
-- 미니 프로그램에서 스트림을 푸시하려면 WeChat을 통해 미니프로그램 [‘Tencent Video Cloud’](https://intl.cloud.tencent.com/document/product/1071/38147)를 검색하고 **RTMP 푸시 스트림**을 선택하여 푸시 스트림 주소를 입력한 다음 **시작**을 클릭하여 푸시 스트림을 시작합니다.    
-- 모바일 기기에서 푸시하려면 [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)을 다운로드하여 설치하고 앱을 열고 **MLVB** > **푸시(카메라)**를 선택하고 푸시 URL을 주소 상자에 수동으로 입력하거나 QR 코드를 스캔한 다음 왼쪽 하단 모서리에 있는 **시작** 아이콘을 클릭합니다.
+- 미니 프로그램에서 스트림을 푸시하려면 WeChat을 통해 미니프로그램 ‘Tencent Video Cloud’를 검색하고 **RTMP 푸시 스트림**을 선택하여 푸시 스트림 주소를 입력한 다음 **시작**을 클릭하여 푸시 스트림을 시작합니다.    
+- 모바일 기기에서 푸시하려면 TCToolkit App을 다운로드하여 설치하고 앱을 열고 **MLVB** > **푸시(카메라)**를 선택하고 푸시 URL을 주소 상자에 수동으로 입력하거나 QR 코드를 스캔한 다음 왼쪽 하단 모서리에 있는 **시작** 아이콘을 클릭합니다.
 
 >? 
 >
->- 맞춤화된 App에서 Tencent Cloud가 제공하는 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071)를 통합해 푸시 스트림 기능을 구현할 수 있습니다.
+>- 맞춤화된 App에서 Tencent Cloud가 제공하는 MLVB SDK 를 통합해 푸시 스트림 기능을 구현할 수 있습니다.
 - LEB Web 방안은 B-프레임 디코딩 및 재생을 지원하지 않습니다. 자세한 내용은 [B-프레임 정보](#b_frame)를 참고하십시오.
 
 [](id:step4)
@@ -84,11 +84,11 @@ CSS 서비스 이용 시 **푸시 스트림 도메인**과 **재생 도메인**�
 >?
 >- WebRTC Live Demo는 다중 해상도 기능을 지원합니다. CSS 콘솔의 **기능 설정** > [**라이브 방송 트랜스 코딩**](https://console.cloud.tencent.com/live/config/transcode)에서 HD, SD 트랜스 코딩 템플릿을 설정할 수 있습니다. 트랜스 코딩 템플릿이 있는 WebRTC 스트림 주소를 Demo의 해당 열에 입력한 다음 재생을 테스트합니다(이 기능을 테스트할 필요가 없는 경우, Demo에 WebRTC 원본 스트림 하나만 입력하면 됩니다).
 >- 라이브 방송 트랜스 코딩 운영 가이드 및 트랜스 코딩 과금 관련 내용은 [라이브 방송 트랜스 코딩](https://intl.cloud.tencent.com/document/product/267/31071) 문서를 참고하십시오.
-   - **모바일 라이브 방송 스트림 테스트**: [TCToolkit App](https://intl.cloud.tencent.com/document/product/1071/38147)을 다운로드하고, **LEB 재생** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 **푸시 스트림 체험**에서 획득한 LEB 재생 주소 입력하고, 재생 버튼을 클릭하여 재생 및 시청합니다.
+   - **모바일 라이브 방송 스트림 테스트**: TCToolkit App 을 다운로드하고, **LEB 재생** 열기 및 선택 후, 수동 입력 또는 QR 코드 스캔을 통해 **푸시 스트림 체험**에서 획득한 LEB 재생 주소 입력하고, 재생 버튼을 클릭하여 재생 및 시청합니다.
 >? App에서 스트림을 푸시/재생하려면 MLVB SDK를 앱에 통합하여 LEB 서비스를 보완할 수 있습니다. 문제가 발생하면 [FAQ](#que)를 참고하십시오.
 
 ## 5단계: LEB 제품 액세스
-**모바일 솔루션**: B-프레임 디코딩 및 AAC 오디오 형식을 지원합니다. 현재 MLVB SDK에 통합되었으며, 연결 방법은 [LEB 풀 스트림](https://intl.cloud.tencent.com/document/product/1071/41875)을 참고하십시오.
+**모바일 솔루션**: B-프레임 디코딩 및 AAC 오디오 형식을 지원합니다. 현재 MLVB SDK에 통합되었으며.
 
 [](id:que)
 ## FAQ

@@ -52,7 +52,7 @@ System.out.println("Send delay message: " + result);
 
 ## Use Limits
 
-- When using delayed messages, make sure that the time on the client is in sync with the time on the server (UTC+8 Beijing time in all regions); otherwise, there will be a time difference.
+- When using delayed messages, make sure that the time on the client is in sync with the time on the server; otherwise, there will be a time difference.
 - There is a precision deviation of about 1 second for scheduled and delayed messages.
 - The maximum time range for scheduled and delayed messages are both 40 days.
 - When using scheduled messages, you need to set a time point after the current time; otherwise, the message will be sent to the consumer immediately.

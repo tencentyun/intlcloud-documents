@@ -1,6 +1,6 @@
 ## 작업 시나리오
 애플리케이션 관리를 통해 사용자는 해당 애플리케이션의 리소스를 비활성화하거나 폐기할 수 있어 애플리케이션을 더욱 유연하게 관리할 수 있습니다. VOD 애플리케이션의 상태는 정상, 비활성화, 폐기의 세 종류로 나뉘며, 애플리케이션의 라이프사이클과 관련 상태의 의미는 다음 이미지와 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/5d453fecd052b987f8219a2fe4e331a2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/92c8a8158d5fbc3e2fa246e7168d7d10.png)
 
 
 

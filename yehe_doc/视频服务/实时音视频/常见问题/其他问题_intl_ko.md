@@ -1,16 +1,16 @@
 [](id:que1)
-###  라이브 방송, ILVB, TRTC, 릴레이 라이브 방송에는 어떤 차이와 관계가 있습니까?
-- 라이브 방송(키워드: 일 대 다수, RTMP/HLS/HTTP-FLV, CDN）
- 라이브 방송은 푸시 스트리밍, 재생, 라이브 방송 클라우드 서비스로 나뉘며, 클라우드 서비스는 CDN을 사용해 라이브 방송 스트리밍을 배포합니다. 푸시 스트리밍은 범용 표준 프로토콜 RTMP를 사용해 CDN을 거쳐 배포한 후 재생 시 일반적으로 RTMP, HTTP-FLV 또는 HLS(H5 지원) 등의 방식을 선택하여 시청할 수 있습니다.
-- ILVB(키워드: 마이크 연결, PK)
- ILVB는 일종의 비즈니스 형태로, 호스트와 시청자 사이의 인터랙션 마이크를 연결하고, 호스트와 호스트 사이에서 인터랙션 PK를 진행하는 일종의 라이브 방송 형태입니다.
-- TRTC(키워드: 다중 사용자 인터랙션, UDP 사유 프로토콜, 저지연)
- TRTC(Real-Time Communication, TRTC)의 주요 응용 시나리오는 멀티미디어 인터랙션과 저지연 라이브 방송이며, UDP 기반의 사유 프로토콜을 사용하여 딜레이가 100ms까지 낮아집니다. 전형적인 시나리오로는 QQ 전화, VooV Meeting, 대규모 수업 등이 있습니다. Tencent Cloud TRTC는 전 플랫폼을 커버하며 iOS/Android/Windows 이외에 WebRTC 통신을 지원하고 클라우드 혼합 스트리밍 방식을 통해 릴레이 라이브 방송 화면을 CDN으로 전달합니다.
-- 릴레이 라이브 방송(키워드: 클라우드 혼합 스트리밍, RTC 릴레이 공유, CDN)
- 릴레이 라이브 방송은 저지연 마이크 연결 방 안의 여러 채널의 푸시 스트리밍 화면을 복사하여 클라우드에서 화면을 한 채널로 통합하고, 혼합 스트리밍 후의 화면을 라이브 방송 CDN으로 푸시 스트리밍하여 배포 재생하는 기술입니다. 
-
+###  라이브 스트리밍, 인터랙티브 라이브 스트리밍, TRTC 및 릴레이 라이브 스트리밍은 어떻게 다르고 서로 관련이 있습니까?
+- **라이브 방송**(키워드: 1대 다수, RTMP/HLS/HTTP-FLV, CDN)
+ 라이브 스트리밍은 푸시 엔드, 재생 엔드 및 클라우드 라이브 스트리밍 서비스로 구성됩니다. 스트림은 범용 프로토콜 RTMP를 통해 푸시되고 CDN을 통해 배포되며 RTMP, HTTP-FLV 또는 HLS(H5용)를 포함한 프로토콜을 통해 볼 수 있습니다.
+- **인터랙티브 라이브 스트리밍**(키워드: 마이크 연결, PK)
+ 인터랙티브 라이브 스트리밍에서 시청자는 호스트와 공동 호스트를 할 수 있고 다른 방의 호스트는 서로 경쟁할 수 있습니다.
+- **TRTC**(키워드: 다중 사용자 인터랙션, UDP 기반 독점 프로토콜, 저지연)
+ TRTC(Real-Time Communication)의 주요 기능은 오디오/비디오 상호작용 및 저지연 라이브 스트리밍입니다. UDP 기반 독점 프로토콜을 사용하며 대기 시간을 100ms만큼 낮게 유지할 수 있습니다. 일반적인 응용 프로그램에는 QQ 통화, VooV Meeting 및 온라인 그룹 수업이 포함됩니다. TRTC는 iOS/Android/Windows를 포함한 주류 플랫폼을 위한 솔루션을 제공하고 WebRTC와의 통신을 허용하며 클라우드에서 스트림을 혼합하고 CDN으로 중계하는 것을 지원합니다.
+- **릴레이 라이브 방송**(키워드: 클라우드 혼합 스트리밍, RTC 릴레이 공유, CDN)
+ 중계된 라이브 스트리밍 기술은 지연 시간이 짧은 공동 호스트 룸에서 여러 스트림을 복제하고 배포 및 재생을 위해 라이브 스트리밍 CDN으로 푸시하기 전에 클라우드에서 하나의 스트림으로 혼합합니다. 
 
 [](id:que2)
+
 ###  2대의 디바이스에서 동시에 Demo를 실행할 경우 서로의 화면이 보이지 않는 이유는 무엇입니까?
 2대의 디바이스가 Demo를 실행할 경우 각자 다른 UserID를 사용해야 합니다. TRTC에서는 동일 UserID(SDKAppID가 다를 경우 제외)를 2개의 디바이스에서 동시에 사용할 수 없습니다.
 
@@ -24,18 +24,21 @@ VideoCall 모드는 영상 통화에 최적화되어 있어 방에 1명의 사�
 
 방 권한 제어를 활성화했기 때문입니다. 방 권한 제어 활성화 후 SDKAppID의 방은 TRTCParamEnc에서 privateMapKey를 설정해야 입장할 수 있습니다. 온라인 비즈니스를 운영하고 있으며 온라인 버전에 privateMapKey 관련 로직을 추가하지 않았을 경우 해당 기능을 활성화하지 마십시오. 자세한 내용은 [방 입장 권한 보호](https://intl.cloud.tencent.com/document/product/647/35157)를 참고하십시오.
 
-
-
 [](id:que5)
 ###  TRTC 로그는 어떻게 조회합니까?
 TRTC의 로그는 기본적으로 압축 암호화하여 .xlog라는 접미사가 붙어 있습니다. 로그 암호화 여부는 setLogCompressEnabled를 통해 제어할 수 있으며, 생성된 파일명에 C(compressed)가 포함되어 있으면 암호화 압축한 것이고, R(raw)이 포함되어 있으면 플레인 텍스트입니다.
 
 - iOS 및 Mac: `sandbox의 Documents/log`
 - Android:
-  - 6.7 및 이전 버전: `/sdcard/log/tencent/liteav`
-  - 6.8 이후 버전: `/sdcard/Android/data/패키지명/files/log/tencent/liteav/`
-- Windows: `%appdata%/tencent/liteav/log`
+	- 6.7 이하 버전: `/sdcard/log/tencent/liteav`.
+	- 6.8-8.5 버전: `/sdcard/Android/data/패키지명/files/log/tencent/liteav/`.
+	- 8.5 이후 버전: `/sdcard/Android/data/패키지명/files/log/liteav/`
+- Windows:
+	- 8.8 이전 버전: `%appdata%/tencent/liteav/log`
+	- 8.8 또는 8.8 이후 버전: `%appdata%/liteav/log`
 - Web: 브라우저 콘솔을 열거나 vConsole을 사용하여 SDK 출력 정보를 기록합니다.
+
+  
 
 >?
 >- .xlog 파일을 조회하려면 복호화 툴을 다운로드해야 합니다. python 2.7 환경에서 툴을 xlog 파일과 동일한 디렉터리에 넣고 `python decode_mars_log_file.py`를 사용하여 실행하면 됩니다.
@@ -96,11 +99,11 @@ TRTC에서는 2개의 동일한 userID로 동시에 방에 입장하면 서로 �
 TRTC는 수동 녹화를 지원합니다. 구체적인 작업 방법은 다음과 같습니다.
 1. **[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)** > **기능 설정**에서 **자동 릴레이 푸시 스트리밍**을 활성화하고 **클라우드 녹화 실행**을 비활성화합니다.
 2. 사용자는 방에 입장한 후 스트리밍 ID에 따라 규칙을 생성하고 userid에 상응하는 streamid를 산출합니다.
-3. CSS의 [녹화 작업 생성 API](https://intl.cloud.tencent.com/document/product/267/37309)를 사용하여 streamid에 대한 녹화 작업을 실행합니다.
+3. CSS의 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)를 사용하여 streamid에 대한 녹화 작업을 실행합니다.
  - DomainName은 `[bizid].livepush.myqcloud.com`입니다.
  - AppName은 `trtc_[sdkappid]`입니다.
  - StreamName은 `streamid`입니다.
-4. 녹화 작업 완료 후 CSS는 파일을 VOD에 입력하며 [녹화 콜백 이벤트 공지](https://intl.cloud.tencent.com/document/product/267/38080)를 통과합니다.
+4. 녹화 작업 완료 후 CSS는 파일을 VOD에 입력하며 [녹화 콜백 이벤트 알림](https://intl.cloud.tencent.com/document/product/267/38080)을 통과합니다.
 
 [](id:que26)
 ###  TRTC에서 생성된 UserSig가 정확한지 어떻게 검사합니까? 방 입장 시 -3319, -3320 오류가 보고되었는데 어떻게 해결합니까? 
@@ -132,18 +135,18 @@ TRTC 콘솔의 **[사용량 통계](https://console.cloud.tencent.com/trtc/stati
 
 [](id:que36)
 ###  게스트 초대 연결 시 게스트에게 방 번호는 어떻게 알립니까?
-사용자 정의 메시지를 통해 게스트에게 방 번호를 공지하고, 메시지를 리졸브하여 roomid를 획득합니다. 자세한 내용은 [사용자 정의 메시지 생성](https://intl.cloud.tencent.com/document/product/1047/34322), [TIMMsgSendNewMsg](https://intl.cloud.tencent.com/document/product/1047/34391)를 참고하십시오.
+사용자 정의 메시지를 통해 게스트에게 방 번호를 공지하고, 메시지를 리졸브하여 roomid를 획득합니다. 자세한 내용은 [Creating a custom message](https://intl.cloud.tencent.com/document/product/1047/34322), [TIMMsgSendNewMsg](https://intl.cloud.tencent.com/document/product/1047/34391)를 참고하십시오.
 
 [](id:que37)
 ###  2인 이상 방에 입장한 후 녹음을 시작할 수 있습니까?
-가능합니다. 혼합 스트리밍 녹음 후의 오디오 데이터를 획득하고자 할 경우 [클라우드 혼합 스트리밍 실행](https://intl.cloud.tencent.com/document/product/647/34618) 후 출력 스트리밍 ID를 만들어 라이브 방송 인터페이스 [녹화 작업 생성](https://intl.cloud.tencent.com/document/product/267/37309)을 호출할 수 있습니다.
+가능합니다. 혼합 스트리밍 녹음 후의 오디오 데이터를 획득하고자 할 경우 [혼합 스트림 실행](https://intl.cloud.tencent.com/document/product/647/34618) 후 출력 스트리밍 ID를 만들어 라이브 방송 인터페이스 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)를 호출할 수 있습니다.
 
  [](id:que38)
 ###  Windows에서 공유된 애플리케이션의 재생 오디오를 어떻게 수집합니까?
 [startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a157639a4fa3cc73ffc1982bbd8a8985e) 인터페이스를 호출하여 시스템 오디오 수집을 활성화할 수 있습니다.
 
 [](id:que39)
-###  Windows 회의 모드에서 호스트가 시청자에게 멀티미디어 연결 기능을 시작하려면 어떻게 해야 합니까?
+### Windows 회의 모드에서 호스트가 시청자에게 멀티미디어 연결 기능을 시작하려면 어떻게 해야 합니까?
 다른 클라우드 서비스와 연결이 필요한 경우 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/33996)에서 연결을 요청해야 합니다.
 
 호출의 대략적인 로직은 다음과 같습니다. A가 B에게 사용자 정의 메시지 X를 발송하고 호출 페이지 알람을 설정하면 X 출력 효과를 자체적으로 처리하고 B는 X를 받은 후 호출된 페이지를 호출합니다. B가 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)을 클릭하여 방에 입장하고 사용자 정의 정보 X1을 A에게 발송하면 A가 X1(출력 여부 자체 결정)을 수신하고 동시에 enterRoom을 호출하여 방으로 들어가고 IM으로 사용자 정의 정보를 발송합니다.
@@ -156,3 +159,7 @@ TRTC 콘솔의 **[사용량 통계](https://console.cloud.tencent.com/trtc/stati
 [](id:que41)
 ### TRTC에 Linux SDK가 있습니까?
 Linux SDK는 현재 지원하지 않습니다. 서비스 관련 문의사항은 colleenyu@tencent.com으로 연락주시기 바랍니다.
+
+[](id:que42)
+### TRTC는 영상 통화 또는 인터랙션 라이브 스트리밍 중 화면 공유를 지원합니까?
+지원합니다. 영상 통화 또는 인터랙티브 라이브 스트리밍 중에 카메라에서 캡처한 비디오가 기본 스트림으로 게시됩니다. 화면을 하위 스트림으로 게시할 수도 있습니다. 공유 화면에는 영상 통화 또는 인터랙티브 라이브 스트리밍 창이 포함됩니다.

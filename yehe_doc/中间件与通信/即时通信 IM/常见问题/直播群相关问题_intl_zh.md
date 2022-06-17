@@ -9,13 +9,6 @@
 ### 如何在直播群中实现踢人功能？
 
 可以将踢人功能通过自定义消息实现，自定义消息中需包含被踢者的 Members_Account，通过将该消息优先级设置为 High 避免因40条/秒消息限频后被后台抛弃，被踢者的 SDK 收到该消息后，调用 [退出群组](https://intl.cloud.tencent.com/document/product/1047/36169) 接口即可在直播群中实现踢人功能。
-<span id="p4"></span>
-###  为什么在小程序/Web 端调用退出群组接口后，Android/iOS/PC 端会同步退群；但是 Android/iOS/PC 调用退出群组接口后，小程序/Web 端不会退出呢？
-
-因为小程序/Web 端支持用户以游客模式访问，所以当 Android/iOS/PC 退群后，小程序/Web 端不会主动触发退出群组操作。
-
-- 如果希望实现全端同步退出操作，您可以配置 [群成员离开之后](https://intl.cloud.tencent.com/document/product/1047/34373) 回调，通过 OptPlatform 字段判断当前退出平台，当退群平台为 Android/iOS/PC 时，通过 [单发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34919) 接口以系统消息的方式发送一条自定义消息至退群者，前端屏蔽该会话不做 UI 层展示，小程序/Web 端收到该消息后，调用 [退出群组](https://intl.cloud.tencent.com/document/product/1047/33999) 接口即可。
-- 如果希望实现单端独立退出操作，您可以配置 [群成员离开之后](https://intl.cloud.tencent.com/document/product/1047/34373) 回调，通过 OptPlatform 判断当前退出平台，通过 [单发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34919) 接口以系统消息的方式发送一条自定义消息至退群者，前端屏蔽该会话不做 UI 层展示，非退出端收到该消息后调用 [加入群组](https://intl.cloud.tencent.com/document/product/1047/36169) 接口再次加入该群即可，为避免多次出现加退群系统通知，可提交工单关闭加退群系统通知。
 
 ### 为什么会丢消息？
 

@@ -34,7 +34,7 @@
 	- **任务流模板** 选择 **LongVideoPreset**。
 >?LongVideoPreset 是预置任务流，使用10模板转自适应码流，10模板截图做封面，10模板截雪碧图。
 
-![](https://main.qcloudimg.com/raw/c5d53f748ce95ab0c8accea42687256a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/56e6b4249722884eed34b167d6e6d6ed.png)
 3. 单击 **开始上传**，进入“正在上传”页，等待上传完成。
 4. 选择 **媒资管理**>[**视频管理**](https://console.cloud.tencent.com/vod/media)，找到新上传的视频（FileId 为528xxx3757278095），其中 ID 即为上传视频的 FileId。
 ![](https://main.qcloudimg.com/raw/f2b3744a3c42a07863db0b7545dd892f.png)
@@ -48,7 +48,7 @@
 前面的步骤中，您已经上传视频，并对视频进行了处理。现在，将使用三端的超级播放器，快速体验播放效果。
 
 1. 选择 **媒资管理**>[**视频管理** ](https://console.cloud.tencent.com/vod/media)，找到**步骤1**上传和处理过的视频，单击“操作”栏下的 **管理**，选择 **超级播放器预览**。
-2.  **超级播放器配置** 选择 default。
+2.  **播放配置** 选择 default。
 >? default 是预置超级播放器配置，用于播放10模板转自适应码流输出，10模板截雪碧图输出。
 
  <img src="https://main.qcloudimg.com/raw/17e2552964195c6919239d2d13a0d012.png" width="660" />

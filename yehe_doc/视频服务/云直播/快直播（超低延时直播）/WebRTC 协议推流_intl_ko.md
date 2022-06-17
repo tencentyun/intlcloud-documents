@@ -19,7 +19,7 @@ LEB 푸시 스트리밍은 WebRTC를 기반으로 구현되며 WebRTC에 대한 
 
 또한 브라우저의 멀티미디어 화면 캡처 기능은 모바일에서 제대로 지원되지 않습니다. 예를 들어, 모바일 브라우저는 화면 녹화를 지원하지 않으며 iOS 14.3 이상에서만 사용자 카메라 장치 가져오기가 지원됩니다. 따라서 푸시 스트리밍 SDK는 주로 데스크톱 브라우저에 적합하며, 최신 버전의 chrome, Firefox 및 Safari 브라우저에서 LEB 푸시 스트리밍이 모두 지원됩니다.
 
-모바일은 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38157) 사용을 통한 푸시 스트리밍을 권장합니다.
+모바일은 MLVB SDK 사용을 통한 푸시 스트리밍을 권장합니다.
 
 ## 연결 방법
 
@@ -144,7 +144,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### 콜백 이벤트 알림
-SDK는 현재 콜백 이벤트 알림을 제공하고 있으며, Observer 설정을 통해 SDK 내부 상태 정보 및 WebRTC 관련 데이터 통계를 알아볼 수 있습니다. 자세한 내용은 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709)를 참고하십시오.
+SDK는 현재 콜백 이벤트 알림을 제공하고 있으며, Observer 설정을 통해 SDK 내부 상태 정보 및 WebRTC 관련 데이터 통계를 알아볼 수 있습니다. 
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({

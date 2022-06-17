@@ -1,3 +1,36 @@
+## January 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Supported rollback to pay-as-you-go instances</td>
+<td>The database rollback feature is updated, so data will be rolled back to pay-as-you-go instances instead of temp instances. After rollback to a pay-as-you-go instance, you can flexibly configure the retention time of the rollback instance according to your business needs. Rollback instances have the same functionality, security, and reliability as general instances.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/237/8719" target="_blank">Rolling back Database</a></td></tr>
+<tr>
+<td>Supported modifying disaster recovery instance parameters	</td>
+<td>You can modify the parameters of disaster recovery instances in the console.</td>
+<td>-</td></tr>
+</tbody></table>
+
+
+## December 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Supported AZ migration	</td>
+<td>The AZ migration feature is launched. It can implement nearby access and resource expansion for your business and better utilize resources in different AZs in the same region.</td>
+<td>-</td></tr>
+<tr>
+<td>Supported custom old IP retention period	</td>
+<td>When switching IP manually, you can customize the old IP retention period. In this way, IP resources can be released quickly or retained for a long time to allow for business migration.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/237/40160" target="_blank">Changing Networks</a></td></tr>
+<tr>
+<td>Supported modifying the read-only policy</td>
+<td>You can modify the policy of a read-only account to satisfy different read-only access and delay requirements.</td>	
+<td><a href="https://intl.cloud.tencent.com/document/product/237/35409" target="_blank">Read/Write Separation</a></td></tr>
+</tbody></table>
+
 ## March 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
@@ -15,6 +48,7 @@
 <td>You can now modify the access address of an instance via network translation.</td>
 <td>2021-03</td><td><a href="https://intl.cloud.tencent.com/document/product/237/35410" target="_blank">Changing Networks</a></td></tr>
 </tbody></table>
+
 
 ## October 2020
 <table>

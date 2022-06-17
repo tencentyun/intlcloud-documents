@@ -2,8 +2,9 @@
 mysqldump is easy to use for data import but needs long downtime, so it is only suitable for small amounts of data or situations that allow relatively long downtime.
 
 1. Use mysqldump to export data from the local database to a data file.
->?Do not update data during the export. This step only exports data excluding stored procedures, triggers, and functions.
->
+>?
+>- Do not update data during the export. This step only exports data excluding stored procedures, triggers, and functions.
+>- The export account must have the `select on *.*` permission.
 ```
 mysqldump -h localIp -u userName -p --opt --default-character-set=utf8 --hex-blob dbName --skip-triggers > /tmp/dbName.sql
 ```

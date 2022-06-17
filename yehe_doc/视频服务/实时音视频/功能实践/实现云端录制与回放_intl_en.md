@@ -115,7 +115,7 @@ TRTC offers three on-cloud recording schemes, namely [global auto-recording](#au
 - **Mixing streams**
   There are two On-Cloud MixTranscoding options in the global auto-recording mode: via the server-side RESTful API and client-side SDK API. Choose one and stick to it.
   - [Stream mixing via the server-side RESTful API](#recordRESTAPI): the stream mixing API must be called on your server. This method works regardless of the platform the SDK runs on.
-  - [Stream mixing via the client-side API](#recordSDKAPI): the stream mixing API can be called from the client. This method works on iOS, Android, Windows, macOS and Electron, but not on WeChat Mini Program or browsers for the time being.
+  - [Stream mixing via the client-side API](#recordSDKAPI): the stream mixing API can be called from the client. This method works on iOS, Android, Windows, macOS and Web, but not on WeChat Mini Program for the time being.
 
 - **Naming of recording files**
   - If an anchor has set [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry, recording files will be named `userDefineRecordId_streamType__start time_end time` (`streamType` has two valid values: `main`, which indicates the primary stream, and `aux`, which indicates the substream.)

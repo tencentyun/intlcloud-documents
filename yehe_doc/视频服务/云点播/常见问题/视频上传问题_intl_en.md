@@ -64,8 +64,3 @@ For more information, please see [Managing Video](https://intl.cloud.tencent.com
 ### Can a cover be automatically generated for a video uploaded to VOD?
 
 Yes. When a video is uploaded, VOD uses the first frame as the cover or pulls the cover from the video.
-
-
-### Does video pull in VOD support M3U8 files?
-
-Currently, M3U8 files cannot be pulled.

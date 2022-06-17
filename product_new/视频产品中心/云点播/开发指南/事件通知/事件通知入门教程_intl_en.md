@@ -23,15 +23,15 @@ After the command is executed, the standard output of the CVM instance should pr
 ### Configuring normal callback
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview) and click **Callback Settings** on the left sidebar.
 2. Click **Settings**:
-	- Callback Mode: select **Normal Callback**.
-	- Callback URL: enter `http://134.XXX.XXX.167:8080`.
-	- Callback Event: check **Callback on video upload completion**.
-3. Click **OK**.
+    - Event Notification Method: Select **Normal Callback**.
+    - Callback URL: enter `http://134.XXX.XXX.167:8080`.
+    - Event Notification: Select **Finished video uploading**.
+3. Click **Confirm**.
 
 ### Initiating and receiving normal callback
 
 Please download the [demo video](http://1255566954.vod2.myqcloud.com/ca75586fvodgzp1255566954/484c46995285890788305672872/xUCHV5kOGyIA.wmv) to your local file system for getting started.
-1. Click **Media Assets** on the left sidebar, select **Uploaded**, and click **Upload Video**.
+1. Select **Media Assets > Video Management** on the left sidebar.
 ![](https://main.qcloudimg.com/raw/4724951966b46c801498efed4b6ebec9.png)
 2. In the **Upload Video** dialog box that pops up, select **Local Upload**, click **Select Video**, and upload the **demo video** to the VOD platform.
 ![](https://main.qcloudimg.com/raw/e0eb51db29de59e948b332ad05a069db.png)
@@ -57,7 +57,7 @@ At this point, you have uploaded a video and performed a transcoding task on it.
 
 ### Initiating reliable callback
 
-1. Click **Media Assets** on the left sidebar, select **Uploaded**, and click **Upload Video**.
+1. Select **Media Assets > Video Management** on the left sidebar, select **Uploaded**, and click **Upload Video**.
 ![](https://main.qcloudimg.com/raw/4724951966b46c801498efed4b6ebec9.png)
 
 2. In the **Upload Video** dialog box that pops up, select **Local Upload**, click **Select Video**, and upload the **demo video** to the VOD platform.

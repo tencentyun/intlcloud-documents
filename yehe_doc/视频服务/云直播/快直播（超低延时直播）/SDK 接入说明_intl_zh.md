@@ -8,10 +8,10 @@
 ### 接入说明
 iOS、Android 上的应用可以通过集成移动直播 SDK 来实现 App 端上的直播推流/播放功能。
 
-- **App 端直播推流**：支持采集摄像头画面或者采集手机界面，通过 RTMP 协议快速推流到云直播服务上，详情请参见 [摄像头推流](https://intl.cloud.tencent.com/document/product/1071/38157) 和 [录屏推流](https://intl.cloud.tencent.com/document/product/1071/41878)。
-- **App 端直播播放**：支持 WebRTC 播放协议，配合快直播服务快速打造低延迟直播体验，详情请参见 [快直播拉流](https://intl.cloud.tencent.com/document/product/1071/41875)。
+- **App 端直播推流**：支持采集摄像头画面或者采集手机界面，通过 RTMP 协议快速推流到云直播服务上。
+- **App 端直播播放**：支持 WebRTC 播放协议，配合快直播服务快速打造低延迟直播体验
 
->? 移动直播 SDK 借助云直播、即时通信 IM、TRTC 等服务实现了多人音视频低延迟互联互通，可以实现多人连麦的互动效果，不参与连麦的观众仍通过直播服务观看，详情请参见 [直播连麦互动](https://intl.cloud.tencent.com/document/product/1071/42210)。
+>? 移动直播 SDK 借助云直播、即时通信 IM、TRTC 等服务实现了多人音视频低延迟互联互通，可以实现多人连麦的互动效果，不参与连麦的观众仍通过直播服务观看。
 
 ### Demo 体验
 视频云工具包是腾讯云开源的一套完整的音视频服务解决方案，您可通过视频云工具包体验快直播毫秒级低延迟拉流能力。
@@ -104,4 +104,4 @@ webrtc://domain/AppName/StreamName?txSecret=xxx&txTime=xxx &stopstream_api=https
 
 [](id:play)
 ### 快直播拉流播放
-集成快直播 SDK 进行拉流播放，具体请参见 [快直播拉流](https://intl.cloud.tencent.com/document/product/1071/41875)。
+集成快直播 SDK 进行拉流播放。

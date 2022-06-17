@@ -19,7 +19,7 @@ Unreal Engine 4.27.1 or later.
    </tr>
    <tr>
       <td>Windows</td>
-      <td><li>OS: Windows 7 SP1 or later (64-bit based on x86-64).                    </li><li>Disk capacity: at least 1.64 GB of space after the IDE and required tools are installed.                            </li><li>Install <a href="https://visualstudio.microsoft.com/zh-hans/downloads/">Visual Studio 2019</a>.        </li></td>
+      <td><li>OS: Windows 7 SP1 or later (64-bit based on x86-64).                    </li><li>Disk capacity: At least 1.64 GB free space after the IDE and required tools are installed.                            </li><li>Install <a href="https://visualstudio.microsoft.com/zh-hans/downloads/">Visual Studio 2019</a>.        </li></td>
    </tr>
 </table>
 
@@ -57,7 +57,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 >?
 >- In this document, the method to obtain UserSig is to configure a SECRETKEY in the client code. In this method, the SECRETKEY is vulnerable to decompilation and reverse engineering. Once your SECRETKEY is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**.
->- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How to Calculate UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
+>- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [Generating UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 [](id:step4)
 ### Step 4. Compile, package, and run the project

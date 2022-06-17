@@ -63,10 +63,27 @@ source ~/.bashrc
 
 ### COSFSを起動すると自動的にマウントするように設定するにはどうすればよいですか。
 
+最初にfuseパッケージをインストールする必要があります。
+```shell
+#CentOSシステム
+#sudo yum install -y fuse
+
+#Ubuntuシステム
+#sudo apt-get install fuse
+```
+
 /etc/fstabファイルに次の内容を追加します。このうち、_netdevオプションはネットワークの準備ができてから現在のコマンドを実行できるようにするものです。
 
 ```shell
 cosfs#examplebucket-1250000000 /mnt/cosfs fuse _netdev,allow_other,url=http://cos.ap-guangzhou.myqcloud.com,dbglevel=info
+```
+
+### どのようにマウントポイント下のファイルおよびディレクトリのユーザーとユーザーグループを設定しますか。
+
+一部のケース（例えばnginxサーバー）では、マウントポイント下のファイルおよびディレクトリのユーザーとユーザーグループの設定が必要です。例えば、www ユーザー（uid=1002，gid=1002）は、次のマウントパラメータを追加してください。
+
+```shell
+-ouid=1002 -ogid=1002
 ```
 
 ### 複数のバケットをマウントするにはどうすればよいですか。
@@ -250,7 +267,7 @@ COSFSにはルートディレクトリのGetBucket権限が必要です。その
 COSバケットのスペースは無限大です。ここでAvailableが256Tというのは、dfの結果を表示しているだけであり、実際にCOSバケットがストレージ可能なデータ量は256Tよりはるかに大きいです。
 
 ### dfを実行するとCOSFSのUsedが0と表示されるのはなぜですか。
-COSFSはローカルのストレージ容量を占有しません。dfなどのツールとの互換性のため、COSFSが表示するSize、Used、Availableはいずれも真の値ではありません。
+COSFSはローカルのストレージ容量を占有しません。dfなどのツールとの互換性のため、COSFSが表示するSize、Used、Availableは、いずれも真の値ではありません。
 
 ### df -iを実行するとInode/IUsed/IFreeがすべて0と表示されるのはなぜですか。
 COSFSはハードディスクをベースとしたファイルシステムではないため、inodeは存在しません。

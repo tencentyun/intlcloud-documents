@@ -29,9 +29,6 @@ TRTC CAMが承認可能なリソースタイプは、[アプリケーション](
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) |通話品質の監視 | 異常体験イベントの確認       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | 通話品質の監視 | ユーザーリストと通話インジケータの確認    |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | 通話品質の監視 | ルーム履歴とユーザー数の確認      |
-| DescribeRealtimeNetwork | 通話品質の監視 | リアルタイムネットワーク状態の照会       |
-| DescribeRealtimeQuality | 通話品質の監視 | リアルタイム品質データの照会       |
-| DescribeRealtimeScale | 通話品質の監視 | リアルタイムスケールの照会           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | 通話品質の監視 | ルームリストの確認           |
 | [DescribeUserInformation](https://intl.cloud.tencent.com/document/product/647/39096) | 通話品質の監視 | 過去のユーザーリストの照会 |
 
@@ -153,10 +150,10 @@ TRTC CAMが承認可能なリソースタイプは、[アプリケーション](
 ### サーバーAPIの操作
 |インターフェース名|インターフェースの分類|機能の説明|特殊な制限の説明|
 |---|---|---|---|
-|[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|通話品質の監視|詳細なイベントを取得|入力パラメータにSDKAppIDがないため、リソースレベルの認証を実行できません。|
-| [DescribeRecordStatistic](https://intl.cloud.tencent.com/document/product/647/42972) | その他インターフェース |クラウドレコーディング課金時間の照会  |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
-| [DescribeTrtcInteractiveTime](https://intl.cloud.tencent.com/document/product/647/42971) | その他インターフェース |インタラクティブオーディオビデオ課金時間の照会 |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
-| [DescribeTrtcMcuTranscodeTime](https://intl.cloud.tencent.com/document/product/647/42970) |  その他インターフェース |バイパストランスコード課金時間の照会   |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
+| DescribeDetailEvent|通話品質の監視|詳細なイベントを取得|入力パラメータにSDKAppIDがないため、リソースレベルの認証を実行できません。|
+| DescribeRecordStatistic | その他インターフェース |クラウドレコーディング課金時間の照会  |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
+| DescribeTrtcInteractiveTime | その他インターフェース |インタラクティブオーディオビデオ課金時間の照会 |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
+| DescribeTrtcMcuTranscodeTime |  その他インターフェース |バイパストランスコード課金時間の照会   |業務上の理由により、現在のところ、リソースレベルの承認をサポートしていません |
 
 ### コンソールAPIの操作
 <table>

@@ -13,7 +13,7 @@ None
 Query conditions when a metric is deleted. For more information, please see the sample.
 
 ## Response Content
-You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. The specific error information is in the `error` field. Note: if the request succeeded but the `errors` (not `error`) field is not `false`, the specific data that failed to be written is indicated in the `errors` field.
+You need to judge whether a request is successful based on the `error` field. If the response content contains the `error` field, the request failed. The specific error information is in the `error` field. 
 
 ## Sample Code for curl 
 Request:

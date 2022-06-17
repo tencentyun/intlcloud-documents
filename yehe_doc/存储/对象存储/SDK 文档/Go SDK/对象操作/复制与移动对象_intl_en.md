@@ -31,7 +31,7 @@ func (s *ObjectService) Copy(ctx context.Context, key, sourceURL string, opt *Ob
 
 #### Sample 1: copying an object
 
-[//]: # ".cssg-snippet-copy-object"
+[//]: # (.cssg-snippet-copy-object)
 ```go
 package main
 
@@ -64,7 +64,7 @@ func main() {
     f := strings.NewReader("test")
     _, err := client.Object.Put(context.Background(), name, f, nil)
 
-    sourceURL := fmt.Sprintf("%s/%s", client.BaseURL.BucketURL.Host, name)
+    sourceURL := fmt.Sprintf("examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/%s", name)
     dest := "example_dest"
     // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
     // opt := &cos.ObjectCopyOptions{}
@@ -114,7 +114,7 @@ func main() {
 
     // Move the object
     dest := "test/newfile"
-    sourceURL := fmt.Sprintf("%s/%s", u.Host, source)
+    sourceURL := fmt.Sprintf("examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/%s", source)
     _, _, err = client.Object.Copy(context.Background(), dest, sourceURL, nil)
     if err == nil {
         _, err = client.Object.Delete(context.Background(), source, nil)

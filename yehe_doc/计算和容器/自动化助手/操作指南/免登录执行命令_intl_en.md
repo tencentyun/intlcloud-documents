@@ -9,10 +9,10 @@ This document describes how to execute TAT commands without logging in to a Ligh
 ## Directions
 1. Log in to the [Lighthouse console](https://console.cloud.tencent.com/lighthouse/instance/index) and select the target instance.
 2. On the instance details page, select **Execute command**.
-![](https://main.qcloudimg.com/raw/62bca5be9da7768ed25336b8d89359dd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/38ce8f3f14e14c8e85ee9a7fc775742c.png)
 3. On the command list page, click **Execute commmand**.
 4. On the pop-up window, configure the parameters.
-![](https://qcloudimg.tencent-cloud.cn/raw/90f86f6c12d4ec231da26c9ba5b0f318.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b9ea8226605f2f486cc53316b851962a.png)
  - **Command source**: Select the source of the command.
  - **More**: Configure the optional parameters as needed.
 <table>

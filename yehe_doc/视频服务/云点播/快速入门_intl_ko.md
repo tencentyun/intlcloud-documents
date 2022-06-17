@@ -13,7 +13,7 @@
 ## 2단계: 비디오 업로드
 1. 왼쪽 사이드바에서 [[미디어 자산 관리]](https://console.cloud.tencent.com/vod/media)를 클릭합니다.
 2. [비디오 업로드]를 클릭하고 [업로드 방법]은 [로컬 업로드]를 선택합니다.
-![](https://main.qcloudimg.com/raw/1d54bda88e541f56d8c2fdec162761f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9e5822b2298211fd833aa64af813ae2f.png)
 3. [비디오 선택]을 클릭하고 로컬 비디오 파일 ‘Tencent Cloud.mp4’를 선택합니다.
 4. [비디오 처리]에서 [업로드 후 처리 안 함]을 선택하고 왼쪽 하단 모서리에서 [업로드]를 클릭합니다.
 
@@ -26,12 +26,12 @@
 ## 4단계: 비디오 처리
 1. [미디어 자산 관리](https://console.cloud.tencent.com/vod/media) 탭에서 [업로드됨]을 선택합니다.
 2. ‘Tencent Cloud.mp4’ 앞의 체크박스를 클릭하고 [비디오 처리]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/246099e6f6c37bca0f3b4901b4125412.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8fb2f59e5144a86f385ea0a73ffc4b79.png)
 3. ‘비디오 처리’ 팝업 창에서 [처리 유형] 항목 중 [트랜스코딩]을 선택합니다.
 4. [트랜스코딩 템플릿]을 클릭한 다음 하나 이상의 [트랜스코딩 템플릿]을 선택합니다.
 5. [워터마크 템플릿]의 드롭다운 목록을 클릭한 다음 [워터마크 선택]에서 [p001]을 선택합니다.
 6. [썸네일]을 클릭하고 [확인]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/31ecab7ef88cc80f103a16a7dee3deb8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6bbc4412d57f654a6202afdacf1eb2cc.png)
 
 ## 5단계: 재생 URL 가져오기
 1. ‘Tencent Cloud.mp4’ 작업 열에서 [관리]를 클릭합니다.

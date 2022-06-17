@@ -1,7 +1,7 @@
 ## Integration Preparations
 - Sign up for a Tencent Cloud account and log in to the [FaceID console](https://console.intl.cloud.tencent.com/faceid) to activate the service. 
 - Download the latest [SDK](https://console.intl.cloud.tencent.com/faceid). 
-- Download the [license](https://console.intl.cloud.tencent.com/faceid) 
+- Download the [license](https://console.intl.cloud.tencent.com/faceid).
 
 ## Terms and Definitions
 

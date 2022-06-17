@@ -5,7 +5,7 @@
 ## 操作步骤
 1. 在 CLI 中执行 `terraform apply` 前，可以使用以下命令开启本地日志跟踪：
 ```bash
-export TF_LOG=DEBUG
+export TF_LOG=TRACE
 export TF_LOG_PATH=./terraform.log
 ```
 2. 开启后，再次执行以下命令。

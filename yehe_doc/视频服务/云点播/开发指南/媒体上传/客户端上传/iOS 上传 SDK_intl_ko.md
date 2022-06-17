@@ -1,13 +1,13 @@
 VOD는 iOS 클라이언트에 비디오를 업로드하기 위한 SDK를 제공합니다. 업로드 프로세스에 대한 자세한 내용은 [클라이언트 업로드 가이드](https://intl.cloud.tencent.com/document/product/266/33921)를 참고하십시오.
 
 ## 소스 코드 다운로드
-1. iOS 업로드 Demo 및 소스 코드를 다운로드하려면 [여기를 클릭](https://ugcupload-1252463788.file.myqcloud.com/TXUGCUploadDemo_iOS.zip)하십시오.
+1. [여기](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_iOS.zip)를 클릭하여 iOS 업로드 Demo 및 해당 소스 코드를 다운로드합니다.
 2. 다운로드한 zip 패키지의 압축을 풀면 TXUGCUploadDemo 디렉터리를 볼 수 있습니다. 업로드 소스 코드는 `TXUGCUploadDemo/upload` 디렉터리에 있습니다.
 
 ## 업로드 라이브러리와 소스 코드 통합
 
 1. 업로드 소스 코드 디렉터리 `TXUGCUploadDemo/upload`를 프로젝트에 복사하십시오.
-2. 동적 라이브러리 `QCloudCore.framework`, `QCloudCOSXML.framework` 및 정적 라이브러리 `libmtasdk.a`(`TXUGCUploadDemo/upload/COSSDK/` 디렉터리에 있음)를 프로젝트로 가져오고 다음 종속성 라이브러리를 추가하십시오.
+2. `TXUGCUploadDemo/upload/COSSDK/`의 동적 라이브러리 `QCloudCore.framework` 및 `QCloudCOSXML.framework`를 프로젝트로 가져오고 다음 종속성을 추가합니다.
     ```
     1. CoreTelephony.framework
     2. Foundation.framework
@@ -53,7 +53,7 @@ TXPublishParam *publishParam = [[TXPublishParam alloc] init];
 publishParam.signature  = @"귀하의 비즈니스 백엔드에서 생성된 서명";
 publishParam.videoPath  = @"비디오 파일의 경로";
 ```
-`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
+`signature`계산 방법에 대한 자세한 내용은 [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922)을 참고하십시오.
 
 #### 업로드 메소드 호출
 
@@ -61,7 +61,7 @@ publishParam.videoPath  = @"비디오 파일의 경로";
 [_videoPublish publishVideo:publishParam];
 ```
 >?
->- 업로드 방법은 파일 크기에 따라 단순 업로드 또는 멀티파트 업로드를 자동으로 선택하므로 멀티파트 업로드의 각 단계를 신경 쓸 필요가 없습니다.
+>- 업로드 방법은 파일 크기에 따라 단순 업로드 또는 멀티파트 업로드를 자동으로 선택하므로, 멀티파트 업로드의 모든 단계를 처리할 필요가 없습니다.
 >- 지정된 서브 애플리케이션에 업로드하려면 [서브 애플리케이션 시스템 - 클라이언트에서 업로드](https://intl.cloud.tencent.com/document/product/266/33987)를 참고하십시오.
 
 ## 고급 기능
@@ -94,6 +94,15 @@ VOD는 업로드 중 체크포인트 재시작을 지원합니다. 업로드가 
 
 업로드 매개변수 `enableResume`은 체크포인트 재시작 스위치로, 기본 값은 활성화입니다.
 
+#### https 업로드 활성화
+
+HTTPS 업로드를 활성화하려면  TXPublishParam의 enableHTTPS를 true로 설정하십시오. 기본값은 false입니다.
+
+```objectivec
+TXPublishParam *publishParam = [[TXPublishParam alloc] init];
+publishParam.enableHTTPS  = true;
+```
+
 
 ## 이미지 및 미디어 업로드
 
@@ -121,7 +130,7 @@ publishParam.mediaPath = @"이미지 파일의 경로";
 
 | 매개변수 이름   | 매개변수 설명               | 유형        | 필수 입력   |
 | ------ | ------------------ | --------- | ---- |
-| userID | 사용자를 고유하게 식별하는 사용자 ID. | NSString | No    |
+| userID | 사용자를 고유하게 식별하는 사용자 ID입니다. | NSString | No    |
 
 업로드 시작: `TXUGCPublish.publishVideo`
 
@@ -131,9 +140,9 @@ publishParam.mediaPath = @"이미지 파일의 경로";
 
 업로드 매개변수: `TXPublishParam`
 
-| 매개변수 이름         | 매개변수 설명                             | 유형     | 필수 입력   |
+| 매개변수 이름       | 매개변수 설명                              | 유형       | 필수 입력 |
 | ------------ | ---------------------------------- | --------- | ---- |
-| signature    | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString* | Yes    |
+| signature    | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString* | Yes    |
 | videoPath    | 로컬 비디오 파일 경로.                           | NSString* | Yes    |
 | coverPath    | 로컬 커버 이미지의 경로. 옵션.                 | NSString*  | No    |
 | fileName     | Tencent Cloud에 업로드된 비디오 파일 이름. 이 매개변수를 비워두면 기본적으로 로컬 파일 이름이 사용됩니다.  | NSString*  | No    |
@@ -169,10 +178,10 @@ publishParam.mediaPath = @"이미지 파일의 경로";
 
 업로드 결과: `TXPublishResult`
 
-| 멤버 변수 이름   | 변수 설명      | 유형        |
+| 맴버 변수 이름   | 변수 설명      | 유형        |
 | -------- | --------- | --------- |
 | retCode  | 오류 코드.       | int       |
-| descMsg  | 실패한 업로드에 대한 오류 설명. | NSString |
+| descMsg  | 업로드 실패 오류 설명. | NSString |
 | videoId  | VOD 파일 ID.  | NSString |
 | videoURL | 비디오 스토리지 주소.    | NSString |
 | coverURL | 커버 스토리지 주소.    | NSString |
@@ -181,7 +190,7 @@ publishParam.mediaPath = @"이미지 파일의 경로";
     
 | 매개변수 이름  | 매개변수 설명                        | 유형   | 필수 입력 |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString | Yes   |
+| signature | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString | Yes   |
 
 
 #### 오류 코드
@@ -218,7 +227,7 @@ SDK는 `TXVideoPublishListener` API를 통해 비디오 업로드 상태를 수�
 
 | 매개변수 이름       | 매개변수 설명                              | 유형       | 필수 입력 |
 | ------------ | ---------------------------------- | --------- | ---- |
-| signature    | [클라이언트 업로드용 서명](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33922). | NSString* | Yes    |
+| signature    | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString* | Yes    |
 | mediaPath    | 로컬 이미지/미디어 파일 경로.                           | NSString* | Yes    |
 | fileName     | Tencent Cloud에 업로드된 이미지/미디어 파일 이름. 이 매개변수를 비워두면 기본적으로 로컬 파일 이름이 사용됩니다.  | NSString*  | No    |
 | enableResume | 체크포인트 재시작 활성화 여부. 기본 값: 활성화.                  | BOOL      | No    |
@@ -264,7 +273,7 @@ SDK는 `TXVideoPublishListener` API를 통해 비디오 업로드 상태를 수�
     
 | 매개변수 이름  | 매개변수 설명                        | 유형   | 필수 입력 |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature | [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString | Yes   |
+| signature | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString | Yes   |
 
 
 #### 오류 코드

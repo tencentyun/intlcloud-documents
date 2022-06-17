@@ -85,7 +85,7 @@ Private deployment of TRTC is not commercially available yet. If you have questi
 
 [](id:que16)
 ### To enable relayed live streaming in TRTC, do I need to get an ICP filing for my domain name?
-To enable relayed live streaming, according to the requirements of applicable authorities, the playback domain name needs an ICP filing before it can be used. For more information, please see [Watch over CDN](https://intl.cloud.tencent.com/document/product/647/35242).
+To enable relayed live streaming, according to the requirements of applicable authorities, the playback domain name needs an ICP filing before it can be used. 
 
 [](id:que17)
 ### How long is the average delay in TRTC?
@@ -120,7 +120,7 @@ Yes. You can achieve this using the [Custom Capturing and Rendering](https://int
 
 [](id:que24)
 ### Can I record live streaming videos and store the recording files locally on my phone?
-Recording files cannot be stored locally on phones. They are stored in VOD by default. You can download and save them to your phone. For more information, please see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
+Recording files cannot be stored locally on phones. They are stored in VOD by default. You can download and save them to your phone.
 
 
 [](id:que25)
@@ -182,7 +182,6 @@ Yes. You can call `startAudioRecording` to record all the audio of a call, inclu
 [](id:que37)
 ### Can I record the video of a TRTC call into a file?
 TRTC supports audio/video recording on a local server. To use this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for the SDK and instructions.
-You can also use the [on-cloud recording and playback](https://intl.cloud.tencent.com/document/product/647/35426) feature to record videos.
 
 [](id:que38)
 ### Does TRTC support floating windows (like those in WeChat) or switching between the big and small images?
@@ -325,8 +324,7 @@ Yes. For details, please see [Enabling Advanced Permission Control](https://intl
 
 [](id:que66)
 ### Can TRTC pull and play back streams through CDN? 
-Yes. For details, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
-
+Yes.
 [](id:que67)
 ### What formats does TRTC support for custom rendering? 
 - iOS: I420, NV12, and BGRA

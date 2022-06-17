@@ -10,8 +10,8 @@ IM messages can also be classified by content into text messages, custom (signal
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
-| Text message | TextElem | It refers to a common text message. Sensitive words of text messages will be filtered out in the IM service. If a message containing sensitive words is sent, the 80001 error code is returned. |
-| Custom message | CustomElem | It is a section of binary buffer and often used to transfer custom signaling in your application. Its content is not filtered for sensitive words. |
+| Text message | TextElem | It refers to a common text message.  |
+| Custom message | CustomElem | It is a section of binary buffer and often used to transfer custom signaling in your application. |
 | Image message | ImageElem | When the IM SDK sends an original image, it automatically generates two images in different sizes. The three images are called the original image, large image, and thumbnail. |
 | Video message | VideoElem | A video message contains a video file and an image. |
 | Voice message | SoundElem | It supports displaying a red dot upon playback of the voice message. |
@@ -52,7 +52,7 @@ Recommended message sending method (take sending text messages as an example):
 ```
 After `createMessage` is complete, a message creation ID will be returned. You just need to pass in this ID to `sendMessage` to send the message. `sendMessage` is a common method for all types of messages. You need to specify either `receiver` or `groupID` and leave the other empty.
 
->! Text messages will be filtered by IM for sensitive words. If a message containing sensitive words is sent, the 80001 error code is returned. You can first call `createMessage` and then call `sendMessage` to send C2C custom (signaling) messages. A custom message is essentially a section of binary buffer, and is often used to transfer custom signaling in your app. Its content is not filtered for sensitive words. In addition, the IM Flutter SDK has encapsulated another signaling for you (to be introduced later).
+>! You can first call `createMessage` and then call `sendMessage` to send C2C custom (signaling) messages. A custom message is essentially a section of binary buffer, and is often used to transfer custom signaling in your app.  In addition, the IM Flutter SDK has encapsulated another signaling for you (to be introduced later).
 
 ### Receiving text and signaling messages
 You can listen for simple text and signaling messages with [addSimpleMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_manager/V2TIMManager/addSimpleMsgListener.html). To listen for complex messages such as images, videos, and voices, call [addAdvancedMsgListener](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_message_manager/V2TIMMessageManager/addAdvancedMsgListener.html) defined in v2TIMManager.getMessageManager().

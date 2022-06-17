@@ -19,7 +19,7 @@ TXLivePusher 推流 SDK 主要用于视频云的快直播（超低延时直播�
 
 除此以外，浏览器采集音视频画面的功能在移动端支持较差，例如移动端浏览器不支持屏幕录制，iOS 14.3及以上版本才支持获取用户摄像头设备。因此推流 SDK 主要适用于桌面端浏览器，目前最新版本的 chrome、Firefox 和 Safari 浏览器都是支持快直播推流的。
 
-移动端建议使用 [移动直播 SDK](https://intl.cloud.tencent.com/document/product/1071/38157) 进行推流。
+移动端建议使用 移动直播 SDK 进行推流。
 
 ## 对接攻略
 
@@ -143,7 +143,7 @@ TXLivePusher.checkSupport().then(function(data) {
 </dx-codeblock>
 
 ### 回调事件通知
-SDK 目前提供了回调事件通知，可以通过设置 Observer 来了解 SDK 内部的状态信息和 WebRTC 相关的数据统计。具体内容请参见 [TXLivePusherObserver](https://intl.cloud.tencent.com/document/product/1071/42709)。
+SDK 目前提供了回调事件通知，可以通过设置 Observer 来了解 SDK 内部的状态信息和 WebRTC 相关的数据统计。
 <dx-codeblock>
 ::: javascript javascript
 livePusher.setObserver({

@@ -85,17 +85,10 @@
 	- 【操作(Action)】配置项勾选所有项。
 	- 【资源(Resource)】配置项按照 [资源语法描述](#p1) 说明填写`qcs::vod::uin/12345678:subAppId/1400000001`。
 	- 【条件(Condition)】配置项无需配置。
-	- 单击【添加声明】，页面最下方会出现一条“允许对云点播子应用1400000001进行任何操作”的声明。
-4. 在同个页面中继续添加另一条声明。
-	- 【效果(Effect)】配置项选择【拒绝】。
-	- 【服务(Service)】配置项选择【云点播】。
-	- 【操作(Action)】配置项勾选`ProcessMedia`（可通过搜索功能选择）。
-	- 【资源(Resource)】配置项按照 [资源语法描述](#p1) 说明填写`qcs::vod::uin/12345678:subAppId/1400000001`。
-	- 【条件(Condition)】配置项无需配置。
-	- 单击【添加声明】，页面最下方会出现一条“拒绝对云点播子应用1400000001进行`ProcessMedia`操作”的声明。
-     ![](https://main.qcloudimg.com/raw/1ac34ffafb9719e36e46d4a5e7ccf1cf.png)
-5. 单击【下一步】，按需修改策略名称（也可以不修改）。
-6. 单击【完成】完成自定义策略的创建。后续将该策略授予子用户的方法同 [将云点播完整权限授予已存在的子用户](https://intl.cloud.tencent.com/document/product/266/33971#p2)。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/1dc5fbe8e5534fafafce351769af1583.png)
+4. 单击【下一步】，按需修改策略名称（也可以不修改）。
+5. 单击【完成】完成自定义策略的创建。后续将该策略授予子用户的方法同 [将云点播完整权限授予已存在的子用户](https://intl.cloud.tencent.com/document/product/266/33971#p2)。
 
 
 ### 使用策略语法

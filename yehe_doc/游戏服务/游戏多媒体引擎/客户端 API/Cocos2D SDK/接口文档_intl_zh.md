@@ -639,7 +639,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->IsAudioCaptureDeviceEnabled();
 #### 函数原型
 
 ```
-ITMGContext  virtual int EnableAudioSend(bool bEnable)
+ITMGContext  virtual int EnableAudioSend(bool Enable)
 ```
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
@@ -773,7 +773,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->SelectSpeaker(pSpeakerID);
 EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv.
 ####  函数原型  
 ```
-ITMGAudioCtrl virtual int EnableSpeaker(bool enabled)
+ITMGAudioCtrl virtual int EnableSpeaker(bool enable)
 ```
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
@@ -1077,7 +1077,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 ```
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage) 
+ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* speechLanguage,const char* translateLanguage) 
 ```
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|

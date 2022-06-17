@@ -7,7 +7,7 @@
 
 - UDP 전송 프로토콜을 기반으로 한 Tencent Real-Time Communication(TRTC) 서비스로, 프로토콜 전환을 통해 멀티미디어 스트림을 [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267) 시스템에 연결합니다. 이 프로세스를 ‘릴레이 푸시 스트림’이라고 합니다.
 - 릴레이 푸시 스트림 기능은 기본적으로 비활성화되어 있으며, 활성화 시 먼저 CSS 서비스를 활성화해야 합니다.
-- 릴레이 푸시 스트림은 [CDN 라이브 방송 시청 실행](https://intl.cloud.tencent.com/document/product/647/35242) 시, CSS에서 라이브 방송 시청에 따라 발생하는 다운스트림 트래픽/대역폭 관련 요금을 부과하는데 사용되며, 자세한 내용은 [CSS > 트래픽/대역폭 과금](https://intl.cloud.tencent.com/document/product/267/2818) 설명을 참고하십시오.
+- 릴레이 푸시 스트림은 CDN 라이브 방송 시청 실행 시, CSS에서 라이브 방송 시청에 따라 발생하는 다운스트림 트래픽/대역폭 관련 요금을 부과하는데 사용되며, 자세한 내용은 [CSS > 트래픽/대역폭 과금](https://intl.cloud.tencent.com/document/product/267/2818) 설명을 참고하십시오.
 - 릴레이 푸시 스트림은 [클라우드 녹화 및 재생](https://intl.cloud.tencent.com/document/product/647/35426) 시 발생하는 녹화 및 녹화 파일 저장 등의 요금을 부과하는데 사용되며, 자세한 내용은 [클라우드 녹화 및 재생 > 관련 요금](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8) 설명을 참고하십시오.
 - [CSS 콘솔](https://console.cloud.tencent.com/live/domainmanage)에서 릴레이 푸시 스트림에 사용하는 푸시 도메인(`xxxx.livepush.myqcloud.com`)에 녹화, 트랜스 코딩, 음란물 감지 화면 캡처, 워터마크 등의 유료 기능 템플릿을 바인딩한 경우, 릴레이 푸시 스트림 사용 시 템플릿에 해당하는 [부가 요금](https://intl.cloud.tencent.com/document/product/267/2819)이 발생합니다.
 
@@ -102,7 +102,7 @@ TRTC의 클라우드 녹화는 각 방마다 사용자별 멀티미디어 스트
 - 신규 애플리케이션 생성에 대한 자세한 방법은 [애플리케이션 생성](https://intl.cloud.tencent.com/document/product/647/39077)을 참고하십시오.
 - 애플리케이션 리스트에서 관련 애플리케이션을 검색하는 자세한 방법은 [애플리케이션 검색](https://intl.cloud.tencent.com/document/product/647/39078)을 참고하십시오.
 - 애플리케이션 기본 정보 조회에 대한 자세한 방법은 [애플리케이션 정보](https://intl.cloud.tencent.com/document/product/647/39079)를 참고하십시오.
-- 클라우드에서 혼합 스트림 트랜스 코딩 시 사용자 정의 배경 이미지 설정이 필요한 경우 리소스 관리에서 상응하는 이미지 리소스를 추가할 수 있으며, 자세한 방법은 [리소스 관리](https://intl.cloud.tencent.com/document/product/647/39081)를 참고하십시오.
+- 클라우드에서 혼합 스트림 트랜스 코딩 시 사용자 정의 배경 이미지 설정이 필요한 경우 리소스 관리에서 상응하는 이미지 리소스를 추가할 수 있으며.
 - 애플리케이션 빠른 실행 관련 Demo 소스 코드에 대한 자세한 내용은 [퀵 스타트](https://intl.cloud.tencent.com/document/product/647/39082)를 참고하십시오.
 
 

@@ -1,3 +1,415 @@
+## 2022年04月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+    <td> SDK 6.1.2166拡張版をリリースしました</td>
+    <td><ul style="margin:0">
+	<li> ローカルメッセージを検索し、senderUserIDListを2つ以上渡す場合にデータが見つからないという問題を修正しました</li>
+	<li> rest apiで一度に複数のメッセージを取り消したが、Android sdkで1件だけコールバックしたという問題を修正しました</li>
+	<li> Windowsで未読のクイッククリア時の偶発クラッシュ問題を修正しました</li>
+	<li> 国際版体験Demoをリリースしました</li>
+	<li> Demoのオフラインプッシュをメーカーコネクションに切り替えました</li>
+	<li> Demoの携帯電話番号登録がaPaasに切り替わりました</li>
+	<li> オーディオビデオ通話の複数端末同期の問題を修正しました</li>
+    </ul></td>
+    <td> 2022-04-02 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+</table>
+
+## 2022年03月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+<td>Flutter SDK 3.9.1</td>
+<td><ul style="margin:0;">
+<li>下層データベースを6.1.2155にアップグレードしました
+</ul></td>
+<td>2022-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.9.0</td>
+<td><ul style="margin:0;">
+<li>grouplistenerの修正
+</ul></td>
+<td>2022-03-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.9</td>
+<td><ul style="margin:0;">
+<li>リスニング登録問題の修正
+</ul></td>
+<td>2022-03-18</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.4</td>
+<td><ul style="margin:0;">
+<li>interfaceの更新
+</ul></td>
+<td>2022-03-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 6.1.2155拡張版をリリース</td>
+    <td><ul style="margin:0">
+        <li> グループメッセージの開封確認（<a href="https://intl.cloud.tencent.com/document/product/1047/36360#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7">iOSドキュメント</a>、<a href="https://intl.cloud.tencent.com/document/product/1047/36359#.E7.BE.A4.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7">Androidドキュメント</a>）をサポートしました </li>
+	<li> Androidオフラインプッシュで音声通知設定をサポートしました</li>
+	<li> モバイル側SDKでネットワークプロキシーを設定するためのインターフェースを提供します</li>
+	<li> C/C++プラットフォームでオフラインプッシュのインターフェースを補完しました</li>
+	<li> ログイン後のグループ内シグナリングメッセージの自動同期をサポートしました</li>
+	<li> 友達のカスタムフィールドの変更通知を受信した後、完全なカスタムフィールドを取得できない問題を修正しました</li>
+	<li> 脆弱なネットワークでセッションリストをドロップダウンするときの偶発的な応答不可フラグ返しエラーの問題を修正しました</li>
+	<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>
+    </ul></td>
+    <td> 2022-03-18 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.4</td>
+<td><ul style="margin:0;">
+<li>interfaceの更新
+</ul></td>
+<td>2022-03-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 2.17.0をリリースしました（ミニプログラムとWeb端末）</td>
+    <td><ul style="margin:0">
+       <li>コミュニティ<a href="https://intl.cloud.tencent.com/document/product/1047/33529">がサポートされました</a></li>
+<li>最近使用した連絡先`Conversation.lastMessage`はグループ通知メッセージをサポートしました</li>
+<li>`Message.payload.memberList`はグループ参加またはグループ退出を行うグループメンバーのニックネーム、プロファイルフォトなどの情報の取得をサポートしました</li>
+<li>画像メッセージの送信にはwebp形式の画像がサポートされます</li><li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新ログ</a>をご参照ください</li>
+    </ul></td>
+    <td> 2022-03-02 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+</tr> 
+<tr>
+<td>Flutter SDK 3.8.3</td>
+<td><ul style="margin:0;">
+<li>環境によってtokenコードを切り替えます
+</ul></td>
+<td>2022-03-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+</table>
+
+## 2022年02月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.2</td>
+<td><ul style="margin:0;">
+<li>グループメンバーパラメータの制約を更新しました
+</ul></td>
+<td>2022-02-21</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.8.0</td>
+<td><ul style="margin:0;">
+<li>下層データベースのinterface依存関係を更新しました
+</ul></td>
+<td>2022-02-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.8</td>
+<td><ul style="margin:0;">
+<li>強制解凍による異常を修正しました
+</ul></td>
+<td>2022-02-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 2.16.3をリリースしました（ミニプログラムとWeb端末）</td>
+    <td><ul style="margin:0">
+        <li> WindowsのWeChatアクセス用ミニプログラムとuni-appでAndroid app（一部デバイス）をパッケージ化した後にログインできない問題を修正しました
+    </ul></td>
+    <td> 2022-02-11 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+</tr> 
+<tr>
+    <td> SDK 2.16.2をリリースしました（ミニプログラムとWeb端末）</td>
+    <td><ul style="margin:0">
+        <li> uni-appでnative appをパッケージ化した後にファイルメッセージを送信することがサポートされるようになりました</li>
+        <li> インドインターナショナルステーションをサポートしました</li>
+				        <li>一部のemoji絵文字のレンダリング問題を修正しました</li>
+    </ul></td>
+    <td> 2022-02-10 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.7</td>
+<td><ul style="margin:0;">
+<li>Swiftコードのwarningを修正しました                        </li><li>Swiftの強制解凍コードを上書きしました                          </li><li>sendMessageインターフェースから返されたmessageインスタンスにidフィールドを追加しました  </li>
+</ul></td>
+<td>2022-02-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 6.0.1992拡張版をリリースしました</td>
+    <td><ul style="margin:0">
+        <li> 解散したグループまたは存在しないグループに2回連続してメッセージを送信するときの偶発的なcrash問題を修正しました</li>
+    </ul></td>
+    <td> 2022-02-09 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+</table>
+
+## 2022年01月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+    <td> TUIKit 6.0.1992の拡張版をリリースしました</td>
+    <td><ul style="margin:0">
+        <li> スキン設定機能を新たに追加しました</li>
+    	<li> 言語設定機能を新たに追加しました</li>
+	<li> グループプロファイルカードのグループ管理機能を新たに追加しました</li>
+	<li> ファイルメッセージにアップロードとダウンロードのアニメーションを追加しました</li>
+        <li> 履歴メッセージを閲覧する際に、「新しいメッセージをX件受信した」という小さな舌のリダイレクトを追加しました</li>
+	<li> 履歴メッセージを閲覧する際に、「最新の位置に戻る」という小さな舌のリダイレクトを追加しました</li>
+	<li> グループ内の@メッセージをクイックリダイレクトするという小さな舌のリダイレクトを追加しました</li>
+	<li> セッションリストの最後のメッセージの表示スタイルを最適化しました</li>
+    <li> テキストメッセージの選択済み状態を追加しました</li>
+	<li> A2、D2エラー通知の説明を最適化しました</li>
+	<li> iOS 15システムのUI対応</li>
+    </ul></td>
+    <td> 2022-01-25 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.5</td>
+<td><ul style="margin:0;">
+<li> 下層データベースを6.0.1975にアップグレードしました
+<li> オフラインプッシュの設定でTPNS TOKENをサポートしました
+</ul></td>
+<td>2022-01-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 6.0.1975拡張版をリリースしました</td>
+    <td><ul style="margin:0">
+        <li> 全プラットフォームC++インターフェース版SDKをリリースしました</li>
+    	<li> オフラインプッシュでTPNSコネクションへのアクセスをサポートしました</li>
+	<li> パーソナルプロファイルカスタムフィールドの変更通知を追加しました</li>
+	<li> フレンドノート取得時に偶発的にブランクになる問題を修正しました</li>
+        <li> ネットワークタイプのログプリントを最適化しました</li>
+	<li> iOSバージョンのメッセージオブジェクトにメッセージ優先度priorityフィールドを補完しました</li>
+	<li> Cインターフェースバージョンのローカルメッセージを挿入するコールバックが完全なメッセージオブジェクトを返さない問題を修正しました</li>
+	<li> 公式TUIKitオープンソースDemoのオフラインプッシュをTPNSコネクションに切り替えました</li>
+    </ul></td>
+    <td> 2022-01-14 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+
+<tr>
+<td> SDK 2.16.1をリリースしました（ミニプログラムとWeb端末）</td>
+<td><ul style="margin:0;">
+<li>Alipayミニプログラムによる.imageサフィックスの画像の送信がサポートされるようになりました                                                                                </li>
+<li>セッション削除の同時に履歴メッセージも削除される<a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversation">deleteConversation</a>を追加しました   </li>
+<li>ダウンリンクメッセージ`fileName`が空白の文字列である場合にエラーが発生する問題を修正しました                                                                          </li>
+<li>グループ属性インターフェースを呼び出すときに発生した問題を修正しました                                                                                          </li>
+<li>uni-appで百度ミニプログラムなどのプラットフォームにパッケージ化されるときに発生した`__wxConfig is not defined`問題を修正しました                                               </li>
+</ul></td>
+<td>2022-01-14</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Unity SDK 1.6.4</td>
+<td><ul style="margin:0;">
+<li>SDKへのpackage manager導入をサポートしました
+<li>iOSコンパイル後の依存関係追加を追加しました
+</ul></td>
+<td>2022-01-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.1</td>
+<td><ul style="margin:0;">
+<li> メッセージ送信プログレスイベントで作成したメッセージのidを戻すようにしました
+<li> コールバック部分を最適化し、サービス側にコールバックのエラーがSDK中でcatchされ、サービス側に修正の必要があることを通知するようにしました
+</ul></td>
+<td>2022-01-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.7.0</td>
+<td><ul style="margin:0;">
+- CloudCustomData解凍を最適化しました
+</ul></td>
+<td>2022-01-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+
+<tr>
+<td>Flutter SDK 3.6.9</td>
+<td><ul style="margin:0;">
+<li>返信メッセージパラメータを最適化しました
+</ul></td>
+<td>2022-01-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.8</td>
+<td><ul style="margin:0;">
+<li>返信メッセージインターフェースを最適化しました
+</ul></td>
+<td>2022-01-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td> SDK 2.16.0をリリースしました（ミニプログラムとWeb端末）</td>
+<td><ul style="margin:0;">
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType">setMessageRemindType</a>を追加し、C2Cセッションメッセージの応答不可設定をサポートしました             </li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setAllMessageRead">setAllMessageRead</a>を追加し、すべての未読セッションをクイッククリアすることをサポートしました                      </li>
+<li><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#sendMessage">sendMessage</a>を追加し、未読セッションに取り入れず、セッション`lastMessage`を更新しないメッセージを送信することをサポートしました   </li>
+<li>ライブブロードキャストグループの新規メンバーがグループに参加する前の履歴メッセージを閲覧することがサポートされるようになりました（フラッグシップ版が必要）                                                                                                 </li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode">厳格なモードを使用するようにSDKを変更しました</a>                                      </li>
+<li>削除されたアカウントとのセッションがフィルタリングされるようにセッションリストを変更しました                                                                                                                 </li>
+<li>ローミングメッセージを最適化するための`nick`と`avatar`の更新タイミングを変更しました                                                                                                       </li>
+<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新ログ</a>をご参照ください</li>
+</ul></td>
+<td>2022-01-05</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996#web">Web SDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.7</td>
+<td><ul style="margin:0;">
+<li>iOSコンパイル環境を8.0から9.0にアップデートしました
+</ul></td>
+<td>2022-01-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+</table>
+
+
+## 2021年12月
+<table>
+<tr><th width="20%">ダイナミックネーム</th>  <th width="44%">ダイナミック説明</th><th width="15%">リリース時間</th><th width="21%">関連ドキュメント</th>
+</tr> 
+<tr>
+    <td> SDK 5.9.1886拡張版をリリースしました</td>
+    <td><ul style="margin:0">
+        <li> ログインしC2C未読メッセージを同期した後にコールバックされる未読メッセージが不完全であるという問題を修正しました</li>
+    	<li> ローカルメッセージのプルが不完全に返される問題を修正しました</li>
+	<li> LinuxプラットフォームでのHTTPSリクエストエラーの問題を解決しました</li>
+	<li> Cインターフェースバージョンでのフレンドカスタムフィールドを照会できない問題を解決しました</li>
+        <li> ネットワーク層のエラーコードの説明を最適化しました</li>
+	<li> TUIKit画像ビデオメッセージの表示の左右スライド表示をサポートしました</li>
+	<li> TUIKitメッセージの取り消しの再編集をサポートしました</li>
+	<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>
+    </ul></td>
+    <td> 2021-12-31 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.6</td>
+<td><ul style="margin:0;">
+<li>メッセージに返信インターフェースを追加しました
+<li>Web端末のrelease modeでのエラー問題を修正しました
+</ul></td>
+<td>2021-12-30</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Unity SDK 1.6.0</td>
+<td><li>最下層のクロスプラットフォームcインターフェースを切り替えました</li><li>Windows、macOS、Android、iOSのプラットフォームをサポートし、かつこの四つ端末のインターフェースが一致します</li><li>注意：1.6.0は以前のバーションと互換性がありません</li></td>
+<td>	2021/12/21	</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr> 
+<tr>
+    <td> SDK 5.9.1872拡張版をリリースしました</td>
+    <td><ul style="margin:0">
+        <li> グループ内のダイレクトメッセージ送信をサポートしました</li>
+    	<li> cosダウンロード認証をサポートしました</li>
+	<li> 長時間接続暗号化コネクションにAESサポートを追加しました</li>
+	<li> ネットワーク接続ロジックにアクセスポイントサイロ化解消のサポートを追加しました</li>
+        <li> cosファイルのアップロード/ダウンロード同時実行数のバックグランド設定をサポートしました</li>
+	<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/34282">更新ログ</a>をご参照ください</li>
+    </ul></td>
+    <td> 2021-12-20 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.5</td>
+<td><ul style="margin:0;">
+<li>java文法エラーを修正しました
+</ul></td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.4</td>
+<td><ul style="margin:0;">
+<li>Androidの非同期登録イベントが何も返されないbugを修正しました
+<li>ベースリスニングイベントが削除されるとエラーが発生する問題を修正しました
+<li>メッセージプログレスイベントに送信中のメッセージのuuidを追加しました
+</ul></td>
+<td>2021-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+
+<tr>
+    <td> SDK 5.8.1696拡張版をリリースしました</td>
+    <td><ul style="margin:0">
+        <li> ローカルに解散したグループセッションまたは退出したグループセッションの未読数が含まれる場合に、未読メッセージのクイッククリアに失敗する問題を修復しました</li>
+    	<li> TUIKitメッセージ返信機能の追加をサポートしました</li>
+	<li> TUIKit デフォルトのスキンを更新、インターフェースロジックを最適化しました</li>
+	<li> iOSがリソースファイルのロードに偶発的に失敗する問題を修正</li>
+    </ul></td>
+    <td> 2021-12-10 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">端末SDKのダウンロード</a> </td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.3</td>
+<td><ul style="margin:0;">
+<li>addFriendインターフェースの最適化：addTypeをintからFriendTypeEnumに変更しました
+<li>acceptFriendApplicationインターフェースの最適化：acceptTypeをintからFriendResponseTypeEnumに変更しました
+<li>getHistoryMessageListインターフェースの最適化：typeをintからHistoryMsgGetTypeEnumに変更しました
+	<li> その他の更新内容については、<a href="https://intl.cloud.tencent.com/document/product/1047/45915">更新ログ</a>をご参照ください</li>
+</ul></td>
+<td>2021-12-9</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.2</td>
+<td><ul style="margin:0;">
+<li>高度なメッセージが削除されuuidが渡されないエラーを修正しました
+</ul></td>
+<td>2021-12-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.1</td>
+<td><ul style="margin:0;">
+<li>ファイルのプログレスイベントが消失する問題を修正しました
+</ul></td>
+<td>2021-12-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+<tr>
+<td>Flutter SDK 3.6.0</td>
+<td><ul style="margin:0;">
+<li>各モジュールでlistenerの複数登録および複数コールバックをサポートしました
+<li>すべてのセッションを既読に設定するapiのmarkAllMessageAsReadを追加しました
+<li>組み合わせメッセージ解析を追加しました
+<li>nativeのバージョンを5.8.1668にアップデートしました
+</ul></td>
+<td>2021-12-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996#opensource">フレームワークSDKのダウンロード</a></td>
+</tr>
+
+</table>
+
 ## 2021年12月
 <table>
 <tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th><th width="15%">発表時間</th><th width="15%">関連ドキュメント</th>

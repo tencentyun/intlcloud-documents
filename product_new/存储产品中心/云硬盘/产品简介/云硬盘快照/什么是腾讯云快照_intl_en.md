@@ -18,7 +18,7 @@ You can provide actual production data in near real time for applications such a
 You can create a snapshot of a CVM and use the snapshot to create a custom image. You can use this image to quickly create one or more CVM instances, deploying multiple CVMs with the same environment in a batch to save the time spent on duplicate configurations.
 
 ## Billing
-For detailed billing information on snapshot service, please see [Snapshot billing overview](https://intl.cloud.tencent.com/document/product/362/32415) and [Billing Overview](https://intl.cloud.tencent.com/document/product/362/2413).
+For detailed billing information on snapshot service, see [Snapshot billing overview](https://intl.cloud.tencent.com/document/product/362/32415) and [Billing Overview](https://intl.cloud.tencent.com/document/product/362/2413).
 
 ## Quota Limits
 For details on snapshot quota limits, refer to [Service Limits](https://intl.cloud.tencent.com/document/product/362/5145).
@@ -29,7 +29,7 @@ You can manually create a snapshot for cloud disk data at a certain point in tim
 - Scheduled Snapshot
 For continuously updated business, you can use scheduled snapshots to create continuous data backups. To achieve continuous backups of cloud disk data over a certain period, you just need to configure a backup policy and associate it with cloud disks, significantly enhancing data security. For more information, see [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/31622).
 
-> During snapshot creation, application data saved in the memory may not be persistently stored, causing snapshots to be unable to capture the latest and most complete cloud disk data. Refer to [Notes]) to ensure the consistency of snapshot data.
+> During snapshot creation, application data saved in the memory may not be persistently stored, causing snapshots to be unable to capture the latest and most complete cloud disk data. Refer to [notes of creating snapshots](https://intl.cloud.tencent.com/document/product/362/5755#notes) to ensure the consistency of snapshot data.
 
 
 ## Case Review
@@ -38,7 +38,7 @@ For continuously updated business, you can use scheduled snapshots to create con
 **Analysis**: If customer A has created a snapshot for the cloud disk before testing, he can enable snapshot rollback after data damage occurred to restore the business right away.
 
 #### Case 2: Failing to create scheduled snapshots for important data disk, causing data loss
-**Details**: Customer B created snapshots for multiple cloud disks, but not for cloud disks newly purchased after January 2019 due to cost concerns. In June 2019, a cloud disk not protected by snapshots had an unrecoverable data loss due to an accidental deletion of system-layer file data.
+**Details**: Customer B created snapshots for multiple cloud disks, but not for cloud disks purchased after January 2019 due to cost concerns. In June 2019, a cloud disk not protected by snapshots had an unrecoverable data loss due to an accidental deletion of system-layer file data.
 **Analysis**: If customer B has created scheduled snapshots for this cloud disk, he can restore the data to the status at the time point of the previous snapshot, thereby minimizing loss after the accidental data deletion. After the incident, customer B has created a snapshot for that cloud disk to enhance data protection.
 
 #### Case 3: Rolling back with scheduled snapshot to restore business after a misopeartion
@@ -52,7 +52,7 @@ In these above cases, operating errors lead to data loss. By comparison, we find
 
 We recommend you regularly create snapshots for businesses based on their types, enhancing data security and achieving low-cost, high-efficiency disaster recovery.
 
-## Others
+## See Also
 For other questions, please refer to [Snapshot FAQs](https://intl.cloud.tencent.com/document/product/362/17820).
 
 

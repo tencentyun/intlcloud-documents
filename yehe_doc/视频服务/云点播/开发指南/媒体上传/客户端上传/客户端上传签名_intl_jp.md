@@ -45,7 +45,7 @@ VODでは、参考と検証のために、**署名生成サンプルコード**�
 | --- | --- | --- | --- | 
 | secretId | はい | String | Tencent Cloud APIキーのSecretId。取得方法については、[クライアントからのアップロードガイド - Tencent Cloud APIキーの取得](https://intl.cloud.tencent.com/document/product/266/33921#p3) をご参照ください。 |
 | currentTimeStamp | はい | Integer | 現在のUnixタイムスタンプ。 |
-| expireTime | はい | Integer| 署名の有効期限が切れたUnixタイムスタンプ。<br/>```expireTime = currentTimeStamp + 署名の有効期間```<br/>署名の有効期間の最大値は7776000、つまり90日です。 |
+| expireTime | はい | Integer| 署名の有効期限が切れたUnixタイムスタンプ。<br/>`expireTime = currentTimeStamp + 署名の有効期間`<br/>署名の有効期間の最大値は7776000、つまり90日です。 |
 | random | はい | Integer | 平文署名文字列を作成するためのパラメータ。10進数で、最大値は`xxxxx`（32ビットの符号なしのバイナリー最大値）です。 |
 | classId | いいえ | Integer | ビデオファイルのカテゴリー。デフォルトは0です。 | 
 |<span id ="p3"></span> procedure | いいえ | String | 後続のビデオタスク操作、すなわち、ビデオのアップロードが完了した後、タスクフロー操作が自動的に開始されます。このパラメータ値はタスクフローテンプレート名です。VODは、[タスクフローテンプレートの作成](https://intl.cloud.tencent.com/document/product/266/14058) とテンプレートの命名をサポートします。| 

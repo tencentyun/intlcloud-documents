@@ -20,11 +20,12 @@
 
 开启该选项会使得容器内程序具有真正的 root 权限。在容器内程序需要进行高级系统操作时建议开启，如搭建 nfs 服务器。
 
+
 ### 负载均衡可以在创建时就指定安全组吗？
 
 可以，目前支持以下两个方案，实现服务使用负载均衡时指定安全组：
 - 使用已有负载均衡。先创建负载均衡并配置安全组，再挂载给服务。详情请参见 [Service 使用已有 CLB](https://intl.cloud.tencent.com/document/product/457/36835)。
-- 可在服务中通过 `TkeServiceConfig` 配置安全组，负载均衡创建时会根据配置使用对应安全组。如需使用此功能，请 [提交工单](https://console.intl.cloud.tencent.com/workorder) 进行申请。
+- 可在服务中通过 `TkeServiceConfig` 配置安全组，负载均衡创建时会根据配置使用对应安全组。如需使用此功能，请 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进行申请。
 
 >?集群内进行服务访问时，建议不要通过负载均衡 IP 进行访问，以避免出现访问不通的情况。
 >一般情况下，4层负载均衡会绑定多台 Node 作为 real server（rs） ，使用时需要限制 client 和 rs 不能存在于同一台云服务器上，否则会有一定概率导致报文回环失败。
@@ -74,7 +75,7 @@
 
 ### 如何设置容器系统时间为北京时间？
 
-容器默认使用 UTC 时间，使用容器时经常碰到容器系统时间和北京时间差8小时的问题，解决方法是在 dockerfile 中创建时区文件。详情请参见 [ 解决容器内时区不一致问题](https://intl.cloud.tencent.com/document/product/457/35292 )。 
+容器默认使用 UTC 时间，使用容器时经常碰到容器系统时间和北京时间差8小时的问题，解决方法是在 dockerfile 中创建时区文件。详情请参见 [ 解决容器内时区不一致问题](https://intl.cloud.tencent.com/document/product/457/35292)。  
 
 
 ### Dockerhub 部分镜像如 ubuntu、php 和 busybox 等在容器服务里运行异常怎么办？

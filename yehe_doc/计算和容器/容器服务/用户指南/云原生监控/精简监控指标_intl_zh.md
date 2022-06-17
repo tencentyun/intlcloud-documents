@@ -1,6 +1,6 @@
 <dx-alert infotype="alarm" title="温馨提示">
 感谢您对腾讯云原生监控 TPS 的认可与信赖，为提供更优质的服务和更强大的产品能力，TPS 与原腾讯云 Prometheus 监控服务进行融合和升级，升级为 [TMP](https://intl.cloud.tencent.com/document/product/457/46734)。支持跨地域跨 VPC 监控，支持统一 Grafana 面板对接多监控实例实现统一查看。TMP 计费详情见 [按量计费](https://intl.cloud.tencent.com/document/product/1116/43156)，相关云资源使用详情见 [计费方式和资源使用](https://intl.cloud.tencent.com/document/product/457/46733)。若您只使用基础监控的 [免费指标](https://intl.cloud.tencent.com/document/product/457/46735)，TMP 不会收取任何指标费用。<br>
-TPS 即将下线。TMP 已正式发布，欢迎 [了解试用](https://console.cloud.tencent.com/tke2/prometheus2)。TPS 已不支持创建新实例，我们提供一键 [迁移工具](https://intl.cloud.tencent.com/document/product/457/46736)，帮您一键将 TPS 实例迁移到 TMP，迁移前请 [精简监控指标](https://intl.cloud.tencent.com/document/product/457/46737) 或降低采集频率，否则可能产生较高费用，再次感谢您对 TPS 的支持和信任。
+TPS 将于2022年5月16日下线，详情见 [公告](https://intl.cloud.tencent.com/document/product/457/46999)。TMP 已正式发布，欢迎 [了解试用](https://console.cloud.tencent.com/tke2/prometheus2)。TPS 已不支持创建新实例，我们提供一键 [迁移工具](https://intl.cloud.tencent.com/document/product/457/46736)，帮您一键将 TPS 实例迁移到 TMP，迁移前请 [精简监控指标](https://intl.cloud.tencent.com/document/product/457/46737) 或降低采集频率，否则可能产生较高费用，再次感谢您对 TPS 的支持和信任。
 </dx-alert>
 
 ## 操作场景
@@ -12,34 +12,33 @@ TPS 即将下线。TMP 已正式发布，欢迎 [了解试用](https://console.c
 在配置监控数据采集项前，您需要完成以下操作：
 
 - 已登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，并创建独立集群。
-- 已在集群所在 VPC 中 [创建监控实例](https://intl.cloud.tencent.com/document/product/457/46739)。
+- 已在集群所在 VPC 中 [创建监控实例](https://intl.cloud.tencent.com/document/product/457/38824?lang=zh&pg=#.E5.88.9B.E5.BB.BA.E7.9B.91.E6.8E.A7.E5.AE.9E.E4.BE.8B)。
 
 ## 精简指标
 
-### 精简基础指标
+### 控制台精简指标
 
 Prometheus 监控服务 TMP 提供了一百多个免费的基础监控指标，完整的指标列表可查看 [按量付费免费指标](https://intl.cloud.tencent.com/document/product/457/46735)。
-
-> ? 产品化精简指标仅支持“基础监控”的指标，不支持“自定义监控”的指标，因为自定义监控由用户自发行为控制，您可以通过**编辑**自定义监控的数据采集配置，进行自定义指标的精简和修改。
 
 1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的 **[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)**。
 2. 在监控实例列表页，选择需要配置数据采集规则的实例名称，进入该实例详情页。
 3. 在“关联集群”页面，单击集群右侧的**数据采集配置**，进入采集配置列表页。
-4. 基础指标支持通过产品化的页面增加/减少采集对象，点击“基础监控”右侧的“指标详情”：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/8e837e035089126feca9a827867b2647.png)
-5. 在以下页面您可以查看到每个指标是否免费，指标勾选表示会采集这些指标，建议您取消勾选付费指标，以免在迁移到 [TMP](https://intl.cloud.tencent.com/document/product/457/46734) 后造成额外的成本，付费指标计算详情见 [Prometheus 监控服务按量计费](https://intl.cloud.tencent.com/document/product/1116/43156)。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/92c68bf0a10368f8c513c85327a66c43.png)
+4. 基础指标支持通过产品化的页面增加/减少采集对象，单击右侧的“指标详情”：
+![](https://qcloudimg.tencent-cloud.cn/raw/8e837e035089126feca9a827867b2647.png)
+5. 在以下页面您可以查看到每个指标是否免费，指标勾选表示会采集这些指标，建议您取消勾选付费指标，以免在迁移到 [TMP](https://intl.cloud.tencent.com/document/product/457/46734) 后造成额外的成本。仅基础监控提供免费的监控指标，完整的免费指标详情见 [按量付费免费指标](https://intl.cloud.tencent.com/document/product/457/46735)。付费指标计算详情见 [Prometheus 监控服务按量计费](https://intl.cloud.tencent.com/document/product/1116/43156)。
+![](https://qcloudimg.tencent-cloud.cn/raw/92c68bf0a10368f8c513c85327a66c43.png)
 
-### 精简自定义指标
+### 通过 YAML 精简指标
 
 TMP 目前收费模式为按监控数据的点数收费，为了最大程度减少不必要的浪费，建议您针对采集配置进行优化，只采集需要的指标，过滤掉非必要指标，从而减少整体上报量。详细的计费方式和相关云资源的使用请查看 [文档](https://intl.cloud.tencent.com/document/product/457/46733)。
 
 以下步骤将分别介绍如何在自定义指标的 ServiceMonitor、PodMonitor，以及原生 Job 中加入过滤配置，精简自定义指标。
+
 1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的 **[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)**。
 2. 在监控实例列表页，选择需要配置数据采集规则的实例名称，进入该实例详情页。
 3. 在“关联集群”页面，单击集群右侧的**数据采集配置**，进入采集配置列表页。
-4. 实例右侧若没有“指标详情”，则单击**编辑**。如下图所示：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/72cc5e6258ee9b7a8f3217ef0216f5ff.png)
+4. 单击**编辑**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/72cc5e6258ee9b7a8f3217ef0216f5ff.png)
 
 #### ServiceMonitor 和 PodMonitor
 
@@ -71,6 +70,7 @@ spec:
 
 若要采集 `kube_node_info` 和 `kube_node_role` 的指标，则需要在 ServiceMonitor 的 endpoints 列表中，加入 `metricRelabelings` 字段配置。注意：是 **`metricRelabelings`** 而不是 `relabelings`。
 添加 `metricRelabelings` 示例：
+
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -113,6 +113,7 @@ scrape_configs:
 
 若只需采集 `kube_node_info` 和 `kube_node_role` 的指标，则需要加入 `metric_relabel_configs` 配置。注意：是 **`metric_relabel_configs`** 而不是 `relabel_configs`。
 添加 `metric_relabel_configs` 示例：
+
 ```yaml
 scrape_configs:
   - job_name: job1

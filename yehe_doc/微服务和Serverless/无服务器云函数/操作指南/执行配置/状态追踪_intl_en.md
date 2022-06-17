@@ -1,4 +1,4 @@
-## Use Cases
+## Overview
 
 Asynchronously executed functions are usually used to process a large number of async time-consuming tasks. In order to better manage such tasks, SCF provides a status trace feature, which records and reports the real-time status of event responses and provides event management services such as event status statistics collection and query.
 
@@ -17,10 +17,10 @@ After the status trace feature is enabled for asynchronously executed functions,
 
 ## Directions
 
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=16&ns=default) and click **Function Service** on the left sidebar.
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=16&ns=default) and click **Functions** on the left sidebar.
 2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-3. Select an **empty function** or **function template** to create a function.
-4. On the **Function Configuration** page, expand **Advanced Settings**, select **Async Execution** > **Status Trace**, and click **Complete**.
-5. After the function is created, you can click **Event Management** to view the list of async events.
+3. Select **Custom** or **Template** to create a function.
+4. On the **Function configuration** page, expand **Advanced settings**, select **Async execution** > **Status trace**, and click **Complete**.
+5. After the function is created, you can click **Event management** to view the list of async events.
 ![](https://qcloudimg.tencent-cloud.cn/raw/91118500ac76440f1c6c4ff7a7b20c69.png)
 

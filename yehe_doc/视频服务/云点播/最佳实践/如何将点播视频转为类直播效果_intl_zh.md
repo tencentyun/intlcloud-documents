@@ -45,9 +45,9 @@
 ### 步骤3：开启 Key 防盗链
 1. 使用伪直播必须开启防盗链，请登录 [云点播控制台](https://console.cloud.tencent.com/vod)，选择左侧导航栏的【分发播放设置】>【域名管理】，单击目标域名所在行的【设置】，进入域名相关设置页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f21443e506aab6c9020d4a98575c1e7b.png)
-2. 单击【编辑】去开启 Referer 防盗链。
-![](https://qcloudimg.tencent-cloud.cn/raw/e4fecb5f16b4157959b86acbc9d33ee0.png)
-2. 开启 Referer 防盗链、Key 防盗链。
+2. 单击【按钮】去开启 Referer 防盗链。
+![](https://qcloudimg.tencent-cloud.cn/raw/63d1a7a738d3031a81116bde7727024b.png)
+3. 开启 Referer 防盗链、Key 防盗链。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f13f03767df78e476012158fb44eebd.png)
 更多选项说明，请参见 [设置防盗链](https://intl.cloud.tencent.com/document/product/266/14060)。完成设置后，请保存防盗链 KEY 的内容用于以下的防盗链签名计算。
 

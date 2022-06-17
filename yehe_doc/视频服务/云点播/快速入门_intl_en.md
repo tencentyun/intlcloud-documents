@@ -13,7 +13,7 @@ This document guides you through how to quickly upload a video from your local f
 ## Step 2. Upload a video
 1. Click **[Media Assets > Video Management](https://console.cloud.tencent.com/vod/media)** on the left sidebar.
 2. Click **Upload Video** and select **Local Upload** as the **Upload Method**.
-![](https://main.qcloudimg.com/raw/1d54bda88e541f56d8c2fdec162761f0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9e5822b2298211fd833aa64af813ae2f.png)
 3. Click **Select Video** and select the local video file `Tencent Cloud.mp4`.
 4. For **Process Video**, select **No processing after upload** and click **Upload** in the bottom-left corner.
 
@@ -26,12 +26,12 @@ This document guides you through how to quickly upload a video from your local f
 ## Step 4. Process the video
 1. Select **Uploaded** on the **[Media Assets > Video Management](https://console.cloud.tencent.com/vod/media)** page.
 2. Check "Tencent Cloud.mp4" and click **Process Video**.
-![](https://main.qcloudimg.com/raw/246099e6f6c37bca0f3b4901b4125412.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8fb2f59e5144a86f385ea0a73ffc4b79.png)
 3. In the **Process Video** pop-up, select **Transcoding** as the **Processing Type**.
 4. Click **Transcoding Template**, and then select one or more transcoding templates.
 5. For **Watermark Template**, click the drop-down list, and then select **p001** under **Select watermark**.
 6. Check **Thumbnail**, and then click **Confirm**.
-![](https://main.qcloudimg.com/raw/31ecab7ef88cc80f103a16a7dee3deb8.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6bbc4412d57f654a6202afdacf1eb2cc.png)
 
 ## Step 5. Get a playback URL
 1. Click **Manage** in the **Operation** column of `Tencent Cloud.mp4`.

@@ -6,7 +6,7 @@ The lifecycle of a public IP is bound with a CVM, which means that the public IP
 
 ## Public IP vs EIP
 Both public IPs and EIPs are used of internet access. 
-- Public IP: It is assigned automatically upon the creation of CVM, can can not be unbound from the CVM.
+- Public IP: It is assigned automatically upon the creation of CVM, can not be unbound from the CVM.
 - EIP: It’s purchased independently. It can be bound with/unbound from cloud resources (CVM, NAT gateway, ENI, and HAVIP) at any time.
 >?Only general BGP IP lines are applicable for the current common public IP addresses.
 >
@@ -75,6 +75,7 @@ EIPs can be decoupled from the lifecycle of the cloud resource and operate indep
 
 
 ### Limits on public IPs bound to CVM
+
 
 > For CVM instances purchased before 00:00, September 18, 2019, the number of public IPs can be bound to each instance is equal to the [number of supported private IPs](https://intl.cloud.tencent.com/document/product/576/18527).
 >

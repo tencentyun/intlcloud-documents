@@ -16,7 +16,7 @@ Currently, this feature relies on the SCF and CLS services, which should be acti
 > ?Before using SCF and EventBridge to process data, you need to read and agree to [SCF Description](https://intl.cloud.tencent.com/document/product/583) and [Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
 
 4. On the **Configure Task** page, enter the task details.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/8041c40a6129d2b325cd2346272d0e5c.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/70977ab548b8511294977370acd940d0.png)
    - Task Name: It can only contain letters, digits, underscores, or symbols ("-" and ".").
    - CKafka Instance: Select the source CKafka instance.
    - Source Topic: Select the source topic.

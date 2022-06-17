@@ -4,11 +4,11 @@ Flutter용 Tencent Cloud RT-Cube Superplayer는 오픈 소스 Tencent Cloud 플�
 
 ## SDK 다운로드
 
-Flutter용 Tencent Cloud RT-Cube Superplayer SDK는 [SuperPlayer Flutter](https://github.com/tencentyun/SuperPlayer/tree/main/Flutter)에서 다운로드할 수 있습니다. 
+Flutter용 Tencent Cloud RT-Cube Superplayer SDK는 [SuperPlayer Flutter](https://github.com/LiteAVSDK/Player_Flutter)에서 다운로드할 수 있습니다. 
 
 ## 타겟 오디언스
 
-이 문서는 Tencent Cloud의 독점 기능에 대해 설명합니다. 읽기 전에 관련 [Tencent Cloud](https://cloud.tencent.com) 서비스를 활성화했는지 확인하십시오. 계정을 등록하지 않은 경우 먼저 [무료 평가판](https://intl.cloud.tencent.com/login)에 등록하십시오.
+본 문서의 일부 내용은 Tencent Cloud의 독점적 기능이므로, 사용하기 전에 [Tencent Cloud](https://intl.cloud.tencent.com) 관련 서비스를 활성화해 주십시오. 미등록 사용자는 [무료 베타](https://intl.cloud.tencent.com/login) 계정에 가입하실 수 있습니다.
 
 ## 통합 가이드[](id:Guide)
 
@@ -16,7 +16,7 @@ Flutter용 Tencent Cloud RT-Cube Superplayer SDK는 [SuperPlayer Flutter](https:
 ```yaml
   super_player:
     git:
-      url: https://github.com/tencentyun/SuperPlayer
+      url: https://github.com/LiteAVSDK/Player_Flutter
       path: Flutter
 ```
 
@@ -37,7 +37,7 @@ Android의 `AndroidManifest.xml` 파일에 다음 구성을 추가합니다.
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <!--VOD 플레이어 플로팅 창 권한-->
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-<!--저장-->
+<!--스토리지-->
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
@@ -179,6 +179,8 @@ class _TestSuperPlayerState extends State<TestSuperPlayer> {
 
 코드를 실행하면 비디오가 휴대폰에서 재생되며, 인터페이스 대부분의 기능을 사용할 수 있음을 확인할 수 있습니다.
 
+
+
 ## 다중 해상도[](id:resolution)
 
 상기 샘플 코드에는 하나의 해상도만 지정되어 있습니다. 여러 해상도를 추가하는 것은 쉽습니다. 예를 들어 [CSS 콘솔](https://console.cloud.tencent.com/live/livemanage)을 열고 재생할 라이브 스트림을 찾은 다음 세부 정보 페이지로 들어갑니다.
@@ -259,6 +261,8 @@ playModel.appId = 1252463788;// 사용자의 appID로 변경
 
 재생 중인 라이브 스트림 아래에 진행률 표시줄이 표시되고 원하는 지점으로 탐색할 수 있습니다. [라이브 스트림으로 돌아가기]를 클릭하여 최신 라이브 스트림을 볼 수도 있습니다.
 
+
+
 >?타임 시프트 기능은 현재 베타 테스트 중입니다. 사용이 필요한 경우에는 [티켓 제출](https://console.cloud.tencent.com/workorder)하여 신청하십시오.
 
 ## FileId를 통한 재생
@@ -286,5 +290,5 @@ _playerController.playWithModel(playModel);
 
 ## 더 많은 기능[](id:moreFeature)
 
-모든 기능을 경험하려면 QR 코드를 스캔하여 Tencent Video Cloud 툴킷을 다운로드하거나 프로젝트 Demo를 직접 실행하십시오.
+전체 기능을 사용하려면 비디오 클라우드 툴 킷을 다운로드하거나 프로젝트 Demo를 직접 실행하십시오.
 <img src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png" width="150">

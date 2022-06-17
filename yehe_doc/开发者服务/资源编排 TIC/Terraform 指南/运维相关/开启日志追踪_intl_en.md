@@ -5,7 +5,7 @@ This document describes how to enable local log tracking to get more detailed lo
 ## Directions
 1. Before running `terraform apply` on the CLI, you can enable local log tracking with the following command:
 ```bash
-export TF_LOG=DEBUG
+export TF_LOG=TRACE
 export TF_LOG_PATH=./terraform.log
 ```
 2. Run the following command:

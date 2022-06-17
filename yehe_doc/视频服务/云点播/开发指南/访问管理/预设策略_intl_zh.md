@@ -17,15 +17,15 @@
 1. 以 [主账号](https://intl.cloud.tencent.com/document/product/598/32633) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击【新建用户】。
    ![](https://main.qcloudimg.com/raw/e700947b468ef25d4bf70ad1fecc6348.png)
 2. 在“新建用户”页面单击子用户类型下的【自定义创建】，进入“新建子用户”页面。
-   ![](https://main.qcloudimg.com/raw/b8351b38a1df79df1836cb62268ecc74.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/24a4e0e0b9461bdcbc0b4ea50e3e1267.png)
 3. 单击【下一步】，填写用户信息。
    - 填写用户名，勾选【编程访问】和【腾讯云控制台访问】，其余选项按需配置。
    - 单击【下一步】，按照页面的提示完成身份验证。
-     ![](https://main.qcloudimg.com/raw/19b98c0b2dde4824d5eeaa52304ea3df.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/389813710fb711d28bb80f2f9979cd10.png)
 4. 设置用户权限。
    - 搜索并勾选预设策略`QcloudVODFullAccess`。
    - 单击【下一步】。
-		<img src="https://main.qcloudimg.com/raw/0bd65772428242306300e315537853cd.png" width="704">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/597de21489df26315d604469d6906ec2.png" width="704">
 5. 在“审阅信息和权限”分栏下单击【完成】，完成子用户的创建，在成功页面下载并保管好该子用户的登录链接和安全凭证，其中包含的信息如下表：
    ![](https://main.qcloudimg.com/raw/cc223f380730f8dbfe81caa799be2dfc.png)
 <table>

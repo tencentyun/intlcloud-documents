@@ -1,4 +1,4 @@
-[弹性网卡](https://intl.cloud.tencent.com/product/eni?from_cn_redirect=1)（Elastic Network Interface，ENI）是绑定私有网络内云服务器的一种弹性网络接口，可在多个云服务器间自由迁移。弹性网卡在配置管理网络、搭建高可靠网络方案时有较大帮助。
+[弹性网卡](https://intl.cloud.tencent.com/products/eni)（Elastic Network Interface，ENI）是绑定私有网络内云服务器的一种弹性网络接口，可在多个云服务器间自由迁移。弹性网卡在配置管理网络、搭建高可靠网络方案时有较大帮助。
 
 弹性网卡具有私有网络、可用区和子网属性，只可以绑定相同可用区下的云服务器。一台云服务器可以绑定多个弹性网卡，具体绑定数量将根据云服务器规格而定。
 
@@ -20,24 +20,891 @@
 ## 使用限制
 
 根据 CPU 和内存配置不同，云服务器可以绑定的弹性网卡数和单网卡绑定内网 IP 数有较大不同，网卡和单网卡 IP 配额数如下表所示：
-> 单个网卡绑定 IP 数量仅代表网卡可以绑定的 IP 数量上限，不承诺按照上限提供 EIP 配额，账号的 EIP 配额按照 EIP [使用限制](https://intl.cloud.tencent.com/document/product/213/5733) 提供。
 
-| 云服务器配置               | 弹性网卡数 | 单网卡绑定内网 IP 数 |
-| ------------------- | :---- | :------ |
-| CPU：1核   </br>内存：1GB    | 2     | 2       |
-| CPU：1核   </br>内存：> 1GB   | 2     | 6       |
-| CPU：2核             | 2     | 10      |
-| CPU：4核   </br>内存：< 16GB | 4     | 10      |
-| CPU：4核   </br>内存：> 16GB | 4     | 20      |
-| CPU：8核 - 12核          | 6     | 20      |
-| CPU：> 12核           | 8     | 30      |
 
+<dx-alert infotype="notice" title="">
+单个网卡绑定 IP 数量仅代表网卡可以绑定的 IP 数量上限，不承诺按照上限提供 EIP 配额，账号的 EIP 配额按照 EIP 使用限制 提供。
+</dx-alert>
+
+
+<dx-tabs>
+::: 云服务器支持绑定的弹性网卡配额
+<table >
+   <tr >
+    <th width="6%"  rowspan="2" style = "text-align:center;">机型</th>
+    <th  width="8%"  rowspan="2" style = "text-align:center;">实例类型</th>
+    <th width="86%" colspan="10" style = "text-align:center;">弹性网卡配额</th>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">CPU：1核</th>
+    <th style = "text-align:center;">CPU：2核</th>
+    <th style = "text-align:center;">CPU：4核</th>
+    <th style = "text-align:center;">CPU：6核</th>
+    <th style = "text-align:center;">CPU：8核</th>
+    <th style = "text-align:center;">CPU：10核</th>
+    <th style = "text-align:center;">CPU：12核</th>
+    <th style = "text-align:center;">CPU：14核</th>
+    <th style = "text-align:center;">CPU：16核</th>
+    <th style = "text-align:center;">CPU：&gt;16核</th>
+   </tr>
+   <tr >
+    <th rowspan="9" style = "text-align:center;">标准型</th>
+    <th style = "text-align:center;">标准型 S5</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准存储增强型 S5se</th>
+    <td >-</td>
+    <td >-</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 SA2</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S4</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr>
+    <th style = "text-align:center;">标准网络优化型 SN3ne</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >8</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S3</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 SA1</th>
+    <td >2</td>
+    <td >2</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S2</th>
+    <td >2</td>
+    <td >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S1</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th rowspan="2" style = "text-align:center;">高 IO 型</th>
+    <th style = "text-align:center;">高 IO 型 IT5</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">高 IO 型IT3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th rowspan="5" style = "text-align:center;">内存型</th>
+    <th  style = "text-align:center;">内存型 M5</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">内存型 M4</th>
+    <td >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">内存型 M3</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">内存型 M2</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">内存型 M1</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th rowspan="4" style = "text-align:center;">计算型</th>
+    <th  style = "text-align:center;">计算型 C4</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">计算网络增强型 CN3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">计算型 C3</th>
+    <td  >-</td>
+    <td >-</td>
+    <td >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;" >计算型 C2</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th  rowspan="7" style = "text-align:center;">GPU 机型</th>
+    <th  style = "text-align:center;">GPU 计算型 GN2</th>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th class="xl71" x:str style = "text-align:center;">GPU 计算型 GN6</th>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU 计算型 GN6S</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU 计算型 GN7</th>
+    <td >-</td>
+    <td >-</td>
+   <td  >4</td>
+    <td >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th style = "text-align:center;">GPU 计算型 GN8</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th  style = "text-align:center;">GPU 计算型 GN10X</th>
+   <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+      <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU 计算型 GN10Xp</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td >8</td>
+   </tr>
+   <tr  >
+    <th style = "text-align:center;">FPGA 机型</th>
+    <th style = "text-align:center;">FPGA 加速型 FX4</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th rowspan="3" style = "text-align:center;">大数据型</th>
+    <th  style = "text-align:center;">大数据型 D3</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">大数据型 D2</th>
+    <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">大数据型 D1</th>
+    <td >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th colspan="2" style = "text-align:center;">黑石物理服务器2.0</th>
+    <td colspan="10" style = "text-align:center;">不支持绑定弹性网卡</td>
+   </tr>
+  </table>
+:::
+::: 云服务器单网卡支持绑定的内网IP配额
+<table >
+   <tr >
+    <th width="6%"  rowspan="2" style = "text-align:center;">机型</th>
+    <th  width="8%"  rowspan="2" style = "text-align:center;">实例类型</th>
+    <th width="86%" colspan="10" style = "text-align:center;">单网卡绑定内网 IP 配额</th>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">CPU：1核</th>
+    <th style = "text-align:center;">CPU：2核</th>
+    <th style = "text-align:center;">CPU：4核</th>
+    <th style = "text-align:center;">CPU：6核</th>
+    <th style = "text-align:center;">CPU：8核</th>
+    <th style = "text-align:center;">CPU：10核</th>
+    <th style = "text-align:center;">CPU：12核</th>
+    <th style = "text-align:center;">CPU：14核</th>
+    <th style = "text-align:center;">CPU：16核</th>
+    <th style = "text-align:center;">CPU：&gt;16核</th>
+   </tr>
+   <tr >
+    <th rowspan="9" style = "text-align:center;">标准型</th>
+    <th style = "text-align:center;">标准型 S5</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准存储增强型 S5se</th>
+    <td >-</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 SA2</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S4</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr>
+    <th style = "text-align:center;">标准网络优化型 SN3ne</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >30</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S3</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 SA1</th>
+    <td >内存=1G：2<br/>内存&gt;1G：6</td>
+    <td >10</td>
+    <td >内存=8G：10<br/>内存=16G：20</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S2</th>
+    <td >6</td>
+    <td >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">标准型 S1</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="2" style = "text-align:center;">高 IO 型</th>
+    <th style = "text-align:center;">高 IO 型 IT5</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">高 IO 型IT3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="5" style = "text-align:center;">内存型</th>
+    <th  style = "text-align:center;">内存型 M5</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">内存型 M4</th>
+    <td >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">内存型 M3</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">内存型 M2</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">内存型 M1</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="4" style = "text-align:center;">计算型</th>
+    <th  style = "text-align:center;">计算型 C4</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">计算网络增强型 CN3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">计算型 C3</th>
+    <td  >-</td>
+    <td >-</td>
+    <td >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;" >计算型 C2</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th  rowspan="7" style = "text-align:center;">GPU 机型</th>
+    <th  style = "text-align:center;">GPU 计算型 GN2</th>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th class="xl71" x:str style = "text-align:center;">GPU 计算型 GN6</th>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU 计算型 GN6S</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU 计算型 GN7</th>
+    <td >-</td>
+    <td >-</td>
+   <td  >10</td>
+    <td >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th style = "text-align:center;">GPU 计算型 GN8</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th  style = "text-align:center;">GPU 计算型 GN10X</th>
+   <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+      <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU 计算型 GN10Xp</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td >30</td>
+   </tr>
+   <tr  >
+    <th style = "text-align:center;">FPGA 机型</th>
+    <th style = "text-align:center;">FPGA 加速型 FX4</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="3" style = "text-align:center;">大数据型</th>
+    <th  style = "text-align:center;">大数据型 D3</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">大数据型 D2</th>
+    <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">大数据型 D1</th>
+    <td >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th colspan="2" style = "text-align:center;">黑石物理服务器2.0</th>
+    <td colspan="10" style = "text-align:center;">不支持绑定弹性网卡</td>
+   </tr>
+  </table>
+:::
+</dx-tabs>
 
 ## API 概览
-此处展示弹性网卡与云服务器相关的 API 接口，如下表所示。更多弹性网卡相关操作请参见 [弹性网卡 API 概览](https://intl.cloud.tencent.com/document/product/215/15755?from_cn_redirect=1#.E5.BC.B9.E6.80.A7.E7.BD.91.E5.8D.A1.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)。
+此处展示弹性网卡与云服务器相关的 API 接口，如下表所示。更多弹性网卡相关操作请参见 [弹性网卡 API 概览](https://intl.cloud.tencent.com/document/product/215/15755)。
 
 | 接口功能 | Action ID |  功能描述 |
 |---------|---------|---------|
-| 创建弹性网卡 | [CreateNetworkInterface](https://intl.cloud.tencent.com/document/api/215/15818?from_cn_redirect=1) |  创建弹性网卡 |
-| 弹性网卡申请内网 IP  | [AssignPrivateIpAddresses](https://intl.cloud.tencent.com/document/api/215/15813?from_cn_redirect=1) | 弹性网卡申请内网 IP |
-| 弹性网卡绑定云服务器 | [AttachNetworkInterface](https://intl.cloud.tencent.com/document/api/215/15819?from_cn_redirect=1) | 弹性网卡绑定云服务器 |
+| 创建弹性网卡 | [CreateNetworkInterface](https://intl.cloud.tencent.com/document/api/215/15818) |  创建弹性网卡 |
+| 弹性网卡申请内网 IP  | [AssignPrivateIpAddresses](https://intl.cloud.tencent.com/document/api/215/15813) | 弹性网卡申请内网 IP |
+| 弹性网卡绑定云服务器 | [AttachNetworkInterface](https://intl.cloud.tencent.com/document/api/215/15819) | 弹性网卡绑定云服务器 |

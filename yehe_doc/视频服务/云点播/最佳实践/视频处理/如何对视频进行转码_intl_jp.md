@@ -125,7 +125,7 @@ Tencent Cloud VOD特有の超高速HD（TESHD）は画質の修復と増強、�
 ### 手順2：ビデオのアップロード[](id:p12)
 
 [クイックスタート - 手順2](https://intl.cloud.tencent.com/document/product/266/8757) を参照して、1個のテストビデオをアップロードします。 [ここ](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) をクリックして、Demoで使用されるテストビデオを表示します。対応するFileIdは下図に示すとおり8602268010602075659です。
-![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cad41443d593fed8523ca26f1c245733.png)
 
 >?トランスコードに時間がかかりすぎないように、短めのビデオファイルを使用してテストすることをお勧めします（例えば数十秒間のビデオ）。
 

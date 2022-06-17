@@ -1,0 +1,125 @@
+## 操作场景
+通过 [云点播控制台](https://console.cloud.tencent.com/vod/pics)，您可以进行图片即时处理操作，本文将为您介绍如何通过图片即时处理模板来进行实时的图片即时处理，通过 URL 作图的方式可快速获得图片即时处理效果。
+
+## 操作步骤
+### 步骤1：上传图片
+1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod)，单击左侧导航栏**应用管理**，进入应用列表页。
+2. 找到需要处理图片文件的应用，点击应用名称进入应用管理页。
+3. 默认进入**媒资管理**>**音视频管理**，“已上传”页面。
+4. 选择**媒资管理**>**图片管理**，默认进入“已上传”页面。单击**上传图片**。
+
+### 步骤2：创建模板
+
+您可通过 云点播 API 创建图片即时处理模板。
+
+1. 例如创建240 x 240缩略图模板：
+```shell
+https://vod.tencentcloudapi.com/?Action=CreateImageProcessingTemplate
+&Operations.0.Type=Scale
+&Operations.0.Scale.Type=ShortEdgeFirst
+&Operations.0.Scale.ShortEdge=240
+&Operations.1.Type=CenterCut
+&Operations.1.CenterCut.Type=Rectangle
+&Operations.1.CenterCut.Width=240
+&Operations.1.CenterCut.Height=240
+&<公共请求参数>
+```
+2. 请求返回图片即时处理模板号为1009。
+```javascript
+{
+  "Response": {
+    "Definition": 1009,
+    "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+  }
+}
+```
+
+### 步骤3：图片即时处理
+
+通过 URL 作图方式进行图片即时处理，公式如下：
+#### 处理后图片 URL = 原图片 URL + 间隔标识符 + 图片模板号 + “.” + 输出图片格式
+  - 原图片 URL：图片文件上传至 [云点播](https://console.cloud.tencent.com/vod/pics) 后将生成加速 URL 地址。
+  - 间隔标识符： !
+  - 输出图片的格式：JPG、JPEG、PNG。
+
+
+### 步骤4：处理类型
+图片即时处理支持缩放和裁剪两种类型。
+
+<Table>
+<tbody>
+<tr>
+<th>操作类型</th>
+<th>详细操作</th>
+</tr>
+<tr>
+<td rowspan=5>缩略</td>
+<td>指定宽度，高度等比缩放。</td>
+</tr>
+<tr>
+<td>指定高度，宽度等比缩放。</td>
+</tr>
+<tr>
+<td>指定长边，短边等比缩放。</td>
+</tr>
+<tr>
+<td>指定短边，长边等比缩放。</td>
+</tr>
+<tr>
+<td>指定宽度与高度强制缩放。</td>
+</tr>
+<tr>
+<td rowspan=2>裁剪</td>
+<td>内切圆裁剪，指定裁剪半径。</td>
+</tr>
+<tr>
+<td>矩形裁剪，指定裁剪的宽度和高度。</td>
+</tr>
+</tbody>
+</Table>
+
+#### 类型一、缩略
+
+- **指定宽度，高度等比缩放**
+ - 创建模板：13290，指定宽度：700，输出格式：PNG
+ - 图片即时处理后链接为：`https://1500012191.vod2.myqcloud.com/6caaa776vodcq1500012191/0f9d472c387702299328320141/Cov1ATJ3AYYA.jpg!13290.PNG`
+ - 最终效果展示：
+![](https://main.qcloudimg.com/raw/abf6f0699647efe9bef7f22d8f3fb939.png)
+
+- **指定高度，宽度等比缩放**
+ - 创建模板：13291，指定高度：700，输出格式：PNG
+ - 图片即时处理后链接为：`http://1500012191.vod2.myqcloud.com/6caaa776vodcq1500012191/0f9d472c387702299328320141/Cov1ATJ3AYYA.jpg!13291.PNG`
+ - 最终效果展示：
+![](https://main.qcloudimg.com/raw/df5c784021a55910a67bd3fcf1be1ac8.png)
+
+- **指定长边，短边等比缩放**
+ - 创建模板：13292，指定长边：300，输出格式：PNG
+ - 图片即时处理后链接为：`https://1500012191.vod2.myqcloud.com/6caaa776vodcq1500012191/0f9d472c387702299328320141/Cov1ATJ3AYYA.jpg!13292.PNG`
+ - 最终效果展示：
+![](https://main.qcloudimg.com/raw/fca36a5152c013ec9f111923f1f37b97.png)
+
+- **指定短边，长边等比缩放**
+ - 创建模板：13293，指定短边：300，输出格式：PNG
+ - 图片即时处理后链接为：`https://1500012191.vod2.myqcloud.com/6caaa776vodcq1500012191/0f9d472c387702299328320141/Cov1ATJ3AYYA.jpg!13293.PNG`
+ - 最终效果展示：
+![](https://main.qcloudimg.com/raw/e3f9bd39fe92b57758d8954d44715d93.png)
+
+- **指定宽度和高度进行强制缩放**
+ - 创建模板：13294，指定高度：300，指定宽度：300，输出格式：PNG
+ - 图片即时处理后链接为：`https://1500012191.vod2.myqcloud.com/6caaa776vodcq1500012191/0f9d472c387702299328320141/Cov1ATJ3AYYA.jpg!13294.PNG`
+ - 最终效果展示：
+![](https://main.qcloudimg.com/raw/4225aa7986ac5f2f58b6cf061b51f64d.png)
+
+#### 类型二、裁剪
+- **内切圆裁剪**
+ - 创建模板：13295，指定输出图片半径：300，输出格式：PNG
+ - 图片即时处理后链接为：`http://1500012191.vod2.myqcloud.com/6caaa776vodcq1500012191/182b0f2a387702299461251102/EOy4fI1V8gQA.jpg!13295.PNG`
+ - 最终效果展示：
+![](https://main.qcloudimg.com/raw/e62ef7791ff9b129259bd3fa04afd6d2.png)
+
+- **矩形裁剪**
+ - 创建模板：13296，输出图片宽度：300，输出图片高度：300，输出格式：PNG
+ - 图片即时处理后链接为：`http://1500012191.vod2.myqcloud.com/6caaa776vodcq1500012191/23c473bb387702299461744409/HVSbBfQq3JgA.jpg!13296.PNG`
+ - 最终效果展示：
+![](https://main.qcloudimg.com/raw/433ea68294a8b8af47bae088e7a89508.png)
+

@@ -63,8 +63,8 @@ Associate the `QcloudAccessForTKERoleInOpsManagement` policy in the [TKE_QCSRole
 In some cases, the output type of user logs is standard output, but logs collected to CLS are truncated. This happens as json-tool, the default log collection tool of Docker, limits the size of single-line logs. Therefore, logs exceeding 16 KB in size will be truncated.
 
 **Solution**:
-- Modify the log output configuration to make the size of printed single-line logs below 16 KB.
-- Switch the container runtime engine to Containerd, which doesn't truncate single-line logs exceeding 16 KB like Docker.
+Modify the log output configuration to make the size of printed single-line logs below 16 KB.
+
 
 
 ### What should I do if the same logs are collected repeatedly?

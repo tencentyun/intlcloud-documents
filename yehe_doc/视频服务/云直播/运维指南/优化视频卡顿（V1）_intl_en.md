@@ -35,7 +35,7 @@ The upstream frame rate is indicated by the **VIDEO_FPS** status parameter retur
 You can learn about the **CPU usage of the stream publishing SDK and the entire system** from the `CPU_USAGE` status parameter returned by the MLVB SDK through TXLivePushListener. System CPU utilization larger than 80% will affect video data capturing and encoding; if the CPU utilization reaches 100%, publishing by hosts will stutter, and smooth watch experience for viewers is impossible.
 
 - **2.2 Identifying CPU consumers**
-The publishing SDK is not the only CPU consumer in a live streaming application. Leaving on-screen comments, sending hearts, and text messaging all consume CPU. To evaluate the CPU usage of the push SDK only, you may use our [Basic Edition Demo](https://intl.cloud.tencent.com/document/product/1071/38147).
+The publishing SDK is not the only CPU consumer in a live streaming application. Leaving on-screen comments, sending hearts, and text messaging all consume CPU. To evaluate the CPU usage of the push SDK only, you may use our Basic Edition Demo.
 
 - **2.3 Choosing an appropriate resolution**
 High resolution does not necessarily result in high video quality. To begin with, high resolution translates into improved video quality only when the bitrate is also high. Low bitrate and high resolution usually produce lower video quality than high bitrate and low resolution. In addition, viewers may be able to sense notable difference between a resolution of 1280 × 720 and 960 × 540 when watching videos full screen on PCs, but not on mobile phones, whose average screen size is only around 5 inches. High resolution increases the CPU utilization of the SDK significantly. Therefore, we recommend you use `setVideoQuality` in `TXLivePusher` of the MLVB SDK to set video quality to **HD**. You may not get the expected high video quality by setting the resolution too high.
@@ -63,7 +63,7 @@ In scenarios where video quality is important, you’re advised to inform the ho
 For more information on how to do this, please see **Mobile Live Video Broadcasting > Basic Features > Camera Push > Event Handling**. You are advised to remind hosts to check their network conditions if your application receives the [**PUSH_WARNING_NET_BUSY**](https://intl.cloud.tencent.com/document/product/1071/41678) event multiple times within a short period of time. Hosts are often unable to notice upstream congestion until reminded by viewers or an application message.
 
 - **2.2 Setting appropriate values for encoding parameters**
-You can set video quality using the `setVideoQuality` API in `TXLivePusher`. We recommend the encoding settings below (for live showroom). To learn more about ensuring video quality, see [Video Quality](https://intl.cloud.tencent.com/document/product/1071/41932).
+You can set video quality using the `setVideoQuality` API in `TXLivePusher`. We recommend the encoding settings below (for live showroom). 
 <table>
 <tr><th width="15%">Video Quality</th>
 <th width="15%">Resolution</th>

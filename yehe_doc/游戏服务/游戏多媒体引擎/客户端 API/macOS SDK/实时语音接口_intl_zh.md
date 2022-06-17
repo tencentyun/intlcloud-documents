@@ -99,7 +99,7 @@ _context.TMGDelegate =self;
 -(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data{
     	NSLog(@"OnEvent:%lu,data:%@",(unsigned long)eventType,data);
 		switch (eventType) {
-			//对 eventType 进行判断
+			//对eventType进行判断
 			}
 	}
 ```
@@ -109,7 +109,7 @@ _context.TMGDelegate =self;
 ### [初始化 SDK](id:Init)
 
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用，调用此接口不会产生计费。
-- **参数 sdkAppID 获取请参考 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**。
+- **参数 sdkAppID 获取请参考** [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。
 - **openID 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
 
 
@@ -922,7 +922,7 @@ BOOL IsAudioSend = [[[ITMGContext GetInstance] GetAudioCtrl] IsAudioSendEnabled]
 
 此接口用于扬声器状态获取。返回值0为关闭扬声器状态，返回值1为打开扬声器状态。
 
-#### 函数原型  
+### 接口原型  
 
 ```
 -(int)GetSpeakerState;
@@ -942,7 +942,7 @@ BOOL IsAudioSend = [[[ITMGContext GetInstance] GetAudioCtrl] IsAudioSendEnabled]
 
 此接口用于开启关闭播放设备。
 
-#### 函数原型  
+#### 接口原型  
 
 ```
 -(QAVResult)EnableAudioPlayDevice:(BOOL)enabled;
@@ -1081,7 +1081,7 @@ BOOL IsAudioRecv = [[[ITMGContext GetInstance] GetAudioCtrl] IsAudioRecvEnabled]
 
 ### 获取设置的声音百分比
 
-调用此接口获取SetSpeakerVolumeByOpenID设置的能量值
+调用此接口获取SetSpeakerVolumeByOpenID设置的音量值
 
 #### 接口原型
 
@@ -1091,7 +1091,7 @@ BOOL IsAudioRecv = [[[ITMGContext GetInstance] GetAudioCtrl] IsAudioRecvEnabled]
 
 #### 返回值
 
-接口返回 OpenID 设置的能量百分比， 默认返回100。
+接口返回 OpenID 设置的音量百分比， 默认返回100。
 
 ### 设置扬声器的音量
 

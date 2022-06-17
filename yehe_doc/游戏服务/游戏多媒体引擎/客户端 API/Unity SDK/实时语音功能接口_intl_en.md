@@ -390,7 +390,7 @@ The callback for quickly switching rooms is `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVEN
 #### API prototype
 
 ```
-public abstract int SwitchRoom(string roomID, byte[] authBuffer);
+public abstract int SwitchRoom(string targetRoomID, byte[] authBuffer);
 ```
 
 #### Type descriptions

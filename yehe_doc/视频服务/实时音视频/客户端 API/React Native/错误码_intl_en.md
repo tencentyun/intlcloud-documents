@@ -7,7 +7,7 @@
 
 ### Error codes for room entry
 
-"TRTCCloud.enterRoom()" will trigger this type of error code if room entry fails. You can use the callback functions "TRTCCloudDelegate.onEnterRoom()" and "TRTCCloudDelegate.OnError()" to capture related notifications.
+`TRTCCloud.enterRoom()` will trigger this type of error code if room entry fails. You can use the callback functions `TRTCCloudDelegate.onEnterRoom()` and `TRTCCloudDelegate.OnError()` to capture related notifications.
 
 | Code | Value | Description |
 |---|---|---|
@@ -18,7 +18,9 @@
 |ERR_USER_ID_INVALID|-3319|Invalid `userID`.|
 |ERR_USER_SIG_INVALID|-3320|Invalid `userSig`.|
 |ERR_ROOM_REQUEST_ENTER_ROOM_TIMEOUT|-3308|Room entry request timed out. Please check your network.|
+|ERR_SERVER_INFO_PRIVILEGE_FLAG_ERROR|-100006|Failed to verify the permission ticket. Please check whether `privateMapKey` is correct.|
 |ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|Service unavailable. Please check whether there are remaining minutes in your packages and whether your Tencent Cloud account has overdue payment.|
+|ERR_SERVER_INFO_ECDH_GET_TINYID      |-100018| `userSig` verification failed. Please check whether `userSig` is correct.|
 
 
 ### Error code for room exit
@@ -101,37 +103,37 @@ You can use the callback functions `TRTCCloudDelegate.onStartPublishing()` and `
 |ERR_ROOM_REQUEST_STOP_PUBLISHING_ERROR|-3336|Abnormal signaling of stopping pushing to Tencent Cloud’s live streaming CDN.|
 
 
-### Error codes for cross-room co-anchoring
+### Error codes for cross-room communication
 
-"TRTCCloud.ConnectOtherRoom()" will trigger this type of error code if cross-room co-anchoring fails. You can use the callback function "TRTCCloudDelegate.onConnectOtherRoom()" to capture related notifications.
+`TRTCCloud.ConnectOtherRoom()` will trigger this type of error code if cross-room co-anchoring fails. You can use the callback function `TRTCCloudDelegate.onConnectOtherRoom()` to capture related notifications.
 
 | Code | Value | Description |
 |---|---|---|
-|ERR_ROOM_REQUEST_CONN_ROOM_TIMEOUT|-3326|Co-anchoring request timed out.|
-|ERR_ROOM_REQUEST_DISCONN_ROOM_TIMEOUT|-3327|Request to exit co-anchoring timed out.|
+|ERR_ROOM_REQUEST_CONN_ROOM_TIMEOUT|-3326|Cross-room communication request timed out.|
+|ERR_ROOM_REQUEST_DISCONN_ROOM_TIMEOUT|-3327|Request to end cross-room communication timed out.|
 |ERR_ROOM_REQUEST_CONN_ROOM_INVALID_PARAM|-3328|Invalid parameter.|
-|ERR_CONNECT_OTHER_ROOM_AS_AUDIENCE|-3330|You are in the role of audience and cannot initiate or end co-anchoring. You need to switch to the anchor role using `switchRole()`.|
-|ERR_SERVER_CENTER_CONN_ROOM_NOT_SUPPORT|-102031|Cross-room co-anchoring not supported.|
-|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_NUM|-102032|Reached the upper limit of co-anchoring calls.|
-|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_RETRY_TIMES|-102033|Reached the upper limit of retries for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_REQ_TIMEOUT|-102034|Cross-room co-anchoring request timed out.|
-|ERR_SERVER_CENTER_CONN_ROOM_REQ|-102035|Incorrect format of cross-room co-anchoring request.|
-|ERR_SERVER_CENTER_CONN_ROOM_NO_SIG|-102036|No signature for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_DECRYPT_SIG|-102037|Failed to decrypt signature for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_NO_KEY|-102038|Decryption key for cross-room co-anchoring signature not found.|
-|ERR_SERVER_CENTER_CONN_ROOM_PARSE_SIG|-102039|Signature parsing error for cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|Incorrect timestamp of cross-room co-anchoring signature.|
-|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|Mismatch of room ID in cross-room co-anchoring signature.|
-|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|Mismatch of username in cross-room co-anchoring signature.|
-|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|The user did not initiate co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|Failed to start cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|Failed to cancel cross-room co-anchoring.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_ROOM_NOT_EXIST|-102046|The room being connected for co-anchoring does not exist.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_REACH_MAX_ROOM|-102047|The room being connected reached the upper limit of co-anchoring calls.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_NOT_EXIST|-102048|The user being called for co-anchoring does not exist.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_DELETED|-102049|The user being called for co-anchoring was deleted.|
-|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_FULL|-102050|All resources of the user being called for co-anchoring are occupied.|
-|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SEQ|-102051|Sequence number for co-anchoring not in sequential order.|
+|ERR_CONNECT_OTHER_ROOM_AS_AUDIENCE|-3330|You are an audience member and cannot initiate or end cross-room communication. You need to switch to the anchor role using `switchRole()`.|
+|ERR_SERVER_CENTER_CONN_ROOM_NOT_SUPPORT|-102031|Cross-room communication not supported.|
+|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_NUM|-102032|Reached the maximum number of cross-room calls.|
+|ERR_SERVER_CENTER_CONN_ROOM_REACH_MAX_RETRY_TIMES|-102033|Reached the maximum number of retries for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_REQ_TIMEOUT|-102034|Cross-room communication request timed out.|
+|ERR_SERVER_CENTER_CONN_ROOM_REQ|-102035|Cross-room communication request format is incorrect.|
+|ERR_SERVER_CENTER_CONN_ROOM_NO_SIG|-102036|No signature for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_DECRYPT_SIG|-102037|Failed to decrypt signature for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_NO_KEY|-102038|Decryption key for cross-room communication signature not found.|
+|ERR_SERVER_CENTER_CONN_ROOM_PARSE_SIG|-102039|Signature parsing error for cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|Incorrect timestamp of cross-room communication signature.|
+|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|Mismatch of room ID in cross-room communication signature.|
+|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|Mismatch of username in cross-room communication signature.|
+|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|The user did not initiate cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|Failed to start cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|Failed to cancel cross-room communication.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_ROOM_NOT_EXIST|-102046|The room being connected for cross-room communication does not exist.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_REACH_MAX_ROOM|-102047|The room being connected reached the maximum number of cross-room calls.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_NOT_EXIST|-102048|The user being called for cross-room communication does not exist.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_DELETED|-102049|The user being called for cross-room communication was deleted.|
+|ERR_SERVER_CENTER_CONN_ROOM_CONNED_USER_FULL|-102050|All resources of the user being called for cross-room communication are occupied.|
+|ERR_SERVER_CENTER_CONN_ROOM_INVALID_SEQ|-102051|Sequence number for cross-room communication not in sequential order.|
 
 
 ## Warning Codes
@@ -163,7 +165,7 @@ Warning codes do not require your special attention. You can choose whether to p
 |WARNING_AUDIO_RECORDING_WRITE_FAIL|7001|Failed to write recorded audio to file.|
 |WARNING_ROOM_DISCONNECT|5101|Network disconnected.|
 |WARNING_IGNORE_UPSTREAM_FOR_AUDIENCE|6001|You are in the role of audience. The request to send audio/video data is ignored.|
-|WARNING_NET_BUSY|1101|Bad network connection: data upload blocked due to limited upstream bandwidth.|
+|WARNING_NET_BUSY|1101|Bad network connection: Data upload blocked due to limited upstream bandwidth.|
 |WARNING_RTMP_SERVER_RECONNECT|1102|Push error. The network is disconnected. Reconnecting… (max attempts: 3).|
 |WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|Pull error. The network is disconnected. Reconnecting… (max attempts: 3).|
 |WARNING_RECV_DATA_LAG|2104|Unstable incoming packets. This may be caused by insufficient downstream bandwidth or unstable streams from the anchor.|
@@ -178,5 +180,5 @@ Warning codes do not require your special attention. You can choose whether to p
 |WARNING_PLAY_LIVE_STREAM_INFO_CONNECT_FAIL|3009|Live streaming error. Failed to call `connect` to connect to server. This is an internal error code of the SDK and is not thrown.|
 |WARNING_NO_STEAM_SOURCE_FAIL|3010|Live streaming error. Connection failed as there was no video in the stream address. This is an internal error code of the SDK and is not thrown.|
 |WARNING_ROOM_RECONNECT|5102|Network disconnected. Reconnecting…|
-|WARNING_ROOM_NET_BUSY|5103|Bad network connection: data upload blocked due to limited upstream bandwidth.|
+|WARNING_ROOM_NET_BUSY|5103|Bad network connection: Data upload blocked due to limited upstream bandwidth.|
     

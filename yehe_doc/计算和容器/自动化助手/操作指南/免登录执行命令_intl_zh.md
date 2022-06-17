@@ -9,10 +9,10 @@
 ## 操作步骤
 1. 登录 [轻量应用服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/index)，选择目标实例。
 2. 在目标实例详情页中，选择**执行命令**页签。如下图所示：
-![](https://main.qcloudimg.com/raw/62bca5be9da7768ed25336b8d89359dd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/38ce8f3f14e14c8e85ee9a7fc775742c.png)
 3. 在命令列表页面，单击**执行命令**。
 4. 在弹出的“执行命令”窗口中，参考以下信息进行配置。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/90f86f6c12d4ec231da26c9ba5b0f318.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b9ea8226605f2f486cc53316b851962a.png)
  - **命令来源**：选择命令来源。
  - **更多配置**（可选）：根据下表设置更多参数。
 <table>

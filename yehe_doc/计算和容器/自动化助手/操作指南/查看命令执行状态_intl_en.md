@@ -14,5 +14,5 @@ Check the command status by referring to [Command Execution Status](https://intl
 1. Log in to the [Lighthouse console](https://console.cloud.tencent.com/lighthouse/instance/index).
 2. Locate the target instance and open the details page.
 3. In the **Run commands** tab, locate the target command and click **View details**.
-![](https://main.qcloudimg.com/raw/b31a67ba262eb5d2b5aa04bc27b56189.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/38cf0f7f70473987e19d8897422c2366.png)
 4. In the **Execution result** window, check the command status by referring to [Command Execution Status](https://intl.cloud.tencent.com/document/product/1147/46034).

@@ -10,7 +10,7 @@ TDSQL-C for MySQL Serverless Edition adopts the serverless architecture for clou
 - SaaS application scenarios such as Mini Program Cloud Base and SME website development.
 
 ## Billing Modes
-Computing and storage are billed separately: computing is billed by the number of CCUs, while storage is billed by the usage in GB. The billing system calculates the usage by second and settles fees by hour. For detailed prices, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/1098/40620)
+Computing and storage are billed separately: computing is billed by the number of CCUs, while storage is billed by the usage in GB. The billing system calculates the usage by second and settles fees by hour. For detailed prices, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1098/40620)
 
 CynosDB Compute Unit (CCU) is the computing and billing unit for the Serverless Edition. A CCU is approximately equal to 1 CPU core and 2 GB memory. The number of CCUs used in each billing cycle is the greater of the number of CPU cores used by the database and 1/2 of the memory size.
 

@@ -82,11 +82,11 @@ setSystemVolumeType 인터페이스를 통해 통화 음량 및 미디어 음량
 [](id:a4)
 ### 소리가 작을 경우 어떻게 해결합니까?
 - **모든 시청자가 듣는 소리가 작다면** 업스트림 요인입니다.
-  - Windows 및 mac의 [setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5), 모든 플랫폼의 [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a53681962139b81140f2d66abc4ea6a0f) 인터페이스의 volume 값이 50 미만인지 확인하고 음량을 적절히 높일 수 있습니다.
+  - Windows 및 mac의 [setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__csharp.html#ae07615c5d80ac1f7f32a07c41654a5b0), 모든 플랫폼의 [setAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a8677a812326511ef92f963bbe049d42e) 인터페이스의 volume 값이 50 미만인지 확인하고 음량을 적절히 높일 수 있습니다.
   - 3A에서 처리한 AGC 자동 게인이 활성화되어 있는지 확인합니다.
   - 블루투스 헤드셋 문제인지 확인합니다.
 - **일부 시청자의 오디오만 작다면** 다운스트림 요인입니다.
-  - [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a9b8946403b8b3ac8e11f3a78e9d531ca), [setCurrentDeviceVolume](http://doc.qcloudtrtc.com/group__ITXDeviceManager__csharp.html#a1c9517a8a6a23558b4bd40c41eb97ee5) 인터페이스의 volume 값이 50 미만인지 확인하고 적절하게 음량을 높일 수 있습니다.
+  - [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a338984f5503d59ae06d67f55bd8f0766), [setCurrentDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ae06c4a3c51e1a6e9db48219f996c0177) 인터페이스의 volume 값이 50 미만인지 확인하고 적절하게 음량을 높일 수 있습니다.
   - setAudioRoute API를 호출하여 핸드셋 재생으로 전환하지 않았는지 확인합니다.
 
 [](id:a5)
@@ -108,7 +108,7 @@ setSystemVolumeType 인터페이스를 통해 통화 음량 및 미디어 음량
 통화 수/발신자의 디바이스가 너무 가까이 있는 경우는 정상적인 현상이므로 더 멀리 떨어져서 테스트하시기 바랍니다. 다른 단말에서 Web 오디오에 에코, 소음, 잡음 등이 들리는 경우 Web의 3A 처리가 적용되지 않은 것을 의미합니다. 사용자 정의 수집에 브라우저의 기본 [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) API를 사용하는 경우 3A 매개변수를 수동으로 설정해야 합니다.
 - echoCancellation: 에코 제거 스위치.
 - noiseSuppression: 소음 억제 스위치.
-- autoGainControl: 자동 게인 제어. 
+- autoGainControl：자동 이득 제어 스위치
 
 [TRTC.createStream](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createStream) 인터페이스로 수집하는 경우 3A 매개변수를 수동으로 설정할 필요 없이 SDK가 기본적으로 3A를 활성화합니다.
 
@@ -116,7 +116,7 @@ setSystemVolumeType 인터페이스를 통해 통화 음량 및 미디어 음량
 
 [](id:q1)
 ### TRTC는 어떻게 네트워크 상태를 모니터링하여 신호 강약 표시 기능을 나타냅니까?
-onNetworkQuality()를 사용하여 현재 네트워크의 업스트림과 다운스트림 품질을 수신할 수 있습니다. [공식 Demo](https://github.com/tencentyun/TRTCSDK)를 참고하여 신호 강도 기능을 실행하십시오.
+onNetworkQuality()를 사용하여 현재 업스트림/다운스트림 네트워크 품질을 모니터링 할 수 있습니다. 예를 들어 Android에서 신호 강도를 표시하려면 [TRTC-API-Example](https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Advanced/SpeedTest)을 참고하십시오.
 
 [](id:q2)
 ### 디바이스 카메라 또는 마이크 사용 중 등 이상 현상이 나타나는 이유는 무엇입니까?

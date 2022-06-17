@@ -19,7 +19,7 @@
 - HTTPS：回源请求一律采用 HTTPS 协议。
 
 ### HTTP Strict Transport Security (HSTS)
-1. 在 HSTS 模块中，单击**启用 HTST**，配置相关参数，单击**确定**。
+1. 在 HSTS 模块中，单击**启用 HSTS**，配置相关参数，单击**确定**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/0972beacae2fef98b98559ea1a0758ea.png)
 **参数说明：**
  - 配置状态：默认关闭，使用 HSTS 功能时，需要开启。

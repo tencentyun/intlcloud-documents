@@ -17,6 +17,5 @@ https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/game
  - If the verification fails, an error will be returned, and you should modify the file accordingly and upload it again.
  - If the verification is successful, the table metadata defined in the file will be displayed, and then you can proceed to the next step.
 4. On the table configuration page, select the table to be created and enter the capacity and reserved read and write parameters. The daily fees of the table will be automatically calculated.
-![](https://main.qcloudimg.com/raw/32aa5c8a292df17249a62e88b6fca4e6.png)
 5. After confirming that the table information is correct, click **Create** and the system will prompt that the creation has been successful.
-![](https://main.qcloudimg.com/raw/7a39640da609a65df7040fc9c1d7be3d.png)
+

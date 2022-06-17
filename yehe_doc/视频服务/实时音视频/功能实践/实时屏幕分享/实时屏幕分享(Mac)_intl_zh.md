@@ -53,7 +53,7 @@ TRTC SDK 支持三种分享模式，您可以通过 [selectScreenCaptureTarget](
  - 选取分享目标之后，使用 [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97) 接口可以启动屏幕分享。
  - 两个函数 [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) 和  [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 的区别在于 pause 会停止屏幕内容的采集，并以暂停那一刻的画面垫片，所以在远端看到一直都是最后一帧画面，直到 [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15)。
 
-```Objective-C
+```ObjC
  /**
  *  7.6 【屏幕共享】启动屏幕分享
  *  @param view 渲染控件所在的父控件
@@ -98,7 +98,7 @@ TRTC SDK 支持三种分享模式，您可以通过 [selectScreenCaptureTarget](
   若用户通过 Android / iOS 进行屏幕分享，会通过主流进行分享。房间里的其他用户会通过 TRTCCloudDelegate 中的 [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 事件获得这个通知。
   希望观看屏幕分享的用户可以通过 [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) 接口来启动渲染远端用户主流画面。
 
-```Objective-C
+```ObjC
 //示例代码：观看屏幕分享的画面
 
 - (void)onUserSubStreamAvailable:(NSString *)userId available:(BOOL)available {

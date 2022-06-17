@@ -1,19 +1,39 @@
 ## Overview
 
-This document describes how to change a public IP address.
+This document describes how to change the public IP address of a CVM instance.
 
-## Notes
-- Each account can change public IP addresses within the same region a maximum of 3 times per day.
-- Each instance can **only change its public IP once**.
+## Considerations
+- Each account can change the public IPs of CVMs in the same region a maximum of 3 times per day.
+- The public IP of each instance can be changed **once only**.
 - **The old public IP will be released after the change.**
 
 ## Prerequisites
 
-You have logged in to [CVM Console](https://console.cloud.tencent.com/cvm/index).
+You have logged in to [CVM console](https://console.cloud.tencent.com/cvm/index).
 
 ## Directions
+On the instance management page, proceed according to the actually used view mode:
 
-1. On the **Instances** management page, locate the CVM that you want to change the public IP for, click **More** -> **IP/ENI** -> **Change Public IP**, as shown below:
-![](https://main.qcloudimg.com/raw/4225bd84b4cf4d5346ddc77a1d7fd0df.png)
-2. In the “Change IP” dialog box, click **Confirm** to change the IP.
+<dx-tabs>
+::: List view
+1. Locate the target instance and select **More** > **IP/ENI** > **Change Public IP**.
+![](https://qcloudimg.tencent-cloud.cn/raw/acb57058d6cb8f8e525150fee55fe128.png)
+2. In the **Change IP** dialog box, click **Confirm** to complete the change. 
+
+
+:::
+::: Tab view
+1. Go to the page of the target instance and select **More Actions** > **IP/ENI** > **Change Public IP** in the top-right corner.
+![](https://qcloudimg.tencent-cloud.cn/raw/8c3fc780ffc5a933caf792eeca5339ae.png)
+2. In the **Change IP** dialog box, click **Confirm** to complete the change. 
+
+
+:::
+</dx-tabs>
+
+
+
+
+
+
 

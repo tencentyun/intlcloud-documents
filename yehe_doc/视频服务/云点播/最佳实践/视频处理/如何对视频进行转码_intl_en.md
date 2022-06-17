@@ -125,7 +125,8 @@ See [Getting Started - Step 1. Activate VOD](https://intl.cloud.tencent.com/docu
 ### Step 2. Upload a video[](id:p12)
 
 See [Getting Started - Step 2. Upload a video](https://intl.cloud.tencent.com/document/product/266/8757) for details. Click [here](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) to view the test video (FileId: 3701925921390170339) for this demo.
-![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cad41443d593fed8523ca26f1c245733.png)
+
 >?You’re advised to use a short video (dozens of seconds) for test to avoid long transcoding duration.
 
 ### Step 3. Initiate transcoding[](id:p13)

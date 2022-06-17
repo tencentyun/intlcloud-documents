@@ -125,7 +125,8 @@
 ### 步骤2：上传视频[](id:p12)
 
 参考 [快速入门 - 步骤2](https://intl.cloud.tencent.com/document/product/266/8757) 上传一个测试视频。单击 [此处](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 查看本 Demo 使用的测试视频，对应的 FileId 是8602268010602075659，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/9d10415aff42613a6b9899c552d053d2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cad41443d593fed8523ca26f1c245733.png)
+
 >?建议使用较短的视频文件进行测试（例如时长为几十秒的视频），避免转码过程耗时太长。
 
 ### 步骤3：发起转码[](id:p13)

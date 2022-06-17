@@ -107,7 +107,7 @@ VOD 백엔드는 매일 관리 작업을 실행하여 지정된 정책에 부합
 ![](https://qcloudimg.tencent-cloud.cn/raw/8c2143b18f7b88b715b3881e25062e9b.png)
 
 ### 2단계: 콜드 스토리지 정책 설정
-![](https://qcloudimg.tencent-cloud.cn/raw/d0c4864520a38107b5f4c43d3b6ac56c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54b2b7b0bc76bea32f58bb347d7542b5.png)
 사용자의 필요에 따라 콜드 스토리지 정책을 설정합니다.
 예: 다음 이미지와 같이 미디어 30일 이내 재생 횟수가 300회 미만인 경우, 표준IA 콜드 스토리지 정책이 트리거되고, VOD는 모든 규칙을 충족하는 미디어를 콜드 스토리지합니다.
 

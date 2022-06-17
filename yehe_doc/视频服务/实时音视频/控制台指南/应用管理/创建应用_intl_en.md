@@ -3,7 +3,7 @@ TRTC manages different businesses or projects by application. You can create dif
 ## Note
 Each Tencent Cloud account can create up to 100 TRTC applications. 
 
-## Creating Application
+## Creating an Application
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc) and click **Application Management** on the left sidebar.
 ![](https://main.qcloudimg.com/raw/a88a4f5fbb885b419edbcc98fbfbe029.png)
 2. Click **Create Application**, enter an application name, and tag your application.
@@ -12,7 +12,7 @@ Each Tencent Cloud account can create up to 100 TRTC applications.
 3. Click **Confirm**.
 
 
-## Viewing Application List
+## Viewing the Application List
 After an application is created, its information, including `SDKAppID`, application name, tag, service status, and creation time, is displayed in the application list.
 ![](https://main.qcloudimg.com/raw/0432fbcb57941feb8797c70dfd017ea4.png)
 

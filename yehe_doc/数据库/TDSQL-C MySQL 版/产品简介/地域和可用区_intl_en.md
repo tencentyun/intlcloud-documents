@@ -6,7 +6,7 @@ Region name and AZ name can most directly embody the coverage of a data center. 
 - A region name is composed of **region + city**. The `region` indicates the geographic area that the data center covers, while the `city` represents the city in or near which the data center is located.
 - AZ names utilize the format of **city + number**.
 
-## Region
+## Regions
 Tencent Cloud regions are completely isolated. This guarantees the maximum cross-region stability and fault tolerance. When purchasing Tencent Cloud services, we recommend selecting the region closest to your end users to minimize access latency and improve download speed. Operations such as launching or viewing instances are performed at the region level.
 Private network communication:
 

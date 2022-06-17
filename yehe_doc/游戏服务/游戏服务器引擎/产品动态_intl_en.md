@@ -86,7 +86,7 @@
 	</tr>
 <tr><td>Billing Overview is updated</td><td>GSE will be remaining in beta test, which was originally scheduled to end on June 30, 2020. We will notify users when the product is ready for launch as a paid service.</td>
 <td nowrap="nowrap">2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1055/37000">Billing Overview</a></td></tr>
+<td>Billing Overview</a></td></tr>
 </table>
 
 ## June 2020

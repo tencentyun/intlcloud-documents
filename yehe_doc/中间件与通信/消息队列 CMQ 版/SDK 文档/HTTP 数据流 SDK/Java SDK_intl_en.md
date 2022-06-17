@@ -14,12 +14,20 @@ This document uses the SDK for Java as an example to describe how to connect the
 2. Import CMQ client dependencies.
 <dx-codeblock>
 :::  xml
-   <!-- cmq sdk -->
-   <dependency>
-       <groupId>com.qcloud</groupId>
-       <artifactId>cmq-http-client</artifactId>
-       <version>1.0.7</version>
-   </dependency>
+<!-- cmq sdk -->
+<dependency>
+    <groupId>com.qcloud</groupId>
+    <artifactId>cmq-http-client</artifactId>
+    <version>1.0.7</version>
+</dependency>
+
+<!-- TencentCloud API sdk -->
+<dependency>
+    <groupId>com.tencentcloudapi</groupId>
+    <artifactId>tencentcloud-sdk-java</artifactId>
+    <version>3.1.423</version>
+</dependency>
+
 :::
 </dx-codeblock>
 3. Send messages.
@@ -95,12 +103,20 @@ This document uses the SDK for Java as an example to describe how to connect the
 2. Import CMQ client dependencies.
 <dx-codeblock>
 :::  xml
-   <!-- cmq sdk -->
-   <dependency>
-       <groupId>com.qcloud</groupId>
-       <artifactId>cmq-http-client</artifactId>
-       <version>1.0.7</version>
-   </dependency>
+<!-- cmq sdk -->
+<dependency>
+    <groupId>com.qcloud</groupId>
+    <artifactId>cmq-http-client</artifactId>
+    <version>1.0.7</version>
+</dependency>
+
+<!-- TencentCloud API sdk -->
+<dependency>
+    <groupId>com.tencentcloudapi</groupId>
+    <artifactId>tencentcloud-sdk-java</artifactId>
+    <version>3.1.423</version>
+</dependency>
+
 :::
 </dx-codeblock>
 3. Create a topic object.

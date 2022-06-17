@@ -34,7 +34,7 @@ This step describes how to upload a video, transcode it to adaptive bitstream, a
 	- Select **LongVideoPreset** for **Task Flow Template**.
 >?**LongVideoPreset** is a preset task flow, which uses template 10 for adaptive bitrate streaming, thumbnail generation, and image sprite capturing.
 
-![](https://main.qcloudimg.com/raw/c5d53f748ce95ab0c8accea42687256a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/56e6b4249722884eed34b167d6e6d6ed.png)
 3. Click **Upload** to enter the **Uploading** page and wait for the upload to complete.
 4. Select **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** and find the newly uploaded video (FileId: 528xxx3757278095). Here, the ID is the `FileId` of the uploaded video.
 ![](https://main.qcloudimg.com/raw/f2b3744a3c42a07863db0b7545dd892f.png)

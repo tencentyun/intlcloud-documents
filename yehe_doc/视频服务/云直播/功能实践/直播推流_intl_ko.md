@@ -64,7 +64,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 
 [](id:mobile)
 ### 시나리오3: 모바일에서의 푸시 스트리밍
-1. 휴대폰으로 QR 코드를 스캔해 모바일 [비디오 클라우드 툴 패키지](https://intl.cloud.tencent.com/document/product/1071/38147)를 다운로드 및 설치합니다.
+1. 휴대폰으로 QR 코드를 스캔해 모바일 비디오 클라우드 툴 패키지 를 다운로드 및 설치합니다.
 2. 툴 패키지를 실행해 [MLVB]>[카메라 푸시 스트리밍]을 선택합니다.
 3. 휴대폰으로 QR 코드를 스캔하거나 [푸시 스트리밍 주소](#step1)를 입력합니다.
 4. 왼쪽 하단에 있는 시작 버튼을 클릭해 푸시 스트리밍을 시작합니다.
@@ -74,10 +74,10 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 [](id:sdk)
 ### 시나리오4: 라이브 방송 SDK에서의 푸시 스트리밍
 현재 App에 라이브 방송 푸시 스트리밍 기능을 통합해야 하는 경우 다음 순서에 따라 빠르게 구현할 수 있습니다.
-1. [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38150) 개발 패키지를 다운로드합니다.
-2. 연결 문서를 참조하여 ([iOS](https://intl.cloud.tencent.com/document/product/1071/38157) & [Android](https://intl.cloud.tencent.com/document/product/1071/38158))에 액세스합니다.
+1. MLVB SDK 개발 패키지를 다운로드합니다.
+2. 연결 문서를 참조하여 (iOS & Android)에 액세스합니다.
 
-라이브 방송 SDK는 모바일 단말에서의 라이브 방송 통합 솔루션으로, 무료 소스 코드 형태로 CSS, VOD, IM, COS 등 몇 가지 서비스를 조합하여 사용자에게 적합한 라이브 방송 솔루션을 제공합니다. 더 자세한 내용은 [MLVB](https://intl.cloud.tencent.com/product/mlvb)를 참조하십시오. 
+라이브 방송 SDK는 모바일 단말에서의 라이브 방송 통합 솔루션으로, 무료 소스 코드 형태로 CSS, VOD, IM, COS 등 몇 가지 서비스를 조합하여 사용자에게 적합한 라이브 방송 솔루션을 제공합니다. 
 
 
 ## FAQ

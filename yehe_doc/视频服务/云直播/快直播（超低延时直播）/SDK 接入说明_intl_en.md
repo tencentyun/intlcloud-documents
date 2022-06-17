@@ -8,10 +8,10 @@ Before you use LEB, please read [LEB Billing Overview](https://intl.cloud.tencen
 ### Directions
 You can integrate the MLVB SDK into your iOS or Android app to implement the live push and playback features.
 
-- **Live push on apps**: Supports capturing camera video or mobile phone screens and then pushing the content to the CSS platform using the RTMP protocol. For details, see [Publishing from Camera](https://intl.cloud.tencent.com/document/product/1071/38157) and [Publishing from Screen](https://intl.cloud.tencent.com/document/product/1071/41878).
-- **Live playback on apps**: Supports the WebRTC playback protocol. You can use the MLVB SDK, which integrates LEB, to quickly enable playback with ultra-low latency on mobile apps. For details, see [Playback > LEB](https://intl.cloud.tencent.com/document/product/1071/41875).
+- **Live push on apps**: Supports capturing camera video or mobile phone screens and then pushing the content to the CSS platform using the RTMP protocol.
+- **Live playback on apps**: Supports the WebRTC playback protocol. You can use the MLVB SDK, which integrates LEB, to quickly enable playback with ultra-low latency on mobile apps. 
 
->? The MLVB SDK uses CSS, IM, TRTC, and other services for low-latency audiovisual communication for multiple parties. Participants can interact with each other through mic connect while others watch. For details, see [Mic Connect](https://intl.cloud.tencent.com/document/product/1071/42210).
+>? The MLVB SDK uses CSS, IM, TRTC, and other services for low-latency audiovisual communication for multiple parties. Participants can interact with each other through mic connect while others watch.
 
 ### Free demo
 TCToolkit is an open-source and comprehensive audio/video solution developed by Tencent Cloud. You can use it to try out LEB’s capability to play live streams with millisecond latency.
@@ -104,4 +104,4 @@ As shown below:
 
 [](id:play)
 ### LEB playback
-For how to use the MLVB SDK for LEB playback, see [Playback > LEB](https://intl.cloud.tencent.com/document/product/1071/41875).
+For how to use the MLVB SDK for LEB playback.

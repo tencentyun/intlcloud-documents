@@ -1,7 +1,3 @@
-### What is the difference between CKafka and CMQ?
-CMQ provides finance-grade message transmission with high reliability and high data persistence while ensuring strong data consistency.
-CKafka is suitable for scenarios that require higher throughput and lower reliability (such as log aggregation). In addition, CKafka is compatible with existing Kafka users, enabling migration at zero cost with full instance exclusivity.
-
 ### Which version of open-source Kafka is compatible with CKafka?
 Currently, CKafka is fully compatible with open-source Kafka API 0.9, 0.10, 1.1, 2.4, and 2.8, allowing users to migrate data to the cloud at zero cost.
 
@@ -34,7 +30,7 @@ Different instance specifications have different restrictions on peak throughput
 - Open-source Apache Kafka does not guarantee no message loss. As CKafka is optimized for availability, Tencent Cloud promises a CKafka availability of over 99.95%.
 - CKafka users can enable ACK during production to avoid message loss and improve message reliability.
 - Cluster changes and upgrades complete in seconds and will not affect user experience.
-- CKafka is mainly used in big data processing scenarios that require high throughput and high performance but relatively low data reliability. In extreme cases, a small number of messages may be lost. If you require zero message loss and have relatively performance requirements, we recommend CMQ.
+- CKafka is mainly used in big data processing scenarios that require high throughput and high performance but relatively low data reliability. In extreme cases, a small number of messages may be lost. If you require zero message loss and have relatively performance requirements, we recommend TDMQ.
 
 
 ### How does CKafka guarantee security?

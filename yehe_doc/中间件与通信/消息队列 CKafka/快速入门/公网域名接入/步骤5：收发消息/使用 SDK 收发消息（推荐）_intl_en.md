@@ -31,9 +31,9 @@ Set `username` to a value in the format of `instance ID` + `#` + `configured use
 2. Modify the Kafka configuration file `kafka.properties`.
 <dx-codeblock>
 :::  bash
-## Configure the accessed network by copying the information in the **Network** column in the **Access Mode** section on the instance details page in the console
+## Configure the accessed network by copying the information in the Network column in the Access Mode section on the instance details page in the console
 bootstrap.servers=ckafka-xxxxxxx
-## Configure the topic by copying the information on the **Topic Management** page in the console
+## Configure the topic by copying the information on the Topic Management page in the console
 topic=XXX
 ## Configure the consumer group as needed
 group.id=XXX
@@ -50,7 +50,7 @@ java.security.auth.login.config.plain=/xxxx/ckafka_client_jaas.conf
 </thead>
 <tbody><tr>
 <td>bootstrap.servers</td>
-<td>Accessed network, which can be copied in the **Network** column in the <strong>Access Mode</strong> section on the instance details page in the console.<br><img src="https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png" alt=""></td>
+<td>Accessed network, which can be copied in the <strong>Network</strong> column in the <strong>Access Mode</strong> section on the instance details page in the console.<br><img src="https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png" alt=""></td>
 </tr>
 <tr>
 <td>topic</td>

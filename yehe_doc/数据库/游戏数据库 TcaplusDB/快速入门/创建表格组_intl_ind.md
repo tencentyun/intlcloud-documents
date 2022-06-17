@@ -10,7 +10,7 @@ Dokumen ini menjelaskan cara membuat grup tabel TcaplusDB di konsol.
 ![](https://main.qcloudimg.com/raw/f6648ca638efde0f8a80ceb02c30dc67.png)
 2. Di kotak dialog pop-up, tentukan konfigurasi grup tabel.
  - **Select Cluster** (Pilih Kluster): Anda dapat beralih ke kluster lain.
- - **Table Group Name** (Nama Grup Tabel): nama dapat berisi hingga 32 karakter.
+ - **Table Group Name** (Nama Grup Tabel): Namanya harus mengandung 4-64 karakter.
 ![](https://main.qcloudimg.com/raw/4e1068deb10de257416ae7b3bacd9078.png)
 3. Klik **Create Table Group** (Buat Grup Tabel) dan sistem akan menunjukkan bahwa pembuatan berhasil.
 Kembali ke daftar grup tabel untuk melihat nama, ID, jumlah tabel, dan kapasitas total grup tabel.

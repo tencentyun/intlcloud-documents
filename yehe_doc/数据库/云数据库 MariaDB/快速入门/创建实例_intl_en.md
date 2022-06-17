@@ -16,5 +16,5 @@ This document describes how to create an instance in the TencentDB for MariaDB c
  - **Project**: if instances need to be managed by different teams, assign the instances to the projects of different teams accordingly.
  - **Quantity**: this represents the number of instances that can be purchased at a time. To avoid faulty operations, an upper limit has been set for this parameter. If you want to purchase more instances, please make multiple purchases.
 2. Verify all the information is correct in the pop-up window and click **Buy Now** to purchase.
-3. After making the payment, return to the instance list, wait for the instance status to become **Uninitialized**, and initialize the instance.
+3. After making the payment, return to the instance list, wait for the instance status to become **Running**, you can perform subsequent operations.  
 

@@ -1,3 +1,65 @@
+## 2022년 04월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
+</tr><tr>
+<td>Version 9.8 버전 배포</td>
+<td> 모든 플랫폼: <ul style="margin:0">
+비디오 시나리오에서 SDK 성능이 향상되었습니다.
+</ul>
+<br>Windows: <ul style="margin:0">
+<li>’헤비 메탈’, ‘소녀 음성’ 등 오디오 효과 API 추가, 세부 정보는 <code>ITXAudioEffectManager.setVoiceChangerType</code>을 참고하십시오.</li>
+<li>로컬 비디오가 일시 중지될 때 이미지 표시에 대한 지원이 추가되었습니다. </li>
+</ul>
+</td>
+<td>2022-04-21</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr><tr>
+<td>Version 9.7 버전 배포</td>
+<td> iOS&Android：<ul style="margin:0">
+Music 모드의 오디오 품질이 향상되었습니다.
+</ul>
+<br>Windows: <ul style="margin:0">
+<li>Music 모드에서 오디오 품질을 개선하고 오디오 손실을 줄였습니다.</li>
+<li>고급 사운드 카드와의 호환성이 향상되어 오디오 품질이 향상되었습니다.</li>
+<li>더 많은 시나리오를 위해 3rd party 프로세스와 오디오 믹싱을 최적화했습니다.</li>
+</ul>
+</td>
+<td>2022-04-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+</table>
+
+
+## 2022년 03월
+<table>
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
+</tr><tr>
+<td>Version 9.6 버전 배포</td>
+<td>전체 플랫폼: <ul style="margin:0">
+<li>중국 내, 외의 규정을 준수하는 3rd party 라이브러리가 향상되었습니다.
+<li>SDK 저장 공간을 줄였습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/647/39426">릴리즈 노트</a>를 참고하십시오.
+<li>알려진 문제를 수정하여 안정성을 개선했습니다.
+</ul>
+<br>Windows: <ul style="margin:0">
+<li>Live 스트리밍 컴포넌트를 Live V1에서 V2 API로 업데이트하여 안정성을 개선했습니다.</li>
+<li>저사양 기기의 GPU와의 호환성이 향상되었습니다.</li>
+</ul>
+<br>iOS: <ul style="margin:0">
+필 라이트를 사용할 때 간헐적으로 과다 노출되는 문제를 수정했습니다.
+</ul>
+<br>Android: <ul style="margin:0">
+뷰티 필터 및 기타 기능에 대한 개선된 전처리 방법, 저가형 장치에서 캡처 끊김 문제를 수정했습니다.
+</ul>
+<br>Mac: <ul style="margin:0">
+텍스처 업로드를 최적화했습니다.
+</ul>
+</td>
+<td>2022-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
+</tr>
+</table>
+
+
 ## 2022년 01월
 <table>
 <tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>
@@ -7,13 +69,13 @@
 약한 네트워크 조건에서 통화 원활성이 최적화되었습니다.
 </ul>
 <br>Windows: <ul style="margin:0">
-카메라 호환성을 최적화하여 일부 장치의 캡처 프레임 레이트가 설정 값과 일치하지 않거나 활성화되지 않는 문제를 해결했습니다.
+때때로 카메라를 시작하지 못하고 일부 카메라가 지정된 프레임 속도로 비디오를 캡처하지 못하는 문제를 수정하여 브라우저 호환성을 개선했습니다.
 </ul>
 <br>iOS: <ul style="margin:0">
-cocos2D와 같은 다른 렌더링 컴포넌트 공동 사용 시 호환성을 향상하고 충돌을 줄입니다.
+cocos2D와 같은 다른 렌더링 컴포넌트와의 호환성이 향상되었습니다.
 </ul>
 <br>Android: <ul style="margin:0">
-카메라를 껐다가 다시 켰을 때, 재생 종료 시 끄기 전 마지막 프레임이 먼저 표시된 후 정상적으로 표시되는 문제를 수정하였습니다.
+호스트가 카메라를 껐다가 다시 켠 후 플레이어 측에서 호스트의 영상이 예상대로 재생되기 전에 카메라가 꺼지기 전 마지막 프레임이 먼저 표시되는 현상이 수정되었습니다.
 </ul>
 </td>
 <td>2022-01-11</td>
@@ -32,21 +94,21 @@ cocos2D와 같은 다른 렌더링 컴포넌트 공동 사용 시 호환성을 �
 <li>새롭게 추가된 음성 추적 기능은 대규모 음성 마이크 연결 시나리오에 적합하며, 여러 사용자가 동시에 마이크를 켜는 노이즈 환경에서도 여전히 주요 사용자의 음성에 집중할 수 있습니다. <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0e6e6434aaa03ce878280125a9c0fa4b" target="_blank">setRemoteAudioParallelParams</a> API를 통해 설정할 수 있습니다.</li>
 </ul>
 <br>Windows: <ul style="margin:0">
-게인 알고리즘을 최적화하여 일부 장치의 과도한 게인으로 인한 노이즈 문제를 해결했습니다.
+오디오 게인 제어 알고리즘을 최적화하여 일부 장치에서 높은 오디오 게인으로 인한 현저한 노이즈 문제를 수정했습니다.
 </ul>
 <br>iOS: <ul style="margin:0">
-24 비트 wav 형식의 배경 음악 파일에 대한 지원이 추가되었습니다.
+24 비트 wav 형식의 배경 음악 파일을 지원합니다.
 </ul>
 <br>Android: <ul style="margin:0">
-<li>화면 공유 시 화면 캡처 해상도를 조정하여 항상 화면 해상도와 일치하도록 하고 공유 화면 검은 테두리 등 문제를 방지하였습니다.</li>
-<li>비디오 하드웨어 솔루션의 호환성을 개선하여 일부 휴대폰의 비디오 해상도 변경 시 발생 가능한 블랙 스크린 문제를 해결했습니다.</li>
+<li>블랙바를 피하기 위해 화면 공유 시 화면 해상도에 맞춰 캡처 해상도를 조정했습니다.</li>
+<li>하드웨어 비디오 디코더의 호환성을 개선하여 일부 장치에서 재생 해상도 변경으로 인한 블랙바 문제를 수정했습니다.</li>
 </ul>
 <br>Android&iOS：<ul style="margin:0">
-이 버전은 국가 개인 정보 및 보안 규정의 조항을 준수하며 많은 Tencent 제품에 의해 검증되었습니다.
+이 버전은 중국의 개인 정보 및 보안 규정을 준수하며 여러 Tencent 제품에서 테스트를 거쳤습니다.
 </ul>
 <br>Mac: <ul style="margin:0">
 <li>시스템 사운드 수집에 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2979e32c019708dcc9209bb6d2db9486" target="_blank">startSystemAudioLoopback</a> 듀얼 사운드 채널 지원이 추가되었습니다.</li>
-<li>화면 캡처 과정에서 마우스 캡처를 켜면 높은 CPU 및 메모리를 점유하는 문제를 해결했습니다.</li>
+<li>화면 공유 중 마우스 커서가 캡처될 때 CPU 및 메모리 사용량이 높아지는 문제가 수정되었습니다.</li>
 </ul>
 </td>
 <td>2021-12-08</td>
@@ -62,10 +124,10 @@ cocos2D와 같은 다른 렌더링 컴포넌트 공동 사용 시 호환성을 �
 </tr><tr>
 <td>Version 9.3 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-<li>약한 네트워크 조건에서 비디오 바로 재생 속도가 최적화되었습니다.</li>
-<li>약한 네트워크 제어 정책을 최적화하여 원활성을 높였습니다.</li>
-<li>복잡한 네트워크 환경에 보다 잘 대처할 수 있도록 TCP 전송 프로토콜에 대한 지원을 최적했습니다.</li>
-<li>현재 네트워크 대역폭의 감지를 지원하도록 속도 측정 기능을 최적화했습니다.</li>
+<li>약한 네트워크 조건에서 즉각적인 스트리밍 성능이 향상되었습니다.</li>
+<li>약한 네트워크 조건에서 QoS 제어 정책을 최적화하여 원활한 통신을 보장합니다.</li>
+<li>다양한 네트워크 환경에 더 잘 적응할 수 있도록 TCP 지원이 향상되었습니다.</li>
+<li>현재 대역폭 테스트를 지원하도록 속도 테스트를 개선했습니다.</li>
 </ul></td>
 <td>2021-11-03</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
@@ -78,29 +140,29 @@ cocos2D와 같은 다른 렌더링 컴포넌트 공동 사용 시 호환성을 �
 </tr><tr>
 <td>Version 9.2 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-	<li>음성 설정 기능이 추가되었습니다.</li>
-	<li>약한 네트워크 환경에서 지터 방지 알고리즘을 최적화하여 동영상 재생이 더 원활해졌습니다.</li>
+	<li>오디오 피치 설정이 허용되었습니다.</li>
+	<li>약한 네트워크 조건에서 지터 제어 알고리즘을 최적화하여 보다 부드러운 비디오 재생을 가능하게 합니다.</li>
 </ul><br>Windows: <ul style="margin:0">
 	<li>TRTCAudioQualityMusic 고음질 시나리오에 에코 제거 기능이 추가되어 음질과 에코 제거 강도를 자동 균형 조정합니다.</li>
 	<li>AGC 알고리즘을 최적화해 소리가 너무 작거나 소리가 너무 큰 문제가 발생할 확률을 낮췄습니다.</li>
 </ul><br>Android&iOS:<ul style="margin:0">
 	<li>Socks5 프록시를 지원합니다.</li>
-	<li>합창 모드의 3A 정책이 최적되었습니다.</li>
+	<li>듀엣 모드에 대한 3A 정책을 최적화했습니다.</li>
 </ul><br>Android:<ul style="margin:0">
-	<li>하드 디코딩 시 발생하는 ANR 문제가 최적화되었습니다.</li>
-	<li>카메라의 로컬 미리보기 각도 호환 문제가 최적화되었습니다.</li>
-	<li>첫 프레임의 바로 재생 속도가 최적화되었습니다.</li>
+	<li>하드웨어 디코딩 시 ANR 오류가 발생하는 문제가 수정되었습니다.</li>
+	<li>로컬 카메라 미리보기 회전에 대한 호환성 문제가 수정되었습니다.</li>
+	<li>인스턴트 스트리밍 성능이 향상되었습니다.</li>
 </ul></td>
 <td>2021-09-23</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34615">SDK 다운로드</a></td>
 </tr><tr>
 <td>Version 9.1 버전 배포</td>
 <td>전체 플랫폼: <ul style="margin:0">
-	<li>C++ 인터페이스에서 오디오 프레임 콜백 형식 설정을 지원합니다.</li>
+	<li>C++ API를 사용하여 콜백 오디오 프레임의 형식을 설정할 수 있습니다.</li>
 	<li>약한 네트워크 환경에서의 오디오 및 비디오 경험이 최적화되었습니다.</li>
 </ul><br>Windows: <ul style="margin:0">
-	<li>ac3 형식 VOD 파일 재생에 대한 지원이 추가되었습니다.</li>
-	<li>카메라 정보의 지원되는 해상도 목록 가져오기가 지원됩니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450">ITXDeviceCollection.getDeviceProperties</a>를 참고하십시오.</li>
+	<li>ac3 형식의 스트리밍 VOD 파일을 지원합니다.</li>
+	<li>카메라에서 지원하는 해상도 가져오기를 지원합니다. 자세한 내용은 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__cplusplus.html#ad502f48cb2a4470943134e4b48904450">ITXDeviceCollection.getDeviceProperties</a>를 참고하십시오.</li>
 	<li>Nvidia, Intel, AMD 하드웨어 디코딩을 지원합니다.</li>
 </ul><br>Mac: <ul style="margin:0">
 로컬 미디어 녹화에 대한 지원이 추가되었습니다.
@@ -332,7 +394,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 11월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <tr>
 <td>Version 8.0 버전 배포</td>
 <td>
@@ -373,7 +435,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 10월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <tr>
 <td>Version 7.9 버전 배포</td>
 <td>
@@ -407,7 +469,7 @@ iOS&Android: <ul style="margin:0">로컬 수집과 재생된 모든 오디오 �
 
 ## 2020년 09월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <td>Version 7.8 버전 배포</td>
 <td>
 Android: <ul style="margin:0">
@@ -467,7 +529,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 
 ## 2020년 08월
 <table>
-<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th>  </tr> 
+<tr><th width="20%">업데이트 명칭</th>  <th width="50%">업데이트 설명</th>  <th width="15%">배포일</th>  <th width="15%">관련 문서</th> </tr> 
 <tr>
 <td>Version 7.6 버전 배포</td>
 <td>
@@ -545,7 +607,7 @@ VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
 <td>과금 변경</td>
 <td>클라우드 녹화에 <b>녹화 시간</b>에 따른 과금이 추가되었습니다.</td>
 <td>2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/45176">클라우드 녹화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/38929">클라우드 녹화 과금 설명</a></td>
 </tr>
 </table>
 

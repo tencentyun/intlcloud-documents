@@ -15,7 +15,7 @@ After the CLS service is commercialized, Tencent Cloud still provides a certain 
 
 >!
 >- The free tier is counted for all resources of a single root account in each region.
->- **The Free Tier perk will end at 23:59:59 on June 30, 2022.**
+>- **The Free Tier perk will end at 23:59:59 on July 31, 2022.**
 >- The free tier will not be accumulated into the next billing cycle. Excessive usage will be billed normally.
 > - If your service is suspended due to violations or overdue payment, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is resumed.
 >
@@ -103,5 +103,5 @@ TKE audit/event logs written by log topics automatically created by TKE are elig
 
 #### Validity period
 
-Now through 23:59:59 on June 30, 2022.
+Now through 23:59:59 on July 31, 2022.
 

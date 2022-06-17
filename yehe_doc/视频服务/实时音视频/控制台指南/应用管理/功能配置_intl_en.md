@@ -8,7 +8,7 @@ After creating an application, you can enable [relayed push](#bypass), [on-cloud
 
 - The process of TRTC converting UDP-based audio/video streams and pushing them to the [CSS](https://intl.cloud.tencent.com/document/product/267) system is known as “relayed push”.
 - Relayed push is disabled by default. To enable the feature, you need to activate the CSS service first.
-- If you use relayed push to implement [CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242), CSS will charge you based on the downstream traffic generated or bandwidth used. For details, see [CSS > Bill-by-Traffic/Bandwidth](https://intl.cloud.tencent.com/document/product/267/2818).
+- If you use relayed push to implement CDN relayed live streaming, CSS will charge you based on the downstream traffic generated or bandwidth used. For details, see [CSS > Bill-by-Traffic/Bandwidth](https://intl.cloud.tencent.com/document/product/267/2818).
 - If you use relayed push for [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/35426), you will be charged for recording streams and storing the recording files. For details, see [On-Cloud Recording and Playback > Billing](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8).
 - If you bind templates of paid features such as recording, transcoding, screencapturing & porn detection, and watermarking to the domain name (`xxxx.livepush.myqcloud.com`) used for relayed push in the [CSS console](https://console.cloud.tencent.com/live/domainmanage), you will be charged [value-added fees](https://intl.cloud.tencent.com/document/product/267/2819).
 
@@ -103,7 +103,7 @@ After you enable advanced permission control for an SDKAppID, all users using th
 - To create an application, see [Creating Application](https://intl.cloud.tencent.com/document/product/647/39077).
 - To search for an application in the application list, see [Searching Application](https://intl.cloud.tencent.com/document/product/647/39078).
 - To view the basic information of an application, see [Application Info](https://intl.cloud.tencent.com/document/product/647/39079).
-- If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**. For details, see [Material Management](https://intl.cloud.tencent.com/document/product/647/39081).
+- If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**. 
 - To get the demo source code for a quick start, see [Quick Start](https://intl.cloud.tencent.com/document/product/647/39082).
 
 

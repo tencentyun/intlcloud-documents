@@ -18,11 +18,11 @@
 - SELECT INTO OUTFILE/INTO DUMPFILE/INTO var_name은 지원되지 않습니다.
 - query_expression_options는 지원되지 않습니다. 예시: HIGH_PRIORITY/STRAIGHT_JOIN/SQL_SMALL_RESULT/SQL_BIG_RESULT/SQL_BUFFER_RESULT/SQL_CACHE/SQL_NO_CACHE/SQL_CALC_FOUND_ROWS
 - 열 이름이 없는 INSERT/REPLACE는 지원되지 않습니다.
-- ORDER BY/LIMIT는 전역 DELETE/UPDATE에 사용할 수 없습니다(>=14.4버전 지원).
+- ORDER BY/LIMIT는 전역 DELETE/UPDATE에 사용할 수 없습니다(>=1.14.4버전 지원).
 - WHERE 조건이 없는 UPDATE/DELETE는 지원되지 않습니다.
 - LOAD DATA/XML은 지원되지 않습니다.
 - DELAYED 및 LOW_PRIORITY는 SQL 문에서 사용할 수 없습니다.
-- INSERT ... SELECT(>14.4버전 지원)는 지원되지 않습니다.
+- INSERT ... SELECT(>1.14.4버전 지원)는 지원되지 않습니다.
 - SET @c=1, @d=@c+1과 같이 SQL의 변수에 대한 참고 및 연산은 지원되지 않습니다. SELECT @c, @d
 - index_hint는 지원되지 않습니다.
 - HANDLER/DO는 지원되지 않습니다.

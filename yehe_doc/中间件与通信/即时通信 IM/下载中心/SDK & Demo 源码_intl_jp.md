@@ -9,7 +9,7 @@
     }
 
     .card {
-        height: 190px; 
+        height: 250px; 
         border-radius: 10px;
         padding-top: 20px;
         padding-left: 10px;
@@ -187,7 +187,7 @@
 </div>
 <h2> Demoとソリューションのダウンロード </h2>
 
-IM Demoが、各シーンでのIM機能を実演します。[インストールに進む](https://intl.cloud.tencent.com/document/product/1047/34279) から、様々なプラットフォームやユースケースでのDemoを体験できます。
+
 <div>
 <div style="margin-top: 15px;">
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
@@ -211,7 +211,7 @@ IM Demoが、各シーンでのIM機能を実演します。[インストール�
                     <div style="margin-top: 13px;" >
                     <a  href="https://github.com/tencentyun/TIMSDK/tree/master/iOS">Githubダウンロード</a>
                           <a  style="margin-left: 10px;"href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIPダウンロード</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45914">統合ガイド</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45913">統合ガイド</a>
                     </div>
             </div>
         </div>
@@ -229,17 +229,6 @@ IM Demoが、各シーンでのIM機能を実演します。[インストール�
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename"> IM Demo （uni-app）</p>
-                <p style="color:#586376;">IM主要機能とオンラインカスタマサービスシーン機能が含まれています</p>
-                    <div style="margin-top: 13px; " >
-                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/uni-app">Githubダウンロード</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45911">統合ガイド</a>
-                    </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
                                 <p class="titlename"> IM Demo （Flutter）</p>
                 <p style="color:#586376;">IM主要機能が含まれています</p>
                      <div style="margin-top: 13px; " >
@@ -247,40 +236,6 @@ IM Demoが、各シーンでのIM機能を実演します。[インストール�
                      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45907">統合ガイド</a></div>
             </div>
         </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://qcloudimg.tencent-cloud.cn/raw/d6fd52f011bdbb13302b2ae261e8a756.png" data-nonescope="true">
-                                <p class="titlename"> IM Demo （Electron）</p>
-                <p style="color:#586376;">すべてのIM機能、オーディオビデオ通話とビデオ会議機能が含まれています</p> 
-                     <div style="margin-top: 13px;" >
-                        <a href="https://github.com/tencentyun/im_electron_demo">Githubダウンロード</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45910">統合ガイド</a>
-                     </div>
-            </div>
-        </div>
-            <div class="card-container">
-                <div class="card">
-                                <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-                                    <p class="titlename">ライブブロードキャストeコマースDemo（WeChat Mini Program）</p>
-                <p style="color:#586376;">弾幕、クーポン、ショッピングカートなどのライブブロードキャストeコマース機能が含まれています</p>
-                    <div style="margin-top: 13px;" >
-                    <a href="https://github.com/tencentyun/TencentIMDemos">Githubダウンロード</a>
-                            <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/36403">統合ガイド</a>
-                    </div>
-                        </div>
-            </div>
-        <div class="card-container">
-            <div class="card">
-                            <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename">ライブブロードキャストインタラクションDemo（Web）</p>
-            <p style="color:#586376;">ライブブロードキャストの開始と視聴者のチャートインタラクションなどの機能が含まれています</p>
-                <div style="margin-top: 13px;" >
-                <a  href="https://github.com/tencentyun/TUILiveRoom/tree/main/Web">Githubダウンロード</a>
-                        <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/38175">統合ガイド</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <div>
 <h2 style="margin-top: 36px;"> インストールパッケージの増分比較 </h2>

@@ -9,7 +9,7 @@
 Demoは、クラウド関数（SCF）を基にHTTPサービスを構築して、VODからのイベント通知リクエストを受信するのに使用します。このサービスは、NewFileUpload（[ビデオアップロード完了イベント通知](https://intl.cloud.tencent.com/document/product/266/33950)）および ProcedureStateChanged（[タスクフロー状態の変更](https://intl.cloud.tencent.com/document/product/266/33953)）を処理することによって、ビデオトランスコードの開始およびトランスコード結果の取得を実現します。
 
 システムは主に4つの構成部分に及びます：コンソール、API Gateway、Serverless Cloud Function、VODであり、このうちAPI GatewayおよびServerless Cloud Functionは、下図に示すとおりこのDemoのデプロイオブジェクトです。
-<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ec5a27df9988417547c884df4ac28816.png" width="550">
 
 具体的な業務フローは次のとおりです：
 
@@ -99,7 +99,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
  [本番環境への影響の回避](#p0) の節で記述したとおり、操作前にまずオンライン業務がVODイベント通知に依存していないことを確認してください。
 
  [VODコンソール](https://console.cloud.tencent.com/vod/callback)にログインして、【設定】をクリックし、コールバックモードで【通常のコールバック】を選択します。コールバックURLとして [手順4](#p4)で取得したイベント通知受信サービスアドレスを入力します。すべてのコールバックイベントを確認して、下図に示すとおり【OK】をクリックします。
-![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e5631bc9013b6e30283a7ac5411e332.png)
+
 >!コンソールに2個のコールバックURL設定（2.0バージョン形式および3.0バージョン形式）が同時にあった場合は、3.0バージョンを設定してください。
 
 ### 手順6：Demoテスト

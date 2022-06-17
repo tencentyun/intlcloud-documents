@@ -18,9 +18,9 @@ If you need to use SDKs for other languages, see [SDK Documentation](https://int
 2. Modify `kafka.properties` in the `resources` directory under the VPC project.
 <dx-codeblock>
 :::  bash
-## Configure the accessed network by copying the information in the **Network** column in the **Access Mode** section on the instance details page in the console
+## Configure the accessed network by copying the information in the Network column in the Access Mode section on the instance details page in the console
 bootstrap.servers=xx.xx.xx.xx:xxxx
-## Configure the topic by copying the information on the **Topic Management** page in the console
+## Configure the topic by copying the information on the Topic Management page in the console
 topic=XXX
 ## Configure the consumer group as needed
 group.id=XXX
@@ -35,7 +35,7 @@ group.id=XXX
 </thead>
 <tbody><tr>
 <td>bootstrap.servers</td>
-<td>Accessed network, which can be copied in the **Network** column in the <strong>Access Mode</strong> section on the instance details page in the console.<br><img src="https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png" alt=""></td>
+<td>Accessed network, which can be copied in the <strong>Network</strong> column in the <strong>Access Mode</strong> section on the instance details page in the console.<br><img src="https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png" alt=""></td>
 </tr>
 <tr>
 <td>topic</td>

@@ -117,7 +117,7 @@ The following figure shows the command output.
 ```
 resize2fs <Partition path>
 ```
-Taking the partition path `/dev/vdc1 as an example, run the following command:
+Taking the partition path `/dev/vdc1` as an example, run the following command:
 ```
 resize2fs /dev/vdc1
 ```

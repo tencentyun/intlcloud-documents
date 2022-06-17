@@ -274,7 +274,7 @@ For entering a common voice chat room that does not involve range voice, use the
 #### Function prototype
 
 ```
-ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuff, int buffLen)
+ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, const char* authBuffer, int buffLen)
 ```
 
 | Parameter | Type | Description |
@@ -717,7 +717,7 @@ This API is used to enable/disable audio upstreaming. If a capturing device is a
 #### Function prototype
 
 ```
-ITMGContext  virtual int EnableAudioSend(bool bEnable)
+ITMGContext  virtual int EnableAudioSend(bool Enable)
 ```
 
 | Parameter | Type | Description |
@@ -894,7 +894,7 @@ EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv
 #### Function prototype  
 
 ```
-ITMGAudioCtrl virtual int EnableSpeaker(bool enabled)
+ITMGAudioCtrl virtual int EnableSpeaker(bool enable)
 ```
 
 | Parameter | Type | Description |
@@ -1185,7 +1185,7 @@ This API is used to start streaming speech recognition. Text obtained from speec
 
 ```
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage) 
+ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* speechLanguage,const char* translateLanguage) 
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|

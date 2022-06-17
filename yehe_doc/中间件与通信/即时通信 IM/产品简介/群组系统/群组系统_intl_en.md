@@ -1,9 +1,9 @@
 ## Group System Overview
-The group system is an instant messaging system that allows multiple participants to communicate in one chat. It has the following basic capabilities:
+The group system is an instant messaging system that allows multiple users to communicate in one chat. It has the following basic capabilities:
 - Comprehensive [group management](https://intl.cloud.tencent.com/document/product/1047/33530) capabilities: group creation and disbanding, member management, group profile management, member profile management, and more.
-- Stable and reliable messaging and a sophisticated [group message](https://intl.cloud.tencent.com/document/product/1047/33526) management mechanism: permission control, muting, vulgar language filtering, message callback, message roaming, and more.
+- Stable and reliable messaging and a sophisticated [group message](https://intl.cloud.tencent.com/document/product/1047/33526) management mechanism: permission control, muting, message callback, message roaming, and more.
 - Based on common use cases, IM provides the following default group types: **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, **audio-video group (AVChatRoom)**, and **Community group (Community)**.
-- Upper limit on the number of group members:
+- Maximum number of group members:
   - The number of members in a Work, Public, or Meeting group can be increased to a maximum of 6,000 if fees are paid. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
   - A community group (Community) supports up to 100,000 members per group.
   - There is no upper limit on the number of members in an audio-video group (AVChatRoom).
@@ -11,8 +11,8 @@ The group system is an instant messaging system that allows multiple participant
 
 >!
 >- Although audio-video groups (AVChatRoom) support unlimited group members, if a spike in group members is expected within a short time (in scenarios such as large online events where the number of members in a single group reaches 50,000 or above), contact sales representatives in advance and report service resource usage by providing the SDKAppID and the scheduled event time.
->- Currently, historical message storage is available only for non-audio-video groups, with messages stored for 7 days for billing plans of the Trial Edition and Pro Edition and 30 days for the Flagship Edition by default. If you require a longer storage period, change the storage period of historical messages in the [console](https://console.cloud.tencent.com/im). Increasing the storage period of historical messages is a value-added service. For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
->- The community group (Community) feature is supported only in SDK 5.8.1668 enhanced edition or higher. To use the feature, you need to purchase the Flagship Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/37275).
+>- Currently, historical message storage is available only for non-audio-video groups, with messages stored for 7 days for billing plans of the Free Edition and Pro Edition and 30 days for the Ultimate Edition by default. If you require a longer storage period, change the storage period of historical messages in the [console](https://console.cloud.tencent.com/im). Increasing the storage period of historical messages is a value-added service. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+>- The community group (Community) feature is supported only in SDK 5.8.1668 enhanced edition or higher. To use the feature, you need to purchase the Ultimate Edition package and [apply for activation](https://intl.cloud.tencent.com/document/product/1047/37275).
 
 IM's group system is highly customizable, allowing you to use:
 
@@ -28,9 +28,9 @@ The following table lists various group member roles and their permissions:
 | Group Member Role | Description       | Management Permission         |
 | ------------ | -------------- | ------------ |
 | Ordinary member     |  An ordinary member has no management permissions.      |   In a work group (Work), an ordinary member has the permission to modify the group profile.    |
-| Admin       | An admin is appointed by the group owner to assist in managing group members and holds certain management permissions. |<ul style="margin:0;"><li>Modify the group profile</li><li>Remove an ordinary member from the group</li><li>Mute an ordinary member, that is, prevent the ordinary member from speaking for a certain period of time</li><li>Approve or reject a membership application</li></ul>Work groups do not support the setting of admins by default. |
-| Group owner         | A group owner is the creator of a group and has the highest level of management permissions in the group.    | The group owner has the following permissions in addition to all permissions held by an admin: <ul style="margin:0;"><li>Appoint or cancel an admin</li><li>Remove an admin from the group</li><li>Mute an admin</li><li>Disband the group</li><li>Transfer the group</li></ul> |
-| App admin | This special role has the authority to manage all group permissions in the app and has more power than the group owner. | The app admin has the same permissions as the group owner, whether it is a member of the group or not. |
+| Group admin       | A group admin is specified by the group owner to assist in managing group members and holds certain management permissions. |<ul style="margin:0;"><li>Modify the group profile</li><li>Remove an ordinary member from the group</li><li>Mute an ordinary member, that is, prevent the ordinary member from speaking for a certain period of time</li><li>Approve or reject a group joining request</li></ul>Work groups do not support specifying group admins by default. |
+| Group owner         | A group owner is the creator of a group and has the highest level of management permissions in the group.    | The group owner has the following permissions in addition to all permissions held by an admin: <ul style="margin:0;"><li>Appoint or cancel an admin</li><li>Remove an admin from the group</li><li>Mute an admin</li><li>Disband the group</li><li>Transfer the group ownership</li></ul> |
+| App admin | This special role has the permission to manage all groups in the app and has higer permission than the group owner. | The app admin can manage any group as the group owner does, whether the app admin joins the group or not. |
 
 [](id:GroupType)
 ## Group Types
@@ -40,10 +40,10 @@ Based on common use cases, IM provides the following default group types:
 | Group Type | Applicable Scenario |
 |--------|---------|
 | Work group (Work) | A work group is like a WeChat group. After a work group is created, users can join the group only after being invited by group members. The invitation does not need to be accepted by the invitee or approved by the group owner. This group type is the same as private group (Private) in earlier versions. |
-| Public group (Public) | A public group is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send an application, and the application needs to be approved by the group owner or an admin before the user can join the group. |
+| Public group (Public) | A public group is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group. |
 | Meeting group (Meeting) | A meeting group allows users to join and leave freely and view historical messages sent before they join the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio/video conferencing and online education. This group type is the same as chat room (ChatRoom) in earlier versions. |
-| Audio-video group (AVChatRoom) | An audio-video group allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios. |
-| Community group (Community) | A community group allows users to join and exit freely, supports up to 100,000 members, and stores message history. To join the group, a user needs to search for the group ID and send an application, and the application does not need to be approved by an admin before the user can join the group. |
+| Audio-video group (AVChatRoom) | An audio-video group allows users to join and leave freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios. |
+| Community group (Community) | A community group allows users to join and leave freely, supports up to 100,000 members, and stores message history. To join the group, a user needs to search for the group ID and send a request, and the request does not need to be approved by an admin before the user can join the group. |
 
 
 ### Differences in basic group capabilities
@@ -67,12 +67,12 @@ Based on common use cases, IM provides the following default group types:
 |--- |-- |-- |-- |-- |-- |
 | Perform an exact search for a group ID to join a group | Not supported | Supported | Supported | Supported | Supported |
 | Perform a fuzzy search for group information to join a group | Not supported | Not supported | Not supported | Not supported | Not supported |
-| Apply to join a group | Not supported | Supported. Approval from the group owner or admin is needed. | Supported. No approval is needed. | Supported. No approval is needed. | Supported. No approval is needed. |
+| Request to join a group | Not supported | Supported. Approval from the group owner or admin is needed. | Supported. No approval is needed. | Supported. No approval is needed. | Supported. No approval is needed. |
 | Join a group after receiving an invitation from a group member | Supported | Not supported | Not supported | Not supported | Supported |
 
 >?
 >- Exact search is to search for a group by group ID. Fuzzy search is to search for a group by fields such as the group name.
->- Approval for joining a group: the group owner and admin can choose to approve or reject applications made by non-members to join the group. Only approved users can join the group.
+>- Approval for joining a group: the group owner and admin can approve or reject requests made by non-members to join the group. Only approved users can join the group.
 >- For a group type that does not support the invitation of non-members to a group, group members can share the group ID with non-members in the app so that the non-members can join the group.
 
 ### Differences in member management capabilities
@@ -80,23 +80,23 @@ Based on common use cases, IM provides the following default group types:
 | Item | Work Group | Public Group | Meeting Group | Audio-Video Group | Community Group |
 |--- |--- |--- |--- |--- |--- |
 | Setting admins | Not supported | Supported | Supported | Not supported | Supported |
-| A group owner quits the group | Supported. After the group owner quits, the group has no group owner. | Not supported | Not supported | Not supported | Not supported |
+| A group owner leaves the group | Supported. After the group owner leaves, the group has no group owner. | Not supported | Not supported | Not supported | Not supported |
 | Remove a group member | Supported. The group owner can remove group members. | Supported. The group owner and admin can remove group members, but the admin can remove only ordinary group members. | Supported. The group owner and admin can remove group members, but the admin can remove only ordinary group members. | Not supported. The muting feature can be used to achieve a similar effect. | Supported. The group owner and admin can remove group members, but the admin can remove only ordinary group members. |
 | Mute a group member | Not supported | Supported. The group owner and admin can mute group members, but the admin can mute only ordinary group members. | Supported. The group owner and admin can mute group members, but the admin can mute only ordinary group members. | Supported. The group owner can mute group members. | Supported. The group owner and admin can mute group members, but the admin can mute only ordinary group members. |
 | Periodically remove offline group members | Supported, but disabled by default | Supported, but disabled by default | Supported, but disabled by default | Not supported | Not supported |
 
->!Muted group members cannot send group chat messages within the mute period.
+>!Muted group members cannot send group chat messages within the muting period.
 
 
 ### Differences in group limits
 | Item | Work Group/Public Group/Meeting Group | Audio-Video Group | Community Group |
 |--- |--- |--- |--- |
-| Maximum number of members | <ul style="margin:0;"><li>Trial Edition: 20 per group</li><li>Pro Edition: 200 members/group by default, which can be extended to 2,000 members/group through a [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#zz)</li><li>Flagship Edition: 2,000 members/group by default, which can be extended to 6,000 members/group through a [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#zz).</li></ul> | Unlimited | <li>Trial Edition: not supported</li><li>Pro Edition: not supported</li><li>Flagship Edition: 100,000 members/group by default</li>|
-| Maximum number of groups | <ul style="margin:0;"><li>Trial Edition: up to 100 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition or Flagship Edition: unlimited</li></ul> | <ul style="margin:0;"><li>Trial Edition: up to 10 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition: up to 50 existing groups, and disbanded groups do not count against the quota. You can upgrade to an unlimited number of audio-video groups by purchasing the [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#zz).</li><li>Ultimate Edition: unlimited</li></ul> | <li>Trial Edition: not supported</li><li>Pro Edition: not supported</li><li>Flagship Edition: 100,000 groups can be created by default </li>|
+| Maximum number of members | <ul style="margin:0;"><li>Free Edition: 20 per group</li><li>Pro Edition: 200 members/group by default, which can be extended to 2,000 members/group through a [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#zz)</li><li>Ultimate Edition: 2,000 members/group by default, which can be extended to 6,000 members/group through a [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#zz).</li></ul> | Unlimited | <li>Free Edition: not supported</li><li>Pro Edition: not supported</li><li>Ultimate Edition: 100,000 members/group by default</li>|
+| Maximum number of groups | <ul style="margin:0;"><li>Free Edition: up to 100 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition or Ultimate Edition: unlimited</li></ul> | <ul style="margin:0;"><li>Free Edition: up to 10 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition: up to 50 existing groups, and disbanded groups do not count against the quota. You can upgrade to an unlimited number of audio-video groups by purchasing the [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#zz).</li><li>Ultimate Edition: unlimited</li></ul> | <li>Free Edition: not supported</li><li>Pro Edition: not supported</li><li>Ultimate Edition: 100,000 groups can be created by default </li>|
 
 >!
->- In the Pro Edition or Flagship Edition SDKAppID, the maximum net increase in group count per day (the number of created groups minus the number of disbanded groups) is 10,000 for all group types.
->- In the Pro Edition or Flagship Edition SDKAppID, the free peak group count is 100,000 per month, and you will need to pay [fees for exceeding the quota in a plan](https://intl.cloud.tencent.com/document/product/1047/34350#jc). It is recommend that you disband the groups that are no longer needed in a timely manner.
+>- In the Pro Edition or Ultimate Edition SDKAppID, the maximum net increase in group count per day (the number of created groups minus the number of disbanded groups) is 10,000 for all group types.
+>- In the Pro Edition or Ultimate Edition SDKAppID, the free peak group count is 100,000 per month, and [excessive part will be billed](https://intl.cloud.tencent.com/document/product/1047/34350#jc). We recommend that you disband the groups that are no longer needed.
 
 
 ### Differences in message capabilities
@@ -114,15 +114,15 @@ Based on common use cases, IM provides the following default group types:
 >!
 >- For a group that requires activation, before the group owner sends a message, the group is inactive and invisible to all group members except the group owner. A group that does not require activation is visible to all group members once it is created.
 >- Currently, offline push is available only on Android (Android offline push) and iOS (APNs push) platforms.
->- The work group, public group, meeting group, and community group have the historical message storage capability, which allows historical messages to be stored for 7 days (30 days for the Flagship Edition) free of charge by default. If you need a longer storage period, change the storage period of historical messages in the [console](https://console.cloud.tencent.com/im). Increasing the storage period of historical messages is a value-added service. For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+>- The work group, public group, meeting group, and community group have the historical message storage capability, which allows historical messages to be stored for 7 days (30 days for the Ultimate Edition) free of charge by default. If you need a longer storage period, change the storage period of historical messages in the [console](https://console.cloud.tencent.com/im). Increasing the storage period of historical messages is a value-added service. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 
 ### Differences in batch import and automatic repossession
 
 | Item | Work Group/Public Group/Meeting Group/Community Group | Audio-Video Group |
 |--- |--- |--- |
-| Importing groups, group members, and group messages is allowed | Yes. It is allowed when historical groups are migrated from a third-party platform to IM. | No. Only existing groups, group members, and group messages can be used. |
-| Time before a group is automatically repossessed (in seconds) | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. (About group disbanding: the backend does not proactively disband a group unless the group owner disbands the group or the group is automatically repossessed. If automatic repossession is configured for a group, the backend irregularly traverses the group and disbands it if no one sends a message in the group for n seconds or the group profile is modified.) | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. |
+| Importing groups, group members, and group messages is allowed | Supported. It is allowed when historical groups are migrated from a third-party platform to IM. | Not supported. Only existing groups, group members, and group messages can be used. |
+| Time before a group is automatically repossessed (in seconds) | The backend does not repossess groups, unless the group owner disbands the group or all members leave the group. (About group disbanding: the backend does not proactively disband a group unless the group owner disbands the group, or the group is automatically repossessed. If automatic repossession is configured for a group, the backend irregularly traverses the group and disbands it if no one sends a message in the group for n seconds or the group profile is modified.) | The backend does not repossess groups, unless the group owner disbands the group, or all members leave the group. |
 
 >!To enable group repossession, submit a ticket based on [ticket templates](https://intl.cloud.tencent.com/document/product/1047/37275#.E8.87.AA.E5.8A.A8.E5.9B.9E.E6.94.B6.E7.BE.A4.E7.BB.84). After configuration, inactive groups will be removed. An inactive group is one in which no message has been sent and no member change has occurred.
 
@@ -144,8 +144,8 @@ Based on common use cases, IM provides the following default group types:
 | LastMsgTime | Integer | Time of the last message in the group chat | Read-only. |
 | NextMsgSeq | Integer | Sequence number of the next message in the group chat | Read-only.<br>Every message in the group chat has a unique sequence number. Sequence numbers are consecutive numbers based on the sequence of sent messages. With every message sent in the group chat, `NextMsgSeq` (starting from 1) increases by 1. |
 | MemberNum | Integer | Number of current members | Read-only. |
-| MaxMemberNum | Integer | Maximum number of members | Default value: the upper limit of the paid plan; for example, it is 20 on Trial Edition. If you upgrade the plan, you need to modify this field to the corresponding value according to the basic information of the modified group|
-| ApplyJoinOption | String | Membership application option | The following options are available:<ul style="margin:0;"><li>DisableApply: disallow any application.</li><li>NeedPermission: group owner or admin's approval is required.</li><li>FreeAccess: users can join the group freely without prior approval.</li></ul> |
+| MaxMemberNum | Integer | Maximum number of members | Default value: the upper limit of the paid plan; for example, it is 20 on Free Edition. If you upgrade the plan, you need to modify this field to the corresponding value according to the basic information of the modified group|
+| ApplyJoinOption | String | Group joining option | The following options are available:<ul style="margin:0;"><li>DisableApply: Disallow any request.</li><li>NeedPermission: Require group owner or admin's approval </li><li>FreeAccess: users can join the group freely without prior approval.</li></ul> |
 
 
 >!The permissions to modify the group name, introduction, announcement, and profile photo URL are described as follows:
@@ -160,7 +160,7 @@ Based on common use cases, IM provides the following default group types:
 | Role | String | Role in the group | A group has the following roles: Owner (group owner), Admin (group admin), and Member (group member). |
 | JoinTime | Integer | Time of joining the group | Read-only. |
 | MsgSeq | Integer | Sequence number of the current read message of the member | Read-only. |
-| MsgFlag | String | Message receiving option | The following options are available:<ul style="margin:0;"><li>AcceptAndNotify: receive and notify.</li><li>AcceptNotNotify: receive without notifying (remote APNs push is not triggered)</li><li>Discard: block group messages (messages are not pushed to clients)</li></ul>|
+| MsgFlag | String | Message receiving option | The following options are available:<ul style="margin:0;"><li>AcceptAndNotify: Receive and notify.</li><li>AcceptNotNotify: Receive without notifying (remote APNs push is not triggered)</li><li>Discard: Block group messages (messages are not pushed to clients)</li></ul>|
 | LastSendMsgTime | Integer | Time of sending the last message | Supported by work groups, public groups, and meeting groups, but not audio-video groups. |
 | NameCard | String | Group name card | Readable and writable. |
 
@@ -177,8 +177,8 @@ IM allows you to configure up to 10 group-level custom fields and 5 member-level
 
 Custom fields have the following characteristics:
 
-- Their values are expressed in key-value format.
-- Key is a string with a length less than 16 bytes. Its name contains only uppercase and lowercase letters, numbers, and underscores (_).
+- Their values are in key-value format.
+- Key is a string with a length less than 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores (_).
 - Value is a buffer customized by the user, which can be binary data. Group-level values have a maximum length of 512 bytes, while member-level values have a maximum length of 64 bytes.
 - You can configure the least read permission and the least write permission for each key.
 
@@ -198,9 +198,9 @@ If the value to be stored is a number, we recommend that C and C++ developers st
 
 Custom fields at these two levels can be configured in the IM console.
 To configure member-level custom fields, you need to specify the group type first. Audio-video group and custom group types that are configured based on it do not support custom fields at the group member level, because these types of groups do not store member profiles.
-The **self read and write permissions** indicate whether members can read and write their own member-level custom fields. For example, a member-level customer field named `MemberLevel` represents the level of a member in a group. Group members can read but not modify their own levels, and therefore their **self read and write permissions** are set to **readable/unwritable** for this field.
+The **self read and write permissions** indicate whether members can read and write their own member-level custom fields. For example, a member-level customer field named `MemberLevel` represents the level of a member in a group. Group members can read but not modify their own levels, and therefore their **self read and write permissions** are set to **read-only** for this field.
 
 ## Custom Callbacks
 
-Third-party callback is an important means to meet the special requirements of apps. It provides users with the capability to customize actions.
+Third-party callback is an important method to meet the special requirements of apps. It provides users with the capability to customize actions.
 IM's group system supports different callbacks. For more information, see [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354) and [Callback Command List](https://intl.cloud.tencent.com/document/product/1047/34355).

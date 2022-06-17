@@ -17,13 +17,13 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product//436/7778) 文档）。
 >
 
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product//1045/43609) 文档。
 
 #### 请求体
 
@@ -41,6 +41,13 @@ Content-Type: application/xml
       <Bucket></Bucket>
       <Object></Object>
     </Output>
+    <SmartCover>
+      <Format></Format>
+      <Width></Width>
+      <Height></Height>
+      <Count></Count>
+      <DeleteDuplicates></DeleteDuplicates>
+    </SmartCover>    
   </Operation>
   <QueueId></QueueId>
   <CallBack></CallBack>
@@ -73,8 +80,20 @@ Container 类型 Operation 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| SmartCover                   | Request.Operation | 当 Tag 为 SmartCover 时有效，目前为空        | Container | 否   |
+| SmartCover                   | Request.Operation | 封面配置        | Container | 否   |
 | Output                       | Request.Operation | 结果输出地址                                | Container | 是   |
+
+
+Container 类型 SmartCover 的具体数据类型描述如下：
+
+| 节点名称（关键字） | 父节点            | 描述                                                         | 类型      | 是否必选 | 默认值 | 限制 |
+| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- | ---- | ---- |
+| Format                   | Request.Operation.SmartCover | 封面图片类型        | String | 是 | 无 | png、jpg、webp  |
+| Width                    | Request.Operation.SmartCover | 封面图片宽度    | String | 是  | 无 | 1. 值范围：[128，4096]<br/> 2. 单位：px<br/> |
+| Height                   | Request.Operation.SmartCover | 封面图片高度    | String | 是 | 无 | 1. 值范围：[128，4096]<br/> 2. 单位：px<br/> |
+| Count                    | Request.Operation.SmartCover | 封面数量    | String | 否  | 3 | 1. 值范围：[1，10]<br/> |
+| DeleteDuplicates         | Request.Operation.SmartCover | 封面是否去重    | String | 否  | false | true/false |
+
 
 Container 类型 Output 的具体数据描述如下：
 
@@ -90,7 +109,7 @@ Container 类型 Output 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product//1045/43610) 文档。
 
 #### 响应体
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
@@ -115,6 +134,13 @@ Container 类型 Output 的具体数据描述如下：
         <Bucket></Bucket>
         <Object></Object>
       </Output>
+      <SmartCover>
+        <Format></Format>
+        <Width></Width>
+        <Height></Height>
+        <Count></Count>
+        <DeleteDuplicates></DeleteDuplicates>
+      </SmartCover> 
       <MediaInfo>
       </MeidaInfo>
     </Operation>
@@ -157,7 +183,7 @@ Container 节点 Operation 的内容：
 
 |节点名称（关键字）|父节点|描述|类型|
 |:---|:-- |:--|:--|
-| TemplateId | Response.JobsDetail.Operation | 任务的模版 ID |  String |
+| TemplateId | Response.JobsDetail.Operation | 任务的模板 ID |  String |
 | Output | Response.JobsDetail.Operation | 文件的输出地址 |  Container |
 | MediaInfo | Response.JobsDetail.Operation | 转码输出视频的信息，没有时不返回 |  Container |
 
@@ -165,15 +191,15 @@ Container 节点 Output 的内容：
 同请求中的 Request.Operation.Output 节点。
 
 Container 节点 MediaInfo 的内容：
-同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
+同GenerateMediaInfo接口中的 Response.MediaInfo 节点。
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product//1045/43611) 文档。
 
 ## 实际案例
 
-**使用模版ID**
+**使用模板 ID**
 
 #### 请求
 
@@ -197,6 +223,13 @@ Content-Type: application/xml
       <Bucket>abc-1250000000</Bucket>
       <Object>my-new-cover-${Number}.jpg</Object>
     </Output>
+    <SmartCover>
+      <Format>png</Format>
+      <Width>128</Width>
+      <Height>128</Height>
+      <Count>3</Count>
+      <DeleteDuplicates>false</DeleteDuplicates>
+    </SmartCover> 
   </Operation>
   <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
   <CallBack>https://www.callback.com</CallBack>
@@ -235,6 +268,13 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
         <Bucket>abc-1250000000</Bucket>
         <Object>my-new-cover-${Number}.jpg</Object>
       </Output>
+      <SmartCover>
+        <Format>png</Format>
+        <Width>128</Width>
+        <Height>128</Height>
+        <Count>3</Count>
+        <DeleteDuplicates>false</DeleteDuplicates>
+      </SmartCover> 
     </Operation>
   </JobsDetail>
 </Response>

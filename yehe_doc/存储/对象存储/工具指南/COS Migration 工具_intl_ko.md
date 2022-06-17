@@ -59,8 +59,8 @@ COS_Migrate_tool
 ```
 
 >?
-> - db 디렉터리는 툴 마이그레이션 성공을 기록하는 문서 표식으로, 마이그레이션 작업 시마다 먼저 db의 기록을 비교하여 현재 파일 표식에 기록이 되어 있는 경우 해당 파일을 건너뛰고, 그렇지 않으면 파일을 마이그레이션합니다.
-> - log 디렉터리에는 툴 마이그레이션 시의 모든 로그가 기록되어 있습니다. 마이그레이션 과정에서 오류가 발생한 경우 먼저 해당 디렉터리의 error.log를 확인하십시오.
+ - db 디렉터리는 툴 마이그레이션 성공을 기록하는 문서 표식으로, 마이그레이션 작업 시마다 먼저 db의 기록을 비교하여 현재 파일 표식에 기록이 되어 있는 경우 해당 파일을 건너뛰고, 그렇지 않으면 파일을 마이그레이션합니다.
+ - log 디렉터리에는 툴 마이그레이션 시의 모든 로그가 기록되어 있습니다. 마이그레이션 과정에서 오류가 발생한 경우 먼저 해당 디렉터리의 error.log를 확인하십시오.
 
 ### 3. config.ini 구성 파일 수정
 마이그레이션 실행 스크립트를 실행하기 전에 config.ini 구성 파일(경로: `./conf/config.ini`)을 수정해야 하며, config.ini 내용은 다음과 같이 몇 부분으로 나뉘어 있습니다.
@@ -74,7 +74,7 @@ type=migrateLocal
 
 현재 지원하는 마이그레이션 유형은 다음과 같습니다.
 
-| migrateType | 설명 |
+| migrateType  |           설명           |
 | ------| ------ |
 | migrateLocal| 로컬에서 COS로 마이그레이션 |
 | migrateAws| AWS S3에서 COS로 마이그레이션 |
@@ -83,6 +83,9 @@ type=migrateLocal
 | migrateUrl| 다운로드 URL에서 COS로 마이그레이션 |
 | migrateBucketCopy| 원본 Bucket에서 타깃 Bucket으로 복사|
 |migrateUpyun  | Upyun에서 COS로 마이그레이션 |
+
+>? 위에서 언급되지 않은 원본 서버에서 마이그레이션 하려면 원본 서버가 AWS S3 API와 호환되는 경우 AWS 설정을 이용해 마이그레이션 합니다.
+>
 
 #### 3.2 마이그레이션 작업 설정
 실제 마이그레이션 요건에 따라 관련 설정을 진행하며, 주로 마이그레이션할 타깃 COS의 정보 설정 및 마이그레이션 작업 관련 설정이 포함됩니다.
@@ -115,7 +118,7 @@ skipSamePath=false
 | secretKey| 사용자 보안키 SecretKey. `COS_SECRETKEY`를 사용자의 실제 키 정보로 변경합니다. [CAM 콘솔](https://console.cloud.tencent.com/cam/capi)의 Tencent Cloud API 키 페이지에서 조회하여 획득할 수 있습니다.|-|
 | bucketName| 타깃 Bucket의 이름. 형식: `<BucketName-APPID>`. Bucket 이름에는 반드시 APPID가 포함됩니다. 예: examplebucket-1250000000 |  -  |
 | region| 타깃 Bucket의 Region 정보. COS의 리전 약칭은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. |-|
-| storageClass|   데이터 마이그레이션 이후의 스토리지 유형. 옵션 값: Standard(표준 스토리지), Standard_IA(표준IA 스토리지), Archive(아카이브 스토리지), Maz_Standard(표준 스토리지 다중AZ), Maz_Standard_IA(표준IA 스토리지 다중AZ)이며, 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오.    |Standard|
+| storageClass|   데이터 마이그레이션 이후의 스토리지 유형. 옵션 값은 Standard(스탠다드 스토리지), Standard_IA(스탠다드IA 스토리지), Archive(아카이브 스토리지)이며, 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오.    |Standard|
 | cosPath|마이그레이션할 COS 경로. `/`는 Bucket의 루트 경로에 마이그레이션하는 것을 의미하며, `/folder/doc/`는 Bucket의 `/folder/doc/`에 마이그레이션하는 것을 의미합니다. `/folder/doc/`가 존재하지 않는 경우 자동으로 경로를 생성합니다.|/|
 | https| HTTPS를 사용한 전송 여부: on - 활성화, off - 비활성화. 활성화할 경우 전송 속도가 비교적 느리며, 전송 보안 요건이 높은 시나리오에 적합합니다.|off|
 | tmpFolder|기타 클라우드 스토리지에서 COS로 마이그레이션 시 임시 파일을 저장하는 디렉터리로 마이그레이션 완료 후에는 삭제됩니다. 필요한 포맷은 절대 경로입니다.<br>Linux에서 세퍼레이터는 싱글 슬래시입니다(예: `/a/b/c`). <br>Windows에서 세퍼레이터는 더블 역슬래시입니다(예: `E:\\a\\b\\c`). <br>기본적으로 툴 경로 아래의 tmp 디렉터리입니다.|./tmp|
@@ -200,7 +203,7 @@ proxyPort=
 |proxyHost|프록시를 사용해 액세스할 경우 프록시 IP 주소를 입력합니다.|
 |proxyPort|프록시 포트|
 
- 
+
 **3.3.4 Qiniu 데이터 소스 migrateQiniu 설정**
 
 Qiniu에서 COS로 마이그레이션하는 경우 해당 부분을 설정합니다. 구체적인 설정 항목 및 설명은 다음과 같습니다.
@@ -226,7 +229,7 @@ proxyPort=
 |proxyHost|프록시를 사용해 액세스할 경우 프록시 IP 주소를 입력합니다.|
 |proxyPort|프록시 포트|
 
- 
+
 **3.3.5 URL 리스트 데이터 소스 migrateUrl 설정**
 
 지정한 URL 리스트에서 COS로 마이그레이션하는 경우 해당 부분을 설정합니다. 구체적인 설정 항목 및 설명은 다음과 같습니다.
@@ -235,12 +238,12 @@ proxyPort=
 [migrateUrl]
 urllistPath=D:\\folder\\urllist.txt
 ```
-     
+
 | 설정 항목 | 설명 |
 | ------| ------ |
-|urllistPath|URL 리스트의 주소, 내용은 URL 텍스트이며 한 행당 URL 원시 주소 하나입니다(예: `http://aaa.bbb.com/yyy/zzz.txt`, 큰따옴표 또는 기타 부호 추가할 필요 없음). URL 리스트의 주소는 절대 경로여야 합니다. <ul  style="margin: 0;"><li>Linux에서 세퍼레이터는 싱글 슬래시입니다(예: `/a/b/c.txt`). </li><li>Windows에서 세퍼레이터는 더블 역슬래시입니다(예: `E:\\a\\b\\c.txt`). <br>디렉터리를 입력한 경우 해당 디렉터리의 모든 파일을 urllist 파일로 간주하여 스캐닝 및 마이그레이션합니다.</li></ul>|
+|urllistPath|URL 리스트 파일 주소입니다. </br>참고: 구성 내용은 URL을 직접 입력하는 것이 아니라 텍스트 파일의 **로컬 URL**을 입력합니다. 텍스트 파일의 내용은 한 줄에 하나의 URL 원시 주소로 된 구체적인 URL입니다.(예시: `http://aaa.bbb.com/yyy/zzz.dat`, 큰따옴표 또는 기타 부호 추가할 필요 없음). </br>URL 리스트의 주소는 절대 경로여야 합니다. <ul  style="margin: 0;"><li>Linux에서 세퍼레이터는 단일 슬래시입니다(예시: `/a/b/c.txt`). </li><li>Windows에서 세퍼레이터는 이중 백슬래시입니다(예시: `E:\\a\\b\\c.txt`). </li><li>디렉터리를 입력한 경우 해당 디렉터리의 모든 파일을 urllist 파일로 간주하여 스캐닝 및 마이그레이션합니다.</li></ul>|
 
- 
+
 **3.3.6 Bucket 상호 복사 migrateBucketCopy 설정**
 
 COS의 지정 Bucket에서 다른 Bucket으로 마이그레이션하는 경우 해당 부분을 설정합니다. 구체적인 설정 항목 및 설명은 다음과 같습니다.

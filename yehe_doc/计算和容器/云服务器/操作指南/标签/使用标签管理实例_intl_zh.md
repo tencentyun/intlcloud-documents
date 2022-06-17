@@ -21,7 +21,7 @@
 |---------|---------|---------|--------|
 | ins-abcdef1 | 电商 | 营销活动 | 张三 |
 | ins-abcdef2 | 电商 | 营销活动 | 王五 |
-| ins-abcdef3 | 游戏 | 游戏 A | 李四 |
+| ins-abcdef3 | 游戏 | 游戏 A | 王四 |
 | ins-abcdef4 | 游戏 | 游戏 B | 王五 |
 | ins-abcdef5 | 文娱 | 后期制作 | 王五 |
 | ins-abcdef6 | 文娱 | 后期制作 | 张三 |
@@ -40,16 +40,33 @@
 以上文场景为例，当您完成标签键和标签值的设计后，可以登录云服务器控制台进行标签的设置。
 
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)。
-2. 在实例的管理页面，选择需要编辑标签的实例，单击【更多】>【实例设置】>【编辑标签】。
-2. 在弹出的 “您已经选择1个云资源” 窗口中设置，设置标签。
+2. 在实例的管理页面，根据实际使用的视图模式进行操作：
+<dx-tabs>
+::: 列表视图
+选择需要编辑标签的实例，选择**更多** > **实例设置** > **编辑标签**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/7f5ff3c9a726569805f3d085ffd8f8dd.png)
+
+:::
+::: 页签视图
+选择需要编辑标签的实例，选择右上角的**更多操作** > **实例设置** > **编辑标签**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/e558f115b9e41be9afd18c7649c9a823.png)
+:::
+</dx-tabs>
+
+2. 在弹出的 “您已经选择1个云资源” 窗口中设置，设置标签。如下图所示：
 例如，为 ins-abcdef1 的实例添加 [三组标签](#table02)。
-3. 单击【确定】，系统出现修改成功提示。
+![](https://qcloudimg.tencent-cloud.cn/raw/0754fba6bf444e0e7519c51fcad0e9ed.png)
+3. 单击**确定**，系统出现修改成功提示。
 
 
 ### 通过标签键筛选实例
 
 当您希望筛选出绑定了相应标签键的实例时，可通过以下操作进行筛选。
 
-1. 在搜索框中，选择【标签键】。
-2. 在【标签键：】后输入标签键，单击 <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;"> 进行搜索。
-您可以同时根据多个标签键进行筛选。例如，输入`标签键：key1|key2`可筛选出绑定了标签键 `key1` 或 `key2` 的实例。
+1. 在搜索框中，选择**标签键**。
+2. 在**标签键：**后输入标签键，单击 <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin:-3px 0px;"> 进行搜索。
+您可以同时根据多个标签键进行筛选。例如，输入`标签键：key1|key2`可筛选出绑定了标签键 `key1` 或 `key2` 的实例。如下图所示：
+![](C:\Users\v_vruyangli\AppData\Roaming\Typora\typora-user-images\image-20220112170550388.png)
+
+
+

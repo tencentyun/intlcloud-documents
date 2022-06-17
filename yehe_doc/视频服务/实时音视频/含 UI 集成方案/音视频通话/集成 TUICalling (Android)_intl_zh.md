@@ -1,6 +1,6 @@
 ## 组件介绍
 
-TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUICalling 组件，您只需要编写几行代码就可以为您的 App 添加“一对一音视频通话”，“多人音视频通话”等场景，并且支持离线唤起能力。TUICalling  同时支持 iOS、Web、Flutter、UniApp 等平台，基本功能如下图所示：
+TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUICalling 组件，您只需要编写几行代码就可以为您的 App 添加“一对一音视频通话”场景，并且支持离线唤起能力。TUICalling  同时支持 iOS、Web、Flutter、UniApp 等平台，基本功能如下图所示：
 
 <table class="tablestyle">
 <tbody><tr>
@@ -10,15 +10,13 @@ TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUIC
 </tbody></table>
 
 
-
 ## 组件集成
 
 ### 步骤一：下载并导入 TUICalling 组件
-单击进入 [Github](https://github.com/tencentyun/TUICalling) ，选择克隆/下载代码，然后拷贝 Android 目录下的 tuicalling、tuicore 和 debug 目录到您的工程的 app 同一级目录，并完成如下导入动作：
+单击进入 [Github](https://github.com/tencentyun/TUICalling) ，选择克隆/下载代码，然后拷贝 Android 目录下的 tuicalling 和 debug 目录到您的工程的 app 同一级目录，并完成如下导入动作：
 - 在 `setting.gradle` 中完成导入，参考如下：
 ```java
 include ':tuicalling'
-include ':tuicore'
 include ':debug'
 ```
 - 在 app 的 build.gradle 文件中添加对 tuicalling 的依赖：
@@ -44,7 +42,7 @@ ext {
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.BLUETOOTH" />                  // 使用场景：使用蓝牙耳机时需要此权限；
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />          // 使用场景：判断是否是系统来电打断时需要此权限；
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />           // 使用场景：判断是否是系统来电打断时需要此权限；
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -57,28 +55,37 @@ ext {
 ### 步骤三：创建并初始化组件
 
 ```java
-// 1.组件登录，
-TUILogin.init(this, "您的SDKAppID", config, new V2TIMSDKListener() {
+// 1.添加事件监听及登录
+TUILogin.addLoginListener(new TUILoginListener() {
+    @Override
+    public void onConnecting() {      // 正在连接中
+        super.onConnecting();
+    }
+    @Override
+    public void onConnectSuccess() {  // 连接成功通知
+        super.onConnectSuccess();
+    }
+    @Override
+    public void onConnectFailed(int errorCode, String errorMsg) {  // 连接失败通知
+        super.onConnectFailed(errorCode, errorMsg);
+    }
     @Override
     public void onKickedOffline() {  // 登录被踢下线通知（示例：账号在其他设备登录）
-
+        super.onKickedOffline();
     }
     @Override
     public void onUserSigExpired() { // userSig过期通知
-
+        super.onUserSigExpired();
     }
 });
-
-TUILogin.login("您的userId", "您的userSig", new V2TIMCallback() {
-    @Override
-    public void onError(int code, String msg) {
-        Log.d(TAG, "code: " + code + " msg:" + msg);
-    }
+TUILogin.login(mContext, "Your SDKAppID", "Your userId", "Your userSig", new TUICallback() {
     @Override
     public void onSuccess() {
-
     }
-});
+    @Override
+    public void onError(int errorCode, String errorMsg) {
+        Log.d(TAG, "errorCode: " + errorCode + " errorMsg:" + errorMsg);
+    }
 
 // 2.初始化TUICalling实例
 TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
@@ -92,16 +99,12 @@ TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 
 
 ### 步骤四：实现音视频通话
-- **实现1对1视频通话/音频通话 [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)**
+**实现1对1视频通话/音频通话 [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)**：
 ```java
 // 发起1对1视频通话，假设userId为：1111；
 callingImpl.call(["1111"], TUICalling.Type.VIDEO);
 ```
-- **实现多人视频通话**：
-```java
-// 发起多人视频通话，假设userId分别为：1111、2222、3333；
-callingImpl.call(["1111", "2222", "3333"], TUICalling.Type.VIDEO);
-```
+
 
 >? 
 >- 当接收方完成步骤三后，即登录成功后，再收到通话请求后，TUICalling 组件会自动启动相应的接听界面。    
@@ -134,7 +137,7 @@ callingImpl.setCallingListener(new TUICalling.TUICallingListener() {
     public void onCallEvent(TUICalling.Event event, TUICalling.Type type, TUICalling.Role role, String message) {
         Log.d(TAG, "onCallEvent: event = " + event + " ,message = " + message);
     }
-  });
+});
 ```
 
 ### 步骤七：悬浮窗功能（可选）
@@ -147,7 +150,7 @@ callingImpl.setCallingListener(new TUICalling.TUICallingListener() {
 
 设置要返回的上一层界面，在`AndroidManifest.xml`为您需要跳转的界面配置跳转动作 `com.tencent.trtc.tuicalling`，例如：
 ```
- <activity
+<activity
     android:name="{packageName}.MainActivity"
     android:launchMode="singleTop">
     <intent-filter>

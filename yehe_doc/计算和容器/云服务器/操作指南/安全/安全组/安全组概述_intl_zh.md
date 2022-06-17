@@ -33,7 +33,7 @@
 
 <dx-alert infotype="explain" title="">
 - 如果提供的安全组模板不满足您的实际使用，您也可以新建自定义安全组，详情请参见 [创建安全组](https://intl.cloud.tencent.com/document/product/213/34271)、[安全组应用案例](https://intl.cloud.tencent.com/document/product/213/32369)。
-- 如果您对应用层（HTTP/HTTPS）有安全防护需求，可另行购买 [腾讯云 Web 应用防火墙（WAF）](https://intl.cloud.tencent.com/zh/products/waf)，WAF 将为您提供应用层 Web 安全防护，抵御 Web 漏洞攻击、恶意爬虫和 CC 攻击等行为，保护网站和 Web 应用安全。
+- 如果您对应用层（HTTP/HTTPS）有安全防护需求，可另行购买 [腾讯云 Web 应用防火墙（WAF）](https://intl.cloud.tencent.com/products/waf)，WAF 将为您提供应用层 Web 安全防护，抵御 Web 漏洞攻击、恶意爬虫和 CC 攻击等行为，保护网站和 Web 应用安全。
 </dx-alert>
 
 

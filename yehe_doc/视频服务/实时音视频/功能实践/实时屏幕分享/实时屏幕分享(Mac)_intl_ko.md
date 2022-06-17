@@ -53,7 +53,7 @@ TRTC SDK는 3가지 공유 모드를 지원합니다. [selectScreenCaptureTarget
  - 공유 타깃 선택 후 [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97) 인터페이스를 사용하면 화면 공유를 실행할 수 있습니다.
  - [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280)와  [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 두 함수의 차이는 전자가 화면 콘텐츠 캡처를 중지하고 일시 중지된 순간에 캡처된 이미지를 표시한다는 점에 있습니다. 원격에서는 [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15)까지 마지막 프레임의 정지 이미지를 보게 됩니다.
 
-```Objective-C
+```ObjC
  /**
  *  7.6 [화면 공유] 화면 공유 실행
  *  @param view 렌더링 제어 파일이 있는 상위 제어 파일
@@ -98,7 +98,7 @@ TRTC SDK는 3가지 공유 모드를 지원합니다. [selectScreenCaptureTarget
   사용자가 Android/iOS를 통해 화면 공유를 실행하면 메인스트림을 통해 공유가 시작됩니다. 방 안의 다른 사용자는 TRTCCloudDelegate의 [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트를 통해 이 공지를 수신합니다.
   공유 화면을 시청하려면 [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) 인터페이스를 통해 원격 사용자의 메인스트림 화면을 렌더링합니다.
 
-```Objective-C
+```ObjC
 //예시 코드: 공유 화면 시청
 
 - (void)onUserSubStreamAvailable:(NSString *)userId available:(BOOL)available {

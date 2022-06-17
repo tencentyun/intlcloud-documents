@@ -10,7 +10,9 @@ You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.co
 2. Select an Anti-DDoS Pro instance ID in the list on the left, such as "bgp-00xxxxxx".
 ![](https://qcloudimg.tencent-cloud.cn/raw/48b33703155d1418b3a1c3aab979e8f4.png)
 3. To enable CC protection in the "CC Protection and Cleansing Threshold" section, click ![](https://qcloudimg.tencent-cloud.cn/raw/b56da8e70914bb5f6fce1900bcf81ef5.png) and set a cleansing threshold.
->?The cleansing threshold is the threshold for Anti-DDoS services to start cleansing traffic. If the number of HTTP requests sent to the specified domain name exceeds the threshold, CC protection will be triggered.
+>?
+>- The cleansing threshold is the threshold for Anti-DDoS services to start cleansing traffic. If the number of HTTP requests sent to the specified domain name exceeds the threshold, CC protection will be triggered.
+>- If the IP bound to the Anti-DDoS Pro instance is from WAF, you need to first enable CC protection for the IP in the [WAF console](https://console.cloud.tencent.com/guanjia/tea-baseconfig). For more information, see [CC Protection Rules](https://intl.cloud.tencent.com/document/product/627/11709).
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/48b33703155d1418b3a1c3aab979e8f4.png)
 4. Click **Set** in the **CC Protection and Cleansing Threshold** section to enter the rule list.

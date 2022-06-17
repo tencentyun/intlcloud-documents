@@ -2,7 +2,7 @@
 
 ## 1. 选择问题所属产品
 
-登录视频处理控制台，选择 **工单系统**>[**提交工单**](https://console.cloud.tencent.com/workorder/category?step=0&source=0)，然后在右上角搜索框输入视频处理，单击 **视频处理 MPS**。
+登录媒体处理控制台，选择 **工单系统**>[**提交工单**](https://console.cloud.tencent.com/workorder/category?step=0&source=0)，然后在右上角搜索框输入视频处理，单击 **视频处理 MPS**。
 ![](https://main.qcloudimg.com/raw/cad4289abc90e1dd6677492e7d447f68.png)
 
 ## 2. 选择问题类型

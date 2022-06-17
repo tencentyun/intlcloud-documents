@@ -15,7 +15,7 @@ After ruling out the possibility of an incorrect dynamic library path, check whe
 Exception in thread "main" java.lang.UnsatisfiedLinkError: *** Can't load IA 32-bit *** on a AMD 64-bit platform
 ```
 
-This indicates a typical mismatch between JVM and the dynamic library. To correct it, use a 32-bit dynamic library to load a 32-bit JVM.
+This indicates a typical mismatch between JVM and the dynamic library. To fix it, use a 32-bit dynamic library to load a 32-bit JVM.
 
 
 ### How can I generate a UserSig?
@@ -28,16 +28,16 @@ As an important credential for IM login authentication, UserSig has a default va
 ### Can I delete an account?
 
 - Accounts in the **Pro Edition** cannot be deleted. To deactivate an account, you can call the [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) API to invalidate the login state of the account owner.
-- Accounts in the **Trial Edition** can be deleted. You can call the [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) API to delete accounts that are no longer needed. Note that **user data cannot be recovered after accounts are deleted**.
+- Accounts in the **Free Edition** can be deleted. You can call the [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) API to delete accounts that are no longer needed. Note that **user data cannot be recovered after accounts are deleted**.
 
 ### Why do I encounter error 70009 upon login?
 Check whether the public and private keys match. Do not use the private key of the IM demo to generate UserSig.
 
 ### What should I do if the following issues occur when the IM account is not imported?
-- **Error 10019 is reported?**
+- **Error 10019 is reported:**
 The UserID in the request does not exist. Check whether each `Member_Account` in `MemberList` is correct.
-- **Error 10007 is reported?**
+- **Error 10007 is reported:**
 You do not have the operation permissions. (For example, a common member in a public group attempts to remove a member from the group, but only the app administrator has the permission to do so.)
-- **Error 20003 is reported?**
+- **Error 20003 is reported:**
 The UserID of the sender or recipient is invalid or does not exist. Check whether the UserID has been imported into the IM console.
 >?You need to generate accounts and import them into IM via an API call. The accounts can be used only after imported.

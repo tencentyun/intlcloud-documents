@@ -18,7 +18,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 ### Step 1. Create an app
 1. Log in to the [IM console](https://console.cloud.tencent.com/im).
 >? If you already have an app, record its SDKAppID and [obtain key information](#step2).
->A Tencent Cloud account can create a maximum of 300 IM apps. If you want to create a new app, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost. Proceed with caution**.
+>A Tencent Cloud account can create a maximum of 300 IM apps. If you want to create a new app, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first. **Once an app (along with its SDKAppID) is deleted, the provided service and all its data are lost. Please proceed with caution**.
 >
 2. Click **Create Application**, enter your app name, and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
@@ -29,7 +29,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 [](id:step2)
 ### Step 2. Download the SDK and source code
-1. Download the SDK and [demo source code](https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im_discuss) that fit your needs.
+1. Download the SDK and [demo source code](https://github.com/TencentCloud/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit) that fit your needs.
 2. Then, go to the directory TIMSDK/Flutter/Demo/im_discuss.
 ![](https://qcloudimg.tencent-cloud.cn/raw/8b865854e14e8848b4e8d31d8daf55ac.png)
 3. Run `Flutter pub get` to install the dependencies, launch the demo project, and enter the following command:
@@ -38,10 +38,12 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 flutter run --dart-define=SDK_APPID=xxxx --dart-define=ISPRODUCT_ENV=false --dart-define=KEY=xxxx
 :::
 </dx-codeblock>
->?
+
+>? 
 >-  Replace `xxxx` in `--dart-define=SDK_APPID=xxxx` with the SDKAppID created in [Step 1](#step1).
 >-  Use `--dart-define=ISPRODUCT_ENV=false` to determine the environment (development or production). Enter “false” for a development environment.
 >-  Replace `xxxx` in `--dart-define=KEY=xxxx` with the key mentioned in [Step 1](#step1).
+>
 4. Configure the launch.json file in the Visual Studio.
 ![](https://qcloudimg.tencent-cloud.cn/raw/e495955902c8a594085aa045891ffe2a.png)
 
@@ -52,6 +54,7 @@ flutter run --dart-define=SDK_APPID=xxxx --dart-define=ISPRODUCT_ENV=false --dar
 1. Go to the discuss/andorid directory via Android Studio.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6516f9b17c58915c4ebc93c5c8829831.png)
 2. Start an Android simulator, tap **Build And Run** to run the demo. Enter a random UserID (a combination of digits and letters).
+
 >? The UI of the latest version of the demo may look different after adjustments.
 :::
 ::: iOS[](id:ios)

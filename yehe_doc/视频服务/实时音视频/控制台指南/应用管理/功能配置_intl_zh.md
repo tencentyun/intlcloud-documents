@@ -7,7 +7,7 @@
 
 - 基于 UDP 传输协议的 TRTC 服务，通过协议转换将音视频流对接到 [云直播](https://intl.cloud.tencent.com/document/product/267) 系统，这个过程称之为“旁路推流”。
 - 旁路推流功能默认关闭，开启旁路推流功能需先开通云直播服务。
-- 将旁路推流用于 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 时，云直播将会按直播观看产生的下行流量/带宽收取相关费用，详见 [云直播>流量带宽计费](https://intl.cloud.tencent.com/document/product/267/2818) 说明。
+- 将旁路推流用于 CDN 直播观看 时，云直播将会按直播观看产生的下行流量/带宽收取相关费用，详见 [云直播>流量带宽计费](https://intl.cloud.tencent.com/document/product/267/2818) 说明。
 - 将旁路推流用于 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 时，将会产生录制、录制文件存储等费用，详见 [云端录制与回放>相关费用](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8) 说明。
 - 若您在 [云直播控制台](https://console.cloud.tencent.com/live/domainmanage) 给旁路推流使用的推流域名（`xxxx.livepush.myqcloud.com`）绑定了录制、转码、截图鉴黄、水印等收费功能的模板，则旁路推流时会产生模板对应的 [增值费用](https://intl.cloud.tencent.com/document/product/267/2819) 。
 
@@ -102,7 +102,7 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 - 若需创建新的应用，具体操作请参见 [创建应用](https://intl.cloud.tencent.com/document/product/647/39077)。
 - 若需在应用列表中搜索相关应用，具体操作请参见 [搜索应用](https://intl.cloud.tencent.com/document/product/647/39078)。
 - 若需查看应用的基本信息，具体操作请参见 [应用信息](https://intl.cloud.tencent.com/document/product/647/39079)。
-- 若需在云端混流转码时设置自定义背景图片，可在素材管理中添加对应的图片素材，具体操作请参见 [素材管理](https://intl.cloud.tencent.com/document/product/647/39081)。
+- 若需在云端混流转码时设置自定义背景图片，可在素材管理中添加对应的图片素材。
 - 若需快速跑应用通配套的 Demo 源码，具体操作请参见 [快速上手](https://intl.cloud.tencent.com/document/product/647/39082)。
 
 

@@ -32,7 +32,7 @@ TRTCCloud.exitRoom()은 방 종료가 실패하면 이 오류 코드를 트리�
 
 ### 장치(카메라, 마이크, 스피커) 오류 코드
 
-콜백 API TRTCCloudDelegate.OnError()를 사용하여 장치 오류에 대한 알림을 캡처할 수 있습니다.
+콜백 API TRTCCloudDelegate.OnError()를 사용하여 사용자 지정 캡처 오류에 대한 알림을 캡처할 수 있습니다.
 
 | 코드 | 값 | 설명 |
 |---|---|---|
@@ -52,7 +52,7 @@ TRTCCloud.exitRoom()은 방 종료가 실패하면 이 오류 코드를 트리�
 
 ### 화면 공유 오류 코드
 
-콜백 API TRTCCloudDelegate.OnError()를 사용하여 화면 공유 오류에 대한 알림을 캡처할 수 있습니다.
+콜백 API TRTCCloudDelegate.OnError()를 사용하여 사용자 지정 캡처 오류에 대한 알림을 캡처할 수 있습니다.
 
 | 코드 | 값 | 설명 |
 |---|---|---|
@@ -65,7 +65,7 @@ TRTCCloud.exitRoom()은 방 종료가 실패하면 이 오류 코드를 트리�
 
 ### 인코딩 및 디코딩 오류 코드
 
-콜백 API TRTCCloudDelegate.OnError()를 사용하여 인코딩 및 디코딩 오류에 대한 알림을 캡처할 수 있습니다.
+콜백 API TRTCCloudDelegate.OnError()를 사용하여 사용자 지정 캡처 오류에 대한 알림을 캡처할 수 있습니다.
 
 | 코드 | 값 | 설명 |
 |---|---|---|
@@ -121,10 +121,10 @@ TRTCCloud.ConnectOtherRoom()은 크로스 룸 공동 앵커링이 실패하는 �
 |ERR_SERVER_CENTER_CONN_ROOM_NO_KEY|-102038|크로스 룸 공동 앵커 서명 복호화 키 찾을 수 없음|
 |ERR_SERVER_CENTER_CONN_ROOM_PARSE_SIG|-102039|크로스 룸 공동 앵커링 서명 구문 분석 오류|
 |ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|잘못된 크로스 룸 공동 앵커 서명 타임스탬프|
-|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|잘못된 크로스 룸 공동 앵커 서명|
-|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|이 방에는 공동 앵커가 없음|
+|ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|크로스 룸 공동 앵커 서명 내 방 Id 매칭 오류|
+|ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|크로스 룸 공동 앵커 서명 내 사용자 이름 매칭 오류|
 |ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|사용자가 공동 앵커를 시작하지 않았음|
-|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|크로스 룸 공동 앵커를 시작 실패|
+|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|크로스 룸 공동 앵커 시작 실패|
 |ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|크로스 룸 공동 앵커 취소 실패|
 |ERR_SERVER_CENTER_CONN_ROOM_CONNED_ROOM_NOT_EXIST|-102046|공동 앵커링을 위해 연결된 방 없음|
 |ERR_SERVER_CENTER_CONN_ROOM_CONNED_REACH_MAX_ROOM|-102047|공동 앵커 룸의 최댓값에 도달|

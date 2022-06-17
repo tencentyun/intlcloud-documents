@@ -46,8 +46,8 @@
 1. 疑似ライブストリーミングを使用するには、ホットリンク防止を有効にする必要があります。[VODコンソール](https://console.cloud.tencent.com/vod)にログインして、左側ナビゲーションバーの【配信と再生の設定】>【ドメイン名管理】を選択し、ターゲットドメイン名がある行の【設定】をクリックしてください。ドメイン名関連の設定ページに入ります。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f21443e506aab6c9020d4a98575c1e7b.png)
 2. 【編集】をクリックして、Refererホットリンク防止を有効にします。
-![](https://qcloudimg.tencent-cloud.cn/raw/e4fecb5f16b4157959b86acbc9d33ee0.png)
-2. Refererホットリンク防止、Keyホットリンク防止を有効にします。
+![](https://qcloudimg.tencent-cloud.cn/raw/63d1a7a738d3031a81116bde7727024b.png)
+3. Refererホットリンク防止、Keyホットリンク防止を有効にします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f13f03767df78e476012158fb44eebd.png)
 その他の選択項目の説明については、[ホットリンク防止の設定](https://intl.cloud.tencent.com/document/product/266/14060)をご参照ください。設定が完了したら、ホットリンク防止KEYの内容を保存してください。これは以下のホットリンク防止署名の計算に使用します。
 

@@ -11,7 +11,7 @@
 
 - 同地域下（保障同一账号，且同一个 VPC 内）的云资源之间可通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 - 不同地域之间网络完全隔离，不同地域之间的云产品默认不能通过内网互通。
-- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
+- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式较为高速、稳定。
 - [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
@@ -89,7 +89,6 @@
 <td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td></tr>
 </tbody></table>	
 
-
 ### [其他国家和地区](id:InternationalArea)
 <table class="table-striped">
 <tbody>
@@ -103,8 +102,11 @@
 <td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td></tr>
 <tr>
 <td>新加坡四区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-4</td></tr>
-<td>亚太东南（雅加达）<br>ap-jakarta</td>
-<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td></tr>
+<tr>
+<td rowspan="2">亚太东南（雅加达）<br>ap-jakarta</td>
+<td >雅加达一区<br>ap-jakarta-1</td></tr>
+<tr>
+<td >雅加达二区<br>ap-jakarta-2</td></tr>
 <tr>
 <td rowspan="2">亚太东南（曼谷）<br>ap-bangkok </td>
 <td >曼谷一区（曼谷节点可用于覆盖亚太东南地区）<br>ap-bangkok-1</td></tr>
@@ -127,7 +129,7 @@
 <td>东京二区（东京节点可用于覆盖亚太东北地区）<br>ap-tokyo-2</td></tr>
 <tr>
 <td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
-<td>硅谷一区（硅谷节点可用于覆盖美国西部地区）<br>na-siliconvalley-1</td></tr>
+<td>硅谷一区（已售罄）<br>na-siliconvalley-1</td></tr>
 <tr>
 <td>硅谷二区（硅谷节点可用于覆盖美国西部地区）<br>na-siliconvalley-2</td></tr>
 <tr>

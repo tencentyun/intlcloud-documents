@@ -1,5 +1,4 @@
-## Error Codes
-### Video processing
+## Media processing
 
 | Error Code | Description |
 | -- | -- |

@@ -14,7 +14,7 @@ For more information, see [Architecture](https://intl.cloud.tencent.com/document
 
 ## Prerequisites
 - You can adjust the configuration of a TencentDB for SQL Server instance and its associated instances only when they are in normal status (Running) and are not executing any tasks.
-- Only the High-Availability Edition (SQL Server 2017 Enterprise and above) can be adjusted to the Cluster Edition.
+- Only the Dual-Server High Availability Edition (SQL Server 2017 Enterprise and above) can be adjusted to the Cluster Edition.
 
 ## Notes
 Currently, the architecture cannot be downgraded back after an upgrade.

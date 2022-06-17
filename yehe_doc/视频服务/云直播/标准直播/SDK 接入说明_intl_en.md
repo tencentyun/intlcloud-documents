@@ -1,15 +1,14 @@
-CSS provides LVB as a professional, stable, and fast cloud streaming service for common use cases. You can integrate the [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071) to apps, web, and other platforms to quickly enable live streaming.
+CSS provides LVB as a professional, stable, and fast cloud streaming service for common use cases. You can integrate the MLVB SDK to apps, web, and other platforms to quickly enable live streaming.
 
 [](id:app)
 
 ## Apps	
 You can integrate the MLVB SDK with apps on iOS or Android clients for live push and playback.
 
-- **Live push on apps**: support capturing camera or mobile phone screens and then pushing the content to the CSS platform using the RTMP protocol. For details, please see [Publishing (Camera)](https://intl.cloud.tencent.com/document/product/1071/38157) and [Publishing (Screen Recording)](https://intl.cloud.tencent.com/document/product/1071/41878).
-- **Live playback on apps**: support playback protocols including RTMP, HTTP-FLV, and HLS. You can integrate the MLVB SDK with LVB to quickly build live streaming apps. For details, please see [Playback](https://intl.cloud.tencent.com/document/product/1071/38159).
+- **Live push on apps**: support capturing camera or mobile phone screens and then pushing the content to the CSS platform using the RTMP protocol.
+- **Live playback on apps**: support playback protocols including RTMP, HTTP-FLV, and HLS. You can integrate the MLVB SDK with LVB to quickly build live streaming apps. 
 
->? The MLVB SDK uses CSS, IM, TRTC and other services for low-latency audiovisual communication for multiple parties. It offers co-anchoring for interaction between viewers, and other viewers who don’t join co-anchoring can also watch the live streaming. For details, please see [Co-anchoring](https://intl.cloud.tencent.com/document/product/1071/39888).
-
+>? The MLVB SDK uses CSS, IM, TRTC and other services for low-latency audiovisual communication for multiple parties. It offers co-anchoring for interaction between viewers, and other viewers who don’t join co-anchoring can also watch the live streaming.
 
 
 [](id:web)

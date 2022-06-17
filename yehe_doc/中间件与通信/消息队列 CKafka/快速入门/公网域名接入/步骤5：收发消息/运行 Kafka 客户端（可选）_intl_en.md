@@ -14,6 +14,7 @@ Open a terminal window and run this command:
 java -version
 :::
 </dx-codeblock>
+
 If the Java version number is output, Java installation is successful. If Java has not been installed, [download and install the JDK](https://www.oracle.com/java/technologies/downloads/).
 
 
@@ -95,11 +96,14 @@ Download and decompress the [Kafka installation file](https://archive.apache.org
   ![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
 - topic: Replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
 </dx-alert>
+
       Enter the content of the message and press Enter.
       **Producing a message:**
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/34e000095c6bd53b191d644593c466a8.png"> 
+      <img src = "https://qcloudimg.tencent-cloud.cn/raw/34e000095c6bd53b191d644593c466a8.png"> 
+
       **Consuming a message:**
-<img src = "https://qcloudimg.tencent-cloud.cn/raw/14ec265fe6ef5edd5f95c98891245637.png">  
+      <img src = "https://qcloudimg.tencent-cloud.cn/raw/14ec265fe6ef5edd5f95c98891245637.png">  
+
 3. In the message querying page of the CKafka console, query the message sent.
    ![](https://main.qcloudimg.com/raw/80db39a21f7eb35de16f37b1c8670650.png)
     The details of the message are as follows:

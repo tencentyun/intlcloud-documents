@@ -1,7 +1,7 @@
 VODは、iOSプラットフォームでビデオをアップロードするシナリオ向けに、iOSアップロードSDKを提供しています。アップロードのフローについては、[クライアントからのアップロードガイド](https://intl.cloud.tencent.com/document/product/266/33921) をご参照ください。
 
 ## ソースコードのダウンロード
-1. [クリックしてダウンロード](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_iOS.zip) して、iOSアップロードDemoとソースコードをダウンロードします。
+1. iOSアップロードDemoとソースコードを[クリックしてダウンロード](https://liteav.sdk.qcloud.com/download/ugc/LiteAVSDK_UGC_Upload_iOS.zip)します。
 2. ダウンロードした圧縮パッケージを解凍すると、TXUGCUploadDemoディレクトリが表示されます。アップロードソースコードは、`TXUGCUploadDemo/upload`ディレクトリにあります。
 
 ## アップロードライブラリとソースコードの統合
@@ -16,7 +16,7 @@ VODは、iOSプラットフォームでビデオをアップロードするシ�
     ``` 
 3. Build Settingsにおいて、Other Linker Flagsを設定し、パラメータ`-ObjC`を追加します。
 
-##  シンプルアップロード
+##  シンプルビデオアップロード
 
 #### アップロードオブジェクトの初期化
 
@@ -62,7 +62,7 @@ publishParam.videoPath  = @"ビデオファイルへのパス";
 ```
 >?
 >- アップロード方法は、ファイルのサイズに応じて、通常アップロードとマルチパートアップロードが自動的に選択されます。マルチパートアップロードの各手順を気にすることなく、マルチパートアップロードを行うことができます。
->- 指定されたサブアプリケーションにアップロードする必要がある場合は、[サブアプリケーションシステム-クライアントからのアップロード](https://intl.cloud.tencent.com/document/product/266/33987)をご参照ください。
+>- 指定のサブアプリケーションにアップロードしたい場合は、[サブアプリケーションシステム - クライアントからのアップロード](https://intl.cloud.tencent.com/document/product/266/33987)をご参照ください。
 
 ## 高度な機能
 #### カバーの付加
@@ -72,7 +72,7 @@ publishParam.videoPath  = @"ビデオファイルへのパス";
 ```objc
 TXPublishParam *publishParam = [[TXPublishParam alloc] init];
 publishParam.signature  = @"業務バックエンドで生成された署名";
-publishParam.coverPath = @"カバー画像ファイルへのパス";
+publishParam.coverPath = @「カバー画像ファイルへのパス」;
 publishParam.videoPath  = @"ビデオファイルへのパス";
 ```
 
@@ -90,9 +90,18 @@ publishParam.videoPath  = @"ビデオファイルへのパス";
 
 VODはビデオのアップロード中、中断からの再開をサポートします。アップロードが予期せず終了した場合に、中断ポイントからアップロードを再開できるため、アップロード時間を短縮できます。
 
-中断からの再開の有効時間は1日です。つまり、ビデオのアップロードが中断しても、1日以内に同じビデオを再度アップロードすると、中断したポイントからアップロードすることができます。1日を超えると、デフォルトでビデオ全体が再度アップロードされます。
+中断からの再開の有効期限は1日です。つまり同じビデオのアップロードが中断された場合、1日以内に再度アップロードすると中断ポイントからそのままアップロードできます。1日を超えるとデフォルトでは、完全なビデオを再度アップロードします。
 
 アップロードパラメータの`enableResume`は、中断からの再開のスイッチであり、デフォルトで有効になっています。
+
+#### httpsアップロードの有効化
+
+アップロードパラメータのTXPublishParamの中のenableHTTPSをtrueに設定すれば完了です。デフォルトではfalseになっています。
+
+```objectivec
+TXPublishParam *publishParam = [[TXPublishParam alloc] init];
+publishParam.enableHTTPS  = true;
+```
 
 
 ## 画像とメディアのアップロード
@@ -218,7 +227,7 @@ SDKは、`TXVideoPublishListener`インターフェースを介してビデオ�
 
 | パラメータ名         | パラメータの説明                               | タイプ        | 入力必須   |
 | ------------ | ---------------------------------- | --------- | ---- |
-| signature    | [クライアントからのアップロード署名](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33922)。 | NSString* | はい    |
+| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。 | NSString* | はい    |
 | mediaPath    | ローカル画像/メディアファイルパス。                           | NSString* | はい    |
 | fileName     | Tencent Cloudにアップロードされた画像/メディアファイル名です。空のままの場合、デフォルトでローカルファイル名が使用されます。  | NSString*  | いいえ    |
 | enableResume | 中断ポイントからの再開の有効無効を指定。デフォルトでは有効になっています。                  | BOOL      | いいえ    |

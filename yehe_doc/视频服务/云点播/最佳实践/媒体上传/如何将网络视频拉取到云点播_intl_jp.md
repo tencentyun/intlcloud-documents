@@ -33,14 +33,15 @@ VODが提供するURLからのプル機能には以下の制限があります�
 
 VODコンソールの [アップロード画面](https://console.cloud.tencent.com/vod/media/upload)にアクセスして、アップロード方式は【ビデオのプル】を選択してから【行の追加】をクリックして、プルするビデのURLに入力します（ここでは [テストビデオURL](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) を例にして、それ以外の項目はオプション です。開発者は必要に応じて入力入できます）。最後に左下隅の【ビデオのプル】をクリックします：
 
-![](https://main.qcloudimg.com/raw/3871a2c05ca1f26f62e0518cb3943309.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d22654ee0f5d490a09df93d2c8cce778.png)
 >?ビデオのプルに要する時間は、 ビデオファイルのサイズに正比例します。長時間待つことのないように、テストには小さめのビデオ（例えば数10MB以下）を選択することをお勧めします。
 <span id="p13"></span>
 ### 手順3：プル結果の表示
 
 1～2分間待つと（ビデオファイルのサイズによって異なります）、 [メディア資産管理画面](https://console.cloud.tencent.com/vod/media) でプルが完了したビデオが表示されます。
 
-![](https://main.qcloudimg.com/raw/7329a44db45f6cc11fa48ac41ae9cf7c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8d25e0d8e54b2a59b5aa190c3ced62c8.png)
+
 >?プルのプロセス中に、ブラウザがメディア資産管理画面で動かなくなった場合は、画面をリフレッシュ しない限り、プルが完了したビデオは表示されません。
 
 ## Tencent Cloud APIを呼び出してプルによるアップロード

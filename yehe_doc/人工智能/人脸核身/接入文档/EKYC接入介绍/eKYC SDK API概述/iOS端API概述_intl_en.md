@@ -85,7 +85,7 @@ Input parameters:
 
 ### LanguageType
 
-This API provides the language configuration information of the default eKYC interface.
+This field provides the language configuration information of the default eKYC interface.
 
 | LanguageType | Description             |
 | ---------------- | ---------------- |

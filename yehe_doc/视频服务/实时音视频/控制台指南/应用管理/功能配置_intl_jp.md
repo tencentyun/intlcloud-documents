@@ -7,7 +7,7 @@
 
 - UDPトランスポートプロトコルに基づくTRTCサービスは、プロトコル変換を介してオーディオストリームとビデオストリームを [CSS](https://intl.cloud.tencent.com/document/product/267)システムに接続します。このプロセスは「Relayed Push」と呼ばれます。
 - デフォルトではRelayed Push機能はオフになっています。Relayed Push機能を有効にするには、先にCSSサービスをオンにする必要があります。
-- Relayed Pushを[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)に使用する場合、CSSではRelayed live Streamingによる下りトラフィック/帯域幅に基づき、関連費用が課金されます。詳細は、[CSS>トラフィック帯域幅課金](https://intl.cloud.tencent.com/document/product/267/2818)の説明をご参照ください。
+- Relayed PushをCDN relayed live streaming に使用する場合、CSSではRelayed live Streamingによる下りトラフィック/帯域幅に基づき、関連費用が課金されます。詳細は、[CSS>トラフィック帯域幅課金](https://intl.cloud.tencent.com/document/product/267/2818)の説明をご参照ください。
 - Relayed Pushを[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426) に使用する時は、レコーディング、レコーディングファイル保存などの費用が発生します。詳細は、[クラウドレコーディングと再生>関連費用](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8)の説明をご参照ください。
 - [CSSコンソール](https://console.cloud.tencent.com/live/domainmanage)でRelayed Pushに使用されるプッシュドメイン名（`xxxx.livepush.myqcloud.com`）にレコーディング、トランスコーディング、スクリーンキャプチャ・ポルノ検出、ウォーターマークなどの課金機能のテンプレートをバインドする場合は、Relayed Push時に、テンプレートに対応する[付加価値サービス費用](https://intl.cloud.tencent.com/document/product/267/2819)が発生します。
 
@@ -103,7 +103,7 @@ TRTCのクラウドレコーディングは、ルーム内の各ユーザーの�
 - 新しいアプリケーションを作成したい場合、具体的な操作方法については、[アプリケーションの作成](https://intl.cloud.tencent.com/document/product/647/39077)をご参照ください。
 - アプリケーションリストで関連アプリケーションを検索したい場合、具体的な操作方法については、[アプリケーションの検索](https://intl.cloud.tencent.com/document/product/647/39078)をご参照ください。
 - アプリケーションの基本情報を確認する必要がある場合、操作の詳細は[アプリケーション情報](https://intl.cloud.tencent.com/document/product/647/39079)をご参照ください。
-- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。操作の詳細は[素材管理](https://intl.cloud.tencent.com/document/product/647/39081)をご参照ください。
+- Cloud MixTranscoding時にカスタマイズした背景画像を設定したい場合、素材管理で対応する画像素材を追加できます。
 - アプリケーションとセットになるDemoソースコードのクイック実行が必要な場合、具体的な操作については、[クイックマスター](https://intl.cloud.tencent.com/document/product/647/39082)をご参照ください。
 
 

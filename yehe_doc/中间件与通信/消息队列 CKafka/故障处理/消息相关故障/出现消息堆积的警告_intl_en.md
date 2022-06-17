@@ -21,7 +21,7 @@ A warning is displayed for message heap.
 
 Open-Source Kafka supports setting a timestamp field and type in a message. Currently, two timestamp types are supported: `CreateTime` and `LogAppendTime`.
 
-- `CreateTime` indicates the local time on the client. As client time may vary from server time, check whether the entered time is correct. If it differs too much from the current Beijing time, the CKafka service will not be able to delete data promptly upon expiration based on the normal message retention period, which may cause exceptional message heap.
+- `CreateTime` indicates the local time on the client. As client time may vary from server time, check whether the entered time is correct. If it differs too much from the China Standard Time, the CKafka service will not be able to delete data promptly upon expiration based on the normal message retention period, which may cause exceptional message heap.
 - `LogAppendTime` indicates the time when a message is produced to the CKafka service, which is the CKafka server time and thus recommended.
 
 

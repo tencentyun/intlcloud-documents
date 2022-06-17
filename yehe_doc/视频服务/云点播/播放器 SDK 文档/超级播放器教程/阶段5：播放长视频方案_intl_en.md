@@ -12,22 +12,22 @@ Before reading this document, make sure that you have read [Stage 1. Play back a
 ## Directions
 ### Step 1. Output adaptive bitstream and image sprite
 This step describes how to transcode a video to adaptive bitstream and output image sprite.
-1. Log in to the [VOD console](https://console.cloud.tencent.com/vod), select **Video Processing Settings** > **Template Settings** > **Adaptive Bitrate Streaming Template**, and click **Create Template**.
+1. Log in to the VOD console, select **Video Processing > Template Settings > Adaptive Bitrate Streaming**, and click **Create Template**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/e941daca088dbf5ca8a40384fc3ade7f.png)
 Create the adaptive bitstream through the template as needed. This document creates an adaptive bitrate streaming template named `testAdaptive`, which contains three substreams with a resolution of 480p, 720p, and 1080p respectively. The video bitrate, video frame rate, and audio bitrate remain the same as the original video.
 ![](https://qcloudimg.tencent-cloud.cn/raw/21ee0dba1c79bde7bea922188d8f5b28.png)
-2. Select **Video Processing Settings** > **Template Settings** > **Screencapturing Template** and click **Create Template**.
+2. Select **Video Processing** > Template Settings > Screenshot**
 ![](https://qcloudimg.tencent-cloud.cn/raw/8bac06234f924cc2d9327b6e9791157d.png)
 Create the image sprite through the template as needed. This document creates an image sprite template named `testSprite`, with a sampling interval of 5%, 10 subimage rows, and 10 subimage columns.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f62b3d05600f729baa8fbe0f7f0e98c.png)
 3. Add the adaptive bitrate streaming and image sprite templates through the task flow.
-Select **Video Processing Settings** > **Task Flow Settings** > **Create Task Flow** and click **Create Task Flow**.
+Select **Video Processing** > Task Flow Settings > **Create Task Flow**
 ![](https://qcloudimg.tencent-cloud.cn/raw/bc6e4fcd4e53b050fa5f6d59d83608c8.png)
 Add a task through the task flow as needed. To demonstrate the process of playing back adaptive bitstreams, this document creates a task flow named `testPlayVideo`, which only adds the adaptive bitrate streaming and image sprite templates.
 ![](https://qcloudimg.tencent-cloud.cn/raw/29ebf8e33157e9c342848c8f1c54ce6d.png)
-4. Select **Video Management** > **Audio/Video Management**, select the video to be processed, and click **Video Processing** > **Adaptive Bitrate Streaming** > **Select Task Flow** to start the task.
+4.Select **Media Assets > Video Management** on the left sidebar. Select the video to process, click **Process Video**, select **Task Flow**, and choose a task flow template.
 ![](https://qcloudimg.tencent-cloud.cn/raw/31392ed275f4406b73ceb2d3c866e3ad.png)
-5. At this point, you can get the processed task result in **Audio/Video Management** > **Operation** > **Manage**.
+5. You can click **Manage** in the **Operation** column to view the processing result.
 
 ### Step 2. Add video timestamps
 This step describes how to add a set of video timestamps.

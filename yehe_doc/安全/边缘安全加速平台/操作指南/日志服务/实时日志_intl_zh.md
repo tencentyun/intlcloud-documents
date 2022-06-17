@@ -9,7 +9,7 @@ EdgeOne 实时日志服务功能通过对访问日志的实时采集与推送，
 
 ## 前提条件
 目前仅支持推送实时日志到腾讯云日志服务（CLS），为在腾讯云 EdgeOne 使用 CLS，需先开通  [日志服务（CLS）](https://console.cloud.tencent.com/cls) 并授权腾讯云 EdgeOne 以创建免费的日志集。
->? 建议您使用主账号启用服务，若为子账号或协作者，请参考 [子账号或协作者开通实时日志的方法](https://intl.cloud.tencent.com/document/product/228/43581)。
+> ?建议您使用主账号启用服务，若为子账号或协作者，您需要为其授权相关权限。
 
 ## 创建推送任务
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**日志分析** > **实时日志**。
@@ -17,26 +17,22 @@ EdgeOne 实时日志服务功能通过对访问日志的实时采集与推送，
 >?目前仅支持推送实时日志到腾讯云日志服务（CLS）。
 3. 在新建推送任务页面，输入任务名称，并且选择需要推送的数据和当前站点下需要推送日志的子域名，单击**下一步**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/60ba6bd464372687072380dd530fd775.png)
-
 **参数说明：**
  - 任务名称：可输入1-200个字符，允许的字符为 `a-z, A-Z, 0-9, _, -`。
  - 数据：目前仅支持推送站点加速数据。
  - 子域名：当前站点下需要推送日志的子域名。
-
->? 所有的子域名仅支持添加在一个推送任务中。
-
+> ? 所有的子域名仅支持添加在一个推送任务中。
 4. 选择所需参数，单击**推送**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/4d42f3254c7ca7e6c6bdbf44042851a0.png)
-
 **参数说明：**
  - 目标地址：默认选择腾讯云日志服务（CLS），不可更改。
  - 地域：选择需要推送的目标地域。
  - 目标集名称：选择目标地域下的日志集。
-
->? 若此处为空或需要新建日志集，请单击**创建**，在所选地域下创建日志集。
-
+>?若此处为空或需要新建日志集，请单击**创建**，在所选地域下创建日志集。
  - 日志主题名称：可输入1-200个字符，允许的字符为 `a-z, A-Z, 0-9, _, -`。
  - 日志保存时间：请输入1-366间正整数。
+
+
 
 ## 管理推送任务
 #### 编辑推送任务
@@ -88,37 +84,32 @@ EdgeOne 以推送任务为单元进行日志检索。在 [实时日志页面](ht
 - 以日志主题为单元检索分析日志。
 - 以日志主题为单元投递日志到其他平台。
 - 从日志主题下载、消费日志。
-
 > ? 
 >- 以上信息摘自 [日志服务（CLS）](https://intl.cloud.tencent.com/document/product/614) 产品文档，请以日志服务（CLS）侧的说明为准。
 >- 每一个推送到腾讯云日志服务（CLS）的实时日志推送任务会将所选子域名的日志推送到一个对应的日志主题。
 
 ## 实时日志字段说明
 
-| 日志字段      | 原始日志类型 | 日志服务类型 | 说明                                                         |
-| ------------- | ------------ | ------------ | ------------------------------------------------------------ |
-| app_id        | Integer      | long         | 腾讯云账号 APPID                                             |
-| client_ip     | String       | text         | 客户端 IP                                                    |
-| file_size     | Integer      | long         | 文件大小                                                     |
-| hit           | String       | text         | 缓存 HIT / MISS，在腾讯云 EdgeOne 边缘节点命中、父节点命中均标记为 HIT |
-| host          | String       | text         | 域名                                                         |
-| http_code     | Integer      | long         | HTTP 状态码                                                  |
-| isp           | String       | text         | 运营商                                                       |
-| method        | String       | text         | HTTP Method                                                  |
-| param         | String       | text         | URL 携带的参数                                               |
-| proto         | String       | text         | HTTP 协议标识                                                |
-| prov          | String       | text         | 运营商省份                                                   |
-| referer       | String       | text         | Referer 信息，HTTP 来源地址                                  |
-| request_range | String       | text         | Range 参数，请求范围                                         |
-| request_time  | Integer      | long         | 响应时间（毫秒），指节点从收到请求后响应所有回包再到客户端所花费的时间 |
-| remote_port   | String       | long         | 客户端与腾讯云 EdgeOne 节点建立连接的端口，若无则为 -        |
-| rsp_size      | Integer      | long         | 返回字节数                                                   |
-| time          | Integer      | long         | 请求时间，UNIX 时间戳，单位为：秒。                          |
-| ua            | String       | text         | User-Agent 信息                                              |
-| url           | String       | text         | 请求路径                                                     |
-| uuid          | String       | text         | 请求的唯一标识                                               |
-| version       | Integer      | long         | 腾讯云 EdgeOne 实时日志版本                                  |
-
+| 日志字段               | 原始日志类型 | 说明                                                         |
+| ---------------------- | ------------ | ------------------------------------------------------------ |
+| RequestID              | string       | 客户端请求的唯一标识 ID                                      |
+| ClientIP               | string       | 客户端 IP                                                    |
+| ClientCountry          | string       | 客户端所在国家2位字母编码，符合3166-2规范                    |
+| RequestTime            | int          | 客户端请求时间，UNIX 时间戳，单位为：秒                      |
+| RequestHost            | string       | 客户端请求的 Host                                            |
+| RequestBytes           | int          | 客户端请求的大小（包含文件本身大小及请求 header 头部大小）   |
+| RequestMethod          | string       | 客户端请求的 HTTP Method                                     |
+| RequestUrl             | string       | 客户端请求的 URL                                             |
+| RequestUrlQueryString  | string       | 客户端请求的 URL 携带的查询参数                              |
+| RequestUA              | string       | 客户端请求的 User-Agent 信息                                 |
+| RequestRange           | string       | 客户端请求的 Range 参数信息                                  |
+| RequestReferer         | string       | 客户端请求的 Referer 信息                                    |
+| RequestProtocol        | string       | 客户端请求的 HTTP 协议：HTTP, HTTPS, HTTP/3                  |
+| RemotePort             | int          | TCP 协议下客户端与节点建立连接的端口，若无则为 -             |
+| EdgeCacheStatus        | string       | 客户端请求是否命中节点缓存：HIT，MISS，Dynamic               |
+| EdgeResponseStatusCode | int          | 节点响应返回给客户端的状态码                                 |
+| EdgeResponseBytes      | int          | 节点响应返回给客户端的大小                                   |
+| EdgeResponseTime       | int          | 指的是从请求端发起请求开始，到请求端接收到服务器端的返回结束，这个过程所耗费的时间 |
 
 
 ## 热点问题

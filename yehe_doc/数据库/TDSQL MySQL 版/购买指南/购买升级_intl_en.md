@@ -1,6 +1,6 @@
 ## Instance Purchase
 You can purchase instances on the [TDSQL for MySQL purchase page](https://console.cloud.tencent.com/tdsqld/tdmysql-buy). For each instance node (for example, one source and one replica are 2 nodes), you can purchase up to 8 shards at a time.
-Initialization is required for the purchased instances to run normally.
+
 
 
 ## Instance Upgrade

@@ -82,10 +82,8 @@
        "Topic" => $fullTopicName,
        // 消息内容
        "Payload" => "this is a new message.",
-       // 已授权角色名称
-       "ProducerName" => $userName,
        // 发送消息超时时间
-       "SendTimeout" => 3000A
+       "SendTimeout" => 3000
    );
    $req->fromJsonString(json_encode($params));
    
@@ -192,7 +190,7 @@
     <tbody>
     <tr>
         <td style='text-align:left;'>$messageId</td>
-        <td style='text-align:left;'>消费消息获取导的消息 ID。</td>
+        <td style='text-align:left;'>消费消息获取到的消息 ID。</td>
     </tr>
     <tr>
         <td style='text-align:left;'>$fullTopicName</td>

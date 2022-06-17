@@ -86,7 +86,7 @@
 	</tr>
 <tr><td>更新计费概述文档</td><td>游戏服务器伸缩  GSE 将继续延长公测时间（原定于2020年06月30日结束公测，现已延长），具体开始计费时间另行通知。</td>
 <td nowrap="nowrap">2020-07-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1055/37000">计费概述</a></td></tr>
+<td>计费概述</a></td></tr>
 </table>
 
 ## 2020年06月

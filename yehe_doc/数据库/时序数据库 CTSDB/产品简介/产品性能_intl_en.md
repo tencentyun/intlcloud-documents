@@ -1,6 +1,6 @@
 ## [Performance Overview](id:xngs)
 CTSDB consists of nodes. The specification and number of single nodes determine the processing capacity of the CTSDB instance. In theory:
-CTSDB instance read/write concurrency performance = ∑ (single node performance * number of nodes)
+CTSDB instance read/write concurrency performance =  (single node performance * number of nodes)
 Therefore, the higher the node specification and quantity, the higher the processing capacity of the instance. The performance of a single node is mainly subject to CPU and memory. **The specific instance performance is subject to factors such as single node configuration, number of nodes, and number of written fields.**
 The test results listed in this document are reference values under specified parameters and only for your reference. To have a better picture, please conduct tests in your real business environment.
 

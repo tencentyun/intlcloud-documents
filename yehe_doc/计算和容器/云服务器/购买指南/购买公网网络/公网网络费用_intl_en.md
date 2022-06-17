@@ -1,58 +1,75 @@
 This document describes the public network prices under different billing modes and helps you choose the billing plan that best suits your business.
-
-## Bill-by-traffic
->? Fees are pay-as-you-go on an hourly billing cycle based on the public network traffic used. Bill-by-traffic is suitable for scenarios where the peak business traffic fluctuates greatly at varying times.
-
+>? Note that the network fees mentioned in the document are only applied to general BGP IPs. For the prices of premium BGP IPs, accelerated IPs, and static single-line IPs, see [Bandwidth Package](#bwp).
+>
+## [Bill-by-Traffic](id:by-traffic)
+Fees are pay-as-you-go on an hourly billing cycle based on the public network traffic used. Bill-by-traffic is suitable for scenarios where the peak business traffic fluctuates greatly at varying times.
 **Pricing**
 <table>
 <thead>
 <tr>
-<th>Region</th>
-<th>Price (unit: USD/GB)</th>
+<th rowspan="2" width="65%">Region</th>
+<th colspan="2" style="text-align:center;">Price (USD/GB)</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Chinese mainland (not including Hong Kong, Macao, and Taiwan), Seoul, Hong Kong (China), Jakarta</td>
+<td>Chinese mainland, Singapore, Jakarta, Seoul, Tokyo, Frankfurt, and Moscow</td>
 <td>0.12</td>
 </tr>
 <tr>
-<td>Singapore</td>
-<td>0.081</td>
+<td>Hong Kong (China), São Paulo</td>
+<td>0.15 </td>
 </tr>
 <tr>
-<td>Toronto, Silicon Valley, Frankfurt</td>
-<td>0.077</td>
-</tr>
-<tr>
-<td>Moscow, Tokyo</td>
-<td>0.13</td>
-</tr>
-<tr>
-<td>Virginia</td>
+<td>Bangkok, Silicon Valley, Virginia, and Toronto</td>
 <td>0.075</td>
 </tr>
+</tr>
 <tr>
-<td>Bangkok, Mumbai</td>
-<td>0.1</td>
+<td>Mumbai</td>
+<td>0.087</td>
 </tr>
 </tbody></table>
 
 
+
 **Billing example**
-Suppose you purchase an EIP in Seoul region with the bill-by-traffic billing mode and use a total of 10 GB traffic between 07:00:00-07:59:59, then at 8:00:00, the payable fees will be: 0.12 USD/GB × 10 GB = 1.2 USD.
+Suppose you purchase an EIP in Guangzhou region in bill-by-traffic mode and use a total of 10 GB traffic between 07:00:00-07:59:59, then at 8:00:00, the payable fees will be 0.12 USD/GB * 10 GB = 1.2 USD.
 
 > ?
-> - The traffic units are 1024-based. For example, 1 TB = 1,024 GB, and 1 GB = 1,024 MB.
-> - Public network traffic refers to the downstream traffic (in bytes), which is the application-layer data. During actual data transfer, the traffic generated over the network is around 5-15% more than the application-layer traffic, so the traffic calculated by Tencent Cloud may be about 10% more than that calculated by users themselves on the server.
->  - Consumption by TCP/IP headers: in TCP/IP-based HTTP requests, each packet has a maximum size of 1,500 bytes and includes TCP and IP headers of 40 bytes, which generate traffic during transfer but cannot be counted by the application layer. The overhead of this part is around 3%.
->  - TCP retransmission: during normal data transfer over the network, around 3-10% of packets are lost on the Internet and retransmitted by the server. This type of traffic, which accounts for 3-7% of the total traffic,  cannot be counted at the application layer.
+> - The traffic units are 1024-based, which means 1 TB = 1,024 GB, and 1 GB = 1,024 MB.
+> - Public network traffic refers to the downstream (i.e., outbound) traffic in bytes. During actual data transfer, the traffic generated over the network is around 5-15% more than the application-layer traffic, so the traffic calculated on the Tencent Cloud side may be about 10% more than that calculated on the customer side.
+>  - TCP/IP headers: If TCP/IP is used, a packet has a header of 40 bytes. The traffic consumed for the headers is not counted on the application layer. The overhead of this part is around 3% of the traffic.
+>  - TCP retransmission: During normal data transfer over the network, around 3-10% of packets are lost and retransmitted. The traffic consumed for the re-transmission is not counted on the application layer. It accounts for 3-7% of the total traffic.
+> 
 
 
-## Bandwidth Package
+## [Bandwidth Package](id:bwp)
 Tencent Cloud Bandwidth Package (BWP) is a multi-IP aggregated billing method. This mode greatly saves your public network fees when your public network instances have traffic peaks at different times.
-For detailed pricing, please see [Billing Modes](https://intl.cloud.tencent.com/document/product/684/15255).
+Different IP line types correspond to different BWP types and fees as shown below:
+<table>
+<thead>
+<tr>
+<th>IP Line Type</th>
+<th>BWP Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>General BGP IP</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/684/15254">BGP bandwidth package</a></td>
+</tr>
+<tr>
+<td>Premium BGP IP</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/684/15254">Premium BGP bandwidth package</a></td>
+</tr>
+<tr>
+<td>Accelerated IP</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/684/15254">AIA BGP bandwidth package</a></td>
+</tr>
+<tr>
+<td>Static single-line IP</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/684/15254">Non-BGP bandwidth package</a></td>
+</tr>
+</tbody></table>
 
-
-## Reference
-- [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578)
+## References
 - [Public Network Bandwidth Cap](https://intl.cloud.tencent.com/document/product/213/12523)

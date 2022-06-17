@@ -13,7 +13,7 @@ If you need to use voice chat and voice message services at the same time, **you
 
 ### API call flowchart
 
-![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/20564e5a251c6a53a06fa2b660a93061.png)
 
 ### Directions
 
@@ -434,7 +434,7 @@ context->EnterRoom(roomID, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen
 
 ### Callback for room entry
 
-After the user enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` will be sent and identified in the `OnEvent` function for callback and processing. A successful callback means that the room entry is successful, and the billing starts. It will be free of charge if the total call duration of the day is less than 700 minutes.
+After the user enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` will be sent and identified in the `OnEvent` function for callback and processing. A successful callback means that the room entry is successful, and the billing starts.
 
 <dx-fold-block title="Billing references">
 [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/36276)

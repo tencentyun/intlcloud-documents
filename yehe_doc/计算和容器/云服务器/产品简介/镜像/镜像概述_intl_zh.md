@@ -23,12 +23,11 @@
 </ul>
 </td>
 </tr>
-<tr>
 <td>自定义镜像</td>
 <td>
 计费包含以下两部分：
 <ul style="margin:0px">
-<li>快照费用：由于镜像底层使用了云硬盘快照服务，保留自定义镜像会产生一定的快照费用。国内地域提供80GB的 <a href="https://intl.cloud.tencent.com/document/product/362/32415">赠送额度</a>，超额后将按容量计费，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/362/32415">快照计费概述</a>。</li>
+<li>快照费用：由于镜像底层使用了云硬盘快照服务，保留自定义镜像会产生一定的快照费用。详情请参见 <a href="https://intl.cloud.tencent.com/document/product/362/32415">快照计费概述</a>。</li>
 <li>镜像费用：若自定义镜像的最终来源为付费镜像，且您使用了该自定义镜像，则需要收取镜像费用。</li>
 </ul>
 </td>
@@ -38,6 +37,7 @@
 <td>共享镜像是将创建好的自定义镜像分享给其他腾讯云账户的镜像。若该镜像最终来源为付费镜像且使用了该共享镜像，则收取镜像费用。</td>
 </tr>
 </table>
+
 
 
 ## 镜像应用

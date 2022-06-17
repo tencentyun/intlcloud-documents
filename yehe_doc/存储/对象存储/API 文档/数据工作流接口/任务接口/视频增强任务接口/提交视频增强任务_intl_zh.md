@@ -197,7 +197,7 @@ Container 节点 Operation 的内容：
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | 任务的模板 ID |  String |
 | Output | Response.JobsDetail.Operation | 文件的输出地址 |  Container |
-| DigitalWatermark   | Request.Operation | 指定数字水印参数                                 | Container | 否  |
+| DigitalWatermark   | Request.Operation | 指定数字水印参数                                 | Container | 
 | MediaInfo | Response.JobsDetail.Operation | 转码输出视频的信息，没有时不返回 |  Container |
 
 Container 节点 Output 的内容：

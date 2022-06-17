@@ -10,7 +10,8 @@
     ![](https://qcloudimg.tencent-cloud.cn/raw/fb2c3a34e7502234600b93cfff7900b6.png)
 >!
 >- Bucket name은 test로 하며, `-130****592`은 포함하지 않습니다   
->- 위 정보는 모두 실제 비즈니스 니즈에 따라 설정할 수 있습니다.
+>- 상기 정보는 모두 실제 비즈니스 니즈에 따라 설정할 수 있습니다.
+
 5. 비즈니스 니즈에 따라 COS bucket의 CDN 가속을 활성화하고 기존 생성된 버킷 이름 혹은 **설정 관리**를 클릭합니다. 왼쪽의 **도메인 및 전송 관리**> **기본 CDN 가속 도메인**을 클릭한 후, **기본 CDN 가속 도메인** 설정 항목 중 **편집**을 클릭하고 현재 상태를 활성화로 설정한 뒤, 아래 옵션을 설정합니다. 자세한 설정 방법은 [기본 가속 도메인 이름 사용](https://intl.cloud.tencent.com/document/product/436/31505)을 참고하십시오. 설정 완료 후 **저장**을 클릭하면 CDN 가속이 활성화됩니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/dc7a8ff49c0832d2322d03a0714d2f76.png)
 
@@ -18,7 +19,7 @@
 
 ### CSS의 화면 캡처 저장 권한 부여
 
-1. 루트 계정(ID: `3508645126`)에 화면 캡처 저장을 위한 쓰기 권한을 부여합니다.
+1. CSS 루트 계정(ID: `3508645126`)에 COS 버킷에 대한 **쓰기 액세스** 권한을 부여하고, 음란물 감지에 대한 **데이터 읽기** 권한을 활성화합니다.
 
   1. 버킷의 **[버킷 리스트](https://console.cloud.tencent.com/cos5/bucket)**에서 권한을 받은 버킷을 선택하고 오른쪽의 **설정 관리**를 클릭하여 해당 버킷 설정 관리 인터페이스로 이동한 뒤 **권한 관리**> **[버킷 액세스 권한](https://console.cloud.tencent.com/cos5/bucket/setting?type=aclconfig&anchorType=accessPermission&bucketName=text-1258968577&projectId=&path=%2F®ion=ap-guangzhou)**을 선택해 사용자를 추가합니다. 사용자 유형은 루트 계정으로 선택하고 **루트 계정 ID: `3508645126`을 입력합니다**. **저장**을 클릭합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f31e4a9251f1c959954b958b284bfb44.png)
@@ -29,11 +30,10 @@
 >!**권한을 부여하려면 ID: `3508645126`을 입력하십시오. 이 ID는 CSS의 APPID이기도 합니다**.
 
    2. 버킷 액세스 권한 설정 API는 [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737)을 참고하십시오.
-
-2. 권한을 받은 COS Bucket 정보 가져옵니다.
+2. 권한을 받은 COS Bucket 정보를 가져옵니다.
    1. 버킷의 **[개요](https://console.cloud.tencent.com/cos5/bucket/setting?type=bucketoverview&bucketName=text-1258968577&projectId=&path=%252F&region=ap-guangzhou)**에서 COS의 모든 정보를 조회할 수 있습니다. 액세스 도메인(원본 서버 도메인)에는 bucket name과 cos appid, bucket region이 포함되어 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/2b1fa50e6551966b3a7fe946f59d6260.png)
     - bucket name: `test`
     - cos appid: `130****592`
     - bucket region：`eu-moscow`
-   2. 위 3개 필드 정보를 제출하면 시스템에서 라이브 방송 화면 캡처 데이터를 권한을 받은 COS Bucket에 저장합니다.
+   2. 상기 3개 필드 정보를 제출하면 시스템이 라이브 방송 화면 캡처 데이터를 권한을 받은 COS Bucket에 저장합니다.
