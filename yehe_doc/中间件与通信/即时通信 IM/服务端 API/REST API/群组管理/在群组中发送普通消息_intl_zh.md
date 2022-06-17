@@ -285,7 +285,8 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
     "ErrorInfo": "",
     "ErrorCode": 0,
     "MsgTime": 1497249503,
-    "MsgSeq": 1
+    "MsgSeq": 1,
+    "MsgDropReason" : "MsgFreqCtrl"
 }
 ```
 
