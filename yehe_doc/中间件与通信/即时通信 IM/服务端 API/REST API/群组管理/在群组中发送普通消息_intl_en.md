@@ -286,7 +286,8 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
     "ErrorInfo": "",
     "ErrorCode": 0,
     "MsgTime": 1497249503,
-    "MsgSeq": 1
+    "MsgSeq": 1,
+    "MsgDropReason" : "MsgFreqCtrl"
 }
 ```
 
