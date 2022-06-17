@@ -53,9 +53,10 @@ int GetFetcherStatus()
  2. Input parameters description
 -
  3. Returned value
-    - 0: initial status. An instance will be in this status after it is created. During fetcher initialization, this status will remain unchanged. If an error occurs, -1 will be returned. If the execution succeeds, 1 will be returned.
-    - -1: an exception occurs.
-    - 1: normal operation.
+     0: initial status. An instance will be in this status after it is created. During fetcher initialization, this status will remain unchanged. If an error occurs, -1 will be returned. If the execution succeeds, 1 will be returned.
+    -1: an exception occurs.
+     1: normal operation.
+
 - **FetchThreadHandler**
  1. Function description
 This function is used to obtain the TOA additional thread handler.
@@ -131,7 +132,7 @@ void GetToa(SOCKADDR_IN client_addr, ToaFetcher * toa_fetcher_ptr)
 ## Go Version
 TOA obtaining program obtains the real IP address from toa_win.exe through UDP communication.
 ### Protocol format
-- ** Request:** `| ID（4Bytes）|  FakeIPAddress（4Bytes）| FakePort（2Bytes）|`
+- **Request:** `| ID（4Bytes）|  FakeIPAddress（4Bytes）| FakePort（2Bytes）|`
  **The fields are described as follows:**
  - ID: The unique ID of the request and will be returned as it is in the response. It contains 4 bytes of data.
  - FakeIPAddrss: The fake IP address of the client stored in the network byte order and can be obtained from the opposite address returned by the `accept` function of the server. It contains 4 bytes of data.
