@@ -227,7 +227,7 @@ SDK는 `TXVideoPublishListener` API를 통해 비디오 업로드 상태를 수�
 
 | 매개변수 이름       | 매개변수 설명                              | 유형       | 필수 입력 |
 | ------------ | ---------------------------------- | --------- | ---- |
-| signature    | [클라이언트 업로드 서명](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33922). | NSString* | Yes    |
+| signature    | [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922). | NSString* | Yes    |
 | mediaPath    | 로컬 이미지/미디어 파일 경로.                           | NSString* | Yes    |
 | fileName     | Tencent Cloud에 업로드된 이미지/미디어 파일 이름. 이 매개변수를 비워두면 기본적으로 로컬 파일 이름이 사용됩니다.  | NSString*  | No    |
 | enableResume | 체크포인트 재시작 활성화 여부. 기본 값: 활성화.                  | BOOL      | No    |
