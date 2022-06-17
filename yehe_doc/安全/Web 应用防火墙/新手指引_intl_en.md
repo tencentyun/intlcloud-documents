@@ -1,61 +1,62 @@
 This document describes how to get started with Web Application Firewall (WAF).
-## 1. WAF Basic Knowledge
-- [Overview - Key features](https://intl.cloud.tencent.com/document/product/627/17470)
-- [Overview - Why do we need WAF?](https://intl.cloud.tencent.com/document/product/627/17470#.E4.B8.BA.E4.BD.95.E9.9C.80.E8.A6.81-web-.E5.BA.94.E7.94.A8.E9.98.B2.E7.81.AB.E5.A2.99)
-- [Scenarios](https://intl.cloud.tencent.com/document/product/627/13514)
-- [Product Category](https://intl.cloud.tencent.com/document/product/627/34717)
-- [Supported Regions](https://intl.cloud.tencent.com/document/product/627/38085)
+## 1. Basic Knowledge of WAF
+- [What features does WAF have?](https://intl.cloud.tencent.com/document/product/627/17470)
+- [Why WAF?](https://intl.cloud.tencent.com/document/product/627/17470#.E4.B8.BA.E4.BD.95.E9.9C.80.E8.A6.81-web-.E5.BA.94.E7.94.A8.E9.98.B2.E7.81.AB.E5.A2.99)
+- [What use cases does WAF support?](https://intl.cloud.tencent.com/document/product/627/13514)
+- [How to select a WAF edition?](https://intl.cloud.tencent.com/document/product/627/34717)
+- [In which regions is WAF supported?](https://intl.cloud.tencent.com/document/product/627/38085)
 -----
 
-## 2. WAF Billing Modes
-Tencent Cloud WAF offers **SaaS WAF** and **CLB WAF** services. The two types have basically the same billable items, billing modes, and pricing. For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/zh/document/product/627/11730).
-You can choose the WAF service based on your business connection method.
+## 2. WAF Billing Mode
+WAF is available as **SaaS WAF** and **CLB WAF** instances with the same billable items, billing modes, and prices. Both of them support the monthly subscription (prepaid) billing mode. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/627/47409).
+You can purchase different types of WAF instances according to your connection method. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/627/11730).
 
 -----
 ## 3. Getting Started
-#### 3.1 Knowing about WAF features
-Tencent Cloud WAF offers **SaaS WAF** and **CLB WAF** services, which have different main features. For more information, please see [Product Category](https://intl.cloud.tencent.com/document/product/627/34717).
+#### 3.1 WAF features
+WAF is available as **SaaS WAF** and **CLB WAF** instances with different features. For more information, see [Product Category](https://intl.cloud.tencent.com/document/product/627/34717).
 
-#### 3.2 Purchasing WAF
-You can purchase the service in the [WAF purchase page](https://buy.cloud.tencent.com/buy/waf).
+#### 3.2 WAF purchase
+WAF supports the monthly subscription (prepaid) billing mode. You can purchase an instance on the [WAF purchase page](https://intl.cloud.tencent.com/pricing/waf) as instructed in [Purchase Guide](https://intl.cloud.tencent.com/document/product/627/11730).
 
-#### 3.3 Connecting WAF
-Tencent Cloud **SaaS WAF** and **CLB WAF** are different in connecting domain names. For more information, please see [Getting Started](https://intl.cloud.tencent.com/document/product/627/18635).
+#### 3.3 Connection to WAF
+WAF is available as **SaaS WAF** and **CLB WAF** instances with different domain name connection modes. For more information, see [Getting Started](https://intl.cloud.tencent.com/document/product/627/18635).
 
 
 #### 3.4 Practices
-WAF can be applied in certain scenarios together with other Tencent Cloud products for your business security protection.
-- [Using WAF and Anti-DDoS Pro Together](https://intl.cloud.tencent.com/zh/document/product/627/34723)
-- [WAF Security Protection for API Gateway](https://intl.cloud.tencent.com/document/product/627/38375)
-- [Applying for and Using Free HTTPS Certificates](https://intl.cloud.tencent.com/document/product/627/34724)
+WAF is applicable to certain use cases and can be used together with other Tencent Cloud services for security protection:
+- [Use WAF and Anti-DDoS Pro together](https://intl.cloud.tencent.com/document/product/627/34723)
+- [Use WAF and API Gateway together for security protection](https://intl.cloud.tencent.com/document/product/627/38375)
+- [Apply for and use free HTTPS certificates](https://intl.cloud.tencent.com/document/product/627/34724)
+- [Get real client IPs](https://intl.cloud.tencent.com/document/product/627/47410)
 
 -----
 ## 4. Overview of Console Features
 
-| Feature | Reference |
+| To | Read |
 |---------|---------|
-|Check access logs of WAF protection domain names | [Access Log](https://intl.cloud.tencent.com/document/product/627/35648) |
-|Query web attack logs with filters and download results |[Attack Log](https://intl.cloud.tencent.com/document/product/627/35649) |
-|Enable smart mode CC protection or CC rules settings |[CC Protection Settings](https://intl.cloud.tencent.com/document/product/627/11709)|
-|Prevent abnormal displaying caused by page tampering |[Tamper Protection](https://intl.cloud.tencent.com/document/product/627/11710)|
-|Customize policies directly targeting various attacks |[Custom Rules](https://intl.cloud.tencent.com/document/product/627/11711)|
-|Replace sensitive information returned in web pages to prevent information leak |[Leak Protection](https://intl.cloud.tencent.com/document/product/627/14582)|
-|Block accesses from regions in or outside the Chinese mainland |[Region Blocking](https://intl.cloud.tencent.com/document/product/627/14704)|
-|Distinguish between friendly and malicious bot programs and apply different traffic management policies accordingly | [Bot Overview](https://intl.cloud.tencent.com/document/product/627/15340)|
-|Detect and capture known and unknown web threats |[AI Engine](https://intl.cloud.tencent.com/document/product/627/35645)|
-|Query the status of, and set allowlist/blocklist for the source IPs accessed WAF protection domain names |[IP Management](https://intl.cloud.tencent.com/document/product/627/35646)|
+|View the access log information of WAF-protected domain names | [Access Log](https://intl.cloud.tencent.com/document/product/627/35648) |
+|Query web attack log information by filter and download the result |[Attack Logs](https://intl.cloud.tencent.com/document/product/627/35649) |
+|Enable emergency CC protection or customize CC protection policies |[CC Protection Rules](https://intl.cloud.tencent.com/document/product/627/11709)|
+|Prevent abnormal display caused by specific page tampering |[Tamper Protection](https://intl.cloud.tencent.com/document/product/627/11710)|
+|Combine custom policies into targeted rules to block various types of attacks |[Custom Rules](https://intl.cloud.tencent.com/document/product/627/11711)|
+|Replace the sensitive information returned by webpages to prevent information leakage |[Leak Protection](https://intl.cloud.tencent.com/document/product/627/14582)|
+|Add regions to the blocklist to block all access sources in such regions |[Region Blocking](https://intl.cloud.tencent.com/document/product/627/14704)|
+|Differentiate between friendly and malicious bots and take targeted traffic management policies | [Bot Overview](https://intl.cloud.tencent.com/document/product/627/15340)|
+|Query the statuses of access source IPs that go through WAF-protected domain names and set a blocklist |[IP Management](https://intl.cloud.tencent.com/document/product/627/35646)|
 
 ----------------
 ## 5. FAQs
-[Can non-Tencent Cloud servers use Web Application Firewall (WAF)?](https://intl.cloud.tencent.com/document/product/627/11731)
-[Does WAF support HTTPS protection?](https://intl.cloud.tencent.com/document/product/627/11731#waf-.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81-https-.E9.98.B2.E6.8A.A4.EF.BC.9F)
-[Can the real server IP added to WAF be a private IP in Tencent Cloud CVM?](https://intl.cloud.tencent.com/document/product/627/11731#waf-.E7.9A.84.E6.BA.90.E7.AB.99-ip-.E5.8F.AF.E4.BB.A5.E5.A1.AB.E5.86.99.E8.85.BE.E8.AE.AF.E4.BA.91-cvm-.E5.86.85.E7.BD.91-ip-.E5.90.97.EF.BC.9F)
+[Is WAF available to servers outside Tencent Cloud?](https://intl.cloud.tencent.com/document/product/627/11731)
+[Does WAF support HTTPS protection?](https://intl.cloud.tencent.com/document/product/627/11731)
+[Can the real server IP added to WAF be the private IP of a Tencent Cloud CVM instance?](https://intl.cloud.tencent.com/document/product/627/42212)
+[Which ports does WAF support?](https://intl.cloud.tencent.com/document/product/627/47411)
 [How do I connect a domain name?](https://intl.cloud.tencent.com/document/product/627/35778)
-[Does WAF support connecting wildcard domain names?](https://intl.cloud.tencent.com/document/product/627/35778#waf.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81.E6.B3.9B.E5.9F.9F.E5.90.8D.E6.8E.A5.E5.85.A5.EF.BC.9F)
+[Does WAF support connecting wildcard domain names?](https://intl.cloud.tencent.com/document/product/627/35778)
 
 --------
 
-## 6. Feedback and Suggestion
-If you have any doubts or suggestions when using Tencent Cloud WAF, you can submit your feedback through the following channels. Dedicated personnel will contact you to solve your problems.
-- To report product documentation issues such as link, content, or API errors, you can click **Send Feedback** at the bottom of the document.
-- For product issues, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&step=1) for assistance.
+## 6. Feedback and Suggestions
+If you have any questions or suggestions about WAF, you can send your feedback through the following channels, and we will get back to you accordingly:
+- To report a problem with the product documentation, such as incorrect content, broken links, or API errors, click **Send Feedback** at the bottom of the page.
+- If you encounter any problems while using the product, [contact us](https://intl.cloud.tencent.com/contact-us) for assistance.

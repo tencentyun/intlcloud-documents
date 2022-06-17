@@ -16,11 +16,11 @@ After you add a protected domain name and set the origin-pull information on WAF
 ## CLB WAF
 By configuring a domain name, WAF can be connected to a layer-7 CLB (listener) cluster to detect threats in HTTP/HTTPS traffic passing through CLB and cleanse malicious traffic so as to separate business request forwarding from security protection, which minimizes the affect of security protection on your website business and thus ensures stable website operation.
 ![](https://main.qcloudimg.com/raw/1a31c507e5a508f15a48171e95252fc4.jpg)
-CLB WAF provides two traffic processing modes:
 
-- **Mirror mode**: associated with WAF through a domain name, CLB mirrors traffic to the WAF cluster, which performs bypass detection and alarming but does not return the request credibility status.
+CLB WAF provides two traffic processing modes:
+ - **Mirror mode**: Associated with WAF through a domain name, CLB mirrors traffic to the WAF cluster, which performs bypass detection and alarming but does not return the request credibility status.
 ![](https://main.qcloudimg.com/raw/8c083a87ee4836b0efb6f8c6d296db31.png)
-- **Cleansing mode**: associated with WAF through a domain name, CLB mirrors traffic to the WAF cluster, which performs bypass detection and alarming and synchronizes the request credibility status. Then, the CLB cluster will block or allow the requests based on their status.
+ - **Cleansing mode**: Associated with WAF through a domain name, CLB mirrors traffic to the WAF cluster, which performs bypass detection and alarming and synchronizes the request credibility status. Then, the CLB cluster will block or allow the requests based on their status.
 ![](https://main.qcloudimg.com/raw/215014fde2b779c8ba4427f61de20cb2.png)
 
 
