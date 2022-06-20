@@ -90,10 +90,10 @@
 -   [直播录制后，如何获取录制文件？](https://intl.cloud.tencent.com/document/product/1071/39695) 
 -   [移动直播 License 是必须购买的吗？](https://intl.cloud.tencent.com/document/product/1071/39476) 
 -   [购买移动直播 License 可以用于小程序直播吗？](https://intl.cloud.tencent.com/document/product/1071/39476) 
--   [如何降低直播延迟？](https://cloud.tencent.com/document/product/454/7947) 
+-   [如何降低直播延迟？](https://intl.cloud.tencent.com/document/product/1071/41886) 
 -   [推流失败怎么办？](https://intl.cloud.tencent.com/document/product/1071/39360) 
 -   [播放失败怎么办？](https://intl.cloud.tencent.com/document/product/1071/39361) 
--   [如何优化视频卡顿？](https://cloud.tencent.com/document/product/454/7946) 
+-   [如何优化视频卡顿？](https://intl.cloud.tencent.com/document/product/1071/39362) 
 -   [如何生成 UserSig 签名？](https://intl.cloud.tencent.com/document/product/1071/39471) 
 
 > ? 更多问题，请您前往 [常见问题](https://intl.cloud.tencent.com/document/product/1071/39477) 文档查看。
