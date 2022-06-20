@@ -11,6 +11,7 @@ This API is used by the app admin to query detailed group information based on t
 | Public group | Yes |
 | ChatRoom | Yes. Same as Meeting (temporary meeting group) in the new version. |
 | AVChatRoom | Yes. |
+|Community | Yes.  |
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
