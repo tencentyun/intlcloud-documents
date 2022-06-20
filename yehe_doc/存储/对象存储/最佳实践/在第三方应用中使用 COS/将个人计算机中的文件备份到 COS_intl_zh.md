@@ -8,7 +8,7 @@
 
 综上所述，那么有没有简单的办法可以保证文件的安全呢？答案是肯定的。
 
-随着云服务的发展，我们有可靠的企业级云存储服务，腾讯云 COS 对象存储就是这样一类服务；随着国家提速降费的号召，宽带越来越快，而且越来越便宜，让我们将文件备份上云成为现实。接下来，我们就需要一款软件，打通计算机中的文件和云存储，将我们的文件定期自动备份到云上，并定期验证备份文件的准确性。
+随着云服务的发展，我们有可靠的企业级云存储服务，腾讯云对象存储（Cloud Object Storage，COS）就是这样一类服务；随着国家提速降费的号召，宽带越来越快，而且越来越便宜，让我们将文件备份上云成为现实。接下来，我们就需要一款软件，打通计算机中的文件和云存储，将我们的文件定期自动备份到云上，并定期验证备份文件的准确性。
 
 ## 软件介绍
 
@@ -16,11 +16,11 @@
 
 Arq® Backup 商业授权为49.99美元每个用户，用户购买后可以在单台计算机上使用，同时软件提供30天免费使用，可以试用后再购买。
 
-> ?Arq® Backup 软件目前暂时没有简体中文版，软件的下载、购买和相关说明均可在该软件 [官方网站](https://www.arqbackup.com/) 内查看。
+>? Arq® Backup 软件目前暂时没有简体中文版，软件的下载、购买和相关说明均可在该软件 [官方网站](https://www.arqbackup.com/) 内查看。
 
 ## 准备腾讯云对象存储
 
-> ?若您目前已经在使用 COS，请忽略1 - 2步骤。
+>? 若您目前已经在使用 COS，请忽略1 - 2步骤。
 
 1. [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的资源。
 2. 登录 [对象存储 COS 控制台](https://console.cloud.tencent.com/cos5)，按照提示开通 COS。
@@ -29,13 +29,13 @@ Arq® Backup 商业授权为49.99美元每个用户，用户购买后可以在�
 	- 所属地域：可以根据您所在地就近选择，但是请不要选择金融地域，目前我们对于西南地区有价格上的优惠，因此也可以选择“成都”或“重庆”享受更优惠的价格。
     ![](https://main.qcloudimg.com/raw/d9caa38d7216c4270ff2a0fc096405fa.png)
   其他配置项保持默认，将**请求域名**地址复制保存，然后单击**确定**完成创建。
-> ?创建存储桶的详细步骤，请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
+>?创建存储桶的详细步骤，请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
 4. 登录 [ API 密钥管理控制台](https://console.cloud.tencent.com/cam/capi) ，创建并记录密钥信息 SecretId 和 SecretKey。
    ![](https://main.qcloudimg.com/raw/5a78bab4cb211503b5c3ff54e5551eb3.png)
 
 ## 安装并配置 Arq® Backup
 
-> ?本文以 Windows 的 Arq® Backup 6.2.11版本为例。
+>?本文以 Windows 的 Arq® Backup 6.2.11版本为例。
 
 1. 从 [Arq® Backup 官网](https://www.arqbackup.com/) 下载软件。
 2. 按提示完成软件安装，安装完成后软件会自动启动，首次启动时会提示登录，此时输入邮箱地址并单击 **Start Trial**。
@@ -66,17 +66,17 @@ Arq® Backup 商业授权为49.99美元每个用户，用户购买后可以在�
 
 ## 从备份中恢复文件
 
-1. 在主界面左侧 **Backup**列表中，单击 **Restore**。
+1. 在主界面左侧 **Backup** 列表中，单击 **Restore**。
    ![](https://main.qcloudimg.com/raw/844349292e7fd2d89441fe37c789349e.png)
 2. 如果按照上面第9步设置了加密备份数据，则需要输入密码。
    ![](https://main.qcloudimg.com/raw/41360bd0dbaa4b131a42d56d43d1eae5.png)
-3. 选择要恢复的目录或文件，以及保存恢复目录或文件的位置，单击 **Restore**开始恢复。
+3. 选择要恢复的目录或文件，以及保存恢复目录或文件的位置，单击 **Restore** 开始恢复。
    ![](https://main.qcloudimg.com/raw/513d4c1f317834a55d7ad1f1f93a3d80.png)
-4. 恢复操作默认是从最新的备份中恢复，如果有需要，可以从快照中找到历史版本的备份，并从历史版本的备份中恢复。单击 **Snapshots**查看历史快照。
+4. 恢复操作默认是从最新的备份中恢复，如果有需要，可以从快照中找到历史版本的备份，并从历史版本的备份中恢复。单击 **Snapshots** 查看历史快照。
    ![](https://main.qcloudimg.com/raw/6c37ee6a7450dbf8ad1a7198b43ec247.png)
 5. 选择历史快照。
    ![](https://main.qcloudimg.com/raw/b1e02efe3b3e018a8cadd1a1203a6efa.png)
-6. 选择要恢复的历史目录或文件，以及保存恢复目录或文件的位置，单击 **Restore**开始恢复。 
+6. 选择要恢复的历史目录或文件，以及保存恢复目录或文件的位置，单击 **Restore** 开始恢复。 
 7. 等待界面提示恢复完成，即可到刚才指定的目录中查看恢复的文件。
 
 
