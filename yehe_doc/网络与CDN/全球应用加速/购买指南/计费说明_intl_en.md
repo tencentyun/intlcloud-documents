@@ -1,14 +1,16 @@
-The service fee of GAAP consists of basic items and value-added items. For the billing information of other Tencent Cloud services, refer to related documentation or [contact us](https://intl.cloud.tencent.com/document/product/608/42346).
+The service fee of GAAP consists of basic items and value-added items. (For the billing information of other Tencent Cloud services, refer to related documentation or [contact us](https://intl.cloud.tencent.com/document/product/608/42346).
 
 >? The fees of GAAP service in all Chinese mainland regions are collectively billed in Guangzhou. For regions outside the Chinese mainland, the fees are billed collectively in Singapore.
 
 ## Basic Billable Items
+
 The following table lists the basic billable items and payment modes:
 
 |Item | Payment Mode |
 |--|--|
 |Connection fee| Pay-as-you-go daily |
 |Bandwidth fee| Pay-as-you-go daily|
+
 
 ### Connection fee
 
@@ -59,7 +61,7 @@ The connection fee refers to the cost of resources (server, IP, etc.) used to cr
 <td>19.2</td>
 <td>25.6</td>
 <td>64</td>
-<td>64,512</td>
+<td>102.4</td>
 <td>128</td>
 </tr>
 <tr>
@@ -206,7 +208,7 @@ The connection fee refers to the cost of resources (server, IP, etc.) used to cr
 
 
 #### Calculation and deduction
-- The connection fee generated between 00:00:00-23:59:59 (UTC+8) of a day is billed before 18:00 on the following day (UTC+8).
+- The connection fee generated between 00:00:00-23:59:59 of a day is billed before 18:00 on the following day.
 - The connection fee is incurred whenever you create a connection, including creating new ones and re-creating old ones. 
 - The connection specification can be changed once per day. The connection fee of the day is calculated according to the last modified specification.
 >? When a connection is disabled, the bandwidth fee stops. But the connection fee continues. You need to delete the connection to stop the incurring of connection fee.
@@ -234,11 +236,11 @@ The bandwidth fee refers to the cost of bandwidth consumed by acceleration conne
 
 #### Calculation and deduction
 
-- The bandwidth fee generated between 00:00:00-23:59:59 (UTC+8) of a day is billed before 18:00 on the following day (UTC+8).
-- The inbound and outbound bandwidth of the connection is collected every one minute. The highest value among all the collected samples is the billable bandwidth.
+- The bandwidth fee generated between 00:00:00-23:59:59 of a day is billed before 18:00 on the following day.
+- The inbound and outbound bandwidth of the connection is collected every one minute. The highest value among all the collected samples is the billable bandwidth. If the highest value exceeds the connection’s bandwidth cap, the bandwidth cap will be billed instead.
 
 #### Billing example
-Assume that a user creates a Beijing-Singapore acceleration connection on January 1, adjusts the connection specification, and deletes it at 18:00 on January 4. The bandwidth fee is calculated as follows:
+Assume that a user creates a Beijing-Singapore acceleration connection on January 1, adjusts the connection specification (to one with 500 Mbps bandwidth and 100K concurrent connections), and deletes it at 18:00 on January 4. The bandwidth fee is calculated as follows:
 
 | **Date** | **Resource ID**    | **Peak Bandwidth (Mbps)** | **Formula** | **Bandwidth Fee (USD)** |
 |--|--|--|--|--|
@@ -247,14 +249,14 @@ Assume that a user creates a Beijing-Singapore acceleration connection on Januar
 | Jan 3, 2021 | link-0tisfskk | 158                  | =158×11.11   | 1,755.38           |
 | Jan 4, 2021 | link-0tisfskk | 150                  | =500×9.52    | 4,760              |
 
-###  
-
 
 ## Value-added Billable Item
 
 The dedicated BGP network fee is incurred if you have used dedicated BGP network (Hong Kong) for GAAP acceleration.
 
-Dedicated BGP network fee = Daily peak bandwidth × List price (3 USD/Mbps/day)
+List price: 3 USD/Mbps/day
+
+**Total fees = Bandwidth usage × 3 (list price)**
 
 #### Billing example
 Assume that a user creates a Hong Kong-Singapore connection over the dedicated BGP network on January 1 and deletes it on January 4. The fee is calculated as follows:
