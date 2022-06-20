@@ -12,21 +12,32 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>中国大陆地区（不含港澳台地区）、新加坡、雅加达、首尔、东京、法兰克福、莫斯科</td>
+<td>中国大陆地区（不含港澳台地区）、中国香港、雅加达、首尔</td>
 <td>0.12</td>
 </tr>
 <tr>
-<td>中国香港、圣保罗</td>
+<td>东京、莫斯科</td>
+<td>0.13</td>
+</tr>
+<tr>
+<td>新加坡</td>
+<td>0.081</td>
+</tr>
+<tr>
+<td>圣保罗</td>
 <td>0.15 </td>
 </tr>
 <tr>
-<td>曼谷、硅谷、弗吉尼亚、多伦多</td>
-<td>0.075</td>
-</tr>
+<td>法兰克福、硅谷、多伦多</td>
+<td>0.077</td>
 </tr>
 <tr>
-<td>孟买</td>
-<td>0.087</td>
+<td>孟买、曼谷</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>弗吉尼亚</td>
+<td>0.075</td>
 </tr>
 </tbody></table>
 
@@ -64,10 +75,6 @@
 <tr>
 <td>加速 IP</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/684/15254">Anycast 加速 BGP 带宽包</a></td>
-</tr>
-<tr>
-<td>静态单线 IP</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/684/15254">移动/联通/电信带宽包</a></td>
 </tr>
 </tbody></table>
 
