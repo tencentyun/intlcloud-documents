@@ -43,7 +43,7 @@ videoapi-sgp.im.qcloud.com
 ```
 
 ### How do I configure proxies for clients to access the TRTC SDK for web from a private network?
-You can use the Nginx + Coturn scheme. For detailed directions, see [Proxy Configuration for Corporate Private Networks](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-34-advanced-proxy.html).
+You can use the Nginx + Coturn scheme. For detailed directions, see [Proxy Configuration for Corporate Private Networks](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-34-advanced-proxy.html).
 
 | Solution | Application Scenario                             | Network Requirements                          |
 | :----- | :----------------------------------- | :-------------------------------- |
