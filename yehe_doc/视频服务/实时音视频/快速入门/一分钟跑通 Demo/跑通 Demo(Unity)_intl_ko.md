@@ -11,8 +11,8 @@
 >- 현재 Android, iOS, Windows, Mac(Mac은 알파 테스트 중) 플랫폼을 지원합니다.
 >- `Android Build Support`, `iOS Build Support`, `Winodows Build Support`, `MacOs Build Support` 모듈을 포함해야 합니다.
 >- iOS 개발에 필요한 환경 요건:
-   - Xcode 11.0 이상 버전
-   - 프로젝트에 유효한 개발자 서명이 설정되어 있는지 확인하십시오.
+     - Xcode 11.0 이상 버전
+     - 프로젝트에 유효한 개발자 서명이 설정되어 있는지 확인하십시오.
 
 ## 예시 프로그램 실행
 [](id:step1)
