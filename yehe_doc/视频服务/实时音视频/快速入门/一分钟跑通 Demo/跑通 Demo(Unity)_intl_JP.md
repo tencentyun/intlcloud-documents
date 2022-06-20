@@ -19,7 +19,7 @@
 ### 手順1：アプリケーションの新規作成
 1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2．【今すぐ開始】をクリックし、`TestTRTC`などのアプリケーション名を入力して、【アプリケーションの作成】をクリックします。
-![](https://main.qcloudimg.com/raw/7178fb5203b8c1ad9eb4a3b7a3c008d7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 [](id:step2)
 ### 手順2： SDKとソースコードのダウンロード
@@ -29,8 +29,7 @@
 3. `Assets/TRTCSDK/Demo/Tools/GenerateTestUserSig.cs`ファイルを見つけて開きます。
 4. `GenerateTestUserSig.cs`ファイルの関連パラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。</li>
-  <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/4dad4541a4a0d400441e9cd75c07ba1e.png"/>
+
 
 [](id:step3)
 ### 手順3：コンパイル実行
@@ -67,7 +66,6 @@
 Demo内にはアップロード済みのAPIの大部分が含まれており、テストおよび参考のために呼び出すことができます。APIドキュメントについては[SDK API（Unity）](https://intl.cloud.tencent.com/zh/document/product/647/40139)をご参照ください。
 >? UIは部分的に調整され更新される可能性があります。最新バージョンを基準としてください。
 
-![](https://main.qcloudimg.com/raw/2ce3ab51c6fdc843c1e8b086b55840c0.png)
 
 ## ディレクトリ構造
 ```
