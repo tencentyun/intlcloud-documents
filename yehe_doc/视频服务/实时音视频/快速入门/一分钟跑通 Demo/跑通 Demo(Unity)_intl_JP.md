@@ -6,14 +6,13 @@
 - デバイス管理、音楽の特殊効果および声の特殊効果。
 
 >?
->
 >- 具体的なAPI機能パラメータの説明については、[Unity API概要](https://intl.cloud.tencent.com/zh/document/product/647/40139)をご参照ください。
-- Unityの推奨バージョン： 2020.2.1f1c1。
-- 現在、Android、iOS、Windows、Mac（Macはベータ版テスト中です）プラットフォームをサポートしています。
-- `Android Build Support`、`iOS Build Support`、`Winodows Build Support`および`MacOs Build Support`モジュールが含まれている必要があります。
-- その内、iOS端末の開発には以下が必要です。
-  - Xcode 11.0およびそれ以降のバージョン。
-  - プロジェクトが有効な開発者による署名を設定済みであることを確認してください。
+>- Unityの推奨バージョン： 2020.2.1f1c1。
+>- 現在、Android、iOS、Windows、Mac（Macはベータ版テスト中です）プラットフォームをサポートしています。
+>- `Android Build Support`、`iOS Build Support`、`Winodows Build Support`および`MacOs Build Support`モジュールが含まれている必要があります。
+>- その内、iOS端末の開発には以下が必要です。
+   - Xcode 11.0およびそれ以降のバージョン。
+   - プロジェクトが有効な開発者による署名を設定済みであることを確認してください。
 
 ## サンプル実行の順序
 [](id:step1)
