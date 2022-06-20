@@ -3,11 +3,11 @@
 ## 简介
 
 
-对象存储控制台是 COS 为用户提供的最简单且易于上手的操作方式。用户无需编写代码或运行程序，可直接通过 COS 控制台使用 COS 服务。
+对象存储（Cloud Object Storage，COS）控制台是 COS 为用户提供的最简单且易于上手的操作方式。用户无需编写代码或运行程序，可直接通过 COS 控制台使用 COS 服务。
 
 ## 准备工作
 
-初次使用对象存储 COS，建议您先了解以下基本概念：
+初次使用 COS，建议您先了解以下基本概念：
 
 - [存储桶（Bucket）](https://intl.cloud.tencent.com/document/product/436/13312)：是对象的载体，可理解为存放对象的“容器”。一个存储桶可容纳无数个对象。
 - [对象（Object）](https://intl.cloud.tencent.com/document/product/436/13324)：是对象存储的基本单元，可理解为任何格式类型的数据，例如图片、文档和音视频文件等。
