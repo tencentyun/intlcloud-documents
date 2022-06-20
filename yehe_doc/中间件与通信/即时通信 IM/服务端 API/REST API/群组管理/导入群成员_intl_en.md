@@ -11,6 +11,7 @@
 |Public|Yes|
 |ChatRoom|Yes, identical to Meeting in the new version|
 |AVChatRoom|No|
+|Community | Yes. |
 
 IM comes with the preceding four group types. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
