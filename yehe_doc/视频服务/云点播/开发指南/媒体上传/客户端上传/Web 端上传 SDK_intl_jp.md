@@ -1,19 +1,19 @@
 VODは、オーディオとビデオをブラウザからアップロードするシナリオ向けに、Webアップロード用SDKを提供しています。SDKソースコードが必要な場合は、[SDKソースコード](https://github.com/tencentyun/vod-js-sdk-v6) にアクセスしてください。
 
-## シンプルアップロード
+## シンプルビデオアップロード
 
 ### SDKのインポート
 
 #### scriptのインポート方法
-webpackを使用しない場合は、scriptタグを介してインポートすることができます。この方法では、グローバル変数`TcVod`が公開されます。scriptをインポートするには、次の2つの方法があります。
+webpackを使用しない場合は、scriptタグを介してインポートすることができます。この方法では、グローバル変数`TcVod`が公開されます。scriptをインポートするには、次の2つの方法があります：
 - **ローカルへのダウンロード**
-	[SDKソースコード](https://github.com/tencentyun/vod-js-sdk-v6)をローカルにダウンロードし、次のようにインポートします。
+	[SDKソースコード](https://github.com/tencentyun/vod-js-sdk-v6)をローカルにダウンロードし、次のようにインポートします：
 ```html
 <script src="./vod-js-sdk-v6.js"></script>
 ```
 >?インポートパスをローカルに保存されたパスに調整してください。
 - **CDNリソースの使用**
-	CDNリソースを使用すると、次の方法で直接インポートできます。
+	CDNリソースを使用すると、次の方法で直接インポートできます：
 ```html
 <script src="https://cdn-go.cn/cdn/vod-js-sdk-v6/latest/vod-js-sdk-v6.js"></script>
 ```
@@ -21,7 +21,7 @@ webpackを使用しない場合は、scriptタグを介してインポートす�
 [ここをクリック](https://tencentyun.github.io/vod-js-sdk-v6/)して、scriptによってインポートされたDemoをご確認ください。[ここをクリック](https://github.com/tencentyun/vod-js-sdk-v6/blob/master/docs/index.html)して、Demoソースコードをご確認ください。
 
 #### npmのインポート方法
-webpackを使用する場合（VueやReactなど）は、npmを介してインポートできます。
+webpackを使用する場合（VueやReactなど）は、npmを介してインポートできます：
 ```js
 // npm install vod-js-sdk-v6を実行した後に、importを実行してページに直接インポートします。
 import TcVod from 'vod-js-sdk-v6'
@@ -53,7 +53,7 @@ function getSignature() {
 // importによってインポートした場合、new TcVod(opts) を実行します
 // new TcVod.default(opts) は、scriptによってインポートされます 
 const tcVod = new TcVod.default({
-  getSignature: getSignature // 前文で説明したアップロード署名を取得する関数です
+  getSignature: getSignature // 前文で説明したアップロード署名を取得するための関数です
 })
 
 const uploader = tcVod.upload({
@@ -104,7 +104,7 @@ uploader.done().then(function (doneResult) {
 
 ### アップロードの進行状況の取得
 
-SDKは、現在のアップロード進行状況をコールバック形式で表示します。
+SDKは、現在のアップロード進行状況をコールバック形式で表示します：
 
 ```js
 const uploader = tcVod.upload({
@@ -133,11 +133,11 @@ uploader.done().then(function (doneResult) {
 })
 ```
 
-`xxx_upload`と`xxx_progress`のコールバック値については、[マルチパートアップロード/タスクのコピー操作](https://intl.cloud.tencent.com/document/product/436/31538) をご参照ください。
+`xxx_upload`と`xxx_progress`のコールバック値については、[マルチパートアップロード/タスクのコピー操作]( https://intl.cloud.tencent.com/document/product/436/43552#.E4.B8.8A.E4.BC.A0.E5.88.86.E5.9D.97)をご参照ください。
 
 ### アップロードのキャンセル
 
-SDKは、進行中のビデオまたはカバーのアップロードのキャンセルをサポートしています。
+SDKは、進行中のビデオまたはカバーのアップロードのキャンセルをサポートしています：
 
 ```js
 const uploader = tcVod.upload({
@@ -159,8 +159,8 @@ SDKでは、自動的にアップロードを再開できます。追加の操�
 | パラメータ名         | 入力必須   | タイプ       | パラメータの説明      |
 | ------------ | ---- | -------- | --------- |
 | getSignature    | はい     | Function     | アップロード署名を取得するための関数。  |
-| appId    | いいえ    | number     | 入力後、組み込みの統計レポートに自動的に反映されます。  |
-| reportId     | いいえ    | number     | 入力後、組み込みの統計レポートに自動的に反映されます。  |
+| appId    | いいえ    | number     | 入力後、組み込まれている統計レポートに自動的に反映されます。  |
+| reportId     | いいえ    | number     | 入力後、組み込まれている統計レポートに自動的に反映されます。  |
 
 ### TcVod.upload
 
@@ -170,7 +170,12 @@ SDKでは、自動的にアップロードを再開できます。追加の操�
 | coverFile    | いいえ    | File     | カバーファイル。  |
 | mediaName    | いいえ    | string     | メディアファイルのメタデータを上書きするファイル名。  |
 | fileId    | いいえ    | string     | カバーを変更するときに渡されます。  |
-| reportId    | いいえ    | number     | 入力後、組み込みの統計レポートに自動的に反映されます。コンストラクタの設定を上書きします。  |
+| reportId    | いいえ    | number     | 入力後、組み込まれている統計レポートに自動的に反映されます。コンストラクタの設定を上書きします。  |
+| fileParallelLimit    | いいえ    | number     | 同じインスタンスでアップロードされたファイルの並列処理の数。デフォルト値は3です。  |
+| chunkParallelLimit    | いいえ    | number     | 同じアップロードファイルのマルチパートの並列処理の数。デフォルト値は6です。  |
+| chunkRetryTimes    | いいえ    | number     | マルチパートアップロードの場合、エラーの再試行回数。デフォルト値は2です（最初に追加すると、リクエストは合計3回になります）  |
+| chunkSize    | いいえ    | number     | マルチパートアップロードの場合、パーティションあたりのバイトのサイズ。デフォルト値は8388608 (8MB)です  |
+| progressInterval    | いいえ    | number     | アップロード進捗のコールバックメソッドonProgressのコールバック頻度。単位：ms、デフォルト値は1000です  |
 
 ### イベント
 
@@ -183,12 +188,13 @@ SDKでは、自動的にアップロードを再開できます。追加の操�
 
 ## よくあるご質問
 
-1. **`File`オブジェクトを取得する方法とは？**
+1. **Fileオブジェクトを取得する方法とは**
 `type`が`file`型の`input`タグを使用すると、`File`オブジェクトを取得できます。
-2. **アップロードするファイルのサイズに制限はありますか？**
+2. **アップロードするファイルのサイズに制限はありますか**
 最大60GBをサポートしています。
-3. **SDKがサポートしているブラウザのバージョンとは？**
-Chrome、Firefox、`HTML5`およびIE10以降をサポートするその他の主流のブラウザ。
-4. **アップロードの一時停止や再開などの機能を実装する方法とは？**
+3. **SDKがサポートしているブラウザのバージョンとは**
+Chrome、Firefoxなどは、HTML5の主流ブラウザををサポートします。IEは、IE10以降のバージョンをサポートします。
+4. **アップロードの一時停止や再開などの機能を実装する方法とは**
 SDKの基盤となる層に、自動的に再開可能な機能が実装されているため、一時停止の本質は、`uploader.cancel()`メソッドを呼び出すことです。同様に、一時停止後のアップロード再開も、最初の`tcVod.upload`メソッドを呼び出すことで実行されます。違いは、アップロードが再開されるときに呼び出されるメソッドのパラメータは、以前にキャッシュされたパラメータである点です（例えば、グローバル変数を使用してアップロードの開始時にパラメータを保存して、アップロードの完了後にそれをクリアすることができます）。
-
+5.  <b>Web端末のアップロードSDKは、https: ドメイン名を使用してアップロードしますか？ </b>
+サポートできます。デフォルトでは、現在のページのドメイン名がhttp:であるとWeb端末が判断した場合、http: ドメイン名を使用してアップロードします。ドメイン名がhttp:ではないと判断した場合、https: ドメイン名を使用してアップロードします。 

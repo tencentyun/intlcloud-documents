@@ -1,35 +1,35 @@
-VOD provides a web upload SDK for scenarios where audio/video files are uploaded through a browser. If you need the SDK source code, please click [here](https://github.com/tencentyun/vod-js-sdk-v6).
+VOD provides an SDK for uploading files from browsers. You can download the SDK source code at [GitHub](https://github.com/tencentyun/vod-js-sdk-v6).
 
-## Simple Upload of Video
+## Uploading Videos
 
-### Importing SDK
+### Importing the SDK
 
 #### Importing by using script tag
-If webpack is not used, a `script` tag can be used for import in the following ways. This method will expose the global variable `TcVod`.
+If Webpack is not used, you can import the SDK using a script tag. This method will expose the global variable `TcVod`. You can choose either of the two ways below:
 - **Download to the local file system**
-	Click [here](https://github.com/tencentyun/vod-js-sdk-v6) to download the SDK source code to the local file system, and import it by running the following command:
+	[Download](https://github.com/tencentyun/vod-js-sdk-v6) the SDK source code to your local file system and use the code below to import the SDK:
 ```html
 <script src="./vod-js-sdk-v6.js"></script>
 ```
->?Change the value of `src` to the path to the source code you saved locally.
-- **Import with CDN**
-	Import with CDN in the following ways:
+>? Change the value of `src` to the local path of the source code.
+- **Import from CDN**
+	Use the code below to import the SDK from a CDN:
 ```html
 <script src="https://cdn-go.cn/cdn/vod-js-sdk-v6/latest/vod-js-sdk-v6.js"></script>
 ```
 
-Click [here](https://tencentyun.github.io/vod-js-sdk-v6/) to view the demo imported through script. The source code of the demo can be viewed [here](https://github.com/tencentyun/vod-js-sdk-v6/blob/master/docs/index.html).
+Click [here](https://tencentyun.github.io/vod-js-sdk-v6/) to try a demo that imported the SDK using a script tag. The source code of the demo can be found [here](https://github.com/tencentyun/vod-js-sdk-v6/blob/master/docs/index.html).
 
 #### Importing by using npm command
-If webpack (such as Vue or React) is used, `npm` can be used for import.
+If Webpack (such as Vue or React) is used, You can use npm to import the SDK:
 ```js
-// After running npm install vod-js-sdk-v6, import directly on the page by running import
+// Run `npm install vod-js-sdk-v6`, and use the command below to import the SDK directly on the page:
 import TcVod from 'vod-js-sdk-v6'
 ```
 
-Click [here](https://github.com/tencentyun/vod-js-sdk-v6/tree/master/docs/import-demo) to view the source code of the demo imported through npm.
+Click [here](https://github.com/tencentyun/vod-js-sdk-v6/tree/master/docs/import-demo) to view the source code of a demo that imports the SDK using npm.
 
->!The SDK relies on Promise, which should be imported if your browser version is low.
+>! The SDK relies on promises, which you should import if your browser version is low.
 
 
 ### Defining the function to get an upload signature
@@ -42,18 +42,18 @@ function getSignature() {
 };
 ```
 
->? `url` is the URL of your signature distribution service. For more information, please see [Guide](https://intl.cloud.tencent.com/document/product/266/33921) for upload from client.
-> For details on how to calculate `signature`, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
+>? `url` is the URL of your signature distribution service. For more information, see the [Guide](https://intl.cloud.tencent.com/document/product/266/33921) for upload from a client.
+> For details on how to calculate `signature`, see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 ### Video upload example
 
 
 
 ```js
-// If imported through import, run new TcVod(opts)
-// new TcVod.default(opts) is imported through script
+// If the SDK is imported using the `import` command, run `new TcVod(opts)`.
+// If the SDK is imported using a script tag, use `new TcVod.default(opts)`.
 const tcVod = new TcVod.default({
-  getSignature: getSignature // The function to get the upload signature described above
+  getSignature: getSignature // The function to get the upload signature
 })
 
 const uploader = tcVod.upload({
@@ -63,7 +63,7 @@ uploader.on('media_progress', function(info) {
   console.log(info.percent) // Progress
 })
 
-// Callback result description
+// Callback of the result
 // type doneResult = {
 //   fileId: string,
 //   video: {
@@ -84,12 +84,12 @@ uploader.done().then(function (doneResult) {
 
 >?
 >- `opts` in `new TcVod(opts)` refers to parameters of the `TcVod` API. For more information, please see [API Description](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0).
->- The upload method automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload.
->- To upload to the specified subapplication, please see [Subapplication System - Upload from client](https://intl.cloud.tencent.com/document/product/266/33987).
+>- The upload API automatically selects simple upload or multipart upload based on the file size. You don’t need to manually set up multipart upload.
+>- To upload to a subapplication, see [Subapplication System - Upload from client](https://intl.cloud.tencent.com/document/product/266/33987).
 
 ## Advanced Features
 
-### Uploading both video and cover
+### Uploading both video and thumbnail
 
 ```js
 const uploader = tcVod.upload({
@@ -104,7 +104,7 @@ uploader.done().then(function (doneResult) {
 
 ### Getting upload progress
 
-The SDK supports displaying the current upload progress in the form of callback:
+The SDK can notify you of the upload progress via callbacks:
 
 ```js
 const uploader = tcVod.upload({
@@ -119,11 +119,11 @@ uploader.on('media_upload', function(info) {
 uploader.on('media_progress', function(info) {
   uploaderInfo.progress = info.percent;
 })
-// When the cover upload is completed
+// When the thumbnail upload is completed
 uploader.on('cover_upload', function(info) {
   uploaderInfo.isCoverUploadSuccess = true;
 })
-// Cover upload progress
+// Thumbnail upload progress
 uploader.on('cover_progress', function(info) {
   uploaderInfo.coverProgress = info.percent;
 })
@@ -133,11 +133,11 @@ uploader.done().then(function (doneResult) {
 })
 ```
 
-For more information about callback values of `xxx_upload` and `xxx_progress`, please see description on multipart upload/replication tasks in [Object Operations](https://intl.cloud.tencent.com/document/product/436/31538).
+For the callback values of `xxx_upload` and `xxx_progress`, see the [multipart upload/copy operation](https://intl.cloud.tencent.com/document/product/436/43552#.E4.B8.8A.E4.BC.A0.E5.88.86.E5.9D.97).
 
 ### Canceling upload
 
-The SDK supports canceling ongoing video or cover upload:
+The SDK supports canceling ongoing video or thumbnail upload:
 
 ```js
 const uploader = tcVod.upload({
@@ -150,7 +150,7 @@ uploader.cancel()
 
 ### Checkpoint restart
 
-The SDK supports automatic checkpoint restart with no human intervention required. When the upload is terminated unexpectedly (for reasons such as the browser is closed or the network connection is interrupted), you can upload the file again from where it left off, which helps reduce the upload time.
+The SDK supports automatic checkpoint restart for uploads. If an upload is interrupted unexpectedly (for example, because the browser is closed or the network is disconnected), you can continue uploading the file from where it left off.
 
 ## API Description
 
@@ -159,36 +159,42 @@ The SDK supports automatic checkpoint restart with no human intervention require
 | Parameter  | Required | Type | Description |
 | ------------ | ---- | -------- | --------- |
 | getSignature | Yes | Function | Function used to acquire the upload signature. |
-| appId | No | number | Once entered, this parameter will be automatically carried in the built-in statistics report. |
-| reportId | No | number | Once entered, this parameter will be automatically carried in the built-in statistics report. |
+| appId | No | number | If this parameter is set, it will be carried by the built-in statistical report system. |
+| reportId | No | number | If this parameter is set, it will be carried by the built-in statistical report system. |
 
 ### TcVod.upload
 
 | Parameter  | Required | Type | Description |
 | ------------ | ---- | -------- | --------- |
 | mediaFile | No | File | Media file (video, audio, or image). |
-| coverFile | No | File | Cover file. |
+| coverFile | No | File | Thumbnail file. |
 | mediaName | No | string | The filename that will overwrite the metadata in the media file. |
-| fileId | No | string | Passed in when the cover is modified. |
-| reportId | No | number | Once entered, this parameter will be automatically carried in the built-in statistics report and overwrite the settings in the constructor. |
+| fileId | No | string | Pass in this parameter when changing the thumbnail. |
+| reportId | No | number | If this parameter is set, it will be carried by the built-in statistical report system and will overwrite the settings in the constructor. |
+| fileParallelLimit | No    | number     | The maximum number of concurrent uploads allowed in the same instance. Default value: 3. |
+| chunkParallelLimit    | No    | number     | The maximum number of upload parts allowed for the same file. Default value: 6.  |
+| chunkRetryTimes    | No    | number     | The maximum number of retry attempts for multipart upload. Default value: 2 (three upload requests in total).  |
+| chunkSize    | No    | number     | The part size (bytes) for multipart upload. Default value: 8388608 (8 MB).  |
+| progressInterval    | No    | number     | The interval (ms) of sending the `onProgress` callback. Default value: 1000.  |
 
 ### Events
 
-| Event Name | Required | Event Description |
+| Event Name | Required | Description |
 | ------------ | ---- |  --------- |
-| media_upload | No | When the media file is successfully uploaded. |
-| cover_upload | No | When the cover is successfully uploaded. |
-| media_progress | No | Media file upload progress. |
-| cover_progress | No | Cover file upload progress. |
+| media_upload | No | The media file is successfully uploaded. |
+| cover_upload | No | The thumbnail is successfully uploaded. |
+| media_progress | No | The media file upload progress. |
+| cover_progress | No | The thumbnail file upload progress. |
 
 ## FAQs
 
-1. **How to get the `File` object?**
-Use the `input` tag with the `type` being `file` to get the `File` object.
-2. **Is there a size limit for an uploaded file?**
-Up to 60 GB.
+1. **How do I get the file object?**
+Use the `input` tag and set `type` to `file`.
+2. **Is there a size limit for upload?**
+The maximum file size allowed is 60 GB.
 3. **What browsers does the SDK support?**
-Chrome, Firefox, and other mainstream browsers that support `HTML5` as well as IE 10 or above.
-4. **How to implement upload pause or resumable upload?**
-Automatic resumable upload is implemented at the underlying layer of the SDK; therefore, the essence of pause is to call the `uploader.cancel()` method. Similarly, upload resumption after pause is also done by calling the initial `tcVod.upload` method. The difference lies in that the parameters of this method when the upload is resumed should be the previously cached parameters (for example, a global variable can be used to store the parameters when the upload is started and then cleared after upload is completed).
-
+The SDK supports Chrome, Firefox, and other mainstream browsers that support HTML5. It can also be used on IE 10 or later.
+4. **How to pause and resume an upload?**
+Automatic checkpoint restart is implemented at the underlying layer of the SDK. Therefore, to pause an upload, simply call `uploader.cancel()`, and to resume an upload after pause, just call `tcVod.upload`. Note that when you use `tcVod.upload` to resume an upload, you need to pass in the same parameters used when you initiate the upload (you can use a global variable to save the parameters when you initiate the upload and delete them after upload.)
+5. **Does the SDK support `https:` upload?**
+Yes, it does. The SDK uses `http:` for upload on HTTP pages and `https:` on non-HTTP pages. 

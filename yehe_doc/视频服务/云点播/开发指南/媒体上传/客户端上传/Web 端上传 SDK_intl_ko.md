@@ -42,8 +42,8 @@ function getSignature() {
 };
 ```
 
->? `url`은 서명 배포 서비스의 URL입니다. 자세한 내용은 [클라이언트에서 업로드](https://intl.cloud.tencent.com/document/product/266/33921)를 참고하십시오.
-> `signature` 계산 방법에 대한 자세한 내용은 [클라이언트 업로드용 서명](https://intl.cloud.tencent.com/document/product/266/33922)를 참고하십시오.
+>? `url`은 서명 배포 서비스의 URL입니다. 자세한 내용은 [클라이언트 업로드 가이드](https://intl.cloud.tencent.com/document/product/266/33921)를 참고하십시오.
+> `signature` 계산 방법에 대한 자세한 내용은 [클라이언트 업로드 서명](https://intl.cloud.tencent.com/document/product/266/33922)를 참고하십시오.
 
 ###  비디오 업로드 예시
 
@@ -83,7 +83,7 @@ uploader.done().then(function (doneResult) {
 ```
 
 >?
->- `new TcVod(opts)`의 opts는 [TcVod API의 매개변수](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)를 의미하며 자세한 내용은 API 설명을 참고하십시오.
+>- `new TcVod(opts)`의 opts는 [TcVod API 매개변수](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)를 의미하며 자세한 내용은 API 설명을 참고하십시오.
 >- 업로드 방법은 파일 크기에 따라 단순 업로드 또는 멀티파트 업로드를 자동으로 선택하므로, 멀티파트 업로드의 모든 단계를 처리할 필요가 없습니다.
 >- 지정된 서브 애플리케이션에 업로드하려면 [서브 애플리케이션 시스템 - 클라이언트에서 업로드](https://intl.cloud.tencent.com/document/product/266/33987)를 참고하십시오.
 
@@ -133,7 +133,7 @@ uploader.done().then(function (doneResult) {
 })
 ```
 
-`xxx_upload` 및 `xxx_progress`의 콜백 값에 대한 자세한 내용은 객체 작업의 [멀티파트 업로드/복제 작업](https://intl.cloud.tencent.com/document/product/436/31538)을 참고하십시오.
+`xxx_upload` 및 `xxx_progress`의 콜백 값에 대한 자세한 내용은 객체 작업의 [멀티파트 업로드/복제 작업](https://intl.cloud.tencent.com/document/product/436/43552#.E4.B8.8A.E4.BC.A0.E5.88.86.E5.9D.97)을 참고하십시오.
 
 ### 업로드 취소
 
@@ -171,6 +171,11 @@ SDK는 사람의 개입이 필요 없는 자동 체크포인트 재시작을 지
 | mediaName    | No    | string     | 미디어 파일의 메타데이터를 덮어쓸 파일 이름.  |
 | fileId    | No    | string     | 커버가 수정될 때 전달됩니다.  |
 | reportId    | No    | number     | 입력되면 이 매개변수는 기본 제공 통계 리포트에 자동으로 전달되고 생성자의 설정을 덮어씁니다.  |
+| fileParallelLimit    | 아니오    | number     | 동일한 인스턴스에서 허용되는 최대 동시 업로드 수. 기본값: 3  |
+| chunkParallelLimit    | 아니오    | number     | 동일한 파일에 허용되는 최대 업로드 파트 수. 기본값: 6  |
+| chunkRetryTimes    | 아니오    | number     | 멀티파트 업로드 최대 재시도 횟수. 기본값: 2(총 3회의 업로드 요청) |
+| chunkSize    | 아니오    | number     | 멀티파트 업로드 시 각 파트 크기(바이트). 기본값: 8388608(8MB)  |
+| progressInterval    | 아니오    | number     | onProgress 콜백 발송 간격. 단위: ms, 기본값: 1000 |
 
 ### 이벤트
 
@@ -183,12 +188,13 @@ SDK는 사람의 개입이 필요 없는 자동 체크포인트 재시작을 지
 
 ## FAQ
 
-1. **`File`객체를 얻는 방법은 무엇입니까?**
+1. **File 객체는 어떻게 얻나요?**
 `type`이 `file`유형인 `input` 태그를 사용하여 `File` 객체를 가져옵니다.
 2. **업로드된 파일은 크기 제한이 있습니까?**
 최대 60GB입니다.
 3. **SDK는 어떤 브라우저를 지원합니까?**
-Chrome, Firefox 등 `HTML5` 및 IE 10 이상을 지원하는 기타 주요 브라우저를 지원합니다.
+SDK는 Chrome, Firefox 및 HTML5를 지원하는 기타 주요 브라우저를 지원합니다. IE 10 이상에서도 사용할 수 있습니다.
 4. **업로드 일시 중지 또는 재개를 구현하는 방법은 무엇입니까?**
 업로드 자동 재개 기능은 SDK 기본 레이어에서 구현됩니다. 일시 중지의 본질은 `uploader.cancel()` 메소드를 호출하는 것입니다. 마찬가지로 일시 중지 후 업로드 재개도 초기 `tcVod.upload` 메소드를 호출하여 수행됩니다. 차이점은 업로드가 재개될 때 이 메소드의 매개변수가 이전에 캐시된 매개변수여야 한다는 점입니다(예를 들어, 업로드가 시작될 때 전역 변수를 사용하여 매개변수를 저장하고, 업로드 완료 후 제거할 수 있습니다).
-
+5.  <b>SDK는 https: 업로드를 지원합니까? </b>
+네, 지원합니다. SDK는 HTTP 페이지의 업로드에는 http: 를 사용하고 HTTP가 아닌 페이지에는 https: 를 사용합니다. 
