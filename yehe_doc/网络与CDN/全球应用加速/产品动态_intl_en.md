@@ -10,7 +10,6 @@ table th:nth-of-type(4){ width:19%; }
 | Update             | Description                                                     | Release Date   | Remarks                                                    |
 | -------------------- | ------------------------------------------------------------ | -------- | ---------------------------- |
 | Released the "GAAP shared acceleration" feature | TCP/UDP monitoring and transmission acceleration are provided based on high-speed lines over the public network (only supported for Tencent Cloud users in the Chinese mainland). | March 2022   | To use this feature, please submit a ticket. |
-| Optimized cross-MLC-border connection     | The specification upgrade and auto-renewal of cross-MLC-border connections are supported.                   | March 2022   | This feature is supported by default.                     |
 
 ## February 2022
 
@@ -62,6 +61,6 @@ table th:nth-of-type(4){ width:19%; }
 ## August 2021
 | Update | Description                                               | Release Date   | Remarks                                                    |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-|Statistics optimization|Statistics can be retained for 6 months and exported from the console.|August 2021 |This feature is supported by default.| 
-|Certificate expiration alarm| An expiration reminder will be sent by WeChat, Message Center, email and SMS 30 days, 7 days, 3 days, and 1 day before a certificate expires.|August 2021 |This feature is supported by default.| 
+|Statistics optimization|Statistics can be retained for 6 months and exported from the console.|August 2021 |This feature is supported by default.|
+|Certificate expiration alarm| An expiration reminder will be sent by WeChat, Message Center, email and SMS 30 days, 7 days, 3 days, and 1 day before a certificate expires.|August 2021 |This feature is supported by default.|
 |Silver acceleration connection|Cost-effective Silver acceleration connection is provided and supports monthly settlement.|August 2021 |To use this feature, please submit a ticket.|
