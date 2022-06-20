@@ -227,7 +227,7 @@ SDK 通过`TXVideoPublishListener`接口来监听视频上传相关的状态。�
 
 | 参数名称         | 参数描述                               | 类型        | 必填   |
 | ------------ | ---------------------------------- | --------- | ---- |
-| signature    | [客户端上传签名](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33922)。 | NSString* | 是    |
+| signature    | [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。 | NSString* | 是    |
 | mediaPath    | 本地图片/媒体文件路径。                           | NSString* | 是    |
 | fileName     | 上传到腾讯云的图片/媒体文件名称，不填默认用本地文件名。  | NSString*  | 否    |
 | enableResume | 是否启动断点续传，默认开启。                  | BOOL      | 否    |

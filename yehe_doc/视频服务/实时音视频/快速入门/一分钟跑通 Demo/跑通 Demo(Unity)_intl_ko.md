@@ -6,32 +6,31 @@
 - 디바이스 관리, 음악 효과, 음성 효과
 
 >?
->
 >- 구체적인 API 기능 매개변수에 대한 설명은 [Unity API 개요](https://intl.cloud.tencent.com/zh/document/product/647/40139)를 참조하십시오.
-- Unity 권장 버전: 2020.2.1f1c1
-- 현재 Android, iOS, Windows, Mac(Mac은 알파 테스트 중) 플랫폼을 지원합니다.
-- `Android Build Support`, `iOS Build Support`, `Winodows Build Support`, `MacOs Build Support` 모듈을 포함해야 합니다.
-- iOS 개발에 필요한 환경 요건:
-  - Xcode 11.0 이상 버전
-  - 프로젝트에 유효한 개발자 서명이 설정되어 있는지 확인하십시오.
+>- Unity 권장 버전: 2020.2.1f1c1
+>- 현재 Android, iOS, Windows, Mac(Mac은 알파 테스트 중) 플랫폼을 지원합니다.
+>- `Android Build Support`, `iOS Build Support`, `Winodows Build Support`, `MacOs Build Support` 모듈을 포함해야 합니다.
+>- iOS 개발에 필요한 환경 요건:
+     - Xcode 11.0 이상 버전
+     - 프로젝트에 유효한 개발자 서명이 설정되어 있는지 확인하십시오.
 
 ## 예시 프로그램 실행
 [](id:step1)
 ### 1단계: 새로운 애플리케이션 생성
 1. TRTC 콘솔에 로그인한 후 [개발 지원] > [Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
 2. [시작하기]를 클릭하고 애플리케이션 이름(예시: `TestTRTC`)을 입력한 후 [애플리케이션 생성]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/7178fb5203b8c1ad9eb4a3b7a3c008d7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 [](id:step2)
 ### 2단계: SDK와 소스 코드 다운로드
-1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 [Demo 소스 코드](https://github.com/tencentyun/TRTCUnitySDK)를 다운로드합니다.
+1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 [Demo 소스 코드](https://github.com/LiteAVSDK/TRTC_Unity)를 다운로드합니다.
 2. 다운로드 완료 후 [다운로드 완료, 다음 단계]를 클릭합니다. 이 프로젝트를 직접 Unity로 열 수 있습니다. SDK 파일을 직접 사용하려면 SDK 패키지에 있는 `TRTCUnitySDK/Assets/TRTCSDK/SDK` 폴더를 프로젝트의 Assets 디렉터리에 복사합니다.
 
 3. `Assets/TRTCSDK/Demo/Tools/GenerateTestUserSig.cs` 파일을 찾아 엽니다.
 4. `GenerateTestUserSig.cs` 파일에서 관련 매개변수를 설정합니다.
   <ul><li>SDKAPPID: 0으로 기본 설정되어 있습니다. 실제 SDKAppID로 설정하십시오.</li>
   <li>SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 키 정보로 설정하십시오.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/4dad4541a4a0d400441e9cd75c07ba1e.png"/>
+
 
 [](id:step3)
 ### 3단계: 컴파일 실행
@@ -68,7 +67,6 @@
 Demo에는 이미 런칭된 API가 대다수 포함되어 있습니다. 테스트 및 호출 참고용으로 사용할 수 있습니다. API 문서 [SDK API(Unity)](https://intl.cloud.tencent.com/zh/document/product/647/40139)를 참조하십시오.
 >? UI에 일부 조정 업데이트가 있을 수 있으니 최신 버전을 기준으로 하십시오.
 
-![](https://main.qcloudimg.com/raw/2ce3ab51c6fdc843c1e8b086b55840c0.png)
 
 ## 디렉터리 구조
 ```

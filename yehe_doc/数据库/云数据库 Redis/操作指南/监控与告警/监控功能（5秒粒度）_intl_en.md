@@ -11,8 +11,8 @@ TencentDB for Redis provides a complete and easy-to-use monitoring service where
 ![](https://main.qcloudimg.com/raw/9bfa0b792d4c0ddc4b262ea5357575e3.png)
 
 ## Viewing Instance Monitoring Granularity
-- Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID to enter the instance management page, select **System Monitoring** > **Monitoring Metrics**, and click the **Period** drop-down list at the top. If you can select **5 seconds** from the drop-down list, this instance supports the monitoring granularity of five seconds, or else it supports only the monitoring granularity of one minute.
-![](https://main.qcloudimg.com/raw/e7833ebba07a4dd949c911c58940a4d0.png)
+- Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID to enter the instance management page, select **System Monitoring** > **Monitoring Metrics**, and click the **Granularity** drop-down list at the top. If you can select **5 seconds** from the drop-down list, this instance supports the monitoring granularity of five seconds, or else it supports only the monitoring granularity of one minute.
+![](https://qcloudimg.tencent-cloud.cn/raw/a0987948802352a202667493d6f255d5.png)
 - Check the value of the `InstanceSet.MonitorVersion` field returned by the [DescribeInstances](https://intl.cloud.tencent.com/document/product/239/32065) API. If the value is `5s`, this instance supports the monitoring granularity of five seconds; if the value is `1m`, it supports only the monitoring granularity of one minute.
 
 ## Monitoring Granularity and Monitoring Data Retention Period

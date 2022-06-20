@@ -6,32 +6,31 @@ The demo includes the following features:
 - Device management and music/voice effects
 
 >?
->
 >- For details about API features and parameters, please see [Client APIs > Unity > Overview](https://intl.cloud.tencent.com/document/product/647/40139).
-- Unity 2020.2.1f1c1 is recommended.
-- Supported platforms: Android, iOS, Windows, macOS (alpha testing)
-- Modules required: `Android Build Support`, `iOS Build Support`, `Windows Build Support`, `MacOS Build Support`
-- If you are developing for iOS, you also need:
-  - Xcode 11.0 or above
-  - A valid developer signature for your project
+>- Unity 2020.2.1f1c1 is recommended.
+>- Supported platforms: Android, iOS, Windows, macOS (alpha testing)
+>- Modules required: `Android Build Support`, `iOS Build Support`, `Windows Build Support`, `MacOS Build Support`
+>- If you are developing for iOS, you also need:
+     - Xcode 11.0 or above
+     - A valid developer signature for your project
 
 ## Directions
 [](id:step1)
 ### Step 1. Create an application
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name such as `TestTRTC` and click **Create**.
-![](https://main.qcloudimg.com/raw/7178fb5203b8c1ad9eb4a3b7a3c008d7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 [](id:step2)
 ### Step 2. Download the SDK and source code
-1. Download the SDK and [demo source code](https://github.com/tencentyun/TRTCUnitySDK).
+1. Download the SDK and [demo source code](https://github.com/LiteAVSDK/TRTC_Unity).
 2. Click **Next**. You can open the project with Unity, or copy `TRTCUnitySDK/Assets/TRTCSDK/SDK` in the SDK ZIP file to the `Assets` directory of your project.
 
 3. Find and open `Assets/TRTCSDK/Demo/Tools/GenerateTestUserSig.cs`.
 4. Set parameters in `GenerateTestUserSig.cs` as follows:
   <ul><li>SDKAPPID: `0` by default. Set it to the actual `SDKAppID`.</li>
   <li>SECRETKEY: left empty by default. Set it to the actual key.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/4dad4541a4a0d400441e9cd75c07ba1e.png"/>
+
 
 [](id:step3)
 ### Step 3. Compile and run
@@ -67,8 +66,6 @@ The demo includes the following features:
 ## Demo
 The demo integrates most of the APIs launched so far, which can be used for testing and as reference for API calls. For more information about APIs, see [Client APIs > Unity > Overview](https://intl.cloud.tencent.com/document/product/647/40139).
 >? The UI of the latest version of the demo may look different.
-
-![](https://main.qcloudimg.com/raw/2ce3ab51c6fdc843c1e8b086b55840c0.png)
 
 ## Directory Structure
 ```

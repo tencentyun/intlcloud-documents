@@ -4,7 +4,7 @@
 
 ## 计费说明
 - 云监控服务配置告警策略以监控实例各项关键指标，可免费试用。
-- 目前只针对**告警短信**收费，具体信息，请参见 [云监控计费概述](https://intl.cloud.tencent.com/document/product/248/18728)。
+- 目前只针对**告警短信**收费，具体信息，请参见 [购买指南](https://intl.cloud.tencent.com/document/product/248/18728)。
 
 ## 前提条件
 - 开通云监控（Cloud Monitor，CM）服务。

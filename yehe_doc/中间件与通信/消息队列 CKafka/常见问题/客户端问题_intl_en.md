@@ -1,12 +1,12 @@
-### What should I do if no messages can be seen when testing the client in the Kafka console?
+### What should I do if no messages are displayed in the Kafka console when I test the client?
 
-- If the "latest" option is used, the consumer can only get the last messages, and production needs to be ongoing so that see the corresponding messages can be seen.
+- If the "latest" option is used, the consumer can only get the last messages, and production needs to be ongoing so that the messages can be seen.
 - Change to the "earliest" option for data consumption.
 
-## What should I do if a production/consumption error occurs after a new client is connected to the service?
+### What should I do if a production/consumption error occurs after a new client is connected to the service?
 
 - Check whether telnet works. It might be a network issue. Check if Kafka and the producer are in the same network.
-- Check whether the accessed vip - port is correctly configured.
+- Check whether the accessed “vip - port” is correctly configured.
 - Check whether the topic allowlist is enabled. If yes, you need to configure the correct IP for access.
 
 
@@ -55,4 +55,25 @@ log.info("offset: {}", recordMetadata.offset());
 If the partition and offset information can be printed out, the currently sent message has been correctly saved on the server. At this time, you can use the message query tool to query the information of the relevant offset.
 If the partition and offset information cannot be printed out, the message has not been saved on the server, and the client needs to retry.
 
- ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+
+[](id:leader_change)
+### What is leader switch?
+When a topic is created, the Kafka broker cluster specifies a leader for each partition, and the topic partitions are evenly distributed to each broker.
+As time elapses, the partitions may become unevenly distributed across brokers, 
+and the client may throw exceptions such as `BrokerNotAvailableError` and `NotLeaderForPartitionError` during the production or consumption process.
+Generally, such issues occur because the partition leader has been switched as described in the following scenarios:
+
+- When the broker where a partition leader resides cannot communicate with the broker controller due to some exceptions such as network disconnections, program crashes, and hardware failures, 
+**leader switch** will occur, that is, the current topic partition leader will be replaced by a new leader elected from among the follower partitions.
+- When the Kafka cluster sets `auto.leader.rebalance.enable = true` to automatically trigger rebalancing or when rebalancing is manually triggered by the increase/decrease of the number of brokers, 
+**leader switch** will also occur due to partition rebalancing.
+
+When the leader is switched due to the broker’s accidental disconnection:
+- If the client has set `ack = all` and `min.insync.replicas > 1`, messages won’t get lost as they have been acknowledged by both the leader and follower partitions.
+- If the client has set `ack = 1`, **some messages may get lost** as they may fail to be synced to the follower partitions within the specified `replica.lag.time.max.ms`.
+
+Messages won’t get lost if the broker works normally and the leader is switched due to the rebalancing manually/automatically triggered by instance upgrade, the single- to multi-AZ deployment mode switchover, or instance migration. This is because:
+- If the client has set `ack = all` and `min.insync.replicas > 1`, messages won’t get lost as they have been acknowledged by both the leader and follower partitions.
+- If the client has set `ack = 1`, messages won’t get lost as the partition offset will be automatically synced when the leader is switched.
+

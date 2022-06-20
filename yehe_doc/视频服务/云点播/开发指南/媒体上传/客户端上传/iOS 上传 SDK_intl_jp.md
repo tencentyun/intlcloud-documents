@@ -227,7 +227,7 @@ SDKは、`TXVideoPublishListener`インターフェースを介してビデオ�
 
 | パラメータ名         | パラメータの説明                               | タイプ        | 入力必須   |
 | ------------ | ---------------------------------- | --------- | ---- |
-| signature    | [クライアントからのアップロード署名](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/266/33922)。 | NSString* | はい    |
+| signature    | [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)。 | NSString* | はい    |
 | mediaPath    | ローカル画像/メディアファイルパス。                           | NSString* | はい    |
 | fileName     | Tencent Cloudにアップロードされた画像/メディアファイル名です。空のままの場合、デフォルトでローカルファイル名が使用されます。  | NSString*  | いいえ    |
 | enableResume | 中断ポイントからの再開の有効無効を指定。デフォルトでは有効になっています。                  | BOOL      | いいえ    |

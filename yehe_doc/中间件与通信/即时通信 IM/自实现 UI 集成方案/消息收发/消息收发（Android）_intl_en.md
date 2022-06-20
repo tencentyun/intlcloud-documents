@@ -3,17 +3,18 @@ IM messages are classified by message destination into two types: one-to-one mes
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
-| One-to-one message | C2CMessage | Also called C2C message. When sending a one-to-one message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
+| One-to-one message | C2CMessage | When sending a one-to-one message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
 | Group message | GroupMessage | When sending a group message, you must specify the groupID of the target group, and all users in this group can receive this message. |
 
 IM messages can also be classified by content into text messages, custom (signaling) messages, image messages, video messages, voice messages, file messages, location messages, combined messages, and group tips.
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
+| Text message | TextElem | Common text message. |
 | Custom message | CustomElem | It is a section of binary buffer and often used to transfer custom signaling in your application. |
 | Image message | ImageElem | When the IM SDK sends an original image, it automatically generates two images in different sizes. The three images are called the original image, large image, and thumbnail. |
 | Video message | VideoElem | A video message contains a video file and an image. |
-| Voice message | SoundElem | It supports displaying a red dot upon playback of the voice message. |
+| Voice message | SoundElem | It supports displaying a red dot upon playback of the audio message. |
 | File message | FileElem | A file message cannot exceed 100 MB. |
 | Location message | LocationElem | A location message contains three fields: location description, longitude, and latitude. |
 | Combined message | MergerElem | Up to 300 messages can be combined. |
@@ -26,7 +27,7 @@ IM messages can also be classified by content into text messages, custom (signal
 To send text messages, call [sendC2CTextMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a59a8ba6e4a973b4c40a09ae7dfdc6981) or [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a56359fd1ce0a96f289dcd4bef522fb52). To send custom one-to-one (signaling) messages, call [sendC2CCustomMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af3e08b936df77210c6cdd0ce5c7fa87f) or [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afbce8ff97be0a3a42c7dc826d316f2c2). A custom message is essentially a section of binary buffer, and is often used to transfer custom signaling in your application.
 
 ### Receiving text and signaling messages
-To listen to simple text and signaling messages, call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b). To listen to image, video, and voice messages, call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) defined in [V2TIMMessageManager](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html).
+To listen to simple text and signaling messages, call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b). To listen to image, video, and audio messages, call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) defined in [V2TIMMessageManager](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html).
 
 >! Do not use [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b) together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823); otherwise, logic bugs may occur.
 
@@ -43,7 +44,7 @@ In the livestreaming scenario, it is a common way of communication to send or re
 2. Call [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afbce8ff97be0a3a42c7dc826d316f2c2) to send a message, and call [onRecvGroupCustomMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSimpleMsgListener.html#a46b48869e411b41c25a98211d951335c) to receive the message.
 
 ## Sending and Receiving Rich Media Messages
-Image, video, voice, file, and location messages are called rich media messages. Compared with sending or receiving simple messages, it is more complex to send or receive rich media messages.
+Image, video, audio, file, and location messages are called rich media messages. Compared with sending or receiving simple messages, it is more complex to send or receive rich media messages.
 - Before sending a rich media message, use the `create` function to create an object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html). Then, call the corresponding `send` API to send this message.
 - To receive a rich media message, first check `elemType` and perform secondary parsing on `Elem` obtained based on `elemType`.
 
@@ -134,7 +135,7 @@ For a group @ message, the sender can listen for the input of the @ character in
 3. The sender calls [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send the created @ message object.
 
 ### Receiving group @ messages
-1. During conversation loading and update, call the [getGroupAtInfoList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a54790b0fd99c2504a73b42b884fba8a9) API of [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) to obtain the @ data list of the conversation List < for combined messages, it is on the chat interface [V2TIMGroupAtInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html) >.
+1. During conversation loading and update, call the [getGroupAtInfoList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a54790b0fd99c2504a73b42b884fba8a9) API of [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) to obtain the @ data list of the conversation: `List<[V2TIMGroupAtInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html)>`.
 2. Obtain the @ data type through the API [getAtType](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html#aebb86a00883eb70fdab2c5f4728aae5d) of the object [V2TIMGroupAtInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html) on the list, and update the @ information of the current conversation with the @ data type.
 
 ### Typical examples: sending and receiving group @ messages
@@ -213,7 +214,7 @@ switch (atInfoType){
 ## Sending and Receiving Combined Messages
 To implement the Combine and Forward feature, it is necessary to create a combined message according to the original message list, and then send the combined message to the peer end. After the peer end receives the combined message, it will parse out the original message list. A title and abstracts are required to display the combined message. 
 
->? Only available in Enhanced Edition v5.2.210 or later.
+>! This feature is available only in Enhanced Edition v5.2.210 or later.
 
 - **Sending a combined message**
 Usually, when we receive a combined message, the chat UI will look like this:
@@ -232,7 +233,7 @@ The chat UI will display only the title and abstract information of the combined
 When receiving a combined message [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html), use [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html) to get [title](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#a864916a91d453e2124c12e0ccbb66550) and [abstractList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#a8d9dd51a05a5c1ee63dfb4e710c85aff) for UI display. When the user clicks the combined message, call the API [downloadMergerMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#af34d8228a9842875652a726f24ac3d30) to download the combined message list for UI display.
 
 
-### Typical examples: sending and receiving combined messages
+### Typical examples: Sending and receiving combined messages
 - **Sending a combined message**
 The sender creates and sends a combined message.
 ```java
@@ -303,18 +304,18 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 }
 ```
 
-## Read Receipts for Group Messages
+## Message Read Receipts
 
-When sending a group message, you can set whether a message requires a read receipt. If yes, the receiver can send a read receipt only after the message is read.
+When sending a message, you can set whether a message requires a read receipt. If yes, the receiver can send a read receipt only after the message is read.
 
 >?
->- Only available in Enhanced Edition v6.1.2155 or later.
->- This feature requires the Flagship Edition package.
->- You need to set the group types that support message receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
+>- This feature is available only in the Ultimate Edition.
+>- Group message read receipts are available only in Enhanced Edition v6.1.2155 or later. One-to-one message read receipts are available only in Enhanced Edition v6.2.2363 or later.
+>- You need to set the group types that support group message read receipts on the **Feature Configuration** > **Login and Message** > **Group Message Read Receipts** page in the [IM console](https://console.cloud.tencent.com/im).
 
-### The sender specifies that group messages require read receipts
+### The sender specifies that messages require read receipts
 
-After creating a message, the sender specifies that the message requires a read receipt by using the [needReadReceipt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aaf238c39e36b61c9390b8f6824e0e4de) field of the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html) and sends the message to the group.
+After creating a message, the sender specifies that the message requires a read receipt by using the [needReadReceipt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aaf238c39e36b61c9390b8f6824e0e4de) field of the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html) and sends the message to the conversation.
 
 ```java
 /// API call example
@@ -334,7 +335,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, null, "groupA", V2TIM
                 });
 ```
 
-### The receiver sends the group message read receipt
+### The receiver sends the message read receipt
 
 When receiving a message, the receiver determines whether the message requires a read receipt by using the [needReadReceipt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a53a9afe71275a00a54f1cb02f0e5eaaa) field of the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html). If a read receipt is required, and the user has read the message, the receiver calls the [sendMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a66ec09cb444ddca989e9518d5118275d) API to send the message read receipt.
 
@@ -358,9 +359,7 @@ if (!msg.isSelf() && msg.isNeedReadReceipt()) {
 }
 ```
 
-
-
-### The sender listens for notifications of group message read receipts
+### The sender listens for notifications of message read receipts
 
 After the receiver sends a message read receipt, the sender can use the [onRecvMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html#a000a30bf4b1c26bd32ec9231f54ffd4d) callback of [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html) to listen for the notifications of group message read receipts.
 
@@ -370,22 +369,28 @@ V2TIMManager.getMessageManager().addAdvancedMsgListener(new V2TIMAdvancedMsgList
   @Override
   public void onRecvMessageReadReceipts(List<V2TIMMessageReceipt> receiptList) {
     for (V2TIMMessageReceipt receipt : receiptList) {
-      // Unique ID of the message
+      // Read receipt message ID
       String msgID = receipt.getMsgID();
-      // Latest message read count
+      // ID of the other party of the one-to-one message
+      String userID = receipt.getUserID();
+      // Read status of the other party of the one-to-one message
+      boolean isPeerRead = receipt.isPeerRead();
+      // Group ID
+      String groupID = receipt.getGroupID();
+      // Latest group message read count
       long readCount = receipt.getReadCount();
-      // Latest message unread count
+      // Latest group message unread count
       long unreadCount = receipt.getUnreadCount();
     }
   }
 });
 ```
 
-### The sender proactively pulls group message read receipt information
+### The sender proactively pulls message read receipt information
 When the sender enters the message list UI from other UIs, it pulls the message history first and then call the [getMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a50e3bc679e196866057415a7c192abf6) API to pull message read receipt information.
 
 ```java
-/// API call example
+/// API call example (taking a group message as an example)
 V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, null, new V2TIMValueCallback<List<V2TIMMessage>>() {
   @Override
   public void onSuccess(final List<V2TIMMessage> v2TIMMessages) {
@@ -406,9 +411,15 @@ V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, null, 
         for (V2TIMMessage msg : v2TIMMessages) {
           V2TIMMessageReceipt receipt = messageReceiptMap.get(msg.getMsgID());
           if (receipt != null) {
-            // Latest message read count
+            // ID of the other party of the one-to-one message
+            String userID = receipt.getUserID();
+            // Read status of the other party of the one-to-one message
+            boolean isPeerRead = receipt.isPeerRead();
+            // Group ID
+            String groupID = receipt.getGroupID();
+            // Message read count. If `readCount` is `0`, no one has read the message.
             long readCount = receipt.getReadCount();
-            // Latest message unread count
+            // Message unread count. If `unreadCount` is `0`, all members have read the message.
             long unreadCount = receipt.getUnreadCount();
           }
         }
@@ -466,48 +477,11 @@ V2TIMManager.getMessageManager().getGroupMessageReadMemberList(message, V2TIMMes
 });
 ```
 
-## Read Receipts for One-to-One Messages
-
-Currently, the one-to-one chat scenario does not support read receipts at the message level. In the scenario, when the receiver calls the [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) API to mark the conversation as read, and the sender will receive a read receipt, indicating that the peer has read the conversation. The read receipt carries the conversation read time of the receiver, and the sender can consider that all messages before this time are read by the peer.
-
-### The receiver marks a conversation as read
-
- ```
- // Mark messages coming from Haven as read
- V2TIMManager.getMessageManager().markC2CMessageAsRead("haven", new V2TIMCallback() {
-	@Override
-	public void onError(int code, String desc) {
-		// Messages failed to be marked as read
-	}
-	@Override
-	public void onSuccess() {
-		// Messages were successfully marked as read
-	}
-});
- ```
-
-### The sender listens for the notifications of conversation read receipts
-
-The event notification of the conversation read receipt is located in the advanced message listener [V2TIMAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html). To perceive the event, the sender must call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) to set the listener. Then, the sender can perceive the event through the [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html#a25acb98db29da33ae3e3eebab19b655c) callback.
-
-```java
-@Override
-public void onRecvC2CReadReceipt(List<V2TIMMessageReceipt> receiptList) {
-	// The sender may receive multiple read receipts at a time. Therefore, the array callback mode is used here.
-	for (V2TIMMessageReceipt v2TIMMessageReceipt : receiptList) {
-		// Message recipient
-		String userID = v2TIMMessageReceipt.getUserID();
-		// Time of the read receipt. A message is considered as read if the timestamp in the chat window is not later than `timestamp` here.
-		long timestamp = v2TIMMessageReceipt.getTimest
-	}
-}
-```
-
 ## Sending Messages Excluded from the Unread Count
 
 Normally, both one-to-one chat messages and group messages are included in the unread count (you can get the unread count of a conversation via the API [getUnreadCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e) of the conversation object [V2TIMConversation](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html)). If you need to send messages that are excluded from the unread count, such as tips and control messages, send them as follows:
 
->? Only available in Enhanced Edition v5.3.425 or later.
+>! This feature is available only in Enhanced Edition v5.3.425 or later.
 
 ```
 // Create the message object
@@ -535,7 +509,7 @@ public void onProgress(int progress) {
 
 In certain scenarios, if you need to send messages that are excluded from `lastMsg` of a conversation, send them as follows:
 
->? Only available in Enhanced Edition v5.4.666 or later.
+>! This feature is available only in Enhanced Edition v5.4.666 or later.
 
 ```
 // Create the message object
@@ -587,15 +561,14 @@ V2TIMManager.getMessageManager().sendMessage(targetGroupMessage, null, "groupA",
 });
 ```
 >?
->
-> Only available in Enhanced Edition v6.0.1975 or later.
->- This feature requires the Flagship Edition package.
+>- This feature is available only in Enhanced Edition v6.0.1975 or later.
+>- This feature is available only in the Ultimate Edition.
 >- The original message object for creating a targeted group message cannot be a group @ message.
->- The targeted group message feature is not available for Community and AVChatRoom groups.
+>- The targeted group message feature is not available for community and audio-video (AVChatRoom) groups.
 >- By default, targeted group messages are excluded from the unread count of the group conversation.
 
 ## Setting Offline Push
-When the recipient's app is killed, the IM SDK cannot receive new messages through the normal network connection. In this scenario, the offline push service provided by mobile phone manufacturers must be used to notify the recipient of new messages. For more information, see [Offline Push (Android)](https://intl.cloud.tencent.com/document/product/1047/39156).
+When the recipient's app is killed, the IM SDK cannot receive new messages through the normal network connection. In this scenario, the offline push service provided by mobile phone vendors must be used to notify the recipient of new messages. For more information, see [Offline Push (Android)](https://intl.cloud.tencent.com/document/product/1047/34336).
 
 ### Setting the title and content for offline push
 When sending messages, you can use the `offlinePushInfo` field in the [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) API to set the title and content for offline push.
@@ -651,7 +624,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "vinson", null, V2TIM
 	public void onProgress(int progress) {}
 });
 ```
-Recipient: although Vinson's app is offline, it can still receive the notification messages pushed offline by the corresponding mobile phone vendor (for example, OPPO). When Vinson clicks the pushed message, the app is started.
+Recipient: Although Vinson's app is offline, it can still receive the notification messages pushed offline by the corresponding mobile phone vendor (for example, OPPO). When Vinson clicks the pushed message, the app is started.
 
 ```
 // After starting the app, Vinson obtains the custom content from the opened `Activity`
@@ -659,7 +632,7 @@ Bundle bundle = intent.getExtras();
 Set<String> set = bundle.keySet();
 if (set != null) {
 	for (String key : set) {
-		// `key` and `value` correspond to `extKey` and `ext content` set at the sender
+		// `key` and `value` correspond to `extKey` and `ext content` that are set on the sender side respectively
 		String value = bundle.getString(key);
 		if (value.equals("jump to denny")) {
 			// Go to the chat window with Denny
@@ -706,7 +679,7 @@ The SDK supports the following types of message receiving options:
 
 You can call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a6524143895cdee25fabd9aeeae73a3c5) API to set the Mute Notifications option for one-to-one messages and call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a2735427ac22485626aea278a9d465b3e) API to set the Mute Notifications option for group messages.
 
->? Only available in Enhanced Edition v5.3.425 or later.
+>! This feature is available only in Enhanced Edition v5.3.425 or later.
 
 ## Recalling Messages
 
@@ -736,29 +709,129 @@ V2TIMManager.getMessageManager().revokeMessage(v2TIMMessage, new V2TIMCallback()
 ```
 @Override
 public void onRecvMessageRevoked(String msgID) {
-	// msgList is the message list on the current chat interface
+	// `msgList` is the message list on the current chat interface
 	for (V2TIMMessage msg : msgList) {
 		if (msg.getMsgID().equals(msgID)) {
-				// msg is the recalled message. You need to change the corresponding message bubble state on the UI.
+				// `msg` is the recalled message. You need to change the corresponding message bubble state on the UI.
 		}
 	}
 }
 ```
 
+## Message Modification
+If a message in a conversation is successfully sent, participants of the conversation can make secondary modification to the message. After the message is modified successfully, it is synced to all participants of the conversation.
+>! This feature is available only in Enhanced Edition v6.2.2363 or later.
+
+### Modifying a message
+A participant of a conversation can call the [modifyMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a5464602189e6af536540e86e8bcbbe73) API to make secondary modification to messages in the conversation.
+
+As for message modification, the IM SDK applies only one restriction: only participants of a conversation can modify the messages in the conversation. If you need to apply more restrictions, such as restricting only the message sender to modify messages, you can add the restrictions at the business layer.
+
+```java
+// The original message object of the conversation is `originMessage`
+// Modify the `cloudCustomData` information of the message object
+originMessage.setCloudCustomData("modify_cloud_custom_data".getBytes());
+// If the message is a text message, modify the text message content
+if (V2TIMMessage.V2TIM_ELEM_TYPE_TEXT == originMessage.getElemType()) {
+  originMessage.getTextElem().setText("modify_text");
+}
+V2TIMManager.getMessageManager().modifyMessage(originMessage, new V2TIMCompleteCallback<V2TIMMessage>() {
+  @Override
+  public void onComplete(int code, String desc, V2TIMMessage message) {
+    // After the message modification is completed, `message` is the modified message object
+  }
+});
+```
+
+### Listening for message modification callbacks
+A participant of a conversation can call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) to add an advanced message listener.
+When a message in the conversation is modified, the conversation participant will receive the [onRecvMessageModified](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html#ade079c0c996ee408abdc9cc83ab56e40) callback, which contains the modified message object.
+
+```java
+V2TIMAdvancedMsgListener advancedMsgListener = new V2TIMAdvancedMsgListener() {
+  // Message content modification notification
+  @Override
+  public void onRecvMessageModified(V2TIMMessage msg) {
+  	// `msg` is the modified message object
+  }
+};
+// Add a message listener
+V2TIMManager.getMessageManager().addAdvancedMsgListener(advancedMsgListener);
+```
+
 ## Marking Unread Messages as Read
 ### Marking unread messages in a conversation as read
-The recipient can call [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) or [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ac0a65f18d361abde8a0ac16132027e69), respectively, to mark incoming messages in a C2C conversation or a group conversation as read, and perform callback of [onConversationChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) to notify the UI to update.
-### Quickly marking unread messages of all conversations as read
-The recipient can call [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2配置】>【登录与消_1_1V2TIMMessageManager.html#ad097a0da2ea0002f2b0f2d1d11f3a4ab) to quickly mark unread messages of all conversations as read, and perform callback of [onConversationChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) to notify the UI to update.
+You can call [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) or [markGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ac0a65f18d361abde8a0ac16132027e69) to mark unread messages in a one-to-one or group conversation as read respectively. After the API call is successfully completed, the SDK calls back [onConversationChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) to notify the UI to update accordingly.
 
->? Only available in Enhanced Edition v5.8.1668 or later.
+```java
+// Mark unread messages in a one-to-one conversation as read for userA
+V2TIMManager.getMessageManager().markC2CMessageAsRead("userA", new V2TIMCallback() {
+  @Override
+  public void onSuccess() {
+  	// Marked unread messages as read successfully
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+  	// Failed to mark unread messages as read
+  }
+});
+// Mark unread messages in groupA's group conversation as read
+V2TIMManager.getMessageManager().markGroupMessageAsRead("groupA", new V2TIMCallback() {
+  @Override
+  public void onSuccess() {
+  	// Marked unread messages as read successfully
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+  	// Failed to mark unread messages as read
+  }
+});
+```
+
+When you call the [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) API to mark unread messages in a one-to-one conversation as read, the peer user will receive the [onRecvC2CReadReceipt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html#a25acb98db29da33ae3e3eebab19b655c) callback, which contains the timestamp of marking unread messages in the conversation as read.
+
+```java
+V2TIMManager.getMessageManager().addAdvancedMsgListener(new V2TIMAdvancedMsgListener() {
+  @Override
+  public void onRecvC2CReadReceipt(List<V2TIMMessageReceipt> receiptList) {
+    for (V2TIMMessageReceipt receipt : receiptList) {
+      // userID for which unread messages in the conversation were marked as read
+      String userID = receipt.getUserID();
+      // Timestamp of marking unread messages in the conversation as read
+      long timestamp = receipt.getTimestamp();
+    }
+  }
+});
+```
+
+### Quickly marking unread messages of all conversations as read
+You can call [markAllMessageAsRead](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad097a0da2ea0002f2b0f2d1d11f3a4ab) to quickly mark unread messages of all conversations as read. After the API call is successfully completed, the SDK calls back [onConversationChanged](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) to notify the UI to update accordingly.
+
+```java
+V2TIMManager.getMessageManager().markAllMessageAsRead(new V2TIMCallback() {
+  @Override
+  public void onSuccess() {
+  	// Marked unread messages as read successfully
+  }
+
+  @Override
+  public void onError(int code, String desc) {
+  	// Failed to mark unread messages as read
+  }
+});
+```
+
+>! This feature is available only in Enhanced Edition v5.8.1668 or later.
 
 ## Viewing Historical Messages
+
 You can call [getC2CHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#afedccbe0e5229ae15e0e07b722ea39df) to obtain historical messages of one-to-one chats, or call [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597) to obtain historical messages of group chats. If the network connection of the current device is normal, the IM SDK pulls historical messages from the server by default. If the network connection is unavailable, the IM SDK directly reads historical messages from the local database.
 
 ### Pulling historical messages by page
 The IM SDK supports the feature of pulling historical messages by page. The number of messages pulled per page cannot be too large; otherwise, the pulling speed is affected. We recommend you pull 20 messages per page.
-The following example assumes that historical messages of `groupA` are pulled by page, and the number of messages per page is 20. The sample code is as follows:
+The following example assumes that historical messages of `groupA` are pulled by page with 20 messages per page. The sample code is as follows:
 
 ```
 // The value `null` of `lastMsg` is passed in for the first pulling, indicating that starting from the latest message, a total of 20 messages are pulled
@@ -793,7 +866,7 @@ V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, null, 
 In actual scenarios, pulling by page is often triggered by your swipe operation. Each time when you swipe on the message list, pulling by page is triggered once. However, the principle is similar to the preceding sample code. In either case, `lastMsg` specifies the start message for pulling, and `count` specifies the number of messages pulled each time.
 
 ### Precautions
-- The storage period of historical messages is as follows:<ul style="margin:0;"><li>Trial edition: free storage for 7 days, no extension supported. </li><li>Pro edition: free storage for 7 days, extension supported. </li><li>Flagship edition: free storage for 30 days, extension supported. </li></ul>It is a value-added service to extend the storage period of historical messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For information about billing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
+- The storage period of historical messages is as follows:<ul style="margin:0;"><li>Free edition: Free storage for seven days, with no extension supported. </li><li>Pro edition: Free storage for seven days, with extension supported. </li><li>Ultimate edition: Free storage for 30 days, with extension supported. </li></ul>It is a value-added service to extend the storage period of historical messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For information about billing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
 - Only the meeting group (corresponding to the ChatRoom of the earlier version) supports pulling historical messages of members **before they join the group**.
 - Messages in an audio-video group (AVChatRoom) do not support local storage and multi-device roaming. Therefore, the [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597) API does not take effect on an audio-video group.
 
@@ -805,21 +878,19 @@ You can call the [deleteMessages](https://im.sdk.qcloud.com/doc/en/classcom_1_1t
 By default, the IM SDK does not prevent message sending and receiving among strangers. If you wish that one-to-one messages can be sent or received only among friends, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** > **Login and Message** > **Relationship Check**, and enable **Check Relationship for One-to-One Messages**. After this feature is enabled, you can send messages only to friends. When you try to send messages to strangers, the IM SDK returns the 20009 error code.
 
 ### Not receiving messages from a specific user
-To avoid receiving messages from a specific user, you can blocklist the user or set the Mute Notifications option for messages from the user. After setting the Mute Notifications option, you can change the [Mute Notifications status](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a90a89f5b4855dad72b784101667998c5).
+To avoid receiving messages from a specific user, you can add the user to the blocklist or set the Mute Notifications option for messages from the user. After setting the Mute Notifications option, you can change the [Mute Notifications status](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a90a89f5b4855dad72b784101667998c5).
 **Adding a user to the blocklist:**
 Call the [addToBlackList](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a8804c7f47000bf1c26aa6ab744a53456) API to add the user to the blocklist.
 By default, the user will not be aware of this blocking operation, and the messages sent to you will still be displayed as sent successfully (in fact, you will not receive the messages). If you want a user in the blocklist to know that his/her messages are not sent, log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** > **Login and Message** > **Blocklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blocklist sends a message to you.
 **Setting "Mute Notifications" for messages from a specified user: **
 Call the [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a6524143895cdee25fabd9aeeae73a3c5) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
 
->? Only available in Enhanced Edition v5.3.425 or later.
+>! This feature is available only in Enhanced Edition v5.3.425 or later.
 
 ### Rejecting messages from a specified group
 
 For Enhanced Edition v5.3.425 or later, call the [setGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a2735427ac22485626aea278a9d465b3e) API to set the message receiving option to `V2TIM_NOT_RECEIVE_MESSAGE`.
 For SDKs of other versions, call the `setReceiveMessageOpt` API to set the group message receiving option to `V2TIM_GROUP_NOT_RECEIVE_MESSAGE`.
-
-
 
 ## FAQs
 ### 1. Why am I receiving duplicate messages?
