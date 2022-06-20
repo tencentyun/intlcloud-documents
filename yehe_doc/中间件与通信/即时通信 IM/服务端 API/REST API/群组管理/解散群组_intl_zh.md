@@ -10,6 +10,7 @@
 |Public|支持|
 |ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
 |AVChatRoom|支持|
+|Community（社群）|支持|
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
@@ -86,7 +87,7 @@ https://xxxxxx/v4/group_open_http_svc/destroy_group?sdkappid=88888888&identifier
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/destroy_group) 调试本接口。
 
 ## 参考
 创建群组（[v4/group_open_http_svc/create_group](https://intl.cloud.tencent.com/document/product/1047/34895)）。
