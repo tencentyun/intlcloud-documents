@@ -6,7 +6,7 @@
 Only layer-4 TCP allows Proxy Protocol to obtain the client real IP. Please enable Proxy Protocol in the acceleration connection as follows:
 
 Log in to the [GAAP console](https://console.cloud.tencent.com/gaap). Select **Access Management** > **TCP/UDP Listener Management**. Click **Create** to add a TCP listener and select TOA, and then complete configurations required to create the listener and connection.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/08ccde0abdb1866940d9b84d3135ec9a.png)
 
 ## Step 2: Adapt Proxy Protocol on the Backend Server
 
