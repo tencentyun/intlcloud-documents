@@ -6,11 +6,11 @@ A region is the physical location of an IDC. In Tencent Cloud, regions are fully
 
 You can view the following table or use the [DescribeRegions](https://intl.cloud.tencent.com/document/product/213/15708) API to get a complete list region list.
 
-### Characteristics
+### Features
 
 - The networks of different regions are fully isolated. Tencent Cloud services in different regions **cannot communicate via a private network by default**.
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003), which is faster and more stable.
-- [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) feature, cross-region binding of CLB and CVM instances is supported.
+- [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) feature, cross-region binding of CLB and CVM instances is supported.
 
 ## Availability Zones
 
@@ -19,14 +19,14 @@ You can view the following table or use the [DescribeRegions](https://intl.cloud
 An availability zone (AZ) is a physical IDC of Tencent Cloud with independent power supply and network in the same region. It can ensure business stability, as failures (except for major disasters or power failures) in one AZ are isolated without affecting other AZs in the same region. By starting an instance in an independent availability zone, users can protect their applications from being affected by a single point of failure.
 You can view the following table or use the [DescribeZones](https://intl.cloud.tencent.com/document/product/213/35071) API to get a complete AZ list.
 
-### Characteristics
+### Features
 
 Tencent Cloud services in the same VPC are interconnected via the private network, which means they can communicate using [private IPs](https://intl.cloud.tencent.com/document/product/213/5225), even if they are in different AZs of the same region.
 >?Private network interconnection refers to the interconnection of resources under the same account. Resources under different accounts are completely isolated on the private network.
 >
 
 <span id="MainlandChina"></span>
-## China
+## Regions and AZs in China
 <table class="table-striped">
 <tbody>
 	<tr>
@@ -120,7 +120,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 
 <span id="InternationalArea"></span>
 
-## Other Countries and Regions	
+## Regions and AZs in China Outside China	
 <table class="table-striped">
 	<tbody>
 	<tr>
