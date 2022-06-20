@@ -71,7 +71,7 @@
 | 将主播的手机画面作为直播源，并叠加摄像头预览进行直播         | [录屏推流](https://intl.cloud.tencent.com/document/product/1071/41878) |
 | 将实时推送的直播画面通过播放端进行播放                       | [直播拉流](https://intl.cloud.tencent.com/document/product/1071/38159) |
 | 通过使用 Web 超级播放器 TCPlayerLite 解决手机浏览器和 PC 浏览器上音视频流播放问题 | Web（H5）播放器 |
-| 创建直播间并实现连麦互动功能                                 | [连麦互动](https://intl.cloud.tencent.com/document/product/1071/39888) |
+| 创建直播间并实现连麦互动功能                                 | [连麦互动](https://intl.cloud.tencent.com/document/product/1071/42210) |
 | 设定推流画面质量                                             | [设定画面质量](https://intl.cloud.tencent.com/document/product/1071/41861) |
 | 监控直播推流和播放的状态数据变化                             | SDK 指标监控 |
 | 将整个直播过程录制并存储                                 | [录制和回看](https://intl.cloud.tencent.com/document/product/1071/41868) |
