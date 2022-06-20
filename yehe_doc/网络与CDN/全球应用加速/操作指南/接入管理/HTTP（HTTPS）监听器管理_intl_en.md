@@ -4,9 +4,9 @@
 2. On the page that appears, select **HTTP/HTTPS Listener Management** > **Create**. You can select either the HTTP or HTTPS protocol. (Note: currently, HTTP/HTTPS listener configuration is not supported for IPv6 connections.)
 3. The specific configuration is as follows:
    1. If **HTTP** is selected, only the listener port number is required, and the listener will forward packets using the HTTP protocol by default.
-![](https://main.qcloudimg.com/raw/0096d45b44fbd916012317a49a97a884.png)
+      ![](https://main.qcloudimg.com/raw/0096d45b44fbd916012317a49a97a884.png)
    2. If **HTTPS** is selected, certificates and additional information need to be configured, as shown below:
-![](https://main.qcloudimg.com/raw/941665ba354633d345929e3fbd02fa8c.png)
+       ![](https://main.qcloudimg.com/raw/941665ba354633d345929e3fbd02fa8c.png)
       - **Listeners communicate with the origin server using HTTP protocol** means that the HTTPS protocol is used between the client and the acceleration connection VIP, while the HTTP protocol is used between the VIP and the origin server, which requires an HTTP port to be opened on the origin server;
         **Listeners communicate with the origin server using HTTPS protocol** means that the HTTPS protocol is used between the client and the origin server, which requires an HTTPS port to be opened on the origin server.
       - **SSL Parsing**: Both one-way and two-way authentication are supported.
@@ -19,30 +19,36 @@ Under the **HTTP/HTTPS Listener Management** tab, click **Set a rule** in the op
 ### Creating a distribution
 
 1. To add a domain name for an HTTP listener, enter a valid domain name. It must be 3 to 80 characters containing [a-z], [0–9], [.-]. Only exact match is supported.
- ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/fed0aa02e83804a36799763b0f88cf33.png)
 2. To add a domain name for an HTTPS listener, enter a valid domain name and select the corresponding server certificate.
- ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
-	- **Domain**: 3 to 80 characters containing [a-z], [0–9], [.-]. Only exact match is supported.
-	- **Server Certificate**: by default, it is the certificate used to create the listener. If you upload another certificate, the domain name is authenticated with the uploaded certificate.
-	- **HTTP3 Transfer**: enables it to support QUIC. If the client does not support this protocol, HTTP2.0 and previous versions will be used for access.
+   ![](https://qcloudimg.tencent-cloud.cn/raw/68b14a92208741316c4d92f3200a147c.png)
+   - **Domain**: 3 to 80 characters containing [a-z], [0–9], [.-]. Only exact match is supported.
+   - **Server Certificate**: by default, it is the certificate used to create the listener. If you upload another certificate, the domain name is authenticated with the uploaded certificate.
+   - **HTTP3 Transfer**: enables it to support QUIC. If the client does not support this protocol, HTTP2.0 and previous versions will be used for access.
 
 ### Adding a rule
 
 After adding a domain name, click **Add Rule** to add the corresponding URL and select the origin server type. You can add up to 20 URL rules for one domain name as shown below:
 
 1. Basic configuration:
-   ![](https://main.qcloudimg.com/raw/fcf56bdf702b67b81990cc4dedd89f0d.png)
-   - **URL**: contains 1-80 characters in the following types: [a-z], [0–9], and [_.-/].
-   - **Origin Server Type**: supports an IP or a domain name. A listener supports only one type. 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1168de6cb2b7dad5c58517e0ebf82fa6.png" width="80%" >
+
+   - **URL**: It contains 1-80 characters in the following types: [a-z], [0–9], and [_.-/].
+   - **Origin Domain**: The host field of the origin-pull request can be modified.
+   - **Origin Server Type**: It supports an IP or a domain name. A listener supports only one type. 
+   
 2. Processing policy for the origin server:
    Configure the origin server processing policy, that is, if a listener is bound with multiple origin servers, you need to select a scheduling policy for origin servers.
-    ![](https://main.qcloudimg.com/raw/bb6f7d4cf05d2fb6e623c5ed28904dbc.png)
-   - **RR**: multiple origin servers perform origin-pull according to the RR policy.
-   - **Weighted RR**: multiple origin servers perform origin-pull according to the weight ratio (this configuration is not supported if the origin server type is domain name).
-   - **Least Connections**: schedules the origin server with the least number of connections first.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/75c6c28ea03389fe34054743962ac093.png" width="80%">
+
+   - **RR**: Multiple origin servers perform origin-pull according to the RR policy.
+   - **Weighted RR**: Multiple origin servers perform origin-pull according to the weight ratio (this configuration is not supported if the origin server type is a domain name).
+   - **Least Connections**: It schedules the origin server with the least number of connections first.
+   - **Origin-pull SNI**: It forwards SNI to the origin server before an SSL connection is established, and based on the SNI value the origin server returns a certificate.
+   
 3. Origin health check mechanism:
    The health check mechanism can be enabled. For the current domain name, you can configure an independent check URL. HEAD and GET request methods are supported. Check status codes include http_1xx, http_2xx, http_3xx, http_4xx, and http_5xx, and one or multiple codes can be selected. When a specified status code is detected, the listener considers that the backend origin server is normal. If no status code is detected, the listener considers that the backend origin server has an exception.
-![](https://main.qcloudimg.com/raw/20d08ec6efd43a94734b6a408afc2d10.png)
+   ![](https://main.qcloudimg.com/raw/20d08ec6efd43a94734b6a408afc2d10.png)
 
 ### Modifying a domain name
 
@@ -80,11 +86,10 @@ After adding a rule, you can click **Delete** to delete the rule. If the rule ha
 
 1. After adding a rule, you can select **More** in the **Operation** column of the rule and click **Set Origin-Pull Request Header**.
    ![](https://qcloudimg.tencent-cloud.cn/raw/9dc95f9ef0c564ec6435c4b7f0635cdd.png)
-2. Click **Add Parameter** to add the name parameter and value of the request header. The variable value of the header that carries the user's real IP is `$remote_addr` (by default, the `X-Forwarded-For` header carries the client IP for origin-pull). Currently, except the `$remote_addr` variable, other variables with `$` are not supported.
+2. Click **Add Parameter** and enter the request header's name and value. The `$remote_addr` variable can be used to specify the real client IP carried in the request header (by default, the `X-Forwarded-For` header carries the client IP for origin-pull). To use other variables with `$`, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 > !
->
-> 1. The `Key` value of the HTTP header name can contain 1–100 digits (0–9), letters (a–z, A–Z), and special symbols (-, _, :, and space). The `Value` can contain 1–100 characters. Except `$remote_addr`, other configuration items cannot contain the `$` character;
+> 1. The `Key` value of the HTTP header name can contain 1–100 digits (0–9), letters (a–z, A–Z), and special symbols (-, _, :, and space). The `Value` can contain 1–100 characters;
 > 2. Up to 10 origin-pull HTTP request headers can be configured for each rule;
 > 3. The standard headers listed below cannot be set/added/deleted in a self-service manner.
 
