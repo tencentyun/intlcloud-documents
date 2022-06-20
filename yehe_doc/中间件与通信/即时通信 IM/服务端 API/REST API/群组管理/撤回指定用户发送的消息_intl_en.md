@@ -10,11 +10,13 @@ This API is used to recall messages sent by a specified user within the last 1,0
 | Public | Yes. |
 | ChatRoom | Yes. Same as Meeting (temporary meeting group) in the new version. |
 | AVChatRoom | No. |
+|Community | Yes. |
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->?Livestreaming groups (AVChatRoom groups) do not support storing message history (in this document, recalling messages means recalling messages stored in the message history). Therefore, you cannot recall user messages in groups of this type. However, no error will be returned if you attempt to do so.
-
+>?
+>- Livestreaming groups (AVChatRoom groups) do not support storing message history (in this document, recalling messages means recalling messages stored in the message history). Therefore, you cannot recall user messages in groups of this type. However, no error will be returned if you attempt to do so.
+>- This API supports recalling silent messages only. Messages are marked as recalled on the server side, with no notification sent to the client side. The user is aware of the message recall operation only when the message history is pulled. 
 ### Sample request URL
 ```
 https://xxxxxx/v4/group_open_http_svc/delete_group_msg_by_sender?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
