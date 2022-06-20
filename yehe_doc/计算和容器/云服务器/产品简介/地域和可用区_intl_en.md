@@ -120,7 +120,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 
 <span id="InternationalArea"></span>
 
-## Regions and AZs in China Outside China	
+## Regions and AZs Outside China	
 <table class="table-striped">
 	<tbody>
 	<tr>
