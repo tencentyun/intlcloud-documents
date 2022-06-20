@@ -31,6 +31,7 @@ The demo includes the following features:
   <ul><li>SDKAPPID: `0` by default. Set it to the actual `SDKAppID`.</li>
   <li>SECRETKEY: left empty by default. Set it to the actual key.</li></ul> 
 
+
 [](id:step3)
 ### Step 3. Compile and run
 <dx-tabs>
@@ -56,6 +57,7 @@ The demo includes the following features:
 2. Click **Build And Run** to run the demo.
 3. To use the simulator feature of Unity Editor, you must install `Device Simulator Package`.
 4. Click **Windows** > **General** > **Device Simulator**.
+![](https://main.qcloudimg.com/raw/79f707b89553528956a888f48b4d4d6d.png)
 :::
 </dx-tabs>
 
@@ -64,7 +66,6 @@ The demo includes the following features:
 ## Demo
 The demo integrates most of the APIs launched so far, which can be used for testing and as reference for API calls. For more information about APIs, see [Client APIs > Unity > Overview](https://intl.cloud.tencent.com/document/product/647/40139).
 >? The UI of the latest version of the demo may look different.
-
 
 ## Directory Structure
 ```
