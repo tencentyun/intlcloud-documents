@@ -43,7 +43,7 @@ videoapi-sgp.im.qcloud.com
 ```
 
 ### 클라이언트가 프라이빗 네트워크에서 web용 TRTC SDK에 액세스하도록 프록시를 구성하려면 어떻게 해야 합니까?
-Nginx+coturn 솔루션을 사용할 수 있습니다. 자세한 내용은 [엔터프라이즈 프라이빗 네트워크 프록시 솔루션](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-34-advanced-proxy.html)을 참고하십시오.
+Nginx+coturn 솔루션을 사용할 수 있습니다. 자세한 내용은 [엔터프라이즈 프라이빗 네트워크 프록시 솔루션](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-34-advanced-proxy.html)을 참고하십시오.
 
 | 솔루션 | 적용 시나리오                             | 네트워크 요구 사항                          |
 | :----- | :----------------------------------- | :-------------------------------- |
