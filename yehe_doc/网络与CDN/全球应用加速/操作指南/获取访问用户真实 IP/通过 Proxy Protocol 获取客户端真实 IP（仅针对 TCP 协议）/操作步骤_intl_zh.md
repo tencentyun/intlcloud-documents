@@ -6,7 +6,7 @@
 仅四层 TCP 支持 Proxy Protocol 获取客户端真实 IP，请根据以下指引，在加速通道中选择开启 Proxy Protocol。
 
 控制台操作步骤：登录 [腾讯云 GAAP 控制台](https://console.cloud.tencent.com/gaap) > 加速通道（监听器配置） > 新增 TCP 监听器管理 > 勾选 Proxy Protocol > 按照指引完成监听器、通道创建。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/08ccde0abdb1866940d9b84d3135ec9a.png)
 
 ## 步骤二：后端服务适配 Proxy Protocol 协议
 
