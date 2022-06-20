@@ -19,7 +19,7 @@
 ### 1단계: 새로운 애플리케이션 생성
 1. TRTC 콘솔에 로그인한 후 [개발 지원] > [Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
 2. [시작하기]를 클릭하고 애플리케이션 이름(예시: `TestTRTC`)을 입력한 후 [애플리케이션 생성]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/7178fb5203b8c1ad9eb4a3b7a3c008d7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7d1d1940f02ee954c369b5f749e0c663.png)
 
 [](id:step2)
 ### 2단계: SDK와 소스 코드 다운로드
@@ -30,7 +30,7 @@
 4. `GenerateTestUserSig.cs` 파일에서 관련 매개변수를 설정합니다.
   <ul><li>SDKAPPID: 0으로 기본 설정되어 있습니다. 실제 SDKAppID로 설정하십시오.</li>
   <li>SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 키 정보로 설정하십시오.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/4dad4541a4a0d400441e9cd75c07ba1e.png"/>
+
 
 [](id:step3)
 ### 3단계: 컴파일 실행
@@ -67,7 +67,6 @@
 Demo에는 이미 런칭된 API가 대다수 포함되어 있습니다. 테스트 및 호출 참고용으로 사용할 수 있습니다. API 문서 [SDK API(Unity)](https://intl.cloud.tencent.com/zh/document/product/647/40139)를 참조하십시오.
 >? UI에 일부 조정 업데이트가 있을 수 있으니 최신 버전을 기준으로 하십시오.
 
-![](https://main.qcloudimg.com/raw/2ce3ab51c6fdc843c1e8b086b55840c0.png)
 
 ## 디렉터리 구조
 ```
