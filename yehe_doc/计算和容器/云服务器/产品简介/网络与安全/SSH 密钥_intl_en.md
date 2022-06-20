@@ -1,4 +1,4 @@
-To ensure the security and reliability of instances, Tencent Cloud provides users with two encrypted login methods. Users can login via a [login password](/doc/product/213/6093) or SSH key pair. This document describes how to log in with an SSH key pair.
+To ensure the security and reliability of instances, Tencent Cloud provides users with two encrypted login methods, [password](/doc/product/213/6093) and SSH key pair. This document describes how to log in with an SSH key pair.
 You can select SSH key pair as the encrypted CVM login method when [Customizing Linux CVM Configurations](/doc/product/213/10517#.E8.AE.BE.E7.BD.AE.E4.BF.A1.E6.81.AF).
 
 ## SSH Key Overview
