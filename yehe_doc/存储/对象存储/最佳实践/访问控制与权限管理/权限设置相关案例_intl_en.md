@@ -8,7 +8,7 @@ Granting authorization through bucket policy (Policy) only targets specified buc
 This document assumes that the root account that owns the target bucket has a UIN of 100000000001, and that its sub-account has a UIN of 100000000011. The sub-account needs to be authorized to access the destination bucket.
 >?
 >- To query sub-accounts created under the main account, log in to the CAM Console and view them under [User List](https://console.cloud.tencent.com/cam).
->- To create a new sub-account, please refer to the [Create New Sub-User](https://intl.cloud.tencent.com/zh/document/product/598/13674) document.
+>- To create a new sub-account, please refer to the [Create New Sub-User](https://intl.cloud.tencent.com/document/product/598/13674) document.
 3. Open the **Add Policy** dialog box
 Click the destination bucket and then select **Permission Management** > **Permission Policy Settings > Visual editor** > **Add Policy**. Then, you can configure by referring to the cases in this document. For detailed directions, please see [Adding Bucket Policies](https://intl.cloud.tencent.com/document/product/436/30927).
 
