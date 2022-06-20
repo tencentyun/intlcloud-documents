@@ -6,14 +6,13 @@ The demo includes the following features:
 - Device management and music/voice effects
 
 >?
->
 >- For details about API features and parameters, please see [Client APIs > Unity > Overview](https://intl.cloud.tencent.com/document/product/647/40139).
-- Unity 2020.2.1f1c1 is recommended.
-- Supported platforms: Android, iOS, Windows, macOS (alpha testing)
-- Modules required: `Android Build Support`, `iOS Build Support`, `Windows Build Support`, `MacOS Build Support`
-- If you are developing for iOS, you also need:
-  - Xcode 11.0 or above
-  - A valid developer signature for your project
+>- Unity 2020.2.1f1c1 is recommended.
+>- Supported platforms: Android, iOS, Windows, macOS (alpha testing)
+>- Modules required: `Android Build Support`, `iOS Build Support`, `Windows Build Support`, `MacOS Build Support`
+>- If you are developing for iOS, you also need:
+   - Xcode 11.0 or above
+   - A valid developer signature for your project
 
 ## Directions
 [](id:step1)
