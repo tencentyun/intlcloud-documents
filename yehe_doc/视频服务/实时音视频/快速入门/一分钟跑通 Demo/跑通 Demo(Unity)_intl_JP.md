@@ -11,8 +11,8 @@
 >- 現在、Android、iOS、Windows、Mac（Macはベータ版テスト中です）プラットフォームをサポートしています。
 >- `Android Build Support`、`iOS Build Support`、`Winodows Build Support`および`MacOs Build Support`モジュールが含まれている必要があります。
 >- その内、iOS端末の開発には以下が必要です。
-   - Xcode 11.0およびそれ以降のバージョン。
-   - プロジェクトが有効な開発者による署名を設定済みであることを確認してください。
+     - Xcode 11.0およびそれ以降のバージョン。
+     - プロジェクトが有効な開発者による署名を設定済みであることを確認してください。
 
 ## サンプル実行の順序
 [](id:step1)
