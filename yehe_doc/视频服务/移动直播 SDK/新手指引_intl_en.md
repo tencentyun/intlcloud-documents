@@ -90,10 +90,10 @@ We provide three editions of the MLVB SDK currently: **LiteAV_Smart**, **Profess
 -   [I recorded live streams. How can I get the recording files?](https://intl.cloud.tencent.com/document/product/1071/39695) 
 -   [Do I have to purchase an MLVB license?](https://intl.cloud.tencent.com/document/product/1071/39476) 
 -   [Can I use a LiteAV_Smart license to stream on Mini Program?](https://intl.cloud.tencent.com/document/product/1071/39476) 
--   [How do I reduce latency?](https://cloud.tencent.com/document/product/454/7947) 
+-   [How do I reduce latency?](https://intl.cloud.tencent.com/document/product/1071/41886) 
 -   [What do I do if publishing fails?](https://intl.cloud.tencent.com/document/product/1071/39360) 
 -   [What do I do if playback fails?](https://intl.cloud.tencent.com/document/product/1071/39361) 
--   [How do I fix video stutter?](https://cloud.tencent.com/document/product/454/7946) 
+-   [How do I fix video stutter?](https://intl.cloud.tencent.com/document/product/1071/39362) 
 -   [How do I generate UserSig?](https://intl.cloud.tencent.com/document/product/1071/39471) 
 
 >? For more Q&As, please see [FAQs](https://intl.cloud.tencent.com/document/product/1071/39477).
