@@ -5,7 +5,7 @@
 ##  步骤一：创建 HTTP/HTTPS 监听器
 
 控制台操作步骤：登录 [腾讯云 GAAP 控制台](https://console.cloud.tencent.com/gaap) > 加速通道（监听器配置） > 新增 HTTP/HTTPS 监听器管理 > 按照指引完成监听器、通道创建。
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/c6cb5b89a3b5ecd16766c0d480dd898c.png)
 
 
 ## 步骤二：后端服务适配
