@@ -3,12 +3,12 @@
 Tencent Cloud Virtual Machine (CVM) is a scalable cloud computing service that frees you from estimation of resource usage and upfront investment. With Tencent Cloud CVM, you can start CVMs and deploy applications immediately.
 You can customize all resources of a CVM instance, including CPU, memory, disk, network, and security policies. You can also easily adjust the resources in response to any change in demand.
 
-## Using CVM instances
+## Working with CVM instances
 
 You can configure and manage CVM instances in the following ways:
-- **Console**: a web-based UI for configuring and managing CVM instances.
+- **Console**: A web-based UI for configuring and managing CVM instances.
 - **API**: Tencent Cloud also provides APIs for configuring and managing CVM instances. For more information, see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).
-- **SDK**: you can use [SDK](https://intl.cloud.tencent.com/document/product/494) or [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) to call CVM APIs.
+- **SDK**: You can use [SDK](https://intl.cloud.tencent.com/document/product/494) or [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) to call CVM APIs.
 
 ## Key Concepts
 
@@ -19,7 +19,7 @@ Before using Tencent Cloud CVM, you should familiarize yourself with the followi
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/213/4939">Instance</a></td>
-<td>A virtual computing resource containing basic computing components such as CPU, memory, OS, network, and disks. Tencent Cloud provides various configurations of CPU, MEM, storage, and networking capacity for CVM instances. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/213/11518">Instance Types</a>.</td>
+<td>A virtual computing resource containing basic computing components such as CPU, memory, OS, network, and disks. Tencent Cloud provides various configurations of CPU, MEM, storage, and networking capacity for CVM instances. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/11518">Instance Types</a>.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/213/4940">Image</a></td>
@@ -53,7 +53,7 @@ If you have specific needs that our standard CVM specifications cannot meet, use
 - [Customizing Windows CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10516)
 - [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517)
 
-## CVM Prices
+## CVM Pricing
 
 CVM supports pay-as-you-go. For more information, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176).
 For pricing information on CVM instances and other resources, refer to [Product Pricing](https://buy.cloud.tencent.com/price/cvm/overview).
