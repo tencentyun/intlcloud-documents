@@ -43,7 +43,7 @@ videoapi-sgp.im.qcloud.com
 ```
 
 ### TRTC Web端末のプライベートネットワーク環境ではどのようにプロキシを設定しますか？
-Nginx+coturnプロキシスキームを使用できます。詳細については、[企業プライベートネットワークプロキシスキーム](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-34-advanced-proxy.html)をご参照ください。
+Nginx+coturnプロキシスキームを使用できます。詳細については、[企業プライベートネットワークプロキシスキーム](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-34-advanced-proxy.html)をご参照ください。
 
 | 方法名 | 適用ケース                             | ネットワーク要件                          |
 | :----- | :----------------------------------- | :-------------------------------- |
