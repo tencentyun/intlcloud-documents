@@ -71,7 +71,7 @@ We provide three editions of the MLVB SDK currently: **LiteAV_Smart**, **Profess
 | Streaming the host’s screen plus the camera preview         | [Publishing from Screen](https://intl.cloud.tencent.com/document/product/1071/41878) |
 | Playing published video in real time                       | Playback](https://intl.cloud.tencent.com/document/product/1071/38159) |
 | Using the web superplayer TCPlayerLite for playback on mobile and desktop browsers | Web (H5) player |
-| Creating a room and connecting mic with others                                 | [Mic Connect](https://intl.cloud.tencent.com/document/product/1071/39888) |
+| Creating a room and connecting mic with others                                 | [Mic Connect](https://intl.cloud.tencent.com/document/product/1071/42210) |
 | Setting video quality                                             | [Setting Video Quality](https://intl.cloud.tencent.com/document/product/1071/41861) |
 | Viewing statistics on publishing and playback status                             | Viewing SDK Performance Statistics |
 | Recording and archiving live streaming sessions                                     | [Recording and Replay](https://intl.cloud.tencent.com/document/product/1071/41868) |
