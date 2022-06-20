@@ -8,7 +8,7 @@
 
 ### 如何使文件直接在浏览器中下载，而不是预览？
 
-您可以通过 [COS 控制台](https://console.cloud.tencent.com/cos5) 将对象自定义 Headers 中的 Content-Disposition 参数值设为 attachment。控制台操作指南请参见 [自定义 Headers](https://intl.cloud.tencent.com/document/product/436/13361)。
+您可以通过 [对象存储控制台](https://console.cloud.tencent.com/cos5) 将对象自定义 Headers 中的 Content-Disposition 参数值设为 attachment。控制台操作指南请参见 [自定义 Headers](https://intl.cloud.tencent.com/document/product/436/13361)。
 
 也可以通过设置 GET Object 接口中请求参数 response-content-disposition 的值为 attachment 来实现浏览器中弹出下载文件。参考文档请参见 [GET Object](https://intl.cloud.tencent.com/document/product/436/7753)。
 
@@ -16,7 +16,7 @@
 
 ### 如何判断您是否通过内网访问 COS？
 
-腾讯云对象存储 COS 的访问域名使用了智能 DNS 解析，通过互联网在不同的运营商环境下，我们会检测并指向最优链路供您访问 COS。如果您在腾讯云内部署了服务用于访问 COS，则同地域范围内访问将会自动被指向到内网地址，跨地域暂不支持内网访问，默认将会解析到外网地址。
+腾讯云对象存储（Cloud Object Storage，COS）的访问域名使用了智能 DNS 解析，通过互联网在不同的运营商环境下，我们会检测并指向最优链路供您访问 COS。如果您在腾讯云内部署了服务用于访问 COS，则同地域范围内访问将会自动被指向到内网地址，跨地域暂不支持内网访问，默认将会解析到外网地址。
 
 
 
@@ -26,7 +26,7 @@
 
 确认是否内网访问请参考如下方法：
 
-以腾讯 CVM 访问 COS 为例，判断是否使用内网访问 COS ，可以在 CVM 上 使用`nslookup`命令解析 COS 域名，若返回内网 IP，则表明 CVM 和 COS 之间是内网访问，否则为外网访问。
+以腾讯云服务器（Cloud Virtual Machine，CVM）访问对象存储（Cloud Object Storage，COS）为例，判断是否使用内网访问 COS ，可以在 CVM 上 使用`nslookup`命令解析 COS 域名，若返回内网 IP，则表明 CVM 和 COS 之间是内网访问，否则为外网访问。
 
 >?内网 IP 地址一般形如`10.*.*.*`、`100.*.*.*` ，VPC 网络一般为`169.254.*.*` 等。
 
