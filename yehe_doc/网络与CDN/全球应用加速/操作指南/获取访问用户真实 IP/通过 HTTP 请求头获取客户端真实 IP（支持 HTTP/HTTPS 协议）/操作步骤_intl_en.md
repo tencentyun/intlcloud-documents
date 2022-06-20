@@ -5,15 +5,15 @@
 ## Step 1: Create an HTTP/HTTPS Listener
 
 Log in to the [GAAP console](https://console.cloud.tencent.com/gaap). Select **Access Management** > **HTTP/HTTPS Listener Management**. Click **Create** to add an HTTP/HTTPS listener, and then complete configurations required to create the listener and connection.
-![]()
+![](https://qcloudimg.tencent-cloud.cn/raw/c6cb5b89a3b5ecd16766c0d480dd898c.png)
 
 
 ## Step 2: Adapt the Backend Server
 
 The following sections describe the X-Forwarded-For configuration schemes for Nginx, IIS 7, and Apache servers.
--[IIS 7 configuration scheme](#m1)
--[Apache configuration scheme](#m2)
--[Nginx configuration scheme](#m3)
+- [IIS 7 configuration scheme](#m1)
+- [Apache configuration scheme](#m2)
+- [Nginx configuration scheme](#m3)
 
 [](id:m1)
 ### IIS 7 configuration scheme
