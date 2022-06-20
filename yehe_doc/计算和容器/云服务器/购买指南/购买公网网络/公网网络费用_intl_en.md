@@ -12,21 +12,32 @@ Fees are pay-as-you-go on an hourly billing cycle based on the public network tr
 </tr>
 </thead>
 <tbody><tr>
-<td>Chinese mainland, Singapore, Jakarta, Seoul, Tokyo, Frankfurt, and Moscow</td>
+<td>Chinese mainland, Hong Kong (China), Jakarta, Seoul</td>
 <td>0.12</td>
 </tr>
 <tr>
-<td>Hong Kong (China), São Paulo</td>
+<td>Tokyo, Moscow</td>
+<td>0.13</td>
+</tr>
+<tr>
+<td>Singapore</td>
+<td>0.081</td>
+</tr>
+<tr>
+<td>São Paulo</td>
 <td>0.15 </td>
 </tr>
 <tr>
-<td>Bangkok, Silicon Valley, Virginia, and Toronto</td>
-<td>0.075</td>
-</tr>
+<td>Frankfurt, Silicon Valley, Toronto</td>
+<td>0.077</td>
 </tr>
 <tr>
-<td>Mumbai</td>
-<td>0.087</td>
+<td>Mumbai, Bangkok</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Virginia</td>
+<td>0.075</td>
 </tr>
 </tbody></table>
 
@@ -64,10 +75,6 @@ Different IP line types correspond to different BWP types and fees as shown belo
 <tr>
 <td>Accelerated IP</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/684/15254">AIA BGP bandwidth package</a></td>
-</tr>
-<tr>
-<td>Static single-line IP</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/684/15254">Non-BGP bandwidth package</a></td>
 </tr>
 </tbody></table>
 
