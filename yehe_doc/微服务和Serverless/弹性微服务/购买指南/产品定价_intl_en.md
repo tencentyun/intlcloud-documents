@@ -1,4 +1,4 @@
-# Product Pricing
+# 
 ## Billable Items and Unit Prices
 See below for the pricing details of TEM service:
 
