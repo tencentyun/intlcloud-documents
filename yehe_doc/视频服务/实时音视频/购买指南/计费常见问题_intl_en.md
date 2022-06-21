@@ -45,7 +45,7 @@ In most cases, if a user subscribes to a stream, they receive both audio and vid
 Screen sharing data is published as a separate stream. If a user receives a screen sharing stream, the user’s duration will be billed as video duration.
 
 ### How is relaying to CDN billed?
-TRTC leverages the capabilities of [CSS](https://intl.cloud.tencent.com/document/product/267) to relay streams to CDNs. **CSS** charges you according to the billing rules described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
+TRTC leverages the capabilities of [CSS](https://intl.cloud.tencent.com/document/product/267) to relay streams to CDNs. **CSS** charges you according to the billing rules described in CDN Relayed Live Streaming.
 
 ### Are fees charged if there is only one user in a room?
 A room with only one user consumes TRTC’s resources, even if no streams are pushed (no upstream data). The only user in a room cannot subscribe to other users’ streams and therefore won’t receive video data. As a result, the duration is billed as **audio duration**.
