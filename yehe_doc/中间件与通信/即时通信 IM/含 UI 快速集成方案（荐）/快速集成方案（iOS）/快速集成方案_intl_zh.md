@@ -1,6 +1,6 @@
 ## 什么是 TUIKit
 TUIKit 是基于 IM SDK 实现的一套 UI 组件，其包含会话、聊天、搜索、关系链、群组、音视频通话等功能，基于 UI 组件您可以像搭积木一样快速搭建起自己的业务逻辑。
-![](https://qcloudimg.tencent-cloud.cn/raw/b250365ff88461f38c9f57afb3b2eadc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/aaade4a3f654c945af6ef592535ac8fe.png)
 
 ## 导入 TUIKit
 
@@ -55,15 +55,12 @@ pod install
 ### 步骤一：组件登录
 ```objectivec
 #import "TUILogin.h"
-// 您可以在程序启动的时候初始化 TUI 组件
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [TUILogin initWithSdkAppID:SDKAppID]; // SDKAppID 可以在 即时通信 IM 控制台中获取
-}
-
 // 您可以在用户 UI 点击登录的时候登录 UI 组件
-- (void)login:(NSString *)identifier userSig:(NSString *)sig succ:(TSucc)succ fail:(TFail)fail
+- (void)loginSDK:(NSString *)userID userSig:(NSString*)sig succ:(TSucc)succ fail:(TFail)fail {
+// SDKAppID 可以在 即时通信 IM 控制台中获取
+    // userSig生成见 GenerateTestUserSig.h
 {
-    [TUILogin login:identifier userSig:sig succ:^{
+    [TUILogin login:SDKAppID userID:userID userSig:sig succ:^{
         NSLog(@"-----> 登录成功");
     } fail:^(int code, NSString *msg) {
         NSLog(@"-----> 登录失败");
