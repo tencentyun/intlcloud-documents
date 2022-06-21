@@ -1,6 +1,6 @@
 # Billing Overview
 
->! Notes
+>! 
 >
 >Tencent Cloud Elastic Microservice (TEM) will be commertialized from July 18, 2022 at 10:00:00 (UTC+8). You can check your bills in [Billing Center](https://console.intl.cloud.tencent.com/expense/bill/overview). For the billing mode and billing cycles, please see below.
 
