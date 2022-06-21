@@ -1,6 +1,6 @@
 ## Component Overview
 
-`TUICalling` is an open-source audio/video UI component. After integrating it into your project, you can make your application support scenarios such as one-to-one and group audio/video calls and offline call simply by writing a few lines of code. It also supports Android, web, mini program, Flutter, and UniApp platforms. Its basic features are as shown below:
+`TUICalling` is an open-source audio/video UI component. After integrating it into your project, you can make your application support scenarios such as one-to-one and group audio/video calls and offline call simply by writing a few lines of code. It also supports Android, web, Flutter, and UniApp platforms. Its basic features are as shown below:
 
 <table class="tablestyle">
 <tbody><tr>
@@ -79,7 +79,7 @@ TUICalling.shareInstance()
 
 ### Step 4. Make an audio/video call
 
-- Make a one-to-one audio/video call through [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)
+- Make a one-to-one audio/video call through TUICalling#call
 <dx-codeblock>
 :::  Objective-C Objectivec
 // Make a one-to-one video call. Suppose the `userId` is `1111`
@@ -90,7 +90,7 @@ TUICalling.shareInstance()
 TUICalling.shareInstance().call(userIDs: ["1111"], type: .video)
 :::
 </dx-codeblock>
-- Make a group video call through [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)
+- Make a group video call through TUICalling#call
 <dx-codeblock>
 :::  Objective-C Objectivec
 // Make a group video call. Suppose the `userId` values are `1111`, `2222`, and `3333`
@@ -109,7 +109,7 @@ After the above four steps are completed, video calls can be made and answered. 
 
 ### Step 6. Add the status listening feature (optional)
 
-If your business needs to [listen on the call status](https://intl.cloud.tencent.com/document/product/647/43139) such as call start and end, listen on the following events:
+If your business needs to listen on the call status such as call start and end, listen on the following events:
 <dx-codeblock>
 :::  Objective-C Objectivec
 [[TUICalling shareInstance] setCallingListener:self];
@@ -153,7 +153,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### Step 7. Add the floating window feature (optional)
 
-If your business needs to enable the [floating window feature](https://intl.cloud.tencent.com/document/product/647/43139), you can call `TUICalling.shareInstance().enableFloatWindow(enable: true)` during `TUICalling` component initialization.
+If your business needs to enable the floating window feature, you can call `TUICalling.shareInstance().enableFloatWindow(enable: true)` during `TUICalling` component initialization.
 
 >? Currently, the component supports only the in-app floating window (minimize and return to the previous page).
 
@@ -161,7 +161,7 @@ If your business needs to enable the [floating window feature](https://intl.clou
 
 ### Does the `TUICalling` component support customizing ringtones?
 
-Yes. You can implement this simply by calling [TUICalling#setCallingBell](https://intl.cloud.tencent.com/document/product/647/43139).
+Yes. You can implement this simply by calling TUICalling#setCallingBell.
 
 ### How do I install CocoaPods?
 
