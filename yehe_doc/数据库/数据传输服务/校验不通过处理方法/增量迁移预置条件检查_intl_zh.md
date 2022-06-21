@@ -6,7 +6,7 @@
 - 目标实例的 `max_worker_processes` 必须大于 `max_logical_replication_workers` 的值。
 - 待迁移表中不能存在 unlogged table，否则无法迁移。
 
-## 修护方法
+## 修复方法
 如果版本不符合要求，请升级版本。修改参数 `wal_level`，`max_replication_slots`，`max_worker_processes` 和 `max_wal_senders` 的方法如下。
 
 1. 登录源数据库。
