@@ -4,8 +4,9 @@
 
 ## Scenario
 
-In Agent semi-managed migration mode, you need to manually deploy the Agent on the service of the cloud vendor that hosts your source data so that the Agent can pull the source data through a private network and push it to Tencent Cloud COS.
- Outbound traffic is not billed during Agent semi-managed migration if a direct connection is established between the source-data cloud vendor and Tencent Cloud COS. Therefore, we recommend that you perform Agent semi-managed migration if direct connect is available.
+In Agent semi-managed migration mode, you need to manually deploy the Agent on the service of the cloud vendor that hosts your source data, so that the Agent can pull the source data over a private network and push it to Tencent Cloud COS.
+
+Outbound traffic is not billed during Agent semi-managed migration if a direct connection is established between the source-data cloud vendor and Tencent Cloud COS. Therefore, we recommend that you perform Agent semi-managed migration if direct connect is available.
 
 The following describes how to configure an Agent semi-managed migration task to migrate data from the source object storage in AWS S3 to Tencent Cloud COS.
 
@@ -54,7 +55,7 @@ Create a bucket to store the migrated data. For more information, see [Creating 
    vii. Click [here](https://migrate-1256125716.cos.ap-guangzhou.myqcloud.com/agent/agent.zip) to download the Agent.
 
 
-> **Note:**
+>?
 > You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and delete the sub-user after migration.
 
  
@@ -85,7 +86,7 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
 
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
-> **Note:**
+>?
 >- eth0 is the SN of the NIC, which is obtained in Step 1.
 >- You can also limit the NIC speed to 10 Mbit.
 
@@ -109,7 +110,8 @@ MSP provides a Query Per Second (QPS) limit for object storage mode and a bandwi
    i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
    ii. In the **Master Node Private IP** section, enter the private IP address of the server created on AWS, such as 172.XXX.XXX.94.
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
-> **Note:**
+
+>?
 >- If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
 >- Perform secondary migration if the object (file) content is changed during migration.
 
