@@ -14,7 +14,7 @@ The following describes how to configure an Agent semi-managed migration task to
 
 ### AWS S3
 
-#### 1. Confirm that direct connect is available
+#### 1. Check whether a direct connection is established between the source-data cloud vendor and Tencent Cloud COS
 
 If you want to perform Agent semi-managed migration with direct connect, before the migration, confirm with the your sales rep that the COS SDK used by the server in AWS S3 can access COS with direct connect.
 
