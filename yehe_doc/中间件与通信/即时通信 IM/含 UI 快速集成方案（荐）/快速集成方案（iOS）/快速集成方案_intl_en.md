@@ -1,6 +1,6 @@
 ## Introduction to TUIKit
 TUIKit is a set of TUI components based on IM SDKs. It provides features such as the conversation, chat, search, relationship chain, group, and audio/video call features. You can use these TUI components to quickly build your own business logic.
-![](https://qcloudimg.tencent-cloud.cn/raw/b250365ff88461f38c9f57afb3b2eadc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/aaade4a3f654c945af6ef592535ac8fe.png)
 
 ## Importing TUIKit
 
@@ -55,15 +55,12 @@ Instant messaging software usually consists of several basic UIs such as the con
 ### Step 1. Log in to TUIKit
 ```objectivec
 #import "TUILogin.h"
-// You can initialize TUIKit during program startup
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [TUILogin initWithSdkAppID:SDKAppID]; // You can obtain the SDKAppID in the IM console
-}
 
 // You can click Login on the user UI to log in to TUIKit
-- (void)login:(NSString *)identifier userSig:(NSString *)sig succ:(TSucc)succ fail:(TFail)fail
-{
-    [TUILogin login:identifier userSig:sig succ:^{
+- (void)loginSDK:(NSString *)userID userSig:(NSString*)sig succ:(TSucc)succ fail:(TFail)fail {
+// You can obtain the SDKAppID in the IM console
+    // See GenerateTestUsersig.h for userSig generation
+    [TUILogin login:SDKAppID userID:userID userSig:sig succ:^{
         NSLog(@"-----> login succeeds");
     } fail:^(int code, NSString *msg) {
         NSLog(@"-----> login fails");
