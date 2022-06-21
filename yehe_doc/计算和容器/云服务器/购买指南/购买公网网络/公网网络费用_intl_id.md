@@ -16,25 +16,30 @@ Dokumen ini menjelaskan harga jaringan publik dalam berbagai mode penagihan dan 
 <td>0,12</td>
 </tr>
 <tr>
+<td>Moskow, Tokyo</td>
+<td>0,13</td>
+</tr>
+<tr>  
 <td>Singapura</td>
 <td>0,081</td>
 </tr>
 <tr>
+<td>Sao paulo</td>
+<td>0,15</td>
+</tr>
+<tr>  
 <td>Toronto, Silicon Valley, Frankfurt</td>
 <td>0,077</td>
-</tr>
-<tr>
-<td>Moskow, Tokyo</td>
-<td>0,13</td>
-</tr>
-<tr>
-<td>Virginia</td>
-<td>0,075</td>
 </tr>
 <tr>
 <td>Bangkok, Mumbai</td>
 <td>0.1</td>
 </tr>
+<tr> 
+<td>Virginia</td>
+<td>0,075</td>
+</tr>
+<tr>
 </tbody></table>
 
 
