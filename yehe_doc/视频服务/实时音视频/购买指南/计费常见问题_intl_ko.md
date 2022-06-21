@@ -45,7 +45,7 @@ TRTC 요금은 서비스 종류에 따라 기본 서비스와 부가 서비스�
 화면 공유는 개별적인 비디오 스트림 채널입니다. 사용자가 화면 공유한 비디오 스트림을 구독하고 비디오 화면을 수신하면, 비디오의 길이에 따라 과금됩니다.
 
 ### CDN 라이브 방송 시청은 어떻게 과금되나요?
-TRTC는 릴레이 푸시 스트림을 통해 [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267) 기능을 사용하여 CDN 라이브 방송 시청 기능을 제공합니다. **CSS**는 실제 사용 현황에 따라 [CDN 라이브 방송 시청 > 관련 비용](https://intl.cloud.tencent.com/document/product/647/35242)을 청구합니다.
+TRTC는 릴레이 푸시 스트림을 통해 [Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267) 기능을 사용하여 CDN 라이브 방송 시청 기능을 제공합니다. **CSS**는 실제 사용 현황에 따라 CDN 라이브 방송 시청 > 관련 비용 을 청구합니다.
 
 ### 방에 혼자 있어도 과금되나요?
 방에 혼자 있는 경우, 푸시 스트림을 하지 않더라도(업스트림 데이터가 발생하지 않음) TRTC 클라우드 서비스 리소스를 차지합니다. 방에 혼자 있으면 다른 사람의 멀티미디어 스트림을 구독할 수 없어 비디오 화면을 수신할 수 없으므로, **음성 시간**으로 서비스 사용량을 통계합니다.
