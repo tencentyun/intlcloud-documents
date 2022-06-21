@@ -45,7 +45,7 @@ TRTCの課金項目はサービスのタイプによって基本サービスと�
 画面共有は、画面シェアとも呼ばれますが、単独のビデオストリームです。ユーザーが画面共有でビデオストリームを購読し、ビデオ画面を受信すると、ビデオ時間に応じて課金されます。
 
 ### CDNライブストリーミングの視聴はどのように課金されますか。
-TRTCはRelayed Pushにより[CSS](https://intl.cloud.tencent.com/document/product/267)の能力を使用し、CDN relayed live streamingの機能をご提供しています。**CSS**は実際のご利用状況に応じて[CDN relayed live streaming≻関連費用](https://intl.cloud.tencent.com/document/product/647/35242)を請求します。
+TRTCはRelayed Pushにより[CSS](https://intl.cloud.tencent.com/document/product/267)の能力を使用し、CDN relayed live streamingの機能をご提供しています。**CSS**は実際のご利用状況に応じてCDN relayed live streaming≻関連費用を請求します。
 
 ### 1人しかルームにいない場合も課金されますか。
 1人しかルームにいない場合、ストリームをプッシュしなくても（アップストリームデータが生成されなくても）、TRTCのクラウドサービスリソースを消費します。ルームに1人の場合は、他の人のオーディオ・ビデオストリーミングを購読できず、ビデオ画面を受信することはないため、**音声時間**によってサービス使用量をカウントします。
