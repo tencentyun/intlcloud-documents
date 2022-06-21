@@ -54,7 +54,7 @@ https://xxxxxx/v4/all_member_push/im_remove_attr?usersig=xxx&identifier=admin&sd
 | Field | Type | Required | Description |
 |---------|---------|---------|----|
 | To_Account | String | Required | Target user account |
-| Attrs | Object | Required | Tag set. Note that you only need to specify the attribute names here. For more information on the format and meanings of Attrs, see the descriptions of the push request packet fields. |
+| Attrs | Array | Required | Tag set. Note that you only need to specify the attribute names here. For more information on the format and meanings of Attrs, see the descriptions of the push request packet fields. |
 
 ### Sample response packet
 
