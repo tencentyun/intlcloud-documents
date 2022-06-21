@@ -37,7 +37,7 @@
 
 | 参数     | 描述     | 默认值     |
 | ------- | -------- | --------- |
-| `workdir` | 缓存引擎备份元数据地址 | `/tmp`
+| `workdir` | 缓存引擎备份元数据地址 | `/tmp`|
 | `dataset.controller.image.repository` | Dataset Controller 镜像所在仓库  | `ccr.ccs.tencentyun.com/fluid/dataset-controller` |
 | `dataset.controller.image.tag`        | Dataset Controller 镜像的版本    | `"v0.6.0-0bfc552"` |
 | `csi.registrar.image.repository`   | CSI registrar 镜像所在仓库 | `"ccr.ccs.tencentyun.com/fluid/csi-node-driver-registrar"` |
