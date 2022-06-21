@@ -98,16 +98,17 @@ https://xxxxxx/v4/sns/group_add?sdkappid=88888888&identifier=admin&usersig=xxx&r
 |-----|-------|------|
 |ResultItem|	Array	|好友加入新增分组的结果对象数组|
 |To_Account|	String	|请求加入新分组的好友的 UserID|
-|ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败|
+|ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
 |ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
 |Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
 |Invalid_Account|Array |返回 SDKAppID 不匹配的非法用户列表，仅当存在非法用户时才返回该字段|
 |CurrentSequence|	Integer	|返回最新的分组 Sequence|
 |ActionStatus	|String| 请求处理的结果，“OK” 表示处理成功，“FAIL” 表示失败 |
-|ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
+|ErrorCode|	Integer	|错误码，0表示成功，非0表示失败，非0取值的详细描述请参见[错误码说明](#ErrorCode) |
 |ErrorInfo|	String| 详细错误信息 |
 |ErrorDisplay|	String| 详细的客户端展示信息 |
 
+[](id:ErrorCode)
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200；真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
@@ -120,7 +121,6 @@ https://xxxxxx/v4/sns/group_add?sdkappid=88888888&identifier=admin&usersig=xxx&r
 | 30002  | SDKAppID 不匹配                                              |
 | 30003  | 请求的用户帐号不存在                                         |
 | 30004  | 请求需要 App 管理员权限                                      |
-| 30005  | 关系链字段中包含敏感词                                       |
 | 30006  | 服务器内部错误，请重试                                       |
 | 30007  | 网络超时，请稍后重试                                         |
 | 30008  | 并发写导致写冲突，建议使用批量方式                           |
