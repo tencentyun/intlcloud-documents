@@ -12,6 +12,7 @@
 | Public | Yes. |
 | ChatRoom | Yes. Same as meeting groups (Meeting) in the new version. |
 | AVChatRoom | Yes. |
+|Community| Yes.|
 
 Above are the IM built-in groups. For more information, please see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
@@ -76,7 +77,7 @@ To unmute members, set `ShutUpTime` to `0`.
 |---------|---------|---------|---------|
 | GroupId | String | Yes | The ID of the group to be queried |
 | Members_Account | Array | Yes | The member accounts to be muted. A maximum of 500 accounts are supported. |
-| ShutUpTime | Integer | Yes | The muting period in seconds. `0` indicates to unmute members. `4294967295` indicates to permanently mute members. |
+| ShutUpTime | Integer | Yes | Unsigned type. The muting period in seconds. `0` indicates to unmute members. `4294967295` indicates to permanently mute members. |
 
 ### Sample response packet
 
