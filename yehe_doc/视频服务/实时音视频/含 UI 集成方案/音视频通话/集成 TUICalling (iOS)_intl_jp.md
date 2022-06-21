@@ -1,6 +1,6 @@
 ## コンポーネントの説明
 
-TUICallingはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUICallingコンポーネントを統合することにより、数行のコードを書くだけで、Appに「1対1オーディオビデオ通話」、「多人数オーディオビデオ通話」などのシーンを組み込むことができ、さらにオフラインでのリマインダー機能もサポートしています。TUICallingはまたAndroid、Web、ミニプログラム、Flutter、UniAppなどのプラットフォームでもサポートしています。基本機能は下図のとおりです。
+TUICallingはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUICallingコンポーネントを統合することにより、数行のコードを書くだけで、Appに「1対1オーディオビデオ通話」、「多人数オーディオビデオ通話」などのシーンを組み込むことができ、さらにオフラインでのリマインダー機能もサポートしています。TUICallingはまたAndroid、Web、Flutter、UniAppなどのプラットフォームでもサポートしています。基本機能は下図のとおりです。
 
 <table class="tablestyle">
 <tbody><tr>
@@ -79,7 +79,7 @@ TUICalling.shareInstance()
 
 ### ステップ4：オーディオビデオ通話の実装
 
-- 1対1ビデオ通話の実装[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)
+- 1対1ビデオ通話の実装TUICalling#call
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 1対1ビデオ通話を開始します。userIdは1111と仮定します
@@ -90,7 +90,7 @@ TUICalling.shareInstance()
 TUICalling.shareInstance().call(userIDs: ["1111"], type: .video)
 :::
 </dx-codeblock>
-- 多人数ビデオ通話の実装[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)
+- 多人数ビデオ通話の実装TUICalling#call
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 多人数ビデオ通話を開始します。userIdはそれぞれ1111、2222、3333と仮定します
@@ -109,7 +109,7 @@ TUICalling.shareInstance().call(userIDs: ["1111", "2222", "3333"], type: .video)
 
 ### ステップ6：ステータスの監視（オプション）
 
-業務上、通話の開始や終了などの[通話ステータスの監視](https://intl.cloud.tencent.com/document/product/647/43139)が必要な場合は、次のイベントを監視することができます。
+業務上、通話の開始や終了などの通話ステータスの監視が必要な場合は、次のイベントを監視することができます。
 <dx-codeblock>
 :::  Objective-C Objectivec
 [[TUICalling shareInstance] setCallingListener:self];
@@ -153,7 +153,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### ステップ7：フローティングウィンドウ機能（オプション）
 
-業務上、[フローティングウィンドウ機能](https://intl.cloud.tencent.com/document/product/647/43139)を有効にする必要がある場合は、TUICallingコンポーネントの初期化の際に`TUICalling.shareInstance().enableFloatWindow(enable: true)`を呼び出してこの機能を有効化することができます。
+業務上、フローティングウィンドウ機能を有効にする必要がある場合は、TUICallingコンポーネントの初期化の際に`TUICalling.shareInstance().enableFloatWindow(enable: true)`を呼び出してこの機能を有効化することができます。
 
 >? 現在、コンポーネントではアプリケーション内のフローティングウィンドウのみサポートしています（最小化して前の画面に戻る）。
 
@@ -161,7 +161,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### TUICallingコンポーネントは着信音のカスタマイズをサポートしていますか。
 
-サポートしています。[TUICalling#setCallingBell](https://intl.cloud.tencent.com/document/product/647/43139)を呼び出して行うことができます。
+サポートしています。TUICalling#setCallingBellを呼び出して行うことができます。
 
 ### CocoaPodsをインストールするにはどうすればよいですか。
 
