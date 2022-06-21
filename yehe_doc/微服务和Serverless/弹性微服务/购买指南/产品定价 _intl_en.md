@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # 
-=======
-
->>>>>>> 1786176992a87c254ac5d5ddad630f5d149c66bd
 ## Billable Items and Unit Prices
 See below for the pricing details of TEM service:
 

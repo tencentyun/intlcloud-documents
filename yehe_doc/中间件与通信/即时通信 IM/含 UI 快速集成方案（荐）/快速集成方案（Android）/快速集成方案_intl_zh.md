@@ -82,7 +82,7 @@ allprojects {
 
 ```java
     
-// 在用户 UI 点击登录的时候登录 UI 组件：
+// 在用户 UI 点击登录的时候调用
 // context必须传 Application对象，否则部分图片无法加载
 TUILogin.login(context,sdkAppID,userID, userSig, new TUICallback() {
 	@Override
