@@ -1,6 +1,6 @@
 ## 컴포넌트 개요
 
-TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 ‘1:1 음성/영상 통화’ 및 ‘그룹 음성/영상 통화’ 및 오프라인 통화와 같은 App 지원 시나리오를 만들 수 있습니다. 또한 Android, Web, 미니 프로그램, Flutter 및 UniApp 플랫폼을 지원합니다. 기본 기능은 다음과 같습니다.
+TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 ‘1:1 음성/영상 통화’ 및 ‘그룹 음성/영상 통화’ 및 오프라인 통화와 같은 App 지원 시나리오를 만들 수 있습니다. 또한 Android, Web, Flutter 및 UniApp 플랫폼을 지원합니다. 기본 기능은 다음과 같습니다.
 
 <table class="tablestyle">
 <tbody><tr>
@@ -79,7 +79,7 @@ TUICalling.shareInstance()
 
 ### 4단계: 음성/영상 통화 걸기
 
-- [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)을 통한 1:1 음성/영상 통화
+- TUICalling#call 을 통한 1:1 음성/영상 통화
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 1:1 영상 통화를 시작합니다. userId가 1111이라고 가정합니다.
@@ -90,7 +90,7 @@ TUICalling.shareInstance()
 TUICalling.shareInstance().call(userIDs: ["1111"], type: .video)
 :::
 </dx-codeblock>
-- 그룹 영상 통화 걸기 [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)
+- 그룹 영상 통화 걸기 TUICalling#call
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 그룹 영상 통화를 시작합니다. userId 값이 1111, 2222, 3333이라고 가정합니다.
@@ -109,7 +109,7 @@ TUICalling.shareInstance().call(userIDs: ["1111", "2222", "3333"], type: .video)
 
 ### 6단계: 상태 수신 기능 추가(옵션)
 
-통화 시작 및 종료와 같이 비즈니스에서 [통화 상태 수신](https://intl.cloud.tencent.com/document/product/647/43139)을 위해서는 다음 이벤트를 수신하십시오.
+통화 시작 및 종료와 같이 비즈니스에서 통화 상태 수신 을 위해서는 다음 이벤트를 수신하십시오.
 <dx-codeblock>
 :::  Objective-C Objectivec
 [[TUICalling shareInstance] setCallingListener:self];
@@ -153,7 +153,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### 7단계: 플로팅 창 기능 추가(옵션)
 
-비즈니스에서 [플로팅 창 기능](https://intl.cloud.tencent.com/document/product/647/43139)을 활성화하려면 TUICalling 컴포넌트 초기화 중에 `TUICalling.shareInstance().enableFloatWindow(enable: true)`를 호출합니다.
+비즈니스에서 플로팅 창 기능 을 활성화하려면 TUICalling 컴포넌트 초기화 중에 `TUICalling.shareInstance().enableFloatWindow(enable: true)`를 호출합니다.
 
 >? 현재 컴포넌트는 in-app 플로팅 창만 지원합니다(최소화 및 이전 페이지로 돌아가기).
 
@@ -161,7 +161,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### TUICalling 컴포넌트는 사용자 정의 벨소리를 지원합니까?
 
-지원합니다. [TUICalling#setCallingBell](https://intl.cloud.tencent.com/document/product/647/43139)을 호출하여 이를 구현할 수 있습니다.
+지원합니다. TUICalling#setCallingBell 을 호출하여 이를 구현할 수 있습니다.
 
 ### CocoaPods는 어떻게 설치합니까?
 
