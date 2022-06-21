@@ -48,7 +48,7 @@ https://xxxxxx/v4/all_member_push/im_remove_tag?usersig=xxx&identifier=admin&sdk
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
 | To_Account | String | Required | Target user account |
-| Tags | Object | Required | Tag set |
+| Tags | Array | Required | Tag set |
 
 ### Sample response packet
 
