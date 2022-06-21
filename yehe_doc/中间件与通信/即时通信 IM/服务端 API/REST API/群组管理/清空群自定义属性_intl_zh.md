@@ -10,7 +10,7 @@
 |Public|不支持|
 |ChatRoom|不支持，同新版本中的 Meeting（临时会议群）|
 |AVChatRoom|支持|
-|Community|不支持|
+|Community（社群）|不支持|
 
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
@@ -41,7 +41,7 @@ https://xxxxxx/v4/group_open_http_svc/clear_group_attr?sdkappid=88888888&identif
 ### 请求包示例
 
 - **基础形式**
-清空自定义属性
+清空群的自定义属性
 ```
 {
     "GroupId": "@TGS#aC5SZEAEF"
@@ -52,7 +52,7 @@ https://xxxxxx/v4/group_open_http_svc/clear_group_attr?sdkappid=88888888&identif
 
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
-| GroupId | String | 必填 |重置自定义属性的群 id   |
+| GroupId | String | 必填 |清空自定义属性的群 id   |
 
 ### 应答包体示例
 ```
