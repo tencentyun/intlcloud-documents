@@ -56,63 +56,6 @@ The nodes are as described below:
 | JobsDetail | Response | Job details. Same as the `Response.JobsDetail` node in the [CreateMediaJobs](https://intl.cloud.tencent.com/document/product/1045/43687) API. |  Container |
 | NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node will not be returned. |  String |
 
-`JobsDetail` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
-| JobId              | Response.JobsDetail | Job ID                               | String    |
-| Tag                | Response.JobsDetail | Job type: Transcode                               | String    |
-| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
-| CreationTime       | Response.JobsDetail | Job creation time                         | String    |
-| StartTime          | Response.JobsDetail | Job start time                                               | String    |
-| EndTime          | Response.JobsDetail | Job end time                                               | String    |
-| QueueId            | Response.JobsDetail | Queue ID of the job                                             | String    |
-| Input              | Response.JobsDetail | Input resource address of the job                   | Container |
-| Operation          | Response.JobsDetail | Operation rule                           | Container |
-
-
-`Operation` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | 
-| ------------------- | ----------------------------- | ------------------------------------------------------------ | --------- | 
-| Transcode           | Response.JobsDetail.Operation | Transcoding template parameter                                             | Container | 
-| Watermark          | Response.JobsDetail.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. | Container | 
-| RemoveWatermark     | Response.JobsDetail.Operation | Whether to remove the watermark                                             | Container | 
-| TemplateId          | Response.JobsDetail.Operation | Template ID                                                 | String    | 
-| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Multiple watermark template IDs are supported.           | String    | 
-| Output              | Response.JobsDetail.Operation | Result output address                                                 | Container | 
-
->!`TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
-
-`Transcode` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | 
-| ------------------ | :-------------------------------------- | ------------------------------------------------------------ | --------- | 
-| Container          | Response.JobsDetail.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| Video          | Response.JobsDetail.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| TimeInterval          | Response.JobsDetail.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| Audio          | Response.JobsDetail.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| TransConfig          | Response.JobsDetail.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-
-`Watermark` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | 
-| ------------------ | :-------------------------------------------- | ------------------------------ | ------ | 
-| Dx                 | Response.JobsDetail.Operation.Watermark | X-axis offset of the origin in the top-left corner. Value range: [1, 4096] | string |
-| Dy                 | Response.JobsDetail.Operation.Watermark | Y-axis offset of the origin in the top-left corner. Value range: [1, 4096] | string | 
-| Width                 | Response.JobsDetail.Operation.Watermark | Width. Value range: [1, 4096] | string | 
-| Height                 | Response.JobsDetail.Operation.Watermark | Height. Value range: [1, 4096] | string | 
-
-`Output` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | 
-| ------------------ | ------------------------------------- | ---------------- | ------ |
-| Region             | Response.JobsDetail.Operation.Output   | Bucket region                                 | String | 
-| Bucket             | Response.JobsDetail.Operation.Output   | Result storage bucket                               | String | 
-| Object             | Response.JobsDetail.Operationn.Output | Result filename | String | 
-
 #### Error codes
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
@@ -146,6 +89,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     <Message>Success</Message>
     <JobId>jabcxxxxfeipplsdfwe</JobId>
     <State>Submitted</State>
+    <Progress>0</Progress>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
     <StartTime></StartTime>
     <EndTime></EndTime>
@@ -221,6 +165,13 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Transparency>30</Transparency>
             </Image>
         </Watermark>
+        <State>Success</State>
+            <DigitalWatermark>
+            <Type>Text</Type>
+            <Message>123456789ab</Message>
+            <Version>V1</Version>
+            <IgnoreError>false</IgnoreError>
+        </DigitalWatermark>
         <Output>
             <Region>ap-beijing</Region>
             <Bucket>abc-1250000000</Bucket>
