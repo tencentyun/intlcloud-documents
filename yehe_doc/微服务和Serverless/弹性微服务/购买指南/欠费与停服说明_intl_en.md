@@ -8,7 +8,6 @@ When your Tencent Cloud account goes overdue, the following polices are applied 
 - > 72 hours: All environments and applications under the account are terminated permanently. The billing stops.
 
 
-
 ## Service Recovery
 When the overdue payment is made, TEM service is recovered.
 
