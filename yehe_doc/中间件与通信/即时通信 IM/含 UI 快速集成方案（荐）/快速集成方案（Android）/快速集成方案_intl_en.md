@@ -12,6 +12,7 @@ TUIKit is a set of TUI components based on IM SDKs. It provides features such as
 1. Download the TUIKit source code from [GitHub](https://github.com/tencentyun/TIMSDK/tree/master/Android). Ensure that the TUIKit folder is at the same level as your project folder, for example:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/00bc0470857b850436663d9bf2ef9164.png" width="500"/>
 2. According to your business requirements, add the corresponding TUI components in `settings.gradle`. For example, you can add tuichat to include the chat feature, add tuiconversation to include the conversation list feature, and add tuicalling to include the audio/video call feature. TUI components are independent of each other, and adding or removing them does not affect project compilation.
+
 ```groovy
 // Include the upper-layer app module
 include ':app'
@@ -45,6 +46,7 @@ include ':tuicalling'
 project(':tuicalling').projectDir = new File(settingsDir, '../TUIKit/TUICalling/tuicalling')
 ```
 3. Add the following to `build.gradle` in App:
+
 ```groovy
 dependencies {
     api project(':tuiconversation')
@@ -60,6 +62,7 @@ dependencies {
 android.enableJetifier=true
 ```
 5. Add the following to the `build.gradle` file of the root project to add the Maven repository:
+
 ```groovy
 allprojects {
     repositories {
@@ -78,13 +81,11 @@ Instant messaging software usually consists of several basic UIs such as the con
 
 ```java
 
-// Initialize TUIKit during program startup, usually in the `onCreate` method of Application
-TUILogin.init(this, SDKAPPID, null, null);
-    
-// Click Login on the user UI to log in to TUIKit
-TUILogin.login(userId, userSig, new V2TIMCallback() {
+// Called when the user UI clicks login
+// Context must be passed to the application object, otherwise some pictures cannot be loaded
+TUILogin.login(context,sdkAppID,userID, userSig, new TUICallback() {
 	@Override
-	public void onError(final int code, final String desc) {
+public void onError(final int code, final String desc) {
 	}
 
 	@Override
@@ -95,6 +96,7 @@ TUILogin.login(userId, userSig, new V2TIMCallback() {
 
 ### Step 2. Create viewPager
 1. Add the UI layout in `activity_main.xml`:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -110,6 +112,7 @@ TUILogin.login(userId, userSig, new V2TIMCallback() {
 </LinearLayout>
 ```
 2. Create `FragmentAdapter.java` to work with ViewPager2 to display the conversation and contacts UIs.
+
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -163,6 +166,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
 The getting, synchronization, display, and interaction of the conversation list `TUIConversationFragment` and contact list `TUIContactFragment` UI data are already encapsulated in TUI components, and UIs can be used as easily as common Android fragments.
 
 Add the following to the `onCreate` method in `MainActivity.java`:
+
 ```java
 List<Fragment> fragments = new ArrayList<>();
 // Conversation UI provided by tuiconversation
@@ -199,6 +203,7 @@ TUI components allow users to initiate audio/video calls in chat UIs and can be 
 	 A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
 2. **Integrate the TUICalling component:**
 Add tuicalling dependencies to the `build.gradle` file in App:
+
 ```groovy
 api project(':tuicalling')
 ```
@@ -231,6 +236,7 @@ To implement offline push for audio/video calls, follow these steps:
 
 ### 1. Why do I receive the message "Manifest merger failed : Attribute application@allowBackup value=(true) from AndroidManifest.xml"?
 In the IM SDK, the value of `allowBackup` is `false` by default, indicating that the backup and restore feature of the application is disabled. You can delete the `allowBackup` property from the `AndroidManifest.xml` file to disable the backup and restore feature. You can also add `tools:replace="android:allowBackup"` to the `application` node of the `AndroidManifest.xml` file to overwrite the IM SDK configuration with your own configuration. For example:
+
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -266,6 +272,7 @@ Alternatively, you can keep using your current Gradle version by adding your NDK
 
 ### 3. Why do I receive the message "Cannot fit requested classes in a single dex file"?
 The possible cause is that your API level is lower than expected. You need to enable `MultiDex` support in the `build.gradle` file in App and add `multiDexEnabled true` and the corresponding dependencies:
+
 ```groovy
 android {
     defaultConfig {
@@ -281,6 +288,7 @@ dependencies {
 }
 ```
 In addition, add the following code to the Application file:
+
 ```java
 public class MyApplication extends SomeOtherApplication {
     @Override
