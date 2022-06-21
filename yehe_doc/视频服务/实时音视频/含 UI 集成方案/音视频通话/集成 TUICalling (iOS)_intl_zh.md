@@ -1,6 +1,6 @@
 ## 组件介绍
 
-TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUICalling 组件，您只需要编写几行代码就可以为您的 App 添加“一对一音视频通话”，“多人音视频通话”等场景，并且支持离线唤起能力。TUICalling 同时支持 Android、Web、小程序、Flutter、UniApp 等平台，基本功能如下图所示：
+TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUICalling 组件，您只需要编写几行代码就可以为您的 App 添加“一对一音视频通话”，“多人音视频通话”等场景，并且支持离线唤起能力。TUICalling 同时支持 Android、Web、Flutter、UniApp 等平台，基本功能如下图所示：
 
 <table class="tablestyle">
 <tbody><tr>
@@ -79,7 +79,7 @@ TUICalling.shareInstance()
 
 ### 步骤四：实现音视频通话
 
-- 实现1对1视频通话 [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)
+- 实现1对1视频通话 TUICalling#call
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 发起1对1视频通话，假设userId为：1111
@@ -90,7 +90,7 @@ TUICalling.shareInstance()
 TUICalling.shareInstance().call(userIDs: ["1111"], type: .video)
 :::
 </dx-codeblock>
-- 实现多人视频通话 [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)
+- 实现多人视频通话 TUICalling#call
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 发起多人视频通话，假设userId分别为：1111、2222、3333；
@@ -109,7 +109,7 @@ TUICalling.shareInstance().call(userIDs: ["1111", "2222", "3333"], type: .video)
 
 ### 步骤六：状态监听（可选）
 
-如果您的业务需要 [监听通话的状态](https://intl.cloud.tencent.com/document/product/647/43139)，例如通话开始、结束等，可以监听以下事件：
+如果您的业务需要 监听通话的状态，例如通话开始、结束等，可以监听以下事件：
 <dx-codeblock>
 :::  Objective-C Objectivec
 [[TUICalling shareInstance] setCallingListener:self];
@@ -153,7 +153,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### 步骤七：悬浮窗功能（可选）
 
-如果您的业务需要开启 [悬浮窗功能](https://intl.cloud.tencent.com/document/product/647/43139)，您可以在 TUICalling 组件初始化时调用`TUICalling.shareInstance().enableFloatWindow(enable: true)`开启该功能。
+如果您的业务需要开启 悬浮窗功能，您可以在 TUICalling 组件初始化时调用`TUICalling.shareInstance().enableFloatWindow(enable: true)`开启该功能。
 
 >? 目前组件仅支持应用内悬浮窗（最小化退到上一层界面）。
 
@@ -161,7 +161,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### TUICalling 组件支持自定义铃声吗？
 
-支持，调用 [TUICalling#setCallingBell](https://intl.cloud.tencent.com/document/product/647/43139) 即可。
+支持，调用 TUICalling#setCallingBell即可。
 
 ### CocoaPods如何安装？
 
