@@ -1,4 +1,4 @@
-# Querying with HTTPS Request Methods
+
 
 ## Overview
 
