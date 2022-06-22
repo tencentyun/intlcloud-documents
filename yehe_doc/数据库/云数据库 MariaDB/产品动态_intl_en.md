@@ -4,7 +4,7 @@
 <tbody>
 <tr>
 <td>Supported rollback to pay-as-you-go instances</td>
-<td>The database rollback feature is updated, so data will be rolled back to pay-as-you-go instances instead of temp instances. After rollback to a pay-as-you-go instance, you can flexibly configure the retention time of the rollback instance according to your business needs. Rollback instances have the same functionality, security, and reliability as general instances.</td>
+<td>The database rollback feature is updated, so data will be rolled back to pay-as-you-go instances instead of temp instances. After rollback to a pay-as-you-go instance, you can flexibly configure the retention time of the rollback instance based on your business needs. Rollback instances have the same functionality, security, and reliability as general instances.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/237/8719" target="_blank">Rolling back Database</a></td></tr>
 <tr>
 <td>Supported modifying disaster recovery instance parameters	</td>
@@ -30,6 +30,8 @@
 <td>You can modify the policy of a read-only account to satisfy different read-only access and delay requirements.</td>	
 <td><a href="https://intl.cloud.tencent.com/document/product/237/35409" target="_blank">Read/Write Separation</a></td></tr>
 </tbody></table>
+
+
 
 ## March 2021
 <table>
