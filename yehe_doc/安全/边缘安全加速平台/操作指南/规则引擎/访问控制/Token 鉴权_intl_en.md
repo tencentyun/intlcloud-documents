@@ -21,7 +21,7 @@ Parameter description:
 </thead>
 <tbody><tr>
 <td>Authentication method</td>
-<td>Currently, three authentication signature calculation methods are supported. Select an appropriate one based on the access URL format. For more information, see <a href="#jqfs">Authentication Methods</a>.</td>
+<td>Currently, four authentication signature calculation methods are supported. Select an appropriate one based on the access URL format. For more information, see <a href="#jqfs">Authentication Methods</a>.</td>
 </tr>
 <tr>
 <td>Primary key</td>
