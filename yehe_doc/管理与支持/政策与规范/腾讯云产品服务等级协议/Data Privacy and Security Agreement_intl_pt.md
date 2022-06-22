@@ -140,7 +140,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 37.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
 38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179).
 39.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
-
+40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854).
 ## Requisitos específicos da jurisdição
 
 **Europa**

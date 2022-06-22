@@ -42,7 +42,7 @@ https://xxxxxx/v4/all_member_push/im_remove_all_tags?usersig=xxx&identifier=admi
 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
-| To_Account | String | Required | Target user account |
+| To_Account | Array | Required | Target user account |
 
 ### Sample response packet
 

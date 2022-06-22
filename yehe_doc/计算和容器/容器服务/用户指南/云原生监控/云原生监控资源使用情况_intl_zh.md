@@ -1,12 +1,9 @@
-
-
 <dx-alert infotype="alarm" title="温馨提示">
-感谢您对腾讯云原生监控 TPS 的认可与信赖，为提供更优质的服务和更强大的产品能力，TPS 与原腾讯云 Prometheus 监控服务进行融合和升级，升级为 TMP。支持跨地域跨 VPC 监控，支持统一 Grafana 面板对接多监控实例实现统一查看。TMP 计费详情见 [按量计费](https://intl.cloud.tencent.com/document/product/1116/43156)。<br>
-欢迎您 [了解试用](https://console.cloud.tencent.com/tke2/prometheus2) TMP。我们将提供**一键迁移工具**，帮您一键将 TPS 实例迁移到 TMP，我们会通过站内信通知您 TPS 下线时间和迁移工具上线时间。再次感谢您对 TPS 的支持和信任。
+感谢您对腾讯云原生监控 TPS 的认可与信赖，为提供更优质的服务和更强大的产品能力，TPS 与原腾讯云 Prometheus 监控服务进行融合和升级，升级为 [TMP](https://intl.cloud.tencent.com/document/product/457/46734)。支持跨地域跨 VPC 监控，支持统一 Grafana 面板对接多监控实例实现统一查看。TMP 计费详情见 [按量计费](https://intl.cloud.tencent.com/document/product/1116/43156)，相关云资源使用详情见 [计费方式和资源使用](https://intl.cloud.tencent.com/document/product/457/46733)。若您只使用基础监控的 [免费指标](https://intl.cloud.tencent.com/document/product/457/46735)，TMP 不会收取任何指标费用。<br>
+TPS 将于2022年5月16日下线，详情见 [公告](https://intl.cloud.tencent.com/document/product/457/46999)。TMP 已正式发布，欢迎 [了解试用](https://console.cloud.tencent.com/tke2/prometheus2)。TPS 已不支持创建新实例，我们提供一键 [迁移工具](https://intl.cloud.tencent.com/document/product/457/46736)，帮您一键将 TPS 实例迁移到 TMP，迁移前请 [精简监控指标](https://intl.cloud.tencent.com/document/product/457/46737) 或降低采集频率，否则可能产生较高费用，再次感谢您对 TPS 的支持和信任。
 </dx-alert>
 
-
-目前云原生监控服务处于免费公测阶段，使用云原生监控服务时将会在用户的账户下创建 [对象存储 COS](https://intl.cloud.tencent.com/zh/document/product/436)、[云硬盘 CBS](https://intl.cloud.tencent.com/zh/document/product/362) 等存储资源，以及内外网 [负载均衡 CLB](https://intl.cloud.tencent.com/zh/document/product/214) 资源，按用户实际使用的云资源收费。本文向您介绍使用云原生监控服务时资源的使用情况。
+目前云原生监控服务处于免费公测阶段，使用云原生监控服务时将会在用户的账户下创建 [对象存储 COS](https://intl.cloud.tencent.com/document/product/436)、[云硬盘 CBS](https://intl.cloud.tencent.com/document/product/362) 等存储资源，以及内外网 [负载均衡 CLB](https://intl.cloud.tencent.com/document/product/214) 资源，按用户实际使用的云资源收费。本文向您介绍使用云原生监控服务时资源的使用情况。
 
 
 

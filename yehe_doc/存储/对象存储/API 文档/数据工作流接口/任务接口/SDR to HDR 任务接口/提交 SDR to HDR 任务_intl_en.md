@@ -1,10 +1,10 @@
-## Overview
+## Feature Description
 
 This API (`CreateMediaJobs`) is used to submit an SDR-to-HDR job.
 
 ## Request
 
-#### Request example
+#### Sample request
 
 ```shell
 POST /jobs HTTP/1.1
@@ -17,13 +17,13 @@ Content-Type: application/xml
 <body>
 ```
 
->?Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 >
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -62,9 +62,9 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
 | Tag                | Request | Job type: SDRtoHDR                                   | String    | Yes   |
-| Input              | Request | Information about the media to be operated                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to six jobs can be performed on the same file.                                                | Container | Yes   |
-| QueueId            | Request | ID of the queue where the job is in                                         | String    | Yes   |
+| Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
+| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
 `Input` has the following sub-nodes:
@@ -77,11 +77,11 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| SDRtoHDR             | Request.Operation | SDR-to-HDR template parameter                                             | Container | Yes   |
-| Transcode          | Request.Operation | Transcoding template parameter. This node and `Transcode` cannot be empty at the same time.             | Container | No   |
-| TranscodeTemplateId| Request.Operation | Transcoding template ID. This node and `TranscodeTemplateId` cannot be empty at the same time. Use this node with priority.           | String  | No|
-| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three `Watermark` parameters can be passed. | Container | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |
+| SDRtoHDR             | Request.Operation | SDR-to-HDR parameter                                             | Container | Yes   |
+| Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
+| TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
 `SDRtoHDR` has the following sub-nodes:
@@ -96,7 +96,7 @@ The nodes are described as follows:
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Result file name                                             | String | Yes   |
+| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
 
 
 
@@ -104,7 +104,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -142,7 +142,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -163,11 +163,11 @@ The nodes are described as follows:
 | Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
 | Tag                | Response.JobsDetail | Job type: SDRtoHDR                              | String    |
-| State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` |  String |
+| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
 | CreationTime | Response.JobsDetail | Job creation time |  String |
 | StartTime | Response.JobsDetail | Job start time |  String |
 | EndTime | Response.JobsDetail | Job end time |  String |
-| QueueId            | Response.JobsDetail | ID of the queue where the job is in                       | String    |
+| QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the job                   | Container |
 | Operation | Response.JobsDetail | Operation rule. Up to six operation rules are supported. |  Container |
 
@@ -180,7 +180,7 @@ Same as the `Request.Input` node in the request.
 |:---|:-- |:--|:--|
 | SDRtoHDR | Response.JobsDetail.Operation | Same as `Request.Operation.SDRtoHDR` in the request. |  Container |
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
-| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. Not returned when there is no output video. | Container |
+| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
 
 `Output` has the following sub-nodes:
 Same as the `Request.Operation.Output` node in the request.
@@ -190,9 +190,9 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Use Cases
 
 #### Request
 

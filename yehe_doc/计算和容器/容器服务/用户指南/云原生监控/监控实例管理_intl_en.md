@@ -1,14 +1,13 @@
 <dx-alert infotype="alarm" title="Note">
 Tencent Prometheus Service (TPS) has been integrated into [TMP](https://intl.cloud.tencent.com/document/product/457/46734), which supports cross-region monitoring in multiple VPCs, and provides a unified Grafana dashboard, allowing for checking of multiple monitoring instances. For more information on TMP billing, see [Pay-as-You-Go](https://intl.cloud.tencent.com/document/product/1116/43156). For cloud resource usage details, see [Billing Mode and Resource Usage](https://intl.cloud.tencent.com/document/product/457/46733). [Free metrics](https://intl.cloud.tencent.com/document/product/457/46735) for basic monitoring will not be billed.<br>
-TPS will be discontinued soon. Click [here](https://console.cloud.tencent.com/tke2/prometheus2) to try out TMP. TPS instances can no longer be created, but you can use our quick [migration tool](https://intl.cloud.tencent.com/document/product/457/46736) to migrate your TPS instances to TMP. Before the migration, [streamline monitoring metrics](https://intl.cloud.tencent.com/document/product/457/46737) or reduce the collection frequency; otherwise, higher costs may be incurred.
+TPS is discontinued from May 16, 2022 (UTC +8). For more information, see [Announcement](https://intl.cloud.tencent.com/document/product/457/46999). Click [here](https://console.cloud.tencent.com/tke2/prometheus2) to try out TMP. TPS instances can no longer be created, but you can use our quick [migration tool](https://intl.cloud.tencent.com/document/product/457/46736) to migrate your TPS instances to TMP. Before the migration, [streamline monitoring metrics](https://intl.cloud.tencent.com/document/product/457/46737) or reduce the collection frequency; otherwise, higher costs may be incurred.
 </dx-alert>
-
 
 
 
 ## Overview
 
-In the TKE console, you can easily create a TMP instance and associate it with a cluster in the current region. Clusters associated with the same TMP instance share the same monitoring metrics and alarming policies. Currently, TMP supports managed clusters, self-deployed clusters, elastic clusters and edge clusters. This document describes how to create and manage TMP instances in the TKE console.
+In the TKE console, you can easily create a TMP instance and associate it with a cluster in the current region. Clusters associated with the same TMP instance share the same monitoring metrics and alarming policies. Currently, cloud native monitoring supports managed clusters, self-deployed clusters, elastic clusters and edge clusters. This document describes how to create and manage TMP instances in the TKE console.
 
 ## Directions
 
@@ -18,16 +17,16 @@ When using the cloud native monitoring for the first time, you need to assign th
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cloud Native Monitoring** in the left sidebar to pop up the **Service authorization** window.
 2. Click **Go to Cloud Access Management** to enter the **Role management** page.
 3. Click **Grant** to complete authentication.
-![](https://qcloudimg.tencent-cloud.cn/raw/6bc3c7651a63bc372df274f689b3f2c2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/69b3d895837162b8d49f07d0d5baf7b6.png)
 
 
 ### Creating TMP instance
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cloud Native Monitoring** in the left sidebar.
 2. Click **Create** at the top of the instance list page.
 3. On the **Create TMP instance** page, configure the basic information of the instance.
-![](https://qcloudimg.tencent-cloud.cn/raw/c60fc6f0944bd3f7c266cde6808bb795.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a2efb2553a223eea6b08c1b0f2cd9e5f.png)
  - **Instance name**: Enter a custom instance name within 60 characters.
- - **Region**: Select a region to deploy this instance. For now, it only supports Beijing, Shanghai and Guangzhou regions. The region cannot be modified after the instance is created. We recommend that you choose the region closest to your business to minimize access latency and improve reporting speed.
+ - **Region**: select a region to deploy this instance. For now, it only supports Beijing, Shanghai and Guangzhou regions. The region cannot be modified after the instance is created. We recommend that you choose the region closest to your business to minimize access latency and improve reporting speed.
  - **Network**: Select an existing VPC and its subnet in the current region, which cannot be modified after the instance is created. If there are no VPC resources in the region, you can go to the VPC console to create a VPC. For more information, see [Network Settings for Containers and Nodes](https://intl.cloud.tencent.com/document/product/457/38966).
  - **Data retaining time**: Select the data storage time (30 days/3 months/6 months/1 year). After the instance is successfully created, a COS bucket will be automatically created and billed based on actual resource usage. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871).
  - **Grafana component**: Select whether to enable Grafana access. If you enable it, you need to set the username and password for Grafana logins. After the instance is created, the Grafana username and password cannot be modified. You can enable Grafana public network access according to your business needs.
@@ -36,8 +35,8 @@ When using the cloud native monitoring for the first time, you need to assign th
 >
 4. Click **Complete**.
 5. You can check the instance creation progress on the **Cloud native monitoring** page. If the instance status changes to "Running", the instance was successfully created and is running properly.
-![](https://qcloudimg.tencent-cloud.cn/raw/1c8be13e3a0bccc74671e87301ea7b26.png)
->? If it takes too long to create an instance or the displayed status is abnormal, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
+![](https://qcloudimg.tencent-cloud.cn/raw/ea617c5d4d10051ecb1d62f8f9165fcc.png)
+>? If it takes too long to create an instance or the displayed status is abnormal, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
 
 
 
@@ -45,5 +44,6 @@ When using the cloud native monitoring for the first time, you need to assign th
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cloud Native Monitoring** in the left sidebar.
 2. On the instance list page, click **Delete** on the right of an instance to be deleted.
 3. In the **Delete TMP instance** pop-up window, click **OK** to delete the instance.
->? When the current instance is deleted, the monitoring components installed in the cluster and the COS bucket associated with the instance will be deleted at the same time by default. To back up the related monitoring data, go to the COS console.
+![](https://qcloudimg.tencent-cloud.cn/raw/d9dab09c8bbe536aa7cd406b9b0823c9.png)
+>? When the current instance is deleted, the monitoring components installed in the cluster and the COS bucket associated with the instance will be deleted at the same time by default. To backup the related monitoring data, please go to COS console.
 

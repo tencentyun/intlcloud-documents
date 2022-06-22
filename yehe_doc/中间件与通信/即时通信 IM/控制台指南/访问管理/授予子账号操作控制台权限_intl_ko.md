@@ -27,7 +27,7 @@
 >!
 >- 서브 계정에 태그 정책을 적용한 후, 서브 계정은 태그가 비어 있는 애플리케이션을 액세스 또는 작업할 수 없습니다. 서브 계정이 [IM 콘솔](https://console.cloud.tencent.com/im)에서 새로 생성한 애플리케이션은 태그가 비어 있으므로, 루트 계정으로 해당 애플리케이션 태그를 승인 태그로 변경해야 서브 계정이 사용할 수 있습니다.
 >- 기존 애플리케이션을 태그별로 서브 계정에 권한 부여하는 경우, 권한 부여하려는 애플리케이션에 해당 태그가 설정되어 있는지 확인하십시오. 그렇지 않으면 태그를 통해 권한 부여할 수 없습니다. 
->- 애플리케이션에 태그가 설정되어 있지 않은 경우, IM 콘솔의 [기본 설정](https://console.cloud.tencent.com/im-detail) 페이지에서 설정합니다. 자세한 내용은 [태그 설정](https://intl.cloud.tencent.com/document/product/1047/34540)을 참고하십시오. 
+>- 애플리케이션에 태그가 설정되어 있지 않은 경우, IM 콘솔의 [기본 설정](https://console.cloud.tencent.com/im/detail) 페이지에서 설정합니다. 자세한 내용은 [태그 설정](https://intl.cloud.tencent.com/document/product/1047/34540)을 참고하십시오. 
 
 >- 또는 [태그 리스트](https://console.cloud.tencent.com/tag/taglist)로 이동하여 애플리케이션을 태그에 일괄 바인딩합니다. 자세한 내용은[리소스 바인딩](https://intl.cloud.tencent.com/document/product/651/41575)을 참고하십시오.
 

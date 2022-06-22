@@ -3,7 +3,7 @@ This document helps you quickly understand and get started with Tencent Kubernet
 ## 1. What Is TKE?
 
 
-Based on the native Kubernetes system, TKE provides container-centric, highly scalable and high-performance container management services. You can easily run applications on a hosted CVM instance cluster. Tencent Cloud also provides [Elastic Kubernetes Service (EKS)](https://intl.cloud.tencent.com/document/product/457/34040) and [Tencent Kubernetes Engine for Edge (TKE Edge)](https://intl.cloud.tencent.com/document/product/457/35390) so that you can choose the service you need.
+Based on the native Kubernetes system, [TKE](https://intl.cloud.tencent.com/document/product/457/6759) provides container-centric, highly scalable and high-performance container management services. You can easily run applications on a hosted CVM instance cluster. Tencent Cloud also provides [Elastic Kubernetes Service (EKS)](https://intl.cloud.tencent.com/document/product/457/34040) and [Tencent Kubernetes Engine for Edge (TKE Edge)](https://intl.cloud.tencent.com/document/product/457/35390) so that you can choose the service you need.
 
 
 TKE enables you to manipulate clusters and services through the [TKE console](https://console.cloud.tencent.com/tke2/overview) and [Kubectl](https://intl.cloud.tencent.com/document/product/457/30639).

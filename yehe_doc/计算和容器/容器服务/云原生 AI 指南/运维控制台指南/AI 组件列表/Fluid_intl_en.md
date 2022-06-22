@@ -37,7 +37,7 @@ Some fields may need to be customized, as listed below:
 
 | Parameter     | Description     | Default Value     |
 | ------- | -------- | --------- |
-| `workdir` | Backup address of the metadata in the cache engine | `/tmp`
+| `workdir` | Backup address of the metadata in the cache engine | `/tmp`|
 | `dataset.controller.image.repository` | Repository where the dataset controller image resides  | `ccr.ccs.tencentyun.com/fluid/dataset-controller` |
 | `dataset.controller.image.tag`        | Dataset controller image version    | `"v0.6.0-0bfc552"` |
 | `csi.registrar.image.repository`   | Repository where the CSI registrar image resides | `"ccr.ccs.tencentyun.com/fluid/csi-node-driver-registrar"` |

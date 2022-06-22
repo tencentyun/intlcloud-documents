@@ -15,6 +15,7 @@ If the existing services or features of COS media processing cannot meet your ne
 4. On the left sidebar, click **Data Processing Workflow** > **Workflow** to enter the workflow management page.
 5. Click **Create Workflow**.
 6. Click **+** to the right of “Configure Workflow” to add a **custom function** node.
+![](https://qcloudimg.tencent-cloud.cn/raw/5f198e30ed04fc8e8b093f3eeb09f106.png)
 
 7. In the pop-up window, configure the following information.
 
@@ -24,7 +25,7 @@ If the existing services or features of COS media processing cannot meet your ne
  - Feature: The preset feature is supported when select the common feature.
  - Function: Currently, only functions that are executed asynchronously and have status tracking enabled are supported in a workflow.
  To create a function, click **Create Function** and configure the function as prompted.
-6. After confirming that the configuration is correct, click **OK**.
+8. After confirming that the configuration is correct, click **OK**.
 
 
 

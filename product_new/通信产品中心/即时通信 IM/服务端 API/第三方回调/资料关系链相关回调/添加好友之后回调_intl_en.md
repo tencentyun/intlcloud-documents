@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend uses this callback to monitor information about friends added by users in real time.
+The app backend uses this callback to view information about friends added by users in real time.
 
 ## Precautions
 

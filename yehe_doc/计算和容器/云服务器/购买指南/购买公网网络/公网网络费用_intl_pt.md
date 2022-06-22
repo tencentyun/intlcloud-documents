@@ -16,25 +16,30 @@ Este documento descreve os preços da rede pública em diferentes modos de fatur
 <td>0,12</td>
 </tr>
 <tr>
+<td>Moscou, Tóquio</td>
+<td>0,13</td>
+</tr>
+<tr>  
 <td>Singapura</td>
 <td>0,081</td>
 </tr>
 <tr>
+<td>São Paulo</td>
+<td>0,15</td>
+</tr>
+<tr> 
 <td>Toronto, Vale do Silício, Frankfurt</td>
 <td>0,077</td>
-</tr>
-<tr>
-<td>Moscou, Tóquio</td>
-<td>0,13</td>
-</tr>
-<tr>
-<td>Virgínia</td>
-<td>0,075</td>
 </tr>
 <tr>
 <td>Bangkok, Mumbai</td>
 <td>0,1</td>
 </tr>
+<tr> 
+<td>Virgínia</td>
+<td>0,075</td>
+</tr>
+<tr>  
 </tbody></table>
 
 

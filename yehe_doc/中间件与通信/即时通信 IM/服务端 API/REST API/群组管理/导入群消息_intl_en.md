@@ -94,7 +94,7 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 |---------|---------|---------|---------|
 | GroupId | String | Yes | ID of the group for which to import messages |
 |RecentContactFlag|Integer| No | Whether to trigger conversation update. The value `1` means to trigger conversation update. Conversation update is not triggered by default. (This field is not supported by AVChatRoom groups.) |
-| MsgList | String | Yes | List of the messages to be imported  |
+| MsgList | Object | Yes | List of the messages to be imported  |
 | From_Account | String | Yes | Message sender |
 | SendTime | Integer | Yes | Message sending time |
 | Random | Integer | No | A 32-bit unsigned integer. If the random numbers of two messages within five minutes are the same, the later message will be discarded as a repeated message. |

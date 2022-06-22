@@ -42,7 +42,7 @@ https://xxxxxx/v4/all_member_push/im_remove_all_tags?usersig=xxx&identifier=admi
 
 | 字段 | 类型| 属性 | 说明 |
 |---------|---------|---------|---------|
-| To_Account | String | 必填 |目标用户帐号 |
+| To_Account | Array | 必填 |目标用户帐号 |
 
 ### 应答包体示例
 

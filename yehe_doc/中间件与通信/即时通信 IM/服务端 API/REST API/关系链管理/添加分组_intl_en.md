@@ -98,16 +98,17 @@ The maximum invocation frequency is 200 times per second.
 |-----|-------|------|
 | ResultItem | Array | The result object array for adding a friend to a new friend group. |
 | To_Account | String | The UserID of the friend to be added to the new friend group. |
-| ResultCode | Integer | The processing result of To_Account. 0: succeeded. Others: failed. |
+| ResultCode | Integer | The processing result of To_Account.  `0`: Succeeded; any other value: Failed. For details of any other values, see [Error Codes](#ErrorCode). |
 | ResultInfo | String | Error description for To_Account. If the processing was successful, the field is empty. |
 | Fail_Account | Array | Returns a list of users for whom the processing failed. This field is returned only when the processing failed for a user. |
 | Invalid_Account | Array | Returns a list of users with inconsistent SDKAppIDs. This field is returned only when invalid users exist. |
 | CurrentSequence | Integer | The current sequence of the friend group. |
 | ActionStatus | String | The request processing result. OK: succeeded. FAIL: failed. |
-| ErrorCode | Integer | The error code. 0: succeeded. Others: failed. |
+| ErrorCode | Integer | The error code.  `0`: Succeeded; any other value: Failed. For details of any other values, see [Error Codes](#ErrorCode). |
 | ErrorInfo | String | Detailed error information. |
 | ErrorDisplay | String | Detailed error information to be displayed on the client. |
 
+[](id:ErrorCode)
 ## Error Codes
 
 Unless a network error (such as error 502) occurs, the HTTP return code for this API is always 200. ErrorCode and ErrorInfo in the response packet represent the actual error code and error information, respectively.
@@ -120,7 +121,6 @@ The following table describes the error codes specific to this API.
 | 30002 | The SDKAppIDs are inconsistent. |
 | 30003 | The requested user account does not exist. |
 | 30004 | The request requires app admin permissions. |
-| 30005 | A relationship chain field contains sensitive words. |
 | 30006 | An internal server error occurred. In this case, try again. |
 | 30007 | The network connection timed out. In this case, try again later. |
 | 30008 | A write conflict occurred due to concurrent writes. In this case, we recommend that you use the batch mode. |

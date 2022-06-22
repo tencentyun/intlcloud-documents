@@ -27,7 +27,7 @@ This solution is designed for customers who need to authorize and manage sub-acc
 >!
 >- After a tag policy is assigned to a sub-account, the sub-account cannot access or operate applications with no tags. For a sub-account, there are no tags in a newly created application in the [IM console](https://console.cloud.tencent.com/im). Therefore, the root account needs to change the application tags to authorized tags so that the sub-account can use the application.
 >- If you want to grant a sub-account the access to an existing app by tag, make sure you have configured tags for the app; otherwise, you will be unable to authorize by tag.
->- If no tags are configured for the app, go to the [Basic Configuration](https://console.cloud.tencent.com/im-detail) page in the IM console to configure. For more information, see the **Configuring Tags** section in [Basic Configuration](https://intl.cloud.tencent.com/document/product/1047/34540). 
+>- If no tags are configured for the app, go to the [Basic Configuration](https://console.intl.cloud.tencent.com/im/detail) page in the IM console to configure. For more information, see the **Configuring Tags** section in [Basic Configuration](https://intl.cloud.tencent.com/document/product/1047/34540). 
 >- You can also go to [Tag List](https://console.cloud.tencent.com/tag/taglist) to bind multiple apps to a tag at a time. For more information, see the **Binding resources** section in [Creating Tags and Binding Resources](https://intl.cloud.tencent.com/document/product/651/41575).
 
 ### Step 1. Go to CAM to authorize

@@ -26,7 +26,7 @@
 콜백 URL을 구성 후, 콘솔에서 HTTPS 상호 인증서를 다운로드하여 추후 사용할 수 있습니다.
 >?필요에 따라 상호 인증을 설정할 수 있으며, 구체적인 설정 방법은 [Apache 상호 인증 설정](https://intl.cloud.tencent.com/document/product/1047/34379)을 참고하십시오.
 
-1. [콘솔](https://console.cloud.tencent.com/im-detail/callback-setting)의 [[콜백 설정](https://console.cloud.tencent.com/im-detail/callback-setting)] 페이지 우측 상단의 콜백 URL 설정 섹션에서 [HTTPS 상호 인증서 다운로드]를 클릭합니다.
+1. [콘솔](https://console.cloud.tencent.com/im/callback-setting)의 [[콜백 설정](https://console.cloud.tencent.com/im/callback-setting)] 페이지 우측 상단의 콜백 URL 설정 섹션에서 [HTTPS 상호 인증서 다운로드]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/52a1d6fc283f07e29842da512ba303a3.png)
 2. 인증서 다운로드 팝업 창에서 [다운로드]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/584dcfbed3a36a691971f6edcca19b43.png)

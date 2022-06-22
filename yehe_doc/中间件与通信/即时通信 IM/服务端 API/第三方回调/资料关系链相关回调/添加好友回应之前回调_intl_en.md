@@ -2,7 +2,7 @@
 
 This API is used by the app backend to:
 
-- Monitor responses to friend requests in real time.
+- View responses to friend requests in real time.
 - Block malicious responses to friend requests.
 
 

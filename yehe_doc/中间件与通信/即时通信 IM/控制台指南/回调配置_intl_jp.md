@@ -26,7 +26,7 @@
 コールバックURLを設定すると、コンソールでHTTPS双方向認証証明書をダウンロードできます。
 >?必要に応じて双方向認証を設定することができます。具体的な設定方法については、 [双方向認証の設定](https://intl.cloud.tencent.com/document/product/1047/34379)をご参照ください。
 
-1.  [コンソール](https://console.cloud.tencent.com/im-detail/callback-setting) の【[コールバック設定](https://console.cloud.tencent.com/im-detail/callback-setting)】ページに進み、右上のコールバックURL設定エリアの【HTTPS双方向認証証明書のダウンロード】をクリックします。
+1.  [コンソール](https://console.cloud.tencent.com/im/callback-setting) の【[コールバック設定](https://console.cloud.tencent.com/im/callback-setting)】ページに進み、右上のコールバックURL設定エリアの【HTTPS双方向認証証明書のダウンロード】をクリックします。
 ![](https://main.qcloudimg.com/raw/52a1d6fc283f07e29842da512ba303a3.png)
 2. ポップアップ表示された証明書ダウンロードのダイアログボックスで、【ダウンロード】をクリックします。
 ![](https://main.qcloudimg.com/raw/584dcfbed3a36a691971f6edcca19b43.png)

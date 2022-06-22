@@ -3,7 +3,7 @@
 ## 1. TKE란 무엇입니까?
 
 
-기본 Kubernetes 시스템을 기반으로 TKE(Tencent Kubernetes Engine)는 확장성이 뛰어난 컨테이너 중심의 고성능 컨테이너 관리 서비스를 제공합니다. 호스팅된 CVM 인스턴스 클러스터에서 애플리케이션을 쉽게 실행할 수 있습니다. Tencent Cloud는 [EKS](https://intl.cloud.tencent.com/document/product/457/34040)(Elastic Kubernetes Service)와 [TKE Edge](https://intl.cloud.tencent.com/document/product/457/35390)(Tencent Kubernetes Engine for Edge)도 제공하므로 필요한 서비스를 선택할 수 있습니다.
+기본 Kubernetes 시스템을 기반으로 [TKE](https://intl.cloud.tencent.com/document/product/457/6759)(Tencent Kubernetes Engine)는 확장성이 뛰어난 컨테이너 중심의 고성능 컨테이너 관리 서비스를 제공합니다. 호스팅된 CVM 인스턴스 클러스터에서 애플리케이션을 쉽게 실행할 수 있습니다. Tencent Cloud는 [EKS](https://intl.cloud.tencent.com/document/product/457/34040)(Elastic Kubernetes Service)와 [TKE Edge](https://intl.cloud.tencent.com/document/product/457/35390)(Tencent Kubernetes Engine for Edge)도 제공하므로 필요한 서비스를 선택할 수 있습니다.
 
 
 TKE를 사용하면 [TKE 콘솔](https://console.cloud.tencent.com/tke2/overview)인 [Kubectl](https://intl.cloud.tencent.com/document/product/457/30639)을 통해 클러스터와 서비스를 조작할 수 있습니다.

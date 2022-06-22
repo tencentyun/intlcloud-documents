@@ -12,6 +12,7 @@ TUIKit 是基于 IM SDK 实现的一套 UI 组件，其包含会话、聊天、�
 1. 从 [ GitHub 下载](https://github.com/tencentyun/TIMSDK/tree/master/Android) TUIKit 源码。使 TUIKit 文件夹跟自己的工程文件夹同级，例如：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/00bc0470857b850436663d9bf2ef9164.png" width="500"/>
 2. 根据实际业务需求在 settings.gradle 中添加对应的 TUI 组件，比如需要聊天功能，可以添加 tuichat，需要会话列表功能，可以添加 tuiconversation，需要音视频通话功能，可以添加 tuicalling，TUI 组件之间相互独立，添加或删除均不影响工程编译。
+
 ```groovy
 // 引入上层应用模块
 include ':app'
@@ -45,6 +46,7 @@ include ':tuicalling'
 project(':tuicalling').projectDir = new File(settingsDir, '../TUIKit/TUICalling/tuicalling')
 ```
 3. 在 APP 的 build.gradle 中添加：
+
 ```groovy
 dependencies {
     api project(':tuiconversation')
@@ -56,10 +58,12 @@ dependencies {
 }
 ```
 4. 在 gradle.properties 文件中加入下行，表示自动转换三方库以兼容 AndroidX：
+
 ```properties
 android.enableJetifier=true
 ```
 5. 添加 maven 仓库，在 root 工程的 build.gradle 文件中添加：
+
 ```groovy
 allprojects {
     repositories {
@@ -77,24 +81,23 @@ allprojects {
 ### 步骤一：组件登录
 
 ```java
-
-// 在程序启动的时候初始化 TUI 组件，通常是在 Application 的 onCreate 中进行初始化：
-TUILogin.init(this, SDKAPPID, null, null);
     
-// 在用户 UI 点击登录的时候登录 UI 组件：
-TUILogin.login(userId, userSig, new V2TIMCallback() {
+// 在用户 UI 点击登录的时候调用
+// context必须传 Application对象，否则部分图片无法加载
+TUILogin.login(context,sdkAppID,userID, userSig, new TUICallback() {
 	@Override
 	public void onError(final int code, final String desc) {
 	}
 
 	@Override
-	public void onSuccess() {
+    public void onSuccess() {
 	}
 });
 ```
 
 ### 步骤二：创建 viewPager
 1. 在 activity_main.xml 中添加界面布局：
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -110,6 +113,7 @@ TUILogin.login(userId, userSig, new V2TIMCallback() {
 </LinearLayout>
 ```
 2. 创建 FragmentAdapter.java 用来配合 ViewPager2 展示会话和联系人界面。
+
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -163,6 +167,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
 会话列表 `TUIConversationFragment` 以及联系人列表 `TUIContactFragment` 界面数据的获取、同步、展示以及交互均已在组件内部封装，UI 的使用与 Android 的普通 Fragment 一样方便。
 
 在 MainActivity.java 的 onCreate 方法中添加：
+
 ```java
 List<Fragment> fragments = new ArrayList<>();
 // tuiconversation 组件提供的会话界面
@@ -199,6 +204,7 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
 	 系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
 2. **集成 TUICalling 组件：**
 在 APP 的 build.gradle 文件中添加对 tuicalling 的依赖：
+
 ```groovy
 api project(':tuicalling')
 ```
@@ -231,6 +237,7 @@ api project(':tuicalling')
 
 ### 1. 提醒：“Manifest merger failed : Attribute application@allowBackup value=(true) from AndroidManifest.xml”？
 IM SDK 中默认 `allowBackup` 的值为 `false` ，表示关闭应用的备份和恢复功能。您可以在您的 `AndroidManifest.xml` 文件中删除 `allowBackup` 属性，表示关闭备份和恢复功能；也可以在 `AndroidManifest.xml` 文件的 application 节点中添加 `tools:replace="android:allowBackup"` 表示覆盖 IM SDK 的设置，使用您自己的设置。 例如：
+
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -266,6 +273,7 @@ IM SDK 中默认 `allowBackup` 的值为 `false` ，表示关闭应用的备份�
 
 ### 3. 提醒：“Cannot fit requested classes in a single dex file”？
 出现此问题可能是您的 API 级别设置比较低，需要在 App 的 build.gradle 文件中开启 `MultiDex` 支持, 添加 `multiDexEnabled true` 和对应依赖：
+
 ```groovy
 android {
     defaultConfig {
@@ -281,6 +289,7 @@ dependencies {
 }
 ```
 同时，在您的 Application 文件中添加以下代码：
+
 ```java
 public class MyApplication extends SomeOtherApplication {
     @Override

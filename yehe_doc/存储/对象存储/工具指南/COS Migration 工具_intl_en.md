@@ -1,10 +1,6 @@
 
 ## Overview
-COS Migration is an all-in-one tool that integrates the COS data migration feature. You can quickly migrate data from various sources to COS through simple configurations and steps. It has the following features:
-- Diverse data sources:
-   - Local data: Migrate locally stored data to COS.
-   - URL list: Download and migrate data from specified URLs to COS.
-   - Bucket replication: Data can be replicated among COS buckets. Cross-account and cross-region replication is supported.
+COS Migration is an all-in-one tool that integrates the COS data migration feature. You can use it to migrate local data to COS through simple configurations and steps. It has the following features:
 - Checkpoint restart: Restarting uploads from checkpoints is supported. For large files, if the upload exits halfway or service failure occurs, you can run the tool again to restart the upload.
 - Multipart upload: An object can be uploaded to COS by parts.
 - Parallel upload: Multiple objects can be uploaded at the same time.
@@ -13,7 +9,7 @@ COS Migration is an all-in-one tool that integrates the COS data migration featu
 >!
 >- COS Migration only supports UTF-8 encoding.
 >- If you use this tool to upload a file that already has the same name, the existing file will be overwritten. You need to configure the tool to skip files with the same name.
->- If you need to migrate from cloud storage service to COS, use the migration service platform.
+>- Use the migration service platform preferably for scenarios other than local data migration.
 >
 
 ## Operating Environment
@@ -60,8 +56,8 @@ COS_Migrate_tool
 ```
 
 >?
- - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped; otherwise, it will be migrated.
- - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, check `error.log` in this directory first.
+> - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped; otherwise, it will be migrated.
+> - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, check `error.log` in this directory first.
 
 ### 3. Modify the config.ini file
 Before running the migration start script, modify the `config.ini` file (path: `./conf/config.ini`) first. This file contains the following parts:
@@ -78,8 +74,6 @@ Currently, the following migration types are supported:
 | Migration Type | Description |
 | ------| ------ |
 | migrateLocal | Migration from local system to COS. |
-| migrateUrl | Migration from download URL to COS. |
-| migrateBucketCopy| Migration from source bucket to destination bucket. |
 
 
 
@@ -125,7 +119,7 @@ skipSamePath=false
 | daemonMode | Whether to enable daemon mode. Valid values: on: Yes; off: No. In daemon mode, the program will keep performing synchronization. The synchronization interval is configured by the `daemonModeInterVal` parameter. | off |
 | daemonModeInterVal | Time interval in seconds between two rounds of synchronization. | 60 |
 | executeTimeWindow | Execution time window with a granularity in minute, which defines the time period when the migration tool runs jobs. For example: <br>`03:30,21:00` means that jobs will be executed between 03:30 and 21:00, and the tool will be in sleep mode at other times, when the migration will be paused and the progress will be retained until the next time window when the migration will resume automatically. | 00:00,24:00 |
-| outputFinishedFileFolder  | This directory stores the results of successful migration tasks, and the result files are named by date, for example, `./result/2021-05-27.out`, where `./result` is the created directory. Each line in the result files is in the format of `"Absolute path"\t"File size"\t"Last modified time"`. If `outputFinishedFileFolder` is left empty, no results will be output. | ./result |
+| outputFinishedFileFolder  | This directory stores the results of successful migration jobs, and the result files are named by date, for example, `./result/2021-05-27.out`, where `./result` is the created directory. Each line in the result files is in the format of `"Absolute path"\t"File size"\t"Last modified time"`. If `outputFinishedFileFolder` is left empty, no results will be output. | ./result |
 | resume | Whether to continue with the result of the last run and traverse through the list of files from the source. The tool starts from scratch by default. | false |
 | skipSamePath | Whether to skip the existing file if a file with the same name already exists in COS. By default, the tool does not skip the existing file; that is, it overwrites the existing file. | false |
 
@@ -149,42 +143,7 @@ ignoreModifiedTimeLessThanSeconds=
 | excludes | Absolute path of the directory or file to be excluded, indicating some directories or files under `localPath` are not to be migrated. Multiple absolute paths need to be separated by semicolons. If this is left blank, all files under `localPath` will be migrated. |
 | ignoreModifiedTimeLessThanSeconds | Exclude files that have an update time less than a certain period of time from the current time (in seconds). This item is left blank by default, indicating files are not to be filtered by the time specified by `lastmodified`. It is suitable for scenarios where you run the migration tool while updating files and don't want files being updated to be migrated to COS. For example, if it is configured as `300`, only files updated at least 5 minutes ago will be uploaded. |
 
-**3.3.2 Configure a URL list data source migrateUrl**
 
-If you migrate from a specified URL list to COS, configure this section. The specific configuration items and descriptions are as follows:
-```plaintext
-# Configuration for migration from a URL list to COS
-[migrateUrl]
-urllistPath=D:\\folder\\urllist.txt
-```
-
-| Configuration Item | Description |
-| ------| ------ |
-|urllistPath| Address of the URL list file. </br>Note: For this configuration item, enter the **local address** of the text file instead of specific URLs. The file should contain one original URL address per line (such as `http://aaa.bbb.com/yyy/zzz.dat`; no need to add any double quotation marks or other symbols). </br>The address of the URL list must be an absolute path: <ul  style="margin: 0;"><li>Linux uses a slash (/) as the delimiter, for example, `/a/b/c.txt` </li><li>Windows uses two backlashes (\\) as the delimiter, for example, `E:\\a\\b\\c.txt` </li><li>If a directory is entered, all files under the directory will be treated as URL list files for scan and migration.</li></ul> |
-
-
-**3.3.6 Configure bucket replication migrateBucketCopy**
-
-To migrate from one COS bucket to another bucket, configure this section. The specific configuration items and descriptions are as follows:
->!The account that initiates the migration needs to have permissions to read the source bucket and write to the destination bucket.
-
-```plaintext
-# Configuration for migration from source bucket to destination bucket
-[migrateBucketCopy]
-srcRegion=ap-shanghai
-srcBucketName=examplebucket-1250000000
-srcSecretId=COS_SECRETID
-srcSecretKey=COS_SECRETKEY
-srcCosPath=/
-```
-
-| Configuration Item | Description |
-| ------| ------ |
-|srcRegion| Region information of the source bucket. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
-|srcBucketName| Name of the source bucket in the format of `<BucketName-APPID>`. The bucket name must include the `APPID`, such as `examplebucket-1250000000`. |
-|srcSecretId| `SecretId` of the user who owns the source bucket, which can be viewed on the [API key management page](https://console.cloud.tencent.com/cam/capi). If the data is owned by the same user, `srcSecretId` is the same as the `SecretId` in the `common` section; otherwise, the migration is cross-account bucket copy. |
-|srcSecretKey| `secret_key` of the user who owns the source bucket, which can be viewed on the [API key management page](https://console.cloud.tencent.com/cam/capi). If the data is owned by the same user, `srcSecretKey` is the same as the `secretKey` in the `common` section; otherwise, the migration is cross-account bucket copy. |
-|srcCosPath| COS path of the files to be migrated, indicating files in this path will be migrated to the destination bucket. |
 
 ### 4. Run the migration tool
 #### Windows
@@ -223,3 +182,4 @@ COS Migration has a status. Successful migrations will be recorded in the format
 
 ## FAQs
 If an exception such as migration failure or execution error occurs when you use the COS Migration, troubleshoot as instructed in [COS Migration](https://intl.cloud.tencent.com/document/product/436/30585).
+

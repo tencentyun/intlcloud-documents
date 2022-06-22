@@ -55,7 +55,7 @@ https://xxxxxx/v4/all_member_push/im_remove_attr?usersig=xxx&identifier=admin&sd
 | 字段 | 类型| 属性 | 说明 |
 |---------|---------|---------|----|
 | To_Account | String | 必填 |目标用户帐号 |
-| Attrs | Object | 必填 |属性集合，注意这里只需要给出属性名即可；Attrs 形式及含义参见 [设置应用属性名称](https://intl.cloud.tencent.com/document/product/1047/37167) 。|
+| Attrs | Array| 必填 |属性集合，注意这里只需要给出属性名即可；Attrs 形式及含义参见 [设置应用属性名称](https://intl.cloud.tencent.com/document/product/1047/37167) 。|
 
 ### 应答包体示例
 

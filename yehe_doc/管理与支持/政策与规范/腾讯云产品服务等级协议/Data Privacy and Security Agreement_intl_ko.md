@@ -149,7 +149,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 37.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
 38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179).
 39.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
-
+40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854).
 ## 관할권별 요구 사항
 
 **유럽**

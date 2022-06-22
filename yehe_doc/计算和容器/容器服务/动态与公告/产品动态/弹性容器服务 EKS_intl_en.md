@@ -1,3 +1,35 @@
+## April 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+  <tr>
+    <td>Supports upgrading TKE clusters to EKS clusters through tools</td>
+    <td>Supports upgrading existing managed TKE clusters to EKS clusters through tools.</td>
+    <td>2022-04-20</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/47002" target="_blank" rel="noopener noreferrer">Guide on Migrating Resources in a TKE Managed Cluster to an EKS Cluster</a></td>
+  </tr>
+  <tr>
+    <td>Pods are restarted automatically when the system disk load reaches the threshold</td>
+    <td>This feature was launched on April 27, 2022 (UTC +8). The Pods created before that date must be rebuilt to enable the feature.</td>
+    <td>2022-04-27</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/43136" target="_blank" rel="noopener noreferrer">Elastic Clusters</a></td>
+  </tr>
+  <tr>
+    <td>EKS supports batch scheduling of Jobs</td>
+    <td>EKS supports batch scheduling of Jobs. You can <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a> to apply for it.<br></td>
+    <td>2022-04-18</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/30665" target="_blank" rel="noopener noreferrer">Job Management</a></td>
+  </tr>
+    <tr>
+    <td>Supports restricting the number of schedulable GPU Pods on virtual nodes</td>
+    <td>Supports restricting the number of schedulable GPU Pods on virtual nodes. You can <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a> to apply for it.</td>
+    <td>2022-04-11</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/39760" target="_blank" rel="noopener noreferrer">Notes on Pods Scheduled to a Virtual Node</a></td>
+  </tr>
+</table>
+
+
+
 ## March 2022
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -19,7 +51,7 @@
 <td>Supports restricting the number of schedulable GPU Pods on virtual nodes</td>
 <td>You can set annotations for a virtual node to control the number of GPUs on it.</td>
 <td>2022-03-31</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotation</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Virtual Node Annotations</a></td>
 </tr>
 <tr>
 <td>Supports the HPC component</td>
@@ -37,7 +69,7 @@
 <td>Supports global annotation settings in EKS</td>
 <td>You can use `ConfigMap` to set global annotations.</td>
 <td>2022-03-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotation</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotations</a></td>
 </tr>
 </tbody>
 </table>
@@ -162,7 +194,7 @@
     <td>LoadBalancer supports IPv6.</td><td>The service IP address supports the IPv6 network.</td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
-    <td>EKS supports the purchase of Tencent's self-developed Star Lake servers.</td><td>Tencent's self-developed Star Lake servers provide reliable, secure, and stable high performance at low costs.</td><td>2020-06-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34057">Resource Specifications</a></td>
+    <td>EKS supports the purchase of Tencent’s self-developed Star Lake servers.</td><td>Tencent’s self-developed Star Lake servers provide reliable, secure, and stable high performance at low costs.</td><td>2020-06-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34057">Resource Specifications</a></td>
 </tr>
 <tr>
     <td>EKS was fully launched.</td><td>EKS is a service mode launched by Tencent Cloud TKE that allows users to deploy workloads without having to purchase nodes.</td><td>2020-06-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34040">Elastic Kubernetes Service</a></td>

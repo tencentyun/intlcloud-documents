@@ -25,7 +25,7 @@ Log in to the [IM console](https://console.cloud.tencent.com/im), click the targ
 After configuring callback URLs, you can download an HTTPS mutual authentication certificate from the console for future use.
 >? You can configure mutual authentication based on your actual needs. For the detailed configuration methods, see [Mutual Authentication Configuration](https://intl.cloud.tencent.com/document/product/1047/34379).
 
-1. Go to the [console](https://console.cloud.tencent.com/im-detail/callback-setting), open the **[Callback Configuration](https://console.cloud.tencent.com/im-detail/callback-setting)** page, and click **HTTPS Mutual Authentication Certificate Download ** in the callback URL configuration area in the upper-right corner.
+1. Go to the [console](https://console.cloud.tencent.com/im/callback-setting), open the **[Callback Configuration](https://console.cloud.tencent.com/im/callback-setting)** page, and click **HTTPS Mutual Authentication Certificate Download** in the callback URL configuration area in the upper-right corner.
 ![](https://main.qcloudimg.com/raw/52a1d6fc283f07e29842da512ba303a3.png)
 2. In the certificate download dialog box that pops up, click **Download**.
 ![](https://main.qcloudimg.com/raw/584dcfbed3a36a691971f6edcca19b43.png)
