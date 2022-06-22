@@ -36,7 +36,7 @@ TPS 将于2022年5月16日下线，详情见 [公告](https://intl.cloud.tencent
 4. 单击**完成**，即可完成创建。
 5. 您可在“云原生监控”列表页面查看实例创建进度。当实例状态为“运行中”时，表示当前实例已成功创建并处于可用状态。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/ea617c5d4d10051ecb1d62f8f9165fcc.png)
->? 若实例创建花费时间过长，或显示状态为异常，可 [在线咨询](https://cloud.tencent.com/online-service?from=doc_457) 联系我们。
+>? 若实例创建花费时间过长，或显示状态为异常，可 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 联系我们。
 
 
 
