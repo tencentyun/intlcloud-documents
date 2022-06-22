@@ -1,13 +1,13 @@
 The monitoring feature provided by TencentDB for MongoDB allows you to view the real-time monitoring metric data of instance resources. It collects the monitoring statistics in various forms such as visual chart, table, and dashboard. In addition, it supports setting alarms and pushing alarm notifications promptly, so that you can stay up to date with database service exceptions and adjust your business in time to guarantee stable business operations.
 
 ## Monitoring Granularity
-TencentDB for MongoDB currently doesn't support customizing the granularity of monitoring data collection. Its adaptive policy is as follows:
+TencentDB for MongoDB currently doesn't allow you to customize the monitoring data collection granularity. The adaptive policy is as follows:
 
 | Time Span | Monitoring Granularity | Retention Period |
 | ---------- | -------- | -------- |
 | 0–1 day | 5 seconds | 1 day |
-| 0–1 day | 1 minute | 15 days |
-| 0–1 day | 5 minutes | 31 days |
+| 0–1 day  | 1 minute    | 15 days     |
+| 0–1 day  | 5 minutes    | 31 days     |
 | 0–7 days | 1 hour | 93 days |
 | 7–30 days | 1 day | 186 days |
 
@@ -77,7 +77,7 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MongoD
 <tr>
 <td>Pieces of Data Deleted via TTL</td><td>-</td><td>Number of data entries deleted via TTL</td></tr>
 <tr>
-<td>TTL Run Times</td><td>-</td><td>Number of TTL run times of the current node</td></tr>
+<td>TTL Run Times</td><td>-</td><td>Number of file deletions from TTL by the backend process</td></tr>
 <tr>
 <td>qr</td><td>-</td><td>Length of the client read request queue</td></tr>
 <tr>

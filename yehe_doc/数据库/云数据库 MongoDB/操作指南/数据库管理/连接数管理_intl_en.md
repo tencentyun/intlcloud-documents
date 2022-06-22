@@ -1,10 +1,11 @@
 You can view the client connection information of the current database in the TencentDB for MongoDB console, including the IPs and number of connections. In this way, you can adjust its configuration in real time to meet your growing business needs. 
 
-## Background
+## Overview
 TencentDB for MongoDB records the IPs of clients connected to the current instance and the number of connections. When there is a large number of concurrent application requests, if the configured upper limit of connections is insufficient, the current database specification cannot sustain such requests. In this case, you can directly increase the upper limit in the console.
 
-## Version Description
-Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support connection management.
+## Version Requirement
+- Replica set: Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support connection management.
+- Sharded cluster: Currently, TencentDB for MongoDB 4.0, 3.6, and 3.2 support connection management, while 4.2 doesn't.
 
 ## Notes
 - The system records the IPs of clients connected to the current instance and the number of connections. You can choose to manually release connection requests.
@@ -40,10 +41,10 @@ Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support connection manag
 <td>Connections</td><td>Number of connections.</td></tr>
 </tbody></table>
 
-### Increasing upper limit
+### Increasing connections
 1. On the **Manage Connection** tab, click **Increase Connections**.
 2. In the **Note** window, confirm the notes and click **OK**.
-> ?After the number of connections is increased, the connection limit will be raised to 20,000. If the service is affected, please check it out as soon as possible during that time. Click OK to start execution.
+> ?After the number of connections is increased, the connection limit will be raised to 20,000. If the service is affected, check it out as soon as possible during that time. Click OK to start execution.
 
 ## Related APIs
 | API                   | Description                                                      |

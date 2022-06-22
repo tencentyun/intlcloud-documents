@@ -1,5 +1,4 @@
-
-在 CVM 中可用 MongoDB shell 客户端，连接云数据库 MongoDB 进行数据导入和导出，请注意使用最新版本的 MongoDB 客户端套件，具体操作可参见 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092)。
+通过云服务器 CVM 连接云数据库 MongoDB 可以进行数据导入和导出，请注意使用最新版本的 MongoDB 客户端套件，具体操作可参见 [连接实例](https://intl.cloud.tencent.com/document/product/240/7092)。
 >!local 数据库主要存储副本集的配置信息、oplog 等元数据；admin 数据库则主要存储用户、角色等信息。为了防止数据错乱、鉴权失败等现象发生，云数据库 MongoDB 禁止将 local 和 admin 数据库导入实例。
 
 ## 导出导入命令
@@ -16,6 +15,7 @@ mongodump --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticat
 ```
 如下图所示，则执行成功：
 ![mongodump示例截图](https://mc.qcloudimg.com/static/img/4071cfd5d9b54c720349f41fc2e07b0c/dump_default.png)
+
 - mongorestore 导入命令如下：
 ```
 mongorestore --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --dir=/data/dump_testdb
