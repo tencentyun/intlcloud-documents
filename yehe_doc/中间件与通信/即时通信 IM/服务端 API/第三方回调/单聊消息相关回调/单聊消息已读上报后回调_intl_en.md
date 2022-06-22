@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used by the app backend to monitor one-to-one message reads in real time.
+This API is used by the app backend to view one-to-one message reads in real time.
 
 ## Notes
 
