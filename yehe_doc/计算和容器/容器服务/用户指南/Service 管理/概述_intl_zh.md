@@ -5,8 +5,8 @@
 
 Kubernetes 的 `ServiceTypes` 允许指定 Service 类型，默认为 `ClusterIP` 类型。`ServiceTypes` 的可取值以及行为描述如下：
 * **ClusterIP**：通过集群的内部 `IP` 暴露服务。当您的服务只需要在集群内部被访问时，请使用该类型。该类型为默认的 `ServiceType`。
-* **NodePort**：通过每个集群节点上的 `IP` 和静态端口（NodePort）暴露服务。`NodePort` 服务会路由到 `ClusterIP` 服务，该 `ClusterIP` 服务会自动创建。通过请求 &lt;NodeIP&gt;:&lt;NodePort&gt;，可从集群的外部访问该 `NodePort` 服务。除了测试以及非生产环境以外，不推荐在生产环境中直接通过集群节点对外甚至公网提供服务。从安全上考虑，使用该类型会直接暴露集群节点，容易受到攻击。通常认为集群节点是动态的、可伸缩的，使用该类型使得对外提供服务的地址和集群节点有了耦合。
-* **LoadBalancer**：使用腾讯云的负载局衡器，可以向公网或者内网暴露服务。负载均衡器可以路由到 `NodePort` 服务，或直接转发到处于 VPC-CNI 网络条件下的容器中。
+* **NodePort**：通过每个集群节点上的 `IP` 和静态端口（NodePort）暴露服务。`NodePort` 服务会路由到 `ClusterIP` 服务，该 `ClusterIP` 服务会自动创建。通过请求 &lt;NodeIP&gt;:&lt;NodePort&gt;，可从集群的外部访问该 `NodePort` 服务。除了测试以及非生产环境以外，不推荐在生产环境中直接通过集群节点对外甚至公网提供服务。从安全上考虑，使用该类型会直接暴露集群节点，容易受到攻击。通常认为集群节点是动态的、可伸缩的，使用该类型使得对外提供服务的地址和集群节点产生了耦合。
+* **LoadBalancer**：使用腾讯云的负载均衡器，可以向公网或者内网暴露服务。负载均衡器可以路由到 `NodePort` 服务，或直接转发到处于 VPC-CNI 网络条件下的容器中。
 
 `ClusterIP` 和 `NodePort` 类型的 Service，在不同云服务商或是自建集群中的行为表现通常情况下相同。而 `LoadBalancer` 类型的 Service，由于使用了云服务商的负载均衡进行服务暴露，云服务商会围绕其负载均衡的能力提供不同的额外功能。例如，控制负载均衡的网络类型，后端绑定的权重调节等，详情请参见 [Service 管理](https://intl.cloud.tencent.com/document/product/457/36831) 相关文档。
 
@@ -69,7 +69,7 @@ Service 对外服务的能力依赖于负载均衡所提供的资源，服务资
 * `tke-clusterId = <ClusterId>`：标识该资源被哪一个 Cluster 所使用的。
  * 若 ClusterId 正确，则Service 会在销毁时，删除对应标签。
 
->若用户使用了已有负载均衡，则 Service 仅会使用该负载均衡，而不会删除该负载均衡。
+>?若用户使用了已有负载均衡，则 Service 仅会使用该负载均衡，而不会删除该负载均衡。
 >
 
 当 `LoadBalancer` 类型的 Service 集群资源被创建时，对应负载均衡的生命周期就开始了。直到 Service 资源被删除或是负载均衡被重建时，负载均衡的生命周期就结束了。在此期间负载均衡会持续根据 Service 资源的描述进行同步。**当用户切换 Service 的网络访问时，例如公网 > VPC 内网、VPC 内网 > 公网、VPC 子网切换、更换使用的已有负载均衡，此类操作都会涉及到负载均衡的重建或销毁。**
