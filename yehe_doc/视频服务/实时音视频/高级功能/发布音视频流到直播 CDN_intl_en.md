@@ -1,5 +1,3 @@
-# Relay to CDN
-
 This document describes how to publish (relay) audio/video streams in TRTC to CDNs so that viewers can watch the streams using standard live streaming players.
 
 ## Publishing the Local User’s Stream to CDNs
