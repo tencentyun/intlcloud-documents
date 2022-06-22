@@ -69,7 +69,7 @@ The external service capabilities of a service depend on resources provided by t
 * `tke-clusterId = <ClusterId>`: identifies the cluster that uses the resource.
  * If ClusterId is correct, the corresponding label will be deleted when the service is destroyed.
 
-> If you use an existing CLB for a service, the service will only use the CLB and will not delete the CLB.
+>? If you use an existing CLB for a service, the service will only use the CLB and will not delete the CLB.
 >
 
 When a service of the `LoadBalancer` type is created, the corresponding CLB lifecycle starts. The CLB lifecycle ends only when the service is deleted or the CLB is rebuilt. In the CLB lifecycle, the CLB is synchronized based on the service description. **When you change the service access mode, for example, from Via Internet to Via VPC or from Via VPC to Via Internet or VPC subnet switching or change to use an existing CLB for the service, the CLB will be rebuilt or destroyed.**
