@@ -8,7 +8,7 @@ Kubernetes `ServiceTypes` allows you to specify what kind of service you want. T
 * **NodePort**: exposes the service on each node's IP address at a static port (NodePort). A `ClusterIP` service, to which the `NodePort` service routes, is automatically created. You can access the `NodePort` service from outside the cluster by requesting <NodeIP>:<NodePort>. Except in test and non-production environments, we do not recommend that cluster nodes provide external or even public network services. Typically, cluster nodes are dynamic and scalable. When this service type is used, cluster nodes are exposed and can be attacked easily, and the address and cluster node used to provide external services are coupled.
 * **LoadBalancer**: the CLB provided by Tencent Cloud is used to expose the service to the Internet or a VPC. The CLB can be routed to the `NodePort` service or directly forwarded to a pod in a VPC-CNI network.
 
-Services of the `ClusterIP` and `NodePort` types typically behave in the same way in clusters provided by different cloud providers or off-premises clusters. Services of the `LoadBalancer` type are exposed using the cloud provider's CLB and the service provider provides extra features related to the CLB, for example, controlling the CLB network type and adjusting weights of bound backend nodes. For more information, please see documents related to service management.
+Services of the `ClusterIP` and `NodePort` types typically behave in the same way in clusters provided by different cloud providers or off-premises clusters. Services of the `LoadBalancer` type are exposed using the cloud provider's CLB and the service provider provides extra features related to the CLB, for example, controlling the CLB network type and adjusting weights of bound backend nodes. For more information, please see documents related to [service management](https://intl.cloud.tencent.com/document/product/457/36831).
 
 
 
@@ -85,10 +85,10 @@ The following figure shows the working principles of a service of the `LoadBalan
 
 ### Service features
 The following lists service-related operations and features. For more information, see the corresponding documents.
-* Basic features
-* CLB configuration
-* Using existing CLBs
-* Backend selection
+* [Basic features](https://intl.cloud.tencent.com/document/product/457/36833)
+* [CLB configuration](https://intl.cloud.tencent.com/document/product/457/36834)
+* [Using existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835)
+* [Backend selection](https://intl.cloud.tencent.com/document/product/457/36836)
 
 ## Reference
 For more information about services, see [Kubernetes Service](https://kubernetes.io/en/docs/concepts/services-networking/service/). 
