@@ -3,7 +3,7 @@
 ## 1.テンセントクバネティスエンジンとは？
 
 
-テンセントクバネティスエンジン（TKE）とは、ネイティブのKubernetesをベースに提供された、コンテナを中心として高い拡張性と性能を有するコンテナ管理サービスです。ホストされているCVMインスタンスクラスターで、アプリケーションを手軽に実行することができます。また、ユーザーが自由に選べるよう、Tencent Cloudは、[耐障害性コンテナサービス](https://intl.cloud.tencent.com/document/product/457/34040)（Elastic Kubernetes Service、EKS）と[エンジコンテナサービス]Tencent Kubernetes Engine for Edge（TKE）(https://intl.cloud.tencent.com/document/product/457/35390)（Tencent Kubernetes Engine for Edge、TKE）も提供しています。
+[テンセントクバネティスエンジン](https://intl.cloud.tencent.com/document/product/457/6759)（TKE）とは、ネイティブのKubernetesをベースに提供された、コンテナを中心として高い拡張性と性能を有するコンテナ管理サービスです。ホストされているCVMインスタンスクラスターで、アプリケーションを手軽に実行することができます。また、ユーザーが自由に選べるよう、Tencent Cloudは、[耐障害性コンテナサービス](https://intl.cloud.tencent.com/document/product/457/34040)（Elastic Kubernetes Service、EKS）と[エンジコンテナサービス]Tencent Kubernetes Engine for Edge（TKE）(https://intl.cloud.tencent.com/document/product/457/35390)（Tencent Kubernetes Engine for Edge、TKE）も提供しています。
 
 
 テンセントクバネティスエンジンでは、[TKEコンソール](https://console.cloud.tencent.com/tke2/overview)、[Kubectl](https://intl.cloud.tencent.com/document/product/457/30639)によりクラスターとサービスを操作できます。
