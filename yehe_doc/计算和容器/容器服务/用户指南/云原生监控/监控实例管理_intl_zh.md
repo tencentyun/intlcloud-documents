@@ -1,8 +1,7 @@
 <dx-alert infotype="alarm" title="温馨提示">
 感谢您对腾讯云原生监控 TPS 的认可与信赖，为提供更优质的服务和更强大的产品能力，TPS 与原腾讯云 Prometheus 监控服务进行融合和升级，升级为 [TMP](https://intl.cloud.tencent.com/document/product/457/46734)。支持跨地域跨 VPC 监控，支持统一 Grafana 面板对接多监控实例实现统一查看。TMP 计费详情见 [按量计费](https://intl.cloud.tencent.com/document/product/1116/43156)，相关云资源使用详情见 [计费方式和资源使用](https://intl.cloud.tencent.com/document/product/457/46733)。若您只使用基础监控的 [免费指标](https://intl.cloud.tencent.com/document/product/457/46735)，TMP 不会收取任何指标费用。<br>
-TPS 即将下线。TMP 已正式发布，欢迎 [了解试用](https://console.cloud.tencent.com/tke2/prometheus2)。TPS 已不支持创建新实例，我们提供一键 [迁移工具](https://intl.cloud.tencent.com/document/product/457/46736)，帮您一键将 TPS 实例迁移到 TMP，迁移前请 [精简监控指标](https://intl.cloud.tencent.com/document/product/457/46737) 或降低采集频率，否则可能产生较高费用，再次感谢您对 TPS 的支持和信任。
+TPS 将于2022年5月16日下线，详情见 [公告](https://intl.cloud.tencent.com/document/product/457/46999)。TMP 已正式发布，欢迎 [了解试用](https://console.cloud.tencent.com/tke2/prometheus2)。TPS 已不支持创建新实例，我们提供一键 [迁移工具](https://intl.cloud.tencent.com/document/product/457/46736)，帮您一键将 TPS 实例迁移到 TMP，迁移前请 [精简监控指标](https://intl.cloud.tencent.com/document/product/457/46737) 或降低采集频率，否则可能产生较高费用，再次感谢您对 TPS 的支持和信任。
 </dx-alert>
-
 
 
 
@@ -18,14 +17,14 @@ TPS 即将下线。TMP 已正式发布，欢迎 [了解试用](https://console.c
 1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**云原生监控**，弹出**服务授权**窗口。
 2. 单击**前往访问管理**，进入角色管理页面。
 3. 单击**同意授权**，完成身份验证后即可成功授权。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/6bc3c7651a63bc372df274f689b3f2c2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/69b3d895837162b8d49f07d0d5baf7b6.png)
 
 
 ### 创建监控实例
 1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，单击左侧导航栏中的**云原生监控**。
 2. 进入 Prometheus 监控实例列表页面，单击实例列表上方的**新建**。
 3. 在“创建监控实例”页面，设置实例的基本信息。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/c60fc6f0944bd3f7c266cde6808bb795.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a2efb2553a223eea6b08c1b0f2cd9e5f.png)
  - **实例名**：输入自定义的监控实例名称，不超过60个字符。
  - **地域**：选择您希望部署该实例的地域。当前仅支持部署在北京、上海和广州地域。实例创建后地域无法修改，建议您根据所在地理位置选择靠近业务的地域，可降低访问延迟，提高数据上报速度。
  - **网络**：选择当前地域下已有的私有网络和子网。创建后不可修改。若在该地域下没有 VPC 资源可跳转到私有网络控制台新建 VPC，详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/38966)。
@@ -36,14 +35,15 @@ TPS 即将下线。TMP 已正式发布，欢迎 [了解试用](https://console.c
 >
 4. 单击**完成**，即可完成创建。
 5. 您可在“云原生监控”列表页面查看实例创建进度。当实例状态为“运行中”时，表示当前实例已成功创建并处于可用状态。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/1c8be13e3a0bccc74671e87301ea7b26.png)
->? 若实例创建花费时间过长，或显示状态为异常，可 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 联系我们。
+![](https://qcloudimg.tencent-cloud.cn/raw/ea617c5d4d10051ecb1d62f8f9165fcc.png)
+>? 若实例创建花费时间过长，或显示状态为异常，可 [在线咨询](https://cloud.tencent.com/online-service?from=doc_457) 联系我们。
 
 
 
 ### 删除监控实例
 1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，单击左侧导航栏中的**云原生监控**。
 2. 进入 Prometheus 监控实例列表页面，单击期望删除实例右侧的**删除**。
-3. 在弹出的“删除监控实例”窗口中，单击**确定**即可删除当前实例。
+3. 在弹出的“删除监控实例”窗口中，单击**确定**即可删除当前实例。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/d9dab09c8bbe536aa7cd406b9b0823c9.png)
 >? 删除实例时将删除已安装在集群中的监控功能组件，同时默认删除实例关联的 COS 存储桶。如需备份相关监控数据请移步对象存储控制台操作。
 
