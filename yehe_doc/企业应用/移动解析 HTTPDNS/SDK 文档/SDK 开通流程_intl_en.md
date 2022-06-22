@@ -1,4 +1,4 @@
-# SDK Activation Process
+
 
 ## **Overview**
 
