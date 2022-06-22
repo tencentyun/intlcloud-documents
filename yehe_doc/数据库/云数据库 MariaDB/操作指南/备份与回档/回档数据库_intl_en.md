@@ -5,7 +5,7 @@ The rollback feature of TencentDB for MariaDB doesn't affect a production instan
 #### Limits
 - During the rollback and creation of a temp instance, some management features of the production instance in Tencent Cloud console will be unavailable, and these features will become available after the operation is completed.
 - The binlogs may be forcibly sharded during the rollback operation, and files smaller than 100 MB in size will be backed up separately.
-- The newly purchased instance after rollback will have the parameter information of the production instance in Tencent Cloud console (such as account, and database parameters, etc.). Therefore, you must pay attention to account management.
+- The newly purchased instance after rollback will have the parameter information of the production instance in Tencent Cloud console (such as account and database parameters). Therefore, you must pay attention to account management.
 
 ## Instance Rollback
 1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb) and click an instance ID to enter the instance management page.
