@@ -1,4 +1,3 @@
-# Android SDK
 
 ## **概述**
 
