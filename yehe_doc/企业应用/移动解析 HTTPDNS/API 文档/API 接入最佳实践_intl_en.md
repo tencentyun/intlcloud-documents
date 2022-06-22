@@ -4,7 +4,7 @@
 
 When connecting to HTTPDNS, you need to modify the DNS mechanism on the mobile client as instructed below:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d045d3ea5e0d3d6bdd945d13ddf009bd.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/470c05586b0f5962e0b44ba638bd72a1.png)
 
 ## **Design Policy**
 
