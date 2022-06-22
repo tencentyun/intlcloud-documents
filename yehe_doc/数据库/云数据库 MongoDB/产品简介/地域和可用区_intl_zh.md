@@ -15,7 +15,7 @@
 <tr><th>地域</th><th>可用区</th></tr>
 <tr>
 <td rowspan="6">华南地区（广州）<br> ap-guangzhou</td>
-<td>广州一区（已售罄）<br> ap-guangzhou-1</td></tr>	
+<td>广州一区<br> ap-guangzhou-1</td></tr>	
 <tr>
 <td>广州二区<br> ap-guangzhou-2</td></tr>
 <tr>
@@ -31,7 +31,7 @@
 <td>深圳一区<br> ap-shenzhen-1</td></tr>	
 <tr>
 <td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
-<td>上海一区（已售罄）<br>ap-shanghai-1</td></tr>
+<td>上海一区<br>ap-shanghai-1</td></tr>
 <tr>
 <td>上海二区<br>ap-shanghai-2</td></tr>
 <tr>
@@ -41,14 +41,12 @@
 <tr>
 <td>上海五区<br>ap-shanghai-5</td></tr>
 <tr>
-<td>华东地区（杭州）<br>ap-hangzhou</td>
-<td>杭州一区<br>ap-hangzhou-1</td></tr>
 <td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
 <td>南京一区<br>ap-nanjing-1</td></tr>
 <tr>
 <td>南京二区<br>ap-nanjing-2</td></tr>
 <tr>
-<td>南京三区（已售罄）<br>ap-nanjing-3</td></tr>
+<td>南京三区<br>ap-nanjing-3</td></tr>
 <tr>
 <td rowspan="7">华北地区（北京）<br>ap-beijing</td>
 <td>北京一区<br>ap-beijing-1</td></tr>
@@ -63,7 +61,7 @@
 <tr>
 <td>北京六区<br>ap-beijing-6</td></tr>
 <tr>
-<td>北京七区<br>ap-beijing-7</td></tr>  
+<td>北京七区<br>ap-beijing-7</td></tr>
 <tr>
 <td >华北地区（天津）<br>ap-tianjin</td>
 <td>天津一区<br>ap-tianjin-1</td></tr>
@@ -91,11 +89,11 @@
 <tr><th>地域</th><th>可用区</th></tr>
 <tr>
 <td rowspan="4">亚太东南（新加坡）<br>ap-singapore</td>
-<td>新加坡一区（已售罄）（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td></tr>
+<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td></tr>
 <tr>
-<td>新加坡二区（已售罄）（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td></tr>
+<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td></tr>
 <tr>
-<td>新加坡三区（已售罄）（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td></tr>
+<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td></tr>
 <tr>
 <td>新加坡四区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-4</td></tr>
 </tr>
@@ -135,6 +133,6 @@
 <td>法兰克福一区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-1</td></tr>
 <tr>
 <td >欧洲地区（莫斯科）<br>eu-moscow</td>
-<td>莫斯科一区（莫斯科节点可用于覆盖欧洲地区）<br>eu-moscow-1</td></tr>
+<td>欧洲东北一区（莫斯科节点可用于覆盖欧洲地区）<br>eu-moscow-1</td></tr>
 </tbody></table>
 

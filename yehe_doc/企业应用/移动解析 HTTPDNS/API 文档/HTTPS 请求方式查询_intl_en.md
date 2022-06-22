@@ -1,21 +1,34 @@
-﻿When making a query with an HTTPS request method, you can call the `https://119.29.29.99/d? + {request parameters}` API to use HTTPDNS.
+# Querying with HTTPS Request Methods
 
->? 
->- After [activating HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461), you need to first add a domain to be resolved in the HTTPDNS console as instructed in [Adding a Domain](https://intl.cloud.tencent.com/document/product/1130/44465).
->- The service addresses for the HTTP and HTTPS protocols are `119.29.29.98` and `119.29.29.99` respectively.
->- The new version of the APIs now can be accessed at `119.29.29.99/98`, and the original HTTPDNS service address `119.29.29.29` is for development and debugging purposes only without an SLA guarantee, so it is not recommended for business purposes. Migrate your business to `119.29.29.99/98` as soon as possible.
+## Overview
 
+HTTPDNS provides DNS services through HTTP and HTTPS APIs. The services are accessed directly at IP addresses. Multiple service IPs are available. The following takes the query entry `43.132.55.56` for HTTPS request as an example.
+
+>?
+> 
+> - **Currently, only the HTTP DES encryption method is available (service IP: `43.132.55.55`), while HTTPS and AES encryption methods are not.**
+> - After [activating HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461), you need to first add a domain to be resolved in the HTTPDNS console as instructed in [Adding a Domain](https://intl.cloud.tencent.com/document/product/1130/44465).
+> - We provide two sample entry IPs: `43.132.55.56` for HTTPS and `43.132.55.55` for HTTP.
+> - Use the official SDK preferably. If the SDK cannot be used in special scenarios, you need to directly access the HTTP API. In this case, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder) to contact us, and we will provide you with multiple service IPs and applicable security suggestions according to your specific use case.
+> - For considerations of security risks such as service IP attacks, in order to ensure service availability, HTTPDNS provides multiple service IPs at the same time. When an IP is unavailable under abnormal conditions, you can retry with other IPs.
 
 ## Preparations
-When using the request API `https://119.29.29.99/d? + {request parameters}`, you need to use the following configuration information, which can be obtained on the [**Development Configuration** page](https://console.cloud.tencent.com/httpdns/configure) in the HTTPDNS console:
-![](https://qcloudimg.tencent-cloud.cn/raw/af3d4d22f0e6224ff80beb1f0920cf43.png)
-**HTTPS encryption token**: The token used to authenticate the DNS request data when you call the HTTPS DNS API `https://119.29.29.99` of HTTPDNS.
+
+When using the request API `https://43.132.55.56/d? + {request parameters}`, you need to use the following configuration information, which can be obtained on the [**Development Configuration** page](https://console.cloud.tencent.com/httpdns/configure) in the HTTPDNS console:
+
+![](https://qcloudimg.tencent-cloud.cn/raw/27f9685efa32ca311247323fe5593cfb.png)
+
+**HTTPS encryption token**: The token used to authenticate the DNS request data when you call the HTTPS DNS API `https://43.132.55.56` of HTTPDNS.
 
 ## API Description
-- API request address: `https://119.29.29.99/d? + {request parameters}`.
+
+- API request address: `https://43.132.55.56/d? + {request parameters}`.
 - Request method: POST or GET.
+- For considerations of security risks such as service IP attacks, in order to ensure service availability, we provide multiple service IPs at the same time. If you want to directly request the HTTPDNS service through APIs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us, and we will provide you with multiple service IPs and applicable security suggestions according to your specific use case.
+- Entry IP switch logic: When the connected IP access times out, the returned result is not in IP format, or the response is empty, use another entry IP for access. If all IPs are abnormal, use local DNS for DNS queries.
 
 ## Request Parameters
+
 <table>
 <thead>
   <tr>
@@ -24,7 +37,7 @@ When using the request API `https://119.29.29.99/d? + {request parameters}`, you
     <th>Required</th>
     <th>Value</th>
     <th>Encryption</th>
-    <th>Remarks</th>
+    <th>Description</th>
   </tr>
 </thead>
 <tbody>
@@ -34,7 +47,7 @@ When using the request API `https://119.29.29.99/d? + {request parameters}`, you
     <td>Yes</td>
     <td>Strings</td>
     <td>No</td>
-    <td>It must be a domain added in the HTTPDNS console. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1130/44465">Adding Domain</a>.</td>
+    <td>It must be a domain added in the HTTPDNS console. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1130/44465">Adding a Domain</a>.</td>
   </tr>
   <tr>
     <td>token</td>
@@ -95,138 +108,185 @@ When using the request API `https://119.29.29.99/d? + {request parameters}`, you
 </tbody>
 </table>
 
+
 >?
->- The ECS (EDNS-Client-Subnet) protocol adds the IP address of the user requesting DNS in the DNS request packet, based on which the DNS server can return a server IP address for quicker access by the user.
->- If you make a query with an HTTPS request method, the transferred data will be protected through encryption because of the TLS channel, so you don't need to encrypt the data passed in.
->- For security and authentication reasons, you need to pass in the HTTPS token.
+> 
+> - The ECS (EDNS-Client-Subnet) protocol adds the IP address of the user requesting DNS in the DNS request packet, based on which the DNS server can return a server IP address for quicker access by the user.
+> - If you make a query with an HTTPS request method, the transferred data will be protected through encryption because of the TLS channel, so you don't need to encrypt the data passed in.
+> - For security and authentication reasons, you need to pass in the HTTPS token.
 
 ## Request Description
+
 The domain `cloud.tencent.com` and token `yyyy` are used as an example below.
 
 >!
->- If HTTPDNS does not find the DNS query result, it will return null.
->- HTTPDNS has been connected to BGP Anycast to implement multi-region cross-IDC disaster recovery. However, to guarantee a higher service quality, we recommend you use the [failover policy](https://intl.cloud.tencent.com/document/product/1130/44471) for connection. 
+> 
+> - If HTTPDNS does not find the DNS query result, it will return null.
+> - HTTPDNS has been connected to BGP Anycast to implement multi-region cross-IDC disaster recovery. However, to guarantee a higher service quality, we recommend you use the [failover policy](https://intl.cloud.tencent.com/document/product/1130/44471) for connection.
 
-### Requesting A record
+### **Requesting A record**
+
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy"
+    ```
+    
 - **Decrypted response format:**
-```
-2.3.3.4;2.3.3.5;2.3.3.6
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6
+    ```
+    
 - **Format description**: Multiple returned query results are separated by semicolon.
 
+### **Carrying TTL information in returned result**
 
-### TTL information carried in returned result
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-2.3.3.4;2.3.3.5;2.3.3.6,120
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6,120
+    ```
+    
 - **Format description**: Multiple returned query results are separated by semicolon. The record values and TTL value are separated by comma.
 
+### **Carrying the IP address of query split zone in returned result**
 
-### Carrying the IP address of query split zone in returned result
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-12.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
-```
+  
+    ```
+    12.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
+    ```
+    
 - **Format description**: The returned result carries the split zone's IP address separated by '|'. If the "ip=xxx" parameter is not passed in, the egress IP address will be returned; otherwise, the address in the `ip` parameter will be returned.
 
-### Requesting A and AAAA records at the same time
+### **Requesting A and AAAA records at the same time**
+
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&type=addrs&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&type=addrs&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-2.3.3.4;2.3.3.5;2.3.3.6,120-2402:4e00:0123:4567:0::2345;2403:4e00:0123:4567:0::2346,120|1.2.3.4
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6,120-2402:4e00:0123:4567:0::2345;2403:4e00:0123:4567:0::2346,120|1.2.3.4
+    ```
+    
 - **Format description**: The A record is followed by a hyphen and then the AAAA record.
 
+### **Carrying queried domain in returned result**
 
-### Carrying queried domain in returned result
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&query=1&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&query=1&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
+    ```
+    
 - **Format description**: The response is in the format of "domain.:result".
 
-### Batch querying domains
+### **Batch querying domains**
+
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120
-www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
-www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120
+    www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
+    www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
+    ```
+    
 - **Format description:** The returned result of multiple domains are separated by line break, with the IP addresses appended at the end of all record values.
 
-## Description of Request Erro or No Record
+## **Description of Request Error or No Record**
 
-### Querying A record
+### **Querying A record**
+
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&id=xxx"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&id=xxx"
+    ```
+    
 - **Decrypted response format:** Empty.
 - **Format description:** If there are no records, an empty string will be returned.
 
-### Carrying domain in returned result
+### **Carrying domain in returned result**
+
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com|1.2.3.4
+    ```
+    
 - **Format description:** 0 indicates no records.
 
+### **Returning A and AAAA records**
 
-
-### Returning A and AAAA records
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com.:0-0|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:0-0|1.2.3.4
+    ```
+    
 - **Format description:** 0 indicates no records. If a record exists, it will be returned in the result. For example, `cloud.tencent.com.:2.3.4.5;3.3.3.3-0|1.2.3.4` indicates that no AAAA records can be found.
 
+### **Batch querying domains**
 
-### Batch querying domains
 - **Sample input:**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
+    ```
+    
 - **Decrypted response format**:
-```
-cloud.tencent.com.:0
-www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
-www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:0
+    www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
+    www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
+    ```
+    
 - **Format description:** For domains about which no data is found, 0 will be returned. If a record exists, it will be returned in the result.
 
 ## HTTP Status Codes
+
 The following are the HTTP status codes related to the business logic of the APIs.
 
 | Status Code | Description |
@@ -235,4 +295,3 @@ The following are the HTTP status codes related to the business logic of the API
 | 404 Not Found | The API does not exist, or the URL actually accesses a resource that does not exist. |
 | 429 Too Many Requests | The access requests are too frequent and exceed the limit. |
 | 501 Not Implemented | A request method other than "GET" or "POST" is used. |
-

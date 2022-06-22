@@ -1,24 +1,37 @@
+# Querying with HTTP Request Methods
 
-## Overview
-When making a query with an HTTP request method, you can call the `http://119.29.29.98/d? + {request parameters}` API to use HTTPDNS.
+## **Overview**
 
->? 
->- After [activating HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461), you need to first add a domain to be resolved in the HTTPDNS console as instructed in [Adding a Domain](https://intl.cloud.tencent.com/document/product/1130/44465).
->- The service addresses for the HTTP and HTTPS protocols are `119.29.29.98` and `119.29.29.99` respectively.
->- The new version of the APIs now can be accessed at `119.29.29.99/98`, and the original HTTPDNS service address `119.29.29.29` is for development and debugging purposes only without an SLA guarantee, so it is not recommended for business purposes. Migrate your business to `119.29.29.99/98` as soon as possible.
+HTTPDNS provides DNS services through HTTP and HTTPS APIs. The services are accessed directly via IP addresses. Multiple service IPs are available. The following takes the query entry `43.132.55.55` for HTTP request as an example.
 
-## Preparations
-When using the request API `http://119.29.29.98/d? + {request parameters}`, you need to use the following configuration information, which can be obtained on the [**Development Configuration** page](https://console.cloud.tencent.com/httpdns/configure) in the HTTPDNS console:
-![](https://qcloudimg.tencent-cloud.cn/raw/27f9685efa32ca311247323fe5593cfb.png)
-- **Authorization ID**: It is the unique ID of a development configuration used in HTTPDNS, i.e., the authorization ID parameter passed in when you call the HTTP query API `http://119.29.29.28` of HTTPDNS.
-- **DES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://119.29.29.98` of HTTPDNS with DES encryption used.
-- **AES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://119.29.29.98` of HTTPDNS with AES encryption used.
+>?
+> 
+> - **Currently, only the DES encryption method is available (service IP: `43.132.55.55`). HTTPS and AES encryption methods are not available.**
+> - After [activating HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461), you need to first add a domain to be resolved in the HTTPDNS console as instructed in [Adding a Domain](https://intl.cloud.tencent.com/document/product/1130/44465).
+> - We provide two sample entry IPs: `43.132.55.55` for HTTP and `43.132.55.56` for HTTPS.
+> - Use the official SDK preferably. If the SDK cannot be used in special scenarios, you need to directly access the HTTP API. In this case, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder) to contact us, and we will provide you with multiple service IPs and applicable security suggestions according to your specific use case.
+> - For considerations of security risks such as service IP attacks, in order to ensure service availability, HTTPDNS provides multiple service IPs at the same time. When an IP is unavailable under abnormal conditions, you can retry with other IPs.
+
+## **Preparations**
+
+When using the request API `http://43.132.55.55/d? + {request parameters}`, you need to use the following configuration information, which can be obtained on the [**Development Configuration** page](https://console.cloud.tencent.com/httpdns/configure) in the HTTPDNS console:
+
+![Untitled](https://qcloudimg.tencent-cloud.cn/raw/af3d4d22f0e6224ff80beb1f0920cf43.png)
+
+- **Authorization ID**: It is the unique ID of a development configuration used in HTTPDNS, i.e., the authorization ID parameter passed in when you call the HTTP query API `http://43.132.55.55` of HTTPDNS.
+- **DES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://43.132.55.55` of HTTPDNS with DES encryption used.
+- **AES encryption key**: The key used to encrypt the DNS request data when you call the HTTP DNS API `http://43.132.55.55` of HTTPDNS with AES encryption used.
 
 ## API Description
-- API request address: `http://119.29.29.98/d? + {request parameters}`.
+
+- API request address: `http://43.132.55.55/d? + {request parameters}`.
 - Request method: POST or GET.
+- For considerations of security risks such as service IP attacks, in order to ensure service availability, we provide multiple service IPs at the same time. If you want to directly request the HTTPDNS service through APIs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us, and we will provide you with multiple service IPs and applicable security suggestions according to your specific use case.
+- Entry IP switch logic: When the connected IP access times out, the returned result is not in IP format, or the response is empty, use another entry IP for access. If all IPs are abnormal, use local DNS for DNS queries.
 
 ## Request Parameters
+
+
 <table>
 <thead>
   <tr>
@@ -27,7 +40,7 @@ When using the request API `http://119.29.29.98/d? + {request parameters}`, you 
     <th>Required</th>
     <th>Value</th>
     <th>Encryption</th>
-    <th>Remarks</th>
+    <th>Description</th>
   </tr>
 </thead>
 <tbody>
@@ -37,7 +50,7 @@ When using the request API `http://119.29.29.98/d? + {request parameters}`, you 
     <td>Yes</td>
     <td>The length of a single domain before encryption is 253</td>
     <td>Yes</td>
-    <td>It must be a domain added in the HTTPDNS console in the form of encrypted string for transfer.<ul style="margin:0"><li>For how to add a domain, see <a href="https://intl.cloud.tencent.com/document/product/1130/44465">Adding a Domain</a>.</li><li>For more information on encryption, see <a href="https://intl.cloud.tencent.com/document/product/1130/44470">Encryption and Decryption Algorithm Use Instructions</a>.</li></ul></td>
+    <td>It must be a domain added in the HTTPDNS console in the form of encrypted string for transfer.<ul style="margin:0"><li>For how to add a domain, see <a href="https://intl.cloud.tencent.com/document/product/1130/44465">Adding a Domain</a>.</li><li>For more information on encryption, see <a href="https://intl.cloud.tencent.com/document/product/1130/44470">AES/DES Encryption/Decryption</a>.</li></ul></td>
   </tr>
   <tr>
     <td>id</td>
@@ -61,7 +74,7 @@ When using the request API `http://119.29.29.98/d? + {request parameters}`, you 
     <td>No</td>
     <td>IPv4/IPv6 address value</td>
     <td>Yes</td>
-    <td>By default, the HTTPDNS server will query the client's egress IP in order to query the IP for the DNS split zone. You can use the `ip=xxx` parameter to specify the split zone's IP address. You can pass in IPv4/IPv6 addresses, which will be automatically identified by the API. For more information on encryption, see <a href="https://intl.cloud.tencent.com/document/product/1130/44470">Encryption and Decryption Algorithm Use Instructions</a>.</td>
+    <td>By default, the HTTPDNS server will query the client's egress IP in order to query the IP for the DNS split zone. You can use the `ip=xxx` parameter to specify the split zone's IP address. You can pass in IPv4/IPv6 addresses, which will be automatically identified by the API. For more information on encryption, see <a href="https://intl.cloud.tencent.com/document/product/1130/44470">AES/DES Encryption/Decryption</a>.</td>
   </tr>
   <tr>
     <td>query</td>
@@ -106,141 +119,192 @@ When using the request API `http://119.29.29.98/d? + {request parameters}`, you 
 </tbody>
 </table>
 
->?The ECS (EDNS-Client-Subnet) protocol adds the IP address of the user requesting DNS in the DNS request packet, based on which the DNS server can return a server IP address for quicker access by the user.
->
+>?
+> 
+> 
+> The ECS (EDNS-Client-Subnet) protocol adds the IP address of the user requesting DNS in the DNS request packet, based on which the DNS server can return a server IP address for quicker access by the user.
+> 
 
+## **Request Description**
 
-## Request Description
 The ID `xxx` is used as an example below.
 
 >!
->- The following samples are for AES/DES encryption, where both the domain and IP parameter need to be encrypted. For example, the domain `cloud.tencent.com` needs to be encrypted, while the authorization ID doesn't.
->- If HTTPDNS does not find the DNS query result, it will return null.
->- HTTPDNS has been connected to BGP Anycast to implement multi-region cross-IDC disaster recovery. However, to guarantee a higher service quality, we recommend you use the [failover policy](https://intl.cloud.tencent.com/document/product/1130/44471) for connection. 
+> 
+> - The following samples are for AES/DES encryption, where both the domain and IP parameter need to be encrypted. For example, the domain `cloud.tencent.com` needs to be encrypted, while the authorization ID doesn't.
+> - If HTTPDNS does not find the DNS query result, it will return null.
+> - HTTPDNS has been connected to BGP Anycast to implement multi-region cross-IDC disaster recovery. However, to guarantee a higher service quality, we recommend you use the [failover policy](https://intl.cloud.tencent.com/document/product/1130/44471) for connection.
 
-### Requesting A record
+### **Requesting A record**
+
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx"
+    ```
+    
 - **Decrypted response format:**
-```
-2.3.3.4;2.3.3.5;2.3.3.6
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6
+    ```
+    
 - **Format description**: Multiple returned query results are separated by semicolon.
 
+### **Carrying TTL information in returned result**
 
-### TTL information carried in returned result
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx&ttl=1"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-2.3.3.4;2.3.3.5;2.3.3.6,120
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6,120
+    ```
+    
 - **Format description**: Multiple returned query results are separated by semicolon. The record values and TTL value are separated by comma.
 
+### **Carrying the IP address of query split zone in returned result**
 
-### Carrying the IP address of query split zone in returned result
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&ttl=1"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-12.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
-```
-- **Format description**: the returned result carries the split zone's IP address separated by '|'. If the "ip=xxx" parameter is not passed in, the egress IP address will be returned; otherwise, the address in the `ip` parameter will be returned.
+  
+    ```
+    12.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
+    ```
+    
+- **Format description**: The returned result carries the split zone's IP address separated by '|'. If the "ip=xxx" parameter is not passed in, the egress IP address will be returned; otherwise, the address in the `ip` parameter will be returned.
 
-### Requesting A and AAAA records at the same time
+### **Requesting A and AAAA records at the same time**
+
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&type=addrs&ttl=1"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&type=addrs&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-2.3.3.4;2.3.3.5;2.3.3.6,120-2402:4e00:0123:4567:0::2345;2403:4e00:0123:4567:0::2346,120|1.2.3.4
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6,120-2402:4e00:0123:4567:0::2345;2403:4e00:0123:4567:0::2346,120|1.2.3.4
+    ```
+    
 - **Format description**: The A record is followed by a hyphen and then the AAAA record.
 
+### **Carrying queried domain in returned result**
 
-### Carrying queried domain in returned result
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&query=1&ttl=1"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&query=1&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
+    ```
+    
 - **Format description**: The response is in the format of "domain.:result".
 
-### Batch querying domains
+### **Batch querying domains**
+
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com, www.qq.com, and www.dnspod.cn}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&ttl=1"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com, www.qq.com, and www.dnspod.cn}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&ttl=1"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120
-www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
-www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120
+    www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
+    www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
+    ```
+    
 - **Format description:** The returned result of multiple domains are separated by line break, with the IP addresses appended at the end of all record values.
 
-## Description of Request Error or No Record
+## **Description of Request Error or No Record**
+
 >!
->- The following samples are for AES/DES encryption, where both the domain and IP parameter need to be encrypted. For example, the domain `cloud.tencent.com` needs to be encrypted, while the authorization ID doesn't.
->- If you use HTTPS, you must change the request address to `119.29.29.99` and pass in the token.
-### Querying A record
+> 
+> - The following samples are for AES/DES encryption, where both the domain and IP parameter need to be encrypted. For example, the domain `cloud.tencent.com` needs to be encrypted, while the authorization ID doesn't.
+>- If you use HTTPS, you must change the request address to `43.132.55.56` and pass in the token.
+
+### **Querying A record**
+
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx"
+    ```
+    
 - **Decrypted response format:** Empty.
 - **Format description:** If there are no records, an empty string will be returned.
 
-### Carrying domain in returned result
+### **Carrying domain in returned result**
+
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx&type=addrs&query=1&ip={encrypted string of the ECS value of the DNS request}"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx&type=addrs&query=1&ip={encrypted string of the ECS value of the DNS request}"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com|1.2.3.4
+    ```
+    
 - **Format description:** 0 indicates no records.
 
+### **Returning A and AAAA records**
 
-
-### Returning A and AAAA records
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com}&id=xxx&type=addrs&query=1&ip={encrypted string of the ECS value of the DNS request}"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com}&id=xxx&type=addrs&query=1&ip={encrypted string of the ECS value of the DNS request}"
+    ```
+    
 - **Decrypted response format:**
-```
-cloud.tencent.com.:0-0|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:0-0|1.2.3.4
+    ```
+    
 - **Format description:** 0 indicates no records. If a record exists, it will be returned in the result. For example, `cloud.tencent.com.:2.3.4.5;3.3.3.3-0|1.2.3.4` indicates that no AAAA records can be found.
 
+### **Batch querying domains**
 
-### Batch querying domains
 - **Sample input:**
-```
-curl "http://119.29.29.98/d?dn={encrypted string of cloud.tencent.com, www.qq.com, and www.dnspod.cn}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&ttl=1"
-```
+  
+    ```
+    curl "http://43.132.55.55/d?dn={encrypted string of cloud.tencent.com, www.qq.com, and www.dnspod.cn}&id=xxx&clientip=1&ip={encrypted string of the ECS value of the DNS request}&ttl=1"
+    ```
+    
 - **Decrypted response format**:
-```
-cloud.tencent.com.:0
-www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
-www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:0
+    www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
+    www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
+    ```
+    
 - **Format description:** For domains about which no data is found, 0 will be returned. If a record exists, it will be returned in the result.
 
-## HTTP Status Codes
+## **HTTP Status Codes**
+
 The following are the HTTP status codes related to the business logic of the APIs.
+
 
 | Status Code | Description |
 |---------|---------|

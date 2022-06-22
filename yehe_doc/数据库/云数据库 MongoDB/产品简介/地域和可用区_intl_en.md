@@ -4,7 +4,7 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 >?
 >- Tencent Cloud resources in the same VPC within the same region under the same account can communicate with each other by using [private IPs](https://intl.cloud.tencent.com/document/product/213/5225) over private network.
 >- The networks of different regions are fully isolated from each other, and Tencent Cloud services in different regions cannot communicate over private network by default.
->- When purchasing Tencent Cloud services, we recommend selecting the region closest to you to minimize access latency.
+>- When you purchase Tencent Cloud services, we recommend you select the region closest to your end users to minimize access latency.
 
 
 ### China
@@ -12,10 +12,10 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 
 <table class="table-striped">
 <tbody>
-<tr><th>Region</th><th>Availability Zone</th></tr>
+<tr><th>Region</th><th>AZ</th></tr>
 <tr>
 <td rowspan="6">South China (Guangzhou)<br>ap-guangzhou</td>
-<td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td></tr>	
+<td>Guangzhou Zone 1<br> ap-guangzhou-1</td></tr>	
 <tr>
 <td>Guangzhou Zone 2<br> ap-guangzhou-2</td></tr>
 <tr>
@@ -31,7 +31,7 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <td>Shenzhen Zone 1<br> ap-shenzhen-1</td></tr>	
 <tr>
 <td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
-<td>Shanghai Zone 1 (sold out)<br>ap-shanghai-1</td></tr>
+<td>Shanghai Zone 1<br>ap-shanghai-1</td></tr>
 <tr>
 <td>Shanghai Zone 2<br>ap-shanghai-2</td></tr>
 <tr>
@@ -41,14 +41,12 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <tr>
 <td>Shanghai Zone 5<br>ap-shanghai-5</td></tr>
 <tr>
-<td>East China (Hangzhou)<br>ap-hangzhou</td>
-<td>Hangzhou Zone 1<br>ap-hangzhou-1</td></tr>
 <td rowspan="3">East China (Nanjing)<br>ap-nanjing</td>
 <td>Nanjing Zone 1<br>ap-nanjing-1</td></tr>
 <tr>
 <td>Nanjing Zone 2<br>ap-nanjing-2</td></tr>
 <tr>
-<td>Nanjing Zone 3 (sold out)<br>ap-nanjing-3</td></tr>
+<td>Nanjing Zone 3<br>ap-nanjing-3</td></tr>
 <tr>
 <td rowspan="7">North China (Beijing)<br>ap-beijing</td>
 <td>Beijing Zone 1<br>ap-beijing-1</td></tr>
@@ -63,7 +61,7 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <tr>
 <td>Beijing Zone 6<br>ap-beijing-6</td></tr>
 <tr>
-<td>Beijing Zone 7<br>ap-beijing-7</td></tr>  
+<td>Beijing Zone 7<br>ap-beijing-7</td></tr>
 <tr>
 <td >North China (Tianjin)<br>ap-tianjin</td>
 <td>Tianjin Zone 1<br>ap-tianjin-1</td></tr>
@@ -88,14 +86,14 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 ### Other Countries and Regions
 <table class="table-striped">
 <tbody>
-<tr><th>Region</th><th>Availability Zone</th></tr>
+<tr><th>Region</th><th>AZ</th></tr>
 <tr>
 <td rowspan="4">Southeast Asia (Singapore)<br>ap-singapore</td>
-<td>Singapore Zone 1 (sold out) (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-1</td></tr>
+<td>Singapore Zone 1 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-1</td></tr>
 <tr>
-<td>Singapore Zone 2 (sold out) (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td></tr>
+<td>Singapore Zone 2 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td></tr>
 <tr>
-<td>Singapore Zone 3 (sold out) (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-3</td></tr>
+<td>Singapore Zone 3 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-3</td></tr>
 <tr>
 <td>Singapore Zone 4 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-4</td></tr>
 </tr>
@@ -121,12 +119,12 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
 <td>Silicon Valley Zone 1 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-1</td></tr>
 <tr>
-<td>Silicon Valley Zone 2 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-2</td></tr>
+<td>Silicon Valley Zone 2 (Silicon Valley nodes cover services in West US)<br>na-siliconvalley-2</td></tr>
 <tr>
-<td rowspan="2">Eastern US (Virginia)<br>na-ashburn</td>
-<td>Virginia Zone 1 (Virginia nodes cover services in Eastern US)<br>na-ashburn-1</td></tr>
+<td rowspan="2">East US (Virginia)<br>na-ashburn</td>
+<td>Virginia Zone 1 (Virginia nodes cover services in East US)<br>na-ashburn-1</td></tr>
 <tr>
-<td>Virginia Zone 2 (Virginia nodes cover services in Eastern US)<br>na-ashburn-2</td></tr>
+<td>Virginia Zone 2 (Virginia nodes cover services in East US)<br>na-ashburn-2</td></tr>
 <tr>
 <td>North America (Toronto)<br>na-toronto</td>
 <td>Toronto Zone 1 (Toronto nodes cover services in North America)<br>na-toronto-1</td></tr>
@@ -135,6 +133,6 @@ TencentDB data centers are hosted in multiple locations world-wide, covering Sou
 <td>Frankfurt Zone 1 (Frankfurt nodes cover services in Europe)<br>eu-frankfurt-1</td></tr>
 <tr>
 <td >Europe (Moscow)<br>eu-moscow</td>
-<td>Moscow Zone 1 (Moscow nodes cover services in Europe)<br>eu-moscow-1</td></tr>
+<td>Northeast Europe Zone 1 (Moscow nodes cover services in Europe)<br>eu-moscow-1</td></tr>
 </tbody></table>
 

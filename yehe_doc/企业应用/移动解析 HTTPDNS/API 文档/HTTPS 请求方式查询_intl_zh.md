@@ -1,21 +1,34 @@
-﻿移动解析 HTTPDNS 的 HTTPS 请求方式查询可以通过 `https://119.29.29.99/d? + {请求参数}` 接口使用移动解析 HTTPDNS 服务。
+# HTTPS 请求方式查询
 
->? 
->- [开通移动解析 HTTPDNS 服务](https://intl.cloud.tencent.com/document/product/1130/44461) 后，您需在移动解析 HTTPDNS 控制台添加解析域名后才可正常使用。具体操作请参见 [添加域名](https://intl.cloud.tencent.com/document/product/1130/44465)。
->- HTTP 协议服务地址为 `119.29.29.98`，HTTPS 协议服务地址为 `119.29.29.99`。
->- 新版本 API 更新为使用 `119.29.29.99/98` 接入，同时原移动解析 HTTPDNS 服务地址 `119.29.29.29` 仅供开发调试使用，无 SLA 保障，不建议用于正式业务，请您尽快将正式业务迁移至 `119.29.29.99/98`。
+## 概述
 
+移动解析 HTTPDNS 通过 HTTP/HTTPS 接口对外提供域名解析服务，服务接入直接使用 IP 地址，服务 IP 有多个，移动解析 HTTPDNS 的 HTTPS 请求方式查询入口以 `43.132.55.56` 为例。
+
+>?
+> 
+> - **当前仅开放了HTTP DES加密方式（服务IP： `43.132.55.55`），HTTPS、AES加密方式未开放。**
+> - [开通移动解析 HTTPDNS 服务](https://intl.cloud.tencent.com/document/product/1130/44461) 后，您需在移动解析 HTTPDNS 控制台添加解析域名后才可正常使用。详情请参见 [添加域名](https://intl.cloud.tencent.com/document/product/1130/44465)。
+> - 我们提供2个入口 IP 示例，HTTPS 协议的服务 IP：`43.132.55.56`，HTTP 协议的服务 IP：`43.132.55.55`。
+> - 请优先使用官方 SDK，如果场景特殊下无法使用 SDK，需要直接访问 HTTP API 接口，请 [提交工单](https://console.intl.cloud.tencent.com/workorder) 联系我们，我们将根据您的具体使用场景，为您提供多个服务 IP 和相关的安全建议。
+> - 考虑到服务 IP 防攻击之类的安全风险，为保障服务可用性，HTTPDNS 同时提供多个服务 IP，当某个服务 IP 在异常情况下不可用时，可以使用其它服务 IP 进行重试。
 
 ## 前期准备
-使用请求接口 `https://119.29.29.99/d? + {请求参数}` 时，需使用以下配置信息。请先前往移动解析 HTTPDNS 管理控制台 [开发配置页](https://console.cloud.tencent.com/httpdns/configure) 获取相关配置信息：
+
+使用请求接口 `https://43.132.55.56/d?+{请求参数}`时，需使用以下配置信息。请前往移动解析 HTTPDNS 管理控制台[开发配置页](https://console.cloud.tencent.com/httpdns/configure)获取相关配置信息：
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/27f9685efa32ca311247323fe5593cfb.png)
-**HTTPS 加密 Token**：调⽤移动解析 HTTPDNS 的 HTTPS 解析接口 `https://119.29.29.99` ，对 DNS 请求数据进⾏鉴权的 Token 信息。
+
+**HTTPS 加密 Token**：调⽤移动解析 HTTPDNS 的 HTTPS 解析接口`https://43.132.55.56`，对 DNS 请求数据进⾏鉴权的 Token 信息。
 
 ## 接口描述
-- 接口请求地址：  `https://119.29.29.99/d? + {请求参数}`。
+
+- 接口请求地址： `https://43.132.55.56/d? + {请求参数}`。
 - 请求方式：POST 或 GET。
+- 考虑到服务 IP 防攻击之类的安全风险，为保障服务可用性，我们同时提供多个服务 IP，如您直接通过 API 接口请求 HTTPDNS 服务，请[提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们，我们将根据您的具体使用场景，为您提供多个服务 IP 和相关的安全建议。
+- 入口 IP 的切换逻辑：当接入 IP 访问超时，或者返回的结果非 IP 格式，或者返回为空的时候，请采用其他入口 IP 接入，若所有 IP 均出现异常，请兜底至 LocalDNS 进行域名解析。
 
 ## 请求参数
+
 <table>
 <thead>
   <tr>
@@ -95,138 +108,185 @@
 </tbody>
 </table>
 
+
 >?
->- ECS（EDNS-Client-Subnet）协议在 DNS 请求包中附加请求域名解析的用户 IP 地址，DNS 服务器可以根据该地址返回用户更快速访问的服务器 IP 地址。
->- 使用 HTTPS 方式，传输的数据会因为 TLS 通道而被加密保护，因此不需要主动对传入的数据额外加密。
->- 出于安全和身份认证的考虑，需要传入 HTTPS Token 实现身份鉴权。
+> 
+> - ECS（EDNS-Client-Subnet）协议在 DNS 请求包中附加请求域名解析的用户 IP 地址，DNS 服务器可以根据该地址返回用户更快速访问的服务器 IP 地址。
+> - 使用 HTTPS 方式，传输的数据会因为 TLS 通道而被加密保护，因此不需要主动对传入的数据额外加密。
+> - 出于安全和身份认证的考虑，需要传入 HTTPS Token 实现身份鉴权。
 
 ## 请求说明
-以请求域名为 `cloud.tencent.com`，token 为 `yyyy` 为例。
+
+以请求域名为 `cloud.tencent.com`，token 为 `yyyy` 为例。
 
 >!
->- 若 HTTPDNS 未查询到解析结果，将返回为空值。
->- HTTP 已接入 BGP Anycast，并实现多地机房容灾，但为了服务质量更高的保障，建议您采用 [Failed over 策略](https://intl.cloud.tencent.com/document/product/1130/44471) 进行接入。 
+> 
+> - 若 HTTPDNS 未查询到解析结果，将返回为空值。
+> - HTTP 已接入 BGP Anycast，并实现多地机房容灾，但为了服务质量更高的保障，建议您采用 [Failed over 策略](https://intl.cloud.tencent.com/document/product/1130/44471) 进行接入。
 
-### 请求 A 记录
+### **请求 A 记录**
+
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy"
+    ```
+    
 - **解密后返回格式：**
-```
-2.3.3.4;2.3.3.5;2.3.3.6
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6
+    ```
+    
 - **格式说明**：返回查询结果，多个结果以 ';' 分隔。
 
+### **返回结果中携带 ttl 信息**
 
-### 返回结果中携带 ttl 信息
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&ttl=1"
+    ```
+    
 - **解密后返回格式：**
-```
-2.3.3.4;2.3.3.5;2.3.3.6,120
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6,120
+    ```
+    
 - **格式说明**：返回查询结果，多个结果以 ';' 分隔。记录值与 ttl 值以 ',' 分隔。
 
+### **返回结果携带查询线路 IP 地址**
 
-### 返回结果携带查询线路 IP 地址
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
+    ```
+    
 - **解密后返回格式：**
-```
-12.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
-```
+  
+    ```
+    12.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
+    ```
+    
 - **格式说明**：返回结果中携带线路 ip 地址，以'|'分隔。如果没有传入 “ip=xxx” 参数，则返回出口 IP 地址；否则返回 ip 参数中的地址。
 
-### 同时请求 A 和 AAAA 记录
+### **同时请求 A 和 AAAA 记录**
+
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&type=addrs&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&type=addrs&ttl=1"
+    ```
+    
 - **解密后返回格式：**
-```
-2.3.3.4;2.3.3.5;2.3.3.6,120-2402:4e00:0123:4567:0::2345;2403:4e00:0123:4567:0::2346,120|1.2.3.4
-```
+  
+    ```
+    2.3.3.4;2.3.3.5;2.3.3.6,120-2402:4e00:0123:4567:0::2345;2403:4e00:0123:4567:0::2346,120|1.2.3.4
+    ```
+    
 - **格式说明**：A 记录和 AAAA 记录之间以 '-' 分隔，A 记录在前，AAAA 记录在后。
 
+### **返回结果中携带被查询域名**
 
-### 返回结果中携带被查询域名
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&query=1&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&clientip=1&ip=1.2.3.4&query=1&ttl=1"
+    ```
+    
 - **解密后返回格式：**
-```
-cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120|1.2.3.4
+    ```
+    
 - **格式说明**：返回格式为 “域名.:结果” 的格式。
 
-### 批量域名请求
+### **批量域名请求**
+
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
+    ```
+    
 - **解密后返回格式：**
-```
-cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120
-www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
-www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:2.3.3.4;2.3.3.5;2.3.3.6,120
+    www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
+    www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
+    ```
+    
 - **格式说明：**多个域名返回内容之间以 “换行符” 分隔，ip 地址附加在所有记录值的最后。
 
-## 请求异常或无记录说明
+## **请求异常或无记录说明**
 
-### 查询 A 记录
-- **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&id=xxx"
-```
-- **解密后返回格式：** 空。
-- **格式说明：** 没有记录，则返回空字符串。
+### **查询 A 记录**
 
-### 返回结果中包含域名
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&id=xxx"
+    ```
+    
+- **解密后返回格式：** 空。
+- **格式说明：** 没有记录，则返回空字符串。
+
+### **返回结果中包含域名**
+
+- **输入示例：**
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
+    ```
+    
 - **解密后返回格式：**
-```
-cloud.tencent.com|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com|1.2.3.4
+    ```
+    
 - **格式说明：**0表示没有记录。
 
+### **返回 A 与 AAAA 的记录**
 
-
-### 返回 A 与 AAAA 的记录
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com&token=yyyy&type=addrs&query=1&ip=1.2.3.4"
+    ```
+    
 - **解密后返回格式：**
-```
-cloud.tencent.com.:0-0|1.2.3.4
-```
-- **格式说明：**0表示没有记录。如果某个记录存在，则该记录正常返回在结果中，例如 `cloud.tencent.com.:2.3.4.5;3.3.3.3-0|1.2.3.4`，表示 AAAA 记录无法查询到。
+  
+    ```
+    cloud.tencent.com.:0-0|1.2.3.4
+    ```
+    
+- **格式说明：**0表示没有记录。如果某个记录存在，则该记录正常返回在结果中，例如 `cloud.tencent.com.:2.3.4.5;3.3.3.3-0|1.2.3.4`，表示 AAAA 记录无法查询到。
 
+### **批量域名请求**
 
-### 批量域名请求
 - **输入示例：**
-```
-curl "https://119.29.29.99/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
-```
+  
+    ```
+    curl "https://43.132.55.56/d?dn=cloud.tencent.com,www.qq.com,www.dnspod.cn&token=yyyy&clientip=1&ip=1.2.3.4&ttl=1"
+    ```
+    
 - **解密后返回格式**：
-```
-cloud.tencent.com.:0
-www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
-www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
-```
+  
+    ```
+    cloud.tencent.com.:0
+    www.qq.com.:3.3.3.4;3.3.3.5;3.3.3.6,180
+    www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
+    ```
+    
 - **格式说明：**未查询到数据的域名则返回0。如果某个记录存在，则该记录正常返回在结果中。
 
 ## HTTP 状态码
+
 以下为接口业务逻辑相关的 HTTP 状态码。
 
 | 状态码 | 描述|
@@ -235,4 +295,3 @@ www.dnspod.cn.:4.3.3.4;4.3.3.5;4.3.3.6,60|1.2.3.4
 | 404 Not Found | 接口不存在或 URL 实际上访问了某不存在的资源。|
 | 429 Too Many Request | 访问过于频繁，超过了服务器限制。|
 | 501 Not Implemented | 使用了非 “GET” 或 “POST” 请求方式。|
-
