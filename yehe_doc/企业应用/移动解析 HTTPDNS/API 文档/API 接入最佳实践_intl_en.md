@@ -1,4 +1,4 @@
-# Best Practice of API Connection
+
 
 ## **Client Connection Process**
 
