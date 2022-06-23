@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used by the app backend to monitor the recalls of one-to-one messages in real time.
+This API is used by the app backend to view the recalls of one-to-one messages in real time.
 
 ## Notes
 

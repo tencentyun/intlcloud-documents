@@ -1,10 +1,10 @@
-# API 接入最佳实践
+
 
 ## **客户端接入流程**
 
 接入 HTTPDNS 过程中，需要改造移动客户端的域名解析机制，流程参考如下：
 
-![HTTPDNS最佳实践](https://qcloudimg.tencent-cloud.cn/raw/d045d3ea5e0d3d6bdd945d13ddf009bd.png)
+![HTTPDNS最佳实践](https://qcloudimg.tencent-cloud.cn/raw/470c05586b0f5962e0b44ba638bd72a1.png)
 
 ## **设计策略**
 

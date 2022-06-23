@@ -1,14 +1,14 @@
-# iOS SDK 文档
 
-## **概述**
 
-移动解析 HTTPDNS 的主要功能是为了有效避免由于运营商传统 LocalDNS 解析导致的无法访问最佳接入点的方案。原理为使用 HTTP 加密协议替代传统的 DNS 协议，整个过程不使用域名，大大减少劫持的可能性。
+## 概述
+
+移动解析 HTTPDNS 的主要功能是为了有效避免由于运营商传统 LocalDNS 解析导致的无法访问最佳接入点的方案。原理为使用 HTTP 加密协议替代传统的 DNS 协议，整个过程不使用域名，极大减少劫持的可能性。
 
 > ?
 > 
 > - **当前仅开放了DES加密方式（服务IP： `43.132.55.55`），HTTPS、AES加密方式未开放。**
 
-## **前期准备**
+## 前期准备
 
 1. 首先需要开通移动解析 HTTPDNS 服务，请前往 [移动解析 HTTPDNS 控制台](https://console.intl.cloud.tencent.com/httpdns) 开通。具体操作请参见 [开通移动解析 HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461)。
 2. 开通移动解析 HTTPDNS 服务后，您需在移动解析 HTTPDNS 控制台添加解析域名后才可正常使用。具体操作请参见 [添加域名](https://intl.cloud.tencent.com/document/product/1130/44465)。
@@ -23,14 +23,18 @@
 - **HTTPS 加密 Token**：SDK 中 `token` 参数，加密方式为 HTTPS 时传入此项。
 - **IOS APPID**： [IOS 端 SDK](https://intl.cloud.tencent.com/document/product/1130/44472) 的 `appId（应用 ID）` 鉴权信息。
 
-## **安装包结构**
+## 安装包结构
 
 - SDK 最新版本包 [下载地址](https://github.com/tencentyun/httpdns-ios-sdk/tree/master/HTTPDNSLibs)。
 - SDK 开源 [仓库地址](https://github.com/DNSPod/httpdns-sdk-ios)。
 
-[Untitled](iOS%20SDK%20%E6%96%87%E6%A1%A3%20aa597df0829c471fadd2fe767130d9c8/Untitled%20Database%20a46ac1acd7074d2a84a1ac4c8361a853.csv)
+| 名称       | 适用说明           |
+| ------------- |-------------|
+| MSDKDns.xcframework | 适用 “Build Setting->C++ Language Dialect” 配置为 **“GNU++98”**，“Build Setting->C++ Standard Library” 为 **“libstdc++(GNU C++ standard library)”** 的工程。 |
+| MSDKDns_C11.xcframework | 适用于该两项配置分别为 **“GNU++11”** 和 **“libc++(LLVM C++ standard library with C++11 support)”** 的工程。 |
 
-## **SDK 集成**
+
+## SDK 集成
 
 移动解析 HTTPDNS 提供两种集成方式供 iOS 开发者选择：
 
@@ -526,9 +530,9 @@ if (ips && ips.count > 1) {
 - **以 NSURLConnection 接口为例：**
   
     ```objectivec
+
     #pragma mark - NSURLConnectionDelegate
-    - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
-    
+      (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
         //创建证书校验策略
         NSMutableArray *policies = [NSMutableArray array];
         if (domain) {
@@ -548,23 +552,19 @@ if (ips && ips.count > 1) {
         SecTrustEvaluate(serverTrust, &result);
         return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
     }
-    
-    - (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+   (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
         if (!challenge) {
             return;
         }
-    
         //URL 里面的 host 在使用 HTTPDNS 的情况下被设置成了 IP，此处从 HTTP Header 中获取真实域名
         NSString *host = [[self.request allHTTPHeaderFields] objectForKey:@"host"];
         if (!host) {
             host = self.request.URL.host;
-        }
-    
+        }   
         //判断 challenge 的身份验证方法是否是 NSURLAuthenticationMethodServerTrust（HTTPS 模式下会进行该身份验证流程），
         //在没有配置身份验证方法的情况下进行默认的网络请求流程。
         if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
             if ([self evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:host]) {
-    
                 //验证完以后，需要构造一个 NSURLCredential 发送给发起方
                 NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
                 [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
@@ -573,19 +573,17 @@ if (ips && ips.count > 1) {
                 [[challenge sender] cancelAuthenticationChallenge:challenge];
             }
         } else {
-    
             //对于其他验证方法直接进行处理流程
             [[challenge sender] continueWithoutCredentialForAuthenticationChallenge:challenge];
         }
     }
     ```
-    
+
 - **以 NSURLSession 接口为例：**
   
     ```objectivec
      #pragma mark - NSURLSessionDelegate
-    - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
-    
+  (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
         //创建证书校验策略
         NSMutableArray *policies = [NSMutableArray array];
         if (domain) {
@@ -596,25 +594,20 @@ if (ips && ips.count > 1) {
     
         //绑定校验策略到服务端的证书上
         SecTrustSetPolicies(serverTrust, (__bridge CFArrayRef)policies);
-    
         //评估当前 serverTrust 是否可信任，
         //官方建议在 result = kSecTrustResultUnspecified 或 kSecTrustResultProceed 的情况下 serverTrust 可以被验证通过，
         //https://developer.apple.com/library/ios/technotes/tn2232/_index.html
         //关于SecTrustResultType的详细信息请参考SecTrust.h
         SecTrustResultType result;
         SecTrustEvaluate(serverTrust, &result);
-    
         return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
     }
-    
-    - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * __nullable credential))completionHandler {
+  (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * __nullable credential))completionHandler {
         if (!challenge) {
             return;
         }
-    
         NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
         NSURLCredential *credential = nil;
-    
         //获取原始域名信息
         NSString *host = [[self.request allHTTPHeaderFields] objectForKey:@"host"];
         if (!host) {
@@ -630,7 +623,6 @@ if (ips && ips.count > 1) {
         } else {
             disposition = NSURLSessionAuthChallengePerformDefaultHandling;
         }
-    
         // 对于其他的 challenges 直接使用默认的验证方案
         completionHandler(disposition,credential);
     }

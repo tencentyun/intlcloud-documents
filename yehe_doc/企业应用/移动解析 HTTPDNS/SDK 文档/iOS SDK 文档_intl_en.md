@@ -1,6 +1,6 @@
-# SDK for iOS
 
-## **Overview**
+
+## Overview
 
 HTTPDNS helps avoid the failure to access the optimal access point caused by the traditional local DNS of ISPs. It works by replacing the traditional DNS protocol with the HTTP encryption protocol, and domains are not used throughout the process, which greatly reduces the possibility of being hijacked.
 
@@ -8,7 +8,7 @@ HTTPDNS helps avoid the failure to access the optimal access point caused by the
 > 
 > - **Currently, only the DES encryption method is available (service IP: `43.132.55.55`). HTTPS and AES encryption methods are not available.**
 
-## **Preparations**
+## Preparations
 
 1. First, you need to activate HTTPDNS in the [HTTPDNS console](https://console.intl.cloud.tencent.com/httpdns) as instructed in [Activating HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/44461).
 2. After activating HTTPDNS, you need to add a domain to be resolved in the HTTPDNS console as instructed in [Adding a Domain](https://intl.cloud.tencent.com/document/product/1130/44465) before you can use it.
@@ -23,14 +23,17 @@ HTTPDNS helps avoid the failure to access the optimal access point caused by the
 - **HTTPS encryption token**: The `token` parameter in the SDK, which you need to pass in when using the HTTPS encryption method.
 - **iOS APPID**: The `appId (application ID)` authentication information of the [SDK for iOS](https://intl.cloud.tencent.com/document/product/1130/44472).
 
-## **Installation Package Structure**
+## Installation Package Structure
 
 - The latest version of the SDK package can be downloaded [here](https://github.com/tencentyun/httpdns-ios-sdk/tree/master/HTTPDNSLibs).
 - The open-source repository of the SDK is [here](https://github.com/DNSPod/httpdns-sdk-ios).
 
-[Untitled](iOS%20SDK%20%E6%96%87%E6%A1%A3%20aa597df0829c471fadd2fe767130d9c8/Untitled%20Database%20a46ac1acd7074d2a84a1ac4c8361a853.csv)
+| Name       | Applicable Scope           |
+| ------------- |-------------|
+| MSDKDns.xcframework | Applicable to projects with "Build Setting->C++ Language Dialect" configured as **"GNU++98"** and "Build Setting->C++ Standard Library" configured as **"libstdc++(GNU C++ standard library)"**. |
+| MSDKDns_C11.xcframework | Applicable to projects with the two items configured as **"GNU++11"** and **"libc++(LLVM C++ standard library with C++11 support)"** respectively. |
 
-## **SDK Integration**
+## SDK Integration
 
 HTTPDNS provides two integration methods for iOS:
 
@@ -59,13 +62,11 @@ Save, run `pod install`, and open the project with a file with the `.xcworkspace
 pod install
 ```
 
-，再使用后缀为
 
 ```
 .xcworkspace
 ```
 
-的文件打开工程。
 
 > ?
 > 
@@ -73,9 +74,9 @@ pod install
 > For more information on `CocoaPods`, visit the [CocoaPods website](https://cocoapods.org/).
 > 
 
-### **Manual integration**
+### Manual integration
 
-### **For business connected to Beacon (optional)**
+### For business connected to Beacon (optional)
 
 > ?
 > 
@@ -214,7 +215,7 @@ Sample API call:
     ```
     
 
-### **DNS API**
+### DNS API
 
 **There are the following four APIs to get IPs**, and you only need to import the header file to call the corresponding API.
 
@@ -325,7 +326,7 @@ if (ips && ips.count > 1) {
 - (void) WGGetHostsByNamesAsync:(NSArray *) domains returnIps:(void (^)(NSDictionary * ipsDictionary))handler;
 ```
 
-### **Sample code**
+### Sample code
 
 > !
 > 
@@ -527,8 +528,7 @@ Replace the IP with the original domain before verifying a certificate.
   
     ```objectivec
     #pragma mark - NSURLConnectionDelegate
-    - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
-    
+     (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
         // Create a certificate verification policy
         NSMutableArray *policies = [NSMutableArray array];
         if (domain) {
@@ -536,10 +536,8 @@ Replace the IP with the original domain before verifying a certificate.
         } else {
             [policies addObject:(__bridge_transfer id)SecPolicyCreateBasicX509()];
         }
-    
         // Bind the verification policy to the certificate on the server
         SecTrustSetPolicies(serverTrust, (__bridge CFArrayRef)policies);
-    
         // Evaluate whether the current `serverTrust` is trustworthy
         // We recommend that only when `result` is `kSecTrustResultUnspecified` or `kSecTrustResultProceed` can `serverTrust` pass the verification
         //https://developer.apple.com/library/ios/technotes/tn2232/_index.html
@@ -548,18 +546,15 @@ Replace the IP with the original domain before verifying a certificate.
         SecTrustEvaluate(serverTrust, &result);
         return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
     }
-    
-    - (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
         if (!challenge) {
             return;
         }
-    
         // When HTTPDNS is used, the host in the URL is set to the IP, and you can get the actual domain from the HTTP header
         NSString *host = [[self.request allHTTPHeaderFields] objectForKey:@"host"];
         if (!host) {
             host = self.request.URL.host;
         }
-    
         // Determine whether the challenge authentication method is `NSURLAuthenticationMethodServerTrust` (this authentication process will be performed for HTTPS mode)
         // The default network request process will be performed if no authentication method is configured.
         if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
@@ -573,7 +568,6 @@ Replace the IP with the original domain before verifying a certificate.
                 [[challenge sender] cancelAuthenticationChallenge:challenge];
             }
         } else {
-    
             // For other authentication methods, directly proceed with the process
             [[challenge sender] continueWithoutCredentialForAuthenticationChallenge:challenge];
         }
@@ -584,7 +578,7 @@ Replace the IP with the original domain before verifying a certificate.
   
     ```objectivec
      #pragma mark - NSURLSessionDelegate
-    - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
+    (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain {
     
         // Create a certificate verification policy
         NSMutableArray *policies = [NSMutableArray array];
@@ -593,28 +587,22 @@ Replace the IP with the original domain before verifying a certificate.
         } else {
             [policies addObject:(__bridge_transfer id)SecPolicyCreateBasicX509()];
         }
-    
         // Bind the verification policy to the certificate on the server
         SecTrustSetPolicies(serverTrust, (__bridge CFArrayRef)policies);
-    
         // Evaluate whether the current `serverTrust` is trustworthy
         // We recommend that only when `result` is `kSecTrustResultUnspecified` or `kSecTrustResultProceed` can `serverTrust` pass the verification
         //https://developer.apple.com/library/ios/technotes/tn2232/_index.html
         // For more information on `SecTrustResultType`, see `SecTrust.h`
         SecTrustResultType result;
         SecTrustEvaluate(serverTrust, &result);
-    
         return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
     }
-    
-    - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * __nullable credential))completionHandler {
+    (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * __nullable credential))completionHandler {
         if (!challenge) {
             return;
         }
-    
         NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
         NSURLCredential *credential = nil;
-    
         // Get the original domain information
         NSString *host = [[self.request allHTTPHeaderFields] objectForKey:@"host"];
         if (!host) {
@@ -630,7 +618,6 @@ Replace the IP with the original domain before verifying a certificate.
         } else {
             disposition = NSURLSessionAuthChallengePerformDefaultHandling;
         }
-    
         // For other challenges, directly use the default authentication scheme
         completionHandler(disposition,credential);
     }
