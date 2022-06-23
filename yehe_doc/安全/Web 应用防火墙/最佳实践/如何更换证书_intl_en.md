@@ -15,13 +15,5 @@ When users visit your website with an expired certificate, there will be a warni
 2. In the **Certificate configuration** pop-up window, select **Tencent Cloud-managed certificate** for **Certificate source** and click **OK**.
 >? This method only applies to certificates that have been uploaded to SSL Certificate Service.
 
-
-
-### Example 3: One-click configuration
-1. Log in to the [SSL Certificates console](https://console.cloud.tencent.com/guanjia/waf/overview) and click **My certificate** on the left sidebar.
-2. On the **My certificate** page, select the target ID and click **Deploy**.
-3. In the pop-up window, select **Web Application Firewall** for the deployment type, select a WAF instance, and click **OK**.
-
-
 ## Certificate Validity Check
 You can check the effective and expiration dates of the certificate by accessing the domain name via a browser. If the certificate does not take effect, [contact us](https://intl.cloud.tencent.com/contact-us) for help.
