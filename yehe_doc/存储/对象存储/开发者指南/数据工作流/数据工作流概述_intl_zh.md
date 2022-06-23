@@ -65,7 +65,7 @@
 
 ### 使用对象存储控制台
 
-您可以通过对象存储控制台使用数据工作流服务，详情请参见配置工作流和配置任务文档。
+您可以通过对象存储控制台使用数据工作流服务，详情请参见 [配置工作流](https://intl.cloud.tencent.com/document/product/436/46408) 和 [配置任务](https://intl.cloud.tencent.com/document/product/436/46409) 文档。
 
 ### 使用 REST API
 
