@@ -24,6 +24,14 @@ The following resources are supported by Terraform:
 - [dayu_l7_rule](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dayu_l7_rule)
 
 :::
+::: Anti-DDoS(DayuV2)
+- [dayu_cc_policy_v2](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dayu_cc_policy_v2)
+- [dayu_ddos_policy_v2](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dayu_ddos_policy_v2)
+- [dayu_eip](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dayu_eip)
+- [dayu_l4_rule](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dayu_l4_rule)
+- [dayu_l7_rule_v2](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dayu_l7_rule_v2)
+ 
+:::
 ::: Audit
 [audit](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/audit)
 :::
@@ -37,9 +45,21 @@ The following resources are supported by Terraform:
 - [as_schedule](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/as_schedule)
 
 :::
+::: CLS 
+- [cls_config](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_config)
+- [cls_config_attachment](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_config_attachment)
+- [cls_config_extra](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_config_extra)
+- [cls_cos_shipper](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_cos_shipper)
+- [cls_index](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_index)
+- [cls_logset](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_logset)
+- [cls_machine_group](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_machine_group)
+- [cls_topic](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cls_topic)
+ 
+ 
+:::
 :::  CVM Dedicated Host (CDH)
  [cdh_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cdh_instance)
- 
+  
 :::
 ::: CKafka
 - [ckafka_acl](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/ckafka_acl)
@@ -52,9 +72,11 @@ The following resources are supported by Terraform:
 - [cam_group](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_group)
 - [cam_group_membership](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_group_membership)
 - [cam_group_policy_attachment](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_group_policy_attachment)
+- [cam_oidc_sso](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_oidc_sso)
 - [cam_policy](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_policy)
 - [cam_role](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_role)
 - [cam_role_policy_attachment](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_role_policy_attachment)
+- [cam_role_sso](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_role_sso)
 - [cam_saml_provider](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_saml_provider)
 - [cam_user](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_user)
 - [cam_user_policy_attachment](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cam_user_policy_attachment)
@@ -114,10 +136,16 @@ The following resources are supported by Terraform:
 - [placement_group](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/placement_group)
 - [reserved_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/reserved_instance)
 
+:::
+::: Container Cluster
+- [container_cluster](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/container_cluster)
+- [container_cluster_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/container_cluster_instance) 
 
 :::
 ::: Content Delivery Network (CDN)
- [cdn_domain](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cdn_domain)
+- [cdn_domain](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cdn_domain)
+- [cdn_url_purge](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cdn_url_purge)
+- [cdn_url_push](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cdn_url_push)
 
 :::
 ::: CynosDB
@@ -127,7 +155,8 @@ The following resources are supported by Terraform:
 
 :::
 ::: DNSPOD
-[dnspod_domain_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dnspod_domain_instance)
+- [dnspod_domain_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dnspod_domain_instance)
+- [dnspod_record](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/dnspod_record)
 
 :::
 ::: Direct Connect Gateway (DCG)
@@ -166,6 +195,11 @@ The following resources are supported by Terraform:
 - [kms_key](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/kms_key)
 
 :::
+::: Lighthouse
+- [lighthouse_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/lighthouse_instance)
+ 
+ 
+:::
 ::: MongoDB
 - [mongodb_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/mongodb_instance)
 - [mongodb_sharding_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/mongodb_sharding_instance)
@@ -193,7 +227,10 @@ The following resources are supported by Terraform:
 
 :::
 ::: PostgreSQL
-[postgresql_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/postgresql_instance)
+- [postgresql_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/postgresql_instance)
+- [postgresql_readonly_attachment](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/postgresql_readonly_attachment)
+- [postgresql_readonly_group](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/postgresql_readonly_group)
+- [postgresql_readonly_instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/postgresql_readonly_instance)
 
 :::
 ::: PrivateDNS
@@ -282,6 +319,8 @@ The following resources are supported by Terraform:
 - [vpn_customer_gateway](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/vpn_customer_gateway)
 - [vpn_gateway](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/vpn_gateway)
 - [vpn_gateway_route](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/vpn_gateway_route)
+- [vpn_ssl_client](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/vpn_ssl_client)
+- [vpn_ssl_server](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/vpn_ssl_server)
 
 
 :::
