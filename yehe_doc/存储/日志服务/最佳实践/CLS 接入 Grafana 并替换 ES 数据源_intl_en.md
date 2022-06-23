@@ -72,7 +72,7 @@ urlPath:$path AND region:$region AND action:$action AND returnCode:$returnCode |
 ```
 
 In similar scenarios, you can write a statement by using the estimation function `approx_percentile` to analyze the consumed time.
-![](https://qcloudimg.tencent-cloud.cn/raw/97fa63132997df511484eaa4e4f963a0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ab99a40e1e378d6848dd499b42abd256.png)
 
 ```
 urlPath:$path AND region:$region AND action:$action AND returnCode:$returnCode  | select time_series(__TIMESTAMP__, '$__interval', '%Y-%m-%dT%H:%i:%s+08:00', '0') as time ,avg(timeCost) as avg ,approx_percentile(timeCost, 0.50) as P50 ,approx_percentile(timeCost, 0.90) as P90 ,approx_percentile(timeCost, 0.95) as P95 group by time order by time limit 10000
