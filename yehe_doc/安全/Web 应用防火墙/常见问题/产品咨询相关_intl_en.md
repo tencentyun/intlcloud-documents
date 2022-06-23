@@ -1,3 +1,7 @@
+
+### Can I use, migrate, and share WAF instances across accounts?
+No, you cannot use, migrate, or share WAF instances across accounts.
+
 ### Is WAF available to servers outside Tencent Cloud?
  WAF can be connected with servers in data centers outside Tencent Cloud. WAF protects servers in any public networks, including but not limited to Tencent Cloud, and clouds and IDCs from other vendors. 
 >! Domain names connected in the Chinese mainland must be ICP filed as required by the Ministry of Industry and Information Technology of China.
@@ -9,17 +13,17 @@ WAF fully supports HTTPS services. You just need to upload the SSL certificate a
 The QPS limit in WAF is for the entire instance. For example, if three domain names are protected, the total QPS of the three domain names cannot exceed the limit. If the QPS limit of the purchased instance is exceeded, speed will be limited and packets will be lost.
 
 ### Can Anti-DDoS Pro instances be used for WAF?
-Yes, you can empower WAF with high DDoS protection capability simply by selecting IPs specified in a WAF instance on the configuration page in the Anti-DDoS Pro console. For more information, please see [Combination of Anti-DDoS Pro and Web Application Firewall](https://intl.cloud.tencent.com/document/product/1029/31768).
+Yes. You can empower WAF with high DDoS protection capabilities simply by selecting IPs specified in a WAF instance on the configuration page in the Anti-DDoS Pro console. For more information, see [Combination of Anti-DDoS Pro and Web Application Firewall](https://intl.cloud.tencent.com/document/product/1029/31768).
 
 
-### Are there any risks in uploading an SSL certificate’s private key?
+### Are there any risks in uploading an SSL certificate's private key?
 
-An SSL certificate’s private key hosted on Tencent Cloud will enjoy extremely high security, in terms of:
+An SSL certificate's private key hosted on Tencent Cloud will enjoy extremely high security, in terms of:
 
 #### Uploading stage
 The process from uploading the private key to configuring the certificate on the Tencent Cloud certificate hosting platform is protected with HTTPS, an encrypted communication, and enterprise SSL certificates, ensuring the safety of communication data.
 #### Saving stage
-1. After uploading, the certificate is stored in the database. The certificate’s private key will be encrypted using the AES CBC mode, which effectively prevents the private key from brute force attacks.
+1. After uploading, the certificate is stored in the database. The certificate's private key will be encrypted using the AES CBC mode, which effectively prevents the private key from brute force attacks.
 2. The certificate database will be backed up for disaster recovery. For high availability and high security of the certificate data, no external APIs will be used and the data will be protected by STGW.
 3. There are multiple backend servers for SSL certificates, which are accessed via a load balancer to ensure API stability.
 
@@ -55,21 +59,21 @@ The differences are as follows:
 <td>Businesses completely exposed on the internet</td>
 </tr>
 <tr>
-<th>Use Case</th>
+<th>Application Scenarios</th>
 <td>It is applicable to those who require multi-level protection or cybersecurity assurance service, particularly for webs, APIs, application layers and anti-cheating behavior.</td>
 <td>It is applicable to those who require multi-level protection or cybersecurity assurance service, particularly for webs, APIs, application layers and anti-cheating behavior, and who have used or plan to use layer-7 CLB instances on Tencent Cloud.</td>
 <td>It is applicable to those who require multi-level protection or cybersecurity assurance service, or who require protection for CVMs and network.</td>
 </tr>
 <tr>
 <th>Core Protection Capability</th>
-<td><ul><li>Web vulnerability and unknown threat prevention, and self-service false negative and false positive handling. </li><li>CC attack protection. </li><li>Bot behavior management and crawling protection. </li><li>API security and business security. </li><li>Leakage and tamper prevention.</li></td>
-<td><ul><li>Web vulnerability and unknown threat prevention, and self-service false negative and false positive handling. </li><li>CC attack protection. </li><li>Bot behavior management. </li><li>API security and business security. </li><li>Protected IPv6 access to websites. </li></td>
+<td><ul><li>Web vulnerability and unknown threat prevention, and self-service false negative and false positive handling. </li><li>CC attack protection. </li><li>API security and business security. </li><li>Leakage and tamper protection. </li></td>
+<td><ul><li>Web vulnerability and unknown threat prevention, and self-service false negative and false positive handling. </li><li>CC attack protection. </li><li>API security and business security. </li><li>Protected IPv6 access to websites. </li></td>
 <td><ul><li>IPS virtual patching (which covers OWASP TOP 10 web vulnerabilities) eliminates the need for CVM to install physical patches or reboots.</li><li>Discovers the overwhelmed CVM and blocks the CVM from malicious external connections automatically.</li><li>Supports controlling external connections proactively based on domain name.</li></td>
 </tr>
 <tr>
 <th>Core Strength</th>
 <td>It is applicable to Tencent Cloud and non-Tencent Cloud users.</td>
-<td>Cloud-native access ensures the safety, stability and reliability of Tencent Cloud users’ website business with separation between forwarding and security protection via one-click bypass, which is implemented without changing the existing network architecture. Besides, multi-region access is also supported.</td>
+<td>Cloud-native access ensures the safety, stability and reliability of Tencent Cloud users' website business with separation between forwarding and security protection via one-click bypass, which is implemented without changing the existing network architecture. Besides, multi-region access is also supported.</td>
 <td>The cloud-native firewall can be enabled with one click, without affecting your business. It integrates security capabilities, such as IPS, threat intelligence, and omission scanning, necessary for multi-level protection and cybersecurity assurance scenarios, which is only available to Tencent Cloud users.</td>
 </tr>
 <tr>
@@ -80,4 +84,5 @@ The differences are as follows:
 </tr>
 </tbody></table>
 
-
+### How does WAF prioritize hit rules?
+WAF rules follow the following hit priorities: precise allowlist > IP allowlist > IP blocklist, regional blocking, access control, CC rules > bot protection > web protection (rule engine), AI engine, tamper protection, leakage protection.

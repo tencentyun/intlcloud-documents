@@ -1,0 +1,4 @@
+### How do I configure CNAME?
+- You cannot access the CNAME domain name directly. You need to complete the CNAME configuration at your domain name service provider. WAF will protect your domain name after the configuration takes effect. For more information, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
+- If you have completed CNAME configuration, after you connect your domain name to WAF, the system will automatically assign a CNAME domain name suffixed with `.qcloudxxx.com` (for example, `.qlcoudcjpj.com` and `qcloudwzgj.com`), which is displayed in **Instance information** on the [domain name list page in the WAF console](https://console.cloud.tencent.com/guanjia/tea-domain).
+![](https://qcloudimg.tencent-cloud.cn/raw/7800ee917772163092b86c2d71bd60d2.png)
