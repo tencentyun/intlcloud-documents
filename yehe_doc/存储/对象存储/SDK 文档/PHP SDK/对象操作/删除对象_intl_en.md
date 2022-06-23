@@ -1,14 +1,14 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples for deleting an object.
+This document provides an overview of APIs and SDK code samples for object deletion.
 
-| API | Operation | Description |
+| API | Operation |  Description |
 | ------------------------------------------------------------ | ------------ | ---------------------- |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes an object from a bucket. |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket. |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting object | Deletes specified object from bucket. |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from bucket. |
 
 
-## Deleting a Single Object
+## Deleting One Object
 
 #### Feature description
 
@@ -30,23 +30,23 @@ public Guzzle\Service\Resource\Model deleteObject(array $args = array());
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is http by default
+        'schema' => 'https', // Protocol header, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 
 try {
     $result = $cosClient->deleteObject(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-        'Key' => 'exampleobject'
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Key' => 'exampleobject' // If there are multiple paths, write `folder/exampleobject`. Do not add `/` at the first level; otherwise, the deletion will fail.
     )); 
-    // Request succeeded
+    // Request successful
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -59,24 +59,24 @@ try {
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is http by default
+        'schema' => 'https', // Protocol header, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 
 try {
     $result = $cosClient->deleteObject(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-        'Key' => 'exampleobject',
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Key' => 'exampleobject', // If there are multiple paths, write `folder/exampleobject`. Do not add `/` at the first level; otherwise, the deletion will fail.
         'VersionId' => 'exampleVersionId' // Do not carry this parameter if versioning is not enabled for the bucket.
     )); 
-    // Request succeeded
+    // Request successful
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -90,8 +90,8 @@ try {
 | Parameter | Type | Description | Required |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
 | Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
-| Key | String | Object key is the unique identifier of an object in a bucket. For example, in the object’s access domain name <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the `Key` is `doc/pic.jpg`. | Yes |
-| VersionId | String | Version ID of the file to delete                                             | No       |
+| Key       | String | Object key, which is the unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes       |
+| VersionId | String | Version ID of the file to be deleted                                             | No       |
 
 ## Deleting Multiple Objects
 
@@ -113,28 +113,28 @@ public Guzzle\Service\Resource\Model deleteObjects(array $args = array());
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is http by default
+        'schema' => 'https', // Protocol header, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 
 try {
     $result = $cosClient->deleteObjects(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Objects' => array(
             array(
-                'Key' => 'exampleobject',
+                'Key' => 'exampleobject', // If there are multiple paths, write `folder/exampleobject`. Do not add `/` at the first level; otherwise, the deletion will fail.
             ),  
             // ... repeated
         ),  
     )); 
-    // Request succeeded
+    // Request successful
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -152,29 +152,29 @@ try {
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is http by default
+        'schema' => 'https', // Protocol header, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 
 try {
     $result = $cosClient->deleteObjects(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
         'Objects' => array(
             array(
-                'Key' => 'exampleobject',
+                'Key' => 'exampleobject', // If there are multiple paths, write `folder/exampleobject`. Do not add `/` at the first level; otherwise, the deletion will fail.
                 'VersionId' => 'string' // Do not carry this parameter if versioning is not enabled for the bucket.
             ),  
             // ... repeated
         ),  
     )); 
-    // Request succeeded
+    // Request successful
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -182,7 +182,7 @@ try {
 }
 ```
 
-## Deleting Objects with a Specified Prefix (Deleting a Folder)
+## Deleting Objects with Specified Prefix (Deleting Folder)
 
 #### Feature description
 
@@ -201,13 +201,13 @@ public Guzzle\Service\Resource\Model deleteObjects(array $args = array());
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is http by default
+        'schema' => 'https', // Protocol header, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
@@ -218,7 +218,7 @@ $isTruncated = true;
 while ( $isTruncated ) {
     try {
         $result = $cosClient->listObjects(
-            ['Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+            ['Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
             'Delimiter' => '',
             'EncodingType' => 'url',
             'Marker' => $nextMarker,
@@ -233,7 +233,7 @@ while ( $isTruncated ) {
             // Splice a download path as needed
             try {
                 $cosClient->deleteObject(array(
-                    'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-APPID`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                    'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
                     'Key' => $cos_file_path,
                 ));
                 echo ( $cos_file_path . "\n" );
@@ -253,10 +253,10 @@ while ( $isTruncated ) {
 | Parameter | Type | Description | Required |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
 | Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
-| Objects   | Array  | List of objects to delete                                                 | Yes       |
-| Object   | Array  | Objects to delete                                                 | Yes       |
-| Key | String | Object key is the unique identifier of an object in a bucket. For example, in the object’s access domain name <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the `Key` is `doc/pic.jpg`. | Yes |
-| VersionId | String | Version ID of the file to delete                                             | No       |
+| Objects   | Array  | List of objects to be deleted                                                 | Yes       |
+| Object   | Array  | Object to be deleted                                                 | Yes       |
+| Key       | String | Object key, which is the unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes       |
+| VersionId | String | Version ID of the file to be deleted                                             | No       |
 
 #### Sample response
 
@@ -289,7 +289,7 @@ Guzzle\Service\Resource\Model Object
 
 #### Response description
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter | Type | Description | Parent Node |
 | -------- | ------ | -------------------- | -------------- |
 | Deleted | Array | List of successfully deleted objects | None |
 | Errors   | Array  | List of objects that failed to be deleted | None |
