@@ -58,4 +58,4 @@ Parameters:
 
    v. **Advanced Configuration (Optional)**: Click ![](https://main.qcloudimg.com/raw/ad0958699f9a6b2f6a153205fb865a22.png) to enable auto scaling. The auto scaling policy will be triggered if the alarm condition is met.
 
-6. After following the instructions above, click **Complete**.
+4. After following the instructions above, click **Complete**.
