@@ -9,7 +9,7 @@
    pod 'CloudInfinite'
    ```
 
-2. 在 CloudInfinite 模块中构建出请求 TPG 格式图片的链接，然后与 [SDWebImage](https://cloud.tencent.com/document/product/460/47733) 配合使用，加载网络 TPG 图片。
+2. 在 CloudInfinite 模块中构建出请求 TPG 格式图片的链接，然后与 SDWebImage 配合使用，加载网络 TPG 图片。
     **Objective-C**
     ```
     // 实例化 CloudInfinite，用来构建请求图片请求连接；
@@ -25,8 +25,9 @@
     }];
     ```
 
-    **swift**
-    ```
+
+**swift**
+```
     // 实例化 CloudInfinite，用来构建请求图片请求连接；
     let cloudInfinite = CloudInfinite();
    
@@ -38,7 +39,7 @@
     cloudInfinite.request(withBaseUrl: "图片链接", transform: transform) { (request) in
         // request 构建成功的 CIImageLoadRequest 实例，
     }  
-    ```
+```
 
 ### 方式二：使用 TPG 模块加载 TPG 图片
 
