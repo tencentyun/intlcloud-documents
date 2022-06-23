@@ -69,9 +69,9 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | Callback command |
 | Operator_Account | String | UserID  of the operator who initiates the group creation request |
 | Owner_Account | String | UserID  of the owner of the group to be created through the request |
-| Type | String | The type of the group that generates group messages, such as Public. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#group-types). |
+| Type | String | The type of the group that generates group messages, such as Public. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#GroupType). |
 | Name | String | Name of the group to be created through the request |
-| CreatedNum | Integer | Number of groups of the same type already created by the user |
+| CreateGroupNum | Integer | Number of groups of the same type already created by the user |
 | MemberList | Array | Initial member list of the group to be created through the request |
 
 ### Response packet examples
