@@ -1,23 +1,24 @@
 ## Overview
 
-CDH (Cloudera’s distribution, including Apache Hadoop) is one of the most popular Hadoop distributions in the industry. This document describes how to use COSN, a flexible, cost-effective big-data solution, in a CDH environment to separate big data computing from storage.
+CDH (Cloudera's distribution, including Apache Hadoop) is one of the most popular Hadoop distributions in the industry. This document describes how to use the COSN storage service in a CDH environment to separate big data computing from storage.
 
->?In this document, COSN refers to Hadoop-COS, a file system built based on COSN.
+>? COSN refers to the Hadoop-COS file system.
+>
 
-The table below shows which big data modules are supported by COSN:
+Currently, the support for big data modules by COSN is as follows:
 
-| Module Name | Supported | Service Module to Restart |
+| Module | Supported | Service Module to Restart |
 | -------- | ----------------------- | -------------------------------------------- |
-| Yarn     | Yes                    | NodeManager                             |
-| Yarn     | Yes                    | NodeManager                             |
+| YARN     | Yes                    | NodeManager                             |
+| YARN     | Yes                    | NodeManager                             |
 | Hive     | Yes                    | HiveServer and HiveMetastore             |
 | Spark    | Yes                    | NodeManager                             |
 | Sqoop    | Yes                    |  NodeManager                             |
-| Presto   | Yes                    | HiveServer, HiveMetastore and Presto |
+| Presto   | Yes                    | HiveServer, HiveMetastore, and Presto |
 | Flink | Yes | None |
 | Impala | Yes | None |
 | EMR | Yes | None |
-| Self-built components  | Will be supported later | None |
+| Self-built component  |  To be supported in the future  |  No                                         |
 | HBase    | Not recommended                  | None                                           |
 
 
@@ -29,15 +30,14 @@ This example uses software versions as follows:
 - Hadoop 2.6.0
 
 
-## Usage
+## How to Use
 
-### Configuring the storage environment
+### Configuring storage environment
 
-1. Log in to Cloudera Manager.
-2. On the homepage, select **Configuration** > **Service-Wide**  > **Advanced** as shown below:
+1. Log in to the CDH management page.
+2. On the homepage, select **Configuration** > **Service-Wide** > **Advanced** as shown below:
    ![](https://main.qcloudimg.com/raw/ee096f8e123efd393e1c8a610dd06ff2.png)
-3. Specify your COSN settings in the configuration snippet “Cluster-wide Advanced Configuration Snippet (Safety Valve) for core-site.xml”.
-
+3. Specify your COSN settings in the configuration snippet `Cluster-wide Advanced Configuration Snippet(Safety Valve) for core-site.xml`.
 ```
 <property>
 <name>fs.cosn.userinfo.secretId</name>
@@ -60,43 +60,63 @@ This example uses software versions as follows:
 <value>ap-shanghai</value>
 </property>
 ```
-
-The following lists the required COSN settings (added to `core-site.xml`). For other COSN settings, see [Hadoop Tool](https://intl.cloud.tencent.com/document/product/436/6884).
-
-| COSN Parameter                     | Value                                 | Description                                                         |
-| ------------------------------- | ---------------------------------- | ------------------------------------------------------------ |
-| fs.cosn.userinfo.secretId       | AKxxxx                             | API the key information of your Tencent Cloud account                                      |
-| fs.cosn.userinfo.secretKey      | Wpxxxx                            | API key information of your Tencent Cloud account                                      |
-| fs.cosn.bucket.region           | ap-shanghai                        | The region where your COS bucket resides|
-| fs.cosn.impl | org.apache.hadoop.fs.CosFileSystem | COSN implementation class for FileSystem; fixed as `org.apache.hadoop.fs.CosFileSystem` |
-| fs.AbstractFileSystem.cosn.impl | org.apache.hadoop.fs.CosN          | COSN implementation class for AbstractFileSystem; fixed as org.apache.hadoop.fs.CosN |
-
+The following lists the required COSN settings (to be added to `core-site.xml`). For other settings, see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
+<table>
+<thead>
+<tr><th>COSN Configuration Item</th><th>Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>fs.cosn.userinfo.secretId</td>
+<td>AKxxxx</td>
+<td>API key information of the account</td>
+</tr>
+<tr>
+<td>fs.cosn.userinfo.secretKey</td>
+<td>Wpxxxx</td>
+<td>API key information of the account</td>
+</tr>
+<tr>
+<td>fs.cosn.bucket.region</td>
+<td>ap-shanghai</td>
+<td>Bucket region</td>
+</tr>
+<tr>
+<td>fs.cosn.impl</td>
+<td>org.apache.hadoop.fs.CosFileSystem</td>
+<td>The implementation class of COSN for FileSystem, which is fixed at `org.apache.hadoop.fs.CosFileSystem`</td>
+</tr>
+<tr>
+<td>fs.AbstractFileSystem.cosn.impl</td>
+<td>org.apache.hadoop.fs.CosN</td>
+<td>The implementation class of COSN for AbstractFileSystem, which is fixed at `org.apache.hadoop.fs.CosN`</td>
+</tr>
+</tbody>
+</table>
 4. Take action on your HDFS service by clicking. Now, the core-site.xml settings above will apply to servers in the cluster.
-5. Put the latest JAR file in the COSN SDK under the directory that stores all JAR files for CDH HDFS services. The example below is intended for reference purposes only:
-
+5. Place the latest SDK package of COSN in the path of the JAR package of the CDH HDFS service and replace the relevant information with the actual value as shown below:
 ```
 cp hadoop-cos-2.7.3-shaded.jar /opt/cloudera/parcels/CDH-5.16.1-1.cdh5.16.1.p0.3/lib/hadoop-hdfs/
 ```
+>! The SDK JAR file needs to be put in the same location on each server in the cluster.
+>
 
->!The SDK JAR file needs to be put in the same location on each server in the cluster.
-
-
-<span id=1>
+<span id=1></span>
 
 ### Data migration
 
 Use Hadoop Distcp to migrate your data from CDH HDFS to COSN. For details, see [Migrating Data Between HDFS and COS](https://intl.cloud.tencent.com/document/product/436/34076).
 
-### Using COSN for big data modules
+### Using COSN for big data suites
 
 #### 1. MapReduce
 
 **Directions**
 
-(1) Configure HDFS settings as instructed in [Data Migration](#1), and put the JAR file from the COSN SDK in the correct HDFS directory.
-(2) On the Cloudera Manager homepage, find YARN and restart the NodeManager service (recommended). You can choose not to restart it for the TeraGen command, but must restart it for the TeraSort command because of the internal business logic.
+(1) Configure HDFS settings as instructed in [Data migration](#1) and put the JAR file of the COSN SDK in the correct HDFS directory.
+(2) On the CDH homepage, find YARN and restart the NodeManager service (recommended). You can choose not to restart it for the TeraGen command, but must restart it for the TeraSort command because of the internal business logic.
 
-**Examples**
+**Sample**
 
 The example below shows TeraGen and TeraSort in Hadoop standard test:
 
@@ -114,10 +134,10 @@ hadoop jar ./hadoop-mapreduce-examples-2.7.3.jar terasort -Dmapred.max.split.siz
 
 **Directions**
 
-(1) Configure HDFS settings as instructed in [Data Migration](#1), and put the JAR file of COSN SDK in the correct HDFS directory.
-(2) On the Cloudera Manager homepage, find HIVE and restart the Hiveserver2 and HiverMetastore roles.
+(1) Configure HDFS settings as instructed in [Data migration](#1) and put the JAR file of the COSN SDK in the correct HDFS directory.
+(2) On the CDH homepage, find Hive and restart the HiveServer2 and HiveMetastore roles.
 
-**Examples**
+**Sample**
 
 To query your actual business data, use the Hive command line to create a location as a partitioned table on CHDFS:
 
@@ -159,7 +179,7 @@ TBLPROPERTIES (
   'transient_lastDdlTime'='1589310646')
 ```
 
-Perform SQL query:
+Perform a SQL query:
 
 ```
 select count(1) from report.report_o2o_pid_credit_detail_grant_daily;
@@ -177,18 +197,18 @@ You need to import the COSN JAR file as part of a Tez tar.gz file. The following
 (1) Locate and decompress the Tez tar.gz file installed in the CDH cluster, e.g., /usr/local/service/tez/tez-0.8.5.tar.gz.
 (2) Put the COSN JAR file in the resulting directory, and then compress it into a new tar.gz file.
 (3) Upload this new file to the path as specified by tez.lib.uris, or simply replace the existing file with the same name.
-(4) On the Cloudera Manager homepage, find HIVE and restart hiveserver and hivemetastore.
+(4) On the CDH homepage, find Hive and restart HiveServer and HiveMetaStore.
 
 #### 3. Spark
 
 **Directions**
 
-(1) Configure HDFS settings as instructed in [Data Migration](#1), and put the JAR file of COSN SDK in the correct HDFS directory.
+(1) Configure HDFS settings as instructed in [Data migration](#1) and put the JAR file of the COSN SDK in the correct HDFS directory.
 (2) Restart NodeManager.
 
-**Examples**
+**Sample**
 
-The following example runs the word count test on Spark examples using COSN:
+The following takes the `Spark example word count` test conducted with COSN as an example.
 
 ```
 spark-submit  --class org.apache.spark.examples.JavaWordCount --executor-memory 4g --executor-cores 4  ./spark-examples-1.6.0-cdh5.16.1-hadoop2.6.0-cdh5.16.1.jar cosn://examplebucket-1250000000/wordcount
@@ -202,15 +222,15 @@ The output is as shown below:
 
 **Directions**
 
-(1) Configure HDFS settings as instructed in [Data Migration](#1), and put the JAR file of COSN SDK in the correct HDFS directory.
+(1) Configure HDFS settings as instructed in [Data migration](#1) and put the JAR file of the COSN SDK in the correct HDFS directory.
 
-(2) Put the JAR file from the COSN SDK under the sqoop directory, for example, `/opt/cloudera/parcels/CDH-5.16.1-1.cdh5.16.1.p0.3/lib/sqoop/`.
+(2) Put the JAR file of the COSN SDK in the Sqoop directory, for example, `/opt/cloudera/parcels/CDH-5.16.1-1.cdh5.16.1.p0.3/lib/sqoop/`.
 
 (3) Restart NodeManager.
 
-**Examples**
+**Sample**
 
-For example, to export MYSQL tables to COSN, please refer to [Import/Export of Relational Database and HDFS](https://intl.cloud.tencent.com/document/product/1026/31157).
+For example, to export MySQL tables to COSN, refer to [Import/Export of Relational Database and HDFS](https://intl.cloud.tencent.com/document/product/1026/31157).
 
 ```
 sqoop import --connect "jdbc:mysql://IP:PORT/mysql" --table sqoop_test --username root --password 123**  --target-dir cosn://examplebucket-1250000000/sqoop_test
@@ -224,20 +244,20 @@ The output is as shown below:
 
 **Directions**
 
-(1) Configure HDFS settings as instructed in [Data Migration](#1), and put the JAR file of COSN SDK in the correct HDFS directory.
-(2) Put the JAR file from the COSN SDK under the presto directory, for example, `/usr/local/services/cos_presto/plugin/hive-hadoop2`.
-(3) Presto does not load the gson-2.*.*.jar JAR file (only used for CHDFS), from Hadoop Common, so you need to manually put it inTO the presto directory, for example, `/usr/local/services/cos_presto/ plugin/hive-hadoop2`.
+(1) Configure HDFS settings as instructed in [Data migration](#1) and put the JAR file of the COSN SDK in the correct HDFS directory.
+(2) Put the JAR file of the COSN SDK in the Presto directory, for example, `/usr/local/services/cos_presto/plugin/hive-hadoop2`.
+(3) Presto does not load the gson-2.*.*.jar JAR file (only used for CHDFS) from Hadoop Common, so you need to manually put it into the presto directory, for example, `/usr/local/services/cos_presto/ plugin/hive-hadoop2`.
 (4) Restart HiveServer, HiveMetaStore, and Presto.
 
-**Examples**
+**Sample**
 
-The example below queries the COSN scheme table as a HIVE-created Location:
+The example below queries the COSN scheme table as a Hive-created location:
 
 ```
 select * from cosn_test_table where bucket is not null limit 1;
 ```
 
->?`cosn_test_table` is a table with location as “cosn scheme”.
+>?`cosn_test_table` is a table with location as `cosn scheme`.
 
 The output is as shown below:
 ![](https://main.qcloudimg.com/raw/b83d2aaf490edebbe3d9cc936c5bcce3.png)

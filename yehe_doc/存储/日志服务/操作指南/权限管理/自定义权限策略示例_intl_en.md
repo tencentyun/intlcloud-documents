@@ -22,7 +22,7 @@ Users can collect data and upload logs using the LogListener agent. The example 
 >? If your LogListener version is earlier than v2.6.5, you need to add "cls:listLogset" to the above content.
 >
 
-### Uploading data using an API
+### Uploading data with API
 
 Users can upload logs to CLS using an API. The example below grants users the minimum access to uploading logs using an API.
 
@@ -412,7 +412,7 @@ Users can search for and analyze log topics with specific tags via APIs.
 
 
 
-### Analyzing logs using dashboards
+### Analyzing logs with dashboards
 
 #### Managing all dashboards
 
@@ -1273,11 +1273,11 @@ Authorization for all log topics
 }
 ```
 
-### Real-time consumption
+### Consumption over Kafka
 
-#### Consuming all log topics in real time
+#### Consuming all log topics over Kafka
 
-Users can consume all log topics in real time.
+Authorization for all log topics
 
 ```
 {
@@ -1290,15 +1290,15 @@ Users can consume all log topics in real time.
                 "cls:DescribeTopics"
             ],
             "resource": [
-                "*"
-            ]
-        },
+                "*"]
+     },
         {
             "effect": "allow",
             "action": [
-                "cls:DescribeKafkaConsume",
-                "cls:OpenKafkaConsume",
-                "cls:GetDeliverFunction",
+                "cls:DescribeKafkaConsumer",
+                "cls:CloseKafkaConsumer",
+                "cls:ModifyKafkaConsumer",
+                "cls:OpenKafkaConsumer",
                 "cam:ListAttachedRolePolicies"
             ],
             "resource": [
@@ -1309,9 +1309,9 @@ Users can consume all log topics in real time.
 }
 ```
 
-#### Consuming log topics with specific tags in real time
+#### Consuming log topics with specific tags over Kafka
 
-Users can manage the real-time consumption of log topics with specific tags.
+Authorization for log topics with a specified tag
 
 ```
 {
@@ -1329,7 +1329,7 @@ Users can manage the real-time consumption of log topics with specific tags.
             "condition": {
                 "for_any_value:string_equal": {
                     "qcs:resource_tag": [
-                        "group&group3"
+                        "key&value"
                     ]
                 }
             }
@@ -1337,9 +1337,10 @@ Users can manage the real-time consumption of log topics with specific tags.
         {
             "effect": "allow",
             "action": [
-                "cls:DescribeKafkaConsume",
-                "cls:OpenKafkaConsume",
-                "cls:GetDeliverFunction",
+                "cls:DescribeKafkaConsumer",
+                "cls:CloseKafkaConsumer",
+                "cls:ModifyKafkaConsumer",
+                "cls:OpenKafkaConsumer",
                 "cam:ListAttachedRolePolicies"
             ],
             "resource": [
@@ -1398,4 +1399,3 @@ Users can manage the real-time consumption of log topics with specific tags.
     ]
 }
 ```
-

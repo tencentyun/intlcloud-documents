@@ -1,6 +1,6 @@
 ## Feature Description
 
-Through this callback, the app backend can monitor users’ group creation requests in real time. The backend can reject users’ requests for creating groups.
+Through this callback, the app backend can view users’ group creation requests in real time. The backend can reject users’ requests for creating groups.
 
 ## Notes
 
