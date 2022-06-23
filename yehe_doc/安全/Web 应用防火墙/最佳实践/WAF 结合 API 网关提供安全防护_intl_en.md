@@ -1,34 +1,30 @@
-
-This document describes how to configure WAF to protect the security of APIs in API Gateway.
+This document describes how to configure WAF to protect APIs on API Gateway.
 
 ## Prerequisites
 
 - You have activated [WAF](https://buy.cloud.tencent.com/buy/waf).
-- You have published the API in API Gateway as instructed in [Getting Started](https://intl.cloud.tencent.com/document/product/628/34889).
+- You have published an API on API Gateway as instructed in [Step 1. Get the Access Permission](https://intl.cloud.tencent.com/document/product/628/34889).
 
 ## Directions
 
-### Step 1. Bind a custom domain name in the API Gateway Console
-
-Bind a custom domain name in the API Gateway Console as instructed in [Custom Domain Name and Certificate](https://intl.cloud.tencent.com/document/product/628/11791).
->!When you bind the custom domain name in API Gateway, the system will verify whether the domain name is resolved (through a CNAME record) to a subdomain name of the API Gateway service. Therefore, you should resolve the custom domain name (through a CNAME record) to a subdomain name of the service first, bind it, and then modify the CNAME record to point it to the CNAME domain name of WAF.
->
-<img src="https://main.qcloudimg.com/raw/fb4621332105ad78229c43d150c8fe91.png">
+### Step 1. Bind a custom domain name in the API Gateway console
+For more information about how to bind a custom domain name in the API Gateway console, see [Custom Domain Name and Certificate](https://intl.cloud.tencent.com/document/product/628/11791).
+>!When a custom domain name is bound to API Gateway, the system will check whether you have configured CNAME and resolved it to the service subdomain name. Therefore, you need to configure CNAME and resolve the custom domain name to the subdomain name of API Gateway, modify the DNS record, and point the custom domain name to the WAF CNAME domain name.
 
 
 
 ### Step 2. Configure WAF
-
-1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config).
-2. Select **Web Application Firewall** > **Protection Settings** on the left sidebar to enter the protection settings page.
-3. Click **Add Domain** above the domain name list to enter the domain name configuration page.
-4. On the "Domain Configuration" page, fill in the relevant fields based on the actual conditions. Here, select "Domain Name" as the real server address, enter the subdomain name of the API Gateway service, and click **Save**.
-5. After the configuration is completed, the domain name access status will become "CNAME record not configured".
-<img src="https://main.qcloudimg.com/raw/c0cc86b0eb8ae0d294a71a79b1265be6.png">
+1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-overview) and select **Domain name list** on the left sidebar.
+2. On the **Domain name list** page, select the target instance and click **Add domain name**.
+![](https://qcloudimg.tencent-cloud.cn/raw/aa42bfb1313bf6634e409d1dca0b1b1c.png)
+3. On the **Add domain name** page, configure relevant parameters and click **OK**.
+![](https://qcloudimg.tencent-cloud.cn/raw/cdca55316408bbf99fcb9ee63ca130a3.png)
+4. After the configuration is completed, the domain name connection status will become **No CNAME records added**.
+![](https://qcloudimg.tencent-cloud.cn/raw/15f5f6878c3359cb9b4bff48f8ec2226.png)
 
 
 ### Step 3. Modify the CNAME record
+1. Modify the CNAME record at your DNS service provider and resolve the custom domain name to the WAF domain name.
+2. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-overview), select **Domain name list**, and you see the **Normal protection** flag.
+![](https://qcloudimg.tencent-cloud.cn/raw/94b66dc5883894abadad27fda8265e0f.png)
 
-1. Modify the CNAME record at your DNS provider and point the custom domain name to the CNAME domain name of WAF.
-2. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config) and select **Web Application Firewall** > **Protection Settings** to enter the protection settings page.
-3. In the domain name list, click the refresh button next to the access status, and you can see that the access status becomes "Normal protection". At this point, the access configuration is completed.
