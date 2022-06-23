@@ -32,5 +32,5 @@
 1. 在 [实例管理页面](https://console.cloud.tencent.com/guanjia/tea-instance-new)，选择所需实例，单击**实例名**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/4a8e671819e0c30459c1f358e547aef2.png)
 2. 在实例详情页面中，可以对对应资源进行升级扩容。
-![](https://qcloudimg.tencent-cloud.cn/raw/7a01b2a28d0c9fa5513acf3a13c810c6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b408c3f160c75a4bf563d3513fac5eb.png)
 
