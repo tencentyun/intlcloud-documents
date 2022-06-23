@@ -24,7 +24,7 @@ Kafka v1.1.1 and earlier
 4. On the log topic management page, click the **Consumption over Kafka** tab.
 5. Click **Edit** on the right, set **Current Status** to **Enable**, and click **OK**.
 6. Construct the consumer according to the topic information given by CLS as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/e3b9925ff0542efb8470a74a7e76bf3d.png)
+
 
 
 ## Consumption of CLS Log by Flink
