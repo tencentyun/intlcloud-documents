@@ -61,7 +61,7 @@ You have created VPCs, subnets and CVMs in the Shanghai and Guangzhou regions. T
 ## Step 2. Associate Instances[](id:2)
 To associate a VPC in the Guangzhou region with CCN, perform the following steps.
 1. Log in to the [CCN console](https://console.cloud.tencent.com/vpc/ccn), and click the ID/Name of the target CCN instance to open its details page.
-2. Select the **Associated instances* tab, and click **Add an instance**. 
+2. Select the **Associated instances** tab, and click **Add an instance**. 
 3. In the **Associated instances** dialog box, choose to associate the VPC instance in the Guangzhou region.
 >?If you need to associate another network instance, click **Add**.
 >
@@ -84,7 +84,7 @@ For pay-as-you-go CCN instances billed by monthly 95 percentile, you can configu
 >- The default bandwidth cap is 1 Gbps. To increase the bandwidth, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
  1. Log in to the [CCN console](https://console.cloud.tencent.com/vpc/ccn), and click the ID/Name of the target CCN instance.
- 2. Select the **Bandwidth management* tab on the details page of the CCN instance.
+ 2. Select the **Bandwidth management** tab on the details page of the CCN instance.
  3. (Optional) Click **Change**, and select the bandwidth limit mode as needed.
  ![](https://main.qcloudimg.com/raw/b721393fb8cb95e9ebb14ee8c3db1536.png)
 > !Changing the bandwidth limit mode will delete existing configurations. The bandwidth cap will be set to 1 Gbps by default. To increase the bandwidth, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
