@@ -11,7 +11,7 @@
 
 ## 步骤一：创建云联网实例[](id:1)
 1. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn) 。
-2. 在云联网管理页面上方单击**+新建**。
+2. 在云联网管理页面上方单击 <b>+新建</b>。
 3. 在“新建云联网实例”对话框中配置以下信息，然后单击**确定**。
 ![](https://main.qcloudimg.com/raw/67e42dd8cb0f3c2d509e59bcfc24df0a.png)
  <table>
