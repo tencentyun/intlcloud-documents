@@ -134,6 +134,10 @@ Jenkins 是一款基于 Java 开发的开源项目，用于持续集成和持续
 - [CVE-2020-2249](https://nvd.nist.gov/vuln/detail/CVE-2020-2249)
 - [CVE-2020-2250](https://nvd.nist.gov/vuln/detail/CVE-2020-2250)
 - [CVE-2020-2251](https://nvd.nist.gov/vuln/detail/CVE-2020-2251)
+- [CloudBees Jenkins XSS 漏洞（CVE-2020-2246）](http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202009-036)  
+- [CloudBees Jenkins XSS 漏洞（CVE-2020-2243）](http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202009-035)  
+- [CloudBees Jenkins XXE 漏洞](http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202009-037) 
+
 
 
 

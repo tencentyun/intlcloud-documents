@@ -1,181 +1,106 @@
-## 2021-06
+## 2022-06
 <table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tbody><tr>
-<td>BOT 报表	</td>
-<td>用户如何更快速的发现当前网站面临的 BOT 风险，快速得知哪些接口正在遭受 BOT 风险，快速定位 BOT 关注资源，并能快速制定针对性的 BOT 对抗策略，保障网站业务安全。 </td>
-<td>2021-6-04</td>
-<td>-</a></td></tr>
-<tr>
-<td>情报中心	</td>
-<td>让客户快速了解最新的威胁情报。</td>
-<td>2021-6-04</td>
-<td>-</td></tr>
-</tbody></table>
-
-
-## 2021-04
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tbody><tr>
-<td>前端对抗发布	</td>
-<td>BOT 能力增强，新增前端对抗，通过客户端动态安全验证技术，对业务请求的每个客户端生成唯一 ID，检测客户端对 Web 或 H5 页面访问中可能存在机器人和恶意爬虫行为，保护网站业务安全。</td>
-<td>2021-4-24</td>
-<td>-</td></tr>
-<tr>
-<td>IPv6 支持	</td>
-<td>SAASWAF 和 CLBWAF 均支持 IPv6 接入，提供和 IPv4 同等的防护能力。</td>
-<td>2021-4-24</td>
-<td>-</td></tr>
-</tbody></table>
-
-## 2021-03
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tbody><tr>
-<td>多实例支持</td>
-<td>满足有多个账号，多套 WAF 的统一管控需求，特别适合重保场景，减轻安全运营团队来回切换的成本，提升运营效率。</td>
-<td>2021-3-24</td>
-<td>-</td></tr>
-<tr>
-<td>CC 功能增强</td>
-<td>在 IP + URL 和 session + URL 组合频率的基础上，支持更多的条件，满足客户精细化频率控制要求，提升 CC 防御频率效率。</td>
-<td>2021-3-24</td>
-<td>-</td></tr>
-</tbody></table>
-
-## 2021-02
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tbody><tr>
-<td>防泄漏功能增强</td>
-<td>新增支持自定义关键字（支持正则）过滤、动作处理支持敏感信息部分替换或者全部替换。新增对网站返回的状态码，进行阻断或者告警处理，满足合规要求。</td>
-<td>2021-2-24</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/627/14582">防信息泄露</a></td></tr>
-</tbody></table>
-
-## 2021-01
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
+<tr><th width=15%>动态名称</th><th width=48%>动态描述</th><th width=15>发布时间</th><th width=20%>相关文档</th></tr>
 <tbody>
 <tr>
-<td>信誉防护策略</td>
-<td>新增信誉防护策略，启用后 WAF 将对代理、扫描器、恶意情报 IP 等恶意访问请求进行防护。</td>
-<td>2021-1-18</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/627/41735">IP 封禁管理</a></td></tr>
+<td>体验升级</td>
+<td>
+优化非中国大陆Web应用防火墙实例数据存储，支持不同地区资源数据隔离查看，提升用户操作和管理体验。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
 <tr>
-<td>攻击 IP 惩罚</td>
-<td>自动阻断在短时间内发起多次 Web 攻击（规则引擎触发）的客户端 IP，阻止所有请求一段时间，阻断日志可以在攻击日志中查看。</td>
-<td>2021-1-18</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/627/41735">IP 封禁管理</a></td></tr>
+<td>操作日志</td>
+<td>
+支持控制台内查看云审计内的Web应用防火墙的操作日志，支持用户操作查询和溯源。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>实例列表</td>
+<td>
+支持用户购买多版本或者升级跨版本 Web 应用防火墙实例，满足用户根据自身业务需求选择不同版本的实例防护需求。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>接入模式</td>
+<td>
+回源模式，支持用户自定义配置多 IP 加权轮询权限，满足复杂业务SAAS化接入的负载均衡需求。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>IP 封禁能力增强</td>
+<td>
+支持基于域名的IP封禁能力，防护更精细
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>区域封禁</td>
+<td>
+支持用户一键配置区域封禁功能，提升访问控制配置体验。</li>
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>一键开关防护</td>
+<td>支持一键开启和关闭全部防护模块，以及部分防护功能模块的防护能力，助力用户快速处置日常运维过程中的业务问题排查，虽缩短定位周期，保障业务连续性。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>精细化流量管理</td>
+<td>升级 IP 黑白名单为黑白名单管理，将原来自定义策略中处置动作为“放行”的规则升级为精准白名单规则，其他自定义策略规则升级为访问控制规则。规则本身的配置和执行效果不受升级影响。
+通过精准白名单，支持用户日常安全运维的精细化流量管理，提升用户业务流量管控效率和效果，保证用户业务的安全性。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>日志服务</td>
+<td>用户升级购买日志服务增值服务后，支持自主开启实时存储全量访问日志存储和查询。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>自定义流量标记</td>
+<td>支持用户自定义流量标记能力，满足复杂的用户业务分析和联动防护诉求。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+    <tr>
+<td>域名接入向导支持</td>
+<td>新增域名接入配置向导，完善域名添加后续步骤引导，贴心守护接入过程，业务接入更轻松。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+    <tr>
+<td>BOT 防护全面防护</td>
+<td>BOT 防护全面升级，支持前端对抗、威胁情报、以及智能 AI 评估能力，通过综合打分精准识别 BOT 流量，增加可视化流量分析功能。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
+    <tr>
+<td>BOT 报表</td>
+<td>快速的发现当前网站面临的 BOT 风险，快速得知哪些接口正在遭受 BOT 风险，快速定位 BOT 关注资源，并能快速制定针对性的 BOT 对抗策略，保障网站业务安全。
+</td>
+<td>2022-06-03</td>
+<td>-</td>
+</tr>
 </tbody></table>
-
-## 2020-12
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr>
-<td>业务安全解决方案</td>
-<td>联合天御推出 WAF 业务安全方案，通过账号信息提取及风险评估，对注册保护、登录保护及活动防刷等场景进行精准防护。</td>
-<td>2020-12-17</td>
-<td>-</td></tr>
-<tr>
-<td>API 安全</td>
-<td>支持全新 API 安全解决方案，您添加 API 接口或上传 API 描述文件到 WAF，将对 API 进行安全保护。</td>
-<td>2020-12-17</td>
-<td>-</td></tr>
-</table>
-
-## 2020-11
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tbody><tr>
-<td>弹性计费</td>
-<td>支持为 WAF 实例开通弹性后计费，对超出 WAF 套餐规格的 QPS 进行正常防护。</td>
-<td>2020-11-17</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/627/11730">弹性计费</a></td></tr>
-<tr>
-<td>全新规则管理</td>
-<td>支持全新规则，支持规则开通，基于 URL 的规则白名单进行设置。</td>
-<td>2020-11-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/627/39018">规则引擎</a></td></tr>
-</tbody></table>
-
-## 2020-10
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>独享版本发布</td><td>推出资源独享版本，满足大客户特殊定制化 Web 和 API 服务安全防护。</td><td>2020-10-27</td><td><a href="https://intl.cloud.tencent.com/document/product/627/11730" >计费概述</a></td></tr>
-<tr><td>全新攻击日志检索</td><td>基于日志服务提供全新攻击日志检索能力。</td><td>2020-10-27</td><td>-</td></tr>
-</table>
-
-## 2020-09
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>WAF 接入支持自动检查</td><td>自动检查域名接入状态，对源站、集群及证书等进行高可用保障，自动处理域名故障，优化客户体验。</td><td>2020-09-12</td><td>-</td></tr>
-</table>
-
-## 2020-07
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>CLB WAF 支持海外地区</td><td>CLB WAF 各地域清洗模式上线，支持亚洲及欧洲等地区，支持 IPv6 防护。</td><td>2020-07-28</td><td><a href="https://intl.cloud.tencent.com/document/product/627/38085" >支持地域</a></td></tr>
-<tr><td>日志支持百万级下线</td><td>攻击日志能力升级，支持百万级日志下载。</td><td>2020-07-28</td><td>-</td></tr>
-</table>
-
-## 2020-06
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>规则引擎优化</td><td>引入全新旁路规则检测引擎，Web 入侵检测能力全面提升，全区域开放。</td><td>2020-06-17</td><td>-</td></tr>
-<tr><td>SCDN 产品方案发布</td><td>联合 CDN 发布 SCDN 产品方案，部分 CDN 节点具备 WAF 安全能力。</td><td>2020-06-04</td><td>-</td></tr>
-</table>
-
-## 2020-05
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>云监控功能上线</td><td>WAF 接入云监控，可通过云监控配置支持 QPS、Web 攻击、CC 攻击和 WAF 状态码告警（4xx、5xx）。</td><td>2020-05-17</td><td>-</td></tr>
-<tr><td>API3.0 发布</td><td>发布 API3.0，WAF 所有功能均可通过 API 进行操作和使用，如有需要，请 <a href="https://intl.cloud.tencent.com/contact-us" >联系我们</a> 进行支持。</td><td>2020-05-11</td><td>-</td></tr>
-</table>
-
-## 2020-04
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>AI 引擎优化</td><td>AI 引擎性能和算法全面提升，支持全新旁路检测架构。</td><td>2020-04-27</td><td><a href="https://intl.cloud.tencent.com/document/product/627/35645" >AI 引擎</a></td></tr>
-</table>
-
-## 2020-03
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>攻击概览优化</td><td>攻击概览支持 TOP Web 攻击和 CC 攻击域名排序。</td><td>2020-03-15</td><td>-</td></tr>
-<tr><td>访问日志优化</td><td>支持访问日志使用量统计和访问总数统计。</td><td>2020-03-15</td><td><a href="https://intl.cloud.tencent.com/document/product/627/35648" >访问日志</a></td></td></tr>
-</table>
-
-## 2020-01
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>发布 CLBWAF 全新产品方案</td><td><ul><li>通过和腾讯云负载均衡集群进行联动，实现转发和安全防护分离，WAF 对经过负载均衡的 HTTP 和 HTTPS 进行旁路检测和威胁状态同步，实现网站安全防护。</li>
-<li>支持南京清洗模式，支持广州、北京、上海镜像模式，灰度开放。</li></ul></td><td>2020-01-15</td><td><a href="https://intl.cloud.tencent.com/document/product/627/34719" >负载均衡型 WAF</a></td></tr>
-</table>
-
-## 2019-12
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>Webshell 检测开放</td><td>新增独立 Webshell 检测引擎。</td><td>2019-12-22</td><td>-</td></tr>
-<tr><td>BOT2.0 发布</td><td><ul><li>优化 BOT 概览和详情，展示更加合理、内容丰富，搜索更易于使用，BOT 记录信息更完整，可读性更强。</li><li>增强 BOT 检测能力和防护策略，新增协议特征、IP 情报特征和自定义会话特征等多种检测维度，更有利于恶意 BOT 识别和对抗。</li><li>优化 BOT 策略动作处理，动作实时生效，不再依赖 WAF 自定义策略，支持设置策略动作生效时间，新增人机识别、重定向动作处理。</li></ul></td><td>2019-12-09</td><td><a href="https://intl.cloud.tencent.com/document/product/627/15340" >BOT 概览</a></td></tr>
-</table>
-
-## 2019-09
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>支持新购 QPS 包和日志服务包</td><td>用户可以根据需要购买安全日志服务包和 QPS 扩展包，满足业务扩容需求。</td><td>2019-09-18</td><td><a href="https://intl.cloud.tencent.com/document/product/627/11730" >购买指南</a></td></tr>
-<tr><td>支持非标端口</td><td>新增企业版和旗舰版非标端口，旗舰版支持非标端口定制。</td><td>2019-09-18</td><td>-</td></tr>
-</table>
-
-## 2019-08
-<table>
-<tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
-<tr><td>日志服务</td><td>WAF 支持记录和存储网站访问日志6个月，最近30天访问日志查询和下载，满足等保合规要求。</td><td>2019-08-09</td><td><a href="https://intl.cloud.tencent.com/document/product/627/35648" >访问日志</a></td></tr>
-<tr><td>智能CC防护</td><td>结合网站历史数据，用户异常访问行为和源站负载情况生成自动防御策略，防护 CC 攻击。</td><td>2019-08-09</td><td><a href="https://intl.cloud.tencent.com/document/product/627/11709" >CC 防护设置2.0</a></td></tr>
-<tr><td>地域封禁增强</td><td>WAF 支持对境外219个国家和地区选择进行地域封禁。</td><td>2019-08-09</td><td><a href="https://intl.cloud.tencent.com/document/product/627/14704" >地域封禁</a></td></tr>
-<tr><td>新增自定义拦截页面定制</td><td>用户可以自定义 WAF 拦截返回页面，如有需要，请 <a href="https://intl.cloud.tencent.com/contact-us" >联系我们</a> 进行支持。</td><td>2019-08-09</td><td>-</td></tr>
-</table>
 
 
 

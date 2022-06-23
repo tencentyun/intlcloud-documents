@@ -1,4 +1,4 @@
-On September 11, 2020, Tencent Security detected an SQL injection vulnerability in Yonyou GRP-U8 internal control and management software for government affairs. Attackers can use a carefully constructed payload to perform SQL injection attacks in order to get sensitive database information.
+On September 11, 2020, Tencent Security noticed a SQL injection vulnerability in Yonyou GRP-U8 internal control and management software for government affairs. Attackers can use a carefully constructed payload to perform SQL injection attacks in order to get sensitive database information.
 
 Exploitations in the wild (ITW) have been detected, and Tencent Cloud WAF supports defense against them. 
 
