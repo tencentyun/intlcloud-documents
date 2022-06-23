@@ -12,7 +12,7 @@ Verify that CNAME configuration for your website domain name is correct. Once yo
 
 ### Will WAF notify me when the intermediate IP address of my domain name is changed?
 In principle, the intermediate IP address of your domain name is not changed. If it happens, we will notify you by SMS, email or Message Center. You can view your intermediate IP address in the [Domain Name List](https://console.cloud.tencent.com/guanjia/tea-domain) of the console.
-![](https://main.qcloudimg.com/raw/d0d8ce06b25775d61cfada695a016135.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3d54e9333cfb490dfc1fd00bb13b5678.png)
 
 ### What are the requirements for connecting a domain name to WAF?
 The business content on your real server must be legal, and you can modify the DNS resolution properly. Otherwise, you will not be able to connect your domain name to WAF.
@@ -27,7 +27,7 @@ See [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/31
 
 ### Will the CNAME change if my domain name is deleted and added again?
 After you delete a domain name from an instance, if you add it to the same instance, the CNAME record won't change; if you add it to another instance, the CNAME record will change. You can view the specific value in the instance information in the [domain name list in the WAF console](https://console.cloud.tencent.com/guanjia/tea-domain).
-![](https://main.qcloudimg.com/raw/dde2826c8364d1a8eb580466782471fc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3980167f3b2673a18128ea6b3cc7dce1.png)
 
 ### Can I change the VIP address of my domain name?
 No, you can't change it, in principle. However, if an exception occurs to your WAF service, you may contact us quickly by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) so that we can switch it to another working VIP address for you.
