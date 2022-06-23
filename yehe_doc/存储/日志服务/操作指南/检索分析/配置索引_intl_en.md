@@ -293,7 +293,7 @@ Table format:
 
 The console provides the JSON formatting feature to display string-type JSON fields in a hierarchical manner, but this feature is only a display effect on the console, and the actual fields are still strings, as shown in the **API-based log search and analysis effect** section below.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6d810627af2dc7d8355c07839b51e618.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fe0adbcd03a4c7139d2772167ea476be.png)
 
 
 **API-based log search and analysis effect**
