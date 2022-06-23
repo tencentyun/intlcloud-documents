@@ -65,7 +65,7 @@ The display of file content at websites is subject to browser rules. The file pr
 
 ### Through COS console
 
-You can use the data workflow service in the COS console. For more information, see the documentation for workflow and task configuration.
+You can use the data workflow service in the COS console. For more information, see the documentation for [workflow](https://intl.cloud.tencent.com/document/product/436/46408)  and [task configuration](https://intl.cloud.tencent.com/document/product/436/46409).
 
 ### Through RESTful APIs
 
