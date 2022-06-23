@@ -9,7 +9,7 @@
    pod 'CloudInfinite'
    ```
 
-2. 在 CloudInfinite 模块中构建出请求 TPG 格式图片的链接，然后与 SDWebImage 配合使用，加载网络 TPG 图片。
+2. 在 CloudInfinite 模块中构建出请求 TPG 格式图片的链接，然后与SDWebImage 配合使用，加载网络 TPG 图片。
     **Objective-C**
     ```
     // 实例化 CloudInfinite，用来构建请求图片请求连接；
@@ -24,7 +24,6 @@
         // request 构建成功的 CIImageLoadRequest 实例，
     }];
     ```
-
 
 **swift**
 ```
