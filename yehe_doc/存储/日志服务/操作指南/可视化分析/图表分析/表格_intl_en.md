@@ -8,7 +8,7 @@ A table is the most common type of data display, where data is organized for com
 | -------- | ------------------------------------------------------------ |
 | Basic information | Chart name: Set the display name of the table, which can be left empty.                                 |
 | Table     | Alignment: Set the alignment mode of table content in the cells. By default, metric-type fields are aligned to the right, and dimension-type fields are aligned to the left. |
-| Standard configuration | Set the unit of all metric-type fields in the chart. For more information, see [Unit Configuration](https://cloud.tencent.com/document/product/614/74036).     |
+| Standard configuration | Set the unit of all metric-type fields in the chart. For more information, see [Unit Configuration](https://intl.cloud.tencent.com/document/product/614/47788).     |
 
 
 ## Chart Operations
