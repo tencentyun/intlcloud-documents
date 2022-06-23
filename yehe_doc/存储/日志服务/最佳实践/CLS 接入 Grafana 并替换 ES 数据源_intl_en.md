@@ -63,10 +63,10 @@ By combining the above statements, you can meet the needs in most search and ana
 
 In the dashboard of the ES data source, there is an example with complicated configuration items but a wide applicability, that is, to draw a chart of numbers of requests distributed in different time ranges.
 In this example, the numbers of requests with an API call time of 0–500 ms, 500 ms–2s, 2–5s, and above 5s are presented respectively. 
-![](https://qcloudimg.tencent-cloud.cn/raw/812d49cd464e5547d676a7c5d514db1f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7392ca4ebc44c8e12275b42ac5c7ffb9.png)
 
 Accordingly, after migrating the data source to CLS, you can also use multiple statements to draw a similar chart. However, CLS has more powerful SQL capabilities, so you can merge relevant statistics collection statements into one SQL statement:
-![](https://qcloudimg.tencent-cloud.cn/raw/12ad84a5f987bb39ba0290c02e476fc7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e017c6908fcd844a8d352a03672cd69a.png)
 ```
 urlPath:$path AND region:$region AND action:$action AND returnCode:$returnCode | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time ,count_if(timeCost<=200) as "0~500ms" ,count_if(500<timeCost and timeCost <=2000) as "500ms~2s" ,count_if(2000<timeCost and timeCost <=5000) as "2s~5s" ,count_if(5000<timeCost) as "Above 5s" group by analytic_time order by analytic_time limit 1000
 ```
@@ -99,7 +99,7 @@ Query the log topic list:
 
 In the original implementation, if you store all data in the same ES instance, after CLS is used, you may want to merge the content of those log tops into the same chart.
 For three statements querying logs from different regions:
-![](https://qcloudimg.tencent-cloud.cn/raw/24f4fd24100205ec493051d9e2915069.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5dcd071c5d9db8d7eb5fadd32ea2327e.png)
 You can calculate the total numbers in the **Transform** module and select an appropriate chart to display them. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/7cf8c5f0ed99441d228e68ac891b3aec.png)
 
