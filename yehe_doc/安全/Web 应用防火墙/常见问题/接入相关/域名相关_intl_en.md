@@ -27,7 +27,7 @@ See [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/31
 
 ### Will the CNAME change if my domain name is deleted and added again?
 After you delete a domain name from an instance, if you add it to the same instance, the CNAME record won't change; if you add it to another instance, the CNAME record will change. You can view the specific value in the instance information in the [domain name list in the WAF console](https://console.cloud.tencent.com/guanjia/tea-domain).
-![](https://qcloudimg.tencent-cloud.cn/raw/3980167f3b2673a18128ea6b3cc7dce1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/776ae20e26e6bffc200649ba9cfb518f.png)
 
 ### Can I change the VIP address of my domain name?
 No, you can't change it, in principle. However, if an exception occurs to your WAF service, you may contact us quickly by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) so that we can switch it to another working VIP address for you.
