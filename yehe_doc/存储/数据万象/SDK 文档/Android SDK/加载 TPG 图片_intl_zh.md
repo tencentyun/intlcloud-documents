@@ -25,7 +25,7 @@ defaultConfig {
 ```
 implementation 'com.qcloud.cos:cloud-infinite:1.2.1'    
 ```
-2. 在 cloud-infinite SDK 中构建出请求 TPG 格式图片的链接，然后与 [Glide 加载图片](https://cloud.tencent.com/document/product/460/47738)  配合使用，加载网络 TPG 图片。
+2. 在 cloud-infinite SDK 中构建出请求 TPG 格式图片的链接，然后与 Glide 加载图片  配合使用，加载网络 TPG 图片。
 ```
 // 实例化 CloudInfinite，用来构建请求图片请求连接；
 CloudInfinite cloudInfinite = new CloudInfinite();
