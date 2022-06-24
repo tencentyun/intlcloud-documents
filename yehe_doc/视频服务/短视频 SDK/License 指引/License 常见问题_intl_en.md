@@ -4,7 +4,7 @@ The UGSV SDK is available in Lite edition and Basic edition. Starting from v4.5,
 
 Starting from v4.9, you can select whether to package the license into your project. When using the license, you need to call `setLicenceURL:` and `key:` to set the license URL and key.
 
->! Automatic license renewal is supported only since v4.9. It’s not supported in v4.5-4.7. You cannot use new licenses for versions earlier than v4.9, but you can use legacy licenses for v4.9. Note that you cannot pass in `null` as the URL or key. Set them to random values.
+>! Automatic license renewal is supported only since v4.9 and not in v4.5-4.7. You can use legacy licenses for v4.9 (pass in a random non-null string for `url` and `key`), but you cannot use new licenses for versions before v4.9.
 
 [](id:que1)
 
@@ -13,7 +13,7 @@ Starting from v4.9, you can select whether to package the license into your proj
 A free trial license is valid for 14 days and can be renewed once, making the total trial duration 28 days. After your trial license expires, please purchase a license. To learn more, submit a ticket or [contact sales](https://intl.cloud.tencent.com/contact-us).
 
 >! If you renew a trial license within the first 14 days, the license will expire 28 days after the time of license application; if you renew a trial license that has expired once, the renewed license will expire 14 days after renewal.
->- For example, if you apply for a trial license at 10:28:41 on August 12, 2021, it will expire 14 days later at 10:28:41 on August 26, 2021.
+> - For example, if you apply for a trial license at 10:28:41 on August 12, 2021, it will expire 14 days later at 10:28:41 on August 26, 2021.
 >- You can renew the trial license once for free. If you renew it within the first 14 days, it will expire at 10:28:41 on September 9, 2021; if you renew it after the first 14 days, for example, at 22:26:20 on August 30, 2021, it will expire at 22:26:20 on September 13, 2021.
 
 
@@ -36,7 +36,7 @@ When binding a license, make sure you enter the same bundle ID or package name a
 [](id:que6)
 ### What should I do if the “license not exist” error occurs when I renew my license?
 Go to the [UGSV SDK License](https://console.cloud.tencent.com/vod/license/video) page of the VOD console.
-1. Check whether you are renewing your license as the **Admin**.
+1. Make sure that you are renewing your license as the **Admin**.
 2. If not, contact the **Admin** to renew the license for you.
 
 [](id:que7)
@@ -60,13 +60,11 @@ Yes, you can. A bundle ID is for an iOS project and a package name for an Androi
 
 
 [](id:que11)
-
 ### Can a UGSV SDK license purchased by a personal account be used by a business account?
 A license can only be used by the account that purchased it, regardless of whether the account is verified as an individual or corporate entity.
 
 
 
 [](id:que13)
-
 ### Why can’t I receive notifications about license expiration?
 Go to [Message Subscription](https://console.cloud.tencent.com/message/subscription) and subscribe to RT-Cube notifications. You can specify how to receive the notifications (for example, via **Message Center**, **Email**, or **SMS**). The system will send you notifications 30 days, 15 days, 7 days, and 1 day before your UGSV license expires.

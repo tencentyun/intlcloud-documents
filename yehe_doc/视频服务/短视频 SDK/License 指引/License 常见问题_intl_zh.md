@@ -60,7 +60,6 @@ bundleid 类似于 Android 端的 package name，若您不集成 iOS 端，可�
 
 
 [](id:que11)
-
 ### 个人购买的短视频 SDK License 可以用于企业吗？
 短视频 SDK 暂仅支持购买所在账号进行使用，暂无个人实名认证以及企业实名认证的限制。
 
