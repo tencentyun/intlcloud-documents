@@ -2,7 +2,7 @@ Bot flow statistics is a module provided in bot behavior management. This featur
 
 ## Prerequisites
 
-You have purchased a WAF plan and subscribed to [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47409#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E). Meanwhile, you have added a domain name to WAF.
+You have purchased a WAF plan and subscribed to [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E). Meanwhile, you have added a domain name to WAF.
 
 ## Protection Configuration
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration Center** > **Bot and Application Security** on the left sidebar.
