@@ -1,4 +1,4 @@
-Currently, WAF is available as **SaaS WAF** and **CLB WAF** instances with **different plans**. For more information, see [Basic Plan Specification Description](https://intl.cloud.tencent.com/document/product/627/47796). You can select a WAF instance and plan according to your business needed. WAF supports only the monthly subscription (prepaid) but not pay-as-you-go billing mode.
+Currently, WAF is available as **SaaS WAF** and **CLB WAF** instances with **different plans**. For more information, see [Basic Plan Specification Description](https://intl.cloud.tencent.com/document/product/627/47799). You can select a WAF instance and plan according to your business needed. WAF supports only the monthly subscription (prepaid) but not pay-as-you-go billing mode.
 
 WAF supports only the monthly subscription (prepaid) but not pay-as-you-go billing mode.
 
