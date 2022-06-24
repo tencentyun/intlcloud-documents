@@ -81,7 +81,7 @@ Configure the **Source Database Settings** and **Target Database Settings** and 
 <td>Set a meaningful name for easy task identification.</td></tr>
 <tr>
 <td>Running Mode</td>
-<td>You can set **Immediate execution** or **Scheduled execution**.<ul><li>If a scheduled task is modified and passes verification, you need to click <b>Scheduled start</b> again to make the task start at the scheduled time.</li><li>If the specified time has passed, the task will be started immediately. You can also click <b>Immediate start</b> to start the task immediately.
+<td>You can set <b>Immediate execution</b> or <b>Scheduled execution</b>.<ul><li>If a scheduled task is modified and passes verification, you need to click <b>Scheduled start</b> again to make the task start at the scheduled time.</li><li>If the specified time has passed, the task will be started immediately. You can also click <b>Immediate start</b> to start the task immediately.
 </li></ul></td></tr>
 <tr>
 <td>Tag</td>
@@ -92,7 +92,7 @@ Configure the **Source Database Settings** and **Target Database Settings** and 
 <tr>
 <td>Region</td><td>The region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions.<br>In this scenario, select **Direct Connect** or **VPN Access**. You need to <a href="https://intl.cloud.tencent.com/document/product/571/42651">configure VPN-IDC interconnection</a> in this scenario. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<td>Access Type</td><td>For a third-party cloud database, you can select <b>Public Network</b> generally or select <b>VPN Access</b>, <b>Direct Connect</b>, or <b>CCN</b> based on your actual network conditions.<br>In this scenario, select <b>Direct Connect</b> or <b>VPN Access</b> You need to <a href="https://intl.cloud.tencent.com/document/product/571/42651">configure VPN-IDC interconnection</a> in this scenario. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
 <ul><li>Public Network: The source database can be accessed through a public IP.</li>
 <li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
 <li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
@@ -104,7 +104,7 @@ Configure the **Source Database Settings** and **Target Database Settings** and 
 <tr>
 <td>VPC</td><td>Select a VPC and subnet associated with the VPC-based Direct Connect gateway.</td></tr>
 <tr>
-<td>Node Type</td><td>**Single-Node Migration** and **Cluster Migration** are supported. **Cluster Migration** is used as an example here.<br>Currently, there are no limits on the number of shards and replicas in migration from Cluster Edition Redis to Cluster Edition Redis.</td></tr>
+<td>Node Type</td><td><b>Single-Node Migration</b> and <b>Cluster Migration</b> are supported. <b>Cluster Migration</b> is used as an example here.<br>Currently, there are no limits on the number of shards and replicas in migration from Cluster Edition Redis to Cluster Edition Redis.</td></tr>
 <tr>
 <td>Node Info</td><td>Enter the addresses and passwords (IP:port:password or IP:port) of all shards of the source database cluster and separate the information of different nodes with line breaks.<br>We strongly recommend you migrate data from a replica node of the source database to avoid any impact on business access to the source database.</td></tr>
 <tr>
@@ -113,7 +113,7 @@ Configure the **Source Database Settings** and **Target Database Settings** and 
 <tr>
 <td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
 <tr>
-<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Database**.</td></tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select <b>Database</b>.</td></tr>
 <tr>
 <td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
 </tbody></table>
