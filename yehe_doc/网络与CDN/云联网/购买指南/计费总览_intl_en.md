@@ -98,5 +98,5 @@ For example, if you have 10 Mbps of bandwidth between Beijing and Shanghai regio
 Suppose your CCN (service level: gold) was associated with network instances in Guangzhou, Beijing, and Shanghai regions in June 2019. The bandwidth usage is as follows:
 - Cost of interconnection between Guangzhou and Beijing regions = 95th percentile of the monthly peak bandwidth value (120 Mbps) × Proportion of valid days (14/30) × Tiered unit price (13 USD/Mbps/month) = 728 USD.
 - Cost of interconnection between Beijing and Shanghai regions = 3,220 USD. The calculation method is the same as above.
-The final total cost is 728 USD + 3,220 USD = 7,980 USD, which will be charged between 8 and 10 AM on July 1, 2019.
-![](https://main.qcloudimg.com/raw/54a39a780e8df80ae9f4780715234c62.png)
+The final total cost is 728 USD + 518 USD = 1246 USD, which will be charged between 8 and 10 AM on July 1, 2019.
+![]()

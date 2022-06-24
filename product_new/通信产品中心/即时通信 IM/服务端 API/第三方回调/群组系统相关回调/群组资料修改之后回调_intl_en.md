@@ -1,5 +1,5 @@
 ## Feature Description
-The app backend uses this callback to monitor changes to group information (including the group name, group introduction, group notification and profile photo) in real time, including recording the changes of group information in real time (for example, recording a log or synchronizing the changes to other systems).
+The app backend uses this callback to view changes to group information (including the group name, group introduction, group notification and profile photo) in real time, including recording the changes of group information in real time (for example, recording a log or synchronizing the changes to other systems).
 
 ## Precautions
 

@@ -2,7 +2,7 @@
 
 在日志服务（Cloud Log Service，CLS）使用场景里，从其他日志工具迁移到 CLS 是非常常见的情况。其中，存在用户使用 Grafana 做可视化监控工具，例如 ES + Grafana 的组合。当数据源迁移到 CLS 后，用户依托 Grafana 制作的各种仪表盘资源，搭建的运维工具和平台就都失去了作用。为了避免重建这套体系，需要 CLS 对接 Grafana，替换 ES 数据源。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/63698c622e1a382f685777d67334e3c6.png" style="width: 35%"/>
+
 
 ## 安装 CLS-Grafana 插件
 
@@ -63,16 +63,16 @@ ES 数据源中，GroupBy 聚合选项允许填写 Size 值，支持选中出现
 
 在 ES 数据源仪表盘中，有一个配置项繁多，但场景适用广的例子：根据不同的时间范围，绘制在这个时间范围的请求数量。
 这个案例，统计了接口在0到500ms，500ms到2s，2s到5s，以及大于5秒的请求个数。 
-![](https://qcloudimg.tencent-cloud.cn/raw/812d49cd464e5547d676a7c5d514db1f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7392ca4ebc44c8e12275b42ac5c7ffb9.png)
 
 对应的，迁移到 CLS 数据源，也可以使用类似的多条语句进行绘制。但 CLS 本身的 SQL 能力更强，可以将相关的统计处理合并成一条 SQL 语句：
-![](https://qcloudimg.tencent-cloud.cn/raw/12ad84a5f987bb39ba0290c02e476fc7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e017c6908fcd844a8d352a03672cd69a.png)
 ```
 urlPath:$path AND region:$region AND action:$action AND returnCode:$returnCode | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time ,count_if(timeCost<=200) as "0~500ms" ,count_if(500<timeCost and timeCost <=2000) as "500ms~2s" ,count_if(2000<timeCost and timeCost <=5000) as "2s~5s" ,count_if(5000<timeCost) as "超过5s" group by analytic_time order by analytic_time limit 1000
 ```
 
 类似的场景，我们也可以写出使用估算函数 approx_percentile 分析得出的耗时相关情况。
-![](https://qcloudimg.tencent-cloud.cn/raw/97fa63132997df511484eaa4e4f963a0.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ab99a40e1e378d6848dd499b42abd256.png)
 
 ```
 urlPath:$path AND region:$region AND action:$action AND returnCode:$returnCode  | select time_series(__TIMESTAMP__, '$__interval', '%Y-%m-%dT%H:%i:%s+08:00', '0') as time ,avg(timeCost) as avg ,approx_percentile(timeCost, 0.50) as P50 ,approx_percentile(timeCost, 0.90) as P90 ,approx_percentile(timeCost, 0.95) as P95 group by time order by time limit 10000
@@ -99,7 +99,7 @@ Namespace=QCE/CLS&Action=DescribeInstances&Region=$region&display=${TopicName}/$
 
 在原本的实现中，部分用户会存在所有数据都存储在同一台 ES 实例上的情况。在使用 CLS 之后，采用就近原则创建了多个日志主题。此时，用户可能会想要将多个日志主题内容合并到图表中。
 对于3条来自不同地域的日志查询：
-![](https://qcloudimg.tencent-cloud.cn/raw/24f4fd24100205ec493051d9e2915069.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5dcd071c5d9db8d7eb5fadd32ea2327e.png)
 我们可以使用 Transform 模块，实现数据求和的效果，并选用需要的图表进行展示。 
 ![](https://qcloudimg.tencent-cloud.cn/raw/7cf8c5f0ed99441d228e68ac891b3aec.png)
 

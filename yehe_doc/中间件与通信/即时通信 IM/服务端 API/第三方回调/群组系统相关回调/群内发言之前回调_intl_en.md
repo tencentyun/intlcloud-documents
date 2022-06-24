@@ -1,9 +1,9 @@
 ## Feature Description
 
-This API is used by the app backend to monitor users' group messages in real time, including:
+This API is used by the app backend to view users' group messages in real time, including:
 - Records group messages in real time, for example, by recording a log or synchronizing the messages to other systems.
 - Blocks users' requests to send messages in a group.
-- Modifies users' message content, for example, by filtering out sensitive words or adding custom information defined by the app.
+- Achieves the goal of content audit in combination with content audit products, for example, by filtering out sensitive words or adding custom information defined by the app.
 
 ## Notes
 

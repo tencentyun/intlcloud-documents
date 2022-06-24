@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend can use this callback to monitor whether the number of members in a group has reached the limit for the group. This callback can also be used to delete inactive group members to accept new members.
+The app backend can use this callback to view whether the number of members in a group has reached the limit for the group. This callback can also be used to delete inactive group members to accept new members.
 
 ## Precautions
 

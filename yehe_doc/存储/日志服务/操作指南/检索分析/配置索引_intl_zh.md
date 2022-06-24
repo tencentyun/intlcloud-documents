@@ -293,7 +293,7 @@ Table 样式：
 
 控制台展示日志时提供了 JSON 格式化功能，可将字符串形式的 JSON 字段按层级显示，但该功能仅为控制台显示效果，实际的字段仍为字符串，这一点可在下文的 API 检索分析结果中体现出来。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/6d810627af2dc7d8355c07839b51e618.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fe0adbcd03a4c7139d2772167ea476be.png)
 
 
 **API 检索分析结果效果**

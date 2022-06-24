@@ -22,6 +22,7 @@ Web应用防火墙实例资源**到期当天**及以后，将向用户推送欠�
 
 ## 释放实例资源
 Web应用防火墙资源到期后，用户可以自行在控制台释放 waf 实例。
+![](https://qcloudimg.tencent-cloud.cn/raw/f0ad4cd02213a218b3e5c047949d2577.png)
 
 1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-overview)，在左侧导航栏选择**实例管理**。
 2. 在实例管理页面，选择需要释放的实例，单击**释放实例**。

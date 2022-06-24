@@ -12,7 +12,7 @@
 
 ### 域名回源 IP 地址会检查变更吗？
 域名回源 IP 原则上不会进行变更，如果变更 ，我们会在通过短信、邮件或站内信的方式通知您。具体回源 IP 地址，以控制台 [域名列表](https://console.cloud.tencent.com/guanjia/tea-domain) 中所查看到的回源 IP 地址为准。
-![](https://main.qcloudimg.com/raw/d0d8ce06b25775d61cfada695a016135.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3d54e9333cfb490dfc1fd00bb13b5678.png)
 
 ### 接入 WAF 的域名有什么要求吗？
 接入 WAF 防护的域名需要在工信部完成备案，且源站的业务内容必须合法，同时您可以进行 DNS 解析的修改，否则将无法接入您的域名。
@@ -27,7 +27,7 @@
 
 ### 域名删除后重新添加， CNAME 会发生变化吗？
 域名在同一实例进行删除后重新添加，CNAME 不会发生变化，在其他实例进行添加 CNAME 会发生变化，具体取值可在 [WAF 控制台域名列表](https://console.cloud.tencent.com/guanjia/tea-domain) 中，实例信息处进行查看。
-![](https://main.qcloudimg.com/raw/dde2826c8364d1a8eb580466782471fc.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/776ae20e26e6bffc200649ba9cfb518f.png)
 
 ### 域名的 VIP 地址是否可以更换？
 原则上域名的 VIP 地址不能进行变更，如果 WAF 服务出现异常，您可及时 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) 联系我们，我们会及时为您进行 VIP 地址切换。

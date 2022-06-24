@@ -69,9 +69,9 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | 回调命令 |
 | Operator_Account | String | 发起创建群组请求的操作者 UserID  |
 | Owner_Account | String | 请求创建的群的群主 UserID  |
-| Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
+| Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529##GroupType)，例如 Public |
 | Name | String | 请求创建的群组的名称 |
-| CreatedNum | Integer | 该用户已创建的同类的群组个数 |
+| CreateGroupNum | Integer | 该用户已创建的同类的群组个数 |
 | MemberList | Array | 请求创建的群组的初始化成员列表 |
 
 ### 应答包示例

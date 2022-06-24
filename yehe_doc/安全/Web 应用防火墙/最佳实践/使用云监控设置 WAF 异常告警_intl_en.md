@@ -43,7 +43,7 @@ Parameters:
 2. On the **Alarm Policy** page, click **Create**.
 3. Perform the following steps:
    1. **Basic Info**: Enter the basic information including the name and remarks, and select WAF as the policy type.
-2. **Alarm Object**: Select a WAF instance as the object. To select an instance group as the object, you need to create groups manually.
+   2. **Alarm Object**: Select a WAF instance as the object. To select an instance group as the object, you need to create groups manually.
 
 >?
 >- Instance ID: The alarm policy is associated with the selected instance.
@@ -52,10 +52,10 @@ Parameters:
 
 
 
-   3. **Trigger Condition**: Select the [trigger condition template](#CFTJ) you set or configure it manually.
+   iii. **Trigger Condition**: Select the [trigger condition template](#CFTJ) you set or configure it manually.
 
-   4. **Notification Template**: Select the just configured [notification template](#TZMB) and click **Confirm** to save it.
+   iv. **Notification Template**: Select the just configured [notification template](#TZMB) and click **Confirm** to save it.
 
-   5. **Advanced Configuration (Optional)**: Click ![](https://main.qcloudimg.com/raw/ad0958699f9a6b2f6a153205fb865a22.png) to enable auto scaling. The auto scaling policy will be triggered if the alarm condition is met.
+   v. **Advanced Configuration (Optional)**: Click ![](https://main.qcloudimg.com/raw/ad0958699f9a6b2f6a153205fb865a22.png) to enable auto scaling. The auto scaling policy will be triggered if the alarm condition is met.
 
-   6. After following the instructions above, click **Complete**.
+4. After following the instructions above, click **Complete**.
