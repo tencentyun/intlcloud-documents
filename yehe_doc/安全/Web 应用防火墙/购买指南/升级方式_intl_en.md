@@ -32,5 +32,5 @@
 1. On the [Instance management page](https://console.cloud.tencent.com/guanjia/tea-instance-new), select the target instance and click the **instance ID**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4a8e671819e0c30459c1f358e547aef2.png)
 2. On the **Instance details** page, upgrade resources as needed.
-![](https://qcloudimg.tencent-cloud.cn/raw/7a01b2a28d0c9fa5513acf3a13c810c6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b408c3f160c75a4bf563d3513fac5eb.png)
 

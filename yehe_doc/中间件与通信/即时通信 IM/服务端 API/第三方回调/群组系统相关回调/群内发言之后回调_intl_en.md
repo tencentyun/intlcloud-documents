@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used by the app backend to monitor users' group messages in real time. The app backend can be notified when a group message is sent successfully and can synchronize the data as required.
+This API is used by the app backend to view users' group messages in real time. The app backend can be notified when a group message is sent successfully and can synchronize the data as required.
 
 ## Notes
 

@@ -22,6 +22,7 @@ On and after the **day of expiration** of your WAF instance resource, the system
 
 ## Releasing Instance Resource
 After your WAF resources expire, you can release them in the console.
+![](https://qcloudimg.tencent-cloud.cn/raw/f0ad4cd02213a218b3e5c047949d2577.png)
 
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-overview) and select **Instance management** on the left sidebar.
 2. On the **Instance management** page, select the target instance and click **Release instance**.
