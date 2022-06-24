@@ -10,6 +10,7 @@ This document describes how to view the topic details and producer connection af
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, click **Topic Management** to view the topic information and enter the topic list page.
 4. On the topic list page, click the right triangle icon on the left of the topic name to view the topic details.
+![](https://qcloudimg.tencent-cloud.cn/raw/7f6529767f555abba5f9a0d31fddc51f.png)
 <table>
     <thead>
     <tr>
@@ -60,6 +61,7 @@ This document describes how to view the topic details and producer connection af
 
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management** and click **Producer Connection** in the **Operation** column to view the list of producers connected to the topic.
+![](https://qcloudimg.tencent-cloud.cn/raw/b6d5b5f3b3699dacc36ece753768838c.png)
 
 
 
