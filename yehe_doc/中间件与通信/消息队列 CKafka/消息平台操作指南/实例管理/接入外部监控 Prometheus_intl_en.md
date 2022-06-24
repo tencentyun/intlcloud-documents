@@ -10,7 +10,9 @@ By default, a CKafka Pro Edition instance allows connection with external monito
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of the target instance to enter its basic information page.
 3. Click **Get Monitoring Target** in the top-right corner of the **Prometheus Monitoring** module and select the VPC and subnet.
+![](https://qcloudimg.tencent-cloud.cn/raw/ef24c34517663bb096107b79e4e44315.png)
 4. Click **Submit** to get the set of monitoring targets.
+![](https://qcloudimg.tencent-cloud.cn/raw/307794219f498acce99afca82896c980.png)
 5. Download [Prometheus](https://prometheus.io/download/) and configure the monitoring scrape address.
    1. Enter the directory of the Prometheus package and run the following command to decompress it.
    ```bash
