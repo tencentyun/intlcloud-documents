@@ -3,7 +3,7 @@ This document describes the information leakage protection feature of WAF. It ca
 
 ## Overview
 With the leakage protection feature, you can add protection rules to filter the content returned by websites as needed, such as identity card/mobile/bank card numbers. You can also customize keywords (regex is supported) to filter order numbers and addresses and completely or partially replace them. Moreover, you can block or trigger alarms for status codes other than 200 returned by websites to meet compliance requirements.
->? CLB WAF doesn't support the data leakage protection feature. For more information on detailed specifications, see [Billing Overview](https://intl.cloud.tencent.com/document/product/627/47409).
+>? CLB WAF doesn't support the data leakage protection feature. For more information on detailed specifications, see [Billing Overview](https://intl.cloud.tencent.com/document/product/627/47799).
 
 ## Prerequisites
 You have [added a protected domain name](https://intl.cloud.tencent.com/document/product/627/35651) to SaaS WAF, and ensured the domain name is in normal protection.
