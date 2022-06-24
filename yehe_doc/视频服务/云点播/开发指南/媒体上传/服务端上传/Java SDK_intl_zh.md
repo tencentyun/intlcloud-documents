@@ -207,6 +207,7 @@ try {
 | 属性名称      | 属性描述                   | 类型      | 必填   |
 | --------- | ---------------------- | ------- | ---- |
 | MediaFilePath   | 待上传的媒体文件路径。必须为本地路径，不支持 URL。| String | 是    |
+| SubAppId   | 云点播 [子应用](https://intl.cloud.tencent.com/document/product/266/33987) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID，否则无需填写该字段。        | Integer | 否    |
 | MediaType   | 待上传的媒体文件类型，可选类型请参见 [视频上传综述](https://intl.cloud.tencent.com/document/product/266/9760)，若 MediaFilePath 路径带后缀可不填。        | String | 否    |
 | MediaName   | 上传后的媒体名称，若不填默认采用 MediaFilePath 的文件名。      | String | 否    |
 | CoverFilePath   | 待上传的封面文件路径。必须为本地路径，不支持 URL。| String | 否    |
@@ -215,7 +216,6 @@ try {
 | ExpireTime   | 媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://intl.cloud.tencent.com/document/product/266/11732)。        | String | 否    |
 | ClassId   | 分类 ID，用于对媒体进行分类管理，可通过 [创建分类](https://intl.cloud.tencent.com/document/product/266/35325) 接口，创建分类，获得分类 ID。        | Integer | 否    |
 | SourceContext   | 来源上下文，用于透传用户请求信息，上传回调接口将返回该字段值，最长250个字符。        | String | 否    |
-| SubAppId   | 云点播 [子应用](https://intl.cloud.tencent.com/document/product/266/33987) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID，否则无需填写该字段。        | Integer | 否    |
 | StorageRegion   | 存储地域，指定预期希望存储的地域，该字段填写为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/9760)。        | String | 否    |
 | ConcurrentUploadNumber   | 分片并发数，针对大文件分片时有效。        | Integer | 否    |
 
