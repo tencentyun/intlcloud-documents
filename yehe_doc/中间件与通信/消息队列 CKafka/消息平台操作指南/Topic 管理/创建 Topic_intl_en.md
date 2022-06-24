@@ -16,6 +16,7 @@ You have [created an instance](https://intl.cloud.tencent.com/document/product/5
 2. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, click **Topic Management** at the top and click **Create**.
 4. In the **Create Topic** window, set the number of partitions and replicas and other parameters.
+![](https://qcloudimg.tencent-cloud.cn/raw/931c72752e4835ce41c330137943b0f6.png)
    - Name: The topic name. It cannot be changed once entered and can contain only letters, digits, underscores, or symbols ("-" and ".").
    - Partition Count: It is a concept in physical partition, where one topic can contain one or more partitions. CKafka uses partition as an allocation unit.
    - Replica Count: The number of partition replicas is used to ensure the high availability of the partition. To ensure data reliability, creating a single-replica topic is not supported. Two replicas are enabled by default.
@@ -31,6 +32,7 @@ You have [created an instance](https://intl.cloud.tencent.com/document/product/5
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management**.
 3. In the **Operation** column, click **Edit** > **Show advanced configuration** and set the following parameters:
+![](https://qcloudimg.tencent-cloud.cn/raw/ee3cb60f0c3eaf4e913594e5a620c449.png)
 
 The parameters are as detailed below:
 
