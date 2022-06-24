@@ -28,7 +28,7 @@ WAF 可在某些特定场景进行使用，同时可结合腾讯云其他产品�
 - [WAF 与 DDoS 高防包结合应用](https://intl.cloud.tencent.com/document/product/627/34723)
 - [WAF 结合 API 网关提供安全防护](https://intl.cloud.tencent.com/document/product/627/38375)
 - [HTTPS 免费证书申请和应用](https://intl.cloud.tencent.com/document/product/627/34724)
-- [如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/627/47410)
+- [如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/627/47817)
 
 -----
 ## 4. 控制台功能概述
