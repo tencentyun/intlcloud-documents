@@ -1,5 +1,5 @@
 ## 前提条件
-BOT 行为管理需要购买 WAF [对应实例的扩展包](https://intl.cloud.tencent.com/document/product/627/47409)。
+BOT 行为管理需要购买 WAF [对应实例的扩展包](https://intl.cloud.tencent.com/document/product/627/47799)。
 
 ## 操作步骤
 1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-botconfig)，在左侧导航栏中，选择**配置中心** > **BOT 与业务安全**，进入 BOT 与业务安全页面。
