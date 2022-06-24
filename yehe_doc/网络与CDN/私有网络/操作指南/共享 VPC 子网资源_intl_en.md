@@ -42,10 +42,10 @@ Tencent Cloud Group Account Management is free of charge, and you only need to p
 | Number of resources that can be shared each time| 10 |
 | Number of times that a resource can be shared| 10 |
 
->?
->+ Other VPC quotas are the same as the current settings. The quotas are shared by the resource owners and users.
->+ If there are resources created by other member accounts (resource users) under the VPC/subnet, the subnet cannot be deleted.
->
+<dx-alert infotype="explain"> 
+- Other VPC quotas are the same as the current settings. The quotas are shared by the resource owners and users.
+- If there are resources created by other member accounts (resource users) under the VPC/subnet, the subnet cannot be deleted.
+</dx-alert> 
 
 :::
 ::: Permissions of resource owners and users
