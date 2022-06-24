@@ -8,7 +8,7 @@ This document describes how to get started with Web Application Firewall (WAF).
 -----
 
 ## 2. WAF Billing Mode
-WAF is available as **SaaS WAF** and **CLB WAF** instances with the same billable items, billing modes, and prices. Both of them support the monthly subscription (prepaid) billing mode. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/627/47409).
+WAF is available as **SaaS WAF** and **CLB WAF** instances with the same billable items, billing modes, and prices. Both of them support the monthly subscription (prepaid) billing mode. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/627/47799).
 You can purchase different types of WAF instances according to your connection method. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/627/11730).
 
 -----
