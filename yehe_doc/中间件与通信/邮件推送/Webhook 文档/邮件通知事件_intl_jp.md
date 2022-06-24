@@ -9,6 +9,7 @@
     "reason":"551 5.1.1 recipient is not exist",
     "bounceType":"hard_bounce",
     "username":"251200670",
+    "from":"test@fromexample.com",
     "fromDomain":"fromexample.com",
     "templateId":123456
 }
@@ -24,6 +25,7 @@
 | reason     | string | メール配信が失敗した理由                                                                          |
 | bounceType | string | 受信者のメールサービスプロバイダがメールを受信拒否した場合、受信拒否のタイプと値は、soft\_bounce \| hard\_bounceで、`event="bounce"`のときのみ有効です           |
 | username   | string | Tencent Cloudアカウントに対応するappId                                                                      |
+| from       | string | 送信アドレス（送信者別名なし）                                                                      |
 | fromDomain | string | 送信ドメイン名                                                                               |
 | templateId | int    | テンプレートID                                                                               |
 
