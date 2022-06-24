@@ -2,7 +2,7 @@
 
 In CLS use cases, it is very common to migrate the data source from other log tools to CLS. If you use ES as the data source and Grafana as the visual monitoring tool, after you migrate the data source to CLS, various dashboard resources and Ops tools and platforms created based on Grafana will become useless. To avoid building this system again, CLS needs to be connected to Grafana to replace the ES data source.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/63698c622e1a382f685777d67334e3c6.png" style="width: 35%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b26bfe6312c74eaf48a361f93a34515d.png" style="width: 35%"/>
 
 ## Installing Tencent Cloud Monitor
 
