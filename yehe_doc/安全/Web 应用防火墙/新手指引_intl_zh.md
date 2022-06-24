@@ -8,7 +8,7 @@
 -----
 
 ## 2. WAF 的计费模式
-腾讯云 WAF 提供两种产品形态，**SaaS 型 WAF** 和**负载均衡型 WAF**，两种 WAF 计费项目基本相同，且计费模式与价格相同，均支持包年包月（预付费）计费方式，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/627/47409)。
+腾讯云 WAF 提供两种产品形态，**SaaS 型 WAF** 和**负载均衡型 WAF**，两种 WAF 计费项目基本相同，且计费模式与价格相同，均支持包年包月（预付费）计费方式，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/627/47799)。
 您可以根据不同接入方式选择购买不同类型的 WAF，详情请参见 [购买方式](https://intl.cloud.tencent.com/document/product/627/11730)。
 
 -----
@@ -28,7 +28,7 @@ WAF 可在某些特定场景进行使用，同时可结合腾讯云其他产品�
 - [WAF 与 DDoS 高防包结合应用](https://intl.cloud.tencent.com/document/product/627/34723)
 - [WAF 结合 API 网关提供安全防护](https://intl.cloud.tencent.com/document/product/627/38375)
 - [HTTPS 免费证书申请和应用](https://intl.cloud.tencent.com/document/product/627/34724)
-- [如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/627/47410)
+- [如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/627/47817)
 
 -----
 ## 4. 控制台功能概述

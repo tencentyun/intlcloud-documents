@@ -1,4 +1,26 @@
 
+## May 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported minor version upgrade</td>
+<td>TencentDB for Redis supports minor version upgrade, so that you can upgrade your instance to a newer version for more features.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/37710" target="">Upgrading Instance Version</td></tr>
+<tr>
+<td>Supported proxy upgrade</td>
+<td>Minor versions of the TencentDB for Redis proxy are released from time to time to add more database features or fix known bugs.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/47582" target="">Proxy Upgrade</td></tr>
+</table>
+
+## April 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Upgraded the global replication feature</td>
+<td>Multi-AZ instances can be added to a global replication group, and existing instances can be quickly upgraded to global replication instances.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/45603" target="">Creating Global Replication Group</td></tr>
+</table>
+
 ## February 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>

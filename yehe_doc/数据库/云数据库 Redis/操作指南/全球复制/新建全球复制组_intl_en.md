@@ -1,7 +1,5 @@
 TencentDB for Redis allows you to create a replication group in the console and add master or read-only instances to it, so as to implement consistent data sync in a one-master or multi-master architecture within the replication group. 
 
->?To use the global replication feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
-
 ## Concepts
 - **Instance role:** You need to assign different roles to instances in a replication group, including **master instance** and **read-only instance**.
   - **Master instance:** It provides data read/write access and is used to write the business data.
@@ -9,18 +7,18 @@ TencentDB for Redis allows you to create a replication group in the console and 
 - **IP address:** Each instance in a replication group has a separate IP address, which can be accessed independently.
 - **Master/Replica switch:** Automatic failover can be performed between master and replica nodes in each instance. However, it is not supported between master and read-only instances.
 
-## Version Description
-- Global replication supports only 4.0 Standard Architecture, 4.0 Cluster Architecture, 5.0 Standard Architecture, and 5.0 Cluster Architecture instances.
-- The current version of the global replication feature supports  instances deployed in the same AZ and multi-AZ.
+## Version Requirements
+- Global replication supports instances running on 4.0 Standard Architecture, 4.0 Cluster Architecture, 5.0 Standard Architecture, and 5.0 Cluster Architecture.
+- The current version of the global replication feature supports both single-AZ and multi-AZ instances.
 
-## Billing Description
+## Billing Details
 - If instances in a replication group are in the same region, no additional fees will be incurred.
 - For cross-region data replication within a replication group, bandwidth fees will be incurred. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/553/35174).
 
 ## Creating Global Replication Group
 ### Prerequisites
-- You have [created a TencentDB for Redis instance](https://intl.cloud.tencent.com/document/product/239/37712).
--  The instance is in **Running** status. 
+- You have created a [TencentDB for Redis instance](https://intl.cloud.tencent.com/document/product/239/37712).
+- The instance is in **Running** status. 
 
 ### Directions
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis).
@@ -51,7 +49,6 @@ TencentDB for Redis allows you to create a replication group in the console and 
 <td>Yes</td>
 <td>test-XXX</td></tr>
 </tbody></table>
-
 > !The Redis kernel of the master instance specified during replication group creation must be upgraded to the Global Replication Edition. After the upgrade is completed, one or multiple momentary disconnections lasting 5 seconds will occur.
 > 
 5. Return to the **Redis - Global Replication** page, and you can see the newly created replication group in the replication group list.
@@ -69,7 +66,8 @@ After creating a replication group, you can add instances in the same or differe
 - You have created a global replication group, and it is in **Running** status.
 - You have created an instance to be added to the replication group. Its compatible Redis version and architecture must be the same as those of the master instance specified during replication group creation, its memory capacity must be greater than or equal to the used capacity of the master instance, and it must be in **Running** status.
 - If you want to specify the instance to be added as a master instance, it must have at least two replica nodes.
-- You must clear the data in the instance to be added to the replication group no matter whether it will be added as a master or read-only instance.
+- When you add the first instance to a replication group, you don't need to clear the data. When adding subsequent instances, be sure to clear the data.
+>?The first instance is divided into two cases: the master instance added to a newly created replication group, or the first instance added to an existing replication group after all instances in it are removed.
 
 ### Directions
 1. In the [instance list](https://console.cloud.tencent.com/redis/replication) on the **Redis - Global Replication** page, select the target replication group.
@@ -89,5 +87,5 @@ You can add multiple instances to a replication group as needed and then sync da
 A master instance and a read-only instance can be added to a replication group to set up a cross-region disaster recovery system. However, the system will not automatically perform failover, which can only be manually performed in the console or through TencentCloud API. For detailed directions, see [Switching Instance Role](https://intl.cloud.tencent.com/document/product/239/45604).
 
 ### Replication exceptions
-No matter whether a replication group has one or multiple master instances, when replication is interrupted, the system will not set them as read-only instances or perform other operations; instead, it will automatically resume the replay of incremental logs after instance recovery. We recommend you configure alarms for replication exceptions and set master instances as read-only instances when a replication exception such as replication interruption occurs, so as to guarantee the data consistency.
+No matter whether a replication group has one or multiple master instances, when replication is interrupted, the system will not set them as read-only instances or perform other operations; instead, it will automatically resume the replay of incremental logs after instance recovery. To ensure data consistency, we recommend you configure alarms for replication exceptions and set master instances as read-only instances when a replication exception (such as replication interruption) occurs.
 

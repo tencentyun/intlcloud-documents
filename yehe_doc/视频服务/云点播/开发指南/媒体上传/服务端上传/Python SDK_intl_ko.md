@@ -198,6 +198,7 @@ except Exception as err:
 | 속성 이름      | 속성 설명                   | 유형      | 필수 입력   |
 | --------- | ---------------------- | ------- | ---- |
 | MediaFilePath   | 업로드할 미디어 파일의 경로로, 로컬 경로여야 하며 URL을 지원하지 않습니다.| String | Yes    |
+| SubAppId   | VOD의 [서브 애플리케이션](https://intl.cloud.tencent.com/document/product/266/33987) ID입니다. 서브 애플리케이션의 리소스에 액세스하려면 이 필드에 서브 애플리케이션 ID를 입력하고, 그렇지 않으면 비워 둡니다.        | Integer | No    |
 | MediaType   | 업로드할 미디어 파일의 유형입니다. 유효한 값은 [미디어 업로드 개요](https://intl.cloud.tencent.com/document/product/266/9760)를 참고하십시오. MediaFilePath 경로에 파일 확장자가 포함된 경우 이 매개변수를 비워 둘 수 있습니다.        | String | No    |
 | MediaName   | 업로드된 미디어 파일의 이름입니다. 이 매개변수를 비워 두면 기본적으로 MediaFilePath의 파일 이름이 사용됩니다.      | String | No    |
 | CoverFilePath   | 업로드할 커버 파일의 경로로, URL을 지원하지 않는 로컬 경로여야 합니다.| String | No    |
@@ -206,7 +207,6 @@ except Exception as err:
 | ExpireTime   | ISO 8601 형식의 미디어 파일 만료 시간으로, 자세한 내용은 [ISO 날짜 형식](https://intl.cloud.tencent.com/document/product/266/11732)을 참고하십시오.        | String | No    |
 | ClassId   | 관리할 미디어를 분류하는 데 사용되는 클래스 ID로, [CreateClass](https://intl.cloud.tencent.com/document/product/266/35325) API를 사용하여 클래스를 생성하고, 클래스 ID를 얻을 수 있습니다.        | Integer | No    |
 | SourceContext   | 최대 250자의 소스 컨텍스트로, 사용자 요청 정보를 전달하는 데 사용되며 업로드 콜백 API에서 반환됩니다.      | String | No    |
-| SubAppId   | VOD의 [서브 애플리케이션](https://intl.cloud.tencent.com/document/product/266/33987) ID입니다. 서브 애플리케이션의 리소스에 액세스하려면 이 필드에 서브 애플리케이션 ID를 입력하고, 그렇지 않으면 비워 둡니다.        | Integer | No    |
 | StorageRegion   | 파일을 저장할 스토리지 리전입니다. 이 필드는 리전 [영어 약칭](https://intl.cloud.tencent.com/document/product/266/9760)을 입력합니다.        | String | No    |
 | ConcurrentUploadNumber   | 큰 파일이 여러 파트로 업로드될 때 유효한 동시 파트 수입니다.        | Integer | No    |
 

@@ -10,6 +10,7 @@
 2. 在左侧导航栏单击**实例列表**，单击目标实例的“ID/名称”，进入实例详情页。
 3. 在实例详情页，单击 **topic 管理**标签页，查看 Topic 信息，进入 Topic 列表页。
 4. 在 Topic 列表页，单击 Topic 名称左侧右三角符号，查看 Topic 详情。
+![](https://qcloudimg.tencent-cloud.cn/raw/7f6529767f555abba5f9a0d31fddc51f.png)
 <table>
     <thead>
     <tr>
@@ -60,6 +61,6 @@
 
 1. 在实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
 2. 在实例详情页，单击 **topic 管理**标签页，在操作栏单击**生产端连接关系**，查看与 Topic 连接的生产者列表信息。
-
+![](https://qcloudimg.tencent-cloud.cn/raw/b6d5b5f3b3699dacc36ece753768838c.png)
 
 

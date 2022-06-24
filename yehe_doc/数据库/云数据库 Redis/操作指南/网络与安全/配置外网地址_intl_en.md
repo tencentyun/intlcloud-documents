@@ -1,4 +1,4 @@
-This document describes how to enable/disable the public network address in the TencentDB for Redis console. You can use the system-assigned domain name and port to access an instance over the public network, facilitating your daily test, management, use, and development of the database.
+This document describes how to enable/disable the public network address in the TencentDB for Redis console. You can use the system-assigned domain name and port to [access an instance over the public network](https://intl.cloud.tencent.com/document/product/239/47571), facilitating your daily test, management, use, and development of the database.
 
 >?
 >- The instance service downtime caused by public network errors won't be counted into the "Single Instance Service Downtime" in Redis Service Level Agreement (SLA).
@@ -8,7 +8,7 @@ This document describes how to enable/disable the public network address in the 
 ## Notes
 1. After enabling this feature, you can connect to TencentDB for Redis by using system assigned domain name and port over the public network. It takes about five minutes for the configuration to take effect.
 2. Public network access should be used only for development or auxiliary management. For business production, be sure to use the private network access.
-3. After the public network access is enabled, it will be controlled by the security group policy. You should configure the database access source in the security group's inbound rules and open the protocol port as instructed in [Configuring Security Group](https://intl.cloud.tencent.com/document/product/239/31945).
+3. After the public network access is enabled, it will be controlled by the security group policy. You should configure the database access source in the security group's inbound rules and open the protocol ports (both the private network port (6379 by default) and public network port) as instructed in [Configuring Security Group](https://intl.cloud.tencent.com/document/product/239/31945).
 4. The instance service downtime caused by public network errors won't be counted into the "Single Instance Service Downtime" in Redis Service Level Agreement (SLA).
 
 ## Prerequisites
@@ -19,19 +19,26 @@ This document describes how to enable/disable the public network address in the 
 ## Enabling Public Network Address
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance details page.
 2. Click **Enable** next to **Public Network Address** in the **Network Info** block.
->!After the public network access is enabled, it will be controlled by the security group policy. You should configure the database access source in the security group's inbound rules and open the protocol port as instructed in [Configuring Security Group](https://intl.cloud.tencent.com/document/product/239/31945).
+>!After the public network access is enabled, it will be controlled by the security group policy. You should configure the database access source in the security group's inbound rules and open the protocol ports (both the private network port (6379 by default) and public network port) as instructed in [Configuring Security Group](https://intl.cloud.tencent.com/document/product/239/31945).
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/54150a1a9c419b57c5bc589ea212238d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e321411f59c98cb56089da38f5daec81.png)
 3. In the pop-up window, confirm that everything is correct and click **OK**.
-![](https://qcloudimg.tencent-cloud.cn/raw/7644853f0a294487b0fd44e0d9657479.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/68286671abbbff9a56a73b7890b7b9bf.png)
 4. Return to the instance details page, where you can see the instance in the **Enabling public network** status. If the status stays the same for a long time, refresh the page.
 5. If **Public Network Address** shows an address comprising a domain name and port, the address is enabled successfully. Now you can use it to access Redis over the public network.
-![](https://qcloudimg.tencent-cloud.cn/raw/14843fcd53a18df45726b3456b44f465.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0e7954a9edb62be93308250c125c8387.png)
 
 ## Disabling Public Network Address
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance details page.
 2. Click **Disable** next to **Public Network Address** in the **Network Info** block.
-![](https://qcloudimg.tencent-cloud.cn/raw/4bcd7d4d286ccce548c393433bece283.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c4e569e1f967c6da605fe8e5a4206a1a.png)
 3. In the pop-up window, confirm that everything is correct and click **OK**.
 4. Return to the instance details page, where you can see the instance in the **Disabling public network** status and **Public Network Address** display nothing.
+
+## Related APIs
+
+| API | Description |
+|---------|---------|
+| [AllocateWanAddress](https://intl.cloud.tencent.com/document/product/239/46976) | Enables public network access |
+| [ReleaseWanAddress](https://intl.cloud.tencent.com/document/product/239/46975) | Disables public network access |
 
