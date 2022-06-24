@@ -22,11 +22,11 @@
 您可选择**共享资源**及**共享账号**页签，查看已共享的资源及对应成员账号。
 
 ### 步骤二：成员账号查看子网
-1. 登录 [集团账号管理控制台](https://console.cloud.tencent.com/organization/setting)，选择左侧导航栏中的**资源共享** > **[与我共享](https://console.cloud.tencent.com/organization/share-with)**。
+1. 登录 [集团账号管理控制台](https://console.cloud.tencent.com/organization/setting)，选择左侧导航栏中的**资源共享** > [**与我共享**](https://console.cloud.tencent.com/organization/share-with)。
 2. 在“与我共享”页面中，在页面上方选择共享子网所在地域：
  - 选择**共享单元**页签，即可查看共享单元。
  - 选择**共享资源**页面，即可查看已具备的共享子网资源。
- 您还可登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc)，选择左侧导航栏中的 **[子网](https://console.cloud.tencent.com/vpc/subnet?rid=1)**，并在“子网”页面上方选择地域，即可查看共享的子网资源。如下图所示：
+ 您还可登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc)，选择左侧导航栏中的 [**子网**](https://console.cloud.tencent.com/vpc/subnet?rid=1)，并在“子网”页面上方选择地域，即可查看共享的子网资源。如下图所示：
 ![]()
 
 
@@ -42,10 +42,10 @@
 | 一个资源共享可关联的资源数| 10 |
 | 一个资源可加入的资源共享数| 10 |
 
->?
->+ 其他 VPC 配额和当前一致，资源共享者和资源使用者共用配额。
->+ VPC/子网下存在其他成员账号（资源使用者）创建的资源时，子网不可删除。
->
+<dx-alert infotype="explain"> 
+- 其他 VPC 配额和当前一致，资源共享者和资源使用者共用配额。
+- VPC/子网下存在其他成员账号（资源使用者）创建的资源时，子网不可删除。
+</dx-alert>
 
 :::
 ::: 资源所有者和资源使用者的权限说明
