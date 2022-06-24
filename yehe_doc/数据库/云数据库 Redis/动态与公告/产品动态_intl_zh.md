@@ -1,4 +1,26 @@
 
+## 2022年05月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>支持升级小版本</td>
+<td>云数据库 Redis 支持升级小版本，帮助用户升级实例至更新版本，从而体验更丰富的功能。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/37710" target="">升级实例版本</td></tr>
+<tr>
+<td>支持代理升级</td>
+<td>云数据库 Redis 会不定期地发布 Proxy 的小版本，用于丰富数据库功能或修复已知缺陷。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/47582" target="">代理升级</td></tr>
+</table>
+
+## 2022年04月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>全球复制功能升级</td>
+<td>支持多可用区实例加入全球复制组，存量实例一键升级为全球复制实例。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/45603" target="">新建全球复制组</td></tr>
+</table>
+
 ## 2022年02月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>
