@@ -78,11 +78,10 @@ The version upgrade process mainly consists of data sync and instance switch:
 5. In the **Specs Info** section on the **Instance Details** page, click **Upgrade Minor Version** after **Compatible Version**.
 > !The system automatically detects the minor version. If the **Upgrade Minor Version** button is grayed out, the instance is already on the latest minor version.
 > 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/74a45b595d2f1394364cdd9cf37d4403.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/3872d68e11922de0c3c911c0a1696305.png" />
 6. In the **Upgrade Minor Version** window, confirm the instance information and the target version and select the upgrade time in **Switch Time**.
    - **Switch Now**: The switch will be performed when the data sync is almost completed (the data left to be synced is less than 10 MB).
    - **Switch in Maintenance Time**: The switch will be performed during the instance maintenance time. If the switch conditions cannot be met in the current maintenance time, the switch will be attempted in the next maintenance time. You can modify the **Maintenance Window** on the instance details page.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/82f760e003f7a662116ddf9cfc642dab.png"  style="zoom:50%;">
 7. On the left sidebar, select **Task Management**, wait for the task to complete, and you can see that the minor version of the instance has been upgraded in the instance list.
 
 ## Related APIs
