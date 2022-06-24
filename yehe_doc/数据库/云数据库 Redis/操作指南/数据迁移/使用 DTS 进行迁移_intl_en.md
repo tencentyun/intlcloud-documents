@@ -1,112 +1,144 @@
-## DTS Overview
-Tencent Cloud Data Transmission Service (DTS) is a data transmission service that integrates such features as data migration, sync, and subscription, helping you migrate your databases without interrupting your business and build a high-availability database architecture for remote disaster recovery through real-time sync channels. Its data subscription feature grants you real-time access to incrementally updated data in your TencentDB instance, so that you can consume such data based on your business needs. Currently, DTS for Redis supports data migration on different versions of Redis and in various network scenarios.
+## Background Overview
+Tencent Cloud [Data Transmission Service (DTS)](https://cloud.tencent.com/document/product/571) is a data transmission service that integrates such features as data migration, sync, and subscription. It helps you migrate your databases to the cloud without interrupting your business and build a high-availability database disaster recovery architecture through real-time sync channels. Its data subscription feature meets your requirements for commercial data mining and async business decoupling. 
 
-| Term | Description |
-|---------|---------|
-| Source instance | Source instance to be migrated. |
-| Target instance | Target instance to be migrated to, i.e., user-purchased TencentDB for Redis. |
-| CVM-based external instance | Redis service you deploy on a CVM instance. |
-| Public network-based external instance | Redis service you deploy over a public network. |
+DTS for Redis currently supports the data migration feature for you to migrate data to TencentDB in a non-stop manner at a time. In addition, in its full + incremental data migration mode, historical data in the source database written before migration and incremental data written during migration can be migrated together. 
+
+## Use Cases
+
+DTS for Redis data migration supports source and target databases in the following deployment modes:
+
+| Source Database                                            | Target Database       | Description                                                         |
+| ----------------------------------------------- | ------------ | ------------------------------------------------------------ |
+| Self-built Redis database, such as self-built databases in IDC and CVM | TencentDB for Redis | -                                                            |
+| Third-party Redis                              | TencentDB for Redis | The third-party cloud vendor should grant the `SYNC` or `PSYNC` command permission.            |
+| TencentDB for Redis                                    | TencentDB for Redis | Data migration, version upgrade, and cross-region migration are supported between database instances under the same Tencent Cloud account. |
 
 ## Migration Support Description
 >?For compatibility issues with migration from Standalone Edition to Memory Edition (Cluster Architecture), see [Check on Migration from Standard Architecture to Cluster Architecture](https://intl.cloud.tencent.com/document/product/239/37594).
 
-#### Supported features
-- Data migration: DTS supports one-time migration of all data to the cloud.
-- Data sync: DTS supports real-time data sync to the cloud by combining full migration and incremental sync.
-
 #### Supported versions
-- DTS supports Redis 2.8, 3.0, 3.2, 4.0, and 5.0.
-- DTS supports single-node, Redis cluster, Codis, and twemproxy architectures.
-- Migration permission requirements: To migrate data via DTS, the source instance must support SYNC or PSYNC commands.
+- DTS supports Redis 2.8, 3.0, 3.2, 4.0, and 5.0. We recommend you migrate from an earlier version to a later version; otherwise, compatibility problems may occur.
+- Standard architecture and cluster architecture instances can be migrated to each other; however, such heterogeneous migration may has compatibility problems.
+- Supported architectures include single-node, Redis cluster, Codis, and twemproxy.
+- Migration permission requirements: To migrate data through DTS, the source instance must support `SYNC` or `PSYNC` commands.
 
 #### Supported networks
-DTS supports data migration and data sync based on the public network, CVM instances, Direct Connect gateways, VPN gateways, and CCN.
+DTS supports data migration based on the public network, CVM instances, Direct Connect gateways, VPN gateways, and CCN.
 
-#### Supported scenarios
-- Migration to cloud: DTS enables you to migrate your Redis instance in a traditional IDC to TencentDB for Redis, helping you migrate your business to the cloud efficiently and conveniently.
-- External cloud service migration: DTS enables you to migrate your Redis service created with a virtual machine on Tencent Cloud or other clouds to Tencent Cloud.
-- Migration of Redis data from other cloud providers: DTS allows you to migrate Redis data from other cloud providers to Tencent Cloud, as long as those cloud providers have granted the SYNC or PSYNC command permission.
-- Migration between Tencent Cloud instances: DTS supports data migration or real-time data sync between instances on Tencent Cloud. The supported versions are as follows:
-  
-<table>
-<caption></caption>
-<tr>
-<th style="width:130px;position:relative;text-align:left;padding:5px px;font-weight:00;" valign="top">
-<div style="position:absolute;width:1px;height:140px;top:0;left:0;background-color: #d9d9d9;display:block;transform:rotate(-66deg);transform-origin:top;valign=top;"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Target Instance<br>Source Instance</th></div>
-</th>
-<th style="background-color:#f2f2f2;">2.8 Memory Edition (Standard Architecture)</th>
-<th style="background-color:#f2f2f2;">4.0 Memory Edition (Standard Architecture)</th>
-<th style="background-color:#f2f2f2;">4.0 Memory Edition (Cluster Architecture)</th>
-<th style="background-color:#f2f2f2;">5.0 Memory Edition (Standard Architecture)</th>
-<th style="background-color:#f2f2f2;">5.0 Memory Edition (Cluster Architecture)</th></tr>
-<tr>
-<td style="background-color:#f2f2f2;">2.8 Memory Edition (Standard Architecture)</td>
-<td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
-<tr>
-<td style="background-color:#f2f2f2;">4.0 Memory Edition (Standard Architecture)</td>
-<td>x</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
-<tr>
-<td style="background-color:#f2f2f2;">4.0 Memory Edition (Cluster Architecture)</td>
-<td>x</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
-<tr>
-<td style="background-color:#f2f2f2;">5.0 Memory Edition (Standard Architecture)</td>
-<td>x</td><td>x</td><td>x</td><td>&#10003;</td><td>&#10003;</td></tr>
-<tr>
-<td style="background-color:#f2f2f2;">5.0 Memory Edition (Cluster Architecture)</td>
-<td>x</td><td>x</td><td>x</td><td>&#10003;</td><td>&#10003;</td></tr>
-</table>
+- Public Network: The source database can be accessed through a public IP.
+
+- Self-Build on CVM: The source database is deployed in a [CVM](https://intl.cloud.tencent.com/document/product/213) instance.
+
+- Direct Connect: The source database can be interconnected with VPCs through [Direct Connect](https://intl.cloud.tencent.com/document/product/216). 
+
+- VPN Access: The source database can be interconnected with VPCs through [VPN Connections](https://intl.cloud.tencent.com/document/product/1037). 
+
+- CCN: The source database can be interconnected with VPCs through [CCN](https://intl.cloud.tencent.com/document/product/1003).
 
 #### Limitations
-- To ensure migration efficiency, cross-region migration is not supported for CVM-based MongoDB instances.
-- To migrate instances over a public network, make sure that the source instance can be accessed from the public network.
+- To ensure migration efficiency, cross-region migration of CVM-based self-built instances is not supported.
+- To migrate instances over a public network, make sure that the source instance can be accessed over the public network.
 - Only instances that are running normally can be migrated, while instances with no password initialized or with ongoing tasks cannot.
 - The target instance must be empty. During the migration process, the target instance will be read-only and cannot be written to.
 - After the successfully migrated data is verified by your business, you can disconnect the source instance and connect to the target instance.
 
-## Migration Process
-### 1. Create a migration task
+## Environment Requirements
+
+> ?The system will automatically check the following environment requirements before starting a migration task and report an error if a requirement is not met. You can also check them in advance.
+
+<table>
+<tr><th width="20%">Type</th><th width="80%">Environment Requirement</th></tr>
+<tr>
+<td>Requirements for source database</td>
+<td>
+<li>The source and target databases can be connected.</li><li>The number of databases in the source database must be less than or equal to that in the target database.</li></td></tr>
+<tr> 
+<td>Requirements for target database</td>
+<td>
+<li>The target database version should be later than or equal to the source database version; otherwise, an alarm will be triggered for compatibility problems during verification.</li>
+<li>The space of the target database must be larger than the volume of the data to be migrated in the source database.</li>
+<li>The target database must be empty.</li></td></tr>
+</table>
+
+## Migration Directions
+
+#### 1. Create a migration task
 (1) Log in to the [DTS console](https://console.cloud.tencent.com/dts) and click **Create Migration Task** on the data migration page.
 (2) On the **Create Migration Task** page, select the types and regions of the source and target databases and click **Buy Now**.
 
-### 2. Configure the task
-- Task Name: Specify a name for the task.
-- Scheduled execution: Specify the start time of the migration task.
->?
-> - To modify the scheduled task, you must click **Scheduled start** again after the verification is passed, so as to make the task start at the specified time.
->- If the specified time has passed, the task will be started immediately. You can also click **Immediate start** to start the task immediately.
+#### 2. Set the source and target databases
 
-### 3. Set the source and target databases
-Redis instances on CVM are used here as an example, and the same is true for migration of instances over a public network.
+Configure the **Source Database Settings** and **Target Database Settings** and click **Test Connectivity**. After the test is passed, click **Save** to proceed to the next step.
 
-| Field | Description | Remarks | Required |
-|---------|---------|---------|---------|
-| Task name | Name of the migration task | Used by users for task management | Yes |
-| CVM instance (instance ID/private IP) | The ID and private IP of the CVM instance where the source Redis instance resides | The migration task checks the CVM running conditions and the CVM private IP based on the CVM instance ID | Yes |
-| Port | Source instance port number | The migration task will access the source instance service | Yes |
-| Password | Source instance password | The password is used for the authentication for accessing the source instance | No |
-| TencentDB instance ID | Target instance ID | Data is synchronized to the target instance | Yes |
-
-**Notes on migration of the cluster edition**
-DTS supports the migration of the Redis Cluster Edition. For cluster schemes with the Redis Cluster, Codis, or twemproxy architecture, you only need to enter the addresses and passwords of all shard nodes of the source cluster as the node information when creating the migration task. We strongly recommend that you migrate data from a replica node of the source instance (from a node) to avoid any impact on business access to the source instance. DTS supports password-free migration. Possible information entered for migration is shown below:
 ![](https://main.qcloudimg.com/raw/513d89660769db2dfd155514bcb38dfc.png)
 
-### 4. Start the migration task
-(1) After the network connectivity test is successful, click **Save**.
-(2) DTS begins to verify the migration task, and once the migration requirements are met, the migration task will start.
-(3) After the task starts, the task status will switch to **Checking**, indicating that another round of parameter verification is underway. During this process, you can only cancel or view the task or check the verification progress.
-(4) After parameter verification is successful, data migration will start.
-During data sync, changes in data offset, source instance, and target instance key will be displayed.
+<table>
+<thead><tr><th width="10%">Setting Type</th><th width="20%">Configuration Item</th><th width="70%">Description</th></tr></thead>
+<tbody>
+<tr>
+<td rowspan=3>Task Configuration</td>
+<td>Task Name</td>
+<td>Set a meaningful name for easy task identification.</td></tr>
+<tr>
+<td>Running Mode</td>
+<td>You can set **Immediate execution** or **Scheduled execution**.<ul><li>If a scheduled task is modified and passes verification, you need to click <b>Scheduled start</b> again to make the task start at the scheduled time.</li><li>If the specified time has passed, the task will be started immediately. You can also click <b>Immediate start</b> to start the task immediately.
+</li></ul></td></tr>
+<tr>
+<td>Tag</td>
+<td>Tags are used to manage resources by category in different dimensions. If the existing tags do not meet your requirements, go to the console to create more.</td></tr>
+<tr>
+<td rowspan=7>Source Database Settings</td>
+<td>Source Database Type</td><td>The source database type selected during purchase, which cannot be changed.</td></tr>
+<tr>
+<td>Region</td><td>The region selected during purchase, which cannot be changed.</td></tr>
+<tr>
+<td>Access Type</td><td>For a third-party cloud database, you can select **Public Network** generally or select **VPN Access**, **Direct Connect**, or **CCN** based on your actual network conditions.<br>In this scenario, select **Direct Connect** or **VPN Access**. You need to <a href="https://intl.cloud.tencent.com/document/product/571/42651">configure VPN-IDC interconnection</a> in this scenario. For the preparations for different access types, see <a href="https://intl.cloud.tencent.com/document/product/571/42652">Overview</a>.
+<ul><li>Public Network: The source database can be accessed through a public IP.</li>
+<li>Self-Build on CVM: The source database is deployed in a <a href="https://intl.cloud.tencent.com/document/product/213">CVM</a> instance.</li>
+<li>Direct Connect: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect</a>.</li>
+<li>VPN Access: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1037">VPN Connections</a>.</li>
+<li>Database: The source database is a TencentDB instance.</li>
+<li>CCN: The source database can be interconnected with VPCs through <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a>.</li></ul></td></tr>
+<tr>
+<td>VPC-based Direct Connect Gateway</td><td>Only VPC-based Direct Connect gateway is supported. Confirm the network type associated with the gateway.</td></tr>
+<tr>
+<td>VPC</td><td>Select a VPC and subnet associated with the VPC-based Direct Connect gateway.</td></tr>
+<tr>
+<td>Node Type</td><td>**Single-Node Migration** and **Cluster Migration** are supported. **Cluster Migration** is used as an example here.<br>Currently, there are no limits on the number of shards and replicas in migration from Cluster Edition Redis to Cluster Edition Redis.</td></tr>
+<tr>
+<td>Node Info</td><td>Enter the addresses and passwords (IP:port:password or IP:port) of all shards of the source database cluster and separate the information of different nodes with line breaks.<br>We strongly recommend you migrate data from a replica node of the source database to avoid any impact on business access to the source database.</td></tr>
+<tr>
+<td rowspan=6>Target Database Settings</td>
+<td>Target Database Type</td><td>The target database type selected during purchase, which cannot be changed.</td></tr>
+<tr>
+<td>Region</td><td>The target database region selected during purchase, which cannot be changed.</td></tr>
+<tr>
+<td>Access Type</td><td>Select a type based on your scenario. In this scenario, select **Database**.</td></tr>
+<tr>
+<td>Database Instance</td><td>Select the instance ID of the target database.</td></tr>
+</tbody></table>
 
-### 5. Configure a migration alarm
-DTS supports migration interruption alarming to inform you of any exceptions. You can configure a migration alarm with the following steps:
-(1) Log in to the [CM console](https://console.cloud.tencent.com/monitor/policylist) and select **Alarm Configuration** > **Alarm Policy** on the left sidebar.
-(2) Click **Create** to create an alarm policy.
- - Policy type: Select **Data Transmission Service** > **Self-built Migration**.
- - Alarm object: Select the DTS task to be monitored and configure the **Trigger Condition** and **Alarm Object** to finish alarm configuration.
-![](https://main.qcloudimg.com/raw/120d51cd7bc4b66e3722ae6adcbf9469.png)
 
-### 6. Complete the migration task 
-Before disabling data sync, you can verify data on the target instance. If everything is correct, the migration task can be completed.
-If the keys of the source instance and the target instance are identical, click **Complete** to finish data sync.
+#### 3. Verify and start the task
+
+On the task verification page, verify the task. After the verification is passed, click **Start Task**.
+
+- Failed: It indicates that a check item failed and the task is blocked. You need to fix the problem and run the verification task again.  
+- Alarm: It indicates that a check item doesn't completely meet the requirements, and the task can be continued, but the business will be affected. You need to assess whether to ignore the alarm or fix the problem and continue the task based on the alarm message.
+
+Return to the data migration task list, and you can see that the task has entered the **Preparing** status. After 1–2 minutes, the data migration task will be started.
+
+#### 4. Complete the migration task 
+
+(1) (Optional) If you want to view, delete, or perform other operations on a task, click the task and select the target operation in the **Operation** column. For more information, see [Viewing Task](https://intl.cloud.tencent.com/document/product/571/42637).
+
+(2) If the keys of the source and target databases are the same, click **Done** in the **Operation** column to stop the data migration task.
+
+(3) After the migration task status becomes **Task successful**, verify the data in the target database. If the verification is passed, you can formally cut over the business. For more information, see [Cutover Description](https://intl.cloud.tencent.com/document/product/571/42612).
+
+## Event Alarming and Metric Monitoring
+
+(1) DTS can automatically report event alarms triggered upon migration interruption to keep you informed of any exceptions. For detailed directions, see [Configuring Alarm Policy for Data Migration](https://intl.cloud.tencent.com/document/product/571/42610).
+(2) DTS allows you to view the monitoring data of various metrics during migration to understand the performance metrics of the system. For more information, see [Viewing Monitoring Metric](https://intl.cloud.tencent.com/document/product/571/42606).
+
 
