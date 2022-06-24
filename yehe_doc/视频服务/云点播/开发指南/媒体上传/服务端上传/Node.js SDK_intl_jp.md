@@ -186,6 +186,7 @@ client.upload("ap-guangzhou", req, function (err, data) {
 | 属性名      | 属性説明                   | タイプ      | 入力必須   |
 | --------- | ---------------------- | ------- | ---- |
 | MediaFilePath   | アップロード予定のメディアファイルパス。ローカルパス（ユーザーサーバー上のパス）にする必要があります。URLはサポートしていません。| String | はい    |
+| SubAppId   | VOD [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987)ID。サブアプリケーションの中のリソースにアクセスしたい場合は、このフィールドにサブアプリケーションIDを入力します。アクセスしない場合、このフィールドは入力不要です。        | Integer | いいえ    |
 | MediaType   | アップロード予定のメディアファイルタイプ。選択可能なタイプの詳細は、[ビデオアップロードの概要](https://intl.cloud.tencent.com/document/product/266/9760)をご参照ください。MediaFilePathに拡張子が付いている場合は入力不要です。        | String | いいえ    |
 | MediaName   | アップロード後のメディアの名前。入力しない場合は、デフォルトでMediaFilePathのファイル名を採用します。      | String | いいえ    |
 | CoverFilePath   | アップロード予定のカバーファイルパス。ローカルパス（ユーザーサーバー上のパス）にする必要があります。URLはサポートしていません。| String | いいえ    |
@@ -194,7 +195,6 @@ client.upload("ap-guangzhou", req, function (err, data) {
 | ExpireTime   | メディアファイルの‘’。表記形式はISO 8601規格に準拠します。詳細については、[ISO日時表記形式の説明](https://intl.cloud.tencent.com/document/product/266/11732)をご参照ください。        | String | いいえ    |
 | ClassId   | カテゴリーID。メディアのカテゴリー管理に使用します。[カテゴリー作成](https://intl.cloud.tencent.com/document/product/266/35325) インターフェースによってカテゴリーを作成し、カテゴリーIDを取得することができます。        | Integer | いいえ    |
 | SourceContext   | ソースコンテキスト。ユーザーリクエスト情報のパススルーに使用します。アップロードコールバックインターフェースは、このフィールドの値を戻します。最長250文字。        | String | いいえ    |
-| SubAppId   | VOD [サブアプリケーション](https://intl.cloud.tencent.com/document/product/266/33987)ID。サブアプリケーションの中のリソースにアクセスしたい場合は、このフィールドにサブアプリケーションIDを入力します。アクセスしない場合、このフィールドは入力不要です。        | Integer | いいえ    |
 | StorageRegion   | ストレージリージョン。ストレージを予定/希望するリージョンを指定します。このフィールドにはストレージリージョンの[英語の略称](https://intl.cloud.tencent.com/document/product/266/9760)を入力します。        | String | いいえ    |
 
 アップロードレスポンスクラス`VodUploadResponse`
