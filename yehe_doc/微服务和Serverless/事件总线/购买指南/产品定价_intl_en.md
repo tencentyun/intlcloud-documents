@@ -13,8 +13,8 @@ You are billed in tiered mode based on the number of events delivered to your **
 <th rowspan="2"><nobr>Total Events (Million/Month)</nobr></th>
 <th colspan="2"><p align="center">Unit Price (USD/Million) </p></th>
 </tr><tr>
-<th>Guangzhou, Nanjing, Shanghai, Hangzhou, Shenzhen, Beijing, Chengdu, Chongqing, Tianjin, Changsha</th>
-<th>Hong Kong (China), Singapore, Frankfurt, Toronto, Seoul, Silicon Valley</th>
+<th>Guangzhou, Shanghai, Beijing, Chengdu</th>
+<th>Hong Kong (China), Singapore, Silicon Valley</th>
 </tr><tr>
 <td >Tier 1</td>
 <td>N ≤ 1,000</td>
