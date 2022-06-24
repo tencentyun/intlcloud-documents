@@ -27,7 +27,7 @@ WAF supports logging to get attack information including the attack time, attack
 1. At the top right of the log list, click <img src="https://main.qcloudimg.com/raw/ac6451a8dab74a5cf57770ff8af30954.png" style="margin:0;"> to create a download task.
 
 >?
->- You can only create one download task at a time. One download task can contain up to 1 million logs. If you need to download more, it is recommended to create a task to start after another task completes, or [contact us](https://cloud.tencent.com/act/event/connect-service) for support.
+>- You can only create one download task at a time. One download task can contain up to 1 million logs. If you need to download more, it is recommended to create a task to start after another task completes, or [contact us](https://intl.cloud.tencent.com/contact-us) for support.
 >- If you select a wildcard domain name (for example, *.abc.com), log entries of all associated subdomain names such as those suffixed with .abc.com will also be downloaded.
 
 

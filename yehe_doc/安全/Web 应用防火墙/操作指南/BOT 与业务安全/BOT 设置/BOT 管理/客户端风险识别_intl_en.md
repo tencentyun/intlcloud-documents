@@ -7,7 +7,7 @@ Browser bot defense is a feature that is used for client risk identification and
 >! Bot flow defense is limited to web and H5 applications. Mobile terminals and mini programs are not supported.
 
 ## Prerequisites
-- You have purchased a WAF plan and subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47409#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E) service.
+- You have purchased a WAF plan and subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799) service.
 - You have added a protected domain name and ensured the domain name is in normal protection. Meanwhile, bot management rules has been enabled. For detailed directions, see [Getting Started](https://intl.cloud.tencent.com/document/product/627/18635).
 
 >?

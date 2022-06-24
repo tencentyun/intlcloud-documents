@@ -1,7 +1,7 @@
 This document describes the tamper protection feature of WAF. It is used to protect core static webpages. By caching pages and locking access requests, it protects your website from being affected by malicious tampering with your real server pages. In addition, you can also configure tamper protection rules as needed.
 ## Overview
 With the tamper protection feature, you can add protection rules to protect core webpages from being tampered with as needed. You can refresh the protected pages, during which WAF will update them to ensure that they are the same as those on the real server. Moreover, you can also choose whether to retain rule hit logs to analyze hit conditions.
->?CLB WAF doesn't support the tamper protection feature. For more information on detailed specifications, see [Billing Overview](https://intl.cloud.tencent.com/document/product/627/47409).
+>?CLB WAF doesn't support the tamper protection feature. For more information on detailed specifications, see [Billing Overview](https://intl.cloud.tencent.com/document/product/627/47799).
 
 ## Prerequisites
 You have [added a protected domain name](https://intl.cloud.tencent.com/document/product/627/35651) to SaaS WAF, and ensured the domain name is in normal protection.

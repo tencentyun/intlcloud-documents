@@ -12,8 +12,8 @@ ECM has two billable items: **computing storage** and **network bandwidth**. You
 Before using ECM, you need to sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?&s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fworkorder) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629) first.
 
 #### 3.2 Activating service
- - If you use an individual account, go to the [ECM console](https://console.cloud.tencent.com/ecm), click **Submit Application** to enter the application page, enter the user information, submit the application, and wait for approval. Once the application is approved, you can start using ECM.
- - If you use an organizational account, you can directly go to the [ECM console](https://console.cloud.tencent.com/ecm) to use ECM.
+Go to the [ECM console](https://console.cloud.tencent.com/ecm), click **Submit Application** to enter the application page, enter the user information, submit the application, and wait for approval. Once the application is approved, you can start using ECM.
+ 
 
 #### 3.3 Creating ECM module
 An ECM module is the basic module for managing the edge service. After ECM is activated, you can create a module and select configuration items such as instance type, number of CPU cores, memory, default image, and storage as needed. For more information, see [Creating ECM Module](https://intl.cloud.tencent.com/document/product/1119/43421).

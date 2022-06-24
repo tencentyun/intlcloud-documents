@@ -5,7 +5,7 @@ The bot traffic details section displays the bot traffic details of top 10 acces
 
 
 ## Prerequisites
-You have subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47409#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E) service and enabled bot traffic analysis.
+You have subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799) service and enabled bot traffic analysis.
 
 ## Directions
 1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-flowanalysis) and select **Bot Traffic Analysis** on the left sidebar. Open the **Bot traffic details** tab.

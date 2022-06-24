@@ -1,5 +1,5 @@
 ## Prerequisites
-You have subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47409) service.
+You have subscribed to the [bot behavior management](https://intl.cloud.tencent.com/document/product/627/47799) service.
 
 ## Directions
 1.Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration Center** > **Bot and Application Security** on the left sidebar.
