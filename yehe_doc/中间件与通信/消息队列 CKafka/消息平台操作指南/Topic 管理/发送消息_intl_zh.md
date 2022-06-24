@@ -7,6 +7,7 @@
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏选择**实例列表**，单击目标实例的“ID/名称”，进入实例详情页。
 3. 在实例详情页，单击 **topic 管理**标签页，在操作栏单击**发送消息**。
+![](https://qcloudimg.tencent-cloud.cn/raw/61007e75d5992a285d97f08738ade2e4.png)
    - 消息内容：填写发送消息内容，必填。
    - 消息Key：填写发送 Key，选填。
    - 发送到指定分区：支持将消息发送到指定分区，默认关闭。
