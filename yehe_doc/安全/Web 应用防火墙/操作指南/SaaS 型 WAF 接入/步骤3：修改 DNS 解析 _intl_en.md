@@ -1,0 +1,18 @@
+This document will guide you how to modify the DNS resolution record, so that WAF can protect the traffic generated when public network users access your website.
+
+## Directions
+To protect the public network traffic to websites with WAF, you need to modify the DNS resolution record. The following uses `waf.qcloudwaf.com` as an example to describe how to modify its DNS resolution record on Tencent Cloud DNSPod.
+
+1. Log in to the [DNSPod console](https://console.cloud.tencent.com/cns), click **My Domain** on the left sidebar, and then click **Resolve** on the right of the domain name `.technicalsupport.cn` to be accessed to WAF.
+2. Click **Add Record**.
+3. Enter the information required on the configuration page.
+	- Enter the host record of the website in the "Host Record". In this example, `saas.technicalsupport.cn` is added to WAF, so the host record is `saas`.
+    - Select "CNAME" as the record type.
+    - Enter the CNAME domain name assigned by WAF for the record value. In this example, the CNAME domain name format is `xxxx.qcloudcjgj.com`.
+	- Click **Save** after filling in all the information.
+
+4. When the modification is complete, DNS records will take effect and WAF will protect traffic accessing the website. Meanwhile, WAF will display **Normal Protection** on the [console](https://console.cloud.tencent.com/guanjia/tea-domain) after detecting that the resolution of the protected domain name is normal.
+>? DNS records will take effect in about 10 minutes.
+
+## Subsequent Operations
+After modifying your DNS resolution records, you can proceed to [Step 4. Configure a Security Group](https://intl.cloud.tencent.com/document/product/627/35654).

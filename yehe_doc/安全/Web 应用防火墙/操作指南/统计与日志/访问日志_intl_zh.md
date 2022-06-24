@@ -1,33 +1,39 @@
 ## 功能简介
 访问日志功能用于记录 Web 应用防火墙防护域名的访问日志信息，提供防御域名最近30天访问日志查询和下载功能，及不少于180天的访问日志存储服务。启用访问日志功能后，您可以根据需要查询和下载访问日志，满足安全合规、安全运维等需求。
 >!
->- 使用访问日志功能，需要先 [购买安全日志服务包](https://intl.cloud.tencent.com/document/product/627/11730)，并且根据 [操作步骤](#sysm) 启用访问日志开关。只有开启访问日志开关的域名，Web 应用防火墙才会记录该域名的访问日志。
->- 如需关闭访问日志功能，可以在 [续费管理](https://console.cloud.tencent.com/account/renewal) 中，找到相应计费项目，取消续费即可。
+>- 使用访问日志功能，需要先 [购买安全日志服务包](https://intl.cloud.tencent.com/document/product/627/47409)，并且根据 [操作步骤](#sysm) 启用访问日志开关。只有开启访问日志开关的域名，Web 应用防火墙才会记录该域名的访问日志。
+>- 关闭日志服务：如需关闭访问日志功能，可以在  [续费管理](https://console.cloud.tencent.com/account/renewal)  中，找到相应计费项取消。取消后，系统2个小时内停止新的访问日志写入，并于24小时内清空历史访问日志，请谨慎操作。 
+>- 升级日志服务容量：当存储的日志容量超过购买容量后，系统将自动停止新的访问日志写入，历史的访问日志不受影响，直到到达存储周期后开始自动删除。为了避免超量导致丢失访问日志，建议关注日志使用量，提前扩容避免超量导致访问日志丢失。
+
 
 ## 操作步骤[](id:sysm)
 ### 启用访问日志
-登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/config)，在左侧导航栏中，选择**实例管理** > **域名接入**，进入域名接入页面，在域名列表中选择域名，单击开启访问日志开关。 
-![](https://qcloudimg.tencent-cloud.cn/raw/2fbe9fd1743f9368529ec6b9eff37171.png)
+登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-overview)，在左侧导航栏中，选择**实例管理** > **域名接入**，进入域名接入页面，在域名列表中选择域名，单击开启访问日志开关。 
+![](https://qcloudimg.tencent-cloud.cn/raw/8b85d67766d85cf9ac7cf409f66b18a8.png)
 
 ### 查看日志
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
 2. 在日志服务页面，单击左上角的域名下拉框，选择所需域名后，单击**确定**，即可该域名的访问日志。
-![](https://qcloudimg.tencent-cloud.cn/raw/42a77d62f290d2b298e3ed9d38763143.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9c1d572a0c0d80adca267f7a7e23e921.png)
 3. 在日志服务页面，右上角可查看日志已使用容量进度条，单击**了解详情**，可跳转到 Web 应用防火墙的计费详情页面。
+![](https://qcloudimg.tencent-cloud.cn/raw/bdca09407ee8959cf8bd0b8e22c19dec.png)
 4.  在日志服务页面，单击右上角**存储配置**，可以查看日志已使用容量进度条，和设置日志保存天数，单击**保存**，即可保存修改。
 >?日志保存天数为1-30天。
 
+![](https://qcloudimg.tencent-cloud.cn/raw/a95c23eb2efb134487f0bf80193d9312.png)
 
 
 ### 查询日志
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
 2. 在日志服务页面，可以用快速检索、过滤检索和语句检索查询所需日志。
  - 快速检索：主要是针对时间的快捷选择检索。
+   ![](https://qcloudimg.tencent-cloud.cn/raw/0c6e25475e6a6fcdad9f76f1996e9948.png)
  - 过滤检索：选择所需字段和操作符，输入字段值后，单击**确定**，即可针对每个字段对日志进行筛选，并支持添加多个字段限制。
-3. 语句检索：为用户提供专业的语句日志检索功能，满足更复杂的日志检索需求。输入所需内容后，单击![](https://main.qcloudimg.com/raw/de2de3ad90917a2dba3259716cb87963.png)，即可查询。
+![](https://qcloudimg.tencent-cloud.cn/raw/620b2e6601a4c07bf9739c09fa758023.png)
+- 语句检索：为用户提供专业的语句日志检索功能，满足更复杂的日志检索需求。输入所需内容后，单击![](https://main.qcloudimg.com/raw/de2de3ad90917a2dba3259716cb87963.png)，即可查询。
+![](https://qcloudimg.tencent-cloud.cn/raw/a2e0a505f158790b21442d6f7946a6dd.png)
 
 **检索语法**
-
 <table>
 <thead>
 <tr>
@@ -136,11 +142,12 @@
 > - 使用键值检索时（形如 key:value），键名（key）必须在日志主题的键值索引配置项里面。
 > - 同时使用 AND 和 OR 逻辑运算符时，请使用()对检索条件进行分组，以明确逻辑优先级，例如`(ERROR OR WARNING) AND pid:1234`。
 
-
 ### 展示日志
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
 2. 在日志服务页面的展示模块，单击“字段名称”，会展示与本字段匹配的日志数前五的占比。
+![](https://qcloudimg.tencent-cloud.cn/raw/c24c4184e9134b986553988bbfa2aaec.png)
 3. 在展示模块，单击每条展示日志发生时间左侧的![](https://main.qcloudimg.com/raw/f85fc295aaf54ed8855edb882bb1ce06.png)，可以查看字段详情；单击 **JSON**，可以查看 JSON 格式的详情。
+![](https://qcloudimg.tencent-cloud.cn/raw/710df7a22f7bd56ca3be29596b8af0f2.png)
 
 **JSON 字段说明**
 <table>
@@ -192,7 +199,9 @@
 </tr>
 <tr>
 <td>status</td>
-<td>Web 应用防火墙返回给客户端的响应状态码</td>
+<td>Web 应用防火墙返回给客户端的响应状态码
+<UL><li>CLB - WAF 状态码624为拦截，600为正常</li>
+<li>SAAS - WAF 状态码403为拦截，200为正常</li></td>
 </tr>
 <tr>
 <td>body_bytes_sent</td>
@@ -235,9 +244,12 @@
 <td>纬度</td>
 </tr>
 </tbody></table>
+
 4. 在展示模块，展示已筛选出来的日志内容，目前支持列表和字段两种展示方式。
  - 字段展示：默认展示字段模式，右上角切换图标可以操作切换。
+![](https://qcloudimg.tencent-cloud.cn/raw/56409ae419261b18ac6ba2250d2b4240.png)
  - 列表展示：单击![](https://main.qcloudimg.com/raw/1c901122eac1bd6e8f21815d777551b7.png)，切换至列表模式。
+![](https://qcloudimg.tencent-cloud.cn/raw/bd3a5cf437d91fe8b67de9787e0da36e.png)
 
 **列表展示字段说明**
 <table>
@@ -322,16 +334,19 @@
 </tbody></table>
 
 ### 下载访问日志
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/tea-overview)，在左侧导航栏中，选择**日志服务** > **日志服务**，进入日志服务页面。
 2. 在日志服务页面的展示模块， 单击![](https://main.qcloudimg.com/raw/789f18df056dbc4e37f5a325b613ca70.png)，进入下载任务页面，单击**确定**，即可创建下载任务。
+
 >?	
 >- 同一时间段内只允许创建一个下载任务，请耐心等待。
 >- 单次最多下载100万条日志，如果您需要下载的日志超过100万条，建议您分多次任务进行下载。
 >- 当选择泛域名（如：*.abc.com）时，所有关联子域名（以.abc.com结尾）的日志也将会被下载。
 >- 最多创建五条下载任务，请注意下载的任务数。
 
+![](https://qcloudimg.tencent-cloud.cn/raw/ef5144e4faabb514fc3f6dd2f36f0220.png)
 
 3. 在下载任务页面，单击**查看任务**，可以查看下载任务的序号、创建时间、日志总数等信息。
+![](https://qcloudimg.tencent-cloud.cn/raw/3c5241a471eb5794abe23f2e2a8c5c9e.png)
 
 **日志文件字段说明**
 <table>
