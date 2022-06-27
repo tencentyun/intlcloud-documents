@@ -27,7 +27,7 @@ Um grupo RO é um conjunto de instâncias somente leitura que compartilham o mes
  - **Region (Região)**: por padrão, é a mesma da instância de origem (source).
  - **Database Version (Versão do banco de dados)**: por padrão, é a mesma da instância de origem (source).
  - **Architecture (Arquitetura)**: é um nó único. Embora a arquitetura de nó único seja econômica, há riscos de pontos únicos de falhas. Recomendamos que você adquira pelo menos duas instâncias somente leitura no grupo RO de suas operações que exigem alta disponibilidade.
- - **Data Replication Mode (Modo de replicação de dados)**: por padrão, é o mesmo da instância de origem (source).
+ - **Data Replication Mode (Modo de replicação de dados)**: Replicação assíncrona.
  - **AZ (Zona de disponibilidade)**: se houver várias AZs na região atual, você poderá escolher uma, conforme necessário.
 >?O atraso da rede em AZs na mesma região, em regiões diferentes e em regiões fora da China Continental é de cerca de alguns milissegundos, dezenas de milissegundos e mais de 100 milissegundos, respectivamente. Portanto, você deve escolher uma AZ com cuidado.
 5. Retorne à lista de instâncias. O status da instância criada é **Delivering (Em entrega)**. Se o status mudar para **Running (Em execução)**, a instância somente leitura foi criada com êxito.
