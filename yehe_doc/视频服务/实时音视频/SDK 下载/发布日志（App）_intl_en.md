@@ -109,7 +109,6 @@ All platforms: Fixed known issues, improving stability.
 - Windows: Updated the live streaming component from V1 to V2 APIs, improving its stability.
 - Windows: Improved compatibility with the GPUs of low-end devices.
 
->?更早期的版本更新历史请单击  [更多](https://intl.cloud.tencent.com/document/product/647/39426)。
 
 ### Version 9.5 Released on January 11, 2022
 
