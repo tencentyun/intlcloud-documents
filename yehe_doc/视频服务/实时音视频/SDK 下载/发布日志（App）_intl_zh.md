@@ -109,7 +109,6 @@
 - Windows：Live V1 升级到 V2 接口，提供更稳定的 Live 组件。
 - Windows：提升了低端机上的显卡兼容性。
 
->?更早期的版本更新历史请单击  [更多](https://intl.cloud.tencent.com/document/product/647/39426)。
 
 ### Version 9.5 @ 2022.01.11
 
