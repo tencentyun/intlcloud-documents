@@ -7,8 +7,7 @@ TUIPusher & TUIPlayer 의 장점:
 + 뛰어난 유연성과 확장성을 위해 TRTC, IM 및 TCPlayer를 포함한 Tencent Cloud의 기본 SDK에 쉽게 통합됩니다.
 + Web 기반, 사용하기 쉽고 빠른 업데이트.
 
-![TUIPusher 데모](https://qcloudimg.tencent-cloud.cn/raw/8d33df705c07c80d75ad19096e681903.png)
-![TUIPlayer 데모](https://qcloudimg.tencent-cloud.cn/raw/6490fdf7db4980db3a98b4b103fb52f1.png)
+![TUIPusher演示](https://qcloudimg.tencent-cloud.cn/raw/d1670385df8944886472e6c17d577949.png)
 
 ## 빠른 체험
 
