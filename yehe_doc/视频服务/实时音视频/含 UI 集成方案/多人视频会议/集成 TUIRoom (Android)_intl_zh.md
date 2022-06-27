@@ -7,21 +7,23 @@ TUIRoom 是一个开源的音视频 UI 组件，通过在项目中集成 TUIRoom
 </tr>
 </tbody></table>
 
-
 ## 组件集成
 ### 步骤一：下载并导入 TUIRoom 组件
-单击进入 [Github](https://github.com/tencentyun/TUIRoom) ，选择克隆/下载代码，然后拷贝 Android 下的 Source、TUICore、Beauty 目录到您的工程中，并完成如下导入动作：
+单击进入 [Github](https://github.com/tencentyun/TUIRoom) ，选择克隆/下载代码，然后拷贝 Android 下的 tuiroom、debug、tuibeauty 目录到您的工程中，并完成如下导入动作：
 - 在 `setting.gradle` 中完成导入，参考如下：
+
 ```
-include ':Source'
-include ':TUICore'
-include ':Beauty'
+include ':tuiroom'
+include ':debug'
+include ':tuibeauty'
 ```
-- 在 app 的 `build.gradle` 文件中添加对 Source，TUICore，Beauty 的依赖：
+- 在 app 的 `build.gradle` 文件中添加对 tuiroom、debug、tuibeauty 的依赖：
 ```
-api project(':Source')
+api project(':tuiroom')
+api project(':debug')
+api project(':tuibeauty')
 ```
-- 在根目录的`build.gradle`文件中添加`TRTC SDK`和`IM SDK`的依赖：
+- 在根目录的 `build.gradle` 文件中添加 `TRTC SDK` 和 `IM SDK` 的依赖：
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -48,29 +50,22 @@ ext {
 
 ### 步骤三：创建并初始化 TUI 组件库
 ```java
-  // 1.组件登录，
-  TUILogin.init(this, 您的SDKAppId, config, new V2TIMSDKListener() {
-            @Override
-            public void onKickedOffline() {  // 登录被踢下线通知（示例：账号再其他设备登录）
-            }
-            @Override
-            public void onUserSigExpired() { // userSig过期通知
-            }
-  });
-  TUILogin.login("您的userId", "您的userSig", new V2TIMCallback() {
-            @Override
-            public void onError(int code, String msg) {
-                Log.d(TAG, "code: " + code + " msg:" + msg);
-            }
-            @Override
-            public void onSuccess() {
-            }
-  });
-  
-  // 2.初始化TUIRoomCore实例
-  TUIRoomCore mTUIRoomCore = TUIRoomCore.getInstance(context);
-  mTUIRoomCore.setListener(listener);
+// 1.组件登录
+TUILogin.addLoginListener(new TUILoginListener() {
+    @Override
+    public void onKickedOffline() {  // 登录被踢下线通知（示例：账号再其他设备登录）
+    }
 
+    @Override
+    public void onUserSigExpired() { // userSig过期通知
+    }
+});
+
+TUILogin.login(context, "您的SDKAppId", "您的userId", "您的userSig", null);
+
+
+// 2.初始化TUIRoom实例
+TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ```
 
 #### 参数说明
@@ -82,42 +77,17 @@ ext {
 
 
 ### 步骤四：实现多人音视频互动
-1. **实现房主创建多人音视频互动房间 [TUIRoomCore#createRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
+1. **实现房主创建多人音视频互动房间**。
 ```java
-// 1.房主调用创建房间
-int roomId = 12345; //房间id
-mTUIRoomCore.createRoom(roomId, TUIRoomCoreDef.SpeechMode.FREE_SPEECH,
-        new TUIRoomCoreCallback.ActionCallback() {
-        @Override
-        public void onCallback(int code, String msg) {
-            if (code == 0) {
-            // 创建房间成功
-            }
-        }
-    }
-});
+tuiRoom.createRoom("12345", TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
+```
+2. **实现其他成员加入音视频房间**。
+```java
+tuiRoom.enterRoom("12345", true, true);
 ```
 
-2. **实现其他成员加入音视频房间 [TUIRoomCore#enterRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
-```java
-// 1.其它成员调用加入房间
-mTUIRoomCore.enterRoom(roomId, new TUIRoomCoreCallback.ActionCallback() {
-        @Override
-        public void onCallback(int code, String msg) {
-            if (code == 0) {
-            // 进入房间成功
-            }
-        }
-    }
-});
-
-// 2.收到远端用户是否开启音频上行回调，此时可以刷新房间显示列表
-@Override
-public void onRemoteUserEnterSpeechState(final String userId) {
-}
-```
-
-3. **实现房主解散房间 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
+### 步骤五：房间管理（可选）
+1. **房主解散房间 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
 ```java
 // 1.房主调用解散房间
 mTUIRoomCore.destroyRoom(new TUIRoomCoreCallback.ActionCallback() {
@@ -133,8 +103,7 @@ public void onDestroyRoom() {
     //房主解散，退出房间
 }
 ```
-
-4. **实现成员离开房间 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
+2. **成员离开房间 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
 ```java
 // 1.非房主身份调用离开房间
 mTUIRoomCore.leaveRoom(new TUIRoomCoreCallback.ActionCallback() {
@@ -144,14 +113,15 @@ mTUIRoomCore.leaveRoom(new TUIRoomCoreCallback.ActionCallback() {
     }
 });
 
-成员端会收到 onRemoteUserLeave 回调消息，通知有人离开
+//成员端会收到 onRemoteUserLeave 回调消息，通知有人离开
 @Override
 public void onRemoteUserLeave(String userId) {
         Log.d(TAG, "onRemoteUserLeave userId: " + userId);
 }
 ```
 
-5. **实现屏幕分享 [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281)**。
+### 步骤六：屏幕分享（可选）
+实现屏幕分享 [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281)。
 ```java
 // 1.在 AndroidManifest.xml 文件中添加 SDK 录屏功能的 activity 和权限
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -200,6 +170,13 @@ private void startScreenCapture() {
         mTUIRoom.startScreenCapture(encParams, params);
 }
 ```
+
+### 步骤七：美颜特效（可选）[](id:XMagic)
+TUIRoom 美颜使用了 腾讯特效SDK，在使用美颜功能时，需要先设置 XMagic License。
+```java
+TUIBeautyView.getBeautyService().setLicense(context, “XMagicLicenseURL”, “XMagicLicenseKey”);
+```
+
 
 ## 常见问题
 如果有任何需要或者反馈，您可以联系：colleenyu@tencent.com。

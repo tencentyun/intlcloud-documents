@@ -18,7 +18,9 @@ TRTCCloud.enterRoom()은 방 입장이 실패하면 이러한 유형의 오류 �
 |ERR_USER_ID_INVALID|-3319|잘못된 사용자 ID 값|
 |ERR_USER_SIG_INVALID|-3320|잘못된 userSig 값|
 |ERR_ROOM_REQUEST_ENTER_ROOM_TIMEOUT|-3308|방 입장 요청 시간 초과. 네트워크를 확인하십시오.|
+| ERR_SERVER_INFO_PRIVILEGE_FLAG_ERROR | -100006 | 권한 티켓 확인에 실패했습니다. privateMapKey가 올바른지 확인하십시오. |
 |ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|서비스 이용 불가. Tencent Cloud 계정 연체 여부를 확인하십시오.|
+| ERR_SERVER_INFO_ECDH_GET_TINYID      | -100018 | userSig 확인에 실패했습니다. userSig가 올바른지 확인하십시오. |
 
 
 ### 방 퇴장 오류 코드
@@ -123,8 +125,8 @@ TRTCCloud.ConnectOtherRoom()은 크로스 룸 공동 앵커링이 실패하는 �
 |ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|잘못된 크로스 룸 공동 앵커 서명 타임스탬프|
 |ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|크로스 룸 공동 앵커 서명 내 방 Id 매칭 오류|
 |ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|크로스 룸 공동 앵커 서명 내 사용자 이름 매칭 오류|
-|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|사용자가 공동 앵커를 시작하지 않았음|
-|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|크로스 룸 공동 앵커를 시작 실패|
+|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|사용자가 공동 앵커 시작하지 않음|
+|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|크로스 룸 공동 앵커 시작 실패|
 |ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|크로스 룸 공동 앵커 취소 실패|
 |ERR_SERVER_CENTER_CONN_ROOM_CONNED_ROOM_NOT_EXIST|-102046|공동 앵커링을 위해 연결된 방 없음|
 |ERR_SERVER_CENTER_CONN_ROOM_CONNED_REACH_MAX_ROOM|-102047|공동 앵커 룸의 최댓값에 도달|

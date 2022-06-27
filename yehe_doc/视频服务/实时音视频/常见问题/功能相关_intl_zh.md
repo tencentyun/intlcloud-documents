@@ -46,7 +46,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 支持的平台包括 iOS、Android、Windows(C++)、Unity、Mac、Web、Electron，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
 
 [](id:que10)
-### TRTC 精简版、专业版、企业版各个版本区别？ 
+### TRTC 精简版和全功能版的区别？ 
 详情请参见 [各版本差异对照表](https://intl.cloud.tencent.com/document/product/647/34615)。
 
 
@@ -82,6 +82,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 [](id:que15)
 ### 实时音视频是否支持私有化部署？
 实时音视频私有化部署未完全开放。若您需咨询或使用私有化服务，请联系：colleenyu@tencent.com。
+私有化客户端限制：支持原生 SDK（iOS、Mac、Android 和 Windows），支持 WebRTC，不支持小程序。
 
 [](id:que16)
 ### 实时音视频开通旁路直播，域名是否需要进行备案使用？
@@ -99,10 +100,6 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 ### 实时音视频双人视频通话是否支持蓝牙耳机？
 支持。
 
-
-[](id:que20)
-### 实时音视频是否支持在国外使用？
-支持。
 
 [](id:que21)
 ### 实时音视频接入 PC 端是否支持屏幕分享功能？
@@ -182,10 +179,11 @@ TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语
 [](id:que37)
 ### TRTC 是否支持音视频互通过程中的视频录制成文件？
 支持自有服务端录制（即录音/录像），如需使用请 [提工单](https://console.cloud.tencent.com/workorder/category) 联系我们获取 SDK 及相关指引。
+您也可以使用 实现云端录制与回放 录制视频。
 
 [](id:que38)
 ### TRTC 是否支持类似微信视频通话的悬浮窗、大小画面切换等功能？
-此类功能属于 UI 布局逻辑，SDK 并不限制 UI 上的展示处理。在官方 Demo 中提供了画面前后堆叠和九宫格布局模式的示例代码，并且支持悬浮窗、大小画面切换和画面拖动，更多详情请参考 [官方 Demo](https://github.com/tencentyun/TRTCSDK)。
+此类功能属于 UI 布局逻辑，SDK 并不限制 UI 上的展示处理。在官方 Demo 中提供了画面前后堆叠和九宫格布局模式的示例代码，并且支持悬浮窗、大小画面切换和画面拖动，更多详情请参考 [官方 Demo](https://github.com/tencentyun/TUICalling)。
 
 [](id:que39)
 ### TRTC 怎么实现纯音频通话？
@@ -241,18 +239,19 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 [](id:que49)
 ### TRTC SDK 是否支持断线重连?
-SDK 支持用户断线情况下的无限重连机制，连接过程中具体的连接状态和处理逻辑如下说明。
+SDK 支持用户断线情况下自动重连（若持续30分钟都未重连成功，则自动退房并返回-3301错误码），连接过程中具体的连接状态和处理逻辑如下说明。   
 下图展示了从用户 Userid1 加入频道，到连接中断，再到重新加入房间过程中，收到的监听回调事件：
 ![](https://qcloudimg.tencent-cloud.cn/raw/893ec522169d27a7b9a0e2dc4b09c7d0.png)
 **具体说明**：
-
 - T1：用户侧发起调用 `enterRoom` 接口发起进房请求。
-- T2：收到 `onEnterRoom` 回调。
-- T3：客户端因网络问题断网，SDK 会尝试重新加入房间。
-- T4：如果联系8秒没有连接上服务端，收到 `onConnectionLost` 断连回调。
-- T5：接着隔3秒没有连接上服务端，收到 `onTryToReconnect` 重试回调。
-- T6：接着每隔24秒，收到 `onTryToReconnect` 重试回调。
-- T7：断连期间任意时刻重连成功，收到 `onConnectionRecovery` 恢复回调。
+- T2：用户 Userid1 收到 `onEnterRoom` 回调，Userid2 感知 Userid1 存在延迟，大约300ms后，Userid2 收到 `onRemoteUserEnterRoom` 回调。
+- T3：Userid1 客户端因网络问题断网，SDK 会尝试重新加入房间。
+- T4：Userid1 如果连续8秒没有连接上服务端，Userid1 收到 `onConnectionLost` 断连回调。
+- T5：Userid1 接着隔3秒没有连接上服务端，Userid1 收到 `onTryToReconnect` 重试回调。
+- T6：Userid1 接着每隔24秒，收到 onTryToReconnect 重试回调。
+- T7：Userid2 会在收到 Userid1 掉线通知90s后，SDK 判断远端用户 Userid1 掉线，Userid2 收到 `onRemoteUserLeaveRoom` 回调。
+- T8：如果Userid1断连期间任意时刻重连成功，Userid1 收到 `onConnectionRecovery` 恢复回调。
+
 
 [](id:que50)
 ### TRTC 有没有首帧渲染回调？能否监听画面开始渲染，声音开始播放？
@@ -267,7 +266,6 @@ SDK 支持用户断线情况下的无限重连机制，连接过程中具体的�
 目前 TRTC 有对主流的蓝牙耳机和外设做兼容，但是还会遇到某些设备上有兼容问题。建议使用官方 Demo 以及QQ音视频通话测试对比下是否都正常。
 
 [](id:que53)
-
 ### TRTC 音视频过程中的上下行码率、分辨率、丢包率、音频采样率等信息怎么获取到？
 可以通过 SDK 接口 onStatistics() 获取到这些统计信息。
 
@@ -352,4 +350,47 @@ SDK 支持用户断线情况下的无限重连机制，连接过程中具体的�
 服务端录制需要使用 Linux SDK。Linux SDK 暂未完全开放，若您需咨询或使用相关服务，请联系：colleenyu@tencent.com。
 
 
+[](id:que73)
+### TRTC 支不支持美颜?
+支持美颜功能。TRTC 提供基于人脸识别技术的 AI 美颜、美妆、微整形、绿幕等各类型多种特效。
 
+- Web 端请参见 [开启美颜](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-28-advanced-beauty.html)。
+- 客户端 AI 美颜属于增值服务，由 腾讯特效 SDK 收取相关费用。
+
+>? 只有全功能版支持美颜特效组件，现阶段 iOS 和 Android 平台有这个功能。
+
+[](id:que74)
+### 是否支持在非大陆地区使用？	
+
+TRTC 支持在国外和香港使用。
+> ?
+> - 提供覆盖全球的高连通、高可靠、强安全的网络连接通道，自研多重最优寻址算法，具有全网调度能力。丰富的高带宽资源储备，全球节点布局，保证国际链路端到端平均时延 < 300ms。
+> - 由于国际链路问题，具体使用时也会受地区与实际使用场景等因素影响。
+
+[](id:que75)
+### 是否支持实时不良画面检测？
+关于涉黄、涉政、敏感信息等，会自动进行拦截关闭，不会允许出现在直播间中。
+
+[](id:que76)
+### 如何查询当前房间所有用户信息？
+目前不支持查询当前房间所有用户信息。
+
+[](id:que77)
+### TRTC 可以接收其它的 RTSP 推流吗？
+不支持，目前新增支持 RTMP 推流，详情请参见 [RTMP 协议推流接入 TRTC](https://intl.cloud.tencent.com/document/product/647/44275)文档。
+
+[](id:que78)
+### TRTC 支持双声道编码吗？
+支持双声道。
+
+[](id:que79)
+### TRTC 推流过程是先封装还是先编码？
+TRTC 采集后先进行编码，再进行封装。
+
+[](id:que80)
+### TRTC SDK 是 swift 版本吗？
+TRTC 目前 Model 层是 OC 版本，UI 层是 Swift 版本。
+
+[](id:que81)
+### 个人账号可以用 TRTC 吗？
+TRTC 支持个人账户使用。

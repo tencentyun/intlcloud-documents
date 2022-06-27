@@ -1,6 +1,6 @@
 ## コンポーネントの説明
 
-TUICallingはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUICallingコンポーネントを統合することにより、数行のコードを書くだけで、Appに「1対1オーディオビデオ通話」、「多人数オーディオビデオ通話」などのシーンを組み込むことができ、さらにオフラインでのリマインダー機能もサポートしています。TUICallingはまたiOS、Web、Flutter、UniAppなどのプラットフォームでもサポートしています。基本機能は下図のとおりです。
+TUICallingはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUICallingコンポーネントを統合することにより、数行のコードを書くだけで、Appに「1対1オーディオビデオ通話」などのシナリオを組み込むことができ、さらにオフラインでのリマインダー機能もサポートしています。TUICallingはまたiOS、Web、Flutter、UniAppなどのプラットフォームでもサポートしています。基本機能は下図のとおりです。
 
 <table class="tablestyle">
 <tbody><tr>
@@ -9,12 +9,12 @@ TUICallingはオープンソースのオーディオビデオUIコンポーネ�
 </tbody></table>
 
 
-
 ## コンポーネントの統合
 
 ### ステップ1：TUICallingコンポーネントのダウンロードとインポート
 クリックして[Github](https://github.com/tencentyun/TUICalling)に進み、コードのクローン/ダウンロードを選択した後、Androidディレクトリ下のtuicalling、tuicore、debugディレクトリをプロジェクトのappの同一階層のディレクトリにコピーし、次のようにインポート動作を完了します。
 - `setting.gradle`へのインポートを完了します。以下をご参照ください。
+
 ```java
 include ':tuicalling'
 include ':tuicore'
@@ -82,7 +82,7 @@ TUILogin.login("あなたのuserId", "あなたのuserSig", new V2TIMCallback() 
 // 2.TUICallingインスタンスの初期化
 TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 ```
-**パラメータの説明**：
+**パラメータの説明**
 - **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**：**TRTCアプリケーションキー**であり、SDKAppIdに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上の図のように表示されます。
@@ -91,16 +91,12 @@ TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 
 
 ### ステップ4：オーディオビデオ通話の実装
-- **1対1ビデオ通話/オーディオ通話の実装[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)**
+**1対1ビデオ通話/オーディオ通話の実装[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)**：
 ```java
 // 1対1ビデオ通話を開始します。userIdは1111と仮定します。
 callingImpl.call(["1111"], TUICalling.Type.VIDEO);
 ```
-- **多人数ビデオ通話の実装**：
-```java
-// 多人数ビデオ通話を開始します。userIdはそれぞれ1111、2222、3333と仮定します
-callingImpl.call(["1111", "2222", "3333"], TUICalling.Type.VIDEO);
-```
+
 
 >? 
 >- 受信側がステップ3を完了、すなわちログインに成功した後、再度通話リクエストを受信した場合、TUICallingコンポーネントは対応する応答画面を自動的に起動します。    

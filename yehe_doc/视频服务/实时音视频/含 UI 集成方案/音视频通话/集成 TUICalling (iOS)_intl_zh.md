@@ -1,13 +1,12 @@
 ## 组件介绍
 
-TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUICalling 组件，您只需要编写几行代码就可以为您的 App 添加“一对一音视频通话”，“多人音视频通话”等场景，并且支持离线唤起能力。TUICalling 同时支持 Android、Web、Flutter、UniApp 等平台，基本功能如下图所示：
+TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUICalling 组件，您只需要编写几行代码就可以为您的 App 添加“一对一音视频通话”场景，并且支持离线唤起能力。TUICalling 同时支持 Android、Web、小程序、Flutter、UniApp 等平台，基本功能如下图所示：
 
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/af697557d2746585a0d9f4b894dc42d5.png" </td>
 </tr>
 </tbody></table>
-
 
 ## 组件集成
 
@@ -17,6 +16,7 @@ TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUIC
 1. 在您的工程 `Podfile` 文件同一级目录下创建 `TUICalling` 文件夹。
 2. 单击进入 [**Github/TUICalling**](https://github.com/tencentyun/TUICalling) ，选择克隆/下载代码，然后将 [**TUICalling/iOS/**](https://github.com/tencentyun/TUICalling/tree/main/iOS) 目录下的 `Source`、`Resources` 文件夹 和 `TUICalling.podspec` 文件拷贝到您在 `步骤1` 创建的 TUICalling 文件夹下。
 3. 在您的 Podfile 文件中添加以下依赖，之后执行 `pod install` 命令，完成导入。
+
 ```
 # :path => "指向TUICalling.podspec的相对路径"
 pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"]
@@ -77,8 +77,7 @@ TUICalling.shareInstance()
 - **UserSig**：根据 SDKAppId、UserID，SecretKey 等信息计算得到的安全保护签名，您可以单击 [这里](https://console.cloud.tencent.com/trtc/usersigtool) 直接在线生成一个调试的 UserSig，也可以参照我们的 [TUICalling示例工程](https://github.com/tencentyun/TUICalling/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L39) 自行计算，更多信息见 [如何计算及使用 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 ### 步骤四：实现音视频通话
-
-- 实现1对1视频通话 TUICalling#call
+实现1对1视频通话 [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)：
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 发起1对1视频通话，假设userId为：1111
@@ -89,17 +88,7 @@ TUICalling.shareInstance()
 TUICalling.shareInstance().call(userIDs: ["1111"], type: .video)
 :::
 </dx-codeblock>
-- 实现多人视频通话 TUICalling#call
-<dx-codeblock>
-:::  Objective-C Objectivec
-// 发起多人视频通话，假设userId分别为：1111、2222、3333；
-[[TUICalling shareInstance] call:@[@"1111", @"2222", @"3333"] type:TUICallingTypeVideo];
-:::
-::: Swift Swift
-// 发起多人视频通话，假设userId分别为：1111、2222、3333；
-TUICalling.shareInstance().call(userIDs: ["1111", "2222", "3333"], type: .video)
-:::
-</dx-codeblock>
+
 
 >? 当接收方完成步骤三后，即登录成功后，再收到通话请求后，TUICalling组件会自动启动相应的接听界面。
 
@@ -108,7 +97,7 @@ TUICalling.shareInstance().call(userIDs: ["1111", "2222", "3333"], type: .video)
 
 ### 步骤六：状态监听（可选）
 
-如果您的业务需要 监听通话的状态，例如通话开始、结束等，可以监听以下事件：
+如果您的业务需要 [监听通话的状态](https://intl.cloud.tencent.com/document/product/647/43139)，例如通话开始、结束等，可以监听以下事件：
 <dx-codeblock>
 :::  Objective-C Objectivec
 [[TUICalling shareInstance] setCallingListener:self];
@@ -152,7 +141,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### 步骤七：悬浮窗功能（可选）
 
-如果您的业务需要开启 悬浮窗功能，您可以在 TUICalling 组件初始化时调用`TUICalling.shareInstance().enableFloatWindow(enable: true)`开启该功能。
+如果您的业务需要开启 [悬浮窗功能](https://intl.cloud.tencent.com/document/product/647/43139)，您可以在 TUICalling 组件初始化时调用`TUICalling.shareInstance().enableFloatWindow(enable: true)`开启该功能。
 
 >? 目前组件仅支持应用内悬浮窗（最小化退到上一层界面）。
 
@@ -160,7 +149,7 @@ public func onCallEvent(event: TUICallingEvent, type: TUICallingType, role: TUIC
 
 ### TUICalling 组件支持自定义铃声吗？
 
-支持，调用 TUICalling#setCallingBell即可。
+支持，调用 [TUICalling#setCallingBell](https://intl.cloud.tencent.com/document/product/647/43139) 即可。
 
 ### CocoaPods如何安装？
 

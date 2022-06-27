@@ -7,19 +7,21 @@ TUIRoomはオープンソースのオーディオビデオUIコンポーネン�
 </tr>
 </tbody></table>
 
-
 ## コンポーネントの統合
 ### ステップ1：TUIRoomコンポーネントのダウンロードとインポート
-クリックして[Github](https://github.com/tencentyun/TUIRoom)に進み、コードのクローン/ダウンロードを選択した後、Android下のSource、TUICore、Beautyディレクトリをプロジェクトにコピーし、次のようにインポート動作を完了します。
+クリックして[Github](https://github.com/tencentyun/TUIRoom)に進み、コードのクローン/ダウンロードを選択した後、Android下のtuiroom、debug、tuibeautyディレクトリをプロジェクトにコピーし、次のようにインポート動作を完了します。
 - `setting.gradle`へのインポートを完了します。以下をご参照ください。
+
 ```
-include ':Source'
-include ':TUICore'
-include ':Beauty'
+include ':tuiroom'
+include ':debug'
+include ':tuibeauty'
 ```
-- appの`build.gradle`ファイルにSource、TUICore、Beautyに対する依存関係を追加します。
+- appの`build.gradle`ファイルにtuiroom、debug、tuibeautyに対する依存関係を追加します。
 ```
-api project(':Source')
+api project(':tuiroom')
+api project(':debug')
+api project(':tuibeauty')
 ```
 - ルートディレクトリの`build.gradle`ファイルに`TRTC SDK`および`IM SDK`の依存関係を追加します。
 ```
@@ -48,29 +50,22 @@ ext {
 
 ### ステップ3：TUIコンポーネントリポジトリの作成と初期化
 ```java
-  // 1.コンポーネントのログイン
-  TUILogin.init(this, あなたのSDKAppId, config, new V2TIMSDKListener() {
-            @Override
-            public void onKickedOffline() {  //  ログインがキックアウトされたオフライン通知（例：アカウントが他のデバイスでログインしている）
-            }
-            @Override
-            public void onUserSigExpired() { // userSig期限切れ通知
-            }
-  });
-  TUILogin.login("あなたのuserId", "あなたのuserSig", new V2TIMCallback() {
-            @Override
-            public void onError(int code, String msg) {
-                Log.d(TAG, "code: " + code + " msg:" + msg);
-            }
-            @Override
-            public void onSuccess() {
-            }
-  });
-  
-  // 2.TUIRoomCoreインスタンスの初期化
-  TUIRoomCore mTUIRoomCore = TUIRoomCore.getInstance(context);
-  mTUIRoomCore.setListener(listener);
+// 1.コンポーネントのログイン
+TUILogin.addLoginListener(new TUILoginListener() {
+    @Override
+    public void onKickedOffline() {  //  ログインがキックアウトされたオフライン通知（例：アカウントが他のデバイスでログインしている）
+    }
 
+    @Override
+    public void onUserSigExpired() { // userSig期限切れ通知
+    }
+});
+
+TUILogin.login(context, "あなたのSDKAppId", "あなたのuserId", "あなたのuserSig", null);
+
+
+// 2.TUIRoomインスタンスの初期化
+TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ```
 
 #### パラメータの説明
@@ -82,42 +77,17 @@ ext {
 
 
 ### ステップ4：多人数オーディオビデオインタラクションの実装
-1. **管理者による多人数オーディオビデオインタラクションルーム作成の実装[TUIRoomCore#createRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
+1. **管理者が多人数オーディオビデオインタラクティブルームを作成できるようにします**。
 ```java
-// 1.管理者が呼び出してルームを作成
-int roomId = 12345; //ルームid
-mTUIRoomCore.createRoom(roomId, TUIRoomCoreDef.SpeechMode.FREE_SPEECH,
-        new TUIRoomCoreCallback.ActionCallback() {
-        @Override
-        public void onCallback(int code, String msg) {
-            if (code == 0) {
-            // ルーム作成の成功
-            }
-        }
-    }
-});
+tuiRoom.createRoom("12345", TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
+```
+2. **他のメンバーがオーディオビデオルームに参加できるようにします**。
+```java
+tuiRoom.enterRoom("12345", true, true);
 ```
 
-2. **他メンバーのオーディオビデオルーム入室の実装 [TUIRoomCore#enterRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
-```java
-// 1.他メンバーが呼び出して入室
-mTUIRoomCore.enterRoom(roomId, new TUIRoomCoreCallback.ActionCallback() {
-        @Override
-        public void onCallback(int code, String msg) {
-            if (code == 0) {
-            // 入室に成功
-            }
-        }
-    }
-});
-
-// 2.リモートユーザーがオーディオアップストリームを開始したかどうかのコールバックを受信します。このときルーム表示リストを更新できます
-@Override
-public void onRemoteUserEnterSpeechState(final String userId) {
-}
-```
-
-3. **管理者によるルーム解散の実装 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
+### ステップ5：ルーム管理（オプション）
+1. **管理者によるルーム解散 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
 ```java
 // 1.管理者が呼び出してルームを解散
 mTUIRoomCore.destroyRoom(new TUIRoomCoreCallback.ActionCallback() {
@@ -133,8 +103,7 @@ public void onDestroyRoom() {
     //管理者が解散し、ルームから退出
 }
 ```
-
-4. **メンバーの退室の実装 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
+2. **メンバーの退室 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37281)**。
 ```java
 // 1.管理者以外による退室の呼び出し
 mTUIRoomCore.leaveRoom(new TUIRoomCoreCallback.ActionCallback() {
@@ -144,16 +113,17 @@ mTUIRoomCore.leaveRoom(new TUIRoomCoreCallback.ActionCallback() {
     }
 });
 
-メンバー側は、退室者があったことを通知するonRemoteUserLeaveコールバックメッセージを受信します
+//メンバー側は、退室者があったことを通知するonRemoteUserLeaveコールバックメッセージを受信します
 @Override
 public void onRemoteUserLeave(String userId) {
         Log.d(TAG, "onRemoteUserLeave userId: " + userId);
 }
 ```
 
-5. **画面共有の実装[TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281)**。
+### ステップ6：画面共有（オプション）
+画面共有の実装 [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281)。
 ```java
-// 1.AndroidManifest.xmlのファイルの中にSDKのスクリーンレコーディング機能のactivityと権限を追加します
+// 1.AndroidManifest.xmlのファイルの中にSDKのスクリーンキャプチャ機能のactivityと権限を追加します
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 <application>
     <activity
@@ -166,10 +136,10 @@ if (Build.VERSION.SDK_INT >= 23) {
     if (!Settings.canDrawOverlays(getApplicationContext())) {
         Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
         startActivityForResult(intent, 100);
-    }else{
+    } else {
         startScreenCapture();
     }
-}else{
+} else {
     startScreenCapture();
 }
 
@@ -180,7 +150,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             if (Settings.canDrawOverlays(this)) {
                 // ユーザーの権限承認が成功
                 startScreenCapture();
-            }else{
+            } else {
             }
         }
     }
@@ -200,6 +170,13 @@ private void startScreenCapture() {
         mTUIRoom.startScreenCapture(encParams, params);
 }
 ```
+
+### ステップ7：美顔エフェクト（オプション）[](id:XMagic)
+TUIRoom美顔はTencent Effect SDKを使用しています。美顔機能を使用するには、まずXMagic Licenseを設定する必要があります。
+```java
+TUIBeautyView.getBeautyService().setLicense(context, "XMagicLicenseURL", "XMagicLicenseKey");
+```
+
 
 ## よくあるご質問
 ご要望やフィードバックなどがございましたら、colleenyu@tencent.comまでご連絡ください。

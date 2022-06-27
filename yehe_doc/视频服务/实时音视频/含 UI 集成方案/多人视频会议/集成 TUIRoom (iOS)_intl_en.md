@@ -1,5 +1,5 @@
-## Component Overview
-`TUIRoom` is an open-source audio/video UI component. After integrating it into your project, you can add features such as screen sharing, beauty filter, and low-latency video call to your application simply by writing a few lines of code. It also supports the [Android](https://intl.cloud.tencent.com/document/product/647/37283), [Windows](https://intl.cloud.tencent.com/document/product/647/44071), and [macOS](https://intl.cloud.tencent.com/document/product/647/44071) platforms. Its basic features are as shown below:
+## Overview
+`TUIRoom` is an open-source UI component for audio/video communication. With just a few lines of code changes, you can integrate it into your project to implement screen sharing, beauty filters, low-latency video calls, and other features. In addition to the iOS component, we also offer components for [Android](https://intl.cloud.tencent.com/document/product/647/37283), [Windows](https://intl.cloud.tencent.com/document/product/647/44071), [macOS](https://intl.cloud.tencent.com/document/product/647/44071), and more.
 
 <table class="tablestyle">
 <tbody><tr>
@@ -7,118 +7,189 @@
 </tr>
 </tbody></table>
 
+## Integration
 
-## Component Integration
+### Step 1. Import the `TUIRoom` component
 
-### Step 1. Download and import the `TUIRoom` component
-**To import the component through CocoaPods**, follow the steps below:
->? To implement the screen sharing feature, download `TXLiteAVSDK_ReplayKitExt.framework` [**here**](https://intl.cloud.tencent.com/document/product/647/34615), add it to your project, and create the "Broadcast Upload Extension" target. You can refer to the [demo project](https://github.com/tencentyun/TUIRoom/tree/main/iOS/Example/TXReplayKit_Screen) for implementation.
-
-1. Go to [GitHub](https://github.com/tencentyun/TUIRoom), clone or download the code, and copy the `Resources`, `SDK`, and `Source` folders and the `TUIRoom.podspec` file in the `iOS` directory to your project.
-2. Add the following dependencies to your `Podfile` and run `pod install` to complete the import.
-```swift
-# TXLiteAVSDK
-pod 'TXLiteAVSDK_TRTC'
-
-# :path => "Points to the relative path of the directory of `TXAppBasic.podspec`"
-pod 'TXAppBasic', :path => "../SDK/TXAppBasic/"
-
-# :path => "Points to the relative path of the directory of `TCBeautyKit.podspec`"
-pod 'TCBeautyKit', :path => "../SDK/TCBeautyKit/"
-
-# :path => "Points to the relative path of the directory of `TUIRoom.podspec`"
-pod 'TUIRoom', :path => "../", :subspecs => ["TRTC"]
+**To import the component using CocoaPods**, follow the steps below:
+1. Create a `TUIRoom` folder in the same directory as `Podfile` in your project.
+2. Go to the component’s [GitHub page](https://github.com/tencentyun/TUIRoom), clone or download the code, and copy the `Source`, `Resources`, `TUIBeauty`, and `TXAppBasic` folders and the `TUIRoom.podspec` file in [TUIRoom/iOS/](https://github.com/tencentyun/TUIRoom/tree/main/iOS) to the `TUIRoom` folder in your project.
+3. Add the following dependencies to your `Podfile` and run `pod install` to import the component.
+```
+# :path => "The relative path of `TUIRoom.podspec`"
+pod 'TUIRoom', :path => "./TUIRoom/TUIRoom.podspec", :subspecs => ["TRTC"]
+# :path => "The relative path of `TXAppBasic.podspec`"
+pod 'TXAppBasic', :path => "./TUIRoom/TXAppBasic/"
+# :path => "The relative path of `TUIBeauty.podspec`"
+pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
 ```
 
 >! The `Source` and `Resources` folders and the `TUIRoom.podspec` file must be in the same directory.
 >- `TXAppBasic.podspec` is in the `TXAppBasic` folder.
->- `TCBeautyKit.podspec` is in the `TCBeautyKit` folder.
+>- `TUIBeauty.podspec` is in the `TCBeautyKit` folder.
 
 ### Step 2. Configure permissions
 
-To use the audio/video features, you need to grant mic and camera permissions. Add the two items below to `Info.plist` of your application. Their content is what users see in the mic and camera access pop-up windows.
-- **Privacy - Microphone Usage Description**, plus a statement specifying why mic access is needed
-- **Privacy - Camera Usage Description**, plus a statement specifying why camera access is needed
+Your app needs mic and camera permissions to implement audio/video communication. Add the two items below to `Info.plist` of your app. Their content is what users see in the mic and camera access pop-up windows.
 
+```
+<key>NSCameraUsageDescription</key>
+<string>RoomApp needs to access your camera to capture video.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>RoomApp needs to access your mic to capture audio.</string>
+```
 ![](https://qcloudimg.tencent-cloud.cn/raw/224ae568f11d50124ea663ac0ef1c6e9.png)
 
-### Step 3. Create and log in to the component
-1. Call `TUILogin` in `TUICore` to log in as shown below:
-```swift
-TUILogin.initWithSdkAppID(Int32("Your sdkAppID"))
-TUILogin.login("Your userId", userSig: "Your userSig", succ: {
-     debugPrint("login success")
-}, fail: { code, errorDes in
-     debugPrint("login failed, code:\(code), error: \(errorDes ?? "nil")")
-})
-```
+### Step 3. Create and initialize an instance of the component
 
-**Parameter description**
-- **SDKAppID**: **TRTC application ID**. If you haven't activated the TRTC service, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, and click **Application Info**. The `SDKAppID` is as shown below:
+<dx-codeblock>
+:::  Objective-C ObjectiveC
+@import TUIRoom;
+@import TUICore;
+
+// 1. Log in to the component
+[TUILogin login:@"Your SDKAppID" userID:@"Your UserID" userSig:@"Your UserSig" succ:^{
+        
+} fail:^(int code, NSString *msg) {
+        
+}];
+// 2. Initialize the `TUIRoom` instance
+TUIRoom *tuiRoom = [TUIRoom sharedInstance];
+```
+:::
+::: Swift Swift
+import TUIRoom
+import TUICore
+
+// 1. Log in to the component
+TUILogin.login("Your SDKAppID", userID: "Your UserID", userSig: "Your UserSig") {
+        
+} fail: { code, msg in
+        
+}
+
+// 2. Initialize the `TUIRoom` instance
+let tuiRoom = TUIRoom.sharedInstance
+```
+:::
+</dx-codeblock>
+
+**Parameter description:**
+- **SDKAppID**: **TRTC application ID**. If you haven't activated TRTC, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, click **Application Info**, and select the **Quick Start** tab to view its `SDKAppID`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: **TRTC application key**, which corresponds to `SDKAppID`. On the [Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console, the `SecretKey` is as shown below:
-- **userId**: ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_). We recommend that you keep it consistent with your user account system.
-- **userSig**: Security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online or calculate it on your own by referring to the [demo project](https://github.com/tencentyun/TUIRoom/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L42). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **Secretkey**: **TRTC application key**. Each secret key corresponds to a `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
+- **UserId**: Current user ID, which is a custom string that can contain up to 32 bytes of letters and digits (special characters are not supported).
+- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [TUIRoom demo project](https://github.com/tencentyun/TUIRoom/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L42). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
-### Step 4. Implement group audio/video interaction
 
-1. **The room owner creates a group audio/video interaction room through [TUIRoomCore#createRoom](https://intl.cloud.tencent.com/document/product/647/37282)**.
-```swift
-let roomId = 123
-TUIRoomCore.shareInstance().createRoom("\(roomId)",speechMode: .freeSpeech,callback: { [weak self] code, message in
-    if code == 0 {
-       debugPrint("create room success") 
-    } else {
-    }
-})
+### Step 4. Implement group audio/video communication
+1. **Create a room**
+<dx-codeblock>
+:::  Objective-C ObjectiveC
+@import TUIRoom;
+
+[tuiRoom createRoomWithRoomId:@"Your RoomId" speechMode:TUIRoomFreeSpeech isOpenCamera:YES isOpenMicrophone:YES];
+:::
+::: Swift Swift
+import TUIRoom
+
+tuiRoom.createRoom(roomId: "Your RoomId", speechMode: .freeSpeech, isOpenCamera: true, isOpenMicrophone: true)
 ```
-2. **Other users enter the audio/video room through [TUIRoomCore#enterRoom](https://intl.cloud.tencent.com/document/product/647/37282)**.
-```swift
-let roomId = 123
-TUIRoomCore.shareInstance().enterRoom("\(roomId)", callback: { [weak self] code, message in
-    if code == 0 {
-       debugPrint("enter room success") 
-   } else {
-   }
-})
+:::
+</dx-codeblock>
+2. **Join a room**
+<dx-codeblock>
+:::  Objective-C ObjectiveC
+@import TUIRoom;
+
+[tuiRoom enterRoomWithRoomId:@"RoomId of the room to join" isOpenCamera:YES isOpenMicrophone:YES]
+:::
+::: Swift Swift
+import TUIRoom
+
+tuiRoom.enterRoom(roomId: "RoomId of the room to join", isOpenCamera: true, isOpenMicrophone: true)
 ```
-3. **Implement room exit**. 
-	- The **anchor** calls the [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37282) API to dismiss the room and IM group chat and exit the TRTC room. Room members receive the `onDestroyRoom` callback message that notifies them of group dismissal and exit the TRTC room.
-	- A **member** calls the [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37282) API to leave the room and IM group chat and exit the TRTC room. Other room members receive the `onRemoteUserLeave` callback message that notifies them of the room exit by the member.
-```swift
-if isHomeowner {
-    TUIRoomCore.shareInstance().destroyRoom { [weak self] _, _ in
-        guard let self = self else { return }
-        self.navigationController?.popViewController(animated: true)
-    }
-} else {
-    TUIRoomCore.shareInstance().leaveRoom { [weak self] _, _ in
-        guard let self = self else { return }
-        self.navigationController?.popViewController(animated: true)
-    }
- }
+:::
+</dx-codeblock>
+
+### Step 5. Implement room management (optional)
+1. **The room owner calls [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37282) to close the room**.
+<dx-codeblock>
+:::  Objective-C ObjectiveC
+@import TUIRoom;
+
+[[TUIRoomCore shareInstance] destroyRoom:^(NSInteger code, NSString * _Nonnull message) {
+            
+}];
 ```
-4. **Implement screen sharing through [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37282)**.
-	- Call `startScreenCapture` of `TUIRoomCore` to share the screen.
-	- Other members in the room will receive the `onRemoteUserScreenVideoAvailable` event notification.
-```swift
-// Click the button to enable screen sharing
-if #available(iOS 12.0, *) {
-    // Start screen sharing
-    let params = TRTCVideoEncParam()
-    params.videoResolution = TRTCVideoResolution._1280_720
-    params.resMode = TRTCVideoResolutionMode.portrait
-    params.videoFps = 10
-    params.enableAdjustRes = false
-    params.videoBitrate = 1500
-    TUIRoomCore.shareInstance().startScreenCapture(params)
-    TUIRoomBroadcastExtensionLauncher.launch()
-} else {
-    view.window?.makeToast(.versionLowToastText)
-}    
+:::
+::: Swift Swift
+import TUIRoom
+
+TUIRoomCore.shareInstance().destroyRoom { [weak self] _, _ in
+    guard let self = self else { return }
+    self.navigationController?.popViewController(animated: true)
+}
 ```
+:::
+</dx-codeblock>
+2. **A user in the room calls [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37282) to leave the room**.
+<dx-codeblock>
+:::  Objective-C ObjectiveC
+@import TUIRoom;
+
+[[TUIRoomCore shareInstance] leaveRoom:^(NSInteger code, NSString * _Nonnull message) {
+            
+}];
+```
+:::
+::: Swift Swift
+import TUIRoom
+
+TUIRoomCore.shareInstance().leaveRoom { [weak self] _, _ in
+    guard let self = self else { return }
+    self.navigationController?.popViewController(animated: true)
+}
+```
+:::
+</dx-codeblock>
+
+### Step 6. Implement screen sharing (optional)
+Call [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37282) to implement screen sharing. For detailed directions, see [Real-Time Screen Sharing (iOS)](https://intl.cloud.tencent.com/document/product/647/37338).
+<dx-codeblock>
+:::  Objective-C ObjectiveC
+@import TUIRoom;
+@import TXLiteAVSDK_Professional;
+
+TRTCVideoEncParam *params = [[TRTCVideoEncParam alloc] init];
+params.videoResolution = TRTCVideoResolution_1280_720;
+params.resMode = TRTCVideoResolutionModePortrait;
+params.videoFps = 10;
+params.enableAdjustRes = NO;
+params.videoBitrate = 1500;
+
+[[TUIRoomCore shareInstance] startScreenCapture:param];
+```
+:::
+::: Swift  Swift
+import TUIRoom
+
+ // Start screen sharing
+let params = TRTCVideoEncParam()
+params.videoResolution = TRTCVideoResolution._1280_720
+params.resMode = TRTCVideoResolutionMode.portrait
+params.videoFps = 10
+params.enableAdjustRes = false
+params.videoBitrate = 1500
+TUIRoomCore.shareInstance().startScreenCapture(params)
+
+```
+:::
+</dx-codeblock>
+
 
 ## FAQs
+
 ### How do I install CocoaPods?
 
 Enter the following command in a terminal window (you need to install Ruby on your Mac first):

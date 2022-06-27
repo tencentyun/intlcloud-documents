@@ -1,5 +1,5 @@
-## Component Overview
-`TUIRoom` is an open-source audio/video UI component. After integrating it into your project, you can add features such as screen sharing, beauty filter, and low-latency video call to your application simply by writing a few lines of code. It also supports the [iOS](https://intl.cloud.tencent.com/document/product/647/37284), [Windows](https://intl.cloud.tencent.com/document/product/647/44071), and [macOS](https://intl.cloud.tencent.com/document/product/647/44071) platforms. Its basic features are as shown below:
+## Overview
+`TUIRoom` is an open-source UI component for audio/video communication. With just a few lines of code changes, you can integrate it into your project to implement screen sharing, beauty filters, low-latency video calls, and other features. In addition to the Android component, we also offer components for [iOS](https://intl.cloud.tencent.com/document/product/647/37284), [Windows](https://intl.cloud.tencent.com/document/product/647/44071), [macOS](https://intl.cloud.tencent.com/document/product/647/44071), and more.
 
 <table class="tablestyle">
 <tbody><tr>
@@ -7,21 +7,23 @@
 </tr>
 </tbody></table>
 
-
-## Component Integration
+## Integration
 ### Step 1. Download and import the `TUIRoom` component
-Go to [GitHub](https://github.com/tencentyun/TUIRoom), clone or download the code, copy the `Source` and `TUICore`, and `Beauty` directories from the `Android` directory to your project, and complete the following import operations:
+Go to the component’s [GitHub page](https://github.com/tencentyun/TUIRoom), clone or download the code, and copy the `tuiroom` and `debug`, and `tuibeauty` folders in the `Android` directory to your project. Then, do the following to import the component:
 - Complete import in `setting.gradle` as shown below:
+
 ```
-include ':Source'
-include ':TUICore'
-include ':Beauty'
+include ':tuiroom'
+include ':debug'
+include ':tuibeauty'
 ```
-- Add dependencies on `Source`, `TUICore`, and `Beauty` to the `build.gradle` file in `app`:
+- Add the `tuiroom`, `debug`, and `tuibeauty` dependencies in the `build.gradle` file in `app`.
 ```
-api project(':Source')
+api project(':tuiroom')
+api project(':debug')
+api project(':tuibeauty')
 ```
-- Add dependencies on `TRTC SDK` and `IM SDK` to the `build.gradle` file in the root directory:
+- Add the `TRTC SDK` and `IM SDK` dependencies in `build.gradle` in the root directory:
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -30,7 +32,7 @@ ext {
 ```
 
 ### Step 2. Configure permission requests and obfuscation rules
-1. Configure permission requests for your app in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and later, the mic access must be requested at runtime):
+1. Configure permission requests for your app in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and later, the mic permission must be requested at runtime.)
 ```
 <uses-permission android:name="android.permission.INTERNET" />              
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -46,80 +48,48 @@ ext {
 -keep class com.tencent.** { *;}
 ```
 
-### Step 3. Create and initialize the TUI component
+### Step 3. Create and initialize an instance of the component
 ```java
-  // 1. Log in to the component
-  TUILogin.init(this, your SDKAppId, config, new V2TIMSDKListener() {
-            @Override
-            public void onKickedOffline() {  // Callback for forced logout (for example, the account is logged in to on another device)
-            }
-            @Override
-            public void onUserSigExpired() { // Callback for `userSig` expiration
-            }
-  });
-  TUILogin.login("Your userId", "Your userSig", new V2TIMCallback() {
-            @Override
-            public void onError(int code, String msg) {
-                Log.d(TAG, "code: " + code + " msg:" + msg);
-            }
-            @Override
-            public void onSuccess() {
-            }
-  });
-  
-  // 2. Initialize the `TUIRoomCore` instance
-  TUIRoomCore mTUIRoomCore = TUIRoomCore.getInstance(context);
-  mTUIRoomCore.setListener(listener);
+// 1. Log in to the component
+TUILogin.addLoginListener(new TUILoginListener() {
+    @Override
+    public void onKickedOffline() {  // Callback for forced logout (for example, due to multi-device login)
+    }
 
+    @Override
+    public void onUserSigExpired() { // Callback for `userSig` expiration
+    }
+});
+
+TUILogin.login(context, "Your SDKAppId", "Your userId", "Your userSig", null);
+
+
+// 2. Initialize the `TUIRoom` instance
+TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ```
 
 #### Parameter description
-- **SDKAppID**: **TRTC application ID**. If you haven't activated the TRTC service, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, and click **Application Info**. The `SDKAppID` is as shown below:
+- **SDKAppID**: **TRTC application ID**. If you haven't activated TRTC, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, click **Application Info**, and select the **Quick Start** tab to view its `SDKAppID`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: **TRTC application key**, which corresponds to `SDKAppID`. On the *[Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console, the `SecretKey` is as shown below:
+- **Secretkey**: **TRTC application key**. Each secret key corresponds to a `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
 - **userId**: ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_). We recommend that you keep it consistent with your user account system.
-- **userSig**: Security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online, or you can calculate it on your own by referring to the [demo project](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [demo project](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 
-### Step 4. Implement group audio/video interaction
-1. **The room owner creates a group audio/video interaction room through [TUIRoomCore#createRoom](https://intl.cloud.tencent.com/document/product/647/37281)**.
+### Step 4. Implement group audio/video communication
+1. **Create a room**
 ```java
-// 1. The room owner calls an API to create a room
-int roomId = 12345; // Room ID
-mTUIRoomCore.createRoom(roomId, TUIRoomCoreDef.SpeechMode.FREE_SPEECH,
-        new TUIRoomCoreCallback.ActionCallback() {
-        @Override
-        public void onCallback(int code, String msg) {
-            if (code == 0) {
-            // Room created successfully
-            }
-        }
-    }
-});
+tuiRoom.createRoom("12345", TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
+```
+2. **Join a room**
+```java
+tuiRoom.enterRoom("12345", true, true);
 ```
 
-2. **Other users enter the audio/video room through [TUIRoomCore#enterRoom](https://intl.cloud.tencent.com/document/product/647/37281)**.
+### Step 5. Implement room management (optional)
+1. **The room owner calls [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37281) to close the room**.
 ```java
-// 1. Another user calls an API to enter the room
-mTUIRoomCore.enterRoom(roomId, new TUIRoomCoreCallback.ActionCallback() {
-        @Override
-        public void onCallback(int code, String msg) {
-            if (code == 0) {
-            // Room entered successfully
-            }
-        }
-    }
-});
-
-// 2. The callback of whether a remote user is sending audio is received. At this time, the room user list can be refreshed
-@Override
-public void onRemoteUserEnterSpeechState(final String userId) {
-}
-```
-
-3. **The room owner dismisses the room through [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37281)**.
-```java
-// 1. The room owner calls an API to dismiss the room
+// 1. The room owner calls the API below to close the room.
 mTUIRoomCore.destroyRoom(new TUIRoomCoreCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
@@ -127,16 +97,15 @@ mTUIRoomCore.destroyRoom(new TUIRoomCoreCallback.ActionCallback() {
     }
 });
 
-Room members receive the `onDestroyRoom` callback message that notifies them of room dismissal.
+Other users in the room will receive the `onDestroyRoom` callback.
 @Override
 public void onDestroyRoom() {
-    // The room owner dismisses and exits the room
+    // The room owner closes and exits the room.
 }
 ```
-
-4. **Other members exit the room through [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37281)**.
+2. **A user in the room calls [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37281) to leave the room**.
 ```java
-// 1. A room member calls an API to exit the room
+// 1. A user (not the room owner) calls the API below to leave the room.
 mTUIRoomCore.leaveRoom(new TUIRoomCoreCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
@@ -144,14 +113,15 @@ mTUIRoomCore.leaveRoom(new TUIRoomCoreCallback.ActionCallback() {
     }
 });
 
-Room members receive the `onRemoteUserLeave` callback message that notifies them of member exit.
+Other users in the room will receive the `onRemoteUserLeave` callback.
 @Override
 public void onRemoteUserLeave(String userId) {
         Log.d(TAG, "onRemoteUserLeave userId: " + userId);
 }
 ```
 
-5. **Implement screen sharing through [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281)**.
+### Step 6. Implement screen sharing (optional)
+Call [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281) to implement screen sharing.
 ```java
 // 1. Add the SDK’s screen sharing activity and permission in `AndroidManifest.xml`
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -186,7 +156,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
 }
 
-// 4. Enable screen sharing
+// 4. Start screen sharing
 private void startScreenCapture() {
         TRTCCloudDef.TRTCVideoEncParam encParams = new TRTCCloudDef.TRTCVideoEncParam();
         encParams.videoResolution = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_1280_720;
@@ -200,6 +170,13 @@ private void startScreenCapture() {
         mTUIRoom.startScreenCapture(encParams, params);
 }
 ```
+
+### Step 7. Implement beauty filters (optional)[](id:XMagic)
+The beauty filters of `TUIRoom` rely on the Tencent Effect SDK. To use the beauty filters, you need to configure an XMagic license first.
+```java
+TUIBeautyView.getBeautyService().setLicense(context, “XMagicLicenseURL”, “XMagicLicenseKey”);
+```
+
 
 ## FAQs
 If you have any requirements or feedback, contact colleenyu@tencent.com.

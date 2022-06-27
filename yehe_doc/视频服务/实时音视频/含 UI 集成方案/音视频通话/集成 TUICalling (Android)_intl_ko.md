@@ -1,6 +1,6 @@
 ## 컴포넌트 개요
 
-TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성 만으로 ‘1:1 음성/영상 통화’ 및 ‘그룹 음성/영상 통화’ 및 오프라인 통화와 같은 App 지원 시나리오를 만들 수 있습니다. 또한 iOS, Web, Flutter 및 UniApp 플랫폼을 지원합니다. 기본 기능은 다음과 같습니다.
+TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성 만으로 ‘1:1 음성/영상 통화’ 및 오프라인 통화와 같은 App 지원 시나리오를 만들 수 있습니다. 또한 iOS, Web, Flutter 및 UniApp 플랫폼을 지원합니다. 기본 기능은 다음과 같습니다.
 
 <table class="tablestyle">
 <tbody><tr>
@@ -9,12 +9,12 @@ TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로
 </tbody></table>
 
 
-
 ## 컴포넌트 통합
 
 ### 1단계: TUICalling 컴포넌트 다운로드 및 가져오기
 [GitHub](https://github.com/tencentyun/TUICalling)으로 이동하여 코드를 복제하거나 다운로드하고 Android 디렉터리의 tuicaling, tuicore 및 debug 디렉터리를 app과 동일한 수준의 프로젝트에 복사하고 다음 가져오기 작업을 완료합니다.
-- 아래와 같이 `setting.gradle`에서 가져오기 완료:
+- 아래와 같이 `setting.gradle`에서 가져오기를 완료합니다.
+
 ```java
 include ':tuicalling'
 include ':tuicore'
@@ -85,22 +85,18 @@ TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 **매개변수 설명**:
 - **SDKAppID**: **TRTC 애플리케이션 ID**입니다. TRTC 서비스를 활성화하지 않은 경우 [TRTC 콘솔](https://console.cloud.tencent.com/trtc/app)에 로그인하여 TRTC 애플리케이션을 생성하고 **애플리케이션 정보**를 클릭합니다. SDKAppID는 아래와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지의 SecretKey는 아래와 같습니다.
+- **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**입니다. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 문자열이며 최대 32바이트의 문자와 숫자를 포함할 수 있는 현재 사용자 ID입니다(특수 기호는 지원되지 않음). 실제 계정 시스템에 따라 사용자 정의할 수 있습니다.
 - **userSig**: SDKAppID, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool) 를 클릭하여 디버깅 userSig를 온라인으로 직접 생성하거나 [TUICalling 데모 프로젝트](https://github.com/tencentyun/TUICalling/blob/main/Android/app/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오.
 
 
 ### 4단계: 음성/영상 통화 걸기
-- **[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)을 통한 1:1 음성/영상 통화**
+**[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)을 통한 1:1 음성/영상 통화**:
 ```java
 // 1대1 영상 통화를 시작합니다. userId가 1111이라고 가정합니다.
 callingImpl.call(["1111"], TUICalling.Type.VIDEO);
 ```
-- **그룹 영상 통화 호출**:
-```java
-// 그룹 영상 통화를 시작합니다. userId 값이 1111, 2222, 3333이라고 가정합니다.
-callingImpl.call(["1111", "2222", "3333"], TUICalling.Type.VIDEO);
-```
+
 
 >? 
 >- 수신자가 3단계를 완료한 후(즉, 로그인 성공 후) 다시 전화 요청을 수신하면 TUICalling 컴포넌트는 해당 호출 응답 UI를 자동으로 표시합니다.    
@@ -162,7 +158,7 @@ callingImpl.setCallingListener(new TUICalling.TUICallingListener() {
 
 지원합니다. `setUserNickname/setUserAvatar`를 호출하여 이를 구현할 수 있습니다.
 
-### TUICalling 컴포넌트는 벨소리 사용자 지정을 지원합니까?
+### TUICalling 컴포넌트는 사용자 정의 벨소리를 지원합니까?
 지원합니다. [setCallingBell](https://intl.cloud.tencent.com/document/product/647/43140)을 호출하여 이를 구현할 수 있습니다.
 
->? 요구 사항이나 피드백이 있는 경우 colleenyu@tencent.com으로 연락 주시기 바랍니다.
+>? 요구 사항이나 피드백이 있는 경우 colleenyu@tencent.com으로 문의하십시오.
