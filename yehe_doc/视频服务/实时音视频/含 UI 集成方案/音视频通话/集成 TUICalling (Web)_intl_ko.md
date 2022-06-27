@@ -2,10 +2,7 @@
 TUICalling은 오픈 소스 오디오/비디오 컴포넌트입니다. **영상 통화** 기능을 데스크톱 브라우저에 빠르게 통합하는 데 도움이 되며 온라인 의료 상담, 온라인 고객 서비스 및 원격 보험 청구와 같은 시나리오에 적합합니다.
 <table class="tablestyle">
 <tbody><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png"></td>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png"></td></tr><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png"></td>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/17bb3c8f1f49a4c1f100536bee37caef.png"></td>
+<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
 </tr>
 </tbody></table>
 
