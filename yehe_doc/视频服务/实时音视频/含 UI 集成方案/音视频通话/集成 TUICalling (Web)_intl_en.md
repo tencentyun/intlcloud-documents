@@ -2,10 +2,7 @@
 `TUICalling` is an open-source audio/video component. It can help you quickly integrate the **video call** feature into your desktop browser and is suitable for scenarios such as online medical consultation, online customer service, and remote insurance claim.
 <table class="tablestyle">
 <tbody><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png"></td>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png"></td></tr><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png"></td>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/17bb3c8f1f49a4c1f100536bee37caef.png"></td>
+<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
 </tr>
 </tbody></table>
 
