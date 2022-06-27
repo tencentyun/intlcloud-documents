@@ -8,8 +8,7 @@ TUIKaraoke 是一个开源的音视频 UI 组件，通过在项目中集成 TUIK
          <th width=20%  style="text-align:center">音效管理</th>  
      </tr>
 <tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/819e86970cecabcb10143a49a4759b32.png" width="400"></td>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/3616f2a5193c26bad447744ed7bf417d.png" width="400"></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"></td>
 </tr>
 </table>
 
