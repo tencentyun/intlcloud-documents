@@ -69,20 +69,6 @@
         </div>
     </div>
   </div>
-  <div class="card-container">
-    <div class="card">
-      <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-      <p class="titlename">WeChat Mini Program SDK</p>
-      <p style="color:#586376;">すべてのIM機能とグループライブストリーミングマイク接続機能が含まれています</p>
-      <div style="margin-top: 13px;" >
-        <a  href="https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/IMSDK">Githubダウンロード</a>
-        <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-wx-sdk">NPMダウンロード</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">統合ガイド</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">ログのアップデート</a>
-      </div>
-    </div>
-    </div>
-
 </div>
 
 [](id:client)
