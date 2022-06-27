@@ -69,20 +69,6 @@ IM SDK 및 Demo의 최신 소스 코드를 다운로드할 수 있습니다.
         </div>
     </div>
   </div>
-  <div class="card-container">
-    <div class="card">
-      <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-      <p class="titlename">WeChat 미니프로그램 SDK</p>
-      <p style="color:#586376;">모든 IM 기능과 그룹의 라이브 스트림 공동 앵커 기능 포함</p>
-      <div style="margin-top: 13px;" >
-        <a  href="https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/IMSDK">Github 다운로드</a>
-        <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-wx-sdk">NPM 다운로드</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">통합 가이드</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">업데이트 로그</a>
-      </div>
-    </div>
-    </div>
-
 </div>
 
 [](id:client)
