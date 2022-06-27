@@ -55,9 +55,9 @@ TUIPusher & TUIPlayerの機能をすぐに体験していただけるよう、�
 2. **アプリケーション管理>クイックマスター**でアプリケーションのsecretKey情報を取得します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
->?
->- TRTCアプリケーションを初めて作成するTencent Cloudアカウントは、10000分間のオーディオビデオリソース無料トライアルパッケージを受け取ることができます。
->- TRTCプリケーションを作成すると、同じSDKAppIDのIMアプリケーションが自動的に作成され、 [IMコンソール](https://console.cloud.tencent.com/im)でこのアプリケーションのパッケージ情報を設定することができます。
+<dx-alert infotype="explain">
+<li>TRTCアプリケーションを初めて作成するTencent Cloudアカウントは、10000分間のオーディオビデオリソース無料トライアルパッケージを受け取ることができます。</li>
+<li>TRTCプリケーションを作成すると、同じSDKAppIDのIMアプリケーションが自動的に作成され、 [IMコンソール](https://console.cloud.tencent.com/im)でこのアプリケーションのパッケージ情報を設定することができます。</li></dx-alert>
 
 :::
 ::: 方法2：インスタントメッセージIMの場合
@@ -71,7 +71,7 @@ TUIPusher & TUIPlayerの機能をすぐに体験していただけるよう、�
 #### 手順2：IMキーを取得してTRTC Video Serviceをアクティブにする
 1. [IMコンソール](https://console.cloud.tencent.com/im)の概要ページで、自分で作成を完了したIMアプリケーションをクリックして、直ちにそのアプリケーションの基本設定ページにリダイレクトします。**基本情報**領域で、**キーの表示**をクリックして、キー情報をコピーし保存します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f211f03fdb78d548aba80fcdd67219a8.png)
->!キー情報を適切に保管して、漏えいしないようにしてください。
+<dx-alert infotype="notice">キー情報を適切に保管して、漏えいしないようにしてください。</dx-alert>
 2. そのアプリケーションの基本構成ページで、TRTCサービスをアクティブ化します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a202eda15b427b9c24cd4290a79243a7.png)
 :::
