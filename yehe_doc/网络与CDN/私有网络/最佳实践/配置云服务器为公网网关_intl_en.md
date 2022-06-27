@@ -25,7 +25,7 @@ If some of your CVM instances in a Tencent Cloud VPC do not have common public I
 Skip this step if the public gateway CVM already has a public IP.
 </dx-alert>
 
-1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index) and select **[EIP](https://console.cloud.tencent.com/cvm/eip)** on the left sidebar.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index) and select [**EIP**](https://console.cloud.tencent.com/cvm/eip) on the left sidebar.
 2. Locate the target EIP and select **More** > **Bind** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/b25421e826f69e00a1890e9d59c62828.png)
 3. In the pop-up window, select a CVM instance to be configured and bind it to the EIP.
