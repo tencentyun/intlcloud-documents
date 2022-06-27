@@ -19,10 +19,10 @@ Make sure that the source IP and target ENI are in the same VPC and that the sou
 ![](https://qcloudimg.tencent-cloud.cn/raw/902cad1c6ecd774e67ffe72d3ce4ab64.png)
    - Select **Collection type**: Select the traffic direction as needed. There are three options: **All traffic**, **Traffic out**, and **Traffic in**.
    - Select **Traffic filtering**: Select a method to filter out unnecessary traffic and keep the mirror small and lightweight.
-      -**N/A**: All traffic configured will be collected.
+      - **N/A**: All traffic configured will be collected.
       - **Quintuple**: The traffic that meets quintuple conditions will be collected. After selecting this option, specify **Protocol**, **Source IP range**, **Destination IP range**, **Source port**, and **Destination port**. You can click **Add** to create another filter. Only the traffic that meets all of the filters will be collected.
     ![](https://qcloudimg.tencent-cloud.cn/raw/ab47286ffbc185a6287552ac44de0c6f.png)
-    - **The next hop is the NAT gateway**: Collect traffic whose next hop address is the NAT gateway. After selecting this option, select the specific NAT gateway next to **Condition**.
+      - **The next hop is the NAT gateway**: Collect traffic whose next hop address is the NAT gateway. After selecting this option, select the specific NAT gateway next to **Condition**.
 4. After completing the configuration, click **Next**.
 
 ### Step 2. Create a traffic mirror target
