@@ -52,11 +52,11 @@ For more information, see [Managing Routing Policies](https://intl.cloud.tencent
 
 ### Step 4. Configure a public gateway
 1. Log in to the [public gateway CVM instance](https://intl.cloud.tencent.com/document/product/213/5436) and perform the following operations to enable the network forwarding and NAT proxy features:
- 1. Run the following command to create the `vpcGateway.sh` script in `usr/local/sbin`.
+   1. Run the following command to create the `vpcGateway.sh` script in `usr/local/sbin`.
 ```
 vim /usr/local/sbin/vpcGateway.sh
 ```
- 2. Press **i** to switch to the edit mode and add the following code to the script.
+   2. Press **i** to switch to the edit mode and add the following code to the script.
 ```
 #!/bin/bash
 echo "----------------------------------------------------"
@@ -85,18 +85,18 @@ echo 10800 >/proc/sys/net/netfilter/nf_conntrack_tcp_timeout_established \
 && echo "-->nf_conntrack_tcp_timeout_established:Success" || \
 echo "-->nf_conntrack_tcp_timeout_established:Fail"
 ```
- 3. Click **Esc** and enter **:wq** to save and close the file.
- 4. Run the following command to set the script permission.
+   3. Click **Esc** and enter **:wq** to save and close the file.
+   4. Run the following command to set the script permission.
 ```
 chmod +x /usr/local/sbin/vpcGateway.sh
 echo "/usr/local/sbin/vpcGateway.sh >/tmp/vpcGateway.log 2>&1" >> /etc/rc.local
 ```
 2. Set the RPS of the public gateway.
- 1. Run the following command to create the `set_rps.sh` script in `usr/local/sbin`.
+   1. Run the following command to create the `set_rps.sh` script in `usr/local/sbin`.
 ```
 vim /usr/local/sbin/set_rps.sh
 ```
- 2. Press **i** to switch to the edit mode and add the following code to the script.
+   2. Press **i** to switch to the edit mode and add the following code to the script.
 ```
 # !/bin/bash
 echo "--------------------------------------------"
@@ -177,8 +177,8 @@ echo $flow_entries >/proc/sys/net/core/rps_sock_flow_entries
 }
 set_rps
 ```
- 3. Click **Esc** and enter **:wq** to save and close the file.
- 4. Run the following command to set the script permission.
+   3. Click **Esc** and enter **:wq** to save and close the file.
+   4. Run the following command to set the script permission.
 ```
 chmod +x /usr/local/sbin/set_rps.sh
 echo "/usr/local/sbin/set_rps.sh >/tmp/setRps.log 2>&1" >> /etc/rc.local
