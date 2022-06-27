@@ -2,7 +2,7 @@
 This document describes how to manually or automatically scale a cluster to meet the resource requirements of the applications. You can scale a cluster in one of the following ways:
 - [Manually adding/removing a node](#ManuallyAddAndRemove)
 - [Automatically adding/removing a node via auto scaling](#AutomaticAddAndRemove)
-- [Completing scaling of application layer via virtual node (without scaling node)](#AddPod)
+- [Completing scaling of application layer via supernode (without scaling node)](#AddPod)
 
 ## Prerequisites
 
@@ -42,9 +42,9 @@ Auto scaling relies on the community component Cluster Autoscaler (CA), which ca
 
 [](id:AddPod)
 
-### Scaling out via virtual node
+### Scaling out via supernode
 
-Virtual node is a kind of scheduling capability. It supports scheduling the Pods in a standard Kubernetes cluster to a virtual node that does not occupy the cluster server resource to implement dynamic scaling out when resources are insufficient. For more information, see [Virtual Node Overview](https://intl.cloud.tencent.com/document/product/457/39759).
+Supernode is a kind of scheduling capability. It supports scheduling the Pods in a standard Kubernetes cluster to a supernode that does not occupy the cluster server resource to implement dynamic scaling out when resources are insufficient. For more information, see [supernode Overview](https://intl.cloud.tencent.com/document/product/457/39759).
 
 
 ## FAQs
