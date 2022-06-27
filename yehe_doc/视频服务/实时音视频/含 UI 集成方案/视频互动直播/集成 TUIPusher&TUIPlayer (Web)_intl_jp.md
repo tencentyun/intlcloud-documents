@@ -7,8 +7,7 @@ TUIPusher & TUIPlayerのメリット：
 + Tencent Cloud Real-Time Communication（TRTC）、Tencent Cloud Instant Messaging（IM）、およびTencent Cloud Super Player（TCPlayer） などの基本SDKを直接統合し、お客様のビジネス機能のフレキシブルな拡張に役立ちます。
 + Web端末はユーザーにとって使いやすく、機能のイテレーションも行いやすいというメリットがあります。
 
-![TUIPusherデモンストレーション](https://qcloudimg.tencent-cloud.cn/raw/8d33df705c07c80d75ad19096e681903.png)
-![TUIPlayerデモンストレーション](https://qcloudimg.tencent-cloud.cn/raw/6490fdf7db4980db3a98b4b103fb52f1.png)
+![TUIPusher演示](https://qcloudimg.tencent-cloud.cn/raw/d1670385df8944886472e6c17d577949.png)
 
 ## クイック体験
 
