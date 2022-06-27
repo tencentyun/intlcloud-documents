@@ -7,8 +7,7 @@ TUIPusher & TUIPlayer 의 장점:
 + 뛰어난 유연성과 확장성을 위해 TRTC, IM 및 TCPlayer를 포함한 Tencent Cloud의 기본 SDK에 쉽게 통합됩니다.
 + Web 기반, 사용하기 쉽고 빠른 업데이트.
 
-![TUIPusher 데모](https://qcloudimg.tencent-cloud.cn/raw/8d33df705c07c80d75ad19096e681903.png)
-![TUIPlayer 데모](https://qcloudimg.tencent-cloud.cn/raw/6490fdf7db4980db3a98b4b103fb52f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d1670385df8944886472e6c17d577949.png)
 
 ## 빠른 체험
 
@@ -56,9 +55,9 @@ TUIPusher & TUIPlayer 의 장점:
 2. **애플리케이션 관리 > 퀵 스타트**에서 애플리케이션의 secretKey 정보를 가져옵니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
->?
->- TRTC 콘솔에서 첫 번째 애플리케이션을 생성하는 계정은 10000분 무료 평가판 패키지를 받게 됩니다.
->- TRTC 애플리케이션 생성 후 동일한 SDKAppID를 가진 IM 애플리케이션이 자동으로 생성되며, 이 애플리케이션의 패키지 정보는 [IM 콘솔](https://console.cloud.tencent.com/im)에서 구성할 수 있습니다.
+<dx-alert infotype="explain">
+<li>TRTC 콘솔에서 첫 번째 애플리케이션을 생성하는 계정은 10000분 무료 평가판 패키지를 받게 됩니다.</li>
+<li>TRTC 애플리케이션 생성 후 동일한 SDKAppID를 가진 IM 애플리케이션이 자동으로 생성되며, 이 애플리케이션의 패키지 정보는 [IM 콘솔](https://console.cloud.tencent.com/im)에서 구성할 수 있습니다.</li></dx-alert>
 
 :::
 ::: 방식2: IM 기반
@@ -72,7 +71,7 @@ TUIPusher & TUIPlayer 의 장점:
 #### 2단계: IM 키 획득 및 TRTC 서비스 활성화
 1. [IM 콘솔](https://console.cloud.tencent.com/im)의 전체보기 페이지에서 새로 생성한 IM 애플리케이션을 클릭하여 해당 애플리케이션의 기본 설정 페이지로 이동합니다. **기본 정보**에서 **키 표시**를 클릭하여 키 정보를 복사 및 저장합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f211f03fdb78d548aba80fcdd67219a8.png)
->!키 정보가 유출되지 않도록 잘 보관하십시오.
+<dx-alert infotype="notice">키 정보가 유출되지 않도록 잘 보관하십시오.</dx-alert>
 2. 해당 애플리케이션의 기본 설정 페이지에서 TRTC 서비스를 활성화합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a202eda15b427b9c24cd4290a79243a7.png)
 :::

@@ -29,7 +29,7 @@ If you want to **query all resources in the cluster**, it is recommended that yo
 Refer to the recommended configuration below and choose the model that best suits your requirements, so as to prevent cluster unavailability caused by heavy load of the control plane.
 Assume that you want to deploy 50 nodes in a cluster and need 2,000 Pods. You need to select a model with the maximum number of nodes of 100, but not 50.
 >? 
->- The nodes indicate Kubnernetss nodes, including CVM nodes, BM nodes and external nodes. **Virtual nodes are excluded**.
+>- The nodes indicate Kubnernetss nodes, including CVM nodes, BM nodes and external nodes. **Supernodes are excluded**.
 >- The number of Pods includes Pods in all namespaces and in any status, and excludes the Pods related to system components such as cni-agent.
 >- ConfigMap does not include the Pods related to system components such as cni-agent.
 > - **Maximum other resources** refers to the number of resources in the manged cluster excluding the Pods, nodes and ConfigMap. For example, for a L100 cluster, the number of the resources, such as ClusterRole, Services and Endpoints, cannot exceed 2,500 respectively.

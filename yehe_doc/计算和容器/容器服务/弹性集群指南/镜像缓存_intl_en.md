@@ -2,7 +2,7 @@
 
 ## Image Cache Overview
 
-This document describes how image cache works and its billing rules, creation, and usage method. You can use image cache to accelerate image pull during instance creation so as to expedite instance startup. This capability is applicable to EKS cluster Pods, virtual nodes, and container instances.
+This document describes how image cache works and its billing rules, creation, and usage method. You can use image cache to accelerate image pull during instance creation so as to expedite instance startup. This capability is applicable to EKS cluster Pods, supernodes, and container instances.
 
 
 
@@ -71,9 +71,9 @@ If you select **Manual match**, you need to manually select a specific image cac
 
  
 
-### Using image cache on virtual node
+### Using image cache on supernodes
 
-You can specify a Pod annotation to use an image cache on virtual nodes. For more information, see EKS [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
+You can specify a Pod annotation to use an image cache on supernodes. For more information, see EKS [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
 
 ```
 Automatically match:

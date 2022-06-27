@@ -3,8 +3,7 @@
 
 ## デモンストレーション
 <table>
-<tr><td><img src="https://qcloudimg.tencent-cloud.cn/raw/71f2649be2c654e1c5f217dc10e88efc.png" width="600" height="300"></td>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/9d927c98a595667d9f3f16d597abc77e.png" width="600" height="340"></td>
+<tr><td><img src="https://qcloudimg.tencent-cloud.cn/raw/74790d1eb59abc94e264e4e8bca3604b.png"></td>
 </tr></table>
 
 

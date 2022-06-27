@@ -18,6 +18,7 @@ Você pode restaurar uma instância do TencentDB for MySQL para qualquer momento
 - O saldo da sua conta deve ser positivo.
 
 ## Observações
+- O novo tamanho da instância de clone deve ser maior ou igual à instância de origem.
 - O espaço em disco rígido da instância clone deve ser maior que a quantidade de dados a serem clonados, caso contrário, a tarefa de clonagem poderá falhar.
 - A zona de disponibilidade, a versão do banco de dados, o modo de replicação e os parâmetros de banco de dados padrão do clone devem ser os mesmos da instância original.
 - O clone não será exibido na lista de instâncias no console até que o processo de clonagem seja concluído.

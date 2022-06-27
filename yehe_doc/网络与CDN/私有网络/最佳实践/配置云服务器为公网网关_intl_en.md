@@ -1,44 +1,57 @@
->! As of December 6, 2019, Tencent Cloud no longer supports configuring a CVM as the public gateway on the CVM purchase page. If you need to configure a gateway, please follow the instructions below.
->
+
+<dx-alert infotype="alarm" title="">
+**Using a single CVM instance as the public gateway has the risk of single point of failure. We recommend you use [NAT Gateway](https://intl.cloud.tencent.com/document/product/1015/30226) in the production environment.**
+</dx-alert>
+As of December 6, 2019, Tencent Cloud will no longer support configuring a CVM instance as the public gateway on the CVM purchase page. If you need to configure a gateway, follow the instructions below.
+
+
+
 
 ## Overview
 
-You can access the internet by using a public gateway CVM with a public IP or EIP when some of your VPC-based CVMs lack the public IPs. The public gateway CVM translates the source IP for outbound traffic. When other CVMs access the internet through the public gateway CVM, the source IPs will be translated into public IP of the public gateway CVM. See the figure below.
-![](https://main.qcloudimg.com/raw/5876f3c92f1ae7cb5b4d8f38e59cbfd2.png)
+If some of your CVM instances in a Tencent Cloud VPC do not have common public IPs but you need to access the public network, you can use a CVM instance with a common public IP or EIP. The public gateway CVM instance translates the source IP for outbound traffic. When other CVM instances access the public network through the public gateway CVM instance, the source IPs will be translated into the public IP of the public gateway CVM instance as shown below:
+![]()
 
 ## Prerequisites
-- You are logged in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
-- The public gateway CVM and the CVMs that need to access the internet through the public gateway CVM must be in different subnets because the public gateway CVM can only forward requests from other subnets.
-- The public gateway CVM must be a Linux CVM. Windows CVMs will not work.
+- You have logged in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
+- As a public gateway CVM instance can forward route forwarding requests only from subnets other than the one it resides, it must be in different subnets from the CVM instances that need to access the public network through it.
+- A public gateway CVM instance must be a Linux CVM instance, as a Windows CVM instance cannot be used as a public gateway.
 
 ## Directions
-### Step 1: bind an EIP (optional)
->?Skip this step if the public gateway CVM already has a public IP address.
+### Step 1. Bind an EIP (optional)
 
-1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index) and select [**EIP**](https://console.cloud.tencent.com/cvm/eip) on the left sidebar.
-2. Locate the EIP to bind the instance, select **More** > **Bind** in the **Operation** column.
+
+<dx-alert infotype="explain" title="">
+Skip this step if the public gateway CVM already has a public IP.
+</dx-alert>
+
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index) and select **[EIP](https://console.cloud.tencent.com/cvm/eip)** on the left sidebar.
+2. Locate the target EIP and select **More** > **Bind** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/b25421e826f69e00a1890e9d59c62828.png)
-3. In the pop-up window, select a CVM to be configured and bind it to the EIP.
+3. In the pop-up window, select a CVM instance to be configured and bind it to the EIP.
 ![](https://main.qcloudimg.com/raw/c23b101995cabbe66d546f2a2bcb64ca.png)
 
-### Step 2: configure a route table for the gateway subnet
->!The gateway subnet and other subnets cannot share the same route table. You need to create a separate route table for the gateway subnet.
->
+### Step 2. Configure a route table for the gateway subnet
+
+<dx-alert infotype="notice" title="">
+The gateway subnet and other subnets cannot share the same route table. You need to create a separate route table for the gateway subnet and associate them.
+</dx-alert>
+
 1. [Create a custom route table](https://intl.cloud.tencent.com/document/product/215/35236).
 2. Associate the route table with the subnet where the public gateway CVM resides.
 ![](https://main.qcloudimg.com/raw/c7a6697f7ce1cc4e5c515cfb894ccd25.png)
 
-### Step 3: configure a route table for the other subnets
-This route table directs all traffic from the CVMs without a public IP to the public gateway so these CVMs can access public networks as well.
+### Step 3. Configure a route table for other subnets
+Configure a route table for other subnets and a default route through the public gateway CVM instance, so that the CVM instances within these subnets can access the public network through the route forwarding capability of the public gateway.
 Add the following routing policies to the route table:
-- Destination: the public IP you want to access.
+- Destination: The public IP you want to access.
 - Next hop type: CVM.
-- Next hop: private IP of the CVM instance to which the EIP is bound in Step 1.
-For more information, see [Manage Route table](https://intl.cloud.tencent.com/document/product/215/35236).
+- Next hop: Private IP of the CVM instance to which the EIP is bound in step 1.
+For more information, see [Managing Routing Policies](https://intl.cloud.tencent.com/document/product/215/40080).
 ![](https://main.qcloudimg.com/raw/9b2d9537e7aa0c00428ef112db300d73.png)
 
-### Step 4: configure the public gateway
-1. [Log in to the public gateway CVM](https://intl.cloud.tencent.com/document/product/213/5436), and perform the following steps to enable network forwarding and NAT proxy.
+### Step 4. Configure a public gateway
+1. Log in to the [public gateway CVM instance](https://intl.cloud.tencent.com/document/product/213/5436) and perform the following operations to enable the network forwarding and NAT proxy features:
  1. Run the following command to create the `vpcGateway.sh` script in `usr/local/sbin`.
 ```
 vim /usr/local/sbin/vpcGateway.sh
@@ -72,7 +85,7 @@ echo 10800 >/proc/sys/net/netfilter/nf_conntrack_tcp_timeout_established \
 && echo "-->nf_conntrack_tcp_timeout_established:Success" || \
 echo "-->nf_conntrack_tcp_timeout_established:Fail"
 ```
- 3. Press **Esc** and enter **:wq** to save and close the file.
+ 3. Click **Esc** and enter **:wq** to save and close the file.
  4. Run the following command to set the script permission.
 ```
 chmod +x /usr/local/sbin/vpcGateway.sh
@@ -164,12 +177,14 @@ echo $flow_entries >/proc/sys/net/core/rps_sock_flow_entries
 }
 set_rps
 ```
- 3. Press **Esc** and enter **:wq** to save and close the file.
+ 3. Click **Esc** and enter **:wq** to save and close the file.
  4. Run the following command to set the script permission.
 ```
 chmod +x /usr/local/sbin/set_rps.sh
 echo "/usr/local/sbin/set_rps.sh >/tmp/setRps.log 2>&1" >> /etc/rc.local
 chmod +x /etc/rc.d/rc.local
 ```
-3. Restart the public gateway CVM to apply the configurations. Then, test if a CVM without a public IP can access the Internet through the public gateway CVM.
+3. Restart the public gateway CVM instance to apply the configuration. Then, test whether a CVM instance without a public IP can access the public network.
+
+
 
