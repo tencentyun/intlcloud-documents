@@ -55,9 +55,9 @@ TUIPusher & TUIPlayer 的优势：
 2. 在 **应用管理 > 快速上手** 中获取应用的 secretKey 信息。
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
->?
->- 首次创建实时音视频应用的腾讯云账号，可获赠一个10000分钟的音视频资源免费试用包。
->- 创建实时音视频应用之后会自动创建一个 SDKAppID 相同的即时通信 IM 应用，可在 [即时通信控制台](https://console.cloud.tencent.com/im) 配置该应用的套餐信息。
+<dx-alert infotype="explain">
+<li>首次创建实时音视频应用的腾讯云账号，可获赠一个10000分钟的音视频资源免费试用包。</li>
+<li>创建实时音视频应用之后会自动创建一个 SDKAppID 相同的即时通信 IM 应用，可在 [即时通信控制台](https://console.cloud.tencent.com/im) 配置该应用的套餐信息。</li></dx-alert>
 
 :::
 ::: 方式2：基于即时通信 IM
@@ -71,7 +71,7 @@ TUIPusher & TUIPlayer 的优势：
 #### 步骤2：获取 IM 密钥并开通实时音视频服务
 1. 在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 总览页单击您创建完成的即时通信 IM 应用，随即跳转至该应用的基础配置页。在 **基本信息** 区域，单击 **显示密钥**，复制并保存密钥信息。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f211f03fdb78d548aba80fcdd67219a8.png)
->!请妥善保管密钥信息，谨防泄露。
+<dx-alert infotype="notice">请妥善保管密钥信息，谨防泄露。</dx-alert>
 2. 在该应用的基础配置页，开通腾讯云实时音视频服务。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a202eda15b427b9c24cd4290a79243a7.png)
 :::
