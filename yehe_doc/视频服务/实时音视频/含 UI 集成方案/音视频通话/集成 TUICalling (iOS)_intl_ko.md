@@ -4,8 +4,7 @@ TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로
 
 <table class="tablestyle">
 <tbody><tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/94bbec9961b0d569cc7068389dc41412.jpg" width="500"></td>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/534089ed0be5c78fb63c65cde79ad866.jpg" width="500"></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/af697557d2746585a0d9f4b894dc42d5.png" </td>
 </tr>
 </tbody></table>
 
