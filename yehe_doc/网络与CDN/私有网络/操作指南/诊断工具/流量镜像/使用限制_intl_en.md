@@ -7,11 +7,11 @@ Mirrored traffic will be included in the instance bandwidth, and the impact on s
   - Collection source: Mirrored traffic is not subject to security group policies.
   - Receiver: It is subject to security group policies.
 - Traffic mirror cannot be used for the following data services:
- - ARP
- - DHCP
- - Instance metadata service
- - NTP
- - Windows activation
+  - ARP
+  - DHCP
+  - Instance metadata service
+  - NTP
+  - Windows activation
 - The collection source and the receiver of a traffic mirror support the following models:
 Standard S1, Standard S2, Standard S3, Memory Optimized M1, M2, and M3, High IO I1, I2, and I3, Compute C2 and C3, Compute Enhanced CN3, and Big Data D1.
 - CVM ENIs are subject to the following limits:
