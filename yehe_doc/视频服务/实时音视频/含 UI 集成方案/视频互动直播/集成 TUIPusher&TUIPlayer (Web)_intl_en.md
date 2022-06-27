@@ -7,7 +7,7 @@ Strengths:
 + Easy integration into Tencent Cloud’s basic SDKs, including TRTC, IM, and TCPlayer, for excellent flexibility and scalability.
 + Web-based, easy-to-use, and quick updates.
 
-![TUIPusher演示](https://qcloudimg.tencent-cloud.cn/raw/d1670385df8944886472e6c17d577949.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d1670385df8944886472e6c17d577949.png)
 
 ## Demos
 
