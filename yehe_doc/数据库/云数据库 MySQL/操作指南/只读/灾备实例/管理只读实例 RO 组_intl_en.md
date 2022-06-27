@@ -11,7 +11,6 @@ A source instance must be created first before a read-only instance can be creat
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. Click **Add Read-Only Instance** in the **Instance Architecture Diagram** section on the **Instance Details** tab or click **Create** on the **Read-Only Instance** tab.
 ![](https://main.qcloudimg.com/raw/83e817ae1b9205d6cdf061684f7d3c12.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/c4f55da8d715d578c9a4041ee232bef8.png)
 3. On the displayed purchase page, specify the following read-only instance configurations, confirm that everything is correct, and click **Buy Now**.
  - **Specify RO Group**: Select **Create RO group**. If multiple instances are purchased at a time, all of them will be assigned to this new RO group, and their weights will be automatically assigned by the system by default.
  - **RO Group Name**: The group name doesn't have to be unique and can contain up to 60 letters, digits, hyphens, underscores, and dots.
@@ -26,7 +25,7 @@ A source instance must be created first before a read-only instance can be creat
  - **Database Version**: It is the same as that of the source instance by default.
  - **Engine**: It is the same as that of the source instance by default.
  - **Architecture**: Single-node. Although the single-node architecture is cost-effective, there is a risk with single point of failure for a single read-only instance. We strongly recommend you purchase at least two read-only instances in the business RO group that requires high availability.
- - **Data Replication Mode**: It is the same as that of the source instance by default.
+ - **Data Replication Mode**: Async replication.
  - **AZ**: If there are multiple AZs in the current region, you can select one as needed.
 >?The network delay across AZs in the same region, in different regions, and in regions outside the Chinese mainland is around a few milliseconds, tens of milliseconds, and over 100 milliseconds respectively, so you should select an AZ carefully.
  - For other configuration items, see [Creating MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37785).
