@@ -4,9 +4,7 @@ TUIVoiceRoom 是一个开源的音视频 UI 组件，通过在项目中集成 TU
 
 <table class="tablestyle">
 <tbody><tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/a30e897eabbc6f9104bd41db246f33b1.png" width="250"></td>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/857d3b1651cdf1126f1653e1541b3bba.png" width="250"></td>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/6ddb805c442974d202ef610db643fa39.png" width="250"></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/064229b8d27147985311825f21dd27c2.png"></td>
 </tr>
 </tbody></table>
 
