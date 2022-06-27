@@ -22,16 +22,16 @@ Pod 的规格配置是容器运行时可用资源和使用服务计费的依据�
 弹性集群没有 Node，所以不支持部分依赖 Node 组件，例如 Kubelet、Kube-proxy 的功能。
 #### Node
 - 暂不支持添加、管理物理节点。
-- EKS 的节点会被“虚拟节点”替代，每个虚拟节点对应一个容器网络中指定的 VPC 子网。
-- 虚拟节点也支持节点亲和性、污点、封锁等调度操作。
-- 虚拟节点上可调度的 Pod 数只受对应 VPC 子网的 IP 数限制。
+- EKS 的节点会被“超级节点”替代，每个超级节点对应一个容器网络中指定的 VPC 子网。
+- 超级节点也支持节点亲和性、污点、封锁等调度操作。
+- 超级节点上可调度的 Pod 数只受对应 VPC 子网的 IP 数限制。
 
 #### 容器网络
 - 弹性集群的容器网络采用的是与云服务器、云数据库等云产品平级的 VPC 网络，集群中的每个 Pod 都会占用一个 VPC 子网 IP。
 - Pod 与 Pod、Pod 与其他同 VPC 云产品间直接通过 VPC 网络通信，没有性能损耗。
 
 #### Pod 隔离性
-弹性集群中的 Pod 拥有与云服务器完全一致的安全隔离性。Pod 在腾讯云底层物理服务器上调度创建，创建时会通过虚拟化技术保证 Pod 间的资源隔离。
+弹性集群中的 Pod 拥有与云服务器完全一致的安全隔离性。Pod 在腾讯云底层物理服务器上调度创建，创建时会通过超级化技术保证 Pod 间的资源隔离。
 
 #### 节点内核
 仅支持自定义 net 开头的内核参数。
@@ -47,7 +47,7 @@ Pod 的规格配置是容器运行时可用资源和使用服务计费的依据�
 #### Volume
 
 支持 Hostpath 类型的数据卷，详情请参见 [存储卷说明](https://intl.cloud.tencent.com/document/product/457/30678)。
-由于 EKS 集群没有节点，虽然 EKS 依旧兼容 Pod 中与 Host 相关的参数（例如 Hostpath、Hostnetwork: true、DnsPolicy: ClusterFirstWithHostNet 等），但不一定能满足预期效果。例如您希望使用 Hostpath 共享数据，但可能调度到同一个虚拟节点上的两个 Pod 实际为不同子机的 Hostpath。因此建议您在 EKS 集群运行的任务，不要强依赖与 Host 相关的参数。
+由于 EKS 集群没有节点，虽然 EKS 依旧兼容 Pod 中与 Host 相关的参数（例如 Hostpath、Hostnetwork: true、DnsPolicy: ClusterFirstWithHostNet 等），但不一定能满足预期效果。例如您希望使用 Hostpath 共享数据，但可能调度到同一个超级节点上的两个 Pod 实际为不同子机的 Hostpath。因此建议您在 EKS 集群运行的任务，不要强依赖与 Host 相关的参数。
 
 ## 端口限制
 在 EKS 中，9100端口会被 EKS 保留，不可使用。
