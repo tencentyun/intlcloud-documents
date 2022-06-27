@@ -115,7 +115,7 @@ npm run serve
 TUIPusher&TUIPlayerによって実装されるライブイベントストリーミングと標準ライブストリーミングはTencent Cloud[CSSサービス]（https://intl.cloud.tencent.com/document/product/267）に依存しているため、ライブイベントストリーミングと標準ライブストリーミング回線をサポートするには、Relayed Push機能を有効にする必要があります。
 
 1. [**TRTCコンソール**](https://console.cloud.tencent.com/trtc) で現在使用中のアプリケーションのRelayed Push設定を有効にします。必要に応じてRelayed Push用指定ストリームまたはGlobal Auto-relayを起動することができます。  
-![img](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/2724d9ff0b4c23a30b37feaba6cccbcd.png)
 2. [**ドメイン名管理**](https://console.cloud.tencent.com/live/domainmanage)ページで独自の再生ドメイン名を追加します。具体的な内容は[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
 3. `TUIPlayer/src/config/basic-info-config.js`設定ファイルで再生ドメイン名を設定します。
 
@@ -145,7 +145,7 @@ TUIPusher & TUIPlayerを本番環境アプリケーションに使用する場�
 ### Web端末でのクラウドレコーディングの実現方法。
 1. **クラウドレコーディング**機能を有効にするための具体的な操作については、[クラウドレコーディングと再生の実現](https://intl.cloud.tencent.com/document/product/647/35426)をご参照ください 。
 2. **クラウドレコーディング**> **指定ユーザーレコーディング**を有効にすると、Web端末が[TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient)インターフェース呼び出し時にuserDefineRecordIdパラメータを渡すことによってレコーディングを開始できます。
-	 
+	
 ### Web端末でのCDNへのプッシュの実現方法。
 Web端末でのCDNへのプッシュについては、[CDNへのプッシュの実現](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html) をご参照ください。
 

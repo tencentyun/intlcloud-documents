@@ -115,7 +115,7 @@ npm run serve
 TUIPusher & TUIPlayer 实现的快直播和标准直播依托于腾讯云 [云直播服务](https://intl.cloud.tencent.com/document/product/267)，因此支持快直播和标准直播线路需要您开启旁路推流功能。
 
 1. 在 [**实时音视频控制台**](https://console.cloud.tencent.com/trtc) 中为您正在使用的应用开启旁路推流配置，可按需开启指定流旁路或全局自动旁路。  
-![img](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/2724d9ff0b4c23a30b37feaba6cccbcd.png)
 2. 请在 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage) 页面添加自有播放域名，具体请参见 [添加自有域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 3. 在 `TUIPlayer/src/config/basic-info-config.js` 配置文件中配置播放域名。
 

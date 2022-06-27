@@ -115,7 +115,7 @@ npm run serve
 Because the high-speed and standard live streaming features of `TUIPusher` and `TUIPlayer` are powered by [CSS](https://intl.cloud.tencent.com/document/product/267), you need to enable relay to CDN to use these features.
 
 1. In the [TRTC console](https://console.cloud.tencent.com/trtc), enable relay to CDN for your application. You can choose **Specified-stream relay** or **Global relay** based on your needs.  
-![img](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/2724d9ff0b4c23a30b37feaba6cccbcd.png)
 2. On the [Domain Management](https://console.cloud.tencent.com/live/domainmanage) page, add your playback domain name. For detailed directions, please see [Adding Your Own Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
 3. Configure the playback domain name in `TUIPlayer/src/config/basic-info-config.js`.
 
@@ -145,7 +145,7 @@ See [Screen Sharing](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-b
 ### How do I implement the on-cloud recording feature on the web?
 1. For information about how to enable **on-cloud recording**, see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
 2. If you enable **specified user recording**, you can start recording on the web by specifying `userDefineRecordId` when calling the [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/TRTC.html#createClient) API.
-	 
+	
 ### How do I publish a stream to CDN on the web?
 See [Publishing to CDN](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-26-advanced-publish-cdn-stream.html).
 
