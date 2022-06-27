@@ -39,7 +39,7 @@ The billing cycles and sequence of CI billable items are as detailed below:
       <td>Basic image processing</td>
       <td rowspan=4>Monthly</td>
       <td rowspan=21>Amounts are deducted and the bill for the previous month is generated on the first day of each month</td>
-      <td rowspan=4>Free tier > resource pack > pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
+      <td rowspan=4>Free tier  > pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
    </tr>
    <tr>
       <td>Advanced image compression</td>
@@ -54,7 +54,7 @@ The billing cycles and sequence of CI billable items are as detailed below:
       <td rowspan=4>Content moderation</td>
       <td>Image moderation</td>
       <td rowspan=4><li>Monthly for automatic moderation<li>Daily for human moderation</td>
-      <td rowspan=4>Free tier > resource pack > pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
+      <td rowspan=4>Free tier  > pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
    </tr>
    <tr>
       <td>Video moderation</td>
@@ -69,7 +69,7 @@ The billing cycles and sequence of CI billable items are as detailed below:
       <td rowspan=4>Content recognition</td>
       <td>Image tagging (displayed as content recognition on bills)</td>
       <td rowspan=4>Monthly</td>
-      <td rowspan=4>Free tier > resource pack > pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
+      <td rowspan=4>Free tier >  pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
    </tr>
    <tr>
       <td>QR code recognition</td>
@@ -84,7 +84,7 @@ The billing cycles and sequence of CI billable items are as detailed below:
       <td rowspan=6>Media processing</td>
       <td>Video frame capturing</td>
       <td rowspan=6>Monthly</td>
-      <td rowspan=9>Free tier > resource pack > pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
+      <td rowspan=9>Free tier  > pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
    </tr>
    <tr>
       <td>Video metadata acquisition</td>
