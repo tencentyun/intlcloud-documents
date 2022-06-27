@@ -1,5 +1,8 @@
 ## コンポーネントの説明
-TUICallingコンポーネントはオープンソースのオーディオビデオコンポーネントです。デスクトップブラウザで**ビデオ通話**機能をスピーディーに統合でき、オンライン診療、オンラインカスタマーサービス、リモート査定などのシーンに最適です。
+TUICallingコンポーネントはオープンソースのオーディオビデオコンポーネントです。デスクトップブラウザで**ビデオ通話**機能をスピーディーに統合でき、オンライン問診、オンラインカスタマーサービス、リモート査定などのシーンに最適です。
+
+>?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブ化すると、関連するIM SDKの体験版がデフォルトでアクティブ化されます。これは100 DAUのみをサポートします。
+
 <table class="tablestyle">
 <tbody><tr>
 <td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
@@ -8,17 +11,16 @@ TUICallingコンポーネントはオープンソースのオーディオビデ�
 
 
 #### その他のプラットフォーム
-Web版のTUICallingのほか、Android、iOS、Flutter、Uniappなどのプラットフォーム用のソースコードも同時リリースしています。このうちAndroid、iOS版のTUICallingは「着信通知」機能をサポートしています。
+Web版のTUICallingのほか、Android、iOS、Flutterなどのプラットフォーム用のソースコードも同時リリースしています。このうちAndroid、iOS版のTUICallingは「着信通知」機能をサポートしています。
 
 >?
 >- **Web版のTUICallingのほか、Android、iOS、Flutter、Uniappなどのプラットフォーム用のソースコードも同時リリースしています。このうちAndroid、iOS版のTUICallingは「着信通知」機能をサポートしています。** 
-ご質問やご提案がありましたら、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)までお願いいたします。
+ご質問やご提案がありましたら、[お問い合わせ](https://intl.cloud.tencent.com/contact-us)ください。
 
 ## コンポーネントの統合
-
 [](id:step1)
 ### ステップ1：SdkAppIdと署名キーの取得
-- Tencent Cloudアカウントをまだお持ちでない場合は、Tencent Cloudアカウントをご登録の上、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了してください。完了すると、TRTC管理コンソールの[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)画面にリダイレクトされます。
+- Tencent Cloudアカウントをまだお持ちでない場合は、Tencent Cloudアカウントをご登録ください。完了すると、TRTC管理コンソールの[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)画面にリダイレクトされます。
 - アプリケーションリストが空の場合は、**アプリケーションの作成**ボタンをクリックして新しいアプリケーションを作成し、**アプリケーション管理**をクリックしてアプリケーション管理画面を開きます。この画面で**クイックマスター**タブを開くと、次のような画面を見ることができます。
  <img src="https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png" width="700">
 - **SDKAppID**：TRTCのアプリケーションIDです。業務の分離、すなわち異なるSDKAppIDの通話が互いに接続できないようにするために用いられます。
@@ -167,14 +169,14 @@ trtcCalling.hangup()
 
 ### 通話がつながらなかったり、強制オフラインになったりするのはなぜですか。
 コンポーネントは現在、マルチインスタンスのログインや**オフラインプッシュのシグナリング**機能をサポートしていません。現在のログインアカウントの一意性をご確認ください。
-> ?
-> - **マルチインスタンス**：1つのUserIDで繰り返しログインしたり、異なるターミナルからログインしたりすると、シグナリングの混乱が生じます。
-> - **オフラインプッシュ**：インスタンスはオンラインの場合にのみメッセージを受信できます。インスタンスがオフラインのときに受信したシグナリングは、オンラインになった後は再度プッシュされません。
+>?
+>- **マルチインスタンス**：1つのUserIDで繰り返しログインしたり、異なるターミナルからログインしたりすると、シグナリングの混乱が生じます。
+>- **オフラインプッシュ**：インスタンスはオンラインの場合にのみメッセージを受信できます。インスタンスがオフラインのときに受信したシグナリングは、オンラインになった後は再度プッシュされません。
 
 ### 環境についてはどのような要件がありますか。
 最新バージョンのChromeブラウザをご使用ください。現在、デスクトップのChromeブラウザはTRTC Web SDKをサポートしており、関連機能は比較的整っていますので、Chromeブラウザを使用して体験することをお勧めします。
 
-- TRTCCallingは以下のポートに依存してデータ送信を行っていますので、これらをファイアウォール・ホワイトリストに追加してください。設定が完了したら、[公式サイト Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
+TRTCCallingは以下のポートに依存してデータ送信を行っていますので、これらをファイアウォール・ホワイトリストに追加してください。設定が完了したら、[公式サイト Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)にアクセスして体験していただけば、設定が有効かどうかチェックすることができます。
 - **TCPポート**：8687
 - **UDPポート**：8000，8080，8800，843，443，16285
 - **ドメイン名**：qcloud.rtc.qq.com。より詳細な説明をご覧になる場合は、[ファイアウォール制限の対応関連](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。

@@ -2,6 +2,8 @@
 
 TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUICalling 组件，您只需要编写几行代码就可以为您的 App 添加“一对一音视频通话”场景，并且支持离线唤起能力。TUICalling 同时支持 Android、Web、小程序、Flutter、UniApp 等平台，基本功能如下图所示：
 
+>?TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信IM服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/af697557d2746585a0d9f4b894dc42d5.png" </td>
@@ -16,7 +18,6 @@ TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUIC
 1. 在您的工程 `Podfile` 文件同一级目录下创建 `TUICalling` 文件夹。
 2. 单击进入 [**Github/TUICalling**](https://github.com/tencentyun/TUICalling) ，选择克隆/下载代码，然后将 [**TUICalling/iOS/**](https://github.com/tencentyun/TUICalling/tree/main/iOS) 目录下的 `Source`、`Resources` 文件夹 和 `TUICalling.podspec` 文件拷贝到您在 `步骤1` 创建的 TUICalling 文件夹下。
 3. 在您的 Podfile 文件中添加以下依赖，之后执行 `pod install` 命令，完成导入。
-
 ```
 # :path => "指向TUICalling.podspec的相对路径"
 pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"]
@@ -38,7 +39,7 @@ pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"
 
 ### 步骤三：创建并初始化组件
 
-<dx-tabs>
+<dx-codeblock>
 :::  Objective-C
 ```
 // 1.组件登录
@@ -67,7 +68,7 @@ TUILogin.login("您的UserID", userSig: "您的UserSig") {
 TUICalling.shareInstance()
 ```
 :::
-</dx-tabs>
+</dx-codeblock>
 
 **参数说明**：
 - **SDKAppID**：**TRTC 应用ID**，如果您未开通腾讯云 TRTC 服务，可进入 [腾讯云实时音视频控制台](https://console.cloud.tencent.com/trtc/app)，创建一个新的 TRTC 应用后，单击**应用信息**，SDKAppID 信息如下图所示：

@@ -1,5 +1,8 @@
-## Component Overview
-`TUICalling` is an open-source audio/video component. It can help you quickly integrate the **video call** feature into your desktop browser and is suitable for scenarios such as online medical consultation, online customer service, and remote insurance claim.
+## Overview
+`TUICalling` is an open-source UI component for audio/video communication. You can use it to quickly integrate **video call** capabilities into your desktop website. It’s ideal for applications such as online medical consultation, online customer service, and remote insurance claim settlement.
+
+>? All components of TUIKit use two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, IM and the trial edition of the IM SDK (which supports only 100 DAUs) will be activated automatically. For the billing details of IM, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+
 <table class="tablestyle">
 <tbody><tr>
 <td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
@@ -8,28 +11,27 @@
 
 
 #### Other platforms
-In addition to `TUICalling` for web, we also provide source code for Android, iOS, Flutter, and UniApp platforms. `TUICalling` also supports the incoming call notification feature on Android and iOS.
+In addition to web, we also provide source code for Android, iOS, and Flutter. The Android and iOS versions support incoming call notifications.
 
 >?
->- **In addition to `TUICalling` for web, we also provide source code for Android, iOS, Flutter, and UniApp platforms. `TUICalling` also supports the incoming call notification feature on Android and iOS.** 
->- If you have any questions or suggestions, [contact us](https://intl.cloud.tencent.com/contact-us).
+>- **In addition to web, we also provide source code for Android, iOS, and Flutter. The Android and iOS versions support incoming call notifications.** 
+>- If you have any questions or suggestions, feel free to [contact us](https://intl.cloud.tencent.com/contact-us).
 
-## Component Integration
-
+## Integration
 [](id:step1)
-### Step 1. Get the `SdkAppId` and signature key
-- If you don't have a Tencent Cloud account, please register a Tencent Cloud account. Then, go to the [Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console.
-- If your application list is empty, you can click **Create Application** to create an application. Click **Application Info** to enter the Application Management page, select the **Quick Start** tab to see the following content:
+### Step 1. Get the `SDKAppID` and signature key
+- Sign up for a Tencent Cloud account and go to the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
+- If you don’t have an application yet, click **Create Application** to create an application. Then, click **Application Info** and select the **Quick Start** tab to view the `SDKAppID` and `SecretKey`.
  <img src="https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png" width="700">
-- **SDKAppID**: TRTC application ID, which is used for business isolation; that is, calls with different `SDKAppID` values cannot be interconnected.
-- **Secretkey**: TRTC application key, which needs to be used together with `SDKAppID` to generate the authentication credential `UserSig` for authorized use of TRTC. It will be used in step 5.
+- **SDKAppID**: TRTC application ID, which uniquely identifies an application
+- **Secretkey**: TRTC application key, which you can use together with `SDKAppID` to generate a `UserSig` required to authorize the use of TRTC. You will use this key in step 5.
 
 [](id:step2)
-### Step 2. Download and integrate the `TRTCCalling` component
-Go to [GitHub](https://github.com/tencentyun/TUICalling), clone or download the code, and implement the code by referring to the `Web` directory.
+### Step 2. Import the `TRTCCalling` component
+Go to [GitHub](https://github.com/tencentyun/TUICalling) and clone or download the code. Refer to the `Web` directory.
 
 >?
->- Since version 0.6.0, you need to manually install dependencies [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk), [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk), and [tsignaling](https://www.npmjs.com/package/tsignaling).
+>- Since version 0.6.0, you need to manually install the dependencies [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk), [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk), and [tsignaling](https://www.npmjs.com/package/tsignaling).
 >- To reduce the size of `trtc-calling-js.js` and prevent version conflict between `trtc-calling-js.js` and the already-in-use `trtc-js-sdk`, `tim-js-sdk` or `tsignaling`, the latter three are packaged as external dependencies, which you need to install manually before use.
 
 <dx-codeblock>
@@ -66,14 +68,14 @@ import TRTCCalling from 'trtc-calling-js';
 let options = {
 	SDKAppID: 0, // Replace 0 with your `SDKAppID` when connecting
 	// The `tim` parameter is added starting from v0.10.2
-	// The `tim` parameter is applicable to existing TIM instances in the business to ensure the uniqueness of TIM instances
+	// The parameter guarantees the uniqueness of an existing TIM instance.
 	tim: tim
 };
 const trtcCalling = new TRTCCalling(options);
 ```
 
 [](id:step4)
-### Step 4. Log in to the component and listen on events
+### Step 4. Log in to the component and listen for events
 ```javascript
 // You can refer to `Web/src/components/login/index.vue`
 trtcCalling.login({
@@ -98,11 +100,11 @@ export default {
 	},
 	methods: {
 		initListener: function() {
-			// The remote user makes a call
+			// A remote user called.
 			trtcCalling.on(trtcCalling.EVENT.INVITED, this.handleNewInvitationReceived);
-			// The remote user answers the call
+			// A remote user answered the call.
 			trtcCalling.on(trtcCalling.EVENT.USER_ACCEPT, this.handleUserAccept);
-			// The remote user rejects the call
+			// A remote user rejected the call.
 			trtcCalling.on(trtcCalling.EVENT.REJECT, this.handleInviteeReject);
 			// ...
 		},
@@ -129,10 +131,10 @@ export default {
 trtcCalling.call({
   userID,  // User ID
   type: 2, // Call type. `0`: unknown; `1`: audio call; `2`: video call
-  timeout  // Timeout threshold, in seconds
+  timeout  // Timeout period, in seconds
 });
 ```
-- **Callee: Processes a call invitation**
+- **Callee: Answers the call**
 ```javascript
 // You can refer to the `Web/src/App.vue handleAcceptCall` method
 // Answer
@@ -144,7 +146,7 @@ trtcCalling.reject()
 ```javascript
 trtcCalling.openCamera()
 ```
-- **Play the video of a remote user**
+- **Play the video of the remote user**
 ```javascript
 trtcCalling.startRemoteView({
   userID, // Remote user ID
@@ -167,17 +169,17 @@ trtcCalling.hangup()
 
 ### Why can’t I get through to a user? Why am I kicked offline?
 The component does not support login of multiple instances or **offline signaling**. Please make sure that your current login is unique.
-> ?
-> - **Multiple instances**: A user logs in with the same account multiple times or on different devices, which disrupts signaling.
-> - **Offline signaling**: Only online instances can receive messages. Messages sent to offline instances will not be sent again when the instances go online.
+>?
+>- **Multiple instances**: A user ID logs in multiple times or on different devices, which disrupts signaling.
+>- **Offline signaling**: Only online instances can receive a message. Messages sent to offline instances will not be sent again when the instances go online.
 
 ### What are the environment requirements?
-The desktop version of Chrome offers better support for the features of the TRTC Web SDK; therefore, Chrome is recommended for the demo.
+The desktop version of Chrome offers better support for the features of the TRTC web SDK; therefore, Chrome is recommended for the demo.
 
 `TRTCCalling` uses the following ports and domain name for data transfer, which should be added to the allowlist of the firewall. After configuration, please use the [official demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html) to check whether the configuration has taken effect.
 - **TCP port**: 8687
 - **UDP ports**: 8000, 8080, 8800, 843, 443, 16285
-- **Domain**: qcloud.rtc.qq.com. For more information, see [Dealing with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
+- **Domain name**: qcloud.rtc.qq.com. For details, see [Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
 - **Supported platforms**: Currently, this solution supports the following platforms:
 <table>
 <thead><tr><th>OS</th><th> Browser</th><th>Minimum Browser Version Requirement</th></tr></thead>
@@ -222,42 +224,42 @@ The desktop version of Chrome offers better support for the features of the TRTC
 <table>
 <thead><tr><th>Scenario</th><th>Protocol</th><th>Receive (Playback)</th><th>Send (Publish)</th><th>Share Screen</th><th>Remarks</th></tr></thead>
 <tbody><tr>
-<td>Production environment</td>
-<td>HTTPS protocol</td>
+<td>Production</td>
+<td>HTTPS</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Recommended</td>
 </tr><tr>
-<td>Production environment</td>
-<td>HTTP protocol</td>
+<td>Production</td>
+<td>HTTP</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>-</td>
 </tr><tr>
-<td>Local development environment</td>
+<td>Local development</td>
 <td>http://localhost</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Recommended</td>
 </tr><tr>
-<td>Local development environment</td>
+<td>Local development</td>
 <td>http://127.0.0.1</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>Supported</td>
 <td>-</td>
 </tr><tr>
-<td>Local development environment</td>
+<td>Local development</td>
 <td>http://[local IP]</td>
 <td>Supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>-</td>
 </tr><tr>
-<td>Local development environment</td>
+<td>Local development</td>
 <td align="left">file:///</td>
 <td>Supported</td>
 <td>Supported</td>
@@ -266,5 +268,5 @@ The desktop version of Chrome offers better support for the features of the TRTC
 </tr>
 </tbody></table>
 
-### More FAQs
-For more FAQs, see [TRTCCalling for Web](https://intl.cloud.tencent.com/document/product/647/43096).
+### More
+For other FAQs, see [TRTCCalling for Web](https://intl.cloud.tencent.com/document/product/647/43096).

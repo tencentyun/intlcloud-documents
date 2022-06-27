@@ -2,6 +2,8 @@
 
 `TUICalling` is an open-source UI component for audio/video communication. With just a few lines of code changes, you can integrate it into your project to implement one-to-one audio/video calls that support offline push notifications. In addition to the iOS component, we also offer components for Android, web, Flutter, UniApp, and more.
 
+>? All components of TUIKit use two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, IM and the trial edition of the IM SDK (which supports only 100 DAUs) will be activated automatically. For the billing details of IM, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/af697557d2746585a0d9f4b894dc42d5.png" </td>
@@ -16,7 +18,6 @@
 1. Create a `TUICalling` folder in the same directory as `Podfile` in your project.
 2. Go to the component’s [GitHub page](https://github.com/tencentyun/TUICalling), clone or download the code, and copy the `Source` and `Resources` folders and the `TUICalling.podspec` file in [TUICalling/iOS/](https://github.com/tencentyun/TUICalling/tree/main/iOS) to the `TUICalling` folder in your project.
 3. Add the following dependencies to your `Podfile` and run `pod install` to import the component.
-
 ```
 # :path => "The relative path of `TUICalling.podspec`"
 pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"]
@@ -36,9 +37,9 @@ Your app needs mic and camera permissions to implement audio/video communication
 ```
 ![](https://qcloudimg.tencent-cloud.cn/raw/224ae568f11d50124ea663ac0ef1c6e9.png)
 
-### Step 3. Create and initialize the component
+### Step 3. Create and initialize an instance of the component
 
-<dx-tabs>
+<dx-codeblock>
 ::: Objective-C
 ```
 // 1. Log in to the component
@@ -67,14 +68,14 @@ TUILogin.login("Your UserID", userSig: "Your UserSig") {
 TUICalling.shareInstance()
 ```
 :::
-</dx-tabs>
+</dx-codeblock>
 
 **Parameter description:**
 - **SDKAppID**: **TRTC application ID**. If you haven't activated TRTC, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, click **Application Info**, and select the **Quick Start** tab to view its `SDKAppID`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: **TRTC application key**. Each secret key corresponds to a `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
-- **UserId**: Current user ID, which is a custom string that can contain up to 32 bytes of letters and digits (special characters are not supported).
-- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [TUICalling demo project](https://github.com/tencentyun/TUICalling/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L39). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **SecretKey**: **TRTC application key**. Each secret key corresponds to a `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
+- **UserID**: Current user ID, which is a custom string that can contain up to 32 bytes of letters and digits (special characters are not supported).
+- **UserSig**: Security signature calculated based on `SDKAppID`, `userID`, and `SecretKey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [TUICalling demo project](https://github.com/tencentyun/TUICalling/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L39). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 ### Step 4. Make an audio/video call
 Make a one-to-one audio/video call using [TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139):

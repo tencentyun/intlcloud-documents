@@ -1,5 +1,8 @@
 ## 组件介绍
 TUICalling 组件是一个开源的音视频组件，帮助您快速在您的桌面浏览器中集成**视频通话**功能，非常适合用于在线问诊，在线客服，远程理赔等场景中。
+
+>?TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信IM服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
+
 <table class="tablestyle">
 <tbody><tr>
 <td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
@@ -8,14 +11,13 @@ TUICalling 组件是一个开源的音视频组件，帮助您快速在您的桌
 
 
 #### 其它平台
-除了 Web 版的 TUICalling，我们同时也推出了 Android、iOS、Flutter、Uniapp 等平台的源代码，其中 Android、iOS 版本的 TUICalling 支持“来电提醒”功能。
+除了 Web 版的 TUICalling，我们同时也推出了 Android、iOS、Flutter等平台的源代码，其中 Android、iOS 版本的 TUICalling 支持“来电提醒”功能。
 
 >?
 >- **除了 Web 版的 TUICalling，我们同时也推出了 Android、iOS、Flutter、Uniapp 等平台的源代码，其中 Android、iOS 版本的 TUICalling 支持“来电提醒”功能。** 
 >- 如果您有任何咨询或建议，请[联系我们](https://intl.cloud.tencent.com/contact-us)。
 
 ## 组件集成
-
 [](id:step1)
 ### 步骤一：获取 SdkAppId 和签名密钥
 - 如果您还没有腾讯云账号，请注册一个腾讯云账号。然后跳转到 TRTC  管理控制台中的[应用管理](https://console.cloud.tencent.com/trtc/app)界面。
@@ -167,9 +169,9 @@ trtcCalling.hangup()
 
 ### 为什么拨打不通，或者被踢下线？
 组件暂不支持多实例登入，不支持**离线推送信令**功能，请您确认登入账号的唯一性。
-> ?
-> - **多实例**：一个 UserID 重复登入，或在不同端登入，将会引起信令的混乱。
-> - **离线推送**：实例在线才能接收消息，实例离线时接收到的信令不会在上线后重新推送。
+>?
+>- **多实例**：一个 UserID 重复登入，或在不同端登入，将会引起信令的混乱。
+>- **离线推送**：实例在线才能接收消息，实例离线时接收到的信令不会在上线后重新推送。
 
 ### 对于环境有哪些要求?
 请使用最新版本的 Chrome 浏览器。目前桌面端 Chrome 浏览器支持 TRTC Web SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。

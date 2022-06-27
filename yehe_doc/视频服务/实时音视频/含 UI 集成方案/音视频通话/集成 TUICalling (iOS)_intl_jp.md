@@ -2,6 +2,8 @@
 
 TUICallingはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUICallingコンポーネントを統合することにより、数行のコードを書くだけで、Appに「1対1オーディオビデオ通話」などのシナリオを組み込むことができ、さらにオフラインでのリマインダー機能もサポートしています。TUICallingはまたAndroid、Web、ミニプログラム、Flutter、UniAppなどのプラットフォームでもサポートしています。基本機能は下図のとおりです。
 
+>?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブ化すると、関連するIM SDKの体験版がデフォルトでアクティブ化されます。これは100 DAUのみをサポートします。
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/af697557d2746585a0d9f4b894dc42d5.png" </td>
@@ -16,7 +18,6 @@ TUICallingはオープンソースのオーディオビデオUIコンポーネ�
 1. プロジェクトの`Podfile`ファイルと同じ階層のディレクトリ下に`TUICalling`フォルダを作成します。
 2. クリックして[**Github/TUICalling**](https://github.com/tencentyun/TUICalling)に進み、コードのクローン/ダウンロードを選択した後、[**TUICalling/iOS/**](https://github.com/tencentyun/TUICalling/tree/main/iOS)ディレクトリ下の`Source`、`Resources`フォルダ、`TUICalling.podspec`ファイルを、`ステップ1`で作成したTUICallingフォルダ下にコピーします。
 3. Podfileファイル内に以下の依存関係を追加します。その後、`pod install`コマンドを実行すると、インポートが完了します。
-
 ```
 # :path => "TUICalling.podspecを指定する相対パス"
 pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"]
@@ -38,7 +39,7 @@ pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"
 
 ### ステップ3：コンポーネントの作成と初期化
 
-<dx-tabs>
+<dx-codeblock>
 :::  Objective-C
 ```
 // 1.コンポーネントのログイン
@@ -67,7 +68,7 @@ TUILogin.login("あなたのUserID", userSig: "あなたのUserSig") {
 TUICalling.shareInstance()
 ```
 :::
-</dx-tabs>
+</dx-codeblock>
 
 **パラメータの説明**
 - **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます。
