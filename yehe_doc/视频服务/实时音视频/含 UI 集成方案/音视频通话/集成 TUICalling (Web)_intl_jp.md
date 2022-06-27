@@ -2,10 +2,7 @@
 TUICallingコンポーネントはオープンソースのオーディオビデオコンポーネントです。デスクトップブラウザで**ビデオ通話**機能をスピーディーに統合でき、オンライン診療、オンラインカスタマーサービス、リモート査定などのシーンに最適です。
 <table class="tablestyle">
 <tbody><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/4bac4a925d537c29f1540fa90d570552.png"></td>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/eb1bcfd34409315b3bda70e72d5420f4.png"></td></tr><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/83e4ec55c1feb43c2ef68863a6b4beae.png"></td>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/17bb3c8f1f49a4c1f100536bee37caef.png"></td>
+<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
 </tr>
 </tbody></table>
 
