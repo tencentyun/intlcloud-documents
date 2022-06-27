@@ -2,16 +2,10 @@
 TUIKaraokeはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIKaraokeコンポーネントを統合することにより、数行のコードを書くだけで、アプリケーションにオンラインカラオケシーンを組み込むことができ、カラオケ、マイク管理、ギフトの送付と受領、テキストチャットなどのTRTCのKTVシーンでの関連機能を体験できるようになります。TUIKaraokeはiOSプラットフォーム用のソースコードもサポートしています。基本機能は下図のとおりです。
 
 <table>
-     <tr>
-         <th width=20%  style="text-align:center">チャット</th>
-         <th width=20%  style="text-align:center">オーディオエフェクト管理</th>
-     </tr>
 <tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"width="850"></td>
 </tr>
 </table>
-
-
 
 ## コンポーネントの統合
 ### ステップ1：TUIKaraokeコンポーネントのダウンロードとインポート
