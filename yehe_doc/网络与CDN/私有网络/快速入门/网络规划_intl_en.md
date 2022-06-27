@@ -12,11 +12,11 @@ You can create multiple subnets and route tables in a VPC for refined traffic ma
 ![](https://main.qcloudimg.com/raw/22c3ea70430c6eaf50c994f5cb5923bc.png)
 - **Planning multiple VPCs**
 We recommend you plan multiple VPCs in any of the following use cases:
- - **Your business is deployed in multiple regions**
+   - **Your business is deployed in multiple regions**
 If your business is deployed in multiple regions, you need to plan multiple VPCs and deploy at least one in each region because a VPC cannot be deployed across regions.
 VPCs are not interconnected by default. To interconnect VPCs, use a [peering connection](https://intl.cloud.tencent.com/document/product/553) or [Cloud Connect Network instance](https://intl.cloud.tencent.com/document/product/1003).
 ![](https://main.qcloudimg.com/raw/8e08edafd53646887f337be56836e56c.png)
- - **Multiple businesses are deployed in the same region and require isolation**
+   - **Multiple businesses are deployed in the same region and require isolation**
 If you have multiple businesses deployed in the same region and these businesses must be isolated from each other, you need to plan multiple VPCs and deploy one VPC for each business. Doing this can isolate businesses because VPCs are not interconnected by default.
 ![](https://main.qcloudimg.com/raw/ec02b9e821f2a723a3e2d90bfab553bb.png)
 
@@ -33,13 +33,13 @@ If you have multiple businesses deployed in the same region and these businesses
 >
 #### Planning VPC IP ranges
 - **You can use any of the following IP ranges as your VPC IP ranges:**
- - **10.0**.0.0 - **10.255**.255.255 (**the mask range must be 12 to 28**)
- - **172.16**.0.0 - **172.31**.255.255 (**the mask range must be 12 to 28**)
- - **192.168**.0.0 - **192.168**.255.255 (**the mask range must be 16 to 28**)
+   - **10.0**.0.0 - **10.255**.255.255 (**the mask range must be 12 to 28**)
+   - **172.16**.0.0 - **172.31**.255.255 (**the mask range must be 12 to 28**)
+   - **192.168**.0.0 - **192.168**.255.255 (**the mask range must be 16 to 28**)
 - **When planning VPC IP ranges, note that:**
- - If you need to create multiple VPCs that communicate with each other or with IDCs, make sure that the IP ranges of the VPCs do not overlap.
- - If your VPC needs to communicate with the [classic network](https://intl.cloud.tencent.com/document/product/215/41417), create a VPC with an IP range of `10.[0~47].0.0/16` and its subset, as VPCs with other IP ranges cannot communicate with the classic network.
- - Neither the CIDR blocks of a VPC nor its subnets can be modified after the VPC creation. When either the CIDR blocks of a VPC or its subnets are insufficient, you can [create secondary CIDR blocks](https://intl.cloud.tencent.com/document/product/215/40070).
+   - If you need to create multiple VPCs that communicate with each other or with IDCs, make sure that the IP ranges of the VPCs do not overlap.
+   - If your VPC needs to communicate with the [classic network](https://intl.cloud.tencent.com/document/product/215/41417), create a VPC with an IP range of `10.[0~47].0.0/16` and its subset, as VPCs with other IP ranges cannot communicate with the classic network.
+   - Neither the CIDR blocks of a VPC nor its subnets can be modified after the VPC creation. When either the CIDR blocks of a VPC or its subnets are insufficient, you can [create secondary CIDR blocks](https://intl.cloud.tencent.com/document/product/215/40070).
 
 #### Planning subnet IP ranges
 - **Subnet IP range**: You can use your VPC IP range or a part of it as the subnet IP range. For example, if the VPC IP range is `10.0.0.0/16`, the subnet IP range can be between `10.0.0.0/16` and `10.0.255.255/28`.
