@@ -27,7 +27,7 @@ Grup RO adalah kumpulan instans baca saja yang memiliki alamat jaringan pribadi 
  - **Region** (Wilayah): sama dengan instans sumber secara default.
  - **Database Version** (Versi Database): secara default sama dengan instans sumber.
  - **Architecture** (Arsitektur): ini adalah node tunggal. Meskipun arsitektur node tunggal hemat biaya, ada risiko titik kegagalan tunggal. Sebaiknya beli setidaknya dua instans baca saja di grup RO bisnis Anda yang memerlukan ketersediaan tinggi.
- - **Data Replication Mode** (Mode Replikasi Data): secara default sama dengan instans sumber.
+ - **Data Replication Mode** (Mode Replikasi Data): replikasi asinkron.
  - **AZ** (AZ): jika ada beberapa AZ di wilayah saat ini, Anda dapat memilih satu sesuai kebutuhan.
 >?Keterlambatan jaringan di seluruh AZ di wilayah yang sama, di wilayah yang berbeda, dan di wilayah di luar daratan Tiongkok masing-masing sekitar beberapa milidetik, puluhan milidetik, dan lebih dari 100 milidetik, jadi Anda harus memilih AZ dengan hati-hati.
 5. Kembali ke daftar instans. Status instans yang dibuat adalah **Delivering** (Mengirim). Jika statusnya berubah menjadi **Running** (Berjalan), artinya instans baca saja telah berhasil dibuat.
