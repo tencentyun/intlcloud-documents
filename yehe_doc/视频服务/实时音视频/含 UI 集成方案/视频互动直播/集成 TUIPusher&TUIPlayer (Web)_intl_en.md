@@ -55,9 +55,9 @@ We also provide a [TUIPusher Demo](https://web.sdk.qcloud.com/component/tuiliver
 2. Select the **Quick Start** tab to view the application’s secret key.
 ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
->?
->- Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.
->- After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).
+<dx-alert infotype="explain">
+<li>Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.</li>
+<li>After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).</li></dx-alert>
 
 :::
 ::: Method 2: Via IM
@@ -71,7 +71,7 @@ We also provide a [TUIPusher Demo](https://web.sdk.qcloud.com/component/tuiliver
 #### Step 2. Obtain the key and activate TRTC
 1. On the [overview page](https://console.cloud.tencent.com/im), click the application created to go to the **Basic Configuration** page. In the **Basic Information** section, click **Display key**, and copy and save the key.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f211f03fdb78d548aba80fcdd67219a8.png)
->! Please store the key information properly to prevent disclosure.
+<dx-alert infotype="notice">Please store the key information properly to prevent disclosure.</dx-alert>
 2. On the **Basic Configuration** page, activate TRTC.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a202eda15b427b9c24cd4290a79243a7.png)
 :::
