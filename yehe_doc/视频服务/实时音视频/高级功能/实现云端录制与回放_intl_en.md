@@ -163,7 +163,7 @@ param.userDefineRecordId = @"1001_rexchang";  // Recording ID. Specify the user 
   The task stops automatically after the anchor who has set [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry stops sending audio/video. However, if you have set the **Resumption Timeout** parameter when [choosing the format for recording files](#fileFormat), you will not receive the recording file until the timeout period elapses.
 
 - **Mixing streams**
-  You can call the SDK API [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to mix the audio/video streams of other users in a room into the current user's audio/video streams. For details, see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
+  You can call the SDK API [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to mix the audio/video streams of other users in a room into the current user's audio/video streams.
 >! Make sure that the `setMixTranscodingConfig` API is called by just one anchor (preferably the anchor who created the room) in a TRTC room. Calling of the API by multiple anchors may cause errors.
 
 - **Naming of recording files**
@@ -224,7 +224,9 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
   Set `LayoutParams` when calling [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) to enable On-Cloud MixTranscoding. The API can be called multiple times during live streaming, meaning that you can modify the `LayoutParams` parameter to change the layout of video images. Make sure you use the same `OutputParams.RecordId` and `OutputParams.StreamId` for each call; otherwise the recording will be interrupted and multiple recording files will be generated.
 
 
-Recording files are named `OutputParams.RecordId_start time_ end time`, in which `OutputParams.RecordId` is set when [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) is called.
+
+- **Naming of recording files**
+  Recording files are named `OutputParams.RecordId_start time_ end time`, in which `OutputParams.RecordId` is set when [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) is called.
 
 - **Supported platforms**
   Recording operations are initiated by your server and are not affected by the platform on which the SDK runs.
@@ -295,7 +297,6 @@ The fields in the table below can help you determine which call/live streaming s
 
 You can use the [DeleteMedia](https://intl.cloud.tencent.com/document/product/266/37571) to delete a file from VOD.
 RESTful request sample code:
-
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMedia
 &FileId=52858907988664150587
@@ -320,45 +321,44 @@ Integrate the VOD player. For detailed instructions, see the following documents
 - [Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html)
 - [Web](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! We recommend you use [TRTC Professional](https://intl.cloud.tencent.com/document/product/647/34615), which integrates [Superplayer](https://intl.cloud.tencent.com/document/product/266/7836) and [Mobile Live Video Broadcasting (MLVB)](https://intl.cloud.tencent.com/product/mlvb). This integrated edition adds less to the size of your application package than two independent SDKs do because many underlying modules are shared among the services. It also allows you to avoid duplicate symbol issues.
+>! We recommend you use [TRTC Professional](https://intl.cloud.tencent.com/document/product/647/34615), which integrates [Superplayer](https://intl.cloud.tencent.com/document/product/266/7836), MLVB features, and more. This integrated edition adds less to the size of your application package than two independent SDKs do because many underlying modules are shared among the services. It also allows you to avoid duplicate symbol issues.
 
 
 ## Billing
+The on-cloud recording and playback feature is powered by cloud services including on-cloud recording and VOD’s storage, video processing, and playback services. It also relies on the player capabilities of the mobile SDKs.
 
-The costs of on-cloud recording and playback are listed below. A basic service fee is charged for recording. Other fees are charged based on your usage.
+### Cloud service fees
+Cloud service fees include the fees incurred for recording videos on the cloud and playing back recording files.
 
->? The prices used in the examples of this document are for reference only. In case of any inconsistencies, the prices specified in Billing of On-Cloud Recording, [Pricing - Cloud Streaming Services](https://buy.intl.cloud.tencent.com/pricing/css), and [Pricing - Video on Demand](https://buy.cloud.tencent.com/price/vod) shall apply.
+>? The prices used in the examples of this document are for reference only. In case of any inconsistencies, the prices specified in [Billing of On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/38385), [Pricing - Cloud Streaming Services](https://buy.intl.cloud.tencent.com/pricing/css), and [Pricing - Video on Demand](https://buy.cloud.tencent.com/price/vod) shall apply.
 
-#### Recording fee: The computing cost of transcoding or remuxing
 
-Because server computing resources are needed to transcode or remux audio/video streams during recording, you are charged a recording fee based on the computing resources used for recording.
-
+- **Recording fee: The computing cost of transcoding or remuxing**
+Because server computing resources are needed to transcode or remux audio/video streams during recording, a recording fee is charged based on the computing resources used for recording.
 >!
->- For Tencent Cloud accounts that created their first TRTC applications on or after July 1, 2020, on-cloud recording fees are charged as described in the on-cloud recording document.
->- Tencent Cloud accounts that created applications before July 1, 2020 will continue to be charged the **CSS recording** fee for the use of the recording service.
-
-The **CSS recording** fee is calculated based on the peak number of concurrent recording channels. The higher the number, the higher the fee. For details, see [CSS > CSS Recording](https://intl.cloud.tencent.com/document/product/267/39605).
-
+>- For Tencent Cloud accounts that created their first TRTC applications on or after July 1, 2020, on-cloud recording fees are charged as described in [Billing of On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/45176).
+>- Tencent Cloud accounts that created applications before July 1, 2020 will continue to be charged the **live recording** fee for the use of the recording service.
+>
+The **live recording** fee is calculated based on the peak number of concurrent recording channels. The higher the number, the higher the fee. For details, see [CSS > Live Recording](https://intl.cloud.tencent.com/document/product/267/39605).
 > Assume that you have 1,000 anchors, and during peak times, it’s necessary to record the audio/video streams of 500 anchors at the same time. If the service is priced 5.2941 USD per channel per month, then you will be charged `500 channels x 5.2941 USD/channel/month = 2,647.05 USD/month`.
-> If you select two [file formats](#fileFormat), both the recording and storage fees will double. If you select three, they will triple. To reduce cost, you are advised to select only one file format.
+> If you select two [file formats](https://intl.cloud.tencent.com/document/product/647/35426), both the recording and storage fees will double. If you select three, they will triple. To reduce cost, you are advised to select only one file format.
 
-**Storage fee: Charged for storing files with Tencent Cloud**
-Because storage requires disk resources, if you save recording files with Tencent Cloud, you will be charged based on the disk resources used. The longer you save a file, the higher the cost. To reduce cost, you are advised to keep the storage duration as short as possible or store recording files on your own server. Storage fees are charged in the [daily pay-as-you-go mode](https://intl.cloud.tencent.com/document/product/266/14666).
+- **Transcoding fee: Charged for using On-Cloud MixTranscoding**
+Because stream mixing involves encoding and decoding, an additional transcoding fee will be charged if you enable On-Cloud MixTranscoding. The fee varies with the resolution used and the transcoding duration. The higher resolution used for anchors, and the longer co-anchoring (the most common application scenario for On-Cloud MixTranscoding) lasts, the higher the cost. For more information, see [Live Transcoding](https://intl.cloud.tencent.com/document/product/267/39604).
+> Assume that you called [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and the anchor co-anchored with a viewer for 1 hour, during which [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) was enabled. The transcoding fee incurred would be `0.0057 USD/min x 60 min = 0.342 USD`.
 
-> Assume that you set the bitrate (`videoBitrate`) of an anchor to 1000 Kbps via [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) and recorded the anchor's stream (one file format) for an hour. The size of the recording file generated would be approximately `(1,000/8) KBps x 3,600s = 450,000 KB = 0.45 GB`. If you store the file with Tencent Cloud, the storage fee per day would be `0.45 GB x 0.0009 USD/GB/day = 0.000405 USD`.
+- **Storage fee: Charged for storing files with VOD**
+Because storage requires disk resources, if you save recording files in VOD, a storage fee will be charged based on the disk resources used. The longer you save a file, the higher the cost. To reduce cost, you are advised to keep the storage duration as short as possible or store recording files on your own server. Storage fees are charged in the [daily pay-as-you-go mode](https://intl.cloud.tencent.com/document/product/266/14666).
+> Assume that you called [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) to set the bitrate (`videoBitrate`) of an anchor to 1000 Kbps and recorded the anchor's stream (one file format) for an hour. The size of the recording file generated would be approximately `(1,000/8) KBps x 3,600s = 450,000 KB = 0.45 GB`. If you store the file with VOD, the storage fee per day would be `0.45 GB x 0.0009 USD/GB/day = 0.000405 USD`.
 
-#### Playback fee: Charged for playing back a file
-
-As playback consumes CDN traffic, if you play back a recording file, you will be subject to VOD’s billing standards. By default, you are charged a video acceleration fee based on the traffic consumed by playback. The larger audience you serve, the higher the cost. Playback fees are charged in the [daily pay-as-you-go mode](https://intl.cloud.tencent.com/document/product/266/14666).
-
+- **Playback fee**: Charged for playing back a file**
+Playing back a recording file relies on VOD’s CDN playback feature and consumes CDN traffic. By default, a video acceleration fee is charged based on the traffic consumed by playback. The larger audience you serve, the higher the cost. Playback fees are charged in the [daily pay-as-you-go mode](https://intl.cloud.tencent.com/document/product/266/14666).
 > Assume that you recorded a 1 GB file on the cloud and played it back to 1,000 users from beginning to end. The traffic consumed amounted to 1 TB, and according to VOD’s tiered pricing system, you would be charged `1,000 x 1 GB x 0.0794 USD/GB = 79.4 USD`.
 > If you download files from Tencent Cloud to your server, a relatively small amount of traffic will also be consumed, which is billed on a monthly basis.
 
-#### Transcoding fee: Charged for using the On-Cloud MixTranscoding service
-
-As stream mixing involves encoding and decoding, you will incur an additional transcoding fee if you enable On-Cloud MixTranscoding. The fee varies with the resolution used and the duration of transcoded streams. The higher resolution used for anchors, and the longer co-anchoring (the most common application scenario for On-Cloud MixTranscoding) lasts, the higher the cost. For more information, see [CSS Transcoding](https://intl.cloud.tencent.com/document/product/267/39604).
-
-> Assume that you used [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and an anchor co-anchored with a viewer for 1 hour, during which [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) was enabled. The transcoding fee incurred would be `0.0057 USD/min x 60 min = 0.342 USD`.
+### Player license
+TRTC Professional offers powerful player capabilities that allow you to play recording files and streams relayed to CDNs. If you use our mobile SDK and its version is 10.1 or later, please get a license to use the player capabilities.
+>! You don’t need a license for playback within TRTC.
 
 
 ## FAQs

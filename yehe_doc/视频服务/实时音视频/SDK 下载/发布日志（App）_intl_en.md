@@ -1,3 +1,30 @@
+### Version 10.0 Released on May 17, 2022
+
+**Improvement:** 
+
+- All platforms: Sped up the callbacks for room entry and exit ([onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58) and [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28)).
+- Windows: Optimized screen sharing, improving the performance notably when the window filtering feature is not used.
+
+**Bug fixing:** 
+
+- iOS & macOS: Fixed the occasional [onComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TXAudioEffectManager__ios.html#a08ab9a6d9100f133420e44ae5eb99ee6) callback error when background music is started.
+- Android: Fixed a crash issue caused by the network module.
+- All platforms: Fixed the SEI sending error.
+
+
+### Version 9.9 Released on May 6, 2022
+
+**Improvement:** 
+- Windows: Optimized video delivery, reducing overhead.
+- Windows: Optimized processing before the capturing of computer audio, retaining the dual-channel effect.
+- macOS: Fixed audio cracking when the capturing volume is too high, improving audio experience.
+- macOS: Improved the video quality of screen sharing (the substream).
+- Android: Reduced capturing latency, improving in-ear monitoring experience.
+
+**Bug fixing:** 
+- Android: Added support for numbers larger than 2.1 billion for room ID.
+
+
 ### Version 9.8 Released on April 21, 2022
 
 **New features:**
@@ -25,7 +52,6 @@ You can use the [TRTCCloud.startLocalAudio (TRTCAudioQualityMusic)](https://lite
 - Windows: Optimized audio mixing with third-party processes for more scenarios.
 
 **Bug fixing:**
-
 - All platforms: Fixed occasional issue of blurry screen during CDN playback.
 - iOS & Android: Fixed failure to switch between the receiver and speaker when playing live streams.
 - iOS & Android: Fixed the issue where, after an API is called to enable the music mode, audio quality doesn’t meet expectations.
@@ -38,7 +64,7 @@ You can use the [TRTCCloud.startLocalAudio (TRTCAudioQualityMusic)](https://lite
 
 ### Version 9.6 Released on March 24, 2022
 
-**Major changes:**
+**Major changes:*
 
 - All platforms: Enhanced third-party library compliance with regulations inside and outside the Chinese mainland.
 - All platforms: Reduced the SDK storage footprint. For details, see the table below:
@@ -71,35 +97,33 @@ You can use the [TRTCCloud.startLocalAudio (TRTCAudioQualityMusic)](https://lite
 <td>x86_64: 15.8 MB</td>
 </tr>
 </tbody></table>
+
 **Bug fixing:**
 
 All platforms: Fixed known issues, improving stability.
 
 **Improvement:**
-
 - iOS: Fixed occasional overexposure when fill lights are used.
 - macOS: Optimized texture uploading.
 - Android: Improved pre-processing methods for beauty filters and other features, fixing capturing stutter on low-end devices.
 - Windows: Updated the live streaming component from V1 to V2 APIs, improving its stability.
 - Windows: Improved compatibility with the GPUs of low-end devices.
 
-
+>?更早期的版本更新历史请单击  [更多](https://intl.cloud.tencent.com/document/product/647/39426)。
 
 ### Version 9.5 Released on January 11, 2022
 
 **Bug fixing:**
-
 - All platforms: Fixed the issue where, when users make API requests in a certain order to enable custom video rendering, a black screen is displayed.
 - Windows: Fixed the issue where only a portion of the specified part of the screen is captured during screen sharing.
 - iOS: Fixed the issue where, if a user calls [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac3a158f935a99abd4965d308c0f88977) before leaving a room and then enters a new room, publishing is still disabled.
 - iOS: Fixed failure to set a background image for stream mixing.
 
 **Improvement:**
-
 - All platforms: Improved the smoothness of calls under poor network conditions.
 - Windows: Fixed occasional failure to start cameras and the issue where some cameras fail to capture videos at the specified frame rate, improving browser compatibility.
-- iOS: Improved compatibility with rendering components such as Cocos2d.
-- Android: Fixed the issue where, after an anchor turns the camera off and on again, at the player end, before the anchor’s video is played as expected, the last frame before the camera is turned off is shown first.
+- iOS: improved compatibility with rendering components such as Cocos2d.
+-Android: Fixed the issue where, after an anchor turns the camera off and on again, at the player end, before the anchor’s video is played as expected, the last frame before the camera is turned off is shown first.
 
 ### Version 9.4 Released on December 8, 2021
 
@@ -111,7 +135,7 @@ All platforms: Fixed known issues, improving stability.
 
 **Bug fixing:**
 - All platforms: fixed the issue where room switching fails if [switchRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a1f3bed34f92b3ff908beb2d0ed2866c9) is called frequently.
-- iOS: fixed the issue where [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a200c174b27bbe7397b0639e707ee6547) does not work during in-app screen sharing ([startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf51acf26b2212192f7145468886b791)).
+– iOS: fixed the issue where [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a200c174b27bbe7397b0639e707ee6547) does not work during in-app screen sharing ([startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf51acf26b2212192f7145468886b791)).
 - iOS: fixed the occasional issue of rising memory usage during screen sharing ([startScreenCaptureByReplaykit](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abebcd402e310d5d7dcbef9f6b601cfc4)).
 
 **Improvement:**

@@ -80,11 +80,12 @@ TRTC 云端录制文件会默认存储于腾讯云点播服务上，如果您的
 - **录制回调密钥：**
 回调密钥用于在接收回调事件时生成签名鉴权，该密钥需由大小写字母及数字组成，且不得超过32个字符。相关使用请参见 [录制事件参数说明](https://intl.cloud.tencent.com/document/product/267/38082)。
 
+
 >? 详细的录制回调接收和解读方案请参考文档后半部分的：[接收录制文件](https://intl.cloud.tencent.com/document/product/647/35426)。
 
 
 
-[](id:startAndStop)
+[ ](id:startAndStop)
 
 ## 录制控制方案
 
@@ -162,7 +163,7 @@ param.userDefineRecordId = @"1001_rexchang";  // 录制 ID，即指定开启该�
   自动停止，当进房时指定 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数的主播在停止音视频上行后，云端录制会自行停止。如果您在[选择文件格式](#fileFormat)时设置了“续录时间”，则需要等待续录时间超时后才能收到录制文件。
 
 - **多路画面的混合**
-  您可以通过调用 SDK API  [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 将房间中其它用户的画面和声音混合到当前用户的这一路音视频流上。关于这一部分详细介绍，可以阅读文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88)。
+  您可以通过调用 SDK API  [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 将房间中其它用户的画面和声音混合到当前用户的这一路音视频流上。
 >! 在一个 TRTC 房间中，只由一个主播（推荐是开播的主播）来调用 `setMixTranscodingConfig` 即可，多个主播调用可能会出现状态混乱的错误。
 
 - **录制文件的命名**
@@ -223,7 +224,9 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
   在调用 [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 时同时指定 `LayoutParams` 参数即可实现云端混流。该 API 支持在整个直播期间多次调用，即您可以根据需要修改 `LayoutParams` 参数并再次调用该 API 来调整混合画面的布局。但需要注意的是，您需要保持参数 `OutputParams.RecordId` 和 `OutputParams.StreamId` 在多次调用中的一致性，否则会导致断流并产生多个录制文件。
 
 
-录制文件会以调用 [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
+
+- **录制文件的命名**
+  录制文件会以调用 [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
 
 - **已经支持的平台**
   由您的服务端控制，不受客户端平台的限制。
@@ -294,7 +297,6 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 
 腾讯云点播系统提供了一系列 REST API 来管理其上的音视频文件，您可以通过 [删除媒体 API](https://intl.cloud.tencent.com/document/product/266/37571) 删除某个指定的文件。
 REST 请求示例：
-
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMedia
 &FileId=52858907988664150587
@@ -319,45 +321,44 @@ HLS 支持最长三十分钟的断点续录，可以做到“一场直播（或�
 - [Android 平台](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html)
 - [Web 浏览器](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 [超级播放器（Player+）](https://intl.cloud.tencent.com/document/product/266/7836)、[移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
+>! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 [超级播放器（Player+）](https://intl.cloud.tencent.com/document/product/266/7836)、移动直播（MLVB） 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
 
 
 ## 相关费用
+云端录制与回放功能使用到的功能包括：云服务资源（包括云端录制服务、云点播的回放文件存储与处理、云点播的播放服务等），和终端 SDK 播放点播视频的能力。可能会根据实际需求产生以下费用。
 
-云端录制与回放的相关费用包含以下几项，其中录制费用是基础费用，其他费用则会根据您的使用情况而按需收取。
+### 云服务消耗
+云服务消耗包括了云端录制产生的费用和回放文件产生的消耗费用。您可根据实际需求进行使用。
 
->?本文中的价格为示例，仅供参考。若价格与实际不符，请以 云端录制计费说明、[云直播](https://buy.intl.cloud.tencent.com/pricing/css) 和 [云点播](https://buy.intl.cloud.tencent.com/pricing/vod) 的定价为准。
+>?本文中的价格为示例，仅供参考。若价格与实际不符，请以 [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)、[云直播](https://buy.intl.cloud.tencent.com/pricing/css) 和 [云点播](https://buy.intl.cloud.tencent.com/pricing/vod) 的定价为准。
 
-#### 录制费用：转码或转封装产生的计算费用
 
+- **录制费用：转码或转封装产生的计算费用**
 由于录制需要进行音视频流的转码或转封装，会产生服务器计算资源的消耗，因此需要按照录制业务对计算资源的占用成本进行收费。
-
 >!
->- 自2020年7月1日起首次在 TRTC 控制台创建应用的腾讯云账号，使用云端录制功能后产生的录制费用以 云端录制计费说明 为准。
->- 在2020年7月1日之前已经在 TRTC 控制台创建过应用的腾讯云账号，无论是在2020年7月1日之前还是之后创建的应用，使用云端录制功能产生的录制费用均默认继续延用**直播录制**的计费规则。
-
+> - 自2020年7月1日起首次在 TRTC 控制台创建应用的腾讯云账号，使用云端录制功能后产生的录制费用以 [云端录制计费说明](https://cloud.tencent.com/document/product/647/45892) 为准。
+> - 在2020年7月1日之前已经在 TRTC 控制台创建过应用的腾讯云账号，无论是在2020年7月1日之前还是之后创建的应用，使用云端录制功能产生的录制费用均默认继续延用**直播录制**的计费规则。
+>
 **直播录制**计费的计算方法是按照并发录制的路数进行收费，并发数越高录制费用越高，具体计费说明请参见 [云直播 > 直播录制](https://intl.cloud.tencent.com/document/product/267/39605)。
+> 例如，您目前有1000个主播，如果在晚高峰时，最多同时有500路主播的音视频流需要录制。假设录制单价为5.2941美元/路/月，那么总录制费用为 `500路 × 5.2941美元/路/月 = 2647.05美元/月`。
+> 如果您在 [设置录制格式](https://intl.cloud.tencent.com/document/product/647/35426) 时同时选择了两种录制文件，录制费用和存储费用都会 × 2，同理，选择三种文件时录制费用和存储费用会 × 3。 如非必要，建议只选择需要的一种文件格式，可以大幅节约成本。
 
->例如，您目前有1000个主播，如果在晚高峰时，最多同时有500路主播的音视频流需要录制。假设录制单价为5.2941美元/路/月，那么总录制费用为 `500路 × 5.2941美元/路/月 = 2647.05美元/月`。
->如果您在 [设置录制格式](#fileFormat) 时同时选择了两种录制文件，录制费用和存储费用都会 × 2，同理，选择三种文件时录制费用和存储费用会 × 3。 如非必要，建议只选择需要的一种文件格式，可以大幅节约成本。
+- **转码费用：如开启混流录制则会产生该费用**
+如果您启用了混流录制，由于混流本身需要进行解码和编码，所以还会产生额外的混流转码费用。 混流转码根据分辨率大小和转码时长进行计费，主播用的分辨率越高，连麦时间（通常在连麦场景才需要混流转码）越长，费用越高，具体费用计算请参见 [直播转码](https://intl.cloud.tencent.com/document/product/267/39604)。
+> 例如，您通过 [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 设置主播的码率（videoBitrate）为1500kbps，分辨率为720P。如果有一位主播跟观众连麦了一个小时，连麦期间开启了 [云端混流](https://intl.cloud.tencent.com/document/product/647/34618)，那么产生的转码费用为`0.0057 美元/分钟 × 60分钟 = 0.342美元`。
 
-**存储费用：如将文件存储于腾讯云则会产生该费用**
-如果录制出的文件要存放于腾讯云，由于存储本身会产生磁盘资源的消耗，因此需要按照存储的资源占用进行收费。存储的时间越久费用也就越高，因此如无特殊需要，您可以将文件的存储时间设置的短一些来节省费用，或者将文件存放在自己的服务器上。存储费用可以选择 [视频存储（日结）价格 ](https://intl.cloud.tencent.com/document/product/266/14666) 进行日结计算。
-
+- **回放文件存储费用：云端视频存储服务产生的存储费用**
+录制出的视频文件存放于云点播服务，会使用云点播的云端存储服务。由于存储本身会产生磁盘资源的消耗，因此需要按照存储的资源占用进行收费。存储的时间越久费用也就越高，因此如无特殊需要，您可以将文件的存储时间设置的短一些来节省费用，或者将文件存放在自己的服务器上。存储费用可以选择 [视频存储（日结）价格 ](https://intl.cloud.tencent.com/document/product/266/14666)进行日结计算。
 >例如，您通过 [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 设置主播的码率（videoBitrate）为1000kbps，录制该主播的直播视频（选择一种文件格式），录制一小时大约会产生一个 `(1000 / 8)KBps × 3600秒 = 450000KB = 0.45GB` 大小的视频文件，该文件每天产生的存储费用约为  `0.45GB × 0.0009 美元/GB/日 = 0.000405美‬元`。
 
-#### 观看费用：如将文件用于点播观看则会产生该费用
-
-如果录制出的文件要被用于点播观看，由于观看本身会产生 CDN 流量消耗，因此需要按照点播的价格进行计费，默认按流量收费。观看的人数越多费用越高，观看费用可以选择 [视频加速（日结）价格](https://intl.cloud.tencent.com/document/product/266/14666) 进行日结计算。
-
+- **观看回放费用：云点播视频进行分发播放产生的播放费用**
+如果您录制的视频文件要被用于回看播放，会使用云点播的 CDN 播放功能。由于观看本身会产生 CDN 流量消耗，因此需要按照点播的价格进行计费，默认按流量收费。观看的人数越多费用越高，观看费用可以选择 [视频加速（日结）价格](https://intl.cloud.tencent.com/document/product/266/14666) 进行日结计算。
 >例如，您通过云端录制产生了一个1GB大小的文件，且有1000位观众从头到尾完整地观看了视频，大约会产生1TB的点播观看流量，那么按照阶梯价格表，1000位观众就会产生 `1000 × 1GB ×0.0794美元/GB = 79.4美元`  的费用。
->如果您选择从腾讯云下载文件到您的服务器上，也会产生一次很小的点播流量消耗，并且会在您的月度账单中有所体现。
+> 如果您选择从腾讯云下载文件到您的服务器上，也会产生一次很小的点播流量消耗，并且会在您的月度账单中有所体现。
 
-#### 转码费用：如开启混流录制则会产生该费用
-
-如果您启用了混流录制，由于混流本身需要进行解码和编码，所以还会产生额外的混流转码费用。 混流转码根据分辨率大小和转码时长进行计费，主播用的分辨率越高，连麦时间（通常在连麦场景才需要混流转码）越长，费用越高，具体费用计算可以参考 [直播转码](https://intl.cloud.tencent.com/document/product/267/39604)。
-
->例如，您通过 [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 设置主播的码率（videoBitrate）为1500kbps，分辨率为720P。如果有一位主播跟观众连麦了一个小时，连麦期间开启了 [云端混流](https://intl.cloud.tencent.com/document/product/647/34618)，那么产生的转码费用为 `0.0057 美元/分钟 × 60分钟 = 0.342美元`。
+### SDK 播放授权
+音视频通话（TRTC）全功能版本 SDK 提供了功能全面性能强大的视频播放能力，可轻松配合云点播实现视频播放功能。移动端 SDK 在10.1及以上的版本可通过获取指定 License 以解锁视频播放能力。
+> ! TRTC 的播放能力无需 License 授权。
 
 
 ## 相关问题
