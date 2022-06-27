@@ -25,7 +25,7 @@
 如果用作公网网关的云服务器已经有公网 IP 地址，请跳过此步骤，完成后续步骤。
 </dx-alert>
 
-1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，在左侧导航栏中，单击 **[弹性公网IP](https://console.cloud.tencent.com/cvm/eip)**，进入弹性公网 IP 管理页面。
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，在左侧导航栏中，单击 [**弹性公网IP**](https://console.cloud.tencent.com/cvm/eip)，进入弹性公网 IP 管理页面。
 2. 在需要绑定实例的弹性公网 IP 的操作栏下，选择**更多** > **绑定**。
 ![](https://main.qcloudimg.com/raw/b25421e826f69e00a1890e9d59c62828.png)
 3. 在“绑定资源”弹框中，选择一个被选做公网网关的 CVM 实例进行绑定。
@@ -52,11 +52,11 @@
 
 ### 步骤4：配置公网网关
 1. 登录[ 公网网关云服务器](https://intl.cloud.tencent.com/document/product/213/5436)，执行如下操作开启网络转发及NAT 代理功能。
- 1. 执行如下命令，在`usr/local/sbin`目录下新建脚本`vpcGateway.sh`。
+   1. 执行如下命令，在`usr/local/sbin`目录下新建脚本`vpcGateway.sh`。
 ```
 vim /usr/local/sbin/vpcGateway.sh
 ```
- 2. 按 **i** 切换至编辑模式，将如下代码写入脚本中。
+   2. 按 **i** 切换至编辑模式，将如下代码写入脚本中。
 ```
 #!/bin/bash
 echo "----------------------------------------------------"
@@ -85,18 +85,18 @@ echo 10800 >/proc/sys/net/netfilter/nf_conntrack_tcp_timeout_established \
 && echo "-->nf_conntrack_tcp_timeout_established:Success" || \
 echo "-->nf_conntrack_tcp_timeout_established:Fail"
 ```
- 3. 按 **Esc**，输入 **:wq**，保存文件并返回。
- 4. 执行如下命令，设置脚本文件权限。
+   3. 按 **Esc**，输入 **:wq**，保存文件并返回。
+   4. 执行如下命令，设置脚本文件权限。
 ```
 chmod +x /usr/local/sbin/vpcGateway.sh
 echo "/usr/local/sbin/vpcGateway.sh >/tmp/vpcGateway.log 2>&1" >> /etc/rc.local
 ```
 2. 设置公网网关的 rps：
- 1. 执行如下命令，在 `usr/local/sbin` 目录下新建脚本 `set_rps.sh`。
+   1. 执行如下命令，在 `usr/local/sbin` 目录下新建脚本 `set_rps.sh`。
 ```
 vim /usr/local/sbin/set_rps.sh
 ```
- 2. 按 **i** 切换至编辑模式，将如下代码写入脚本中。
+   2. 按 **i** 切换至编辑模式，将如下代码写入脚本中。
 ```
 # !/bin/bash
 echo "--------------------------------------------"
@@ -177,8 +177,8 @@ echo $flow_entries >/proc/sys/net/core/rps_sock_flow_entries
 }
 set_rps
 ```
- 3. 按 **Esc**，输入 **:wq**，保存文件并返回。
- 4. 执行如下命令，设置脚本文件权限。
+   3. 按 **Esc**，输入 **:wq**，保存文件并返回。
+   4. 执行如下命令，设置脚本文件权限。
 ```
 chmod +x /usr/local/sbin/set_rps.sh
 echo "/usr/local/sbin/set_rps.sh >/tmp/setRps.log 2>&1" >> /etc/rc.local
