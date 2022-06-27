@@ -22,9 +22,9 @@ Kubernetes v1.14 and earlier versions are not supported.
 Elastic clusters do not have nodes. Therefore, some features, which depend on node components such as Kubelet and Kube-proxy, are not supported.
 #### Node
 - Currently, adding or managing a physical node is not supported.
-- EKS nodes will be replaced by "virtual nodes", and each virtual node corresponds to a specified VPC subnet in the container network.
-- The virtual nodes also support scheduling operations such as node affinity, taint, and cordoning.
-- The number of Pods that can be scheduled on a virtual node is only subject to the number of IPs in the corresponding VPC subnet.
+- EKS nodes will be replaced by "supernodes", and each supernode corresponds to a specified VPC subnet in the container network.
+- The supernodes also support scheduling operations such as node affinity, taint, and cordoning.
+- The number of Pods that can be scheduled on a supernode is only subject to the number of IPs in the corresponding VPC subnet.
 
 #### Container network
 - The container network of an elastic cluster is a VPC which is at the same level as Tencent Cloud services such as CVM and TencentDB. Each Pod in the cluster occupies a VPC subnet IP.
@@ -47,7 +47,7 @@ In addition, for the ordinary Kubernetes cluster, the Service of ClusterIP type 
 #### Volume
 
 EKS supports the volume of the Hostpath type. For more information, see [Instructions for Other Storage Volumes](https://intl.cloud.tencent.com/document/product/457/30678).
-EKS clusters may not necessarily meet your expectations because they don’t have nodes, although EKS is still compatible with Host-related parameters (such as `Hostpath`, `Hostnetwork: true`, and `DnsPolicy: ClusterFirstWithHostNet`, etc.) in the Pod. For example, you want to use Hostpath to share data, but the two Pods scheduled to the same virtual node may be the Hostpath of different hosts. Therefore, we recommend that the tasks you run on the EKS cluster do not strongly depend on Host-related parameters.
+EKS clusters may not necessarily meet your expectations because they don’t have nodes, although EKS is still compatible with Host-related parameters (such as `Hostpath`, `Hostnetwork: true`, and `DnsPolicy: ClusterFirstWithHostNet`, etc.) in the Pod. For example, you want to use Hostpath to share data, but the two Pods scheduled to the same supernode may be the Hostpath of different hosts. Therefore, we recommend that the tasks you run on the EKS cluster do not strongly depend on Host-related parameters.
 
 ## Port Limits
 Port 9100  are not available.
