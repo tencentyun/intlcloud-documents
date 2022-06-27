@@ -3,10 +3,7 @@
 `TUILiveRoom`은 오픈 소스 비디오 라이브 스트리밍 시나리오 `UI` 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 `App`이 ‘인터랙티브 비디오 라이브 스트리밍’ 시나리오를 추가할 수 있습니다. `Android` 및 `iOS` 플랫폼용 소스 코드를 제공합니다. 기본 기능은 다음과 같습니다.
 <table>
 <tr>
-<td><img width="260" height="561" src="https://qcloudimg.tencent-cloud.cn/raw/34337da1f6427b9a834f6562eba5c663.jpg"/></td>
-<td><img width="260" height="561" src="https://qcloudimg.tencent-cloud.cn/raw/52eb1656b5a892e6da65f49a1d503735.jpg"/></td>
-<td><img width="260" height="561" src="https://qcloudimg.tencent-cloud.cn/raw/70c9e1e7290592f8c7892b236fb1061e.jpg"/></td>
-<td><img width="260" height="561" src="https://qcloudimg.tencent-cloud.cn/raw/ed8c3666aa03951c6d0d9cfe2dccc495.jpg"/></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/a1b4b04662bb342de1e7b713cb3f59ce.png"></td>
 </tr>
 </table>
 
