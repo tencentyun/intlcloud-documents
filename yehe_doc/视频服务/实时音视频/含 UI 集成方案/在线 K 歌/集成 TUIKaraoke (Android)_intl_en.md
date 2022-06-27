@@ -2,17 +2,10 @@
 `TUIKaraoke` is an open-source audio/video UI component. After integrating it into your project, you can make your application support the online karaoke scenario and try out the TRTC capabilities such as karaoke, seat management, gift giving/receiving, and text chat simply by writing a few lines of code. It also supports the iOS platform. Its basic features are as shown below:
 
 <table>
-     <tr>
-         <th width=20%  style="text-align:center">Chat</th>
-         <th width=20%  style="text-align:center">Sound Effect Management</th>
-     </tr>
 <tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/819e86970cecabcb10143a49a4759b32.png" width="400"></td>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/3616f2a5193c26bad447744ed7bf417d.png" width="400"></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"width="850"></td>
 </tr>
 </table>
-
-
 
 ## Component Integration
 ### Step 1. Download and import the `TUIKaraoke` component

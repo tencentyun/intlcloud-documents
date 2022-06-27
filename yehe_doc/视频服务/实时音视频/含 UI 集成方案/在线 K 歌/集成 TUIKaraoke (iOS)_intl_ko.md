@@ -3,16 +3,10 @@
 TUIKaraoke는 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합하고 몇 줄의 코드 작성만으로 애플리케이션에 온라인 노래방 시나리오를 추가하고 노래방, 좌석 관리, 선물 주고받기, 문자 채팅과 같은 TRTC 기능을 체험해 볼 수 있습니다. Android 플랫폼도 지원합니다. 기본 기능은 다음과 같습니다.
 
 <table>
-     <tr>
-         <th width=20%  style="text-align:center">채팅</th>  
-         <th width=20%  style="text-align:center">음향 효과 관리</th>  
-     </tr>
 <tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/819e86970cecabcb10143a49a4759b32.png" width="400"></td>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/3616f2a5193c26bad447744ed7bf417d.png" width="400"></td>
+<td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"width="850"></td>
 </tr>
 </table>
-
 
 
 ## 컴포넌트 통합
