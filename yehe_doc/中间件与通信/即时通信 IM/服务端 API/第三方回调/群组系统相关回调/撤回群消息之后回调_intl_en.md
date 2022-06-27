@@ -1,6 +1,6 @@
 ## Overview
 
-This API is used by the app backend to monitor the recalls of group messages in real time.
+This API is used by the app backend to view the recalls of group messages in real time.
 
 ## Notes
 
