@@ -59,7 +59,7 @@ Namespace=QCE/LB_PUBLIC
 | Http502             | 502 状态码                 | 在统计粒度内，后端服务器返回 502 状态码的个数。<br/>此指标为七层监听器独有指标。 | 个/分钟 | 60、300、3600     |
 | Http503             | 503 状态码                 | 在统计粒度内，后端服务器返回 503 状态码的个数。<br/>此指标为七层监听器独有指标。 | 个/分钟 | 60、300、3600     |
 | Http504             | 504 状态码                 | 在统计粒度内，后端服务器返回 504 状态码的个数。<br/>此指标为七层监听器独有指标。 | 个/分钟 | 60、300、3600     |
-| OverloadCurConn     | SNAT 并发连接数            | 在统计周期内，负载均衡的 SNAT IP 每分钟的并发连接数。<br/> 此指标处于内测阶段，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/z2b346gxli)。 | 个/分钟 | 60、300           |
+| OverloadCurConn     | SNAT 并发连接数            | 在统计周期内，负载均衡的 SNAT IP 每分钟的并发连接数。<br/> 此指标处于内测阶段，如需使用，请提交  [申请工单](https://console.intl.cloud.tencent.com/workorder/category)。 | 个/分钟 | 60、300           |
 | ConnRatio           | SNAT 端口使用率            | 在统计周期内，负载均衡的 SNAT IP 的端口使用率。 <br/>端口使用率 = SNAT 并发连接数 / (SNAT IP 数 × 55000 × RS 个数）。<br/> 此指标处于内测阶段，如需使用，请提交 [申请工单](https://console.intl.cloud.tencent.com/workorder/category)。 | %       | 60、300           |
 | SnatFail            | SNAT 失败数                | 在统计周期内，负载均衡的 SNAT IP 与后端 RS 每分钟建立连接的失败次数。 <br/> 此指标处于内测阶段，如需使用，请提交 [申请工单](https://console.intl.cloud.tencent.com/workorder/category)。 | 个/分钟 | 60、300           |
 | UnhealthRsCount     | 健康检查异常数             | 在统计周期内，负载均衡的健康检查异常个数。                   | 个      | 60、300           |
