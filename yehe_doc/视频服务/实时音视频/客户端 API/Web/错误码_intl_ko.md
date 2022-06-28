@@ -10,10 +10,10 @@
 | NOT_SUPPORTED       | 4098    | 0x1002 | SDK 인터페이스를 호출할 때 발생하며 현재 브라우저가 해당 인터페이스 호출을 지원하지 않습니다<ul style="margin:0"><li/>설명: SDK 인터페이스를 호출할 때 발생하며 현재 브라우저가 해당 인터페이스 호출을 지원하지 않습니다<li/>처리 제안: SDK에서 지원하는 브라우저를 사용하도록 안내합니다. [브라우저 지원 점검](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html)을 참고하십시오          |
 | DEVICE_NOT_FOUND    | 4099    | 0x1003 | 현재 장치에 마이크나 카메라가 없지만 마이크나 카메라를 수집하려고 합니다<br>처리 제안: 사용자가 장치의 카메라와 마이크가 정상인지 확인하도록 안내합니다. 서비스측은 방에 들어가기 전에 장치 점검 로직을 추가해야 합니다. [통화 전 환경 및 장치 점검](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html)을 참고하십시오. |
 | INITIALIZE_FAILED   | 4100    | 0x1004 | LocalStream.initialize() 수집 실패, [자세한 처리 제안](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-ErrorCode.html#.INITIALIZE_FAILED)을 참고하십시오.         |
-| SIGNAL_CAHNNEL_SETUP_FAILED        | 16385   | 0x4001 | 신호 채널 설정 실패. 일반적으로 Tencent Cloud 계정과 관련이 있습니다. [계정 관련 오류 메시지](https://intl.cloud.tencent.com/document/product/647/41665)를 참고하십시오.       |
+| SIGNAL_CAHNNEL_SETUP_FAILED        | 16385   | 0x4001 | 신호 채널 설정 실패. 일반적으로 Tencent Cloud 계정과 관련이 있습니다. [계정 오류](https://intl.cloud.tencent.com/document/product/647/41665)를 참고하십시오.       |
 | SIGNAL_CHANNEL_ERROR               | 16386   | 0x4002 | 신호 채널 오류.         |
-| ICE_TRANSPORT_ERROR                | 16387   | 0x4003 | ICE Transport 연결 오류, 즉, 멀티미디어 데이터 전송 채널 오류입니다. 이것은 주로 클라이언트의 비정상적인 UDP 포트에 의해 발생합니다(사용자 컴퓨터의 방화벽 또는 라우터의 방화벽의 포트 제한에 의해 발생할 수 있음). 특정 포트에 대해서는 [포트 화이트리스트](https://intl.cloud.tencent.com/document/product/647/35164)를 참고하십시오.  |
-| JOIN_ROOM_FAILED    | 16388   | 0x4004 | 방 입장 실패. 자세한 내용은 [방 입장 실패 관련 오류 정보](https://intl.cloud.tencent.com/document/product/647/41665)를 참고하십시오          |
+| ICE_TRANSPORT_ERROR                | 16387   | 0x4003 | ICE Transport 연결 오류, 즉, 멀티미디어 데이터 전송 채널 오류입니다. 이것은 주로 클라이언트의 비정상적인 UDP 포트에 의해 발생합니다(사용자 컴퓨터의 방화벽 또는 라우터의 방화벽의 포트 제한에 의해 발생할 수 있음). 특정 포트에 대해서는 [포트 얼로우리스트](https://intl.cloud.tencent.com/document/product/647/35164)를 참고하십시오.  |
+| JOIN_ROOM_FAILED    | 16388   | 0x4004 | 방 입장 실패. 자세한 내용은 [방 입장 오류](https://intl.cloud.tencent.com/document/product/647/41665)를 참고하십시오          |
 | CREATE_OFFER_FAILED                | 16389   | 0x4005 | sdp offer 생성 실패.          |
 | SIGNAL_CHANNEL_RECONNECTION_FAILED | 16390   | 0x4006 | WebSocket 신호 터널 재연결 실패<ul style="margin:0"><li/>설명: WebSocket 연결이 끊어지면 SDK는 여러 번 재연결을 시도하고, 실패 시 이 오류 발생<li/>처리 제안: 사용자에게 네트워크를 확인하고 다시 방에 들어가도록 알립니다      |
 | UPLINK_RECONNECTION_FAILED         | 16391   | 0x4007 | 업스트림 PeerConnection 재연결 실패<ul style="margin:0"><li/>설명: 업스트림 PeerConnection의 연결이 끊어지면 SDK는 여러 번 재연결을 시도하며 실패 시 이 오류 발생<li/>처리 제안: 사용자에게 네트워크를 확인한 다음 다시 푸시 스트림하거나 방에 다시 입장하도록 알립니다       |
@@ -22,7 +22,7 @@
 | CLIENT_BANNED       | 16448   | 0x4040 | 사용자가 방에서 퇴장됨. 이유:<ul style="margin:0"><li/>같은 이름의 사용자가 같은 방에 입장, **참고**: 같은 이름의 사용자는 같은 방에 동시에 입장할 수 없으며, 양측 간에 비정상적인 음성 및 영상 통화가 발생할 수 있습니다. 서비스측에서 이런 상황을 방지해야 합니다.<li/>서버 API를 사용하여 계정 관리자에 의해 방에서 퇴장됩니다  |
 | SERVER_TIMEOUT      | 16449   | 0x4041 | MediaConnect 서비스 시간 초과     |
 | SUBSCRIPTION_TIMEOUT               | 16450   | 0x4042 | 원격 스트림 구독 시간 초과       |
-| PLAY_NOT_ALLOWED    | 16451   | 0x4043 | 자동 재생 금지 오류<ul style="margin:0"><li/>설명: 'play()'를 호출하여 멀티미디어를 재생할 때 [자동 재생 정책](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes)의 제한으로 인해 자동으로 재생되지 않음<li/>처리 제안: 사용자는 'resume()'을 호출하여 제스처 작업을 통해 계속 재생하도록 안내 해야 합니다. [자동 재생 제한 처리 제안](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html)을 참고하십시오 |
+| PLAY_NOT_ALLOWED    | 16451   | 0x4043 | 자동 재생 금지 오류<ul style="margin:0"><li/>설명: 'play()'를 호출하여 멀티미디어를 재생할 때 [자동 재생 정책](https://developer.mozilla.org/zh-CN/docs/Web/Media/Autoplay_guide)의 제한으로 인해 자동으로 재생되지 않음<li/>처리 제안: 사용자는 'resume()'을 호출하여 제스처 작업을 통해 계속 재생하도록 안내 해야 합니다. [자동 재생 제한 처리 제안](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-21-advanced-auto-play-policy.html)을 참고하십시오 |
 | DEVICE_AUTO_RECOVER_FAILED         | 16452   | 0x4044 | 카메라 및 마이크의 자동 수집에 실패했습니다. LocalStream의 error 이벤트 발생<ul style="margin:0"><li/>스트리밍 중인 사용자의 미디어 장치가 변경되면(예시: 카메라 연결/해제, 마이크, 연결 헐거워짐 등) SDK는 수집 복구를 시도합니다. 이 오류 발생 시 복구 실패<li/>처리 제안: 미디어 장치가 자동으로 수집을 복구하지 못한다는 사실을 사용자에게 알립니다. 카메라와 마이크 연결이 헐거운지 확인하고, 다른 애플리케이션에 의해 점유되고 있지 않은지 확인합니다.<li/>페이지에 재시도 버튼을 제공하여, 사용자가 재시도를 클릭하면 카메라와 마이크가 재수집됩니다 |
 | START_PUBLISH_CDN_FAILED           | 16453   | 0x4045 | CDN으로 푸시 스트림 시작 실패          |
 | STOP_PUBLISH_CDN_FAILED            | 16454   | 0x4046 | CDN으로 푸시 스트림 중지 실패          |
@@ -113,6 +113,7 @@
 | -10018 | 고급 권한 제어 기능 활성화 후 client.join은 privateMapKey를 전달하지 않거나 privateMapKey는 ‘ ’ 입니다. 자세한 내용은 [고급 권한 제어 기능 활성화](https://intl.cloud.tencent.com/document/product/647/35157)를 참고하십시오 |
 | -10019 | 고급 권한 제어가 활성화된 후 client.join이 전달하는 privateMapKey가 요구 사항을 충족하지 않습니다. 자세한 내용은 [고급 권한 제어 기능 활성화](https://intl.cloud.tencent.com/document/product/647/35157)를 참고하십시오 |
 | -10020 | 서버 연결 시간이 초과되었습니다. 다시 시도하십시오    |
+| -100027  | 애플리케이션의 TRTC 서비스 상태가 정상인지 확인하십시오. 그렇지 않은 경우 TRTC 콘솔에서 서비스를 활성화하고 다시 방에 입장하십시오. |
 
 ## 일반적인 오류 및 처리 방법
 다음 오류는 응용 프로그램 측 개입을 통해 수정해야 합니다. 예를 들어 카메라 액세스가 거부된 경우 영상 통화를 할 수 있으려면 애플리케이션에서 사용자에게 카메라 액세스 권한을 부여하라는 메시지를 표시해야 합니다.

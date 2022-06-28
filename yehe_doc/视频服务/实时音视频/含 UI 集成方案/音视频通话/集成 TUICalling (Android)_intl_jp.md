@@ -12,12 +12,10 @@ TUICallingはオープンソースのオーディオビデオUIコンポーネ�
 ## コンポーネントの統合
 
 ### ステップ1：TUICallingコンポーネントのダウンロードとインポート
-クリックして[Github](https://github.com/tencentyun/TUICalling)に進み、コードのクローン/ダウンロードを選択した後、Androidディレクトリ下のtuicalling、tuicore、debugディレクトリをプロジェクトのappの同一階層のディレクトリにコピーし、次のようにインポート動作を完了します。
+クリックして[Github](https://github.com/tencentyun/TUICalling)に進み、コードのクローン/ダウンロードを選択した後、Androidディレクトリ下のtuicallingおよびdebugディレクトリをプロジェクトのappの同一階層のディレクトリにコピーし、次のようにインポート動作を完了します。
 - `setting.gradle`へのインポートを完了します。以下をご参照ください。
-
 ```java
 include ':tuicalling'
-include ':tuicore'
 include ':debug'
 ```
 - appのbuild.gradleファイルにtuicallingに対する依存関係を追加します。
@@ -43,12 +41,13 @@ ext {
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.BLUETOOTH" />                  // ユースケース：Bluetoothイヤホンを使用する場合はこの権限が必要です。
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />          // ユースケース：システムが着信を中断したかどうかを判断する場合はこの権限が必要です。
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />           // ユースケース：システムが着信を中断したかどうかを判断する場合はこの権限が必要です。
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 2. proguard-rules.proファイルでは、SDK関連クラスを非難読化リストに追加します。
+
 ```
 -keep class com.tencent.** { *; }
 ```
@@ -56,28 +55,37 @@ ext {
 ### ステップ3：コンポーネントの作成と初期化
 
 ```java
-// 1.コンポーネントのログイン
-TUILogin.init(this, "あなたのSDKAppID", config, new V2TIMSDKListener() {
+// 1.イベント監視およびログインを追加します
+TUILogin.addLoginListener(new TUILoginListener() {
+    @Override
+    public void onConnecting() {      // 接続中
+        super.onConnecting();
+    }
+    @Override
+    public void onConnectSuccess() {  // 接続成功通知
+        super.onConnectSuccess();
+    }
+    @Override
+    public void onConnectFailed(int errorCode, String errorMsg) {  // 接続失敗通知
+        super.onConnectFailed(errorCode, errorMsg);
+    }
     @Override
     public void onKickedOffline() {  //  ログインがキックアウトされたオフライン通知（例：アカウントが他のデバイスでログインしている）
-
+        super.onKickedOffline();
     }
     @Override
     public void onUserSigExpired() { // userSig期限切れ通知
-
+        super.onUserSigExpired();
     }
 });
-
-TUILogin.login("あなたのuserId", "あなたのuserSig", new V2TIMCallback() {
-    @Override
-    public void onError(int code, String msg) {
-        Log.d(TAG, "code: " + code + " msg:" + msg);
-    }
+TUILogin.login(mContext, "Your SDKAppID", "Your userId", "Your userSig", new TUICallback() {
     @Override
     public void onSuccess() {
-
     }
-});
+    @Override
+    public void onError(int errorCode, String errorMsg) {
+        Log.d(TAG, "errorCode: " + errorCode + " errorMsg:" + errorMsg);
+    }
 
 // 2.TUICallingインスタンスの初期化
 TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
@@ -91,7 +99,7 @@ TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
 
 
 ### ステップ4：オーディオビデオ通話の実装
-**1対1ビデオ通話/オーディオ通話の実装[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)**：
+**1対1ビデオ通話/オーディオ通話の実装**[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43140)：
 ```java
 // 1対1ビデオ通話を開始します。userIdは1111と仮定します。
 callingImpl.call(["1111"], TUICalling.Type.VIDEO);
@@ -129,7 +137,7 @@ callingImpl.setCallingListener(new TUICalling.TUICallingListener() {
     public void onCallEvent(TUICalling.Event event, TUICalling.Type type, TUICalling.Role role, String message) {
         Log.d(TAG, "onCallEvent: event = " + event + " ,message = " + message);
     }
-  });
+});
 ```
 
 ### ステップ7：フローティングウィンドウ機能（オプション）
@@ -142,7 +150,7 @@ callingImpl.setCallingListener(new TUICalling.TUICallingListener() {
 
 戻る1つ前の画面を設定するには、`AndroidManifest.xml`でリダイレクト先の画面へのリダイレクト動作 `com.tencent.trtc.tuicalling`を設定する必要があります。例えば次のように行います。
 ```
- <activity
+<activity
     android:name="{packageName}.MainActivity"
     android:launchMode="singleTop">
     <intent-filter>

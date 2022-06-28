@@ -12,12 +12,10 @@ TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로
 ## 컴포넌트 통합
 
 ### 1단계: TUICalling 컴포넌트 다운로드 및 가져오기
-[GitHub](https://github.com/tencentyun/TUICalling)으로 이동하여 코드를 복제하거나 다운로드하고 Android 디렉터리의 tuicaling, tuicore 및 debug 디렉터리를 app과 동일한 수준의 프로젝트에 복사하고 다음 가져오기 작업을 완료합니다.
+[GitHub](https://github.com/tencentyun/TUICalling)으로 이동하여 코드를 복제하거나 다운로드하고 Android 디렉터리의 tuicaling 및 debug 디렉터리를 app과 동일한 수준의 프로젝트에 복사하고 다음 가져오기 작업을 완료합니다.
 - 아래와 같이 `setting.gradle`에서 가져오기를 완료합니다.
-
 ```java
 include ':tuicalling'
-include ':tuicore'
 include ':debug'
 ```
 - app의 build.gradle 파일에 tuicaling에 대한 종속성 추가:
@@ -49,6 +47,7 @@ ext {
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 2. proguard-rules.pro 파일에서 SDK 클래스를 난독화 금지 목록에 추가합니다.
+
 ```
 -keep class com.tencent.** { *; }
 ```
@@ -56,28 +55,37 @@ ext {
 ### 3단계: 컴포넌트 생성 및 초기화
 
 ```java
-// 1. 컴포넌트에 로그인,
-TUILogin.init(this, "사용자 SDKAppID", config, new V2TIMSDKListener() {
+// 1. 리스너 추가 및 로그인
+TUILogin.addLoginListener(new TUILoginListener() {
+    @Override
+    public void onConnecting() {      // 연결 중
+        super.onConnecting();
+    }
+    @Override
+    public void onConnectSuccess() {  // // 연결됨
+        super.onConnectSuccess();
+    }
+    @Override
+    public void onConnectFailed(int errorCode, String errorMsg) {  // 연결 실패
+        super.onConnectFailed(errorCode, errorMsg);
+    }
     @Override
     public void onKickedOffline() {  // 강제 로그아웃 콜백(예: 계정이 다른 장치에서 로그인됨)
-
+        super.onKickedOffline();
     }
     @Override
     public void onUserSigExpired() { // userSig 만료 콜백
-
+        super.onUserSigExpired();
     }
 });
-
-TUILogin.login("사용자 userId", "사용자 userSig", new V2TIMCallback() {
-    @Override
-    public void onError(int code, String msg) {
-        Log.d(TAG, "code: " + code + " msg:" + msg);
-    }
+TUILogin.login(mContext, "Your SDKAppID", "Your userId", "Your userSig", new TUICallback() {
     @Override
     public void onSuccess() {
-
     }
-});
+    @Override
+    public void onError(int errorCode, String errorMsg) {
+        Log.d(TAG, "errorCode: " + errorCode + " errorMsg:" + errorMsg);
+    }
 
 // 2. TUICalling 인스턴스 초기화
 TUICalling callingImpl = TUICallingImpl.sharedInstance(context);
@@ -129,7 +137,7 @@ callingImpl.setCallingListener(new TUICalling.TUICallingListener() {
     public void onCallEvent(TUICalling.Event event, TUICalling.Type type, TUICalling.Role role, String message) {
         Log.d(TAG, "onCallEvent: event = " + event + " ,message = " + message);
     }
-  });
+});
 ```
 
 ### 7단계: 플로팅 창 기능 추가(옵션)
@@ -142,7 +150,7 @@ callingImpl.setCallingListener(new TUICalling.TUICallingListener() {
 
 반환될 이전 UI 설정: `AndroidManifest.xml`의 타깃 페이지에 대한 리디렉션 작업 `com.tencent.trtc.tuicalling`을 다음과 같이 구성합니다.
 ```
- <activity
+<activity
     android:name="{packageName}.MainActivity"
     android:launchMode="singleTop">
     <intent-filter>

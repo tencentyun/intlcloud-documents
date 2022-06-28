@@ -18,7 +18,9 @@ TRTCCloud.enterRoom()은 방 입장이 실패하면 이러한 유형의 오류 �
 |ERR_USER_ID_INVALID|-3319|잘못된 사용자 ID 값|
 |ERR_USER_SIG_INVALID|-3320|잘못된 userSig 값|
 |ERR_ROOM_REQUEST_ENTER_ROOM_TIMEOUT|-3308|방 입장 요청 시간 초과. 네트워크를 확인하십시오.|
+| ERR_SERVER_INFO_PRIVILEGE_FLAG_ERROR | -100006 | 권한 티켓 확인 실패. privateMapKey가 올바른지 확인하십시오. |
 |ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|서비스 이용 불가. Tencent Cloud 계정 연체 여부를 확인하십시오.|
+| ERR_SERVER_INFO_ECDH_GET_TINYID      | -100018 | userSig 인증 실패. userSig가 올바른지 확인하십시오. |
 
 
 ### 방 퇴장 오류 코드
@@ -32,7 +34,7 @@ TRTCCloud.exitRoom()은 방 종료가 실패하면 이 오류 코드를 트리�
 
 ### 장치(카메라, 마이크, 스피커) 오류 코드
 
-콜백 API TRTCCloudDelegate.OnError()를 사용하여 사용자 지정 캡처 오류에 대한 알림을 캡처할 수 있습니다.
+콜백 API TRTCCloudDelegate.OnError()를 사용하여 관련 알림을 캡처할 수 있습니다.
 
 | 코드 | 값 | 설명 |
 |---|---|---|
@@ -52,11 +54,11 @@ TRTCCloud.exitRoom()은 방 종료가 실패하면 이 오류 코드를 트리�
 
 ### 화면 공유 오류 코드
 
-콜백 API TRTCCloudDelegate.OnError()를 사용하여 사용자 지정 캡처 오류에 대한 알림을 캡처할 수 있습니다.
+콜백 API TRTCCloudDelegate.OnError()를 사용하여 관련 알림을 캡처할 수 있습니다.
 
 | 코드 | 값 | 설명 |
 |---|---|---|
-|ERR_SCREEN_CAPTURE_START_FAIL|-1308|모바일 장치에서 사용자가 화면 공유 권한을 거부했기 때문일 수 있습니다. Windows 또는 MacOS인 경우, 화면 캡처 API의 매개변수가 요구 조건에 부합하는지 확인합니다.|
+|ERR_SCREEN_CAPTURE_START_FAIL|-1308|화면 캡처 시작 실패. 모바일 장치에서 사용자가 화면 공유 권한을 거부했기 때문일 수 있습니다. Windows 또는 MacOS인 경우, 화면 캡처 API의 매개변수가 요구 조건에 부합하는지 확인합니다.|
 |ERR_SCREEN_CAPTURE_UNSURPORT|-1309|화면 캡처 실패. 버전을 확인하십시오(Android 5.0 이상, iOS 11.0 이상).|
 |ERR_SERVER_CENTER_NO_PRIVILEDGE_PUSH_SUB_VIDEO|-102015|서브스트림 비디오 이미지 발송 권한 없음|
 |ERR_SERVER_CENTER_ANOTHER_USER_PUSH_SUB_VIDEO|-102016|다른 사용자가 서브스트림 비디오 이미지를 보내는 중|
@@ -65,19 +67,19 @@ TRTCCloud.exitRoom()은 방 종료가 실패하면 이 오류 코드를 트리�
 
 ### 인코딩 및 디코딩 오류 코드
 
-콜백 API TRTCCloudDelegate.OnError()를 사용하여 사용자 지정 캡처 오류에 대한 알림을 캡처할 수 있습니다.
+콜백 API TRTCCloudDelegate.OnError()를 사용하여 관련 알림을 캡처할 수 있습니다.
 
 | 코드 | 값 | 설명 |
 |---|---|---|
 |ERR_VIDEO_ENCODE_FAIL|-1303|비디오 프레임 인코딩 실패. 예: iOS 사용자가 다른 앱으로 전환할 때 발생하며, 시스템에서 하드웨어 인코더가 해제될 수 있습니다. 사용자가 재전환하면 하드웨어 인코더가 재시작 전에 이 오류가 발생할 수 있습니다.|
 |ERR_UNSUPPORTED_RESOLUTION|-1305|지원되지 않는 비디오 해상도|
-|ERR_AUDIO_ENCODE_FAIL|-1304|오디오 프레임 인코딩 실패. 예: SDK가 전달된 사용자 지정 오디오 데이터를 처리할 수 없을 때 발생합니다.|
-|ERR_UNSUPPORTED_SAMPLERATE|-1306|지원되지 않는 오디오 샘플 속도|
+|ERR_AUDIO_ENCODE_FAIL|-1304|오디오 프레임 인코딩 실패. 예: SDK가 전달된 사용자 정의 오디오 데이터를 처리할 수 없을 때 발생합니다.|
+|ERR_UNSUPPORTED_SAMPLERATE|-1306|지원되지 않는 오디오 샘플링 레이트|
 
 
 ### 사용자 정의 캡처에 대한 오류 코드
 
-콜백 API TRTCCloudDelegate.OnError()를 사용하여 사용자 지정 캡처 오류에 대한 알림을 캡처할 수 있습니다.
+콜백 API TRTCCloudDelegate.OnError()를 사용하여 관련 알림을 캡처할 수 있습니다.
 
 | 코드 | 값 | 설명 |
 |---|---|---|
@@ -91,14 +93,14 @@ TRTCCloud.exitRoom()은 방 종료가 실패하면 이 오류 코드를 트리�
 
 | 코드 | 값 | 설명 |
 |---|---|---|
-|ERR_PUBLISH_CDN_STREAM_REQUEST_TIME_OUT|-3321|릴레이된 푸시 요청 시간 초과|
-|ERR_CLOUD_MIX_TRANSCODING_REQUEST_TIME_OUT|-3322|On-Cloud MixTranscoding 요청 시간 초과|
+|ERR_PUBLISH_CDN_STREAM_REQUEST_TIME_OUT|-3321|릴레이 요청 시간 초과|
+|ERR_CLOUD_MIX_TRANSCODING_REQUEST_TIME_OUT|-3322|클라우드 믹스 트랜스코딩 요청 시간 초과|
 |ERR_PUBLISH_CDN_STREAM_SERVER_FAILED|-3323|릴레이된 푸시에 대한 비정상적인 응답 패킷|
-|ERR_CLOUD_MIX_TRANSCODING_SERVER_FAILED|-3324|On-Cloud MixTranscoding에 대한 응답 패킷 예외 |
+|ERR_CLOUD_MIX_TRANSCODING_SERVER_FAILED|-3324|클라우드 믹스 트랜스코딩에 대한 응답 패킷 예외 |
 |ERR_ROOM_REQUEST_START_PUBLISHING_TIMEOUT|-3333|Tencent Cloud의 라이브 스트리밍 CDN 푸시 시작 신호 시간 초과|
 |ERR_ROOM_REQUEST_START_PUBLISHING_ERROR|-3334|Tencent Cloud의 라이브 스트리밍 CDN에 대한 푸시 신호 예외|
 |ERR_ROOM_REQUEST_STOP_PUBLISHING_TIMEOUT|-3335|Tencent Cloud의 라이브 스트리밍 CDN에 대한 푸시 중지 신호 시간 초과|
-|ERR_ROOM_REQUEST_STOP_PUBLISHING_ERROR|-3336|Tencent Cloud의 라이브 스트리밍 CDN으로 푸시를 중지 신호 예외|
+|ERR_ROOM_REQUEST_STOP_PUBLISHING_ERROR|-3336|Tencent Cloud의 라이브 스트리밍 CDN으로 푸시 중지 신호 예외|
 
 
 ### 크로스 룸 공동 앵커 관련 오류 코드
@@ -123,8 +125,8 @@ TRTCCloud.ConnectOtherRoom()은 크로스 룸 공동 앵커링이 실패하는 �
 |ERR_SERVER_CENTER_CONN_ROOM_INVALID_SIG_TIME|-102040|잘못된 크로스 룸 공동 앵커 서명 타임스탬프|
 |ERR_SERVER_CENTER_CONN_ROOM_SIG_GROUPID|-102041|크로스 룸 공동 앵커 서명 내 방 Id 매칭 오류|
 |ERR_SERVER_CENTER_CONN_ROOM_NOT_CONNED|-102042|크로스 룸 공동 앵커 서명 내 사용자 이름 매칭 오류|
-|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|사용자가 공동 앵커를 시작하지 않았음|
-|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|크로스 룸 공동 앵커를 시작 실패|
+|ERR_SERVER_CENTER_CONN_ROOM_USER_NOT_CONNED|-102043|사용자가 공동 앵커 시작하지 않음|
+|ERR_SERVER_CENTER_CONN_ROOM_FAILED|-102044|크로스 룸 공동 앵커 시작 실패|
 |ERR_SERVER_CENTER_CONN_ROOM_CANCEL_FAILED|-102045|크로스 룸 공동 앵커 취소 실패|
 |ERR_SERVER_CENTER_CONN_ROOM_CONNED_ROOM_NOT_EXIST|-102046|공동 앵커링을 위해 연결된 방 없음|
 |ERR_SERVER_CENTER_CONN_ROOM_CONNED_REACH_MAX_ROOM|-102047|공동 앵커 룸의 최댓값에 도달|
@@ -168,9 +170,9 @@ TRTCCloud.ConnectOtherRoom()은 크로스 룸 공동 앵커링이 실패하는 �
 |WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|풀 스트림 오류. 네트워크 재연결이 시도됩니다(최대 시도 횟수: 3).|
 |WARNING_RECV_DATA_LAG|2104|불안정한 수신 패킷. 불충분한 다운스트림 대역폭 또는 앵커의 불안정한 스트림으로 인해 발생할 수 있습니다.|
 |WARNING_RTMP_DNS_FAIL|3001|라이브 스트리밍 오류. DNS 확인 실패|
-|WARNING_RTMP_SEVER_CONN_FAIL|3002|라이브 스트리밍 오류. 서버 연결 실패.|
+|WARNING_RTMP_SEVER_CONN_FAIL|3002|라이브 스트리밍 오류. 서버 연결 실패|
 |WARNING_RTMP_SHAKE_FAIL|3003|라이브 스트리밍 오류. RTMP 서버와의 핸드셰이크 실패|
-|WARNING_RTMP_SERVER_BREAK_CONNECT|3004|라이브 스트리밍 오류. 서버에 의해 연결이 끊어짐.|
+|WARNING_RTMP_SERVER_BREAK_CONNECT|3004|라이브 스트리밍 오류. 서버에 의해 연결이 끊어짐|
 |WARNING_RTMP_READ_WRITE_FAIL|3005|라이브 스트리밍 오류. RTMP 읽기/쓰기 실패. 연결이 해제됩니다.|
 |WARNING_RTMP_WRITE_FAIL|3006|라이브 스트리밍 오류. RTMP 쓰기 실패. SDK의 내부 오류 코드이며 외부에 노출되지 않습니다.|
 |WARNING_RTMP_READ_FAIL|3007|라이브 스트리밍 오류. RTMP 읽기 실패. SDK의 내부 오류 코드이며 외부에 노출되지 않습니다.|
