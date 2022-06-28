@@ -1,4 +1,15 @@
-## 2021年05月
+
+
+## 2022年07月
+
+| 动态名称         | 动态描述                                                     | 发布时间   | 相关文档                                                     |
+| :--------------- | :----------------------------------------------------------- | :--------- | :----------------------------------------------------------- |
+| 低频存储容量单价降价 | 对象存储 COS 对部分地域的低频存储容量单价进行刊例价降价调整。本次降价仅覆盖孟买、首尔、曼谷、硅谷、莫斯科、雅加达、圣保罗的低频存储容量单价由0.018美元/GB/月调整为0.015美元/GB/月，其他地域和计费项单价保持原价不变。 | 2022-07-01 | [产品定价](https://buy.intl.cloud.tencent.com/price/cos) |
+
+
+
+
+## 2022年04月
 
 <table>
 <thead>
@@ -11,11 +22,246 @@
 </thead>
 <tbody>
 <tr>
-<td>自助诊断工具上线</td>
-<td>自助诊断工具是腾讯云对象存储为用户提供的 Web 工具，可用于错误请求的自助诊断排查。</td>
-<td> 2021-05-27</td>
-<td>自助诊断工具 </a>
+<td>新加坡地域上线深度归档存储</td>
+<td>支持在新加坡地域的存储桶中上传深度归档存储类型的对象。</td>
+<td> 2022-04-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">上传对象</a></td>
 </tr>
+</tbody></table>
+
+
+
+## 2022年03月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">COS 日志分析功能上线</td>
+<td align="left">日志分析功能可以对生成的日志文件做进一步数据分析，整合指定时间范围内的日志文件进行统计分析，提取关键指标供您查看。</td>
+<td align="left">2022-03-21</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/45570">COS日志分析</a></td>
+</tr>
+<tr>
+<td align="left">自定义函数常用功能模板上线</td>
+<td align="left">您可以将云函数自定义函数与数据工作流相结合，编写最核心的代码逻辑以便灵活实现自身业务需求，同时降低研发成本。</td>
+<td align="left">2022-03-21</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46407">工作流自定义函数</a></td>
+</tr>
+</tbody></table>
+
+## 2022年02月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">媒体处理上线德国地域</td>
+<td align="left">媒体处理功能功能新支持德国法兰克福地域，地域简写：eu-frankfurt。</td>
+<td align="left">2022-02-17</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46387">数据工作流概述</a></td>
+</tr>
+<tr>
+<td align="left">H.265视频转码上线</td>
+<td align="left">H.265是比H.264更先进的视频编码方式，可以让视频更小，更节省访问带宽。</td>
+<td align="left">2022-02-17</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46411">视频转码介绍</a></td>
+</tr>
+<tr>
+<td align="left">极速高清视频转码上线</td>
+<td align="left">极速高清转码可以让视频在较低码率情况下提升视频的主观画质，能让视频更小，更清晰。</td>
+<td align="left">2022-02-17</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46411">极速高清介绍</a></td>
+</tr>
+</tbody></table>
+
+## 2021年10月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>媒体处理-音视频分段功能上线</td>
+<td>音视频分段功能可按指定时长将音视频切分为若干片段，分段时您还可以改变音视频片段的容器格式。</td>
+<td> 2021-10-14</td>
+<td><a href="https://cloud.tencent.com/document/product/460/62692">音视频分段 </a>
+</tr>
+</tbody></table>
+
+
+
+## 2021年09月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对象标签单价降价</td>
+<td>对象存储 COS 进行刊例价降价调整。公有云中国大陆地域降至0.00025817美元/万个标签/日，中国香港和海外地域降至0.0003098美元/万个标签/日。</td>
+<td> 2021-09-30</td>
+<td><a href="https://buy.cloud.tencent.com/price/cos">产品定价 </a>
+</tr>
+<tr>
+<td>深度归档存储读写请求单价降价</td>
+<td>对象存储 COS 进行刊例价降价调整。公有云中国大陆、中国香港及海外地域降至0.07美元/万次。</td>
+<td> 2021-09-30</td>
+<td><a href="https://buy.cloud.tencent.com/price/cos">产品定价 </a>
+</tr>
+</tbody></table>
+
+
+## 2021年08月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件预览/编辑功能上线</td>
+<td>用户可在控制台对存储桶中的文件进行快速的预览，并可对文本文件进行编辑操作。</td>
+<td> 2021-08-05</td>
+<td><a href="https://cloud.tencent.com/document/product/436/60350">预览或编辑对象 </a>
+</tr>
+<tr>
+<td>文件夹分享功能上线</td>
+<td>用户可在控制台生成文件夹的分享链接和提取码，并可设置链接有效时间。</td>
+<td> 2021-08-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/42387">分享文件夹 </a>
+</tr>
+<tr>
+<td>媒体处理-视频增强系列功能上线</td>
+<td>媒体处理提供细节增强、色彩增强、SDR to HDR 上变换等一系列功能提升视频画质，带来更佳视觉感受。</td>
+<td> 2021-08-03</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">配置工作流 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">配置任务 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">模板</a>
+</tr>
+<tr>
+<td>媒体处理-自定义函数处理上线</td>
+<td>当媒体处理的现有业务或功能无法满足您的需求时，您可以使用云函数自定义函数处理功能，编写最核心的代码逻辑以便灵活实现自身业务需求，同时降低研发成本。</td>
+<td> 2021-08-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46407">自定义函数处理 </a>
+</tr>
+<tr>
+<td>媒体处理-视频加密功能上线</td>
+<td>新增 HLS 标准加密能力，为客户视频数据安全保驾护航。</td>
+<td> 2021-08-03</td>
+<td><a href="https://cloud.tencent.com/document/product/436/59289">通过 HLS 加密防止视频泄露 </a>
+</tr>
+</tbody></table>
+
+
+
+## 2021年07月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重庆地域上线深度归档存储</td>
+<td>支持在重庆地域的存储桶中上传深度归档存储类型的对象。</td>
+<td> 2021-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">上传对象</a></td>
+</tr>
+</tbody></table>
+
+
+
+## 2021年06月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>媒体处理-极速高清转码功能上线</td>
+<td>极速高清转码是一种让视频更小更清晰的转码方式，能够保证网络资源低消耗，同时带给用户视觉上更佳体验。</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">配置工作流 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">配置任务 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">模板</a>
+</tr>
+<tr>
+<td>媒体处理-HDR to SDR 变换功能上线</td>
+<td>率先实现云上视频动态范围下变换能力，使变换后视频的画面细节最大程度贴近原视频。</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">配置工作流 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">配置任务 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">模板</a>
+</tr>
+<tr>
+<td>媒体处理-精彩集锦功能上线</td>
+<td>对视频的内容、动作姿态、场景进行多维度识别与聚合，以匹配专业编辑的水准迅速剪辑生成视频中的精彩片段。</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">配置工作流 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">配置任务 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">模板</a>
+</tr>
+<tr>
+<td>媒体处理-人声分离功能上线</td>
+<td>将同一素材中的人声与背景音分离开来生成新的独立音频文件，便于后续素材实现其他风格的艺术加工。</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">配置工作流 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">配置任务 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">模板</a>
+</tr>
+<tr>
+<td>媒体处理-HLS 自适应打包功能上线</td>
+<td>一步生成多码率自适应的视频文件，适配不同视频播放器、浏览器、分发平台。</td>
+<td> 2021-06-26</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46408">配置工作流</a>
+</tr>
+</tbody></table>
+
+
+
+## 2021年05月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>CDN 日志备份上线</td>
 <td>CDN 日志备份是腾讯云对象存储 COS 基于 云函数 SCF 为用户提供的将 CDN 日志转存至 COS 的功能，可以协助用户将 CDN 日志进行转存以便于进行访问行为分析、服务质量监控等。</td>
@@ -44,6 +290,12 @@
 </thead>
 <tbody>
 <tr>
+<td>东京地域上线深度归档存储</td>
+<td>支持在东京地域的存储桶中上传深度归档存储类型的对象。</td>
+<td> 2021-04-29</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">上传对象</a></td>
+</tr>
+<tr>
 <td>日志清洗上线</td>
 <td>日志清洗是对象存储 COS 基于云函数 SCF 为用户提供的日志文件处理解决方案。当用户开启日志管理服务或自行上传日志文件时，将自动触发对象存储为您预配置的云函数，通过函数中您预先指定的 SQL 检索语句，自动将文件中的日志信息进行过滤清洗。</td>
 <td> 2021-04-02</td>
@@ -57,6 +309,33 @@
 </tr>
 </tbody></table>
 
+
+
+## 2021年03月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据工作流上线</td>
+<td>数据工作流是对象存储全新推出的数据处理服务，其中包含工作流和任务两项功能，可分别对新增数据和存量数据进行媒体处理，例如音视频转码、视频截帧、视频转动图、智能封面、音视频拼接。</td>
+<td>2021-03-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46387">数据工作流概述</a>
+</tr>
+<tr>
+<td>深度归档类型新增支持南京地域</td>
+<td>深度归档类型新增支持南京地域，用户可在南京地域的存储桶将数据存储为深度归档存储类型。</td>
+<td> 2021-03-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38304">  深度归档存储简介 </a>
+</tr>
+</tbody></table>
 
 
 ## 2021年02月
@@ -97,7 +376,7 @@
 <tbody>
 <tr>
 <td>图片处理功能已全部支持公有云地域</td>
-<td>图片处理功能新增支持海外公有云地域，目前图片处理功能已全部支持 COS 所有公有云地域。</td>
+<td>图片处理功能新增支持海外公有云地域，目前图片处理功能已全部支持 COS 公有云地域。</td>
 <td> 2021-01-20</td>
 <td><ul  style="margin: 0;">
 <li><a href="https://intl.cloud.tencent.com/document/product/436/35280">图片处理概述</a></li>
@@ -150,22 +429,43 @@
 </thead>
 <tbody>
 <tr>
-<td>COSDistcp 工具发布 </td>
-<td>COSDistcp 是一款基于 MapReduce 的分布式文件拷贝工具，主要用于 HDFS 和 COS 之间的数据拷贝。</td>
+<td>COSDistCp 工具发布 </td>
+<td>COSDistCp 是一款基于 MapReduce 的分布式文件拷贝工具，主要用于 HDFS 和 COS 之间的数据拷贝。</td>
 <td> 2020-11-27</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38863">COSDistcp 工具</a>
-</tr>
-<tr>
-<td>上线存储网关功能</td>
-<td>存储网关是腾讯云提供的混合云存储服务。您可以选择为存储桶配置存储网关，配置完成后，COS 中的存储桶可以以网络文件夹的形式挂载至您任意一台 CVM 服务器上作为存储设备进行使用。</td>
-<td> 2020-11-21</td>
-<td>-
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38863">COSDistCp 工具</a>
 </tr>
 <tr>
 <td>上线智能分层存储</td>
 <td>智能分层存储类型为数据提供了冷热分层机制，能够根据用户数据的访问模式，自动地转换数据的冷热层级，从而降低用户数据的存储成本。</td>
 <td> 2020-11-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/38305">智能分层存储简介</a>
+</tr>
+</tbody></table>
+
+## 2020年10月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上线图片高级压缩</td>
+<td>图片高级压缩功能，可以更加高效地将图片转换为 TPG 或 HEIF 等高压缩比格式，有效降低图片传输链路及加载耗时，降低带宽及流量成本。</td>
+<td> 2020-10-16</td>
+<td><ul  style="margin: 0;">
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40117">设置图片高级压缩</a></td>
+</tr>
+<tr>
+<td>上线媒体处理功能</td>
+<td>媒体处理功能可对存储桶内的视频文件，进行文件转码、视频截帧、视频转动图和智能封面四种处理操作。</td>
+<td> 2020-10-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46275"> 创建媒体处理任务</a></td>
 </tr>
 </tbody></table>
 
@@ -210,14 +510,13 @@
 <tbody>
 <tr>
 <td>回源功能和生命周期功能迭代</td>
-<td>1. 支持设置触发回源规则后跳转的具体路径，同时支持设置多个回源规则；<br>2. 生命周期规则的应用范围支持指定对象标签。</td>
+<td>1. 支持设置触发回源规则后跳转的具体路径，支持设置多个回源规则，并且支持修改优先级；<br>2. 生命周期规则的应用范围支持指定对象标签。</td>
 <td> 2020-08-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">设置回源</a>
-<br><a href="https://intl.cloud.tencent.com/document/product/436/14605">设置生命周期</a></td>
+<td><ul  style="margin: 0;">
+<li><a href="https://intl.cloud.tencent.com/document/product/436/31508">设置回源</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/436/14605">设置生命周期</a></li></ul></td>
 </tr>
 </tbody></table>
-
-
 
 ## 2020年07月
 
