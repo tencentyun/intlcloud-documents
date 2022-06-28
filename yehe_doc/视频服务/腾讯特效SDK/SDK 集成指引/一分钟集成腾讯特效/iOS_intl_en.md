@@ -1,11 +1,11 @@
-## Preparations for Integration
+## Directions
 
 ### Developer environment requirements
 
-- Xcode 11 or higher: download on App Store or [here](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/demo.zip).
+- Xcode 11 or later: Download on App Store or [here](https://intl.cloud.tencent.com/document/product/1143/45374).
 - Recommended runtime environment:
   - Device requirements: iPhone 5 or later. iPhone 6 and older models support up to 720p for front camera.
-  - System requirements: iOS 10.0 or higher.
+  - System requirements: iOS 10.0 or later.
 
 ### C/C++ layer development environment
 
@@ -38,33 +38,33 @@ Xcode uses the C++ environment by default.
 </table>
 
 ## Resource Import
-### Resources
+### Objects
 - Required resource package: `LightCore.bundle`
 - Keying feature package: `LightSegmentPlugin.bundle`
 - Gesture feature package: `LightHandPlugin.bundle`
 - 3D feature package: `Light3DPlugin.bundle`
 
 ### Method to import
-- **Method 1**: add the resources as project resources.
-- **Method 2**: if you need to specify the path `initWithRenderSize:assetsDict: (XMagic)`, you can configure each resource path through `assetsDict`.
+- **Method 1**: Add the resources as project resources.
+- **Method 2**: If you need to specify the path `initWithRenderSize:assetsDict: (XMagic)`, you can configure each resource path through `assetsDict`.
 
 ### Permission configuration
 Add permission descriptions in the `Info.plist` file; otherwise, the app will crash on iOS 10. Grant the camera access in **Privacy - Camera Usage Description** to allow the app to use the camera.
 
-## Integration Steps
+## Integration steps
 
 [](id:step1)
 ### Step 1. Prepare the signature
 For the framework signature, select **General** and set **Masonry.framework** and **libpag.framework** to **Embed & Sign**.
 [](id:step2)
 ### Step 2. Authenticate
-1. Apply for a license and get the `LicenseURL` and `LicenseKEY` as instructed in [License Guide](https://intl.cloud.tencent.com/document/product/1143/45380).
-> ! Under normal circumstances, as long as the app is successfully connected to the internet once, the authentication process can be completed, so you **don't need** to put the license file in the project directory. However, if your app needs to use the SDK features when it is never connected to the internet, you can download the license file and put it in the project directory. In this case, the license file must be named `v_cube.license`.
+1. Apply for a license and get the `LicenseURL` and `LicenseKEY`.
+>! Under normal circumstances, the authentication process can be completed by connecting your app to the internet one time, so you **don't need** to put the license file in the project directory. However, if your app needs to use the SDK features without ever connecting to the internet, you can download the license file and put it in the project directory. In this case, the license file must be named `v_cube.license`.
 2. Set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of the `AppDelegate`. Here, `LicenseURL` and `LicenseKey` are the information generated in the console when the license is bound.
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
        if (authresult == TELicenseCheckOk) {
-            NSLog(@"Authentication succeeded");
+            NSLog(@"Authentication successful");
         } else {
             NSLog(@"Authentication failed");
         }
@@ -119,7 +119,7 @@ For the framework signature, select **General** and set **Masonry.framework** an
 <td>-13</td>
 <td>Authentication failed.</td>
 </tr><tr>
-<td>Others</td>
+<td>Other</td>
 <td>Contact Tencent Cloud for assistance.</td>
 </tr>
 </tbody></table>
@@ -156,8 +156,8 @@ process: (XMagic)
 - (YTProcessOutput*)processDataWithGpuFuc:(CMSampleBufferRef)inputSampleBuffer;
 
 // Data processing API of Tencent Effect SDK
-/// @param input: input the data to be processed
-/// @return: output the processed data
+/// @param input: Input the data to be processed
+/// @return: Output the processed data
 - (YTProcessOutput* _Nonnull)process:(YTProcessInput * _Nonnull)input;
 ```
 4. Release Tencent Effect SDK.
@@ -196,11 +196,12 @@ PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphone
 
 Command /bin/sh failed with exit code 1
 ```
-- Cause: failed to sign `libpag.framework` and `Masonary.framework` again.
+- Cause: Failed to sign `libpag.framework` and `Masonary.framework` again.
 - Solution:
-	1. Open `demo/copy_framework.sh`.
-	2. Use the following command to check the absolute path of the local `cmake` and replace `$(which cmake)` with it.
+ 1. Open `demo/copy_framework.sh`.
+ 2. Use the following command to check the absolute path of the local `cmake` and replace `$(which cmake)` with it.
 ```
 which cmake
 ```
+
 3. Replace all `Apple Development: ......` with your own signature.

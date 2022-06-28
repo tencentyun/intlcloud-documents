@@ -2,7 +2,7 @@
 
 ### 开发者环境要求
 
-- 开发工具 XCode 11 及以上：App Store 或单击 [下载地址](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/demo.zip)。
+- 开发工具 XCode 11 及以上：App Store 或单击 [下载 Demo](https://intl.cloud.tencent.com/document/product/1143/45374)。
 - 建议运行环境：
   - 设备要求：iPhone 5 及以上；iPhone 6 及以下前置摄像头最多支持到 720p，不支持 1080p。
   - 系统要求：iOS 10.0 及以上。
@@ -58,8 +58,8 @@ XCode 默认 C++ 环境。
 framework 签名可以直接在 General-->Masonry.framework 和 libpag.framework 选 Embed & Sign。
 [](id:step2)
 ### 步骤二：鉴权
-1. 申请授权，得到 LicenseURL 和 LicenseKEY，请参见 [License 指引](https://intl.cloud.tencent.com/document/product/1143/45380)。
-> ! 正常情况下，只要app成功联网一次，就能完成鉴权流程，因此您**不需要**把 License 文件放到工程的工程目录里。但是如果您的app在从未联网的情况下也需要使用SDK相关功能，那么您可以把license文件下载下来放到工程目录，作为保底方案，此时license文件名必须是v_cube.license。
+1. 申请授权，得到 LicenseURL 和 LicenseKEY。
+>! 正常情况下，只要app成功联网一次，就能完成鉴权流程，因此您**不需要**把 License 文件放到工程的工程目录里。但是如果您的app在从未联网的情况下也需要使用SDK相关功能，那么您可以把license文件下载下来放到工程目录，作为保底方案，此时license文件名必须是v_cube.license。
 2. 在相关业务模块的初始化代码中设置 URL 和 KEY，触发 license 下载，避免在使用前才临时去下载。也可以在 AppDelegate 的 didFinishLaunchingWithOptions 方法里触发下载。其中，LicenseURL 和 LicenseKey 是控制台绑定 License 时生成的授权信息。
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
@@ -198,9 +198,10 @@ Command /bin/sh failed with exit code 1
 ```
 - 问题原因： `libpag.framework和Masonary.framework` 重签名失败。
 - 解决方法：
-	1. 打开 `demo/copy_framework.sh`。
-	2. 用下述命令查看本机 cmake 的路径，将 `$(which cmake)` 改为本地 cmake 绝对路径。
+ 1. 打开 `demo/copy_framework.sh`。
+ 2. 用下述命令查看本机 cmake 的路径，将 `$(which cmake)` 改为本地 cmake 绝对路径。
 ```
 which cmake
 ```
+
 3. 用自己的签名替换所有 `Apple Development: ......` 。

@@ -7,7 +7,7 @@
 -keep class org.light.** { *;}
 -keep class org.libpag.** { *;}
 -keep class org.extra.** { *;}
--keep class org.gyailib.** { *;}
+-keep class com.gyailib.**{ *;}
 -keep class com.tencent.cloud.iai.lib.** { *;}
 ```
 
@@ -35,7 +35,7 @@ Check whether the value is set properly (value range: 0–100). You may have set
 
 [](id:que5)
 ### What should I do if an error is reported when `dSYM` is generated during demo compilation on iOS?
-- **Error information:**
+- **Error message**:
 ```
 PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
     cd /Users/zhenli/Downloads/xmagic_s106
@@ -43,7 +43,7 @@ PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphone
 
 Command /bin/sh failed with exit code 1
 ```
-- **Problem analysis**: the cause is the failure to sign `libpag.framework` and `Masonary.framework` again.
+- **Problem analysis**: The cause is the failure to sign `libpag.framework` and `Masonary.framework` again.
 - **Solution**:
 	1. Open **demo/copy_framework.sh**.
 	2. Change `$(which cmake)` to the absolute path of the local `cmake`.
@@ -55,7 +55,7 @@ Check the license failure error code printed in the log. If you are using a loca
 
 [](id:que7)
 ### What should I do if the demo for iOS reports a compilation error?
-- **Error information:**
+- **Error message**:
 ```
 unexpected service error: build aborted due to an internal error: unable to write manifest to-xxxx-manifest.xcbuild': mkdir(/data, S_IRWXU | S_IRWXG | S_IRWXO): Read-only file system (30):
 ```
@@ -63,4 +63,6 @@ unexpected service error: build aborted due to an internal error: unable to writ
 	1. Go to **File** > **Project settings** > **Build System** and select **Legacy Build System**.
 	2. For Xcode 13.0++, you need to select **File** > **Workspace Settings** > **Do not show a diagnostic issue about build system deprecation**.
 
+### What is the effective relationship between various attributes of Tencent Effect SDK?
+![](https://qcloudimg.tencent-cloud.cn/raw/6f204e9f9197f1bab8c7be7d31bf4aea.png)
 

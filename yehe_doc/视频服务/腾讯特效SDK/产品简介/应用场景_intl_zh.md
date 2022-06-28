@@ -24,7 +24,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/1474f2b4d1bdc3fc26347430e474d8fe.png)
 
 ## 会议
-在线上会议中，接入腾讯特效 SDK，利用人像分割技术切换会议背景，更能实时人像美颜，留下最佳状态。
+在线上会议中，接入腾讯特效 SDK，利用人像分割（虚拟背景）技术切换会议背景，更能实时人像美颜，留下最佳状态。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/76f6056e7e4dc590414a16462daf7a46.jpg)
 

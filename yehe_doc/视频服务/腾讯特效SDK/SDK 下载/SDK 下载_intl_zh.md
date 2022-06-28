@@ -1,4 +1,4 @@
-腾讯特效 SDK 提供了 10 种版本的 SDK，分别为 6 种基础版 SDK 和 4 种高级版 SDK。了解 10 个版本 SDK 的关系和各版本功能差异请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1143/45371)。
+腾讯特效 SDK 提供了 11 种版本的 SDK，分别为 6 种基础版 SDK 和 5 种高级版 SDK。了解 11 个版本 SDK 的关系和各版本功能差异请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1143/45371)。
 
 > ! 腾讯特效 SDK 下载 iOS 平台 ZIP 包内囊括 SDK 和 Demo工程，若需使用 iOS 端口的 Demo 工程，可在此下载 iOS 端 ZIP 包。
 
@@ -88,13 +88,27 @@ S 系列高级套餐提供高级美型功能，适用于对脸部美颜调整需
 </tr>
 </thead>
 <tbody><tr>
-<td >高级版 S1 - 01</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s101_ios.zip">DOWNLOAD</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-01_android_2.4.1.119.zip">DOWNLOAD</a></td>
-<td rowspan=4>
+<td >高级版 S1 - 00</td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s100_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.120/xmagic_S1-00_android_2.4.1.120.zip">DOWNLOAD</a></td>
+<td rowspan=5>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
 </td>
+<td >
+<b>iOS 包大小：</b><ul style="margin:0"><li>arm64：31M  </li><li>bundle：10.6M  </li></ul><br>
+<b>Android 包大小：</b><ul style="margin:0">
+<li>arm64-v8a：12.8MB</li>
+<li>armeabi-v7a：10.2MB</li>
+<li>aar：864KB</li>
+<li>assets：13.9MB</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td >高级版 S1 - 01</td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s101_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-01_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS 包大小：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：17.7m</ul><br>
 <b>Android 包大小：</b><ul style="margin:0"><li/>arm64-v8a：22.6MB<li/>armeabi-v7a：18.3MB<li/>assets：17.7MB<li/>aar：700KB
@@ -102,7 +116,7 @@ S 系列高级套餐提供高级美型功能，适用于对脸部美颜调整需
 </tr>
 <tr>
 <td >高级版 S1 - 02</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s102_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s102_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-02_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS 包大小：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：21.6m</ul><br>
@@ -111,7 +125,7 @@ S 系列高级套餐提供高级美型功能，适用于对脸部美颜调整需
 </tr>
 <tr>
 <td >高级版 S1 - 03</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s103_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s103_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-03_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td ></ul><br>
 <b>iOS 包大小：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：25m</ul><br>
@@ -120,7 +134,7 @@ S 系列高级套餐提供高级美型功能，适用于对脸部美颜调整需
 </tr>
 <tr>
 <td >高级版 S1 - 04</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s104_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s104_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-04_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td >
 <b>iOS 包大小：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：28.8m</ul><br>
@@ -128,3 +142,5 @@ S 系列高级套餐提供高级美型功能，适用于对脸部美颜调整需
 </td>
 </tr>
 </tbody></table>
+
+> ! 包体大小瘦身，请参见 [SDK 包体瘦身（Android）](https://intl.cloud.tencent.com/document/product/1143/47831)。

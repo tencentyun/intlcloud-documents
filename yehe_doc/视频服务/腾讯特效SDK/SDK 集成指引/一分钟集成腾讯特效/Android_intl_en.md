@@ -1,5 +1,6 @@
-## Preparations for Integration
-**File preparations**:
+## Directions
+1. [Download the SDK](https://intl.cloud.tencent.com/document/product/1143/45377) and unzip it.
+2. **Prepare the following files:**
 <table>
 <tbody><tr><th>File Type</th><th>Description</th></tr>
 <tr>
@@ -12,10 +13,10 @@
 
 ## Resource Import
 
-### Resources
+### Objects
 
 - Add all the `.aar` files prepared above to the `libs` directory of the app project.
-- Copy all resources from the `assets/` directory of the SDK package to the `../src/main/assets` directory.
+- Copy all the files in `assets/` of your SDK package to the `../src/main/assets` directory. If there are files in the `MotionRes` folder of your SDK package, also copy them to the `../src/main/assets` directory.
 - Copy the `jniLibs` folder to the `../src/main/jniLibs` directory of the project.
 
 ### Method to import
@@ -28,31 +29,31 @@ android{
         applicationId "Replace it with the package name bound to the `lic`"
         ....
     }
-    packagingOptions {
+    packagingOptions{
         pickFirst '**/libc++_shared.so'
     }
 }
 
-dependencies{
+dependencies {
     ...
     compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])// Add `*.aar`
 }
 ```
 
 [](id:download)
-## Guide to Dynamically Downloading `assets`, `so`, and `MotionRes`
+## Package Downsizing: Guide to Dynamically Downloading `assets`, `so`, and `MotionRes`
 
-To reduce the package size, you can choose to download the `assets` resources, `so` library, and animated effect resources `MotionRes` (unavailable in some basic SDKs) required by the SDK online. After successful download, set the paths of the above files in the SDK.
+To reduce the package size, you can download the `assets` resources, `so` library, and animated effect resources `MotionRes` (unavailable in some basic SDKs) required by the SDK online. After successful download, set the paths of the above files in the SDK.
 
-We recommend you reuse the download logic of the demo. You can also use your existing download service. For detailed directions of dynamic download, see [Instructions on Dynamically Downloading Tencent Effect SDK Resources (Android)](https://docs.qq.com/doc/DWHRlU0dlcHlGR3V4). 
+We recommend you reuse the download logic of the demo. You can also use your existing download service. For detailed directions of dynamic download, see [SDK Package Downsizing (Android)](https://intl.cloud.tencent.com/document/product/1143/47831).
 
 ## Overall Process
 
 [](id:step1)
 ### Step 1. Authenticate
 
-1. Apply for a license and get the `License URL` and `License KEY` as instructed in [License Guide](https://intl.cloud.tencent.com/document/product/1143/45380).
-> ! Under normal circumstances, as long as the app is successfully connected to the internet once, the authentication process can be completed, so you **don't need** to put the license file in the `assets` directory. However, if your app needs to use the SDK features when it is never connected to the internet, you can download the license file and put it in the `assets` directory. In this case, the license file must be named `v_cube.license`.
+1. Apply for a license and get the `License URL` and `License KEY`.
+> ! Under normal circumstances, the authentication process can be completed by connecting your app to the internet one time, so you **don't need** to put the license file in the `assets` directory. However, if your app needs to use the SDK features without ever connecting to the internet, you can download the license file and put it in the `assets` directory. In this case, the license file must be named `v_cube.license`.
 2. Set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `onCreate` method of the `Application`, but this is not recommended as the download is very likely to fail if there is no network permission or connection.
 ```
 // If you just want to trigger the download or update the license but don't care about the authentication result, you can pass in `null` for the fourth parameter.
@@ -67,7 +68,7 @@ TELicenseCheck.getInstance().setTELicense(context, URL, KEY, new TELicenseCheckL
 
             @Override
             public void onLicenseCheckFinish(int errorCode, String msg) {
-                // Note: this callback is not necessarily in the call thread
+                // Note: This callback is not necessarily in the call thread
                 if (errorCode == TELicenseCheck.ERROR_OK) {
                     // Authentication succeeded
                 } else {
@@ -142,14 +143,14 @@ TELicenseCheck.getInstance().setTELicense(context, URL, KEY, new TELicenseCheckL
 </tr>
 <tr>
 <td>3015</td>
-<td>`Bundle ID` and `Package Name` mismatch. Check whether the `Bundle ID` or `Package Name` used by your app is the same as the one applied for and whether the correct license file is used.</td>
+<td>`Bundle ID` and `Package Name` mismatch. Check whether the `Bundle ID` or `Package Name` used by your app are the same as the ones you applied for and whether the correct license file is used.</td>
 </tr>
 <tr>
 <td>3018</td>
 <td>The license file has expired. You need to apply to Tencent Cloud for renewal.</td>
 </tr>
 <tr>
-<td>Others</td>
+<td>Other</td>
 <td>Contact Tencent Cloud for assistance.</td>
 </tr>
 </tbody></table>
@@ -201,11 +202,13 @@ mPreviewMgr.setCustomTextureProcessor((textureId, textureWidth, textureHeight) -
 // Enable the camera in the `onResume` method of `Activity`
 mPreviewMgr.onResume(this, 1280, 720);
 ```
+
 4. Initialize the beauty filter SDK. We recommend you put it in the `onResume()` method of `Activity`.
 ```java
 mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXmagicPropertyErrorListener()); 
 ```
-- **Parameters**
+
+ - **Parameters**
  <table>
  <tr><th>Parameter</th><th>Description</th></tr><tr><td>Context context</td><td>Context</td>
  </tr><tr>
@@ -213,7 +216,8 @@ mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXm
  </tr><tr>
  <td>OnXmagicPropertyErrorListener errorListener</td><td>Callback function implementation class</td>
  </tr></table>
-- **Response**
+
+ - **Response**
  Error codes and descriptions:
  <table>
  <tr><th>Error Code</th><th>Description</th></tr><tr>
@@ -246,6 +250,7 @@ mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXm
  <td>5004</td><td>The format of the background video to be keyed is not supported.</td>
  </tr>
  </tbody></table>
+
 5. Add the callback function for material prompt (method callbacks may run in child threads). Some materials will prompt the user to nod, stretch out their palms, or make a finger heart, and this callback is used to display the prompts.
 ```
 mXmagicApi.setTipsListener(new XmagicTipsListener() {

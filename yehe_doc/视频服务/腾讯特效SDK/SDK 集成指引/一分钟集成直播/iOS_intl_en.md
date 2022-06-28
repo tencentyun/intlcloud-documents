@@ -1,6 +1,6 @@
-## Preparations for Integration
+## Directions
 
-1. Download and unzip the [demo package](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/MLVB-API-Example.zip).
+1. Download and unzip the [demo package](https://intl.cloud.tencent.com/document/product/1143/45374).
 2. Import the xMagic module (`bundle`, `XmagicIconRes`, and `Xmagic` folders) from the demo project into your actual project.
 3. Import `libpag.framework`, `Masonry.framework`, `XMagic.framework`, and `YTCommonXMagic.framework` in the SDK directory.
 4. For the framework signature, select **General** and set **Masonry.framework** and **libpag.framework** to **Embed & Sign**.
@@ -12,15 +12,15 @@
 
 ### Step 1. Initialize authorization[](id:step1)
 
-1. Add the following authentication code to the `didFinishLaunchingWithOptions` of the `AppDelegate` in the project, where the `LicenseURL` and `LicenseKey` are the authorization information obtained at Tencent Cloud official website as instructed in [License Guide](https://intl.cloud.tencent.com/document/product/1143/45380):
+1. Add the following authentication code to the `didFinishLaunchingWithOptions` of the `AppDelegate` in the project, where the `LicenseURL` and `LicenseKey` are the authorization information obtained at Tencent Cloud official website:
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```
-2. xMagic authentication: set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of the `AppDelegate`. Here, `LicenseURL` and `LicenseKey` are the information generated in the console when the license is bound.
+2. xMagic authentication: Set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of the `AppDelegate`. Here, `LicenseURL` and `LicenseKey` are the information generated in the console when the license is bound.
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
        if (authresult == TELicenseCheckOk) {
-            NSLog(@"Authentication succeeded");
+            NSLog(@"Authentication successful");
         } else {
             NSLog(@"Authentication failed");
         }
@@ -87,7 +87,7 @@
 <td>Authentication failed.</td>
 </tr>
 <tr>
-<td>Others</td>
+<td>Other</td>
 <td>Contact Tencent Cloud for assistance.</td>
 </tr>
 </tbody></table>
@@ -130,7 +130,7 @@ self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:asset
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
-### Step 5. Perform rendering[](id:step5)
+### Step 5. Render videos[](id:step5)
 In the video frame callback API, construct and pass `YTProcessInput` to the SDK for rendering. You can refer to `ThirdBeautyViewController` in the demo.
 ```
 [self.xMagicKit process:inputCPU withOrigin:YtLightImageOriginTopLeft withOrientation:YtLightCameraRotation0]
@@ -165,7 +165,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 		make.width.mas_equalTo(self.view);
 		make.centerX.mas_equalTo(self.view);
 		make.height.mas_equalTo(254);
-		if(gSafeInset.bottom > 0.0){  // Adaptive to full screen
+		if(gSafeInset.bottom > 0.0){  // Adapt to full-view screen
 			make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(0);
 		} else {
 			make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(-10);

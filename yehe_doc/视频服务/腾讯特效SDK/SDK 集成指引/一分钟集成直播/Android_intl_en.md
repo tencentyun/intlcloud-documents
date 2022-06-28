@@ -1,13 +1,17 @@
 [](id:step1)
-## Step 1. Unzip the demo project
-1. Download the [MLVB demo](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/MLVB-API-Example.zip) which has integrated Tencent Effect SDK.
-2. Import the xMagic module from the demo into your actual project.
+## Step 1. Replace resources
+1. Download the [MLVB demo](https://intl.cloud.tencent.com/document/product/1143/45374) which has integrated the Tencent Effect SDK. This demo is built based on the Tencent Effect SDK S1-04 edition.
+2. Replace the SDK files in the demo with the files for the SDK you actually use. Specifically, follow the steps below:
+   - Replace the `.aar` file in the `libs` directory of the `Xmagic` module with the `.aar` file in `libs` of your SDK.
+   - Replace all the files in `../src/main/assets` of the `Xmagic` module with those in `assets/` of your SDK. If there are files in the `MotionRes` folder of your SDK package, also copy them to the `../src/main/assets` directory.
+   - Replace all the `.so` files in `../src/main/jniLibs` of the `Xmagic` module with the `.so` files in `jniLibs` of your SDK package (you need to decompress the ZIP files in the `jinLibs` folder to get the `.so` files for arm64-v8a and armeabi-v7a).
+3. Import the xMagic module from the demo into your actual project.
 
 [](id:step2)
 
-## Step 2. Open the `build.gradle` of the app module
-1. Replace the `applicationId` with the package name under the obtained trial license.
-2. Add the `gson` dependency settings.
+## Step 2. Open `build.gradle` in `app` and do the following:
+1. Set `applicationId` to the package name bound to the trial license.
+2. Add Gson dependency settings.
 ```groovy
 configurations  {
 all*.exclude  group:  'com.google.code.gson'
@@ -16,11 +20,11 @@ all*.exclude  group:  'com.google.code.gson'
 
 [](id:step3)
 
-## Step 3. Integrate the SDK API
+## Step 3. Integrate the SDK APIs
 You can refer to the `ThirdBeautyActivity` class of the demo.
 1. **Authorize**:
 ```java
- // For authentication precautions and error codes, see https://cloud.tencent.com/document/product/616/65891#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E9.89.B4.E6.9D.83
+ // For authentication precautions and error codes, see https://intl.cloud.tencent.com/document/product/1143/45385#step-1.-authenticate
 XMagicImpl.checkAuth((errorCode, msg) -> {
             if (errorCode == TELicenseCheck.ERROR_OK) {
                 showLoadResourceView();
