@@ -1,7 +1,7 @@
 ### Overdue Payment Notification
 You will receive a notification when your account balance becomes negative.
 
-### Overdue Payment policy
+### Overdue Payment Policy
 The overdue payment policies are applied from the moment when the balance drops to 0. The details are as follows:
 1. Within seven days, Cloud Connect Network (CCN) is still available for the account.
 2. Seven days later, the CCN instance becomes unavailable and the cross-region bandwidth drops to 0 Kbps if your account balance is still negative. However, the CCN instance retains and resumes service once you top up your account.
