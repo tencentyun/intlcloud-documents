@@ -160,7 +160,7 @@ pip install numpy -t . # You can view the pip version through the terminal to ch
 
 
 
->! The PHP versions supported by SCF are 5.6 and 7.2. Different minor versions of PHP may be incompatible. Check the version number first before installing dependencies.
+>! The PHP versions supported by SCF are 8.0、7.4、5.6 and 7.2. Different minor versions of PHP may be incompatible. Check the version number first before installing dependencies.
 
 
 <dx-tabs>
@@ -169,7 +169,7 @@ Use a dependency management tool such as Composer to install the dependencies lo
 <dx-alert infotype="notice" title="">
 When you package them, the function entry file needs to be put in the root directory of the `zip` package. If you package the entire folder as the `zip` package and upload it, function creation will fail because the entry file cannot be found in the root directory after decompression.
 </dx-alert>
-This document takes installing the `requests` library for PHP 7 as an example:
+This document takes installing the `requests` library for PHP 7.2 as an example:
 
 1. Run the `mkdir test-package` command in the local terminal to create a directory for storing the function code and dependency libraries.
 2. Create `Composer.json` under `test-package` and specify the dependency library and version to be installed.
@@ -201,14 +201,14 @@ function main_handler($event, $context) {
    3. Enter the basic information of the function on the **Create function** page as shown below:
       ![](https://main.qcloudimg.com/raw/5112f6d762b1e90a3b62ad7446da0a79.png)
     - **Creation method**: Select **Custom**.
-    - **Runtime environment**: Select **PHP 7**.
+    - **Runtime environment**: Select **PHP 7.2**.
     - **Submitting method**: Select **Local ZIP file**.
    4. Click **Complete**.
    :::
    ::: Install custom extensions
    Create the extension folder `php_extension` in a directory at the same level as the function entry file, add the custom extension file `.so` and configuration file `php.ini`, and package and upload them together with the function code.
 
-This document uses installing the custom extension `swoole.so` for PHP 7 as an example.
+This document uses installing the custom extension `swoole.so` for PHP 7.2 as an example.
 
 1. Run the `mkdir test-package` command in the local terminal to create a directory for storing the function code and dependency libraries.
 2. Run the following command to create the folder `php_extension` in `test-package` and place the configuration file `php.ini` and extension file `.so` corresponding to the extension in this directory. The directory structure is as follows:
@@ -259,7 +259,7 @@ function main_handler($event, $context) {
      3. Enter the basic information of the function on the **Create function** page as shown below:
       ![](https://main.qcloudimg.com/raw/4fe183a20d4f5ce9b0db9c897a7df095.png)
           - **Creation method**: Select **Custom**.
-          - **Runtime environment**: Select **PHP 7**.
+          - **Runtime environment**: Select **PHP 7.2**.
           - **Submitting method**: Select **Local ZIP file**.
      4. Click **Complete**.
    :::
@@ -321,7 +321,7 @@ Compile the dependency libraries of the Go runtime with the code to get a binary
 2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
 3. Enter the basic information of the function on the **Create function** page as shown below:
    ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-   - **Creation method**: Select **Custom**.
+   - **Creation method**: Select **Create from scratch**.
    - **Runtime environment**: Select **Go 1**.
    - **Submitting method**: Select **Local ZIP file**.
 4. Click **Complete**.
