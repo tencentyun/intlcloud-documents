@@ -1,5 +1,4 @@
-
-## 故障について
+##故障について
 
 - **現象1**：<span id="FaultPhenomenon1"></span>
  - 会社のネットワークを使用してアップロードする場合は正常に転送されるが、ホームネットワークを使用してアップロードすると転送速度が遅くなる（8Mbps未満）。
@@ -34,8 +33,8 @@ ping examplebucket-1250000000.cos.ap-beijing.mqcloud.com
  - 出力する場合は、[手順3](#step03)を実行してください。
  - NOの場合は、[手順2](#step02)を実行してください。
 2. <span id="step02"></span> ブラウザがプロキシを設定しているかどうかをチェックします。Chromeブラウザを例にとります。
-    1. Chromeブラウザを開き、右上隅の<img src="https://main.qcloudimg.com/raw/41a048f92c3d6160faff7e211bacce76.png"/> > 【設定】をクリックし、設定ページを開きます。
-    2. 【アドバンス】をクリックし、「システム」バーで【お客様のコンピュータでのプロキシ設定】を選択し、OSの設定ウィンドウを開きます。
+    1. Chromeブラウザを開き、右上隅の<img src="https://main.qcloudimg.com/raw/41a048f92c3d6160faff7e211bacce76.png"/> > **設定**をクリックし、設定ページを開きます。
+    2. **アドバンス**をクリックし、「システム」バーで**お客様のコンピュータでのプロキシ設定**を選択し、OSの設定ウィンドウを開きます。
 
     プロキシが設定されているかどうかをチェックします。
      - YESの場合は、プロキシを無効にします。
@@ -50,19 +49,19 @@ coscmd probe -n 1 -s 20
 ```
 次のような結果が返され、平均速度（Average）、最低速度（Min）、最高速度（Max）がそれぞれ得られます。
 ![](https://main.qcloudimg.com/raw/2fcecb96df04acc6b0c32c120ccb3c39.png)
-5. ブラウザから[ネットワークスピードテスト](https://www.speedtest.cn/)にアクセスし、[ステップ4](#step04)の結果も踏まえて、クライアントのネットワーク帯域幅占有率が上限に達していないかをチェックします。
- - ステップ4の速度がクライアント帯域幅速度より低い場合は、[お問い合わせ](https://intl.cloud.tencent.com/support)ください。
- - ステップ4の速度がクライアント帯域幅速度と同じであり、かつキャリアのコミットした帯域幅に達していない場合は、キャリアのカスタマーサービスに連絡してください。
- - ステップ4の速度がクライアント帯域幅速度と同じであり、かつキャリアのコミットした帯域幅に達している場合は、[ステップ6](#step06)を実行してください。
+5. ブラウザから[ネットワークスピードテスト](https://www.speedtest.cn/)にアクセスし、[手順4](#step04)の結果も踏まえて、クライアントのネットワーク帯域幅占有率が上限に達していないかをチェックします。
+ - 手順4の速度がクライアント帯域幅速度より低い場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-sales)ください。
+ - 手順4の速度がクライアント帯域幅速度と同じであり、かつキャリアのコミットした帯域幅に達していない場合は、キャリアのカスタマーサービスに連絡してください。
+ - 手順4の速度がクライアント帯域幅速度と同じであり、かつキャリアのコミットした帯域幅に達している場合は、[手順6](#step06)を実行してください。
 6. <span id="step06"></span>国内のクライアントが海外ノードのbucketにアクセスしている、あるいは海外のクライアントが国内ノードのbucketにアクセスしている状況がないかをチェックします。
  - 「はい」の場合は、COSのグローバルアクセラレーション機能を使用することをお勧めします。
- - 「いいえ」の場合は、[お問い合わせ](https://intl.cloud.tencent.com/support)ください。
+ - 「いいえ」の場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-sales)ください。
 
 <span id="ModifyCustomDomainNameResolution"></span>
 ### カスタムドメイン名解決の変更
 
 1. カスタムドメイン名がCOSドメイン名に解決されているかどうかをチェックします。
- - 「はい」の場合は、[お問い合わせ](https://intl.cloud.tencent.com/support)ください。
+ - 「はい」の場合は、[お問い合わせ](https://intl.cloud.tencent.com/contact-sales)ください。
  一般的なCOSドメイン名は次のとおりです。
 ```
 XXX.cos.ap-beijing.myqcloud.com  （COSデフォルトドメイン名）
@@ -70,7 +69,7 @@ XXX.cos.accelerate.myqcloud.com （COSグローバルアクセラレーション
 XXX.cos-website.ap-beijing.myqcloud.com（COS静的ページドメイン名）
 XXX.picbj.myqcloud.com（COS Cloud Infiniteデフォルトドメイン名）
 ```
- - 「いいえ」の場合は、[ステップ2](#2_step02)を実行してください。
+ - 「いいえ」の場合は、[手順2](#2_step02)を実行してください。
 一般的な非COSドメイン名は次のとおりです。 
 ```
 XXX.file.myqcloud.comまたはXXX.cdn.dnsv1.com（Tencent Cloud CDNデフォルトドメイン名）
@@ -91,3 +90,4 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 .SetDebugLog(true) .Build(); //CosXmlConfigオブジェクトを作成します
 ```
 その他のSDKの呼び出しについては、[SDKの概要](https://intl.cloud.tencent.com/document/product/436/6474)をご参照ください。
+
