@@ -1,4 +1,3 @@
-## Pay-As-You-Go by Monthly 95th Percentile
 ### Overdue Payment Notification
 You will receive a notification when your account balance becomes negative.
 
