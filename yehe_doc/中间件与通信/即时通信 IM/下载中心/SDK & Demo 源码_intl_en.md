@@ -69,20 +69,6 @@ You can download the latest source codes of IM SDKs and demos.
         </div>
     </div>
   </div>
-  <div class="card-container">
-    <div class="card">
-      <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-      <p class="titlename">WeChat Mini Program SDK</p>
-      <p style="color:#586376;">Includes all IM features and the capability to co-anchor in a live stream in a group</p>
-      <div style="margin-top: 13px;" >
-        <a  href="https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/IMSDK">Download via GitHub</a>
-        <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-wx-sdk">Download via npm</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">Integration Guide</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">Update Log</a>
-      </div>
-    </div>
-    </div>
-
 </div>
 
 [](id:client)

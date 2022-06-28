@@ -69,21 +69,6 @@
         </div>
     </div>
   </div>
-  <div class="card-container">
-    <div class="card">
-      <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-      <p class="titlename">微信小程序 SDK</p>
-      <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
-      <div style="margin-top: 13px;" >
-        <a  href="https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/IMSDK">Github 下载</a>
-        <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-wx-sdk">NPM 下载</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">集成指引</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a>
-      </div>
-    </div>
-    </div>
-     </div>
-    </div>
     </div>
 
 [](id:client)

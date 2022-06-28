@@ -53,42 +53,6 @@ tim.setLogLevel(0); // Common level. You are advised to use this level during co
 tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 ```
 
-#### **Mini Program project**
-```javascript
-// IM Mini Program SDK
-// SDK v2.11.2 and later versions support WebSocket, and you are advised to integrate such SDK versions. SDK v2.10.2 and earlier versions use HTTP.
-npm install tim-wx-sdk --save
-// The Tencent Cloud IM upload plugin is required to send messages such as images and files.
-npm install tim-upload-plugin --save
-```
->?If a problem occurs during dependency synchronization, change the npm source and try again.
->```
->// Change cnpm source
->npm config set registry http://r.cnpmjs.org/
->```
-
- Import modules to the project script and initialize the modules.
-```
-// SDK v2.11.2 and later versions support WebSocket, and you are advised to integrate such SDK versions. SDK v2.10.2 and earlier versions use HTTP.
-import TIM from 'tim-wx-sdk';
-import TIMUploadPlugin from 'tim-upload-plugin';
-
-let options = {
-  SDKAppID: 0 // Replace `0` with the `SDKAppID` of your IM app during access.
-};
-// Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
-let tim = TIM.create(options); // The SDK instance is usually represented by `tim`.
-
-// Set the SDK log level for output. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/en//SDK.html#setLogLevel">setLogLevel API Description</a>.
-tim.setLogLevel(0); // Common level. You are advised to use this level during connection as it covers more logs.
-// tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
-
-// Register the Tencent Cloud IM upload plugin.
-tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
-```
-
-For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/en//SDK.html).
-
 ### Integrating via script
 Import the SDK to your project by using the script tag and initialize the SDK.
 
@@ -124,42 +88,4 @@ For more information on how to initialize the SDK and use APIs, see [SDK Initial
 - [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [Download URL of Tencent Cloud IM Upload Plugin](https://www.npmjs.com/package/tim-upload-plugin)
 
-
-## FAQs
-
-**1. What should I do if I want to launch a Mini Program and deploy a production environment?**
-Configure domain names by navigating to **WeChat Official Accounts Platform** -> **Development** -> **Development Settings** -> **Server Domain Name**:
-
-Add the following domain names to **request valid domain names**:
-
-SDK v2.11.2 and later versions support WebSocket, and the following domain names must be added for them:
-
-| Domain Name | Description |  Required |
-|:-------:|---------|----|
-| `wss://wss.im.qcloud.com` | Web IM service domain | Yes |
-| `wss://wss.tim.qq.com` | Web IM service domain | Yes |
-| `https://web.sdk.qcloud.com` | Web IM service domain | Yes |
-| `https://webim.tim.qq.com` | Web IM service domain | Yes |
-
-SDK v2.10.2 and earlier versions use HTTP, and the following domain names must be added for them:
-
-| Domain Name | Description |  Required |
-|:-------:|---------|----|
-| `https://webim.tim.qq.com` | Web IM service domain | Yes |
-|`https://yun.tim.qq.com` | Web IM service domain | Yes |
-|`https://events.tim.qq.com` | Web IM service domain | Yes |
-|`https://grouptalk.c2c.qq.com`| Web IM service domain | Yes |
-|`https://pingtas.qq.com` | Web IM statistical domain | Yes |
-
-Add the following domain name to the **uploadFile valid domain name**:
-
-| Domain Name | Description |  Required |
-|:-------:|---------|----|
-|`https://cos.ap-shanghai.myqcloud.com` | File upload domain | Yes |
-
-Add the following domain name to **downloadFile valid domain name**:
-
-| Domain Name | Description |  Required |
-|:-------:|---------|----|
-|`https://cos.ap-shanghai.myqcloud.com` | File download domain | Yes |
 

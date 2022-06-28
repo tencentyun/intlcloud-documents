@@ -5,7 +5,6 @@ CI's intelligent thumbnail feature intelligently analyzes the quality, brillianc
 >?
 >
 > - The intelligent thumbnail feature is a paid service and billed by the video duration. For billing details, see "Media Processing Fees".
->- When this service is used for the first time under an account, CI will issue a free resource pack of 1,000 minutes valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For more information, see CI Free Tier.
 >- Three optimal keyframes will be output through smart analysis of each video file.
 
 
