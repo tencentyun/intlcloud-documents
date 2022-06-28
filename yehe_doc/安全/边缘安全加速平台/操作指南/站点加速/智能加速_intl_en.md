@@ -15,14 +15,14 @@ For dynamic content use cases, you can refer to the above scenarios. Your static
 
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site acceleration** > **Network optimization** on the left sidebar.
 2. On the **Smart acceleration** page, select the target site, and enable/disable the feature.
-![](https://qcloudimg.tencent-cloud.cn/raw/bb30c3beaf81355c15eb06b5b1ff3cb7.png)
+
 
 ### Enabling Smart Acceleration for a Subdomain
 You can also enable Smart Acceleration for a specific subdomain.
 
 1. Go to the [Rule engine](https://console.cloud.tencent.com/edgeone/rules) page, select the site and click ![](https://qcloudimg.tencent-cloud.cn/raw/0f0a8aa7913c1c31284b692eadbccd85.png)
 2. Complete the parameters as instructed below, and click **Save and publish**. For more information, see [Configuring Rule Engine](https://cloud.tencent.com/document/product/1552/70901).
-![](https://qcloudimg.tencent-cloud.cn/raw/ce44de89e8b4c158aae985566269ddb4.png)
+
 Parameters:
  - Match type: Host
  - Operator: Equals to 
