@@ -1,6 +1,6 @@
 ## Feature Description
 
-The API (`DescribeMediaJobs`) is used to pull tasks that meet specified conditions.
+The API (`DescribeMediaJobs`) is used to pull jobs that meet specified conditions.
 
 ## Request
 
@@ -14,35 +14,35 @@ Authorization: <Auth String>
 
 ```
 
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request does not have a request body.
 
 #### Request parameters
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
-| QueueId | None | ID of the queue from which tasks are pulled | String | Yes |
-| Tag           | None        | Task type: Transcode       | String    |Yes|
-| OrderByTime | None | `Desc` (default) or `Asc` | String | No |
-| NextToken | None | Context token for pagination | String | No |
-| Size | None | Maximum number of tasks pulled. The default value is 10. The maximum value is 100. | Integer | No |
-| States | None | Status of the tasks to pull. If you enter multiple task states, separate them with commas (,). Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` | String | No |
-| StartCreationTime | None | Start time of the time range for task pulling. Format: `%Y-%m-%dT%H:%m:%S%z`. Example: 2001-01-01T00:00:00+0800 | String | No |
-| EndCreationTime | None | End time of the time range for task pulling. Format: `%Y-%m-%dT%H:%m:%S%z`. Example: 2001-01-01T23:59:59+0800  | String | No |
+| queueId | None | ID of the queue from which jobs are pulled | String | Yes |
+| tag | None | Job type: Transcode | String | Yes |
+| orderByTime | None | `Desc` (default) or `Asc` | String | No |
+| nextToken | None | Context token for pagination | String | No |
+| size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
+| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them with commas (,). Valid values: All (default), Submitted, Running, Success, Failed, Pause, Cancel | String | No |
+| startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T00:00:00+0800` | String | No |
+| endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T23:59:59+0800`  | String | No |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -56,7 +56,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -66,62 +66,14 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| JobsDetail | Response | Task details. Same as the `Response.JobsDetail` node in the [CreateMediaJobs](https://intl.cloud.tencent.com/document/product/1045/43695) API. |  Container |
+| JobsDetail | Response | Job details. Same as the `Response.JobsDetail` node in the [CreateMediaJobs](https://intl.cloud.tencent.com/document/product/1045/43695) API. |  Container |
 | NextToken             | Response | Context token for pagination | String    |
-
-`JobsDetail` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
-| JobId              | Response.JobsDetail | Task ID                               | String    |
-| Tag                | Response.JobsDetail | Task type: Transcode                               | String    |
-| State | Response.JobsDetail | Task status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` |  String |
-| CreationTime       | Response.JobsDetail | Task creation time                         | String    |
-| StartTime          | Response.JobsDetail | Task start time                                               | String    |
-| EndTime          | Response.JobsDetail | Task end time                                               | String    |
-| QueueId            | Response.JobsDetail | ID of the queue where the task is in                                             | String    |
-| Input              | Response.JobsDetail | Input resource address of the task                   | Container |
-| Operation          | Response.JobsDetail | Operation rule. Up to 6 operation rules are supported.                           | Container |
-
-
-`Operation` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | 
-| ------------------- | ----------------------------- | ------------------------------------------------------------ | --------- | 
-| Transcode           | Response.JobsDetail.Operation | Transcoding template parameters                                             | Container | 
-| Watermark          | Response.JobsDetail.Operation | Watermark template parameters. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. | Container | 
-| TemplateId          | Response.JobsDetail.Operation | Template ID                                                 | String    | 
-| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Multiple watermark template IDs are supported.           | String    | 
-| Output              | Response.JobsDetail.Operation | Result output address                                                 | Container | 
-
->!`TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding task type parameter is used.
-
-`Transcode` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | 
-| ------------------ | :-------------------------------------- | ------------------------------------------------------------ | --------- | 
-| Container          | Response.JobsDetail.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| Video          | Response.JobsDetail.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| TimeInterval          | Response.JobsDetail.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| Audio          | Response.JobsDetail.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-| TransConfig          | Response.JobsDetail.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API `CreateMediaTemplate`.    | Container | 
-
-
-`Output` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | 
-| ------------------ | ------------------------------------- | ---------------- | ------ |
-| Region             | Response.JobsDetail.Operation.Output   | Bucket region                                 | String | 
-| Bucket             | Response.JobsDetail.Operation.Output   | Result storage bucket                               | String | 
-| Object             | Response.JobsDetail.Operationn.Output | Result file name | String | 
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Use Cases
 
 #### Request
 
@@ -149,6 +101,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
     <Message>Success</Message>
     <JobId>jabcxxxxfeipplsdfwe</JobId>
     <State>Submitted</State>
+    <Progress>0</Progress>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
     <EndTime></EndTime>
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
@@ -161,6 +114,13 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe22</WatermarkTemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe23</WatermarkTemplateId>
         <WatermarkTemplateId>t1318c5f428d474afba1797f84091cbe24</WatermarkTemplateId>
+        <DigitalWatermark>
+          <State>Success</State>
+          <Type>Text</Type>
+          <Message>123456789ab</Message>
+          <Version>V1</Version>
+          <IgnoreError>false</IgnoreError>
+        </DigitalWatermark>
         <Output>
             <Region>ap-beijing</Region>
             <Bucket>abc-1250000000</Bucket>
@@ -173,6 +133,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
     <Message>Success</Message>
     <JobId>jabcxxxxfeipplsdfwe</JobId>
     <State>Submitted</State>
+    <Progress>0</Progress>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
     <EndTime></EndTime>
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
@@ -215,6 +176,12 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
                 <Duration>60</Duration>
             </TimeInterval>
         </Transcode>
+        <DigitalWatermark>
+          <Type>Text</Type>
+          <Message>123456789ab</Message>
+          <Version>V1</Version>
+          <IgnoreError>false</IgnoreError>
+        </DigitalWatermark>
         <Output>
             <Region>ap-beijing</Region>
             <Bucket>abc-1250000000</Bucket>

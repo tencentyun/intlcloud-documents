@@ -17,12 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product//436/7778)).
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product//1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request requires the following request body:
@@ -88,7 +88,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ---------------------------------------------------- | --------- | ---- |
-| Format             | Request.Container | Container format. Valid values: mp4, flv, hls, ts, mp3, aac, WebM, dash | String | Yes       |
+| Format             | Request.Container | Container format. Valid values: mp4, flv, hls, ts, mp3, aac, WebM, dash, mov, avi | String | Yes       |
 | ClipConfig         | Request.Container | Segment configuration. This node is valid only when `format` is `hls` or `dash`.    | Container    | No  |
 
 `ClipConfig` has the following sub-nodes:
@@ -115,8 +115,8 @@ Audio/Video formats supported by different container formats are as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | -------------------------- | ------------- | --------------------- | ------ | ---- | ------------ | ------------------------------------------------------------ |
 | Codec              | Request.Video | Codec format         | String | No       | H.264. If `format` is `WebM`, the default value is `VP8`.        | 1. H.264<br/>2. H.265<br/>3. VP8 <br/>4. VP9   |
-| Width              | Request.Video | Width                 | String | No       | Original video width | 1. Value range: [128, 4096]<br/>2.Unit: px<br/>3.If only `Width` is set, `Height` is calculated according to the original video aspect ratio.<br/>4.This parameter must be an even number. |
-| Height             | Request.Video | Height                 | String | No   | Original video height | 1. Value range: [128, 4096]<br/>2.Unit: px<br/>3. If only `Height` is set, `Width` is calculated according to the original video aspect ratio.<br/>4. This parameter must be an even number. |
+| Width              | Request.Video | Width                 | String | No       | Original video width | 1. Value range: [128, 4096]<br/>2.Unit: px<br/>3.If only `Width` is set, `Height` is calculated based on the original video aspect ratio.<br/>4.This parameter must be an even number. |
+| Height             | Request.Video | Height                 | String | No   | Original video height | 1. Value range: [128, 4096]<br/>2.Unit: px<br/>3. If only `Height` is set, `Width` is calculated based on the original video aspect ratio.<br/>4. This parameter must be an even number. |
 | Fps                        | Request.Video | Frame rate                  | String | No   | None           | 1. Value range: (0, 60]<br>2. Unit: fps |
 | Remove             | Request.Video | Whether to delete the video stream     | String | No       | false        |  Valid values: true, false                                               |
 | Profile            | Request.Video | Encoding level           | String | No       | high         | 1. Valid values: baseline, main, high, auto<br/>2. If `Pixfmt` is `auto`, this parameter can only be `auto` and will be changed to `auto` if set to other values.<br/>3. baseline: Suitable for mobile devices.<br/>4. main: Suitable for standard resolution devices.<br/>5. high: Suitable for high resolution devices.<br/>6. Only H.264 supports this parameter. |
@@ -144,7 +144,7 @@ Audio/Video formats supported by different container formats are as follows:
 | Codec              | Request.Audio | Codec format   | String | No       | `aac`. If `format` is `WebM`, the default value is `Vorbis`.    | Valid values: aac, mp3, flac, amr, Vorbis, opus                                     |
 | Samplerate         | Request.Audio | Sample rate       | String | No       | `44100`. If `Codec` is `opus`, the default value is `48000`.  | <ul  style="margin: 0;"><li>Unit: Hz</li><li>Valid values: 8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000</li><li>Different container formats support different MP3 sample rates, as shown in the table below.</li><li>If `Codec` is `amr`, the value can only be `8000`.</li><li>If `Codec` is `opus`, the value can be `8000`, `16000`, `24000`, or `48000`.</li></ul> |
 | Bitrate            | Request.Audio | Original audio bitrate | String | No       | None     | <ul  style="margin: 0;"><li>Unit: Kbps</li><li>Value range: [8, 1000] </li></ul>          |
-| Channels           | Request.Audio | Number of sound channels       | String | No       | None     | <ul  style="margin: 0;"><li>If `Codec` is `aac` or `flac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.</li><li>If `Codec` is `mp3` or `opus`, the value can only be `1` or `2`.</li><li>If `Codec` is `Vorbis`, the value can only be `2`.</li><li>If `Codec` is `amr`, the value can only be `1`.</li><li>If `Codec` is `dash`, the value cannot be `8`.</li></ul> | |
+| Channels           | Request.Audio | Number of sound channels       | String | No       | None     | <ul  style="margin: 0;"><li>If `Codec` is `aac` or `flac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.</li><li>If `Codec` is `mp3` or `opus`, the value can only be `1` or `2`.</li><li>If `Codec` is `Vorbis`, the value can only be `2`.</li><li>If `Codec` is `amr`, the value can only be `1`.</li><li>If `Codec` is `dash`, the value cannot be `8`.</li></ul> |
 | Remove             | Request.Audio | Whether to delete the source audio stream | String | No   |   false    | Valid values: true, false                                             |
 | KeepTwoTracks      | Request.Audio | Keep double audio track | String | No   | false    | Valid values: true, false. If `Video.Codec` is `H.265`, this parameter is invalid.
 | SwitchTrack        | Request.Audio | Switch the track | String | No   | false    | Valid values: true, false. If `Video.Codec` is `H.265`, this parameter is invalid.                                       |
@@ -271,7 +271,7 @@ If `Audio.Codec` is `mp3`, `Container.Format` supports the sample rates as shown
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | --------------------- | ------------------- | ---------------- | ------ | ---- | ------ | ------------------------------------------------------------ |
-| AdjDarMethod          | Request.TransConfig                        | Resolution adjustment method               | String    | No       | none   | <ul  style="margin: 0;"><li>Valid values: scale, crop, pad, none</li><li>If the aspect ratio of the output video is different from that of the original video, the resolution is adjusted according to this parameter.</li><li>If the video codec is H.265, this parameter is invalid.</li></ul>  |
+| AdjDarMethod          | Request.TransConfig                        | Resolution adjustment method               | String    | No       | none   | <ul  style="margin: 0;"><li>Valid values: scale, crop, pad, none</li><li>If the aspect ratio of the output video is different from that of the original video, the resolution is adjusted based on this parameter.</li></ul>  |
 | IsCheckReso           | Request.TransConfig                        | Whether to check the resolution               | String    | No       | false  | <ul  style="margin: 0;"><li>Valid values: true, false </li><li>If the value is `false`, transcoding is performed based on settings.</li></ul>      |
 | ResoAdjMethod         | Request.TransConfig                        | Resolution adjustment method               | String    | No       | 0      | <ul  style="margin: 0;"><li>Valid values: 0, 1. `0` indicates to use the original video resolution. `1` indicates to return the transcoding failure message.</li><li>This parameter is valid only when `IsCheckReso` is `true`.</li></ul> |
 | IsCheckVideoBitrate   | Request.TransConfig                        | Whether to check the video bitrate             | String    | No       | false  | <ul  style="margin: 0;"><li>Valid values: true, false </li><li>If the value is `false`, transcoding is performed based on settings. </li><li>If the video codec is H.265, this parameter is invalid.</li></ul> |
@@ -281,7 +281,6 @@ If `Audio.Codec` is `mp3`, `Container.Format` supports the sample rates as shown
 | DeleteMetadata        | Request.TransConfig                         | Whether to delete metadata from the file | String    | No       | false  | <ul  style="margin: 0;"><li>Valid values: true, false </li><li>If the value is `false`, the source file information is retained.</li></ul> |
 | IsHdr2Sdr             | Request.TransConfig                        | Whether to enable HDR-to-SDR conversion             | String    | No       | false  | Valid values: true, false                                                   |
 | HlsEncrypt            | Request.TransConfig                        | HLS encryption configuration                  | Container | No       | None     | None                                                           |
-| StreamSegmentTime           | Request.TransConfig | Segmentation time for dash and other formats        | String | No       | 5            | <ul  style="margin: 0;"><li>(0, video duration] </li><li>Unit: second</li></ul>|
 
 The `AdjDarMethod` parameter is illustrated as follows:
 
@@ -300,7 +299,7 @@ The `AdjDarMethod` parameter is illustrated as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product//1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
@@ -371,7 +370,7 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product//1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
 ## Use Cases
 
@@ -479,3 +478,4 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
     </Template>
 </Response>
 ```
+
