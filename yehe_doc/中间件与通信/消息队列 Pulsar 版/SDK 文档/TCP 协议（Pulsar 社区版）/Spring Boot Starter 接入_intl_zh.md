@@ -103,6 +103,7 @@ public class ProducerConfiguration {
 defaultProducer.send("topic2", ("Hello pulsar client, this is a order message.").getBytes(StandardCharsets.UTF_8));
 :::  
 </dx-codeblock>
+
 > !
 >
 > - 发送消息的 Topic 是在生产者配置中已经声明的 Topic。
