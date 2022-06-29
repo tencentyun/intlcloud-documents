@@ -3,11 +3,11 @@
 This document takes the Java client as an example to describe how to migrate a CMQ queue to TDMQ for CMQ.
 
 **Migration principle**
-<img src="https://main.qcloudimg.com/raw/bd0a7851575796b8c954eeeb6dcf8144.png" width="569">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b1a61ffa02c05dbaafe48cbdc72f1ae6.png" width="569">
 
 
 **Scheme overview**
-<img src="https://main.qcloudimg.com/raw/a6e13ca122d8524b365c83b53ec05c9b.png" width="569">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/079f11331fa9f030c9e48fdbc8fece34.png" width="569">
 
 
 **Overall process**
