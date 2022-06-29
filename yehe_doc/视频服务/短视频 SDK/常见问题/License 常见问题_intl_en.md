@@ -14,7 +14,7 @@ A free trial license is valid for 14 days and can be renewed once, making the to
 
 >! If you renew a trial license within the first 14 days, the license will expire 28 days after the time of license application; if you renew a trial license that has expired once, the renewed license will expire 14 days after renewal.
 >- For example, if you apply for a trial license at 11:34:55 on May 25, 2022, it will expire 14 days later at 00:00:00 on June 9, 2022.
->- You can renew the trial license once for free. If you renew it within the first 14 days, it will expire at 10:28:41 on June 23, 2022; if you renew it after the first 14 days, for example, at 22:26:20 on July 3, 2022, it will expire at 00:00:00 on July 18, 2022.
+>- You can renew the trial license once for free. If you renew it within the first 14 days, it will expire at 00:00:00 on June 23, 2022; if you renew it after the first 14 days, for example, at 22:26:20 on July 3, 2022, it will expire at 00:00:00 on July 18, 2022.
 
 
 [](id:que2)
