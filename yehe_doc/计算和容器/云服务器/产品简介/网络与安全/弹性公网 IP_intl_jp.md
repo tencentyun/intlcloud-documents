@@ -69,7 +69,7 @@ EIPはクラウドリソースのライフサイクルとの結合を解除し�
 | 1つTencent Cloudアカウントが1つのリージョンにおける1日の購買申請回数 | クォータ数 \* 2回 |
 | EIPのバインド解除を行うとき、各アカウントが毎日無料でパブリックIPを再アサインできる回数 | 10回 |
 
-> Elastic IPのクォータ調整はデフォルトでサポートされません、 [NAT Gateway](https://cloud.tencent.com/product/nat)と[Cloud Load Balancer](https://cloud.tencent.com/document/product/214) を通して、IP収束を実行できます。
+> Elastic IPのクォータ調整はデフォルトでサポートされません、 [NAT Gateway](https://intl.cloud.tencent.com/product/nat)と[Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) を通して、IP収束を実行できます。
 > - 特別な状況に応じて調整が必要な場合、アカウントには対応する同レベルのクラウドサービスリソースが存在し、合理的に使用してください。
 > - 要求されたクォータ数が高い場合は、超えた分のクォータが課金される可能性があります。
 > - 調整した後、IPが頻繁に変更され、法律に違反した場合、Tencent Cloudがクォータを回収する権利があります。
