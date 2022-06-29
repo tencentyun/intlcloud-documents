@@ -13,7 +13,7 @@ Amazon Simple Storage Service(Amazon S3, 이하 S3)는 AWS에서 출시한 최�
 
 (이미 Tencent Cloud 계정이 있는 경우 이 단계를 생략할 수 있습니다.)
 
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">Tencent Cloud 계정 가입</a></div>
+<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/account/register" target="_blank"  style="color: white; font-size:16px;">Tencent Cloud 계정 가입</a></div>
 
 #### 2단계: 실명 인증
 
