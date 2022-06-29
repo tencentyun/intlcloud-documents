@@ -158,7 +158,7 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int |
 
 #### Returned values
 
@@ -247,7 +247,7 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
 
 #### Returned values
 
@@ -373,7 +373,7 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
 
 #### Returned values
 
@@ -472,7 +472,7 @@ The request members are as described below:
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | File metadata | ObjectMetadata |
-| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | No |
+| trafficLimit | Set method | Traffic limit on the uploaded object in bit/s. There is no limit by default. | Int | 
 
 #### Returned values
 
