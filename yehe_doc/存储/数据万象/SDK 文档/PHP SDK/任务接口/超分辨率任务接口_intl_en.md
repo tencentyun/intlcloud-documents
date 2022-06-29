@@ -232,7 +232,7 @@ try {
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
-> Note:
+>!
 >
 > `TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
 
