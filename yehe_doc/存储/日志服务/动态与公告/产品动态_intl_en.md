@@ -11,8 +11,8 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Automatic unit conversion in dashboards</td><td>Chart units can be automatically converted. When a value meets the conversion factor, it will be automatically converted to the next higher unit, making data more readable.</td><td>2022-04-30</td><td><a href="https://cloud.tencent.com/document/product/614/74036">Unit Configuration</a></td></tr>
-		<tr><td>Trend comparison of sequence diagrams</td><td>Sequence diagrams support adding trend comparison curves of past cycles, enhancing the capabilities of comparative chart analysis. </td><td>2022-04-30</td><td><a href="https://cloud.tencent.com/document/product/614/74027#.E8.B6.8B.E5.8A.BF.E5.AF.B9.E6.AF.94">Trend Comparison</a></td></tr>
+		<tr><td>Automatic unit conversion in dashboards</td><td>Chart units can be automatically converted. When a value meets the conversion factor, it will be automatically converted to the next higher unit, making data more readable.</td><td>2022-04-30</td><td>Unit Configuration<</td></tr>
+		<tr><td>Trend comparison of sequence diagrams</td><td>Sequence diagrams support adding trend comparison curves of past cycles, enhancing the capabilities of comparative chart analysis. </td><td>2022-04-30</td><td>Trend Comparison</td></tr>
 		<tr><td>Consumption over Kafka in all regions</td><td>You can consume data to downstream big data components or data warehouses over the Kafka protocol, such as self-built Kafka clusters, ClickHouse, Hive, and Flink, as well as Tencent Cloud EMR and Oceanus.</td><td>2022-04-20</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42752">Consumption over Kafka</a></td></tr>
 		<tr><td>Use of SQL to collect and analyze historical data when the index configuration is modified</td><td>When the index configuration is modified, users can use SQL to collect and analyze historical data for existing fields in the original configuration (but not for new fields).</td><td>2022-04-18</td><td>-</td></tr>
 		<tr><td>Metadata collection range selection for container collection</td><td>You can select one or more container metadata fields collected by default and configure whether to enable index.</td><td>2022-04-13</td><td>-</td></tr>
@@ -67,7 +67,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>Support for permanent retention of log topics</td><td>You can customize the log topic retention period to a value ranging from 1 to 3600 days or enable permanent retention.</td><td>2022-01-25</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37887">Specifications</a></td></tr>
+		<tr><td>Support for permanent retention of log topics</td><td>You can customize the log topic retention period to a value ranging from 1 to 3600 days or enable permanent retention.</td><td>2022-01-25</td><td>Specifications</td></tr>
 		<tr><td>Launch of the index configuration import feature</td><td>You can import the index configuration rules of existing log topics with a few clicks to improve efficiency.</td><td>2022-01-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">Configuring Indexes</a></td></tr>
 	</tbody>
 </table>
