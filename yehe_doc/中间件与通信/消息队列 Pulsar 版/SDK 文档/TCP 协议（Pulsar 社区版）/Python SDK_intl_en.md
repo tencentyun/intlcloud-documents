@@ -113,11 +113,13 @@ You need to enter the complete path of the topic name, i.e., `persistent://clust
    )
 :::
 </dx-codeblock>
+
 > ?
 >
 > - You need to enter the complete path of the topic name, i.e., `persistent://clusterid/namespace/Topic`, where the `clusterid/namespace/topic` part can be copied directly from the **[Topic](https://console.cloud.tencent.com/tdmq/topic)** page in the console.
 >   ![img](https://qcloudimg.tencent-cloud.cn/raw/4bb986f5e871cb9d72d9066ecf7eea66.png)
 > - You need to enter the subscription name in the `subscriptionName` parameter, which can be viewed on the **Consumption Management** page.
+
 6. Consume the message.
 <dx-codeblock>
 :::  python
