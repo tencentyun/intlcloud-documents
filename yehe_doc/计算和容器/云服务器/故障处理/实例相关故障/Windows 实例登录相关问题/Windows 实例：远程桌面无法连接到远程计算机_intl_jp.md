@@ -107,7 +107,7 @@ WindowsインスタンスへのWindowsリモート接続の適用時に、下図
 14. 下図のように、「設定のカスタマイズ」ウィンドウで、「プライベートネットワークの設定」と「パブリックネットワークの設定」を「Windowsファイアウォールを無効にする（非推奨）」に設定します。
 ![無効化](https://main.qcloudimg.com/raw/5d5f8c4d7b783bc1018e03368ae400bc.png)
 
-上記の操作を実行しても、リモートデスクトップによってWindowsインスタンスに接続できない場合は、[オンラインサポート](https://cloud.tencent.com/online-service?from=doc_213) に連絡してフィードバックしてください。
+上記の操作を実行しても、リモートデスクトップによってWindowsインスタンスに接続できない場合は、[オンラインサポート](https://console.intl.cloud.tencent.com/workorder/category) に連絡してフィードバックしてください。
 
 
 
