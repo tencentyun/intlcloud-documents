@@ -43,7 +43,7 @@ pulsar:
   service-url: http://pulsar-xxx.tdmq.ap-gz.public.tencenttdmq.com:8080
   # 授权角色密钥
   token-auth-value: eyJrZXlJZC....
-  # 集群 ID
+  # 集群名称
   tenant: pulsar-xxx
 :::
 </dx-codeblock>
@@ -54,73 +54,55 @@ pulsar:
 </tr>
 <tr>
 <td>namespace</td>
-<td>命名空间名称，在控制台 <a href = "https://console.intl.cloud.tencent.com/tdmq/env"><b>命名空间</b></a> 管理页面中复制。</td>
+<td>命名空间名称，在控制台 <a href = "https://console.cloud.tencent.com/tdmq/env"><b>命名空间</b></a> 管理页面中复制。</td>
 </tr>
 <tr>
 <td>service-url</td>
-<td>集群接入地址，可以在控制台 <a href = "https://console.intl.cloud.tencent.com/tdmq/cluster"><b>集群管理</b></a> 页面查看并复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/0870f78ee97b38799824fd0ff0d3d4b7.png"></td>
+<td>集群接入地址，可以在控制台 <a href = "https://console.cloud.tencent.com/tdmq/cluster"><b>集群管理</b></a> 页面查看并复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/0870f78ee97b38799824fd0ff0d3d4b7.png"></td>
 </tr>
 <tr>
 <td>token-auth-value</td>
-<td>角色密钥，在 <a href = "https://console.intl.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制密钥列复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/a585d077b08ae9b11fffcebf6cde926e.png"></td>
+<td>角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制密钥列复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/a585d077b08ae9b11fffcebf6cde926e.png"></td>
 </tr>
 <tr>
 <td>tenant</td>
-<td>集群 ID，在控制台 <a href = "https://console.intl.cloud.tencent.com/tdmq/cluster"><b>集群管理</b></a> 页面中获取。</td>
+<td>集群 ID，在控制台 <a href = "https://console.cloud.tencent.com/tdmq/cluster"><b>集群管理</b></a> 页面中获取。</td>
 </tr>
 </table>
 
 ### 步骤3：生产消息
 
-1. 生产者工厂配置。
+1. 生产者配置。
 <dx-codeblock>
 :::  java
- @Configuration
- public class ProducerConfiguration {
+@Configuration
+public class ProducerConfiguration {
 
-		 @Bean
-		 public ProducerFactory producerFactory() {
-				 return new ProducerFactory()
-								 // topic1 使用String类型生产者
-								 .addProducer("topic1", String.class)
-								 // topic2 使用byte[]类型(默认类型)生产者
-								 .addProducer("topic2")
-								 // topic3 使用MyMessage类型生产者 (自定义消息类型)
-								 .addProducer("topic4", MyMessage.class);
-		 }
- }
+    @Bean
+    public ProducerFactory producerFactory() {
+        return new ProducerFactory()
+                // topic1
+                .addProducer("topic1")
+                // topic2
+                .addProducer("topic2");
+    }
+}
 :::
 </dx-codeblock>
 2. 注入生产者。
-<dx-codeblock>
-:::  java
-@Autowired
-private PulsarTemplate<byte[]> defaultProducer;  // byte[]类型生产者
-
-@Autowired
-private PulsarTemplate<String> stringProducer;   // String类型生产者
-
-@Autowired
-private PulsarTemplate<MyMessage> customProducer;  // MyMessage类型生产者 (自定义消息类型)
-:::
-</dx-codeblock>
+   <dx-codeblock>
+   :::  java
+   @Autowired
+   private PulsarTemplate<byte[]> defaultProducer;
+	 :::
+   </dx-codeblock>
 3. 发送消息。
 <dx-codeblock>
 :::  java
-// 发送String类型的消息
-stringProducer.send("topic1", "Hello pulsar client.");
-
-// 发送MyMessage类型消息 (自定义消息类型)
-MyMessage myMessage = new MyMessage();
-myMessage.setData("Hello client, this is a custom message.");
-myMessage.setSendDate(new Date());
-customProducer.send("topic4", myMessage);
-
-// 发送byte[]类型消息
-defaultProducer.send("topic2", ("Hello pulsar client, this is a order message" + i + ".").getBytes(StandardCharsets.UTF_8));
-:::
+// 发送消息
+defaultProducer.send("topic2", ("Hello pulsar client, this is a order message.").getBytes(StandardCharsets.UTF_8));
+:::  
 </dx-codeblock>
-
 > !
 >
 > - 发送消息的 Topic 是在生产者配置中已经声明的 Topic。
@@ -134,16 +116,15 @@ defaultProducer.send("topic2", ("Hello pulsar client, this is a order message" +
 :::  java
 @PulsarConsumer(topic = "topic1",  // 订阅topic名称
                 subscriptionName = "sub_topic1", // 订阅名称
-                clazz = String.class, // 消息类型，需要与生产者保持一致，绑定后不能修改类型
                 serialization = Serialization.JSON, // 序列化方式
                 subscriptionType = SubscriptionType.Shared, // 订阅模式，默认为独占模式
                 consumerName = "firstTopicConsumer", // 消费者名称
                 maxRedeliverCount = 3, // 最大重试次数
                 deadLetterTopic = "sub_topic1-DLQ" // 死信topic名称
                )
-public void topicConsume(String msg) {
+public void topicConsume(byte[] msg) {
     // TODO process your message
-    System.out.println("Received a new message. content: [" + msg + "]");
+    System.out.println("Received a new message. content: [" + new String(msg) + "]");
     // 如果消费失败，请抛出异常，这样消息会进入重试队列，之后可以重新消费，直到达到最大重试次数之后，进入死信队列。前提是要创建重试和死信topic
 }
 :::
@@ -153,7 +134,7 @@ public void topicConsume(String msg) {
 
 ### 步骤5：查询消息
 
-1. 登录控制台，进入 **[消息查询](https://console.intl.cloud.tencent.com/tdmq/message)** 页面，可查看 Demo 运行后的消息轨迹。
+登录控制台，进入 **[消息查询](https://console.cloud.tencent.com/tdmq/message)** 页面，可查看 Demo 运行后的消息轨迹。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7945598f64d3cfe6ee3fc07feb4b778c.png)
    消息轨迹如下：
 ![](https://qcloudimg.tencent-cloud.cn/raw/9bbfbc3236aec54f1654c520eaa0cba4.png)
