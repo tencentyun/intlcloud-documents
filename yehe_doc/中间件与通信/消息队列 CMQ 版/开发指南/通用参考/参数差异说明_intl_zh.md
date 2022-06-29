@@ -17,8 +17,6 @@
 
 新版 CMQ 取消了原版 CMQ 关于消息堆积条数的限制，理论上只要存储资源满足，可以无限堆积。但实际从硬件层面出发，我们会给每个队列分配10GB的最大堆积存储资源，并支持您通过该值配置对应的云监控告警。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3ca2d9c0dc1030373d365e7df9003514.png)
-
 一般平均1KB大小的消息可以堆积大约1千万条，可以依据此进行简单换算，如发现迁移后此处可能存在堆积超过上限的风险，可以及时通过 [工单](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=947&source=14&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20CMQ&step=1) 与我们联系。
 
 ### 消息大小
