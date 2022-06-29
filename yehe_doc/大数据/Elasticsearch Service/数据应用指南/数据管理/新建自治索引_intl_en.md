@@ -1,7 +1,8 @@
 ## Prerequisites
 - You have a Tencent Cloud account. For more information on how to create an account, see [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985).
 - You have created an ES cluster on v7.14.2. For more information on how to create a cluster, see [Creating Clusters](https://intl.cloud.tencent.com/document/product/845/19536).
->! Only [autonomous indices](https://intl.cloud.tencent.com/document/product/845/47694) can be created. Developed by Tencent Cloud, the autonomous index feature is suitable for time series data use cases such as log analysis and Ops monitoring, and can achieve index lifecycle management and automatic sharding optimization, with improved read and write efficiency. This feature is naturally applicable to clusters on v7.14.2 created after June 1, 2022 and is supported for older clusters on this version after a cluster restart. To use this feature in clusters on earlier versions, upgrade them to v7.14.2 first.
+>! Only [autonomous indices](https://intl.cloud.tencent.com/document/product/845/47694) can be created. 
+Developed by Tencent Cloud, the autonomous index feature is suitable for time series data use cases such as log analysis and Ops monitoring, and can achieve index lifecycle management and automatic sharding optimization, with improved read and write efficiency. This feature is naturally applicable to clusters on v7.14.2 created after June 1, 2022 and is supported for older clusters on this version after a cluster restart. To use this feature in clusters on earlier versions, upgrade them to v7.14.2 first.
 
 ## Directions
 ### Step 1. Go to the "Create" page
