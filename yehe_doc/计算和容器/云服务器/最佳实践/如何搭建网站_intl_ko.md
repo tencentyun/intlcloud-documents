@@ -26,7 +26,7 @@ Tencent Cloud는 주요 웹 사이트 시스템을 위한 다양한 유형의 �
 </thead>
 <tbody><tr>
 <td>구축 방식</td>
-<td>Tencent <a href="https://market.cloud.tencent.com/" target="_blank">클라우드 마켓</a>의 시스템 이미지 직접 설치 및 배포를 선택합니다.</td>
+<td>Tencent 클라우드 마켓</a>의 시스템 이미지 직접 설치 및 배포를 선택합니다.</td>
 <td>필요한 소프트웨어를 수동으로 설치합니다. 사용자 정의할 수 있습니다.</td>
 </tr>
 <tr>
