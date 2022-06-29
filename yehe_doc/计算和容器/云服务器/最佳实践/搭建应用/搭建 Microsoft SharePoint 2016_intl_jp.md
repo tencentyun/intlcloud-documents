@@ -1,125 +1,128 @@
-## 操作シナオリ
-このドキュメントでは、CVMインスタンスでMicrosoft SharePoint 2016を構築する方法について説明します。
+## ユースケース
+このドキュメントでは、CVMインスタンス上でMicrosoft SharePoint 2016を構築する方法についてご説明します。
 
-## ソフトウェアバージョン
-このドキュメントでは、例として次のハードウェア仕様のCVMインスタンスを使用しています。
+## ソフトウェアバージョンの例
+ここで例に挙げる手順において使用するCVMインスタンスのハードウェア仕様は次のとおりです。
 - vCPU：4コア
-- メモリ：8GB
+- メモリ： 8GB
 
-このドキュメントでは、例として次のソフトウェアバージョンを使用しています。
-- OS：Windows Server 2012 R2 データセンター版 64ビット（中国語）
+ここで例に挙げる手順では、次のソフトウェアバージョンを使用しています。
+- OS：Windows Server 2012 R2 データセンターバージョン64ビット英語版
 - データベース：SQL Server 2014
 
 ## 前提条件
-Windows CVMを購入しました。CVMを購入していない場合は、[ Windows CVMのカスタム設定](https://intl.cloud.tencent.com/document/product/213/10516)をご参照ください。
+Windows CVMを購入済みであること。CVMを購入していない場合は、[Windows CVMのクイック設定](https://intl.cloud.tencent.com/document/product/213/10516)をご参照ください。
 
 ## 操作手順
 
-### ステップ1：Windowsインスタンスにログインする
-[RDPファイルを利用してWindowsインスタンスにログインする（推奨）](https://intl.cloud.tencent.com/document/product/213/5435)。また、実際の操作方法により、[リモートデスクトップ接続を利用してWindowsインスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32498)こともできます。
+### ステップ1：Windowsインスタンスへのログイン
+[RDPファイルを使用してWindowsインスタンスにログイン（推奨）](https://intl.cloud.tencent.com/document/product/213/5435)します。実際の操作習慣に合わせて、[リモートデスクトップを利用してWindowsインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32498)することもできます。
 
-<span id="AddAD_DHCP_DNS_IIS"></span>
-### ステップ2：AD、DHCP、DNS、およびIISサービスを追加する
-1. OS画面で、<img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img> をクリックして、サーバマネージャーを開きます。
-2. 左側のナビゲーションメニューバーで【ローカルサーバ】を選択し、【IEセキュリティ強化の構成】を見つけます。以下の通りです。
-![](https://main.qcloudimg.com/raw/9192efa291cfbed136db9a6e3a7c3e59.png)
-3. 次に示すように、【IEセキュリティ強化の構成】を無効にします。
-![](https://main.qcloudimg.com/raw/8b860bb5dfc44ec4993c3a899058b1ae.png)
-4. 左側のナビゲーションメニューバーで、【ダッシュボード】を選択し、【役割と機能の追加】をクリックし、「役割と機能の追加ウィザード」ウィンドウを開きます。
-5. 「役割と機能の追加ウィザード」ウィンドウで、デフォルト設定のままにして、【次へ】を3回連続でクリックします。
-6. 【サーバーの役割の選択】画面で、【Active Directoryドメインサービス】、【DHCPサーバ】、【DNSサーバ】、【Webサーバ(IIS)】を選択し、次のようにポップアップウィンドウで【機能の追加】をクリックします。
-![](https://main.qcloudimg.com/raw/532dc46bf0682427e9b210bf36e1986f.png)
-7.【次へ】をクリックします。
-8.「機能の選択」画面で、【.NET Framework 3.5 】をチェックして、下図に示すように、ポップアップウィンドウで【機能の追加】をクリックしてください。
-![](https://main.qcloudimg.com/raw/44998bf3effff6bec51ea9c502ec8c9a.png)
-9.デフォルト設定のままにして、【次へ】を6回連続でクリックします。
-10. インストール情報を確認し、【インストール】をクリックします。
-11.インストールが完了すると、CVMを再起動します。
-12. OS画面で、<img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img> をクリックして、サーバマネージャーを開きます。
-13. サーバーマネージャウィンドウで、<img src="https://main.qcloudimg.com/raw/b7b26ebdfecb3b158adac1a37d7a23f3.png" style="margin: 0;"></img>をクリックして、【このサーバーをドメインコントローラーに昇格する】を選択します。以下の通りです。
-![](https://main.qcloudimg.com/raw/03def6c00f1bed979c9dde28ebbd2202.png)
-14. <span id="step14"></span>「配置構成」から「新しいフォレストを追加する(F)」を選択します。ルートドメイン名を入力して、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/adb2e7cbed1580eebeb201d837f41efa.png)
-15. <span id="step15"></span>ディレクトリサービス復元モード（DSRM）パスワードを設定し、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/dc24edd5f6d194cacc7b6ff8511417b7.png)
-16.デフォルト設定のままにして、【次へ】を4回連続でクリックします。
-17.【インストール】をクリックします。
-18. OS画面で、<img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img> をクリックして、サーバマネージャーを開きます。
-19. 下図に示すように、サーバマネージャーウィンドウで、<img src="https://main.qcloudimg.com/raw/b7b26ebdfecb3b158adac1a37d7a23f3.png" style="margin: 0;"></img> をクリックして、画面中央にある【DHCP構成を完了する】をクリックします。
-![](https://main.qcloudimg.com/raw/132eb061b6fd53da22b6211fd2411537.png)
-20.DHCPサーバーのインストール後、「DHCP インストール後の構成ウィザード」を使って、DHCPサーバーの基本的な構成を行います。【次へ】をクリックします。
-21. デフォルト設定のままにして、【コミット】をクリックしてインストールを完了します。
-![](https://main.qcloudimg.com/raw/6dab6c5968282757ff2e146c74765772.png)
-22. 【閉じる】をクリックして、ウィザードウィンドウを閉じます。
 
-### ステップ3：SQL Server 2014データベースのインストール
+### ステップ2：AD、DHCP、DNS、IISサービスの追加[](id:AddAD_DHCP_DNS_IIS)
+1. OSの画面で、<img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img>をクリックして、サーバーマネージャーを開きます。
+2. 下図のように、左側ナビゲーションバーで**ローカルサーバー**を選択し、**Internet Explorer拡張セキュリティ構成**を見つけます。
+![](https://main.qcloudimg.com/raw/c2b0791555bbc910cea70732c75daa0f.png)
+3. 下図のように、**Internet Explorer拡張セキュリティ構成**をオフにします。
+![](https://main.qcloudimg.com/raw/6acbf171bc703100401e48e362539b21.png)
+4. 左側ナビゲーションバーで**ダッシュボード**を選択し、**ロールと機能の追加**をクリックして、「ロールと機能の追加ウィザード」ウィンドウを開きます。
+5. 「ロールと機能の追加ウィザード」ウィンドウで、デフォルトの設定を維持したまま、**次へ**を3回続けてクリックします。
+6. 下図のように、「サーバーロールの選択」画面で、**Active Directoryドメインサービス**、**DHCPサーバー**、**DNSサーバー**、**Webサーバー(IIS)**にチェックを入れ、ポップアップしたウィンドウで**機能の追加**をクリックします。
+![](https://main.qcloudimg.com/raw/a2bb1c86c9277ca870c629ecf5b0d3f5.png)
+7. **次へ**をクリックします。
+8. 下図のように、「機能の選択」画面で、「.NET Framework 3.5機能」にチェックを入れ、ポップアップしたウィンドウで**機能の追加**をクリックします。
+![](https://main.qcloudimg.com/raw/bf47abbb95ad42b9d6c720c3bb2c846b.png)
+9. デフォルトの設定を維持したまま、**次へ**を6回続けてクリックします。
+10. インストール情報を確認し、**インストール**をクリックします。
+11. インストールの完了後にCVMを再起動します。
 
-1. CVMでブラウザーを開き、SQL Server 2014公式サイトでSQL Server 2014インストールパッケージをダウンロードします。
-> SQL Server 2014インストールパッケージは、サードパーティのウェブサイトまたはその他の有効なチャネルから入手することもできます。
->
-2. 「Setup.exe」ファイルをダブルクリックして、SQL Serverインストールウィザードを開き、インストールタブ画面に入ります。以下の通りです。
-![](https://main.qcloudimg.com/raw/66c2d6df469197d5550ce2fbae3cc5c9.png)
-3. 【SQL Server の新規スタンドアロンインストールを実行するか、既存のインストールに機能を追加 】をクリックします。　　
-4. 「プロダクト キー」 ページで、オプションを選択して、SQL Server の無償のエディション、または PID キーを持つ製品版のどちらをインストールするかを指定します。 続けるには、【次へ】を選択します。
-5. 「ライセンス条項」ページで、ライセンス条項を確認します。 同意する場合は、 【ライセンス条項とプライバシーに関する声明に同意します】 チェックボックスをオンして、【次へ】を選択します。
-6. デフォルト設定のままにして、【次へ】をクリックします。　
-7. インストールチェックが完了したら、【次へ】をクリックします。
-8. デフォルト設定のままにして、【次へ】をクリックします。
-9. 「機能の選択」 ページで、「すべて選択」をクリックし、すべての機能にチェックを入れ、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/15bb32c2d2121aadc092428911cefc16.png)
-10. 「インスタンス設定」画面で、「デフォルトインスタンス」を選択し、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/3663ca417620325c7b45bc8c60996db7.png)
-11. 「サーバーの構成」画面で、SQL ServerデータベースエンジンサービスとSQL Server Analysis Servicesサービスのアカウントとパスワードを設定し、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/c0bb2b960115d66eda4e38b40a56fc78.png)
+
+### ステップ3： ADサービスの設定
+1. OSの画面で、<img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img>をクリックして、サーバーマネージャーを開きます。
+2. 下図のように、サーバーマネージャーのウィンドウで、<img src="https://main.qcloudimg.com/raw/b7b26ebdfecb3b158adac1a37d7a23f3.png" style="margin: 0;"></img>をクリックして、**このサーバーをドメインコントローラに変更する**を選択します。
+![](https://main.qcloudimg.com/raw/1e6aa1d75044898357709909bb969c6f.png)
+3. [](id:step14)下図のように、表示された「Active Directoryドメインサービスの設定ウィザード」画面で、「デプロイ操作の選択」を**フォレストの新規追加**に設定し、ルートドメイン名を入力し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/017acc0e5939632f3808698f36320fd2.png)
+4. [](id:step15)下図のように、ディレクトリサービス復元モデル（DSRM）のパスワードを設定して、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/078672b95294790e4985108bd58d8504.png)
+5. デフォルトの設定を維持したまま、**次へ**を4回続けてクリックします。
+6. **インストール**をクリックします。
+
+### ステップ4： DHCPサービスの設定
+1. OSの画面で、<img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img>をクリックして、サーバーマネージャーを開きます。
+2. 下図のように、サーバーマネージャーのウィンドウで、<img src="https://main.qcloudimg.com/raw/b7b26ebdfecb3b158adac1a37d7a23f3.png" style="margin: 0;"></img>をクリックして、**DHCPの設定を完了する**を選択します。
+![](https://main.qcloudimg.com/raw/4c65a7990acc647866d73c1b5ba20a6c.png)
+3. 表示された「DHCPインストール後設定ウィザード」ウィンドウで、**次へ**をクリックします。
+4. 下図のように、デフォルトの設定を維持し、**送信**をクリックすると、インストール設定が完了します。
+![](https://main.qcloudimg.com/raw/4162a8fbde1b7af1d8fadacaa61965cf.png)
+5. **閉じる**をクリックし、ウィザードウィンドウを閉じます。
+
+### ステップ5：データベースSQL Server 2014のインストール
+
+1. CVMでブラウザを開き、SQL Server 2014公式サイトにアクセスし、SQL Server 2014インストールパッケージをダウンロードします。
+<dx-alert infotype="explain" title="">
+サードパーティのウェブサイトまたはその他の合法的な手段によってSQL Server 2014インストールパッケージを入手することもできます。
+</dx-alert>
+2. 「Setup.exe」ファイルをダブルクリックしてSQL Serverインストールウィザードを開き、下図のように、インストールオプションタブ画面で**新SQL Serverの単体インストールまたは既存のインストールに機能を追加する**をクリックします。
+![](https://main.qcloudimg.com/raw/f2cc33aef5ec2662238ffeca56d08a7d.png)
+3. 製品キーを入力し、**次へ**をクリックします。
+4. 「ライセンス条項に同意する」にチェックを入れ、**次へ**をクリックします。
+5. デフォルトの設定を維持したまま、**次へ**をクリックします。
+6. インストールチェックの完了後、**次へ**をクリックします。
+7. デフォルトの設定を維持したまま、**次へ**をクリックします。
+8. 下図のように、「機能の選択」画面で**すべて選択**をクリックし、すべての機能を選択して**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/92eac7b681dae5937bafa484874ae122.png)
+9. 下図のように、「インスタンスの設定」画面で**デフォルトのインスタンス**を選択し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/2bf1682b927b66224c574435ee35e7af.png)
+10. 下図のように、「サーバーの設定」画面で、SQL ServerデータベースエンジンサービスおよびSQL Server Analysis Servicesのアカウントとパスワードを設定し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/1310d9db077772be6dad6f58a698273e.png)
  - 「SQL Serverデータベースエンジン」のアカウント名を「NT AUTHORITY\NETWORK SERVICE」に設定します。
- - 「SQL Server Analysis Services」のアカウント名とパスワードを、[ステップ2：AD、DHCP、DNS、およびIISサービスの追加](#AddAD_DHCP_DNS_IIS)の [14](#step14) - [15](#step15) で設定されたドメインアカウントとパスワードに設定します。
-12. 「データベースエンジン」画面で、【現在のユーザーを追加】をクリックし、現在のアカウントをSQL Serverの管理者アカウントとして使用し、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/c0218409bfb7044221cb6c0fe1862588.png)
-13. 「Analysis Services設定」画面で、「現在のユーザーを追加」をクリックし、現在のアカウントにAnalysis Servicesの管理者権限を付与し、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/43243a387cc67f20ea125fb2491df24d.png)
-14. デフォルト設定のままにして、【次へ】をクリックします。
-15. 「Distributed Replayコントローラ」画面で、「現在のユーザーを追加」をクリックし、現在のアカウントにDistributed Replayコントローラの権限を追加して、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/46158b2f9a6e5f802c2ae27a2f5f0970.png)
-16. デフォルト設定のままにして、【次へ】をクリックします。
-17. SQL Serverの設定を確認し、【インストール】をクリックします。
-18. SQL Serverのインストールが完了したら、【閉じる】をクリックします。
+ - 「SQL Server Analysis Services」のアカウント名とパスワードに、[ステップ2：AD、DHCP、DNS、IISサービスの追加](#AddAD_DHCP_DNS_IIS) 中 [14](#step14) - [15](#step15)で設定したドメインアカウントとパスワードを設定します。
+11. 下図のように、「データベースエンジン」画面で、**現在のユーザーを追加する**をクリックし、現在のアカウントをSQL Serverの管理者アカウントとし、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/90ac80988b45a6b08650d97fd0d08c09.png)
+12. 下図のように、「Analysis Servicesの設定」画面で、**現在のユーザーを追加する**をクリックし、現在のアカウントにAnalysis Servicesの管理者権限を追加し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/5fda4e9b2ac31d8394ab0dfa14847d73.png)
+13. デフォルトの設定を維持したまま、**次へ**をクリックします。
+14. 下図のように、「Distributed Replayコントローラ」画面で、**現在のユーザーを追加する**をクリックし、現在のアカウントにDistributed Replayコントローラの権限を追加し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/2b67cc38051c51cb88ba7bbb740027b3.png)
+15. デフォルトの設定を維持したまま、インストールが完了するまで**次へ**をクリックします。
 
 
-### ステップ4：SharePoint 2016のインストール
+### ステップ6：SharePoint 2016のインストール
 
-1. CVMでブラウザーを開き、Microsoft SharePoint 2016公式サイトからMicrosoft SharePoint 2016インストールパッケージをダウンロードします。
-2. 「Microsoft SharePoint 2016」イメージファイルを開き、準備ツールの実行可能ファイル`prerequisiteinstaller.exeをダブルクリックして、Microsoft SharePoint 2016準備ツールをインストールします。以下の通りです。
-![](https://main.qcloudimg.com/raw/2de50f6a3172bd870f86378e33f1f07e.png)
-3. Microsoft SharePoint 2016 製品準備ツールのウィザードウィンドウが表示されたら、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/e5cd9c8ca37b36984258050443fdf5f1.png)
-4. 【使用許諾契約書の条項に同意します】をチェックして、【次へ】をクリック。
-5. 必須コンポーネントが順次インストールされるので、終わるまで待ちます。【完了】をクリックしてCVMを再起動します。以下の通りです。
-![](https://main.qcloudimg.com/raw/cc8f3bf7b151946d5fdd8f3882ea9549.png)
-6.「Microsoft SharePoint 2016」のイメージファイルを開き、インストールファイル`setup.exe`をダブルクリックして、Microsoft SharePoint 2016をインストールします。以下の通りです。
-![](https://main.qcloudimg.com/raw/bf0369e20c77e1f57bfef3fef42fab31.png)
-7. プロダクトキーを入力し、【続行】をクリックします。
-8. 【「マイクロソフトソフトウェア ライセンス条項」に同意します】にチェックを入れ、【続行】をクリック。
-9. インストールディレクトリ（この例ではデフォルト設定のままです。必要に応じて適切なインストールディレクトリを選択できます）を選択し、【今すぐインストール】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/0dbdfedb241b02a7f2fdaefb1a7599af.png)
-10. インストールが完了したら、【SharePoint 製品構成ウィザードを今すぐ実行する】にチェックを入れたまま、【閉じる】をクリックして、製品構成ウィザードの実行に進みます。以下の通りです。
-![](https://main.qcloudimg.com/raw/3fa47faa1f8bed1a8ec478260ee64481.png)
+1. CVMでブラウザを開き、Microsoft SharePoint 2016公式サイトにアクセスし、Microsoft SharePoint 2016インストールパッケージをダウンロードします。
+2. 下図のように、Microsoft SharePoint 2016イメージファイルを開き、準備ツールの実行可能ファイル`prerequisiteinstaller.exe`をダブルクリックし、Microsoft SharePoint 2016準備ツールをインストールします。
+![](https://main.qcloudimg.com/raw/1c6c2e0970ea456bbabd4a77ef454a5e.png)
+3. 下図のように、表示されたMicrosoft SharePoint 2016製品準備ツールのウィザードウィンドウで、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/4b42cde60ca558a7c905c6f8031e3a50.png)
+4. 「ライセンス規約の条項に同意する」にチェックを入れ、**次へ**をクリックします。
+5. 下図のように、必須コンポーネントのインストールが完了してから、**完了**をクリックし、CVMを再起動します。
+![](https://main.qcloudimg.com/raw/a8c14625c359decb9941511e267ea2a6.png)
+6. 下図のように、Microsoft SharePoint 2016イメージファイルを開き、インストールファイル`setup.exe`をダブルクリックし、Microsoft SharePoint 2016のインストールを開始します。
+![](https://main.qcloudimg.com/raw/2614739955551657148d9c3a72e566df.png)
+7. 製品キーを入力し、**続ける**をクリックします。
+8. 「この規約の条項に同意する」にチェックを入れ、**続ける**をクリックします。
+9. 下図のように、インストールディレクトリを選択し（この例ではデフォルト設定を維持していますが、実際の状況に応じて対応するインストールディレクトリを選択できます）、**今すぐインストール**をクリックします。
+![](https://main.qcloudimg.com/raw/3ea703e1632ec78b3f8f4b961c189208.png)
+10. インストールの完了後、下図のように、「SharePoint製品設定ウィザードを今すぐ実行する」にチェックを入れ、**閉じる**をクリックします。
+![](https://main.qcloudimg.com/raw/368fa9a4cdb3b47a77c554db855737e0.png)
 
-### ステップ5：SharePoint 2016の設定
+### ステップ7：SharePoint 2016の設定
 
-1. SharePoint製品構成ウィザードウィンドウで、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/3e8d015ab34ab8de8172838dd21d31ac.png)
-2. ポップアップボックスで【はい】をクリックし、設定中にサービスを再起動できるようにします。
-3. 【新しいサーバーファームの作成】を選択し、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/f87545fb79d747bf64c38131fbb318d4.png)
-4. 【構成データベースの設定】 ページで、次の操作を行います。以下の通りです。
-SharePointデータベースはローカルホスト上にあるため、ローカルデータベースとアカウントを入力する必要があります。
-![](https://main.qcloudimg.com/raw/cf9723c7885399e0e5004f1ecee4ea2d.png)
-5. 指定したサーバファームのパスワードを入力し、【次へ】をクリックします。
-6. 「マルチサーバファーム」を【フロントエンド】に設定し、【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/95da6977363606dd62835d12bc9b7ae2.png)
-7. 「SharePoint サーバーの全体管理 Webアプリケーションの構成」 ページで、次の手順を実行します。「ポート番号を指定する」 チェックボックスをオンにして、SharePoint サーバーの全体管理 Web アプリケーションで使用するポート番号を入力するか、または 「ポート番号を指定する」チェックボックスをオフのままにして、既定のポート番号を使用します。「 NTLM」 または「ネゴシエート (Kerberos)」をクリックします。【次へ】をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/26ef65e1e8e229e9c67c2eafc40c0d32.png)
-8. 「SharePoint 製品構成ウィザードの完了」 ページで、構成設定を確認し、【次へ】 をクリックします。以下の通りです。
-![](https://main.qcloudimg.com/raw/a0e8ee05fcc2fc4b6f717bb0e03287af.png)
-9.「構成成功」 ページで、【完了】をクリックします。
+1. 下図のように、実行したSharePoint製品設定ウィザードで、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/73aa25130b0e24e6784760a28d6d8fe2.png)
+2. ポップアップしたプロンプトウィンドウで、**はい**をクリックし、設定途中でのサービスの再起動を許可します。
+3. 下図のように、**サーバーファームを新規作成する**を選択し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/b66da626c4883f2f2fb1b75bce6042f6.png)
+4. 下図のように、データベース設定とデータベースにアクセスするアカウントの情報を指定し、**次へ**をクリックします。
+Sharepointのデータベースはローカルマシンにあるため、ローカルマシンのデータベースとアカウントを入力します。
+![](https://main.qcloudimg.com/raw/d1ccac780ddb9fb308b071fe385ad3f6.png)
+5. 指定するサーバーファームのパスワードを設定し、**次へ**をクリックします。
+6. 下図のように、「マルチサーバーファーム」を**フロントエンド**に設定し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/c23051f73ae543002bc9c15d3d2b3387.png)
+7. 下図のように、Sharepoint管理センターのポート番号を設定し（この例ではポート番号を10000としていますが、ポート番号は実際の状況に応じて設定することができます）、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/c7622761e6eb45b1935fccc851379b29.png)
+8. 下図のように、SharePointの設定を確認し、**次へ**をクリックします。
+![](https://main.qcloudimg.com/raw/8d97c6aff42bb8b27fb3e108fa3d16d8.png)
+9. SharePointの設定完了後、**完了**をクリックします。
 
