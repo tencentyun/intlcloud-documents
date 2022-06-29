@@ -103,6 +103,7 @@ public class ProducerConfiguration {
 defaultProducer.send("topic2", ("Hello pulsar client, this is a order message.").getBytes(StandardCharsets.UTF_8));
 :::  
 </dx-codeblock>
+
 > !
 >
 > - The topic that sends messages is the one declared in the producer configuration.
