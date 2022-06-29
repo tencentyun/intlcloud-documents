@@ -26,7 +26,7 @@ Tencent Cloud provides various types of website setup tutorials for mainstream w
 </thead>
 <tbody><tr>
 <td>How to set up</td>
-<td>Select a system image in <a href="https://market.cloud.tencent.com/" target="_blank">Tencent Cloud Marketplace</a> for direct installation and deployment. </td>
+<td>Select a system image in Tencent Cloud Marketplace</a> for direct installation and deployment. </td>
 <td>Install the required software manually, which can be customized. </td>
 </tr>
 <tr>
