@@ -34,7 +34,7 @@ Hadoop-2.6.0およびそれ以降のバージョン。
 
 > ?Hadoopの特定バージョンに応じて対応するjarパッケージを選択します。releaseの中に対応するバージョンのjarパッケージが提供されていない場合は、pomファイルのHadoopバージョン番号を変更することで再コンパイルと発行ができます。 
 
-2. hadoop_env.shファイルを変更します。`$HADOOP_HOME/etc/hadoop`ディレクトリに移動し、hadoop_env.shファイルを編集して、以下の内容を追加し、cosn関連のjarパッケージをHadoop環境変数に追加します。
+2. hadoop-env.shファイルを変更します。`$HADOOP_HOME/etc/hadoop`ディレクトリに移動し、hadoop-env.shファイルを編集して、以下の内容を追加し、cosn関連のjarパッケージをHadoop環境変数に追加します。
 
 ```shell
 for f in $HADOOP_HOME/share/hadoop/tools/lib/*.jar; do
