@@ -84,12 +84,14 @@ This document describes how to create a queue service and send a message in the 
     </tr>
     </tbody>
 </table>
->?To help you use TDMQ for CMQ more reasonably, we made the following adjustments on April 12, 2022 (which don't affect your ongoing production and consumption behaviors):
+
+> ? To help you use TDMQ for CMQ more reasonably, we made the following adjustments on April 12, 2022 (which don't affect your ongoing production and consumption behaviors):
 > 
 >- The limitation on the message lifecycle in the queue attributes was removed. For newly created queues, the length of the original message lifecycle is the same as the rewindable time. This means that no matter whether a message is confirmed for deletion by the client, it will be retained persistently for rewind in case of exceptions.
 >- The configuration item of maximum message unacknowledged time was added. If the consumer client fails to acknowledge a received message within this time period, the server will automatically acknowledge the message.
-3. Click **Submit**, and you can see the created queue service in the queue service list.
-![](https://qcloudimg.tencent-cloud.cn/raw/e6402ff4ab6e548c4441ca55d034e3a2.png)
+
+3. Click **Submit**, and you can see the created queue service in the queue service list
+
 > ?
 > - Visible Messages: A general message (non-delayed message) is visible at first when it is sent to a general message queue. After being fetched, if the message has not been deleted after the visibility timeout, it will become visible again. There is a 30–60s delay in data refresh.
 > - Invisible Messages: After a visible message is fetched, it will be made invisible in its hidden duration. There is a 30–60s delay in data refresh.
@@ -102,6 +104,6 @@ This document describes how to create a queue service and send a message in the 
 2. Select **Queue Service** on the left sidebar, select the **region**, and click **Send Message** in the **Operation** column of the target queue.
 3. Enter the message content and click **Send** to send a testing message to the recipient.
    ![](https://qcloudimg.tencent-cloud.cn/raw/cda9f906a152a8fb6e98a3c47d3f9d8b.png)
->?Message Content: Enter the content to be sent of at least 1 byte. The maximum length is subject to the configured **Max Message Size** attribute.
+> ? Message Content: Enter the content to be sent of at least 1 byte. The maximum length is subject to the configured **Max Message Size** attribute.
 
   
