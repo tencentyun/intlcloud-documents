@@ -11,8 +11,8 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>仪表盘支持单位自动换算</td><td>支持图表单位自动换算，数值满足换算进率时，将自动换算为更高级别的单位，增强数据可读性。</td><td>2022-04-30</td><td><a href="https://cloud.tencent.com/document/product/614/74036">单位配置</a></td></tr>
-		<tr><td>时序图支持趋势对比</td><td>时序图支持添加过去周期的趋势对比曲线，增强了图表对比分析场景的能力。</td><td>2022-04-30</td><td><a href="https://cloud.tencent.com/document/product/614/74027#.E8.B6.8B.E5.8A.BF.E5.AF.B9.E6.AF.94">趋势对比</a></td></tr>
+		<tr><td>仪表盘支持单位自动换算</td><td>支持图表单位自动换算，数值满足换算进率时，将自动换算为更高级别的单位，增强数据可读性。</td><td>2022-04-30</td><td>单位配置</td></tr>
+		<tr><td>时序图支持趋势对比</td><td>时序图支持添加过去周期的趋势对比曲线，增强了图表对比分析场景的能力。</td><td>2022-04-30</td><td>趋势对比</td></tr>
 		<tr><td>Kafka 协议消费上线，全地域可用</td><td>通过 Kafka 协议消费，可将数据消费到下游大数据组件或数据仓库，支持自建 Kafka 集群，ClickHouse、Hive、Flink，以及腾讯云弹性 MapReduce（EMR）、流计算 Oceanus 等。</td><td>2022-04-20</td><td><a href="https://intl.cloud.tencent.com/document/product/614/42752">Kafka 协议消费</a></td></tr>
 		<tr><td>索引配置被修改时，支持使用 SQL 统计分析历史数据</td><td>索引配置被修改时，针对原配置中已有的字段，仍可使用 SQL 统计分析历史数据。（新增字段不支持统计分析历史数据）</td><td>2022-04-18</td><td>-</td></tr>
 		<tr><td>容器采集可选元数据采集范围</td><td>用户可根据业务需要自行选择目前默认采集容器元数据中的一个或多个，并配置是否开启索引。</td><td>2022-04-13</td><td>-</td></tr>
@@ -67,7 +67,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>日志主题支持永久保存</td><td>日志主题保存时间可在1 - 3600天内自定义，并支持开启永久保存。</td><td>2022-01-25</td><td><a href="https://intl.cloud.tencent.com/document/product/614/37887">规格说明</a></td></tr>
+		<tr><td>日志主题支持永久保存</td><td>日志主题保存时间可在1 - 3600天内自定义，并支持开启永久保存。</td><td>2022-01-25</td><td>规格说明</td></tr>
 		<tr><td>索引配置导入功能上线</td><td>可一键导入已有日志主题中的索引配置规则，提升操作效率。</td><td>2022-01-18</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">导入索引配置</a></td></tr>
 	</tbody>
 </table>
