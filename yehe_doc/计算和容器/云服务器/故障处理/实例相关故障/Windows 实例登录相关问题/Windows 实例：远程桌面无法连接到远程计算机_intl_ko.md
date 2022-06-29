@@ -97,8 +97,7 @@ Windows에서 Windows 인스턴스에 원격으로 연결하려고 하면 다음
 10. "Windows Defender 방화벽"에서 아래와 같이 Windows Defender 방화벽의 상태를 확인합니다.
 ![Windows Defender 방화벽 상태](https://main.qcloudimg.com/raw/e74937594a03c141e6e5ac753f025d91.png)
  - 상태가 ‘On’인 경우 [11단계](#step05_11)로 진행합니다.
- - 상태가 ‘Off’인 경우 [온라인 지원](https://cloud.tencent.com/online-service?from=doc_213
-)을 통해 문의해주시기 바랍니다.
+ - 상태가 ‘Off’인 경우 [온라인 지원](https://console.intl.cloud.tencent.com/workorder/category)을 통해 문의해주시기 바랍니다.
 11. [](id:step05_11) ‘Windows Defender 방화벽’에서 **Windows 방화벽을 통해 앱 또는 기능 허용**을 클릭하여 ‘허용된 앱’ 창을 엽니다.
 12. ‘허용된 앱’ 창에서 아래와 같이 ‘허용된 앱 및 기능’에서 ‘원격 데스크톱’이 선택되어 있는지 확인합니다.
 ![원격 데스크톱 선택](https://main.qcloudimg.com/raw/dfed8792ce1dd8b32bee4aaa02ef6bbf.png)
@@ -108,7 +107,7 @@ Windows에서 Windows 인스턴스에 원격으로 연결하려고 하면 다음
 14. ‘설정 사용자 지정’ 창에서 아래와 같이 ‘사설망 설정’ 및 ‘공중망 설정’을 ‘Windows Defender 방화벽 끄기(권장하지 않음)’로 설정합니다.
 ![비활성화](https://main.qcloudimg.com/raw/5d5f8c4d7b783bc1018e03368ae400bc.png)
 
-여전히 원격 데스크톱에서 Windows 인스턴스에 연결할 수 없으면 [온라인 지원](https://cloud.tencent.com/online-service?from=doc_213)을 통해 문의해주시기 바랍니다.
+여전히 원격 데스크톱에서 Windows 인스턴스에 연결할 수 없으면 [온라인 지원](https://console.intl.cloud.tencent.com/workorder/category)을 통해 문의해주시기 바랍니다.
 
 
 
