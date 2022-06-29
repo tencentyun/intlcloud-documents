@@ -1,7 +1,7 @@
 ## MessageID Generation Rules
 
 In Pulsar, each message has its own ID, namely `MessageID`, which consists of four parts: `ledgerId:entryID:partition-index:batch-index`:
-- partition-index: partition number, which is -1 for non-partitioned topics.
+- partition-index: Partition number, which is -1 for non-partitioned topics.
 - batch-index: -1 for non-batch messages.
 
 
@@ -48,8 +48,8 @@ The read and write interactions of the three types of data files are as shown be
 4. The backend thread will store the data in the entry logger and index cache to the disk.
 
 **Entry data read**
-- Tailing read request: entries will be read directly from the memtable.
-- Catch-up read (lagged consumption) request: the index information will be read first, and then the index will read entries from the entry logger file.
+- Tailing read request: Entries will be read directly from the memtable.
+- Catch-up read (lagged consumption) request: The index information will be read first, and then the index will read entries from the entry logger file.
 
 **Data consistency guarantee: LastLogMark**
 - The written entry log and index are cached in the memory first and then flushed to the disk periodically according to particular conditions, which causes an interval between memory caching and disk storage. If the BookKeeper process crashes during this interval, after it is restarted, the data needs to be recovered from the journal file. In this case, the `LastLogMark` marks the position in the journal from where to recover.
