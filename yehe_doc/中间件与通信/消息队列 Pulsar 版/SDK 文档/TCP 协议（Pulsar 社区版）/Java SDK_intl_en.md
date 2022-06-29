@@ -21,9 +21,11 @@ This document describes how to use open-source SDK to send and receive messages 
  </dependency>
 :::
 </dx-codeblock>
+
 >? 
 >- SDK 2.7.2 or later is recommended.
 >- SDK 2.7.4 or later is recommended if you use the batch message sending and receiving feature (`BatchReceive`) of the client.
+
 2. Create a Pulsar client.
 <dx-codeblock>
 :::  java
@@ -48,6 +50,7 @@ This document describes how to use open-source SDK to send and receive messages 
 <td>Role token, which can be copied in the **Token** column on the <a href = "https://console.cloud.tencent.com/tdmq/role"><b>Role Management</b></a> page.<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/65a283caa4b28d9fab366114ea8636b1.png"></td>
 </tr>
 </table>
+
 3. Create a producer.
 <dx-codeblock>
 :::  java
@@ -57,7 +60,9 @@ This document describes how to use open-source SDK to send and receive messages 
        .topic("persistent://pulsar-xxx/sdk_java/topic1").create();
 :::
 </dx-codeblock>
+
 > ?You need to enter the complete path of the topic name, i.e., `persistent://clusterid/namespace/Topic`, where the `clusterid/namespace/topic` part can be copied directly from the **[Topic](https://console.cloud.tencent.com/tdmq/topic)** page in the console.
+
 4. Send the message.
 <dx-codeblock>
 :::  java
@@ -71,6 +76,7 @@ This document describes how to use open-source SDK to send and receive messages 
        .property("mykey", "myvalue").send();
 :::
 </dx-codeblock>
+
 5. Release the resources.
 <dx-codeblock>
 :::  java
@@ -80,6 +86,7 @@ This document describes how to use open-source SDK to send and receive messages 
    pulsarClient.close();
 :::
 </dx-codeblock>
+
 6. Create a consumer.
 <dx-codeblock>
 :::  java
@@ -97,10 +104,12 @@ This document describes how to use open-source SDK to send and receive messages 
        .subscribe();
 :::
 </dx-codeblock>
+
 > ?
 > - You need to enter the complete path of the topic name, i.e., `persistent://clusterid/namespace/Topic`, where the `clusterid/namespace/topic` part can be copied directly from the **[Topic](https://console.cloud.tencent.com/tdmq/topic)** page in the console.
 > ![](https://qcloudimg.tencent-cloud.cn/raw/4bb986f5e871cb9d72d9066ecf7eea66.png)
 > - You need to enter the subscription name in the `subscriptionName` parameter, which can be viewed on the **Consumption Management** page.
+
 7. Consume the message.
 <dx-codeblock>
 :::  java
@@ -113,6 +122,7 @@ This document describes how to use open-source SDK to send and receive messages 
    consumer.acknowledge(msg);
 :::
 </dx-codeblock>
+
 8. Use the listener for consumption.
 <dx-codeblock>
 :::  java
@@ -141,6 +151,7 @@ This document describes how to use open-source SDK to send and receive messages 
        .subscribe();
 :::
 </dx-codeblock>
+
 9. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq), click **Topic** > **Topic Name** to enter the **Consumption Management** page, and click the triangle below a subscription name to view the production and consumption records.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/206f52b4a67a3a5eba82309e0d5bc001.png)
 
