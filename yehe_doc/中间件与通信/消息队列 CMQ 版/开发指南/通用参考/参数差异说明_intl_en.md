@@ -17,8 +17,6 @@ TDMQ for CMQ removes the limit on message lifecycle. By default, messages can no
 
 TDMQ for CMQ removes the limit on the number of heaped messages. In theory, an unlimited number of messages can be heaped as long as the storage capacity is sufficient. However, from the perspective of hardware, we allocate a maximum capacity for heaped message of 10 GB to each queue. You can configure CM alarms based on this value.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3ca2d9c0dc1030373d365e7df9003514.png)
-
 Generally, about 10 million messages with an average size of 1 KB each can be heaped. If you expect that the heap may exceed the upper limit after migration, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=947&source=14&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20CMQ&step=1) for assistance.
 
 ### Message size
