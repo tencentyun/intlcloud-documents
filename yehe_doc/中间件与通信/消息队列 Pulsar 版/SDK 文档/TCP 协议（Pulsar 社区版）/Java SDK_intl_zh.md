@@ -21,9 +21,11 @@
  </dependency>
 :::
 </dx-codeblock>
+
 >? 
 >- 建议使用 2.7.2 及以上版本。
 >- 如果在客户端中使用批量收发消息功能（BatchReceive），则使用 2.7.4 及以上版本的 SDK。
+
 2. 创建 Pulsar 客户端。
 <dx-codeblock>
 :::  java
@@ -48,6 +50,7 @@
 <td>	角色密钥，在 <a href = "https://console.cloud.tencent.com/tdmq/role"><b>角色管理</b></a> 页面复制密钥列复制。<br><img src = "https://qcloudimg.tencent-cloud.cn/raw/65a283caa4b28d9fab366114ea8636b1.png"></td>
 </tr>
 </table>
+
 3. 创建生产者。
 <dx-codeblock>
 :::  java
@@ -57,7 +60,9 @@
        .topic("persistent://pulsar-xxx/sdk_java/topic1").create();
 :::
 </dx-codeblock>
+
 > ?Topic 名称需要填入完整路径，即 `persistent://clusterid/namespace/Topic`，`clusterid/namespace/topic` 的部分可以从控制台上 **[Topic管理](https://console.cloud.tencent.com/tdmq/topic)** 页面直接复制。
+
 4. 发送消息。
 <dx-codeblock>
 :::  java
@@ -71,6 +76,7 @@
        .property("mykey", "myvalue").send();
 :::
 </dx-codeblock>
+
 5. 资源释放。
 <dx-codeblock>
 :::  java
@@ -80,6 +86,7 @@
    pulsarClient.close();
 :::
 </dx-codeblock>
+
 6. 创建消费者。
 <dx-codeblock>
 :::  java
@@ -97,10 +104,12 @@
        .subscribe();
 :::
 </dx-codeblock>
+
 > ?
 > - Topic 名称需要填入完整路径，即 `persistent://clusterid/namespace/Topic`，`clusterid/namespace/topic` 的部分可以从控制台上 **[Topic管理](https://console.cloud.tencent.com/tdmq/topic)** 页面直接复制。
 > ![](https://qcloudimg.tencent-cloud.cn/raw/4bb986f5e871cb9d72d9066ecf7eea66.png)
 > - subscriptionName 需要写入订阅名，可在**消费管理**界面查看。
+
 7. 消费消息。
 <dx-codeblock>
 :::  java
@@ -113,6 +122,7 @@
    consumer.acknowledge(msg);
 :::
 </dx-codeblock>
+
 8. 使用监听器进行消费。
 <dx-codeblock>
 :::  java
@@ -141,6 +151,7 @@
        .subscribe();
 :::
 </dx-codeblock>
+
 9. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，依次点击 **Topic 管理** > **Topic 名称**进入消费管理页面，点开订阅名下方右三角号，可查看生产消费记录。
 ![img](https://qcloudimg.tencent-cloud.cn/raw/206f52b4a67a3a5eba82309e0d5bc001.png)
 
