@@ -3,11 +3,11 @@
 本文以一个 Java 客户端为例，为您介绍将 CMQ 队列迁移至 TDMQ CMQ 版的操作步骤。
 
 **迁移原理**
-<img src="https://main.qcloudimg.com/raw/bd0a7851575796b8c954eeeb6dcf8144.png" width="569">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b1a61ffa02c05dbaafe48cbdc72f1ae6.png" width="569">
 
 
 **方案总览**
-<img src="https://main.qcloudimg.com/raw/a6e13ca122d8524b365c83b53ec05c9b.png" width="569">
+<img src="https://qcloudimg.tencent-cloud.cn/raw/079f11331fa9f030c9e48fdbc8fece34.png" width="569">
 
 
 **整体流程**
