@@ -97,8 +97,7 @@ WindowsインスタンスへのWindowsリモート接続の適用時に、下図
 10. 下図のように、「Windowsファイアウォール」でWindowsファイアウォールの状態をチェックします。
 ![Windowsファイアウォールの状態](https://main.qcloudimg.com/raw/e74937594a03c141e6e5ac753f025d91.png)
  - 「有効」な状態であれば、[ステップ11](#step05_11)を実行してください。
- - 「無効」な状態であれば、[オンラインサポート](https://cloud.tencent.com/online-service?from=doc_213
-)を通してフィードバックします。
+ - 「無効」な状態であれば、[オンラインサポート](https://console.intl.cloud.tencent.com/workorder/category)を通してフィードバックします。
 11. [](id:step05_11)「Windowsファイアウォール」で**Windowsファイアウォールによるアプリケーションの許可**をクリックし、「許可されたアプリケーション」ウィンドウを開きます。
 12. 下図のように、「許可されたアプリケーション」ウィンドウで、「許可されたアプリケーションおよび機能(A)」の「リモートデスクトップ」にチェックが入っているかどうかを確認します。
 ![リモートデスクトップにチェックを入れる](https://main.qcloudimg.com/raw/dfed8792ce1dd8b32bee4aaa02ef6bbf.png)
