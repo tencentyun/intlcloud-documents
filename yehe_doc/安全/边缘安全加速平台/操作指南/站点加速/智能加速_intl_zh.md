@@ -15,14 +15,14 @@
 
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**站点加速** > **智能加速**。
 2. 在智能加速页面，选择所需站点，单击智能加速的“开关”，开启或关闭智能加速功能。
-![](https://qcloudimg.tencent-cloud.cn/raw/bb30c3beaf81355c15eb06b5b1ff3cb7.png)
+
 
 ### 子域名使用智能加速
 若您想为具体子域名开启或关闭智能加速，您可以在 [规则引擎](https://console.cloud.tencent.com/edgeone/rules) 页面，为对应的子域名添加规则，开启或关闭智能加速。具体步骤如下：
 
 1. 在 [规则引擎页面](https://console.cloud.tencent.com/edgeone/rules)，选择所需站点，单击![](https://qcloudimg.tencent-cloud.cn/raw/0f0a8aa7913c1c31284b692eadbccd85.png)。
-2. 在规则引擎页面，配置相关参数，单击**保存发布**。更多配置方法请参见 [规则引擎文档](https://cloud.tencent.com/document/product/1552/70901)。
-![](https://qcloudimg.tencent-cloud.cn/raw/ce44de89e8b4c158aae985566269ddb4.png)
+2. 在规则引擎页面，配置相关参数，单击**保存并发布**。更多配置方法请参见 [规则引擎文档](https://intl.cloud.tencent.com/document/product/1145/46151)。
+
 参数说明：
  - 匹配类型：Host。
  - 运算符：等于。
@@ -32,6 +32,6 @@
 
 ## 注意事项
 -  若您的站点支持**内容加速**模式，**智能加速**功能将对**内容加速**模式子域名不生效，仅对**安全加速**子域名生效。
-- 在为您的域名开启智能加速前，您需要在 EdgeOne 的 [域名服务](https://cloud.tencent.com/document/product/1552/70825) 中添加对应的记录。
+- 在为您的域名开启智能加速前，您需要在 EdgeOne 的 [域名服务](https://intl.cloud.tencent.com/document/product/1145/46353) 中添加对应的记录。
 - 由于智能加速是 EdgeOne 提供的一项附加服务，因此会产生额外的使用费用。在开启服务前，请[联系我们](https://intl.cloud.tencent.com/contact-us)。
 > ?具体收费请与腾讯云销售团队进行沟通，我们会根据您的业务进行评估。

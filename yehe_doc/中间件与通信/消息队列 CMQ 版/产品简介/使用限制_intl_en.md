@@ -11,10 +11,10 @@ width: 50%;
 |---------|---------|
 | Maximum number of queues per root account | 10,000 |
 | Message lifecycle | 1 minute–15 days |
-| Long polling wait time for message reception | 0–30 seconds
+| Long polling wait time for message receipt | 0–30 seconds
 | Hidden duration of fetched message | 1 second–12 hours |
-| Maximum message length | 1 MB |
-| Maximum number of retained messages | 1 million–100 million per queue |
+| Maximum message size | 1 MB |
+| Maximum number of heaped messages | 1 million–100 million per queue |
 | Production QPS limit | 5,000 |
 | Consumption QPS limit | 5,000 |
 | Traffic limit | 400 Mbps |
@@ -25,8 +25,7 @@ width: 50%;
 |---------|---------|
 | Maximum number of topics per root account | 10,000 |
 | Message lifecycle | 24 hours by default, which cannot be modified currently |
-| Maximum message length | 1 MB |
-| Message retention size | 100 GB |
+| Maximum message size | 1 MB |
 | Production QPS limit | 5,000 |
 | Consumption QPS limit | 5,000 |
 | Traffic limit | 400 Mbps |
@@ -39,3 +38,8 @@ width: 50%;
 
 >!If you need higher production QPS, consumption QPS, and traffic, you can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to apply for increasing the upper limits.
 
+### Public Network Bandwidth
+
+| Limit | Description | 
+|---------|---------|
+| Maximum public network bandwidth | 5 Mbps by default |

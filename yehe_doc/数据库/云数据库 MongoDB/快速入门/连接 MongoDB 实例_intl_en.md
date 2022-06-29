@@ -1,5 +1,5 @@
 
-After a TencentDB for MongoDB instance is initialized, you can read, write, and query it by using either MongoDB shell or drivers in various programming languages.
+After a TencentDB for MongoDB instance is created, you can read, write, and query it by using either MongoDB shell or drivers in various programming languages.
 
 ## Background
 ### Through shell

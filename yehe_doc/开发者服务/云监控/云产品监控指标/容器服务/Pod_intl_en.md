@@ -1,17 +1,17 @@
-## Note
-For all the following metrics, the `tke_cluster_instance_id` dimension is always required, one of other required dimensions must be passed in, and other dimensions are optional.
+## Notes
+This document is only applicable to the [DescribeStatisticData](https://intl.cloud.tencent.com/document/product/248/39481) API. For all the following metrics, the `tke_cluster_instance_id` dimension is always required, one of other required dimensions must be passed in, and other dimensions are optional.
 
 ## Namespace
-Namespace=QCE/TKE
+Namespace = QCE/TKE2
 ## Monitoring Metrics
 | Parameter | Metric | Unit | Dimension | Statistical Period |
-| ----------------------------------- | ------------------------------------ | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| K8sPodCpu<br/>CoreUsed | CPU usage | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
-| K8sPodMem<br/>NoCacheBytes | Memory usage (excluding cache) | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
-| K8sPodNetwork<br/>ReceivePackets | Network inbound packets | Packets/sec | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
+| ----------------------------------- | ------------------------------------ | -------- | ------------------------------------------------------------ | ----------------------------------------- |
+| K8sPodCpu<br/>CoreUsed | CPU usage | - | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
+| K8sPodMem<br/>NoCacheBytes | Memory usage (excluding cache) | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s   |
+| K8sPodNetwork<br/>ReceivePackets | Network inbound packets | Count/s | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRateCpu<br/>CoreUsedLimit | CPU utilization (usage/limit) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRateMem<br/>NoCacheNode | Memory utilization (usage/node, excluding cache) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
-| K8sPodRateMem<br/>UsageRequest | Memory usage (excluding cache) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
+| K8sPodRateMem<br/>UsageRequest | Memory usage (usage/request) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodFs<br/>ReadBytes | Block device read bandwidth | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodMem<br/>UsageBytes | Memory usage | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodNetwork<br/>TransmitBytes | Network outbound traffic | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
@@ -26,12 +26,12 @@ Namespace=QCE/TKE
 | K8sPodStatusReady | Pod_Ready status | - | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodFsWriteBytes | Block device write bandwidth | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodNetwork<br/>ReceiveBytesBw | inbound bandwidth | MB | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
-| K8sPodNetwork<br/>TransmitPackets | Network outbound packets | Packets/sec | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
+| K8sPodNetwork<br/>TransmitPackets | Network outbound packets | Count/s | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRate<br/>MemNoCacheLimit | Memory utilization (usage/limit, excluding cache) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRate<br/>MemUsageNode | Memory utilization (usage/node) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodFsWriteTimes | Number of block device writes | - | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRateGpu<br/>MemoryUsedNode | GPU memory utilization (usage/node) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
-| K8sPodRateGpu<br/>MemoryUsedRequest | CPU utilization (usage/request) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
+| K8sPodRateGpu<br/>MemoryUsedRequest | GPU memory utilization (usage/request) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRate<br/>GpuUsedNode | GPU utilization (usage/node) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRate<br/>GpuUsedRequest | GPU utilization (usage/request) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodGpuMemory<br/>RequestBytes | Number of requested GPU cards | - | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
@@ -43,9 +43,21 @@ Namespace=QCE/TKE
 | K8sPodEksGpu<br/>UtilizationRates | GPU utilization (elastic container) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): namespace, workload_kind, workload_name, node_role, node, un_instance_id, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRateCpu<br/>CoreUsedResource | CPU utilization | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
 | K8sPodRateMem<br/>UsageResource | Memory utilization (usage/pod specification) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node <br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br/>86400s |
-| K8sPodRateMem<br/>NoCacheResource | Memory utilization (usage/pod specification, excluding cache) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node<br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, 86400s |
+| K8sPodRateMem<br/>NoCacheResource | Memory utilization (usage/pod specification, excluding cache) | % | Always required dimensions: tke_cluster_instance_id <br>Required dimensions (one of which must be passed in): workload_name, un_instance_id, node<br>Optional dimensions: node_role, workload_kind, namespace, pod_name | 60s, <br/>300s, <br/>3600s, <br>86400s |
+
+## Statistical Granularity and Time Span
+
+The supported time span varies by statistical granularity. When pulling monitoring data, you should pay attention to the time span restrictions as detailed below:
+
+| Statistical Granularity | Maximum Time Span (End Time - Start Time) |
+| -------- | ------------------------------------- |
+| 60s      | 12 hours                                |
+| 300s     | 3 days                                   |
+| 3600s    | 30 days                                  |
+| 86400s   | 186 days                                 |
 
 ## Overview of Parameters in Each Dimension
+
 <table>
     <thead>
         <tr>
@@ -59,10 +71,10 @@ Namespace=QCE/TKE
     <tbody>
         <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
-            <td rowspan="2"><span>Always required</span></td>
+            <td rowspan="2"><span>Required</span></td>
             <td><span>tke_cluster_instance_id</span></td>
-            <td><span>Cluster dimension name</span></td>
-            <td><span>Enter a String-type dimension name: tke_cluster_instance_id</span></td>
+            <td><span>Dimension name of the cluster</span></td>
+            <td><span>Enter a string-type dimension name, such as `tke_cluster_instance_id`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -74,8 +86,8 @@ Namespace=QCE/TKE
             <td><span>Instances.N.Dimensions.N.Name</span></td>
            <td rowspan="6">Required (one of which must be passed in)<span></span></td>
             <td><span>workload_name</span></td>
-            <td><span>Workload name dimension name</span></td>
-            <td><span>Enter a String-type dimension name: workload_name</span></td>
+            <td><span>Dimension name of the workload name</span></td>
+            <td><span>Enter a string-type dimension name, such as `workload_name`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -86,8 +98,8 @@ Namespace=QCE/TKE
         <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td><span>node</span></td>
-            <td><span>Node name dimension name</span></td>
-            <td><span>Enter a String-type dimension name: node</span></td>
+            <td><span>Dimension name of the node name</span></td>
+            <td><span>Enter a string-type dimension name, such as `node`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -98,8 +110,8 @@ Namespace=QCE/TKE
         <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td><span>un_instance_id</span></td>
-            <td><span>Node ID dimension name</span></td>
-            <td><span>Enter a String-type dimension name: un_instance_id</span></td>
+            <td><span>Dimension name of the node ID</span></td>
+            <td><span>Enter a string-type dimension name, such as `un_instance_id`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -111,8 +123,8 @@ Namespace=QCE/TKE
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td rowspan="8">Optional (zero, one, or multiple of which can be passed in optionally)<span></span></td>
             <td><span>workload_kind</span></td>
-            <td><span>Workload type dimension name</span></td>
-            <td><span>Enter a String-type dimension name: workload_kind</span></td>
+            <td><span>Dimension name of the workload type</span></td>
+            <td><span>Enter a string-type dimension name, such as `workload_kind`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -123,8 +135,8 @@ Namespace=QCE/TKE
           <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td><span>namespace</span></td>
-            <td><span>Namespace dimension name</span></td>
-            <td><span>Enter a String-type dimension name: namespace</span></td>
+            <td><span>Dimension name of the namespace</span></td>
+            <td><span>Enter a string-type dimension name, such as `namespace`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -135,8 +147,8 @@ Namespace=QCE/TKE
           <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td><span>node_role</span></td>
-            <td><span>Cluster dimension name</span></td>
-            <td><span>Enter a String-type dimension name: node_role</span></td>
+            <td><span>Dimension name of the cluster</span></td>
+            <td><span>Enter a string-type dimension name, such as `node_role`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -147,8 +159,8 @@ Namespace=QCE/TKE
         <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td><span>pod_name</span></td>
-            <td><span>Pod name dimension name</span></td>
-            <td><span>Enter a String-type dimension name: pod_name</span></td>
+            <td><span>Dimension name of the Pod</span></td>
+            <td><span>Enter a string-type dimension name, such as `pod_name`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -162,14 +174,14 @@ Namespace=QCE/TKE
 
 ## Input Parameter Description
 **In the namespace dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=namespace
 &Instances.N.Dimensions.1.Value=kube-system
 
 **In the workload type dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=workload_kind
@@ -183,33 +195,32 @@ Namespace=QCE/TKE
 &Instances.N.Dimensions.1.Value=coredns
 
 **In the node role dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=node_role
 &Instances.N.Dimensions.1.Value=node
 
 **In the node ID dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=un_instance_id
 &Instances.N.Dimensions.1.Value=ins-nwjhh123
 
 **In the node name dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=node
 &Instances.N.Dimensions.1.Value=node
 
 **In the pod name dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=pod_name
 &Instances.N.Dimensions.1.Value=coredns-6ffc45f789-46lpq
-
 
 
 

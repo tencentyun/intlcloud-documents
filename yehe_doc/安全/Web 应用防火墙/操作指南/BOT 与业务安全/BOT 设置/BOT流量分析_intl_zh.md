@@ -46,7 +46,7 @@ BOT 流量分析通过采集 BOT 行为管理中的数据，可以快速了解�
  - 操作：
 
    - 查看日志：单击**查看日志**，可查看对应 BOT 的访问日志。
->? 需已 [购买访问日志](https://intl.cloud.tencent.com/document/product/627/47409)。
+>? 需已 [购买访问日志](https://intl.cloud.tencent.com/document/product/627/47799)。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/9b97c37a32856783a40156cfe3e68af9.png)
 

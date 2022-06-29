@@ -1,21 +1,21 @@
-## Note
-For all the following metrics, the `tke_cluster_instance_id` dimension is required, while other dimensions are optional.
+## Notes
+This document is only applicable to the [DescribeStatisticData](https://intl.cloud.tencent.com/document/product/248/39481) API. For all the following metrics, the `tke_cluster_instance_id` dimension is required, while other dimensions are optional.
 
 ## Namespace
-Namespace=QCE/TKE
+Namespace = QCE/TKE2
 ## Monitoring Metrics
 
 | Parameter | Metric | Unit | Dimension | Statistical Period |
-| ------------------------------------------ | ------------------------------------ | -------- | ------------------------------------------------------------ | ----------------------------------- |
+| ------------------------------------------ | ------------------------------------ | -------- | ------------------------------------------------------------ | ------------------------------------ |
 | K8sWorkloadAbnormal | Workload exception | - | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
-| K8sWorkloadFsWriteTimes | Number of block device reads | - | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
-| K8sWorkloadNetwork<br>ReceiveBytesBw | Network inbound bandwidth | MB | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name |  60s, <br>300s, <br>3600s, <br>86400s |
+| K8sWorkloadFsWriteTimes | Number of block device writes | - | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
+| K8sWorkloadNetwork<br>ReceiveBytesBw | Network inbound bandwidth | MB | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 | K8sWorkloadNetwork<br>TransmitBytesBw | Network outbound bandwidth | MB | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 | K8sWorkloadRateCpu<br>CoreUsedCluster | CPU utilization | % | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 | K8sWorkload<br>CpuCoreUsed | Number of used CPU cores | - | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 | K8sWorkloadMemNo<br>CacheBytes | Memory usage (excluding cache) | MB | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
-| K8sWorkloadNetwork<br>ReceivePackets | Network inbound packets | Packets/sec | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
-| K8sWorkloadNetwork<br>TransmitPackets | Network outbound packets | Packets/sec | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
+| K8sWorkloadNetwork<br>ReceivePackets | Network inbound packets | Count/s | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
+| K8sWorkloadNetwork<br>TransmitPackets | Network outbound packets | Count/s | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 | K8sWorkloadRateMem<br>NoCacheCluster | Memory utilization (excluding cache) | % | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 required| K8sWorkload<br>FsReadBytes | Block device read size | MB | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 | K8sWorkload<br>MemUsageBytes | Memory usage | MB | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
@@ -36,7 +36,19 @@ required| K8sWorkload<br>FsReadBytes | Block device read size | MB | Required di
 | K8sWorkloadRateMem<br>UsageBytesResource | Memory utilization (usage/pod specification) | % | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 | K8sWorkloadRateMem<br>NoCacheBytesResource | Memory utilization (usage/pod specification, excluding cache) | % | Required dimensions: tke_cluster_instance_id <br/>Optional dimensions: namespace, workload_kind, workload_name | 60s, <br>300s, <br>3600s, <br>86400s |
 
+## Statistical Granularity and Time Span
+
+The supported time span varies by statistical granularity. When pulling monitoring data, you should pay attention to the time span restrictions as detailed below:
+
+| Statistical Granularity | Maximum Time Span (End Time - Start Time) |
+| -------- | ------------------------------------- |
+| 60s      | 12 hours                                |
+| 300s     | 3 days                                   |
+| 3600s    | 30 days                                  |
+| 86400s   | 186 days                                 |
+
 ## Overview of Parameters in Each Dimension
+
 <table>
     <thead>
         <tr>
@@ -52,8 +64,8 @@ required| K8sWorkload<br>FsReadBytes | Block device read size | MB | Required di
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td rowspan="2"><span>Required</span></td>
             <td><span>tke_cluster_instance_id</span></td>
-            <td><span>Cluster dimension name</span></td>
-            <td><span>Enter a String-type dimension name: tke_cluster_instance_id</span></td>
+            <td><span>Dimension name of the cluster</span></td>
+            <td><span>Enter a string-type dimension name, such as `tke_cluster_instance_id`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -65,8 +77,8 @@ required| K8sWorkload<br>FsReadBytes | Block device read size | MB | Required di
             <td><span>Instances.N.Dimensions.N.Name</span></td>
              <td rowspan="6"><span>Optional (zero, one, or multiple of which can be passed in optionally)</span></td>
             <td><span>namespace</span></td>
-            <td><span>Namespace dimension name</span></td>
-            <td><span>Enter a String-type dimension name: namespace</span></td>
+            <td><span>Dimension name of the namespace</span></td>
+            <td><span>Enter a string-type dimension name, such as `namespace`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -77,20 +89,20 @@ required| K8sWorkload<br>FsReadBytes | Block device read size | MB | Required di
         <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td><span>workload_kind</span></td>
-            <td><span>Workload type dimension name</span></td>
-            <td><span>Enter a String-type dimension name: workload_kind</span></td>
+            <td><span>Dimension name of the workload type</span></td>
+            <td><span>Enter a string-type dimension name, such as `workload_kind`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
             <td><span>workload_kind</span></td>
             <td><span>Specific workload type</span></td>
-            <td><span>Enter a specific workload type, such as Deployment</span></td>
+            <td><span>Enter a specific workload name, such as Deployment</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Name</span></td>
             <td><span>workload_name</span></td>
-            <td><span>Workload name dimension name</span></td>
-            <td><span>Enter a String-type dimension name: workload_name</span></td>
+            <td><span>Dimension name of the workload name</span></td>
+            <td><span>Enter a string-type dimension name, such as `workload_name`</span></td>
         </tr>
         <tr>
             <td><span>Instances.N.Dimensions.N.Value</span></td>
@@ -105,31 +117,30 @@ required| K8sWorkload<br>FsReadBytes | Block device read size | MB | Required di
 
 ## Input Parameter Description
 **In the cluster dimension (required), use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 
 **In the namespace dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=namespace
 &Instances.N.Dimensions.1.Value=kube-system
 
 **In the workload type dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=workload_kind
 &Instances.N.Dimensions.1.Value=Deployment
 
 **In the workload name dimension, use the following input parameters:**
-&Namespace=QCE/TKE
+&Namespace=QCE/TKE2
 &Instances.N.Dimensions.0.Name=tke_cluster_instance_id
 &Instances.N.Dimensions.0.Value=cls-fvkxp123
 &Instances.N.Dimensions.1.Name=workload_name
 &Instances.N.Dimensions.1.Value=coredns
-
 
 
 

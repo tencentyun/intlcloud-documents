@@ -107,7 +107,7 @@ Web 페이지에서 데이터 획득 여부를 확인합니다. 데이터 송수
 
 [](id:o3)
 ### Web SDK에서 현재 볼륨 크기를 획득할 수 있습니까?
-현재 볼륨 크기는 [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel)을 통해 획득할 수 있습니다. [카메라와 마이크 전환](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-13-basic-switch-camera-mic.html)을 참고하십시오.
+현재 볼륨 크기는 [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel)을 통해 획득할 수 있습니다. [Detecting Volume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)을 참고하십시오.
 
 [](id:o4)
 ### 어떤 상황에서 Client.on('client-banned')이 트리거 됩니까?

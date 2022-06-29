@@ -83,7 +83,7 @@
 <td>Topic-level throttling is supported</td>
 <td>You can throttle the topic traffic to prevent the excessive traffic of one topic from affecting other topics.</td>
 <td>2022-03-23</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic Management</a></td>
 </tr>
 </table>
 
@@ -153,12 +153,12 @@
 <td>Topic display fields are added</td>
 <td>You can set tags when creating a topic and view producer connections.</td>
 <td>2022-01-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic Management</a></td>
 </tr><tr>
 <td>You can create consumer groups and send messages directly in the console</td>
 <td>You can create consumer groups and send messages directly in the CKafka console, without the need to perform operations on the local client.</td>
 <td>2022-01-07</td>
-  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">Creating Consumer Group</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></li></td>
+  <td><li><a href="https://intl.cloud.tencent.com/document/product/597/44994">Creating Consumer Group</a></li><li><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic Management</a></li></td>
 </tr><tr>
 <td>Pro Edition supports displaying instance connection information</td>
 <td>CKafka Pro Edition supports displaying the number of connections in the dashboard. This allows you to view the connections to each server more easily when the number of instance connections is about to be used up.</td>
@@ -228,7 +228,7 @@
 <td>Topics support the advanced setting of `retention.bytes`</td>
 <td>You can set `retention.bytes` in the advanced topic settings for use together with `retention.ms`. </td>
 <td>2021-11-24</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic Management</a></td>
 </tr><tr>
 <td>The cap of purchasable bandwidth is increased to 20,000 MB/sec</td>
 <td>The cap of purchasable bandwidth is increased to 20,000 MB/sec, which can meet the user needs for configuration upgrade during traffic peaks in sales campaigns.</td>
@@ -353,7 +353,7 @@
 <td>You can view the details of topics and unsynced replicas</td>
 <td>CKafka supports viewing the details of topics and unsynced replicas in the console.</td>
 <td>2021-08-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic Management</a></td>
 </tr><tr>
 <td>Regex is supported for instance naming</td>
 <td>When purchasing multiple instances, you can batch create instances by its numeric suffix (which is numbered in an ascending order) or its designated pattern string.</td>
@@ -931,7 +931,7 @@
 <td>CKafka supports configuring advanced parameters for topics</td>
 <td>You can configure fine-grained parameters for instance topics in the CKafka console.</td>
 <td>2018-12-28</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/597/32554">Topic Management</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/47583">Topic Management</a></td>
 </tr></table>
 
 

@@ -46,7 +46,7 @@ With rich data provided by this module, bot traffic analysis can quickly analyze
  - Operation:
 
    - View logs: It allows you to view access logs.
->? To view access logs, you need to subscribe to the [access logging](https://intl.cloud.tencent.com/document/product/627/47409) service.
+>? To view access logs, you need to subscribe to the [access logging](https://intl.cloud.tencent.com/document/product/627/47799) service.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/9b97c37a32856783a40156cfe3e68af9.png)
 

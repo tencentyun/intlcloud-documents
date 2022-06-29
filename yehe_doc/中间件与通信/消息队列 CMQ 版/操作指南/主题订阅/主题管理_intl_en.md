@@ -10,15 +10,15 @@ This document describes how to create or delete a topic in TDMQ for CMQ.
 
 1. Log in to the [TDMQ for CMQ console](https://console.cloud.tencent.com/tdmq/cmq-queue).
 2. Select **Topic Subscription** on the left sidebar, select the region, click **Create**, and enter the information as prompted.
-![](https://qcloudimg.tencent-cloud.cn/raw/cbe59deb464e839551fe01cad174d18b.png)
-
-
-   | Attribute | Description |
-   |---------|---------|
-   | Topic Name | <li>Enter the topic name, which cannot be modified once the topic is created. </li><li>The name can contain up to 64 letters, digits, hyphens, and underscores and is case-sensitive. To avoid confusion, topics with the same name in the same letter case as an existing topic cannot be created.</li> |
-   | <nobr>Message Retention</nobr> | It is enabled by default. Messages that are produced by a producer but have not triggered push to subscribers or failed to be received by subscribers will be retained in the topic temporarily. </li><li>In the topic list, you can view the approximate total number of currently retained messages. </li>|
+   ![](https://qcloudimg.tencent-cloud.cn/raw/cbe59deb464e839551fe01cad174d18b.png)
+   - Topic Name: It can contain up to 64 letters, digits, "-", or "_", and must start with a letter. It cannot be modified once created.
+   - Message Heap: Messages will be heaped temporarily if the message push is not triggered or the subscriber fails to receive them.
+ - Message Filter Type:
+     - Tag: TDMQ for CMQ can match message tags for production and subscription, which can be used for message filtering. For detailed rules, see [Tag Key Matching Feature Description](https://intl.cloud.tencent.com/document/product/1111/43003).
+     - Routing Matching: The binding key and routing key are used together and are fully compatible with the topic match mode of RabbitMQ. The routing key carried when a message is sent is added by the client, and the binding key carried when a subscription is created is the binding relationship between the topic and the subscriber. For detailed rules, see [Routing Key Matching Feature Description](https://intl.cloud.tencent.com/document/product/1111/43004).
+ - Resource Tag: It is optional and can help you easily categorize and manage TDMQ for CMQ resources in many dimensions. For detailed usage, see [Managing Resource with Tag](https://intl.cloud.tencent.com/document/product/1111/43007).
   
 	
 ### Deleting topic
 
-In the **[topic](https://console.cloud.tencent.com/tdmq/cmq-topic)** list, click **Delete** in the **Operation** column of the target topic to delete it. Messages cannot be pushed once the topic is deleted.
+In the **[topic](https://console.cloud.tencent.com/tdmq/cmq-topic)** list, click **Delete** in the **Operation** column of the target topic to delete it. No messages will be pushed to this topic after it is deleted.

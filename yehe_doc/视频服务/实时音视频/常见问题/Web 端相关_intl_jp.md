@@ -107,7 +107,7 @@ Web画面上でデータを取得できているかどうかを確認します�
 
 [](id:o3)
 ###  Web端末SDKは現在の音量を取得できますか？
-[getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel)で現在の音量を取得することができます。具体的には、[カメラとマイクの切り替え](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-13-basic-switch-camera-mic.html)をご参照ください。
+[getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel)で現在の音量を取得することができます。具体的には、[Detecting Volume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html)をご参照ください。
 
 [](id:o4)
 ### Client.on(‘client-banned’)はどのような状況でトリガーされますか？

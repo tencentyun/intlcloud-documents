@@ -107,7 +107,7 @@ For details, please see [Dealing with Firewall Restrictions](https://intl.cloud.
 
 [](id:o3)
 ### Does the TRTC web SDK support getting the current volume?
-You can use [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel) to get the current volume. For details, please see [Detecting Volume](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-17-basic-detect-volume.html).
+You can use [getAudioLevel](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/LocalStream.html#getAudioLevel) to get the current volume. For details, please see [Detecting Volume](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-17-basic-detect-volume.html).
 
 [](id:o4)
 ### What triggers the `Client.on(‘client-banned’)` event?

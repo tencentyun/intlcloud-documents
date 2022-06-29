@@ -15,14 +15,14 @@ For dynamic content use cases, you can refer to the above scenarios. Your static
 
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site acceleration** > **Network optimization** on the left sidebar.
 2. On the **Smart acceleration** page, select the target site, and enable/disable the feature.
-![](https://qcloudimg.tencent-cloud.cn/raw/bb30c3beaf81355c15eb06b5b1ff3cb7.png)
+
 
 ### Enabling Smart Acceleration for a Subdomain
 You can also enable Smart Acceleration for a specific subdomain.
 
 1. Go to the [Rule engine](https://console.cloud.tencent.com/edgeone/rules) page, select the site and click ![](https://qcloudimg.tencent-cloud.cn/raw/0f0a8aa7913c1c31284b692eadbccd85.png)
-2. Complete the parameters as instructed below, and click **Save and publish**. For more information, see [Configuring Rule Engine](https://cloud.tencent.com/document/product/1552/70901).
-![](https://qcloudimg.tencent-cloud.cn/raw/ce44de89e8b4c158aae985566269ddb4.png)
+2. Complete the parameters as instructed below, and click **Save and publish**. For more information, see [Configuring Rule Engine](intl.cloud.tencent.com/document/product/1145/46151).
+
 Parameters:
  - Match type: Host
  - Operator: Equals to 
@@ -32,6 +32,6 @@ Parameters:
  
 ## Must-knows
 - If your site supports **Content Acceleration**, **Smart Acceleration** only works on subdomains in Sec-MCA mode but not Content Acceleration mode.
-- Make sure you have added a record at your domain name provider. See [Domain Name Service](https://cloud.tencent.com/document/product/1552/70825).
+- Make sure you have added a record at your domain name provider. See [Domain Name Service](intl.cloud.tencent.com/document/product/1145/46353).
 - Smart Acceleration is a value-added service. 
 >? For more billing details, please submit a ticket or contact your sales rep.
