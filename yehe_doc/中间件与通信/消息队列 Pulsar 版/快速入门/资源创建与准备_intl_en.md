@@ -21,8 +21,7 @@ This document describes how to create resources such as cluster and topic in the
    ![](https://qcloudimg.tencent-cloud.cn/raw/cba9bfef826619335cf9ba9c4c8b0e5a.png)
    :::
    ::: Clusters on v2.6.1
-   On the access point list page, click **Create** to create a VPC access point (in the same VPC as the resource on which the client runs) as shown below:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/fe4bd8e74a61742512e2dcd529488132.png)
+   On the access point list page, click **Create** to create a VPC access point (in the same VPC as the resource on which the client runs).
    :::
    </dx-tabs>
 
