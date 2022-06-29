@@ -34,7 +34,7 @@ Hadoop-2.6.0 이상 버전
 1. `hadoop-cos-{hadoop.version}-{version}.jar`와 `cos_api-bundle-{version}.jar`를`$HADOOP_HOME/share/hadoop/tools/lib`에 복사합니다.
 >? Hadoop의 실제 버전에 따라 해당하는 jar 패키지를 선택합니다. release에 매칭되는 버전의 jar 패키지가 없는 경우 직접 pom 파일의 Hadoop 버전을 수정하여 다시 컴파일해 생성할 수 있습니다.
 > 
-2. hadoop_env.sh 파일을 수정합니다. `$HADOOP_HOME/etc/hadoop` 디렉터리에 들어가 hadoop_env.sh 파일을 편집하고, 다음 내용을 추가하여 cosn 관련 jar 패키지를 Hadoop 환경 변수에 추가합니다.
+2. hadoop-env.sh 파일을 수정합니다. `$HADOOP_HOME/etc/hadoop` 디렉터리에 들어가 hadoop-env.sh 파일을 편집하고, 다음 내용을 추가하여 cosn 관련 jar 패키지를 Hadoop 환경 변수에 추가합니다.
 ```shell
 for f in $HADOOP_HOME/share/hadoop/tools/lib/*.jar; do
   if [ "$HADOOP_CLASSPATH" ]; then
