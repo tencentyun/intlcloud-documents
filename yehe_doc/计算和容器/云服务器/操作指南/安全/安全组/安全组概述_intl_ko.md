@@ -33,7 +33,7 @@
 
 <dx-alert infotype="explain" title="">
 - 이러한 템플릿이 실제 요구 사항을 충족할 수 없는 경우 사용자 정의 보안 그룹을 만들 수 있습니다. 자세한 내용은 [보안 그룹 생성](https://intl.cloud.tencent.com/document/product/213/34271) 및 [보안 그룹 응용 사례](https://intl.cloud.tencent.com/document/product/213/32369)를 참고하십시오.
-- 애플리케이션 레이어(HTTP/HTTPS)에 대한 보안이 필요한 경우 [Web Application Firewall](https://intl.cloud.tencent.com/zh/products/waf)을 별도 구매하여 애플리케이션 레이어 Web 보호를 제공받을 수 있습니다. Web 취약점 공격, 악성 크롤러 및 CC 공격 등 공격을 방어하여 웹 사이트 및 Web 애플리케이션 보안을 보호합니다.
+- 애플리케이션 레이어(HTTP/HTTPS)에 대한 보안이 필요한 경우 [Web Application Firewall](https://intl.cloud.tencent.com/products/waf)을 별도 구매하여 애플리케이션 레이어 Web 보호를 제공받을 수 있습니다. Web 취약점 공격, 악성 크롤러 및 CC 공격 등 공격을 방어하여 웹 사이트 및 Web 애플리케이션 보안을 보호합니다.
 </dx-alert>
 
 
@@ -50,7 +50,7 @@
 
 ### 관리 규칙
 - 보안 그룹 규칙을 수정하기 전에 내보내기 및 백업하여 오류가 발생할 경우 가져오기하여 복원할 수 있습니다.
-- 여러 보안 그룹 규칙을 생성하려면 [매개변수 템플릿](https://intl.cloud.tencent.com/document/product/215/31867)을 사용하십시오..
+- 여러 보안 그룹 규칙을 생성하려면 [Parameter Template](https://intl.cloud.tencent.com/document/product/215/31867)을 사용하십시오..
 
 ### 보안 그룹 연결
 - 각 인스턴스에 대해 별도의 보안 그룹을 구성하는 대신 보안 요구 사항이 동일한 인스턴스를 동일한 보안 그룹에 추가할 수 있습니다.
