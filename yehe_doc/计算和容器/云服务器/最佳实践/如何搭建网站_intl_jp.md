@@ -26,7 +26,7 @@ Tencent Cloudは、主流のウェブサイトシステム向けに、さまざ�
 </thead>
 <tbody><tr>
 <td>構築方法</td>
-<td>Tencent<a href="https://market.cloud.tencent.com/" target="_blank">クラウドマーケット</a>のシステムイメージから直接インストールしてデプロイすることを選択します。</td>
+<td>Tencentクラウドマーケット</a>のシステムイメージから直接インストールしてデプロイすることを選択します。</td>
 <td>必要なソフトウェアを手動でインストールすると、カスタマイズが可能です。</td>
 </tr>
 <tr>
