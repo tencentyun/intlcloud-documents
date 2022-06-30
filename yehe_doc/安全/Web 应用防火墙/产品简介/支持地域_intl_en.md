@@ -31,6 +31,8 @@
 </tr>
 <tr>
 <td>Northeast Asia: Seoul and Tokyo</td>
+<tr>
+<td>South Asia: Mumbai</td>  
 </tr>
 <tr>
 <td>West US: Silicon Valley</td>
@@ -46,8 +48,6 @@
 </tr>
 <tr>
 <td>South America: Sao Paulo</td>
- <tr>
-<td>South Asia: Mumbai</td> 
 </tr>
 <tr>
 <td rowspan=12 >CLB WAF</td>
