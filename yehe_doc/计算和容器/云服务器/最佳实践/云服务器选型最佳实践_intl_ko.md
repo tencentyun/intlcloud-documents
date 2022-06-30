@@ -1,7 +1,7 @@
 
 
 본 문서는 Cloud Virtual Machine(CVM) 인스턴스 기능, 자주 사용되는 서비스 시나리오, 주의 사항 및 모범 사례 등을 통해 인스턴스 선택 방법을 소개하여 사용자가 실제 서비스 시나리오에 맞춰 CVM을 구매할 수 있도록 도와줍니다. 인스턴스 선택 분석 과정은 다음 이미지와 같습니다. 
-<img src="https://main.qcloudimg.com/raw/95b8731741d19f09f7ecc82f0b297aca.png" style="width:60%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/166011fc787835709563449faccce09b.png" style="width:60%"/>
 
 ## 리전 및 가용존
 #### 리전
@@ -126,7 +126,7 @@ CVM 인스턴스 유형에 대한 더 자세한 내용은 <a href="https://intl.
 ## 관련 제품
 ### 상용 클라우드 서비스 조합 추천
 실제 서비스 시나리오와 결합하여 다른 Tencent Cloud 제품과 함께 사용할 수 있습니다. 본 문서는 전형적인 Web 사이트 구축 아키텍처를 예로 들어 다음 이미지와 같이 클라우드 서비스를 결합하여 사용할 것을 권장합니다. 
-<img src="https://main.qcloudimg.com/raw/f9dbd04108bb3ffff1d12944b77d51ed.png" style="width:70%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/7ec5c1534917c16827cc9841db5c61e0.png" style="width:70%"/>
 
 ### 기타 클라우드 서비스
 실제 니즈에 따라 다른 클라우드 서비스를 선택할 수 있습니다. 예를 들어 기본 서비스 구축이 완료된 후, 견고한 시스템 아키텍처와 안전한 데이터를 보장하기 위해 일정한 재해 복구 조치를 취할 수 있습니다. 또한 다음 Tencent Cloud 제품과 결합하여 재해 복구 솔루션을 구현할 수 있습니다. 
