@@ -1,7 +1,7 @@
 
 
 This document describes how to select a CVM model that suits you best from the aspects of features and scenarios, and provides detailed instructions and best practices.
-<img src="https://main.qcloudimg.com/raw/95b8731741d19f09f7ecc82f0b297aca.png" style="width:60%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/ee418b21975d0150edbba7927171d85f.png" style="width:60%"/>
 
 ## Region and Availability Zone
 #### Regions
@@ -126,7 +126,7 @@ For more information about CVM instance types, see <a href="https://intl.cloud.t
 ## Relevant Products
 ### Associated Tencent Cloud services
 You can purchase other Tencent Cloud services to work with CVM instances as needed. This document takes building a website as an example to describe the associated Tencent Cloud services.
-<img src="https://main.qcloudimg.com/raw/f9dbd04108bb3ffff1d12944b77d51ed.png" style="width:70%"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/593f4e137fc7959febc71a8982621a47.png" style="width:70%"/>
 
 ### Other Tencent Cloud services
 You can also select other Tencent Cloud services to meet your specific requirements. For example, after deploying applications, you can use the following Tencent Cloud services to implement disaster recovery to ensure the system robustness and provide data security:
