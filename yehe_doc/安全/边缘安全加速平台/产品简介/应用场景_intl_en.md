@@ -37,7 +37,7 @@
 <tbody><tr>
 <td>Video on demand</td>
 <td><li>High-reliability access</li><li>Smart prefetch</li><li>Smooth playback and low-latency access</li></td>
-<td><li>Anti-DDoS </li><li>Web protection</li><li>Network acceleration</li><li>Nearby access and URL prefetch</li></td>
+<td><li>Anti-DDoS </li><li>Web protection</li><li>Network acceleration</li><li>Nearby access</li><li>URL prefetch</li></td>
 </tr>
 <tr>
 <td>Video live streaming</td>
@@ -52,7 +52,7 @@
 <tr>
 <td>Video download</td>
 <td><li>High-reliability access</li><li>Smart prefetch</li><li>High-speed download</li></td>
-<td><li>Network acceleration</li><li>Nearby access and URL prefetch</li></td>
+<td><li>Network acceleration</li><li>Nearby access</li><li>URL prefetch</li></td>
 </tr>
 </tbody></table>
 
