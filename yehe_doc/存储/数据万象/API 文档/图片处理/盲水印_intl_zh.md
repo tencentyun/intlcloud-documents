@@ -19,14 +19,14 @@
 | 全盲水印（type2） | 提取方便，提取水印仅需水印图，无需对比原图 | 批量添加，批量校验      |
 | 文字盲水印（type3） | 可直接将文字信息添加至图片中              | 终端信息添加            |
 
-盲水印是付费服务，使用时需在相应存储桶配置页中通过开关开通服务。每个账户每月拥有3000次免费额度，超出部分需付费。
+盲水印是付费服务，使用时需在相应存储桶配置页中通过开关开通服务。具体费用请参见图片处理费用。
+
 >?
-- 暂不支持为动图（例如 GIF 图片）添加盲水印。
-- 使用盲水印功能，水印图的宽高不得超过原图的1/8。
-- 为保证盲水印效果，水印图请选用黑底白色图片。
-- 数据万象为每个账户提供每月3000张的免费体验额度，超出后将正常计费。未使用额度不会累积至下一月。
-- 文字盲水印当前支持数字[0 - 9]及英文大小写[A - Z,a - z]。
-- 盲水印可抵抗裁剪、涂抹、变色等多种图片盗取攻击，防盗效果与原图大小及攻击程度相关。如需详细咨询请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
+>- 暂不支持为动图（例如 GIF 图片）添加盲水印。
+>- 使用盲水印功能，水印图的宽高不得超过原图的1/8。
+>- 为保证盲水印效果，水印图请选用黑底白色图片。
+>- 文字盲水印当前支持数字[0 - 9]及英文大小写[A - Z,a - z]。
+>- 盲水印可抵抗裁剪、涂抹、变色等多种图片盗取攻击，防盗效果与原图大小及攻击程度相关。如需详细咨询请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
 
 ## 适用场景
 
@@ -70,14 +70,14 @@ Pic-Operations: <PicOperations>
 
 请求包头部增加图片处理参数 Pic-Operations，Pic-Operations 为 json 格式的字符串，具体参数如下：
 
-| 参数名称    | 描述                                                         |类型  | 是否必选 | 
+| 参数名称    | 描述                                                         |类型  | 是否必选 |
 | ----------- | ----- | ---- | ------------------------------------------------------------ |
 | is_pic_info | 是否返回原图信息。0表示不返回原图信息，1表示返回原图信息，默认为0 | Int   | 否   |
 | rules       |  处理规则，一条规则对应一个处理结果（目前最多支持五条规则），不填则不进行图片处理 |Array | 否   |
 
 rules（json 数组）中每一项具体参数如下：
 
-| 参数名称 | 描述                                                         |类型   | 是否必选 | 
+| 参数名称 | 描述                                                         |类型   | 是否必选 |
 | -------- | ------ | ----- | ------------------------------------------------------------ |
 | bucket   | 存储结果的目标存储桶名称，格式为：BucketName-APPID，如果不指定的话默认保存到当前存储桶 | String | 否       |
 | fileid   |     处理后文件的保存路径及名称。名称规则说明：<br>例如源文件的路径及文件名为：/p1/test1.jpg<br>1. 以`/`开头为绝对路径，例如 fileid 值为 /p2/test2.jpg 时，表示在 p2 文件夹中存储了一个文件名为 test2.jpg 的文件。<br>2. 不以`/`开头为相对路径，例如 fileid 值为 p2/test2.jpg 时，表示在 p1 文件夹中新建了一个 p2 文件夹，然后在 p2 文件夹中存储了一个文件名为 test2.jpg 的文件。<br>3. 注意：请不要以`/`结尾，否则会产生空文件名。                                           | String | 是       |
@@ -254,10 +254,10 @@ download_url?watermark/3/type/<type>/image/<imageUrl>/text/<text>
 
 | 参数         | 描述                                                         | 类型   | 是否必选 |
 | ------------ | ------------------------------------------------------------ | ------ | -------- |
-| download_url | 文件的访问链接，具体构成为http(s)://`<BucketName-APPID>.cos.<Region>.myqcloud.com/<picture name>`， 例如`examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |        |          |
+| download_url | 文件的访问链接，具体构成为http(s)://`<BucketName-APPID>.cos.<Region>.myqcloud.com/<picture name>`， 例如`examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` | String       | 是         |
 | type         | 盲水印类型，有效值：1为半盲水印；2为全盲水印；3为文字盲水印  | Int    | 是       |
 | image        | 盲水印图片地址，需要经过 URL 安全的 Base64 编码。 当 type 为1或2时必填，type 为3时无效。 指定的水印图片必须同时满足如下条件：<br>1. 盲水印图片与原图片必须位于同一个存储桶下；<br>2. URL 必须以`http://`开始，不能省略 http 头，也不能填 https 头，例如以下地址为非法水印地址：<li> examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png <li>https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/watermark.png | String | 否       |
-| text  |盲水印文字，需要经过 URL 安全的 Base64 编码。 当 type 为3时必填，type 为1或2时无效。 | String | 否   | 
+| text  |盲水印文字，需要经过 URL 安全的 Base64 编码。 当 type 为3时必填，type 为1或2时无效。 | String | 否   |
 | level        | 只对全盲水印（type=2）有效。level 的取值范围为{1,2,3}，默认值为1，level 值越大则图片受影响程度越大、盲水印效果越好。 | Int    | 否       |
 
 ### 实际案例
@@ -539,7 +539,7 @@ Pic-Operations:
     "is_pic_info": 1,
     "rules": [{
         "fileid": "exampleobject2",
-        "rule": "watermark/4/type/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL2ZpbGVuYW1lLmpwZWc="
+        "rule": "watermark/4/type/2/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL2ZpbGVuYW1lLmpwZWc="
     }]
 }
 Content-Length: 64
@@ -568,6 +568,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
                 <Quality>100</Quality>
                 <Ave>0xa18454</Ave>
                 <Orientation>1</Orientation>
+				<FrameCount>1</FrameCount>
           </ImageInfo>
       </OriginalInfo>
       <ProcessResults>
@@ -579,6 +580,8 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
                 <Height>427</Height>
                 <Size>463092</Size>
                 <Quality>100</Quality>
+				<FrameCount>1</FrameCount>
+                <WatermarkStatus>86</WatermarkStatus>
           </Object>
       </ProcessResults>
 </UploadResult>
@@ -592,6 +595,6 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 ### 请求二：对 COS 上的图片提取盲水印
 
-对 COS 上的图片提取盲水印的请求包与 [云上数据处理](https://intl.cloud.tencent.com/zh/document/product/436/40592) 接口一致，只需在请求包头部增加图片处理参数 Pic-Operations 并使用提取盲水印参数（watermark/4）即可。
+对 COS 上的图片提取盲水印的请求包与 [云上数据处理](https://intl.cloud.tencent.com/document/product/436/40592) 接口一致，只需在请求包头部增加图片处理参数 Pic-Operations 并使用提取盲水印参数（watermark/4）即可。
 
 ​	
