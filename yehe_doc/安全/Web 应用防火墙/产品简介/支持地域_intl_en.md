@@ -9,7 +9,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=12 >SaaS WAF</td>
+<td rowspan=13 >SaaS WAF</td>
 <td rowspan=4 >Chinese mainland</td>
 <td>South China: Guangzhou</td>
 </tr>
@@ -23,7 +23,7 @@
 <td>Southwest China: Chengdu</td>
 </tr>
 <tr>
-<td rowspan=8 >Outside Chinese mainland</td>
+<td rowspan=9 >Outside Chinese mainland</td>
 <td>Hong Kong/Macao/Taiwan (China): Hong Kong (China)</td>
 </tr>
 <tr>
@@ -46,6 +46,8 @@
 </tr>
 <tr>
 <td>South America: Sao Paulo</td>
+ <tr>
+<td>South Asia: Mumbai</td> 
 </tr>
 <tr>
 <td rowspan=12 >CLB WAF</td>
