@@ -1,6 +1,6 @@
 ### The number of tables in a single instance exceeds 1 million
 
-When the number of tables in a single instance exceeds 1 million, it may cause backup failure and affect database monitoring. You need to control the number of tables in a single instance to no more than 1 million.
+When the number of tables in a single instance exceeds 1 million, it may cause backup failure and affect database monitoring. You need to keep the number of tables in a single instance below 1 million.
 
 ### Large transactions caused by non-primary key tables
 
