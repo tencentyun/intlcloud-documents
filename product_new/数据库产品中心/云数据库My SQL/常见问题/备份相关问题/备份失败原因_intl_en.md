@@ -4,7 +4,7 @@ When the number of tables in a single instance exceeds 1 million, it may cause b
 
 ### Large transactions caused by non-primary key tables
 
-#### Cause analysis
+#### Cause
 
 If there is no primary key table in the instance and the binlog is in row format, when a large amount of data is updated or deleted through a SQL statsment, playback on the slave machine will cause a large transaction, resulting in the backup thread unable to acquire the lock, resulting in backup failure.
 
