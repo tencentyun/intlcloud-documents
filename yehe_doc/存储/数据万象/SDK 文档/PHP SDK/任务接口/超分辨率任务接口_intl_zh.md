@@ -232,7 +232,7 @@ Container 类型 Operation 的具体数据描述如下：
 | DigitalWatermark    | Request.Operation | 指定数字水印参数                                             | Container | 否       |
 | Output              | Request.Operation | 结果输出地址                                                 | Container | 是       |
 
-> 注意：
+>!
 >
 > 优先使用 TemplateId，无 TemplateId 时使用对应任务类型的参数。
 

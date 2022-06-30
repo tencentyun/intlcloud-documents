@@ -13,7 +13,6 @@ You have purchased a [CVM](https://buy.intl.cloud.tencent.com/cvm) instance.
 ## Directions
 
 1. Download the demo [here](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/pulsar/tdmq-java-client.zip) and configure relevant parameters.
-)），并配置相关参数。
    **About Maven dependencies**
 The dependencies in the `pom.xml` file are configured according to Pulsar's official dependencies. For more information, see [Pulsar Java client](https://pulsar.apache.org/docs/en/client-libraries-java/).
 <dx-codeblock>
@@ -79,7 +78,6 @@ System.out.println(">> pulsar client created.");
 
 - `serviceUrl` is the access address, which can be viewed and copied on the **[Cluster Management](https://console.cloud.tencent.com/tdmq/cluster)** page in the console.
 - `listenerName` is the `custom:` plus the route ID (NetModel), which can be viewed and copied on the **[Cluster Management](https://console.cloud.tencent.com/tdmq/cluster)** page in the console.
-![](https://qcloudimg.tencent-cloud.cn/raw/f1fad00ed5be05a6aad1aa2822d999ca.png)
 - `token` is the role token, which can be copied on the **Role Management** page.
 
 
@@ -158,7 +156,6 @@ for (int i = 0; i < 5; i++) {
    Run the `java -jar tdmq-demo-1.0.0.jar` command to run the demo and view the execution logs.
    ![](https://main.qcloudimg.com/raw/cd31ccff67fe1f5fa926e383151c5aae.png)
 5. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq), click **Topic Management** > **Topic Name** to enter the **Consumption Management** page, and click the triangle below a subscription name to view the production and consumption records.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/f1d8a389185ef98bc68e734dedea120a.png)
 6. Enter the **[Message Query](https://console.cloud.tencent.com/tdmq/message)** page to view the message trace after running the demo.
    ![](https://qcloudimg.tencent-cloud.cn/raw/ec34778b68aaffd9361e0c0e64ffb4b3.png)
    The message trace is as follows:

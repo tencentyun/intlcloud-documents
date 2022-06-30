@@ -79,7 +79,6 @@ System.out.println(">> pulsar client created.");
 
 - serviceUrl 即接入地址，可以在控制台 **[集群管理](https://console.cloud.tencent.com/tdmq/cluster)** 接入点页面查看并复制。
 - listenerName 即 “custom:” 拼接路由ID（NetModel），路由ID可以在控制台 **[集群管理](https://console.cloud.tencent.com/tdmq/cluster)** 接入点页面查看并复制。
-![](https://qcloudimg.tencent-cloud.cn/raw/f1fad00ed5be05a6aad1aa2822d999ca.png)
 - token 即角色的密钥，角色密钥可以在**角色管理**中复制。
 
 
@@ -158,7 +157,6 @@ for (int i = 0; i < 5; i++) {
    执行命令 `java -jar tdmq-demo-1.0.0.jar`，运行 Demo，可查看运行日志。
    ![](https://main.qcloudimg.com/raw/cd31ccff67fe1f5fa926e383151c5aae.png)
 5. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，依次点击 **Topic 管理** > **Topic 名称**进入消费管理页面，点开订阅名下方右三角号，可查看生产消费记录。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/f1d8a389185ef98bc68e734dedea120a.png)
 6. 进入 **[消息查询](https://console.cloud.tencent.com/tdmq/message)** 页面，可查看 Demo 运行后的消息轨迹。
    ![](https://qcloudimg.tencent-cloud.cn/raw/ec34778b68aaffd9361e0c0e64ffb4b3.png)
    消息轨迹如下：

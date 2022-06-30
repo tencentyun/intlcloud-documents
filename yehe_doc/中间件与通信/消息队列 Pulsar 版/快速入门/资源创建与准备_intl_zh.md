@@ -21,8 +21,7 @@
    ![](https://qcloudimg.tencent-cloud.cn/raw/cba9bfef826619335cf9ba9c4c8b0e5a.png)
    :::
    ::: 2.6.1版本集群
-   在接入点列表页，单击**新建**，新建一个 VPC 接入点（和运行客户端的资源所在 VPC 一致即可），创建后如下图。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/fe4bd8e74a61742512e2dcd529488132.png)
+   在接入点列表页，单击**新建**，新建一个 VPC 接入点（和运行客户端的资源所在 VPC 一致即可）。
    :::
    </dx-tabs>
 

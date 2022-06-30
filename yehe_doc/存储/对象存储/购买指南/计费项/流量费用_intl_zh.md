@@ -74,7 +74,7 @@
 
 >?CDN 流量费用由腾讯云 CDN 收取，详情请参见 [CDN 定价](https://buy.cloud.tencent.com/price/cdn)。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/7c0abb7926379d449e6038aa75d81c07.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7eb9d36850a4d0b338eda9e472a71e38.jpg)
 
 ## 流量费用的计费方式和计算方法
 

@@ -74,7 +74,7 @@ After you enable the CDN acceleration domain name, data downloads and access thr
 
 >?CDN traffic fees are charged by CDN. For detailed pricing, see [Pricing | Content Delivery Network](https://buy.cloud.tencent.com/price/cdn).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/7c0abb7926379d449e6038aa75d81c07.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7eb9d36850a4d0b338eda9e472a71e38.jpg)
 
 ## Billing Method and Calculation Formulas
 

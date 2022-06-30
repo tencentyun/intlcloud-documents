@@ -26,7 +26,7 @@
 </thead>
 <tbody><tr>
 <td>搭建方式</td>
-<td>选择由腾讯 <a href="https://market.cloud.tencent.com/" target="_blank">云市场</a> 中的系统镜像直接安装部署。</td>
+<td>选择由腾讯云市场中的系统镜像直接安装部署。</td>
 <td>以手动的方式安装所需软件，可定制化。</td>
 </tr>
 <tr>
