@@ -9,7 +9,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=12 >SaaS 型 WAF</td>
+<td rowspan=13 >SaaS 型 WAF</td>
 <td rowspan=4 >中国大陆地区</td>
 <td>华南地区：广州</td>
 </tr>
@@ -23,7 +23,7 @@
 <td>西南地区：成都</td>
 </tr>
 <tr>
-<td rowspan=8 >非中国大陆地区</td>
+<td rowspan=9 >非中国大陆地区</td>
 <td>港澳台地区：中国香港</td>
 </tr>
 <tr>
@@ -46,6 +46,8 @@
 </tr>
 <tr>
 <td>南美地区：圣保罗</td>
+<tr>
+<td>亚太南部：孟买</td>
 </tr>
 <tr>
 <td rowspan=12 >负载均衡型 WAF</td>
