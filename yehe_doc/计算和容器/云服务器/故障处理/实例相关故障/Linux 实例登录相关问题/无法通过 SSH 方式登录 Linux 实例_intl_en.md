@@ -824,8 +824,7 @@ The relevant access control policy of the PAM module (pam_listfile.so) causes th
 
 #### Overview of PAM module
 Pluggable Authentication Module (PAM) is an authentication mechanism proposed by Sun. It provides some dynamic link libraries and a set of unified APIs to separate a system service from its authentication method. This allows the system admin to flexibly configure different authentication methods for different services as needed without modifying service programs and add new authentication methods to the system easily.
-Each application with the PAM module enabled has a configuration file named after it in the `/etc/pam.d` directory; for example, the configuration file of the `login` command is `/etc/pam.d/login`, where you can configure specific policies. For more information on `pam_listfile`, please see [pam_listfile - deny or allow services based on an arbitrary file](http://www.linux-pam.org/Linux-PAM-html/sag-pam_listfile.html).
-
+Each application with the PAM module enabled has a configuration file named after it in the `/etc/pam.d` directory; for example, the configuration file of the `login` command is `/etc/pam.d/login`, where you can configure specific policies. 
 
 
 #### Solutions
