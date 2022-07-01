@@ -17,16 +17,15 @@ The instance to be renewed must be monthly subscribed.
 ### Manual renewal
 #### Option 1
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), select one or multiple instances in the instance list, and select **Renew** at the top.
-![](https://main.qcloudimg.com/raw/cb2cd1fadd8af615db5d134d0ce5f9b9.png)
+
 2. In the pop-up window, select the renewal period and click **OK**.
 >?You can select **By month** or **By year** for **Renewal Period**. A six-month renewal period is selected as shown below.
 >
-![](https://main.qcloudimg.com/raw/4575a223cefb54ea573b32d22602d823.png)
 3. On the order confirmation page, confirm that everything is correct and make the payment.
 
 #### Option 2
 Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list to enter the instance details page, and click **Renew** in **Configuration Info**.
-![](https://main.qcloudimg.com/raw/5def9e51bdb35beb83579d71d544c06a.png)
+
 
 ## Renewal in Renewal Management Center
 The [Renewal Management](https://console.cloud.tencent.com/account/renewal) page provides features such as **Batch Renewal**, **Set to Auto-Renewal**, **Set to Non-Renewal**, and **Unify Expiry Date** for instances. For more information, see [Renewal Management](https://intl.cloud.tencent.com/document/product/555/7454).
