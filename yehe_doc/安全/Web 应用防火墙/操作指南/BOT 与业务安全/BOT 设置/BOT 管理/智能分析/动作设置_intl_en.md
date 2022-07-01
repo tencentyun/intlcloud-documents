@@ -3,7 +3,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/ea433c2715a4ec49664b543589214284.png)
 3. In the bot management module, click **Action score**.
 4. Configure the action score to control access more precisely.
-![](https://qcloudimg.tencent-cloud.cn/raw/705a7e04a6531e787b32308e7d36bd61.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/62e33a8f65533e27271861ada64792c2.png)
 
 **Configuration description**
  - **Mode**: It provides Loose, Moderate, Strict and Custom modes to identify and combat bots, where Loose, Moderate, and Strict modes are preset in the setting, and can be edited to Custom mode.
