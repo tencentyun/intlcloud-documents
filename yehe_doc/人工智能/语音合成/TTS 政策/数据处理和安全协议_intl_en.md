@@ -4,7 +4,7 @@ This Module applies if you use the Text-To-Speech feature (“Feature”). This 
 ### 2.	PROCESSING
 We will process the following data in connection with the Feature:
 
-|Personal Information	|Use|
+|**Personal Information**	|**Use**|
 |---------|---------|
 |**Text data uploaded by your end users**|	We only process this data for the purposes of providing the Feature to you.<br>Please note that this data is integrated with our Cloud Object Storage feature for this purpose. |
 |**Audio results generated from the text data** (APPID, UIN, audio URL, voice type, create time)|We only process this data for the purposes of providing the Feature to you.<br>Please note that this data is integrated with our TencentDB for MySQL feature for this purpose. |
@@ -18,7 +18,7 @@ As specified in the DPSA.
 ### 5.	DATA RETENTION
 We will store personal data processed in connection with the Feature as follows:
 
-|Personal Information|	Retention Policy|
+|**Personal Information**|	**Retention Policy**|
 |---------|---------|
 |Text data uploaded by your end users|	Automatically deleted after 24 hours, or when you request deletion of such data (upon which such data will be deleted immediately) (whichever is earlier).|
 |Audio results generated from the text data|	Automatically deleted after 7 days, or when you request deletion of such data (upon which such data will be deleted immediately) (whichever is earlier).|

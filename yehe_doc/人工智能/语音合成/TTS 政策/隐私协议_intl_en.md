@@ -9,10 +9,27 @@ This Feature is available to users globally, but primarily intended for users lo
 
 ### 4.	HOW WE USE PERSONAL INFORMATION
 We will use the information in the following ways and in accordance with the following legal bases:
-|Personal Information|	Use|	Legal Basis|
-|---------|---------|---------|
-|**Monitoring Data**: APPID, interface name, result, Call ID, start and end call time, region, fee, interface call volume|We use this information for the purpose of providing the Feature to you, and for troubleshooting and performance analysis.<br>Please note that this data is collected by, and stored in, our Cloud Monitor feature.|	We process this information as it is necessary for us to perform our contract with you to provide the Feature.|
-|**Operation Log**: APPID, Call ID, timestamp, single step debugging information, desensitization request and response|	We use this information to ensure the Feature functions as required and to analyze the reasons for errors or failures and troubleshoot such problems.<br>Please note that this data is collected by, and stored in, our  Cloud Log Service feature.	|We process this information as it is necessary for us to perform our contract with you to provide the Feature.|
+
+<table>
+<thead>
+<tr>
+<th><b>Personal Information</b></th>
+<th><b>Use</b></th>
+<th><b>Legal Basis</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Monitoring Data</b>: APPID, interface name, result, Call ID, start and end call time, region, fee, interface call volume</td>
+<td>We use this information for the purpose of providing the Feature to you, and for troubleshooting and performance analysis.<br>Please note that this data is collected by, and stored in, our Cloud Monitor feature.</br></td>
+<td>We process this information as it is necessary for us to perform our contract with you to provide the Feature.</td>
+</tr>
+<tr>
+<td><b>Operation Log</b>: APPID, Call ID, timestamp, single step debugging information, desensitization request and response</td>
+<td>We use this information to ensure the Feature functions as required and to analyze the reasons for errors or failures and troubleshoot such problems.<br>Please note that this data is collected by, and stored in, our  Cloud Log Service feature.</br></td>
+<td>We process this information as it is necessary for us to perform our contract with you to provide the Feature.</td>
+</tr>
+</tbody></table>
 
 ### 5.	HOW WE STORE AND SHARE PERSONAL INFORMATION
 As specified in the Privacy Policy.
@@ -23,7 +40,7 @@ As specified in the Privacy Policy.
 ### 7.	DATA RETENTION
 We will retain personal information in accordance with the following:
 
-|Personal Information|	Retention Policy|
+|**Personal Information**|	**Retention Policy**|
 |---------|---------|
 |Monitoring Data|	Stored for 2 months. |
 |Operation Log|	Stored for 7 days.|
