@@ -3,7 +3,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/ea433c2715a4ec49664b543589214284.png)
 3. 在 BOT 管理页面的动作设置模块，单击**配置动作得分**。
 4. 在动作设置页面，用户可根据配置不同分数段的动作实现风险访问的精准拦截。
-![](https://qcloudimg.tencent-cloud.cn/raw/705a7e04a6531e787b32308e7d36bd61.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/62e33a8f65533e27271861ada64792c2.png)
 
 **使用说明**
  - **模式设置：** 提供宽松模式、中等模式、严格模式、自定义模式这四种默认处置模式，宽松、中等、严格这三种模式为预设模式，分别代表 BOT行为管理针对不同危害程度的 BOT 的推荐分类及处置策略。这三种预设模式可进行修改，修改后为自定义模式。
