@@ -1,5 +1,8 @@
 ## 컴포넌트 개요
 TUICalling은 오픈 소스 오디오/비디오 컴포넌트입니다. **영상 통화** 기능을 데스크톱 브라우저에 빠르게 통합하는 데 도움이 되며 온라인 의료 상담, 온라인 고객 서비스 및 원격 보험 청구와 같은 시나리오에 적합합니다.
+
+>?TUIKit의 모든 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+
 <table class="tablestyle">
 <tbody><tr>
 <td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
@@ -8,17 +11,16 @@ TUICalling은 오픈 소스 오디오/비디오 컴포넌트입니다. **영상 
 
 
 #### 기타 플랫폼
-Web용 TUICalling 외에도 Android, iOS, Flutter 및 Uniapp 플랫폼용 소스 코드도 제공합니다. TUICalling은 Android 및 iOS에서 ‘수신 전화 알림’ 기능도 지원합니다.
+Web 외에도 Android, iOS 및 Flutter용 소스 코드도 제공합니다. TUICalling은 Android 및 iOS 버전은 ‘수신 전화 알림’을 지원합니다.
 
 >?
 >- **Web용 TUICalling 외에도 Android, iOS, Flutter 및 Uniapp 플랫폼용 소스 코드도 제공합니다. TUICalling은 Android 및 iOS에서 ‘수신 전화 알림’ 기능도 지원합니다.** 
 >- 질문이나 제안 사항이 있으면 [고객센터](https://intl.cloud.tencent.com/contact-us)로 연락하십시오.
 
 ## 컴포넌트 통합
-
 [](id:step1)
 ### 1단계: SdkAppId 및 서명 키 가져오기
-- Tencent Cloud 계정이 없으시다면 회원 가입 후 [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629)를 완료해 주십시오. 그런 다음 TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지로 이동합니다.
+- Tencent Cloud 계정에 가입하고 TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지로 이동합니다.
 - 애플리케이션 목록이 비어 있는 경우 **애플리케이션 생성**을 클릭하여 애플리케이션을 생성할 수 있습니다. **애플리케이션 정보**를 클릭하여 애플리케이션 관리 페이지로 이동하고 **빠른 시작** 탭을 선택하여 다음 콘텐츠를 확인합니다.
  <img src="https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png" width="700">
 - **SDKAppID**: 비즈니스 격리에 사용되는 TRTC 애플리케이션 ID. 즉, SDKAppID 값이 다른 호출은 상호 연결할 수 없습니다.
@@ -167,9 +169,9 @@ trtcCalling.hangup()
 
 ### 사용자에게 연결할 수 없는 이유는 무엇입니까? 강제 오프라인되는 이유는 무엇입니까?
 컴포넌트는 여러 인스턴스의 로그인 또는 **오프라인 신호**를 지원하지 않습니다. 현재 로그인이 고유한지 확인하십시오.
-> ?
-> - **다중 인스턴스**: 사용자가 동일한 계정으로 여러 번 또는 다른 장치에 로그인하여 신호를 방해합니다.
-> - **오프라인 신호**: 온라인 인스턴스만 메시지를 수신할 수 있습니다. 오프라인 인스턴스로 전송된 메시지는 인스턴스가 온라인 상태가 되면 다시 전송되지 않습니다.
+>?
+>- **다중 인스턴스**: 1개의 UserID로 중복 로그인하거나 여러 단말에서 로그인하는 경우 신호에 혼란이 발생합니다.
+>- **오프라인 푸시**: 온라인 인스턴스만 메시지를 수신할 수 있습니다. 오프라인 인스턴스로 전송된 메시지는 인스턴스의 온라인 상태 전환 후 다시 전송되지 않습니다.
 
 ### 환경 요구 사항은 무엇입니까?
 Chrome의 데스크톱 버전은 TRTC Web SDK의 기능에 대한 더 나은 지원을 제공합니다. 따라서 데모에는 Chrome을 권장합니다.
@@ -177,7 +179,7 @@ Chrome의 데스크톱 버전은 TRTC Web SDK의 기능에 대한 더 나은 지
 TRTCCalling은 방화벽의 얼로우리스트에 추가되어야 하는 데이터 전송을 위해 다음 포트와 도메인 이름을 사용합니다. 구성 후 [공식 Demo](https://web.sdk.qcloud.com/component/trtccalling/demo/web/latest/index.html)를 사용하여 구성이 적용되었는지 확인하십시오.
 - **TCP 포트**: 8687
 - **UDP 포트**: 8000, 8080, 8800, 843, 443, 16285
-- **도메인**: qcloud.rtc.qq.com. 자세한 내용은 [방화벽 제한 대응 관련 질문](https://intl.cloud.tencent.com/document/product/647/35164)을 참고하십시오.
+- **도메인**: qcloud.rtc.qq.com. 자세한 내용은 [방화벽 제한 처리](https://intl.cloud.tencent.com/document/product/647/35164)를 참고하십시오.
 - **지원되는 플랫폼**: 현재 이 솔루션은 다음 플랫폼을 지원합니다.
 <table>
 <thead><tr><th>OS</th><th>브라우저</th><th>최소 브라우저 버전 요구 사항</th></tr></thead>
@@ -191,11 +193,11 @@ TRTCCalling은 방화벽의 얼로우리스트에 추가되어야 하는 데이�
 <td>56+</td>
 </tr><tr>
 <td>Mac OS</td>
-<td>데스크톱 Firefox 브라우저</td>
+<td>Firefox 브라우저(데스크톱)</td>
 <td>56+</td>
 </tr><tr>
 <td>Mac OS</td>
-<td>데스크톱 Edge 브라우저</td>
+<td>Edge 브라우저(데스크톱)</td>
 <td>80+</td>
 </tr><tr>
 <td>Windows</td>
@@ -218,7 +220,7 @@ TRTCCalling은 방화벽의 얼로우리스트에 추가되어야 하는 데이�
 
 >? 브라우저 호환성에 대한 자세한 내용은 [지원되는 브라우저](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-05-info-browser.html)를 참고하십시오. [TRTC 호환성 확인 페이지](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 사용하여 온라인 테스트를 실행할 수도 있습니다.
 
-- **URL 프로토콜 지원:**:
+- **URL 프로토콜 지원**:
 <table>
 <thead><tr><th>시나리오</th><th>프로토콜</th><th>수신(재생)</th><th>발송(게시)</th><th>화면 공유</th><th>비고</th></tr></thead>
 <tbody><tr>

@@ -1,6 +1,8 @@
 ## 컴포넌트 개요
 
-TUIPusher & TUIPlayer는 Web 기반 오픈 소스 라이브 스트리밍 컴포넌트(UI 포함)입니다. 이를 [TRTC](https://intl.cloud.tencent.com/product/trtc) 및 [IM](https://intl.cloud.tencent.com/product/im)과 같은 Tencent Cloud의 기본 SDK에 통합하여 라이브 스트리밍 애플리케이션(기업 라이브 스트리밍, 라이브 쇼핑, 직업 교육, 원격 교육 등)에 Web 기반 게시 및 재생 기능을 신속하게 장착할 수 있습니다.
+TUIPusher & TUIPlayer는 Web 기반 오픈 소스 라이브 스트리밍 컴포넌트(UI 포함)입니다. 이를 [TRTC](https://cloud.tencent.com/product/trtc) 및 [IM](https://cloud.tencent.com/product/im)과 같은 Tencent Cloud의 기본 SDK에 통합하여 라이브 스트리밍 애플리케이션(기업 라이브 스트리밍, 라이브 쇼핑, 직업 교육, 원격 교육 등)에 Web 기반 게시 및 재생 기능을 신속하게 장착할 수 있습니다.
+
+>?TUIKit의 모든 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
 TUIPusher & TUIPlayer 의 장점:
 + 디바이스 선택, 뷰티 필터, 퍼블리싱, 재생 및 라이브 채팅과 같은 일반적인 라이브 스트리밍 기능을 포함하는 UI가 있는 범용 라이브 스트리밍 솔루션으로 서비스를 시장에 신속하게 출시할 수 있습니다.
@@ -8,6 +10,7 @@ TUIPusher & TUIPlayer 의 장점:
 + Web 기반, 사용하기 쉽고 빠른 업데이트.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d1670385df8944886472e6c17d577949.png)
+
 
 ## 빠른 체험
 
@@ -90,6 +93,7 @@ cd Web/TUIPlayer
 npm install
 ```
 3. `TUIPusher/src/config/basic-info-config.js` 및 `TUIPlayer/src/config/basic-info-config.js` 구성 파일에 sdkAppId 및 secretKey를 입력합니다.
+
 4. 로컬 개발 환경에서 TUIPusher & TUIPlayer를 실행합니다.
 ```bash
 cd Web/TUIPusher
@@ -126,11 +130,9 @@ TUIPusher & TUIPlayer를 프로덕션 환경에 적용하려면 프로젝트에 
 - 사용자 ID, 사용자 이름, 프로필 사진과 같은 사용자 정보를 관리하는 사용자 관리 시스템을 구축합니다
 - 방 ID, 방 이름, 앵커 등 방 정보를 관리하는 방 관리 시스템을 구축합니다.
 - 서버의 UserSig를 생성합니다.
-
 > !
 > - 본문의 UserSig 생성 방법은 귀하가 입력한 sdkAppId 및 secretKey에 따라 클라이언트 측에서 userSig를 생성하는 것입니다. 이 secretKey 방식은 디컴파일 및 역크래킹 되기 쉽기 때문에 키가 유출되면 공격자가 Tencent Cloud 트래픽을 도용할 수 있습니다. **이 방법은 TUIPusher & TUIPlayer 로컬 실행을 통한 기능 디버깅에만 적합합니다**.
 > - 올바른 UserSig 배포 방법은 UserSig의 계산 코드를 서버에 통합하고 App 지향 API를 제공하는 것입니다. UserSig가 필요할 때 애플리케이션은 동적 UserSig에 대한 요청을 비즈니스 서버에 보낼 수 있습니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/647/35166)을 참고하십시오.
-
 - `TUIPusher/src/pusher.vue` 및 `TUIPlayer/src/player.vue`와 같이 글로벌 저장을 위한 vuex의 store에 사용자 정보, 방 정보, SDKAppID 및 UserSig와 같은 계정 정보를 제출하면 모든 기능을 사용할 수 있습니다. 게시 및 재생 클라이언트의 두 컴포넌트 중 하나입니다. 아래 다이어그램은 프로세스를 자세히 보여줍니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/30e959d1b4605532f6d4cac190cdd1df.png)
 
@@ -144,7 +146,7 @@ TUIPusher & TUIPlayer를 프로덕션 환경에 적용하려면 프로젝트에 
 ### Web에서 클라우드 녹화를 구현하는 방법은 무엇입니까?
 1. **클라우드 녹화**기능 활성화의 구체적인 작업은 [클라우드 녹화 및 재생 구현](https://intl.cloud.tencent.com/document/product/647/35426)을 참고하십시오.
 2. **클라우드 녹화**> **특정 사용자 녹화** 활성화 후 Web에서 [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient) 인터페이스를 호출할 때 userDefineRecordId 매개변수를 전달하여 녹화를 활성화할 수 있습니다.
-	
+	 
 ### Web에서 CDN으로 푸시하는 방법은 무엇입니까?
 Web에서 CDN으로 푸시 스트림하려면 [CDN으로 푸시 스트림하기](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-26-advanced-publish-cdn-stream.html)를 참고하십시오.
 
@@ -152,7 +154,7 @@ Web에서 CDN으로 푸시 스트림하려면 [CDN으로 푸시 스트림하기]
 LEB 풀 스트림을 구현하는 방법은 Web SDK를 통해 스트림을 CDN으로 푸시한 후 WebRTC 프로토콜을 사용하여 프로토콜을 가져오는 것입니다.
 
 ## 주의 사항
-###  지원 플랫폼
+### 지원 플랫폼
 
 | 운영 체제 | 브라우저 유형                   | 브라우저 최저 버전 요구 사항 | TUIPlayer                  | TUIPusher | TUIPusher 화면 공유           |
 | :------- | :--------------------------- | :----------------- | :------------------------- | :-------- | :--------------------------- |

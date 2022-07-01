@@ -1,6 +1,8 @@
 ## 컴포넌트 개요
 
-TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 ‘1:1 음성/영상 통화’ 및 오프라인 통화와 같은 App 지원 시나리오를 만들 수 있습니다. 또한 Android, Web, 미니 프로그램, Flutter 및 UniApp 플랫폼을 지원합니다. 기본 기능은 다음과 같습니다.
+TUICalling은 오디오/비디오 통신을 위한 오픈 소스 UI 컴포넌트입니다. 몇 줄의 코드 변경만으로 프로젝트에 통합하여 오프라인 푸시 알림을 지원하는 ‘일대일 음성/영상 통화’를 구현할 수 있습니다. iOS 구성 요소 외에도 Android, Web, Flutter, UniApp 등을 위한 컴포넌트도 제공합니다.
+
+>?TUIKit의 모든 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 Tencent Cloud [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078)과 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM의 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
 <table class="tablestyle">
 <tbody><tr>
@@ -16,7 +18,6 @@ TUICalling은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로
 1. 프로젝트의 `Podfile`과 같은 수준에 `TUICalling` 폴더를 만듭니다.
 2. [**GitHub/TUICalling**](https://github.com/tencentyun/TUICalling)으로 이동하여 코드를 복제 또는 다운로드하고 [**TUICalling/iOS/**](https://github.com/tencentyun/TUICalling/tree/main/iOS) 디렉터리의 `Source` 및 `Resources` 폴더와 `TUICalling.podspec` 파일을 `1단계`에서 만든 TUICalling 폴더에 복사합니다.
 3. Podfile에 다음 종속성을 추가하고 `pod install`을 실행하여 가져오기를 완료합니다.
-
 ```
 # :path => "TUICalling.podspec의 상대 경로를 가리킵니다"
 pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"]
@@ -38,7 +39,7 @@ pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"
 
 ### 3단계: 컴포넌트 생성 및 초기화
 
-<dx-tabs>
+<dx-codeblock>
 :::  Objective-C
 ```
 // 1. 컴포넌트에 로그인
@@ -67,17 +68,17 @@ TUILogin.login("사용자 UserID", userSig: "사용자 UserSig") {
 TUICalling.shareInstance()
 ```
 :::
-</dx-tabs>
+</dx-codeblock>
 
 **매개변수 설명**:
 - **SDKAppID**: **TRTC 애플리케이션 ID**입니다. TRTC 서비스를 활성화하지 않은 경우 [TRTC 콘솔](https://console.cloud.tencent.com/trtc/app)에 로그인하여 TRTC 애플리케이션을 생성하고 **애플리케이션 정보**를 클릭합니다. SDKAppID는 아래와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**입니다. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지로 이동한 후, SecretKey는 아래와 같습니다.
-- **UserID**: 문자열이며 최대 32바이트의 문자와 숫자를 포함할 수 있는 현재 사용자 ID입니다(특수 기호는 지원되지 않음). 실제 계정 시스템에 따라 사용자 정의할 수 있습니다.
-- **UserSig**: SDKAppId, UserID 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 UserSig를 온라인으로 직접 생성하거나 [TUICalling 데모 프로젝트](https://github.com/tencentyun/TUICalling/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L39)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오
+- **userId**: 문자열이며 최대 32바이트의 문자와 숫자를 포함할 수 있는 현재 사용자 ID입니다(특수 기호는 지원되지 않음). 실제 계정 시스템에 따라 사용자 정의할 수 있습니다.
+- **userSig**: SDKAppId, UserID 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 UserSig를 온라인으로 직접 생성하거나 [TUICalling 데모 프로젝트](https://github.com/tencentyun/TUICalling/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L39)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오
 
 ### 4단계: 음성/영상 통화 걸기
-[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)을 통한 1:1 음성/영상 통화:
+[TUICalling#call](https://intl.cloud.tencent.com/document/product/647/43139)을 사용하여 일대일 음성/영상 통화를 합니다:
 <dx-codeblock>
 :::  Objective-C Objectivec
 // 1:1 영상 통화를 시작합니다. userId가 1111이라고 가정합니다.
@@ -93,7 +94,7 @@ TUICalling.shareInstance().call(userIDs: ["1111"], type: .video)
 >? 수신자가 3단계를 완료한 후(즉, 로그인 성공 후) 다시 호출 요청을 수신하면 TUICalling 컴포넌트는 해당 호출 응답 UI를 자동으로 표시합니다.
 
 ### 5단계: 오프라인 푸시 기능 추가(옵션)
-상기 4단계가 완료되면 영상 통화를 걸고 받을 수 있습니다. 그러나 비즈니스 시나리오에서 ‘App 프로세스가 종료’되거나 ‘백그라운드에서 실행’된 후에도 음성/영상 통화 요청을 정상적으로 수신할 수 있어야 하는 경우 TUICalling 컴포넌트에 오프라인 푸시 기능을 추가해야 합니다. 자세한 내용은 [**Offline Push (iOS)**](https://intl.cloud.tencent.com/document/product/1047/39157)를 참고하십시오.
+상기 4단계가 완료되면 영상 통화를 걸고 받을 수 있습니다. 그러나 비즈니스 시나리오에서 ‘App 프로세스가 종료’되거나 ‘백그라운드에서 실행’된 후에도 음성/영상 통화 요청을 정상적으로 수신할 수 있어야 하는 경우 TUICalling 컴포넌트에 오프라인 푸시 기능을 추가해야 합니다. 자세한 내용은 [**오프라인 푸시(iOS)**](https://intl.cloud.tencent.com/document/product/1047/39157)를 참고하십시오.
 
 ### 6단계: 상태 수신 기능 추가(옵션)
 
