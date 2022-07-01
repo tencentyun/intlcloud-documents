@@ -2,7 +2,7 @@
 
 ### 개발자 환경 요건
 
-- 개발 툴 XCode 11 이상: App Store 또는 [다운로드 링크](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/demo.zip)를 클릭하십시오.
+- XCode 11 이상: App Store 또는 [Demos](https://intl.cloud.tencent.com/document/product/1143/45374)에서 다운로드합니다.
 - 권장 실행 환경:
   - 기기 사양: iPhone 5 이상. iPhone 6 이하의 경우 전면 카메라는 720p까지 지원하며 1080p는 지원되지 않습니다.
   - 시스템 요구 사항: iOS 10.0 이상.
@@ -41,7 +41,7 @@ XCode 기본 C++ 환경.
 ### 리소스
 - 필수 리소스 패기지: `LightCore.bundle`
 - 키잉 기능 패기지: `LightSegmentPlugin.bundle`
-- 손짓 기능 패키지: `LightHandPlugin.bundle`
+- 손 동작 기능 패키지: `LightHandPlugin.bundle`
 - 3D 기능 패기지: `Light3DPlugin.bundle`
 
 ### 가져오기 방법
@@ -58,8 +58,8 @@ Info.plist 파일에 해당 권한에 대한 설명을 추가하십시오. 그�
 framework 서명은 General-->Masonry.framework 및 libpag.framework에서 Embed & Sign을 직접 선택할 수 있습니다.
 [](id:step2)
 ### 2단계: 인증
-1. 인증 신청 후 LicenseURL과 LicenseKEY를 받으려면 [License 가이드](https://intl.cloud.tencent.com/document/product/1143/45380)를 참고하십시오.
-> ! 일반적인 상황에서는 app이 한 번만 성공적으로 연결되면 인증 프로세스를 완료할 수 있으므로 License 파일을 프로젝트의 프로젝트 디렉터리에 넣을 **필요가 없습니다**. 하지만 app이 인터넷에 연결되지 않은 상태에서도 SDK 관련 기능을 사용해야 하는 경우 license 파일을 다운로드하여 프로젝트 디렉터리에 넣을 수 있으며, license 파일 이름은 반드시 v_cube.license여야 합니다.
+1. 라이선스를 신청하고 LicenseURL과 LicenseKEY를 받습니다.
+>! 일반적인 상황에서는 app이 한 번만 성공적으로 연결되면 인증 프로세스를 완료할 수 있으므로 License 파일을 프로젝트의 프로젝트 디렉터리에 넣을 **필요가 없습니다**. 하지만 app이 인터넷에 연결되지 않은 상태에서도 SDK 관련 기능을 사용하려면 license 파일을 다운로드하여 프로젝트 디렉터리에 넣을 수 있으며, license 파일 이름은 반드시 v_cube.license여야 합니다.
 2. 해당 비즈니스 모듈의 초기화 코드에 URL과 KEY를 설정하여 license 다운로드를 트리거하여 사용 전에 임시로 다운로드하는 것을 피합니다. AppDelegate의 didFinishLaunchingWithOptions 메소드에서도 다운로드가 실행될 수 있습니다. 이 중 LicenseURL과 LicenseKey는 콘솔이 License에 바인딩될 때 생성되는 권한 정보입니다.
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
@@ -70,7 +70,7 @@ framework 서명은 General-->Masonry.framework 및 libpag.framework에서 Embed
         }
     }];
 ```
-**errorCode 인증 설명**: 
+**errorCode 인증 설명**:
 <table>
 <thead>
 <tr>
@@ -87,10 +87,10 @@ framework 서명은 General-->Masonry.framework 및 libpag.framework에서 Embed
 <td>잘못된 입력 매개변수, 예시: 빈 URL 또는 KEY</td>
 </tr><tr>
 <td>-3</td>
-<td>다운로드 링크 실패, 네트워크 설정을 확인하십시오.</td>
+<td>다운로드 실패, 네트워크 설정 확인</td>
 </tr><tr>
 <td>-4</td>
-<td>로컬에서 읽은 TE 인증 정보가 비어 있습니다. 이는 IO 실패로 인해 발생할 수 있습니다.</td>
+<td>로컬에서 읽은 TE 인증 정보가 비어 있음, 이는 IO 실패로 인해 발생한 것일 수 있습니다.</td>
 </tr><tr>
 <td>-5</td>
 <td>VCUBE TEMP License 파일 읽기 내용이 비어 있습니다. 이는 IO 실패로 인한 것일 수 있습니다.</td>
@@ -99,13 +99,13 @@ framework 서명은 General-->Masonry.framework 및 libpag.framework에서 Embed
 <td>v_cube.license 파일 JSON 필드가 잘못되었습니다. Tencent Cloud 팀에 문의하십시오.</td>
 </tr><tr>
 <td>-7</td>
-<td>서명 확인에 실패했습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>서명 인증 실패. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr><tr>
 <td>-8</td>
-<td>복호화에 실패했습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>복호화 실패. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr><tr>
 <td>-9</td>
-<td>TELicense 필드의 JSON 필드가 올바르지 않습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>TELicense 필드의 JSON 필드가 올바르지 않습니다. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr><tr>
 <td>-10</td>
 <td>네트워크에서 리졸브된 TE 인증 정보가 비어 있습니다. Tencent Cloud 팀에 문의하십시오.</td>
@@ -114,7 +114,7 @@ framework 서명은 General-->Masonry.framework 및 libpag.framework에서 Embed
 <td>IO 실패로 인해 로컬 파일에 TE 인증 정보를 쓰지 못했습니다.</td>
 </tr><tr>
 <td>-12</td>
-<td>다운로드 실패, 로컬 asset 구문 분석 실패</td>
+<td>다운로드에 실패했으며 로컬 asset의 리졸브도 실패했습니다.</td>
 </tr><tr>
 <td>-13</td>
 <td>인증 실패</td>
@@ -198,9 +198,10 @@ Command /bin/sh failed with exit code 1
 ```
 - 문제 원인: `libpag.framework 및 Masonary.framework` 재서명 실패.
 - 해결 방법:
-	1. `demo/copy_framework.sh`를 엽니다.
-	2. 다음 명령을 사용하여 로컬 cmake의 경로를 확인하고 `$(what cmake)`를 로컬 cmake의 절대 경로로 변경합니다.
+ 1. `demo/copy_framework.sh`를 엽니다.
+ 2. 다음 명령을 사용하여 로컬 cmake의 경로를 확인하고 `$(what cmake)`를 로컬 cmake의 절대 경로로 변경합니다.
 ```
 which cmake
 ```
+
 3. 자신의 서명으로 모든 `Apple Development: ……`를 교체합니다.

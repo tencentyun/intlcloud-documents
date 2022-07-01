@@ -1,13 +1,13 @@
 [](id:que1)
 ### Android release 패키지가 일부 메소드를 찾을 수 없다는 오류를 보고하면 어떻게 해야 하나요?
-- release 패키지를 인쇄할 때 컴파일 최적화를 활성화한 경우(minifyEnabled를 true로 설정) `no xxx method` 예외입니다.
+- release 패키지를 인쇄할 때 컴파일 최적화(minifyEnabled를 true로 설정)를 활성화한 경우 java 레이어에서 호출되지 않은 일부 코드가 잘려서 native 레이어에서 호출되어 `no xxx method` 예외가 발생할 수 있습니다.
 - 이러한 컴파일 최적화를 활성화한 경우 xmagic 코드가 잘리지 않도록 다음 keep 규칙을 추가합니다.
 ```java
 -keep class com.tencent.xmagic.** { *;}
 -keep class org.light.** { *;}
 -keep class org.libpag.** { *;}
 -keep class org.extra.** { *;}
--keep class org.gyailib.** { *;}
+-keep class com.gyailib.**{ *;}
 -keep class com.tencent.cloud.iai.lib.** { *;}
 ```
 
@@ -17,8 +17,8 @@
 
 ```
 Android{
-  configurations {
-    all*.exclude group: 'com.google.code.gson'
+  configurations  {
+    all*.exclude  group:  'com.google.code.gson'
   }
 }
 ```
@@ -63,4 +63,6 @@ unexpected service error: build aborted due to an internal error: unable to writ
 	1. **File** > **Project settings** > **Build System**으로 이동하고 **Legacy Build System**을 선택합니다.
 	2. Xcode 13.0++의 경우 **File** > **Workspace Settings**에서 **Do not show a diagnostic issue about build system deprecation**을 선택해야 합니다.
 
+### Tencent Effect SDK의 다양한 속성 간의 적용 관계는 어떻게 됩니까?
+![](https://qcloudimg.tencent-cloud.cn/raw/6f204e9f9197f1bab8c7be7d31bf4aea.png)
 

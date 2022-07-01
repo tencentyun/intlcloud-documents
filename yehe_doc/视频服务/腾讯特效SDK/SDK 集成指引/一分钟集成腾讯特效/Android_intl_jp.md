@@ -1,5 +1,6 @@
 ## 統合の準備
-**ファイルの準備**：
+1. [SDKのダウンロード](https://intl.cloud.tencent.com/document/product/1143/45377)を実行し、解凍します。
+2. **以下のファイルを準備**します。
 <table>
 <tbody><tr><th>ファイルタイプ</th><th>説明</th></tr>
 <tr>
@@ -15,7 +16,7 @@
 ### リソース
 
 - 上記で準備したすべての`.aar`ファイルをappプロジェクトの`libs`ディレクトリ下に追加します。
-- SDKパッケージ内のassets/ディレクトリ下のすべてのリソースを`../src/main/assets`ディレクトリ下にコピーします。
+- SDKパッケージのassets/ディレクトリにあるすべてのリソースを`../src/main/assets`ディレクトリにコピーします。SDKパッケージのMotionResフォルダにリソースがある場合は、このフォルダを`../src/main/assets`ディレクトリにコピーします。
 - jniLibsフォルダをプロジェクトの`../src/main/jniLibs`ディレクトリ下にコピーします。
 
 ### インポート方法
@@ -40,18 +41,18 @@ dependencies{
 ```
 
 [](id:download)
-## assets、so、動的エフェクトリソースガイドの動的ダウンロード
+## パケットサイズのスリム化：assets、so、ダイナミックエフェクトリソースガイドのダイナミックダウンロード
 
-パッケージのサイズを小さくするため、SDKに必要なassetsリソース、soライブラリ、および動的エフェクトリソースMotionRes（一部のベーシック版SDKには動的エフェクトリソースはありません）をネットワークからのダウンロードに変更することができます。ダウンロード成功後、上記ファイルのパスをSDKに設定します。
+パッケージのサイズを小さくするため、SDKに必要なassetsリソース、soライブラリ、およびダイナミックエフェクトリソースMotionRes（一部のベーシック版SDKにはダイナミックエフェクトリソースはありません）をネットワークからのダウンロードに変更することができます。ダウンロード成功後、上記ファイルのパスをSDKに設定します。
 
-Demoのダウンロードロジックを再利用することをお勧めします。もちろん、既存のダウンロードサービスを使用することもできます。動的ダウンロードの詳細なガイドについては、[Tencent Effect SDKリソースの動的ダウンロードの説明（Android）](https://docs.qq.com/doc/DWHRlU0dlcHlGR3V4)をご参照ください。 
+Demoのダウンロードロジックを再利用することをお勧めします。もちろん、既存のダウンロードサービスを使用することもできます。ダイナミックダウンロードの詳細については、[SDKパケットのスリム化(Android)](https://intl.cloud.tencent.com/document/product/1143/47831)をご参照ください。
 
 ## 全体フロー
 
 [](id:step1)
-### ステップ1：認証
+### 手順1：認証
 
-1. 権限承認を申請し、License URLとLicense KEYを取得します。[Licenseガイド](https://intl.cloud.tencent.com/document/product/1143/45380)をご参照ください。
+1. 権限の承認を申請し、License URLとLicense KEYを取得します。
 > ! 正常な状況では、Appのネットワーク接続が一度成功すれば認証フローは完了するため、Licenseファイルをプロジェクトのassetsディレクトリに保存する**必要はありません**。ただし、Appがネットワークに未接続の状態でSDKの関連機能を使用する必要がある場合は、Licenseファイルをダウンロードしてassetsディレクトリに保存し、最低保証プランとすることができます。この場合、Licenseファイル名は必ず`v_cube.license`としなければなりません。
 2. 関連業務モジュールの初期化コードの中でURLとKEYを設定し、licenseのダウンロードをトリガーします。使用する直前になってダウンロードすることは避けてください。ApplicationのonCreateメソッドでダウンロードをトリガーすることもできますが、この時点でネットワークの権限がない可能性や、ネットワーク接続の失敗率が比較的高い可能性があるため、推奨しません。
 ```
@@ -146,7 +147,7 @@ TELicenseCheck.getInstance().setTELicense(context, URL, KEY, new TELicenseCheckL
 </tr>
 <tr>
 <td>3018</td>
-<td>権限承認ファイルが期限切れです。Tencent Cloudに更新を申請する必要があります</td>
+<td>権限承認ファイルが期限切れです。Tencent Cloudに更新を申請してください</td>
 </tr>
 <tr>
 <td>その他</td>
@@ -155,7 +156,7 @@ TELicenseCheck.getInstance().setTELicense(context, URL, KEY, new TELicenseCheckL
 </tbody></table>
 
 [](id:step2)
-### ステップ2：リソースのコピー
+### 手順2：リソースのコピー
 1. リソースファイルがassetsディレクトリ内にある場合は、使用する前にappのプライベートディレクトリにコピーしておく必要があります。事前にコピーしておくか、または前の手順の認証成功のコールバックの中でコピー操作を行うこともできます。サンプルコードは、Demoの`LaunchActivity.java`です。
 ```
 XmagicResParser.setResPath(new File(getFilesDir(), "xmagic").getAbsolutePath());
@@ -164,15 +165,15 @@ XmagicResParser.setResPath(new File(getFilesDir(), "xmagic").getAbsolutePath());
 //リソースファイルのプライベートディレクトリへのコピーは1回のみ行います
 XmagicResParser.copyRes(getApplicationContext());
 ```
-2. リソースファイルが[ネットワークから動的ダウンロード](#download)したものの場合は、ダウンロード成功後にリソースファイルパスを設定する必要があります。サンプルコードは、Demoの`LaunchActivity.java`です。
+2. リソースファイルが[ネットワークから動的ダウンロード](#download)したものの場合は、ダウンロード成功後にリソースファイルパスを設定してください。サンプルコードは、Demoの`LaunchActivity.java`です。
 ```
 XmagicResParser.setResPath(ダウンロードしたリソースファイルのローカルパス);
 ```
 
 [](id:step3)
-### ステップ3：SDKの初期化および使用方法
+### 手順3：SDKの初期化および使用方法
 
-Tencent Effect SDK使用のライフサイクルはおおむね次のとおりです。
+Tencent Effect SDK使用のライフサイクルはおおむね次のとおりです：
 1. 美顔UIデータを作成します。Demoプロジェクトのものを参照できます。 `XmagicResParser.java,XmagicUIProperty.java,XmagicPanelDataManager.java`コード。
 2. プレビューレイアウトにGLSurfaceViewを追加します。  
 ```java
@@ -201,19 +202,22 @@ mPreviewMgr.setCustomTextureProcessor((textureId, textureWidth, textureHeight) -
 //Activityの中のonResumeメソッドでカメラを有効にします
 mPreviewMgr.onResume(this, 1280, 720);
 ```
+
 4. 美顔SDKを初期化します。Activityの`onResume()`メソッドに保存することをお勧めします。
 ```java
 mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXmagicPropertyErrorListener()); 
 ```
-- **パラメータ**
+
+ - **パラメータ**
  <table>
  <tr><th>パラメータ</th><th>意味</th></tr><tr><td>Context context</td><td>コンテキスト</td>
  </tr><tr>
- <td>String resDir</td><td>リソースファイルディレクトリ。詳細については、<a href="#step2">ステップ2</a>をご参照ください</td>
+ <td>String resDir</td><td>リソースファイルディレクトリ。詳細については、<a href="#step2">手順2</a>をご参照ください</td>
  </tr><tr>
  <td>OnXmagicPropertyErrorListener errorListener</td><td>コールバック関数実装クラス</td>
  </tr></table>
-- **戻り値**
+
+ - **戻り値**
  エラーコードの意味対照表：
  <table>
  <tr><th>エラーコード</th><th>意味</th></tr><tr>
@@ -246,6 +250,7 @@ mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXm
  <td>5004</td><td>分割背景ビデオのフォーマットをサポートしていません</td>
  </tr>
  </tbody></table>
+
 5. 素材プロンプトのコールバック関数を追加します（メソッドのコールバックはサブスレッドで実行される場合があります）。一部の素材はユーザーに、うなずく、手を伸ばす、指ハートなどを促します。このコールバックは類似のプロンプトの表示に用いられます。
 ```
 mXmagicApi.setTipsListener(new XmagicTipsListener() {
@@ -272,7 +277,7 @@ mXmagicApi.updateProperty(XmagicProperty<?> p);
 ```
 8. 美顔SDKをPauseします。Activityの`onPause()`ライフサイクルにバインドすることをお勧めします。
 ```java
-//ActivityがonPauseの場合に呼び出します。OpenGLスレッドで呼び出す必要があります
+//ActivityがonPauseの場合に呼び出します。OpenGLスレッドで呼び出してください
 mXmagicApi.onPause();
 ```
 9. 美顔SDKをリリースします。Activityの`onDestroy() `ライフサイクルにバインドすることをお勧めします。

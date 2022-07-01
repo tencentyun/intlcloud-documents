@@ -1,8 +1,8 @@
 ## 통합 준비
 
-1. [Demo 패키지](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/MLVB-API-Example.zip)를 다운로드하고 압축 해제합니다.
+1. [Demo 패키지](https://intl.cloud.tencent.com/document/product/1143/45374)를 다운로드하여 압축을 해제합니다.
 2. Demo 프로젝트의 xmagic 모듈(bundle, XmagicIconRes, Xmagic 폴더)을 실제 항목의 프로젝트로 가져옵니다.
-3. SDK 디렉토리에서 libpag.framework, Masonry.framework, XMagic.framework, YTCommonXMagic.framework를 가져옵니다.
+3. SDK 디렉터리에서 libpag.framework, Masonry.framework, XMagic.framework, YTCommonXMagic.framework를 가져옵니다.
 4. framework 서명 **General--> Masonry.framework** 및 **libpag.framework**에서 **Embed & Sign**을 선택합니다.
 5. 발급된 라이선스와 일치하도록 Bundle ID를 수정합니다.
 
@@ -12,7 +12,7 @@
 
 ### 1단계: 인증 초기화[](id:step1)
 
-1. 먼저 프로젝트 AppDelegate의 didFinishLaunchingWithOptions에 다음 인증 코드를 추가합니다. 여기서 LicenseURL, LicenseKey는 Tencent Cloud 공식 웹사이트에서 신청한 인증 정보입니다. [License 가이드](https://intl.cloud.tencent.com/document/product/1143/45380)를 참고하십시오.
+1. 프로젝트의 AppDelegate의 didFinishLaunchingWithOptions에 다음 인증 코드를 추가합니다. 여기서 LicenseURL과 LicenseKey는 Tencent Cloud 공식 웹사이트에서 얻은 인증 정보입니다.
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```
@@ -44,11 +44,11 @@
 </tr>
 <tr>
 <td>-3</td>
-<td>다운로드 링크 실패, 네트워크 설정 확인</td>
+<td>다운로드 실패, 네트워크 설정 확인</td>
 </tr>
 <tr>
 <td>-4</td>
-<td>로컬에서 읽은 TE 인증 정보가 비어 있습니다. 이는 IO 실패로 인해 발생할 수 있습니다.</td>
+<td>로컬에서 읽은 TE 인증 정보가 비어 있음, 이는 IO 실패로 인해 발생한 것일 수 있습니다.</td>
 </tr>
 <tr>
 <td>-5</td>
@@ -60,27 +60,27 @@
 </tr>
 <tr>
 <td>-7</td>
-<td>서명 확인에 실패했습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>서명 인증 실패. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-8</td>
-<td>복호화에 실패했습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>복호화 실패. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-9</td>
-<td>TELicense 필드의 JSON 필드가 올바르지 않습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>TELicense 필드의 JSON 필드가 올바르지 않습니다. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-10</td>
-<td>네트워크에서 리졸브된 TE 인증 정보가 비어 있습니다. Tencent Cloud 팀에 문의하십시오.</td>
+<td>네트워크에서 리졸브된 TE 인증 정보가 비어 있습니다. 처리를 위해 Tencent Cloud 팀에 문의하십시오.</td>
 </tr>
 <tr>
 <td>-11</td>
-<td>로컬 파일에 TE 인증 정보 쓰기 실패. 가능한 원인은 IO 실패입니다.</td>
+<td>IO 실패로 인해 로컬 파일에 TE 인증 정보를 쓰지 못했습니다.</td>
 </tr>
 <tr>
 <td>-12</td>
-<td>다운로드 실패, 로컬 asset 구문 분석 실패</td>
+<td>다운로드에 실패했으며 로컬 asset의 리졸브도 실패했습니다.</td>
 </tr>
 <tr>
 <td>-13</td>
@@ -130,7 +130,7 @@ self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:asset
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
-### 5단계: [](id:step5) 렌더링
+### 5단계: 렌더링[](id:step5)
 비디오 프레임 콜백 인터페이스에서 YTProcessInput을 구성하고 렌더링 처리를 위해 SDK에 전달합니다. Demo의 ThirdBeautyViewController를 참고하십시오.
 ```
 [self.xMagicKit process:inputCPU withOrigin:YtLightImageOriginTopLeft withOrientation:YtLightCameraRotation0]

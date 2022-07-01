@@ -1,11 +1,15 @@
 [](id:step1)
-## ステップ1：Demoプロジェクトの解凍
-1. Tencent Effect TEを統合した[MLVB Demo](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/MLVB-API-Example.zip)プロジェクトをダウンロードします。
-2. DemoプロジェクトのX - magicモジュールを実際のプロジェクトにインポートします。
+## 手順1：Demoプロジェクトの解凍
+1. Tencent Effect TEを統合した[MLVB Demo](https://intl.cloud.tencent.com/document/product/1143/45374)プロジェクトをダウンロードします。このDemoは、Tencent Effect SDK S1-04パッケージに基づいて作成されています。
+2. リソースを置き換えます。このDemoプロジェクトで使用されるSDKパッケージは実際のパッケージと同じではない可能性があるため、このDemoの関連SDKファイルを実際に使用するパッケージのSDKファイルに置き換えてください。具体的な操作は以下のとおりです：
+   - xmagicモジュールのlibsディレクトリにある`.aar`ファイルを削除し、SDKのlibsディレクトリにある.aar`ファイルをxmagicモジュールのlibsディレクトリにコピーします。
+   - xmagicモジュールのassetsディレクトリにあるすべてのファイルを削除し、SDKの`assets/`ディレクトリにあるすべてのリソースをxmagicモジュールの`../src/main/assets`ディレクトリにコピーします。SDKパッケージのMotionResフォルダにリソースがある場合は、このフォルダを`../src/main/assets`ディレクトリにコピーします。
+   - xmagicモジュールのjniLibsディレクトリにあるすべての.soファイルを削除し、SDKパッケージのjniLibsで対応する.soファイルを見つけて（SDKのjinLibsフォルダにあるarm64-v8aおよびarmeabi-v7aの`.so`ファイルが圧縮パッケージに存在しているため、先に解凍してください）、xmagicモジュールの`../src/main/jniLibs`ディレクトリにコピーします。
+3. Demoプロジェクトのxmagicモジュールを実際のプロジェクトにインポートします。
 
 [](id:step2)
 
-## ステップ2：appモジュールのbuild.gradleを開く
+## 手順2：appモジュールのbuild.gradleを開く
 1. applicationIdを、テスト用に申請した権限と同じパッケージ名に変更します。
 2. gson依存設定を追加します。
 ```groovy
@@ -16,11 +20,11 @@ all*.exclude  group:  'com.google.code.gson'
 
 [](id:step3)
 
-## ステップ3：SDKインターフェースの統合
+## 手順3：SDKインターフェースの統合
 DemoプロジェクトのThirdBeautyActivityクラスを参照できます。
 1. **権限承認**：
 ```java
- //認証の注意事項およびエラーコードの詳細については、https://cloud.tencent.com/document/product/616/65891#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E9.89.B4.E6.9D.83をご参照ください
+ //認証に関する注意事項とエラーコードの詳細については、https://intl.cloud.tencent.com/document/product/1143/45385#step-1.-authenticateをご参照ください。
 XMagicImpl.checkAuth((errorCode, msg) -> {
             if (errorCode == TELicenseCheck.ERROR_OK) {
                 showLoadResourceView();
@@ -87,7 +91,7 @@ return srcFrame.texture.textureId;
 `onPause()`は美顔効果の一時停止に使用し、Activity/Fragmentライフサイクルメソッドにおいて実行できます。onDestroyメソッドはGLスレッドで呼び出す必要があります（onTextureDestroyedメソッドでXMagicImplオブジェクトの`onDestroy()`を呼び出すことができます）。その他の使用についてはDemoをご参照ください。  
 ```java
 mXMagic.onPause();   //一時停止。ActivityのonPauseメソッドにバインドします
-mXMagic.onDestroy();  // //破棄。GLスレッドで呼び出す必要があります
+mXMagic.onDestroy();  // //破棄。GLスレッドで呼び出してください
 ```
 6. **レイアウトにSDK美顔パネルを追加**：
 ```xml

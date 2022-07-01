@@ -1,18 +1,18 @@
 ## 統合の準備
 
-1. [Demoパッケージ](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/MLVB-API-Example.zip)をダウンロードして解凍します。
+1. [Demoパッケージ](https://intl.cloud.tencent.com/document/product/1143/45374)をダウンロードして解凍します。
 2. Demoプロジェクトのxmagicモジュール（bundle、XmagicIconRes、Xmagicフォルダ）を実際のプロジェクトにインポートします。
 3. SDKディレクトリの中のlibpag.framework、Masonry.framework、XMagic.framework、YTCommonXMagic.frameworkをインポートします。
 4. framework署名の**General--> Masonry.framework**および**libpag.framework**で**Embed & Sign**を選択します。
 5. Bundle IDを、発行された権限と同じものに変更します。
 
 ## SDKインターフェースの統合 
-- [ステップ1](#step1)および[ステップ2](#step2)については、DemoプロジェクトのThirdBeautyViewControllerクラスのviewDidLoad、buildBeautySDKのメソッドを参照できます。AppDelegateクラスのapplicationメソッドはXmagic認証を実行します。
-- [ステップ4](#step4)から[ステップ7](#step7)までは、DemoプロジェクトのThirdBeautyViewController、BeautyViewクラスの関連インスタンスコードを参照できます。
+- [手順1](#step1)および[手順2](#step2)については、DemoプロジェクトのThirdBeautyViewControllerクラスのviewDidLoad、buildBeautySDKのメソッドを参照できます。AppDelegateクラスのapplicationメソッドはXmagic認証を実行します。
+- [手順4](#step4)から[手順7](#step7)までは、DemoプロジェクトのThirdBeautyViewController、BeautyViewクラスの関連インスタンスコードを参照できます。
 
-### ステップ1：権限の初期化[](id:step1)
+### 手順1：権限の初期化[](id:step1)
 
-1. まず初めにプロジェクトのAppDelegateのdidFinishLaunchingWithOptionsに次の認証コードを追加します。このうちLicenseURL、LicenseKeyはTencent Cloud公式サイトに権限承認を申請した際の情報とします。[Licenseガイド](https://intl.cloud.tencent.com/document/product/1143/45380)をご参照ください。
+1. まず、プロジェクトAppDelegateのdidFinishLaunchingWithOptionsに次の認証コードを追加します。そのうち、LicenseURLとLicenseKeyは、Tencent Cloudの公式Webサイトによって申請される権限承認情報です。
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```
@@ -92,7 +92,7 @@
 </tr>
 </tbody></table>
 
-### ステップ2：SDK素材リソースパスの設定[](id:step2)
+### 手順2：SDK素材リソースパスの設定[](id:step2)
 ```
 CGSize previewSize = [self getPreviewSizeByResolution:self.currentPreviewResolution];
 NSString *beautyConfigPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -117,32 +117,32 @@ NSDictionary *assetsDict = @{@"core_name":@"LightCore.bundle",
 self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:assetsDict];
 ```
 
-### ステップ3：ログおよびイベント監視の追加[](id:step3)
+### 手順3：ログおよびイベント監視の追加[](id:step3)
 ```
     // Register log
     [self.beautyKit registerSDKEventListener:self];
     [self.beautyKit registerLoggerListener:self withDefaultLevel:YT_SDK_ERROR_LEVEL];
 ```
 
-### ステップ4：各種美顔効果の設定[](id:step4)
+### 手順4：各種美顔効果の設定[](id:step4)
 
 ```
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
-### ステップ5：レンダリング処理の実施[](id:step5)
+### 手順5：レンダリング処理の実施[](id:step5)
 ビデオフレームコールバックインターフェースで、YTProcessInputを作成してSDKに渡し、レンダリング処理を行います。DemoのThirdBeautyViewControllerを参照できます。
 ```
 [self.xMagicKit process:inputCPU withOrigin:YtLightImageOriginTopLeft withOrientation:YtLightCameraRotation0]
 ```
-### ステップ6：SDKの一時停止/再開[](id:step6)
+### 手順6：SDKの一時停止/再開[](id:step6)
 
 ```
 [self.beautyKit onPause];
 [self.beautyKit onResume];
 ```
 
-### ステップ7：レイアウトにSDK美顔パネルを追加 [](id:step7)
+### 手順7：レイアウトにSDK美顔パネルを追加 [](id:step7)
 
 ```
 UIEdgeInsets gSafeInset;

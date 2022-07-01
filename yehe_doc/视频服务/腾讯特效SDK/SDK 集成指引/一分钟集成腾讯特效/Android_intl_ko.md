@@ -1,5 +1,6 @@
 ## 통합 준비
-**파일 준비**:
+1. [SDK Download](https://intl.cloud.tencent.com/document/product/1143/45377) 후 압축을 해제합니다.
+2. **다음 파일 준비:**
 <table>
 <tbody><tr><th>파일 유형</th><th>설명</th></tr>
 <tr>
@@ -15,7 +16,7 @@
 ### 리소스
 
 - 상기 파일로 준비된 모든 `.aar` 파일을 app 프로젝트의 `libs` 디렉터리에 추가합니다.
-- SDK 패키지의 assets/ 디렉터리에 있는 모든 리소스를 `../src/main/assets` 디렉터리에 복사합니다.
+- SDK 패키지의 assets/에 있는 모든 파일을 `../src/main/assets` 디렉터리에 복사합니다. SDK 패키지의 MotionRes 폴더에 파일이 있으면 `../src/main/assets` 디렉터리에도 복사합니다.
 - jniLibs 폴더를 프로젝트의 `../src/main/jniLibs` 디렉터리에 복사합니다.
 
 ### 가져오기 방법
@@ -40,19 +41,19 @@ dependencies{
 ```
 
 [](id:download)
-## assets, so, 애니메이션 리소스 가이드 동적 다운로드
+## 패키지 축소: assets, so 및 MotionRes 동적 다운로드 가이드
 
 패키지 크기를 줄이기 위해 SDK에 필요한 assets 리소스, so 라이브러리, 그리고 애니메이션 리소스 MotionRes(일부 기본 버전 SDK 애니메이션 리소스 없음)를 인터넷으로 변경하여 다운로드할 수 있습니다. 다운로드가 완료 후 위 파일의 경로를 SDK로 설정합니다.
 
-Demo의 다운로드 로직을 다시 사용하는 것을 권장하며, 기존의 다운로드 서비스를 이용하셔도 됩니다. 동적 다운로드에 대한 자세한 가이드는 [Tencent Effect SDK 리소스 동적 다운로드 설명(Android)](https://docs.qq.com/doc/DWHRlU0dlcHlGR3V4)을 참고하십시오. 
+Demo의 다운로드 로직을 재사용하는 것이 좋습니다. 기존 다운로드 서비스를 사용할 수도 있습니다. 동적 다운로드에 대한 자세한 지침은 [SDK Package Downsizing (Android)](https://intl.cloud.tencent.com/document/product/1143/47831)을 참고하십시오.
 
 ## 전체 프로세스
 
 [](id:step1)
-### 2단계: 인증
+### 1단계: 인증
 
-1. 라이선스를 신청하여 License URL과 License KEY를 받으려면 [License 가이드](https://intl.cloud.tencent.com/document/product/1143/45380)를 참고하십시오.
-> ! 일반적인 상황에서는 App이 한 번만 성공적으로 연결되면 인증 프로세스가 완료되므로 License 파일을 프로젝트의 assets 디렉터리에 넣을 **필요가 없습니다**. 그러나 만약 App이 인터넷에 연결되지 않은 상태에서도 SDK 관련 기능을 사용해야 한다면, License 파일을 assets 디렉터리에 다운로드하여 기본 설정으로 사용할 수 있습니다. 이때  License 파일 이름은 `v_cube. license`이어야 합니다.
+1. 라이선스를 신청하고 License URL과 License KEY를 받습니다.
+>! 일반적인 상황에서는 App이 한 번만 성공적으로 연결되면 인증 프로세스가 완료되므로 License 파일을 프로젝트의 assets 디렉터리에 넣을 **필요가 없습니다**. 그러나 만약 App이 인터넷에 연결되지 않은 상태에서도 SDK 관련 기능을 사용하려면 License 파일을 assets 디렉터리에 다운로드하여 기본 설정으로 사용할 수 있습니다. 이 때 License 파일 이름은 `v_cube. license`이어야 합니다.
 2. 해당 비즈니스 모듈의 초기화 코드에 URL과 KEY를 설정하여 License 다운로드를 트리거하여 사용 전 일시적으로 다운로드되는 것을 방지합니다. Application의 onCreate 메소드에서 다운로드를 트리거하는 것도 가능하지만, 이때 네트워크 권한이 없거나 네트워크 실패율이 높을 수 있기 때문에 권장하지 않습니다.
 ```
 //license를 다운로드하거나 업데이트하기 위한 것일 뿐 인증 결과에 신경 쓰지 않는다면 네 번째 매개변수가 null로 전달됩니다.
@@ -161,7 +162,7 @@ TELicenseCheck.getInstance().setTELicense(context, URL, KEY, new TELicenseCheckL
 XmagicResParser.setResPath(new File(getFilesDir(), "xmagic").getAbsolutePath());
 //loading
 
-// 리소스 파일을 프라이빗 디렉터리에 copy합니다. 한 번만 수행하면 됩니다.
+//리소스 파일을 프라이빗 디렉터리에 copy합니다. 한 번만 수행하면 됩니다.
 XmagicResParser.copyRes(getApplicationContext());
 ```
 2. [동적 네트워크 다운로드](#download)에서 리소스 파일을 다운로드한 경우 다운로드가 성공한 후 리소스 파일 경로를 설정해야 합니다. 예시 코드는 Demo의 'LaunchActivity.java'에 있습니다.
@@ -201,11 +202,13 @@ mPreviewMgr.setCustomTextureProcessor((textureId, textureWidth, textureHeight) -
 //Activity의 onResume 메소드에서 카메라 실행
 mPreviewMgr.onResume(this, 1280, 720);
 ```
+
 4. 뷰티 필터 SDK를 초기화하고 Activity의 'onResume()' 메소드에 넣는 것을 권장합니다.
 ```java
 mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXmagicPropertyErrorListener()); 
 ```
-- **매개변수**
+
+ - **매개변수**
  <table>
  <tr><th>매개변수</th><th>의미</th></tr><tr><td>Context context</td><td>컨텍스트</td>
  </tr><tr>
@@ -213,7 +216,8 @@ mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXm
  </tr><tr>
  <td>OnXmagicPropertyErrorListener errorListener</td><td>콜백 함수 구현 클래스</td>
  </tr></table>
-- **반환**
+
+ - **반환**
  에러 코드 의미 대조표:
  <table>
  <tr><th>에러 코드</th><th>의미</th></tr><tr>
@@ -246,6 +250,7 @@ mXmagicApi = new XmagicApi(this, XmagicResParser.getResPath(),new XmagicApi.OnXm
  <td>5004</td><td>분할 배경 비디오 형식 미지원</td>
  </tr>
  </tbody></table>
+
 5. 소재 프롬프트 콜백 함수를 추가합니다(메소드 콜백은 서브 스레드에서 실행될 수 있음). 고개 끄덕임, 손바닥 내밀기, 손 하트 등 일부 소재는 사용자에게 프롬프트를 표시합니다. 이 콜백은 바로 유사한 프롬프트를 보여주기 위한 것입니다.
 ```
 mXmagicApi.setTipsListener(new XmagicTipsListener() {
@@ -270,7 +275,7 @@ int outTexture = mXmagicApi.process(textureId, textureWidth, textureHeight);
 // 사용 가능한 입력 속성은 XmagicResParser.parseRes()에서 가져오기
 mXmagicApi.updateProperty(XmagicProperty<?> p);
 ```
-8. 뷰티 필터 SDK를 일시 중지하려면 Activity의 'onPause()' 라이프사이클로 바인딩하는 것이 좋습니다.
+8. 뷰티 필터 SDK를 Pause하려면 Activity의 'onPause()' 라이프사이클로 바인딩하는 것이 좋습니다.
 ```java
 //Activity의 onPause 시 호출되며 OpenGL 스레드에서 호출되어야 합니다.
 mXmagicApi.onPause();

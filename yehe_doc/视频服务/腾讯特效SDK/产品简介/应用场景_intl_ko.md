@@ -4,7 +4,7 @@ Tencent Effect SDK는 비디오 라이브 스트리밍, 양방향 라이브 스�
 ![](https://qcloudimg.tencent-cloud.cn/raw/22395e418a378f15da6dcfcba6b9ed07.png)
 
 ## 인터랙션 채팅
-Tencent Effect SDK는 모바일 메시징 시나리오에서 특수 효과가 적용된 멋진 사진과 동영상을 공유할 수 있습니다.
+Tencent Effect SDK는 모바일 메시지 채팅 시나리오에서 특수 효과가 적용된 멋진 사진과 동영상을 공유할 수 있습니다.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/f691db03fb610cced7905b7fdf38c291.png)
 
@@ -24,7 +24,7 @@ Tencent Effect SDK는 얼굴 특징을 빠르게 찾고, 피부 미백, 필터 �
 ![](https://qcloudimg.tencent-cloud.cn/raw/1474f2b4d1bdc3fc26347430e474d8fe.png)
 
 ## 회의
-온라인 회의에서 Tencent Effect SDK를 사용하면 인물 키잉 기술을 통해 회의 배경을 변경할 수 있으며, 실시간 뷰티 필터로 가장 아름다운 순간을 남길 수 있습니다.
+온라인 회의에서 Tencent Effect SDK를 사용하면 인물 키잉(가상 배경) 기술을 통해 회의 배경을 변경할 수 있으며, 실시간 뷰티 필터로 가장 아름다운 순간을 남길 수 있습니다.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/76f6056e7e4dc590414a16462daf7a46.jpg)
 

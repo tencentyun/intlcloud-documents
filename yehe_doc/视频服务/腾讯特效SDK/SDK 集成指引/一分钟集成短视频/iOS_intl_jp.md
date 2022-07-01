@@ -1,17 +1,17 @@
 ## 統合の準備[](id:ready)
 
-1. [Demoパッケージ](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/UGSV-API-Example.zip)をダウンロードして解凍し、Demoプロジェクトのxmagicモジュール（bundle、XmagicIconResの2つのフォルダ内のファイル、**Record** > **View**フォルダ内のファイル）を実際のプロジェクトにインポートします。
+1. [Demoパッケージ](https://intl.cloud.tencent.com/document/product/1143/45374)をダウンロードして解凍し、Demoプロジェクトのxmagicモジュール（bundle、XmagicIconResの2つのフォルダ配下のファイル、**Record** > **View**フォルダ配下のファイル）を実際のプロジェクトにインポートします。
 2. libディレクトリの中の`libpag.framework`、`Masonry.framework`、`XMagic.framework`および`YTCommonXMagic.framework`をインポートします。
 3. framework署名の**General--> Masonry.framework**および**libpag.framework**で**Embed & Sign**を選択します。
 4. Bundle IDを、テスト用に申請した権限と同じものに変更します。
 
 ## SDKインターフェースの統合 [](id:step)
 
-- [ステップ1](#step1)および[ステップ2](#step2)については、DemoプロジェクトのUGCKitRecordViewControllerクラスのviewDidLoad、buildBeautySDKのメソッドを参照できます。
-- [ステップ4](#step4)から[ステップ7](#step7)までは、DemoプロジェクトのUGCKitRecordViewController、BeautyViewクラスの関連インスタンスコードを参照できます。
+- [手順1](#step1)および[手順2](#step2)については、DemoプロジェクトのUGCKitRecordViewControllerクラスのviewDidLoad、buildBeautySDKのメソッドを参照できます。
+- [手順4](#step4)から[手順7](#step7)までは、DemoプロジェクトのUGCKitRecordViewController、BeautyViewクラスの関連インスタンスコードを参照できます。
 
-### ステップ1：権限の初期化 [](id:step1)
-1. プロジェクトのAppDelegateのdidFinishLaunchingWithOptionsに次のコードを追加します。このうちLicenseURL、LicenseKeyはTencent Cloud公式サイトに権限承認を申請した際の情報とします。[Licenseガイド](https://intl.cloud.tencent.com/document/product/1143/45380)をご参照ください。
+### 手順1：権限の初期化 [](id:step1)
+1. プロジェクトAppDelegateのdidFinishLaunchingWithOptionsに次のコードを追加します。そのうち、LicenseURLとLicenseKeyは、Tencent Cloudの公式Webサイトによって申請される権限承認情報です：
 ```
 [TXUGCBase setLicenceURL:LicenseURL key:LicenseKey];
 
@@ -38,7 +38,7 @@ NSLog(@"xmagic auth ret : %i", authRet);
 NSLog(@"xmagic auth version : %@", [XMagicAuthManager getVersion]);
 ```
 
-### ステップ2：SDK素材リソースパスの設定 [](id:step2)
+### 手順2：SDK素材リソースパスの設定 [](id:step2)
 
 ```objectivec
 CGSize previewSize = [self getPreviewSizeByResolution:self.currentPreviewResolution];
@@ -64,34 +64,34 @@ NSDictionary *assetsDict = @{@"core_name":@"LightCore.bundle",
 self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:assetsDict];
 ```
 
-### ステップ3：ログおよびイベント監視の追加[](id:step3)
+### 手順3：ログおよびイベント監視の追加[](id:step3)
 ```
 // Register log
 [self.beautyKit registerSDKEventListener:self];
 [self.beautyKit registerLoggerListener:self withDefaultLevel:YT_SDK_ERROR_LEVEL];
 ```
 
-### ステップ4：各種美顔効果の設定[](id:step4)
+### 手順4：各種美顔効果の設定[](id:step4)
 
 ```
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
-### ステップ5：レンダリング処理の実施[](id:step5)
+### 手順5：レンダリング処理の実施[](id:step5)
 UGSVの前処理フレームコールバックインターフェースで、YTProcessInputを作成してtextureIdをSDKに渡し、レンダリング処理を行います。
 
 ```
  [self.xMagicKit process:inputCPU withOrigin:YtLightImageOriginTopLeft withOrientation:YtLightCameraRotation0]
 ```
 
-### ステップ6：SDKの一時停止/再開[](id:step6)
+### 手順6：SDKの一時停止/再開[](id:step6)
 
 ```
 [self.beautyKit onPause];
 [self.beautyKit onResume];
 ```
 
-### ステップ7：レイアウトにSDK美顔パネルを追加 [](id:step7)
+### 手順7：レイアウトにSDK美顔パネルを追加 [](id:step7)
 
 ```
 UIEdgeInsets gSafeInset;

@@ -1,7 +1,11 @@
 [](id:step1)
 ## 1단계: Demo  프로젝트 압축 해제
-1. Tencent Effect가 통합된 [MLVB Demo](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.115.vcube/MLVB-API-Example.zip) 프로젝트를 다운로드합니다.
-2. Demo 프로젝트의 X-magic 모듈을 실제 항목 프로젝트로 가져옵니다.
+1. Tencent Effect(TE) SDK와 통합된 [MLVB Demo](https://intl.cloud.tencent.com/document/product/1143/45374)를 다운로드합니다. 이 Demo는 Tencent Effect SDK S1-04 에디션을 기반으로 제작되었습니다.
+2. Demo의 SDK 파일을 실제로 사용하는 SDK용 파일로 교체합니다. 구체적 작업은 다음 단계를 따르십시오.
+   - xmagic 모듈의 libs 디렉터리에 있는 `.aar` 파일을 SDK의 libs에 있는 `.aar` 파일로 교체하십시오.
+   - xmagic 모듈의 `../src/main/assets`에 있는 모든 파일을 SDK의 `assets/`에 있는 파일로 교체합니다. SDK 패키지의 MotionRes 폴더에 파일이 있는 경우 `../src/main/assets` 디렉터리에도 복사합니다.
+   - xmagic 모듈의 `../src/main/jniLibs`에 있는 모든 .so 파일을 SDK 패키지의 jniLibs에 있는 .so 파일로 교체합니다(arm64-v8a 및 armeabi-v7a에 대한 `.so` 파일을 얻으려면 jinLibs 폴더에 있는 ZIP 파일의 압축을 풀어야 합니다).
+3. Demo 프로젝트의 xmagic 모듈을 실제 항목 프로젝트로 가져옵니다.
 
 [](id:step2)
 
@@ -20,7 +24,7 @@ all*.exclude  group:  'com.google.code.gson'
 Demo 프로젝트의 ThirdBeautyActivity 클래스를 참고하십시오.
 1. **인증**:
 ```java
- //인증 시 주의사항 및 오류 코드 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/616/65891#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E9.89.B4.E6.9D.83
+ //인증 시 주의사항 및 오류 코드 내용은 https://intl.cloud.tencent.com/document/product/1143/45385#step-1.-authenticate을 참고하십시오
 XMagicImpl.checkAuth((errorCode, msg) -> {
             if (errorCode == TELicenseCheck.ERROR_OK) {
                 showLoadResourceView();

@@ -1,10 +1,10 @@
 <style> .markdown-text-box table td, .markdown-text-box table th { padding: 8px 8px; text-align:center} </style>
 
-Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시리즈 패키지](#setS)의 2가지 시리즈로 10개의 패키지가 있습니다. 아래 표에 자세히 설명된 것처럼 기능이 다릅니다. 다운로드에 대한 자세한 설명은 [SDK 다운로드](https://intl.cloud.tencent.com/document/product/1143/45377)를 참고하십시오.
+Tencent Effect SDK에는 [베이직 A 시리즈 패키지](#setA) 및 [고급 S 시리즈 패키지](#setS)의 2가지 시리즈로 11개의 패키지가 있습니다. 아래 표에 자세히 설명된 것처럼 기능이 다릅니다. 다운로드에 대한 자세한 설명은 [SDK Download](https://intl.cloud.tencent.com/document/product/1143/45377)를 참고하십시오.
 
 ### 기본 A 시리즈 패키지의 기능[](id:setA)
 
-기본 A 시리즈 패키지는 얼굴 보정에 대한 일반적인 요구 사항을 충족하는 일반적인 뷰티 필터 기능을 제공합니다.
+Basic A 시리즈 패키지는 얼굴 보정에 대한 일반적인 요구 사항을 충족하는 일반적인 뷰티 필터 기능을 제공합니다.
 
 <table>
 <thead>
@@ -61,7 +61,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 </tr>
 <tr>
 <td rowspan=5>확장 기능</td>
-<td><b>스티커</b><br>(2D 일반 스티커 10개 증정)</td>
+<td><b>스티커</b><br>(2D 일반 스티커 10개 무료 증정)</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -79,7 +79,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>-</td>
 </tr>
 <tr>
-<td><b>제스처 인식</b><br>(특정 제스처 스티커 1개 증정)</td>
+<td><b>제스처 인식</b><br>(특정 제스처 스티커 1개 무료 증정)</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -88,7 +88,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>-</td>
 </tr>
 <tr>
-<td><b>인물 키잉</b><br>(특정 키잉 스티커 3개 증정)</td>
+<td><b>인물 키잉/가상 배경</b><br>(특정 키잉 스티커 3개 무료 증정)</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -97,7 +97,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>-</td>
 </tr>
 <tr>
-<td><b>메이크업</b><br>(특정 풀페이스 메이크업 룩 3개 증정)</td>
+<td><b>메이크업</b><br>(특정 풀페이스 메이크업 룩 3개 무료 증정)</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -122,8 +122,9 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <thead>
 <tr>
 <th rowspan=2 colspan=2 width=43%>패키지 기능</th>
-<th colspan=4>패키지 번호</th>
+<th colspan=5>패키지 번호</th>
 <tr>
+<th>S1 - 00</th>
 <th>S1 - 01</th>
 <th>S1 - 02</th>
 <th>S1 - 03</th>
@@ -139,9 +140,11 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
+<td>&#10003;</td>
 </tr>
 <tr>
 <td><b>이미지 조정</b><br>대비, 채도 및 선명도</td>
+<td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -153,6 +156,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
+<td>&#10003;</td>
 </tr>
 <tr>
 <td><b>필터</b><br>(디폴트: 일반 필터)</td>
@@ -160,9 +164,11 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
+<td>&#10003;</td>
 </tr>
 <tr>
 <td><b>스티커</b><br>(디폴트: 2D 일반 스티커)</td>
+<td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -170,6 +176,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 </tr>
 <tr>
 <td><b>고급 스티커</b><br>(디폴트: 3D 일반 스티커)</td>
+<td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -177,6 +184,7 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 </tr>
 <tr>
 <td><b>메이크업</b><br>풀 페이스 메이크업</td>
+<td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -184,14 +192,16 @@ Tencent Effect SDK에는 [기본 A 시리즈 패키지](#setA) 및 [고급 S 시
 </tr>
 <tr>
 <td rowspan=2>확장 기능</td>
-<td><b>제스처 인식</b><br>(특정 제스처 스티커 1개 증정)</td>
+<td><b>제스처 인식</b><br>(특정 제스처 스티커 1개 무료 증정)</td>
+<td>-</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>-</td>
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>인물 키잉</b><br>(특정 키잉 스티커 3개 증정)</td>
+<td><b>인물 키잉/가상 배경</b><br>(특정 키잉 스티커 3개 무료 증정)</td>
+<td>-</td>
 <td>-</td>
 <td>-</td>
 <td>&#10003;</td>

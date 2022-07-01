@@ -2,7 +2,7 @@
 
 ### 開発者環境要件
 
-- 開発ツールXCode 11およびそれ以上：App Storeまたは[ダウンロードアドレス](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/demo.zip)をクリックします。
+- 開発ツールXCode11以降：App Storeまたは[Demoのダウンロード](https://intl.cloud.tencent.com/document/product/1143/45374)をクリックします。
 - 推奨実行環境：
   - デバイス要件：iPhone 5およびそれ以上。iPhone 6およびそれ以下はフロントカメラのサポートは最大720pとし、1080pはサポートしていません。
   - システム要件：iOS 10.0およびそれ以降のバージョン。
@@ -49,17 +49,17 @@ XCodeはデフォルトではC++環境となります。
 - **方法2**：パス`initWithRenderSize:assetsDict: (XMagic)`を指定する必要がある場合は、ここの`assetsDict`によって各リソースパスを設定することができます。
 
 ### 権限の設定
-info.plistファイルに対応する権限の説明を追加します。これを行わなければ、iOS 10システム上でプログラムがクラッシュする場合があります。Privacy - Camera Usage Descriptionでカメラの権限を有効にし、Appによるカメラの使用を許可してください。
+info.plistファイルに対応する権限の説明を追加します。これを行わない場合、iOS 10システム上でプログラムがクラッシュする場合があります。Privacy - Camera Usage Descriptionでカメラの権限を有効にし、Appによるカメラの使用を許可してください。
 
 ## 統合の手順
 
 [](id:step1)
-### ステップ1：署名の準備
+### 手順1：署名の準備
 frameworkの署名は、直接General-->Masonry.frameworkおよびlibpag.frameworkでEmbed & Signを選択できます。
 [](id:step2)
-### ステップ2：認証
-1. 権限承認を申請し、LicenseURLとLicenseKEYを取得します。[Licenseガイド](https://intl.cloud.tencent.com/document/product/1143/45380)をご参照ください。
-> ! 正常な状況では、appのネットワーク接続が一度成功すれば認証フローは完了するため、Licenseファイルをプロジェクトのプロジェクトディレクトリに保存する**必要はありません**。ただし、appがネットワークに未接続の状態でSDKの関連機能を使用する必要がある場合は、licenseファイルをダウンロードしてプロジェクトディレクトリに保存し、最低保証プランとすることができます。この場合、licenseファイル名は必ずv_cube.licenseとしなければなりません。
+### 手順2：認証
+1. 権限の承認を申請し、LicenseURLとLicenseKEYを取得します。
+> ! 正常な状況では、appのネットワーク接続が一度成功すれば認証フローは完了するため、Licenseファイルをプロジェクトのプロジェクトディレクトリに保存する**必要はありません**。ただし、appがネットワークに未接続の状態でSDKの関連機能を使用する必要がある場合は、licenseファイルをダウンロードしてプロジェクトディレクトリに保存し、最低保証プランとすることができます。この場合、licenseファイル名は必ずv_cube.licenseとしてください。
 2. 関連業務モジュールの初期化コードの中でURLとKEYを設定し、licenseのダウンロードをトリガーします。使用する直前になってダウンロードすることは避けてください。あるいはAppDelegateのdidFinishLaunchingWithOptionsメソッドでダウンロードをトリガーすることもできます。このうち、LicenseURLとLicenseKeyはコンソールでLicenseをバインドした際に生成された権限承認情報です。
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
@@ -125,8 +125,8 @@ frameworkの署名は、直接General-->Masonry.frameworkおよびlibpag.framewo
 </tbody></table>
 
 [](id:step3)
-### ステップ3：SDKのロード（XMagic.framework）
-Tencent Effect SDK使用のライフサイクルはおおむね次のとおりです。
+### 手順3：SDKのロード（XMagic.framework）
+Tencent Effect SDK使用のライフサイクルはおおむね次のとおりです：
 1. 美顔関連リソースをロードします。
 ```
 NSDictionary *assetsDict = @{@"core_name":@"LightCore.bundle",
@@ -198,9 +198,10 @@ Command /bin/sh failed with exit code 1
 ```
 - 問題の原因：`libpag.frameworkとMasonary.framework`の再署名に失敗したことが原因です。
 - 解決方法：
-	1. `demo/copy_framework.sh`を開きます。
-	2. 次のコマンドを使用してローカルマシンのcmakeのパスを確認し、`$(which cmake)`をローカルcmakeの絶対パスに変更します。
+ 1. `demo/copy_framework.sh`を開きます。
+ 2. 次のコマンドを使用してローカルマシンのcmakeのパスを確認し、`$(which cmake)`をローカルcmakeの絶対パスに変更します。
 ```
 which cmake
 ```
+
 3. `Apple Development: ......`をすべてご自身の署名に置き換えます。

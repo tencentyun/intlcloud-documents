@@ -1,19 +1,19 @@
 [](id:que1)
-### Android releaseパッケージで、あるメソッドが見つからないというエラーが発生しましたが、解決するにはどうすればよいですか。
+### Android releaseパッケージで、あるメソッドが見つからないというエラーが発生しましたが、解決するにはどうすればよいですか？
 - releaseパッケージを作成する際、コンパイルの最適化を有効（minifyEnabledをtrueに設定）にしていると、javaレイヤーで呼び出されないコードがカットされる場合があります。これらのコードはnativeレイヤーで呼び出される場合があり、` no xxx method`の異常が生じることがあります。
-- このようなコンパイル最適化を有効にしている場合は、これらのkeepルールを追加し、xmagicのコードがカットされないようにする必要があります。
+- このようなコンパイル最適化を有効にしている場合は、これらのkeepルールを追加し、xmagicのコードがカットされないようにしてください。
 ```java
 -keep class com.tencent.xmagic.** { *;}
 -keep class org.light.** { *;}
 -keep class org.libpag.** { *;}
 -keep class org.extra.** { *;}
--keep class org.gyailib.** { *;}
+-keep class com.gyailib.**{ *;}
 -keep class com.tencent.cloud.iai.lib.** { *;}
 ```
 
 [](id:que2)
-### Android SDKをホストプロジェクトに統合するとgsonライブラリとの競合エラーが発生しましたが、解決するにはどうすればよいですか。
-ホストプロジェクトの`build.gradle`ファイルに次のコードを追加します。
+### Android SDKをホストプロジェクトに統合するとgsonライブラリとの競合エラーが発生しましたが、解決するにはどうすればよいですか？
+ホストプロジェクトの`build.gradle`ファイルに次のコードを追加します：
 
 ```
 Android{
@@ -30,7 +30,7 @@ Android{
 > ? Validate WorkspaceをYesに変更するとコンパイルが完了します。再びNoに変更しても正常に実行できます。そのため、ここではこの問題が発生した場合にのみ注意してください。
 
 [](id:que4)
-### フィルター設定が反応しません。
+### フィルター設定が応答しません。
 設定値が正しいかどうか確認してください。範囲は0～100ですが、値が小さすぎると効果がわかりづらい場合があります。
 
 [](id:que5)
@@ -63,4 +63,6 @@ unexpected service error: build aborted due to an internal error: unable to writ
 	1. **File** > **Project settings** > **Build System**で**Legacy Build System**を選択します。
 	2. Xcode 13.0++の場合は**File** > **Workspace Settings**で**Do not show a diagnostic issue about build system deprecation**にチェックを入れます。
 
+### Tencent Effectの各プロパティ間の発効関係は？
+![](https://qcloudimg.tencent-cloud.cn/raw/6f204e9f9197f1bab8c7be7d31bf4aea.png)
 

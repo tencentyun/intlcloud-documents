@@ -1,4 +1,4 @@
-Tencent Effect SDKは、6種類のベーシック版SDKと4種類のプレミアム版SDKという、10バージョンのSDKを提供しています。10バージョンのSDKの関係および各バージョンの機能の違いについては、[課金概要](https://intl.cloud.tencent.com/document/product/1143/45371)をご参照ください。
+Tencent Effect SDKは、6種類のベーシック版SDKと5種類のプレミアム版SDKという、11種類のバージョンのSDKを提供しています。11種類のバージョンのSDKの関係および各バージョンの機能の違いについては、[課金概要](https://intl.cloud.tencent.com/document/product/1143/45371)をご参照ください。
 
 > ! Tencent Effect SDKの、iOSプラットフォームでダウンロードするZIPパッケージにはSDKとDemoプロジェクトが入っています。iOSポートのDemoプロジェクトを使用したい場合は、ここでiOS端末用のZIPパッケージをダウンロードすることができます。
 
@@ -20,7 +20,7 @@ Aシリーズベーシックパッケージでは汎用型のスタイリング�
 <td >ベーシック版A1 - 01</td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_a101_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.120/xmagic_A1-01_android_2.4.1.120.zip">DOWNLOAD</a></td>
-<td  rowspan=6>
+<td rowspan=6>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
 </td>
@@ -88,13 +88,27 @@ Sシリーズハイグレードパッケージはハイグレードなスタイ�
 </tr>
 </thead>
 <tbody><tr>
-<td >プレミアム版S1 - 01</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s101_ios.zip">DOWNLOAD</a></td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-01_android_2.4.1.119.zip">DOWNLOAD</a></td>
-<td rowspan=4>
+<td >プレミアム版S1 - 00</td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s100_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.120/xmagic_S1-00_android_2.4.1.120.zip">DOWNLOAD</a></td>
+<td rowspan=5>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45384">iOS DOC</a>
 <li/><a href="https://intl.cloud.tencent.com/document/product/1143/45385">Android DOC</a>
 </td>
+<td>
+<b>iOSパッケージのサイズ：</b><ul style="margin:0"><li>arm64：31M  </li><li>bundle：10.6M  </li></ul><br>
+<b>Androidパッケージのサイズ：</b><ul style="margin:0">
+<li>arm64-v8a：12.8MB</li>
+<li>armeabi-v7a：10.2MB</li>
+<li>aar：864KB</li>
+<li>assets：13.9MB</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td >プレミアム版S1 - 01</td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s101_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-01_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td>
 <b>iOSパッケージのサイズ：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：17.7m</ul><br>
 <b>Androidパッケージのサイズ：</b><ul style="margin:0"><li/>arm64-v8a：22.6MB<li/>armeabi-v7a：18.3MB<li/>assets：17.7MB<li/>aar：700KB
@@ -102,7 +116,7 @@ Sシリーズハイグレードパッケージはハイグレードなスタイ�
 </tr>
 <tr>
 <td >プレミアム版S1 - 02</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s102_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s102_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-02_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td>
 <b>iOSパッケージのサイズ：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：21.6m</ul><br>
@@ -111,7 +125,7 @@ Sシリーズハイグレードパッケージはハイグレードなスタイ�
 </tr>
 <tr>
 <td >プレミアム版S1 - 03</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s103_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s103_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-03_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td ></ul><br>
 <b>iOSパッケージのサイズ：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：25m</ul><br>
@@ -120,7 +134,7 @@ Sシリーズハイグレードパッケージはハイグレードなスタイ�
 </tr>
 <tr>
 <td >プレミアム版S1 - 04</td>
-<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.18/xmagic_res_s104_ios.zip">DOWNLOAD</a></td>
+<td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1.69/xmagic_res_s104_ios.zip">DOWNLOAD</a></td>
 <td ><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/2.4.1.119/xmagic_S1-04_android_2.4.1.119.zip">DOWNLOAD</a></td>
 <td>
 <b>iOSパッケージのサイズ：</b><ul style="margin:0"><li/>arm64：39.8m<li/>bundle：28.8m</ul><br>
@@ -129,3 +143,4 @@ Sシリーズハイグレードパッケージはハイグレードなスタイ�
 </tr>
 </tbody></table>
 
+> ! パケットサイズのスリム化の詳細については、[SDKパケットのスリム化（Android）](https://intl.cloud.tencent.com/document/product/1143/47831)をご参照ください。

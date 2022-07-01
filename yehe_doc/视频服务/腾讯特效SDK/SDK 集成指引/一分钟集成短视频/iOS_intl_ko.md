@@ -1,9 +1,9 @@
 ## 통합 준비[](id:ready)
 
-1. [Demo 패키지](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/UGSV-API-Example.zip)를 다운로드하고 압축 해제합니다. Demo 프로젝트의 xmagic 모듈(bundle, XmagicIconRes 아래에 있는 파일 2개, **Record** > **View** 폴더에 있는 파일)을 실제 항목의 프로젝트로 가져옵니다.
+1. [Demo 패키지](https://intl.cloud.tencent.com/document/product/1143/45374)를 다운로드하고 압축을 해제합니다. Xmagic 모듈(Bundle 및 XmagicIconRes의 파일과 **Record** > **View**의 파일)을 프로젝트로 가져옵니다.
 2. lib 디렉터리에서 `libpag.framework`, `Masonry.framework`, `XMagic.framework` 및 `YTCommonXMagic.framework`를 가져옵니다.
 3. framework 서명 **General--> Masonry.framework** 및 **libpag.framework**에서 **Embed & Sign**을 선택합니다.
-4. Bundle ID를 신청한 테스트 권한과 동일하게 수정합니다.
+4. Bundle ID를 신청한 테스트 인증과 동일하게 수정합니다.
 
 ## SDK 인터페이스 통합 [](id:step)
 
@@ -11,7 +11,7 @@
 - [4단계](#step4)부터 [7단계](#step7)까지 Demo 프로젝트의 UGCKitRecordViewController 및 BeautyView 클래스 관련 인스턴스 코드를 참고하십시오.
 
 ### 1단계: 인증 초기화[](id:step1)
-1. 프로젝트 AppDelegate의 didFinishLaunchingWithOptions에 다음 코드를 추가합니다. 여기서 LicenseURL과 LicenseKey는 Tencent Cloud 공식 웹사이트에서 신청한 인증 정보입니다. [License 가이드](https://intl.cloud.tencent.com/document/product/1143/45380)를 참고하십시오.
+1. AppDelegate의 didFinishLaunchingWithOptions에 다음 코드를 추가합니다(Tencent Cloud 웹사이트에서 얻은 인증 정보에 따라 LicenseURL과 LicenseKey를 설정):
 ```
 [TXUGCBase setLicenceURL:LicenseURL key:LicenseKey];
 
