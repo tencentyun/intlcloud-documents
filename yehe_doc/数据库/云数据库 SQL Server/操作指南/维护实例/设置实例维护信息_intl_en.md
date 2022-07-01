@@ -19,4 +19,4 @@ Take the database instance specification upgrade as an example. As this operatio
 
 ### Immediate switch
 If a task is configured to be switched during the maintenance window, but you need to switch it urgently under special circumstances, you can click **Switch Now** in the **Operation** column in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver).
->?Immediate switch is applicable to operations involving data migration such as instance specification adjustment, instance version upgrade, and instance kernel upgrade.
+>?Immediate switch is applicable to operations involving data migration such as instance specification adjustment, instance version upgrade, instance kernel upgrade and migrating across AZs.

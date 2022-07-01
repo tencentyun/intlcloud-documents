@@ -58,14 +58,14 @@ COSClient createCOSClient() {
 ### 使用临时密钥创建 COSClient
 
 如果要使用临时密钥请求 COS，则需要用临时密钥创建 COSClient。
-本 SDK 并不能生成临时密钥，而需要使用额外的操作来生成，参考 [临时密钥生成](https://intl.cloud.tencent.com/document/product/436/14048)。
+本 SDK 并不能生成临时密钥，而需要使用额外的操作来生成，参考 [临时密钥生成](https://intl.cloud.tencent.com/document/product/436/14048#cos-sts-sdk)。
 
 ```java
 
 // 创建 COSClient 实例，这个实例用来后续调用请求
 COSClient createCOSClient() {
     // 这里需要已经获取到临时密钥的结果。
-    // 临时密钥的生成参考 https://intl.cloud.tencent.com/document/product/436/14048
+    // 临时密钥的生成参考 https://intl.cloud.tencent.com/document/product/436/14048#cos-sts-sdk
     String tmpSecretId = "TMPSECRETID";
     String tmpSecretKey = "TMPSECRETKEY";
     String sessionToken = "SESSIONTOKEN";
@@ -132,6 +132,7 @@ ObjectMetadata objectMetadata = cosclient.getObjectMetadata(bucketName, key);
 objectMetadata.setHeader("x-cos-metadata-directive", "Replaced");
 
 // 设置新的对象元数据
+// 注意：Content-Disposition 、自定义元数据或者其他有中文的头域值，在设置前请先调用 UrlEncoderUtils.encode(String) 编码，避免签名问题 
 objectMetadata.setHeader("x-cos-storage-class", "STANDARD_IA");
 
 objectMetadata.setContentType("text/plain");
