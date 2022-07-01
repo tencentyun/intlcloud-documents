@@ -90,9 +90,5 @@ The following lists service-related operations and features. For more informatio
 * [Using existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835)
 * [Backend selection](https://intl.cloud.tencent.com/document/product/457/36836)
 
-## Reference
-For more information about services, see [Kubernetes Service](https://kubernetes.io/en/docs/concepts/services-networking/service/). 
 
-<style>
-.params{margin:0px !important}
-</style>
+
