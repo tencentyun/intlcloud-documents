@@ -25,6 +25,6 @@ You can add one bundle ID and one package name to each license. There isn’t a 
 
 [](id:q6)
 ### How do I upgrade or downgrade a Tencent Effect license?
-The Tencent Effect SDK comes in [10 editions](https://intl.cloud.tencent.com/document/product/1143/45371). After your existing license expires, you can purchase a different package that better suits your needs. However, you cannot downgrade or upgrade a license within its validity period.
+The Tencent Effect SDK comes in [11 editions](https://intl.cloud.tencent.com/document/product/1143/45371). After your existing license expires, you can purchase a different package that better suits your needs. However, you cannot downgrade or upgrade a license within its validity period.
 
 A trial license gives you access to S1-04, the most advanced and full-featured edition of the SDK. You can also switch to a production license that better suits your needs during the trial period.
