@@ -36,7 +36,7 @@ This document describes how to create an application and deploy it in the TEM co
 | Parameter | Description |
 | --------------- | ------------------------------------------------------------ |
 | Release Environment        | Select the environment where the application is located. If there are no suitable environments, you can create one on the [Environment](https://console.cloud.tencent.com/tem/env) page as instructed in [Creating Environment](https://intl.cloud.tencent.com/document/product/1094/40358). |
-| JDK Version | Select the JDK version, which can be OpenJDK 8 or KonaJDK 8. |
+| JDK Version | Select the JDK version, which can be KonaJDK 11（recommend）,OpenJDK 11,KonaJDK 8 or OpenJDK 8. |
 | Upload Package/Image | Upload your package or image or download the demos in the console to deploy them and try out all the features of TEM. |
 | Version Number | Set the application version number. You can choose to enter the version number or click **Use Timestamp as Version Number** to use the timestamp as the application version number. |
 | Version Description | Enter the version description. |
