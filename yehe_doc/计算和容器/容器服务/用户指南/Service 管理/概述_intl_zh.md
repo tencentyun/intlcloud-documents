@@ -90,9 +90,4 @@ Service 相关操作及功能如下，您可参考以下文档进一步了解：
 * [Service 使用已有 CLB](https://intl.cloud.tencent.com/document/product/457/36835)
 * [Service 后端选择](https://intl.cloud.tencent.com/document/product/457/36836)
 
-## 参考资料
-您也可以参考开源文档 [Kubernetes Service](https://kubernetes.io/zh/docs/concepts/services-networking/service/)，了解关于 Service 的更多信息。 
 
-<style>
-.params{margin:0px !important}
-</style>
