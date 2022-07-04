@@ -3,7 +3,7 @@ TencentDB for MariaDB can be accessed in the following ways:
 - **Private network access**: a CVM instance can be used to access the private network address that is automatically assigned to a TencentDB instance. Both instances should reside in the same region, be under the same account, and use the same type of networks (both in the basic network or in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535)).
 - **Public network access**: on a Windows or Linux server in the public network, install a database client to access the public network address of the TencentDB for MariaDB instance.
 >!
->- Currently, public network is enabled in Guangzhou, Shanghai, Hong Kong, Beijingand Chengdu.
+>- Currently, public network is enabled in Guangzhou, Shanghai, Beijing, Chengdu and Nanjing.
 >- For public network access, the database instance's public IP needs to be enabled, which may expose your database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network.
 
 ## Prerequisites
