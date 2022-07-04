@@ -1,8 +1,8 @@
 ## Creating Cluster
-Click **Buy Now** on the [Cloud Data Warehouse ClickHouse overview page](https://intl.cloud.tencent.com/product/cdwch). Alternatively, log in to the [Cloud Data Warehouse ClickHouse console](https://console.cloud.tencent.com/cdwch), click **New Cluster** to enter the purchase page, and configure and purchase a cluster as prompted. For more information, see [Getting Started](https://intl.cloud.tencent.com/document/product/1129/44393).
+Click **Buy Now** on the [Cloud Data Warehouse overview page](https://intl.cloud.tencent.com/product/cdwch). Alternatively, log in to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/cdwch), click **New Cluster** to enter the purchase page, and configure and purchase a cluster as prompted. For more information, see [Getting Started](https://intl.cloud.tencent.com/document/product/1129/44393).
 
 ## Viewing Cluster Information
-After the cluster is created, go to the [Cloud Data Warehouse ClickHouse console](https://console.cloud.tencent.com/cdwch) and click the **Cluster ID/Name** on the cluster list page to enter the cluster details page.
+After the cluster is created, go to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/cdwch) and click the **Cluster ID/Name** on the cluster list page to enter the cluster details page.
 - On the cluster details page, view basic cluster information, monitoring information, and operation log, and configure parameters.
 - You can click the icon next to the cluster name to edit it.
 
