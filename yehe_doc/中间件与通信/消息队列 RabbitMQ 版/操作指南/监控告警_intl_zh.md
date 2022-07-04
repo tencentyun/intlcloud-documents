@@ -227,15 +227,6 @@ TDMQ RabbitMQ 版支持的监控指标如下：
 3. 在集群详情页顶部，选择**监控**页签，进入监控页面。
 4. 选择要查看的资源页签，设置好时间范围后，查看对应的监控数据。
 
-| 图标                                                         | 说明                                                         |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| ![img](https://main.qcloudimg.com/raw/9ba57bbd3b8ef3efc4f687d63d27a46d.png) | 单击可查看监控指标同环比，支持同比、环比和自定义日期对比。   |
-| ![img](https://main.qcloudimg.com/raw/34bdbdbdabb7b5720bf17d78c636a4ad.png) | 单击可刷新获取最新的监控数据，支持设置30s、5min、30min和1h时间间隔自动刷新监控数据。 |
-| ![img](https://main.qcloudimg.com/raw/8f2bf7f4df9ddd959f0ecb69fdda8e4c.png) | 单击可将图表复制到 Dashboard，关于 Dashboard 请参见 [什么是 Dashboard](https://intl.cloud.tencent.com/document/product/248/38461)。 |
-| ![img](https://main.qcloudimg.com/raw/af20129df7be46f33ab7d3598f6e9213.png) | 勾选后可在图表上显示图例信息。                               |
-
-![](https://qcloudimg.tencent-cloud.cn/raw/d58e0f6cc2d82ac89104bafaaee402ce.png)
-
 ## 配置告警规则
 
 ### 新建告警规则
@@ -243,7 +234,7 @@ TDMQ RabbitMQ 版支持的监控指标如下：
 您可以为监控指标配置告警规则，当监控指标达到设定的报警阈值时，云监控可以通过设置好的通知方式及时通知您，帮助您及时应对异常情况。
 
 1. 在集群的 [监控](https://console.cloud.tencent.com/tdmq/rabbit-cluster-detail) 页面，单击下图告警按钮跳转至 [云监控控制台](https://console.cloud.tencent.com/monitor/policylist) 配置告警策略。
-![](https://qcloudimg.tencent-cloud.cn/raw/2f1dcf53790cb34b0de4fd75be9a544b.png)
+
 2. 在告警策略页面，选择好策略类型和要设置告警的实例，设置好告警规则和告警通知模板。
    - **策略类型**：选择**消息队列TDMQ/RabbitMQ**。
    - **告警对象**：选择需要配置告警策略的 RabbitMQ 资源。
@@ -269,6 +260,6 @@ TDMQ RabbitMQ 版支持的监控指标如下：
    - **策略类型**：选择**消息队列TDMQ/RabbitMQ**。
    - **使用预置触发条件**：勾选此选项，会出现系统建议的告警策略。
 5. 确认无误后，单击**保存**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/3bd7aa904ee8fc5bc9818388df354f2f.png)
+
 6. 返回新建告警策略页，单击**刷新**，就会出现刚配置的告警策略模板。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/e67712512f4ccf5a4bccfbdd93485166.png)
+
