@@ -1,5 +1,5 @@
 ## Overview
-As the business grows, more and more devices and instances need to be managed. The reasonable categorization of resources has become an important means of resource management. TencentDB for SQL Server allows you to add remarks to instances in the console for easier instance identification and management.
+As your business grows, you will need to manage an increasing number of devices and instances, thus it is in your great interest to properly categorize your resources. To make it simple for you to manage and identify your instances, TencentDB for SQL Server supports adding remarks to instances in the console.
 
 ## Notes
 - Both primary and read-only instances support remarks.
