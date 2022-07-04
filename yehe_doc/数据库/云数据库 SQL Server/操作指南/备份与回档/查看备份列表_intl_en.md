@@ -1,4 +1,4 @@
-TencentDB for SQL Server automatically backs up data according to the default backup settings. You can modify the automatic or manual backup settings in the console. You can also view the backup files and relevant information in the backup list.
+TencentDB for SQL Server automatically backs up data based on the default backup settings. You can modify the automatic or manual backup settings in the console. You can also view the backup files and relevant information in the backup list.
 This document describes how to view backup files in the console.
 
 ## Directions
@@ -45,5 +45,5 @@ No. However, you can lower the backup frequency and delete manual backup files n
 
 #### 5. Can I download the backup files of an isolated instance?
 Yes.
-- A pay-as-you-go instance will be isolated into the recycle bin 24 hours after expiration. At this time, rollback and manual backup will be prohibited, but automatic backup can still be downloaded by clicking **More** in the **Operation** column of the instance. Excessive backup space of the instance will still be billed until the instance is eliminated.
+- A pay-as-you-go instance will be isolated into the recycle bin 24 hours after expiration. At this time, rollback and manual backup will be prohibited, but automatic backup can still be downloaded by clicking **More** in the **Operation** column of the instance. Excessive backup space of the instance will continue to be billed until the instance is eliminated.
 
