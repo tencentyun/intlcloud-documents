@@ -1,221 +1,370 @@
 ## Overview
 
-This document describes how to download the demo, perform a simple test, and run a client after you create cluster, namespace, and other resources in the console.
+This document describes how to use open-source SDK to send and receive messages by using the SDK for Java as an example and helps you better understand the message sending and receiving processes.
+
+<dx-alert infotype="explain" title="">
+The following takes the Java client as an example. For clients in other languages, see [TDMQ for RocketMQ](https://intl.cloud.tencent.com/document/product/1113/45953).
+</dx-alert>
 
 ## Prerequisites
 
-- [Install JDK 1.8 or above](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [Install Maven 2.5 or later](http://maven.apache.org/download.cgi#)
-- [Download the demo](https://tdmq-1300957330.cos.ap-guangzhou.myqcloud.com/TDMQ-demo/tdmq-rocketmq-demo.zip)
+- [You have created the required resources.](https://intl.cloud.tencent.com/document/product/1113/43119)
+- [You have installed JDK 1.8 or later.](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [You have installed Maven 2.5 or later.](http://maven.apache.org/download.cgi#)
+- [You have downloaded the demo.](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip)
 
 ## Directions
 
-### Step 1. Add dependencies
+### Step 1. Install the Java dependency library
 
-Add the following Java dependency library information to the `pom.xml` file:
-```xml
+Introduce dependencies in a Java project and add the following dependencies to the `pom.xml` file. This document uses a Maven project as an example.
+>?The dependency version must be v4.6.1 or later.
+
+<dx-codeblock>
+:::  xml
+<!-- in your <dependencies> block -->
 <dependency>
-    <groupId>org.apache.rocketmq</groupId>
-    <artifactId>rocketmq-client</artifactId>
-    <version>4.6.1</version>
+	 <groupId>org.apache.rocketmq</groupId>
+	 <artifactId>rocketmq-client</artifactId>
+	 <version>4.6.1</version>
 </dependency>
-```
 
-### Step 2. Send a message
+<dependency>
+	 <groupId>org.apache.rocketmq</groupId>
+	 <artifactId>rocketmq-acl</artifactId>
+	 <version>4.6.1</version>
+</dependency>
+:::
+</dx-codeblock>
 
-1. Create a message sending program ProducerWithNamespace.java and configure related parameters.
-   ```java
-   import org.apache.rocketmq.acl.common.AclClientRPCHook;
-   import org.apache.rocketmq.acl.common.SessionCredentials;
-   import org.apache.rocketmq.client.producer.DefaultMQProducer;
-   import org.apache.rocketmq.client.producer.SendResult;
-   import org.apache.rocketmq.common.message.Message;
-   import org.apache.rocketmq.remoting.RPCHook;
-   
-   public class ProducerWithNamespace {
-   
-       // Configure the namespace token authenticated in the console as instructed in the documentation. Here, copy the token from **Role Management** and enter it
-       // For directions, visit https://intl.cloud.tencent.com/document/product/1113/43126
-       private static final String ACL_ACCESS_KEY = "eyJr****";
-       // Enter the role name or "rop" (common role name) here
-       private static final String ACL_SECRET_KEY = "rop";
-       public static void main(String[] args) throws Exception {
-   
-           // `rocketmq-****|namespace` refers to the namespace name copied on the **Namespace** page in the console, and `producerGroup` refers to the producer group name copied on the **Group** page in the console
-           DefaultMQProducer producer = new DefaultMQProducer("rocketmq-xxxx|namespace", "producerGroup", getAclRPCHook());
-           // Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster Management** page in the console
-           producer.setNamesrvAddr("rocketmq-xxxx.rocketmq.ap-sh.public.tencenttdmq.com:xxxx");
-   
-           producer.start();
-           int total = 0;
-           for (int i = 0; i<10; i++) {
-               Message message = new Message("topic", "tags", ("Hello world——" + i).getBytes());
-               // `topic` refers to the topic name copied on the **Topic** page in the console, and `tags` refers to message tags
-               try {
-                   SendResult result = producer.send(message);
-                   total++;
-                   System.out.printf("Topic:%s send success, queueId is: %s%n", message.getTopic(),
-                           result.getMessageQueue().getQueueId());
-                   Thread.sleep(1000);
-               } catch (Exception e) {
-                   e.printStackTrace();
-               }
-           }
-           System.out.println("total ===> " + total);
-           producer.shutdown();
-       }
-   
-       static RPCHook getAclRPCHook() {
-           return new AclClientRPCHook(new SessionCredentials(ACL_ACCESS_KEY, ACL_SECRET_KEY));
-       }
-   }
-   ```
+
+### Step 2. Produce messages
+
+#### 1. Create a message producer
+<dx-codeblock>
+:::  java
+// Instantiate the message producer
+DefaultMQProducer producer = new DefaultMQProducer(
+	 namespace, 
+	 groupName,
+	 new AclClientRPCHook(new SessionCredentials(accessKey, secretKey)) // ACL permission
+);
+// Set the NameServer address
+producer.setNamesrvAddr(nameserver);
+// Start the producer instances
+producer.start();
+:::
+</dx-codeblock>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>ACL_SECRET_KEY</td>
-<td>Role name, which can be copied on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page.</td>
+<td align="left">namespace</td>
+<td align="left">Namespace name, which can be copied under the <strong>Namespace</strong> tab on the cluster details page in the console. Its format is <strong>cluster ID + | + namespace</strong>.</td>
 </tr>
 <tr>
-<td>ACL_ACCESS_KEY</td>
-<td>Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/3151b0fe8307ce8b22891f394a99e630.png" alt=""></td>
+<td align="left">groupName</td>
+<td align="left">Producer group name, which can be copied under the **Group** tab on the cluster details page in the console.</td>
 </tr>
 <tr>
-<td>rocketmq-xxxx|namespace</td>
-<td>Namespace name, which can be copied on the <strong>Namespace</strong> page in the console.</td>
+<td align="left">nameserver</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
-<td>producerGroup</td>
-<td>Producer group name, which can be copied on the <strong>Group</strong> page in the console.</td>
+<td align="left">secretKey</td>
+<td align="left">Role name, which can be copied on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page.</td>
 </tr>
 <tr>
-<td>setNamesrvAddr</td>
-<td>Cluster access address, which can be obtained from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster Management</strong> page in the console.</td>
-</tr>
-<tr>
-<td>topic</td>
-<td>Topic name, which can be copied on the <strong>Topic</strong> page in the console.</td>
-</tr>
-<tr>
-<td>tags</td>
-<td>Tags for message filtering.</td>
+<td align="left">accessKey</td>
+<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/3151b0fe8307ce8b22891f394a99e630.png" alt="img"></td>
 </tr>
 </tbody></table>
 
-2. Compile and run the ProducerWithNamespace.java program.
 
-3. View the execution result. The result of successful execution is as follows.
-```
-Topic:topic1 send success, queueId is: 0
-Topic:topic1 send success, queueId is: 0
-Topic:topic1 send success, queueId is: 1
-Topic:topic1 send success, queueId is: 2
-Topic:topic1 send success, queueId is: 0
-Topic:topic1 send success, queueId is: 1
-```
+#### 2. Send messages
 
+Messages can be sent in the sync, async, or one-way mode.
 
-
-### Step 3. Consume the message
-
-1. Create a message sending program PushConsumerWithNamespace.java and configure related parameters.
-   ```java
-   import org.apache.rocketmq.acl.common.AclClientRPCHook;
-   import org.apache.rocketmq.acl.common.SessionCredentials;
-   import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
-   import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
-   import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
-   import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
-   import org.apache.rocketmq.remoting.RPCHook;
-   
-   import java.util.concurrent.atomic.AtomicLong;
-   
-   public class PushConsumerWithNamespace {
-   
-       // Configure the namespace token authenticated in the console as instructed in the documentation. Here, copy the token from **Role Management** and enter it
-       // For directions, visit https://intl.cloud.tencent.com/document/product/1113/43126
-       private static final String ACL_ACCESS_KEY = "eyJr****";
-       // Enter the role name or "rop" (common role name) here
-       private static final String ACL_SECRET_KEY = "rop";
-   
-       public static void main(String[] args) throws Exception {
-           // `rocketmq-xxxx|namespace` refers to the namespace name copied on the **Namespace** page in the console, and `consumerGroup` refers to the consumer group name copied on the **Group** page in the console
-           DefaultMQPushConsumer defaultMQPushConsumer = new DefaultMQPushConsumer("rocketmq-xxxx|namespace", "consumerGroup", getAclRPCHook());
-           // Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster Management** page in the console
-           defaultMQPushConsumer.setNamesrvAddr("rocketmq-xxxx.rocketmq.ap-sh.public.tencenttdmq.com:xxxx");
-           // `topic` refers to the topic name copied on the **Topic** page in the console
-           defaultMQPushConsumer.subscribe("topic", "*");
-   
-           defaultMQPushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-   
-           AtomicLong curTime = new AtomicLong(System.currentTimeMillis());
-           AtomicLong count = new AtomicLong(0L);
-           defaultMQPushConsumer.registerMessageListener((MessageListenerConcurrently)(msgs, context) -> {
-               msgs.forEach((msg) -> {
-                   System.out.println(" body=" + new String(msg.getBody()));
-                   curTime.set(System.currentTimeMillis());
-                   count.incrementAndGet();
-                   System.out.println("total ====> " + count.get());
-               });
-               return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-           });
-           defaultMQPushConsumer.start();
-       }
-   
-       static RPCHook getAclRPCHook() {
-           return new AclClientRPCHook(new SessionCredentials(ACL_ACCESS_KEY, ACL_SECRET_KEY));
-       }
-   }
-   ```
+- Sync sending
+<dx-codeblock>
+:::  java
+for (int i = 0; i < 10; i++) {
+	 // Create a message instance and set the topic and message content
+	 Message msg = new Message(topic_name, "TAG", ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET));
+	 // Send the message
+	 SendResult sendResult = producer.send(msg);
+	 System.out.printf("%s%n", sendResult);
+}
+:::
+</dx-codeblock>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>ACL_SECRET_KEY</td>
-<td>Role name, which can be copied on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page.</td>
+<td align="left">topic_name</td>
+<td align="left">Topic name, which can be copied under the <strong> <code>Topic</code></strong> tab on the cluster details page in the console.</td>
 </tr>
 <tr>
-<td>ACL_ACCESS_KEY</td>
-<td>Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/79bc94125f0411443ce1df99c7ad3e04.png" alt=""></td>
+<td align="left">TAG</td>
+<td align="left">A parameter used to set the message tag.</td>
+</tr>
+</tbody></table>
+- Async sending
+<dx-codeblock>
+:::  java
+// Disable retry upon sending failures
+producer.setRetryTimesWhenSendAsyncFailed(0);
+// Set the number of messages to be sent
+int messageCount = 10;
+final CountDownLatch countDownLatch = new CountDownLatch(messageCount);
+for (int i = 0; i < messageCount; i++) {
+	 try {
+			 final int index = i;
+			 // Create a message instance and set the topic and message content
+			 Message msg = new Message(topic_name, "TAG", ("Hello rocketMq " + index).getBytes(RemotingHelper.DEFAULT_CHARSET));
+			 producer.send(msg, new SendCallback() {
+					 @Override
+					 public void onSuccess(SendResult sendResult) {
+							 // Logic for message sending successes
+							 countDownLatch.countDown();
+							 System.out.printf("%-10d OK %s %n", index, sendResult.getMsgId());
+					 }
+
+					 @Override
+					 public void onException(Throwable e) {
+							 // Logic for message sending failures
+							 countDownLatch.countDown();
+							 System.out.printf("%-10d Exception %s %n", index, e);
+							 e.printStackTrace();
+					 }
+			 });
+	 } catch (Exception e) {
+			 e.printStackTrace();
+	 }
+}
+countDownLatch.await(5, TimeUnit.SECONDS);
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">topic_name</td>
+<td align="left">Topic name, which can be copied under the <strong> <code>Topic</code></strong> tab on the cluster details page in the console.</td>
 </tr>
 <tr>
-<td>rocketmq-xxxx|namespace</td>
-<td>Namespace name, which can be copied on the <strong>Namespace</strong> page in the console.</td>
+<td align="left">TAG</td>
+<td align="left">A parameter used to set the message tag.</td>
+</tr>
+</tbody></table>
+- One-way sending
+<dx-codeblock>
+:::  java
+for (int i = 0; i < 10; i++) {
+	 // Create a message instance and set the topic and message content
+	 Message msg = new Message(topic_name, "TAG", ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET));
+	 Send one-way messages
+	 producer.sendOneway(msg);
+}
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">topic_name</td>
+<td align="left">Topic name, which can be copied under the <strong> <code>Topic</code></strong> tab on the cluster details page in the console.</td>
 </tr>
 <tr>
-<td>consumerGroup</td>
-<td>Consumer group name, which can be copied on the <strong>Group</strong> page in the console.</td>
-</tr>
-<tr>
-<td>setNamesrvAddr</td>
-<td>Cluster access address, which can be obtained from <strong>Access Address</strong> in the<strong>Operation</strong> column on the <strong>Cluster Management</strong> page in the console.</td>
-</tr>
-<tr>
-<td>topic</td>
-<td>Topic name, which can be copied on the <strong>Topic</strong> page in the console.</td>
+<td align="left">TAG</td>
+<td align="left">A parameter used to set the message tag.</td>
 </tr>
 </tbody></table>
 
-2. Compile and run the PushConsumerWithNamespace.java program.
+>?For more information on batch sending or other scenarios, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
 
-3. View the execution result. The result of successful execution is as follows.
-   ```bash
-    body=Hello world——4
-   total ====> 1
-    body=Hello world——6
-   total ====> 2
-    body=Hello world——7
-    body=Hello world——11
-    body=Hello world——8
-   ```
 
-4. Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster Management** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
+### Step 3. Consume messages
+
+#### 1. Create a consumer
+TDMQ for RocketMQ supports two consumption modes: push and pull.
+- For consumers using the push mode:
+<dx-codeblock>
+:::  java
+// Instantiate the consumer
+DefaultMQPushConsumer pushConsumer = new DefaultMQPushConsumer(
+	 namespace,                                                  
+	 groupName,                                              
+	 new AclClientRPCHook(new SessionCredentials(accessKey, secretKey))); //ACL permission
+// Set the NameServer address
+pushConsumer.setNamesrvAddr(nameserver);
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">namespace</td>
+<td align="left">Namespace name, which can be copied on the <strong>Namespace</strong> tab on the cluster details page in the console. Its format is <strong>cluster ID + | + namespace</strong>.</td>
+</tr>
+<tr>
+<td align="left">groupName</td>
+<td align="left">Producer group name, which can be copied under the **Group** tab on the cluster details page in the console.</td>
+</tr>
+<tr>
+<td align="left">nameserver</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console.</td>
+</tr>
+<tr>
+<td align="left">secretKey</td>
+<td align="left">Role name, which can be copied on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page.</td>
+</tr>
+<tr>
+<td align="left">accessKey</td>
+<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/3151b0fe8307ce8b22891f394a99e630.png" alt="img"></td>
+</tr>
+</tbody></table>
+- For consumers using the pull mode:
+<dx-codeblock>
+:::  java
+// Instantiate the consumer
+DefaultLitePullConsumer pullConsumer = new DefaultLitePullConsumer(
+	 namespace,                                               
+	 groupName,                                             
+	 new AclClientRPCHook(new SessionCredentials(accessKey, secretKey)));
+// Set the NameServer address
+pullConsumer.setNamesrvAddr(nameserver);
+// Specify the first offset as the start offset for consumption
+pullConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">namespace</td>
+<td align="left">Namespace name, which can be copied on the <strong>Namespace</strong> tab on the cluster details page in the console. Its format is <strong>cluster ID + | + namespace</strong>.</td>
+</tr>
+<tr>
+<td align="left">groupName</td>
+<td align="left">Producer group name, which can be copied under the **Group** tab on the cluster details page in the console.</td>
+</tr>
+<tr>
+<td align="left">nameserver</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console.</td>
+</tr>
+<tr>
+<td align="left">secretKey</td>
+<td align="left">Role name, which can be copied on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page.</td>
+</tr>
+<tr>
+<td align="left">accessKey</td>
+<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/3151b0fe8307ce8b22891f394a99e630.png" alt="img"></td>
+</tr>
+</tbody></table>
+
+>?For more consumption mode information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/).
+
+#### 2. Subscribe to messages
+The subscription modes vary by consumption mode.
+
+- Subscription in push mode
+<dx-codeblock>
+:::  java
+// Subscribe to a topic
+pushConsumer.subscribe(topic_name, "*");
+// Register a callback implementation class to process messages pulled from the broker
+pushConsumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
+	 // Message processing logic
+	 System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
+	 // Mark the message as being successfully consumed and return the consumption status
+	 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+});
+// Start the consumer instance
+pushConsumer.start();
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">topic_name</td>
+<td align="left">Topic name, which can be copied under the <strong> <code>Topic</code></strong> tab on the cluster details page in the console.</td>
+</tr>
+<tr>
+<td align="left">"*"</td>
+<td align="left">If the subscription expression is left empty or specified as asterisk (*), all messages are subscribed to. `tag1 || tag2 || tag3` means subscribing to multiple types of tags.</td>
+</tr>
+</tbody></table>
+- Subscription in pull mode
+<dx-codeblock>
+:::  java
+// Subscribe to a topic
+pullConsumer.subscribe(topic_name, "*");
+// Start the consumer instance
+pullConsumer.start();
+try {
+	 System.out.printf("Consumer Started.%n");
+	 while (true) {
+			 // Pull the message
+			 List<MessageExt> messageExts = pullConsumer.poll();
+			 System.out.printf("%s%n", messageExts);
+	 }
+} finally {
+	 pullConsumer.shutdown();
+}
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">topic_name</td>
+<td align="left">Topic name, which can be copied under the <strong> <code>Topic</code></strong> tab on the cluster details page in the console.</td>
+</tr>
+<tr>
+<td align="left">"*"</td>
+<td align="left">If the subscription expression is left empty or specified as asterisk (*), all messages are subscribed to. `tag1 || tag2 || tag3` means subscribing to multiple types of tags.</td>
+</tr>
+</tbody></table>
+
+
+
+### Step 4. View consumption details
+
+Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
+![](https://qcloudimg.tencent-cloud.cn/raw/47c151da53f8ef00271396889cefbf82.png)
+
+>?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/)

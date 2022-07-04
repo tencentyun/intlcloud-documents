@@ -12,12 +12,12 @@ You can use the message query feature in the TDMQ for RocketMQ console to view t
 - View which consumers consumed the message, whether it was consumed successfully, and the specific time when its consumption was acknowledged.
 - View the MQ's message processing latency to analyze the performance of the distributed system.
 
-## Query limits
+## Query Limits
 
 - You can query messages in the last 3 days.
 - You can query up to 65,536 messages at a time.
 
-## Prerequisite
+## Prerequisites
 
 You have deployed the producer and consumer services as instructed in the [SDK documentation](https://intl.cloud.tencent.com/document/product/1113/45956), and they produced and consumed messages in the last 3 days.
 
@@ -33,12 +33,14 @@ You have deployed the producer and consumer services as instructed in the [SDK d
      - **By message ID:** A fast exact query method.
      - **By message key:** A fuzzy query method that is used when you have only set the message key.
 3. Click **Query**, and the list below will display paginated results.
+![](https://qcloudimg.tencent-cloud.cn/raw/e64e03f1f7aff564e6234e4100ed6660.png)
 4. Click **View Details** in the **Operation** column of the target message to view its basic information, content (message body), and parameters.
 5. Click **View Message Trace** in the **Operation** column or select the **Message Trace** tab on the details page to view the trace of the message. For more information, see [Message trace query result description](#1).
+![](https://qcloudimg.tencent-cloud.cn/raw/26e01a17a960deb774f23a832d22003c.png)
 
 <span id="1"></span>
 
-## Message trace query result description
+## Message Trace Query Result Description
 
 A message trace query result consists of three parts: message production, message storage, and message consumption.
 
@@ -61,17 +63,17 @@ A message trace query result consists of three parts: message production, messag
 
 #### Message consumption
 
-Message consumption details are displayed in a list. TDMQ for RocketMQ supports two consumption modes: cluster consumption and broadcast consumption.
+Message consumption details are displayed in a list. TDMQ for RocketMQ supports two consumption modes: clustering and broadcasting.
 
 The information displayed in the list is as described below:
 
 | Parameter                    | Description                                                         |
 | ----------------------- | ------------------------------------------------------------ |
 | <nobr>Consumer Group Name</nobr> | Name of the consumer group.                                               |
-| Consumption Mode                | The consumer group’s consumption mode, which can be either cluster consumption or broadcast consumption. For more information, see [Cluster Consumption and Broadcast Consumption](https://intl.cloud.tencent.com/document/product/1113/43113). |
+| Consumption Mode                | The consumer group's consumption mode, which can be either clustering or broadcasting. For more information, see [Clustering Consumption and Broadcasting Consumption](https://intl.cloud.tencent.com/document/product/1113/43113). |
 | Number of Pushes                | The number of times the TDMQ for RocketMQ server has delivered the message to consumers.             |
 | Last Pushed            | The last time the TDMQ for RocketMQ server delivered the message to consumers.    |
-| Consumption Status                | <li>Pushed yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers but has not received their acknowledgement. </li><li>Acknowledged: Consumers acknowledged the consumption and the TDMQ for RocketMQ server has received the acknowledgement. </li><li>Put to retry queue: Acknowledgement timed out. The TDMQ for RocketMQ server will deliver the message to consumers again as it did not receive their acknowledgment. </li><li>Retried yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers again but still has not received their acknowledgement. </li><li>Put to dead letter queue: The message has been put to the dead letter queue as it failed to be consumed after multiple retries. </li>Note: If the consumption mode is “broadcast consumption”, the consumption status can only be **Pushed**. |
+| Consumption Status                | <li>Pushed yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers but has not received their acknowledgement. </li><li>Acknowledged: Consumers acknowledged the consumption and the TDMQ for RocketMQ server has received the acknowledgement. </li><li>Put to retry queue: Acknowledgement timed out. The TDMQ for RocketMQ server will deliver the message to consumers again as it did not receive their acknowledgment. </li><li>Retried yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers again but still has not received their acknowledgement. </li><li>Put to dead letter queue: The message has been put to the dead letter queue as it failed to be consumed after multiple retries. </li>Note: If the consumption mode is "broadcasting", the consumption status can only be **Pushed**. |
 
 You can view the message push details by clicking the right triangle on the left of the subscription name.
 
@@ -80,5 +82,5 @@ You can view the message push details by clicking the right triangle on the left
 | <nobr>Push Sequence</nobr> | Which time the TDMQ for RocketMQ server delivers the message to consumers.            |
 | Consumer Address                | Address and port of the consumer receiving the message.                                 |
 | Push Time              | The time when the TDMQ for RocketMQ server delivers the message to consumers.               |
-| Consumption Status                | <li>Pushed yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers but has not received their acknowledgement. </li><li>Acknowledged: Consumers acknowledged the consumption and the TDMQ for RocketMQ server has received the acknowledgement. </li><li>Put to retry queue: Acknowledgement timed out. The TDMQ for RocketMQ server will deliver the message to consumers again as it did not receive their acknowledgment. </li><li>Retried yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers again but still has not received their acknowledgement. </li><li>Put to dead letter queue: The message has been put to the dead letter queue as it failed to be consumed after multiple retries. </li>Note: If the consumption mode is “broadcast consumption”, the consumption status can only be **Pushed**. |
+| Consumption Status                | <li>Pushed yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers but has not received their acknowledgement. </li><li>Acknowledged: Consumers acknowledged the consumption and the TDMQ for RocketMQ server has received the acknowledgement. </li><li>Put to retry queue: Acknowledgement timed out. The TDMQ for RocketMQ server will deliver the message to consumers again as it did not receive their acknowledgment. </li><li>Retried yet unacknowledged: The TDMQ for RocketMQ server has delivered the message to consumers again but still has not received their acknowledgement. </li><li>Put to dead letter queue: The message has been put to the dead letter queue as it failed to be consumed after multiple retries. </li>Note: If the consumption mode is "broadcasting", the consumption status can only be **Pushed**. |
 
