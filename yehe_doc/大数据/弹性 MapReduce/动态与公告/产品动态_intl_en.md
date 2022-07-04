@@ -1,3 +1,62 @@
+## June 2022
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added support for Hive query management.</td>
+<td>The Hive service supports query management.</td>
+<td>2022-06-07</td>
+<td>-</td>
+</tr>	
+<tr>
+<td>Optimized Yarn job query.</td>
+<td>YARN job query supports displaying task information and querying task logs.</td>
+<td>2022-06-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41278" target="_blank">YARN Job Query</a></td>
+</tr>	
+<tr>
+<td>Connected to Pricing Center.</td>
+<td>The pricing of EMR is connected to the Pricing Center, where you can query EMR node fees.</td>
+<td>2022-06-07</td>
+<td><a href="https://buy.intl.cloud.tencent.com/price/emr" target="_blank">Pricing | Elastic MapReduce</a></td>
+</tr>	
+</tbody></table>
+
+
+
+## May 2022
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimized the scaling feature.</td>
+<td><li>New subnets can be added to expand cluster node capacity.<li>The Kyuubi service supports scaling.</td>
+<td>2022-05-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31113" target="_blank">Cluster Scale-out</a></td>
+</tr>	
+<tr>
+<td>Enhanced role management and user management.</td>
+<td><li>User management supports batch import and export of users through APIs.<li>Resource management supports displaying client information.<li>The `DescribeClusterPhysicalMetaInfo` API is added for resource-level authentication.</td>
+<td>2022-05-17</td>
+<td>-</td>
+</tr>	
+</tbody></table>
+
+
 ## April 2022
 <table>
 <thead>
@@ -10,30 +69,19 @@
 </thead>
 <tbody>
 <tr>
-<td>Released a Hadoop cluster version—EMR v3.4.0.</td>
-<td><li>Added support for Spark 3.2.1, Trino 372, Flink 1.14.3, HBase 2.4.5, ZooKeeper 3.6.3, Impala 4.0.0, Zeppelin 0.10.1, Alluxio 2.8.0, Hudi 0.10.1, Iceberg 0.13.1, and GooseFS 1.2.0.<li>Renamed PrestoSQL Trino in the new version and added support for Ranger. Monitoring metric alarms need to be configured according to Trino in the new version.</td>
+<td>Released a Hadoop cluster version - EMR v3.4.0.</td>
+<td><li>Added support for Spark 3.2.1, Trino 372, Flink 1.14.3, HBase 2.4.5, ZooKeeper 3.6.3, Impala 4.0.0, Zeppelin 0.10.1, Alluxio 2.8.0, Hudi 0.10.1, Iceberg 0.13.1, and GooseFS 1.2.0.<li>Renamed PrestoSQL Trino in the new version and added support for Ranger. Monitoring metric alarms need to be configured based on Trino in the new version.</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a><br>Trino Monitoring Metrics</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Product Releases and Component Versions</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Trino Monitoring Metrics</a></td>
 </tr>	
 <tr>
-<td>Added the event feature and event-related metrics.</td>
-<td><li>Launched the new version of the interactive features of the event list.<li>Added event-related metrics such as node single-disk inode utilization, single-disk space utilization, single-disk IO utilization, all HBase HMasters standby, and all HDFS NameNodes standby.</td>
+<td>Enriched monitoring.</td>
+<td><li>Launched the new version of the interactive features of the event list.<li>Added event-related metrics such as node single-disk inode utilization, single-disk space utilization, single-disk IO utilization, all HBase HMasters standby, and all HDFS NameNodes standby.<li>Monitoring metrics such as blocks, used disk capacity, free disk capacity, and reserved disk capacity are added for HDFS DataNodes.</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a></td>
-</tr>	
-<tr>
-<td>Added diverse disk metrics for HDFS DataNodes.</td>
-<td><li>Added a great variety of metrics such as block quantity, used disk capacity, free disk capacity, and reserved disk capacity.</td>
-<td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36880" target="_blank">HDFS Monitoring Metrics</a></td>
-</tr>	
-<tr>
-<td>Added support for container-based EMR clusters.</td>
-<td>Added support for Spark deployment based on EKS in Beijing, Shanghai, Guangzhou, and Nanjing regions.</td>
-<td>2022-04-12</td>
-<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36880" target="_blank">HDFS Monitoring Metrics</a></td>
 </tr>	
 </tbody></table>
+
 
 
 ## March 2022
@@ -83,7 +131,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Released a Doris cluster version—Doris v1.2.0.</td>
+<td>Released a Doris cluster version - Doris v1.2.0.</td>
 <td>Released Doris 0.15.</td>
 <td>2022-01-21</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Component Version</a></td>
@@ -184,7 +232,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody>
 <tr>
-<td>Released a Hadoop cluster version—EMR v3.3.0.</td>
+<td>Released a Hadoop cluster version - EMR v3.3.0.</td>
 <td>Added support for HBase v2.3.5, Phoenix v5.1.2, Kudu v1.15.0, Hue v4.10.0, Hudi v0.8.0, Tez v0.10.1, Livy v0.8.0, Ganglia v3.7.2, Kyuubi v1.1.0, and LDAP v2.4.44.</td>
 <td>2021-09-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
@@ -243,7 +291,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody>
 <tr>
-<td>Released a Hadoop cluster version—EMR v2.6.0.</td>
+<td>Released a Hadoop cluster version - EMR v2.6.0.</td>
 <td>Added support for Spark v3.0.2, Impala v3.4.0, GooseFS v1.0.0, OpenLDAP v2.4.44, Kyuubi v1.1.0, etc.</td>
 <td>  2021-07-15</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
@@ -318,13 +366,13 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody>
 <tr>
-<td>Released a Kafka cluster version—Kafka v1.0.0.</td>
+<td>Released a Kafka cluster version - Kafka v1.0.0.</td>
 <td>Added support for Kafka v1.1.1, KafkaManager v2.0.0.2, Knox v1.2.0, and ZooKeeper v3.6.1.</td>
 <td>  2021-05-13</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/40256" target="_blank">Kafka Development Guide</a></td>
 </tr>
   <tr>
-<td>Released a Doris cluster version—Doris v1.0.0.</td>
+<td>Released a Doris cluster version - Doris v1.0.0.</td>
 <td>Added support for Doris v0.13.0 and Knox v1.2.0.</td>
 <td> 2021-05-13 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/40258" target="_blank">Doris Development Guide</a></td>
@@ -344,7 +392,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody>
 <tr>
-<td>Released a Hadoop cluster version—EMR v3.2.0.</td>
+<td>Released a Hadoop cluster version - EMR v3.2.0.</td>
 <td>Added support for Hadoop v3.2.2, Spark v3.0.2, Presto v350, Flink v1.12.1, Alluxio v2.5.0, Ranger v2.1.0, Iceberg v0.11.0, and Hudi v0.7.0.</td>
 <td> 2021-04-30 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
@@ -356,7 +404,7 @@ If you encounter any security issues related to the operating system of an exist
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/40259" target="_blank">Starting/Stopping Services</a></td>
 </tr>
 <tr>
-<td>Released a Hadoop cluster version—EMR v2.5.1.</td>
+<td>Released a Hadoop cluster version - EMR v2.5.1.</td>
 <td>Added support for Alluxio v2.5.0 and Hudi v0.5.1. Alluxio supports COS Transparent-URI.</td>
 <td> 2021-04-10 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/40172" target="_blank">Support for COS Transparent-URI</a></td>
@@ -439,7 +487,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody>
 <tr>
-<td>Released a Hadoop cluster version—EMR v3.1.0.</td>
+<td>Released a Hadoop cluster version - EMR v3.1.0.</td>
 <td>Added support for Impala v3.4.0, Flink v1.10.0, HBase v2.3.3, Phoenix v5.0.0, Alluxio v2.3.0, Kudu v1.13.0, and ZooKeeper v3.6.1.</td>
 <td>2020-12-14</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
@@ -517,7 +565,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody>
 <tr>
-<td>Released a Hadoop cluster version—EMR v2.5.0.</td>
+<td>Released a Hadoop cluster version - EMR v2.5.0.</td>
 <td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.</td>
 <td>2020-09-17</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
@@ -536,7 +584,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody>
 <tr>
-<td>Released a Hadoop cluster version—EMR v2.4.0.</td>
+<td>Released a Hadoop cluster version - EMR v2.4.0.</td>
 <td>Added the Kudu component and upgraded some existing components.</td>
 <td>2020-08-27</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
@@ -589,7 +637,7 @@ If you encounter any security issues related to the operating system of an exist
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36888" target="_blank">Druid Monitoring Metrics</a></td>
 </tr>
 <tr>
-<td>Released a Hadoop cluster version—EMR v2.3.0.</td>
+<td>Released a Hadoop cluster version - EMR v2.3.0.</td>
 <td>Added support for the TensorFlow and Jupyter Notebook components.</td>
 <td>2020-06-15</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36892" target="_blank">TensorFlow Overview</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36894" target="_blank">Jupyter Notebook Overview</a></td>
@@ -826,7 +874,6 @@ If you encounter any security issues related to the operating system of an exist
 </tr>
 </tbody></table>
 
-
 ## October 2019
 <table>
 <thead>
@@ -965,7 +1012,7 @@ If you encounter any security issues related to the operating system of an exist
 <td>Released the feature of setting bootstrap actions.</td>
 <td>Added support for setting bootstrap actions.</td>
 <td>2019-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34521" target="_blank">Bootstrap Actions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34521" target="_blank">Bootstrap Action</a></td>
 </tr>
 <tr>
 <td>Released the feature of delivering component parameter configuration to nodes.</td>
@@ -1085,6 +1132,6 @@ If you encounter any security issues related to the operating system of an exist
 <td>Added new components to existing clusters.</td>
 <td>Added support for adding new components to existing clusters.</td>
 <td>2019-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31108" target="_blank">Adding Components</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31108" target="_blank">Adding Component</a></td>
 </tr>
 </tbody></table>

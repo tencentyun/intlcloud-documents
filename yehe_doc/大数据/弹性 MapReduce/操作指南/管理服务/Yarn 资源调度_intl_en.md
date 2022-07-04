@@ -1,18 +1,18 @@
-## Feature Overview
+## Feature Description
 YARN Resource Scheduling supports interactive YARN resource queue scheduling management, which is more convenient than file-based configuration management. Currently, it supports two types of scheduling configurations: Fair Scheduler and Capacity Scheduler.
 - Fair Scheduler allocates resources fairly to each job on YARN based on weight.
 - Capacity Scheduler organizes resources in a hierarchical manner, allowing multiple users to share cluster resources based on multi-level resource restrictions.
 
 >!
->- Fair Scheduler is used by default. Therefore, you need to configure relevant parameters in the `fair-scheduler.xml` configuration file for the YARN component. If you switch >to Capacity Scheduler, configure relevant parameters in the `capacity-scheduler.xml` configuration file. No matter which scheduler you use, parameter configurations must be >consistent with those on the **Resource Scheduling** page.
->- After setting the policy on the **Resource Scheduling** page, you need to click **Refresh Dynamic Resource Pools** to deliver the policy configurations to keep the >configuration file and parameters consistent in **Configuration Management**. After deleting a resource pool, you need to manually restart or click **Apply** to restart >Resource Manager.
+>- Fair Scheduler is used by default. Therefore, you need to configure relevant parameters in the `fair-scheduler.xml` configuration file for the YARN component. If you switch to Capacity Scheduler, configure relevant parameters in the `capacity-scheduler.xml` configuration file. No matter which scheduler you use, parameter configurations must be consistent with those on the **Resource Scheduling** page.
+>- After setting the policy on the **Resource Scheduling** page, you need to click **Refresh Dynamic Resource Pools** to deliver the policy configurations to keep the configuration file and parameters consistent in **Configuration Management**. After deleting a resource pool, you need to manually restart or click **Apply** to restart Resource Manager.
 >- After switching schedulers, you need to click **Apply** to restart Resource Manager for the changes to take effect.
 
 ## Configuring Fair Scheduler
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click a Hadoop cluster ID on the cluster list to go to the cluster details page.
 2. On the cluster details page, click **Cluster Service** > **Operation** on the **YARN** component card > **Resource Scheduling** to go to the resource scheduling page.
 ![](https://main.qcloudimg.com/raw/b4f005fcac189865fbd03d45f7374ca9.png)
-3. Turn on **Resource Scheduler**, then you can configure the scheduler.
+3. Toggle on **Resource Scheduler**, and then you can configure the scheduler.
 ![](https://main.qcloudimg.com/raw/649ff7eea0362afb9e91dfd5b05386cb.png)
 4. Create a resource pool for Fair Scheduler.
 Select **Fair Scheduler** and click **Create Resource Pool** to create a resource pool. You can also edit, clone, delete an existing resource pool as well as create a subpool for it.
@@ -28,7 +28,7 @@ Select **Fair Scheduler** and click **Create Resource Pool** to create a resourc
 </thead>
 <tbody><tr>
 <td>Resource Pool Name</td>
-<td>`name`</td>
+<td>name</td>
 <td>Name of the resource pool or queue</td>
 </tr>
 <tr>
@@ -43,7 +43,7 @@ Select **Fair Scheduler** and click **Create Resource Pool** to create a resourc
 </tr>
 <tr>
 <td>Weight</td>
-<td>`weight`</td>
+<td>weight</td>
 <td>Percentage of resources in the parent pool. A greater weight means more resources allocated.</td>
 </tr>
 <tr>
@@ -102,6 +102,7 @@ Select **Fair Scheduler** and click **Create Resource Pool** to create a resourc
 <td>List of users that can manage the queue</td>
 </tr>
 </tbody></table>
+
 5. Configure execution plans.
 In the **Policy Settings** section, click **Execution Plans** > **Create Execution Plan** to create an execution plan.
 ![](https://main.qcloudimg.com/raw/674b6ee1c251bec1df8794731e52f235.png)![](https://main.qcloudimg.com/raw/69e7149292d7df16bf66c6e2a1279cdf.png)
@@ -116,7 +117,7 @@ In the **Policy Settings** section, click **User Limits** > **Create User Limit*
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click a Hadoop cluster ID on the cluster list to go to the cluster details page.
 2. On the cluster details page, click **Cluster Service** > **Operation** on the **YARN** component card > **Resource Scheduling** to go to the resource scheduling page.
 ![](https://main.qcloudimg.com/raw/943c5a6a90a3373f850b8229d69c1f2a.png)
-3. Turn on **Resource Scheduler**, then you can configure the scheduler.
+3. Toggle on **Resource Scheduler**, and then you can configure the scheduler.
 4. Create a resource pool for Capacity Scheduler.
 Select **Capacity Scheduler** and click **Create Resource Pool** to create a resource pool. You can also edit, clone, delete an existing resource pool as well as create a subpool for it.
 ![](https://main.qcloudimg.com/raw/be26fc25498e4d3775519a3c04656759.png)![](https://main.qcloudimg.com/raw/f9ba09c74eb6c8ff13658cd55a40b3be.png)
@@ -160,6 +161,11 @@ Select **Capacity Scheduler** and click **Create Resource Pool** to create a res
 <td>Maximum memory that can be allocated to each container. The value will overwrite and cannot be greater than that of the system's `yarn.scheduler.maximum-allocation-mb`.</td>
 </tr>
 <tr>
+<td>Max vCores per Container</td>
+<td><code>yarn.scheduler.capacity.&lt;queue-path>.maximum-allocation-vcores </code></td>
+<td>Maximum number of cores that can be allocated to each container. The value will overwrite and cannot be greater than that of the system's `yarn.scheduler.maximum-allocation-vcores`.</td>
+</tr>
+<tr>
 <td>Resource Pool Status</td>
 <td><code>yarn.scheduler.capacity.&lt;queue-path&gt;.state</code></td>
 <td>Status of the queue. The value can be `Running` or `Stopped`. If a queue is in the `Stopped` status, new applications cannot be submitted to it or any of its subqueues.</td>
@@ -185,6 +191,7 @@ Select **Capacity Scheduler** and click **Create Resource Pool** to create a res
 <td>List of users that can manage the queue</td>
 </tr>
 </tbody></table>
+
 5. Configure resource pool mappings.
 In the **Policy Settings** section, click **Resource Pool Mappings** > **Create Resource Pool Mapping** to create a resource pool mapping.
 ![](https://main.qcloudimg.com/raw/6973f8f7f454536ac3552d2a16fd1120.png)![](https://main.qcloudimg.com/raw/b0221c21f9993dce769cb47af678d21d.png)

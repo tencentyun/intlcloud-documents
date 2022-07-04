@@ -1,3 +1,62 @@
+## 2022年06月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Hive 查询管理</td>
+<td>Hive 服务支持查询管理功能</td>
+<td>2022-06-07</td>
+<td>-</td>
+</tr>	
+<tr>
+<td>Yarn 作业查询优化</td>
+<td>Yarn 作业查询支持任务信息查看和任务日志查询 </td>
+<td>2022-06-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41278" target="_blank">Yarn 作业查询</a></td>
+</tr>	
+<tr>
+<td>接入定价中心</td>
+<td>EMR 产品定价接入官网定价中心，支持 EMR 节点费用查询。</td>
+<td>2022-06-07</td>
+<td><a href="https://buy.intl.cloud.tencent.com/price/emr" target="_blank">产品定价</a></td>
+</tr>	
+</tbody></table>
+
+
+
+## 2022年05月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扩容功能优化</td>
+<td><li>支持新增子网扩展集群节点容量<li>Kyuubi 服务支持扩容</td>
+<td>2022-05-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31113" target="_blank">集群扩容</a></td>
+</tr>	
+<tr>
+<td>角色管理、用户管理增强</td>
+<td><li>用户管理支持通过API批量导入导出用户<li>资源管理页支持查看客户端信息<li>新增 DescribeClusterPhysicalMetaInfo 资源级鉴权 API</td>
+<td>2022-05-17</td>
+<td>-</td>
+</tr>	
+</tbody></table>
+
+
 ## 2022年04月
 <table>
 <thead>
@@ -10,30 +69,19 @@
 </thead>
 <tbody>
 <tr>
-<td>hadoop 集群新增产品版本 EMR-V3.4.0</td>
+<td>Hadoop 集群新增产品版本 EMR-V3.4.0</td>
 <td><li>支持 Spark3.2.1、Trino372、Flink1.14.3、Hbase2.4.5、Zookeeper3.6.3、Impala4.0.0、Zeppelin0.10.1、Alluxio2.8.0、Hudi0.10.1、Iceberg0.13.1、Goosefs1.2.0<li>新版本中 PrestoSQL 更名为 Trino，并支持 Ranger，新版本中监控指标告警需按 Trino 配置</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a><br>Trino 监控指标</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">组件版本</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Trino 监控指标</a></td>
 </tr>	
 <tr>
-<td>事件功能及事件项</td>
-<td><li>事件列表新版交互功能上线<li>增加节点单盘 Inode 使用率、单盘空间使用率、单盘 IO 使用率、Hbase-HMaster均StandBy、HDFS-NameNode 均 StandBy 事件项</td>
+<td>监控丰富</td>
+<td><li>事件列表交互焕新<li>增加节点单盘 Inode 使用率、单盘空间使用率、单盘 IO 使用率、Hbase-HMaster 均 StandBy、HDFS-NameNode 均 StandBy 事件项<li>HDFS-DataNode新增 Block 数、使用磁盘容量、空闲磁盘容量、预留磁盘容量等监控指标</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a></td>
-</tr>	
-<tr>
-<td>HDFS-DataNode 丰富盘相关指标</td>
-<td><li>丰富 Block 数、使用磁盘容量、空闲磁盘容量、预留磁盘容量等指标</td>
-<td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36880" target="_blank">HDFS 监控指标</a></td>
-</tr>	
-<tr>
-<td>支持 EMR 容器版</td>
-<td>北京、上海、广州、南京地域支持 Spark 基于弹性容器（EKS）部署</td>
-<td>2022-04-12</td>
-<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">EMR 容器版概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36880" target="_blank">HDFS 监控指标</a></td>
 </tr>	
 </tbody></table>
+
 
 
 ## 2022年03月
@@ -825,7 +873,6 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
 
 ## 2019年10月
 <table>

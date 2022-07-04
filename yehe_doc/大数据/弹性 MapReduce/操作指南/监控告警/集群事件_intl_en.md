@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 Cluster events include event lists and event policies.
 - Event list: It records key change events and abnormal events occurring in the cluster.
 - Event policy: Event monitoring trigger policies can be customized based on the actual business conditions. Events with monitoring enabled can be set as cluster inspection items.
@@ -12,13 +12,16 @@ The severity divides into the following:
  - Severe: Alert events that currently have not caused service or node interruption but will cause fatal events if left unattended.
  - Moderate: Regular events occurring in the cluster that generally do not require special processing.
 
+3. Click the value in the **Triggers today** column to view the event's trigger records, metrics, logs, and snapshots.
+![](https://qcloudimg.tencent-cloud.cn/raw/d184a9581e1c72055b921964df069ec8.png)
+
 ## Setting Event Policy
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event Policy** and you can customize the event monitoring trigger policies.
 3. The event configuration list contains the event name, event trigger policy, severity (fatal, severe, and moderate), and option to enable/disable monitoring, which can be modified and saved.
 ![](https://main.qcloudimg.com/raw/7107d9b985db81e2b8fdbf921bf567c1.png)
 4. Event trigger policies cover two types of events: fixed system policy events (which cannot be modified) and custom events (which can be configured based on the business standards).
-![](https://main.qcloudimg.com/raw/ebfb44dc391f12fc05f8eeaaebaa2f8f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5fc474a988b252d0cf25f41cec7e7864.png)
 5. You can select whether to enable event monitoring in an event policy. Only events with monitoring enabled can be selected as cluster inspection items. Monitoring is enabled by default for some events and is enabled by default and cannot be disabled for some other events. The following are the specific rules:
 <table>
 <thead>
@@ -34,7 +37,7 @@ The severity divides into the following:
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan="20"><strong>Node</strong></td>
+<td rowspan="23"><strong>Node</strong></td>
 <td>The CPU utilization exceeds the threshold continuously</td>
 <td>The server CPU utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
@@ -134,8 +137,8 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
-<td>The disk space utilization exceeds the threshold continuously</td>
-<td>The disk space utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
+<td>The average disk space utilization exceeds the threshold continuously</td>
+<td>The average disk space utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=85, t=1800</td>
 <td>Severe</td>
@@ -143,8 +146,8 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
-<td>The disk I/O device utilization exceeds the threshold continuously</td>
-<td>The disk I/O device utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
+<td>The average disk I/O device utilization exceeds the threshold continuously</td>
+<td>The average disk I/O device utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
 <td>m=85, t=1800</td>
 <td>Severe</td>
@@ -214,7 +217,34 @@ The severity divides into the following:
 <td>-</td>
 </tr>
 <tr>
-<td rowspan="16"><strong>HDFS</strong></td>
+<td>The single disk space utilization exceeds the threshold continuously</td>
+<td>The single disk space utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
+<td>Expand the node capacity or upgrade the node</td>
+<td>m=0.85, t=1800</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The single disk I/O device utilization exceeds the threshold continuously</td>
+<td>The single disk I/O device utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
+<td>Expand the node capacity or upgrade the node</td>
+<td>m=0.85, t=1800</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The single disk inodes utilization exceeds the threshold continuously</td>
+<td>	The single disk inodes utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
+<td>Expand the node capacity or upgrade the node</td>
+<td>m=0.85, t=1800</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td rowspan="17"><strong>HDFS</strong></td>
 <td>The total number of HDFS files exceeds the threshold continuously</td>
 <td>The total number of files in the cluster has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Increase the NameNode memory</td>
@@ -359,6 +389,15 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
+<td>Both NameNodes of HDFS are in Standby service status</td>
+<td>Both NameNode roles are in Standby status at the same time</td>
+<td>Troubleshoot</td>
+<td>-</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
 <td rowspan="14"><strong>YARN</strong></td>
 <td>The number of currently missing NodeManagers in the cluster exceeds the threshold continuously</td>
 <td>The number of currently missing NodeManagers in the cluster has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
@@ -486,7 +525,7 @@ The severity divides into the following:
 <td>No</td>
 </tr>
 <tr>
-<td rowspan="12"><strong>HBase</strong></td>
+<td rowspan="13"><strong>HBase</strong></td>
 <td>The number of regions in RIT status in the cluster exceeds the threshold continuously</td>
 <td>The number of regions in RIT status in the cluster has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>If the HBase version is below 2.0, run `hbase hbck -fixAssigment`</td>
@@ -593,6 +632,15 @@ The severity divides into the following:
 <td>Moderate</td>
 <td>Yes</td>
 <td>No</td>
+</tr>
+<tr>
+<td>Both HMasters of HBase is in Standby service status</td>
+<td>Both HMaster roles are in Standby status at the same time</td>
+<td>Troubleshoot</td>
+<td>-</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td rowspan="4"><strong>Hive</strong></td>

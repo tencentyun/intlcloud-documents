@@ -1,10 +1,9 @@
-## Overview
+## Feature Description
 A bootstrap action is a custom script executed when a cluster is created to help you modify the cluster environment, install third-party software, and use your own data.
 
 An EMR instance can be created in the following steps:
 ![](https://main.qcloudimg.com/raw/a36ebd385e369317db55596fd1753937.png)
 A bootstrap action can be executed at the following three time slots:
-
 - a (after node initialization): After server resource initialization and before EMR cluster software installation.
 - b (before cluster start): Before cluster service start.
 - c (after cluster start): After cluster service start.
@@ -33,15 +32,19 @@ On the **Details** page, you can see the "object name" and "object address".
  - Script Location: We recommend you copy the location information from the COS details page. Go to the [COS console](https://console.cloud.tencent.com/cos5), click **Bucket List**, select the target script, and click **Operation** > **Details**.
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
 ![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
+
  - Parameter: This refers to the parameters for running the script. Separate multiple parameters by spaces, and do not add spaces in individual parameters. The total length of **Parameter** and **Name** cannot exceed 240 characters.
 
 ## Viewing Bootstrap Result
 Currently, you can specify a bootstrap action during scale-out via API but not in the console. If a bootstrap action is specified, it will be executed during scale-out; otherwise, the one specified during cluster creation will be executed.
-
+1. View the bootstrap result in the script's system log.
 Logs and script files to be executed are stored in the `/usr/local/service/scripts/` directory. The script system log is `script_syslog`.
-- Naming convention: "Execution order" + "\_" + "run" + "script name" + "\_" + stderr.
-- Naming convention: "Execution order" + "\_" + "run" + "script name" + "\_" + stdout.
+	- Naming convention: "Execution order" + "_" + "run" + "script name" + "_" + stderr.
+	- Naming convention: "Execution order" + "_" + "run" + "script name" + "_" + stdout.
 
->!
+>! 
 >- The scripts will be executed on all types of nodes, and the script files and log files output by script execution will be stored on each node.
 >- Bootstrap script content needs to be encoded in UTF-8.
+
+2. View the bootstrap result in the Task Center.
+Log in to the [EMR console](https://console.cloud.tencent.com/emr), click **Task Center** on the left sidebar, or enter a cluster, click **Task** in the top-right corner, and select the target process (creating cluster, scaling out cluster, or initializing node). Then, you can click **Run Details** in the service initialization step of **Task details** to view the bootstrap result.

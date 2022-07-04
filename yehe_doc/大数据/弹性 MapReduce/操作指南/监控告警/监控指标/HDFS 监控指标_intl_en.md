@@ -1,4 +1,4 @@
-### HDFS - overview
+### HDFS - Overview
 <table>
 <tr>
 <th width=20%>Title</th>
@@ -150,11 +150,11 @@
 <td >Number of RPC authentication failures</td>
 </tr><tr>
 <td >RpcAuthenticationSuccesses </td>
-<td >- </td>
+<td >-</td>
 <td >Number of RPC authentication successes</td>
 </tr><tr>
 <td >RpcAuthorizationFailures </td>
-<td > -</td>
+<td >-</td>
 <td >Number of RPC authorization failures</td>
 </tr><tr>
 <td >RpcAuthorizationSuccesses </td>
@@ -470,7 +470,7 @@
 <td >ms </td>
 <td >Process start time</td>
 </tr><tr>
-<td >HA status</td>
+<td >Active/Standby status</td>
 <td >State </td>
 <td >1 </td>
 <td >NameNode HA status</td>
@@ -1139,8 +1139,29 @@
 <td >count/s</td>
 <td >Packet transfer QPS</td>
 </tr>
+<tr>
+<td >Blocks</td>
+<td >Related to disk information, such as `/data/qcloud/data/hdfs`</td>
+<td >-</td>
+<td >Number of blocks</td>
+</tr><tr>
+<td >Used disk capacity</td>
+<td >Related to disk information, such as `/data/qcloud/data/hdfs`</td>
+<td >GB</td>
+<td >Used disk capacity</td>
+</tr><tr>
+<td >Free disk capacity</td>
+<td >Related to disk information, such as `/data/qcloud/data/hdfs`</td>
+<td >GB</td>
+<td >Free disk capacity</td>
+</tr><tr>
+<td >Reserved disk capacity</td>
+<td >Related to disk information, such as `/data/qcloud/data/hdfs`</td>
+<td >GB</td>
+<td >Reserved disk capacity</td>
+</tr>			
 </table>
-
+			
 ### HDFS - JournalNode
 <table>
 <tr>

@@ -10,9 +10,12 @@ Hue 是一个开源的 Apache Hadoop UI 系统，由 Cloudera Desktop 演化而�
 >! 由于 EMR 产品的组件启动帐号为 hadoop。请在首次以 root 帐号登录 Hue 控制台后，新建 hadoop 帐号。后续所有作业需通过 hadoop 帐号来提交。
 
 ## 用户权限管理
-首先使用管理员账号登录 hue。
+首先使用管理员账号登录 Hue。
+
+>! 以下文档为 Hue 未使用 OpenLDAP 作为用户管理场景下的操作说明。EMR-V2.6.0及以后版本、EMR-V3.3.0及以后版本 Hue 默认使用 OpenLDAP 用户， Hue 用户直接通过 [用户管理](https://cloud.tencent.com/document/product/589/62751) 进行管理。
+
 1. 添加用户。
-	1. 单击右方的** Add user**。
+	1. 单击右方的**Add user**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/34bd048f7de580e9bff702b29948bbfc.png)
 	2. 填写用户信息。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c108d30bc0c52547adeb531ee1798d67.png)
@@ -42,7 +45,7 @@ Hue 支持4种导入方式：本地文件、HDFS 上的文件、外部数据库�
 ![](https://qcloudimg.tencent-cloud.cn/raw/a26119e9d4356cee5f0689be7ca64ff9.png)
 3. 外部数据库 External Database.
 	1. 填写外部数据库信息，单击 **Test Connection** 获取到数据库信息，选择库和表后单击 Next。
-![](https://qcloudimg.tencent-cloud.cn/raw/4e7b192e8cbb52970282dd29774ebaaa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4cda1ce5eb427e88199f70e0f33c8e81.png)
 	2. 填写需要导入的目的表信息，并单击 lib 选择 mysql 驱动，然后单击保存。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a3a4734bff7ab835641a3589bbf89fc9.png)
 

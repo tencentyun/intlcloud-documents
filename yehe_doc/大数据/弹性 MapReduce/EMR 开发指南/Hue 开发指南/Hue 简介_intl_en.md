@@ -11,6 +11,9 @@ Hue is an open-source Apache Hadoop UI system that evolved from Cloudera Desktop
 
 ## User Permission Management
 Log in to Hue with the admin account first.
+
+>! The following takes Hue with OpenLDAP not used for user management as an example to describe the directions. In EMR v2.6.0 and later and EMR v3.3.0 and later, Hue uses OpenLDAP users by default, and Hue users can be directly managed through [user management](https://cloud.tencent.com/document/product/589/62751).
+
 1. Add a user.
 	1. Click **Add user** on the right.
 ![](https://qcloudimg.tencent-cloud.cn/raw/34bd048f7de580e9bff702b29948bbfc.png)
@@ -42,7 +45,7 @@ Hue allows you to import data from a local file, HDFS file, external database, o
 ![](https://qcloudimg.tencent-cloud.cn/raw/a26119e9d4356cee5f0689be7ca64ff9.png)
 3. Import an external database.
 	1. Enter the external database information, click **Test Connection** to get the database information, select the database and table, and click **Next**.
-![](https://qcloudimg.tencent-cloud.cn/raw/4e7b192e8cbb52970282dd29774ebaaa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4cda1ce5eb427e88199f70e0f33c8e81.png)
 	2. Enter the information of the target table, click **Libs**, select the MySQL driver, and click **Save**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a3a4734bff7ab835641a3589bbf89fc9.png)
 

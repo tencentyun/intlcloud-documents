@@ -1,7 +1,7 @@
 ## List of APIs Supporting Resource-Level Authorization
 EMR supports resource-level authorization. You can grant a specified sub-account the API permission of a specified resource.
 
->!A permission error may occur when new APIs are subsequently added. In case of such permission error, you can add the missing API permission in the policy according to the error message.
+>!A permission error may occur when new APIs are subsequently added. In case of such permission error, you can add the missing API permission in the policy based on the error message.
 
 APIs supporting resource-level authorization include:
 <table>
@@ -76,6 +76,10 @@ APIs supporting resource-level authorization include:
 </tr><tr>
 <td >InquirePriceRefundEmr</td>
 <td >Queries the refund amount of terminated node</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr><tr>
+<td >DescribeModifyPayModeNodes</td>
+<td >Queries cluster resources changed from pay-as-you-go to monthly subscription</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >ModifySecurityGroup</td>
@@ -502,6 +506,16 @@ APIs supporting resource-level authorization include:
 <td >Queries export configuration</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr>
+<tr>
+<td >CheckDiskInfo</td>
+<td >Checks whether the disk metadata in the console is updated</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
+<tr>
+<td >SyncDiskInfo</td>
+<td >Updates disk metadata in console</td>
+<td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
+</tr>
 </tbody>
 </table>
 
@@ -671,7 +685,11 @@ APIs supporting resource-level authorization include:
 <td >AddServiceRoleInstance</td>
 <td >Adds role instance</td>
 </tr>
+<tr>
+<td >ModifyResourcesTags</td>
+<td >Forcibly modifies tag</td>
+</tr>
 </tbody>
 </table>
 
-For more information on resource-level and API-level authorization, see [Authorization Granularity Scheme](https://intl.cloud.tencent.com/document/product/1026/44862).
+For more information on resource-level and API-level authorization, see [Authentication Granularity Scheme](https://intl.cloud.tencent.com/document/product/1026/44862).

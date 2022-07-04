@@ -4,15 +4,15 @@ YARN 资源调度提供了交互式的 YARN 资源队列调度管理能力，较
 - Capacity Scheduler 是容量调度器，容量调度器以分层的方式组织资源,可通过多层级的资源限制条件让多用户共享集群资源。
 
 >!
->- 资源调度器默认使用公平调度器，配置管理 YARN 组件 fair-scheduler.xml 配置文件中的相关配置项参数保持与资源调度页一致。切换调度器为容量调度器，配置管理 YARN 组件 capacity-scheduler.xml 配>置文件中的相关配置参数也保持与资源调度页一致。
->- 资源调度页设置策略后需单击**刷新动态资源池**让其配置管理中配置文件及配置参数保持一致，执行**刷新动态资源池**会进行对应策略得配置下发。删除资源池后，用户需要手动重启 ResoureManager。删除资>源池后，用户可以单击**部署生效**或者手动重启 ResoureManager。
+>- 资源调度器默认使用公平调度器，配置管理 YARN 组件 fair-scheduler.xml 配置文件中的相关配置项参数保持与资源调度页一致。切换调度器为容量调度器，配置管理 YARN 组件 capacity-scheduler.xml 配置文件中的相关配置参数也保持与资源调度页一致。
+>- 资源调度页设置策略后需单击**刷新动态资源池**让其配置管理中配置文件及配置参数保持一致，执行**刷新动态资源池**会进行对应策略得配置下发。删除资源池后，用户需要手动重启 ResoureManager。删除资源池后，用户可以单击**部署生效**或者手动重启 ResoureManager。
 >- 切换调度器类型后需要单击**部署生效**才能生效，该操作会重启 ResourceManager。
 
 ## 配置 Fair Scheduler
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在集群列表中选择对应的 Hadoop 集群单击**详情**进入集群详情页。
 2. 在集群详情页中选择**集群服务 > Yarn 组件卡**页右上角**操作 > 资源调度**进入资源调度页面。
 ![](https://main.qcloudimg.com/raw/b4f005fcac189865fbd03d45f7374ca9.png)
-3. 单击**资源调度器开关**，打开后开关后即可进行相关调度器配置。
+3. 单击**资源调度器开关**，打开开关后即可进行相关调度器配置。
 ![](https://main.qcloudimg.com/raw/649ff7eea0362afb9e91dfd5b05386cb.png)
 4. 新建 Fair Scheduler 资源池
 调度器类型选择 Fair Scheduler 即可进行 Fair Scheduler 策略设置页面，单击**新建资源池**即可新建资源池，可对已有资源池进行编辑、新建子池、克隆、删除等操作。
@@ -102,6 +102,7 @@ YARN 资源调度提供了交互式的 YARN 资源队列调度管理能力，较
 <td>可以管理队列的用户的列表。</td>
 </tr>
 </tbody></table>
+
 5. 配置计划模式
 单击策略设置中的**计划模式**即可进入计划模式页面，单击**新建计划模式**即可进行计划模式的新建。
 ![](https://main.qcloudimg.com/raw/674b6ee1c251bec1df8794731e52f235.png)![](https://main.qcloudimg.com/raw/69e7149292d7df16bf66c6e2a1279cdf.png)
@@ -116,7 +117,7 @@ YARN 资源调度提供了交互式的 YARN 资源队列调度管理能力，较
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在集群列表中选择对应的 Hadoop 集群单击**详情**进入集群详情页。
 2. 在集群详情页中选择**集群服务 > Yarn 组件**卡页右上角**操作 > 资源调度**进入资源调度页面。
 ![](https://main.qcloudimg.com/raw/943c5a6a90a3373f850b8229d69c1f2a.png)
-3. 单击**资源调度器开关**，打开后开关后即可进行相关调度器配置。
+3. 单击**资源调度器开关**，打开开关后即可进行相关调度器配置。
 4. 新建 Capacity Scheduler
 调度策略类型选择 Capacity Scheduler 即可进入 Capacity Scheduler 的配置页面，单击**新增资源池**即可新建资源池，可对已有资源池进行编辑、新建子池、克隆等操作。
 ![](https://main.qcloudimg.com/raw/be26fc25498e4d3775519a3c04656759.png)![](https://main.qcloudimg.com/raw/f9ba09c74eb6c8ff13658cd55a40b3be.png)
@@ -160,6 +161,11 @@ YARN 资源调度提供了交互式的 YARN 资源队列调度管理能力，较
 <td>每个 container 的最大内存值，这个配置会覆盖 yarn.scheduler.maximum-allocation-mb 值，但是该值必须小于等于系统的 yarn.scheduler.maximum-allocation-mb 的值。</td>
 </tr>
 <tr>
+<td>Container 最大 vCore 数量</td>
+<td><code>yarn.scheduler.capacity.&lt;queue-path>.maximum-allocation-vcores </code></td>
+<td>每个 container 的最大核数，这个配置会覆盖 yarn.scheduler.maximum-allocation-vcores 值，但是该值必须小于等于系统的 yarn.scheduler.maximum-allocation-vcores 的值。</td>
+</tr>
+<tr>
 <td>资源池状态</td>
 <td><code>yarn.scheduler.capacity.&lt;queue-path&gt;.state</code></td>
 <td>队列的状态。可以是正在运行或已停止。如果队列处于停止状态，则无法向其自身或其任何子队列提交新的应用程序。</td>
@@ -185,6 +191,7 @@ YARN 资源调度提供了交互式的 YARN 资源队列调度管理能力，较
 <td>可以管理队列的用户的列表。</td>
 </tr>
 </tbody></table>
+
 5. 配置资源池映射
 单击策略设置中的**资源池映射**即可进入资源池映射页面，单击**新建资源池映射**即可进行新建资源池映射。
 ![](https://main.qcloudimg.com/raw/6973f8f7f454536ac3552d2a16fd1120.png)![](https://main.qcloudimg.com/raw/b0221c21f9993dce769cb47af678d21d.png)
