@@ -68,11 +68,11 @@ producer.shutdown()
     </tr>
     <tr>
         <td>groupName</td>
-        <td>Producer group name, which can be obtained under the **Group** tab on the cluster details page in the console.</td>
+        <td>Producer group name, which can be obtained under the <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>nameserver</td>
-        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
+        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/424026465647068a89a2e1d1a9a67c4a.png" style="width: 100%">
         </td>
     </tr>
@@ -89,8 +89,8 @@ producer.shutdown()
     <tr>
         <td>topicName</td>
         <td>`topicName` is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
-				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code> and can be copied under the **Namespace** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>Topic name, which can be copied under the **Namespace** tab on the cluster details page in the console.
+				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code> and can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>Topic name, which can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/9c90672b68c79e44f9b6e6e3d902338e.png" style="width: 100%">
 						</li>
 						</ul>
@@ -155,11 +155,11 @@ consumer.shutdown()
     </tr>
     <tr>
         <td>groupName</td>
-        <td>The consumer group information refers to the full namespace name concatenated by the group name, such as <code>rocketmq-xxx|namespace_python%group11</code>. The namespace name and group name can be obtained respectively under the **Namespace** and **Group** tab on the cluster details page in the console.</td>
+        <td>The consumer group information refers to the full namespace name concatenated by the group name, such as <code>rocketmq-xxx|namespace_python%group11</code>. The namespace name and group name can be obtained respectively under the <b>Namespace</b> and <b>Group</b> tab on the cluster details page in the console.</td>
     </tr>
     <tr>
         <td>nameserver</td>
-        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the **Operation** column of the cluster list on the <b>Cluster</b> page.
+        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" style="width: 100%">
         </td>
     </tr>
@@ -176,8 +176,8 @@ consumer.shutdown()
     <tr>
         <td>topicName</td>
         <td>`topicName` is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
-				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the **Namespace** tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>The topic name can be copied under the **Topic** tab on the cluster details page in the console.
+				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>The topic name can be copied under the <b>Topic</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" style="width: 100%">
 						</li>
 						</ul>
