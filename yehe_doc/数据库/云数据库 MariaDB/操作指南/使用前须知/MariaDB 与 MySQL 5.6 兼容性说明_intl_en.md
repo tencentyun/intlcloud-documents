@@ -17,8 +17,8 @@ TencentDB for MariaDB is highly compatible with MySQL 5.6; therefore, code, appl
 ### 2. Different default binlog configurations
 Binlogs in TencentDB for MariaDB are in row format, while in native MySQL 5.6, MariaDB 10.2.3, and their earlier versions, binlogs are in statement format by default.
 
-### 3. Row-based or command-based replication of the `CREAT TABLE ... SELECT` command
-To ensure that the `CREAT TABLE ... SELECT` command can work properly in both row-based and command-based replication, this command in TencentDB for MariaDB will be converted to and executed as the `CREAT OR RPLACE` command in a slave database. The advantage of this mechanism is that the slave database can run properly after recovery from downtime.
+### 3. Row-based or command-based replication of the `CREATE TABLE ... SELECT` command
+To ensure that the `CREATE TABLE ... SELECT` command can work properly in both row-based and command-based replication, this command in TencentDB for MariaDB will be converted to and executed as the `CREATE OR RPLACE` command in a slave database. The advantage of this mechanism is that the slave database can run properly after recovery from downtime.
 
 #### 3.1. Default value deduction
 When you create tables by using the `Create table ... Select from` statement, the differences between the default values of fields in `varchar(N)` type are as follows:
