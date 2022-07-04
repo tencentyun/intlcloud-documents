@@ -1,6 +1,6 @@
  ## Overview  
 
-CloudAudit (CA) is used to perform supervision, compliance check, operation review, and risk review for your Tencent Cloud account. It records logs, and monitors and records account activities associated with operations performed through Tencent Cloud console, APIs, command line tools, and other services in the Tencent Cloud infrastructure. The records will help you conduct security analysis, resource change tracking, and troubleshooting.
+CloudAudit is used to perform supervision, compliance check, operation review, and risk review for your Tencent Cloud account. It records logs, and monitors and records account activities associated with operations performed through Tencent Cloud console, APIs, command line tools, and other services in the Tencent Cloud infrastructure. The records will help you conduct security analysis, resource change tracking, and troubleshooting.
 
 
 ## How It Works  
