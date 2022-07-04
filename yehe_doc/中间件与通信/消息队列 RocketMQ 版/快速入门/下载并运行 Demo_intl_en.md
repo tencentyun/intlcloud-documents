@@ -68,11 +68,11 @@ producer.start();
 </tr>
 <tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be copied under the **Group** tab on the cluster details page in the console.</td>
+<td align="left">Producer group name, which can be copied under the <strong>Group</strong> tab on the cluster details page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -229,11 +229,11 @@ pushConsumer.setNamesrvAddr(nameserver);
 </tr>
 <tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be copied under the **Group** tab on the cluster details page in the console.</td>
+<td align="left">Producer group name, which can be copied under the <strong>Group</strong> tab on the cluster details page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -271,11 +271,11 @@ pullConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
 </tr>
 <tr>
 <td align="left">groupName</td>
-<td align="left">Producer group name, which can be copied under the **Group** tab on the cluster details page in the console.</td>
+<td align="left">Producer group name, which can be copied under the <strong>Group</strong> tab on the cluster details page in the console.</td>
 </tr>
 <tr>
 <td align="left">nameserver</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">secretKey</td>
@@ -365,6 +365,6 @@ try {
 ### Step 4. View consumption details
 
 Log in to the [TDMQ console](https://console.cloud.tencent.com/tdmq), go to the **Cluster** > **Group** page, and view the list of clients connected to the group. Click **View Details** in the **Operation** column to view consumer details.
-![](https://qcloudimg.tencent-cloud.cn/raw/47c151da53f8ef00271396889cefbf82.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0edaf07ec7dba3e634fba03f188d308e.png)
 
 >?Above is a brief introduction to message publishing and subscription. For more information, see [Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-java-sdk-demo.zip) or [RocketMQ documentation](https://rocketmq.apache.org/docs/simple-example/)
