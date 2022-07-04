@@ -4,7 +4,7 @@ The real-time speech recognition SDK and demo for Android can be downloaded [her
 
 ### Notes on connection
 - You need to view the [API description](https://intl.cloud.tencent.com/document/product/1118/43378) of real-time speech recognition to understand the **use requirements** and **directions** of the API before calling it.
-- The API requires the phone to have an internet connection over GPRS, 3G, Wi-Fi, etc. and requires the system to be **Android 4.0** or above.
+- The API requires the phone to have an internet connection over GPRS, 3G, Wi-Fi, etc. and requires the system to be **Android 4.0** or later.
 
 ### Development environment
 - Import the AAR package
@@ -44,7 +44,7 @@ try {
     aaiClient = new AAIClient(this, appid, projectid, secretId, credentialProvider);
 
 /**You can also use temporary credentials for authentication
-* * 1. Get temporary credentials through STS. This step should be implemented on your server as instructed at https://cloud.tencent.com/document/product/598/33416
+* * 1. Get temporary credentials through STS. This step should be implemented on your server.
 *   2. Call the API through temporary credentials
 * **/
   // aaiClient = new AAIClient(MainActivity.this, appid, projectId,"temporary secretId", "temporary secretKey","corresponding token" ,credentialProvider);
@@ -134,7 +134,7 @@ You need to implement the `AbsCredentialProvider` API on your own to calculate t
 **The signature calculation function is as follows:**
 ```
 /**
-* Signature function: encrypts the original string with the encryption algorithm as described below.
+* Signature function: Encrypts the original string with the encryption algorithm as described below.
 * @param source Original string
 * @return Ciphertext returned after encryption
 */
@@ -144,7 +144,7 @@ String getAudioRecognizeSign(String source);
 **Signature algorithm**   
 `SecretKey` is used to encrypt the `source` with HMAC-SHA1 first, and then the ciphertext is Base64-encoded to get the final signature string, i.e., `sign=Base64Encode(HmacSha1(source,secretKey))`.
 
-The SDK provides an implementation class **LocalCredentialProvider** for testing purposes, but we recommend you use it only in the test environment to guarantee the security of `secretKey` and implement the method in the **AbsCredentialProvider** API in the upper layer in the production environment.
+The SDK provides an implementation class **LocalCredentialProvider** for testing purposes, but we recommend you use it only in the test environment to guarantee the security of `SecretKey` and implement the method in the **AbsCredentialProvider** API in the upper layer in the production environment.
 
 ### Initializing AAIClient
 `AAIClient` is a core class of ASR, which you can call to start, stop, and cancel speech recognition.
@@ -351,7 +351,7 @@ new Thread(new Runnable() {
 | onVoiceFlowStartRecognize  | Start of audio stream recognition                                               |
 | onVoiceFlowFinishRecognize | End of audio stream recognition                                               |
 | onVoiceVolume              | Volume                                                         |
-| onNextAudioData            | Returns the audio stream to the host layer for recording caching. It will take effect when `true` is passed in for `new AudioRecordDataSource(true)`  |
+| onNextAudioData            | Return of the audio stream to the host layer for recording caching. It will take effect when `true` is passed in for `new AudioRecordDataSource(true)`  |
 
 ### Setting timeout listener
 `AudioRecognizeTimeoutListener` can be used to listen on speech recognition timeout. It has the following two APIs:

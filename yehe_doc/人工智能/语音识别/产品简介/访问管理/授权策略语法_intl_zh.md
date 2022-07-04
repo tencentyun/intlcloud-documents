@@ -1,4 +1,5 @@
 <span id = "celueyufa"></span>
+
 ## 策略语法
 CAM 策略：
 ```
@@ -66,9 +67,4 @@ qcs:project_id:service_type:region:account:resource
 ```
 "resource":["resource1","resource2"]
 ```
-下表描述了 ASR 能够使用的资源和对应的资源描述方法。在下表中，$为前缀的单词均为代称。其中，account 指代的是账户 ID。
 
-| 资源 | 授权策略中的资源描述方法 |
-|---------|---------|
-| 自学习模型 | `qcs::asr::$account:model/$ModelId` |
-| 热词表 | `qcs::asr::$account:vocab/$VocabId` |

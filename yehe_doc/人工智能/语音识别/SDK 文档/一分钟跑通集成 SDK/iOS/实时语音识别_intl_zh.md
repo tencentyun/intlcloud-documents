@@ -150,7 +150,7 @@ QCloudRealTimeRecognizer 是实时语音识别类，提供两种初始化方法�
                     projectId:(NSString *)projectId;
 
 /**
- * 初始化方法-通过STS临时证书鉴权，详见https://cloud.tencent.com/document/product/598/33416
+ * 初始化方法-通过STS临时证书鉴权
  * @param appid     腾讯云appId 
  * @param secretId  腾讯云临时secretId  
  * @param secretKey 腾讯云临时secretKey

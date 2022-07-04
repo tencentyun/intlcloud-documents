@@ -1,70 +1,54 @@
 This document describes how to get started with Automatic Speech Recognition (ASR).
 
 ## 1. Basic Knowledge of ASR
-- [Product introduction of ASR](https://intl.cloud.tencent.com/document/product/1118/43345)
-- [Why ASR?](https://intl.cloud.tencent.com/document/product/1118/43346)
-- [Use cases of ASR](https://intl.cloud.tencent.com/document/product/1118/43347)
-- [Access management of ASR](https://intl.cloud.tencent.com/document/product/1118/43349)
-
------
+- [ASR overview](https://intl.cloud.tencent.com/document/product/1118/43345)
+- [Why ASR](https://intl.cloud.tencent.com/document/product/1118/43345)
+- [ASR use cases](https://intl.cloud.tencent.com/document/product/1118/43345)
+- [ASR access management](https://intl.cloud.tencent.com/document/product/1118/43349)
 
 ## 2. Billing Mode of ASR
-ASR is **pay-as-you-go**. You should fully understand the billing mode of ASR to better choose the most appropriate billing plan. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1118/43352).
-
------
+ASR is **pay-as-you-go**. You should fully understand the billing mode of ASR to choose the most appropriate billing plan. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1118/43352).
 
 ## 3. Getting Started
 
-#### 3.1 Signup and login
-Log in at the [Tencent Cloud official website](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fcloud.tencent.com%2F). If you don't have an account yet, please sign up as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
+#### 3.1 Sign up and log in
+Log in at the [Tencent Cloud official website](https://Intl.cloud.tencent.com). If you don't have an account yet, sign up as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985).
 
-#### 3.2 Identity verification
-If you haven't completed identity verification for your account, please go to [Account Center](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fdeveloper) to verify your identity.
+#### 3.2 Activate the service
+After completing identity verification, log in to the [ASR console](https://console.cloud.tencent.com/asr) to activate the ASR service.
 
-#### 3.3 Service activation
-After completing identity verification, go to the [ASR console](https://console.cloud.tencent.com/asr) to activate the ASR service.
+#### 3.3 Create a key
+Go to the [API key management page](https://intl.cloud.tencent.com) and click **Create Key** to generate `AppID`, `SecretId`, and `SecretKey` for generating signatures during API call. 
 
-#### 3.4 Key creation
-Go to the [API key management page](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcam%2Fcapi) and click **Create Key** to generate `AppID`, `SecretId`, and `SecretKey` for generating signatures during API call. 
+#### 3.4 Connect
+Use the SDK (recommended) and API for connection as needed.
 
-#### 3.5 Connection
-Use SDK (recommended) and API for connection according to your needs.
-
-#### 3.6 View and call
+#### 3.5 View calls
 After connection, you can log in to the [ASR console](https://console.cloud.tencent.com/asr) to view the call status of various speech recognition services.
 
 -----
 
 ## 4. ASR APIs
 
-| Feature | Reference |
+| To | Read |
 |---------|---------|
-| View the API call method | [Call Method](https://cloud.tencent.com/document/product/1093/35639) |
-| Access the async audio stream recognition API | [Async Audio Stream Recognition API](https://cloud.tencent.com/document/product/1093/52061) 
-| Access the real-time speech recognition API | [Real-Time Speech Recognition API](https://cloud.tencent.com/document/product/1093/35799) |
-| Access the recording file recognition API | [Recording File Recognition API](https://cloud.tencent.com/document/product/1093/37823) |
-| Access the ultrafast recording file recognition API | [Ultrafast Recording File Recognition API](https://cloud.tencent.com/document/product/1093/52097) 
-| Access the one-sentence recognition API | [One-Sentence Recognition API](https://cloud.tencent.com/document/product/1093/35646) 
+| View the API call method | [Call Method]()  |
+| Access the real-time speech recognition API | [Real-Time Speech Recognition API]() |
 
 
 -----
 ## 5. ASR SDKs
 
-| Feature | Reference |
+| To | Read |
 |---------|---------|
-| Access the recording file recognition SDK for iOS | [Recording File Recognition SDK](https://intl.cloud.tencent.com/document/product/1118/43382)  |
 | Access the real-time speech recognition SDK for iOS | [Real-Time Speech Recognition SDK](https://intl.cloud.tencent.com/document/product/1118/43383) |
-| Access the one-sentence recognition SDK for iOS | [One-Sentence Recognition SDK](https://intl.cloud.tencent.com/document/product/1118/43384) |
-| Access the recording file recognition SDK for Android | [Recording File Recognition SDK](https://intl.cloud.tencent.com/document/product/1118/43387)  |
 | Access the real-time speech recognition SDK for Android | [Real-Time Speech Recognition SDK](https://intl.cloud.tencent.com/document/product/1118/43388) |
-| Access the one-sentence recognition SDK for Android  | [One-Sentence Recognition SDK ](https://intl.cloud.tencent.com/document/product/1118/43389) |
 
 -----
 
-## 6. FAQs for Beginners
+## 6. FAQs
 #### Billing
 - [How do I activate ASR?](https://intl.cloud.tencent.com/document/product/1118/43371)
-- [Does ASR offer monthly free tiers?](https://intl.cloud.tencent.com/document/product/1118/43371)
 - [How is ASR billed?](https://intl.cloud.tencent.com/document/product/1118/43371)
 
 #### Operations
@@ -81,10 +65,8 @@ After connection, you can log in to the [ASR console](https://console.cloud.tenc
 -----
 
 ## 7. Feedback and Suggestions
-If you have any questions or suggestions about ASR, you can send your feedback through the following channels, and we will get back to you:
-- If you find issues with product documentation, such as links, contents, and APIs, you can click **Send Feedback** on the right of the document page and select the specific issues.
-- If you encounter problems when using the product, please contact the [smart customer service](https://cloud.tencent.com/act/event/smarty-service) for assistance.
-- If you have other questions, you can go to the [Cloud+ community](https://cloud.tencent.com/developer/tag/105) to ask questions.
-
+If you have any questions or suggestions about ASR, you can send your feedback to us through the following channels, and we will get back to you:
+- To report a problem with the product documentation, such as incorrect content, broken links, or API errors, click **Send Feedback** at the bottom of the page.
+- If you encounter any problems while using the product, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 

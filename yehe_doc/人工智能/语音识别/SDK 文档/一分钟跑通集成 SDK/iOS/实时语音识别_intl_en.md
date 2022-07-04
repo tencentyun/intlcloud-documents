@@ -4,7 +4,7 @@ The real-time speech recognition SDK and demo for iOS can be downloaded [here](h
 
 ### Notes on connection
 - You need to view the [API description](https://intl.cloud.tencent.com/document/product/1118/43378) of real-time speech recognition to understand the **use requirements** and **directions** of the API before calling it.   
-- The API requires the phone to have an internet connection over GPRS, 3G, Wi-Fi, etc. and requires the system to be **iOS 9.0** or above.
+- The API requires the phone to have an internet connection over GPRS, 3G, Wi-Fi, etc. and requires the system to be **iOS 9.0** or later.
 
 ### Development environment
 Add the following settings in the `info.plist` project:
@@ -150,7 +150,7 @@ recognizer.delegate = self;
                     projectId:(NSString *)projectId;
 
 /**
- * Initialization method - authentication through STS temporary credentials. For more information, visit https://cloud.tencent.com/document/product/598/33416
+ * Initialization method - authentication through STS temporary credentials
  * @param appid     Tencent Cloud `appId` 
  * @param secretId  Tencent Cloud temporary `secretId`  
  * @param secretKey Tencent Cloud temporary `secretKey`
@@ -181,13 +181,13 @@ recognizer.delegate = self;
 @optional
 /**
  * Callback for recognition success
- @param recognizer Real-Time speech recognition instance
+ @param recognizer Real-time speech recognition instance
  @param result Total text recognized at one time
  */
 - (void)realTimeRecognizerDidFinish:(QCloudRealTimeRecognizer *)recognizer result:(NSString *)result;
 /**
  * Callback for recognition failure
- * @param recognizer Real-Time speech recognition instance
+ * @param recognizer Real-time speech recognition instance
  * @param error Error message
  * @param voiceId  The `voiceId` attached to the error returned by the backend
  */
@@ -197,19 +197,19 @@ recognizer.delegate = self;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Callback for recording start
- * @param recognizer Real-Time speech recognition instance
+ * @param recognizer Real-time speech recognition instance
  * @param error Error message for recording start failure
  */
 - (void)realTimeRecognizerDidStartRecord:(QCloudRealTimeRecognizer *)recognizer error:(NSError *)error;
 /**
  * Callback for recording end
- * @param recognizer Real-Time speech recognition instance
+ * @param recognizer Real-time speech recognition instance
  */
 - (void)realTimeRecognizerDidStopRecord:(QCloudRealTimeRecognizer *)recognizer;
 /**
- * Real-Time callback for recording volume
- * @param recognizer Real-Time speech recognition instance
- * @param volume Audio volume level in the range of -40 to 0
+ * Real-time callback for recording volume
+ * @param recognizer Real-time speech recognition instance
+ * @param volume Audio volume level in the range of -40–0
  */
 - (void)realTimeRecognizerDidUpdateVolume:(QCloudRealTimeRecognizer *)recognizer volume:(float)volume;
 
@@ -217,14 +217,14 @@ recognizer.delegate = self;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Audio stream recognition start
- * @param recognizer Real-Time speech recognition instance
+ * @param recognizer Real-time speech recognition instance
  * @param voiceId `voiceId` of the audio stream, which is the unique identifier
  * @param seq Sequence number of the flow
  */
 - (void)realTimeRecognizerOnFlowRecognizeStart:(QCloudRealTimeRecognizer *)recognizer voiceId:(NSString *)voiceId seq:(NSInteger)seq;
 /**
  * Audio stream recognition end
- * @param recognizer Real-Time speech recognition instance
+ * @param recognizer Real-time speech recognition instance
  * @param voiceId `voiceId` of the audio stream, which is the unique identifier
  * @param seq Sequence number of the flow
  */
@@ -233,14 +233,14 @@ recognizer.delegate = self;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Audio stream recognition start
- * @param recognizer Real-Time speech recognition instance
+ * @param recognizer Real-time speech recognition instance
  * @param voiceId `voiceId` of the audio stream, which is the unique identifier
  * @param seq Sequence number of the flow
  */
 - (void)realTimeRecognizerOnFlowStart:(QCloudRealTimeRecognizer *)recognizer voiceId:(NSString *)voiceId seq:(NSInteger)seq;
 /**
  * Audio stream recognition end
- * @param recognizer Real-Time speech recognition instance
+ * @param recognizer Real-time speech recognition instance
  * @param voiceId `voiceId` of the audio stream, which is the unique identifier
  * @param seq Sequence number of the flow
  */
@@ -265,7 +265,7 @@ If you provide audio data instead of capturing audio data with the recorder buil
 @required
 
 /**
- * It identifies whether the data source has started to work and needs to be set to `YES` after `start` is executed and to `NO` after `stop` is executed.
+ * It identifies whether the data source has started to work and needs to be set to `YES` after the `start` is executed and to `NO` after the `stop` is executed.
  */
 @property (nonatomic, assign) BOOL running;
 
@@ -279,7 +279,7 @@ If you provide audio data instead of capturing audio data with the recorder buil
 - (void)stop;
 /**
  * The SDK will call this method of the object that implements the protocol to read audio data. If the audio data is less than `expectLength`, `nil` will be returned directly.
- * @param expectLength The number of bytes expected to be read. If the returned `NSData` is less than `expectLength` bytes, the SDK will throw an exception.
+ * @param expectLength The number of bytes expected to be read. If the returned `NSData` is less than `expectLength` bytes, the SDK will report an exception.
  */
 - (nullable NSData *)readData:(NSInteger)expectLength;
 
