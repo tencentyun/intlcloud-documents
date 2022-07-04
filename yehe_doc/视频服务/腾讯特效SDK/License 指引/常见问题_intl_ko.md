@@ -25,6 +25,6 @@ License가 추가될 때마다 두 개의 패키지 이름(Bundle ID 및 Package
 
 [](id:q6)
 ### Tencent Effect SDK를 어떻게 업그레이드 또는 다운그레이드합니까?
-Tencent Effect SDK는 [과금 개요](https://intl.cloud.tencent.com/document/product/1143/45371)에 자세히 설명된 대로 10가지 버전을 제공합니다. 프로덕션 License가 만료된 후 사용 사례에 더 적합한 버전을 구입할 수 있습니다. License 유효 기간 중에는 SDK를 업그레이드 또는 다운그레이드할 수 없습니다.
+Tencent Effect SDK는 [과금 개요](https://intl.cloud.tencent.com/document/product/1143/45371)에 자세히 설명된 대로 11가지 버전을 제공합니다. 프로덕션 License가 만료된 후 사용 사례에 더 적합한 버전을 구입할 수 있습니다. License 유효 기간 중에는 SDK를 업그레이드 또는 다운그레이드할 수 없습니다.
 
 평가판 License는 최종 버전 S1 - 04의 인증을 발급하며 모든 SDK 기능을 테스트할 수 있습니다. 만료되기 전에 사용 사례와 일치하는 프로덕션 SDK 및 License로 전환할 수 있습니다.

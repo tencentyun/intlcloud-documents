@@ -25,6 +25,6 @@ License 可以理解是为获取 SDK 功能授权所需要的秘钥和路径，�
 
 [](id:q6)
 ### 腾讯特效 SDK 如何升降级？
-腾讯特效 SDK 一共提供了 10 个版本，各版本功能差异请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1143/45371)。您可以在正式版 License 到期之后，选择购买切换为更符合您场景需求的版本。当前 License 仍在有效期内时，我们不支持 SDK 的升降级切换。
+腾讯特效 SDK 一共提供了 11 个版本，各版本功能差异请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1143/45371)。您可以在正式版 License 到期之后，选择购买切换为更符合您场景需求的版本。当前 License 仍在有效期内时，我们不支持 SDK 的升降级切换。
 
 测试版 License 是统一签发的最高级版本 S1 - 04 的授权，您可以测试 SDK 的全功能。测试期结束前，您可以更换为与您使用场景匹配的正式版 SDK 和 License。

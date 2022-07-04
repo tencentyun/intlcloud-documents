@@ -17,16 +17,14 @@
 ### 手动续费
 #### 方式一
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表选择一个或多个实例，在上方单击**续费**。
-![](https://main.qcloudimg.com/raw/cb2cd1fadd8af615db5d134d0ce5f9b9.png)
 2. 在弹出的对话框中，选择续费时长，单击**确定**。
 >?续费时长可选择**按月**或**按年**，如下图所示，即为续费6个月。
 >
-![](https://main.qcloudimg.com/raw/4575a223cefb54ea573b32d22602d823.png)
 3. 在核对订单页面，确认无误后，支付订单。
 
 #### 方式二
 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 进入实例详情页面，在**配置信息**里单击**续费**。
-![](https://main.qcloudimg.com/raw/5def9e51bdb35beb83579d71d544c06a.png)
+
 
 ## 续费管理中心续费
 在 [续费管理页面](https://console.cloud.tencent.com/account/renewal)，提供实例的**批量续费**、**设为自动续费**、**设为到期不续**、**统一到期日**等功能 ，详见 [续费管理](https://intl.cloud.tencent.com/document/product/555/7454)。

@@ -24,7 +24,7 @@
    - 开发语言：选择您的开发语言。
    - 程序包上传方式：选择程序包上传方式。Java 语言支持上传镜像、JAR 包和 WAR 包，其他语言只支持镜像上传。如果选择 JAR 包或者 WAR 包的方式，TEM 将自动为您构建容器镜像，并推送至 TEM 为您创建的个人版容器镜像仓库中。
 
-4. 单击**提交**，在弹窗中选择**确认**，进入部署应用页面。如果选择**取消**，您后续可以在应用列表中，点击**部署至新环境**完成应用部署。
+4. 单击**提交**，在弹窗中选择**确认**，进入部署应用页面。如果选择**取消**，您后续可以在应用列表中，单击**部署至新环境**完成应用部署。
       <img src="https://main.qcloudimg.com/raw/2cfd50d64227a7ae589eb8203f512c58.png">
 
 5. 在应用部署页面，根据您的应用具体情况配置相关参数。
@@ -35,14 +35,14 @@
 
 | 参数            | 说明                                                         |
 | --------------- | ------------------------------------------------------------ |
-| 发布环境        | 选择应用所在的环境。如果没有合适的环境可前往 [环境页面](https://console.cloud.tencent.com/tem/env) 进行新建（参考 [创建环境](https://intl.cloud.tencent.com/document/product/1094/40358)）。 |
-| JDK 版本        | 选择 JDK 版本，支持 OpenJDK 8和 KonaJDK 8。                  |
+| 发布环境        | 选择应用所在的环境。如果没有合适的环境可前往 [环境页面](https://console.cloud.tencent.com/tem/env) 进行新建（参见 [创建环境](https://intl.cloud.tencent.com/document/product/1094/40358)）。 |
+| JDK 版本        | 选择 JDK 版本，支持 KonaJDK 11（推荐）、OpenJDK 11、KonaJDK 8 和 OpenJDK 8。                  |
 | 上传程序包/镜像 | 上传您的程序包或者镜像，或者下载控制台上的体验 Demo 进行部署体验 TEM 完整功能。 |
 | 版本号          | 设置应用版本号，您可以选择输入版本号或者单击**使用时间戳为版本号**将时间戳作为应用版本号。 |
 | 版本描述        | 填写版本描述。                                               |
 | 启动参数        | 设置启动参数。                                               |
 
->?如果您的应用是 Java 语言，并且关联了注册中心，TEM 将为您提供自动注入注册中心信息的能力，详情请参考 [服务注册与发现](https://intl.cloud.tencent.com/document/product/1094/40960)。
+>?如果您的应用是 Java 语言，并且关联了注册中心，TEM 将为您提供自动注入注册中心信息的能力，详情请参见 [服务注册与发现](https://intl.cloud.tencent.com/document/product/1094/40960)。
 
 6. （可选）您可以根据需要设置以下高级选项。
 
@@ -50,11 +50,11 @@
 | 参数                    | 是否必选 | 说明                                                         |
 | ----------------------- | -------- | ------------------------------------------------------------ |
 | 资源配置                | 是       | 可以手动设置或者设置弹性规则自动弹性伸缩。                   |
-| 访问配置                | 否       | <li>访问方式：环境内访问，公网访问可前往 [环境](https://console.cloud.tencent.com/tem/env) 全局配置，参考 [配置应用访问与路由](https://intl.cloud.tencent.com/document/product/1094/40359)。 </li><li>协议：支持 TCP 和 UDP 协议，使用公网/内网负载均衡时，TCP 和 UDP 协议不能混合使用。 </li> |
+| 访问配置                | 否       | <li>访问方式：环境内访问，公网访问可前往 [环境](https://console.cloud.tencent.com/tem/env) 全局配置，参见 [配置应用访问与路由](https://intl.cloud.tencent.com/document/product/1094/40359)。 </li><li>协议：支持 TCP 和 UDP 协议，使用公网/内网负载均衡时，TCP 和 UDP 协议不能混合使用。 </li> |
 | 应用生命周期管理        | 否       | 对应用进程在启动前和结束后设置处理任务，例如：环境准务、应用退出等。 |
 | 配置设置                | 否       | 配置的使用与管理。                                           |
 | 环境变量                | 否       | 配置环境变量。                                               |
-| 健康检查                | 否       | <li> 存活检查 (Liveness)：检查应用实例是否运行正常，不正常则重启实例。</li><li> 就绪检查 (Readiness)：检查应用实例是否就绪，不就绪则停止转发流量到当前实例</li>具体操作参考 [健康检查](https://intl.cloud.tencent.com/document/product/1094/42080)。 |
+| 健康检查                | 否       | <li> 存活检查 (Liveness)：检查应用实例是否运行正常，不正常则重启实例。</li><li> 就绪检查 (Readiness)：检查应用实例是否就绪，不就绪则停止转发流量到当前实例</li>具体操作参见 [健康检查](https://intl.cloud.tencent.com/document/product/1094/42080)。 |
 | <nobr>持久化存储</nobr> | 否       | 持久化存储：为容器提供存储，目前支持腾讯云文件存储 CFS，需挂载到容器的指定路径中。<li>   数据卷：添加在 [添加环境资源](https://intl.cloud.tencent.com/document/product/1094/40361) 中关联的 CFS 存储资源。</li><li> 挂载点：选择为该步骤中所添加的数据卷，挂载至目标路径。填写版本描述。</li> |
 | 安全组                  | 否       | 您可以通过配置安全组规则，允许或禁止安全组内的实例的出流量和入流量。如您有业务需要放通其他端口，您可以 [新建安全组](https://console.cloud.tencent.com/vpc/securitygroup)。 |
 | 日志配置                | 否       | 您可以开启“持久化存储至CLS”，支持标准输出“stdout”以及`*`配置路径，例如：`/logs/*`，使用半角逗号分隔，默认采集标准输出。 |
@@ -71,7 +71,7 @@
 
 以外网访问为例，操作步骤如下：
 
-1. 参考 [配置应用访问与路由](https://intl.cloud.tencent.com/document/product/1094/40359) 建立一条公网访问路由。
+1. 参见 [配置应用访问与路由](https://intl.cloud.tencent.com/document/product/1094/40359) 建立一条公网访问路由。
 
 2. 您可以在环境详情页中的**访问管理**下，查看应用的公网访问 IP。
    	![](https://main.qcloudimg.com/raw/bfb77deab6549a5c2f4ef908fc7ef133.png)
