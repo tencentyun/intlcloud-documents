@@ -14,7 +14,7 @@ If CLS is not enabled for a ClickHouse cluster during cluster creation, you can 
  ![](https://qcloudimg.tencent-cloud.cn/raw/3727abbf1528b8a69c3d7a6aac472a33.png)
 
 ## Using Log Search
-1. Log in to the [Cloud Data Warehouse console](https://console.cloud.tencent.com/cdwch), click a **Cluster ID/Name** in the **Cluster List** to enter the cluster details page, and switch to the **Log Search** tab.
+1. Log in to the [Cloud Data Warehouse ClickHouse console](https://console.cloud.tencent.com/cdwch), click a **Cluster ID/Name** in the **Cluster List** to enter the cluster details page, and switch to the **Log Search** tab.
 2. The **Page Mode** can be **Node log** or **Search**. The **Log Type** can be **Running log** or **Error log**. You can view logs of each node as needed.
  ![](https://qcloudimg.tencent-cloud.cn/raw/7ed0845d6e901cd98bf17465d4744d6c.png)
 3. You can query logs by keyword. The results are grouped by node IP. The last 100 logs are displayed for each node by default.
