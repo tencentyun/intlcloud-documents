@@ -94,7 +94,7 @@ import com.tencent.tdmq.demo.cloud.Constant;
 </tr>
 <tr>
 <td align="left">factory.setUri</td>
-<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Get Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/5bddcbb6361dad5825aee9015a9049a6.png" alt="img"></td>
+<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Get Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/5bddcbb6361dad5825aee9015a9049a6.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">factory.setVirtualHost</td>
@@ -195,7 +195,7 @@ import java.nio.charset.StandardCharsets;
 </tr>
 <tr>
 <td align="left">factory.setUri</td>
-<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Get Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/5bddcbb6361dad5825aee9015a9049a6.png" alt="img"></td>
+<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Get Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/5bddcbb6361dad5825aee9015a9049a6.png" alt="img"></td>
 </tr>
 <tr>
 <td align="left">factory.setVirtualHost</td>
