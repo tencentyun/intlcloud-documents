@@ -154,7 +154,7 @@ spring:
 </thead>
 <tbody><tr>
 <td align="left">name-server</td>
-<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the **Operation** column on the <strong>Cluster</strong> page in the console.</td>
+<td align="left">Cluster access address, which can be copied from <strong>Access Address</strong> in the <strong>Operation</strong> column on the <strong>Cluster</strong> page in the console.</td>
 </tr>
 <tr>
 <td align="left">secret-key</td>
