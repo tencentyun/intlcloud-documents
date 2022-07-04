@@ -12,7 +12,6 @@ Blind watermarking comes in three types: semi-blind watermarking, perfectly blin
 
 >?
 >- Blind watermarking is a paid service, which needs to be activated with the **Enable** button in the configuration page of the bucket.
->- When this service is used for the first time under an account, CI will issue a free resource pack of 6,000 times valid for two months, and any excessive usage and usage after the resource pack expires will be billed by CI as detailed in [Billing Overview](https://intl.cloud.tencent.com/document/product/1045/33431).
 >- The blind watermarking feature is available in all public cloud regions.
 
 ## Use Cases
