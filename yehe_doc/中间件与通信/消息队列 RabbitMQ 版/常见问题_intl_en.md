@@ -4,13 +4,13 @@ TDMQ for RabbitMQ is Tencent's proprietary message queue service. It supports th
 TDMQ for RabbitMQ has extremely flexible routing to adapt to the message delivery rules of various businesses. It can buffer the upstream traffic pressure and ensure the stable operations of the message system. It is often used to implement async communication and service decoupling between systems to reduce their mutual dependency, making it widely applicable to distributed systems in finance and government affairs industries.
 
 ### How do I use TDMQ for RabbitMQ?
-To get started with TDMQ for RabbitMQ, see [Getting Started](https://intl.cloud.tencent.com/document/product/1112/43069) and [Operation Guide](https://intl.cloud.tencent.com/document/product/1112/43072).
+To get started with TDMQ for RabbitMQ, see [Resource Creation and Preparation](https://intl.cloud.tencent.com/document/product/1112/43069) and [Cluster Management](https://intl.cloud.tencent.com/document/product/1112/43072).
 
 ### What are the use cases of TDMQ for RabbitMQ?
-For more information on TDMQ for RabbitMQ's use cases, see [Use Cases](https://intl.cloud.tencent.com/document/product/1112/43062)
+For more information on TDMQ for RabbitMQ's use cases, see [Use Cases](https://intl.cloud.tencent.com/document/product/1112/43062).
 
 ### How do I apply for TDMQ for RabbitMQ?
-TDMQ for RabbitMQ is currently in beta test. To try it out, submit an application.
+Currently, TDMQ for RabbitMQ is in beta test. You can directly log in to its [console](https://console.cloud.tencent.com/tdmq/rabbit-cluster) to use it for free.
 
 ### How is TDMQ for RabbitMQ billed?
-Currently, TDMQ for RabbitMQ is in beta test and free of charge, but the Tencent Cloud products used by it will be charged by resource usage following their respective billing rules.
+TDMQ for RabbitMQ has been in beta test since January 6, 2022. You can directly use it for free; however, the Tencent Cloud products used by it will be charged by resource usage following their respective billing rules.
