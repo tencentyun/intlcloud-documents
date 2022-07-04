@@ -89,7 +89,16 @@
 ## [云硬盘定价](id:cbsDetail)
 
 ### 定价信息
-香港, 新加坡, 美国硅谷, 日本, 法兰克福, 印度:0.17美元/GB/月
 
-
+<table>
+  <tr><th style="width: 50%;">地域</th><th style="width: 25%;">云硬盘类型</th><th style="width: 25%;">价格（美元/GB/月）</th></tr>
+    <tr>
+      <td rowspan=2>香港, 新加坡, 美国硅谷, 日本, 法兰克福, 印度,多伦多 </td>
+    <td>高性能云硬盘</td>
+    <td>0.05</td>  
+   <tr>   
+  <td>SSD云硬盘</td> 
+   <td>0.17</td>  
+	</tr>
+</table>
 
