@@ -1,13 +1,13 @@
-## Overview 
+## Overview
 
 This document describes how to use open-source SDK to send and receive messages using the SDK for Python as an example and helps you better understand the message sending and receiving processes.
 
 ## Prerequisites
 
-- [You have created the required resources](https://intl.cloud.tencent.com/document/product/1112/43069).
-- [You have installed Python](https://www.python.org/downloads/)
-- [You have installed pip](https://pip-cn.readthedocs.io/en/latest/installing.html)
-- [You have downloaded the demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip)
+- [You have created the required resources.](https://intl.cloud.tencent.com/document/product/1113/43119)
+- [You have installed Python.](https://www.python.org/downloads/)
+- [You have installed pip.](https://pip-cn.readthedocs.io/en/latest/installing.html)
+- [You have downloaded the demo.](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip)
 
 ## Directions
 
@@ -44,7 +44,7 @@ producer.set_session_credentials(
 # Start the producer
 producer.start()
 
-# Assemble messages. The topic name must be a full name concatenated by the full namespace name and the topic name, such as “rocketmq-xxx|namespace_python%topic1”.
+# Assemble messages. The topic name must be a full name concatenated by the full namespace name and the topic name, such as "rocketmq-xxx|namespace_python%topic1".
 msg = Message(topicName)
 # Set keys
 msg.set_keys(TAGS)
@@ -88,9 +88,9 @@ producer.shutdown()
     </tr>
     <tr>
         <td>topicName</td>
-        <td><code>topicName</code> is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
-				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>The topic name can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+        <td>`topicName` is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
+				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code> and can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>Topic name, which can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/9c90672b68c79e44f9b6e6e3d902338e.png" style="width: 100%">
 						</li>
 						</ul>
@@ -126,13 +126,13 @@ def callback(msg):
     # return ConsumeStatus.RECONSUME_LATER
 
 
-# Initialize the consumer and set the consumer group information (consumer group information refers to the full namespace name concatenated by the group name, such as “rocketmq-xxx|namespace_python%group11”)
+# Initialize the consumer and set the consumer group information (consumer group information refers to the full namespace name concatenated by the group name, such as "rocketmq-xxx|namespace_python%group11")
 consumer = PushConsumer(groupName)
 # Set the service address
 consumer.set_name_server_address(nameserver)
 # Set permissions (role name and token)
 consumer.set_session_credentials(
-	accessKey,  # Role token
+	accessKey,	 # Role token
     secretKey,  # Role name
     ''
 )
@@ -159,7 +159,7 @@ consumer.shutdown()
     </tr>
     <tr>
         <td>nameserver</td>
-        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the <b>Operation</b>column of the cluster list on the <b>Cluster</b> page.
+        <td>Cluster access address, which can be obtained by clicking <b>Access Address</b> in the <b>Operation</b> column of the cluster list on the <b>Cluster</b> page.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/36a804b55313aebf8e1c7e3968904a03.png" style="width: 100%">
         </td>
     </tr>
@@ -175,9 +175,9 @@ consumer.shutdown()
     </tr>
     <tr>
         <td>topicName</td>
-        <td><code>topicName</code> is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
+        <td>`topicName` is in the format of <code>full namespace name</code>+<code>%</code>+<code>topic name</code>.
 				<ul style = "margin-bottom: 0px;"><li>The full namespace name, which is in the format of <code>cluster ID</code> +<code>｜</code>+<code>namespace</code>, can be copied under the <b>Namespace</b> tab on the cluster details page in the console.
-           <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>The topic name can be copied under the <b>Topic</b> tab on the cluster details page in the console.
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/ced3f43c5e1db7fecdf3cfb3d54df55b.png" style="width: 100%"></li><li>The topic name can be copied under the <b>Topic</b> tab on the cluster details page in the console.
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/6d8512546103d399fad1d4adb479869e.png" style="width: 100%">
 						</li>
 						</ul>

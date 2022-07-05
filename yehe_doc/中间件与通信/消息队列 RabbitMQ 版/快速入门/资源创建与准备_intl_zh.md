@@ -2,6 +2,10 @@
 
 该任务指导您通过 TDMQ 控制台创建集群、Vhost、Exchange 和 Queue 等资源，了解运行一个客户端之前，控制台所需要进行的操作。
 
+
+
+
+
 ## 前提条件
 
 已 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)。
@@ -31,9 +35,9 @@
 
 1. 在 [TDMQ 控制台](https://console.cloud.tencent.com/tdmq) 左侧导航栏选择**角色管理**，单击**新建**，创建一个角色。
 2. 在**集群管理**页面，单击刚刚创建好的集群的“ID”，进入**集群**详情页面。
-3.在页面上方选择 **Vhost** 页签，找到刚刚创建的 Vhost，单击操作栏的**配置权限**。
-4. 在**配置权限**页面，单击**新建**，为刚刚创建的角色添加生产消费权限。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/27f5ba2394ed0306e82310fb344321a7.png" width="535">
+3. 在页面上方选择 **Vhost** 页签，找到刚刚创建的 Vhost，单击操作栏的**配置权限**。
+4. 在**配置权限**页面，单击**添加角色**，为刚刚创建的角色添加生产消费权限。
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/27f5ba2394ed0306e82310fb344321a7.png" width="535">
 
 
 ### 步骤4：创建 Exchange
@@ -43,13 +47,14 @@
    - Direct：该类型 Exchange 会把消息路由到 RoutingKey 和 BindingKey 完全匹配的 Queue 中。
    - Fanout：该类型 Exchange 会将消息路由到所有与其绑定的 Queue 中。
    - Topic：该类型 Exchange 支持多条件匹配和模糊匹配，即使用 Routing Key 模式匹配和字符串比较的方式将消息路由至与其绑定的 Queue 中。
+   - X-delayed-message：通过声明该类 Exchange，您可以自定义消息的 Header 属性 **x-delay** 来指定消息延时投递的时间段，单位为毫秒。消息将在 **x-delay** 中定义的时间段后，根据路由规则被投递到对应的 Queue。路由规则取决于 **x-delayed-type** 中指定的 Exchange 路由类型。
 3. 单击**提交**，完成 Exchage 创建。
    ![](https://qcloudimg.tencent-cloud.cn/raw/f1c98dd23bceef637c707c846f359d14.png)
 
 ### 步骤5：创建 Queue
 
 1. 在 Exchange 列表页，选择顶部的 **Queue** 页签，进入 Queue 列表页。
-2. 选择刚刚创建好的 Vhost，单击**新建**，填写 Queue 名称和说明。
+2. 选择刚刚创建好的 Vhost，单击**新建**，填写 Queue 名称，说明和死信 Exchange。
 3. 单击**提交**，完成 Queue 创建。
    ![](https://qcloudimg.tencent-cloud.cn/raw/fb820128e02ce7f7a79fb0ab2285fee8.png)
 

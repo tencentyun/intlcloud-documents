@@ -37,15 +37,15 @@ A Tencent Cloud account can create a maximum of 300 IM apps. If you want to crea
      </tr> 
 	 <tr>      
          <td>Select a plan</td>   
-				 <td><ul><li>If your app is a trial app, you can only select **Pro** or **Ultimate**. You cannot purchase value-added service plans.</li><li>If your app is a pro or ultimate app, you can only purchase **value-added service plans**.</li></ul></td>   
+				 <td><ul><li>If your app is a trial app, you can only select <b>Pro</b> or <b>Ultimate</b>. You cannot purchase value-added service plans.</li><li>If your app is a pro or ultimate app, you can only purchase <b>value-added service plans</b>.</li></ul></td>   
      </tr> 
 	 <tr>      
          <td nowrap="nowrap">Value-added features</td>   
-				 <td>Value-added features include **max groups per user**, **max number of members in a group (non-audio-video group)**, **content filtering (advanced)**, and **extending storage period of historical messages**.</ul></td>   
+				 <td>Value-added features include <b>max groups per user</b> <b>max number of members in a group (non-audio-video group)</b> <b>content filtering (advanced)</b>, and <b>extending storage period of historical messages</b>.</ul></td>   
      </tr> 
 	 <tr> 
 	     <td>Subscription duration</td>   
-	     <td>The plans are purchased on a monthly basis. You can select a period from 1 to 24 months.<br>You can also select to **Auto renew subscription when there are sufficient funds**.</td>   
+	     <td>The plans are purchased on a monthly basis. You can select a period from 1 to 24 months.<br>You can also select to <b>Auto renew subscription when there are sufficient funds</b>.</td>   
      </tr> 
 </table>
 ![](https://main.qcloudimg.com/raw/30985b047064c2c520d5c8b867ed42f5.png)

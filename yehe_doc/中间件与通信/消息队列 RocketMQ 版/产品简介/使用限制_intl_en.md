@@ -26,7 +26,7 @@ width: 50%;
 
 | Limit | Description | 
 |---------|---------|
-| Maximum number of topics per namespace | 1,000 |
+| Maximum number of topics per cluster | 1,000 |
 | Topic name length | 3–64 characters |
 | Maximum number of producers per topic | 1,000 |
 | Maximum number of consumers per topic | 500 | 
@@ -35,7 +35,7 @@ width: 50%;
 
 | Limit | Description | 
 |---------|---------|
-| Maximum number of groups per namespace | 10,000 |
+| Maximum number of groups per cluster | 10,000 |
 | Group name length | 3–64 characters |
 
 ### Message

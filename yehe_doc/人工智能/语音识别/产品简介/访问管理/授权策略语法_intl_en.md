@@ -1,4 +1,5 @@
 <span id = "celueyufa"></span>
+
 ## Policy Syntax
 CAM policy:
 ```
@@ -18,9 +19,9 @@ CAM policy:
 - **version** is required. Currently, only the value "2.0" is allowed.
 - **statement** describes the details of one or more permissions. It contains a permission or permission set of multiple other elements such as `effect`, `action`, `resource`, and `condition`. One policy has only one `statement`.
  - **action** is required. It describes the allowed or denied action (operation). An operation can be an API (prefixed with "name") or a feature set (a set of specific APIs prefixed with "permid").
- - **resource** is required. It describes the details of authorization. A resource is described in a six-segment format. Detailed resource definitions vary by product. For more information on how to specify resources, please see the product documentation corresponding to the resource statement you are writing.
+ - **resource** is required. It describes the details of authorization. A resource is described in a six-segment format. Detailed resource definitions vary by product. For more information on how to specify resources, see the product documentation corresponding to the resource statement you are writing.
  - **condition** is optional. It describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value can be a client IP.
- - **effect** is required. It describes the result of a statement. The result can be "allow" or an "explicit deny".
+ - **effect** is required. It describes the result of a statement. The result can be an "allow" or an explicit "deny".
 
 <span id = "caozuo"></span>
 ## ASR Operations
@@ -40,7 +41,7 @@ You can also specify multiple operations by using a wildcard. For example, you c
 
 <span id = "ziyuanlujing"></span>
 ## ASR Resource Path
-Each CAM policy statement has its own applicable resources generally in the following format:
+Each CAM policy statement is resource-specific with a resource path as shown below:
 ```
 qcs:project_id:service_type:region:account:resource
 ```
@@ -66,9 +67,4 @@ To specify multiple resources in one policy, separate them with commas. In the f
 ```
 "resource":["resource1","resource2"]
 ```
-The table below describes the resources that can be used by ASR and the corresponding resource description methods, where words prefixed with `$` are placeholders and `account` refers to an account ID.
 
-| Resource | Resource Description Method in Authorization Policy |
-|---------|---------|
-| Self adaptive learning model | `qcs::asr::$account:model/$ModelId` |
-| Keyword list | `qcs::asr::$account:vocab/$VocabId` |

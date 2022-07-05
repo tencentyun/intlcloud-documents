@@ -267,7 +267,7 @@ We bill LVB bandwidth usage on a daily basis and adopt a tiered pricing approach
 
 #### Billing example
 
-- Assume that an LEB session had a bitrate of 500 Kbps (This is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing), and there were 100 concurrent viewers at most, the highest bandwidth used would be:
+- Assume that an LVB session had a bitrate of 500 Kbps (This is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing), and there were 100 concurrent viewers at most, the highest bandwidth used would be:
   500 (Kbps) × 100 = 50,000 (Kbps) = 50 Mbps.
 - Assume that you used the LVB service on January 4, 2022 and your bandwidth usage reached 50 Mbps at the highest. On January 5, 2022, you would be charged:
   0.1057 (USD/Mbps/Day) x 50 (Mbps) = 5.285 USD.

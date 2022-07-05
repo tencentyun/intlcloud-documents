@@ -1,4 +1,4 @@
-TencentDB for SQL Server instances are differentiated by name, which can be changed in the console.
+TencentDB for SQL Server instances are differentiated by name, which can be renamed in the console.
 
 This document describes how to rename an instance in the console.
 

@@ -34,4 +34,3 @@ ASR 部分 API 是接口级权限，对于该类 API 操作，您不需要指定
 <td><a href="https://intl.cloud.tencent.com/document/product/1118/43350">ASR 支持的资源级权限</a></td>
 </tr>
 </table>
-

@@ -12,26 +12,25 @@ When using CAM, you can associate a policy with a user or user group to allow or
 You can skip this section if you don't need to manage permissions to ASR resources for sub-accounts. This will not affect your understanding and use of the other sections of the document.
 
 ## Getting Started
-A CAM policy must authorize or deny the use of one or more ASR operations. At the same time, it must specify the resources that can be used for the operations (which can be all resources or some resources for certain operations). A policy can also include the conditions set for the manipulated resources.
+A CAM policy must authorize or deny the use of one or more ASR operations. At the same time, it must specify the resources that can be used for the operations (which can be all resources or partial resources for certain operations). A policy can also include the conditions set for the manipulated resources.
 
 Some APIs of ASR use API-level permissions, for which you don't need to specify authorization for certain resources. Some other APIs use resource-level permissions, for which you can specify authorization for certain resources.
 
 <table>
 <tr>
 <th>Basic policy structure</th>
-<th><a href="https://intl.cloud.tencent.com/document/product/1118/43351">Policy Syntax</a></th>
+<th><a href="https://intl.cloud.tencent.com/document/product/1118/43351">Authorization Policy Syntax</a></th>
 </tr>
 <tr>
 <td>Operation definition in a policy</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1118/43351">ASR Operations</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1118/43351">Authorization Policy Syntax</a></td>
 </tr>
 <tr>
 <td>Resource definition in a policy</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1118/43351">ASR Resource Path</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1118/43351">Authorization Policy Syntax</a></td>
 </tr>
 <tr>
 <td>ASR authorization granularity</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1118/43350">Resource-Level Permissions Supported by ASR</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1118/43350">Authorizable Resource Types</a></td>
 </tr>
 </table>
-

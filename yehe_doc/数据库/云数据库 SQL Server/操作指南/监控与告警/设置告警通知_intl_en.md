@@ -1,4 +1,4 @@
-This document describes how to set an alarm notification template in the console. When creating an alarm policy on the alarm policy configuration page, you can select an existing template or create a new one for easy configuration. You can also quickly reuse the same template for multiple policies.
+This document describes how to set an alarm notification template in the console. When creating an alarm policy on the alarm policy configuration page, you can select an existing template or create a new one for easy configuration. You can also quickly apply the same template for multiple policies.
 
 For more information on relevant limits and other descriptions, see [Creating Notification Template](https://intl.cloud.tencent.com/document/product/248/38922).
 

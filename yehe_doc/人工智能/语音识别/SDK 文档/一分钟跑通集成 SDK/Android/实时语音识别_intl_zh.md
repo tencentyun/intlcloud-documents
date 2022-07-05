@@ -44,7 +44,7 @@ try {
     aaiClient = new AAIClient(this, appid, projectid, secretId, credentialProvider);
 
 /**您也可以使用临时证书鉴权
-* * 1.通过sts 获取到临时证书,此步骤应在您的服务器端实现，见https://cloud.tencent.com/document/product/598/33416
+* * 1.通过sts 获取到临时证书,此步骤应在您的服务器端实现
 *   2.通过临时密钥调用接口
 * **/
   // aaiClient = new AAIClient(MainActivity.this, appid, projectId,"临时secretId", "临时secretKey","对应的token" ,credentialProvider);

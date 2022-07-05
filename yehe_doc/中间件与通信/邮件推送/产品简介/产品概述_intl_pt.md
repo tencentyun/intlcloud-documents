@@ -1,5 +1,5 @@
 O Simple Email Service (SES) é uma plataforma baseada em nuvem que fornece serviços push seguros, rápidos e eficientes para e-mails de marketing, de notificação e de transações. Ele conta com análise de dados precisa e inteligente, permitindo que você verifique visualmente a taxa de entrega, a taxa de abertura e a taxa de cliques dos e-mails enviados. Além disso, o SES fornece processos de warm-up personalizados para proteger a reputação de seu IP e melhorar sua taxa de entrega de e-mail. Está disponível em mais de 200 países/regiões, ajudando você a entregar e-mails de forma instantânea para endereços de e-mail em todo o mundo. Amplamente utilizado por diversos clientes, incluindo vários produtos de jogos e entretenimento da Tencent, ele apresenta alta estabilidade de serviço e capacidade de entrega de e-mail.
 
 - O SES é acessível para ajudar você a alcançar grupos-alvo maiores com rapidez.
-- O SES atinge uma capacidade de entrega de e-mail de até 99%, com 90% de e-mails entregues em 30 segundos.
+- O SES atinge uma capacidade de entrega de e-mail de até 97%, com 90% de e-mails entregues em 30 segundos.
 

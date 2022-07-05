@@ -1,4 +1,4 @@
-本文主要介绍如何快速地将腾讯云 IM SDK 集成到您的 Web 或者小程序项目中。
+本文主要介绍如何快速地将腾讯云 IM SDK 集成到您的 Web 项目中。
 - 您可以通过 NPM 和 Script 方式将 IM SDK 集成到您的 Web 项目中，推荐使用 NPM 集成。
 - 您可以通过 NPM 方式将 IM SDK 集成到您的小程序项目中。
 - 您可以通过集成 SDK 上传插件，实现更快更安全的富文本消息资源上传，请参见 [集成 SDK 上传插件](https://intl.cloud.tencent.com/document/product/1047/39858)。
@@ -9,9 +9,9 @@
 
 
 ## 相关文档
-- [IM SDK（小程序） TUIKit 运行](https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/TUIKit)
+
 - [IM SDK（Web） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
-- [集成 SDK 上传插件（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/39858)
+- [集成 SDK 上传插件（Web）](https://intl.cloud.tencent.com/document/product/1047/39858)
 
 ## 集成 SDK
 
@@ -27,7 +27,8 @@ npm install tim-js-sdk --save
 // 发送图片、文件等消息需要腾讯云即时通信 IM 上传插件
 npm install tim-upload-plugin --save
 ```
- >?若同步依赖过程中出现问题，请切换 npm 源后再次重试。
+
+>?若同步依赖过程中出现问题，请切换 npm 源后再次重试。
 >```
 >// 切换 cnpm 源
 >npm config set registry http://r.cnpmjs.org/
@@ -88,42 +89,4 @@ tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 - [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [腾讯云即时通信 IM 上传插件下载地址](https://www.npmjs.com/package/tim-upload-plugin)
 
-
-## 常见问题
-
-**1. 小程序如果需要上线或者部署正式环境怎么办？**
-请在**微信公众平台**>**开发**>**开发设置**>**服务器域名**中进行域名配置：
-
-将以下域名添加到 **request 合法域名**：
-
-从v2.11.2起，SDK 支持了 WebSocket，WebSocket 版本须添加以下域名：
-
-| 域名 | 说明 |  是否必须 |
-|:-------:|---------|----|
-|`wss://wss.im.qcloud.com`| Web IM 业务域名 | 必须|
-|`wss://wss.tim.qq.com`| Web IM 业务域名 | 必须|
-|`https://web.sdk.qcloud.com`| Web IM 业务域名 | 必须|
-|`https://webim.tim.qq.com` | Web IM 业务域名 | 必须|
-
-v2.10.2及以下版本，使用 HTTP，HTTP 版本须添加以下域名：
-
-| 域名 | 说明 |  是否必须 |
-|:-------:|---------|----|
-|`https://webim.tim.qq.com` | Web IM 业务域名 | 必须|
-|`https://yun.tim.qq.com` | Web IM 业务域名 | 必须|
-|`https://events.tim.qq.com` | Web IM 业务域名 | 必须|
-|`https://grouptalk.c2c.qq.com`| Web IM 业务域名 | 必须|
-|`https://pingtas.qq.com` | Web IM 统计域名 | 必须|
-
-将以下域名添加到 **uploadFile 合法域名**：
-
-| 域名 | 说明 |  是否必须 |
-|:-------:|---------|----|
-|`https://cos.ap-shanghai.myqcloud.com` | 文件上传域名 | 必须|
-
-将以下域名添加到 **downloadFile 合法域名**：
-
-| 域名 | 说明 |  是否必须 |
-|:-------:|---------|----|
-|`https://cos.ap-shanghai.myqcloud.com` | 文件下载域名 | 必须|
 

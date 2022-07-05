@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- [完成资源创建与准备](https://intl.cloud.tencent.com/document/product/1112/43069)
+- [完成资源创建与准备](https://intl.cloud.tencent.com/document/product/1113/43119)
 - [安装 Python](https://www.python.org/downloads/)
 - [安装 pip](https://pip-cn.readthedocs.io/en/latest/installing.html)
 - [下载 Demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rocketmq/tdmq-rocketmq-python-sdk-demo.zip)
@@ -89,8 +89,8 @@ producer.shutdown()
     <tr>
         <td>topicName</td>
         <td>topicName 是<code>命名空间全称</code>+<code>%</code>+<code>topic 名称</code>。
-				<ul style = "margin-bottom: 0px;"><li>命名空间全称可在控制台集群管理 Topic 页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
-            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理 Topic 页签中复制具体 Topic 名称。
+				<ul style = "margin-bottom: 0px;"><li>命名空间全称可在控制台集群管理命名空间页签中复制，格式是<code>集群 ID</code> +<code>｜</code>+<code>命名空间</code>。
+            <img src = "https://qcloudimg.tencent-cloud.cn/raw/c4147ee2b3ed375abd633d6f38a70843.png" style="width: 100%"></li><li>Topic 名称在控制台集群管理命名空间页签中复制具体 Topic 名称。
             <img src = "https://qcloudimg.tencent-cloud.cn/raw/9c90672b68c79e44f9b6e6e3d902338e.png" style="width: 100%">
 						</li>
 						</ul>
@@ -155,7 +155,7 @@ consumer.shutdown()
     </tr>
     <tr>
         <td>groupName</td>
-        <td>消费者组信息为命名空间全称拼接上 group 名称， 例如：<code>rocketmq-xxx|namespace_python%group11</code>。topic 名称和名称空间名称可在控制台中的命名空间和 Group 页签中获取。</td>
+        <td>消费者组信息为命名空间全称拼接上 group 名称， 例如：<code>rocketmq-xxx|namespace_python%group11</code>。命名空间名称和 Group 名称可在控制台中的命名空间和 Group 页签中获取。</td>
     </tr>
     <tr>
         <td>nameserver</td>
