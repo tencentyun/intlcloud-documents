@@ -14,7 +14,7 @@ OpenCloudOSはCVM、Cloud Physical Machine2.0など、クラウド上のほと�
 
 
 ## OpenCloudOSのイメージバージョン
-現在、Tencent Cloud上でOpenCloudOS 8.5のイメージを使用することがサポートされており、このイメージはCentOS 8のユーザーモードと完全に互換性があり、コミュニティ5.4 LTSベースのOpenCLoudOS Kernelが付属されています。
+現在、Tencent Cloud上でOpenCloudOS 8.5のイメージを使用することがサポートされており、このイメージはCentOS 8のユーザーモードと完全に互換性があり、コミュニティ5.4 LTSベースのOpenCloudOS Kernelが付属されています。
 
 
 ## OpenCloudOSカーネル
