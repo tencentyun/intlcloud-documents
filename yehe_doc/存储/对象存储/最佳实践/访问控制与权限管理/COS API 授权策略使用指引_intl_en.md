@@ -1,7 +1,9 @@
->!When granting API access permissions to a sub-user or collaborator, be sure to follow the principle of least privilege and grant the minimum set of permissions necessary to satisfy business needs. There may be data security risks if you grant excessive access to all of your resources `(resource:*)` or all operations `(action:*)`.
+>! When granting API access permissions to a sub-user or collaborator, be sure to follow the principle of least privilege and grant the minimum set of permissions necessary to satisfy business needs. There may be data security risks if you grant excessive access to all of your resources `(resource:*)` or all operations `(action:*)`.
+>
 
 
 ## Overview
+
 When using a temporary key to access COS, the operation permissions required vary by API or series of APIs that you specify.
 
 A COS API authorization policy is a JSON string. For example, below is a policy that grants the permission to perform uploads (including simple upload, upload through an HTML form, and multipart upload) for objects prefixed with `doc` and downloads for objects prefixed with `doc2` for the bucket `examplebucket-1250000000` in the region "ap-beijing" under the APPID `1250000000`:
@@ -54,7 +56,7 @@ A COS API authorization policy is a JSON string. For example, below is a policy 
 | -------- | ------------------------------------------------------------ |
 | version | Policy syntax version, which is 2.0 by default. |
 | effect | Allow or deny. |
-| resource | Specific data of the authorized operation, which can be any resources, resources with a specified path prefix, resource in a specified absolute path, or their combination. <br><b>Note: </b>If the path contains Chinese characters, it needs to be URL-encoded. |
+| resource | Specific data of the authorized operation, which can be any resources, resources with a specified path prefix, resource in a specified absolute path, or their combination. <br> |
 | action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, such as `name/cos:GetService`. **Note that this value is case-sensitive**.       |
 | condition | Optional condition. For more information, see [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603). |
 
@@ -93,10 +95,8 @@ The `resource` field for bucket API policies is outlined in further detail below
 
 - To allow access to buckets in all regions
 The `resource` field should be set to `*`. **Use this option with caution as it may present data security risks due to excessive permissions.**
-
 - To allow access only to buckets in a specified region
 For example, to grant access to `examplebucket-1250000000` under the APPID `1250000000` in the region `ap-beijing`, the `resource` field should be set to `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`.
-
 - To allow access only to a bucket with a specified name in a specified region
 - For example, to grant access to the bucket named `examplebucket-1250000000` under the APPID `1250000000` in the region `ap-beijing`, the `resource` field should be set to `qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/`.
 
@@ -127,7 +127,8 @@ The following policy grants the user with the APPID `1250000000` permission to c
 }
 ```
 
->?For bucket naming rules, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
+>? For bucket naming rules, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
+>
 
 ### Extracting bucket and its permissions  
 
