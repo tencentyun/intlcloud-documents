@@ -787,7 +787,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 ### [Enabling or disabling the speaker](id:EnableSpeaker)
 
 This API is used to enable/disable the speaker.
-**If accompaniment is used, please call this API as instructed in [Accompaniment in Voice Chat](https://cloud.tencent.com/document/product/607/34377).**
+**If accompaniment is used, please call this API as instructed in** [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/document/product/607/31504).
 
 **EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv**
 
