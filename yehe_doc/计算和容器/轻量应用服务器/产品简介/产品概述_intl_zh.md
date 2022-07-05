@@ -27,48 +27,51 @@
 <dx-tabs>
 ::: 应用镜像[](id:appOS)
 - **镜像描述**
-应用镜像除了包含底层的操作系统（如 CentOS、Windows Server 等操作系统的不同版本）外，还封装了应用软件（如 LAMP、WordPress、ASP.NET、Node.js、宝塔面板等），以及应用依赖的运行环境和相关的初始化配置文件，可以为您提供开箱即用的体验。
+应用镜像除了包含底层的操作系统（如 CentOS、Windows Server 等操作系统的不同版本）外，还封装了应用软件（如 LAMP、WordPress、ASP.NET、Node.js等），以及应用依赖的运行环境和相关的初始化配置文件，可以为您提供开箱即用的体验。
 - **适用场景**
 适合于快速部署应用的场景，可实现应用的开箱即用。使用应用镜像创建轻量应用服务器之后，应用系统可自动完成初始化配置，用户只需经过几步简单的配置即可完成应用搭建，无需手动安装应用和上传软件包等操作。
 - **包含镜像**
 <ul class="params">
-<li>SRS Release </li>
-<li>房间服务 Release </li>
-<li>WordPress 社区版</li>
+<li>WordPress</li>
+<li>WooCommerce</li>
+<li>SRS 音视频服务器</li>
+<li>互动直播房间服务</li>
 <li>Typecho</li>
 <li>Cloudreve</li>
 <li>Matomo</li>
 <li>LAMP</li>
 <li>Node.js</li>
-<li>ASP.NET</li>
 <li>Theia IDE</li>
 <li>Docker CE</li>
 <li>K3s</li>
+<li>ASP.NET</li>
 </ul>
 
-具体镜像版本信息，可前往 <a href="https://buy.intl.cloud.tencent.com/lighthouse?region=5&zone=ap-hongkong-2&blueprintType=APP_OS&blueprintId=lhbp-8wbnak86&loginSet=AUTO&zone=ap-hongkong-2">轻量应用服务器购买页</a> 查看。
+具体镜像版本信息，可前往 <a href="https://buy.intl.cloud.tencent.com/lighthouse">轻量应用服务器购买页</a> 查看。
 :::
 ::: 系统镜像
-
 - **镜像描述**
 系统镜像中仅包含初始的操作系统（如 CentOS、Ubuntu、Windows Server 等操作系统的不同版本），不包含应用软件、应用依赖的运行环境以及相关的初始化配置文件。 
 - **适用场景**
 适合于熟悉服务器操作系统、软件安装与环境配置的用户。使用系统镜像创建的轻量应用服务器仅安装了操作系统初始环境，用户可以按需自行安装软件或应用系统。
 - **包含镜像**
 <ul class="params">
-<li>TencentOS Server 2.4</li>
+<li>Windows Server 2022</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2012 R2</li>
 <li>TencentOS Server 3.1 (TK4)</li>
+<li>TencentOS Server 2.4 (TK4)</li>
 <li>CentOS 7.6</li>
 <li>CentOS 8.0</li>
 <li>CentOS 8.2</li>
+<li>CentOS Stream 8</li>
 <li>Ubuntu 18.04.1 LTS</li>
 <li>Ubuntu 20.04 LTS</li>
-<li>Debian 11.1</li>
 <li>Debian 10.2</li>
-<li>Windows Server 2012 R2</li>
-<li>Windows Server 2016</li>
-<li>Windows Server 2019</li>
+<li>Debian 11.1</li>
 </ul>
+
 :::
 ::: Docker 基础镜像[](id:DokcerOS)
 - **镜像描述**
@@ -79,16 +82,21 @@ Docker 基础镜像中除了包含底层的操作系统（如 CentOS、Ubuntu �
   - CentOS 8.2 - Docker 20
   - CentOS 7.6 - Docker 20
   - Ubuntu 20.04 - Docker 20
-  :::
-  ::: 自定义镜像[](id:customOS)
+  
+
+ :::
+ ::: 自定义镜像[](id:customOS)
+
 - **镜像描述**
 自定义镜像是用户通过镜像制作功能制作的镜像。仅创建者可以使用。
 - **适用场景**
 选择一个已经部署好应用的轻量应用服务器实例创建镜像，并可以此为模板快速创建更多实例。
 - **包含镜像**
 可参考 [管理自定义镜像](https://intl.cloud.tencent.com/document/product/1103/41395) 自行创建。
+
 :::
 ::: 共享镜像[](id:shareOS)
+
 - **镜像描述**
 共享镜像是由同账号、同地域下由云服务器共享至轻量应用服务器的镜像。
 - **适用场景**
@@ -99,7 +107,7 @@ Docker 基础镜像中除了包含底层的操作系统（如 CentOS、Ubuntu �
 </dx-tabs>
 
 <dx-alert infotype="explain" title="">
-您可通过最佳实践中的实际操作，开始使用镜像搭建个人站点、论坛或其他平台。
+您可通过 [最佳实践](https://intl.cloud.tencent.com/zh/document/product/1103/41255) 中的实际操作，开始使用镜像搭建个人站点、论坛或其他平台。
 </dx-alert>
 
 ## 网络
@@ -113,19 +121,16 @@ Docker 基础镜像中除了包含底层的操作系统（如 CentOS、Ubuntu �
 ::: 公网 IP
 每个轻量应用服务器创建完成后默认分配1个独立的公网 IP，并配置独享的公网带宽（或峰值带宽），可用于 Internet 公网访问。您无法为服务器增加额外的公网 IP，但可更换公网 IP。
 :::
-::: 公网带宽
-中国内地各个地域的轻量应用服务器提供的公网出方向带宽，可保障稳定、低延迟的网络质量。
-
-
+::: 公网峰值带宽
+中国港澳台地区和其他国家地域的轻量应用服务器提供的公网出方向带宽最大限制。
 <dx-alert infotype="explain" title="">
-- 在 [实例套餐](https://intl.cloud.tencent.com/document/product/1103/41264) 中简称为“带宽”。
+
+- 在 [实例套餐](https://intl.cloud.tencent.com/document/product/1103/41264) 中简称为“峰值带宽”。
 - 入网带宽和出网带宽上限说明请参见 [带宽上限说明](https://intl.cloud.tencent.com/document/product/1103/41264#BandwidthUpperLimit)。
+- 对于中国港澳台地区和其他国家地域的轻量应用服务器，由于从中国内地跨境访问时受运营商网络线路影响可能出现较大延迟和丢包（非跨境访问时通常无影响），因此腾讯云仅保证实例套餐中提供的公网带宽为“峰值带宽”。在高峰期由于跨境网络拥堵可能导致从中国内地连接的实际公网带宽达不到实例套餐中标明的公网峰值带宽。
 </dx-alert>
-
-
 :::
 ::: 内网\sIP
-
 - 每个轻量应用服务器创建完成后默认分配1个内网 IP，可用于不同轻量应用服务器实例之间的通信。
 - 同账号下，同地域中的多个轻量应用服务器实例默认处于同一个 VPC 中，不同地域中的轻量应用服务器实例处于不同的 VPC 中。
 - 内网带宽为共享网络的带宽，无法保证带宽持续稳定。
@@ -156,9 +161,12 @@ Docker 基础镜像中除了包含底层的操作系统（如 CentOS、Ubuntu �
 
 
 
+
+
 ## 安全
 默认免费开通 DDoS 基础防护和 [主机安全基础版](https://intl.cloud.tencent.com/document/product/296/2222) 防护，帮助用户构建服务器安全防护体系。
 <dx-alert infotype="explain" title="">
+
 - 可登录 DDoS 控制台，在 [DDoS 基础防护](https://console.cloud.tencent.com/ddos/ddos-basic) 页面上方选择“轻量应用服务器专区”，查看 DDoS 防护状态。
 - 可登录主机安全控制台，在 [主机列表](https://console.cloud.tencent.com/cwp/asset/machine) 页面上方选择“轻量应用服务器专区”，查看轻量应用服务器主机安全防护状态。
 </dx-alert>
