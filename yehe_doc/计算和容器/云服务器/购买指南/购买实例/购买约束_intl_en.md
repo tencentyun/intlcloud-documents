@@ -1,9 +1,19 @@
-Your Tencent Cloud account needs to go through identity verification before any CVM instances in the Chinese mainland can be purchased.
-**Identity verification**: Tencent Cloud has two types of identity verification: personal identity verification and enterprise identity verification. For more information, refer to the [identity verification guide](https://intl.cloud.tencent.com/document/product/378/3629).
+## Purchase Limits
 
-## Purchase Limits for Pay-as-You-Go CVM Instances
- - Pay-as-you-go CVM instances **do not support**:
-    - Agents paying on your behalf
-    - 5-day no-questions-asked refund
-    - Postpaid monthly billing plans
- - The **purchase limit** of pay-as-you-go CVM instances for each user in each availability zone is between 30 and 60. Please see the CVM purchase page for the exact purchase limit. 
+### Pay-as-you-go CVM instances[](id:PayAsYouGoLimit)
+ The following features are not available to pay-as-you-go CVM instances:
+ - Agents paying on your behalf
+ - Monthly postpaid users
+- The **purchase limit** of pay-as-you-go CVM instances for each user in each AZ is between 30 and 60. See the CVM purchase page for the exact purchase limit. If you need more instances, [apply for an instance purchase quota increase](#ApplyForQuota).
+
+
+
+## Applying for Instance Purchase Quota Increase[](id:ApplyForQuota)
+If you need more instances than your quota in a region, apply for an increase as instructed in [Increasing Instance Purchase Quota](https://intl.cloud.tencent.com/document/product/213/46161), where you need to select the billing mode, target region, target quota, instance configuration, and application reason. We will evaluate your application based on your actual needs and increase your quota accordingly.
+
+<dx-alert infotype="notice" title="">
+If you need to apply for an increase in different AZs, submit applications separately, as different AZs come with different quotas. 
+</dx-alert>
+
+
+

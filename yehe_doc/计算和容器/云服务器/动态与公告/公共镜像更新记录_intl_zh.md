@@ -1,36 +1,12 @@
->!
->- 不同地域的镜像更新时间可能不同，本文所提供的镜像更新时间为全地域镜像更新时间。
->- 腾讯云提供的公共镜像维护周期将与官方公布的维护周期保持一致。官方公布维护时间信息请参见 [附录：官方维护时间](#OfficialMaintenanceTime)。
->
+<dx-alert infotype="notice" title="">
+- 不同地域的镜像更新时间可能不同，本文所提供的镜像更新时间为全地域镜像更新时间。
+- 腾讯云提供的公共镜像维护周期将与官方公布的维护周期保持一致。官方公布维护时间信息请参见 [附录：官方维护时间](#OfficialMaintenanceTime)。
+</dx-alert>
+
+
 
 ## TencentOS Server
-<table>
-  <tr>
-	<th style="width: 14%;">镜像版本</th>
-	<th style="width: 44%;">镜像信息</th>
-	<th style="width: 14%;">更新时间</th>
-	<th style="width: 28%;">更新内容</th>
-  </tr>
-  <tr>
-	<td>TencentOS Server 3.1</td>
-	<td>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&id=img-eb30mz89">img-eb30mz89</a>
-	<br />当前内核版本：5.4.119-19.0006.tl3.x86_64</td>
-	<td>2021-07-13</td>
-	<td>新镜像上线。</td>
-  </tr>
-  <tr>
-	<td>TencentOS Server 2.4</td>
-	<td>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&id=img-hdt9xxkt">img-hdt9xxkt</a>
-	<br />当前内核版本：4.14.105-19.0020.1.tl2.x86_64</td>
-	<td>2021-05-31</td>
-	<td>
-	  <ul class="params">
-		<li>更新内核版本。</li>
-		<li>安全补丁更新。</li>
-	  </ul>
-	</td>
-  </tr>
-</table>
+TencentOS Server 更新记录请参见 [TencentOS Server 镜像更新日志](https://intl.cloud.tencent.com/document/product/213/46963)。
 
 
 
@@ -60,7 +36,7 @@
 	<tr>
 		<td rowspan="3">CentOS 8.0</td>
 		<td rowspan="3">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-25szkc8t</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-25szkc8t">img-25szkc8t</a>
 		<br />当前内核版本：4.18.0-193.28.1.el8_2.x86_64</td>
 		</tr>
 	<tr>
@@ -79,7 +55,7 @@
 	<tr>
 		<td>CentOS 7.9</td>
 		<td>镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-l8og963d</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-l8og963d">img-l8og963d</a>
 		<br />当前内核版本：kernel-3.10.0-1160.11.1.el7.x86_64</td>
 		<td>2021-05-31</td>
 		<td>新镜像上线。</td>
@@ -87,7 +63,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.8</td>
 		<td rowspan="3">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-3la7wgnt">img-3la7wgnt</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-3la7wgnt">img-3la7wgnt</a>
 		<br />当前内核版本：kernel-3.10.0-1160.11.1.el7.x86_64</td>
 	</tr>
 	<tr>
@@ -111,7 +87,7 @@
 	<tr>
 		<td>CentOS 7.7</td>
 		<td>镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-1u6l2i9l">img-1u6l2i9l</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-1u6l2i9l">img-1u6l2i9l</a>
 		<br />当前内核版本：3.10.0-1062.18.1.el7.x86_64</td>
 		<td>2020-04-15</td>
 		<td>更新最新系统补丁。</td>
@@ -119,7 +95,7 @@
 	<tr>
 		<td rowspan="6">CentOS 7.6</td>
 		<td rowspan="6">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-9qabwvbn">img-9qabwvbn</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9qabwvbn">img-9qabwvbn</a>
 		<br />当前内核版本：3.10.0-1160.11.1.el7.x86_64</td>
 	</tr>
 	<tr>
@@ -153,7 +129,7 @@
 		<td>
 			<ul class="params">
 				<li>新镜像上线。</li>
-				<li>支持黑石物理服务器2.0。</li>
+				<li>支持裸金属云服务器。</li>
 				<li>支持 IPv6。</li>
 			</ul>
 		</td>
@@ -161,7 +137,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.5</td>
 		<td rowspan="3">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-oikl1tzv">img-oikl1tzv</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-oikl1tzv">img-oikl1tzv</a>
 		<br />当前内核版本：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -187,7 +163,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.4</td>
 		<td rowspan="3">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-8toqc6s3">img-8toqc6s3</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-8toqc6s3">img-8toqc6s3</a>
 		<br />当前内核版本：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -208,7 +184,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.3</td>
 		<td rowspan="3">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-dkwyg6sr">img-dkwyg6sr</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-dkwyg6sr">img-dkwyg6sr</a>
 		<br />当前内核版本：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -229,7 +205,7 @@
 	<tr>
 		<td rowspan="3">CentOS 7.2</td>
 		<td rowspan="3">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-31tjrtph">img-31tjrtph</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-31tjrtph">img-31tjrtph</a>
 		<br />当前内核版本：3.10.0-1127.19.1.el7.x86_64</td>
 		<td>2020-11-24</td>
 		<td>
@@ -250,7 +226,7 @@
 	<tr>
 		<td rowspan="2">CentOS 6.9</td>
 		<td rowspan="2">镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-i5u2lkoz">img-i5u2lkoz</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-i5u2lkoz">img-i5u2lkoz</a>
 		<br />当前内核版本：2.6.32-754.30.2.el6.x86_64</td>
 		<td>2020-03-04</td>
 		<td>更新最新系统补丁。</td>
@@ -262,7 +238,7 @@
 	<tr>
 		<td>CentOS 6.8</td>
 		<td>镜像 ID：
-		<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-6ns5om13">img-6ns5om13</a>
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-6ns5om13">img-6ns5om13</a>
 		<br />当前内核版本：2.6.32-642.6.2.el6.x86_64</td>
 		<td>2019-03-26</td>
 		<td>更新 OpenSSH 版本。</td>
@@ -311,7 +287,7 @@
 	<td rowspan="6">Ubuntu 18.04</td>
 	<td rowspan="6">镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&amp;id=img-pi0ii46r&amp;searchParams=rid%3D1%26tab%3DPUBLIC_IMAGE%26imageType%3DPUBLIC_IMAGE%26page%3D2">img-pi0ii46r</a>
-	<br />当前内核版本：4.15.0-118-generic</td>
+	<br />当前内核版本：4.15.0-159-generic</td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -336,7 +312,7 @@
 	<td>
 	  <ul class="params">
 		<li>更新最新系统补丁。</li>
-		<li>支持黑石物理服务器2.0。</li>
+		<li>支持裸金属云服务器。</li>
 	  </ul>
 	</td>
   </tr>
@@ -354,7 +330,7 @@
 	<td>
 	  <ul class="params">
 		<li>更新最新系统补丁。</li>
-		<li>支持黑石物理服务器2.0。</li>
+		<li>支持裸金属云服务器。</li>
 	  </ul>
 	</td>
   </tr>
@@ -390,7 +366,7 @@
   <tr>
 	<td rowspan="3">Debian 10.2</td>
 	<td rowspan="3">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-h1yvvfw1">img-h1yvvfw1</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-h1yvvfw1">img-h1yvvfw1</a>
 	<br />当前内核版本：4.19.0-11-amd64</td>
   </tr>
   <tr>
@@ -421,7 +397,7 @@
   <tr>
 	<td rowspan="3">OpenSUSE Leap 15.1</td>
 	<td rowspan="3">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-4orfgj3l">img-4orfgj3l</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-4orfgj3l">img-4orfgj3l</a>
 	<br />当前内核版本：4.12.14-lp151.28.75.1.x86_64</td>
   </tr>
   <tr>
@@ -440,7 +416,7 @@
   <tr>
 	<td rowspan="4">OpenSUSE 42.3</td>
 	<td rowspan="4">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-0ytr67o7">img-0ytr67o7</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-0ytr67o7">img-0ytr67o7</a>
 	<br />当前内核版本：4.4.175-89.1-default</td>
   </tr>
   <tr>
@@ -468,9 +444,9 @@
 	<th style="width: 30%;">更新内容</th>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2019 数据中心版 64位英文版</td>
+	<td rowspan="4">Windows Server 2019 数据中心版 64位中文版</td>
 	<td rowspan="4">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-mmy6qctz">img-mmy6qctz</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-mmy6qctz">img-mmy6qctz</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -478,10 +454,7 @@
   </tr>
   <tr>
 	<td>2021-01-21</td>
-	<td>
-	  <ul class="params">
-		<li>更新最新系统补丁。</li
-	  </ul>
+	<td>更新最新系统补丁。
 	</td>
   </tr>
   <tr>
@@ -489,9 +462,9 @@
 	<td>更新最新系统补丁。</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2016 数据中心版 64位英文版</td>
+	<td rowspan="4">Windows Server 2016 数据中心版 64位中文版</td>
 	<td rowspan="4">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-9id7emv7">img-9id7emv7</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9id7emv7">img-9id7emv7</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -508,7 +481,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2016 数据中心版 64位英文版</td>
 	<td rowspan="4">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-1eckhm4t">img-1eckhm4t</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-1eckhm4t">img-1eckhm4t</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -523,9 +496,9 @@
 	<td>修复 Windows-CVE-2019-1125 漏洞以及8月补丁更新。</td>
   </tr>
   <tr>
-	<td rowspan="4">Windows Server 2012 R2 数据中心版 64位英文版</td>
+	<td rowspan="4">Windows Server 2012 R2 数据中心版 64位中文版</td>
 	<td rowspan="4">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-29hl923v">img-29hl923v</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>
@@ -542,7 +515,7 @@
   <tr>
 	<td rowspan="4">Windows Server 2012 R2 数据中心版 64位英文版</td>
 	<td rowspan="4">镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-2tddq003">img-2tddq003</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-2tddq003">img-2tddq003</a></td>
   </tr>
   <tr>
 	<td>2021-06-30</td>

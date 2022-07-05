@@ -24,7 +24,7 @@
 <tr><td>网络</td><td>必选</td><td>表示在腾讯云上构建的逻辑隔离的网络空间，一个私有网络由至少一个子网组成。系统会为您在每个地域提供的默认私有网络和子网。</br>
 如现有的私有网络/子网不符合您的要求，可以在私有网络控制台进行创建。</br><b>注意</b>：<ul><li>同一私有网络内资源默认内网互通。</li><li>购买时，云服务器需要创建在与云服务器相同可用区属性的子网内。</li></ul></td></tr>
 <tr><td>实例</td><td>必选</td><td>根据底层硬件的不同，腾讯云目前提供了多种不同的实例类型。为获得最佳性能，建议使用新一代实例类型。</br>更多实例详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/11518">实例规格</a>。</td></tr>
-<tr><td>镜像</td><td>必选</td><td>腾讯云提供公共镜像、自定义镜像、共享镜像、服务市场，您可参考 <a href="https://intl.cloud.tencent.com/document/product/213/4941">镜像类型</a> 进行选择。</br>对于刚开始使用腾讯云的用户，推荐选择公共镜像，内含 Windows 操作系统正版激活，无需额外付费（北美地域除外）。 </td></tr>
+<tr><td>镜像</td><td>必选</td><td>腾讯云提供公共镜像、自定义镜像、共享镜像，您可参考 <a href="https://intl.cloud.tencent.com/document/product/213/4941">镜像类型</a> 进行选择。</br>对于刚开始使用腾讯云的用户，推荐选择公共镜像，内含 Windows 操作系统正版激活，无需额外付费（北美地域除外）。 </td></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">系统盘</a></td><td>必选</td><td>用于安装操作系统，默认为50GB。</br>地域的不同将会影响可供选择的云硬盘类型，请根据实际页面提示进行选择。</br>更多关于云硬盘的介绍，请参考 <a href="https://intl.cloud.tencent.com/document/product/362/31636">云硬盘类型</a>。</td></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">数据盘</a></td><td>可选</td><td>用于扩展云服务器的存储容量，提供高效可靠的存储设备。默认不添加云硬盘数据盘。</br>更多关于云硬盘的介绍，请参考 <a href="https://intl.cloud.tencent.com/document/product/362/31636">云硬盘类型</a>。</td></tr>
 <tr><td>定期快照</td><td>可选</td><td>可针对系统盘或数据盘设置定期快照策略。更多关于定期快照的介绍，请参见 <a href="https://intl.cloud.tencent.com/document/product/362/35238">定期快照</a>。</td></tr>
@@ -46,11 +46,13 @@
 <tr><td>标签</td><td>可选</td><td>设置标签之后可以对云服务器实现资源的分类管理。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/213/19548">标签</a> 进行设置。</td></tr>
 <tr><td>实例名称</td><td>可选</td><td>表示需要创建的云服务器的名称。</br>用户自定义，推荐为“CVM-01”。</td></tr>
 <tr><td>登录方式</td><td>必选</td><td>设置用户登录云服务器的方式，请根据实际需求进行设置。<ul><li><b>设置密码</b>：自定义设置登录实例的密码。</li><li><b>自动生成密码</b>：自动生成的密码将会以 <a href="https://console.cloud.tencent.com/message">站内信</a> 方式发送。</li></ul></td></tr>
+<tr><td>实例销毁保护</td><td>可选</td><td>默认不开启。可根据实际需求勾选，开启实例销毁保护后将无法通过控制台或 API 销毁实例。更多关于实例销毁保护介绍，请参见 <a href="https://intl.cloud.tencent.com/document/product/213/47383">开启实例销毁保护。</a></td></tr>
 <tr><td>安全加固</td><td>可选</td><td>默认免费开通，帮助用户构建服务器安全防护体系，防止数据泄露。</td></tr>
 <tr><td>云监控</td><td>可选</td><td>默认免费开通，提供立体化云服务器数据监控、智能化数据分析、实时化故障告警和个性化数据报表配置，让用户精准掌控业务和云服务器的健康状况。</td></tr>
-<tr><td>自动续费</td><td>可选</td></br>勾选“账户余额足够时，设备到期后按月自动续费”，避免设备到期时需要进行手动续费的操作。</td></tr>
+<tr><td>自动化助手</td><td>可选</td><td>默认安装组件免费开通自动化助手，支持免密码、免 SSH登录即批量管理实例、执行命令，完成日常管理任务。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/1147/46034">自动化助手</a>。</td</tr>
 <tr><td>高级设置</td><td>可选</td><td>根据实际需求对实例做更多配置。<ul><li><b>主机名</b>：用户可以自定义设置云服务器操作系统内部的计算机名，云服务器成功生产后可以通过登录云服务器内部查看。</li><li><b>CAM角色</b>：设置角色后可以通过角色对云服务器授予腾讯云中服务、操作和资源的访问权限。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/213/38290">管理实例角色</a> 进行设置。</li><li><b>置放群组</b>：根据需要可以将实例添加到置放群组中，提高业务的可用性。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/213/15486">置放群组</a> 进行设置。</li><li><b>自定义数据</b>：指定自定义数据来配置实例，既当实例启动时运行配置的脚本。如果一次购买多台云服务器，自定义数据会在所有的云服务器上运行。Windows 操作系统支持 PowerShell 格式，最大支持 16KB 原始数据。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/213/17526">自定义设置自定义数据（Windows 云服务器）</a>。</br><b>注意</b>：自定义数据配置仅支持 Windows 公有镜像，具体可参考 <a href="https://intl.cloud.tencent.com/document/product/213/17526#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9">注意事项</a>。
 </table>
+
 
 2. 单击**下一步：确认配置信息**，进入确认配置信息页面。
 
