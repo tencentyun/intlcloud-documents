@@ -57,9 +57,8 @@ The Voice Chat service is billed monthly by either voice duration or voice Peak 
    </tr>
 </table>
  
-
+>!
 >- Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
-
 >- Daily PCU refers to the highest number of concurrent online users for the day, and monthly peak PCU refers to the highest daily PCU value for the month. For example, if the daily PCU is 5,400 on the 2nd day and below 5,400 for the rest of the month, the monthly peak PCU will be 5,400.
 >- For services billed by PCU, fees will be charged per 5,000 PCUs. Values below 5,000 will be calculated as 5,000. For example, if the monthly peak PCU is 5,400, then the fees for the month will be 3,000 USD + 1,870 USD.
 
@@ -88,7 +87,7 @@ Voice messaging and speech-to-text services are billed by voice message DAU.
 </table>
 
 
-
+>?
 >- A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the duplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
 >- The standard mode only supports Chinese Mandarin, Korean and English. For more languages, please use the enhanced mode. For details, see [Supported Languages](https://intl.cloud.tencent.com/document/product/607/30260).
 
@@ -113,6 +112,7 @@ The Text Translation service is billed by the number of characters that need to 
    </tr>
 </table>
 
+>?
 >- This feature has not been launched. You can submit a ticket to apply for using it.
 
 
