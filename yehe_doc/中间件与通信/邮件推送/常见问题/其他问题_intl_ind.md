@@ -1,6 +1,6 @@
 [](id:que1) 
 ### Apakah SES mendukung pengiriman email ke alamat email di luar daratan Tiongkok?
-Ya. Tencent Cloud SES tersedia di lebih dari 200 negara/wilayah, sehingga membantu Anda mengirimkan email secara instan ke alamat email di seluruh dunia. Layanan ini dilengkapi pengiriman 99% (kecuali untuk alamat email yang tidak valid dan kotak surat perusahaan terbatas) dan mendukung penyedia layanan email utama seperti Gmail, Yahoo, Hotmail, 163.com, dan QQmail. Secara umum, SES memiliki stabilitas layanan dan pengiriman email yang tinggi.
+Ya. Tencent Cloud SES tersedia di lebih dari 200 negara/wilayah, sehingga membantu Anda mengirimkan email secara instan ke alamat email di seluruh dunia. Layanan ini dilengkapi pengiriman 97% (kecuali untuk alamat email yang tidak valid dan kotak surat perusahaan terbatas) dan mendukung penyedia layanan email utama seperti Gmail, Yahoo, Hotmail, 163.com, dan QQmail. Secara umum, SES memiliki stabilitas layanan dan pengiriman email yang tinggi.
 
 
 [](id:que2) 
