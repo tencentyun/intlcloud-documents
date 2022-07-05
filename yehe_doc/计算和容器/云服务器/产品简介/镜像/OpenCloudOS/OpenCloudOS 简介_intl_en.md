@@ -14,7 +14,7 @@ Currently, OpenCloudOS does not have a GPU driver preinstalled. If you need to u
 
 
 ## OpenCloudOS Image Tag
-Currently, the OpenCloudOS 8.5 image is supported on Tencent Cloud. The image is fully compatible with CentOS 8 user mode and is equipped with the OpenCLoudOS kernel based on community 5.4 LTS.
+Currently, the OpenCloudOS 8.5 image is supported on Tencent Cloud. The image is fully compatible with CentOS 8 user mode and is equipped with the OpenCloudOS kernel based on community 5.4 LTS.
 
 
 ## OpenCloudOS Kernel
