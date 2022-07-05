@@ -597,5 +597,6 @@ The following Modules shall apply and form part of this privacy policy if you us
 39.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47314).
 40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47853).
 41.[TTS](https://intl.cloud.tencent.com/document/product/1154/48241).
+42.[ASR](https://intl.cloud.tencent.com/document/product/1118/48289).
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
