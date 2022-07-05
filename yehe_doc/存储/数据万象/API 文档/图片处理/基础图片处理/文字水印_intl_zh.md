@@ -54,6 +54,9 @@ Pic-Operations:
 }
 ```
 
+>? Pic-Operations 为 json 格式的字符串，具体参数信息可参考 [图片持久化处理](https://intl.cloud.tencent.com/document/product/1045/33695)。
+>
+
 #### 3. 云上数据处理
 
 ```plaintext
@@ -92,10 +95,10 @@ Pic-Operations:
 
 | 参数         | 含义                                                         |
 | ------------ | ------------------------------------------------------------ |
-| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
+| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 | /text/       | 水印内容，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)                    |
 | /font/       | 水印字体，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值 tahoma.ttf 。水印字体列表参考 [支持字体列表](https://intl.cloud.tencent.com/document/product/1045/40681) |
-| /fontsize/   | 水印文字字体大小，单位为磅，缺省值13                       |
+| /fontsize/   | 水印文字字体大小，单位为磅，缺省值13。如需按照原图片的大小比例缩放文字水印，请将文字水印转换为 PNG 图片，并参考 [图片水印](https://intl.cloud.tencent.com/document/product/1045/33720) 文档进行配置 |
 | /fill/       | 字体颜色，缺省为灰色，需设置为十六进制 RGB 格式（例如 #FF0000），详情可参考 [RGB 编码表](https://www.rapidtables.com/web/color/RGB_Color.html)，需经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值为 #3D3D3D |
 | /dissolve/   | 文字透明度，取值1 - 100 ，默认90（90%不透明度）                |
 | /gravity/    | 文字水印位置，九宫格位置（[参见九宫格方位图](#1)），默认值 SouthEast |
@@ -120,6 +123,7 @@ Pic-Operations:
 ## 实际案例
 
 >? 本篇文档中的实际案例仅包含**下载时处理**，该类处理不会保存处理后的图片至存储桶。如有保存需求，您可查阅 [图片持久化处理](https://intl.cloud.tencent.com/document/product/1045/33695) 文档并配置**上传时处理**或**云上数据处理**。
+>
 
 
 #### 案例一：添加文字水印
