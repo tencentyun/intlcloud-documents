@@ -1,6 +1,6 @@
 [](id:que1) 
 ### Does SES support sending emails to email addresses outside the Chinese mainland?
-Yes. Tencent Cloud SES is available in over 200 countries/regions, helping you deliver emails instantly to email addresses around the world. It features a 99% deliverability (except for invalid email addresses and restricted corporate mailboxes) and supports major email service providers such as Gmail, Yahoo, Hotmail, 163.com, and QQmail. In general, SES has high service stability and email deliverability.
+Yes. Tencent Cloud SES is available in over 200 countries/regions, helping you deliver emails instantly to email addresses around the world. It features a 97% deliverability (except for invalid email addresses and restricted corporate mailboxes) and supports major email service providers such as Gmail, Yahoo, Hotmail, 163.com, and QQmail. In general, SES has high service stability and email deliverability.
 
 
 [](id:que2) 
