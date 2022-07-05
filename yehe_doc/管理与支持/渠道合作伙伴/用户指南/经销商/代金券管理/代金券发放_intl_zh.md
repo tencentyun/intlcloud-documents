@@ -3,7 +3,6 @@
 第一步：登入控制台，点击 **[Voucher Management > Voucher Issuance](https://console.intl.cloud.tencent.com/partners/issuance)**  菜单进入代金券发放页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/493275322563912a5c91e1861ea932e9.png)
 
->?
 >+ 代金券发放初始额度为0，需有额度的情况下才允许发放代金券，请联系渠道销售进行代金券额度申请。
 >+ 目前仅支持腾讯承担成本代金券，腾讯承担成本代金券发放后会经过腾讯侧审核，审核通过后会发放给客户。
 >+ 代金券发放总额(不含审批拒绝的申请)不可超过代金券总额度，请合理使用和分配代金券给有必要的客户。
@@ -43,3 +42,10 @@
 **Estimated converted Tencent revenue**：预计转换腾讯收入，输入整数金额。
 **Estimated time for revenue conversion**：预计转换腾讯收入时间，输入预计日期。
 **Application Reason**：填写申请原因，为腾讯审核参考依据。
+
+
+>?
+>1、分配子客代金券，需经过腾讯侧审批，约1-3个工作日
+>2、分配子客代金券进展，可查看【代金券清单】中的【Approval Status】
+
+
