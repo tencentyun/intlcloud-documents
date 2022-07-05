@@ -1,6 +1,6 @@
 [](id:que1) 
 ### No SES, é permitido o envio de e-mails para endereços de e-mail fora da China Continental?
-Sim. O SES da Tencent Cloud está disponível em mais de 200 países/regiões, ajudando você a entregar e-mails de forma instantânea para endereços de e-mail em todo o mundo. Ele possui uma capacidade de entrega de 99% (exceto para endereços de e-mail inválidos e e-mails corporativos restritos) e aceita os principais provedores de serviços de e-mail, como Gmail, Yahoo, Hotmail, 163.com e QQmail. Em geral, o SES possui alta estabilidade de serviço e capacidade de entrega de e-mail.
+Sim. O SES da Tencent Cloud está disponível em mais de 200 países/regiões, ajudando você a entregar e-mails de forma instantânea para endereços de e-mail em todo o mundo. Ele possui uma capacidade de entrega de 97% (exceto para endereços de e-mail inválidos e e-mails corporativos restritos) e aceita os principais provedores de serviços de e-mail, como Gmail, Yahoo, Hotmail, 163.com e QQmail. Em geral, o SES possui alta estabilidade de serviço e capacidade de entrega de e-mail.
 
 
 [](id:que2) 
