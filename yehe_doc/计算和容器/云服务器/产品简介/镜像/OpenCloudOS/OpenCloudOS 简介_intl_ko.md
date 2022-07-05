@@ -14,7 +14,7 @@ OpenCloudOS는 CVM 및 CPM 2.0을 포함하여 클라우드의 대부분 모델�
 
 
 ## OpenCloudOS 이미지 버전
-현재 Tencent Cloud에서 OpenCloudOS 8.5 버전 이미지를 지원하며, CentOS 8 사용자 모드와 완벽하게 호환되며 커뮤니티 5.4 LTS 기반의 OpenCLoudOS Kernel을 지원합니다.
+현재 Tencent Cloud에서 OpenCloudOS 8.5 버전 이미지를 지원하며, CentOS 8 사용자 모드와 완벽하게 호환되며 커뮤니티 5.4 LTS 기반의 OpenCloudOS Kernel을 지원합니다.
 
 
 ## OpenCloudOS 커널
