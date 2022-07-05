@@ -106,7 +106,7 @@ player.src(https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/path/e
 #### 步骤4：查看效果
 
 1. 成功获取到 m3u8 文件和解密密钥。
-![获取到m3u8文件](https://qcloudimg.tencent-cloud.cn/raw/4808069fd4269de39c6efff6c1af5908.png)
+
 2. 成功解密并播放视频。
 
 
