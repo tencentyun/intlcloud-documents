@@ -1,41 +1,41 @@
-This document describes how to access and debug the GME APIs for Unity voice chat.
+This document describes how to access and debug the GME APIs for Unity Voice Chat.
 
 <dx-alert infotype="explain" title="">
 This document applies to GME SDK version 2.9.
 </dx-alert>
 
-## Key Considerations for Using GME
+## Considerations
 
-GME provides two services: voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as Init and Poll.
+GME provides two services: Voice chat service and voice message and speech-to-text service, both of which rely on key APIs such as Init and Poll.
 
 <dx-alert infotype="notice" title="Note on Init API">
-If you need to use voice chat and voice message services at the same time, **you only need to call `Init` API once**.
-Billing will not start after initialization. After you call <dx-tag-link link="#EnterRoom" tag="API: EnterRoom">Entering a voice chat room</dx-tag-link> to enter the room successfully, the billing will start.
+You **only need to call `Init` API once** no matter how many GME services you want to use.
+Calling `Init` does not trigger billing. The billing starts when the <dx-tag-link link="#EnterRoom" tag="EnterRoom">EnterRoom</dx-tag-link> API is called and users enter the room successfully.
 </dx-alert>
 
-![](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
 
 ### Directions
 
 <dx-steps>
--<dx-tag-link link="#Init" tag="API: Init">Initializing GME</dx-tag-link>
--<dx-tag-link link="#Poll" tag="API: Poll">Calling Poll periodically to trigger event callbacks</dx-tag-link>
--<dx-tag-link link="#EnterRoom" tag="API: EnterRoom">Entering a voice chat room</dx-tag-link>
+-<dx-tag-link link="#Init" tag="API: Init">Initialize GME</dx-tag-link>
+-<dx-tag-link link="#Poll" tag="API: Poll">Periodically trigger event callbacks</dx-tag-link>
+-<dx-tag-link link="#EnterRoom" tag="API: EnterRoom">Enter a voice chat room</dx-tag-link>
 -<dx-tag-link  tag="Callback: QAVEnterRoomComplete">Callback of Room Entry</dx-tag-link>
--<dx-tag-link link="#EnableMic" tag="API: EnableMic">Enabling the microphone</dx-tag-link>
--<dx-tag-link link="#EnableSpeaker" tag="API: EnableSpeaker">Enabling the speaker</dx-tag-link>
--<dx-tag-link link="#ExitRoom" tag="API: ExitRoom">Exiting a voice room</dx-tag-link>
--<dx-tag-link link="#UnInit" tag="API: UnInit">Uninitializing GME</dx-tag-link>
+-<dx-tag-link link="#EnableMic" tag="API: EnableMic">Turn on the microphone</dx-tag-link>
+-<dx-tag-link link="#EnableSpeaker" tag="API: EnableSpeaker">Turn on the speaker</dx-tag-link>
+-<dx-tag-link link="#ExitRoom" tag="API: ExitRoom">Exit a voice room</dx-tag-link>
+-<dx-tag-link link="#UnInit" tag="API: UnInit">Uninitialize GME SDK</dx-tag-link>
 </dx-steps>
 
 
-### Important notes
+### Important
 
 - Configure your project before using GME; otherwise, the SDK will not take effect.
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/zh/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+- For detailed error code, please see <dx-tag-link link="https://cloud.tencent.com/document/product/607/15173" tag="ErrorCode">Error Codes</dx-tag-link>.
 
 ### C# classes
 
@@ -51,9 +51,9 @@ Billing will not start after initialization. After you call <dx-tag-link link="#
 
 Before the initialization, the SDK is in the uninitialized status, and **you need to initialize it through the `Init` API** before you can use the voice chat and speech-to-text services.
 
-**You need to call the `Init` API before calling any APIs of GME.**
+**Call the `Init` API before calling any APIs of GME.**
 
-If you have any questions when using the service, please see [General](https://intl.cloud.tencent.com/zh/document/product/607/30254).
+If you have any questions when using the service, please see [General Issues](https://intl.cloud.tencent.com/document/product/607/30254).
 
 | API | Description |
 | ------ | :----------: |
@@ -79,12 +79,12 @@ Get the `Context` instance by using the `ITMGContext` method instead of `QAVCont
 
 ### [Initializing SDK](id:Init)
 
-- This API is used to initialize the GME service. It is recommended to call it when initializing the application. No fee is incurred for calling this API.
-- **Get the `sdkAppID` parameter.**
+- This API is used to initialize the GME service. You need to call it before using GME. No fee is incurred for calling this API.
+- **For more information on how to get the `sdkAppID`, see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)**.
 - **The openID uniquely identifies a user with the rules stipulated by the application developer and unique in the application (currently, only INT64 is supported)**.
 
 <dx-alert infotype="notice" title="">
- - The SDK must be initialized before an user can enter a voice chat room.
+ - The SDK must be initialized before a user can enter a voice chat room.
  - The Init API must be called in the same thread with other APIs. It is recommended to call all APIs in the main thread.
 </dx-alert>
 
@@ -97,16 +97,16 @@ public abstract int Init(string sdkAppID, string openID);
 
 | Parameter | Type | Description |
 | -------- | :----: | ------------------------------------------------------------ |
-| sdkAppId | string | `AppID` provided by the GME service from the [Tencent Cloud console](https://console.cloud.tencent.com/gamegme) |
-| openId | string | `openId` can only be in Int64 type, which is passed after being converted to a string. |
+| sdkAppId | string | `AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme) |
+| openId | string | The `openId` must be an Int64 string. |
 
 
-#### Returned values
+#### Response
 
-| Returned Value | Description |
+| Response | Description |
 | ------------------------------- | --------------------------------------------- |
 | QAVError.OK= 0 | Initialized SDK successfully |
-| AV_ERR_SDK_NOT_FULL_UPDATE=7015 | Checks whether the SDK file is complete. It is recommended to delete it and then import the SDK again. |
+| AV_ERR_SDK_NOT_FULL_UPDATE=7015 | The SDK file is not complete. Please delete it and import the SDK again. |
 
 The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is **only a reminder** but will not cause an initialization failure.
 
@@ -128,10 +128,10 @@ if (ret != QAVError.OK)
     }
 ```
 
-### [Triggering event callback](id:Poll)
+### [Event callback](id:Poll)
 
-Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
-Refer to the `EnginePollHelper` file in the [demo](https://intl.cloud.tencent.com/zh/document/product/607/18521).
+Event callbacks can be triggered by periodically calling the `Poll` API in `update`. `Poll` is the message pump of GME, and the `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
+Refer to the EnginePollHelper file in [Demo](https://intl.cloud.tencent.com/document/product/607/18521).
 
 <dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
 The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
@@ -193,7 +193,7 @@ Voice chat refers to the one-to-one or one-to-many real-time voice call feature.
 ## Voice Chat Room APIs
 
 You should initialize and call the SDK to enter a room before voice chat can start.
-If you have any questions when using the service, please see [Sound and Audio](https://intl.cloud.tencent.com/zh/document/product/607/39524).
+If you have any questions when using the service, please see [FAQs About Voice Chat](https://intl.cloud.tencent.com/document/product/607/39524).
 
 | API | Description |
 | -------------- | :------------------: |
@@ -208,13 +208,13 @@ If you have any questions when using the service, please see [Sound and Audio](h
 
 ![](https://main.qcloudimg.com/raw/2b5d8f7f7f4b4b3fbce8c9ebf01f78d8.png)
 
-<dx-alert infotype="alarm" title="Successful Room Entry">
+<dx-alert infotype="alarm" title="Enter the room successfully">
 If the room entry callback result is 0, the room entry is successful. The returned value of 0 from the `EnterRoom` API does not necessarily mean that the room entry is successful.
 </dx-alert>
 
 ### Authentication information
 
-Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/zh/document/product/607/12218).    
+Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 
 #### Function prototype
 
@@ -224,10 +224,10 @@ QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 
 | Parameter | Type | Description |
 | ------ | :----: | ------------------------------------------------------------ |
-| appId | int | `AppID` from the Tencent Cloud console.|
+| appId | int | `AppID` from the GME console.|
 | roomId | string | Room ID, which can contain up to 127 characters. |
 | openId | string | User ID, which is the same as `openID` during initialization. |
-| key | string | Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme). |
+| key | string | Permission key from the [GME console](https://console.cloud.tencent.com/gamegme). |
 
 #### Sample code  
 
@@ -260,7 +260,7 @@ ITMGContext.GetInstance().EnterRoom(strRoomId, ITMGRoomType.ITMG_ROOM_TYPE_FLUEN
 ```
 
 
-<dx-alert infotype="notice" title="Please Use LD">
+<dx-alert infotype="notice" title="Please use smooth quality">
 Use `ITMGRoomType.ITMG_ROOM_TYPE_FLUENCY` as the room type parameter to enter the room. If you enter the room with non-LD sound quality, an error will be reported and you cannot enter the room.
 </dx-alert>
 
@@ -271,9 +271,9 @@ Use `ITMGRoomType.ITMG_ROOM_TYPE_FLUENCY` as the room type parameter to enter th
 After the user enters the room, the room entry result will be called back, which can be listened on for processing. A successful callback means that the room entry is successful, and the billing **starts**.
 
 <dx-fold-block title="Billing references">
-[Purchase Guide](https://intl.cloud.tencent.com/zh/document/product/607/36276)
-[Billing FAQs](https://intl.cloud.tencent.com/zh/document/product/607/30255)
-[Will the billing continue if the client is disconnected when using the voice chat?](https://intl.cloud.tencent.com/zh/document/product/607/30255)
+[Purchase Guide](https://intl.cloud.tencent.com/document/product/607/36276)
+[Billing FAQs](https://intl.cloud.tencent.com/document/product/607/30255)
+[Will Voice Chat still be charged when the client goes offline?](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
 #### Function prototype
@@ -308,10 +308,10 @@ void OnEnterRoomComplete(int err, string errInfo)
 | Message | Data | Sample |
 | ------------------------------------ | :----------------: | ------------------------------------------------------------ |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM      | result; error_info | {"error_info":"","result":0}                                 |
-| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT | result; error_info | {"error_info":"waiting timeout, please check your network","result":0} |
+| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT                   |                result; error_info                 | {"error_info":"waiting timeout, please check your network","result":0} |
 
 
-If the network is disconnected, there will be a disconnected callback prompt `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT`. At this time, the SDK will automatically reconnect, and the callback is `ITMG_MAIN_EVENT_TYPE_RECONNECT_START`. When the reconnection is successful, there will be a callback `ITMG_MAIN_EVENT_TYPE_RECONNECT_SUCCESS`.
+If the network is disconnected, there will be a callback message `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT`. Upon receiving of this message, the SDK tries to reconnect with the callback message `ITMG_MAIN_EVENT_TYPE_RECONNECT_START`. When the reconnection is successful, there will be a callback `ITMG_MAIN_EVENT_TYPE_RECONNECT_SUCCESS`.
 
 
 #### Error codes
@@ -319,14 +319,14 @@ If the network is disconnected, there will be a disconnected callback prompt `IT
 | Error Code Value | Cause and Suggested Solution |
 | -------- | ------------------------------------------------------------ |
 | 7006 | Authentication failed <li>The `AppID` does not exist or is incorrect.<li>An error occurred while authenticating the `authbuff`.<li>Authentication expired.<li>The `OpenId` does not meet the specification. |
-| 7007 | Already in another room. |
-| 1001 | The user was already in the process of entering a room but repeated this operation. It is recommended not to call the room entering API until the room entry callback is returned. |
-| 1003 | The user was already in the room and called the room entering API again. |
+| 7007 | The user is already in another room. |
+| 1001 | The user entering a room. It is recommended not to call `EnterRoom` repeatedly until the EnterRoom callback is returned. |
+| 1003 | The user is already in the room. |
 | 1101 | Make sure that the SDK is initialized, `OpenId` complies with the rules, the APIs are called in the same thread, and the `Poll` API is called normally. |
 
 ### [Exiting the room](id:ExitRoom)
 
-This API is called to exit the current room. It is an async API. The returned value of `AV_OK` indicates a successful async delivery.
+This API is called to exit the current room. It is an async API. The reponse `AV_OK` indicates that the task is triggered.
 
 If there is a scenario in the application where room entry is performed immediately after room exit, you don't need to wait for the `RoomExitComplete` callback notification from the `ExitRoom` API during API call; instead, you can directly call the API.
 
@@ -366,7 +366,7 @@ void OnExitRoomComplete(){
 }
 ```
 
-### Determining whether user has entered room
+### Determining whether the user has entered the room
 
 This API is used to determine whether the user has entered a room. A bool-type value will be returned. The call is invalid during the process of room entry.
 
@@ -384,13 +384,13 @@ ITMGContext.GetInstance().IsRoomEntered();
 
 ### Switching room
 
-User can call this API to quickly switch the voice chat room after entering the room. After the room is switched, the device is not reset, that is, if the microphone is already enabled in this room, the microphone will keep enabled after the room is switched.
+This API to used to switch the user to another voice chat room. It’s called after the user enters the room. After the switching, the device is not reset, that is, if the microphone is already enabled in the previous room, the microphone is stilled enabled in the new room.
 The callback for quickly switching rooms is `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_SWITCH_ROOM`, and the fields are `error_info` and `result`.
 
 #### API prototype
 
 ```
-public abstract int SwitchRoom(string targetRoomID, byte[] authBuffer);
+public abstract int SwitchRoom(string roomID, byte[] authBuffer);
 ```
 
 #### Type descriptions
@@ -402,10 +402,10 @@ public abstract int SwitchRoom(string targetRoomID, byte[] authBuffer);
 
 ### Cross-room mic connection
 
-Call this API to connect the microphones across rooms after the room entry. After the call, the local user can communicate with the target OpenID user in the target room.
+Call this API to connect the microphones across rooms after the room entry. After the calling, the local user can communicate with the target OpenID user in the target room.
 
 #### Example
-User a is in room A, user b is in room B, and user a can talk with b through the cross-room API. When user c in room A speaks, users b and d in room B cannot hear. User c in room A can hear only the voice in room A and the voice of user b in room B but not other users in room B.
+Assume that User A in Room 1 is talking with User B is in Room 2 using this API. When User C in Room 1 speaks, User B and User D in Room 2 cannot hear. User C in Room 1 can hear only the voice in Room 1 and the voice of User B in Room 2 but not other users in Room 2.
 
 #### API prototype
 
@@ -426,16 +426,16 @@ public abstract int StopRoomSharing();
 
 ### Notifications of member room entry and speaking status
 
-This API is used to obtain the user speaking in the room and display it in the UI, and to send a notification when someone entering or exiting the room.
+This API is used to obtain the user speaking in the room and display it in the UI, and to send a notification when someone enters or exits the room.
 A notification for this event will be sent only when the status changes. To get member status in real time, cache the notification when it is received at the upper layer. The event message `ITMG_MAIN_EVNET_TYPE_USER_UPDATE` containing `event_id`, `count`, and `openIdList` will be returned. The event message will be identified in the `OnEvent` function.
 Notifications for audio events are subject to a threshold, and a notification will be sent only when this threshold is exceeded. The notification "A member has stopped sending audio packets" will be sent if no audio packets are received in more than two seconds. This event only returns the member speaking event but not the specific volume level. If you need the specific volume levels of members in the room, use the `GetVolumeById` API.
 
 | event_id | Description | Maintenance |
 | --------------------------- | :------------------: | ---------------------- |
-| EVENT_ID_ENDPOINT_ENTER | A member enters the room. All `openid` values in the room are returned | Member list |
-| EVENT_ID_ENDPOINT_EXIT | A member exits the room. All `openid` values in the room are returned | Member list |
-| EVENT_ID_ENDPOINT_HAS_AUDIO | A member sends audio packets. All `openid` values of speaking users are returned | Chat member list |
-| EVENT_ID_ENDPOINT_NO_AUDIO | A member stops sending audio packets. All `openid` values of users not speaking are returned | Chat member list |
+| EVENT_ID_ENDPOINT_ENTER | Return all the openid when a member enters the room. | Member list |
+| EVENT_ID_ENDPOINT_EXIT | Return all the openid when a member exits the room | Member list |
+| EVENT_ID_ENDPOINT_HAS_AUDIO | Return all the chatting openid when a member sends audio packets | Chat member list |
+| EVENT_ID_ENDPOINT_NO_AUDIO | Return all the openid that stop chatting when a member stops sending audio packets | Chat member list |
 
 #### Room member maintenance flowchart
 
@@ -480,13 +480,13 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 ### Muting in a room
 
 
-This API is used to add an ID to the audio data blocklist. This operation blocks audio from someone and only applies to the local device without affecting other devices. A returned value of `0` indicates the call is successful. Assume that users A, B, and C are all speaking using their mic in a room: 
+This API is used to add an ID to the audio data blocked list. This operation blocks audio from someone and only applies to the local device. A returned value of `0` indicates the call is successful. Assume that users A, B, and C are all speaking using their mic in a room: 
 
 - If A blocks C, A can only hear B;
 - If B blocks neither A nor C, B can hear both of them;
 - If C blocks neither A nor B, C can hear both of them.
 
-This API is suitable for scenarios where a user is muted in a room.
+This API is used to mute a user in a room.
 
 #### Function prototype  
 
@@ -496,7 +496,7 @@ ITMGContext ITMGAudioCtrl AddAudioBlackList(String openId)
 
 | Parameter | Type | Description |
 | ------ | :----: | ----------------- |
-| openId | String | User `openid` to be blocked |
+| openId | String | ID to be blocked openid |
 
 #### Sample code  
 
@@ -506,7 +506,7 @@ ITMGContext.GetInstance().GetAudioCtrl ().AddAudioBlackList (openId);
 
 ### Unmuting
 
-This API is used to remove an ID from the audio data blocklist. A returned value of 0 indicates the call is successful.
+This API is used to remove a user from the audio blocklist. A returned value of 0 indicates the call is successful.
 
 #### Function prototype  
 
@@ -517,7 +517,7 @@ ITMGContext ITMGAudioCtrl RemoveAudioBlackList(string openId)
 
 | Parameter | Type | Description |
 | ------ | :----: | ----------------- |
-| openId | String | User `openid` to be unblocked |
+| openId | String | openId of the user to unmute|
 
 #### Sample code  
 
@@ -528,21 +528,21 @@ ITMGContext.GetInstance().GetAudioCtrl ().RemoveAudioBlackList (openId);
 
 ## Voice Chat Audio APIs
 
-![](https://main.qcloudimg.com/raw/c85fe68b4b26555adf8ad01c82711f5b.png)
+![Image](https://main.qcloudimg.com/raw/c85fe68b4b26555adf8ad01c82711f5b.png)
 
 ### Notes on voice chat audio connection
 
-The voice chat APIs can only be called after SDK initialization and room entry.
+The voice chat APIs can only be called when the SDK is initialized and the user has entered the room.
 When Enable/Disable Mic/Speaker is clicked on the UI, the following practices are recommended:
 
-- **For most game applications, it is recommended to call the `EnableMic` and `EnableSpeaker` APIs**, which is equivalent to calling the `EnableAudioCaptureDevice/EnableAudioSend` and `EnableAudioPlayDevice/EnableAudioRecv` APIs.
+- Games: Call `EnableMic` and `EnableSpeaker`, which is equivalent to call both `EnableAudioCaptureDevice/EnableAudioSend` and `EnableAudioPlayDevice/EnableAudioRecv`.
 - For other mobile applications (such as social networking applications), enabling/disabling a capturing device will restart both capturing and playback devices. If the application is playing back background music, it will also be interrupted. Playback will not be interrupted if the mic is enabled/disabled through control of upstreaming/downstreaming. **Calling method: call `EnableAudioCaptureDevice(true)` and `EnableAudioPlayDevice(true)` once after room entry, and call `EnableAudioSend/Recv` to send/receive audio streams when Enable/Disable Mic is clicked**.
 - For more information on how to release only a capturing or playback device, please see the `EnableAudioCaptureDevice` and `EnableAudioPlayDevice`.
 - Call the `pause` API to pause the audio engine and call the `resume` API to resume the audio engine.
 
 ### Voice chat audio APIs
 
-| API | Description |
+| API                        |            Description            |
 | --------------------------- | :----------------------------: |
 | EnableMic | Enables/disables mic |
 | GetMicState | Gets mic status |
@@ -571,7 +571,7 @@ When Enable/Disable Mic/Speaker is clicked on the UI, the following practices ar
 ### [Enabling or disabling the microphone](id:EnableMic)
 
 This API is used to enable/disable the mic. Mic and speaker are not enabled by default after room entry.
-**If accompaniment is used, please call this API as instructed in [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/zh/document/product/607/31504).**
+**If accompaniment is used, please call this API as instructed in [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/document/product/607/31504).**
 
 **EnableMic = EnableAudioCaptureDevice + EnableAudioSend**
 
@@ -585,7 +585,7 @@ ITMGAudioCtrl EnableMic(bool isEnabled)
 
 | Parameter | Type | Description |
 | --------- | :-----: | ------------------------------------------------------------ |
-| isEnabled | boolean | To enable the mic, set this parameter to `true`; otherwise, set it to `false`. |
+| isEnabled | boolean | `true`: Enable the mic; `false`: Disable the mic. |
 
 #### Sample code  
 
@@ -597,7 +597,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableMic(true);
 
 ### Getting the mic status
 
-This API is used to get the mic status. The returned value 0 indicates that the mic is off, while 1 is on.
+This API is used to query the mic status. `0`: The mic is off. `1·: The mic is on.
 
 #### Function prototype  
 
@@ -615,21 +615,21 @@ micToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetMicState();
 
 ### Enabling or disabling capturing device
 
-This API is used to enable/disable a capturing device. The device is not enabled by default after room entry.
+This API is used to enable/disable an audio capturing device. By default, the audio capturing device is not enabled when the user enters the room.
 
-- This API can only be called after room entry. The device will be disabled automatically after room exit.
+- This API can only be called after `EnterRoom`. The device is disabled automatically after the user exits the room.
 - Operations such as permission application and volume type adjustment will generally be performed when a capturing device is enabled on a mobile device.
 
 #### Function prototype  
 
 ```
-ITMGAudioCtrl int EnableAudioPlayDevice(bool isEnabled)
+ITMGAudioCtrl int EnableAudioCaptureDevice(bool isEnabled)
 
 ```
 
 | Parameter    | Type   | Description                                                                                                                    |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To enable a capturing device, set this parameter to `true`; otherwise, set it to `false`. |
+| isEnabled | bool |`true`: Enable the capturing device; `false`: Disable the capcuring device. |
 
 #### Sample code
 
@@ -787,7 +787,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 ### [Enabling or disabling the speaker](id:EnableSpeaker)
 
 This API is used to enable/disable the speaker.
-**If accompaniment is used, please call this API as instructed in [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/zh/document/product/607/31504).**
+**If accompaniment is used, please call this API as instructed in [Accompaniment in Voice Chat](https://cloud.tencent.com/document/product/607/34377).**
 
 **EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv**
 
@@ -800,7 +800,7 @@ ITMGAudioCtrl EnableSpeaker(bool isEnabled)
 
 | Parameter    | Type   | Description                                                                                                                    |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To disable the speaker, set this parameter to `false`; otherwise, set it to `true`. |
+| isEnabled | bool |`true`: Enable the speaker; `false`: Disable the speaker. |
 
 #### Sample code  
 
@@ -812,7 +812,7 @@ ITMGContext.GetInstance().GetAudioCtrl().EnableSpeaker(true);
 
 ### Getting the speaker status
 
-This API is used to get the speaker status. 0 indicates that the speaker is off, and 1 on.
+This API is used to get the speaker status. `0`: Speaker off; `1`: Speaker on.
 
 #### Function prototype  
 
@@ -843,7 +843,7 @@ ITMGAudioCtrl EnableAudioPlayDevice(bool isEnabled)
 
 | Parameter    | Type   | Description                                                                                                                    |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To disable a playback device, set this parameter to `false`; otherwise, set it to `true`. |
+| isEnabled | bool | `false`: Disable the device; `true`: Enable the device. |
 
 #### Sample code  
 
@@ -884,7 +884,7 @@ ITMGAudioCtrl int EnableAudioRecv(bool isEnabled)
 
 | Parameter    | Type   | Description                                                                                                                    |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To enable audio downstreaming, set this parameter to `true`; otherwise, set it to `false`. |
+| isEnabled | bool | `true`: Enable downstreaming; `false`: Disable downstreaming. |
 
 #### Sample code  
 
@@ -980,7 +980,7 @@ ITMGContext.GetInstance().GetAudioCtrl().SetSpeakerVolume(speVol);
 ### Getting the speaker volume
 
 This API is used to get the speaker volume. An int-type value will be returned to indicate the volume. 101 indicates that the `SetSpeakerVolume` API has not been called.
-"Level" indicates the real-time volume, and "Volume" the speaker volume. The final volume = Level * Volume%. For example, if the "Level" is 100 and "Volume" is 60, the final volume is "60".
+`Level` indicates the real-time volume, and `Volume` the speaker volume. The final volume = Level * Volume%. For example, if `Level` is 100 and `Volume` is 60, the final volume is `60`.
 
 #### Function prototype  
 
@@ -1037,7 +1037,7 @@ public abstract event QAVOnDeviceStateChangedEvent OnDeviceStateChangedEvent;
 
 | Parameter | Type | Description |
 | ----------- | :----: | ----------------------------------------------------- |
-| deviceType | int | <li>1: capturing device, <li>2: playback device |
+| deviceType | int | <li>`1`: Capturing device, <li>`2`: Playback device |
 | deviceId | string | Device GUID, which is used to identify a device and only applies to Windows and macOS. |
 | openOrClose | bool | Occupies or releases a capturing/playback device |
 
@@ -1100,7 +1100,7 @@ Set the room type. After the room type is set, a callback will be executed throu
 
 | Returned Parameter | Description |
 | ---------- | :------------------------: |
-| roomtype | Updated room type returned |
+| roomtype | The new room type|
 
 
 ```
@@ -1157,11 +1157,11 @@ void OnRoomTypeChangedEvent(int roomtype){
 
 The message for quality control event triggered once every two seconds after room entry is `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY`. The returned parameters include `weight`, `loss`, and `delay`, which represent the following information. The event message will be identified in the `OnEvent` function.
 
-This API is used to monitor the network quality. If the user's network is poor, the business layer will remind the user to switch to a better network through the UI.
+This API is used to monitor the network quality. 
 
 | Parameter | Type | Description |
 | ------ | ------ | ------------------------------------------------------------ |
-| weight | int | Value range: 1-50. 50 indicates excellent sound quality, 1 indicates very poor (barely usable) sound quality, and 0 represents an initial meaningless value. Generally, if the value is below 30, the business layer will remind users that the network is poor and recommend them to switch the network. |
+| weight | int | Value range: 1 (Worst) - 50 (Best).. `0` is the initial value and is meaningless. It’s recommended to send users alerts about poor network condition when the value is below 30. |
 | loss | double | Upstream packet loss rate |
 | delay | int | Voice chat delay in ms |
 
@@ -1243,7 +1243,7 @@ ITMGContext  SetLogPath(string logDir)
 
 ```
 
-| Parameter | Type | Description |
+| Parameter   |  Type  | Description              |
 | ------ | :----: | ---- |
 | logDir | String | Path |
 

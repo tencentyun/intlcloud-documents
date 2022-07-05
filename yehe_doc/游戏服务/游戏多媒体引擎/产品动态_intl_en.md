@@ -1,11 +1,109 @@
-## June 2021
-<table >
+﻿## April 2022
+
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SDK v2.9.1 is released</td>
+<td ><ul style="margin:0;">
+<li >Improves the success rate of streaming voice message recognition.</li>
+
+</ul ></td>
+<td>2022-04-12</td> 
+<td>-</tr>
+</tbody></table>
+
+## March 2022
+
+<table>
+<thead>
+<tr>
+<th width="17%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>  
+<th width="23%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<tr>
+<td>SDK v2.9.1 is released</td>
+<td ><ul style="margin:0;">
+<li >The Text-to-Speech feature is available. Users can experience it in Demo.</li>
+<li >The text translation feature is available.</li>
+<li >You can choose whether to send the background music to other members in the room.</li>
+<li >The version of SDK ndr for Android is upgraded to r23.</li>
+<li >The supported version of SDK Xcode for iOS is upgraded to Xcode13.1.</li>
+</ul ></td>
+<td>2022-03-16</td> 
+<td>
+<li><a href="https://cloud.tencent.com/document/product/607/48323">Free Demo
+</tr></tbody>
+</table>
+
+## November 2021
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SDK v2.8.4 is released</td>
+<td ><ul style="margin:0;"><li >Added mute key detection and device occupancy detection features.</li>
+<li >The log file size can be modified.</li>
+<li >The GME Unity Engine SDK supports the PS5 platform.</li>
+<li >The GME Unreal Engine SDK is compatible with Unreal 4.26.</li>
+<li >Optimizes the network module and increases the success rate of room entry on Windows platform.</li>
+<li >Increases the streaming voice message-to-text speed.</li>
+<li >Optimizes the Bluetooth headset experience for Android.</li>
+</ul ></td>
+<td>2021-11-08</td> 
+<td><a href="https://cloud.tencent.com/document/product/607/15210">Voice Chat</tr>
+</tbody></table>
+
+## July 2021
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SDK v2.8.3 is released</td>
+<td ><ul style="margin:0;"><li >The real-time speech recognition feature is now available in beta. The speech in the audio call can be recognized to text in real time. To try it out, please <a href="https://cloud.tencent.com/online-service?from=connect-us">submit a ticket</a>.</li>
+<li >Optimizes the network module and increases the success rate of room entry on Windows platform.</li>
+<li >Updates the SDK of H5 platform and adds the adaptation for browsers.</li>
+<li >Optimizes the performance and increases the speed of room entry and the stability of SDK.</li>
+<li >Optimizes the new version of iOS with microphone effects.</li>
+<li >Makes adaptations to global compliance.</li>
+</ul ></td>
+<td>2021-07-09</td> 
+<td><a href="https://cloud.tencent.com/document/product/607/15210">Voice Chat</tr>
+</tbody></table>
+
+## June 2021
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -21,13 +119,13 @@
 
 
 ## January 2021
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -35,8 +133,8 @@
 <td ><ul style="margin:0;"><li >Releases the custom audio routing feature. Combined with range voice, it realizes the enhanced battle royale voice.</li>
 <li>Adds the API `SetSpeakerVolumeByOpenID`, which is used to set the speaking volume of a room member heard by the local.</li>
 <li >Adds the API of setting using regions, which is suitable for releasing features outside the Chinese mainland (in beta). To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for application.</li>
-<li >Performance optimization. Improve SDK stability.</li>
-<li >Improve the voice quality outside the Chinese mainland.</li>
+<li >Optimizes SDK performance and stability.</li>
+<li >Improves the voice quality outside the Chinese mainland.</li>
 </ul ></td>
 <td>2021-01-20</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/607/39525">Custom Audio Forwarding Routing</tr>
@@ -46,13 +144,13 @@
 
 ## October 2020
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -69,18 +167,18 @@
 
 ## July 2020
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>The beta SDK 2.6.0 is released</td>
-<td >
+<td>
 <li>The room entry process is optimized to improve the success rate of room entry on weak networks.<li>The capture delay on Android devices is lowered.<li>The speech recognition feature is added to the speech-to-text service.<li>The SDK stability is improved.
 </td> 
 <td>2020-07-07</td> 
@@ -90,13 +188,13 @@
 
 ## October 2019
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -104,7 +202,7 @@
 </td>
 <td >The newly launched speech analysis service is pay-as-you-go daily by the duration of analyzed audio.
 </td> 
-<td>2019-10-12</td> 
+<td>October 12, 2019</td> 
 <td>-</tr>
 </thead>
 </tbody></table>
@@ -114,13 +212,13 @@
 
 ## June 2019
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -129,19 +227,19 @@
 <li>The APIs for setting and getting recording/playback volume levels are added for voice messaging and speech-to-text conversion.</li>
 <li >The APIs for pausing and resuming recording are added for voice messaging and speech-to-text conversion.</li>
 <li >Error codes are refined.</li></ul ></td>
-<td>2019-06-27</td> 
+<td>June 27, 2019</td> 
 <td>-</tr>
 </tbody></table>
 
 ## March 2019
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -157,20 +255,20 @@
 
 ## January 2019
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>SDK v2.3 is released</td>
 <td ><ul style="margin:0;"><li >Voice messaging and speech-to-text conversion can now be used during voice chat now.</li>
 <li>Voice chat can now be filtered for offensive, insecure, or inappropriate information.</li>
-<li >Optimized the range voice APIs of the SDK to lower the access threshold.</li>
+<li >The range voice APIs of the SDK are optimized to lower the access threshold.</li>
 <li >HTML5-based voice chat is supported now, making voice chat available across all operating systems.</li>
 <li >Noise reduction for voice is optimized.</li>
 <li >Memory usage by the SDK is greatly reduced.</li>
@@ -183,13 +281,13 @@
 
 ## October 2018
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -208,13 +306,13 @@
 
 ## September 2018
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="60%">Description</th>
  <th width="15%">Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -233,13 +331,13 @@
 
 ## August 2018
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -259,13 +357,13 @@
 
 ## June 2018
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -286,13 +384,13 @@
 
 ## April 2018
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -313,13 +411,13 @@
 
 ## October 2017
 
-<table >
+<table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+ <th width="15%">Release Date</th>  
+<th width="15%">Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
