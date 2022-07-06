@@ -1,7 +1,5 @@
 ## 功能说明
 App 管理员可以通过该接口创建群组。
-以下视频将帮助您快速了解如何通过 REST API 创建群组：
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2725-52991?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 ## 接口调用说明
 ### 适用的群组类型
@@ -29,7 +27,7 @@ App 管理员可以通过该接口创建群组。
 ### 请求 URL 示例
 
 ```https
-https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### 请求参数说明
@@ -38,6 +36,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
 | v4/group_open_http_svc/create_group  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
