@@ -1,7 +1,7 @@
 ## 操作场景
 
 为解决软件依赖安装时官方源访问速度慢的问题，腾讯云为一些软件搭建了缓存服务。您可以通过使用腾讯云软件源站来提升依赖包的安装速度。为了方便用户自由搭建服务架构，目前腾讯云软件源站支持公网访问和内网访问。
-- 公网访问地址：`http://mirrors.cloud.tencent.com/` 或 `http://mirrors.tencent.com`
+- 公网访问地址：`http://mirrors.tencent.com`
 - 内网访问地址：`http://mirrors.tencentyun.com/`
 
 >? 
@@ -170,11 +170,15 @@ echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian jessie/mongodb-org
 #Debian 9
 echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian stretch/mongodb-org/4.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. 执行以下命令，更新软件包列表。
+3. 执行以下命令，清除缓存。
+```shell
+sudo apt-get clean all
+```
+4. 执行以下命令，更新软件包列表。
 ```
 sudo apt-get update
 ```
-4. 执行以下命令，安装 MongoDB。
+5. 执行以下命令，安装 MongoDB。
 ```
 sudo apt-get install -y mongodb-org
 ```
@@ -194,11 +198,15 @@ echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu xen
 #Ubuntu 18.04
 echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. 执行以下命令，更新软件包列表。
+3. 执行以下命令，清除缓存。
+```shell
+sudo apt-get clean all
+```
+4. 执行以下命令，更新软件包列表。
 ```
 sudo apt-get update
 ```
-4. 执行以下命令，安装 MongoDB。
+5. 执行以下命令，安装 MongoDB。
 ```
 sudo apt-get install -y mongodb-org
 ```
