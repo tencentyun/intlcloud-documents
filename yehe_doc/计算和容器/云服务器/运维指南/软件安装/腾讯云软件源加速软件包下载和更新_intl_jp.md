@@ -1,7 +1,7 @@
 ## 操作シナリオ
 
 ソフトウェアの依存関係をインストールするとき、公式ソースへのアクセスが遅いという問題を解決するために、Tencent Cloudは一部のソフトウェアにキャッシュサービスをセットアップしました。Tencent Cloudのソフトウェアリポジトリを使用して、依存関係のインストール速度を改善することができます。ユーザーがサービスアーキテクチャを自由に構築できるように、Tencent Cloudソフトウェアリポジトリは、現在パブリックネットワークアクセスとプライベートネットワークアクセスをサポートしています。
-- パブリックネットワークアクセスアドレス：`http://mirrors.cloud.tencent.com/`
+- パブリックネットワークアクセスアドレス：`http://mirrors.tencent.com`
 - プライベートネットワークアクセスアドレス：`http://mirrors.tencentyun.com/`
 
 > 
@@ -170,11 +170,15 @@ echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian jessie/mongodb-org
 #Debian 9
 echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian stretch/mongodb-org/4.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. 下記のコマンドを実行して、ソフトウェアパッケージリストを更新します。
+3. 下記のコマンドを実行して、キャッシュをクリアします。
+```shell
+sudo apt-get clean all
+```
+4. 下記のコマンドを実行して、ソフトウェアパッケージリストを更新します。
 ```
 sudo apt-get update
 ```
-4. 下記のコマンドを実行して、MongoDBをインストールします。
+5. 下記のコマンドを実行して、MongoDBをインストールします。
 ```
 sudo apt-get install -y mongodb-org
 ```
@@ -194,11 +198,15 @@ echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu xen
 #Ubuntu 18.04
 echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. 下記のコマンドを実行して、ソフトウェアパッケージリストを更新します。
+3. 下記のコマンドを実行して、キャッシュをクリアします。
+```shell
+sudo apt-get clean all
+```
+4. 下記のコマンドを実行して、ソフトウェアパッケージリストを更新します。
 ```
 sudo apt-get update
 ```
-4. 下記のコマンドを実行して、MongoDBをインストールします。
+5. 下記のコマンドを実行して、MongoDBをインストールします。
 ```
 sudo apt-get install -y mongodb-org
 ```
