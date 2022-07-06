@@ -1,7 +1,6 @@
 ## Account Limits for Purchasing CVM Instances
 
 - You need to sign up for a Tencent Cloud account. For more information, see [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
-- You need to verify your identity. For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 - If you create a pay-as-you-go CVM, the system will freeze the cost of one-hour CVM usage. Make sure that your account has sufficient balance for the order.
 
 ## CVM Instance Use Limits
