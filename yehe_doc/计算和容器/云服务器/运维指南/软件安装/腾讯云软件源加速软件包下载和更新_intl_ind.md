@@ -1,7 +1,7 @@
 ## Ikhtisar
 
 Untuk mengatasi masalah akses lambat ke sumber resmi saat menginstal dependensi, Tencent Cloud telah menyiapkan layanan cache untuk beberapa perangkat lunak. Anda dapat mempercepat penginstalan dependensi dengan menggunakan repositori perangkat lunak Tencent Cloud, yang saat ini mendukung akses jaringan publik dan akses jaringan pribadi.
-- Alamat akses jaringan publik: `http://mirrors.cloud.tencent.com/` atau `http://mirrors.tencent.com/` 
+- Alamat akses jaringan publik: `http://mirrors.tencent.com/` 
 - Alamat akses jaringan pribadi: `http://mirrors.tencentyun.com/`
 
 >?
@@ -169,11 +169,15 @@ echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian jessie/mongodb-org
 #Debian 9
 echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian stretch/mongodb-org/4.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. Jalankan perintah berikut untuk memperbarui daftar paket perangkat lunak.
+3. Jalankan perintah berikut untuk menghapus cache.
+```shell
+sudo apt-get clean all
+```
+4. Jalankan perintah berikut untuk memperbarui daftar paket perangkat lunak.
 ```
 sudo apt-get update
 ```
-4. Jalankan perintah berikut untuk menginstal MongoDB.
+5. Jalankan perintah berikut untuk menginstal MongoDB.
 ```
 sudo apt-get install -y mongodb-org
 ```
@@ -193,11 +197,15 @@ echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu xen
 #Ubuntu 18.04
 echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. Jalankan perintah berikut untuk memperbarui daftar paket perangkat lunak.
+3. Jalankan perintah berikut untuk menghapus cache.
+```shell
+sudo apt-get clean all
+```
+4. Jalankan perintah berikut untuk memperbarui daftar paket perangkat lunak.
 ```
 sudo apt-get update
 ```
-4. Jalankan perintah berikut untuk menginstal MongoDB.
+5. Jalankan perintah berikut untuk menginstal MongoDB.
 ```
 sudo apt-get install -y mongodb-org
 ```
