@@ -1,5 +1,5 @@
 ## Multi-AZ Deployment of CKafka
-CKafka Pro Edition supports multi-AZ deployment. When you purchase a CKafka instance in a region that has three or more AZs, you can select any two of them for multi-AZ deployment. Partition replicas of this instance will be forcibly distributed across the nodes in the two AZs, which enables your instance to provide services uninterruptedly when one AZ becomes unavailable.
+CKafka Pro Edition supports multi-AZ deployment. When you purchase a CKafka instance in a region that has three or more AZs, you can select up to three of them for multi-AZ deployment. Partition replicas of this instance will be forcibly distributed across the nodes in the three AZs, which enables your instance to provide services uninterruptedly when one AZ becomes unavailable.
 
 >?Only the Pro Edition supports multi-AZ deployment.
 
@@ -57,23 +57,22 @@ After the cluster network is back to normal, the client can resume production an
 
 ## Directions
 
-### Selecting two AZs for an instance
+### Selecting multiple AZs for instance
 
-1. Log in to the [CKafka console](https://console.intl.cloud.tencent.com/ckafka).
+1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click **Create** to enter the purchase page.
-3. On the purchase page, enter the purchase information.
+3. On the instance purchase page, set the configuration information for purchase based on your actual needs.
    - Billing Mode: Monthly subscription
    - Specs Type: Select the Standard or Pro edition based on your business needs.
    - Kafka Version: Select a Kafka version based on your business needs. For more information, see [Suggestions for CKafka Edition Selection](https://intl.cloud.tencent.com/document/product/597/40964).
    - Region: Select a region close to the resource for client deployment.
    - AZ: Select an AZ based on your actual needs.
      - Standard Edition: This edition does not support multi-AZ deployment.
-     - Pro Edition: If the current region supports multi-AZ deployment, you can select up to two AZs for deployment. For more information on multi-AZ deployment, see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243).
-   - Product Specs: Select a model based on the peak bandwidth and disk capacity.
+     - Pro Edition: If the current region supports multi-AZ deployment, you can select up to three AZs for deployment. For more information on multi-AZ deployment, see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243).
+   - Product Specification: Select a model based on the peak bandwidth and disk capacity.
    - Message Retention Period: Select a value between 24 and 2,160 hours.
      When the disk capacity is insufficient (that is, the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability.
    - VPC: If you need to access other VPCs, you can modify the routing access rules as instructed in [Adding Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555).
-   Tag: It is optional. For more information, see [Tag Overview](https://intl.cloud.tencent.com/document/product/597/41600).
+   - Tag: It is optional. For more information, see [Tag Overview](https://intl.cloud.tencent.com/document/product/597/41600).
    - Instance Name: When purchasing multiple instances, you can use the features of automatically incrementing the instance suffix number and specifying a pattern string. For detailed directions, see [Naming with Consecutive Numeric Suffixes or Designated Pattern String](https://intl.cloud.tencent.com/document/product/597/41581).
 4. Click **Buy Now** to complete the instance creation process.
-
