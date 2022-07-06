@@ -1,4 +1,4 @@
-Anti-DDoS enables you to block or allow inbound traffic by ports. With port filtering enabled, you can customize port settings against inbound traffic, including the protocol type, source port and destination port ranges and set the protection action (allow/block/discard) for the matched rule.
+Port filtering is a fine-grained way to restrict inbound traffic based on port. When it is enabled, you can create a rule by setting the protocol type, source port range, destination port range and action (Discard/Allow/Continue protection).
 
 
 ## Prerequisites
