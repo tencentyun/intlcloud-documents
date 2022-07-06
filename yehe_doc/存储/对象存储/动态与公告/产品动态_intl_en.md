@@ -103,7 +103,7 @@
 <td>Launched the media processing - audio/video segmentation feature</td>
 <td>The audio/video segmentation feature can divide an audio or video into several segments of the specified duration. It allows you to change the container format of the audio or video segments during segmentation.</td>
 <td> 2021-10-14</td>
-<td><a href="https://cloud.tencent.com/document/product/460/62692">Audio/Video Segmentation </a>
+<td>Audio/Video Segmentation 
 </tr>
 </tbody></table>
 
@@ -152,7 +152,7 @@
 <td>Launched the file preview/edit features</td>
 <td>You can quickly preview files in buckets and edit text files in the console.</td>
 <td> 2021-08-05</td>
-<td><a href="https://cloud.tencent.com/document/product/436/60350">Previewing or Editing Object</a>
+<td>Previewing or Editing Object
 </tr>
 <tr>
 <td>Launched the folder sharing feature</td>
@@ -176,7 +176,7 @@
 <td>Launched the media processing - video encryption feature</td>
 <td>The HLS standard encryption capability is added to ensure the security of your video data.</td>
 <td> 2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/436/59289">Preventing Video Leakage with HLS Encryption</a>
+<td>Preventing Video Leakage with HLS Encryption
 </tr>
 </tbody></table>
 
