@@ -30,7 +30,7 @@
 **Consumer Group-Topic 监控**
 ![](https://main.qcloudimg.com/raw/377865e2102df5de14adcfcec0b3c5c0.png)
 **Consumer Group-Partition 监控**
-![](https://qcloudimg.tencent-cloud.cn/raw/f74040fbc37396d4fed8f9d2799be045.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d9c60ee832ad365ba20ffd218664ba2a.png)
 :::
 </dx-tabs>
 
