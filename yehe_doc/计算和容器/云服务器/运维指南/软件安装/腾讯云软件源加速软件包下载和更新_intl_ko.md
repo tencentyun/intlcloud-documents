@@ -1,7 +1,7 @@
 ## 작업 시나리오
 
 Tencent Cloud는 소프트웨어 설치 시 운영사에서 제공하는 소스 액세스 속도가 느린 문제를 해결하기 위해 일부 소프트웨어에 캐시 서비스를 구축했습니다. Tencent Cloud 소프트웨어 보관소를 사용하여 종속 패키지의 설치 속도를 향상할 수 있습니다. 또한 Tencent Cloud 소프트웨어 원본 서버는 사용자가 서비스 아키텍처를 자유롭게 구축할 수 있도록 현재 공용 네트워크 액세스 및 내부 네트워크 액세스를 지원합니다.
-- 공용 네트워크 액세스 주소: `http://mirrors.cloud.tencent.com/`
+- 공용 네트워크 액세스 주소: `http://mirrors.tencent.com`
 - 내부 네트워크 액세스 주소: `http://mirrors.tencentyun.com/`
 
 > 
@@ -170,11 +170,15 @@ echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian jessie/mongodb-org
 #Debian 9
 echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian stretch/mongodb-org/4.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. 다음 명령어를 실행하여 소프트웨어 패키지 리스트를 업데이트합니다.
+3. 다음 명령어를 실행하여 캐시를 지웁니다。
+```shell
+sudo apt-get clean all
+```
+4. 다음 명령어를 실행하여 소프트웨어 패키지 리스트를 업데이트합니다.
 ```
 sudo apt-get update
 ```
-4. 다음 명령어를 실행하여 MongoDB를 설치합니다.
+5. 다음 명령어를 실행하여 MongoDB를 설치합니다.
 ```
 sudo apt-get install -y mongodb-org
 ```
@@ -194,11 +198,15 @@ echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu xen
 #Ubuntu 18.04
 echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. 다음 명령어를 실행하여 소프트웨어 패키지 리스트를 업데이트합니다.
+3. 다음 명령어를 실행하여 캐시를 지웁니다。
+```shell
+sudo apt-get clean all
+```
+4. 다음 명령어를 실행하여 소프트웨어 패키지 리스트를 업데이트합니다.
 ```
 sudo apt-get update
 ```
-4. 다음 명령어를 실행하여 MongoDB를 설치합니다.
+5. 다음 명령어를 실행하여 MongoDB를 설치합니다.
 ```
 sudo apt-get install -y mongodb-org
 ```
