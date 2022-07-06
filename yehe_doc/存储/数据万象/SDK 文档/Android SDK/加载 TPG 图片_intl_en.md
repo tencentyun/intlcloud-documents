@@ -25,7 +25,7 @@ defaultConfig {
 ```
 implementation 'com.qcloud.cos:cloud-infinite:1.2.1'    
 ```
-2. Build a link requesting TPG images in the CI SDK, and then use it with [Glide](https://cloud.tencent.com/document/product/460/47738) to load online TPG images.
+2. Build a link requesting TPG images in the CI SDK, and then use it with Glide to load online TPG images.
 ```
 // Instantiate `CloudInfinite` to build an image request link;
 CloudInfinite cloudInfinite = new CloudInfinite();
