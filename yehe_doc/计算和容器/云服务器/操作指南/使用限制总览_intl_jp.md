@@ -1,7 +1,6 @@
 ## CVMインスタンス購入アカウントの制限
 
 - ユーザーはTencent Cloudアカウントの登録を行う必要があります。登録ガイドについては、[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)をご参照ください。
-- ユーザーは実名認証が必要です。資格認証ガイドについては、[実名認証ガイド](https://intl.cloud.tencent.com/document/product/378/3629)をご参照ください。
 - 従量課金のCVMが作成されると、1時間のホスティング料金が凍結されます。請求書の支払いを行える十分な残高がアカウントにあることを確認してください。
 
 ## CVMインスタンスの使用制限
