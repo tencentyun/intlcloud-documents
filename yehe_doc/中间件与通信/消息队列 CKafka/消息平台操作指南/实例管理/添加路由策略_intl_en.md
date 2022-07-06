@@ -4,7 +4,7 @@ This document describes how to configure a routing rule in the CKafka console to
 
 | Route Type | VPC | Public Domain Name Access |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Access mode | <li>PLAINTEXT</li><li>SASL_PLAINTEXT</li><li>SASL_SSL (only supported by Pro Edition instances)</li><li>SASL_SCRAM (only supported by instances on v2.4.1; for existing instances, you need to <a href = "https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息服务CKafKa&step=1">submit a ticket</a> for application)</li> | <li>SASL_PLAINTEXT</li><li>SASL_SSL (only supported by Pro Edition instances)</li> |
+| Access mode | <li>PLAINTEXT</li><li>SASL_PLAINTEXT</li><li>SASL_SSL (only supported by Pro Edition instances)</li><li>SASL_SCRAM (only supported by instances on v2.4.1; for existing instances, you need to <a href = "https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for application)</li> | <li>SASL_PLAINTEXT</li><li>SASL_SSL (only supported by Pro Edition instances)</li> |
 
 
 
