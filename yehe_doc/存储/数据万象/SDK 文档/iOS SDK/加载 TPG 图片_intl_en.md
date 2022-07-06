@@ -9,7 +9,7 @@ This document provides two ways to load TPG images: loading online and using the
    pod 'CloudInfinite'
    ```
 
-2. Build a link requesting TPG images in the `CloudInfinite` module, and then use it with [SDWebImage](https://cloud.tencent.com/document/product/460/47733) to load online TPG images.
+2. Build a link requesting TPG images in the `CloudInfinite` module, and then use it with SDWebImage to load online TPG images.
     **Objective-C**
     ```
     // Instantiate `CloudInfinite` to build an image request link;
