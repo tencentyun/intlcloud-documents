@@ -194,12 +194,12 @@ Same as the `Request.Input` node in the request.
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | Transcode          | Response.JobsDetail.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | 
-| TranscodeTemplateId| Response.JobsDetail.Operation  | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
-| Watermark          | Response.JobsDetail.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
-| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |None|
+| TranscodeTemplateId| Response.JobsDetail.Operation  | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | 
+| Watermark          | Response.JobsDetail.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | 
+| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | 
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
 | MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
-| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | 
 
 
 `Output` has the following sub-nodes:
