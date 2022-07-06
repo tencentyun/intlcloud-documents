@@ -1,7 +1,6 @@
 ## Batas Akun untuk Membeli Instans CVM
 
 - Anda harus mendaftar untuk akun Tencent Cloud. Untuk informasi selengkapnya, lihat [Mendaftar untuk Akun Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985).
-- Anda harus melalui verifikasi identitas sebelum membeli instans CVM apa pun di daratan China. Untuk informasi selengkapnya, lihat [Panduan Verifikasi Identitas](https://intl.cloud.tencent.com/document/product/378/3629).
 - Jika Anda membuat CVM bayar sesuai pemakaian, sistem akan menangguhkan biaya penggunaan CVM selama satu jam. Pastikan bahwa akun Anda memiliki saldo yang cukup untuk melakukan pemesanan.
 
 ## Batas Penggunaan Instans CVM
