@@ -1,4 +1,14 @@
 
+## June 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Supported SSL encryption</td>
+<td>TencentDB for Redis supports SSL encryption to implement encrypted data transfer.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/48048" target="">SSL Encryption</a></td></tr>
+</table>
+
+
 ## May 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr>
