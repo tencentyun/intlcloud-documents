@@ -1,88 +1,87 @@
-## Feature Description
+## Overview
 This API is used by the app admin to create groups.
+The following video will help you quickly understand how to create groups using the RESTful API:
+<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2725-52991?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 ## API Calling Description
 ### Applicable group types
 
 | Group Type ID | RESTful API Support |
 |-----------|------------|
-| Private | Yes. Same as Work (work group) in the new version. |
-| Public | Yes. |
-| ChatRoom | Yes. Same as Meeting (temporary meeting group) in the new version. |
-| AVChatRoom | Yes. |
-|Community | Yes.  |
+| Private | Yes. Same as work groups (Work) in the new version. |
+| Public | Yes |
+| ChatRoom | Yes. Same as the meeting group (Meeting) in the new version. |
+| AVChatRoom | Yes. To use an audio-video group (AVChatroom), users (including the group owner) must use the SDK to request to join the group. |
+| Community | Yes |
 
-These are the built-in group types in IM. For detailed information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
+
+These are the preset group types in IM. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
 >!
->- If the group type is specified as `AVChatRoom`:
->  - The number of groups that can be created varies depending on the actual package. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
->  - Inviting users to groups is not supported when `AVChatRoom` groups are created, and a 10007 error will be returned if users to invite are specified during creation. The only way for users to join `AVChatRoom` groups is to apply.
->- If the group type is specified as a type other than `AVChatRoom`:
+>- If the group type is specified as audio-video group (AVChatRoom):
+>  - When creating a group of this type, the group creator cannot add users to the group. If a group member is specified during the group creation, error 10007 will be returned. Users can only request to join this type of group. If a group owner is specified, the group owner must use the SDK API to join the group every time he or she uses the group.
+>- If the group type is specified as a type other than an audio-video group (AVChatRoom):
 >  - If neither a group owner nor a group member list is specified when the request is sent, the number of groups that can be created is unrestricted.
 >  - If a group owner or group member list is specified when the request is sent, the specified group owner or group members are automatically added to the group.
 >- If the total number of groups in the app exceeds 100,000, certain fees will be charged. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
->- A user account can only join a limited number of groups. Therefore, when that limit is exceeded, joining or creating groups will fail. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+>- The number of groups that a user can join at the same time is limited. If the number is reached, joining or creating a group will fail. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 ### Sample request URL
 
 ```https
-https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### Request parameters
 
-The list below contains only the parameters commonly used when calling this API and their descriptions. For more parameters, see [RESTful API Introduction](https://intl.cloud.tencent.com/document/product/1047/34620).
+The following table describes the modified parameters when this API is called. For other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| https       | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com` |
-| v4/group_open_http_svc/create_group  | Request API.                             |
-| sdkappid | SDKAppID assigned by the IM console when the application is created. |
-| identifier | The value must be the app admin account. For more information, see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
+| v4/group_open_http_svc/create_group  | Request API                             |
+| sdkappid | SDKAppID assigned by the IM console when an app is created |
+| identifier | App admin account. For more information, see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated by the app admin account. For details, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
-| random | A random 32-bit unsigned integer ranging from 0 to 4294967295. |
-| contenttype | Request format. The value is always `json`. |
+| random | A random 32-bit unsigned integer ranging from 0 to 4,294,967,295 |
+| contenttype   |Request format, which should always be `json`.|
 
+### Maximum call frequency
 
-### Maximum calling frequency
+200 calls per second
 
-The maximum calling frequency is 200 calls per second.
+### Sample request
 
-### Sample request packet
-
-- **Basic form**
-Create a group. The `Owner_Account` field is optional. If the parameter is not specified, the group will have no group owner.
-```
+- **Basic format**
+Create a group. The `Owner_Account` field is optional. If it is not specified, the group will have no group owner. If you want to specify a group owner, ensure that the UserId of the group owner [has been imported](https://intl.cloud.tencent.com/document/product/1047/34953).
+```json
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom
+    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom, or Community
     "Name": "TestGroup" // Group name (required)
 }
 ```
 
-- **Only contains basic group information**
-Create a group and specify basic group information, such as the group introduction and group announcement.
-```
+- **Containing only basic group information**
+Create a group and specify basic group information, such as the group introduction and group notice.
+```json
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom
+    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom, or Community
     "Name": "TestGroup", // Group name (required)
     "Introduction": "This is group Introduction", // Group introduction (optional)
-    "Notification": "This is group Notification", // Group announcement (optional)
+    "Notification": "This is group Notification", // Group notice (optional)
     "FaceUrl": "http://this.is.face.url", // Group profile photo URL (optional)
     "MaxMemberCount": 500, // Maximum number of group members (optional)
     "ApplyJoinOption": "FreeAccess"  // Method for handling requests to join the group (optional)
 }
 ```
 
-- **Only contains group member information**
+- **Containing only group member information**
 Create a group and specify the initial group member list. The group member list is described in the request packet description table.
-```
+```json
 {
     "Name": "TestGroup", // Group name (required)
-    "Type": "Public", // Group type: Private, Public, ChatRoom (AVChatRoom is not supported) (required)
+    "Type": "Public", // Group type: Private, Public, ChatRoom, or Community (AVChatRoom is not supported) (required)
     "MemberList": [ // Initial group member list, which contains a maximum of 100 members (optional)
          {
             "Member_Account": "bob", // Member (required)
@@ -95,23 +94,24 @@ Create a group and specify the initial group member list. The group member list 
 }
 ```
 
+
 - **Custom group ID**
 To simplify group IDs, Tencent Cloud allows apps to customize group IDs when creating groups through the RESTful API.
-```
+```json
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom (required)
+    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom, or Community (required)
     "GroupId": "MyFirstGroup", // User-defined group ID (optional)
     "Name": "TestGroup"   // Group name (required)
 }
 ```
 
-- **Only contains custom group information**
-Create a group and specify group custom fields. `AppDefineData` is not available by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im) before use. For details, see the description table for request packet fields.
-```
+- **Containing only custom group information**
+Create a group and specify group custom fields. The `AppDefineData` field is unavailable by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im) before use. For details, see the request packet field description table.
+```json
 {
     "Name": "TestGroup", // Group name (required)
-    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom (required)
+    "Type": "Public", // Group type: Private, Public, ChatRoom, AVChatRoom, or Community (required)
     "AppDefinedData": [ // Group custom field (optional)
         {
             "Key": "GroupTestData1", // Key of the app custom field
@@ -125,12 +125,12 @@ Create a group and specify group custom fields. `AppDefineData` is not available
 }
 ```
 
-- **Only contains custom group member information**
-Create a group and specify group member custom fields. `AppMemberDefinedData` is not available by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im) before use. For details, see the [description table for request packet fields](#Parameters).
-```
+- **Containing only custom group member information**
+Create a group and specify group member custom fields. By default, AppMemberDefinedData is not available and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im) before use. For details, see the table for request packet fields.
+```json
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private, Public, ChatRoom (AVChatRoom is not supported) (required)
+    "Type": "Public", // Group type: Private, Public, ChatRoom, or Community (AVChatRoom is not supported) (required)
     "Name": "TestGroup", // Group name (required)
     "MemberList": [
        {
@@ -164,14 +164,14 @@ Create a group and specify group member custom fields. `AppMemberDefinedData` is
 ```
 
 - **ALL IN ONE**
-```
+```json
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private, Public, ChatRoom (AVChatRoom is not supported) (required)
+    "Type": "Public", // Group type: Private, Public, ChatRoom, or Community (AVChatRoom is not supported) (required)
     "GroupId":"MyFirstGroup", // User-defined group ID (optional)
     "Name": "TestGroup", // Group name (required)
     "Introduction": "This is group Introduction", // Group introduction (optional)
-    "Notification": "This is group Notification", // Group announcement (optional)
+    "Notification": "This is group Notification", // Group notice (optional)
     "FaceUrl": "http://this.is.face.url", // Group profile photo URL (optional)
     "MaxMemberCount": 500, // Maximum number of group members (optional)
     "ApplyJoinOption": "FreeAccess", // Method for handling requests to join the group (optional)
@@ -219,37 +219,37 @@ Create a group and specify group member custom fields. `AppMemberDefinedData` is
 
 
 [](id:Parameters)
-### Request packet fields
+### Request fields
 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
-| Owner_Account | String | Optional | Group owner ID, which will be automatically added to group members. If this parameter is not specified, the group will have no group owner. |
-| Type | String | Required | Possible group types are Public (social networking group for strangers), Private (work group for friends, same as Work), ChatRoom (meeting group, same as Meeting), and AVChatRoom (audio-video group). |
-| GroupId | String | Optional | To simplify group IDs and make them easier to remember and propagate, Tencent Cloud allows apps to [customize group IDs](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id) when creating groups through the RESTful API. |
-| Name | String | Required | Group name, whose maximum length is 30 bytes. This parameter is UTF-8-encoded, and one Chinese character occupies 3 bytes. |
-| Introduction | String | Optional | Group introduction, whose maximum length is 240 bytes. This parameter is UTF-8-encoded, and one Chinese character occupies 3 bytes. |
-| Notification | String | Optional | Group announcement, whose maximum length is 300 bytes. This parameter is UTF-8-encoded, and one Chinese character occupies 3 bytes. |
+| Owner_Account | String | Optional | Group owner ID, which must be an [imported](https://intl.cloud.tencent.com/document/product/1047/34953) account. The value will be automatically added to group members. If this field is not specified, the group will have no group owner, and group members need to call the group joining API when using an audio-video group (AVChatroom) group. |
+| Type | String | Required | Group type, including Public, Work (Private), Meeting, AVChatRoom, and Community. |
+| GroupId | String | Optional | To simplify group IDs and make them easier to remember and share, we allow apps to [customize group IDs](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id) when creating groups through the RESTful API. |
+| Name | String | Required | Group name, whose maximum length is 30 bytes. This field is UTF-8-encoded, and one Chinese character occupies 3 bytes. |
+| Introduction | String | Optional | Group introduction, whose maximum length is 240 bytes. This field is UTF-8-encoded, and one Chinese character occupies 3 bytes. |
+| Notification | String | Optional | Group notice, whose maximum length is 300 bytes. This field is UTF-8-encoded, and one Chinese character occupies 3 bytes. |
 | FaceUrl | String | Optional | URL of the group profile photo, whose maximum length is 100 bytes. |
-| MaxMemberCount | Integer | Optional | Maximum number of group members. Default values: 200 for `Private`, 2000 for `Public`, 6000 for `ChatRoom`, and no limit for `AVChatRoom` and `BChatRoom`. |
-| ApplyJoinOption | String | Optional | Method for handling requests to join the group, which can be `FreeAccess`, `NeedPermission`, or `DisableApply`. The default method is `NeedPermission`. <br>This parameter is valid only for [groups](https://intl.cloud.tencent.com/document/product/1047/33529#.E5.8A.A0.E7.BE.A4.E6.96.B9.E5.BC.8F.E5.B7.AE.E5.BC.82) that can be joined by users. |
-| AppDefinedData | Array | Optional | Group custom field. This parameter is not available by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im). For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5).|
-| MemberList | Array | Optional | Initial group member list, which contains a maximum of 100 members. For details on group member information fields, see [Group member profiles](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99). |
-| AppMemberDefinedData | Array | Optional | Group member custom fields. This parameter is not available by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im). For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5).|
+| MaxMemberCount | Integer | Optional | Maximum number of group members. The default value is the upper limit of the paid package. For example, it is 20 for a Free Edition. If you upgrade your package, you need to modify this field according to the basic information of the modified group. |
+| ApplyJoinOption | String | Optional | Method for handling requests to join the group, which can be `FreeAccess`, `NeedPermission`, or `DisableApply`. The default method is `NeedPermission`. <br>This field is valid only for [groups](https://intl.cloud.tencent.com/document/product/1047/33529#.E5.8A.A0.E7.BE.A4.E6.96.B9.E5.BC.8F.E5.B7.AE.E5.BC.82) that can be joined by users. |
+| AppDefinedData | Array | Optional | Group-level custom field. This field is unavailable by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im). For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5).|
+| MemberList | Array | Optional | Initial group member list, which contains a maximum of 100 members. For details on group member information fields, see [Group member profile](https://intl.cloud.tencent.com/document/product/1047/33529#SelfInfoFilter). |
+| AppMemberDefinedData | Array | Optional | Group member custom fields. This field is unavailable by default and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im). For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5).|
 
-### Sample response packet body
-- **Basic form, only contains basic group information, only contains group member information, and only contains custom information**
-```
+### Sample response
+- **Basic form, containing only basic group information, containing only group member information, or containing only custom information**
+```json
 {
-    "ActionStatus":"OK",
+    "ActionStatus": "OK",
     "ErrorInfo": "",
     "ErrorCode": 0,
     "GroupId": "@TGS#2J4SZEAEL"
 }
 ```
 - **Custom group ID and ALL IN ONE**
-```
+```json
 {
-    "ActionStatus":"OK",
+    "ActionStatus": "OK",
     "ErrorInfo": "",
     "ErrorCode": 0,
     "GroupId": "MyFirstGroup"
@@ -257,44 +257,44 @@ Create a group and specify group member custom fields. `AppMemberDefinedData` is
 ```
 
 
-### Response packet fields
+### Response fields
 
 | Field | Type | Description |
 |---------|---------|---------|
-| ActionStatus | String | Processing result of the request. `OK`: succeeded. `FAIL`: failed. |
-| ErrorCode | Integer | Error code. `0`: succeeded. Other values: failed. |
-| ErrorInfo | String | Detailed error information. |
-| GroupId | String | Resulting group ID after successful creation, which is assigned by the IM backend. |
+| ActionStatus | String | Request result. `OK`: Successful; `FAIL`: Failed |
+| ErrorCode | Integer | Error code. `0`: Successful; other values: Failed |
+| ErrorInfo | String | Error information |
+| GroupId | String | Group ID after successful creation, which is assigned by the IM backend. |
 
 ## Error Codes
 
-Unless a network error (such as error 502) occurs, the returned HTTP status code for this API is always 200. The specific error code and details can be found in the response packet fields `ErrorCode` and `ErrorInfo` respectively.
+The returned HTTP status code for this API is always 200 unless a network error (such as error 502) occurs. The specific error code and details can be found in the response fields `ErrorCode` and `ErrorInfo` respectively.
 For public error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
-The list below contains error codes specific to this API.
+The following table describes the error codes specific to this API:
 
 | Error Code | Description |
 |---------|---------|
-| 10002 | Internal server error. Please try again. |
+| 10002 | Internal server error. Try again. |
 | 10003| Invalid request command word. |
-| 10004 | Invalid parameter. Check the error description and troubleshoot the issue. |
+| 10004 | Invalid parameter. Check the error description and fix the issue. |
 | 10005 | The number of members imported in the request packet exceeds 100. Reduce the number of members imported in the `MemberList` parameter. |
-| 10006 | The number of groups created exceeds the quota. For example, the cumulative number of BChatRoom groups created exceeds 5, or the net increase in the number of groups in a single day exceeds the set quota. For details, see [Differences in group limits](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82). |
-| 10007 | Insufficient permissions. Check the request parameters based on the error information. For example, the specified group type does not allow adding members, but you specified `MemberList` in the request packet. |
+| 10006 | The operation exceeds the frequency limit. Please reduce the call frequency. This error is usually caused by too much net group increase in a single day or too frequent calls to obtain all groups in the app. |
+| 10007 | Insufficient operation permission. Check the request parameters based on the error information. For example, the specified group type does not allow adding members but `MemberList` was specified in the request. |
 | 10008 | The request is invalid, probably because verification of the signing information in the request failed. Please try again or [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1). |
 | 10016 | The app backend rejected this operation through a third-party callback. Check the returned value of your callback service "Callback before creating a group". |
 | 10021 | The group ID has already been used by another user. Select another group ID. |
-|10025 | You have already used this group ID. Delete the existing group first or select another group ID. |
-| 10036 | The number of AVChatRoom groups created exceeds the limit. Delete some AVChatRoom groups first or refer to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to purchase an upgrade. |
-| 10037 | The request specifies Owner_Account, but the number of groups that the group owner has created or joined exceeds the limit. The group owner needs to quit some groups first or refer to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to purchase an upgrade. |
-| 10038 | The number of members imported in the request packet exceeds the limit. Reduce the number of members imported in the `MemberList` parameter or refer to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to purchase an upgrade. |
-
+|10025 | You have already used this group ID. Disband the existing group first or select another group ID. |
+| 10036 | The number of audio-video groups (AVChatRoom) created exceeds the limit. Delete some of the groups or purchase an upgrade by referring to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10037 | The request specifies Owner_Account, but the number of groups that the group owner has created or joined exceeds the limit. The group owner needs to leave some groups first or refer to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) to purchase an upgrade. |
+| 10038 | The number of members imported in the request packet exceeds the limit. Reduce the number of members imported in the `MemberList` parameter or purchase an upgrade by referring to [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+|10058| You are now using the Free Edition, and the free quota of 100 groups is exceeded. To create more groups, you need to purchase a package. |
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/create_group) to debug this API.
 
-## Reference
-- Deleting a group ([v4/group_open_http_svc/destroy_group](https://intl.cloud.tencent.com/document/product/1047/34896))
+## References
+Disbanding a group ([v4/group_open_http_svc/destroy_group](https://intl.cloud.tencent.com/document/product/1047/34896))
 
 ## Possible Callbacks
 
