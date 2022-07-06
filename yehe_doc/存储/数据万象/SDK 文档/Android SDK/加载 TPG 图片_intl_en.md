@@ -25,7 +25,7 @@ defaultConfig {
 ```
 implementation 'com.qcloud.cos:cloud-infinite:1.2.1'    
 ```
-2. Build a link requesting TPG images in the CI SDK, and then use it with Glide to load online TPG images.
+2. Build a link requesting TPG images in the CI SDK, and then use it with [Glide](https://cloud.tencent.com/document/product/460/47738) to load online TPG images.
 ```
 // Instantiate `CloudInfinite` to build an image request link;
 CloudInfinite cloudInfinite = new CloudInfinite();
@@ -38,7 +38,7 @@ CIImageLoadRequest request = cloudInfinite.requestWithBaseUrlSync(url, transform
 
 ### Option 2. Loading local TPG image
 
-Using the TPG format for the application's built-in resources, such as assets, drawable, and raw can reduce the size of the installation package.
+You can use the TPG format for the application's built-in resources, such as assets, drawable, and raw can reduce the size of the installation package.
 
 ```
 // Load TPG images in `Assets`
