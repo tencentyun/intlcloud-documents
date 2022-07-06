@@ -273,11 +273,15 @@ yum install python-pip -y
 ```
 :::
 ::: Ubuntu\sの場合
-  1. 次のコマンドを実行して、ソフトウェアパッケージリストを更新します。
+  1. 次のコマンドを実行して、キャッシュをクリアします。
+```shellsession
+apt-get clean all
+```
+  2. 次のコマンドを実行して、ソフトウェアパッケージリストを更新します。
 ```shellsession
 apt-get update -y
 ```
-  2. 次のコマンドを実行して、Python-pipをインストールします。
+  3. 次のコマンドを実行して、Python-pipをインストールします。
 ```shellsession
 apt-get install python-pip -y
 ```
