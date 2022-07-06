@@ -106,7 +106,7 @@ player.src(https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/path/e
 #### Step 4. View the effect
 
 1. The m3u8 file and decryption key are successfully obtained.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/4808069fd4269de39c6efff6c1af5908.png)
 2. The video is decrypted and played back successfully.
 
 

@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`UpdateMediaTemplate`) is used to update a text to speech template.
+This API (`UpdateMediaTemplate`) is used to update a text-to-speech template.
 
 ## Request
 
@@ -50,13 +50,13 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | 
 | ------------------ | ------- | ----------------------------------------------------- | 
-| Tag                | Request | Same as `Request.Tag` in the text to speech template creation API `CreateMediaTemplate`.     | 
-| Name               | Request | Same as `Request.Name` in the text to speech template creation API `CreateMediaTemplate`.    | 
-| Codec               | Request | Same as `Request.Codec` in the text to speech template creation API `CreateMediaTemplate`.    | 
-| Mode               | Request | Same as `Request.Mode` in the text to speech template creation API `CreateMediaTemplate`.    |
-| VoiceType               | Request | Same as `Request.VoiceType` in the text to speech template creation API `CreateMediaTemplate`.    |
-| Volume               | Request | Same as `Request.Volume` in the text to speech template creation API `CreateMediaTemplate`.    |
-| Speed               | Request | Same as `Request.Speed` in the text to speech template creation API `CreateMediaTemplate`.    |
+| Tag                | Request | Same as `Request.Tag` in the text-to-speech template creation API `CreateMediaTemplate`.     | 
+| Name               | Request | Same as `Request.Name` in the text-to-speech template creation API `CreateMediaTemplate`.    | 
+| Codec               | Request | Same as `Request.Codec` in the text-to-speech template creation API `CreateMediaTemplate`.    | 
+| Mode               | Request | Same as `Request.Mode` in the text-to-speech template creation API `CreateMediaTemplate`.    |
+| VoiceType               | Request | Same as `Request.VoiceType` in the text-to-speech template creation API `CreateMediaTemplate`.    |
+| Volume               | Request | Same as `Request.Volume` in the text-to-speech template creation API `CreateMediaTemplate`.    |
+| Speed               | Request | Same as `Request.Speed` in the text-to-speech template creation API `CreateMediaTemplate`.    |
 
 
 ## Response

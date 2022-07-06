@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`DescribeMediaTemplates`) is used to search for text to speech templates.
+This API (`DescribeMediaTemplates`) is used to search for text-to-speech templates.
 
 ## Request
 

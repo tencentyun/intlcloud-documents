@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`DeleteMediaTemplate`) is used to delete a text to speech template.
+This API (`DeleteMediaTemplate`) is used to delete a text-to-speech template.
 
 ## Request
 

@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`CreateMediaTemplate`) is used to create a text to speech template.
+This API (`CreateMediaTemplate`) is used to create a text-to-speech template.
 
 ## Request
 

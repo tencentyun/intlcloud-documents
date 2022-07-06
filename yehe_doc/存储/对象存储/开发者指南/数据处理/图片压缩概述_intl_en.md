@@ -1,8 +1,8 @@
 ## Overview
 
-Image compression refers to reducing an image's size as much as possible without changing its quality so as to reduce its storage and traffic costs and speed up access.
+Image compression is the process of downsizing an image as much as possible without sacrificing quality so that it can be stored at a lower cost and accessed more quickly.
 
-COS has launched a variety of image compression methods based on [CI](https://intl.cloud.tencent.com/document/product/1045/33422) for your choice according to your business scenario. Currently supported compression methods are as follows:
+COS offers a variety of image compression options based on [CI](https://intl.cloud.tencent.com/document/product/1045/33422) for your choice based on your business scenario. Available compression options are as follows:
 
 - **WebP compression:** Converts images to the .webp format, which is superior to .jpg in terms of compression. A .webp image is over 25% smaller than a .jpg image with the same quality. This format is suitable for multi-terminal use cases.
 - **HEIF compression:** Converts images to the .heif format, which has a super high compression ratio. A .webp image is over 80% smaller than a .jpg image with the same quality. iOS adopts .heif as the default format for photos, and Android P natively supports .heif.
@@ -85,7 +85,7 @@ Final request URL:
 https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?imageMogr2/format/avif
 ```
 
-The following table lists the compression ratio comparison of different image compression methods:
+The following table lists the compression ratio comparison of different image compression options:
 
 | Format | Size |
 | :---------- | :----------------- |
