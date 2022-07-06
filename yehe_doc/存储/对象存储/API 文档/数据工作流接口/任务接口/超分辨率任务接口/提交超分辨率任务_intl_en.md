@@ -79,7 +79,7 @@ The nodes are described as follows:
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
 | TranscodeTemplateId| Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
 | Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |None|
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
@@ -193,7 +193,7 @@ Same as the `Request.Input` node in the request.
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
-| Transcode          | Response.JobsDetail.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
+| Transcode          | Response.JobsDetail.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | 
 | TranscodeTemplateId| Response.JobsDetail.Operation  | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
 | Watermark          | Response.JobsDetail.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
 | WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |None|
