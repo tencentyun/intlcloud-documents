@@ -9,7 +9,7 @@
 升配前请您进行如下检查：
 
 1. 检查实例是否存在不可用的公网路由，支撑网，VPC 网络等。参见 [添加路由策略](https://intl.cloud.tencent.com/document/product/597/32555)。
-2. 检查实例是否存在有未同步的副本。参见 [查看 Topic 详情](https://intl.cloud.tencent.com/document/product/597/32554)。
+2. 检查实例是否存在有未同步的副本。参见 [查看 Topic 详情](https://intl.cloud.tencent.com/document/product/597/47583)。
 3. 检查实例是否存在未完成的任务（数据迁移），是否存在创建异常的 Topic、删除异常的 Topic 数据等。
 如果存在上述未完成事项及任务，建议等待全部完成后再进行升配，如果其中任务存在执行异常情况，请 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 处理。
 
