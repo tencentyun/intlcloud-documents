@@ -1,6 +1,6 @@
 ### COSBrowser 툴이란 무엇입니까?
 
-COSBrowser는 Tencent Cloud COS가 출시한 시각화 인터페이스 툴로, COS 리소스 조회, 전송, 관리를 간편하고 인터랙티브하게 실현할 수 있습니다. 현재 COSBrowser는 데스크톱 버전(Windows, macOS, Linux) 및 모바일 버전(Android, iOS)을 제공하며, 자세한 내용은 [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)를 참고하십시오.
+COSBrowser는 Tencent Cloud Object Storage(COS)가 출시한 시각화 인터페이스 툴로, COS 리소스 조회, 전송, 관리를 간편하고 인터랙티브하게 실현할 수 있습니다. 현재 COSBrowser는 데스크톱 버전(Windows, macOS, Linux) 및 모바일 버전(Android, iOS)을 제공하며, 자세한 내용은 [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)를 참고하십시오.
 
 
 ### COSBrowser 툴은 어떻게 다운로드합니까?
@@ -9,7 +9,7 @@ COSBrowser는 Tencent Cloud COS가 출시한 시각화 인터페이스 툴로, C
 
 ### COSBrowser에 어떻게 로그인하나요?
 
-자세한 내용은 [데스크톱 사용 설명](https://intl.cloud.tencent.com/document/product/436/32565) 또는 [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566) 문서를 참고하십시오.
+자세한 내용은 [데스크톱 사용 설명서](https://intl.cloud.tencent.com/document/product/436/32565) 또는 [모바일 버전 기능](https://intl.cloud.tencent.com/document/product/436/41616) 문서를 참고하십시오.
 
 **데스크톱 로그인**
 
@@ -30,8 +30,8 @@ COSBrowser 모바일에서는 다음 세 가지 방식의 로그인 방법을 �
 - **영구 키 로그인**: 사용자는 Tencent Cloud API 키의 SecretId와 SecretKey(프로젝트 키는 지원하지 않음)를 이용해 로그인할 수 있으며, 해당 키는 액세스 관리 콘솔의 [API 키 관리](https://console.cloud.tencent.com/cam/capi) 페이지에서 획득할 수 있습니다. 로그인 후 해당 계정은 영구적으로 로그인 상태가 유지됩니다.
 
 >?
-- 사용자의 Tencent Cloud 계정을 QQ 계정으로 생성한 경우에도 WeChat 빠른 로그인을 통해 로그인할 수 있으며, WeChat 미니프로그램 인터페이스에서 QQ 로그인을 선택하면 됩니다.
-- 서브 계정 사용자는 키를 사용하거나 WeChat 빠른 로그인 방식으로 로그인할 수 있으며, WeChat 로그인을 선택하는 경우 WeChat 미니프로그램 인터페이스에서 서브 계정을 선택하면 됩니다.
+>- 사용자의 Tencent Cloud 계정을 QQ 계정으로 생성한 경우에도 WeChat 빠른 로그인을 통해 로그인할 수 있으며, WeChat 미니프로그램 인터페이스에서 QQ 로그인을 선택하면 됩니다.
+>- 서브 계정 사용자는 키를 사용하거나 WeChat 빠른 로그인 방식으로 로그인할 수 있으며, WeChat 로그인을 선택하는 경우 WeChat 미니프로그램 인터페이스에서 서브 계정을 선택하면 됩니다.
 
 자세한 내용은 [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)를 참고하십시오.
 
@@ -45,6 +45,18 @@ COSBrowser 모바일에서는 다음 세 가지 방식의 로그인 방법을 �
 
 임시 키로 로그인할 수 없습니다.
 
+### COSBrowser 체험판은 어떻게 들어가나요?
+
+**체험 참고사항**
+
+**애플리케이션 체험 규정:**
+
+- 체험판 이동 후 COSBrowser는 자동으로 임시 계정을 생성하여 로그인합니다. 임시 계정은 1회용입니다. 종료 후 자동으로 로그아웃되며 모든 데이터가 지워집니다.
+- 임시 계정은 24시간 동안 유효합니다. 만료 후에도 체험판을 계속하려면 이 페이지에서 다시 클릭하십시오.
+
+**애플리케이션 체험 제한 사항:**
+
+체험판은 파일 업로드, 파일 다운로드, 링크 공유와 같은 기본적인 데이터 관리 기능만 제공합니다. 더 많은 기능을 사용해 보려면 개인 계정으로 로그인하십시오. 자세한 내용은 [COSBrowser 시작하기](https://intl.cloud.tencent.com/document/product/436/35276)를 참고하십시오.
 
 ### CentOS 그래픽 인터페이스를 더블 클릭했는데도 COSBrowser 클라이언트가 실행되지 않습니다.
 
@@ -70,7 +82,7 @@ COSBrowser 모바일에서는 다음 세 가지 방식의 로그인 방법을 �
 
 ### COSBrowser의 파일 동기화 기능은 무엇입니까?
 
-COSBrowser 데스크톱 버전의 **파일 동기화 기능**을 사용하여 로컬 폴더의 지정된 파일을 버킷에 실시간으로 업로드할 수 있습니다. 자세한 지침은 [데스크톱 버전 사용 설명](https://intl.cloud.tencent.com/document/product/436/32565#.E5.9F.BA.E6.9C.AC.E5.8A.9F.E8.83.BD)의 파일 동기화 기능에 대한 설명을 참고하십시오.
+COSBrowser 데스크톱 버전의 **파일 동기화 기능**을 사용하여 로컬 폴더의 지정된 파일을 버킷에 실시간으로 업로드할 수 있습니다. 자세한 지침은 [데스크톱 버전 사용 설명서](https://intl.cloud.tencent.com/document/product/436/32565#.E5.9F.BA.E6.9C.AC.E5.8A.9F.E8.83.BD)의 파일 동기화 기능에 대한 설명을 참고하십시오.
 
 ### COSBrowser의 파일 목록에서 모든 파일 썸네일을 한 번에 볼 수 있습니까?
 
@@ -98,8 +110,8 @@ Windows 버전 COSBrowser 툴을 예로 들면, **고급 설정**으로 이동�
 
 
 >?
-- 파일에 대해 공개 읽기가 활성화된 경우 서명되지 않은 링크, 즉 ‘객체 주소’(영구적으로 유효함)를 사용하여 액세스할 수 있습니다.
-- 파일에 대해 비공개 읽기가 활성화된 경우 서명된 링크를 사용하여 액세스해야 합니다. **링크 복사** 창에서 링크 유효 기간을 사용자 정의할 수 있으며 기본적으로 2시간입니다.
+>- 파일에 대해 공개 읽기가 활성화된 경우 서명되지 않은 링크, 즉 ‘객체 주소’(영구적으로 유효함)를 사용하여 액세스할 수 있습니다.
+>- 파일에 대해 비공개 읽기가 활성화된 경우 서명된 링크를 사용하여 액세스해야 합니다. **링크 복사** 창에서 링크 유효 기간을 사용자 정의할 수 있으며 기본적으로 2시간입니다.
 
 
 ### 시스템이 macOS인데 COSBrowser에서 "업데이트 실패, 권한이 거부되었습니다."가 팝업됩니다. 어떻게 처리해야 합니까?
