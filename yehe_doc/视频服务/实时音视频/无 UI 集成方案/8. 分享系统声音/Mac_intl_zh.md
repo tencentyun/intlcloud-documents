@@ -22,9 +22,9 @@ end
 </dx-codeblock>
 2. 执行 `pod install` 命令安装 **TRTCPrivilegedTask** 库。
 
->?
->- 如果项目根目录下没有 `Podfile` 文件，请先执行 `pod init` 命令新建文件再添加以下内容。
->-  CocoaPods 的安装方法，请参见  [CocoaPods 官网安装说明](https://guides.cocoapods.org/using/getting-started.html)。
+<dx-alert infotype="explain">
+<li>如果项目根目录下没有 `Podfile` 文件，请先执行 `pod init` 命令新建文件再添加以下内容。</li>
+<li>CocoaPods 的安装方法，请参见  [CocoaPods 官网安装说明](https://guides.cocoapods.org/using/getting-started.html)。</li></dx-alert>
 
 :::
 ::: 手动集成
