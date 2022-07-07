@@ -21,11 +21,7 @@
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/61feacdc53fa9303e0f8d8bbc7403740.png)
 
-## 语音过滤服务
-用量统计展示使用语音过滤的音频时长数据。
 
-- 默认显示近7天的语音时长数据，支持切换时间查看用量数据。
-  
 
 
 

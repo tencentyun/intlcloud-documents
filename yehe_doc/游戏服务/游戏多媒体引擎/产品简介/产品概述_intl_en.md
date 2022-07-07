@@ -15,6 +15,5 @@ This mode allows multiple players to speak at the same time with ultra low laten
 ### Voice Message and Speech-to-text Service
 GME supports sending recorded voice messages to game channels and converting them into text messages in real time, with clear sound quality and high accuracy of voice recognition.
 
-### Voice Analysis Service
-GME can intelligently recognize all kinds of illegal and inappropriate voice violations in game applications such as pornographic, abusive, advertising information.
-  
+
+

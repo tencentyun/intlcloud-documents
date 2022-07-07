@@ -21,11 +21,7 @@ The usage statistics display the DAU data of an offline voice application.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/61feacdc53fa9303e0f8d8bbc7403740.png)
 
-## Phrase Filtering Service
-The usage statistics display the duration of audio processed for phrase filtering.
 
-- By default, the audio duration for the last 7 days is displayed, and the usage data for different time periods can be viewed.
-  
 
 
 

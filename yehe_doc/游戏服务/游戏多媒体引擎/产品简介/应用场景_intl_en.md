@@ -40,11 +40,6 @@ The real-time speech-to-text conversion feature facilitates the implementation o
 
 
 
-## Audio Content Moderation
-
-GME provides a basis for user behavior judgments for the gaming business and creates a healthy gaming environment. It can:
-- Moderate non-compliant content in audio streams, short audio messages, and audio files.
-- Recognize pornographic, vulgar, violent, illegal, inappropriate, and advertising content based on tags to implement full-scenario coverage and block non-compliant content under compliance requirements.
 
 
 
