@@ -2,7 +2,7 @@
 
 
 ## Voice Chat Service
-
+Real-time Voice Service is billed by voice minutes on a monthly basis.
 
 #### Price list
 
