@@ -22,9 +22,10 @@ end
 </dx-codeblock>
 2. `pod install` 명령어를 실행하여 **TRTCPrivilegedTask** 라이브러리를 설치합니다.
 
->?
->- 프로젝트의 루트 디렉터리에 `Podfile` 파일이 없는 경우, 먼저 `pod init` 명령어를 실행하여 파일을 생성한 뒤 다음 내용을 추가합니다.
->-  CocoaPods 설치 방법은 [CocoaPods 공식 홈페이지 설치 설명](https://guides.cocoapods.org/using/getting-started.html)을 참고하십시오.
+<dx-alert infotype="explain">
+<li>프로젝트의 루트 디렉터리에 `Podfile` 파일이 없는 경우, 먼저 `pod init` 명령어를 실행하여 파일을 생성한 뒤 다음 내용을 추가합니다.</li>
+<li>CocoaPods 설치 방법은 [CocoaPods 공식 홈페이지 설치 설명](https://guides.cocoapods.org/using/getting-started.html)을 참고하십시오.</li></dx-alert>
+
 :::
 ::: 수동 통합
 1. [TRTCPrivilegedTask](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/TRTCPrivilegedTask/TRTCPrivilegedTask.tar.bz2) 라이브러리를 다운로드합니다.

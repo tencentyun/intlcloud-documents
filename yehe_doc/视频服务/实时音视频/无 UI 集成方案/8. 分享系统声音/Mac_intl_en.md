@@ -23,9 +23,10 @@ end
 
 2. Run the `pod install` command to install the **TRTCPrivilegedTask** library.
 
->?
->- If you cannot find a `Podfile` file in the directory, run the `pod init` command to create one and then add the above content.
->-  For how to install CocoaPods, see CocoaPods' [official installation document](https://guides.cocoapods.org/using/getting-started.html).
+<dx-alert infotype="explain">
+<li>If you cannot find a `Podfile` file in the directory, run the `pod init` command to create one and then add the above content.</li>
+<li>For how to install CocoaPods, see CocoaPods' [official installation document](https://guides.cocoapods.org/using/getting-started.html).</li></dx-alert>
+
 :::
 ::: Manual integration
 1. Download the [TRTCPrivilegedTask](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/TRTCPrivilegedTask/TRTCPrivilegedTask.tar.bz2) library.
