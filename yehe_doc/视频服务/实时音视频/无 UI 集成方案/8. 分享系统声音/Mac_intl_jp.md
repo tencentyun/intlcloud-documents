@@ -23,9 +23,9 @@ end
 
 2. `pod install`コマンドを実行し、**TRTCPrivilegedTask**ライブラリをインストールします。
 
->?
->- プロジェクトのルートディレクトリに`Podfile`ファイルがない場合は、まず`pod init`コマンドを実行しファイルを新規作成してから、以下の内容を追加してください。
->-  CocoaPodsのインストール方法については、[CocoaPods公式サイトインストールの説明](https://guides.cocoapods.org/using/getting-started.html)をご参照ください。
+<dx-alert infotype="explain">
+<li>プロジェクトのルートディレクトリに`Podfile`ファイルがない場合は、まず`pod init`コマンドを実行しファイルを新規作成してから、以下の内容を追加してください。</li>
+<li>CocoaPodsのインストール方法については、[CocoaPods公式サイトインストールの説明](https://guides.cocoapods.org/using/getting-started.html)をご参照ください。</li></dx-alert>
 
 :::
 ::: 手動統合
