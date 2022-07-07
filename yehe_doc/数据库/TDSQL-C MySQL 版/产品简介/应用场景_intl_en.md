@@ -26,7 +26,7 @@ This document describes the use cases of TDSQL-C for MySQL.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9ec947aeee9a98949f3f9a60bf3135ca.png)
 
 ## Finance and Insurance
-- It is deployed in a multi-AZ architecture for disaster recovery and backup, with data backups stored in multiple AZs. In addition, it utilizes the global database network feature to implement remote disaster recovery. In this way, cross-region instances can be read and written at the same time, and intra-region deployment can be transformed to cross-region deployment with no code changes required.
+- It is deployed in a multi-AZ architecture for disaster recovery and backup, with data backups stored in multiple AZs. 
 - It adopts comprehensive methods such as allowlist and VPC to provide security guarantees for various links in database data access, storage, and management.
 - It uses the shared distributed storage architecture, which completely resolves the problem of poor data consistency in replica databases caused by async source-replica replication.
 
