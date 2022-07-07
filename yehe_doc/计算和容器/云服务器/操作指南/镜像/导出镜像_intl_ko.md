@@ -13,6 +13,16 @@ Tencent Cloud는 생성된 사용자 정의 이미지를 [Cloud Object Storage](
 - 전체 이미지를 내보낼 때 데이터 디스크의 수는 5보다 클 수 없습니다.
 
 
+## 요금 설명[](id:feeDescription)
+- CVM 이용 시 COS 등 다른 서비스를 이용하실 경우 실제 이용하신 서비스의 과금 규정에 따라 요금이 산정됩니다.
+- COS 버킷으로 이미지 내보내기 관련 요금:
+ - **[스토리지 사용 요금](https://intl.cloud.tencent.com/document/product/436/40099)**: COS 버킷에 이미지를 저장하면 객체 크기, 스토리지 등급 및 리전에 따라 계산되는 스토리지 사용 요금이 발생합니다.
+ - **[요청 요금](https://intl.cloud.tencent.com/document/product/436/40100)**: 이미지를 COS 버킷으로 내보내는 경우 쓰기 요청 수에 따라 계산되는 쓰기 요청 요금이 발생합니다.
+ - **[트래픽 요금](https://intl.cloud.tencent.com/document/product/436/33776)**: 이미지를 COS 버킷으로 내보내면 업스트림 트래픽이 생성됩니다. 공용 및 사설 네트워크를 통한 업스트림 트래픽은 무료입니다.
+- COS 버킷에서 이미지 다운로드 관련 요금:
+ - **[요청 요금](https://intl.cloud.tencent.com/document/product/436/40100)**: COS 버킷에서 이미지를 다운로드하는 경우 쓰기 요청 수에 따라 계산되는 쓰기 요청 요금이 발생합니다.
+ - **[트래픽 요금](https://intl.cloud.tencent.com/document/product/436/33776)**: COS 버킷에서 이미지를 다운로드하면 다운스트림 트래픽이 생성됩니다. COS는 트래픽 양을 계산합니다. 사설 네트워크를 통한 다운스트림 트래픽은 무료이지만 공용 네트워크를 통한 다운스트림 트래픽은 요금이 부과됩니다.
+
 ## 작업 단계
 1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바의 **[이미지](https://console.cloud.tencent.com/cvm/image)**를 선택합니다.
 2. ‘이미지’ 페이지 상단에서 내보낼 사용자 정의 이미지가 있는 리전을 선택하고 **사용자 정의 이미지** 탭을 클릭합니다.

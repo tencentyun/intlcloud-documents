@@ -4,8 +4,8 @@ CVM 빠른 설정과 비교하여 사용자 정의 설정은 더 많은 이미�
 
 CVM를 사용하기 전 다음과 같은 준비 작업을 완료해야 합니다.
 1. Tencent Cloud 계정 생성 및 실명 인증을 완료합니다.
-신규 사용자의 Tencent Cloud 공식 사이트 [가입](https://intl.cloud.tencent.com/register) 관련 자세한 내용은 [Tencent Cloud 가입](https://intl.cloud.tencent.com/zh/document/product/378/17985)을 참고하십시오.
-2. [Tencent Cloud CVM 소개 페이지](https://intl.cloud.tencent.com/zh/products/cvm)에서 **구매하기**를 클릭합니다.
+신규 사용자의 Tencent Cloud 공식 사이트 [가입](https://intl.cloud.tencent.com/register) 관련 자세한 내용은 [Signing Up](https://intl.cloud.tencent.com/zh/document/product/378/17985)을 참고하십시오.
+2. [Tencent Cloud Cloud Virtual Machine 소개 페이지](https://intl.cloud.tencent.com/zh/products/cvm)에서 **구매하기**를 클릭합니다.
 
 
 ## 모델 선택[](id:SelectType)
@@ -23,11 +23,11 @@ CVM를 사용하기 전 다음과 같은 준비 작업을 완료해야 합니다
 <tr><td>가용존</td><td>필수</td><td>실제 요구 사항에 따라 선택합니다.</br>여러 대의 CVM을 구매해야 할 경우 서로 다른 가용존을 선택하여 재해 복구 효과를 실현할 것을 권장합니다.</td></tr>
 <tr><td>네트워크</td><td>필수</td><td>Tencent Cloud에 구축된 논리적 격리를 나타내는 네트워크 용량으로써 VPC는 최소 하나의 서브넷으로 구성됩니다. 시스템은 사용자를 위해 각 리전에 기본 VPC 및 서브넷을 제공합니다.</br>
 기존 VPC/서브넷이 사용자의 요구사항을 충족하지 못한 경우 VPC 콘솔에서 생성할 수 있습니다.</br><b>주의 사항</b>:<ul><li>동일한 VPC에서 리소스는 기본으로 내부 네트워크를 상호 연결합니다.</li><li>구매할 때 CVM과 가용존 속성이 동일한 서브넷에서 CVM을 생성해야 합니다.</li></ul></td></tr>
-<tr><td>인스턴스</td><td>필수</td><td>Tencent Cloud는 기본 하드웨어 차이에 따라, 여러 종류의 인스턴스 유형을 제공하고 있습니다. 최적의 성능을 원한다면 최신 인스턴스 유형을 사용하시길 권장합니다.</br>인스턴스에 대한 더 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/11518">인스턴스 사양</a>을 참고하십시오.</td></tr>
-<tr><td>이미지</td><td>필수</td><td>Tencent Cloud는 공용 이미지, 사용자 정의 이미지, 공유 이미지, 마켓플레이스를 제공하므로, <a href="https://intl.cloud.tencent.com/document/product/213/4941">이미지 유형</a>을 참고하여 선택하실 수 있습니다.</br>Tencent Cloud를 처음 사용하는 경우, 공용 이미지를 권장합니다. Windows 운영 체제 정품이 활성화되어 있어 추가 비용 부담이 없습니다(북미 지역 제외). </td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">시스템 디스크</a></td><td>필수</td><td>운영 체제 설치에 사용되며, 기본 용량은 50GB입니다.</br>리전에 따라 선택 가능한 CBS 유형이 달라질 수 있으므로, 실제 페이지 안내에 따라 선택하시기 바랍니다.</br>CBS에 대한 더 자세한 설명은 <a href="https://intl.cloud.tencent.com/document/product/362/31636">CBS 유형</a>을 참고하십시오.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">데이터 디스크</a></td><td>옵션</td><td>CVM의 스토리지 용량 확장에 사용되며, 안전하고 효율적인 스토리지 디바이스를 제공합니다. 기본적으로 CBS 데이터 디스크가 추가되어 있지 않습니다.</br>CBS에 대한 더 자세한 설명은 <a href="https://intl.cloud.tencent.com/document/product/362/31636">CBS 유형</a>을 참고하십시오.</td></tr>
-<tr><td>정기 스냅샷</td><td>옵션</td><td>시스템 디스크 또는 데이터 디스크에 대해 정기 스냅샷 정책을 설정할 수 있습니다. 정기 스냅샷에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/362/35238">정기 스냅샷</a>을 참고하십시오.</td></tr>
+<tr><td>인스턴스</td><td>필수</td><td>Tencent Cloud는 기본 하드웨어 차이에 따라, 여러 종류의 인스턴스 유형을 제공하고 있습니다. 최적의 성능을 원한다면 최신 인스턴스 유형을 사용하시길 권장합니다.</br>인스턴스에 대한 더 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/11518">인스턴스 스펙</a>을 참고하십시오.</td></tr>
+<tr><td>이미지</td><td>필수</td><td>Tencent Cloud는 공용 이미지, 사용자 정의 이미지, 공유 이미지를 제공합니다. <a href="https://intl.cloud.tencent.com/document/product/213/4941">이미지 유형</a>을 참조하여 선택하실 수 있습니다.</br>Tencent Cloud를 처음 사용할 경우, 공용 이미지를 선택하시길 권장합니다. Windows 운영 체제 정품이 활성화되어 있어 추가로 비용을 부담할 필요가 없습니다(북미 지역 제외). </td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">시스템 디스크</a></td><td>필수</td><td>운영 체제 설치에 사용되며, 기본 용량은 50GB입니다.</br>리전에 따라 선택 가능한 클라우드 디스크 유형이 달라질 수 있으므로, 실제 페이지 안내에 따라 선택하시기 바랍니다.</br>클라우드 디스크에 대한 더 자세한 설명은 <a href="https://intl.cloud.tencent.com/document/product/362/31636">Cloud Disk Types</a>를 참고하십시오.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">데이터 디스크</a></td><td>옵션</td><td>CVM의 스토리지 용량 확장에 사용되며, 안전하고 효율적인 스토리지 디바이스를 제공합니다. 기본적으로 클라우드 데이터 디스크가 추가되어 있지 않습니다.</br>클라우드 디스크에 대한 더 자세한 설명은 <a href="https://intl.cloud.tencent.com/document/product/362/31636">Cloud Disk Types</a>를 참고하십시오.</td></tr>
+<tr><td>정기 스냅샷</td><td>옵션</td><td>시스템 디스크 또는 데이터 디스크에 대해 정기 스냅샷 정책을 설정할 수 있습니다. 정기 스냅샷에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/362/35238">Scheduled Snapshots</a>를 참고하십시오.</td></tr>
 <tr><td>공용 네트워크 대역폭</td><td>필수</td><td>Tencent Cloud는 다음 2가지 네트워크 과금 방식을 제공하므로 실제 필요에 따라 선택하십시오.<ul><li><b>대역폭 과금</b>: 고정적인 대역폭을 선택하여 본 대역폭을 초과할 경우 패킷이 손실됩니다. 네트워크 변동이 적은 시나리오에 적합합니다.</li><li><b>트래픽 과금</b>: 실제 사용한 트래픽에 따라 과금합니다. 피크값 대역폭을 제한하여 예기치 않은 트래픽에 따른 비용을 피할 수 있으며 대역폭이 해당 값을 초과할 경우 패킷이 손실됩니다. 네트워크 변동이 큰 시나리오에 적합합니다.</li></ul></td></tr>
 <tr><td>IPv6 주소</td><td>옵션</td><td>인스턴스의 IPv6 주소를 활성화합니다.</a>.</td></tr>
 <tr><td>수량</td><td>필수</td><td>구매할 CVM 수량을 표시합니다.</td></tr> 
@@ -41,44 +41,46 @@ CVM를 사용하기 전 다음과 같은 준비 작업을 완료해야 합니다
 ![](https://main.qcloudimg.com/raw/be9b22616da76afd527f855368707899.png)
 <table>
 <tr><th style="width: 20%">유형</th><th style="width: 12%">필수/옵션</th><th>설정 설명</th></tr>
-<tr><td>보안 그룹</td><td>필수</td><td>단일 또는 여러 CVM의 네트워크 액세스 제어에 사용됩니다.</br><b>3389 로그인 포트가 개방되어 있는지 확인하시기 바라며, </br>더 자세한 정보는 <a href="https://intl.cloud.tencent.com/document/product/213/12452">보안 그룹</a>을 참조 바랍니다.</td></tr>
+<tr><td>보안 그룹</td><td>필수</td><td>단일 또는 여러 CVM의 네트워크 액세스 제어에 사용됩니다.</br><b>3389 로그인 포트가 개방되었는지 확인하시기 바랍니다.</br>더 자세한 정보는 <a href="https://intl.cloud.tencent.com/document/product/213/12452">보안 그룹</a>을 참조 바랍니다.</td></tr>
 <tr><td>세부 항목</td><td>필수</td><td>기본적인 프로젝트로서 실제 필요에 따라 구축된 프로젝트를 선택하고 다양한 CVM 관리에 사용할 수 있습니다.</td></tr>
-<tr><td>태그</td><td>옵션</td><td>태그 설정 후 CVM 리소스를 분류하여 관리할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/19548">태그</a>를 참고하여 설정합니다.</td></tr>
+<tr><td>태그</td><td>옵션</td><td>태그 설정 후 CVM 리소스를 분류하여 관리할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/19548">Tag</a>를 참고하여 설정합니다.</td></tr>
 <tr><td>인스턴스 이름</td><td>옵션</td><td>생성할 CVM 이름을 표시합니다.</br>사용자가 이름을 정의하고 ‘CVM-01’로 생성할 것을 권장합니다.</td></tr>
-<tr><td>로그인 방식</td><td>필수</td><td>사용자는 실제 필요에 따라 CVM에 로그인하는 방식을 설정합니다.<ul><li><b>비밀번호 설정</b>: 사용자 정의로 인스턴스 로그인의 비밀번호를 설정합니다.</li><li><b>비밀번호 자동 생성</b>:자동으로 생성된 비밀번호는 <a href="https://console.cloud.tencent.com/message">내부 메시지</a>방식으로 전송됩니다.</li></ul></td></tr>
+<tr><td>로그인 방식</td><td>필수</td><td>사용자는 실제 필요에 따라 CVM에 로그인하는 방식을 설정합니다.<ul><li><b>비밀번호 설정</b>: 인스턴스 로그인 비밀번호를 설정합니다.</li><li><b>비밀번호 자동 생성</b>:자동으로 생성된 비밀번호는 <a href="https://console.cloud.tencent.com/message">내부 메시지</a>방식으로 전송됩니다.</li></ul></td></tr>
+<tr><td>인스턴스 폐기 방지</td><td>옵션</td><td>기본적으로 비활성화되어 있습니다. 필요에 따라 활성화할 수 있습니다. 활성화하면 콘솔이나 API를 통해 인스턴스를 폐기할 수 없습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/47383">인스턴스 폐기 방지 활성화</a>를 참고하십시오.</td></tr>
 <tr><td>보안 강화</td><td>옵션</td><td>무료로 활성화되도록 기본 설정되어 있으며, 서버 보안 체계를 구축해 데이터 유출을 방지할 수 있습니다.</td></tr>
 <tr><td>클라우드 모니터링</td><td>옵션</td><td>무료로 활성화하며 3차원 CVM 데이터 모니터링, 스마트한 데이터 분석, 실시간 장애 알람 및 개성화된 데이터 리포트 설정을 제공하여 사용자가 서비스와 CVM 상태를 정확하게 파악할 수 있습니다.</td></tr>
-<tr><td>자동 연장</td><td>옵션</td></br>‘계정 잔액이 충분한 경우 장치 만료 후 매월 자동 연장’을 선택하여 장치 만료 시 자동으로 연장되도록 합니다.</td></tr>
+<tr><td>TAT</td><td>옵션</td><td>기본 컴포넌트에 대해 활성화되며 일일 관리 작업을 위해 비밀번호 또는 SSH 로그인 없이 일괄 인스턴스 관리 및 명령 실행을 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1147/46034">TAT</a>를 참고하십시오.</td</tr>
 <tr><td>고급 설정</td><td>옵션</td><td>실제 필요에 따라 더 다양한 인스턴스를 설정할 수 있습니다.<ul><li><b>호스트 이름</b>: CVM 운영 체제 내의 컴퓨터 이름을 사용자 정의 설정할 수 있으며, CVM 생성 후 CVM에 로그인하여 조회할 수 있습니다.</li><li><b>CAM의 역할</b>: 역할 설정 후 역할을 통해 CVM에 Tencent Cloud의 서비스 및 운영, 리소스에 대한 액세스 권한을 부여할 수 있습니다. <a href="https://intl.cloud.tencent.com/document/product/213/38290">인스턴스 역할 관리</a>를 참고하여 설정합니다.</li><li><b>배치 그룹</b>: 필요에 따라 인스턴스를 배치 그룹에 추가하여 서비스 가용성을 높일 수 있습니다. <a href="https://intl.cloud.tencent.com/document/product/213/15486">배치 그룹</a>을 참고하여 설정합니다.</li><li><b>사용자 정의 데이터</b>: 지정된 사용자 정의 데이터로 인스턴스를 설정하여 인스턴스 실행 시 설정된 스크립트를 실행합니다. 한 번에 여러 대의 CVM을 구매할 경우, 사용자 정의 데이터가 모든 CVM에서 실행됩니다. Windows 운영 체제에서는 PowerShell 형식을 지원하며, 최대 16KB의 원시 데이터를 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/17526">사용자 정의 데이터 설정(Windows CVM)</a>을 참고하십시오.</br><b>주의 사항</b>: Windows 공용 이미지만 사용자 정의 데이터 설정을 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/17526#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9">주의 사항</a>을 참고하십시오.
 </table>
+
 
 2. **다음 단계: 설정 정보 확인**을 클릭하고 설정 정보 확인 페이지로 이동합니다.
 
 ## 설정 정보 확인
 
 1. 각 설정 비용에 대한 자세한 내용은 구매한 CVM 정보를 확인합니다.
-2. ‘읽기 <Tencent Cloud 서비스 계약>및 선택
+2. ‘<Tencent Cloud 서비스 약관>’을 읽고 동의 체크합니다.
 4. 실제 필요에 따라 다음 작업을 수행합니다.
  - **실행 템플릿으로 저장** 선택: 인스턴스 설정을 실행 템플릿으로 저장합니다. 실행 템플릿을 사용하여 인스턴스를 빠르게 생성할 수 있습니다.
  - **API Explorer 모범 사례 스크립트 생성** 선택: 선택된 설정에 해당하는 인스턴스를 생성하여 OpenAPI 모범 사례 스크립트 코드를 생성하고, 동일한 설정으로 클라우드 서버 구입을 위한 코드를 저장할 수 있습니다. 자세한 내용은 [인스턴스 생성을 위한 API Explorer 모범 사례 스크립트 생성](https://intl.cloud.tencent.com/document/product/213/39811)을 참고하십시오.
 5. **구매하기** 또는 **활성화**를 클릭하여 결제를 완료합니다. 결제를 완료하면 [CVM 콘솔](https://console.cloud.tencent.com/cvm)에서 CVM을 확인하실 수 있습니다.
-CVM 인스턴스 이름, 공인 IP 주소, 개인 IP 주소, 로그인 이름, 초기 로그인 비밀번호 등 정보는 [내부 메시지](https://console.cloud.tencent.com/message)로 계정에 전송됩니다. 이 정보로 인스턴스를 로그인 및 관리할 수 있으며 호스트의 보안성을 보장하기 위해 CVM 로그인 비밀번호를 변경하십시오.
+CVM 인스턴스 이름, 공용 IP 주소, 개인 IP 주소, 로그인 이름, 초기 로그인 비밀번호 등 정보는 [내부 메시지](https://console.cloud.tencent.com/message)로 계정에 전송됩니다. 이 정보로 인스턴스를 로그인 및 관리할 수 있으며 호스트의 보안성을 보장하기 위해 CVM 로그인 비밀번호를 변경하십시오.
 
 ## 인스턴스 로그인 및 연결
 
 CVM 작업 완료 후, Tencent Cloud 콘솔을 통해 CVM에 로그인하여 실제 요구 사항에 따라 스테이션 구축 등 작업을 실행할 수 있습니다.
 Tencent Cloud 콘솔을 통한 CVM 로그인은 실제 요구 사항에 따라 해당하는 로그인 방식을 선택하십시오.
-- [표준 방식을 사용하여 Windows 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/41018)
-- [RDP 파일을 사용하여 Windows 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/5435)
-- [원격으로 바탕화면에 연결하여 Windows 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32498)
+- [표준 로그인 방식으로 Windows 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/41018)
+- [RDP 파일을 통한 Windows 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/5435)
+- [원격 데스크탑을 사용하여 Windows 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32498)
 
 ## 데이터 디스크 포맷과 파티션
 
 [모델 선택](#SelectType) 시 데이터 디스크를 추가한 경우 인스턴스에 로그인한 후 데이터 디스크에 대해 포맷 및 파티션을 실행해야 합니다. **데이터 디스크를 추가하지 않은 경우 이 단계를 건너뛸 수 있습니다.**
 디스크 용량 크기, CVM 운영 체제 유형에 따라 적합한 작업 가이드를 선택하십시오.
 - 디스크 용량이 2TB 미만인 경우
-[CBS 초기화(Windows)](https://intl.cloud.tencent.com/document/product/362/31597)
+[Initializing Cloud Disks (<2 TB)](https://intl.cloud.tencent.com/document/product/362/31597)
 - 디스크 용량이 2TB 이상인 경우
-[CBS 초기화(Windows)](https://intl.cloud.tencent.com/document/product/362/31598)
+[Initializing Cloud Disks (≥2 TB)](https://intl.cloud.tencent.com/document/product/362/31598)
 
-더 자세한 작업 가이드는 [초기화 시나리오 설명](https://intl.cloud.tencent.com/document/product/362/31596)을 참고하십시오.
+더 자세한 작업 가이드는 [Initialization Scenarios](https://intl.cloud.tencent.com/document/product/362/31596)를 참고하십시오.
