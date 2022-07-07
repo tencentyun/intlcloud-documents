@@ -45,19 +45,23 @@ cd cloud-init-17.1
 3. 운영 체제 버전에 맞는 Python-pip를 설치합니다.
   - CentOS 6/7 시리즈에서는 다음 명령어를 실행합니다.
 ```shellsession
-yum install python-pip -y
+yum install python3-pip -y
 ```
   - Ubuntu 시리즈에서는 다음 명령어를 실행합니다.
 ```shellsession
-apt-get install python-pip -y
+apt-get -y install python3-pip
 ```
 설치 과정에서 설치할 수 없거나 설치 패키지를 찾지 못하는 오류가 발생하는 경우, [Python-pip을 설치할 수 없는 문제 해결](#updateSoftware)을 참조하여 처리하시기 바랍니다.
+4. 다음 명령을 실행하여 pip를 업그레이드합니다.
+```
+python3 -m pip install --upgrade pip 
+```
 4. 다음 명령어를 실행하여 종속 패키지를 설치합니다.
 <dx-alert infotype="notice" title="">
 Cloud-init 종속 모듈 requests 2.20.0 버전 이후부터 Python2.6을 사용하지 않습니다. 이미지 환경의 Python 인터프리터가 Python2.6 이하일 경우, cloud-init 종속 패키지 설치 전에 `pip install 'requests&lt;2.20.0'` 명령어를 실행하여 requests 2.20.0 이하 버전을 설치하시기 바랍니다.
 </dx-alert>
 ```shellsession
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 5. 운영 체제 버전에 따라 cloud-utils 모듈을 설치합니다.
   - CentOS 6 시리즈에서는 다음 명령어를 실행합니다.
@@ -75,10 +79,10 @@ apt-get install cloud-guest-utils -y
 ```
 6. 다음 명령어를 실행하여 cloud-init을 설치합니다.
 ```shellsession
-python setup.py build
+python3 setup.py build 
 ```
 ```shellsession
-python setup.py install --init-system systemd
+python3 setup.py install --init-system systemd
 ``` <dx-alert infotype="notice" title="">
 --init-system 의 선택 가능한 매개변수에는 (systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]이 있습니다. 현재 운영 체제가 사용하고 있는 자동 실행 서비스 관리 방식에 따라 선택하시기 바랍니다. 잘못 선택할 경우 시작 시 cloud-init 서비스를 자동 실행할 수 없습니다. 본 문서는 systemd 자동 실행 서비스 관리를 예시로 사용합니다.
 </dx-alert>
@@ -269,21 +273,17 @@ yum install epel-release -y
 ```
   2. 다음 명령어를 실행하여 Python-pip을 설치합니다.
 ```shellsession
-yum install python-pip -y
+yum install python3-pip -y
 ```
 :::
 ::: Ubuntu\s 예시
-  1. 다음 명령을 실행하여 캐시를 지웁니다.
-```shellsession
-apt-get clean all
-```
   1. 다음 커맨드를 실행하여 소프트웨어 패키지 리스트를 업데이트하십시오.
 ```shellsession
 apt-get update -y
 ```
   2. 다음 명령어를 실행하여 Python-pip을 설치합니다.
 ```shellsession
-apt-get install python-pip -y
+apt-get -y install python3-pip
 ```
 :::
 </dx-tabs>
