@@ -1,4 +1,14 @@
 
+## 2022年06月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>支持 SSL 加密</td>
+<td>云数据库 Redis 支持 SSL 加密，实现数据信息加密传输。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/48048" target="">SSL 加密</a></td></tr>
+</table>
+
+
 ## 2022年05月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>

@@ -4,7 +4,7 @@
 
 | 路由类型 | VPC 网络                                                     | 公网域名接入                                                 |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 接入方式 | <li>PLAINTEXT</li><li>SASL_PLAINTEXT</li><li>SASL_SSL（仅专业版实例支持）</li><li>SASL_SCRAM（仅北京地域且2.4.1版本实例支持，其他地域和存量实例需要 <a href = "https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 申请）</li> | <li>SASL_PLAINTEXT</li><li>SASL_SSL（仅专业版实例支持）</li> |
+| 接入方式 | <li>PLAINTEXT</li><li>SASL_PLAINTEXT</li><li>SASL_SSL（仅专业版实例支持）</li><li>SASL_SCRAM（仅 2.4.1 版本实例支持，存量实例需要 <a href = "https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息服务CKafKa&step=1">提交工单</a> 申请）</li> | <li>SASL_PLAINTEXT</li><li>SASL_SSL（仅专业版实例支持）</li> |
 
 
 
@@ -22,11 +22,11 @@
 
 **操作步骤**：
 
-1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka)。
+1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏单击**实例列表**，单击目标实例的“ID/名称”，进入基本信息页。
 3. 在实例基本信息页面，单击接入方式模块中的**添加路由策略**。
 4. 在弹窗中，路由类型选择 **VPC 网络**，选择好接入方式和网络。
-    ![](https://main.qcloudimg.com/raw/e3c2304070064b93e082895b9bd7b9b2.png)
+   ![](https://main.qcloudimg.com/raw/e3c2304070064b93e082895b9bd7b9b2.png)
    <dx-alert infotype="explain" title="">
    选择 VPC 网络接入时，支持指定 IP，当变更接入方式时可以通过指定 IP 来保持 IP 不发生变化。
    </dx-alert>
@@ -34,7 +34,6 @@
 <dx-alert infotype="explain" title="">
 控制台上提供的 VPC 网络访问地址（例如 `172.16.0.12:9092` ），用于获取后端服务的通讯地址，真实访问地址中端口可能存在多个，请在您的服务器上放通9092后的所有端口，以便服务可以正常访问。
 </dx-alert>
-
 ::: 
 
 ::: 公网域名接入
@@ -44,11 +43,11 @@
 
 **操作步骤**：
 
-1. 登录 [CKafka 控制台](https://console.intl.cloud.tencent.com/ckafka)。
+1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏单击**实例列表**，单击目标实例的“ID/名称”，进入基本信息页。
 3. 在实例基本信息页面，单击接入方式模块中的**添加路由策略**。
 4. 在弹窗中，路由类型选择 **公网域名接入**，选择好接入方式和网络。
-    ![](https://main.qcloudimg.com/raw/c4d1852255a63b38bfc199d3b6d1711b.png)
+![](https://main.qcloudimg.com/raw/c4d1852255a63b38bfc199d3b6d1711b.png)
 5. 单击**提交**，完成公网路由策略添加。
 <dx-alert infotype="explain" title="">
 CKafka 默认提供3Mbps 免费公网带宽，专业版实例可以额外升配公网带宽，具体操作参见 [升配公网带宽](https://intl.cloud.tencent.com/document/product/597/42386)。

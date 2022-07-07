@@ -273,6 +273,10 @@ yum install python-pip -y
 ```
 :::
 ::: Ubuntu\s 예시
+  1. 다음 명령을 실행하여 캐시를 지웁니다.
+```shellsession
+apt-get clean all
+```
   1. 다음 커맨드를 실행하여 소프트웨어 패키지 리스트를 업데이트하십시오.
 ```shellsession
 apt-get update -y

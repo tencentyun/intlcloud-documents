@@ -7,9 +7,7 @@
 Note the following limits when editing tags:
 
 - **Quantity**: each file system allows up to 50 tags.
-- **Tag key**:
-  - Do not create tag keys prefixed with `qcloud`, `tencent`, and `project`, because they are reserved for the system.
-  - A tag key can only contain `numbers`, `letters`, and `+=.@-`. It cannot exceed 255 characters in length.
+- **Tag key**:A tag key can only contain `numbers`, `letters`, and `+=.@-`. It cannot exceed 255 characters in length.
 - **Tag value**: a tag value can only contain `empty strings or numbers`, `letters`, and `+=.@-`. It cannot exceed 127 characters in length.
 
 ## Directions and Use Cases

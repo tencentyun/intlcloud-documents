@@ -1,4 +1,4 @@
-Anti-DDoS Pro supports blocking the source traffic accessing Anti-DDoS instances based on specified protocols, such as ICMP, TCP, UDP, and other protocols. After the configuration is completed, all matched access requests will be directly blocked. Due to the connectionless feature of UDP protocol (unlike TCP, which requires a three-way handshake process), it has natural security vulnerabilities. If you do not have UDP businesses, we recommend blocking the UDP protocol.
+Anti-DDoS supports blocking inbound traffic based on its protocol type. You can enable "Block ICMP protocol/Block TCP protocol/Block UDP protocol/Block other protocols" to block their access requests directly. Note that UDP is a connectionless protocol that dose not provide a three-way handshake process like TCP and thus has security vulnerabilities. We recommend blocking UDP if it is not used for your business.
 
 ## Prerequisites
 You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the protected target.

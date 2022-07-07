@@ -277,11 +277,15 @@ yum install python3-pip -y
 ```
 :::
 ::: Ubuntu:
-  1. Run the following command to update the software package list.
+  1. Run the following command to clear the cache.
+```shellsession
+apt-get clean all
+```
+  2. Run the following command to update the software package list.
 ```shellsession
 apt-get update -y
 ```
-  2. Run the following command to install Python-pip.
+  3. Run the following command to install Python-pip.
 ```shellsession
 apt-get -y install python3-pip
 ```

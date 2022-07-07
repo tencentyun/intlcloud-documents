@@ -14,32 +14,35 @@ This document provides two ways to load TPG images: loading online and using the
     ```
     // Instantiate `CloudInfinite` to build an image request link;
     CloudInfinite * cloudInfinite = [CloudInfinite new];
+   
     // Build `CIImageLoadRequest` according to the basic feature options of CI you select;
     CITransformation * transform = [CITransformation new];
     [transform setFormatWith:CIImageTypeTPG options:CILoadTypeUrlFooter];
+   
     // Build the image `CIImageLoadRequest`
     [cloudInfinite requestWithBaseUrl:@"image link" transform:transform request:^(CIImageLoadRequest * _Nonnull request) {
         // Request the successfully built `CIImageLoadRequest` instance.
     }];
     ```
 
-
-**swift**
-```
+    **swift**
+    ```
     // Instantiate `CloudInfinite` to build an image request link;
     let cloudInfinite = CloudInfinite();
+   
     // Build `CIImageLoadRequest` according to the basic feature options of CI you select;
     let transform = CITransformation();
     transform.setFormatWith(CIImageFormat.typeTPG, options: CILoadTypeEnum.urlFooter);
+    
     // Build the image `CIImageLoadRequest`
     cloudInfinite.request(withBaseUrl: "image link", transform: transform) { (request) in
         // Request the successfully built `CIImageLoadRequest` instance.
     }  
-```
+    ```
 
 ### Option 2. Using TPG module to load TPG image
 
-Use the TPG module to load TPG image data, which supports TPG animated images with no additional processing needed.
+You can use the TPG module to load TPG image data, which supports TPG animated images with no additional processing needed.
 
 1. Integrate the TPG module.
    ```

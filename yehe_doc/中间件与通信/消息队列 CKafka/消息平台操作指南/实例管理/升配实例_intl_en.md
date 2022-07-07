@@ -9,7 +9,7 @@ If the current instance specifications cannot meet your business needs, you can 
 Check the following items before upgrading:
 
 1. Check whether the instance has unavailable public network routes, supporting networks, VPC networks, etc. For more information, see [Adding Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555).
-2. Check whether the instance has unsynced replicas. For more information, see [Topic Management](https://intl.cloud.tencent.com/document/product/597/32554).
+2. Check whether the instance has unsynced replicas. For more information, see [Topic Management](https://intl.cloud.tencent.com/document/product/597/47583).
 3. Check whether the instance has unfinished tasks (data migration), abnormally created topics, abnormally deleted topic data, etc.
 If there are unfinished tasks, we recommend you wait for all the tasks to be completed before upgrading. If task execution is abnormal, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
 

@@ -146,7 +146,7 @@ Container 类型 Audio 的具体数据描述如下：
 | Bitrate            | Request.Audio | 原始音频码率 | String | 否       | 无     | <ul  style="margin: 0;"><li>单位：Kbps</li><li>值范围：[8，1000]  </li></ul>          |
 | Channels           | Request.Audio | 声道数       | String | 否       | 无     | <ul  style="margin: 0;"><li>当 Codec 设置为 aac/flac，支持1、2、4、5、6、8</li><li>当 Codec 设置为 mp3/opus 时，支持1、2</li><li>当 Codec 设置为 Vorbis 时，只支持2</li><li>当 Codec 设置为 amr，只支持1</li><li>当封装格式为dash时，不支持8</li></ul> |
 | Remove             | Request.Audio | 是否删除源音频流 | String | 否   | false    | 取值 true、false|
-| KeepTwoTracks      | Request.Audio | 保持双音轨 | String | 否   | false    | 取值 true、false。 当 Video.Codec 为H.265时，此参数无效
+| KeepTwoTracks      | Request.Audio | 保持双音轨 | String | 否   | false    | 取值 true、false。 当 Video.Codec 为H.265时，此参数无效           |
 | SwitchTrack        | Request.Audio | 转换轨道 | String | 否   | false    | 取值 true、false。 当 Video.Codec 为H.265时，此参数无效                                       |
 | SampleFormat       | Request.Audio | 采样位宽  | String | 否   | 无      | <ul  style="margin: 0;"><li>当 Codec 设置为 aac, 支持 fltp</li><li>当 Codec 设置为 mp3, 支持 fltp、s16p、s32p</li><li> 当 Codec 设置为 flac, 支持s16、s32</li><li>当 Codec 设置为 amr, 支持s16</li><li>当 Video.Codec 为H.265时，此参数无效</li></ul>|
 

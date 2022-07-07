@@ -4,15 +4,16 @@ The global replication feature can replicate data in the same AZ or across AZs b
 
 | Region | AZ |
 | -------- | ------------------ |
-| Guangzhou | Guangzhou Zone 6 |
-| Shanghai | Shanghai Zones 5 and 6 |
-| Nanjing | Nanjing Zone 3 |
-| Beijing | Beijing Zone 5 and 7 |
+| Hong Kong (China) | Hong Kong Zones 2 and 3 |
 | Chengdu     | Chengdu Zone 1           |
-| Hong Kong (China) | Hong Kong Zone 2 and 3 |
-| Singapore | Singapore Zone 2 and 4|
 | Virginia | Virginia Zone 2 |
-| Toronto   | Toronto Zone 1         |
+| Shanghai | Shanghai Zones 5 and 6 |
+| Beijing | Beijing Zones 5 and 7 |
+| Guangzhou | Guangzhou Zones 4, 5, and 6 |
+| Tianjin     | Tianjin Zone 2 |
+| Nanjing | Nanjing Zones 2 and 3 |
+| Singapore | Singapore Zone 2 |
+| Shenzhen | Shenzhen Zone 4 |
 
 ## Limits on Global Replication Group Instance Version and Architecture
 
@@ -41,3 +42,4 @@ The `maxmemory-policy` parameter of instances in a global replication group must
 ## Limits on Sync Granularity
 
 Currently, the sync granularity is instance, that is, all instance data will be synced. You cannot choose to sync partial instance data.
+

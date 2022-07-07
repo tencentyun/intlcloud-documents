@@ -103,7 +103,7 @@
 <td>媒体处理-音视频分段功能上线</td>
 <td>音视频分段功能可按指定时长将音视频切分为若干片段，分段时您还可以改变音视频片段的容器格式。</td>
 <td> 2021-10-14</td>
-<td><a href="https://cloud.tencent.com/document/product/460/62692">音视频分段 </a>
+<td>音视频分段 
 </tr>
 </tbody></table>
 
@@ -152,7 +152,7 @@
 <td>文件预览/编辑功能上线</td>
 <td>用户可在控制台对存储桶中的文件进行快速的预览，并可对文本文件进行编辑操作。</td>
 <td> 2021-08-05</td>
-<td><a href="https://cloud.tencent.com/document/product/436/60350">预览或编辑对象 </a>
+<td>预览或编辑对象 
 </tr>
 <tr>
 <td>文件夹分享功能上线</td>
@@ -176,7 +176,7 @@
 <td>媒体处理-视频加密功能上线</td>
 <td>新增 HLS 标准加密能力，为客户视频数据安全保驾护航。</td>
 <td> 2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/436/59289">通过 HLS 加密防止视频泄露 </a>
+<td>通过 HLS 加密防止视频泄露 
 </tr>
 </tbody></table>
 

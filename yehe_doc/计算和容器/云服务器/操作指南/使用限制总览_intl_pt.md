@@ -1,7 +1,6 @@
 ## Limites da conta para a aquisição de instâncias do CVM
 
 - Você precisa criar uma conta do Tencent Cloud. Para obter mais informações, consulte a [Criação de conta do Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985).
-- Você precisa passar pela verificação de identidade antes de adquirir instâncias do CVM na China Continental. Para obter mais informações, consulte o [Guia da verificação de identidade](https://intl.cloud.tencent.com/document/product/378/3629).
 - Se você criar um CVM com pagamento conforme o uso, o sistema vai congelar o custo de uma hora de uso do CVM. Certifique-se de que sua conta tenha saldo suficiente para o pedido.
 
 ## Limites de uso de instâncias do CVM

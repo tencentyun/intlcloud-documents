@@ -2,28 +2,25 @@
 App 管理员可以通过该接口导入群组，不会触发回调、不会下发通知；当 App 需要从其他即时通信系统迁移到即时通信 IM 时，使用该协议导入存量群组数据。
 
 ## 接口调用说明
-
 ### 适用的群组类型
 
-|群组类型|支持此 REST API|
+|群组类型| 支持此 REST API|
 |-----------|------------|
 |Private|支持，同新版本中的 Work（好友工作群）|
 |Public|支持|
 |ChatRoom|支持，同新版本中的 Meeting（会议群）|
 |AVChatRoom|不支持|
+|Community（社群）|支持|
 
-即时通信 IM 内置以上五种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
+即时通信 IM 内置以上四种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->音视频聊天室和在线成员广播大群不支持导入群基础资料，对这两种类型的群组进行操作时会返回 10007 错误；如果需要达到导入群组基础资料的效果，可以通过 [创建群组](https://intl.cloud.tencent.com/document/product/1047/34895) 和 [修改群组基础资料](https://intl.cloud.tencent.com/document/product/1047/34962) 的方式实现。
+>?AVChatRoom（直播群）不支持导入群基础资料，对此类型的群组进行操作时会返回10007错误；如果需要达到导入群组基础资料的效果，可以通过 [创建群组](https://intl.cloud.tencent.com/document/product/1047/34895) 和 [修改群组基础资料](https://intl.cloud.tencent.com/document/product/1047/34962) 的方式实现。
 
 
 ### 请求 URL 示例
 ```
 https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
-
 ### 请求参数说明
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
@@ -33,10 +30,10 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 | xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com` |
 | v4/group_open_http_svc/import_group | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -49,7 +46,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/Community（必填）
     "Name": "TestGroup", // 群名称（必填）
     "CreateTime": 1448357837 // 群组的创建时间（选填，不填会以请求时刻为准）
 }
@@ -59,7 +56,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/Community（必填）
     "GroupId":"MyFirstGroup", // 用户自定义群组外显 ID（选填）
     "Name": "TestGroup", // 群名称（必填）
     "Introduction": "This is group Introduction", // 群简介（选填）
@@ -87,7 +84,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
 | Owner_Account | String | 选填 |群主 ID，自动添加到群成员中。如果不填，群没有群主  |
-| Type | String | 必填 |群组形态，包括 Public（公开群），Private（私密群）， ChatRoom（聊天室） |
+| Type | String | 必填 |群组类型，包括 Public（陌生人社交群），Private（同新版本中的Work，好友工作群）， ChatRoom（同新版本中的Meeting，会议群）、Community（社群） |
 | GroupId | String | 选填 |为了使得群组 ID 更加简单，便于记忆传播，腾讯云支持 App 在通过 REST API 创建群组时自定义群组 ID。详细请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)  |
 | Name | String | 必填 |群名称，最长30字节 |
 | Introduction | String | 选填 |群简介，最长240字节  |
@@ -142,7 +139,6 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 | 10004 | 参数非法，请根据错误描述检查请求是否正确 |
 | 10007 | 操作权限不足，例如 Public 群组中普通成员尝试执行踢人操作，但只有 App 管理员才有权限 |
 | 10021 | 群组 ID 已被使用，请选择其他的群组 ID |
-| 80001 | 文本安全打击。请检查群名称、群公告和群简介等是否有敏感词汇  |
 
 ## 接口调试工具
 
@@ -153,3 +149,4 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 - 设置成员未读计数（[v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909)）
 - 导入群成员（[v4/group_open_http_svc/import_group_member](https://intl.cloud.tencent.com/document/product/1047/34969)）
 - 解散群组（[v4/group_open_http_svc/destroy_group](https://intl.cloud.tencent.com/document/product/1047/34896)）
+

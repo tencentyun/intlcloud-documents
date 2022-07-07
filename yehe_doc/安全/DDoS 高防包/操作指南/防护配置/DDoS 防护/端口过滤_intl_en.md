@@ -1,4 +1,4 @@
-Anti-DDoS enables you to block or allow inbound traffic by ports. With port filtering enabled, you can customize port settings against inbound traffic, including the protocol type, source port and destination port ranges and set the protection action (allow/block/discard) for the matched rule.
+Port filtering is a fine-grained way to restrict inbound traffic based on port. When it is enabled, you can create a rule by setting the protocol type, source port range, destination port range and action (Discard/Allow/Continue protection).
 
 
 ## Prerequisites
@@ -14,5 +14,5 @@ You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.co
 >?Multiple instances can be created at a time. For instances without protected resources, you cannot create rules.
 
 ![](https://main.qcloudimg.com/raw/b05f2100f14ecd0269673d26bfc84ce9.png)
-6. After the rule is created, it is added to the rule list. You can click **Configuration** on the right of the rule to modify it.
+5. After the rule is created, it is added to the rule list. You can click **Configuration** on the right of the rule to modify it.
 ![](https://main.qcloudimg.com/raw/90e5bfe35208179bd42ba04313960eb4.png)

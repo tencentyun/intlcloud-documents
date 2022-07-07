@@ -24,9 +24,8 @@ Anti-DDoS Pro provides three available protection levels for you to adjust prote
 >- If you need to use UDP in your business, please contact [Tencent Cloud Technical Support](https://intl.cloud.tencent.com/contact-us) to customize an ideal policy for not letting the level Strict affect normal business process.
 >- The level Medium is chosen by default in each Anti-DDoS Pro instance.
 >- The real server may suffer seconds of attacks in the following situations:
->  - It happens when you are changing the protection level.
->  - It happens when you are connecting to Anti-DDoS Pro.
-> 
+>   - It happens when you are changing the protection level.
+>   - It happens when you are connecting to Anti-DDoS Pro.
 ## Prerequisites
 You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the protected target.
 

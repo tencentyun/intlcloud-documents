@@ -1,5 +1,7 @@
 ## Reseller's Customer Relationship Management
 
+>? Resellers can't unbind their customers online. To do so, contact sales rep for assistance.
+
 ### 1. Inviting reseller's customer
 
 You can invite a potential customer to become your customer, no matter whether it has registered for a Tencent Cloud account or not.

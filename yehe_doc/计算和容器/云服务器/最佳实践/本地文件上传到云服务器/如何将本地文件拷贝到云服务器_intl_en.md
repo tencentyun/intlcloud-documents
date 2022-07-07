@@ -44,7 +44,6 @@ After uploading files to CVM, you can make a snapshot for backup and disaster re
 
 ## Troubleshooting
 You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance. 
-) 联系我们，也可以先参考相关文档进行问题定位和解决。
 See below for the common problems and solutions: 
 - What should I do if I forgot my CVM instance login password?
 See [Resetting Instance Password](https://intl.cloud.tencent.com/document/product/213/16566).

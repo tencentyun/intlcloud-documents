@@ -1,7 +1,7 @@
 ## Overview
 
 To solve the problem of slow access to official sources when installing dependencies, Tencent Cloud has set up a cache service for some software. You can accelerate the installation of dependencies by using the Tencent Cloud software repository, which currently supports public network access and private network access.
-- Public network access address: `http://mirrors.cloud.tencent.com/` or `http://mirrors.tencent.com/` 
+- Public network access address: `http://mirrors.tencent.com` 
 - Private network access address: `http://mirrors.tencentyun.com/`
 
 >?
@@ -169,11 +169,15 @@ echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian jessie/mongodb-org
 #Debian 9
 echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian stretch/mongodb-org/4.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. Execute the following command to update the software package list.
+3. Execute the following command to clear the cache.
+```shell
+sudo apt-get clean all
+```
+4. Execute the following command to update the software package list.
 ```
 sudo apt-get update
 ```
-4. Execute the following command to install MongoDB.
+5. Execute the following command to install MongoDB.
 ```
 sudo apt-get install -y mongodb-org
 ```
@@ -193,11 +197,15 @@ echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu xen
 #Ubuntu 18.04
 echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 ```
-3. Execute the following command to update the software package list.
+3. Execute the following command to clear the cache.
+```shell
+sudo apt-get clean all
+```
+4. Execute the following command to update the software package list.
 ```
 sudo apt-get update
 ```
-4. Execute the following command to install MongoDB.
+5. Execute the following command to install MongoDB.
 ```
 sudo apt-get install -y mongodb-org
 ```

@@ -1,7 +1,6 @@
 ## CVM 인스턴스 구매 계정의 제한
 
 - 사용자는 Tencent Cloud 계정을 등록해야 합니다. [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985)을 참고하십시오.
-- 사용자는 실명 인증을 진행해야 합니다. [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629)를 참고하십시오.
 - 종량제 클라우드 서버를 생성할 때 시스템은 1시간 동안 호스트 비용을 동결하므로 지불 진행을 위해 계정에 충분한 잔액을 충전하십시오.
 
 ## CVM 인스턴스의 이용 제한

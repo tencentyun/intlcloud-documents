@@ -1,11 +1,12 @@
 This document lists the references for common operations in Anti-DDoS Advanced.
 
-## Protection Overview
+## Reference
  -[Viewing security protection overview](https://intl.cloud.tencent.com/document/product/297/44555)
  -[Use Limits](https://intl.cloud.tencent.com/document/product/297/37207)
 
 ## Protection Configuration
 #### DDoS protection
+- [Protection Level and Cleansing Threshold](https://intl.cloud.tencent.com/document/product/297/39259)
 - [Protocol blocking](https://intl.cloud.tencent.com/document/product/297/37210)
 - [Watermark protection](https://intl.cloud.tencent.com/document/product/297/37211)
 - [Attribute Filtering](https://intl.cloud.tencent.com/document/product/297/37212)

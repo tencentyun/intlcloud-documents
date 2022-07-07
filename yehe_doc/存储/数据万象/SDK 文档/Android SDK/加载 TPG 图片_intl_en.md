@@ -38,7 +38,7 @@ CIImageLoadRequest request = cloudInfinite.requestWithBaseUrlSync(url, transform
 
 ### Option 2. Loading local TPG image
 
-Using the TPG format for the application's built-in resources, such as assets, drawable, and raw can reduce the size of the installation package.
+You can use the TPG format for the application's built-in resources, such as assets, drawable, and raw can reduce the size of the installation package.
 
 ```
 // Load TPG images in `Assets`

@@ -51,7 +51,7 @@ If the existing VPC or subnet does not meet your requirements, you can create a 
 	<td>Used to configure the network access policies for one or more CVM instances.
 	<br />
 	<b>Make sure that login port 22 is open. </b>For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/12452">Security Group</a>.</td> 
-	<a href="https://intl.cloud.tencent.com/document/product/213/12452">安全组</a>。</td>
+	<a href="https://intl.cloud.tencent.com/document/product/213/12452">Security Group</a>。</td>
   </tr>
   <tr>
 	<td>Projects</td>
@@ -103,7 +103,6 @@ If the existing VPC or subnet does not meet your requirements, you can create a 
 	<td>Automation Assistant</td>
 	<td>No</td>
 	<td>It is enabled for free by default. As the native Ops and deployment tool of CVM, it can automatically run shell commands in batches and complete various tasks such as running automated Ops scripts, polling processes, installing/uninstalling software, updating applications, and installing patches, without the need to connect to the instance remotely.</td>
-	命令，完成运行自动化运维脚本、轮询进程、安装/卸载软件、更新应用及安装补丁等任务。</td>
   </tr>
 	<tr>
 	<td>Advanced Settings</td>
@@ -118,7 +117,6 @@ If the existing VPC or subnet does not meet your requirements, you can create a 
 	  <b>Placement Group</b>: You can add the instances to placement groups to improve your business availability. Configure as instructed in <a href="https://intl.cloud.tencent.com/document/product/213/15486">Placement Group</a>.</li>
 	  <li>
 	  <b>Custom Data</b>: You can configure an instance by specifying custom data, and the configured scripts will run when an instance is launched. If multiple CVM instances are purchased together, the custom data will run on all of them. Linux supports the Shell format and a maximum of 16 KB of raw data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/17525">Configuring Custom Data (Linux CVM)</a>.
-	  操作系统支持 Shell 格式，最大支持 16KB 原始数据。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/213/17525">自定义数据</a>。
 	  <br />
 	  <b>Note</b>: Custom data configuration only supports certain public images with the Cloud-Init service. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/19670">Cloud-Init</a>.</li>
 	</ul></td>

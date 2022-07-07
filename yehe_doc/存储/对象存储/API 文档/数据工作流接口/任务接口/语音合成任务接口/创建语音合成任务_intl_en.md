@@ -67,9 +67,9 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| TtsTpl             | Request.Operation | Text to speech template parameters. Same as `Request` in the text to speech template creation API. | Container | No |
+| TtsTpl             | Request.Operation | Text-to-speech template parameters. Same as `Request` in the text-to-speech template creation API. | Container | No |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
-| TtsConfig          | Request.Operation | Text to speech job parameter                                             | Container | Yes   |
+| TtsConfig          | Request.Operation | Text-to-speech job parameter                                             | Container | Yes   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
 >! `TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
@@ -160,7 +160,7 @@ There are no special error messages for this request. For common error messages,
 
 ## Use Cases
 
-#### Use case 1. Using the text to speech template ID
+#### Use case 1. Using the text-to-speech template ID
 
 #### Request
 
@@ -229,7 +229,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Use case 2. Using the text to speech processing parameter
+#### Use case 2. Using the text-to-speech processing parameter
 
 #### Request
 

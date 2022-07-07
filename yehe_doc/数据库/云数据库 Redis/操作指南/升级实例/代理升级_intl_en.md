@@ -3,18 +3,27 @@ Minor versions of the TencentDB for Redis proxy are released from time to time t
 
 <table>
 <thead><tr><th width=15%>Proxy Version</th><th width=15%>Proxy Minor Version</th><th width=70%>New Feature, Optimization, or Fix</th></tr></thead>
-<tbody>
-<tr><td rowspan=5>Proxy 5.0</td>
+<tbody><tr>
+<td rowspan=6>Proxy 5.0</td>
+<td>5.6.0</td><td>Supported SSL encryption to implement encrypted data transfer.</td></tr>
+<tr>
 <td>5.5.0</td>
-    <td> <li>Supported the “Read Local Nodes Only” feature.</li><li>Supported the `dbsize` command in Cluster Edition instances to return the number of keys in all shards.</li><li>Supported displaying the client port information in slow logs.</li><li>Supported `flushall` and `flushdb` commands, which can be distributed to the master node of all shards in a Cluster Architecture instance while retaining data in nodes with the specified `nodeid`.</li><li>Supported monitoring the number of big value requests.</li><li>Supported the `Scan` command in Cluster Edition instances to traverse all shards.</li><li>Fixed the issue where "ERR unknown command 'select' command" might be returned when the `select` command was executed after a transaction.</li><li>Fixed the issue where the command was sent to an incorrect node and the `Move` error was reported when the locked connection wasn't released in time as the `watch+` transaction was used in the pipeline scenario.</li></td></tr>    
-<tr><td>5.4.0</td><td>Optimized the statistics collection policies of P99 monitoring metrics, including metrics for all Redis commands.</td></tr>
-<tr><td>5.2.0</td><td>Supported the five-second granularity for monitoring data.</td></tr>
-<tr><td>5.1.0</td><td><li>Supported the `keys` command in Cluster Architecture instances.</li><li>Supported displaying the client address in slow logs.</li><li>Fixed the "ERR MULTI calls can not be nested" error.</li></td></tr>    
-<tr><td>5.0.0</td><td>Supported `unlink` and `exists` commands in Cluster Architecture instances.</td></tr>
-<tr><td rowspan=3>Proxy 4.0</td> 
+<td><ul><li>Supported the "Read Local Nodes Only" feature.</li><li>Supported the `dbsize` command in Cluster Edition instances to return the number of keys in all shards.</li><li>Supported displaying the client port information in slow logs.</li><li>Supported `flushall` and `flushdb` commands, which can be distributed to the master node of all shards in a Cluster Architecture instance while retaining data in nodes with the specified `nodeid`.</li><li>Supported monitoring the number of big value requests.</li><li>Supported the `Scan` command in Cluster Edition instances to traverse all shards.</li><li>Fixed the issue where "ERR unknown command 'select' command" might be returned when the `select` command was executed after a transaction.</li><li>Fixed the issue where the command was sent to an incorrect node and the `Move` error was reported when the locked connection wasn't released in time as the `watch+` transaction was used in the pipeline scenario.</li></ul></td></tr>    
+<tr>
+<td>5.4.0</td><td>Optimized the statistics collection policies of P99 monitoring metrics, including metrics for all Redis commands.</td></tr>
+<tr>
+<td>5.2.0</td><td>Supported the five-second granularity for monitoring data.</td></tr>
+<tr>
+<td>5.1.0</td><td><ul><li>Supported the `keys` command in Cluster Architecture instances.</li><li>Supported displaying the client address in slow logs.</li><li>Fixed the "ERR MULTI calls can not be nested" error.</li></ul></td></tr>    
+<tr>
+<td>5.0.0</td><td>Supported `unlink` and `exists` commands in Cluster Architecture instances.</td></tr>
+<tr>
+<td rowspan=3>Proxy 4.0</td> 
 <td>3.5.0</td><td>Supported the command analysis feature. You can view information such as QPS, P99 execution latency, average execution latency, and max execution latency of individual commands.</td></tr>
-<tr><td>3.3.0</td><td>Supported the five-second granularity for system monitoring data collection.</td></tr>
-<tr><td>3.2.0</td><td><li>Supported displaying the client address in slow logs.</li><li>Fixed the "ERR MULTI calls can not be nested" error.</li></td></tr>    
+<tr>
+<td>3.3.0</td><td>Supported the five-second granularity for system monitoring data collection.</td></tr>
+<tr>
+<td>3.2.0</td><td><li>Supported displaying the client address in slow logs.</li><li>Fixed the "ERR MULTI calls can not be nested" error.</li></td></tr>    
 </tbody></table>
 
 ## Notes on Upgrade
@@ -36,7 +45,9 @@ The version upgrade process mainly consists of data sync and instance switch:
 3. In the instance list, find the target instance.
 4. Click the instance ID to enter the **Instance Details** page.
 5. In the **Specs Info** section on the **Instance Details** page, click **Upgrade Proxy** after **Proxy Version**.
-6. In the pop-up window, confirm the information of the target instance according to the following table, configure the target version, and click **OK**.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c463c3ad28040dc3e5ec87999517d12e.png"  style="zoom:70%;">
+6. In the pop-up window, confirm the information of the target instance based on the following table, configure the target version, and click **OK**.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d2be86cb8b837762d6d4064eb1d564d6.png"  style="zoom:50%;">
 <table>
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody>
@@ -56,5 +67,5 @@ The version upgrade process mainly consists of data sync and instance switch:
 
 | API | Description |
 | :----------------------------------------------------------- | :----------- |
-| [UpgradeProxyVersion](https://cloud.tencent.com/document/product/239/74597) | Upgrades proxy version |
+| [UpgradeProxyVersion](https://intl.cloud.tencent.com/document/product/239/47724) | Upgrades proxy version |
 

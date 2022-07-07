@@ -277,11 +277,15 @@ yum install python3-pip -y
 ```
 :::
 ::: Ubuntu\s系列
-  1. 执行以下命令，更新软件包列表。
+  1. 执行以下命令，清除缓存。
+```shellsession
+apt-get clean all
+```
+  2. 执行以下命令，更新软件包列表。
 ```shellsession
 apt-get update -y
 ```
-  2. 执行以下命令，安装 Python-pip。
+  3. 执行以下命令，安装 Python-pip。
 ```shellsession
 apt-get -y install python3-pip
 ```
