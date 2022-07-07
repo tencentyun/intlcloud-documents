@@ -1,11 +1,28 @@
+
 本文主要介绍无法连接 Linux 实例时对问题进行排查的方法，以及可能导致无法连接 Linux 实例的主要原因，指导您排查、定位并解决问题。
 
 
 ## 问题定位
 ### 使用自助诊断工具
 腾讯云提供自助诊断工具，可以帮助您判断是否由于带宽、防火墙以及安全组设置等常见问题引起。70%的故障可以通过工具定位，您可以根据检测到的原因，定位可能引起无法登录的故障问题。
-1. 单击 [自助诊断](https://console.intl.cloud.tencent.com/workorder/check)，打开自助诊断工具。
+1. 单击 [自助诊断](https://console.cloud.tencent.com/workorder/check)，打开自助诊断工具。
 2. 根据工具界面提示，选择需要诊断的云服务器，单击**开始检测**。
+
+
+### 使用自动化助手发送命令
+您可使用自动化助手向实例发送命令，进行问题排查及定位。使用步骤如下：
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，在实例列表中单击实例 ID。
+2. 在实例详情页中，选择**执行命令**页签，并单击**执行命令**。
+3. 在弹出的“执行命令”窗口中，您可按需选择命令，单击**执行命令**即可执行命令并查看命令结果。
+例如，输入新命令 `df -TH` 并单击**执行命令**，即可在不登录实例的情况下查看其结果。
+如需了解自动化助手的更多信息，请参见 [自动化助手](https://intl.cloud.tencent.com/document/product/1147)。
+
+
+<dx-alert infotype="explain" title="">
+如果您的问题无法通过故障排查工具检查，建议您 [通过 VNC 的方式登录](#VNC) 云服务器逐步排查故障。
+</dx-alert>
+
+
 
 
 ## 可能原因
@@ -34,8 +51,8 @@
 **故障现象**：[使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501) 时，提示无法连接或者连接失败。
 **处理步骤**：参考 [无法通过 SSH 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32486) 进行排查。
 
-<span id="CryptographicProblem"></span>
-### 密码问题导致无法登录
+
+### 密码问题导致无法登录[](id:CryptographicProblem)
 **故障现象**：密码输入错误、忘记密码或者密码重置失败导致登录不成功。
 **解决方法**：请在 [腾讯云控制台](https://console.cloud.tencent.com/cvm/index) 重置该实例的密码，并重启实例。
 **处理步骤**：重置实例密码的方法请参考 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566)。
@@ -67,5 +84,4 @@
 
 
 ## 其他解决方案
-通过上述排查后，仍然不能连接 Linux 实例，请您保存自助诊断结果，通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category
-) 进行反馈。
+通过上述排查后，仍然不能连接 Linux 实例，请您保存自助诊断结果，通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进行反馈。
