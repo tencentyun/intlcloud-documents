@@ -18,17 +18,17 @@ HEAD Object 除了检查对象是否存在，主要功能为返回对象元数�
 ```js
 
 function doesObjectExist() {
-  cos.headObject({
-    Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
-    Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
-    Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
-  }, function(err, data) {
+    cos.headObject({
+        Bucket: 'examplebucket-1250000000', /* 填入您自己的存储桶，必须字段 */
+        Region: 'COS_REGION',  /* 存储桶所在地域，例如ap-beijing，必须字段 */
+        Key: '1.jpg',  /* 存储在桶里的对象键（例如1.jpg，a/b/test.txt），必须字段 */
+    }, function(err, data) {
         if (data) {
-          console.log('对象存在');
-        } else if (err.code == 404) {
-          console.log('对象不存在');
-        } else if (err.code == 403) {
-          console.log('没有该对象读权限');
+            console.log('对象存在');
+        } else if (err.statusCode == 404) {
+            console.log('对象不存在');
+        } else if (err.statusCode == 403) {
+            console.log('没有该对象读权限');
         }
     });
 
