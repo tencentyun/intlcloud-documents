@@ -1,6 +1,6 @@
 ### What features does GME have?
 
-GME supports voice chat, voice message, speech-to-text, and speech analysis.
+GME supports voice chat, voice message, speech-to-text.
 
 ### What are the gaming application scenarios of GME?
 

@@ -45,9 +45,8 @@ function doesBucketExist() {
     }, function(err, data) {
         if (data) {
             console.log('The bucket exists.');
-        } else if (err.code == 404) {
-            console.log('The bucket does not exist.');
-        } else if (err.code == 403) {
+
+        } else if (err.statusCode == 403) {
             console.log('no permission to read the bucket');
         }
     });

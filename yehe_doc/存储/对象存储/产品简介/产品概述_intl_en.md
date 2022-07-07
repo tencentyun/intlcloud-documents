@@ -18,32 +18,11 @@ This section describes key concepts that help you better understand COS.
 - [Region](https://intl.cloud.tencent.com/document/product/436/6224): A physical location where data centers are hosted in Tencent Cloud. COS data is stored in the buckets in these regions.
 - [Endpoint](https://intl.cloud.tencent.com/document/product/436/6224): A COS endpoint used to access and download an object stored in a bucket.
 
-
-
-## Storage Classes
-
-COS offers the following storage classes of objects: INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARCHIVE. They indicate how active objects are in COS, and vary from one another in access frequency, durability, availability, latency, and more. You can choose which storage class to upload your data to based on your use case.
-
->? For comparison among COS storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
->
+- [StorageClass](https://intl.cloud.tencent.com/document/product/436/30925)：COS offers the following storage classes of objects: INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARCHIVE. They indicate how active objects are in COS, and vary from one another in access frequency, durability, availability, latency, and more. You can choose which storage class to upload your data to based on your use case.For comparison among COS storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
 
 
-### ARCHIVE
 
-COS ARCHIVE is a highly reliable object storage service designed for cold data, and offers very low storage costs and long-term data retention. This storage class has a minimum storage duration of 90 days. To read data stored in ARCHIVE, you need to restore it to STANDARD first.
-
-**Use cases**
-
-Use cases that require long-term data retention, such as archival data, medical images, scientific data and other compliance files, lifecycle files, logs, and remote disaster recovery.
-
-### DEEP ARCHIVE
-
-COS DEEP ARCHIVE is a highly reliable object storage service that offers the lowest storage costs and long-term data retention. This storage class has a minimum storage duration of 180 days. To read data stored in DEEP ARCHIVE, you need to restore it to STANDARD first.
-
-**Use cases**
-
-Use cases that require long-term data retention, such as medical images, view data, and logs.
 
 ## Getting Started with COS
 

@@ -9,7 +9,7 @@ This document helps you get started with Game Multimedia Engine (GME).
 
 ## 2. GME Billing Modes
 
-GME currently provides multiple services, such as voice chat, voice messaging, and speech-to-text features. For billing details, see [Daily Pay-as-You-Go Billing Mode](https://intl.cloud.tencent.com/document/product/607/36276).
+GME currently provides multiple services, such as voice chat, voice messaging, and speech-to-text features. For billing details, see [Pay-as-You-Go Billing Mode](https://intl.cloud.tencent.com/document/product/607/36276).
 
 ## 3. Free Demo
 

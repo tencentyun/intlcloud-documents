@@ -22,6 +22,7 @@
 - 共享镜像：每个自定义镜像最多可共享给50个腾讯云用户，且仅支持共享到对方账户相同地域下。
 - 更多详情请参考 [镜像类型限制](https://intl.cloud.tencent.com/document/product/213/4941)。
 
+
 ## 网卡相关限制
 
 根据 CPU 和内存配置不同，云服务器可以绑定的弹性网卡数和单网卡绑定内网 IP 数有较大不同，网卡和单网卡 IP 配额数如下表所示：
@@ -445,7 +446,7 @@
     <td  >8</td>
    </tr>
    <tr >
-    <th colspan="2" style = "text-align:center;">黑石物理服务器2.0</th>
+    <th colspan="2" style = "text-align:center;">裸金属云服务器</th>
     <td colspan="10" style = "text-align:center;">不支持绑定弹性网卡</td>
    </tr>
   </table>
@@ -880,7 +881,7 @@
     <td  >30</td>
    </tr>
    <tr >
-    <th colspan="2" style = "text-align:center;">黑石物理服务器2.0</th>
+    <th colspan="2" style = "text-align:center;">裸金属云服务器</th>
     <td colspan="10" style = "text-align:center;">不支持绑定弹性网卡</td>
    </tr>
   </table>
@@ -918,7 +919,7 @@
 
 <table>
 	<tr><th>限制类型</th><th>限制说明</th></tr>
-	<tr><td>弹性云盘能力</td><td>自2018年5月起，随云服务器一起购买的数据盘均为弹性云硬盘，支持从云服务器上卸载并重新挂载。 本功能在所有 <a href="https://intl.cloud.tencent.com/zh/document/product/213/35071">可用区</a> 均支持。</td></tr>
+	<tr><td>弹性云盘能力</td><td>自2018年5月起，随云服务器一起购买的数据盘均为弹性云硬盘，支持从云服务器上卸载并重新挂载。 本功能在所有 <a href="https://intl.cloud.tencent.com/document/product/213/35071">可用区</a> 均支持。</td></tr>
 	<tr><td>云硬盘性能限制</td><td>I/O 性能同时生效。</br>例如，1TB的 SSD 云硬盘，最大随机 IOPS 能达到26,000，意味着读 IOPS 和写 IOPS 均可达到该值。同时，由于多个性能限制，该例中使用 block size 为4KB/8KB的 I/O 可达到 IOPS 最大值，但使用 block size 为16KB的 I/O 则无法达到 IOPS 最大值（吞吐已经达到了260MB/s的限制）。</td></tr>
 	<tr><td>单台云服务器可挂载弹性云硬盘数量</td><td>最多20块。</td></tr>
 	<tr><td>单地域下快照配额</td><td>64 + 地域内云硬盘数量 * 64（个）。</td></tr>
@@ -926,7 +927,7 @@
 	<tr><td>快照回滚限制</td><td>快照数据只能回滚到创建快照的源云硬盘上。</td></tr>
 	<tr><td>快照创建云硬盘类型限制</td><td>只有数据盘快照才能用来创建新的弹性云硬盘。</td></tr>
 	<tr><td>快照创建云硬盘大小限制</td><td>使用快照创建的新云硬盘容量必须大于或等于快照源云硬盘的容量。</td></tr>
-	<tr><td>云硬盘欠费回收</td><td>若包年包月的弹性云硬盘到期后七天内未续费，会回收至回收站。进入回收站后，不主动解除该云硬盘与云服务器的挂载关系。具体的回收机制请参考 <a href="https://intl.cloud.tencent.com/document/product/362/31625">欠费说明</a>。 </td></tr>
+</tr>
 </table>
 
 
@@ -951,9 +952,9 @@
 
 ## VPC 相关限制
 
-| 资源| 限制（个） |
+| 资源| 限制（个） | 
 |---------|---------|
-| 每个账号每个地域内的私有网络个数 | 20 |
+| 每个账号每个地域内的私有网络个数 | 20 | 
 | 每个私有网络内的子网数 | 100 |
 | 每个私有网络支持关联的基础网络主机个数 | 100 |
 | 每个私有网络内的路由表个数 | 10 |
