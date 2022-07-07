@@ -55,7 +55,8 @@ The Voice Chat service is billed monthly by either voice duration or voice Peak 
       <td>Contact your Tencent Cloud rep</td>
    </tr>
 </table>
- 
+
+
 >!
 >- Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 >- Daily PCU refers to the highest number of concurrent online users for the day, and monthly peak PCU refers to the highest daily PCU value for the month. For example, if the daily PCU is 5,400 on the 2nd day and below 5,400 for the rest of the month, the monthly peak PCU will be 5,400.
