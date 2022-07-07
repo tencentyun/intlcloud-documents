@@ -10,7 +10,7 @@
 
 [](id:que2)
 ###  为什么直播无法进行视频录制呢？ 
-直播录制回看功能依托于腾讯云的**云点播服务**支撑，如果您想要使用录制功能，首先需要在腾讯云的管理控制台 [开通云点播服务](https://console.cloud.tencent.com/vod)。
+直播录制回看功能依托于腾讯云的**云点播服务**支撑，如果您想要使用录制功能，首先需要在腾讯云的管理控制台 [开通云点播服务](https://console.cloud.tencent.com/vod)。更多直播录制回看相关操作介绍，请参见 [录制和回看](https://intl.cloud.tencent.com/document/product/1071/41868)。
 
 [](id:que3)
 ###  直播结束了要多久才能看到录制文件？ 
@@ -19,9 +19,9 @@
 [](id:que4)
 ### 直播录制后，如何获取录制文件？
 录制文件生成后自动存储到云点播系统，需要客户开通点播服务才能存储成功。可通过以下方式获取录制文件：
-- [云点播控制台](https://intl.cloud.tencent.com/document/product/267/31563#vod-console)
-- [录制事件通知](https://intl.cloud.tencent.com/document/product/267/31563#recording-event-notification)
-- [点播 API 查询](https://intl.cloud.tencent.com/document/product/267/31563#vod-api-query)
+- [云点播控制台](https://intl.cloud.tencent.com/document/product/267/31563)
+- [录制事件通知](https://intl.cloud.tencent.com/document/product/267/31563)
+- [点播 API 查询](https://intl.cloud.tencent.com/document/product/267/31563)
 
 [](id:que5)
 ### 直播视频能迁移吗？
@@ -33,13 +33,11 @@
 
 [](id:que7)
 ### 一次直播录制会生成几个录制文件？
-
-- **录制 MP4、FLV 或 AAC 格式**：单个文件时长限制为5分钟 - 120分钟。您可以通过 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845) 接口中的 RecordInterval 参数指定更短的分片。
-    - 如果一次直播过程非常短暂，录制模块未启动就结束推流，那么系统会无法生成录制文件。
-    - 如果一次直播时间不算长（小于 RecordInterval），且中途没有推流中断的事情发生，那么通常只有一个文件。
-    - 如果一次直播时间很长（超过 RecordInterval ），那么会按照 RecordInterval 指定的时间长度进行分片，分片的原因是避免过长的文件在分布式系统中流转时间的不确定性。
-    - 如果一次直播过程中发生推流中断（之后 SDK 会尝试重新推流），那么每次中断均会产生一个新的分片。
-
+- **录制 MP4、FLV 或 AAC 格式**：单个文件时长限制为1分钟 - 120分钟。您可以通过 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845) 接口中的 RecordInterval 参数指定更短的分片。
+  - 如果一次直播过程非常短暂，录制模块未启动就结束推流，那么系统会无法生成录制文件。
+  - 如果一次直播时间不算长（小于 RecordInterval），且中途没有推流中断的事情发生，那么通常只有一个文件。
+  - 如果一次直播时间很长（超过 RecordInterval ），那么会按照 RecordInterval 指定的时间长度进行分片，分片的原因是避免过长的文件在分布式系统中流转时间的不确定性。
+  - 如果一次直播过程中发生推流中断（之后 SDK 会尝试重新推流），那么每次中断均会产生一个新的分片。
 - **录制 HLS 格式**：最长单个文件时长无限制，如果超出续录超时时间则新建文件继续录制。续录超时时长可设置为0s - 1800s。
 
 [](id:que8)
@@ -60,16 +58,35 @@
 一般情况下，可能是当前推流域名下并发了两个录制任务。建议根据下列思路依次排查：
 
 1. 检查控制台录制配置信息，确认录制文件类型是否选择只选择一个格式。
-   - 若控制台为**新版控制台**，前往[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击推流域名右侧的【管理】，进入查看【模板配置】中的【录制配置】，查看关联模板“录制格式”信息。
-   - 若控制台为**旧版控制台**，前往 [【直播码接入】](https://console.cloud.tencent.com/live/livecodemanage)>【接入配置】 检查直播录制配置信息。  
-2. [创建录制任务](https://intl.cloud.tencent.com/document/product/267/30847) 和 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223) 为两种录制发起方式，实际使用中按需选择其中一种即可。若同一直播流，配置录制模板的同时创建了录制任务，会导致重复录制。请检查是否已在控制台开启录制任务同时，调用 API 3.0的  [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/30847) 接口发起了录制任务。
+   - 若控制台为**新版控制台**，前往 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击推流域名右侧的**管理**，进入查看**模板配置**中的**录制配置**，查看关联模板“录制格式”信息。
+   - 若控制台为**旧版控制台**，前往  [**直播码接入**](https://console.cloud.tencent.com/live/livecodemanage) > **接入配置** 检查直播录制配置信息。  
+2. 创建录制任务和 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223) 为两种录制发起方式，实际使用中按需选择其中一种即可。若同一直播流，配置录制模板的同时创建了录制任务，会导致重复录制。请检查是否已在控制台开启录制任务同时，调用 API 3.0的  [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) 接口或 API 2.0的 Live_Tape_Start 接口发起了录制任务。
 
 > ! 
 > - 若您的直播录制是在旧版控制台开启的，新版控制台中如需关闭，可通过 [提工单](https://console.cloud.tencent.com/workorder/category) 找相关人员协助解决。 
 > - 若以上方法无法解决您的问题，请 [提工单](https://console.cloud.tencent.com/workorder/category) 解决，会有专人对接。
 
+[](id:que11)
+### 云直播怎样录制纯音频的视频？	
+指定房间录制是通过在推流地址后面带上推流参数：
+- **纯音频**：record_type=audio。
+- **视频**：record_type=video。
 
+如果视频和纯音频都需要，可以先录成视频，后续再在点播里边转码成纯音频。
 
+[](id:que12)
+### 云直播视频有效期怎么设置成永久？
+直播录制模板中保存时长设置为0表示永久保存，具体详情参见 [直播录制](https://intl.cloud.tencent.com/document/product/267/34223)。
+
+[](id:que13)
+### 云直播支持录制完后自动跳转开头和结尾吗？
+因为播放器无法识别开头与结尾，所以无法实现该功能。您可参考以下方法实现该功能：
+- 对录制后的视频进行裁剪，详情请参见 [编辑视频](https://intl.cloud.tencent.com/document/product/266/34126)。
+- 调整播放器进度。
+
+[](id:que14)
+### 云直播忘记录制如何找回直播内容？
+腾讯云侧不会主动录制用户的直播内容，所以无法协助找回，第三方服务商也无法找回。
 
 
 

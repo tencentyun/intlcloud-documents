@@ -2,15 +2,15 @@ To protect your live streaming content, push authentication is enabled for push 
 
 ## Notes
 
-- CSS provides a test domain name `xxxx.tlivepush.com`. You can use it to test live push, but you’re not advised to use it as the push domain name for business purposes. 
+- CSS provides a test domain name `xxxx.tlivepush.com`. You can use it to push streams for test purposes, but please do not use it in production environments. 
 - A push URL is valid before the expiration time you specify. After it expires, you need to generate a new URL.
 
 ## Prerequisites
 
-You have activated the CSS service.
+You have activated CSS.
 
 ## Authentication Configuration
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target **push domain name** or click **Manage** to enter the domain details page. 
+1. Go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage), click the target **push domain name** or click **Manage** to enter the domain details page. 
 2. Click **Push Configuration** and, in the **Authentication Configuration** area, click **Edit**.
 	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3. In the pop-up window, toggle on **Push Authentication**.
@@ -21,13 +21,13 @@ You have activated the CSS service.
 ## Push Address Generator
 
 ### Directions
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the target domain name or click **Manage** on its right to enter its details page.
+1. Go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage), click the target domain name or click **Manage** on its right to enter its details page.
 2. Select **Push Configuration** and, in **Push Address Generator**, complete the following settings:
    1. Select an expiration time, such as `2021-06-30 19:26:02`.
    2. Enter a custom `StreamName`, such as `liveteststream`.
    3. Click **Generate Push Address** to generate an RTMP push URL containing the `StreamName`.
 ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-3. If you haven’t enabled authentication for your push domain, you can find RTMP and UDP URLs in the **Push URL** section. Replace `StreamName` with your stream name and you can use the corresponding playback URLs to play the stream. 
+3. If you haven’t enabled authentication for your push domain, then you will also find RTMP and UDP URLs in the **Push URL** area. Replace `StreamName` in your playback URL with the stream name used for push, and you can use the URL to play the stream. 
 ![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
 
 
@@ -39,11 +39,11 @@ An RTMP push URL looks like this:
 rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 It includes the following fields:
-- `domain`: Push domain name
-- `AppName`: Live streaming application name, which is `live` by default and is customizable
-- `StreamName`: Custom stream name used to identify a live stream
-- `txSecret`: Authentication string generated after push authentication is enabled
-- `txTime`: Expiration timestamp set for the push URL in the console
+- `domain`: The push domain name.
+- `AppName`: The live streaming application name, which is `live` by default and is customizable.
+- `StreamName`: The custom stream name used to identify a live stream.
+- `txSecret`: The authentication string generated after push authentication is enabled.
+- `txTime`: The expiration timestamp for the push URL.
 
 >!
 >- If you have enabled authentication, the actual expiration time of a URL will be `txTime` plus the validity period of the key.
@@ -53,94 +53,139 @@ It includes the following fields:
 
 
 ## Sample Code of Push URL
-
-We offer sample code in PHP and Java for generating push URLs. To view the code, follow the steps below:
+We offer sample code in PHP, Java, and Go for generating push URLs. To view the code, follow the steps below:
 
 1. Log in to the CSS console and click **[Domain Management](https://console.cloud.tencent.com/live/domainmanage).**
 2. Click a push domain name or click **Manage** on the right to enter its details page.
 3. Select **Push Configuration** and scroll down to find **Push Address Sample Code**.
-4. Click the tab to view the sample code for PHP or Java.
+4. Click the tab to view the sample code for PHP, Java, or Go.
 <dx-codeblock>
 ::: PHP php
-```
 /**
-    * Get the push URL
-    * If you do not pass in the authentication key and URL expiration time, a URL without hotlink protection will be returned.
-    * @param domain: Your push domain name
-    *        streamName: A unique stream name to identify the push URL
-    *        key: Authentication key
-    *        time: Expiration time (accurate to the second). Example: 2016-11-12 12:00:00
-    * @return String url
-
+* Get the push URL
+* If you do not pass in the authentication key and URL expiration time, a URL without hotlink protection will be returned.
+* @param domain: Your push domain name.
+*        streamName: A unique stream name to identify the push URL.
+*        key: The authentication key.
+*        time:   The URL expiration time (example: 2016-11-12 12:00:00).
+* @return String url
+*/
 function getPushUrl($domain, $streamName, $key = null, $time = null){
-   if($key && $time){
-      $txTime = strtoupper(base_convert(strtotime($time),10,16));
-      //txSecret = MD5( KEY + streamName + txTime )
-      $txSecret = md5($key.$streamName.$txTime);
-      $ext_str = "?".http_build_query(array(
+    if($key && $time){
+          $txTime = strtoupper(base_convert(strtotime($time),10,16));
+          //txSecret = MD5( KEY + streamName + txTime )
+          $txSecret = md5($key.$streamName.$txTime);
+          $ext_str = "?".http_build_query(array(
                 "txSecret"=> $txSecret,
                 "txTime"=> $txTime
-      ));
+          ));
     }
-   return "rtmp://".$domain."/live/".$streamName . (isset($ext_str) ? $ext_str : "");
+    return "rtmp://".$domain."/live/".$streamName . (isset($ext_str) ? $ext_str : "");
 }
+
 echo getPushUrl("123.test.com","123456","69e0daf7234b01f257a7adb9f807ae9f","2016-09-11 20:08:07");
-```
 :::
 ::: Java java
-```
 package com.test;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
 public class Test {
-    public static void main(String[] args) {
-        System.out.println(getSafeUrl("txrtmp", "11212122", 1469762325L));
-    }
-    private static final char[] DIGITS_LOWER =
-        {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
-    /*
-    * KEY+ streamName + txTime
-    */
-    private static String getSafeUrl(String key, String streamName, long txTime) {
-        String input = new StringBuilder().
-                            append(key).
-                            append(streamName).
-                            append(Long.toHexString(txTime).toUpperCase()).toString();
-        String txSecret = null;
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            txSecret  = byteArrayToHexString(
-                        messageDigest.digest(input.getBytes("UTF-8")));
-        } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-        }
-        return txSecret == null ? "" :
-                           new StringBuilder().
-                           append("txSecret=").
-                           append(txSecret).
-                           append("&").
-                           append("txTime=").
-                           append(Long.toHexString(txTime).toUpperCase()).
-                           toString();
-        }
-    private static String byteArrayToHexString(byte[] data) {
-        char[] out = new char[data.length << 1];
-        for (int i = 0, j = 0; i < data.length; i++) {
-                out[j++] = DIGITS_LOWER[(0xF0 & data[i]) >>> 4];
-                out[j++] = DIGITS_LOWER[0x0F & data[i]];
-        }
-        return new String(out);
-    }
+
+      public static void main(String[] args) {
+            System.out.println(getSafeUrl("txrtmp", "11212122", 1469762325L));
+      }
+
+      private static final char[] DIGITS_LOWER =
+            {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+
+      /*
+      * KEY+ streamName + txTime
+      */
+      private static String getSafeUrl(String key, String streamName, long txTime) {
+            String input = new StringBuilder().
+                              append(key).
+                              append(streamName).
+                              append(Long.toHexString(txTime).toUpperCase()).toString();
+
+            String txSecret = null;
+            try {
+                  MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+                  txSecret  = byteArrayToHexString(
+                              messageDigest.digest(input.getBytes("UTF-8")));
+            } catch (NoSuchAlgorithmException e) {
+                  e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                  e.printStackTrace();
+            }
+
+            return txSecret == null ? "" :
+                              new StringBuilder().
+                              append("txSecret=").
+                              append(txSecret).
+                              append("&").
+                              append("txTime=").
+                              append(Long.toHexString(txTime).toUpperCase()).
+                              toString();
+      }
+
+      private static String byteArrayToHexString(byte[] data) {
+            char[] out = new char[data.length << 1];
+
+            for (int i = 0, j = 0; i < data.length; i++) {
+                  out[j++] = DIGITS_LOWER[(0xF0 & data[i]) >>> 4];
+                  out[j++] = DIGITS_LOWER[0x0F & data[i]];
+            }
+            return new String(out);
+      }
 }
-```
+:::
+::: GO go
+package a
+
+import (
+	"crypto/md5"
+	"fmt"
+	"strconv"
+	"strings"
+	"time"
+)
+
+func GetPushUrl(domain, streamName, key string, time int64)(addrstr string){
+	var ext_str string
+	if key != "" && time != 0{
+		txTime := strings.ToUpper(strconv.FormatInt(time, 16))
+		txSecret := md5.Sum([]byte(key + streamName + txTime))
+		txSecretStr := fmt.Sprintf("%x", txSecret)
+		ext_str = "?txSecret=" + txSecretStr + "&txTime=" + txTime
+	}
+	addrstr = "rtmp://" + domain + "/live/" + streamName + ext_str
+	return
+}
+/*
+*domain: 123.test.com
+*streamName: streamname
+*key: 69e0daf7234b01f257a7adb9f807ae9f
+*time: 2022-04-26 14:57:19 CST
+*/
+func main(){
+	domain, streamName, key := "123.test.com", "streamname", "69e0daf7234b01f257a7adb9f807ae9f"
+	//CST: ChinaStandardTimeUT, "2006-01-02 15:04:05 MST" must be const
+	t, err := time.Parse("2006-01-02 15:04:05 MST", "2022-04-26 14:57:19 CST")
+	if err != nil{
+		fmt.Println("time transfor error!")
+		return
+	}
+	fmt.Println(GetPushUrl(domain, streamName, key, t.Unix()))
+	return
+}
 :::
 </dx-codeblock>
 
 
 
-## Subsequent Operations
+## See Also
 You can start pushing streams after the push URL is generated. For details, see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
 

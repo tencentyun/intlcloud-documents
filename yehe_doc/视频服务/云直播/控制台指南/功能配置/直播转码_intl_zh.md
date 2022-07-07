@@ -67,7 +67,7 @@
 <tr>
 <td>编码方式</td>
 <td>否</td>
-<td>默认原始码率，可选 H.264 和 H.265 两种编码方式。</td>
+<td>默认原始编码，可选 H.264 和 H.265 两种编码方式。</td>
 </tr><tr>
 <td>视频帧率</td>
 <td>否</td>
@@ -130,13 +130,13 @@
 </tr><tr>
 <td>编码方式</td>
 <td>否</td>
-<td>默认原始码率，可选 H.264 和 H.265 两种编码方式。</td>
+<td>默认原始编码，可选 H.264 和 H.265 两种编码方式。</td>
 </tr><tr>
 <td>视频帧率</td>
 <td>否</td>
 <td>取值范围 0fps - 60fps，不填则使用系统默认值 0fps。</td>
 </tr><tr>
-<td>关键帧间隔GOP <br>（单位：s/秒）</td>
+<td>关键帧间隔 GOP <br>（单位：s/秒）</td>
 <td>否</td>
 <td>GOP 设置范围2秒 - 6秒，GOP 越大、延时越高，若不设置则采用系统默认值。</td>
 </tr><tr>
@@ -209,15 +209,20 @@
 3. 单击 **保存**即可。
 ![](https://main.qcloudimg.com/raw/202923ad5334c6ee3e5a879042aa0d5c.png)
 
+
+
 [](id:delect)
 ## 删除模板
->! 若模板已被关联，需要先 [解除绑定](#untie)，才可以进行删除操作。 
+>!   若模板已被关联，需要先 [解除绑定](#untie)，才可以进行删除操作。 
 
 1. 登录云直播控制台，进入 **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择未关联播放域名的转码模板，单击 **删除**。
 ![](https://main.qcloudimg.com/raw/c3109628fcb4a5a4fabce8ad58c03db5.png)
 3. 确认是否删除当前转码模板，单击 **确定**即可成功删除。
 ![](https://qcloudimg.tencent-cloud.cn/raw/0e27dc5c0ebfc2915161894c3d6a337c.png)
+
+
+
 
 ## 相关操作
 域名维度**绑定**和**解绑**转码模板的具体操作及相关说明，请参见 [转码配置](https://intl.cloud.tencent.com/document/product/267/31062)。
