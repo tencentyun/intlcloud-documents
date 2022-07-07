@@ -13,13 +13,12 @@ TUIRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝
 
 **cocoapods를 통해 컴포넌트를 가져오려면** 다음 단계를 따르십시오.
 1. 프로젝트의 `Podfile`과 같은 수준에 `TUIRoom` 폴더를 만듭니다.
-2. [**Github/TUIRoom**](https://github.com/tencentyun/TUIRoom)으로 이동하여 코드를 복제하거나 다운로드하고 [**TUIRoom/iOS/**](https://github.com/tencentyun/TUIRoom/tree/main/iOS) 디렉터리의 `Source`, `Resources`, `TUIBeauty` 및 `TXAppBasic` 폴더와 `TUIRoom.podspec` 파일을 `1단계`에서 생성한 TUIRoom 폴더에 복사합니다.
+2. [**Github/TUIRoom**](https://github.com/tencentyun/TUIRoom)으로 이동하고 클론/다운로드 코드를 선택한 다음 [**TUIRoom/iOS/**](https://github.com/tencentyun/TUIRoom/tree/main/iOS) 디렉터리에 `Source`, `Resources`, `TUIBeauty`, `TXAppBasic` 폴더 및 `TUIRoom.podspec` 파일을 `1단계`에서 생성한 TUIRoom 폴더에 복사합니다.
 3. Podfile에 다음 종속성을 추가하고 `pod install`을 실행하여 가져오기를 완료합니다.
-
 ```
 # :path => "TUIRoom.podspec의 상대 경로를 가리킵니다"
 pod 'TUIRoom', :path => "./TUIRoom/TUIRoom.podspec", :subspecs => ["TRTC"]
-# :path => "TXAppBasic.podspec의 상대 경로를 가리킵니다."
+# :path => "TXAppBasic.podspec의 상대 경로를 가리킵니다"
 pod 'TXAppBasic', :path => "./TUIRoom/TXAppBasic/"
 # :path => "TUIBeauty.podspec의 상대 경로를 가리킵니다"
 pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
@@ -37,9 +36,9 @@ pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
 <key>NSCameraUsageDescription</key>
 <string>RoomApp은 이미지가 포함된 비디오를 촬영하려면 카메라에 액세스해야 합니다.</string>
 <key>NSMicrophoneUsageDescription</key>
-<string>RoomApp은 오디오가 포함된 비디오를 녹화하려면 마이크에 액세스해야 함</string>
+<string>RoomApp은 오디오가 포함된 비디오를 녹화하려면 마이크에 액세스해야 합니다.</string>
 ```
-![](https://qcloudimg.tencent-cloud.cn/raw/224ae568f11d50124ea663ac0ef1c6e9.png)
+![](https://main.qcloudimg.com/raw/54cc6989a8225700ff57494cba819c7b.jpg)
 
 ### 3단계: TUI 컴포넌트 생성 및 초기화
 
@@ -84,31 +83,31 @@ let tuiRoom = TUIRoom.sharedInstance
 
 
 ### 4단계: 그룹 오디오/비디오 인터랙션 구현
-1. **방 주인은 그룹 오디오/비디오 대화방을 만듭니다**.
+1. **방 주인은 그룹 오디오/비디오 인터랙션 방을 만듭니다**.
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
 
-[tuiRoom createRoomWithRoomId:@"귀하의 RoomId" speechMode:TUIRoomFreeSpeech isOpenCamera:YES isOpenMicrophone:YES];
+[tuiRoom createRoomWithRoomId:12345 speechMode:TUIRoomFreeSpeech isOpenCamera:YES isOpenMicrophone:YES];
 :::
 ::: Swift Swift
 import TUIRoom
 
-tuiRoom.createRoom(roomId: "귀하의 RoomId", speechMode: .freeSpeech, isOpenCamera: true, isOpenMicrophone: true)
+tuiRoom.createRoom(roomId: 12345, speechMode: .freeSpeech, isOpenCamera: true, isOpenMicrophone: true)
 ```
 :::
 </dx-codeblock>
-2. **다른 사용자가 오디오/비디오 룸에 입장합니다**.
+2. **다른 사용자가 오디오/비디오 방에 입장합니다**.
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
 
-[tuiRoom enterRoomWithRoomId:@"상대방의 RoomId" isOpenCamera:YES isOpenMicrophone:YES]
+[tuiRoom enterRoomWithRoomId:12345 isOpenCamera:YES isOpenMicrophone:YES]
 :::
 ::: Swift Swift
 import TUIRoom
 
-tuiRoom.enterRoom(roomId: "상대방의 RoomId", isOpenCamera: true, isOpenMicrophone: true)
+tuiRoom.enterRoom(roomId: 12345, isOpenCamera: true, isOpenMicrophone: true)
 ```
 :::
 </dx-codeblock>

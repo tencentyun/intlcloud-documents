@@ -10,20 +10,19 @@ TUIRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝
 ## 컴포넌트 통합
 ### 1단계: TUIRoom 컴포넌트 다운로드 및 가져오기
 [Github](https://github.com/tencentyun/TUIRoom)로 이동하여 코드를 복제하거나 다운로드하고 Android 디렉터리에서 tuiroom, debug, tuibeauty 디렉터리를 프로젝트로 복사한 후 다음 가져오기 작업을 완료합니다.
-- 아래와 같이 `setting.gradle`에서 가져오기 완료:
-
+1. 아래와 같이 `setting.gradle`에서 가져오기를 완료합니다.
 ```
 include ':tuiroom'
 include ':debug'
 include ':tuibeauty'
 ```
-- app의 `build.gradle` 파일에 tuiroom, debug 및 tuibeauty에 대한 종속성을 추가합니다.
+2. tuiroom, debug 및 tuibeauty에 대한 종속성을 app의 `build.gradle` 파일에 추가합니다.
 ```
 api project(':tuiroom')
 api project(':debug')
 api project(':tuibeauty')
 ```
-- 루트 디렉터리의 `build.gradle` 파일에 `TRTC SDK` 및 I`IM SDK`에 대한 종속성을 추가합니다.
+3. 루트 디렉터리의 `build.gradle` 파일에 `TRTC SDK` 및 I`IM SDK`에 대한 종속성을 추가합니다.
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -77,13 +76,13 @@ TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 
 
 ### 4단계: 그룹 오디오/비디오 인터랙션 구현
-1. **방 주인은 그룹 오디오/비디오 대화방을 생성합니다**.
+1. **방 소유자는 그룹 오디오/비디오 대화방을 만듭니다**.
 ```java
-tuiRoom.createRoom("12345", TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
+tuiRoom.createRoom(12345, TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
 ```
-2. **다른 사용자가 오디오/비디오 룸에 입장합니다**.
+2. **다른 사용자가 오디오/비디오 방에 입장합니다**.
 ```java
-tuiRoom.enterRoom("12345", true, true);
+tuiRoom.enterRoom(12345, true, true);
 ```
 
 ### 5단계: 방 관리(옵션)
@@ -172,7 +171,7 @@ private void startScreenCapture() {
 ```
 
 ### 7단계: 뷰티 필터 특수 효과(옵션)[](id:XMagic)
-TUIRoom 뷰티 필터는 Tencent 특수 효과 SDK를 사용하며, 뷰티 필터 기능을 사용하려면 먼저 XMagic License를 설정해야 합니다.
+TUIRoom 뷰티 필터는 Tencent 특수 효과 SDK를 사용하며, 뷰티 필터 기능을 사용할 때는 먼저 XMagic License를 설정해야 합니다.
 ```java
 TUIBeautyView.getBeautyService().setLicense(context, “XMagicLicenseURL”, “XMagicLicenseKey”);
 ```
