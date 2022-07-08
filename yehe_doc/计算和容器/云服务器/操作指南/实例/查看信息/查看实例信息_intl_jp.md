@@ -25,6 +25,7 @@
 ![](https://main.qcloudimg.com/raw/6d1d1e3312b92c4c32099df85e6e26b3.png)
 このページでは、ID/インスタンス名、監視、ステータス、アベイラビリティーゾーン、インスタンスタイプ、設定、メインIPv4アドレス、メイン IPv6 アドレス、インスタンス課金モデル、ネットワーク課金モデルおよび所属プロジェクトなどを含む情報操作を確認できます。
 <dx-alert infotype="explain" title="">
+実際のニーズに応じて使用できます [コンソールインスタンスのページビューへの切替](https://intl.cloud.tencent.com/document/product/213/45918)。
 </dx-alert>
 
 下図のように、右上コーナーの<img style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/93d28b8ce995f53c460707e44038e0ad.png"></img>をクリックし、ポップアップした「カスタムリストフィールド」ウィンドウで表示したいリストの詳細情報を選択します。
