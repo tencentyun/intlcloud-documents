@@ -5,10 +5,10 @@ The conditional routing plugin can forward different client requests to differen
 
 ## Directions
 
-### Step 1. Create a plugin
+### Step 1. Create the plugin
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway)
-2. On the left sidebar, click **Plugin** to enter the plugin list page.
+1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
+2. Click **Plugin** on the left sidebar to open the plugin list page.
 3. Click **Create** in the top-left corner of the page and select **Conditional Routing** as the plugin type to create a conditional routing plugin.
    You can create up to 10 routing policies in a conditional routing plugin and need to enter the following content in each policy:
 
@@ -19,6 +19,8 @@ The conditional routing plugin can forward different client requests to differen
 | Trigger condition | Yes     | Conditional expression that judges whether the client request meets the condition. For more information, see the relevant description below. |
 | Backend type | Yes     | Public network URL/IP, VPC resources, SCF, Mock, and TSF are supported.  |
 | Backend configuration | Yes     | Backend to which the client request will be forwarded if the request meets the condition. Enter the backend configuration in YAML format. |
+
+![](https://main.qcloudimg.com/raw/e961c1531b24f9da006e3b9981ffb507.png)
 
 ### Step 2. Bind an API and make the plugin effective
 
@@ -33,14 +35,14 @@ The conditional routing plugin can forward different client requests to differen
 
 A conditional expression supports the following two types of parameters:
 
-- **Request parameter in a certain location**: currently, only `Header`, `Path`, and `Query` parameters are supported.
+- **Request parameter in a certain location**: Currently, only `Header`, `Path`, and `Query` parameters are supported.
    - If the `a` parameter in the `Header` location is configured in the frontend configuration, you can use `header.a` to represent this parameter in the plugin.
    - The `Path` parameter has no parameter name and is therefore represented by a path; for example, `path='/test'` indicates that the condition is met if the request path is `/test`.
    - The value definition of the `Path` parameter must start with `/`, such as `'/test'`.
    
 - You can **use `sysparam` to reference system parameters of the current request** without defining them in the API; however, if you define a parameter with the same name in the API, the value in the API will be overwritten by the value of the custom parameter. We recommend you enter the parameter value in lower camel case and make it case-insensitive. The following system parameters can be used in the routing plugin:
-   - sysparam.clientIp: client IP.
-   - sysparam.httpScheme: request protocol, which is HTTP or HTTPS.
+   - sysparam.clientIp: Client IP.
+   - sysparam.httpScheme: Request protocol, which is HTTP or HTTPS.
    - sysparam.clientUa: `UserAgent` field uploaded by the client.
 
 >?The parameter location is case-insensitive, while the parameter name is case-sensitive; for example, in the above `header.a` parameter, the parameter location `header` is case-insensitive, while the parameter name `a` is case-sensitive.

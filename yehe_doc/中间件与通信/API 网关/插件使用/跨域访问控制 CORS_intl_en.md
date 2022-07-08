@@ -6,10 +6,10 @@ If the default CORS configuration of API Gateway cannot meet your needs, you can
 
 ## Directions[](id:steps)
 
-### Step 1. Create a plugin
+### Step 1. Create the plugin
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway)
-2. On the left sidebar, click **Plugin** to enter the plugin list page.
+1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
+2. Click **Plugin** on the left sidebar to open the plugin list page.
 3. Click **Create** in the top-left corner of the page and select **Cross-Origin Resource Sharing (CORS)** as the plugin type to create a CORS plugin.
 
 | Parameter | Required | Description |
@@ -59,7 +59,7 @@ If the default CORS configuration of API Gateway cannot meet your needs, you can
 
 Currently, there are two places in API Gateway where you can set CORS rules:
 
-- Create API > frontend configuration > CORS is supported: enable the **CORS is supported** configuration item when creating an API, and API Gateway will add `Access-Control-Allow-Origin : *` in the response header by default.
+- Create API > frontend configuration > CORS is supported: Enable the **CORS is supported** configuration item when creating an API, and API Gateway will add `Access-Control-Allow-Origin : *` in the response header by default.
 - For more information on the CORS plugin described in this document, see [Directions](#steps).
 
 The CORS plugin has a higher priority than the **CORS is supported** configuration item. When the former is bound to an API, the latter of the API will not take effect.

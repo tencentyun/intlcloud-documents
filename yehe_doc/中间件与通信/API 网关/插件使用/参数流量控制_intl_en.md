@@ -11,17 +11,17 @@ The parameter traffic throttling plugin can control the traffic according to the
 
 ## Directions
 
-### Step 1. Create a plugin
+### Step 1. Create the plugin
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway)
-2. On the left sidebar, click **Plugin** to enter the plugin list page.
+1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
+2. Click **Plugin** on the left sidebar to open the plugin list page.
 3. Click **Create** in the top-left corner of the page and select **Parameter Traffic Throttling** as the plugin type to create a parameter traffic throttling plugin.
 
 | Parameter | Required | Description |
 | ------------ | ------------------ | ------------------------------------------------------------ |
 | Enable default policy | Yes               | Whether to enable the default policy. The default policy implements traffic throttling at the API level and is independent from all other traffic throttling policies. For each request, the default policy will be checked first before other policies. |
-| Default threshold   | Yes if the default policy is enabled | Upper limit of the number of times an API can be accessed within a certain period of time, which must be a positive integer. |
-| Default traffic throttling duration | Yes if the default policy is enabled | It supports four units: second, minute, hour, and day, and is used together with the default threshold.       |
+| Default throttling limit   | Yes if the default policy is enabled | Upper limit of the number of times an API can be accessed within a certain period of time, which must be a positive integer. |
+| Default traffic throttling duration | Yes if the default policy is enabled | It supports four units: second, minute, hour, and day, and is used together with the default throttling limit.       |
 | Traffic throttling policy     | Yes               | Parameter traffic throttling policy. You can create up to 10 policies in the same parameter traffic throttling plugin. The configuration items in a policy are as detailed below. |
 
 You can create up to 10 traffic throttling policies in the same parameter traffic throttling plugin. Each policy has the following configuration items:
@@ -33,8 +33,10 @@ You can create up to 10 traffic throttling policies in the same parameter traffi
 | Trigger condition     | No     | If you set a condition, only when it is met can this traffic throttling policy be executed.<br>Enter a conditional expression. For more information on the rules of writing conditional expressions, see **[Notes](#notice)**. |
 | Traffic throttling parameter location | Yes     | You can enter only one traffic throttling parameter and need to select the location and set the parameter name. For example, `Header.ClientIP` indicates to perform traffic throttling for each value of the `ClientIP` parameter in `Header`.<br>The following locations are supported: Header, Query, and Path. The `Path` parameter represents a complete API path, for which you don't need to enter the parameter name. |
 | Traffic throttling parameter name | Yes     | You can enter only one traffic throttling parameter and need to select the location and set the parameter name. For example, `Header.ClientIP` indicates to perform traffic throttling for each value of the `ClientIP` parameter in `Header`.<br>The traffic throttling parameter name needs to be used together with the parameter location. The `Path` parameter represents a complete API path, for which you don't need to enter the parameter name. |
-| Threshold       | Yes     | Traffic throttling threshold for the traffic throttling parameter in this policy, which must be a positive integer and used together with the traffic throttling duration. |
-| Traffic throttling duration     | Yes     |   It supports four units: second, minute, hour, and day, and is used together with the threshold.           |
+| Throttling limit       | Yes     | Traffic throttling threshold for the traffic throttling parameter in this policy, which must be a positive integer and used together with the traffic throttling duration. |
+| Traffic throttling duration     | Yes |    It supports four units: second, minute, hour, and day, and is used together with the throttling limit.           |
+
+![](https://qcloudimg.tencent-cloud.cn/raw/36230286d28c8e5bbdd7c6bd1100f67d.png)
 
 ### Step 2. Bind an API and make the plugin effective
 
