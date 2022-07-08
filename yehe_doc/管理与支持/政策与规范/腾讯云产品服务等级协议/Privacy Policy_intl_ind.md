@@ -588,7 +588,7 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
 31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
 32.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45938).
-33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).
+33.[Risk Control Engine](https://intl.cloud.tencent.com/document/product/1123/45972).
 34.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46315).
 35.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46725).
 36.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46973).
