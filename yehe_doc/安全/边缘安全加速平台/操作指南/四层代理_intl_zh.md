@@ -51,7 +51,7 @@
 3. 在新建四层代理服务页面的转发规则模块中，单击**批量导入**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/1fc717b9c79c057b1fddd1d8dddb93a3.png)
 4. 在批量导入转发规则窗口中，输入所需规则，单击**提交**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f71aa062bb33e7a1343b88fe75017d18.png" style="zoom:80%;" />
+![](https://qcloudimg.tencent-cloud.cn/raw/f71aa062bb33e7a1343b88fe75017d18.png)
  - 批量导入格式说明：
      - 一行对应一条转发规则，最多可输入 100 条。
      - 每行包含 4 个字段，字段之间以空格分开，不区分大小写。

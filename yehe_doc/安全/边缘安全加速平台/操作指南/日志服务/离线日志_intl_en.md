@@ -5,15 +5,14 @@ EdgeOne nodes respond to most of the user requests. To facilitate access analysi
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Log Service** > **Offline Logs** on the left sidebar.
->?The EdgeOne console is not yet fully available. To access the console, please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
+>?The EdgeOne console is now only available to beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
-2. On the offline logs page, select a site or the offline logs of a subdomain name. You can also filter offline logs by time.
+2. On the offline logs page, select the logs of a site or a subdomain name. You can also filter offline logs by time.
 ![](https://qcloudimg.tencent-cloud.cn/raw/281cfb26b8b14588d501770c5a09ff3a.png)
-
 > !
 > - The access logs are packed every hour by default. If the selected domain name is not requested during one hour, no log pack will be generated for this hour.
-> - Each log pack is compressed to `.gz` format through gzip.
-> - EdgeOne nodes are distributed over the globe. To synchronize all time zones, offline logs are stored and queried in UTC+00:00 by default.
+> - Each log pack is compressed to a GZ file.
+> - Offline logs are stored and queried in UTC+00:00 by default.
 >- Offline logs are collected from each EdgeOne node, so the delay may vary. Generally, querying and downloading of log packs can be delayed by about 30 minutes. Log packs will be added continuously and will stabilize after 2-3 hours.
 
 ## Field Description
