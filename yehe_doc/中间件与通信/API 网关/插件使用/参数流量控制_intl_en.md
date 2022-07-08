@@ -36,8 +36,6 @@ You can create up to 10 traffic throttling policies in the same parameter traffi
 | Throttling limit       | Yes     | Traffic throttling threshold for the traffic throttling parameter in this policy, which must be a positive integer and used together with the traffic throttling duration. |
 | Traffic throttling duration     | Yes |    It supports four units: second, minute, hour, and day, and is used together with the throttling limit.           |
 
-![](https://qcloudimg.tencent-cloud.cn/raw/36230286d28c8e5bbdd7c6bd1100f67d.png)
-
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the plugin list and click **Bind API** in the **Operation** column.
