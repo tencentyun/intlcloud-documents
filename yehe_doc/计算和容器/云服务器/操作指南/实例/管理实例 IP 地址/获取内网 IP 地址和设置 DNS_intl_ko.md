@@ -54,9 +54,9 @@ options timeout:1 rotate
 2. 운영 체제 인터페이스에서 **제어판** > **네트워크 및 공유 센터** > **어댑터 장치 변경**을 엽니다.
 3. **이더넷**을 우클릭한 후 **속성**을 선택하여 '이더넷 속성' 창을 엽니다.
 4. 아래 이미지와 같이 ‘이더넷 속성’ 창에서 **Internet 프로토콜 버전 4 (TCP/IPv4)**를 더블 클릭하여 엽니다.
-![](https://main.qcloudimg.com/raw/023e97de00a08b44a19c510798d2d1c6.png)
+![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
 5. **다음 DNS 서버 주소 사용**을 선택하고 [내부 네트워크 DNS](https://intl.cloud.tencent.com/zh/document/product/213/5225?from_cn_redirect=1#.E5.86.85.E7.BD.91-dns)에 따라 다른 리전에 해당하는 리스트는 DNS IP를 수정합니다.
-![](https://main.qcloudimg.com/raw/8921862c0b6ea5e407de4796f2806c8e.png)
+![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
 6. **확인**을 클릭합니다.
 :::
 </dx-tabs>
