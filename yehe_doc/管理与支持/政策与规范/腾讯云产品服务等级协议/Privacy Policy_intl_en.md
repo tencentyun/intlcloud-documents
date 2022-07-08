@@ -596,8 +596,8 @@ The following Modules shall apply and form part of this privacy policy if you us
 38.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47222).
 39.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47314).
 40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47853).
-41.[TTS](https://intl.cloud.tencent.com/document/product/1154/48241).
-42.[ASR](https://intl.cloud.tencent.com/document/product/1118/48289).
+41.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48241).
+42.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48289).
 43.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
 
 ### Revision History
