@@ -598,5 +598,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47853).
 41.[TTS](https://intl.cloud.tencent.com/document/product/1154/48241).
 42.[ASR](https://intl.cloud.tencent.com/document/product/1118/48289).
+43.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
+
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
