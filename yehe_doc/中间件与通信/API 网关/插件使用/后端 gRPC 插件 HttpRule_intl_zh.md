@@ -226,7 +226,7 @@ additional_bindings 主要用于接口的兼容或者同一个 rpc 方法暴露�
 处理方法：因为 `.proto` 文件中 HttpRule 的 option 中定义的路径和您访问的路径不一致，需要检查一下 `.proto` 文件，改为一致即可。 
 ![](https://qcloudimg.tencent-cloud.cn/raw/fc261fed06f0c56b4624ef7b8558baea.png)                       
 解决方法示例：
-![](https://qcloudimg.tencent-cloud.cn/raw/0fe7d92702aeddc1c64ea0ae38ee9c70.png)        
+![](https://qcloudimg.tencent-cloud.cn/raw/1be73218cee5aac93679792a51bc846c.jpg)        
 修改后，成功访问的示例：
 ![](https://qcloudimg.tencent-cloud.cn/raw/6e6cb660c671dbee3f904fc8b9e3ce5d.png)        
 
