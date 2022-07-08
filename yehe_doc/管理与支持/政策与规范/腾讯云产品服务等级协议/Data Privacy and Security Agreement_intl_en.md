@@ -202,7 +202,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 31.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
 32.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
 33.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
-34.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+34.[Risk Control Engine](https://intl.cloud.tencent.com/document/product/1123/45973).
 35.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 36.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
 37.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
