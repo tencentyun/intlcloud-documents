@@ -20,7 +20,7 @@ Please see the MTR introduction and instructions corresponding to the host opera
 
 #### Installing WinMTR
 1. Log in to the Windows CVM.
-2. On the operating system interface, visit the official website (or other legal channels) through the browser to download the WinMTR installer package corresponding to your operating system.
+2. On the operating system interface, visit the official website (or other valid channels) through the browser to download the WinMTR installer package corresponding to your operating system.
 3. Unzip the WinMTR installer package.
 
 #### Using WinMTR
