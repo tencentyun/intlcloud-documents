@@ -202,7 +202,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 31.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45801).
 32.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45804).
 33.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45939).
-34.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45973).
+34.[Risk Control Engine](https://intl.cloud.tencent.com/document/product/1123/45973).
 35.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46316).
 36.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46726).
 37.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46974).
@@ -210,9 +210,10 @@ The following Modules shall apply and be incorporated by reference into this DPS
 39.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
 40.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47315).
 41.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854).
-42.[TTS](https://intl.cloud.tencent.com/document/product/1154/48243).
-43.[ASR](https://intl.cloud.tencent.com/document/product/1118/48290).
+42.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48243).
+43.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48290).
 44.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48382).
+45.[TencentCloud Managed Service for Grafana](https://intl.cloud.tencent.com/document/product/1124/48403).
 
 ## 10.Jurisdiction-specific Requirements
 

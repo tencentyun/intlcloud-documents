@@ -72,7 +72,7 @@
 <td>Hadoop 集群新增产品版本 EMR-V3.4.0</td>
 <td><li>支持 Spark3.2.1、Trino372、Flink1.14.3、Hbase2.4.5、Zookeeper3.6.3、Impala4.0.0、Zeppelin0.10.1、Alluxio2.8.0、Hudi0.10.1、Iceberg0.13.1、Goosefs1.2.0<li>新版本中 PrestoSQL 更名为 Trino，并支持 Ranger，新版本中监控指标告警需按 Trino 配置</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">组件版本</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Trino 监控指标</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">组件版本</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47767" target="_blank">Trino 监控指标</a></td>
 </tr>	
 <tr>
 <td>监控丰富</td>

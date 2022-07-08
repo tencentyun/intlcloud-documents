@@ -588,7 +588,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 30.[CODING Artifact Repositories](https://intl.cloud.tencent.com/document/product/1136/45800).
 31.[CODING Continuous Deployment](https://intl.cloud.tencent.com/document/product/1137/45803).
 32.[Tencent Distributed Message Queue](https://intl.cloud.tencent.com/document/product/1110/45938).
-33.[RiskControlEngine](https://intl.cloud.tencent.com/document/product/1123/45972).
+33.[Risk Control Engine](https://intl.cloud.tencent.com/document/product/1123/45972).
 34.[TencentCloud EdgeOne](https://intl.cloud.tencent.com/document/product/1145/46315).
 35.[eKYC](https://intl.cloud.tencent.com/document/product/1061/46725).
 36.[Tencent Managed Service for Prometheus](https://intl.cloud.tencent.com/document/product/1116/46973).
@@ -596,9 +596,10 @@ The following Modules shall apply and form part of this privacy policy if you us
 38.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47222).
 39.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47314).
 40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47853).
-41.[TTS](https://intl.cloud.tencent.com/document/product/1154/48241).
-42.[ASR](https://intl.cloud.tencent.com/document/product/1118/48289).
+41.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48241).
+42.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48289).
 43.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
+44.[TencentCloud Managed Service for Grafana](https://intl.cloud.tencent.com/document/product/1124/48402).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
