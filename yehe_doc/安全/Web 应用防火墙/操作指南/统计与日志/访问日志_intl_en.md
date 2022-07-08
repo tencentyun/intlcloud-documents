@@ -1,7 +1,7 @@
 ## Overview
 Access logging is used to record access logs of domain names protected by WAF. It allows you to query and download access logs generated in the last 30 days and retain them for up to 180 days. After enabling this feature, you can query and download access logs as needed to meet your security compliance and OPS requirements.
 >!
->- To use access logging, you need to [purchase an extra log services pack](https://intl.cloud.tencent.com/document/product/627/47409) and enable access logging as instructed in [Directions](#sysm). Only after this feature is enabled for a domain name can its access requests be logged by WAF.
+>- To use access logging, you need to [purchase an extra log services pack](https://intl.cloud.tencent.com/document/product/627/47799) and enable access logging as instructed in [Directions](#sysm). Only after this feature is enabled for a domain name can its access requests be logged by WAF.
 >- To disable access logging: You can delete the corresponding billable item in [Renewal Management](https://console.cloud.tencent.com/account/renewal). Note that access logging will be stopped within 2 hours and the history will be cleared within 24 hours once the billable item is removed. 
 >- To expand logging capacity: When the required log storage exceeds the purchased log pack’s capacity, new access logs will not be stored, and the historical access logs will be deleted when the retention period reaches. To avoid loss of access logs from insufficient capacity, we recommend checking your log usage and expanding the capacity in advance.
 
