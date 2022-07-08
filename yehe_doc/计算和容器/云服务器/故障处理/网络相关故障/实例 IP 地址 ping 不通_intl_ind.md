@@ -41,7 +41,7 @@ Grup keamanan adalah firewall virtual yang mengontrol lalu lintas masuk dan kelu
 ### Memeriksa konfigurasi sistem operasi
 
 Berdasarkan sistem operasi instans, pilih metode untuk memeriksa konfigurasi:
-- Untuk sistem operasi Linux, [periksa parameter kernel Linux dan konfigurasi firewall](# CheckLinux).
+- Untuk sistem operasi Linux, [periksa parameter kernel Linux dan konfigurasi firewall](#CheckLinux).
 -Untuk sistem operasi Windows, [periksa konfigurasi firewall Windows](#CheckLinux).
 
 <span id="CheckLinux"></span>
