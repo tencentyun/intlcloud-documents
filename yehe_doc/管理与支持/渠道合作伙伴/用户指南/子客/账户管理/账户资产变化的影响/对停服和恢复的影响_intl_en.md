@@ -12,9 +12,7 @@ When the customer's assets are insufficient, the customer's resources will be su
 
 (3) Solution: If the customer receives a service suspension notice, they can contact their reseller to adjust the credit and vouchers to resume the resource usage.
 
->?
-If the customer has enabled the non-stop feature, the service will not be suspended.
->
+>?If the customer has enabled the non-stop feature, the service will not be suspended.
 
 ### 2. Impact on service resumption
 
