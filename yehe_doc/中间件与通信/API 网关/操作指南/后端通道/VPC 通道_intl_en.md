@@ -45,8 +45,6 @@ A VPC upstream is to open the services deployed in the VPC for external access t
 5. In **Backend Configuration**, set **Backend Type** to **VPC resources**, set **Connection Mode** to **VPC Upstream**, and select the VPC upstream created in step 1.
 6. Complete the rest configuration.
 
-![](https://main.qcloudimg.com/raw/6d1487f4b5ff233db93d5fa314ed7ca9.png)
-
 ### Step 3. Call the API
 
 Call the API created in step 2. The API can be called successfully.
