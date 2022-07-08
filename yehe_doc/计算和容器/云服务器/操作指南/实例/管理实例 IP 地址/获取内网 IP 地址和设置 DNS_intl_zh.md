@@ -56,7 +56,7 @@ options timeout:1 rotate
 4. 在 “以太网 属性” 窗口，双击打开 **Internet 协议版本 4 (TCP/IPv4)**。如下图所示：
 ![](https://main.qcloudimg.com/raw/023e97de00a08b44a19c510798d2d1c6.png)
 5. 选择**使用下面的 DNS 服务器地址**，根据 [内网 DNS](https://intl.cloud.tencent.com/zh/document/product/213/5225?from_cn_redirect=1#.E5.86.85.E7.BD.91-dns) 列表中对应的不同地域，修改 DNS IP。
-![](https://main.qcloudimg.com/raw/8921862c0b6ea5e407de4796f2806c8e.png)
+![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
 6. 单击**确定**。
 :::
 </dx-tabs>
