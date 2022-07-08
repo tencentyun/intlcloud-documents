@@ -12,7 +12,7 @@ This document describes how to add and install IIS roles on a CVM instance with 
 5. Select **Role-based or feature-based installation** and click **Next** twice, as shown below:
 ![](https://main.qcloudimg.com/raw/9eaff4f125fb23a7180cba6f38f9f879.png)
 6. Check **Web Server (IIS)** on the “Select server roles” page, as shown below:
-The “Add features that are required for Web Server (IIS)** dialog box will pop up.
+The “Add features that are required for Web Server (IIS)” dialog box will pop up.
 ![](https://main.qcloudimg.com/raw/d0aa5fa075275bfb2bd0c68da66616e4.png)
 7. Click **Add Features** in the pop-up dialog box, as shown below:
 ![](https://main.qcloudimg.com/raw/817d1f22107836c77af2fd963888824f.png)
