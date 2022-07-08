@@ -7,6 +7,4 @@
 子客可登录[控制台-费用中心/账户信息](https://console.intl.cloud.tencent.com/expense/accountinfo)查看自己信用额度。可用信用额度=总信用额度-已使用信用额度
 ![](https://qcloudimg.tencent-cloud.cn/raw/a4aea19bb0a2850e57dbeb845de9bc5f.png)
 
->?
-若您的历史账单已经回款至经销商，请联系您的经销商进行线上确认回款操作，已回款的账单金额会返还至您的可用信用度中。
->
+>?若您的历史账单已经回款至经销商，请联系您的经销商进行线上确认回款操作，已回款的账单金额会返还至您的可用信用度中。
