@@ -72,7 +72,7 @@
 <td>Released a Hadoop cluster version - EMR v3.4.0.</td>
 <td><li>Added support for Spark 3.2.1, Trino 372, Flink 1.14.3, HBase 2.4.5, ZooKeeper 3.6.3, Impala 4.0.0, Zeppelin 0.10.1, Alluxio 2.8.0, Hudi 0.10.1, Iceberg 0.13.1, and GooseFS 1.2.0.<li>Renamed PrestoSQL Trino in the new version and added support for Ranger. Monitoring metric alarms need to be configured based on Trino in the new version.</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Product Releases and Component Versions</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Trino Monitoring Metrics</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Product Releases and Component Versions</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47767" target="_blank">Trino Monitoring Metrics</a></td>
 </tr>	
 <tr>
 <td>Enriched monitoring.</td>
