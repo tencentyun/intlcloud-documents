@@ -34,7 +34,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
 
 #### 请求头
 
@@ -167,7 +170,7 @@ Container 类型 Audio 的具体数据描述如下：
 | Bitrate            | Request.Audio | 原始音频码率 | String | 否       | 无     | <ul  style="margin: 0;"><li>单位：Kbps </li><li>值范围：[8，1000]    </li></ul>                  |
 | Channels           | Request.Audio | 声道数       | String | 否       | 无     | <ul  style="margin: 0;"><li>当 Codec 设置为 aac/flac，支持1、2、4、5、6、8 </li><li>当 Codec 设置为 mp3/opus 时，支持1、2 </li><li>当 Codec 设置为 Vorbis 时，只支持2 </li><li>当 Codec 设置为 amr，只支持1 </li><li>当封装格式为dash时，不支持8  </li></ul>|
 | Remove             | Request.Audio | 是否删除源音频流 | String | 否   | false    | 取值 true、false|
-| KeepTwoTracks      | Request.Audio | 保持双音轨 | String | 否   | false    | 取值 true、false。 当 Video.Codec 为H.265时，此参数无效。               |
+| KeepTwoTracks      | Request.Audio | 保持双音轨 | String | 否   | false    | 取值 true、false。 当 Video.Codec 为H.265时，此参数无效。
 | SwitchTrack        | Request.Audio | 转换轨道 | String | 否   | false    | 取值 true、false。 当 Video.Codec 为H.265时，此参数无效。                                       |
 | SampleFormat       | Request.Audio | 采样位宽  | String | 否   | 无      | <ul  style="margin: 0;"><li>当 Codec 设置为 aac, 支持 fltp </li><li>当 Codec 设置为 mp3, 支持 fltp、s16p、s32p </li><li>当 Codec 设置为 flac, 支持s16、s32 </li><li>当 Codec 设置为 amr, 支持s16 </li><li>当 Video.Codec 为H.265时，此参数无效 </li></ul>|
 
@@ -306,7 +309,7 @@ Container 类型 TransConfig 的具体数据描述如下：
 
 AdjDarMethod 参数图示：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e2eb1d7346df8f51756fdab7bdce2ca0.png)
+![](https://main.qcloudimg.com/raw/3436731be8c1caa5ffd565b2c44b9643.png)
 
 
 Container 类型 HlsEncrypt 的具体数据描述如下：

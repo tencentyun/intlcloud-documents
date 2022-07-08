@@ -1,14 +1,14 @@
-## Feature Description
+## Feature Overview
 
-This API is used to query all inventory jobs set for a bucket. You can configure up to 1,000 inventory jobs for a bucket.  
+This API is used to query all inventory jobs configured for a bucket. You can configure up to 1,000 inventory jobs for a bucket.  
 
-This request supports returning the results in multiple responses. Each response can contain up to 100 inventory jobs. Please pay attention to the value of `IsTruncated` in the request.
+This request supports returning the results in multiple responses. Each response can contain up to 100 inventory jobs. The value of `IsTruncated` in the request is described as follows:
 - If the value of `IsTruncated` is `false`, all inventory jobs of the bucket have been listed.
 - If the value of `IsTruncated` is `true` and `NextContinuationToken` carries a value, you can pass this value to `continuation-token` in the next request to obtain the remaining inventory jobs from the next response.
 
-For more information, please see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622).
+For more information, see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
->! To call this API, make sure that you have the necessary permission for bucket inventory jobs; the bucket owner has this permission by default. If you do not have it, you should request it from the bucket owner first.
+>! To call this API, make sure that you have the required permission for bucket inventory jobs. The bucket owner has the permission by default. If you don’t have it, you must request it from the bucket owner first.
 >
 
 
@@ -140,14 +140,14 @@ The nodes are described as follows:
 | Node Name | Parent Node | Description | Type |
 | ------------------------------------ | ----------------------------------- | ------------------------------------------------------------ | --------- |
 | List InventoryConfigurationResult | None | Information about all inventory jobs of the bucket | Container |
-| InventoryConfiguration | ListInventoryConfigurationResult | Detailed configuration of an inventory job. For the XML structure, please see [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623). | Container |
+| InventoryConfiguration | ListInventoryConfigurationResult | Detailed configuration of an inventory job. For the XML structure, see [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623). | Container |
 | IsTruncated | ListInventoryConfigurationResult | Whether all inventory jobs have been listed. If yes, the value is `false`. Otherwise, the value is `true`. | Boolean   |
 | ContinuationToken | ListInventoryConfigurationResult | Identifier of the current response. This parameter corresponds to the `continuation-token` request parameter. | String |
 | NextContinuationToken | ListInventoryConfigurationResult | Identifier of the next response. You can pass the value of this parameter to `continuation-token` and initiate a GET request to obtain the inventory jobs from the next response. | String    |
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 
@@ -171,13 +171,13 @@ After the request above is made, COS returns the following response, indicating 
 - Objects to analyze: objects prefixed with `myPrefix` and all their versions in the `examplebucket-1250000000` bucket
 - Analysis frequency: daily
 - Analysis dimensions: `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus`
-- Analysis result: to be stored in the `examplebucket-1250000000` bucket as a CSV file, which is prefixed with `list1` and encrypted with SSE-COS.  
+- Analysis result: to be stored in the `inventorybucket-1250000000` bucket as a CSV file, which is prefixed with `list1` and encrypted with SSE-COS.
 
 **Inventory job `list2`**
 
-- Objects to analyze: objects prefixed with `myPrefix2` and all their versions in the `examplebucket-1250000000` bucket
-- Analysis frequency: once a week<br>Analysis dimensions: `Size`, `LastModifiedDate`, `StorageClass`, and `ETag`
-- Analysis result: to be stored in the `examplebucket-1250000000` bucket as a CSV file, which is prefixed with `list2` and encrypted with SSE-COS.  
+- Objects to analyze: objects prefixed with `myPrefix2` and labeled `{age:18}` and all their versions in the `examplebucket-1250000000` bucket
+- Analysis frequency: once a week<br>Analysis dimensions: `Size`, `LastModifiedDate`, `StorageClass`, `ETag` and `Tag`.
+- The result will be stored in the `inventorybucket-1250000000` bucket as a CSV file.  
 
 Assume that 100 inventory jobs are listed in this response. If the value of `IsTruncated` is `true`, COS will return `NextContinuationToken`, whose value can be passed to `continuation-token` for a GET request to obtain the inventory jobs from the next response.
 
@@ -197,7 +197,7 @@ x-cos-request-id: NTlhMzg1ZWVfMjQ4OGY3MGFfMWE1NF8****
             <COSBucketDestination>
                 <Format>CSV</Format>
                 <AccountId>1250000000</AccountId>
-                <Bucket>qcs::cos:ap-beijing::examplebucket-1250000000</Bucket>
+                <Bucket>qcs::cos:ap-beijing::inventorybucket-1250000000</Bucket>
                 <Prefix>list1</Prefix>
                 <SSE-COS></SSE-COS>
             </COSBucketDestination>
@@ -225,23 +225,28 @@ x-cos-request-id: NTlhMzg1ZWVfMjQ4OGY3MGFfMWE1NF8****
             <COSBucketDestination>
                 <Format>CSV</Format>
                 <AccountId>1250000000</AccountId>
-                <Bucket>qcs::cos:ap-beijing::examplebucket-1250000000</Bucket>
-                <Prefix>list2</Prefix>
-                <SSE-COS></SSE-COS>
+                <Bucket>qcs::cos:ap-beijing::inventorybucket-1250000000</Bucket>
             </COSBucketDestination>
         </Destination>
         <Schedule>
             <Frequency>Weekly</Frequency>
         </Schedule>
         <Filter>
-            <Prefix>myPrefix2</Prefix>
+            <And>
+                <Prefix>myPrefix2</Prefix>
+                <Tag>
+                    <Key>age</Key>
+                    <Value>18</Value>
+                </Tag>
+            </And>
         </Filter>
         <IncludedObjectVersions>All</IncludedObjectVersions>
         <OptionalFields>
             <Field>Size</Field>
             <Field>LastModifiedDate</Field>
-            <Field>ETag</Field>
             <Field>StorageClass</Field>
+            <Field>ETag</Field>
+            <Field>Tag</Field>
         </OptionalFields>
     </InventoryConfiguration>
     <IsTruncated>false</IsTruncated>

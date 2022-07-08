@@ -27,6 +27,7 @@ Authorization: <Auth String>
 此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
+
 该请求无请求体。
 
 #### 请求参数
@@ -35,13 +36,13 @@ Authorization: <Auth String>
 |节点名称（关键字）|父节点|描述|类型|是否必选|
 |:---|:-- |:--|:--|:--|
 |queueId|无|拉取该队列 ID 下的任务|String|是|
-| tag |无| 任务的 Tag：SDRtoHDR | String |是|
+| tag |无| 任务的 Tag：ExtractDigitalWatermark | String |是|
 | orderByTime |无| Desc 或者 Asc。默认为 Desc | String |否|
 | nextToken |无| 请求的上下文，用于翻页。上次返回的值 | String |否|
 | size |无| 拉取的最大任务数。默认为10。最大为100 | Integer |否|
-| states |无| 拉取该状态的任务，以`,`分割，支持多状态：All、Submitted、Running、Success、Failed、Pause、Cancel。默认为 All | String |否|
-| startCreationTime |无| 拉取创建时间大于该时间的任务。格式为：`%Y-%m-%dT%H:%m:%S%z`，示例：2001-01-01T00:00:00+0800 | String |否|
-| endCreationTime |无| 拉取创建时间小于该时间的任务。格式为：`%Y-%m-%dT%H:%m:%S%z`，示例：2001-01-01T23:59:59+0800    | String |否|
+| states |无| 拉取该状态的任务，以,分割支持多状态 <br> All，Submitted，Running，Success，Failed，Pause，Cancel。默认为 All | String |否|
+| startCreationTime |无| 拉取创建时间大于等于该时间的任务。格式为：`%Y-%m-%dT%H:%m:%S%z` | String |否|
+| endCreationTime |无| 拉取创建时间小于等于该时间的任务。格式为：`%Y-%m-%dT%H:%m:%S%z` | String |否|
 
 ## 响应
 
@@ -53,7 +54,7 @@ Authorization: <Auth String>
 
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
-``` shell
+```shell
 <Response>
   <JobsDetail>
   </JobsDetail>
@@ -71,22 +72,22 @@ Container 节点 Response 的内容：
 
 |节点名称（关键字）|父节点|描述|类型|
 |:---|:-- |:--|:--|
-| JobsDetail | Response | 任务的详细信息，同 CreateMediaJobs 接口中的 Response.JobsDetail 节点 |  Container |
+| JobsDetail | Response | 任务的详细信息，同 CreateMediaJobs <br/>接口中的 Response.JobsDetail 节点 |  Container |
 | NextToken | Response | 翻页的上下文 Token |  String |
-
 
 #### 错误码
 
 该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+
 
 ## 实际案例
 
 #### 请求
 
 ```shell
-GET /jobs?queueId=aaaaaaaaaaa&tag=SDRtoHDR HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+GET /jobs?queueId=aaaaaaaaaaa&tag=ExtractDigitalWatermark HTTP/1.1
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 
 ```
 
@@ -99,59 +100,27 @@ Content-Length: 666
 Connection: keep-alive
 Date: Thu, 15 Jun 2017 12:37:29 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
 <Response>
   <JobsDetail>
     <Code>Success</Code>
     <Message>Success</Message>
-    <JobId>jabcxxxxfeipplsdfwe</JobId>
+    <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
     <State>Submitted</State>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <StartTime></StartTime>
     <EndTime></EndTime>
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>SDRtoHDR<Tag>
+    <Tag>ExtractDigitalWatermark</Tag>
     <Input>
       <Object>test.mp4</Object>
     </Input>
     <Operation>
-        <SDRtoHDR>
-            <HdrMode>HLG</HdrMode>
-        </SDRtoHDR>
-        <TranscodeTemplateId></TranscodeTemplateId>
-        <WatermarkTemplateId></WatermarkTemplateId>
-        <Output>
-            <Region>ap-beijing</Region>
-            <Bucket>examplebucket-1250000000</Bucket>
-            <Object>test-trans.mp4</Object>
-        </Output>
-    </Operation>
-  </JobsDetail>
-  <JobsDetail>
-    <Code>Success</Code>
-    <Message>Success</Message>
-    <JobId>jabcxxxxfeipplsdfwe</JobId>
-    <State>Submitted</State>
-    <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <StartTime></StartTime>
-    <EndTime></EndTime>
-    <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>SDRtoHDR<Tag>
-    <Input>
-      <Object>test.mp4</Object>
-    </Input>
-    <Operation>
-        SDRtoHDR>
-            <HdrMode>HDR10</HdrMode>
-        </SDRtoHDR>
-        <TranscodeTemplateId></TranscodeTemplateId>
-        <WatermarkTemplateId></WatermarkTemplateId>
-        <Output>
-            <Region>ap-beijing</Region>
-            <Bucket>examplebucket-1250000000</Bucket>
-            <Object>test-trans.mp4</Object>
-        </Output>
+      <ExtractDigitalWatermark>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+      </ExtractDigitalWatermark> 
     </Operation>
   </JobsDetail>
 </Response>

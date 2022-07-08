@@ -1,12 +1,12 @@
 ## 功能描述
 
-DescribeMediaJob 接口用于查询指定的任务。
+DescribeMediaJob 用于查询指定的任务。
 
 ## 请求
 
 #### 请求示例
 
-```plaintext
+```shell
 GET /jobs/<jobId> HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
@@ -19,7 +19,6 @@ Authorization: <Auth String>
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
 > 
-
 
 
 #### 请求头
@@ -40,11 +39,11 @@ Authorization: <Auth String>
 #### 响应体
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
-``` plaintext
+``` shell
 <Response>
-      <JobsDetail>
-      </JobsDetail>
-      <NonExistJobIds></NonExistJobIds>
+  <JobsDetail>
+  </JobsDetail>
+  <NonExistJobIds></NonExistJobIds>
 </Response>
 ```
 
@@ -58,9 +57,8 @@ Container 节点 Response 的内容：
 
 |节点名称（关键字）|父节点|描述|类型|
 |:---|:-- |:--|:--|
-| JobsDetail | Response | 任务的详细信息，同 CreateMediaJobs 接口的Response.JobsDetail 节点 |  Container |
-| NonExistJobIds | Response | 查询的 ID 中不存在任务，所有任务都存在时不返回 |  String |
-
+| JobsDetail | Response | 任务的详细信息，同 CreateMediaJobs 接口的 <br/>Response.JobsDetail 节点 |  Container |
+| NonExistJobIds | Response | 查询的 ID 中不存在的任务，所有任务都存在时不返回 |  String |
 
 #### 错误码
 
@@ -71,49 +69,44 @@ Container 节点 Response 的内容：
 
 #### 请求
 
-```plaintext
+```shell
 GET /jobs/jabcsdssfeipplsdfwe HTTP/1.1
 Accept: */*
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
-Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
+
 ```
 
 #### 响应
 
-```plaintext
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 666
 Connection: keep-alive
 Date: Thu, 15 Jun 2017 12:37:29 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
 
 <Response>
   <JobsDetail>
     <Code>Success</Code>
     <Message>Success</Message>
-    <JobId>jabcxxxxfeipplsdfwe</JobId>
+    <JobId>je8f65004eb8511eaaed4f377124a303c</JobId>
     <State>Submitted</State>
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
-    <StartTime></StartTime>
     <EndTime></EndTime>
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>SDRtoHDR<Tag>
+    <Tag>ExtractDigitalWatermark</Tag>
     <Input>
       <Object>test.mp4</Object>
     </Input>
     <Operation>
-        <SDRtoHDR>
-            <HdrMode>HLG</HdrMode>
-        </SDRtoHDR>
-        <TranscodeTemplateId></TranscodeTemplateId>
-        <WatermarkTemplateId></WatermarkTemplateId>
-        <Output>
-            <Region>ap-beijing</Region>
-            <Bucket>examplebucket-1250000000</Bucket>
-            <Object>test-trans.mp4</Object>
-        </Output>
+      <ExtractDigitalWatermark>
+        <Type>Text</Type>
+        <Message>123456789ab</Message>
+        <Version>V1</Version>
+      </ExtractDigitalWatermark> 
     </Operation>
   </JobsDetail>
 </Response>

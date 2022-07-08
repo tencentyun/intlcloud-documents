@@ -1,4 +1,5 @@
 ## 功能描述
+
 CancelMediaJob 用于取消一个任务。
 
 ## 请求
@@ -16,8 +17,10 @@ Authorization: <Auth String>
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情) 文档。
 > 
+
+
 
 #### 请求头
 

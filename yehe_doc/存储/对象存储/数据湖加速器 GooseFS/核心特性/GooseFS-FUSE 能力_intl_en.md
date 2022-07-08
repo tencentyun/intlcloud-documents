@@ -84,9 +84,12 @@ You can edit the `$GOOSEFS_HOME/conf/goosefs-site.properties` configuration file
 ## Limitations
 
 Currently, GooseFS-FUSE supports most basic file system operations. However, due to some inherent features of GooseFS, you need to be aware of the following:
-
--  Files can be written only once in sequence and cannot be modified. This means that if you want to modify a file, you need to delete the file and then recreate it. For example, the `cp` command fails when the target file exists.
--  GooseFS does not have the concepts of hard link and soft link, so it does not support commands related to them, such as `ln`. In addition, information about hard links is not shown in the output of `ll`.
+- Files cannot be written randomly and additionally.
+- Files can be written sequentially only once and cannot be modified. If you want to modify a file, first delete the file and then recreate it or open the file with the `O_TRUNC` identifier and set its length to `0`.
+- Files being written in the mount point cannot be read.
+- The file length cannot be truncated.
+- Commands related to soft/hard link are not supported. GooseFS does not have the concepts of hard link or soft link, so it does not support commands related to them, such as `ln`. In addition, information about hard links is not shown in the output of `ll`.
+- When Cloud Object Storage (COS) is used as the underlying storage, the `Rename` operation is nonatomic. 
 -  Only when the `GooseFS.security.group.mapping.class` option of GooseFS is set to the value of `ShellBasedUnixGroupsMapping`, the user and group information of a file corresponds to the user group of a Unix system. Otherwise, the `chown` and `chgrp` operations do not take effect, and `ll` returns the information of the user and group that started the GooseFS-FUSE process.
 
 ## Performance Considerations
@@ -112,9 +115,10 @@ The following are GooseFS-FUSE related parameters:
 
 ## FAQs
 
-The libfuse library file is missing. You need to install libfuse.
+#### Missing libfuse library file
+You need to install libfuse before mounting GooseFS-Fuse.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7a535eed0fac0da06f530fb04ca9702b.png)
-- **Method 1**
+- **Option 1**
 Installation command:
 ```
 yum install fuse-devel
@@ -123,7 +127,7 @@ Check whether the installation is successful:
 ```
 find / -name libfuse.so*
 ```
-- **Method 2**
+- **Option 2**
 Update the old version libfuse.so.2.9.2. The procedure is as follows:
 >? If libfuse is installed in CentOS 7, libfuse.so.2.9.2 is installed by default.
 >
@@ -153,7 +157,6 @@ rm -f /usr/lib64/libfuse.so.2
 ln -s /usr/lib64/libfuse.so.2.9.7 /usr/lib64/libfuse.so
 ln -s /usr/lib64/libfuse.so.2.9.7 /usr/lib64/libfuse.so.2
 ```
- 
 
- 
-
+#### “Write error in swap file” error during editing a file in the mounting point by using VIM
+You can change the VIM configuration to use VIM 7.4 or earlier for editing files in the GooseFS-Fuse mounting point. The VIM swap file is used to retain the modifications so that VIM can restore unsaved modifications based on the swap file if the machine crashes or restarts. The above error is due to a random write operation to a VIM swap file, while GooseFS does not support it. Solution: You can run the `:set noswapfile` command to terminate swap file generation or add `set noswapfile` to the configuration file (“~/.vimrc”).
