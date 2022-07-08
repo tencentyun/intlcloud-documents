@@ -25,6 +25,7 @@
 ![](https://main.qcloudimg.com/raw/6d1d1e3312b92c4c32099df85e6e26b3.png)
 이 페이지에서 조회할 수 있는 정보에는 ID/인스턴스 이름, 모니터링, 상태, 가용존, 인스턴스 유형, 설정, 기본 IPv4 주소, 기본 IPv6 주소, 인스턴스 과금 방식, 네트워크 과금 방식 및 서브 프로젝트가 포함됩니다.
 <dx-alert infotype="explain" title="">
+실제 요구 사항에 따라 할 수 있습니다 [콘솔 인스턴스 페이지 뷰 전환](https://intl.cloud.tencent.com/document/product/213/45918).
 </dx-alert>
 
 아래 이미지와 같이 우측 상단의 <img style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/93d28b8ce995f53c460707e44038e0ad.png"></img>을(를) 클릭하여 ‘사용자 정의 리스트 필드’ 팝업 창에서 표시할 리스트 상세 정보를 선택합니다.

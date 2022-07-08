@@ -25,6 +25,7 @@
 ![](https://main.qcloudimg.com/raw/6d1d1e3312b92c4c32099df85e6e26b3.png)
 在该页面中，您可以查看到的信息操作包括：ID/实例名、监控、状态、可用区、实例类型、配置、主 IPv4 地址、主 IPv6 地址、实例计费模式、网络计费模式以及所属项目等。
 <dx-alert infotype="explain" title="">
+您可根据实际需求 [切换控制台实例页面视图](https://intl.cloud.tencent.com/document/product/213/45918)。
 </dx-alert>
 
 您可以单击右上角的 <img style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/93d28b8ce995f53c460707e44038e0ad.png"></img>，在弹出的“自定义列表字段”窗口中，选择您想显示的列表详细信息。如下图所示：
