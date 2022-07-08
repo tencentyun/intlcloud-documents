@@ -23,10 +23,10 @@
    </tr>
    <tr>
       <td style="text-align:center">비디오 코덱</td>
-      <td>AV1, AVS2, H.264/AVC, H.263, H.263+, H.265, MPEG-1, MPEG-2, MPEG-4, MJPEG, VP8, VP9, QuickTime, RealVideo, Windows Media Video</td>
+      <td>AV1, AVS2, H.264/AVC, H.263, H.263+, H.265, MPEG-1, MPEG-2, MPEG-4, MJPEG, VP8, VP9, Quicktime, RealVideo, Windows Media Video</td>
    </tr>
 	    <tr>
-      <td style="text-align:center">오디오 스트림 삭제</td>
+      <td style="text-align:center">오디오 코덱</td>
       <td>AAC, ADPCM, AMR, DSD, MP1, MP2, MP3, PCM, RealAudio, Windows Media Audio, VORBIS</td>
    </tr>
    <tr>
@@ -59,7 +59,7 @@
 
 
 ### 멀티미디어 AI
-VOD의 비디오 AI는 아래와 같이 스마트 비디오 인식, 스마트 비디오 분석 등 다양한 AI 기반 기능을 가지고 있습니다.
+VOD는 AI 기반 동영상 콘텐츠 심사, 콘텐츠 분석, 콘텐츠 인식 등 기능을 지원합니다.
 - YouTu의 DeepEye 스마트 인식 기술을 활용하여 비디오 플랫폼에서 음란물을 식별합니다. 이를 통해 음란물에 대한 차단 범위와 효율성을 크게 높이고, 친환경적이고 건강한 소셜 네트워크 환경을 구축할 수 있습니다.
 - 음란물 감지 정확도: 0.01% FAR에서 65% 이상의 정확도와 0.1% FAR에서 80% 이상의 정확도를 제공합니다.
 - 오디오/비디오 콘텐츠에 대한 심층적인 이해를 기반으로 태그, 인물, 음성, 시나리오 및 물체와 같은 요소 검색을 지원하여 미디어 자산의 가용성을 높이고 원하는 비디오 콘텐츠를 빠르게 찾을 수 있도록 지원합니다.
@@ -87,7 +87,7 @@ VOD는 이미지 URL을 재작성을 통한 썸네일, 자르기 등 간단하�
 - 내접원 및 직사각형 자르기를 지원합니다.
 
 
-### 이미지 스마트 인식
+### 이미지 심사
 VOD는 AI를 사용하여 이미지 콘텐츠에 규정 위반 정보가 있는지 스마트하게 식별합니다. 스마트 인식의 결과에는 위반 유형, 위반 태그, 신뢰도 점수, 처리 제안 등이 포함됩니다. 구체적인 기능은 다음과 같습니다.
 - 이미지(사람, 사물, 장면)에서 규정 위반 정보의 스마트 인식을 지원합니다.
 - OCR 텍스트(화면 속 텍스트)의 규정 위반 정보의 스마트 인식을 지원합니다.
