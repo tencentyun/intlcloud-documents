@@ -15,6 +15,6 @@ You can adjust the cache period of resources on nodes to optimize the node cache
     - Custom time: Customize the resource cache period.
 
 Note: The overall cache policy is as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/7dea1a938a3659e0988e585f7635b77d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ff3e0f7407150bbf0c84c0c24eec02cf.png)
 
 >? Force cache: It is enabled by default. When it’s enabled, node cache TTL will take effect within the cache period you configure, even if the origin server's `Cache-Control` is `no-cache/no-store/private`. When it’s disabled, the nodes will not cache resources and follow the no-cache header, even if the origin server's `Cache-Control` is `no-cache/no-store/private`. To disable force cache, you can go to [Rule Engine](https://intl.cloud.tencent.com/document/product/1145/46151) to customize node cache TTL rules.
