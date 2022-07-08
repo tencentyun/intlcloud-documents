@@ -140,7 +140,9 @@
 37.[Prometheus 监控服务](https://intl.cloud.tencent.com/document/product/1116/46974)。
 38.[自动化助手](https://intl.cloud.tencent.com/document/product/1147/47223)。
 39.[云点播](https://intl.cloud.tencent.com/document/product/266/47179)。
-40.[移动解析 HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854).
+40.[移动解析 HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854)。
+41.[腾讯特效SDK](https://intl.cloud.tencent.com/document/product/1143/48382)。
+
 ## 特定司法管辖区要求
 
 **欧洲**
