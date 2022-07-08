@@ -10,9 +10,6 @@ Instans CVM bisa menghosting hingga 5 situs web, dan setiap situs web dapat meng
 ### Bisakah instans CVM mengakses situs web Amazon?
 Ya, selama instans CVM Anda bisa terhubung ke jaringan publik dengan benar.
 
-### Mengapa saya tidak bisa mengakses situs web luar negeri setelah login ke instans CVM?
-Anda bisa mengakses situs web luar negeri dari mesin virtual hanya jika situs web tersebut memenuhi persyaratan peraturan negara atau wilayah tempat mesin virtual Anda berada. Pastikan instans CVM Anda dapat terhubung ke jaringan publik dengan benar dan situs web mematuhi persyaratan peraturan.
-
 ### Bagaimana cara membeli lebih banyak CVM bayar sesuai pemakaian?
 Jika Anda telah mencapai jumlah maksimum instans bayar sesuai pemakaian yang dapat dibeli, Anda tidak dapat membeli lebih banyak instans bayar sesuai pemakaian. Untuk informasi selengkapnya, lihat [Batas Pembelian](https://intl.cloud.tencent.com/document/product/213/2664).
 
