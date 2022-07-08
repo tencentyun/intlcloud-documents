@@ -213,6 +213,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 42.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48243).
 43.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48290).
 44.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48382).
+45.[TencentCloud Managed Service for Grafana](https://intl.cloud.tencent.com/document/product/1124/48403).
 
 ## 10.Jurisdiction-specific Requirements
 
