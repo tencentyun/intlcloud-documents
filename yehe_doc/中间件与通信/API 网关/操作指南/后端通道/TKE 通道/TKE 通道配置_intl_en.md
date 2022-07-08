@@ -29,19 +29,13 @@ You can directly access Pods in a TKE cluster through API Gateway without passin
      5. Advanced options: Select additional node labels.
    - Backend Type: Select HTTP or HTTPS.
    - Host Header: It is optional and is the value of host in the request header carried in the HTTP/HTTPS request when API Gateway accesses the backend service.
-   - Tags: They are optional and manage resources by category in different dimensions.
-
-The configuration of a complete TKE upstream is as follows:
-
-![](https://qcloudimg.tencent-cloud.cn/raw/1091058afb38b1e33f3c6ec269b7dd4f.png)  
+   - Tags: They are optional and manage resources by category in different dimensions. 
 
 ### Step 2. Connect the API backend to the TKE upstream
 1. On the [Service](https://console.cloud.tencent.com/apigateway/service) page in the API Gateway console, click the target service ID to enter the API management page.
 2. Click **Create** to create a general API.
 3. Enter the frontend configuration information and click **Next**.
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/d0afa98fcc4c5a83bc1a8f1ddd5e464e.png)
 4. Select **VPC resources** as the backend type, select **TKE upstream** as the backend upstream type, and click **Next**.  
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/d3365999710dea204a252c2619230616.png)
 5. Set the response result and click **Complete**.
 
 ## Network Architecture
