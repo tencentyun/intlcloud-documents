@@ -141,6 +141,8 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47179).
 39.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
 40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854).
+41.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48382).
+
 ## Requisitos específicos da jurisdição
 
 **Europa**
