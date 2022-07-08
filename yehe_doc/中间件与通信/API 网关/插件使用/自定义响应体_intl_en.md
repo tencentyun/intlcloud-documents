@@ -34,8 +34,6 @@ The service backend will send the response body to the API Gateway after process
 | Custom content | Required | It sets the response content sent to the function by the API Gateway. You can select Header, Body and response status code. The response content not selected will not be modified and will be returned to the Client as is. |
 | Base64 encoding | Required | It specifies whether to Base64-encode the response content to be forwarded by the service backend to the function. Generally, it is applicable to binary content. |
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f77fdd378bb923aa4be290bacc02e204.png)
-
 4. Click **Save**.
 
 ### Step 3. Bind the API
