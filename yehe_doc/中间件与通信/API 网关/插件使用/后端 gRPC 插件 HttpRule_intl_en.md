@@ -134,9 +134,9 @@ message GetMessageRequest {
  }
 :::
 </dx-codeblock>
-<ul><li>`message_id` in `GetMessageRequest` is obtained from the URL path, and other parameters, such as `revision` and `subfield` in `sub`, are obtained from the query parameters of the URL.</li>
-<li>`{message_id}` in "/v1/messages/{message_id}" is the path template. The parameter specifying `message_id` is obtained from the URL path.</li>
-<li>For the HTTP request URL `/v1/messages/123456?revision=2&sub.subfield=foo`, the corresponding gRPC request is `GetMessage(message_id: "123456" revision: 2 sub: SubMessage(subfield:"foo"))`.</li></ul>
+<ul><li><code>message_id</code> in <code>GetMessageRequest</code> is obtained from the URL path, and other parameters, such as <code>revision</code> and <code>subfield</code> in <code>sub</code>, are obtained from the query parameters of the URL.</li>
+<li><code>{message_id}</code> in "/v1/messages/{message_id}" is the path template. The parameter specifying <code>message_id</code> is obtained from the URL path.</li>
+<li>For the HTTP request URL <code>/v1/messages/123456?revision=2&sub.subfield=foo</code>, the corresponding gRPC request is <code>GetMessage(message_id: "123456" revision: 2 sub: SubMessage(subfield:"foo"))</code>.</li></ul>
 2. PATCH request parameters are obtained from the URL path and body. Note that if the body is \*, you cannot get parameters from the query parameters of the request.
 <dx-codeblock>
 :::  java
@@ -154,8 +154,8 @@ message GetMessageRequest {
  }
 :::
 </dx-codeblock>
-<ul><li>The request parameter `message_id` is obtained from the URL path of the request, while other parameters such as `text` are obtained from the body. Note that if the body is \*, parameters won't be obtained from the query parameters of the request.</li>
-<li>For the HTTP request `PATCH /v1/messages/123456 { "text": "Hi!" }`, the corresponding gRPC request is `UpdateMessage(message_id: "123456" text: "Hi!")`.</li></ul>
+<ul><li>The request parameter <code>message_id</code> is obtained from the URL path of the request, while other parameters such as <code>text</code> are obtained from the body. Note that if the body is \*, parameters won't be obtained from the query parameters of the request.</li>
+<li>For the HTTP request <code>PATCH /v1/messages/123456 { "text": "Hi!" }</code>, the corresponding gRPC request is <code>UpdateMessage(message_id: "123456" text: "Hi!")</code>.</li></ul>
 3. If the body is not \*:
 <dx-codeblock>
 :::  java
@@ -177,7 +177,7 @@ message GetMessageRequest {
  }
 :::
 </dx-codeblock>
-For the HTTP request `PATCH /v1/messages/123456 { "text": "Hi!" }`, the corresponding gRPC request is `UpdateMessage(message_id: "123456" text: "Hi!")`.
+For the HTTP request <code>PATCH /v1/messages/123456 { "text": "Hi!" }</code>, the corresponding gRPC request is <code>UpdateMessage(message_id: "123456" text: "Hi!")</code>.
 4. Use cases of `additional_bindings`:
 `additional_bindings` is used for API compatibility or exposure of two HTTP requests with the same RPC method.
 <dx-codeblock>
@@ -199,8 +199,8 @@ For the HTTP request `PATCH /v1/messages/123456 { "text": "Hi!" }`, the correspo
 :::
 </dx-codeblock>
 In this way, two HTTP requests use the same RPC method, and the request mappings are as detailed below:
-<ul><li>For the HTTP request `GET /v1/messages/123456`, the corresponding gRPC request is `GetMessage(message_id: "123456")`.</li>
-<li>For the HTTP request `GET /v1/users/me/messages/123456`, the corresponding gRPC request is `GetMessage(message_id: "123456")`.</li></ul>
+<ul><li>For the HTTP request <code>GET /v1/messages/123456</code>, the corresponding gRPC request is <code>GetMessage(message_id: "123456")</code>.</li>
+<li>For the HTTP request <code>GET /v1/users/me/messages/123456</code>, the corresponding gRPC request is <code>GetMessage(message_id: "123456")</code>.</li></ul>
 
 >?For the detailed `HttpRule`, see [http.proto](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto).
 
@@ -226,7 +226,7 @@ Example of successful access after modification:
 Solution: The path defined in `option` in `HttpRule` in the `.proto` file is different from the one you accessed. Check the `.proto` file and modify the paths to the same value. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/fc261fed06f0c56b4624ef7b8558baea.png)                       
 Solution example:
-![](https://qcloudimg.tencent-cloud.cn/raw/0fe7d92702aeddc1c64ea0ae38ee9c70.png)        
+![](https://qcloudimg.tencent-cloud.cn/raw/86085332cb903ed73c8f8a42af8e92b8.jpg)        
 Example of successful access after modification:
 ![](https://qcloudimg.tencent-cloud.cn/raw/6e6cb660c671dbee3f904fc8b9e3ce5d.png)        
 
