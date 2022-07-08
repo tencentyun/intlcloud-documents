@@ -41,7 +41,7 @@ Um grupo de segurança é um firewall virtual que controla o tráfego de entrada
 ### Verificar a configuração do sistema operacional
 
 Com base no sistema operacional da instância, selecione um método para verificar a configuração:
-- Para o sistema operacional Linux, [verifique os parâmetros do kernel do Linux e as configurações de firewall](# CheckLinux).
+- Para o sistema operacional Linux, [verifique os parâmetros do kernel do Linux e as configurações de firewall](#CheckLinux).
 -Para o sistema operacional Windows, [verifique a configuração do firewall do Windows](#CheckLinux).
 
 <span id="CheckLinux"></span>
