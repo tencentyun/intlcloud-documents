@@ -212,6 +212,8 @@ The following Modules shall apply and be incorporated by reference into this DPS
 41.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854).
 42.[TTS](https://intl.cloud.tencent.com/document/product/1154/48243).
 43.[ASR](https://intl.cloud.tencent.com/document/product/1118/48290).
+44.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48382).
+
 ## 10.Jurisdiction-specific Requirements
 
 ### EEA and UK
