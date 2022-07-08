@@ -595,3 +595,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 37.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47222).
 38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47178).
 39.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47853).
+40.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
