@@ -11,11 +11,9 @@ This document describes how to authorize API Gateway to access the API server of
 
 - In the TKE upstream configuration of API Gateway, if you reference a TKE cluster for the first time, you need to grant API Gateway the access to the cluster's API server and ensure that the cluster has private network access enabled.
 
- When the TKE upstream is configured, the API Gateway system will automatically check whether the cluster has been authorized, and if not, it will prompt you for authorization.
-![](https://qcloudimg.tencent-cloud.cn/raw/2a5a13b6626f9975394c3a83b27d2d71.png)        
+ When the TKE upstream is configured, the API Gateway system will automatically check whether the cluster has been authorized, and if not, it will prompt you for authorization.      
 
-- If the cluster access has already been granted to API Gateway, the system will display **Authorized API Gateway**. Each cluster only needs to be authorized for API Gateway once and doesn't require repeated authorizations for subsequent operations.                 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/51688fa680387191c838fcf6dbe0ba23.png" width="450px">      
+- If the cluster access has already been granted to API Gateway, the system will display **Authorized API Gateway**. Each cluster only needs to be authorized for API Gateway once and doesn't require repeated authorizations for subsequent operations.                   
 
 ## How It Works
 
@@ -125,7 +123,6 @@ After you successfully grant API Gateway the access to the TKE cluster, you cann
 
 ## FAQs
 
-**Problem**: During authorization, it is found that the private network access feature is not enabled for the TKE cluster.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5f87b05a0ceb35b43cb881634687ba55.png" width="450px">              
+**Problem**: During authorization, it is found that the private network access feature is not enabled for the TKE cluster.            
 
 **Solution**: [Enable the TKE cluster's private network access feature](https://intl.cloud.tencent.com/document/product/628/44309) and click **Retry**.
