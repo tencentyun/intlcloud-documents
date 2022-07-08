@@ -25,6 +25,7 @@ Select **[Instances](https://console.cloud.tencent.com/cvm/index)** on the left 
 ![](https://main.qcloudimg.com/raw/6d1d1e3312b92c4c32099df85e6e26b3.png)
 The information available on this page includes CVM ID and name, monitoring information, status, availability zone, instance type, instance configuration, primary IPv4, primary IPv6, instance billing, network billing, and the project to which the CVM belongs.
 <dx-alert infotype="explain" title="">
+You can adapt to your actual needs [Switching Instance Page View in Console](https://intl.cloud.tencent.com/document/product/213/45918)。
 </dx-alert>
 
 You can click <img style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/93d28b8ce995f53c460707e44038e0ad.png"></img> in the top-right corner to configure in the pop-up "Display Settings" window the details you want to display, as shown below:
