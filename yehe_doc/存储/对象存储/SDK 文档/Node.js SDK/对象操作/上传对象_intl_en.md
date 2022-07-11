@@ -213,7 +213,7 @@ function(err, data) { ... }
 This API (`APPEND Object`) is used to append object parts to a bucket.
 
 > !
-> - The COS NodeJS SDK version should be v2.11.2 or higher.
+> - COS Node.js SDK version should be v2.11.2 or higher.
 > - This API only allows appending data to appendable objects.
 > - If an object is uploaded using the `APPEND Object` API for the first time, it will be automatically determined as "appendable".
 > - You can use the `GET Object` or `HEAD Object` API to get the `x-cos-object-type` response header to determine the object type.
@@ -476,7 +476,7 @@ cos.multipartUpload({
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     ContentLength: '1024',
     UploadId: 'exampleUploadId',
-    PartNumber: '1',
+    PartNumber: 1,
     Body: fs.createReadStream(filePath)
 }, function(err, data) {
     console.log(err || data);
@@ -494,7 +494,7 @@ cos.multipartUpload({
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | ContentLength | HTTP request length (in bytes) as defined in RFC 2616 | String | Yes |
-| PartNumber | Part number | String | Yes |
+| PartNumber | Part number | Number | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
 | Body | Content of the part to upload This parameter can be a file or a BLOB. | String\File\Blob | Yes |
 | Expect | If `Expect: 100-continue` is used, the request content will be sent only after confirmation from the server is received. | String | No |
@@ -606,7 +606,7 @@ cos.multipartComplete({
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     UploadId: 'exampleUploadId', /*Required*/
     Parts: [
-        {PartNumber: '1', ETag: 'exampleETag'},
+        {PartNumber: 1, ETag: 'exampleETag'},
     ]
 }, function(err, data) {
     console.log(err || data);
@@ -622,7 +622,7 @@ cos.multipartComplete({
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | UploadId | ID of the upload | String | Yes |
 | Parts | A list of information about the parts of the multipart upload | ObjectArray | Yes |
-| - PartNumber | Part number | String | Yes |
+| - PartNumber | Part number | Number  | Yes |
 | - ETag | MD5 checksum of each part. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880"`<br>**Note that double quotation marks are required at the beginning and the end.** | String | Yes |
 
 #### Callback function description
@@ -719,7 +719,7 @@ cos.uploadFile({
     onProgress: function (progressData) { /* Optional */
         console.log(JSON.stringify(progressData));
     },
-    onFileFinish: function (err, data, options) {
+    onFileFinish: function (err, data, options) {   /* Optional */
        console.log(options.Key + 'upload' + (err ? 'failed' : 'completed'));
     },
 }, function(err, data) {
@@ -746,7 +746,7 @@ cos.uploadFile({
 | - progressData.total                                         | Size of the entire file, in bytes                      | Number    | No   |
 | - progressData.speed                                         | File upload speed, in bytes/s                 | Number    | No   |
 | - progressData.percent | File upload progress, in decimal form. For example, 0.5 means 50% has been uploaded. | Number | No |
-| onFileFinish | Completion or error callback for each file | String | Yes |
+| onFileFinish | Completion or error callback for each file | Function | Yes |
 | - err | Upload error message | Object | No |
 | - data | Information about the completion of object upload | Object | No |
 | - options | Parameter information about the files that have been uploaded | Object | No |
@@ -914,7 +914,7 @@ cos.uploadFiles({
 | - progressData.total | Size of the entire file, in bytes | Number | No |
 | - progressData.speed | File upload speed, in bytes/s | Number | No |
 | - progressData.percent | Percentage of the file upload progress, in decimal form. For example, 0.5 means 50% has been uploaded. | Number | No |
-| onFileFinish | Completion or error callback for each file | String | Yes |
+| onFileFinish | Completion or error callback for each file | Function | Yes |
 | - err | Upload error message | Object | No |
 | - data | Information about the completion of object upload | Object | No |
 | - options | Parameter information about the files that have been uploaded | Object | No |
@@ -941,8 +941,8 @@ function(err, data) { ... }
 
 The SDK for Node.js records all the upload tasks initiated with `putObject` and `sliceUploadFile` in an upload queue. You can use the queue in the following ways:
 
-1. Use `cos.getTaskList` to get the task list.
-2. Use `cos.pauseTask`, `cos.restartTask`, and `cos.cancelTask` to perform operations on upload tasks.
+1. Use `var taskList = cos.getTaskList()` to get the task list.
+2. Use `cos.pauseTask()`, `cos.restartTask()`, and `cos.cancelTask()` to perform operations on upload tasks.
 3. Use `cos.on('list-update', callback);` to listen for list and progress changes.
 
 For detailed instructions on how to use the upload queue, please see [Queue Demo](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo/queue).
