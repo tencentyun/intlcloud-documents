@@ -5,7 +5,7 @@ TencentDB for MongoDB records the IPs of clients connected to the current instan
 
 ## Version Requirement
 - Replica set: Currently, TencentDB for MongoDB 4.2, 4.0, 3.6, and 3.2 support connection management.
-- Sharded cluster: Currently, TencentDB for MongoDB 4.0, 3.6, and 3.2 support connection management, while 4.2 doesn't.
+- Sharded cluster: Currently, TencentDB for MongoDB 4.0, 3.6, and 3.2 support connection management, while v4.2 doesn't.
 
 ## Notes
 - The system records the IPs of clients connected to the current instance and the number of connections. You can choose to manually release connection requests.
