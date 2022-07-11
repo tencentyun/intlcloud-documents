@@ -137,7 +137,7 @@
  <div class="card-container">
             <div class="card">
                            <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/a18be30e18d5f87d324094f9353083d0.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/45469">NIST 네트워크 보안 프레임워크</a> </p><p style="color:#586376;">NIST CSF는 미국 국립 표준 기술 연구소에서 행정 명령(E0) 13636 ‘핵심 인프라 네트워크 보안 개선’에 따라 개발되었으며, 이 프레임워크는 비즈니스 주도형 네트워크 보안 이벤트 가이드에 중점을 두고 있습니다.</p>
+                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/45469">NIST 네트워크 보안 프레임워크</a> </p><p style="color:#586376;">NIST CSF는 미국 국립 표준 기술 연구소에서 행정 명령(EO) 13636 ‘핵심 인프라 네트워크 보안 개선’에 따라 개발되었으며, 이 프레임워크는 비즈니스 주도형 네트워크 보안 이벤트 가이드에 중점을 두고 있습니다.</p>
             </div>
 </div>
 <div class="card-container">
