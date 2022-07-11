@@ -54,9 +54,9 @@ options timeout:1 rotate
 2. OSのインターフェースで、**コントロールパネル** > **ネットワークと共有センター** > **アダプタデバイスの変更**を開きます。
 3. **イーサネット**を右クリックして、**プロパティ**を選択し、「イーサネットプロパティ」ウィンドウを開きます。
 4. 下図のように、「イーサネットプロパティ」ウィンドウで、 **Internetプロトコルバージョン4(TCP/IPv4)**をダブルクリックして開きます。
-![](https://main.qcloudimg.com/raw/023e97de00a08b44a19c510798d2d1c6.png)
+![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
 5. **次のDNS サーバーアドレスを使用する**を選択し、[プライベートネットワーク DNS](https://intl.cloud.tencent.com/zh/document/product/213/5225?from_cn_redirect=1#.E5.86.85.E7.BD.91-dns) リストの対応するリージョンごとに、DNS IPを変更します。
-![](https://main.qcloudimg.com/raw/8921862c0b6ea5e407de4796f2806c8e.png)
+![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
 6. **OK**をクリックします。
 :::
 </dx-tabs>

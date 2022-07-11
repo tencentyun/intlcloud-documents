@@ -21,6 +21,7 @@
 >? 
 > - 关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 > - 关于跨端框架（例如 uni-app）的使用说明，使用小程序 SDK 开发后无法打包成正常使用的移动应用，例如安卓 App、iOS App，需要使用对应的安卓 SDK、iOS SDK。
+> - XCosSecurityToken 字段说明：v1.2.0之前版本的 SDK 只支持 XCosSecurityToken，v1.2.0及之后的版本请使用 SecurityToken 代替。
 > 
 
 
@@ -44,7 +45,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 npm install cos-wx-sdk-v5
 ```
 
-其中小程序代码使用`var COS = require('cos-wx-sdk-v5');`进行引用。
+其中，程序代码使用`var COS = require('cos-wx-sdk-v5');`进行引用。更多详情请参见 [npm 支持](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)。
 
 ## 开始使用
 
@@ -86,7 +87,8 @@ var cos = new COS({
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
-                    XCosSecurityToken: credentials.sessionToken,
+                    // v1.2.0之前版本的sdk使用XCosSecurityToken而不是SecurityToken
+                    SecurityToken: credentials.sessionToken,
                     // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
                     StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
                     ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
@@ -127,7 +129,8 @@ var cos = new COS({
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
-                    XCosSecurityToken: credentials.sessionToken,
+                    // v1.2.0之前版本的sdk使用XCosSecurityToken而不是SecurityToken
+                    SecurityToken: credentials.sessionToken,
                     // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
                     StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
                     ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
@@ -157,7 +160,8 @@ var cos = new COS({
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
-                    XCosSecurityToken: credentials.sessionToken,
+                    // v1.2.0之前版本的sdk使用XCosSecurityToken而不是SecurityToken
+                    SecurityToken: credentials.sessionToken,
                     // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
                     StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
                     ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
@@ -188,7 +192,8 @@ var cos = new COS({
                 if (!data || !data.authorization) return console.error('authorization invalid');
                 callback({
                     Authorization: data.authorization,
-                    // XCosSecurityToken: data.sessionToken, // 如果使用临时密钥，需要把 sessionToken 传给 XCosSecurityToken
+                    // v1.2.0之前版本的sdk使用XCosSecurityToken而不是SecurityToken
+                    // SecurityToken: data.sessionToken, // 如果使用临时密钥，需要把 sessionToken 传给 SecurityToken
                 });
             }
         });
@@ -214,7 +219,7 @@ var cos = new COS({
 | SecretKey              | 用户的 SecretKey，建议只在前端调试时使用，避免暴露密钥       | String   | 否   |
 | FileParallelLimit      | 同一个实例下上传的文件并发数，默认值3                        | Number   | 否   |
 | ChunkParallelLimit     | 同一个上传文件的分块并发数，默认值3                          | Number   | 否   |
-| ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值3（加第一次，请求共4次） | Number   | 否   |
+| ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值2（加第一次，请求共3次） | Number   | 否   |
 | ChunkSize              | 分块上传时，每块的字节数大小，默认值1048576（1MB）           | Number   | 否   |
 | SliceSize              | 使用 uploadFiles 批量上传时，文件大小大于该数值就使用分块上传 sliceUploadFile，否则使用简单上传 putObject，默认值1048576（1MB） | Number   | 否   |
 | CopyChunkParallelLimit | 进行分块复制操作中复制分块上传的并发数，默认值20             | Number   | 否   |
@@ -251,7 +256,7 @@ getAuthorization 的回调参数说明：
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId       | 获取回来的临时密钥的 tmpSecretId                             | String | 是   |
 | TmpSecretKey      | 获取回来的临时密钥的 tmpSecretKey                            | String | 是   |
-| XCosSecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段 | String | 是   |
+| SecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段。v1.2.0之前版本的 SDK 使用 XCosSecurityToken 而不是 SecurityToken | String | 是   |
 | StartTime         | 密钥获取的开始时间，即获取时刻的时间戳，单位秒，startTime，如：1580000000，用于签名开始时间，传入该参数可避免前端时间偏差签名过期问题 | String | 否   |
 | ExpiredTime       | 获取回来的临时密钥的 expiredTime，超时时刻的时间戳，单位秒，如：1580000900 | String | 是   |
 
@@ -280,7 +285,7 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 | 属性名            | 参数描述                                                     | 类型   | 是否必填 |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization     | 计算得到的签名字符串                                         | String | 是   |
-| XCosSecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段 | String | 否   |
+| SecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段。v1.2.0之前版本的 SDK 使用 XCosSecurityToken 而不是 SecurityToken | String | 否   |
 
 #### 获取鉴权凭证
 

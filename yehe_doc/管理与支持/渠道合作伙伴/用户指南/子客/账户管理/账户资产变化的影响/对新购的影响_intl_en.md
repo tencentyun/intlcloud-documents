@@ -14,9 +14,8 @@ Solution: The customer should contact their reseller to increase the credit and 
 
 Solution: The customer should contact their reseller to increase the credit or vouchers.
 
->？
-If the reseller's available credit is insufficient to pay the customer's order, new purchases can’t be made.
->
+>?If the reseller's available credit is insufficient to pay the customer's order, new purchases can’t be made.
+
 
 ### 2. Pay-as-you-go product purchase
 
@@ -30,8 +29,7 @@ Solution: The customer should contact their reseller to increase the credit and 
 
 Solution: The customer should contact their reseller to increase the credit or vouchers.
 
->？
-When the customer activates a pay-as-you-go product, an amount will be frozen in the reseller's credit.
->
+>?When the customer activates a pay-as-you-go product, an amount will be frozen in the reseller's credit.
+
 
 

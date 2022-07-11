@@ -37,7 +37,11 @@ Content-Length: <length>
 https://<BucketName-APPID>.cos.<Region>.myqcloud.com/for-test.mp4?ci-process=snapshot&time=1&format=jpg&<Auth String>
 ```
 
->?Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> 
 
 #### 请求头
 
@@ -72,7 +76,7 @@ https://<BucketName-APPID>.cos.<Region>.myqcloud.com/for-test.mp4?ci-process=sna
 该响应体为截图文件内容。
 
 #### 错误码
-该请求操作无特殊错误信息，常见的错误信息请参见错误码 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见错误码文档。
 
 
 ## 实际案例

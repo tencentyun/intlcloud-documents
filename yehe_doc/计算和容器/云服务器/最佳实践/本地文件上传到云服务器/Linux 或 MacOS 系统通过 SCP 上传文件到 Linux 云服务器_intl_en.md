@@ -23,9 +23,10 @@ scp /home/Inmp0.4.tar.gz root@129.20.0.2:/home/Inmp0.4.tar.gz
 <dx-alert infotype="explain" title="">
 You can add the `-r` parameter to upload folders. For more information on the `scp` command, run `man scp`.
 </dx-alert>
-2. Enter **yes** and press **Enter** to confirm the upload and enter the login password to complete the upload.
- - If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
- - If you forgot your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
+2. Enter yes and press Enter to confirm the upload and enter the login password to complete the upload. 
+
+- If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
+- If you forgot your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566)
 
 ### Downloading files
 1. Run the following command to download a file from a Linux CVM.

@@ -13,22 +13,21 @@ Though the backend gRPC plugin, the API Gateway can obtain the `.proto` file (it
 ### Step 1. Create the plugin
 
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
-2. Click **Plugin** > **System Plugin** in the left sidebar.
-3. On the page that appears, click **Create** in the upper-left corner. Select **Backend gRPC** for the plugin type, and create a backend gRPC plugin. The configuration item for this plugin is as follows:
+2. Click **Plugin** > **System Plugin** on the left sidebar.
+3. On the page that appears, click **Create** in the top-left corner. Select **Backend gRPC** for the plugin type, and create a backend gRPC plugin. The configuration item for this plugin is as follows:
 
 <table>
 <tr>
 <th>Parameter</th>
-<th>Required</th>
+<th>Required	</th>
 <th>Description</th>
 </tr>
 <tr>
 <td>.proto description file</td>
-<td>Yes</td>
+<td>Yes	</td>
 <td>A <code>.proto</code> file that is used to convert the HTTP/HTTPS protocol to the gRPC/gRPCS protocol.</br>The code in the file follows the ProtoBuf syntax and supports both proto2 and proto3 versions.</td>
 </tr>
 </table>
-
 
 ### Step 2. Bind an API and make the plugin effective
 

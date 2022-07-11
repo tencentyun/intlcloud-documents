@@ -12,9 +12,9 @@ Step 3. Select **Customer Management** on the left sidebar, click the **My Custo
 
 Step 4. Adjust credits for customers.
 
- ##### 1. Allocate credit
+<b> 1. Allocate credit</b> 
 
-(1) In the customer list, select a customer and click **Set Credit** in the **Operation** column to enter the credit allocation page.
+(1) In the customer list, select a customer and click **Setting Credit** in the **Operation** column to enter the credit allocation page.
 
 (2) Set the **credit**, click **OK**, and the system will display a message of successful allocation.
 
@@ -31,7 +31,7 @@ Step 4. Adjust credits for customers.
 
 
 
-##### 2. Withdraw credit
+<b> 2. Withdraw credit</b>
 
 You can enter a negative value to withdraw the available credit of a customer. The maximum **withdrawable customer credit** must be less than or equal to the **available customer credit**.
 
@@ -40,12 +40,12 @@ You can enter a negative value to withdraw the available credit of a customer. T
 
 
 >?
->1. When the available credit of a customer is 0, the customer's service will not be suspended, and the customer can still purchase new services. For the impact of account assets (credit + voucher) on service purchase and suspension, see [here].
+>1. When the available credit of a customer is 0, the customer's service will not be suspended, and the customer can still purchase new services. For the impact of account assets (credit + voucher) on service purchase and suspension, see [here](https://intl.cloud.tencent.com/document/product/1085/48346).
 >2. You currently can't manually restrict new purchases or suspend services for customers.
 >
 
 
-##### 3. View allocation records
+<b> 3. View allocation records</b>
 
 Click **Credit Allocation > Allocation Records** to query all credit allocation records:
 

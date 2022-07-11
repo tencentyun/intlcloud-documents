@@ -44,7 +44,7 @@ Key information of the test result is as shown below:
 
 #### Installing MTR Installation
 Currently, all released versions of Linux have MTR preinstalled. If not, you can install MTR using the following command:
-- For **CentOS*:
+- For **CentOS**:
 ```
 yum install mtr
 ```
@@ -57,7 +57,7 @@ sudo apt-get install mtr
 - **-h/--help**: Displays help menu.
 - **-v/--version**: Displays MTR version information.
 - **-r/--report**: Outputs the result in a report.
-- **-p/--split**: Different from ** --report**, **-p/--split** lists the result of each trace separately.
+- **-p/--split**: Different from **--report**, **-p/--split** lists the result of each trace separately.
 - **-c/--report-cycles**: Sets the number of data packets sent per second. Default is 10.
 - **-s/--psize**: Sets the size of each data packet.
 - **-n/--no-dns**: Disables domain name resolution for IP address.

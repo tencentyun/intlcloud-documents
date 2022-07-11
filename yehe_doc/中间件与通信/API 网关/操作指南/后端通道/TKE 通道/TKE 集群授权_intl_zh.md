@@ -11,11 +11,9 @@
 
 - 在 API 网关的 TKE 通道配置中，如果是首次引用某个 TKE 集群，需授予 API 网关访问该 TKE 集群 API Server 的权限，并且需要保证 TKE集群已经开启了内网访问。
 
- 授权操作，是在配置 TKE 通道时候，系统会自动识别集群是否已经授权，如果没有授权，API 网关会提示用户授权。
-![](https://qcloudimg.tencent-cloud.cn/raw/2a5a13b6626f9975394c3a83b27d2d71.png)        
+ 授权操作，是在配置 TKE 通道时候，系统会自动识别集群是否已经授权，如果没有授权，API 网关会提示用户授权。  
 
-- 如果集群已经授权API网关访问，则会显示**已授权API网关**。每个集群只需要在 API 网关授权一次，后面使用不需要重复授权。                 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/51688fa680387191c838fcf6dbe0ba23.png" width="450px">      
+- 如果集群已经授权API网关访问，则会显示**已授权API网关**。每个集群只需要在 API 网关授权一次，后面使用不需要重复授权。                     
 
 ## 原理说明
 
@@ -125,7 +123,6 @@ subjects:
 
 ## 常见问题
 
-**问题描述**：授权时发现，TKE 集群没有开启内网访问功能。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/5f87b05a0ceb35b43cb881634687ba55.png" width="450px">              
+**问题描述**：授权时发现，TKE 集群没有开启内网访问功能。   
 
 **解决方法**：主动 [开启 TKE 集群内网访问功能](https://intl.cloud.tencent.com/document/product/628/44309)，然后单击重试。

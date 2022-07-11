@@ -37,7 +37,7 @@ The frontend configuration of an API refers to the configuration provided for ex
 <tr>
 <td>Frontend type</td>
 <td>Yes</td>
-<td>Protocol for the client to access API Gateway. API Gateway supports two frontend types: **HTTP&amp;HTTPS** and **WS&amp;WSS**.</td>
+<td>Protocol for the client to access API Gateway. API Gateway supports two frontend types: <strong>HTTP&amp;HTTPS</strong> and <strong>WS&amp;WSS</strong>.</td>
 </tr>
 <tr>
 <td>URL path</td>
@@ -79,9 +79,6 @@ Configuration instructions:
 | Calculate COS signature | Yes | After it is enabled, the COS signature will be calculated in API Gateway, so the system doesn't need to request the client to calculate the signature. |
 | Backend Path | Yes | 	It must start with "/". API Gateway will match objects in the bucket based on the path. |
 | Path Match Method | Yes | **Full path match:** Objects in the bucket are matched by the combination of the frontend path and backend path. This is suitable for scenarios where objects to be manipulated are at different paths passed in by the client. For the specific match rules, see [**Notes**](#notice).</br>**Backend path match:** An object in the bucket is matched by only the frontend path. This is suitable for scenarios where only a fixed object needs to be manipulated. No matter which path the client uses for access, the request will be always forwarded to the COS object at the backend path. |
-
-![](https://qcloudimg.tencent-cloud.cn/raw/33ed4a3bc8c24c6fdd09406253095b48.png)
-
 
 
 

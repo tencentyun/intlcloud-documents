@@ -10,9 +10,6 @@ A CVM instance can host up to 5 websites, and each website can bind to multiple 
 ### Can a CVM instance access the Amazon website?
 Yes, as long as your CVM instance can connect to the public network properly.
 
-### Why am I unable to access an overseas website after I log in to my CVM instance?
-You can access an overseas website from your instance only when the website satisfies the regulatory requirements of the country or region your instance is located in. Ensure that your CVM instance can connect to the public network properly and that the website complies with regulatory requirements.
-
 ### How do I purchase more pay-as-you-go CVMs?
 If you have reached the maximum number of pay-as-you-go instances that you can purchase, you cannot purchase more pay-as-you-go instances. For more information, see [Purchase Limits](https://intl.cloud.tencent.com/document/product/213/2664).
 

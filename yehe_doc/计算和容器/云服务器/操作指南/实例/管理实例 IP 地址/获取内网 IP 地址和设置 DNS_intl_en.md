@@ -54,9 +54,9 @@ options timeout:1 rotate
 2. On the operating system UI, open **Control Panel** > **Network and Sharing Center** > **Change adapter settings**.
 3. Right-click **Ethernet** and select **Properties** to open the "Ethernet Properties" window.
 4. In the "Ethernet Properties" window, double-click **Internet Protocol Version 4 (TCP/IPv4)** as shown below:
-![](https://main.qcloudimg.com/raw/023e97de00a08b44a19c510798d2d1c6.png)
+![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
 5. Select **Use the following DNS server addresses** and modify the DNS IP according to the corresponding region in the [Private Network DNS](https://intl.cloud.tencent.com/zh/document/product/213/5225?from_cn_redirect=1#.E5.86.85.E7.BD.91-dns) list.
-![](https://main.qcloudimg.com/raw/8921862c0b6ea5e407de4796f2806c8e.png)
+![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
 6. Click **OK**.
 :::
 </dx-tabs>

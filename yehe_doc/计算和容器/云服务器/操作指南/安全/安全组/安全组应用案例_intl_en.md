@@ -24,7 +24,7 @@ You can open all IP addresses or a specified IP address (or IP range) to the Int
 You can open all IP addresses or a specified IP address (or IP range) to the Internet as required. This enables you to configure the source IP addresses of the CVMs that can be remotely connected to via RDP.
 <table>
 <tr><th>Direction</th><th>Type</th><th>Source</th><th>Protocol Port</th><th>Policy</th></tr>
-<tr><td>Inbound</td><td>Windows login</td><td></td><td><ul style="margin: 0;"><li>All IP addresses: 0.0.0.0/0</li>
+<tr><td>Inbound</td><td>Windows login</td><td><ul style="margin: 0;"><li>All IP addresses: 0.0.0.0/0</li>
 <li>WebRDP proxy IP addresses:
  <ol>81.69.102.0/24</ol>
 <ol>106.55.203.0/24</ol>
