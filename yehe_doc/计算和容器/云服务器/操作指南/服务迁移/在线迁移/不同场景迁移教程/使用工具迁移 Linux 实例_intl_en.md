@@ -52,14 +52,14 @@ The user.json configuration file is described as below:
 	<td>SecretId</td>
 	<td>String</td>
 	<td>Yes</td>
-	<td>`SecretId` for your account to access APIs. For more information, see  
+	<td>SecretId for your account to access APIs. For more information, see  
 	<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a>.</td>
   </tr>
   <tr>
 	<td>SecretKey</td>
 	<td>String</td>
 	<td>Yes</td>
-	<td>`SecretKey` for your account to access APIs. For more information, see  
+	<td>SecretKey for your account to access APIs. For more information, see  
 	<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a>.</td>
   </tr>
   <tr>
