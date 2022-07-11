@@ -46,7 +46,7 @@ Video bitrate, which indicates how many Kbits of encoded binary data is output b
  
 ### Resolution-bitrate reference table
 
-| Resolution Definition | Aspect Ratio | Recommended Bitrate | High-end Configuration |
+| Resolution Definition | Aspect Ratio | Recommended Bitrate(VideoCall) | Recommended Bitrate(LIVE) |
 |:-------------:|:-------------:|:-------------:|:-------------:|
 | TRTCVideoResolution_120_120 | 1:1 |   80 Kbps | 120 Kbps|
 | TRTCVideoResolution_160_160 | 1:1 | 100 Kbps | 150 Kbps|
@@ -67,6 +67,7 @@ Video bitrate, which indicates how many Kbits of encoded binary data is output b
 | TRTCVideoResolution_640_360 | 16:9 | 550 Kbps | 900 Kbps|
 | TRTCVideoResolution_960_540 | 16:9 | 850 Kbps | 1,300 Kbps|
 | TRTCVideoResolution_1280_720 | 16:9 | 1,200 Kbps | 1,800 Kbps|
+|TRTCVideoResolution_1920_1080 	| 16:9 | 2,000kbps| 3,000kbps |
 
 ## TRTCNetworkQosParam
 ### QosPreference
