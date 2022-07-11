@@ -23,9 +23,6 @@ This document describes how to create a Cloud Native Gateway instance in the con
 | Subnet     | Yes       | Select the subnet where the Cloud Native Gateway instance is deployed in the selected VPC.  |
 | Description         | No       | Enter the description of the current Cloud Native Gateway instance.                               |
 
-<img src="https://main.qcloudimg.com/raw/aaed3e088e55deeb89fd0e4bab552132.png" width="700px">
-
-
 3. Click **Save** and wait for the instance to be created.
 
 ## Notes
