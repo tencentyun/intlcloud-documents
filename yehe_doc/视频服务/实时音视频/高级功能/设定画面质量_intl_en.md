@@ -18,7 +18,7 @@ https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/Set
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
-For detailed directions on how to set video quality for the Web, please see [Configuration Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html).
+For detailed directions on how to set video quality for the Web, please see [Configuration Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html).
 
 ## TRTCAppScene
 
@@ -64,7 +64,7 @@ Video bitrate, which indicates how many Kbits of encoded binary data is output b
  
 ### Resolution-bitrate reference table
 
-| Resolution Definition | Aspect Ratio | Recommended Bitrate | High-end Configuration |
+| Resolution Definition | Aspect Ratio | Recommended Bitrate(VideoCall) | Recommended Bitrate(LIVE) |
 |:-------------:|:-------------:|:-------------:|:-------------:|
 | TRTCVideoResolution_120_120 | 1:1 |   80 Kbps | 120 Kbps|
 | TRTCVideoResolution_160_160 | 1:1 | 100 Kbps | 150 Kbps|
@@ -85,6 +85,7 @@ Video bitrate, which indicates how many Kbits of encoded binary data is output b
 | TRTCVideoResolution_640_360 | 16:9 | 550 Kbps | 900 Kbps|
 | TRTCVideoResolution_960_540 | 16:9 | 850 Kbps | 1,300 Kbps|
 | TRTCVideoResolution_1280_720 | 16:9 | 1,200 Kbps | 1,800 Kbps|
+|TRTCVideoResolution_1920_1080 	| 16:9 | 2000kbps| 3000kbps |
 
 ## TRTCNetworkQosParam
 ### QosPreference
