@@ -2,8 +2,8 @@
 
 TRTRTCCloudでは、以下の方式で画質を調整できます。
 - [TRTCCloud.enterRoom]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) のTRTCAppScene パラメータ：アプリケーションユースケースを使用するのに使用します。
-- [TRTCCloud.setVideoEncoderParam]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)：エンコードのパラメータを設定するのに使用します。
-- [TRTCCloud.setNetworkQosParam]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9)：ネットワークの制御ポリシーを設定するのに使用します。
+- [TRTCCloud.setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)：エンコードのパラメータを設定するのに使用します。
+- [TRTCCloud.setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9)：ネットワークの制御ポリシーを設定するのに使用します。
 
 ここでは、主に上述のパラメータを設定し、TRTC SDKの画質効果を項目のニーズに適合させる方法を紹介します。
 以下のDemoを参照することもできます。
@@ -17,7 +17,7 @@ https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Advanced/Set
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
-Web端末で画質の詳細操作を設定します。 [設定ガイド](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html)をご参照ください。
+Web端末で画質の詳細操作を設定します。 [設定ガイド](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-14-basic-set-video-profile.html)をご参照ください。
 
 ## TRTCAppScene
 
@@ -63,7 +63,7 @@ Web端末で画質の詳細操作を設定します。 [設定ガイド](https:/
  
 ### 解像度ビットレート参照表
 
-| 解像度の定義 | アスペクト比 | 推奨ビットレート | ハイエンド設定 |
+| 解像度の定義 | アスペクト比 | 推奨ビットレート（VideoCall） | 推奨ビットレート（LIVE） |
 |:-------------:|:-------------:|:-------------:|:-------------:|
 | TRTCVideoResolution_120_120 | 1:1 |   80kbps | 120kbps|
 | TRTCVideoResolution_160_160 | 1:1 | 100kbps | 150kbps|
@@ -84,6 +84,7 @@ Web端末で画質の詳細操作を設定します。 [設定ガイド](https:/
 | TRTCVideoResolution_640_360 | 16:9 | 550kbps | 900kbps|
 | TRTCVideoResolution_960_540 | 16:9 | 850kbps | 1300kbps|
 | TRTCVideoResolution_1280_720 | 16:9 | 1200kbps | 1800kbps|
+|TRTCVideoResolution_1920_1080 	| 16:9 | 2000kbps| 3000kbps |
 
 ## TRTCNetworkQosParam
 ### QosPreference
