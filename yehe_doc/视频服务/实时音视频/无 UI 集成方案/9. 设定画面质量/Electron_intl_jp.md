@@ -46,7 +46,7 @@ Electron SDKにおいて、以下の方法で画質を調整できます：
  
 ### 解像度とビットレートの参照テーブル
 
-| 解像度の定義 | アスペクト比 | 推奨ビットレート | 高度な構成 |
+| 解像度の定義 | アスペクト比 | 推奨ビットレート（VideoCall） | 推奨ビットレート（LIVE） |
 |:-------------:|:-------------:|:-------------:|:-------------:|
 | TRTCVideoResolution_120_120 | 1:1 |   80kbps | 120kbps|
 | TRTCVideoResolution_160_160 | 1:1 | 100kbps | 150kbps|
@@ -67,6 +67,7 @@ Electron SDKにおいて、以下の方法で画質を調整できます：
 | TRTCVideoResolution_640_360 | 16:9 | 550kbps | 900kbps|
 | TRTCVideoResolution_960_540 | 16:9 | 850kbps | 1300kbps|
 | TRTCVideoResolution_1280_720 | 16:9 | 1200kbps | 1800kbps|
+|TRTCVideoResolution_1920_1080 	| 16:9 | 2000kbps| 3000kbps |
 
 ## TRTCNetworkQosParam
 ### QosPreference
