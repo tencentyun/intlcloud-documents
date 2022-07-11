@@ -50,10 +50,10 @@ The nodes are described as follows:
 | Name                            | Parent Node                                     | Description                                                         | Type      | Required |
 | ------------------------------- | ------------------------------------------ | ------------------------------------------------------------ | --------- | -------- |
 | IntelligentTieringConfiguration | No                                         | Detailed configuration of INTELLIGENT TIERING                                   | Container | Yes       |
-| Status                          | IntelligentTieringConfiguration            | Whether to enable INTELLIGENT TIERING. Enumerated values: `Suspended`, `Enabled`     | Enum      | Yes       |
+| Status                          | IntelligentTieringConfiguration            | Whether to enable INTELLIGENT TIERING. Enumerated values: `Enabled`     | Enum      | Yes       |
 | Transition                      | IntelligentTieringConfiguration            | Transition configuration for INTELLIGENT TIERING                 | Container | Yes       |
-| Days                            | IntelligentTieringConfiguration.Transition | The number of consecutive days used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is 30 (days). | Int       | Yes       |
-|  RequestFrequent                | IntelligentTieringConfiguration.Transition | The limit of access times used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is `1`. It can achieve object transition when used with `Days`. For example, if this parameter is set to `1` and `Days` is set to `30`, objects accessed less than once in 30 consecutive days will be moved from STANDARD to STANDARD_IA.  |  Int  |  Yes  |
+| Days                            | IntelligentTieringConfiguration</br>.Transition | The number of consecutive days used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is 30 (days). | Int       | Yes       |
+|  RequestFrequent                | IntelligentTieringConfiguration</br>.Transition | The limit of access times used to determine whether to move objects from STANDARD to STANDARD_IA. The default value is `1`. It can achieve object transition when used with `Days`. For example, if this parameter is set to `1` and `Days` is set to `30`, objects accessed less than once in 30 consecutive days will be moved from STANDARD to STANDARD_IA.  |  Int  |  Yes  |
 
 ## Response
 
