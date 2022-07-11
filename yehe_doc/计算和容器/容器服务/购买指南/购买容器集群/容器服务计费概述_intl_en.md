@@ -21,7 +21,7 @@ The billing mode of pay-as-you-go is usually adopted for TKE.
 ### Recommendations for small clusters
 - If your cluster has only a few nodes (less than 20), we highly recommend you use [Elastic Kubernetes Service](https://intl.cloud.tencent.com/document/product/457/34040) (EKS). With EKS, you can deploy workloads and pay for actual container usage, with no need to purchase nodes and pay cluster management fees.
 - You can choose to migrate your existing TKE clusters as needed in the following ways:
-	- Conduct smooth business migration through [virtual nodes](https://intl.cloud.tencent.com/document/product/457/39759) to reduce the number of nodes in the TKE cluster and thereby lower the cluster management fees (such fees are not charged for virtual nodes; for more information, see [Pricing](#price) below).
+	- Conduct smooth business migration through [supernodes](https://intl.cloud.tencent.com/document/product/457/39759) to reduce the number of nodes in the TKE cluster and thereby lower the cluster management fees (such fees are not charged for supernodes; for more information, see [Pricing](#price) below).
 	- Completely migrate the TKE cluster to the EKS cluster through the migration tool. For more information, see [Guide on Migrating Resources in a TKE Managed Cluster to an EKS Cluster](https://intl.cloud.tencent.com/document/product/457/47002) . You can [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
 
 
