@@ -10,7 +10,7 @@ You can use HTTP headers to define fields that carry information about HTTP tran
 ## Configuring HTTP Response Headers
 1. Go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage). Click the name of your playback domain or **Manage** on the right.
 2. Select the **Advanced Configuration** tab.
-![](https://qcloudimg.tencent-cloud.cn/raw/06f1349ac39066460dd214a88d30f7a2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3dc3dc0a5a71fe671560ec32162d6381.png)
 3. In the **HTTP response headers** area, click **Edit** to add new header fields or modify/delete existing header fields.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7bc7b1573336ce7b97221dfeb835a780.png)
 4. When adding a field, you can choose from preset fields (Access-Control-Allow-Methods, Access-Control-Max-Age, Access-Control-Expose-Headers) or customize a field. A custom field can be 1-100 characters long and can contain letters, numbers, and hyphens (-). The value of a header field can be 1-1,000 characters long and cannot contain Chinese characters.
