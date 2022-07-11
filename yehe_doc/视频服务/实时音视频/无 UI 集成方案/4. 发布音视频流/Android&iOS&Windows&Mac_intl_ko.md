@@ -201,7 +201,7 @@ mCloud.startLocalPreview(true, cameraVide);
 // 역할 전환이 실패한 경우 onSwitchRole 콜백의 오류 코드는 0이 아닙니다
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
 @Override
-public void onSwitchRoom(final int errCode, final String errMsg) {
+public void onSwitchRole(final int errCode, final String errMsg) {
     if (errCode != 0) {
         Log.d(TAG, "Switching operation failed...");
     }   
@@ -217,7 +217,7 @@ self.trtcCloud = [TRTCCloud sharedInstance];
 
 // 역할 전환이 실패한 경우 onSwitchRole 콜백의 오류 코드는 0이 아닙니다
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
-- (void)onSwitchRoom:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
+- (void)onSwitchRole:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
     if (errCode != 0) {
         NSLog(@"Switching operation failed... ");
     }   
@@ -233,7 +233,7 @@ self.trtcCloud = [TRTCCloud sharedInstance];
 
 // 역할 전환이 실패한 경우 onSwitchRole 콜백의 오류 코드는 0이 아닙니다
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
-- (void)onSwitchRoom:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
+- (void)onSwitchRole:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
     if (errCode != 0) {
         NSLog(@"Switching operation failed... ");
     }   
@@ -248,7 +248,7 @@ trtc_cloud_->startLocalPreview(hWnd);
 
 // 역할 전환이 실패한 경우 onSwitchRole 콜백의 오류 코드는 ERR_NULL이 아닙니다(즉, 0)
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
-void onSwitchRoom(TXLiteAVError errCode, const char* errMsg) {
+void onSwitchRole(TXLiteAVError errCode, const char* errMsg) {
     if (errCode != ERR_NULL) {
         printf("Switching operation failed...");
     }
