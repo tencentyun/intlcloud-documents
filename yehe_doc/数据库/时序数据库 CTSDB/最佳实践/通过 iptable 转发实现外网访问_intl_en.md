@@ -3,7 +3,7 @@ CTSDB doesn’t support direct public network access for the time being. You can
 
 >?Because iptables-based forwarding may be unstable, we recommend that you do not access instances over the public network in the production environment.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/43bf0598883beb43f13ae6d87aa1b458.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/2b69f1a3fd6ec73de1044e3724e0a5f8.jpg)
 
 ## Directions
 1. Log in to a [CVM](https://intl.cloud.tencent.com/document/product/213/5436) instance and enable the IP forwarding feature.
