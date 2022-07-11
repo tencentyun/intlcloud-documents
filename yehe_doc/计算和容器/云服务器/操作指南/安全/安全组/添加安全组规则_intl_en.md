@@ -37,7 +37,7 @@ Configure the following parameters:
 <blockquote class="d-mod-explain"><div class="d-mod-title d-explain-title"><i class="d-icon-explain"></i>Notes:</div>
 <p></p><ul>
 <li>The referenced security group is available to you as an advanced feature. The rules of the referenced security group are not added to the current security group.</li>
-<li>If you enter the security group ID in **Source**/**Destination** when configuring security group rules, the private IP addresses of the CVM instances and the ENIs that are associated with this security group ID are used as the source/destination. This does not include public IP addresses.</li>
+<li>If you enter the security group ID in Source/Destination when configuring security group rules, the private IP addresses of the CVM instances and the ENIs that are associated with this security group ID are used as the source/destination. This does not include public IP addresses.</li>
 </ul>
 </blockquote>
 </td></tr>
