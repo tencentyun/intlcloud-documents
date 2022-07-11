@@ -10,7 +10,7 @@
 ## 配置HTTP响应头
 1. 进入 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的**管理**进入域名详情页。
 2. 选择**高级配置**页签，进入查看**HTTP响应头配置**标签。
-![](https://qcloudimg.tencent-cloud.cn/raw/06f1349ac39066460dd214a88d30f7a2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3dc3dc0a5a71fe671560ec32162d6381.png)
 3. 单击**编辑**按钮，对HTTP响应头进行配置，支持编辑已有规则、删除已有规则、新增规则。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7bc7b1573336ce7b97221dfeb835a780.png)
 4. 对于**新增**功能，您可以选择已有参数：Access-Control-Allow-Methods、Access-Control-Max-Age、Access-Control-Expose-Headers，进行配置。也可以进行自定义参数配置，自定义参数名可由大小写字母、数字及 - 组成，长度支持1 - 100个字符。此外，对于参数取值，不支持中文，长度支持1 - 1000个字符。
