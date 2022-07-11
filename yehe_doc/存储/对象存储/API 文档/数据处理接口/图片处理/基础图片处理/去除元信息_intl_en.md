@@ -24,7 +24,7 @@ An image can be processed:
 #### 1. Processing upon download
 
 ```plaintext
-download_url?imageMogr2/thumbnail/imageMogr2/strip
+download_url?imageMogr2/strip
 ```
 
 #### 2. Processing upon upload
