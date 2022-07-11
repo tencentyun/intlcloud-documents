@@ -202,7 +202,7 @@ mCloud.startLocalPreview(true, cameraVide);
 // If role switch failed, the error code of the `onSwitchRole` callback is not `0`
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
 @Override
-public void onSwitchRoom(final int errCode, final String errMsg) {
+public void onSwitchRole(final int errCode, final String errMsg) {
     if (errCode != 0) {
         Log.d(TAG, "Switching operation failed...");
     }   
@@ -218,7 +218,7 @@ self.trtcCloud = [TRTCCloud sharedInstance];
 
 // If role switch failed, the error code of the `onSwitchRole` callback is not `0`
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
-- (void)onSwitchRoom:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
+- (void)onSwitchRole:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
     if (errCode != 0) {
         NSLog(@"Switching operation failed... ");
     }   
@@ -234,7 +234,7 @@ self.trtcCloud = [TRTCCloud sharedInstance];
 
 // If role switch failed, the error code of the `onSwitchRole` callback is not `0`
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
-- (void)onSwitchRoom:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
+- (void)onSwitchRole:(TXLiteAVError)errCode errMsg:(nullable NSString *)errMsg {
     if (errCode != 0) {
         NSLog(@"Switching operation failed... ");
     }   
@@ -249,7 +249,7 @@ trtc_cloud_->startLocalPreview(hWnd);
 
 // If role switch failed, the error code of the `onSwitchRole` callback is not `ERR_NULL` (i.e., 0)
 // If switching operation failed, the error code of the 'onSwitchRole' is not zero
-void onSwitchRoom(TXLiteAVError errCode, const char* errMsg) {
+void onSwitchRole(TXLiteAVError errCode, const char* errMsg) {
     if (errCode != ERR_NULL) {
         printf("Switching operation failed...");
     }
