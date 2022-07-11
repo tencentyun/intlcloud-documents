@@ -46,7 +46,7 @@ Electron SDK에서 다음과 같은 방법으로 이미지 화질을 조정할 �
  
 ### 해상도 및 비트 레이트 참조 테이블
 
-| 해상도 정의 | 종횡비 | 권장 비트 레이트 | 고급 구성 |
+| 해상도 정의 | 종횡비 | 권장 비트 레이트(VideoCall) | 권장 비트 레이트(LIVE) |
 |:-------------:|:-------------:|:-------------:|:-------------:|
 | TRTCVideoResolution_120_120 | 1:1 |   80kbps | 120kbps|
 | TRTCVideoResolution_160_160 | 1:1 | 100kbps | 150kbps|
@@ -67,6 +67,7 @@ Electron SDK에서 다음과 같은 방법으로 이미지 화질을 조정할 �
 | TRTCVideoResolution_640_360 | 16:9 | 550kbps | 900kbps|
 | TRTCVideoResolution_960_540 | 16:9 | 850kbps | 1300kbps|
 | TRTCVideoResolution_1280_720 | 16:9 | 1200kbps | 1800kbps|
+|TRTCVideoResolution_1920_1080 	| 16:9 | 2000kbps| 3000kbps |
 
 ## TRTCNetworkQosParam
 ### QosPreference
