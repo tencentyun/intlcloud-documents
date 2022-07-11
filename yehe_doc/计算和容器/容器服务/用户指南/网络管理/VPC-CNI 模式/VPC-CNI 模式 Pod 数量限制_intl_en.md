@@ -1,5 +1,5 @@
 
-The following displays the default limits on the number of Pods in each network mode of VPC-CNI. If you need more Pods, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=350&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1CCS).
+The following displays the default limits on the number of Pods in each network mode of VPC-CNI.
 
 ## Limits on the Number of Pods with Shared ENI
 
