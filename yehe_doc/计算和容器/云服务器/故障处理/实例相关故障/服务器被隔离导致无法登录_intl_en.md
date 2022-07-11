@@ -12,8 +12,8 @@ When a CVM is involved in a violation event or risk event, it will be partially 
 ## Solutions
 
  1. Delete the violating content as instructed by the internal message or text message. Resolve security risks and reinstall the system if necessary.
- 2. If the violation is not caused by your own action, your CVM may have encountered malicious intrusion. To resolve this, see [Host Security] (https://intl.cloud.tencent.com/zh/document/product/296).
- 3. After eliminating potential safety hazards or stopping violations, please [submit a ticket] (https://console.intl.cloud.Tencent.com/workorder) 
+ 2. If the violation is not caused by your own action, your CVM may have encountered malicious intrusion. To resolve this, see [Host Security](https://intl.cloud.tencent.com/zh/document/product/296).
+ 3. After eliminating potential safety hazards or stopping violations, please [submit a ticket](https://console.intl.cloud.Tencent.com/workorder) 
 to contact customer service for removing the isolation.
 
 
