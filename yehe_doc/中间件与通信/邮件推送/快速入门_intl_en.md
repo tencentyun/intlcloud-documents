@@ -13,7 +13,8 @@ Log in to the [SES console](https://console.cloud.tencent.com/ses). If you do no
 If the identity of your account is not verified, conduct identity verification in the [Account Center](https://console.cloud.tencent.com/developer). For more information, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Step 3. Activate SES[](id:Step3)
-If the identity of your account is verified, click **Activate** to activate SES. After successful activation, you will get a free tier of 1,000 emails, and emails sent beyond the free tier will be charged.
+If the identity of your account is verified, click **Activate** to activate SES. After successful activation, you will get a free tier of 1,000 emails.
+After the free tier is used up, your plans will be used automatically. If no plans are available, you will be charged on a pay-as-you-go basis.
 
 ## Step 4. Configure a sender domain[](id:Step4)
 >! A domain that has been registered for Tencent Exmail cannot be used as a sender domain.
@@ -24,14 +25,14 @@ If the identity of your account is verified, click **Activate** to activate SES.
 >! A sender domain is the basis of an email address and represents the sender's corporate identity. To verify a sender domain, you need to configure the DNS information for it. Therefore, you must have the admin permissions on the domain.
 
 4. Click **Verify** and configure the DNS information of the domain based on the record value on the **Sender Domain** page.
-5. After the DNS is configured, click **Submit** on the **Sender Domain** page. Make sure `Record Value` and `Current Value` are identical and the status is `Verified`.
    
+	 >?For more information on how to perform domain verification, see [Identity Verification and Configuration](https://intl.cloud.tencent.com/document/product/1084/42371).
+5. After the DNS configuration is completed, click **Submit** on the sender domain page. After the verification is passed, the status of the sender domain will become **Verified**.
 
 ## Step 5. Configure a sender address[](id:Step5)
 
 1. Go back to the **Overview** page and click **Sender Address**.
 2. Click **Create** on the **Sender Address** page.
-   
 3. Set the following parameters as needed:
 	- Sender Domain: Select a **verified** sender domain created in [step 4](#Step4).
 	- Email Prefix: Enter an email prefix, for example, `test`.
@@ -48,10 +49,11 @@ If the identity of your account is verified, click **Activate** to activate SES.
 	- Template Name: Enter a template name, for example, `test`.
 	- Template Type: Select **HTML rich text**.
 	- Email Summary: Enter an email summary, for example, `notification email template`.
-	- Email Body: click **Choose a file** and select an HTML file as the email body.
+	- Email Body: Click **Choose a file** and select an HTML file as the email body.
 >? The email content can be in plain text or rich text format. The rich text format requires the HTML code prepared in advance. The template will be reviewed after submission and can be used upon approval. The review will be finished within one business day.
 
 4. Click **Preview** to preview the email template.
+
 5. Click **Submit** to complete the template configuration.
 
 ## Step 7. Send emails[](id:Step7)

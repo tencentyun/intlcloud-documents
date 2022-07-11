@@ -7,7 +7,6 @@
 ### 如何配置发信域名？
 <dx-tabs>
 ::: 步骤一：DNS 解析界面配置
-
 1. 通过 [发信域名](https://console.cloud.tencent.com/ses/domain) 设置页面，单击**新建**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/57ab829c645dcb868dbb1643ffc3378d.png)
 2. 填写域名后，单击**提交**即可。
@@ -19,7 +18,8 @@
 3. 返回至 [发信域名](https://console.cloud.tencent.com/ses/domain) 设置页面，单击**验证**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/305ea2b8c9b3c5f10e0dbbe6135b3666.png)
 4. 记录弹出界面中“记录值”的内容。[](id:step4)
-<dx-alert infotype="explain" title="">下图为示例，请以您界面中看到的内容为准。</dx-alert>
+>?下图为示例，请以您界面中看到的内容为准。
+>
 ![](https://qcloudimg.tencent-cloud.cn/raw/70bfe55a17122848c7f829c5b4b86653.png)
 5. 如果您的域名托管在腾讯云，请进入  [DNS 解析 DNSPod 控制台](https://console.cloud.tencent.com/cns) 配置验证信息，单击对应的发信域名地址，可进入配置详情页。
 <dx-alert infotype="explain" title="">
@@ -37,10 +37,10 @@
   - SPF 验证：
   主机记录中填入：`@`
   记录类型选择：TXT
-  记录值中填入您的“记录值”。
+  记录值中填入：`v=spf1 include:qcloudmail.com ~all`
 <dx-alert infotype="explain" title="">
 - 如果发信域名非主域名，例如：abc.sampledomain.com，主机记录中填入：abc
-- 如果您同时使用多个邮件推送服务商，记录值中需要保留多个服务商的域名，例如： include:qcloudmail.com include:domain1.com，其中 domain1.com 是其他邮件推送服务商的域名。
+- 如果您同时使用多个邮件推送服务商，记录值中需要保留多个服务商的域名，例如： v=spf1 include:qcloudmail.com include:domain1.com ~all ，其中 domain1.com 是其他邮件推送服务商的域名。请确保您发信域名的 DNS 配置中只有1条 SPF 记录。
 </dx-alert>
   - DKIM 验证，填入2条记录：
     - 主机记录填入：`mail._domainkey`
@@ -58,19 +58,20 @@
 - DMARC 验证：
 主机记录中填入：`_dmarc`
   记录类型选择：TXT
-  记录值中填入：`v=DMARC1; p=none; rua=mailto:dmarc_report@xxx.com; ruf=mailto:dmarc_report@xxx.com; adkim=r; aspf=r`
+  记录值中填入：`v=DMARC1; p=none`
   <dx-alert infotype="explain" title="">
 - 如果发信域名非主域名，例如：abc.sampledomain.com，主机记录中填入：_dmarc.abc
-- 记录值中的 dmarc_report@xxx.com 为示例，应替换为任意您可用于接收伪造报告的邮件地址。
+- DMARC 记录中必须含有 v 与 p 标记。如果您对 DMARC 有更多的了解，可根据您的需要添加其他标记或修改标记的值。
 </dx-alert>
 
-7. 再次回到 [发信域名](https://console.cloud.tencent.com/ses/domain) 配置详情页，单击**验证**进行验证。“当前值”显示的是您在上述配置域名验证信息中配置的内容，当“记录值”与“当前值”完全一致，验证状态为“已验证”，配置完成。
+7. 再次回到 [步骤4](#step4) 界面，单击**提交验证**进行验证。“当前值”显示的是您在上述 DNS 配置中配置的内容，当验证状态为“已验证”，配置完成。
 
 :::
 ::: 步骤二：验证结果
 ![](https://qcloudimg.tencent-cloud.cn/raw/275fb56fe9faa0a0ab3bd3735f3bd8c5.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/695ff02f3096d64481103a13e757362c.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/c9bc369664b4290a4048f94791f47209.png)
+
 :::
 </dx-tabs>
 
