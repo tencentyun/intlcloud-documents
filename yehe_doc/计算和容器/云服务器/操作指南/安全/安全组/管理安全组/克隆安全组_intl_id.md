@@ -14,7 +14,7 @@ Anda mungkin perlu mengkloning grup keamanan jika Anda:
 1. Login ke [Konsol CVM](https://console.cloud.tencent.com/cvm/index).
 2. Di bilah sisi kiri, pilih **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** ([Grup Keamanan]). Halaman Grup Keamanan kemudian akan muncul.
 3. Pilih wilayah yang diinginkan. Daftar grup keamanan di bawah wilayah kemudian akan muncul.
-4. Temukan grup keamanan yang diinginkan, lalu klik **More** (Lainnya). Kemudian klik *Clone** (Kloning). Halaman **Clone security group** (Kloning grup keamanan) kemudian akan muncul.
+4. Temukan grup keamanan yang diinginkan, lalu klik **More** (Lainnya). Kemudian klik **Clone** (Kloning). Halaman **Clone security group** (Kloning grup keamanan) kemudian akan muncul.
 5. Pilih **Target region** (Wilayah target) dan **Target project** (Proyek target), lalu masukkan **New name** (Nama baru) untuk grup keamanan baru. Klik **OK** (OKE).
 
 
