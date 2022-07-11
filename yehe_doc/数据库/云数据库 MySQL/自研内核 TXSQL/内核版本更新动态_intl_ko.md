@@ -1,4 +1,4 @@
-본 문서는 MySQL 커널 버전의 업데이트 동향에 대해 소개합니다. 업그레이드하려면 [커널 마이너 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/45627)를 참고하십시오.
+본 문서에서는 MySQL 커널 버전 업데이트 동향에 대해 소개합니다. 업그레이드 하려면 [커널 마이너 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/36816)를 참고하십시오.
 
 ## MySQL 8.0
 ### 20211202
@@ -110,6 +110,11 @@
 - 전체 텍스트 인덱스에서 구문 검색(phrase search) 시 다중 바이트 문자 세트에 있었던 crash 문제 수정.
 
 ## MySQL 5.7
+### 20211102
+#### 새로운 기능:
+- 타사 데이터 구독 툴 사용 시 내부 데이터 일관성 비교 SQL 구독으로 인해 데이터 구독 툴이 비정상적이었던 문제를 해결했습니다.
+>?데이터베이스 인스턴스가 마이그레이션, 업그레이드 또는 장애 복구 후 시스템은 데이터 일관성을 보장하기 위해 데이터 일관성 비교를 수행합니다. 데이터베이스 비교 SQL은 'statement' 모드이며 일부 타사 구독 툴에서 'statement' 모드 SQL을 처리하면 이상 경고가 발생하기 쉽습니다. 이 버전의 커널로 업그레이드한 후 타사 구독 툴은 내부 데이터 일관성 비교 SQL을 구독하지 않습니다.
+
 ### 20211031
 #### 새로운 기능:
 - writeset 복사 기능을 지원합니다.
@@ -249,8 +254,8 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 ### 20200331
 #### 새로운 기능:
 - 공식 MySQL 5.7.22 버전의 JSON 시리즈 함수를 신규 추가하였습니다.
-- 전자상거래의 타임세일 시나리오를 기반으로 한 [핫 스팟 업데이트](https://intl.cloud.tencent.com/document/product/1035/36037) 기능을 지원합니다.
-- [SQL 제한](https://intl.cloud.tencent.com/document/product/1035/36037)을 지원합니다.
+- 이커머스 타임 세일 시나리오에 대한 [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037#.E7.83.AD.E7.82.B9.E6.9B.B4.E6.96.B0.E4.BF.9D.E6.8A.A4) 기능을 지원합니다.
+- [SQL Throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81)을 지원합니다.
 - 데이터 암호화 기능으로 KMS 사용자 지정 키 암호화를 지원합니다.
 
 #### bug 수정:
@@ -262,7 +267,7 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - binlog 파일이 손상됐을 때 건너뛰고 이어서 리졸브하는 기능 지원. 프라이머리 인스턴스와 binlog가 모두 손상된 경우 백업 데이터베이스의 데이터를 최대한 복구하여 사용할 수 있도록 합니다.
 - GTID 모드부터 GTID 외 모드까지의 데이터 동기화를 지원합니다.
 - 사용자가 show full processlist를 통해 '사용자의 스레드 메모리 사용 정보'를 조회하도록 지원합니다.
-- 테이블에 [빠른 칼럼 추가 기능](https://intl.cloud.tencent.com/document/product/236/35990)을 지원합니다. 데이터를 복사하지 않고 디스크 용량 및 디스크 I/O를 차지하지 않으며 비즈니스 피크 기간에도 실시간 변경 가능합니다.
+- 테이블에 [빠른 칼럼 추가 기능](https://intl.cloud.tencent.com/document/product/236/35988)을 지원합니다. 데이터를 복사하거나 디스크 용량, 디스크 I/O를 차지하지 않으며 비즈니스 피크 기간에도 실시간으로 변경할 수 있습니다.
 - 자동 자동 증가값(Auto_increment) 지속화를 지원합니다.
 
 #### bug 수정:
@@ -342,6 +347,19 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 비동기화 모드에서 속도 제한 플러그 인을 사용할 수 없는 문제 수정.
 
 ## MySQL 5.6
+### 20220301
+#### 새로운 기능:
+- 스핀 주기의 동적 구성을 지원합니다. 스핀 주기(0~100)는 동적 매개변수 innodb_spin_wait_pause_multiplier를 통해 동적으로 조정할 수 있습니다.
+이 매개변수는 임시 조정에 사용되며, 콘솔을 통한 고정된 수정은 지원하지 않습니다.
+- 교착 상태 루프 정보 출력 기능을 지원합니다.
+innodb_print_dead_lock_loop_info 매개변수를 통해 활성화하고 활성화 후 교착 상태가 발생하면 show engine innodb status를 사용하여 교착 상태 루프 정보를 확인합니다.
+
+#### Bug 수정:
+- slave 재시작 후 memory 테이블의 익명 GTID 트랜잭션 문제 수정.
+- root@localhost 권한이 누락되어 업그레이드가 실패하는 문제 수정.
+- innodb_row_lock_current_waits 등의 모니터링 변수 값이 비정상인 문제 수정.
+- 감사 플러그 인의 sql type 매핑이 잘못된 문제 수정.
+
 ### 20211030
 #### 새로운 기능:
 - 대규모 트랜잭션 복제 최적화를 지원합니다.
@@ -376,7 +394,7 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 
 ### 20200915
 #### 새로운 기능:
-- [SQL 스로틀링](https://intl.cloud.tencent.com/document/product/1035/36037) 기능을 지원합니다.
+- [SQL Throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81) 기능을 지원합니다.
 
 #### 성능 최적화:   
 - buffer pool 초기화 가속을 최적화하였습니다.
@@ -471,4 +489,3 @@ FLUSH TABLES WITH READ LOCK의 백업 락 방식으로 인해 전체 데이터�
 - 프라이머리 데이터베이스의 ACK 스레드가 독립되어 응답 시간이 향상되었습니다.
 - 사용자 스레드가 ACK를 기다리는 과정에서 kill 기능을 사용하지 못하도록 하여 가상 판독(Phantom Read)을 방지하였습니다.
 - sync_binlog != 1에 따른 불필요한 lock_sync 락 문제를 수정하였습니다.
-

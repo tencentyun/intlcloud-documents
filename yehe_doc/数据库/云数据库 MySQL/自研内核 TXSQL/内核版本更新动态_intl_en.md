@@ -1,4 +1,4 @@
-This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/45627).
+This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
 ## MySQL 8.0
 ### 20211202
@@ -15,12 +15,12 @@ This document describes the MySQL kernel version updates. For information on how
 - Supported proxy.
 
 #### Performance optimizations
-- Optimized the hotspot update problem caused by `insert on duplicate key update`.
+- Optimized the hotspot update performance caused by `insert on duplicate key update`.
 - Accelerated the application of hash scan by aggregating multiple identical binlog events.
 - Greatly reduced the memory usage by the `prepare` statement in point queries in the thread pool mode when the plan cache was enabled.
 
 #### Bug fixes
-- Fixed the error of unstable performance after hotspot update optimization was enabled.
+- Fixed the error of unstable performance after hotspot update was enabled after optimization.
 - Fixed the issue where `select count(*)` parallel scans caused full-table scans in extreme cases.
 - Fixed performance issues caused by execution plan changes due to reading zero statistics in various cases.
 - Fixed the bug where queries were in the `query end` status for a long time.
@@ -56,7 +56,7 @@ This document describes the MySQL kernel version updates. For information on how
 - Implemented the bug fix related to writeset provided in MySQL.
 - Implemented the bug fix related to the query optimizer provided in MySQL 8.0.24.
 - Fixed the concurrency bugs of optimizing flush list and releasing pages in FAST DDL.
-- Optimized the memory usage during data dictionary update in instances with a large number of tables.
+- Optimizes the memory usage during data dictionary update in instances with a large number of tables.
 - Fixed the crash caused by new primary key creation after INSTANT ADD COLUMN.
 - Fixed the OOM caused by memory growth in full-text index query.
 - Fixed the issue where -1 was included in the TIME field in the result set returned by SHOW PROCESSLIST.
@@ -66,7 +66,7 @@ This document describes the MySQL kernel version updates. For information on how
 
 ### 20210330
 #### New features
-- Supported source-replica buffer pool sync: After a high-availability (HA) source-replica switch occurs, it usually takes a long time to warm up the replica, that is, to load hotspot data into its buffer pool. To accelerate the replica's warmup, TXSQL now supports the buffer pool sync between the source and the replica.
+- Supported source-replica buffer pool sync: after a high-availability (HA) source-replica switch occurs, it usually takes a long time to warm up the replica, that is, to load hotspot data into its buffer pool. To accelerate the replica's warmup, TXSQL now supports the buffer pool sync between the source and the replica.
 - Supported sort merge join.
 - Supported fast DDL operations.
 - Supported querying the value of the `character_set_client_handshake` parameter.
@@ -104,12 +104,17 @@ This document describes the MySQL kernel version updates. For information on how
 - Supported transparent data encryption (TDE).
 
 #### Bug fixes
-- Fixed the issue where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
+- Fixed the error where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
 - Fixed the data file error caused by asynchronously storing data in the disk.
 - Fixed the hard error when `fsync` returned `EIO` and retries were made repeatedly.
 - Fixed the crash caused by phrase search under multi-byte character sets in full-text index.
 
 ## MySQL 5.7
+### 20211102
+#### New features
+- Troubleshoot the exception of the third-party data subscription tool caused by subscription to the comparison SQL for internal data consistency when the tool is being used.
+>?After the database instance is migrated, upgraded, or recovered after failure, the system will compare the data consistency to ensure the consistency of data. When comparison SQL is in `statement` mode, exceptions are easy to occur in response of some third-party subscription tools to the SQL in `statement` mode. When the instance is upgraded to its kernel, the third-party data subscription tool can’t subscribe the comparison SQL for internal data consistency
+
 ### 20211031
 #### New features
 - Supported writeset replication.
@@ -164,12 +169,12 @@ This document describes the MySQL kernel version updates. For information on how
 ### 20210331
 #### New features
 - Supported RETURNING in a DELETE, INSERT, or REPLACE statement to retrieve the data rows modified by the statement. For DELETE, the returned data rows are pre-images, while for INSERT and UPDATE, they are post-images.
-- Supported column compression: Row compression and data page compression are already supported, but if small fields in a table are read and written frequently while big fields are not, both of the compression methods waste a lot of computing resources. In contrast, column compression can compress big fields that are infrequently accessed and reduce the space for storing whole rows of fields, so as to improve read and write access efficiency.
+- Supported column compression: row compression and data page compression are already supported, but if small fields in a table are read and written frequently while big fields are not, both of the compression methods waste a lot of computing resources. In contrast, column compression can compress big fields that are infrequently accessed and reduce the space for storing whole rows of fields, so as to improve read and write access efficiency.
 - Supported querying the value of the `character_set_client_handshake` parameter.
 - Supported the manual clearing of page cache occupied by log files by using the `posix_fadvise()` function based on the sliding window technique, so as to lower the memory pressure on the operating system and improve instance stability.
 
 #### Performance optimizations
-- Optimized the parallelism of CREATE INDEX: An merge sort is needed in a temp table in the process of creating indexes, which is time-consuming. To solve the issue, the parallel temp-table merge sort algorithm is now supported, reducing the time by more than 50%.
+- Optimized the parallelism of CREATE INDEX: an merge sort is needed in a temp table in the process of creating indexes, which is time-consuming. To solve the issue, the parallel temp-table merge sort algorithm is now supported, reducing the time by more than 50%.
 - Optimized the mechanism of scanning and flushing the dirty pages tracked in the flush list, so as to solve the performance fluctuation issue while creating indexes and thus improve the system stability.
 
 #### Bug fixes
@@ -227,7 +232,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Fixed concurrency security issues caused by hotspot update.
 - Fixed the coredump issue when enabling the thread pool after jemalloc was upgraded to v5.2.1.
 - Fixed the incomplete audit log due to fwrite error-free handling.
-- Fixed the issue where mysqld_safe failed to print logs when it was started as `root`.
+- Fixed the error where mysqld_safe failed to print logs when it was started as `root`.
 - Fixed the increase in the size of the DDL log file caused by `alter table exchange partition`.
 
 ### 20200701
@@ -236,9 +241,9 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 
 ### 20200630
 #### New features
-- Supported using `NOWAIT` and `SKIP LOCKED` in `SELECT FOR UPDATE/SHARE` statements.
+- Supported `NOWAIT` and `SKIP LOCKED` in `SELECT FOR UPDATE/SHARE` statements.
 - Supported large transaction optimization, which can solve such problems as source-replica delay and backup failures caused by large transactions.
-- Optimized audit performance: Async audit is supported.
+- Optimized audit performance: async audit is supported.
 
 #### Bug fixes
 - Fixed the overflow of the `digest_add_token` function.
@@ -249,8 +254,8 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 ### 20200331
 #### New features
 - Added the official MySQL 5.7.22 JSON series functions.
-- Supported the [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037) feature for ecommerce flash sale scenarios.
-- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
+- Supported the [real-time session](https://intl.cloud.tencent.com/document/product/1035/36037#.E7.83.AD.E7.82.B9.E6.9B.B4.E6.96.B0.E4.BF.9D.E6.8A.A4) feature for ecommerce flash sale scenarios.
+- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81)
 - Supported encryption with custom KMS keys.
 
 #### Bug fixes
@@ -262,18 +267,18 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Supported skipping the corrupted data and continuing to parse when a binlog is corrupted. If the source instance and binlog are both damaged, this feature helps restore data from the replica database for use as much as possible.
 - Supported syncing data from non-GTID to GTID mode.
 - Supported querying the "user thread memory usage" by executing the `show full processlist` statement.
-- Supported [quick column adding](https://intl.cloud.tencent.com/document/product/236/35990) for tables. This feature does not replicate the data or use disk capacity/IO, and can implement changes in real time during peak hours.
+- Supported [quick column adding](https://intl.cloud.tencent.com/document/product/236/35988) for tables. This feature does not replicate the data or use disk space/IO and can implement changes during peak hours.
 - Supported persistent auto-increment values.
 
 #### Bug fixes
-- Fixed the issue where replication would be interrupted if the column name in a `GRANT` statement contained reserved words.
-- Fixed the issue where SQL execution efficiency dropped when reverse scan was performed on a partitioned table.
-- Fixed the issue where the query result had an exception due to data inconsistency when using virtual column index and primary key.
-- Fixed the issue where data was missing due to InnoDB primary key range queries.
-- Fixed the issue where the system crashed when a DDL statement was executed for a table with spatial indexes.
-- Fixed the issue where source-replica disconnection occurred when the binlog size was too large and the file length in the heartbeat information exceeded the limit.
-- Fixed the issue where other events could not be executed as scheduled when an event was deleted.
-- Fixed the issue where the aggregate query result was incorrect.
+- Fixed the error where replication would be interrupted if the column name in a `GRANT` statement contained reserved words.
+- Fixed the error where SQL execution efficiency dropped when reverse scan was performed on a partitioned table.
+- Fixed the error where the query result had an exception due to data inconsistency when using virtual column index and primary key.
+- Fixed the error where data was missing due to InnoDB primary key range queries.
+- Fixed the error where the system crashed when a DDL statement was executed for a table with spatial indexes.
+- Fixed the error where source/replica disconnection occurred when the binlog size was too large and the file length in the heartbeat information exceeded the limit.
+- Fixed the error where other events could not be executed as scheduled when an event was deleted.
+- Fixed the error where the aggregate query result was incorrect.
 
 ### 20190615
 #### New features
@@ -281,9 +286,9 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 
 ### 20190430
 #### Bug fixes
-- Fixed the issue where null pointer reference occurred when the LONGTEXT feature was used in subqueries.
-- Fixed the issue where source-replica disconnection occurred due to hash scan.
-- Fixed the issue where the replica I/O thread was interrupted due to source binlog switch.
+- Fixed the error where null pointer reference occurred when the LONGTEXT feature was used in subqueries.
+- Fixed the error where source/replica disconnection occurred due to hash scan.
+- Fixed the error where the replica I/O thread was interrupted due to source binlog switch.
 - Fixed the crash caused by the use of `NAME_CONST`.
 - Fixed the illegal mix of collation error caused by character set.
 
@@ -297,14 +302,14 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Supported enterprise-grade encryption functions. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 #### Bug fixes
-- Fixed the issue where replication was interrupted when binlog cache file ran out of space.
+- Fixed the error where replication was interrupted when binlog cache file ran out of space.
 - Fixed the hard error when `fsync` returned `EIO` and retries were made repeatedly.
-- Fixed the issue where replication was interrupted and could not be recovered due to GTID holes.
+- Fixed the error where replication was interrupted and could not be recovered due to GTID holes.
   
 ### 20180918
 #### New features
 - Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-- Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
+- Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
 - Supported invisible indexes.
 - Supported memory management with jemalloc, which can replace the jlibc memory management module to reduce memory usage and improve allocation efficiency.
   
@@ -313,9 +318,9 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Increased the crash recovery speed.
   
 #### Bug fixes
-- Fixed the issue where an event became invalid due to source-replica switch.
+- Fixed the error where an event became invalid due to source/replica switch.
 - Fixed the crash caused by `REPLAY LOG RECORD`.
-- Fixed the issue where the query result was incorrect due to loose index scans.
+- Fixed the error where the query result was incorrect due to loose index scans.
 
 ### 20180530
 #### New features
@@ -327,7 +332,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Optimized the pushdown of the `select ... limit` statement.
   
 #### Bug fixes
-- Fixed the issue where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
+- Fixed the error where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
 - Fixed the crash caused by `Crash on UPDATE ON DUPLICATE KEY`.
 - Fixed the "Invalid escape character in string." error when a JSON column was imported.
   
@@ -339,9 +344,22 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 
 #### Bug fixes
 - Fixed the error of `innodb_buffer_pool_pages_data` overflow by calculating it based on `bytes_data`.
-- Fixed the issue where speed limit plugin became unavailable in async mode.
+- Fixed the error where speed limit plugin became unavailable in async mode.
 
 ## MySQL 5.6
+### 20220301
+#### New features
+- Supported dynamically configuring the spin cycle (0–100) with the dynamic parameter `innodb_spin_wait_pause_multiplier`.
+This parameter is used for temporary adjustment and does not support fixing the change through the console.
+- Supported printing deadlock loop information.
+After this feature is enabled through the parameter `innodb_print_dead_lock_loop_info`, when a deadlock occurs, you can run `show engine innodb status` to view the deadlock loop information.
+
+#### Bug fixes
+- Fixed the issue where anonymous GTID transactions were generated in memory tables after replica restart.
+- Fixed the issue where upgrade failed due to the missing root@localhost permission.
+- Fixed the issue where the values of monitoring variables such as `innodb_row_lock_current_waits` were abnormal.
+- Fixed the SQL type mapping error in the audit plugin.
+
 ### 20211030
 #### New features
 - Supported large transaction replication optimization.
@@ -368,15 +386,15 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 ### 20201231
 #### Bug fixes
 - Fixed the error (error code: 1032) caused by hash scans. 
-- Fixed the issue where REPLACE INTO does not update AUTO_INCREMENT columns in row-based replication.
+- Fixed the error where REPLACE INTO does not update AUTO_INCREMENT columns in row-based replication.
 - Fixed the memory leak caused by not freeing up the memory requested for parsing SQL statements.
-- Fixed the issue where the sql_mode check is skipped when running CREATE TABLE AS SELECT.
-- Fixed the issue where the sql_mode check is skipped when inserting default values.
-- Fixed the issue where the sql_mode check is skipped when running UPDATE with bound parameters.
+- Fixed the error where the sql_mode check is skipped when running CREATE TABLE AS SELECT.
+- Fixed the error where the sql_mode check is skipped when inserting default values.
+- Fixed the error where the sql_mode check is skipped when running UPDATE with bound parameters.
 
 ### 20200915
 #### New features
-- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
+- Supported [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037#sql-.E9.99.90.E6.B5.81)
 
 #### Performance optimizations   
 - Optimized the initialization acceleration of buffer pool.
@@ -397,17 +415,17 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 
 #### Bug fixes
 - Fixed GTID holes caused by the replication filter of the replica.
-- Fixed the issue where source-replica disconnection occurred when the binlog size was too large and the file length in the heartbeat information exceeded the limit.
+- Fixed the error where source/replica disconnection occurred when the binlog size was too large and the file length in the heartbeat information exceeded the limit.
 - Fixed the illegal mix of collation error caused by character set.
-- Fixed the issue where the source-replica disconnection occurred due to hash scan.
+- Fixed the error where the source/replica disconnection occurred due to hash scan.
 - Fixed the crash caused by the use of `NAME_CONST`.
-- Fixed the issue where the replica I/O thread was interrupted due to source binlog switch.
+- Fixed the error where the replica I/O thread was interrupted due to source binlog switch.
 - Fixed the error of incompatible backups due to `innodb_log_checusum`.
 
 ### 20190530
 #### Bug fixes
-- Fixed the issue where dirty data might be read in RC mode.
-- Fixed the issue where replica instance replay might fail due to the deletion of temp table.
+- Fixed the error where dirty data might be read in RC mode.
+- Fixed the error where replica instance replay might fail due to the deletion of temp table.
 - Fixed the error of deadlock under high concurrency.
   
 ### 20190203
@@ -422,11 +440,11 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 #### Bug fixes
 - Fixed the error of data inconsistency between source and replica due to insufficient temporary space.
 - Fixed the error of suspended hot record updates.
-- Fixed the issue where the `Seconds_Behind_Master` value had an exception during concurrent replication.
+- Fixed the error where the `Seconds_Behind_Master` value had an exception during concurrent replication.
 
 ### 20180915
 #### New features
-- Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
+- Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
 - Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
   
 #### Bug fixes
@@ -442,7 +460,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Reduced performance fluctuation caused by `drop table`.
   
 #### Bug fixes
-- Fixed the issue where the database crashed due to authentication password strings.
+- Fixed the error where the database crashed due to authentication password strings.
   
 ### 20180122
 #### New features
@@ -451,19 +469,19 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 #### Bug fixes
 - Fixed the error of integer overflow.
 - Fixed the error caused by queries using full-text index.
-- Fixed the issue where the replica crashed during replication.
+- Fixed the error where the replica crashed during replication.
 	
 ### 20170830
 #### Bug fixes
-- Fixed the issue where binlog speed limit became invalid in async mode.
-- Fixed the issue where the `buffer_pool` status had an exception.
-- Fixed the issue where `SEQUENCE` and implicit primary key conflicted.
+- Fixed the error where binlog speed limit became invalid in async mode.
+- Fixed the error where the `buffer_pool` status had an exception.
+- Fixed the error where `SEQUENCE` and implicit primary key conflicted.
   
 ### 20170228
 #### Bug fixes
 - Fixed the character encoding bug in `drop table`.
-- Fixed the issue where special symbols such as decimal point in a database or table could not be properly filtered by the `replicate-wild-do-table` statement.
-- Fixed the issue where SQL threads exited too early after the replica had a `rotate` event.
+- Fixed the error where special symbols such as decimal point in a database or table could not be properly filtered by the `replicate-wild-do-table` statement.
+- Fixed the error where SQL threads exited too early after the replica had a `rotate` event.
   
 ### 20161130
 #### Performance optimizations
@@ -471,4 +489,3 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Separated the ACK thread of the source to improve the response time.
 - Prohibited the user thread from being killed while waiting for ACK in order to prevent phantom reads.
 - Fixed the unnecessary `lock_sync` lock when `sync_binlog != 1`.
-
