@@ -5,7 +5,7 @@ INTELLIGENT TIERING is a COS storage class designed to reduce storage costs by a
 INTELLIGENT TIERING is ideal for data with unknown or changing access patterns. It offers the same low latency and high throughput as STANDARD while featuring lower costs. Users can change the storage class of objects with uncertain access patterns from STANDARD to INTELLIGENT TIERING as needed to reduce in-cloud storage costs.
 
 >!
-> - Currently, INTELLIGENT TIERING is only available for the Beijing, Shanghai, Guangzhou, Chongqing, Tokyo, and Singapore regions.
+> - Currently, INTELLIGENT TIERING is only available for the Beijing, Nanjing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo, Singapore regions.
 > - INTELLIGENT TIERING is a standalone storage class that will incur storage usage fees. For detailed pricing, see [Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
 > 
 
