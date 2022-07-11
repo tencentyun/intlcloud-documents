@@ -17,10 +17,7 @@ Log in to the [TEM console](https://console.cloud.tencent.com/tem), create an [e
 
 1. Log in to the [TEM console](https://console.cloud.tencent.com/tem), click **Application Management** on the left sidebar, and click the target application to enter the application details page.
 2. Click **Edit and update** in the **Access configuration** section to enter the application access configuration page.
-   ![](https://main.qcloudimg.com/raw/47630bde7bf37d8492aa9513c8c042ee.png)
 3. Select VPC access (layer-4 forwarding), select the subnet, protocol, container port, and application listening port, and click **Submit**. At this point, TEM will automatically create a layer-4 forwarding VPC CLB instance for you.
-<img src="https://main.qcloudimg.com/raw/6035759e5464618638e98bdb5328e412.png" width="800px">
-
 
 ### Step 2. Create an API Gateway service and bind it to the TEM application[](id:step2)
 
@@ -29,16 +26,10 @@ Log in to the [TEM console](https://console.cloud.tencent.com/tem), create an [e
    When creating the service, you can select the frontend type (HTTP, HTTPS, or HTTP/HTTPS), access mode (VPC or public network), and instance type (shared or dedicated).
 >?For more information on the selection of instance type, see [Instance Selection](https://intl.cloud.tencent.com/document/product/628/40305).
 >
-<img src="https://main.qcloudimg.com/raw/e4c9ebe17cb9ac1fd802db51b54b5a93.png" style = "width:80%">
 3. Click the API Gateway service ID to enter the API management page and click **Create API**.
 4. In the **Frontend configuration** step, enter the API name, select **HTTP&HTTPS** as the frontend type, **/** as the path, **ANY** as the request method (to include all requests), and **Authentication-free** as the authentication type, and click **Next**.
-   ![](https://main.qcloudimg.com/raw/6496aacc6e308c1a3bb599570415bfa1.png)
 5. In the **Backend configuration** step, select **VPC resources** as the backend type, select the VPC where the TEM application deployment environment is located, set the backend domain name, select the CLB instance automatically created by the TEM application (named "cls-xxxdefault{TEM application name}"), select the corresponding listener (i.e., the port mapping set in the previous step), and enter `/` as the backend address.
-   ![](https://main.qcloudimg.com/raw/f124d179b8a7dfe715b5e9dfb6bc4228.png)
-	The settings of the backend domain name are as follows:
-    <img src="https://main.qcloudimg.com/raw/f1d8b0d080aab985df46ec9a224b8e07.png" width="500px">
 6. At this point, you can see the API you configured and access your TEM application at the default domain name provided by API Gateway.
-
 
 ### Step 3. Access the TEM application through API Gateway
 
