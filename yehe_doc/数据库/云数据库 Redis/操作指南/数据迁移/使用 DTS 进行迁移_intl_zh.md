@@ -1,5 +1,5 @@
 ## 背景简介
-腾讯云 [数据传输服务](https://cloud.tencent.com/document/product/571)（Data Transmission Service，DTS）是提供数据迁移、数据同步、数据订阅于一体的数据库数据传输服务，可帮助用户在业务不停服的前提下轻松完成数据库迁移上云，利用实时同步通道轻松构建高可用的数据库容灾架构，通过数据订阅来满足商业数据挖掘、业务异步解耦等场景需求。 
+腾讯云 [数据传输服务](https://intl.cloud.tencent.com/document/product/571)（Data Transmission Service，DTS）是提供数据迁移、数据同步、数据订阅于一体的数据库数据传输服务，可帮助用户在业务不停服的前提下轻松完成数据库迁移上云，利用实时同步通道轻松构建高可用的数据库容灾架构，通过数据订阅来满足商业数据挖掘、业务异步解耦等场景需求。 
 
 DTS for Redis 目前支持数据迁移功能，可一次性将数据迁移到云上数据库，迁移过程中不停机，并且支持全量 + 增量数据的迁移，即迁移前源库的历史数据，和迁移过程中源库新增的写入数据都支持一起迁移。 
 
@@ -17,7 +17,7 @@ DTS 支持 Redis 数据迁移的源端和目标端部署形态如下：
 >?单机版迁移内存版（集群架构）兼容性问题请参见 [单机版迁移集群版说明](https://intl.cloud.tencent.com/document/product/239/37594)。
 
 #### 支持版本
-- DTS 迁移服务支持的版本包括 Redis 2.8、3.0、3.2、4.0、5.0，建议目标库版本大于或等于源库版本，否则会存在兼容性问题。
+- DTS 迁移服务支持的版本包括 Redis 2.8、3.0、3.2、4.0、5.0、6.0，其中6.0版本如需体验请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行申请。建议目标库版本大于或等于源库版本，否则会存在兼容性问题。
 - 标准架构和集群架构支持相互迁移，但异构迁移（如集群架构 > 标准架构）可能会存在兼容性问题。
 - 支持的架构包括单节点、redis cluster、codis、twemproxy。
 - 迁移权限要求：DTS 迁移数据需要源实例支持 SYNC 或者 PSYNC 命令。
@@ -26,13 +26,9 @@ DTS 支持 Redis 数据迁移的源端和目标端部署形态如下：
 DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线接入、VPN 接入、云联网场景下的数据迁移。
 
 - 公网：源数据库可以通过公网 IP 访问。
-
 - 云主机自建：源数据库部署在 [腾讯云服务器 CVM](https://intl.cloud.tencent.com/document/product/213) 上。
-
 - 专线接入：源数据库可以通过 [专线接入](https://intl.cloud.tencent.com/document/product/216) 方式与腾讯云私有网络打通。 
-
 - VPN 接入：源数据库可以通过 [VPN 连接](https://intl.cloud.tencent.com/document/product/1037) 方式与腾讯云私有网络打通。 
-
 - 云联网：源数据库可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 与腾讯云私有网络打通。
 
 #### 迁移限制
@@ -43,33 +39,70 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
 - 迁移成功时，由业务侧验证数据后，可断开源实例连接，将连接切换到目标实例。
 
 ## 环境要求
-
-> ?如下环境要求，系统会在启动迁移任务前自动进行校验，不符合要求的系统会报错提示，用户可参考提前进行自查。
+### 系统检查
+> ?DTS 系统会在启动迁移任务前进行如下校验，不符合要求的系统会报错提示，用户也可提前进行自查，报错后的处理方法请参考 [Redis 校验项](https://intl.cloud.tencent.com/document/product/571/42551)。
 
 <table>
 <tr><th width="20%">类型</th><th width="80%">环境要求</th></tr>
 <tr>
 <td>源库要求</td>
 <td>
-<li>源库和目标库网络能够连通。</li><li>源库中的数据库个数需要小于或等于目标库的数据库个数。</li></td></tr>
+<li>源库和目标库网络能够连通。</li><li>源库中的数据库个数需要小于或等于目标库的数据库个数。</li><li>Redis 源实例版本需要大于等于2.2.6，2.2.6以下版本不支持 DTS 迁移。</li><li>源库必须为 Slave 节点，否则校验项会报警告。</li></td></tr>
 <tr> 
 <td>目标库要求</td>
 <td>
-<li>建议目标库的版本大于或等于源实例的版本，否则校验时会报警告，提示兼容性问题。</li>
-<li>目标库的空间必须大于源库待迁移数据所占空间。</li>
+<li>建议目标库的版本大于或等于源实例的版本，否则校验时会报警告，提示兼容性问题。</li><li>目标端 Redis 的 Proxy 版本为最新版本。</li>
+<li>目标库的空间必须大于等于源库待迁移数据所占空间的1.5倍。</li>
 <li>目标库必须为空。</li></td></tr>
 </table>
 
-## 迁移步骤
+### [用户自查](id:zxjc)
+如下检查需要用户在迁移前自行排查，否则可能会出现迁移失败。
 
+#### 检查源端是否存在大 Key
+迁移之前，请检查源端数据库中是否存在大 Key。在迁移过程中，大 Key 可能引起缓冲区 client-output-buffer-limit 溢出，导致迁移失败。
+- 腾讯云数据库，请使用数据库智能管家（TencentDB for DBbrain，DBbrain）的诊断优化功能快速分析大 Key。具体操作，请参见 [内存分析](https://intl.cloud.tencent.com/document/product/239/47576)。
+- 非腾讯云数据库，请使用 rdbtools 分析 Redis 大 Key。
+
+评估大 Key 进行拆分或清理，如果保留大 Key，请设置源端缓冲区的大小 client-output-buffer-limit 为无限大。
+```
+config set client-output-buffer-limit 'slave 0 0 0' 
+```
+
+#### 检查源端 Linux 内核 TCP 连接数的限制
+如果业务并发请求比较大，迁移之前，请检查 Linux 内核对连接数的限制，如果业务请求连接数超出内核限制的连接数，Linux 服务器将会主动断开与 DTS 的连接。
+```
+echo "net.ipv4.tcp_max_syn_backlog=4096" >> /etc/sysctl.conf
+echo "net.core.somaxconn=4096" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_abort_on_overflow=0" /etc/sysctl.conf
+sysctl -p
+```
+
+#### 检查源端 RDB 文件目录的访问权限
+迁移之前，请务必检查源端存放 RDB 文件目录的访问权限是否为可读，否则将会因 RDB 文件不可读而引起迁移失败。
+
+如果RDB文件所在目录不可读，请在源端执行如下命令，设置“无盘复制”，直接发送 RDB 文件给 DTS 落盘，而不需要保存在源端的磁盘再发送。 
+```
+config set repl-diskless-sync yes
+```
+
+#### 标准架构迁移到集群架构，请检查命令兼容性问题
+标准架构迁移至内存版（集群架构）面临的最大问题为命令是否兼容内存版（集群架构）的使用规范。
+
+- 多 Key 操作
+  腾讯云数据库 Redis 内存版（集群架构）仅支持 mget、mset、 del 、 exists 命令的跨 SLOT 多 Key 访问， 源端数据库可以通过 Hash Tag 的方式，将需要进行多 Key 运算的 Key 聚合至相同 SLOT，Hash Tag 的使用方式请参考 [Redis Cluster 文档](https://redis.io/topics/cluster-spec)。 
+- 事务操作
+  内存版（集群架构）支持事务，但是事务中的命令不能跨 SLOT 访问 Key。
+
+具体操作，请参见 [标准架构迁移集群架构检查](https://intl.cloud.tencent.com/document/product/239/37594) 进行静态评估与动态评估。
+
+## 迁移步骤
 #### 1. 新建迁移任务
 1）登录 [DTS 控制台](https://console.cloud.tencent.com/dts )，在数据迁移页，单击**新建迁移任务**。
 2）在新建迁移任务页面，选择源数据库和目标数据库的类型、地域信息，然后单击**立即购买**。
 
 #### 2. 设置源和目标数据库
-
 填写源库设置和目标库设置，单击**连通性测试**，测试通过后，单击**保存**进入下一步。
-
 ![](https://main.qcloudimg.com/raw/513d89660769db2dfd155514bcb38dfc.png)
 
 <table>
@@ -120,7 +153,6 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
 
 
 #### 3. 校验和启动任务
-
 在校验任务页面，进行校验，校验任务通过后，单击**启动任务**。
 
 - 校验结果为失败：表示校验项检查未通过，任务阻断，需要修复问题后重新执行校验任务。  
@@ -129,15 +161,11 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
 返回数据迁移任务列表，任务进入准备运行状态，运行1分钟 - 2分钟后，数据迁移任务开始正式启动。
 
 #### 4. 完成迁移任务 
-
 1）（可选）如果您需要进行查看任务、删除任务等操作，请单击对应的任务，在**操作**列进行操作，详情可参考 [任务管理](https://intl.cloud.tencent.com/document/product/571/42637)。
-
 2）当源库和目标库的 key 同步一致时，在**操作**列单击**完成**，结束数据迁移任务。
-
 3）当迁移任务状态变为**任务成功**时，请先在目标数据库上验证数据，如果验证无误，即可对业务进行正式割接，更多详情可参考 [割接说明](https://intl.cloud.tencent.com/document/product/571/42612)。
 
 ## 事件告警和指标监控
-
 1）DTS 支持迁移中断自动上报事件告警，以便及时了解到迁移任务的异常，详细步骤请参考 [配置数据迁移告警](https://intl.cloud.tencent.com/document/product/571/42610)。
 2）DTS 支持查看迁移过程中的各项指标监控， 以便了解系统的各项指标性能，请参考 [查看监控指标](https://intl.cloud.tencent.com/document/product/571/42606)。
 

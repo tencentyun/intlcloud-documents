@@ -29,18 +29,17 @@
 -----
 
 ## 5. 控制台功能概述
-- [为实例指定项目](https://intl.cloud.tencent.com/document/product/239/31933)
+- [为实例重新分配项目](https://intl.cloud.tencent.com/document/product/239/31933)
 - [变更实例规格](https://intl.cloud.tencent.com/document/product/239/31934)
 - [开关读写分离](https://intl.cloud.tencent.com/document/product/239/31935)
 - [清空实例](https://intl.cloud.tencent.com/document/product/239/31936)
 - [销毁实例](https://intl.cloud.tencent.com/document/product/239/31937)
 - [升级实例版本](https://intl.cloud.tencent.com/document/product/239/37710)
 - [升级实例架构](https://intl.cloud.tencent.com/document/product/239/37860)
+- [配置多可用区](https://intl.cloud.tencent.com/document/product/239/39799)
 - [备份数据](https://intl.cloud.tencent.com/document/product/239/7071)
 - [恢复数据](https://intl.cloud.tencent.com/document/product/239/7072) 
 - [克隆数据](https://intl.cloud.tencent.com/document/product/239/31897)
-- [使用 DTS 进行迁移](https://intl.cloud.tencent.com/document/product/239/31941)
-- [使用 DTS 进行版本升级](https://intl.cloud.tencent.com/document/product/239/32546)
 - [配置网络](https://intl.cloud.tencent.com/document/product/239/31944)
 - [配置安全组](https://intl.cloud.tencent.com/document/product/239/31945)
 - [监控功能](https://intl.cloud.tencent.com/document/product/239/38743)
@@ -50,8 +49,9 @@
 -----
 
 ## 6. 新手常见问题
-- [如何连接云数据库 Redis 实例？](https://intl.cloud.tencent.com/document/product/239/18664)
-- [如何查看内网地址？](https://intl.cloud.tencent.com/document/product/239/18664#.E5.A6.82.E4.BD.95.E6.9F.A5.E7.9C.8B.E5.86.85.E7.BD.91.E5.9C.B0.E5.9D.80.EF.BC.9F)
+- [如何连接云数据库 Redis 实例？](https://intl.cloud.tencent.com/document/product/239/9897)
+- [连接云数据库 Redis 实例失败，如何处理？](https://intl.cloud.tencent.com/document/product/239/41811)
+- [如何查看内网地址？](https://intl.cloud.tencent.com/document/product/239/18664)
 - [账号误删与忘记密码怎么办？](https://intl.cloud.tencent.com/document/product/239/3251)
 - [数据库买错了，如何退货？](https://intl.cloud.tencent.com/document/product/239/18665)
 
@@ -61,4 +61,7 @@
 ## 7. 反馈与建议
 使用云数据库 Redis 产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果遇到产品相关问题，您可咨询  [提交工单](https://console.cloud.tencent.com/workorder/category)  寻求帮助。
+
+  
+

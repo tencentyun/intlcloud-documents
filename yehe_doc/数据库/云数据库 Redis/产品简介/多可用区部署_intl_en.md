@@ -7,32 +7,34 @@ You can now deploy TencentDB for Redis master and replica nodes in different ava
 Description:
 - LB (Load Balancer): A TencentDB for Redis instance in standard architecture or cluster architecture has at least three proxies which need to be accessed through LB.
 - VIP: A multi-AZ deployed instance has only one VIP. You can use this VIP to access all nodes of the instance deployed in the region. Master-Replica switches of the instance will not change its VIP.
-- Proxy: An instance has at least three proxies. For a standard architecture instance, the number of proxies = 3 + (the number of replicas -1); for a cluster architecture instance, the number of proxies = the number of shards * the number of replicas.
+- Proxy:
+ - If read-only replica is enabled, an instance has at least three proxies. For a standard architecture instance, the number of proxies is 3 + (replica quantity - 1); for a cluster architecture instance, the number of proxies is shard quantity * replica quantity.
+ - If read-only replica is not enabled, for a standard architecture instance, the number of proxies is 3; for a cluster architecture instance, the number of proxies is shard quantity * 1.5 (rounded up).
 - Master (Group): "Master" refers to the master node of a TencentDB for Redis instance in standard architecture; "Master Group" refers to the master nodes of all shards of a TencentDB for Redis instance in cluster architecture.
 - Replica (Group): "Replica" refers to the replica nodes of a TencentDB for Redis instance in standard architecture; "Replica Group" refers to the collection of replica nodes, each of which comes from a different shard of a TencentDB for Redis instance in the cluster architecture. For a cluster architecture instance, the replicas of a shard are divided into multiple Replica Groups so that these Replica Groups can be deployed in different AZs.
-- Master AZ: The master AZ refers to the AZ where the master node resides. Unless manually changed in the console, the master AZ will remain the same. If the master node fails, it may be temporarily switched to a replica AZ, and will be automatically switched back to the master AZ in a few minutes once certain conditions are met. This switching back process won’t affect your business unless your business uses block commands, such as `blpop` or `blpush`.
+- Master AZ: The master AZ refers to the AZ where the master node resides. Unless manually changed in the console, the master AZ will remain the same. If the master node fails, it may be temporarily switched to a replica AZ, and will be automatically switched back to the master AZ in a few minutes once certain conditions are met. This switching back process won't affect your business unless your business uses block commands, such as `blpop` or `blpush`.
 
 ## Failover (HA)
-- Detect failed nodes: TencentDB for Redis in standard architecture or cluster architecture adopts the same cluster management mechanism as the Redis Cluster, which uses the Gossip protocol to detect the status of nodes in a cluster. The `cluster-node-timeout` parameter is used to specify the maximum amount of time a Redis cluster node can be unavailable, without it being considered as failing. We recommend you set this parameter to its default value (15 s) and do not change it. For more information, see [Redis cluster tutorial](https://redis.io/topics/cluster-tutorial).
+- Detect failed nodes: TencentDB for Redis in standard architecture or cluster architecture adopts the same cluster management mechanism as the Redis Cluster, which uses the Gossip protocol to detect the status of nodes in a cluster. The `cluster-node-timeout` parameter is used to specify the maximum amount of time a Redis cluster node can be unavailable, without it being considered as failing. We recommend you set this parameter to its default value (15s) and do not change it. For more information, see the [Redis cluster tutorial](https://redis.io/topics/cluster-tutorial).
 - Promote a replica to master: TencentDB for Redis adopts a failover mechanism different from that of Redis Cluster, which gives priority to promoting replicas in the master AZ to reduce access delay of the master AZ. The details are as follows:
  - Promote the replica if it has the latest data
  - Promote the replica in the master AZ if all replicas have the same data
 
 ## Cross-AZ Access
-### Instances without read-only replicas
+### Instance with read-only replica disabled
 Read/Write separation disabled (that is, replicas can be written to and read from): Write/read requests in a replica AZ are routed by proxy to the master node, and the master node synchronizes with replica nodes to ensure consistent data across all nodes. In this process, only one cross-AZ access happens.
 
-### Instances with read-only replicas
+### Instance with read-only replica enabled
 Read/Write separation enabled (that is, replicas can only be read from): Write requests are routed by proxy to the master node, but read requests are routed to the replica node in the same AZ as the proxy, so that read requests can get responded by the nearest node.
 >?There is a 2–5 ms delay during cross-AZ access.
 
 ## Recommended Deployment Solution
 ### Two-AZ deployment
-Deploy the master node and one replica node in the master AZ, and two replica nodes in the replica AZ. Both AZs, each of which has two nodes, are accessed through LB. If one node in an AZ fails, the read requests can be processed by the other node in the AZ. If an AZ fails, the other AZ is still highly available. This solution is applicable for use cases which have high requirements on availability and delay.
+Deploy the master node and one replica node in the master AZ, and two replica nodes in the replica AZ. Both AZs, each of which has two nodes, are accessed through LB. If one node in an AZ fails, the read requests can be processed by the other node in the AZ. If an AZ fails, the other AZ is still highly available. This solution is suitable for scenarios where high availability is required and delay is sensitive.
 ![](https://main.qcloudimg.com/raw/5a3cc43871565e6371d1d990e9845324.png)
 
 ### Three-AZ deployment
-Deploy the master node in the master AZ, one replica node in replica AZ 1, and one replica node in replica AZ 2. If one node or one AZ fails, the whole architecture still has cross-AZ high availability. This solution is applicable to use cases which have ultra high requirements on availability but are insensitive to delay.
+Deploy the master node in the master AZ, one replica node in replica AZ 1, and one replica node in replica AZ 2. If one node or one AZ fails, the whole architecture still has cross-AZ high availability. This solution is is suitable for scenarios where extremely high availability is required but delay is insensitive.
 ![](https://main.qcloudimg.com/raw/d2c4ad9ce6354559eaee7e191be59b7e.png)
  
 ## Related Operations
