@@ -8,6 +8,7 @@
 ## 地域
 腾讯云不同地域之间隔离，保证不同地域间最大程度的稳定性和容错性。建议您选择最靠近您用户的地域，可降低访问时延、提高下载速度。用户启动实例、查看实例等操作都是区分地域属性的。
 云产品内网通信的注意事项如下：
+
 - 同地域下（保障同一账号，且同一个 VPC 内）的云资源之间可通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 - 不同地域之间网络隔离，不同地域之间的云产品默认不能通过内网互通。
 - 处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
@@ -16,6 +17,8 @@
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
 
 ## 支持的地域和可用区
+>?不同地域可用区所开放的资源可能因资源售罄而缺少，之前已售罄的资源可能又得到了重新补给。资源的开放情况会根据实际业务使用情况会随时评估调整，请以控制台购买页所开放的资源为准。
+>
 ### 中国
 <table class="table-striped">
 <tbody><tr><th>地域（region）</th><th>可用区（zone）</th></tr>
@@ -24,7 +27,7 @@
 <td>广州四区<br> ap-guangzhou-4</td></tr>
 <tr>
 <td rowspan="2">华东地区（上海）<br>ap-shanghai</td>
-<td>上海二区（售罄）<br>ap-shanghai-2</td></tr>
+<td>上海二区<br>ap-shanghai-2</td></tr>
 <tr>
 <td>上海三区<br>ap-shanghai-3</td></tr>	
 <tr>
@@ -49,13 +52,13 @@
 <td>曼谷二区（曼谷节点可用于覆盖亚太东南地区）<br>ap-bangkok-2</td>
 <tr>
 <td>亚太南部（孟买）<br>ap-mumbai</td>
-<td>孟买二区（售罄）（适合用于覆盖亚太南部地区）<br>ap-mumbai-2</td></tr>
+<td>孟买二区（适合用于覆盖亚太南部地区）<br>ap-mumbai-2</td></tr>
 <tr>
 <td rowspan="1">亚太东北（首尔）<br>ap-seoul</td>
 <td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td></tr>
 <tr>
 <td>美国（硅谷）<br>na-siliconvalley</td>
-<td>硅谷二区（售罄）（适合用于覆盖美国地区）<br>na-siliconvalley-2</td></tr>	
+<td>硅谷二区（适合用于覆盖美国地区）<br>na-siliconvalley-2</td></tr>	
 <tr>
 <td>北美地区（多伦多）<br>na-toronto</td>
 <td>多伦多一区（适合用于覆盖北美地区）<br>na-toronto-1</td></tr>	
