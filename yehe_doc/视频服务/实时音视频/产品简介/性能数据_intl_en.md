@@ -46,7 +46,7 @@ The table below lists TRTC’s performance and mean opinion score (MOS) under di
 | ------------ | ----------- | ---- |
 | Android device 1 | Qualcomm Snapdragon 835 - 8 cores | 6 GB   |
 | Android device 2 | Kirin 980 - 8 cores | 8 GB   |
-| iOS device 1     | Apple A8 - 2 cores      | 3 GB   |
+| iOS device 1     | Apple A8 - 2 cores      | 1 GB   |
 | iOS device 2     | Apple A13 - 6 cores     | 4 GB   |
 
 ### Parameter configuration
