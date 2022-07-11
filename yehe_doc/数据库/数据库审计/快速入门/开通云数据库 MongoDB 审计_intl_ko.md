@@ -1,0 +1,17 @@
+Tencent Cloud는 TencentDB for MongoDB 데이터베이스 감사 기능을 제공하여 데이터베이스 액세스 및 SQL 명령어 실행 상황을 기록하고, 기업의 리스크 관리와 데이터 보안 등급 향상에 이바지합니다.
+
+>!데이터베이스 감사는 현재 TencentDB for MongoDB 4.0을 지원합니다.
+
+## SQL 감사 서비스 활성화
+1. [TencentDB for MongoDB 콘솔](https://console.cloud.tencent.com/dls/mongodb)에 로그인하고, 왼쪽 사이드바에서 **데이터베이스 감사**를 선택하고, 상단에서 리전을 선택하고, **감사 인스턴스** 탭을 클릭합니다. **비활성화**를 클릭하여 감사가 비활성화된 인스턴스를 필터링합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/ea049e56295c6a20b47483dcb7134298.png)
+>?또는 **감사 로그** 탭의 감사 인스턴스에서 감사가 미활성화된 인스턴스를 직접 검색한 다음 감사를 활성화합니다.
+>![](https://qcloudimg.tencent-cloud.cn/raw/e53a8a137f788313d676d1385f25e4a1.png)
+2. **감사 인스턴스** 탭에서 대상 인스턴스의 ID를 클릭하여 활성화 페이지로 이동하고, 로그 저장 기간을 선택한 후 **활성화**를 클릭합니다.
+>?
+>- TencentDB for MongoDB에 대한 감사가 활성화된 후 규칙은 전체 감사입니다.
+>- 감사 로그의 보관 기간은 7일, 30일, 3개월, 6개월, 1년, 3년, 5년 중에서 선택할 수 있습니다. 감사를 활성화한 후 콘솔에서 수정할 수도 있습니다. 자세한 내용은 [로그 저장 기간 수정](https://intl.cloud.tencent.com/document/product/1102/47771)을 참고하십시오.
+>- SQL 로그 저장 기간에 대한 보안 컴플라이언스 요구 사항을 충족하기 위해, 180일 이상으로 선택할 것을 권장합니다.
+
+## 감사 로그 조회
+감사를 활성화한 후 **감사 로그** 탭에서 SQL 감사 로그를 볼 수 있습니다. 자세한 내용은 [감사 로그](https://intl.cloud.tencent.com/document/product/1102/47772)를 참고하십시오.

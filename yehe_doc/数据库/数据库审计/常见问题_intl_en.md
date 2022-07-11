@@ -1,12 +1,10 @@
 
 ### How is audit billed?
-- Database Audit (except for finance regions) is billed by the amount of audit log storage at 0.00220588 USD/GB/hour.
-- Fees are billed for every clock-hour, and usage duration shorter than one hour will be calculated as one hour.
->?For TencentDB for MySQL instances in finance regions, you cannot add new audit policies currently. You can use existing policies normally. After the optimization of the audit policy feature for finance regions is completed, the audit feature in finance regions will be commercialized as a paid service. Please check the notices and pop-up messages in the console regularly to stay tuned.
+Database audit is billed by the stored log size per clock-hour, and usage duration shorter than one hour is calculated as one hour. For billing details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1102/41313).
 
 ### How do I disable audit?
-Log in to the [console](https://console.cloud.tencent.com/dls/mysql/policy), click **Configure** on the **Audit Policy** page, and select **Disable SQL Audit**.
->!After it is disabled, the instance's audit policies, log records, and generated log files will be cleared and cannot be recovered. Please save the corresponding logs and files in advance.
+Log in to the [TencentDB for MySQL](https://console.cloud.tencent.com/dls/mysql/policy), [TDSQL-C for MySQL](https://console.cloud.tencent.com/dls/cynosdb/instance), or [TencentDB for MongoDB](https://console.cloud.tencent.com/dls/mongodb) console, click **Configure** on the **Audit Log** page, and select **Disable Audit**.
+>!Once the service is disabled, the instance's audit policies, logs, and files will be cleared and cannot be recovered. You need to save the applicable logs and files in advance.
 
 ### How long can audit data be retained?
-Audit data can be retained for 30 days to 5 years. You can set the retention period when enabling audit in the [console](https://console.cloud.tencent.com/dls/mysql/policy). You can also click **Configure** on the **Audit Policy** page after enabling audit to make changes.
+Audit data can be retained for seven days to five years. You can set the retention period when enabling audit in the [TencentDB for MySQL](https://console.cloud.tencent.com/dls/mysql/policy), [TDSQL-C for MySQL](https://console.cloud.tencent.com/dls/cynosdb/instance), or [TencentDB for MongoDB](https://console.cloud.tencent.com/dls/mongodb) console. You can also click **Configure** on the **Audit Log** page after enabling audit to make changes.
