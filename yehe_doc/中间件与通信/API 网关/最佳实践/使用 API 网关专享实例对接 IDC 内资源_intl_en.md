@@ -14,10 +14,10 @@ An API Gateway dedicated instance runs in a VPC and supports forwarding client r
 
 ## Directions
 
-### Step 1. Create a CCN instance and associate it with a network instance[](id:Step-1)
+### Step 1. Create a CCN instance and associate it with a network instance[](id:Step 1)
 
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
-2. Click **CCN** in the left sidebar to go to the CCN management page.
+2. Click **CCN** on the left sidebar to go to the CCN management page.
 3. Click **+New**.
 4. In the box that pops up, enter the name and description for the CCN instance. Select its billing mode, service quality, and bandwidth limit mode.
 5. Associate the IDC's Direct Connect gateway with the VPC.
@@ -25,16 +25,17 @@ An API Gateway dedicated instance runs in a VPC and supports forwarding client r
 
 ### Step 2. Purchase an API Gateway dedicated instance
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway). Select **Instance** in the left sidebar.
+1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway). Select **Instance** on the left sidebar.
 2. Click **Create** to go to the API Gateway dedicated instance purchase page.
 3. Select and enter the instance configuration information.
->! The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#Step-1).
+>!The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#Step 1).
 >
+	 ![](https://main.qcloudimg.com/raw/e9c6f89988b23af471f53f669e4b3b5e.png)
 4. Click **Buy now** and make the payment.
 
 ### Step 3. Create a service and API under the instance
 
-1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway). Select **Service** in the left sidebar.
+1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway). Select **Service** on the left sidebar.
 2. Click **Create** and select **Dedicated** as the instance type.
 3. In the pop-up window for instance selection, select the dedicated instance purchased in step 1 and click **Submit**.
 4. Click the name of the created service in the service list to enter its API management page.
