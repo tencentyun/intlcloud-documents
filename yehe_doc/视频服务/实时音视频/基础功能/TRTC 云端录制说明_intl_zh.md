@@ -89,16 +89,16 @@
 云录制服务在机房故障的时候会通过高可用的方案对录制任务进行恢复，这种情况下为了不覆盖原有的录制文件，拉起后会加上一个前缀ha<1/2/3>，表示发生高可用的次数。一个录制任务最大允许拉起的次数为3次。
 
 * 单流录制M3U8 文件名规则：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
 
 * 单流录制TS文件名规则为：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
 
 * 混流录制M3U8 文件名规则：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
 
 * 混流录制TS文件名规则：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
 
 #### 字段含义说明：
 \<Prefix>: 录制参数中设置的文件名前缀，如果没有设置那么就不存在；
