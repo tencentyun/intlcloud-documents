@@ -25,7 +25,7 @@ This document describes how to access CKafka to receive/send messages with the S
    On the **User Management** tab page, create a role and set the password.
   ![](https://qcloudimg.tencent-cloud.cn/raw/c9e06ace7d959ae91331a241c2126cc5.png)
 3. Create a topic.
-   Create a topic on the **Topic Management** tab page as instructed in [Topic Management](https://intl.cloud.tencent.com/document/product/597/32554).
+   Create a topic on the **Topic Management** tab page as instructed in [Topic Management](https://intl.cloud.tencent.com/document/product/597/47583).
 
 
 
