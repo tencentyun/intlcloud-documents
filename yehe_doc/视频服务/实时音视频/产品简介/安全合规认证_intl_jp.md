@@ -137,7 +137,7 @@
  <div class="card-container">
             <div class="card">
                            <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/a18be30e18d5f87d324094f9353083d0.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/45469">NISTサイバーセキュリティフレームワーク</a> </p><p style="color:#586376;">NIST CSFは、アメリカ国立標準技術研究所が大統領令（E0）13636の「重要インフラのサイバーセキュリティ強化」に基づいて開発したもので、このフレームワークはビジネスの推進力を用いてサイバーセキュリティ活動を指導することに重きを置いています</p>
+                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/45469">NISTサイバーセキュリティフレームワーク</a> </p><p style="color:#586376;">NIST CSFは、アメリカ国立標準技術研究所が大統領令（EO）13636の「重要インフラのサイバーセキュリティ強化」に基づいて開発したもので、このフレームワークはビジネスの推進力を用いてサイバーセキュリティ活動を指導することに重きを置いています</p>
             </div>
 </div>
 <div class="card-container">
