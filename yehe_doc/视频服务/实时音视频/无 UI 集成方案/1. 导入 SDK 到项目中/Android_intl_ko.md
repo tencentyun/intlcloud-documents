@@ -19,11 +19,11 @@ dependencies{
 ```
 defaultConfig {
         ndk {
-                abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+                abiFilters "armeabi-v7a", "arm64-v8a"
         }
 }
 ```
->?현재 TRTC SDK는 armeabi, armeabi-v7a, arm64-v8a를 지원합니다.
+>?현재 TRTC SDK는 armeabi-v7a, arm64-v8a를 지원합니다.
 3. ![](https://main.qcloudimg.com/raw/d6b018054b535424bb23e42d33744d03.png)**Sync Now**를 클릭하여 SDK를 자동으로 다운로드하고 프로젝트에 통합합니다.
 
 
