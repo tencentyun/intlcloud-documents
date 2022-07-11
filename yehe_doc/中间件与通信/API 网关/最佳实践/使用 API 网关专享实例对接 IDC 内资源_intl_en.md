@@ -14,7 +14,7 @@ An API Gateway dedicated instance runs in a VPC and supports forwarding client r
 
 ## Directions
 
-### Step 1. Create a CCN instance and associate it with a network instance[](id:Step 1)
+### Step 1. Create a CCN instance and associate it with a network instance[](id:Step-1)
 
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Click **CCN** on the left sidebar to go to the CCN management page.
@@ -28,9 +28,8 @@ An API Gateway dedicated instance runs in a VPC and supports forwarding client r
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway). Select **Instance** on the left sidebar.
 2. Click **Create** to go to the API Gateway dedicated instance purchase page.
 3. Select and enter the instance configuration information.
->!The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#Step 1).
+>!The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#Step-1).
 >
-	 ![](https://main.qcloudimg.com/raw/e9c6f89988b23af471f53f669e4b3b5e.png)
 4. Click **Buy now** and make the payment.
 
 ### Step 3. Create a service and API under the instance
