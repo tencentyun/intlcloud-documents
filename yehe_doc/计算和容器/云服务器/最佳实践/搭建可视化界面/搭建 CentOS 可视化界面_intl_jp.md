@@ -42,6 +42,6 @@ reboot
 ```
 5. VNC方式でインスタンスにログインします。詳細については[VNCを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32494)をご参照ください。
 インスタンスにログイン後、視覚化インターフェースが確認できれば構築は成功です。インターフェースの表示に従って設定を行い、デスクトップに入った後、必要に応じて関連の操作を行うことができます。下図に示します。
-![](https://main.qcloudimg.com/raw/ae361df3eb2c224a92a754e1f693c06d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/246952ae60c02724727029b6a3c0ef1a.png)
 :::
 </dx-tabs>
