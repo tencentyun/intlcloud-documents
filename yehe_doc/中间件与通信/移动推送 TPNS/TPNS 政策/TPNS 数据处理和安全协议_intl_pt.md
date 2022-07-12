@@ -3,12 +3,14 @@ Este módulo se aplica se você usar o Serviço de Notificações Push da Tencen
 
 ## 2.	PROCESSAMENTO
 Processaremos os seguintes dados em conexão com o recurso:
+
 |Informações pessoais|	Uso|
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 |Notificações push|	Processamos a notificação push para enviá-la de acordo com suas preferências. Não nos responsabilizamos pelo conteúdo contido nas notificações push, que são definidas exclusivamente por você.|
 |ID do Token (criado pelo recurso para cada dispositivo)|	Criado para garantir que as notificações push possam ser enviadas aos dispositivos selecionados por você.|
 |Conta/Login|	Se você optar por agrupar um ID do Token com detalhes específicos da conta/login (por exemplo, um ID do WeChat e/ou número de telefone) processaremos os detalhes associados à conta/login de acordo com as suas instruções.|
 |Informações técnicas (para dispositivos que recebem notificações push: Versão do sistema operacional, versão do aplicativo, localização, uso de aplicativos, linguagem do sistema, versão do TPNS, modelo de dispositivo móvel, marca, OAID (Identificador de Publicidade do Android), informações do cartão SD, fuso horário, tipo de rede, estado da notificação, tempo de inicialização, operador de rede, resolução móvel, IDFV (Identificador de Publicidade do iOS), código de país, endereço IP)|	Se você optar por enviar notificações push para um grupo de usuários específico, então usaremos essas informações para realizar essa operação de acordo com as suas instruções.|
+
 
 ## 3.	REGIÃO DO SERVIÇO
 Conforme especificado no DPSA.
