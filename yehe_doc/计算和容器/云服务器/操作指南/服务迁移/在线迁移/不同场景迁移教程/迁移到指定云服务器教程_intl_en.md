@@ -62,14 +62,11 @@ Before migration, you need to check the source server and destination CVM separa
   </tr>
 </table>
 
-
-
 <dx-alert infotype="explain" title="">
 - You can use tool commands such as `sudo ./go2tencentcloud_x64 --check` to automatically check the source server.
 - By default, the go2tencentcloud migration tool automatically performs checks upon launch. To skip checks and perform forced migration, configure `Client.Extra.IgnoreCheck` to `true` in the client.json file.
 - For more information on the go2tencentcloud migration tool, see [Compatibility and Tool Configuration Description](https://intl.cloud.tencent.com/document/product/213/44340).
 </dx-alert>
-
 
 ### Starting migration
 1. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.
@@ -90,8 +87,10 @@ cd go2tencentcloud-linux
 <dx-alert infotype="explain" title="">
 The files in the `go2tencentcloud` directory will not be migrated. Do not place the files to be migrated in this directory.
 </dx-alert>
+
 2. (Optional) Exclude files and directories on the source server that do not need to be migrated.  
 If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt](https://intl.cloud.tencent.com/document/product/213/44340) file.
+
 3. Import the migration source.
    i. For example, on a 64-bit Linux source server, execute the following command in sequence as the root user to run the tool.
 ```shellsession
@@ -122,7 +121,7 @@ You can skip this step if your task is scheduled, which will automatically start
 </dx-alert>
 After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
-You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating** as shown below:
+You can click <b>Start/Restart</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become <b>Migrating</b> as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 6. Wait for the migration task to end
 After the migration task status becomes **Successful**, the migration is completed successfully as shown below:
@@ -130,7 +129,7 @@ After the migration task status becomes **Successful**, the migration is complet
 
 
 ### Checking after the Migration
- - If the migration fails, check the error information in log files (under the migration tool directory by default), operation guides, or FAQs about [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After troubleshooting, click **Retry** under the operation column to restart the migration task.
+ - If the migration fails, check the error information in log files (under the migration tool directory by default), operation guides, or FAQs about [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395) for troubleshooting methods. After troubleshooting, click **Restart** under the operation column to restart the migration task.
  - If the migration is successful, check whether the destination CVM starts up normally, whether data on the destination CVM is consistent with that on the source server, and whether the network and other system services are normal.
 
 
