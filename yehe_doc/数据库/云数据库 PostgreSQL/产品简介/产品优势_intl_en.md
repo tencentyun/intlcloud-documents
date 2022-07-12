@@ -2,7 +2,7 @@
 ## Powerful Features
 Over the recent years, PostgreSQL has become the go-to open-source relational database for commercial use.
 
-- PostgreSQL is released under a BSD-style license, which means there are no restrictions on using PostgreSQL.
+- PostgreSQL is completely open source under the PostgreSQL license similar to BSD and MIT licenses. It can be freely distributed and modified through secondary development for commercial purpose. In other words, there are no restrictions on using PostgreSQL.
 - PostgreSQL supports C, C++, Java, PHP, Python, Perl, and other programming languages, making the development of your business easier and faster.
 - PostgreSQL is the best open-source alternative to Oracle in terms of architecture, syntax, and data types.
 - PostgreSQL is compatible with the SQL:2003 standard and supports the main features of SQL:2011.
@@ -14,7 +14,7 @@ Over the recent years, PostgreSQL has become the go-to open-source relational da
 - PostgreSQL supports function indexes, partial (row) indexes, custom indexes, and full-text indexes.
 - PostgreSQL features a multi-process architecture that makes it more stable, so that a single PostgreSQL database can achieve a high throughput.
 - PostgreSQL supports powerful, high-performance extensions. For example, PostGIS is a database extension for geo-spatial data and provides additional support for geographic objects, allowing you to run location queries with SQL.
-- PostgreSQL provides strong data consistency required for commercial use. With sync replication, it guarantees zero data loss and is even suitable for financial trading systems.
+- PostgreSQL provides strong data consistency required for commercial use. With synchronous replication, it guarantees zero data loss and is even suitable for financial trading systems.
 
 ## High Performance
 PostgreSQL achieves high performance in OLAP or OLTP scenarios.
