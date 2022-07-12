@@ -42,6 +42,6 @@ reboot
 ```
 5. [Log in to the Linux instance via VNC](https://intl.cloud.tencent.com/document/product/213/32494).
 If the GUI page appears, it has been successfully set up. Follow the instructions to enter the desktop and continue other operations.
-![](https://main.qcloudimg.com/raw/ae361df3eb2c224a92a754e1f693c06d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/246952ae60c02724727029b6a3c0ef1a.png)
 :::
 </dx-tabs>
