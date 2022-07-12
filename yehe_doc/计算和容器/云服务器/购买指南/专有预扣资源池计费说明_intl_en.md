@@ -26,7 +26,7 @@ You can understand the billing rules of **one-time reservation** and **repeated 
 </tr>
 <tr>
 <td>Jan. 1</td>
-<td>Create a reservation containing threeinstances and valid for one month</td>
+<td>Create a reservation containing three instances and valid for one month</td>
 <td>After the reservation is successfully created, the three instances will incur an idle fee.</td>
 <td>The idle fee will charged by second and settled by hour</td>
 </tr>
