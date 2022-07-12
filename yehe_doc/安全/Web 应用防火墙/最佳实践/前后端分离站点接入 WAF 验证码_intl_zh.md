@@ -4,7 +4,7 @@
 
 
 ## 前提条件
- 已购买 [Web 应用防火墙](https://intl.cloud.tencent.com/document/product/627/47409)（高级版及以上），并完成 [接入 WAF](https://intl.cloud.tencent.com/document/product/627/18635)。 
+ 已购买 [Web 应用防火墙](https://intl.cloud.tencent.com/document/product/627/47799)（高级版及以上），并完成 [接入 WAF](https://intl.cloud.tencent.com/document/product/627/18635)。 
 
 
 ## 检出原理
