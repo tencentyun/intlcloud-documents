@@ -18,8 +18,8 @@ Depending on the exception, maintenance tasks vary by failure type and task stat
 <td>When you receive a task of this type, it indicates that the instance had already stopped running when the failure occurred, and the system had promptly performed maintenance operations. In this case, you can pay attention to the processing progress of the maintenance task.</td>
 <td>Pay attention to the maintenance task status and determine the processing policy in the next step based on it:
 <ul style="margin-bottom:0px">
-<li>If the task is in the **Ended** status, you can pay attention to the task processing status and verify whether the instance and application have restored to normal after the processing is completed.</li>
-<li>If the task is in the **To be authorized** status, you can promptly back up the business data and authorize maintenance to prevent more crashes.</li>
+<li>If the task is in the <b>Ended</b> status, you can pay attention to the task processing status and verify whether the instance and application have restored to normal after the processing is completed.</li>
+<li>If the task is in the <b>To be authorized</b> status, you can promptly back up the business data and authorize maintenance to prevent more crashes.</li>
 </ul>
 </td>
 </tr>
