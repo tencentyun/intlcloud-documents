@@ -69,10 +69,8 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 :::
 ::: From MacOS server[](id:MacRDP)
 <dx-alert infotype="explain" title="">
-The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client. Go to [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) to download a Beta version.
-</dx-alert>
-<dx-alert infotype="explain" title="">
-The following operations use a CVM on Windows Server 2012 R2 as an example.
+-The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client. Go to [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) to download a Beta version.
+-The following operations use a CVM on Windows Server 2012 R2 as an example.
 </dx-alert>
 1. Download and install Microsoft Remote Desktop for Mac on your local computer.
 2. Start MRD and click **Add Desktop**.
