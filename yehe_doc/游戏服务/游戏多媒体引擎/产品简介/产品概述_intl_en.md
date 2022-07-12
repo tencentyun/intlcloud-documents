@@ -1,4 +1,4 @@
-Tencent Cloud Game Multimedia Engine (GME) is a one-stop voice solution featuring high quality and cost effectiveness, which fully covers the application scenarios of the game industry. It supports group voice chat, 3D location voice, voice messaging and speech-to-text, and voice analysis.
+Tencent Cloud Game Multimedia Engine (GME) is a one-stop voice communication service for creating immersive multiplayer gaming experience and boosting player engagement. It supports group voice chat, 3D spatial voice, voice messaging and speech-to-text, and voice analysis.
 
 ### Voice Chat Service
 
