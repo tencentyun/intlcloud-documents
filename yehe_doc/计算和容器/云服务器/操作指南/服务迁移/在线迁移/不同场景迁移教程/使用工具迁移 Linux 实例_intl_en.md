@@ -129,7 +129,7 @@ You can refer to the following examples to modify the configuration file based o
 	]
 }
 ```
- - Example 3: A Linux source server has two data disks. The mount point for disk 1 is `/mnt/disk1`, and the size is `10` GB. The mount point for disk 2 is `/mnt/disk2`, and the size is `20`GB. To migrate this server to a CVM (with at least two data disks attached) located in Guangzhou, with disk 1 and disk 2 of the source server to be migrated to the first and second data disks of the destination CVM respectively, configure the `user.json` file as follows:
+ - Example 3: A Linux source server has two data disks. The mount point for disk 1 is `/mnt/disk1`, and the size is `10` GB. The mount point for disk 2 is `/mnt/disk2`, and the size is `20` GB. To migrate this server to a CVM (with at least two data disks attached) located in Guangzhou, with disk 1 and disk 2 of the source server to be migrated to the first and second data disks of the destination CVM respectively, configure the `user.json` file as follows:
 ```json
 {  
 	"SecretId": "your secretId",
@@ -172,7 +172,7 @@ The client.json configuration file is described as below:
 	<td>Client.Net.Mode</td>
 	<td>Integer</td>
 	<td>Yes</td>
-	<td>Migration mode, the value of which defaults to <code>0</code>, indicating the public network migration. Valid values: <code>0</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Public network migration mode</a>), <code>1</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 1</a>), <code>2</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 2</a>), <code>3</code>(<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 3</a>).</td>
+	<td>Migration mode, the value of which defaults to <code>0</code>, indicating the public network migration. Valid values: <code>0</code> (<a href="https://intl.cloud.tencent.com/document/product/213/44340">Public network migration mode</a>), <code>1</code> (<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 1</a>), <code>2</code> (<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 2</a>), <code>3</code> (<a href="https://intl.cloud.tencent.com/document/product/213/44340">Private network migration mode: Scenario 3</a>).</td>
   </tr>
   <tr>
 	<td>Client.Extra.IgnoreCheck</td>
@@ -347,7 +347,7 @@ The files in the `go2tencentcloud` directory will not be migrated. Do not place 
 2. In the `user.json` file, configure the destination CVM for the migration.
 Configure the required parameters based on the [description of parameters in the user.json file](#userJsonState).
 3. In the `client.json` file, configure the migration mode and other parameters.
-Configure ``Client.ToolMode` in the `client.json` file to `true`, that is, select the migration via tool. If necessary, configure other parameters based on the description of [Parameters in the client.json file](#clientJsonState).
+Configure `Client.ToolMode` in the `client.json` file to `true`, that is, select the migration via tool. If necessary, configure other parameters based on the description of [Parameters in the client.json file](#clientJsonState).
 4. (Optional) Exclude files and directories on the source server that do not need to be migrated.
 Add files or directories that do not need to be migrated from the Linux source server to [rsync_excludes_linux.txt file](#_linuxTxtState).
 5. Run the tool.
