@@ -3,12 +3,14 @@ Modul ini berlaku jika Anda menggunakan Layanan Notifikasi Push Tencent (TPNS, T
 
 ## 2.	PEMROSESAN
 Kami akan memproses data berikut sehubungan dengan Fitur:
+
 |Informasi Pribadi	|Penggunaan|
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 |Notifikasi push|	Kami memproses notifikasi push untuk mengirimkannya sesuai dengan preferensi Anda. Kami tidak bertanggung jawab atas konten yang terkandung dalam notifikasi push yang sepenuhnya ditentukan oleh Anda.|
 |ID Token (dibuat oleh Fitur untuk setiap perangkat)|	ID ini dibuat untuk memastikan notifikasi push dapat dikirimkan ke perangkat yang Anda pilih.|
 |Akun/Login|	Jika Anda memilih untuk menggabungkan ID Token dengan detail akun/login tertentu (misalnya, ID WeChat dan/atau nomor ponsel), maka kami akan memproses detail akun/login terkait sesuai dengan instruksi Anda.|
 |Informasi Teknis (untuk perangkat yang menerima pemberitahuan push: Versi OS, versi aplikasi, lokasi, penggunaan aplikasi, bahasa sistem, versi TPNS, model perangkat seluler, merek, OAID (Android), informasi kartu SD, zona waktu, jenis jaringan, status notifikasi, waktu boot, operator jaringan resolusi, seluler, IDFV (iOS), kode negara, alamat IP)|	Jika Anda memilih untuk mengirim notifikasi push ke grup pengguna tertentu, maka kami akan menggunakan informasi ini untuk mengirimkan pemberitahuan push ke grup tersebut sesuai dengan instruksi Anda.|
+
 
 ## 3.	WILAYAH LAYANAN
 Sebagaimana ditentukan dalam DPSA.
