@@ -42,6 +42,6 @@ reboot
 ```
 5. 以 VNC 方式登录实例，详情请参见 [使用 VNC 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32494)。
 登录实例后查看可视化界面即表示搭建成功，根据界面提示进行配置进入桌面后，可按需进行相关操作。如下图所示：
-![](https://main.qcloudimg.com/raw/ae361df3eb2c224a92a754e1f693c06d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/246952ae60c02724727029b6a3c0ef1a.png)
 :::
 </dx-tabs>
