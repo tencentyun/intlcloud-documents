@@ -88,7 +88,7 @@ cd go2tencentcloud-linux
 `go2tencentcloud` 目录下的文件将不会被迁移，请勿将需迁移的文件放置在该目录下。
 </dx-alert>
 2. （可选）排除源端主机上不需迁移的文件或目录。
-若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 [rsync_excludes_linux.txt 文件](https://intl.cloud.tencent.com/document/product/213/44340) 中。
+若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至[rsync_excludes_linux.txt 文件](https://intl.cloud.tencent.com/document/product/213/44340) 中。
 3. 导入迁移源。
    1. 以64位 Linux 源端主机为例，以 root 权限依次执行以下命令运行工具。
 ```shellsession
