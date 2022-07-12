@@ -16,7 +16,7 @@
 
 您可通过任务或工作流方式使用语音合成功能。为了提高效率，减少用户的重复操作，数据万象推出了模板功能，模板是任务及工作流中的一个配置项。您可将常用参数组合保存为模板，在后续操作中直接复用模板，无需在每次开启任务时重新设定参数，从而提高操作效率。您可自定义语音合成模板：
 
-自定义模板：您可通过 [控制台方式](https://cloud.tencent.com/document/product/460/46490) 创建模板，或通过 API 方式 [创建](https://intl.cloud.tencent.com/document/product/1045/48126) 、[修改](https://intl.cloud.tencent.com/document/product/1045/48129) 、[查找](https://intl.cloud.tencent.com/document/product/1045/48128) 、[删除](https://intl.cloud.tencent.com/document/product/1045/48127) 模板。
+自定义模板：您可通过控制台方式 创建模板，或通过 API 方式 [创建](https://intl.cloud.tencent.com/document/product/1045/48126) 、[修改](https://intl.cloud.tencent.com/document/product/1045/48129) 、[查找](https://intl.cloud.tencent.com/document/product/1045/48128) 、[删除](https://intl.cloud.tencent.com/document/product/1045/48127) 模板。
 
 
 ### 通过任务方式
