@@ -25,16 +25,18 @@ You can log in to your CVMs from Windows, Linux, and MacOS servers using RDP.
 2. On the **Instances** page, locate the Windows CVM instance you want to log in to and click **Log In**.
 ![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. In the **Standard Login | Windows Instance** window that is opened, select **Download RDP File**.
->?If you have changed the remote login port, append the IP address with `:port` in the RDP file.
->
+<dx-alert infotype="explain" title="">
+If you have changed the remote login port, append the IP address with `:port` in the RDP file.
+</dx-alert>
 ![](https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png)
 4. Double-Click the downloaded RDP file, enter the password, and click **OK** to remotely connect to your Windows CVM.
  - If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
  - If you forgot your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
 :::
 ::: From Linux server[](id:LinuxRDP)
->?We recommend you use rdesktop as the remote desktop client. For more information, please see the [official introduction to rdesktop](http://www.rdesktop.org/).
->
+<dx-alert infotype="explain" title="">
+We recommend you use rdesktop as the remote desktop client. For more information, please see the [official introduction to rdesktop](http://www.rdesktop.org/).
+</dx-alert>
 1. Run the following command to check whether rdesktop has been installed.
 ```
 rdesktop
@@ -54,8 +56,9 @@ make
 make install
 ```
 4. [](id:step04)Run the following command to connect to the remote Windows instance.</span>
->? Replace the parameters in the example with your own parameters.
->
+<dx-alert infotype="explain" title="">
+Replace the parameters in the example with your own parameters.
+</dx-alert>
 ```
 rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
@@ -65,10 +68,12 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
  - `<hostname or IP address>` is the public IP or custom domain name of your Windows instance. For more information on how to get the public IP, please see [Getting Public IP Addresses](https://intl.cloud.tencent.com/document/product/213/17940).
 :::
 ::: From MacOS server[](id:MacRDP)
->?
->- The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client. Go to [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) to download a Beta version.
->- The following operations use a CVM on Windows Server 2012 R2 as an example.
->
+<dx-alert infotype="explain" title="">
+The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client. Go to [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) to download a Beta version.
+</dx-alert>
+<dx-alert infotype="explain" title="">
+The following operations use a CVM on Windows Server 2012 R2 as an example.
+</dx-alert>
 1. Download and install Microsoft Remote Desktop for Mac on your local computer.
 2. Start MRD and click **Add Desktop**.
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
@@ -85,14 +90,15 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 5. In the pop-up window, click **Continue** to establish the connection.
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 If the connection is successful, the following page will appear:
-![](https://main.qcloudimg.com/raw/5a524210acd13624af7263b6de3aea54.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4ad07fb213224a1eff9e1a6fbda385dc.png)
 :::
 </dx-tabs>
 
 ## RDP Bandwidth Limit Description[](id:illustrate)
 The available network bandwidth directly affects the experience of logging in to and using CVM instances over RDP, and different applications and display resolutions require different network configurations. Microsoft has laid down the minimum bandwidth requirements for instances when using RDP in different application scenarios. Please check out the following table to make sure that the network configuration of your instance can meet your business needs; otherwise, issues such as lag may occur.
->?To adjust the bandwidth of your instance, please see [Adjusting Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517).
->
+
+To adjust the bandwidth of your instance, please see [Adjusting Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517).
+</dx-alert>
 These numbers apply to a single monitor configuration with 1920x1080 resolution and with both default graphics mode and H.264/AVC 444 graphics mode.
 
 <table>
