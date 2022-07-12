@@ -105,7 +105,7 @@ make menuconfig
 ```
 Enter the “Linux Kernel vX.X.XX Configuration” interface as shown below:
 ![](https://main.qcloudimg.com/raw/72c3bea10627aaef022f1a72b72ac79a.png)
->? If you are not taken to the "Linux Kernel vX.X.XX Configuration" interface, please go to [Step 18](# OptionalStep).
+>? If you are not taken to the "Linux Kernel vX.X.XX Configuration" interface, please go to [Step 18](#OptionalStep).
 > “Linux Kernel vX.X.XX Configuration” interface:
 > - Press “Tab” or “↑” “↓” to move the cursor.
 > - Press “Enter” to select or execute the item selected by the cursor.
