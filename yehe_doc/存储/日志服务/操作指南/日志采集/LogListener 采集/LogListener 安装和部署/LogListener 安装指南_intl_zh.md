@@ -120,7 +120,7 @@ wget http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.7.9.tar.g
 ```
 
 LogListener 正常情况会运行两个进程：
-![](https://qcloudimg.tencent-cloud.cn/raw/ef7554d54c8e982b1d7e2682e7e491a1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/52e273d05e6afc4946849429daf95c8d.png)
 
 ### 5. 检查 LogListener 心跳及配置
 
