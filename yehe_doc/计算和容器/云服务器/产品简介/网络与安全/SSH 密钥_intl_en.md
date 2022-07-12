@@ -3,8 +3,8 @@ You can select SSH key pair as the encrypted CVM login method when [Customizing 
 
 ## SSH Key Overview
 We recommend **using SSH key pair** to log in to a Linux instance. A key pair contains a public key and a private key. It is generated with RSA 2048-bit encryption method.
-- **Public key**: when the SSH key pair is generated, Tencent Cloud only stores the public key, and save it in the `~/.ssh/authorized_keys` file.
-- **Private key**: you need to download the private key and keep it secretly. The private key can only be downloaded once. Tencent Cloud will not keep your private key. Anyone with your private key can access your instance. Be sure to keep it safe.
+- **Public key**: When the SSH key pair is generated, Tencent Cloud only stores the public key, and save it in the `~/.ssh/authorized_keys` file.
+- **Private key**: You need to download the private key and keep it secretly. The private key can only be downloaded once. Tencent Cloud will not keep your private key. Anyone with your private key can access your instance. Be sure to keep it safe.
 
 You can use the key pair to connect to CVM securely. This method is more secure than logging in with a password. You only need to specify the key pair when creating a Linux instance, or bind key pair to an existing instance, so that you can use the private key to log in to the instance without entering a password.
 
