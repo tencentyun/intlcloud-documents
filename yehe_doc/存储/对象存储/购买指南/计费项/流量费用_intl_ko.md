@@ -74,7 +74,7 @@ CDN 가속 도메인 이름을 활성화하면 이를 통한 데이터 다운로
 
 >?CDN 트래픽 요금은 Tencent Cloud CDN에서 과금됩니다. 자세한 내용은 [CDN 가격](https://buy.cloud.tencent.com/price/cdn)을 참고하십시오.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/7c0abb7926379d449e6038aa75d81c07.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7eb9d36850a4d0b338eda9e472a71e38.jpg)
 
 ## 트래픽 요금의 과금 방식 및 계산 방법
 

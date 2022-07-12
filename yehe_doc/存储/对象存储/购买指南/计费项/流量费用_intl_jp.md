@@ -74,7 +74,7 @@
 
 >?CDNのトラフィック料金はTencent Cloud CDNによって課金されます。詳細については[CDN料金](https://buy.cloud.tencent.com/price/cdn)をご参照ください。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/7c0abb7926379d449e6038aa75d81c07.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/7eb9d36850a4d0b338eda9e472a71e38.jpg)
 
 ## トラフィック料金の課金方式と計算方法
 
