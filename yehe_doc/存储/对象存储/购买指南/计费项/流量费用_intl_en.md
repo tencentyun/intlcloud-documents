@@ -1,4 +1,4 @@
-Traffic is the accumulated value of data traffic generated when you use and access COS, such as public network upstream traffic, public network downstream traffic, private network upstream traffic, private network downstream traffic, and CDN origin-pull traffic. COS charges you by the accumulated traffic usage.
+Traffic is the accumulated value of data traffic generated when you use and access COS, including public network upstream traffic, public network downstream traffic, private network upstream traffic, private network downstream traffic, and CDN origin-pull traffic. COS charges you by the accumulated traffic usage.
 
 
 >? For more information on storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
@@ -55,7 +55,7 @@ Traffic is the accumulated value of data traffic generated when you use and acce
 ## Billing Restrictions
 
 1. ARCHIVED data cannot be read or downloaded until it is restored to the STANDARD storage class. Therefore, traffic generated from these requests is counted in the STANDARD storage class.
-2. Public network downstream traffic is generated when the data is returned to COS through origin-pull using a third-party CDN service.
+2. Public network downstream traffic is generated when the data is returned to COS through origin-pull by using a third-party CDN service.
 3. Public network downstream traffic is generated when a user downloads objects through **object links** or browses objects through a **static website endpoint**. 
 4. Cross-region replication traffic is generated when you replicate data from a bucket in one region to a bucket in another region using APIs or the cross-region replication feature. The traffic fees will vary by source bucket region.
 5. For INTELLIGENT TIERING, traffic fees are subject to those of the storage class after object movement.
@@ -74,11 +74,11 @@ After you enable the CDN acceleration domain name, data downloads and access thr
 
 >?CDN traffic fees are charged by CDN. For detailed pricing, see [Pricing | Content Delivery Network](https://buy.cloud.tencent.com/price/cdn).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/7eb9d36850a4d0b338eda9e472a71e38.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/7c0abb7926379d449e6038aa75d81c07.png)
 
-## Billing Method and Calculation Formulas
+## Billing Mode and Calculation Formulas
 
-| Billing Method  | Applicable Billable Items | Calculation Formula |
+| Billing Mode  | Applicable Billable Items | Calculation Formula |
 |-----|--------|------|
 | Pay-as-you-go | <li>Public network downstream traffic fees</li><li>CDN origin-pull traffic fees</li><li>Cross-region replication traffic fees</li><li>Global acceleration traffic fees</li> |<li>Daily billing cycle</br><li>Traffic fees = unit price per GB * daily accumulated traffic</li>|
 
