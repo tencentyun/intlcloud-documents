@@ -16,7 +16,7 @@ Electronic courseware, novels, and other types of text can be converted to audio
 
 You can use the text to speech feature through jobs or workflows. In order to improve the operational efficiency and reduce repetitive operations, CI offers the template feature, which is a configuration item in jobs and workflows. You can save common parameter combinations as templates and reuse them directly in subsequent operations, with no need to set the parameters every time you start a job. You can customize text-to-speech templates as follows:
 
-Custom templates: You can create templates in the [console](https://cloud.tencent.com/document/product/460/46490). You can also [create](https://intl.cloud.tencent.com/document/product/1045/48126), [modify](https://intl.cloud.tencent.com/document/product/1045/48129), [find](https://intl.cloud.tencent.com/document/product/1045/48128), and [delete](https://intl.cloud.tencent.com/document/product/1045/48127) templates through APIs.
+Custom templates: You can create templates in the console. You can also [create](https://intl.cloud.tencent.com/document/product/1045/48126), [modify](https://intl.cloud.tencent.com/document/product/1045/48129), [find](https://intl.cloud.tencent.com/document/product/1045/48128), and [delete](https://intl.cloud.tencent.com/document/product/1045/48127) templates through APIs.
 
 
 ### Through job
