@@ -18,8 +18,8 @@ CLS provides time grouping, time truncation, time interval, and time sequence co
 | last_day_of_month(x)           | Returns the last day of a month.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD, such as `2021-05-31`</li><li>Return value type: DATE</li></ul> | `* | select last_day_of_month(cast(__TIMESTAMP__ as timestamp))` |
 | from_iso8601_date(string)      | Parses an ISO 8601 formatted string into a date.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD, such as `2021-05-31`</li><li>Return value type: DATE</li></ul> | `* | select from_iso8601_date('2021-03-21')`          |
 | from_iso8601_timestamp(string) | Parses an ISO 8601 formatted string into a timestamp with a time zone.<ul  style="margin: 0;"><li>Return value format: HH:MM:SS.Ms Time zone, such as `17:07:52.143+08:00`</li><li>Return value type: TIMESTAMP</li></ul> | `* | select from_iso8601_timestamp('2020-05-13')`       |
-| from_unixtime(unixtime)        | Parses a Unix formatted string into a timestamp.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD HH:MM:SS.Ms, such as `2017-05-17 01:41:15.000`</li><li>Return value type: TIMESTAMP </li></ul>| `* | select from_unixtime(1494985275) `            |
-| from_unixtime(unixtime, zone)  | Parses a Unix formatted string into a timestamp with a time zone.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD HH:MM:SS.Ms Time zone, such as `2017-05-17T09:41:15+08:00[Asia/Shanghai]`</li><li>Return value type: TIMESTAMP</li></ul> | `* | select from_unixtime(1494985275, 'Asia/Shanghai')` |
+| from_unixtime(unixtime)        | Parses a Unix formatted string into a timestamp.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD HH:MM:SS.Ms, such as `2017-05-17 01:41:15.000`</li><li>Return value type: TIMESTAMP </li></ul> | Example 1: `* | select from_unixtime(1494985275) `</br>Example 2: `* | select from_unixtime(__TIMESTAMP__/1000)`                      |
+| from_unixtime(unixtime, zone)  | Parses a Unix formatted string into a timestamp with a time zone.<ul  style="margin: 0;"><li>Return value format: YYYY-MM-DD HH:MM:SS.Ms Time zone, such as `2017-05-17T09:41:15+08:00[Asia/Shanghai]`</li><li>Return value type: TIMESTAMP</li></ul> | Example 1: `* | select from_unixtime(1494985275, 'Asia/Shanghai')`</br>Example 2: `* | select from_unixtime(__TIMESTAMP__/1000, 'Asia/Shanghai')`      |
 | to_unixtime(timestamp)         | Parses a timestamp formatted string into a Unix timestamp.</br>Return value type: LONG, such as `1626347592.037` | `* | select to_unixtime(cast(__TIMESTAMP__ as timestamp)) ` |
 | to_milliseconds(interval)      | Returns a time interval in milliseconds.<br/>Return value type: BIGINT, such as `300000` | `* | select to_milliseconds(INTERVAL 5 MINUTE)`        |
 | to_iso8601(x)  | Parses a date and time expression of the DATE or TIMESTAMP type into a date and time expression in the ISO8601 format.    | `* | select to_iso8601(current_timestamp)`   |
@@ -28,7 +28,7 @@ CLS provides time grouping, time truncation, time interval, and time sequence co
 
 
 
-## Time Grouping Functions
+## Time Grouping Function
 
 The time grouping function can be used to group and aggregate the log data at a given interval. For example, you can use it to count page views (PV) every 5 minutes.
 
@@ -42,7 +42,7 @@ histogram(time_column, interval)
 
 | Parameter | Description |
 | ----------- | ------------------------------------------------------------ |
-| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
+| time_column | Time column (KEY), such as \_\_TIMESTAMP\_\_. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
 | interval    | Time interval. The following time units are supported: SECOND, MINUTE, HOUR, DAY, MONTH, and YEAR. For example, `INTERVAL 5 MINUTE` indicates an interval of 5 minutes. |
 
 **Sample**
@@ -56,7 +56,8 @@ Count the PV value every 5 minutes:
 
 
 
-## Time Completion Functions
+
+## Time Completion Function
 
 The `time_series()` function can be used to group and aggregate the log data at a given interval. Its main difference from the `histogram()` function is that it can complete missing data in your query time window.
 
@@ -73,7 +74,7 @@ time_series(time_column, interval, format, padding)
 
 | Parameter | Description |
 | ----------- | ------------------------------------------------------------ |
-| time_column | Time column (KEY), such as `\_\_TIMESTAMP\_\_`. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
+| time_column | Time column (KEY), such as \_\_TIMESTAMP\_\_. The value in this column must be a UNIX timestamp of the LONG type or a date and time expression of the TIMESTAMP type in milliseconds. </br>If a value does not meet the requirement, use the `cast` function to convert the ISO 8601 formatted time string into the TIMESTAMP type, for example, `cast('2020-08-19T03:18:29.000Z' as timestamp)`, or use the `[date_parse](#date_parse)` function to convert a time string of another custom type. </br> If the time column adopts the TIMESTAMP type, the corresponding date and time expression must be in the UTC+0 time zone. If the date and time expression itself is in a different time zone, adjust it to UTC+0 by calculation. For example, if the time zone of the original time is UTC+8, use `cast('2020-08-19T03:18:29.000Z' as timestamp) - interval 8 hour` to adjust the time zone. |
 | interval    | Time interval. Valid values are `s` (second), `m` (minute), `h` (hour), and `d` (day). For example, `5m` indicates 5 minutes. |
 | format      | Time format of the return result.                                   |
 | padding     | Value used to complete missing data. Valid values include:<ul  style="margin: 0;"><li>0: complete a missing value with `0`</li><li>null: complete a missing value with `null`</li><li>last: complete a missing value with the value of the previous point in time</li><li>next: complete a missing value with the value of the next point in time</li><li>avg: complete a missing value with the average value of the previous and next points in time</li></ul> |
@@ -88,7 +89,7 @@ Complete data with a time unit of 2 minutes:
 
 
 
-## Time Truncation Functions
+## Time Truncation Function
 
 The date_trunc() function truncates a date and time expression based on the date part you specify, supporting alignment by second, minute, hour, day, month, and year. This function is often used in scenarios that require statistical analysis based on time.
 
@@ -104,7 +105,7 @@ The date_trunc() function supports the following units:
 | minute  | 2021-05-21 05:20:00.000 | -                          |
 | hour    | 2021-05-21 05:00:00.000 | -                         |
 | day     | 2021-05-21 00:00:00.000 | Returns the zero o'clock of a specified date.       |
-| week    | 2021-05-19 00:00:00.000 | Returns the zero o'clock on Monday of a specified week.       |
+| week    | 2021-05-17 00:00:00.000 | Returns the zero o'clock on Monday of a specified week.       |
 | month   | 2021-05-01 00:00:00.000 | Returns the zero o'clock on the first day of a specified month. |
 | quarter | 2021-04-01 00:00:00.000 | Returns the zero o'clock on the first day of a specified quarter.   |
 | year    | 2021-01-01 00:00:00.000 | Returns the zero o'clock on the first day of a specified year.     |
@@ -201,13 +202,14 @@ Parse the unit value string '3.81 d' into a duration string:
 ```
 
 
+
 <span id="date_parse"></span>
-## Time Formatting Functions
+## Time Formatting Function
 
 | Function                                  | Description                                                         | Example                                                         |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| date_format(timestamp, format) | Parses a date and time expression of the `timestamp` type into a date and time expression of the `format` type. | `* | select date_format(TIMESTAMP '2017-05-17 09:45:00', '%Y-%m-%d')`</br>2017-05-17 |
-| date_parse(string, format)     | Expresses a string in `format` format and then parses it into a date and time expression of the TIMESTAMP type. | `* | SELECT date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')`</br>2017-05-17 09:45:00.0 |
+| date_format(timestamp, format) | Parses a date and time string of the `timestamp` type into a string in the `format` format. | `* | select date_format(cast(__TIMESTAMP__ as timestamp), '%Y-%m-%d')` |
+| date_parse(string, format)     | Parses a date and time string in the `format` format into the `timestamp` type. | `* | select date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')` |
 
 The following formats (`format`) are supported:
 
@@ -249,4 +251,5 @@ Parse the time string '2017-05-17 09:45:00' in `format` into a date and time exp
 ```
 * | SELECT date_parse('2017-05-17 09:45:00','%Y-%m-%d %H:%i:%s')
 ```
+
 

@@ -22,7 +22,7 @@ Users can collect data and upload logs using the LogListener agent. The example 
 >? If your LogListener version is earlier than v2.6.5, you need to add "cls:listLogset" to the above content.
 >
 
-### Uploading data with API
+### Uploading data using an API
 
 Users can upload logs to CLS using an API. The example below grants users the minimum access to uploading logs using an API.
 
@@ -130,9 +130,13 @@ Users can search for and manage all log topics, including creating/deleting log 
                 "cls:DescribeLogHistogram",
                 "cls:DescribeLogContext",
                 "cls:DescribeLogFastAnalysis",
-                "cls:DescribeLatestJsonLog"
+                "cls:DescribeLatestJsonLog",
+				"cls:DescribeRebuildIndexTasks",
+				"cls:CreateRebuildIndexTask",
+				"cls:EstimateRebuildIndexTask",
+				"cls:CancelRebuildIndexTask"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -174,9 +178,13 @@ Users can search for and manage specific log topics, including creating/deleting
                 "cls:DescribeLogHistogram",
                 "cls:DescribeLogContext",
                 "cls:DescribeLogFastAnalysis",
-                "cls:DescribeLatestJsonLog"
+                "cls:DescribeLatestJsonLog",
+				"cls:DescribeRebuildIndexTasks",
+				"cls:CreateRebuildIndexTask",
+				"cls:EstimateRebuildIndexTask",
+				"cls:CancelRebuildIndexTask"
             ],
-            "resource": [
+            "resource":[
                 "qcs::cls:ap-guangzhou:100007***827:logset/1c012db7-2cfd-4418-****-7342c7a42516",
                 "qcs::cls:ap-guangzhou:100007***827:topic/380fe1f1-0c7b-4b0d-****-d514959db1bb"
             ]
@@ -219,9 +227,13 @@ Users can search for and manage log topics with specific tags, including creatin
                 "cls:DescribeLogHistogram",
                 "cls:DescribeLogContext",
                 "cls:DescribeLogFastAnalysis",
-                "cls:DescribeLatestJsonLog"
+                "cls:DescribeLatestJsonLog",
+				"cls:DescribeRebuildIndexTasks",
+				"cls:CreateRebuildIndexTask",
+				"cls:EstimateRebuildIndexTask",
+				"cls:CancelRebuildIndexTask"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ],
             "condition": {
@@ -257,9 +269,10 @@ Users can search for logs in all log topics.
                 "cls:DescribeLogHistogram",
                 "cls:DescribeLogContext",
                 "cls:DescribeLogFastAnalysis",
-                "cls:DescribeLatestJsonLog"
+                "cls:DescribeLatestJsonLog",
+				"cls:DescribeRebuildIndexTasks"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -288,9 +301,10 @@ Users can search for logs in specific log topics.
                 "cls:DescribeLogHistogram",
                 "cls:DescribeLogContext",
                 "cls:DescribeLogFastAnalysis",
-                "cls:DescribeLatestJsonLog"
+                "cls:DescribeLatestJsonLog",
+				"cls:DescribeRebuildIndexTasks"
             ],
-            "resource": [
+            "resource":[
                 "qcs::cls:ap-guangzhou:100007***827:logset/1c012db7-2cfd-4418-****-7342c7a42516",
                 "qcs::cls:ap-guangzhou:100007***827:topic/380fe1f1-0c7b-4b0d-****-d514959db1bb"
             ]
@@ -320,9 +334,10 @@ Users can search for logs in log topics with specific tags.
                 "cls:DescribeLogHistogram",
                 "cls:DescribeLogContext",
                 "cls:DescribeLogFastAnalysis",
-                "cls:DescribeLatestJsonLog"
+                "cls:DescribeLatestJsonLog",
+				"cls:DescribeRebuildIndexTasks"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ],
             "condition": {
@@ -352,7 +367,7 @@ Users can search for and analyze all log topics via APIs.
             "action": [
                 "cls:SearchLog"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -373,7 +388,7 @@ Users can search for and analyze specific log topics via APIs.
             "action": [
                 "cls:SearchLog"
             ],
-            "resource": [
+            "resource":[
                 "qcs::cls:ap-guangzhou:100007***827:logset/1c012db7-2cfd-4418-****-7342c7a42516",
                 "qcs::cls:ap-guangzhou:100007***827:topic/380fe1f1-0c7b-4b0d-****-d514959db1bb"
             ]
@@ -395,7 +410,7 @@ Users can search for and analyze log topics with specific tags via APIs.
             "action": [
                 "cls:SearchLog"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ],
             "condition": {
@@ -412,7 +427,7 @@ Users can search for and analyze log topics with specific tags via APIs.
 
 
 
-### Analyzing logs with dashboards
+### Analyzing logs using dashboards
 
 #### Managing all dashboards
 
@@ -526,7 +541,7 @@ Users can manage (including create, edit, and delete) specific dashboards and vi
                 "cls:ModifyDashboard",
                 "cls:DescribeDashboards"
             ],
-            "resource": [
+            "resource":[
                 "qcs::cls::uin/100000***001:dashboard/dashboard-0769a3ba-2514-409d-****-f65b20b23736"
             ]
         },
@@ -539,7 +554,7 @@ Users can manage (including create, edit, and delete) specific dashboards and vi
                 "cls:DescribeIndex",
                 "cls:DescribeLogsets"
             ],
-            "resource": [
+            "resource":[
                 "qcs::cls::uin/100000***001:topic/174ca473-50d0-4fdf-****-2ef681a1e02a"
             ]
         }
@@ -640,7 +655,7 @@ Users can view specific dashboards and the data of specific log topics via dashb
 	                "cls:ListChart",
 	                "cls:DescribeDashboards"
 	            ],
-	            "resource": [
+	            "resource":[
 	                "qcs::cls::uin/100000***001:dashboard/dashboard-0769a3ba-2514-409d-****-f65b20b23736"
 	            ]
 	        },
@@ -653,7 +668,7 @@ Users can view specific dashboards and the data of specific log topics via dashb
 	                "cls:DescribeIndex",
 	                "cls:DescribeLogsets"
 	            ],
-	            "resource": [
+	            "resource":[
 	                "qcs::cls::uin/100000***001:topic/174ca473-50d0-4fdf-****-2ef681a1e02a"
 	            ]
 	        }
@@ -676,7 +691,7 @@ Users can manage all alarm policies, including create and view alarm policies an
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         },
@@ -718,7 +733,7 @@ Users can view all alarm policies.
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         },
@@ -759,7 +774,7 @@ Users can manage the data processing tasks of all log topics.
                 "cls:DescribeIndex",
                 "cls:CreateDataTransform"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         },
@@ -775,7 +790,7 @@ Users can manage the data processing tasks of all log topics.
                 "cls:DeleteDataTransform",
                 "cls:ModifyDataTransform"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -797,7 +812,7 @@ Users can view the data processing tasks of all log topics, which does not requi
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         },
@@ -810,7 +825,7 @@ Users can view the data processing tasks of all log topics, which does not requi
                 "cls:DescribeDataTransformPreviewInfo",
                 "cls:DescribeDataTransformProcessInfo"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -1289,7 +1304,7 @@ Authorization for all log topics
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource": [
+            "resource":[
                 "*"]
      },
         {
@@ -1301,7 +1316,7 @@ Authorization for all log topics
                 "cls:OpenKafkaConsumer",
                 "cam:ListAttachedRolePolicies"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -1323,7 +1338,7 @@ Authorization for log topics with a specified tag
                 "cls:DescribeLogsets",
                 "cls:DescribeTopics"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ],
             "condition": {
@@ -1343,7 +1358,7 @@ Authorization for log topics with a specified tag
                 "cls:OpenKafkaConsumer",
                 "cam:ListAttachedRolePolicies"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -1366,7 +1381,7 @@ Authorization for log topics with a specified tag
             "action": [
                 "cls:SearchLog"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ]
         }
@@ -1385,7 +1400,7 @@ Authorization for log topics with a specified tag
             "action": [
                 "cls:SearchLog"
             ],
-            "resource": [
+            "resource":[
                 "*"
             ],
             "condition": {

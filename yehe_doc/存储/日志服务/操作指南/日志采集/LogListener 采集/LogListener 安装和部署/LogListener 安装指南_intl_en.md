@@ -1,8 +1,8 @@
-LogListener is a log collector provided by Cloud Log Service (CLS). You can install and deploy it on a machine to collect logs quickly.
+LogListener is a log collector provided by CLS. You can install and deploy it on a server to collect logs quickly.
 
 ## Installation Environment
 
-LogListener supports only Linux 64-bit operating systems and does not support Windows now. It is compatible with mainstream Linux operating system versions. If LogListener is incompatible with the Linux operating system version you use, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+LogListener supports only Linux 64-bit operating systems and does not support Windows now. It is compatible with mainstream Linux operating system versions. If LogListener is incompatible with the Linux operating system version you use, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 | OS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Compatible Versions                                               |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -13,14 +13,17 @@ LogListener supports only Linux 64-bit operating systems and does not support Wi
 
 ## Supported Features
 
-New features supported on different LogListener versions are detailed as follows:
+Key features supported by different LogListener versions are as listed below. For more information, see [LogListener Updates](https://intl.cloud.tencent.com/document/product/614/40005).
 
 | LogListener Version | Supported Feature  | Feature Description | Documentation |
-| --------------- | --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| --------------- | ------------------------ | -------------------------- | --------------------------------- |
+| v2.7.4   | Host name collection (`hostname`)    | LogListener collects and reports the machine host name as a default field and displays \_\_HOSTNAME\_\_ as a key, such as \_\_HOSTNAME\_\_:VM-108-centos.   | -   |
+| v2.6.4   | Combined parsing to customize complex log parsing rules   | You can use LogListener's combined parsing mode to parse logs. This mode allows you to enter JSON code in the console to customize the log parsing pipeline logic.   | [Combined Parsing Format](https://intl.cloud.tencent.com/document/product/614/42742)   |
+| v2.6.0   | CVM batch deployment   | You can select CVM instances in the console and batch distribute LogListener deployment tasks through an API to automatically complete LogListener installation and deployment (including `accesskey`, ID, and region configuration).   | [Deploying LogListener on CVMs in Batches](https://intl.cloud.tencent.com/document/product/614/42133)   |
 | v2.5.4 | LogListener service logs | LogListener service logs are used to record the operation, collection, and monitoring activities of LogListener, and you can configure visual graphs to display such log data. | [LogListener Service Logs](https://intl.cloud.tencent.com/document/product/614/40232) |
-| v2.5.2 | Uploading parsing-failure logs | Parsing-failure logs can be uploaded, using `LogParseFailure` as the key name (`Key`) and the raw log content as the key value (`Value`). |  -                                                            |
-| v2.5.0 | LogListener auto-upgrade function |  Users can set a time period for Agent auto-upgrade or select specific machines to upgrade manually. | [LogListener Upgrade Guide](https://intl.cloud.tencent.com/document/product/614/40233) |
-| v2.4.5 | Extracting multi-line logs with regex | The extraction mode of **Multi-line - Full regular expression** is added to LogListener collection configuration rules for log collection. | [Full Regular Expression (Multi-Line)](https://intl.cloud.tencent.com/document/product/614/39590) |
+| v2.5.2 | Uploading parsing-failed logs | Parsing-failure logs can be uploaded, using `LogParseFailure` as the key name (`Key`) and the raw log content as the key value (`Value`). |  -                                                            |
+| v2.5.0 | LogListener auto-upgrade function |  Users can set a time period for Agent auto-upgrade or select specific machine groups to upgrade manually. | [LogListener Upgrade Guide](https://intl.cloud.tencent.com/document/product/614/40233) |
+| v2.4.5          | Multi-line log extraction with regex   | The extraction mode of **Multi-line - Full regular expression** is added to LogListener collection configuration rules for log collection. | [Full Regular Expression (Multi-Line)](https://intl.cloud.tencent.com/document/product/614/39590) |
 
 
 
@@ -28,16 +31,16 @@ New features supported on different LogListener versions are detailed as follows
 
 ### 1. Downloading and installing LogListener
 
-Download links of the latest version LogListener: [Download via public network](https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.6.5.tar.gz), [Download via private network](http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.6.5.tar.gz)
+Download links of the latest version LogListener: [Download by public network](https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.7.9.tar.gz), [Download by private network](http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.7.9.tar.gz)
 
 Download the LogListener installation package and decompress it to the installation path (`/usr/local/` in this example). Then go to the LogListener directory `loglistener/tools` and run the following installation command.
 - Operation command for the public network:
 ```plaintext
-wget https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.6.5.tar.gz  && tar -zxvf loglistener-linux-x64-2.6.5.tar.gz -C /usr/local && cd /usr/local/loglistener-2.6.5/tools && ./loglistener.sh install
+wget https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.7.9.tar.gz  && tar -zxvf loglistener-linux-x64-2.7.9.tar.gz -C /usr/local && cd /usr/local/loglistener-2.7.9/tools && ./loglistener.sh install
 ```
 - Operation command for the private network:
 ```plaintext
-wget http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.6.5.tar.gz  && tar -zxvf loglistener-linux-x64-2.6.5.tar.gz -C /usr/local && cd /usr/local/loglistener-2.6.5/tools && ./loglistener.sh install
+wget http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.7.9.tar.gz  && tar -zxvf loglistener-linux-x64-2.7.9.tar.gz -C /usr/local && cd /usr/local/loglistener-2.7.9/tools && ./loglistener.sh install
 ```
 
 ### 2. Initializing LogListener
@@ -46,7 +49,7 @@ In the `loglistener/tools` path, run the following command to initialize LogList
 ```shell
 ./loglistener.sh init -secretid AKIDPEtPyKabfW8Z3Uspdz83xxxxxxxxxxx -secretkey whHwQfjdLnzzCE1jIf09xxxxxxxxxxxx -region ap-xxxxxx
 ```
->?You need to replace **-secretid**, **-secretkey**, **-region**, and **-network** in the command with the actual values. For more information, please see [Parameter description](#parameterdescription) below.
+>?You need to replace **-secretid**, **-secretkey**, **-region**, and **-network** in the command with the actual values. For more information, see [Parameter description](#parameterdescription) below.
 
 <span id="parameterdescription"></span>
 
@@ -59,7 +62,7 @@ In the `loglistener/tools` path, run the following command to initialize LogList
 | region    | [Region](https://intl.cloud.tencent.com/document/product/614/18940) where CLS resides. Enter a region abbreviation here, such as `ap-beijing` or `ap-guangzhou`. |
 | network   | Type of the network through which LogListener accesses the service by domain name. Valid values: `intra` (private network), `internet` (public network). Default value: `intra` |
 | ip        | Machine IP. If this parameter is left empty, LogListener will automatically get the local IP address. |
-| label     | Machine group label, which is required if you want to identify the machine group. Multiple tags should be separated by comma. |
+| label     | Machine group label, which is required if you want to identify the machine group. Multiple labels should be separated by comma. |
 
 A private network domain name is used by default:
 
@@ -76,7 +79,7 @@ If you need to access the service by domain name through the public network, run
 >- We recommend that you use a collaborator key if the collaborator has been assigned with the CLS read/write permission by the root account.
 > - `region` indicates the region of the CLS you use, instead of the region where your business machine resides.
 > - If your CVM instance and logset are in the same region, we recommend you access the service domain name over the private network; otherwise, use the public network.
-> - For details about log collection, please see [Granting a Sub-account Permissions to Collect Logs for a CLS Log Topic](https://intl.cloud.tencent.com/document/product/614/39023).
+> - For details about log collection, see [Examples of Custom Access Policies](https://intl.cloud.tencent.com/document/product/614/45004).
 > 
 
 ### 3. Starting LogListener
@@ -89,7 +92,7 @@ After LogListener is successfully installed, run the following command to start 
 
 ## Common LogListener Operations
 
->? The operation commands used in this document are applicable only to LogListener v2.2.4 and later versions. For operation commands applicable to earlier versions, see [Earlier-Version LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/35674).
+>? The operation commands used in this document are applicable only to LogListener v2.2.4 and later versions. For operation commands applicable to earlier versions, see [Operation Guide of Earlier LogListener Versions](https://intl.cloud.tencent.com/document/product/614/35674).
 >
 
 ### 1. Checking the LogListener version
@@ -117,7 +120,7 @@ After LogListener is successfully installed, run the following command to start 
 ```
 
 LogListener normally runs two processes:
-![](https://main.qcloudimg.com/raw/134c3ffc885d09903f86412edc18b9a9.png)
+![](https://main.qcloudimg.com/raw/e28d0d88d14a65567ce46794979dfc94.png)
 
 ### 5. Checking LogListener heartbeat and configuration
 
@@ -155,7 +158,7 @@ cp -r /tmp/loglistener-backup/data loglistener-<version>/
 ```
  Change the value of `<version>` as required. The following is an example:
 ```plaintext
-cp -r /tmp/loglistener-backup/data loglistener-2.2.8/
+cp -r /tmp/loglistener-backup/data loglistener-2.7.9/
 ```
 6. Run the start command to start the latest version of LogListener.
 

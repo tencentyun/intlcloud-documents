@@ -28,7 +28,7 @@ This document introduces the basic syntax and examples of estimation functions.
 
 ## approx_distinct
 
-The `approx_distinct` function is used to get the approximate number of distinct input values of a field.
+The `approx_distinct` function is used to get the approximate number of distinct input values of a field. The standard result deviation is 2.3%.
 
 ### Syntax
 
@@ -36,15 +36,15 @@ The `approx_distinct` function is used to get the approximate number of distinct
 approx_distinct(x)
 ```
 
-### Parameter description
+### Field description
 
-| Parameter         | Description              |
+| Parameter | Description |
 | ---- | ---------------------- |
-| x    | The parameter value can be of any type. |
+| x    | The parameter value can be of any data type.           |
 
 ### Return value type
 
-bigint
+Bigint
 
 ### Example
 
@@ -58,7 +58,7 @@ Use the `count` function to calculate the PV value and use the `approx_distinct`
 
 ## approx_percentile
 
-The `approx_percentile` function is used to sort the values of a target field in ascending order and return the values approximately at the given `percentage` position.
+The `approx_percentile` function is used to sort values of the target field in ascending order and return the value in the position around `percentage`. It uses the T-Digest algorithm for estimation, which has a low deviation and can meet the most statistical analysis requirements. If needed, you can use `* | select count_if(x<(select approx_percentile(x,percentage))),count(*)` to accurately count the number of field values below `percentage` and the total number of field values respectively and then verify the statistical deviation.
 
 ### Syntax
 
@@ -71,7 +71,7 @@ approx_percentile(x, percentage)
 approx_percentile(x, array[percentage01,percentage02...])
 ```
 
-### Parameter description
+### Field description
 
 | Parameter | Description |
 | ---------- | --------------------------- |
@@ -92,10 +92,11 @@ Example 1: sort the values of the **resTotalTime** column and return the value o
 
 
 
-Example 2: sort the values of the **resTotalTime** column and return the values of **resTotalTime** approximately at the 10%, 20%, and 60% positions
+Example 2: Sort the values of the **resTotalTime** column and return the values of **resTotalTime** approximately at the 10%, 20%, and 60% positions
 
 ```
 * | select approx_percentile(resTotalTime, array[0.2,0.4,0.6])
 ```
+
 
 
