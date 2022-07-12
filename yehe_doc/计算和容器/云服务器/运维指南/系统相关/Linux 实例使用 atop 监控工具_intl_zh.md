@@ -54,6 +54,7 @@ atop -r /var/log/atop/atop_2021xxxx
 下图为部分监控字段以及数值，数值根据采样周期获取，仅作为参考。
 ![](https://main.qcloudimg.com/raw/977bd4f82338866d3a09c6766c67dc9e.png)
 主要参数说明如下：
+主要参数说明如下：
 - **ATOP 行**：主机名、信息采样日期和时间点。
 - **PRC 行**：进程整体运行情况。
  -  sys 及 user：CPU 被用于处理进程时，进程在内核态及用户态所占 CPU 的时间比例。
