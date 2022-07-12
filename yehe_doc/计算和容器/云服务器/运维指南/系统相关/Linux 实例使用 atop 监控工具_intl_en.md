@@ -21,8 +21,8 @@ Configure the atop monitoring period and log retention time as described below:
 vim /etc/sysconfig/docker
 ```
 2. Press **i** to enter the edit mode and modify the configuration below:
- - Modify `LOGINTERVAL=600` to ` LOGINTERVAL=30`. This means to modify the monitoring period of 600s by default to a recommended value-30s. You can modify it to other values as needed.
- - Modify `LOGGENERATIONS=28` to `LOGGENERATIONS=7`. This means to modify the log retention time of 28 days by default to 7 days. To prevent overmuch disk storage space from being occupied due to the long-term running of atop, it’s recommended to modify it to 7 days. You can modify it to other values as needed.
+   - Modify `LOGINTERVAL=600` to ` LOGINTERVAL=30`. This means to modify the monitoring period of 600s by default to a recommended value-30s. You can modify it to other values as needed.
+   - Modify `LOGGENERATIONS=28` to `LOGGENERATIONS=7`. This means to modify the log retention time of 28 days by default to 7 days. To prevent overmuch disk storage space from being occupied due to the long-term running of atop, it’s recommended to modify it to 7 days. You can modify it to other values as needed.
 The result should be as follows:
 ![](https://main.qcloudimg.com/raw/764fee905a0f1d89d1c48c6d2f6aa372.png) 
 3. Press **Esc** and enter **:wq** to save the modification and exit VIM editor.
@@ -56,36 +56,36 @@ Some monitoring fields and values are shown below. These values obtained accordi
 The main parameters are as follows:
 - **ATOP**: CVM name, information sampling date and point in time.
 - **PRC**: Overall operation status of the process.
- - **sys** and **user**: The ratios between CPU service time and the sampling period in Linux process kernel mode and user mode
- - #proc: Total Linux processes.
- - #zombie: Zombie processes.
- - #exit: Processes exited during the atop sampling period.
+  - sys and user: The ratios between CPU service time and the sampling period in Linux process kernel mode and user mode
+  - #proc: Total Linux processes.
+  - #zombie: Zombie processes.
+  - #exit: Processes exited during the atop sampling period.
 -**CPU line**: Usage of overall CPU configuration (Deem multi-core CPUs as a complete CPU resource). All values of the fields on the CPU line are added up to N00%, and N is equal to the number of CPU cores.
- - sys and user: The ratios between CPU service time and the sampling period in process kernel mode and user mode
- - irq: The ratio between the time the CPU is used to process interrupts and the sampling period
- - idle: The ratio between the CPU idle time and the sampling period
- - wait: The ratio between the time the CPU is in the "idle state caused by the process waiting for the disk Input/Output" and the sampling period
+  - sys and user: The ratios between CPU service time and the sampling period in process kernel mode and user mode
+  - irq: The ratio between the time the CPU is used to process interrupts and the sampling period
+  - idle: The ratio between the CPU idle time and the sampling period
+  - wait: The ratio between the time the CPU is in the "idle state caused by the process waiting for the disk Input/Output" and the sampling period
 - **CPL line**: CPU loading conditions.
- - avg1、avg5 and avg15：Average number of processes in the running queue in the past 1 minute, 5 minutes and 15 minutes.
- - csw: Number of context switches.
- - intr: Number of interruptions.
+  - avg1、avg5 and avg15：Average number of processes in the running queue in the past 1 minute, 5 minutes and 15 minutes.
+  - csw: Number of context switches.
+  - intr: Number of interruptions.
 - **MEM line**: Memory usage.
- - tot: Total physical memory.
- - cache: Memory used for page cache.
- - buff: Memory used for file buffer.
- - slab: Memory used by system kernel.
+  - tot: Total physical memory.
+  - cache: Memory used for page cache.
+  - buff: Memory used for file buffer.
+  - slab: Memory used by system kernel.
 - **SWP line**: Usage of swap space.
- - tot: Total swap area.
- - free: Idle swap space.
+  - tot: Total swap area.
+  - free: Idle swap space.
 - **PAG**: Paging of virtual memory
- - swin and swout: Number of memory pages swapped in and out.
+  - swin and swout: Number of memory pages swapped in and out.
 - **DSK**: Disk usage. A line of information shows the usage of each disk device. Add a line of DSK information if there is sdb device.
- - sda: Disk device identifier.
- - busy: Disk busy time percentage.
- - read and write: Number of reading and writing requests.
+  - sda: Disk device identifier.
+  - busy: Disk busy time percentage.
+  - read and write: Number of reading and writing requests.
 - **NET line**: The multiple NET lines show the network conditions, including the information of transport layer (TCP and UDP), IP layer and active network interfaces.
- - xxxxxi: Number of packages received at each layer or active network interface.
- - xxxxxo: Number of packages sent at each layer or active network interface.
+  - xxxxxi: Number of packages received at each layer or active network interface.
+  - xxxxxo: Number of packages sent at each layer or active network interface.
 
 ###  Stop atop
 It is not recommended to run atop for a long time in application environment. You can stop atop after troubleshooting. In CentOS 7 and other upgraded systems, you can execute the following command to stop the atop.
