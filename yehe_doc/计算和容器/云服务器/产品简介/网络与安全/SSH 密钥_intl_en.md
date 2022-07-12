@@ -16,7 +16,7 @@ Compared to traditional password authentication methods, SSH key pair login has 
 ## Use Limits
 - SSH key pair login is only available for Linux instances.
 - Each Tencent Cloud account can have up to 100 SSH key pairs.
-- Tencent Cloud will not retain your private key. You need to download the private key after creating a SSH key, and keep it safe.
+- Tencent Cloud will not retain your private key. You need to download the private key after creating an SSH key, and keep it safe.
 - To ensure data security, you need to shut the instance down before loading the key.
 - To improve CVM security, you cannot use the password login method after binding a key pair to the instance.
 
