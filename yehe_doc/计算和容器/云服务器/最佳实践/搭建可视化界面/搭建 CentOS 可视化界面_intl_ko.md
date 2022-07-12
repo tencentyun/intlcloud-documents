@@ -42,6 +42,6 @@ reboot
 ```
 5. VNC 방식으로 인스턴스에 로그인합니다. 자세한 내용은 [VNC를 사용하여 Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32494)을 참고하십시오.
 인스턴스에 로그인한 후 시각화 인터페이스가 나타나면 구축이 완료된 것입니다. 인터페이스 안내에 따라 구성을 진행하고, 바탕 화면으로 이동하여 필요에 따라 관련 작업을 수행할 수 있습니다. 아래 이미지를 참고하십시오.
-![](https://main.qcloudimg.com/raw/ae361df3eb2c224a92a754e1f693c06d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/246952ae60c02724727029b6a3c0ef1a.png)
 :::
 </dx-tabs>
