@@ -78,7 +78,7 @@
  - 若迁移目标为目标云服务器：通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037) / [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
  - 若迁移目标为云服务器镜像：通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037) / [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 等方式，建立源端主机与腾讯云VPC的的连接通道。
 2. 将迁移工具 go2tencentcloud.zip 下载或上传至源端主机，并执行以下命令进入对应目录。
-    1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
+     1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
 ```shellsession
 unzip go2tencentcloud.zip
 ```
