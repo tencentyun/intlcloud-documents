@@ -25,7 +25,7 @@ Compared to traditional password authentication methods, SSH key pair login has 
 - To learn how to create, bind, unbind, or delete a key, see [Managing SSH Key Pairs](https://intl.cloud.tencent.com/document/product/213/16691).
 - To learn about how to log in to CVM instances remotely using an SSH key pair, see
  - [Logging in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
- - [Logging into Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
+ - [Logging in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 
 
 
