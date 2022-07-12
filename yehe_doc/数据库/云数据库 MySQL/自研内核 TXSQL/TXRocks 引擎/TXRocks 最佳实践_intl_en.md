@@ -31,10 +31,10 @@ SET session rocksdb_bulk_load_allow_unsorted=0;
 ## Option 2
 You can disable `unique_check` during data import to improve the import performance.
 ```
-set global unique_checks=OFF;
+SET unique_checks=OFF;
 ...
 Import the data.
 ...
-set global unique_checks=ON;
+SET unique_checks=ON;
 ```
 >!After the operation is completed, you must set `unique_checks` back to `ON`; otherwise, the uniqueness of INSERT operations in subsequent normal transaction writes will not be checked.
