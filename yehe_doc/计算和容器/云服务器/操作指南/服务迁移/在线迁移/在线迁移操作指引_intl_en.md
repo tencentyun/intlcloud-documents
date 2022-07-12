@@ -142,10 +142,10 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 <td>Migration task description.</td>
 </tr>
 <tr>
-<td>Destination Type</td>
+<td>Target type</td>
 <td>Yes</td>
 <td>
-  Set the destination type for the source server to be migrated to Tencent Cloud.
+  Set the target type for the source server to be migrated to Tencent Cloud.
     <ul>
     <li><b>CVM Image</b>: A destination CVM image will be generated for the migration source after the migration task ends.
       <br>Image name: Name of the destination CVM image that will be generated for the migration source. If an image with the same name already exists in the destination region, the migration task will automatically add the task ID to the name.
