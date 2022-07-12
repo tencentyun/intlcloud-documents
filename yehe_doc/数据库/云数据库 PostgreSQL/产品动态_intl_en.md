@@ -1,3 +1,25 @@
+## April 2022
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
+<tbody>
+<tr>
+<td>Supported setting the instance maintenance time</td>
+<td>TencentDB for PostgreSQL allows you to set the maintenance time in the console to guarantee the stability of your database instances.</td>
+<td>2022-04-26</td><td><a href="https://intl.cloud.tencent.com/document/product/409/47725" target="_blank">Setting Instance Maintenance Time</a></td></tr>
+<tr>
+<td>Supported transparent data encryption (TDE)</td>
+<td>TencentDB for PostareSQL supports the TDE feature to ensure your data security.</td>
+<td>2022-04-26</td><td><a href="https://intl.cloud.tencent.com/document/product/409/47762" target="_blank">Enabling TDE</a></td></tr>
+<tr>
+<td>Added extensions</td>
+<td>TencentDB for PostgreSQL supports pg_cron, TopN, and cos_fdw extensions.</td>
+<td>2022-04-26</td><td><a href="https://intl.cloud.tencent.com/document/product/409/47734">Supported Extensions</a></td></tr>
+<tr>
+<td>Supported PostgreSQL 14</td>
+<td>TencentDB for PostgreSQL supports PostgreSQL 14 to provide more stable and faster enterprise-grade database services that are easier to deploy in more industries and help upgrade your business.</td>
+<td>2022-04-26</td><td><a href="https://intl.cloud.tencent.com/document/product/409/44364" target="_blank">Kernel Version Overview</a></td></tr>
+</tbody></table>
+
 ## January 2022
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
