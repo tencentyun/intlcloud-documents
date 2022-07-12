@@ -56,7 +56,7 @@ Requests that incur fees include read/write requests, INTELLIGENT TIERING object
 
 ## Billing Mode and Calculation Formulas
 
-| Billing Method  | Applicable Billable Items | Calculation Formula |
+| Billing Mode  | Applicable Billable Items | Calculation Formula |
 |-----|--------|------|
 |  Pay-as-you-go   |    Read/Write requests </br> INTELLIGENT TIERING object monitoring </br> DEEP ARCHIVE object retrieval requests  </br>      |  <ul  style="margin: 0;"><li>Monthly  </li><li>Request fees = unit price per 10,000 requests (or monitored objects) * monthly accumulated number of requests (or monitored objects) / 10,000 </li></ul>       |
 

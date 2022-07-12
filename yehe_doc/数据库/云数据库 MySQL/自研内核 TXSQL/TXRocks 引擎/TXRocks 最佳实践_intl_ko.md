@@ -31,10 +31,10 @@ SET session rocksdb_bulk_load_allow_unsorted=0;
 ## 옵션 2
 가져오기 성능을 향상시키기 위해 데이터 가져오기 중에 unique_check를 비활성화할 수 있습니다.
 ```
-set global unique_checks=OFF;
+SET unique_checks=OFF;
 ...
 데이터 가져오기
 ...
-set global unique_checks=ON;
+SET unique_checks=ON;
 ```
 >!작업이 완료되면 unique_checks를 다시 ON으로 설정해야 합니다. 그렇지 않으면 후속 일반 트랜잭션 쓰기에서 insert 작업의 고유성이 확인되지 않습니다.

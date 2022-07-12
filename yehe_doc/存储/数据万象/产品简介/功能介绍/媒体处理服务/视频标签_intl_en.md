@@ -1,9 +1,7 @@
 ## Overview
 
-The video tagging feature tags videos by recognizing the main content, scenes, and objects in videos.
+The video tagging feature accurately recognizes video content and automatically outputs multidimensional content tags by analyzing the visuals, scenes, behaviors, and objects in the video based on multi-modal information fusion and alignment technologies. It can be applied to diverse scenarios such as smart video analysis, video moderation, video search, and personalized video recommendation to facilitate smart video production.
 
->? The video tagging feature is currently in beta test.
->
 
 
 
@@ -21,6 +19,6 @@ You can use the video tagging feature through jobs.
 
 You can create video tagging jobs through APIs to get video tags for existing data in COS.
 
-API: You can use APIs to create video tagging jobs as instructed in the API documentation.
+API: You can use APIs to create video tagging jobs.
 
 

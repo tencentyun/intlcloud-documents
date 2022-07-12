@@ -17,11 +17,11 @@ A table is the most common type of data display, where data is organized for com
 
 Enter a keyword in the **search box** at the top of the table and click **Search**.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/0343e3450806017df142840dcd4f7470.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9c96057e92e3aeda079dcf7374fc2679.png)
 
 ### Sorting by column
 
 Click the **header** of the target column to sort rows in the column in ascending order. Click it again to sort rows in descending order.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/dad0de4afaa4ba1f167926fc5fcaed9f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/20998555cad45d14c9a4e3dd932782c3.png)
 

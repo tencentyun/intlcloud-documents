@@ -20,21 +20,37 @@ sudo systemctl start grafana-server
 sudo systemctl status grafana-server
 sudo systemctl enable grafana-server
 ```
-To install more visual panels (such as pie and graph panels), please install Grafana panel plugins by running the corresponding commands.
+2. After installation, we recommend you modify the [dataproxy] configuration in the `grafana.ini` file.
+The default timeout period of Grafana is 30s. When you search for a large amount of data, a timeout may occur. For more information, see [Grafana proxy queries timeout after 30s with dataproxy.timeout and dataproxy.keep_alive_seconds to > 30s #35505](https://github.com/grafana/grafana/issues/35505). We recommend you set the timeout period to 60s to maximize the CLS capabilities. Modify the configuration as follows:
+```markdown
+[dataproxy]
+timeout = 60
+dialTimeout = 60
+keep_alive_seconds = 60
+```
+To install more visual panels (such as pie and graph panels), install Grafana panel plugins by running the corresponding commands.
 For example, if you want to install the pie panel, you can run the following command:
 ```
 grafana-cli plugins install grafana-piechart-panel
 service grafana-server restart
 ```
-For information on more plugins, please see [Grafana Plugins](https://grafana.com/grafana/plugins?type=panel).
+For information on more plugins, see [Grafana Plugins](https://grafana.com/grafana/plugins?type=panel).
 
 
 ### Installing Tencent Cloud Monitor Grafana App
 
+#### Installation from the official plugin library
+
+1. Go to the Grafana page.
+2. On the **Configuration** > **Plugin** page, search for **Tencent Cloud Monitor** and click it to install it.
+![](https://qcloudimg.tencent-cloud.cn/raw/0edf0fe478d2d3364a1c5cc5b9045824.png)
+
+
+#### Installation on the command line
+
 1. Install [Tencent Cloud Monitor Grafana App](https://grafana.com/grafana/plugins/tencentcloud-monitor-app/).
 ```sh
 grafana-cli plugins install tencentcloud-monitor-app
-
 # If the plugin cannot be found after the installation, it may be because that the plugin directory is not set to the default directory. In this case, go to the plugin installation directory and run the following command.
 # If your CVM instance is not on CentOS, confirm the location of the Grafana plugin directory first and go to the directory for installation.
 grafana-cli --pluginsDir ./  plugins install tencentcloud-monitor-app
@@ -47,20 +63,21 @@ grafana-cli --pluginUrl https://github.com/TencentCloud/tencentcloud-monitor-gra
 service grafana-server restart
 ```
 
+
 ### Configuring log data source
 
 1. Enter `http://${Grafana IP address}:3000` (3000 is the default port number) in your browser to log in to Grafana.
 2. On the left sidebar, select the **Settings** icon to go to the **Plugins** page. Select **Tencent Cloud Monitor** and click **Enable** on the **Config** page to enable the plugin.
 3. On the **Data Sources** page, click **Add data source**.
 4. Select **Tencent Cloud Monitor**, enter the data source name and Tencent Cloud [access key](https://console.cloud.tencent.com/cam/capi) as instructed, select **Cloud Log Service (cls)**, and click **Save**.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a1649f5eecf14583ba7b34292a98c58b.png)
 
 ### Trying out the CLB-DEMO preset dashboard
 
-To quickly try out Tencent Cloud Monitor Grafana App, you are advised to use the [demo log](https://intl.cloud.tencent.com/document/product/614/43572) feature.
+To quickly try out Tencent Cloud Monitor Grafana App, we recommend you use the [demo log](https://intl.cloud.tencent.com/document/product/614/43572) feature.
 
 After creating a log topic, you can go to the preset `CLB Demo Access Log` dashboard to view preset content.
-
+![](https://qcloudimg.tencent-cloud.cn/raw/5c9470f472d3b56d64993fb7e2196d52.png)
 
 
 ### Manually configuring dashboard
@@ -93,11 +110,11 @@ The content returned for the SQL statement contains two fields: `status` of the 
 
 ### Viewing raw logs
 
-For search scenarios, you are advised to use the Logs plugin to display data.
-
+For search scenarios, we recommend you use the Logs plugin to display data.
+![](https://qcloudimg.tencent-cloud.cn/raw/4d0a45a5c2d6f2a8005d59df893bfc0a.png)
 
 If you are using Grafana v8.3 or later, you can also use the **Extract fields** feature on the **Transform** tab page of Grafana to extract fields from the content returned for the search and view data in **Table**.
-
+![](http://zuohaotu.com/Download/061616164532_01032b82797a2045fb8b17af2c32a6d6e.png?_gl=1*1kk2qfe*_ga*MTY3MzY1ODg3My4xNjU1MzY3MjU0*_ga_ZN9652QSEY*MTY1NTM2NzI1NC4xLjEuMTY1NTM2NzQwNi4w)
 
 
 ## Other Usage Guidelines for the Plugin

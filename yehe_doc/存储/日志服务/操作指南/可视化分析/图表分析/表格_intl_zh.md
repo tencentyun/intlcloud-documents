@@ -17,11 +17,11 @@
 
 在表格顶部的**搜索框**中，输入搜索内容的关键词，单击**搜索**。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/0343e3450806017df142840dcd4f7470.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9c96057e92e3aeda079dcf7374fc2679.png)
 
 ### 按照某一列排序
 
 单击需要排序的列的**表头**，将会按照升序排列。再次单击，切换为降序排列。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/dad0de4afaa4ba1f167926fc5fcaed9f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/20998555cad45d14c9a4e3dd932782c3.png)
 

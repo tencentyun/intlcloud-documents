@@ -1,4 +1,15 @@
-## 2021년 05월
+
+
+## 2022년 07월
+
+| 업데이트 명칭                                  |  업데이트 설명                                                     | 배포일   | 관련 문서                                                     |
+| :--------------- | :----------------------------------------------------------- | :--------- | :----------------------------------------------------------- |
+| 스탠다드_IA 용량 단가 인하 | COS의 스탠다드_IA 스토리지 용량 공시 가격은 뭄바이, 서울, 방콕, 실리콘 밸리, 모스크바, 자카르타 및 상파울루 리전에서 0.018 USD/GB/월에서 0.015 USD/GB/월로 인하되었습니다. 다른 리전 및 청구 항목의 단가는 변경되지 않습니다. | 2022-07-01 | [가격](https://buy.intl.cloud.tencent.com/price/cos) |
+
+
+
+
+## 2022년 04월
 
 <table>
 <thead>
@@ -11,11 +22,246 @@
 </thead>
 <tbody>
 <tr>
-<td>자가 진단 툴 런칭</td>
-<td>자가 진단 툴은 Tencent Cloud COS가 사용자에게 제공하는 Web 툴로서, 잘못된 요청에 대한 자가 진단에 사용할 수 있습니다.</td>
-<td> 2021-05-27</td>
-<td><a href="https://cloud.tencent.com/document/product/436/57576">자가 진단 툴 </a>
+<td>싱가포르 리전에 딥 아카이브 출시</td>
+<td>싱가포르 리전의 딥 아카이브에 객체를 업로드할 수 있습니다.</td>
+<td> 2022-04-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">객체 업로드</a></td>
 </tr>
+</tbody></table>
+
+
+
+## 2022년 03월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">COS 로그 분석 기능 런칭</td>
+<td align="left">로그 분석 기능은 지정된 기간에 생성된 로그 파일을 집계 및 분석하여 표시할 주요 메트릭 값을 추출할 수 있습니다.</td>
+<td align="left">2022-03-21</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/45570">로그 분석 설정</a></td>
+</tr>
+<tr>
+<td align="left">사용자 정의 기능을 위한 공통 기능 템플릿 런칭</td>
+<td align="left">SCF의 사용자 정의 기능 처리 기능과 데이터 처리 워크플로를 함께 사용하여 개발 비용을 줄이면서 비즈니스 요구를 유연하게 구현하기 위해 핵심 코드 로직을 작성할 수 있습니다.</td>
+<td align="left">2022-03-21</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46407">사용자 정의 함수 처리</a></td>
+</tr>
+</tbody></table>
+
+## 2022년 02월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">프랑크푸르트 리전에서 미디어 처리 기능 런칭</td>
+<td align="left">미디어 처리 기능이 프랑크푸르트 리전(eu-frankfurt)에서 지원됩니다.</td>
+<td align="left">2022-02-17</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46387">Overview</a></td>
+</tr>
+<tr>
+<td align="left">H.265 비디오 트랜스 코딩 기능 런칭</td>
+<td align="left">H.265는 H.264보다 고급 비디오 코덱입니다. 액세스 대역폭을 절약하기 위해 동영상을 작게 만듭니다.</td>
+<td align="left">2022-02-17</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46411">Video transcoding</a></td>
+</tr>
+<tr>
+<td align="left">TESHD 트랜스 코딩 기능 런칭</td>
+<td align="left">TESHD 트랜스 코딩 기능은 낮은 비트 레이트에서 비디오의 주관적인 이미지 품질을 향상시킵니다. 동영상을 더 작고 선명하게 만듭니다.</td>
+<td align="left">2022-02-17</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/436/46411">Top speed codec transcoding</a></td>
+</tr>
+</tbody></table>
+
+## 2021년 10월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>미디어 처리-오디오/비디오 분할 기능 런칭</td>
+<td>오디오/비디오 분할 기능은 오디오/비디오를 지정된 기간의 여러 세그먼트로 나눌 수 있습니다. 분할하는 동안 오디오/비디오 세그먼트의 컨테이너 형식을 변경할 수 있습니다.</td>
+<td> 2021-10-14</td>
+<td><a href="https://cloud.tencent.com/document/product/460/62692">오디오/비디오 세그먼트 </a>
+</tr>
+</tbody></table>
+
+
+
+## 2021년 09월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>객체 태그 단가 인하</td>
+<td>COS의 공시가격이 조정되었습니다. 중국 본토 리전의 퍼블릭 클라우드 가격은 0.00025817 USD/1만 개 태그/일, 중국홍콩 및 해외 리전의 퍼블릭 클라우드 가격은 0.0003098 USD/1만 개 태그/일로 인하되었습니다.</td>
+<td> 2021-09-30</td>
+<td><a href="https://buy.cloud.tencent.com/price/cos">가격 | Cloud Object Storage </a>
+</tr>
+<tr>
+<td>딥 아카이브 읽기/쓰기 요청 단가 인하</td>
+<td>COS의 공시가격이 조정되었습니다. 모든 리전의 퍼블릭 클라우드 가격이 0.07 USD/1만 개 요청으로 인하되었습니다.</td>
+<td> 2021-09-30</td>
+<td><a href="https://buy.cloud.tencent.com/price/cos">가격 | Cloud Object Storage </a>
+</tr>
+</tbody></table>
+
+
+## 2021년 08월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파일 미리보기/편집 기능 런칭</td>
+<td>버킷의 파일을 빠르게 미리 보고 콘솔에서 텍스트 파일을 편집할 수 있습니다.</td>
+<td> 2021-08-05</td>
+<td><a href="https://cloud.tencent.com/document/product/436/60350">객체 미리보기 또는 편집 </a>
+</tr>
+<tr>
+<td>폴더 공유 기능 런칭</td>
+<td>콘솔에서 폴더의 URL과 비밀번호를 생성하고 URL 유효기간을 설정할 수 있습니다. </td>
+<td> 2021-08-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/42387">폴더 공유 </a>
+</tr>
+<tr>
+<td>미디어 처리-비디오 향상 기능 런칭</td>
+<td>미디어 처리는 더 나은 시각 효과를 위해 비디오 이미지 품질을 향상시키기 위해 세부 사항 향상, 색상 향상 및 SDR to HDR 변환을 포함한 일련의 기능을 제공합니다.</td>
+<td> 2021-08-03</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">작업 구성 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+</tr>
+<tr>
+<td>미디어 처리-사용자 정의 기능 처리 기능 런칭</td>
+<td>미디어 처리의 기존 서비스 또는 기능이 사용자의 요구를 충족할 수 없는 경우 SCF의 사용자 정의 기능 처리 기능을 사용하여 개발 비용을 줄이면서 비즈니스 요구를 유연하게 구현하기 위해 핵심 코드 로직을 작성할 수 있습니다.</td>
+<td> 2021-08-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46407">사용자 정의 함수 처리 </a>
+</tr>
+<tr>
+<td>미디어 처리-비디오 암호화 기능 런칭</td>
+<td>동영상 데이터의 보안을 보장하기 위해 HLS 표준 암호화 기능이 추가되었습니다.</td>
+<td> 2021-08-03</td>
+<td><a href="https://cloud.tencent.com/document/product/436/59289">HLS 암호화로 영상 유출 방지 </a>
+</tr>
+</tbody></table>
+
+
+
+## 2021년 07월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>충칭 리전에 딥 아카이브 런칭</td>
+<td>충칭 리전의 딥 아카이브에 객체를 업로드할 수 있습니다.</td>
+<td> 2021-07-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">객체 업로드</a></td>
+</tr>
+</tbody></table>
+
+
+
+## 2021년 06월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>미디어 처리-TESHD 트랜스코딩 기능 런칭</td>
+<td>TESHD 트랜스 코딩은 동영상을 더 작고 선명하게 만듭니다. 낮은 네트워크 리소스 사용량을 보장하여 더 나은 시각적 경험을 제공합니다.</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">작업 구성 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+</tr>
+<tr>
+<td>미디어 처리-HDR to SDR 변환 기능 런칭</td>
+<td>HDR to SDR은 클라우드에서 동영상의 동적 범위를 변환합니다. 출력 비디오의 이미지 세부 정보를 원본 비디오의 이미지 세부 정보에 최대한 가깝게 만듭니다.</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">작업 구성 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+</tr>
+<tr>
+<td>미디어 처리-하이라이트 생성 기능 런칭</td>
+<td>이 기능은 비디오 콘텐츠, 자세 및 장면을 인식하고 집계하여 전문적으로 빠르게 클립합니다.</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">작업 구성 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+</tr>
+<tr>
+<td>미디어 처리-음성/사운드 분리 기능 런칭</td>
+<td>이 기능은 새로운 독립 오디오 파일을 생성하기 위해 비디오 자료의 배경 사운드에서 음성을 분리합니다. 그런 다음 재료에 다른 스타일의 예술적 처리를 적용할 수 있습니다.</td>
+<td> 2021-06-26</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46409">작업 구성 </a><li><a href="https://intl.cloud.tencent.com/document/product/436/46411">Template</a>
+</tr>
+<tr>
+<td>미디어 처리-HLS 어댑티브 압축 기능 런칭</td>
+<td>다양한 비디오 플레이어, 브라우저 및 배포 플랫폼에 대해 어댑티브 다중 비트 레이트 비디오 파일을 빠르게 생성할 수 있습니다.</td>
+<td> 2021-06-26</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46408">Configuring Workflow</a>
+</tr>
+</tbody></table>
+
+
+
+## 2021년 05월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>CDN 로그 백업 런칭</td>
 <td>CDN 로그 백업은 Tencent Cloud COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 CDN 로그 COS 저장 기능으로서, 사용자가 CDN 로그를 전환 및 저장하여 액세스 행동 분석, 서비스 품질 모니터링 등을 진행할 수 있도록 합니다. </td>
@@ -44,6 +290,12 @@
 </thead>
 <tbody>
 <tr>
+<td>도쿄 리전에 딥 아카이브 런칭</td>
+<td>도쿄 리전의 딥 아카이브에 객체를 업로드할 수 있습니다.</td>
+<td> 2021-04-29</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13321">객체 업로드</a></td>
+</tr>
+<tr>
 <td>로그 정제 런칭</td>
 <td>로그 정제는 COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 로그 파일 처리 솔루션입니다. 사용자가 로그 관리 서비스를 활성화하거나 자체적으로 로그 파일을 업로드하면, COS가 사용자를 위해 사전 구성한 SCF가 자동으로 트리거되어, 사용자가 함수에 사전 지정한 SQL 인덱스 명령어를 통해 파일 중의 로그 정보를 자동으로 필터링 및 정제합니다.</td>
 <td> 2021-04-02</td>
@@ -57,6 +309,33 @@
 </tr>
 </tbody></table>
 
+
+
+## 2021년 03월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>데이터 워크플로 기능 런칭</td>
+<td>데이터 워크플로는 COS에서 출시한 새로운 데이터 처리 서비스입니다. 오디오/비디오 트랜스 코딩, 비디오 프레임 캡처, 애니메이션 이미지로 비디오 변환, 지능형 썸네일 및 오디오/비디오 접합과 같은 신규 및 기존 데이터에 대한 미디어 처리를 수행할 수 있는 워크플로 및 작업의 두 가지 기능을 제공합니다.</td>
+<td>2021-03-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46387">Overview</a>
+</tr>
+<tr>
+<td>난징 리전에 딥 아카이브 런칭</td>
+<td>난징 리전의 딥 아카이브에 객체를 업로드할 수 있습니다.</td>
+<td> 2021-03-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38304">  딥 아카이브 소개</a>
+</tr>
+</tbody></table>
 
 
 ## 2021년 02월
@@ -76,7 +355,7 @@
 <td>CDB 백업 런칭</td>
 <td>CDB 백업은 Tencent Cloud COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 데이터베이스 백업 기능으로서, 사용자가 Tencent Cloud CDB 상의 백업 파일을 COS로 전환 및 전송하여 영속화 저장을 통해 데이터 손실 또는 손상을 방지할 수 있도록 하는 기능입니다. </td>
 <td>2021-02-02</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/41112">CDB 백업 설정</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/41112">MySQL 데이터 백업</a>
 </tr>
 </tbody></table>
 
@@ -96,8 +375,8 @@
 </thead>
 <tbody>
 <tr>
-<td>공유 클라우드 리전에서 모든 이미지 처리 기능 지원</td>
-<td>해외 공유 클라우드 리전에 이미지 처리 기능이 추가되었습니다. 현재 COS의 모든 공유 클라우드 리전에서 이미지 처리 기능을 지원합니다.</td>
+<td>퍼블릭 클라우드 리전에서 모든 이미지 처리 기능 지원</td>
+<td>해외 퍼블릭 클라우드 리전에 이미지 처리 기능이 추가되었습니다. 현재 COS 퍼블릭 클라우드 리전에서 이미지 처리 기능을 지원합니다.</td>
 <td> 2021-01-20</td>
 <td><ul  style="margin: 0;">
 <li><a href="https://intl.cloud.tencent.com/document/product/436/35280">이미지 처리 개요</a></li>
@@ -133,7 +412,7 @@
 <td>COS 일괄 처리 기능 최적화 업데이트</td>
 <td>1. 일괄 복사 시 객체의 태그 및 메타데이터를 사용자 정의 복사, 추가, 수정할 수 있습니다.<br>2. 백그라운드 처리 로직을 최적화하여 파일 양에 따라 리소스를 동적으로 할당해 처리 효율이 50% 향상되었습니다.</td>
 <td> 2020-12-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 처리 개요</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 프로세스 개요</a>
 </tr>
 </tbody></table>
 
@@ -150,22 +429,42 @@
 </thead>
 <tbody>
 <tr>
-<td>COSDistcp 툴 배포 </td>
-<td>COSDistcp는 MapReduce를 기반으로 하는 분산형 파일 복사 툴로, 주로 HDFS와 COS 간의 데이터 복사에 사용합니다.</td>
+<td>COSDistCp 툴 배포 </td>
+<td>COSDistCp는 MapReduce를 기반으로 하는 분산형 파일 복사 툴로, 주로 HDFS와 COS 간의 데이터 복사에 사용합니다.</td>
 <td> 2020-11-27</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38863">COSDistcp 툴</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38863">COSDistCp 툴</a>
 </tr>
 <tr>
-<td>Cloud Storage Gateway(CSG) 기능 런칭</td>
-<td>CSG는 Tencent Cloud가 제공하는 하이브리드 클라우드 서비스입니다. 버킷에 CSG를 설정하면 COS의 버킷이 네트워크 폴더 형식으로 사용자의 모든 CVM 서버에 마운트되어 스토리지 디바이스로 사용할 수 있습니다.</td>
-<td> 2020-11-21</td>
-<td>-
-</tr>
-<tr>
-<td>INTELLIGENT TIERING 런칭</td>
-<td>INTELLIGENT TIERING 스토리지 유형은 데이터에 핫/콜드 티어링 메커니즘을 제공합니다. 사용자의 데이터 액세스 모드에 따라 자동으로 데이터의 핫/콜드 유형을 티어링하여 데이터 스토리지 비용을 절감할 수 있습니다.</td>
+<td>인텔리전트 티어링 런칭</td>
+<td>인텔리전트 티어링 스토리지 유형은 데이터에 핫/콜드 티어링 메커니즘을 제공합니다. 사용자의 데이터 액세스 모드에 따라 자동으로 데이터의 핫/콜드 유형을 티어링하여 데이터 스토리지 비용을 절감할 수 있습니다.</td>
 <td> 2020-11-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38305">INTELLIGENT TIERING 소개</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38305">인텔리전트 티어링 스토리지 소개</a>
+</tr>
+</tbody></table>
+
+## 2020년 10월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이미지 고급 압축 기능 런칭</td>
+<td>이미지 고급 압축 기능은 이미지를 TPG 또는 HEIF 등 압축 비율이 높은 포맷으로 효율적으로 전환할 수 있어 이미지 전송 링크 및 로딩 시 소모되는 시간을 효과적으로 단축하고 대역폭 및 트래픽 비용을 절감할 수 있습니다.</td>
+<td> 2020-10-16</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40117">이미지 고급 압축 설정</a></td>
+</tr>
+<tr>
+<td>미디어 처리 기능 런칭</td>
+<td>미디어 처리 기능은 버킷의 비디오 파일에 대해 파일 트랜스 코딩, 비디오 프레임 캡처, 애니메이션 이미지로 비디오 변환, 지능형 썸네일의 네 가지 처리 작업을 수행할 수 있습니다.</td>
+<td> 2020-10-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46275"> 미디어 처리 활성화</a></td>
 </tr>
 </tbody></table>
 
@@ -189,10 +488,10 @@
 <br><a href="https://intl.cloud.tencent.com/document/product/436/38493">버킷 개요</a></td>
 </tr>
 <tr>
-<td>DEEP ARCHIVE 런칭</td>
-<td>DEEP ARCHIVE는 객체 스토리지 COS에서 제공하는 대량의 데이터를 장기 보관하는 스토리지 서비스입니다. DEEP ARCHIVE는 자기 테이프 스토리지 수준의 스토리지 단가로 소비자에게 데이터 장기 보관 저비용 솔루션을 제공합니다.</td>
+<td>딥 아카이브 런칭</td>
+<td>딥 아카이브는 객체 스토리지 COS에서 제공하는 대량의 데이터를 장기 보관하는 스토리지 서비스입니다. 딥 아카이브는 자기 테이프 스토리지 수준의 스토리지 단가로 소비자에게 데이터 장기 보관 저비용 솔루션을 제공합니다.</td>
 <td> 2020-09-16</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/38304">DEEP ARCHIVE 소개</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38304">딥 아카이브 소개</a></td>
 </tr>
 </tbody></table>
 
@@ -210,14 +509,13 @@
 <tbody>
 <tr>
 <td>Origin-pull 기능 및 라이프사이클 기능 반복</td>
-<td>1. Origin-pull 규칙 트리거 후 리디렉션되는 경로를 설정하고, 여러 Origin-pull 규칙을 설정할 수 있습니다.<br>2. 라이프사이클 규칙 응용 범위에 객체 태그를 지정할 수 있습니다.</td>
+<td>1. origin-pull 규칙이 트리거된 후 리디렉션할 특정 경로를 설정하고, 여러 origin-pull 규칙을 구성하고, 우선순위를 수정할 수 있습니다. <br>2. 지정된 객체 태그에 라이프사이클 규칙을 적용할 수 있습니다.</td>
 <td> 2020-08-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">Origin-pull 설정</a>
-<br><a href="https://intl.cloud.tencent.com/document/product/436/14605">라이프사이클 설정</a></td>
+<td><ul  style="margin: 0;">
+<li><a href="https://intl.cloud.tencent.com/document/product/436/31508">Origin-Pull 설정</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/436/14605">라이프사이클 설정</a></li></ul></td>
 </tr>
 </tbody></table>
-
-
 
 ## 2020년 07월
 
@@ -259,7 +557,7 @@
 <br>4. 버킷 리스트에 정렬, 리전 필터링, 리스트 내보내기 지원</td>
 <td >2020-03-30</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/35665">객체 태그 개요</a>
-<br><a href="https://intl.cloud.tencent.com/document/product/436/35663">파일 압축 해제</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/436/35663">파일 압축 해제 설정</a>
 <br><a href="https://intl.cloud.tencent.com/document/product/436/16871">과금 개요</a>
 </td>
 </tr>
@@ -322,7 +620,7 @@
 <td>일괄 처리 기능 런칭</td>
 <td>일괄 처리 기능으로 버킷 내 지정 객체 리스트에 지정 작업을 진행할 수 있습니다.</td>
 <td nowrap="nowrap">2019-10-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 처리 개요</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 프로세스 개요</a></td>
 </tr>
 <tr>
 <td>인덱스 기능 런칭</td>
@@ -422,9 +720,9 @@
 </thead>
 <tbody><tr>
 <td>아카이브 다이렉트 업로드 기능 런칭</td>
-<td>COS에서 스토리지 유형이 CAS인 객체를 다이렉트 업로드합니다.</td>
+<td>COS에서 스토리지 유형이 아카이브인 객체를 다이렉트 업로드합니다.</td>
 <td nowrap="nowrap">2019-04-26</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/30933">아카이브 다이렉트 업로드</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/30933">다이렉트 업로드 아카이브</a></td>
 </tr>
 </tbody></table>
 
@@ -574,7 +872,7 @@ COS에서 CDN을 통한 액세스 기능을 지원합니다. 공유 버킷을 �
 </tr>
 <tr>
 <td>미국 실리콘밸리, 버지니아(애쉬번), 한국 서울, 인도 뭄바이 리전 런칭</td>
- <td>COS에 미국 실리콘밸리(na-siliconvalley), 버지니아(애쉬번 na-ashburn), 한국 서울(ap-seoul), 인도 뭄바이(ap-mumbai) 리전을 포함한 전 세계 여러 신규 리전이 런칭되었습니다.</td>
+<td>COS에 미국 실리콘밸리(na-siliconvalley), 버지니아(애쉬번 na-ashburn), 한국 서울(ap-seoul), 인도 뭄바이(ap-mumbai) 리전을 포함한 전 세계 여러 신규 리전이 런칭되었습니다.</td>
 <td nowrap="nowrap">2018-04</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6224">리전 및 액세스 도메인</a></td>
 </tr>

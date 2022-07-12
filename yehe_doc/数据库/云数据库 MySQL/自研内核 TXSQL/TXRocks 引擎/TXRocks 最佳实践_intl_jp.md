@@ -31,10 +31,10 @@ SET session rocksdb_bulk_load_allow_unsorted=0;
 ## 処理方法2
 データのインポート中にunique_checkをオフにすると、インポートにおけるパフォーマンスが向上します。
 ```
-set global unique_checks=OFF;
+SET unique_checks=OFF;
 ...
 データのインポート
 ...
-set global unique_checks=ON;
+SET unique_checks=ON;
 ```
 >!処理が完了したら、unique_checksを必ずONに戻してください。そうしないと、その後の通常のトランザクションによって書き込まれるinsert操作は一意性をチェックしません。

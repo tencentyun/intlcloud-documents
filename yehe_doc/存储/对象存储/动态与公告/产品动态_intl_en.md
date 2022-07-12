@@ -4,7 +4,7 @@
 
 | Update | Description | Release Date | Documentation |
 | :--------------- | :----------------------------------------------------------- | :--------- | :----------------------------------------------------------- |
-| Reduced the STANDARD_IA storage capacity unit price | COS' published prices of STANDARD_IA storage capacity are reduced from 0.018 USD/GB/month to 0.015 USD/GB/month in Mumbai, Seoul, Bangkok, Silicon Valley, Moscow, Jakarta, and Sao Paulo regions. | 2022-07-01 | [Pricing](https://buy.intl.cloud.tencent.com/price/cos) |
+| Reduced the STANDARD_IA storage capacity unit price | COS' published prices of STANDARD_IA storage capacity are reduced from 0.018 USD/GB/month to 0.015 USD/GB/month in Mumbai, Seoul, Bangkok, Silicon Valley, Moscow, Jakarta, and São Paulo regions. | 2022-07-01 | [Pricing(Cloud Object Storage)](https://buy.intl.cloud.tencent.com/price/cos) |
 
 
 
@@ -103,7 +103,7 @@
 <td>Launched the media processing - audio/video segmentation feature</td>
 <td>The audio/video segmentation feature can divide an audio or video into several segments of the specified duration. It allows you to change the container format of the audio or video segments during segmentation.</td>
 <td> 2021-10-14</td>
-<td>Audio/Video Segmentation 
+<td><a href="https://cloud.tencent.com/document/product/460/62692">Audio/Video Segmentation </a>
 </tr>
 </tbody></table>
 
@@ -152,7 +152,7 @@
 <td>Launched the file preview/edit features</td>
 <td>You can quickly preview files in buckets and edit text files in the console.</td>
 <td> 2021-08-05</td>
-<td>Previewing or Editing Object
+<td><a href="https://cloud.tencent.com/document/product/436/60350">Previewing or Editing Object</a>
 </tr>
 <tr>
 <td>Launched the folder sharing feature</td>
@@ -176,7 +176,7 @@
 <td>Launched the media processing - video encryption feature</td>
 <td>The HLS standard encryption capability is added to ensure the security of your video data.</td>
 <td> 2021-08-03</td>
-<td>Preventing Video Leakage with HLS Encryption
+<td><a href="https://cloud.tencent.com/document/product/436/59289">Preventing Video Leakage with HLS Encryption</a>
 </tr>
 </tbody></table>
 
@@ -458,7 +458,6 @@
 <td>Launched the image advanced compression feature</td>
 <td>The image advanced compression feature allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.</td>
 <td> 2020-10-16</td>
-<td><ul  style="margin: 0;">
 <td><a href="https://intl.cloud.tencent.com/document/product/436/40117">Setting Image Advanced Compression</a></td>
 </tr>
 <tr>

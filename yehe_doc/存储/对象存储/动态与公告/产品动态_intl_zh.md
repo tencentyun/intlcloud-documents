@@ -458,7 +458,6 @@
 <td>上线图片高级压缩</td>
 <td>图片高级压缩功能，可以更加高效地将图片转换为 TPG 或 HEIF 等高压缩比格式，有效降低图片传输链路及加载耗时，降低带宽及流量成本。</td>
 <td> 2020-10-16</td>
-<td><ul  style="margin: 0;">
 <td><a href="https://intl.cloud.tencent.com/document/product/436/40117">设置图片高级压缩</a></td>
 </tr>
 <tr>

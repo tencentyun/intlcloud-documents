@@ -10,7 +10,7 @@ You have logged in to the [CLS console](https://console.cloud.tencent.com/cls).
 
 ## Directions
 
-### Creating log topic
+### Creating a log topic
 
 1. Click **Log Topic** on the left sidebar.
 2. On the log topic management page, select a region and click **Create Log Topic**.
@@ -18,12 +18,12 @@ You have logged in to the [CLS console](https://console.cloud.tencent.com/cls).
 
    - Log Topic Name: For example, enter `nginx`.
    - Storage Class: STANDARD by default. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/614/42003).
-   - Log Retention Period: 30 days by default. You can specify a log storage period, after which logs will be automatically cleared. If LogListener is used, and a time field in the log content instead of the collection time is used as the logging time, the time specified by the time field will be used to determine whether a log expires.
+   - Log Retention Period: 30 days by default. You can specify a log storage period, after which logs are automatically cleared. If LogListener is used, and a time field in the log content instead of the collection time is used as the logging time, the time specified by the time field will be used to determine whether a log expires.
    - Logset Operation:
-      - Select an existing logset: Select the target logset from the **Logset** drop-down list.
+      - Select an existing logset: Select a target logset from the **Logset** drop-down list.
       - Create logset:
        Logset Name: For example, enter `cls_test`.
-   - Log Topic Tag: Set a tag for the current log topic to be created, so that resources can be managed by category in different dimensions.
+   - Log Topic Tag: Set a tag for the current log topic to be created so that resources can be managed by category from different dimensions.
    - Advanced Settings:
       - Partitions: Enter a positive integer. It defaults to 1. For more information, see [Topic Partition](https://intl.cloud.tencent.com/document/product/614/33779).
       - Partition Auto-Split: Enabled by default.
@@ -33,7 +33,7 @@ You have logged in to the [CLS console](https://console.cloud.tencent.com/cls).
 After the log topic is created, you can click its ID/name on the **Log Topic** page to view its details.
 
 >?
->- We recommend you select the same region as CVM or any other Tencent Cloud service from which logs are collected.
+>- We recommend you select the same region as CVM or any other Tencent Cloud service from which you collect logs.
 >- After the log topic is created, its region and logset cannot be modified.
 >- Logs can be retained for 1 to 3600 days or permanently.
 >
@@ -48,11 +48,13 @@ After the log topic is created, you can click its ID/name on the **Log Topic** p
 4. Click **OK**.
 
 
-### Deleting log topic
+### Deleting a log topic
 
 1. Click **Log Topic** on the left sidebar.
-2. On the log topic management page, find the target log topic ID/name and click **Delete**.
+2 On the log topic management page, find the target log topic ID/name, and click **Delete**.
 
+>? You can switch to different regions in the top-left corner of the page to delete log topics accordingly. To delete all log topics, we recommend you use an account with permissions of all resources; otherwise, some log topics may not be deleted as you don't have permissions to view them.
+>
 3. In the pop-up window, click **OK**.
 >! Once a log topic is deleted, you cannot recover its topic configuration and log data.
 >
