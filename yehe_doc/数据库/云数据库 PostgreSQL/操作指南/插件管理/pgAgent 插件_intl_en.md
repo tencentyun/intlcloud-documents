@@ -1,4 +1,4 @@
-This document describes how to implement automatic job execution in TencentDB for PostgreSQL through the pgAgent feature.
+This document describes how to implement automatic job execution in TencentDB for PostgreSQL through the pgAgent feature. We recommend you use the pg_cron extension to schedule jobs.
 
 ## Overview
 If your business needs to perform specified actions in the database at scheduled times, such as clearing redundant data, updating materialized views, performing `VACUUM FULL`, and executing DML, PostgreSQL can help implement with the following features:
@@ -6,7 +6,7 @@ If your business needs to perform specified actions in the database at scheduled
 - The pgAgent feature of pgAdmin
 
 pgAgent is an extension in the pgAdmin tool imported in pgAdmin III v1.4. It is mainly used as a PostgreSQL job scheduling agent and capable of running multi-step batch or shell scripts and SQL jobs on complex schedules. 
-It should be noted that pgAgent requires the support of certain database tables and objects, so you need to install it first.
+It should be noted that pgAgent requires the support of certain databases, tables, and other objects, so you need to install it first.
 
 
 ## Directions
