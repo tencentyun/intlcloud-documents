@@ -3,17 +3,17 @@
 本文汇总了负载均衡相关常见问题，介绍与 Service/Ingress CLB 相关的各种常见问题的出现原因及解决办法。
 
 本文档需要您：
-- 熟悉 K8s 的 [基本概念](https://kubernetes.io/zh/docs/concepts/)。例如 Pod、工作负载/Workload、Service、Ingress 等。
+- 熟悉 K8S 的 [基本概念](https://kubernetes.io/zh/docs/concepts/)。例如 Pod、工作负载/Workload、Service、Ingress 等。
 - 熟悉 [腾讯云控制台](https://console.cloud.tencent.com/tke2/ecluster?rid=1) 容器服务之弹性集群的常规操作。
-- 熟悉通过 kubectl 命令行工具操作 K8s 集群中的资源。
+- 熟悉通过 kubectl 命令行工具操作 K8S 集群中的资源。
 
 
+<dx-alert infotype="notice" title=" ">
+您可通过多种方式操作 K8S 集群中的资源，本文档向您介绍如何通过腾讯云控制台进行操作，及如何通过 kubectl 命令行工具进行操作。
+</dx-alert>
 
->!您可通过多种方式操作 K8s 集群中的资源，本文档向您介绍如何通过腾讯云控制台进行操作，及如何通过 kubectl 命令行工具进行操作。
 
-
-[](id:Ingress)
-### EKS 会为哪些 Ingress 创建 CLB 实例？
+### EKS 会为哪些 Ingress 创建 CLB 实例？[](id:Ingress)
 EKS 会为满足如下条件的 Ingress 创建 CLB 实例：
 
 <table>
@@ -45,45 +45,44 @@ kubernetes.io/ingress.qcloud-loadbalance-id: CLB 实例 ID
 ```
 
 如需查看 EKS 为 Ingress 创建的 CLB 实例，具体步骤如下：
-1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster?rid=1)】。
+1. 登录容器服务控制台 ，选择左侧导航栏中的 **[弹性集群](https://console.cloud.tencent.com/tke2/ecluster?rid=1)**。
 2. 在“弹性集群”页面，选择集群 ID 进入集群管理页面。
-3. 在集群管理页面，选择左侧【服务与路由】>【Ingress】。
+3. 在集群管理页面，选择左侧**服务与路由** > **Ingress**。
 4. 在 “Ingress” 页面，查看 CLB 实例 ID 及其 VIP。如下图所示：
 ![](https://main.qcloudimg.com/raw/df7c11ad5612690543b6b54a151a3c68.png)
 
-[](id:Service)
-### EKS 会为哪些 Service 创建 CLB 实例？
+### EKS 会为哪些 Service 创建 CLB 实例？[](id:Service)
 EKS 会为满足如下条件的 Service 创建 CLB 实例：
 
 
 <table>
 <thead>
 <tr>
-<th>K8s 版本</th>
+<th>K8S 版本</th>
 <th>对 Service 资源的要求</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>所有 EKS 支持的 K8s 版本</td>
+<td>所有 EKS 支持的 K8S 版本</td>
 <td>spec.type 为 LoadBalancer</td>
 </tr>
 <tr>
-<td>魔改版 K8s（kubectl version 返回的 Server GitVersion 带有 "eks.*" 或 "tke.*" 后缀）</td>
+<td>魔改版 K8S（kubectl version 返回的 Server GitVersion 带有 "eks.*" 或 "tke.*" 后缀）</td>
 <td>spec.type 为 ClusterIP，并且 spec.clusterIP 的值<strong>不是</strong>None（即非 Headless 的 ClusterIP 类型的 Service）</td>
 </tr>
 <tr>
-<td>非魔改版 K8s（kubectl version 返回的 Server GitVersion 不带 "eks.*" 或 "tke.*" 后缀）</td>
+<td>非魔改版 K8S（kubectl version 返回的 Server GitVersion 不带 "eks.*" 或 "tke.*" 后缀）</td>
 <td>spec.type 为 ClusterIP，并且明确指定 spec.clusterIP 为空字符串（""）</td>
 </tr>
 </tbody></table>
 
 
-
->!如果成功创建 CLB 实例，EKS 会将如下键值对写入 Service annotations 中：
->```plaintext
->service.kubernetes.io/loadbalance-id: CLB 实例 ID
->```
-
+<dx-alert infotype="notice" title=" ">
+如果成功创建 CLB 实例，EKS 会将如下键值对写入 Service annotations 中：
+```plaintext
+service.kubernetes.io/loadbalance-id: CLB 实例 ID
+```
+</dx-alert>
 
 
 
@@ -93,9 +92,9 @@ EKS 会为满足如下条件的 Service 创建 CLB 实例：
 kubernetes.io/ingress.qcloud-loadbalance-id: CLB 实例 ID
 ```
 如需查看 EKS 为 Service 创建的 CLB 实例，具体步骤如下：
-1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster?rid=1)】。
+1. 登录容器服务控制台 ，选择左侧导航栏中的 **[弹性集群](https://console.cloud.tencent.com/tke2/ecluster?rid=1)**。
 2. 在“弹性集群”页面，选择集群 ID 进入集群管理页面。
-3. 在集群管理页面，选择左侧【服务与路由】>【Service】。
+3. 在集群管理页面，选择左侧**服务与路由** > **Service**。
 4. 在 “Service” 页面，查看 CLB 实例 ID 及其 VIP。如下图所示：
 ![](https://main.qcloudimg.com/raw/d7f3465e7e11921768390504661b9c74.png)
 
@@ -106,22 +105,23 @@ service.kubernetes.io/qcloud-clusterip-loadbalancer-subnetid: Service CIDR 子�
 ```
 Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符串。您可在 CLB 基本信息页面中查看该子网 ID 信息。
 
-
->!只有使用魔改版 K8s（kubectl version 返回的 Server GitVersion带有 "eks.*" 或 "tke.*" 后缀）的 EKS 集群才支持该特性。对于早期创建的、使用非魔改版 K8s（kubectl version 返回的 Server GitVersion 不带 "eks.*" 或 "tke.*" 后缀）的 EKS 集群，您需要升级 K8s 版本后使用该特性。
-
+<dx-alert infotype="notice" title=" ">
+只有使用魔改版 K8S（kubectl version 返回的 Server GitVersion带有 "eks.*" 或 "tke.*" 后缀）的 EKS 集群才支持该特性。对于早期创建的、使用非魔改版 K8S（kubectl version 返回的 Server GitVersion 不带 "eks.*" 或 "tke.*" 后缀）的 EKS 集群，您需要升级 K8S 版本后使用该特性。
+</dx-alert>
 
 
 
 ### 如何指定 CLB 实例类型（公网或内网）？
-您可以通过容器服务控制台或通过 kubectl 命令行工具指定 CLB 实例类型：
-#### 通过容器服务控制台操作
+您可以通过容器服务控制台 或通过 kubectl 命令行工具指定 CLB 实例类型：
+<dx-tabs>
+::: 通过容器服务控制台 操作
 - 对于 Ingress，通过“网络类型”选择“公网”或“内网”：
 ![](https://main.qcloudimg.com/raw/70c560014a3c6219d57f2f4d8681263d.png)
 
 - 对于 Service，通过“服务访问方式”控制，其中“VPC内网访问”对应内网 CLB 实例：
 ![](https://main.qcloudimg.com/raw/cdd3ff57d349ed587a86c645233e807f.png)
-
-#### 通过kubectl命令行工具操作
+:::
+::: 通过\skubectl\s命令行工具操作
 - 默认创建的 CLB 实例是“公网”类型。
 - 如需创建“内网”类型的 CLB 实例，则需为 Service 或 Ingress 加上相应的 annotation：
 
@@ -130,19 +130,22 @@ Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符�
 | Service | service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: 子网 ID |
 | Ingress | kubernetes.io/ingress.subnetId: 子网 ID |
 
+<dx-alert infotype="notice" title=" ">
+子网 ID是形如 subnet-******** 的字符串，并且该子网必须在创建集群时为 “集群网络”指定的 VPC 中，该 VPC 信息可在腾讯云控制台集群 “基本信息” 中查询到。
+</dx-alert>
 
->!子网 ID是形如 subnet-******** 的字符串，并且该子网必须在创建集群时为 “集群网络”指定的 VPC 中，该 VPC 信息可在腾讯云控制台集群 “基本信息” 中查询到。
-
-
-
+:::
+</dx-tabs>
 
 
 
 ### 如何指定使用已有 CLB 实例？
-您可以通过容器服务控制台或通过 kubectl 命令行工具指定使用已有 CLB 实例：
-####  通过容器服务控制台操作
+您可以通过容器服务控制台 或通过 kubectl 命令行工具指定使用已有 CLB 实例：
+<dx-tabs>
+::: 通过容器服务控制台 操作
 在创建 Service 或 Ingress 时，可以选择“使用已有” CLB 实例。对于 Service，还可以在 Service 创建之后，通过“更新访问方式”切换成“使用已有” CLB 实例。
-#### 通过kubectl命令行工具操作
+:::
+::: 通过\skubectl\s命令行工具操作
 在创建 Service/Ingress 或变更 Service 时，为 Service 或 Ingress 加上相应的 annotation 即可：
 
 | 资源类型 | 需要在 annotations 中添加的键值对 |
@@ -151,15 +154,20 @@ Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符�
 | Ingress | kubernetes.io/ingress.existLbId: CLB 实例 ID |
 
 
+<dx-alert infotype="notice" title=" ">
+“已有 CLB 实例” 不能是 “EKS 为 Service 或 Ingress 创建的 CLB 实例”，并且 EKS 不支持多个 Service/Ingress 共用同一个已有 CLB 实例。
+</dx-alert>
 
->!“已有 CLB 实例” 不能是 “EKS 为 Service 或 Ingress 创建的 CLB 实例”，并且 EKS 不支持多个 Service/Ingress 共用同一个已有 CLB 实例。
+:::
+</dx-tabs>
+
 
 
 ### 如何查看 CLB 实例的访问日志？
 仅7层 CLB 实例支持配置访问日志，但 EKS 为 Ingress 创建的7层 CLB 实例默认不开启访问日志。如需开启 CLB 实例的访问日志，可在 CLB 实例的详情页面进行操作。具体步骤如下：
-1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster?rid=1)】。
+1. 登录容器服务控制台 ，选择左侧导航栏中的 **[弹性集群](https://console.cloud.tencent.com/tke2/ecluster?rid=1)**。
 2. 在“弹性集群”页面，选择集群 ID 进入集群管理页面。
-3. 在集群管理页面，选择左侧【服务与路由】>【Ingress】。
+3. 在集群管理页面，选择左侧**服务与路由** > **Ingress**。
 4. 在 “Ingress” 页面，选择 CLB 实例 ID 进入 CLB 基本信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/32a6e8e6eb32fb57ef30397cc538b779.png)
 5. 在 CLB 基本信息页面的“访问日志（七层）”中，单击 <img src="https://main.qcloudimg.com/raw/e941fb45439168529b4dad02337b4823.png" style="margin:-3px 0px"/>，在弹出窗口中进行开启。如下图所示：
@@ -172,37 +180,45 @@ Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符�
 ![](https://main.qcloudimg.com/raw/1b8a8815c0478a3acf6735f991bf7f8f.png)
 
 
+
+
+### 如何在多个 Service 中使用相同的负载均衡？
+弹性容器服务 EKS 集群默认多个 Service 不可共用同一个 CLB 实例。如果您希望 Service 复用其他 Service 占用的 CLB，请添加此 annotation 并将 value 填写为 "true"。`service.kubernetes.io/qcloud-share-existed-lb: true`，关于此 annotation 的详细说明请参见 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
+
+
+
+
 ### 为什么访问 CLB VIP 时失败？
 请您按照以下步骤进行分析：
 
 #### 查看 CLB 实例类型
  1. 在 “Service” 或 “Ingress” 页面，选择 CLB 实例 ID 进入 CLB 基本信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/8d8d309a9906d6685cf292899d5501b1.png)   
- 2. 您可在 CLB 基本信息页面中查看上述 CLB 实例的“实例类型”。      
+ 2. 您可在 CLB 基本信息页面中查看上述 CLB 实例的“实例类型”。       
 
 #### 确认访问 CLB VIP 的环境是否正常
  - 若 CLB 实例“实例类型”为内网，则其 VIP 只能在所属的 VPC 内访问。
  由于 EKS 集群中 Pods 的 IP 是 VPC 内的弹性网卡的 IP，所以可以在 Pods 中访问集群内任何 Service 或 Ingress 的 CLB 实例的 VIP。
->!通常 LoadBalancer 系统都存在回环问题（例如 [【Azure】Load Balancer 问题排查指南](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-3-accessing-the-load-balancer-from-the-same-vm-and-network-interface )），请勿在工作负载所属的 Pods 中通过该工作负载（经 Service 或 Ingress ）对外暴露的 VIP 访问该工作负载提供的服务。即 Pods 不要通过 VIP（包含“内网类型”及“外网类型”）访问 Pods 自己提供的服务。否则可能导致延迟增加，或者（在 VIP 对应的规则下只有一个 RS/Pod 时）访问不通。
+>!通常 LoadBalancer 系统都存在回环问题（例如 [**Azure**Load Balancer 问题排查指南](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-3-accessing-the-load-balancer-from-the-same-vm-and-network-interface )），请勿在工作负载所属的 Pods 中通过该工作负载（经 Service 或 Ingress ）对外暴露的 VIP 访问该工作负载提供的服务。即 Pods 不要通过 VIP（包含“内网类型”及“外网类型”）访问 Pods 自己提供的服务。否则可能导致延迟增加，或者（在 VIP 对应的规则下只有一个 RS/Pod 时）访问不通。
  - 若 CLB 实例“实例类型”为公网，则其 VIP 可以在有公网访问能力的环境中访问。
 若要在集群内访问公网 VIP，请确保已经通过配置 NAT 网关或其他方式为集群开启了公网访问能力。
 
 #### 查看 CLB 下的 RS 包括（且仅包括）预期的 Pods 的 IP + 端口
-您可在 CLB 管理页面中，选择【监听器管理】页面，查看（7层协议）转发规则、（4层协议）绑定的后端服务。其中的 IP 地址预期即为各个 Pod 的 IP。EKS 为某个 Ingress 创建的 CLB 示例图如下：
+您可在 CLB 管理页面中，选择**监听器管理**页面，查看（7层协议）转发规则、（4层协议）绑定的后端服务。其中的 IP 地址预期即为各个 Pod 的 IP。EKS 为某个 Ingress 创建的 CLB 示例图如下：
 ![](https://main.qcloudimg.com/raw/ca445b6b0705aecf48c247d5136c67b1.png)
         
 
 #### 确认对应的 Endpoints 是否正常
-如果已正确地为工作负载（Workload）设置了标签（Labels），并且正确地为 Service 资源设置了选择算符（Selectors），则在工作负载的 Pods 成功运行之后，即可通过 `kubectl get endpoints` 命令查看 Pods 被 K8s 列入到 Service 对应的 Endpoints 的就绪地址列表中。示例图如下：
+如果已正确地为工作负载（Workload）设置了标签（Labels），并且正确地为 Service 资源设置了选择算符（Selectors），则在工作负载的 Pods 成功运行之后，即可通过 `kubectl get endpoints` 命令查看 Pods 被 K8S 列入到 Service 对应的 Endpoints 的就绪地址列表中。示例图如下：
 ![](https://main.qcloudimg.com/raw/a9c2f30d7fe877a86c2c4c4698149719.png)
-而已创建、但状态异常的 Pods 会被 K8s 列入到 Service 对应的 Endpoints 的未就绪地址列表中。示例图如下：
+而已创建、但状态异常的 Pods 会被 K8S 列入到 Service 对应的 Endpoints 的未就绪地址列表中。示例图如下：
 ![](https://main.qcloudimg.com/raw/e05d38fb229a83add115abfcb2a9529f.png)
-
->!对于异常的 Pods，可通过 `kubectl describe` 命令查看异常的原因。示例命令如下：
->```plaintext
->kubectl describe pod nginx-7c7c647ff7-4b8n5 -n demo
->```
-
+<dx-alert infotype="notice" title=" ">
+对于异常的 Pods，可通过 `kubectl describe` 命令查看异常的原因。示例命令如下：
+```plaintext
+kubectl describe pod nginx-7c7c647ff7-4b8n5 -n demo
+```
+</dx-alert>
 
 #### 确认 Pods 是否能够正常提供服务
 即使 Running 状态的 Pods 也可能无法正常对外提供服务。例如，未监听指定的协议+端口、Pods 内部逻辑错误、处理过程阻塞等。您可通过 `kubectl exec` 命令登录至 Pod 内，并使用 `telnet/wget/curl` 命令或自定义的客户端工具直接访问 Pod IP+端口。若 Pod 内直接访问失败，则需要进一步分析导致 Pod 无法正常提供服务的原因。
@@ -211,21 +227,23 @@ Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符�
 安全组控制 Pods 的网络访问策略，如同 Linux 服务器中的 IPTables 规则。请结合实际情况进行查看：
 
 
-#### 通过容器服务控制台创建工作负载
+<dx-tabs>
+::: 通过容器服务控制台 创建工作负载
 交互流程会强制要求指定一个安全组，EKS 将使用该安全组控制 Pods 的网络访问策略。用户选择的安全组会被存储在工作负载的 `spec.template.metadata.annotations`，最终添加到 Pods 的 annotations 中。示例如下：
 ![](https://main.qcloudimg.com/raw/6cda3f21be34e514927c10b840b0acaa.png)
-
-#### 使用kubectl命令创建工作负载
+:::
+::: 使用\skubectl\s命令创建工作负载
 若您通过 kubectl 命令创建工作负载，且没有（通过 annotations）为 Pods 指定安全组，则 EKS 会使用账号下的同地域的默认项目的 default 安全组。查看步骤如下：
- 1. 登录私有网络控制台，选择左侧导航栏中的【[安全组](https://console.cloud.tencent.com/vpc/securitygroup?rid=5&rid=5)】。
+ 1. 登录私有网络控制台，选择左侧导航栏中的 **[安全组](https://console.cloud.tencent.com/vpc/securitygroup?rid=5&rid=5)**。
  2. 在“安全组”页面上方，选择同地域的默认项目。
- 3. 可在列表中查看 default 安全组，可单击【修改规则】查看详情。如下图所示：
+ 3. 可在列表中查看 default 安全组，可单击**修改规则**查看详情。如下图所示：
 ![](https://main.qcloudimg.com/raw/a443c60e8dba406138ac2acacf7b6bf9.png)
-
+:::
+</dx-tabs>
 
 
 
 
 #### 联系我们
-若至此仍未找到问题原因，您可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系 TKE 团队解决问题。
+若至此仍未找到问题原因，您可通过[提交工单](https://console.intl.cloud.tencent.com/workorder/category) 联系 TKE 团队解决问题。
 
