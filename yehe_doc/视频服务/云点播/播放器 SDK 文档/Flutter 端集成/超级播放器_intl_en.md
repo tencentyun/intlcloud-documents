@@ -1,35 +1,51 @@
 Tencent Cloud RT-Cube Superplayer for Flutter is an open-source Tencent Cloud player component. It can provide powerful playback functionality similar to Tencent Video with just a few lines of code. It has basic features such as landscape/portrait orientation switching, definition selection, gestures, and small window playback, as well as special features such as video buffering, software/hardware decoding switching, and adjustable-speed playback. It supports more formats and has better compatibility and functionality than system-default players. In addition, it supports live stream (FLV + RTMP) playback, features instant broadcasting of the first frame and low latency, and offers advanced capabilities, including seamless definition switch and live time shifting.
-
 This player is based on a Flutter plugin of SuperPlayer and supports both Android and iOS. It is open-source and free of charge and does not restrict the source of playback addresses, so you can use it as desired.
 
 ## SDK Download
 
-The Tencent Cloud RT-Cube Superplayer SDK for Flutter can be downloaded [here](https://github.com/LiteAVSDK/Player_Flutter). 
+You can download the Tencent Cloud RT-Cube Superplayer SDK for Flutter [here](https://github.com/LiteAVSDK/Player_Flutter/tree/main/Flutter).
 
-## Target Audience
+## Project Overview
 
-This document describes Tencent Cloud's proprietary capabilities. Make sure that you have activated the relevant [Tencent Cloud](https://intl.cloud.tencent.com) services before reading it. If you haven't registered an account, [sign up for free trial](https://intl.cloud.tencent.com/login) first.
+The RT-Cube Player SDK is a subproduct SDK of RT-Cube, which provides excellent VOD and live players based on Tencent Cloud's powerful backend capabilities and AI technologies. It can be used with VOD or CSS to quickly implement smooth and stable playback for various use cases. It allows you to focus on your business while delivering an ultra fast HD playback experience.
 
-## Integration Guide[](id:Guide)
+This project provides the VOD and live player SDKs which you can use to set up your own playback services.
 
-1. Add the following configuration to `pubspec.yaml`.
+- [VOD player SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md): `TXVodPlayerController` encapsulates the APIs of the VOD player SDKs for Android and iOS. You can integrate it to develop your VOD service. For the detailed code sample, see `DemoTXVodPlayer`.
+
+- [Live player SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE%E5%99%A8.md): `TXLivePlayerController` encapsulates the APIs of the live player SDKs for Android and iOS. You can integrate it to develop your live playback service. For the detailed code sample, see `DemoTXLivePlayer`.
+
+To reduce the connection costs, the Superplayer component (player with UIs) is provided in `example`. You can set up your own video playback service based on a few lines of simple code. You can apply the Superplayer code to your project and adjust UI and interaction details based on your project requirements.
+
+- [Superplayer component](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E8%B6%85%E7%BA%A7%E6%92%AD%E6%94%BE%E5%99%A8.md): `SuperPlayerController` is the Superplayer component, which combines the VOD and live player SDKs. It is currently in beta testing, and its features are being optimized. For the detailed code sample, see `DemoSuperplayer`.
+
+## Quick Integration
+
+### `pubspec.yaml` configuration
+1. Integrate `LiteAVSDK_Player` (which is integrated by default) and add the following configuration to `pubspec.yaml`:
 ```yaml
-  super_player:
-    git:
-      url: https://github.com/LiteAVSDK/Player_Flutter
-      path: Flutter
+super_player:
+  git:
+    url: https://github.com/tencentyun/SuperPlayer
+    path: Flutter
+```
+2. To integrate `LiteAVSDK_Professional`, change the configuration in `pubspec.yaml` as follows:
+```yaml
+super_player:
+  git:
+    url: https://github.com/tencentyun/SuperPlayer
+    path: Flutter
+    ref: Professional
+```
+3. Update the dependency packages:
+```yaml
+flutter packages get
 ```
 
-2. Update the dependency package.
-```yaml
-   flutter pub upgrade
-```
-4. Add the native configuration.
+### Adding native configuration
 
-### Android configuration[](id:Android_config)
-
-Add the following configuration to the `AndroidManifest.xml` file of Android.
-
+#### Android configuration
+Add the following configuration to the `AndroidManifest.xml` file of Android:
 ```xml
 <!--network permission-->
 <uses-permission android:name="android.permission.INTERNET" />
@@ -42,248 +58,204 @@ Add the following configuration to the `AndroidManifest.xml` file of Android.
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-On Android, Superplayer depends on the native player SDK. Copy the `example/android/superplayerkit` folder in the directory to your project directory and insert `include ':superplayerkit'` into `settings.gradle`. You can also download an appropriate version at the official website and import it.
-
-### iOS configuration[](id:iOS_config)
-
-Add the following configuration to the `Info.plist` file of iOS:
+#### iOS configuration
+1. Add the following configuration to the `Info.plist` file of iOS:
 ```xml
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+```
+2. iOS natively uses `pod` for dependency. Edit the `podfile` file and specify your player SDK edition. `TXLiteAVSDK_Player` is integrated by default.
+```xml
+pod 'TXLiteAVSDK_Player'	        // Player Edition
+```
+3. Integrate SDK Professional Edition.
+```
+pod 'TXLiteAVSDK_Professional' 	// Professional Edition
 ```
 
-iOS natively uses `pod` for dependency. Edit the `podfile` file and specify your player version.
-```xml
-pod 'SuperPlayer/Player', '3.3.9'
-```
+If no edition is specified, the latest version of `TXLiteAVSDK_Player` will be installed by default.
 
-If no version is specified, the latest version of `SuperPlayer` will be installed by default.
+### FAQs about integration
+- Run the `flutter doctor` command to check the runtime environment until "No issues found!" is displayed.
+- Run `flutter pub get` to ensure that all dependent components have been updated successfully.
 
-### Call in Flutter[](id:Flutter_call)
 
+## Using the VOD Player
+The core class of the VOD player is `TXVodPlayerController`. For the detailed demo, see `DemoTXVodPlayer`.
 ```dart
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:super_player/super_player.dart';
 
-class TestSuperPlayer extends StatefulWidget {
+class Test extends StatefulWidget {
   @override
-  _TestSuperPlayerState createState() => _TestSuperPlayerState();
+  State<StatefulWidget> createState() => _TestState();
 }
 
-class _TestSuperPlayerState extends State<TestSuperPlayer> {
+class _TestState extends State<Test> {
+  late TXVodPlayerController _controller;
 
-  SuperPlayerViewConfig _playerConfig;
-  SuperPlayerViewModel _playerModel;
-  SuperPlayerPlatformViewController _playerController;
-  String _url = "http://liteavapp.qcloud.com/live/liteavdemoplayerstreamid_demo1080p.flv";
-  int _appId = 0;
-  String _fileId = "";
+  double _aspectRatio = 16.0 / 9.0;
+  String _url =
+          "http://1400329073.vod2.myqcloud.com/d62d88a7vodtranscq1400329073/59c68fe75285890800381567412/adp.10.m3u8";
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _playerConfig = SuperPlayerViewConfig();
-    _playerModel = SuperPlayerViewModel();
-    _playerModel.videoURL = _url;
+    String licenceUrl = ""; // The obtained license URL
+    String licenseKey = ""; // The obtained license key
+    SuperPlayerPlugin.setGlobalLicense(licenceUrl, licenseKey);
+    _controller = TXVodPlayerController();
+    initPlayer();
   }
 
- @override
+  Future<void> initPlayer() async {
+    await _controller.initialize();
+    await _controller.startPlay(_url);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            ackgroundColor: Colors.blueGrey,
-            title: const Text('SuperPlayer'),
-        ),
-        body: Builder(
-        builder: (context) =>
-        SafeArea(
-            child: Container(
-            color: Colors.blueGrey,
-            child: Column(
-                children: [
-                AspectRatio(
-                    aspectRatio: 16.0/9.0,
-                    child:SuperPlayerVideo(
-                        onCreated: (SuperPlayerPlatformViewController vc) {
-                            _playerController = vc;
-                            await _playerController.setPlayConfig(_playerConfig);
-                            await _playerController.playWithModel(_playerModel);// Start playback
-                        },
-                    )
-                ),
-                ],
-            ),
-            ),
-        )
-        ),
-    );
+    return Container(
+            height: 220,
+            color: Colors.black,
+            child: AspectRatio(aspectRatio: _aspectRatio, child: TXPlayerVideo(controller: _controller)));
   }
-
+}
 ```
-
-
-
-## Using Player[](id:usePlayer)
-
-The main class of the player is `SuperPlayerVideo`, and videos can be played back after it is created.
-
+## Using Superplayer
+The core class of Superplayer is `SuperPlayerVideo`, and videos can be played back after it is created.
 ```dart
+import 'package:flutter/material.dart';
+import 'package:super_player/super_player.dart';
+
+/// flutter superplayer demo
+class DemoSuperplayer extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _DemoSuperplayerState();
+}
+
+class _DemoSuperplayerState extends State<DemoSuperplayer> {
+  List<SuperPlayerModel> videoModels = [];
+  bool _isFullScreen = false;
+  SuperPlayerController _controller;
+
+  @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _playerConfig = SuperPlayerViewConfig();
-    _playerModel = SuperPlayerViewModel();
-    _playerModel.videoURL = _url;
+    String licenceUrl = "Enter the URL of the purchased license";
+    String licenseKey = "Enter the license key";
+    SuperPlayerPlugin.setGlobalLicense(licenceUrl, licenseKey);
+    _controller = SuperPlayerController(context);
+    FTXVodPlayConfig config = FTXVodPlayConfig();
+    config.preferredResolution = 720 * 1280;
+    _controller.setPlayConfig(config);
+    _controller.onSimplePlayerEventBroadcast.listen((event) {
+      String evtName = event["event"];
+      if (evtName == SuperPlayerViewEvent.onStartFullScreenPlay) {
+        setState(() {
+          _isFullScreen = true;
+        });
+      } else if (evtName == SuperPlayerViewEvent.onStopFullScreenPlay) {
+        setState(() {
+          _isFullScreen = false;
+        });
+      } else {
+        print(evtName);
+      }
+    });
+    initData();
   }
-```
 
-```dart
-@override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            ackgroundColor: Colors.blueGrey,
-            title: const Text('SuperPlayer'),
-        ),
-        body: Builder(
-            builder: (context) =>
-                SafeArea(
-                    child: Container(
-                        color: Colors.blueGrey,
-                        child: Column(
-                            children: [
-                                AspectRatio(
-                                    aspectRatio: 16.0/9.0,
-                                    child:SuperPlayerVideo(
-                                        onCreated: (SuperPlayerPlatformViewController vc) {
-                                            _playerController = vc;
-                                            await _playerController.setPlayConfig(_playerConfig);
-                                            await _playerController.playWithModel(_playerModel);// Start playback
-                                        },
-                                    )
-                                ),
-                            ],
-                        ),
-                    ),
-                )
-        ),
-    );
-  }
-```
-
-Run the code and you can see that the video is played on the phone and most of the features in the interface are available.
-
-## Multiple Definitions[](id:resolution)
-
-Only one definition is specified in the sample code above. It is easy to add multiple definitions. For example, open the [CSS console](https://console.cloud.tencent.com/live/livemanage), find the live stream to be played back, and enter the details page.
-
-Here, different playback addresses for different definitions and formats are provided. We recommend you use the FLV address for playback. The code is as follows:
-
-```dart
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _playerConfig = SuperPlayerViewConfig();
-    _playerModel = SuperPlayerViewModel();
-    SuperPlayerUrl url1 = SuperPlayerUrl();
-    url1.title = "FHD";
-    url1.url = "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4.flv";
-
-    SuperPlayerUrl url2 = SuperPlayerUrl();
-    url2.title = "FHD";
-    url2.url = "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4.flv";
-
-    SuperPlayerUrl url3 = SuperPlayerUrl();
-    url3.title = "FHD";
-    url3.url = "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4.flv";
-
-    _playerModel.multiVideoURLs = [url1, url2, url3];
-    _playerModel.videoURL = url1.url;// Set the default definition for playback
-  }
-```
-
-```dart
-@override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
-        title: const Text('SuperPlayer'),
-      ),
-      body: Builder(
-        builder: (context) =>
-        SafeArea(
-          child: Container(
-            color: Colors.blueGrey,
-            child: Column(
-              children: [
-                AspectRatio(
-                    aspectRatio: 16.0/9.0,
-                    child:SuperPlayerVideo(
-                      onCreated: (SuperPlayerPlatformViewController vc) async {
-                        _playerController = vc;
-                        await _playerController.setPlayConfig(_playerConfig);
-                        await _playerController.playWithModel(_playerModel);// Start playback
-                      },
-                    )
-                ),
-              ],
+    return WillPopScope(
+        child: Container(
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: _isFullScreen
+                ? null
+                : AppBar(
+                    backgroundColor: Colors.transparent,
+                    title: const Text('SuperPlayer'),
+                  ),
+            body: SafeArea(
+              child: Builder(
+                builder: (context) => getBody(),
+              ),
             ),
           ),
-        )
+        ),
+        onWillPop: onWillPop);
+  }
+
+  Future<bool> onWillPop() async {
+    return !_controller.onBackPress();
+  }
+
+  Widget getBody() {
+    return Column(
+      children: [_getPlayArea()],
+    );
+  }
+
+  Widget _getPlayArea() {
+    return SuperPlayerView(_controller);
+  }
+
+  Widget _getListArea() {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: ListView.builder(
+        itemCount: videoModels.length,
+        itemBuilder: (context, i) => _buildVideoItem(videoModels[i]),
       ),
     );
   }
 
+  Widget _buildVideoItem(SuperPlayerModel playModel) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ListTile(
+            leading: Image.network(playModel.coverUrl),
+            title: new Text(
+              playModel.title,
+              style: TextStyle(color: Colors.white),
+            ),
+            onTap: () => playCurrentModel(playModel)),
+        Divider()
+      ],
+    );
+  }
+
+  void playCurrentModel(SuperPlayerModel model) {
+    _controller.playWithModel(model);
+  }
+
+  void initData() async {
+    SuperPlayerModel model = SuperPlayerModel();
+    model.videoURL = "http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/48d0f1f9387702299774251236/gZyqjgaZmnwA.m4v";
+    model.playAction = SuperPlayerModel.PLAY_ACTION_AUTO_PLAY;
+    model.title = "Tencent Cloud Audio/Video";
+    _controller.playWithModel(model);
+  }
+}
 ```
 
-You can see these definitions in the player and click them to switch.
+## Custom Development Guide 
 
-## Time Shifting Playback[](id:timeShift)
+The Player SDK for Flutter plugin encapsulates native player capabilities. We recommend you use the following methods for deep custom development:
 
-It is easy to enable time shifting for the player, and you only need to configure the `appId` before playback.
+- Perform custom development based on the VOD player SDK (the API class is `TXVodPlayerController`) or live player SDK (the API class is `TXLivePlayerController`). The project provides custom development demos in `DemoTXVodPlayer` and `DemoTXLivePlayer` in the `example` project.
 
-```dart
-SuperPlayerViewModel playModel = SuperPlayerViewModel();
-playModel.appId = 1252463788;// Replace it with your `appID` here
-```
+- The Superplayer component `SuperPlayerController` encapsulates the Player SDK and provides simple UI interaction. The code is in the `example` directory. You can customize the Superplayer component as follows:
 
->?`appId` can be viewed in the **Tencent Cloud console** > **[Account Info](https://console.cloud.tencent.com/developer)**.
+  Copy the Superplayer component code in `example/lib/superplayer` to your project for custom development.
 
-You can see the progress bar below the live stream being played back and seek to a desired point. You can also click **Return to Live Stream** to watch the latest live stream.
-
->?The time shifting feature is currently in beta test. If you need to use it, [submit a ticket](https://console.cloud.tencent.com/workorder) for application.
-
-## Playback Through FileId
-In addition to setting the definition by entering the URL, an easier way is playback through `fileId`, which is usually returned by the server after the video is uploaded:
-1. After the video is published on the client, the server will return a `fileId` to the client.
-2. When the video is uploaded to the server, the corresponding `fileId` will be included in the notification of upload confirmation.
-
-
-If the file already exists in Tencent Cloud, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media) and find it. After clicking it, you can view the `appId` and `fileId` parameters in the video details on the right.
-
-
-The code for playback through `fileId` is as follows:
-
-```dart
-SuperPlayerViewModel playModel = SuperPlayerViewModel();
-playModel.appId = 1252463788;// Replace it with your `appID` here
-SuperPlayerVideoId videoId = SuperPlayerVideoId();
-videoId.fileId = "4564972819219071679";
-playModel.videoId = videoId;
-
-_playerController.playWithModel(playModel);
-```
-
-After the video is uploaded, it will be automatically transcoded on the backend (for all transcoding formats, see [Transcoding Template](https://console.cloud.tencent.com/vod/video-process/template)). After the transcoding is completed, the player will automatically display multiple definitions.
-
-## More Features[](id:moreFeature)
+## More features
 
 To experience all features, scan the QR code to download the Tencent Video Cloud toolkit or run the project demo directly.
 <img src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png" width="150">

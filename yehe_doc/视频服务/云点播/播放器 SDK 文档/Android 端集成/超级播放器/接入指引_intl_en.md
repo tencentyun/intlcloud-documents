@@ -1,41 +1,34 @@
 ## Overview
 The Tencent Cloud RT-Cube Superplayer for Android is an open-source player component of Tencent Cloud. It integrates quality monitoring, video encryption, TESHD, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
 
-## Version Support
-The support for the features described in this document by Tencent Cloud RT-Cube is as follows:
+If the Superplayer component cannot meet your custom requirements and you have development experience, you can integrate the Player SDK to customize the player UI and playback features.
 
-| Version | Smart | Live | UGSV | TRTC | Player | All Features |
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-| Support | -  | -  | -  | -  | &#10003;  | &#10003;                                                            |
-| SDK download  | [Download](https://vcube.cloud.tencent.com/home.html?sdk=basicLive) | [Download](https://vcube.cloud.tencent.com/home.html?sdk=interactivelive) | [Download](https://vcube.cloud.tencent.com/home.html?sdk=shortVideo) | [Download](https://vcube.cloud.tencent.com/home.html?sdk=video) | [Download](https://vcube.cloud.tencent.com/home.html?sdk=player) | [Download](https://vcube.cloud.tencent.com/home.html?sdk=allPart) |
-
-
-## Preparations
-1. In order for you to try out complete player features, we recommend you activate [VOD](https://intl.cloud.tencent.com/product/vod). If you haven't registered an account, [sign up](https://intl.cloud.tencent.com/login) first. If you don't use the VOD service, skip this step; however, you can use only basic player features after integration.
-2. Download Android Studio [here](https://developer.android.com/studio) and install it. If you have already done so, skip this step.
+## Prerequisites
+1. To try out complete player features, we recommend you activate [VOD](https://intl.cloud.tencent.com/product/vod). If you haven't registered an account, [sign up](https://intl.cloud.tencent.com/login) first. If you don't use the VOD service, skip this step; however, you can use only basic player features after integration.
+2. Download and install [Android Studio](https://developer.android.com/studio). If you have already done so, skip this step.
 
 ## Content Summary
 1. How to integrate the Tencent Cloud RT-Cube Superplayer for Android
 2. How to create and use a player
 
 
-## Preparations for Integration
-### Step 1. Download the project
+## Directions
+### Step 1. Download the Superplayer code package
 The Tencent Cloud RT-Cube Superplayer for Android can be downloaded [here](https://github.com/LiteAVSDK/Player_Android).
 
 You can download the Tencent Cloud RT-Cube Superplayer for Android by **[downloading the player component ZIP package](#zip)** or **[running the Git command](#git)**.
 <dx-tabs>
-::: Download the player component ZIP package[](id:zip)
-You can directly download the player component ZIP package by clicking **Code** > **Download ZIP**.
+::: Download the ZIP file[](id:zip)
+Go to the Superplayer GitHub page and click **Code > Download ZIP**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a38a9995bfe13d645bcd1d2e5242a297.png)
 :::
-::: Run the Git command[](id:git)
+::: Download using a Git command[](id:git)
 1. First, make sure that your computer has Git installed; if not, you can install it as instructed in [Git Installation Tutorial](https://git-scm.com/downloads).
-2. Run the following command to clone the code of the superplayer component project to your local system.
+2. Run the following command to clone the code of the Superplayer component to your local system.
 ```shell
 git clone git@github.com:tencentyun/SuperPlayer_Android.git
 ```
-If the following information is displayed, the project code has been cloned to your local system successfully.
+If you see the following information, the project code has been cloned to your local system successfully.
 ```shell
 Cloning to 'SuperPlayer_Android'...
 remote: Enumerating objects: 2637, done.
@@ -59,7 +52,7 @@ After the project is downloaded, the directory generated after decompression of 
 :::
 </dx-tabs>
 
-### Step 2. Integrate the project
+### Step 2. Integrate the component
 This step describes how to integrate the player. You can integrate the project by using Gradle for automatic loading, manually downloading the AAR and importing it into your current project, or importing the JAR and SO libraries.
 <dx-tabs>
 ::: Automatic loading in Gradle (AAR)
@@ -94,7 +87,7 @@ Import the `common` module into your project as instructed above and configure i
 dependencies {
 	 implementation 'com.tencent.liteav:LiteAVSDK_Player:latest.release'
 	 implementation project(':superplayerkit')
-	 // Third-party library for integration of the on-screen commenting feature of superplayer
+	 // Third-party library for integration of the on-screen commenting feature of Super Player
 	 implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
 }
 ```
@@ -113,7 +106,7 @@ ndk {
 ```
    If you haven't used the download cache feature (an API in `TXVodDownloadManager`) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the app for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
 ```xml
-packagingOptions {
+packagingOptions{
 	exclude "lib/armeabi/libijkhlscache-master.so"
 	exclude "lib/armeabi-v7a/libijkhlscache-master.so"
 	exclude "lib/arm64-v8a/libijkhlscache-master.so"
@@ -162,7 +155,7 @@ repositories {
 ```xml
 compile(name:'LiteAVSDK_Player_8.9.10349', ext:'aar')
 implementation project(':superplayerkit')
-// Third-party library for integration of the on-screen commenting feature of superplayer
+// Third-party library for integration of the on-screen commenting feature of Super Player
 implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
 ```
 6. Add the following to the project's `build.gradle`:
@@ -183,7 +176,7 @@ ndk {
 ```
 If you haven't used the download cache feature (an API in `TXVodDownloadManager`) of the SDK v9.4 or earlier and don't need to play back the downloaded files in the SDK v9.5 or later, you don't need to use the SO file of the feature, which helps reduce the size of the installation package. For example, if you have downloaded a cached file by using the `setDownloadPath` and `startDownloadUrl` functions of the `TXVodDownloadManager` class in the SDK v9.4 or earlier, and the `getPlayPath` path called back by `TXVodDownloadManager` is stored in the app for subsequent playback, you will need `libijkhlscache-master.so` to play back the file at the `getPlayPath` path; otherwise, you won't need it. You can add the following to `app/build.gradle`:
 ```xml
-packagingOptions {
+packagingOptions{
 	exclude "lib/armeabi/libijkhlscache-master.so"
 	exclude "lib/armeabi-v7a/libijkhlscache-master.so"
 	exclude "lib/arm64-v8a/libijkhlscache-master.so"
@@ -192,7 +185,7 @@ packagingOptions {
 8. Click **Sync Now** to sync the SDK.
 :::
 ::: SDK integration (jar + so)
-If you do not want to integrate the AAR library, you can choose to integrate LiteAVSDK by importing the JAR and SO libraries:
+If you do not want to import the AAR library, you can also integrate LiteAVSDK by importing JAR and SO libraries.
 [](id:smallStep_1)
 1. Download the SDK + demo development kit for Android [here](https://github.com/LiteAVSDK/Player_Android) and decompress it. Find `SDK/LiteAVSDK_Player_XXX.zip` (`XXX` is the version number) in the SDK directory. After decompression, you can get the `libs` directory which contains the JAR files and SO folders as listed below:
  ![](https://qcloudimg.tencent-cloud.cn/raw/9ac0f5b1b9b5d15a005fa2226dd960b6.png)
@@ -221,7 +214,7 @@ sourceSets{
 		 }
  }
 ```
-   - Configure `repositories`, add `flatDir`, and specify the path of the local repository.
+   - Configure `repositories`, add `flatDir`, and specify the paths of the local repositories.
 ```xml
 repositories {
 	 flatDir {
@@ -241,17 +234,17 @@ ndk {
 At this point, you have completed integrating the Tencent Cloud RT-Cube Superplayer for Android.
 
 
-### Step 3. Configure app permissions
-Configure application permissions in `AndroidManifest.xml`. LiteAVSDK requires the following permissions:
+### Step 3. Configure application permissions
+Configure permissions for your application in `AndroidManifest.xml`. LiteAVSDK needs the following permissions:
 
 ```java
-<!--Network permission-->
+<!--network permission-->
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <!--VOD player floating window permission -->
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-<!--Storage-->
+<!--storage-->
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
@@ -259,7 +252,7 @@ Configure application permissions in `AndroidManifest.xml`. LiteAVSDK requires t
 ### Step 4. Set obfuscation rules
 In the `proguard-rules.pro` file, add the classes related to the TRTC SDK to the "do not obfuscate" list:
 ```xml
--keep class com.tencent.** { *; }
+-keep class com.tencent.** { *;}
 ```
 At this point, you have completed configuring permissions for the Tencent Cloud RT-Cube Superplayer application for Android.
 
@@ -276,8 +269,8 @@ The main class of the player is `SuperPlayerView`, and videos can be played back
 ```
 2. **Video playback**[](id:playe)
 This step describes how to play back a video. The Tencent Cloud RT-Cube Superplayer for Android can be used for VOD and live playback as follows:
-	- VOD playback: The superplayer supports two VOD playback methods, namely, through [`FileId`](#fileid) or [URL](#url).
-	- Live playback: The superplayer can use the [playback through URL](#url) method for live playback. A live audio/video stream can be pulled for playback simply by passing in its URL. For more information on how to generate a Tencent Cloud live streaming URL, see [Splicing Live Streaming URL](https://intl.cloud.tencent.com/document/product/267/38393).
+	- VOD playback: The Superplayer supports two VOD playback methods, namely, through [`FileId`](#fileid) or [URL](#url).
+	- Live playback: The Superplayer can use the [playback through URL](#url) method for live playback. A live audio/video stream can be pulled for playback simply by passing in its URL. For more information on how to generate a Tencent Cloud live streaming URL, see [Splicing Live Streaming URL](https://intl.cloud.tencent.com/document/product/267/38393).
 <dx-tabs>
 ::: VOD and live playback through URL[](id:url)
 A URL can be the playback address of a VOD file or the pull address of a live stream. A video file can be played back simply by passing in its URL.
@@ -289,27 +282,25 @@ mSuperPlayerView.playWithModel(model);
 ```
 :::
 ::: VOD playback through `FileId`[](id:fileid)
-A video `FileId` is usually returned by the server after the video is uploaded:
-1. After the video is published on the client, the server will return a `FileId` to the client.
-2. When the video is uploaded to the server, its `FileId` will be included in the notification of upload confirmation.
+A video file ID is returned by the server after the video is uploaded.
+1. After a video is published from a client, the server will return a file ID to the client.
+2. When the video is uploaded to the server, the corresponding `FileId` will be included in the notification of upload confirmation.
 
-If the file already exists in Tencent Cloud, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media), find it, and view its `FileId` as shown below, where ID is the `FileId`:
+If the video you want to play is already saved with VOD, you can go to [Media Assets](https://console.cloud.tencent.com/vod/media) to view its file ID.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-
 >!
->- For playback through `FileId`, you need to first use the Adaptive-HLS(10) transcoding template to transcode the video or use the superplayer signature `psign` to specify the video to be played back; otherwise, the video may fail to be played back. For more information on how to transcode a video, see [Playing back Video Through Superplayer](https://intl.cloud.tencent.com/document/product/266/38098). For more information on how to generate a `psign`, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099).
+>- For playback through `FileId`, you need to first use the Adaptive-HLS(10) transcoding template to transcode the video or use the Superplayer signature `psign` to specify the video to be played back; otherwise, the video may fail to be played back. For more information on how to transcode a video, see [Playing back Video Through Superplayer](https://intl.cloud.tencent.com/document/product/266/38098). For more information on how to generate a `psign`, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099).
 >- If a "no v4 play info" exception occurs during playback through `FileId`, the above problem may exist. In this case, we recommend you make adjustments as instructed above. You can also directly get the playback link of the source video for playback through [URL](#url).
->- **As an untranscoded source video may experience a compatibility issue during playback, we recommend you transcode videos for playback.**
-
+>- **We recommend you transcode videos for playback because untranscoded videos may experience compatibility issues during playback.**
 <dx-codeblock>
 :::  java
-// During playback with hotlink protection disabled, if a "no v4 play info" exception occurs, we recommend you use the Adaptive-HLS(10) transcoding template to transcode the video or directly get the playback link of the source video for playback through URL.
+// If you haven't enabled hotlink protection and a "no v4 play info" error occurs, transcode your video using the Adaptive-HLS template (ID: 10) or get the playback URL of the video and play it by URL.
 
 SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
-model.appId = 1400329071;// Configure `AppId`
+model.appId = 1400329071;// Configure AppId
 model.videoId = [[SuperPlayerVideoId alloc] init];
 model.videoId.fileId = @"5285890799710173650"; // Configure `FileId`
-// For private encrypted playback, you need to enter the `psign`, which is a signature for superplayer. For more information on the signature and how to generate it, visit https://intl.cloud.tencent.com/document/product/266/38099
+// If you enable hotlink protection, you need to enter a `psign` (Superplayer signature) for playback. For more information on the signature and how to generate it, see https://intl.cloud.tencent.com/document/product/266/38099
 //model.videoId.pSign = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMyOTA3MSwiZmlsZUlkIjoiNTI4NTg5MDc5OTcxMDE3MzY1MCIsImN1cnJlbnRUaW1lU3RhbXAiOjEsImV4cGlyZVRpbWVTdGFtcCI6MjE0NzQ4MzY0NywidXJsQWNjZXNzSW5mbyI6eyJ0IjoiN2ZmZmZmZmYifSwiZHJtTGljZW5zZUluZm8iOnsiZXhwaXJlVGltZVN0YW1wIjoyMTQ3NDgzNjQ3fX0.yJxpnQ2Evp5KZQFfuBBK05BoPpQAzYAWo6liXws-LzU"; 
 [_playerView playWithModel:model];
 :::
@@ -317,7 +308,7 @@ model.videoId.fileId = @"5285890799710173650"; // Configure `FileId`
 :::
 </dx-tabs>
 3. **Playback exit**[](id:exitPlayer)
-When the player is no longer needed, call `resetPlayer` to clear the internal state of the player and free up the memory.
+If the player is no longer needed, call `resetPlayer` to reset the player and free up memory.
 ```java
 mSuperPlayerView.resetPlayer();
 ```
@@ -326,14 +317,15 @@ At this point, you have integrated the player creation, video playback, and play
 
 
 [](id:moreFeature)
-## Feature Usage[](id:moreFeature)
+## More Features[](id:moreFeature)
 
 This section describes several common player features. For more features, see [Demo](#demo).
 
 ### 1. Full screen playback
 
-The superplayer supports full screen playback, where it allows setting screen lock, volume and brightness control through gesture, on-screen commenting, screencapturing, and definition switch. This feature can be tried out in **[Tencent Cloud RT-Cube App](#qrcode) > Player > Superplayer**, and you can enter the full screen playback mode by tapping the full screen icon.
-In window playback mode, the following API can be called to enter the full screen playback mode:
+The Superplayer supports full screen playback, where it allows setting screen lock, volume and brightness control through gesture, on-screen commenting, screencapturing, and definition switch. This feature can be tried out in **[Tencent Cloud RT-Cube App](#qrcode) > Player > Superplayer**, and you can enter the full screen playback mode by tapping the full screen icon.
+
+You can call the API below to go full screen from the windowed playback mode:
 
 ```java
 mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.FULLSCREEN);
@@ -357,7 +349,7 @@ The screen lock operation enables the immersive playback status.
 toggleLockState();
 ```
 :::
-::: On-screen commenting[](id:barrage)
+::: On-screen comment[](id:barrage)
 After the on-screen commenting feature is enabled, text comments sent by users will be displayed on the screen.
 ```java
 // Step 1. Add an on-screen comment to the on-screen comment view
@@ -366,8 +358,8 @@ addDanmaku(String content, boolean withBorder);
 toggleBarrage();
 ```
 :::
-::: Screencapturing[](id:screenshot)
-The superplayer provides the feature of capturing the current video frame during playback, and you can save the screenshot for sharing. Tap the button in image 4 to capture the screen, and you can save the captured screenshot in the `mSuperPlayer.snapshot` API.
+::: Screenshot[](id:screenshot)
+The Superplayer provides the feature of capturing the current video frame during playback, and you can save the screenshot for sharing. Tap the button in image 4 to capture the screen, and you can save the captured screenshot in the `mSuperPlayer.snapshot` API.
 ```java
 mSuperPlayer.snapshot(new TXLivePlayer.ITXSnapshotListener() {
   @Override
@@ -377,7 +369,7 @@ mSuperPlayer.snapshot(new TXLivePlayer.ITXSnapshotListener() {
 });
 ```
 :::
-::: Definition switch[](id:resolution)
+::: Change resolution[](id:resolution)
 Different video playback definitions can be selected as needed, such as HD, SD, and FHD.
 ```java
 // The API for displaying the definition view triggered after tapping
@@ -403,10 +395,9 @@ public void onQualityChange(VideoQuality quality) {
 
 
 ### 2. Floating window playback
-The superplayer supports playback in a small floating window, which allows users to switch to another app without interrupting the video playback. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** by tapping **Back** in the top-left corner.
+The Superplayer supports playback in a small floating window, which allows users to switch to another app without interrupting the video playback. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** by tapping **Back** in the top-left corner.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
 Floating window playback relies on the following permission in `AndroidManifest`:
-
 ```java
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 ```
@@ -417,37 +408,39 @@ mSuperPlayerView.switchPlayMode(SuperPlayerDef.PlayerMode.FLOAT);
 mControllerCallback.onSwitchPlayMode(SuperPlayerDef.PlayerMode.WINDOW);
 ```
 
-### 3. Video thumbnail
+### 3. Thumbnail
 
-The superplayer supports customizing a video thumbnail for display before the callback for playing back the first video frame is received. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** > **Thumbnail Customization Demo**.
+The Superplayer supports customizing a video thumbnail for display before the callback for playing back the first video frame is received. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** > **Thumbnail Customization Demo**.
 
 
 
-* When the superplayer is set to the automatic playback mode `PLAY_ACTION_AUTO_PLAY`, the video will be played back automatically, and the thumbnail will be displayed before the first video frame is loaded.
-* When the superplayer is set to the manual playback mode `PLAY_ACTION_MANUAL_PLAY`, the playback of the video will start only after the user taps **Play**. The thumbnail will be displayed until the first video frame is loaded.
+* When the Superplayer is set to the automatic playback mode `PLAY_ACTION_AUTO_PLAY`, the video will be played back automatically, and the thumbnail will be displayed before the first video frame is loaded.
+* When Superplayer is set to the manual playback mode `PLAY_ACTION_MANUAL_PLAY`, videos are played only after users tap the play button, and the thumbnail will be displayed until the first video frame is loaded.
 
-A video thumbnail supports the use of a URL or local file address as instructed below. If you play back a video through its `FileId`, you can directly configure a video thumbnail in VOD.
+You can set the thumbnail by specifying the URL of a local or online file. For detailed directions, see the code below. If you play by VOD file ID, you can also set the thumbnail in the VOD console.
 
 ```java
 SuperPlayerModel model = new SuperPlayerModel();
 model.appId = "Your `appid`";
 model.videoId = new SuperPlayerVideoId();
 model.videoId.fileId = "Your `fileId`"; 
-// Playback mode, which can be set to the automatic `PLAY_ACTION_AUTO_PLAY` or manual `PLAY_ACTION_MANUAL_PLAY`
+// Playback mode, which can be set to automatic (`PLAY_ACTION_AUTO_PLAY`) or manual (`PLAY_ACTION_MANUAL_PLAY`)
 model.playAction = PLAY_ACTION_MANUAL_PLAY;
-// Set a URL for the thumbnail. If `coverPictureUrl` is not set, the thumbnail configured in the VOD console will be used automatically
+// Specify the URL of an online file to use as the thumbnail. If `coverPictureUrl` is not set, the thumbnail configured in the VOD console will be used.
 model.coverPictureUrl = "http://1500005830.vod2.myqcloud.com/6c9a5118vodcq1500005830/cc1e28208602268011087336518/MXUW1a5I9TsA.png" 
 mSuperPlayerView.playWithModel(model);
 ```
 
-### 4. Video list loop
+### 4. Video playlist loop
 
-The superplayer supports video list loop; that is, after a video list is given:
+Superplayer supports looping video playlists.
 
-* Videos in the list can be played back in loop. The next video can be played back automatically or switched to manually during playback.
+* After a video ends, the next video in the list can be played automatically or users can manually start the next video.
 * After the last video in the list ends, the first video in the list will start automatically.
 
 This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** > **Video List Loop Demo**.
+
+
 
 ```java
 // Step 1. Create a loop list<SuperPlayerModel>
@@ -472,7 +465,7 @@ mSuperPlayerView.playWithModelList(list, true, 0);
 public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayList, int index);
 ```
 
-API parameter description
+API parameters:
 
 | Parameter | Type | Description |
 | -------------- | ---------------------- | ------------------------------ |
@@ -480,9 +473,11 @@ API parameter description
 | isLoopPlayList | boolean                | Whether to loop                       |
 | index          | int                    | Index of `SuperPlayerModel` from which to start the playback |
 
-### 5. Video preview
+### 5. Preview
 
-The superplayer supports the video preview feature, which is suitable for non-VIP member preview. You can pass in different parameters to control the video preview duration, prompt message, and preview end screen. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** > **Preview Feature Demo**.
+The Superplayer supports the video preview feature, which is suitable for non-VIP member preview. You can pass in different parameters to control the video preview duration, prompt message, and preview end screen. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** > **Preview Feature Demo**.
+
+
 
 ```java
  Method 1:
@@ -511,11 +506,13 @@ public VipWatchModel(String tipStr, long canWatchTime)
 | Parameter | Type | Description |
 | ------------ | ------ | --------- |
 | tipStr       | String | Preview prompt message    |
-| canWatchTime | Long   | Preview duration in seconds |
+| canWatchTime | Long   | Preview duration in s |
 
 ### 6. Dynamic watermark
 
-The superplayer allows you to add an irregular moving text watermark on the playback screen to prevent unauthorized recording. Watermarks can be displayed both in full screen playback mode and window playback mode. You can modify the watermark text, size, and color. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** > **Dynamic Watermark Demo**.
+The Superplayer allows you to add an irregular moving text watermark on the playback screen to prevent unauthorized recording. Watermarks can be displayed both in full screen playback mode and window playback mode. You can modify the watermark text, size, and color. This feature can be tried out in [**Tencent Cloud RT-Cube App**](#qrcode) > **Player** > **Superplayer** > **Dynamic Watermark Demo**.
+
+
 
 ```java
  Method 1:
@@ -539,7 +536,7 @@ The superplayer allows you to add an irregular moving text watermark on the play
 public DynamicWaterConfig(String dynamicWatermarkTip, int tipTextSize, int tipTextColor)
 ```
 
-API parameter description
+API parameters:
 
 | Parameter | Type | Description |
 | ------------------- | ------ | ------ |
@@ -552,12 +549,12 @@ API parameter description
 
 To try out more features, you can directly run the project demo or scan the QR code to download the Tencent Cloud RT-Cube app demo.
 
-### Running project demo
+### Run a demo project
 
 1. Select **File** > **Open** on the navigation bar of Android Studio. In the pop-up window, select the `$SuperPlayer_Android/Demo` directory of the **demo** project. After the demo project is imported successfully, click **Run app** to run the demo.
 2. After running the demo successfully as shown below, go to **Player** > **Superplayer** to try out the player features.
 
 [](id:qrcode)
-### Tencent Cloud RT-Cube app
-You can try out more features of the superplayer in **Tencent Cloud RT-Cube App** > **Player**.
+### TCToolkit app
+You can also try Superplayer on the **Player** page of the TCToolkit app.
 <img src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png" width="150">

@@ -1,14 +1,7 @@
 ## 产品概述
 腾讯云视立方 Android 超级播放器是腾讯云开源的一款播放器组件，集质量监控、视频加密、极速高清、清晰度切换、小窗播放等功能于一体，适用于所有点播、直播播放场景。封装了完整功能并提供上层 UI，可帮助您在短时间内，打造一个媲美市面上各种流行视频 App 的播放软件。
 
-## 版本支持
-本页文档所描述功能，在腾讯云视立方中支持情况如下：
-
-| 版本名称 | 基础直播 Smart | 互动直播 Live | 短视频 UGSV | 音视频通话 TRTC | 播放器 Player | 全功能 |
-| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-| 支持情况 | -  | -  | -  | -  | &#10003;  | &#10003;                                                            |
-| SDK 下载  | [下载](https://vcube.cloud.tencent.com/home.html?sdk=basicLive) | [下载](https://vcube.cloud.tencent.com/home.html?sdk=interactivelive) | [下载](https://vcube.cloud.tencent.com/home.html?sdk=shortVideo) | [下载](https://vcube.cloud.tencent.com/home.html?sdk=video) | [下载](https://vcube.cloud.tencent.com/home.html?sdk=player) | [下载](https://vcube.cloud.tencent.com/home.html?sdk=allPart) |
-
+若超级播放器组件满足不了您的业务的个性化需求，且您具有一定的开发经验，可以集成 播放器 SDK，自定义开发播放器界面和播放功能。
 
 ## 准备工作
 1. 为了您体验到更完整全面的播放器功能，建议您开通 [云点播](https://intl.cloud.tencent.com/product/vod) 相关服务，未注册用户可注册账号 [试用](https://intl.cloud.tencent.com/login)。若您不使用云点播服务，可略过此步骤，但集成后仅可使用播放器基础能力。
@@ -26,7 +19,7 @@
 您可通过 **[下载播放器组件 ZIP 包](#zip)** 或 **[Git 命令下载](#git)** 的方式下载腾讯云视立方 Android 超级播放器项目工程。
 <dx-tabs>
 ::: 下载播放器组件 ZIP 包[](id:zip)
-您可以直接下面播放器组件 ZIP包，单击页面的 **Code** > **Download ZIP** 下载。
+您可以直接下面播放器组件 ZIP 包，单击页面的 **Code** > **Download ZIP** 下载。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a38a9995bfe13d645bcd1d2e5242a297.png)
 :::
 ::: Git 命令下载[](id:git)
@@ -278,11 +271,9 @@ ndk {
 本步骤用于指导用户播放视频。腾讯云视立方 Android 超级播放器可用于直播和点播两种播放场景，具体如下：
 	- 点播播放：超级播放器支持两种点播播放方式，可以 [通过 FileID 播放](#fileid) 腾讯云点播媒体资源，也可以直接使用 [URL 播放](#url) 地址进行播放。
 	- 直播播放：超级播放器可使用 [URL 播放 ](#url)的方式实现直播播放。通过传入 URL 地址，即可拉取直播音视频流进行直播播放。腾讯云直播URL生成方式可参见 [自主拼装直播 URL](https://intl.cloud.tencent.com/document/product/267/38393)。
-
 <dx-tabs>
 ::: 通过 URL 播放（直播、点播）[](id:url)
 URL可以是点播文件播放地址，也可以是直播拉流地址，传入相应 URL 即可播放相应视频文件。
-
 ```java
 SuperPlayerModel model = new SuperPlayerModel();
 model.appId = 1400329073; // 配置 AppId
@@ -293,16 +284,14 @@ mSuperPlayerView.playWithModel(model);
 ::: 通过 FileID 播放（点播）[](id:fileid)
 视频 FileId 在一般是在视频上传后，由服务器返回：
 1. 客户端视频发布后，服务器会返回 FileId 到客户端。
-2. 服务端视频上传时，在 确认上传 的通知中包含对应的 FileId。
+2. 服务端视频上传时，在 确认上传的通知中包含对应的 FileId。
 
 如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f089346e01ab8e44e42f28c965809b9c.png)
-
 >!
 >- 通过 FileID 播放时，需要首先使用 Adaptive-HLS(10) 转码模板对视频进行转码，或者使用超级播放器签名 psign 指定播放的视频，否则可能导致视频播放失败。转码教程和说明可参见 [用超级播放器播放视频](https://intl.cloud.tencent.com/document/product/266/38098)，psign 生成教程可参见 [psign 教程](https://intl.cloud.tencent.com/document/product/266/38099)。
 >- 若您在通过 FileID 播放时出现“no v4 play info”异常，则说明您可能存在上述问题，建议您根据上述教程调整。同时您也可以直接获取源视频播放链接，[通过 URL 播放](#url) 的方式实现播放。
 >- **未经转码的源视频在播放时有可能出现不兼容的情况，建议您使用转码后的视频进行播放。**
-
 <dx-codeblock>
 :::  java
 //在未开启防盗链进行播放的过程中，如果出现了“no v4 play info”异常，建议您使用Adaptive-HLS(10)转码模板对视频进行转码，或直接获取源视频播放链接通过url方式进行播放。
@@ -335,6 +324,7 @@ mSuperPlayerView.resetPlayer();
 ### 1、全屏播放
 
 超级播放器支持全屏播放，在全屏播放场景内，同时支持锁屏、手势控制音量和亮度、弹幕、截屏、清晰度切换等功能设置。功能效果可在 **[腾讯云视立方 App](#qrcode) > 播放器 > 超级播放器** 中体验，单击界面右下角即可进入全屏播放界面。
+
 在窗口播放模式下，可通过调用下述接口进入全屏播放模式：
 
 ```java
@@ -408,7 +398,6 @@ public void onQualityChange(VideoQuality quality) {
 超级播放器支持悬浮窗小窗口播放，可在切换到其它应用时，不打断视频播放功能。功能效果可在 [**腾讯云视立方 App**](#qrcode) > **播放器** > **超级播放器** 中体验，单击界面左上角**返回**，即可体验悬浮窗播放功能。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e8a774cb9833f2de45fc1cf3cc928ee4.png" style="zoom:35%;" />
 悬浮窗播放依赖于 AndroidManifest 中的以下权限：
-
 ```java
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 ```
@@ -487,6 +476,8 @@ public void playWithModelList(List<SuperPlayerModel> models, boolean isLoopPlayL
 ### 5、视频试看
 
 超级播放器支持视频试看功能，可以适用于非 VIP 试看等场景，开发者可以传入不同的参数来控制视频试看时长、提示信息、试看结束界面等。功能效果可在 [**腾讯云视立方 App**](#qrcode)> **播放器** > **超级播放器** > **试看功能演示** 视频中体验。
+
+
 
 ```java
  方法一：
