@@ -1,6 +1,6 @@
 Currently, you can grant permissions to a Cloud Infinite (CI) sub-account to perform persistence operations by associating the write permission with given resources in COS. The following cases illustrate how to grant permissions to a CI sub-account to perform persistence operations on **all resources** and on **specific resources**.
 
->Before configuring data persistence permissions for your sub-account, you must associate the CI full read-write access **QcloudCIFullAccess**.
+>!Before configuring data persistence permissions for your sub-account, you must associate the CI full read-write access **QcloudCIFullAccess**.
 
 
 When configuring a custom policy, you can copy and paste the following reference policy into the **Edit Policy Content** input box and modify it based on the actual settings. For more information, see the [CAM Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10604) document.
