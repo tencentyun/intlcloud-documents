@@ -26,8 +26,3 @@ The bandwidth unit price is listed in [Public Network Billing](https://intl.clou
 
 You can adjust the bandwidth cap for bill-by-traffic CVM instances at no additional cost whenever you need. The public network is billed on the actual traffic.
 
-### Changing public network billing
-
-#### Changing from **bill-by-traffic** to **monthly bandwidth subscription**
-
-The traffic fee will be settled hourly at the time of change. To change the billing option, you only need to pay the monthly bandwidth subscription fees.
