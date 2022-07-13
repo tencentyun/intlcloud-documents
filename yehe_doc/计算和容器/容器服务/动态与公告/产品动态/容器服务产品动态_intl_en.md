@@ -4,11 +4,6 @@
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tbody>
   <tr>
-    <td>TKE launches super nodes</td>
-    <td>Monthly subscription is available and custom specifications (50C to 5000C) are provided. You can manage the super nodes easily.</td>
-    <td>2022-05-19</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/39759">Super Node Overview</a>
-  <tr>
     <td>TKE provides audit/log/event APIs</td>
     <td>You can install relevant add-ons in TKE clusters by calling the audit/log/event APIs.</td>
     <td>2022-05-18</td>
