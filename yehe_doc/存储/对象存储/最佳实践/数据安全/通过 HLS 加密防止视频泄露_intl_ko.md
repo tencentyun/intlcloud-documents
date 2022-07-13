@@ -7,7 +7,7 @@ Cloud Object Storage(COS) 데이터 처리는 HTTP 라이브 스트리밍(HLS) �
 
 ## 구현 원리
 
-![](https://main.qcloudimg.com/raw/4491a94b09f8b73de9abe12a1086f810.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fe49915c6d9de74677b6ef4f03ac5158.jpg)
 
 >? 이 솔루션에서 COS는 KMS에 연결됩니다.
 >
