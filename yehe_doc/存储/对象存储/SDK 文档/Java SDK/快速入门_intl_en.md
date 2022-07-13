@@ -16,7 +16,7 @@
 
 
 #### Environmental dependencies
-- The SDK supports JDK v1.7, v1.8, and later.
+- The SDK supports JDK v1.8 and later. You can view the version of Java by using the "java -version" command.
 - For the JDK installation, see [Java](https://intl.cloud.tencent.com/document/product/436/10865).
 
 >?
@@ -38,7 +38,7 @@ You can install the Java SDK using Maven or source code:
 <dependency>
        <groupId>com.qcloud</groupId>
        <artifactId>cos_api</artifactId>
-       <version>5.6.54</version>
+       <version>5.6.89</version>
 </dependency>
 ```
 - Using source code

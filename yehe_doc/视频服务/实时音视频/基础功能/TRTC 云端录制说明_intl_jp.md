@@ -89,16 +89,16 @@ TRTCのクラウドレコーディング機能では、REST APIインターフ�
 クラウドレコーディングサービス中にデータセンターに障害が発生した場合、高可用性ソリューションによってレコーディングタスクを復旧させることがあります。このような場合、元のレコーディングファイルを上書きしないよう、プル後にプレフィックスha<1/2/3>を付けることで、高可用性の発生回数を表します。1つのレコーディングタスクにつき、プルの回数が最大で3回まで許容されます。
 
 * シングルストリームレコーディングのM3U8ファイル名ルール：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
 
 * シングルストリームレコーディングのTSファイル名ルール：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
 
 * ミクスストリームレコーディングのM3U8ファイル名ルール：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
 
 * ミクスストリームレコーディングのTSファイル名ルール：
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
 
 #### フィールドの意味の説明：
 \<Prefix>:  レコーディングパラメータに設定するファイル名プレフィックスです。設定していなければ存在しません。

@@ -1,3 +1,20 @@
+## May 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tbody>
+  <tr>
+    <td>TKE provides audit/log/event APIs</td>
+    <td>You can install relevant add-ons in TKE clusters by calling the audit/log/event APIs.</td>
+    <td>2022-05-18</td>
+    <td>-</td>
+  </tr>
+</td>
+  </tr>
+</tbody>
+</table>
+
+
 ## April 2022
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -62,7 +79,7 @@
 <tr>
 <td>Optimized user experience in the TKE console</td>
 <td><li>On the <b>Pods management</b> details page, you can search by Pod status in the search box.</li><li>In the <b>Log</b> column of cluster workload details page, you can search by name in the drop-down list.</li></td>
-<td>March 14, 2022</td>
+<td>2022-03-14</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/30635">Cluster Management</a></td>
 </tr>
 </tbody>
@@ -92,7 +109,7 @@
 <tr>
 <td>Optimized operations of log collection rules in the console</td>
 <td>When Pod Labels are specified as the log source, you can add != label filter and optimize selection for namespaces in container standard output (multiple namespaces can be chosen and excluded).</td>
-<td>February 15, 2022</td>
+<td>2022-02-15</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/38399">Log Management</a></td>
 </tr>
 </tbody>
@@ -117,13 +134,13 @@
 <tr>
 <td>Updates CFS add-on</td>
 <td>CFS supports using V3 and V4 protocols for mounting.</td>
-<td>January 13, 2022</td>
+<td>2022-01-13</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/36153">CFS Instructions</a></td>
 </tr>
 <tr>
 <td>Updates CBS-CSI add-on</td>
 <td>Cloud disks dynamically created by CBS-CSI inherit the cluster cloud tags.</td>
-<td>January 12, 2022</td>
+<td>2022-01-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/39136">CBS-CSI</a></td>
 </tr>
 <tr>
@@ -211,7 +228,7 @@
 		<td>
 		Chooses the GPU driver version, CUDA version and cuDNN version in the console.
 		</td>
-		<td>July 13, 2021</td>
+		<td>2021-07-13</td>
 		<td><a href="https://intl.cloud.tencent.com/document/product/457/30656">Using a GPU Node</a></td>
 </tr>	
 <tr>
@@ -219,7 +236,7 @@
 		<td>
 		Once enabled, you can improve the GPU utilization in scenarios where multiple jobs are running in parallel.
 		</td>
-		<td>July 13, 2021</td>
+		<td>2021-07-13</td>
 		<td><a href="https://intl.cloud.tencent.com/document/product/457/30656">Using a GPU Node</a></td>
 </tr>	
 <tr>

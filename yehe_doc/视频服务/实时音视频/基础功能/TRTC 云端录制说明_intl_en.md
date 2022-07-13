@@ -86,19 +86,19 @@ You can use this parameter to specify the cloud storage/video-on-demand service 
 \<Prefix>/\<TaskId>/\<SdkAppId>\_\<RoomId>\_\<Index>.mp4
 
 * Naming of recovered files
-The on-cloud recording feature has a high availability scheme that can recover recording files if the server fails. To prevent the recovered files from replacing the original files, we add a prefix `ha<1/2/3>` to the names of recovered files. The numbers indicate the times (max 3) the high availability scheme is used.
+The on-cloud recording feature has a high availability scheme that can recover recording files if the server fails. To prevent the recovered files from replacing the original files, we add a prefix ha<1/2/3> to the names of recovered files. The numbers indicate the times (max 3) the high availability scheme is used.
 
 * M3U8 file in the single-stream recording mode:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
 
 * TS segment file in the single-stream recording mode:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
 
 * M3U8 file in the mixed-stream recording mode:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
 
 * TS segment file in the mixed-stream recording mode:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
 
 ###### Field description
 \<Prefix>: filename prefix, which is not used if not specified

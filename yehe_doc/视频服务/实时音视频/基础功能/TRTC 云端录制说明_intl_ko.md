@@ -89,16 +89,16 @@ TRTC의 클라우드 녹화 기능을 통해 REST API 인터페이스를 호출�
 데이터 센터에서 클라우드 녹화 서비스 장애 시 고가용성 솔루션을 통해 녹화 작업을 복구합니다. 이 경우 원본 녹화 파일을 덮어쓰기하지 않기 위해 풀업 후 접두사 ha<1/2/3>를 추가하여 발생한 고가용성의 횟수를 나타냅니다. 녹화 작업에 허용되는 최대 풀업 횟수는 3회입니다.
 
 * 단일 스트림 녹화 M3U8 파일 이름 규칙:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>.m3u8
 
 * 단일 스트림 녹화 TS 파일 이름 규칙:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\_UserId\_s\_\<UserId>\_\_UserId\_e\_\<MediaId>\_\<Type>\_\<UTC>.ts
 
 * 혼합 스트림 녹화 M3U8 파일 이름 규칙:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>.m3u8
 
 * 혼합 스트림 녹화 TS 파일 이름 규칙:
-\<Prefix>/\<TaskId>/ha\<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
+\<Prefix>/\<TaskId>/ha<1/2/3>\_\<SdkAppId>\_\<RoomId>\_\<UTC>.ts
 
 #### 필드 의미 설명:
 \<Prefix>: 녹화 매개변수에 설정된 파일 이름 접두사는 설정되지 않은 경우 존재하지 않습니다.

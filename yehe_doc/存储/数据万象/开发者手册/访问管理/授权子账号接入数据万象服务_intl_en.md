@@ -21,10 +21,10 @@ You can create a sub-account in CAM Console and grant CI access permissions for 
 2. In the user list page, click **Create User**.
 3. Click **Custom Create** to open the **Select Type** page.
 4. Click **Access to resources and receive messages** > **Next** to enter the **Enter user info** page.
-5. Enter user information. Here, you can create multiple sub-users, set the access type and console password, or perform other operations, as shown below:
-   ![img](https://main.qcloudimg.com/raw/72d6a1252d6cb1efec4aa507aa08fc64.jpg)
+5. Enter user information. Here, you can create multiple sub-users, set the access type and console password, or perform other operations.
+
 6. Click **Next** to set user permissions. Choose **Select policies from the policy list**, and then **QcloudCIFullAccess** for full CI access from the policy list. Click **Next**.
-   ![img](https://main.qcloudimg.com/raw/eeb0ba02d111cb92bc6dec64a660e774.jpg)
+
 7. After confirming that the information is correct, click **OK** to create the sub-account.
 
 <span id="step2"></span>
@@ -35,8 +35,7 @@ To grant **COS resource access permissions** to the sub-account, associate a pre
 
 1. Log in to [CAM Console](https://console.cloud.tencent.com/cam). In the left sidebar, choose **Users** > **User List**.
 2. In the user list page, find the sub-user that you just created, and click **Grant Permission** under **Operation**.
-3. In the policy list, select the appropriate permission policy, and click **OK** to associate it with the sub-user, as shown below:
-   ![img](https://main.qcloudimg.com/raw/805d8fb27bc99c2d32482a0e3b6a7b51.png)
+3. In the policy list, select the appropriate permission policy, and click **OK** to associate it with the sub-user
 
 You can also grant COS permissions to a sub-account using a custom policy. For more information, see the [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602) document and policy examples.
 
@@ -49,6 +48,6 @@ To use a sub-account to process data, you need the APPID of the root account and
 1. Log in to [CAM Console](https://console.cloud.tencent.com/cam) with your root account. In the left sidebar, choose **Users** > **User List**.
 2. Click on the name of the sub-account whose SecretId and SecretKey you want.
 3. Select the **API Key** tab where you can get the SecretId and SecretKey.
-![img](https://main.qcloudimg.com/raw/fee1d3f637cd4ccd1ca6d27bde9f4c01.jpg)
+
 
 You can also get the API Key from the CAM console using a sub-account by granting it CAM read permission.

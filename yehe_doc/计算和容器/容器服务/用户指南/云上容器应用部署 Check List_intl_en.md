@@ -1,4 +1,4 @@
-## Introduction
+## Overview 
 
 All cloud users want their migrations to the cloud to be efficient, stable, and highly available, but this depends on system availability, data reliability, and OPS stability. This document describes the check items for deploying containerized applications to the cloud from three perspectives: evaluation item, impact, and reference. This will help ensure you experience a smooth and efficient migration to Tencent Kubernetes Engine (TKE).
 
@@ -13,14 +13,14 @@ All cloud users want their migrations to the cloud to be efficient, stable, and 
 				<td>Before creating a cluster, plan the node network and container network to suit your application scenario to prevent restricted capacity scaling in the future.</td>
 				<td>Network planning</td>
 				<td>If you have small-scale subnets or container IP ranges, your cluster may support fewer nodes than your application actually needs.</td>
-				<td><li><a href="https://intl.cloud.tencent.com/document/product/215/31795">Network Planning</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/9083">Network Settings for Containers and Nodes</a></li></td>
+				<td><li><a href="https://intl.cloud.tencent.com/document/product/215/31795">Network Planning</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/38966">Network Settings for Containers and Nodes</a></li></td>
     </tr>
     <tr>
         <td>Before creating a cluster, review your planning of direct connect, peering connection, container IP ranges, and subnet IP ranges to prevent IP range conflicts and impacts on your applications.</td>
 				<td>Network planning</td>
 				<td>For simple networking scenarios, follow the instructions on the page to configure cluster-related IP ranges to avoid conflicts. For complex networking
 scenarios, such as peering connection, direct connect, and VPN, improper network planning can affect the normal communication within your application.
-</td><td>VPC Connections</td>
+</td><td>-</td>
     </tr>
     <tr>
         <td>When you create a cluster, a new security group is automatically bound to the cluster. You can also set custom security group rules to meet the needs of your application.</td>
@@ -28,7 +28,7 @@ scenarios, such as peering connection, direct connect, and VPN, improper network
 				<td>Security groups provide an important means of security isolation. Improper security policy configuration may lead to security-related risks, service connectivity issues, and other problems.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/9084">Configuring TKE Security Groups</a></td>
     </tr>
     <tr>
-        <td>As the runtime components currently supported by TKE, Containerd and Docker suit different scenarios. When creating a cluster, select the appropriate container runtime component according to your application scenarios.</td><td>Deployment</td><td>Once the cluster is created, the container runtime cannot be changed unless the cluster is recreated.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/31088">How to Choose Between Containerd and Docker</a></td>
+        <td>As the runtime components currently supported by TKE, Containerd and Docker suit different scenarios. When creating a cluster, select the appropriate container runtime component according to your application scenarios.</td><td>Deployment</td><td>Once the cluster is created, modifications to the runtime component and version only take effect to new nodes that are not assigned to any node pool. Existing nodes are not affected.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/31088">How to Choose Between Containerd and Docker</a></td>
     </tr>
 	<tr>
         <td>By default, Kube-proxy uses iptables to balance the load between Service and Pod. When creating a cluster, you can quickly enable IPVS for traffic distribution and load balancing.</td>
@@ -51,7 +51,7 @@ scenarios, such as peering connection, direct connect, and VPN, improper network
     <tr>
         <td>When creating a service, choose the appropriate service access method as needed. Four access methods are currently supported: Via Internet, Intra-cluster, Via VPC, and Node Port Access.</td>
 				<td>Deployment</td>
-				<td>An improper access method may cause access logic confusion and waste resources inside and outside the service.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30672">Service Management</a></td>
+				<td>An improper access method may cause access logic confusion and waste resources inside and outside the service.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36832">Service Management</a></td>
     </tr>
     <tr>
         <td>When creating a workload, do not set the number of pod replicas to 1. Set a node scheduling policy based on the needs of your application.</td>
@@ -73,12 +73,12 @@ scenarios, such as peering connection, direct connect, and VPN, improper network
 <table>
    	<th style="width:10%">Category</th><th style="width:32%">Item</th><th style="5%">Type</th><th style="width:38%">Impact</th><th style="width:15%">Reference</th>
     <tr>
-        <td rowspan="2">Engineering</td><td>Check whether the quotas of resources such as CVMs, VPCs, subnets, and CBS disks can meet customer needs.</td><td>Deployment</td><td>Insufficient quotas will cause resource creation to fail. If you have enabled auto scaling, ensure that you have sufficient quotas for your Tencent Cloud services.</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/9087">Quota Limits for Cluster Purchase</a></li><li>Quota Limits</li></td>
+        <td rowspan="2">Engineering</td><td>Check whether the quotas of resources such as CVMs, VPCs, subnets, and CBS disks can meet customer needs.</td><td>Deployment</td><td>Insufficient quotas will cause resource creation to fail. If you have enabled auto scaling, ensure that you have sufficient quotas for your Tencent Cloud services</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/9087">Quota Limits for Cluster Purchase</a></li><li><a href="https://intl.cloud.tencent.com/document/product/215/38959">Quota Limits</a></li></td>
     </tr>
     <tr>
         <td>We recommend that you do not modify the kernel parameters, system configurations, versions of cluster core components, security groups, and LB parameters on the nodes in your cluster.</td><td>Deployment</td><td>This may cause TKE cluster features or Kubernetes components installed on the node to fail, making the node unavailable for application deployment.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34022">High-risk Operations in TKE</a></td>
     </tr>
 	<tr>
-        <td>Proactive<br>OPS</td><td>TKE provides multidimensional monitoring and alarm features, along with basic resource monitoring provided by Cloud Monitor, to provide more refined metrics. Configuring monitoring and alarm helps you receive prompt alarms and locate faults in case of exceptions.</td><td>Monitoring</td><td>If the monitoring and alarm features are not configured, no normal standard can be established for container cluster performance, and alarms will not be promptly received when an exception occurs. In this case, you will have to manually inspect your environment.</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/30690">Setting Alarms</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30689">Viewing Monitoring Data</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30691">List of Monitoring and Alarm Metrics</a></li></td>
+        <td>Proactive<br>OPS</td><td>TKE provides multidimensional monitoring and alarm features, along with basic resource monitoring provided by Cloud Monitor, to provide more refined metrics. Configuring monitoring and alarm helps you receive prompt alarms and locate faults in case of exceptions.</td><td>Monitoring</td><td>If the monitoring and alarm features are not configured, no normal standard can be established for container cluster performance, and alarms will not be promptly received when an exception occurs. In this case, you will have to manually inspect your environment.</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/30688">Setting Alarms</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30689">Viewing Monitoring Data</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30691">List of Monitoring and Alarm Metrics</a></li></td>
     </tr>
 </table>

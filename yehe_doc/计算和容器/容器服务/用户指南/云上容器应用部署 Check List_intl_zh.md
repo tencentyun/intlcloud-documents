@@ -1,4 +1,4 @@
-## 简介
+## 简介 
 
 业务上云安全高效、稳定高可用是每一位涉云从业者的共同诉求。这一诉求实现的前提，离不开系统可用性、数据可靠性及运维稳定性三者的完美配合。本文将从评估项目、影响说明及评估参考三个角度为您阐述云上容器应用部署的各个检查项，以便帮助您扫除上云障碍、顺利高效地完成业务迁移至容器服务（TKE）。
 
@@ -13,14 +13,14 @@
 				<td>创建集群前，结合业务场景提前规划节点网络和容器网络，避免后续业务扩容受限。</td>
 				<td>网络规划</td>
 				<td>集群所在子网或容器网段较小，将可能导致集群实际支持的可用节点数少于业务所需容量。</td>
-				<td><li><a href="https://intl.cloud.tencent.com/document/product/215/31795">网络规划</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/9083">容器及节点网络设置</a></li></td>
+				<td><li><a href="https://intl.cloud.tencent.com/document/product/215/31795">网络规划</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/38966">容器及节点网络设置</a></li></td>
     </tr>
     <tr>
         <td>创建集群前，提前梳理专线接入、对等连接、容器网段和子网网段等相关网段的规划，避免之后出现网段冲突，影响业务。</td>
 				<td>网络规划</td>
 				<td>简单组网场景按照页面提示配置集群相关网段，避免冲突；业务复杂组网
 场景，例如对等连接、专线接入、VPN 等，网络规划不当将影响整体业务正常互访。
-</td><td>VPC 连接</td>
+</td><td>-</td>
     </tr>
     <tr>
         <td>创建集群时，会自动新建并绑定默认安全组，支持根据业务需求设置自定义安全组规则。</td>
@@ -28,7 +28,7 @@
 				<td>安全组是重要的安全隔离手段，不当的安全策略配置可能会引起安全相关的隐患及服务连通性等问题。</td><td><a href="https://intl.cloud.tencent.com/document/product/457/9084">容器服务安全组设置</a></td>
     </tr>
     <tr>
-        <td> Containerd 和 Docker 作为 TKE 当前支持的运行时组件，有不同的适用场景。创建集群时，请根据业务场景选择合适的容器运行时（Container Runtime）组件。</td><td>部署</td><td>集群一旦创建，便无法更改容器运行时，除非重新创建集群。</td><td><a href="https://intl.cloud.tencent.com/document/product/457/31088">如何选择 Containerd 和 Docker</a></td>
+        <td> Containerd 和 Docker 作为 TKE 当前支持的运行时组件，有不同的适用场景。创建集群时，请根据业务场景选择合适的容器运行时（Container Runtime）组件。</td><td>部署</td><td>集群创建后，如修改运行时组件及版本，只对集群内无节点池归属的增量节点生效，不会影响存量节点。</td><td><a href="https://intl.cloud.tencent.com/document/product/457/31088">如何选择 Containerd 和 Docker</a></td>
     </tr>
 	<tr>
         <td>默认情况下，Kube-proxy 使用 iptables 来实现 Service 到 Pod 之间的负载均衡。创建集群时，支持快速开启 IPVS 来承接流量并实现负载均衡。</td>
@@ -38,7 +38,7 @@
     </tr>
 	<tr>
         <td>创建集群时，根据业务场景选择合适的集群模式：独立集群、托管集群。</td><td>部署</td><td>托管集群的 Master 和 Etcd 不属于用户资源，由腾讯云技术团队集中管理和维护，用户无法修改 Master 和 Etcd 的部署规模和服务参数。如需修改，请选用独立部署模式集群。</td>
-				<td><li><a href="https://intl.cloud.tencent.com/document/product/457/30635">集群概述</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/31417">集群的托管模式说明</a></li></td>
+				<td><li><a href="https://intl.cloud.tencent.com/document/product/457/30635">集群概述 </a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/31417">集群的托管模式说明</a></li></td>
     </tr>
     <tr>
         <td rowspan="4">工作<br>负载</td>
@@ -51,7 +51,7 @@
     <tr>
         <td>创建服务时需要根据实际访问需求选择合适的访问方式，目前支持以下四种：提供公网访问、仅在集群内访问、VPC 内网访问及主机端口访问。</td>
 				<td>部署</td>
-				<td>选择不当的访问方式，可能造成服务内外部访问逻辑混乱和资源浪费。</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30672">Service 管理</a></td>
+				<td>选择不当的访问方式，可能造成服务内外部访问逻辑混乱和资源浪费。</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36832">Service 管理</a></td>
     </tr>
     <tr>
         <td>工作负载创建时，避免单 Pod 副本数设置，请根据自身业务合理设置节点调度策略。</td>
@@ -73,12 +73,12 @@
 <table>
    	<th style="width:10%">类别</th><th style="width:32%">评估项目</th><th style="5%">类型</th><th style="width:38%">影响说明</th><th style="width:15%">评估参考</th>
     <tr>
-        <td rowspan="2">工程</td><td>CVM、VPC、子网及 CBS 等资源配额是否满足客户需求。</td><td>部署</td><td>配额不足将会导致创建资源失败，对于配置了自动扩容的用户尤其需要保障所使用的云服务配额充足。</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/9087">购买集群配额限制</a></li><li>配额限制</li></td>
+        <td rowspan="2">工程</td><td>CVM、VPC、子网及 CBS 等资源配额是否满足客户需求。</td><td>部署</td><td>配额不足将会导致创建资源失败，对于配置了自动扩容的用户尤其需要保障所使用的云服务配额充足。</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/9087">购买集群配额限制</a></li><li><a href="https://intl.cloud.tencent.com/document/product/215/38959">配额限制</a></li></td>
     </tr>
     <tr>
         <td>集群的节点上不建议用户随意修改内核参数、系统配置、集群核心组件版本、安全组及 LB 相关参数等。</td><td>部署</td><td>可能会导致 TKE 集群功能异常或安装在节点上的 Kubernetes 组件异常，节点状态变成不可用，无法部署应用到此节点。</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34022">容器服务高危操作</a></td>
     </tr>
 	<tr>
-        <td>主动<br>运维</td><td>容器服务提供多维度的监控和告警功能，同时结合云监控提供的基础资源监控，能保证更细的指标覆盖。配置监控告警，以便于异常时及时收到告警和故障定位。</td><td>监控</td><td>未配置监控告警，将无法建立容器集群性能的正常标准，在出现异常时无法及时收到告警，需要人工巡检环境。</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/30690">设置告警</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30689">查看监控数据</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30691">监控及告警指标列表</a></li></td>
+        <td>主动<br>运维</td><td>容器服务提供多维度的监控和告警功能，同时结合云监控提供的基础资源监控，能保证更细的指标覆盖。配置监控告警，以便于异常时及时收到告警和故障定位。</td><td>监控</td><td>未配置监控告警，将无法建立容器集群性能的正常标准，在出现异常时无法及时收到告警，需要人工巡检环境。</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/30688">设置告警</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30689">查看监控数据</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30691">监控及告警指标列表</a></li></td>
     </tr>
 </table>
