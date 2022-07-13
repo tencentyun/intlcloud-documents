@@ -12,7 +12,7 @@
 
 ### ステップ1：権限の初期化[](id:step1)
 
-1. まず初めにプロジェクトのAppDelegateのdidFinishLaunchingWithOptionsに次の認証コードを追加します。このうちLicenseURLおよびLicenseKeyはTencent Cloud公式サイトに権限承認を申請した際の情報とします。[Licenseガイド](https://intl.cloud.tencent.com/document/product/1143/45380)をご参照ください。
+1. まず初めにプロジェクトのAppDelegateのdidFinishLaunchingWithOptionsに次の認証コードを追加します。このうちLicenseURLおよびLicenseKeyはTencent Cloud公式サイトに権限承認を申請した際の情報とします。
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```

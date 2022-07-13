@@ -12,7 +12,7 @@
 
 ### Step 1. Initialize authorization[](id:step1)
 
-1. Add the following authentication code to the `didFinishLaunchingWithOptions` of the `AppDelegate` in the project, where the `LicenseURL` and `LicenseKey` are the authorization information obtained at Tencent Cloud official website as instructed in [License Guide](https://intl.cloud.tencent.com/document/product/1143/45380):
+1. Add the following authentication code to the `didFinishLaunchingWithOptions` of the `AppDelegate` in the project, where the `LicenseURL` and `LicenseKey` are the authorization information obtained at Tencent Cloud official website as instructed in License Guide:
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```

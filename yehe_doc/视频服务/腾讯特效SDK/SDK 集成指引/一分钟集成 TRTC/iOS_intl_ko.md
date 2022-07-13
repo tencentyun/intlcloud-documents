@@ -12,7 +12,7 @@
 
 ### 1단계: 인증 초기화[](id:step1)
 
-1. 먼저 프로젝트 AppDelegate의 didFinishLaunchingWithOptions에 다음 인증 코드를 추가합니다. 여기서 LicenseURL 및 LicenseKey는 Tencent Cloud 공식 웹사이트에서 신청한 인증 정보입니다. [License 가이드](https://intl.cloud.tencent.com/document/product/1143/45380)를 참고하십시오.
+1. 먼저 프로젝트 AppDelegate의 didFinishLaunchingWithOptions에 다음 인증 코드를 추가합니다. 여기서 LicenseURL 및 LicenseKey는 Tencent Cloud 공식 웹사이트에서 신청한 인증 정보입니다. 
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```

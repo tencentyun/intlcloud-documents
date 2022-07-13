@@ -25,16 +25,18 @@ Windows，Linux 和 Mac OS 都可以使用 RDP 方式登录云服务器。
 2. 在实例的管理页面，选择需要登录的 Windows 云服务器，单击**登录**。如下图所示：
 ![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. 在打开的“标准登录 | Windows 实例”窗口中，选择 **RDP文件下载**，将 RDP 文件下载到本地。
->?若您已修改远程登录端口，则需修改 RDP 文件，在 IP 地址后增加`:端口`。
->
+<dx-alert infotype="explain" title="">
+若您已修改远程登录端口，则需修改 RDP 文件，在 IP 地址后增加`:端口`。
+</dx-alert>
 ![](https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png)
 4. 双击打开已下载到本地的 RDP 文件，输入密码，单击**确定**，即可远程连接到 Windows 云服务器。
  - 如果您使用系统默认密码登录实例，请前往 [站内信](https://console.cloud.tencent.com/message) 获取。
  - 如果您忘记密码，请 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566)。
 :::
 ::: Linux\s系统使用\sRDP\s登录[](id:LinuxRDP)
->?您需要安装相应的远程桌面连接程序，推荐使用 rdesktop 进行连接。更多详情请参考 [rdesktop 官方说明](http://www.rdesktop.org/)。
->
+<dx-alert infotype="explain" title="">
+您需要安装相应的远程桌面连接程序，推荐使用 rdesktop 进行连接。更多详情请参考 [rdesktop 官方说明](http://www.rdesktop.org/)。
+</dx-alert>
 1. 执行以下命令，检查系统是否已安装 rdesktop。
 ```
 rdesktop
@@ -54,8 +56,9 @@ make
 make install
 ```
 4. [](id:step04)执行以下命令，连接远程 Windows 实例。</span>
->? 请将示例中的参数修改为您自己的参数。
->
+<dx-alert infotype="explain" title="">
+请将示例中的参数修改为您自己的参数。
+</dx-alert>
 ```
 rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
@@ -65,10 +68,10 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
  - `<hostname or IP address>` 即为您的 Windows 实例公网 IP 或自定义域名。实例公网 IP 获取方法请参见 [获取公网 IP 地址](https://intl.cloud.tencent.com/document/product/213/17940)。
 :::
 ::: MacOS\s系统使用\sRDP\s登录[](id:MacRDP)
->?
->- 以下操作以 Microsoft Remote Desktop for Mac 为例。微软官方已于2017年停止提供 Remote Desktop 客户端的下载链接，转由其子公司 HockeyApp 进行 Beta 版本的发布。您可前往 [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) 下载 Beta 版本。
->- 以下操作以连接 Windows Server 2012 R2 操作系统的云服务器为例。
->
+<dx-alert infotype="explain" title="">
+   - 以下操作以 Microsoft Remote Desktop for Mac 为例。微软官方已于2017年停止提供 Remote Desktop 客户端的下载链接，转由其子公司 HockeyApp 进行 Beta 版本的发布。您可前往 [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) 下载 Beta 版本。
+   - 以下操作以连接 Windows Server 2012 R2 操作系统的云服务器为例。
+</dx-alert>
 1. 下载 Microsoft Remote Desktop for Mac 并在本地进行安装。
 2. 启动 MRD，并单击【Add Desktop】。如下图所示：
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
@@ -85,14 +88,15 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 5. 在弹出的窗口中单击【Continue】确认连接。如下图所示：
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 成功连接后将打开 Windows 云服务器界面。如下图所示：
-![](https://main.qcloudimg.com/raw/5a524210acd13624af7263b6de3aea54.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4ad07fb213224a1eff9e1a6fbda385dc.png)
 :::
 </dx-tabs>
 
 ## RDP 带宽限制说明[](id:illustrate)
 网络可用带宽将直接影响通过 RDP 登录及使用云服务器的体验，不同的应用程序和显示分辨率需要不同的网络配置。微软提出了不同应用场景下使用 RDP 时实例的最低带宽要求。请参考下表，确保实例的网络配置可满足您的业务需求，否则可能引起卡顿等问题。
->?如需调整实例带宽，请参见 [调整网络配置](https://intl.cloud.tencent.com/document/product/213/15517)。
->
+<dx-alert infotype="explain" title="">
+如需调整实例带宽，请参见 [调整网络配置](https://intl.cloud.tencent.com/document/product/213/15517)。
+</dx-alert>
 以下数据适用于采用1920 × 1080分辨率，并同时采用默认图形模式和 H.264/AVC 444 图形模式的单一监视器配置。
 
 <table>

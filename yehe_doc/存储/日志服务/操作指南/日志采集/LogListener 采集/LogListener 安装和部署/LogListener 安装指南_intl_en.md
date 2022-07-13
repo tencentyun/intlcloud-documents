@@ -120,7 +120,7 @@ After LogListener is successfully installed, run the following command to start 
 ```
 
 LogListener normally runs two processes:
-![](https://main.qcloudimg.com/raw/e28d0d88d14a65567ce46794979dfc94.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/52e273d05e6afc4946849429daf95c8d.png)
 
 ### 5. Checking LogListener heartbeat and configuration
 

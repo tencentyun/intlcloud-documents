@@ -72,7 +72,7 @@ uname -r
 ```
 A response similar to the following will be returned, indicating the current kernel version is 2.6.32-642.6.2.el6.x86_64.
 ![](https://main.qcloudimg.com/raw/739b19fc7af96d6de7872df0a498b7b6.png)
-2. Go to [Linux Kernel Download Page](https://www.kernel.org/pub/linux/kernel/?spm=a2c4g.11186623.2.26.7e4179b4zo5WVJ) to download the source code of the corresponding kernel version.
+3. Go to [Linux Kernel Download Page](https://www.kernel.org/pub/linux/kernel/?spm=a2c4g.11186623.2.26.7e4179b4zo5WVJ) to download the source code of the corresponding kernel version.
 For example, for the `2.6.32-642.6.2.el6.x86_64` version, you should download `linux-2.6.32.tar.gz` at `https://mirrors.edge.kernel.org/pub/linux/kernel/v2.6/linux-2.6.32.tar.gz`.
 4. Execute the following command to switch directory.
 ```
@@ -105,7 +105,7 @@ make menuconfig
 ```
 Enter the “Linux Kernel vX.X.XX Configuration” interface as shown below:
 ![](https://main.qcloudimg.com/raw/72c3bea10627aaef022f1a72b72ac79a.png)
->? If you are not taken to the "Linux Kernel vX.X.XX Configuration" interface, please go to [Step 18](# OptionalStep).
+>? If you are not taken to the "Linux Kernel vX.X.XX Configuration" interface, please go to [Step 18](#OptionalStep).
 > “Linux Kernel vX.X.XX Configuration” interface:
 > - Press “Tab” or “↑” “↓” to move the cursor.
 > - Press “Enter” to select or execute the item selected by the cursor.

@@ -4,7 +4,7 @@ You can connect a frontend-backend separated site to the WAF CAPTCHA process to 
 
 
 ## Prerequisites
- You have purchased [WAF](https://intl.cloud.tencent.com/document/product/627/47409) (Premium or higher) and [connected to it](https://intl.cloud.tencent.com/document/product/627/18635). 
+ You have purchased [WAF](https://intl.cloud.tencent.com/document/product/627/47799) (Premium or higher) and [connected to it](https://intl.cloud.tencent.com/document/product/627/18635). 
 
 
 ## How to Detect

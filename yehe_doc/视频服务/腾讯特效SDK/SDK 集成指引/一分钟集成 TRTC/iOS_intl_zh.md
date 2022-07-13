@@ -12,7 +12,7 @@
 
 ### 步骤一：初始化授权[](id:step1)
 
-1. 首先在工程 AppDelegate 的 didFinishLaunchingWithOptions 中添加如下鉴权代码，其中 LicenseURL 和 LicenseKey 为腾讯云官网申请到授权信息，请参见 [License 指引](https://intl.cloud.tencent.com/document/product/1143/45380)：
+1. 首先在工程 AppDelegate 的 didFinishLaunchingWithOptions 中添加如下鉴权代码，其中 LicenseURL 和 LicenseKey 为腾讯云官网申请到授权信息：
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```

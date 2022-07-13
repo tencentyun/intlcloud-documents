@@ -8,7 +8,7 @@
 ## Stable and Reliable
 
 - CLS has a highly scalable distributed storage architecture. It supports horizontal scaling and automatic service scaling, and easily stores and manages massive log data.
-- The CLS backend storage manages and stores logs in multiple copies, ensuring data security.
+- The CLS backend storage manages and stores logs in multiple copies, ensuring data reliability.
 
 ## Simple and Efficient
 
