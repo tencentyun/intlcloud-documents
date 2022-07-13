@@ -88,7 +88,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 5. 在弹出的窗口中单击【Continue】确认连接。如下图所示：
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 成功连接后将打开 Windows 云服务器界面。如下图所示：
-![](https://main.qcloudimg.com/raw/5a524210acd13624af7263b6de3aea54.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4ad07fb213224a1eff9e1a6fbda385dc.png)
 :::
 </dx-tabs>
 
