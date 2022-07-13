@@ -7,7 +7,7 @@ COS data processing offers the encryption feature for HTTP Live Streaming (HLS) 
 
 ## How It Works
 
-![](https://main.qcloudimg.com/raw/4491a94b09f8b73de9abe12a1086f810.png).
+![](https://qcloudimg.tencent-cloud.cn/raw/fe49915c6d9de74677b6ef4f03ac5158.jpg).
 
 >? In this solution, COS is connected to KMS.
 >
