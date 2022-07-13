@@ -26,7 +26,7 @@ The API can:
 - Calling the API will incur text moderation fees and [COS read request fees](https://intl.cloud.tencent.com/document/product/436/40100).
 - If the text files are stored in COS STANDARD_IA storage class, calling the moderation API will incur [STANDARD_IA data retrieval fees](https://intl.cloud.tencent.com/document/product/436/40097).
 - Text moderation is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To moderate these objects, you need to [restore](https://intl.cloud.tencent.com/document/product/436/12633) them first.
-- 审核第三方云存储厂商的图片 URL 时，将产生所在云厂商的下行流量费用。
+
 
 ## Restrictions
 

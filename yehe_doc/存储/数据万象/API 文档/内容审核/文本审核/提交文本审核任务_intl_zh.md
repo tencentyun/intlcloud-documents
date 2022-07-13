@@ -26,7 +26,7 @@
 - 调用接口会产生文本审核费用 和 [COS 读请求费用](https://intl.cloud.tencent.com/document/product/436/40100)。
 - 如果文本属于 COS 上的低频存储类型，调用审核会产生 [COS 低频数据取回费用](https://intl.cloud.tencent.com/document/product/436/40097)。
 - 不支持审核 COS 上的归档存储类型和深度归档存储类型的文本，如果需要审核此类型文本，请先 [恢复归档文件](https://intl.cloud.tencent.com/document/product/436/12633)。
-- 审核第三方云存储厂商的图片 URL 时，将产生所在云厂商的下行流量费用。
+
 
 ## 限制说明
 
