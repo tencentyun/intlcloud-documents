@@ -3,12 +3,7 @@ TUICalling 组件是一个开源的音视频组件，帮助您快速在您的桌
 
 >?TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信IM服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
 
-<table class="tablestyle">
-<tbody><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
-</tr>
-</tbody></table>
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png)
 
 #### 其它平台
 除了 Web 版的 TUICalling，我们同时也推出了 Android、iOS、Flutter等平台的源代码，其中 Android、iOS 版本的 TUICalling 支持“来电提醒”功能。
@@ -141,10 +136,6 @@ trtcCalling.call({
 trtcCalling.accept();
 // 拒绝
 trtcCalling.reject()
-```
-- **打开本地摄像头**
-```javascript
-trtcCalling.openCamera()
 ```
 - **展示远端的视频画面**
 ```javascript
