@@ -1,7 +1,6 @@
-One of the greatest challenges faced by paid video platforms is the unauthorized download and sharing of videos. This severely damages the interests of copyright holders.
-Unauthorized video recording is the most common form of video piracy. Pirates use screen recording software to record the video or use a physical camera to record the screen directly, which is difficult to prevent.
-An effective way to suppress unauthorized video recording is to track down pirates and use other means to protect copyrighted content, deter piracy, and demand compensation.
-VOD's digital watermark guarantees a high security level at low costs and helps you trace unauthorized video recording with ease.
+One of the greatest challenges faced by paid video platforms is the unauthorized download and sharing of videos. This severely damages the interests of copyright holders. Unauthorized video recording is the most common form of video piracy. Pirates use screen recording software to record the video or use a physical camera to record the screen directly, which is difficult to prevent.
+
+An effective way to suppress unauthorized video recording is to track down pirates and use other means to protect copyrighted content, deter piracy, and demand compensation.VOD's digital watermark guarantees a high security level at low costs and helps you trace unauthorized video recording with ease.
 
 ## Shortcomings of Traditional Watermarks
 
