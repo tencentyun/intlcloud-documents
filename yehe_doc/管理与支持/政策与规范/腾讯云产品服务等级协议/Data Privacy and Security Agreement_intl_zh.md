@@ -142,6 +142,8 @@
 39.[云点播](https://intl.cloud.tencent.com/document/product/266/47179)。
 40.[移动解析 HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854)。
 41.[腾讯特效SDK](https://intl.cloud.tencent.com/document/product/1143/48382)。
+42.[语音合成](https://intl.cloud.tencent.com/document/product/1154/48243).
+43.[语音识别](https://intl.cloud.tencent.com/document/product/1118/48290).
 
 ## 特定司法管辖区要求
 
