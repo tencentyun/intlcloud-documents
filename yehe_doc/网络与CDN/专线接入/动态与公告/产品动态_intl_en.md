@@ -1,21 +1,3 @@
-## August 2021
-<table>
-<tr>
-<th width="25%">Update</th>
-<th width="40%">Description</th>
-<th width="15%">Release Date</th>
-<th width="20%">Documentation</th>
-</tr>
-<tr>
-<td>Direct connect gateway supports traffic analysis</td>
-<td>It conducts statistical analysis for the traffic flowing through the direct connect gateway and displays the "Top N" information, such as total traffic, average bandwidth, total packets, average packet forwarding and traffic ratio, to help you adjust and plan your business.</td>
-<td>2021-08-31</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/216/45864">Gateway Traffic Analysis</a></td>
-</tr>
-</table>
-
-
-
 ## July 2021
 <table>
 <tr>
