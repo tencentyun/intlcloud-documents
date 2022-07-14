@@ -37,6 +37,7 @@ Your app needs mic and camera permissions to implement audio/video communication
 
 <dx-codeblock>
 ::: Objective-C
+
 ```
 // 1. Log in to the component
 [TUILogin initWithSdkAppID:@"Your SDKAppID"];
