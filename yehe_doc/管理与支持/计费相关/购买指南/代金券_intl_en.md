@@ -74,7 +74,7 @@ When purchasing, manually renewing, or upgrading a subscription plan, you can ap
 ![](https://qcloudimg.tencent-cloud.cn/raw/0fd360129824ba47070356617d9255d9.png)
 >?
 >- The system will match promo vouchers with the order, taking into account the applicable products, billing mode, order amount, and other use limits. Only vouchers that meet all the conditions can be applied to the order.
->- In case of auto-renewal, the system will apply a promo voucher first before deducting the remaining amount from your account balance. For details, see [Auto-application](#Auto application). To learn about how to enable auto-renewal, see [Renewal Management](https://intl.cloud.tencent.com/document/product/555/7454).
+>- In case of auto-renewal, the system will apply a promo voucher first before deducting the remaining amount from your account balance. For details, see [Auto-application](#Auto-application). To learn about how to enable auto-renewal, see [Renewal Management](https://intl.cloud.tencent.com/document/product/555/7454).
 >- **You can use only one promo voucher for each payment**. If there are multiple applicable promo vouchers for an order, you need to choose one to use. If you do not want to use a voucher, unselect **Use promo voucher**.
 >- You can pay multiple orders together on the **Order Management** page (select the orders you want to pay and click **Consolidated Payment**) and apply a promo voucher to the payment.
 >- If you refund a prepaid order, the promo voucher applied will not be returned.
