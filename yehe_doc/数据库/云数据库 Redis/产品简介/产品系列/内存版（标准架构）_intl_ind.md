@@ -5,8 +5,8 @@ Edisi Memori (Arsitektur Standar) - satu replika:
 ![](https://main.qcloudimg.com/raw/0bb5f79eea8c50f2817050211a0ed77f.jpg)
 
 ## Deskripsi Replika
-Edisi Memori (Arsitektur Standar) mendukung 0–5 replika untuk memenuhi persyaratan yang berbeda untuk ketersediaan dan kinerja bisnis Anda dalam skenario yang berbeda. Semua replika Edisi Memori (Arsitektur Standar) berperan dalam mendukung ketersediaan tinggi sistem, sehingga makin banyak replika, makin tinggi ketersediaannya. Jika jumlah replika lebih besar dari 1, pemisahan baca/tulis dapat diaktifkan untuk memperluas kinerja baca melalui node replika.
->? Edisi Memori TencentDB for Redis 4.0 (Arsitektur Standar) mendukung 0–9 replika di wilayah Beijing dan Guangzhou atau 0–5 replika di wilayah lain. Versi lain hanya mendukung 0–5 replika.
+Edisi Memori (Arsitektur Standar) mendukung 1–5 replika untuk memenuhi persyaratan yang berbeda untuk ketersediaan dan kinerja bisnis Anda dalam skenario yang berbeda. Semua replika Edisi Memori (Arsitektur Standar) berperan dalam mendukung ketersediaan tinggi sistem, sehingga makin banyak replika, makin tinggi ketersediaannya. Jika jumlah replika lebih besar dari 1, pemisahan baca/tulis dapat diaktifkan untuk memperluas kinerja baca melalui node replika.
+>? Edisi Memori TencentDB for Redis 4.0 (Arsitektur Standar) mendukung 1–9 replika di wilayah Beijing dan Guangzhou atau 1–5 replika di wilayah lain. Versi lain hanya mendukung 1–5 replika.
 >
 
 **Definisi**:
@@ -17,16 +17,13 @@ Edisi Memori (Arsitektur Standar) mendukung 0–5 replika untuk memenuhi persyar
 <table>
 <tr><th >Versi Instans</th><th >Replika yang Didukung</th><th >Pemisahan Baca/Tulis</th>  </tr>
 <tr>      
-<td>Edisi Memori TencentDB for Redis 2.8 (Arsitektur Standar)</td><td>0–1</td><td>Tidak didukung</td></tr> 
+<td>Edisi Memori TencentDB for Redis 2.8 (Arsitektur Standar)</td><td>1</td><td>Tidak didukung</td></tr> 
 <tr>
 <td>Edisi Memori TencentDB for Redis 4.0 (Arsitektur Standar)</td><td>0–5</td><td>Didukung</td></tr> 
 <tr>
 <td>Edisi Memori TencentDB for Redis 5.0 (Arsitektur Standar)</td><td>0–5</td><td>Didukung</td></tr> 
 </table>
 
-**Instans Nol Replika**:
-- Data mungkin hilang ketika sebuah node gagal; oleh karena itu, jangan gunakan instans nol replika dalam skenario penyimpanan data.
-- Instans nol-replika hanya cocok untuk skenario cache murni. Sistem aplikasi dapat terus berjalan meskipun terjadi kegagalan Redis, tetapi sebagai instans nol-replika hanya memiliki satu node database, ketika node gagal, sistem akan memulai proses Redis baru (yang tidak memiliki data), dan setelah node failover selesai, aplikasi perlu melakukan pemanasan data lagi untuk menghindari tekanan akses pada database backend.
 
 **Replika Baca Saja (pemisahan baca/tulis)**:
 - Edisi yang didukung: Edisi Memori TencentDB for Redis 4.0 (Arsitektur Standar) dan instans di atasnya. Ketika jumlah replika lebih besar dari 1, pemisahan baca/tulis otomatis dapat diaktifkan untuk memperluas kinerja baca secara vertikal. Hingga 5 node replika dapat didukung.
