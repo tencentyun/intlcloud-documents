@@ -1,6 +1,6 @@
 ビデオ通話機能をすばやく実装する必要がある場合、当社が提供するDemoをもとに直接変更を加えて適応させるか、当社が提供するTRTCCallingコンポーネントでカスタマイズしたUIを実装することができます。
 
->?TUICallingコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブ化すると、デフォルトで関連するIM SDKの体験版がアクティブ化されます。これは100 DAUのみをサポートします。
+>?TUIKitコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブ化すると、デフォルトで関連するIM SDKの体験版がアクティブ化されます。これは100 DAUのみをサポートします。
 
 ## DemoのUIの再利用
 
