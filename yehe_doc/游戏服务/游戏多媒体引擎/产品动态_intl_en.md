@@ -44,7 +44,7 @@
 </ul ></td>
 <td>2022-03-16</td> 
 <td>
-<li><a href="https://cloud.tencent.com/document/product/607/48323">Free Demo
+<li><a href="https://intl.cloud.tencent.com/document/product/607/38535">Free Demo
 </tr></tbody>
 </table>
 
@@ -86,7 +86,7 @@
 </thead>
 <tbody><tr>
 <td>SDK v2.8.3 is released</td>
-<td ><ul style="margin:0;"><li >The real-time speech recognition feature is now available in beta. The speech in the audio call can be recognized to text in real time. To try it out, please <a href="https://cloud.tencent.com/online-service?from=connect-us">submit a ticket</a>.</li>
+<td ><ul style="margin:0;"><li >The real-time speech recognition feature is now available in beta. The speech in the audio call can be recognized to text in real time. To try it out, please <a href="https://intl.cloud.tencent.com/contact-sales">submit a ticket</a>.</li>
 <li >Optimizes the network module and increases the success rate of room entry on Windows platform.</li>
 <li >Updates the SDK of H5 platform and adds the adaptation for browsers.</li>
 <li >Optimizes the performance and increases the speed of room entry and the stability of SDK.</li>
