@@ -22,6 +22,7 @@ There are three types of general promo vouchers:
  - Prepaid general vouchers (applicable to all prepaid payments)
  - Pay-as-you-go general vouchers (applicable to all pay-as-you-go payments)
  - All-product general vouchers (applicable to all Tencent Cloud payments)
+>?For the actual application scope of all-product, prepaid, and pay-as-you-go general vouchers, refer to their applicable and non-applicable products.
 
 #### 3. Payment scenarios
 A. Depending on whether they are applicable to prepaid or pay-as-you-go payments, promo vouchers can be classified into prepaid and pay-as-you-go vouchers.
