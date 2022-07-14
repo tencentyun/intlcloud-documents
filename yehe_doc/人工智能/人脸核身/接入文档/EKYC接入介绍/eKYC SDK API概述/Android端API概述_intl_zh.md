@@ -73,6 +73,14 @@ EkycHyConfig是在启动eKYC SDK时的配置实体类，主要包含了以下属
 | int                             | hyFaceTimeOut  | 人脸核身单一动作的超时时间     | 10000毫秒（10秒）  |
 | [LanguageStyle](#LanguageStyle) | languageStyle  | 本次流程的语言风格             | LanguageStyle.AUTO |
 
+### OcrRegionType
+检测证件类型
+|枚举名|说明|
+|---|---|
+|HK|中国香港证件|
+|ML|马来西亚证件|
+|PhilippinesDrivingLicense|菲律宾-驾驶执照|
+|PhilippinesVoteID|菲律宾-VoteID|
 
 
 ### LanguageStyle

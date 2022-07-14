@@ -18,7 +18,7 @@
 
 #### 接入步骤
 
-1. 将**ekyc_android_1.0.1.1_release.aar**、**huiyansdk_android_1.0.8.1_release.aar**、**tencen-ai-sdk-common-base-1.0.1.12-release.aar**(具体版本号以官网下载为准)添加到您工程的libs目录下。
+1. 将**ekyc_android_1.0.x.x_release.aar**、**huiyansdk_android_1.0.x.x_release.aar**、**tencen-ai-sdk-common-base-1.0.x.x-release.aar**(具体版本号以官网下载为准)添加到您工程的libs目录下。
 
    ![](https://ai-sdk-release-1254418846.cos.ap-guangzhou.myqcloud.com/EKYC/%E5%9B%BE%E5%BA%8A/ekyc_common.png)
 
@@ -32,11 +32,11 @@ ndk {
 
 dependencies {
     // eKYC版本库
-    implementation files("libs/ekyc_android_1.0.1.1_release.aar")
+    implementation files("libs/ekyc_android_1.0.x.x_release.aar")
     // 核身组件库
-    implementation files("libs/huiyansdk_android_1.0.8.1_release.aar")
+    implementation files("libs/huiyansdk_android_1.0.x.x_release.aar")
     // 通用组件库
-    implementation files("libs/tencen-ai-sdk-common-base-1.0.1.12-release.aar")
+    implementation files("libs/tencen-ai-sdk-common-base-1.0.x.x-release.aar")
     // 引入gson三方库
     implementation 'com.google.code.gson:gson:2.8.5'
 }
@@ -93,6 +93,7 @@ EkycHyConfig ekycHyConfig = new EkycHyConfig();
 // 设置license的名称
 ekycHyConfig.setLicenseName("ekycLicense.license");
 ekycHyConfig.setVerAutoTimeOut(20000);
+ekycHyConfig.setOcrType(OcrRegionType.);
 // 自定义UI配置
 OcrUiConfig config = new OcrUiConfig();
 ekycHyConfig.setOcrUiConfig(config);
