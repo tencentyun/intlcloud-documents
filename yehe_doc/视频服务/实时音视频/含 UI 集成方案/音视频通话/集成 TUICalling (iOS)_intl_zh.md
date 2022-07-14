@@ -14,6 +14,7 @@ TUICalling 是一个开源的音视频 UI 组件，通过在项目中集成 TUIC
 1. 在您的工程 `Podfile` 文件同一级目录下创建 `TUICalling` 文件夹。
 2. 单击进入 [**Github/TUICalling**](https://github.com/tencentyun/TUICalling) ，选择克隆/下载代码，然后将 [**TUICalling/iOS/**](https://github.com/tencentyun/TUICalling/tree/main/iOS) 目录下的 `Source`、`Resources` 文件夹 和 `TUICalling.podspec` 文件拷贝到您在 `步骤1` 创建的 TUICalling 文件夹下。
 3. 在您的 Podfile 文件中添加以下依赖，之后执行 `pod install` 命令，完成导入。
+
 ```
 # :path => "指向TUICalling.podspec的相对路径"
 pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"]
@@ -37,6 +38,7 @@ pod 'TUICalling', :path => "TUICalling/TUICalling.podspec", :subspecs => ["TRTC"
 
 <dx-codeblock>
 :::  Objective-C
+
 ```
 // 1.组件登录
 [TUILogin initWithSdkAppID:@"您的SDKAppID"];
