@@ -1,12 +1,10 @@
 This document answers questions you may encounter when using Tencent Effect licenses.
 
 [](id:q1)
-### What is the relation between a license, license key, and the Tencent Effect SDK?
-To legally use the Tencent Effect SDK (**“Tencent Effect”** or **“SDK”**), you will need to obtain Tencent’s express permission. This permission is called a license and is usually contained in the terms and conditions that you will need to agree to before you may purchase and/or use the SDK. Without a license, your use of the SDK will be unauthorised and will constitute infringing use. There are 2 types of licenses that you can obtain, a trial license and a production license. 
+### What are the relationships between a license, a license key, and the Tencent Effect SDK?
+You need to obtain Tencent Cloud's permission to legitimately use the Tencent Effect SDK. Tencent Cloud grants this permission by issuing licenses. There are two types of licenses you can obtain: a trial license and a production license.
 
-Once you have obtained a license from Tencent to use the SDK, you will need a valid **license key** to access and use the SDK. This license key consists of a key and license URL (also known as a path) that enables you to access and use the features of the SDK. Without a license key, you will not be able to use the SDK.
-
-Finally, the SDK is a collection of software development tools that facilitate your creation of applications for different software packages, software frameworks, and operating systems. 
+An SDK is a collection of software development tools that facilitate your creation of applications for different software packages, software frameworks, and operating systems. After obtaining a license to use the Tencent Effect SDK, you will get a license key and a license URL, which you need to provide to the SDK in order to unlock its features.
 
 [](id:q2)
 ### How do I get a production license for Tencent Effect?
