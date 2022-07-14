@@ -3,12 +3,7 @@ TUICalling은 오픈 소스 오디오/비디오 컴포넌트입니다. **영상 
 
 >?TUIKit의 모든 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
-<table class="tablestyle">
-<tbody><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
-</tr>
-</tbody></table>
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png)
 
 #### 기타 플랫폼
 Web 외에도 Android, iOS 및 Flutter용 소스 코드도 제공합니다. TUICalling은 Android 및 iOS 버전은 ‘수신 전화 알림’을 지원합니다.
@@ -141,10 +136,6 @@ trtcCalling.call({
 trtcCalling.accept();
 // 거부
 trtcCalling.reject()
-```
-- **로컬 카메라 켜기**
-```javascript
-trtcCalling.openCamera()
 ```
 - **원격 사용자의 비디오 재생**
 ```javascript
