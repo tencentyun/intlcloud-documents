@@ -1,8 +1,10 @@
 在使用 License 的过程中，您可能会遇见以下问题，可以参考本文的解答。
 
 [](id:q1)
-### License 与 SDK 的关系？
-License 可以理解是为获取 SDK 功能授权所需要的秘钥和路径，而 SDK 是为了更好的使用整个服务所特定的软件包、软件框架、操作系统等建立应用软件时的开发工具集合。腾讯特效 SDK 的 License 信息是由一对 Key 和LicenseURL 组成，获取生效授权的 Key 和 LicenseURL 并填入到 SDK 中相应位置，便能启用腾讯特效功能。
+### License、License Key和腾讯特效SDK有什么关系？
+您需要获得腾讯明示的License从而合法地使用腾讯特效SDK。License为您在试用或购买 SDK 之前需要同意的条款。若未经License授权的产品使用将构成侵权。您可以获得两种类型的License，测试License和正式License。
+
+SDK 是为了更好的使用整个服务所特定的软件包、软件框架、操作系统等建立应用软件时的开发工具集合。一旦您从腾讯获得使用 SDK 的License，您将获取到一对License Key和License  URL信息。您必须要将生效授权License Key和 LicenseURL 并填入到 SDK 中相应位置，方能启用腾讯特效功能。
 
 [](id:q2)
 ### 如何获取腾讯特效正式版 License？
