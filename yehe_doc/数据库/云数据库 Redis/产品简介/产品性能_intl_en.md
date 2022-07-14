@@ -36,7 +36,7 @@
 <tr>
 <td>GEO</td><td>Unsupported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
-<td>Replica quantity</td><td>0 to 1</td><td>1 to 5</td><td>1 to 5</td></tr>
+<td>Replica quantity</td><td>1</td><td>1 to 5</td><td>1 to 5</td></tr>
 </tbody></table>
 
 
