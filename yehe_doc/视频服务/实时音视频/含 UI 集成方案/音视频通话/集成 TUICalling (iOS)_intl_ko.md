@@ -4,11 +4,7 @@ TUICalling은 오디오/비디오 통신을 위한 오픈 소스 UI 컴포넌트
 
 >?TUIKit의 모든 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 Tencent Cloud [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078)과 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM의 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
-<table class="tablestyle">
-<tbody><tr>
-<td><img src="https://qcloudimg.tencent-cloud.cn/raw/af697557d2746585a0d9f4b894dc42d5.png" </td>
-</tr>
-</tbody></table>
+![](https://qcloudimg.tencent-cloud.cn/raw/af697557d2746585a0d9f4b894dc42d5.png)
 
 ## 컴포넌트 통합
 
