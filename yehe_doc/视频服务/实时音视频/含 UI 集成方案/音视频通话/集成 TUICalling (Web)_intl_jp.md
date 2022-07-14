@@ -2,12 +2,7 @@
 TUICallingコンポーネントはオープンソースのオーディオビデオコンポーネントです。デスクトップブラウザで**ビデオ通話**機能をスピーディーに統合でき、オンライン問診、オンラインカスタマーサービス、リモート査定などのシーンに最適です。
 
 >?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期してアクティブ化することができます。 IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブ化すると、関連するIM SDKの体験版がデフォルトでアクティブ化されます。これは100 DAUのみをサポートします。
-
-<table class="tablestyle">
-<tbody><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
-</tr>
-</tbody></table>
+![](https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png)
 
 
 #### その他のプラットフォーム
@@ -141,10 +136,6 @@ trtcCalling.call({
 trtcCalling.accept();
 // 拒否します
 trtcCalling.reject()
-```
-- **ローカルカメラのオン**
-```javascript
-trtcCalling.openCamera()
 ```
 - **リモートビデオ画面の表示**
 ```javascript
