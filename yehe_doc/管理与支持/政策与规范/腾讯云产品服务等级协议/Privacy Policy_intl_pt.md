@@ -596,3 +596,5 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 38.[Video on Demand](https://intl.cloud.tencent.com/document/product/266/47178).
 39.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47853).
 40.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
+41.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48241).
+42.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48289).
