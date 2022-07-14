@@ -247,7 +247,7 @@ Assume that a user creates a Beijing-Singapore acceleration connection on Januar
 | Jan 1, 2021 | link-0tisfskk | 7                    | =7×20.63     | 144.41            |
 | Jan 2, 2021 | link-0tisfskk | 28                   | =28×14.29    | 400.12            |
 | Jan 3, 2021 | link-0tisfskk | 158                  | =158×11.11   | 1,755.38           |
-| Jan 4, 2021 | link-0tisfskk | 150                  | =500×9.52    | 4,760              |
+| Jan 4, 2021 | link-0tisfskk | 502                  | =500×9.52    | 4,760              |
 
 
 ## Value-added Billable Item
