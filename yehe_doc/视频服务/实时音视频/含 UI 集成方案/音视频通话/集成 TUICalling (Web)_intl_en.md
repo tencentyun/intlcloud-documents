@@ -2,13 +2,7 @@
 `TUICalling` is an open-source UI component for audio/video communication. You can use it to quickly integrate **video call** capabilities into your desktop website. It’s ideal for applications such as online medical consultation, online customer service, and remote insurance claim settlement.
 
 >? All components of TUIKit use two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, IM and the trial edition of the IM SDK (which supports only 100 DAUs) will be activated automatically. For the billing details of IM, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
-
-<table class="tablestyle">
-<tbody><tr>
-<td style="vertical-align: top;"><img src="https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png"></td>
-</tr>
-</tbody></table>
-
+![](https://qcloudimg.tencent-cloud.cn/raw/a2b6bdc19d17d4e105b1d04a53d67957.png)
 
 #### Other platforms
 In addition to web, we also provide source code for Android, iOS, and Flutter. The Android and iOS versions support incoming call notifications.
@@ -141,10 +135,6 @@ trtcCalling.call({
 trtcCalling.accept();
 // Reject
 trtcCalling.reject()
-```
-- **Turn the local camera on**
-```javascript
-trtcCalling.openCamera()
 ```
 - **Play the video of the remote user**
 ```javascript
