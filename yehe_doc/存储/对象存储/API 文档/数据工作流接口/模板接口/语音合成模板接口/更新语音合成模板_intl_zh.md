@@ -17,8 +17,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> 
 
 
 #### 请求头
@@ -48,11 +50,11 @@ Content-Type: application/xml
 
 Container 类型 Request 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点  | 描述                                                     | 
-| ------------------ | ------- | ----------------------------------------------------- | 
-| Tag                | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Tag    | 
-| Name               | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Name | 
-| Codec              | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Codec | 
+| 节点名称（关键字） | 父节点  | 描述                                                     |
+| ------------------ | ------- | ----------------------------------------------------- |
+| Tag                | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Tag    |
+| Name               | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Name |
+| Codec              | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Codec |
 | Mode               | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Mode |
 | VoiceType          | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.VoiceType |
 | Volume             | Request | 同语音合成模板 CreateMediaTemplate 接口中的 Request.Volume |

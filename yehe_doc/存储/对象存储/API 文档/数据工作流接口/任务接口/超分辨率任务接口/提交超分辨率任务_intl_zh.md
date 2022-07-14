@@ -17,7 +17,11 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> 
 
 
 #### 请求头
@@ -79,7 +83,7 @@ Container 类型 Operation 的具体数据描述如下：
 | Transcode          | Request.Operation | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空             | Container | 否   |
 | TranscodeTemplateId| Request.Operation | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空         | String  | 否|
 | Watermark          | Request.Operation | 指定水印模板参数，同创建水印模板 CreateMediaTemplate 接口的 Request.Watermark，最多传3个 | Container | 否 |
-| WatermarkTemplateId| Request.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID          | String    | 否 |
+| WatermarkTemplateId| Request.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID          | String    | 否 |无|
 | DigitalWatermark   | Request.Operation | 指定数字水印参数                                 | Container | 否  |
 | Output             | Request.Operation | 结果输出地址                                                 | Container | 是   |
 
@@ -193,20 +197,20 @@ Container 节点 Operation 的内容：
 |节点名称（关键字）|父节点|描述|类型|
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | 任务的模板 ID |  String |
-| Transcode          | Response.JobsDetail.Operation  | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空             | Container | 
-| TranscodeTemplateId| Response.JobsDetail.Operation  | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空         | String  | 
-| Watermark           | Response.JobsDetail.Operation | 指定水印模板参数，同创建水印模板 CreateMediaTemplate 接口的 Request.Watermark，最多传3个 | Container | 
-| WatermarkTemplateId | Response.JobsDetail.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID          | String    | 
+| Transcode          | Response.JobsDetail.Operation  | 指定转码模板参数，不能与 TranscodeTemplateId 同时为空             | Container | 否   |
+| TranscodeTemplateId| Response.JobsDetail.Operation  | 指定的转码模板 ID，优先使用模板 ID，不能与 Transcode 同时为空         | String  | 否|
+| Watermark           | Response.JobsDetail.Operation | 指定水印模板参数，同创建水印模板 CreateMediaTemplate 接口的 Request.Watermark，最多传3个 | Container | 否 |
+| WatermarkTemplateId | Response.JobsDetail.Operation | 指定的水印模板 ID，可以传多个水印模板 ID，最多传3个，优先使用模板 ID          | String    | 否 |无|
 | Output | Response.JobsDetail.Operation | 文件的输出地址 |  Container |
 | MediaInfo | Response.JobsDetail.Operation | 转码输出视频的信息，没有时不返回 |  Container |
-| DigitalWatermark   | Request.Operation | 指定数字水印参数                                 | Container | 
+| DigitalWatermark   | Request.Operation | 指定数字水印参数                                 | Container | 否  |
 
 
 Container 节点 Output 的内容：
 同请求中的 Request.Operation.Output 节点。
 
 Container 节点 MediaInfo 的内容：
-同GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
+同 [GenerateMediaInfo](https://cloud.tencent.com/document/product/460/38935) 接口中的 Response.MediaInfo 节点。
 
 Container 类型 DigitalWatermark 的具体数据描述如下：
 
