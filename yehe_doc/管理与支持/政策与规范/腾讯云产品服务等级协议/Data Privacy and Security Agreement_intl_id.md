@@ -142,6 +142,8 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 39.[Tencent Cloud Automation Tools](https://intl.cloud.tencent.com/document/product/1147/47223).
 40.[HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47854).
 41.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48382).
+42.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48243).
+43.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48290).
 
 ## Persyaratan khusus yurisdiksi
 
