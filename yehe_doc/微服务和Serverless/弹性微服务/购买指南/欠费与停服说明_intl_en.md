@@ -1,8 +1,8 @@
 ## Service Suspension
 When your Tencent Cloud account goes overdue, the following polices are applied to TEM resources under your account: 
 
-- ≤ 24 hours: The billing and running of all existing environments and instances remain normal. You cannot create or modify environments and applications.
-- ＞ 24 hours and ≤ 7×24 hours: The billing and running of all existing environments remain normal. **All instances stop running.**  
+- ≤ 24 hours: The billing and running of all existing environments and instances remain normal. 
+- ＞ 24 hours and ≤ 7×24 hours: The billing and running of all existing environments remain normal. **All instances stop running.** You cannot create or modify environments and applications.  
 - ＞ 7×24 hours: All environments and applications under the account are terminated permanently. The billing stops.
 
 ## Service Recovery
