@@ -5,8 +5,8 @@ Memory Edition (Standard Architecture) - one replica:
 ![](https://main.qcloudimg.com/raw/0bb5f79eea8c50f2817050211a0ed77f.jpg)
 
 ## Replica Description
-Memory Edition (Standard Architecture) supports 0–5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of Memory Edition (Standard Architecture) play a role in supporting system's high availability, so the more replicas, the higher the availability. If the number of replicas is greater than or equal to 1, read/write separation can be enabled to extend the read performance through replica nodes.
->? TencentDB for Redis 4.0 Memory Edition (Standard Architecture) supports 0–9 replicas in Beijing and Guangzhou regions or 0–5 replicas in other regions. Other versions support only 0–5 replicas.
+Memory Edition (Standard Architecture) supports 1–5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of Memory Edition (Standard Architecture) play a role in supporting system's high availability, so the more replicas, the higher the availability. If the number of replicas is greater than or equal to 1, read/write separation can be enabled to extend the read performance through replica nodes.
+>? TencentDB for Redis 4.0 Memory Edition (Standard Architecture) supports 1–9 replicas in Beijing and Guangzhou regions or 1–5 replicas in other regions. Other versions support only 1–5 replicas.
 >
 
 **Definitions**:
@@ -17,16 +17,13 @@ Memory Edition (Standard Architecture) supports 0–5 replicas to meet the diffe
 <table>
 <tr><th >Instance Version</th><th >Supported Replicas</th><th >Read/Write Separation</th>  </tr>
 <tr>      
-<td>TencentDB for Redis 2.8 Memory Edition (Standard Architecture)</td><td>0–1</td><td>Unsupported</td></tr> 
+<td>TencentDB for Redis 2.8 Memory Edition (Standard Architecture)</td><td>1</td><td>Unsupported</td></tr> 
 <tr>
 <td>TencentDB for Redis 4.0 Memory Edition (Standard Architecture)</td><td>1–5</td><td>Supported</td></tr> 
 <tr>
 <td>TencentDB for Redis 5.0 Memory Edition (Standard Architecture)</td><td>1–5</td><td>Supported</td></tr> 
 </table>
 
-**Zero-Replica instance**:
-- Data may be lost when a node fails; therefore, do not use a zero-replica instance in data storage scenarios.
-- A zero-replica instance is only suitable for pure cache scenarios. The application system can continue to run even in case of Redis failure, but as a zero-replica instance has only one database node, when the node fails, the system will start a new Redis process (which has no data), and after node failover is completed, the application needs to warm up the data again to avoid access pressure on the backend database.
 
 **Read-Only replica (read/write separation)**:
 - Supported editions: TencentDB for Redis 4.0 Memory Edition (Standard Architecture) and above instance. When the number of replicas is greater than or equal to 1, automatic read/write separation can be enabled to extend the read performance vertically. Up to 5 replica nodes can be supported.
