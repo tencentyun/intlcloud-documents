@@ -16,8 +16,7 @@
 - **媒体 AI 服务：**对存储在云点播的媒资源文件使用视频 AI（内容分析、内容识别）的能力，按输出文件的时长计费，每处理一次收取一次的费用。若处理失败，不收取费用。
 - **版权保护：** 对于存储在云点播的媒资源文件进行版权保护（溯源水印、商业级 DRM 加密）操作，具体费用计算请参见 [版权保护](https://intl.cloud.tencent.com/document/product/266/33965)。 
 
-## 媒资存储
-
+## 媒资存储[](id:media_storage)
 ### 计费价格
 
 <table>    
@@ -47,7 +46,8 @@
         <td style="text-align:center">中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>        
         <td style="text-align:center">0.0003</td>         </tr>    
     <tr>        
-        <td style="text-align:center" rowspan="2">深度归档存储（最少存储180天）</td>         <td style="text-align:center">中国境内</td>        
+        <td style="text-align:center" rowspan="2">深度归档存储（最少存储180天）</td> 
+	<td style="text-align:center">中国境内</td>        
         <td style="text-align:center">0.00006</td> </tr>   
     <tr>        
         <td style="text-align:center">中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>        
