@@ -25,7 +25,8 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae358775adc9711065239394b246ab50.png)
 
 ## 接入参考
-为了帮助您快速接入点播的 DRM 加密能力，请您 [提交工单](https://console.cloud.tencent.com/workorder/category) 给我们，由云点播帮您对视频进行 DRM 加密，因此会产生视频加密费用。
+
+为了帮助您快速接入点播的 DRM 加密能力，我们为您提供了 DRM 加密指引： [播放 DRM 加密视频](https://intl.cloud.tencent.com/document/product/266/46642)，以示例的方式为您讲解接入步骤。
 
 ## 费用相关
 使用商业级 DRM 加密，主要涉及以下费用：
