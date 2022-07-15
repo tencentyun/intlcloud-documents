@@ -1,9 +1,9 @@
 This document describes how to get started with Automatic Speech Recognition (ASR).
 
 ## 1. Basic Knowledge of ASR
-- [ASR overview](https://intl.cloud.tencent.com/document/product/1118/43345)
-- [Why ASR](https://intl.cloud.tencent.com/document/product/1118/43345)
-- [ASR use cases](https://intl.cloud.tencent.com/document/product/1118/43345)
+- [ASR overview](https://intl.cloud.tencent.com/document/product/1118/43343)
+- [Why ASR](https://intl.cloud.tencent.com/document/product/1118/43343)
+- [ASR use cases](https://intl.cloud.tencent.com/document/product/1118/43343)
 - [ASR access management](https://intl.cloud.tencent.com/document/product/1118/43349)
 
 ## 2. Billing Mode of ASR
