@@ -17,45 +17,51 @@ Billable items:
 - **Copyright protection:** Using VOD’s copyright protection capabilities (source tracking based on digital watermarks and DRM encryption) on media stored in VOD. For the billing details, see [Copyright protection](https://intl.cloud.tencent.com/document/product/266/33965). 
 
 ## Storage
-
 ### Pricing
 
-<table>    
-    <tr>         
-        <th style="text-align:center">Storage Class</th>         
-        <th style="text-align:center">Regions</th>         
-        <th style="text-align:center">Price (USD/GB/Day)</td> </tr>     
-   <tr>       
-        <td style="text-align:center" rowspan="2">STANDARD</td>         
-        <td style="text-align:center">Chinese mainland</td>         
-        <td style="text-align:center">0.0006</td> </tr>     
-    <tr>        
-        <td style="text-align:center">Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>         
-        <td style="text-align:center">0.0009</td>   </tr>    
-    <tr>         
-        <td style="text-align:center" rowspan="2">STANDARD_IA (at least 30 days)</td>       
-        <td style="text-align:center">Chinese mainland</td>        
-        <td style="text-align:center">0.0004</td> </tr>    
-    <tr>        
-        <td style="text-align:center">Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>         
-        <td style="text-align:center">0.0006</td>    </tr>         
-    <tr>        
-        <td style="text-align:center" rowspan="2">ARCHIVE (at least 90 days)</td>        
-        <td style="text-align:center">Chinese mainland</td>        
-        <td style="text-align:center">0.0002</td> </tr>    
-    <tr>        
-        <td style="text-align:center">Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>        
-        <td style="text-align:center">0.0003</td>         </tr>    
-    <tr>        
-        <td style="text-align:center" rowspan="2">DEEP_ ARCHIVE (at least 180 days)</td>         <td style="text-align:center">Chinese mainland</td>        
-        <td style="text-align:center">0.00006</td> </tr>   
-    <tr>        
-        <td style="text-align:center">Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>        
-        <td style="text-align:center">0.0001</td>    </tr>       
- </table>
-          
-
-
+<table>
+   <tr>
+      <th width="150px" >Storage Class</td>
+      <th width="0px" >	Regions</td>
+      <th width="0px"  >Price (USD/GB/Day)</td>
+   </tr>
+	   <tr>
+    <td rowspan='2' >STANDARD</td>
+      <td >Chinese mainland</td>
+      <td >	0.0006</td>
+   </tr>
+	 	   <tr>
+      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok) </td>
+      <td >	0.0009</td>
+   </tr>
+	 	   <tr>
+    <td rowspan='2' >STANDARD_IA<br>(at least 30 days)</td>
+      <td >Chinese mainland</td>
+      <td >	0.0004</td>
+   </tr>
+	 	   <tr>
+      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok) </td>
+      <td >	0.0006</td>
+   </tr>
+	 	 	   <tr>
+    <td rowspan='2' >ARCHIVE<br>(at least 90 days)</td>
+      <td >Chinese mainland</td>
+      <td >	0.0002</td>
+   </tr>
+	 	   <tr>
+      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok) </td>
+      <td >	0.0003</td>
+   </tr>
+	 	 	 	   <tr>
+    <td rowspan='2' >DEEP_ ARCHIVE<br>(at least 180 days)</td>
+      <td >Chinese mainland</td>
+      <td >	0.00006</td>
+   </tr>
+	 	   <tr>
+      <td >Outside the Chinese mainland (Silicon Valley, Hong Kong (China), Frankfurt, Moscow, Seoul, Virginia, Singapore, Mumbai, Toronto, Bangkok)</td>
+      <td >		0.0001</td>
+   </tr>
+</table>
 
 ### Billing details
 
@@ -392,8 +398,8 @@ Source tracking fee = 0.22 x 60 (minutes) = 13.2 USD
 
 >!
 >- No fees will be charged if source tracking fails.
->- Videos are transcoded when you add digital watermarks to them, which incurs transcoding fees. For details, see [Media Processing](#media_edit).
->- The videos generated after transcoding will take up storage space, which will incur storage fees. For details, see [Media Processing](#media_storage).
+>- Videos are transcoded when you add digital watermarks to them, which incurs transcoding fees. For details, see [Media Processing](#media-processing).
+>- The videos generated after transcoding will take up storage space, which will incur storage fees. For details, see [Media Processing](#storage).
 
 ### DRM encryption
 
@@ -421,7 +427,7 @@ DRM playback fee on January 1 = 50 (requests) x 0.0012 (USD/request) = 0.06 USD
 
 >!
 >- DRM transcoding is billed in the same way as general transcoding. DRM transcoding fees are incurred each time you encrypt a video.
->- Storage fees are charged for videos stored in VOD. For details, see [Media Processing](#media_storage).
+>- Storage fees are charged for videos stored in VOD. For details, see [Media Processing](#storage).
 
 ## Others
 
