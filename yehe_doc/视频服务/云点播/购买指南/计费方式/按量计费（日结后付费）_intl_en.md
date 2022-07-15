@@ -369,11 +369,11 @@ The video content recognition feature of VOD leverages AI technologies to recogn
 
 User A used VOD’s content recognition feature on video B, whose length was 60 minutes. The fee incurred would be 60 (minutes) x 0.0572 (USD/min) = 3.432 (USD).
 
-### Copyright protection
+## Copyright protection
 
 VOD offers digital watermark and DRM encryption capabilities to help protect your content. 
 
-#### Digital watermark
+### Digital watermark
 
 VOD offers watermark solutions with high protection and low costs to protect your content against piracy. Using a digital watermark, you can extract a user ID from a video to find the user responsible for distributing it without authorization. This deters piracy and allows you to take action against copyright infringement.
 
