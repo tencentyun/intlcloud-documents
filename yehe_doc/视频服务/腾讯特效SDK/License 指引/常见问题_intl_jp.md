@@ -1,8 +1,11 @@
 License使用の過程で、次のような疑問が生じる場合があるかもしれません。その場合はこちらの回答を参考にしてください。
 
 [](id:q1)
-### LicenseとSDKはどのような関係ですか。
-Licenseは、SDK機能の権限取得に必要なキーとパスであると理解することができます。一方、SDKとは、サービス全体のうちの特定のソフトウェアパッケージ、ソフトウェアフレームワーク、OSなどをより適切に使用してアプリケーションソフトウェアを作成する場合に使用する開発ツールを集めたものです。Tencent Effect SDKのLicense情報は、1対のKeyとLicenseURLで構成されています。権限が有効になったKeyとLicenseURLを取得し、SDKの所定の位置に入力すると、Tencent Effectの機能を利用できるようになります。
+### License、License KeyとTencent Effect SDKとの関係はなんですか？
+
+Tencent Effect SDKを合法的に使用するには、Tencentに許可されたLicenseを取得する必要があります。Licenseは、SDKを試用または購入する前に取得する必要のある許可です。Licenseの許可なしに製品を使用すると、権利侵害と見なされます。テストLicenseと公式Licenseの2種類のLicenseを取得できます。
+
+SDKは、サービス全体に固有のソフトウェアパッケージ、ソフトウェアフレームワーク、OSなどを使用してアプリケーションソフトウェアを構築するための開発ツールのセットです。TencentからSDKを使用するためのLicenseを取得すると、License KeyとLicense URL情報のペアを取得します。Tencent Effect機能を有効にするには、SDKの対応する位置に有効な認証License KeyとLicense URLを入力する必要があります。
 
 [](id:q2)
 ### Tencent Effectの正式版Licenseを取得するにはどうすればよいですか？
