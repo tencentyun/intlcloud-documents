@@ -24,8 +24,9 @@ Established DRM solutions provide high-level protection for your video content, 
 Below is the workflow of the VOD DRM scheme:
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae358775adc9711065239394b246ab50.png)
 
-## Using VOD DRM Scheme
-If you want to use VOD’s DRM scheme, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). DRM fees will be incurred for using the scheme.
+## Integration Guide
+
+For directions on how to quickly integrate the VOD DRM scheme, see [Playing DRM-Encrypted Videos](https://intl.cloud.tencent.com/document/product/266/46642).
 
 ## Billing
 The following fees may be incurred for using VOD’s DRM scheme:

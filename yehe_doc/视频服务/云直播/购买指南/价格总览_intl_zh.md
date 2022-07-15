@@ -123,10 +123,6 @@
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">后付费-月结</a></td>
 </tr><tr>
-<td colspan=2>转推第三方计费</td>
-<td>云导播使用转推功能<strong>按转推第三方带宽计费</strong>。</td>
-<td><a href="https://cloud.tencent.com/document/product/267/42166#push">后付费-月结</a></td>
-</tr><tr>
 <td colspan=2> 直播 SDK  License</td>
 <td>
 用于解锁移动直播基础版 SDK 在 iOS 和 Android 上的使用权限，联系商务购买移动直播 SDK License 使用授权。

@@ -123,10 +123,6 @@ LVB와 LEB의 기본 서비스 요금은 다르게 과금됩니다.
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">월간 종량제</a></td>
 </tr><tr>
-<td colspan=2>서드 파티 URL로 푸시</td>
-<td>클라우드 디렉터는 푸시 기능을 사용하여<strong>서드 파티 URL로 푸시하기 위한 요금이 발생합니다</strong>.</td>
-<td><a href="https://cloud.tencent.com/document/product/267/42166#push">월간 종량제</a></td>
-</tr><tr>
 <td colspan=2> 라이브 SDK  License</td>
 <td>
 이 라이선스를 사용하면 iOS 및 Android 디바이스에서 기본 버전 MLVB SDK를 사용할 수 있습니다. 이 License를 구입하려면 영업팀에 문의하시기 바랍니다.

@@ -123,10 +123,6 @@ Basic service fees include LVB fees and LEB fees.
 </td>
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/39607">Monthly pay-as-you-go</a></td>
 </tr><tr>
-<td colspan=2>Relay to third parties</td>
-<td>The fees are billed based on <strong>the bandwidth used for relay</strong>.</td>
-<td><a href="https://cloud.tencent.com/document/product/267/42166#push">Monthly pay-as-you-go</a></td>
-</tr><tr>
 <td colspan=2>Live streaming SDK license</td>
 <td>
 The license allows you to use the basic edition MLVB SDK on iOS and Android devices. To purchase a license, please contact sales.
