@@ -1,9 +1,9 @@
 本文将为刚入门语音识别的用户提供一条学习的路径。
 
 ## 1. 熟悉语音识别的基础知识
-- [语音识别产品简介](https://intl.cloud.tencent.com/document/product/1118/43345)
-- [为什么选择腾讯云语音识别？](https://intl.cloud.tencent.com/document/product/1118/43345)
-- [语音识别的各个应用场景介绍](https://intl.cloud.tencent.com/document/product/1118/43345)
+- [语音识别产品简介](https://intl.cloud.tencent.com/document/product/1118/43343)
+- [为什么选择腾讯云语音识别？](https://intl.cloud.tencent.com/document/product/1118/43343)
+- [语音识别的各个应用场景介绍](https://intl.cloud.tencent.com/document/product/1118/43343)
 - [语音识别的访问管理相关内容](https://intl.cloud.tencent.com/document/product/1118/43349)
 
 ## 2. 语音识别的计费模式
