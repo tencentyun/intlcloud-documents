@@ -4,8 +4,8 @@
 ## Features
 ### Audio/Video transcoding
 The transcoding feature converts a video stream into different codecs, resolutions, and bitrates for playback on different devices and under different network conditions. For more information, see [Transcoding](https://intl.cloud.tencent.com/document/product/266/33938).
-- VOD’s distributed transcoding system is dynamically scalable and supports multipart transcoding, allowing it to meet different transcoding needs.
-- Mainstream formats, multiple resolutions, and multiple bitrates are supported. You can also create custom transcoding templates and watermarking.
+- VOD’s distributed transcoding system is dynamically scalable and supports multipart transcoding, meeting different transcoding needs.
+- You can create transcoding templates and add custom watermarks to videos. Mainstream formats, multiple resolutions, and multiple bitrates are supported.
 - Templates are automatically selected according to video metadata. Transcoding results are returned to the user via callbacks.
 - H.265, 4K, HDR, and GIF transcoding are supported.
 
@@ -53,13 +53,13 @@ VOD supports the following transcoding formats:
 
 ### Audio/Video editing
 VOD allows you to splice and trim videos and perform other editing operations.
-- You can create audio/video clips of a specified duration from a specified starting point. You can also splice multiple video clips into a single file.
+- You can create audio/video clips of a specified duration starting at a specified time and merge multiple video files into a single file.
 - You can capture time-point and sampled screenshots and generate image sprites.
 - You can also remove the audio track from a video.
 
 
 ### Audio/Video AI
-VOD supports AI-based video recognition and analysis.
+VOD supports AI-based content moderation, recognition and analysis.
 - Using YouTu's DeepEye intelligent recognition technology, VOD lets you easily identify pornographic content on your video platform. This helps you greatly improve the accuracy and efficiency of content moderation so you can maintain a friendly environment for your users.
 - DeepEye guarantees an accuracy of over 65% TAR at an FAR of 0.01% and over 80% TAR at an FAR of 0.1%.
 - You can search by label, face, speech keyword, scene, object, and other criteria to quickly locate video content, improving the availability of your media content.
@@ -87,7 +87,7 @@ VOD allows you to quickly and easily scale and crop images by modifying their UR
 - You can crop images to circles or rectangles.
 
 
-### Intelligent image recognition
+### Image moderation
 VOD leverages AI technologies to detect inappropriate content in images. The result generated includes the recognition type, labels of the detected inappropriate content, confidence score, and handling suggestion.
-- Detects inappropriate content (faces, objects, scenes) in images.
-- Detects inappropriate content based on OCR.
+- It can identify inappropriate content (faces, objects, scenes) in images.
+- It can identify inappropriate content based on OCR.
