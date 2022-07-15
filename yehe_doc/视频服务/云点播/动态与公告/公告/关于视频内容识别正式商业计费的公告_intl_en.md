@@ -10,7 +10,7 @@ The billing details are as follows:
 
 For more information, see [VOD Pricing](https://intl.cloud.tencent.com/pricing/vod) and [Daily Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/266/14666).
 
-If you have any questions, feel free to [contact us](https://intl.cloud.tencent.com/contact-us.
+If you have any questions, feel free to [contact us](https://intl.cloud.tencent.com/contact-us).
 
 2022-06-10
 
