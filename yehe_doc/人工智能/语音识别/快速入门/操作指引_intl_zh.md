@@ -33,7 +33,7 @@
 <tr>
 <th>通过客户端 SDK 进行集成</th>
 <td>客户端开发工程师，<b>熟悉代码编写</b></td>
-<td>腾讯云支持通过已编写好的开发组件（SDK）在客户端集成语音识别的能力。目前客户端 SDK 主要支持的 Android、iOS 平台，您可以在 <a href="https://intl.cloud.tencent.com/document/product/1118/43378">客户端 SDK 中心</a> 获取对应的 SDK 包。</td>
+<td>腾讯云支持通过已编写好的开发组件（SDK）在客户端集成语音识别的能力。目前客户端 SDK 主要支持的 Android、iOS 平台。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1118/43383"> 一分钟跑通 Demo</a></td>
 </td>
 </tr>
