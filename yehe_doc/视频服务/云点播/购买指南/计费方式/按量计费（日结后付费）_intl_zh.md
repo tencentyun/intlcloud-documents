@@ -19,43 +19,49 @@
 ## 媒资存储[](id:media_storage)
 ### 计费价格
 
-<table>    
-    <tr>         
-        <th style="text-align:center">存储类型</th>         
-        <th style="text-align:center">覆盖地区</th>         
-        <th style="text-align:center">价格（美元/GB/日）</td> </tr>     
-   <tr>       
-        <td style="text-align:center" rowspan="2">标准存储</td>         
-        <td style="text-align:center">中国境内</td>         
-        <td style="text-align:center">0.0006</td> </tr>     
-    <tr>        
-        <td style="text-align:center">中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>         
-        <td style="text-align:center">0.0009</td>   </tr>    
-    <tr>         
-        <td style="text-align:center" rowspan="2">低频存储（最少存储30天）</td>       
-        <td style="text-align:center">中国境内</td>        
-        <td style="text-align:center">0.0004</td> </tr>    
-    <tr>        
-        <td style="text-align:center">中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>         
-        <td style="text-align:center">0.0006</td>    </tr>         
-    <tr>        
-        <td style="text-align:center" rowspan="2">归档存储（最少存储90天）</td>        
-        <td style="text-align:center">中国境内</td>        
-        <td style="text-align:center">0.0002</td> </tr>    
-    <tr>        
-        <td style="text-align:center">中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>        
-        <td style="text-align:center">0.0003</td>         </tr>    
-    <tr>        
-        <td style="text-align:center" rowspan="2">深度归档存储（最少存储180天）</td> 
-	<td style="text-align:center">中国境内</td>        
-        <td style="text-align:center">0.00006</td> </tr>   
-    <tr>        
-        <td style="text-align:center">中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>        
-        <td style="text-align:center">0.0001</td>    </tr>       
- </table>
-          
-
-
+<table>
+   <tr>
+      <th width="150px" >存储类型</td>
+      <th width="0px" >	覆盖地区</td>
+      <th width="0px"  >价格（美元/GB/日）</td>
+   </tr>
+	   <tr>
+    <td rowspan='2' >标准存储</td>
+      <td >中国境内</td>
+      <td >	0.0006</td>
+   </tr>
+	 	   <tr>
+      <td >中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>
+      <td >	0.0009</td>
+   </tr>
+	 	   <tr>
+    <td rowspan='2' >低频存储<br>（最少存储30天）</td>
+      <td >中国境内</td>
+      <td >	0.0004</td>
+   </tr>
+	 	   <tr>
+      <td >中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>
+      <td >	0.0006</td>
+   </tr>
+	 	 	   <tr>
+    <td rowspan='2' >归档存储<br>（最少存储90天）</td>
+      <td >中国境内</td>
+      <td >	0.0002</td>
+   </tr>
+	 	   <tr>
+      <td >中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>
+      <td >	0.0003</td>
+   </tr>
+	 	 	 	   <tr>
+    <td rowspan='2' >深度归档存储<br>（最少存储180天）</td>
+      <td >中国境内</td>
+      <td >	0.00006</td>
+   </tr>
+	 	   <tr>
+      <td >中国境外（硅谷、中国香港、法兰克福、莫斯科、首尔、弗吉尼亚、新加坡、孟买、多伦多、曼谷）</td>
+      <td >	0.0001</td>
+   </tr>
+</table>
 
 ### 计费说明
 
@@ -75,7 +81,7 @@
 > - 深度归档存储文件，必须存储至少180天，用户提前删除仍旧按照180天计费。
 
 ## 媒资处理
-媒资处理包括普通转码、极速高清转码、 [自适应码流](https://intl.cloud.tencent.com/document/product/266/33942)、视频编辑、
+媒资处理包括普通转码、极速高清转码、 [自适应码流](https://intl.cloud.tencent.com/document/product/266/33942)、视频编辑。
 
 ### 普通转码
 
@@ -395,8 +401,8 @@
 
 >?
 >- 提取不成功将不收取费用。
->- 对视频打溯源水印时，需要转码或转自适应码流，因此会产生转码费用，详情请参见 [媒资处理](#media_edit)。
->- 转码或转自适应码流的输出，会占用存储空间，具体存储计费价格，请参见 [媒资存储](#media_storage)。
+>- 对视频打溯源水印时，需要转码或转自适应码流，因此会产生转码费用，详情请参见 [媒资处理](#media-processing)。
+>- 转码或转自适应码流的输出，会占用存储空间，具体存储计费价格，请参见 [媒资存储](#storage)。
 
 ### DRM 加密
 
@@ -424,7 +430,7 @@
 
 >?
 >- DRM 加密转码费用和点播标准转码费用一致，加密转码服务每处理一次则收取一次的费用，否则不收取相关费用。
->- 视频进行 DRM 转码加密前后，会产生相应的存储费用，具体存储计费价格，请参见 [媒资存储](#media_storage)。
+>- 视频进行 DRM 转码加密前后，会产生相应的存储费用，具体存储计费价格，请参见 [媒资存储](#storage)。
 
 ## 补充说明
 
