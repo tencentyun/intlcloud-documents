@@ -123,10 +123,6 @@ CSSの課金項目には、基本サービス料金と付加価値サービス�
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">後払い-月次決済</a></td>
 </tr><tr>
-<td colspan=2>サードパーティへの転送料金</td>
-<td>Live Video Casterはリツイート機能を使用する場合、<strong>サードパーティにリツイートする帯域幅に応じて課金します</strong>。</td>
-<td><a href="https://cloud.tencent.com/document/product/267/42166#push">後払い-月次決済</a></td>
-</tr><tr>
 <td colspan=2>ライブストリーミングSDK  License</td>
 <td>
 モバイルライブストリーミングベーシック版SDKのiOSとAndroidにおける使用権限のロック解除に用いられます。担当者にご連絡いただき、モバイルライブストリーミングSDK Licenseをご購入ください。
