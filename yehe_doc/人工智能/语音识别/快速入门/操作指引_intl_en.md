@@ -33,7 +33,7 @@ To use the ASR service, you can choose one of the four options below.
 <tr>
 <th>Integration through client SDK</th>
 <td>Client developers <b>familiar with coding</b></td>
-<td>Tencent Cloud supports integrating ASR capabilities into clients through the developed SDKs for Android and iOS. You can get the corresponding SDK package in the <a href="https://intl.cloud.tencent.com/document/product/1118/43378">Client SDK Center</a>.</td>
+<td>Tencent Cloud supports integrating ASR capabilities into clients through the developed SDKs for Android and iOS. </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1118/43383">Real-Time Speech Recognition</a></td>
 </td>
 </tr>
