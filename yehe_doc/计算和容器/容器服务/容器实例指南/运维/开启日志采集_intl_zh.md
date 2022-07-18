@@ -46,4 +46,4 @@
 3. 若已开启角色授权，检查绑定的角色是否有上报日志的权限，具体配置请看角色授权。
 4. 检查绑定的角色所选的载体是否是 CVM。
 
-如果您的问题仍未解决，请通过 [提交工单]https://console.intl.cloud.tencent.com/workorder) 联系我们。
+如果您的问题仍未解决，请通过 [提交工单](https://console.intl.cloud.tencent.com/workorder) 联系我们。
