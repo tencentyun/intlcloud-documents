@@ -153,7 +153,7 @@ Then, restart the component by running <code>hadoop-daemon.sh stop | start namen
       <td>Hue</td>
       <td>Hue</td>
       <td>Default restart mode</td>
-			<td>It can be restarted by running <code>build/env/bin/start.sh</code> and <code>build/env/bin/sop.sh</code>.</td>
+			<td>It can be restarted by running <code>build/env/bin/start.sh</code> and <code>build/env/bin/stop.sh</code>.</td>
 			<td>-</td>
    </tr>
 	 <tr>
