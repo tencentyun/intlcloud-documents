@@ -35,15 +35,28 @@ Currently, certain EMR APIs don't support authentication by tag; therefore, you 
     - Select **Authorize by Tag**.
     - In **Tag Policy Generator**, select **Dept_A** for **Authorized Users**, leave **User Groups** empty, select the tag key and tag value of the planned tag for **Tag Key** and **Tag Value** respectively, add services and operations as needed, and click **Next**.
     - Create the `Policy_Dept_A1` policy, replace the content of the `action` and `resource` fields with the following in **Policy**, and click **Complete**.   
-    ```
-                "action": [
-
-                                    "emr:*"
-                            ],
-                            "resource": [
-                                    "qcs::emr:gz:uin/10000000001:emr-instance/*"
-                            ],
-    ```
+```
+		{
+	"effect": "allow",
+	"action": [
+			"emr:DescribeClusterNodes",
+			"emr:DescribeInstancesList"
+	],
+	"resource": [
+			"*"
+	],
+	"condition": {
+			"for_any_value:string_equal": {
+					"qcs:resource_tag": [
+							"tag_A&Dept_A",
+							"tag_B&Dept_B",
+							"tag_C&Dept_C",
+							"tag_D&Dept_D"
+					]
+			}
+	}
+}
+```
 
 >! The content of the `resource` field needs to be entered based on the actual resource. For more information on value rules, see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
 
