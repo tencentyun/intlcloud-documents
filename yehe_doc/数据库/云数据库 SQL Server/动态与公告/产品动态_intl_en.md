@@ -1,3 +1,42 @@
+## June 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody><tr>
+<td>Optimized the console and features</td>
+<td>The TencentDB for SQL Server team makes the following optimizations in the product feature and console UI to further improve the user experience.<br><li>Manual backups in the specified time range can be batch deleted.<br><li>The backup name can contain up to 128 characters.<br><li>The visual display of the backup space trend chart is optimized in the console.<br><li>You can search for slow query files in the specified time range.<br><li>On the purchase page, VPC, subnet, and project lists support exact and fuzzy searches. <br><li>The display order of system monitoring metrics is adjusted in the console.<br><li>The logic to set the instance maintenance cycle is optimized. You need to select at least one maintenance cycle to guarantee the database Ops security.<br><li>A quick redirect link is added to the VPC console to quickly query the TencentDB for SQL Server instances bound to VPCs.</td>
+<td>2022-06-22</td>
+<td>-</td></tr>
+<tbody><tr>
+<td>Released the SSIS feature</td>
+<td>TencentDB for SQL Server business intelligence server is released, which supports SQL Server Integration Services (SSIS). SSIS can be used to sustain complex business scenarios, such as merging data from heterogeneous data stores, cleansing and standardizing data, populating data warehouses and datasets, transforming data for complex business logic, supporting management features, and automating data loading. It helps meet your diversified needs in various use cases, including BI analysis, high-value data mining, and primary data management system setup.</td>
+<td>2022-06-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/48060" target="_blank">Overview</a></td></tr>
+</tbody></table>
+
+## May 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported data migration over CCN</td>
+<td>When you use DTS to migrate data to TencentDB for SQL Server, the source database can interconnect with the VPC over CCN.</td>
+<td>2022-05-30</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/39006" target="_blank">Migrating Data with DTS</a></td></tr>
+<tr>
+<td>Supported Korean character sets</td>
+<td>You can select a Korean character set during TencentDB for SQL Server instance creation.</td>
+<td>2022-05-30</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35780" target="_blank">Creating Database</a></td></tr>
+<tr>
+<td>Release new documents</td>
+<td>Documents such as FAQs, Constraints and Limits, Usage Specifications and Suggestions are added to help you better use TencentDB for SQL Server.</td>
+<td>2022-05-27</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/238/47719" target="_blank">FAQs</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/2021" target="_blank">Constraints and Limits</a>
+<li><a href="https://intl.cloud.tencent.com/document/product/238/48122" target="_blank">Usage Specifications and Suggestions</a></td></tr>
+</tbody></table>
+
+
 ## March 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>
