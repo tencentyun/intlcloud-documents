@@ -11,7 +11,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/410ac102072f0f7345152ba3fb6fb2b8.png)
  - 在角色管理页中重启服务时，只需要选择重启方式、失败处理策略等。
 ![](https://qcloudimg.tencent-cloud.cn/raw/410ac102072f0f7345152ba3fb6fb2b8.png)
-4. 各服务组件支持的重启方式如下：
+3. 各服务组件支持的重启方式如下：
 <table>
    <tr>
       <th width=10%>组件</th>
