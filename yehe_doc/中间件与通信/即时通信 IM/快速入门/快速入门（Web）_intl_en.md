@@ -1,69 +1,66 @@
-This document describes how to quickly run the IM demo for web.
-                    
+The web demo is implemented based on the IM TUIKit. TUIKit provides features such as management of conversations, chats, groups, and profiles. With TUIkit, you can quickly build your own business logic.
 
 ## Demo UI
-![](https://qcloudimg.tencent-cloud.cn/raw/fe5b7406d6b6061918c393019aee2980.png)
+
+### Conversation management
+
+| Initiate a Conversation | Conversation List | Manage the Conversation List |
+| --- | --- | --- |
+| ![](https://qcloudimg.tencent-cloud.cn/raw/562deec9715ae2c50f65e8d40c4d7cac.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/990204616a1c551c36ff5bdc57caa66c.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/695589f54d4ac0b9bb9bc24eb97c7e6d.png) |
+
+### Chat management
+
+| Message List | Send Messages | Manage Group Chats |
+| --- | --- | --- |
+| ![](https://qcloudimg.tencent-cloud.cn/raw/8cb4fd0813a7ce0f3cab8468098dd896.png) |![](https://qcloudimg.tencent-cloud.cn/raw/f931993108c14ba3b2e628e4ed50a316.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/bb9b0449eb712f9e6fececfdb199418a.png) |
 
 
-## Directions
-[](id:step1)
-### Step 1. Create an app
-1. Log in to the [IM console](https://console.cloud.tencent.com/im).
->? If you already have an app, record its SDKAppID and [obtain key information](#step2).
->A Tencent Cloud account can create a maximum of 300 IM apps. If you want to create a new app, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first. **Once an app (along with its SDKAppID) is deleted, the provided service and all its data are lost. Please proceed with caution**.
-2. Click **Create Application**, enter your app name, and click **Confirm**.
-![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
-3. Go to the [overview page](https://console.cloud.tencent.com/im) to view the status, service version, `SDKAppID`, creation time, tag, and expiration time of the application created. Record the `SDKAppID`.
-![](https://main.qcloudimg.com/raw/7954cc2882d050f68cd5d1df2ee776a6.png)
+
+| Feature | Description |
+| --- | --- |
+| Conversation management | 1. Initiate a one-to-one or group chat <br/>2. Display the conversation list <br/>3. Manage the conversation list |
+| Chat management | 1. Display the message list <br/>2. Send messages <br/>3. Manage group chats |
 
 
-[](id:step2)
-### Step 2. Obtain key information
-1. Click the target app card to go to the basic configuration page of the app.
-![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
-2. In the **Basic Information** area, click **Display key**, and then copy and save the key information.
->! Please store the key information properly to prevent disclosure.
+## Running the demo
 
-[](id:step3)
-### Step 3. Download and configure the demo source code
+### Step 1. Download the source code
 
-1. Download the SDK and demo source code. For more information, see [SDK and Demo Source Code](https://intl.cloud.tencent.com/document/product/1047/33996).
-<dx-codeblock>
-:::  js
+Download the SDK and [demo source code](https://github.com/TencentCloud/TIMSDK) that fit your needs.
 
-# Run in CLI
-git clone https://github.com/tencentyun/TIMSDK.git
+```shell
+# Run the code in CLI
+git clone https://github.com/TencentCloud/TIMSDK.git
 
 # Go to the web project
 
 cd TIMSDK/Web/Demo
 
-# Install dependencies
+# Install dependencies of the demo
 npm install
-:::
-</dx-codeblock>
 
-2. Open the project in the web directory, and find the file `GenerateTestUserSig` via the path /public/debug/GenerateTestUserSig.js.
-3. Set relevant parameters in the `GenerateTestUserSig` file:
- - SDKAPPID: Set it to the SDKAppID obtained in [Step 1](#step1).
- - SECRETKEY: Enter the key obtained in [Step 2](#step2).
+cd TIMSDK/Web/Demo/src/TUIKit
+
+# Install dependencies of the TUIKit
+npm install
+```
+
+### Step 2. Initialize the demo
+1. Open the project in the web directory, and find the `GenerateTestUserSig` file via the path `/debug/GenerateTestUserSig.js`.
+2. Set required parameters in the `GenerateTestUserSig` file, where `SDKAppID` and `Key` can be obtained in the [IM console](https://console.cloud.tencent.com/im). Click the target app card to go to its basic configuration page. 
+![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
+3. In the **Basic Information** area, click **Display key**, and copy and save the key information to the `GenerateTestUserSig` file. 
 
 
->! In this document, the method to obtain `UserSig` is to configure a `SECRETKEY` in the client code. In this method, the `SECRETKEY` is vulnerable to decompilation and reverse engineering. Once your `SECRETKEY` is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**.
-> The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain a dynamic `UserSig`. For more information, see [Generating UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
+> ! In this document, the method to obtain `UserSig` is to configure a `SECRETKEY` in the client code. In this method, the `SECRETKEY` is vulnerable to decompilation and reverse engineering. Once your `SECRETKEY` is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**. The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see the "Calculating UserSig on the Server" section of [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
-[](id:step4)
-### Step 4. Compile and run the demo
-Run the following command in the project terminal via the browser:
-<dx-codeblock>
-:::  js
-# Run in CLI
-npm run start
-:::
-</dx-codeblock>
+### Step 3. Launch the project
 
-## References
+```shell
+# Launch the project
+npm run serve
+```
 
-- [SDK API Documentation](https://web.sdk.qcloud.com/im/doc/en/SDK.html)
-- [SDK Update Log](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [Demo Source Code](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
+- [SDK APIs Documentation](https://web.sdk.qcloud.com/im/doc/en/SDK.html)
+- [Update Logs (Web)](https://intl.cloud.tencent.com/document/product/1047/34281)
+- [Demo Source Code](https://github.com/TencentCloud/TIMSDK/tree/master/Web/Demo)
