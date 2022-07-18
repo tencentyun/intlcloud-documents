@@ -1,68 +1,65 @@
-本文主要介绍如何快速运行腾讯云即时通信 IM Demo (Web)。
-                    
+Web Demo 是基于 IM TUIKit 实现，TUIKit 中包含会话、聊天、群组、个人资料管理等功能，基于 TUIKit 您可以像搭积木一样快速搭建起自己的业务逻辑。
 
 ## 效果展示
-![](https://qcloudimg.tencent-cloud.cn/raw/fe5b7406d6b6061918c393019aee2980.png)
+
+### 会话管理
+
+| 发起会话 | 会话列表 | 会话列表管理 |
+| --- | --- | --- |
+| ![](https://qcloudimg.tencent-cloud.cn/raw/562deec9715ae2c50f65e8d40c4d7cac.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/990204616a1c551c36ff5bdc57caa66c.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/695589f54d4ac0b9bb9bc24eb97c7e6d.png) |
+
+### 聊天管理
+
+| 消息列表 | 消息发送 | 群聊管理 |
+| --- | --- | --- |
+| ![](https://qcloudimg.tencent-cloud.cn/raw/8cb4fd0813a7ce0f3cab8468098dd896.png) |![](https://qcloudimg.tencent-cloud.cn/raw/f931993108c14ba3b2e628e4ed50a316.png) | ![](https://qcloudimg.tencent-cloud.cn/raw/bb9b0449eb712f9e6fececfdb199418a.png) |
+
+| 功能  | 说明  |
+| --- | --- |
+| 会话管理 | 1. 用于用户发起单人/多人会话<br/>2. 用于展示用户的会话列表<br/>3. 用于用户会话列表的管理 |
+| 聊天管理 | 1. 用于消息列表的展示<br/>2. 用于消息发送<br/>3. 用于群聊管理 |
 
 
-## 操作步骤
-[](id:step1)
-### 步骤1：创建应用
-1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
->?如果您已有应用，请记录其 SDKAppID 并 [获取密钥信息](#step2)。
->同一个腾讯云帐号，最多可创建300个即时通信 IM 应用。若已有300个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
-2. 单击**创建新应用**，在**创建应用**对话框中输入您的应用名称，单击**确定**。
-![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
-3. 创建完成后，可在 [控制台总览页](https://console.cloud.tencent.com/im) 查看新建应用的状态、业务版本、SDKAppID、创建时间、标签以及到期时间。请记录 SDKAppID 信息。
-![](https://main.qcloudimg.com/raw/7954cc2882d050f68cd5d1df2ee776a6.png)
+## 跑通步骤
 
+### 步骤1：下载源码
 
-[](id:step2)
-### 步骤2：获取密钥信息
-1. 单击目标应用卡片，进入应用的基础配置页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
-2. 在**基本信息**区域，单击**显示密钥**，复制并保存密钥信息。
->!请妥善保管密钥信息，谨防泄露。
+根据您的实际业务需求，下载 SDK 及配套的 [Demo 源码](https://github.com/TencentCloud/TIMSDK)。
 
-[](id:step3)
-### 步骤3：下载并配置 Demo 源码
-
-1. 根据您的实际业务需求，下载 SDK 及配套的 [Demo 源码](https://intl.cloud.tencent.com/document/product/1047/33996)。
-<dx-codeblock>
-:::  js
-
+```shell
 # 命令行执行
-git clone https://github.com/tencentyun/TIMSDK.git
+git clone https://github.com/TencentCloud/TIMSDK.git
 
 # 进入 Web 项目
 
 cd TIMSDK/Web/Demo
 
-# 安装依赖
+# 安装 demo 依赖
 npm install
-:::
-</dx-codeblock>
-2. 打开终端目录的工程，找到对应的 `GenerateTestUserSig` 文件，路径为：/public/debug/GenerateTestUserSig.js
-3. 设置`GenerateTestUserSig`文件中的相关参数：
- - SDKAPPID：请设置为 [步骤1](#step1) 中获取的实际应用 SDKAppID。
- - SECRETKEY：请设置为 [步骤2](#step2) 中获取的实际密钥信息。
+
+cd TIMSDK/Web/Demo/src/TUIKit
+
+# 安装 TUIKit 依赖
+npm install
+```
+
+### 步骤2：初始化
+1. 打开终端目录的工程，找到对应的 GenerateTestUserSig 文件，路径为：/debug/GenerateTestUserSig.js。
+2. 设置 GenerateTestUserSig 文件中的相关参数，其中 SDKAppID 和密钥等信息，可通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 获取，单击目标应用卡片，进入应用的基础配置页面。
+3. ![](https://qcloudimg.tencent-cloud.cn/raw/8d469e975f1ca5a2f3dbc9c6fe8774f5.png)
+3. 在**基本信息**区域，单击**显示密钥**，复制并保存密钥信息至 GenerateTestUserSig 文件。
 
 
->!本文提到的获取 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
->正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
-[](id:step4)
-### 步骤4：编译运行
-在项目终端执行以下命令行，在浏览器中运行即可：
-<dx-codeblock>
-:::  js
-# 命令行执行
-npm run start
-:::
-</dx-codeblock>
+> !本文提到的获取 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
-## 参见文档
+### 步骤3：启动项目
+
+```shell
+# 启动项目
+npm run serve
+```
 
 - [SDK API 手册](https://web.sdk.qcloud.com/im/doc/en/SDK.html)
 - [SDK 更新日志](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [Demo 源码](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
+- [Demo 源码](https://github.com/TencentCloud/TIMSDK/tree/master/Web/Demo)
