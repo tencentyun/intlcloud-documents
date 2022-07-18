@@ -6,7 +6,7 @@ EKSCI provides log collection capability and supports sending the standard outpu
 
 - Prepare a log topic of CLS to be used as the log reporting terminal. You can view and search the logs under the log topic after reporting the logs. If there is no appropriate log topic, see [Creating Logset and Log Topic](https://intl.cloud.tencent.com/document/product/614/31592).
 - Enable the **Log Index** for the selected log topic. Index configuration is required for CLS log search and analysis. If it is not enabled, you cannot view and search the logs. For how to configure index, see [Configuring Index](https://intl.cloud.tencent.com/zh/document/product/614/39594). 
-  You can go to the **[CLS console](https://console.cloud.tencent.com/cls/topic?region=ap-guangzhou)** > **Log Topic** page, select a log topic name, and enable the index in the **Index Configuration** tab, as shown in the figure below:
+  You can go to the **[CLS console](https://console.cloud.tencent.com/cls/topic?region=ap-guangzhou) > Log Topic** page, select a log topic name, and enable the index in the **Index Configuration** tab, as shown in the figure below:
 	![](https://qcloudimg.tencent-cloud.cn/raw/b60bf3dae63e22f16154e703f98b0572.png)
 
 ## Directions
@@ -24,7 +24,7 @@ EKSCI provides log collection capability and supports sending the standard outpu
 
 
 <dx-alert infotype="notice" title="">
-If role authorization capability is required when enabling log collection feature, the role bound to the instance must have write permission of "cls:pushLog". Only one role can be bound to the container instance.
+If role authorization capability is required when enabling log collection feature, the role bound to the instance must have write permission of "cls:pushLog". For details, see [Creating a Container Instance](https://www.tencentcloud.com/document/product/457/47857#.E5.88.9B.E5.BB.BA.E5.AE.B9.E5.99.A8.E5.AE.9E.E4.BE.8B). Only one role can be bound to the container instance.
 </dx-alert>
 
 ​		
@@ -33,7 +33,7 @@ If role authorization capability is required when enabling log collection featur
 ### Viewing the collected logs
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Search and Analysis** in the left sidebar.
-2. On the **Search and Analysis** page, select the region, log set, and log topic to view logs, enable full-text index to search and analyze logs.
+2. On the **Search and Analysis** page, select the region, log set, and log topic to view logs, enable full-text index to search and analyze logs, as shown in the figure below:![](https://qcloudimg.tencent-cloud.cn/raw/1c0ff923d5531d8da9a8fa867432c199.png)
 
 ## FAQs
 
