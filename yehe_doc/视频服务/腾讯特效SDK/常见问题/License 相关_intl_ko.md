@@ -1,8 +1,10 @@
 본문은 License를 사용할 때 발생할 수 있는 몇 가지 질문에 대한 답변입니다.
 
 [](id:q1)
-### License는 SDK와 어떤 관련이 있습니까?
-License는 SDK 기능에 대한 승인을 얻는 데 필요한 키 및 경로로 이해될 수 있으며, SDK는 전체 서비스의 특정 소프트웨어 패키지, 소프트웨어 프레임워크 및 운영 체제를 더 잘 사용하기 위해 제공되는 소프트웨어 개발 키트입니다. Tencent Effect SDK의 License 정보는 Key와 LicenseURL의 쌍으로 구성됩니다. 이를 가져와서 SDK에 입력한 후 SDK 기능을 활성화할 수 있습니다.
+### License, License Key 및 Tencent Effects SDK는 어떤 관계인가요?
+Tencent Effects SDK를 합법적으로 사용하려면 Tencent에서 부여한 License를 획득해야 합니다. License는 SDK를 베타 테스트 또는 구매 이전에 획득해야 하는 라이선스입니다. License 승인 없이 제품을 사용하면 권리 침해가 성립됩니다. 테스트 License와 공식 License의 두 가지 유형의 라이선스를 얻을 수 있습니다.
+
+SDK는 전체 서비스의 특정 소프트웨어 패키지, 소프트웨어 프레임워크 및 운영 체제를 더 잘 사용하기 위해 제공되는 소프트웨어 개발 키트입니다. Tencent Effect SDK의 License는 License Key와 License URL 정보로 구성됩니다. 이를 가져와서 SDK에 입력하면 SDK 기능을 활성화할 수 있습니다.
 
 [](id:q2)
 ### 프로덕션 Tencent Effect SDK License는 어떻게 얻나요?

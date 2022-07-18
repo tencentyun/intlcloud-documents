@@ -2,8 +2,9 @@ CSS의 라이브 녹화 기능을 기반으로 구동되는 타임 시프트 기
 
 ### 주의 사항
 
-- 타임 시프트 기능은 **총 타임 시프트 시간**에 따라 과금됩니다. 또한 소비된 트래픽/대역폭에 따라 [**트래픽 대역폭 요금**](https://intl.cloud.tencent.com/document/product/267/2818), [**라이브 녹화 요금**](https://intl.cloud.tencent.com/document/product/267/39605), [**VOD 스토리지 요금**](https://intl.cloud.tencent.com/document/product/266/2838)이 부과됩니다.
+- 타임 시프트 기능은 **총 타임 시프트 시간**에 따라 과금됩니다. 또한 재생에 사용된 [**트래픽/대역폭 과금 가격**](https://intl.cloud.tencent.com/document/product/267/2818), [**라이브 방송 녹화 과금 가격**](https://intl.cloud.tencent.com/document/product/267/39605) 및 [**VOD 스토리지 과금 가격**](https://intl.cloud.tencent.com/document/product/266/2838)이 부과됩니다.
 - **총 타임 시프트 시간** = **총 타임 시프트 비디오 길이**(분) x **타임 시프트**(일).
+
 >?
 >- 총 타임 시프트 시간: 타임 시프트가 활성화된 비디오 파일의 총 길이(분);
 >- 타임 시프트 일수: 타임 시프트가 설정된 일수입니다(값 범위: 1-30일).

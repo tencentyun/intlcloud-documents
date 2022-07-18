@@ -2,7 +2,7 @@ CSSタイムシフトは、CSSレコーディング機能に基づいて、TS（
 
 ### 注意事項
 
-- CSSタイムシフト料金には再生によって発生する[**トラフィック帯域幅料金**](https://intl.cloud.tencent.com/document/product/267/2818)、[**CSSレコーディング料金**](https://intl.cloud.tencent.com/document/product/267/39605)、[**VODストレージ料金**](https://intl.cloud.tencent.com/document/product/266/2838)、**タイムシフト合計時間料金**が含まれます。
+- タイムシフト機能は**タイムシフトの総時間**に基づき個別に課金されます。ライブストリーミングを使用するとタイムシフト機能はビデオ再生の[トラフィック帯域幅費用](https://intl.cloud.tencent.com/document/product/267/2818)、[ライブブロードキャストレコーディング費用](https://intl.cloud.tencent.com/document/product/267/39605)、[Video on Demandストレージ費用](https://intl.cloud.tencent.com/document/product/266/2838)が発生します。
 - **タイムシフト合計時間**（単位：分*日）は**タイムシフトファイル時間**（単位：分）と**タイムシフト設定日数**（単位：日）を**かけた値**です。
 
 >?
