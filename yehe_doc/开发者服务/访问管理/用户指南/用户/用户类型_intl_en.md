@@ -5,7 +5,7 @@ CAM users are identities you create in Tencent Cloud. Each CAM user is associate
 	<tr>
 		<th rowspan="2">Account Types</th>
 		<th rowspan="2">Root Account</th>
-		<th colspan="3">Sub-Account</th>
+		<th colspan="3">Sub-account</th>
 	</tr>
 	<tr>
 		<th>Sub-user</th>
