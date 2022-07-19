@@ -1,11 +1,13 @@
 본 문서는 효율적인 레이아웃과 강력한 적용성을 갖춘 멀티미디어 커뮤니케이션 및 협업 툴인 PC TUIRoom 모듈을 소개합니다. 협업 업무, 원격 채용, 원격 진료, 보험 청구, 온라인 고객 서비스, 화상 면접, 디지털 정부 업무, 금융 디지털화, 온라인 회의 및 온라인 교육과 같은 시나리오에서 사용할 수 있습니다. 다양한 산업 시나리오와의 긴밀한 통합을 통해, 기업은 비용을 절감하고 효율성을 높이며, 디지털 혁신을 가속화하고, 경쟁력을 높일 수 있습니다.
 [Windows](https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe) 또는 [Mac](https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2)용 App을 다운로드 및 설치하여 컴포넌트를 체험해 볼 수 있습니다.
 
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+
+
 ## 효과
 <table>
 <tr><td><img src="https://qcloudimg.tencent-cloud.cn/raw/74790d1eb59abc94e264e4e8bca3604b.png"></td>
 </tr></table>
-
 
 
 ## 솔루션 장점
@@ -21,7 +23,7 @@
 ### 환경 준비
 - **Windows 환경** :
 	- 통합 개발 환경: Visual Studio 2015 이상.
-	- QT 5.9.1 이상.
+	- QT5.9.1 이상.
 	- Qt Visual Studio Tools 2.2.0 이상.
 	- 운영 체제: Windows 8 이상.
 	- 통합 개발 환경에서 정상적으로 프로젝트를 개발할 수 있는지 확인하십시오.
@@ -50,6 +52,7 @@ void LoadRoomApp() {
 }
 ```
 <img src="https://qcloudimg.tencent-cloud.cn/raw/0943ef183039229ff92cb54b2bdc4b2a.png" width="600">
+
 3. 프로젝트를 컴파일하고 RoomApp 컴파일 결과를 현재 실행 가능한 프로그램의 디렉터리에 복사합니다. 다음은 release x86 프로그램을 예로 들 수 있습니다.
 `TUIRoom\Windows-Mac\RoomApp\bin\Win32\Release` 디렉터리의 모든 파일을 현재 프로그램 디렉터리로 복사합니다.
 4. TestApp과 RoomApp을 동시에 시작하는 프로그램을 실행합니다.
@@ -68,7 +71,6 @@ void LoadRoomApp() {
 }
 ```
 <img src="https://qcloudimg.tencent-cloud.cn/raw/0fd090fbeef17d75a9b119b1a7e4fc9b.png" width="600">
-
 3. 프로젝트를 컴파일하고 RoomApp 컴파일 결과 `RoomApp.app`을 현재 프로젝트의 출력과 동일한 수준으로 복사합니다. 여기서는 상기 이미지에서 생성한 프로젝트의 경로를 예로 들어 설명합니다.
 `RoomApp.app`을 `/Users/mac/Desktop/TestApp/build-TestApp-Desktop_Qt_5_9_1_clang_64bit-Release` 디렉터리에 복사합니다.
 4. TestApp과 RoomApp을 동시에 시작하는 프로그램을 실행합니다.
@@ -126,4 +128,4 @@ void LoadRoomApp() {
 </tbody></table>
 
 ## FAQ
-요구 사항이나 피드백은 colleenyu@tencent.com으로 보내주시기 바랍니다.
+요구 사항이나 피드백은 colleenyu@tencent.com으로 문의하십시오.

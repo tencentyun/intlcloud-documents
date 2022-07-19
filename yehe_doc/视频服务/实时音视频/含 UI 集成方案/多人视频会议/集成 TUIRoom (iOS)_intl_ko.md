@@ -1,6 +1,8 @@
 ## 컴포넌트 개요
 TUIRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 화면 공유, 뷰티 필터 및 저지연 영상 통화와 같은 기능을 App에 추가할 수 있습니다. 또한 [Android](https://intl.cloud.tencent.com/document/product/647/37283), [Windows](https://intl.cloud.tencent.com/document/product/647/44071) 및 [Mac](https://intl.cloud.tencent.com/document/product/647/44071) 플랫폼을 지원합니다. 기본 기능은 다음과 같습니다.
 
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2944bac3c5d348b06d2a11c439783b48.png"></td>
@@ -13,7 +15,7 @@ TUIRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝
 
 **cocoapods를 통해 컴포넌트를 가져오려면** 다음 단계를 따르십시오.
 1. 프로젝트의 `Podfile`과 같은 수준에 `TUIRoom` 폴더를 만듭니다.
-2. [**Github/TUIRoom**](https://github.com/tencentyun/TUIRoom)으로 이동하고 클론/다운로드 코드를 선택한 다음 [**TUIRoom/iOS/**](https://github.com/tencentyun/TUIRoom/tree/main/iOS) 디렉터리에 `Source`, `Resources`, `TUIBeauty`, `TXAppBasic` 폴더 및 `TUIRoom.podspec` 파일을 `1단계`에서 생성한 TUIRoom 폴더에 복사합니다.
+2. 클릭하여 [**Github/TUILiveRoom**](https://github.com/tencentyun/TUIRoom)으로 이동하고 클론/다운로드 코드를 선택한 다음 [**TUIRoom/iOS/**](https://github.com/tencentyun/TUIRoom/tree/main/iOS) 디렉터리에 `Source`, `Resources`, `TUIBeauty`, `TXAppBasic` 폴더 및 `TUIRoom.podspec` 파일을 `1단계`에서 생성한 TUIRoom 폴더에 복사합니다.
 3. Podfile에 다음 종속성을 추가하고 `pod install`을 실행하여 가져오기를 완료합니다.
 ```
 # :path => "TUIRoom.podspec의 상대 경로를 가리킵니다"
@@ -38,7 +40,7 @@ pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
 <key>NSMicrophoneUsageDescription</key>
 <string>RoomApp은 오디오가 포함된 비디오를 녹화하려면 마이크에 액세스해야 합니다.</string>
 ```
-![](https://main.qcloudimg.com/raw/54cc6989a8225700ff57494cba819c7b.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/9395aca2af5433c9a63ffb4ba9ff9888.png)
 
 ### 3단계: TUI 컴포넌트 생성 및 초기화
 
@@ -48,7 +50,7 @@ pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
 @import TUICore;
 
 // 1. 컴포넌트에 로그인
-[TUILogin login:@"귀하의 SDKAppID" userID:@"귀하의 UserID" userSig:@"귀하의 UserSig" succ:^{
+[TUILogin login:@"사용자 SDKAppID" userID:@"사용자 UserID" userSig:@"사용자 UserSig" succ:^{
         
 } fail:^(int code, NSString *msg) {
         
@@ -62,7 +64,7 @@ import TUIRoom
 import TUICore
 
 // 1. 컴포넌트에 로그인
-TUILogin.login("귀하의 SDKAppID", userID: "귀하의 UserID", userSig: "귀하의 UserSig") {
+TUILogin.login("사용자 SDKAppID", userID: "사용자 UserID", userSig: "사용자 UserSig") {
         
 } fail: { code, msg in
         
@@ -83,7 +85,7 @@ let tuiRoom = TUIRoom.sharedInstance
 
 
 ### 4단계: 그룹 오디오/비디오 인터랙션 구현
-1. **방 주인은 그룹 오디오/비디오 인터랙션 방을 만듭니다**.
+1. **방 소유자가 그룹 오디오/비디오 인터랙션 방 생성 구현**.
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -97,7 +99,7 @@ tuiRoom.createRoom(roomId: 12345, speechMode: .freeSpeech, isOpenCamera: true, i
 ```
 :::
 </dx-codeblock>
-2. **다른 사용자가 오디오/비디오 방에 입장합니다**.
+2. **다른 구성원의 오디오/비디오 방 참여 허용**.
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -113,7 +115,7 @@ tuiRoom.enterRoom(roomId: 12345, isOpenCamera: true, isOpenMicrophone: true)
 </dx-codeblock>
 
 ### 5단계: 방 관리(옵션)
-1. **방 주인은 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37282)을 통해 방을 해산합니다**.
+1. **방 소유자는 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37284)을 통해 방을 해산합니다**.
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -133,7 +135,7 @@ TUIRoomCore.shareInstance().destroyRoom { [weak self] _, _ in
 ```
 :::
 </dx-codeblock>
-2. **다른 구성원은 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37282)을 통해 방을 나갑니다**.
+2. **다른 구성원은 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37284)을 통해 방을 나갑니다**.
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -155,7 +157,7 @@ TUIRoomCore.shareInstance().leaveRoom { [weak self] _, _ in
 </dx-codeblock>
 
 ### 6단계: 화면 공유(옵션)
-화면 공유 활성화  [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37282). 화면 공유 프로젝트 설정은 [실시간 화면 공유(iOS)](https://intl.cloud.tencent.com/document/product/647/37338)를 참고하십시오.
+[TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37282)를 통해 화면 공유를 구현합니다. 화면 공유 프로젝트 구성은 [실시간 화면 공유(iOS)](https://intl.cloud.tencent.com/document/product/647/37338)를 참고하십시오.
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;

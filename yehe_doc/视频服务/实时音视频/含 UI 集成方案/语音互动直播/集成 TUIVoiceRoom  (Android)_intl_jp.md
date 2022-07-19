@@ -1,6 +1,8 @@
 ## コンポーネントの説明
 
-TUIVoiceRoomはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIVoiceRoomコンポーネントを統合することにより、数行のコードを書くだけで、Appに「多人数ボイスチャット」などのシーンを組み込むことができます。TUIVoiceRoomは[iOS](https://intl.cloud.tencent.com/document/product/647/37287)などのプラットフォームをサポートしています。基本機能は下図のとおりです。
+TUIVoiceRoomはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIVoiceRoomコンポーネントを統合することにより、数行のコードを書くだけで、Appに「多人数ボイスチャット」などのシーンを組み込むことができます。TUIVoiceRoomは[iOS](https://intl.cloud.tencent.com/document/product/647/37287)などのプラットフォームをサポートしています。基本機能は下図のとおりです：
+
+>?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブにすると、デフォルトでは、100DAUまでサポートするIM SDK体験版もアクティブになります。
 
 <table class="tablestyle">
 <tbody><tr>
@@ -8,20 +10,19 @@ TUIVoiceRoomはオープンソースのオーディオビデオUIコンポーネ
 </tr>
 </tbody></table>
 
-
 ## コンポーネントの統合
 
 ### ステップ1：TUIVoiceRoomコンポーネントのダウンロードとインポート
-クリックして[Github](https://github.com/tencentyun/TUIVoiceRoom)に進み、コードのクローン/ダウンロードを選択した後、Android/Sourceディレクトリをプロジェクトにコピーし、次のようにインポート動作を完了します。
-- `setting.gradle`へのインポートを完了します。以下をご参照ください。
+クリックして[Github](https://github.com/tencentyun/TUIVoiceRoom)に進み、コードのクローン/ダウンロードを選択した後、Android/Sourceディレクトリをプロジェクトにコピーし、次のようにインポート動作を完了します：
+- `setting.gradle`へのインポートを完了します。以下をご参照ください：
 ```
 include ':Source'
 ```
-- appのbuild.gradleファイルにSourceに対する依存関係を追加します。
+- appのbuild.gradleファイルにSourceに対する依存関係を追加します：
 ```
 api project(':Source')
 ```
-- ルートディレクトリの`build.gradle`ファイルに`TRTC SDK`および`IM SDK`の依存関係を追加します。
+- ルートディレクトリの`build.gradle`ファイルに`TRTC SDK`および`IM SDK`の依存関係を追加します
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -30,7 +31,7 @@ ext {
 ```
 
 ### ステップ2：権限の設定および難読化ルール
-AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が必要です（6.0以上のAndroidシステムではマイクの権限などを動的に申請する必要があります）。
+AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が必要です（6.0以上のAndroidシステムではマイクの権限などを動的に申請してください）：
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />              
@@ -38,7 +39,7 @@ AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が�
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
-proguard-rules.proファイルでは、SDK関連を非難読化リストに追加します。
+proguard-rules.proファイルでは、SDK関連を非難読化リストに追加します：
 
 ```
 -keep class com.tencent.** { *; }
@@ -62,10 +63,10 @@ proguard-rules.proファイルでは、SDK関連を非難読化リストに追�
 ```
 
 **パラメータの説明：**
-- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます。
+- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます：
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**：**TRTC アプリケーションキー**であり、SDKAppIdに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上の図のように表示されます。
-- **userId**：現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。業務の実際のアカウントシステムと組み合わせてご自身で設定することをお勧めします。
+- **userId**：現在のユーザーID。文字列タイプであり、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。業務の実際のアカウントシステムと組み合わせてご自身で設定することをお勧めします。
 - **userSig**：SDKAppId、userId，Secretkeyなどの情報に基づく計算によって得られるセキュリティ保護署名です。[ここ](https://console.cloud.tencent.com/trtc/usersigtool)をクリックするとデバッグ用のuserSigがオンラインで直接生成されます。また当社の[デモプロジェクト](https://github.com/tencentyun/TUIVoiceRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88)を参照してご自身で計算することもできます。その他の情報については、[UserSigの計算、使用方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 ### ステップ4：ボイスチャットルームの実装

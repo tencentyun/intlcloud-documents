@@ -1,6 +1,8 @@
 ## 컴포넌트 개요
 TUIRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 화면 공유, 뷰티 필터 및 저지연 영상 통화와 같은 기능을 App에 추가할 수 있습니다. [iOS](https://intl.cloud.tencent.com/document/product/647/37284), [Windows](https://intl.cloud.tencent.com/document/product/647/44071) 및 [Mac](https://intl.cloud.tencent.com/document/product/647/44071) 플랫폼도 지원합니다. 기본 기능은 다음과 같습니다.
 
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2944bac3c5d348b06d2a11c439783b48.png"></td>
@@ -16,7 +18,7 @@ include ':tuiroom'
 include ':debug'
 include ':tuibeauty'
 ```
-2. tuiroom, debug 및 tuibeauty에 대한 종속성을 app의 `build.gradle` 파일에 추가합니다.
+2. app의 `build.gradle` 파일에 tuiroom, debug 및 tuibeauty에 대한 종속성을 추가합니다.
 ```
 api project(':tuiroom')
 api project(':debug')
@@ -60,7 +62,7 @@ TUILogin.addLoginListener(new TUILoginListener() {
     }
 });
 
-TUILogin.login(context, "귀하의 SDKAppId", "귀하의 userId", "귀하의 userSig", null);
+TUILogin.login(context, "사용자 SDKAppId", "사용자 userId", "사용자 userSig", null);
 
 
 // 2. TUIRoom 인스턴스 초기화
@@ -72,7 +74,7 @@ TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 현재 사용자의 ID로, 문자(a-z 및 A-Z), 숫자(0-9), 하이픈(-) 및 언더바(\_)만 포함할 수 있는 문자열입니다. 사용자 계정 시스템과 일관성을 유지하는 것이 좋습니다.
-- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 userSig를 온라인으로 직접 생성하거나 [데모 프로젝트](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오.
+- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 userSig를 온라인으로 직접 생성하거나 [데모 프로젝트](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
 
 
 ### 4단계: 그룹 오디오/비디오 인터랙션 구현
@@ -120,7 +122,7 @@ public void onRemoteUserLeave(String userId) {
 ```
 
 ### 6단계: 화면 공유(옵션)
-[TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281)를 통해 화면 공유를 구현합니다.
+[TUIRoomCore#startScreenCapture](intl.cloud.tencent.com/document/product/647/37281)를 통해 화면 공유를 구현합니다.
 ```java
 // 1. AndroidManifest.xml 파일에 SDK 녹화 기능의 activity 및 권한 추가
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -169,13 +171,6 @@ private void startScreenCapture() {
         mTUIRoom.startScreenCapture(encParams, params);
 }
 ```
-
-### 7단계: 뷰티 필터 특수 효과(옵션)[](id:XMagic)
-TUIRoom 뷰티 필터는 Tencent 특수 효과 SDK를 사용하며, 뷰티 필터 기능을 사용할 때는 먼저 XMagic License를 설정해야 합니다.
-```java
-TUIBeautyView.getBeautyService().setLicense(context, “XMagicLicenseURL”, “XMagicLicenseKey”);
-```
-
 
 ## FAQ
 요구 사항이나 피드백은 colleenyu@tencent.com으로 문의하십시오.

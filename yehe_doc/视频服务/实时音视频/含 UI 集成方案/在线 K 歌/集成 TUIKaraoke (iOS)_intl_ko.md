@@ -2,6 +2,8 @@
 
 TUIKaraoke는 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합하고 몇 줄의 코드 작성만으로 애플리케이션에 온라인 노래방 시나리오를 추가하고 노래방, 좌석 관리, 선물 주고받기, 문자 채팅과 같은 TRTC 기능을 체험해 볼 수 있습니다. Android 플랫폼도 지원합니다. 기본 기능은 다음과 같습니다.
 
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+
 <table>
 <tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/375d793b2b002b7479c64e71d9bcefcb.png"width="850"></td>
@@ -51,7 +53,7 @@ pod install
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**입니다. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 문자열이며 최대 32바이트의 문자와 숫자를 포함할 수 있는 현재 사용자 ID입니다(특수 기호는 지원되지 않음). 실제 계정 시스템에 따라 사용자 정의할 수 있습니다.
-- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 UserSig를 온라인으로 직접 생성하거나 [TUIKaraoke 데모 프로젝트](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오.
+- **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 UserSig를 온라인으로 직접 생성하거나 [TUIKaraoke 데모 프로젝트](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://cloud.tencent.com/document/product/647/17275)를 참고하십시오.
 
 
 ### 4단계: 온라인 노래방 시나리오 구현
@@ -98,7 +100,7 @@ func onSeatListChange(seatInfoList: [SeatInfo]) {
 >? [TRTCKaraoke(iOS)](https://intl.cloud.tencent.com/document/product/647/41942) 또는 [TUIKaraoke 데모 프로젝트](https://github.com/tencentyun/TUIKaraoke/)를 참고하여 다른 좌석 관리 작업을 구현할 수 있습니다.
 
 4. **노래를 재생하고 노래방 시나리오를 체험합니다**
-음악 ID와 URL을 가져와 비즈니스에 따라 노래를 재생할 수 있습니다. 자세한 내용은 [TUIKaraoke 음악 재생 API](https://intl.cloud.tencent.com/document/product/647/41942#.E9.9F.B3.E4.B9.90.E6.92.AD.E6.94.BE.E6.8E.A5.E5.8F.A32)를 참고하십시오.
+음악 ID와 URL을 가져와 비즈니스에 따라 노래를 재생할 수 있습니다. 자세한 내용은 [TUIKaraoke 음악 재생 인터페이스](https://intl.cloud.tencent.com/document/product/647/41942#.E9.9F.B3.E4.B9.90.E6.92.AD.E6.94.BE.E6.8E.A5.E5.8F.A32)를 참고하십시오.
 ```swift
 //음악 재생
 karaokeRoom.startPlayMusic(musicID: musicID, originalUrl: muscicLocalPath, accompanyUrl: accompanyLocalPath);
@@ -111,7 +113,6 @@ karaokeRoom.stopPlayMusic();
 ### 6단계: 문자 채팅 기능 추가(옵션)
 앵커와 청취자 간의 텍스트 채팅 기능을 원하시면 다음과 같이 메시지 송수신을 구현하십시오.
 관련 API에 대한 자세한 내용은 [TRTCKaraokeRoom.sendRoomTextMsg](https://intl.cloud.tencent.com/document/product/647/41942#sendroomtextmsg)를 참고하십시오.
-
 ```swift
 // 발신측: 텍스트 메시지 발송
 karaokeRoom.sendRoomTextMsg(message: message) { [weak self] (code, message) in

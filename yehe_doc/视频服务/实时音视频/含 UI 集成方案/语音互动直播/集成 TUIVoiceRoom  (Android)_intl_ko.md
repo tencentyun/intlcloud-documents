@@ -2,18 +2,19 @@
 
 TUIVoiceRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 App에서 ‘그룹 오디오 채팅’ 시나리오를 지원하도록 할 수 있습니다. [iOS](https://intl.cloud.tencent.com/document/product/647/37287) 플랫폼도 지원합니다. 기본 기능은 다음과 같습니다.
 
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/064229b8d27147985311825f21dd27c2.png"></td>
 </tr>
 </tbody></table>
 
-
 ## 컴포넌트 통합
 
 ### 1단계: TUIVoiceRoom 컴포넌트 다운로드 및 가져오기
 [Github](https://github.com/tencentyun/TUIVoiceRoom)로 이동하여 코드를 복제하거나 다운로드하고 Android/Source 디렉터리를 프로젝트에 복사하고 다음 가져오기 작업을 완료합니다.
-- 아래와 같이 `setting.gradle`에서 가져오기를 완료합니다.
+- 아래와 같이 `setting.gradle`에서 가져오기 완료:
 ```
 include ':Source'
 ```
@@ -21,7 +22,7 @@ include ':Source'
 ```
 api project(':Source')
 ```
-- 루트 디렉터리의 `build.gradle` 파일에 `TRTC SDK` 및 `IM SDK`에 대한 종속성을 추가합니다.
+- 루트 디렉터리의 `build.gradle` 파일에 `TRTC SDK` 및 `IM SDK`에 대한 종속성 추가:
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -38,7 +39,7 @@ AndroidManifest.xml에서 App 권한을 설정합니다. SDK에는 다음 권한
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
-proguard-rules.pro 파일에서 SDK 관련 유형을 비난독화 리스트에 추가합니다.
+proguard-rules.pro 파일에서 SDK 클래스를 난독화 금지 목록에 추가합니다.
 
 ```
 -keep class com.tencent.** { *; }
@@ -64,7 +65,7 @@ proguard-rules.pro 파일에서 SDK 관련 유형을 비난독화 리스트에 �
 **매개변수 설명:**
 - **SDKAppID**: **TRTC 애플리케이션 ID**입니다. TRTC 서비스를 활성화하지 않은 경우 [TRTC 콘솔](https://console.cloud.tencent.com/trtc/app)에 로그인하여 TRTC 애플리케이션을 생성하고 **애플리케이션 정보**를 클릭합니다. SDKAppID는 아래와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**입니다. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
+- **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 현재 사용자의 ID로, 문자(a-z 및 A-Z), 숫자(0-9), 하이픈(-) 및 언더바(\_)만 포함할 수 있는 문자열입니다. 사용자 계정 시스템과 일관성을 유지하는 것이 좋습니다.
 - **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 userSig를 온라인으로 직접 생성하거나 [데모 프로젝트](https://github.com/tencentyun/TUIVoiceRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오.
 
@@ -82,7 +83,7 @@ mTRTCVoiceRoom.createRoom(roomId, roomParam, new TRTCVoiceRoomCallback.ActionCal
     @Override
     public void onCallback(int code, String msg) {
         if (code == 0) {
-				//생성 성공
+				//방 생성 성공
         }
     }
 });
@@ -94,7 +95,7 @@ mTRTCVoiceRoom.enterRoom(roomId, new TRTCVoiceRoomCallback.ActionCallback() {
         @Override
         public void onCallback(int code, String msg) {
             if (code == 0) {
-            //방 들어가기
+            //방 들어가기 성공
             }
         }
 });
@@ -102,7 +103,7 @@ mTRTCVoiceRoom.enterRoom(roomId, new TRTCVoiceRoomCallback.ActionCallback() {
 3. **청취자는 [TRTCVoiceRoom#enterSeat](https://intl.cloud.tencent.com/document/product/647/37339)를 통해 마이크 켬**
 ```java
 // 1: 청취자가 마이크를 켜기 위해 API 호출
-int seatIndex = 2; // 좌석 index
+int seatIndex = 2; //좌석 index
 mTRTCVoiceRoom.enterSeat(seatIndex, new TRTCVoiceRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
@@ -153,7 +154,7 @@ public void onInviteeAccepted(String id, String invitee) {
 }
 
 // 방 주인 앵글
-// 1.방 주인이 요청을 수신함
+// 1. 방 주인이 요청을 수신함
  @Override
 public void onReceiveNewInvitation(final String id, String inviter, String cmd, final String content) {
     if (cmd.equals("takeSeat")) {
@@ -222,4 +223,4 @@ mTRTCVoiceRoom.setDelegate(new TRTCVoiceRoomDelegate() {
 ```
 
 ## FAQ
-요구 사항이나 피드백은 colleenyu@tencent.com으로 보내주시기 바랍니다.
+요구 사항이나 피드백은 colleenyu@tencent.com으로 문의하십시오.

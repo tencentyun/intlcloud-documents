@@ -1,6 +1,8 @@
 ## コンポーネントの説明
 
-TUIVoiceRoomはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIVoiceRoomコンポーネントを統合することにより、数行のコードを書くだけで、Appに「多人数ボイスチャット」などのシーンを組み込むことができます。TUIVoiceRoomは[Android](https://intl.cloud.tencent.com/document/product/647/37286)などのプラットフォームをサポートしています。基本機能は下図のとおりです。
+TUIVoiceRoomはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIVoiceRoomコンポーネントを統合することにより、数行のコードを書くだけで、Appに「多人数ボイスチャット」などのシーンを組み込むことができます。TUIVoiceRoomは[Android](https://intl.cloud.tencent.com/document/product/647/37286)などのプラットフォームをサポートしています。基本機能は下図のとおりです：
+
+>?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブにすると、デフォルトでは、100DAUまでサポートするIM SDK体験版もアクティブになりますs。
 
 <table class="tablestyle">
 <tbody><tr>
@@ -8,25 +10,24 @@ TUIVoiceRoomはオープンソースのオーディオビデオUIコンポーネ
 </tr>
 </tbody></table>
 
-
 ## コンポーネントの統合
 ### ステップ1：TUIVoiceRoomコンポーネントのダウンロードとインポート
 
-xcodeプロジェクトの`Podfile`ファイルと同一階層のディレクトリ下に`TUIVoiceRoom`フォルダを作成し、[Githubリポジトリ iOSディレクトリ](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS)下の[TXAppBasic](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS/TXAppBasic)、[Resources](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS/Resources)、[Source](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS/Source)、[TUIVoiceRoom.podspec](https://github.com/One-time/TUIVoiceRoom/blob/main/iOS/TUIVoiceRoom.podspec)などのファイルを、ご自身のプロジェクトで作成した`TUIVoiceRoom`ディレクトリ下にコピーします。さらに、次のようにインポート動作を完了します。
-- プロジェクトのPodfileファイルを開き、TUIVocieRoom.podspecをインポートします。次をご参照ください。
+xcodeプロジェクトの`Podfile`ファイルと同一階層のディレクトリ下に`TUIVoiceRoom`フォルダを作成し、[Githubリポジトリ iOSディレクトリ](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS)下の[TXAppBasic](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS/TXAppBasic)、[Resources](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS/Resources)、[Source](https://github.com/One-time/TUIVoiceRoom/tree/main/iOS/Source)、[TUIVoiceRoom.podspec](https://github.com/One-time/TUIVoiceRoom/blob/main/iOS/TUIVoiceRoom.podspec)などのファイルを、ご自身のプロジェクトで作成した`TUIVoiceRoom`ディレクトリ下にコピーします。さらに、次のようにインポート動作を完了します：
+- プロジェクトのPodfileファイルを開き、TUIVocieRoom.podspecをインポートします。次をご参照ください：
 ```
 # pathはTXAppBasic.podspecのPodfileファイルに対する相対パスです
 pod 'TXAppBasic', :path => "TUIVoiceRoom/TXAppBasic/"
 # pathはTUIVoiceRoom.podspecのPodfileファイルに対する相対パスです
 pod 'TUIVoiceRoom', :path => "TUIVoiceRoom/", :subspecs => ["TRTC"]    
 ```
-- 端末でPodfileのあるディレクトリ下に入り、`pod install`を実行します。次をご参照ください。
+- 端末でPodfileのあるディレクトリ下に入り、`pod install`を実行します。次をご参照ください：
 ```
 pod install
 ```
 
 ### ステップ2：権限の設定および難読化ルール
-info.plistファイルにおいて、`Privacy > Microphone Usage Description`を追加して、マイクの権限を申請する必要があります。
+info.plistファイルにおいて、`Privacy > Microphone Usage Description`を追加して、マイクの権限を申請してください。
 
 ```plist
 <key>NSMicrophoneUsageDescription</key>
@@ -46,10 +47,10 @@ mTRTCVoiceRoom.login(sdkAppID: SDKAppID, userId: userId, userSig: userSig) { cod
 }
 ```
 **パラメータの説明：**
-- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます。
+- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます：
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
 - **Secretkey**：**TRTC アプリケーションキー**であり、SDKAppIdに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上の図のように表示されます。
-- **userId**：現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。業務の実際のアカウントシステムと組み合わせてご自身で設定することをお勧めします。
+- **userId**：現在のユーザーID。文字列タイプであり、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。業務の実際のアカウントシステムと組み合わせてご自身で設定することをお勧めします。
 - **userSig**：SDKAppId、userId，Secretkeyなどの情報に基づく計算によって得られるセキュリティ保護署名です。[ここ](https://console.cloud.tencent.com/trtc/usersigtool)をクリックするとデバッグ用のuserSigがオンラインで直接生成されます。また当社の[デモプロジェクト](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88)を参照してご自身で計算することもできます。その他の情報については、[UserSigの計算、使用方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 
@@ -103,7 +104,7 @@ func onSeatListChange(seatInfoList: [VoiceRoomSeatInfo]) {
     // 更新したマイクリスト
 }
 ```
-4. **管理者による視聴者発言招待の実装[TRTCVoiceRoom#enterRoom](https://intl.cloud.tencent.com/document/product/647/38171)**
+4. **管理者による視聴者発言招待の実装[TRTCVoiceRoom#pickSeat](https://intl.cloud.tencent.com/document/product/647/38171)**
 ```Swift
 // 1: 管理者が呼び出して、視聴者が発言できるように招待
 let seatIndex = 2; //マイクのindex

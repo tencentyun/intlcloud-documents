@@ -1,13 +1,14 @@
 ## 컴포넌트 개요
 
-TUIVoiceRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 App에서 ‘그룹 오디오 채팅’ 시나리오를 추가할 수 있습니다. [Android](https://intl.cloud.tencent.com/document/product/647/37286) 플랫폼도 지원합니다. 기본 기능은 다음과 같습니다.
+TUIVoiceRoom은 오픈 소스 오디오/비디오 UI 컴포넌트입니다. 프로젝트에 통합한 후 몇 줄의 코드 작성만으로 App에서 ‘그룹 오디오 채팅’ 시나리오를 추가할 수 있습니다. 동시에 [Android](https://intl.cloud.tencent.com/document/product/647/37286) 플랫폼도 지원합니다. 기본 기능은 다음과 같습니다.
+
+>?TUIKit 시리즈 컴포넌트는 Tencent Cloud의 두 가지 기본 PaaS 서비스, 즉 [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35078) 및 [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047/35448)을 사용합니다. TRTC를 활성화하면 IM과 IM SDK 평가판(100 DAU만 지원)이 자동으로 활성화됩니다. IM 과금 내역은 [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)를 참고하십시오.
 
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/064229b8d27147985311825f21dd27c2.png"></td>
 </tr>
 </tbody></table>
-
 
 ## 컴포넌트 통합
 ### 1단계: TUIVoiceRoom 컴포넌트 다운로드 및 가져오기
@@ -48,7 +49,7 @@ mTRTCVoiceRoom.login(sdkAppID: SDKAppID, userId: userId, userSig: userSig) { cod
 **매개변수 설명:**
 - **SDKAppID**: **TRTC 애플리케이션 ID**입니다. TRTC 서비스를 활성화하지 않은 경우 [TRTC 콘솔](https://console.cloud.tencent.com/trtc/app)에 로그인하여 TRTC 애플리케이션을 생성하고 **애플리케이션 정보**를 클릭합니다. SDKAppID는 아래와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**입니다. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
+- **Secretkey**: SDKAppID에 해당하는 **TRTC 애플리케이션 키**. TRTC 콘솔의 [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) 페이지에서 SecretKey는 아래와 같습니다.
 - **userId**: 현재 사용자의 ID로, 문자(a-z 및 A-Z), 숫자(0-9), 하이픈(-) 및 언더바(\_)만 포함할 수 있는 문자열입니다. 사용자 계정 시스템과 일관성을 유지하는 것이 좋습니다.
 - **userSig**: SDKAppId, userId 및 Secretkey를 기반으로 계산된 보안 보호 서명입니다. [여기](https://console.cloud.tencent.com/trtc/usersigtool)를 클릭하여 디버깅 userSig를 온라인으로 직접 생성하거나 [데모 프로젝트](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88)를 참고하여 직접 계산할 수 있습니다. 자세한 내용은 [UserSig](https://intl.cloud.tencent.com/document/product/647/35166)를 참고하십시오.
 
@@ -97,15 +98,15 @@ mTRTCVoiceRoom.enterSeat(seatIndex: 2) { (code, message) in
     }
 }
 
-// 2.onSeatListChange 콜백 수신, 좌석 리스트 새로고침
+// 2.onSeatListChange 콜백 수신, 마이크 위치 리스트 새로고침
 @Override
 func onSeatListChange(seatInfoList: [VoiceRoomSeatInfo]) {
-    // 새로 고친 마이크 위치 리스트
+    // 새로 고친 좌석 리스트
 }
 ```
 4. **방 주인은 [TRTCVoiceRoom#pickSeat](https://intl.cloud.tencent.com/document/product/647/38171)를 통해 청취자 마이크 활성화**
 ```Swift
-// 1: 방 주인의 청취자 마이크 켜기
+// 1: 방 주인이 청취자를 초대
 let seatIndex = 2; //좌석 index
 let userId = "123"; //발언할 사용자의 id
 mTRTCVoiceRoom.pickSeat(seatIndex: 1, userId: "123") { (code, message) in
@@ -113,7 +114,7 @@ mTRTCVoiceRoom.pickSeat(seatIndex: 1, userId: "123") { (code, message) in
     }
 }
 
-// 2. onSeatListChange 콜백 수신, 좌석 리스트 새로고침
+// 2.onSeatListChange 콜백 수신, 마이크 위치 리스트 새로고침
 func onSeatListChange(seatInfoList: [VoiceRoomSeatInfo]) {
     // 새로 고친 좌석 리스트
 }
@@ -121,14 +122,14 @@ func onSeatListChange(seatInfoList: [VoiceRoomSeatInfo]) {
 5. **청취자가  [TRTCVoiceRoom#sendInvitation](https://intl.cloud.tencent.com/document/product/647/38171)을 통해 발언 요청**
 ```Swift
 // 청취자 앵글
-// 1.리스너가 API를 호출하여 발언 요청
+// 1.청취자가 API를 호출하여 말하기 요청
 let seatIndex = "1"; //좌석 index
 let userId = "123"; //사용자 id
 let inviteId = mTRTCVoiceRoom.sendInvitation(cmd: "takeSeat", userId: ownerUserId, content: "1") { (code, message) in
     // 발송 결과 콜백
 }
 
-// 2. 초대 동의 요청을 수신하면 정식으로 마이크 켜짐
+// 2.초대가 수락된 후 사용자를 자리에 앉힘
 func onInviteeAccepted(identifier: String, invitee: String) {
     if identifier == selfID {
         self.mTRTCVoiceRoom.enterSeat(seatIndex: ) { (code, message) in
@@ -154,7 +155,7 @@ let inviteId = self.mTRTCVoiceRoom.sendInvitation(cmd: "pickSeat", userId: owner
     // 발송 결과 콜백
 }
 
-// 2. 초대 동의 요청을 수신하면 정식으로 마이크 켜짐
+// 2.초대가 수락된 후 사용자를 자리에 앉힘
 func onInviteeAccepted(identifier: String, invitee: String) {
     if identifier == selfID {
         self.mTRTCVoiceRoom.pickSeat(seatIndex: ) { (code, message) in
@@ -164,7 +165,7 @@ func onInviteeAccepted(identifier: String, invitee: String) {
 }
 
 // 청취자 앵글
-// 1. 청취자가 요청을 수신함
+// 1.청취자가 요청을 수신함
 func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, content: String) {
     if cmd == "pickSeat" {
         // 2.청취자의 방 주인 요청 수락
@@ -204,4 +205,4 @@ func onRecvRoomCustomMsg(cmd: String, message: String, userInfo: VoiceRoomUserIn
 
 
 ## FAQ
-요구 사항이나 피드백은 colleenyu@tencent.com으로 보내주시기 바랍니다.
+요구 사항이나 피드백은 colleenyu@tencent.com으로 문의하십시오.

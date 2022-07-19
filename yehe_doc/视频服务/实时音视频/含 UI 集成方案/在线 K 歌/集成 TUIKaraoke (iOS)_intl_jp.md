@@ -1,6 +1,8 @@
 ## コンポーネントの説明
 
-TUIKaraokeはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIKaraokeコンポーネントを統合することにより、数行のコードを書くだけで、アプリケーションにオンラインカラオケシーンを組み込むことができ、カラオケ、マイク管理、ギフトの送付と受領、テキストチャットなどのTRTCのKTVシーンでの関連機能を体験できるようになります。TUIKaraokeはAndroidプラットフォーム用のソースコードもサポートしています。基本機能は下図のとおりです。
+TUIKaraokeはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIKaraokeコンポーネントを統合することにより、数行のコードを書くだけで、アプリケーションにオンラインカラオケシーンを組み込むことができ、カラオケ、マイク管理、ギフトの送付と受領、テキストチャットなどのTRTCのKTVシーンでの関連機能を体験できるようになります。TUIKaraokeはAndroidプラットフォーム用のソースコードもサポートしています。基本機能は下図のとおりです：
+
+>?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブにすると、デフォルトでは、100DAUまでサポートするIM SDK体験版もアクティブになります。
 
 <table>
 <tr>
@@ -8,24 +10,25 @@ TUIKaraokeはオープンソースのオーディオビデオUIコンポーネ�
 </tr>
 </table>
 
+
 ## コンポーネントの統合
 ### ステップ1：TUIKaraokeコンポーネントのダウンロードとインポート
 
 クリックして[Github](https://github.com/tencentyun/TUIKaraoke)に進み、コードのクローン/ダウンロードを選択した後、iOSディレクトリ下の`Source`、`Resources`、`TXAppBasic`フォルダ、`TUIKaraoke.podspec`ファイルをプロジェクトにコピーし、次のようにインポート動作を完了します。
 
-- `Podfile`ファイルにインポートコマンドを追加します。次をご参照ください。
+- `Podfile`ファイルにインポートコマンドを追加します。次をご参照ください：
 ```
 pod 'TUIKaraoke', :path => "./", :subspecs => ["TRTC"]
 pod 'TXLiteAVSDK_TRTC'
 pod 'TXAppBasic', :path => "TXAppBasic/"
 ```
-- 端末を開き、`Podfile`ファイルのあるディレクトリ下に進み、インストールコマンドを実行します。次をご参照ください。
+- 端末を開き、`Podfile`ファイルのあるディレクトリ下に進み、インストールコマンドを実行します。次をご参照ください：
 ```
 pod install
 ```
 
 ### ステップ2：権限の設定
-プロジェクトのinfo.plistファイルの中でAppの権限を設定します。SDKには以下の権限が必要です（iOSシステムではマイクを動的に申請する必要があります）。
+プロジェクトのinfo.plistファイルの中でAppの権限を設定します。SDKには以下の権限が必要です（iOSシステムではマイクを動的に申請してください）：
 ```
  <key>NSMicrophoneUsageDescription</key>
     <string>Karaokeにはマイクへのアクセス権限が必要です</string>
@@ -46,11 +49,11 @@ pod install
   }
 ```
 **パラメータの説明**：
-- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます。
+- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます：
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**：**TRTCアプリケーションキー**であり、SDKAppIdに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上の図のように表示されます。
-- **userId**：現在のユーザーのIDです。文字列形式で、長さは32バイト以内とし、特殊文字の使用はサポートしていません。英語または数字の使用をお勧めします。業務の実際のアカウントシステムと組み合わせてご自身で設定することができます。
-- **userSig**：SDKAppId、userId、Secretkeyなどの情報に基づく計算によって得られるセキュリティ保護署名です。[ここ](https://console.cloud.tencent.com/trtc/usersigtool)をクリックするとデバッグ用のUserSigがオンラインで直接生成されます。また当社の[TUICallingデモプロジェクト](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)を参照してご自身で計算することもできます。その他の情報については、[UserSigの計算、使用方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+- **Secretkey**：**TRTCアプリケーションキー**であり、SDKAppIdに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上の図のように表示されます：
+- **userId**：現在のユーザーのIDです。文字列タイプであり、長さは32バイト以内とし、特殊文字の使用はサポートしていません。英語または数字の使用をお勧めします。業務の実際のアカウントシステムと組み合わせてご自身で設定することができます。
+- **userSig**：SDKAppId、userId、Secretkeyなどの情報に基づく計算によって得られるセキュリティ保護署名です。[ここ](https://console.cloud.tencent.com/trtc/usersigtool)をクリックするとデバッグ用のUserSigがオンラインで直接生成されます。また当社の[TUICallingデモプロジェクト](https://github.com/tencentyun/TUICalling/blob/main/Android/App/src/main/java/com/tencent/liteav/demo/LoginActivity.java#L74)を参照してご自身で計算することもできます。その他の情報については、[UserSigの計算、使用方法](https://cloud.tencent.com/document/product/647/17275)をご参照ください。
 
 
 ### ステップ4：オンラインKTVシーンの実装
@@ -145,7 +148,7 @@ func onRecvRoomCustomMsg(cmd: String, message: String, userInfo: UserInfo) {
 
 ## よくあるご質問
 
-### TUIKaraokeコンポーネントはボイスチェンジ、キー調整、リバーブなどのオーディオエフェクト機能をサポートしていますか。
+### TUIKaraokeコンポーネントはボイスチェンジ、キー調整、リバーブなどのオーディオエフェクト機能をサポートしていますか？
 サポートしています。具体的には[TUIKaraokeデモプロジェクト](https://github.com/tencentyun/TUIKaraoke/blob/main/iOS/Source/ui/TRTCKTVViewController/SubViews/TRTCKaraokeSoundEffectAlert.swift)をご参照ください。
 
 ? ご要望やフィードバックなどがございましたら、colleenyu@tencent.comまでご連絡ください。

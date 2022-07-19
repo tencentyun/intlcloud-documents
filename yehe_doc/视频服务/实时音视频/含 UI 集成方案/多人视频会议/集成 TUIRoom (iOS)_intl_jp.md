@@ -1,5 +1,7 @@
 ## コンポーネントの説明
-TUIRoomはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIRoomコンポーネントを統合することにより、数行のコードを書くだけで、Appに画面共有、美顔、低遅延ビデオ通話などを組み込むことができます。TUIRoomはまた、[Android](https://intl.cloud.tencent.com/document/product/647/37283)、[Windows](https://intl.cloud.tencent.com/document/product/647/44071)、[Mac](https://intl.cloud.tencent.com/document/product/647/44071)などのプラットフォームでもサポートしています。基本機能は下図のとおりです。
+TUIRoomはオープンソースのオーディオビデオUIコンポーネントであり、プロジェクトにTUIRoomコンポーネントを統合することにより、数行のコードを書くだけで、Appに画面共有、美顔、低遅延ビデオ通話などを組み込むことができます。TUIRoomはまた、[Android](https://intl.cloud.tencent.com/document/product/647/37283)、[Windows](https://intl.cloud.tencent.com/document/product/647/44071)、[Mac](https://intl.cloud.tencent.com/document/product/647/44071)などのプラットフォームでもサポートしています。基本機能は下図のとおりです：
+
+>?TUIKitシリーズコンポーネントはTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047/35448)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMサービスの課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。TRTCをアクティブにすると、デフォルトでは、100DAUまでサポートするIM SDK体験版もアクティブになります。
 
 <table class="tablestyle">
 <tbody><tr>
@@ -11,11 +13,10 @@ TUIRoomはオープンソースのオーディオビデオUIコンポーネン�
 
 ### ステップ1：TUIRoomコンポーネントのインポート
 
-**cocoapodsによってコンポーネントをインポートします**。具体的な手順については、以下のとおりです。
+**cocoapodsによってコンポーネントをインポートします**。具体的な手順については、以下のとおりです：
 1. プロジェクトの`Podfile`ファイルと同じ階層のディレクトリ下に`TUIRoom`フォルダを作成します。
 2. クリックして[**Github/TUIRoom**](https://github.com/tencentyun/TUIRoom)に進み、コードのクローン/ダウンロードを選択した後、[**TUIRoom/iOS/**](https://github.com/tencentyun/TUIRoom/tree/main/iOS)ディレクトリ下の`Source`、`Resources` 、`TUIBeauty`、`TXAppBasicフォルダ、`TUIRoom.podspec`ファイルを、`ステップ1`で作成したTUIRoomフォルダ下にコピーします。
 3. Podfileファイル内に以下の依存関係を追加します。その後、`pod install`コマンドを実行すると、インポートが完了します。
-
 ```
 # :path => "TUIRoom.podspecを指定する相対パス"
 pod 'TUIRoom', :path => "./TUIRoom/TUIRoom.podspec", :subspecs => ["TRTC"]
@@ -35,11 +36,11 @@ pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
 
 ```
 <key>NSCameraUsageDescription</key>
-<string>RoomAppはカメラへのアクセス権限が必要です。有効にした後にレコーディングしたビデオでなければ画面は出ません</string>
+<string>RoomAppはカメラへのアクセス権限が必要です。有効にしないとレコーディングしたビデオの画面は出ません</string>
 <key>NSMicrophoneUsageDescription</key>
-<string>RoomAppはマイクへのアクセス権限が必要です。有効にした後にレコーディングしたビデオでなければ音声は出ません</string>
+<string>RoomAppはマイクへのアクセス権限が必要です。有効にないと、レコーディングしたビデオの音声は出ません</string>
 ```
-![](https://qcloudimg.tencent-cloud.cn/raw/224ae568f11d50124ea663ac0ef1c6e9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9395aca2af5433c9a63ffb4ba9ff9888.png)
 
 ### ステップ3：TUIコンポーネントリポジトリの作成と初期化
 
@@ -58,7 +59,7 @@ pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
 TUIRoom *tuiRoom = [TUIRoom sharedInstance];
 ```
 :::
-::: Swift Swift
+::: Swift  Swift
 import TUIRoom
 import TUICore
 
@@ -75,11 +76,11 @@ let tuiRoom = TUIRoom.sharedInstance
 :::
 </dx-codeblock>
 
-**パラメータの説明**
-- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます。
+**パラメータの説明**：
+- **SDKAppID**：**TRTCアプリケーションID**です。Tencent Cloud TRTCサービスをアクティブ化していない場合は、[Tencent Cloud TRTCコンソール](https://console.cloud.tencent.com/trtc/app)に進み、新しいTRTCアプリケーションを作成した後、**アプリケーション情報**をクリックすると、SDKAppID情報が次の図のように表示されます：
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **SecretKey**：**TRTC アプリケーションキー**であり、SDKAppIDに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上の図のように表示されます。
-- **UserID**：現在のユーザーのIDです。文字列形式で、長さは32バイト以内とし、特殊文字の使用はサポートしていません。英語または数字の使用をお勧めします。業務の実際のアカウントシステムと組み合わせてご自身で設定することができます。
+- **SecretKey**：**TRTC アプリケーションキー**であり、SDKAppIDに対応しています。[TRTCアプリケーション管理](https://console.cloud.tencent.com/trtc/app)に進むと、SecretKey情報が上図のように表示されます。
+- **UserID**：現在のユーザーのIDです。文字列タイプであり、長さは32バイト以内とし、特殊文字の使用はサポートしていません。英語または数字の使用をお勧めします。業務の実際のアカウントシステムと組み合わせてご自身で設定することができます。
 - **UserSig**：SDKAppId、UserID，SecretKeyなどの情報に基づく計算によって得られるセキュリティ保護署名です。[ここ](https://console.cloud.tencent.com/trtc/usersigtool)をクリックするとデバッグ用のUserSigがオンラインで直接生成されます。また当社の[TUIRoomデモプロジェクト](https://github.com/tencentyun/TUIRoom/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L42)を参照してご自身で計算することもできます。その他の情報については、[UserSigの計算、使用方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 
@@ -89,12 +90,12 @@ let tuiRoom = TUIRoom.sharedInstance
 :::  Objective-C ObjectiveC
 @import TUIRoom;
 
-[tuiRoom createRoomWithRoomId:@"あなたのRoomId" speechMode:TUIRoomFreeSpeech isOpenCamera:YES isOpenMicrophone:YES];
+[tuiRoom createRoomWithRoomId:12345 speechMode:TUIRoomFreeSpeech isOpenCamera:YES isOpenMicrophone:YES];
 :::
-::: Swift Swift
+::: Swift  Swift
 import TUIRoom
 
-tuiRoom.createRoom(roomId: "あなたのRoomId", speechMode: .freeSpeech, isOpenCamera: true, isOpenMicrophone: true)
+tuiRoom.createRoom(roomId: 12345, speechMode: .freeSpeech, isOpenCamera: true, isOpenMicrophone: true)
 ```
 :::
 </dx-codeblock>
@@ -103,18 +104,18 @@ tuiRoom.createRoom(roomId: "あなたのRoomId", speechMode: .freeSpeech, isOpen
 :::  Objective-C ObjectiveC
 @import TUIRoom;
 
-[tuiRoom enterRoomWithRoomId:@"相手のRoomId" isOpenCamera:YES isOpenMicrophone:YES]
+[tuiRoom enterRoomWithRoomId:12345 isOpenCamera:YES isOpenMicrophone:YES]
 :::
-::: Swift Swift
+::: Swift  Swift
 import TUIRoom
 
-tuiRoom.enterRoom(roomId: "相手のRoomId", isOpenCamera: true, isOpenMicrophone: true)
+tuiRoom.enterRoom(roomId: 12345, isOpenCamera: true, isOpenMicrophone: true)
 ```
 :::
 </dx-codeblock>
 
 ### ステップ5：ルーム管理（オプション）
-1. **管理者によるルーム解散 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37282)**。
+1. **管理者によるルーム解散 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37284)**。
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -124,7 +125,7 @@ tuiRoom.enterRoom(roomId: "相手のRoomId", isOpenCamera: true, isOpenMicrophon
 }];
 ```
 :::
-::: Swift Swift
+::: Swift  Swift
 import TUIRoom
 
 TUIRoomCore.shareInstance().destroyRoom { [weak self] _, _ in
@@ -134,7 +135,7 @@ TUIRoomCore.shareInstance().destroyRoom { [weak self] _, _ in
 ```
 :::
 </dx-codeblock>
-2. **メンバーの退室 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37282)**。
+2. **メンバーの退室 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37284)**。
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -144,7 +145,7 @@ TUIRoomCore.shareInstance().destroyRoom { [weak self] _, _ in
 }];
 ```
 :::
-::: Swift Swift
+::: Swift  Swift
 import TUIRoom
 
 TUIRoomCore.shareInstance().leaveRoom { [weak self] _, _ in
@@ -156,7 +157,7 @@ TUIRoomCore.shareInstance().leaveRoom { [weak self] _, _ in
 </dx-codeblock>
 
 ### ステップ6：画面共有（オプション）
-画面共有を実装します [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37282)。画面共有プロジェクトの設定については、[リアルタイム画面共有(iOS)](https://intl.cloud.tencent.com/document/product/647/37338)をご参照ください。
+画面共有[TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37282)を実装します。画面共有プロジェクトの設定については、[リアルタイム画面共有(iOS)](https://intl.cloud.tencent.com/document/product/647/37338)をご参照ください。
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -191,9 +192,9 @@ TUIRoomCore.shareInstance().startScreenCapture(params)
 
 ## よくあるご質問
 
-### CocoaPodsをインストールするにはどうすればよいですか。
+### CocoaPodsをインストールするにはどうすればよいですか？
 
-ターミナルポートに以下のコマンド（事前にMacにRuby環境をインストールする必要があります）を入力します。
+端末のウィンドウに次のコマンドを入力します（事前にMac にRuby環境をインストールしてください）。
 ```
 sudo gem install cocoapods
 ```
