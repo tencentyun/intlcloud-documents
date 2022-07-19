@@ -35,15 +35,47 @@ resource：各产品的具体资源详情，如 instance/instance_id1或者 inst
     - 选择**按标签授权**。
     - 标签策略生成器，赋予用户选择 Dept_A，用户组不填，标签键和标签值选择规划好的对应标签，根据需求添加服务与操作，单击**下一步**即可。
     - 新建 Policy_Dept_A1策略，在策略内容中将“action”和“resource”字段，改为如下内容，单击**完成**即可。   
-    ```
-                "action": [
+```
+		{
 
-                                    "emr:*"
-                            ],
-                            "resource": [
-                                    "qcs::emr:gz:uin/10000000001:emr-instance/*"
-                            ],
-    ```
+	"effect": "allow",
+
+	"action": [
+
+			"emr:DescribeClusterNodes",
+
+			"emr:DescribeInstancesList"
+
+	],
+
+	"resource": [
+
+			"*"
+
+	],
+
+	"condition": {
+
+			"for_any_value:string_equal": {
+
+					"qcs:resource_tag": [
+
+							"tag_A&Dept_A",
+
+							"tag_B&Dept_B",
+
+							"tag_C&Dept_C",
+
+							"tag_D&Dept_D"
+
+					]
+
+			}
+
+	}
+
+}
+```
 
 >! resource 字段内容需要跟进实际资源来填写，填写规则参见 [资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606)。
 
@@ -73,7 +105,7 @@ resource：各产品的具体资源详情，如 instance/instance_id1或者 inst
 - 选择 Policy_Dept_A1和 Policy_Dept_A2，单击**完成**即可。
 - 以子用户身份登录进行验证。
     此时登录 EMR，子用户仅能通过标签 tag_A 看见和管理 test_A 集群。
->! 因 Policy_Dept_A2策略中的接口暂时只能采用列表的形式全量罗列，不排除后续接口新增时出现操作报错，如遇到权限报错情况，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 或 [联系我们](https://cloud.tencent.com/act/event/connect-service#/)。
+>! 因 Policy_Dept_A2策略中的接口暂时只能采用列表的形式全量罗列，不排除后续接口新增时出现操作报错，如遇到权限报错情况，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 或 [联系我们](https://intl.cloud.tencent.com/contact-us)。
 
 ## 资源级和接口级鉴权操作指引
 下文将为您介绍 EMR 资源级鉴权的操作流程，使用资源级鉴权对 EMR 具体某功能鉴权时，您需要先对公司的部门或组织做好规划；例如下图，分别对部门 A/B/C 规划好对应的用户名、接口、集群等。

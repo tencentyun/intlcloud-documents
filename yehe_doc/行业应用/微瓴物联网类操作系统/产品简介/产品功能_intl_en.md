@@ -11,9 +11,9 @@ Tencent Cloud Weiling provides spatial data display and event-driven working mod
 Tencent Cloud Weiling breaks the traditional building logic, so that you can customize cross-system linkage events to link devices, data, and applications in buildings for interactions. After simple configurations in the console, you can deliver the linkage logic and make it take effect in minutes, which meets your project's requirements for cross-system linkage features.
 
 ### Smart Building
-With the accumulation and interconnection of various data in buildings, Tencent Cloud LinkBase can continuously optimize data algorithms and models to realize self-learning and continuous evolution of the building.
+With the accumulation and interconnection of various data in buildings, Tencent Cloud Weiling can continuously optimize data algorithms and models to realize self-learning and continuous evolution of the building.
 
 ### Digital Space
-Tencent Cloud Weiling builds data space mappings for buildings. It can create a [digital twin](https://cloud.tencent.com/document/product/1090/35451#S) of a building based on the devices, applications, services, and data in the building in the unified space dimension, use various terminals as data entries, and make the space the platform for data storage and sharing. In this way, it forms a data ecosystem where spaces, terminals, and data can continuously empower each other and enables buildings to evolve into smart spaces that can derive a wealth of standard space capabilities and services.
+Tencent Cloud Weiling builds data space mappings for buildings. It can create a [digital twin](https://intl.cloud.tencent.com/document/product/1115/43281) of a building based on the devices, applications, services, and data in the building in the unified space dimension, use various terminals as data entries, and make the space the platform for data storage and sharing. In this way, it forms a data ecosystem where spaces, terminals, and data can continuously empower each other and enables buildings to evolve into smart spaces that can derive a wealth of standard space capabilities and services.
 
   

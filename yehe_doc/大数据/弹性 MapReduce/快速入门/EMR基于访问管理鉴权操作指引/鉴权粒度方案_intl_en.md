@@ -35,15 +35,47 @@ Currently, certain EMR APIs don't support authentication by tag; therefore, you 
     - Select **Authorize by Tag**.
     - In **Tag Policy Generator**, select **Dept_A** for **Authorized Users**, leave **User Groups** empty, select the tag key and tag value of the planned tag for **Tag Key** and **Tag Value** respectively, add services and operations as needed, and click **Next**.
     - Create the `Policy_Dept_A1` policy, replace the content of the `action` and `resource` fields with the following in **Policy**, and click **Complete**.   
-    ```
-                "action": [
+```
+		{
 
-                                    "emr:*"
-                            ],
-                            "resource": [
-                                    "qcs::emr:gz:uin/10000000001:emr-instance/*"
-                            ],
-    ```
+	"effect": "allow",
+
+	"action": [
+
+			"emr:DescribeClusterNodes",
+
+			"emr:DescribeInstancesList"
+
+	],
+
+	"resource": [
+
+			"*"
+
+	],
+
+	"condition": {
+
+			"for_any_value:string_equal": {
+
+					"qcs:resource_tag": [
+
+							"tag_A&Dept_A",
+
+							"tag_B&Dept_B",
+
+							"tag_C&Dept_C",
+
+							"tag_D&Dept_D"
+
+					]
+
+			}
+
+	}
+
+}
+```
 
 >! The content of the `resource` field needs to be entered based on the actual resource. For more information on value rules, see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
 
@@ -73,7 +105,7 @@ Currently, certain EMR APIs don't support authentication by tag; therefore, you 
 - Select **Policy_Dept_A1** and **Policy_Dept_A2** and click **Complete**.
 - Log in as a sub-user for authentication.
     At this point, when logging in to EMR, the sub-user can see and manage the `test_A` cluster only through the `tag_A` tag.
->! As the APIs in the `Policy_Dept_A2` policy can only be fully listed, a permission error may occur when new APIs are subsequently added. In case of such permission error, [submit a ticket](https://console.cloud.tencent.com/workorder/category) or [contact us](https://cloud.tencent.com/act/event/connect-service#/) for assistance.
+>! As the APIs in the `Policy_Dept_A2` policy can only be fully listed, a permission error may occur when new APIs are subsequently added. In case of such permission error, [submit a ticket](https://console.cloud.tencent.com/workorder/category) or [contact us](https://intl.cloud.tencent.com/contact-us) for assistance.
 
 ## Resource-Level and API-Level Authentication Operation Guide
 This section describes how to authorize EMR resources. When using resource-level authentication to authorize an EMR feature, you need to plan resources for your departments or organizations first; for example, you can plan usernames, APIs, and clusters for departments A, B, and C as shown below.
