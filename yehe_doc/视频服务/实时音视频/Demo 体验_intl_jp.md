@@ -13,7 +13,6 @@
     margin: 10px 10px 10px 0;
     vertical-align: top;
 }
-
 .preview-demo-section .preview-demo-item .demo-item-header {
     margin-top: 30px;
 }
@@ -186,7 +185,7 @@ ul.rno-tabs-operation {
             <div class="demo-item-platform">Android</div>
         </div>
         <div class="demo-item-desc">
-            オーディオビデオ通話、複数参加者会議<br>インタラクティブストリーミング
+            オーディオビデオ通話<br>インタラクティブストリーミング
         </div>
         <div class="demo-item-download">
             <img src="https://main.qcloudimg.com/raw/8a603ced0a61983018c794df842f7029.png" data-nonescope="true">
@@ -200,7 +199,7 @@ ul.rno-tabs-operation {
             <div class="demo-item-platform">iOS</div>
         </div>
         <div class="demo-item-desc">
-            オーディオビデオ通話、複数参加者会議<br>インタラクティブストリーミング
+            オーディオビデオ通話<br>インタラクティブストリーミング
         </div>
         <div class="demo-item-download">
             <img src="https://qcloudimg.tencent-cloud.cn/raw/eebba4153838ac9252eeab3275215c2f.png" data-nonescope="true">
