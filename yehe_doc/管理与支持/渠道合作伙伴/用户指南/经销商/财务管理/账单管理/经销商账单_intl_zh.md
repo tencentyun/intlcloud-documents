@@ -17,7 +17,7 @@
 - 单击产品名称，进入账单明细页面，查看相应资源的成本。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d00c281e1895e02d4fbe5429ca6deec8.png)
 
-4、按项目细分的帐单汇总。
+4、按项目分类汇总 。
 - 您可以查看产品的每月成本及其百分比、上个月的成本差异以及过去六个月的项目/产品成本趋势。
 - 单击项目名称左侧的箭头以查看产品详细信息。单击项目/产品名称，进入账单明细页面，查看相应资源的成本。
 ![](https://qcloudimg.tencent-cloud.cn/raw/cc6a09e8bb21ade423f4c6af64b07e58.png)
