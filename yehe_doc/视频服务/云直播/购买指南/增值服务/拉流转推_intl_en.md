@@ -1,10 +1,10 @@
-The relay feature pulls and pushes contents. You can use relay to quickly pull existing videos or live streaming contents and then push them to the destination URL, without initiating a live streaming session. This feature is billed by the [relay task duration](#time) and the [usage of push to third-party URLs](#third_part).
+The relaying service allows you to quickly pull content from existing videos or live streams and push it to the destination address. The two billable items for the relaying service are [relay task duration](#time) and [third-party relaying bandwidth](#third_part).
 
 
 
 ## Notes
-- Billing rules for relay **have taken effect since 00:00, July 1, 2021**. Relay tasks executed after that will incur costs, regardless of when such tasks are created.
-- When you are using relay, pulling will generate playback traffic/bandwidth usage. Pulling from source URLs of CSS, VOD, COS, etc. will incur corresponding playback fees as well as download fees.
+- The relaying service **has become a paid service since 00:00 (UTC+8) on July 1, 2021**. Relaying tasks executed after July 1, 2021 will incur relaying fees, regardless of when the tasks are created.
+- Pulling data from an existing source will incur playback/download fees. If you pull from Tencent Cloud CSS, VOD, or COS, the billing rules of the corresponding product will apply.
 
 
 [](id:time)
@@ -19,31 +19,32 @@ A relay task is billed by duration.
 
 
 
-### Billing
-- Billable item: relay task duration
-- Billing mode: pay-as-you-go
-- Billing cycle: daily billing cycle. Relay fees generated in one day will be deducted at 10 AM the next day. See your billing statement for details.
-- Billing rules: duration of relay tasks under execution will be billed. Duration of paused and expired tasks is not billed, and will be billed after task resumption.
+### Billing details
+- Billable item: Relay task duration
+- Billing mode: Pay-as-you-go
+- Billing cycle: Daily billing. The fees generated each day are deducted at 10:00 AM or whenever your daily bill is generated the following day.
+- Billing rules: The fees are based on the duration in which relaying tasks are executed. Paused or expired tasks will not incur fees. If you resume a paused task, fees will be charged.
 
 >! If pulling fails due to abnormal source contents, the relay task will not stop until the specified end time, and **the corresponding task duration will be billed**.
 
 
 [](id:third_part)
-## Push to Third-Party URLs
+## Third-Party Relaying Bandwidth
 >! 
->- For a relay task, pushing to a CSS push URL under the Tencent Cloud account which created the task will not be billed.
->- Pushing to a URL other than a CSS push URL of the current Tencent Cloud account will incur fees for pushing to third-party URLs. 
+>- Relaying to a CSS URL of the current account (the account that created the relay task) will not incur relaying bandwidth fees.
+>- Relying to an address that is not a CSS URL of the current account will incur third-party relay fees.
+>- We will adjust the pricing of relaying to third parties **starting from 00:00 (UTC+8) on August 1, 2022**. For details, see [CSS to Adjust Pricing of Third-Party Relay](https://intl.cloud.tencent.com/document/product/267/48434).
 
 ### Pricing
 
 | Billable Item       | Price (USD/Mbps/Month) | Description              |
 | :------------- | :------------------- | :------------------------- |
-| Push to third-party URLs | 12.67        | Billed by the corresponding bandwidth usage |
+| Relay to third parties | 12.67        | Billed by bandwidth usage |
 
 
-### Billing
-- Billing mode: monthly pay-as-you-go
-- Billing cycle: monthly billing cycle. Your bill for a month will be generated between the 1st and 3rd day of the next month.
-- Billing rules: the concurrent bandwidth usage of all pushes to third-party URLs will be billed. The default billing mode is pay-as-you-go bill-by-average daily peak bandwidth within the billing cycle. If any other monthly bill-by-bandwidth mode is used for the LVB service under the account, that mode will apply to push to third-party URLs.
+### Billing details
+- Billing mode: Monthly pay-as-you-go
+- Billing cycle: Monthly billing cycle. Your bill for each month is generated between the 1st and 3rd day of the following month.
+- Billing rules: By default, third-party relay fees are charged in the pay-as-you-go mode based on your average daily peak bandwidth usage (for all third-party relay tasks) in each month. If a different billing mode is used for the LVB service under your account, that mode will apply to third-party relay.
 
 
