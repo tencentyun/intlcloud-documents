@@ -17,8 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
+
 
 
 #### 请求头
@@ -204,7 +208,7 @@ Container 节点 Output 的内容：
 同请求中的 Request.Operation.Output 节点。
 
 Container 节点 MediaInfo 的内容：
-同GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
+同 [GenerateMediaInfo](https://intl.cloud.tencent.com/document/product/1045/48569) 接口中的 Response.MediaInfo 节点。
 
 Container 类型 DigitalWatermark 的具体数据描述如下：
 

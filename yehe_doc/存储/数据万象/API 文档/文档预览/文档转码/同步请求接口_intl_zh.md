@@ -19,9 +19,11 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> ?
-> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/1045/33452) 文档）。
+>?
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
 > - 私有存储桶需要携带下载文件的签名。 
+>
 
 #### 请求头
 

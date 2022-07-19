@@ -6,7 +6,7 @@
 
 ## 费用说明
 
-- 成功调用接口会产生通用文字识别费用和 [COS 读请求费用](https://intl.cloud.tencent.com/document/product/436/40100)。
+- 成功调用接口会产生通用文字识别费用 和 [COS 读请求费用](https://intl.cloud.tencent.com/document/product/436/40100)。
 - 如果图片属于 COS 上的低频存储类型，成功调用接口会产生 [COS 低频数据取回费用](https://intl.cloud.tencent.com/document/product/436/40097)。
 - 不支持对 COS 上的归档存储类型和深度归档存储类型的图片进行处理，如果需要处理此类型图片，请先 [恢复归档文件](https://intl.cloud.tencent.com/document/product/436/12633)。
 
@@ -28,8 +28,10 @@ Date: <GMT Date>
 Authorization: <Auth String>
 ```
 
->? Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/1045/33452) 文档。）
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
 
 
 #### 请求参数

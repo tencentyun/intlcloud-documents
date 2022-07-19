@@ -60,8 +60,12 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> 
+
 
 ## 处理参数说明
 
@@ -90,7 +94,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/b
 最终效果如下：
 
 ![](https://main.qcloudimg.com/raw/f0fac36084c6d6709ad832c91752ee28.jpg)	
-  
+
 #### 案例二：亮度调节并携带私有文件签名
 
 处理方式同上，仅增加签名部分，并与图片处理参数以“&”连接，示例如下：

@@ -3,7 +3,7 @@
 
 >?
 - 当前身份证识别的图片限制为：要求图片经 Base64 编码后不超过7M，分辨率建议500 × 800以上，支持 PNG、JPG、JPEG、BMP 格式。建议卡片部分占据图片2/3以上。
-- 身份证识别为付费服务，计费详情请参见 [内容识别费用](https://cloud.tencent.com/document/product/460/58118)。
+- 身份证识别为付费服务，计费详情请参见内容识别费用。
 - 该功能目前仅提供 API 使用方式。
 
 ## 请求
@@ -19,7 +19,10 @@ Authorization: <Auth String>
 
 ```
 
-> ?Authorization: Auth String （详情请参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
 
 #### 云上数据处理
 云上数据处理请求能够对已存储在 COS 的身份证图片进行相应处理操作，返回识别结果。
@@ -32,7 +35,10 @@ Authorization: <Auth String>
 
 ```
 
-> ?Authorization: Auth String （详情请参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
 
 #### 请求参数
 
@@ -47,7 +53,7 @@ Authorization: <Auth String>
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/460/42865) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
 
@@ -57,7 +63,7 @@ Authorization: <Auth String>
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/460/42866) 文档。 
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。 
 
 #### 响应体
 
@@ -149,7 +155,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 ## 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误信息请参见 [错误码](https://cloud.tencent.com/document/product/460/42867) 文档。
+以下仅列出了接口业务逻辑相关的错误码，其他错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
 
 | 错误码 | 描述  |
 | :----------------- | :------- |

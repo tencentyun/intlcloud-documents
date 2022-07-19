@@ -4,6 +4,11 @@
 
 本接口不会直接修改审核结果，您反馈的错误审核结果将在后台进行确认，并在后续的审核任务中生效。
 
+## 推荐使用 SDK
+
+数据万象 SDK 提供了完整的 Demo、自动集成、计算签名等能力。您可通过 SDK 方便快捷地调用接口。[点此查看 SDK 文档](https://intl.cloud.tencent.com/document/product/1045/45578)。
+
+
 ## 请求
 
 #### 请求示例
@@ -19,8 +24,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> 
 
 #### 请求头
 

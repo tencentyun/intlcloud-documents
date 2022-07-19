@@ -25,7 +25,7 @@ download_url?watermark/2/text/<encodedText>
                         /shadow/<shadow>
 ```
 
-> ? 请忽略上面的空格与换行符。
+>? 请忽略上面的空格与换行符。
 
 #### 2. 上传时处理
 
@@ -85,8 +85,12 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
+
 
 
 ## 处理参数说明
@@ -106,7 +110,7 @@ Pic-Operations:
 | /dy/         | 垂直（纵轴）边距，单位为像素，默认值为0                      |
 | /batch/      | 平铺水印功能，可将文字水印平铺至整张图片。值为1时，表示开启平铺水印功能 |
 | /degree/     | 当 batch 值为1时生效。文字水印的旋转角度设置，取值范围为0 - 360，默认0  |
-| /shadow/	|  文字阴影效果，有效值为[0,100]，默认为0，表示无阴影   |   
+| /shadow/	|  文字阴影效果，有效值为[0,100]，默认为0，表示无阴影   |
 
 
 <span id="1"></span>

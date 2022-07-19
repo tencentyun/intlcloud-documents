@@ -28,7 +28,10 @@ Content-Type: application/xml
 <body>
 ```
 
-> ?Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> 
 
 #### 请求头
 
@@ -174,7 +177,7 @@ Container 类型 DocProcess 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                       | 描述                                                         | 类型   | 是否必选 |
 | ------------------ | :--------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| ImageParams        | Request.Operation.DocProcess | 转换后的图片处理参数，支持 [基础图片处理](https://intl.cloud.tencent.com/document/product/1045/33694) 所有处理参数，多个处理参数可通过 [管道操作符](https://intl.cloud.tencent.com/document/product/1045/33727) 分隔，从而实现在一次访问中按顺序对图片进行不同处理 | String | 否       |
+| ImageParams        | Request.Operation.DocProcess | 转换后的图片处理参数，支持 [基础图片处理](https://www.tencentcloud.com/document/product/1045/33694) 所有处理参数，多个处理参数可通过 [管道操作符](https://intl.cloud.tencent.com/document/product/1045/33727) 分隔，从而实现在一次访问中按顺序对图片进行不同处理 | String | 否       |
 | Quality            | Request.Operation.DocProces  | 生成预览图的图片质量，取值范围 [1-100]，默认值100。 例：值为100，代表生成图片质量为100% | Int    | 否       |
 | Zoom               | Request.Operation.DocProces  | 预览图片的缩放参数，取值范围[10-200]， 默认值100。 例：值为200，代表图片缩放比例为200% 即放大两倍 | Int    | 否       |
 | ImageDpi           | Request.Operation.DocProcess | 按指定 dpi 渲染图片，该参数与  `Zoom`  共同作用，取值范围  `96-600` ，默认值为  `96` 。转码后的图片单边宽度需小于65500像素 | Int    | 否       |

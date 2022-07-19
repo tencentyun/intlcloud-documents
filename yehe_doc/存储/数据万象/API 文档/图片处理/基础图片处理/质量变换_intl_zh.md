@@ -63,8 +63,12 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
+
 
 ## 处理参数说明
 
@@ -83,7 +87,7 @@ Pic-Operations:
 
 >? 本篇文档中的实际案例仅包含**下载时处理**，该类处理不会保存处理后的图片至存储桶。如有保存需求，您可查阅 [图片持久化处理](https://intl.cloud.tencent.com/document/product/1045/33695) 文档并配置**上传时处理**或**云上数据处理**。
 >
-  
+
 
 #### 案例一：设置绝对质量
 

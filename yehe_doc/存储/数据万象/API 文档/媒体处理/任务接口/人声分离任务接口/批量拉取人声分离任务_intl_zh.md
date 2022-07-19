@@ -13,8 +13,12 @@ Authorization: <Auth String>
 
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
+
 
 
 #### 请求头
@@ -97,19 +101,19 @@ Container 节点 Operation 的内容：
 
 Operation  类型 VoiceSeparate 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                                      | 描述                                                         | 类型      | 
-| ------------------ | :------------------------------------------ | ------------------------------------------------------------ | --------- | 
-| AudioMode          | Response.JobsDetail.Operation.VoiceSeparate | 同创建人声分离模板 CreateMediaTemplate 接口中的 Request.AudioMode | Container | 
-| AudioConfig        | Response.JobsDetail.Operation.VoiceSeparate | 同创建人声分离模板 CreateMediaTemplate 接口中的 Request.AudioConfig | Container | 
+| 节点名称（关键字） | 父节点                                      | 描述                                                         | 类型      |
+| ------------------ | :------------------------------------------ | ------------------------------------------------------------ | --------- |
+| AudioMode          | Response.JobsDetail.Operation.VoiceSeparate | 同创建人声分离模板 CreateMediaTemplate 接口中的 Request.AudioMode | Container |
+| AudioConfig        | Response.JobsDetail.Operation.VoiceSeparate | 同创建人声分离模板 CreateMediaTemplate 接口中的 Request.AudioConfig | Container |
 
 Operation  类型 Output 的具体数据描述如下：
 
-| 节点名称（关键字） | 父节点                                 | 描述                                           | 类型   | 
+| 节点名称（关键字） | 父节点                                 | 描述                                           | 类型   |
 | ------------------ | -------------------------------------- | ---------------------------------------------- | ------ |
-| Region             | Response.JobsDetail.Operation.Output   | 存储桶的地域                                   | String | 
-| Bucket             | Response.JobsDetail.Operation.Output   | 存储结果的存储桶                               | String | 
-| Object             | Response.JobsDetail.Operation.Output   | 背景音结果文件的名称，不能与 AuObject 同时为空。 | String | 
-| AuObject           | Response.JobsDetail.Operation.AuObject | 人声结果文件的名称，不能与 Object 同时为空。     | String | 
+| Region             | Response.JobsDetail.Operation.Output   | 存储桶的地域                                   | String |
+| Bucket             | Response.JobsDetail.Operation.Output   | 存储结果的存储桶                               | String |
+| Object             | Response.JobsDetail.Operation.Output   | 背景音结果文件的名称，不能与 AuObject 同时为空。 | String |
+| AuObject           | Response.JobsDetail.Operation.AuObject | 人声结果文件的名称，不能与 Object 同时为空。     | String |
 
 #### 错误码
 
@@ -195,4 +199,5 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
   </JobsDetail>
 </Response>
 ```
+
 

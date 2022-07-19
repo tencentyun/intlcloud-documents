@@ -14,7 +14,11 @@ Authorization: <Auth String>
 
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
 
 
 #### 请求头
@@ -55,8 +59,6 @@ Container 节点 Response 的内容：
 |:---|:-- |:--|:--|
 | JobsDetail | Response | 任务的详细信息，同 [CreateMediaJobs](https://intl.cloud.tencent.com/document/product/1045/43687) <br/>接口的 Response.JobsDetail 节点 |  Container |
 | NonExistJobIds | Response | 查询的 ID 中不存在任务，所有任务都存在时不返回 |  String |
-
-
 
 #### 错误码
 
