@@ -1,162 +1,480 @@
 <style>
 .markdown-text-box table th,.markdown-text-box table td{text-align: center;}
 .inbuttom{height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;}
+.preview-demo-section .preview-demo-item {
+    display: inline-block;
+    width: 186px;
+    height: 300px;
+    background: #fff;
+    box-shadow: 0 1px 8px 0 rgba(156,175,204,0.25);
+    border-radius: 1px;
+    text-align: center;
+    padding: 0 15px;
+    margin: 10px 10px 10px 0;
+    vertical-align: top;
+}
+
+.preview-demo-section .preview-demo-item .demo-item-header {
+    margin-top: 30px;
+}
+.preview-demo-section .preview-demo-item .demo-item-desc {
+    font-size: 12px;
+}
+
+.preview-demo-section .preview-demo-item .demo-item-platform {
+    font-size: 20px;
+    font-weight: bold;
+}
+.preview-demo-section .preview-demo-item .demo-logo-wrapper {
+    line-height: 1;
+}
+.preview-demo-section .preview-demo-item .demo-item-header img {
+    box-shadow: none;
+    width: 40px;
+    height: 40px;
+}
+.preview-demo-section .preview-demo-item.style-qrcode .demo-item-download {
+    margin-top: 15px;
+}
+.preview-demo-section .preview-demo-item.style-web .demo-item-download {
+    margin-top: 46px;
+}
+.preview-demo-section .preview-demo-item.style-single-download-btn .demo-item-download {
+    margin-top: 50px;
+}
+.preview-demo-section .preview-demo-item.style-flutter .demo-item-download {
+    margin-top: 55px;
+}
+.preview-demo-section .preview-demo-item.style-electron .demo-item-download {
+    margin-top: 25px;
+}
+.preview-demo-section .preview-demo-item.style-electron .demo-item-download-btn:first-child {
+    margin-bottom: 10px;
+}
+.preview-demo-section .preview-demo-item .demo-item-download img {
+    box-shadow: none;
+    width: 110px;
+    height: 110px;
+}
+.preview-demo-section .preview-demo-item .demo-item-download .demo-item-download-btn {
+    background-color: #00a4ff;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    width: 135px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 auto;
+}
+.preview-demo-section .preview-demo-item.style-web .demo-item-download .demo-item-download-btn {
+    color: #fff;
+    background-color: #00a4ff;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 6px;
+}
+.preview-demo-section .preview-demo-item .demo-item-download .demo-item-download-btn:hover {
+    cursor: pointer;
+}
+.markdown-text-box img {
+        box-shadow: none;
+        background:0;
+}
+.support-platform{
+    width: 56px;
+    height: 24px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+.tab-bottom{
+    width: 100%;
+    height: 172px;
+    background: #EDF1F5;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.tab-bottom .platform-icon{
+    text-align:center;
+}
+.tab-support{
+    height:24px;
+    text-align:center;
+    padding: 24px 0 0 0;
+}
+.platform-img{
+    width: 18px;
+    height: 18px;
+    box-shadow: 0 0 0 0 #FFFFFF;
+    vertical-align:-4px;
+    padding:0 8px;
+}
+.try-icon{
+    width: 16px;
+    height: 16px !important;
+    margin-left: 5px !important;
+    vertical-align: -3px !important;
+}
+.tab-experience{
+    width: 150px;
+    height: 40px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(215,226,236,0.40);
+    border-radius: 20px;
+    border:0;
+    color:#06A4FF;
+    line-height:40px;
+}
+.tab-img {
+    width: 100%;
+    background-color: #F4F7FA;
+    padding: 0 0 18px 0;
+}
+.tab-experience-button{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.rno-tabs-operation-bd {
+    padding: 18px 0 0 0;
+    background-color: #F4F7FA;
+}
+ul.rno-tabs-operation {
+    padding-top: 4px;
+    border-bottom: #E5E8ED 1px solid;
+    position: relative;
+    padding-left: 0;
+    font-size: 0;
+    margin-bottom: 0;
+    height: 56px;
+    background-color: #F4F7FA;
+}
+.rno-tabs-operation-item.active {
+    border-bottom-color: #06A4FF;
+}
+.rno-tabs-operation-item {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 4px;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-bottom: -1px;
+    margin-right: 20px;
+    border-bottom: 2px solid transparent;
+    height: 36px;
+    margin-top: 19px;
+}
+.rno-tabs-operation-item.active>a {
+    color: #00a4ff;
+}
 </style>
 
+<div class="preview-demo-section" id="demo-card">
+    <div class="preview-demo-item style-qrcode">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/53be7f245c4d11d3aefcb6dc53918757.svg" alt="">
+            </div>
+            <div class="demo-item-platform">Android</div>
+        </div>
+        <div class="demo-item-desc">
+            음성/영상 통화·화상 회의<br>KTV 음성 채팅·인터랙티브 라이브 스트리밍
+        </div>
+        <div class="demo-item-download">
+            <img src="https://main.qcloudimg.com/raw/8a603ced0a61983018c794df842f7029.png" data-nonescope="true">
+        </div>
+    </div>
+    <div class="preview-demo-item style-qrcode">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/36154dc8bb7c93826dbdc6fdcec4e194.svg" alt="">
+            </div>
+            <div class="demo-item-platform">iOS</div>
+        </div>
+        <div class="demo-item-desc">
+            음성/영상 통화·화상 회의<br>KTV 음성 채팅·인터랙티브 라이브 스트리밍
+        </div>
+        <div class="demo-item-download">
+            <img src="https://qcloudimg.tencent-cloud.cn/raw/eebba4153838ac9252eeab3275215c2f.png" data-nonescope="true">
+        </div>
+    </div>
+    <div class="preview-demo-item style-single-download-btn">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/7622934bfd307936181d3a57ed69706d.svg" alt="">
+            </div>
+            <div class="demo-item-platform">Windows</div>
+        </div>
+        <div class="demo-item-desc">
+            음성/영상 통화·화상 회의<br>오디오 채팅방
+        </div>
+        <div class="demo-item-download">
+            <div class="demo-item-download-btn" onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe');reportEvent({name: 'demo-click-native', ext1: 'windows'});">다운로드</div>
+        </div>
+    </div>
+    <div class="preview-demo-item style-single-download-btn">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/2f867a868913c590fbb2929b8b240f45.svg" alt="">
+            </div>
+            <div class="demo-item-platform">Mac OS</div>
+        </div>
+        <div class="demo-item-desc">
+            음성/영상 통화·화상 회의<br>오디오 채팅방
+        </div>
+        <div class="demo-item-download">
+            <div class="demo-item-download-btn" onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2');reportEvent({name: 'demo-click-native', ext1: 'windows'});">다운로드</div>
+        </div>
+    </div>
+    <div class="preview-demo-item style-web">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/ff4dc34a1c72fdb26fc41c1268898025.svg" alt="">
+            </div>
+            <div class="demo-item-platform">Web</div>
+        </div>
+        <div class="demo-item-desc">
+           체험하기
+        </div>
+        <div class="demo-item-download">
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">음성/영상 통화</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">스트리밍 푸셔</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">스트리밍 플레이어</div>
+        </div>
+    </div>
+    <div class="preview-demo-item style-flutter">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/0fae0aca728ba2ce98e66d1b9641aa56.svg" alt="">
+            </div>
+            <div class="demo-item-platform">Flutter</div>
+        </div>
+        <div class="demo-item-desc">
+            음성/영상 통화 화상 회의
+        </div>
+        <div class="demo-item-download">
+            <div class="demo-item-download-btn" onclick="window.open('https://comm.qq.com/im_demo_download/trtc_flutter_demo.apk');reportEvent({name: 'demo-click-flutter', ext1: 'android'});">다운로드</div>
+        </div>
+    </div>
+    <div class="preview-demo-item style-electron">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/96a6b7e86eb8d7a93f830d3686d3164c.svg" alt="">
+            </div>
+            <div class="demo-item-platform">Electron</div>
+        </div>
+        <div class="demo-item-desc">
+            음성/영상 통화·화상 회의<br>화면 공유 등
+        </div>
+        <div class="demo-item-download">
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-windows-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'windows'});">Windows</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-mac-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'mac'});">Mac OS</div>
+        </div>
+    </div>
+</div> 
 
-## Native Demo
-<table>
-<tr>
-<th>iOS</th><th>Android</th><th>Windows</th><th >Mac OS</th>
-</tr>
-<tr>
-<td><img style="width:150px;" src="https://main.qcloudimg.com/raw/a1a6fd4a9bc3ad2b5fe60e31202c8fda.png" data-nonescope="true"></td>
-<td><a onclick="window.open('https://dldir1.qq.com/hudongzhibo/liteav/TRTCDemo.apk');reportEvent({name: 'intl-demo-click-native', ext1: 'android'});"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/8a603ced0a61983018c794df842f7029.png);background-size: cover;">
-</button></a></td>
-<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe');reportEvent({name: 'intl-demo-click-native', ext1: 'windows'});"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
-</button></a></td>
-<td><a onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2');reportEvent({name: 'intl-demo-click-native', ext1: 'mac'});"><button style="width:150px;height: 150px;border:none;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
-</button></a></td>
-</tr>
-</table>
 
-## 크로스 플랫폼 Demo
-<table>
-<tr>
-<th>Web</th><th>Flutter </th><th>Electron</th>
-</tr>
-<tr>
-</div></a></td>
-<td>
-<input type="button" value="Web 코드 예시" style="height: 30px;width: 230px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html');reportEvent({name: 'intl-demo-click-web', ext1: 'api-sample'});" /><br><br>
-<input type="button" value="인터랙티브 라이브 스트리밍 - 푸시 스트림" style="height: 30px;width: 300px;min-width: 50px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html?lang=en');reportEvent({name: 'intl-demo-click-web', ext1: 'pusher'});" /><br><br>
-<input type="button" value="인터랙티브 라이브 스트리밍 - 풀 스트림" style="height: 30px;width: 300px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html?lang=en');reportEvent({name: 'intl-demo-click-web', ext1: 'player'});" />
-</td>
-<td>
-<img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
-</td>
-<td>
-<input type="button" value="Windows 버전" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-windows.zip');reportEvent({name: 'intl-demo-click-electron', ext1: 'windows'});" /><br><br>
-<input type="button" value="MacOS 버전" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/api-example/TRTC-Electron-API-Examples-mac.zip');reportEvent({name: 'intl-demo-click-electron', ext1: 'mac'});" /></td>
-</table>
+## 음성/영상 통화
 
-
-
-
-
-## 영상 통화 시나리오
-1:1 또는 그룹 영상 통화로 720P, 1080P 고화질을 지원합니다. 단일 방에 최대 300명 동시 접속, 최대 50명 카메라 동시 활성화를 지원합니다. 주요 응용 시나리오에는 1:1 영상 통화, 300명 화상 회의, 온라인 진료, 화상 채팅, 화상 고객서비스, 화상 면접 심사, 듀얼 녹화, 온라인 보상 청구, 화상 마피아 게임 등이 있습니다.
 <dx-tabs>
 ::: iOS&Android
-<table>
-<tr>
-   <th>발신자</th>
-   <th>수신자</th>
- </tr>
-<tr>
-<td><img src="https://main.qcloudimg.com/raw/ef83db73d0a8c487e72986dd1f92e361.jpeg"/></td>
-<td><img src="https://main.qcloudimg.com/raw/f57ed3a55112233b05260f5dc37342ca.jpeg"/></td>
-</tr>
-</table>
-:::
-
-</dx-tabs>
-
-## 음성 통화 시나리오
-1:1 또는 그룹 음성 통화로 48kHz 및 듀얼 사운드 채널을 지원합니다. 단일 방은 최대 300명 동시 접속, 최대 50명 마이크 동시 활성화를 지원합니다. 주요 응용 시나리오에는 1:1 음성 통화, 그룹 음성 통화, 음성 채팅, 음성 회의, 음성 고객서비스, 마피아 게임 등이 있습니다.
-<dx-tabs>
-::: iOS&Android
-<table>
-<tr>
-   <th>발신자</th>
-   <th>수신자</th>
- </tr>
-<tr>
-<td><img src="https://main.qcloudimg.com/raw/7b03f80d5ad33bd33b6fb551e392b4d3.jpeg"/></td>
-<td><img src="https://main.qcloudimg.com/raw/60581f007dda722e06af6333b13afbd4.jpeg"/></td>
-</tr>
-</table>
-:::
-
-</dx-tabs>
-
-## 인터랙티브 라이브 비디오 스트리밍 시나리오
-인터랙티브 라이브 비디오 스트리밍 시나리오는 호스트와 시청자의 비디오 마이크 연결 인터랙션을 지원합니다. 호스트의 크로스 룸(크로스 라이브 룸) PK를 지원하며, 원활한 마이크 On/Off 지원으로 대기 시간 없이 전환됩니다. 호스트 딜레이 시간은 300ms 미만입니다. 단일 방의 마이크 연결은 인원 제한이 없으며, 최대 50명의 마이크 동시 연결을 지원합니다. 저지연 라이브 방송 모드에서 10만 명의 시청자 동시 재생을 지원하며, 재생 딜레이 시간은 1000ms 미만입니다. CDN 릴레이 라이브 방송 모드는 시청자 인원 제한이 없습니다. 주요 응용 시나리오에는 저지연 라이브 방송, 10만 명 인터랙션 수업, 라이브 방송 PK, 영상 소개팅, 인터랙션 수업, 원격 트레이닝, 대형 회의 등이 있습니다.
-<dx-tabs>
-::: iOS&Android
-<table>
-<tr>
-<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/317b3eb7ebf971ef7291dec2bacfa18a.jpeg"/></td>
-<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/162112aa8768d0db63e1850c2495a370.jpeg"/></td>
-<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/dab9fe1e5c93deb5ee02155b27bdf639.jpeg"/></td>
-<td><img width="260" height="561" src="https://main.qcloudimg.com/raw/3182620f791a594d555ecab0cd170e1f.jpeg"/></td>
-</tr>
-</table>
-                                                                                                            
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/990efb74019c885eccc47468afba9363.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/document/product/647/46660" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
 :::
 ::: Web
-## 인터랙티브 라이브 오디오 스트리밍 시나리오
-인터랙티브 라이브 오디오 스트리밍은 호스트와 시청자의 오디오 마이크 연결 인터랙션을 지원합니다. 호스트의 크로스 룸(크로스 라이브 룸) PK를 지원하며, 원활한 마이크 On/Off 지원으로 대기 시간 없이 전환됩니다. 호스트 딜레이 시간은 300ms 미만입니다. 단일 방의 마이크 연결은 인원 제한이 없으며, 최대 50명의 마이크 동시 연결을 지원합니다. 저지연 라이브 방송 모드에서 10만 명의 시청자 동시 재생을 지원하며, 재생 딜레이 시간은 1000ms 미만입니다. CDN 릴레이 라이브 방송 모드는 시청자 인원 제한이 없습니다. 주요 응용 시나리오에는 저지연 오디오 라이브 방송, 라이브 방송 마이크 연결, 음성 라이브 PK, 음성 채팅방, 음성 소개팅, 노래방, FM 방송국 등이 있습니다.
-<table>
-     <tr>
-         <th>호스트 마이크 자리 화면</th>  
-         <th>시청자 마이크 자리 화면</th>  
-     </tr>
-<tr>
-<td><img src="https://main.qcloudimg.com/raw/dd836080683a49418bc548bfb9f59857.jpeg"/></td>
-<td><img src="https://main.qcloudimg.com/raw/7b73bfdd915a0ba281c52b9ac0518b80.jpeg"/></td>
-</tr>
-</table>
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/00ebeb4ac808df2b9366351ac7f46648.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/document/product/647/46660" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUICalling" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
 :::
 </dx-tabs>
 
+</dx-tabs>  
+
+## 인터랙티브 라이브 비디오 스트리밍 시나리오
+<dx-tabs>
+::: iOS&Android
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/86a3d489c0ea7c9897cf63a67a97ad0f.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/647/46666" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUILiveRoom" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
+:::
+::: Web
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/fd41c8627d4e6911e9fae1a0309a82c2.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="" class="platform-img"></span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/647/46666" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUILiveRoom" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
+:::
+</dx-tabs>
+
+</dx-tabs>
+
+## 인터랙티브 라이브 오디오 스트리밍
+<dx-tabs>
+::: iOS&Android
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/b1dabc803a241dd26b89e4b5ef60cf27.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/647/46664" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUIVoiceRoom" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
+:::
+</dx-tabs>
+
+</dx-tabs>
 ## 화상 회의 시나리오
-화상 회의 시나리오는 1080p 고화질 및 48kHz 고음질을 지원합니다. 멀티미디어 딜레이 시간은 300ms 미만으로 끊김 없는 고화질 회의가 가능합니다. 화면 및 파일 공유를 지원하여 회의의 효율을 높이며, IM 결합으로 텍스트나 이미지 등 다양한 형식으로 토론을 지원하여 원활한 회의를 구현합니다. 주요 응용 시나리오에는 옴니미디어 고객서비스, 온라인 회의, 정부와 기업의 라이브 방송 등이 있습니다.
-<table>
-     <tr>
-         <th>회의 입장</th>  
-         <th>화면 공유</th>  
-     </tr>
-<tr>
-<td><img src="https://main.qcloudimg.com/raw/a1fc2d23946377cb9466d8b645c14d24.jpeg"/></td>
-<td><img src="https://main.qcloudimg.com/raw/5c613b7c7ee890b7e3feb7a3270a9a89.jpeg"/></td>
-</tr>
-</table>
+<dx-tabs>
+::: iOS&Android
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/86285a62460edd04313d97e06bd369d5.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/cf4c9ee1645ee381b7fec591223b8f75.svg" class="platform-img">Web</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/71cd4ae02a39a0a8345dee11737e717a.svg" class="platform-img">Windows</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/5300d0170d592174fc94411d162a09a1.svg" class="platform-img">Mac OS</span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/647/46662" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUIRoom" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
+:::
+::: Web
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/a34feae74aaa845cab05626eae52ac9f.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/cf4c9ee1645ee381b7fec591223b8f75.svg" class="platform-img">Web</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/71cd4ae02a39a0a8345dee11737e717a.svg" class="platform-img">Windows</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/5300d0170d592174fc94411d162a09a1.svg" class="platform-img">Mac OS</span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/zh/document/product/647/46662" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUIRoom" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
+:::
+::: Windows & Mac
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/bd486997590c2c60326b04d997a9bd0c.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/cf4c9ee1645ee381b7fec591223b8f75.svg" class="platform-img">Web</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/71cd4ae02a39a0a8345dee11737e717a.svg" class="platform-img">Windows</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/5300d0170d592174fc94411d162a09a1.svg" class="platform-img">Mac OS</span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/document/product/647/46662" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUIRoom" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
+:::
+</dx-tabs>
 
-## 인터랙션 시나리오
-인터랙션 수업 시나리오는 선생님과 학생의 인터랙션 마이크 연결을 지원하며, 최대 50명이 동시에 마이크를 연결할 수 있습니다. 원활한 마이크 On/Off 지원으로 대기 시간 없이 전환되며, 딜레이 시간은 300ms 미만입니다. 저지연 라이브 방송 모드에서 10만 명의 학생이 동시에 시청할 수 있으며, 이때 딜레이 시간은 1000ms 미만입니다. CDN 릴레이 라이브 방송 모드는 시청자 인원 제한이 없습니다. 화면 공유, 인터랙션 화이트보드, 녹화 재생 등 다양한 기능을 수업에 응용하여 보다 다양한 온라인 수업을 진행할 수 있습니다. 주요 비즈니스 시나리오에는 대규모 수업, 소규모 수업, 슈퍼 소그룹 수업(대규모 강의/그룹 수업 복합 수업), AI 수업, 시범 강의, 사내 교육, 1:1 온라인 교육 등이 있습니다.
+</dx-tabs>
 
-| <img src="https://main.qcloudimg.com/raw/76cb1831b3f4b5340243a6b7406d8d73.png" alt="wecom-temp-799c836bbc6c6c3cd9fed14d03465f5d" style="zoom:50%;" /> | <img src="https://main.qcloudimg.com/raw/ca1e4f364230e18b78c7789cf8db08ae.png" alt="wecom-temp-d05e8b456350695101a745553926b07e" style="zoom:28%;" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+## 온라인 노래방
+<dx-tabs>
+::: iOS&Android
+<div class="tab-img">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/e71e6aaf11de33e132819493be699c19.png"/>
+</div>
+<div class="tab-bottom">
+    <div>
+    <div class="platform-icon">
+        <span class="support-platform">지원되는 플랫폼</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
+        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
+    </div>
+    <div class="tab-experience-button"><a href="#demo-card"><button class="tab-experience">체험하기<img src="https://qcloudimg.tencent-cloud.cn/raw/8b41f1a6d19d184c029c6e92e6a01544.svg" class="try-icon"></button></a></div>
+    <div style="text-align:center;"><a href="https://intl.cloud.tencent.com/document/product/647/46668" style="color:#06A4FF;">통합 가이드</a>를 읽거나 <a href="https://github.com/tencentyun/TUIKaraoke" style="color:#06A4FF;">소스 코드</a>를 Github에서 다운로드</div>
+    </div>
+</div>
 
-
-## 온라인 노래방(KTV 시나리오)
-KTV 시나리오는 호스트와 시청자가 노래할 수 있도록 마이크 연결을 지원합니다. 원활한 마이크 On/Off 지원으로 대기 시간 없이 전환되며 호스트 딜레이 시간은 300ms 미만입니다; 단일 방의 마이크 연결 인원 수는 무제한이며, 최대 50명이 동시에 마이크를 연결할 수 있습니다. 저지연 라이브 방송 모드에서 10만 명의 학생이 동시에 시청할 수 있으며, 이때 딜레이 시간은 1000ms 미만입니다. CDN 릴레이 라이브 방송 모드는 시청자 인원 제한이 없습니다. 주요 응용 시나리오에는 저지연 오디오 라이브 방송, 라이브 방송 마이크 연결, 음성 라이브 PK, 음성 채팅방, 음성 소개팅, 노래방, FM 방송국 등이 있습니다.
-<table>
-     <tr>
-         <th>방 주인 노래 신청 화면</th>  
-         <th>시청자 노래 신청 화면</th>  
-     </tr>
-<tr>
-<td><img src="https://main.qcloudimg.com/raw/dcb4f550d478b35212f4b7ef5c332fcf.jpeg"/></td>
-<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
-</tr>
-</table>
-
-## 라이브 코러스(Chorus 시나리오)
-
-Chorus 시나리오에서는 방 주인 메인 보컬과 시청자가 마이크를 켜고 노래할 수 있습니다. 마이크 ON/OFF가 대기 없이 매끄럽게 전환되며, 호스트 지연 100ms 미만입니다. 저지연 라이브 방송 모드는 10만명 동시 재생을 지원하며, 재생 딜레이 1000ms로 매우 낮습니다. CDN 릴레이 라이브 방송 모드는 시청자 인원 제한이 없습니다. 주요 응용 시나리오에는 2인 합창, 노래방, FM 방송국 등이 있습니다.
-
-<table>
-     <tr>
-         <th style="text-align:center;width:50%">방 주인 노래 신청 작업</th>  
-         <th style="text-align:center">서브 보컬 플레이 리스트 조회 작업</th>  
-     </tr>
-<tr>
-<td><img src="https://main.qcloudimg.com/raw/0c3b9a7c40f2d0eb6cb7fa0b14acf547.png"/></td>
-<td><img src="https://main.qcloudimg.com/raw/90dff32d6b506237ce3725083b47421a.jpeg"/></td>
-</tr>
-</table>
+:::
+</dx-tabs>
+</dx-tabs>
 
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>
