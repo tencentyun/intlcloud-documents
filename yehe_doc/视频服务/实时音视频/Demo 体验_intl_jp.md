@@ -186,7 +186,7 @@ ul.rno-tabs-operation {
             <div class="demo-item-platform">Android</div>
         </div>
         <div class="demo-item-desc">
-            オーディオビデオ通話、複数参加者会議<br>カラオケボイスチャット、インタラクティブストリーミングなど
+            オーディオビデオ通話、複数参加者会議<br>インタラクティブストリーミング
         </div>
         <div class="demo-item-download">
             <img src="https://main.qcloudimg.com/raw/8a603ced0a61983018c794df842f7029.png" data-nonescope="true">
@@ -200,7 +200,7 @@ ul.rno-tabs-operation {
             <div class="demo-item-platform">iOS</div>
         </div>
         <div class="demo-item-desc">
-            オーディオビデオ通話、複数参加者会議<br>カラオケボイスチャット、インタラクティブストリーミングなど
+            オーディオビデオ通話、複数参加者会議<br>インタラクティブストリーミング
         </div>
         <div class="demo-item-download">
             <img src="https://qcloudimg.tencent-cloud.cn/raw/eebba4153838ac9252eeab3275215c2f.png" data-nonescope="true">
@@ -245,9 +245,9 @@ ul.rno-tabs-operation {
            クリックしてトライアル
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">オーディオビデオ通話</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">インタラクティブストリーミングのストリーミングプッシュ</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">インタラクティブストリーミングのストリーミングプル</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">音声・ビデオ通話</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">ストリーム取り込み</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">ストリームプル</div>
         </div>
     </div>
     <div class="preview-demo-item style-flutter">
@@ -275,8 +275,8 @@ ul.rno-tabs-operation {
             オーディオビデオ通話、複数参加者会議<br>画面共有など
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-windows-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'windows'});">Windows版をダウンロード</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-mac-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'mac'});">Mac OS版をダウンロード</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-windows-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'windows'});">Windows</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education-v2/TRTCEducationElectron-mac-latest.zip');reportEvent({name: 'demo-click-electron', ext1: 'mac'});">Mac OS</div>
         </div>
     </div>
 </div> 
