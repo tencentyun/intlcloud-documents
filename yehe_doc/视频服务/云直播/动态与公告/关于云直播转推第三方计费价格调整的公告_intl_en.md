@@ -1,6 +1,6 @@
 CSS will adjust the pricing of relaying to third parties starting from **00:00 (UTC+8) on August 1, 2022**. The prices for relaying to third parties outside the Chinese mainland and Hong Kong will vary by region. For the Chinese mainland and Hong Kong, the price will remain the same.
 
-The change will affect the billing of CSS data center (DC) relaying bandwidth. The billable item will change from CSS DC relaying bandwidth (monthly) to region-specific CSS DC relaying traffic (monthly).
+The change will affect the billing of CSS. The billable item of sp_live_dcrelay will change from dcrelay_bandwidth_monthly to dcrelay_bandwidth_monthly_regional.
 
 ## Notes
 
