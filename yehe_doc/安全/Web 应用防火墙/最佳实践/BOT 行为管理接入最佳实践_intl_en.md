@@ -1,7 +1,7 @@
 This document describes how to quickly connect to the bot behavior management feature and defend against malicious traffic during routine operations.
 
 ## Prerequisites
-To connect to bot behavior management, you need to purchase an [extra pack](https://intl.cloud.tencent.com/document/product/627/47409) of WAF.
+To connect to bot behavior management, you need to purchase an [extra pack](https://intl.cloud.tencent.com/document/product/627/47799) of WAF.
 >? Currently, WAF Enterprise and Ultimate users are offered a free trial of the bot behavior management feature to observe how bots affect websites.
 
 ## Parsing CAPTCHA
