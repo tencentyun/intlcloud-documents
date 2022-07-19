@@ -1,7 +1,7 @@
 本文将为您如何接入 BOT 行为管理，以及日常运营对抗恶意流量的最佳实践。方便您快速进行相关业务接入 BOT 行为管理，快速识别并对抗恶意流量。
 
 ## 前提条件
-BOT 行为管理需要购买 WAF [对应实例的扩展包](https://intl.cloud.tencent.com/document/product/627/47409)。
+BOT 行为管理需要购买 WAF [对应实例的扩展包](https://intl.cloud.tencent.com/document/product/627/47799)。
 >? WAF 企业版、旗舰版用户当前可免费试用新版本的 BOT 行为管理功能，以观察网站受 BOT 影响的情况。
 
 ## 解析验证码
