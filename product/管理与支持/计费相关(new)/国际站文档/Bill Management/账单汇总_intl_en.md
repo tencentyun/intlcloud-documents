@@ -5,7 +5,7 @@
 ## Bill Summary
 
 #### 1.1 Summary by product
-Bills broken down by product are consistent with the L1-Summary by Project and Product file.
+Bills are broken down by product.
 
 - You can view monthly costs of products and their percentages, cost differences from the last month, as well as project/product cost trends for the last six months.
 
@@ -13,7 +13,7 @@ Bills broken down by product are consistent with the L1-Summary by Project and P
 ![](https://main.qcloudimg.com/raw/3539659bfe9d7fb28ee7efa18e281181.png)
 
 #### 1.2 Summary by project
-Bills broken down by project is consistent with the L1-Summary by Project and Product file.
+Bills are broken down by project.
 
 - You can view monthly costs of products and their percentages, cost differences from the last month, as well as project/product cost trends for the last six months.
 
