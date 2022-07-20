@@ -51,7 +51,6 @@ Definitions:
 | [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582)   | cfs | Resource level   | &#10003; | &#10003;              | &#10003; | [Access Management](https://intl.cloud.tencent.com/document/product/582/14679) |
 | [Cloud HDFS (CHDFS)](https://intl.cloud.tencent.com/document/product/1106)   | chdfs | Resource level   | &#10003; | &#10003;              | -        | [Authorizing Access with CAM](https://intl.cloud.tencent.com/document/product/1106/41966) |
 | [Cloud Log Service (CLS)](https://intl.cloud.tencent.com/document/product/614)   | cls | Resource level   | &#10003; | &#10003;                   | &#10003; | [Permission Management](https://intl.cloud.tencent.com/document/product/614/32853) |
-| NoSQL 数据库 CKV  |ckv | 操作级   | &#10003; | -                | -        | -                                                            |
 
 > ?<sup>1</sup> In COS, `GetService` and `PutBucket` do not support authorization by tag for the time being; therefore, they need to be authorized with a separate custom policy.
 
