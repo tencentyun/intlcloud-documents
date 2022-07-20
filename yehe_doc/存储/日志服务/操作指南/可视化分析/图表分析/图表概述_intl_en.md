@@ -15,7 +15,7 @@ CLS provides a great variety of chart types. You can use SQL to flexibly collect
 <tr>
 <td>Sequence diagram</td>
 <td>A sequence diagram requires statistics to have a time series field, so that it can organize and aggregate the metric in chronological order. It visually reflects the change trend of a metric over time. It is suitable for trend analysis scenarios, for example, analyzing the trend of the daily number of 404 errors in the past week.</td>
-<td><a href="https://cloud.tencent.com/document/product/614/74027">Sequence Diagram</a></td>
+<td>Sequence Diagram</td>
 </tr>
 <tr>
 <td>Bar chart</td>
