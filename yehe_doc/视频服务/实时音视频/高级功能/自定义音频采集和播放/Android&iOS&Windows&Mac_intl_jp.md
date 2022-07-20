@@ -30,7 +30,7 @@ trtc_cloud->enableCustomAudioCapture(true);
 
 ### カスタムオーディオフレームの送信
 
-次に、TRTCCloudの`sendCustomVideoData`インターフェースを使用して、TRTC SDKに自身の音声データを送信できます。サンプルコードは次のとおりです：
+次に、TRTCCloudの`sendCustomAudioData`インターフェースを使用して、TRTC SDKに自身の音声データを送信できます。サンプルコードは次のとおりです：
 
 <dx-codeblock>
 ::: Android  Java

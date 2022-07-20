@@ -30,7 +30,7 @@ trtc_cloud->enableCustomAudioCapture(true);
 
 ### Sending custom audio frames
 
-You can use the `sendCustomVideoData` API of `TRTCCloud` to populate the TRTC SDK with your own audio data. Below is the sample code:
+You can use the `sendCustomAudioData` API of `TRTCCloud` to populate the TRTC SDK with your own audio data. Below is the sample code:
 
 <dx-codeblock>
 ::: Android  Java
