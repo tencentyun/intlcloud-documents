@@ -36,23 +36,23 @@ iOS 可在工程配置中的`General->Identity`中获取，如下图所示：
 一个 License 只能对应一个 Package Name 和一个 Bundle ID，若多个 App 使用 SDK 功能，需要购买多个资源包新增多个 License。
 
 [](id:que1)
-### 移动直播 License 是必须购买的吗？
-移动直播 SDK 的直播推流功能，必须通过购买移动直播 License 进行解锁。
->! 短视频 License 无法解锁移动直播相关功能。
+### 直播 SDK License 是必须购买的吗？
+直播 SDK 的直播推流功能，必须通过购买直播 License 进行解锁。
+>! 短视频 License 无法解锁直播 SDK相关功能。
 
 
 [](id:que2) 
-### 移动直播 License 有单独购买入口吗？
+### 直播 SDK License 有单独购买入口吗？
 不支持单独购买。
-移动直播直播推流 License（原移动直播基础版 SDK License）用于解锁移动直播基础版 SDK 在 iOS 和 Android 上的使用权限。移动直播企业版 SDK License 用于解锁移动直播企业版 SDK 在 iOS 和 Android 上的使用权限。如果您现在就要购买，请[联系商务](https://intl.cloud.tencent.com/contact-sales) 申请。
+直播 License（原移动直播基础版 SDK License）用于解锁移动直播基础版 SDK 在 iOS 和 Android 上的使用权限。移动直播企业版 SDK License 用于解锁移动直播企业版 SDK 在 iOS 和 Android 上的使用权限。如果您现在就要购买，请[联系商务](https://intl.cloud.tencent.com/contact-sales) 申请。
 
 [](id:que3)
 ### 直播推流 License（原移动直播基础版 SDK License） 和移动直播企业版 License 有什么区别？
-直播推流 License（原移动直播基础版 SDK License） 即可解锁直播推流和播放功能，以及基础的美颜功能（美白、磨皮等）。
+直播 License（原移动直播基础版 SDK License） 即可解锁直播推流和播放功能，以及基础的美颜功能（美白、磨皮等）。
 移动直播企业版 License 是在其之上，增加了高级美颜（大眼、瘦脸）、绿幕功能、动效贴纸、AI 抠图等能力，还可以配合美妆和手势素材实现额外的功能。
 
 >?
->- SDK 下载中的3个版本的 SDK 均可用直播推流 License（原移动直播基础版 SDK License） 来解锁直播推流和播放功能。
+>- SDK 下载中的3个版本的 SDK 均可用直播 License（原移动直播基础版 SDK License） 来解锁直播推流和播放功能。
 >- 企业版中的高级美颜相关功能只能通过移动直播企业版 License 来解锁。
 
 
@@ -66,11 +66,11 @@ iOS 可在工程配置中的`General->Identity`中获取，如下图所示：
 
 [](id:que6)
 ### License 可以修改吗？
-移动直播 License 可通过续期来延长有效时间，包名信息不支持修改，请您在添加 License 先核对包名在应用商店里是否被占用，提交后不支持修改和替换。
+直播 SDK License 可通过续期来延长有效时间，包名信息不支持修改，请您在添加 License 先核对包名在应用商店里是否被占用，提交后不支持修改和替换。
 
 [](id:que7)
 ### 为什么我创建了多个 License ，但是 licenseurl 和 key 都是一样的？
-同一个账号下移动直播的 licenseurl 和 key 默认是相同的。这样保证了测试 License 、正式 License、不同包名的 License 均可以复用相同的接口信息。
+同一个账号下直播 SDK的 licenseurl 和 key 默认是相同的。这样保证了测试 License 、正式 License、不同包名的 License 均可以复用相同的接口信息。
 
 >?不建议使用免费测试的 License 发布到线上运行。您可以通过添加新的正式版 License，即可无需再修改接口中的 licenseurl 和 key，切换到正式版 License。
 
