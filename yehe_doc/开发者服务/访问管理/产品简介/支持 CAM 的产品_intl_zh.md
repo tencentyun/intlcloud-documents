@@ -51,7 +51,6 @@
 | [文件存储](https://intl.cloud.tencent.com/document/product/582)   | cfs | 资源级   | &#10003; | &#10003;              | &#10003; | [访问管理指南](https://intl.cloud.tencent.com/document/product/582/14679) |
 | [云 HDFS](https://intl.cloud.tencent.com/document/product/1106)   | chdfs | 资源级   | &#10003; | &#10003;              | -        | [访问管理指南](https://intl.cloud.tencent.com/document/product/1106/41966) |
 | [日志服务](https://intl.cloud.tencent.com/document/product/614)   | cls | 资源级   | &#10003; | &#10003;                   | &#10003; | [访问管理指南](https://intl.cloud.tencent.com/document/product/614/32853) |
-| NoSQL 数据库 CKV  |ckv | 操作级   | &#10003; | -                | -        | -                                                            |
 
 > ?<sup>1</sup> 对象存储中 GetService 和 PutBucket 暂未支持标签授权，需要单独进行自定义策略授权。
 
