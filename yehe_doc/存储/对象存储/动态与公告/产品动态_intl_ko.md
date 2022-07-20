@@ -176,7 +176,7 @@
 <td>미디어 처리-비디오 암호화 기능 런칭</td>
 <td>동영상 데이터의 보안을 보장하기 위해 HLS 표준 암호화 기능이 추가되었습니다.</td>
 <td> 2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/436/59289">HLS 암호화로 영상 유출 방지 </a>
+<td>HLS 암호화로 영상 유출 방지 
 </tr>
 </tbody></table>
 
