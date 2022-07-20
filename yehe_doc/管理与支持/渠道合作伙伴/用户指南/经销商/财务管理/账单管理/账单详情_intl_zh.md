@@ -39,6 +39,6 @@
 | TaxRate                                     | 税率<br/>合作伙伴所在国家税率                                     |
 | TaxAmount                                   | 税额 <br/>TaxAmount = Amount Before Tax * TaxRate                    |
 | Total Cost (Including Tax)                  | 含税总额 <br/>Total Cost (Including Tax) = Amount Before Tax + TaxAmount |
-| Billable Month                              | 账期                                                         |
+
 
 
