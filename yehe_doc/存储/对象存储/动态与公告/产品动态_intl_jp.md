@@ -176,7 +176,7 @@
 <td>メディア処理-ビデオ暗号化機能をリリース</td>
 <td>HLS標準暗号化機能を追加しました。お客様のビデオデータのセキュリティをしっかり保護します。</td>
 <td> 2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/436/59289">HLS暗号化によるビデオ漏洩防止</a>
+<td>HLS暗号化によるビデオ漏洩防止
 </tr>
 </tbody></table>
 
