@@ -6,7 +6,7 @@
 
 ## 如何实现“秒开” ？ 
 ### App 端
-使用 [移动直播 SDK](https://intl.cloud.tencent.com/document/product/1071/38150) + FLV 播放协议即可实现秒开：
+使用 [直播 SDK](https://intl.cloud.tencent.com/document/product/1071/38150) + FLV 播放协议即可实现秒开：
 - **HTTP + FLV 播放协议**
 HTTP + FLV 协议是目前直播行业使用最普遍的播放协议，它的数据组织格式比较简单，可以做到一旦连通服务器就能获取到音视频数据。相比之下，RTMP 协议由于连接初期不可避免的几次协商握手过程，导致在首帧速度方面略逊于 FLV 协议。
 - **腾讯云音视频 SDK**
