@@ -1,6 +1,6 @@
 ## 方案简介
 
-互动直播是全新的一站式“多路音视频实时连麦”解决方案，主打直播连麦和多画面特效，通过移动直播 SDK 、云直播、云点播（VOD）及即时通信（IM）等产品打造一站式的跨平台一对多、多对多的超清酷炫连麦直播方案。
+互动直播是全新的一站式“多路音视频实时连麦”解决方案，主打直播连麦和多画面特效，通过直播 SDK 、云直播、云点播（VOD）及即时通信（IM）等产品打造一站式的跨平台一对多、多对多的超清酷炫连麦直播方案。
 
 
 ## 方案使用到的核心产品
@@ -8,14 +8,14 @@
 <table>
 <tr><th>产品</th><th>说明</th>
 </tr><tr>
-<td>移动直播 SDK</td>
+<td>直播 SDK</td>
 <td><ul style="margin:0">
-<li>借助移动直播 SDK，快速实现包括 Android、iOS、H5 及微信小程序等多个主流平台的直播推拉流能力。 </li>
+<li>借助直播 SDK，快速实现包括 Android、iOS、H5 及微信小程序等多个主流平台的直播推拉流能力。 </li>
 <li>得力于腾讯优图团队支持，支持面部五官定位，实现实时美颜、动画贴纸特效等直播互动。 </li>
-<li>在移动直播 SDK 借助 RTMPAccess 建立主播和主播、主播和观众之间的音视频通话，从而实现低延时的直播连麦互动。 </li>
-<li>移动直播 SDK 计费规则请参见 <a href="https://intl.cloud.tencent.com/document/product/1071/38114">移动直播价格总览</a>。 </li>
-<li>快速搭建直播应用请使用 <a href="https://intl.cloud.tencent.com/document/product/1071/38147">移动直播 SDK Demo 体验</a> 产品功能。 </li>
-<li>移动直播连麦功能请参见 <a href="https://intl.cloud.tencent.com/document/product/1071/42210">连麦互动</a>。 </li>
+<li>在直播 SDK 借助 RTMPAccess 建立主播和主播、主播和观众之间的音视频通话，从而实现低延时的直播连麦互动。 </li>
+<li>直播 SDK 计费规则请参见 <a href="https://intl.cloud.tencent.com/document/product/1071/38114">直播价格总览</a>。 </li>
+<li>快速搭建直播应用请使用 <a href="https://intl.cloud.tencent.com/document/product/1071/38147">直播 SDK Demo 体验</a> 产品功能。 </li>
+<li>直播连麦功能请参见 <a href="https://intl.cloud.tencent.com/document/product/1071/42210">连麦互动</a>。 </li>
 </ul></td>
 </tr><tr>
 <td>云直播</td>
