@@ -1,82 +1,81 @@
 The `resource` element describes one or multiple operation objects such as CVM resources and COS buckets. This document describes the resource information in CAM.
 
-### Six-Segment Format
-All resources can be described in the following six-segment format. Each service has its own resources and detailed resource definition. For more information on how to specify resources, see the corresponding product documentation in [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
+## Definition of All Resources
+
+- If `resource` is `*`, it indicates all resources; that is, you can grant the `action` (operation) permission of all resources.
+- If you want to authorize a Tencent Cloud service at the service level or authorize a service operation at the API level, you need to enter `*` for `resource` to grant the permission of all resources in the Tencent Cloud service or the `action` permission of all resources.
+
+## Definition of One or Multiple Resources
+
+You can describe the permissions of one or multiple resources in the following six-segment format for authorization. Each service has its own resources and detailed resource definition.
 The six-segment format is defined as follows:
+
 ```
 qcs:project_id:service_type:region:account:resource
 ```
 
-- **qcs** is the abbreviation of `qcloud service` and indicates a Tencent Cloud resource, which is required. 
-- **project_id** describes the project information, which is only compatible with legacy CAM logic. It is not allowed in the current policy syntax and can be left empty.
-- **service_type** describes the abbreviation of a service, such as CVM and CDN. For more information on service abbreviation, see the “Abbreviation in CAM” column in each table in [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588). The value `*` indicates all services. This field is required. 
-- **region** describes the region information. If this field is left empty, it indicates all regions. For more information on region naming, see [Region List](https://intl.cloud.tencent.com/zh/document/product/213/31574).
-- **account** describes the root account information of the resource owner. Currently, either `uin` or `uid` can be used to describe the resource owner.
- - `uin` is the account ID of the root account, which is expressed in the format of `uin/${uin}`, such as `uin/12345678`.
- - `uid` is the APPID of the root account, which is expressed in the format of `uid/${appid}`, such as `uid/10001234`.
- - If this value is empty, it means the “account” segment is the root account of the user who created the policy.
->?Currently, COS and CAS resource owners can only be described by `uid`, while resource owners of other services can only be described by `uin`.
-- **resource** describes the detailed resource information of the specific service.
->?`resource_type` (resource prefix) is the part before the first `/` in the last segment of the 6-segment resource description; for example, in the CVM resource description `qcs::cvm:$region::instance/*`, the resource prefix is `instance`.
+A six-segment resource description contains six fields as detailed below:
 
-  -  This field is required. The resource can be described as follows:
-     - It can indicate the ID of a resource in a resource subcategory, such as `instance/ins-abcdefg` for CVM.
-```
-	<resource_type>/<resource_id> 
-```
+| Field     | Description and Valid Values                                                   | Required | Example                                                         |
+| ------------ | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
+| qcs          | Tencent Cloud service abbreviation, which indicates a resource of Tencent Cloud.                | Yes       | qcs                                                          |
+| project_id   | Project information, which is only compatible with legacy CAM logic. It cannot be entered in the current policy syntax and can be left empty. | No       | Empty                                                         |
+| service_type | <li>Product (service) abbreviation. For more information, see "Abbreviation in CAM" in [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).</li><li>If this field is left empty, it indicates all products.</li> | No       | <li>CVM: cvm</li><li>CDN: cdn</li>           |
+| region       | Region information. For more information on region names, see "Region List" in [Common Params](https://intl.cloud.tencent.com/document/product/213/31574).<br/>If this field is left empty, it indicates all regions. | No       | <li>North China (Beijing): ap-beijing</li><li>South China (Guangzhou): ap-guangzhou</li> |
+| account      | Root account information of the resource owner. Currently, either `uin` or `uid` can be used to describe the resource owner.<li>`uin` is the root account ID in `uin/${uin}` format.</li><li>`uid` is the root account's `APPID` in `uid/${appid}` format, and only COS and CAS resource owners can be described in this way.</li>If this field is left empty, it indicates the root account of the CAM user creating the policy. | No       | <li>uin: uin/12345678</li><li>uid: uid/10001234 </li>  |
+| resource     | Resource details of the product. Currently, you can describe a resource in the following two formats: `resource_type/${resourceid}` and `<resource_type>/<resource_path>`. <li>`resource_type/${resourceid}`: `resourcetype` is the resource prefix, which describes the resource type. `${resourceid}` is the specific resource ID, which can be viewed in the corresponding product console. `*` indicates all resources of this type. </li><li>`<resource_type>/<resource_path>`: `resourcetype` is the resource prefix, which describes the resource type. `<resource_path>` is the resource path. This format supports directory-level prefix match.</li> | Yes       | <li>CVM: instance/ins-1</li><li>TencentDB for MySQL: instanceId/cdb-1</li><li>COS: `prefix//10001234/bucket1/*`, which indicates all files in `bucket1`. Various COS resource types are supported. For more information, see [Working with COS API Authorization Policies](https://intl.cloud.tencent.com/document/product/436/30580).</li> |
 
-	 - It can indicate the ID of a resource with a path in a resource subcategory, such as `prefix//10001234/bucket1/object2` for COS. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects in `bucket1`.
-```
-	<resource_type>/<resource_path>
-```
-	 - It can indicate all the resources in a resource subcategory, such as `instance/*`.
-```
-	<resource_type>/*
-```
-	 - It can indicate all the resources of a service.
-```
-	*
-```
+## Definition of CAM Resources  
 
- -  In certain scenarios, the `resource` element can be described by `*`, and the definitions are as follows. For more information, see the corresponding product documentation.
- -   If the `action` is an operation that needs to be associated with a resource, the resource can be defined as `*`, indicating that all resources are associated.
- - If the `action` is an operation that does not need to be associated with a resource, the resource needs to be defined as `*`.
+CAM resources include users, user groups, and policies. A CAM resource can be described as follows: 
 
-### Resource Definition for CAM  
-CAM resources includes users, user groups, and policies. A CAM resource can be described as follows: 
 #### Root account
+
 ```
 qcs::cam::uin/164256472:uin/164256472
 ```
+
 Or
+
 ```
 qcs::cam::uin/164256472:root 
 ```
+
 #### Sub-account
-```    
+
+```
 qcs::cam::uin/164256472:uin/73829520
 ```
+
 #### Group
+
 ```
 qcs::cam::uin/164256472:groupid/2340
 ```
+
 #### All resources
+
 ```
 *
 ```
-#### Policy:
+
+#### Policy
+
 ```
 qcs::cam::uin/12345678:policyid/*
 ```
+
 Or
+
 ```
 qcs::cam::uin/12345678:policyid/12423
 ```
 
-### Notes on Resources
-- A resource owner is always a root account. The sub-account that creates a resource will not automatically have access to the resource; instead, it must be authorized by the resource owner.
+## Notes on Resources
+
+- A resource owner is always a root account. The sub-account that creates a resource will not automatically have access to the resource without authorization; instead, it must be authorized by the resource owner.
 - Services such as COS and CAS support cross-account authorization for resource access. Authorized accounts can pass permissions to their sub-accounts through permission propagation.
 
-### Relevant Documents
+## Relevant Documents
 
 For more information on service-specific resource definitions, see the corresponding product documentation in [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588). 
