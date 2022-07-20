@@ -1,11 +1,11 @@
-### 账单详情
+### 账单字段说明
 
 | 字段                                        | 描述                                                         |
 | ------------------------------------------- | ------------------------------------------------------------ |
-| Payer Account ID                            | 支付者账号，不存在代付，支付者账号为客户账号（可作为客户唯一标识） |
+| Payer Account ID                            | 支付者账号，是经销商账号 |
 | Customer Name                               | 客户名称                                                     |
-| Owner Account ID                            | 资源归属者ID账号(可作为客户唯一标识)                         |
-| Operator Account ID                         | 操作者账号                                                   |
+| Owner Account ID                            | 资源归属者账号，是子客账号                         |
+| Operator Account ID                         | 操作者账号，可以是子客账号、子客对应的cam子用户、子客的协作者                                                  |
 | ProductName                                 | 产品名称                                                     |
 | BillingMode                                 | 计费模式<br/>Monthly subscription 包年包月<br/>Pay-As-You-Go resources 按量计费<br/>Standard RI 预留实例 |
 | ProjectName                                 | 项目名称                                                     |
