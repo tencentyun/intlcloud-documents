@@ -42,7 +42,7 @@
 
 ### 购买正式版 License
 
-1. [购买移动直播 SDK 国际版 License](https://buy.intl.cloud.tencent.com/mlvb)，获得正式的国际版 License 一年使用授权（有效期至到期次日的00:00:00止），计费价格请参见 [购买指南](https://intl.cloud.tencent.com/document/product/1071/38114)。
+1. [购买直播 SDK 国际版 License](https://buy.intl.cloud.tencent.com/mlvb)，获得正式的国际版 License 一年使用授权（有效期至到期次日的00:00:00止），计费价格请参见 [购买指南](https://intl.cloud.tencent.com/document/product/1071/38114)。
 
 >?  例如，您在2021年12月01日 14:16:52 购买了正式的国际版 License 一年有效期，该 License 于2022年12月02日 00:00:00 到期。
 
