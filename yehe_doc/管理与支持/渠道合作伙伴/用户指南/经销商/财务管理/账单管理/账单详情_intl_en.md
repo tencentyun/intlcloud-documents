@@ -1,11 +1,11 @@
-### Bill Details
+### Bill Fields Description
 
 | Field | Description |
 | ------------------------------------------- | ------------------------------------------------------------ |
-| Payer Account ID                            | Payer account ID, which is the customer account ID that can be used as the unique identifier of the customer. Entrusted payment is not allowed |
+| Payer Account ID                            | Payer account, which is the reseller account.|
 | Customer Name                               | Customer name                                                     |
-| Owner Account ID                            | ID of the resource owner, which can be used as the unique identifier of the customer                         |
-| Operator Account ID                         | Operator account                                                   |
+| Owner Account ID                            | Resource owner account, which is customer account.                       |
+| Operator Account ID                         | Operator account, which can be customer account, customer’s CAM sub-user, or customer’s collaborator.                                               |
 | ProductName                                 | Product name                                                     |
 | BillingMode                                 | Billing mode. Valid values: Monthly subscription (monthly subscription), Pay-as-You-Go resources (pay-as-you-go billing), Standard RI (reserved instances) |
 | ProjectName                                 | Project name                                                     |
