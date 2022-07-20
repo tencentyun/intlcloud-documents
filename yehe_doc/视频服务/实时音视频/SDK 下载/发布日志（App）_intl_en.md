@@ -1,28 +1,61 @@
+### Version 10.1 Released on June 6, 2022
+
+**New features:**
+- All platforms: Added supported for smooth role switch so that audio and video playback will not be interrupted momentarily while switching roles.
+- iOS: Added support for stereo audio capturing.
+- Android: Added support for audio playback by the capturing system on Android 10 and later (startSystemAudioLoopback).
+
+**Improvement:** 
+- All platforms: Optimized the echo cancellation capability in music scenarios to make the sound quality more natural. 
+- All platforms: Optimized the sound quality and startup effect when roles are switched and `muteLocalAudio` is called. 
+- All platforms: Optimized the callback for bandwidth prediction `onSpeedTest`.
+- iOS: Optimized memory management to avoid heap memory issues.
+- Android: Optimized the delay of in-ear monitoring on certain phones.
+- Windows: Optimized the performance of the video rendering linkage while receiving video. 
+- Windows: Optimized the stereo capturing logic to effectively avoid the problem of echo.
+
+**Bug fixing:**
+- All platforms: Fixed the `reason` exception of the callback for room exit (onExitRoom).
+- All platforms: Fixed the issue of black screen when the timestamps are equal while sending custom video.
+- All platforms: Fixed the audio crash that occurs when `muteLocalAudio` is called before `startLocalAudio`.
+- All platforms: Fixed the issue where 3A is turned on when custom audio capturing is enabled without manually setting 3A.
+- All platforms: Fixed the occasional issue of noise in custom audio rendering.
+- iOS: Fixed a memory leak when the log path is set midway (setLogDirPath) and the sandbox changes.
+- iOS & macOS: Fixed the crash that occurs while playing continuous background music when the system audio service is abnormal. 
+- Android: Fixed the occasional issue where Bluetooth headsets constantly reconnect.
+- Android: Fixed the occasional no audio issue on certain phones.
+- Android: Fixed the crash caused by repeatedly plugging and unplugging the earphone on certain phones such as Redmi.
+- Windows & iOS: Fixed an issue that causes screencapturing failure. 
+- Windows: Fixed a crash when the VOD player is turned off after mirroring is turned on.
+- Windows: Fixed the issue where `generateCustomPts` is not used in PTS streaming so multiple streams may cause PTS to roll back.
+- Windows: Fixed the occasional crash after the freezing feature is enabled.
+
+
 ### Version 10.0 Released on May 17, 2022
 
 **Improvement:** 
 
-- All platforms: Sped up the callbacks for room entry and exit ([onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58) and [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28)).
-- Windows: Optimized screen sharing, improving the performance notably when the window filtering feature is not used.
+- All platforms: Improved the speed of callback for the anchor's room entry and exit ([onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58) / [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28)).
+- Windows: Optimized the performance of screen sharing so that the performance is doubled when the filter window is not set.
 
 **Bug fixing:** 
 
-- iOS & macOS: Fixed the occasional [onComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TXAudioEffectManager__ios.html#a08ab9a6d9100f133420e44ae5eb99ee6) callback error when background music is started.
-- Android: Fixed a crash issue caused by the network module.
-- All platforms: Fixed the SEI sending error.
+- iOS & macOS: Fixed the occasional [onComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__ios.html#a08ab9a6d9100f133420e44ae5eb99ee6) callback error when starting to play back the background music.
+- Android: Fixed the crash caused by the network module.
+- All platforms: Fixed the issue of abnormal SEI sending.
 
 
 ### Version 9.9 Released on May 6, 2022
 
 **Improvement:** 
-- Windows: Optimized video delivery, reducing overhead.
-- Windows: Optimized processing before the capturing of computer audio, retaining the dual-channel effect.
-- macOS: Fixed audio cracking when the capturing volume is too high, improving audio experience.
-- macOS: Improved the video quality of screen sharing (the substream).
-- Android: Reduced capturing latency, improving in-ear monitoring experience.
+- Windows: Optimized the video linkage to reduce performance overheads.
+- Windows: Optimized preprocessing for `Systemloopback` capturing to preserve the effect of two sound channels.
+- macOS: Reduced the crackling caused by a high capturing volume and improved the sound experience.
+- macOS: Improved the quality of screen sharing (substream).
+- Android: Optimized the capturing delay and improved the in-ear monitoring experience.
 
 **Bug fixing:** 
-- Android: Added support for numbers larger than 2.1 billion for room ID.
+- Android: Fixed the issue where room IDs do not support numbers above 2.1 billion.
 
 
 ### Version 9.8 Released on April 21, 2022
@@ -109,6 +142,7 @@ All platforms: Fixed known issues, improving stability.
 - Windows: Updated the live streaming component from V1 to V2 APIs, improving its stability.
 - Windows: Improved compatibility with the GPUs of low-end devices.
 
+>?For the release notes of earlier versions, click [More](https://cloud.tencent.com/document/product/647/46907).
 
 ### Version 9.5 Released on January 11, 2022
 
@@ -287,7 +321,7 @@ Android & macOS & iOS: allowed playing audio via peripheral devices. For details
 ### Version 8.5 Released on March 24, 2021
 **New features**
 - macOS: optimized the screen sharing feature. You can now share other windows along with the target window. For details, see the API [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233).
-- All platforms: supported publishing VOD content. You can now bind [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer) with `TRTCCloud` and publish the content played by VOD via TRTC’s substream.</li>
+- All platforms: supported publishing VOD content. You can now bind [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer) with `TRTCCloud` and publish the content played by VOD via TRTC’s substream.
 - All platforms: supported custom capturing of substream data. For details, see the API [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629).
 - All platforms: supported custom audio mixing. You can feed a local audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing. For details, see the API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f).
 - All platforms: supported mixing only video streams, allowing for more flexible stream mixing control.
