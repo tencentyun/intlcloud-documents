@@ -176,7 +176,7 @@
 <td>Launched the media processing - video encryption feature</td>
 <td>The HLS standard encryption capability is added to ensure the security of your video data.</td>
 <td> 2021-08-03</td>
-<td><a href="https://cloud.tencent.com/document/product/436/59289">Preventing Video Leakage with HLS Encryption</a>
+<td>Preventing Video Leakage with HLS Encryption
 </tr>
 </tbody></table>
 
