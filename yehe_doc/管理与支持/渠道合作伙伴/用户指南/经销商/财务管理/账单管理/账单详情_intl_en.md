@@ -39,6 +39,6 @@
 | TaxRate                                     | Tax rate in partner's country/region                                     |
 | TaxAmount                                   | Tax amount (Amount Before Tax * TaxRate)                    |
 | Total Cost (Including Tax)                  | Total cost (tax inclusive) (= Amount Before Tax + TaxAmount) |
-| Billable Month                              | Billable period                                                         |
+
 
 
