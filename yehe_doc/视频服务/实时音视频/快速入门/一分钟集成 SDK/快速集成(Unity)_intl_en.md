@@ -9,7 +9,7 @@ This document describes how to quickly integrate TRTC SDK for Unity into your pr
   - A valid developer signature for your project
 
 ## Integrating SDK
-1. Download the SDK and [demo source code](https://github.com/tencentyun/TRTCUnitySDK).
+1. Download the SDK and [demo source code](https://github.com/LiteAVSDK/TRTC_Unity).
 2. Decompress the ZIP file and copy `TRTCUnitySDK/Assets/TRTCSDK/SDK` to the `Assets` directory of your project.
 
 ## FAQs
