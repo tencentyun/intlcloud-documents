@@ -32,8 +32,6 @@ Bills are broken down by billing mode.
 - Click the arrow on the left of a billing mode to view product details. Click a billing mode/product name to enter the **Bill Details** page to view the costs of corresponding resources.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a2b47772ec98f40761d8c0ab2fab1ef9.png)
 
-7. Summary by tag
-![](https://qcloudimg.tencent-cloud.cn/raw/90fb831421dd394acce7e42f3f0f13ab.png)
 
 ### Downloading bills
 You can download billing data generated after Billing 3.0 was released in July 2021. Specifically, you can:
