@@ -20,7 +20,7 @@ UserSig（用户签名）是腾讯云设计的一种安全保护签名，用于�
 
 ### License
 
-移动直播支持两个版本的 SDK License，分别是测试版和国际版，具体获取方式请参见 [体验与购买 License](https://intl.cloud.tencent.com/document/product/1071/38546) 。通过 License 可开启对应的移动直播 SDK 功能服务，具体功能说明请参见 [SDK 功能列表](https://intl.cloud.tencent.com/document/product/1071/38149) 。
+直播支持两个版本的 SDK License，分别是测试版和国际版，具体获取方式请参见 [体验与购买 License](https://intl.cloud.tencent.com/document/product/1071/38546) 。通过 License 可开启对应的直播 SDK 功能服务，具体功能说明请参见 [SDK 功能列表](https://intl.cloud.tencent.com/document/product/1071/38149) 。
 
 ### 录制回看
 
