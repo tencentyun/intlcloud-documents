@@ -35,9 +35,6 @@
 - 单击计费模式左侧的箭头以查看产品详细信息。单击计费方式/产品名称，进入账单明细页面，查看相应资源的成本。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a2b47772ec98f40761d8c0ab2fab1ef9.png)
 
-7、 按标签汇总
-![](https://qcloudimg.tencent-cloud.cn/raw/90fb831421dd394acce7e42f3f0f13ab.png
-)
 
 ### 账单下载
 经销商可以下载自账单 3.0（2021 年 7 月发布）以来的账单数据。具体而言，您可以：
