@@ -20,7 +20,7 @@ TRTC provides the **onNetworkQuality** callback to report the current network qu
 | 5 | VeryBad | The current network is very poor. TRTC can sustain the connection but cannot guarantee the communication quality. |
 | 6 | Down | The current network cannot meet the minimum requirements of TRTC, and it is impossible to have a normal audio/video call. |
 
-You only need to listen for [onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality) of TRTC and display the corresponding prompt on the UI.
+You only need to listen for [onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality) of TRTC and display the corresponding prompt on the UI.
 
 ```javascript
 import TRTCCloud, { TRTCQuality } from 'trtc-electron-sdk';
