@@ -3,9 +3,9 @@
 
 ## 内容介绍
 在 Electron SDK 中，您可以通过以下方式调整画质：
-- [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom) 中的 TRTCAppScene 参数：用于选择您的应用场景。
-- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam) ：用于设置编码参数。
-- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam) ：用于设置网络调控策略。
+- [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#enterRoom) 中的 TRTCAppScene 参数：用于选择您的应用场景。
+- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam) ：用于设置编码参数。
+- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam) ：用于设置网络调控策略。
 
 本文主要介绍如何配置上述参数，使 TRTC SDK 的画质效果符合您的项目需要。
 您也可以参考 [Electron API Example：video-quality](https://github.com/tencentyun/TRTCSDK/blob/master/Electron/TRTC-API-Example/assets/code/advanced/video-quality/index.js) Demo。
@@ -86,13 +86,13 @@ controlMode 参数选择 **TRTCQosControlModeServer** 即可，TRTCQosControlMod
 
 ## 常见的误区
 #### 1. 分辨率越高越好？
-较高的分辨率也需要较高的码率来支撑，如果分辨率选择 1280 x 720，但码率却指定为 200kbps，画面就会有大量的马赛克。推荐参考 [分辨率码率参照表](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution) 进行设置。
+较高的分辨率也需要较高的码率来支撑，如果分辨率选择 1280 x 720，但码率却指定为 200kbps，画面就会有大量的马赛克。推荐参考 [分辨率码率参照表](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution) 进行设置。
 
 #### 2. 帧率越高越好？
 由于摄像头采集的画面是曝光阶段中所有现实物体的完整映射，所以并不是帧率越高，感官就越流畅，这一点跟游戏里的FPS是不一样的。恰恰相反，帧率过高，会拉低每帧画面的画质，也会减少摄像机的曝光时间，效果可能会更差。
 
 #### 3. 码率越高越好？
-较高的码率也需要较高的分辨率来匹配，对于 320 x 240 这样分辨率，1000kbps 的码率就很浪费了，推荐参考 [分辨率码率参照表](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution) 进行设置。
+较高的码率也需要较高的分辨率来匹配，对于 320 x 240 这样分辨率，1000kbps 的码率就很浪费了，推荐参考 [分辨率码率参照表](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution) 进行设置。
 
 #### 4. 用 Wi-Fi 的时候就可以设置很高的分辨率和码率
 并不是说 Wi-Fi 的网速是恒定不变的，如果离无线路由器较远， 或者路由器信道被占用，可能网速还不如 4G。
