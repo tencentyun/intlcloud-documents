@@ -11,7 +11,7 @@ This document describes how to actively exit the current TRTC room and in which 
 
 [](id:step2)
 ### Step 2. Actively exit the current room
-Call the [exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom) API to exit the current room. The SDK uses the `onExitRoom(int reason)` callback event to notify you of the reason the room was exited.
+Call the [exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#exitRoom) API to exit the current room. The SDK uses the `onExitRoom(int reason)` callback event to notify you of the reason the room was exited.
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const trtcCloud = new TRTCCloud();
@@ -30,7 +30,7 @@ Therefore, we recommend you release the `TRTCCloud` instance after receiving the
 
 [](id:step3)
 ### Step 3. Be forced to exit the current room
-The [onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) callback will also be received in other two cases in addition to active room exit:
+The [onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) callback will also be received in other two cases in addition to active room exit:
 - **Case 1. A user is kicked out of the room**
 You can use the [RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) or [RemoveUserByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39630) API to kick a user out of a TRTC room. After being kicked out, the user will receive the `onExitRoom(1)` callback.
 
