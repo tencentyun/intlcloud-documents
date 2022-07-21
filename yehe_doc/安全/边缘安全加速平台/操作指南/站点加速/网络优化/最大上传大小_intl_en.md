@@ -6,7 +6,7 @@ The maximum upload size is the maximum data volume that can be uploaded in a sin
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **Network optimization** on the left sidebar.
 2. On the network optimization page, select the target site and click **Settings** in the maximum upload size module.
 ![](https://qcloudimg.tencent-cloud.cn/raw/264a3540260aab5edb1314d4870bda28.png)
-3. In the maximum upload size pop-up window, enable **Size limit**, enter an upper limit value, and click **Save**.
+3. In the pop-up window, enable **Size limit**, enter an upper limit value, and click **Save**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/26d31b3c805094698bf48c50fc86bf0a.png)
 
 **Parameter description:**
