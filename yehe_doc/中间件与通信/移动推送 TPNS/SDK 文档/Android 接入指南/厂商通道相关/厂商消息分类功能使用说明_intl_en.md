@@ -74,7 +74,7 @@ The default channel on the OPPO PUSH platform is the public message channel. Now
 >! Once the channel ID is set, it cannot be randomly changed or deleted.
 >
 ![]()
-2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to the OPPO PUSH platform according to the following requirements. For more information, see [OPPO PUSH Channel Upgrade Beta Invitation](https://open.oppomobile.com/wiki/doc#id=11096).
+2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to the OPPO PUSH platform according to the following requirements. For more information, see [OPPO PUSH Channel Upgrade Beta Invitation](https://open.oppomobile.com/new/developmentDoc/info?id=11227).
 
 
 ### Using the OPPO private message channel
