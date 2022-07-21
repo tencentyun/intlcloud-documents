@@ -4,7 +4,7 @@ It is often necessary to share system audio in scenarios such as screen sharing,
 [](id:step1)
 ### Step 1. Start capturing system audio
 
-Call the [startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback) API to start system audio capturing and mix the audio into the upstream audio stream. The result is called back via [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError).
+Call the [startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback) API to start system audio capturing and mix the audio into the upstream audio stream. The result is called back via [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError).
 ```javascript
 import TRTCCloud, { TRTCAudioQuality } from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
@@ -35,14 +35,14 @@ trtcCloud.startSystemAudioLoopback();
 [](id:step2)
 
 ### Step 2. Stop capturing system audio 
-Call the [stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback) API to stop system audio capturing.
+Call the [stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback) API to stop system audio capturing.
 ```javascript
 trtcCloud.stopSystemAudioLoopback();
 ```
 
 [](id:step3)
 ### Step 3. Set the volume of system audio capturing
-Call the [setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume) API to set the volume of system audio capturing.
+Call the [setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume) API to set the volume of system audio capturing.
 
 ```javascript
 trtcCloud.setSystemAudioLoopbackVolume(60);
