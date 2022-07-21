@@ -1,4 +1,4 @@
-Customer Idenyity and Access Management (CIAM) provides a convenient and secure management platform for user signup, login, and access. It reduces the risk of malicious user signup and helps you build a unified and optimized user ID and user consent management system.
+Customer Identity and Access Management (CIAM) provides a convenient and secure management platform for user signup, login, and access. It reduces the risk of malicious user signup and helps you build a unified and optimized user ID and user consent management system.
 
 CIAM has the following features:
 
