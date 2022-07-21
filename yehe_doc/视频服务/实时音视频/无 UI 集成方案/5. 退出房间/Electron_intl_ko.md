@@ -11,7 +11,7 @@
 
 [](id:step2)
 ### 2단계: 현재 방에서 퇴장
-[exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom) API를 호출하여 현재 방을 나가면 SDK는 onExitRoom(int reason) 콜백 이벤트를 통해 방을 나가는 이유를 알려줍니다.
+[exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#exitRoom) API를 호출하여 현재 방을 나가면 SDK는 onExitRoom(int reason) 콜백 이벤트를 통해 방을 나가는 이유를 알려줍니다.
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const trtcCloud = new TRTCCloud();
@@ -30,7 +30,7 @@ exitRoom API가 호출된 후 SDK는 두 가지 주요 작업을 완료해야 �
 
 [](id:step3)
 ### 3단계: 현재 방에서 강제 퇴장
-[onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) 콜백은 방 퇴장 외에 다른 두 가지 경우에도 수신됩니다:
+[onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) 콜백은 방 퇴장 외에 다른 두 가지 경우에도 수신됩니다:
 - **사례1: 사용자가 방에서 퇴장 당한 경우**
 [RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) | [RemoveUserByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39630) API를 호출하여 사용자를 TRTC 방에서 퇴장시킬 수 있습니다. 퇴장 당한 사용자는 onExitRoom(1) 콜백을 받게 됩니다.
 
