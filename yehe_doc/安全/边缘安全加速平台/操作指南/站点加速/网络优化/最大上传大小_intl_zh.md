@@ -6,7 +6,7 @@
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**站点加速** > **网络优化**。
 2. 在网络优化页面，选择所需站点，单击最大上传大小模块的**设置**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/264a3540260aab5edb1314d4870bda28.png)
-3. 在最大上传大小弹窗中，勾选大小限制，并输入上限值，单击**保存**。
+3. 在最大上传大小弹窗中，选择是否开启大小限制，并输入上限值，单击**保存**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/26d31b3c805094698bf48c50fc86bf0a.png)
 
 **参数说明：**
