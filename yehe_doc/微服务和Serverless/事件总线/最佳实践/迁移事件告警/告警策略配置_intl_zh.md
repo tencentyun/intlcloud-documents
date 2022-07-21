@@ -5,9 +5,10 @@
 ### 1. 查看事件列表
 登录 [事件总线控制台](https://console.cloud.tencent.com/eb)，进入**云服务默认事件集**，可以查看目前已经接入的所有云服务事件。
 ![](https://qcloudimg.tencent-cloud.cn/raw/e7e0b0318ff797fc341564324619beb7.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/598e6f2078aca989531ceeaa6f71debf.png)
 
-投递标准事件格式如下：
+![](https://qcloudimg.tencent-cloud.cn/raw/e2f338749c57e8226fa3e332be50f9b7.png)
+
+投递标准事件格式如下： 
 ```json
 {
     "specversion":"1.0",
@@ -40,27 +41,28 @@
 }
 ```
 
-字段说明如下：
+字段说明如下： 
 
 | 字段            | 描述                                                         | 字符串类型 |
 | --------------- | ------------------------------------------------------------ | ---------- |
-| specversion     | 事件结构体版本（cloudevents 遵循版本，目前为1.0.2）。        | String     |
-| id              | PUT Event 返回的 ID 信息。                                   | String     |
-| type            | PUT Event 输入的事件类型。云服务告警事件标准格式为 `${ProductName}:ErrorEvent:${EventType}`，用 “:” 分割类型字段。 | String     |
-| source          | 事件来源（云服务事件必传此参数，为 subject 的缩写 ）。云服务默认为 `xxx.cloud.tencent`。 | String     |
-| subject        | 事件来源详情可自定义，云服务默认使用 QCS 描述，例如 `qcs::dts:ap-guangzhou:appid/uin:xxx`。 | String     |
-| timer           | 发生事件的时间，0时区毫秒时间戳，例如1615430559146。         | Timestamp  |
-| datacontenttype | 数据类型申明。                                               | String     |
-| region          | 地域信息。                                                   | String     |
-|tags| 资源标签。 |JSON|
-| data            | PUT Event 输入的事件详情，各个业务方可以自定义。                                  | JSON    |
+| specversion     | 事件结构体版本（cloudevents 遵循版本，目前为1.0.2）。         | String     |
+| id              | PUT Event 返回的 ID 信息。                                    | String     |
+| type            | PUT Event 输入的事件类型。云服务告警事件标准格式为 `${ProductName}:ErrorEvent:${EventType}`，用 “:” 分割类型字段。  | String     |
+| source          | 事件来源（云服务事件必传此参数，为 subject 的缩写 ）。云服务默认为 `xxx.cloud.tencent`。  | String     |
+| subject        | 事件来源详情可自定义，云服务默认使用 QCS 描述，例如 `qcs::dts:ap-guangzhou:appid/uin:xxx`。  | String     |
+| timer           | 发生事件的时间，0时区毫秒时间戳，例如1615430559146。          | Timestamp  |
+| datacontenttype | 数据类型申明。                                                | String     |
+| region          | 地域信息。                                                    | String     |
+ |status |告警事件状态，分为 “1（异常 error）/0（恢复 recovered）/- （无状态 stateless）”三类。 | String|
+|tags| 资源标签。  |JSON|
+| data            | PUT Event 输入的事件详情，各个业务方可以自定义。                                   | JSON    |
 
 
 
 ### 2. 配置告警事件规则
 
 进入**事件规则**页面，选择对应的事件集后，在事件集下创建事件规则，完成需要配置告警推送的事件筛选。
-![](https://qcloudimg.tencent-cloud.cn/raw/58a467fe00eee70c0712b07087ea9f93.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/709f9b8771ac45a71a82a0b5301f7750.png)
 以 CVM 告警配置为例，您可以选择指定的事件告警类型，也可以选择全部告警事件。
 ![](https://qcloudimg.tencent-cloud.cn/raw/709f9b8771ac45a71a82a0b5301f7750.png)
 

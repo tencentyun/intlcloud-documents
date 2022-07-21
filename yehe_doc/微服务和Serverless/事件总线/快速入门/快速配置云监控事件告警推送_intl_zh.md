@@ -1,5 +1,5 @@
 ## 场景简介
-开启腾讯云事件总线服务后，将为您自动在广州地域创建默认云服务事件集，所有已接入事件告警的产品所产生的告警事件（监控事件及审计事件）将自动投递至此。您可以通过配置事件规则、投递目标等方式，完成告警链路的配置。
+开启腾讯云事件总线服务后，将为您自动在**广州地域**创建默认云服务事件集，所有已接入事件告警的产品所产生的告警事件（监控事件及审计事件）将自动投递至此。您可以通过配置事件规则、投递目标等方式，完成告警链路的配置。
 
 ## 使用须知
 云监控事件中心相关功能已于2021年11月30日起逐步下线，相关能力已由事件总线承载，并在原有功能上新增规则匹配、自定义事件集、多目标投递等特性。对于云监控存量用户，我们已于2022年4月为您完成了存量策略的自动迁移。迁移前后的告警规则数量保持一致，若要修改/新增告警策略，您需要手动在事件总线控制台进行调整。
@@ -11,7 +11,7 @@
 2. 选择事件集所在地域。
 3. 单击**云服务事件集default**，进入云服务事件集 default 详情页，查看目前已经接入云服务事件集的云服务事件。
 2. 在**事件连接器**中可以查看目前所有支持告警事件推送的云服务：
-![](https://qcloudimg.tencent-cloud.cn/raw/0a30362ed9089fd82a08b760fc3cf2c4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c2cfc0fefd11dbc102c11518673589b4.png)
 单击详情后可以看到目前支持的所有告警事件类型：
 ![](https://qcloudimg.tencent-cloud.cn/raw/21ecfd42593c59c07548b20ce96eba86.png)
 
@@ -62,6 +62,7 @@
 | time           | 发生事件的时间，0时区毫秒时间戳，例如1615430559146。          | Timestamp  |
 | datacontenttype | 数据类型申明。                                                | String     |
 | region          | 地域信息。                                                    | String     |
+ |status |告警事件状态，分为 “1（异常 error）/0（恢复 recovered）/- （无状态 stateless）”三类。 | String|
 |tags| 资源标签。  |String|
 | data            | PUT Event 输入的事件详情，由各个业务方自定义。                                    | String     |
 
@@ -72,7 +73,7 @@
 1. 进入**事件规则**页面，选择对应的事件集后，在事件集下创建事件规则，完成需要配置告警推送的事件筛选。
 ![](https://qcloudimg.tencent-cloud.cn/raw/bcfda9e8a96d2df23d710f9a074e3dbc.png)
 2. 以 CVM 告警配置为例，您可以选择指定的事件告警类型，也可以选择全部告警事件，详细事件匹配规则请参见 [事件模式](https://intl.cloud.tencent.com/document/product/1108/42288)。
-![](https://qcloudimg.tencent-cloud.cn/raw/ada0f0a3bbc847d780cf70581e7f6da9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9ed4d225227fd0850e1b8f47d5d53798.png)
 3. 若要将告警范围限定至某一具体实例，您可以单击**编辑**，在事件模式中加入 **subject** 字段。
 
 
@@ -80,7 +81,7 @@
 
 事件告警场景下，您可以通过配置**消息推送**投递目标完成告警接收。
 **消息推送**：通过配置消息推送，将您的告警事件推送至指定的消息接收渠道，完成用户及时触达。
-![](https://qcloudimg.tencent-cloud.cn/raw/5d6e8323c1022cbcc64efc50fe095553.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0707a906aca7ee999a5765e135a753cb.png)
 
 配置完成后，即可在腾讯云事件总线控制台，完成告警事件的查看与推送配置。
 >!

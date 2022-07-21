@@ -1,13 +1,14 @@
 ## Overview
 After EventBridge is enabled, it will automatically create a **default Tencent Cloud service event bus** in the **Guangzhou** region, and all services connected to it will automatically deliver events. You can also set event rules and delivery targets to configure an alarm link.
 
-## Alarm Configuration Steps
+## Alarm Configuration Directions
 ### 1. View the event list
 Log in to the [EventBridge console](https://console.cloud.tencent.com/eb), enter the **default Tencent Cloud service event bus**, and view the events of all connected Tencent Cloud services.
 ![](https://qcloudimg.tencent-cloud.cn/raw/e7e0b0318ff797fc341564324619beb7.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/598e6f2078aca989531ceeaa6f71debf.png)
 
-The standard event format is as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/e2f338749c57e8226fa3e332be50f9b7.png)
+
+The standard event format is as shown below: 
 ```json
 {
     "specversion":"1.0",
@@ -40,18 +41,19 @@ The standard event format is as shown below:
 }
 ```
 
-The preceding fields are described as follows:
+The preceding fields are described as follows: 
 
 | Field | Description | Data Type |
 | --------------- | ------------------------------------------------------------ | ---------- |
 | specversion     | Event structure version (CloudEvents version, which is 1.0.2 currently).        | String     |
 | id              | ID returned by `PUT Event`.                                   | String     |
 | type            | Type of the event input through `PUT Event`. The standard format of a Tencent Cloud service alarm event is `${ProductName}:ErrorEvent:${EventType}`, where colons are used to separate type fields. | String     |
-| source          | Event source (which is required for a Tencent Cloud service event). The value is `xxx.cloud.tencent` by default for a Tencent Cloud service. | String     |
+| source          | Event source (which is required for a Tencent Cloud service event and is the abbreviation of `subject`). The value is `xxx.cloud.tencent` by default for a Tencent Cloud service. | String     |
 | subject        | Event source details, which can be customized. QCS description such as `qcs::dts:ap-guangzhou:appid/uin:xxx` is used for a Tencent Cloud service by default. | String     |
 | timer           | Event time, which is a GMT+0 timestamp in milliseconds such as `1615430559146`.         | Timestamp  |
 | datacontenttype | Data structure declaration.                                               | String     |
 | region          | Region information.                                                   | String     |
+ |status | Alarm event status. Valid values: 1 (abnormal), 0 (resolved), - (stateless). | String |
 |tags| Resource tag. |JSON|
 | data            | Details of the event input through `PUT Event`, which are customizable by the specific business.                                  | JSON    |
 
@@ -60,7 +62,7 @@ The preceding fields are described as follows:
 ### 2. Configure an alarm event rule
 
 Go to the **Event Rule** page, select the target event bus, and create an event rule under it to filter the events for which to configure alarm push.
-![](https://qcloudimg.tencent-cloud.cn/raw/58a467fe00eee70c0712b07087ea9f93.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/709f9b8771ac45a71a82a0b5301f7750.png)
 Taking CVM alarm configuration as an example, you can select a specified event alarm type as needed or all events.
 ![](https://qcloudimg.tencent-cloud.cn/raw/709f9b8771ac45a71a82a0b5301f7750.png)
 
@@ -130,7 +132,7 @@ After completing the configuration, you can view and configure the push of alarm
 Email content:
 ```
 ${ProductName} Alarm Notification
-Dear user,
+Dear Tencent Cloud user,
 
 An alarm event occurred for ${ProductName} under your account (ID: ${1}, nickname: ${2}). Please check and resolve the issue in time.
 
@@ -141,7 +143,7 @@ Alarm region: ${Region}
 Event occurrence time: ${Time}
 Event status: ${} ("error", "recovered", or "stateless")
 
-For more details, please log in to the EventBridge console.
+For more details, log in to the EventBridge console.
 ```
 
 Sample HTTP callback content:
