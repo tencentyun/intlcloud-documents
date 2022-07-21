@@ -1,7 +1,7 @@
 You can customize settings for the rotation and rendering modes of local and remote video images.
 
 ## Custom Control of Local Image
-You can set local rendering parameters by calling [setLocalRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setLocalRenderParams).
+You can set local rendering parameters by calling [setLocalRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setLocalRenderParams).
 ```javascript
 import TRTCCloud, { 
   TRTCRenderParams, TRTCVideoRotation, TRTCVideoFillMode,
@@ -20,7 +20,7 @@ trtcCloud.startLocalPreview(localUserDom);
 ```
 
 ## Custom Control of Remote Image
-You can set remote rendering parameters by calling [setRemoteRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setRemoteRenderParams).
+You can set remote rendering parameters by calling [setRemoteRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setRemoteRenderParams).
 ```javascript
 import TRTCCloud, { 
   TRTCRenderParams, TRTCVideoRotation, TRTCVideoFillMode,
