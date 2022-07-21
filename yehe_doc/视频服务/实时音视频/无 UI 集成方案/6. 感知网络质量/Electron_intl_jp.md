@@ -20,7 +20,7 @@ TRTCは、**onNetworkQuality**と呼ばれるコールバックイベントを�
 | 5 | VeryBad | 現在のネットワークは非常に悪い。TRTCは接続をほぼ維持できませんが、通信品質を保証することはできません|
 | 6 | Down | 現在のネットワークはTRTCの最小要件を満たしていないため、通常のオーディオビデオ通話を行うことはできません。|
 
-TRTCの[onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality)を監視し、インターフェースで対応するプロンプトを表示するだけでよい。
+TRTCの[onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality)を監視し、インターフェースで対応するプロンプトを表示するだけでよい。
 
 ```javascript
 import TRTCCloud, { TRTCQuality } from 'trtc-electron-sdk';
