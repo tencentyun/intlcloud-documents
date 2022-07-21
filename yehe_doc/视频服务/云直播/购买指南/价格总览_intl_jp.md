@@ -123,12 +123,6 @@ CSSの課金項目には、基本サービス料金と付加価値サービス�
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">後払い-月次決済</a></td>
 </tr><tr>
-<td colspan=2>ライブストリーミングSDK  License</td>
-<td>
-モバイルライブストリーミングベーシック版SDKのiOSとAndroidにおける使用権限のロック解除に用いられます。担当者にご連絡いただき、モバイルライブストリーミングSDK Licenseをご購入ください。
-</td>
-<td>-</td>
-</tr><tr>
 <tr><td colspan=2>プル転送</td>
 <td>タスクのプル転送はタスク時間に応じて料金が発生します。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/41059">後払い-日次決済</a>
