@@ -19,16 +19,16 @@ Based on the obtained window information, you can display a list of sharable sou
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
-// https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
+// https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
 const screenList = rtcCloud.getScreenCaptureSources();
 ```
 
 [](id:step2)
 ## Step 2. Start screen sharing
- - You can select the sharing source by calling [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget).
- - After selecting a sharing source, you can call the [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) API to start screen sharing.
- - During screen sharing, you can call [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) to change the sharing source.
- - The difference between [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture) and [stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture) is that `pauseScreenCapture` pauses screen capturing and displays the image at the moment it is paused. Remote users see the paused video image until screen capturing is resumed.
+ - You can select the sharing source by calling [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget).
+ - After selecting a sharing source, you can call the [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) API to start screen sharing.
+ - During screen sharing, you can call [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) to change the sharing source.
+ - The difference between [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture) and [stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture) is that `pauseScreenCapture` pauses screen capturing and displays the image at the moment it is paused. Remote users see the paused video image until screen capturing is resumed.
 
 ```javascript
 import TRTCCloud, { 
@@ -73,8 +73,8 @@ You can use the third parameter (`encParam`) of the `startScreenCapture` API to 
 
 [](id:step4)
 ## Step 4. Watch the shared screen
-When a user in a room starts screen sharing, the screen will be shared through a substream, and other users in the room will be notified through [onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable).
-Users who want to view the shared screen can start rendering the substream image of the remote user using the [startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) API.
+When a user in a room starts screen sharing, the screen will be shared through a substream, and other users in the room will be notified through [onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable).
+Users who want to view the shared screen can start rendering the substream image of the remote user using the [startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startRemoteView) API.
 
 ```javascript
 import TRTCCloud, { 
