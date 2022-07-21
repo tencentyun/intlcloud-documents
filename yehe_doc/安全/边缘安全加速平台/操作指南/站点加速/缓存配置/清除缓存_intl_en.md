@@ -15,7 +15,7 @@ If there are non-compliant resources at your business site, you need to clear th
 >?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 2. On the cache configuration page, select the target site and click **Purge cache** in the cache purge module.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4488d444245ae27e789b8e62e1d56e37.png)
-3. In the pop-up window, enable **Size limit**, enter an upper limit value, and click **Save**.
+3. In the cache purge pop-up window, enter the content and click **OK**.  
 
 Parameter description:
  - All cache: All cached resources of the site on nodes.
