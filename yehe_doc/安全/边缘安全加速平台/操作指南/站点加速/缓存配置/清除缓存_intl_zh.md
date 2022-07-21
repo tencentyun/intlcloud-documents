@@ -15,8 +15,7 @@
 >?目前边缘安全加速平台控制台仅对部分用户开放，如需访问控制台，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 开通权限。
 2. 在缓存配置页面，选择所需站点，单击清除缓存模块的**清除缓存**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/4488d444245ae27e789b8e62e1d56e37.png)
-3. 在清除缓存弹窗中，选择所需模式和内容	，单击**确认清除**。
-![](https://qcloudimg.tencent-cloud.cn/raw/5ba36408f684f12e0131419535cab358.png)
+3. 在清除缓存弹窗中，输入对应的资源内容，单击**确认清除**。
 
 参数说明：
  - 全部缓存：站点在节点的全部缓存资源。

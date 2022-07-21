@@ -1,0 +1,1 @@
+[MySQL에서 MySQL로 마이그레이션](https://intl.cloud.tencent.com/document/product/571/42645)의 지침에 따라 [Data Transmission Service](https://intl.cloud.tencent.com/document/product/571)를 통해 TDSQL for MySQL로 데이터를 마이그레이션할 수 있습니다.

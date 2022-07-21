@@ -25,6 +25,7 @@
 | 莫斯科   | eu-moscow        |
 | 雅加达   | ap-jakarta       |
 | 多伦多   | na-toronto       |
+| 圣保罗   | sa-saopaulo       |
 
 
 >? 
@@ -163,6 +164,11 @@
 <td>na-toronto.cls.tencentcs.com</td>
 </tr>
 <tr>
+<td>圣保罗</td>
+<td>sa-saopaulo</td>
+<td>sa-saopaulo.cls.tencentyun.com</td>
+<td>sa-saopaulo.cls.tencentcs.com</td>
+</tr>
 </tbody></table>
 :::
 ::: 日志服务API3.0 [](id:API3)
@@ -193,6 +199,7 @@
 | 莫斯科   | eu-moscow        | cls.internal.tencentcloudapi.com | cls.eu-moscow.tencentcloudapi.com        |
 | 雅加达   | ap-jakarta       | cls.internal.tencentcloudapi.com | cls.ap-jakarta.tencentcloudapi.com       |
 | 多伦多   | na-toronto       | cls.internal.tencentcloudapi.com | cls.na-toronto.tencentcloudapi.com       |
+| 圣保罗   | sa-saopaulo      | cls.internal.tencentcloudapi.com | cls.sa-saopaulo.tencentcloudapi.com       |
 
 :::
 ::: 日志服务API2017 [](id:API2017)
@@ -321,6 +328,12 @@
 <td>na-toronto</td>
 <td>na-toronto.cls.tencentyun.com</td>
 <td>na-toronto.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>圣保罗</td>
+<td>sa-saopaulo</td>
+<td>sa-saopaulo.cls.tencentyun.com</td>
+<td>sa-saopaulo.cls.tencentcs.com</td>
 </tr>
 </tbody></table>
 :::
@@ -451,6 +464,139 @@
 <td>ca-producer.cls.tencentyun.com</td>
 <td>ca-producer.cls.tencentcs.com</td>
 </tr>
+
 </tbody></table>
+
+:::
+::: Kafka 消费日志 [](id:Kafka_Consume)
+
+[使用 Kafka 协议消费日志](https://cloud.tencent.com/document/product/614/72651) 支持使用 Kafka Consumer SDK 和其他大数据组件消费到用户的数据仓库，其所使用的域名如下：
+
+<table>
+<thead>
+<tr>
+<th>地域</th>
+<th>简称</th>
+<th>内网域名</th>
+<th>外网域名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北京</td>
+<td>ap-beijing</td>
+<td>kafkaconsumer-ap-beijing.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-beijing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>广州</td>
+<td>ap-guangzhou</td>
+<td>kafkaconsumer-ap-guangzhou.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-guangzhou.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>ap-shanghai</td>
+<td>kafkaconsumer-ap-shanghai.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-shanghai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>ap-chengdu</td>
+<td>kafkaconsumer-ap-chengdu.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-chengdu.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>南京</td>
+<td>ap-nanjing</td>
+<td>kafkaconsumer-ap-nanjing.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-nanjing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>重庆</td>
+<td>ap-chongqing</td>
+<td>kafkaconsumer-ap-chongqing.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-chongqing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国香港</td>
+<td>ap-hongkong</td>
+<td>kafkaconsumer-ap-hongkong.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-hongkong.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>中国台北</td>
+<td>ap-taipei</td>
+<td>kafkaconsumer-ap-taipei.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-taipei.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>硅谷</td>
+<td>na-siliconvalley</td>
+<td>kafkaconsumer-na-siliconvalley.cls.tencentyun.com</td>
+<td>kafkaconsumer-na-siliconvalley.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>弗吉尼亚</td>
+<td>na-ashburn</td>
+<td>kafkaconsumer-na-ashburn.cls.tencentyun.com</td>
+<td>kafkaconsumer-na-ashburn.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>新加坡</td>
+<td>ap-singapore</td>
+<td>kafkaconsumer-ap-singapore.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-singapore.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>曼谷</td>
+<td>ap-bangkok</td>
+<td>kafkaconsumer-ap-bangkok.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-bangkok.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>孟买</td>
+<td>ap-mumbai</td>
+<td>kafkaconsumer-ap-mumbai.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-mumbai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>法兰克福</td>
+<td>eu-frankfurt</td>
+<td>kafkaconsumer-eu-frankfurt.cls.tencentyun.com</td>
+<td>kafkaconsumer-eu-frankfurt.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>东京</td>
+<td>ap-tokyo</td>
+<td>kafkaconsumer-ap-tokyo.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-tokyo.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>首尔</td>
+<td>ap-seoul</td>
+<td>kafkaconsumer-ap-seoul.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-seoul.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>莫斯科</td>
+<td>eu-moscow</td>
+<td>kafkaconsumer-eu-moscow.cls.tencentyun.com</td>
+<td>kafkaconsumer-eu-moscow.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>雅加达</td>
+<td>ap-jakarta</td>
+<td>kafkaconsumer-ap-jakarta.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-jakarta.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>多伦多</td>
+<td>na-toronto</td>
+<td>kafkaconsumer-na-toronto.cls.tencentyun.com</td>
+<td>kafkaconsumer-na-toronto.cls.tencentcs.com</td>
+</tr>
+</tbody></table>
+
 :::
 </dx-tabs>

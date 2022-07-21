@@ -1,0 +1,56 @@
+## 操作场景
+启动配置定义了用于弹性伸缩的云服务器 CVM 实例的配置信息，包括 CVM 的镜像、存储、网络、安全组、登录方式和其他配置信息。
+
+<dx-alert infotype="explain" title="">
+创建启动配置服务**完全免费**，请放心创建。
+</dx-alert>
+
+ 
+
+
+## 操作步骤
+### 选择区域
+1. 登录弹性伸缩控制台，选择左侧导航栏中的 **[启动配置](https://console.cloud.tencent.com/autoscaling/config)**。
+2. 在“启动配置”页面上方，选择启动配置的项目和区域。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/0b5bc7d29a2c1a846b5d7eacabadb7f7.png)
+区域的选择限制了可手动添加的实例和可绑定的负载均衡。例如，如果启动配置的区域选择了广州，那么伸缩组里自动添加的即为广州的实例。区域为广州的伸缩组，将不能手动添加上海、北京、中国香港、多伦多等其他区域的实例，也不能绑定上海、北京、中国香港、多伦多等其他区域的负载均衡。
+3. 单击**新建**，进入“创建启动配置”页面。
+
+
+
+### 选择机型
+在“选择机型”步骤中，参考以下信息设置启动配置名称、可用区及机型。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/91fed0ecdc2adcb399b0a51088cae846.png)
+
+- **启动配置名称**：自定义启动配置配置名称。
+- **计费模式**：支持 **[按量计费](https://intl.cloud.tencent.com/document/product/213/2180)** 及 **[竞价实例](https://intl.cloud.tencent.com/document/product/213/17816)** 模式。
+- **可用区、机型**：选择期望和伸缩组绑定实例的机型。
+
+
+### 选择镜像、存储及带宽
+1. 创建启动配置可使用公共镜像、自定义镜像、共享镜像。详情请参见 [镜像概述](https://intl.cloud.tencent.com/document/product/213/4940)。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/24c10101a7fb253f41796287a18ee193.png)
+建议使用已经部署好环境的自定义镜像。原因如下：
+	- 若您选择的是**公共镜像**，那么伸缩出来的实例是纯净的 OS，仍需要手动部署应用环境。
+	- 若您选择的是**自定义镜像**，通过对已经部署好环境的 CVM 实例制作镜像，然后使用该镜像批量创建 CVM 实例， 则创建成功之后便具有和之前 CVM 实例一致的软件环境，以此可以达到批量部署的目的。
+<dx-alert infotype="explain" title="">
+如何制作“伸缩组期望绑定的实例”的镜像请参见 [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942)。
+</dx-alert>
+2. 参考以下信息，设置启动配置中的磁盘。如下图所示：
+	![](https://qcloudimg.tencent-cloud.cn/raw/7a6a1f32ae55245058c65999a698d56e.png)
+	如果系统盘选择了云硬盘，那么数据盘就可以选择数据盘快照：
+	- 对于有大量数据的用户而言，会经常使用数据盘来存储数据。数据盘 A 创建了快照文件时，用户可使用该快照文件，快速克隆多块磁盘，达到快速部署服务器的目的。
+	- 在弹性伸缩自动添加新的 CVM 实例时，如果启动配置数据盘指定了数据盘快照，结合云硬盘可支持启动 CVM 实例后自动挂载包含设定数据的数据盘能力，可满足数据自动拷贝的需求。
+	- 若启动配置中指定数据盘快照，则需保证数据盘能被正确自动挂载，伸缩组才可成功自动扩容。您需要在设置弹性伸缩前对制作数据盘快照的原实例进行操作，使其支持在启动新的 CVM 实例时自动挂载数据盘。详情请参见 [自动挂载](https://intl.cloud.tencent.com/document/product/362/32401)。
+3. 默认免费分配独立公网 IP，请根据实际情况选择网络计费模式。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/3778935c55389ae9cb20ad42a6d2547b.png)
+<dx-alert infotype="explain" title="">
+ 弹性伸缩服务免费，新增的 CVM、硬盘和网络将根据 CVM 实例、硬盘和网络按量收费，该页面将根据您的设置显示价格。
+</dx-alert>
+
+
+### 设置信息
+1. 在“设置主机”步骤中，选择登录方式、安全组。通过弹性伸缩服务新增的 CVM 实例默认免费享受云安全和云监控服务。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/b145aee742dab16cac87119d5d3258d6.png)
+2. 确认配置并成功创建后，可在“启动配置”页面中查看已创建的启动配置。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/e3dfde86a16e07aa0149c05bb7b22a20.png)
