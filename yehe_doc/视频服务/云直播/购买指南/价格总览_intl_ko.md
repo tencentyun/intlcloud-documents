@@ -123,12 +123,6 @@ LVB와 LEB의 기본 서비스 요금은 다르게 과금됩니다.
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">월간 종량제</a></td>
 </tr><tr>
-<td colspan=2> 라이브 SDK  License</td>
-<td>
-이 라이선스를 사용하면 iOS 및 Android 디바이스에서 기본 버전 MLVB SDK를 사용할 수 있습니다. 이 License를 구입하려면 영업팀에 문의하시기 바랍니다.
-</td>
-<td>-</td>
-</tr><tr>
 <tr><td colspan=2>릴레이</td>
 <td>릴레이 작업 기간에 따라 과금됩니다.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/41059">일일 종량제</a>
