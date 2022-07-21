@@ -5,8 +5,6 @@ URL prefetch caches the resource at the matched URL from the origin server to a 
 >- If a prefetched resource conflicts with a resource cached on the node (that is, the node already cached a resource with the same name that hasn't expired), the cached resource will remain effective and won't be overwritten by the prefetched resource. If the cached resource changes, you can purge the corresponding node cache before prefetch.
 >- Resources are prefetched to edge nodes by default, and traffic generated at the edge layer is billed as normal traffic.
 
-
-
 ## Use Cases
 #### Installation package release
 Before formally releasing the installation or upgrade package of a new version, you can prefetch the installation package resources to nodes. After formal release, when users request to download the package, they can directly get it from the nodes, which speeds up download and alleviates the pressure on the origin server.
@@ -20,7 +18,7 @@ Before holding an operational event formally, you can prefetch static resources 
 2. On the cache configuration page, select the target site and click **Prefetch resource** in the URL prefetch module.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3ae33206ff4be6b287f5216cf24f6e5b.png)
 3. In the URL prefetch pop-up window, enter or upload URLs and click **OK**.
-![](https://qcloudimg.tencent-cloud.cn/raw/5820581c8c397618adb4402d51caabe1.png)
+
 
 ## Notes
 ### Content specifications
