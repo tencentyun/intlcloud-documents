@@ -4,7 +4,7 @@
 [](id:step1)
 ### 手順1：システム音声のキャプチャを開始します
 
-[startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback)インターフェースを呼び出して、システム音声のキャプチャを開始し、アップリンクオーディオストリームに混合します。インターフェースが実行された後、成功または失敗の結果は[onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError)を介してコールバックされます。
+[startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback)インターフェースを呼び出して、システム音声のキャプチャを開始し、アップリンクオーディオストリームに混合します。インターフェースが実行された後、成功または失敗の結果は[onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError)を介してコールバックされます。
 ```javascript
 import TRTCCloud, { TRTCAudioQuality } from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
@@ -35,14 +35,14 @@ trtcCloud.startSystemAudioLoopback();
 [](id:step2)
 
 ### 手順2：システム音声のキャプチャを停止します 
-[stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback)インターフェースを呼び出して、システム音声のキャプチャを終了します。
+[stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback)インターフェースを呼び出して、システム音声のキャプチャを終了します。
 ```javascript
 trtcCloud.stopSystemAudioLoopback();
 ```
 
 [](id:step3)
 ### 手順3：システム音声のキャプチャボリュームを設定します
-[setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume)インターフェースを呼び出して、システム音声のキャプチャボリュームを設定します。
+[setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume)インターフェースを呼び出して、システム音声のキャプチャボリュームを設定します。
 
 ```javascript
 trtcCloud.setSystemAudioLoopbackVolume(60);
