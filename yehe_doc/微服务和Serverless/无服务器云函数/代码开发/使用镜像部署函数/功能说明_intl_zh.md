@@ -141,13 +141,13 @@ The request timed out in 30000ms.Please confirm your http server have enabled li
 
 ## 计费说明
 
-使用镜像部署函数的计费项与使用代码包部署的计费项完全一致。计费详情请参见 [计费方式](https://intl.cloud.tencent.com/zh/document/product/583/12284)。
+使用镜像部署函数的计费项与使用代码包部署的计费项完全一致。计费详情请参见 [计费方式](https://intl.cloud.tencent.com/document/product/583/42969)。
 
 
 ## 使用限制
 
 #### 镜像大小
-目前仅支持镜像（解压前）小于1Gi，建议您根据镜像的大小来选择适合的函数实例执行内存。
+目前仅支持镜像（解压前）小于1Gi，如有特殊需要，可 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) 申请。建议您根据镜像的大小来选择适合的函数实例执行内存。
 
 |镜像大小（X）|执行内存（Y）|
 | -------------------------------- |---------------|
@@ -156,7 +156,7 @@ The request timed out in 30000ms.Please confirm your http server have enabled li
 | 512MB < X < 1Gi | Y>1Gi |
 
 #### 镜像仓库访问
-- 仅支持腾讯云容器镜像服务企业版和个人版，详情可参见 [容器镜像服务](https://intl.cloud.tencent.com/zh/document/product/1051)。
+- 仅支持腾讯云容器镜像服务企业版和个人版，详情可参见 [容器镜像服务](https://www.tencentcloud.com/document/product/1051)。
 	- 容器镜像服务企业版镜像仓库详情可参见 [镜像仓库基本操作](https://intl.cloud.tencent.com/document/product/1051/35488)。
 	- 容器镜像服务个人版镜像仓库详情可参见 [开通镜像仓库](https://intl.cloud.tencent.com/document/product/1051/38866)。
 - 仅支持同地域（Region）下私有镜像仓库的镜像读取。
