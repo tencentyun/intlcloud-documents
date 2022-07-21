@@ -11,7 +11,7 @@
 
 [](id:step2)
 ### 手順2：現在のルームからの自発的な退室
-[exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom)インターフェースを呼び出すことで現在のルームから退室できます。SDKは、退室後にonExitRoom(int reason)コールバックイベントを介して通知します。
+[exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#exitRoom)インターフェースを呼び出すことで現在のルームから退室できます。SDKは、退室後にonExitRoom(int reason)コールバックイベントを介して通知します。
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const trtcCloud = new TRTCCloud();
@@ -30,7 +30,7 @@ exitRoomインターフェースを呼び出すと、SDKは、退室プロセス
 
 [](id:step3)
 ### 手順3：現在のルームからの強制退出
-ユーザーの自発的な退室を除いて、[onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom)コールバックを受け取る2つのケースがあります：
+ユーザーの自発的な退室を除いて、[onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom)コールバックを受け取る2つのケースがあります：
 - **ケース1：現在のルームからの強制退室**
 サービス側の[RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) | [RemoveUserByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39630)インターフェースを介して、特定のユーザーを特定のTRTCルームから強制退室させます。当該ユーザーを強制退室させると、当該ユーザーはonExitRoom(1)のコールバックを受け取ります。
 
