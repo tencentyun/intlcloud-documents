@@ -5,7 +5,7 @@ SES memungkinkan Anda menjangkau pasar yang lebih besar secara cepat dengan biay
 SES dapat mengirimkan email secara instan di lebih dari 200 negara/wilayah melalui penyedia layanan email utama di dunia.
 
 ### Stabilitas & Kecepatan Tinggi
-SES memiliki tingkat keberhasilan pengiriman 99% (kecuali untuk alamat email yang tidak valid dan kotak surat perusahaan yang dibatasi). Selain itu, SES mengirimkan lebih dari 90% email dalam waktu 30 detik.
+SES memiliki tingkat keberhasilan pengiriman 97% (kecuali untuk alamat email yang tidak valid dan kotak surat perusahaan yang dibatasi). Selain itu, SES mengirimkan lebih dari 90% email dalam waktu 30 detik.
 
 ### Layanan Profesional
 SES mendukung proses warm-up email kustom dan menyediakan pemeriksaan reputasi khusus bagi Anda untuk membangun dan meningkatkan reputasi email Anda dengan cepat.
