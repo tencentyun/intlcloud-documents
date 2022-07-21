@@ -1,4 +1,4 @@
-Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Storage**, **General Purpose SSD**, **SSD**, **Enhanced SSD**, and **Tremendous SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
+Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Disk**, **General Purpose SSD**, **SSD**, **Enhanced SSD**, and **Tremendous SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
 
 ## Must-knows
 - Currently, Enhanced SSD and Tremendous SSD are only available in certain availability zones. They will be supported in more availability zones.
@@ -10,8 +10,8 @@ Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, 
 
 
 ## Overview
-- **Premium Cloud Storage**
-Tencent Cloud Premium Cloud Storage is a hybrid storage type. It adopts the Cache mechanism to provide a high-performance SSD-like storage, and employs a three-copy distributed mechanism to ensure data reliability. Premium Cloud Storage is suitable for small and medium applications with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, as well as small and medium sites.
+- **Premium Cloud Disk**
+Tencent Cloud Premium Cloud Disk is a hybrid storage type. It adopts the Cache mechanism to provide a high-performance SSD-like storage, and employs a three-copy distributed mechanism to ensure data reliability. Premium Cloud Disk is suitable for small and medium applications with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, as well as small and medium sites.
 - **General Purpose SSD**
 Tencent Cloud General Purpose SSD is an entry-level all-flash block storage product. It's highly cost-effective and suitable for medium-sized scenarios with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, KV services, as well as basic database services.
 - **SSD**
@@ -33,7 +33,7 @@ The table below compares the performances of the five CBS services.
 <th>Enhanced SSD</th>
 <th>SSD</th>
 <th>General Purpose SSD</th>
-<th>Premium Cloud Storage</th>
+<th>Premium Cloud Disk</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -133,7 +133,7 @@ The table below compares the performances of the five CBS services.
 **General Purpose SSD is mainly suitable for the following data scenarios**:
 Medium-sized scenarios with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, KV services, as well as basic database services.
 
-**Premium Cloud Storage is mainly suitable for the following data scenarios**:
+**Premium Cloud Disk is mainly suitable for the following data scenarios**:
 - Small and medium databases and Web/App servers. 
 - Scenarios that require balanced storage capacity and performance, such as enterprise office services.
 - Core business testing and the front and back end debugging.
