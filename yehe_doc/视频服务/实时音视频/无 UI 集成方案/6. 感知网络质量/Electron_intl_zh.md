@@ -20,7 +20,7 @@ TRTC 提供了一个叫做 **onNetworkQuality** 的回调事件，它会每隔�
 | 5 | VeryBad | 当前网络很差，TRTC 只能勉强保持连接，但无法保证通讯质量|
 | 6 | Down | 当前网络不满足 TRTC 的最低要求，无法进行正常的音视频通话|
 
-您只需要监听 TRTC 的 [onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality) 并在界面上做相应地提示即可：
+您只需要监听 TRTC 的 [onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality) 并在界面上做相应地提示即可：
 
 ```javascript
 import TRTCCloud, { TRTCQuality } from 'trtc-electron-sdk';
