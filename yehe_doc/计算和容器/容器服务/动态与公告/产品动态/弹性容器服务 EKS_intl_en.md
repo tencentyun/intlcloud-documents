@@ -1,3 +1,20 @@
+
+## June 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+  <tr>
+    <td>Launches disk cleanup capability</td>
+    <td>You can enable the capabilities such as cleaning up images, cleaning up exited containers and restarting the Pods with high disk usage though annotations.</td>
+    <td>2022-06-23</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotations</a></td>
+  </tr>
+</table>
+
+
+
+
+
 ## April 2022
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -21,16 +38,19 @@
     <td><a href="https://intl.cloud.tencent.com/document/product/457/30665" target="_blank" rel="noopener noreferrer">Job Management</a></td>
   </tr>
     <tr>
-    <td>Supports restricting the number of schedulable GPU Pods on virtual nodes</td>
-    <td>Supports restricting the number of schedulable GPU Pods on virtual nodes. You can <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a> to apply for it.</td>
+    <td>Supports restricting the number of schedulable GPU Pods on super nodes</td>
+    <td>Supports restricting the number of schedulable GPU Pods on super nodes. You can <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a> to apply for it.</td>
     <td>2022-04-11</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/39760" target="_blank" rel="noopener noreferrer">Notes on Pods Scheduled to a Virtual Node</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/39760" target="_blank" rel="noopener noreferrer">Notes on Pods Scheduled to a Super Node</a></td>
   </tr>
 </table>
 
 
 
+
+
 ## March 2022
+
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
@@ -45,13 +65,13 @@
 <td>Adds reservation resource overview</td>
 <td>Reservation resource overview is added for you to view the current numbers of Pods and corresponding reservations in real time.</td>
 <td>2022-03-31</td>
-<td>-</a></td>
+<td>-</td>
 </tr>
 <tr>
-<td>Supports restricting the number of schedulable GPU Pods on virtual nodes</td>
-<td>You can set annotations for a virtual node to control the number of GPUs on it.</td>
+<td>Supports restricting the number of schedulable GPU Pods on super nodes</td>
+<td>You can set annotations for a super node to control the number of GPUs on it.</td>
 <td>2022-03-31</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Virtual Node Annotations</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/36162#.E8.99.9A.E6.8B.9F.E8.8A.82.E7.82.B9-Annotation-.E8.AF.B4.E6.98.8E">Annotation</a></td>
 </tr>
 <tr>
 <td>Supports the HPC component</td>
@@ -75,6 +95,7 @@
 </table>
 
 
+
 ## December 2021
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -90,17 +111,16 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Supports discounts on resources with small specifications.</td>	<td>EKS offers up to 65% discount for resources with small specifications such as 1-core 2 GiB and 2-core 4 GiB. </td><td>2021-11-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34055">Product Pricing</a></td>
+    <td>Supports discounts on resources with small specifications</td><td>EKS offers up to 65% discount for resources with small specifications such as 1-core 2 GiB and 2-core 4 GiB. </td><td>2021-11-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34055">Product Pricing</a></td>
 </tr>
 </table>
-
 
 ## July 2021
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Supports creation of container instance</td><td>Container instance is a service model launched by Elastic Kubernetes Service that allows users to deploy container applications without the need to purchase servers or deploy K8s clusters.</td><td>2021-07-14</td><td>Container instance</td>
+    <td>Supports creation of container instance</td><td>Container instance is a service model launched by Elastic Kubernetes Service that allows users to deploy container applications without the need to purchase servers or deploy K8s clusters.</td><td>2021-07-14</td><td>-</td>
 </tr>
 </table>
 
@@ -110,13 +130,13 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr> 
-    <td>Supports automatic allocation of EIP for Pods when they are created.</td><td>The EIP can be automatically allocated for Pod when it is created. Pod no longer strongly relies on NAT gateway for public network communication.</td><td>2021-05-28</td><td>-</td>
+    <td>Supports automatic allocation of EIP for Pods when they are created</td><td>The EIP can be automatically allocated for Pod when it is created. Pod no longer strongly relies on NAT gateway for public network communication.</td><td>2021-05-28</td><td>-</td>
 </tr>
 <tr> 
-    <td>Supports modifying the custom DNS of the virtual node.</td><td>Users can modify the custom DNS of the virtual node. After modification, the Pods scheduled to this virtual node will adopts this DNS configuration by default.</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">Virtual Node Overview</a></td>
+    <td>Supports modifying the custom DNS of a super node</td><td>Users can modify the custom DNS of the super node. After modification, the Pods scheduled to this super node will adopt this DNS configuration by default.</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">Supernodes Overview</a></td>
 </tr>
 <tr> 
-    <td>Elastic cluster supports log collection via CRD configuration.</td><td>Users can use the Custom Resource Definitions (CRD) to configure log collection for the Elastic cluster. CRD is non-intrusive to Pod and supports a variety of log parsing methods. It sends standard output and file logs in the container to Tencent Cloud CLS, which provides search and analysis, visual application, log download and consumption, and other services. It is recommended to use CRD to configure log collection.</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">Using a CRD to Configure Log Collection</a></td>
+    <td>Elastic cluster supports log collection via CRD configuration</td><td>Users can use the Custom Resource Definitions (CRD) to configure log collection for the Elastic cluster. CRD is non-intrusive to Pod and supports a variety of log parsing methods. It sends standard output and file logs in the container to Tencent Cloud CLS, which provides search and analysis, visual application, log download and consumption, and other services. It is recommended to use CRD to configure log collection.</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">Using a CRD to Configure Log Collection</a></td>
 </tr>
 </table>
 
@@ -126,7 +146,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>EKS has connected to Tencent Cloud Tags.</td><td>Users can add Tencent Cloud tag to EKS cluster, and manage bills through tags.</td><td>2021-03-20</td><td>-</td>
+    <td>EKS has connected to Tencent Cloud Tags</td><td>Users can add Tencent Cloud tag to EKS cluster, and manage bills through tags.</td><td>2021-03-20</td><td>-</td>
 </tr>
 </table>
 
@@ -135,10 +155,10 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Supports spot instance.</td><td>The spot instance costs are 20% of the original cost, which is expected to reduce business costs by 65%.</td><td>2020-12-25</td><td>-</td>
+    <td>Supports spot instance</td><td>The spot instance costs are 20% of the original cost, which is expected to reduce business costs by 65%.</td><td>2020-12-25</td><td>-</td>
 </tr>
 <tr>
-    <td>Launches the event dashboard.</td>	<td>The dashboard can collect multidimensional statistics of top and exceptional events and supports aggregated search and trend observation.</td><td>2020-12-08</td><td>Event Dashboard</a></td>
+    <td>Launches event dashboard</td><td>This feature supports the multi-dimensional statistics of top events, exception events, etc. and supports aggregation search and trend observation.</td><td>2020-12-08</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">Event Dashboard</a></td>
 </tr>
 </table>
 
@@ -147,7 +167,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>The event storage feature was added.</td><td>Users can observe resource change and locate the problem in time.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30686">Event Storage</a></td>
+    <td>The event storage feature is available</td><td>Users can observe resource change and locate the problem in time.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30686">Event Storage</a></td>
 </tr>
 </table>
 
@@ -166,16 +186,16 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Supports binding Pods with CAM roles.</td><td>Users can bind Pods with CAM roles to obtain the permission policies owned by the roles.</td><td>2020-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/11542">Permission Management</a></td>
+    <td>Supports binding Pods with CAM roles</td><td>Users can bind Pods with CAM roles to obtain the permission policies owned by the roles.</td><td>2020-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/11542">Permission Management</a></td>
 </tr>
 <tr>
-    <td>Supports static IP addresses of Pods.</td><td>The IP addresses of Pods can remain unchanged when the StatefulSet/Bare Pod updates its workload.</td><td>2020-07-15</td><td>-</td>
+    <td>Supports static IP addresses of Pods</td><td>The IP addresses of Pods can remain unchanged when the StatefulSet/Bare Pod updates its workload.</td><td>2020-07-15</td><td>-</td>
 </tr>
 <tr>
-    <td>Supports Pod login.</td><td>Users can use the console or run kubectl exec -it to remotely log in to a Pod.</td><td>2020-07-01</td><td>-</td>
+    <td>Supports Pod login</td><td>Users can use the console or run kubectl exec -it to remotely log in to a Pod.</td><td>2020-07-01</td><td>-</td>
 </tr>
 <tr>
-    <td>Supports third-party image repositories.</td><td>When creating a workload, users can select images from third-party image repositories and set the image repository access credential.</td><td>2020-07-01</td><td>-</td>
+    <td>Supports third-party image repositories</td><td>When creating a workload, users can select images from third-party image repositories and set the image repository access credential.</td><td>2020-07-01</td><td>-</td>
 </tr>
 </table>
 
@@ -185,19 +205,19 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>The EKS console provides a command line window for interaction with containers.</td><td>This feature improves the user experience and helps you quickly identify issues.</td><td>2020-06-30</td><td>-</td>
+    <td>The EKS console provides a command line window for interaction with containers</td><td>This feature improves the user experience and helps you quickly identify issues.</td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
-    <td>Supports updates of StatefulSets and Pods without changing their IP addresses.</td><td>This feature enhances service stability and simplifies service network management.</td><td>2020-06-30</td><td>-</td>
+    <td>Supports updates of StatefulSets and Pods without changing their IP addresses</td><td>This feature enhances service stability and simplifies service network management.</td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
-    <td>LoadBalancer supports IPv6.</td><td>The service IP address supports the IPv6 network.</td><td>2020-06-30</td><td>-</td>
+    <td>LoadBalancer supports IPv6</td><td>The service IP address supports the IPv6 network.</td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
-    <td>EKS supports the purchase of Tencent’s self-developed Star Lake servers.</td><td>Tencent’s self-developed Star Lake servers provide reliable, secure, and stable high performance at low costs.</td><td>2020-06-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34057">Resource Specifications</a></td>
+    <td>EKS supports the purchase of Tencent’s self-developed Star Lake servers</td><td>Tencent’s self-developed Star Lake servers provide reliable, secure, and stable high performance at low costs.</td><td>2020-06-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34057">Resource Specifications</a></td>
 </tr>
 <tr>
-    <td>EKS was fully launched.</td><td>EKS is a service mode launched by Tencent Cloud TKE that allows users to deploy workloads without having to purchase nodes.</td><td>2020-06-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34040">Elastic Kubernetes Service</a></td>
+    <td>Fully releases EKS</td><td>EKS is a service mode launched by Tencent Cloud TKE that allows users to deploy workloads without having to purchase nodes.</td><td>2020-06-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34040">Elastic Kubernetes Service</a></td>
 </tr>
 </table>
 
@@ -207,7 +227,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-<td>Elastic Kubernetes Service (EKS) beta is launched. </td><td>EKS <b>allows users to deploy workloads without having to purchase nodes</b>. <b>It is fully compatible with native Kubernetes</b> and supports resource purchase and management in the native mode. Resources are billed based on the amount of resources used by the containers.</td> <td>2019-12-27</td>
+<td>Launches beta for Elastic Kubernetes Service (EKS)</td><td>EKS <b>allows users to deploy workloads without having to purchase nodes</b>. <b>It is fully compatible with native Kubernetes</b> and supports resource purchase and management in the native mode. Resources are billed based on the amount of resources used by the containers.</td> <td>2019-12-27</td>
 	<td><a href="https://intl.cloud.tencent.com/document/product/457/34040">Elastic Kubernetes Service</a></td>
 </tr>
 </table>

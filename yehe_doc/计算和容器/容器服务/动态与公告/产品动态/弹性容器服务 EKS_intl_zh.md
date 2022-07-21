@@ -1,3 +1,20 @@
+
+## 2022年06月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+  <tr>
+    <td>上线磁盘清理能力</td>
+    <td>支持使用 annotation 的方式开启清理容器镜像、清理已退出容器、重启磁盘使用量高的 Pod 等能力，解决磁盘空间紧张的问题。</td>
+    <td>2022-06-23</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotation 说明</a></td>
+  </tr>
+</table>
+
+
+
+
+
 ## 2022年04月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -21,16 +38,19 @@
     <td><a href="https://intl.cloud.tencent.com/document/product/457/30665" target="_blank" rel="noopener noreferrer">Job 管理</a></td>
   </tr>
     <tr>
-    <td>虚拟节点支持限制 GPU 可调度 Pod 数</td>
-    <td> 虚拟节点支持限制 GPU 可调度 Pod 数，可 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 申请使用。</td>
+    <td>超级节点支持限制 GPU 可调度 Pod 数</td>
+    <td> 超级节点支持限制 GPU 可调度 Pod 数，可 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 申请使用。</td>
     <td>2022-04-11</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/39760" target="_blank" rel="noopener noreferrer">调度至虚拟节点的 Pod 说明</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/39760" target="_blank" rel="noopener noreferrer">调度至超级节点的 Pod 说明</a></td>
   </tr>
 </table>
 
 
 
+
+
 ## 2022年03月
+
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
@@ -45,13 +65,13 @@
 <td>新增预留券资源概览</td>
 <td>新增预留券资源概览，支持用户实时查看当前 pod 数和对应预留券数量。</td>
 <td>2022-03-31</td>
-<td>-</a></td>
+<td>-</td>
 </tr>
 <tr>
-<td>虚拟节点支持用户限制可调度的 GPU pod 数量</td>
-<td>支持通过设置虚拟节点的 Annotation, 控制虚拟节点内的 GPU 数量。</td>
+<td>超级节点支持用户限制可调度的 GPU pod 数量</td>
+<td>支持通过设置超级节点的 Annotation, 控制超级节点内的 GPU 数量。</td>
 <td>2022-03-31</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/36162">虚拟节点 Annotation 说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/36162#.E8.99.9A.E6.8B.9F.E8.8A.82.E7.82.B9-Annotation-.E8.AF.B4.E6.98.8E">超级节点 Annotation 说明</a></td>
 </tr>
 <tr>
 <td>支持 HPC 组件</td>
@@ -75,6 +95,7 @@
 </table>
 
 
+
 ## 2021年12月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -94,13 +115,12 @@
 </tr>
 </table>
 
-
 ## 2021年07月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>支持创建容器实例</td>	<td>容器实例是由弹性容器服务推出的无需用户购买服务器、无需部署 K8s 集群，即可部署容器应用的服务模式。</td><td>2021-07-14</td><td>容器实例</td>
+    <td>支持创建容器实例</td>	<td>容器实例是由弹性容器服务推出的无需用户购买服务器、无需部署 K8S 集群，即可部署容器应用的服务模式。</td><td>2021-07-14</td><td>-</td>
 </tr>
 </table>
 
@@ -113,7 +133,7 @@
     <td>支持创建 Pod 时自动为 Pod 分配 EIP。</td>	<td>支持创建 Pod 时自动为 Pod 分配 EIP，Pod 不再强依赖 NAT 网关进行外网通信。</td><td>2021-05-28</td><td>-</td>
 </tr>
 <tr> 
-    <td>支持虚拟节点修改自定义 DNS。</td>	<td>支持虚拟节点修改自定义 DNS，修改后调度到该虚拟节点的 Pod 默认全部采用该 DNS 配置。</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">虚拟节点概述</a></td>
+    <td>支持超级节点修改自定义 DNS。</td>	<td>支持超级节点修改自定义 DNS，修改后调度到该超级节点的 Pod 默认全部采用该 DNS 配置。</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">超级节点概述 </a></td>
 </tr>
 <tr> 
     <td>弹性集群支持通过 CRD 配置日志采集</td>	<td>弹性集群支持通过 CRD 的方式配置日志采集。CRD 对 Pod 无侵入性，支持多种日志解析方式，将标准输出、容器内文件日志发送至腾讯云日志服务 CLS，提供检索分析、可视化应用、日志下载消费等服务。推荐使用 CRD 配置日志采集。</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">使用 CRD 配置日志采集</a></td>
@@ -138,7 +158,7 @@
     <td>支持竞价实例</td>	<td>竞价实例成本为原来的 20%，预计可降低 65% 的业务成本。</td><td>2020-12-25</td><td>-</td>
 </tr>
 <tr>
-    <td>事件仪表盘上线</td>	<td>支持多纬度统计 Top 事件、异常事件等，支持聚合检索和趋势观测。</td><td>2020-12-08</td><td>事件仪表盘</a></td>
+    <td>事件仪表盘上线</td>	<td>支持多纬度统计 Top 事件、异常事件等，支持聚合检索和趋势观测。</td><td>2020-12-08</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">事件仪表盘</a></td>
 </tr>
 </table>
 
@@ -166,7 +186,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>支持 Pod 绑定 CAM 角色</td>	<td>支持 Pod 通过绑定 CAM 角色获取角色拥有的权限策略。</td><td>2020-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/11542">访问管理概述</a></td>
+    <td>支持 Pod 绑定 CAM 角色</td>	<td>支持 Pod 通过绑定 CAM 角色获取角色拥有的权限策略。</td><td>2020-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/11542">访问管理概述 </a></td>
 </tr>
 <tr>
     <td>支持 Pod 固定 IP</td>	<td>支持 StatefulSet/Bare Pod 更新工作负载时 IP 不变。</td><td>2020-07-15</td><td>-</td>
@@ -185,7 +205,7 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>弹性容器服务控制台提供命令行窗口与容器交互</td><td>该功能提升了用户体验，可帮助用户快速定位问题。</td><td>2020-06-30</td><td>-</td>
+    <td>弹性容器服务控制台 提供命令行窗口与容器交互</td><td>该功能提升了用户体验，可帮助用户快速定位问题。</td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
     <td>支持 StatefulSet、Pod 更新并保持 IP 不变</td><td>该功能可提升服务稳定性，并简化用户服务网络管理。</td><td>2020-06-30</td><td>-</td>

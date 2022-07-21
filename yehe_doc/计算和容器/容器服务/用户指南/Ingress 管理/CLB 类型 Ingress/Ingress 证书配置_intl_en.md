@@ -4,7 +4,7 @@ This document describes how to use an Ingress certificate. You can configure an 
 - If you bind the same certificate for all HTTPS domain names, you can configure a certificate with all HTTPS rules in the Ingress to simplify updates.
 - Binding different certificates to different domain names helps improve the SSL/TLS performance of the server and client.
 
-## Limits
+## Notes
 - You need to create the certificate to be configured in advance. For more information, see [Creating a server certificate in the console](#create).
 - You need to set the Ingress certificate by using a Secret. Tencent Kubernetes Engine (TKE) Ingress creates a Secret with the same name as the certificate by default, which contains the certificate ID.
 - If you want to change the certificate, it is recommended that you create a certificate on the certificate platform and update the Secret certificate ID. Because the cluster add-on is synced based on the Secret statement, if you update the certificate on other certificate services or CLB services, the update will be restored by Secret.
@@ -20,6 +20,7 @@ This document describes how to use an Ingress certificate. You can configure an 
 ## Examples
 TKE allows you to configure a certificate for a CLB HTTPS listener that is created for an Ingress by using the `spec.tls` field in the Ingress. Where, `secretName` indicates a Kubernetes Secret resource that contains a Tencent Cloud certificate ID, as shown in the following example:
 #### Ingress
+Creating via YAML:
 ```yaml
 spec:
     tls:
@@ -29,25 +30,31 @@ spec:
 ```
 
 #### Secret
-- Create using YAML:
+<dx-tabs>
+::: Creating via YAML
 ```yaml
 apiVersion: v1
 stringData:
-    qcloud_cert_id: Xxxxxxxx ## Set the certificate ID as Xxxxxxxx.
+    qcloud_cert_id: Xxxxxxxx ## Set the certificate ID as Xxxxxxxx
 kind: Secret
 metadata:
     name: tencent-com-cert
     namespace: default
 type: Opaque
 ```
+:::
+::: Creating via the console
+You can create a Secret in the **TKE console**. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
+The main parameters of a Secret are as follows:
+ - **Name**: A custom name. This document uses `cos-secret` as an example.
+ - **Secret type**: Select **Opaque**. This type is suitable for saving key certificates and configuration files. The value is Base64-coded.
+ - **Validity range**: Select a range as required and ensure that the Secret is in the same namespace as the Ingress.
+ - **Content**: Set the variable name to `qcloud_cert_id` and the variable value to the server certificate ID.
 
-- Create in the **TKE console**:
-  For more information, see [Creating a Secret](https://intl.cloud.tencent.com/document/product/457/30676). The main parameters of Secret are as follows:
-    - **Name**: A custom name. This document uses `cos-secret` as an example.
-    - **Secret type**: Select **Opaque**. This type is suitable for saving key certificates and configuration files. The value is Base64-coded.
-    - **Validity range**: Select a range as required and ensure that the Secret is in the same namespace as the Ingress.
-    - **Content**: Set the variable name to `qcloud_cert_id` and the variable value to the certificate ID of qcloud_cert_id.
+:::
+</dx-tabs>
 
+>! If you want to configure a mutual authentication certificate, you need to add both the server certificate and the client CA certificate to the Secret. Also, you need to add a key pair to the Secret: The variable name is `qcloud_ca_cert_id`, and the variable value is the  client CA certificate ID.
 
 
 ## Ingress Certificate Configuration
@@ -129,19 +136,23 @@ kubectl edit secrets [secret-name]
 Similar to the creation of a Secret, modifying a Secret certificate ID requires Base64 encoding. Select Base64 manual encoding or specify `stringData` to perform Base64 automatic encoding based on your actual needs.
 
 ### Updating Ingress objects
-
-#### Updating an Ingress object in the console
+<dx-tabs>
+::: Updating an Ingress object in the console
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the "Cluster management" page, click the cluster ID whose Ingress object needs to be modified.
-3. On the cluster details page, select **Service and route** > **Ingress** in the left sidebar, as shown in the figure below:
+3. On the cluster details page, select **Service and route** > **Ingress** in the left sidebar.
 ![](https://main.qcloudimg.com/raw/86707379f0cd64956ed64a29725787fc.png)
 4. Find the target Ingress object, and click **Update forwarding configuration** in the "Operation" column.
 5. On the "Update forwarding configuration" page, update the forwarding configuration rules as required.
 6. Click **Update forwarding configuration** to complete the update.
-
-#### Updating an Ingress object by using YAML
+:::
+::: Updating an Ingress object by using YAML
 Run the following command to open the Ingress object to be modified in the default editor. Modify the YAML file and save the modification.
 ```
 kubectl edit ingress <ingressname> -n <namespaces>
 ```
+:::
+</dx-tabs>
+
+
 
