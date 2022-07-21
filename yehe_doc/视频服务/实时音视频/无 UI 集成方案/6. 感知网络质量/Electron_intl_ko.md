@@ -20,7 +20,7 @@ TRTC는 2초에 한 번씩 현재 네트워크 품질을 보고하는 **onNetwor
 | 5 | VeryBad | 현재 네트워크 상태는 매우 열악하여 TRTC는 연결을 유지할 수 있을 뿐 통신 품질을 보장할 수 없음 |
 | 6 | Down | 현재 네트워크 상태는 TRTC의 최소 요구 사항을 충족할 수 없으며 정상적인 음성/영상 통화가 불가능함 |
 
-TRTC의[onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality)를 수신 대기하고 UI에 해당 프롬프트를 표시하기만 하면 됩니다.
+TRTC의[onNetworkQuality](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onNetworkQuality)를 수신 대기하고 UI에 해당 프롬프트를 표시하기만 하면 됩니다.
 
 ```javascript
 import TRTCCloud, { TRTCQuality } from 'trtc-electron-sdk';
