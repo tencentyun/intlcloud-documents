@@ -3,9 +3,9 @@
 
 ## 内容紹介
 Electron SDKにおいて、以下の方法で画質を調整できます：
-- [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom)のTRTCAppSceneパラメータ：ユースケースの選択に使用されます。
-- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam)：エンコードパラメータの設定に使用されます。
-- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam)：ネットワークチューニングポリシーの設定に使用されます。
+- [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#enterRoom)のTRTCAppSceneパラメータ：ユースケースの選択に使用されます。
+- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam)：エンコードパラメータの設定に使用されます。
+- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam)：ネットワークチューニングポリシーの設定に使用されます。
 
 このドキュメントでは、主にTRTC SDKの画質をプロジェクトのニーズに合わせるために、上記のパラメーターを設定する方法を紹介します。
 [Electron API Example：video-quality](https://github.com/tencentyun/TRTCSDK/blob/master/Electron/TRTC-API-Example/assets/code/advanced/video-quality/index.js)Demoを参照することもできます。
@@ -86,13 +86,13 @@ controlModeパラメーターには**TRTCQosControlModeServer**を選択して�
 
 ## よくある間違い
 #### 1. 解像度が高いほど良いですか。
-解像度が高いほど、サポートするにはビットレートも高くなります。解像度が1280x720で、ビットレートが200kbpsに指定されている場合、画像には多くのモザイクが現れます。設定については、[解像度とビットレートの参照テーブル](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution)を参照することをお勧めします。
+解像度が高いほど、サポートするにはビットレートも高くなります。解像度が1280x720で、ビットレートが200kbpsに指定されている場合、画像には多くのモザイクが現れます。設定については、[解像度とビットレートの参照テーブル](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution)を参照することをお勧めします。
 
 #### 2. フレームレートが高いほど良いですか。
 カメラで取得した画像は、露光段階のすべての実物を完全にマッピングしたものであるため、フレームレートが高いほど感覚が滑らかになるわけではなく、これはゲームのFPSとは異なります。逆に、フレームレートが高すぎると、各フレームの画質が低下し、カメラの露光時間も短くなり、効果がより低下する場合があります。
 
 #### 3. ビットレートが高いほど良いですか。
-ビットレートが高いほど、一致する解像度も高くなります。320x240などの解像度の場合、1000kbpsのビットレートは無駄です。設定については、[解像度とビットレートの参照テーブル](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution)を参照することをお勧めします。
+ビットレートが高いほど、一致する解像度も高くなります。320x240などの解像度の場合、1000kbpsのビットレートは無駄です。設定については、[解像度とビットレートの参照テーブル](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution)を参照することをお勧めします。
 
 #### 4. Wi-Fi使用時に高い解像度とビットレートを設定できますか。
 Wi-Fiの速度が一定というわけではありません。無線ルーターから遠く離れている場合やルーターのチャネルが占有されている場合は、ネットワーク速度が4Gほど良くない場合があります。
