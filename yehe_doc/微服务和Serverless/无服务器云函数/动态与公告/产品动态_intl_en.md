@@ -1,4 +1,5 @@
-## February 2022
+## April 2022
+
 <table>
 <thead>
 <tr>
@@ -10,12 +11,41 @@
 </thead>
 <tbody>
 <tr>
+<td>Added support for processing multiple concurrent requests by a single instance for HTTP-triggered functions</td>
+<td>In web applications, typical business scenarios are I/O-intensive, and access to downstream services such as database or other system APIs in the function takes a long time to wait for the downstream services to respond. Generally, such waits are iowait and don't consume the CPU resources. In this case, if the multiple concurrent requests feature is enabled, one instance can process multiple requests to better utilize the CPU resources of the single instance.</td><td>2022-04-28</td><td>
+<a href="https://intl.cloud.tencent.com/document/product/583/47183">HTTP-Triggered Function Request Concurrency Management</a>
+</td>
+</tr>
+</tbody></table>
+
+
+
+## February 2022
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="40%">Description</th>
+<th width="20%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added support for GPU computing power</td>
+<td>SCF provides T4 GPU Computing and T4 GPU Rendering computing power to support the serverless implementation of various use cases, such as audio/video transcoding, AI inference, high-performance graphic processing, and 3D rendering.</td><td>2022-02-17</td><td>
+-
+</td>
+</tr>
+<tr>
 <td>Added the dynamic provisioned concurrency metric feature</td>
 <td>SCF provides the dynamic provisioned concurrency metric feature, so that the function provisioned concurrency can be closer to the actual resource usage, thereby reducing the idle provisioned concurrency fees.</td><td>2022-02-14</td><td>
 <a href="https://intl.cloud.tencent.com/document/product/583/45785">Dynamic Provisioned Concurrency Metric</a>
 </td>
 </tr>
 </tbody></table>
+
 
 ## November 2021
 
@@ -291,7 +321,6 @@ Added support for modifying the configurations of retry and maximum retention fo
 <table>
 <thead>
 <tr>
-
 <th width="20%">Update</th>
 <th width="40%">Description</th>
 <th width="20%">Release Date</th>
@@ -306,19 +335,17 @@ Added support for modifying the configurations of retry and maximum retention fo
 <td>ICP Filing</a>
 </td>
 </tr>
-
 <tr>
 <td>Released the SCF VS Code plugin</td>
 <td>The SCF VS Code plugin was upgraded to v2.0:
 The specification used by the plugin was adjusted to the Tencent-SCF Component specification in Serverless Framework.
 The original TCSAM-compatible specification can be converted to the Serverless Framework Tencent-SCF Component specification.
 Node.js 10.15 and Node.js 12.16 runtime environments were added.
-Node.js 10 and above runtime environments were added for cloud debugging.</td>
+Node.js 10 and later runtime environments were added for cloud debugging.</td>
 <td>2020-06-12</td>
 <td>SCF VS Code Plugin Usage</a>
 </td>
 </tr>
-
 <tr>
 <td>Added the Node.js 12.16 runtime environment</td>
 <td>The Node.js 12.16 runtime environment was added for SCF. You can choose to use Node.js 12.16 as the runtime environment when creating a function. The upgrade of the Node.js version brings new features and performance improvements and, mostly importantly, speeds up launches.</td>
@@ -417,5 +444,7 @@ Node.js 10 and above runtime environments were added for cloud debugging.</td>
 </td>
 </tr>
 </tbody></table>
+
+
 
 

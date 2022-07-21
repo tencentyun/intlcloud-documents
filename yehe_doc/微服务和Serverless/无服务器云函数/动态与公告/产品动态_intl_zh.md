@@ -1,4 +1,5 @@
-## 2022年02月
+## 2022年04月
+
 <table>
 <thead>
 <tr>
@@ -10,12 +11,42 @@
 </thead>
 <tbody>
 <tr>
+<td>Web 函数支持单实例多并发</td>
+<td>在 Web 应用中，典型的业务场景是 IO 密集型——函数内访问数据库或其他系统的接口等下游服务，需要较多时间等待下游服务响应。这种等待一般都是在做 iowait，不消耗 CPU，此时，通过请求多并发，一个实例可以同时处理多个请求，则可以更充分利用单个实例的 CPU 资源。</td><td>2022-04-28</td><td>
+<a href="https://intl.cloud.tencent.com/document/product/583/47183">Web 函数请求并发管理</a>
+</td>
+</tr>
+</tbody></table>
+
+
+
+## 2022年02月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="20%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU 算力支持</td>
+<td>云函数提供 T4 计算型和 T4 渲染型两种 GPU 算力，支撑音视频转码、AI 推理、高性能图形处理、3D 渲染等场景的 Serverless 化落地。</td><td>2022-02-17</td><td>
+-
+</td>
+</tr>
+<tr>
 <td>云函数新增动态指标预置功能</td>
 <td>云函数提供动态指标预置的功能，使函数预置并发数更接近资源的真实使用量，从而降低预置闲置费用。</td><td>2022-02-14</td><td>
 <a href="https://intl.cloud.tencent.com/document/product/583/45785">动态指标预置</a>
 </td>
 </tr>
 </tbody></table>
+
+
 
 ## 2021年11月
 
@@ -291,7 +322,6 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <table>
 <thead>
 <tr>
-
 <th width="20%">动态名称</th>
 <th width="40%">动态描述</th>
 <th width="20%">发布时间</th>
@@ -306,7 +336,6 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <td>ICP备案</a>
 </td>
 </tr>
-
 <tr>
 <td>云函数 SCF VS Code 插件正式发布</td>
 <td>云函数 VS Code 插件升级 2.0 版本：
@@ -318,7 +347,6 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 <td>SCF VS Code 插件使用文档</a>
 </td>
 </tr>
-
 <tr>
 <td>云函数新增 Node.js 12.16 运行环境</td>
 <td>云函数新增 Node.js 12.16 运行环境，用户可以在创建函数时，选择使用 Node.js 12.16 Runtime。Node.js 版本的升级带来了新的特性以及性能方面的提升，最重要的是启动速度的提升。</td>
@@ -417,5 +445,7 @@ SCF 支持修改异步调用的重试与最长保留配置，通过相关配置�
 </td>
 </tr>
 </tbody></table>
+
+
 
 
