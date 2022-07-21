@@ -4,7 +4,7 @@
 [](id:step1)
 ### 1단계: 시스템 오디오 수집 시작
 
-[startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback) API를 호출하여 시스템 오디오 캡처를 시작하고 오디오를 업스트림 오디오 스트림에 믹싱합니다. 결과는 [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError)를 통해 다시 호출됩니다.
+[startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback) API를 호출하여 시스템 오디오 캡처를 시작하고 오디오를 업스트림 오디오 스트림에 믹싱합니다. 결과는 [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError)를 통해 다시 호출됩니다.
 ```javascript
 import TRTCCloud, { TRTCAudioQuality } from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
@@ -35,14 +35,14 @@ trtcCloud.startSystemAudioLoopback();
 [](id:step2)
 
 ### 2단계: 시스템 오디오 수집 중지 
-[stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback) API를 호출하여 시스템 오디오 캡처를 중지합니다.
+[stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback) API를 호출하여 시스템 오디오 캡처를 중지합니다.
 ```javascript
 trtcCloud.stopSystemAudioLoopback();
 ```
 
 [](id:step3)
 ### 3단계: 시스템 사운드 수집 음량 설정
-[setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume) API를 호출하여 시스템 오디오 캡처 볼륨을 설정합니다.
+[setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume) API를 호출하여 시스템 오디오 캡처 볼륨을 설정합니다.
 
 ```javascript
 trtcCloud.setSystemAudioLoopbackVolume(60);
