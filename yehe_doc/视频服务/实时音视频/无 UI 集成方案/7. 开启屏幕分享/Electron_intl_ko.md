@@ -19,16 +19,16 @@ TRTC에서 일반적으로 카메라 데이터가 지나가는 터널을 '메인
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
-// https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
+// https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
 const screenList = rtcCloud.getScreenCaptureSources();
 ```
 
 [](id:step2)
 ## 2단계: 화면 공유 시작
- - [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)을 호출하여 공유 소스를 선택할 수 있습니다.
- - 공유 타깃 선택 후 [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) API를 호출하여 화면 공유를 시작할 수 있습니다.
- - 화면 공유 중 [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)을 호출하여 공유 소스를 변경할 수 있습니다.
- - [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture)와 [stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture)의 차이점은 전자가 화면 캡처를 pause하고 일시 중지하는 순간 이미지를 표시한다는 것입니다. 원격 사용자는 화면 캡처가 resume될 때까지 일시 중지하기 전에 비디오의 마지막 프레임을 봅니다.
+ - [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)을 호출하여 공유 소스를 선택할 수 있습니다.
+ - 공유 타깃 선택 후 [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) API를 호출하여 화면 공유를 시작할 수 있습니다.
+ - 화면 공유 중 [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)을 호출하여 공유 소스를 변경할 수 있습니다.
+ - [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture)와 [stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture)의 차이점은 전자가 화면 캡처를 pause하고 일시 중지하는 순간 이미지를 표시한다는 것입니다. 원격 사용자는 화면 캡처가 resume될 때까지 일시 중지하기 전에 비디오의 마지막 프레임을 봅니다.
 
 ```javascript
 import TRTCCloud, { 
@@ -73,8 +73,8 @@ rtcCloud.startScreenCapture(screenshareDom, TRTCVideoStreamType.TRTCVideoStreamT
 
 [](id:step4)
 ## 4단계: 화면 공유 보기
-방에 있는 사용자가 화면 공유를 시작하면 서브 스트림을 통해 화면이 공유되고 방에 있는 다른 사용자는 [onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable)을 통해 알림을 받습니다.
-공유 화면을 보고 싶은 사용자는 [startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) API를 통해 원격 사용자의 서브 스트림 이미지 렌더링을 시작할 수 있습니다.
+방에 있는 사용자가 화면 공유를 시작하면 서브 스트림을 통해 화면이 공유되고 방에 있는 다른 사용자는 [onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable)을 통해 알림을 받습니다.
+공유 화면을 보고 싶은 사용자는 [startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startRemoteView) API를 통해 원격 사용자의 서브 스트림 이미지 렌더링을 시작할 수 있습니다.
 
 ```javascript
 import TRTCCloud, { 
