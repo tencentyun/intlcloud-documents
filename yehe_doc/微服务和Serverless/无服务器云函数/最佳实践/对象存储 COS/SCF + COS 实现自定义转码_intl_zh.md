@@ -1,0 +1,43 @@
+## 概述
+
+音视频作为信息传播中流量占比最大的部分在各行业的业务中都弥足重要，而不同的业务场景中对音视频的处理逻辑可能具备行业的特殊性。公有云虽然提供大量的视频处理服务供用户选择，但依然不能做到全面覆盖用户的特殊流程及定制化需求，使用对象存储（Cloud Object Storage，COS）工作流处理结合云函数（Serverless Cloud Function，SCF）定制逻辑此时就是一个绝佳选择，帮助用户快速创建满足需求的各种音视频处理服务。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/414eff08ce78d1583394de46b369dafb.png)
+
+## 应用场景
+
+- 快速接入用户自建转码集群，兼容用户原有业务。
+- 支持行业特殊格式与处理逻辑，接入电影、传媒等特殊行业。
+- 支持用户自定义处理逻辑，满足各场景下定制流程需求。
+- 触发工作流批量模板化处理，满足视频网站、教育、社交互联行业常见音视频处理需求。
+
+## 方案优势
+
+- 加速开发：不再需要关注资源运维与组件开销，极大地降低了服务架构搭建的复杂性。
+- 降低开销：空闲时没有资源在运行，函数执行时按请求数和计算资源的运行时间收费，价格优势明显。
+- 高可用、高扩展：根据请求自动平行调整服务资源，拥有近乎无限的扩容能力，且免除单可用区运行的故障风险。
+
+
+## 操作步骤
+
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，创建工作流、自定义过滤规则以及创建自定义函数节点。详细操作请参见 [配置工作流](https://intl.cloud.tencent.com/document/product/436/46408)。
+![](https://qcloudimg.tencent-cloud.cn/raw/5caf1f3561b3ac0dfa3c453d102d84a9.png)
+2. 在函数节点弹窗中，单击**新增函数**。
+3. 在云函数的创建页面，选择**COS 数据工作流音视频转码**模板。
+![](https://qcloudimg.tencent-cloud.cn/raw/2b1373b125b5164a0ca0a6c848002be2.png)  
+4. 根据用户文件大小，在基础配置项中配置执行超时时间，在高级配置中配置足够的内存。
+5. 在**高级配置 > 环境配置**中配置环境变量，该函数模板支持以下环境变量：
+ - targetBucket：目标存储桶，必填。
+ - targetRegion：目标存储桶地域，必填。
+ - targetKeyTemplate：目标路径模板，可选，默认为`${InputPath}${InputName}_transcode.${ext}`。
+ - ffmpegTemplate：转码命令模板，必填，例如`${ffmpeg} -loglevel error -i ${source} -r 10 -b:a 32k ${target}`。
+ - localTmpPath：临时保存路径，当绑定 CFS 时可以更改临时路径，可选，默认为 `/tmp`。
+![](https://qcloudimg.tencent-cloud.cn/raw/ace18ad76e97b27a483e429a65ce5196.png) 
+6. 启用权限配置，绑定包含当前存储桶读写权限的角色，如需创建运行角色，请参见 [角色与策略](https://intl.cloud.tencent.com/document/product/583/38176)。
+![](https://qcloudimg.tencent-cloud.cn/raw/aed0c93f2c530778923acf0797db943d.png)
+7. 单击**完成**。
+8. 返回刚才创建的工作流页面，选中刚创建的自定义转码函数，保存工作流，并在工作流列表页开启工作流。
+![](https://qcloudimg.tencent-cloud.cn/raw/86cd43267e8e9a1e84ba7e5227be7f25.png)    
+9. 上传文件，待工作流处理成功后，即可看到上传的视频已成功转码并保存为新的文件。
+![](https://qcloudimg.tencent-cloud.cn/raw/c949c2fe599d40dd8ef517ee0a5d5ea3.png)   
+

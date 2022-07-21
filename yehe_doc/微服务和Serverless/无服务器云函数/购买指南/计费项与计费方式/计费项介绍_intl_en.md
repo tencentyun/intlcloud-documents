@@ -1,20 +1,21 @@
 ## Billable Items
-SCF is billed by the following four parts. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in USD:
+SCF is billed by the following parts. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in USD:
 
 - **Resource usage fees**: Resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
 - **Invocation fees**: Each function triggering and execution is calculated as an invocation. HTTP-triggered functions are billed by the **number of invocations** in the same way.
 - **Public network outbound fees**: The outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
 - **Idle provisioned concurrency fees**: The number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size.
-- **HTTP-triggered function response traffic fees**: Counted only for HTTP-triggered functions configured with default triggers.
+- **Basic package fees:** After three months of activation of SCF, you will no longer be entitled to a free tier, and the system will grant a basic package tier and automatically deduct 1.8 USD (by deducting 0.06 USD per day) every month. If you are entitled to a free tier, or you have valid packages or remaining resource packs, or the function resource usage, number of invocations, and public network outbound traffic in the last calendar month are all 0, the system will not deduct the basic package fees.
+- **HTTP-triggered function response traffic fees**: Counted only for HTTP-triggered functions configured with default triggers. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902).
 
-For the unit prices of resource usage, invocation volume, public network outbound traffic, and idle provisioned concurrency, see [Pricing](https://intl.cloud.tencent.com/zh/document/product/583/12281). Here, the public network outbound traffic and response traffic are in GB.
+For the unit prices of resource usage, invocation volume, public network outbound traffic, idle provisioned concurrency, and basic package, see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic and response traffic are in GB.
 
 
-## Resource Usage Fee
+## Resource Usage Fees
 
 **Resource usage fees = (resource usage - free tier) * resource usage unit price**
 
-### Resource usage in GBs
+### Resource Usage (GBs)
 
 **Resource usage = memory configured for function * execution duration**
 
@@ -30,9 +31,9 @@ Resources used in each run are calculated on an hourly basis.
 
 ## Invocation Fees
 
-**Invocation volume fees = (number of function invocations - free tier) * invocation unit price**
+**Invocation fees = (number of function invocations - free tier) * invocation unit price**
 
-Each function triggering and execution will be calculated as an invocation and aggregated in each hour as the hourly invocation volume. Fees will be charged **per 10,000 invocations**.
+Each function triggering and execution will be calculated as an invocation and aggregated in each hour as the hourly invocation volume. Fees will be charged **per invocation**.
 
 
 ## Public Network Outbound Traffic Fees
@@ -54,13 +55,22 @@ Outbound traffic will be generated when resources are accessed over the public n
 - **Number of idle instances**: SCF counts the maximum concurrency of a version at a 10-second granularity. The number of idle instances is calculated by subtracting the maximum concurrency from the number of currently started provisioned instances. The calculation formula is as follows: number of idle instances = max(number of started provisioned instances - number of concurrent instances, 0).
 - **Configured memory size**: The memory size configured for the provisioned concurrency of the function.
 - **Idle duration**: The idle duration of the provisioned concurrency.
-- **Idle provisioned concurrency price**: See [Pricing](https://intl.cloud.tencent.com/zh/document/product/583/12281).
+- **Idle provisioned concurrency price**: See [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
 >? Idle provisioned concurrency is calculated in GBs (GB-second).
 
-The provisioned concurrency feature only charges small idle fees for the instances that have been configured and started but are not in use, **while no additional fees are charged for the instances that have been configured and are in use**. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred. For examples, see [Billing Example](https://intl.cloud.tencent.com/zh/document/product/583/44256?has_map=1#.E8.AE.A1.E8.B4.B9.E7.A4.BA.E4.BE.8B).
+The provisioned concurrency feature only charges small idle fees for the instances that have been configured and started but are not in use, **while no additional fees are charged for the instances that have been configured and are in use**. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred. For examples, see [Provisioned Concurrency Price](https://intl.cloud.tencent.com/document/product/583/44256).
 
+## Basic Package Fees
+- **Monthly basic package fees = number of days in the month (for example, 31 days in May or 30 days in April) * basic package price**
+- **Daily basic package fees = 1 (day) * basic package price**
+- **Days**: **1 day** by default.
+- **Basic package price**: See [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
+>? 
+- If you have used SCF for three months or shorter after the activation, the platform will grant a free tier by default without deducting the basic package fees.
+- If you have used SCF for more than three months after the activation, and you have valid packages or remaining resource packs, the basic package fees will not be charged.
+- On the first day of every month, the platform counts the function invocations in the last calendar month. If the function resource usage, number of invocations, and public network outbound traffic in the last month are all 0, the basic package fees will not be charged in the current month. If any function usage is generated in the current month, the basic package fees will be charged next month.
 
 
 ## Fees for Other Products

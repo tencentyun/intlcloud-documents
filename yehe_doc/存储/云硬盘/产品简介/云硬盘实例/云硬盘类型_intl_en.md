@@ -1,4 +1,4 @@
-Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Storage*, **General Purpose SSD**, **SSD**, **Enhanced SSD**, and **Tremendous SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
+Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism to ensure data reliability. CBS is classified into five types: **Premium Cloud Storage**, **General Purpose SSD**, **SSD**, **Enhanced SSD**, and **Tremendous SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
 
 ## Must-knows
 - Currently, Enhanced SSD and Tremendous SSD are only available in certain availability zones. They will be supported in more availability zones.
@@ -134,7 +134,7 @@ The table below compares the performances of the five CBS services.
 Medium-sized scenarios with high requirements for data reliability and standard requirements for performance, such as Web/App servers, business logical processing, KV services, as well as basic database services.
 
 **Premium Cloud Storage is mainly suitable for the following data scenarios**:
-- Small and medium databases and Web/App servers. Provide long-term and stable I/O performance.
+- Small and medium databases and Web/App servers. 
 - Scenarios that require balanced storage capacity and performance, such as enterprise office services.
 - Core business testing and the front and back end debugging.
 

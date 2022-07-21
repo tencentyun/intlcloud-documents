@@ -1,70 +1,38 @@
 
 ## Free Tier
 
-Starting from November 1, 2021, all SCF users are entitled to a certain free tier of invocations, resource usage, and public network outbound traffic each month as shown below:
-
-<table>
-  <tr>
-    <th class="align-left">Granting Time</th>
-    <th class="align-left">Billable Item</th>
-    <th class="align-left">Free Tier</th>
-  </tr>
-  <tr>
-    <td rowspan="3">Every month in the first three months after the activation (including the month of activation)</td>
-    <td>Number of invocations</td>
-    <td>2 million invocations (1 million invocations of event-triggered functions and 1 million invocations of HTTP-triggered functions)</td>
-  </tr>
-  <tr>
-    <td>Resource usage</td>
-    <td>400,000 GBs</td>
-  </tr>
-  <tr>
-    <td>Public network outbound traffic</td>
-    <td>1 GB</td>
-  </tr>
-  <tr>
-    <td rowspan="3">Every month after three months of the activation</td>
-    <td>Number of invocations</td>
-    <td>100,000 invocations (50,000 invocations of event-triggered functions and 50,000 invocations of HTTP-triggered functions)</td>
-  </tr>
-  <tr>
-    <td>Resource usage</td>
-    <td>20,000 GBs</td>
-  </tr>
-  <tr>
-    <td>Public network outbound traffic</td>
-    <td>0.5 GB</td>
-  </tr>
-</table>
-
-
-For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/583/12282).
+The free tier and billing mode of SCF will be adjusted as from 0:00, June 1, 2022 (Beijing time). By then, new users will get free tiers of more usage in the first three months after activation. As from the fourth month, users will no longer be entitled to free tiers, and the system will automatically grant a basic package tier (500,000 invocations, resource usage of 100,000 GBs, and public network outbound traffic of 2 GB) and deduct the basic package fees of 1.86 USD every month. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/583/12282).
+>? 
+>- On the first day of every month, the platform counts the function invocations in the last calendar month. If the function resource usage, number of invocations, and public network outbound traffic in the last month are all 0, the **basic package fees** will not be charged in the current month. If any function usage is generated in the current month, the basic package fees will be charged next month.
+>- HTTP-triggered function response traffic is not included in the free tier. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902).
 
 
 ## Billable Items and Billing Modes
 ### Billable items
-SCF is billed by the following four parts. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**:
+SCF is billed by the following parts. Each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**:
 
 - **Resource usage fees**: Resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
 - **Invocation fees**: Each function triggering and execution is calculated as an invocation.
 - **Public network outbound traffic fees**: The outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
-- **Idle provisioned concurrency fees**: The number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size. For pricing details, see [Provisioned Concurrency Pricing](https://intl.cloud.tencent.com/zh/document/product/583/44256).
+- **Idle provisioned concurrency fees**: The number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of started provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size. For pricing details, see [Provisioned Concurrency Price](https://intl.cloud.tencent.com/document/product/583/44256).
+- **Basic package fees:** After three months of activation of SCF, you will no longer be entitled to a [free tier](https://intl.cloud.tencent.com/document/product/583/12282), and the system will grant a basic package tier and automatically deduct 1.86 USD (by deducting 0.06 USD per day) every month. If you have valid packages or remaining resource packs, the system will not deduct the basic package fees.
 
->? For HTTP-triggered functions using the default trigger, HTTP-triggered function response traffic will be additionally generated, which is not included in the free tier.
+
+>? For HTTP-triggered functions using the default trigger, HTTP-triggered function response traffic will be additionally generated, which is not included in the free tier. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902).
 >
-### Billing mode
-SCF is [**pay-as-you-go (postpaid)**](https://intl.cloud.tencent.com/zh/document/product/583/42969).
+### Billing Mode
+SCF is [**pay-as-you-go (postpaid)**](https://intl.cloud.tencent.com/document/product/583/42969).
 
 ## Pricing
 
-The four billable items of SCF are priced as follows:
+The five billable items of SCF are priced as follows:
 
 - Resource usage fees: 0.0000167 USD/GBs (0.167 USD/10000 GBs)
 - Invocation fees: 0.002 USD/10000 invocations
 - Public network outbound traffic fees: 0.12 USD/GB for the Chinese mainland; variable by region
-- Idle provisioned concurrency fees: 0.00000847 USD/GBs (0.0847 USD/10000 GBs). For more information, see [Billing Details](https://intl.cloud.tencent.com/zh/document/product/583/42969) and [Billing Example](https://intl.cloud.tencent.com/document/product/583/12285).
-
-HTTP-triggered functions and event-triggered functions have the same prices. For HTTP-triggered functions using the default trigger, HTTP-triggered function response traffic will be additionally generated.
+- Idle provisioned concurrency fees: 0.00000847 USD/GBs (0.0847 USD/10000 GBs). For more information, see [Billing Details](https://intl.cloud.tencent.com/document/product/583/42969#.E9.A2.84.E7.BD.AE.E5.B9.B6.E5.8F.91.E9.97.B2.E7.BD.AE.E8.B4.B9.E7.94.A8) and [Billing Example](https://intl.cloud.tencent.com/document/product/583/12285).
+- Basic package fees: 0.06 USD/day (for example, 0.06 * 31 = 1.86 in May). For more information, see [Billing Example](https://intl.cloud.tencent.com/document/product/583/12285).
+HTTP-triggered functions and event-triggered functions have the same prices. For HTTP-triggered functions using the default trigger, HTTP-triggered function response traffic will be additionally generated. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902).
 
 ## Supported Regions
 SCF is currently supported in the following regions:
@@ -123,6 +91,10 @@ For billing details, see the following documents:
 <tbody><tr>
 <td>Free Tier</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12282" target="_blank">View document</a></td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/12281" target="_blank">View document</a></td>
 </tr>
 <tr>
 <td>Overdue Payment</td>
