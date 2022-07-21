@@ -19,16 +19,16 @@ TRTCでは、通常、カメラが動くチャネルを「ビッグストリー�
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
-// https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
+// https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
 const screenList = rtcCloud.getScreenCaptureSources();
 ```
 
 [](id:step2)
 ## 手順2：画面共有の開始
- - [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)を呼び出すことにより、共有ターゲットを選択できます。
- - 共有ターゲットを選択すると、[startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture)インターフェースを使用して画面共有を開始できます。
- - 共有プロセスにおいても、[selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)を呼び出すことにより、共有ターゲットを変更できます。
- - [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture)と[stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture)の区別は、pauseが画面コンテンツのキャプチャを停止し、その時点の画像スペーサーを一時停止するため、リモート側に表示される画像は、resumeまで常に最後のフレームになります。
+ - [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)を呼び出すことにより、共有ターゲットを選択できます。
+ - 共有ターゲットを選択すると、[startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startScreenCapture)インターフェースを使用して画面共有を開始できます。
+ - 共有プロセスにおいても、[selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget)を呼び出すことにより、共有ターゲットを変更できます。
+ - [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture)と[stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture)の区別は、pauseが画面コンテンツのキャプチャを停止し、その時点の画像スペーサーを一時停止するため、リモート側に表示される画像は、resumeまで常に最後のフレームになります。
 
 ```javascript
 import TRTCCloud, { 
@@ -73,8 +73,8 @@ rtcCloud.startScreenCapture(screenshareDom, TRTCVideoStreamType.TRTCVideoStreamT
 
 [](id:step4)
 ## 手順4：画面共有の確認
-ルームにいるユーザーが画面共有を起動し、サブストリームを介して共有を実行します。ルームにいるその他のユーザーは、[onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable)イベントを介してこの通知を受け取ります。
-画面共有を視聴したいユーザーは[startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView)インターフェースを介してリモートユーザーのサブストリーム画面のレンダリングを起動することができます。
+ルームにいるユーザーが画面共有を起動し、サブストリームを介して共有を実行します。ルームにいるその他のユーザーは、[onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable)イベントを介してこの通知を受け取ります。
+画面共有を視聴したいユーザーは[startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startRemoteView)インターフェースを介してリモートユーザーのサブストリーム画面のレンダリングを起動することができます。
 
 ```javascript
 import TRTCCloud, { 
