@@ -11,7 +11,7 @@
 
 [](id:step2)
 ### 步骤2：主动退出当前房间
-调用 [exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom) 接口即可退出当前的房间，SDK 会在退房结束后通过 onExitRoom(int reason) 回调事件通知您。
+调用 [exitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#exitRoom) 接口即可退出当前的房间，SDK 会在退房结束后通过 onExitRoom(int reason) 回调事件通知您。
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const trtcCloud = new TRTCCloud();
@@ -30,7 +30,7 @@ trtcCloud.exitRoom();
 
 [](id:step3)
 ### 步骤3：被迫退出当前房间
-除了用户主动退出房间，还有两种情况下您也会收到 [onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) 回调：
+除了用户主动退出房间，还有两种情况下您也会收到 [onExitRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) 回调：
 - **情况一：被踢出当前房间**
 您可以通过服务端的 [RemoveUser](https://intl.cloud.tencent.com/document/product/647/34268) | [RemoveUserByStrRoomId](https://intl.cloud.tencent.com/document/product/647/39630) 接口将某个用户踢出某个 TRTC 房间，将该用户踢出后，该用户会收到 onExitRoom(1) 的回调。
 
