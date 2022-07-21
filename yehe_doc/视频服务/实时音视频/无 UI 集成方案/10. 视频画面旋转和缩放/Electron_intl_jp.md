@@ -1,7 +1,7 @@
 Tencent Real-Time Communication (TRTC)は、ローカル画面とリモート画面の回転方向と塗りつぶしモードのカスタム制御をサポートします。
 
 ## ローカル画面のカスタム制御
-[setLocalRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setLocalRenderParams)を呼び出すことにより、ローカルレンダリングパラメータを設定できます。
+[setLocalRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setLocalRenderParams)を呼び出すことにより、ローカルレンダリングパラメータを設定できます。
 ```javascript
 import TRTCCloud, { 
   TRTCRenderParams, TRTCVideoRotation, TRTCVideoFillMode,
@@ -20,7 +20,7 @@ trtcCloud.startLocalPreview(localUserDom);
 ```
 
 ## リモート画面のカスタム制御
-[setRemoteRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setRemoteRenderParams)を呼び出すことにより、リモートレンダリングパラメータを設定できます。
+[setRemoteRenderParams](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setRemoteRenderParams)を呼び出すことにより、リモートレンダリングパラメータを設定できます。
 ```javascript
 import TRTCCloud, { 
   TRTCRenderParams, TRTCVideoRotation, TRTCVideoFillMode,
