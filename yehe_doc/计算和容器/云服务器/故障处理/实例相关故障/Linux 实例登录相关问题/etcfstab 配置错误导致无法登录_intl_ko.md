@@ -1,9 +1,9 @@
 ## 오류 설명[](id:symptom)
-오류: CVM에 로그인할 수 없습니다. VNC를 통해 CVM에 로그인한 후 시스템 시작 실패를 확인하고 “Welcome to emergency mode”라는 프롬프트 메시지를 볼 수 있습니다.
+SSH를 통해 원격으로 Linux CVM에 로그인할 수 없지만 VNC를 통해 CVM에 로그인한 후 시스템 시작 실패를 확인하고 “Welcome to emergency mode”라는 프롬프트 메시지를 볼 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/dea541a48d2a01503c1dbbc85b0d396f.png)
 
 
-## 예상 원인
+## 가능한 원인
 `/etc/fstab`이 제대로 구성되지 않았습니다.
 예를 들어 `/etc/fstab` 파일의 장치 이름을 기반으로 디스크 자동 연결을 구성했습니다. CVM이 다시 시작될 때 장치 이름이 변경되면 이 구성으로 인해 시스템이 정상적으로 시작되지 않습니다.
 
@@ -46,12 +46,12 @@ vi /etc/fstab
 ::: 방법2: 복구 모드[](id:useRescue)
 1. 인스턴스 복구 모드로 들어갑니다. [복구 모드 사용](https://intl.cloud.tencent.com/document/product/213/46157)을 참고하십시오.
 <dx-alert infotype="notice" title="">
-[복구 모드를 사용한 시스템 복구](https://intl.cloud.tencent.com/document/product/213/46157?lang=en&pg=#using-rescue-mode-to-repair-system)에 설명된 `mount` 및 `chroot` 명령을 실행하고 대상 시스템에 진입했는지 확인합니다.
+[복구 모드를 사용한 시스템 복구](https://intl.cloud.tencent.com/document/product/213/46157#.E4.BD.BF.E7.94.A8.E6.95.91.E6.8F.B4.E6.A8.A1.E5.BC.8F.E8.BF.9B.E8.A1.8C.E7.B3.BB.E7.BB.9F.E4.BF.AE.E5.A4.8D)에 설명된 `mount` 및 `chroot` 명령을 실행하고 대상 시스템에 진입했는지 확인합니다.
 </dx-alert>
 2. 방법1의 [3단계](#Step3) - [6단계](#Step6)에 따라 `/etc/fstab` 파일을 복구합니다.
-3. 인스턴스 복구 모드를 종료합니다. [복구 모드 종료](https://intl.cloud.tencent.com/document/product/213/46157?lang=en&pg=#exiting-rescue-mode)를 참고하십시오.
+3. [복구 모드 종료](https://intl.cloud.tencent.com/document/product/213/46157#.E9.80.80.E5.87.BA.E6.95.91.E6.8F.B4.E6.A8.A1.E5.BC.8F)를 참고하여 인스턴스 복구 모드를 종료합니다.
 4. 인스턴스가 복구 모드를 종료한 후에도 여전히 종료됩니다. [인스턴스 스타트업](https://intl.cloud.tencent.com/document/product/213/38168)의 설명에 따라 시작합니다. 그런 다음 시스템을 정상적으로 시작하고 로그인할 수 있는지 확인합니다.
-5. 로그인 성공 후 디스크의 자동 연결을 구성해야 하는 경우 [Cloud Disk Automount Failed upon Linux CVM Restart](https://intl.cloud.tencent.com/document/product/362/40001)를 참고하십시오.
+5. 로그인 성공 후 디스크의 자동 연결을 구성하려면 [Configuring the /etc/fstab file](https://intl.cloud.tencent.com/document/product/362/40001)을 참고하십시오.
 
 :::
 </dx-tabs>

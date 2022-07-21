@@ -1,12 +1,11 @@
 ## 작업 시나리오
 Tencent Cloud에서 제공하는 공용 이미지 외에도 동일한 구성으로 CVM 인스턴스를 만들 수 있는 사용자 정의 이미지를 만들 수도 있습니다.
 
-
 <dx-alert infotype="explain" title="">
 이미지는 데이터 저장을 위해 CBS 스냅샷 서비스를 사용합니다. 
 
- - 사용자 정의 이미지를 생성하면 해당 이미지와 연결된 스냅샷이 기본 생성됩니다. 사용자 정의 이미지 보관은 일정 스냅샷 요금이 발생합니다. 자세한 내용은 [스냅샷 과금 개요](https://intl.cloud.tencent.com/document/product/362/32415)를 참고하십시오.
-  </dx-alert>
+ - 사용자 정의 이미지를 생성하면 해당 이미지와 연결된 스냅샷이 기본 생성됩니다. 사용자 정의 이미지 보관은 일정 스냅샷 요금이 발생합니다. 자세한 내용은 [Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415)를 참고하십시오.
+    </dx-alert>
 
 
 
@@ -17,7 +16,7 @@ Tencent Cloud에서 제공하는 공용 이미지 외에도 동일한 구성으�
 - 다음의 디렉터리/파일은 삭제됩니다:
  - `/var/log/`  
  - `/root/.bash_history、/home/ubuntu/.bash_history`（Ubuntu 시스템）
-- Linux 인스턴스가 사용자 정의 이미지를 생성할 때, `/etc/fstab`에 데이터 디스크 구성이 포함되지 않으면 해당 이미지로 생성된 인스턴스가 정상적으로 실행되지 않습니다. 사용자 정의 이미지를 생성한 Linux 인스턴스에 마운트된 데이터 디스크가 있다면, `/etc/fstab`에서 자체 구성된 데이터 디스크 관련 구성을 주석 처리하거나 삭제해야 합니다.
+- Linux 인스턴스에 데이터 디스크가 있지만 시스템 디스크의 사용자 정의 이미지만 만드는 경우 /etc/fstab에 데이터 디스크 구성이 포함되어 있지 않은지 확인하십시오. 그렇지 않으면 이 이미지로 생성된 인스턴스를 정상적으로 시작할 수 없습니다.
 - 제작 프로세스는 10분 또는 그 이상 시간이 소요되며 구체적인 시간은 인스턴스의 데이터 크기와 연관되므로 서비스에 영향을 주지 않도록 미리 준비하십시오.
 - 콘솔에서 또는 API를 통해 Cloud Physical Machine(CPM) 인스턴스를 사용하여 이미지를 생성할 수 없습니다. Cloud Virtual Machine(CVM)을 사용하여 만들 수 있습니다.
 - Windows 인스턴스가 도메인에 들어가야 하고 도메인 계정을 사용해야 하는 경우, 사용자 정의 이미지 생성 전에 Sysprep 작업을 실행하여 인스턴스가 도메인에 들어간 후 SID가 고유한지 확인하십시오. 자세한 내용은 [Sysprep을 통해 CVM에 도메인을 입력하여 SID 가 고유성을 갖도록 구현](https://intl.cloud.tencent.com/document/product/213/35876)을 참고하십시오.
@@ -36,7 +35,7 @@ Tencent Cloud에서 제공하는 공용 이미지 외에도 동일한 구성으�
 2. 인스턴스의 관리 페이지에서 실제 사용된 뷰 모드에 따라 작업합니다.
   - **리스트 뷰**: 인스턴스가 위치한 행의 오른쪽에서 **더 보기** > **인스턴스 상태** > **종료**를 선택합니다. 아래 이미지와 같습니다.
 ![종료](https://main.qcloudimg.com/raw/cc0bb1c82b96cca94cb7c1c011b664a7.png)
-  - **탭 뷰**: 인스턴스가 위치한 행의 오른쪽에서 **더 보기** > **인스턴스 상태** > **종료**를 선택합니다. 아래 이미지와 같습니다.
+  - **탭 뷰**: 인스턴스 세부 정보 페이지에서 아래와 같이 **종료**를 선택합니다.
 ![종료](https://qcloudimg.tencent-cloud.cn/raw/bd0d10a80c75a653adee564105a9820b.png)
 
 
@@ -61,7 +60,7 @@ Tencent Cloud에서 제공하는 공용 이미지 외에도 동일한 구성으�
 
 :::
 ::: \sAPI\s로 생성
-CreateImage 인터페이스를 이용하여 사용자 정의 이미지를 생성할 수 있습니다. 자세한 내용은 [CreateImage](https://intl.cloud.tencent.com/document/product/213/33276)를 참조 바랍니다.
+CreateImage 인터페이스를 이용하여 사용자 정의 이미지를 생성할 수 있습니다. 자세한 내용은 [CreateImage](https://intl.cloud.tencent.com/document/product/213/33276)를 참고하십시오.
 :::
 </dx-tabs>
 

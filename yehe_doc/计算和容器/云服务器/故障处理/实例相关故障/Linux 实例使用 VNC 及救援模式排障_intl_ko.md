@@ -62,13 +62,13 @@ chmod 711 /var/empty/sshd/
 ::: VNC를 사용하여 Linux 시스템 시작 실패 문제 해결[](id:OSStartupFailed)
 
 #### 오류 설명[](id:symptom)
-오류: CVM에 로그인할 수 없습니다. VNC를 통해 CVM에 로그인한 후 시스템 시작 실패를 확인하고 ‘Welcome to emergency mode’라는 프롬프트 메시지를 볼 수 있습니다.
+SSH를 통해 원격으로 Linux CVM에 로그인할 수 없지만 VNC를 통해 CVM에 로그인한 후 시스템 시작 실패를 확인하고 “Welcome to emergency mode”라는 프롬프트 메시지를 볼 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/dea541a48d2a01503c1dbbc85b0d396f.png)
 
 
 #### 예상 원인
 `/etc/fstab`이 제대로 구성되지 않았습니다.
-예를 들어 `/etc/fstab` 파일의 디바이스 이름을 기반으로 디스크 자동 연결을 구성했습니다. CVM이 다시 시작될 때 디바이스 이름이 변경되면 이 구성으로 인해 시스템이 정상적으로 시작되지 않습니다.
+예를 들어 `/etc/fstab` 파일의 장치 이름을 기반으로 디스크 자동 연결을 구성했습니다. CVM이 다시 시작될 때 장치 이름이 변경되면 이 구성으로 인해 시스템이 정상적으로 시작되지 않습니다.
 
 
 #### 해결 방식
@@ -97,7 +97,7 @@ vi /etc/fstab
 ![](https://qcloudimg.tencent-cloud.cn/raw/a2d9e675d6586341e6b5e3a221ee7906.png)
 7. **Esc**를 누르고 **:wq**를 입력한 다음 **Enter**를 눌러 구성을 저장하고 편집기를 종료합니다.
 8. 콘솔을 통해 인스턴스를 다시 시작합니다. 자세한 내용은 [인스턴스 재시작](https://intl.cloud.tencent.com/document/product/213/4928)을 참고하십시오.
-9. 인스턴스를 정상적으로 시작하고 로그인할 수 있는지 확인합니다.
+9. 정상적으로 실행 및 로그인할 수 있는지 확인합니다.
 
 
 :::

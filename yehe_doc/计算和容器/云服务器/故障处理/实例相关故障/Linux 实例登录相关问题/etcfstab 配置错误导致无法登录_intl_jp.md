@@ -1,57 +1,57 @@
-## 故障について[](id:symptom)
-CVMへのログインに失敗し、VNCでログインした後、「Welcome to emergency mode」というメッセージが表示され、システムの起動に失敗したことを確認します。以下の通りです。
+## 現象の説明[](id:symptom)
+SSHでLinux CVMへの正常なリモートログインができず、VNC方式でログインすると、システムの起動失敗が確認され、下図のように「Welcome to emergency mode」というメッセージが表示されます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/dea541a48d2a01503c1dbbc85b0d396f.png)
 
 
 ## 考えられる原因
-`/etc/fstab`が適切に設定されていない恐れがあります。
-例えば、`/etc/fstab`でデバイス名を使用してディスクを自動的にマウントするように設定したが、CVMの再起動時にデバイス名が変更されたため、システムが正常に起動できなくなります。
+`/etc/fstab`の設定が不適切であることが原因という可能性があります。
+例えば、`/etc/fstab`においてディスクがデバイス名で自動的にマウントされるように設定されている場合も、CVMを再起動するとデバイス名が変わってしまい、システムが正常に起動しなくなることがあります。
 
 
-## ソリューション
-[処理手順](#ProcessingSteps)を参照して`/etc/fstab`設定ファイルを修正し、サーバを再起動してから検証してください。
+## 解決方法
+[処理手順](#ProcessingSteps)を参照して`/etc/fstab`設定ファイルを修復し、サーバーを再起動してから検証します。
 
 
 ## 処理手順[](id:ProcessingSteps)
 
-インスタンスに入りこの問題に対処するには、次の2つの方法があります。
+インスタンスにアクセスし、この問題を処理する方法は2つあります。
 
 <dx-tabs>
-：：： 方法1：VNCを使用してログインします（推奨）[](id：useVNC)
-- [VNCを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32494)。
-2. VNC画面に入ったら、[故障について](#symptom)に表示されている画面が表示されたら、rootアカウントのパスワードを入力し、**Enter**キーを押してCVMにログインします。
- -入力したパスワードはデフォルトで表示されません。
- - rootアカウントのパスワードを持っていないか、それを忘れた場合は、方法2をご参照ください。
-3. [](id:Step3)以下のコマンドを実行して、`/etc/fstab ファイル`をバックアップします。このドキュメントではディレクトリの配下にバックアップすることを例とします。
+::: 方法1：VNCを使用したログイン（推奨）[](id:useVNC)
+1. [VNCを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32494)します。
+2. VNCインターフェースに進み、[現象の説明](#symptom)のようなインターフェースが表示されたら、rootアカウントのパスワードを入力し、**Enter**を押してサーバーにログインしてください。
+ - 入力されたパスワードは、デフォルトでは表示されません。
+ - アカウントのパスワードをお持ちでない場合、または忘れてしまった場合は、方法2を参照して処理してください。
+3. [](id:Step3)以下のコマンドを実行し、`/etc/fstab`ファイルのバックアップを取ります。ここでは、`/home`ディレクトリへのバックアップを例に取ります。
 ```shellsession
 cp /etc/fstab /home
 ```
-4. 以下のコマンドを実行して、VIエディタを利用して`/etc/fstab` ファイルを開きます。
+4. 以下のコマンドを実行し、VIエディタを使用して`/etc/fstab`ファイルを開きます。
 ```shellsession
 vi /etc/fstab
 ```
-5. **i**キーを押して編集モードに入り、カーソルを誤った設定の行の先頭に移動し、`#`と入力して行の設定をコメントします。以下の通りです。
+5. 下図に示すように、**i**を押して編集モードに入り、カーソルを設定エラーの行の先頭に移動させ、`#`を入力して行の設定についてコメントアウトします。
 <dx-alert infotype="explain" title="">
-設定が間違っているかどうかと判断できない場合は、システムディスクを除くすべてのマウントディスクの設定にコメントを付け、CVMが正常に戻ってから[ステップ8](#Step7)を参照して設定することをお勧めします。
+設定エラーを特定できない場合は、システムディスク以外のマウントされているすべてのディスクの設定についてコメントアウトし、サーバーが正常な状態に戻った後に[ステップ8](#Step7)を参照して設定することをお勧めします。
 </dx-alert>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/1c238789186d7f24c0244e0307bc3a22.png"/>
-6. [](id:Step6)**Esc**を押して、**:wq**を入力し、**Enter**を押してください。設定を保存して、エディターを終了します。
-7. コンソールからインスタンスを再起動し、起動後に正常に起動してログインできるか確認します。
+6. [](id:Step6)**Esc**を押して**:wq** と入力した後、**Enter**を押して設定を保存し、エディタを終了します。
+7. コンソールからインスタンスを再起動し、正常に起動、ログインできるかどうかを検証します。
 <dx-alert infotype="explain" title="">
-コンソールでインスタンスを再起動する具体的な手順については[インスタンスの再起動](https://intl.cloud.tencent.com/document/product/213/4928)をご参照ください。
+コンソールからインスタンスを再起動します。具体的な手順については、[インスタンスの再起動](https://intl.cloud.tencent.com/document/product/213/4928)をご参照ください。
 </dx-alert>
-8. [](id：Step8)ログインが成功した後、ディスクの自動マウントを設定する場合は、[/etc/fstabファイルの設定](https://intl.cloud.tencent.com/document/product/362/40001)を参照して設定してください。
+8. [](id:Step8)ログインに成功した後、ディスクの自動マウントの設定が必要な場合は、[/etc/fstabファイルの設定](https://intl.cloud.tencent.com/document/product/362/40001)を参照し、対応する設定を行ってください。
 
 :::
-：：：方法2：レスキューモード[](id：useRescue)を使用します
-1. [レスキューモードを使用]（https://intl.cloud.tencent.com/document/product/213/46157）を参照して、レスキューモードに入ります。
+::: 方法2：レスキューモードの使用[](id:useRescue)
+1. [レスキューモードの使用](https://intl.cloud.tencent.com/document/product/213/46157)を参照し、インスタンスレスキューモードに入ります。
 <dx-alert infotype="notice" title="">
-「レスキューモードを使用したシステム修復」(https://intl.cloud.tencent.com/document/product/213/46157?lang=en&pg=#using-rescue-mode-to-repair-system)手順の`mount`と`chroot`に関連するコマンドを実行し、業務自体のシステムに入ったことを確認する必要があります。
+[レスキューモードの使用によるシステム修復](https://intl.cloud.tencent.com/document/product/213/46157#.E4.BD.BF.E7.94.A8.E6.95.91.E6.8F.B4.E6.A8.A1.E5.BC.8F.E8.BF.9B.E8.A1.8C.E7.B3.BB.E7.BB.9F.E4.BF.AE.E5.A4.8D)手順の中の`mount`と`chroot`の関連コマンドを実行し、業務そのものにアクセスできることを確認する必要があります。
 </dx-alert>
-2. 方法1のステップ3（#Step3）〜ステップ6（#Step6）に従って、`/etc/fstab`ファイルを修復します。
-3. [レスキューモードを終了](https://intl.cloud.tencent.com/document/product/213/46157?lang=en&pg=#exiting-rescue-mode)を参照して、レスキューモードを終了します。
-4. インスタンスがレスキューモードを終了すると、シャットダウン状態になります。[インスタンスの起動](https://intl.cloud.tencent.com/document/product/213/38168) を参考に起動し、起動後にシステムが正常に起動してログインできるか検証してください。
-5. ログインが成功した後、ディスクの自動マウントを設定する場合は、[/etc/fstabファイルの設定](https://intl.cloud.tencent.com/document/product/362/40001)を参照して設定してください。
+2. 方法1の[ステップ3](#Step3) - [ステップ6](#Step6)に従って、`/etc/fstab`ファイルの修復を行います。
+3. [レスキューモードの終了](https://intl.cloud.tencent.com/document/product/213/46157#.E9.80.80.E5.87.BA.E6.95.91.E6.8F.B4.E6.A8.A1.E5.BC.8F)を参照し、インスタンスのレスキューモードを終了します。
+4. インスタンスがレスキューモードを終了すると、シャットダウン状態になります。[インスタンスの起動](https://intl.cloud.tencent.com/document/product/213/38168)を参照してシステムを起動し、起動後に正常にログインできることを確認してください。
+5. ログインに成功した後、ディスクの自動マウントの設定が必要な場合は、[/etc/fstabファイルの設定](https://intl.cloud.tencent.com/document/product/362/40001)を参照し、対応する設定を行ってください。
 
 :::
 </dx-tabs>
