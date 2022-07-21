@@ -16,7 +16,7 @@ Thanks to full-duplex, WebSocket is widely used in scenarios such as social netw
  - Off status (default): WebSocket is disabled.
  - On status: WebSocket is enabled.
 3. In the WebSocket maximum connection time window, set the maximum duration and click **Save**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/c4b62dbbdb0408d213272dbd49ad199c.png" style="zoom:80%;" />
+
 > ?
 > - Maximum connection time: If there is no data transmissions within the period, the connection will be disconnected. 
 > - The maximum connection duration varies with the following editions:
