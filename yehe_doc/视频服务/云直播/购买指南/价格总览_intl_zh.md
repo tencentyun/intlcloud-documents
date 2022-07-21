@@ -123,12 +123,6 @@
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">后付费-月结</a></td>
 </tr><tr>
-<td colspan=2> 直播 SDK  License</td>
-<td>
-用于解锁移动直播基础版 SDK 在 iOS 和 Android 上的使用权限，联系商务购买移动直播 SDK License 使用授权。
-</td>
-<td>-</td>
-</tr><tr>
 <tr><td colspan=2>拉流转推</td>
 <td>拉流转推任务按任务时长计费。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/41059">后付费-日结</a>
