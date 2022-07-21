@@ -1,48 +1,45 @@
-TDSQL은 구문이 mariadb/Oracle과 호환되는 sequence 키워드를 지원합니다. sequence는 전역적으로 증가하고 분산 아키텍처에서 고유해야 합니다. 본문은 sequence를 사용하는 방법을 설명합니다.
+Sequence 키워드 구문은 MariaDB/Oracle과 호환되지만 시퀀스는 전역적으로 증가하고 고유해야 합니다. 구체적인 사용법은 다음과 같습니다.
+
+>?
+>- TDSQL for MySQL에서 Sequence를 사용하는 경우 키워드에는 `tdsql_` 접두사가 있어야 하고 proxy 버전은 1.19.5-M-V2.0R745D005 이상이어야 합니다. `/*Proxy*/show status` 문을 실행하여 proxy 버전을 볼 수 있습니다. proxy가 이전 버전에 있는 경우 [티켓 제출](https://console.cloud.tencent.com/workorder/category)하여 업그레이드할 수 있습니다.
+>- 현재 Sequence는 분산 트랜잭션의 전역 고유성을 보장하기 위해 사용되며, 이는 상대적으로 성능이 낮아 동시성이 낮은 시나리오에만 적합합니다.
 
 시퀀스를 생성하려면 CREATE SEQUENCE 시스템 권한이 필요합니다. 시퀀스를 생성하는 구문은 다음과 같습니다.
 ```
-　　CREATE SEQUENCE 시퀀스 이름
-　　[INCREMENT BY n]
+　　CREATE TDSQL_SEQUENCE 시퀀스 이름
 　　[START WITH n]
-　　[{MAXVALUE/ MINVALUE n| NOMAXVALUE}]
-　　[{CYCLE|NOCYCLE}]
-　　[{CACHE n| NOCACHE}];
+　　[{TDSQL_MINALUE/ TDSQL_MAXMINVALUE n| TDSQL_NOMAXVALUE}]
+　　[TDSQL_INCREMENT BY n]
+　　[{TDSQL_CYCLE|TDSQL_NOCYCLE}]
 ```
 
->?현재 sequence는 분산 아키텍처에서 전역적으로 고유해야 하므로 상대적으로 성능이 저하되어 동시성이 낮은 시나리오에만 적합합니다.
+## Sequence 생성
+```
+create tdsql_sequence test.s1 start with 12 tdsql_minvalue 10 maxvalue 50000 tdsql_increment by 5 tdsql_nocycle
+create tdsql_sequence test.s2 start with 12 tdsql_minvalue 10 maxvalue 50000 tdsql_increment by 1 tdsql_cycle
+```
+- 상기 SQL 문에는 시작값, 최소값, 최대값, 증분, 버퍼 크기, 순환 여부 등 6개의 매개변수가 포함되어 있으며 모두 양의 정수여야 합니다.
+- 이러한 매개변수의 기본값은 시작값(1), 최소값(1), 최대값(LONGLONG_MAX-1), 증분(1), 순환 여부(0)입니다.
 
-## 시퀀스 생성
-예시는 다음과 같습니다:
+## Sequence 삭제
 ```
-create sequence test.s1 start with 12 minvalue 10 maxvalue 50000  increment by 5  nocycle 
-create sequence test.s2 start with 12 minvalue 10 maxvalue 50000  increment by 1  cycle 
-```
-매개변수에는 시작 값, 최소값, 최대값, 증분 및 순환 여부가 포함됩니다.
-
-## 시퀀스 삭제
-예시는 다음과 같습니다:
-```
-drop sequence test.s1
-```
-현재 제약 조건: 모든 매개변수는 양의 정수여야 합니다.
-
-## 시퀀스 보기
-예시는 다음과 같습니다:
-```
-show create sequence test.s1
+drop tdsql_sequence test.s1
 ```
 
-## 시퀀스 사용
-#### 테이블 시퀀스 조작
+## Sequence 쿼리
 ```
-select nextval(test.s1)
-select next value for test.s1
+show create tdsql_sequence test.s2
 ```
 
-예시:
+## Sequence 사용
+#### Sequence 사용하여 다음 값 얻기
 ```
-mysql> select nextval(test.s1);
+select tdsql_nextval(test.s2)
+select next value for test.s2
+```
+
+```
+mysql> select tdsql_nextval(test.s1);
 +----+
 | 12 |
 +----+
@@ -50,7 +47,7 @@ mysql> select nextval(test.s1);
 +----+
 1 row in set (0.18 sec)
 
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 12 |
 +----+
@@ -58,7 +55,7 @@ mysql> select nextval(test.s2);
 +----+
 1 row in set (0.13 sec)
 
-mysql> select nextval(test.s1);
+mysql> select tdsql_nextval(test.s1);
 +----+
 | 17 |
 +----+
@@ -66,7 +63,7 @@ mysql> select nextval(test.s1);
 +----+
 1 row in set (0.01 sec)
 
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 13 |
 +----+
@@ -83,7 +80,7 @@ mysql> select next value for test.s1;
 1 row in set (0.01 sec)
 ```
 
-nextval은 select 또는 다른 문에서 사용할 수 있습니다.
+#### insert 및 기타 명령문에서 nextval 사용
 ```
 mysql> select * from test.t1;
 +----+------+
@@ -93,7 +90,7 @@ mysql> select * from test.t1;
 +----+------+
 1 row in set (0.00 sec)
 
-mysql> insert into test.t1(a,b) values(nextval(test.s2),3);
+mysql> insert into test.t1(a,b) values(tdsql_nextval(test.s2),3);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> select * from test.t1;
@@ -106,16 +103,14 @@ mysql> select * from test.t1;
 2 rows in set (0.00 sec)
 ```
 
-#### 마지막 값 쿼리
-nextval이 데이터 쿼리에 사용되지 않은 경우 0이 반환됩니다.
+마지막 값은 관련 데이터를 결합하는 데 필요합니다. nextval 명령으로 얻은 적이 없으면 0이 반환됩니다.
 ```
-select lastval(test.s1)
-select previous value for test.s1;
+select tdsql_lastval(test.s1)
+select tdsql_previous value for test.s1;
 ```
 
-예시:
 ```
-mysql> select lastval(test.s1);
+mysql> select tdsql_lastval(test.s1);
 +----+
 | 22 |
 +----+
@@ -123,7 +118,7 @@ mysql> select lastval(test.s1);
 +----+
 1 row in set (0.00 sec)
 
-mysql> select previous value for test.s1;
+mysql> select tdsql_previous value for test.s1;
 +----+
 | 22 |
 +----+
@@ -132,15 +127,14 @@ mysql> select previous value for test.s1;
 1 row in set (0.00 sec)
 ```
 
-#### 다음 값 설정
-다음 값은 증가해야 하며 그렇지 않으면 0이 반환됩니다.
+현재 값보다 커야 하는 시퀀스의 다음 값을 설정합니다. 그렇지 않으면 0이 반환됩니다.
 ```
-select setval(test.s2,1000,bool use)  //  use는 기본적으로 1이며, 이는 1000 값이 사용되었으며 다음 값은 1000이 아님을 나타냅니다. use가 0이면 다음 값은 1000부터 시작합니다.
+select tdsql_setval(test.s2,1000,bool use)  //  use는 기본적으로 1이며, 이는 1000 값이 사용되었으며 다음 값은 1000이 아님을 나타냅니다. use가 0이면 다음 값은 1000부터 시작합니다.
 ```
 
-다음 값이 감소하면 0이 반환됩니다.
+시퀀스의 다음 값이 현재 값보다 작으면 시스템은 응답하지 않습니다.
 ```
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 15 |
 +----+
@@ -148,7 +142,7 @@ mysql> select nextval(test.s2);
 +----+
 1 row in set (0.01 sec)
 
-mysql> select setval(test.s2,10);
+mysql> select tdsql_setval(test.s2,10);
 +---+
 | 0 |
 +---+
@@ -156,7 +150,7 @@ mysql> select setval(test.s2,10);
 +---+
 1 row in set (0.03 sec)
 
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 16 |
 +----+
@@ -164,16 +158,16 @@ mysql> select nextval(test.s2);
 +----+
 ```
 
-다음 값이 증가하면 방금 설정한 값이 성공적으로 반환됩니다.
+설정된 다음 값이 현재 값보다 크면 설정 값이 성공적으로 반환됩니다.
 ```
-mysql> select setval(test.s2,20);
+mysql> select tdsql_setval(test.s2,20);
 +----+
 | 20 |
 +----+
 | 20 |
 +----+
 1 row in set (0.02 sec)
-mysql> select nextval(test.s2);
+mysql> select tdsql_nextval(test.s2);
 +----+
 | 21 |
 +----+
@@ -182,8 +176,31 @@ mysql> select nextval(test.s2);
 1 row in set (0.01 sec)
 ```
 
+강제로 다음 시퀀스 값을 설정합니다(현재 값보다 작은 값을 설정할 수 있음).
+```
+select tdsql_resetval(test.s2,1000)
+```
 
-다음 sequence 키워드에는 TDSQL_ 접두사가 붙습니다.
+강제 설정이 성공하면 설정된 값이 반환되고 그 다음 시퀀스 값이 시작됩니다.
+```
+mysql> select tdsql_resetval(test.s2,14);
++----+
+| 14 |
++----+
+| 14 |
++----+
+1 row in set (0.00 sec)
+
+mysql> select tdsql_nextval(test.s2);
++----+
+| 14 |
++----+
+| 14 |
++----+
+1 row in set (0.01 sec)
+```
+
+일부 Sequence 키워드에는 `TDSQL_` 접두사가 붙습니다.
 ```
  TDSQL_CYCLE
  TDSQL_INCREMENT
