@@ -154,7 +154,7 @@ SDK는 UDP 프로토콜을 통해 멀티미디어를 전송하므로, UDP를 차
 
 ## 참고 문서
 
-- [SDK API 매뉴얼](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/index.html)
+- [SDK API 매뉴얼](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html)
 - [SDK 업데이트 로그](https://intl.cloud.tencent.com/document/product/647/38702)
 - [Simple Demo 소스 코드](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTCSimpleDemo)
 - [API Example 소스 코드](https://github.com/LiteAVSDK/TRTC_Electron/tree/main/TRTC-API-Example)
