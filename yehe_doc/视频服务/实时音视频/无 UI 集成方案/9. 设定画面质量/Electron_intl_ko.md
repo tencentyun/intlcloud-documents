@@ -3,9 +3,9 @@
 
 ## 개요
 Electron SDK에서 다음과 같은 방법으로 이미지 화질을 조정할 수 있습니다.
-- [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom)의 TRTCAppScene 매개변수: 사용 사례 선택.
-- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam): 인코딩 매개변수 설정.
-- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam): 네트워크 제어 정책 설정.
+- [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#enterRoom)의 TRTCAppScene 매개변수: 사용 사례 선택.
+- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam): 인코딩 매개변수 설정.
+- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam): 네트워크 제어 정책 설정.
 
 본문은 TRTC SDK의 비디오 화질이 프로젝트별 요구 사항을 충족하도록 상기 매개변수를 구성하는 방법을 설명합니다.
 [Electron API Example: video-quality](https://github.com/tencentyun/TRTCSDK/blob/master/Electron/TRTC-API-Example/assets/code/advanced/video-quality/index.js) Demo를 참고하십시오.
@@ -86,13 +86,13 @@ controlMode 매개변수는 **TRTCQosControlModeServer**를 선택하면 됩니�
 
 ## 일반적인 오해
 #### 1. 해상도가 높을수록 더 좋지 않은가요?
-해상도가 높을수록 지원을 위해 더 높은 비트 레이트가 필요합니다. 해상도가 1280 x 720이지만 비트 레이트가 200Kbps로 지정되어 있으면 비디오 화질이 저하됩니다. [해상도 및 비트 레이트 참조표](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution)를 참고하여 매개변수를 설정하시기 바랍니다.
+해상도가 높을수록 지원을 위해 더 높은 비트 레이트가 필요합니다. 해상도가 1280 x 720이지만 비트 레이트가 200Kbps로 지정되어 있으면 비디오 화질이 저하됩니다. [해상도 및 비트 레이트 참조표](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution)를 참고하여 매개변수를 설정하시기 바랍니다.
 
 #### 2. 프레임 레이트가 높을수록 더 좋지 않은가요?
 카메라에 포착된 이미지는 노출 단계의 모든 실제 물체에 대한 완전한 매핑이기 때문에 프레임 레이트가 높을수록 비디오 원활성이 더 높은 것은 아닙니다. 게임에서의 FPS 개념과 다릅니다. 반대로 프레임 속도가 너무 높으면 각 비디오 프레임의 품질이 저하되고 카메라의 노출 시간이 줄어들어 이미지 효과가 악화됩니다.
 
 #### 3. 비트 레이트가 높을수록 더 좋지 않은가요?
-높은 비트 레이트에는 높은 해상도를 매칭해야 합니다. 320 x 240 해상도의 경우 1000Kbps의 비트 레이트는 낭비입니다. [해상도 및 비트 레이트 참조표](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution)를 참고하여 매개변수를 설정하시기 바랍니다.
+높은 비트 레이트에는 높은 해상도를 매칭해야 합니다. 320 x 240 해상도의 경우 1000Kbps의 비트 레이트는 낭비입니다. [해상도 및 비트 레이트 참조표](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution)를 참고하여 매개변수를 설정하시기 바랍니다.
 
 #### 4. Wi-Fi 네트워크에서 고해상도와 비트 레이트를 설정할 수 있나요?
 Wi-Fi 네트워크 속도가 항상 일정하지는 않습니다. 기기가 무선 라우터에서 멀리 떨어져 있거나 라우터 채널이 점유되어 있는 경우 Wi-Fi 네트워크가 4G만큼 빠르지 않을 수 있습니다.
