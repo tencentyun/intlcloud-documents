@@ -19,16 +19,16 @@ Electron 平台下的屏幕分享支持主路分享和辅路分享两种方案�
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
-// https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
+// https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#getScreenCaptureSources
 const screenList = rtcCloud.getScreenCaptureSources();
 ```
 
 [](id:step2)
 ## 步骤2：开始屏幕分享
- - 可以通过调用 [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) 选取分享目标。
- - 选取分享目标后，使用 [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) 接口可以启动屏幕分享。
- - 分享过程中，您依然可以通过调用 [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) 更换分享目标。
- - [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture) 和  [stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture) 的区别在于 pause 会停止屏幕内容的采集，并以暂停那一刻的画面垫片，所以在远端看到一直都是最后一帧画面，直到 resume。
+ - 可以通过调用 [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) 选取分享目标。
+ - 选取分享目标后，使用 [startScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startScreenCapture) 接口可以启动屏幕分享。
+ - 分享过程中，您依然可以通过调用 [selectScreenCaptureTarget](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#selectScreenCaptureTarget) 更换分享目标。
+ - [pauseScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#pauseScreenCapture) 和  [stopScreenCapture](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopScreenCapture) 的区别在于 pause 会停止屏幕内容的采集，并以暂停那一刻的画面垫片，所以在远端看到一直都是最后一帧画面，直到 resume。
 
 ```javascript
 import TRTCCloud, { 
@@ -73,8 +73,8 @@ rtcCloud.startScreenCapture(screenshareDom, TRTCVideoStreamType.TRTCVideoStreamT
 
 [](id:step4)
 ## 步骤4：观看屏幕分享
-当房间里有一个用户启动了屏幕分享，会通过辅流进行分享。房间里的其他用户会通过 [onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable) 事件获得这个通知。
-希望观看屏幕分享的用户可以通过 [startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) 接口来启动渲染远端用户辅流画面。
+当房间里有一个用户启动了屏幕分享，会通过辅流进行分享。房间里的其他用户会通过 [onUserSubStreamAvailable](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onUserSubStreamAvailable) 事件获得这个通知。
+希望观看屏幕分享的用户可以通过 [startRemoteView](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startRemoteView) 接口来启动渲染远端用户辅流画面。
 
 ```javascript
 import TRTCCloud, { 
