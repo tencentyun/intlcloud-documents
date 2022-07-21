@@ -15,7 +15,6 @@
 	- [vivo 申请指南](#vivozhinan)
 	- [华为使用指南](#huaweizhinan)
 	
-
  申请到 Channel ID 后在推送 API 时指定即可。魅族、华为暂不支持通知消息，且不限额。
 2. 若不需要使用厂商通知/私信消息，仅需要自定义 Channel ID，从而做到根据 App 自身的业务消息类别进行消息分类，可根据不同厂商对应进行配置：
 <table>
@@ -74,7 +73,7 @@ OPush 平台上默认的是公信通道，目前在原有基础上新增“私�
 >! 通道 ID 一旦确定下来不能随意变更或删除。
 >
 ![]()
-2. 目前 OPPO 私信通道需要邮件申请后才能生效，请按照以下要求发送邮件给 OPush 平台，详情请参见 [OPPO PUSH 通道升级公测邀请](https://open.oppomobile.com/wiki/doc#id=11096)。
+2. 目前 OPPO 私信通道需要邮件申请后才能生效，请按照以下要求发送邮件给 OPush 平台，详情请参见 [OPPO PUSH 通道升级公测邀请](https://open.oppomobile.com/new/developmentDoc/info?id=11227)。
 
 
 ### OPPO 私信通道使用
