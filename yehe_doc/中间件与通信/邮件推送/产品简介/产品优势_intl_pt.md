@@ -5,7 +5,7 @@ O SES permite que você alcance, com rapidez, um mercado maior a custos mais bai
 O SES pode entregar e-mails de forma instantânea em mais de 200 países/regiões por meio dos principais provedores de serviços de e-mail do mundo.
 
 ### Alta estabilidade e velocidade
-O SES apresenta uma taxa de sucesso de entrega de 99% (exceto para endereços de e-mail inválidos e caixas de correio corporativas restritas). Além disso, ele entrega mais de 90% dos e-mails em 30 segundos.
+O SES apresenta uma taxa de sucesso de entrega de 97% (exceto para endereços de e-mail inválidos e caixas de correio corporativas restritas). Além disso, ele entrega mais de 90% dos e-mails em 30 segundos.
 
 ### Serviço profissional
 O SES realiza processos personalizados de warm-up de e-mails e fornece verificações de reputação especializadas para que você estabeleça e melhore sua reputação de e-mail com rapidez.
