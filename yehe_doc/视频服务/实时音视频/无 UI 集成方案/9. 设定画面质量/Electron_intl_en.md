@@ -3,9 +3,9 @@ Video properties include resolution, frame rate, and bitrate.
 
 ## Overview
 In the Electron SDK, you can adjust the image quality in the following ways:
-- `TRTCAppScene` parameter in [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom): Used to select the scenario.
-- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam): Used to set the encoding parameter.
-- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam): Used to specify the QoS control policy.
+- `TRTCAppScene` parameter in [enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#enterRoom): Used to select the scenario.
+- [setVideoEncoderParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setVideoEncoderParam): Used to set the encoding parameter.
+- [setNetworkQosParam](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setNetworkQosParam): Used to specify the QoS control policy.
 
 This document describes how to configure these parameters to make the video quality of the TRTC SDK meet your project-specific needs.
 You can also refer to [Electron API Example: video-quality](https://github.com/tencentyun/TRTCSDK/blob/master/Electron/TRTC-API-Example/assets/code/advanced/video-quality/index.js).
@@ -86,13 +86,13 @@ For the `controlMode` parameter, select **TRTCQosControlModeServer**. `TRTCQosCo
 
 ## Common Misconceptions
 #### 1. Higher resolution is always better
-A higher resolution also requires a higher bitrate. If the resolution is 1280 x 720, but the bitrate is specified as 200 Kbps, the video will be very blurry. We recommend you set parameters by referring to the [Resolution and Bitrate Reference Table](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution).
+A higher resolution also requires a higher bitrate. If the resolution is 1280 x 720, but the bitrate is specified as 200 Kbps, the video will be very blurry. We recommend you set parameters by referring to the [Resolution and Bitrate Reference Table](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution).
 
 #### 2. Higher frame rate is always better
 Because the image captured by the camera is the result of physical light exposure, setting a higher frame rate does not always result in a smoother video. On the contrary, if the frame rate is too high, the quality of each video frame will be lowered because the exposure time is reduced.
 
 #### 3. Higher bitrate is always better
-A higher bitrate also requires a higher resolution. However, for a resolution of 320 x 240, a bitrate of 1000 Kbps is a waste. We recommend you set parameters by referring to the [Resolution and Bitrate Reference Table](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoResolution).
+A higher bitrate also requires a higher resolution. However, for a resolution of 320 x 240, a bitrate of 1000 Kbps is a waste. We recommend you set parameters by referring to the [Resolution and Bitrate Reference Table](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/global.html#TRTCVideoResolution).
 
 #### 4. High resolution and bitrate can always be set on a Wi-Fi network
 Wi-Fi network speed is generally not constant. If the device is far from the wireless router or the router channel is occupied, the Wi-Fi network may not be as fast as 4G.
