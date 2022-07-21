@@ -4,7 +4,7 @@
 [](id:step1)
 ### 步骤1：开始系统声音采集
 
-调用 [startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback) 接口开始系统声音采集，并将其混入上行音频流中，接口执行完成会通过 [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError) 回调成功或失败的结果。
+调用 [startSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#startSystemAudioLoopback) 接口开始系统声音采集，并将其混入上行音频流中，接口执行完成会通过 [onSystemAudioLoopbackError](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCallback.html#event:onSystemAudioLoopbackError) 回调成功或失败的结果。
 ```javascript
 import TRTCCloud, { TRTCAudioQuality } from 'trtc-electron-sdk';
 const rtcCloud = new TRTCCloud();
@@ -35,14 +35,14 @@ trtcCloud.startSystemAudioLoopback();
 [](id:step2)
 
 ### 步骤2：停止系统声音采集 
-调用 [stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback) 接口停止系统声音采集。
+调用 [stopSystemAudioLoopback](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#stopSystemAudioLoopback) 接口停止系统声音采集。
 ```javascript
 trtcCloud.stopSystemAudioLoopback();
 ```
 
 [](id:step3)
 ### 步骤3：设置系统声音采集音量
-调用 [setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume) 接口设置系统声音的采集音量。
+调用 [setSystemAudioLoopbackVolume](https://web.sdk.qcloud.com/trtc/electron/doc/en-us/trtc_electron_sdk/TRTCCloud.html#setSystemAudioLoopbackVolume) 接口设置系统声音的采集音量。
 
 ```javascript
 trtcCloud.setSystemAudioLoopbackVolume(60);
