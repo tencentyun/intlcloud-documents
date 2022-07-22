@@ -1,13 +1,13 @@
 ## Feature Description
 
-The API (`DescribeMediaJobs`) is used to pull jobs that meet specified conditions.
+This API (`DescribeMediaJob`) is used to query a specified job.
 
 ## Request
 
 #### Sample request
 
-```shell
-GET /jobs?size=&states=&queueId=&startCreationTime=&endCreationTime= HTTP/1.1
+```plaintext
+GET /jobs/<jobId> HTTP/1.1
 Host: <BucketName-APPID>.ci.<Region>.myqcloud.com
 Date: <GMT Date>
 Authorization: <Auth String>
@@ -28,19 +28,6 @@ This API only uses common request headers. For more information, see [Common Req
 #### Request body
 This request does not have a request body.
 
-#### Request parameters
-The nodes are as described below:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-|:---|:-- |:--|:--|:--|
-| queueId | None | ID of the queue from which jobs are pulled | String | Yes |
-| tag |None| Job's `MediaInfo` | String |Yes|
-| orderByTime | None | `Desc` (default) or `Asc` | String | No |
-| nextToken | None | Context token for pagination | String | No |
-| size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
-| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them with commas (,). Valid values: All (default), Submitted, Running, Success, Failed, Pause, Cancel | String | No |
-| startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T00:00:00+0800` | String | No |
-| endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T23:59:59+0800`  | String | No |
 
 ## Response
 
@@ -51,11 +38,11 @@ This API only returns common response headers. For more information, see [Common
 #### Response body
 The response body returns **application/xml** data. The following contains all the nodes:
 
-```shell
+``` plaintext
 <Response>
-  <JobsDetail>
-  </JobsDetail>
-  <NextToken></NextToken>
+      <JobsDetail>
+      </JobsDetail>
+      <NonExistJobIds></NonExistJobIds>
 </Response>
 ```
 
@@ -70,34 +57,33 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
 | JobsDetail | Response | Job details. Same as `Response.JobsDetail` in `CreateMediaJobs`. |  Container |
-| NextToken             | Response | Context token for pagination | String    |
+| NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node will not be returned. |  String |
 
 #### Error codes
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-
 ## Samples
 
-#### Request
+#### Request 1
 
-```shell
-GET /jobs?queueId=aaaaaaaaaaa&tag=MediaInfo HTTP/1.1
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0**********&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+```plaintext
+GET /jobs/jabcsdssfeipplsdfwe HTTP/1.1
+Accept: */*
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
-
 ```
 
-#### Response
+#### Response 1
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 666
 Connection: keep-alive
 Date: Thu, 15 Jun 2017 12:37:29 GMT
 Server: tencent-ci
-x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 <Response>
   <JobsDetail>
@@ -114,6 +100,31 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
       <Object>test.mp4</Object>
     </Input>
   </JobsDetail>
+</Response>
+```
+
+
+#### Request 2
+
+```plaintext
+GET /jobs/jabcsdssfeipplsdfwe HTTP/1.1
+Accept: */*
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
+Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
+```
+
+#### Response 2
+
+```plaintext
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 666
+Connection: keep-alive
+Date: Thu, 15 Jun 2017 12:37:29 GMT
+Server: tencent-ci
+x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
+
+<Response>
   <JobsDetail>
     <Code>Success</Code>
     <Message>Success</Message>
@@ -125,7 +136,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
     <Tag>MediaInfo<Tag>
     <Input>
-        <Object>test.mp4</Object>
+      <Object>test.mp4</Object>
     </Input>
     <Operation>
       <MediaInfo>
@@ -189,5 +200,3 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
   </JobsDetail>
 </Response>
 ```
-
-

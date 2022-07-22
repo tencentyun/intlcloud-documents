@@ -1,6 +1,6 @@
-## Overview
+## Feature Description
 
-This API (`CreateMediaJobs`) is used to submit a task.
+This API (`CreateMediaJobs`) is used to submit a job.
 
 ## Request
 
@@ -17,7 +17,11 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 
 #### Request headers
@@ -48,9 +52,9 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
-| Tag                | Request | Task type: MediaInfo                          | String    | Yes   |
+| Tag                | Request | Job type: MediaInfo                          | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| QueueId            | Request | Queue ID of the task                                         | String    | Yes   |
+| QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
 `Input` has the following sub-nodes:
@@ -93,7 +97,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -103,7 +107,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| JobsDetail | Response | Task details |  Container |
+| JobsDetail | Response | Job details |  Container |
 
 
 `JobsDetail` has the following sub-nodes:
@@ -112,15 +116,15 @@ The nodes are described as follows:
 |:---|:-- |:--|:--|
 | Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
 | Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
-| JobId              | Response.JobsDetail | Task ID                               | String    |
-| Tag | Response.JobsDetail | Task type: MediaInfo | String |
-| State | Response.JobsDetail | Task status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
-| CreationTime | Response.JobsDetail | Task creation time |  String |
-| StartTime | Response.JobsDetail | Task start time |  String |
-| EndTime | Response.JobsDetail | Task end time |  String |
-| QueueId            | Response.JobsDetail | Queue ID of the task                       | String    |
-| Input              | Response.JobsDetail | Input resource address of the task                   | Container |
-| Operation | Response.JobsDetail | Operation rule. Up to six operation rules are supported. |  Container |
+| JobId              | Response.JobsDetail | Job ID                               | String    |
+| Tag | Response.JobsDetail | Job type: MediaInfo | String |
+| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
+| CreationTime | Response.JobsDetail | Job creation time |  String |
+| StartTime | Response.JobsDetail | Job start time |  String |
+| EndTime | Response.JobsDetail | Job end time |  String |
+| QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
+| Input              | Response.JobsDetail | Input resource address of the job                   | Container |
+| Operation | Response.JobsDetail | Operation rule. Up to six jobs can be performed on the same file. |  Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -129,7 +133,7 @@ Same as the `Request.Input` node in the request.
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| MediaInfo | Response.JobsDetail.Operation | Output video information. Not returned when the task is not completed. |  Container |
+| MediaInfo | Response.JobsDetail.Operation | Output video information. Not returned when the job is not completed. |  Container |
 
 
 `MediaInfo` has the following sub-nodes:
@@ -139,7 +143,7 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 
 #### Request
