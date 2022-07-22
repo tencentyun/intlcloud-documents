@@ -45,7 +45,7 @@ TUIRoom 基于腾讯云实时音视频和即时通信服务进行开发。
 ```bash
 npm create vite@latest TUIRoom-demo -- --template vue
 ```
->! 执行生成模板工程脚本的过程中，第一步直接回车，第二步选择 Vue，第三步选择 vue-ts。
+<dx-alert infotype="notice">执行生成模板工程脚本的过程中，第一步直接回车，第二步选择 Vue，第三步选择 vue-ts。</dx-alert>
 
 成功生成 Vue3 + Vite + TS 模板工程后，执行以下脚本：
 ```
@@ -61,7 +61,8 @@ npm install -g @vue/cli
 // 创建 Vue3 + Webpack + TS 模版工程
 vue create TUIRoom-demo
 ```
->! 执行生成模板工程脚本的过程中，生成模版的方式选择 Manually select features，其余配置选项参考图片。
+<dx-alert infotype="notice">执行生成模板工程脚本的过程中，生成模版的方式选择 Manually select features，其余配置选项参考图片。</dx-alert>
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/800412fb72b8e092f41fd06d5272601b.png)
 
 成功生成 Vue3 + Webpack + TS 模板工程后，执行以下脚本：
@@ -187,7 +188,8 @@ app.mount('#app');
 ```
 3. **配置 element-plus 按需引入**
   - TUIRoom 使用 element-plus UI 组件，为避免引入所有 element-plus组件，需要您在 `vite.config.ts` 中配置 element-plus 组件按需加载。
->! 以下配置项为增量配置，不要删除已经存在的 Vite 配置项。
+	
+<dx-alert infotype="notice">以下配置项为增量配置，不要删除已经存在的 Vite 配置项。</dx-alert>
 
 ```javascript
 // vite.config.ts
@@ -249,7 +251,7 @@ app.mount('#app');
 ```
 3. **配置 element-plus 按需引入**
   - TUIRoom 使用 element-plus UI 组件，为避免引入所有 element-plus组件，需要您在 `vue.config.js` 中配置 element-plus 组件按需加载。
->! 以下配置项为增量配置，不要删除已经存在的 vue.config.js 配置项。
+<dx-alert infotype="notice">以下配置项为增量配置，不要删除已经存在的 vue.config.js 配置项。</dx-alert>
 
 ```javascript
 // vue.config.js
