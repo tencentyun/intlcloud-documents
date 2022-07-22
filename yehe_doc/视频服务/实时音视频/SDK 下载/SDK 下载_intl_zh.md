@@ -97,17 +97,6 @@
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">运行 Demo</a>
             </div>
         </div>
-			  <div class="card-container">
-            <div class="card">
-                            <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
-                                <p class="titlename">模拟器 专用版 SDK</p>
-                <p style="color:#586376;">支持x86、x86_64架构，适配雷电模拟器等主流模拟器和声卡，音质佳、性能卓越，功能稳定。</p>
-                                <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_Emulator_latest.zip">ZIP 下载</a>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Android">GitHub</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35093">集成指引</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">运行 Demo</a>
-            </div>
-        </div>
 </div>
 
 ### iOS SDK
@@ -149,25 +138,6 @@
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46745">集成指引</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46748">运行 Demo</a>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
-                                <p class="titlename">Windows SDK（C# 版）</p>
-                <p style="color:#586376;">包含实时音视频（TRTC）、直播推流（TXLivePusher）、直播播放（TXLivePlayer）和点播播放（TXVodPlayer）等四项功能。</p>
-                          <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_CSharp_latest.zip">ZIP 下载</a>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">集成指引</a>
-            </div>
-        </div>
-				        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
-                                <p class="titlename">Windows SDK（ActiveX 版）</p>
-                <p style="color:#586376;">基于 ActiveX 插件封装的 TRTC SDK，让您在 ActiveX 场景下快速便捷的集成实时音视频服务。</p>
-                          <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_ActiveX_latest.zip">ZIP 下载</a>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
             </div>
         </div>
 </div>
@@ -291,7 +261,7 @@
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td rowspan='3' style="text-align:center">直播播放</td>
+    <td rowspan='4' style="text-align:center">直播播放</td>
     <td style="text-align:center">RTMP 协议</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
@@ -306,6 +276,11 @@
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
+  <tr>
+    <td style="text-align:center">快直播（WebRTC）</td>
+    <td style="text-align:center">-</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>	
   <tr>
     <td rowspan='3' style="text-align:center">点播播放</td>
     <td style="text-align:center">MP4 格式</td>
@@ -346,17 +321,17 @@
    <tr>
     <td rowspan='4' style="text-align:center">安装包增量</td>
     <td style="text-align:center">Android</td>
-    <td style="text-align:center">armv7：3.97M<br>arm64：4.33M</td>
-    <td style="text-align:center">armv7：9.15M<br>arm64：10.4M</td>
+    <td style="text-align:center">armv7: 3.97M<br>arm64: 4.33M</td>
+    <td style="text-align:center">armv7: 9.15M<br>arm64: 10.4M</td>
   </tr>
     <tr>
     <td style="text-align:center">iOS</td>
-    <td style="text-align:center">arm64：3.15M</td>
+    <td style="text-align:center">arm64: 3.15M</td>
     <td style="text-align:center">N/A</td>
   </tr>
 </table>
 
->! Windows SDK 和 Mac OS SDK 包含实时音视频（TRTC）、直播推流（TXLivePusher）、直播播放（TXLivePlayer）和点播播放（TXVodPlayer）等四项功能，暂不支持短视频相关功能，不区分精简版和全功能版。
+>! Windows SDK 和 Mac OS SDK 包含实时音视频（TRTC）、直播播放（TXLivePlayer）和点播播放（TXVodPlayer）等三项功能，暂不支持短视频相关功能，不区分精简版和全功能版。
 
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>

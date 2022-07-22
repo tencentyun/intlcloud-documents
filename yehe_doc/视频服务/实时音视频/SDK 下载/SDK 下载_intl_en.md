@@ -97,17 +97,6 @@ TRTC is a set of low-latency and high-quality audio/video communication services
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">Demo guide</a>
             </div>
         </div>
-			  <div class="card-container">
-            <div class="card">
-                            <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
-                                <p class="titlename">TRTC Emulator</p>
-                <p style="color:#586376;">Supports x86 and x86_64; compatible with mainstream emulators and sound cards; features high audio quality and excellent and stable performance.</p>
-                                <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_Emulator_latest.zip">ZIP file</a>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Android">GitHub</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35093">Integration guide</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35084">Demo guide</a>
-            </div>
-        </div>
 </div>
 
 ### iOS
@@ -149,25 +138,6 @@ TRTC is a set of low-latency and high-quality audio/video communication services
                 <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46745">Integration guide</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/46748">Demo guide</a>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
-                                <p class="titlename">Windows SDK (C#)</p>
-                <p style="color:#586376;">Integrates TRTC, TXLivePusher, TXLivePlayer, and TXVodPlayer.</p>
-                          <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_CSharp_latest.zip">ZIP file</a>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/647/35095">Integration guide</a>
-            </div>
-        </div>
-				        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/104e3aadbd4515f61c3f2f5378948cfb.svg" data-nonescope="true">
-                                <p class="titlename">Windows SDK (ActiveX)</p>
-                <p style="color:#586376;">An SDK packaged for ActiveX, which allows you to quickly integrate TRTC capabilities into an ActiveX control.</p>
-                          <a href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_ActiveX_latest.zip">ZIP file</a>
-                <a style="margin-left: 10px;" href="https://github.com/LiteAVSDK/TRTC_Windows">GitHub</a>
             </div>
         </div>
 </div>
@@ -291,7 +261,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td rowspan='3' style="text-align:center">Playing</td>
+    <td rowspan='4' style="text-align:center">Playing</td>
     <td style="text-align:center">RTMP</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
@@ -306,6 +276,11 @@ TRTC is a set of low-latency and high-quality audio/video communication services
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
+  <tr>
+    <td style="text-align:center">Live Event Broadcasting (WebRTC)</td>
+    <td style="text-align:center">-</td>
+    <td style="text-align:center">&#10003;</td>
+  </tr>		
   <tr>
     <td rowspan='3' style="text-align:center">Video on demand</td>
     <td style="text-align:center">MP4</td>
@@ -356,7 +331,7 @@ TRTC is a set of low-latency and high-quality audio/video communication services
   </tr>
 </table>
 
->! The Windows and macOS SDKs integrate TRTC, TXLivePusher, TXLivePlayer, and TXVodPlayer, but do not offer short video capabilities. They do not come in lite and professional editions.
+>! The Windows and macOS SDKs integrate TRTC, TXLivePlayer, and TXVodPlayer, but do not offer short video capabilities. They do not come in lite and professional editions.
 
 <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
 <script>
