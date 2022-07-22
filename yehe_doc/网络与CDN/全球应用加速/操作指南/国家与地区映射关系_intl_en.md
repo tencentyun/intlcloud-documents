@@ -1,30 +1,42 @@
-Due to different territory sizes of countries around the world, and performance and coverage, we have merged adjacent countries/regions into larger geographical regions, and split those with larger territories. When using the "globally unified domain name" feature and selecting regions to be covered by global acceleration nodes, refer to the following mapping between countries and regions to configure zones to be covered by global acceleration nodes.
+Due to different territory sizes of countries around the world, and considering data display and coverage of acceleration nodes, we have merged adjacent countries/regions into larger geographical zones, and split those with larger territories. When using the "globally unified domain name" feature and selecting regions to be covered by global acceleration nodes, refer to the following mapping between countries and regions to configure zones to be covered by global acceleration nodes.
 
 
 <table>
    <tr>
       <th width="81" >Continent</th>
-      <th width="100">Geographical Region</th>
+      <th width="100">Geographical Zone</th>
       <th width="150">Country/Region</th>
       <th>Province/State</th>
    </tr>
    <tr>
-      <td  rowspan="54">Asia</td>
-      <td  rowspan="8">East Asia</td>
-      <td>Chinese mainland - North China</td>
-      <td>Heilongjiang, Jilin, Liaoning, Beijing, Tianjin, Hebei, Shandong, Shanxi, Inner Mongolia</td>
-   </tr>
-   <tr>
+      <td  rowspan="57">Asia</td>
+      <td  rowspan="11">East Asia</td>
       <td>Chinese mainland - East China</td>
-      <td>Hubei, Anhui, Jiangsu, Shanghai, Zhejiang, Jiangxi, Fujian</td>
+      <td>Shandong, Jiangsu, Anhui, Zhejiang, Jiangxi, Fujian, Shanghai</td>
    </tr>
    <tr>
       <td>Chinese mainland - South China</td>
-      <td>Henan, Hunan, Guangdong, Guangxi, Hainan</td>
+      <td>Guangdong, Guangxi, Hainan  </td>
    </tr>
    <tr>
+      <td>Chinese mainland - North China</td>
+      <td>Hubei, Hunan, Henan</td>
+   </tr>
+   <tr>
+      <td>Chinese mainland - North China</td>
+      <td>Beijing, Tianjin, Hebei, Shanxi, Inner Mongolia  </td>
+   </tr>
+	  <tr>
       <td>Chinese mainland - Southwest China</td>
-      <td>Shaanxi, Gansu, Ningxia, Qinghai, Xinjiang, Tibet, Sichuan, Chongqing, Guizhou, Yunnan </td>
+      <td>Ningxia, Xinjiang, Qinghai, Shaanxi, Ganxu</td>
+   </tr>
+	  <tr>
+      <td>Chinese mainland - Southwest China</td>
+      <td>Sichuan, Yunnan, Guizhou, Tibet, Chongqing </td>
+   </tr>
+	  <tr>
+      <td>Chinese mainland - East China</td>
+      <td>Liaoning, Jilin, Heilongjiang </td>
    </tr>
    <tr>
       <td>Mongolia</td>
