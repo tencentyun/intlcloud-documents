@@ -1,7 +1,7 @@
 <span id = "gzyhsq"></span>
 ## Authorizing a Sub-User
 1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam) with the root account, select the target sub-user in the user list, and click **Authorize**.
-![](https://main.qcloudimg.com/raw/8c15b3841ea1c3efdc123028d284c330.png)
+
 2. In the pop-up dialog box, select a preset policy and click **OK** to complete the authorization.  
  - QcloudDMCFullAccess: full access to Database Management Console (DMC). It grants you permissions to use all DMC features, including adding or removing a TencentDB instance, logging in to a database, and so on.
  - QcloudDMCReadOnlyAccess: read-only access to DMC. It grants you permissions to view DMC pages but not to create any tasks.
@@ -84,4 +84,4 @@ The table below describes the resources that can be used by TencentDB and the co
 
 | Resource | Resource Description Method in Access Policies |
 | :--- | :----------------------------------------------------- |
-| Instance | ```qcs::dmc:$region:$account:instance/$instanceId``` |
+| Instance | `qcs::dmc:$region:$account:instance/$instanceId` |
