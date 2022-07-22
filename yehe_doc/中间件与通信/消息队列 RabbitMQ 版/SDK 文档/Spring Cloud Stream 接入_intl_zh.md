@@ -14,21 +14,25 @@
 ### 步骤1：添加依赖
 
 在 pom.xml 中添加`Stream RabbitMQ`相关依赖。
-```xml
+<dx-codeblock>
+:::  xml
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
 </dependency>
-```
+:::
+</dx-codeblock>
+
 
 ### 步骤2：准备配置
 
-1. 在配置文件中进行相应配置 （以`direct`交换机配置为例）。
-```yaml
+1. 在配置文件中进行相应配置 （以 `direct` 交换机配置为例）。
+<dx-codeblock>
+:::  yaml
 spring:
-  application:
+    application:
     name: application-name
-  cloud:
+    cloud:
     stream:
       rabbit:
         bindings:
@@ -72,69 +76,104 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: 192.168.xxx.xxx #集群接入地址，在集群管理页面操作列的获取接入地址获取。
+                host: amqp-xxx.rabbitmq.xxx.tencenttdmq.com #集群接入地址，在集群管理页面操作列的获取接入地址获取。
                 port: 5672
                 username: admin #角色名称
                 password: password #角色密钥
                 virtual-host: vhostnanme #Vhost名称
-```
-
-| 参数              | 说明                                                         |
-| :---------------- | :----------------------------------------------------------- |
-| bindingRoutingKey | 消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的**绑定 Key**列获取。![img](https://qcloudimg.tencent-cloud.cn/raw/554ac6e974817a9c066e7ec7d993c133.png) |
-| direct_log        | Exchange 名称，在控制台 Exchange 列表获取。                  |
-| route_queue1      | Queue名称，在控制台 Queue 列表获取。                         |
-| host              | 集群接入地址，在**集群管理**页面操作列的**获取接入地址**获取。![img](https://qcloudimg.tencent-cloud.cn/raw/8b09343ada668e380641f03f786d5496.png) |
-| port              | 集群接入地址端口，在**集群管理**页面操作列的**获取接入地址**获取。 |
-| username          | 角色名称，在 **[角色管理](https://console.intl.cloud.tencent.com/tdmq/role)** 页面复制。 |
-| password          | 角色密钥，在 **[角色管理](https://console.intl.intl.cloud.tencent.com/tdmq/role)** 页面复制**密钥**列复制。![img](https://qcloudimg.tencent-cloud.cn/raw/b16cbf2b818a5faf318661db1d0468de.png) |
-| virtual-host      | Vhost 名称，在控制台 Vhost 页面复制，格式是**“集群 ID + \| + vhost 名称”**。![img](https://qcloudimg.tencent-cloud.cn/raw/632be662b675293f4ffa9531c63ed911.png) |
-
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bindingRoutingKey</td>
+<td align="left">消费者消息队列绑定的 routing key，消息的路由规则，在控制台绑定关系列表的<strong>绑定 Key</strong>列获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/554ac6e974817a9c066e7ec7d993c133.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left">direct_log</td>
+<td align="left">Exchange 名称，在控制台 Exchange 列表获取。</td>
+</tr>
+<tr>
+<td align="left">route_queue1</td>
+<td align="left">Queue名称，在控制台 Queue 列表获取。</td>
+</tr>
+<tr>
+<td align="left">host</td>
+<td align="left">集群接入地址，在<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。<img src="https://qcloudimg.tencent-cloud.cn/raw/8b09343ada668e380641f03f786d5496.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left">port</td>
+<td align="left">集群接入地址端口，在<strong>集群管理</strong>页面操作列的<strong>获取接入地址</strong>获取。</td>
+</tr>
+<tr>
+<td align="left">username</td>
+<td align="left">角色名称，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制。</td>
+</tr>
+<tr>
+<td align="left">password</td>
+<td align="left">角色密钥，在 <strong><a href="https://console.cloud.tencent.com/tdmq/role">角色管理</a></strong> 页面复制<strong>密钥</strong>列复制。<img src="https://qcloudimg.tencent-cloud.cn/raw/b16cbf2b818a5faf318661db1d0468de.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left">virtual-host</td>
+<td align="left">Vhost 名称，在控制台 Vhost 页面复制，格式是<strong>“集群 ID + | + vhost 名称”</strong>。<img src="https://qcloudimg.tencent-cloud.cn/raw/632be662b675293f4ffa9531c63ed911.png" alt="img"></td>
+</tr>
+</tbody></table>
 2. 创建配置文件加载程序。
    - OutputMessageBinding.java
-```java
-     public interface OutputMessageBinding {
-         /**
-          * 要使用的通道名称(输出channel名称)
-          */
-         String OUTPUT = "output";
-     
-         @Output(OUTPUT)
-         MessageChannel output();
-     }
-```
+   <dx-codeblock>
+   :::  java
+   public interface OutputMessageBinding {
+	 /**
+		* 要使用的通道名称(输出channel名称)
+		*/
+	 String OUTPUT = "output";
+
+	 @Output(OUTPUT)
+	 MessageChannel output();
+   }
+   :::
+   </dx-codeblock>
    - InputMessageBinding.java
-```java
-     public interface InputMessageBinding {
-     
-         /**
-          * 要使用的通道名称
-          */
-         String INPUT = "input";
-     
-         @Input(INPUT)
-         SubscribableChannel input();
-     }xxxxxxxxxx public interface InputMessageBinding {    /**     * 要使用的通道名称     */    String INPUT = "input";    @Input(INPUT)    SubscribableChannel input();}public interface OutputMessageBinding {    /**     * 要使用的通道名称(输出channel名称)     */    String OUTPUT = "output";    @Output(OUTPUT)    MessageChannel output();}
-```
+   <dx-codeblock>
+   :::  java
+   public interface InputMessageBinding {
+
+	 /**
+		* 要使用的通道名称
+		*/
+	 String INPUT = "input";
+
+	 @Input(INPUT)
+	 SubscribableChannel input();
+   }
+   :::
+   </dx-codeblock>
+
 
 ### 步骤3：发送消息
 
 创建并编译消息发送程序 IMessageSendProvider.java。
-```java
+<dx-codeblock>
+:::  java
 // 引入配置类
 @EnableBinding(OutputMessageBinding.class)
 public class MessageSendProvider {
 
     @Autowired
     private OutputMessageBinding outputMessageBinding;
-
+    
     public String sendToDirect() {
         outputMessageBinding.output().send(MessageBuilder.withPayload("[info] This is a new message.[" + System.currentTimeMillis() + "]").setHeader("routeTo", "info").build());
         outputMessageBinding.output().send(MessageBuilder.withPayload("[waring] This is a new waring message.[" + System.currentTimeMillis() + "]").setHeader("routeTo", "waring").build());
         outputMessageBinding.output().send(MessageBuilder.withPayload("[error] This is a new error message.[" + System.currentTimeMillis() + "]").setHeader("routeTo", "error").build());
         return "success";
     }
-
+    
     public String sendToFanout() {
         for (int i = 0; i < 3; i++) {
             outputMessageBinding.output().send(MessageBuilder.withPayload("This is a new message" + i).build());
@@ -142,14 +181,17 @@ public class MessageSendProvider {
         return "success";
     }
 }
-```
+:::
+</dx-codeblock>
+
 
 在要发送消息的类中注入`MessageSendProvider` 即可进行发送消息。
 
 ### 步骤4：消费消息
 
 创建并编译消息消费程序 MessageConsumer.java。**可配置多个通道，可对不同消息队列的监听。**
-```java
+<dx-codeblock>
+:::  java
 @Service
 @EnableBinding(InputMessageBinding.class)
 public class MessageConsumer {
@@ -163,11 +205,13 @@ public class MessageConsumer {
         System.out.println(payload);
     }
 }
-```
+:::
+</dx-codeblock>
+
 
 ### 步骤5：查看消息
 
-如果您想确认消息是否成功发送至 TDMQ RabbitMQ 版，可以在控制台 **[集群管理](https://console.intl.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面查看接入的消费者情况。
+如果您想确认消息是否成功发送至 TDMQ RabbitMQ 版，可以在控制台 **[集群管理](https://console.cloud.tencent.com/tdmq/rocket-cluster)** > **Queue** 页面查看接入的消费者情况。
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/6ba8a057e8127ca8cd09f30e66d33c5e.png)
 

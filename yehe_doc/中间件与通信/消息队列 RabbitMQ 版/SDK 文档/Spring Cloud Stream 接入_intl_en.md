@@ -4,31 +4,35 @@ This document describes how to use open-source SDK to send and receive messages 
 
 ## Prerequisites
 
-- [You have created the required resources.](https://intl.cloud.tencent.com/document/product/1112/43069)
-- [You have installed JDK 1.8 or later.](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [You have installed Maven 2.5 or later.](http://maven.apache.org/download.cgi#)
-- [You have downloaded the demo.](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-springcloud-stream-demo.zip)
+- [You have created the required resources](https://intl.cloud.tencent.com/document/product/1112/43069).
+- [You have installed JDK 1.8 or later](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [You have installed Maven 2.5 or later](http://maven.apache.org/download.cgi#)
+- [You have downloaded the demo](https://tdmq-document-1306598660.cos.ap-nanjing.myqcloud.com/%E5%85%AC%E6%9C%89%E4%BA%91demo/rabbitmq/tdmq-rabbitmq-springcloud-stream-demo.zip)
 
 ## Directions
 
 ### Step 1. Add dependencies
 
 Add `Stream RabbitMQ` dependencies to `pom.xml`.
-```xml
+<dx-codeblock>
+:::  xml
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
 </dependency>
-```
+:::
+</dx-codeblock>
+
 
 ### Step 2. Prepare configurations
 
 1. Configure the configuration file (with the configuration of a `direct` exchange as an example).
-```yaml
+<dx-codeblock>
+:::  yaml
 spring:
-  application:
+    application:
     name: application-name
-  cloud:
+    cloud:
     stream:
       rabbit:
         bindings:
@@ -50,7 +54,7 @@ spring:
               # Routing keys bound to the consumer message queue
               bindingRoutingKey: info,waring,error
               # If the configuration is modified, the above routing keys will be processed
-              bindingRoutingKeyDelimiter: ","  # This configuration item indicates to use commas (,) to separate the configured routing keys
+              bindingRoutingKeyDelimiter: ","  # This configuration item indicates that commas are used to separate the configured routing keys
               # Message acknowledgment mode. For more information, see `AcknowledgeMode`
               acknowledge-mode: manual
               queueNameGroupOnly: true
@@ -72,69 +76,104 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: 192.168.xxx.xxx # Cluster access address, which can be obtained in the **Operation** column on the **Cluster** page
+                host: amqp-xxx.rabbitmq.xxx.tencenttdmq.com #Cluster access address, which can be obtained by clicking “Access Address” in the “Operation” column on the cluster management page.
                 port: 5672
                 username: admin # Role name
-                password: password # Role key
+                password: password # Role token
                 virtual-host: vhostnanme # Vhost name
-```
-
-| Parameter | Description |
-| :---------------- | :----------------------------------------------------------- |
-| bindingRoutingKey | Routing key bound to the consumer message queue, which is also the message routing rule and can be obtained in the **Binding Key** column in the binding list in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/554ac6e974817a9c066e7ec7d993c133.png) |
-| direct_log        | Exchange name, which can be obtained from the exchange list in the console.                  |
-| route_queue1      | Queue name, which can be obtained from the queue list in the console.                         |
-| host              | Cluster access address, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/8b09343ada668e380641f03f786d5496.png) |
-| port              | Cluster access port, which can be obtained from **Access Address** in the **Operation** column on the **Cluster** page. |
-| username          | Role name, which can be copied on the **[Role Management](https://console.intl.cloud.tencent.com/tdmq/role)** page. |
-| password          | Role key, which can be copied in the **Key** column on the **[Role Management](https://console.intl.intl.cloud.tencent.com/tdmq/role)** page. ![img](https://qcloudimg.tencent-cloud.cn/raw/b16cbf2b818a5faf318661db1d0468de.png) |
-| virtual-host      | Vhost name in the format of **"cluster ID + \| + vhost name"**, which can be copied on the **Vhost** page in the console. ![img](https://qcloudimg.tencent-cloud.cn/raw/632be662b675293f4ffa9531c63ed911.png) |
-
+:::
+</dx-codeblock>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bindingRoutingKey</td>
+<td align="left">Routing key bound to the consumer message queue, which is the routing rule of a message and can be obtained in the <strong>Binding Key</strong> column under the “Routing” tab on the cluster details page in the console. <img src="https://qcloudimg.tencent-cloud.cn/raw/554ac6e974817a9c066e7ec7d993c133.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left">direct_log</td>
+<td align="left">Exchange name, which can be obtained from the exchange list in the console.</td>
+</tr>
+<tr>
+<td align="left">route_queue1</td>
+<td align="left">Queue name, which can be obtained from the queue list in the console.</td>
+</tr>
+<tr>
+<td align="left">String</td>
+<td align="left">Cluster access address, which can be obtained in the console by clicking <strong>Access Address</strong> in the “Operation” column on the <strong>Cluster</strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/8b09343ada668e380641f03f786d5496.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left">port</td>
+<td align="left">Cluster access port, which can be obtained by clicking <strong>Access Address</strong> in the "Operation" column of the cluster list on the <strong>Cluster</strong> page.</td>
+</tr>
+<tr>
+<td align="left">name-server</td>
+<td align="left">Role name, which can be copied on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page.</td>
+</tr>
+<tr>
+<td align="left">password</td>
+<td align="left">Role token, which can be copied in the <strong>Token</strong> column on the <strong><a href="https://console.cloud.tencent.com/tdmq/role">Role Management</a></strong> page. <img src="https://qcloudimg.tencent-cloud.cn/raw/b16cbf2b818a5faf318661db1d0468de.png" alt=""></td>
+</tr>
+<tr>
+<td align="left">virtual-host</td>
+<td align="left">Vhost name in the format of <strong>“cluster ID + | + vhost name”</strong>. <img src="https://qcloudimg.tencent-cloud.cn/raw/632be662b675293f4ffa9531c63ed911.png" alt="img"></td>
+</tr>
+</tbody></table>
 2. Create a configuration file loading program.
    - OutputMessageBinding.java
-```java
-     public interface OutputMessageBinding {
-         /**
-          * Name of the channel to be used (output channel name)
-          */
-         String OUTPUT = "output";
-     
-         @Output(OUTPUT)
-         MessageChannel output();
-     }
-```
+   <dx-codeblock>
+   :::  java
+   public interface OutputMessageBinding {
+	 /**
+		* Name of the channel to be used (output channel name)
+		*/
+	 String OUTPUT = "output";
+
+	 @Output(OUTPUT)
+	 MessageChannel output();
+   }
+   :::
+   </dx-codeblock>
    - InputMessageBinding.java
-```java
-     public interface InputMessageBinding {
-     
-         /**
-          * Name of the channel to be used
-          */
-         String INPUT = "input";
-     
-         @Input(INPUT)
-         SubscribableChannel input();
-     }xxxxxxxxxx public interface InputMessageBinding {    /**     * Name of the channel to be used     */    String INPUT = "input";    @Input(INPUT)    SubscribableChannel input();}public interface OutputMessageBinding {    /**     * Name of the channel to be used (output channel name)     */    String OUTPUT = "output";    @Output(OUTPUT)    MessageChannel output();}
-```
+   <dx-codeblock>
+   :::  java
+   public interface InputMessageBinding {
+
+	 /**
+		* Name of the channel to be used
+		*/
+	 String INPUT = "input";
+
+	 @Input(INPUT)
+	 SubscribableChannel input();
+   }
+   :::
+   </dx-codeblock>
+
 
 ### Step 3. Send messages
 
 Create and compile the message sending program `IMessageSendProvider.java`.
-```java
+<dx-codeblock>
+:::  java
 // Import the configuration class
 @EnableBinding(OutputMessageBinding.class)
 public class MessageSendProvider {
 
     @Autowired
     private OutputMessageBinding outputMessageBinding;
-
+    
     public String sendToDirect() {
         outputMessageBinding.output().send(MessageBuilder.withPayload("[info] This is a new message.[" + System.currentTimeMillis() + "]").setHeader("routeTo", "info").build());
         outputMessageBinding.output().send(MessageBuilder.withPayload("[waring] This is a new waring message.[" + System.currentTimeMillis() + "]").setHeader("routeTo", "waring").build());
         outputMessageBinding.output().send(MessageBuilder.withPayload("[error] This is a new error message.[" + System.currentTimeMillis() + "]").setHeader("routeTo", "error").build());
         return "success";
     }
-
+    
     public String sendToFanout() {
         for (int i = 0; i < 3; i++) {
             outputMessageBinding.output().send(MessageBuilder.withPayload("This is a new message" + i).build());
@@ -142,14 +181,17 @@ public class MessageSendProvider {
         return "success";
     }
 }
-```
+:::
+</dx-codeblock>
+
 
 Inject `MessageSendProvider` to the message sending class to send messages.
 
 ### Step 4. Consume messages
 
 Create and compile the message consuming program `MessageConsumer.java`. **You can configure multiple channels to listen on different message queues.**
-```java
+<dx-codeblock>
+:::  java
 @Service
 @EnableBinding(InputMessageBinding.class)
 public class MessageConsumer {
@@ -163,11 +205,13 @@ public class MessageConsumer {
         System.out.println(payload);
     }
 }
-```
+:::
+</dx-codeblock>
+
 
 ### Step 5. View messages
 
-To check whether messages are sent to TDMQ for RabbitMQ successfully, view the connected consumer status on the **[Cluster](https://console.cloud.tencent.com/tdmq/rabbit-cluster)** > **Queue** page in the console.
+If you want to confirm whether the messages have been successfully sent to TDMQ for RabbitMQ, you can view the status of connected consumers on the **[Cluster](https://console.cloud.tencent.com/tdmq/rabbit-cluster)**> **Queue** page in the console.
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/6ba8a057e8127ca8cd09f30e66d33c5e.png)
 
