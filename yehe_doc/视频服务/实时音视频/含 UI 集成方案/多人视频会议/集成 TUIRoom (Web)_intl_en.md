@@ -45,7 +45,7 @@ The `TUIRoom` component is developed using Vue 3 + TypeScript + Pinia + Element 
 ```bash
 npm create vite@latest TUIRoom-demo -- --template vue
 ```
->! During the creation process, press Enter first, select "Vue", and then select "vue-ts".
+<dx-alert infotype="notice">During the creation process, press Enter first, select "Vue", and then select "vue-ts".
 
 After the template is generated, run the script below:
 ```
@@ -61,7 +61,8 @@ npm install -g @vue/cli
 // Create a Vue3 + Webpack + TypeScript template
 vue create TUIRoom-demo
 ```
->! Select "Manually select features" as the template generation mode. For other settings, refer to the figure below:
+<dx-alert infotype="notice">Select "Manually select features" as the template generation mode. For other settings, refer to the figure below:</dx-alert>
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/800412fb72b8e092f41fd06d5272601b.png)
 
 After the template is generated, run the script below:
@@ -187,7 +188,7 @@ app.mount('#app');
 ```
 3. **Import Element Plus components**
   - `TUIRoom` uses Element Plus UI components, which you need to import in `vite.config.ts`. You can import only the components you need.
->! Add the code in the file. Do not delete the existing configuration.
+<dx-alert infotype="notice">Add the code in the file. Do not delete the existing configuration.</dx-alert>
 
 ```javascript
 // vite.config.ts
@@ -249,7 +250,8 @@ app.mount('#app');
 ```
 3. **Import Element Plus components**
   - `TUIRoom` uses Element Plus UI components, which you need to import in `vue.config.js`. You can manually import only the components you need.
->! Add the code in the file. Do not delete the existing configuration.
+
+<dx-alert infotype="notice">Add the code in the file. Do not delete the existing configuration.</dx-alert>
 
 ```javascript
 // vue.config.js
