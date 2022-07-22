@@ -1,9 +1,9 @@
 You can bind multiple EIPs to a NAT gateway and assign them to different CVMs based on [SNAT rules](#cjgz) for the public network access.
 
-Assume that a NAT gateway is bound with EIPs including EIP1, EIP2, EIP3, and EIP4. The load balancer distributes the access traffic to these EIPs for CVM access to the public network. If EIP1, EIP2 and EIP3 are added to the SNAT address pool, CLB will distribute the access traffic to the three EIPs, and CVM will use them to access the public network.
+Assume that a NAT gateway is bound with EIPs including EIP1, EIP2, EIP3, and EIP4. The load balancer distributes the access traffic to these EIPs for CVM access to the public network. If EIP1, EIP2 and EIP3 are added to the SNAT address pool, CLB will distribute the access traffic to the three EIPs, and CVM will use them to access the public network. The CVMs that do not have a SNAT rule configured can access the public network through all EIPs bound to the NAT.
 >?
 >- When the load on a CVM instance surges, one EIP may not be enough to support huge access traffic, so you can choose to configure multiple EIPs.
->- In a NAT gateway, an EIP can be set in the SNAT rule and port forwarding rule at the same time. See [Creating Port Forwarding Rule](https://intl.cloud.tencent.com/document/product/1015/30237).
+>- In a NAT gateway, an EIP can be set in the SNAT rule and port forwarding rule at the same time. See [Creating Port Forwarding Rule](https://intl.cloud.tencent.com/document/product/1015/39942).
 >
 
 
@@ -20,19 +20,19 @@ This document describes how to create and manage a SNAT rule.
 Before creating a SNAT rule, make sure the route table where the subnet resides points to the corresponding NAT gateway. See [Routing to NAT Gateway](https://intl.cloud.tencent.com/document/product/1015/30236).
 
 
-## Creating a SNAT rule [](id:cjgz)
-1. Log in to the [**NAT Gateway console**](https://console.cloud.tencent.com/vpc/nat?fromNav).
+## Creating a SNAT Rule [](id:cjgz)
+1. Log in to the [NAT Gateway console](https://console.cloud.tencent.com/vpc/nat?fromNav).
 2. Click the ID of the target NAT gateway to go to its details page.
-3. Select the **SNAT Rule** tab and enter the SNAT rule admin page.
+3. Select the **SNAT rule** tab and enter the SNAT rule management page.
 4. Click **Create**.
-5. In the **Create SNAT Rule** dialog box, configure a SNAT rule as follows:
-   + **Source IP Range Granularity**: select **Subnet** or **CVM**.
-     + Subnet: when **Subnet** is selected, the associated route table of the subnet must point to the NAT Gateway, allowing CVMs in the subnet to access the public network based on the SNAT rule.
-     + CVM: when **CVM** is selected, the route table associated with the subnet where the CVM instance resides must point to the NAT Gateway. Only the selected CVM instances can access the public network based on the SNAT rule.
-   + **Subnet**: select a subnet or the subnet where the CVM instance resides.
-   + **CVM**: select CVM instances from the drop-down list if **CVM** is selected for **Source IP Range Granularity**.
-   + **Public IP**: assign EIP for the public network access.
-   + **Description**: enter the descriptive information with 60 or less characters.
+5. In the **Create SNAT rule** dialog box, configure a SNAT rule as follows:
+   + Source IP range granularity: Select “Subnet” or “CVM”.
+     + Subnet: When “Subnet” is selected, the associated route table of the subnet must point to the NAT gateway, allowing CVMs in the subnet to access the public network based on the SNAT rule.
+     + CVM: When “CVM” is selected, the route table associated with the subnet where the CVM resides must point to the NAT gateway. Only the selected CVMs can access the public network based on the SNAT rule. The CVMs that do not have a SNAT rule configured can access the public network through all EIPs bound to the NAT.
+   + Subnet: Select a subnet or the subnet where the CVM instance resides.
+   + CVM: Select CVM instances from the drop-down list if **CVM** is selected for **Source IP range granularity**.
+   + Public IP: Assign EIP for the public network access.
+   + Description: Enter the descriptive information with up to 60 characters.
 ![](https://main.qcloudimg.com/raw/551d8f30e40209db9aa4f249d5de4120.png)
 6. After the configuration is completed, click **Submit**.    
 
@@ -42,7 +42,7 @@ Before creating a SNAT rule, make sure the route table where the subnet resides 
 1. On the SNAT rule tab, click **Edit** on the right side of SNAT rule entry to enter the dialog box.
 ![]()
 2. Modify the public IP address or description, and click **Submit**.
-3. Click the pencil icon next to **Description** of the selected SNAT rule to directly modify its description.
+3. Click the pencil icon next to “Description” of the selected SNAT rule to directly modify its description.
     ![]()
 
 ## Querying SNAT Rules
@@ -50,7 +50,7 @@ Before creating a SNAT rule, make sure the route table where the subnet resides 
 ![]()
 2. Click the search icon to filter results.
 ![]()
-3. Click the **Subnet/CVM ID** to view the resource details.
+3. Click the “Subnet/CVM ID” to view the resource details.
 
 
 ## Deleting SNAT Rules
