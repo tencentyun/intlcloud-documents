@@ -19,11 +19,11 @@ This document describes how to view monitoring data in the TDMQ for CMQ console.
     <tbody>
     <tr>
         <td>Heaped Messages</td>
-        <td>`Activemessages`, which indicates the total number of messages that are in “Active” status in the queue in the selected time range. The metric value is approximate.</td>
+        <td><code>Activemessages</code>, which indicates the total number of messages that are in “Active” status in the queue in the selected time range. The metric value is approximate.</td>
     </tr>
     <tr>
         <td>Invisible Messages</td>
-        <td>A message will be made invisible (in “Inactive” status) after being fetched by the consumer. It will become visible (in “Active” status) again if it is not consumed after the `VisibilityTimeout`.</td>
+        <td>A message will be made invisible (in “Inactive” status) after being fetched by the consumer. It will become visible (in “Active” status) again if it is not consumed after the <code>VisibilityTimeout</code>.</td>
     </tr>
     <tr>
         <td>Production Speed (messages/sec)</td>
