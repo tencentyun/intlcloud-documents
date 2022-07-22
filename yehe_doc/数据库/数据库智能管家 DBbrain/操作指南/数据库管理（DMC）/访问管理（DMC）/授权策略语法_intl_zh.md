@@ -1,8 +1,8 @@
 <span id = "gzyhsq"></span>
 ## 给子用户授权
-1. 以父用户身份登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，在用户列表选择对应子用户，单击【授权】。
-![](https://main.qcloudimg.com/raw/8c15b3841ea1c3efdc123028d284c330.png)
-2. 在弹出的对话框，选择预设策略，单击【确定】，即可完成子用户授权。  
+1. 以父用户身份登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，在用户列表选择对应子用户，单击**授权**。
+
+2. 在弹出的对话框，选择预设策略，单击**确定**，即可完成子用户授权。  
  - QcloudDMCFullAccess 数据库管理（DMC）全读写访问权限：可以使用 DMC 提供的所有功能，包括添加或移除数据库实例、登录数据库等。
  - QcloudDMCReadOnlyAccess 数据库管理（DMC）只读访问权限：仅可查看 DMC 页面的内容，不能创建任务。
 
@@ -84,4 +84,4 @@ qcs:project_id:service_type:region:account:resource
 
 | 资源 | 授权策略中的资源描述方法                               |
 | :--- | :----------------------------------------------------- |
-| 实例 | ```qcs::dmc:$region:$account:instance/$instanceId``` |
+| 实例 | `qcs::dmc:$region:$account:instance/$instanceId` |
