@@ -16,7 +16,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
 
 #### 请求头
 
@@ -47,6 +50,11 @@ Content-Type: application/xml
         <Channels>4</Channels>
         <Remove>false</Remove>
     </Audio>
+    <AudioMix>
+        <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+        <MixMode>Once</MixMode>
+        <Replace>true</Replace>
+    </AudioMix>
 </Request>
 
 ```
@@ -68,6 +76,7 @@ Container 类型 Request 的具体数据描述如下：
 | Container          | Request | 容器格式                                                 | Container | 是   | 无 |
 | Video              | Request | 视频信息                                                 | Container | 是   | 无|
 | Audio              | Request | 音频信息                                                 | Container | 否   | 无|
+| AudioMix           | Request | 混音参数                                                 | Container    | 否   | 仅在 Audio.Remove 为 false 时生效 |
 
 
 Container 类型 Container 的具体数据描述如下：
@@ -79,7 +88,7 @@ Container 类型 Container 的具体数据描述如下：
 设定 container，音频视频支持的格式如下表：
 
 | Container                  | Audio Codecs  | Video Codecs          |
-| -------------------------- | ------------- | --------------------- | 
+| -------------------------- | ------------- | --------------------- |
 | mp4/ts/hls/mkv             | AAC、MP3      | H.264、H.265          |
 | flv                        | AAC、MP3      | H.264                 |
 
@@ -110,16 +119,25 @@ Container 类型 Audio 的具体数据描述如下：
 
 | 封装格式/音频采样率| 	11025  | 	22050| 	 32000 | 	44100|  	48000|   	96000 |
 | ------------------ | ------- | ------- | ------- | ------- |------------| ------------- |
-| flv	             | Y       | 	Y| 	N| 	Y| 	N| 	N|
+| flv	             | N       | 	Y| 	N| 	Y| 	N| 	N|
 | mp4                | N       | 	Y| 	Y| 	Y| 	Y| 	N|
 | hls/ts/mkv         | Y       | 	Y| 	Y| 	Y| 	Y| 	N|
+
+Container 类型 AudioMix 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点                   | 描述         | 类型   | 必选 | 默认值 | 限制    |
+| ----------------- | ------------------------------ | ------------ | ------ | ---- | ------ | ---------------------------- |
+| AudioSource       | Request.AudioMix | 混音文件地址  | String | 是   | 无  | 需与 Input 媒体文件存储于同一 bucket |
+| MixMode           | Request.AudioMix | 混音模式  | String | 否   | Repeat| 1. Repeat：背景音循环<br/>2. Once：背景音一次播放|
+| Replace           | Request.AudioMix | 是否用混音音轨媒体替换 Input 媒体文件的原音频  | String | 否   | false  | true/false|
+
 
 
 ## 响应
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部]( https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
@@ -149,6 +167,11 @@ Container 类型 Audio 的具体数据描述如下：
                 <Channels>4</Channels>
                 <Remove>false</Remove>
             </Audio>
+            <AudioMix>
+                <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+                <MixMode>Once</MixMode>
+                <Replace>true</Replace>
+            </AudioMix>
         </VideoMontage>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -179,13 +202,15 @@ Container 节点 Response 的内容：
 
 Container节点VideoMontage的内容：
 
-| 节点名称（关键字） | 父节点                         | 描述                               | 
+| 节点名称（关键字） | 父节点                         | 描述                               |
 | :----------------- | :----------------------------- | :------------------------------- |
-| Duration           | Response.TemplateList.VideoMontage | 同请求体中的 Request.Duration     | 
+| Duration           | Response.TemplateList.VideoMontage | 同请求体中的 Request.Duration     |
 | TimeInterval       | Response.TemplateList.VideoMontage | 同请求体中的 Request.TimeInterval |
 | Container          | Response.TemplateList.VideoMontage | 同请求体中的 Request.Container    |
 | Video              | Response.TemplateList.VideoMontage | 同请求体中的 Request.Video        |
 | Audio              | Response.TemplateList.VideoMontage | 同请求体中的 Request.Audio        |
+| AudioMix           | Response.TemplateList.VideoMontage | 同请求体中的 Request.AudioMix     |
+
 
 
 #### 错误码
@@ -225,6 +250,11 @@ Content-Type: application/xml
         <Channels>4</Channels>
         <Remove>false</Remove>
     </Audio>
+    <AudioMix>
+        <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+        <MixMode>Once</MixMode>
+        <Replace>true</Replace>
+    </AudioMix>
 </Request>
 ```
 
@@ -263,6 +293,11 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
                 <Channels>4</Channels>
                 <Remove>false</Remove>
             </Audio>
+            <AudioMix>
+                <AudioSource>https://test-xxx.cos.ap-chongqing.myqcloud.com/mix.mp3</AudioSource>
+                <MixMode>Once</MixMode>
+                <Replace>true</Replace>
+            </AudioMix>
         </VideoMontage>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>

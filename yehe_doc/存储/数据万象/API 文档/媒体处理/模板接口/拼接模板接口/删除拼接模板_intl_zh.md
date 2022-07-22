@@ -15,7 +15,10 @@ Content-Type: application/xml
 
 ```
 
->?Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情 文档。
+> 
 
 
 #### 请求头
@@ -34,7 +37,7 @@ Content-Type: application/xml
 #### 响应头
 
 #### 公共响应头
-该响应包含公共响应头，了解公共响应头详情请参见 [公共响应头部]( https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+该响应包含公共响应头，了解公共响应头详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 特有响应头
 该响应无特殊的响应头。
@@ -60,7 +63,7 @@ Container 节点 Response 的内容：
 | 节点名称（关键字） | 父节点   | 描述             | 类型   |
 | :----------------- | :------- | :--------------- | :----- |
 | RequestId          | Response | 请求的唯一 ID     | String |
-| TemplateId         | Response | 被删除的模版的 ID | String |
+| TemplateId         | Response | 被删除的模板的 ID | String |
 
 #### 错误码
 

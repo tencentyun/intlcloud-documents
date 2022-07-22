@@ -17,8 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
+
 
 #### 请求头
 
@@ -190,9 +194,9 @@ Container 类型 NotifyConfig 的具体数据描述如下：
 
 Container 节点 Response 的内容：
 
-| 节点名称（关键字） | 父节点   | 描述                                                         | 类型      |
-| :----------------- | :------- | :----------------------------------------------------------- | :-------- |
-| RequestId          | Response | 请求的唯一 ID                                                | String    |
+| 节点名称（关键字） | 父节点   | 描述                                              | 类型      |
+| :----------------- | :------- | :------------------------------------------------ | :-------- |
+| RequestId          | Response | 请求的唯一 ID                                     | String    |
 | Queue              | Response | 队列信息，详情同 [DescribeMediaQueues](https://intl.cloud.tencent.com/document/product/1045/43672) 中的 Response.QueueList | Container |
 
 #### 错误码

@@ -17,7 +17,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
 
 #### 请求头
 
@@ -32,6 +35,7 @@ Content-Type: application/xml
     <Name>TemplateName</Name>
     <Resolution>sdtohd</Resolution>
     <EnableScaleUp>true</EnableScaleUp>
+    <Version>Enhance</Version>
 </Request>
 
 ```
@@ -50,7 +54,8 @@ Container 类型 Request 的具体数据描述如下：
 | Tag                | Request | 模板类型：SuperResolution                              | String    | 是   | 无 |
 | Name               | Request | 模板名称：仅支持中文、英文、数字、\_、-和\*                 | String    | 是   | 无 |
 | Resolution         | Request | 分辨率选项                                             | String    | 是   | 1. sdtohd：标清到超清<br>2. hdto4k：高清到4K |
-| EnableScaleUp      | Request |   自动缩放开关，默认关闭                                    | String    | 否   | true、false | 
+| EnableScaleUp      | Request |   自动缩放开关，默认关闭                                    | String    | 否   | true、false |
+| Version            | Request | 版本，默认值 Base                                       | String    | 否   | 1. Base：基础版<br>2. Enhance：增强版 |
 
 ## 响应
 
@@ -70,6 +75,7 @@ Container 类型 Request 的具体数据描述如下：
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -126,6 +132,7 @@ Content-Type: application/xml
     <Name>TemplateName</Name>
     <Resolution>sdtohd</Resolution>
     <EnableScaleUp>true</EnableScaleUp>
+    <Version>Enhance</Version>
 </Request>
 ```
 
@@ -148,6 +155,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>

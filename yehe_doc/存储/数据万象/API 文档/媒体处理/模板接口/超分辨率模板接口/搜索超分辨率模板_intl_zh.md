@@ -1,6 +1,24 @@
 ## 功能描述
 
-DescribeMediaTemplates 用于搜索转码模板。
+DescribeMediaTemplates 用于搜索超分辨率模板。
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateAnimationTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## 请求
 
@@ -16,36 +34,41 @@ Content-Type: application/xml
 
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+>
 
 #### 请求头
 
 此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/1045/43609) 文档。
 
 #### 请求体
+
 该请求的请求体为空。
 
 #### 请求参数
+
 参数的具体内容如下：
 
-|节点名称（关键字）|父节点     |描述                    |   类型    |   是否必选    |
-|:---           |:--       |:--                    |   :--     |   :--    |
-| tag           | 无        | 模板 Tag：SuperResolution       | String    |是|
-| category      | 无   | Official，Custom，默认值：Custom | String    |是|
-| ids           | 无        | 模板 ID，以,符号分割字符串  | String     |否|
-| name          | 无        | 模板名称前缀              | String     |否|
-| pageNumber    | 无        | 第几页                   | Integer     |否|
-| pageSize      | 无        | 每页个数                 | Integer     |否|
+| 节点名称（关键字） | 父节点 | 描述                             | 类型    | 是否必选 |
+| :----------------- | :----- | :------------------------------- | :------ | :------- |
+| tag                | 无     | 模板 Tag：SuperResolution        | String  | 是       |
+| category           | 无     | Official，Custom，默认值: Custom | String  | 是       |
+| ids                | 无     | 模板 ID，以`,`符号分割字符串     | String  | 否       |
+| name               | 无     | 模板名称前缀                     | String  | 否       |
+| pageNumber         | 无     | 第几页                           | Integer | 否       |
+| pageSize           | 无     | 每页个数                         | Integer | 否       |
 
 
 ## 响应
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部]( https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
+
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
 ```shell
@@ -61,6 +84,7 @@ Content-Type: application/xml
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -76,33 +100,26 @@ Content-Type: application/xml
 
 Container 节点 Response 的内容：
 
-| 节点名称（关键字） | 父节点   | 描述                           | 类型      |
-| :----------------- | :------- | :----------------------------- | :-------- |
-| RequestId          | Response | 请求的唯一ID                   | String    |
-| TotalCount         | Response | 模板总数                       | Int       |
-| PageNumber         | Response | 当前页数，同请求中的pageNumber | Int       |
-| PageSize           | Response | 每页个数，同请求中的pageSize   | Int       |
-| TemplateList       | Response | 模板数组                       | Container |
+| 节点名称（关键字） | 父节点   | 描述                            | 类型      |
+| :----------------- | :------- | :------------------------------ | :-------- |
+| RequestId          | Response | 请求的唯一 ID                   | String    |
+| TotalCount         | Response | 模板总数                        | Int       |
+| PageNumber         | Response | 当前页数，同请求中的 pageNumber | Int       |
+| PageSize           | Response | 每页个数，同请求中的 pageSize   | Int       |
+| TemplateList       | Response | 模板数组                        | Container |
 
-Container节点TemplateList的内容：
+Container节点 TemplateList 的内容：
 
-| 节点名称（关键字） | 父节点                | 描述                                                         | 类型      |
-| :----------------- | :-------------------- | :----------------------------------------------------------- | :-------- |
-| TemplateId         | Response.TemplateList | 模板 ID                                                      | String    |
-| Name               | Response.TemplateList | 模板名字                                                     | String    |
-| BucketId           | Response.TemplateList | 模板所属存储桶                                                | String    |
-| Category           | Response.TemplateList | 模板属性，Custom 或者 Official                                | String    |
-| Tag                | Response.TemplateList | 模板类型，SuperResolution                                          | String    |
-| UpdateTime         | Response.TemplateList | 更新时间                                                     | String    |
-| CreateTime         | Response.TemplateList | 创建时间                                                     | String    |
-| SuperResolution    | Response.TemplateList | 详细的模板参数                                                | Container |
-
-Container 节点 SuperResolution 的内容：
-
-| 节点名称（关键字）   | 父节点                         | 描述     |
-| :----------------- | :----------------------------- | :------- |
-| Resolution         | Response.TemplateList.SuperResolution | 同超分辨率模板 CreateMediaTemplate 接口中的 Request.Resolution |
-| EnableScaleUp      | Response.TemplateList.SuperResolution | 同超分辨率模板 CreateMediaTemplate 接口中的 Request.EnableScaleUp |
+| 节点名称（关键字） | 父节点                | 描述                           | 类型      |
+| :----------------- | :-------------------- | :----------------------------- | :-------- |
+| TemplateId         | Response.TemplateList | 模板 ID                        | String    |
+| Name               | Response.TemplateList | 模板名字                       | String    |
+| BucketId           | Response.TemplateList | 模板所属存储桶                 | String    |
+| Category           | Response.TemplateList | 模板属性，Custom 或者 Official | String    |
+| Tag                | Response.TemplateList | 模板类型，SuperResolution      | String    |
+| UpdateTime         | Response.TemplateList | 更新时间                       | String    |
+| CreateTime         | Response.TemplateList | 创建时间                       | String    |
+| SuperResolution    | Response.TemplateList | 同新增超分辨率模板 CreateMediaTemplate 中的 Response.SuperResolution  | Container |
 
 #### 错误码
 
@@ -142,6 +159,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>
@@ -188,6 +206,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
         <SuperResolution>
             <Resolution>sdtohd</Resolution>
             <EnableScaleUp>true</EnableScaleUp>
+            <Version>Enhance</Version>
         </SuperResolution>
         <CreateTime>2020-08-05T11:35:24+0800</CreateTime>
         <UpdateTime>2020-08-31T16:15:20+0800</UpdateTime>

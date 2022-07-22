@@ -16,8 +16,11 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> 
+
 
 #### 请求头
 
@@ -94,7 +97,7 @@ Container 类型 Container 的具体数据描述如下：
 设定 container，音频视频支持的格式如下表：
 
 | Container                  | Audio Codecs  | Video Codecs          |
-| -------------------------- | ------------- | --------------------- | 
+| -------------------------- | ------------- | --------------------- |
 | mp4/hls                    | AAC、MP3      | H.264、H.265          |
 | flv                        | AAC、MP3      | H.264                 |
 
@@ -106,7 +109,7 @@ Container 类型 Video 的具体数据描述如下：
 | Codec                      | Request.Video | 编解码格式            | String | 否   | H.264        |  H.264、H.265  |
 | Width                      | Request.Video | 宽                    | String | 否   | 视频原<br/>始宽度 | 1. 值范围：[128，4096]<br/>2. 单位：px<br/>3. 若只设置 Width 时，按照<br/>视频原始比例计算 Height <br/>4. 必须为偶数 |
 | Height                     | Request.Video | 高                    | String | 否   | 视频原<br/>始高度 | 1. 值范围：[128，4096]<br/>2. 单位：px<br/>3. 若只设置 Height 时，按照<br/>视频原始比例计算 Width 4. 必须为偶数 |
-| Fps                        | Request.Video | 帧率                  | String | 否   | 无           | 1. 值范围：(0，60]<br>2. 单位：fps | 
+| Fps                        | Request.Video | 帧率                  | String | 否   | 无           | 1. 值范围：(0，60]<br>2. 单位：fps |
 | Profile                    | Request.Video | 编码级别              | String | 否   | high         | 1. 支持 baseline、main、high<br/>2. baseline：适合移动设备；<br/>3. main：适合标准分辨率设备；<br/>4. high：适合高分辨率设备;<br/>5. 仅H.264支持此参数。 |
 | Bitrate                    | Request.Video | 视频输出文件的码率    | String | 否   |  无          | 1. 值范围：[10，50000]<br/>2. 单位：Kbps |
 | Crf                        | Request.Video | 码率-质量控制因子     | String | 否   |  无          | 1. 值范围：(0，51]<br/>2. 如果设置了 Crf，则 Bitrate 的设置失效<br/>3. 当 Bitrate 为空时，默认为25  |
@@ -160,7 +163,7 @@ Container 类型 TransConfig 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部]( https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：

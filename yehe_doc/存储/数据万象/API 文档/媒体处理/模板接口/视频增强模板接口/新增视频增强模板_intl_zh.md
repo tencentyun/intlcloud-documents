@@ -1,5 +1,24 @@
 ## 功能描述
+
 CreateMediaTemplate 用于新增视频增强模板。
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateConcatTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## 请求
 
@@ -16,7 +35,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+>
 
 #### 请求头
 
@@ -80,9 +102,10 @@ Container 类型 MsSharpen 的具体数据描述如下：
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部]( https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/1045/43610) 文档。
 
 #### 响应体
+
 该响应体返回为 **application/xml** 数据，包含完整节点数据的内容展示如下：
 
 ```shell
@@ -132,7 +155,7 @@ Container 节点 Response 的内容：
 
 Container节点 VideoProcess 的内容：
 
-| 节点名称（关键字） | 父节点                         | 描述                               | 
+| 节点名称（关键字） | 父节点                         | 描述                               |
 | :----------------- | :----------------------------- | :------------------------------- |
 | ColorEnhance       | Response.Template.VideoProcess | 同请求体中的 Request.ColorEnhance  |
 | MsSharpen          | Response.Template.VideoProcess | 同请求体中的 Request.MsSharpen     |
