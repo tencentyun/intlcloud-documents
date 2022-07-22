@@ -88,5 +88,5 @@ Server-level roles:
 - Dbcreator: Creates and modifies databases.
 
 Database-level roles:
-- db_owner: Performs all operations on a database.
+- db_owner: Owns the database and can perform all operations on a database.
 - db_datareader: Views the data in all user tables in a database.
