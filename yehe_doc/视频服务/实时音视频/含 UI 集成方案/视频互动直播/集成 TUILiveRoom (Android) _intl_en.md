@@ -1,6 +1,9 @@
-## Component Overview
+## Overview
 
-`TUILiveRoom` is an open-source video live streaming scenarios UI component. After integrating it into your project, you can make your application support the interactive video live streaming scenario simply by writing a few lines of code. It provides source code for Android and iOS platforms. Its basic features are as shown below:
+`TUILiveRoom` is an open-source video live streaming scenario UI component. After integrating it into your project, you can enable your application to support interactive video live streaming simply by writing a few lines of code. It provides source code for Android, iOS, and mini program platforms. Its basic features are as shown below:
+
+>?The TUIKit series of components are based on two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, the IM SDK Trial Edition will be activated by default, which will support up to 100 DAUs. For IM billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+
 <table>
 <tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/a1b4b04662bb342de1e7b713cb3f59ce.png"></td>
@@ -8,23 +11,25 @@
 </table>
 
 [](id:model)
-
-## Component Integration
+## Integration
 [](id:model.step1)
 ### Step 1. Download and import the `TUILiveRoom` component
-Go to [GitHub](https://github.com/tencentyun/TUILiveRoom), clone or download the code, copy the `Android/Beauty`, `Android/Debug`, and `Android/Source` directories to your project, and complete the following import operations:
+Go to [GitHub](https://github.com/tencentyun/TUILiveRoom), clone or download the code, copy the `Android/debug`, `Android/tuiaudioeffect`, `Android/tuibarrage`, `Android/tuibeauty`, `Android/tuigift`, and `Android/tuiliveroom` directories to your project, and complete the following import operations:
 
-- Complete import in `setting.gradle` as shown below:
+- Add the code below in `setting.gradle`:
 ```
-include ':Beauty'
-include ':Source'
-include ':Debug'
+include ':debug'
+include ':tuibeauty'
+include ':tuibarrage'
+include ':tuiaudioeffect'
+include ':tuigift'
+include ':tuiliveroom'
 ```
-- Add dependencies on `Source` to the `build.gradle` file in `app`:
+- Add dependencies on `tuiliveroom` to the `build.gradle` file in `app`:
 ```
-api project(":Source")
+api project(":tuiliveroom")
 ```
-- Add dependencies on `TRTC SDK` and `IM SDK` to the `build.gradle` file in the root directory:
+- Add the `TRTC SDK` and `IM SDK` dependencies in `build.gradle` in the root directory:
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -34,9 +39,8 @@ ext {
 
 [](id:model.step2)
 ### Step 2. Configure permission requests and obfuscation rules
-1. Configure permission requests for your application in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and above, the camera and storage read permissions must be requested at runtime.)
-<dx-codeblock>
-::: java java
+1. Configure permission requests for your application in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and later, the camera and storage read permissions must be requested at runtime.)
+```java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -49,164 +53,121 @@ ext {
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus" />
-:::
-</dx-codeblock>
+```
 2. In the `proguard-rules.pro` file, add the SDK classes to the "do not obfuscate" list.
-<dx-codeblock>
-::: java java
+```java
 -keep class com.tencent.** { *;}
-:::
-</dx-codeblock>
+```
 
 [](id:model.step3)
 ### Step 3. Initialize and log in to the component
-<dx-codeblock>
-::: java java
-TRTCLiveRoom mLiveRoom = TRTCLiveRoom.sharedInstance(this);
-// useCDNFirst: `true` means that audience watch live streams over CDNs, and `false` means that audience watch live streams in the low latency mode.
-// yourCDNPlayDomain: The playback domain name for CDN live streaming
-TRTCLiveRoomDef.TRTCLiveRoomConfig config = 
-    new TRTCLiveRoomDef.TRTCLiveRoomConfig(useCDNFirst, CDNPlayDomain);
-mLiveRoom.login(SDKAPPID, userId, userSig, config, 
-    new TRTCLiveRoomCallback.ActionCallback() {
-            @Override
-            public void onCallback(int code, String msg) {
-                if (code == 0) {
-                    // Logged in
-                }
-            }
+```java
+// 1. Add a listener and log in
+TUILogin.addLoginListener(new TUILoginListener() {
+    @Override
+    public void onConnecting() {      // Connecting …
+        super.onConnecting();
+    }
+    @Override
+    public void onConnectSuccess() {  // Connected
+        super.onConnectSuccess();
+    }
+    @Override
+    public void onConnectFailed(int errorCode, String errorMsg) {  // Failed to connect
+        super.onConnectFailed(errorCode, errorMsg);
+    }
+    @Override
+    public void onKickedOffline() {  // Callback for forced logout (for example, due to login from another device)
+        super.onKickedOffline();
+    }
+    @Override
+    public void onUserSigExpired() { // Callback for `userSig` expiration
+        super.onUserSigExpired();
+    }
 });
-:::
-</dx-codeblock>
+TUILogin.login(mContext, "Your SDKAppID", "Your userId", "Your userSig", new TUICallback() {
+    @Override
+    public void onSuccess() {
+    }
+    @Override
+    public void onError(int errorCode, String errorMsg) {
+        Log.d(TAG, "errorCode: " + errorCode + " errorMsg:" + errorMsg);
+    }
+});
+
+// 2. Initialize the `TUILiveRoom` component
+TUILiveRoom mLiveRoom = TUILiveRoom.sharedInstance(mContext);
+```
 
 **Parameter description:**
-- **SDKAppID**: **TRTC application ID**. If you haven't activated the TRTC service, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, and click **Application Info**. The `SDKAppID` is as shown below:
+- **SDKAppID**: **TRTC application ID**. If you haven't activated TRTC, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, click **Application Info**, and select the **Quick Start** tab to view its `SDKAppID`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: **TRTC application key**, which corresponds to `SDKAppID`. On the [Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console, the `SecretKey` is as shown below:
+- **Secretkey**: **TRTC application key**. Each secret key corresponds to a `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
 - **userId**: ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_). We recommend that you keep it consistent with your user account system.
-- **userSig**: Security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online, or you can calculate it on your own by referring to the [demo project](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
-- **config**: Global configuration information. Please initialize it during login as it cannot be modified after login.
-- **useCDNFirst**: Specifies the way the audience watches live streams. `true` means that the audience watches live streams over CDNs, which is cost-efficient but has high latency. `false` means that the audience watches live streams in the low latency mode, the cost of which is between that of CDN live streaming and co-anchoring, but the latency is within one second.
-- **CDNPlayDomain**: Specifies the domain name for CDN live streaming, which takes effect only if `useCDNFirst` is set to `true`. You can set it in **CSS console** > [Domain Management](https://console.cloud.tencent.com/live/domainmanage).
-- **callback**: Callback for login. The return code is `0` if login is successful.
-
+- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [demo project](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 
 [](id:model.step4)
 ### Step 4. Implement an interactive video live room
-1. **The anchor starts streaming through [TRTCLiveRoom#createRoom](https://intl.cloud.tencent.com/document/product/647/37333)**.
-<dx-codeblock>
-::: java java
-// 1. Set your username and profile photo as an anchor
-mLiveRoom.setSelfProfile("A", "your_face_url", null);
-
-// 2. Enable camera preview and set beauty filters before streaming
-TXCloudVideoView view = new TXCloudVideoView(context);
-parentView.add(view);
-mLiveRoom.startCameraPreview(true, view, null);
-mLiveRoom.getBeautyManager().setBeautyStyle(1);
-mLiveRoom.getBeautyManager().setBeautyLevel(6);
-
-// 3. Create a room
-TRTCLiveRoomDef.TRTCCreateRoomParam param = new TRTCLiveRoomDef.TRTCCreateRoomParam();
-param.roomName = "Test room";
-mLiveRoom.createRoom(123456789, param, new TRTCLiveRoomCallback.ActionCallback() {
-    @Override
-    public void onCallback(int code, String msg) {
-        if (code == 0) {
-            // 4. Start streaming and publish the streams to CDNs
-            mLiveRoom.startPublish(mSelfUserId + "_stream", null);
-        }
-    }
-});
-:::
-</dx-codeblock>
-2. **Audience watches through [TRTCLiveRoom#enterRoom](https://intl.cloud.tencent.com/document/product/647/37333)**.
+1. **The anchor starts streaming**.
 ```java
-// 1. Get the room list from the backend. Suppose it is `roomList`
-List<Integer> roomList = GetRoomList();
-
-// 2. Call `getRoomInfos` to get the details of the room
-mLiveRoom.getRoomInfos(roomList, new TRTCLiveRoomCallback.RoomInfoCallback() {
-    @Override
-    public void onCallback(int code, String msg, List<TRTCLiveRoomDef.TRTCLiveRoomInfo> list) {
-        if (code == 0) {
-            // After getting the room information, you can display on the anchor list page the anchor's nickname, profile photo, and other information
-        }
-    }
-})
-
-// 3. Select a `roomid` and enter the room
-mLiveRoom.enterRoom(roomid, null);
-
-// 4. After receiving the notification about the anchor’s entry, start playback
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
-    @Override
-    public void onAnchorEnter(final String userId) {  
-        // 5. Play the anchor's video
-				// `mTXCloudVideoView` is the view for playback for audience
-        mLiveRoom.startPlay(userId, mTXCloudVideoView, null);
-    }
-});
+mLiveRoom.createRoom(int roomId, String roomName, String coverUrl);
 ```
-
+2. **The audience member watches**.
+```java
+mLiveRoom.enterRoom(roomId);
+```
 3. **Audience member and the anchor co-anchor together through [TRTCLiveRoom#requestJoinAnchor](https://intl.cloud.tencent.com/document/product/647/37333)**.
-<dx-codeblock>
-::: java java
+```java
 // 1. The audience member sends a co-anchoring request
 // `LINK_MIC_TIMEOUT` is the timeout period
-mLiveRoom.requestJoinAnchor(mSelfUserId + "requested to co-anchor", LINK_MIC_TIMEOUT
+TRTCLiveRoom mTRTCLiveRoom=TRTCLiveRoom.sharedInstance(mContext);
+mTRTCLiveRoom.requestJoinAnchor(mSelfUserId + "requested to co-anchor", LINK_MIC_TIMEOUT
     new TRTCLiveRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
         if (code == 0) {
-            // 4. The request is accepted by the anchor
+            // The request is accepted by the anchor
             TXCloudVideoView view = new TXCloudVideoView(context);
             parentView.add(view);
-            // 5. The audience member turns on the camera and starts pushing streams
-            mLiveRoom.startCameraPreview(true, view, null);
-            mLiveRoom.startPublish(mSelfUserId + "_stream", null);
+            // The audience member turns on the camera and starts pushing streams
+            mTRTCLiveRoom.startCameraPreview(true, view, null);
+            mTRTCLiveRoom.startPublish(mSelfUserId + "_stream", null);
         }
     }
 });
 
 // 2. The anchor receives the co-anchoring request
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
+mTRTCLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRequestJoinAnchor(final TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, 
         String reason, final int timeout) {
-        // 3. The anchor accepts the co-anchoring request
-        mLiveRoom.responseJoinAnchor(userInfo.userId, true, "agreed to co-anchor");
+        // The anchor accepts the co-anchoring request
+        mTRTCLiveRoom.responseJoinAnchor(userInfo.userId, true, "agreed to co-anchor");
     }
 
     @Override
     public void onAnchorEnter(final String userId) {
-        // 6. The anchor receives a notification that the co-anchoring audience member has turned on the mic
+        // The anchor receives a notification that the co-anchoring audience member has turned on the mic
         TXCloudVideoView view = new TXCloudVideoView(context);
         parentView.add(view);
-        // 7. The anchor plays the audience member’s video
-        mLiveRoom.startPlay(userId, view, null);
+        // The anchor plays the audience member's video
+        mTRTCLiveRoom.startPlay(userId, view, null);
     }
 });
-:::
-</dx-codeblock>
-4. **Anchors compete through [TRTCLiveRoom#requestRoomPK](https://intl.cloud.tencent.com/document/product/647/37333)**.
-<dx-codeblock>
-::: java java
-// Anchor A:
+```
+4. **Anchors from different rooms communicate with each other by calling [TRTCLiveRoom#requestRoomPK](https://intl.cloud.tencent.com/document/product/647/37333#requestroompk)**.
+```java
 // Create room 12345
-mLiveRoom.createRoom(12345, param, null);
+mLiveRoom.createRoom(12345, "roomA", "Your coverUrl");
+// Create room 54321
+mLiveRoom.createRoom(54321, "roomB", "Your coverUrl");
 
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
-    @Override
-    public void onAnchorEnter(final String userId) {
-        // 6. Receive a notification about anchor B’s entry
-        mLiveRoom.startPlay(userId, mTXCloudVideoView, null);
-    }
-});
+// Anchor A:
+TRTCLiveRoom mTRTCLiveRoom=TRTCLiveRoom.sharedInstance(mContext);
 
-// 1. Send a competition request to anchor B
-mLiveRoom.requestRoomPK(54321, "B", 
+// 1. Send a cross-room communication request to anchor B
+mTRTCLiveRoom.requestRoomPK(54321, "B", 
     new TRTCLiveRoomCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {  
@@ -219,64 +180,30 @@ mLiveRoom.requestRoomPK(54321, "B",
     }
 });
 
-// Anchor B:
-// Create room 54321
-mLiveRoom.createRoom(54321, param, null);
+mTRTCLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
+    @Override
+    public void onAnchorEnter(final String userId) {
+        // 6. Receive a notification about anchor B’s entry
+        mTRTCLiveRoom.startPlay(userId, mTXCloudVideoView, null);
+    }
+});
 
+// Anchor B:
 // 2. Receive anchor A’s request
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
+mTRTCLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRequestRoomPK(
        final TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, final int timeout) {
         // 3. Accept anchor A's request
-        mLiveRoom.responseRoomPK(userInfo.userId, true, "");
+        mTRTCLiveRoom.responseRoomPK(userInfo.userId, true, "");
     }
     @Override
     public void onAnchorEnter(final String userId) {
         // 4. Receive a notification about anchor A’s entry and play anchor A's video
-        mLiveRoom.startPlay(userId, mTXCloudVideoView, null);
+        mTRTCLiveRoom.startPlay(userId, mTXCloudVideoView, null);
     }
 });
-:::
-</dx-codeblock>
-5. **Implement text chat through [TRTCLiveRoom#sendRoomTextMsg](https://intl.cloud.tencent.com/document/product/647/37333)**.
-<dx-codeblock>
-::: java java
-// Sender: Sends text messages
-mLiveRoom.sendRoomTextMsg("Hello Word!", null);
-// Receiver: Listens for text messages
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
-	@Override
-	public void onRecvRoomTextMsg(String roomId, 
-			String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
-			Log.d(TAG, "Received a message from" + userInfo.userName + ": " + message);
-	}
-});
-:::
-</dx-codeblock>
-6. **Implement on-screen commenting through [TRTCLiveRoom#sendRoomCustomMsg](https://intl.cloud.tencent.com/document/product/647/37333)**.
-<dx-codeblock>
-::: java java
-// A sender can customize CMD to distinguish on-screen comments and likes.
-// For example, use "CMD_DANMU" to indicate on-screen comments and "CMD_LIKE" to indicate likes.
-mLiveRoom.sendRoomCustomMsg("CMD_DANMU", "Hello world", null);
-mLiveRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
-// Receiver: Listens for custom messages
-mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
-    @Override
-    public void onRecvRoomCustomMsg(String roomId, String cmd, 
-        String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
-        if ("CMD_DANMU".equals(cmd)) {
-            // An on-screen comment is received.
-            Log.d(TAG, "Received an on-screen comment from" + userInfo.userName + ": " + message);
-        } else if ("CMD_LIKE".equals(cmd)) {
-            // A like is received.
-            Log.d(TAG, userInfo.userName + "liked you.");
-        }
-    }
-});
-:::
-</dx-codeblock>
+```
 
 ## FAQs
 If you have any requirements or feedback, contact colleenyu@tencent.com.

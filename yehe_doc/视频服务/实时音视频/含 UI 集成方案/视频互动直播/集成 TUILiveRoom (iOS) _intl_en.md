@@ -1,6 +1,8 @@
-## Component Overview
+## Overview
 
-`TUILiveRoom` is an open-source audio/video UI component. After integrating it into your project, you can make your application support the interactive video live streaming scenario simply by writing a few lines of code. It also supports [Android](https://intl.cloud.tencent.com/document/product/647/36061) and [Flutter](https://intl.cloud.tencent.com/document/product/647/41944) platforms. Its basic features are as shown below:
+`TUILiveRoom` is an open-source video live streaming scenario UI component. After integrating it into your project, you can enable your application to support interactive video live streaming simply by writing a few lines of code. It provides source code for Android, iOS, and mini program platforms. Its basic features are as shown below:
+
+>?The TUIKit series of components are based on two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, the IM SDK Trial Edition will be activated by default, which will support up to 100 DAUs. For IM billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 <table>
 <tr>
@@ -8,188 +10,246 @@
 </tr>
 </table>
 
+[](id:model)
+## Integration
 
-## Component Integration
+[](id:model.step1)
+### Step 1. Import the `TUILiveRoom` component
 
-### Step 1. Download and import the `TUILiveRoom` component
-Create the `TUILiveRoom` folder at the same level as the `Podfile` in your Xcode project, copy the [TXAppBasic](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TXAppBasic), [TCBeautyKit](https://github.com/One-time/TUILiveRoom/tree/main/iOS/TCBeautyKit), [Resources](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Resources), [Source](https://github.com/One-time/TUILiveRoom/tree/main/iOS/Source) and [TUILiveRoom.podspec](https://github.com/One-time/TUILiveRoom/blob/main/iOS/TUILiveRoom.podspec) files from the [`iOS` directory in the GitHub repository](https://github.com/One-time/TUILiveRoom/tree/main/iOS) to the folder, and complete the following import operations:
-- Open the project's `Podfile` and import `TUILiveRoom.podspec` as follows:
+**To import the component using CocoaPods**, follow the steps below:
+1. Create a `TUILiveRoom` folder in the same directory as `Podfile` in your project.
+2. Go to the component's [GitHub page](https://github.com/tencentyun/TUILiveRoom), clone or download the code, and copy the `Source`, `Resources`, `TUIBeauty`, `TUIAudioEffect`, `TUIBarrage`, `TUIGift`, and `TXAppBasic` folders and the `TUILiveRoom.podspec` file in [**TUILiveRoom/iOS/**](https://github.com/tencentyun/TUILiveRoom/tree/main/iOS) to the `TUILiveRoom` folder in your project.
+3. Add the following dependencies to your `Podfile` and run `pod install` to import the component.
 ```
-# :path => "Points to the relative path of the directory of `TXAppBasic.podspec`"
-pod 'TXAppBasic', :path => "TUILiveRoom/TXAppBasic/"
-
-# :path => "Points to the relative path of the directory of `TCBeautyKit.podspec`"
-pod 'TCBeautyKit', :path => "TUILiveRoom/TCBeautyKit/"
-
-# :path => "Points to the relative path of the directory of `TUILiveRoom.podspec`"
-pod 'TUILiveRoom', :path => "TUILiveRoom/", :subspecs => ["TRTC"]
+# :path => "The relative path of `TUILiveRoom.podspec`"
+pod 'TUILiveRoom', :path => "./TUILiveRoom/TUILiveRoom.podspec", :subspecs => ["TRTC"]
+# :path => "The relative path of `TXAppBasic.podspec`"
+pod 'TXAppBasic', :path => "./TUILiveRoom/TXAppBasic/"
+# :path => "The relative path of `TUIBeauty.podspec`"
+pod 'TUIBeauty', :path => "./TUILiveRoom/TUIBeauty/"
+# :path => "The relative path of `TUIBeauty.podspec`"
+pod 'TUIAudioEffect', :path => "./TUILiveRoom/TUIAudioEffect/"
+# :path => "The relative path of `TUIBeauty.podspec`"
+pod 'TUIBarrage', :path => "./TUILiveRoom/TUIBarrage/"
+# :path => "The relative path of `TUIBeauty.podspec`"
+pod 'TUIGift', :path => "./TUILiveRoom/TUIGift/"
 ```
-- Open Terminal, enter the directory of `Podfile`, and run `pod install`.
-```
-pod install
-```
 
-### Step 2. Configure permission requests and obfuscation rules
-Add `Privacy > Microphone Usage Description` (mic access request) and `Privacy > Camera Usage Description` (camera access request) to the `info.plist` file in sequence.
+>! 
+>- The `Source` and `Resources` folders and the `TUILiveRoom.podspec` file must be in the same directory.
+>- `TXAppBasic.podspec` is in the `TXAppBasic` folder.
 
-```plist
-<key>NSMicrophoneUsageDescription</key>
-<string>`TUILiveRoom` needs to access your mic to be able to shoot videos with audio.</string>
+[](id:model.step2)
+### Step 2. Configure permissions
+
+Your app needs mic and camera permissions to implement audio/video communication. Add the two items below to `Info.plist` of your app. Their content is what users see in the mic and camera access pop-up windows.
+
+```
 <key>NSCameraUsageDescription</key>
-<string>`TUILiveRoom` needs to access your camera to be able to shoot videos with images.</string>
+<string>RoomApp needs to access your camera to capture video.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>RoomApp needs to access your mic to capture audio.</string>
 ```
+![](https://qcloudimg.tencent-cloud.cn/raw/9395aca2af5433c9a63ffb4ba9ff9888.png)
 
+[](id:model.step3)
 ### Step 3. Initialize and log in to the component
-```Swift
- let mTRTCLiveRoom = TRTCLiveRoom()
- // useCDNFirst: `true` means that the audience watches live streams over CDNs, and `false` means that the audience watches live streams in the low latency mode.
- //CDNPlayDomain: The playback domain name for CDN live streaming
- let config = TRTCLiveRoomConfig(useCDNFirst: useCDNFirst, cdnPlayDomain: yourCDNPlayDomain)
- mTRTCLiveRoom.login(SDKAPPID, userID, userSig, config) { (code, error) in
-   if code == 0 {
-     // Logged in
-   }
-}
+
+<dx-codeblock>
+:::  Objective-C ObjectiveC
+@import TUILiveRoom;
+@import TUICore;
+
+// 1. Log in to the component
+[TUILogin login:@"Your SDKAppID" userID:@"Your UserID" userSig:@"Your UserSig" succ:^{
+        
+} fail:^(int code, NSString *msg) {
+        
+}];
+// 2. Initialize the `TUILiveRoom` instance
+TUILiveRoom *mLiveRoom = [TUILiveRoom sharedInstance];
 ```
+:::
+::: Swift  Swift
+import TUILiveRoom
+import TUICore
+
+// 1. Log in to the component
+TUILogin.login("Your SDKAppID", userID: "Your UserID", userSig: "Your UserSig") {
+        
+} fail: { code, msg in
+        
+}
+// 2. Initialize the `TUILiveRoom` instance
+let mLiveRoom = TUILiveRoom.sharedInstance
+```
+:::
+</dx-codeblock>
+
 **Parameter description:**
-- **SDKAppID**: **TRTC application ID**. If you haven't activated the TRTC service, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, and click **Application Info**. The `SDKAppID` is as shown below:
+- **SDKAppID**: **TRTC application ID**. If you haven't activated TRTC, log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), create a TRTC application, click **Application Info**, and select the **Quick Start** tab to view its `SDKAppID`.
 ![](https://qcloudimg.tencent-cloud.cn/raw/435d5615e0c4075640bb05c49884360c.png)
-- **Secretkey**: **TRTC application key**, which corresponds to `SDKAppID`. On the [Application Management](https://console.cloud.tencent.com/trtc/app) page in the TRTC console, the `SecretKey` is as shown below:
-- **userId**: ID of the current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_). We recommend that you keep it consistent with your user account system.
-- **userSig**: Security protection signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to directly generate a debugging `userSig` online, or you can calculate it on your own by referring to the [demo project](https://github.com/tencentyun/TUIRoom/blob/main/Android/Debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java#L88). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+- **Secretkey**: **TRTC application key**. Each secret key corresponds to an `SDKAppID`. You can view your application’s secret key on the [Application Management](https://console.cloud.tencent.com/trtc/app) page of the TRTC console.
+- **UserId**: Current user ID, which is a custom string that can contain up to 32 bytes of letters and digits (special characters are not supported).
+- **UserSig**: Security signature calculated based on `SDKAppID`, `userId`, and `Secretkey`. You can click [here](https://console.cloud.tencent.com/trtc/usersigtool) to quickly generate a `UserSig` for testing or calculate it on your own by referring to our [TUILiveRoom demo project](https://github.com/tencentyun/TUILiveRoom/blob/main/iOS/Example/Debug/GenerateTestUserSig.swift#L42). For more information, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
+
+[](id:model.step4)
 ### Step 4. Implement an interactive video live room
-1. **The anchor starts streaming through [TRTCLiveRoom#createRoom](https://intl.cloud.tencent.com/document/product/647/37332)**.
-```Swift
-// 1. Set your username and profile photo as an anchor
- mTRTCLiveRoom.setSelfProfile(name: "A", avatarURL: "faceUrl", callback: nil)
+1. **The anchor starts streaming**.
+<dx-codeblock>
+:::  Objective-C Objc
+[mLiveRoom createRoomWithRoomId:123 roomName:@"test room" coverUrl:@""];
 
- // 2. Enable camera preview and set beauty filters before streaming
- let view = UIView()
- parentView.add(view)
- mTRTCLiveRoom.startCameraPreview(frontCamera: true, view: view, callback: nil)
- mTRTCLiveRoom.getBeautyManager().setBeautyStyle(.nature)
- mTRTCLiveRoom.getBeautyManager().setBeautyLevel(6)
+:::
+:::  Swift Swift
+mLiveRoom.createRoom(roomId: 123, roomName: "test room", coverUrl:"")
+:::
+</dx-codeblock>
+2. **The audience member watches**.
+<dx-codeblock>
+:::  Objective-C Objc
+[mLiveRoom enterRoomWithRoomId:123];
 
- // 3. Create a room
- let param = TRTCCreateRoomParam(roomName: "Test room", coverUrl: "")
- mTRTCLiveRoom.createRoom(roomID: 123456789, roomParam: param) { [weak self] (code, error) in
-  if code == 0 {
-    // 4. Start streaming and publish the streams to CDNs
-    self?.mTRTCLiveRoom.startPublish(streamID: mSelfUserId + "_stream", callback: nil)
+:::
+:::  Swift Swift
+mLiveRoom.createRoom(roomId: 123)
+:::
+</dx-codeblock>
+
+3. **The audience member and the anchor co-anchor together through [TRTCLiveRoom#requestJoinAnchor](https://intl.cloud.tencent.com/document/product/647/37332#requestjoinanchor)**.
+<dx-codeblock>
+:::  Objective-C Objc
+// 1. The audience member sends a co-anchoring request
+[TRTCLiveRoom shareInstance].delegate = self;
+// @param mSelfUserId String Current user ID
+NSString *mSelfUserId = @"1314";
+[[TRTCLiveRoom shareInstance] requestJoinAnchor:[NSString stringWithFormat:@"%@ requested to co-anchor", mSelfUserId] timeout:30 responseCallback:^(BOOL agreed, NSString * _Nullable reason) {
+    if (agreed) {
+        // The request is accepted by the anchor
+      UIView *playView = [UIView new];
+            [self.view addSubView:playView];
+        // The audience member turns on the camera and starts pushing streams
+      [[TRTCLiveRoom shareInstance] startCameraPreviewWithFrontCamera:YES view:playView callback:nil];
+      [[TRTCLiveRoom shareInstance] startPublishWithStreamID:[NSString stringWithFormat:@"%@_stream", mSelfUserId] callback:nil];
+    }            
+}];
+
+// 2. The anchor receives the co-anchoring request
+#pragma mark - TRTCLiveRoomDelegate
+- (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom onRequestJoinAnchor:(TRTCLiveUserInfo *)user reason:(NSString *)reason {
+    // The anchor accepts the co-anchoring request
+    [[TRTCLiveRoom shareInstance] responseJoinAnchor:user.userId agree:YES reason:@"agreed to co-anchor"];
+}
+
+- (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom onAnchorEnter:(NSString *)userID {
+    // The anchor receives a notification that the co-anchoring audience member has turned on the mic
+    UIView *playView = [UIView new];
+    [self.view addSubview:playView];
+    // The anchor plays the audience member's video
+    [[TRTCLiveRoom shareInstance] startPlayWithUserID:userID view:playView callback:nil];
+}
+
+:::
+:::  Swift Swift
+// 1. The audience member sends a co-anchoring request
+TRTCLiveRoom.shareInstance().delegate = self
+let mSelfUserId = "1314"
+TRTCLiveRoom.shareInstance().requestJoinAnchor(reason: mSelfUserId + "requested to co-anchor", timeout: 30) {  [weak self] (agree, msg) in
+    guard let self = self else { return }
+  if agree {
+        // The request is accepted by the anchor
+        let playView = UIView()
+        self.view.addSubView(playView)
+        // The audience member turns on the camera and starts pushing streams
+        TRTCLiveRoom.shareInstance().startCameraPreview(frontCamera: true, view: playView)
+        TRTCLiveRoom.shareInstance().startPublish(streamID: mSelfUserId + "_stream")
   }
 }
-```
-2. **Audience watches through [TRTCLiveRoom#enterRoom](https://intl.cloud.tencent.com/document/product/647/37332)**.
-```Swift
-// 1. Get the room list from the backend. Suppose it is `roomList`
- var roomList: [UInt32] = GetRoomList()
 
- // 2. Call `getRoomInfos` to get the details of the room
- mTRTCLiveRoom.getRoomInfos(roomIDs: roomList, callback: { (code, msg, list) in
-    if code == 0 {
-      // After getting the room information, you can display on the anchor list page the anchor's nickname, profile photo, and other information
+// 2. The anchor receives the co-anchoring request
+extension ViewController: TRTCLiveRoomDelegate {
+    
+    func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRequestJoinAnchor user: TRTCLiveUserInfo, reason: String?) {
+        // The anchor accepts the co-anchoring request
+        TRTCLiveRoom.shareInstance().responseRoomPK(userID: user.userId, agree: true, reason: "agreed to co-anchor")
     }
- })
+    
+    func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
+        // The anchor receives a notification that the co-anchoring audience member has turned on the mic
+        let playView = UIView()
+        view.addSubview(playView)
+        // The anchor plays the audience member's video
+        TRTCLiveRoom.shareInstance().startPlay(userID: userID, view: playView);
+    }
+}
+:::
+</dx-codeblock>
 
- // 3. Select a `roomid` and enter the room
- mTRTCLiveRoom.enterRoom(roomID: roomID, callback: callback)
-
- // 4. After receiving the notification about the anchor’s entry, start playback
- public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
-   // 5. Play the anchor's video
-   mTRTCLiveRoom.startPlay(userID: userID, view: renderView, callback: nil) 
- }
-```
-3. **Audience member and the anchor co-anchor together through [TRTCLiveRoom#requestJoinAnchor](https://intl.cloud.tencent.com/document/product/647/37332)**.
-```Swift
-// Audience:
-  // 1. The audience member sends a co-anchoring request
-  mTRTCLiveRoom.requestJoinAnchor(reason: mSelfUserId + "requested to co-anchor", responseCallback: { [weak self] (agreed, reason) in 
-      // 4. The request is accepted by the anchor
-       if agreed {
-        // 5. The audience member turns on the camera and starts pushing streams
-        self?.mTRTCLiveRoom.startCameraPreview(frontCamera: true, view: localView, callback: nil)
-        self?.mTRTCLiveRoom.startPublish(streamID: streamID, callback: nil)
-       }        
-  }, callback: callback)
-
-  // Anchor:
-  // 2. The anchor receives the co-anchoring request
-  public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRequestJoinAnchor user: TRTCLiveUserInfo, reason: String?, timeout: Double) {
-    // 3. The anchor accepts the co-anchoring request
-    mTRTCLiveRoom.responseJoinAnchor(userID: userID, agree: true, reason: "agreed to co-anchor")
-  }
-
-  // 6. The anchor receives a notification that the co-anchoring audience member has turned on the mic
-  public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
-    // 7. The anchor plays the audience member’s video
-    mTRTCLiveRoom.startPlay(userID: userID, view: view, callback: nil)
-  }
-```
-4. **Anchors compete through [TRTCLiveRoom#requestRoomPK](https://intl.cloud.tencent.com/document/product/647/37332)**.
-```Swift
-// Anchor A:
+4. **Anchors from different rooms communicate with each other by calling [TRTCLiveRoom#requestRoomPK](https://intl.cloud.tencent.com/document/product/647/37332#requestroompk)**.
+<dx-codeblock>
+:::  Objective-C Objc
 // Create room 12345
-mTRTCLiveRoom.createRoom(roomID: 12345, roomParam: param, callback: nil)
+[[TUILiveRoom sharedInstance] createRoomWithRoomId:12345 roomName:@"roomA" coverUrl:@"roomA coverUrl"];
+// Create room 54321
+[[TUILiveRoom sharedInstance] createRoomWithRoomId:54321 roomName:@"roomB" coverUrl:@"roomB coverUrl"];
 
-// 1. Send a competition request to anchor B
-mTRTCLiveRoom.requestRoomPK(roomID: 54321, userID: "B", responseCallback: { (agree, reason) in
-  // 5. Receive a callback of whether the request is accepted by anchor B
-  if agree {
-  }       
-}, callback: callback)
+// Host A
+// Send a cross-room communication request to anchor B
+[[TRTCLiveRoom shareInstance] requestRoomPKWithRoomID:543321 userID:@"roomB userId" timeout:30 responseCallback:^(BOOL agreed, NSString * _Nullable reason) {
+    if (agreed) {
+        // Anchor B accepts the request
+    } else {
+        // Anchor B rejects the request
+    }
+}];
 
-// Anchor A receives the callback of anchor B’s entry
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
-  // 6. After receiving the notification of anchor B’s entry, anchor A plays anchor B's video image
-  mTRTCLiveRoom.startPlay(userID: userID, view: view, callback: callback)
+// Anchor B:
+// 2. Receive anchor A’s request
+#pragma mark - TRTCLiveRoomDelegate
+- (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom onRequestRoomPK:(TRTCLiveUserInfo *)user {
+    // 3. Accept anchor A's request
+    [[TRTCLiveRoom shareInstance] responseRoomPKWithUserID:user.userId agree:YES reason:@""];
+}
+
+- (void)trtcLiveRoom:(TRTCLiveRoom *)trtcLiveRoom onAnchorEnter:(NSString *)userID {
+    // 4. Receive a notification about anchor A’s entry and play anchor A's video
+    [[TRTCLiveRoom shareInstance] startPlayWithUserID:userID view:playAView callback:nil];
+}
+
+:::
+:::  Swift Swift
+// Create room 12345
+TUILiveRoom.sharedInstance.createRoom(roomId: 12345, roomName: "roomA")
+// Create room 54321
+TUILiveRoom.sharedInstance.createRoom(roomId: 54321, roomName: "roomB")
+
+// Host A
+// Send a cross-room communication request to anchor B
+TRTCLiveRoom.shareInstance().requestRoomPK(roomID: 543321, userID: "roomB userId", timeout: 30) { [weak self] (agreed, msg) in
+     guard let self = self else { return }
+    if agreed {
+        // Anchor B accepts the request
+    } else {
+        // Anchor B rejects the request
+    }
 }
 
 // Anchor B:
-// Create room 54321
-mTRTCLiveRoom.createRoom(roomID: 54321, roomParam: param, callback: nil)
-
 // 2. Receive anchor A’s request
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRequestRoomPK user: TRTCLiveUserInfo, timeout: Double) {
-  // 3. Accept anchor A's request
-  mTRTCLiveRoom.responseRoomPK(userID: userID, agree: true, reason: reason)
+extension ViewController: TRTCLiveRoomDelegate {
+    func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRequestRoomPK user: TRTCLiveUserInfo) {
+        // 3. Accept anchor A's request
+        TRTCLiveRoom.shareInstance().responseRoomPK(userID: user.userId, agree: true, reason: "")
+    }
+    
+    func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
+        // 4. Receive a notification about anchor A’s entry and play anchor A's video
+        TRTCLiveRoom.shareInstance().startPlay(userID: userID, view: playAView);
+    }
 }
-
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
-  // 4. Receive a notification about anchor A’s entry and play anchor A's video
-  mTRTCLiveRoom.startPlay(userID: userID, view: view, callback: callback)
-}
-```
-5. **Implement text chat through [TRTCLiveRoom#sendRoomTextMsg](https://intl.cloud.tencent.com/document/product/647/37332)**.
-```Swift
-// Sender: Sends text messages
-mTRTCLiveRoom.sendRoomTextMsg(message: "Hello Word!", callback: callback)
-// Receiver: Listens for text messages
-mTRTCLiveRoom.delegate = self
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRecvRoomTextMsg message: String, fromUser user: TRTCLiveUserInfo) {
-  debugPrint("Received a text message from \(user.userName): \(message)")
-}
-```
-6. **Implement on-screen commenting through [TRTCLiveRoom#sendRoomCustomMsg](https://intl.cloud.tencent.com/document/product/647/37332)**.
-```Swift
-// Sender: Customize CMD to distinguish on-screen comments and likes
-// For example, use "CMD_DANMU" to indicate on-screen comments and "CMD_LIKE" to indicate likes.
-mTRTCLiveRoom.sendRoomCustomMsg(command: "CMD_DANMU", message: "Hello world", callback: nil)
-mTRTCLiveRoom.sendRoomCustomMsg(command: "CMD_LIKE", message: "", callback: nil)
-// Receiver: Listens for custom messages
-mTRTCLiveRoom.delegate = self
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRecvRoomCustomMsg command: String, message: String, fromUser user: TRTCLiveUserInfo) {
-  if "CMD_DANMU" == command {
-    // An on-screen comment is received
-    debugPrint("Received an on-screen comment from \(user.userName): \(message)")
-  } else if "CMD_LIKE" == command {
-    // A like is received
-    debugPrint("\(user.userName) liked you.")
-  }
-}
-```
-
+:::
+</dx-codeblock>
 
 ## FAQs
 If you have any requirements or feedback, contact colleenyu@tencent.com.

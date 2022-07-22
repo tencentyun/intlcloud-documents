@@ -1,6 +1,8 @@
 ## Overview
 `TUIRoom` is an open-source UI component for audio/video communication. With just a few lines of code changes, you can integrate it into your project to implement screen sharing, beauty filters, low-latency video calls, and other features. In addition to the Android component, we also offer components for [iOS](https://intl.cloud.tencent.com/document/product/647/37284), [Windows](https://intl.cloud.tencent.com/document/product/647/44071), [macOS](https://intl.cloud.tencent.com/document/product/647/44071), and more.
 
+>?The TUIKit series of components are based on two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, the IM SDK Trial Edition will be activated by default, which will support up to 100 DAUs. For IM billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2944bac3c5d348b06d2a11c439783b48.png"></td>
@@ -9,21 +11,22 @@
 
 ## Integration
 ### Step 1. Download and import the `TUIRoom` component
-Go to the component’s [GitHub page](https://github.com/tencentyun/TUIRoom), clone or download the code, and copy the `tuiroom` and `debug`, and `tuibeauty` folders in the `Android` directory to your project. Then, do the following to import the component:
-- Complete import in `setting.gradle` as shown below:
+Go to the component's [GitHub page](https://github.com/tencentyun/TUIRoom), clone or download the code, and copy the `tuiroom` and `debug`, and `tuibeauty` folders in the `Android` directory to your project. Then, do the following to import the component:
+1. Add the code below in `setting.gradle`:
 
 ```
 include ':tuiroom'
 include ':debug'
 include ':tuibeauty'
 ```
-- Add the `tuiroom`, `debug`, and `tuibeauty` dependencies in the `build.gradle` file in `app`.
+2. Add dependencies on `tuiroom`, `debug`, and `tuibeauty` to the `build.gradle` file in `app`:
+
 ```
 api project(':tuiroom')
 api project(':debug')
 api project(':tuibeauty')
 ```
-- Add the `TRTC SDK` and `IM SDK` dependencies in `build.gradle` in the root directory:
+3. Add the `TRTC SDK` and `IM SDK` dependencies in `build.gradle` in the root directory:
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -44,16 +47,18 @@ ext {
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 2. In the `proguard-rules.pro` file, add the SDK classes to the "do not obfuscate" list.
+
 ```
 -keep class com.tencent.** { *;}
 ```
 
 ### Step 3. Create and initialize an instance of the component
+
 ```java
 // 1. Log in to the component
 TUILogin.addLoginListener(new TUILoginListener() {
     @Override
-    public void onKickedOffline() {  // Callback for forced logout (for example, due to multi-device login)
+    public void onKickedOffline() {  // Callback for forced logout (for example, due to login from another device)
     }
 
     @Override
@@ -79,11 +84,11 @@ TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ### Step 4. Implement group audio/video communication
 1. **Create a room**
 ```java
-tuiRoom.createRoom("12345", TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
+tuiRoom.createRoom(12345, TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
 ```
 2. **Join a room**
 ```java
-tuiRoom.enterRoom("12345", true, true);
+tuiRoom.enterRoom(12345, true, true);
 ```
 
 ### Step 5. Implement room management (optional)
@@ -121,7 +126,7 @@ public void onRemoteUserLeave(String userId) {
 ```
 
 ### Step 6. Implement screen sharing (optional)
-Call [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281) to implement screen sharing.
+Call [TUIRoomCore#startScreenCapture](intl.cloud.tencent.com/document/product/647/37281) to implement screen sharing.
 ```java
 // 1. Add the SDK’s screen sharing activity and permission in `AndroidManifest.xml`
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -170,13 +175,6 @@ private void startScreenCapture() {
         mTUIRoom.startScreenCapture(encParams, params);
 }
 ```
-
-### Step 7. Implement beauty filters (optional)[](id:XMagic)
-The beauty filters of `TUIRoom` rely on the Tencent Effect SDK. To use the beauty filters, you need to configure an XMagic license first.
-```java
-TUIBeautyView.getBeautyService().setLicense(context, “XMagicLicenseURL”, “XMagicLicenseKey”);
-```
-
 
 ## FAQs
 If you have any requirements or feedback, contact colleenyu@tencent.com.

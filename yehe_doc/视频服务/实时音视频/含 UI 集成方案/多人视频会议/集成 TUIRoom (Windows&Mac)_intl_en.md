@@ -1,11 +1,13 @@
 This document describes the `TUIRoom` component for PC, an audio/video communication and collaboration tool with flexible layout and high adaptability. It can be used in various scenarios such as online collaboration, remote recruitment, remote diagnosis, insurance claim, online customer service, video interview, digital government services, finance digitization, online conferencing, and online education. It is integrated in depth with many industrial scenarios to help enterprises reduce costs, improve efficiency, and promote digitization for higher competitiveness.
 You can download and install the application for [Windows](https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe) or [macOS](https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2) to try out the component.
 
+>?The TUIKit series of components are based on two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). When you activate TRTC, the IM SDK Trial Edition will be activated by default, which will support up to 100 DAUs. For IM billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+
+
 ## Demo UI
 <table>
 <tr><td><img src="https://qcloudimg.tencent-cloud.cn/raw/74790d1eb59abc94e264e4e8bca3604b.png"></td>
 </tr></table>
-
 
 
 ## Solution Strengths
@@ -69,7 +71,6 @@ void LoadRoomApp() {
 }
 ```
 <img src="https://qcloudimg.tencent-cloud.cn/raw/0fd090fbeef17d75a9b119b1a7e4fc9b.png" width="600">
-
 3. Compile the project and copy the RoomApp compilation result `RoomApp.app` to the same level as the output of the current project. Here, the path of the project created in the above figure is taken as an example:
 Copy `RoomApp.app` to the `/Users/mac/Desktop/TestApp/build-TestApp-Desktop_Qt_5_9_1_clang_64bit-Release` directory.
 4. Run the program to start TestApp and RoomApp at the same time.
@@ -105,7 +106,7 @@ Copy `RoomApp.app` to the `/Users/mac/Desktop/TestApp/build-TestApp-Desktop_Qt_5
 <td>Windows-Mac\RoomApp\App\StageListController.cpp</td>
 </tr>
 <tr>
-<td>Member list</td>
+<td>Member lists</td>
 <td>Windows-Mac\RoomApp\App\MemberListViewController.cpp</td>
 </tr>
 <tr>

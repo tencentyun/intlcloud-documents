@@ -1,11 +1,13 @@
 本文介绍 PC 端 TUIRoom 组件，是一款布局灵活、适用性强的音视频沟通协作工具，可用于协同办公、远程招聘、远程问诊、保险理赔、在线客服、视频面试、数字政务、金融数字化、在线会议、在线教育等场景。与各行业场景深度融合，助力企业降本增效，加快数字化转型，提升竞争力。
 您可以下载并安装 [Windows](https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Win_Demo.exe) 或者 [Mac](https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2) 平台的 App 进行体验。
 
+>?TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信IM服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
+
+
 ## 效果展示
 <table>
 <tr><td><img src="https://qcloudimg.tencent-cloud.cn/raw/74790d1eb59abc94e264e4e8bca3604b.png"></td>
 </tr></table>
-
 
 
 ## 方案优势

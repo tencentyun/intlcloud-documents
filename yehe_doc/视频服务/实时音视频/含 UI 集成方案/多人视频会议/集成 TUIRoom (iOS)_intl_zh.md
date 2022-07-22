@@ -1,6 +1,8 @@
 ## 组件介绍
 TUIRoom 是一个开源的音视频 UI 组件，通过在项目中集成 TUIRoom 组件，您只需要编写几行代码就可以为您的 App 添加屏幕分享、美颜、低延时视频通话等。TUIRoom 同时支持 [Android](https://intl.cloud.tencent.com/document/product/647/37283)、[Windows](https://intl.cloud.tencent.com/document/product/647/44071)，[Mac](https://intl.cloud.tencent.com/document/product/647/44071) 等平台，基本功能如下图所示：
 
+>?TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信IM服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2944bac3c5d348b06d2a11c439783b48.png"></td>
@@ -15,7 +17,6 @@ TUIRoom 是一个开源的音视频 UI 组件，通过在项目中集成 TUIRoom
 1. 在您的工程 `Podfile` 文件同一级目录下创建 `TUIRoom` 文件夹。
 2. 单击进入 [**Github/TUIRoom**](https://github.com/tencentyun/TUIRoom) ，选择克隆/下载代码，然后将 [**TUIRoom/iOS/**](https://github.com/tencentyun/TUIRoom/tree/main/iOS) 目录下的 `Source`、`Resources` 、`TUIBeauty`、`TXAppBasic`文件夹 和 `TUIRoom.podspec` 文件拷贝到您在 `步骤1` 创建的 TUIRoom 文件夹下。
 3. 在您的 Podfile 文件中添加以下依赖，之后执行 `pod install` 命令，完成导入。
-
 ```
 # :path => "指向TUIRoom.podspec的相对路径"
 pod 'TUIRoom', :path => "./TUIRoom/TUIRoom.podspec", :subspecs => ["TRTC"]
@@ -39,7 +40,7 @@ pod 'TUIBeauty', :path => "./TUIRoom/TUIBeauty/"
 <key>NSMicrophoneUsageDescription</key>
 <string>RoomApp需要访问您的麦克风权限，开启后录制的视频才会有声音</string>
 ```
-![](https://qcloudimg.tencent-cloud.cn/raw/224ae568f11d50124ea663ac0ef1c6e9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9395aca2af5433c9a63ffb4ba9ff9888.png)
 
 ### 步骤三：创建并初始化 TUI 组件库
 
@@ -89,12 +90,12 @@ let tuiRoom = TUIRoom.sharedInstance
 :::  Objective-C ObjectiveC
 @import TUIRoom;
 
-[tuiRoom createRoomWithRoomId:@"您的RoomId" speechMode:TUIRoomFreeSpeech isOpenCamera:YES isOpenMicrophone:YES];
+[tuiRoom createRoomWithRoomId:12345 speechMode:TUIRoomFreeSpeech isOpenCamera:YES isOpenMicrophone:YES];
 :::
 ::: Swift Swift
 import TUIRoom
 
-tuiRoom.createRoom(roomId: "您的RoomId", speechMode: .freeSpeech, isOpenCamera: true, isOpenMicrophone: true)
+tuiRoom.createRoom(roomId: 12345, speechMode: .freeSpeech, isOpenCamera: true, isOpenMicrophone: true)
 ```
 :::
 </dx-codeblock>
@@ -103,18 +104,18 @@ tuiRoom.createRoom(roomId: "您的RoomId", speechMode: .freeSpeech, isOpenCamera
 :::  Objective-C ObjectiveC
 @import TUIRoom;
 
-[tuiRoom enterRoomWithRoomId:@"对方的RoomId" isOpenCamera:YES isOpenMicrophone:YES]
+[tuiRoom enterRoomWithRoomId:12345 isOpenCamera:YES isOpenMicrophone:YES]
 :::
 ::: Swift Swift
 import TUIRoom
 
-tuiRoom.enterRoom(roomId: "对方的RoomId", isOpenCamera: true, isOpenMicrophone: true)
+tuiRoom.enterRoom(roomId: 12345, isOpenCamera: true, isOpenMicrophone: true)
 ```
 :::
 </dx-codeblock>
 
 ### 步骤五：房间管理（可选）
-1. **房主解散房间 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37282)**。
+1. **房主解散房间 [TUIRoomCore#destroyRoom](https://intl.cloud.tencent.com/document/product/647/37284)**。
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;
@@ -134,7 +135,7 @@ TUIRoomCore.shareInstance().destroyRoom { [weak self] _, _ in
 ```
 :::
 </dx-codeblock>
-2. **成员离开房间 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37282)**。
+2. **成员离开房间 [TUIRoomCore#leaveRoom](https://intl.cloud.tencent.com/document/product/647/37284)**。
 <dx-codeblock>
 :::  Objective-C ObjectiveC
 @import TUIRoom;

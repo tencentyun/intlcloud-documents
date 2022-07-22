@@ -1,6 +1,8 @@
 ## 组件介绍
 TUIRoom 是一个开源的音视频 UI 组件，通过在项目中集成 TUIRoom 组件，您只需要编写几行代码就可以为您的 App 添加屏幕分享、美颜、低延时视频通话等。TUIRoom 同时支持 [iOS](https://intl.cloud.tencent.com/document/product/647/37284)、[Windows](https://intl.cloud.tencent.com/document/product/647/44071)，[Mac](https://intl.cloud.tencent.com/document/product/647/44071) 等平台，基本功能如下图所示：
 
+>?TUIKit 系列组件同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信IM服务。即时通信 IM 服务详细计费规则请参见 [即时通信 - 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)，TRTC 开通会默认关联开通 IM SDK 的体验版，仅支持100个 DAU。
+
 <table class="tablestyle">
 <tbody><tr>
 <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2944bac3c5d348b06d2a11c439783b48.png"></td>
@@ -9,21 +11,23 @@ TUIRoom 是一个开源的音视频 UI 组件，通过在项目中集成 TUIRoom
 
 ## 组件集成
 ### 步骤一：下载并导入 TUIRoom 组件
-单击进入 [Github](https://github.com/tencentyun/TUIRoom) ，选择克隆/下载代码，然后拷贝 Android 下的 tuiroom、debug、tuibeauty 目录到您的工程中，并完成如下导入动作：
-- 在 `setting.gradle` 中完成导入，参考如下：
+单击进入 [Github](https://github.com/tencentyun/TUIRoom)，选择克隆/下载代码，然后拷贝 Android 下的 tuiroom、debug、tuibeauty 目录到您的工程中，并完成如下导入动作：
+1. 在 `setting.gradle` 中完成导入，参考如下：
 
 ```
 include ':tuiroom'
 include ':debug'
 include ':tuibeauty'
 ```
-- 在 app 的 `build.gradle` 文件中添加对 tuiroom、debug、tuibeauty 的依赖：
+2. 在 app 的 `build.gradle` 文件中添加对 tuiroom、debug、tuibeauty 的依赖：
+
 ```
 api project(':tuiroom')
 api project(':debug')
 api project(':tuibeauty')
 ```
-- 在根目录的 `build.gradle` 文件中添加 `TRTC SDK` 和 `IM SDK` 的依赖：
+3. 在根目录的 `build.gradle` 文件中添加 `TRTC SDK` 和 `IM SDK` 的依赖：
+
 ```
 ext {
     liteavSdk = "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
@@ -44,6 +48,7 @@ ext {
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 2. 在 proguard-rules.pro 文件，将 SDK 相关类加入不混淆名单：
+
 ```
 -keep class com.tencent.** { *; }
 ```
@@ -79,11 +84,11 @@ TUIRoom tuiRoom = TUIRoom.sharedInstance(this);
 ### 步骤四：实现多人音视频互动
 1. **实现房主创建多人音视频互动房间**。
 ```java
-tuiRoom.createRoom("12345", TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
+tuiRoom.createRoom(12345, TUIRoomCoreDef.SpeechMode.FREE_SPEECH, true, true);
 ```
 2. **实现其他成员加入音视频房间**。
 ```java
-tuiRoom.enterRoom("12345", true, true);
+tuiRoom.enterRoom(12345, true, true);
 ```
 
 ### 步骤五：房间管理（可选）
@@ -121,7 +126,7 @@ public void onRemoteUserLeave(String userId) {
 ```
 
 ### 步骤六：屏幕分享（可选）
-实现屏幕分享 [TUIRoomCore#startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37281)。
+实现屏幕分享 [TUIRoomCore#startScreenCapture](intl.cloud.tencent.com/document/product/647/37281)。
 ```java
 // 1.在 AndroidManifest.xml 文件中添加 SDK 录屏功能的 activity 和权限
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -170,13 +175,6 @@ private void startScreenCapture() {
         mTUIRoom.startScreenCapture(encParams, params);
 }
 ```
-
-### 步骤七：美颜特效（可选）[](id:XMagic)
-TUIRoom 美颜使用了 腾讯特效SDK，在使用美颜功能时，需要先设置 XMagic License。
-```java
-TUIBeautyView.getBeautyService().setLicense(context, “XMagicLicenseURL”, “XMagicLicenseKey”);
-```
-
 
 ## 常见问题
 如果有任何需要或者反馈，您可以联系：colleenyu@tencent.com。
