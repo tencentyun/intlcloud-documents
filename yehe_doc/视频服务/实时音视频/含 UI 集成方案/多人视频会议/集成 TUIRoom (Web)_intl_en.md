@@ -48,6 +48,7 @@ npm create vite@latest TUIRoom-demo -- --template vue
 <dx-alert infotype="notice">During the creation process, press Enter first, select "Vue", and then select "vue-ts".
 
 After the template is generated, run the script below:
+
 ```
 cd TUIRoom-demo
 npm install
