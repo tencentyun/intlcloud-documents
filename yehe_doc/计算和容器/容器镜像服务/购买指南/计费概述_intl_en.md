@@ -123,7 +123,7 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>Namespace quota</td><td>10</td><td>50</td><td>100</td><td>500<br>(you can apply to increase the quota)</td>
 </tr>
 <tr>
-<td>Image repository quota</td><td>500</td><td>1000</td><td>3000</td><td>5000 <br>(you can apply to increase the quota)</td>
+<td>Image repository quota</td><td>Guangzhou region: 500, other regions: 100</td><td>1000</td><td>3000</td><td>5000 <br>(you can apply to increase the quota)</td>
 </tr>
 <tr>
 <td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>(you can apply to increase the quota)</td>
