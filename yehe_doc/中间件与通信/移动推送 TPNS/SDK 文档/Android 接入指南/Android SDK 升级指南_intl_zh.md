@@ -280,8 +280,10 @@ public class MessageReceiver extends XGPushBaseReceiver {
             android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
             android:authorities="应用包名.XG_SETTINGS_PROVIDER" />
 ```
+
 4. 在 proguard 混淆配置添加如下内容：
-```
+
+```xml
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep class com.tencent.android.tpush.** {*;}
@@ -289,6 +291,7 @@ public class MessageReceiver extends XGPushBaseReceiver {
 -keep class com.tencent.tpns.mqttchannel.** {*;}
 -keep class com.tencent.tpns.dataacquisition.** {*;}
 ```
+
 
 #### OPPO 推送
 1. 在主工程添加类资源文件 `com.heytap.mcssdk.R`，代码如下：
@@ -336,9 +339,12 @@ class R {
    </intent-filter>
 </service>
 ```
+
 4. 在 proguard 混淆配置添加如下内容：
-```
+
+```xml
 -keep public class * extends android.app.Service
 -keep class com.heytap.mcssdk.** {*;}
 -keep class com.heytap.msp.push.** { *;}
 ```
+

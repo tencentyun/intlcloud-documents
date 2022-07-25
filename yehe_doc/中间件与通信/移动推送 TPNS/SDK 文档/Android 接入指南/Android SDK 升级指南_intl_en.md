@@ -280,8 +280,10 @@ Add the following nodes:
             android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
             android:authorities="application package name.XG_SETTINGS_PROVIDER" />
 ```
+
 4. Add the following to the ProGuard obfuscation configuration:
-```
+
+```xml
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep class com.tencent.android.tpush.** {*;}
@@ -289,6 +291,7 @@ Add the following nodes:
 -keep class com.tencent.tpns.mqttchannel.** {*;}
 -keep class com.tencent.tpns.dataacquisition.** {*;}
 ```
+
 
 #### OPPO Push
 1. Add the class resource file `com.heytap.mcssdk.R` to the project with the following code:
@@ -336,9 +339,12 @@ Add the following nodes:
    </intent-filter>
 </service>
 ```
+
 4. Add the following to the ProGuard obfuscation configuration:
-```
+
+```xml
 -keep public class * extends android.app.Service
 -keep class com.heytap.mcssdk.** {*;}
 -keep class com.heytap.msp.push.** { *;}
 ```
+
