@@ -9,16 +9,16 @@ This API is used by the app backend to:
 
 ## Notes
 
-- To enable this callback, you must configure a callback URL and enable the corresponding switch for this callback. For more information on the configuration method, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+- To enable this callback, you must configure a callback URL and toggle on the corresponding switch for this callback. For more information on the configuration method, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - During this callback, the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the `SDKAppID` contained in the request URL is the `SDKAppID` of the app.
 - For more security considerations, see the **Security Considerations** section in [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354).
 
-## Callback Trigger Scenarios
+## Callback Triggering Scenarios
 
 - An app user initiates a response to accept or reject a friend request.
 
-## Callback Trigger Timing
+## Callback Triggering Timing
 
 IM backend receives a response from an app user to a friend request.
 
