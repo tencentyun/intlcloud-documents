@@ -9,7 +9,7 @@ The Mi push channel is a system-level push channel **officially provided by Mi**
 
 ### Enabling Mi push service
 
-Enable the push service for the application on **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** -> **Push Platform(https://admin.xmpush.xiaomi.com/)**.
+Enable the push service for the application on **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** -> **[Push Platform](https://admin.xmpush.xiaomi.com/)**.
 ![]()
 
 ### Obtaining a key
