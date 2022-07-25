@@ -3,7 +3,7 @@
 The real-time speech recognition SDK and demo for iOS can be downloaded [here](https://sdk-1300466766.cos.ap-shanghai.myqcloud.com/realtime/QCloudSDK_IOS_v2.6.4.zip).
 
 ### Notes on connection
-- You need to view the [API description](https://intl.cloud.tencent.com/document/product/1118/43378) of real-time speech recognition to understand the **use requirements** and **directions** of the API before calling it.   
+- You need to view the  API description of real-time speech recognition to understand the **use requirements** and **directions** of the API before calling it.   
 - The API requires the phone to have an internet connection over GPRS, 3G, Wi-Fi, etc. and requires the system to be **iOS 9.0** or later.
 
 ### Development environment
