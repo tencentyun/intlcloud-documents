@@ -31,7 +31,7 @@
     - 在目标实例的**操作**列，选择**配置变更** > **带宽调整**。 
     - 单击实例 ID，在**实例详情**页面的**网络信息**区域，单击**最大网络吞吐**后面的**带宽调整**。
 5.  在**带宽调整**对话框，在**附加带宽**后面的滑轴上可以根据需要选择所需新增的带宽。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/7929fcd4b6637a686e8282e20d2d2e94.png" style="zoom:80%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/64ae0838ff5d2444e4c96f7ed741ca2e.png" style="zoom:50%;" />
 <table>
 <thead>
 <tr><th>参数名称</th><th>参数解释</th></tr></thead>
@@ -52,7 +52,7 @@
 <td>在滑轴上选择需新增的带宽。</td></tr>
 <tr>
 <td><strong>实例总带宽</strong></td>
-<td>实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 *(主节点数 + 只读副本节点数），标准架构的分片数=1。</td></tr>
+<td><ul><li>开启副本只读时，实例总带宽  = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。<l/i><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul></td></tr>
 <tr>
 <td><strong>费用</strong></td>
 <td>暂时免费中。</td></tr>
@@ -65,5 +65,6 @@
 
 | 接口名称                                                     | 接口功能         |
 | :----------------------------------------------------------- | :--------------- |
-| [ModifyNetworkConfig](https://intl.cloud.tencent.com/document/product/213/33241) | 修改实例网络配置来修改带宽 |
+| [ModifyNetworkConfig](https://intl.cloud.tencent.com/document/product/239/32056) | 修改实例网络配置来修改带宽 |
+
 
