@@ -2,9 +2,9 @@
 
 本文档为您提供了在存储桶策略中使用对象存储（Cloud Object Storage，COS）条件键的常用示例，您可以在 [生效条件](https://intl.cloud.tencent.com/document/product/436/46205) 文档中查看 COS 支持的全部条件键和适用请求。
 
->? 当您使用条件键编写策略时，请务必遵循最小权限原则，仅为适用请求（action）添加相应的条件键，避免在指定操作（action）时使用通配符“\*”，导致请求失败，关于条件键的介绍，可参见 [生效条件](https://intl.cloud.tencent.com/document/product/436/46205) 文档。
->
-
+>? 
+>- 当您使用条件键编写策略时，请务必遵循最小权限原则，仅为适用请求（action）添加相应的条件键，避免在指定操作（action）时使用通配符“\*”，导致请求失败，关于条件键的介绍，可参见 [生效条件](https://intl.cloud.tencent.com/document/product/436/46205) 文档。
+>- 当您使用访问管理 CAM 控制台创建策略时，请注意语法格式，version、principal、statement、effect、action、resource、condition 语法元素需保持首字母大写或者全小写。
 
 
 ## 条件键使用示例
@@ -46,7 +46,7 @@
 
 #### 条件键 vpc:requester_vpc
 
-使用条件键`vpc:requester_vpc`限制用户访问的 vpcid，关于 vpcid 的更多介绍，请参见 腾讯云产品 [私有网络](https://intl.cloud.tencent.com/document/product/215)。
+使用条件键`vpc:requester_vpc`限制用户访问的 vpcid，关于 vpcid 的更多介绍，请参见 腾讯云产品 [私有网络](https://www.tencentcloud.com/document/product/215)。
 
 #### 示例：限制 vpcid 为 aqp5jrc1
 
@@ -54,25 +54,25 @@
 
 ```
 {
-  "Statement": [
+  "statement": [
     {
-      "Action": [
+      "action": [
         "name/cos:*"
       ],
-      "Condition": {
+      "condition": {
         "string_equal": {
           "vpc:requester_vpc": [
             "vpc-aqp5jrc1"
           ]
         }
       },
-      "Effect": "allow",
-      "Principal": {
+      "effect": "allow",
+      "principal": {
         "qcs": [
           "qcs::cam::uin/100000000001:uin/100000000002"
         ]
       },
-      "Resource": [
+      "resource": [
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
       ]
     }
@@ -84,18 +84,18 @@
 <span id="versionid"></span>
 ### 只允许访问对象的最新版本或者指定版本（cos:versionid）
 
-#### 请求参数 versionId
+#### 请求参数 versionid
 
-请求参数`versionId`表示对象的版本号，关于版本控制相关内容可查看 [版本控制概述](https://intl.cloud.tencent.com/document/product/436/19883)。您可以在下载对象（GetObject）、删除对象（DeleteObject）时使用请求参数`versionId`指定需要操作的对象版本。
+请求参数`versionid`表示对象的版本号，关于版本控制相关内容可查看 [版本控制概述](https://intl.cloud.tencent.com/document/product/436/19883)。您可以在下载对象（GetObject）、删除对象（DeleteObject）时使用请求参数`versionid`指定需要操作的对象版本。
 
-- 不带`versionId`请求参数时，请求默认作用于对象的最新版本。
-- `versionId`请求参数为一个空字符串时，等同于不带`versionId`请求参数时。
-- `versionId`请求参数为字符串`"null"`的情况。对于一个存储桶在开启版本控制之前上传的对象，开启版本控制后，这批对象的版本号统一是字符串`"null"`。
+- 不带`versionid`请求参数时，请求默认作用于对象的最新版本。
+- `versionid`请求参数为一个空字符串时，等同于不带`versionid`请求参数时。
+- `versionid`请求参数为字符串`"null"`的情况。对于一个存储桶在开启版本控制之前上传的对象，开启版本控制后，这批对象的版本号统一是字符串`"null"`。
 
 
 #### 条件键 cos:versionid 
 
-条件键`cos:versionid`用于限制请求参数`versionId`。
+条件键`cos:versionid`用于限制请求参数`versionid`。
 
 
 #### 示例1：只允许用户获取指定版本号的对象
@@ -107,23 +107,23 @@
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -139,42 +139,42 @@
 
 ```
 {
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:versionid":"MTg0NDUxNTc1NjIzMTQ1MDAwODg"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -187,11 +187,11 @@
 
 假设主账号（uin:100000000001）拥有存储桶 examplebucket-1250000000，需要限制其子用户（uin:100000000002）只能获取最新版本的对象。
 
-由于在不携带请求参数`versionId`或`versionId`为空字符串时，GetObject 默认获取最新版本的对象。因此，我们可以在条件中使用 string_equal_if_exsit：
+由于在不携带请求参数`versionid`或`versionid`为空字符串时，GetObject 默认获取最新版本的对象。因此，我们可以在条件中使用 string_equal_if_exsit：
 1. 若不携带 versionid，默认按照 true 处理，命中 allow 条件，请求将被 allow。
-2. 若请求参数 VersionId 为空，即`“”`，同样会命中 allow 策略，只对获取最新版本的对象的请求进行授权。
+2. 若请求参数 versionid 为空，即`“”`，同样会命中 allow 策略，只对获取最新版本的对象的请求进行授权。
 ```
-	"Condition": {
+	"condition": {
 		"string_equal_if_exist": {
 			"cos:versionid": ""
 		}
@@ -200,42 +200,42 @@
 添加显式拒绝后，完整的存储桶策略如下所示：
 ```
 {
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal_if_exist":{
                     "cos:versionid":""
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal":{
                     "cos:versionid":""
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -258,37 +258,37 @@
 
 ```
 {
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:DeleteObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:DeleteObject"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:versionid":"null"
                 }
             },
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ]
         }
@@ -316,42 +316,42 @@ RFC 2616中定义的 HTTP 请求内容长度（字节），在 PUT 和 POST 请�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject",
                 "name/cos:PostObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_less_than_equal":{
                     "cos:content-length":10
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:PutObject",
                 "name/cos:PostObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_greater_than_if_exist":{
                     "cos:content-length":10
                 }
@@ -368,42 +368,42 @@ RFC 2616中定义的 HTTP 请求内容长度（字节），在 PUT 和 POST 请�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject",
                 "name/cos:PostObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_greater_than_equal":{
                     "cos:content-length":2
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:PutObject",
                 "name/cos:PostObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_less_than_if_exist":{
                     "cos:content-length":2
                 }
@@ -438,38 +438,38 @@ RFC 2616中定义的 HTTP 请求内容类型（MIME），例如`application/xml`
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:content-type":"image/jpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:content-type":"image/jpeg"
                 }
@@ -499,38 +499,38 @@ GetObject 接口支持加入请求参数`response-content-type`，用于设置�
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:response-content-type":"image%2Fjpeg"
                 }
@@ -554,21 +554,21 @@ GetObject 接口支持加入请求参数`response-content-type`，用于设置�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "bool_equal":{
                     "cos:secure-transport":"true"
                 }
@@ -587,19 +587,19 @@ GetObject 接口支持加入请求参数`response-content-type`，用于设置�
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "bool_equal":{
                     "cos:secure-transport":"false"
                 }
@@ -620,7 +620,7 @@ GetObject 接口支持加入请求参数`response-content-type`，用于设置�
 
 您可以通过条件键`cos:x-cos-storage-class`限制请求头部`x-cos-storage-class`，进而限制可能修改存储类型的请求。
 
-COS 的存储类型字段包括：`STANDARD`、 `STANDARD_IA`、`INTELLIGENT_TIERING`、`ARCHIVE`、`DEEP_ARCHIVE`。
+COS 的存储类型字段包括：`STANDARD`, `STANDARD_IA`、`INTELLIGENT_TIERING`、``ARCHIVE`、`DEEP_ARCHIVE`。
 
 #### 示例1：要求 PutObject 时必须将存储类型设置为标准类型
 
@@ -629,40 +629,40 @@ COS 的存储类型字段包括：`STANDARD`、 `STANDARD_IA`、`INTELLIGENT_TIE
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:x-cos-storage-class":"STANDARD"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:x-cos-storage-class":"STANDARD"
                 }
@@ -695,38 +695,38 @@ COS 的存储类型字段包括：`STANDARD`、 `STANDARD_IA`、`INTELLIGENT_TIE
     "version":"2.0",
     "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:x-cos-acl":"private"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:x-cos-acl":"private"
                 }
@@ -754,40 +754,40 @@ COS 的存储类型字段包括：`STANDARD`、 `STANDARD_IA`、`INTELLIGENT_TIE
 
 ```
 {
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:GetBucket"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:prefix":"folder1"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:GetBucket"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal_if_exist":{
                     "cos:prefix":"folder1"
                 }
@@ -819,40 +819,40 @@ COS 的存储类型字段包括：`STANDARD`、 `STANDARD_IA`、`INTELLIGENT_TIE
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_equal":{
                     "cos:x-cos-forbid-overwrite":"true"
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "name/cos:PutObject"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "string_not_equal_if_exist":{
                     "cos:x-cos-forbid-overwrite":"true"
                 }
