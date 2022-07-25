@@ -2,7 +2,7 @@
 
 The app backend uses this callback to view information about friends added by users in real time.
 
-## Precautions
+## Notes
 
 - To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - Callback direction: the IM backend initiates an HTTP POST request to the app backend.
