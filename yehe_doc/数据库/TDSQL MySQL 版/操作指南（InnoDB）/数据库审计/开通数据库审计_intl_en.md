@@ -13,4 +13,4 @@ TDSQL for MySQL has database audit capability, which can record accesses to data
 >- In order to meet the security compliance requirements for the retention period of SQL logs, we recommend you select 180 days or above.
 
 ## Viewing Audit Log
-After enabling audit, you can view SQL audit logs on the **Audit Log** tab. For more information, see [Viewing Audit Logs] (https://intl.cloud.tencent.com/document/product/1042/48428)
+After enabling audit, you can view SQL audit logs on the **Audit Log** tab. For more information, see [Viewing Audit Logs](https://intl.cloud.tencent.com/document/product/1042/48428)
