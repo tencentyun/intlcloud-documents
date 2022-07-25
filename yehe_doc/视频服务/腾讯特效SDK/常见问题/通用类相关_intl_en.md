@@ -1,6 +1,6 @@
 ### What is Tencent Effect SDK?
 
-Tencent Effect SDK leverages YouTu's accurate AI capabilities and Pitu's rich real-time effects to offer a wealth of services for diverse video processing use cases.
+Tencent Effect SDK leverages Tencent's proprietary AI capabilities and real-time effects to offer a wealth of services for diverse video processing use cases.
 
 ### Is Tencent Effect SDK free? How do I get it?
 
@@ -26,7 +26,7 @@ In Tencent Effect SDK, the full face makeup and partial makeup can be used toget
 
 Yes.
 
-### Can I customize the background for keying?
+### Can I customize the background with keying?
 
 Yes. You can change the background image and video in both the demo and SDK.
 

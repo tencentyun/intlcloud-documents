@@ -12,19 +12,15 @@
 Xcode uses the C++ environment by default.
 
 <table>
-<tr><th>Type</th><th>Dependent Library</th></tr>
+<tr><th>Type</th><th>Dependency Library</th></tr>
 <tr>
 <td>System dependent library</td>
 <td><ul style="margin:0">
-<li/>AVFoundation
-<li/>Accelerate
-<li/>AssetsLibrary
-<li/>CoreML
-<li/>JavaScriptCore
-<li/>CoreFoundation
-<li/>MetalPerformanceShaders
 <li/>CoreTelephony
+<li/>JavaScriptCore
 <li/>libc++.tbd
+<li/>MetalPerformanceShaders
+<li/>VideoToolbox
 </ul></td>
 </tr>
 <tr>
@@ -33,9 +29,12 @@ Xcode uses the C++ environment by default.
 <li/>YTCommon (static authentication library)
 <li/>XMagic (static beauty filter library)
 <li/>libpag (dynamic video decoding library)
+<li/>Masonry (control layout library)
+<li/>SSZipArchive (file decompression library)
 </ul></td>
 </tr>
 </table>
+
 
 ## Resource Import
 ### Objects
@@ -55,20 +54,20 @@ Add permission descriptions in the `Info.plist` file; otherwise, the app will cr
 
 [](id:step1)
 ### Step 1. Prepare the signature
-For the framework signature, select **General** and set **Masonry.framework** and **libpag.framework** to **Embed & Sign**.
+For the framework signature, select **General** >**Masonry.framework** and set **libpag.framework** to **Embed & Sign**.
 [](id:step2)
 ### Step 2. Authenticate
 1. Apply for a license and get the `LicenseURL` and `LicenseKEY`.
->! Under normal circumstances, the authentication process can be completed by connecting your app to the internet one time, so you **don't need** to put the license file in the project directory. However, if your app needs to use the SDK features without ever connecting to the internet, you can download the license file and put it in the project directory. In this case, the license file must be named `v_cube.license`.
+> ! Under normal circumstances, the authentication process can be completed by connecting your app to the internet one time, so you **don't need** to put the license file in the project directory. However, if your app needs to use the SDK features without ever connecting to the internet, you can download the license file and put it in the project directory. In this case, the license file must be named `v_cube.license`.
 2. Set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of the `AppDelegate`. Here, `LicenseURL` and `LicenseKey` are the information generated in the console when the license is bound.
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
-       if (authresult == TELicenseCheckOk) {
-            NSLog(@"Authentication successful");
-        } else {
-            NSLog(@"Authentication failed");
-        }
-    }];
+	if (authresult == TELicenseCheckOk) {
+		NSLog(@"Authentication successful");
+	} else {
+		NSLog(@"Authentication failed");
+	}
+}];
 ```
 **Authentication `errorCode` description:**
 <table>
@@ -198,10 +197,9 @@ Command /bin/sh failed with exit code 1
 ```
 - Cause: Failed to sign `libpag.framework` and `Masonary.framework` again.
 - Solution:
- 1. Open `demo/copy_framework.sh`.
- 2. Use the following command to check the absolute path of the local `cmake` and replace `$(which cmake)` with it.
+	1. Open `demo/copy_framework.sh`.
+	2. Use the following command to check the absolute path of the local `cmake`. Replace `$(which cmake)` with the absolute path of `cmake`.
 ```
 which cmake
 ```
-
-3. Replace all `Apple Development: ......` with your own signature.
+	3. Replace all `Apple Development: ......` with your own signature.

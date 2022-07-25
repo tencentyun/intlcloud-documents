@@ -9,12 +9,13 @@
 -keep class org.extra.** { *;}
 -keep class com.gyailib.**{ *;}
 -keep class com.tencent.cloud.iai.lib.** { *;}
+-keep class com.tencent.beacon.** { *;}
+-keep class com.tencent.qimei.** { *;}
 ```
 
 [](id:que2)
 ### What should I do if the SDK for Android integrated to the host project reports a `gson` library conflict?
 Add the following code to the `build.gradle` file of the host project:
-
 ```
 Android{
   configurations {
@@ -24,19 +25,29 @@ Android{
 ```
 
 [](id:que3)
+### Why did .so library loading fail on Android targetSdkVersion 31 or later?
+On Android targetSdkVersion 31 or later, you need to find the `AndroidManifest.xml` file in the `app` module and add the following tags under the `application` tag:
+```xml
+  <uses-native-library
+            android:name="libOpenCL.so"
+            android:required="true" />
+```
+For more information, see [<uses-native-library>](https://developer.android.google.cn/guide/topics/manifest/uses-native-library-element).
+
+[](id:que4)
 ### What should I do if "Building for iOS Simulator, but the linked and embedded framework '.framework'..." is reported during compilation by Xcode 12.X after resources are imported on iOS?
 
 Go to **Build Settings** > **Build Options**, change **Validate Workspace** to **Yes**, and click **Run**.
 > ? Note that the execution will also be normal if you change **Validate Workspace** from **Yes** to **No** after the compilation is completed.
 
-[](id:que4)
+[](id:que5)
 ### What should I do if the filter settings don't take effect?
 Check whether the value is set properly (value range: 0–100). You may have set too small a value so the effect is not obvious.
 
-[](id:que5)
+[](id:que6)
 ### What should I do if an error is reported when `dSYM` is generated during demo compilation on iOS?
 - **Error message**:
-```
+```swift
 PhaseScriptExecution CMake\ PostBuild\ Rules build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
     cd /Users/zhenli/Downloads/xmagic_s106
     /bin/sh -c /Users/zhenli/Downloads/xmagic_s106/build/XMagicDemo.build/Debug-iphoneos/XMagicDemo.build/Script-81731F743E244CF2B089C1BF.sh
@@ -49,14 +60,16 @@ Command /bin/sh failed with exit code 1
 	2. Change `$(which cmake)` to the absolute path of the local `cmake`.
 	3. Replace `Apple Development: ......` with your own account signature.
 
-[](id:que6)
+[](id:que7)
+
 ### What should I do if the homepage shows an authorization error in the demo for iOS?
 Check the license failure error code printed in the log. If you are using a local license file, check whether the file has been added to the project.
 
-[](id:que7)
+[](id:que8)
+
 ### What should I do if the demo for iOS reports a compilation error?
 - **Error message**:
-```
+```swift
 unexpected service error: build aborted due to an internal error: unable to write manifest to-xxxx-manifest.xcbuild': mkdir(/data, S_IRWXU | S_IRWXG | S_IRWXO): Read-only file system (30):
 ```
 - **Solution**:

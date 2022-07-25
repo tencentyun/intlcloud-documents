@@ -12,5 +12,5 @@ It uses industry-leading 3D capabilities to display great looking filters and an
 With the Tencent Effect SDK, you have access to a huge material library and rich AI features, including 3D capabilities, process control, and animated effects import, making effect customization effortless.
 
 ## Ease of Use
-It can be quickly and easily integrated into MLVB, TRTC, and UGSV to apply effects. For detailed directions, see [Demos](https://intl.cloud.tencent.com/document/product/1143/45374).
+It can be efficiently integrated into CSS, TRTC, and UGSV SDKs to apply effects quickly and easily. For detailed directions, see [Demo](https://intl.cloud.tencent.com/document/product/1143/45374).
 

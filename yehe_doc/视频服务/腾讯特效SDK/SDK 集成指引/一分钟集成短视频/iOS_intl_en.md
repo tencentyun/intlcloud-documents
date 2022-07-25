@@ -1,9 +1,51 @@
 ## Preparations[](id:ready)
 
-1. Download and unzip the [demo package](https://intl.cloud.tencent.com/document/product/1143/45374). Import the `Xmagic` module (the files in `Bundle` and `XmagicIconRes` and those in `Record > View`) into your project.
+1. Download and unzip the [demo package](https://intl.cloud.tencent.com/document/product/1143/45374). Import the `Xmagic` module (the files in `Bundle`, `XmagicIconRes`, and `Record > View` folders) into your project.
 2. Import `libpag.framework`, `Masonry.framework`, `XMagic.framework`, and `YTCommonXMagic.framework` in the `lib` directory.
 3. For the framework signature, select **General** and set **Masonry.framework** and **libpag.framework** to **Embed & Sign**.
 4. Set `Bundle ID` to the bundle ID bound to the trial license.
+
+### Developer environment requirements
+
+- Xcode 11 or later: Download on App Store or [here](https://developer.apple.com/xcode/resources/).
+- Recommended runtime environment:
+  - Device requirements: iPhone 5 or later. iPhone 6 and older models support up to 720p for front camera.
+  - System requirements: iOS 10.0 or later.
+
+### C/C++ layer development environment
+
+Xcode uses the C++ environment by default.
+
+<table>
+<tr><th>Type</th><th>Dependency Library</th></tr>
+<tr>
+<td>System dependent library</td>
+<td><ul style="margin:0">
+<li/>Accelerate
+<li/>AssetsLibrary
+<li/>AVFoundation
+<li/>CoreFoundation
+<li/>CoreML
+<li/>JavaScriptCore
+<li/>libc++.tbd
+<li/>libmtasdk.a
+<li/>libresolv.tbd
+<li/>libsqlite3.tbd
+<li/>MetalPerformanceShaders
+</ul></td>
+</tr>
+<tr>
+<td>Built-in library</td>
+<td><ul style="margin:0">
+<li/>YTCommon (static authentication library)
+<li/>XMagic (static beauty filter library)
+<li/>libpag (dynamic video decoding library)
+<li/>Masonry (control layout library)
+<li/>QCloudCore (object storage library)
+<li/>QCloudCosXML (object storage library)
+</ul></td>
+</tr>
+</table>
 
 ## SDK API Integration[](id:step)
 
@@ -11,8 +53,8 @@
 - For steps [4](#step4)–[7](#step7), see the instance code of the `UGCKitRecordViewController` and `BeautyView` classes in the demo project.
 
 ### Step 1. Initiate authentication[](id:step1)
-1. Add the following code to `didFinishLaunchingWithOptions` of `AppDelegate` (set `LicenseURL` and `LicenseKey` according to the authorization information you obtain from the Tencent Cloud website):
-```
+Add the following code to `didFinishLaunchingWithOptions` of `AppDelegate` (set `LicenseURL` and `LicenseKey` according to the authorization information you obtain from the Tencent Cloud website):
+```objectivec
 [TXUGCBase setLicenceURL:LicenseURL key:LicenseKey];
 
 [TELicenseCheck setTELicense:@"https://license.vod2.myqcloud.com/license/v2/1258289294_1/v_cube.license" key:@"3c16909893f53b9600bc63941162cea3" completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
@@ -23,20 +65,25 @@
                }
        }];
 ```
-2. For authorization code, see `viewDidLoad` of the `UGCKitRecordViewController` class in the demo:
-```
-NSString *licenseInfo = [TXUGCBase getLicenceInfo];
-NSData *jsonData = [licenseInfo dataUsingEncoding:NSUTF8StringEncoding];
-NSError *err = nil;
-NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-options:NSJSONReadingMutableContainers error:&err];
-NSString *xmagicLicBase64Str = [dic objectForKey:@"TELicense"];
+**Authentication `errorCode` description:**
 
-// Initialize XMagic authentication
-int authRet = [XMagicAuthManager initAuthByString:xmagicLicBase64Str withSecretKey:@""];// `withSecretKey` can be left empty.
-NSLog(@"xmagic auth ret : %i", authRet);
-NSLog(@"xmagic auth version : %@", [XMagicAuthManager getVersion]);
-```
+| Error Code | Description |
+| :----- | :------------------------------------------------------ |
+| 0 | Succeeded. |
+| -1     | The input parameter is invalid; for example, the `URL` or `KEY` is empty.                      |
+| -3     | Download failed. Check the network settings.                            |
+| -4     | The Tencent Effect SDK authorization information read from the local system is empty, which may be caused by an I/O failure.        |
+| -5     | The content of read VCUBE TEMP license file is empty, which may be caused by an I/O failure. |
+| -6     | The JSON field in the `v_cube.license` file is incorrect. Contact Tencent Cloud for assistance. |
+| -7     | Signature verification failed. Contact Tencent Cloud for assistance.                      |
+| -8     | Decryption failed. Contact Tencent Cloud for assistance.                          |
+| -9     | The JSON field in the `TELicense` field is incorrect. Contact Tencent Cloud for assistance. |
+| -10    | The Tencent Effect SDK authorization information parsed online is empty. Contact Tencent Cloud for assistance.      |
+| -11    | Failed to write the Tencent Effect SDK authorization information to the local file, which may be caused by an I/O failure.      |
+| -12    | Failed to download and failed to parse local assets.                         |
+| -13    | Authentication failed.                                                |
+| Others   | Contact Tencent Cloud for assistance.                                    |
+
 
 ### Step 2. Set the path of SDK materials[](id:step2)
 
@@ -65,15 +112,14 @@ self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:asset
 ```
 
 ### Step 3. Add the log and event listener[](id:step3)
-```
+```objectivec
 // Register log
 [self.beautyKit registerSDKEventListener:self];
 [self.beautyKit registerLoggerListener:self withDefaultLevel:YT_SDK_ERROR_LEVEL];
 ```
 
 ### Step 4. Configure beauty filter effects[](id:step4)
-
-```
+```objectivec
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
@@ -86,14 +132,13 @@ In the preprocessing frame callback, construct `YTProcessInput` and pass `textur
 
 ### Step 6. Pause/Resume the SDK[](id:step6)
 
-```
+```objectivec
 [self.beautyKit onPause];
 [self.beautyKit onResume];
 ```
 
 ### Step 7. Add the SDK beauty filter panel to the layout[](id:step7)
-
-```
+```objectivec
 UIEdgeInsets gSafeInset;
 #if __IPHONE_11_0 && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
 if(gSafeInset.bottom > 0){

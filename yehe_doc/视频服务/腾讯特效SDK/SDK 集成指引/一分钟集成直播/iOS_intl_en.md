@@ -6,13 +6,66 @@
 4. For the framework signature, select **General** and set **Masonry.framework** and **libpag.framework** to **Embed & Sign**.
 5. Replace the `Bundle ID` with the one under the obtained license.
 
+### Developer environment requirements
+
+- Xcode 11 or later: Download on App Store or [here](https://developer.apple.com/xcode/resources/).
+- Recommended runtime environment:
+  - Device requirements: iPhone 5 or later. iPhone 6 and older models support up to 720p for front camera.
+  - System requirements: iOS 10.0 or later.
+
+### C/C++ layer development environment
+
+Xcode uses the C++ environment by default.
+
+<table>
+<tr><th>Type</th><th>Dependency Library</th></tr>
+<tr>
+<td>System dependent library</td>
+<td><ul style="margin:0">
+<li/>Accelerate
+<li/>AssetsLibrary
+<li/>AVFoundation
+<li/>CoreMedia  
+<li/>CoreFoundation
+<li/>CoreML
+<li/>Foundation
+<li/>JavaScriptCore
+<li/>libc++.tbd
+<li/>libz.b
+<li/>libresolv.tbd
+<li/>libsqlite3.0.tbd
+<li/>MetalPerformanceShaders
+<li/>MetalKit
+<li/>MobileCoreServices
+<li/>OpneAL
+<li/>OpneGLES
+<li/>ReplayKit
+<li/>SystemConfiguration
+<li/>UIKit
+</ul></td>
+</tr>
+<tr>
+<td>Built-in library</td>
+<td><ul style="margin:0">
+<li/>YTCommon (static authentication library)
+<li/>XMagic (static beauty filter library)
+<li/>libpag (dynamic video decoding library)
+<li/>Masonry (control layout library)
+<li/>TXLiteAVSDK_Professional
+<li/>TXFFmpeg
+<li/>TXSoundTouch
+</ul></td>
+</tr>
+</table>
+
 ## SDK API Integration 
+
 - For steps [1](#step1)–[2](#step2), see the `viewDidLoad` and `buildBeautySDK` methods of the `ThirdBeautyViewController` class in the demo project. The `application` method of the `AppDelegate` class performs xMagic authentication.
 - For steps [4](#step4)–[7](#step7), see the instance code of the `ThirdBeautyViewController` and `BeautyView` classes in the demo project.
 
 ### Step 1. Initialize authorization[](id:step1)
 
-1. Add the following authentication code to the `didFinishLaunchingWithOptions` of the `AppDelegate` in the project, where the `LicenseURL` and `LicenseKey` are the authorization information obtained at Tencent Cloud official website:
+1. Add the following authentication code to `didFinishLaunchingWithOptions` of `AppDelegate` (set `LicenseURL` and `LicenseKey` according to the authorization information you obtain from the Tencent Cloud website):
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```

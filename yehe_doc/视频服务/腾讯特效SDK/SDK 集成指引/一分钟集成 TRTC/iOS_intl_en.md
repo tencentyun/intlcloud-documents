@@ -1,9 +1,62 @@
-## Preparations for Integration
+## Directions
 
-1. Download and unzip the [demo package](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/TRTC-API-Example.zip) and import the xMagic module (`bundle`, `XmagicIconRes`, and `Xmagic` folders) from the demo project into your actual project.
+1. Download and unzip the [demo package](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/2.4.1vcube/TRTC-API-Example.zip). Import the `xMagic` module (the files in `bundle`, `XmagicIconRes`, and `Xmagic` folders) into your project.
 2. Import `libpag.framework`, `Masonry.framework`, `XMagic.framework`, and `YTCommonXMagic.framework` in the SDK directory.
 3. For the framework signature, select **General** and set **Masonry.framework** and **libpag.framework** to **Embed & Sign**.
-4. Replace the `Bundle ID` with the one under the obtained trial license.
+4. Set `Bundle ID` to the bundle ID bound to the trial license.
+
+### Developer environment requirements
+
+- Xcode 11 or later: Download on App Store or [here](https://developer.apple.com/xcode/resources/).
+- Recommended runtime environment:
+  - Device requirements: iPhone 5 or later. iPhone 6 and older models support up to 720p for front camera.
+  - System requirements: iOS 10.0 or later.
+
+### C/C++ layer development environment
+
+Xcode uses the C++ environment by default.
+
+<table>
+<tr><th>Type</th><th>Dependency Library</th></tr>
+<tr>
+<td>System dependent library</td>
+<td><ul style="margin:0">
+<li/>Accelerate
+<li/>AssetsLibrary
+<li/>AVFoundation
+<li/>CoreMedia  
+<li/>CoreFoundation
+<li/>CoreML
+<li/>Foundation
+<li/>JavaScriptCore
+<li/>libc++.tbd
+<li/>libz.b
+<li/>libresolv.tbd
+<li/>libsqlite3.0.tbd
+<li/>MetalPerformanceShaders
+<li/>MetalKit
+<li/>MobileCoreServices
+<li/>OpneAL
+<li/>OpneGLES
+<li/>Security
+<li/>ReplayKit
+<li/>SystemConfiguration
+<li/>UIKit
+</ul></td>
+</tr>
+<tr>
+<td>Built-in library</td>
+<td><ul style="margin:0">
+<li/>YTCommon (static authentication library)
+<li/>XMagic (static beauty filter library)
+<li/>libpag (dynamic video decoding library)
+<li/>Masonry (control layout library)
+<li/>TXLiteAVSDK_Professional
+<li/>TXFFmpeg
+<li/>TXSoundTouch
+</ul></td>
+</tr>
+</table>
 
 ## SDK API Integration 
 
@@ -12,15 +65,15 @@
 
 ### Step 1. Initialize authorization[](id:step1)
 
-1. Add the following authentication code to the `didFinishLaunchingWithOptions` of the `AppDelegate` in the project, where the `LicenseURL` and `LicenseKey` are the authorization information obtained at Tencent Cloud official website as instructed in License Guide:
+1. Add the following authentication code to `didFinishLaunchingWithOptions` of `AppDelegate` (set `LicenseURL` and `LicenseKey` according to the authorization information you obtain from the Tencent Cloud website):
 ```
 [TXLiveBase setLicenceURL:LicenseURL key:LicenseKey];
 ```
-2. xMagic authentication: set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of the `AppDelegate`. Here, `LicenseURL` and `LicenseKey` are the information generated in the console when the license is bound.
+2. xMagic authentication: Set the `URL` and `KEY` in the initialization code of the relevant business module to trigger the license download. Avoid downloading it just before use. You can also trigger the download in the `didFinishLaunchingWithOptions` method of the `AppDelegate`. Here, `LicenseURL` and `LicenseKey` are the information generated in the console when the license is bound.
 ```
 [TELicenseCheck setTELicense:LicenseURL key:LicenseKey completion:^(NSInteger authresult, NSString * _Nonnull errorMsg) {
        if (authresult == TELicenseCheckOk) {
-            NSLog(@"Authentication succeeded");
+            NSLog(@"Authentication successful");
         } else {
             NSLog(@"Authentication failed");
         }
@@ -87,7 +140,7 @@
 <td>Authentication failed.</td>
 </tr>
 <tr>
-<td>Others</td>
+<td>Other</td>
 <td>Contact Tencent Cloud for assistance.</td>
 </tr>
 </tbody></table>
@@ -132,7 +185,7 @@ self.beautyKit = [[XMagic alloc] initWithRenderSize:previewSize assetsDict:asset
 - (int)configPropertyWithType:(NSString *_Nonnull)propertyType withName:(NSString *_Nonnull)propertyName withData:(NSString*_Nonnull)propertyValue withExtraInfo:(id _Nullable)extraInfo;
 ```
 
-### Step 5. Perform rendering[](id:step5)
+### Step 5. Render videos[](id:step5)
 In the video frame callback API, construct and pass `YTProcessInput` to the SDK for rendering. You can refer to `ThirdBeautyViewController` in the demo.
 ```objectivec
  [self.xMagicKit process:inputCPU withOrigin:YtLightImageOriginTopLeft withOrientation:YtLightCameraRotation0]
@@ -167,7 +220,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.width.mas_equalTo(self.view);
         make.centerX.mas_equalTo(self.view);
         make.height.mas_equalTo(254);
-        if(gSafeInset.bottom > 0.0){  // Adaptive to full screen
+        if(gSafeInset.bottom > 0.0){  // Adapt to full-view screen
             make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(0);
         } else {
             make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(-10);

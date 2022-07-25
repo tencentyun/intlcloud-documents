@@ -1,7 +1,7 @@
 <style> .markdown-text-box table td, .markdown-text-box table th { padding: 8px 8px; text-align:center}
 </style>
 
-腾讯特效 SDK 共有 11 个套餐，11 个套餐分为 2 个系列：**A 系列基础套餐**和 **S 系列高级套餐**。不同系列的不同套餐对应不同功能，您可根据您的需求挑选套餐。更多详细套餐功能请参见 [功能说明](https://intl.cloud.tencent.com/document/product/1143/45376)。
+腾讯特效 SDK 共有 11 个套餐，11 个套餐分为 2 个系列：**A 系列基础套餐**和 **S 系列高级套餐**。不同系列的不同套餐对应不同功能，您可根据您的需求挑选套餐。更多详细套餐功能请参见 [功能说明](https://cloud.tencent.com/document/product/616/67043)。
 
 - [A 系列基础套餐](#setA)：提供通用美型功能，适用于对脸部美颜调整要求较低的客户。
 - [S 系列高级套餐](#setS)：提供高级美型功能（包括特效贴纸和美妆），适用于对脸部美颜调整需求较高的客户。
@@ -131,7 +131,7 @@
 <thead>
 <tr>
 <th rowspan=2 colspan=2 width=50%>套餐功能</th>
-<th colspan=5>套餐编号</th>
+<th colspan=6>套餐编号</th>
 <tr>
 <th>S1 - 00</th>
 <th>S1 - 01</th>
@@ -143,7 +143,7 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan=7 width=8%>基础功能</td>
+<td rowspan=7 width=11%>基础功能</td>
 <td><b>基础美颜</b><br>美白、磨皮、红润</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -168,7 +168,7 @@
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>滤镜</b><br>（默认通用滤镜）</td>
+<td><b>滤镜</b><br>（默认 10 款通用滤镜）</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -176,7 +176,7 @@
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>贴纸</b><br>（默认通用 2D 贴纸）</td>
+<td><b>贴纸</b><br>（赠送 10 款指定 2D 通用贴纸）</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -184,7 +184,7 @@
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>高级贴纸</b><br>（默认通用 3D 贴纸）</td>
+<td><b>高级贴纸</b><br>（赠送 3 款指定 3D 通用贴纸）</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -192,7 +192,7 @@
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>美妆</b><br>整妆</td>
+<td><b>美妆</b><br>（赠送 3 款指定整妆）</td>
 <td>-</td>
 <td>&#10003;</td>
 <td>&#10003;</td>
@@ -209,7 +209,7 @@
 <td>&#10003;</td>
 </tr>
 <tr>
-<td><b>人像分割/虚拟背景</b><br>（赠送 3 款指定分割贴纸）</td>
+<td><b>人像分割 / 虚拟背景</b><br>（赠送 3 款指定分割贴纸）</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -225,6 +225,7 @@
 <td>USD&#xA0;120,000/年</td>
 </tr>
 </tbody></table>
+
 
 
 
