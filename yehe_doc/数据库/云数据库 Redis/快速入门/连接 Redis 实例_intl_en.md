@@ -6,7 +6,7 @@ This document describes three methods for connecting to a database. After an ins
 > ?
 > - CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over private network through [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
 > - CVM and TencentDB instances in different VPCs can be connected through the public network address as instructed in [Configuring Public Network Address](https://intl.cloud.tencent.com/document/product/239/43452).
--  Connection via DMC: You can use Tencent Cloud Database Management Console (DMC) to log in to your TencentDB instance to access them, view their key metric information, and run Redis commands.
+-  Connection via DMC: You can use Tencent Cloud Database Management Center (DMC) to log in to your TencentDB instance to access them, view their key metric information, and run Redis commands.
 - Connection via SDK: You can connect to a TencentDB for Redis instance by configuring its private IP, port, instance ID, and password in the SDK for the corresponding programming language. Then, you can manipulate it, get and set its key, and do more.
 
 ## Preparations
