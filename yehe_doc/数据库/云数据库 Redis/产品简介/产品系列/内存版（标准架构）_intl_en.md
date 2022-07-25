@@ -2,7 +2,7 @@
 TencentDB for Redis Memory Edition (Standard Architecture) refers to the edition that supports zero or more replicas (a replica refers to a non-master node), which is the most common Redis edition. It is compatible with protocols and commands of Redis 2.8, 4.0, and 5.0 and features data persistence and backup, making it suitable for scenarios where high data reliability and availability are required. A master node provides daily service access, while a replica node ensures high availability (HA). In case that the master node fails, the system will automatically switch to the replica node to guarantee business continuity.
 
 Memory Edition (Standard Architecture) - one replica:
-![](https://main.qcloudimg.com/raw/37626b6980e25a1ddf4fd3efcf4bbd4a.png)
+![](https://main.qcloudimg.com/raw/0bb5f79eea8c50f2817050211a0ed77f.jpg)
 
 ## Replica Description
 Memory Edition (Standard Architecture) supports 0–5 replicas to meet the different requirements for availability and performance of your business in different scenarios. All replicas of Memory Edition (Standard Architecture) play a role in supporting system's high availability, so the more replicas, the higher the availability. If the number of replicas is greater than or equal to 1, read/write separation can be enabled to extend the read performance through replica nodes.
