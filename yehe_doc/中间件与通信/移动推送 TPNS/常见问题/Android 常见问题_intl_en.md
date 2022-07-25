@@ -15,9 +15,9 @@ You can set a custom ringtone by creating a notification channel.
 2. Call the TPNS push API and specify the same notification channel `n_ch_id` for push. For a vendor channel, you must specify the vendor channel ID. That is, for Huawei channel, specify `hw_ch_id`; for Mi channel, specify `xm_ch_id`.
 
 >?
->- Currently, only Huawei, Mi, FCM, and TPNS channels support custom ringtones.
->- Before using the push channels of some vendors, you need to apply for notification classification permissions. For related descriptions and application steps, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
->- For Huawei push channel, if you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the channel customization feature is no longer applicable to your application. That is, you cannot use the notification channel capability to customize notification ringtones. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
+- Currently, only Huawei, Mi, FCM, and TPNS channels support custom ringtones.
+- For some vendor channels, before using the push channels of some vendors, you need to apply for notification classification permissions. For details and application steps, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+- For Huawei push channel, if you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the channel customization feature is no longer applicable to your application. That is, you cannot use the notification channel capability to customize notification ringtones. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
 
 ### How do I disable the session keep-alive feature of TPNS?
 
@@ -28,7 +28,7 @@ To disable the feature, call the following API in `onCreate` of `Application` or
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 ```
 
-If you use Gradle automatic integration, configure the following node under the `<application>` tag of the `AndroidManifest.xml` file of your application, where `xxx` is a custom name. If you use manual integration, modify node attributes as follows:
+If you use Gradle automatic integration, configure the following node under the `<application>` tag of the `AndroidManifest.xml` file of your application, where `xxx` is a custom name. For manual integration, modify node attributes as follows:
 ```xml
 <!-- Add the following node to the AndroidManifest.xml file of your application, where xxx is a custom name: -->     
 <!-- To disable the feature of keep-alive with TPNS application, configure as follows: -->
@@ -74,13 +74,13 @@ Problem source: vivo channel push SDK v2.3.4
 Class file involved: `com.vivo.push.util.z`; sensitive permission string involved: `android.permission.GET_ACCOUNTS`
 >! Inspection found that the problem also exists in the vivo channel push SDK v3.0.0.3.
 
-The problem code is from the vivo channel push SDK. The TPNS team is unable to change the code and has been reported the problem to vivo. vivo replied that the relevant static fields are the legacy code of the SDK and are not actually used, and they will schedule to fix the problem as soon as possible. The following is a quick solution for your reference:
+The problem code is from the vivo channel push SDK. The TPNS team is unable to change the code and has reported the problem to vivo. vivo replied that the relevant static fields are the legacy code of the SDK and are not actually used, and they will schedule to fix the problem as soon as possible. The following is a quick solution for your reference:
 - Method 1 (recommended): Add the [TPNS privacy policy description](https://intl.cloud.tencent.com/document/product/1024/30713) to the App Privacy Statement. 
 - Method 2 (not recommended): Remove vivo-related JAR packages, which will make the vivo channel unavailable.
 
 ### What is the TPNS channel?
 
-- The TPNS channel is a channel built by TPNS. It can deliver messages only when the TPNS service is online (maintaining a persistent connection with the TPNS backend server). Therefore, the actual delivery value of the TPNS channel is generally lower than that of other vendor channels.
+- The TPNS channel is a channel built by TPNS. It can deliver messages only when the TPNS service is online (maintaining a persistent connection with the TPNS backend server). Therefore, the actual delivery volume of the TPNS channel is generally lower than that of other vendor channels.
 - If you need to implement offline push, we recommend you integrate a vendor channel. For more information, see [here](https://intl.cloud.tencent.com/document/product/1024/37176).
 
 
@@ -88,7 +88,7 @@ The problem code is from the vivo channel push SDK. The TPNS team is unable to c
 ### Why pushes cannot be received after the application is closed?
 
 - Currently, third-party push services cannot guarantee that the pushes can be received after the application is closed. This problem is due to the restrictions of the mobile phone's custom ROM on the TPNS service. All pushes through the TPNS channel are on the basis that the TPNS service can maintain a persistent connection with the TPNS backend server. After the service is terminated, whether it can be restarted depends on the system settings, security programs, and user operations.
-- After the TPNS service is disconnected from the TPNS server, messages delivered to the device will become offline messages, which can be retained for up to 72 hours. If there are multiple offline messages, only the three latest ones can be retained on each device. If messages are pushed after the application is closed, check whether the `XGPushManager.unregisterPush\(this\)` API has been called if the messages cannot be received when the application is launched again.
+- After the TPNS service is disconnected from the TPNS server, messages delivered to the device will become offline messages, which can be retained for up to 72 hours. If there are multiple offline messages, only the latest three can be retained on a device. If messages are pushed after the application is closed, check whether the `XGPushManager.unregisterPush\(this\)` API has been called if the messages cannot be received when the application is launched again.
 - If you have already integrated a vendor channel, but pushes still cannot be received offline, use the [troubleshooting tool](https://console.cloud.tencent.com/tpns/user-tools) to check whether the token has been successfully registered with the vendor, and if not, troubleshoot as instructed in [Troubleshooting Vendor Channel Registration Failures](https://intl.cloud.tencent.com/document/product/1024/37006).
 - QQ and WeChat are in the system-level application allowlist, and the relevant service will not be terminated after the application is closed, so the user can still receive messages after closing the application, as the relevant service survives on the backend.
 
@@ -150,7 +150,7 @@ You can redirect subscribers who click your notification to a specified in-app p
 
 ### Why `title` and `content` obtained by `onNotifactionClickedResult` and `onNotificationShowedResult` are empty when the application is closed?
 
-For pushes through vendor channels, `title` and `content` are concatenated in `intent` and delivered. Therefore, they cannot be obtained by the `onNotifactionClickedResult` and `onNotificationShowedResult` methods. To obtain the two parameters, you need to use the Intent mode. For more information, please see [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354).
+To obtain the `title` and `content` of the offline push via a vendor channel, concatenate `title` and `content` parameters to the `intent uri` of notification tap-to-redirect, and obtain them after notification tap-to-redirect. See [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354) for details.
 
 
 ### How do I fix the problem of null `other push Token` that occurs during debugging after my application is integrated with a vendor channel?
@@ -200,11 +200,11 @@ The display effect after adaption is as shown below. [We recommend you draw an i
 
 
 >?
->- The small icon must be a PNG image with an alpha channel.
->- The background must be transparent.
->- Do not leave too much padding around the icon.
->- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
->
+- The small icon must be a PNG image with an alpha channel.
+- The background must be transparent.
+- Do not leave too much padding around the icon.
+- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+
 
 ### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or below?
 

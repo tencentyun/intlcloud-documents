@@ -1,4 +1,50 @@
 
+## June 2022
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.4.3 release</td>
+	<td>
+		<li>Added the `XGPushConfig.enableAutoStart` API for configuring the autostart feature (disabled by default).</li>
+		</td>
+        <td>June 7, 2022</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
+## May 2022
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.4.1 release</td>
+	<td>
+		<li>Supported configuring default notification icon in the metadata.</li>
+		<li>Optimized the use and display of `PendingIntent`.</li>
+		li>Fixed the issue where the device was detected to check the existence of a light sensor.</li>
+		<li>Fixed other known issues.</li>
+		</td>
+        <td>May 31, 2022</td><td>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
 ## April 2022
 
 <table>
@@ -13,6 +59,7 @@
 	<td>
 		<li>Supported the Huawei push channel for a device with an EMUI system.</li>
 		<li>Fixed the issue where the persistent connection retry interval was inaccurate.</li>
+		<li>Supported the HONOR push channel. See <a href="https://intl.cloud.tencent.com/document/product/1024/47652">HONOR Channel Integration</a> for details.</li>
 		</td>
         <td>April 25, 2022</td><td>
 		<a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a>
@@ -33,7 +80,7 @@
 	<tr>
         <td>SDK v1.3.2.0 release</td>
 	<td>
-		<li>Upgraded the encapsulated SDK versions for Mi, Meizu, OPPO, and vivo push.</li>
+		<li>Upgraded the encapsulated SDK versions for Mi, Meizu, OPPO, and vivo pushes.</li>
 		<li>Added an API to allow users to get the custom parameter `customContent` delivered with pushed messages on the push target page.</li>
 		<li>Fixed other known issues.</li>
 		</td>
@@ -58,7 +105,7 @@
 	<tr>
         <td>SDK v1.3.1.1 release</td>
 	<td>
-		<li>Added a new method for adapting to Honor device badges.</li>
+		<li>Added a new method for adapting to HONOR device badges.</li>
 		<li>Added the feature to regularly update notification status.</li>
 		<li>Updated vendor channel policies.</li>
 		<li>Optimized the registration and account binding processes.</li>
@@ -84,7 +131,7 @@
 	<tr>
         <td>SDK v1.2.7.1 release</td>
 	<td>Fixed the issue of occasional cross-process storage inconsistency.</td>
-        <td>September 1, 2021</td><td><li>When using the new in-app messaging feature, you need to pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
+        <td>September 1, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>.
 <li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
@@ -102,9 +149,9 @@
 	</tr>
 	<tr>
         <td>SDK v1.2.7.0 release</td><td>
-		<li> Added support for in-app message display.
-		<li> Optimized the TPNS registration process
-		<li> Fixed the issue when a user can obtain the device model before agreeing to the Privacy Agreement.</td>
+		<li> Supported in-app message display.
+		<li> Optimized the TPNS registration process.
+		<li> Fixed the issue where the device model cannot be obtained before a user agrees to the Privacy Policy.</td>
         <td>August 27, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
@@ -126,7 +173,7 @@
 <li>  Optimized persistent connection retry policies.
 <li>  Optimized the logic for reporting the number of daily active users and SDK startup events.
 <li>  Placed SDK logs in a hidden directory.
-<li>  Disabled the session keep-alive feature by default. If you need to enable it, see the Android FAQs documentation.
+<li>  Disabled the session keep-alive feature by default. If you need to enable it, see the documentation Android FAQs.
 		<li>  Fixed IPv6 request failures.</td>
         <td>July 6, 2021</td><td><li>
 <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
@@ -184,8 +231,8 @@
         <td>SDK v1.2.3.0 release</td>
 <td><li>Optimized the network communication protocol to support secondary message encryption.
 <li>Simplified APIs for client account, tag, and attribute settings.
-<li>Added the `traceId` and `templateId` fields to notification callback.
-<li>Supported the badge logic for new Honor phones.
+<li>Added the `traceId` and `templateId` fields to the notification callback.
+<li>Supported the badge logic for new HONOR phones.
 <li>Fixed the ANR issue that occasionally occurred during network connection checks.</td>
         <td>January 27, 2021</td>
         <td>-</td>
@@ -211,13 +258,13 @@
 </tr>
 <tr>
         <td>SDK v1.2.2.0 release</td>
-       <td><li> Unified the naming convention for account and tag operation APIs.<li> Optimized SDK error code reporting.<li> Upgraded the FCM channel protocol to enable the FCM system to take over the display of notifications sent through the FCM channel.<li> Added the support for badge coloring for messages sent through the TPNS channel.<li> Added the support for Gzip compression during network communication.<li>Fixed the exception of service unbinding that might occur in multi-thread environments.</td>
+       <td><li> Unified the naming conventions for account and tag operation APIs.<li> Optimized SDK error code reporting.<li> Upgraded the FCM channel protocol to enable the FCM system to take over the display of notifications sent through the FCM channel.<li> Added the support for badge coloring for messages sent through the TPNS channel.<li> Supported Gzip compression during network communication.<li>Fixed the exception of service unbinding that might occur in multi-thread environments.</td>
         <td>November 26, 2020</td>
         <td>-</td>
     </tr>
         <tr>
         <td>SDK v1.2.1.3 release</td>
-       <td><li>Optimized the internal logic.<li>Officially added the support for Huawei Push SDK v5 staring this version. Update the integration configuration as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/37176">Huawei Channel v5 Integration</a>.</td>
+       <td><li>Optimized the internal logic.<li>Officially supported Huawei Push SDK v5 starting from this version. Update the integration configuration as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/37176">Huawei Channel v5 Integration</a>.</td>
         <td>November 11, 2020</td>
         <td>-</td>
     </tr>
@@ -281,7 +328,7 @@
        <td><li> Supported collecting statistics on vendor channel notification click events. </li> <li> Added more custom notification styles.</li> <li> Upgraded the SDK for OPPO PUSH to v2.1.0.</li> </td>
         <td>June 23, 2020</td>
         <td>This version involves package name changes. Modify relevant configurations as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/30713">SDK Integration</a>:
-<li>Automatic integration: pay attention to the obfuscation configuration.</li>
+<li>Automatic integration: Pay attention to the obfuscation configuration.</li>
 <li>Manual integration: Pay attention to the SO files, manifest file, and obfuscation configuration.</li></td>
     </tr>
     <tr>
@@ -377,8 +424,8 @@
     </tr>
     <tr>
         <td>SDK v1.1.5.0 release</td>
-        <td><li> Optimized the TPNS SDK support for Huawei push.</li> <li> Upgraded the OPPO PUSH SDK to v2.0.2.</li></td>
-        <td>December 4, 2019</td>
+        <td><li> Optimized the Huawei push.</li> <li> Upgraded the OPPO PUSH SDK to v2.0.2.</li></td>
+        <td>2019-12-04</td>
         <td>-</td>
     </tr>
 </table>
