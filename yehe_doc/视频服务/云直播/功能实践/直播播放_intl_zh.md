@@ -21,7 +21,7 @@
 您需要先进行 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558)，推流成功后才能通过播放地址查看直播画面。您可以根据业务场景使用以下方式进行直播测试。
 
 ### 场景一： PC 端播放
-您可使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg 及 [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html)  等工具进行播放。
+您可使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg 及 [TCPlayerDemo](https://tcplayer.vcube.tencent.com)  等工具进行播放。
 ![](https://main.qcloudimg.com/raw/e47f8d4d9ca63e678439df3e8a17c9b4.png)
 ### 场景二：移动端播放
 1. 下载安装 [腾讯云工具包 App](https://intl.cloud.tencent.com/document/product/1071/38147)。
@@ -29,7 +29,7 @@
 3. 在输入框中填入播放地址，或者扫描播放地址的二维码录入。
 
 ### 场景四：Web 端播放
-建议您选用播放器 SDK 的 [TCPlayerLite](https://cloud.tencent.com/document/product/881/20207) 进行播放，它基于腾讯云强大的后台能力与 AI 技术，提供视频直播和点播的强大播放能力，Player+ 深度融合腾讯视频云直播、点播服务，拥有流畅稳定的播放性能，集广告植入、数据监测等功能于一身。
+建议您选用播放器 SDK 的 TCPlayer 进行播放，它基于腾讯云强大的后台能力与 AI 技术，提供视频直播和点播的强大播放能力，Player+ 深度融合腾讯视频云直播、点播服务，拥有流畅稳定的播放性能，集广告植入、数据监测等功能于一身。
 >! 目前市面上大多数手机浏览器不支持 HTTP-FLV 播放，因此腾讯云建议您在 Web 播放时的协议选择最好是 PC 浏览器用 HTTP-FLV 协议播放直播流，手机浏览器用 HLS 播放直播流。
 
 
