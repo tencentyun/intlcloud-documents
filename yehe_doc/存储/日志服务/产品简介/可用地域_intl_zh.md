@@ -13,7 +13,6 @@
 | 南京     | ap-nanjing       |
 | 重庆     | ap-chongqing     |
 | 中国香港 | ap-hongkong      |
-| 中国台北 | ap-taipei        |
 | 硅谷     | na-siliconvalley |
 | 弗吉尼亚 | na-ashburn       |
 | 新加坡   | ap-singapore     |
@@ -90,12 +89,6 @@
 <td>ap-hongkong</td>
 <td>ap-hongkong.cls.tencentyun.com</td>
 <td>ap-hongkong.cls.tencentcs.com</td>
-</tr>
-<tr>
-<td>中国台北</td>
-<td>ap-taipei</td>
-<td>ap-taipei.cls.tencentyun.com</td>
-<td>ap-taipei.cls.tencentcs.com</td>
 </tr>
 <tr>
 <td>硅谷</td>
@@ -187,7 +180,6 @@
 | 南京     | ap-nanjing       | cls.internal.tencentcloudapi.com | cls.ap-nanjing.tencentcloudapi.com       |
 | 重庆     | ap-chongqing     | cls.internal.tencentcloudapi.com | cls.ap-chongqing.tencentcloudapi.com     |
 | 中国香港 | ap-hongkong      | cls.internal.tencentcloudapi.com | cls.ap-hongkong.tencentcloudapi.com      |
-| 中国台北 | ap-taipei        | cls.internal.tencentcloudapi.com | cls.ap-taipei.tencentcloudapi.com        |
 | 硅谷     | na-siliconvalley | cls.internal.tencentcloudapi.com | cls.na-siliconvalley.tencentcloudapi.com |
 | 弗吉尼亚 | na-ashburn       | cls.internal.tencentcloudapi.com | cls.na-ashburn.tencentcloudapi.com       |
 | 新加坡   | ap-singapore     | cls.internal.tencentcloudapi.com | cls.ap-singapore.tencentcloudapi.com     |
@@ -256,12 +248,6 @@
 <td>ap-hongkong</td>
 <td>ap-hongkong.cls.tencentyun.com</td>
 <td>ap-hongkong.cls.tencentcs.com</td>
-</tr>
-<tr>
-<td>中国台北</td>
-<td>ap-taipei</td>
-<td>ap-taipei.cls.tencentyun.com</td>
-<td>ap-taipei.cls.tencentcs.com</td>
 </tr>
 <tr>
 <td>硅谷</td>
@@ -393,12 +379,6 @@
 <td>hk-producer.cls.tencentcs.com</td>
 </tr>
 <tr>
-<td>中国台北</td>
-<td>ap-taipei</td>
-<td>tpe-producer.cls.tencentyun.com</td>
-<td>tpe-producer.cls.tencentcs.com</td>
-</tr>
-<tr>
 <td>硅谷</td>
 <td>na-siliconvalley</td>
 <td>usw-producer.cls.tencentyun.com</td>
@@ -523,12 +503,6 @@
 <td>ap-hongkong</td>
 <td>kafkaconsumer-ap-hongkong.cls.tencentyun.com</td>
 <td>kafkaconsumer-ap-hongkong.cls.tencentcs.com</td>
-</tr>
-<tr>
-<td>中国台北</td>
-<td>ap-taipei</td>
-<td>kafkaconsumer-ap-taipei.cls.tencentyun.com</td>
-<td>kafkaconsumer-ap-taipei.cls.tencentcs.com</td>
 </tr>
 <tr>
 <td>硅谷</td>
