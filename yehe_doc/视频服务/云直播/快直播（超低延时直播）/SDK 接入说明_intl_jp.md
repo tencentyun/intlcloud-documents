@@ -53,14 +53,14 @@ iOS、Androidのアプリの場合、MLVB SDKを統合することで、App端�
 - **Web端末でのライブブロードキャストプッシュ**：ブラウザの一般的なWebRTC規格をベースに設計とカプセル化を行い、コードセグメントを導入することで、ブラウザでのライブブロードキャストプッシュを実現できます。詳細については、[WebRTCプッシュ](https://intl.cloud.tencent.com/document/product/267/41620)をご参照ください。
 > ! 
 > - WebRTCプッシュの時、オーディオコーデックはopusによるコーデックとなります。標準ライブブロードキャストの再生プロトコル（RTMP、FLV、HLS）を使用して再生を行う場合は、正常な視聴を確保するために、CSSバックグラウンドはオーディオトランスコードを自動的に開始してaacエンコードに変換し、これによりオーディオトランスコード料金が発生します。詳細については、[オーディオトランスコード料金の説明](https://intl.cloud.tencent.com/document/product/267/39604#a_trans)をご参照ください。（ライブイベントブロードキャストのみをご使用の場合、オーディオトランスコードは開始されません）
-> - WebRTCプロトコルプッシュを使用して、各プッシュドメイン名は、デフォルトで**100パス並列処理**プッシュ数に制限されています。このプッシュ制限を超える必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してお申し出ください。
+> - WebRTCプロトコルプッシュを使用して、各プッシュドメイン名は、デフォルトで**1000パス並列処理**プッシュ数に制限されています。このプッシュ制限を超える必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してお申し出ください。
 
 
 ### Demo体験
 
 - **Web端末ライブブロードキャストプッシュ**：**CSSコンソール**>[Webプッシュツール](https://console.cloud.tencent.com/live/tools/webpush)により、Web端末プッシュ機能をテストします。
 
-- **Web端末ライブブロードキャストプル**：[WebRTC Live Demo](https://tcplayer.vcube.tencent.com/webrtc-demo/index.html)ツールにより、再生体験を行います。
+- **Web端末ライブブロードキャストプル**：[TCPlayer](https://tcplayer.vcube.tencent.com/)ツールにより、再生体験を行います。
 >?
 >- Web端末ライブブロードキャストプッシュとプルはいずれも標準WebRTCプロトコルを使用します。Web端末プッシュ時はBフレームを含まず、またオーディオコーデックはOPUSオーディオ形式のため、オーディオトランスコードおよびBフレームトランスコード料金は発生しません。
 >- WebRTC Live Demoは複数の解像度機能をサポートします。CSSコンソールの**機能設定** >[**ライブブロードキャストトランスコード**](https://console.cloud.tencent.com/live/config/transcode)で高精細度-HD、標準-SDのトランスコードテンプレートを設定でき、トランスコードテンプレートを有するWebRTCストリーミングアドレスをDemo中の対応するカテゴリに入力した後、再生をテストします（この機能のテストが不要な場合は、DemoにWebRTCオリジナルストリーミングを1つ入力します）。
@@ -80,7 +80,7 @@ WebRTCプロトコルプッシュは、主にビデオクラウドのライブ�
 [OBSプラグイン](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TOBSWebRTC/Release/tencent_webrtc_plugin_20210628.zip)をダウンロードし、dataファイルの中の2つの`services.json`および`package.json`ファイルを、対応する**obs-studio** > **rtmp-service** > **data**ディレクトリに移動して上書きします。（`obs-studio`はデフォルトではCドライブにインストールされており、対応するディレクトリは`C:\Program Files\obs-studio\data\obs-plugins\rtmp-services`です。実際の状況に応じて設定してください。）
 ![](https://main.qcloudimg.com/raw/967335d17284d931e3a01505d45b884a.png)  
 2. **プラグインダイナミックライブラリを設定します**。
-`obs-plugins\64bit`のdllおよびpdbファイルを、対応する**obs-studio** > **obs-plugins** > **64bit**ディレクトリに移動します。（`obs-studio`はデフォルトではCドライブにインストールされており、対応するディレクトリは`C:\Program Files\obs-studio\obs-plugins\64bit`です。実際の状況に応じて設定してください。）
+`obs-plugins\64bit`のdll ファイルを、対応する**obs-studio** > **obs-plugins** > **64bit**ディレクトリに移動します。（`obs-studio`はデフォルトではCドライブにインストールされており、対応するディレクトリは`C:\Program Files\obs-studio\obs-plugins\64bit`です。実際の状況に応じて設定してください。）
 ![](https://main.qcloudimg.com/raw/ca9cc7d84071526009624978dc38e2c8.png)   
 
 [](id:push)
