@@ -1,10 +1,10 @@
-## Overview
+## Feature Description
 
-This API (`DescribeMediaJobs`) is used to pull jobs that meet specified conditions.
+The API (`DescribeMediaJobs`) is used to pull jobs that meet specified conditions.
 
 ## Request
 
-#### Request example
+#### Sample request
 
 ```shell
 GET /jobs?size=&states=&queueId=&startCreationTime=&endCreationTime= HTTP/1.1
@@ -14,36 +14,40 @@ Authorization: <Auth String>
 
 ```
 
->?Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
+
 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 This request does not have a request body.
 
 #### Request parameters
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
 | queueId | None | ID of the queue from which jobs are pulled | String | Yes |
-| tag | None | Job type: `SDRtoHDR` | String | Yes |
+| tag | None | Job type: SDRtoHDR | String | Yes |
 | orderByTime | None | `Desc` (default) or `Asc` | String | No |
 | nextToken | None | Context token for pagination | String | No |
-| size | None | Maximum number of jobs pulled. Default value: `10`. Maximum value: `100`. | Integer | No |
-| states | None | Status of the jobs to pull. If you enter multiple job states, separate them with commas (,). Valid values: `All` (default), `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel` | String | No |
-| startCreationTime | None | Start time of the time range for job pulling. Format: `%Y-%m-%dT%H:%m:%S%z`. Example: 2001-01-01T00:00:00+0800 | String | No |
-| endCreationTime | None | End time of the time range for job pulling. Format: `%Y-%m-%dT%H:%m:%S%z`. Example: 2001-01-01T23:59:59+0800  | String | No |
+| size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
+| states | None | Status of the jobs to pull. If you enter multiple job statuses, separate them with commas (,). Valid values: All (default), Submitted, Running, Success, Failed, Pause, Cancel | String | No |
+| startCreationTime | None | Start time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T00:00:00+0800` | String | No |
+| endCreationTime | None | End time of the time range for job pulling in the format of `%Y-%m-%dT%H:%m:%S%z`, such as `2001-01-01T23:59:59+0800`  | String | No |
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -57,7 +61,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -73,9 +77,9 @@ The nodes are described as follows:
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 
