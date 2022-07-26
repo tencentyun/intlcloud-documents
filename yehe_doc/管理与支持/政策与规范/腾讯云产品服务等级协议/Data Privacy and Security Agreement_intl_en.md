@@ -155,8 +155,7 @@ the parties agree that the Controller-Processer Transfer Clauses, the descriptio
 <li>Tencent shall provide Organisation with notice in writing:</li>
 <ul ><li>of any changes that Tencent reasonably requires to the draft Notification Statement and Organisation shall incorporate all such changes into the draft Notification Statement; or</li>
 <li>that Tencent approves the draft Notification Statement; and</li></ul></li>
-<li>following Tencent’s approval of a draft Notification Statement, Organisation must provide a copy of the approved Notification Statement to the relevant Supervisory Authority, Data Subjects and any other person as required under the Data Protection Laws; and</li>
-<li> not, and must ensure that its Affiliates and their respective personnel do not, make any public statement or disclosure relating to any suspected or actual Data Breach without the prior written consent of Tencent.</li></ol></li></ol>
+<li>following Tencent’s approval of a draft Notification Statement, Organisation must provide a copy of the approved Notification Statement to the relevant Supervisory Authority, Data Subjects and any other person as required under the Data Protection Laws.</li></ol></li></ol>
 
 ## 8. Appointment of Sub-Processors
 
