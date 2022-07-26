@@ -13,7 +13,6 @@ You can create logsets and log topics in different regions when using CLS. Regio
 | Nanjing     | ap-nanjing       |
 | Chongqing     | ap-chongqing     |
 | Hong Kong (China)  | ap-hongkong      |
-| Taipei (China) | ap-taipei        |
 | Silicon Valley | na-siliconvalley |
 | Virginia | na-ashburn |
 | Singapore | ap-singapore |
@@ -89,12 +88,6 @@ The domain names used by different CLS modules differ as follows:
 <td>ap-hongkong</td>
 <td>ap-hongkong.cls.tencentyun.com</td>
 <td>ap-hongkong.cls.tencentcs.com</td>
-</tr>
-<tr>
-<td>Taipei (China)</td>
-<td>ap-taipei</td>
-<td>ap-taipei.cls.tencentyun.com</td>
-<td>ap-taipei.cls.tencentcs.com</td>
 </tr>
 <tr>
 <td>Silicon Valley</td>
@@ -181,7 +174,6 @@ If you access CLS via the public network, you can also use unified domain name c
 | Nanjing     | ap-nanjing       | cls.internal.tencentcloudapi.com | cls.ap-nanjing.tencentcloudapi.com       |
 | Chongqing     | ap-chongqing     | cls.internal.tencentcloudapi.com | cls.ap-chongqing.tencentcloudapi.com     |
 | Hong Kong (China) | ap-hongkong      | cls.internal.tencentcloudapi.com | cls.ap-hongkong.tencentcloudapi.com      |
-| Taipei (China) | ap-taipei        | cls.internal.tencentcloudapi.com | cls.ap-taipei.tencentcloudapi.com        |
 | Silicon Valley     | na-siliconvalley | cls.internal.tencentcloudapi.com | cls.na-siliconvalley.tencentcloudapi.com |
 | Virginia | na-ashburn       | cls.internal.tencentcloudapi.com | cls.na-ashburn.tencentcloudapi.com       |
 | Singapore   | ap-singapore     | cls.internal.tencentcloudapi.com | cls.ap-singapore.tencentcloudapi.com     |
@@ -249,12 +241,6 @@ If you access CLS via the public network, you can also use unified domain name c
 <td>ap-hongkong</td>
 <td>ap-hongkong.cls.tencentyun.com</td>
 <td>ap-hongkong.cls.tencentcs.com</td>
-</tr>
-<tr>
-<td>Taipei (China)</td>
-<td>ap-taipei</td>
-<td>ap-taipei.cls.tencentyun.com</td>
-<td>ap-taipei.cls.tencentcs.com</td>
 </tr>
 <tr>
 <td>Silicon Valley</td>
@@ -378,12 +364,6 @@ With the feature of [uploading logs via Kafka](https://intl.cloud.tencent.com/do
 <td>ap-hongkong</td>
 <td>hk-producer.cls.tencentyun.com</td>
 <td>hk-producer.cls.tencentcs.com</td>
-</tr>
-<tr>
-<td>Taipei (China)</td>
-<td>ap-taipei</td>
-<td>tpe-producer.cls.tencentyun.com</td>
-<td>tpe-producer.cls.tencentcs.com</td>
 </tr>
 <tr>
 <td>Silicon Valley</td>
