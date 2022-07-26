@@ -2,7 +2,7 @@
 
 비디오 콘텐츠의 보안을 보장하고 비디오의 무단 다운로드 및 배포를 방지하기 위해 Cloud Object Storage(COS) 데이터 처리는 비공개로 읽을 수 있는 파일보다 더 안전한 HLS 비디오 콘텐츠를 암호화하는 기능을 제공합니다. 암호화된 비디오는 재생 권한이 없는 사용자에게 배포할 수 없습니다. 다운로드하더라도 여전히 암호화되어 악의적으로 재배포할 수 없습니다. 이렇게 하면 비디오 저작권이 침해되는 것을 방지할 수 있습니다.
 
-[HLS 암호화](https://intl.cloud.tencent.com/document/product/436/47861) 프로세스를 기반으로 기본 키 관리 서비스를 구축하고 [Tencent Cloud VOD Superplayer](https: //intl.cloud.tencent.com/document/product/266/33977) COS HLS에 의해 트랜스 코딩 및 암호화된 비디오 파일을 재생합니다.
+[HLS 암호화](https://intl.cloud.tencent.com/document/product/436/47861) 프로세스를 기반으로 기본 키 관리 서비스를 구축하고 [Tencent Cloud VOD superplayer](https://intl.cloud.tencent.com/document/product/266/33977) COS HLS에 의해 트랜스 코딩 및 암호화된 비디오 파일을 재생합니다.
 
 ## 실행 순서
 
@@ -106,7 +106,7 @@ player.src(https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/path/e
 #### 4단계: 효과 보기
 
 1. m3u8 파일과 암호 복호화 키를 성공적으로 획득했습니다.
-![m3u8 파일 가져오기](https://qcloudimg.tencent-cloud.cn/raw/4808069fd4269de39c6efff6c1af5908.png)
+
 2. 비디오가 복호화되고 성공적으로 재생됩니다.
 
 
