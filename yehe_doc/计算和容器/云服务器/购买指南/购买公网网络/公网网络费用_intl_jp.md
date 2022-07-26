@@ -8,7 +8,7 @@
 <thead>
 <tr>
 <th rowspan="2" width="65%">リージョン</th>
-<th colspan="2" style="text-align:center;">価格（単位：元/GB）</th>
+<th colspan="2" style="text-align:center;">価格（単位：米ドル/GB）</th>
 </tr>
 </thead>
 <tbody><tr>
