@@ -84,10 +84,13 @@ $GOOSEFS_HOME/conf/goosefs-site.properties 구성 파일을 편집하여 클라�
 ## 제한성
 
 현재 GooseFS-FUSE는 대부분의 기본 파일 시스템 작업을 지원합니다. 그러나 GooseFS의 몇 가지 특징으로 인해 다음 사항에 유의해야 합니다.
-
--  파일은 순차적으로 한 번만 쓸 수 있으며 수정할 수 없습니다. 즉, 파일을 수정하려면 먼저 파일을 삭제한 다음 다시 생성해야 합니다. 예를 들어, 복사 명령 cp는 대상 파일이 존재할 때 실패합니다.
--  GooseFS는 hard-link 및 soft-link의 개념이 없기 때문에 ln과 같은 관련 명령어는 지원하지 않습니다. 또한 hard-link에 대한 정보는 ll의 출력에 표시되지 않습니다.
--  GooseFS의 GooseFS.security.group.mapping.class 옵션이 ShellBasedUnixGroupsMapping 값으로 설정된 경우에만 파일의 사용자 및 그룹 정보가 Unix 시스템의 사용자 그룹에 해당합니다. 그렇지 않으면 chown 및 chgrp의 작업이 적용되지 않으며 ll이 반환하는 사용자 및 그룹은 GooseFS-FUSE 프로세스의 사용자 및 그룹 정보입니다.
+- 파일은 랜덤 및 추가로 작성될 수 없습니다.
+- 파일은 한 번만 순차적으로 쓸 수 있으며 수정할 수 없습니다. 파일을 수정하려면 먼저 파일을 삭제한 다음 다시 생성하거나 O_TRUNC 식별자로 파일을 open하고 길이를 0으로 설정합니다.
+- 마운트 지점에 작성 중인 파일은 읽을 수 없습니다.
+- 파일 길이는 truncate할 수 없습니다.
+- soft/hard link 미지원; GooseFS는 hard-link 및 soft-link의 개념이 없기 때문에 ln과 같은 관련 명령어는 지원하지 않습니다. 또한 hard-link에 대한 정보는 ll의 출력에 표시되지 않습니다.
+- COS(Cloud Object Storage)가 기본 저장소로 사용되는 경우 Rename 작업은 원자가 아닙니다.
+- GooseFS의 GooseFS.security.group.mapping.class 옵션이 ShellBasedUnixGroupsMapping 값으로 설정된 경우에만 파일의 사용자 및 그룹 정보가 Unix 시스템의 사용자 그룹에 해당합니다. 그렇지 않으면 chown 및 chgrp의 작업이 적용되지 않으며 ll이 반환하는 사용자 및 그룹은 GooseFS-FUSE 프로세스의 사용자 및 그룹 정보입니다.
 
 ## 성능 고려 사항
 
@@ -112,7 +115,8 @@ GooseFS-FUSE와 관련된 설정 매개변수는 다음과 같습니다.
 
 ## FAQ
 
-libfuse 라이브러리 파일이 누락되었습니다. libfuse를 설치해야 합니다.
+#### libfuse 라이브러리 파일 누락
+GooseFS-Fuse를 마운트하기 전에 libfuse를 설치해야 합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7a535eed0fac0da06f530fb04ca9702b.png)
 - **방법1**
 설치 명령어:
@@ -153,7 +157,6 @@ rm -f /usr/lib64/libfuse.so.2
 ln -s /usr/lib64/libfuse.so.2.9.7 /usr/lib64/libfuse.so
 ln -s /usr/lib64/libfuse.so.2.9.7 /usr/lib64/libfuse.so.2
 ```
- 
 
- 
-
+#### VIM을 사용하여 마운트 지점에서 파일을 편집하는 동안 Write error in swap file? 오류가 발생합니다.
+GooseFS-Fuse 마운팅 포인트에서 파일 편집에 VIM 7.4 또는 이전 버전을 사용하도록 VIM 구성을 변경할 수 있습니다. VIM swap 파일은 시스템이 충돌하거나 다시 시작하는 경우 VIM이 swap 파일을 기반으로 저장하지 않은 수정 사항을 복원할 수 있도록 수정 사항을 유지하는 데 사용됩니다. 상기 오류는 VIM swap 파일에 대한 임의 쓰기 작업으로 인해 발생하며 GooseFS에서는 지원하지 않습니다. 솔루션: `:set noswapfile` 명령을 실행하여 swap 파일 생성을 종료하거나 구성 파일(~/.vimrc)에 `set noswapfile`을 추가할 수 있습니다.
