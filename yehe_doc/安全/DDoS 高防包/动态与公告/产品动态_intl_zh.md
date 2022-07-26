@@ -1,4 +1,4 @@
-## 2022-01
+## 2022-06
 <table>
 <thead>
 <tr>
@@ -10,11 +10,127 @@
 </thead>
 <tbody>
 <tr>
+ <tr>
+<td>高防包自动解绑已销毁云产品 </td>
+<td>高防包自动检测已绑定资源的状态来判断是否解绑。</td>
+<td> 2022-06-13 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1029/36122">管理防护对象</a> </td>
+</tr>
+<tr>
+<tr>
+<td>智能 CC 防护上线</td>
+<td>AI 智能防护，自动下发精确的防护规则，动态调整业务防护模型。</td>
+<td> 2022-06-07	</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/1029/48285">智能 CC 防护</a>
+</td>
+</tr>
+<tr>
+<td>防护对象支持内网CLB 和 EIP</td>
+<td>高防包支持已绑定 EIP 的内网 CLB 的绑定、解绑。</td>
+<td> 2022-06-01	</td>
+<td>- </td>
+</tr>
+<tr>
+<td>攻击流量报表优化</td>
+<td>控制台报表，增加1h 内每分钟粒度展示规则。</td>
+<td> 2022-06-01 </td>
+<td>- </td>
+</tr>
+</tbody></table>
+
+
+## 2022-04
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旧版资源一键升级</td>
+<td>旧版高防包（独享或共享）资源，可根据控制台升级引导，免费升级资源。</td>
+<td> 2022-04-27	</td>
+<td>-</td>
+</tr>
+ <tr>
+<td>优化 Web 应用防火墙 IP 开启 CC 防护的报错提示</td>
+<td>Web 应用防火墙 IP 开启 CC 防护时，将提示”请先到 Web 应用防火墙为此 IP 开启 CC 防护“。</td>
+<td> 2022-04-14</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/1029/36135">CC 防护开关及清洗阈值</a>
+</td>
+</tr>
+<tr>
+<td>优化防护概览</td>
+<td>防护概览中增加数据源说明提醒。</td>
+<td> 2022-03-04	</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/1029/44560">防护概览</a>
+</td>
+</tr>
+</tbody></table>
+
+
+## 2022-03
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<tr>
+<td>优化控制台视觉交互</td>
+<td><li>提升已配置策略的视觉感知。</li><li>防护配置端口过滤增加“继续防护”的逻辑释义。</li></td>
+<td> 2022-03-04	</td>
+<td>-</td>
+</tr>
+<tr>
+<td>优化防护概览</td>
+<td>防护概览中增加数据源说明提醒。</td>
+<td> 2022-03-04	</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/1029/44560">防护概览</a>
+</td>
+</tr>
+</tbody></table>
+
+
+
+## 2022-01
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
 <td>优化防护概览</td>
 <td>优化高防包防护概览页视觉交互。</td>
 <td> 2022-01-13</td>
 <td>
 <a href="https://intl.cloud.tencent.com/document/product/1029/44560">防护概览 </a>
+</td>
+</tr>
+<tr>
+<td>BGP 线路防护能力提升至1000Gbps</td>
+<td>高防 IP BGP线路防护能力提升至1000Gbps。</td>
+<td> 2021-01-10</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/297/37240">计费概述 </a>
 </td>
 </tr>
 </tbody></table>
@@ -34,46 +150,51 @@
 <tbody>
 <tr>
 <td>新增防护概览（总览）</td>
-<td>防护概览（总览）页面全量展示业务 IP 和高防实例的安全状态。	</td>
-<td> 2021-12-23</td>
+<td>防护概览（总览）页面全量展示业务 IP 和高防 IP 实例的安全状态。</td>
+<td>2021-12-23</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/44560">防护概览</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">防护概览</a>
 </td>
 </tr>
 <tr>
-<td>优化 CC 防护开关及清洗阈值	</td>
+<td>优化 CC 防护开关及清洗阈值</td>
 <td>优化 CC 防护开关与清洗阈值的功能及操作交互。</td>
-<td> 2021-12-23</td>
-<td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/36135">CC 防护开关及清洗阈值</a>
-</td>
+<td>2021-12-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37217">CC 防护开关及清洗阈值</a></td>
 </tr>
 <tr>
 <td>优化端口过滤</td>
 <td>优化视觉交互，支持选择多个实例资源批量创建。</td>
-<td> 2021-12-23</td>
-<td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/42196">端口过滤</a>
-</td>
+<td>2021-12-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/42153">端口过滤</a></td>
 </tr>
 <tr>
 <td>优化 CC 防护频率限制</td>
 <td>优化 CC 频率限制的功能及操作交互。</td>
-<td> 2021-12-23</td>
+<td>2021-12-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37219">CC 防护频率限制</a></td>
+</tr>
+<tr>
+<td>新增 IP黑白名单</td>
+<td>CC 防护新增 IP 黑白名单功能。</td>
+<td>2021-12-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/44559">IP 黑白名单</a></td>
+</tr>
+<tr>
+<td>高防 IP 业务带宽支持超量后付费</td>
+<td>当业务带宽不够用或业务 QPS 需要更高时，支持弹性业务宽带。</td>
+<td> 2021-12-03</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/36137">CC 防护频率限制</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/37240">计费概述</a>
 </td>
 </tr>
 <tr>
-<td>新增 IP黑白名单	</td>
-<td>CC 防护新增 IP 黑白名单功能.。</td>
-<td> 2021-12-23</td>
-<td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/44561">IP 黑白名单</a>
-</td>
+<td>防护概览</td>
+<td>优化防护概览 anycast 高防 IP 产品控制台攻击事件展示不全。</td>
+<td> 2021-12-03</td>
+<td>-</td>
 </tr>
 </tbody></table>
-
 
 
 
@@ -89,19 +210,19 @@
 </thead>
 <tbody>
 <tr>
-<td>管理防护对象</td>
-<td>当关联设备类型为云主机时，支持批量搜索和选择。</td>
+<td>业务接入支持多类型查询</td>
+<td>搜索框支持通过“源站端口、转发端口、协议、源站、关联高防 IP”等关键字进行查询事件。</td>
 <td> 2021-11-10</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/36122">管理防护对象</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/37221">端口接入</a>
 </td>
 </tr>
 <tr>
 <td>CC 防护配置支持域名级别区域封禁</td>
-<td><li>支持对访问 DDoS 高防的源流量，按照源 IP 地理区域在清洗节点从7层防护的维度进行一键封禁。</li><li>支持多地区、国家进行流量封禁。</li></td>
+<td><li>支持对访问 DDoS 高防 IP 的源流量，按照源 IP 地理区域在清洗节点从7层防护的维度进行一键封禁。</li><li>支持多地区、国家进行流量封禁。</li></td>
 <td> 2021-11-10</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/43392">区域封禁</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/43393">区域封禁</a>
 </td>
 </tr>
 <tr>
@@ -109,7 +230,7 @@
 <td>精准防护策略 action 支持放行动作。</td>
 <td> 2021-11-10</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/36136">精准防护</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/37218">精准防护</a>
 </td>
 </tr>
 <tr>
@@ -117,7 +238,7 @@
 <td><li>增加请求数量维度。</li><li>优化请求速率展示维度。</li></td>
 <td> 2021-11-10</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/36138">查看防护概览</a>
+<a href="https://intl.cloud.tencent.com/document/product/297/44555">查看防护概览</a>
 </td>
 </tr>
 </tbody></table>
@@ -136,19 +257,11 @@
 </thead>
 <tbody>
 <tr>
-<td>新增购买规格</td>
-<td>DDoS 高防包购买页放开2年和3年的售卖规格。</td>
+<td>业务接入</td>
+<td>高防 IP（境外版） 在 IP 接入时支持多个地区资源接入。</td>
 <td> 2021-10-22</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/36115">购买指引 </a>
-</td>
-</tr>
-<tr>
-<td>业务解绑</td>
-<td>高防包封堵状态不允许用户解绑。</td>
-<td> 2021-10-22</td>
-<td>
-<a href="https://intl.cloud.tencent.com/document/product/1029/36122">管理防护对象 </a>
+<a href="https://intl.cloud.tencent.com/document/product/297/41127">IP 接入 </a>
 </td>
 </tr>
 </tbody></table>
@@ -179,6 +292,26 @@
 </tr>
 </tbody></table>
 
+## 2021-08
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>域名接入功能优化</td>
+<td>域名接入功能支持同一域名两种协议同时接入。</td>
+<td> 2021-08-26</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37222">域名接入 </a>
+</tr>
+</tbody></table>
+
+
 ## 2021-07
 <table>
 <thead>
@@ -194,13 +327,32 @@
 <td>CC 频率限制功能</td>
 <td>支持基于泛域名设置子域名频控限速。</td>
 <td> 2021-07-29</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1029/36137">CC 频率限制 </a>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37219">CC 频率限制 </a>
 </tr>
 <tr>
 <td>CC 防护等级与清洗阈值功能</td>
 <td>支持对绑定在同一个高防包下不同域名进行配置精细化。</td>
 <td> 2021-07-29</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1029/36135">防护等级与清洗阈值 </a>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37217">防护等级与清洗阈值 </a>
+</tr>
+</tbody></table>
+
+## 2021-06
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>域名接入优化</td>
+<td>高防 IP 域名转发支持同个域名不通端口转发。</td>
+<td> 2021-06-22</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37222">域名接入 </a>
 </tr>
 </tbody></table>
 

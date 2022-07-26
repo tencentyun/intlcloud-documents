@@ -9,10 +9,12 @@ This level verifies the identity of visitors using CAPTCHA. Note that this level
 ::: Medium
 This level verifies the identity of visitors using CAPTCHA. Only requests from verified visitors are forwarded to the origin. Note that this level is only applicable to website applications. For API- or app-based applications, please configure the CC frequency limiting policies instead of using the default configurations.
 Urgent: when requests to access the real server surge and cause a high load or abnormal response, you can configure this level.
-
 :::
 ::: Loose
 At this level, there may be a risk that a small number of abnormal requests can bypass the policy. You can change the defense level when attacks come or configure the CC frequency limit for protection.
+:::
+::: Urgent
+When requests to access the real server surge and cause a high load or abnormal response, you can configure this level.
 :::
 ::: Custom
 This level can limit the access frequency of requests that match with configured rules.
@@ -21,7 +23,7 @@ This level can limit the access frequency of requests that match with configured
 
 
 
-## Prerequisites
+## Preparation
 You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the protected target.
 
 ## Directions
