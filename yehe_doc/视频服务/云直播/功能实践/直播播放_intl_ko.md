@@ -18,7 +18,7 @@ CSS 콘솔의 [라이브 방송 툴박스]>[[주소 생성기]](https://console.
 먼저 [라이브 방송 푸시 스트리밍](https://intl.cloud.tencent.com/document/product/267/31558)을 진행해야 하며, 푸시 스트리밍을 완료해야만 재생 주소를 통해 라이브 방송 화면을 확인할 수 있습니다. 비즈니스 시나리오에 따라 다음의 방식으로 라이브 방송 테스트를 진행할 수 있습니다.
 
 ### 시나리오 1: PC에서의 재생
-[VLC](https://intl.cloud.tencent.com/document/product/267/32483), FFmepg, [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html) 등의 툴을 사용해 재생할 수 있습니다.
+[VLC](https://intl.cloud.tencent.com/document/product/267/32483), FFmepg, [TCPlayerDemo](https://tcplayer.vcube.tencent.com) 등의 툴을 사용해 재생할 수 있습니다.
 ### 시나리오2: 모바일 재생
 1. [Tencent 비디오 클라우드 Demo](https://intl.cloud.tencent.com/document/product/1071/38147)를 다운로드 및 설치합니다.
 2. [MLVB]>[라이브 방송 풀 스트리밍]을 선택합니다.
@@ -28,7 +28,7 @@ CSS 콘솔의 [라이브 방송 툴박스]>[[주소 생성기]](https://console.
 >? App에서 푸시 스트리밍/재생하는 경우 [MLVB SDK](https://intl.cloud.tencent.com/product/mlvb)를 통합하여 CSS 서비스와 결합해 사용할 수 있으며, MLVB SDK는 RTMP, HTTP-FLV, HLS 재생 프로토콜을 지원합니다.
 
 ### 시나리오4: Web 재생
-SDK의 TCPlayerLite로 재생하는 것을 권장합니다. 해당 플레이어는 Tencent Cloud의 강력한 백그라운드 능력과 AI기술을 기반으로 뛰어난 비디오 라이브 방송 및 VOD 재생 기능을 제공합니다. Player+는 Tencent CSS, VOD 서비스를 융합하여 원활하고 안정적인 재생 성능을 자랑하며 광고 삽입, 데이터 모니터링 등의 기능이 통합되어 있습니다.
+SDK의 TCPlayer로 재생하는 것을 권장합니다. 해당 플레이어는 Tencent Cloud의 강력한 백그라운드 능력과 AI기술을 기반으로 뛰어난 비디오 라이브 방송 및 VOD 재생 기능을 제공합니다. Player+는 Tencent CSS, VOD 서비스를 융합하여 원활하고 안정적인 재생 성능을 자랑하며 광고 삽입, 데이터 모니터링 등의 기능이 통합되어 있습니다.
 >! 현재 시중의 대다수 모바일 브라우저는 HTTP-FLV 재생을 지원하지 않으므로, Web 재생 시 PC 브라우저에서는 HTTP-FLV 프로토콜, 모바일 브라우저에서는 HLS 프로토콜을 사용한 라이브 방송 스트리밍 재생을 권장합니다.
 
 
