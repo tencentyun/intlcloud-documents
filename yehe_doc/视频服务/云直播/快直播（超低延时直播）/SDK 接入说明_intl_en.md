@@ -53,14 +53,14 @@ You can use the following ways to achieve live push and playback on your website
 - **Live push on web**: The push component is designed and packaged according to the WebRTC standard, which is supported by most browsers. You can enable the live push feature simply by importing the code we provide. For details, see [WebRTC Push](https://intl.cloud.tencent.com/document/product/267/41620).
 > ! 
 > - WebRTC push uses the Opus audio codec. If you use an LVB protocol (RTMP, HTTP-FLV, or HLS) for playback, the CSS backend will automatically convert audio to AAC format to ensure normal playback, which will incur audio transcoding fees. For details, see [Live Transcoding > Audio Transcoding](https://intl.cloud.tencent.com/document/product/267/39604). If only LEB is used, the CSS backend will not transcode the audio.
-> - With WebRTC, each push domain name can be used for up to **100 concurrent streams** by default. If you want to push more streams, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+> - With WebRTC, each push domain name can be used for up to **1000 concurrent streams** by default. If you want to push more streams, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 
 ### Free demo
 
 - **Live push on web**: You can test the web push feature in **CSS console** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**.
 
-- **Live playback on web**: You can use [WebRTC Live Demo](https://tcplayer.vcube.tencent.com/webrtc-demo/index.html) to test playback.
+- **Live playback on web**: You can use [TCPlayer](https://tcplayer.vcube.tencent.com/) to test playback.
 >?
 >- Both live push and playback on web use the standard WebRTC protocol. Web push does not generate B-frames, and audio is encoded in Opus format, so there will be no costs of audio transcoding or B-frame removal.
 >- WebRTC Live Demo supports multi-definition playback. You can create a transcoding template for HD and SD output in **Feature Configuration** > [**Live Transcoding**](https://console.cloud.tencent.com/live/config/transcode) in the CSS console, enter in the demo a WebRTC stream URL containing the transcoding template, and test its playback. If you don't need to test transcoding, enter the original URL of the WebRTC stream.
@@ -80,7 +80,7 @@ Push over the WebRTC protocol is mainly used for LEB (ultra-low-latency live str
 Download the [OBS plugin](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TOBSWebRTC/Release/tencent_webrtc_plugin_20210628.zip), copy the `services.json` and `package.json` files in the `data` directory and use them to replace the corresponding files in **obs-studio** > **rtmp-service** > **data**. (`obs-studio` is installed in `C:\Program Files\` by default.)
 ![](https://main.qcloudimg.com/raw/967335d17284d931e3a01505d45b884a.png)  
 2. **Configure the plugin's dynamic library**
-Move the DLL and PDB files in `obs-plugins\64bit` to **obs-studio** > **obs-plugins** > **64bit**. (`obs-studio` is installed in `C:\Program Files\` by default.)
+Move the DLL files in `obs-plugins\64bit` to **obs-studio** > **obs-plugins** > **64bit**. (`obs-studio` is installed in `C:\Program Files\` by default.)
 ![](https://main.qcloudimg.com/raw/ca9cc7d84071526009624978dc38e2c8.png)   
 
 [](id:push)
