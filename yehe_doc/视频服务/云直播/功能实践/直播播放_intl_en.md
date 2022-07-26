@@ -19,7 +19,7 @@ Select **CSS Toolkit** > **[Address Generator](https://console.cloud.tencent.com
 A [live push](https://intl.cloud.tencent.com/document/product/267/31558) must be successful before the stream can be watched via the playback URL. You can use the following methods to test live streaming based on your business scenario:
 
 ### Scenario 1. Playback on PC client
-You can use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483), FFmepg, and [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html) for playback.
+You can use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483), FFmepg, and [TCPlayerDemo](https://tcplayer.vcube.tencent.com) for playback.
 ![](https://main.qcloudimg.com/raw/e47f8d4d9ca63e678439df3e8a17c9b4.png)
 ### Scenario 2. Playback on mobile client
 1. Download the install [Tencent Cloud Toolkit](https://intl.cloud.tencent.com/document/product/1016/30285).
@@ -28,7 +28,7 @@ You can use tools such as [VLC](https://intl.cloud.tencent.com/document/product/
 4. Tap the play button in the bottom-left corner to start playback.
 
 ### Scenario 4. Playback on web
-You are recommended to choose TCPlayerLite in the player SDK for playback. Based on Tencent Cloud's powerful backend functionality and AI technology, TCPlayerLite provides excellent playback capabilities for live streaming and video on-demand. Deeply integrated with the Tencent Cloud LVB and VOD services, Player+ features smooth and stable playback performance, advertising placement, and data monitoring.
+You are recommended to choose TCPlayer in the player SDK for playback. Based on Tencent Cloud's powerful backend functionality and AI technology, TCPlayerLite provides excellent playback capabilities for live streaming and video on-demand. Deeply integrated with the Tencent Cloud LVB and VOD services, Player+ features smooth and stable playback performance, advertising placement, and data monitoring.
 >! Currently, most mobile browsers on the market do not support HTTP-FLV playback. Therefore, for web-based playback, you are recommended to select the HTTP-FLV playback protocol for PC browsers and HLS for mobile browsers. 
 
 ## FAQs
