@@ -18,7 +18,7 @@ CSSコンソールの【CSSツールボックス】>[【アドレスジェネレ
 始めに[CSSプッシュ](https://intl.cloud.tencent.com/document/product/267/31558)を実施する必要があり、プッシュが正常に実行された後、再生アドレスを介してライブストリーミング画面を確認することができます。業務のシナリオに基づき、次の方式でライブストリーミングテストを実施することができます。
 
 ### シーン1： PCでの再生
-[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg および [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html)  などのツールを使用して再生することができます。
+[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg および [TCPlayerDemo](https://tcplayer.vcube.tencent.com)  などのツールを使用して再生することができます。
 ### シーン2：モバイルでの再生
 1. [Tencent Video Cloud Demo](https://intl.cloud.tencent.com/document/product/1071/38147)をダウンロードし、インストールします。
 2. 【モバイルライブストリーミング】>【CSSプル】を開き、選択します。
@@ -28,7 +28,7 @@ CSSコンソールの【CSSツールボックス】>[【アドレスジェネレ
 >? Appでプッシュ/再生を実施する場合は[モバイルライブストリーミングSDK](https://intl.cloud.tencent.com/product/mlvb) を統合し、CSSサービスと連携して使用することができます。モバイルライブストリーミングSDKはRTMP、HTTP-FLV、HLS再生プロトコルをサポートしています。
 
 ### シーン4：Webでの再生
-Tencent Cloudの強力なバックエンド機能とAI技術に基づき、CSSとVODの強力な再生機能を提供する、プレーヤーSDKの TCPlayerLiteを選択して再生することをお勧めします。Player+ は、Tencent Video CSS、VODサービスと深く融合し、スムーズで安定した再生パフォーマンスを実現し、広告の配置、データモニタリングなどの機能を包括しています。
+Tencent Cloudの強力なバックエンド機能とAI技術に基づき、CSSとVODの強力な再生機能を提供する、プレーヤーSDKの TCPlayerを選択して再生することをお勧めします。Player+ は、Tencent Video CSS、VODサービスと深く融合し、スムーズで安定した再生パフォーマンスを実現し、広告の配置、データモニタリングなどの機能を包括しています。
 >! 現在、市販で販売されている大多数のスマホブラウザはHTTP-FLV再生をサポートしていないため、Tencent Cloudは、Web再生時のプロトコル選択に際し、ＰＣブラウザでは、HTTP-FLVプロトコルを使用してのライブストリーミング再生、スマホブラウザではHLSを使用してのCSSストリーム再生を推奨しています。
 
 
