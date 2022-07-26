@@ -14,7 +14,7 @@ iOS、Android 上的应用可以通过集成移动直播 SDK 来实现 App 端�
 >? 移动直播 SDK 借助云直播、即时通信 IM、TRTC 等服务实现了多人音视频低延迟互联互通，可以实现多人连麦的互动效果，不参与连麦的观众仍通过直播服务观看。
 
 ### Demo 体验
-视频云工具包是腾讯云开源的一套完整的音视频服务解决方案，您可通过视频云工具包体验快直播毫秒级低延迟拉流能力。
+视频云工具包是腾讯云开源的一套完整的音视频服务解决方案，您可通过视频云工具包体验快直播毫秒级低延时拉流能力。
 <table>
   <tr>
     <th><div align="center">开发端</div></th>
@@ -53,14 +53,14 @@ iOS、Android 上的应用可以通过集成移动直播 SDK 来实现 App 端�
 - **Web 端直播推流**：基于浏览器通用的 WebRTC 标准进行设计和封装，通过引入代码片段就能实现在浏览器中进行直播推流，详情请参见 [WebRTC 推流](https://intl.cloud.tencent.com/document/product/267/41620)。
 > ! 
 > - WebRTC 推流时音频编码方式为 opus 编码，若使用标准直播的播放协议（RTMP、FLV、HLS）进行播放时，为保证能正常观看，云直播后台会自动发起音频转码转为 aac 编码，从而会产生音频转码费用，详情请参见[音频转码费用说明](https://intl.cloud.tencent.com/document/product/267/39604#a_trans)。（若只使用快直播则不会发起音频转码）
-> - 使用 WebRTC 协议推流，每个推流域名默认限制**100路并发**推流数，如您需要超过此推流限制，可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 的方式联系我们进行申请。
+> - 使用 WebRTC 协议推流，每个推流域名默认限制**1000路并发**推流数，如您需要超过此推流限制，可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 的方式联系我们进行申请。
 
 
 ### Demo 体验
 
 - **Web 端直播推流**：可通过 **云直播控制台**>[Web 推流工具](https://console.cloud.tencent.com/live/tools/webpush) 进行测试 Web 端推流功能。
 
-- **Web 端直播拉流**：可通过 [WebRTC Live Demo](https://tcplayer.vcube.tencent.com/webrtc-demo/index.html) 工具进行播放体验。
+- **Web 端直播拉流**：可通过 [TCPlayer](https://tcplayer.vcube.tencent.com/) 工具进行播放体验。
 >?
 >- Web 端直播推流和拉流均使用标准 WebRTC 协议，Web 端推流时不包含 B帧 ，且音频编码为 OPUS 音频格式，所以不会产生音频转码及去 B 帧转码费用。
 >- WebRTC Live Demo 支持多清晰度功能，可在云直播控制台 **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode) 配置高清-HD、标清-SD 的转码模板，将带有转码模板的 WebRTC 流地址填入 Demo 中对应的栏目后测试播放（如不需要测试此功能则只需要在 Demo 中填入一条 WebRTC 原始流即可）。
@@ -80,7 +80,7 @@ WebRTC 协议推流主要用于视频云的快直播（超低延时直播）推�
 下载 [OBS 插件](https://mediacloud-76607.gzc.vod.tencent-cloud.com/TOBSWebRTC/Release/tencent_webrtc_plugin_20210628.zip)，把 data 文件里面的两个 `services.json` 和 `package.json` 文件，挪动到对应的 **obs-studio** > **rtmp-service** > **data** 目录进行覆盖。（`obs-studio` 默认安装在 C 盘，对应的目录为：`C:\Program Files\obs-studio\data\obs-plugins\rtmp-services`，请根据您的实际情况进行配置。）
 ![](https://main.qcloudimg.com/raw/967335d17284d931e3a01505d45b884a.png)  
 2. **配置插件动态库**。
-将 `obs-plugins\64bit` 中的 dll 和 pdb 文件，挪动到对应的 **obs-studio** > **obs-plugins** > **64bit** 目录下。（`obs-studio` 默认安装在 C 盘，对应的目录为：`C:\Program Files\obs-studio\obs-plugins\64bit`，请根据您的实际情况进行配置。）
+将 `obs-plugins\64bit` 中的 dll 文件，挪动到对应的 **obs-studio** > **obs-plugins** > **64bit** 目录下。（`obs-studio` 默认安装在 C 盘，对应的目录为：`C:\Program Files\obs-studio\obs-plugins\64bit`，请根据您的实际情况进行配置。）
 ![](https://main.qcloudimg.com/raw/ca9cc7d84071526009624978dc38e2c8.png)   
 
 [](id:push)
