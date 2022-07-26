@@ -1,7 +1,3 @@
->? To install the Nginx-ingress add-on, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
->
-
-
 ## Nginx-ingress Introduction 
 
 Nginx can be used as a reverse proxy, load balancer, and for HTTP caching.
