@@ -8,7 +8,7 @@
 <thead>
 <tr>
 <th rowspan="2" width="65%">리전</th>
-<th colspan="2" style="text-align:center;">가격(단위: 米ドル/GB)</th>
+<th colspan="2" style="text-align:center;">가격(단위: USD/GB)</th>
 </tr>
 </thead>
 <tbody><tr>
