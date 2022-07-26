@@ -14,8 +14,12 @@ Authorization: <Auth String>
 
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
+
 
 
 #### Request headers
@@ -32,7 +36,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
 | queueId | None | ID of the queue from which jobs are pulled | String | Yes |
-| tag |None| Job type: ExtractDigitalWatermark | String |Yes|
+| tag |None| Job type: DigitalWatermark | String |Yes|
 | orderByTime | None | `Desc` (default) or `Asc` | String | No |
 | nextToken | None | Context token for pagination | String | No |
 | size | None | Maximum number of jobs that can be pulled. The default value is 10. The maximum value is 100. | Integer | No |
@@ -76,12 +80,12 @@ The nodes are as described below:
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
 
-## Use Cases
+## Samples
 
 #### Request
 
 ```shell
-GET /jobs?queueId=aaaaaaaaaaa&tag=ExtractDigitalWatermark HTTP/1.1
+GET /jobs?queueId=aaaaaaaaaaa&tag=DigitalWatermark HTTP/1.1
 Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0ea057
 Host:bucket-1250000000.ci.ap-beijing.myqcloud.com
 
@@ -107,16 +111,21 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzh****=
     <CreationTime>2019-07-07T12:12:12+0800</CreationTime>
     <EndTime></EndTime>
     <QueueId>p893bcda225bf4945a378da6662e81a89</QueueId>
-    <Tag>ExtractDigitalWatermark</Tag>
+    <Tag>DigitalWatermark</Tag>
     <Input>
       <Object>test.mp4</Object>
     </Input>
     <Operation>
-      <ExtractDigitalWatermark>
+      <DigitalWatermark>
         <Type>Text</Type>
         <Message>123456789ab</Message>
         <Version>V1</Version>
-      </ExtractDigitalWatermark> 
+      </DigitalWatermark>
+      <Output>
+        <Region>ap-beijing</Region>
+        <Bucket>bucket-1250000000</Bucket>
+        <Object>testout.mp4</Object>
+      </Output> 
     </Operation>
   </JobsDetail>
 </Response>

@@ -17,8 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
+
 
 
 #### Request headers
@@ -63,7 +67,7 @@ The nodes are described as follows:
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
 | Tag                | Request | Job type: SDRtoHDR                                   | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| Operation          | Request | Operation rule. Up to six jobs can be performed on the same file.                                                | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
@@ -159,8 +163,8 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
+| Code               | Response.JobsDetail | Error code, which will be meaningful only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error description, which will be meaningful only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
 | Tag                | Response.JobsDetail | Job type: SDRtoHDR                              | String    |
 | State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
@@ -169,7 +173,7 @@ The nodes are as described below:
 | EndTime | Response.JobsDetail | Job end time |  String |
 | QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the job                   | Container |
-| Operation | Response.JobsDetail | Operation rule. Up to six operation rules are supported. |  Container |
+| Operation | Response.JobsDetail | Operation rule. Up to six jobs can be performed on the same file. |  Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -180,7 +184,7 @@ Same as the `Request.Input` node in the request.
 |:---|:-- |:--|:--|
 | SDRtoHDR | Response.JobsDetail.Operation | Same as `Request.Operation.SDRtoHDR` in the request. |  Container |
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
-| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
+| MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned if there is no output video. | Container |
 
 `Output` has the following sub-nodes:
 Same as the `Request.Operation.Output` node in the request.
@@ -192,7 +196,7 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 #### Request
 

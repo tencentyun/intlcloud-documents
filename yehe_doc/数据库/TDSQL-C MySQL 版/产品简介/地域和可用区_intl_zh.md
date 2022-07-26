@@ -9,7 +9,6 @@
 ## 地域
 腾讯云不同地域之间完全隔离，保证不同地域间最大程度的稳定性和容错性。建议您选择最靠近您用户的地域，可降低访问时延、提高下载速度。用户启动实例、查看实例等操作都是区分地域属性的。
 云产品内网通信的注意事项如下：
-
 - 同地域下（保障同一账号，且同一个 VPC 内）的云资源之间可通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 - 不同地域之间网络完全隔离，不同地域之间的云产品默认不能通过内网互通。
 - 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
@@ -25,34 +24,42 @@
 <tbody>
 <tr><th>地域</th><th>可用区</th></tr>
 <tr>
-<td rowspan="5">华南地区（广州）<br> ap-guangzhou</td>
+<td rowspan="4">华南地区（广州）<br> ap-guangzhou</td>
 <td>广州三区<br> ap-guangzhou-3</td></tr>	
 <tr>
 <td>广州四区<br> ap-guangzhou-4</td></tr>
-<tr>
-<td>广州五区<br> ap-guangzhou-5</td></tr>	
 <tr>
 <td>广州六区<br> ap-guangzhou-6</td></tr>
 <tr>
 <td>广州七区<br> ap-guangzhou-7</td></tr>
 <tr>
-<td rowspan="3">华东地区（上海）<br>ap-shanghai</td>
+<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
 <td>上海二区<br>ap-shanghai-2</td></tr>
 <tr>
 <td>上海四区<br>ap-shanghai-4</td></tr>
 <tr>
 <td>上海五区<br>ap-shanghai-5</td></tr>
 <tr>
-<td rowspan="3">华北地区（北京）<br>ap-beijing</td>
+<td>上海六区<br>ap-shanghai-6</td></tr>
+<tr>
+<td rowspan="4">华北地区（北京）<br>ap-beijing</td>
 <td>北京三区<br>ap-beijing-3</td></tr>
 <tr>
 <td>北京五区<br>ap-beijing-5</td></tr>
 <tr>
+<td>北京六区<br>ap-beijing-6</td></tr>
+<tr>
 <td>北京七区<br>ap-beijing-7</td></tr>
+<tr>
 <td rowspan="1">华东地区（南京）<br>ap-nanjing</td>
 <td>南京一区<br>ap-nanjing-1</td></tr>
+<tr>
+<td >西南地区（重庆）<br>ap-chongqing</td>
+<td>重庆一区<br>ap-chongqing-1</td></tr>
+<tr>
 <td rowspan="1">港澳台地区（中国香港）<br>ap-hongkong</td>
 <td>香港二区<br>ap-hongkong-1</td></tr>
+<tr>
 <td rowspan="1">港澳台地区（中国台北）<br>ap-taipei</td>
 <td>台北一区<br>ap-taipei-1</td></tr>
 </tbody></table>	
@@ -64,7 +71,8 @@
 <tr>
 <td rowspan="1">亚太东南（新加坡）<br>ap-singapore</td>
 <td>新加坡三区<br>ap-singapore-3</td></tr>
-<tr><td rowspan="1">美国西部（硅谷）<br>na-siliconvalley</td>
+<tr>
+<td rowspan="1">美国西部（硅谷）<br>na-siliconvalley</td>
 <td>硅谷二区<br>na-siliconvalley-2</td></tr>
 <tr>
 <td rowspan="1">欧洲地区（法兰克福）<br>eu-frankfurt</td>
@@ -72,12 +80,13 @@
 <tr>
 <td rowspan="2">美国东部（弗吉尼亚）<br>na-ashburn</td>
 <td>弗吉尼亚一区<br>na-ashburn-1</td></tr>
+<tr>
 <td>弗吉尼亚二区<br>na-ashburn-2</td></tr>
 <tr>
 <td rowspan="2">亚太东北（东京）<br>ap-tokyo</td>
 <td>东京一区<br>ap-tokyo-1</td></tr>
-<td>东京二区<br>ap-tokyo-2</td></tr>
 <tr>
+<td>东京二区<br>ap-tokyo-2</td></tr>
 </tbody></table>	
 
 ## 如何选择地域和可用区
