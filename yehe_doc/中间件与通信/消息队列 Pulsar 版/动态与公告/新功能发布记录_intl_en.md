@@ -18,7 +18,7 @@
 <td>2022-06-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1110/42907">Use Limits</a></td>
 </tr><tr>
-<td>Supported filtering topics by **Type** and **Creator** in the message topic list</td>
+<td>Supported filtering topics by <b>Type</b> and <b>Creator</b> in the message topic list</td>
 <td>-</td>
 <td>2022-06-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1110/42930">Topic Management</a></td>
@@ -120,7 +120,7 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Launched clusters on v2.7.1</td>
-<td>TDMQ for Pulsar now supports clusters on v2.7.1. <li>The cluster version is updated to open-source Pulsar 2.7.1 to support more features and simplify connection.</li><li>The `listenerName` dependency is removed for the new cluster version, so you don't need to declare `listenerName` when connecting to a cluster on v2.7.1 or later from an open-source Pulsar client.</li></td>
+<td>TDMQ for Pulsar now supports clusters on v2.7.1. <li>The cluster version is updated to open-source Pulsar 2.7.1 to support more features and simplify connection.</li><li>The <code>listenerName</code> dependency is removed for the new cluster version, so you don't need to declare <code>listenerName</code> when connecting to a cluster on v2.7.1 or later from an open-source Pulsar client.</li></td>
 <td>2021-05-31</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1110/42898">Cluster Version Updates</a></td>
 </tr></table>
@@ -153,7 +153,7 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Launched the message query and message trace features</td>
-<td>On the **Message Query** page, you can query the details and trace of a message, including the message content, parameters, duration of each stage, execution result, producer IP, and consumer IP.</td>
+<td>On the <b>Message Query</b> page, you can query the details and trace of a message, including the message content, parameters, duration of each stage, execution result, producer IP, and consumer IP.</td>
 <td>2020-10-30</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1110/42934">Message Query and Trace</a></td>
 </tr><tr>
