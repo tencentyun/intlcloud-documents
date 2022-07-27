@@ -15,6 +15,6 @@ This document describes how to use [EventBridge](https://intl.cloud.tencent.com/
   2. Click **Next**.
   3. In **Delivery Target**, configure the push target. You can configure a delivery target for an event alarm as needed: CLS or notification message.
 
-    - Select **CLS** for **Trigger method**. For more information, see:[CLS Log Target](https://intl.cloud.tencent.com/document/product/1108/46992)
-    - Select **Notification message** for **Trigger method**. For more information, see:[Message Push Target](https://intl.cloud.tencent.com/document/product/1108/46779)
+    - Select **CLS** for **Trigger method**. For more information, see [CLS Log Target](https://intl.cloud.tencent.com/document/product/1108/46992)
+    - Select **Notification message** for **Trigger method**. For more information, see [Message Push Target](https://intl.cloud.tencent.com/document/product/1108/46779)
 4. Click **Complete**.
