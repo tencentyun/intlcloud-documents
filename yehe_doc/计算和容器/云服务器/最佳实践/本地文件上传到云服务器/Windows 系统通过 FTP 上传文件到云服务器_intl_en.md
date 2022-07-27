@@ -13,8 +13,9 @@ You have built the FTP service on CVM.
 
 ### Connecting to the CVM
 1. Download and install the open-source FileZilla locally.
-> If you use version 3.5.3 of FileZilla to upload files via FTP, the upload may fail. We recommend you download and use versions 3.5.1 or 3.5.2 of FileZilla from its official website.
->
+<dx-alertinfotype="explain"title="">
+If you use version 3.5.3 of FileZilla to upload files via FTP, the upload may fail. We recommend you download and use versions 3.5.1 or 3.5.2 of FileZilla from its official website.
+</dx-alert>
 2. Open FileZilla.
 3. In the FileZilla window, enter information such as the host, username, password, and port, and click **Quickconnect**.
 
@@ -27,10 +28,10 @@ After the connection is successful, you can view the files on the remote CVM sit
 
 ### Uploading a file
 In the lower-left "Local site" window, right-click the local file to be uploaded and select **Upload** to upload it to a Linux CVM, as shown below:
-> 
->- CVM FTP path does not support the automatic decompression or deletion of uploaded compressed tar files.
->- The remote site path is the default path for uploading files to a Linux CVM.
->
+<dx-alertinfotype="explain"title="">
+- CVM FTP path does not support the automatic decompression or deletion of uploaded compressed tar files.
+- The remote site path is the default path for uploading files to a Linux CVM.
+</dx-alert>
 
 ### Downloading a file
 In the lower-right "Remote site" window, right-click the CVM file to be downloaded and choose **Download** to download it to a local directory.
