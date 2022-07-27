@@ -5,7 +5,7 @@ This API (`GetSnapshot`) is used to get a screenshot of a media file at some tim
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer (recommended)
+                API Explorer is recommended.
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetSnapshot&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
         </div>
@@ -19,7 +19,7 @@ This API (`GetSnapshot`) is used to get a screenshot of a media file at some tim
 
 ## Instructions
 
-This API is in sync mode. For the async mode, see Job APIs - Screenshot.
+This API is in sync mode. For the async mode, see Job APIs - Screencapturing.
 
 ## Sample Request
 
@@ -37,7 +37,11 @@ Content-Length: <length>
 https://<BucketName-APPID>.cos.<Region>.myqcloud.com/for-test.mp4?ci-process=snapshot&time=1&format=jpg&<Auth String>
 ```
 
->?Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request headers
 
@@ -45,12 +49,12 @@ This API only uses common request headers. For more information, see [Common Req
 
 #### Request parameters
 
-The parameters are as described below:
+The parameters are described as follows:
 
 | Parameter | Description | Type | Required |
 | :--- | :--- | :--- | :--- |
 | ci-process | Operation type, which is fixed at `snapshot`. | String | Yes |
-| time | Screenshot time point in seconds | float | Yes |
+| time | Screenshot time point in seconds. | float | Yes |
 | width | Screenshot width. Default value: 0 | Int | No |
 | height | Screenshot height. Default value: 0.<br/>If `width` and `height` are both `0`, the width and height of the video are used. If one of them is `0`, the other value is used to automatically adapt to the aspect ratio of the video. | Int | No |
 | format | Screenshot format. Valid values: jpg, png. Default value: jpg | String | No |
@@ -72,10 +76,10 @@ This response contains common response headers. For more information, see [Commo
 The response body is the screenshot file content.
 
 #### Error codes
-There are no special error messages for this request. For common error messages, see Error Codes.
+There are no special error messages for this request operation. For common error messages, see Error Codes.
 
 
-## Use Cases
+## Samples
 
 #### Request 1. GET request
 

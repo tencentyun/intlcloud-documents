@@ -34,7 +34,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request headers
 
@@ -84,7 +87,7 @@ This request requires the following request body:
 
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | -------- |
@@ -167,7 +170,7 @@ Audio/Video formats supported by different container formats are as follows:
 | Bitrate            | Request.Audio | Original audio bitrate | String | No       | None     | <ul  style="margin: 0;"><li>Unit: Kbps</li><li>Value range: [8, 1000] </li></ul>          |
 | Channels           | Request.Audio | Number of sound channels       | String | No       | None     | <ul  style="margin: 0;"><li>If `Codec` is `aac` or `flac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.</li><li>If `Codec` is `mp3` or `opus`, the value can only be `1` or `2`.</li><li>If `Codec` is `Vorbis`, the value can only be `2`.</li><li>If `Codec` is `amr`, the value can only be `1`.</li><li>If `Codec` is `dash`, the value cannot be `8`.</li></ul>|
 | Remove             | Request.Audio | Whether to delete the source audio stream | String | No   |   false    | Valid values: true, false                                             |
-| KeepTwoTracks      | Request.Audio | Keep double audio track | String | No   | false    | Valid values: `true`, `false`. If `Video.Codec` is `H.265`, this parameter is invalid.                  |
+| KeepTwoTracks      | Request.Audio | Keep double audio track | String | No   | false    | Valid values: `true`, `false`. If `Video.Codec` is `H.265`, this parameter is invalid.
 | SwitchTrack        | Request.Audio | Switch the track | String | No   | false    | Valid values: true, false. If `Video.Codec` is `H.265`, this parameter is invalid.                                       |
 | SampleFormat       | Request.Audio | Sampling bit width  | String | No   | None      | <ul  style="margin: 0;"><li>If `Codec` is `aac`, the value can only be `fltp`.</li><li>If `Codec` is `mp3`, the value can be `fltp`, `s16p`, or `s32p`.</li><li>If `Codec` is `flac`, the value can only be `s16` or `s32`.</li><li>If `Codec` is `amr`, the value can only be `s16`.</li><li>If `Video.Codec` is `H.265`, this parameter is invalid.</li></ul>|
 
@@ -306,7 +309,7 @@ If `Audio.Codec` is `mp3`, `Container.Format` supports the sample rates as shown
 
 The `AdjDarMethod` parameter is illustrated as follows:
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e2eb1d7346df8f51756fdab7bdce2ca0.png)
+![](https://main.qcloudimg.com/raw/3436731be8c1caa5ffd565b2c44b9643.png)
 
 
 `HlsEncrypt` has the following sub-nodes:
@@ -407,7 +410,7 @@ The nodes are as described below:
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
 
-## Use Cases
+## Samples
 
 #### Request
 

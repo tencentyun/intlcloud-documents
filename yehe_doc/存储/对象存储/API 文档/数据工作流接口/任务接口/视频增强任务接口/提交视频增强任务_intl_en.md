@@ -17,8 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
+
 
 
 #### Request headers
@@ -61,7 +65,7 @@ The nodes are described as follows:
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |
 | Tag                | Request | Job type: VideoProcess                                | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| Operation          | Request | Operation rule. Up to six jobs can be performed on the same file.                                                | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
 | CallBack           | Request | Callback address                                                | String    | No   |
 
@@ -197,7 +201,7 @@ Same as the `Request.Input` node in the request.
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
-| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | 
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
 
 `Output` has the following sub-nodes:
@@ -220,9 +224,9 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
-#### Use case 1. Using the video enhancement template ID
+#### Sample 1: Using the video enhancement template ID
 
 #### Request
 
@@ -305,7 +309,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Use case 2. Using the video enhancement processing parameter
+#### Sample 2: Using the video enhancement processing parameter
 
 #### Request
 
