@@ -20,24 +20,24 @@ COS에서 지원하는 리전에 대한 자세한 내용은 [리전 및 액세�
 <dx-alert infotype="notice" title="">
 - 현재 Tencent Cloud의 서비스 마이그레이션은 qcow2, vhd, vmdk, raw 형식의 이미지를 지원합니다. 압축된 이미지 형식을 사용하여 전송 및 마이그레이션 시간을 단축하시길 권장합니다.
 - 이미지가 업로드되는 COS 리전은 마이그레이션하려는 CVM이 있는 위치와 동일해야 합니다.
-- 오프라인 마이그레이션 중 업로드된 이미지 파일의 크기는 마이그레이션하려는 디스크의 용량보다 클 수 없습니다. 이미지 파일의 크기가 50G인 경우 시스템 디스크는 50G 이상이어야 합니다.
+- 시스템 디스크 이미지와 데이터 디스크 이미지를 동시에 가져와야 하는 경우 가져온 인스턴스를 해당 양의 데이터 디스크와 함께 마운트해야 합니다.
+- 타깃 디스크 용량은 원본 디스크 용량보다 크거나(권장 사항에 따라) 같아야 합니다.
 - 오프라인 마이그레이션은 \*-00000\*.vmdk와 유사한 파일 이름을 가진 스냅샷 파일의 마이그레이션을 지원하지 않습니다.
-
 </dx-alert>
 
 
 
 - 이미지 생성 문서의 지침에 따라 마이그레이션해야 하는 서버에 대한 이미지를 생성합니다.
- - Windows의 경우 [Windows 이미지 생성](https://intl.cloud.tencent.com/document/product/213/17815)을 참고하십시오.
- - Linux의 경우 [Linux 이미지 생성](https://intl.cloud.tencent.com/document/product/213/17814)을 참고하십시오.
+  - Windows의 경우 [Windows 이미지 생성](https://intl.cloud.tencent.com/document/product/213/17815)을 참고하십시오.
+  - Linux의 경우 [Linux 이미지 생성](https://intl.cloud.tencent.com/document/product/213/17814)을 참고하십시오.
 - 생성된 이미지 파일을 COS에 업로드합니다.  
- - 이미지 파일의 크기가 크기 때문에 브라우저를 통한 업로드가 실패할 수 있습니다. COSCMD 도구를 사용하여 이미지를 업로드하는 것이 좋습니다. 자세한 내용은 [COSCMD 툴](https://intl.cloud.tencent.com/document/product/436/10976)을 참고하십시오.  
- - 다른 클라우드 플랫폼에서 내보낸 이미지가 압축된 패키지(예.tar.gz)인 경우 COS에 직접 업로드할 수 있습니다.
+  - 이미지 파일의 크기가 크기 때문에 브라우저를 통한 업로드가 실패할 수 있습니다. COSCMD 도구를 사용하여 이미지를 업로드하는 것이 좋습니다. 자세한 내용은 [COSCMD 툴](https://intl.cloud.tencent.com/document/product/436/10976)을 참고하십시오.  
+  - 다른 클라우드 플랫폼에서 내보낸 이미지가 압축된 패키지(예.tar.gz)인 경우 COS에 직접 업로드할 수 있습니다.
 - 업로드된 이미지의 COS 주소를 얻습니다.
 [COS 콘솔](https://console.cloud.tencent.com/cos5/bucket)에서 방금 업로드한 이미지 파일을 찾아 이미지 파일 상세 페이지의 임시 링크를 복사합니다.
 - 마이그레이션할 CVM 및 CBS를 준비합니다.
- - [CVM 인스턴스 구매](https://buy.intl.cloud.tencent.com/cvm?regionId=5&projectId=-1)
- - [Purchase Instructions](https://intl.cloud.tencent.com/document/product/362/32414)
+  - [CVM 인스턴스 구매](https://buy.intl.cloud.tencent.com/cvm?regionId=5&projectId=-1)
+  - [Purchase Instructions](https://intl.cloud.tencent.com/document/product/362/32414)
 
 
 ## 작업 단계
@@ -50,11 +50,7 @@ COS에서 지원하는 리전에 대한 자세한 내용은 [리전 및 액세�
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f3beecb92122f70f42fa86e652d35d9.png)
 5. **완료**를 클릭하여 마이그레이션 작업을 만듭니다.
 마이그레이션하는 동안 ‘[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)’ 페이지를 종료하거나 닫을 수 있습니다. 또한 언제든지 이 페이지로 돌아와 작업 진행 상황을 확인할 수 있습니다. 
-<dx-alert infotype="notice" title="">
-- 마이그레이션하려는 인스턴스의 시스템 디스크 용량은 업로드된 이미지 파일의 크기보다 작을 수 없습니다. 그렇지 않으면 작업이 실패합니다.
-- 시스템 디스크 이미지와 데이터 디스크 이미지를 동시에 가져와야 하는 경우 가져온 인스턴스를 해당 양의 데이터 디스크와 함께 마운트해야 합니다.
-- 타깃 디스크 용량은 원본 디스크 용량보다 크거나(권장 사항에 따라) 같아야 합니다.
-</dx-alert>
+
 
 
 :::
@@ -66,10 +62,6 @@ COS에서 지원하는 리전에 대한 자세한 내용은 [리전 및 액세�
 ![](https://qcloudimg.tencent-cloud.cn/raw/7bf477c4a8811b1fe1395fa018762c25.png)
 5. **완료**를 클릭하여 마이그레이션 작업을 만듭니다.
 마이그레이션하는 동안 ‘[서비스 마이그레이션](https://console.cloud.tencent.com/cvm/csm/index?rid=4)’ 페이지를 종료하거나 닫을 수 있습니다. 또한 언제든지 이 페이지로 돌아와 작업 진행 상황을 확인할 수 있습니다. 
-<dx-alert infotype="notice" title="">
-- 마이그레이션하려는 CBS 디스크의 용량은 업로드된 이미지 파일의 크기보다 작을 수 없습니다. 그렇지 않으면 작업이 실패합니다.
-- 타깃 디스크 용량은 원본 디스크 용량보다 크거나(권장 사항에 따라) 같아야 합니다.
-</dx-alert>
 
 
 :::
