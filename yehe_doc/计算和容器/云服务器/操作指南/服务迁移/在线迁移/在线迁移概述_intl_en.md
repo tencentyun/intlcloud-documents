@@ -25,10 +25,6 @@ Currently, online migration supports the server migration feature.
 
 ## Starting Migration
 
-<dx-alert infotype="explain" title="">
-Currently, the online migration service in the console is in beta test. To try it out, [contact us](https://intl.cloud.tencent.com/document/product/213/34837) for application.
-</dx-alert>
-
 After registering the migration source server to Tencent Cloud using the go2tencentcloud tool provided by Tencent Cloud, manage the migration source and complete the migration task via the feature of online migration in the CVM console. For details, see [Migration in Console](https://intl.cloud.tencent.com/document/product/213/44338).
 
 ## FAQs
