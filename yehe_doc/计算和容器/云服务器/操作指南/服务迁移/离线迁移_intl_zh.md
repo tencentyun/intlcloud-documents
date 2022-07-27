@@ -20,24 +20,24 @@
 <dx-alert infotype="notice" title="">
 - 目前腾讯云的服务迁移支持的镜像格式有：qcow2、vhd、vmdk、raw。建议使用压缩的镜像格式，可以节省传输和迁移的时间。
 - 上传镜像的 COS 地域需要与您将迁入的云服务器地域保持一致。
-- 离线迁移时，上传的镜像文件不能大于需要迁入的盘容量。若镜像文件为50G，则迁入实例的系统盘最小为50G。
+- 如需同时导入系统盘镜像及数据盘镜像，则迁入的实例需挂载对应数量的数据盘。
+- 目的盘容量需大于等于（建议大于）源盘容量。
 - 离线迁移不支持快照文件（文件名如 \*-00000\*.vmdk 的快照文件）的迁入。
-
 </dx-alert>
 
 
 
 - 请根据镜像制作文档制作一份需要迁移服务器的镜像文件。
- - Windows 系统请参考 [Windows 镜像制作文档](https://intl.cloud.tencent.com/document/product/213/17815)。
- - Linux 系统请参考 [Linux 镜像制作文档](https://intl.cloud.tencent.com/document/product/213/17814)。
+  - Windows 系统请参考 [Windows 镜像制作文档](https://intl.cloud.tencent.com/document/product/213/17815)。
+  - Linux 系统请参考 [Linux 镜像制作文档](https://intl.cloud.tencent.com/document/product/213/17814)。
 - 将制作的镜像文件上传到 COS。  
- - 由于镜像文件一般较大，网页上传容易断线，建议使用 COSCMD 上传镜像，操作详情请参考 [COSCMD 工具文档](https://intl.cloud.tencent.com/document/product/436/10976)。  
- - 如果您从其他云平台导出的镜像是压缩包格式（如 .tar.gz），则无需自行解压缩，直接上传至 COS 并进行迁入即可。
+  - 由于镜像文件一般较大，网页上传容易断线，建议使用 COSCMD 上传镜像，操作详情请参考 [COSCMD 工具文档](https://intl.cloud.tencent.com/document/product/436/10976)。  
+  - 如果您从其他云平台导出的镜像是压缩包格式（如 .tar.gz），则无需自行解压缩，直接上传至 COS 并进行迁入即可。
 - 获取镜像上传的 COS 地址。
 在 [对象存储控制台](https://console.cloud.tencent.com/cos5/bucket) 中，找到您刚刚上传好的镜像文件，并在镜像文件详情页中复制临时链接。
 - 准备需要迁入的云服务器或云硬盘。
- - [前往购买云服务器](https://buy.intl.cloud.tencent.com/cvm?regionId=5&projectId=-1)
- - [查看云硬盘购买指引](https://intl.cloud.tencent.com/document/product/362/32414)
+  - [前往购买云服务器](https://buy.intl.cloud.tencent.com/cvm?regionId=5&projectId=-1)
+  - [查看云硬盘购买指引](https://intl.cloud.tencent.com/document/product/362/32414)
 
 
 ## 操作步骤
@@ -50,11 +50,8 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f3beecb92122f70f42fa86e652d35d9.png)
 5. 单击**完成**，即可成功建立迁移任务。
 迁移过程中您可退出或关闭 “[服务迁移](https://console.cloud.tencent.com/cvm/csm/index?rid=4)” 页面，并可随时返回该页面查看迁移任务进度。 
-<dx-alert infotype="notice" title="">
-- 迁入的实例的系统盘容量不能小于上传的镜像文件大小，否则任务会失败。
-- 如需同时导入系统盘镜像及数据盘镜像，则迁入的实例需挂载对应数量的数据盘。
-- 目的盘容量需大于等于（建议大于）源盘容量。
-</dx-alert>
+
+
 
 
 :::
@@ -66,10 +63,6 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/7bf477c4a8811b1fe1395fa018762c25.png)
 5. 单击**完成**，即可成功建立迁移。
 迁移过程中您可退出或关闭 “[服务迁移](https://console.cloud.tencent.com/cvm/csm/index?rid=4)” 页面，并可随时返回该页面查看迁移任务进度。 
-<dx-alert infotype="notice" title="">
-- 迁入的云硬盘容量不能小于上传的镜像文件大小，否则任务会失败。
-- 目的盘容量需大于等于（建议大于）源盘容量。
-</dx-alert>
 
 
 :::
