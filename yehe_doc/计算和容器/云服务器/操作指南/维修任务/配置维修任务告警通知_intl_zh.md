@@ -1,12 +1,12 @@
 ## 操作场景
 
-您可以对云服务器实例对应的维修任务设置告警，在发生异常时将会第一时间通过邮件、短信、电话等渠道通知您采取措施。本文介绍如何通过云服务器控制台，通过 [事件总线](https://intl.cloud.tencent.com/document/product/1108/42267) 设置云服务器实例对应事件告警。
+您可以对云服务器实例对应的维修任务设置告警，在发生异常时将会第一时间通过邮件、短信、电话等渠道通知您采取措施。本文介绍如何通过事件总线控制台，通过 [事件总线](https://intl.cloud.tencent.com/document/product/1108/42267) 设置云服务器实例对应事件告警。
 
 
 
 ## 操作步骤
 1. 登录 [事件总线控制台](https://console.cloud.tencent.com/eb)，参考 [开通事件总线](https://intl.cloud.tencent.com/document/product/1108/42272) 完成服务开通。
-2. 选择左侧导航栏中的 **[事件规则](https://console.cloud.tencent.com/eb/rule)**，在“事件规则”页面上方选择地域及事件集，并单击**新建事件规则**。
+2. 选择左侧导航栏中的 [**事件规则**](https://console.cloud.tencent.com/eb/rule)，在“事件规则”页面上方选择地域及事件集，并单击**新建事件规则**。
 3. 进入“新建事件规则”页面：
  1. 在“事件模式”中，参考以下信息设置“事件匹配”参数，其余参数请按需设置。如下图所示：
     ![](https://qcloudimg.tencent-cloud.cn/raw/25c14455b34298bd11db850fd4c0d2a4.png)
@@ -15,6 +15,6 @@
   2. 单击**下一步**。
   3. 在“事件目标”中，配置推送目标。事件告警支持配置“日志服务（CLS）”及“消息推送”两种投递目标，您可按需进行配置。
 
-    - “触发方式”选择**日志服务（CLS）**
-    - “触发方式”选择**消息推送**
+    - “触发方式”选择**日志服务（CLS）**，则参考 [CLS 目标投递](https://intl.cloud.tencent.com/document/product/1108/46992) 进行配置。
+    - “触发方式”选择**消息推送**，则参考 [消息推送目标投递](https://intl.cloud.tencent.com/document/product/1108/46779) 进行配置。
 4. 单击**完成**即可完成设置。
