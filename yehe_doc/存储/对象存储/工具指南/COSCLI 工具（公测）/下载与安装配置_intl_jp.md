@@ -2,59 +2,36 @@ COSCLIツールは、Windows、Mac、LinuxのOSに対応したバイナリーパ
 
 ## ダウンロードアドレス
 
-- [Windows](https://github.com/tencentyun/coscli/releases/download/v0.10.1-beta/coscli-windows.exe)
-- [Mac](https://github.com/tencentyun/coscli/releases/download/v0.10.1-beta/coscli-mac)
-- [Linux](https://github.com/tencentyun/coscli/releases/download/v0.10.1-beta/coscli-linux)
+
+| Githubアドレス                                                  | 国内サイト                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Windows](https://github.com/tencentyun/coscli/releases/download/v0.11.1-beta/coscli-windows.exe) | [Windows](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-windows.exe) |
+| [Mac](https://github.com/tencentyun/coscli/releases/download/v0.11.1-beta/coscli-mac) | [Mac](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-mac) |
+| [Linux](https://github.com/tencentyun/coscli/releases/download/v0.11.1-beta/coscli-linux) | [Linux](https://cosbrowser.cloud.tencent.com/software/coscli/coscli-linux) |
+
+>?現在のバージョン番号はv0.11.1-betaです。ツールの最新バージョン、過去のバージョンおよび更新ログを取得したい場合は、[release](https://github.com/tencentyun/coscli/releases)でご確認ください。
 
 ## インストール
 
 ### Windows
 
-1. [Windows版のCOSCLIをダウンロード](https://github.com/tencentyun/coscli/releases/download/v0.10.1-beta/coscli-windows.exe)します。
+1. [Windows版のCOSCLIをダウンロード](https://github.com/tencentyun/coscli/releases/download/v0.11.1-beta/coscli-windows.exe)します。
 2. ダウンロードしたCOSCLI実行可能ファイルを`C:\Users\<ユーザー名>`ディレクトリに移動します。
 3. `coscli-windows.exe`を`coscli.exe`にリネームします。
 4. `win+r`キーを押して、`実行`プログラムを開きます。
 5. ダイアログボックスで、`cmd`と入力し、`Enter`を押してコマンドラインウィンドウを開きます。
-6. コマンドラインウィンドウに`coscli --help`と入力します。次の情報がダンプされれば、インストールは成功です。
+6. コマンドラインウィンドウに`coscli --version`と入力します。次の情報がダンプされれば、インストールは成功です。
 >? `Windows`システムでは、コマンドラインクライアントによってCOSCLIの使い方も若干異なる場合があります。`coscli [command]`を入力してもCOSCLIが正しく動作しない場合は、`./coscli [command]`の形式をお試しください。
-
-
+>
 ```
-Welcome to use coscli!
-   
-Usage:
-   coscli [flags]
-   coscli [command]
-   
-Available Commands:
-   abort       Abort parts
-   config      Init or edit config file
-   cp          Upload, download or copy objects
-   du          Displays the size of a bucket or objects
-   hash        Calculate local file's hash-code or show cos file's hash-code
-   help        Help about any command
-   ls          List buckets or objects
-   lsparts     List multipart uploads
-   mb          Create bucket
-   rb          Remove bucket
-   restore     Restore object
-   rm          Remove objects
-   signurl     Gets the signed download URL
-   sync        Synchronize objects
-   
-Flags:
-   -c, --config-path string   config file path(default is $HOME/.cos.yaml)
-   -h, --help                 help for coscli
-   
-Use "coscli [command] --help" for more information about a command.
+coscli version v0.11.1-beta
 ```
-
 
 ### Mac
 
 1. 以下のコマンドを実行し、COSCLIをダウンロードします。
 ```bash
-wget https://github.com/tencentyun/coscli/releases/download/v0.10.1-beta/coscli-mac
+wget https://github.com/tencentyun/coscli/releases/download/v0.11.1-beta/coscli-mac
 ```
 2. 以下のコマンドを実行して、ファイルをリネームします。
 ```bash
@@ -64,48 +41,19 @@ mv coscli-mac coscli
 ```bash
 chmod 755 coscli
 ```
-4. コマンドラインに`coscli --help`と入力します。次の情報がダンプされれば、インストールは成功です。
-
+4. コマンドラインに`./coscli --version`と入力します。次の情報がダンプされれば、インストールは成功です。
 ```
-Welcome to use coscli!
-   
-Usage:
-   coscli [flags]
-   coscli [command]
-   
-Available Commands:
-   abort       Abort parts
-   config      Init or edit config file
-   cp          Upload, download or copy objects
-   du          Displays the size of a bucket or objects
-   hash        Calculate local file's hash-code or show cos file's hash-code
-   help        Help about any command
-   ls          List buckets or objects
-   lsparts     List multipart uploads
-   mb          Create bucket
-   rb          Remove bucket
-   restore     Restore objects
-   rm          Remove objects
-   signurl     Gets the signed download URL
-   sync        Synchronize objects
-   
-Flags:
-   -c, --config-path string   config file path(default is $HOME/.cos.yaml)
-   -h, --help                 help for coscli
-   
-Use "coscli [command] --help" for more information about a command.
+coscli version v0.11.1-beta
 ```
-
-
 >? MacシステムでCOSCLIを使用しているときに、`開発者を検証できないため、「coscli」を開けません`というメッセージが出た場合、`設定 > セキュリティとプライバシー > 一般`に移動して、`coscliを開く`を選択すると、COSCLIが正常に使用できるようになります。
 >
 
 
 ### Linux
 
-1. [LinuxバージョンのCOSCLIのダウンロード](https://github.com/tencentyun/coscli/releases/download/v0.10.1-beta/coscli-linux)をクリックするか、以下のコマンドを実行して、COSCLIをダウンロードします。
+1. [LinuxバージョンのCOSCLIのダウンロード](https://github.com/tencentyun/coscli/releases/download/v0.11.1-beta/coscli-linux)をクリックするか、以下のコマンドを実行して、COSCLIをダウンロードします。
 ```bash
-wget https://github.com/tencentyun/coscli/releases/download/v0.10.1-beta/coscli-linux
+wget https://github.com/tencentyun/coscli/releases/download/v0.11.1-beta/coscli-linux
 ```
 2. 以下のコマンドを実行して、ファイルをリネームします。
 ```bash
@@ -115,41 +63,15 @@ mv coscli-linux coscli
 ```bash
 chmod 755 coscli
 ```
-4. コマンドラインウィンドウに`./coscli --help`と入力します。次の情報がダンプされれば、インストールは成功です。
-
+4. コマンドラインウィンドウに`./coscli --version`と入力します。次の情報がダンプされれば、インストールは成功です。
 ```
-Welcome to use coscli!
-   
-Usage:
-   coscli [flags]
-   coscli [command]
-   
-Available Commands:
-   abort       Abort parts
-   config      Init or edit config file
-   cp          Upload, download or copy objects
-   du          Displays the size of a bucket or objects
-   hash        Calculate local file's hash-code or show cos file's hash-code
-   help        Help about any command
-   ls          List buckets or objects
-   lsparts     List multipart uploads
-   mb          Create bucket
-   rb          Remove bucket
-   restore     Restore object
-   rm          Remove objects
-   signurl     Gets the signed download URL
-   sync        Synchronize objects
-   
-Flags:
-   -c, --config-path string   config file path(default is $HOME/.cos.yaml)
-   -h, --help                 help for coscli
-   
-Use "coscli [command] --help" for more information about a command.
+coscli version v0.11.1-beta
 ```
-
 
 
 ## パラメータの設定
+
+`./coscli --help`コマンドを使用して、COSCLIの使用方法をすばやく確認することができます。
 
 初めて使用する場合、COSCLIはデフォルトで`~/.cos.yaml`に設定ファイルを作成しますが、その後で`./coscli config init`コマンドを使用して、COSCLI用の設定ファイルを他の場所にインタラクティブに作成することもできます。
 
@@ -189,7 +111,8 @@ cos:
     region: ap-chengdu
 ```
 
->!COSCLIは、デフォルトで~/.cos.yamlから設定項目を読み込みます。ユーザーがカスタムの設定ファイルを使用する場合は、コマンドの後に-c(--config-path)オプションを使用してください。
+>! COSCLIは、デフォルトで~/.cos.yamlから設定項目を読み込みます。ユーザーがカスタムの設定ファイルを使用する場合は、コマンドの後に-c(--config-path)オプションを使用してください。設定ファイルに保存されているsecretid/secretkey/sessiontokenはすべて暗号化後の文字列となっています。
+>
 
 
 
@@ -198,3 +121,4 @@ cos:
 COSCLIは複数のバケットをサポートしていますが、初期設定時には1つのバケット情報のみを設定するよう要求します。その後、`./coscli config add`コマンドを使用すれば、バケット設定を追加することができます。
 
 >? 設定ファイルのその他の操作については、[configコマンド](https://intl.cloud.tencent.com/document/product/436/43251)をご参照ください。
+>
