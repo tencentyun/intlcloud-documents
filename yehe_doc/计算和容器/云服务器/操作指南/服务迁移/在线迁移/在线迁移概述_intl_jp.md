@@ -25,10 +25,6 @@ Tencent Cloudはgo2tencentcloudマイグレーションツールを提供して�
 
 ## 移行の開始
 
-<dx-alert infotype="explain" title="">
-現在、コンソールのオンラインマイグレーションサービスはパブリックベータテスト中です。ご利用をご希望の場合は、[お問い合わせ](https://intl.cloud.tencent.com/document/product/213/34837)によってQQグループを追加してサービスの有効化を申請してください。
-</dx-alert>
-
 Tencent Cloudが提供するgo2tencentcloudツールを使用して移行元をTencent Cloudに登録した後、Tencent Cloudオンラインマイグレーションコンソールを使用して移行元を管理し、移行タスクを完了します。詳細については、[オンラインマイグレーションの操作ガイド](https://intl.cloud.tencent.com/document/product/213/44338)をご参照ください。
 
 ## よくあるご質問
