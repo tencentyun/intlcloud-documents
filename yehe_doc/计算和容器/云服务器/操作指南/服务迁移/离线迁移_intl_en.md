@@ -20,9 +20,9 @@ For regions supported by COS, see [Regions and Access Endpoints](https://intl.cl
 <dx-alert infotype="notice" title="">
 - Supported image formats: QCOW2, VHD, VMDK, and RAW. We recommend using the compressed image format to shorten the transmission and migration time.
 - The image to upload is stored in the COS bucket in the same region as of the destination CVM.
-- The image size cannot be greater than the capacity of the destination disk. For example, to upload a 50 GB image, the system disk must be at least 50 GB.
+- If you need to import both the system disk images and data disk images, the target instances must be mounted with a corresponding amount of data disks.
+- The capacity of the target disk should be greater than (as recommended) or equal to that of the source disk.
 - Snapshot files (such as \*-00000\*.vmdk) are not supported.
-
 </dx-alert>
 
 
@@ -50,11 +50,8 @@ Go to the [COS console](https://console.cloud.tencent.com/cos5/bucket), locate t
 ![](https://qcloudimg.tencent-cloud.cn/raw/7f3beecb92122f70f42fa86e652d35d9.png)
 5. Click **Complete**.
 During the migration, you can quit or close the [Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4) page. You can also return to this page anytime to check the task progress. 
-<dx-alert infotype="notice" title="">
-- The system disk capacity of the target instance cannot be less than the size of the uploaded image file. Otherwise, the task will fail.
-- If you need to import both the system disk images and data disk images, the target instances must be mounted with a corresponding amount of data disks.
--The capacity of the target disk should be greater than (as recommended) or equal to that of the source disk.
-</dx-alert>
+
+
 
 
 :::
@@ -66,10 +63,6 @@ During the migration, you can quit or close the [Service Migration](https://cons
 ![](https://qcloudimg.tencent-cloud.cn/raw/7bf477c4a8811b1fe1395fa018762c25.png)
 5. Click **Complete**.
 During the migration, you can quit or close the [Service Migration](https://console.cloud.tencent.com/cvm/csm/index?rid=4) page. You can also return to this page anytime to check the task progress. 
-<dx-alert infotype="notice" title="">
-- The capacity of the target cloud disk cannot be less than the size of the uploaded image file. Otherwise, the task will fail.
-- The capacity of the target disk should be greater than (as recommended) or equal to that of the source disk.
-</dx-alert>
 
 
 :::
