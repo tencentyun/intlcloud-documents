@@ -210,7 +210,7 @@ Container 节点 Output 的内容：
 同请求中的 Request.Operation.Output 节点。
 
 Container 节点 MediaInfo 的内容：
-同 [GenerateMediaInfo](https://cloud.tencent.com/document/product/460/38935) 接口中的 Response.MediaInfo 节点。
+同 GenerateMediaInfo 接口中的 Response.MediaInfo 节点。
 
 Container 类型 DigitalWatermark 的具体数据描述如下：
 
