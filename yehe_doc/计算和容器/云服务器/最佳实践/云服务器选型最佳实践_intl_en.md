@@ -50,6 +50,8 @@ NVIDIA GPU instances use NVIDIA Tesla GPUs, including the current mainstream cho
 ::: Cloud Physical Server 2.0
 Cloud Physical Machine (CPM) 2.0 is an elastic high-performing bare metal instance built on the latest virtualization technology of Tencent Cloud. It combines the elasticity of a virtual machine with the stability of a physical machine. It can be integrated seamlessly with all Tencent Cloud services such as networks and databases, and suitable for standard, high I/O, big data, and heterogeneous computing scenarios. CPM 2.0 supports third-party virtualization platforms and can help you build dedicated and isolated high-performance physical server clusters rapidly. With the nested virtualization technology, it also supports efficient and advanced hybrid cloud deployment with AnyStack.
 :::
+::: High-performance Computing Cluster
+High-performance computing cluster (HPC) is a cloud computing cluster that uses CPM 2.0 as compute nodes and provides high-speed RDMA network connection. It can be widely used in large-scale computing scenarios such as automotive simulation, fluid dynamics, and molecular dynamics. It also provides high-performance heterogeneous resources to support scenarios including large-scale machine learning and training.
 :::
 </dx-accordion>
 
