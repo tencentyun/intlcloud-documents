@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes how to use [EventBridge](https://intl.cloud.tencent.com/document/product/1108/42267) to set a CVM instance event alarm in the CVM console. You can set an alarm for a CVM instance maintenance task, so that you will be notified immediately that you need to take countermeasures through channels such as email, SMS, and phone when an exception occurs.
+This document describes how to use [EventBridge](https://intl.cloud.tencent.com/document/product/1108/42267) to set a CVM instance event alarm in the EventBridge console. You can set an alarm for a CVM instance maintenance task, so that you will be notified immediately that you need to take countermeasures through channels such as email, SMS, and phone when an exception occurs.
 
 
 
@@ -15,6 +15,6 @@ This document describes how to use [EventBridge](https://intl.cloud.tencent.com/
   2. Click **Next**.
   3. In **Delivery Target**, configure the push target. You can configure a delivery target for an event alarm as needed: CLS or notification message.
 
-    - Select **CLS** for **Trigger method**.
-    - Select **Notification message** for **Trigger method**.
+    - Select **CLS** for **Trigger method**. For more information, see:[CLS Log Target](https://intl.cloud.tencent.com/document/product/1108/46992)
+    - Select **Notification message** for **Trigger method**. For more information, see:[Message Push Target](https://intl.cloud.tencent.com/document/product/1108/46779)
 4. Click **Complete**.
