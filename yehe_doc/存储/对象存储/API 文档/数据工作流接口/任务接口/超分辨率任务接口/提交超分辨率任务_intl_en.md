@@ -210,7 +210,7 @@ Same as the `Request.Input` node in the request.
 Same as the `Request.Operation.Output` node in the request.
 
 `MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://cloud.tencent.com/document/product/460/38935) API.
+Same as the `Response.MediaInfo` node in the GenerateMediaInfo API.
 
 `DigitalWatermark` has the following sub-nodes:
 
