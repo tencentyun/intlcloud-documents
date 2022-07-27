@@ -105,7 +105,7 @@ If an error code is returned after the function is executed, you can find the ca
 </tr><tr>
 <td>444<br>PullImageFailed</td>
 <td>Image pull fails.</td>
-<td>Check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket.</td>
+<td>Check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket.</td>
 </tr><tr>
 <td>445<br>ContainerInitError</td>
 <td>Container start fails.</td>
@@ -117,11 +117,11 @@ If an error code is returned after the function is executed, you can find the ca
 </tr><tr>
 <td>447<br>PullImageTimeOut</td>
 <td>Image pull times out.</td>
-<td>It may be a timeout caused by a large image or network jitters. Minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+<td>It may be a timeout caused by a large image or network jitters. Minimize the image or increase the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a> and try again. If the problem persists, <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr><tr>
 <td>449<br>InsufficientResources</td>
 <td>There are no resources available at the resource specification selected by this function in the specified region.</td>
-<td>If the resource type is high-spec CPU or GPU, it can be used with the provisioned concurrency. If the problem persists, <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E4%BA%91%E5%87%BD%E6%95%B0%C2%A0SCF&level3_id=671&radio_title=%E4%BD%BF%E7%94%A8%E9%99%90%E5%88%B6%E6%8F%90%E5%8D%87%E7%94%B3%E8%AF%B7&queue=81&scene_code=17230&step=2">submit a ticket</a>.</td>
+<td>If the resource type is high-spec CPU or GPU, it can be used with the provisioned concurrency. If the problem persists, <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr><td>450<br>InitContainerTimeout</td>
 <td>Container start times out.</td>
 <td>The container start duration exceeds the <a href="https://intl.cloud.tencent.com/document/product/583/19805">initialization timeout period</a>. Minimize the code or increase the initialization timeout period and try again.</td>
@@ -131,7 +131,7 @@ If an error code is returned after the function is executed, you can find the ca
 </tr><tr>
 <td>500<br>InternalError</td>
 <td>An internal error occurs.</td>
-<td>An internal error occurs. Try again later. If the problem persists, contact the <a href="https://cloud.tencent.com/online-service">smart customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+<td>An internal error occurs. Try again later. If the problem persists, <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr></tbody>
 </table>
 
