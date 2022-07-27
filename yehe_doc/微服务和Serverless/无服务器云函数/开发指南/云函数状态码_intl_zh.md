@@ -105,7 +105,7 @@
 </tr><tr>
 <td>444<br>PullImageFailed</td>
 <td>拉取镜像失败。</td>
-<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</td>
+<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请联系 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单。</td>
 </tr><tr>
 <td>445<br>ContainerInitError</td>
 <td>容器启动失败。</td>
@@ -117,11 +117,11 @@
 </tr><tr>
 <td>447<br>PullImageTimeOut</td>
 <td>拉取镜像超时。</td>
-<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像或者调大 <a href="https://intl.cloud.tencent.com/document/product/583/19805">初始化超时时间</a> 后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 。</td>
+<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像或者调大 <a href="https://intl.cloud.tencent.com/document/product/583/19805">初始化超时时间</a> 后重试。若仍无法解决，请联系 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 。</td>
 </tr><tr>
 <td>449<br>InsufficientResources</td>
 <td>地域下没有该函数所选资源规格的可用资源。</td>
-<td>若资源类型为 CPU 大规格或 GPU，可搭配预置使用。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E4%BA%91%E5%87%BD%E6%95%B0%C2%A0SCF&level3_id=671&radio_title=%E4%BD%BF%E7%94%A8%E9%99%90%E5%88%B6%E6%8F%90%E5%8D%87%E7%94%B3%E8%AF%B7&queue=81&scene_code=17230&step=2">提交工单</a>。</td>
+<td>若资源类型为 CPU 大规格或 GPU，可搭配预置使用。若仍无法解决，请 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr><td>450<br>InitContainerTimeout</td>
 <td>容器启动超时情况下，会有该返回信息。</td>
 <td>容器启动超出 <a href="https://intl.cloud.tencent.com/document/product/583/19805">初始化超时时间</a>，请最小化代码或者调大初始化超时时间后重试。</td>
@@ -131,7 +131,7 @@
 </tr><tr>
 <td>500<br>InternalError</td>
 <td>内部错误。</td>
-<td>内部错误，请稍后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/online-service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
+<td>内部错误，请稍后重试。若仍无法解决，请联系 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单。</a></td>
 </tr></tbody>
 </table>
 
