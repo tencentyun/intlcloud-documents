@@ -17,7 +17,11 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 
 #### Request headers
@@ -79,7 +83,7 @@ The nodes are described as follows:
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
 | TranscodeTemplateId| Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
 | Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |None|
 | DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
@@ -183,7 +187,7 @@ The nodes are as described below:
 | EndTime | Response.JobsDetail | Job end time |  String |
 | QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
 | Input              | Response.JobsDetail | Input resource address of the job                   | Container |
-| Operation | Response.JobsDetail | Operation rule. Up to six operation rules are supported. |  Container |
+| Operation | Response.JobsDetail | Operation rule. Up to six jobs can be performed on the same file. |  Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -193,20 +197,20 @@ Same as the `Request.Input` node in the request.
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
-| Transcode          | Response.JobsDetail.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | 
-| TranscodeTemplateId| Response.JobsDetail.Operation  | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | 
-| Watermark          | Response.JobsDetail.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | 
-| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | 
+| Transcode          | Response.JobsDetail.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
+| TranscodeTemplateId| Response.JobsDetail.Operation  | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
+| Watermark          | Response.JobsDetail.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
+| WatermarkTemplateId| Response.JobsDetail.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |None|
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
 | MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
-| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | 
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 
 
 `Output` has the following sub-nodes:
 Same as the `Request.Operation.Output` node in the request.
 
 `MediaInfo` has the following sub-nodes:
-Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
+Same as the `Response.MediaInfo` node in the [GenerateMediaInfo](https://cloud.tencent.com/document/product/460/38935) API.
 
 `DigitalWatermark` has the following sub-nodes:
 
@@ -223,7 +227,7 @@ Same as the `Response.MediaInfo` node in the `GenerateMediaInfo` API.
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 
 #### Request 1. Using the super resolution template ID

@@ -17,8 +17,12 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
+
 
 
 #### Request headers
@@ -48,7 +52,7 @@ This request requires the following request body:
 </Request>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |
@@ -158,9 +162,9 @@ The nodes are as described below:
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
-#### Use case 1. Using the text-to-speech template ID
+#### Sample 1: Using the text-to-speech template ID
 
 #### Request
 
@@ -229,7 +233,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Use case 2. Using the text-to-speech processing parameter
+#### Sample 2: Using the text-to-speech processing parameter
 
 #### Request
 
