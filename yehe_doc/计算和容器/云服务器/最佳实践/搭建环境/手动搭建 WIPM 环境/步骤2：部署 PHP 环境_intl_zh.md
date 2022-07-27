@@ -15,7 +15,7 @@
 <dx-alert infotype="notice" title="">
 [PHP 官网](http://windows.php.net/download/) 已不再提供 PHP 5.2 之前版本的安装包下载，若仍需使用 PHP 5.2 之前版本，可在云服务器中自行搜索和下载；也可在本地自行下载，再将其安装包上传至云服务器中。如何将文件上传到 Windows 云服务器，请参考 [上传文件到 Windows 云服务器](https://cloud.tencent.com/document/product/213/2761)。以下操作步骤以 PHP 5.2.13 版本为例。
 </dx-alert> 
-1. 在云服务器中打开 PHP 安装包。
+1. 在云服务器中，双击`php-xxxxx.msi` 打开 PHP 安装包。
 2. 按照安装界面的指引，单击**Next**。
 3. 在 “Web Server Setup” 界面，选择**IIS FastCGI**，单击**Next**。如下图所示：
   ![](https://main.qcloudimg.com/raw/c5fc89547b020e6ec943732d16186a7b.png)
