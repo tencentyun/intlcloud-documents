@@ -15,7 +15,7 @@ This document uses a CVM running Windows Server 2012 R2 as an example to describ
 
 >! [PHP official website](http://windows.php.net/download/) no longer provides installation packages for versions earlier than PHP 5.2. If you need a version earlier than PHP 5.2, search and download it from the CVM. Alternatively, download the installation package locally and upload it to the CVM. For more information on how to upload files to a Windows CVM, see [Uploading Files from Windows to a Windows CVM using MSTSC](https://cloud.tencent.com/document/product/213/2761). The following steps use PHP 5.2.13 as an example.
 > 
-1. Open the PHP installation package in the CVM.
+1. Double-click `php-xxxxx.msi` to open the PHP installation package in the CVM.
 2. Click **Next**.
 3. On the "Web Server Setup" page, select **IIS FastCGI** and click **Next**, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/c5fc89547b020e6ec943732d16186a7b.png)
