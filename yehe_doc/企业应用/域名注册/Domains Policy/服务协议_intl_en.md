@@ -1,6 +1,4 @@
-**DOMAIN NAME REGISTRATION SERVICE AGREEMENT**
 
- 
 
 Welcome to the Tencent Cloud Domain Name Registration Agreement (the **Agreement**). This Agreement sets out the terms and conditions (these **Terms**) for the provision of domain name registration services from us to you (the **Services**). Please read these Terms carefully, as they include important information about your legal rights. By accessing and/or using the Services, you are agreeing to these Terms. If you do not understand or agree to these Terms, please do not use the Services.
 
@@ -317,11 +315,11 @@ c. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WHILE WE ATTEMPT TO MAKE Y
 
 Except as provided in the North America Terms, EEA Consumer Terms, and Germany Terms incorporated into this Agreement by Section 23, any claims for equitable relief may be brought in any court of competent jurisdiction even if the parties have chosen an exclusive venue. These Terms are governed by the jurisdiction set forth in Section 4. Unless the North America Terms, EEA Consumer Terms, and Germany Terms specify otherwise, and subject to any dispute falling within Section 17, all claims arising out of or relating to these Terms or the Services, will be resolved by arbitration administered by the Singapore International Arbitration Centre in accordance with the Arbitration Rules of the Singapore International Arbitration Centre in force when the notice of arbitration is submitted. The seat of the arbitration will be Singapore and the language will be English. All proceedings will be confidential and there will be one arbitrator only.
 
-\21. **LOCAL REGULATIONS**
+**21. LOCAL REGULATIONS**
 
 We make no representation that the Services are available for use or permitted by law in any particular location. To the extent you choose to access Services, you do so at your own initiative and are responsible for compliance with any applicable laws, including but not limited to applicable local laws. You are responsible for complying with local laws, if and to the extent local laws are applicable. You specifically agree to comply with all applicable laws concerning the transmission of technical data exported from the country you reside in.
 
-\22. **MISCELLANEOUS**
+**22. MISCELLANEOUS**
 
 22.1 Interpretation. In these Terms (except where the context otherwise requires): (a) words in the singular shall include the plural and in the plural shall include the singular; (b) any words following the terms “including”, “include”, “in particular”, “such as”, “for example” or any similar expression shall be construed as illustrative and shall not limit the sense of the words, description, definition, phrase or term preceding those terms; (c) unless otherwise stated, a reference to “writing” includes email; (d) a “person” includes a natural person, corporate or unincorporated body (whether or not having separate legal personality); (e) the Schedule forms part of the Terms and shall have effect as if set out in full in the body of the Terms and any reference to these Terms includes the Schedule.
 
@@ -339,7 +337,7 @@ We make no representation that the Services are available for use or permitted b
 
 22.8 Entire Agreement. These Terms, together with any terms or document referenced or incorporated herein, constitute the whole legal agreement between you and us and govern your use of the Services and supersede and extinguish any prior drafts, agreements, undertakings, representations, warranties, promises, assurances and arrangements of any nature whatsoever, whether or not in writing.
 
-\23. **Additional Terms – Jurisdiction-Specific**
+**23. Additional Terms – Jurisdiction-Specific**
 
 23.1 Jurisdiction-Specific Terms. Any jurisdiction-specific terms that form part of the [Tencent Cloud Terms of Service](https://www.tencentcloud.com/document/product/301/9248) shall apply, *mutatis mutandis*, to this Agreement. 
 
