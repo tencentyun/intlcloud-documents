@@ -1,3 +1,47 @@
+## May 2022
+
+<table><tr>
+<th width="20%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr><tr>
+<td>EMR ClickHouse is supported</td>
+<td>When data is distributed to ClickHouse, EMR ClickHouse can be selected as the data warehouse type.</td>
+<td>2022-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/46828">Data Distribution to ClickHouse</a></td>
+</tr><tr>
+<td>Tasks can be restarted</td>
+<td><b>Abnormal</b> tasks can be restarted. The previously processed data and CKafka instance involved will not be affected.</td>
+<td>2022-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/46802">DataHub Overview</a></td>
+  </tr><tr>
+<td>Tasks can be replicated and recreated</td>
+<td><li>When you have a large number of tasks with similar configurations, after creating the first task successfully, you can create more tasks quickly with the task replication feature. </li><li>Task creation failures may be caused by incorrect configurations. In this case, you can manually recreate tasks.</li></td>
+<td>2022-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/46802">DataHub Overview</a></td>
+   </tr><tr> 
+  <td>The consumption progress can be displayed during data processing and data distribution</td>
+<td>-</td>
+<td>2022-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/46802">DataHub Overview</a></td>
+   </tr><tr>
+  <td>The latest message can be viewed</td>
+<td>-</td>
+<td>2022-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/597/46802">DataHub Overview</a></td>
+</tr></table>
+
+
+
+
+
+
+
+
+
+
+
 ## April 2022
 
 <table><tr>
@@ -6,7 +50,7 @@
 <th width="15%">Release Date</th>
 <th width="20%">Documentation</th>
 </tr><tr>
-<td>DataHub supports the schema management feature</td>
+<td>The schema management feature is supported</td>
 <td>With this feature, you can associate a created schema to a specific data access task to verify the format of the accessed data according to the schema.</td>
 <td>2022-04-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/46803">Schema Management</a></td>
@@ -44,7 +88,7 @@
 <th width="20%">Documentation</th>
 </tr><tr>
 <td>Messages with parsing failures can be discarded in a data distribution task with ES or ClickHouse being the data target</td>
-<td>If the data target is ES or ClickHouse, messages that failed to be parsed can be discarded. If you don’t discard them, exceptions may occur and data dumping will be stopped.</td>
+<td>If the data target is ES or ClickHouse, messages that failed to be parsed can be discarded. If you don't discard them, exceptions may occur and data dumping will be stopped.</td>
 <td>2022-03-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/597/46826">Data Distribution to ES</a></td>
 </tr><tr>

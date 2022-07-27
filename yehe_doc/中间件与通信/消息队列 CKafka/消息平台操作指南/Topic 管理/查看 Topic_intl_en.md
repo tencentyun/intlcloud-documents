@@ -21,35 +21,35 @@ This document describes how to view the topic details and producer connection af
     <tbody>
     <tr>
         <td>Partition Name</td>
-        <td>Partition name</td>
+        <td>The partition name.</td>
     </tr>
     <tr>
         <td>Leader</td>
-        <td>The leader processes all read/write requests in the partition, and the follower passively and periodically copies the data on the leader</td>
+        <td>The leader processes all read/write requests in the partition, and the follower passively and periodically copies the data on the leader.</td>
     </tr>
     <tr>
         <td>Replica</td>
-        <td>Replica list</td>
+        <td>The replica list.</td>
     </tr>
     <tr>
         <td>ISR</td>
-        <td>Replicas with synced messages</td>
+        <td>Replicas with synced messages.</td>
     </tr>
     <tr>
         <td>Start Offset</td>
-        <td>The last position of message consumption</td>
+        <td>The last position of message consumption.</td>
     </tr>
     <tr>
         <td>End Offset</td>
-        <td>The last position of message write</td>
+        <td>The last position of message write.</td>
     </tr>
     <tr>
         <td>Messages</td>
-        <td>Number of stored messages</td>
+        <td>The number of stored messages.</td>
     </tr>
     <tr>
         <td>Unsynced Replicas</td>
-        <td>Number of unsynced replicas. You can filter partitions with unsynced replicas</td>
+        <td>The number of unsynced replicas. You can filter partitions with unsynced replicas.</td>
     </tr>
     </tbody>
 </table>
@@ -59,9 +59,8 @@ This document describes how to view the topic details and producer connection af
 
 ### Step 2. View the producer connection
 
+> ?Currently, you can view the producer connections only of instances on v2.4 or later.
+
 1. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management** and click **Producer Connection** in the **Operation** column to view the list of producers connected to the topic.
-![](https://qcloudimg.tencent-cloud.cn/raw/b6d5b5f3b3699dacc36ece753768838c.png)
-
-
-
+    ![](https://qcloudimg.tencent-cloud.cn/raw/b6d5b5f3b3699dacc36ece753768838c.png)
