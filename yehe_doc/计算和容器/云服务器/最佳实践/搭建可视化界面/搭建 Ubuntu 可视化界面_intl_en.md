@@ -19,11 +19,15 @@ The VNC service uses the TCP protocol and port 5901 by default. Therefore, you n
 ```
 sudo -i
 ```
-3. Run the following command to obtain and update to the latest version.
+3. Run the following command to clear the cache.
+```shellsession
+apt-get clean all
+```
+4. Run the following command to obtain and update to the latest version.
 ```
 apt-get update
 ```
-4. Run the following command to install the software packages required by the desktop environment, including desktop applications such as system panel, window manager, file browser, and terminal.
+5. Run the following command to install the software packages required by the desktop environment, including desktop applications such as system panel, window manager, file browser, and terminal.
 ```bash
 apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal ubuntu-desktop
 ```
