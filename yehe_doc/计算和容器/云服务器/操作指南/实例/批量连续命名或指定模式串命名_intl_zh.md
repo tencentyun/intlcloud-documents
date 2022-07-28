@@ -28,7 +28,7 @@
 
 <dx-tabs>
 ::: 购买页操作
-1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买3台实例，并在“2.设置主机”中以**“前缀+序号”**的命名规则填写实例名称，即将实例名称填写为 `CVM`。如下图所示：
+1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买3台实例，并在“设置网络和主机”中以**“前缀+序号”**的命名规则填写实例名称，即将实例名称填写为 `CVM`。如下图所示：
 ![](https://main.qcloudimg.com/raw/820a52077080be5da4c1fb4715452e6b.png)
 2. 根据页面提示逐步操作，并完成支付。
 :::
@@ -53,7 +53,7 @@
 
 <dx-tabs>
 ::: 购买页操作
-1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买实例，并在“2.设置主机”中以**“前缀+指定模式串{R:x}”**的命名规则填写实例名称，即将实例名称填写为 `CVM{R:3}`。如下图所示：
+1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买实例，并在“设置网络和主机”中以**“前缀+指定模式串{R:x}”**的命名规则填写实例名称，即将实例名称填写为 `CVM{R:3}`。如下图所示：
 ![](https://main.qcloudimg.com/raw/4e09732d612222f619cf7a1e8da1ee06.png)
 2. 根据页面提示逐步操作，并完成支付。
 :::
@@ -71,7 +71,7 @@
 
 <dx-tabs>
 ::: 购买页操作
-1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买3台实例，并在“2.设置主机”中以**“前缀+指定模式串{R:x}-前缀+指定模式串{R:x}-前缀”**的命名规则填写实例名称，即将实例名称填写为 `cvm{R:13}-Big{R:2}-test` 。如下图所示：
+1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855) 购买3台实例，并在“设置网络和主机”中以**“前缀+指定模式串{R:x}-前缀+指定模式串{R:x}-前缀”**的命名规则填写实例名称，即将实例名称填写为 `cvm{R:13}-Big{R:2}-test` 。如下图所示：
 ![](https://main.qcloudimg.com/raw/1042e86262bc7ce3939f1842a8025c23.png)
 2. 根据页面提示逐步操作，并完成支付。
 
