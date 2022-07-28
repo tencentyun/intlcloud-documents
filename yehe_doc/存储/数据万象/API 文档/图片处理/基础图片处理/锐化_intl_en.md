@@ -1,28 +1,28 @@
-## Overview
+## Feature Overview
 CI uses the **imageMogr2** API to sharpen an image.
 
 An image can be processed:
 
-- During download
-- During upload
-- In the cloud
+- Upon download
+- Upon upload
+- In cloud
 
 ## Restrictions
 
-- Format: Currently, JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
-- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
+- Format: JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
+- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million pixels.
+- Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
 
 
-## API Sample
+## API Format
 
-#### 1. Processing during download
+#### 1. Processing upon download
 
 ```plaintext
 download_url?imageMogr2/sharpen/<value>
 ```
 
-#### 2. Processing during upload
+#### 2. Processing upon upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -60,26 +60,30 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> 
+
 
 ## Parameters
 
-Operation name: sharpen.
+Operation: sharpen
 
 | Parameter | Description |
 | ---------------- | ------------------------------------------------------------ |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /sharpen/&lt;value> | Sharpens an image, where `value` controls the strength of the sharpening effect. The value must be an integer ranging from 10 to 300 (70 is recommended). The greater the value, the more obvious the sharpening effect. |
-| /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
+| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| /sharpen/&lt;value> | Sharpens an image, where `value` controls the strength of the sharpening effect. The greater the value, the more obvious the sharpening. Value range: an integer in the range of 10 to 300 (70 is recommended) |
+| /ignore-error/1 | If this parameter is carried and the image failed to be processed because the image size or the parameter value is too large, the input image will be returned with no error reported. |
 
-## Samples
+## Examples
 
->? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
 >
 
 
-#### Sample 1: Sharpening an image
+#### Example 1: sharpening
 
 This example sharpens an image with the sharpening value of `70`:
 
@@ -87,23 +91,23 @@ This example sharpens an image with the sharpening value of `70`:
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/sharpen/70
 ```
 
-Output:
+Output image:
 ![](https://main.qcloudimg.com/raw/b599b8cc198d9682d2f6316aa0e44a9d.jpeg)
 
-#### Sample 2: Sharpening an image with a signature carried
+#### Example 2: sharpening an image with a signature carried
 
-This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
+This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/sharpen/70
 ```
 
->? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext
