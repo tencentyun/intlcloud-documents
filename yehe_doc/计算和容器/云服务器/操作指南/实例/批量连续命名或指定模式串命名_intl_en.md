@@ -28,7 +28,7 @@ The following example assumes that you have purchased three instances and want t
 
 <dx-tabs>
 ::: Purchase page
-1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855). On the **2. Security Group and CVM** tab page, enter the instance name in the form of **Prefix+Sequence number**. In this case, enter `CVM` as the instance name.
+1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855). On the **Configure network and host** tab page, enter the instance name in the form of **Prefix+Sequence number**. In this case, enter `CVM` as the instance name.
 ![](https://main.qcloudimg.com/raw/820a52077080be5da4c1fb4715452e6b.png)
 2. Follow the prompts on the page and complete payment.
 :::
@@ -53,7 +53,7 @@ The following example assumes that you want to create three instances and name t
 
 <dx-tabs>
 ::: Purchase page
-1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855). On the **2. Set the CVM** tab page, enter the instance name in the form of **Prefix+Specified pattern string {R:x}**. In this case, enter `CVM{R:3}` as the instance name.
+1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855). On the **Configure network and host** tab page, enter the instance name in the form of **Prefix+Specified pattern string {R:x}**. In this case, enter `CVM{R:3}` as the instance name.
 ![](https://main.qcloudimg.com/raw/4e09732d612222f619cf7a1e8da1ee06.png)
 2. Follow the prompts on the page and complete payment.
 :::
@@ -71,7 +71,7 @@ The following example assumes that you want to create three instances and name t
 
 <dx-tabs>
 ::: Purchase page
-1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](http://intl.cloud.tencent.com/document/product/213/4855). On the **2. Set the CVM** tab page, enter the instance name in the form of **Prefix+Specified pattern string {R:x}-Prefix+Specified pattern string {R:x}-Prefix**. In this case, enter `cvm{R:13}-Big{R:2}-test` as the instance name.
+1. Purchase three instances by referring to [Creating Instances via CVM Purchase Page](http://intl.cloud.tencent.com/document/product/213/4855). On the **Configure network and host** tab page, enter the instance name in the form of **Prefix+Specified pattern string {R:x}-Prefix+Specified pattern string {R:x}-Prefix**. In this case, enter `cvm{R:13}-Big{R:2}-test` as the instance name.
 ![](https://main.qcloudimg.com/raw/1042e86262bc7ce3939f1842a8025c23.png)
 2. Follow the prompts on the page and complete payment.
 

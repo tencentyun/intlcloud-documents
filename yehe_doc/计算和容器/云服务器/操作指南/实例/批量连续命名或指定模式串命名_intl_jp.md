@@ -28,7 +28,7 @@
 
 <dx-tabs>
 ::: 購入ページの操作
-1.  [インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855) を参照して、3つのインスタンスを購入し、「2.ホスト設定」の中で**「プレフィックス+シーケンス番号」**の命名規則でインスタンスの名称を記入し、すなわちインスタンス名称を `CVM`と記入します。下図に示す通り：
+1.  [インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855) を参照して、3つのインスタンスを購入し、「ネットワークとホストの設定」の中で**「プレフィックス+シーケンス番号」**の命名規則でインスタンスの名称を記入し、すなわちインスタンス名称を `CVM`と記入します。下図に示す通り：
 ![](https://main.qcloudimg.com/raw/820a52077080be5da4c1fb4715452e6b.png)
 2. ページの指示に従い、支払いを完了します。
 :::
@@ -53,7 +53,7 @@ Tencent Cloud API[RunInstances](https://intl.cloud.tencent.com/zh/document/produ
 
 <dx-tabs>
 ::: 購入ページの操作
-1.  [インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855) を参照してインスタンスを購入し、「2.ホスト設定」の中で**「プレフィックス+パターン文字列の指定{R:x}」**という命名規則でインスタンスの名称を記入し、すなわちインスタンス名称を `CVM{R:x}`と記入します。下図に示す通り：
+1.  [インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855) を参照してインスタンスを購入し、「ネットワークとホストの設定」の中で**「プレフィックス+パターン文字列の指定{R:x}」**という命名規則でインスタンスの名称を記入し、すなわちインスタンス名称を `CVM{R:x}`と記入します。下図に示す通り：
 ![](https://main.qcloudimg.com/raw/4e09732d612222f619cf7a1e8da1ee06.png)
 2. ページの指示に従い、支払いを完了します。
 :::
@@ -71,7 +71,7 @@ Tencent Cloud API[RunInstances](https://intl.cloud.tencent.com/zh/document/produ
 
 <dx-tabs>
 ::: 購入ページの操作
-1.  [インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855) を参照して3つのインスタンスを購入します。「2.ホスト設定」ページで**「プレフィックス+パターン文字列の指定{R:x}-プレフィックス+パターン文字列の指定{R:x}-プレフィックス」**という命名規則でインスタンス名を記入し、すなわちインスタンス名を `cvm{R:13}-Big{R:2}-test` と記入します。下図に示す通り：
+1.  [インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855) を参照して3つのインスタンスを購入します。「ネットワークとホストの設定」ページで**「プレフィックス+パターン文字列の指定{R:x}-プレフィックス+パターン文字列の指定{R:x}-プレフィックス」**という命名規則でインスタンス名を記入し、すなわちインスタンス名を `cvm{R:13}-Big{R:2}-test` と記入します。下図に示す通り：
 ![](https://main.qcloudimg.com/raw/1042e86262bc7ce3939f1842a8025c23.png)
 2. ページの指示に従い、支払いを完了します。
 

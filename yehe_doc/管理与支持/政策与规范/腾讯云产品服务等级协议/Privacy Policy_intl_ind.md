@@ -598,3 +598,4 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 40.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
 41.[Text To Speech](https://intl.cloud.tencent.com/document/product/1154/48241).
 42.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48289).
+43.[Cloud Streaming Services](https://intl.cloud.tencent.com/document/product/267/47314).
