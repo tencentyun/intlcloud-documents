@@ -1,25 +1,13 @@
 ## Overview
-CI uses the **imageMogr2** API to sharpen an image.
 
-An image can be processed:
-
-- During download
-- During upload
-- In the cloud
-
-## Restrictions
-
-- Format: Currently, JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
-- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
-
+CI uses the **imageMogr2/grayscale** API to set an image to be a grayscale image.
 
 ## API Sample
 
 #### 1. Processing during download
 
 ```plaintext
-download_url?imageMogr2/sharpen/<value>
+download_url?imageMogr2/grayscale/<value>
 ```
 
 #### 2. Processing during upload
@@ -34,7 +22,7 @@ Pic-Operations:
   "is_pic_info": 1,
   "rules": [{
       "fileid": "exampleobject",
-      "rule": "imageMogr2/sharpen/<value>"
+      "rule": "imageMogr2/grayscale/<value>"
   }]
 }
 ```
@@ -55,22 +43,19 @@ Pic-Operations:
   "is_pic_info": 1,
   "rules": [{
       "fileid": "exampleobject",
-      "rule": "imageMogr2/sharpen/<value>"
+      "rule": "imageMogr2/grayscale/<value>"
   }]
 }
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
-
 ## Parameters
 
-Operation name: sharpen.
+Operation name: grayscale.
 
 | Parameter | Description |
-| ---------------- | ------------------------------------------------------------ |
+| --------------------- | ------------------------------------------------------------ |
 | download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /sharpen/&lt;value> | Sharpens an image, where `value` controls the strength of the sharpening effect. The value must be an integer ranging from 10 to 300 (70 is recommended). The greater the value, the more obvious the sharpening effect. |
+| /grayscale/&lt;value> | Whether to set an image to be a grayscale image. <br>Valid values of the `value` field: 0 (no), 1 (yes). |
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 ## Samples
@@ -78,24 +63,24 @@ Operation name: sharpen.
 >? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
 >
 
+#### Sample 1: Setting an image to be a grayscale image
 
-#### Sample 1: Sharpening an image
-
-This example sharpens an image with the sharpening value of `70`:
+This example sets an image to be a grayscale image:
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/sharpen/70
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/grayscale/1
 ```
 
 Output:
-![](https://main.qcloudimg.com/raw/b599b8cc198d9682d2f6316aa0e44a9d.jpeg)
+
+![img](http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/grayscale/1)
 
 #### Sample 2: Sharpening an image with a signature carried
 
 This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/sharpen/70
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/grayscale/1
 ```
 
 >? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
@@ -109,6 +94,5 @@ To prevent unauthorized users from accessing or downloading the input image by u
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=sha1&q-ak=AKID********************&q-sign-time=1593342360;1593342720&q-key-time=1593342360;1593342720&q-header-list=&q-url-param-list=watermark%252f1%252fimage%252fahr0cdovl2v4yw1wbgvzlteyntewmdawmdqucgljc2gubxlxy2xvdwquy29tl3nodwl5aw4uanbn%252fgravity%252fsoutheast&q-signature=26a429871963375c88081ef60247c5746e834a98&watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
 ```
-
 
 

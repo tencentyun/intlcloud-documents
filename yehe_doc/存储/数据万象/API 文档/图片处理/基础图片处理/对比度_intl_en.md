@@ -1,28 +1,28 @@
 ## Overview
-CI uses the **imageMogr2** API to adjust an image’s contrast, which is the difference in luminance between the brightest and darkest points in an image (i.e., the contrast in grayscale).
+CI uses the **imageMogr2** API to adjust the contrast of an image, which is the difference in luminance between the brightest and darkest points in the image (i.e., the contrast in grayscale).
 
 An image can be processed:
 
-- Upon download
-- Upon upload
-- In cloud
+- During download
+- During upload
+- In the cloud
 
 ## Restrictions
 
 - Format: Currently, JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million pixels.
-- Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
+- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
+- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
 
 
-## API Format
+## API Sample
 
-#### 1. Processing upon download
+#### 1. Processing during download
 
 ```paintext
 download_url?imageMogr2/contrast/<value>
 ```
 
-#### 2. Processing upon upload
+#### 2. Processing during upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -38,6 +38,9 @@ Pic-Operations:
   }]
 }
 ```
+
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695).
+>
 
 #### 3. Processing in-cloud data
 
@@ -57,24 +60,25 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 >
 
 ## Parameters
 
-Operation: contrast
+Operation name: contrast.
 
 | Parameter | Description |
 | ---------------- | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /contrast/&lt;value> | Adjusts the contrast of an image. The value must be an integer in the range of −100 to 100.<br><li>`value` < 0: reduces the contrast.<br><li>`value` = 0: does not adjust the contrast.<br><li>`value` > 0: increases the contrast. |
-| /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
+| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| /contrast/&lt;value> | Adjusts the contrast of an image. The value must be an integer in the range of [-100, 100].<br><li>`value` < 0: reduces the contrast.</li><li>`value` = 0: does not adjust the contrast.</li><li>`value` > 0: increases the contrast. </li>|
+| /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
-## Examples
+## Samples
 
-#### Example 1: adjusting contrast
+#### Sample 1: Adjusting the contrast
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
+>
 
 
 This example reduces the contrast of an image by 50:
@@ -82,22 +86,23 @@ This example reduces the contrast of an image by 50:
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/contrast/-50
 ```
 
-Output image:
+Output:
 ![](https://main.qcloudimg.com/raw/555a3a42dff976c0f4ef382de70eae79.jpg)
 
-#### Example 2: adjusting contrast with a signature carried
+#### Sample 2: Adjusting the contrast with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&):
+This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/contrast/-50
 ```
 
->? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext

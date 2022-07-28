@@ -1,22 +1,22 @@
 ## Overview
-CI uses the `imageMogr2` API to crop images, such as regular cropping, scaling and cropping, inscribed circle cropping, rounded corner cropping, and smart cropping.
+CI uses the **imageMogr2** API to crop images, including regular cropping, scaling and cropping, cropping to circle, rounded corner cropping, and smart face cropping.
 
 An image can be processed:
+- During download
+- During upload
+- In the cloud
 
-- Upon download
-- Upon upload
-- In cloud
+
 ## Restrictions
 
 - Format: Currently, JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million pixels.
-- Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
+- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
+- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
 
 
+## API Sample
 
-## API Format
-
-#### 1. Processing upon download
+#### 1. Processing during download
 
 ```plaintext
 download_url?imageMogr2/cut/<width>x<height>x<dx>x<dy>
@@ -27,8 +27,9 @@ download_url?imageMogr2/cut/<width>x<height>x<dx>x<dy>
 ```
 
 >? Spaces and line breaks above are for readability only and can be ignored.
+>
 
-#### 2. Processing upon upload
+#### 2. Processing during upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -48,6 +49,10 @@ Pic-Operations:
   }]
 }
 ```
+
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695).
+>
+
 
 #### 3. Processing in-cloud data
 
@@ -71,7 +76,7 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 >
 
 
@@ -79,19 +84,19 @@ Pic-Operations:
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
+| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 #### Parameters for regular cropping
 
-Operation: cut
+Operation name: cut.
 
 | Parameter | Description |
 | ----------- | ----------------------------------- |
 | &lt;width> | Width of the output image |
 | &lt;height> | Height of the output image |
-| &lt;dx> | Horizontal offset relative to the upper-left vertex |
-| &lt;dy> | Vertical offset relative to the upper-left vertex |
+| &lt;dx> | Horizontal offset relative to the top-left vertex |
+| &lt;dy> | Vertical offset relative to the top-left vertex |
 
 
 >? The values should be greater than 0 and smaller than the width/height of the input image.
@@ -100,7 +105,7 @@ Operation: cut
 
 #### Parameters for scaling and cropping
 
-Operation: crop
+Operation name: crop.
 
 | Parameter | Description |
 | ---------------------------- | ------------------------------------------------------------ |
@@ -108,35 +113,35 @@ Operation: crop
 | /crop/x&lt;Height> | Height of the output image with the width unchanged. The value must be greater than 0 and smaller than the height of the input image. |
 | /crop/&lt;Width>x&lt;Height> | Width and height of the output image. The values of width and height should be greater than 0 and smaller than those of the input image, respectively. |
 
-When performing scaling and cropping, you can also use the `gravity` parameter to specify the start position of the operation. For more information, see [Scaling and Cropping](#Scaling and cropping).
+When performing scaling and cropping, you can also use the `gravity` parameter to specify the start position of the operation. For more information, see [Sample 2: Scaling and cropping](#Scaling and cropping).
 
 <span id="1"></span>
 
-#### Parameters for inscribed circle cropping
+#### Parameters for cropping to circle
 
-Operation: iradius
+Operation name: iradius.
 
 | Parameter | Description |
 | -------------------- | ------------------------------------------------------------ |
-| /iradius/&lt;radius> | Refers to the inscribed circle cropping feature, where `radius` specifies the radius of the inscribed circle. The value of `radius` is an integer that is greater than 0 and less than half the length of the shorter side of the original image. The center of the inscribed circle is the center of the original image. This parameter is not supported if the image format is GIF. |
+| /iradius/&lt;radius> | Crops to a circle. `radius` specifies the radius of the inscribed circle, which should be an integer greater than zero and less than half of the shorter side of the input image. The center of the inscribed circle is the center of the image. This operation is not supported for GIF images. |
 
 #### Parameters for rounded corner cropping
 
-Operation: rradius
+Operation name: rradius.
 
 | Parameter | Description |
 | -------------------- | ------------------------------------------------------------ |
-| /rradius/&lt;radius&gt; | Refers to the rounded corner cropping feature, where `radius` specifies the radius of the rounded corner of the image. The value of `radius` is an integer that is greater than 0 and less than half the length of the shorter side of the original image. The rounded corner is tangent to the edge of the original image. This parameter is not supported if the image format is GIF. |
+|/rradius/&lt;radius&gt;|  Crops with round corners. `radius` specifies the radius of the rounded corner of the image, which should be an integer greater than zero and less than half of the shorter side of the input image. The two sides of the image are the tangent lines of the rounded corner. This operation is not supported for GIF images. |
 
 
 
-#### Parameters for smart cropping
+#### Parameters for smart face cropping
 
-Operation: scrop
+Operation name: scrop.
 
 | Parameter | Description |
 | ----------------------------- | ------------------------------------------------------------ |
-| /scrop/&lt;Width>x&lt;Height> | Refers to scaling and cropping based on the location of the human face in the image. `Width` and `Height` respectively specify the width and the height of the target image. |
+| /scrop/&lt;Width>x&lt;Height> | Scales and crops an image based on the face position in the image. The width and height of the target image are specified by `Width` and `Height` respectively. |
 
 ## 3x3 Grid Position Diagram
 
@@ -150,14 +155,14 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 > 
 
 
-## Examples
+## Samples
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, please see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
 
 
-#### Example 1: regular cropping
+#### Sample 1: Regular cropping
 
-This example shows how to translate by 100 pixels horizontally to the right and 10 pixels vertically to the bottom relative to the top-left vertex of the image. It also shows how to crop the image according to the specified target image resolution of 600 × 600 pixels.
+This example shows how to translate by 100 px horizontally to the right and 10 px vertically to the bottom relative to the top-left vertex of the input image and then crop it according to the specified target image resolution of 600x600 px.
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/cut/600x600x100x10
@@ -166,46 +171,46 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/c
 Input image:
 ![](https://main.qcloudimg.com/raw/becc02d71fb703c2e87ad15e19808bb1.jpeg)
 
-Output image:
+Output:
 ![](https://main.qcloudimg.com/raw/e28696af6be355cc678284b621a7c97b.jpeg)
 
 
-<span id="scaling and cropping"></span>
+<span id="Scaling and cropping"></span>
 
-#### Example 2: scaling and cropping
+#### Sample 2: Scaling and cropping
 
-This example shows you how to scale and crop an image to 300x400 by using the center as the reference point.
+This example shows how to scale and crop an image to 300x400 px by using the center as the reference point.
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/crop/300x400/gravity/center 
 ```
 
-Output image:
+Output:
 ![](https://main.qcloudimg.com/raw/b9adeff300df483c22765b7d746d6690.jpeg)
 
-#### Example 3: inscribed circle cropping
+#### Sample 3: Cropping to circle
 
-This example shows you how to perform inscribed circle cropping with the radius of 200.
+This example shows how to crop the input image to a circle with the radius of 200.
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/iradius/200
 ```
 
-Output image:
+Output:
 ![](https://main.qcloudimg.com/raw/1e449274ea00eebc87454168e7056abc.jpeg)
 
-#### Example 4: rounded corner cropping
-This example shows you how to perform rounded corner cropping with the radius of 100.
+#### Sample 4: Rounded corner cropping
+This example shows how to crop the input image to rounded corners with the radius of 100.
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rradius/100 
 ```
 
-Output image:
+Output:
 ![](https://main.qcloudimg.com/raw/795e0a3254137a5815b9f9f23cecbb91.jpeg)
 
 
-#### Example 5: smart cropping
-This example shows how to crop an image to the specified resolution of 100 × 600 pixels based on the location of the human face in the image.
+#### Sample 5: Smart face cropping
+This example shows how to crop the input image to the specified resolution of 100x600 px based on the face position in the image.
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/scrop/100x600
@@ -213,19 +218,19 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/s
 
 >?If no face is recognized, the input image will be returned.
 
-#### Example 6: smart cropping with a signature carried
+#### Sample 6: Smart face cropping with a signature carried
 
-This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
+This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/scrop/100x600
 ```
 
-> ? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext
