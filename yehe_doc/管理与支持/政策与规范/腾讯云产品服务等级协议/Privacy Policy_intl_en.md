@@ -602,6 +602,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 42.[Automatic Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/48289).
 43.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
 44.[TencentCloud Managed Service for Grafana](https://intl.cloud.tencent.com/document/product/1124/48402).
+45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48827).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
