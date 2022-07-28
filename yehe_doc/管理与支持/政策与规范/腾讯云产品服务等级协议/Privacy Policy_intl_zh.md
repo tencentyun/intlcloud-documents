@@ -596,5 +596,6 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 38.[云点播](https://intl.cloud.tencent.com/document/product/266/47178)。
 39.[移动解析 HTTPDNS](https://intl.cloud.tencent.com/document/product/1130/47853)。
 40.[腾讯特效SDK](https://intl.cloud.tencent.com/document/product/1143/48381)。
-41.[语音合成](https://intl.cloud.tencent.com/document/product/1154/48241).
-42.[语音识别](https://intl.cloud.tencent.com/document/product/1118/48289).
+41.[语音合成](https://intl.cloud.tencent.com/document/product/1154/48241)。
+42.[语音识别](https://intl.cloud.tencent.com/document/product/1118/48289)。
+43.[云直播](https://intl.cloud.tencent.com/document/product/267/47314)。
