@@ -1,11 +1,11 @@
-## Overview
+## Feature Description
 This API (`CreateMediaTemplate`) is used to create a screenshot template.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer (recommended)
+                API Explorer is recommended.
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateSnapshotTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
         </div>
@@ -68,7 +68,7 @@ This request requires the following request body:
 
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | -------------- | --------- | ---- |
@@ -107,7 +107,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
 | ------------------ | ------- | -------------------------------------------------------- | --------- | ---- |---| ---- |
 | CellWidth          | Request.Snapshot.SpriteSnapshotConfig | Subimage width | String    | No   | Screenshot width | <li>Value range: [8, 4096]</li><li>Unit: px |
-| CellHeight          | Request.Snapshot.SpriteSnapshotConfig | Subimage height | String    | No   | Screenshot width | <li>Value range: [8, 4096]</li><li>Unit: px |
+| CellHeight          | Request.Snapshot.SpriteSnapshotConfig | Subimage height | String    | No   | Screenshot height | <li>Value range: [8, 4096]</li><li>Unit: px |
 | Padding            | Request.Snapshot.SpriteSnapshotConfig | Image sprite padding size  | String    | No   | 0  | <li>Value range: [0, 1024]</li><li>Unit: px |
 | Margin             | Request.Snapshot.SpriteSnapshotConfig | Image sprite margin size  | String    | No   | 0  | <li>Value range: [0, 1024]</li><li>Unit: px |
 | Color              | Request.Snapshot.SpriteSnapshotConfig | Background color  | String    | Yes   | None  | For supported colors, see [2.7 Color](https://www.ffmpeg.org/ffmpeg-utils.html#color-syntax). |
@@ -154,7 +154,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------------------------------- | :-------- |
@@ -176,7 +176,7 @@ The nodes are described as follows:
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 #### Request
 

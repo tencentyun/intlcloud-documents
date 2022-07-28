@@ -9,5 +9,4 @@ Hong Kong (China) Zone 1 and Zone 2 have a pair of IP resource pools, which can 
 When CLB instance in Hong Kong (China) Zone 1 fails, all current persistent connections will be closed, while non-persistent connections will not be affected. The disaster recovery architecture will automatically bind the 100 servers in each zone to CLB instance in Hong Kong (China) Zone 2 within 10s, immediately restoring business capability with no manual intervention required.
 
 #### Question 3: Which type of CLB is compatible with multi-AZ disaster recovery? Does it cost extra fees?
-Multi-AZ disaster recovery is free of charge. This feature is available for both public network and private network CLB instances, except for private network CLB instances created in Guangzhou before April 29, 2020, in Shanghai before December 19, 2019, and in Beijing before December 18, 2019.
-
+The multi-AZ disaster recovery is in beta test, and no extra fees will be charged. Currently, only public network CLB supports multi-AZ disaster recovery. Different from the cross-AZ disaster recovery of public network CLB, private network CLB supports nearby access by default.

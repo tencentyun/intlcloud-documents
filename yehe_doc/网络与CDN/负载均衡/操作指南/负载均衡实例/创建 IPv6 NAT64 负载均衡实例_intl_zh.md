@@ -22,7 +22,7 @@ IPv6 NAT64 负载均衡的架构如下图所示。
 
 ## 操作指南
 ### 创建 IPv6 NAT64 负载均衡
-1. 登录腾讯云官网，进入 [负载均衡购买页](https://buy.cloud.tencent.com/lb)。
+1. 登录腾讯云官网，进入 [负载均衡购买页](https://buy.intl.cloud.tencent.com/lb)。
 2. 请正确选择如下参数：
  - 计费模式：支持按量计费的计费模式。
  - 地域：仅支持北京、上海、广州三个地域。
@@ -31,7 +31,8 @@ IPv6 NAT64 负载均衡的架构如下图所示。
  - IP 版本：IPv6 NAT64。
  - 所属网络：私有网络。
  - 其他配置和普通实例配置相同。
-3. 在购买页选择各项配置后，单击【立即购买】，返回至 [负载均衡实例列表页](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1)，即可查看已购的 IPv6 NAT64 负载均衡。
+3. 在购买页选择各项配置后，单击**立即购买**，返回至 [负载均衡实例列表页](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1)，即可查看已购的 IPv6 NAT64 负载均衡。
+
 
 ### 使用 IPv6 NAT64 负载均衡
 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1)，单击实例 ID，进入详情页，在“监听器管理”页面配置监听器、转发规则、绑定云服务器，详情请参见 [负载均衡快速入门](https://intl.cloud.tencent.com/document/product/214/8975)。

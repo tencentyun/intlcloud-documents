@@ -17,12 +17,8 @@ Content-Type: application/xml
 <body>
 ```
 
-
->? 
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
-> 
-
+>? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+>
 
 
 #### Request headers
@@ -147,8 +143,8 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
+| Code               | Response.JobsDetail | Error code, which will be meaningful only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error description, which will be meaningful only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
 | Tag | Response.JobsDetail | Job type: Tts | String |
 | State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
@@ -164,7 +160,7 @@ There are no special error messages for this request. For common error messages,
 
 ## Samples
 
-#### Sample 1. Using the text-to-speech template ID
+#### Sample 1: Using the text-to-speech template ID
 
 #### Request
 
@@ -233,7 +229,7 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf****
 
 
 
-#### Sample 2. Using the text-to-speech processing parameter
+#### Sample 2: Using the text-to-speech processing parameter
 
 #### Request
 

@@ -3,9 +3,9 @@ CI's image watermarking feature is implemented through the **watermark** API. Cu
 
 An image can be processed:
 
-- Upon download
-- Upon upload
-- In cloud
+- During download
+- During upload
+- In the cloud
 
 
 >? 
@@ -15,7 +15,7 @@ An image can be processed:
 
 ## API Sample
 
-#### 1. Processing upon download
+#### 1. Processing during download
 
 ```plaintext
 download_url?watermark/1/image/<encodedURL>
@@ -25,9 +25,10 @@ download_url?watermark/1/image/<encodedURL>
            		 	/blogo/<type>
 ```
 
-> ? Spaces and line breaks above are for readability only and can be ignored.
+>? Spaces and line breaks above are for readability only and can be ignored.
+>
 
-#### 2. Processing upon upload
+#### 2. Processing during upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -47,6 +48,9 @@ Pic-Operations:
   }]
 }
 ```
+
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695).
+>
 
 #### 3. Processing in-cloud data
 
@@ -79,7 +83,7 @@ In the code above, `watermark` is the operation name and the number `1` indicate
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image in the format of `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 | /image/      | [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430) URL of the image watermark. For example, if the image watermark URL is `http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png`, you should set this parameter to `aHR0cDovL2V4YW1wbGVidWNrZXQtMTI1MDAwMDAwMC5jb3MuYXAtc2hhbmdoYWkubXlxY2xvdWQuY29tL3NodWl5aW5fMi5wbmc`.  |
 | /gravity/    | Position of the text watermark, which is a square in a [3x3 grid](#1). Default value: SouthEast |
 | /dx/ | Horizontal margin in pixels. Default value: 0 |
@@ -109,13 +113,13 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 > - If `gravity` is set to `west` or `east`, `dy` is invalid.
 > 
 
-## Use Cases
+## Samples
 
->? **Processing upon download** is used as a use case here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
+>? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
 >
 
 
-#### Use case 1. Adding an image watermark
+#### Sample 1: Adding an image watermark
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
@@ -124,7 +128,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/
 After an image watermark is added:
 ![](https://main.qcloudimg.com/raw/6412c0d6eaaadc5c193515f40d736dad.jpeg)
 
-#### Use case 2. Adding an image watermark with the tile mode and opacity specified
+#### Sample 2: Adding an image watermark with the tile mode and opacity specified
 
 ```plaintext
 https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast/batch/1/degree/45/dissolve/40/
@@ -133,15 +137,15 @@ https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1
 The effect of an added image watermark rotated by 45 degrees and tiled with 40% opacity is as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d7e49b9cf7ea1dcc0459b2a5e3b2af8d.jpg)
 
-#### Use case 3. Adding an image watermark with a signature carried
+#### Sample 3: Adding an image watermark with a signature carried
 
-This use case processes the image in the same way as in the use case above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
+This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
 ```
 
->? You can obtain the value of `&lt;signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of &lt;signature> as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 ## Notes
