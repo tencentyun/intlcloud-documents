@@ -4,18 +4,18 @@ Private network CLB is used to distribute requests from Tencent Cloud's private 
 
 ## Limits
 - **Region Limits**
- - Private network CLB instances are unavailable in Ji'nan, Fuzhou, Shijiazhuang, Wuhan, and Changsha regions.
+  - Private network CLB instances are unavailable in Ji'nan, Fuzhou, Shijiazhuang, Wuhan, and Changsha regions.
 - **Product Attribute Limits**
- - This feature is supported only for bill-by-IP accounts but not bill-by-CVM accounts.
- - This feature is supported only for CLB but not classic CLB.
- - This feature is supported only for private network CLB instances in VPCs but not in the classic network.
+  - This feature is supported only for bill-by-IP accounts but not bill-by-CVM accounts.
+  - This feature is supported only for CLB but not classic CLB.
+  - This feature is supported only for private network CLB instances in VPCs but not in the classic network.
 - **Feature limits**
- - Currently, private network CLB doesn't support port ranges.
- - A private network CLB instance can only be bound to an EIP that is in the same region and not bound to other resources.
- - Each private network CLB instance can only be bound to one EIP.
- - After a private network CLB instance is bound to an EIP, its features will be similar to those of a public network CLB instance, but public network CLB cannot be split into private network CLB and EIP.
+  - Currently, private network CLB doesn't support port ranges.
+  - A private network CLB instance can only be bound to an EIP that is in the same region and not bound to other resources.
+  - Each private network CLB instance can only be bound to one EIP.
+  - After a private network CLB instance is bound to an EIP, its features will be similar to those of a public network CLB instance, but public network CLB cannot be split into private network CLB and EIP.
 - **Security Group Limits**
- - After a private network CLB instance is bound to an EIP, the security group of the instance takes effect for traffic from the instance but not from the EIP. After the "Allow by Default" feature is enabled in the security group, it will take effect for both types of traffic.
+  - After a private network CLB instance is bound to an EIP, the security group of the instance takes effect for traffic from the instance but not from the EIP. After the "Allow by Default" feature is enabled in the security group, it will take effect for both types of traffic.
 
 ## How It Works
 
@@ -34,7 +34,7 @@ Private network CLB is used to distribute requests from Tencent Cloud's private 
 <tr>
 <td><span style="font-weight:bold">Billing Mode</span></td>
 <td>
-Select the **Pay-as-You-Go** mode.
+Select the <b>Pay-as-You-Go</b> mode.
 </td>
 </tr>
 <tr>
@@ -51,12 +51,12 @@ Only CLB instance type is supported.
 </tr>
 <tr>
 <td><span style="font-weight:bold">Network Type</span></td>
-<td>Select the **Public Network** type.
+<td>Select the <b>Public Network</b> type.
 </td>
 </tr>
 <tr>
 <td><span style="font-weight:bold">EIP</span></td>
-<td>Select **EIP**. Tencent Cloud will assign you an EIP and a private network CLB instance. Supported EIP types include general IP, accelerated IP, and static single-line IP.
+<td>Select <b>EIP</b>. Tencent Cloud will assign you an EIP and a private network CLB instance. Supported EIP types include general IP, accelerated IP, and static single-line IP.
 </td>
 </tr>
 </tbody></table>
@@ -65,8 +65,9 @@ Only CLB instance type is supported.
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb), and click **Instance Management** on the left sidebar.
 2. Select a region in the top-left corner of the **Instance Management** page, select the target private network CLB instance in the instance list, and click **More** > **Bind EIP** in the **Operation** column on the right.
 3. In the **Bind EIP** pop-up window, select the EIP to be bound and click **Submit** to bind the EIP to the instance.
->?The accelerated IPs and static single-line IPs are in beta test. To try them out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
->
+<dx-alert infotype="explain"> 
+The accelerated IPs and static single-line IPs are in beta test. To try them out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+</dx-alert> 
 <img src="" width="60%">
 4. (Optional) Select the target private network CLB instance in the instance list and click **More** > **Unbind EIP** in the **Operation** column on the right to unbind the instance from the EIP.
 :::
