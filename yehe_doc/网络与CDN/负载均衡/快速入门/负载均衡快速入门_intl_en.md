@@ -9,11 +9,11 @@ Tencent Cloud CLB comes with various protocols such as TCP, UDP, TCP SSL, HTTP, 
 
 ## Step 1: Purchasing a CLB Instance
 After a successful purchase, the system will automatically assign a VIP to the CLB instance. The VIP will be used as the IP address to provide services to clients.
-1. Log in to the Tencent Cloud console and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
+1. Log in to the Tencent Cloud console and go to the [CLB purchase page](https://buy.intl.cloud.tencent.com/lb).
 2. First, select the same region as your CVM instance. Next, select **Cloud Load Balancer** as the instance type, **Public Network** as the network type. For more details, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
->?Static single-line IP is in beta test. It’s supported only in Jinan, Hangzhou, Fuzhou, Shijiazhuang, Wuhan, and Changsha. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). After your application is approved, you can select an ISP (China Mobile/China Unicom/China Telecome) on the buy page. If it is needed in Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, and Chongqing, please contact your sales rep.
+>?Static single-line IP is in beta test. It's supported only in Jinan, Hangzhou, Fuzhou, Shijiazhuang, Wuhan, and Changsha. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). After your application is approved, you can select an ISP (CMCC/CUCC/CTCC) on the buy page. If it is needed in Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, and Chongqing, please contact your sales rep.
 >
-3. Click **Buy Now** to complete your purchase.
+3. Click **Buy now** to complete your purchase.
 4. Return to the **Instance Management** page, select the region to see the new instance.
 ![](https://main.qcloudimg.com/raw/2c2afd943a9f6a6d03f55c00e62da8b5.png)
 
@@ -26,17 +26,17 @@ When a client initiates a request, the CLB instance will receive the request acc
 3. On the **Listener Management** tab, click **Create** under **HTTP/HTTPS Listener**.
 ![](https://main.qcloudimg.com/raw/782c60eeb4bf9aa334e4243cf4e068d5.png)
 4. In the **Create Listener** window, please configure the following items and click **Submit**.
-  - Listener name.
-  - Listen protocol port (e.g., **HTTP:80**).
+  - Listener name. The name can contain up to 60 characters, including letters, numbers, hyphens, underscores, and dots.
+  - Listener protocol port (e.g., **HTTP:80**).
 
 ### Configure the listener's forwarding rule
 If a client initiates a request, the CLB instance will forward the request according to the configured listener's forwarding rule.
 1. On the **Listener Management** tab, click **+** on the right of the new listener.
 ![](https://main.qcloudimg.com/raw/f8ab76b69f8a0cfdd5b4332c8b80b1f2.png)
 2. In the **Create Forwarding Rules** window, configure the domain name, URL, balancing method, and then click **Next**.
-  - Domain name: the domain name of your real server (e.g., **www.example.com **).
-  - Default domain name: if a client request does not match any listener domain names, the CLB instance will forward the request to the default domain name (default server). Each listener can be configured with only one default domain name. If a listener has no default domain name, the CLB instance will forward the request to the first domain name. This example will skip the configuration step.
-  - URL: the access path to your real server (e.g., `/image/`).
+  - Domain name: The domain name of your real server (e.g., **www.example.com **).
+  - Default domain name: If a client request does not match any listener domain names, the CLB instance will forward the request to the default domain name (default server). Each listener can be configured with only one default domain name. If a listener has no default domain name, the CLB instance will forward the request to the first domain name. This example will skip the configuration step.
+  - URL: The access path to your real server (e.g., `/image/`).
   - Select **Weighted Round Robin** as the balancing method and then click **Next**. For more information, please see [Load Balancing Methods](https://intl.cloud.tencent.com/document/product/214/6153).
 ![](https://main.qcloudimg.com/raw/263b2486f8a5734ea8aa643ea3b34387.png)
 3. Enable health check. Use the default values for both check domain and path fields, and click **Next**.
@@ -45,8 +45,8 @@ If a client initiates a request, the CLB instance will forward the request accor
 
 For more information on CLB listeners, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
 >?
->- Forwarding rules: each listener can be configured with multiple domain names, and each domain name can be configured with multiple URLs. You can select a listener or domain name, and then click the **+** icon to create new rules.
->- Session persistence: if session persistence is disabled and a round-robin method is selected, requests from the same client will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but `ip_hash` balancing method is used, requests from the same client will always be assigned to the same real server.
+>- Forwarding rules: Each listener can be configured with multiple domain names, and each domain name can be configured with multiple URLs. You can select a listener or domain name, and then click the **+** icon to create new rules.
+>- Session persistence: If session persistence is disabled and a round-robin method is selected, requests from the same client will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but `ip_hash` balancing method is used, requests from the same client will always be assigned to the same real server.
 >
 
 ### Bind real servers to the listener
@@ -59,14 +59,14 @@ If a client initiates a request, the CLB instance will forward the request to th
 >!One forwarding rule (listening protocol, port, domain name, and URL) can be bound with multiple ports of the same CVM instance. If a user deploys the same service on the port **80** and **81** of **rs-1**, both ports can be bound with the sample forwarding rule and both will receive requests forwarded by the CLB instance.
 
 ## Step 3: Configuring a Security Group
-After creating a CLB instance, you can configure a CLB security group to isolate public network traffic. For more information, please see [CLB Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/14733).
+After creating a CLB instance, you can configure a CLB security group to isolate public network traffic. For more information, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
 After configuring a security group, you can enable or disable the **Allow Traffic by Default** feature:
 ### Method 1: Enable "Allow Traffic by Default in Security Group"
-For more information, please see [CLB Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/14733).
+For more information, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
 ### Method 2: Allow specific client IPs on the CVM security group
-For more information, please see [CLB Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/14733).
+For more information, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
 ## Step 4: Verifying the CLB Service
 After configuring a CLB instance, you can verify whether it is effective by accessing different real servers via different **domain names and URLs** under the same CLB instance, or verifying the **Content-based Routing** feature.
@@ -83,7 +83,7 @@ After configuring a CLB instance, you can verify whether it is effective by acce
 >!The **/** in the **image/** cannot be omitted. **/** indicates that **image** is a default directory instead of a file name.
 
 ### Method 2: Map the domain name to the CLB instance through DNSPod
-1. Go to the [Tencent Cloud DNSPod](https://dnspod.cloud.tencent.com) to query and register a domain name.
+1. Query and register a domain name. `example.com` is used as an example.
 2. Log in to the [DNSPod console](https://console.cloud.tencent.com/cns), click **Domain Name Resolution List** on the left sidebar, and click **Resolve** on the right of a domain name.
 3. Open the **Record Management** tab, click **Add Records** to add an A record for the domain name with the following parameters:
   - Host: The prefix of the domain name. Here takes resolving all prefixes as an example: `*.example.com`.
@@ -96,9 +96,9 @@ After configuring a CLB instance, you can verify whether it is effective by acce
 5. About 10 minutes later, open the bound CNAME domain name in a browser (`www.example.com`). If the corresponding page can be normally displayed, it indicates that the CLB instance is in effect.
 
 ## Configuring Redirection (optional)
-CLB supports automatic redirection and manual redirection. For more information, please see [Configuring Layer-7 Redirection](https://intl.cloud.tencent.com/document/product/214/8839).
-- Automatic redirection (forced HTTPS): when a PC or mobile browser accesses a web service with an HTTP request, an HTTPS response is returned to the browser after the request passes through the CLB proxy, forcing the browser to access the webpage using HTTPS.
-- Manual redirection: if you want to temporarily deactivate your web business in cases such as product sellout, page maintenance, or update and upgrade, you need to redirect the original page to a new page. Otherwise, the old address in a visitor's favorites and search engine database will return a 404 or 503 error message page, degrading the user experience, resulting in traffic waste, and even invalidating the accumulated scores on search engines.
+CLB supports automatic redirection and manual redirection. For more information, please see [Layer-7 Redirection Configuration](https://intl.cloud.tencent.com/document/product/214/8839).
+- Automatic redirection (forced HTTPS): When a PC or mobile browser accesses a web service with an HTTP request, an HTTPS response is returned to the browser after the request passes through the CLB proxy, forcing the browser to access the webpage using HTTPS.
+- Manual redirection: If you want to temporarily deactivate your web business in cases such as product sellout, page maintenance, or update and upgrade, you need to redirect the original page to a new page. Otherwise, the old address in a visitor's favorites and search engine database will return a 404 or 503 error message page, degrading the user experience, resulting in traffic waste, and even invalidating the accumulated scores on search engines.
 
 
 ## Related Operations

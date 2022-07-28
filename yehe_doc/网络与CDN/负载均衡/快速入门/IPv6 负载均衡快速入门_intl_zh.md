@@ -3,7 +3,7 @@
 
 ## 前提条件
 1. 负载均衡只负责转发流量，不具备处理请求的能力。因此，您需要首先搭建处理用户请求的云服务器实例，并完成云服务器的 IPv6 配置。
-2. 本文以 HTTP 转发为例，云服务器上必须部署相应的 Web 服务器（如 Apache、Nginx、IIS 等），同时 Web 服务使用的端口需要监听 IPv6。
+2. 本文以 HTTP 转发为例，且 Linux 云服务器上必须部署相应的 Web 服务器（如 Apache、Nginx、IIS 等），同时 Web 服务使用的端口需要监听 IPv6。
 
 ## 使用说明
 - 目前仅支持如下地域开通 IPv6 负载均衡：广州、上海、南京、北京、成都、重庆、中国香港、新加坡、弗吉尼亚。
@@ -20,19 +20,19 @@ yum install nginx
 service nginx restart
 ```
 3. <span id="check" />查看部署在云服务器上的 Nginx 服务是否已经监听 IPv6。
- 1. 执行如下命令进行查看。
+   1. 执行如下命令进行查看。
 ```
 netstat -tupln
 ```
 ![](https://main.qcloudimg.com/raw/5bbe14c9e654b5a451828fa1e4157ac8.png)
- 2. 执行如下命令，打开 Nginx 配置文件进行查看。
+   2. 执行如下命令，打开 Nginx 配置文件进行查看。
 ```
 vim  /etc/nginx/nginx.conf
 ```
 ![](https://main.qcloudimg.com/raw/ff7718571c02a45f02646ab330c21ee2.png)
 
 ## 步骤2：创建 IPv6 负载均衡实例
-1. 登录腾讯云官网，进入 [负载均衡购买页](https://buy.cloud.tencent.com/lb)。
+1. 登录腾讯云官网，进入 [负载均衡购买页](https://buy.intl.cloud.tencent.com/lb)。
 2. 请正确选择如下参数：
  - 计费模式：仅支持按量计费。
  - 地域：选择目标地域。
@@ -71,7 +71,6 @@ vim  /etc/nginx/nginx.conf
 >?
 >- 一个监听器（即监听协议：端口）可以配置多个域名，一个域名下可以配置多条 URL 路径，选中监听器或域名，单击**＋**即可创建新的规则。
 >- 会话保持：如果用户关闭会话保持功能，选择轮询的方式进行调度，则请求依次分配到不同后端服务器上；如果用户开启会话保持功能，或关闭会话保持功能但选择 ip_hash 的调度方式，则请求持续分配到同一台后端服务器上去。
->
 
 ### 绑定云服务器
 >?绑定云服务器前，请确定该云服务器已获取 IPv6 地址。
@@ -82,6 +81,7 @@ vim  /etc/nginx/nginx.conf
 3. 成功绑定云服务器后：
  - 请确认端口状态是否为“健康”，如果为“健康”，请进行 [步骤4：测试 IPv6 负载均衡](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E6.B5.8B.E8.AF.95-ipv6-.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)。
  ![](https://main.qcloudimg.com/raw/1e3fe96b91748271b04f191e7be5a7a6.png)
+
  - 如果端口状态为“异常”，请确定监听器是否绑定了正确的云服务器的 Nginx 服务端口，同时登录云服务器检查端口已经正常监听 IPv6，可参见 [步骤1中的第3步](#check) 进行查看。 
 ![](https://main.qcloudimg.com/raw/c28a8b4fc331127b8fc5fcc1294f0df9.png)
 
