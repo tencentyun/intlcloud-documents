@@ -48,8 +48,10 @@ If WLC is selected, the listener does not support session persistence.
 <td><span>Enabled</span></td>
 </tr>
 </tbody></table>
- <b>2. Health check</b></br>
-For details of health check, see <a href="https://intl.cloud.tencent.com/document/product/214/39251">Configuring Health Check</a>.</td>
+
+ <b>2. Health check</b>
+For details of health check, see <a href="https://intl.cloud.tencent.com/document/product/214/39251">Configuring Health Check</a>.
+
  <b>3. Session persistence</b>
 <table>
 <tr>
