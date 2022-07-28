@@ -177,6 +177,22 @@ ul.rno-tabs-operation {
 }
 </style>
 
+<div class="preview-demo-item style-web">
+        <div class="demo-item-header">
+            <div class="demo-logo-wrapper">
+                <img src="https://qcloudimg.tencent-cloud.cn/raw/ff4dc34a1c72fdb26fc41c1268898025.svg" alt="">
+            </div>
+            <div class="demo-item-platform">Web</div>
+        </div>
+        <div class="demo-item-desc">
+           单击即可体验
+        </div>
+        <div class="demo-item-download">
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">音视频通话</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">互动直播推流</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">互动直播拉流</div>
+        </div>
+    </div>
 <div class="preview-demo-section" id="demo-card">
     <div class="preview-demo-item style-qrcode">
         <div class="demo-item-header">
@@ -232,22 +248,6 @@ ul.rno-tabs-operation {
         </div>
         <div class="demo-item-download">
             <div class="demo-item-download-btn" onclick="window.open('https://liteav.sdk.qcloud.com/app/install/TXLiteAVSDK_Mac_Demo.tar.bz2');reportEvent({name: 'demo-click-native', ext1: 'windows'});">立即下载</div>
-        </div>
-    </div>
-    <div class="preview-demo-item style-web">
-        <div class="demo-item-header">
-            <div class="demo-logo-wrapper">
-                <img src="https://qcloudimg.tencent-cloud.cn/raw/ff4dc34a1c72fdb26fc41c1268898025.svg" alt="">
-            </div>
-            <div class="demo-item-platform">Web</div>
-        </div>
-        <div class="demo-item-desc">
-           单击即可体验
-        </div>
-        <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/login.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">音视频通话</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/login.html');reportEvent({name: 'demo-click-web', ext1: 'pusher'});">互动直播推流</div>
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">互动直播拉流</div>
         </div>
     </div>
     <div class="preview-demo-item style-flutter">
