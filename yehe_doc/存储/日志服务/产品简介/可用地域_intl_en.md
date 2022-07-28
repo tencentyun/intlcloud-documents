@@ -1,10 +1,10 @@
 ## Overview
 
-You can create logsets and log topics in different regions when using CLS. Regions are independent geographical areas where IDCs are located. Tencent Cloud regions are completely isolated. Select the nearest region according to your business needs and the location of your targeted users to reduce log access latency and improve user experience. 
+You can create logsets and log topics in different regions when using CLS. Regions are independent geographical areas where IDCs are located. Tencent Cloud regions are completely isolated. You can select the nearest region based on different business scenarios and the location of your targeted users to reduce log access latency and improve user experience.
 
 ## Available Regions
 
-| Region     | Alias             |
+| Region     | Code             |
 | :------- | :--------------- |
 | Beijing     | ap-beijing       |
 | Guangzhou     | ap-guangzhou     |
@@ -24,15 +24,16 @@ You can create logsets and log topics in different regions when using CLS. Regio
 | Moscow | eu-moscow |
 | Jakarta   | ap-jakarta       |
 | Toronto | na-toronto |
+| São Paulo   | sa-saopaulo       |
 
 
 >? 
-> - If other cloud products are integrated into CLS, try to select a logset in the same region as the other cloud products. Cloud products in the same region access each other over a private network, which effectively reduces latency and improves access speed.
+> - If CLS is integrated into other cloud products, you need to select a logset in the same region as the other cloud products. Cloud products in the same region access each other over a private network, which effectively reduces latency and improves access speed.
 > 
 
-## Domain Names
+## Domain Name
 
-The domain names used by different CLS modules differ as follows:
+CLS has different domain names for each of its modules, as described below:
 
 <dx-tabs>
 ::: LogListener [](id:LogListener)
@@ -42,7 +43,7 @@ The domain names used by different CLS modules differ as follows:
 <thead>
 <tr>
 <th>Region</th>
-<th>Alias</th>
+<th>Code</th>
 <th>Private Network Domain Name</th>
 <th>Public Network Domain Name</th>
 </tr>
@@ -156,16 +157,21 @@ The domain names used by different CLS modules differ as follows:
 <td>na-toronto.cls.tencentcs.com</td>
 </tr>
 <tr>
+<td>São Paulo</td>
+<td>sa-saopaulo</td>
+<td>sa-saopaulo.cls.tencentyun.com</td>
+<td>sa-saopaulo.cls.tencentcs.com</td>
+</tr>
 </tbody></table>
 :::
 ::: CLS API 3.0 [](id:API3)
 
-[CLS API 3.0](https://intl.cloud.tencent.com/document/product/614/11321) is CLS's latest API version and complies with the unified API specifications of Tencent Cloud. You can use the APIs to manage resources such as log topics and alarm policies. The APIs use the following domain names:
+[CLS API 3.0](https://intl.cloud.tencent.com/document/product/614/11321) is the latest version of CLS APIs that complies with the unified API specifications of Tencent Cloud. You can use the APIs to manage resources such as log topics and alarm policies. The APIs use the following domain names:
 
-If you access CLS via the public network, you can also use unified domain name cls.tencentcloudapi.com. Your API request will be automatically resolved to a server that is **nearest** to the client. For latency-sensitive businesses, we recommend that you specify the region in the domain name.
+If you access CLS over the public network, you can also use the unified domain name `cls.tencentcloudapi.com`. Your API request will be automatically resolved to a server nearest to the client. For latency-sensitive businesses, we recommend you specify the domain name in a region.
 
 
-| Region     | Alias             | Private Network Domain Name                            | Public Network Domain Name                           |
+| Region     | Code             | Private Network Domain Name                            | Public Network Domain Name                           |
 | ------- | --------------- | -------------------------------- | ---------------------------------------- |
 | Beijing     | ap-beijing       | cls.internal.tencentcloudapi.com | cls.ap-beijing.tencentcloudapi.com       |
 | Guangzhou     | ap-guangzhou     | cls.internal.tencentcloudapi.com | cls.ap-guangzhou.tencentcloudapi.com     |
@@ -185,17 +191,18 @@ If you access CLS via the public network, you can also use unified domain name c
 | Moscow   | eu-moscow        | cls.internal.tencentcloudapi.com | cls.eu-moscow.tencentcloudapi.com        |
 | Jakarta   | ap-jakarta       | cls.internal.tencentcloudapi.com | cls.ap-jakarta.tencentcloudapi.com       |
 | Toronto   | na-toronto       | cls.internal.tencentcloudapi.com | cls.na-toronto.tencentcloudapi.com       |
+| São Paulo     | sa-saopaulo      | cls.internal.tencentcloudapi.com | cls.sa-saopaulo.tencentcloudapi.com       |
 
 :::
 ::: CLS API 2017 [](id:API2017)
 
-[CLS API 2017](https://intl.cloud.tencent.com/document/product/614/16907) is CLS's earlier API version and is not recommended to be used alone. The APIs use the following domain names:
+[CLS API 2017](https://intl.cloud.tencent.com/document/product/614/16907) is an old version of CLS APIs that should not be used alone. The APIs use the following domain names:
 
 <table>
 <thead>
 <tr>
 <th>Region</th>
-<th>Alias</th>
+<th>Code</th>
 <th>Private Network Domain Name</th>
 <th>Public Network Domain Name</th>
 </tr>
@@ -308,17 +315,23 @@ If you access CLS via the public network, you can also use unified domain name c
 <td>na-toronto.cls.tencentyun.com</td>
 <td>na-toronto.cls.tencentcs.com</td>
 </tr>
+<tr>
+<td>São Paulo</td>
+<td>sa-saopaulo</td>
+<td>sa-saopaulo.cls.tencentyun.com</td>
+<td>sa-saopaulo.cls.tencentcs.com</td>
+</tr>
 </tbody></table>
 :::
-::: Kafka Uploading Logs [](id:Kafka)
+::: Uploading Logs via Kafka [](id:Kafka)
 
-With the feature of [uploading logs via Kafka](https://intl.cloud.tencent.com/document/product/614/43574), you can use Kafka Producer SDKs or other Kafka agents to upload logs to CLS. The feature uses the following domain names:
+As described in [Uploading Logs via Kafka](https://intl.cloud.tencent.com/document/product/614/43574), you can use Kafka Producer SDKs or other Kafka agents to upload logs to CLS. This feature uses the following domain names:
 
 <table>
 <thead>
 <tr>
 <th>Region</th>
-<th>Alias</th>
+<th>Code</th>
 <th>Private Network Domain Name</th>
 <th>Public Network Domain Name</th>
 </tr>
@@ -431,6 +444,133 @@ With the feature of [uploading logs via Kafka](https://intl.cloud.tencent.com/do
 <td>ca-producer.cls.tencentyun.com</td>
 <td>ca-producer.cls.tencentcs.com</td>
 </tr>
+
 </tbody></table>
+
+:::
+::: Kafka Consumption Logs [](id:Kafka_Consume)
+
+As described in [Consumption over Kafka](https://cloud.tencent.com/document/product/614/72651), you can use Kafka Consumer SDKs or other big data components to consume the data to data warehouses. This feature uses the following domain names:
+
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Code</th>
+<th>Private Network Domain Name</th>
+<th>Public Network Domain Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beijing</td>
+<td>ap-beijing</td>
+<td>kafkaconsumer-ap-beijing.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-beijing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Guangzhou</td>
+<td>ap-guangzhou</td>
+<td>kafkaconsumer-ap-guangzhou.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-guangzhou.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Shanghai</td>
+<td>ap-shanghai</td>
+<td>kafkaconsumer-ap-shanghai.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-shanghai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Chengdu</td>
+<td>ap-chengdu</td>
+<td>kafkaconsumer-ap-chengdu.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-chengdu.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Nanjing</td>
+<td>ap-nanjing</td>
+<td>kafkaconsumer-ap-nanjing.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-nanjing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Chongqing</td>
+<td>ap-chongqing</td>
+<td>kafkaconsumer-ap-chongqing.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-chongqing.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Hong Kong (China)</td>
+<td>ap-hongkong</td>
+<td>kafkaconsumer-ap-hongkong.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-hongkong.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Silicon Valley</td>
+<td>na-siliconvalley</td>
+<td>kafkaconsumer-na-siliconvalley.cls.tencentyun.com</td>
+<td>kafkaconsumer-na-siliconvalley.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Virginia</td>
+<td>na-ashburn</td>
+<td>kafkaconsumer-na-ashburn.cls.tencentyun.com</td>
+<td>kafkaconsumer-na-ashburn.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Singapore</td>
+<td>ap-singapore</td>
+<td>kafkaconsumer-ap-singapore.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-singapore.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Bangkok</td>
+<td>ap-bangkok</td>
+<td>kafkaconsumer-ap-bangkok.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-bangkok.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Mumbai</td>
+<td>ap-mumbai</td>
+<td>kafkaconsumer-ap-mumbai.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-mumbai.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Frankfurt</td>
+<td>eu-frankfurt</td>
+<td>kafkaconsumer-eu-frankfurt.cls.tencentyun.com</td>
+<td>kafkaconsumer-eu-frankfurt.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Tokyo</td>
+<td>ap-tokyo</td>
+<td>kafkaconsumer-ap-tokyo.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-tokyo.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Seoul</td>
+<td>ap-seoul</td>
+<td>kafkaconsumer-ap-seoul.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-seoul.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Moscow</td>
+<td>eu-moscow</td>
+<td>kafkaconsumer-eu-moscow.cls.tencentyun.com</td>
+<td>kafkaconsumer-eu-moscow.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Jakarta</td>
+<td>ap-jakarta</td>
+<td>kafkaconsumer-ap-jakarta.cls.tencentyun.com</td>
+<td>kafkaconsumer-ap-jakarta.cls.tencentcs.com</td>
+</tr>
+<tr>
+<td>Toronto</td>
+<td>na-toronto</td>
+<td>kafkaconsumer-na-toronto.cls.tencentyun.com</td>
+<td>kafkaconsumer-na-toronto.cls.tencentcs.com</td>
+</tr>
+</tbody></table>
+
 :::
 </dx-tabs>
