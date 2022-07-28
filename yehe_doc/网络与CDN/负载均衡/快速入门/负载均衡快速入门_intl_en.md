@@ -34,7 +34,7 @@ If a client initiates a request, the CLB instance will forward the request accor
 1. On the **Listener Management** tab, click **+** on the right of the new listener.
 ![](https://main.qcloudimg.com/raw/f8ab76b69f8a0cfdd5b4332c8b80b1f2.png)
 2. In the **Create Forwarding Rules** window, configure the domain name, URL, balancing method, and then click **Next**.
-  - Domain name: The domain name of your real server (e.g., **www.example.com **).
+  - Domain name: The domain name of your real server (e.g., <b>www.example.com </b>).
   - Default domain name: If a client request does not match any listener domain names, the CLB instance will forward the request to the default domain name (default server). Each listener can be configured with only one default domain name. If a listener has no default domain name, the CLB instance will forward the request to the first domain name. This example will skip the configuration step.
   - URL: The access path to your real server (e.g., `/image/`).
   - Select **Weighted Round Robin** as the balancing method and then click **Next**. For more information, please see [Load Balancing Methods](https://intl.cloud.tencent.com/document/product/214/6153).
