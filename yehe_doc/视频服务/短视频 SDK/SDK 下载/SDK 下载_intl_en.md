@@ -150,8 +150,6 @@
       <td>Getting the video image of a specified time point</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
-      <td style="text-align:center">&#10003;</td>
-      <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
       <td>Preview by frame</td>
