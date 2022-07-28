@@ -6,7 +6,7 @@ The main API classes used in the eKYC SDK for iOS are `VerificationKit`, `Verifi
 
 | API                                                   | Feature Description                                             |
 | --------------------------------------------------- | ------------------------ |
-| [initWithViewController:](#initWithViewController:) | Initializes the SDK               |
+| [initWithViewController:](#initWithViewController:) | Initializes the eKYC SDK               |
 | [clearInstance](#clearInstance)                     | Releases resources           |
 | [startVerifiWithConfig:](#startVerifiWithConfig:)   | Starts the eKYC process |
 
@@ -81,11 +81,18 @@ Input parameters:
 | BOOL                          | isHiddenFlash  | Whether to hide the OCR flashlight button                             | NO                |
 | [LanguageType](#LanguageType) | languageType   | Language type of this process                                | DEFAULT (0)       |
 
-
+##### OCRRegionType
+This API is used to detect the type of the document.
+| Enumerated Value | Description |
+|---|---|
+|OCR_TYPE_HK| Hong Kong (China) - identity card |
+|OCR_TYPE_ML| Malaysia - identity card |
+|OCR_TYPE_PV_ID| Philippines - driver's license |
+|OCR_TYPE_PDL| Philippines - VoteID |
 
 ### LanguageType
 
-This field provides the language configuration information of the default eKYC interface.
+This API provides the language configuration information of the default eKYC interface.
 
 | LanguageType | Description             |
 | ---------------- | ---------------- |

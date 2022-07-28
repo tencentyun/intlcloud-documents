@@ -1,4 +1,4 @@
-The eKYC SDK for Android mainly involves the following classes: `EkycHySdk`, `EkycHyConfig`, and `EkycHyCallBack`. The APIs supported by these classes are described below.
+The main API classes used in the eKYC SDK for Android are `EkycHySdk`, `EkycHyConfig`, and `EkycHyCallBack`. Specific APIs in these classes are described as below.
 
 ### EkycHySdk
 
@@ -49,7 +49,7 @@ public static void startEkycCheck(final String ekycToken, EkycHyConfig ekycHyCon
 
 Feature:
 
-It is an API for starting the  function for the eKYC process.
+It is a function for starting the eKYC process.
 
 Input parameters:
 
@@ -73,11 +73,19 @@ Input parameters:
 | int                          | hyFaceTimeOut  | Timeout period of a single face authentication operation                          | 10,000 ms (10s) |
 | [LanguageStyle](#LanguageStyle) | languageStyle  | Language style of this process             | LanguageStyle.AUTO |
 
+### OcrRegionType
+This API is used to detect the type of the document.
+| Enumerated Value | Description |
+|---|---|
+|HK| Hong Kong (China) - identity card |
+|ML| Malaysia - identity card |
+|PhilippinesDrivingLicense| Philippines - driver's license |
+|PhilippinesVoteID| Philippines - VoteID |
 
 
 ### LanguageStyle
 
-This field provides the language configuration information of the default eKYC interface.
+This API provides the language configuration information of the default eKYC interface.
 
 | LanguageStyle                  | Description             |
 | --------------------------------- | ---------------- |

@@ -2,7 +2,7 @@
 
 1. Sign up for a Tencent Cloud account and log in to the eKYC console to activate the service.
 2. Download the required version of SDK via the eKYC SDK download link and integrate it locally.
-3. Contact the business or customer service to get the license file of your version.
+3. Contact sales rep or customer service to get the license file of your version.
 
 
 
@@ -18,7 +18,7 @@ The current FaceID SDK for Android is supported by API 19 (Android 4.4) or later
 
 #### Directions
 
-1. Add **ekyc_android_1.0.1.1_release.aar**, **huiyansdk_android_1.0.8.1_release.aar**, and **tencen-ai-sdk-common-base-1.0.1.12-release.aar** (the version numbers of the libraries downloaded from the official site shall prevail) to the `libs` directory of your project.
+1. Add **ekyc_android_1.0.x.x_release.aar**, **huiyansdk_android_1.0.x.x_release.aar**, and **tencen-ai-sdk-common-base-1.0.x.x-release.aar** (the version numbers of the libraries downloaded from the official site shall prevail) to the `libs` directory of your project.
 
    ![](https://ai-sdk-release-1254418846.cos.ap-guangzhou.myqcloud.com/EKYC/%E5%9B%BE%E5%BA%8A/ekyc_common.png)
 
@@ -32,11 +32,11 @@ ndk {
 
 dependencies {
     // eKYC repository
-    implementation files("libs/ekyc_android_1.0.1.1_release.aar")
+    implementation files("libs/ekyc_android_1.0.x.x_release.aar")
     // Identity verification components
-    implementation files("libs/huiyansdk_android_1.0.8.1_release.aar")
+    implementation files("libs/huiyansdk_android_1.0.x.x_release.aar")
     // Common components
-    implementation files("libs/tencen-ai-sdk-common-base-1.0.1.12-release.aar")
+    implementation files("libs/tencen-ai-sdk-common-base-1.0.x.x-release.aar")
     // Imported `gson` library
     implementation 'com.google.code.gson:gson:2.8.5'
 }
@@ -44,7 +44,7 @@ dependencies {
 
 
 
-3. Permission declarations
+3. Permission Declarations
 
 You also need to make the necessary permission declaration in the `AndroidManifest.xml` file.
 
@@ -93,6 +93,7 @@ EkycHyConfig ekycHyConfig = new EkycHyConfig();
 // Set the license name
 ekycHyConfig.setLicenseName("ekycLicense.license");
 ekycHyConfig.setVerAutoTimeOut(20000);
+ekycHyConfig.setOcrType(OcrRegionType.);
 // Customize UI configurations
 OcrUiConfig config = new OcrUiConfig();
 ekycHyConfig.setOcrUiConfig(config);
