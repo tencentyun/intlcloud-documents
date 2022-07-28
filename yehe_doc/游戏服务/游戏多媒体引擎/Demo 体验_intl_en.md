@@ -160,7 +160,7 @@ Click to download [Voice Changing Demo](https://dldir1.qq.com/hudongzhibo/QCloud
 
 ### 1. Enter AppID and Key
 
-To initialize the Demo, you need to enter the AppID and the key, which can be found in **Service Management** in [Game Multimedia Engine Console](https://console.cloud.tencent.com/gamegme/detail/1400391524). To apply for GME service, see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782). 
+To initialize the Demo, you need to enter the AppID and the key, which can be found in **Service Management** in [Game Multimedia Engine Console](https://console.intl.cloud.tencent.com/gamegme). To apply for GME service, see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782). 
 
 
 <dx-alert infotype="explain" title="">
