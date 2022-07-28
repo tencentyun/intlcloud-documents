@@ -115,7 +115,7 @@
    </tr>
    <tr>
       <td>AI-based keying</td>
-      <td>Detecting the contours of people and replacing the background, for example, with an animated background or PowerPoint.<td>
+      <td>Detecting the contours of people and replacing the background, for example, with an animated background or PowerPoint.</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
    </tr>
