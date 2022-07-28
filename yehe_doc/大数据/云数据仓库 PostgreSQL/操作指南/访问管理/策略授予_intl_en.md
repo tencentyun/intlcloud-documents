@@ -13,7 +13,7 @@ To facilitate authorizing sub-accounts, CDWPG provides two preset policies. Go t
 ## Custom CDWPG Policy
 If preset policies cannot meet your needs, you can click **Create Custom Policy** to create custom policies.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9cedd6109b5ce2af2370922ddc74753f.png)
-For the method of custom policy creation, see [Policy Settings](https://cloud.tencent.com/document/product/878/47410).
+For the method of custom policy creation, see [Policy Settings](https://intl.cloud.tencent.com/document/product/1138/45122).
 
 ## Policy Authorization
 A configured policy can grant permissions by associating user groups or sub-users.

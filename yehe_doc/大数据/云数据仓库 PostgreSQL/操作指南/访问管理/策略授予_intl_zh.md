@@ -13,7 +13,7 @@
 ## 云数据仓库 PostgreSQL 自定义策略
 如果预设策略无法满足需求，可单击**新建自定义策略**创建自定义策略。
 ![](https://qcloudimg.tencent-cloud.cn/raw/9cedd6109b5ce2af2370922ddc74753f.png)
-创建自定义策略的方法可参考 [策略设置](https://cloud.tencent.com/document/product/878/47410)。
+创建自定义策略的方法可参考 [策略设置](https://intl.cloud.tencent.com/document/product/1138/45122)。
 
 ## 策略授权
 已设置好的策略可以通过关联用户组或者子用户来授予权限。
