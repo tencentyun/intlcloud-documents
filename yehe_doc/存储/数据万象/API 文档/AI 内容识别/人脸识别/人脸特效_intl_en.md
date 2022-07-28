@@ -10,9 +10,9 @@ Face filter supports beauty filter, gender swap, age change, and face cut-out. I
 | Face cut-out     | You can upload an image and get the body contour recognized and separated from the background. The binary image, grayscale image, and foreground portrait are returned. This is applicable to portrait keying, photo synthesis, face special effect, and other use cases and greatly improves the tool efficiency. |
 
 >?
-- Face filters can be applied to a Base64-encoded image of up to 5 MB in size. PNG, JPG, JPEG, and BMP formats are supported, while GIF is not. To use face cut-out, the image resolution must be lower than 2000x2000 px.
-- Face filter is a paid service. For billing details, see Content Recognition Fees.
-- This feature currently can be used only through APIs.
+>- Face filters can be applied to a Base64-encoded image of up to 5 MB in size. PNG, JPG, JPEG, and BMP formats are supported, while GIF is not. To use face cut-out, the image resolution must be lower than 2000x2000 px.
+>- Face filter is a paid service. For billing details, see Content Recognition Fees.
+>- This feature currently can be used only through APIs.
 
 ## Request
 
