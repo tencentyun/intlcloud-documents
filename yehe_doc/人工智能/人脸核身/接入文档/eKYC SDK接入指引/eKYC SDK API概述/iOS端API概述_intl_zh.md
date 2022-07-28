@@ -83,8 +83,9 @@ VerificationConfig是在启动eKYC SDK时的配置实体类，主要包含了以
 
 ##### OCRRegionType
 核验卡证的类型
-|枚举名|说明|
-|---|---|
+
+| 枚举名 | 说明               |
+| ---------------- | ---------------- |
 |OCR_TYPE_HK|中国香港证件|
 |OCR_TYPE_ML|马来西亚证件|
 |OCR_TYPE_PV_ID|菲律宾-驾驶执照|
