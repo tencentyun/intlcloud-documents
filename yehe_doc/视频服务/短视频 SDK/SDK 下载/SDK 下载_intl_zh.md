@@ -68,8 +68,6 @@
       <td>支持拍摄照片。</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
-      <td style="text-align:center">&#10003;</td>
-      <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
       <td>变速录制</td>
