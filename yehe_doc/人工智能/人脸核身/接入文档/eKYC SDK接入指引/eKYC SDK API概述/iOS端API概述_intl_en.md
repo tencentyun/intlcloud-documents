@@ -83,8 +83,9 @@ Input parameters:
 
 ##### OCRRegionType
 This API is used to detect the type of the document.
-| Enumerated Value | Description |
-|---|---|
+
+| Enumerated Value  | Description             |
+| ---------------- | ---------------- |
 |OCR_TYPE_HK| Hong Kong (China) - identity card |
 |OCR_TYPE_ML| Malaysia - identity card |
 |OCR_TYPE_PV_ID| Philippines - driver's license |
