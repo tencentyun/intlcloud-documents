@@ -10,7 +10,7 @@ The Meizu push channel is a system-level push channel **officially provided by M
 
 ### Obtaining a key
 
-1. Go to the [Meizu push website](https://open.flyme.cn/open-web/views/push.html) to sign up for a developer account and log in. Then, get the values of the `AppID`, `AppKey`, and `AppSecret`. For more information, see [Meizu Development Documentation](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf).
+1. Go to the [Meizu push website](https://open.flyme.cn) to sign up for a developer account and log in. Then, get the values of the `AppID`, `AppKey`, and `AppSecret`. For more information, see [Meizu Development Documentation](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf).
 2. Copy the application's `AppID`, `AppKey`, and `AppSecret` and paste them into [**TPNS console**](https://console.cloud.tencent.com/tpns) > **Configuration Management** > **Basic Configuration** > **Meizu Official Push Channel**.
 
 ### Integration methods
