@@ -16,13 +16,13 @@
 1. [登录 TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，在左侧导航栏中单击**Topic 管理**。
 2. 在 Topic 管理列表页中，找到需要管理订阅的 Topic，单击操作列的**查看订阅/消费者**，进入订阅列表。
 3. 在订阅列表中，一级列表可以看到订阅了当前 Topic 的所有订阅，二级展开后可以看到每个订阅的消费连接实例以及每个分片的消费进度。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/3bee532dab55b7cab1167416aac95f4d.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/93df5c992c854ca0a368810b395a401d.png)
 
 ### 设置 offset
 
 1. 在订阅列表中，单击操作列的**offset设置**，按时间维度手动设定每个订阅的**消费位移 offset**（即指定该订阅下的消费者从哪个时间点开始消费消息）。
 2. 单击**提交**，完成设置。
-   ![](https://main.qcloudimg.com/raw/abc24bdebba5c70cbaee0d14ea40ab20.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/28962c7fd7036da309eda16859e3060b.png)
 
 ### 重建重试/死信队列
 
@@ -35,4 +35,4 @@
 1. 在订阅列表中，找到需要删除的订阅，单击操作列的**更多** > **删除**，或者勾选多个订阅之后单击订阅列表顶部的**删除**。
 2. 在弹出的提示框中，单击**提交**，完成删除。
    强制删除：开启后，即使仍有消费者连接，也可以强制删除。
-   <img src="https://main.qcloudimg.com/raw/ea9b6196088eee2182ef057d144d93c5.png" width="540px">
+   <img src="https://qcloudimg.tencent-cloud.cn/raw/74cf593f8d07f25d79adbc4657e7ec8b.png" width="540px">
