@@ -25,7 +25,7 @@
      - 持久化保留：无论是否消费，按照最大保留时间和最大存储空间进行持久化存储，到达限制后从后向前删除。
    - 说明：命名空间的备注说明。
 4. 单击**保存**完成所在集群命名空间的创建。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/ca657775874f5f4bbba902b83ba1fc4c.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/d2157b367f36b52b76aaf2163a5190b9.png)
 
 
 
