@@ -37,7 +37,7 @@ Clusters are divided into virtual clusters and exclusive clusters:
 #### Subsequent steps
 
 1. [Get the access address](#Getting-access-address) to get the connection information of the server (only clusters on v2.6.1 require configuring an access point; for clusters on v2.7.1 or later, the access address can be copied directly).
-2. Create a [namespace](https://intl.cloud.tencent.com/document/product/1110/42929) in the cluster. 
+2. Create a namespace as instructed in [Namespace](https://intl.cloud.tencent.com/document/product/1110/42929) in the cluster. 
 3. Create a role as instructed in [Role and Authentication](https://intl.cloud.tencent.com/document/product/1110/42936) in the cluster and grant it the production/consumption permissions of the namespace.
 4. Create a topic as instructed in [Topic Management](https://intl.cloud.tencent.com/document/product/1110/42930) in the namespace. 
 5. Write a demo as instructed in [SDK Overview](https://intl.cloud.tencent.com/document/product/1110/42945) and configure the connection information and token for message production/consumption.
