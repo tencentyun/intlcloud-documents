@@ -47,7 +47,7 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
 ### 请求包示例
 
 - **设置禁言**
-可以通过 ShutUpTime 设置禁言时间，对指定用户禁言。
+可以通过 MuteTime 设置禁言时间，对指定用户禁言。
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",
@@ -55,11 +55,11 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
         "peter",
         "leckie"
     ],
-    "ShutUpTime": 60 // 禁言时间，单位为秒
+    "MuteTime": 60 // 禁言时间，单位为秒
 }
 ```
 - **取消禁言**
-如果要取消禁言，将 ShutUpTime 设为0。
+如果要取消禁言，将 MuteTime 设为0。
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",
@@ -67,7 +67,7 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
         "peter",
         "leckie"
     ],
-    "ShutUpTime": 0 // 为0时表示取消禁言
+    "MuteTime": 0 // 为0时表示取消禁言
 }
 ```
 
@@ -77,7 +77,7 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |需要查询的群组 ID   |
 | Members_Account | Array | 必填 |需要禁言的用户帐号，最多支持500个帐号   |
-| ShutUpTime | Integer | 必填 |无符号类型。需禁言时间，单位为秒，为0时表示取消禁言，4294967295为永久禁言。   |
+| MuteTime | Integer | 必填 |无符号类型。需禁言时间，单位为秒，为0时表示取消禁言，4294967295为永久禁言。   |
 
 ### 应答包体示例
 
