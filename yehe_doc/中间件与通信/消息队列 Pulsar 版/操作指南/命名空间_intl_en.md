@@ -25,7 +25,7 @@ This document describes how to create multiple namespaces in TDMQ for Pulsar so 
      - Persistent retention: No matter whether messages are consumed or not, they will be stored persistently within the maximum retention period and maximum storage space and then deleted chronologically after the limit is reached.
    - Description: Enter the remarks of the namespace.
 4. Click **Save**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/ca657775874f5f4bbba902b83ba1fc4c.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/d2157b367f36b52b76aaf2163a5190b9.png)
 
 
 
