@@ -58,14 +58,14 @@ This is used to obtain the list of muted members in the group, and only the grou
     "ActionStatus": "OK",
     "ErrorCode": 0,
     "GroupId": "@TGS#2FZNNRAEU",
-    "ShuttedUinList": [ // List of muted users in the group
+    "MutedAccountList": [ // List of muted users in the group
         {
             "Member_Account": "tommy", // User ID
-            "ShuttedUntil": 1458115189 // Expiration time (UTC time) of muting
+            "MutedUntil": 1458115189 // Expiration time (UTC time) of muting
         },
         {
             "Member_Account": "peter",
-            "ShuttedUntil": 1458115189
+            "MutedUntil": 1458115189
         }
     ]
 }
@@ -78,7 +78,7 @@ This is used to obtain the list of muted members in the group, and only the grou
 | ActionStatus | String | Result of the request. `OK` indicates that the request was successful, and `FAIL` indicates that the request failed. |
 | ErrorCode | Integer | Error code. `0` indicates that the request was successful, and any non-zero value indicates that the request failed. |
 | ErrorInfo | String | Detailed error information |
-| ShuttedUinList | Array | The returned result is an array of muted users. The content includes the ID of each muted member and the expiration time (UTC time) of muting. |
+| MutedAccountList | Array | The returned result is an array of muted users. The content includes the ID of each muted member and the expiration time (UTC time) of muting. |
 
 ## Error Codes
 
