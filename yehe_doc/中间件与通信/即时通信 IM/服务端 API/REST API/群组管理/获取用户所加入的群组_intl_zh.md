@@ -9,7 +9,8 @@ App 管理员可以通过本接口获取某一用户加入的群信息。默认�
 |Private|支持，同新版本中的 Work（好友工作群），但默认不返回已加入但未激活的此类型群信息|
 |Public|支持|
 |ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
-|AVChatRoom|支持，但默认不返回此类型群信息|
+|AVChatRoom|支持，但默认不返回此类型群信息。如果指定拉取 AVChatRoom 类型群信息，获得的群信息可能不完整，AVChatRoom 并不存储所有的群成员资料。|
+|Community（社群）|支持|
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 ### 请求 URL 示例
@@ -114,7 +115,7 @@ https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&id
             "MemberNum",
             "MaxMemberNum",
             "ApplyJoinOption",
-            "ShutUpAllMember"
+            "MuteAllMember"
         ],
         "SelfInfoFilter": [
             "Role", 
@@ -135,7 +136,7 @@ https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&id
 |WithNoActiveGroups|Integer|选填|是否获取用户已加入但未激活的 Private（即新版本中 Work，好友工作群) 群信息，0表示不获取，1表示获取。默认为0|
 | Limit | Integer | 选填 |单次拉取的群组数量，如果不填代表所有群组 |
 | Offset | Integer | 选填 |从第多少个群组开始拉取|
-| GroupType | String | 选填 |拉取哪种群组类型，例如 Public(陌生人社交群)，Private（即新版本Work，好友工作群)，ChatRoom （即新版本Meeting，会议群），AVChatRoom(直播群)，不填为拉取所有  |
+| GroupType | String | 选填 |拉取哪种群组类型，例如 Public(陌生人社交群)，Private（即新版本Work，好友工作群)，ChatRoom （即新版本Meeting，会议群），AVChatRoom(直播群)，Community（社群），不填为拉取所有  |
 | ResponseFilter | Object | 选填 |分别包含 GroupBaseInfoFilter 和 SelfInfoFilter 两个过滤器； GroupBaseInfoFilter 表示需要拉取哪些基础信息字段，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)；SelfInfoFilter 表示需要拉取用户在每个群组中的哪些个人资料，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529) |
 
 ### 应答包体示例
@@ -231,7 +232,7 @@ https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&id
                 "Role": "Member",
                 "MsgSeq": 1
             },
-            "ShutUpAllMember": "Off",
+            "MuteAllMember": "Off",
             "Type": "Private"
         }
     ]
