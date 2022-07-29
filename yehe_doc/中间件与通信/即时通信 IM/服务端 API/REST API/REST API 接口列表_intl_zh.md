@@ -22,6 +22,7 @@
 | 撤回单聊消息 | [v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015) |
 |设置单聊消息已读|[v4/openim/admin_set_msg_read](https://intl.cloud.tencent.com/document/product/1047/38996)|
 |查询单聊未读消息计数|[v4/openim/get_c2c_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/41046)|
+|修改单聊历史消息|[v4/openim/modify_c2c_msg](https://intl.cloud.tencent.com/document/product/1047/47722)|
 
 ## 全员推送
 
@@ -103,6 +104,7 @@
 |修改群自定义属性|[v4/group_open_http_svc/modify_group_attr](https://intl.cloud.tencent.com/document/product/1047/44188)|
 |清空群自定义属性|	[v4/group_open_http_svc/clear_group_attr](https://intl.cloud.tencent.com/document/product/1047/44189)|
 |重置群自定义属性|[v4/group_open_http_svc/set_group_attr](https://intl.cloud.tencent.com/document/product/1047/44190)|
+|修改群聊历史消息|[v4/openim/modify_group_msg](https://intl.cloud.tencent.com/document/product/1047//47948)|
 
 ## 全局禁言管理
 | 功能说明 |接口 |
