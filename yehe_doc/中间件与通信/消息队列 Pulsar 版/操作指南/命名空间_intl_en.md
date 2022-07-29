@@ -2,7 +2,7 @@
 
 Namespace is a resource management concept in TDMQ for Pulsar. Generally, different business scenarios can be isolated by namespace and configured with dedicated settings, such as message retention period. Topics, subscriptions, and role permissions in different namespaces are isolated from each other.
 
-This document describes how to create multiple namespaces in TDMQ for Pulsar so as to use the same TDMQ for Pulsar cluster in different scenarios.
+This document describes how to create multiple namespaces in TDMQ for Pulsar to use the same TDMQ for Pulsar cluster in different scenarios.
 
 >?Topic and subscription names must be unique in the same namespace.
 
@@ -10,7 +10,7 @@ This document describes how to create multiple namespaces in TDMQ for Pulsar so 
 
 >?
 >
->- If the TDMQ for Pulsar cluster you create is on v2.6.1, a `default` namespace will be created by default with a default message TTL of 7 days, which can be modified but cannot be deleted.
+>- If the TDMQ for Pulsar cluster you create is on v2.6.1, a `default` namespace will be created by default with a default message TTL of 7 days, which can be modified but not deleted.
 >- If the TDMQ for Pulsar cluster you create is on v2.7.1 or later, no `default` namespace will be automatically created.
 
 ### Creating a namespace
