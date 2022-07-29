@@ -19,9 +19,11 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> ?
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/1045/33452)).
+>?
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
 > - For private buckets, the request needs to carry the signature for file download. 
+>
 
 #### Request headers
 

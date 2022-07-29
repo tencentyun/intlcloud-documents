@@ -65,8 +65,8 @@ The nodes are as described below:
 | Width              | Request | Screenshot width. Default value: 0.                                          | Int       | No       |
 | Height             | Request | Screenshot height. Default value: 0.<br/>If `Width` and `Height` are both `0`, the width and height of the video are used. <br/>If one of them is `0`, the other value is used to automatically adapt to the aspect ratio of the video. | Int       | No       |
 | Format             | Request | Screenshot format. Valid values: jpg, png. Default value: jpg.                     | String    | No       |
-| Mode               | Request | Frame capturing method:<br><li>keyframe: Capture the last keyframe before the specified time point.</li><li>exactframe: Capture the frame at a specified time point.</li>Default value: exactframe | String    | No       |
-| Rotate             | Request | Image rotation method:<br><li>auto: Rotate automatically according to the video rotation information.<br><li>off: Do not rotate.<br/>Default value: auto | String    | No       |
+| Mode               | Request | Frame capturing method: <br><li>keyframe: Capture the last keyframe before the specified time point.<br><li>exactframe: Capture the frame at a specified time point.<br/>Default value: exactframe. | String | No |
+| Rotate             | Request | Image rotation method.<br><li>auto: Rotate automatically according to the video rotation information.<br><li>off: Do not rotate.<br/>Default value: auto. | String | No |
 
 `Input` has the following sub-nodes:
 

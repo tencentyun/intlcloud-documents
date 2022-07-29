@@ -21,7 +21,6 @@ Content-Type: application/xml
 > - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
 > 
 
-
 #### Request headers
 
 This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
