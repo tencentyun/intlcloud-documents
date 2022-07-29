@@ -107,7 +107,7 @@ Set a specified group member's muting period.
 {
     "GroupId": "@TGS#2CLUZEAEJ", // Target group (required)
     "Member_Account": "bob", // Target group member (required)
-    "ShutUpTime":86400 // Muting period for the specified user, in seconds
+    "MuteTime":86400 // Muting period for the specified user, in seconds
 }
 ```
 Private groups (i.e., same as work groups in the new version) do not support muting members. 
@@ -121,7 +121,7 @@ Private groups (i.e., same as work groups in the new version) do not support mut
 | MsgFlag | String | Optional | Message blocking type.  |
 | NameCard | String | Optional | Group name card (with a maximum length of 50 bytes).  |
 | AppMemberDefinedData | Array | Optional | Group member custom field. By default, this field is not available and needs to be enabled in the [IM console](https://console.cloud.tencent.com/im). For details, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).  |
-| ShutUpTime |Integer | Optional | Muting period in seconds. `0`: unmuted. |
+| MuteTime |Integer | Optional | Muting period in seconds. `0`: unmuted. |
 
 ### Sample response
 
