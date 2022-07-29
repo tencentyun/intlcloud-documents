@@ -16,7 +16,7 @@ Topic 是 TDMQ Pulsar 版中的核心概念。Topic 通常用来对系统生产�
 1. 登录 [TDMQ Pulsar 版控制台](https://console.cloud.tencent.com/tdmq)，在左侧导航栏单击 **Topic 管理**。
 2. 在 Topic 管理页面，单击**新建**，弹出新建 Topic 的对话框。
 3. 在新建 Topic 对话框中，填写以下信息：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/27e26efb1d41905affe40ae686d8e80c.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/d0d5b0e74d259fe81a2ea1f588318394.png)
     - Topic 名称：不能为空，支持数字字母以及符号 “-\_=:.”，长度不超过128个字符。
     - Topic 类型：支持**持久化**和**非持久化**两种类型。
       - 持久化：持久化的消息会以多副本形式落盘，保证消息不丢失，多适用于金融、交易等高可靠场景
@@ -26,7 +26,7 @@ Topic 是 TDMQ Pulsar 版中的核心概念。Topic 通常用来对系统生产�
       - 单分区的 Topic 会在性能上弱于多分区 Topic，如果希望兼顾性能与有序性， 可以参见 [订阅模式](https://intl.cloud.tencent.com/document/product/1110/42923) 使用 Key-shared 模式进行消费，实现局部有序，标记同一个 key 让需要有序的消息落在同一分区即可。
     - 说明：填写 Topic 的说明信息，不超过128字符。
 4. 单击**保存**，在 Topic 列表中即可看见创建好的 Topic。
-![](https://qcloudimg.tencent-cloud.cn/raw/d0328e4a60fb563b8f45a3808912de61.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/897456deed29b847d8876154740027a4.png)
 <table>
 <tr>
 <th>参数	</th>
@@ -89,7 +89,7 @@ TDMQ Pulsar 版控制台支持手动发送消息，在控制台进行相应的�
 
 1. 在 [Topic 管理](https://console.cloud.tencent.com/tdmq/topic) 中，找到需要发送消息的 Topic ，单击操作列中的**发送消息**。
 2. 在弹出的对话框中输入消息内容。消息长度不超过64KB。
-   ![](https://main.qcloudimg.com/raw/2962bfe289ab88a167fb8d94feed37fe.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/c7519c1bfe6c6d2b37810136ec9c8acb.png)
 3. 单击**提交**，完成消息的发送。消息发送后即可被 Topic 下的任意订阅者消费。
 
 
@@ -105,7 +105,7 @@ TDMQ Pulsar 版控制台支持手动创建订阅，在控制台进行相应的�
  - 订阅名称：长度不超过64个字符
  - 自动创建重试&死信队列：可以选择是否自动创建重试和死信 Topic
  - 说明：不超过2字符
-![](https://qcloudimg.tencent-cloud.cn/raw/97151a4e137b3688f7a2753b78bea89f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/396cf90b66dbe4e456d9f033cae2a399.png)
 3. 单击**提交**完成创建。
    创建后可通过单击操作列的**查看订阅**，查看订阅了该 Topic 的订阅，即可在列表中看到刚刚创建的订阅。
 
@@ -121,4 +121,4 @@ TDMQ Pulsar 版控制台支持手动创建订阅，在控制台进行相应的�
 1. 在 **Topic 管理**中，找到需要删除的 Topic ，单击操作列中的**更多** > **删除**，或者勾选多个 Topic 之后单击 Topic 列表顶部的**删除**。
 2. 在弹出的提示框中，单击**提交**，完成删除。
    强制删除：开启后，Topic 有订阅也可连带删除。
-   <img src="https://main.qcloudimg.com/raw/017f18e218e06cf617b17ecd4450f113.png" width="600">
+   <img src="https://qcloudimg.tencent-cloud.cn/raw/c3eb46625efc49c0d5b4783569a2ffdb.png" width="600">
