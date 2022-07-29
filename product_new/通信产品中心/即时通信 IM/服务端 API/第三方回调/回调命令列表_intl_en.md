@@ -39,3 +39,4 @@
 | Callback after a group is full | [Group.CallbackAfterGroupFull](https://intl.cloud.tencent.com/document/product/1047/34376) |
 | Callback after dismissing a group | [Group.CallbackAfterGroupDestroyed](https://intl.cloud.tencent.com/document/product/1047/34377) |
 | Callback after modifying the profile of a group | [Group.CallbackAfterGroupInfoChanged](https://intl.cloud.tencent.com/document/product/1047/34378) |
+|Callback for Online and Offline Status of Audio-Video Group Members|[Group.CallbackOnMemberStateChange](https://intl.cloud.tencent.com/document/product/1047/48734)|
