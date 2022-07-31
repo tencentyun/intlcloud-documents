@@ -76,7 +76,7 @@ Create a group and specify basic group information, such as the group introducti
 ```
 
 - **Containing only group member information**
-Create a group and specify the initial group member list. The group member list is described in the request packet description table.
+Create a group and specify the initial group member list. The group member list is described in the request packet description table.Only `Member_Account` and `Role` fields can be set during member initialization 
 ```json
 {
     "Name": "TestGroup", // Group name (required)
