@@ -3,7 +3,7 @@ TencentDB for PostgreSQL comes with the transparent data encryption (TDE) featur
 
 ## Prerequisites
 - TDE can be enabled only during instance creation and cannot be disabled once enabled.
-- Only the kernel version PostgreSQL v11.12_r1.3 supports TDE.
+- Only the kernel version PostgreSQL v10.17_r1.2、v11.12_r1.2、v12.7_r1.2、v13.3_r1.2、v14.2_r1.0 supports TDE.
 - KMS must be activated. If it is not activated, you can purchase and activate it [here](https://buy.intl.cloud.tencent.com/kms).
 - To use TDE with a sub-account, you must create a service role for authorizing TencentDB for PostgreSQL to manipulate KMS. You can create a role [here](https://console.cloud.tencent.com/cam/role/grant?roleName=Postgres_QCSLinkedRoleInPostgresKms&serviceLinkedRole=1) with your root account.
 - The sub-account must have the `cam:PassRole`, `kms:GetServiceStatus`, and `kms:GetRegions` permissions. If a permission is not granted, use the root account to grant it to the sub-account.
@@ -35,6 +35,6 @@ TencentDB for PostgreSQL comes with the transparent data encryption (TDE) featur
     - If you select **Use existing custom key (BYOK)**, you can select a key created by yourself.
 >?If there are no custom keys, click **Go to create** to create keys in the KMS console. For more information, see [Creating a Key](https://intl.cloud.tencent.com/document/product/1030/31971).
 >
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ef4a60c872c9dc196e0f0b8f5191503c.png"  style="zoom:60%;">
+
 
 
