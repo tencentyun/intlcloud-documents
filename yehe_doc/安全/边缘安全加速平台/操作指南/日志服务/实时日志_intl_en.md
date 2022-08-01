@@ -1,7 +1,5 @@
 ## Overview
 EdgeOne provides the real-time logging feature to collect and ship access logs in real time, allowing for fast retrieval and analysis of log data. 
->?The EdgeOne console is now only available to beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
-
 
 ## Use Cases
 You can access log data to view or analyze business conditions in multiple dimensions in real time.

@@ -1,8 +1,7 @@
 
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Certificate management** > **HTTPS configuration** on the left sidebar.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 
-3. On the HTTPS configuration page, select the target site and configure the following HTTPS items for site acceleration:
+2. On the HTTPS configuration page, select the target site and configure the following HTTPS items for site acceleration:
 
 ### Forced HTTPS[](id:QZ)
 In the forced HTTPS module, click ![](https://qcloudimg.tencent-cloud.cn/raw/4f521701c30f8f3f7ca4b577e00b62b9.png) to forcibly redirect all edge HTTP requests to HTTPS through 301/302. It is disabled by default.

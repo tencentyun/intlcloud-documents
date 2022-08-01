@@ -5,8 +5,6 @@ You may need to pass site verification to prove your ownership of a site in the 
 - You select the CNAME connection method when adding a site.
 - You switch the NS connection method of a site to CNAME connection in the DNS service menu.
 
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-
 ## Directions
 EdgeOne uses a TXT record to verify your domain ownership. The steps are as follows:
 1. Log in at your DNS service provider.

@@ -11,11 +11,12 @@
 
 ## 下载并配置 GooseFS
 
-1. 从官方仓库下载 GooseFS 安装包到本地。官方仓库下载链接：[goosefs-1.2.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz)。
+1. 从官方仓库下载 GooseFS 安装包到本地。官方仓库下载链接：[goosefs-1.3.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.3.0/release/goosefs-1.3.0-bin.tar.gz)。
 2. 执行如下命令，对安装包进行解压。
 ```shell
-tar -zxvf goosefs-1.2.0-bin.tar.gz
-cd goosefs-1.2.0
+tar -zxvf goosefs-1.3.0-bin.tar.gz
+cd goosefs-1.3.0
+
 ```
  解压后，得到 goosefs-1.2.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
 3. 在 `${GOOSEFS_HOME}/conf` 的目录下，创建 `conf/goosefs-site.properties` 的配置文件，可以使用内置的配置模板：
@@ -284,7 +285,7 @@ $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 2. 统计文件中有多少单词 “tencent”，并计算操作耗时：
 
 ```shell
-$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
+$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
 real	0m22.857s
 user	0m7.557s
@@ -297,7 +298,7 @@ sys	0m1.181s
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
 ED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
-$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
+$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
 real	0m1.917s
 user	0m2.306s

@@ -11,11 +11,11 @@ GooseFS 사용 전 아래 작업을 준비해야 합니다.
 
 ## GooseFS 다운로드 및 구성
 
-1. 공식 홈페이지 라이브러리에서 GooseFS 설치 패키지를 로컬에 다운로드 합니다. 다운로드 링크: [goosefs-1.2.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz).
+1. 공식 홈페이지 라이브러리에서 GooseFS 설치 패키지를 로컬에 다운로드 합니다. 다운로드 링크: [goosefs-1.3.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.3.0/release/goosefs-1.3.0-bin.tar.gz).
 2. 아래 명령어를 실행하여 설치 패키지의 압축을 해제합니다.
 ```shell
-tar -zxvf goosefs-1.2.0-bin.tar.gz
-cd goosefs-1.2.0
+tar -zxvf goosefs-1.3.0-bin.tar.gz
+cd goosefs-1.3.0
 ```
  압축 해제 후 gooseFS의 홈 디렉터리인 goosefs-1.2.0이 생성됩니다. 아래 문장에서는 해당 디렉터리의 절대 경로를 `${GOOSEFS_HOME}`으로 대신합니다.
 3. `${GOOSEFS_HOME}/conf`의 디렉터리에 `conf/goosefs-site.properties`의 구성 파일을 생성하여 내장된 설정 템플릿을 사용할 수 있습니다.
@@ -287,7 +287,7 @@ $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 2. 파일에 단어 'tencent'가 몇 개 있는지 통계를 낸 후 작업 소요 시간을 계산합니다.
 
 ```shell
-$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
+$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
 real	0m22.857s
 user	0m7.557s
@@ -300,7 +300,7 @@ sys	0m1.181s
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
 ED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
-$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
+$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
 real	0m1.917s
 user	0m2.306s

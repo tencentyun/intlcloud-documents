@@ -1,11 +1,9 @@
 EdgeOne supports proxy-based acceleration. In the EdgeOne console, there are two options: 
 - Only DNS
-- Enable proxy 
+- Proxy Acceleration
 
 You can enable or disable the proxy for each host record (subdomain) under the same site on the **[Domain Name Service](https://console.cloud.tencent.com/edgeone/dns?tab=records)** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ec574149cc9fd739eb4316f95a4cb988.png)
-
->?The EdgeOne console is now only available to beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 
 ## Only DNS (Proxy Disabled)
