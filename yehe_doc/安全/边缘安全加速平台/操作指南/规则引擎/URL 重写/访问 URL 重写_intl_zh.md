@@ -1,7 +1,6 @@
 
 ## 功能简介
 将客户端实际发起请求访问的 URL 重写到目标 URL，匹配节点缓存资源的 URL。
->?目前边缘安全加速平台控制台仅对部分用户开放，如需访问控制台，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 开通权限。
 
 ## 操作步骤
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**规则引擎**。
