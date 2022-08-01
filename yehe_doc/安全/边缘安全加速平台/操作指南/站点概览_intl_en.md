@@ -1,8 +1,6 @@
 ## Overview
 The EdgeOne overview page allows you to quickly view the overall status of the current site and access feature pages and product documentation through quick links. It contains the acceleration and security service data, site management, service status, FAQs, and documentation modules.
 
->? Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Service Overview** on the left sidebar.
