@@ -1,7 +1,6 @@
 ## Overview
 
 The origin-pull URL rewrite feature rewrites the URL in the origin-pull request initiated by a node to an origin server to the target URL, which doesn't affect the node cache key.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.
