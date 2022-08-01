@@ -8,8 +8,6 @@ If `demo.jpg` does not vary by letter case (that is, even if in different letter
 
 Check the impact of the letter case on resources in business resource URLs and use the **case ignoring** feature to optimize the cache accordingly.
 
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **Cache configuration** on the left sidebar.
