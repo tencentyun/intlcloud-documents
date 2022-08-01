@@ -9,7 +9,6 @@ When a node responds to a resource request, it will use the complete request URL
 If `example.jpg` does not vary by query string parameters (that is, `example.jpg` will match the same image even if the `time` parameters are different), you can ignore the entire query string in the two request URLs to unify the requests to match the same node cache. For example, both `https://www.example.com/images/example.jpg?time=1` and `https://www.example.com/images/example.jpg?time=2` match the cached resource `https://www.example.com/images/example.jpg`.
 
 Check the impact of the query string on resources in business resource URLs and use the **query string** feature to optimize the cache accordingly.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **Cache configuration** on the left sidebar.
