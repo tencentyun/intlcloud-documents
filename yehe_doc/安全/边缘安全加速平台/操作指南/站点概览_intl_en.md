@@ -10,6 +10,8 @@ The EdgeOne overview page allows you to quickly view the overall status of the c
 
 ### Workflow
 On the top of the page, you can see the different service modules, core features, and connection status of the selected site. You can quickly view its enabled and disabled product services and enter core feature pages through quick links.
+![](https://qcloudimg.tencent-cloud.cn/raw/388afa77fec0728be11013687872961a.png)
+
 >? If **All sites** is selected, the connection statuses of different service modules don't change dynamically. They will change dynamically only when a specific site is selected.
 
 ### Site management
