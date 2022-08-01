@@ -9,7 +9,6 @@ Thanks to full-duplex, WebSocket is widely used in scenarios such as social netw
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site Acceleration** > **Network Optimization** on the left sidebar.
-> ?The EdgeOne console is not yet fully available. To access the console, please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
 2. On the network optimization page, select a site, and toggle the switch of the WebSocket module on/off. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/3781219b61ab48f0f32588c1bee56869.png)
 **Parameter description:**
@@ -20,5 +19,5 @@ Thanks to full-duplex, WebSocket is widely used in scenarios such as social netw
 > ?
 > - Maximum connection time: If there is no data transmissions within the period, the connection will be disconnected. 
 > - The maximum connection duration varies with the following editions:
-> - Ultimate: 120s
-> - Standard: 60s
+     - Ultimate: 120s
+     - Standard: 60s
