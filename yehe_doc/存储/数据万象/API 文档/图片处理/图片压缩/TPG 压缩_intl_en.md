@@ -1,42 +1,42 @@
-## Overview
+## Feature Overview
 
 Image compression is the process of downsizing an image as much as possible without sacrificing quality so that it can be stored at a lower cost and accessed more quickly.
 
-[CI](https://intl.cloud.tencent.com/document/product/1045/33422) launched the TPG compression feature. It converts images to the .tpg format, which is a proprietary image format launched by Tencent and supports animated images. Currently, QQ Browser, Qzone, and other Tencent products support .tpg by default. A .tpg image is over 90% or 50% smaller than a .gif or .png image with the same quality, respectively.
+[CI](https://intl.cloud.tencent.com/document/product/1045/33422) launched the TPG compression feature to convert images into TPG format, a Tencent-developed format with animated image support. Currently, products such as QQ Browser and Qzone have TPG support by default. TPG offers over 90% smaller file sizes at the same quality compared with GIF, and over 50% smaller file sizes compared with PNG.
 
 ## Restrictions
 
-- Format: Images in JPG, PNG, BMP, GIF, WebP, HEIF, or AVIF format can be converted to TPG format.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
-- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
+- Format: Images in JPG, PNG, BMP, GIF, WebP, HEIF, AVIF, or other formats can be converted into TPG.
+- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million pixels.
+- Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
 
-## Prerequisites
+## Preparation
 
-- To use TPG compression, enable the image advanced compression feature for your bucket on its configuration page. For more information, see [Setting Image Advanced Compression](https://intl.cloud.tencent.com/document/product/436/40117).
-- TPG is Tencent's proprietary image format. To use it, ensure that **the environment where images are loaded supports TPG decoding**. CI provides the TPG decoder-integrated SDKs for [iOS](https://intl.cloud.tencent.com/document/product/1045/47707), [Android](https://intl.cloud.tencent.com/document/product/1045/45575), and [Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) to facilitate quick integration with TPG.
+- To use TPG compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, see [Setting Image Advanced Compression](https://intl.cloud.tencent.com/document/product/436/40117).
+- To use the TPG format, ensure that **the environment where images are loaded supports TPG decoding**. Tencent Cloud CI provides the TPG decoder−integrated SDKs for [iOS](https://intl.cloud.tencent.com/document/product/1045/47707), [Android](https://intl.cloud.tencent.com/document/product/1045/45575), and [Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) clients to facilitate quick integration with TPG.
 
-## Directions
+## Use Directions
 
-CI uses the `imageMogr2` API to provide the TPG compression feature.
+CI uses the **imageMogr2** API to provide the TPG compression feature.
 
-This feature supports processing:
+An image can be processed:
 
-- During download
-- During upload
-- In the cloud
+- Upon download
+- Upon upload
+- In cloud
 
->? TPG compression is billed at image advanced compression prices by CI. For detailed pricing, see Image Processing Fees.
+>? TPG compression is billed at the image advanced compression ratio by CI. For detailed pricing, see Image Processing Fees.
 >
 
-## API Sample
+## API Format
 
-#### 1. Processing during download
+#### 1. Processing upon download
 
 ```plaintext
 download_url?imageMogr2/format/tpg
 ```
 
-#### 2. Processing during upload
+#### 2. Processing upon upload
 
 ```http
 PUT /<ObjectKey> HTTP/1.1
@@ -74,25 +74,27 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+>? 
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> 
 
 ## Parameters
 
 | Parameter | Description |
 | :--------------- | :----------------------------------------------------------- |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>; for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
-| /format/&lt;Format> | Compression format, which is `tpg` here.                             |
+| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| /format/&lt;Format> | Compression format, which is `tpg`                             |
 
-## Use Cases
+## Examples
 
->? **Processing during download** is used as a use case here, which does not store the output image in a bucket. If you need to store the output image, use **processing during upload** or **processing in-cloud data** instead.
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **Processing upon upload** or **Processing in-cloud data** instead.
 >
 
-Assume the input image is a 1,335.2 KB image in PNG format as shown below:
+Assume that the input image is a 1,335.2 KB image in PNG format, as shown below:
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png)
 
-You can convert the image to TPG format by using the following request URL:
+You can convert the image into TPG format by using the following URL:
 
 ```plaintext
 http://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png?imageMogr2/format/tpg

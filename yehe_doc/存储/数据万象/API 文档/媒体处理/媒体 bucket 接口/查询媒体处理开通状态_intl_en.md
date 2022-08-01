@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`DescribeMediaBuckets`) is used to query buckets with media processing enabled.
+This API is used to query buckets with media processing enabled.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -12,7 +12,7 @@ This API (`DescribeMediaBuckets`) is used to query buckets with media processing
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
             </div>
         </div>
     </div>
@@ -33,11 +33,15 @@ Content-Type: application/xml
 
 ```
 
-> ?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -49,18 +53,18 @@ The request body of this request is empty.
 
 | Parameter | Description | Type | Required |
 | :---------- | :----- | :------------------ | :------- |
-| regions     |  Region abbreviation, such as `ap-shanghai` and `ap-beijing`. If multiple region abbreviations are specified, separate them with commas (,). For more information, please see [Regions and Domain Names](https://intl.cloud.tencent.com/document/product/1045/33423). | string |  No    |
-| bucketNames | Bucket name. If multiple bucket names are specified, separate them with commas (,). Exact search is supported.  | string | No |
-| bucketName  | Bucket name prefix, for prefix search        | string |  No       |
-| pageNumber  | Page number                  |  string | No       |
-| pageSize    | Number of records per page                | string | No       |
+| regions     |  Region information, such as `ap-shanghai` and `ap-beijing`. To specify multiple regions, separate them with commas. For more information, see [Regions and Domain Names](https://intl.cloud.tencent.com/document/product/1045/33423). | string |  No    |
+| bucketNames | Bucket name. To specify multiple bucket names, separate them with commas. Exact search is supported. | string | No |
+| bucketName  | Bucket name prefix for prefix search.        | string |  No       |
+| pageNumber  | Page number.                  |  string | No       |
+| pageSize    | Number of entries per page.                | string | No       |
 
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -80,36 +84,36 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None | Response container | Container |
+| Response           | None     | Response container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------------------------ | :-------- |
-| RequestId          | Response | Unique ID of the request                   | String    |
-| TotalCount         | Response | Total number of media buckets                | Int       |
-| PageNumber         | Response | Current page number. Same as `pageNumber` in the request. | Int       |
-| PageSize           | Response | Number of records per page. Same as `pageSize` in the request.   | Int       |
-| MediaBucketList    | Response | Media bucket list                | Container |
+| RequestId          | Response | Unique ID of the request.                   | String    |
+| TotalCount         | Response | Total number of media buckets.                | Int       |
+| PageNumber         | Response | Current page number, which is the same as `pageNumber` in the request.                           | Int       |
+| PageSize           | Response | Number of entries per page, which is the same as `pageSize` in the request.   | Int       |
+| MediaBucketList    | Response | Media bucket list.                | Container |
 
 `MediaBucketList` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----------------------- | :---------------------- | :----- |
-| BucketId           | Response.MediaBucketList | Bucket ID               | String |
-| Name               | Response.MediaBucketList | Bucket name. Same as `BucketId`. | String |
-| Region             | Response.MediaBucketList | Bucket region              | String |
-| CreateTime         | Response.MediaBucketList | Bucket creation time                | String |
+| BucketId           | Response.MediaBucketList | Bucket ID.               | String |
+| Name               | Response.MediaBucketList | Bucket name, which is the same as `BucketId`. | String |
+| Region             | Response.MediaBucketList | Bucket region.              | String |
+| CreateTime         | Response.MediaBucketList | Creation time.                | String |
 
 #### Error codes
 
-No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Examples
+## Samples
 
 #### Request
 

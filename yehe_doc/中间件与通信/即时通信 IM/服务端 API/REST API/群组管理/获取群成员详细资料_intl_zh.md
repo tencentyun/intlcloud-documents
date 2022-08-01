@@ -102,7 +102,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
         "MsgSeq",
         "MsgFlag",
         "LastSendMsgTime",
-        "ShutUpUntil",
+        "MuteUntil",
         "NameCard"
     ]
 }
@@ -138,7 +138,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
         "MsgSeq",
         "MsgFlag",
         "LastSendMsgTime",
-        "ShutUpUntil",
+        "MuteUntil",
         "NameCard"
     ],
    "MemberRoleFilter":[ // 群成员身份过滤器
@@ -183,7 +183,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // 最后一次发消息的时间
-            "ShutUpUntil": 1431069882, // 禁言截至时间（秒数）
+            "MuteUntil": 1431069882, // 禁言截至时间（秒数）
             "AppMemberDefinedData": [ //群成员自定义字段
                 {
                    "Key": "MemberDefined1",
@@ -202,7 +202,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
+            "MuteUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
             "AppMemberDefinedData": [ // 群成员自定义字段
                 {
                    "Key": "MemberDefined1",
@@ -232,7 +232,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // 最后一次发消息的时间
-            "ShutUpUntil": 1431069882, // 禁言截至时间（秒数）
+            "MuteUntil": 1431069882, // 禁言截至时间（秒数）
         },
         {
             "Member_Account": "peter",
@@ -241,7 +241,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
+            "MuteUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
         }
     ]
 }
@@ -260,7 +260,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1, // 成员已读消息 seq
             "NameCard": "", // 成员名片
             "Role": "Owner", // 成员身份
-            "ShutUpUntil": 0 // 0表示未被禁言，否则为禁言的截止时间
+            "MuteUntil": 0 // 0表示未被禁言，否则为禁言的截止时间
         },
         {
             "JoinTime": 1450680436,
@@ -270,7 +270,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1,
             "NameCard": "",
             "Role": "Admin",
-            "ShutUpUntil": 0
+            "MuteUntil": 0
         }
     ],
     "MemberNum": 8 // 本群组，群成员总数
@@ -291,7 +291,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // 最后一次发消息的时间
-            "ShutUpUntil": 1431069882, // 禁言截至时间（秒数）
+            "MuteUntil": 1431069882, // 禁言截至时间（秒数）
              "AppMemberDefinedData": [ // 群成员自定义字段
                 {
                     "Key": "MemberDefined2",
@@ -306,7 +306,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
+            "MuteUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
             "AppMemberDefinedData": [ // 群成员自定义字段
                 {
                     "Key": "MemberDefined2",
@@ -333,7 +333,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // 最后一次发消息的时间
-            "ShutUpUntil": 1431069882, // 禁言截至时间（秒数）
+            "MuteUntil": 1431069882, // 禁言截至时间（秒数）
             "AppMemberDefinedData":[ // 群成员自定义字段
                 {
                    "Key":"MemberDefined1",
@@ -352,7 +352,7 @@ https://xxxxxx/v4/group_open_http_svc/get_group_member_info?sdkappid=88888888&id
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
+            "MuteUntil": 0, // 0表示未被禁言，否则为禁言的截止时间
             "AppMemberDefinedData": [ // 群成员自定义字段
                 {
                    "Key": "MemberDefined1",

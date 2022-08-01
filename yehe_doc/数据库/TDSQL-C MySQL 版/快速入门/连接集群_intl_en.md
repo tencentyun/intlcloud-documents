@@ -2,10 +2,10 @@
 You can connect to TDSQL-C for MySQL in the following ways:
 - **Private network connection**: A CVM instance can be used to connect to the private network address of a TDSQL-C for MySQL instance. This method utilizes the high-speed private network of Tencent Cloud and features low delay.
  - The CVM instance and the database must be under the same account and in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region.
- - The private network address is provided by the system by default and can be viewed in the cluster list or on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb).
+ - The private network address is provided by the system by default and can be viewed in the cluster list or on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb/mysql#/).
 >?CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over the private network through [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
 >
-- **Public network connection**: You can connect to your TDSQL-C for MySQL cluster at its public network address. The public network address needs to be [manually enabled](#waiwang). It can be viewed on the instance details page in the [console](https://console.cloud.tencent.com/cynosdb) and can be disabled if no longer needed.
+- **Public network connection**: You can connect to your TDSQL-C for MySQL cluster at its public network address. The public network address needs to be [manually enabled](#waiwang). It can be viewed on the instance details page in the console and can be disabled if no longer needed.
  - Enabling the public network address will expose your database services to the public network, which may lead to database intrusions or attacks. We recommend you use the private network to connect to the database. 
  - Public network access to TencentDB is suitable for development or auxiliary database management but not for actual business access, because uncontrollable factors may cause public network access to be unavailable, such as DDoS attacks and sudden surges in access traffic.
 - **DMC connection**: You can access TDSQL-C for MySQL through Database Management Console (DMC).
@@ -27,10 +27,10 @@ You can connect to TDSQL-C for MySQL in the following ways:
 >
 ![](https://main.qcloudimg.com/raw/1af292f989f03f3e02e1200b77cb70c1.png)
 5. Open MySQL Workbench, select **Database** > **Connect to Database**, enter the private (or public) network address, username, and password of your MySQL instance and click **OK** to log in.
-   - **Hostname**: Enter the private (or public) network address of the target database, which can be viewed on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb). For public network address, check whether it has been enabled as instructed in [Enabling Public Network Address](#waiwang).
+   - **Hostname**: Enter the private (or public) network address of the target database, which can be viewed on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb/mysql#/). For public network address, check whether it has been enabled as instructed in [Enabling Public Network Address](#waiwang).
    - **Port**: Private (or public) network port.
    - **Username**: The default value is `root`.
-   - **Password**: The password corresponding to the username. If you forgot the password, reset it in the [console](https://console.cloud.tencent.com/cynosdb).
+   - **Password**: The password corresponding to the username. If you forgot the password, reset it in the console.
 ![](https://main.qcloudimg.com/raw/9c9e5dcc8a2bb9fa15fa4d98a18308f1.png)
 6. After successful login, the following page will appear, where you can view the modes and objects of the database, create tables, and perform operations such as data insertion and query.
 ![](https://main.qcloudimg.com/raw/33f081e99c384258bbc5ed3683ed4d7d.png)
@@ -49,11 +49,11 @@ If `Complete!` is displayed, the MySQL client is installed successfully.
 ```
 mysql -h hostname -P port -u username -p
 ```
-       - hostname: Replace it with the private network address of the target cluster, which can be viewed on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb).
+       - hostname: Replace it with the private network address of the target cluster, which can be viewed on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb/mysql#/).
        - port: Replace it with the private network port number.
     	- username: Replace it with the default username `root`.
 For example, if the private network address is `10.0.168.14:5308` and the username is `root`, enter the following connection command: `mysql -h 10.0.168.14 -P 5308 -u root -p`.
-    2. Enter the password corresponding to the `root` account of the cluster after `Enter password:` is prompted. If you forgot the password, reset it in the [console](https://console.cloud.tencent.com/cynosdb).
+    2. Enter the password corresponding to the `root` account of the cluster after `Enter password:` is prompted. If you forgot the password, reset it in the console.
     If `MySQL [(none)]>` is displayed, you have logged in to TDSQL-C for MySQL successfully. ![](https://main.qcloudimg.com/raw/83b8a95cf4b99919b5899510691289b4.png)
    - **Public network connection:**
 
@@ -61,10 +61,10 @@ For example, if the private network address is `10.0.168.14:5308` and the userna
 ```
 mysql -h hostname -P port -u username -p
 ```
-       - hostname: Replace it with the public network address of the target cluster, which can be viewed together with the port on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb). If the public network address has not been enabled, enable it as instructed in [Enabling Public Network Address](#waiwang).
+       - hostname: Replace it with the public network address of the target cluster, which can be viewed together with the port on the cluster details page in the [console](https://console.cloud.tencent.com/cynosdb/mysql#/). If the public network address has not been enabled, enable it as instructed in [Enabling Public Network Address](#waiwang).
        - port: Replace it with the public network port number.
        - username: Replace it with the public network connection username. We recommend you create a separate account in the console for easier connection control.
-    2. Enter the password corresponding to the public network connection username after `Enter password:` is prompted. If you forgot the password, reset it in the [console](https://console.cloud.tencent.com/cynosdb).
+    2. Enter the password corresponding to the public network connection username after `Enter password:` is prompted. If you forgot the password, reset it in the console.
     In this example, `hostname` is 59281c4exxx.myqcloud.com and public network port is 15311.
 ![](https://main.qcloudimg.com/raw/16839344da3a588be93d814de224277a.png)
 4. Under the `MySQL [(none)]>` prompt, you can send an SQL statement to the TDSQL-C for MySQL server for execution. For specific command lines, see [mysql Client Commands](https://dev.mysql.com/doc/refman/5.7/en/mysql-commands.html).
@@ -73,7 +73,7 @@ Below takes `show databases;` as an example:
 
 
 ## Connection Through DMC
-1. Log in to the [console](https://console.cloud.tencent.com/cynosdb) and click **Log In** in the **Operation** column in the cluster list.
+1. Log in to the [console](https://console.cloud.tencent.com/cynosdb/mysql#/) and click **Log In** in the **Operation** column in the cluster list.
 2. On the login page of DMC, enter "root" as the account and the password configured for the root account during cluster creation and click **Log In**.
 >?DMC enables you to easily access instances, manipulate tables and databases, manage instance sessions, and monitor InnoDB lock waits, SQL window, etc. in real time.
 >
@@ -82,7 +82,7 @@ Below takes `show databases;` as an example:
 ## [Appendix 1. Enabling Public Network Address](id:waiwang)
 >?To connect over the public network, you need to enable the public network address of your database first.
 >
-1. Log in to the [console](https://console.cloud.tencent.com/cynosdb) and click a cluster ID in the cluster list to enter the cluster details page.
+1. Log in to the [console](https://console.cloud.tencent.com/cynosdb/mysql#/) and click a cluster ID in the cluster list to enter the cluster details page.
 2. On the cluster details page, click **Enable** after the public network addresses.
 ![](https://qcloudimg.tencent-cloud.cn/raw/b0de7eea7ba5d07a62c9b03438904047.png)
 3. In the pop-up window, click **OK**.

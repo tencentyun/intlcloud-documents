@@ -123,7 +123,7 @@ The following example is used to obtain the detailed group information, includin
             "MemberNum": 2, // The current number of members in the group.
             "MaxMemberNum": 50, // The maximum number of members in the group.
             "ApplyJoinOption": "FreeAccess", // The method for handling requests to join the group.
-            "ShutUpAllMember": "On", // All members in the group are muted.
+            "MuteAllMember": "On", // All members in the group are muted.
             "AppDefinedData": [ // Group-specific custom fields.
                 {
                     "Key": "GroupTestData1", // Key of the custom field.
@@ -142,7 +142,7 @@ The following example is used to obtain the detailed group information, includin
                     "MsgSeq": 1233,
                     "MsgFlag": "AcceptAndNotify", // Indicates whether the member blocks group messages.
                     "LastSendMsgTime": 1425976500, // The last time in UTC when the member sent a message in the group.
-                    "ShutUpUntil": 1431069882, // The UTC time when the muting period for the member expires.
+                    "MuteUntil": 1431069882, // The UTC time when the muting period for the member expires.
                     "AppMemberDefinedData": [ // Group member-specific custom fields.
                         {
                              "Key": "MemberDefined1",
@@ -161,7 +161,7 @@ The following example is used to obtain the detailed group information, includin
                     "MsgSeq": 1233,
                     "MsgFlag": "AcceptAndNotify",
                     "LastSendMsgTime": 1425976500, // The last time when the member sent a message.
-                    "ShutUpUntil": 0, // The value 0 indicates that the member is not muted, and other values indicate the time when the member will be unmuted.
+                    "MuteUntil": 0, // The value 0 indicates that the member is not muted, and other values indicate the time when the member will be unmuted.
                     "AppMemberDefinedData":[ // Group member-specific custom fields.
                         {
                             "Key": "MemberDefined1",

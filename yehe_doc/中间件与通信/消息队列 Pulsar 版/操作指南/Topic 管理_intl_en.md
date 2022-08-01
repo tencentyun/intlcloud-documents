@@ -16,7 +16,7 @@ You have created a namespace.
 1. Log in to the [TDMQ for Pulsar console](https://console.cloud.tencent.com/tdmq) and click **Topic Management** on the left sidebar.
 2. On the **Topic Management** page, click **Create** to pop up the **Create Topic** window.
 3. In the **Create Topic** window, enter the following information:
-   ![](https://qcloudimg.tencent-cloud.cn/raw/27e26efb1d41905affe40ae686d8e80c.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/d0d5b0e74d259fe81a2ea1f588318394.png)
     - Topic Name: It cannot be empty and can contain up to 128 digits, letters, and special symbols (-\_=:.).
     - Topic Type: **Persistent** or **Non-persistent**.
       - Persistent: Persistently stored messages are stored in the disk with multiple replicas to avoid message loss. Such messages are suitable for scenarios that require high data reliability such as financial or business transactions.
@@ -26,7 +26,7 @@ You have created a namespace.
       - Multi-partition topics have better performance than single-partition topics. To balance performance and sequence, you can use the Key-Shared subscription mode as instructed in [Subscription Mode](https://intl.cloud.tencent.com/document/product/1110/42923) to make messages partitionally sequential. You only need to mark messages that need to be sequential with the same key and deliver them to the same partition.
     - Description: Enter the topic remarks of up to 128 characters.
 4. Click **Save**, and you can see the created topic in the topic list.
-![](https://qcloudimg.tencent-cloud.cn/raw/d0328e4a60fb563b8f45a3808912de61.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/897456deed29b847d8876154740027a4.png)
 <table>
 <tr>
 <th>Parameter	</th>
@@ -34,7 +34,7 @@ You have created a namespace.
 </tr>
 <tr>
 <td>Topic Name</td>
-<td>The topic name in the format of `pulsar-****/namespace/topicName`.</td>
+<td>The topic name in the format of <code>pulsar-****/namespace/topicName</code>.</td>
 </tr>
 <tr>
 <td>Monitoring</td>
@@ -46,7 +46,7 @@ You have created a namespace.
 </tr>
 <tr>
 <td>Creator</td>
-<td>**User** or **System**.</td>
+<td><b>User</b> or <b>System</b>.</td>
 </tr>
 <tr>
 <td>Partition</td>
@@ -89,7 +89,7 @@ You can manually send a message to the specified topic in the TDMQ for Pulsar co
 
 1. In [Topic Management](https://console.cloud.tencent.com/tdmq/topic), click **Send Message** in the **Operation** column of the target topic.
 2. Enter the message content of up to 64 KB in the pop-up window.
-   ![](https://main.qcloudimg.com/raw/2962bfe289ab88a167fb8d94feed37fe.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/c7519c1bfe6c6d2b37810136ec9c8acb.png)
 3. Click **Submit** to send the message. After the message is sent, it can be consumed by any subscribers to the topic.
 
 
@@ -105,7 +105,7 @@ You can manually create a subscription in the TDMQ for Pulsar console.
  - Subscription Name: It can contain up to 64 characters.
  - Auto-Create Retry & Dead Letter Queue: You can choose whether to automatically create a retry letter topic and a dead letter topic.
  - Description: Enter remarks of up to 200 characters.
-![](https://qcloudimg.tencent-cloud.cn/raw/97151a4e137b3688f7a2753b78bea89f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/396cf90b66dbe4e456d9f033cae2a399.png)
 3. Click **Submit**.
    You can click **View Subscription** in the **Operation** column of a topic to view its subscriptions, and the subscription just created will be displayed in the list.
 
@@ -121,4 +121,4 @@ You can manually create a subscription in the TDMQ for Pulsar console.
 1. In **Topic Management**, click **More** > **Delete** in the **Operation** column of the target topic. You can also select multiple topics and click **Delete** at the top of the topic list.
 2. In the pop-up window, click **Submit**.
    Force Deletion: After this option is enabled, a topic will be forcibly deleted even if it has subscriptions.
-   <img src="https://main.qcloudimg.com/raw/017f18e218e06cf617b17ecd4450f113.png" width="600">
+   <img src="https://qcloudimg.tencent-cloud.cn/raw/c3eb46625efc49c0d5b4783569a2ffdb.png" width="600">

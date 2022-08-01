@@ -30,7 +30,7 @@
    - 集群说明：环境设置的备注说明，不能超过128个字符。
    - 资源标签：设置资源标签，关于标签的详细介绍请参考 [标签管理](https://intl.cloud.tencent.com/document/product/1110/42939)。
 4. 单击**确定**完成所在地域环境的创建。
-![](https://qcloudimg.tencent-cloud.cn/raw/cd37a6fe986563e73f48fcfc60ae225c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/04ebb189460de4b51f7a24d815d5dca7.png)
 
 > ? 每个用户最多可以创建5个虚拟集群。
 
@@ -77,7 +77,7 @@
 </table>
 - 集群的基础信息：集群名称/ID、版本、接入地址（仅2.7.1版本及以上集群可查看）、地域、创建时间、说明。
 - 集群的配置：
-![](https://qcloudimg.tencent-cloud.cn/raw/bf0156e250be21b5330420bc54dc1ba5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d555d9c26bb6bd5dd573e7451945ef81.png)
 <table>
 <tr>
 <th>集群配置</th>
@@ -130,7 +130,7 @@
 <dx-tabs>
 ::: 2.7.1及以上版本集群
 可直接获取接入地址，如下图。
-![](https://qcloudimg.tencent-cloud.cn/raw/a61db1a2876ddd64941d7e0591f9995c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4ee11d11a3a2f36c953c2c4e4667777f.png)
 :::
 ::: 2.6.1版本集群
 在接入点列表页，单击**新建**，填写接入点信息，完成接入点配置。

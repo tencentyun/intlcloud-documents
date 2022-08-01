@@ -22,7 +22,7 @@
 | Recalls one-to-one messages. | [v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015) |
 | Marks one-to-one messages as read. |[v4/openim/admin_set_msg_read](https://intl.cloud.tencent.com/document/product/1047/38996)|
 | Queries the unread one-to-one message counts. | [v4/openim/get_c2c_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/41046)|
-
+|Modifying Historical One-to-One Messages|[v4/openim/modify_c2c_msg](https://intl.cloud.tencent.com/document/product/1047/47722)|
 ## Pushing to All Users
 
 | Feature | API |
@@ -103,6 +103,7 @@
 |Modifies Custom Group Attributes|[v4/group_open_http_svc/modify_group_attr](https://intl.cloud.tencent.com/document/product/1047/44188)|
 |Clears Custom Group Attributes|	[v4/group_open_http_svc/clear_group_attr](https://intl.cloud.tencent.com/document/product/1047/44189)|
 |Resets Custom Group Attributes|[v4/group_open_http_svc/set_group_attr](https://intl.cloud.tencent.com/document/product/1047/44190)|
+|Modifying Historical Group Chat Messages|[v4/openim/modify_group_msg](https://intl.cloud.tencent.com/document/product/1047//47948)|
 
 ## Global Mute Management
 | Feature | API |

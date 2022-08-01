@@ -89,7 +89,7 @@ Welcome to the Tencent Cloud Domain Name Registration Agreement (the **Agreement
 
 7.1 You agree to pay the relevant Service fees in the sum, in such manner and within such timeframe as we will communicate to you. Your registration will not be effective unless we have received the payment for the relevant Services. For further payment terms, please refer to section 5 of the [Tencent Cloud Terms of Service](https://www.tencentcloud.com/document/product/301/9248), which shall apply, *mutatis mutandis*, to this Agreement.
 
-7.2 We expressly reserve the right to change or modify our prices and fees at any time, and such changes or modifications shall be posted online at **here**. and effective immediately without need for further notice to you provided that if you have purchased or obtained Services for a period of months or years, changes or modifications in prices and fees shall be effective when the Services in question come up for renewal, in accordance with Section 9.
+7.2 We expressly reserve the right to change or modify our prices and fees at any time, and such changes or modifications shall be posted online at [here](https://buy.tencentcloud.com/domain/price?type=overview). and effective immediately without need for further notice to you provided that if you have purchased or obtained Services for a period of months or years, changes or modifications in prices and fees shall be effective when the Services in question come up for renewal, in accordance with Section 9.
 
 **8.Term and termination of this Agreement**
 

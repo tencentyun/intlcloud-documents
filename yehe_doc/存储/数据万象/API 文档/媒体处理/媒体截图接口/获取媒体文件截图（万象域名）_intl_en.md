@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 
 This API (`GenerateSnapshot`) is used to get a screenshot of a media file at some time point. All output screenshots are in JPEG format.
 
@@ -17,7 +17,10 @@ Content-type: application/xml
 <body>
 ```
 
-> ?Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+>? 
+> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> 
 
 #### Request headers
 
@@ -46,7 +49,7 @@ Nodes of the request body for this API are as follows:
 </Request>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :-------------------------------- | :-------- | :------- |
@@ -99,7 +102,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
@@ -123,7 +126,7 @@ The nodes are described as follows:
 
 There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
 
-## Use Cases
+## Samples
 
 #### Request
 

@@ -102,7 +102,7 @@ You can use the `MemberInfoFilter` filter field to specify fields to pull. Field
         "MsgSeq",
         "MsgFlag",
         "LastSendMsgTime",
-        "ShutUpUntil",
+        "MuteUntil",
         "NameCard"
     ]
 }
@@ -138,7 +138,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
         "MsgSeq",
         "MsgFlag",
         "LastSendMsgTime",
-        "ShutUpUntil",
+        "MuteUntil",
         "NameCard"
     ],
    "MemberRoleFilter":[ // Member role filter
@@ -183,7 +183,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // Last time when the member sent a message
-            "ShutUpUntil": 1431069882, // Muting end time in seconds
+            "MuteUntil": 1431069882, // Muting end time in seconds
             "AppMemberDefinedData": [ // Custom group member fields
                 {
                    "Key": "MemberDefined1",
@@ -202,7 +202,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
+            "MuteUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
             "AppMemberDefinedData": [ // Custom group member fields
                 {
                    "Key": "MemberDefined1",
@@ -232,7 +232,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // Last time when the member sent a message
-            "ShutUpUntil": 1431069882, // Muting end time in seconds
+            "MuteUntil": 1431069882, // Muting end time in seconds
         },
         {
             "Member_Account": "peter",
@@ -241,7 +241,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
+            "MuteUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
         }
     ]
 }
@@ -260,7 +260,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1, // Sequence number of the member’s read message
             "NameCard": "", // Member’s contact card
             "Role": "Owner", // Member’s role
-            "ShutUpUntil": 0 // `0`: the member is not muted; other values: the time when the member will be unmuted
+            "MuteUntil": 0 // `0`: the member is not muted; other values: the time when the member will be unmuted
         },
         {
             "JoinTime": 1450680436,
@@ -270,7 +270,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1,
             "NameCard": "",
             "Role": "Admin",
-            "ShutUpUntil": 0
+            "MuteUntil": 0
         }
     ],
     "MemberNum": 8 // Total number of members in the group
@@ -291,7 +291,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // Last time when the member sent a message
-            "ShutUpUntil": 1431069882, // Muting end time in seconds
+            "MuteUntil": 1431069882, // Muting end time in seconds
              "AppMemberDefinedData": [ // Custom group member fields
                 {
                     "Key": "MemberDefined2",
@@ -306,7 +306,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
+            "MuteUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
             "AppMemberDefinedData": [ // Custom group member fields
                 {
                     "Key": "MemberDefined2",
@@ -333,7 +333,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500, // Last time when the member sent a message
-            "ShutUpUntil": 1431069882, // Muting end time in seconds
+            "MuteUntil": 1431069882, // Muting end time in seconds
             "AppMemberDefinedData":[ // Custom group member fields
                 {
                    "Key":"MemberDefined1",
@@ -352,7 +352,7 @@ You can use the `AppDefinedDataFilter_GroupMember` filter field to specify the c
             "MsgSeq": 1233,
             "MsgFlag": "AcceptAndNotify",
             "LastSendMsgTime": 1425976500,
-            "ShutUpUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
+            "MuteUntil": 0, // `0`: the member is not muted; other values: the time when the member will be unmuted
             "AppMemberDefinedData": [ // Custom group member fields
                 {
                    "Key": "MemberDefined1",

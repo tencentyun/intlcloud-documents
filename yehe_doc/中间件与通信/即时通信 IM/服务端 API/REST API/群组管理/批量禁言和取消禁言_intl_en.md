@@ -47,7 +47,7 @@ The following table only describes the modified parameters when this API is call
 ### Sample request packets
 
 - **Muting members**
-You can set a specific period of time in `ShutUpTime` to mute specified members.
+You can set a specific period of time in `MuteTime` to mute specified members.
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",
@@ -55,11 +55,11 @@ You can set a specific period of time in `ShutUpTime` to mute specified members.
         "peter",
         "leckie"
     ],
-    "ShutUpTime": 60 // Muting period (unit: second)
+    "MuteTime": 60 // Muting period (unit: second)
 }
 ```
 - **Unmuting members**
-To unmute members, set `ShutUpTime` to `0`.
+To unmute members, set `MuteTime` to `0`.
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",
@@ -67,7 +67,7 @@ To unmute members, set `ShutUpTime` to `0`.
         "peter",
         "leckie"
     ],
-    "ShutUpTime": 0 // 0 indicates to unmute members.
+    "MuteTime": 0 // 0 indicates to unmute members.
 }
 ```
 
@@ -77,7 +77,7 @@ To unmute members, set `ShutUpTime` to `0`.
 |---------|---------|---------|---------|
 | GroupId | String | Yes | The ID of the group to be queried |
 | Members_Account | Array | Yes | The member accounts to be muted. A maximum of 500 accounts are supported. |
-| ShutUpTime | Integer | Yes | Unsigned type. The muting period in seconds. `0` indicates to unmute members. `4294967295` indicates to permanently mute members. |
+| MuteTime | Integer | Yes | Unsigned type. The muting period in seconds. `0` indicates to unmute members. `4294967295` indicates to permanently mute members. |
 
 ### Sample response packet
 

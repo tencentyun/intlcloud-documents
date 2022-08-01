@@ -1,41 +1,41 @@
-## Overview
+## Feature Overview
 
 Image compression is the process of downsizing an image as much as possible without sacrificing quality so that it can be stored at a lower cost and accessed more quickly.
 
-[CI](https://intl.cloud.tencent.com/document/product/1045/33422) launched the WebP compression feature to convert images to .webp format, which is superior to .jpg in terms of compression. A .webp image is over 25% smaller than a .jpg image with the same quality. This format is suitable for multi-terminal use cases.
+[CI](https://intl.cloud.tencent.com/document/product/1045/33422) launched the WebP compression feature to convert images into WebP format, a format that outperforms JPG in terms of compression. WebP offers over 25% smaller file sizes at the same quality compared with JPG, making it suitable for more clients.
 
 ## Restrictions
 
-- Format: Images in JPG, PNG, BMP, GIF, HEIF, or AVIF format can be converted to WebP format.
-- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels respectively, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For an animated input image, the total number of pixels (width * height * number of frames) cannot exceed 250 million.
-- Frames (for animated images): For GIF images, the number of frames cannot exceed 300.
+- Format: Images in JPG, PNG, BMP, GIF, TPG, HEIF, AVIF, or other formats can be converted into WebP.
+- Size: The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels, and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million pixels.
+- Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
 
-## Directions
+## Use Directions
 
-CI uses the `imageMogr2` API to provide the WebP compression feature.
+CI uses the **imageMogr2** API to provide the WebP compression feature.
 
-This feature supports processing:
+An image can be processed:
 
-- During download
-- During upload
-- In the cloud
+- Upon download
+- Upon upload
+- In cloud
 
 >? 
->- WebP compression is billed at basic image processing prices. For detailed pricing, see Image Processing Fees.
->- If an image is converted to WebP format, some browsers may not be able to read its EXIF data. As a result, the image cannot be rotated. You can add the `auto-orient` parameter to rotate the input image first before compressing it (see [Rotation](https://intl.cloud.tencent.com/document/product/1045/33715)) .
+>- WebP compression is billed at the basic image processing ratio. For detailed pricing, see Image Processing Fees.
+>- If an image is converted into WebP, some browsers may not be able to read its EXIF data. As a result, the image cannot be rotated. You can add the `auto-orient` parameter to rotate the input image first (see [Rotation](https://intl.cloud.tencent.com/document/product/1045/33715)) before compressing it.
 >- WebP compression inherits the quality parameters of the input image by default. You can adjust the compression ratio by modifying the image quality as instructed in [Quality Change](https://intl.cloud.tencent.com/document/product/1045/33717).
 >
 
 
-## API Sample
+## API Format
 
-#### 1. Processing during download
+#### 1. Processing upon download
 
 ```plaintext
 download_url?imageMogr2/format/webp
 ```
 
-#### 2. Processing during upload
+#### 2. Processing upon upload
 
 ```http
 PUT /<ObjectKey> HTTP/1.1
@@ -73,31 +73,33 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+>? 
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> 
 
 ## Parameters
 
 | Parameter | Description |
 | :--------------- | :----------------------------------------------------------- |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>; for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
-| /format/&lt;Format> | Compression format, which is `webp` here.                             |
+| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| /format/&lt;Format> | Compression format, which is `webp`     |
 
-## Samples
+## Examples
 
->? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **processing during upload** or **processing in-cloud data** instead.
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **Processing upon upload** or **Processing in-cloud data** instead.
 >
 
-Assume the input image is a 1,335.2 KB image in PNG format as shown below:
+Assume that the input image is a 1,335.2 KB image in PNG format, as shown below:
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png)
 
-You can convert the image to WebP format by using the following request URL:
+You can convert the image into WebP format by using the following URL:
 
 ```plaintext
 http://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png?imageMogr2/format/webp
 ```
 
-Output:
+Output image:
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png?imageMogr2/format/webp)
 
 **Compression ratio comparison**

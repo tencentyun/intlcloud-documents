@@ -7,8 +7,8 @@ You need to allow the client IP and open the service port in the CVM security gr
 If you want to use a CLB instance to forward business traffic to your CVM instance, the CVM security group should be configured as follows to ensure effective health checks:
 1. Public network CLB: You need to allow the CLB VIP in the security group of the backend CVM, so that the CLB instance can use the VIP to check the health status of the backend CVM.
 2. Private network CLB:
- - For private network CLB (formerly called the application private network CLB), if your CLB instance is in a VPC, the CLB VIP needs to be allowed in the security group of the backend CVM for health checks; if your CLB instance is in a basic network, no additional configuration is needed as the health check IP is allowed by default.
- - For classic private network CLB, if your CLB instance was created before December 5, 2016 and is in a VPC, the CLB VIP needs to be allowed in the security group of the backend CVM for health checks; otherwise, no additional configuration is needed as the health check IP is allowed by default.
+   - For private network CLB (formerly called the application private network CLB), if your CLB instance is in a VPC, the CLB VIP needs to be allowed in the security group of the backend CVM for health checks; if your CLB instance is in a basic network, no additional configuration is needed as the health check IP is allowed by default.
+   - For classic private network CLB, if your CLB instance was created before December 5, 2016 and is in a VPC, the CLB VIP needs to be allowed in the security group of the backend CVM for health checks; otherwise, no additional configuration is needed as the health check IP is allowed by default.
 
 ## Configuration Sample
 This example shows a sample of configuring CVM security groups when accessing a CVM through the CLB. To configure the rules of CLB security groups, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
@@ -54,8 +54,8 @@ CLB VIP    + 8080 allow
 ```
 - **Application Scenario 5: Blocklist**
 If you need to configure a blocklist for some client IPs to deny their access requests, you can configure the security group associated with the cloud services. The security group rules need to be configured as follows:
- - Add the Client IP and port to be rejected into the security group, and select the option in the policy column to reject access from this IP.
- - Add another security group rule after completing the above configuration to allow access requests to the port from all IPs by default.
+   - Add the Client IP and port to be rejected into the security group, and select the option in the policy column to reject access from this IP.
+   - Add another security group rule after completing the above configuration to allow access requests to the port from all IPs by default.
 When the configuration completes, the security group rules are as follows:
 ```
 clientA IP + port drop

@@ -7,7 +7,7 @@ CKafka offers a quick diagnosis feature to help you automatically check potentia
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of the target instance to enter its basic information page.
 3. Select the **Smart Ops** tab at the top and click **Quick Diagnosis**.
-4. Click **Quick Diagnosis** in the top-left corner to start diagnosis. The diagnosis result will be displayed on the page. You can also enable **Auto Diagnosis**. Then, a diagnosis task will be triggered at the specified time every day and generate a diagnosis report.
+4. Click **Quick Diagnosis** in the top-left corner to start diagnosis. The diagnosis result will be displayed on the page. You can also enable **Auto-Diagnosis**. Then, a diagnosis task will be triggered at the specified time every day and generate a diagnosis report.
 **View the diagnosis result**
 ![](https://qcloudimg.tencent-cloud.cn/raw/7379603d1f2eb92ae98835a7c5713f11.png)
 

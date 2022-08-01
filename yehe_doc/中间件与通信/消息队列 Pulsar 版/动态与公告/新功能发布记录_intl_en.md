@@ -14,7 +14,7 @@
 <td>Supported setting limits on cluster quotas</td>
 <td>To enhance the stability of virtual clusters, limits are imposed on some cluster quotas (existing clusters are not affected):
 <li>The range of the TTL for new namespaces is changed to 60 seconds–1 day.</li>
-<li>For new virtual clusters, the maximum production/consumption TPS per topic partition is changed from 50,000 to 5,000, and the maximum production/consumption bandwidth per topic partition is changed from 50 MB/s to 5 MB/s, so as to avoid the mutual impact between users due to excessive traffic.</li></td>
+<li>For new virtual clusters, the maximum production/consumption TPS per topic partition is reduced from 50,000 to 5,000, and the maximum production/consumption bandwidth per topic partition is reduced from 50 MB/s to 5 MB/s, so as to avoid the mutual impact between users due to excessive traffic.</li></td>
 <td>2022-06-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1110/42907">Use Limits</a></td>
 </tr><tr>

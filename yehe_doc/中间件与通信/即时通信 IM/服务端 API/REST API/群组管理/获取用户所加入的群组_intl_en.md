@@ -9,8 +9,8 @@ This API is used by app admins to obtain the list of groups a certain user has j
 | Private | Yes. Same as Work (work group for friends) in the new version. The information work groups that the user has joined but are not activated is not returned by default. |
 | Public | Yes. |
 | ChatRoom | Yes. Same as Meeting (temporary meeting group) in the new version. |
-| AVChatRoom | Yes. The information of AVChatRooms that the user has joined is not returned by default. |
-
+| AVChatRoom | Yes. The information of AVChatRooms that the user has joined is not returned by default. If you specify to pull AVChatRoom type group information, the obtained group information may not be complete. AVChatRoom does not store all group membership data. |
+|Community |Yes. |
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 ### Sample request URL
 ```
@@ -114,7 +114,7 @@ To specify the group member information in the group that needs to be pulled, se
             "MemberNum",
             "MaxMemberNum",
             "ApplyJoinOption",
-            "ShutUpAllMember"
+            "uteAllMember"
         ],
         "SelfInfoFilter": [
             "Role", 
@@ -135,7 +135,7 @@ To specify the group member information in the group that needs to be pulled, se
 | WithNoActiveGroups | Integer | Optional | Whether to obtain the list of Private groups (work group for friends, same as Work in the new version) that the user has joined but are not activated. 0 (default): no, 1: yes. |
 | Limit | Integer | Optional | Number of groups to be pulled in a single request. If this parameter is not specified, all groups are pulled. |
 | Offset | Integer | Optional | Sequence number of the group starting from which the information is pulled |
-| GroupType | String | Optional | Types of groups to pull, for example, Public (social networking group for strangers), Private (work group for friends, same as Work in the new version), ChatRoom (meeting group, same as Meeting in the new version), or AVChatRoom (livestreaming group). If this parameter is not specified, all types of groups are pulled. |
+| GroupType | String | Optional | Types of groups to pull, for example, Public (social networking group for strangers), Private (work group for friends, same as Work in the new version), ChatRoom (meeting group, same as Meeting in the new version), AVChatRoom (livestreaming group) or Community. If this parameter is not specified, all types of groups are pulled. |
 | ResponseFilter | Object | Optional | This includes two filters: GroupBaseInfoFilter and SelfInfoFilter. GroupBaseInfoFilter specifies the basic information fields to be pulled. For details, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). SelfInfoFilter specifies whether to pull the operator’s own information in each group. For details, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
 
 ### Sample response packet body
@@ -231,7 +231,7 @@ To specify the group member information in the group that needs to be pulled, se
                 "Role": "Member",
                 "MsgSeq": 1
             },
-            "ShutUpAllMember": "Off",
+            "uteAllMember": "Off",
             "Type": "Private"
         }
     ]

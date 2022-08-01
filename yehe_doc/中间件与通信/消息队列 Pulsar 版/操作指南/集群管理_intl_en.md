@@ -30,14 +30,14 @@ Clusters are divided into virtual clusters and exclusive clusters:
    - Cluster Description: Enter the cluster description of up to 128 characters.
    - Resource Tag: Set a resource tag. For more information, see [Managing Resource with Tag](https://intl.cloud.tencent.com/document/product/1110/42939).
 4. Click **OK**.
-![](https://qcloudimg.tencent-cloud.cn/raw/cd37a6fe986563e73f48fcfc60ae225c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/04ebb189460de4b51f7a24d815d5dca7.png)
 
 > ? Each user can create up to 5 virtual clusters.
 
 #### Subsequent steps
 
 1. [Get the access address](#Getting-access-address) to get the connection information of the server (only clusters on v2.6.1 require configuring an access point; for clusters on v2.7.1 or later, the access address can be copied directly).
-2. Create a [namespace](https://intl.cloud.tencent.com/document/product/1110/42929) in the cluster. 
+2. Create a namespace as instructed in [Namespace](https://intl.cloud.tencent.com/document/product/1110/42929) in the cluster. 
 3. Create a role as instructed in [Role and Authentication](https://intl.cloud.tencent.com/document/product/1110/42936) in the cluster and grant it the production/consumption permissions of the namespace.
 4. Create a topic as instructed in [Topic Management](https://intl.cloud.tencent.com/document/product/1110/42930) in the namespace. 
 5. Write a demo as instructed in [SDK Overview](https://intl.cloud.tencent.com/document/product/1110/42945) and configure the connection information and token for message production/consumption.
@@ -77,7 +77,7 @@ On the **Cluster Management** list page, click the ID of the target cluster to e
 </table>
 - Cluster's basic information: Cluster name/ID, version, access address (available for clusters on v2.7.1 or later only), region, creation time, and description.
 - Cluster configuration:
-![](https://qcloudimg.tencent-cloud.cn/raw/bf0156e250be21b5330420bc54dc1ba5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d555d9c26bb6bd5dd573e7451945ef81.png)
 <table>
 <tr>
 <th>Cluster Configuration</th>
@@ -130,7 +130,7 @@ On the **Cluster Management** list page, click **Access Address** in the **Opera
 <dx-tabs>
 ::: Clusters on v2.7.1 or later
 You can directly get the access address as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/a61db1a2876ddd64941d7e0591f9995c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4ee11d11a3a2f36c953c2c4e4667777f.png)
 :::
 ::: Clusters on v2.6.1
 On the access point list page, click **Create** and enter the access point information to configure the access point.

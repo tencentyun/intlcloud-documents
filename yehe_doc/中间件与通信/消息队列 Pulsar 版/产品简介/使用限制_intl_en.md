@@ -1,4 +1,4 @@
-This document lists the limits of certain metrics and performance in TDMQ for Pulsar. Be careful not to exceed the limits during use so as to avoid exceptions.
+This document lists the limits of certain metrics and performance in TDMQ for Pulsar. Be careful not to exceed the limits during use to avoid exceptions.
 
 <style>
 table th:nth-of-type(1) {

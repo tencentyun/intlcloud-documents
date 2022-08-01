@@ -1,21 +1,21 @@
-## Overview
-CI's image watermarking feature is implemented through the **watermark** API. Currently, only image watermarks stored in CI are supported. An input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, its total number of pixels (width x height x number of frames) cannot exceed 250 million.
+## Feature Overview
+CI uses the **watermark** API to add image watermarks. Currently, only image watermarks stored in CI can be added. An input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, its total number of pixels (Width x Height x Number of frames) cannot exceed 250 million.
 
 An image can be processed:
 
-- During download
-- During upload
-- In the cloud
+- Upon download
+- Upon upload
+- In cloud
 
 
 >? 
-> - You can overlay up to ten image watermarks over a single image.
+> - You can overlay up to 10 image watermarks over a single image.
 > - An animated image cannot be used as a watermark.
 > 
 
-## API Sample
+## API Format
 
-#### 1. Processing during download
+#### 1. Processing upon download
 
 ```plaintext
 download_url?watermark/1/image/<encodedURL>
@@ -28,7 +28,7 @@ download_url?watermark/1/image/<encodedURL>
 >? Spaces and line breaks above are for readability only and can be ignored.
 >
 
-#### 2. Processing during upload
+#### 2. Processing upon upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -74,8 +74,12 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+
+>? 
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - Grant your sub-account permissions first if using by it and see Authorization Granularity Details for more information.
+> 
+
 
 ## Parameters
 
@@ -83,22 +87,22 @@ In the code above, `watermark` is the operation name and the number `1` indicate
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image in the format of &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>. <br>For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 | /image/      | [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430) URL of the image watermark. For example, if the image watermark URL is `http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png`, you should set this parameter to `aHR0cDovL2V4YW1wbGVidWNrZXQtMTI1MDAwMDAwMC5jb3MuYXAtc2hhbmdoYWkubXlxY2xvdWQuY29tL3NodWl5aW5fMi5wbmc`.  |
-| /gravity/    | Position of the text watermark, which is a square in a [3x3 grid](#1). Default value: SouthEast |
-| /dx/ | Horizontal margin in pixels. Default value: 0 |
-| /dy/ | Vertical margin in pixels. Default value: 0 |
-| /blogo/      | Adaptation mode for an image watermark that is larger than the input image. Valid values: <br><li>1: Scales the image watermark to the size of the input image. <br><li>2: Crops the image watermark to the size of the input image. |
-| /scatype/    | Scaling mode for the image watermark (relative to the input image). This parameter must be used together with `/spcent/`. Valid values: <br><li>1: Scales by width.<br><li>2: Scales by height.<br><li>3: Scales by area. </li> |
-| /spcent/ | Scale ratio of the image watermark in permillage. This parameter must be used together with `/scatype/`. Value range: <li>[1,1000] (if `/scatype/` is set to `1`) <li>[1,1000] (if `/scatype/` is set to `2`) <li>[1,250] (if `/scatype/` is set to `3`) <br>For example, `http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/xxxxxxx/scatype/3/spcent/250`</li> |
-| /dissolve/ | Opacity of the image watermark. Value range: 1−100. Default value: 90 (indicating 90% opacity) |
+| /gravity/    | Position of the image watermark, which is a square in a [3x3 grid](#1). Default value: `SouthEast` |
+| /dx/ | Horizontal offset in pixels. Default value: `0` |
+| /dy/ | Vertical offset in pixels. Default value: `0` |
+| /blogo/      | Adaptation mode for an image watermark that is larger than the input image. Valid values: <br><li>`1`: scales the image watermark to the size of the input image. <br><li>`2`: crops the image watermark to the size of the input image. |
+| /scatype/    | Scaling mode for the image watermark (relative to the input image). This parameter must be used together with `/spcent/`. Valid values: <br><li>`1`: scales by width.<br><li>`2`: scales by height.<br><li>`3`: scales by area. </li> |
+| /spcent/ | Scale ratio of the image watermark, in permillage. This parameter must be used together with `/scatype/`. Value range: <li>1−1000 (if `/scatype/` is set to `1` <li>1−1000 (if `/scatype/` is set to 2)<li>1−250 (if `/scatype/` is set to `3`) <br> Example: `http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/xxxxxxx/scatype/3/spcent/250`</li> |
+| /dissolve/ | Opacity of the image watermark. Value range: 1−100. Default value: `90` (meaning 90% opacity) |
 | /batch/ | Whether to tile the image watermark. If this parameter is set to `1`, the image watermark will be tiled across the input image. |
-| /degree/ | Angle to rotate the image watermark. This parameter is valid only when `/batch/` is set to `1`. Value range: 0−360. Default value: 0 |
+| /degree/ | Angle to rotate the image watermark. This parameter is valid only when `/batch/` is set to `1`. Value range: 0−360. Default value: `0` |
 
 >! An image watermark must:  
 > - Be stored in the same bucket as the input image.
 > - Have a URL containing a COS domain name (a CDN acceleration domain name such as `examplebucket-1250000000.file.myqcloud.com/shuiyin_2.png` is unsupported) and be accessible (if the image watermark is set to private-read, it must carry a signature).
-> - Have a URL starting with `http://`. Note that `http://` cannot be omitted or changed to `https://`. For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` and `https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` are invalid watermark URLs.
+> - Have a URL starting with `http://`. Note that “http://” cannot be omitted or changed to “https://”. For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` and `https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` are invalid watermark URLs.
 > 
 
 <span id="1"></span>
@@ -113,13 +117,13 @@ The 3x3 grid position diagram is as follows. Once you specify the `gravity` para
 > - If `gravity` is set to `west` or `east`, `dy` is invalid.
 > 
 
-## Samples
+## Examples
 
->? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use the **processing during upload** or **processing in-cloud data** feature.
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695) and use **Processing upon upload** or **Processing in-cloud data**.
 >
 
 
-#### Sample 1: Adding an image watermark
+#### Example 1: adding an image watermark
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
@@ -128,7 +132,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/
 After an image watermark is added:
 ![](https://main.qcloudimg.com/raw/6412c0d6eaaadc5c193515f40d736dad.jpeg)
 
-#### Sample 2: Adding an image watermark with the tile mode and opacity specified
+#### Example 2: adding an image watermark with the tile mode and opacity specified
 
 ```plaintext
 https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast/batch/1/degree/45/dissolve/40/
@@ -137,20 +141,20 @@ https://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/1
 The effect of an added image watermark rotated by 45 degrees and tiled with 40% opacity is as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d7e49b9cf7ea1dcc0459b2a5e3b2af8d.jpg)
 
-#### Sample 3: Adding an image watermark with a signature carried
+#### Example 3: adding an image watermark with a signature carried
 
-This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
+This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&).
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAwMDQucGljc2gubXlxY2xvdWQuY29tL3NodWl5aW4uanBn/gravity/southeast
 ```
 
->? You can get the value of &lt;signature> as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can obtain the value of `&lt;signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext
