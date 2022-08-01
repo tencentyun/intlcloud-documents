@@ -1,7 +1,6 @@
 
 ## Overview
 The access URL rewrite feature rewrites the access URL in the request actually initiated by the client to the target URL, i.e., URL of the cached resource on the node.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.
