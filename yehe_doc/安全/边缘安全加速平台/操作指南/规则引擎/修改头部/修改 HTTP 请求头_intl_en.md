@@ -1,9 +1,7 @@
 
 ## Overview
 You can customize, add, and delete headers in HTTP origin-pull requests from nodes to the origin server.
->?
->- Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
->- EdgeOne supports carrying `X-Forwarded-For` (real client IP) and `X-Forwarded-Proto` (real client request protocol) by default, so you don't need to configure them.
+>? EdgeOne supports carrying `X-Forwarded-For` (real client IP) and `X-Forwarded-Proto` (real client request protocol) by default, so you don't need to configure them.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.
