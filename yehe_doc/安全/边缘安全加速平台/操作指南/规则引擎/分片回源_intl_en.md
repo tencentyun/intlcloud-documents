@@ -18,10 +18,7 @@ You can use Range GETs to cache large static files in either of the following ca
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Rule Engine** on the left sidebar.
->?The EdgeOne console is not yet fully available. To access the console, please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
->
 2. On the rule engine page, select the target site and click ![img](https://qcloudimg.tencent-cloud.cn/raw/fe4d4900f8ad69d506adc49bdb70fa32.png) to configure Range GETs rules as needed.
 3. On the rule engine page, select the operation **Range GETs** and configure other parameters as needed. Click **Save and publish** or **Save only**.
 >!Supported match types: "Host", "URL path", and "File extension".
->
 
