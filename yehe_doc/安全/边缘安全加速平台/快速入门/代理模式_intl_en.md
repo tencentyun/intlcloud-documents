@@ -5,8 +5,6 @@ EdgeOne supports proxy-based acceleration. In the EdgeOne console, there are two
 You can enable or disable the proxy for each host record (subdomain) under the same site on the **[Domain Name Service](https://console.cloud.tencent.com/edgeone/dns?tab=records)** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ec574149cc9fd739eb4316f95a4cb988.png)
 
->?The EdgeOne console is now only available to beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
-
 
 ## Only DNS (Proxy Disabled)
 In this mode, EdgeOne only provides the DNS resolution service. Relying on cluster nodes in over 60 countries/districts, EdgeOne offers a worldwide DNS resolution service with the capability to defense DNS attacks up to hundreds of Gbps.
