@@ -5,7 +5,6 @@ EdgeOne nodes respond to most of the user requests. To facilitate access analysi
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Log Service** > **Offline Logs** on the left sidebar.
->?The EdgeOne console is now only available to beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
 
 2. On the offline logs page, select the logs of a site or a subdomain name. You can also filter offline logs by time.
 ![](https://qcloudimg.tencent-cloud.cn/raw/281cfb26b8b14588d501770c5a09ff3a.png)
