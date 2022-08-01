@@ -177,7 +177,8 @@ ul.rno-tabs-operation {
 }
 </style>
 
-<div class="preview-demo-item style-web">
+<div class="preview-demo-section" id="demo-card">
+    <div class="preview-demo-item style-web">
         <div class="demo-item-header">
             <div class="demo-logo-wrapper">
                 <img src="https://qcloudimg.tencent-cloud.cn/raw/ff4dc34a1c72fdb26fc41c1268898025.svg" alt="">
@@ -193,7 +194,6 @@ ul.rno-tabs-operation {
             <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/login.html');reportEvent({name: 'demo-click-web', ext1: 'player'});">互动直播拉流</div>
         </div>
     </div>
-<div class="preview-demo-section" id="demo-card">
     <div class="preview-demo-item style-qrcode">
         <div class="demo-item-header">
             <div class="demo-logo-wrapper">
