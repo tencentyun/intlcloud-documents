@@ -1,8 +1,6 @@
 ## Overview
 A site speed test allows you to measure the overall page performance of a domain name.
->?
->- This feature is applicable for domain names that provide webpage applications.
->- The EdgeOne console is now only available to beta users. [Contact us](https://intl.cloud.tencent.com/contact-us) to join the beta.
+>? This feature is applicable for domain names that provide webpage applications.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Speed Test Tools** > **Site Speed Test** on the left sidebar.
