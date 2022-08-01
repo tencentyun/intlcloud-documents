@@ -1,7 +1,5 @@
 ## Overview
 You can adjust the cache period of resources on nodes to optimize the node cache, load requested resources more quickly, and remove old resources timely.
->?The EdgeOne console is not yet fully available. To access the console, please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
-
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Select **Site Acceleration** > **Cache Configuration** on the left sidebar.

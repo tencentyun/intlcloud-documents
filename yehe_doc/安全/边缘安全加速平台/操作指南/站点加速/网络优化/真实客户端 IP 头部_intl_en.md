@@ -5,7 +5,6 @@ Real client IP header allows you to create a custom origin-pull HTTP request hea
 ## Directions
 
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Site acceleration** > **Network optimization** on the left sidebar.
->?The EdgeOne console is not yet fully available. To access the console, please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
 
 2. On the network optimization page, select a site and click ![](https://qcloudimg.tencent-cloud.cn/raw/8d3e9bac718473e40a340843b4cc7fb8.png) to enable the "Real client IP header" feature.
 ![](https://qcloudimg.tencent-cloud.cn/raw/975479021d5c361b038c2339a1709bba.png)

@@ -1,7 +1,5 @@
 ## Overview
 A node can perform Brotli compression on resources to reduce the size of transferred files for quicker resource loading.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
->
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **File optimization** on the left sidebar.

@@ -13,8 +13,6 @@ Before formally releasing the installation or upgrade package of a new version, 
 Before holding an operational event formally, you can prefetch static resources including webpages and images used on event webpages to nodes. After the event formally starts, static resources requested by users will be directly returned by nodes to accelerate the page access and improve the user experience.
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **Cache configuration** on the left sidebar.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-
 2. On the cache configuration page, select the target site and click **Prefetch resource** in the URL prefetch module.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3ae33206ff4be6b287f5216cf24f6e5b.png)
 3. In the URL prefetch pop-up window, enter or upload URLs and click **OK**.

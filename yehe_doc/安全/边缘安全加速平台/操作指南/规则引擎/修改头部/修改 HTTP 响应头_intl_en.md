@@ -1,6 +1,5 @@
 ## Overview
 You can customize, add, and delete headers in HTTP responses from nodes to clients, which will not affect the node cache. This feature can implement cross-origin access.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Rule engine** on the left sidebar.

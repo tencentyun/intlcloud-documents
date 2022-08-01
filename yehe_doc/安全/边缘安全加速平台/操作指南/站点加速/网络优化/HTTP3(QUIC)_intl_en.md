@@ -8,9 +8,7 @@ EdgeOne currently supports the following QUIC versions: h3-29, h3-Q050, h3-Q046,
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **Network optimization** on the left sidebar.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-
-3. On the network optimization page, select the target site and toggle the HTTP/3 (QUIC) feature on or off.
+2. On the network optimization page, select the target site and toggle the HTTP/3 (QUIC) feature on or off.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9c8d306e5291439d6587f6a3cc677817.png)
 
 **Parameter description:**

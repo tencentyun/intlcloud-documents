@@ -1,6 +1,5 @@
 ## Overview
 The maximum upload size is the maximum data volume that can be uploaded in a single client request. You can restrict it to improve the data transfer efficiency and optimize the network transfer.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **Network optimization** on the left sidebar.

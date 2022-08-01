@@ -6,10 +6,7 @@ Hypertext Transfer Protocol Version 2 (HTTP/2 or HTTP 2.0) is the second major v
 
 
 ## Prerequisites
-- This feature takes effect only after an HTTPS certificate is configured.
-- Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
-
-
+This feature takes effect only after an HTTPS certificate is configured.
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Site acceleration** > **Network optimization** on the left sidebar.
@@ -18,7 +15,7 @@ Hypertext Transfer Protocol Version 2 (HTTP/2 or HTTP 2.0) is the second major v
 **Parameter description:**
  - Enabled status (default): HTTP/2 is used to accelerate sites.
 >! This feature takes effect only after an HTTPS certificate is configured.
->
+
  - Disabled status: HTTP/2 is not used to accelerate sites.
 
 ## Notes

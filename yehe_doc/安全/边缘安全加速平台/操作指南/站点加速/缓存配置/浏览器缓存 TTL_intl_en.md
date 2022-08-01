@@ -1,7 +1,5 @@
 ## Overview
 You can adjust the cache period of resources in browsers to optimize the browser cache and load requested resources more quickly.
->?Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/zh/contact-us) to get the permission.
-
 
 ## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Select **Site Acceleration** > **Cache Configuration** on the left sidebar.
