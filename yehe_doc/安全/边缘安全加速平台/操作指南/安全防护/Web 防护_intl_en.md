@@ -1,7 +1,6 @@
 ## Feature Overview
 ### Overview
 The web protection feature provides application layer protection for sites using the HTTP/HTTPS protocol. It also contains 500+ rules managed in the rules library and AI engine.
->?The EdgeOne console is not yet fully available. To access the console, please [contact us](https://intl.cloud.tencent.com/contact-us) for activation.
 
 ### Web/Bot action description[](id:explain)
 The web protection and bot protection features allows you to set actions based on your business scenarios. There are three actions available:
