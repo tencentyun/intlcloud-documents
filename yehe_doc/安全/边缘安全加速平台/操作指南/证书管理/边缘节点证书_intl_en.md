@@ -6,7 +6,6 @@ EdgeOne provides a one-stop certificate application, upload, management, and dep
 - Tencent Cloud-managed certificate: It is a certificate that you purchase or apply for free of charge in the [SSL Certificates console](https://console.cloud.tencent.com/ssl).
 
 >?
->- Currently, the EdgeOne console is available for only selected users. To access it, [contact us](https://intl.cloud.tencent.com/contact-us) to get the permission.
 >- Universal certificates are dedicated to the NS connection method and won't be provided by the system during CNAME connection.
 >- After you switch from NS connection to CNAME connection, the universal certificate will be retained but not updated and will be automatically deleted upon expiration.
 >- Uploaded custom certificates and Tencent Cloud-managed certificates in EdgeOne are synced with those in the [SSL Certificates console](https://console.cloud.tencent.com/ssl).
