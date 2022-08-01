@@ -11,12 +11,13 @@ Before using GooseFS, you need to:
 
 ## Downloading and Configuring GooseFS
 
-1. Download the GooseFS installation package from the repository at [goosefs-1.2.0-bin.tar.gz](https://cos-data-lake-release-1253960454.cos.ap-guangzhou.myqcloud.com/goosefs/1.2.0/release/goosefs-1.2.0-bin.tar.gz).
+1. Download the GooseFS installation package from the repository at [goosefs-1.3.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.3.0/release/goosefs-1.3.0-bin.tar.gz)。
 2. Run the following command to decompress the installation package:
 ```shell
-tar -zxvf goosefs-1.2.0-bin.tar.gz
-cd goosefs-1.2.0
+tar -zxvf goosefs-1.3.0-bin.tar.gz
+cd goosefs-1.3.0
 ```
+
  After the decompression, the home directory of GooseFS `goosefs-1.2.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
 3. Create the `conf/goosefs-site.properties` configuration file in `${GOOSEFS_HOME}/conf`. You can use a built-in configuration template.
 ```shell
@@ -274,7 +275,7 @@ $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 2. Count how many times “tencent” appeared in the file and calculate the time consumed:
 
 ```shell
-$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
+$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
 real	0m22.857s
 user	0m7.557s
@@ -287,7 +288,7 @@ sys	0m1.181s
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
 ED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
-$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
+$ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
 real	0m1.917s
 user	0m2.306s
