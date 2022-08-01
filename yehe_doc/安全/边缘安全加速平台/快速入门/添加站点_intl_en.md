@@ -3,7 +3,6 @@ You can connect your site (i.e., second-level domain) to Edgeone in the followin
 - Connect via NS (recommended): You can transfer DNS records to EdgeOne and quickly enable the security protection and acceleration services.
 - Connect via CNAME: You can continue using your current DNS service provider and add the specified CNAME record at it to enable the EdgeOne security protection and acceleration services.
 
->?Currently, the EdgeOne console is available for beta users. To join the beta, please [contact us](https://intl.cloud.tencent.com/contact-us).
 ## Connecting via NS (Recommended)
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone) and click **Service Overview** on the left sidebar.
 2. On the service overview page, click **Add Site** in the top-right corner.
