@@ -72,6 +72,15 @@
 
 ## API 예시
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+    <a href="https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/index.html" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
+                <h3>Web 온라인 API Examples</h3>
+                <p>Web API를 통한 빠르고 편리한 오디오/비디오 기능 구현 온라인 체험하기</p>
+            </div>
+        </div>
+    </a>
     <a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC" target="view_window">
         <div class="card-container">
             <div class="card">
@@ -123,15 +132,6 @@
                 <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
                 <h3>Electron API 예시</h3>
                 <p>RTC Electron API를 사용한 <br>오디오/비디오 App 구축 방법 예시</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/index.html" target="view_window">
-        <div class="card-container">
-            <div class="card">
-                <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
-                <h3>Web 온라인 API Examples</h3>
-                <p>Web API를 통한 빠르고 편리한 오디오/비디오 기능 구현 온라인 체험하기</p>
             </div>
         </div>
     </a>

@@ -71,6 +71,15 @@
 
 ## API 示例
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
+    <a href="https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/index.html" target="view_window">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
+                <h3>Web 在线 API Examples</h3>
+                <p>在线体验 Web API 实现的音视频功能，简单快捷</p>
+            </div>
+        </div>
+    </a>
     <a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC" target="view_window">
         <div class="card-container">
             <div class="card">
@@ -122,15 +131,6 @@
                 <img src="https://main.qcloudimg.com/raw/559e93ed3c05c3916300b04b0b09e7aa.svg" data-nonescope="true">
                 <h3>Electron API 示例</h3>
                 <p>演示如何使用 RTC Electron API <br>从零开始搭建音视频应用</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/index.html" target="view_window">
-        <div class="card-container">
-            <div class="card">
-                <img src="https://main.qcloudimg.com/raw/7e2651085e3e3c6e32190e401a6dfd32.svg" data-nonescope="true">
-                <h3>Web 在线 API Examples</h3>
-                <p>在线体验 Web API 实现的音视频功能，简单快捷</p>
             </div>
         </div>
     </a>
