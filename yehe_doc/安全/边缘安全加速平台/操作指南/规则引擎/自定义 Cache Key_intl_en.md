@@ -10,7 +10,6 @@ You can create a custom cache key with the following configurations:
 
 ## Directions [](id:bz)
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Rule Engine** on the left sidebar.
->?The EdgeOne console is now only available to beta users. [Contact us](https://intl.cloud.tencent.com/contact-us) to join the beta.
 
 2. On the page that appears, select the target site and click ![img](https://qcloudimg.tencent-cloud.cn/raw/fe4d4900f8ad69d506adc49bdb70fa32.png) to configure custom cache key rules as needed.
 
