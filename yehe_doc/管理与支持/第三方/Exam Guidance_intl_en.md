@@ -105,7 +105,7 @@ A secondary identification **must include your name and signature**. Examples in
 
 ## Preparing for an Exam
 
-Tencent Cloud currently offers the Practitioner, Solutions Architect Associate, SysOps Associate, and Solutions Architect Professional certification exams. To prepare for the Practitioner exam, you can take the [Tencent Cloud Practitioner course on Coursera](https://www.coursera.org/learn/tencent-cloud-practitioner) for free. To prepare for the Solutions Architect Associate exam, you can take the [Tencent Cloud Solutions Architect Associate course on Coursera](https://www.coursera.org/learn/tencent-cloud-solutions-architect-associate) for free. To prepare for the SysOps Associate exam, you can take the [Tencent Cloud SysOps Associate course on Coursera](https://coursera.org/learn/tencent-cloud-sysops-associate) for free. To prepare for the Solutions Architect Professional exam, you can take the [Tencent Cloud Solutions Architect Professional course](https://coursera.org/learn/tencent-cloud-solutions-architect-professional) on Coursera for free.  
+Tencent Cloud currently offers the Practitioner, Solutions Architect Associate, SysOps Associate, Developer Associate, and Solutions Architect Professional certification exams. To prepare for the Practitioner exam, you can take the [Tencent Cloud Practitioner course on Coursera](https://www.coursera.org/learn/tencent-cloud-practitioner) for free. To prepare for the Solutions Architect Associate exam, you can take the [Tencent Cloud Solutions Architect Associate course on Coursera](https://www.coursera.org/learn/tencent-cloud-solutions-architect-associate) for free. To prepare for the SysOps Associate exam, you can take the [Tencent Cloud SysOps Associate course on Coursera](https://coursera.org/learn/tencent-cloud-sysops-associate) for free. To prepare for the Developer Associate exam, you can take the [Tencent Cloud Developer Associate course on Coursera](https://www.coursera.org/learn/tencent-cloud-developer-associate) for free. To prepare for the Solutions Architect Professional exam, you can take the [Tencent Cloud Solutions Architect Professional course](https://coursera.org/learn/tencent-cloud-solutions-architect-professional) on Coursera for free.  
 
 ## Vouchers 
 
@@ -115,7 +115,7 @@ Tencent Cloud offers certification exam vouchers for its signed partners and cus
 
 ### How much do certification exams cost?
 
-The cost of each certification exam depends on its level of difficulty. The Practitioner exam is priced at $100 USD, the Associate-level exams are priced at $150 USD, the Professional-level exams are priced at $200 USD.
+The cost of each certification exam depends on its level of difficulty. The Practitioner exam is priced at $100 USD, the Associate-level exams are priced at $150 USD, and the Professional-level exams are priced at $200 USD.
 
 ### How long do I have to complete a certification exam?
 
@@ -131,7 +131,7 @@ After failing a certification exam the first time, the candidate must wait 14 da
 
 ### How long will it take to complete an online proctored exam?
 
-After you start a Tencent Cloud certification exam, an online proctor will verify your identity, ensure the testing environment is secured, and then launch the exam, which will take about 5-8 minutes. Once the exam is launched, you will have 90-120 minutes to complete the exam, depending on its level of difficulty. For the specific length of time allotted to each exam, please refer to the “How long do I have to complete a certification exam?” question above.
+After you start a Tencent Cloud certification exam, an online proctor will verify your identity, ensure the testing environment is secured, and then launch the exam, which will take about 5-8 minutes. Once the exam is launched, you will have 90-120 minutes to complete the exam, depending on its level of difficulty. For the specific length of time allotted to each exam, please refer to the [“How long do I have to complete a certification exam?”](https://intl.cloud.tencent.com/document/product/1033/42450?lang=en&pg=#how-long-do-i-have-to-complete-a-certification-exam.3F) question above.
 
 ### Can I take breaks during my exam?
 
