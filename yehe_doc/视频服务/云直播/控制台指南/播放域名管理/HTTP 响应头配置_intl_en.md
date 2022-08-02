@@ -5,34 +5,31 @@ You can use HTTP headers to define fields that carry information about HTTP tran
 - You have logged in to the [CSS console](https://console.cloud.tencent.com/live).
 - You have added a [playback domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
+[](id:limit)
+## Use Limits
+- You can configure at most 10 header fields.
+- You cannot add two fields with the same name. To specify multiple values for a field, use this format: `value 1, value 2, value 3`.
+- If a field you configure is the same as a field used by the CSS backend, you will be asked to modify it.
+- A custom field can be 1-100 characters long and can contain letters, numbers, and hyphens (-).
+- The value of a field cannot be empty. It can be 1-1,000 characters long and cannot contain Chinese characters.
 
 
-## Configuring HTTP Response Headers
-1. Go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage). Click the name of your playback domain or **Manage** on the right.
+## Configuring HTTP Response Header
+1. Go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage). Click the name of your playback domain or click **Manage** on the right.
 2. Select the **Advanced Configuration** tab.
-![](https://qcloudimg.tencent-cloud.cn/raw/3dc3dc0a5a71fe671560ec32162d6381.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/57a34fdc0b51c2f9384a677163c302ff.png)
 3. In the **HTTP response headers** area, click **Edit** to add new header fields or modify/delete existing header fields.
-![](https://qcloudimg.tencent-cloud.cn/raw/7bc7b1573336ce7b97221dfeb835a780.png)
-4. When adding a field, you can choose from preset fields (Access-Control-Allow-Methods, Access-Control-Max-Age, Access-Control-Expose-Headers) or customize a field. A custom field can be 1-100 characters long and can contain letters, numbers, and hyphens (-). The value of a header field can be 1-1,000 characters long and cannot contain Chinese characters.
-![](https://qcloudimg.tencent-cloud.cn/raw/2d88d3599a30008822743d37038cf5eb.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/b065487fa03a250edaf82961f4d2c5cf.png)
-5. When you are finished, Click **OK**. Your configuration may be in one of three statuses: yet to take effect, failed, or effective.
-![](https://qcloudimg.tencent-cloud.cn/raw/de983bb2682da2521b33395096d6f77c.png)
-
-## Preset Fields
+![](https://qcloudimg.tencent-cloud.cn/raw/2fcc14051e1ed41d2896bbcea41c5293.png)
+To add a header field, click **New**.
+  - Select **Preset** to add a preset field: `Access-Control-Allow-Methods`, `Access-Control-Max-Age`, or `Access-Control-Expose-Headers`.
+![](https://qcloudimg.tencent-cloud.cn/raw/416416d2cba4a0cff15a016ce987658c.png)
 
 <table>
-<thead>
-<tr>
-<th style="width:230px">Header Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-</tr>
+<thead><tr><th style="width:30%">Field</th><th>Description</th></tr></thead>
+<tbody>
 <tr>
 <td>Access-Control-Allow-Methods</td>
-<td>Indicates which HTTP methods are allowed for cross-origin requests. You can specify multiple methods at a time: <br>Access-Control-Allow-Methods: <code>POST, GET, OPTIONS</code>.</td>
+<td>Indicates which HTTP methods are allowed for cross-origin requests. You can specify multiple methods at a time: <br><code>Access-Control-Allow-Methods: POST, GET, OPTIONS</code>.</td>
 </tr>
 <tr>
 <td>Access-Control-Max-Age</td>
@@ -44,10 +41,11 @@ You can use HTTP headers to define fields that carry information about HTTP tran
 </tr>
 </tbody></table>
 
+  - Select **Custom** to add a custom field.
 
-## Limits
-1. You can configure at most 10 header fields.
-2. You cannot add two fields with the same name. To specify multiple values for a field, use this format: value 1, value 2, value 3.
-3. If a field you configure is the same as a field used by the CSS backend, you will be asked to modify it.
-4. A custom field can be 1-100 characters long and can contain letters, numbers, and hyphens (-).
-5. The value of a field cannot be empty. It can be 1-1,000 characters long and cannot contain Chinese characters.
+>! The name of a custom field can be 1-100 characters long and can contain letters, numbers, and hyphens. The value of a custom field can be 1-1,000 characters long and cannot contain Chinese characters.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/31ee91ac9ef344cd26ea5c89ed73740e.png)
+5. When you are finished, Click **OK**. Your configuration may be in one of three statuses: yet to take effect, failed, or effective.
+![](https://qcloudimg.tencent-cloud.cn/raw/d8982f6db31f73de86eae641ab82b6ba.png)
+

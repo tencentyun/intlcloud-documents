@@ -56,10 +56,10 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 [](id:open)
 #### 开启播放防盗链
-1. 登录进入 [域名管理](https://console.cloud.tencent.com/live/domainmanage) 。
-2. 选择播放域名或单击所在行的 **管理**，进入域名详情页。
-3. 选择 **访问控制**，单击 **编辑**。
-4. 设置 **播放鉴权** 为开启，单击 **保存**。
+1. 选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击需做鉴权配置的播放域名或管理进入域名管理页。
+2. 在**访问控制** > **Key鉴权**，单击开关，开启 Key 鉴权。
+3. 在鉴权配置页进行设置。
+4. 单击 **保存**，即可保存配置。
 
 >!
 >- 播放鉴权的设置成功后需要**30分钟**后生效 。
@@ -100,7 +100,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 [](id:que13)
  ### 直播开启关闭推流接口有什么用？ 
-直播开启关闭推流接口主要用于鉴黄时的禁播场景，例如后台发现某个主播有涉黄或者反动内容，可以随时断流或者禁用这条流。
+直播开启关闭推流接口主要用于鉴黄时的禁播场景，例如后台发现某个主播有涉黄或者反动内容，可以随时断流或者禁用这条流。具体调用方法请参见 [禁推直播流](https://intl.cloud.tencent.com/document/product/267/30794)。
 
 
 [](id:que14)
@@ -211,6 +211,7 @@ m3u8 的文件命名也是根据直播的流名称去自动命名的，流名称
 您可以通过以下两种方案查询观看人数：
 - 进入**云直播控制台** > **数据中心** > [**流数据查询**](https://console.cloud.tencent.com/live/analysis/stream) > **并发连接数**查看。
 >? 若播放协议为 RTMP 和FLV，并发连接数即在线人数，若播放协议为 HLS，此数据不可作为在线人数的参考。
+
 - 建议通过调用云直播 API 3.0 的 查询流的播放信息列表接口 [获取在线流观看人数](https://intl.cloud.tencent.com/document/product/267/37297)。
 
 [](id:que38)

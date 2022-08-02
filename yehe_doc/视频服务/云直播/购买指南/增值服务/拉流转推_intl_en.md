@@ -1,23 +1,17 @@
 The relaying service allows you to quickly pull content from existing videos or live streams and push it to the destination address. The two billable items for the relaying service are [relay task duration](#time) and [third-party relaying bandwidth](#third_part).
 
-
-
 ## Notes
 - The relaying service **has become a paid service since 00:00 (UTC+8) on July 1, 2021**. Relaying tasks executed after July 1, 2021 will incur relaying fees, regardless of when the tasks are created.
 - Pulling data from an existing source will incur playback/download fees. If you pull from Tencent Cloud CSS, VOD, or COS, the billing rules of the corresponding product will apply.
 
-
 [](id:time)
 ## Relay Task Duration
-
 ### Pricing
 A relay task is billed by duration.
 
 | Billable Item        | Price (USD/Min) |
 | ---------------- | ----------------- |
 | Relay task duration | 0.00032           |
-
-
 
 ### Billing details
 - Billable item: Relay task duration
@@ -32,19 +26,32 @@ A relay task is billed by duration.
 ## Third-Party Relaying Bandwidth
 >! 
 >- Relaying to a CSS URL of the current account (the account that created the relay task) will not incur relaying bandwidth fees.
->- Relying to an address that is not a CSS URL of the current account will incur third-party relay fees.
->- We will adjust the pricing of relaying to third parties **starting from 00:00 (UTC+8) on August 1, 2022**. For details, see [CSS to Adjust Pricing of Third-Party Relay](https://intl.cloud.tencent.com/document/product/267/48434).
+>- Relaying to an address that is not a CSS URL of the current account will incur third-party relay fees.
 
 ### Pricing
+Third-party relaying fees are based on the highest bandwidth (Mbps) used for relaying in each billing period. The price varies depending on the region to which your streams are relayed. If you relay to multiple regions in a billing period, fees will be charged separately based on the peak bandwidth usage in each region.
 
-| Billable Item       | Price (USD/Mbps/Month) | Description              |
-| :------------- | :------------------- | :------------------------- |
-| Relay to third parties | 12.67        | Billed by bandwidth usage |
+| Region             | Price (USD/Mbps/Month) |
+| :--------------- | :------------------- |
+| Chinese mainland | 12.67                |
+| Hong Kong (China)        | 12.67                |
+| Singapore           | 8.04                 |
+| Frankfurt         | 7.1                  |
+| Seoul             | 16.56                |
+| India             | 23.66                |
+| Thailand             | 13.01                |
+| Silicon Valley         | 7.1                  |
+| Virginia     | 7.1                  |
+| Jakarta           | 17.4                 |
+| Japan             | 13.01                |
+| São Paulo           | 23.66                |
+| Other regions             | 12.67                |
+
+
 
 
 ### Billing details
 - Billing mode: Monthly pay-as-you-go
 - Billing cycle: Monthly billing cycle. Your bill for each month is generated between the 1st and 3rd day of the following month.
 - Billing rules: By default, third-party relay fees are charged in the pay-as-you-go mode based on your average daily peak bandwidth usage (for all third-party relay tasks) in each month. If a different billing mode is used for the LVB service under your account, that mode will apply to third-party relay.
-
 

@@ -1,6 +1,6 @@
 [](id:que1)
 ### Is there an upper limit on the number of concurrent viewers?   
-CSS does not limit the number of concurrent viewers. A live stream can be viewed by as many users as the network allows. However, if you have set a bandwidth limit, new viewers will be unable to watch a live stream once the limit is reached.
+By default, CSS does not limit the number of online viewers for a live stream as long as the network and other conditions permit. However, if you have configured a bandwidth limit, new viewers cannot watch the live stream if there are so many existing viewers that the bandwidth limit is exceeded. In this case, the number of online viewers is limited.
 
 [](id:que2)
 ### How do I use the live transcoding feature?
@@ -15,11 +15,11 @@ The three commonly used playback bitrates for original, HD, and SD streams are a
 
 [](id:que3)
 ### How do I use time shifting?
-You can use the time shifting feature to rewind and play a video stream from earlier time points. The feature only supports the HLS protocol for the time being. For more information on time shifting and how to activate it, see [Time Shifting](https://intl.cloud.tencent.com/document/product/267/31565).
+You can use the time shifting feature to rewind and play a video stream from earlier time points. The feature currently only supports the HLS protocol. For more information on time shifting and how to activate it, see [Time Shifting](https://intl.cloud.tencent.com/document/product/267/31565).
 
 [](id:que4)
 ### How can I use HTTPS for playback?
-To make your playback domain support HTTPS, make sure you have a valid certificate and private key, go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage), find the target playback domain, click **Manage**, and select **Advanced Configuration** > **HTTPS Configuration** to add an HTTPS configuration. The configuration takes effect in 2 hours.
+To make your playback domain support HTTPS, make sure you have a valid certificate and private key, go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage), find the target playback domain, click **Manage**, and select **Advanced Configuration** > **HTTPS Configuration** to add an HTTPS configuration. The configuration takes effect in about 2 hours.
 
 [](id:que5)
 ### How can I use a cache node outside the Chinese mainland for playback?
@@ -28,7 +28,7 @@ CSS provides stable CDN nodes across the Chinese mainland and around the world. 
 
 [](id:que6)
 ### How can I enable hotlink protection?
-To prevent unauthorized users from using your URLs for playback and stealing your Tencent Cloud traffic, we strongly recommend you enable hotlink protection for your playback URLs to avoid potential losses caused by hotlinking. Hotlink protection is determined by four parameters: `txTime`, `key` (hash key), `txSecret`, and the validity period.
+To prevent potential losses caused by unauthorized users using your URLs for playback and stealing your Tencent Cloud traffic, we strongly recommend you enable hotlink protection for your playback URLs. Hotlink protection is determined by four parameters: `txTime`, `key` (hash key), `txSecret`, and the validity period.
 
 | Hotlink Protection Parameter | Description | Remarks |
 |---------|---------|---------|
@@ -56,10 +56,10 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 [](id:open)
 #### Enabling hotlink protection
-1. Log in to the CSS console and select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** on the left sidebar.
-2. Find and click your playback domain name, or click **Manage** to enter the domain name details page.
-3. Select **Access Control**.
-4. In the **Key Authentication** area, toggle on **Playback Authentication**, complete the settings, and click **Save**.
+1. Select [Domain Management](https://console.cloud.tencent.com/live/domainmanage), and click the target playback domain name or click **Manage** on the right to enter the domain management page.
+2. Select the **Access Control** tab. In the **Key Authentication** area, toggle on **Playback Authentication**.
+3. Complete the settings in the pop-up window.
+4. Click **Save** to save the configuration.
 
 >!
 >- It takes **30 minutes** for the configuration to take effect.
@@ -67,7 +67,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 >- HLS: With HLS, a stream is broken into short chunks, and TS segments are requested as playback continues. Therefore, if you set `txTime` to 10 minutes after the current time, playback will be rejected after 10 minutes. To avoid this, you can update the HLS request URL dynamically on the server or set a longer validity period.
 
 [](id:que7)
-### What format requirements must a primary key for playback authentication meet? Is there any limit on its validity period?
+### What are the format requirements for a primary key for playback authentication? Is there any limit on its validity period?
 The primary key can contain only letters and digits, with up to 256 characters. For details, please see [Playback Authentication Configuration](https://intl.cloud.tencent.com/document/product/267/31060).
 We recommend that you set its validity period to the duration of a live streaming session.
 
@@ -89,23 +89,23 @@ Normally, the latency of playing an FLV stream that is pushed over RTMP is aroun
 
 [](id:que11)
 ### Can I modify the maximum bitrate during live streaming?
- No. You can set it only before pushing streams. The bitrate depends on your upload speed. Setting it too high may cause dropped frames and stuttering. 
+ No. You can set it only before pushing a stream. The bitrate depends on your upload speed. Setting it too high may cause dropped frames and stuttering. 
 
 [](id:que12)
 ### How do I delete a live streaming room which is no longer used? 
-Live push and playback are bound with stream IDs, so you do not need to delete rooms. If you are using the IM service and want to delete IM rooms to avoid reaching the upper limit of room number, please see [Disbanding a Group](https://intl.cloud.tencent.com/document/product/1047/34896).
-If you are using the channel mode, you can call the `DeleteLVBChannel` API to delete channels (you need to pass in the IDs of the channels you want to delete).
+Live push and playback are bound with stream IDs, so you do not need to delete rooms. If you are using the IM service and want to delete IM rooms to avoid reaching the maximum number of rooms, see [Disbanding a Group](https://intl.cloud.tencent.com/document/product/1047/34896).
+If you are using channel mode, you can call the `DeleteLVBChannel` API to delete channels (you need to pass in the IDs of the channels you want to delete).
 
 > ! Channel mode is a legacy mode which is no longer updated or maintained.
 
 [](id:que13)
  ### When do I use the push enabling/disabling API? 
-You can use the API to disable a live stream when pornographic or other inappropriate content is detected.
+You can use the API to disable a live stream when pornographic or other inappropriate content is detected. For details, see [ForbidLiveStream](https://intl.cloud.tencent.com/document/product/267/30794).
 
 
 [](id:que14)
 ### How do I implement playback in the background?
-Background playback allows the audio of a live stream to continue even when your app runs in the background. This feature depends on devices. You need to implement it based on your actual business logic.
+Background playback allows the audio of a live stream to continue even when your app runs in the background. This feature depends on the playback device and should be implemented based on your actual business logic.
 
 
 [](id:que15)
@@ -118,8 +118,8 @@ Background playback allows the audio of a live stream to continue even when your
 
 [](id:que17)
 ### What are API rate limits?
-CSS sets an upper limit on the total number of requests sent by all `SecretId` under an account. After the limit is reached, new requests will not be responded.
-For example, an upper limit of 200 requests per second indicates that the Tencent Cloud server can receive up to 200 requests sent by all `SecretId` under your account within 1s. It doesn’t matter whether the requests are sent by one or more users, or whether they query one or multiple streams. 
+CSS sets an upper limit on the total number of requests sent by all `SecretId` under an account. After the limit is reached, new requests will not be responded to.
+For example, an upper limit of 200 requests per second indicates that the Tencent Cloud server can receive up to 200 requests sent by all `SecretId` under your account within one second. It doesn’t matter whether the requests are sent by one or more users, or whether they query one or multiple streams. 
 
 [](id:que18)
 ### The "RTMP close" error occurs when I push streams, but the log says the push is successful. What should I do? 
@@ -148,7 +148,7 @@ M3U8 files are named automatically based on stream names. Stream names **do not 
 
 [](id:que23)
 ### How do I view the number of online viewers?
-You can get the number of online viewers by calling the [DescribeStreamPlayInfoList](https://intl.cloud.tencent.com/document/product/267/37297) API, but the result may not be 100% accurate. For example, if 3 users use the same IP address for playback at the same time, they will be counted as 1 viewer. Note that the data returned by this API is relevant only if your playback protocol is RTMP or FLV, not if it is HLS.
+You can get the number of online viewers by calling the [DescribeStreamPlayInfoList](https://intl.cloud.tencent.com/document/product/267/37297) API, but the result may not be 100% accurate. For example, if three users use the same IP address for playback at the same time, they will be counted as one viewer. Note that the data returned by this API is relevant only if your playback protocol is RTMP or FLV, not if it is HLS.
 
 [](id:que24)
 ### Does CSS support backup streams?
@@ -211,15 +211,16 @@ CSS does not offer an API to query the duration of an active stream. You can cal
 You can query the viewers of a live stream using either of two methods:
 - Go to the CSS console, select **Data Center** > **Stream Data Query** on the left sidebar, and click **Playback Data** to view the number of concurrent connections.
 >? The number of concurrent connections equals the number of online viewers only if the playback protocol is RTMP or FLV.
+
 - Call the [DescribeStreamPlayInfoList](https://intl.cloud.tencent.com/document/product/267/37297) API to get the number of online viewers.
 
 [](id:que38)
-### If I’m disconnected after pushing streams, will I receive the callback for stream interruption?
+### If I’m disconnected after pushing a stream, will I receive the callback for stream interruption?
 You need to configure the callback for stream interruption first. If a stream is interrupted by a network disconnection, the system will try to resume the stream automatically. If the stream is resumed within 70 seconds, you will not receive the callback for stream interruption. If the system fails to resume the stream within 70 seconds, it will disconnect the stream, and you will receive the stream interruption callback.
 
 [](id:que39)
-### Must I use the same protocol for push and playback?
-No. You can use RTMP for push and RTMP, FLV, HLS, or UDP for push.
+### Do I need to use the same protocol for push and playback?
+No. You can use RTMP for push and RTMP, FLV, HLS, or UDP for playback.
 
 [](id:que40)
 ### Why can’t I play videos from CDNs when I use a wireless network?
@@ -230,10 +231,10 @@ Check the following:
 If the above does not solve your problem, please contact Tencent Cloud technical support.
 
 [](id:que41)
-### I configured HTTPS for my playback domain, but why did playback fail?
+### I configured HTTPS for my playback domain, so why did playback fail?
 Check the following:
 - Make sure you have uploaded a certificate.
-- Check your certificate upload time. After configuring HTTPS, please wait two hours before accessing the domain.
+- Check your certificate upload time. After configuring HTTPS, please wait about two hours before accessing the domain.
 
 >? If the above does not solve your problem, try using the [self-diagnosis tool](https://console.cloud.tencent.com/live/tools/selfcheck) of the CSS console to identify the issue. For detailed directions, see [Self-Diagnosis](https://intl.cloud.tencent.com/document/product/267/39467).
 
@@ -242,6 +243,3 @@ Check the following:
 [](id:que42)
 ### With LEB, how do I change the resolution of hosts during live streaming?
 LEB is a playback solution, while hosts are at the push end. To change the resolution of hosts, you need to create a [transcoding template](https://intl.cloud.tencent.com/document/product/267/31071) and bind it to your domain before playback.
-
-
-
