@@ -1,6 +1,6 @@
 
 ## 概要
->ストレージ容量を節約するために、TencentDB for MySQLの物理バックアップファイル及び論理バックアップファイルは、まずqpressで圧縮し、次にxbstreamでパッケージング（xbstreamはPerconaのパッケージング/アンパッケージングツール）して圧縮とパッケージングを実行します。
+>!ストレージ容量を節約するために、TencentDB for MySQLの物理バックアップファイル及び論理バックアップファイルは、まずqpressで圧縮し、次にxbstreamでパッケージング（xbstreamはPerconaのパッケージング/アンパッケージングツール）して圧縮とパッケージングを実行します。
 >
 オープンソースソフトウェアPercona Xtrabackupは、データベースのバックアップと復元に使用されます。このドキュメントでは、XtraBackupツールを使用して、MySQLの物理バックアップファイルを別のホスト上の自己構築データベースに復元する方法について説明します。
 - XtraBackupツールはLinuxプラットフォームのみに対応し、Windowsプラットフォームに対応していません。
@@ -8,8 +8,8 @@
 
 ## 前提条件
 - XtraBackupツールをダウンロードしてインストールします。
- - MySQL 5.6、5.7の場合は、Percona XtraBackup 2.4.6以降のバージョンを選択してください。[ダウンロードアドレス](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)。インストール手順については、[Percona XtraBackup 2.4ガイド](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)をご参照ください。
- - MySQL 8.0の場合は、Percona XtraBackup 8.0.22-15以降のバージョンを選択してください。[ダウンロードアドレス](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#)。インストール手順については、[Percona XtraBackup 8.0ガイド](https://www.percona.com/doc/percona-xtrabackup/8.0/installation.html)をご参照ください。
+ - MySQL 5.6、5.7の場合は、Percona XtraBackup 2.4.6以降のバージョンを選択してください。[ダウンロードアドレス](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)。インストール手順については、[Percona XtraBackup 2.4ガイド](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html)をご参照ください。
+ - MySQL 8.0の場合は、Percona XtraBackup 8.0.22-15以降のバージョンを選択してください。[ダウンロードアドレス](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#)。インストール手順については、[Percona XtraBackup 8.0ガイド](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html)をご参照ください。
 - サポートするインスタンスのバージョン：MySQL 2ノードおよび3ノード。
 - データ暗号化が有効になっているインスタンスでは、物理バックアップを使用したデータベースの復元がサポートされていません。
 
