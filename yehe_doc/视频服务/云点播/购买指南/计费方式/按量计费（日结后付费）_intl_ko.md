@@ -20,39 +20,50 @@ VOD 과금 항목:
 
 ### 과금 가격
 
-<table>    
-    <tr>         
-        <th style="text-align:center">스토리지 유형</th>         
-        <th style="text-align:center">리전</th>         
-        <th style="text-align:center">가격(USD/GB/일)</td> </tr>     
-   <tr>       
-        <td style="text-align:center" rowspan="2">STANDARD</td>         
-        <td style="text-align:center">중국 내</td>         
-        <td style="text-align:center">0.0006</td> </tr>     
-    <tr>        
-        <td style="text-align:center">중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>         
-        <td style="text-align:center">0.0009</td>   </tr>    
-    <tr>         
-        <td style="text-align:center" rowspan="2">STANDARD_IA(최소 30일)</td>       
-        <td style="text-align:center">중국 내</td>        
-        <td style="text-align:center">0.0004</td> </tr>    
-    <tr>        
-        <td style="text-align:center">중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>         
-        <td style="text-align:center">0.0006</td>    </tr>         
-    <tr>        
-        <td style="text-align:center" rowspan="2">ARCHIVE(최소 90일)</td>        
-        <td style="text-align:center">중국 내</td>        
-        <td style="text-align:center">0.0002</td> </tr>    
-    <tr>        
-        <td style="text-align:center">중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>        
-        <td style="text-align:center">0.0003</td>         </tr>    
-    <tr>        
-        <td style="text-align:center" rowspan="2">DEEP_ ARCHIVE(최소 180일)</td>         <td style="text-align:center">중국 내</td>        
-        <td style="text-align:center">0.00006</td> </tr>   
-    <tr>        
-        <td style="text-align:center">중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>        
-        <td style="text-align:center">0.0001</td>    </tr>       
- </table>
+<table>
+   <tr>
+      <th width="150px" >스토리지 유형</td>
+      <th width="0px" >	리전</td>
+      <th width="0px" >가격(USD/GB/일)</td>
+   </tr>
+	   <tr>
+    <td rowspan='2' >STANDARD</td>
+      <td >중국 내</td>
+      <td >	0.0006</td>
+   </tr>
+	 	   <tr>
+      <td >중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>
+      <td >	0.0009</td>
+   </tr>
+	 	   <tr>
+    <td rowspan='2' >STANDARD_IA(최소 30일)</td>
+      <td >중국 내</td>
+      <td >	0.0004</td>
+   </tr>
+	 	   <tr>
+      <td >중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>
+      <td >	0.0006</td>
+   </tr>
+	 	 	   <tr>
+    <td rowspan='2' >ARCHIVE(최소 90일)</td>
+      <td >중국 내</td>
+      <td >	0.0002</td>
+   </tr>
+	 	   <tr>
+      <td >중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>
+      <td >	0.0003</td>
+   </tr>
+	 	 	 	   <tr>
+    <td rowspan='2' >DEEP_ ARCHIVE(최소 180일)</td>
+      <td >중국 내</td>
+      <td >	0.00006</td>
+   </tr>
+	 	   <tr>
+      <td >중국 본토 외부(실리콘밸리, 중국홍콩, 프랑크푸르트, 모스크바, 서울, 버지니아, 싱가포르, 뭄바이, 토론토, 방콕)</td>
+      <td >	0.0001</td>
+   </tr>
+</table>
+
 
 
 ### 과금 안내

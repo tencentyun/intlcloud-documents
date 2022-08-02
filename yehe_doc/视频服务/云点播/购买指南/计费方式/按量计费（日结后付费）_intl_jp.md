@@ -20,39 +20,50 @@ VODの課金項目は次のとおりです：
 
 ### 課金価格
 
-<table>    
-    <tr>         
-        <th style="text-align:center">ストレージタイプ</th>         
-        <th style="text-align:center">適用地域</th>         
-        <th style="text-align:center">価格（米ドル/GB/日）</td> </tr>     
-   <tr>       
-        <td style="text-align:center" rowspan="2">スタンダートストレージ</td>         
-        <td style="text-align:center">中国本土</td>         
-        <td style="text-align:center">0.0006</td> </tr>     
-    <tr>        
-        <td style="text-align:center">中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>         
-        <td style="text-align:center">0.0009</td>   </tr>    
-    <tr>         
-        <td style="text-align:center" rowspan="2">低頻度ストレージ（少なくとも30日）</td>       
-        <td style="text-align:center">中国本土</td>        
-        <td style="text-align:center">0.0004</td> </tr>    
-    <tr>        
-        <td style="text-align:center">中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>         
-        <td style="text-align:center">0.0006</td> </tr>         
-    <tr>        
-        <td style="text-align:center" rowspan="2">アーカイブストレージ（少なくとも90日）</td>        
-        <td style="text-align:center">中国本土</td>        
-        <td style="text-align:center">0.0002</td> </tr>    
-    <tr>        
-        <td style="text-align:center">中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>        
-        <td style="text-align:center">0.0003</td>   </tr>    
-    <tr>        
-        <td style="text-align:center" rowspan="2">ディープアーカイブストレージ（少なくとも180日）</td>         <td style="text-align:center">中国本土</td>        
-        <td style="text-align:center">0.00006</td>   </tr>   
-    <tr>        
-        <td style="text-align:center">中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>        
-        <td style="text-align:center">0.0001</td>   </tr>       
- </table>
+<table>
+   <tr>
+      <th width="150px" >ストレージタイプ</td>
+      <th width="0px" >	適用地域</td>
+      <th width="0px"  >価格（米ドル/GB/日）</td>
+   </tr>
+	   <tr>
+    <td rowspan='2' >スタンダートストレージ</td>
+      <td >中国本土</td>
+      <td >	0.0006</td>
+   </tr>
+	 	   <tr>
+      <td >中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>
+      <td >	0.0009</td>
+   </tr>
+	 	   <tr>
+    <td rowspan='2' >低頻度ストレージ<br>（少なくとも30日）</td>
+      <td >中国本土</td>
+      <td >	0.0004</td>
+   </tr>
+	 	   <tr>
+      <td >中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>
+      <td >	0.0006</td>
+   </tr>
+	 	 	   <tr>
+    <td rowspan='2' >アーカイブストレージ<br>（少なくとも90日）</td>
+      <td >中国本土</td>
+      <td >	0.0002</td>
+   </tr>
+	 	   <tr>
+      <td >中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>
+      <td >	0.0003</td>
+   </tr>
+	 	 	 	   <tr>
+    <td rowspan='2' >ディープアーカイブストレージ<br>（少なくとも180日）</td>
+      <td >中国本土</td>
+      <td >	0.00006</td>
+   </tr>
+	 	   <tr>
+      <td >中国本土以外（シリコンバレー、中国香港、フランクフルト、モスクワ、ソウル、バージニア、シンガポール、ムンバイ、トロント、バンコク）</td>
+      <td >		0.0001</td>
+   </tr>
+</table>
+
           
 
 
