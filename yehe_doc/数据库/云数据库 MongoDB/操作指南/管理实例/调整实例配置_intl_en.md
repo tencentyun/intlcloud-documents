@@ -63,7 +63,7 @@ After the instance configuration is adjusted, the instance will be billed by the
 <tr>
 <td>Oplog Capacity</td>
 <td>We recommend you also adjust the oplog capacity on the slider: <ul><li>The oplog capacity is at least 10% of the instance capacity. </li><li>If the oplog is too small, it is easy to be cleaned up, and rollback will be further affected. </li><li>When the instance is downgraded, the oplog is initialized to 10% of the new storage specification. The first write time of the oplog will be overwritten after the last backup is successfully executed. To prevent rollback from being affected in this case, please manually back up before the downgrade.</li></ul></td>   
-<td>123 GB</td></tr>
+<td>11 GB</td></tr>
 <tr>
 <td>Switch Time</td>
 <td><ul><li>If you select <b>Upon modification completion</b>, the instance specification adjustment task will be executed immediately. Instance memory and capacity adjustment may involve node migration or primary-secondary switch. As the switch time point is uncontrollable, disconnection or restart may occur. </li><li>If you select <b>During maintenance time</b>, the task will be executed during the maintenance time. For more information, see <a href="https://intl.cloud.tencent.com/document/product/240/31190">Setting Instance Maintenance Period</a>.</li></ul></td>    
