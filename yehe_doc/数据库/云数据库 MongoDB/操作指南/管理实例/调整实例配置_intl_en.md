@@ -50,16 +50,16 @@ After the instance configuration is adjusted, the instance will be billed by the
 <td>A sharded cluster instance has two shards, each shard consists of three storage nodes to form a replica set, and the entire instance has six storage nodes in total</td></tr>	
 <tr>
 <td>Node Memory/Total Capacity</td>
-<td>The memory and total capacity per node in the current instance. For a sharded cluster, the total node capacity is the node capacity per shard. For how to query the number of CPU cores of an instance, see the mongod specifications in <a href="https://intl.cloud.tencent.com/document/product/240/31183">Product Specifications</a>. For example, the instance memory of 4 GB corresponds to 2 CPU cores.</td>   
-<td>4 GB/1230 GB</td></tr>
+<td>The memory and total capacity per node in the current instance. For a sharded cluster, the total node capacity is the node capacity per shard. For how to query the number of CPU cores of an instance, see the mongod specifications in <a href="https://intl.cloud.tencent.com/document/product/240/31183">Product Specifications</a>.</td>   
+<td>4 GB/100 GB</td></tr>
 <tr>
 <td>Node Memory</td>
-<td>Select the new memory per node in the drop-down list, which is the same as the current node memory by default. For how to choose a specification, see the mongod specifications in <a href="https://intl.cloud.tencent.com/document/product/240/31183">Product Specifications</a>. For example, the instance memory of 8 GB corresponds to 4 CPU cores.</td>    
-<td>8 GB</td></tr>
+<td>Select the new memory per node in the drop-down list, which is the same as the current node memory by default. For how to choose a specification, see the mongod specifications in <a href="https://intl.cloud.tencent.com/document/product/240/31183">Product Specifications</a>. </td>    
+<td>4 GB</td></tr>
 <tr>
 <td>Total Node Capacity</td>
-<td>Adjust the total capacity per node on the slider, which is the same as the total capacity of the current node by default. For how to choose a specification, see the mongod specifications in <a href="https://intl.cloud.tencent.com/document/product/240/31183">Product Specifications</a>. For example, 4-core 8 GB MEM corresponds to the storage capacity of 20–3000 GB.</td>    
-<td>1230 GB</td></tr>
+<td>Adjust the total capacity per node on the slider, which is the same as the total capacity of the current node by default. For how to choose a specification, see the mongod specifications in <a href="https://intl.cloud.tencent.com/document/product/240/31183">Product Specifications</a>. </td>    
+<td>110 GB</td></tr>
 <tr>
 <td>Oplog Capacity</td>
 <td>We recommend you also adjust the oplog capacity on the slider: <ul><li>The oplog capacity is at least 10% of the instance capacity. </li><li>If the oplog is too small, it is easy to be cleaned up, and rollback will be further affected. </li><li>When the instance is downgraded, the oplog is initialized to 10% of the new storage specification. The first write time of the oplog will be overwritten after the last backup is successfully executed. To prevent rollback from being affected in this case, please manually back up before the downgrade.</li></ul></td>   
@@ -175,7 +175,7 @@ After the instance configuration is adjusted, the instance will be billed by the
 <td>2 cores, 4 GB memory, 250 GB storage, ten nodes in total</td></tr>
 <tr>
 <td>Number of shards</td>
-<td>Select a new shard quantity for the instance from the drop-down list, which is the same as the current shard quantity by default. The value range is 2–19.</li></ul></td>   
+<td>Select a new shard quantity for the instance from the drop-down list, which is the same as the current shard quantity by default. </li></ul></td>   
 <td>3</td></tr>
 <tr>
 <td>Fees</td>
