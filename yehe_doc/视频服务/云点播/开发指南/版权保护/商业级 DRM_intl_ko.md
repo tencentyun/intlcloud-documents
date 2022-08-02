@@ -24,8 +24,8 @@ Widevine과 FairPlay는 두 가지 메인 스트림 DRM 솔루션입니다.
 다음은 VOD DRM 체계의 작업 흐름입니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae358775adc9711065239394b246ab50.png)
 
-## VOD DRM 방식 사용
-VOD의 DRM 방식을 사용하시려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category) 하십시오. 이 방식을 사용하면 DRM 요금이 발생합니다.
+## 통합 가이드
+VOD DRM 체계를 빠르게 통합하는 방법에 대한 설명은 [Playing DRM-Encrypted Videos](https://intl.cloud.tencent.com/document/product/266/46642)를 참고하십시오.
 
 ## 요금 관련
 VOD의 DRM 방식을 사용하면 다음과 같은 요금이 발생할 수 있습니다.
