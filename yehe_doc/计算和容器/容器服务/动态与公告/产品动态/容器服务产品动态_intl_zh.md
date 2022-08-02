@@ -1,3 +1,36 @@
+## 2022年06月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tbody>
+<tr>
+    <td>TMP 提供专家建议指标</td>
+    <td>简化指标选择难度。</td>
+    <td>2022-06-21</td>
+    <td>-</td>
+  </tr>
+<tr>
+    <td>qGPU 支持 CRD 方式查看 GPU 物理卡资源</td>
+    <td>统一和简化了 GPU 资源视图。</td>
+    <td>2022-06-07</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>qGPU 支持节点和 GPU 卡二层调度</td>
+    <td>可实现 GPU 资源精细调度与解决碎片问题。</td>
+    <td>2022-06-07</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>CLB 的后端可以绑定 Unschedulable 的节点</td>
+    <td>解决流量负载不均的问题。</td>
+    <td>2022-06-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/36836">Service 后端选择</a></td>
+  </tr>
+</tbody>
+</table>
+
+
 ## 2022年05月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -718,7 +751,7 @@
 <td>容器服务集群伸缩组相关 API 接入 API 3.0</td>
     <td>容器服务 API 升级到 3.0 版本，已支持全地域接入。<b>全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码、SDK/CLI 版本与 API 文档严格一致</b>，给用户带来简单快捷的使用体验。</td>
 <td>2019-09-12</td>
-<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/33852">伸缩组相关接口</a></td>
 <tr>
 <td>容器服务 Kubernetes 1.14 版本全量上线，已通过一致性认证</td>
     <td>容器服务<b> Kubernetes 1.14 版本全量上线</b>，并且已经通过一致性认证，以保证及时提供最新版本的 Kubernetes。</td>

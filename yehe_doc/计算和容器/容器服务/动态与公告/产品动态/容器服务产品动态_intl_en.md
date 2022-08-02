@@ -1,3 +1,36 @@
+## June 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tbody>
+<tr>
+    <td>TMP provides metrics recommended by experts</td>
+    <td>Simplifies the metric selection.</td>
+    <td>2022-06-21</td>
+    <td>-</td>
+  </tr>
+<tr>
+    <td>qGPU supports viewing GPU card resources with CRD</td>
+    <td>Unifies and streamlines the GPU resource view.</td>
+    <td>2022-06-07</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>qGPU supports scheduling at both the node and GPU card levels</td>
+    <td>Realizes refined scheduling of GPU resources and solves fragmentation problems.</td>
+    <td>2022-06-07</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Unschedulable nodes can be bound to the CLB backend</td>
+    <td>Solves the issue of unbalanced traffic load.</td>
+    <td>2022-06-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/36836">Service Backend Selection</a></td>
+  </tr>
+</tbody>
+</table>
+
+
 ## May 2022
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -718,7 +751,7 @@
 <td>Related APIs of the TKE cluster scaling group have been updated to API 3.0</td>
     <td>TKE APIs have been updated to 3.0 and support all-region access. <b>The new API documentation is more standardized and comprehensive, with unified parameter styles and common error codes. The SDK/CLI version is consistent with the API documentation</b>, providing a simple and convenient user experience.</td>
 <td>2019-09-12</td>
-<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/457/33852">CreateClusterAsGroup</a></td>
 <tr>
 <td>TKE Kubernetes 1.14 is fully launched and has passed conformance verification</td>
     <td>TKE <b>Kubernetes 1.14 is fully launched</b> and has passed conformance verification to ensure that the latest Kubernetes version is available.</td>

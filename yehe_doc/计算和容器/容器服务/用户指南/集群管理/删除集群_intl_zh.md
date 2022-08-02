@@ -4,11 +4,32 @@
 
 
 ## 操作步骤
-1. 登录[ 腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
-2. 在“集群管理”列表页面中，选择需删除集群所在行右侧的**更多**>**删除**。如下图所示：
-![](https://main.qcloudimg.com/raw/01debd945b31b5f5feb903e5b7656ce3.png)
+### 关闭集群删除保护
+#### 方式1
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
+2. 在“集群管理”列表页面中，选择需删除集群所在行右侧的**更多 > 关闭集群删除保护**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/1a3971617355afd5ded1b0365d031bce.png)
+3. 在“关闭集群保护”弹窗中单击**确认**即可。
+
+
+
+
+#### 方式2
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
+2. 在“集群管理”列表页面中，单击需删除集群名称，进入集群详情页。
+3. 在集群基本信息页面中，关闭**删除保护**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/40eb466fe2e2d7881e6fdbdf7c0febda.png)
+3. 在“关闭集群保护”弹窗中单击**确认**即可。
+
+
+### 删除集群
+1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
+2. 在“集群管理”列表页面中，选择需删除集群所在行右侧的**更多 > 删除**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/ea49cf457b0d3f4598b8b4f0436e046e.png)
 3. 在弹出的“删除集群”窗口中，按需选择保留或删除该集群下已有资源。如下图所示：
-![](https://main.qcloudimg.com/raw/948899a6185cff4aa9905aa967abe798.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/519dddb5f2e1352cc848f12fac4c2aa0.png)
 4. 查阅集群删除操作风险提示，勾选“我已知晓以上信息并确认删除集群”。
 5. 单击**确定**即可删除集群。
+
+
 
