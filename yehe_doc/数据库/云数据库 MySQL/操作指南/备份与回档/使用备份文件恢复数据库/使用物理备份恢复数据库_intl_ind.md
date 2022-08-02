@@ -8,8 +8,8 @@ Percona XtraBackup sumber terbuka dapat digunakan untuk mencadangkan dan memulih
 
 ## Prasyarat
 - Unduh dan instal XtraBackup.
- - Untuk MySQL versi 5.6 dan 5.7, unduh Percona XtraBackup versi 2.4.6 atau yang lebih baru di [situs web resmi Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Untuk informasi selengkapnya tentang penginstalan, lihat [dokumentasi Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
- - Untuk MySQL 8.0, unduh Percona XtraBackup versi 8.0.22-15 atau yang lebih baru di [situs web resmi Percona](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). Untuk informasi selengkapnya tentang penginstalan, lihat [dokumentasi Percona XtraBackup 8.0](https://www.percona.com/doc/percona-xtrabackup/8.0/installation.html).
+ - Untuk MySQL versi 5.6 dan 5.7, unduh Percona XtraBackup versi 2.4.6 atau yang lebih baru di [situs web resmi Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Untuk informasi selengkapnya tentang penginstalan, lihat [dokumentasi Percona XtraBackup 2.4](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
+ - Untuk MySQL 8.0, unduh Percona XtraBackup versi 8.0.22-15 atau yang lebih baru di [situs web resmi Percona](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). Untuk informasi selengkapnya tentang penginstalan, lihat [dokumentasi Percona XtraBackup 8.0](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
 - Arsitektur instans yang didukung: MySQL dua node atau tiga node
 - Instans dengan enkripsi data yang diaktifkan tidak dapat dipulihkan dari cadangan fisik.
 
