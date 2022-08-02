@@ -8,8 +8,8 @@ O Percona XtraBackup tem código aberto e pode ser usado para fazer backup e res
 
 ## Pré-requisitos
 - Baixe e instale o XtraBackup.
- - Para MySQL 5.6 e 5.7, baixe o Percona XtraBackup 2.4.6 ou superior no [site oficial da Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Para obter mais informações sobre instalação, consulte [Documentação do XtraBackup 2.4 da Percona](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
- - Para MySQL 8.0, baixe o Percona XtraBackup 8.0.22-15 ou superior no [site oficial da Percona](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). Para obter mais informações sobre instalação, consulte [Documentação do Percona XtraBackup 8.0](https://www.percona.com/doc/percona-xtrabackup/8.0/installation.html).
+ - Para MySQL 5.6 e 5.7, baixe o Percona XtraBackup 2.4.6 ou superior no [site oficial da Percona](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Para obter mais informações sobre instalação, consulte [Documentação do XtraBackup 2.4 da Percona](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
+ - Para MySQL 8.0, baixe o Percona XtraBackup 8.0.22-15 ou superior no [site oficial da Percona](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). Para obter mais informações sobre instalação, consulte [Documentação do Percona XtraBackup 8.0](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
 - Arquiteturas de instâncias suportadas: MySQL de dois ou três nós
 - Instâncias com criptografia de dados habilitada não podem ser restauradas de um backup físico.
 
