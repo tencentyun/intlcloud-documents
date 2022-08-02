@@ -24,8 +24,8 @@
 VODビデオのDRM暗号化・復号化による再生の全体的な処理フローは次のとおりです：
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae358775adc9711065239394b246ab50.png)
 
-## 導入の参考
-VODのDRM暗号化機能を速やかに導入するために、[チケットを提出](https://console.cloud.tencent.com/workorder/category)すると、VODでビデオのDRM暗号化を行います。そのため、ビデオ暗号化料金が発生します。
+## アクセスの参考
+VOD DRM暗号化機能を速やかに統合できるように、DRM暗号化ガイド[DRM暗号化ビデオの再生方法](https://intl.cloud.tencent.com/document/product/266/46642)を提供し、例を挙げて操作手順を説明しています。
 
 ## 料金関連
 商用DRM暗号化の使用には、主に次のような料金が発生します。
