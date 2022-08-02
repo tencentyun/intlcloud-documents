@@ -1,4 +1,3 @@
-## TLD registry policies
 Top-level domain (TLD) registry policies vary by registry. This topic lists the policies of some registries.
 
 |  Registry   | Registries Policies | TLDs|
