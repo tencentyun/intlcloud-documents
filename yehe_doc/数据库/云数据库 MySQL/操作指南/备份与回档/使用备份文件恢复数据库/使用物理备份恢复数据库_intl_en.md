@@ -8,8 +8,8 @@ The open-source Percona XtraBackup can be used to back up and restore databases.
 
 ## Prerequisites
 - Download and install XtraBackup.
- - For MySQL 5.6 and 5.7, download Percona XtraBackup 2.4.6 or above at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). For more information on installation, see [Percona XtraBackup 2.4 documentation](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
- - For MySQL 8.0, download Percona XtraBackup 8.0.22-15 or above at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). For more information on installation, see [Percona XtraBackup 8.0 documentation](https://www.percona.com/doc/percona-xtrabackup/8.0/installation.html).
+ - For MySQL 5.6 and 5.7, download Percona XtraBackup 2.4.6 or above at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). For more information on installation, see [Percona XtraBackup 2.4 documentation](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
+ - For MySQL 8.0, download Percona XtraBackup 8.0.22-15 or above at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). For more information on installation, see [Percona XtraBackup 8.0 documentation](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
 - Supported instance architectures: two-node or three-node MySQL
 - Instances with data encryption enabled cannot be restored from a physical backup.
 
