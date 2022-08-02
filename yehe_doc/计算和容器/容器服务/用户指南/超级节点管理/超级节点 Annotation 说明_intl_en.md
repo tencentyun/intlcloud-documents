@@ -1,0 +1,1 @@
+By defining annotations in the YAML file, you can leverage the rich customization capabilities of super nodes. For more information on how to configure super nodes, see [Annotation Description](https://intl.cloud.tencent.com/document/product/457/36162).

@@ -1,286 +1,406 @@
-## Workload Pod Template Annotation Description
-You can define `spec.template.metadata.annotations` in a YAML file to implement capabilities such as binding security groups and allocating resources for Pods. For more information about the configuration method, see the following table.
-
-<dx-alert infotype="notice" title="">
-- If no security group is specified, a Pod is bound with the `default` security group in the same region by default. Ensure that the network policy of the `default` security group does not affect the Pod.
-- To allocate CPU resources through the method specified by annotation, you must specify both `cpu` and `mem` annotations and make sure that their values meet the CPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057). In addition, you can select Intel or AMD CPUs to allocate by specifying `cpu-type`. AMD CPUs are more cost-effective. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055). 
-- To allocate GPU resources through the method specified by annotation, you must specify the `gpu-type` and `gpu-count` annotations and ensure that their values meet the GPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057).
-</dx-alert>
 
 
-<table>
-<thead>
-<tr>
-<th width="20%">Annotation Key</th>
-<th width="40%">Annotation Value and Description</th>
-<th width="40%">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>eks.tke.cloud.tencent.com/security-group-id</td>
-<td>Default security group bound with a workload. Specify the <a href="https://console.cloud.tencent.com/cvm/securitygroup" target="_blank">security group ID</a>.
-	<ul class="params">
-	<li>You can specify multiple security group IDs and separate each of them by commas (<code>,</code>). For example, <code>sg-id1,sg-id2</code>.</li>
-	<li>Network policies take effect based on the sequence of security groups.</li>
-	<li>Please note that a single security group can be associated with only 2,000 computing instances, such as CVM instances and Elastic Kubernetes Service (EKS) Pods. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">Security Group Restrictions</a>.</li>
-	</ul>
-</td>
-<td> No. If you do not specify it, the <code>default</code> security group in the same region bound with the workload is associated by default.<br>If you specify it, ensure that the security group ID already exists in the region where the workload resides.</td></tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/cpu</td>
-<td>Number of CPU cores required by a Pod. See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
-<td>No. Make sure the entered specification is supported and both the <code>cpu</code> and <code>mem</code> are specified.</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/mem</td>
-<td>Memory required by a Pod. See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit must be included in the value, for example, `512Mi`, `0.5Gi` and `1Gi`.</td>
-<td>No. Make sure the entered specification is supported and both the <code>cpu</code> and <code>mem</code> are specified.</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/cpu-type</td>
-<td>CPU resource types and models required by a Pod. The supported formats include:
-<ul  class="params">
-<li>intel</li>
-<li>amd</li>
-<li>S5,S4</li>
-<li>You can specify the model by priority. For example, `amd,intel` indicates AMD resource Pods will be created first. If the AMD resources in the selected region are insufficient, Intel resource Pods will be created.</li>
-</ul>
-See <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
-<td>No. If it’s not specified, the system automatically choose the best-suit specification. See <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Specifying Resource Specifications</a>. If the matched specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/gpu-type</td>
-<td>Model of the GPU resources required by a Pod. The supported models include:
-<ul  class="params">
-<li>V100</li>
-<li>1/4*T4</li>
-<li>1/2*T4</li>
-<li>T4</li>
-<li>You can specify the model by priority. For example, “T4,V100” indicates T4 resource Pods will be created first. If the T4 resources in the selected region are insufficient, V100 resource Pods will be created.</li>
-</ul>
-For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
-<td>If GPUs are required, this option is required. When specifying it, ensure that the GPU model is supported. Otherwise, an error will be reported.</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/gpu-count</td>
-<td>Number of GPU cards required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. </td>
-<td>No. Make sure that the entered specification is supported.</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/retain-ip</td>
-<td>The static IP of a Pod. Enter the value <code>"true"</code> to enable this feature. If a Pod with the static IP enabled is terminated, its IP will be retained 24 hours by default. If the Pod is rebuilt within 24 hours after termination, its IP can still be used. Otherwise, its IP may be occupied by other Pod.<b>Only valid for statefulset and rawpod.</b></td>
-<td>No</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/retain-ip-hours</td>
-<td>Modifies the default retention duration of the Pod’s static IP. Enter a number. Unit: hour. Default value: 24 hours. The IP can be retained up to one year.<b>Only valid for statefulset and rawpod.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/role-name</td>
-<td>Associates a Pod with a CAM role. Please specify <a href="https://console.cloud.tencent.com/cam/role" target="_blank">CAM role name</a> as the value. In this way, the Pod can obtain the permission policies of the associated CAM role to facilitate cloud resource operations such as purchasing resources and reading from or writing to storage.</td>
-<td>No. If you specify it, please make sure the specified CAM role exists.</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/custom-metrics-url</td>
-<td>Sets a custom monitoring metric pull address for a Pod. The monitoring data opened at this address will be automatically read and reported by the monitoring component.</td>
-<td>No. If you specify it, please ensure that the opened data protocol can be recognized by the monitoring system, such as the Prometheus protocol and cloud monitoring data protocol.</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/eip-attributes</td>
-<td>Attributes of the EIP associated with Pods of the Workload. When the value is `""`, it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in within "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M. Note that it is only applicable to bill-by-IP accounts.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/eip-claim-delete-policy</td>
-<td>Whether to release the EIP once the Pod is deleted. `Never`: Do not release. This parameter takes effect only when eks.tke.cloud.tencent.com/eip-attributes is specified. Note that it is only applicable to bill-by-IP accounts.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/eip-id-list</td>
-<td>If the Workload is a StatefulSet, you can also specify one or multiple existing EIPs, such as "eip-xx1,eip-xx2". Note that the number of StatefulSet Pods must be less than or equal to the number of EIP IDs specified in this annotation; otherwise, Pods that cannot be allocated with EIPs will be in the "Pending" status. Note: this cannot be used for non-bill-by-IP accounts.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/registry-insecure-skip-verify</td>
-<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTPS-based self-signed external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028?lang=zh&pg=#.E5.BC.B9.E6.80.A7.E9.9B.86.E7.BE.A4.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8.E8.87.AA.E5.BB.BA.E7.9A.84.E8.87.AA.E7.AD.BE.E5.90.8D.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.E6.88.96-http-.E5.8D.8F.E8.AE.AE.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.EF.BC.9F">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
-<td>No</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/registry-http-endpoint</td>
-<td>Image repository address (separate multiple addresses with “,”, or enter "all"). When you use an image from a HTTP-based external image repository to create a workload in an elastic cluster, you may encounter the error “ErrImagePull” and fail to pull the image. You can solve this issue by adding the annotation. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/457/40028?lang=zh&pg=#.E5.BC.B9.E6.80.A7.E9.9B.86.E7.BE.A4.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8.E8.87.AA.E5.BB.BA.E7.9A.84.E8.87.AA.E7.AD.BE.E5.90.8D.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.E6.88.96-http-.E5.8D.8F.E8.AE.AE.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93.EF.BC.9F">How do I use an image from a self-signed or HTTP-based external image repository in an elastic cluster?</a></td>
-<td>No</td>
-</tr>
-<tr>
-<td>eks.tke.cloud.tencent.com/image-cache-disk-retain-minute</td>
-<td>Whether to delay the termination of CBS data disks used for image caching. The unit is “min”. You can set the duration of delayed termination as needed. The default value is “0”, which means the data disks are terminated at the time of Pod termination. If the value is set to “10”, it indicates that the data disks used for image caching are retained for 10 minutes after the Pod is terminated.</a></td>
-<td>No</td>
-</tr>
-</tbody></table>
+This document describes the annotation that is unique to super nodes and effective for Pods running on super nodes in TKE and EKS clusters.
 
-### Example
-The following example shows the complete GPU specifications of the security group bound to a Pod.
-```
+## Annotation Usage
+### Adding a Pod annotation to a workload
+Annotations in this document are at the Pod level. Usually, it is the workload not bare Pod that is used by users. This document describes how to add a Pod annotation to a Deployment. Note that a Pod annotation is added in the `.spec.template.metadata.annotations` field of a workload.
+
+```yaml
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
-  generation: 1
-  labels:
-    k8s-app: nginx
-    qcloud-app: nginx
   name: nginx
-  namespace: default
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
-      k8s-app: nginx
-      qcloud-app: nginx
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-    type: RollingUpdate
+      app: nginx
   template:
     metadata:
-      annotations:
-        eks.tke.cloud.tencent.com/cpu: "4"
-        eks.tke.cloud.tencent.com/gpu-count: "1"
-        eks.tke.cloud.tencent.com/gpu-type: 1/4*T4
-        eks.tke.cloud.tencent.com/mem: 10Gi
-        eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
-        eks.tke.cloud.tencent.com/role-name: "cam-role-name"
-        eks.tke.cloud.tencent.com/monitor-port: "9123"
-        eks.tke.cloud.tencent.com/custom-metrics-url: "http://localhost:8080/metrics"
-      creationTimestamp: null
       labels:
-        k8s-app: nginx
-        qcloud-app: nginx
+        app: nginx
+      annotations:
+        eks.tke.cloud.tencent.com/retain-ip: 'true' # A Pod annotation is added in the `.spec.template.metadata.annotations` field of a workload.
     spec:
       containers:
-      - image: nginx:latest
-        imagePullPolicy: Always
-        name: nginx
-        resources:
-          limits:
-            cpu: "1"
-            memory: 2Gi
-            nvidia.com/gpu: "1"
-          requests:
-            cpu: "1"
-            memory: 2Gi
-            nvidia.com/gpu: "1"
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      imagePullSecrets:
-      - name: qcloudregistrykey
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+      - name: nginx
+        image: nginx
 ```
 
 
+### Global configuration
+You can modify the global configuration to make an annotation effective for all Pods in a cluster by default, that is, the `eks-config` ConfigMap in the `kube-system` namespace. If there are no such configurations, create one.
 
-## Virtual Node Annotation Description
-EKS supports the virtual nodes. You can specify annotations in a YAML file to implement capabilities such as custom DNS, as shown below:
-
-<table>
-<thead>
-<tr>
-<th width="20%">Annotation Key</th>
-<th width="40%">Annotation Value and Description</th>
-<th width="40%">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>eks.tke.cloud.tencent.com/resolv-conf</td>
-<td>Queries the list of IP addresses for the DNS server while resolving the domain name, for example <code>nameserver 8.8.8.8</code>.
-<br>You can use <code>kubectl edit node eklet-subnet-xxxx</code> to add this annotation.
-<br>After the modification, the Pods scheduled to this virtual node will adopt this DNS configuration by default.</td>
-<td>No</td>
-</tr>
-</tr>
-</tbody></table>
-
-### Example
-The example of a custom DNS configuration for a virtual node is as follows:
-
-```
+```yaml
 apiVersion: v1
-kind: Node
+kind: ConfigMap
 metadata:
-  annotations:
-    eks.tke.cloud.tencent.com/resolv-conf:|
-	  nameserver 4.4.4.4
-      nameserver 8.8.8.8
+  name: eks-config
+  namespace: kube-system
+data:
+  pod.annotations: |
+    eks.tke.cloud.tencent.com/resolv-conf: |
+      nameserver 183.60.83.19 
+    eks.tke.cloud.tencent.com/host-sysctls: '[{"name": "net.core.rmem_max","value": "26214400"}]'
 ```
 
+>? Annotations added to Pods take priority over the global configuration.
 
+## Resources and Specifications
 
-## Service Annotation Description
+### Specifying the CPU and memory
 
-EKS allows you to use existing CLBs to create Services accessed via the public or private network. If you want to provide your idle CLBs for Services to be created or need to use the same CLB in a cluster, you can add annotations.
+By default, Pods running on super nodes automatically calculate the specifications of underlying resources according to the request and limit values. You can also specify the computing resource specifications required by Pods by adding Pod annotations. For more information, see [Specifying resource specifications](https://intl.cloud.tencent.com/document/product/457/36161).
 
-<table>
-<thead>
-<tr>
-<th width="20%">Annotation Key</th>
-<th width="40%">Annotation Value and Description</th>
-<th width="40%">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>service.kubernetes.io/tke-existed-lbid</td>
-<td>The Service is created with the existing <a href="https://intl.cloud.tencent.com/document/product/214/524" target="_blank">CLB</a>. Specify the ID of the CLB instance you want to use as the value.</td>
-<td>No. If you specify it, ensure that the specified CLB instance ID exists.</td>
-</tr>
-<tr>
-<td>service.kubernetes.io/qcloud-share-existed-lb</td>
-<td>By default, multiple Services cannot share the same CLB instance. If you hope that a Service uses the CLB occupied by other Services, please add this annotation and specify the value as <code>"true"</code>.</td>
-<td>No. If you do not specify it, a CLB instance cannot be reused by default.</td>
-</tr>
-</tr>
-</tbody></table>
-
-The elastic cluster also supports the same expansion protocol as the TKE cluster. For more information, see [Service Extension Protocol](https://intl.cloud.tencent.com/document/product/457/39141).
-
->!
->- Ensure that your EKS and the CVM do not share the same CLB.
->- When the existing CLBs are used:
->   - Only CLBs created through the CLB console can be used. You cannot reuse CLBs automatically created by TKE.
->   - Ports of Services that share the same existing CLB cannot be the same.
->   - Cross-cluster Services cannot share the same CLB.
-
-
-### Example
-```
-apiVersion: v1
-kind: Service
-metadata:
-  annotations:
-    service.kubernetes.io/tke-existed-lbid: lb-pxxxxxxq
-    service.kubernetes.io/qcloud-share-existed-lb: true
-  name: servicename
-  namespace: default
-spec:
-  externalTrafficPolicy: Cluster
-  ports:
-  - name: tcp-80-80
-    nodePort: 31728
-    port: 80
-    protocol: TCP
-    targetPort: 80
-  sessionAffinity: None
-  type: LoadBalancer
+```yaml
+eks.tke.cloud.tencent.com/cpu: '8'
+eks.tke.cloud.tencent.com/mem: '16Gi' # The memory needs to be measured in GiB. If GB is used, parameter errors will be reported.
 ```
 
-<style>
-	.params{margin:0px !important}
-</style>
+### Automatically upgrading the specification
+
+Pods on super nodes automatically calculate the specifications of underlying resources according to the request and limit values. If no such resources exist, Pod creation will fail and the system will prompt that the resources are insufficient. If you agree to create a Pod with higher-specced resources, add the following annotation to the Pod to enable automatic specification upgrade. Fees will be charged according to the upgraded specifications.
+
+```yaml
+eks.tke.cloud.tencent.com/spec-auto-upgrade: 'true' # When resources are insufficient, enable automatic specification upgrade, which is performed only once according to the CPU specifications.
+```
+
+### Specifying the GPU
+
+To specify the GPU, add the following annotation to the Pod:
+
+```yaml
+eks.tke.cloud.tencent.com/gpu-count: '1' # Specify the number of GPU cards.
+eks.tke.cloud.tencent.com/gpu-type: 'T4,V100' # Specify the GPU model by priority.
+```
+
+### Specifying the CPU type
+To specify the CPU type, add the following annotation to the Pod:
+
+
+```yaml
+eks.tke.cloud.tencent.com/cpu-type: 'amd,intel' # It indicates that AMD resource Pods are created first. If the AMD resources in the AZ of the selected region are insufficient, Intel resource Pods are created.
+```
+
+### Enabling the spot mode
+To enable the [spot mode](https://intl.cloud.tencent.com/document/product/457/46967), add the following annotation to the Pod:
+
+```yaml
+eks.tke.cloud.tencent.com/spot-pod: 'true'
+```
+
+## IP Retention and EIP
+
+### Fixing an IP in StatefulSet
+
+You can use a fixed IP if the workload is StatefulSet or a bare Pod is used (note that you cannot change the Pod name). You can add the Pod annotation to enable the fixed IP:
+
+```yaml
+eks.tke.cloud.tencent.com/retain-ip: 'true' # Set the value to `true` to enable the fixed IP.
+eks.tke.cloud.tencent.com/retain-ip-hours: '48' # The maximum IP retention period in hours. If a terminated Pod is not created after this period, the IP will be released.
+```
+
+>? You don't need to add annotations to use the fixed IP for super nodes in the TKE cluster.
+
+### Binding an EIP
+To bind an EIP, add the following annotation to the Pod:
+
+```yaml
+eks.tke.cloud.tencent.com/eip-attributes: '{"InternetMaxBandwidthOut":50, "InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR"}' # The value can be an empty string, indicating that the EIP is enabled and the default configuration is used. You can also use the JSON parameter used to create the EIP API. For more information on the parameter list, visit https://cloud.tencent.com/document/api/215/16699#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0. In this example, the parameter indicates that the EIP is pay-as-you-go and the bandwidth cap is 50 Mbps.
+```
+
+### Fixing an EIP in StatefulSet
+To fix an EIP in StatefulSet, add the following annotation to the Pod:
+
+
+```yaml
+eks.tke.cloud.tencent.com/eip-attributes: '{}' # Enable the EIP and use the default configuration.
+eks.tke.cloud.tencent.com/eip-claim-delete-policy: 'Never' # It indicates whether to repossess the EIP after the Pod is deleted. By default, it is repossessed. `Never` indicates not to repossess, which means the same EIP will be bound to the next Pod created under the same name, thereby fixing the EIP.
+```
+
+>! When `Never` is set for Deployment workloads, the EIP will not be repossessed after the Pod is deleted or used for the roll-updated Pod.
+
+### Using an existing EIP in StatefulSet
+
+To bind an existing EIP to the Pod instead of automatically creating one, specify the ID of the EIP instance to be bound to the Pod. The annotation is as follows:
+
+```yaml
+eks.tke.cloud.tencent.com/eip-id-list: 'eip-xx1,eip-xx2' # Specify the list of existing EIP instances and make sure that the number of Pod replicas in StatefulSet is less than or equal to that of EIP instances.
+```
+
+>! When specifying the EIP, do not configure the `eip-attributes` annotation.
+
+## Image and Registry
+
+### Ignoring the certificate verification
+
+If the certificate of the self-built image registry is self-signed, the image pull will fail (ErrImagePull). You can add the following annotation to the Pod to specify not to verify the certificate when images are pulled from the image registry:
+
+```yaml
+eks.tke.cloud.tencent.com/registry-insecure-skip-verify: 'harbor.example.com' # You can write multiple ones separated by comma.
+```
+
+### Using the HTTP protocol
+
+If HTTP rather than HTTPS is used by the self-built image registry, the image pull will fail (ErrImagePull). You can add the following annotation to the Pod to use HTTP when images are pulled from the image registry:
+
+```yaml
+eks.tke.cloud.tencent.com/registry-http-endpoint: 'harbor.example.com' # You can write multiple ones separated by comma.
+```
+
+### Reusing an image
+
+By default, the system disk is reused on super nodes to speed up the startup, specifically, the system disk of the Pod within the caching period (six hours after termination) in the same AZ of the same workload. To reuse Pod images in different workloads, add the same `cbs-reuse-key` annotation to all of them:
+
+```yaml
+eks.tke.cloud.tencent.com/cbs-reuse-key: 'image-name'
+```
+
+### Caching an image
+
+Super nodes provide [image cache capabilities](https://intl.cloud.tencent.com/document/product/457/44484), where an image cache instance is created in advance, the target image is automatically downloaded, and the cloud disk snapshot is created. Then you can enable the image cache when creating a Pod. The snapshot of the image cache instance is automatically matched by image name, allowing you to use the snapshot image content and saving the need to download the image a second time, thereby speeding up the startup.
+
+The annotation to enable the image cache is as follows:
+
+```yaml
+eks.tke.cloud.tencent.com/use-image-cache: 'auto'
+```
+
+You can choose to manually specify the image cache instance instead of having it automatically matched:
+
+```yaml
+eks.tke.cloud.tencent.com/use-image-cache: 'imc-xxx'
+```
+
+The data disk created by the image cache is terminated upon Pod deletion, but you can specify a period to retain it by using an annotation. When retention is enabled, the retained data disk will be reused when the next Pod is created, saving the time to roll the data from the snapshot to the new cloud disk:
+
+```yaml
+eks.tke.cloud.tencent.com/image-cache-disk-retain-minute: '10' # Specify to retain the data disk created by the image cache for 10 minutes after Pod termination.
+```
+
+## Binding a Security Group
+
+By default, super nodes bind Pods to the `default` security group in the default project in the same region. You can also specify a security group by adding the following annotation to the Pod:
+
+```yaml
+eks.tke.cloud.tencent.com/security-group-id: 'sg-id1,sg-id2' # Enter the IDs of the security groups in the region and separate them by comma. Network policies take effect based on the sequence of security groups. By default, a security group can be bound to up to 2,000 Pods. To increase this limit, submit a ticket for application.
+```
+
+## Binding a Role
+
+By default, super nodes associate Pods with the `TKE_QCSLinkedRoleInEKSLog` role and grant log collection components in the Pods the permission to report logs. You can associate Pods with other CAM roles by using the annotation to get permissions to manipulate Tencent Cloud resources.
+
+```yaml
+eks.tke.cloud.tencent.com/role-name: 'TKE_QCSLinkedRoleInEKSLog'
+```
+
+## Setting the Host Kernel Parameters
+
+Some kernel parameters are isolated by network namespace and cannot be viewed or set in containers. A Pod on the super node exclusively occupies a VM, but this doesn't mean that you can set host kernel parameters in containers.
+
+You can add Pod annotations to set host kernel parameters:
+
+```yaml
+eks.tke.cloud.tencent.com/host-sysctls: '[{"name": "net.core.rmem_max","value": "26214400"},{"name": "net.core.wmem_max","value": "26214400"},{"name": "net.core.rmem_default","value": "26214400"},{"name": "net.core.wmem_default","value": "26214400"}]'
+```
+
+## Loading the Kernel Module
+To load the [TOA kernel module](https://intl.cloud.tencent.com/document/product/608/18945), add the following annotation to the Pod:
+
+```yaml
+eks.tke.cloud.tencent.com/host-modprobe: 'toa'
+```
+
+## Automatic Recreation and Failover
+
+An agent inside the VM in the cluster of the super node reports heartbeats to the control plane. Generally speaking, if the report times out (five minutes by default), the process in the Pod fails due to a high load. In this case, the cluster migrates the VM by default for failover (the current VM is shut down and a new one is created automatically to take over the Pod).
+
+If you don't want to have another one automatically created (so that the problematic environment can be retained), then add the following annotation to the Pod:
+
+```yaml
+eks.tke.cloud.tencent.com/recreate-node-lost-pod: "false"
+```
+
+To remove the abnormal Pod traffic in less time than the default five minutes, add the following annotation to the Pod to customize the heartbeat timeout period:
+
+```yaml
+eks.tke.cloud.tencent.com/heartbeat-lost-period: 1m 
+```
+
+## Disk Cleanup
+
+When the disk usage on the super node becomes too high, a cleanup process is automatically triggered to release the space. You can view the disk usage through `df -h`.
+
+Common causes of insufficient disk space include the following:
+- The business has a lot of temporary outputs. You can confirm this with the `du` command.
+- The business holds deleted file descriptors, so disk space is not freed up. You can confirm this with the `lsof` command.
+
+### Cleaning up a container image
+
+By default, if the disk usage reaches 80%, the container image is automatically cleaned up to free up the space. If no container images can be released, the following event is reported:
+
+```txt
+failed to garbage collect required amount of images. Wanted to free 7980402688 bytes, but freed 0 bytes
+```
+
+To customize the cleanup threshold, add the following annotation to the Pod: 
+
+```yaml
+eks.tke.cloud.tencent.com/image-gc-high-threshold: '80' # It indicates that the container image cleanup is triggered when the disk usage reaches 80%.
+eks.tke.cloud.tencent.com/image-gc-low-threshold: '75' # After triggered, the container image cleanup stops when 5% (high-threshold - low-threshold) of the space is released.
+eks.tke.cloud.tencent.com/image-gc-period: '3m' # The disk space is checked once every three minutes by default.
+```
+
+### Cleaning up an exited container
+
+If your business has been upgraded in-place or a container has abnormally exited, the exited container will be retained until the disk usage reaches 85%. The cleanup threshold can be adjusted with the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/container-gc-threshold: "85"
+```
+
+If you don't want to have the exited container automatically cleaned up (for example, you need the exit information for further troubleshooting), you can disable the automatic cleanup with the following annotation; however, the disk space cannot be automatically freed up in this case:
+
+```yaml
+eks.tke.cloud.tencent.com/must-keep-last-container: "true"
+```
+
+### Restarting a Pod with high disk usage
+
+To restart a Pod after the container's system disk usage exceeds a certain percentage, configure the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/pod-eviction-threshold: "85" # This feature is enabled after set. It is not enabled by default.
+```
+
+Only the Pod will be restarted, and the server will not be rebuilt. Normal GraceStop, PreStop, and health checks are performed for the exit and startup.
+
+>! This feature was launched on April 27, 2022 and can be enabled on Pods created earlier only after they are rebuilt.
+
+## Monitoring Metrics
+
+### Port 9100 issue
+
+Pods on super nodes expose monitoring data via port 9100 by default, and you can access 9100/metrics to get the data by running the following command:
+
+- Get all metrics:
+  ```bash
+  curl -g "http://<pod-ip>:9100/metrics"
+  ```
+
+- We recommend you remove the `ipvs` metric for large clusters:
+  ```bash
+  curl -g "http://<pod-ip>:9100/metrics?collect[]=ipvs"
+  ```
+
+If the business listens on port 9100, the following error will be reported, indicating that port 9100 has been used:
+
+```
+listen() to 0.0.0.0:9100, backlog 511 failed (1: Operation not permitted)
+```
+
+You can customize the port number to be used for exposing monitoring data to avoid business conflicts. The configuration method is as follows:
+
+```yaml
+eks.tke.cloud.tencent.com/metrics-port: "9110"
+```
+
+>? If the Pod has a public EIP, you need to set the security group. Pay attention to the issue with port 9100 and open the required ports.
+
+### Monitoring data reporting frequency
+
+The `cAdvisor` monitoring data exposed on the super node is refreshed once every 30s by default. You can adjust the refresh frequency with the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/cri-stats-interval: '30s'
+```
+
+### Customizing the monitoring metric path
+
+By default, monitoring data is exposed through the `/metrics` path, which doesn't need to be changed. To customize it, use the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/custom-metrics-url: '/metrics'
+```
+
+## Naming the Pod ENI
+
+By default, a Pod uses the `eth0` ENI. To rename the ENI, add the following annotation:
+
+```yaml
+internal.eks.tke.cloud.tencent.com/pod-eth-idx: '1' # Name the ENI `eth1`. 
+```
+
+## Customizing the DNS
+
+By default, the host of the Pod uses the DNS of `183.60.83.19` and `183.60.82.98` in the VPC. To modify it, configure the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/resolv-conf: |
+  nameserver 4.4.4.4
+  nameserver 8.8.8.8
+```
+
+>! A custom DNS on the host prevails.
+
+## Collecting Logs to Kafka
+
+Super nodes allow you to use open-source log collection components to collect logs to Kafka. If files in containers are collected or [multi-line merging](https://intl.cloud.tencent.com/document/product/457/40216) is used during collection, you need to properly configure the line size that defaults to 2 MB. If it exceeds 2 MB, the log in the line is discarded. The line size can be adjusted with the following annotation:
+
+```yaml
+internal.eks.tke.cloud.tencent.com/tail-buffer-max-size: '2M' # A single-line log can be up to 2 MB.
+```
+
+When logs are collected to Kafka, the field of the log content is `log`. To configure it to `message`, use the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/log-key-as-message: 'true'
+```
+
+When reported, logs contain the Pod metadata information, which is put in the `kubernetes` field as a `string`. To set it to the `json` format, configure the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/filebeat-metadata-format: 'true'
+```
+
+## Delaying the Termination
+
+When a job running on the super node ends, the underlying resources along with the temporary output are terminated. If you run kubectl logs <pod>, "can not found connection to pod" will be reported. To retain underlying resources for problem locating, delay the termination with the following configuration:
+
+```yaml
+eks.tke.cloud.tencent.com/reserve-sandbox-duration: '1m' # Enable the feature to delay the termination for one minute. When the last container of the Pod in the `Failed` status exits, the underlying resources are retained for one minute.
+eks.tke.cloud.tencent.com/reserve-succeeded-sandbox: 'false' # Termination delay only applies to Pods in the `Failed` status. You can also change the field to apply it to Pods in the `Succeeded` status.
+eks.tke.cloud.tencent.com/reserve-task-shorter-than: '5s' # If you only care about short-running jobs, you can configure this parameter. Then the termination delay will be triggered only when any container in the Pod runs shorter than the specified value. This parameter is not enabled by default.
+```
+
+## Service Rule Sync
+
+### Disabling the service rule sync
+
+The cluster of the super node generates K8s service rules through IPVS. If you don't need such service rules, you can disable them with the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/cluster-ip-switch: 'disable'
+```
+
+>! After service rules are disabled, service discovery in all clusters becomes invalid. `dnsPolicy` of `ClusterFirst` cannot be used by the Pod, and you need to change it to another type such as `Default`.
+
+### Waiting for the service rule sync
+
+The cluster syncs service rules when the Pod is started. To wait for the sync to be completed before starting the Pod, use the following configuration:
+
+```yaml
+eks.tke.cloud.tencent.com/duration-to-wait-service-rules: '30s' # Wait for the service rule sync to be completed before starting the Pod. The maximum value of 30s is set here.
+```
+
+### Setting the IPVS parameter
+
+IPVS rules can be controlled with the following annotation:
+
+```yaml
+eks.tke.cloud.tencent.com/ipvs-scheduler: 'sh' # Scheduling algorithm. `sh` refers to source hash. Forwarding based on the source address hash facilitates distributed global loading balancing. The default value is `rr` (round robin).
+eks.tke.cloud.tencent.com/ipvs-sh-port: "true" # Source hash is performed by port, which is valid only when `ipvs-scheduler` is `sh`.
+eks.tke.cloud.tencent.com/ipvs-sync-period: '30s' # The maximum interval for refreshing rules, which defaults to 30s.
+eks.tke.cloud.tencent.com/ipvs-min-sync-period: '2s' # The minimum interval for refreshing rules. By default, rules are refreshed upon service changes. You can modify this parameter to avoid frequent refreshes.
+```
