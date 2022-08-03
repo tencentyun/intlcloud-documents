@@ -18,9 +18,18 @@ App에 이벤트 알림이 설정된 경우 동영상이 삭제된 후 App 백�
     "EventType":"FileDeleted",
     "FileDeleteEvent":{
         "FileIdSet":[
-            "24961954183381008",
-            "24961954183381009",
-            "24961954183381010"
+            "24961954183381008"
+        ],
+        "FileDeleteResultInfo":[
+            {
+                "FileId":"24961954183381008",
+                "DeleteParts":[
+                    {
+                        "Type":"TranscodeFiles",
+                        "Definition":0
+                    }
+                ]
+            }
         ]
     }
 }
@@ -30,23 +39,33 @@ App에 이벤트 알림이 설정된 경우 동영상이 삭제된 후 App 백�
 ### 신뢰할 수 있는 콜백
 신뢰할 수 있는 콜백 모드를 선택하면 [PullEvents](https://intl.cloud.tencent.com/document/product/266/34187) API가 호출된 후 다음 형식의 HTTP 응답이 수신됩니다(null 값이 있는 필드는 생략됨).
 
+
 ```json
 {
-	"Response": {
-		"EventSet": [
-			{
-				"EventHandle": "EventHandle.N",
-				"EventType": "FileDeleted",
-				"FileDeleteEvent": {
-                    "FileIdSet": [
-                        "24961954183381008",
-                        "24961954183381009",
-                        "24961954183381010"
+    "Response":{
+        "EventSet":[
+            {
+                "EventHandle":"EventHandle.N",
+                "EventType":"FileDeleted",
+                "FileDeleteEvent":{
+                    "FileIdSet":[
+                        "24961954183381008"
+                    ],
+                    "FileDeleteResultInfo":[
+                        {
+                            "FileId":"24961954183381008",
+                            "DeleteParts":[
+                                {
+                                    "Type":"TranscodeFiles",
+                                    "Definition":0
+                                }
+                            ]
+                        }
                     ]
                 }
-			}
-		],
-		"RequestId": "335bdaa3-db0e-46ce-9946-51941d9cb0f5"
-	}
+            }
+        ],
+        "RequestId":"335bdaa3-db0e-46ce-9946-51941d9cb0f5"
+    }
 }
 ```
