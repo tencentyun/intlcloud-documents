@@ -70,7 +70,7 @@
 <li >优化 Android 平台蓝牙耳机体验。</li>
 </ul ></td>
 <td>2021-11-08</td> 
-<td><a href="https://cloud.tencent.com/document/product/607/15210">实时语音</tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/607/40860">实时语音</tr>
 </tbody></table>
 
 ## 2021年07月
@@ -94,7 +94,7 @@
 <li >适配海外合规</li>
 </ul ></td>
 <td>2021-07-09</td> 
-<td><a href="https://cloud.tencent.com/document/product/607/15210">实时语音</tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/607/40860">实时语音</tr>
 </tbody></table>
 
 ## 2021年06月
