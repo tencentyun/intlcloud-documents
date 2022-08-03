@@ -158,7 +158,7 @@ prefix = ''
 | prefix | Prefix of the path to be migrated. If all data in the bucket needs to be migrated, leave the prefix empty. |
 
 #### 3.4 Configure an AWS data source `migrateAws`
-If you migrate files from AWS to COS, configure this section. The specific configuration items and descriptions are as follows:
+If you migrate files from AWS to VOD, configure this section. The specific configuration items and descriptions are as follows:
 ```
 # Configuration section for migration from AWS S3 to VOD
 [migrateAws]
