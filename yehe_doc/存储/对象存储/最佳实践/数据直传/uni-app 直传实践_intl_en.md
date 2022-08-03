@@ -75,7 +75,7 @@ The created app is a Vue project.
             // Get the upload path and credential
             var getUploadInfo = function (extName, callback) {
                // Pass in the file extension to enable the backend to generate a random COS object path and return the upload domain name and the policy signature required by the `PostObject` API.
-               // Refer to the server example at https://github.com/tencentyun/cos-demo/server/post-policy/
+               // Refer to the server example at https://github.com/tencentyun/cos-demo/tree/main/server/post-policy
                uni.request({
                   url: 'http://127.0.0.1:3000/post-policy?ext=' + extName,
                   success: (res) => {
