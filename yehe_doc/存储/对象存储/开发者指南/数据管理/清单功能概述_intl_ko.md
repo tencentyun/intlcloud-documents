@@ -21,7 +21,8 @@
 | AppID               | 계정 ID                                                |
 | Bucket              | 인벤토리 작업을 실행할 버킷 이름                                 |
 | fileFormat       |  파일 형식  |
-| listObjectCount | 나열된 객체 수량. 이 항목에 따라 요금이 부과되며, 자세한 사항은 [관리 기능 요금](https://intl.cloud.tencent.com/document/product /436/40098)의 인벤토리 기능 요금 부분을 참고하십시오. |
+| listObjectCount |  나열된 객체 수량. 이 항목에 따라 요금이 부과되며, 자세한 사항은
+ [관리 기능 요금](https://intl.cloud.tencent.com/document/product /436/40098)의 인벤토리 기능 요금 부분을 참고하십시오. |
 | listStorageSize | 나열된 객체 크기 |
 |filterObjectCount  |선별된 객체 수|
 |filterStorageSize  |  선별된 객체 크기|
@@ -130,7 +131,7 @@ destination-prefix/appid/source-bucket/config-ID/YYYYMMDD/manifest.checksum
 - **desitination-prefix**: 사용자가 인벤토리를 설정할 때 설치하는 ‘타깃 접두사’입니다. 타깃 버킷에서 공용 위치에 있는 모든 인벤토리 보고서를 그룹화하는데 사용할 수 있습니다.
 - **source-bucket**: 인벤토리 보고서와 일치하는 소스 버킷 이름입니다. 이 폴더는 각각의 인벤토리 보고서를 여러 소스 버킷에서 동일한 타깃 버킷에 발송할 때 발생하는 충돌을 방지하기 위함입니다.
 - **config-ID**: 사용자가 인벤토리를 설정할 때 설치된 ‘인벤토리 이름’으로 동일한 소스 버킷이 여러 인벤토리 보고서를 설치하고 이를 동일한 타깃 버킷에 발송할 때 config-ID로 상이한 인벤토리 보고서를 구분할 수 있습니다.
-- **YYYY-MM-DD-HH-MM**: 타임스탬프. 인벤토리 보고서를 생성할 때 버킷이 스캐닝하기 시작하는 시간과 일자를 포함합니다.
+- **YYYYMMDD**: 타임스탬프. 인벤토리 보고서를 생성할 때 버킷이 스캐닝하기 시작하는 시간과 일자를 포함합니다.
 - **manifest.json**: Manifest 파일을 가리킵니다.
 - **manifest.checksum**: manifest.json 파일 콘텐츠의 MD5를 가리킵니다.
 
