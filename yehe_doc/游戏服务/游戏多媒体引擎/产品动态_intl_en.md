@@ -70,7 +70,7 @@
 <li >Optimizes the Bluetooth headset experience for Android.</li>
 </ul ></td>
 <td>2021-11-08</td> 
-<td><a href="https://cloud.tencent.com/document/product/607/15210">Voice Chat</tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/607/40860">Voice Chat</tr>
 </tbody></table>
 
 ## July 2021
@@ -94,7 +94,7 @@
 <li >Makes adaptations to global compliance.</li>
 </ul ></td>
 <td>2021-07-09</td> 
-<td><a href="https://cloud.tencent.com/document/product/607/15210">Voice Chat</tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/607/40860">Voice Chat</tr>
 </tbody></table>
 
 ## June 2021
