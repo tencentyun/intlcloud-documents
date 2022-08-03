@@ -18,9 +18,18 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
     "EventType":"FileDeleted",
     "FileDeleteEvent":{
         "FileIdSet":[
-            "24961954183381008",
-            "24961954183381009",
-            "24961954183381010"
+            "24961954183381008"
+        ],
+        "FileDeleteResultInfo":[
+            {
+                "FileId":"24961954183381008",
+                "DeleteParts":[
+                    {
+                        "Type":"TranscodeFiles",
+                        "Definition":0
+                    }
+                ]
+            }
         ]
     }
 }
@@ -30,23 +39,33 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 ### Reliable Callback
 If you choose the reliable callback mode, after the [PullEvents](https://intl.cloud.tencent.com/document/product/266/34187) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
 
+
 ```json
 {
-	"Response": {
-		"EventSet": [
-			{
-				"EventHandle": "EventHandle.N",
-				"EventType": "FileDeleted",
-				"FileDeleteEvent": {
-                    "FileIdSet": [
-                        "24961954183381008",
-                        "24961954183381009",
-                        "24961954183381010"
+    "Response":{
+        "EventSet":[
+            {
+                "EventHandle":"EventHandle.N",
+                "EventType":"FileDeleted",
+                "FileDeleteEvent":{
+                    "FileIdSet":[
+                        "24961954183381008"
+                    ],
+                    "FileDeleteResultInfo":[
+                        {
+                            "FileId":"24961954183381008",
+                            "DeleteParts":[
+                                {
+                                    "Type":"TranscodeFiles",
+                                    "Definition":0
+                                }
+                            ]
+                        }
                     ]
                 }
-			}
-		],
-		"RequestId": "335bdaa3-db0e-46ce-9946-51941d9cb0f5"
-	}
+            }
+        ],
+        "RequestId":"335bdaa3-db0e-46ce-9946-51941d9cb0f5"
+    }
 }
 ```
