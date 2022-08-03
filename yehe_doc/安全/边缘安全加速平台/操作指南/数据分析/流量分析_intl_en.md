@@ -1,6 +1,5 @@
 ## Overview
 EdgeOne provides diverse metrics for you to stay on top of the business data in multiple dimensions by analyzing the business access log data. Due to the impact of latency and algorithm, the distribution and ranking data is for reference only, and actual log analysis data shall prevail.
->?The EdgeOne console is now only available to beta users. [Contact us](https://intl.cloud.tencent.com/contact-us) to join the beta.
 
 ## Directions
 ### Query conditions
