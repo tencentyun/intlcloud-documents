@@ -130,7 +130,7 @@ The meanings of the paths are as follows:
 - **destination-prefix**: This is the "destination prefix" set when you configure the inventory, which can be used to group all inventory reports in a public location in the destination bucket.
 - **source-bucket**: This is the name of the source bucket corresponding to the inventory report. This folder is added to avoid conflicts that may occur when multiple source buckets send their inventory reports to the same destination bucket.
 - **config-ID**: This is the "inventory name" set when you configure the inventory. If multiple inventory reports are configured in the same source bucket and delivered to the same destination bucket, config-ID can be used to distinguish among different reports.
-- **YYYY-MM-DD-HH-MM**: Timestamp, including the time and date when the bucket scan is started when the inventory report is generated.
+- **YYYYMMDD**: Timestamp, including the time and date when the bucket scan is started when the inventory report is generated.
 - **manifest.json**: This is the manifest file.
 - **manifest.checksum**: This is the MD5 of the content of the manifest.json file.
 
