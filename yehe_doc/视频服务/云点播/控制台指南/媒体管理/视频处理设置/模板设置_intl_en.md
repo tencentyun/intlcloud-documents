@@ -1,7 +1,7 @@
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod) and select **Application Management** on the left sidebar.
 2. Select the target application.
-3. By default, you will enter the **Media Assets > Video Management > Uploaded** page.
-4. Select **Video Processing > Template Settings** on the left sidebar to create a **video transcoding template**, **TESHD template**, **audio transcoding template**, **remux template**, **adaptive bitrate streaming template**, **watermark template**, **screenshot template**, **animated image template**, or **audit template**. All templates can be added to video processing workflows.
+3. By default, you will enter the **Media Assets > Audio/Video Management > Uploaded** page.
+4. Select **Video Processing > Template Settings** on the left sidebar to create a **video transcoding template**, **TESHD template**, **audio transcoding template**, **remux template**, **adaptive bitrate streaming template**, **watermark template**, **screenshot template**, **animated image template**, or **moderation template**. All templates can be added to video processing workflows.
 
 
 ## Video Transcoding Template
@@ -160,16 +160,16 @@ For information about the preset templates, see [Preset animated image generatin
 
 
 
-## Audit Template
-Select the **Audit Template** tab and click **Create Template** to create a custom audit template.
+## Moderation Template
+Select the **Moderation Template** tab and click **Create Template** to create a custom moderation template.
 
 - Template name: Up to 64 characters; supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), and periods (.).
 - Sampling interval: The interval (seconds) at which frames are checked. Default value: 1; minimum value: 0.5.
-- Audit items: You can choose image recognition, speech recognition, and text recognition. Selected items will appear in the "Selected" column on the right.
+- Moderation items: You can choose image recognition, speech recognition, and text recognition. Selected items will appear in the "Selected" column on the right.
 <table border=0 cellpadding="0" cellspacing="0">
 <thead>
 <tr>
-<th >Audit Item</th>
+<th >Moderation Item</th>
 <th align="center" nowrap="nowrap">Subitem</th>
 <th align="center">Description</th>
 </tr>
