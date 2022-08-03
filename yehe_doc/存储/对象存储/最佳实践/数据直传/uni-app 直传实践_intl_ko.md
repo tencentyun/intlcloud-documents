@@ -75,7 +75,7 @@
             // 업로드 경로 및 자격 증명 가져오기
             var getUploadInfo = function (extName, callback) {
                // 백엔드가 임의의 COS 객체 경로를 생성하고 업로드 도메인과 PostObject API에 필요한 policy 서명을 반환할 수 있도록 파일 확장자 전달
-               // 서버 예시 참고: https://github.com/tencentyun/cos-demo/server/post-policy/
+               // 서버 예시 참고: https://github.com/tencentyun/cos-demo/tree/main/server/post-policy
                uni.request({
                   url: 'http://127.0.0.1:3000/post-policy?ext=' + extName,
                   success: (res) => {
