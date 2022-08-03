@@ -159,6 +159,7 @@ Upload request class `VodUploadRequest`
 | Attribute Name | Attribute Description | Type | Required |
 | --------- | ---------------------- | ------- | ---- |
 | MediaFilePath | Path to the media file to be uploaded, which must be a local path and does not support URLs. | String | Yes |
+| SubAppId | ID of a [subapplication](https://intl.cloud.tencent.com/document/product/266/33987) in VOD. If you need to access a resource in a subapplication, enter the subapp ID in this field; otherwise, leave it empty. | Integer | No |
 | MediaType | Type of the media file to be uploaded. For the valid values, please see [Video Upload Overview](https://intl.cloud.tencent.com/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B). If the `MediaFilePath` path contains a file extension, this parameter can be left empty. | String | No |
 | MediaName | Name of the media file after being uploaded. If this parameter is left empty, the filename in `MediaFilePath` will be used by default. | String | No |
 | CoverFilePath | Path to the cover file to be uploaded, which must be a local path and does not support URLs. | String | No |
@@ -167,7 +168,6 @@ Upload request class `VodUploadRequest`
 | ExpireTime | Expiration time of the media file in ISO 8601 format. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). | String | No |
 | ClassId | Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by [CreateClass](https://intl.cloud.tencent.com/document/product/266/35325). | Integer | No |
 | SourceContext | Source context of up to 250 characters, which is used to pass through the user request information and will be returned by the upload callback API. | String | No |
-| SubAppId | ID of a [subapplication](https://intl.cloud.tencent.com/document/product/266/33987) in VOD. If you need to access a resource in a subapplication, enter the subapp ID in this field; otherwise, leave it empty. | Integer | No |
 | StorageRegion | Storage region, which specifies the region where to store the file. This field should be filled in with a [region abbreviation](https://intl.cloud.tencent.com/document/product/266/33910). | String | No |
 
 Upload response class `VodUploadResponse`
