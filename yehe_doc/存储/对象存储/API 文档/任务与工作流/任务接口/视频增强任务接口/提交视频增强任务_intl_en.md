@@ -201,7 +201,7 @@ Same as the `Request.Input` node in the request.
 |:---|:-- |:--|:--|
 | TemplateId | Response.JobsDetail.Operation | Job template ID |  String |
 | Output             | Response.JobsDetail.Operation | File output address               | Container |
-| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | 
 | MediaInfo          | Response.JobsDetail.Operation | Transcoding output video information. This node will not be returned when there is no output video. | Container |
 
 `Output` has the following sub-nodes:

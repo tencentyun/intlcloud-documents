@@ -170,13 +170,12 @@ Audio/Video formats supported by different container formats are as follows:
 | Bitrate            | Request.Audio | Original audio bitrate | String | No       | None     | <ul  style="margin: 0;"><li>Unit: Kbps</li><li>Value range: [8, 1000] </li></ul>          |
 | Channels           | Request.Audio | Number of sound channels       | String | No       | None     | <ul  style="margin: 0;"><li>If `Codec` is `aac` or `flac`, the value can be `1`, `2`, `4`, `5`, `6`, or `8`.</li><li>If `Codec` is `mp3` or `opus`, the value can only be `1` or `2`.</li><li>If `Codec` is `Vorbis`, the value can only be `2`.</li><li>If `Codec` is `amr`, the value can only be `1`.</li><li>If `Codec` is `dash`, the value cannot be `8`.</li></ul>|
 | Remove             | Request.Audio | Whether to delete the source audio stream | String | No   |   false    | Valid values: true, false                                             |
-| KeepTwoTracks      | Request.Audio | Keep double audio track | String | No   | false    | Valid values: `true`, `false`. If `Video.Codec` is `H.265`, this parameter is invalid.
+| KeepTwoTracks      | Request.Audio | Keep double audio track | String | No   | false    | Valid values: `true`, `false`. If `Video.Codec` is `H.265`, this parameter is invalid. |
 | SwitchTrack        | Request.Audio | Switch the track | String | No   | false    | Valid values: true, false. If `Video.Codec` is `H.265`, this parameter is invalid.                                       |
 | SampleFormat       | Request.Audio | Sampling bit width  | String | No   | None      | <ul  style="margin: 0;"><li>If `Codec` is `aac`, the value can only be `fltp`.</li><li>If `Codec` is `mp3`, the value can be `fltp`, `s16p`, or `s32p`.</li><li>If `Codec` is `flac`, the value can only be `s16` or `s32`.</li><li>If `Codec` is `amr`, the value can only be `s16`.</li><li>If `Video.Codec` is `H.265`, this parameter is invalid.</li></ul>|
 
 >? Y indicates supported, and N indicates unsupported.
 >
-
 
 `Audio.Codec` supports the sample rates as shown below:
 
