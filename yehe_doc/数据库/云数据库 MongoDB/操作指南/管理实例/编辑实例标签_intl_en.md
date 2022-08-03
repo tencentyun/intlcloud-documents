@@ -15,7 +15,7 @@ Tag management is a free service provided by Tencent Cloud for your Tencent Clou
 - For each instance, a tag key can correspond to only one tag value.
 
 ## Prerequisites
-You have [applied for a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551).
+You have [created for a TencentDB for MongoDB instance](https://intl.cloud.tencent.com/document/product/240/3551).
 
 ## Directions
 1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb).

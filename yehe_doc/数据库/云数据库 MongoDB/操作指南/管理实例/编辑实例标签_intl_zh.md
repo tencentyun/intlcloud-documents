@@ -15,7 +15,7 @@
 - 1个实例上的同一个标签键只能对应1个标签值。
 
 ## 前提条件
-已 [申请云数据库 MongoDB 实例](https://intl.cloud.tencent.com/document/product/240/3551)。
+已 [创建云数据库 MongoDB 实例](https://intl.cloud.tencent.com/document/product/240/3551)。
 
 ## 操作步骤
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)。
