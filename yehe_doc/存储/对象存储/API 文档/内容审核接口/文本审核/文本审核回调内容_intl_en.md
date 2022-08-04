@@ -1,6 +1,6 @@
 ## Feature Description
 
-If you have configured an moderation callback address, after text moderation is completed, the backend will call back the moderation result in JSON format to the callback address. You can perform subsequent file processing operations based on the callback content.
+If you have configured a moderation callback address, after text moderation is completed, the backend will call back the moderation result in JSON format to the callback address. You can perform subsequent file processing operations based on the callback content.
 
 The callback content is divided into simple callback (Simple) and detailed callback (Detail).
 
@@ -49,7 +49,7 @@ The nodes are as described below:
 | trace_id | Unique ID. If the job is an async job created through an API, this value is the `JobId` returned by the API. | String | Yes |
 | url | Full URL of the moderated text. | String | Yes |
 | event | Triggered event, which is fixed at `ReviewText` here. | String | Yes |
-| result | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer | Yes |
+| result | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer | Yes |
 | forbidden_status | If you set auto-freezing, this field indicates the frozen status of the text. 0: not frozen, 1: frozen, 2: file moved. | Integer | Yes |
 | cos_headers      | The custom header content set when the resource is uploaded. If it is not set, it will not be returned.       | Object  | No       |
 | porn_info        | The moderation result of the **pornographic information** moderation scene.                           | Object  | No       |
@@ -147,16 +147,16 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :------ |
-| Code               | Error code, which will be meaningful only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
+| Code               | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
 | Message            | Error description, which will be returned only if `State` is `Failed`. | String |
 | JobId              | ID of the text moderation job. | String |
 | DataId             | The original content will be returned if the `DataId` parameter is set when the job is submitted, which can contain up to 512 bytes. | String  |
-| State              | Status of the moderation job. Valid values: Submitted, Success, Failed, Auditing. | String |
+| State              | Status of the moderation job. Valid values: `Submitted`, `Success`, `Failed`, and `Auditing`. | String |
 | CreationTime       | Creation time of the text moderation job. | String |
 | Object             | The name of the text file to be moderated, which will be returned if `Object` is selected during job creation. | String |
 | Content            | The Base64-encoded text content to be moderated, which will be returned if `Content` is selected during job creation. | String  |
-| Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: **Normal**: normal; **Porn**: pornographic; **Ads**: advertising; **Illegal**: illegal; **Abuse**: abusive. | String  |
-| Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer |
+| Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: `Normal`, `Porn`, `Ads`, `Illegal`, and `Abuse`. | String  |
+| Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo           | The moderation result of the **pornographic information** moderation scene.                           | Object  |
 | AdsInfo            | The moderation result of the **advertising information** moderation scene.                       | Object  |
 | IllegalInfo        | The moderation result of the **illegal information** moderation scene.                           | Object  |
@@ -181,8 +181,8 @@ The nodes are as described below:
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :------ |
 | StartByte          | The starting position of the segment in the text (for example, 10 represents the 11th UTF-8 character). This value starts from 0. | Integer |
-| Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: **Normal**: normal; **Porn**: pornographic; **Ads**: advertising; **Illegal**: illegal; **Abuse**: abusive. | String  |
-| Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer |
+| Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: `Normal`, `Porn`, `Ads`, `Illegal`, and `Abuse`. | String  |
+| Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo           | The moderation result of the **pornographic information** moderation scene.                           | Object  |
 | AdsInfo            | The moderation result of the **advertising information** moderation scene.                       | Object  |
 | IllegalInfo        | The moderation result of the **illegal information** moderation scene.                           | Object  |

@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (`POST text auditing`) is used to submit a text moderation job. The text moderation feature is async. You can submit a job to moderate your text files, and then use the [GET text auditing API](https://intl.cloud.tencent.com/document/product/436/48189) or [text auditing callback API](https://intl.cloud.tencent.com/document/product/436/48190) to query the moderation results.
+This API (`POST text auditing`) is used to submit a text moderation job. The text moderation feature is async. You can submit a job to moderate your text files, and then use the `DescribeAuditingTextJob` API as described in [Querying Text Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48189) or the text auditing callback API as described in [Text Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48190) to query the moderation results.
 
 
 The API can:
@@ -15,7 +15,7 @@ The API can:
   - Pass in text file URLs for moderation (only for UTF-8 and GBK encodings).
 - Automatically detect text files and recognize non-compliant content that may be offensive, unsafe, or inappropriate based on the deep learning technology.
 <span id=3></span>
-- Get the detection results by setting the callback address `Callback` or calling the [GET text auditing API](https://intl.cloud.tencent.com/document/product/436/48189).
+- Get the detection results by setting the callback address `Callback` or calling the `DescribeAuditingTextJob` API as described in [Querying Text Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48189).
 - Recognize various non-compliant scenes, including pornographic, illegal, and adverting information.
 <span id=4></span>
 - Customize moderation policies based on different business scenarios.
@@ -23,10 +23,10 @@ The API can:
 ## Billing Description
 
 - Each moderation scene is billed separately. For example, if you choose to moderate two scenes involving pornography and advertising, then **one text file** will be moderated and billed **twice**.
-- Calling the API will incur text moderation fees and [COS read request fees](https://intl.cloud.tencent.com/document/product/436/40100).
-- If the text files are stored in COS STANDARD_IA storage class, calling the moderation API will incur [STANDARD_IA data retrieval fees](https://intl.cloud.tencent.com/document/product/436/40097).
-- Text moderation is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To moderate these objects, you need to [restore](https://intl.cloud.tencent.com/document/product/436/12633) them first.
-
+- Calling the API will incur text moderation fees and COS read request fees as described in [Request Fees](https://intl.cloud.tencent.com/document/product/436/40100).
+- If the text files are stored in COS STANDARD_IA storage class, calling the moderation API will incur STANDARD_IA data retrieval fees as described in [Data Retrieval Fees](https://intl.cloud.tencent.com/document/product/436/40097).
+- Text moderation is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To moderate these objects, you first need to restore them as instructed in [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
+- 审核第三方云存储厂商的图片 URL 时，将产生所在云厂商的下行流量费用。
 
 ## Restrictions
 
@@ -212,7 +212,7 @@ In the `Input` node in the API request, selecting `Object` and `Content` will re
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------ | :----------------------------------------------------------- | :-------------- |
-| Code | Response.JobsDetail | Error code, which will be meaningful only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
+| Code | Response.JobsDetail | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
 | DataId | Response.JobsDetail | Unique business ID added in the request. | String |
 | Message | Response.JobsDetail | Error description, which will be returned only if `State` is `Failed`. | String |
 | JobId | Response.JobsDetail | ID of the text moderation job. | String |
@@ -240,8 +240,8 @@ In the `Input` node in the API request, selecting `Object` and `Content` will re
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :-------------------------- | :----------------------------------- | :-------- |
 | StartByte | Response.JobsDetail.Section | The starting position of the segment in the text (for example, 10 represents the 11th UTF-8 character). This value starts from 0. | Integer |
-| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: **Normal**: normal; **Porn**: pornographic; **Ads**: advertising; and other types of unsafe or inappropriate content. | String |
-| Result | Response.JobsDetail.Section | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer |
+| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
+| Result | Response.JobsDetail.Section | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo | Response.JobsDetail.Section | The moderation result of the **pornographic information** moderation scene. | Container |
 | AdsInfo | Response.JobsDetail.Section | The moderation result of the **advertising information** moderation scene. | Container |
 | IllegalInfo | Response.JobsDetail.Section | The moderation result of the **illegal information** moderation scene. | Container |

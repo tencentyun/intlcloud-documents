@@ -133,17 +133,17 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------ | :----------------------------------------------------------- | :-------------- |
-| Code | Response.JobsDetail | Error code, which will be meaningful only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
+| Code | Response.JobsDetail | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
 | Message | Response.JobsDetail | Error description, which will be returned only if `State` is `Failed`. | String |
 | DataId | Response.JobsDetail | This field will return the original content in the moderation result, which can contain up to 512 bytes. You can use this field to uniquely identify the data to be moderated in your business. | String |
 | JobId | Response.JobsDetail | Moderation job ID. | String |
-| State | Response.JobsDetail | Job status. Valid values: Submitted, Success, Failed, Auditing. | String |
+| State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Success`, `Failed`, `Auditing`. | String |
 | CreationTime | Response.JobsDetail | Job creation time. |  String |
 | Object | Response.JobsDetail | Name of the moderated object, which will be returned if `Object` is selected during job creation. | String |
 | Content | Response.JobsDetail | Base64-encoded text content, which will be returned if `Content` is selected during job creation. | String |
 | SectionCount       | Response.JobsDetail | The text moderation feature divides the text into segments for moderation, each of which contains 10,000 UTF-8 characters. This parameter indicates the number of segments. | Integer |
-| Label | Response.JobsDetail | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: **Normal**: normal; **Porn**: pornographic; **Ads**: advertising; and other types of unsafe or inappropriate content. | String |
-| Result | Response.JobsDetail | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer |
+| Label | Response.JobsDetail | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content). | String |
+| Result | Response.JobsDetail | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo | Response.JobsDetail | The moderation result of the **pornographic information** moderation scene. | Container |
 | AdsInfo | Response.JobsDetail | The moderation result of the **advertising information** moderation scene. | Container |
 | IllegalInfo | Response.JobsDetail | The moderation result of the **illegal information** moderation scene. | Container |
@@ -163,8 +163,8 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :-------------------------- | :----------------------------------------------------------- | :-------- |
 | StartByte | Response.JobsDetail.Section | The starting position of the segment in the text (for example, 10 represents the 11th UTF-8 character). This value starts from 0. | Integer |
-| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: **Normal**: normal; **Porn**: pornographic; **Ads**: advertising; and other types of unsafe or inappropriate content. | String |
-| Result | Response.JobsDetail.Section | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: **0** (normal), **1** (sensitive), **2** (suspiciously sensitive, with human review recommended). | Integer |
+| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions according to your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
+| Result | Response.JobsDetail.Section | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results according to your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo | Response.JobsDetail.Section | The moderation result of the **pornographic information** moderation scene. | Container |
 | AdsInfo | Response.JobsDetail.Section | The moderation result of the **advertising information** moderation scene. | Container |
 | IllegalInfo | Response.JobsDetail.Section | The moderation result of the **illegal information** moderation scene. | Container |
