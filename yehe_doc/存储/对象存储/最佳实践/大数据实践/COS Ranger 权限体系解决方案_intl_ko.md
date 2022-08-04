@@ -17,7 +17,7 @@ Hadoop Ranger 권한 시스템은 빅 데이터 시나리오에서의 권한 솔
 Hadoop 권한 시스템에서 인증은 Kerberos에서, 권한 인증은 Ranger에서 담당합니다. 여기에 다음과 같은 모듈을 제공해 COS의 Ranger 권한 솔루션을 지원합니다.
 
 
-1. cos-ranger-plugin: Ranger 서버의 서비스 정의 플러그 인을 제공합니다. 권한의 종류, 필요 매개변수(COS의 bucket 매개변수, region 매개변수)를 포함한 Ranger 측 COS 서비스에 대한 설명을 제공합니다. 해당 플러그 인이 설치되면, 사용자는 Ranger의 제어 페이지에서 적절한 권한 정책을 작성할 수 있습니다.
+1. cos ranger plugin: Ranger 서버의 서비스 정의 플러그 인을 제공합니다. 권한의 종류, 필요 매개변수(COS의 bucket 매개변수, region 매개변수)를 포함한 Ranger 측 COS 서비스에 대한 설명을 제공합니다. 해당 플러그 인이 설치되면, 사용자는 Ranger의 제어 페이지에서 적절한 권한 정책을 작성할 수 있습니다.
 2. COSRangerService: 이 서비스는 Ranger의 클라이언트를 통합하여 주기적으로 Ranger 서버와 권한 정책을 동기화하고, 클라이언트의 인증 요청을 받은 후 로컬에서 권한 인증을 진행합니다. 또한, Hadoop에서 DelegationToken과 관련된 생성, 지속 대여 등의 인터페이스를 제공하며, 모든 인터페이스는 Hadoop IPC를 통해 정의됩니다.
 3. CosRangerClient: COSN 플러그 인을 동적으로 로딩하여 권한 인증 요청을 CosRangerService에 전달합니다.
 
@@ -29,14 +29,14 @@ Hadoop 권한 시스템에서 인증은 Kerberos에서, 권한 인증은 Ranger�
 >
 
 ## 설치 모듈
-CHDFS-Ranger-Plugin, Cos-Ranger-Service, Cos-Ranger-Client 및 COSN의 순서로 모듈을 설치합니다.
+CHDFS Ranger Plugin,Cos Ranger Service,Cos Ranger Client 및 COSN의 순서로 모듈을 설치합니다.
 <dx-tabs>
-::: COS-Ranger-Plugin 설치
-COS-Ranger-Plugin이 Ranger Admin 콘솔의 서비스 종류를 확장함에 따라, 사용자는 Ranger 콘솔에서 COS와 관련된 작업 권한을 설정할 수 있습니다.
+::: cos ranger plugin 설치
+cos ranger plugin이 Ranger Admin 콘솔의 서비스 종류를 확장함에 따라, 사용자는 Ranger 콘솔에서 COS와 관련된 작업 권한을 설정할 수 있습니다.
 
 
 #### 코드 주소
-[Github](https://github.com/tencentyun/cos-ranger-service)의 ranger-plugin 목록으로 이동 후 획득할 수 있습니다.
+[Github](https://github.com/tencentyun/COS Ranger Service)의 ranger-plugin 목록으로 이동 후 획득할 수 있습니다.
 #### 버전
 V1.1 이상 버전
 #### 배포 순서
@@ -85,27 +85,27 @@ curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H 
     -  List: 탐색 권한입니다. COS의 List Object에 대응됩니다.
 ![](https://main.qcloudimg.com/raw/00a619b4b963a9acf766411fad722fe4.png)
 :::
-::: COS-Ranger-Service 배포
-COS-Ranger-Service는 전체 권한 시스템의 핵심으로, ranger 클라이언트를 통합하여 ranger client의 인증 요청, token 생성 및 지속 대여 요청, 임시 키 생성 요청을 접수합니다. 또한, 중요한 정보(Tencent Cloud 키 정보)가 있는 구역이기도 합니다. 보통 점프 서버에 설치되어 클러스터 관리자만 조회 및 설정 등의 작업을 할 수 있습니다.
+::: COS Ranger Service 배포
+COS Ranger Service는 전체 권한 시스템의 핵심으로, ranger 클라이언트를 통합하여 ranger client의 인증 요청, token 생성 및 지속 대여 요청, 임시 키 생성 요청을 접수합니다. 또한, 중요한 정보(Tencent Cloud 키 정보)가 있는 구역이기도 합니다. 보통 점프 서버에 설치되어 클러스터 관리자만 조회 및 설정 등의 작업을 할 수 있습니다.
 
-COS-Ranger-Service는 하나의 메인 서버와 다수의 데이터 노드로 구성된 HA를 지원하여 HDFS에서 DelegationToken Status가 지속될 수 있도록 합니다. ZK 잠금 장치로 Leader의 신분을 결정합니다. Leader의 신분을 획득한 서비스는 주소를 ZK에 입력하여 COS Ranger Client가 라우팅 어드레스 지정을 할 수 있도록 합니다.
+COS Ranger Service는 하나의 메인 서버와 다수의 데이터 노드로 구성된 HA를 지원하여 HDFS에서 DelegationToken Status가 지속될 수 있도록 합니다. ZK 잠금 장치로 Leader의 신분을 결정합니다. Leader의 신분을 획득한 서비스는 주소를 ZK에 입력하여 COS Ranger Client가 라우팅 어드레스 지정을 할 수 있도록 합니다.
 
 #### 코드 주소
-[Github](https://github.com/tencentyun/cos-ranger-service)의 cos-ranger-server 디렉터리로 이동하여 얻을 수 있습니다.
+[Github](https://github.com/tencentyun/COS Ranger Service)의 cos-ranger-server 디렉터리로 이동하여 얻을 수 있습니다.
 
 #### 버전
 V5.0.6 이상 버전
 
 #### 설치 절차
 1. COS Ranger Service 서비스 코드를 클러스터의 기기 몇 대에 복사하고, 생성 환경은 최소 기기 두 대(메인 기기와 예비용 기기)를 권장합니다. 중요한 정보를 다루기 때문에 점프 서버 혹은 권한이 엄격히 통제되는 기기를 권장합니다.
-2. cos-ranger.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/cos-ranger-service)의 cos-ranger-service/conf 디렉터리에서 얻을 수 있습니다).
+2. cos-ranger.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/COS Ranger Service)의 COS Ranger Service/conf 디렉터리에서 얻을 수 있습니다).
  -  qcloud.object.storage.rpc.address
  -  qcloud.object.storage.status.port
  -  qcloud.object.storage.enable.cos.ranger
  -  qcloud.object.storage.zk.address (zk 주소, cos ranger service 실행 후 zk에 등록)
  -  qcloud.object.storage.cos.secret.id
  -  qcloud.object.storage.cos.secret.key
-3. ranger-cos-security.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/cos-ranger-service)의 cos-ranger-service/conf 디렉터리에서 얻을 수 있습니다).
+3. ranger-cos-security.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/COS Ranger Service)의 COS Ranger Service/conf 디렉터리에서 얻을 수 있습니다).
  -  ranger.plugin.cos.policy.cache.dir
  -  ranger.plugin.cos.policy.rest.url
  -  ranger.plugin.cos.service.name
@@ -116,7 +116,7 @@ chmod +x start_rpc_server.sh
 nohup ./start_rpc_server.sh &> nohup.txt &
 ```
 6. 실행에 실패하면 log의 error 로그에 잘못된 정보가 있는지 조회합니다.
-7. cos-ranger-service는 HTTP 포트 상태(포트 이름은 qcloud.object.storage.status.port, 기본값은 9998)표시를 지원합니다. 사용자는 다음의 명령을 실행하여 leader의 포함 여부 및 인증 통계와 같은 상태 정보를 얻을 수 있습니다.
+7. COS Ranger Service는 HTTP 포트 상태(포트 이름은 qcloud.object.storage.status.port, 기본값은 9998)표시를 지원합니다. 사용자는 다음의 명령을 실행하여 leader의 포함 여부 및 인증 통계와 같은 상태 정보를 얻을 수 있습니다.
 ```
 # 10.xx.xx.xxx를 ranger service와 함께 배포된 장치의 IP 주소로 바꿉니다.
 # 명령의 9998을 구성 파일의 qcloud.object.storage.status.port 값으로 바꿉니다.
@@ -126,17 +126,17 @@ curl -v http://10.xx.xx.xxx:9998/status
  - 여러 cos ranger service 노드가 배치된 경우 위의 인터페이스 응답에서 다른 노드가 leader가 되는 것을 볼 수 있으며 모든 노드를 다시 시작한 후 가장 먼저 다시 시작된 노드가 leader로 표시됩니다.
 
 :::
-::: COS-Ranger-Client 설치
-COS-Ranger-Client는 hadoop cosn 플러그 인의 동적 로딩으로 COS-Ranger-Service와 관련 있는 요청을 대신 액세스해 줍니다. 임시 키 획득, token 획득, 인증 작업 등이 포함됩니다.
+::: COS Ranger Client 설치
+COS Ranger Client는 hadoop cosn 플러그 인의 동적 로딩으로 COS Ranger Service와 관련 있는 요청을 대신 액세스해 줍니다. 임시 키 획득, token 획득, 인증 작업 등이 포함됩니다.
 
 #### 코드 주소
-[Github](https://github.com/tencentyun/cos-ranger-service)의 cos-ranger-client 디렉터리로 이동하여 얻을 수 있습니다.
+[Github](https://github.com/tencentyun/COS Ranger Service)의 COS Ranger Client 디렉터리로 이동하여 얻을 수 있습니다.
 
 #### 버전
 V3.8 이상 버전
 
 #### 설치 방식
-1. cos-ranger-client jar 패키지와 cosn-ranger-interface jar 패키지를 COSN과 동일한 디렉터리(일반적으로 /usr/local/service/hadoop/share/hadoop/common/lib/ 디렉터리)에 복사하십시오. 복사를 선택하고 hadoop 자체의 주요 버전과 일치하는 jar 패키지를 선택하고 마지막으로 jar 패키지에 읽기 권한이 있는지 확인합니다.
+1. COS Ranger Client jar 패키지와 cosn-ranger-interface jar 패키지를 COSN과 동일한 디렉터리(일반적으로 /usr/local/service/hadoop/share/hadoop/common/lib/ 디렉터리)에 복사하십시오. 복사를 선택하고 hadoop 자체의 주요 버전과 일치하는 jar 패키지를 선택하고 마지막으로 jar 패키지에 읽기 권한이 있는지 확인합니다.
 2. core-site.xml에 다음과 같은 설정 항목을 추가하십시오.
 <dx-codeblock>
 ::: xml
@@ -157,12 +157,12 @@ V3.8 이상 버전
            </property>
 
          <!--***선택 가능한 설정****-->  
-         <!-- zk에 기록된 ranger server의 ip 주소 경로, 여기에 사용된 기본값과 설정은 반드시 cos-ranger-service의 설정과 일치해야 합니다. -->
+         <!-- zk에 기록된 ranger server의 IP 주소 경로, 여기에 사용된 기본값과 설정은 반드시 COS Ranger Service의 설정과 일치해야 합니다. -->
           <property>              
 					<name>qcloud.object.storage.zk.leader.ip.path</name> 
 					<value>/ranger_qcloud_object_storage_leader_ip</value>
           </property>
-         <!-- zk에 기록된 cos ranger service follower의 ip 주소 경로, 여기에 사용된 기본값은 반드시 cos-ranger-service의 설정과 일치해야 하며, 프라이머리/세컨더리 노드가 동시에 서비스 제공 -->
+         <!-- zk에 기록된 cos ranger service follower의 IP 주소 경로, 여기에 사용된 기본값은 반드시 COS Ranger Service의 설정과 일치해야 하며, 프라이머리/세컨더리 노드가 동시에 서비스 제공 -->
           <property>
                     <name>qcloud.object.storage.zk.follower.ip.path</name>
                     <value>/ranger_qcloud_object_storage_follower_ip</value>
@@ -220,4 +220,4 @@ Policy가 매칭되지 않았을 경우 기본적으로 해당 작업이 거부�
 임시 키는 COSN 플러그 인 cache에 있으며, 주기적으로 비동기화 업데이트됩니다.
 
 ### ranger 페이지에서 Policy를 변경했는데 적용되지 않으면 어떻게 해야 하나요?
-ranger-cos-security.xml 파일의 구성 항목을 수정하십시오. ranger.plugin.cos.policy.pollIntervalMs, 이 구성 항목(밀리초 단위)을 조정한 다음 cos-ranger-service 서비스를 다시 시작합니다. Policy 관련 테스트가 끝난 후에는 다시 원래 값으로 변경하는 것이 좋습니다(시간 간격이 너무 작아 교대 훈련 빈도가 높아 CPU 사용률이 높아짐).
+ranger-cos-security.xml 파일의 구성 항목을 수정하십시오. ranger.plugin.cos.policy.pollIntervalMs, 이 구성 항목(밀리초 단위)을 조정한 다음 COS Ranger Service 서비스를 다시 시작합니다. Policy 관련 테스트가 끝난 후에는 다시 원래 값으로 변경하는 것이 좋습니다(시간 간격이 너무 작아 교대 훈련 빈도가 높아 CPU 사용률이 높아짐).
