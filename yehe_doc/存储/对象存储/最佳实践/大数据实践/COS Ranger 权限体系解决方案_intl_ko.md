@@ -36,7 +36,7 @@ cos ranger plugin이 Ranger Admin 콘솔의 서비스 종류를 확장함에 따
 
 
 #### 코드 주소
-[Github](https://github.com/tencentyun/COS Ranger Service)의 ranger-plugin 목록으로 이동 후 획득할 수 있습니다.
+[Github](https://github.com/tencentyun/cos-ranger-service)의 ranger-plugin 목록으로 이동 후 획득할 수 있습니다.
 #### 버전
 V1.1 이상 버전
 #### 배포 순서
@@ -91,21 +91,21 @@ COS Ranger Service는 전체 권한 시스템의 핵심으로, ranger 클라이�
 COS Ranger Service는 하나의 메인 서버와 다수의 데이터 노드로 구성된 HA를 지원하여 HDFS에서 DelegationToken Status가 지속될 수 있도록 합니다. ZK 잠금 장치로 Leader의 신분을 결정합니다. Leader의 신분을 획득한 서비스는 주소를 ZK에 입력하여 COS Ranger Client가 라우팅 어드레스 지정을 할 수 있도록 합니다.
 
 #### 코드 주소
-[Github](https://github.com/tencentyun/COS Ranger Service)의 cos-ranger-server 디렉터리로 이동하여 얻을 수 있습니다.
+[Github](https://github.com/tencentyun/cos-ranger-service)의 cos-ranger-server 디렉터리로 이동하여 얻을 수 있습니다.
 
 #### 버전
 V5.0.6 이상 버전
 
 #### 설치 절차
 1. COS Ranger Service 서비스 코드를 클러스터의 기기 몇 대에 복사하고, 생성 환경은 최소 기기 두 대(메인 기기와 예비용 기기)를 권장합니다. 중요한 정보를 다루기 때문에 점프 서버 혹은 권한이 엄격히 통제되는 기기를 권장합니다.
-2. cos-ranger.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/COS Ranger Service)의 COS Ranger Service/conf 디렉터리에서 얻을 수 있습니다).
+2. cos-ranger.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/cos-ranger-service)의 COS Ranger Service/conf 디렉터리에서 얻을 수 있습니다).
  -  qcloud.object.storage.rpc.address
  -  qcloud.object.storage.status.port
  -  qcloud.object.storage.enable.cos.ranger
  -  qcloud.object.storage.zk.address (zk 주소, cos ranger service 실행 후 zk에 등록)
  -  qcloud.object.storage.cos.secret.id
  -  qcloud.object.storage.cos.secret.key
-3. ranger-cos-security.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/COS Ranger Service)의 COS Ranger Service/conf 디렉터리에서 얻을 수 있습니다).
+3. ranger-cos-security.xml 파일에서 구성을 수정합니다. 다음은 필요한 수정 사항입니다. 구성 항목에 대한 자세한 내용은 파일의 설명을 참고하십시오(구성 파일은 [Github](https://github.com/tencentyun/cos-ranger-service)의 COS Ranger Service/conf 디렉터리에서 얻을 수 있습니다).
  -  ranger.plugin.cos.policy.cache.dir
  -  ranger.plugin.cos.policy.rest.url
  -  ranger.plugin.cos.service.name
@@ -130,7 +130,7 @@ curl -v http://10.xx.xx.xxx:9998/status
 COS Ranger Client는 hadoop cosn 플러그 인의 동적 로딩으로 COS Ranger Service와 관련 있는 요청을 대신 액세스해 줍니다. 임시 키 획득, token 획득, 인증 작업 등이 포함됩니다.
 
 #### 코드 주소
-[Github](https://github.com/tencentyun/COS Ranger Service)의 COS Ranger Client 디렉터리로 이동하여 얻을 수 있습니다.
+[Github](https://github.com/tencentyun/cos-ranger-service)의 COS Ranger Client 디렉터리로 이동하여 얻을 수 있습니다.
 
 #### 버전
 V3.8 이상 버전
