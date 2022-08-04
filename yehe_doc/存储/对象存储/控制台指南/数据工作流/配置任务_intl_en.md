@@ -149,7 +149,7 @@ The text to speech feature can convert text into natural-sounding and smooth spe
 3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Smart Editing > Text to Speech** as the job type, click **Create Job**, and configure as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/fc0d9e8c6bbb142d64e485d4377c0e37.png)
+
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template**: Select the specified template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
