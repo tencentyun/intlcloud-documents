@@ -11,13 +11,13 @@ Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.c
 
 ### Which parameters can I modify quickly in the TencentDB for SQL Server console?
 Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver), click the ID of the target instance in the instance list, select **Parameter Configuration** > **Parameter Settings*, and you can modify the following instance parameters:
-- fill factor(%)
+- fill factor (%)
 - max worker threads
 - cost threshold for parallelism
 - max degree of parallelism
 - optimize for ad hoc workloads
-- min server memory(MB)
-- blocked process threshold(s)
+- min server memory (MB)
+- blocked process threshold (s)
 
 [](id:CSXGLS)
 ### How do I view parameter modification logs in TencentDB for SQL Server?
