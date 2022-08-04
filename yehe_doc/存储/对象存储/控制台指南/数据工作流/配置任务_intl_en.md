@@ -1,11 +1,11 @@
 ## Overview
 
-For files already in a bucket, you can create a job for media processing, speech recognition, file processing, and other operations. Currently, the following jobs are supported: **audio/video transcoding**, **top speed codec transcoding**, **broadcast media format transcoding**, **highlights generation**, **voice separation**, **audio/video splicing**, **video enhancement**, **audio/video segmentation**, **super-resolution**, **SDR to HDR**, **video frame capturing**, **video to animated image conversion**, **intelligent thumbnail**, **digital watermark extraction**, **image processing**, **speech recognition**, and **file preview**, some of which can be created by template. You can use the system templates or customize templates. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
+For files already in a bucket, you can create a job for media processing, speech recognition, file processing, and other operations. Currently, the following jobs are supported: **audio/video transcoding**, **top speed codec transcoding**, **broadcast media format transcoding**, **highlights generation (also known as video montage)**, **voice separation (also known as voice/sound separation)**, **audio/video splicing**, **video enhancement**, **audio/video segmentation**, **super resolution**, **SDR to HDR**, **video frame capturing**, **video-to-animated image conversion**, **intelligent thumbnail**, **digital watermark extraction**, **image processing**, **text to speech**, **speech recognition**, and **file preview**, some of which can be created by template. You can use the preset templates or customize templates. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
 
 >?
 > - Currently, jobs can process 3GP, ASF, AVI, DV, FLV, F4V, M3U8, M4V, MKV, MOV, MP4, MPG, MPEG, MTS, OGG, RM, RMVB, SWF, VOB, WMV, WEBM, MP3, AAC, FLAC, AMR, M4A, WMA, and WAV files. When initiating a media processing request, you must enter the complete file name and extension; otherwise, the format cannot be recognized and processed.
-> - Currently, the job feature can only manipulate **existing files**. To manipulate files during **upload**, use the [workflow](https://intl.cloud.tencent.com/document/product/436/46408) feature.
-> - After a job is created, feature fees will be charged by CI. For billing details, see "Media Processing Fees".
+> - Currently, the job feature can only manipulate **existing files**. To manipulate files during **upload**, use the workflow feature as described in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
+> - After a job is created, feature fees will be charged by CI. For billing details, see Media Processing Fees.
 > 
 
 ## Viewing Job
@@ -14,9 +14,9 @@ On the job page, you can view all jobs in different types for the **specified ti
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Click **View** on the right of a job to view its information.
+5. Click **View** on the right of a job to view its information:
 
  - Job information: Job ID, job status, queue ID, template ID, job creation time, and job end time.
  - Input information: Source file bucket, region, and storage path.
@@ -28,26 +28,26 @@ On the job page, you can view all jobs in different types for the **specified ti
 
 ## Creating Audio/Video Transcoding Job
 
-Audio/Video transcoding converts an audio/video file bitstream. It changes parameters of the source bitstream, such as codec, resolution, and bitrate, to adapt to different devices and network conditions.
+The audio/video transcoding feature converts an audio/video file bitstream. It changes parameters of the source bitstream, such as codec, resolution, and bitrate, to adapt to different devices and network conditions.
 
 #### Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Transcoding** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/9b039ab7eb963c16e50d988e82203f48.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Transcoding Type**: Select **Standard**.
- - **Template Type**: Select system or custom template.
+ - **Template Type**: Select preset or custom template.
  - **Template**: Select the specified template.
- - **Digital Watermark**: Add a blind watermark for copyright protection.
- - **Watermark**: Add a visible image or text watermark.
+ - **Digital Watermark**: Add a blind watermark as needed for copyright protection.
+ - **Watermark**: Add a visible image or text watermark as needed.
  - **Remove Watermark**: Remove the watermark.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Path of the output file.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
@@ -59,18 +59,18 @@ The top speed codec technology improves the subjective image quality of a video 
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Transcoding** as the job type, click **Create Job**, and configure as follows:
 
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Transcoding Type**: Select **Top Speed Codec Transcoding**.
  - **Template**: Select the specified template.
- - **Digital Watermark**: Add a blind watermark for copyright protection.
- - **Watermark**: Add a visible image or text watermark.
+ - **Digital Watermark**: Add a blind watermark as needed for copyright protection.
+ - **Watermark**: Add a visible image or text watermark as needed.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Path of the output file.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
@@ -82,38 +82,38 @@ This feature produces videos in broadcast media formats such as Apple ProRes and
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Transcoding** as the job type, click **Create Job**, and configure as follows:
 
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Transcoding Type**: Select **Broadcast Media Format**.
  - **Template**: Select the specified template.
- - **Digital Watermark**: Add a blind watermark for copyright protection.
- - **Watermark**: Add a visible image or text watermark.
+ - **Digital Watermark**: Add a blind watermark as needed for copyright protection.
+ - **Watermark**: Add a visible image or text watermark as needed.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Path of the output file.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
 ## Creating Highlights Generation Job
 
-The highlights generation feature accurately extracts highlight segments from a video and outputs them as a new file for use in different scenarios, such as replay and preview.
+The highlights generation feature accurately extracts highlight segments from a video and outputs them as a new file for use in different scenarios subsequently, such as replay and preview.
 
 #### Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Select the **Media Processing** tab, select **Intelligent Editing > Highlights Generation** as the job type, click **Create Job**, and configure as follows:
+5. Select the **Media Processing** tab, select **Smart Editing > Highlights Generation** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0414c8e582f5e5b4b9193109e773bb35.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template**: Select the specified template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Path of the output file.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
@@ -125,9 +125,9 @@ The voice separation feature separates the voice from the background sound in a 
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Select the **Media Processing** tab, select **Intelligent Editing > Voice Separation** as the job type, click **Create Job**, and configure as follows:
+5. Select the **Media Processing** tab, select **Smart Editing > Voice Separation** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/f67c60a206d904c69f9dcb6ad04d9b0e.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template**: Select the specified template.
@@ -135,6 +135,26 @@ The voice separation feature separates the voice from the background sound in a 
  - **Destination Path**: Path of the output file.
  - **Voice Filename**: Name of the output voice file.
  - **Background Sound Filename**: Name of the output background sound file.
+ - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+
+## Creating Text-to-Speech Job
+
+The text to speech feature can convert text into natural-sounding and smooth speeches for use in smart customer service and audiobook scenarios.
+
+#### Directions
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. Click **Bucket List** on the left sidebar.
+3. Click the name of the bucket that you want to manipulate.
+4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
+5. Select the **Media Processing** tab, select **Smart Editing > Text to Speech** as the job type, click **Create Job**, and configure as follows:
+
+ - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
+ - **Template**: Select the specified template.
+ - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
+ - **Destination Path**: Path of the output file.
+ - **Destination Filename**: Name of the output audio file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
@@ -146,15 +166,15 @@ The video/audio splicing feature adds the specified video/audio segment at the b
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Segmentation** as the job type, click **Create Job**, and configure as follows:
+5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Splicing** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/53b1bdc8310e59e01e3bc2cdeb10acd4.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Template**: Select a created audio/video splicing template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the output file.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
@@ -166,7 +186,7 @@ The audio/video segmentation feature splits the specified audio/video file into 
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Audio/Video Segmentation** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/b6ff7f0119085bed052b705306da4333.png)
@@ -175,13 +195,13 @@ The audio/video segmentation feature splits the specified audio/video file into 
  - **Segment Duration**: Specify the duration of the output segment.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the output file.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
 ## Creating Video Frame Capturing Job
 
-Video frame capturing is a screencapturing feature provided by CI to capture the frames of a video at specified time points. After the job is enabled in the console, the output screenshots are in JPG format by default. If you enable captured frame compression, screenshots can be output in HEIF or TPG format.
+Video frame capturing is a screenshot feature provided by CI to capture the frames of a video at specified time points. After the job is enabled in the console, the output screenshots are in JPG format by default. If you enable captured frame compression, screenshots can be output in HEIF or TPG format.
 
 >? A video frame capturing job can be created by template. You can customize the frame capturing start time, frame capturing interval, captured frames, output image size, and output format (captured frame compression needs to be enabled for this option) in a custom video frame capturing template.
 >
@@ -190,17 +210,17 @@ Video frame capturing is a screencapturing feature provided by CI to capture the
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Transcoding > Video Frame Capturing** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/9b7322d5facc1b48cef33f9a1a77c729.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
- - **Template Type**: Select system or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
+ - **Template Type**: You can select preset or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
  - **Template**: Select the specified template.
  - **Output**: If the video frame capturing job is enabled in the console, screenshots in JPG format will be output by default. If captured frame compression is enabled in the template, screenshots in HEIF or TPG format can be output. If you use the video frame capturing API, you can choose to output JPG or PNG screenshots. For more information, see [Getting Media File Screenshot](https://intl.cloud.tencent.com/document/product/436/46912).
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the video screenshots.
- - **Destination File Name**: Name of the output file. Note that as more than one files are output by **video frame capturing**, the output filename must contain the ${Number} parameter as the sequence number of the screenshot. For example, if the destination file path is set to `test-${Number}.jpg` and the job captures two screenshots, the actual names of the output files will be `test-0.jpg` and `test-1.jpg`.
+ - **Destination Filename**: Name of the output file. Note that as more than one files are output by **smart video frame capturing**, the output filename must contain the ${Number} parameter as the sequence number of the screenshot. For example, if the destination file path is set to `test-${Number}.jpg` and the job captures two screenshots, the actual names of the output files will be `test-0.jpg` and `test-1.jpg`.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
@@ -216,7 +236,7 @@ Video enhancement is a video image quality improvement feature provided by CI. Y
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Image Quality Optimization > Video Enhancement** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/bcec587a60db669cc592a98aa6e2e6a3.png)
@@ -224,42 +244,42 @@ Video enhancement is a video image quality improvement feature provided by CI. Y
 >
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Enhancement Template**: Select a video enhancement template as needed.
- - **Transcoding Template Type**: You can select system or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
+ - **Transcoding Template Type**: You can select preset or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
  - **Transcoding Template**: You can select a transcoding template and specify parameters such as resolution, bitrate, and format of the output file.
- - **Digital Watermark**: Add a blind watermark for copyright protection.
- - **Watermark**: Add a visible image or text watermark.
+ - **Digital Watermark**: Add a blind watermark as needed for copyright protection.
+ - **Watermark**: Add a visible image or text watermark as needed.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Path of the output video.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
 
-## Creating Super-Resolution Job
+## Creating Super Resolution Job
 
-The super-resolution feature reconstructs the details and local features of a video by recognizing its content and contour so as to generate a high-resolution video image through a series of low-resolution video images. It can be used in combination with video enhancement to remaster old videos.
+The super resolution feature reconstructs the details and local features of a video by recognizing its content and contour so as to generate a high-resolution video image through a series of low-resolution video images. It can be used in combination with video enhancement to remaster old videos.
 
 #### Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Select the **Media Processing** tab, select **Image Quality Optimization > Super-Resolution** as the job type, click **Create Job**, and configure as follows:
+5. Select the **Media Processing** tab, select **Image Quality Optimization > Super Resolution** as the job type, click **Create Job**, and configure as follows:
 
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
- - **Super-Resolution Template**: Select the destination resolution template as needed.
- - **Transcoding Template Type**: You can select system or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
+ - **Super Resolution Template**: Select the destination resolution template as needed.
+ - **Transcoding Template Type**: You can select preset or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
  - **Transcoding Template**: You can select a transcoding template and specify parameters such as bitrate and format of the output file.
- - **Digital Watermark**: Add a blind watermark for copyright protection.
- - **Watermark**: Add a visible image or text watermark.
+ - **Digital Watermark**: Add a blind watermark as needed for copyright protection.
+ - **Watermark**: Add a visible image or text watermark as needed.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Path of the output video.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
-## Creating SDR to HDR Job
+## Creating SDR-to-HDR Job
 
 SDR to HDR is a video dynamic range conversion feature provided by CI. You can use it to convert a standard dynamic range (SDR) video to a high dynamic range (HDR) video.
 
@@ -268,7 +288,7 @@ SDR to HDR is a video dynamic range conversion feature provided by CI. You can u
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Image Quality Optimization > SDR to HDR** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/40013de387fbc506b95d4e851825d819.png)
@@ -276,36 +296,36 @@ SDR to HDR is a video dynamic range conversion feature provided by CI. You can u
 >
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **HDR Standard**: Select HLG or HDR10.
- - **Transcoding Template**: Select an H.265 transcoding template. If there are no templates, create an audio/video transcoding template and select H.265 as the encoding format. For more information on how to create a template and configure parameters, see [Custom Templates](https://intl.cloud.tencent.com/document/product/436/46411#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.A8.A1.E6.9D.BF).
- - **Watermark**: Add a visible image or text watermark.
+ - **Transcoding Template**: Select an H.265 transcoding template. If there are no templates, create an audio/video transcoding template and select H.265 as the encoding format. For more information on how to create a template and configure parameters, see [Custom Template](https://intl.cloud.tencent.com/document/product/436/46411#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.A8.A1.E6.9D.BF).
+ - **Watermark**: Add a visible image or text watermark as needed.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
- - **Destination Path**: Storage path of the destination file after the SDR to HDR conversion is completed.
- - **Destination File Name**: Name of the output file.
+ - **Destination Path**: Storage path of the destination file after the SDR-to-HDR conversion is completed.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
 
-## Creating Video to Animated Image Conversion Job
+## Creating Video-to-Animated Image Conversion Job
 
-You can use the video to animated image conversion feature to convert a video to animated images.
+You can use the video-to-animated image conversion feature to convert a video to animated images.
 
->? A video to animated image conversion job can be created by template. You can customize the transcoding start time, transcoding duration, frame extraction method, output animated image frame rate, and output animated image size in a custom video to animated image conversion template.
+>? A video-to-animated image conversion job can be created by template. You can customize the transcoding start time, transcoding duration, frame extraction method, output animated image frame rate, and output animated image size in a custom video to animated image conversion template.
 >
 
 #### Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Select the **Media Processing** tab, select **Transcoding > Video to Animated Image Conversion** as the job type, click **Create Job**, and configure as follows:
+5. Select the **Media Processing** tab, select **Transcoding > Video-to-Animated Image Conversion** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/12f93dfb3a9a6da63dbbf25ef88fba53.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
- - **Template Type**: Select system or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
+ - **Template Type**: You can select preset or custom template. For more information, see [Template](https://intl.cloud.tencent.com/document/product/436/46411).
  - **Template**: Select the specified template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the animated images.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
@@ -314,23 +334,22 @@ You can use the video to animated image conversion feature to convert a video to
 The intelligent thumbnail feature intelligently analyzes the quality, brilliance, and content relevance of video frames by understanding the video content with Tencent Media Lab's advanced AI technologies. Then, it extracts optimal frames to generate thumbnails to make the content more engaging.
 
 >?
-> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see "Media Processing Fees".
->- When this service is used for the first time under an account, CI will issue a free resource pack of 1,000 minutes valid for two months, and any excessive usage and usage after the resource pack expires will be billed. For more information, see CI Free Tier.
-> - Three optimal keyframes will be output through intelligent analysis of each video file.
+> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see Media Processing Fees.
+> - Three optimal keyframes will be output through smart analysis of each video file.
 > 
 
 #### Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Select the **Media Processing** tab, select **Intelligent Editing > Intelligent Thumbnail** as the job type, click **Create Job**, and configure as follows:
+5. Select the **Media Processing** tab, select **Smart Editing > Intelligent Thumbnail** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/1c326c11491e108f62f111a72f98951b.png)
  - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the smart thumbnails.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
 >! As more than one files are output by **intelligent thumbnail**, the output filename must contain the parameter ${Number} as the thumbnail serial number. For example, if the output file path is set to `test-${Number}.jpg`, the actual names of the output files will be `test-0.jpg` and `test-1.jpg`.
 >
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
@@ -344,7 +363,7 @@ You can use the media processing service to extract the digital watermark from a
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Copyright Protection > Digital Watermark Extraction** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d06366d7bea0a7b3d612af4f1bd65090.png)
@@ -359,7 +378,7 @@ The speech recognition feature recognizes a recording file and asynchronously re
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Speech Recognition** tab, click **Create Job**, and configure as follows:
 
@@ -375,7 +394,7 @@ The speech recognition feature recognizes a recording file and asynchronously re
  - **Recognition Result**: Speech recognition result text output by sentence or word (only supported for the Chinese speech recognition engines at 16 kHZ audio sample rate).
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the recognized text.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Filter Restricted Words**: Select whether to filter restricted words or replace them with `\*`.
  - **Filter Modal**: Select whether to filter modal.
  - **Smart Speech Conversion**: After it is enabled, recognized Chinese numbers will be converted to Arabic numbers.
@@ -385,14 +404,14 @@ The speech recognition feature recognizes a recording file and asynchronously re
 
 ## Creating File Preview Job
 
-The file preview feature allows you to preview files of nearly 30 types through image or HTML online, with the source file style preserved as much as possible. This addresses the lack of support for certain file formats on different devices and enables online file preview on PC, app, and other terminals.
+The file preview feature allows you to preview files of nearly 30 types online through image or HTML, with the source file style preserved as much as possible. This addresses the lack of support for certain file formats on different devices and enables easy online file preview on PC, app, and other terminals.
 
 #### Directions
 
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **File Preview** tab, click **Create Job**, and configure as follows:
 
@@ -401,20 +420,20 @@ The file preview feature allows you to preview files of nearly 30 types through 
  - **Output Format**: Currently, JPG and PNG formats are supported for output images. The PDF format is supported only for whole document preview.
  - **Destination Bucket**: Select a bucket for which the file preview feature has been enabled in the current region.
  - **Destination Path**: It is optional. If it is not set, it will be the same as the input file path.
- - **Destination File Name**: The file preview feature converts each page of the original file into an image. Therefore, you need to add a placeholder (`${Number}` or `${Page}`) to the output filename to number the output images. The output numbers are the same as the file page numbers. For example, if you want to preview a file with three pages and set the output filename to `output${Number}.jpg`, then three images `output1.jpg`, `output2.jpg`, `output3.jpg` will be output.
+ - **Destination Filename**: The file preview service converts each page of the original file into an image. Therefore, you need to add a placeholder (`${Number}` or `${Page}`) to the output filename to number the output images. The output numbers are the same as the file page numbers. For example, if you want to preview a file with three pages and set the output filename to `output${Number}.jpg`, then three images `output1.jpg`, `output2.jpg`, `output3.jpg` will be output.
  - **Queue**: Currently, only the default file preview queue `queue-doc-process-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
 
 ## Creating Image Processing Job
 
-The image processing feature supports flexible image editing, such as rotation, cropping, transcoding, and zooming. It provides multiple image downsizing solutions like Guetzli compression, TPG transcoding, and HEIF transcoding, as well as diversified copyright protection solutions like image/text/blind watermarking. This meets your image processing needs in different business scenarios.
+The image processing feature supports flexible image editing, such as rotation, cropping, transcoding, and scaling. It provides multiple image downsizing solutions like Guetzli compression, TPG transcoding, and HEIF transcoding, as well as diversified copyright protection solutions like image/text/blind watermarking. This meets your image processing needs in different business scenarios.
 
 #### Directions
 
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to operate.
+3. Click the name of the bucket that you want to manipulate.
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Image Processing** tab, click **Create Job**, and configure as follows:
 
@@ -423,6 +442,6 @@ The image processing feature supports flexible image editing, such as rotation, 
  - **Template**: Select the specified template.
  - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
  - **Destination Path**: Storage path of the image processing result.
- - **Destination File Name**: Name of the output file.
+ - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).

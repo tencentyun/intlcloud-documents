@@ -1,38 +1,38 @@
-## Description
+## Feature Description
 
-Hadoop-COS implements a standard Hadoop file systems on the COS platform. It helps integrate COS with big data computing frameworks such as Hadoop, Spark, and Tez, so that they can read and write COS data as they do with HDFS file systems.
+Hadoop-COS implements a standard Hadoop file system on the Tencent Cloud COS platform. It helps integrate COS with big data computing frameworks such as Hadoop, Spark, and Tez, so that they can read and write COS data as they do with HDFS file systems.
 
 Since Hadoop-COS uses COSN (a Tencent Cloud big data tool) as its URI scheme, it can also be referred to as a COSN-based file system.
 
 
-## Operating Environments
+## Operating Environment
 
 #### Operating system
 
-Windows, Linux, or macOS
+Windows, Linux, or macOS.
 
 #### Software dependency
 
-Hadoop-2.6.0 or later
+Hadoop 2.6.0 or later.
 
 >?
->1. Hadoop-COS has been integrated in Apache Hadoop-3.3.0. For more information, click [here](https://hadoop.apache.org/docs/r3.3.0/hadoop-cos/cloud-storage/index.html).
->2. If your version is earlier than Apache Hadoop-3.3.0, or the CDH has integrated the Hadoop-COS JAR package, you need to restart NodeManager to load the JAR package.
->3. To build a JAR package of a specified Hadoop version, modify `hadoop.version` in the pom file.
+>1. Hadoop-COS has been integrated into Apache Hadoop 3.3.0. For more information, see [Integration of Tencent COS in Hadoop](https://hadoop.apache.org/docs/r3.3.0/hadoop-cos/cloud-storage/index.html).
+>2. If your version is earlier than Hadoop 3.3.0, or CDH has integrated the Hadoop-COS JAR package, you need to restart NodeManager to load the JAR package.
+>3. To build a JAR package of a specified Hadoop version, modify `hadoop.version` in the `pom` file.
 >
 
 
 
 ## Download and Installation
 
-#### Obtaining Hadoop-COS JAR package and dependencies
+#### Getting Hadoop-COS JAR package and dependencies
 
-Download link: [Hadoop-COS release](https://github.com/tencentyun/hadoop-cos/releases)
+Download Hadoop-COS from [GitHub](https://github.com/tencentyun/hadoop-cos/releases).
 
-### Installing Hadoop-COS plugin
+#### Installing Hadoop-COS plugin
 
 1. Copy `hadoop-cos-{hadoop.version}-{version}.jar` and `cos_api-bundle-{version}.jar` to `$HADOOP_HOME/share/hadoop/tools/lib`.
->? Select the JAR package that corresponds to your Hadoop version. If you cannot find the desired JAR package in the release, manually build and generate one by modifying `hadoop.version` in the POM file.
+> ?Select the JAR package that corresponds to your Hadoop version. If you cannot find the desired JAR package in the release, manually build and generate one by modifying the Hadoop version number in the `pom` file.
 > 
 2. Modify the `hadoop-env.sh` file under the `$HADOOP_HOME/etc/hadoop` directory by adding the COSN JAR package to your Hadoop environment variables as follows:
 ```shell
@@ -47,38 +47,38 @@ done
 
 ## Configuration Method
 
-### COSN configuration
+### Configuration item description
 
 | Attribute Key | Description | Default Value | Required |
 | :--------------------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------: | :----: |
-| fs.cosn.userinfo.<br>secretId/secretKey | Specifies the API key for your account. Log in to the [CAM console](https://console.cloud.tencent.com/capi) to view the key. | None | Yes |
-|       fs.cosn.<br>credentials.provider       | Specifies how to obtain your `SecretId` and `SecretKey`. There are eight methods to choose from:<br><ol  style="margin: 0;"><li>org.apache.hadoop.fs.auth.SessionCredentialProvider: Obtains them from the request URI. Format: `cosn://{secretId}:{secretKey}@examplebucket-1250000000/`.</li><li> org.apache.hadoop.fs.auth.SimpleCredentialProvider: Obtains them by reading `fs.cosn.userinfo.secretId` and `fs.cosn.userinfo.secretKey` form the `core-site.xml` configuration file.</li><li>org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider: Obtains them from the system environment variables `COS_SECRET_ID` and `COS_SECRET_KEY`.</li><li>org.apache.hadoop.fs.auth.SessionTokenCredentialProvider: Uses a temporary key for access.</li><li>org.apache.hadoop.fs.auth.CVMInstanceCredentialsProvider: Obtains a temporary key for COS access by using a CVM-bound role.</li><li> org.apache.hadoop.fs.auth.CPMInstanceCredentialsProvider: Obtains a temporary key for COS access by using a CPM-bound role.</li><li>org.apache.hadoop.fs.auth.EMRInstanceCredentialsProvider: Obtains a temporary key for COS access by using an EMR-bound role.</li><li> org.apache.hadoop.fs.auth.RangerCredentialsProvider: Obtains the key by using Ranger. </li></ol>|   If this parameter is not specified, the default <br>order is as follows:<ol  style="margin: 0;"><li> org.apache.hadoop.fs.auth.SessionCredentialProvider</li><li> org.apache.hadoop.fs.auth.SimpleCredentialProvider</li><li> org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider</li><li> org.apache.hadoop.fs.auth.SessionTokenCredentialProvider</li><li> org.apache.hadoop.fs.auth.CVMInstanceCredentialsProvider</li><li> org.apache.hadoop.fs.auth.CPMInstanceCredentialsProvider</li><li> org.apache.hadoop.fs.auth.EMRInstanceCredentialsProvider. </li></ol> |   No   |
-| fs.cosn.useHttps | Indicates whether to use HTTPS as the transfer protocol for the COS backend. | false | No |
-| fs.cosn.impl | COSN implementation class for FileSystem; fixed as `org.apache.hadoop.fs.CosFileSystem`. | None | Yes |
-| fs.AbstractFileSystem.<br>cosn.impl | COSN implementation class for AbstractFileSystem; fixed as `org.apache.hadoop.fs.CosN`. | None | Yes |
-| fs.cosn.bucket.region | Specifies the region of the bucket to access. For enumerated values, see the region abbreviations outlined in [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).<br>Example: ap-beijing and ap-guangzhou. Compatibility is provided for the old parameter `fs.cosn.userinfo.region`. | None |Yes |
-| fs.cosn.bucket.<br>endpoint_suffix | Specifies the COS endpoint to connect (optional). Public cloud COS users <br>only need to provide the correct region in the parameter above. Compatibility is provided for the old parameter `fs.cosn.userinfo.endpoint_suffix`. | None | No |
-| fs.cosn.tmp.dir | Specifies an existing local directory where temporary files generated at runtime are stored. | /tmp/hadoop_cos | No |
-| fs.cosn.upload.<br>part.size | The size of each part for multipart upload using the COSN file system. A COS multipart upload supports a maximum of 10,000 parts to be uploaded for a single object. You need to estimate the desired part size as needed.<br>For example, if the part size is set to `8388608` (8 MB), you can upload an object of up to 78 GB. The size of a part can be up to 2 GB, that is, the size of a single object can be up to 19 TB. | 8388608 (8 MB) | No |
-| fs.cosn.<br>upload.buffer | The type of buffer used when uploading files with COSN. Currently, there are three types of buffers: non_direct_memory, <br>direct_memory, and mapped_disk. The non-direct memory buffer <br>uses JVM on-heap memory, the direct_memory buffer uses off-heap memory, and the mapped_disk buffer works based on memory file mapping. | mapped_disk | No|
-| fs.cosn.<br>upload.buffer.size | The size of buffer used during the upload with COSN. A value of `-1` means there is no limit. <br>You can specify this value only if you set the buffer type to `mapped_disk`. If you specify a value greater than 0, it cannot be smaller than the block size. Compatibility is provided for the old parameter `fs.cosn.buffer.size`. | -1 | No |
+|   fs.cosn.userinfo.<br>secretId/secretKey    | The API key for your account. Log in to the [CAM console](https://console.cloud.tencent.com/capi) to view the key. | None | Yes |
+|       fs.cosn.<br>credentials.provider       | The way to get `SecretId` and `SecretKey`. Currently, eight ways are supported: <ol  style="margin: 0;"><li>org.apache.hadoop.fs.auth.SessionCredentialProvider: Gets them from the request URI in the format of `cosn://{secretId}:{secretKey}@examplebucket-1250000000/`. </li><li>org.apache.hadoop.fs.auth.SimpleCredentialProvider: Gets them by reading `fs.cosn.userinfo.secretId` and `fs.cosn.userinfo.secretKey` in the `core-site.xml` configuration file. </li><li>org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider: Gets them from system variables `COS_SECRET_ID` and `COS_SECRET_KEY`. </li><li>org.apache.hadoop.fs.auth.SessionTokenCredentialProvider: Accesses by using a temporary key as described in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). </li><li>org.apache.hadoop.fs.auth.CVMInstanceCredentialsProvider: Gets a temporary key to access COS by using the role bound to CVM. </li><li>org.apache.hadoop.fs.auth.CPMInstanceCredentialsProvider: Gets a temporary key to access COS by using the role bound to CPM. </li><li>org.apache.hadoop.fs.auth.EMRInstanceCredentialsProvider: Gets a temporary key to access COS by using the role bound to EMR. </li><li>org.apache.hadoop.fs.auth.RangerCredentialsProvider: Gets a key by using Ranger. </li></ol>| If this parameter is not specified, the default order will be as follows: <ol  style="margin: 0;"><li>org.apache.hadoop.fs.auth.SessionCredentialProvider</li><li>org.apache.hadoop.fs.auth.SimpleCredentialProvider</li><li>org.apache.hadoop.fs.auth.EnvironmentVariableCredentialProvider</li><li>org.apache.hadoop.fs.auth.SessionTokenCredentialProvider</li><li>org.apache.hadoop.fs.auth.CVMInstanceCredentialsProvider</li><li>org.apache.hadoop.fs.auth.CPMInstanceCredentialsProvider</li><li>org.apache.hadoop.fs.auth.EMRInstanceCredentialsProvider</li></ol> |   No   |
+| fs.cosn.useHttps | Whether to use HTTPS as the transfer protocol for the COS backend. | true | No |
+|               fs.cosn.impl               | The COSN implementation class for `FileSystem`, which is fixed at `org.apache.hadoop.fs.CosFileSystem`. |                              None                              |   Yes   |
+|     fs.AbstractFileSystem.<br>cosn.impl      | The COSN implementation class for `AbstractFileSystem`, which is fixed at `org.apache.hadoop.fs.CosN`. |                              None                              |   Yes   |
+|          fs.cosn.bucket.region           | The region of the bucket to access. For enumerated values, see the region abbreviations in [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224), such as `ap-beijing` and `ap-guangzhou`. <br>This parameter is compatible with the old parameter `fs.cosn.userinfo.region`.  |                              None                              |   Yes   |
+|      fs.cosn.bucket.<br>endpoint_suffix      | The COS endpoint to connect (optional). Public cloud COS users only need to provide the correct `region` in the parameter above. This parameter is compatible with the old parameter `fs.cosn.userinfo.endpoint_suffix`. To make `endpoint` take effect, you should delete the `fs.cosn.bucket.region` parameter first. | None | No |
+|             fs.cosn.tmp.dir              | An existing local directory where temporary files generated at runtime are stored. | /tmp/hadoop_cos | No |
+|          fs.cosn.upload.<br>part.size           | The size of each part for multipart upload through the COSN file system. A COS multipart upload supports a maximum of 10,000 parts to be uploaded for a single object. You need to estimate the desired part size as needed. <br>For example, if the part size is set to `8388608` (8 MB), you can upload an object of up to 78 GB in size. The size of a part can be up to 2 GB, that is, the size of a single object can be up to 19 TB. | 8388608 (8 MB) |   No   |
+| fs.cosn.<br>upload.buffer | The type of buffer used when files are uploaded through COSN. Currently, there are three types of buffers: non_direct_memory, direct_memory, and mapped_disk. <br>The non-direct memory buffer uses JVM on-heap memory, the direct_memory buffer uses off-heap memory, and the mapped_disk buffer works based on memory file mapping. | mapped_disk | No |
+| fs.cosn.<br>upload.buffer.size | The size of buffer used during upload through COSN. A value of `-1` means unlimited. <br>You can specify this value only if you set the buffer type to `mapped_disk`. If you specify a value greater than 0, it cannot be smaller than the block size. This parameter is compatible with the old parameter `fs.cosn.buffer.size`. | -1 | No |
 |  fs.cosn.block.size | The size of a block in the COSN file system. | 134217728 (128 MB) | No | 
-|    fs.cosn.<br>upload_thread_pool    | Specifies the number of concurrent threads when files are uploaded to COS via streams. | 10 | No |
-|         fs.cosn.<br>copy_thread_pool         | Specifies the number of threads used to copy and delete concurrent files during directory replication.            |                   3                       |   No   |
-| fs.cosn.<br>read.ahead.block.size | Size of the read-ahead block | 1048576 (1 MB) |No |
-| fs.cosn.<br>read.ahead.queue.size | Length of the read-ahead queue | 8 | No |
-| fs.cosn.maxRetries | The maximum number of retries if an error occurs when accessing COS | 200 | No |
-| fs.cosn.retry.<br>interval.seconds  | Time interval between retries in seconds | 3 | No |
-| fs.cosn.<br>server-side-encryption.algorithm | Specifies the COS server-side encryption algorithm. Valid values: `SSE-C` and `SSE-COS`. If this parameter is left empty (default), no encryption algorithm is used. | None | No |
-| fs.cosn.<br>server-side-encryption.key | Specifies the required SSE-C key if the SSE-C server encryption algorithm is used.<br>This parameter is a Base64-encoded AES-256 key. If this parameter is left empty (default), no encryption key is used. | None | No |
-| fs.cosn.<br>crc64.checksum.enabled | Indicates whether to enable CRC-64 checksum. It is disabled by default, meaning that you can’t run the `hadoop fs -checksum` command to obtain the CRC-64 checksum of a file. | false | No |
-|fs.cosn.<br>crc32c.checksum.enabled    | Indicates whether to enable CRC32C checksum. It is disabled by default, meaning that you cannot run the `hadoop fs -checksum` command to obtain the CRC32C checksum of a file. CRC-64 and CRC32C cannot be both enabled. | false | No |
-| fs.cosn.traffic.limit | Specifies the limit on the upload bandwidth, in bit/s. Value range: 819200-838860800. Defaults to `-1`, meaning no limit. | None | No | 
+|        fs.cosn.<br>upload_thread_pool        | The number of concurrent threads when files are uploaded to COS through streams.                  |                        10                        |   No   |
+|         fs.cosn.<br>copy_thread_pool         | The number of threads used to copy and delete concurrent files during directory replication.               |                   3                       |   No   |
+|      fs.cosn.<br>read.ahead.block.size       | The size of a read-ahead block.                                               |                        1048576 (1 MB)                        |   No   |
+|      fs.cosn.<br>read.ahead.queue.size       | The length of the read-ahead queue.                                             |                              8                               |   No   |
+|            fs.cosn.maxRetries            | The maximum number of retries if an error occurs when accessing COS.                        |                             200                              |   No   |
+|      fs.cosn.retry.<br>interval.seconds      | The time interval between retries in seconds.                                         |                              3                               |   No   |
+| fs.cosn.<br>server-side-encryption.algorithm | The COS server-side encryption algorithm. Valid values: `SSE-C`, `SSE-COS`. If this parameter is left empty (default value), no encryption algorithm will be used. |                              None                              |   No   |
+|    fs.cosn.<br>server-side-encryption.key    | The required SSE-C key if the SSE-C server encryption algorithm is used. <br>This parameter is a Base64-encoded AES-256 key. If this parameter is left empty (default value), no encryption key will be used.  |                              None                              |   No   |
+| fs.cosn.<br>crc64.checksum.enabled | Whether to enable CRC-64 checksum. It is disabled by default, meaning that you can't run the `hadoop fs -checksum` command to obtain the CRC-64 checksum of a file. | false | No |
+|fs.cosn.<br>crc32c.checksum.enabled    | Whether to enable CRC32C checksum. It is disabled by default, meaning that you cannot run the `hadoop fs -checksum` command to obtain the CRC32C checksum of a file. CRC-64 and CRC32C cannot be both enabled. | false | No |
+| fs.cosn.traffic.limit | The limit on the upload bandwidth in bits/s. Value range: 819200–838860800. Default value: `-1` (unlimited). | None | No | 
 
 
 ### Hadoop configuration
 
-Modify `$HADOOP_HOME/etc/hadoop/core-site.xml` by adding information on COS users and implementation classes, as shown below:
+Modify `$HADOOP_HOME/etc/hadoop/core-site.xml` by adding the information of COS users and implementation classes as shown below:
 
 ```xml
 <configuration>
@@ -203,7 +203,7 @@ Modify `$HADOOP_HOME/etc/hadoop/core-site.xml` by adding information on COS user
 </configuration>
 ```
 
-We recommend you not configure `fs.defaultFS` in the production environment. To use it for certain test cases (for example, hive-testbench), add the following configurations:
+We recommend you not configure `fs.defaultFS` in the production environment. To use it for certain test cases such as `hive-testbench`, add the following configurations:
 
 ```
 <property>
@@ -217,11 +217,11 @@ We recommend you not configure `fs.defaultFS` in the production environment. To 
 
 ### Server-side encryption
 
-Hadoop-COS supports server-side encryption using either of the following two methods: COS-managed keys (SSE-COS) and customer-provided keys (SSE-C). You can enable this feature, which is disabled by default, by configuring as shown below:
+Hadoop-COS supports server-side encryption through either COS-managed key (SSE-COS) or user-defined key (SSE-C). This feature is disabled by default, and you can enable it by configuring as follows.
 
 #### SSE-COS encryption
 
-SSE-COS encryption refers to server-side encryption with COS-managed keys. That is, Tencent Cloud COS manages the master key and its data. When using Hadoop-COS, you can add the following configuration in the `$ HADOOP_HOME/etc/hadoop/core-site.xml` file to implement SSE-COS encryption.
+SSE-COS encryption refers to server-side encryption with a COS-managed key. In this mode, COS manages the master key and its data. When using Hadoop-COS, you can add the following configuration in the `$HADOOP_HOME/etc/hadoop/core-site.xml` file to implement SSE-COS encryption.
 
 ```shell
 <property>
@@ -233,7 +233,7 @@ SSE-COS encryption refers to server-side encryption with COS-managed keys. That 
 
 #### SSE-C encryption
 
-SSE-C encryption refers to server-side encryption with customer-provided keys. That is, the encryption key is provided by the user. When you upload an object, COS will use the encryption key that you provide to apply AES-256 encryption to the data. When using Hadoop-COS, you can add the following configuration in the `$ HADOOP_HOME/etc/hadoop/core-site.xml` file to implement SSE-C encryption.
+SSE-C encryption refers to server-side encryption with a user-defined key. In this mode, the encryption key is provided by you. When you upload an object, COS will use the encryption key to apply AES-256 encryption to the data. When using Hadoop-COS, you can add the following configuration in the `$HADOOP_HOME/etc/hadoop/core-site.xml` file to implement SSE-C encryption.
 
 ```shell
 <property>
@@ -243,22 +243,22 @@ SSE-C encryption refers to server-side encryption with customer-provided keys. T
  </property>		
  <property>
   	<name>fs.cosn.server-side-encryption.key</name>
-        <value>MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=</value> #Users need to configure the SSE-C key in the format of a Base64-encoded AES-256 key.
+        <value>MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=</value> # You need to configure the SSE-C key in the format of a Base64-encoded AES-256 key.
         <description>The SSE-C server side encryption key.</description>
  </property> 
 ```
 
 >!
-> - The SSE-C encryption feature of Hadoop-COS relies on the SSE-C server-side encryption of COS, which means Hadoop-COS does not store any customer-provided encryption keys, just like COS. Instead, COS stores HMAC values with random data added to the encryption keys to verify access requests. COS cannot use the HMAC values to derive the value of an encryption key or decrypt object content. Therefore, if you lose your encryption key, you will not be able to access the object again.
-> - If you configure an SSE-C server-side encryption algorithm on Hadoop-COS, you must also configure an SSE-C key using the `fs.cosn.server-side-encryption.key` parameter in the format of a Base64-encoded AES-256 key.
+> - The SSE-C encryption feature of Hadoop-COS relies on the SSE-C server-side encryption of COS. This means Hadoop-COS does not store any user-defined encryption keys just like COS. Instead, COS stores HMAC values with random data added to the encryption keys to authenticate access requests. COS cannot use the HMAC values to derive the value of an encryption key or decrypt the content of an object. Therefore, if you lose your encryption key, you will not be able to access the object again.
+> - If you configure an SSE-C server-side encryption algorithm in Hadoop-COS, you must also configure an SSE-C key by using the `fs.cosn.server-side-encryption.key` parameter in the format of a Base64-encoded AES-256 key.
 > 
 
-## How to Use
+## Directions
 
 
 ### Samples
 
-Run a command in the format: `hadoop fs -ls -R cosn://<BucketName-APPID>/<path>` or `hadoop fs -ls -R /<path>` (you need to set `fs.defaultFS` to `cosn://BucketName-APPID`). The following sample uses a bucket named `examplebucket-1250000000`, to which you can append a specific path.
+Run a command in the format of `hadoop fs -ls -R cosn://<BucketName-APPID>/<path>` or `hadoop fs -ls -R /<path>` (you need to set `fs.defaultFS` to `cosn://BucketName-APPID`). The following example uses a bucket named `examplebucket-1250000000`, to which you can append a specific path.
 
 ```shell
 hadoop fs -ls -R cosn://examplebucket-1250000000/
@@ -272,9 +272,9 @@ drwxrwxrwx   - root root          0 1970-01-01 00:00 cosn://examplebucket-125000
 -rw-rw-rw-   1 root root       2386 2018-06-11 07:29 cosn://examplebucket-1250000000/hdfs/test/ReadMe
 ```
 
-Run the wordcount provided in MapReduce and execute the following command.
+Run the WordCount program provided by MapReduce and run the following command.
 
->! This sample uses `hadoop-mapreduce-examples-2.7.2.jar`. To use a different version of the JAR file, modify the version number.
+> !This example uses `hadoop-mapreduce-examples-2.7.2.jar`. To use a different version of the JAR file, modify the version number.
 >
 
 ```shell
@@ -331,7 +331,7 @@ File Output Format Counters
 Bytes Written=40
 ```
 
-### Accessing COSN via Java code
+### Accessing COSN through Java code
 
 ```
 package com.qcloud.chdfs.demo;
@@ -352,8 +352,8 @@ import java.nio.ByteBuffer;
 public class Demo {
     private static FileSystem initFS() throws IOException {
         Configuration conf = new Configuration();
-        // For more information on COSN configuration items, visit https://cloud.tencent.com/document/product/436/6884#hadoop-.E9.85.8D.E7.BD.AE
-        // The following configuration items are required
+        // For more information on COSN configuration items, visit https://cloud.tencent.com/document/product/436/6884#hadoop-.E9.85.8D.E7.BD.AE.
+        // The following configuration items are required.
         conf.set("fs.cosn.impl", "org.apache.hadoop.fs.CosFileSystem");
         conf.set("fs.AbstractFileSystem.cosn.impl", "org.apache.hadoop.fs.CosN");
         conf.set("fs.cosn.tmp.dir", "/tmp/hadoop_cos");
@@ -361,8 +361,8 @@ public class Demo {
         conf.set("fs.cosn.userinfo.secretId", "AKXXXXXXXXXXXXXXXXX");
         conf.set("fs.cosn.userinfo.secretKey", "XXXXXXXXXXXXXXXXXX");
         conf.set("fs.ofs.user.appid", "XXXXXXXXXXX");
-        // For more information on other configuration items, visit https://cloud.tencent.com/document/product/436/6884#hadoop-.E9.85.8D.E7.BD.AE
-        // Whether to enable CRC-64 checksum. It is disabled by default, meaning that you can’t run the `hadoop fs -checksum` command to obtain the CRC-64 checksum of a file.
+        // For more information on other configuration items, visit https://cloud.tencent.com/document/product/436/6884#hadoop-.E9.85.8D.E7.BD.AE.
+        // Whether to enable CRC-64 checksum. It is disabled by default, meaning that you can't run the `hadoop fs -checksum` command to obtain the CRC-64 checksum of a file.
         conf.set("fs.cosn.crc64.checksum.enabled", "true");
         String cosnUrl = "cosn://f4mxxxxxxxx-125xxxxxxx";
         return FileSystem.get(URI.create(cosnUrl), conf);
@@ -440,8 +440,8 @@ public class Demo {
         }
     }
 
-    // The recursive deletion flag is used to delete directories
-    // If recursion is `false` and `dir` is not empty, the operation will fail
+    // The recursive deletion flag is used to delete directories.
+    // If recursion is `false` and `dir` is not empty, the operation will fail.
     private static void deleteFileOrDir(FileSystem fs, Path path, boolean recursive) throws IOException {
         fs.delete(path, recursive);
     }
@@ -464,7 +464,7 @@ public class Demo {
         // Query a file or directory
         queryFileOrDirStatus(fs, cosnFilePath);
 
-        // Get a file checksum
+        // Get the checksum of a file
         getFileCheckSum(fs, cosnFilePath);
 
         // Copy a file from the local system
@@ -476,7 +476,7 @@ public class Demo {
         copyFileToLocal(fs, cosnFilePath, localDownFilePath);
 
         listDirPath(fs, cosnFilePath);
-        // Rename
+        // Rename a file
         mkdir(fs, new Path("/doc"));
         Path newPath = new Path("/doc/example.txt");
         renamePath(fs, cosnFilePath, newPath);
