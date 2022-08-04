@@ -28,10 +28,7 @@ Content-Type: application/xml
 <body>
 ```
 
->? 
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
-> 
+> ?Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 
 #### Request headers
 
@@ -63,7 +60,7 @@ This request requires the following request body:
 </Request>
 ```
 
-The nodes are described as follows:
+The nodes are as described below:
 
 <table>
    <tr>
@@ -150,7 +147,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | --------------------------------------------- | --------- | -------- |
-| DocProcess         | Request.Operation | Task type parameter, which takes effect only if `Tag` is `DocProcess`. | Container | Yes       |
+| DocProcess         | Request.Operation | Job type parameter, which takes effect only if `Tag` is `DocProcess`.          | Container | Yes      |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
 
@@ -177,7 +174,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :--------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| ImageParams        | Request.Operation.DocProcess | Processing parameters for the output image. All parameters of [basic image processing](https://www.tencentcloud.com/document/product/1045/33694) are supported. To specify multiple parameters, separate them with [pipeline operators](https://intl.cloud.tencent.com/document/product/1045/33727). In this way, the image can be processed by multiple parameters in sequence in the same request.  | String | No       |
+| ImageParams        | Request.Operation.DocProcess | Processing parameters for the output image. All parameters of [basic image processing](https://intl.cloud.tencent.com/document/product/1045/33694) are supported. To specify multiple parameters, separate them by [pipeline operator](https://intl.cloud.tencent.com/document/product/1045/33727). In this way, the image can be processed by multiple parameters in sequence in the same request. | String | No       |
 | Quality            | Request.Operation.DocProces  | Quality of the generated preview image. Value range: [1-100]. Default value: 100. For example, if the value is 100, the quality of the generated image will be 100%.                | Int  | No       |
 | Zoom               | Request.Operation.DocProces  | Scaling parameter of the preview image. Value range: [10-200]. Default value: 100. For example, if the value is 200, the image will be scaled up (enlarged) by 200%.                | Int  | No       |
 | ImageDpi           | Request.Operation.DocProcess | Renders the image according to the specified DPI. This parameter works together with `Zoom`. Value range: 96–600. Default value: 96. The width of the output image must be less than 65500 px. | Int | No |
