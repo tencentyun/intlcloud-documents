@@ -5,7 +5,7 @@ For files already in a bucket, you can create a job for media processing, speech
 >?
 > - Currently, jobs can process 3GP, ASF, AVI, DV, FLV, F4V, M3U8, M4V, MKV, MOV, MP4, MPG, MPEG, MTS, OGG, RM, RMVB, SWF, VOB, WMV, WEBM, MP3, AAC, FLAC, AMR, M4A, WMA, and WAV files. When initiating a media processing request, you must enter the complete file name and extension; otherwise, the format cannot be recognized and processed.
 > - Currently, the job feature can only manipulate **existing files**. To manipulate files during **upload**, use the workflow feature as described in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
-> - After a job is created, feature fees will be charged by CI. For billing details, see [Media Processing Fees](https://cloud.tencent.com/document/product/460/58120).
+> - After a job is created, feature fees will be charged by CI. For billing details, see Media Processing Fees.
 > 
 
 ## Viewing Job
@@ -334,7 +334,7 @@ You can use the video-to-animated image conversion feature to convert a video to
 The intelligent thumbnail feature intelligently analyzes the quality, brilliance, and content relevance of video frames by understanding the video content with Tencent Media Lab's advanced AI technologies. Then, it extracts optimal frames to generate thumbnails to make the content more engaging.
 
 >?
-> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see [Media Processing Fees](https://cloud.tencent.com/document/product/460/58120).
+> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see Media Processing Fees.
 > - Three optimal keyframes will be output through smart analysis of each video file.
 > 
 
