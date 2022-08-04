@@ -15,7 +15,7 @@ EdgeOne provides the Standard and Enterprise plans. You can only specify one pla
 
 |    Item                                  |                            Standard                            |                            Enterprise                            |
 | :----------------------------------- | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| Price                                 |                           699 USD/month                           | [Contact us](https://intl.cloud.tencent.com/contact-us) |
+| Price                                 |                           590 USD/month                           | [Contact us](https://intl.cloud.tencent.com/contact-us) |
 | Traffic                                 |                             3 TB                             |                           ≥ 10 TB                            |
 | HTTP/HTTPS requests                    |                           50,000K                           |                         ≥ 80,000K                          |
 | Global content delivery (outside the Chinese mainland) |                              ✓                               |                              ✓                               |
