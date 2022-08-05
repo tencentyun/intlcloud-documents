@@ -2,7 +2,7 @@
 
 ### VOD 플레이어
 
-자세한 내용은 [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html)를 참고하십시오.
+자세한 내용은 [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html)를 참고하십시오.
 플레이어는 지정된 VOD 스트림 URL에서 오디오/비디오 데이터를 풀링하고 디코딩 및 로컬 렌더링 후 데이터를 재생합니다.
 플레이어에는 다음과 같은 기능이 있습니다.
 
@@ -17,65 +17,65 @@
 
 | API                                                          | 설명                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [setConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#ae69bc2dd060217e595c38f0dc819290a) | 플레이어 구성 정보를 설정합니다. 구성에 대한 자세한 내용은 [TXVodPlayConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html)를 참고하십시오. |
-| [setPlayerView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a64eefab5bdb76cef17f609560eec5830) | 플레이어의 렌더링 뷰 TXCloudVideoView를 설정합니다.                        |
-| [setPlayerView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#aeb2f15f370d50b6261b7832f02a0f411) | 플레이어의 렌더링 뷰 TextureView를 설정합니다.                             |
-| [setSurface](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#ac06d94f1ed4ec1441c075e4ba556eb37) | 플레이어의 렌더링 뷰 SurfaceView를 설정합니다.                             |
+| [setConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#ae69bc2dd060217e595c38f0dc819290a) | 플레이어 구성 정보를 설정합니다. 구성에 대한 자세한 내용은 [TXVodPlayConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html)를 참고하십시오. |
+| [setPlayerView](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a64eefab5bdb76cef17f609560eec5830) | 플레이어의 렌더링 뷰 TXCloudVideoView를 설정합니다.                        |
+| [setPlayerView](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#aeb2f15f370d50b6261b7832f02a0f411) | 플레이어의 렌더링 뷰 TextureView를 설정합니다.                             |
+| [setSurface](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#ac06d94f1ed4ec1441c075e4ba556eb37) | 플레이어의 렌더링 뷰 SurfaceView를 설정합니다.                             |
 | setStringOption                                              | 플레이어 비즈니스 매개변수를 `<String,Object>` 형식으로 설정합니다.                |
 
 ### 기본 재생 API  
 | API                                                          | 설명                       |
 | ------------------------------------------------------------ | --------------------------- |
-| [startPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a32fe5a77dedc7fc903345f00e6c47c3a) | 지정된 HTTP URL에서 비디오 재생을 시작합니다. |
+| [startPlay](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a32fe5a77dedc7fc903345f00e6c47c3a) | 지정된 HTTP URL에서 비디오 재생을 시작합니다. |
 | startPlay | TXPlayInfoParams 매개변수를 전달하여 지정된 fileId의 비디오 재생을 시작합니다. |
-| [ stopPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a6abf34bf566c275476b1706593cb0fe1) | 재생을 중지합니다. |
-| [isPlaying](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#ac651fc45a9f04e4db6f258f8cdd7bbcf) | 재생 진행 중 여부를 가져옵니다.      |
-| [pause](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a7167f5c196fc5e167bfabde1a730e81d) | 스트림 데이터 가져오기를 중지하고 마지막 프레임 이미지를 유지하여 재생을 일시 중지합니다. |
-| [resume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a41de8150eff044a237990c271d57ea27) | 스트림 데이터를 다시 가져와 재생을 재개합니다. |
-| [seek](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a914c54a0122cba5ad78d84f893df8578) | 비디오 스트림의 지정된 시점(초)을 찾습니다. |
-| [seek](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#aa5d7fcf690ac3a1102ffa3c02192674d) | 비디오 스트림의 지정된 시점(밀리초)을 찾습니다. |
-| [getCurrentPlaybackTime](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a128b89dd39053d6d19d262a5f45110cd) | 현재 재생 시점을 초 단위로 가져옵니다. |
-| [getBufferDuration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#acebd6ae9dd87e10c8959a24d3b6d5e7f) | 총 버퍼 지속 시간(초)을 가져옵니다. |
-| [getDuration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a83ee44393f1e0db930be75b73ff47812) | 총 비디오 지속 시간(초)을 가져옵니다. |
-| [getPlayableDuration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a37cb584556d48d043b93dfec33c40a97) | 재생 가능한 비디오 재생 시간(초)을 가져옵니다. |
-| [getWidth](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a67a0997183f24da19b776d96c1052998) | 비디오 너비를 가져옵니다. |
-| [getHeight](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a07efb2a4e9a982688c8bb3c3f21d1092) | 비디오 높이를 가져옵니다. |
-| [setAutoPlay](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a5e0e3d950eb3f525634adc7a9f60eab7) | startPlay 호출 후 VOD 자동 시작 여부를 설정합니다. VOD는 기본적으로 자동 시작됩니다. |
-| [setStartTime](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a8f767f79fb69496cdbc532fced5dff33) | 재생 시작 시간을 설정합니다. |
-| [setToken](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a5f9eadc88ca97238f84226462f095536) | HLS 암호화를 위한 token을 설정합니다. |
-| [setLoop](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a3f5ae863c82509d1ed266503e8138781) | 비디오 반복 여부를 설정합니다. |
-| [isLoop](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#aaa3fcc823e0fce316dea1cc9162f1c8e) | 루프 재생 상태를 반환합니다. |
+| [ stopPlay](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a6abf34bf566c275476b1706593cb0fe1) | 재생을 중지합니다. |
+| [isPlaying](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#ac651fc45a9f04e4db6f258f8cdd7bbcf) | 재생 진행 중 여부를 가져옵니다.      |
+| [pause](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a7167f5c196fc5e167bfabde1a730e81d) | 스트림 데이터 가져오기를 중지하고 마지막 프레임 이미지를 유지하여 재생을 일시 중지합니다. |
+| [resume](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a41de8150eff044a237990c271d57ea27) | 스트림 데이터를 다시 가져와 재생을 재개합니다. |
+| [seek](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a914c54a0122cba5ad78d84f893df8578) | 비디오 스트림의 지정된 시점(초)을 찾습니다. |
+| [seek](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#aa5d7fcf690ac3a1102ffa3c02192674d) | 비디오 스트림의 지정된 시점(밀리초)을 찾습니다. |
+| [getCurrentPlaybackTime](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a128b89dd39053d6d19d262a5f45110cd) | 현재 재생 시점을 초 단위로 가져옵니다. |
+| [getBufferDuration](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#acebd6ae9dd87e10c8959a24d3b6d5e7f) | 총 버퍼 지속 시간(초)을 가져옵니다. |
+| [getDuration](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a83ee44393f1e0db930be75b73ff47812) | 총 비디오 지속 시간(초)을 가져옵니다. |
+| [getPlayableDuration](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a37cb584556d48d043b93dfec33c40a97) | 재생 가능한 비디오 재생 시간(초)을 가져옵니다. |
+| [getWidth](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a67a0997183f24da19b776d96c1052998) | 비디오 너비를 가져옵니다. |
+| [getHeight](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a07efb2a4e9a982688c8bb3c3f21d1092) | 비디오 높이를 가져옵니다. |
+| [setAutoPlay](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a5e0e3d950eb3f525634adc7a9f60eab7) | startPlay 호출 후 VOD 자동 시작 여부를 설정합니다. VOD는 기본적으로 자동 시작됩니다. |
+| [setStartTime](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a8f767f79fb69496cdbc532fced5dff33) | 재생 시작 시간을 설정합니다. |
+| [setToken](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a5f9eadc88ca97238f84226462f095536) | HLS 암호화를 위한 token을 설정합니다. |
+| [setLoop](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a3f5ae863c82509d1ed266503e8138781) | 비디오 반복 여부를 설정합니다. |
+| [isLoop](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#aaa3fcc823e0fce316dea1cc9162f1c8e) | 루프 재생 상태를 반환합니다. |
 
 ### 비디오 API
 
 | API                                                          | 설명                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [enableHardwareDecode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a33b092e7e79aab66b494e7034021b2f9) | 비디오 하드웨어 디코딩을 활성화/비활성화합니다.                                       |
-| [snapshot](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a6f1c0c128052960f084ef6d1d7a77b09) | 현재 비디오 프레임 이미지를 가져옵니다. <br>**참고: 이 작업은 시간이 많이 걸리므로 스크린샷은 비동기식으로 다시 호출됩니다.** |
-| [setMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a4add579d2ec825502c5e3832aced5bc1) | 비디오 이미지 수평 뒤집기 여부를 설정합니다.                                                   |
-| [setRate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#add2bcd36c051900d697853155494865b) | VOD 재생 속도를 설정합니다. 기본값: 1.0.                                |
-| [getBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#af6f9e1e680baa611642fb168007b1c45) | 현재 재생 비트 레이트 인덱스를 반환합니다.                                     |
-| [setBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a61f524a6ed275edaf9e9a0997f64d491) | 원활한 해상도 전환을 위한 현재 재생 비트 레이트 인덱스를 설정합니다. 해상도를 전환하려면 잠시 기다려야 할 수도 있습니다. |
-| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a6e1e1e12120b92f4884d3ea1a8e2cc94) | [이미지 채우기 모드](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae)를 설정합니다. |
-| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a1ae55363f74a78d935d63ea7b44130a8) | [이미지 렌더링 각도](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f)를 설정합니다. |
+| [enableHardwareDecode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a33b092e7e79aab66b494e7034021b2f9) | 비디오 하드웨어 디코딩을 활성화/비활성화합니다.                                       |
+| [snapshot](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a6f1c0c128052960f084ef6d1d7a77b09) | 현재 비디오 프레임 이미지를 가져옵니다. <br>**참고: 이 작업은 시간이 많이 걸리므로 스크린샷은 비동기식으로 다시 호출됩니다.** |
+| [setMirror](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a4add579d2ec825502c5e3832aced5bc1) | 비디오 이미지 수평 뒤집기 여부를 설정합니다.                                                   |
+| [setRate](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#add2bcd36c051900d697853155494865b) | VOD 재생 속도를 설정합니다. 기본값: 1.0.                                |
+| [getBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#af6f9e1e680baa611642fb168007b1c45) | 현재 재생 비트 레이트 인덱스를 반환합니다.                                     |
+| [setBitrateIndex](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a61f524a6ed275edaf9e9a0997f64d491) | 원활한 해상도 전환을 위한 현재 재생 비트 레이트 인덱스를 설정합니다. 해상도를 전환하려면 잠시 기다려야 할 수도 있습니다. |
+| [setRenderMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a6e1e1e12120b92f4884d3ea1a8e2cc94) | [이미지 채우기 모드](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a0645160ad90c67581f7f226a6c0c46ae)를 설정합니다. |
+| [setRenderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a1ae55363f74a78d935d63ea7b44130a8) | [이미지 렌더링 각도](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#ad00f3ee125e574cab63d955e03f5f23f)를 설정합니다. |
 
 ### 오디오 API
 
 | API                                             | 설명                                                         |
 | ------------------------------------------------------------ | --------------------------------------- |
-| [setMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a85d2bb3409165c1b7b2c53f8d61a03e2) | 플레이어 음소거 여부를 설정합니다.                      |
-| [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a9b8946403b8b3ac8e11f3a78e9d531ca) | 볼륨 레벨을 설정합니다. 값 범위: 0–100.           |
-| [setRequestAudioFocus](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a676f0935eca038719f58100d31f169b1) | 오디오 포커스 자동 가져오기 여부를 설정합니다. 오디오 포커스는 기본적으로 자동 가져오기 됩니다. |
+| [setMute](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a85d2bb3409165c1b7b2c53f8d61a03e2) | 플레이어 음소거 여부를 설정합니다.                      |
+| [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a9b8946403b8b3ac8e11f3a78e9d531ca) | 볼륨 레벨을 설정합니다. 값 범위: 0–100.           |
+| [setRequestAudioFocus](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a676f0935eca038719f58100d31f169b1) | 오디오 포커스 자동 가져오기 여부를 설정합니다. 오디오 포커스는 기본적으로 자동 가져오기 됩니다. |
 
 ### 이벤트 알림 API
 
 | API                    | 설명                   |
 | ---------------------- | ---------------------- |
-| [setPlayListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a0735b006fe8c56875665cb66881af144) | 플레이어 콜백을 설정합니다(사용되지 않았으므로 대신 [setVodListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#adb0e51670b947f15cca9a98d7d804e61)를 사용하는 것이 좋습니다). |
-| [setVodListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#adb0e51670b947f15cca9a98d7d804e61) | 플레이어 콜백을 설정합니다.                                 |
-| [onNotifyEvent](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a1e4be8c3cfef68a8909d66a9243b6ec5) | VOD 재생 이벤트 알림입니다.                                 |
-| [onNetSuccess](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#ae6febac01c1cba85f8fe387a0c14d9d0) | VOD 네트워크 상태 알림입니다.                             |
-| [onNetFailed](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a74942758292eb41138c7a01ed9056da2) | fileId에 의한 재생에 대한 네트워크 예외 알림입니다.                         |
+| [setPlayListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a0735b006fe8c56875665cb66881af144) | 플레이어 콜백을 설정합니다(사용되지 않았으므로 대신 [setVodListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#adb0e51670b947f15cca9a98d7d804e61)를 사용하는 것이 좋습니다). |
+| [setVodListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#adb0e51670b947f15cca9a98d7d804e61) | 플레이어 콜백을 설정합니다.                                 |
+| [onNotifyEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a1e4be8c3cfef68a8909d66a9243b6ec5) | VOD 재생 이벤트 알림입니다.                                 |
+| [onNetSuccess](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#ae6febac01c1cba85f8fe387a0c14d9d0) | VOD 네트워크 상태 알림입니다.                             |
+| [onNetFailed](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a74942758292eb41138c7a01ed9056da2) | fileId에 의한 재생에 대한 네트워크 예외 알림입니다.                         |
 
 ### TRTC API
 
@@ -83,12 +83,12 @@
 
 | API                                                          | 설명                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [attachTRTC](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#ad6bd04b37a89012102e7bb71ea5554a6) | VOD를 [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)에 바인딩합니다. |
-| [detachTRTC](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a5b947acf9f4fc992f0f02f8d87de3334) | [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)에서 VOD 바인딩을 해제합니다. |
-| [publishVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a8298f704cb659c725da28a27e08afbed) | 비디오 스트림 푸시를 시작합니다.                                             |
-| [unpublishVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#aaa6ecf72bfa9e35078561dd98d62be0c) | 비디오 스트림 푸시를 취소합니다.                                             |
-| [ publishAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a7f1b46c4ae27f86188dc29f0f5d64b95) | 오디오 스트림 푸시를 시작합니다.                                             |
-| [unpublishAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#a206d786a74ae3b71766755135161773e) | 오디오 스트림 푸시를 취소합니다.                                             |
+| [attachTRTC](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#ad6bd04b37a89012102e7bb71ea5554a6) | VOD를 [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)에 바인딩합니다. |
+| [detachTRTC](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a5b947acf9f4fc992f0f02f8d87de3334) | [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)에서 VOD 바인딩을 해제합니다. |
+| [publishVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a8298f704cb659c725da28a27e08afbed) | 비디오 스트림 푸시를 시작합니다.                                             |
+| [unpublishVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#aaa6ecf72bfa9e35078561dd98d62be0c) | 비디오 스트림 푸시를 취소합니다.                                             |
+| [ publishAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a7f1b46c4ae27f86188dc29f0f5d64b95) | 오디오 스트림 푸시를 시작합니다.                                             |
+| [unpublishAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayer__android.html#a206d786a74ae3b71766755135161773e) | 오디오 스트림 푸시를 취소합니다.                                             |
 
 ## ITXVodPlayListener
 
@@ -97,8 +97,8 @@ VOD 콜백 알림입니다.
 
 | API                                                          | 설명                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXVodPlayListener__android.html#aad1d875808cd4a68d429762e492aad05) | VOD 재생 이벤트 알림. 자세한 내용은 [재생 이벤트 목록](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a) 및 [이벤트 매개변수](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594)를 참고하십시오. |
-| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXVodPlayListener__android.html#a2be0a0294ae21e68e736ac8fa4d3085d) | VOD 플레이어의 [네트워크 상태 알림](https://liteav.sdk.qcloud.com/doc/api/zh-cn/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737). |
+| [onPlayEvent](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#aad1d875808cd4a68d429762e492aad05) | VOD 재생 이벤트 알림. 자세한 내용은 [재생 이벤트 목록](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a3c3fa833bb8585df2f362da5b70c610a) 및 [이벤트 매개변수](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#a5cb5e37938b510270847d4f5c751a594)를 참고하십시오. |
+| [onNetStatus](https://liteav.sdk.qcloud.com/doc/api/en/group__ITXVodPlayListener__android.html#a2be0a0294ae21e68e736ac8fa4d3085d) | VOD 플레이어의 [네트워크 상태 알림](https://liteav.sdk.qcloud.com/doc/api/en/classcom_1_1tencent_1_1rtmp_1_1TXLiveConstants.html#aa7190fc964cf23a567b56d9793ad5737). |
 
 ## TXVodPlayConfig
 
@@ -108,19 +108,19 @@ VOD 플레이어 구성 클래스입니다.
 
 | API                                                          | 설명                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [setConnectRetryCount](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a30911117043dc5b3f559abf5eb1e9ce9) | 플레이어의 최대 재접속 시도 횟수를 설정합니다.                                         |
-| [setConnectRetryInterval](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a5f3b8315c6276bd1c03c999ce01e4f8f) | 플레이어 재연결 간격을 초 단위로 설정합니다.                                 |
-| [setTimeout](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#ae44a6096c42cdb61adc10370ca2a42b6) | 플레이어 연결 제한 시간(초)을 설정합니다.                             |
-| [setCacheFolderPath](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a6ad0d546e6da3abacd5d4ea8bd6f94de) | MP4 및 HLS 파일에 적용되는 VOD 캐시 디렉터리를 설정합니다.                       |
-| [setMaxCacheItems](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#acc2f17764df9bb52163dac9faf81f11e) | 최대 캐시 파일 수를 설정합니다. 이 API는 더 이상 사용되지 않습니다. 전역 구성을 위해 TXPlayerGlobalSetting#setMaxCacheSize를 사용합니다. |
-| [setPlayerType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a3594024855210dc07f50a6d7c5f8b088) | 플레이어 유형을 설정합니다.                                             |
-| [setHeaders](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a9ca40412371b505f9d52fbe95fdbaa6f) | 사용자 정의 HTTP headers를 설정합니다.                                    |
-| [setEnableAccurateSeek](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a3caff179964976945f3754f1ec48a42b) | 정확한 seek 활성화 여부를 설정합니다. 기본값: true.                               |
-| [setAutoRotate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#ab360b681c220c2adb57de2758916b227) | YES로 설정하면 MP4 파일이 설정된 회전 각도에 따라 자동으로 회전됩니다.<br>회전 각도는 PLAY_EVT_CHANGE_ROTATION 이벤트에서 얻을 수 있습니다. 기본값: YES. |
-| [setSmoothSwitchBitrate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a23fb393011e4663d0dfa765b72665a46) | 다중 비트 레이트 HLS 스트림에 대해 부드러운 전환 활성화 여부를 설정합니다. 기본값: false.                             |
-| [setCacheMp4ExtName](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#aaeccb662be133d4ded4fc17df29b94b5) | 캐시된 MP4 파일 확장자를 설정합니다.                                        |
-| [setProgressInterval](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a01a46ce89e4979a6397b6deb2525007c) | 진행 콜백 간격을 밀리초 단위로 설정합니다.                                 |
-| [setMaxBufferSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayConfig__android.html#a2705841bfedb3c44839cc355eaad26dc) | 최대 사전 로딩 버퍼 크기를 MB 단위로 설정합니다.                                    |
+| [setConnectRetryCount](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a30911117043dc5b3f559abf5eb1e9ce9) | 플레이어의 최대 재접속 시도 횟수를 설정합니다.                                         |
+| [setConnectRetryInterval](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a5f3b8315c6276bd1c03c999ce01e4f8f) | 플레이어 재연결 간격을 초 단위로 설정합니다.                                 |
+| [setTimeout](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#ae44a6096c42cdb61adc10370ca2a42b6) | 플레이어 연결 제한 시간(초)을 설정합니다.                             |
+| [setCacheFolderPath](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a6ad0d546e6da3abacd5d4ea8bd6f94de) | MP4 및 HLS 파일에 적용되는 VOD 캐시 디렉터리를 설정합니다.                       |
+| [setMaxCacheItems](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#acc2f17764df9bb52163dac9faf81f11e) | 최대 캐시 파일 수를 설정합니다. 이 API는 더 이상 사용되지 않습니다. 전역 구성을 위해 TXPlayerGlobalSetting#setMaxCacheSize를 사용합니다. |
+| [setPlayerType](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a3594024855210dc07f50a6d7c5f8b088) | 플레이어 유형을 설정합니다.                                             |
+| [setHeaders](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a9ca40412371b505f9d52fbe95fdbaa6f) | 사용자 정의 HTTP headers를 설정합니다.                                    |
+| [setEnableAccurateSeek](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a3caff179964976945f3754f1ec48a42b) | 정확한 seek 활성화 여부를 설정합니다. 기본값: true.                               |
+| [setAutoRotate](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#ab360b681c220c2adb57de2758916b227) | YES로 설정하면 MP4 파일이 설정된 회전 각도에 따라 자동으로 회전됩니다.<br>회전 각도는 PLAY_EVT_CHANGE_ROTATION 이벤트에서 얻을 수 있습니다. 기본값: YES. |
+| [setSmoothSwitchBitrate](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a23fb393011e4663d0dfa765b72665a46) | 다중 비트 레이트 HLS 스트림에 대해 부드러운 전환 활성화 여부를 설정합니다. 기본값: false.                             |
+| [setCacheMp4ExtName](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#aaeccb662be133d4ded4fc17df29b94b5) | 캐시된 MP4 파일 확장자를 설정합니다.                                        |
+| [setProgressInterval](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a01a46ce89e4979a6397b6deb2525007c) | 진행 콜백 간격을 밀리초 단위로 설정합니다.                                 |
+| [setMaxBufferSize](https://liteav.sdk.qcloud.com/doc/api/en/group__TXVodPlayConfig__android.html#a2705841bfedb3c44839cc355eaad26dc) | 최대 사전 로딩 버퍼 크기를 MB 단위로 설정합니다.                                    |
 | setMaxPreloadSize                                            | 최대 사전 로딩 버퍼 크기를 MB 단위로 설정합니다.                           |
 | setExtInfo                                                   | 확장 정보를 설정합니다.                                               |
 | setPreferredResolution                                       | HLS 비트스트림이 여러 개인 경우 구성된 preferredResolution 에 따라 가장 선호하는 비트스트림 재생을 시작합니다. 여기서 preferredResolution은 비디오 너비와 높이를 곱한 것(width * height)으로 재생이 시작되기 전에 설정된 경우에만 효과가 나타납니다. |
