@@ -1,6 +1,6 @@
 本文档以云服务器为例介绍购买云服务的流程。
 
-登录[腾讯云官网](https://intl.cloud.tencent.com/zh/)。
+登录 [腾讯云官网](https://intl.cloud.tencent.com/zh/)。
 
 
 在云产品导航栏，选择您希望购买的产品。这里选择云服务器。
