@@ -603,6 +603,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 43.[Tencent Effect SDK](https://intl.cloud.tencent.com/document/product/1143/48381).
 44.[TencentCloud Managed Service for Grafana](https://intl.cloud.tencent.com/document/product/1124/48402).
 45.[Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/48827).
+46.[Real User Monitoring](https://intl.cloud.tencent.com/document/product/1131/49154).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
