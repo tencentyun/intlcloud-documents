@@ -11,16 +11,17 @@ When a pay-as-you-go service is activated, the system estimates the amount to be
 
 ## Billing cycle: monthly
 
- -	On the settlement date (the first day) of each month, the cloud service fee frozen in the last month (from the first day to the last day of the month) is unfrozen, from which the fee for the last month is deducted.
+ - On the settlement date (the first day) of each month, the cloud service fee frozen in the last month (from the first day to the last day of the month) is unfrozen, from which the fee for the last month is deducted.
 
- -	 After the deduction, the cloud service fee will be frozen again based on the following formula and will not be unfrozen until the next settlement date (the first day) of next month: 
->    **To know the amount that would be frozen, please see the description of each product. **
-> Device resources: Quantity of cloud service used on the last day of last month×30×unit price
-> Traffic resources: 1 or 1.2 times of the fee incurred in the last month.
+ - After the deduction, the cloud service fee will be frozen again based on the following formula and will not be unfrozen until the next settlement date (the first day) of next month: 
+>?
+> - <b>To know the amount that would be frozen, please see the description of each product. </b>
+> - Device resources: Quantity of cloud service used on the last day of last month×30×unit price
+> - Traffic resources: 1 or 1.2 times of the fee incurred in the last month.
 
- -	If you change the configuration of a pay-as-you-go service, the previous frozen amount will be unfrozen and then be frozen again based on the unit price of new configuration.
+ - If you change the configuration of a pay-as-you-go service, the previous frozen amount will be unfrozen and then be frozen again based on the unit price of new configuration.
 
- -	When the resource is reclaimed, the frozen fee will be unfrozen by the settlement date (the first day) of next month.
+ - When the resource is reclaimed, the frozen fee will be unfrozen by the settlement date (the first day) of next month.
 
 ## FAQs
 
