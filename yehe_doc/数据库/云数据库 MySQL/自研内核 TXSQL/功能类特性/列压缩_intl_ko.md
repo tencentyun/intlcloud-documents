@@ -7,6 +7,7 @@
 
 ## 지원 버전
 커널 버전 MySQL 5.7 20210330 이상
+>?열 압축 기능은 기본적으로 닫힌 상태입니다. 사용하려면 [작업 명세서 제출](https://console.cloud.tencent.com/workorder/category)를 엽니다.
 
 ## 적용 시나리오
 테이블에 소량의 큰 필드와 다른 많은 작은 필드가 있는데 작은 필드의 액세스 빈도는 높은 반면 큰 필드 액세스 빈도는 낮은 경우 큰 필드를 압축 칼럼으로 설정할 수 있습니다.
@@ -14,7 +15,7 @@
 ## 사용 설명
 ### 지원되는 데이터 유형
 1. `BLOB`(`TINYBLOB`, `MEDIUMBLOB`, `LONGBLOB` 포함)
-2. `TEXT`(`TINYTEXT`, `MEDUUMTEXT`, `LONGTEXT` 포함)
+2. `TEXT`(`TINYTEXT`, `MEDIUMTEXT`, `LONGTEXT` 포함)
 3. `VARCHAR`
 4. `VARBINARY`
 
