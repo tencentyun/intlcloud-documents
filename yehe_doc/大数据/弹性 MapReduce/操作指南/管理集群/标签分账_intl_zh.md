@@ -33,7 +33,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/fb542f6be94dfb569e0a122d7cdf09ac.png)
 
 3. 查看节点分账标签
-对集群赋予的分账标签，会被集群中的 CDB（如元数据库）、CBS（系统盘、数据盘）、CVM（云服务器）自动继承。
+对集群赋予的分账标签，会被集群中的 CDB（如云数据库）、CBS（系统盘、数据盘）、CVM（云服务器）自动继承。
 	- 设置节点标签字段：集群列表 > 选择集群名称 > 资源管理 > 节点列表，单击**设置**图标。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5fd76595e1fe389c499977f74eaa0e3f.png)
 勾选标签字段显示，如下图所示：
